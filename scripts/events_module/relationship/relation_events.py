@@ -13,13 +13,12 @@ from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatAge
 from scripts.events_module.relationship.romantic_events import RomanticEvents
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
-from scripts.events_module.event_filters import filter_relationship_type
 from scripts.clan_package.get_clan_cats import (
     get_cats_same_age,
     get_possible_mates,
 )
 
-cat_event_triggered_counts: dict[str, int] = {}
+events_triggered_per_cat: dict[str, int] = {}
 
 
 def handle_relationships(cat: Cat):
@@ -50,7 +49,7 @@ def handle_relationships(cat: Cat):
 # ---------------------------------------------------------------------------- #
 
 
-def trigger_random_cat_event(cat):
+def trigger_random_cat_event(cat: Cat):
     """Randomly choose a cat of the Clan and have an interaction with them."""
 
     cats_to_choose = [
@@ -66,7 +65,7 @@ def trigger_random_cat_event(cat):
     trigger_pair_event(cat, other_cat)
 
 
-def trigger_romantic_event(cat):
+def trigger_romantic_event(cat: Cat):
     """
     ONLY for cat OLDER than 12 moons.
     To increase mating chance this function is used.
@@ -138,7 +137,7 @@ def trigger_romantic_event(cat):
     trigger_pair_event(cat, other_cat, RelType.ROMANCE)
 
 
-def trigger_same_age_event(cat):
+def trigger_same_age_event(cat: Cat):
     """
     To increase the relationship amounts with cats of the same age.
     This should lead to 'friends', 'enemies' and possible mates around the same age group.
@@ -158,7 +157,7 @@ def trigger_same_age_event(cat):
             trigger_pair_event(cat, other_cat)
 
 
-def trigger_pair_event(cat, other_cat, specific_type: Optional[RelType] = None):
+def trigger_pair_event(cat: Cat, other_cat: Cat, specific_type: Optional[RelType] = None):
     """
     Triggers a relationship event between two cats
     :param cat: The main cat involved
@@ -181,7 +180,7 @@ def trigger_pair_event(cat, other_cat, specific_type: Optional[RelType] = None):
     update_events_triggered_count(other_cat)
 
 
-def trigger_group_event(cat):
+def trigger_group_event(cat: Cat):
     """
     This function triggers group events, based on the given cat.
     First it will be decided if a special type of group (found in relationship_events/group_interactions/group_types.json).
@@ -262,14 +261,14 @@ def welcome_new_cats(new_cats=None):
 # ---------------------------------------------------------------------------- #
 
 
-def update_events_triggered_count(cat):
-    if cat.ID in cat_event_triggered_counts:
-        cat_event_triggered_counts[cat.ID] += 1
+def update_events_triggered_count(cat: Cat):
+    if cat.ID in events_triggered_per_cat:
+        events_triggered_per_cat[cat.ID] += 1
     else:
-        cat_event_triggered_counts[cat.ID] = 1
+        events_triggered_per_cat[cat.ID] = 1
 
 
-def can_trigger_events(cat):
+def can_trigger_events(cat: Cat):
     """Returns if the given cat can still trigger events."""
     special_ranks = [
         CatRank.LEADER,
@@ -283,12 +282,12 @@ def can_trigger_events(cat):
     if cat.status.rank in special_ranks:
         threshold = constants.CONFIG["relationship"]["max_interaction_special"]
 
-    if cat.ID not in cat_event_triggered_counts:
+    if cat.ID not in events_triggered_per_cat:
         return True
 
-    return cat_event_triggered_counts[cat.ID] < threshold
+    return events_triggered_per_cat[cat.ID] < threshold
 
 
 def clear_trigger_dict():
     """Cleans the trigger dictionary, this function should be called every new moon."""
-    cats_triggered_events = {}
+    events_triggered_per_cat.clear()
