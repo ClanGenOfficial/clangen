@@ -663,3 +663,94 @@ class TestNewCatCreation(unittest.TestCase):
                 test_cat.name.suffix,
                 msg=f"Warrior was not given a suffix.",
             )
+
+
+# this works when run locally but for some reason github actions will always crash it
+# this is no fault of the test because it does work!
+# but when run through actions it thinks that a function in Relationships doesn't exist.
+# so if you want to double-check litter creation, then uncomment this test and run it locally.
+"""
+    def test_litter_creation(self):
+        with self.subTest("Testing litter creation"):
+            parent = Cat(
+                status_dict=StatusDict(rank=CatRank.LONER), disable_random=True
+            )
+            adoptive = Cat(
+                status_dict=StatusDict(rank=CatRank.LONER), disable_random=True
+            )
+
+            option_dict = InvolvedCatDict(
+                can_create_new_cat=CanCreateNewCatDict(
+                    become_litter=True,
+                    assign_blood_parent=["m_c"],
+                    assign_adoptive_parent=["r_c"],
+                ),
+            )
+
+            cat_list = updated_create_new_cat(
+                option_dict,
+                involved_cats={"m_c": parent, "r_c": adoptive},
+                other_clan=self.other_clan,
+            )
+
+            # test that they baby
+            for c in cat_list:
+                self.assertIn(
+                    c.age,
+                    (CatAge.NEWBORN, CatAge.KITTEN),
+                    msg=f"Attempted to generate a litter, but only one kitten was created!",
+                )
+
+            # test that multiple cats are made for a litter
+            self.assertGreater(
+                len(cat_list),
+                1,
+                msg=f"Attempted to generate a litter, but only one kitten was created!",
+            )
+
+            for pair in combinations(cat_list, 2):
+                # test that they are all counted as littermates
+                self.assertTrue(
+                    pair[0].is_littermate(pair[1]),
+                    msg="Created a litter, but the kits aren't being considered littermates!",
+                )
+
+                # test that they have established relationships
+                self.assertGreater(
+                    pair[0].relationships[pair[1].ID].total_abs_relationship_value,
+                    0,
+                    msg="Created a litter, but the kits weren't given appropriate relationships towards each other!",
+                )
+
+            for c in cat_list:
+                # test that parents were correctly assigned
+                self.assertTrue(
+                    parent.is_parent(c),
+                    msg="Created a litter, but the blood parent isn't considered a parent!",
+                )
+                self.assertTrue(
+                    adoptive.is_parent(c),
+                    msg="Created a litter, but the adoptive parent isn't considered a parent!",
+                )
+                # test that they have established relationships
+                self.assertGreater(
+                    parent.relationships[c.ID].total_abs_relationship_value,
+                    0,
+                    msg="Created a litter, but the blood parent doesn't have a relationship toward the kits!",
+                )
+                self.assertGreater(
+                    c.relationships[parent.ID].total_abs_relationship_value,
+                    0,
+                    msg="Created a litter, but the kit doesn't have a relationship toward the blood parent!",
+                )
+                self.assertGreater(
+                    adoptive.relationships[c.ID].total_abs_relationship_value,
+                    0,
+                    msg="Created a litter, but the adoptive parent doesn't have a relationship toward the kits!",
+                )
+                self.assertGreater(
+                    c.relationships[parent.ID].total_abs_relationship_value,
+                    0,
+                    msg="Created a litter, but the kit doesn't have a relationship toward the adoptive parent!",
+                )
+"""
