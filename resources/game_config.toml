@@ -22,9 +22,6 @@ dev_tools = false
   # sets the positive or negative effect that interactions will have on other cats based on personality compatibility
   compatibility_effect = 5
 
-  # Adds a passive buff to relationship events. We divide the value change by passive_influence_div and apply it to all other relationship values.
-  passive_influence_div = 3
-
   # base 1/chance of a romance interaction with another cat, when a cat has a mate
   chance_romance_not_mate = 15
 
