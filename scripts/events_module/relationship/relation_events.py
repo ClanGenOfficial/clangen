@@ -31,16 +31,16 @@ def handle_relationships(cat: Cat):
     if not cat.relationships or cat.age == CatAge.NEWBORN:
         return
 
-    random_cat_events(cat)
+    trigger_random_cat_event(cat)
 
     if not int(random.random() * get_config("relationship.chance_of_group_event")):
-        group_events(cat)
+        trigger_group_event(cat)
 
-    same_age_events(cat)
+    trigger_same_age_event(cat)
 
     # 1/16 for an additional event
     if not random.getrandbits(4):
-        romantic_events(cat)
+        trigger_romantic_event(cat)
 
     RomanticEvents.handle_mating_and_breakup(cat)
 
@@ -50,7 +50,7 @@ def handle_relationships(cat: Cat):
 # ---------------------------------------------------------------------------- #
 
 
-def random_cat_events(cat):
+def trigger_random_cat_event(cat):
     """Randomly choose a cat of the Clan and have an interaction with them."""
 
     cats_to_choose = [
@@ -66,7 +66,7 @@ def random_cat_events(cat):
     trigger_pair_event(cat, other_cat)
 
 
-def romantic_events(cat):
+def trigger_romantic_event(cat):
     """
     ONLY for cat OLDER than 12 moons.
     To increase mating chance this function is used.
@@ -138,7 +138,7 @@ def romantic_events(cat):
     trigger_pair_event(cat, other_cat, RelType.ROMANCE)
 
 
-def same_age_events(cat):
+def trigger_same_age_event(cat):
     """
     To increase the relationship amounts with cats of the same age.
     This should lead to 'friends', 'enemies' and possible mates around the same age group.
@@ -181,7 +181,7 @@ def trigger_pair_event(cat, other_cat, specific_type: Optional[RelType] = None):
     update_events_triggered_count(other_cat)
 
 
-def group_events(cat):
+def trigger_group_event(cat):
     """
     This function triggers group events, based on the given cat.
     First it will be decided if a special type of group (found in relationship_events/group_interactions/group_types.json).
