@@ -106,6 +106,8 @@ Now that UV is properly installed, you can switch to any other IDE of your choic
 
 Go to where your unzipped ClanGen source is located on your device, and open it until you get to its internal contents. Right click in an empty space within the file explorer, and select open with terminal. It'll automatically open in the correct pathing.
 
+![right clicking file explorer to "open with terminal"](https://github.com/Honeycase/clangen/blob/docs-installing/docs-resources/assets/techhelp/WIN-rightclick_terminal.png?raw=true)
+
 Follow the section "commands" below.
 
 #### Manually
@@ -290,5 +292,14 @@ You're not in path to do the command! Please closely follow the path section for
 This has something to do with execute permissions, and you can search how to give a .sh file permissions on your browser.
 
 For those who don't want to go through permissions, follow the manual way of opening the game.
+
+---
+
+**"When I try to extract the zip, it tells me I have to pay."**
+
+You should NOT have to pay anything to extract a zip folder. If you do not have a default "extract" option provided by your device, remove the program you were using previously and download [7zip](https://7-zip.org/download.html) or another free alternative.
+
+!!! note
+      MACos's system has the ability to decompress zips with just a double click, so you don't need a separate program for anything.
 
 ---
