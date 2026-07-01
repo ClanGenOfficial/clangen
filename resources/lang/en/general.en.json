@@ -1,8 +1,8 @@
 {
     "en": {
         "moons_age": {
-            "one": "(1 moon)",
-            "many": "(%{count} moons)"
+            "one": "1 moon",
+            "many": "%{count} moons"
         },
         "moons_age_in_death": {
             "one": "dead for 1 moon",

@@ -747,14 +747,14 @@ class ProfileScreen(Screens):
 
         # AGE
         if the_cat.age == CatAge.KITTEN:
-            output += i18n.t("general.kitten_profile")
+            age = i18n.t("general.kitten_profile")
         elif the_cat.age == CatAge.SENIOR:
-            output += i18n.t(f"general.{the_cat.age.value}", count=1)
+            age = i18n.t(f"general.{the_cat.age.value}", count=1)
         else:
-            output += i18n.t(f"general.{the_cat.age.value}", count=1)
-        output += " "  # space between this and the moon count
+            age = i18n.t(f"general.{the_cat.age.value}", count=1)
         # MOONS
-        output += i18n.t("general.moons_age", count=the_cat.moons)
+        output += i18n.t("screens.profile.age_label", age=age, count=the_cat.moons)
+
         if the_cat.dead:
             output += "\n"
             output += i18n.t("general.moons_age_in_death", count=the_cat.dead_for)
