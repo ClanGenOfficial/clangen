@@ -262,42 +262,6 @@ def welcome_new_cats(new_cats=None):
 # ---------------------------------------------------------------------------- #
 
 
-def cats_with_relationship_constraints(main_cat, constraint):
-    """Returns a list of cats, where the relationship from main_cat towards the cat fulfill the given constraints."""
-    cat_list = list(
-        filter(
-            lambda cat: cat.status.alive_in_player_clan,
-            Cat.all_cats.values(),
-        )
-    )
-    cat_list.remove(main_cat)
-    filtered_cat_list = []
-
-    for inter_cat in cat_list:
-        if inter_cat.ID == main_cat.ID:
-            continue
-
-        cat_from = main_cat
-        cat_to = inter_cat
-
-        if cat_to.ID not in cat_from.relationships:
-            cat_from.create_one_relationship(cat_to)
-            if cat_from.ID not in cat_to.relationships:
-                cat_to.create_one_relationship(cat_from)
-            continue
-
-        passed = filter_relationship_type(
-            group=[cat_from, cat_to], filter_types=constraint
-        )
-
-        if not passed:
-            continue
-
-        filtered_cat_list.append(inter_cat)
-
-    return filtered_cat_list
-
-
 def update_events_triggered_count(cat):
     if cat.ID in cat_event_triggered_counts:
         cat_event_triggered_counts[cat.ID] += 1
