@@ -1,3 +1,216 @@
 [
-    
+    {
+    "patrol_id": "fst_med_lb_frozenpaws",
+    "biome": ["forest"],
+    "season": ["leaf-bare"],
+    "types": ["herb_gathering"],
+    "tags": [],
+    "patrol_art": "gen_hunt_leafbaresnowstorm",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {
+        "healer cats": [1, 6]
+    },
+    "frequency": 4,
+    "chance_of_success": 20,
+    "intro_text": "In the snowy forest, p_l's patrol struggles to track down any herbs that have survived leaf-bare's frost.",
+    "decline_text": "p_l calls off the patrol before any cat can suffer the effects of the cold.",
+    "success_outcomes": [
+        {
+            "text": "The patrol perseveres, and r_c uncovers a few wilting stalks of marigold under a fallen log.",
+            "exp": 20,
+            "frequency": 4,
+            "herbs": ["marigold"],
+            "relationships": [
+                {
+                    "cats_to": ["r_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "cat_from's trust in cat_to grew when cat_to was able to find herbs during leaf-bare."
+                    }
+                }
+            ],
+            "art": "med_general_intro"
+        },
+        {
+            "text": "The patrol perseveres, and p_l finds some half-frozen juniper berries growing on a bush in a sheltered copse.",
+            "exp": 20,
+            "frequency": 4,
+            "herbs": ["juniper"],
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "cat_from's trust in cat_to grew when cat_to was able to find herbs during leaf-bare."
+                    }
+                }
+            ],
+            "art": "med_general_intro"
+        },
+        {
+            "text": "The patrol perseveres, and p_l finds some dry rosemary and thyme growing beneath the thick roots of an oak.",
+            "exp": 20,
+            "frequency": 4,
+            "herbs": ["rosemary", "thyme"],
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "cat_from's trust in cat_to grew when cat_to was able to find herbs during leaf-bare."
+                    }
+                }
+            ],
+            "art": "med_general_intro"
+        },
+        {
+            "text": "s_c is certain {PRONOUN/s_c/subject} caught a whiff of catmint. {PRONOUN/s_c/subject/CAP} {VERB/s_c/convince/convinces} the patrol to keep looking even as it grows dark. s_c is triumphant in the end, but these few scraggly catmint leaves cost the patrol frozen paws.",
+            "exp": 20,
+            "frequency": 2,
+            "herbs": ["catmint"],
+            "stat_skill": ["SENSE,1"],
+            "relationships": [
+                {
+                    "cats_to": ["p_l"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "cat_from's trust in cat_to grew when cat_to was able to find herbs during leaf-bare."
+                    }
+                }
+            ],
+            "injury": [
+               {
+                "cats": ["patrol"],
+                "injuries": ["frostbite"],
+                "scars": ["FROSTMITT", "FROSTSOCK"]
+               }
+            ],
+            "history_text": {
+                "death": "m_c succumbed to frostbite after searching for catmint in the snow.",
+                "scar": "m_c was scarred by frostbite after searching for catmint in the snow."
+            },
+            "art": "med_general_intro"
+        },
+        {
+            "text": "s_c reasons that some herbs are less affected by the cold and the patrol should take this chance to stock up on them. The cats return laden with cobwebs and burdock root.",
+            "exp": 20,
+            "frequency": 4,
+            "stat_skill": ["CLEVER,0", "HEALER,0", "INSIGHTFUL,0"],
+            "herbs": ["cobwebs", "burdock"],
+            "relationships": [
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["trust"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "cat_from approved of cat_to's plan to gather all-season herbs in leaf-bare."
+                    }
+                }
+            ],
+            "art": "gen_med_cat_cobwebs_success"
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "The patrol is unable to find much under the recent snowfall. They comfort each other as they walk home.",
+            "exp": 0,
+            "frequency": 4,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["comfort", "like"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "cat_from and cat_to comforted each other after failing to find herbs in leaf-bare."
+                    }
+                }
+            ],
+            "art": "gen_comfort_med_med"
+        },
+        {
+            "text": "The frost has set in too deep, and no life remains on the forest floor. The patrol commiserates about the difficulty of herb-gathering in leaf-bare as they head home.",
+            "exp": 0,
+            "frequency": 4,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["comfort", "like"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "cat_from and cat_to comforted each other after failing to find herbs in leaf-bare."
+                    }
+                }
+            ],
+            "art": "gen_comfort_med_med"
+        },
+        {
+            "text": "No herbs are turned up by the patrol's search. The cats try not to let their short tempers get the best of them as they head home.",
+            "exp": 0,
+            "frequency": 2,
+            "relationships": [
+                {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["like"],
+                    "amount": -5,
+                    "log": {
+                        "cats_from": "cat_from and cat_to felt irritated with each other after failing to find herbs in leaf-bare."
+                    }
+                }
+            ],
+            "art": "gen_bord_pissed_med"
+        },
+        {
+            "min_max_status": {"normal adult": [1, 4], "healer cats": [2, 6]},
+            "text": "p_l and r_c get snippy with each other as the day wears on. s_c reminds them that neither cat is responsible for leaf-bare's scarcity, and their tempers cool. Still, no herbs turn up.",
+            "exp": 0,
+            "frequency": 2,
+            "stat_skill": ["MEDIATOR,1"],
+            "can_have_stat": ["not_pl_rc"],
+            "relationships": [
+                {
+                    "cats_to": ["r_c"],
+                    "cats_from": ["p_l"],
+                    "mutual": true,
+                    "values": ["comfort"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "cat_from and cat_to made amends after getting snippy with each other on patrol."
+                    }
+                },
+                {
+                    "cats_to": ["s_c"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["respect", "like"],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "cat_from appreciated how cat_to de-escalated a situation during an herb-gathering patrol."
+                    }
+                }
+            ],
+            "art": "gen_speaking_cat_med"
+        }
+    ]
+}
 ]

@@ -1,9 +1,17 @@
 {
   "en": {
-    "neverending_cold": "Season is permanently leaf-bare",
-    "scarce_prey": "Fresh-kill is much harder to find",
-    "persistent_twolegs": "Twolegs target your Clan at a higher rate",
-    "endless_strife": "a war that never ends",
-    "blighted_herbs": "herbs expire more quickly"
+    "environment_placeholder0": "this is placeholder mewoowowow moewo mew meow mewowee moew",
+    "environment_placeholder1": "this is placeholder mewoowowow moewo mew meow mewowee moew",
+    "environment_placeholder2": "this is placeholder mewoowowow moewo mew meow mewowee moew",
+    "danger_placeholder0": "this is placeholder mewoowowow moewo mew meow mewowee moewmewoowowow moewo mew meow mewowee moew",
+    "danger_placeholder1": "this is placeholder mewoowowow moewo mew meow mewowee moewmewoowowow moewo mew meow mewowee moew",
+    "danger_placeholder2": "this is placeholder mewoowowow moewo mew meow mewowee moewmewoowowow moewo mew meow mewowee moew",
+    "danger_placeholder3": "this is placeholder mewoowowow moewo mew meow mewowee moewmewoowowow moewo mew meow mewowee moew",
+    "origin_placeholder0": "this is placeholder mewoowowow moewo mew ",
+    "origin_placeholder1": "this is placeholder mewoowowow moewo mew ",
+    "origin_placeholder2": "this is placeholder mewoowowow moewo mew ",
+    "behavior_placeholder0": "this is placeholder mewoowowow moewo mew meow mewowee moewmewoowowow moewo mew meow mewowee moewmewoowowow moewo mew meow mewowee moewmewoowowow moewo mew meow mewowee moew",
+    "behavior_placeholder1": "this is placeholder mewoowowow moewo mew meow mewowee moewmewoowowow moewo mew meow mewowee moewmewoowowow moewo mew meow mewowee moewmewoowowow moewo mew meow mewowee moew",
+    "behavior_placeholder2": "this is placeholder mewoowowow moewo mew meow mewowee moewmewoowowow moewo mew meow mewowee moewmewoowowow moewo mew meow mewowee moewmewoowowow moewo mew meow mewowee moewowow moewo mew meow mewowee moewmewoowowow moewo mew meow mewowee moew"
   }
 }

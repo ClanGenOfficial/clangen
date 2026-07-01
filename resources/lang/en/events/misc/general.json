@@ -13007,7 +13007,7 @@
             "changed": -8
         }
     },
-        {
+    {
         "event_id": "gen_misc_war_gatheringgossipers",
         "location": [
             "any"
@@ -15194,5 +15194,356 @@
         "relationship_status": ["runs_from_only"]
     },
     "r_c": {}
+},
+    {
+  "event_id": "gen_rel_enjoys1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c always meows a morning greeting to r_c.",
+  "m_c": {
+    "relationship_status": ["enjoys_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_enjoys2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c frequently shares tongues with r_c.",
+  "m_c": {
+    "relationship_status": ["enjoys_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_enjoys3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c enjoys r_c's company.",
+  "m_c": {
+    "relationship_status": ["enjoys_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_respects1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c rarely disagrees with r_c.",
+  "m_c": {
+    "relationship_status": ["respects_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_respects2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c follows r_c's lead on patrol.",
+  "m_c": {
+    "relationship_status": ["respects_only"],
+      "status": ["-kitten", "-elder"]
+  },
+  "r_c": {
+      "status": ["-kitten", "-elder"]
+  }
+},
+    {
+  "event_id": "gen_rel_respects3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c looks up to r_c.",
+  "m_c": {
+    "relationship_status": ["respects_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_trusts1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c trusts r_c's judgment.",
+  "m_c": {
+    "relationship_status": ["trusts_only"]
+  },
+  "r_c": {}
+},
+     {
+  "event_id": "gen_rel_trusts2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c is at ease with r_c around.",
+  "m_c": {
+    "relationship_status": ["trusts_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_trusts3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c always has r_c's back on patrol.",
+  "m_c": {
+    "relationship_status": ["trusts_only"],
+      "status": ["-kitten", "-elder"]
+  },
+  "r_c": {
+      "status": ["-kitten", "-elder"]
+  }
+},
+    {
+  "event_id": "gen_rel_understands1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c understands what drives r_c.",
+  "m_c": {
+    "relationship_status": ["understands_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_understands2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c can often read r_c's moods.",
+  "m_c": {
+    "relationship_status": ["understands_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_understands3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c can often predict r_c's course of action.",
+  "m_c": {
+    "relationship_status": ["understands_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_adores1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c finds r_c charming.",
+  "m_c": {
+    "relationship_status": ["adores_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_adores2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c feels flustered around r_c.",
+  "m_c": {
+    "relationship_status": ["adores_only"]
+  },
+  "r_c": {}
+},
+     {
+  "event_id": "gen_rel_adores3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c likes being close with r_c.",
+  "m_c": {
+    "relationship_status": ["adores_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_cherishes1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c and r_c spend all their spare time together.",
+  "m_c": {
+    "relationship_status": ["cherishes_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_cherishes2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c holds r_c dear.",
+  "m_c": {
+    "relationship_status": ["cherishes_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_cherishes3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c cannot imagine {PRONOUN/m_c/poss} life without r_c.",
+  "m_c": {
+    "relationship_status": ["cherishes_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_admires1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c strives to be more like r_c.",
+  "m_c": {
+    "relationship_status": ["admires_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_admires2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "r_c always manages to impress m_c.",
+  "m_c": {
+    "relationship_status": ["admires_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_admires3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c considers r_c one of the finest cats in c_n.",
+  "m_c": {
+    "relationship_status": ["admires_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_confides_in1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c confides in r_c after a stressful day.",
+  "m_c": {
+    "relationship_status": ["confides_in_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_confides_in2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c knows c_n is safe in r_c's paws.",
+  "m_c": {
+    "relationship_status": ["confides_in_only"]
+  },
+  "r_c": {
+      "status": ["leader", "deputy", "medicine cat"]
+  }
+},
+    {
+  "event_id": "gen_rel_confides_in3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c trusts r_c with {PRONOUN/m_c/poss} most vulnerable thoughts.",
+  "m_c": {
+    "relationship_status": ["confides_in_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_knows_deeply1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c knows r_c better than almost anyone.",
+  "m_c": {
+    "relationship_status": ["knows_deeply_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_knows_deeply2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c can tell what r_c is thinking at a glance.",
+  "m_c": {
+    "relationship_status": ["knows_deeply_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_knows_deeply3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c knows r_c by heart.",
+  "m_c": {
+    "relationship_status": ["knows_deeply_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_loves1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c's heart belongs to r_c.",
+  "m_c": {
+    "relationship_status": ["loves_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_loves2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c wants to share everything in life with r_c.",
+  "m_c": {
+    "relationship_status": ["loves_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_loves3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c sighs and purrs and the mere thought of r_c.",
+  "m_c": {
+    "relationship_status": ["loves_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_loves4",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c and r_c twine tails when they pass by each other.",
+  "m_c": {
+    "relationship_status": ["loves_only"]
+  },
+  "r_c": {
+      "relationship_status": ["loves_only"]
+  }
 }
 ]

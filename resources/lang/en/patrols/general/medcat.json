@@ -12235,7 +12235,7 @@
                 "frequency": 1
             },
             {
-                "text": "s_c is able to find the sought-after herb quickly, as {PRONOUN/s_c/subject} can easily spot the purple blossoms among the other plants. {PRONOUN/s_c/subject/CAP} point it out to app1 and the two cats bring back a great haul of betony for the herb stores. They're even able to pick out a goldenrod bush on {PRONOUN/s_c/poss} path home.",
+                "text": "s_c is able to find the sought-after herb quickly, as {PRONOUN/s_c/subject} can easily spot the purple blossoms among the other plants. {PRONOUN/s_c/subject/CAP} point it out to app1 and the two cats bring back a great haul of betony for the herb stores. They're even even able to pick out a goldenrod bush on their path home.",
                 "exp": 20,
                 "stat_skill": [
                     "SENSE,2"
@@ -12375,7 +12375,7 @@
                 "frequency": 1
             },
             {
-                "text": "s_c is able to find the sought-after herb quickly, as {PRONOUN/s_c/subject} can easily spot the purple blossoms among the other plants, and {PRONOUN/s_c/subject} {VERB/s_c/organize/organizes} the patrol to bring back a great haul of betony for the herb stores. {PRONOUN/p_l/subject/CAP}'re even able to pick out a goldenrod bush on {PRONOUN/s_c/poss} path home.",
+                "text": "s_c is able to find the sought-after herb quickly, as {PRONOUN/s_c/subject} can easily spot the purple blossoms among the other plants, and {PRONOUN/s_c/subject} {VERB/s_c/organize/organizes} the patrol to bring back a great haul of betony for the herb stores. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} even able to pick out a goldenrod bush on {PRONOUN/s_c/poss} path home.",
                 "exp": 10,
                 "stat_skill": [
                     "SENSE,2"

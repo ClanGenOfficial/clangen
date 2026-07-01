@@ -1,6 +1,18 @@
 {
-  "card1": {
-    "card_art": "file_path",
+  "behavior_placeholder0": {
+    "card_art": "behavior/sorrow.png",
+    "modifiers": {
+      "mod_name": 1
+    }
+  },
+  "behavior_placeholder1": {
+    "card_art": "behavior/fate.png",
+    "modifiers": {
+      "mod_name": 1
+    }
+  },
+  "behavior_placeholder2": {
+    "card_art": "behavior/resolute.png",
     "modifiers": {
       "mod_name": 1
     }

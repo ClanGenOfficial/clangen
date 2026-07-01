@@ -1,9 +1,17 @@
 {
   "en": {
-    "neverending_cold": "Neverending Cold",
-    "scarce_prey": "Scarce Prey",
-    "persistent_twolegs": "Persistent Twolegs",
-    "endless_strife": "Endless Strife",
-    "blighted_herbs": "Blighted Herbs"
+    "environment_placeholder0": "Environment Placeholder 1",
+    "environment_placeholder1": "Environment Placeholder 2",
+    "environment_placeholder2": "Environment Placeholder 3",
+    "danger_placeholder0": "Danger Placeholder 1",
+    "danger_placeholder1": "Danger Placeholder 2",
+    "danger_placeholder2": "Danger Placeholder 3",
+    "danger_placeholder3": "Danger Placeholder 4",
+    "origin_placeholder0": "Origin Placeholder 1",
+    "origin_placeholder1": "Origin Placeholder 2",
+    "origin_placeholder2": "Origin Placeholder 3",
+    "behavior_placeholder0": "Behavior Placeholder 1",
+    "behavior_placeholder1": "Behavior Placeholder 2",
+    "behavior_placeholder2": "Behavior Placeholder 3"
   }
 }
