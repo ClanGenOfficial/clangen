@@ -157,7 +157,9 @@ def trigger_same_age_event(cat: Cat):
             trigger_pair_event(cat, other_cat)
 
 
-def trigger_pair_event(cat: Cat, other_cat: Cat, specific_type: Optional[RelType] = None):
+def trigger_pair_event(
+    cat: Cat, other_cat: Cat, specific_type: Optional[RelType] = None
+):
     """
     Triggers a relationship event between two cats
     :param cat: The main cat involved
