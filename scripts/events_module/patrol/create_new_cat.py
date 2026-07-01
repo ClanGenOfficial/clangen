@@ -257,8 +257,11 @@ def _assign_backstory(created_cat, option_dict):
                 else choice(categories["loner_backstories"])
             )
         elif social == CatSocial.ROGUE:
-            # there's no baby category for these for some reason...
-            created_cat.backstory = choice(categories["rogue_backstories"])
+            created_cat.backstory = (
+                choice(categories["baby_rogue_backstories"])
+                if baby
+                else choice(categories["rogue_backstories"])
+            )
         elif social == CatSocial.KITTYPET:
             created_cat.backstory = (
                 choice(categories["baby_kittypet_backstories"])

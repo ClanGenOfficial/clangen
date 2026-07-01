@@ -540,9 +540,9 @@ class Status:
         if not self.group:
             standing_with_past_group = None
 
-        # if we're moving an afterlife cat, they don't change rank
         if become_rank:
             new_rank = become_rank
+        # if we're moving an afterlife cat, they don't change rank
         elif self.group.is_afterlife():
             new_rank = self.rank
         # adding a cat who has been in a clan in the past, they will take their old rank if possible
