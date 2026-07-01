@@ -16,6 +16,7 @@ from scripts.config import get_config
 from scripts.events_module.parameter_dicts import InvolvedCatDict
 from scripts.game_structure import game, constants
 
+
 # called the "updated" create_new_cat so that it's not conflicting with the existing create_new_cat
 # eventually it should fully replace the old func and get renamed
 def updated_create_new_cat(
