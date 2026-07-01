@@ -76,8 +76,9 @@
         {
             "text": "s_c is certain {PRONOUN/s_c/subject} caught a whiff of catmint. {PRONOUN/s_c/subject/CAP} {VERB/s_c/convince/convinces} the patrol to keep looking even as it grows dark. s_c is triumphant in the end, but these few scraggly catmint leaves cost the patrol frozen paws.",
             "exp": 20,
-            "frequency": 4,
+            "frequency": 2,
             "herbs": ["catmint"],
+            "stat_skill": ["SENSE,1"],
             "relationships": [
                 {
                     "cats_to": ["p_l"],
@@ -93,7 +94,7 @@
             "injury": [
                {
                 "cats": ["patrol"],
-                "injuries": ["frostbite", "shivering"],
+                "injuries": ["frostbite"],
                 "scars": ["FROSTMITT", "FROSTSOCK"]
                }
             ],
