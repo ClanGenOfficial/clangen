@@ -297,7 +297,7 @@ def _assign_health(created_cat, option_dict):
         elif condition in PERMANENT:
             created_cat.get_permanent_condition(
                 name=condition,
-                born_with=option_dict["health"].get("must_be_congenital"),
+                born_with=option_dict["health"].get("must_be_congenital", False),
             )
             if condition in ("lost a leg", "born without a leg"):
                 created_cat.pelt.scars = (*created_cat.pelt.scars, "NOPAW")

@@ -13,6 +13,7 @@ from scripts.events_module.parameter_dicts import (
     StandingDict,
     CanCreateNewCatDict,
     StatDict,
+    HealthDict,
 )
 from scripts.events_module.patrol.create_new_cat import updated_create_new_cat
 from scripts.game_structure import game
@@ -505,14 +506,99 @@ class TestNewCatCreation(unittest.TestCase):
 
     def test_health_assignment(self):
         # test that injury is applied
+        with self.subTest("Testing injury application"):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat={}, health=HealthDict(condition=["sore"])
+            )
+
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={}, other_clan=self.other_clan
+            )
+            test_cat: Cat = cat_list[0]
+
+            self.assertIn(
+                "sore",
+                test_cat.injuries,
+                msg=f"Sore was not assigned correctly as an injury.",
+            )
 
         # test that illness is applied
+        with self.subTest("Testing illness application"):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat={}, health=HealthDict(condition=["greencough"])
+            )
+
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={}, other_clan=self.other_clan
+            )
+            test_cat: Cat = cat_list[0]
+
+            self.assertIn(
+                "greencough",
+                test_cat.illnesses,
+                msg=f"Greencough was not assigned correctly as an illness.",
+            )
 
         # test that perm condition is applied and can be congenital/not congenital
+        with self.subTest("Testing non-congenital perm condition application"):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat={},
+                health=HealthDict(condition=["crooked jaw"], must_be_congenital=False),
+            )
 
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={}, other_clan=self.other_clan
+            )
+            test_cat: Cat = cat_list[0]
+
+            self.assertIn(
+                "crooked jaw",
+                test_cat.permanent_condition,
+                msg=f"crooked jaw was not assigned correctly as a perm condition.",
+            )
+            self.assertFalse(
+                test_cat.permanent_condition["crooked jaw"]["born_with"],
+                msg=f"crooked jaw was not assigned correctly as non-congenital.",
+            )
+        with self.subTest("Testing congenital perm condition application"):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat={},
+                health=HealthDict(condition=["crooked jaw"], must_be_congenital=True),
+            )
+
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={}, other_clan=self.other_clan
+            )
+            test_cat: Cat = cat_list[0]
+
+            self.assertIn(
+                "crooked jaw",
+                test_cat.permanent_condition,
+                msg=f"crooked jaw was not assigned correctly as a perm condition.",
+            )
+            self.assertTrue(
+                test_cat.permanent_condition["crooked jaw"]["born_with"],
+                msg=f"crooked jaw was not assigned correctly as non-congenital.",
+            )
         # test scar application for missing limbs
+        with self.subTest(
+            "Testing scar application in response to perm condition application"
+        ):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat={},
+                health=HealthDict(condition=["lost a leg"]),
+            )
 
-        pass
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={}, other_clan=self.other_clan
+            )
+            test_cat: Cat = cat_list[0]
+
+            self.assertIn(
+                "NOPAW",
+                test_cat.pelt.scars,
+                msg=f"NOPAW was not assigned correctly as a scar for lost a leg.",
+            )
 
     def test_backstory_assignment(self):
         # test that a category can be used for assignment
