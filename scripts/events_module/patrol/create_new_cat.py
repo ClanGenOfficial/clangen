@@ -31,6 +31,11 @@ def updated_create_new_cat(
     status = StatusDict()
     if option_dict.get("status"):
         status["rank"] = CatRank(choice(option_dict["status"]))
+        # if no group given and the rank is a clancat, then assign to other clan
+        if not option_dict.get("group") and status["rank"].is_any_clancat_rank():
+            status["group_ID"] = _get_id_for_group(
+                [CatGroup.OTHER_CLAN], involved_cats, other_clan
+            )
     if option_dict.get("age"):
         status["age"] = CatAge(choice(option_dict["age"]))
     if option_dict.get("group"):

@@ -2,6 +2,7 @@ import unittest
 from itertools import combinations
 
 from scripts.cat.cats import Cat
+from scripts.cat.constants import BACKSTORIES
 from scripts.cat.enums import CatRank, CatAge, CatGroup, CatStanding
 from scripts.cat.skills import SkillPath
 from scripts.cat.sprites.load_sprites import sprites
@@ -602,16 +603,147 @@ class TestNewCatCreation(unittest.TestCase):
 
     def test_backstory_assignment(self):
         # test that a category can be used for assignment
+        with self.subTest("Testing backstory assignment using category"):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat={}, backstory=["outsider_roots_backstories"]
+            )
+
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={}, other_clan=self.other_clan
+            )
+            test_cat = cat_list[0]
+
+            self.assertIn(
+                test_cat.backstory,
+                BACKSTORIES["backstory_categories"]["outsider_roots_backstories"],
+                msg=f"Assigned backstory is not from the required category.",
+            )
 
         # test that normal names can be used
+        with self.subTest("Testing backstory assignment using name"):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat={}, backstory=["halfclan1"]
+            )
+
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={}, other_clan=self.other_clan
+            )
+            test_cat = cat_list[0]
+
+            self.assertEqual(
+                test_cat.backstory,
+                "halfclan1",
+                msg=f"Assigned backstory is not correct.",
+            )
 
         # test that various socials get appropriate backstories when no specific backstory was applied
+        ranks = [CatRank.LONER, CatRank.ROGUE, CatRank.KITTYPET]
+        for rank in ranks:
+            with self.subTest(
+                "Test backstory assignment when no backstory given - adult - no clan"
+            ):
+                option_dict = InvolvedCatDict(
+                    can_create_new_cat={}, status=[rank], age=[CatAge.ADULT]
+                )
 
-        pass
+                cat_list = updated_create_new_cat(
+                    option_dict, involved_cats={}, other_clan=self.other_clan
+                )
+                test_cat = cat_list[0]
+
+                self.assertIn(
+                    test_cat.backstory,
+                    BACKSTORIES["backstory_categories"][f"{rank}_backstories"],
+                    msg=f"Assigned backstory is not from the required category.",
+                )
+
+        with self.subTest(
+            "Test backstory assignment when no backstory given - adult - other clancat"
+        ):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat={}, status=[CatRank.WARRIOR], age=[CatAge.ADULT]
+            )
+
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={}, other_clan=self.other_clan
+            )
+            test_cat = cat_list[0]
+
+            self.assertIn(
+                test_cat.backstory,
+                BACKSTORIES["backstory_categories"][f"former_clancat_backstories"],
+                msg=f"Assigned backstory is not from the required category.",
+            )
+
+        ranks = [CatRank.LONER, CatRank.KITTYPET]
+        for rank in ranks:
+            with self.subTest(
+                "Test backstory assignment when no backstory given - baby - no clan"
+            ):
+                option_dict = InvolvedCatDict(
+                    can_create_new_cat={}, status=[rank], age=[CatAge.KITTEN]
+                )
+
+                cat_list = updated_create_new_cat(
+                    option_dict, involved_cats={}, other_clan=self.other_clan
+                )
+                test_cat = cat_list[0]
+
+                self.assertIn(
+                    test_cat.backstory,
+                    BACKSTORIES["backstory_categories"][f"baby_{rank}_backstories"],
+                    msg=f"Assigned backstory is not from the required category.",
+                )
+
+        with self.subTest(
+            "Test backstory assignment when no backstory given - baby - other clan"
+        ):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat={}, status=[CatRank.KITTEN]
+            )
+
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={}, other_clan=self.other_clan
+            )
+            test_cat = cat_list[0]
+
+            self.assertIn(
+                test_cat.backstory,
+                BACKSTORIES["backstory_categories"][f"baby_clancat_backstories"],
+                msg=f"Assigned backstory is not from the required category.",
+            )
 
     def test_name_assignment(self):
         # test that non-clan cats only get a prefix
+        with self.subTest("Testing non-clan name assignment"):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat={},
+                status=[CatRank.LONER],
+            )
+
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={}, other_clan=self.other_clan
+            )
+            test_cat = cat_list[0]
+
+            self.assertFalse(
+                test_cat.name.suffix,
+                msg=f"Loner was given a clan name.",
+            )
 
         # test that clan cats get a full clan name
+        with self.subTest("Testing clan name assignment"):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat={},
+                status=[CatRank.WARRIOR],
+            )
 
-        pass
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={}, other_clan=self.other_clan
+            )
+            test_cat = cat_list[0]
+
+            self.assertTrue(
+                test_cat.name.suffix,
+                msg=f"Warrior was not given a suffix.",
+            )
