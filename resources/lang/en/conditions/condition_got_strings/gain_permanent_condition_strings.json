@@ -123,8 +123,8 @@
             "m_c jumps, then realizes that it was just a leaf blowing in the wind. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} exhausted, {PRONOUN/m_c/poss} memories like a trap that rears up to bite {PRONOUN/m_c/object} whenever {PRONOUN/m_c/subject} {VERB/m_c/relax/relaxes}."
         ],
         "absent": [
-            "m_c never really came around again after going into shock.",
-            "m_c fails to respond to r_c yet again, leading {PRONOUN/r_c/subject} to accept m_c is never really coming back."
+            "m_c fails to respond to r_c yet again, leading {PRONOUN/r_c/subject} to accept m_c is never really coming back.",
+            "m_c never really came around again after going into shock."
         ],
         "selective mutism": [
             "m_c's nerves seem to have eased, until {PRONOUN/m_c/poss} voice gets caught in {PRONOUN/m_c/poss} chest.",
@@ -160,10 +160,10 @@
             "m_c begrudgingly accepts that the horrible headaches {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been having might be a permanent side effect of {PRONOUN/m_c/poss} head damage."
         ],
         "absent": [
-            "m_c hasn't been the same since the head injury. {PRONOUN/m_c/subject/CAP} {VERB/m_c/seem/seems} like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} living in a daze.",
             "r_c has to repeat m_c's name several times to get {PRONOUN/m_c/poss} attention, worried about {PRONOUN/m_c/poss} head injury.",
-            "m_c has trouble remembering where {PRONOUN/m_c/poss} nest is. r_c takes note; m_c has been fading fast since the head injury.",
-            "m_c got lost in the camp too many times. r_c wants to keep {PRONOUN/m_c/object} at camp for much longer."
+            "m_c has trouble remembering where {PRONOUN/m_c/poss} nest is. r_c takes note — m_c has been fading fast since the head injury.",
+            "m_c got lost in the camp too many times. r_c wants to keep {PRONOUN/m_c/object} at camp for much longer.",
+            "m_c hasn't been the same since the head injury. {PRONOUN/m_c/subject/CAP} {VERB/m_c/seem/seems} like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} living in a daze."
         ]
     },
     "damaged eyes": {
@@ -225,9 +225,9 @@
     },
     "a festering wound": {
         "strange lump": [
-            "A lump has appeared under m_c's wound. {PRONOUN/m_c/subject/CAP} {VERB/m_c/aren't/isn't} sure that's a good sign.",
             "m_c complains about being unable to sleep properly, leading r_c to find a strange lump under the wound.",
-            "m_c won't let r_c see the new lump that appeared on {PRONOUN/m_c/poss} body."
+            "m_c won't let r_c see the new lump that appeared on {PRONOUN/m_c/poss} body.",
+            "A lump has appeared under m_c's wound. {PRONOUN/m_c/subject/CAP} {VERB/m_c/aren't/isn't} sure that's a good sign."
         ]
     },
     "sore throat": {
