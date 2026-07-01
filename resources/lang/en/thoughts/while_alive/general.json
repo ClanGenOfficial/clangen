@@ -1397,9 +1397,9 @@
     "strings": [
         "Wonders if {PRONOUN/m_c/subject} {VERB/m_c/are/is} a good parent",
         "Worries about r_c's health",
-        "Worries about {PRONOUN/m_c/poss} kits' futures",
-        "Wishes {PRONOUN/m_c/subject} felt like a better parent",
-        "Hopes StarClan watches over {PRONOUN/m_c/poss} kits"
+        "Worries about {PRONOUN/m_c/poss} kit's futures",
+        "Worries {PRONOUN/m_c/subject} {VERB/m_c/are/is} a bad parent",
+        "Hopes StarClan watches over r_c"
     ],
     "involved_cats": {
         "m_c": {},
@@ -1417,17 +1417,16 @@
     {
     "id": "gen_parent_adultkit",
     "strings": [
-        "Misses when {PRONOUN/m_c/poss} kits were young",
-        "Is so proud of {PRONOUN/m_c/poss} kits",
-        "Worries about {PRONOUN/m_c/poss} kits' futures",
+        "Misses when r_c was young",
+        "Is so proud of r_c",
+        "Worries about {PRONOUN/m_c/poss} kit's future",
         "Is concerned about r_c's life choices",
-        "Hopes {PRONOUN/m_c/poss} kits know they're loved",
-        "Fears {PRONOUN/m_c/subject} failed {PRONOUN/m_c/poss} kits",
+        "Hopes r_c know they're loved",
         "Wishes {PRONOUN/m_c/subject} had been more patient with r_c",
         "Wishes r_c took better care of {PRONOUN/r_c/self}",
         "Wishes r_c would share tongues with {PRONOUN/m_c/object} more",
-        "Misses when {PRONOUN/m_c/poss} kits needed {PRONOUN/m_c/object}",
-        "Can't believe how quickly {PRONOUN/m_c/poss} kits grew up"
+        "Misses when r_c needed {PRONOUN/m_c/object}",
+        "Can't believe how quickly r_c grew up"
     ],
     "involved_cats": {
         "m_c": {},
@@ -1447,10 +1446,10 @@
     {
     "id": "gen_parent_youngkit",
     "strings": [
-        "Is exhausted chasing after {PRONOUN/m_c/poss} kits",
-        "Is snuggled in {PRONOUN/m_c/poss} nest with {PRONOUN/m_c/poss} kits",
+        "Is exhausted chasing after r_c",
+        "Is snuggled in {PRONOUN/m_c/poss} nest with {PRONOUN/m_c/poss} litter",
         "Grooms r_c while {PRONOUN/r_c/subject} squeak complaints",
-        "Doesn't want {PRONOUN/m_c/poss} kits to grow up and face the dangers of the world"
+        "Doesn't want r_c to grow up and face the dangers of the world"
     ],
     "involved_cats": {
         "m_c": {},
