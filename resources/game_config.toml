@@ -831,13 +831,12 @@ dev_tools = false
   # the bonus prey a hunter skill cat will catch according to exp rank
   [prey.hunter_exp_bonus]
       untrained = 0.1
-      trainee = 1
+      learning = 1
       prepared = 2
-      competent = 3
+      capable = 3
       proficient = 4
-      skilled = 5
-      expert = 6
-      master = 7
+      adept = 5
+      masterful = 6
 
   # hunter_exp_bonus number will be multiplied by the number matching their skill tier.
   # for example, an expert tier 2 hunter will catch an extra 6 * 2 (12 total) prey

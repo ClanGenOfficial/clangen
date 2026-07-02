@@ -45,9 +45,10 @@
             "The tick on m_c was left for far too long. The area is now swollen and warm."
         ],
         "tick fever": [
-        "r_c worries over m_c, looking for any tick-heads an apprentice might have left, but {PRONOUN/r_c/subject} can only find a distinctive rash. m_c knows what it means: tick fever.",
-        "m_c's heart sinks as {PRONOUN/m_c/poss} fur starts falling out. The apprentices must have missed a tick. r_c confirms it's tick fever.",
-        "m_c complains about a new rash, going silent when r_c finds a tick-head. {PRONOUN/m_c/subject/CAP} has tick fever."
+        "r_c worries over m_c, looking for any tick-heads an apprentice might have left, but {PRONOUN/r_c/subject} can only find a distinctive rash. m_c knows what it means — tick fever.",
+        "m_c's heart sinks as {PRONOUN/m_c/poss} fur starts falling out. The apprentices must have missed a tick — r_c confirms it's tick fever.",
+        "m_c complains about a new rash, going silent when r_c finds a tick-head. {PRONOUN/m_c/subject/CAP} has tick fever.",
+        "m_c is caught scratching at a rash, pulling out small clumps of loose fur. It seems {PRONOUN/m_c/subject} {VERB/m_c/have/has} developed tick fever."
     ]
     },
     "broken jaw": {
@@ -159,8 +160,8 @@
             "m_c pants, helplessly searching for a cooler place to lie and nap. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} utterly exhausted by this heat."
         ],
         "sore throat": [
-            "The lack of water has left m_c's throat dry and sore.",
-            "r_c has tried to get some water into m_c, but {PRONOUN/m_c/poss} thirst has left {PRONOUN/m_c/poss} throat dry and scratchy."
+            "r_c has tried to get some water into m_c, but {PRONOUN/m_c/poss} thirst has left {PRONOUN/m_c/poss} throat dry and scratchy.",
+            "The lack of water has left m_c's throat dry and sore."
         ]
     },
     "damaged eyes": {
