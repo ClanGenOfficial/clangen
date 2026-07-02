@@ -4,7 +4,9 @@ from typing import List, Union, Dict
 
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath
+from scripts.events_module.event_filters import get_frequency, find_new_frequency
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
+from scripts.events_module.patrol.patrol_outcome_new import EventOutcome
 from scripts.game_structure import constants
 
 
@@ -29,10 +31,10 @@ class PatrolEvent:
         intro_text: str = "",
         decline_text: str = "",
         chance_of_success=0,
-        success_outcomes: List[PatrolOutcome] = None,
-        fail_outcomes: List[PatrolOutcome] = None,
-        antag_success_outcomes: List[PatrolOutcome] = None,
-        antag_fail_outcomes: List[PatrolOutcome] = None,
+        success_outcomes: List[dict] = None,
+        fail_outcomes: List[dict] = None,
+        antag_success_outcomes: List[dict] = None,
+        antag_fail_outcomes: List[dict] = None,
         min_cats=1,
         max_cats=6,
         min_max_status: dict = None,
@@ -116,13 +118,13 @@ class PatrolEvent:
         self.intro_text = intro_text
         self.decline_text = decline_text
 
-        self.success_outcomes = success_outcomes if success_outcomes is not None else []
-        self.fail_outcomes = fail_outcomes if fail_outcomes is not None else []
-        self.antag_success_outcomes = (
-            antag_success_outcomes if antag_success_outcomes is not None else []
-        )
-        self.antag_fail_outcomes = (
-            antag_fail_outcomes if antag_fail_outcomes is not None else []
+        self.success_outcomes: list[EventOutcome] = []
+        self.fail_outcomes: list[EventOutcome] = []
+        self.antag_success_outcomes: list[EventOutcome] = []
+        self.antag_fail_outcomes: list[EventOutcome] = []
+
+        self._generate_outcomes(
+            success_outcomes, fail_outcomes, antag_success_outcomes, antag_fail_outcomes
         )
 
     @property
@@ -171,3 +173,63 @@ class PatrolEvent:
             herb_list.extend([herb for herb in out.herbs if herb not in herb_list])
 
         return herb_list
+
+    def _generate_outcomes(
+        self,
+        success_outcomes: list[dict],
+        fail_outcomes: list[dict],
+        antag_success_outcomes: list[dict],
+        antag_fail_outcomes: list[dict],
+    ):
+        """
+        Generates outcome objects for each outcome in the patrol
+        """
+        for outcome in success_outcomes:
+            self.success_outcomes.append(EventOutcome(**outcome))
+        for outcome in fail_outcomes:
+            self.fail_outcomes.append(EventOutcome(**outcome))
+        for outcome in antag_success_outcomes:
+            self.antag_success_outcomes.append(EventOutcome(**outcome))
+        for outcome in antag_fail_outcomes:
+            self.antag_fail_outcomes.append(EventOutcome(**outcome))
+
+    def find_allowed_outcomes(
+        self, antagonize: bool = False
+    ) -> tuple[EventOutcome, EventOutcome]:
+        """
+        Filters through possible outcomes to find appropriate outcomes for both failure and success
+        :param antagonize: set True if the player chose to antagonize
+        :return: success outcome, failure outcome
+        """
+
+        if antagonize:
+            success_outcomes = self.antag_success_outcomes
+            fail_outcomes = self.antag_fail_outcomes
+        else:
+            success_outcomes = self.success_outcomes
+            fail_outcomes = self.fail_outcomes
+
+        # for success and fail options we'll find what frequency is wanted
+        # then pick an outcome of that frequency based on weight
+        # then see if that outcome is allowed per constraints
+        # if it isn't, then grab the next outcome and try again
+        # until we have one that passes. this is what we'll use!
+
+        chosen_success = None
+        chosen_failure = None
+
+        chosen_frequency = get_frequency()
+        used_frequencies = set()
+        while not chosen_success or not chosen_failure:
+            if not chosen_success:
+                # try to filter
+                pass
+            if not chosen_failure:
+                # try to filter
+                pass
+
+            if not chosen_success or not chosen_failure:
+                used_frequencies.add(chosen_frequency)
+                chosen_frequency = find_new_frequency(used_frequencies)
+
+        return chosen_success, chosen_failure

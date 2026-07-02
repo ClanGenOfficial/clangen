@@ -5,7 +5,7 @@ import random
 from copy import deepcopy
 from os.path import exists as path_exists
 from random import choice, randint, choices
-from typing import List, Tuple, Optional, Union
+from typing import List, Tuple, Optional, Union, Literal
 
 import pygame
 
@@ -167,7 +167,7 @@ class Patrol:
         )
 
     def proceed_patrol(
-        self, path: str = "proceed"
+        self, path: Literal["proceed", "antag", "decline"] = "proceed"
     ) -> Tuple[str, str, list, Optional[str]]:
         """Proceed the patrol to the next step.
         path can be: "proceed", "antag", or "decline" """
@@ -844,29 +844,21 @@ class Patrol:
                 tags=patrol.get("tags"),
                 frequency=patrol.get("frequency", 4),
                 types=patrol.get("types"),
-                intro_text=patrol.get("intro_text"),
-                patrol_art=patrol.get("patrol_art"),
-                patrol_art_clean=patrol.get("patrol_art_clean"),
-                success_outcomes=PatrolOutcome.generate_from_info(
-                    patrol.get("success_outcomes")
-                ),
-                fail_outcomes=PatrolOutcome.generate_from_info(
-                    patrol.get("fail_outcomes"), success=False
-                ),
-                decline_text=patrol.get("decline_text"),
                 chance_of_success=patrol.get("chance_of_success"),
                 min_cats=patrol.get("min_cats", 1),
                 max_cats=patrol.get("max_cats", 6),
                 min_max_status=patrol.get("min_max_status"),
-                antag_success_outcomes=PatrolOutcome.generate_from_info(
-                    patrol.get("antag_success_outcomes"), antagonize=True
-                ),
-                antag_fail_outcomes=PatrolOutcome.generate_from_info(
-                    patrol.get("antag_fail_outcomes"), success=False, antagonize=True
-                ),
                 relationship_constraints=patrol.get("relationship_constraint"),
                 pl_skill_constraints=patrol.get("pl_skill_constraint"),
                 pl_trait_constraints=patrol.get("pl_trait_constraints"),
+                intro_text=patrol.get("intro_text"),
+                decline_text=patrol.get("decline_text"),
+                patrol_art=patrol.get("patrol_art"),
+                patrol_art_clean=patrol.get("patrol_art_clean"),
+                success_outcomes=patrol.get("success_outcomes", []),
+                fail_outcomes=patrol.get("fail_outcomes", []),
+                antag_success_outcomes=patrol.get("antag_success_outcomes", []),
+                antag_fail_outcomes=patrol.get("antag_fail_outcomes", []),
             )
 
             all_patrol_events.append(patrol_event)
