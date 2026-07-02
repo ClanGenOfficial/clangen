@@ -11,7 +11,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_med_herbsmeadow",
+        "patrol_art": "cat_sprites/gen_meadow_WrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -29,7 +29,7 @@
             {
                 "text": "This is the cycle, p_l reminds the patrol, the fundamental truth underlying c_n. The grass sprouts in newleaf as the snows retreat, grows heavy and flush with life in greenleaf, droops with seeds in leaf-fall, and is buried and withered in leaf-bare. The very foundation of their lives relies on it.",
                 "exp": 30,
-                "art": "gen_bord_story",
+                "art": "cat_sprites/gen_bord_story_WrWr",
                 "stat_skill": [
                     "LORE,1"
                 ],
@@ -59,7 +59,7 @@
             {
                 "text": "Everything the patrol sees exists together in a delicate balance, s_c explains. A warrior must respect all life, from the crawling ant to the leaping rabbit. Yes, even though warriors hunt and eat them. One day, as each member of c_n dies, their bodies will become the dirt, and the dirt will feed the grass, and the rabbits eat the grass. Every creature is connected in the great cycle.",
                 "exp": 30,
-                "art": "gen_bord_story",
+                "art": "cat_sprites/gen_bord_story_WrWr",
                 "stat_skill": [
                     "STORY,1"
                 ],
@@ -91,7 +91,7 @@
             {
                 "text": "p_l spends too long admiring the scenery and gets left behind by the rest of the patrol. {PRONOUN/p_l/subject/CAP} {VERB/p_l/catch/catches} up, huffing and puffing, and no cat is too pleased with {PRONOUN/p_l/poss} lack of attention.",
                 "exp": 0,
-                "art": "running_warrior2",
+                "art": "cat_sprites/gen_runningr_Wr",
                 "relationships": [
                     {
                         "cats_to": [
