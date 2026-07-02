@@ -229,7 +229,7 @@ class MediationScreen(Screens):
             (410, 0),
             container=self.elements["cat_list_container"],
         )
-        interactable_elements.append(self.elements["search_bar"])
+        interactable_elements.append(self.elements["search_bar"].text_entry)
 
         # CAT LIST
         self.elements["cat_list_bg"] = UIModifiedImage(

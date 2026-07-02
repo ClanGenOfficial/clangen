@@ -1844,7 +1844,7 @@ class ProfileScreen(Screens):
                     cond[0] = temp
                     break
 
-        all_illness_injuries = self.chunks(all_illness_injuries, 4)
+        all_illness_injuries = self.get_list_chunks(all_illness_injuries, 4)
 
         if not all_illness_injuries:
             self.conditions_page = 0
