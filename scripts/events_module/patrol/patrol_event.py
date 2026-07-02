@@ -1,13 +1,26 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
+from random import choices, choice
 from typing import List, Union, Dict
 
+from scripts.cat.cats import Cat
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath
-from scripts.events_module.event_filters import get_frequency, find_new_frequency
+from scripts.events_module.event_filters import (
+    get_frequency,
+    find_new_frequency,
+    event_for_location,
+    event_for_season,
+    event_for_tags,
+    event_for_reputation,
+    event_for_clan_relations,
+    event_for_freshkill_supply,
+    event_for_herb_supply,
+    event_for_cat,
+)
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
 from scripts.events_module.patrol.patrol_outcome_new import EventOutcome
-from scripts.game_structure import constants
+from scripts.game_structure import constants, game
 
 
 class PatrolEvent:
@@ -213,23 +226,99 @@ class PatrolEvent:
         # then pick an outcome of that frequency based on weight
         # then see if that outcome is allowed per constraints
         # if it isn't, then grab the next outcome and try again
-        # until we have one that passes. this is what we'll use!
+        # until we have one that passes. this is the outcome we'll use!
 
         chosen_success = None
         chosen_failure = None
 
         chosen_frequency = get_frequency()
         used_frequencies = set()
+        tested_outcomes = set()
         while not chosen_success or not chosen_failure:
             if not chosen_success:
+                possible_outcomes = [
+                    x
+                    for x in success_outcomes
+                    if x.frequency == chosen_frequency and x not in tested_outcomes
+                ]
+                test_outcome = choices(
+                    possible_outcomes, weights=[x.weight for x in possible_outcomes]
+                )[0]
+
                 # try to filter
-                pass
+                if _check_outcome_constraints(test_outcome):
+                    chosen_success = test_outcome
+                else:
+                    tested_outcomes.add(test_outcome)
+
             if not chosen_failure:
+                possible_outcomes = [
+                    x
+                    for x in fail_outcomes
+                    if x.frequency == chosen_frequency and x not in tested_outcomes
+                ]
+                test_outcome = choices(
+                    possible_outcomes, weights=[x.weight for x in possible_outcomes]
+                )[0]
                 # try to filter
-                pass
+                if _check_outcome_constraints(test_outcome):
+                    chosen_success = test_outcome
+                else:
+                    tested_outcomes.add(test_outcome)
 
             if not chosen_success or not chosen_failure:
                 used_frequencies.add(chosen_frequency)
                 chosen_frequency = find_new_frequency(used_frequencies)
 
         return chosen_success, chosen_failure
+
+
+def _check_outcome_constraints(
+    outcome: EventOutcome, involved_cats: dict[str, Cat]
+) -> bool:
+    if not event_for_location(outcome.location):
+        return False
+
+    if not event_for_season(outcome.season):
+        return False
+
+    # TODO: min_max_status stuff for required_statuses
+
+    # TODO: mentoring stuff needs to be included.. and a cat?
+    if not event_for_tags(outcome.tags):
+        return False
+
+    if not event_for_reputation(outcome.required_reputation.get("outsider")):
+        return False
+
+    # TODO: need other_clan
+    if not event_for_clan_relations(outcome.required_reputation.get("other_clan")):
+        return False
+
+    if outcome.supply:
+        if not event_for_freshkill_supply(game.clan.freshkill_pile):
+            return False
+
+        if not event_for_herb_supply():
+            return False
+
+    for abbr, constraints in outcome.involved_cats.items():
+        possible_cats = [involved_cats.get(abbr)]
+        if not possible_cats:
+            # TODO: grab all cats from patrol that haven't been used yet
+            # need to grab apps for app abbrs
+            # and sort by age so that we grab older cats for for r_c
+            pass
+
+        chosen_cat = None
+        while not chosen_cat and possible_cats:
+            test_cat = possible_cats[0]
+            if event_for_cat(constraints, test_cat):
+                chosen_cat = test_cat
+
+        if not chosen_cat:
+            return False
+
+        involved_cats[abbr] = chosen_cat
+
+    return True

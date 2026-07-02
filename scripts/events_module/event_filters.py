@@ -1,7 +1,7 @@
 import re
 from itertools import combinations
 from random import choice, randint
-from typing import List, Optional, Dict, Union
+from typing import List, Optional, Dict, Union, Literal
 
 from scripts.cat.constants import BACKSTORIES
 from scripts.cat.personality import Personality
@@ -284,7 +284,7 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
     return current_standing in required_rel
 
 
-def event_for_freshkill_supply(pile, trigger, factor, clan_size) -> bool:
+def event_for_freshkill_supply(pile, trigger: Literal["always", "low", "adequate", "full", "excess"], factor, clan_size) -> bool:
     """
     checks if clan has the correct amount of freshkill for event
     """
