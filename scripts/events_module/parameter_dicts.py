@@ -1,4 +1,4 @@
-from typing import TypedDict, NotRequired
+from typing import TypedDict, NotRequired, Literal
 
 
 class StandingDict(TypedDict):
@@ -20,15 +20,16 @@ class HealthDict(TypedDict, total=False):
     must_be_acquired: bool
 
 
-class InvolvedCatDict(TypedDict):
-    status: NotRequired[list[str]]
-    past_status: NotRequired[list[str]]
-    age: NotRequired[list[str]]
-    group: NotRequired[list[str]]
-    standing: NotRequired[StandingDict]
-    stat: NotRequired[StatDict]
-    health: NotRequired[HealthDict]
-    backstory: NotRequired[list[str]]
+class InvolvedCatDict(TypedDict, total=False):
+    previous_abbreviation: list[str]
+    status: list[str]
+    past_status: list[str]
+    age: list[str]
+    group: list[str]
+    standing: StandingDict
+    stat: StatDict
+    health: HealthDict
+    backstory: list[str]
 
 
 class RelationshipConstraintDict(TypedDict):
