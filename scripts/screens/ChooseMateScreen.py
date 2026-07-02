@@ -405,7 +405,9 @@ class ChooseMateScreen(Screens):
         """Updates everything in the mates container, including the list of current mates,
         and the page"""
 
-        self.all_mates = self.get_list_chunks([Cat.fetch_cat(i) for i in self.the_cat.mate], 30)
+        self.all_mates = self.get_list_chunks(
+            [Cat.fetch_cat(i) for i in self.the_cat.mate], 30
+        )
         self.update_mates_container_page()
 
     def update_mates_container_page(self):
