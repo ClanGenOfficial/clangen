@@ -1,4 +1,3 @@
-from collections import deque
 from typing import Optional
 
 import pygame
@@ -13,7 +12,7 @@ from scripts.clan_package.settings import (
     switch_clan_setting,
 )
 from scripts.events_module.text_adjust import shorten_text_to_fit
-from scripts.game_structure import game, constants
+from scripts.game_structure import game, constants, image_cache
 from scripts.game_structure.game import switch_get_value, Switch
 from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
@@ -27,7 +26,7 @@ from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.generate_box import BoxStyles, get_box
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
-from scripts.ui.scale import ui_scale, ui_scale_offset
+from scripts.ui.scale import ui_scale, ui_scale_offset, ui_scale_dimensions
 from scripts.ui.theme import get_text_box_theme
 from scripts.ui.windows.relationship_log import RelationshipLogWindow
 
@@ -429,6 +428,11 @@ class RelationshipScreen(Screens):
             },
         )
 
+        heart_image = pygame.transform.scale(
+            image_cache.load_image("resources/images/heart_small.png").convert_alpha(),
+            ui_scale_dimensions((10, 10)),
+        )
+
         prev_element = None
         for i, relationship in enumerate(current_chunk):
             if i >= 4:
@@ -459,6 +463,16 @@ class RelationshipScreen(Screens):
                 anchors={"left_target": prev_element} if prev_element else None,
                 manager=MANAGER,
             )
+            if relationship.cat_to.ID in self.main_cat.mate:
+                self.relation_elements[f"heart{i}"] = UIModifiedImage(
+                    ui_scale(pygame.Rect((-25, 35), (10, 10))),
+                    heart_image,
+                    container=container,
+                    anchors={
+                        "left_target": self.relation_elements[f"rel{i}_nameplate"]
+                    },
+                    manager=MANAGER,
+                )
             self.relation_elements[f"rel{i}_name_text"] = pygame_gui.elements.UITextBox(
                 shorten_text_to_fit(str(relationship.cat_to.name), 100, 13),
                 ui_scale(pygame.Rect((0 + INTERVAL, -3), (130, -1))),

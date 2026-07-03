@@ -336,7 +336,7 @@ class RelationshipLogWindow(GameWindow):
         # show relation
         if other_cat:
             relation = ""
-            if other_cat in cat.mate:
+            if other_cat.ID in cat.mate:
                 relation = f"{i18n.t('general.mate', count=1)}<br>"
             elif cat.is_parent(other_cat):
                 relation = f"{i18n.t('general.parent')}<br>"
