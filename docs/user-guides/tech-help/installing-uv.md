@@ -35,6 +35,12 @@ Nope! Unlike poetry (the installer ClanGen was using previously), UV installs Py
 
 Probably not in the way you're thinking. UV itself is installed locally onto your device, though the dependencies are installed along with the source copy you're applying them to. If you're using multiple source copies, you'll have separate dependencies for each one of them.
 
+### Does Source work for windows 7 & chromeos 2.31?
+
+Theoretically, yes. For now, that is. The source version of the game is not operating system specific, so it is not as limited as the application in what can use it.
+
+There will be a time where you are unable to install the required python version or dependency. While ClanGen tries to cover all desktop operating systems, the game has to grow into new technology eventually - and that means old operating systems will lose support slowly.
+
 ### Terminology 
 
 If you are unsure of the terms I'm using and how they apply to installing the game, please check here for definitions! Apologizes if I miss something.
@@ -88,7 +94,7 @@ Press enter. This is simply checking to see the previous command installed UV co
 
 ## Running via RUN file
 
-Go to your ClanGen source game folder and scroll through the files until you see a **run** file. The type should be "windows batch file". Double click that.
+Go to your ClanGen source game folder in file explorer and scroll through the files until you see a **run** file. The type should be "windows batch file". Double click that.
 
 The run file should download your requirements and open the game for you. If it DOES NOT open, follow the next steps.
 
@@ -172,7 +178,7 @@ Please follow this section if you're using MacOS or Linux. The commands are virt
 
 Open the terminal provided to you by your OS (operating system).
 
-- MAC: Command + space keys on your keyboard, type in terminal, enter
+- MAC: Command + space on your keyboard, type in terminal, enter
 - LINUX: Open the linux terminal
 
 Copy the below command and paste it into your terminal:
@@ -301,5 +307,17 @@ You should NOT have to pay anything to extract a zip folder. If you do not have 
 
 !!! note
       MACos's system has the ability to decompress zips with just a double click, so you don't need a separate program for anything.
+
+---
+
+**"My IDE's run feature results in an error."**
+
+Try to run the game normally with either the run file or `uv run main.py` instead. ClanGen doesn't necessarily consider IDE's when making the game runable, so sometimes run features work, sometimes they do not.
+
+---
+
+**"'uv' is not recognized as an internal or external command'"**
+
+You either do not have UV installed, or you're using a version of ClanGen that requires a different dependency installer. Make sure to double check that you're on the correct version and that you did every step correctly.
 
 ---
