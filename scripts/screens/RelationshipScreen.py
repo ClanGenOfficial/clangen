@@ -5,6 +5,7 @@ import pygame
 import pygame_gui
 from pygame_gui.core import UIContainer
 
+
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_package.settings import (
@@ -30,12 +31,12 @@ from scripts.ui.theme import get_text_box_theme
 
 class RelationshipScreen(Screens):
     settings = [
-        "show_dead_relation",
-        "show_neutral_relation",
         "show_family_only",
         "show_romance_only",
+        "show_dead_relation",
         "show_positive",
         "show_negative",
+        "show_neutral_relation",
     ]
 
     def __init__(self, name=None):
@@ -379,51 +380,64 @@ class RelationshipScreen(Screens):
 
         prev_element = None
         for i, relationship in enumerate(current_chunk):
-            if self.relation_elements.get(f"rel{i}_container"):
+            if i >= 4:
+                container = self.relation_elements["relationships_bottom_row_container"]
+            else:
+                container = self.relation_elements["relationships_top_row_container"]
+
+            if i in [0, 4]:
+                INTERVAL = 0
+            else:
+                INTERVAL = 13
+
+            if self.relation_elements.get(f"rel{i}_backdrop"):
+                # don't remake something that already exists
                 continue
-            self.relation_elements[f"rel{i}_container"] = UIContainer(
-                ui_scale(pygame.Rect((0, 0), (165, BOX_HEIGHT))),
-                container=self.relation_elements["relationships_top_row_container"]
-                if i < 4
-                else self.relation_elements["relationships_bottom_row_container"],
+
+            self.relation_elements[f"rel{i}_backdrop"] = UIModifiedImage(
+                ui_scale(pygame.Rect((6 + INTERVAL, 0), (120, BOX_HEIGHT))),
+                get_box(BoxStyles.INNER_BOX, (120, BOX_HEIGHT)),
+                container=container,
                 anchors={"left_target": prev_element} if prev_element else None,
                 manager=MANAGER,
             )
-            self.relation_elements[f"rel{i}_backdrop"] = UIModifiedImage(
-                ui_scale(pygame.Rect((6, 0), (120, BOX_HEIGHT))),
-                get_box(BoxStyles.INNER_BOX, (120, BOX_HEIGHT)),
-                container=self.relation_elements[f"rel{i}_container"],
-                manager=MANAGER,
-            )
             self.relation_elements[f"rel{i}_nameplate"] = UIModifiedImage(
-                ui_scale(pygame.Rect((0, 0), (130, 30))),
+                ui_scale(pygame.Rect((0 + INTERVAL, 0), (130, 30))),
                 get_box(BoxStyles.NAMEPLATE, (130, 30)),
-                container=self.relation_elements[f"rel{i}_container"],
+                container=container,
+                anchors={"left_target": prev_element} if prev_element else None,
                 manager=MANAGER,
             )
             self.relation_elements[f"rel{i}_name_text"] = pygame_gui.elements.UITextBox(
                 shorten_text_to_fit(str(relationship.cat_to.name), 100, 13),
-                ui_scale(pygame.Rect((0, -3), (130, -1))),
+                ui_scale(pygame.Rect((0 + INTERVAL, -3), (130, -1))),
                 object_id="#text_box_30_horizcenter",
-                container=self.relation_elements[f"rel{i}_container"],
+                container=container,
+                anchors={"left_target": prev_element} if prev_element else None,
             )
             self.relation_elements[f"rel{i}_sprite"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((40, 0), (50, 50))),
+                ui_scale(pygame.Rect((40 + INTERVAL, 0), (50, 50))),
                 relationship.cat_to.sprite,
-                container=self.relation_elements[f"rel{i}_container"],
+                container=container,
                 anchors={
                     "top_target": self.relation_elements[f"rel{i}_nameplate"],
-                },
+                    "left_target": prev_element,
+                }
+                if prev_element
+                else {"top_target": self.relation_elements[f"rel{i}_nameplate"]},
                 manager=MANAGER,
             )
             self.relation_elements[f"rel{i}_rel_display"] = UIRelationDisplay(
-                (17, -3),
+                (17 + INTERVAL, -3),
                 relationship=relationship,
                 romance=self.romance_allowed(relationship),
-                container=self.relation_elements[f"rel{i}_container"],
+                container=container,
                 anchors={
                     "top_target": self.relation_elements[f"rel{i}_sprite"],
-                },
+                    "left_target": prev_element,
+                }
+                if prev_element
+                else {"top_target": self.relation_elements[f"rel{i}_sprite"]},
                 manager=MANAGER,
             )
 
@@ -433,7 +447,7 @@ class RelationshipScreen(Screens):
                 get_button_dict(ButtonStyles.ICON_TAB_LEFT, (36, 36)),
                 object_id="@buttonstyles_icon_tab_left",
                 manager=MANAGER,
-                container=self.relation_elements[f"rel{i}_container"],
+                container=container,
                 anchors={
                     "left_target": self.relation_elements[f"rel{i}_backdrop"],
                     "top_target": self.relation_elements[f"rel{i}_nameplate"],
@@ -445,7 +459,7 @@ class RelationshipScreen(Screens):
                 get_button_dict(ButtonStyles.ICON_TAB_LEFT, (36, 36)),
                 object_id="@buttonstyles_icon_tab_left",
                 manager=MANAGER,
-                container=self.relation_elements[f"rel{i}_container"],
+                container=container,
                 anchors={
                     "left_target": self.relation_elements[f"rel{i}_backdrop"],
                     "top_target": self.relation_elements[f"rel{i}_main_cat_switch"],
@@ -457,14 +471,14 @@ class RelationshipScreen(Screens):
                 get_button_dict(ButtonStyles.ICON_TAB_LEFT, (36, 36)),
                 object_id="@buttonstyles_icon_tab_left",
                 manager=MANAGER,
-                container=self.relation_elements[f"rel{i}_container"],
+                container=container,
                 anchors={
                     "left_target": self.relation_elements[f"rel{i}_backdrop"],
                     "top_target": self.relation_elements[f"rel{i}_open_log"],
                 },
             )
             prev_element = (
-                self.relation_elements[f"rel{i}_container"] if i != 3 else None
+                self.relation_elements[f"rel{i}_view_profile"] if i != 3 else None
             )
 
     def romance_allowed(self, relationship: Relationship) -> bool:
