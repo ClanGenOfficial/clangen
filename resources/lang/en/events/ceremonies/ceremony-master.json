@@ -314,7 +314,7 @@
       "abandoned",
       "all_traits"
     ],
-    "m_c is so, so very excited to finally have a mentor, solidifying {PRONOUN/m_c/object} as part of the Clan. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} grateful to be here, really... but (mentor) can't replace the parent who gave {PRONOUN/m_c/object} to this Clan, the parent who should've been here chanting {PRONOUN/m_c/poss} name."
+    "m_c is so, so very excited to finally have a mentor, solidifying {PRONOUN/m_c/object} as part of the Clan. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} grateful to be here, really... but (mentor) can't replace the parent who left {PRONOUN/m_c/object}, the one who should have been there to cheer for {PRONOUN/m_c/object} and guide {PRONOUN/m_c/object}."
   ],
   "app_20": [
     [
@@ -1455,30 +1455,17 @@
     ],
     "Having finally reached the end of {PRONOUN/m_c/poss} apprenticeship, newly named medicine cat m_c feels there's still so much to learn and frets about whether or not {PRONOUN/m_c/subject} {VERB/m_c/are/is} ready. With twitching whiskers, (previous_mentor) assures {PRONOUN/m_c/object} that StarClan will always be there to guide {PRONOUN/m_c/object}."
   ],
-    "med_7_clan": [
+    "med_7": [
     [
       "medicine cat",
       "prepared",
       "alive_mentor",
       "general_parents",
       "general_leader",
-        "clanborn",
-        "all_traits"
-    ],
-        "(previous_mentor) still remembers when (old_name) was just a kit batting around in the medicine cat den, asking endless questions about everything under the sun. (previous_mentor) chuckles with fondness as m_c asks why {PRONOUN/m_c/poss} new name was chosen with shining eyes and twitching whiskers."
-    ],
-    "med_7_abandoned": [
-        [
-            "medicine cat",
-            "prepared",
-            "alive_mentor",
-            "general_parents",
-            "general_leader",
-            "abandoned",
       "all_traits"
     ],
         "(previous_mentor) still remembers when (old_name) was just a kit batting around in the medicine cat den, asking endless questions about everything under the sun. (previous_mentor) chuckles with fondness as m_c asks why {PRONOUN/m_c/poss} new name was chosen with shining eyes and twitching whiskers."
-  ],
+    ],
   "med_8": [
     [
       "medicine cat",
@@ -3186,7 +3173,7 @@
       "all_traits",
       "no_suffix"
     ],
-    "Honoured for {PRONOUN/m_c/poss} r_h, m_c opts to keep {PRONOUN/m_c/poss} former name after becoming a warrior."
+    "Honored for {PRONOUN/m_c/poss} r_h, m_c opts to keep {PRONOUN/m_c/poss} former name after becoming a warrior."
   ],
   "warrior_85": [
     [
@@ -3204,7 +3191,7 @@
       "shameless",
       "no_suffix"
     ],
-    "Upon becoming a warrior, m_c boldly asserts that while c_n is {PRONOUN/m_c/poss} home, {PRONOUN/m_c/poss} name was, and always will be, m_c. l_n accepts this, and honours m_c for {PRONOUN/m_c/poss} r_h."
+    "Upon becoming a warrior, m_c boldly asserts that while c_n is {PRONOUN/m_c/poss} home, {PRONOUN/m_c/poss} name was, and always will be, m_c. l_n accepts this, and honors m_c for {PRONOUN/m_c/poss} r_h."
   ],
   "warrior_86": [
     [
@@ -3231,7 +3218,7 @@
       "all_traits",
       "no_suffix"
     ],
-    "When m_c is declared a warrior and honoured for {PRONOUN/m_c/poss} r_h, m_c asks to keep the name {PRONOUN/m_c/poss} Twolegs gave {PRONOUN/m_c/object} long ago."
+    "When m_c is declared a warrior and honored for {PRONOUN/m_c/poss} r_h, m_c asks to keep the name {PRONOUN/m_c/poss} Twolegs gave {PRONOUN/m_c/object} long ago."
   ],
   "mediator_0": [
     [

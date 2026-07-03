@@ -6,7 +6,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
 from scripts.models.common.season import Season
-from scripts.models.relationship_group_event.involved_cats import InvolvedCats
+from scripts.models.relationship_group_event.involved_cats import InvolvedCatsGroupEvent
 from scripts.models.relationship_group_event.relationship_change_dict import (
     GroupEventRelationshipChange,
 )
@@ -38,7 +38,7 @@ class RelationshipGroupEventSchemaItem(BaseModel):
     strings: List[str] = Field(
         ..., description="List of the text that will be displayed in-game as events."
     )
-    involved_cats: Union[InvolvedCats, MISSING] = Field(
+    involved_cats: Union[InvolvedCatsGroupEvent, MISSING] = Field(
         MISSING,
         description="Used to add constraints for the various involved cats.",
     )

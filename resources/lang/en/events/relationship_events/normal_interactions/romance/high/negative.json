@@ -1,0 +1,40 @@
+[
+    {
+        "id": "rom_dec_high1",
+        "strings": [
+            "m_c gave a gift to r_c, but {PRONOUN/r_c/subject} turned up {PRONOUN/r_c/poss} nose at the offering.",
+            "m_c heard r_c express an ideal {PRONOUN/m_c/subject} cannot agree with.",
+            "m_c heard r_c talking badly about {PRONOUN/m_c/object}.",
+            "m_c catches r_c staring at another cat."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort",
+                    "romance"
+                ],
+                "amount": -15
+            },
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": -15
+            }
+        ]
+    }
+]

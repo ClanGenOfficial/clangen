@@ -10,6 +10,7 @@ class GameScreen(StrEnum):
 
     # make clan screens
     MAKE_CLAN_CHOOSE_MODE = "choose_mode_screen"
+    MAKE_CLAN_CHOOSE_CARDS = "choose_cards_screen"
     MAKE_CLAN_CHOOSE_NAME = "choose_name_screen"
     MAKE_CLAN_CHOOSE_CATS = "choose_cats_screen"
     MAKE_CLAN_CHOOSE_CAMP = "choose_camp_screen"
