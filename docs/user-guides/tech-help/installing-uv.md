@@ -187,11 +187,9 @@ Copy the below command and paste it into your terminal:
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-Press enter. Once the command is done finalizing, close out of the terminal to "reset" it. 
-
 ---
 
-Open your terminal again. Once it's opened, input the below command:
+Input the following command:
 
 ```console
 uv --version
@@ -218,13 +216,13 @@ Now that UV is properly installed, you can switch to any other IDE of your choic
 
 Open your devices terminal and type in `ls`. Do not enter. 
 
-![searching terminal for mac]()
+![searching terminal for mac](https://github.com/Honeycase/clangen/blob/docs-installing/docs-resources/assets/techhelp/MAC-terminal-search.png?raw=true)
 
 Find where your unzipped clangen source is held in finder. Put the clangen location after cd. For example, `ls Users/username/downloads/clangen`
 
 This is to check the path you're trying to apply is correct. You should get something similar to below:
 
-![ls result]()
+![ls result](https://github.com/Honeycase/clangen/blob/docs-installing/docs-resources/assets/techhelp/MAC-ls-result.png?raw=true)
 
 Once confirmed that the path is correct, change the command from previous to have `cd`. For example, `cd Users/username/downloads/clangen`
 
