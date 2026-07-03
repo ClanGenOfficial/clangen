@@ -1,6 +1,6 @@
+from collections import deque
 from typing import Optional
 
-import i18n
 import pygame
 import pygame_gui
 from pygame_gui.core import UIContainer
@@ -9,11 +9,10 @@ from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_package.settings import (
     get_clan_setting,
-    set_clan_setting,
     switch_clan_setting,
 )
 from scripts.events_module.text_adjust import shorten_text_to_fit
-from scripts.game_structure import image_cache, game, constants
+from scripts.game_structure import game, constants
 from scripts.game_structure.game import switch_get_value, Switch
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.screens.Screens import Screens
@@ -25,7 +24,7 @@ from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.generate_box import BoxStyles, get_box
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
-from scripts.ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset
+from scripts.ui.scale import ui_scale, ui_scale_offset
 from scripts.ui.theme import get_text_box_theme
 
 
@@ -55,26 +54,35 @@ class RelationshipScreen(Screens):
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            for setting in self.settings:
-                if event.ui_element == self.elements[f"checkbox_{setting}"]:
-                    if (
-                        setting == "show_family_only"
-                        and self.elements[f"checkbox_show_romance_only"].checked
-                        != event.ui_element.checked
-                    ):
-                        switch_clan_setting("show_romance_only")
-                        self.elements[f"checkbox_show_romance_only"].toggle()
-                    elif (
-                        setting == "show_romance_only"
-                        and self.elements[f"checkbox_show_family_only"].checked
-                        != event.ui_element.checked
-                    ):
-                        switch_clan_setting("show_family_only")
-                        self.elements[f"checkbox_show_family_only"].toggle()
+            if event.ui_element == self.elements["previous_page_button"]:
+                self.current_page -= 1
+                self.update_relationships()
+            elif event.ui_element == self.elements["next_page_button"]:
+                self.current_page += 1
+                self.update_relationships()
 
-                    switch_clan_setting(setting)
-                    event.ui_element.toggle()
-                    self.apply_cat_filter()
+            else:
+                for setting in self.settings:
+                    if event.ui_element == self.elements[f"checkbox_{setting}"]:
+                        self.current_page = 1
+                        event.ui_element.toggle()
+                        if (
+                            setting == "show_family_only"
+                            and self.elements[f"checkbox_show_romance_only"].checked
+                            and event.ui_element.checked
+                        ):
+                            switch_clan_setting("show_romance_only")
+                            self.elements[f"checkbox_show_romance_only"].toggle()
+                        elif (
+                            setting == "show_romance_only"
+                            and self.elements[f"checkbox_show_family_only"].checked
+                            and event.ui_element.checked
+                        ):
+                            switch_clan_setting("show_family_only")
+                            self.elements[f"checkbox_show_family_only"].toggle()
+
+                        switch_clan_setting(setting)
+                        self.apply_cat_filter()
 
         super().handle_event(event)
 
@@ -123,7 +131,7 @@ class RelationshipScreen(Screens):
 
         # MAIN CAT INFO
         self.elements["cat_info_container"] = UIContainer(
-            ui_scale(pygame.Rect((60, 55), (500, 70))),
+            ui_scale(pygame.Rect((60, 60), (500, 70))),
             manager=MANAGER,
         )
 
@@ -291,7 +299,7 @@ class RelationshipScreen(Screens):
             ]
         if get_clan_setting("show_family_only"):
             self.filtered_cats = [r for r in self.filtered_cats if r.family]
-        if get_clan_setting("show_romance_only"):
+        elif get_clan_setting("show_romance_only"):
             self.filtered_cats = [
                 r for r in self.filtered_cats if self.romance_allowed(r)
             ]
@@ -312,38 +320,56 @@ class RelationshipScreen(Screens):
                     search_cats.append(cat)
             self.filtered_cats = search_cats
 
-        self.chunks = self.get_list_chunks(self.filtered_cats, items_allowed_in_chunk=8)
+        self.chunks = deque(
+            self.get_list_chunks(self.filtered_cats, items_allowed_in_chunk=8)
+        )
 
         self.update_relationships()
 
     def update_relationships(self):
+        # reset and return if no chunks
         if not self.chunks:
+            if self.relation_elements:
+                self.relation_elements["relationships_top_row_container"].kill()
+                self.relation_elements["relationships_bottom_row_container"].kill()
+                self.relation_elements.clear()
+            self.prior_chunk.clear()
             return
 
-        # -1 because page count starts at 1 but chunk index starts at 0
+        # PAGE ARROWS
+        self.elements["page_number"].set_text(f"{self.current_page}/{len(self.chunks)}")
+        if self.current_page == len(self.chunks):
+            self.elements["next_page_button"].disable()
+        else:
+            self.elements["next_page_button"].enable()
+        if self.current_page == 1:
+            self.elements["previous_page_button"].disable()
+        else:
+            self.elements["previous_page_button"].enable()
+
+        # find our chunk
         current_chunk = self.chunks[self.current_page - 1]
 
         if current_chunk == self.prior_chunk:
+            # we don't need to make it all again if they're the same
             return
-        elif self.relation_elements:
-            for i, relationship in enumerate(current_chunk):
-                if len(self.prior_chunk) >= i and relationship != self.prior_chunk[i]:
-                    self.relation_elements[f"rel{i}_container"].kill()
-                    self.relation_elements[f"rel{i}_container"] = None
-            if len(current_chunk) > len(self.prior_chunk):
-                for i in self.prior_chunk[len(current_chunk) :]:
-                    self.relation_elements[f"rel{i}_container"].kill()
+
+        # now the real reset
+        if self.relation_elements:
+            self.relation_elements["relationships_top_row_container"].kill()
+            self.relation_elements["relationships_bottom_row_container"].kill()
+            self.relation_elements.clear()
 
         self.prior_chunk = current_chunk.copy()
 
         BOX_HEIGHT = 245
         self.relation_elements["relationships_top_row_container"] = UIContainer(
-            ui_scale(pygame.Rect((0, 10), (680, BOX_HEIGHT))),
+            ui_scale(pygame.Rect((10, 10), (680, BOX_HEIGHT))),
             manager=MANAGER,
             anchors={"top_target": self.elements["search_bar"], "centerx": "centerx"},
         )
         self.relation_elements["relationships_bottom_row_container"] = UIContainer(
-            ui_scale(pygame.Rect((0, 5), (680, BOX_HEIGHT))),
+            ui_scale(pygame.Rect((10, 5), (680, BOX_HEIGHT))),
             manager=MANAGER,
             anchors={
                 "top_target": self.relation_elements["relationships_top_row_container"],
@@ -364,47 +390,79 @@ class RelationshipScreen(Screens):
                 manager=MANAGER,
             )
             self.relation_elements[f"rel{i}_backdrop"] = UIModifiedImage(
-                ui_scale(pygame.Rect((0, 0), (120, BOX_HEIGHT))),
+                ui_scale(pygame.Rect((6, 0), (120, BOX_HEIGHT))),
                 get_box(BoxStyles.INNER_BOX, (120, BOX_HEIGHT)),
                 container=self.relation_elements[f"rel{i}_container"],
-                anchors={"centerx": "centerx"},
                 manager=MANAGER,
             )
             self.relation_elements[f"rel{i}_nameplate"] = UIModifiedImage(
                 ui_scale(pygame.Rect((0, 0), (130, 30))),
                 get_box(BoxStyles.NAMEPLATE, (130, 30)),
                 container=self.relation_elements[f"rel{i}_container"],
-                anchors={"centerx": "centerx"},
                 manager=MANAGER,
             )
             self.relation_elements[f"rel{i}_name_text"] = pygame_gui.elements.UITextBox(
                 shorten_text_to_fit(str(relationship.cat_to.name), 100, 13),
                 ui_scale(pygame.Rect((0, -3), (130, -1))),
                 object_id="#text_box_30_horizcenter",
-                anchors={"centerx": "centerx"},
                 container=self.relation_elements[f"rel{i}_container"],
             )
             self.relation_elements[f"rel{i}_sprite"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((0, 0), (50, 50))),
+                ui_scale(pygame.Rect((40, 0), (50, 50))),
                 relationship.cat_to.sprite,
                 container=self.relation_elements[f"rel{i}_container"],
                 anchors={
-                    "centerx": "centerx",
                     "top_target": self.relation_elements[f"rel{i}_nameplate"],
                 },
                 manager=MANAGER,
             )
             self.relation_elements[f"rel{i}_rel_display"] = UIRelationDisplay(
-                (0, 0),
+                (17, -3),
                 relationship=relationship,
                 romance=self.romance_allowed(relationship),
                 container=self.relation_elements[f"rel{i}_container"],
                 anchors={
-                    "centerx": "centerx",
                     "top_target": self.relation_elements[f"rel{i}_sprite"],
                 },
+                manager=MANAGER,
             )
 
+            self.relation_elements[f"rel{i}_main_cat_switch"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((-6, 5), (36, 36))),
+                Icon.ARROW_RIGHT,
+                get_button_dict(ButtonStyles.ICON_TAB_LEFT, (36, 36)),
+                object_id="@buttonstyles_icon_tab_left",
+                manager=MANAGER,
+                container=self.relation_elements[f"rel{i}_container"],
+                anchors={
+                    "left_target": self.relation_elements[f"rel{i}_backdrop"],
+                    "top_target": self.relation_elements[f"rel{i}_nameplate"],
+                },
+            )
+            self.relation_elements[f"rel{i}_open_log"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((-6, 5), (36, 36))),
+                Icon.NOTEPAD,
+                get_button_dict(ButtonStyles.ICON_TAB_LEFT, (36, 36)),
+                object_id="@buttonstyles_icon_tab_left",
+                manager=MANAGER,
+                container=self.relation_elements[f"rel{i}_container"],
+                anchors={
+                    "left_target": self.relation_elements[f"rel{i}_backdrop"],
+                    "top_target": self.relation_elements[f"rel{i}_main_cat_switch"],
+                },
+            )
+            self.relation_elements[f"rel{i}_view_profile"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((-6, 5), (36, 36))),
+                Icon.CAT_HEAD,
+                get_button_dict(ButtonStyles.ICON_TAB_LEFT, (36, 36)),
+                object_id="@buttonstyles_icon_tab_left",
+                manager=MANAGER,
+                container=self.relation_elements[f"rel{i}_container"],
+                anchors={
+                    "left_target": self.relation_elements[f"rel{i}_backdrop"],
+                    "top_target": self.relation_elements[f"rel{i}_open_log"],
+                },
+            )
             prev_element = (
                 self.relation_elements[f"rel{i}_container"] if i != 3 else None
             )
