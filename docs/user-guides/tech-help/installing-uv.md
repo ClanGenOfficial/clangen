@@ -216,19 +216,17 @@ Now that UV is properly installed, you can switch to any other IDE of your choic
 !!!tip
       (macos) On the off chance that your source is in applications, you will have to move it to somewhere else, such as downloads or documents, to set the path into your terminal. "applications" is not a directory you're able to use in the terminal.
 
+Open your devices terminal and type in `ls`. Do not enter. 
 
-!!!to-do
-     images of the process for mac provided by a mac player?
+![searching terminal for mac]()
 
-Open your devices terminal and type in `cd`. Do not enter. 
+Find where your unzipped clangen source is held in finder. Put the clangen location after cd. For example, `ls Users/username/downloads/clangen`
 
-Find where your unzipped clangen source is held in finder. Put the clangen location after cd. For example, `cd Users/username/downloads/clangen`
+This is to check the path you're trying to apply is correct. You should get something similar to below:
 
-Your path in the terminal should change. Use `ls` to confirm you're in the correct area. You should get something similar to below:
+![ls result]()
 
-![dir command](https://github.com/Honeycase/clangen/blob/docs-installing/docs-resources/assets/techhelp/WIN-dir-command.png?raw=true)
-
-If you don't get the internal contents, reset your terminal and try again. If it's just a folder called clangen, you can use `cd clangen` to further add to the terminal path, then confirm with `ls`.
+Once confirmed that the path is correct, change the command from previous to have `cd`. For example, `cd Users/username/downloads/clangen`
 
 Proceed to the Commands section below.
 
@@ -237,7 +235,7 @@ Proceed to the Commands section below.
 !!!to-do
      images of the process for linux provided by a linux player?
 
-There are technically two ways to set your terminal to path with linux. You can either do it the [manual way](#path-mac), like detailed above, or you can open the folder within the linux terminal.
+There are two ways to set your terminal to path with linux. You can either do it the [manual way](#path-mac), like detailed above, or you can open the folder within the linux terminal.
 
 Go to where your unzipped ClanGen source is located on your device, and open it until you get to its internal contents. Right click in an empty space within the file manager, and select open with terminal. It'll automatically open in the correct pathing.
 
@@ -255,13 +253,16 @@ uv sync
 
 ---
 
-Once the above command is finalized (without errors), we can now open the game using a command:
+Once the above command is finalized (without errors), we can now open the game using the command:
 
 ```console
 uv run main.py
 ```
 
 When using the manual way, you will have to put the terminal to the correct file path and use the open command above every time you want to play (Unless the IDE you intend to use offers a run option). 
+
+!!! tip
+      MacOS terminal remembers the last path you set it to, so you shouldn't have to reset it 
 
 # Common Problems
 
