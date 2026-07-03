@@ -69,6 +69,7 @@ class RelationshipScreen(Screens):
                 self.elements["search_bar"].text_entry.get_text()
                 != self.previous_search_text
             ):
+                self.current_page = 1
                 self.apply_cat_filter(self.elements["search_bar"].text_entry.get_text())
                 self.previous_search_text = self.elements[
                     "search_bar"
@@ -385,9 +386,7 @@ class RelationshipScreen(Screens):
         # reset and return if no chunks
         if not self.chunks:
             if self.relation_elements:
-                self.relation_elements["relationships_top_row_container"].kill()
-                self.relation_elements["relationships_bottom_row_container"].kill()
-                self.relation_elements.clear()
+                self.kill_relation_buttons()
             self.prior_chunk.clear()
             return
 
@@ -411,9 +410,7 @@ class RelationshipScreen(Screens):
 
         # now the real reset
         if self.relation_elements:
-            self.relation_elements["relationships_top_row_container"].kill()
-            self.relation_elements["relationships_bottom_row_container"].kill()
-            self.relation_elements.clear()
+            self.kill_relation_buttons()
 
         self.prior_chunk = current_chunk.copy()
 
@@ -521,6 +518,8 @@ class RelationshipScreen(Screens):
                 },
                 tool_tip_text="screens.relationship.view_log",
             )
+            if relationship.cat_to.dead:
+                self.log_buttons[f"rel{i}_open_log"].disable()
             self.profile_buttons[f"rel{i}_view_profile"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((-6, 5), (36, 36))),
                 Icon.CAT_HEAD,
@@ -537,6 +536,27 @@ class RelationshipScreen(Screens):
             prev_element = (
                 self.profile_buttons[f"rel{i}_view_profile"] if i != 3 else None
             )
+        self.add_to_map(list(self.switch_buttons.values()))
+        self.add_to_map(list(self.log_buttons.values()))
+        self.add_to_map(list(self.profile_buttons.values()))
+
+    def kill_relation_buttons(self):
+        self.remove_from_map(list(self.relation_elements.values()))
+        self.relation_elements["relationships_top_row_container"].kill()
+        self.relation_elements["relationships_bottom_row_container"].kill()
+        self.relation_elements.clear()
+
+        ele_to_remove = (
+            list(self.switch_buttons.values())
+            + list(self.log_buttons.values())
+            + list(self.profile_buttons.values())
+        )
+        self.remove_from_map(ele_to_remove)
+        for ele in ele_to_remove:
+            ele.kill()
+        self.switch_buttons.clear()
+        self.log_buttons.clear()
+        self.profile_buttons.clear()
 
     def romance_allowed(self, relationship: Relationship) -> bool:
         same_age = relationship.cat_to.age == self.main_cat.age
@@ -566,3 +586,5 @@ class RelationshipScreen(Screens):
             for ele in ele_dict.values():
                 ele.kill()
             ele_dict.clear()
+
+        super().exit_screen()
