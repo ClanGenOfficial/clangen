@@ -178,7 +178,7 @@ Please follow this section if you're using MacOS or Linux. The commands are virt
 
 Open the terminal provided to you by your OS (operating system).
 
-- MAC: Command + space on your keyboard, type in terminal, enter
+- MAC: Command + space on your keyboard, type in `terminal`, enter
 - LINUX: Open the linux terminal
 
 Copy the below command and paste it into your terminal:
@@ -222,9 +222,7 @@ Now that UV is properly installed, you can switch to any other IDE of your choic
 
 Open your devices terminal and type in `cd`. Do not enter. 
 
-Find where your unzipped clangen source is held on your device in finder. For example, If I left it in downloads - `downloads/clangen/clangen`
-
-Put the clangen location after cd. For example, `cd downloads/clangen/clangen`
+Find where your unzipped clangen source is held in finder. Put the clangen location after cd. For example, `cd Users/username/downloads/clangen`
 
 Your path in the terminal should change. Use `ls` to confirm you're in the correct area. You should get something similar to below:
 
