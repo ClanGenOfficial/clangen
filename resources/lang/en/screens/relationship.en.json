@@ -6,6 +6,9 @@
         "show_family_only_checkbox": "Only show family members",
         "show_romance_only_checkbox": "Only show romance-able cats",
         "show_positive_checkbox": "Show positive relationships",
-        "show_negative_checkbox": "Show negative relationships"
+        "show_negative_checkbox": "Show negative relationships",
+        "switch_cat": "View this cat's relationship page",
+        "view_log": "View more details about this relationship",
+        "profile": "View this cat's profile"
     }
 }

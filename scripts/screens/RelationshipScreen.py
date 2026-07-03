@@ -18,6 +18,7 @@ from scripts.game_structure.game import switch_get_value, Switch
 from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.screens.Screens import Screens
+from scripts.screens.enums import GameScreen
 from scripts.ui.elements.checkbox import UICheckbox
 from scripts.ui.elements.modified_image import UIModifiedImage
 from scripts.ui.elements.relation_display import UIRelationDisplay
@@ -43,6 +44,7 @@ class RelationshipScreen(Screens):
     def __init__(self, name=None):
         super().__init__(name)
 
+        self.previous_search_text = None
         self.previous_cat = None
         self.next_cat = None
         self.filtered_cats: list[Relationship] = []
@@ -60,20 +62,59 @@ class RelationshipScreen(Screens):
         self.prior_chunk: list[Relationship] = []
 
     def handle_event(self, event):
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.elements["previous_page_button"]:
+        # SEARCH BAR
+        if event.type == pygame_gui.UI_TEXT_ENTRY_CHANGED:
+            if (
+                self.elements["search_bar"].text_entry.get_text()
+                != self.previous_search_text
+            ):
+                self.apply_cat_filter(self.elements["search_bar"].text_entry.get_text())
+                self.previous_search_text = self.elements[
+                    "search_bar"
+                ].text_entry.get_text()
+
+        elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            # BACK
+            if event.ui_element == self.elements["back_button"]:
+                self.change_screen(game.last_screen_forupdate)
+            # PREV/NEXT CAT
+            elif event.ui_element == self.elements["next_cat_button"]:
+                if isinstance(Cat.fetch_cat(self.next_cat), Cat):
+                    switch_set_value(Switch.cat, self.next_cat)
+                    self.update_main_cat()
+                else:
+                    print("invalid next cat", self.next_cat)
+            elif event.ui_element == self.elements["previous_cat_button"]:
+                if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
+                    switch_set_value(Switch.cat, self.previous_cat)
+                    self.update_main_cat()
+                else:
+                    print("invalid previous cat", self.previous_cat)
+            # PAGE BUTTONS
+            elif event.ui_element == self.elements["previous_page_button"]:
                 self.current_page -= 1
                 self.update_relationships()
             elif event.ui_element == self.elements["next_page_button"]:
                 self.current_page += 1
                 self.update_relationships()
+            # SWITCH CAT
             elif event.ui_element in self.switch_buttons.values():
                 index = list(self.switch_buttons.values()).index(event.ui_element)
                 switch_set_value(
                     Switch.cat, self.chunks[self.current_page - 1][index].cat_to.ID
                 )
                 self.update_main_cat()
-
+            # OPEN LOG
+            elif event.ui_element in self.log_buttons.values():
+                pass
+            # VIEW PROFILE
+            elif event.ui_element in self.profile_buttons.values():
+                index = list(self.profile_buttons.values()).index(event.ui_element)
+                switch_set_value(
+                    Switch.cat, self.chunks[self.current_page - 1][index].cat_to.ID
+                )
+                self.change_screen(GameScreen.PROFILE)
+            # CHANGE SETTINGS
             else:
                 for setting in self.settings:
                     if event.ui_element == self.elements[f"checkbox_{setting}"]:
@@ -298,8 +339,17 @@ class RelationshipScreen(Screens):
         self.apply_cat_filter(self.elements["search_bar"].text_entry.get_text())
 
     def apply_cat_filter(self, search_text=""):
-        # Filter for dead or empty cats
         self.filtered_cats = self.all_relations.copy()
+
+        # NAME SEARCH
+        search_cats = []
+        if search_text.strip():
+            for cat in self.filtered_cats:
+                if search_text.lower() in str(cat.cat_to.name).lower():
+                    search_cats.append(cat)
+            self.filtered_cats = search_cats
+
+        # FILTER TOGGLES
         if not get_clan_setting("show_dead_relation"):
             self.filtered_cats = list(
                 filter(lambda rel: not rel.cat_to.dead, self.filtered_cats)
@@ -324,14 +374,6 @@ class RelationshipScreen(Screens):
             self.filtered_cats = [
                 r for r in self.filtered_cats if r.total_relationship_value > 0
             ]
-
-        # Filter for search
-        search_cats = []
-        if search_text.strip() != "":
-            for cat in self.filtered_cats:
-                if search_text.lower() in str(cat.cat_to.name).lower():
-                    search_cats.append(cat)
-            self.filtered_cats = search_cats
 
         self.chunks = self.get_list_chunks(self.filtered_cats, items_allowed_in_chunk=8)
 
@@ -462,6 +504,7 @@ class RelationshipScreen(Screens):
                     "left_target": self.relation_elements[f"rel{i}_backdrop"],
                     "top_target": self.relation_elements[f"rel{i}_nameplate"],
                 },
+                tool_tip_text="screens.relationship.switch_cat",
             )
             self.log_buttons[f"rel{i}_open_log"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((-6, 5), (36, 36))),
@@ -474,6 +517,7 @@ class RelationshipScreen(Screens):
                     "left_target": self.relation_elements[f"rel{i}_backdrop"],
                     "top_target": self.switch_buttons[f"rel{i}_main_cat_switch"],
                 },
+                tool_tip_text="screens.relationship.view_log",
             )
             self.profile_buttons[f"rel{i}_view_profile"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((-6, 5), (36, 36))),
@@ -486,6 +530,7 @@ class RelationshipScreen(Screens):
                     "left_target": self.relation_elements[f"rel{i}_backdrop"],
                     "top_target": self.log_buttons[f"rel{i}_open_log"],
                 },
+                tool_tip_text="screens.relationship.profile",
             )
             prev_element = (
                 self.profile_buttons[f"rel{i}_view_profile"] if i != 3 else None
@@ -507,3 +552,15 @@ class RelationshipScreen(Screens):
             return False
         else:
             return True
+
+    def exit_screen(self):
+        for ele_dict in [
+            self.elements,
+            self.relation_elements,
+            self.switch_buttons,
+            self.log_buttons,
+            self.profile_buttons,
+        ]:
+            for ele in ele_dict.values():
+                ele.kill()
+            ele_dict.clear()
