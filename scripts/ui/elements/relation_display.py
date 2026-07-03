@@ -12,7 +12,7 @@ from scripts.ui.scale import ui_scale
 class UIRelationDisplay(pygame_gui.elements.UIAutoResizingContainer):
     def __init__(
         self,
-        position: tuple,
+        unscaled_position: tuple,
         relationship,
         romance: bool = False,
         container=None,
@@ -25,7 +25,7 @@ class UIRelationDisplay(pygame_gui.elements.UIAutoResizingContainer):
         bar_size = (96, 10)
 
         super().__init__(
-            relative_rect=ui_scale(pygame.Rect(position, dimensions)),
+            relative_rect=ui_scale(pygame.Rect(unscaled_position, dimensions)),
             container=container,
             manager=manager,
             anchors=anchors,

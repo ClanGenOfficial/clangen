@@ -66,14 +66,14 @@ boxstyles = {
         pygame.image.load(
             "resources/images/generated_boxes/inner_box.png"
         ).convert_alpha(),
-        (7, 3),
+        (3, 3),
     ),
     "nameplate": BoxData(
         "nameplate",
         pygame.image.load(
             "resources/images/generated_boxes/nameplate.png"
         ).convert_alpha(),
-        (7, 3),
+        (3, 3),
     ),
 }
 

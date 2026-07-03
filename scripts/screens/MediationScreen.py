@@ -59,7 +59,7 @@ class MediationScreen(Screens):
                     "search_bar"
                 ].text_entry.get_text()
 
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+        elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
             self.mute_button_pressed(event)
 
             if event.ui_element == self.back_button:
