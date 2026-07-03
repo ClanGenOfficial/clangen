@@ -15,6 +15,7 @@ from scripts.clan_package.settings import (
 from scripts.events_module.text_adjust import shorten_text_to_fit
 from scripts.game_structure import game, constants
 from scripts.game_structure.game import switch_get_value, Switch
+from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.screens.Screens import Screens
 from scripts.ui.elements.checkbox import UICheckbox
@@ -48,8 +49,13 @@ class RelationshipScreen(Screens):
         self.all_relations: list[Relationship] = []
         self.current_page: int = 0
         self.main_cat: Optional[Cat] = None
+
         self.elements: dict = {}
         self.relation_elements: dict = {}
+        self.switch_buttons: dict = {}
+        self.log_buttons: dict = {}
+        self.profile_buttons: dict = {}
+
         self.chunks: list[list[Relationship]] = []
         self.prior_chunk: list[Relationship] = []
 
@@ -61,6 +67,12 @@ class RelationshipScreen(Screens):
             elif event.ui_element == self.elements["next_page_button"]:
                 self.current_page += 1
                 self.update_relationships()
+            elif event.ui_element in self.switch_buttons.values():
+                index = list(self.switch_buttons.values()).index(event.ui_element)
+                switch_set_value(
+                    Switch.cat, self.chunks[self.current_page - 1][index].cat_to.ID
+                )
+                self.update_main_cat()
 
             else:
                 for setting in self.settings:
@@ -321,9 +333,7 @@ class RelationshipScreen(Screens):
                     search_cats.append(cat)
             self.filtered_cats = search_cats
 
-        self.chunks = deque(
-            self.get_list_chunks(self.filtered_cats, items_allowed_in_chunk=8)
-        )
+        self.chunks = self.get_list_chunks(self.filtered_cats, items_allowed_in_chunk=8)
 
         self.update_relationships()
 
@@ -441,7 +451,7 @@ class RelationshipScreen(Screens):
                 manager=MANAGER,
             )
 
-            self.relation_elements[f"rel{i}_main_cat_switch"] = UISurfaceImageButton(
+            self.switch_buttons[f"rel{i}_main_cat_switch"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((-6, 5), (36, 36))),
                 Icon.ARROW_RIGHT,
                 get_button_dict(ButtonStyles.ICON_TAB_LEFT, (36, 36)),
@@ -453,7 +463,7 @@ class RelationshipScreen(Screens):
                     "top_target": self.relation_elements[f"rel{i}_nameplate"],
                 },
             )
-            self.relation_elements[f"rel{i}_open_log"] = UISurfaceImageButton(
+            self.log_buttons[f"rel{i}_open_log"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((-6, 5), (36, 36))),
                 Icon.NOTEPAD,
                 get_button_dict(ButtonStyles.ICON_TAB_LEFT, (36, 36)),
@@ -462,10 +472,10 @@ class RelationshipScreen(Screens):
                 container=container,
                 anchors={
                     "left_target": self.relation_elements[f"rel{i}_backdrop"],
-                    "top_target": self.relation_elements[f"rel{i}_main_cat_switch"],
+                    "top_target": self.switch_buttons[f"rel{i}_main_cat_switch"],
                 },
             )
-            self.relation_elements[f"rel{i}_view_profile"] = UISurfaceImageButton(
+            self.profile_buttons[f"rel{i}_view_profile"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((-6, 5), (36, 36))),
                 Icon.CAT_HEAD,
                 get_button_dict(ButtonStyles.ICON_TAB_LEFT, (36, 36)),
@@ -474,11 +484,11 @@ class RelationshipScreen(Screens):
                 container=container,
                 anchors={
                     "left_target": self.relation_elements[f"rel{i}_backdrop"],
-                    "top_target": self.relation_elements[f"rel{i}_open_log"],
+                    "top_target": self.log_buttons[f"rel{i}_open_log"],
                 },
             )
             prev_element = (
-                self.relation_elements[f"rel{i}_view_profile"] if i != 3 else None
+                self.profile_buttons[f"rel{i}_view_profile"] if i != 3 else None
             )
 
     def romance_allowed(self, relationship: Relationship) -> bool:
