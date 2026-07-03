@@ -29,6 +29,7 @@ from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
 from scripts.ui.scale import ui_scale, ui_scale_offset
 from scripts.ui.theme import get_text_box_theme
+from scripts.ui.windows.relationship_log import RelationshipLogWindow
 
 
 class RelationshipScreen(Screens):
@@ -106,7 +107,8 @@ class RelationshipScreen(Screens):
                 self.update_main_cat()
             # OPEN LOG
             elif event.ui_element in self.log_buttons.values():
-                pass
+                index = list(self.log_buttons.values()).index(event.ui_element)
+                RelationshipLogWindow(self.chunks[self.current_page - 1][index])
             # VIEW PROFILE
             elif event.ui_element in self.profile_buttons.values():
                 index = list(self.profile_buttons.values()).index(event.ui_element)
