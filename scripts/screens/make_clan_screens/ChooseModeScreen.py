@@ -227,4 +227,14 @@ class ChooseModeScreen(MakeClanScreenBase):
             )
             members.append(create_cat(rank=random_rank))
 
+        for _ in range(randrange(2,4)):
+            random_rank = choice(
+                [
+                    CatRank.KITTYPET,
+                    CatRank.LONER,
+                    CatRank.ROGUE,
+                ]
+            )
+            members.append(create_cat(rank=random_rank))
+
         self.clan_info.starting_members = members
