@@ -56,7 +56,6 @@ class ChangeGenderScreen(Screens):
         self.removalboxes_text = {}
         self.boxes = {}
         self.box_labels = {}
-        self.conju = 2
         self.current_container = None
         self.saved_container = None
 
@@ -310,10 +309,16 @@ class ChangeGenderScreen(Screens):
         pronoun_frame = "resources/images/pronoun_frame.png"
         n = 0
         for pronounset in self.the_cat.pronouns:
-            displayname = (
-                f"{pronounset['subject']}/{pronounset['object']}/"
-                f"{pronounset['inposs']}/{pronounset['self']}"
-            )
+            displayname = []
+            pronounset_keys = list(pronounset.keys())
+            pronounset_keys.remove("conju")
+            pronounset_keys.remove("gender")
+
+            for i, case in enumerate(pronounset_keys):
+                if i >= len(pronounset_keys) - 1:
+                    displayname.append(f"{pronounset[case]}")
+                else:
+                    displayname.append(f"{pronounset[case]}/")
             short_name = shorten_text_to_fit(displayname, 170, 13)
 
             # Create block for each pronounset
@@ -424,10 +429,16 @@ class ChangeGenderScreen(Screens):
             if x not in pronouns.get_default_pronouns().values()
         ]
         for pronounset in all_pronouns:
-            displayname = (
-                f"{pronounset['subject']}/{pronounset['object']}/"
-                f"{pronounset['inposs']}/{pronounset['self']}"
-            )
+            displayname = []
+            pronounset_keys = list(pronounset.keys())
+            pronounset_keys.remove("conju")
+            pronounset_keys.remove("gender")
+
+            for i, case in enumerate(pronounset_keys):
+                if i >= len(pronounset_keys) - 1:
+                    displayname.append(f"{pronounset[case]}")
+                else:
+                    displayname.append(f"{pronounset[case]}/")
             short_name = shorten_text_to_fit(displayname, 140, 13)
 
             if pronounset in self.pronouns_dict:
