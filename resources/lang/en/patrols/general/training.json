@@ -22027,8 +22027,7 @@
   "types": [
     "training"
   ],
-  "patrol_art": null,
-  "patrol_art_clean": null,
+  "patrol_art": "gen_med_gatheringraspberrysoloapp",
   "min_cats": 3,
   "max_cats": 6,
   "min_max_status": {
