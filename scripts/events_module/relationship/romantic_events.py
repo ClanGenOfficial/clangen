@@ -72,13 +72,11 @@ def handle_mating_and_breakup(cat: Cat):
 def handle_new_mate_events(cat: Cat):
     """Triggers and handles any events that result in a new mate"""
 
-    #
-
     # First, check high love confession
     if handle_confession(cat):
         return
 
-    # Then, handle more random mating
+    # Then, handle the mutual interest events
     # Choose some subset of cats that they have relationships with
     if not cat.relationships:
         return
@@ -94,6 +92,7 @@ def handle_new_mate_events(cat: Cat):
 
     subset = random.sample(subset, max(int(len(subset) / 3), 1))
 
+    # see if any of them want to pair up
     for other_cat in subset:
         handle_new_mates(cat, other_cat)
 
@@ -178,16 +177,9 @@ def handle_new_mates(cat_from: Cat, cat_to: Cat):
         return
 
     # CHECK POLY
-    existing_from_cat_mates = [
-        mate
-        for mate in cat_from.mate
-        if cat_from.fetch_cat(mate).status.alive_in_player_clan
-    ]
-    existing_to_cat_mates = [
-        mate
-        for mate in cat_to.mate
-        if cat_to.fetch_cat(mate).status.alive_in_player_clan
-    ]
+    existing_from_cat_mates, existing_to_cat_mates = _get_existing_mates(
+        cat_from, cat_to
+    )
     poly = any([existing_from_cat_mates, existing_to_cat_mates])
 
     if poly and not current_mates_allow_new_mate(
@@ -383,16 +375,9 @@ def handle_confession(cat_from: Cat) -> bool:
         return False
 
     # CHECK POLY
-    existing_from_cat_mates = [
-        mate
-        for mate in cat_from.mate
-        if cat_from.fetch_cat(mate).status.alive_in_player_clan
-    ]
-    existing_to_cat_mates = [
-        mate
-        for mate in cat_to.mate
-        if cat_to.fetch_cat(mate).status.alive_in_player_clan
-    ]
+    existing_from_cat_mates, existing_to_cat_mates = _get_existing_mates(
+        cat_from, cat_to
+    )
     poly = any([existing_from_cat_mates, existing_to_cat_mates])
 
     if poly and not current_mates_allow_new_mate(
@@ -486,6 +471,20 @@ def handle_confession(cat_from: Cat) -> bool:
     return True
 
 
+def _get_existing_mates(cat_from, cat_to):
+    existing_from_cat_mates = [
+        mate
+        for mate in cat_from.mate
+        if cat_from.fetch_cat(mate).status.alive_in_player_clan
+    ]
+    existing_to_cat_mates = [
+        mate
+        for mate in cat_to.mate
+        if cat_to.fetch_cat(mate).status.alive_in_player_clan
+    ]
+    return existing_from_cat_mates, existing_to_cat_mates
+
+
 def _get_relationship_change_dict(confession_changes, variability):
     cat_from_change = confession_changes["cat_from"]
     for change in cat_from_change:
@@ -517,30 +516,6 @@ def check_if_breakup(cat_from: Cat, cat_to: Cat) -> bool:
     return not int(random.random() * chance_number)
 
 
-def relationship_fulfill_condition(relationship, condition):
-    """
-    Check if the relationship can fulfill the condition.
-    Example condition:
-        {
-        "romance": 20,
-        "like": 30,
-        "respect": 0,
-        "comfort": 20,
-        "trust": -10
-        }
-
-    VALUES:
-        - 0: no condition
-        - positive number: value has to be higher than number
-        - negative number: value has to be lower than number
-
-    """
-    if not relationship:
-        return False
-
-    return relationship.relationship_qualifies(condition)
-
-
 def current_mates_allow_new_mate(
     cat_from: Cat, cat_to: Cat, cat_from_mates: list[str], cat_to_mates: list[str]
 ) -> bool:
@@ -550,20 +525,20 @@ def current_mates_allow_new_mate(
 
     # check relationship from current mates from cat_from
     for mate_id in cat_from_mates:
-        mate = Cat.fetch_cat(mate_id)
+        mate: Cat = Cat.fetch_cat(mate_id)
         if mate_id in cat_from.relationships and cat_from.ID in mate.relationships:
-            if not relationship_fulfill_condition(
-                cat_from.relationships[mate_id], current_mate_condition
-            ) or not relationship_fulfill_condition(
-                mate.relationships[cat_from.ID], current_mate_condition
+            if not cat_from.relationships[mate_id].relationship_qualifies(
+                current_mate_condition
+            ) or not mate.relationships[cat_from.ID].relationship_qualifies(
+                current_mate_condition
             ):
                 return False
 
         if mate_id in cat_to.relationships and cat_to.ID in mate.relationships:
-            if not relationship_fulfill_condition(
-                cat_to.relationships[mate_id], current_to_new_condition
-            ) or not relationship_fulfill_condition(
-                mate.relationships[cat_to.ID], current_to_new_condition
+            if not cat_to.relationships[mate_id].relationship_qualifies(
+                current_to_new_condition
+            ) or not mate.relationships[cat_to.ID].relationship_qualifies(
+                current_to_new_condition
             ):
                 return False
 
@@ -571,18 +546,18 @@ def current_mates_allow_new_mate(
     for mate_id in cat_to_mates:
         mate = Cat.fetch_cat(mate_id)
         if mate_id in cat_to.relationships and cat_to.ID in mate.relationships:
-            if not relationship_fulfill_condition(
-                cat_to.relationships[mate_id], current_mate_condition
-            ) or not relationship_fulfill_condition(
-                mate.relationships[cat_to.ID], current_mate_condition
+            if not cat_to.relationships[mate_id].relationship_qualifies(
+                current_mate_condition
+            ) or not mate.relationships[cat_to.ID].relationship_qualifies(
+                current_mate_condition
             ):
                 return False
 
         if mate_id in cat_from.relationships and cat_from.ID in mate.relationships:
-            if not relationship_fulfill_condition(
-                cat_from.relationships[mate_id], current_to_new_condition
-            ) or not relationship_fulfill_condition(
-                mate.relationships[cat_from.ID], current_to_new_condition
+            if not cat_from.relationships[mate_id].relationship_qualifies(
+                current_to_new_condition
+            ) or not mate.relationships[cat_from.ID].relationship_qualifies(
+                current_to_new_condition
             ):
                 return False
 
