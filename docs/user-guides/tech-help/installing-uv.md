@@ -319,7 +319,7 @@ Try to run the game normally with either the run file or `uv run main.py` instea
 
 ---
 
-**"'uv' is not recognized as an internal or external command'"**
+**"'uv' is not recognized as an internal or external command'"** or **"uv: command not found"**
 
 You either do not have UV installed, or you're using a version of ClanGen that requires a different dependency installer. Make sure to double check that you're on the correct version and that you did every step correctly.
 
