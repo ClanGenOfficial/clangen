@@ -292,10 +292,13 @@ You're not in path to do the command! Please closely follow the path section for
 
 **"The run.sh file just opens in a text editor instead of running."**
 
-!!! to-do
-     potential execute permissions guide created by a linux user?
+That means that the run.sh file doesn't have execute permissions, you'll have to grant permissions. Open the folder in your terminal, as described [above](#path-linux). Then copy and paste the following command and press enter:
 
-This has something to do with execute permissions, and you can search how to give a .sh file permissions on your browser.
+```sh
+chmod +x run.sh
+```
+
+Then try running the run.sh file again.
 
 For those who don't want to go through permissions, follow the manual way of opening the game.
 
