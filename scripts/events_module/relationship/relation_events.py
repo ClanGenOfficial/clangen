@@ -11,7 +11,7 @@ from scripts.events_module.relationship import (
 )
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatAge
-from scripts.events_module.relationship.romantic_events import RomanticEvents
+from scripts.events_module.relationship import romantic_events
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
 from scripts.events_module.event_filters import filter_relationship_type
 from scripts.clan_package.get_clan_cats import (
@@ -51,7 +51,7 @@ class Relation_Events:
         if not random.getrandbits(4):
             Relation_Events.romantic_events(cat)
 
-        RomanticEvents.handle_mating_and_breakup(cat)
+        romantic_events.handle_mating_and_breakup(cat)
 
     # ---------------------------------------------------------------------------- #
     #                                new event types                               #
