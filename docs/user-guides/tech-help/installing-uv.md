@@ -218,13 +218,13 @@ Open your devices terminal and type in `ls`. Do not enter.
 
 ![searching terminal for mac](https://github.com/Honeycase/clangen/blob/docs-installing/docs-resources/assets/techhelp/MAC-terminal-search.png?raw=true)
 
-Find where your unzipped clangen source is held in finder. Put the clangen location after cd. For example, `ls Users/username/downloads/clangen`
+Find where your unzipped clangen source is held in finder. Put the clangen location after cd. For example, `ls /Users/username/Downloads/clangen`
 
 This is to check the path you're trying to apply is correct. You should get something similar to below:
 
 ![ls result](https://github.com/Honeycase/clangen/blob/docs-installing/docs-resources/assets/techhelp/MAC-ls-result.png?raw=true)
 
-Once confirmed that the path is correct, change the command from previous to have `cd`. For example, `cd Users/username/downloads/clangen`
+Once confirmed that the path is correct, change the command from previous to have `cd`. For example, `cd /Users/username/Downloads/clangen`
 
 Proceed to the Commands section below.
 

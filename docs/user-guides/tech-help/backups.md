@@ -30,7 +30,7 @@ To apply the back up, take the contents of the duplicated saves folder and copy+
 
 ### Chromeos
 
-1. Open data directory in settings or manually navigate to the saves (file path ~.local/share/ClanGen)
+1. Open data directory in settings or manually navigate to the saves (file path ~/.local/share/ClanGen)
 2. Open the saves folder, and use ctrl+a and ctrl+c to copy all contents
 3. Make a new folder separate from the clangen directory (such as downloads)
 4. Rename the newly created folder to "cg saves backup" or similar
