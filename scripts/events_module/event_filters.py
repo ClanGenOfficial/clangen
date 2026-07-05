@@ -7,6 +7,7 @@ from scripts.cat.constants import BACKSTORIES
 from scripts.cat.personality import Personality
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
 from scripts.cat.enums import CatRank, CatAge, CatCompatibility, CatGroup, CatStanding
+from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.point_of_interest import get_poi_names_set, get_poi_tags_set
 from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
@@ -1818,7 +1819,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
 
 def get_highest_romantic_relation(
     relationships, exclude_mate=False, potential_mate=False
-):
+) -> Relationship:
     """Returns the relationship with the highest romantic value."""
     max_love_value = 0
     current_max_relationship = None

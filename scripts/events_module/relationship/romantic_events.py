@@ -1,5 +1,6 @@
 import random
 from random import choice
+from typing import Optional
 
 import i18n
 
@@ -68,12 +69,13 @@ def handle_mating_and_breakup(cat: Cat):
     handle_new_mate_events(cat)
 
 
-def handle_new_mate_events(cat):
+def handle_new_mate_events(cat: Cat):
     """Triggers and handles any events that result in a new mate"""
 
+    #
+
     # First, check high love confession
-    flag = handle_confession(cat)
-    if flag:
+    if handle_confession(cat):
         return
 
     # Then, handle more random mating
@@ -83,8 +85,9 @@ def handle_new_mate_events(cat):
     subset = [
         Cat.fetch_cat(x)
         for x in cat.relationships
-        if isinstance(Cat.fetch_cat(x), Cat)
+        if x not in cat.mate
         and Cat.fetch_cat(x).status.alive_in_player_clan
+        and cat.is_potential_mate(Cat.fetch_cat(x))
     ]
     if not subset:
         return
@@ -92,10 +95,7 @@ def handle_new_mate_events(cat):
     subset = random.sample(subset, max(int(len(subset) / 3), 1))
 
     for other_cat in subset:
-        relationship = cat.relationships.get(other_cat.ID)
-        flag = handle_new_mates(cat, other_cat)
-        if flag:
-            return
+        handle_new_mates(cat, other_cat)
 
 
 def handle_breakup_events(cat: Cat):
@@ -149,23 +149,134 @@ def handle_moving_on(cat: Cat):
                 cat.unset_mate(mate)
 
 
-def handle_new_mates(cat_from, cat_to) -> bool:
+def handle_new_mates(cat_from: Cat, cat_to: Cat):
     """More in depth check if the cats will become mates."""
 
-    become_mates, mate_string = check_if_new_mate(cat_from, cat_to)
+    become_mates = False
 
-    if become_mates and mate_string:
-        cat_from.set_mate(cat_to)
-        game.cur_events_list.append(
-            Single_Event(
-                mate_string,
-                ["relation", "misc"],
-                cat_dict={"m_c": cat_from, "r_c": cat_to},
+    # Gather relationships
+    if cat_to.ID in cat_from.relationships:
+        relationship_from = cat_from.relationships[cat_to.ID]
+    else:
+        relationship_from = cat_from.create_one_relationship(cat_to)
+
+    if cat_from.ID in cat_to.relationships:
+        relationship_to = cat_to.relationships[cat_from.ID]
+    else:
+        relationship_to = cat_to.create_one_relationship(cat_from)
+
+    mate_string = None
+    mate_chance = get_config("mates.chance_fulfilled_condition")
+    becoming_mates = not int(random.random() * mate_chance)
+
+    # has to be high because every moon this will be checked for each relationship in the game
+    friends_to_lovers = get_config("mates.chance_friends_to_lovers")
+    becoming_friend_to_lover = not int(random.random() * friends_to_lovers)
+
+    # already return if there is 'no' hit (everything above 0), other checks are not necessary
+    if not becoming_mates and not becoming_friend_to_lover:
+        return
+
+    # CHECK POLY
+    existing_from_cat_mates = [
+        mate
+        for mate in cat_from.mate
+        if cat_from.fetch_cat(mate).status.alive_in_player_clan
+    ]
+    existing_to_cat_mates = [
+        mate
+        for mate in cat_to.mate
+        if cat_to.fetch_cat(mate).status.alive_in_player_clan
+    ]
+    poly = any([existing_from_cat_mates, existing_to_cat_mates])
+
+    if poly and not current_mates_allow_new_mate(
+        cat_from, cat_to, existing_from_cat_mates, existing_to_cat_mates
+    ):
+        return
+
+    # GET TOGETHER
+    if (
+        becoming_mates
+        and relationship_from.relationship_qualifies(get_config("mates.mate_condition"))
+        and relationship_to.relationship_qualifies(get_config("mates.mate_condition"))
+    ):
+        become_mates = True
+        if cat_from.ID in cat_to.previous_mates:
+            mate_string = get_mate_string(
+                "low_romantic_makeup",
+                poly,
+                existing_from_cat_mates,
+                existing_to_cat_mates,
             )
+        else:
+            mate_string = get_mate_string(
+                "low_romantic",
+                poly,
+                existing_from_cat_mates,
+                existing_to_cat_mates,
+            )
+    elif (
+        becoming_friend_to_lover
+        and relationship_from.relationship_qualifies(
+            get_config("mates.like_to_romance")
         )
-        return True
+        and relationship_to.relationship_qualifies(get_config("mates.like_to_romance"))
+    ):
+        become_mates = True
+        if cat_from.ID in cat_to.previous_mates:
+            mate_string = get_mate_string(
+                "low_romantic_makeup",
+                poly,
+                existing_from_cat_mates,
+                existing_to_cat_mates,
+            )
+        else:
+            mate_string = get_mate_string(
+                "like_to_romance",
+                poly,
+                existing_from_cat_mates,
+                existing_to_cat_mates,
+            )
 
-    return False
+    if not become_mates:
+        return
+
+    if poly:
+        print("----- POLY-POLY-POLY", cat_from.name, cat_to.name)
+        print(cat_from.mate)
+        print(cat_to.mate)
+
+    mate_string = prepare_relationship_string(mate_string, cat_from, cat_to)
+
+    cat_from_change = {
+        "cats_from": [cat_from],
+        "cats_to": [cat_to],
+        "romance": 10,
+        "log": mate_string,
+    }
+    cat_to_change = {
+        "cats_from": [cat_to],
+        "cats_to": [cat_from],
+        "romance": 10,
+        "log": mate_string,
+    }
+    # CHANGE VALUES
+    change_relationship_values(
+        **cat_from_change,
+    )
+    change_relationship_values(
+        **cat_to_change,
+    )
+
+    cat_from.set_mate(cat_to)
+    game.cur_events_list.append(
+        Single_Event(
+            mate_string,
+            ["relation", "misc"],
+            cat_dict={"m_c": cat_from, "r_c": cat_to},
+        )
+    )
 
 
 def handle_breakup(cat_from: Cat, cat_to: Cat):
@@ -244,7 +355,7 @@ def handle_breakup(cat_from: Cat, cat_to: Cat):
     )
 
 
-def handle_confession(cat_from) -> bool:
+def handle_confession(cat_from: Cat) -> bool:
     """
     Check if the cat has a high love for another and mate them if there are in the boundaries
     :param cat_from: cat in question
@@ -252,90 +363,115 @@ def handle_confession(cat_from) -> bool:
     return: bool if event is triggered or not
     """
 
-    # get the highest romantic love relationships and
-    rel_list = cat_from.relationships.values()
-    highest_romantic_relation = get_highest_romantic_relation(
-        rel_list, exclude_mate=True
+    # get the highest romantic love relationship
+    chosen_relationship = get_highest_romantic_relation(
+        cat_from.relationships.values(), exclude_mate=True, potential_mate=True
     )
-    if not highest_romantic_relation:
+
+    if not chosen_relationship:
         return False
 
-    condition = constants.CONFIG["mates"]["confession"]["make_confession"]
-    if not relationship_fulfill_condition(highest_romantic_relation, condition):
+    # check if it meets confession threshold
+    condition = get_config("mates.confession.make_confession")
+    if not chosen_relationship.relationship_qualifies(condition):
         return False
 
-    cat_to = highest_romantic_relation.cat_to
+    cat_to: Cat = chosen_relationship.cat_to
 
-    if cat_to.status.is_outsider != cat_from.status.is_outsider:
+    # need to be in the same "place"
+    if cat_to.status.group != cat_from.status.group:
         return False
 
-    if not cat_to.is_potential_mate(cat_from) or not cat_from.is_potential_mate(cat_to):
-        return False
-
-    alive_inclan_from_mates = [
-        mate for mate in cat_from.mate if cat_from.status.alive_in_player_clan
+    # CHECK POLY
+    existing_from_cat_mates = [
+        mate
+        for mate in cat_from.mate
+        if cat_from.fetch_cat(mate).status.alive_in_player_clan
     ]
-    alive_inclan_to_mates = [
+    existing_to_cat_mates = [
         mate
         for mate in cat_to.mate
         if cat_to.fetch_cat(mate).status.alive_in_player_clan
     ]
-    poly = len(alive_inclan_from_mates) > 0 or len(alive_inclan_to_mates) > 0
+    poly = any([existing_from_cat_mates, existing_to_cat_mates])
 
-    if poly and not current_mates_allow_new_mate(cat_from, cat_to):
+    if poly and not current_mates_allow_new_mate(
+        cat_from, cat_to, existing_from_cat_mates, existing_to_cat_mates
+    ):
         return False
 
+    # CONFESS
     become_mates = False
-    condition = constants.CONFIG["mates"]["confession"]["accept_confession"]
-    rel_to_check = highest_romantic_relation.opposite_relationship
-    if not rel_to_check:
-        highest_romantic_relation.link_relationship()
-        rel_to_check = highest_romantic_relation.opposite_relationship
-
-    if relationship_fulfill_condition(rel_to_check, condition):
+    # accept confession
+    condition = get_config("mates.confession.accept_confession")
+    variability = get_config("mates.confession.reactions.variability")
+    if cat_to.relationships[cat_from.ID].relationship_qualifies(condition):
         become_mates = True
-        if (
-            cat_from.ID in cat_to.previous_mates
-            and cat_to.ID in cat_from.previous_mates
-        ):
+        if cat_from.ID in cat_to.previous_mates:
             mate_string = get_mate_string(
-                "high_romantic_makeup", poly, cat_from, cat_to
+                "high_romantic_makeup",
+                poly,
+                existing_from_cat_mates,
+                existing_to_cat_mates,
+            )
+            confession_changes = get_config("mates.confession.reactions.makeup")
+            cat_from_change, cat_to_change = _get_relationship_change_dict(
+                confession_changes, variability
             )
         else:
-            mate_string = get_mate_string("high_romantic", poly, cat_from, cat_to)
-    # second acceptance chance if the romantic is high enough
-    elif (
-        RelType.ROMANCE in condition
-        and condition[RelType.ROMANCE] != 0
-        and condition[RelType.ROMANCE] > 0
-        and rel_to_check.romance >= condition[RelType.ROMANCE] * 1.5
-    ):
-        become_mates = True
-        if (
-            cat_from.ID in cat_to.previous_mates
-            and cat_to.ID in cat_from.previous_mates
-        ):
             mate_string = get_mate_string(
-                "high_romantic_makeup", poly, cat_from, cat_to
+                "high_romantic",
+                poly,
+                existing_from_cat_mates,
+                existing_to_cat_mates,
             )
-        else:
-            mate_string = get_mate_string("high_romantic", poly, cat_from, cat_to)
+            confession_changes = get_config("mates.confession.reactions.accepted")
+            cat_from_change, cat_to_change = _get_relationship_change_dict(
+                confession_changes, variability
+            )
     else:
-        if (
-            cat_from.ID in cat_to.previous_mates
-            and cat_to.ID in cat_from.previous_mates
-        ):
-            mate_string = get_mate_string("makeup_fail", poly, cat_from, cat_to)
-            cat_from.relationships[cat_to.ID].romance -= 20
-            cat_to.relationships[cat_from.ID].comfort -= 20
-            cat_to.relationships[cat_from.ID].like -= 10
-            cat_to.relationships[cat_from.ID].respect -= 5
+        if cat_from.ID in cat_to.previous_mates:
+            mate_string = get_mate_string(
+                "makeup_fail",
+                poly,
+                existing_from_cat_mates,
+                existing_to_cat_mates,
+            )
+            confession_changes = get_config("mates.confession.reactions.makeup_fail")
+            cat_from_change, cat_to_change = _get_relationship_change_dict(
+                confession_changes, variability
+            )
         else:
-            mate_string = get_mate_string("rejected", poly, cat_from, cat_to)
-            cat_from.relationships[cat_to.ID].romance -= 10
-            cat_to.relationships[cat_from.ID].comfort -= 10
+            mate_string = get_mate_string(
+                "rejected",
+                poly,
+                existing_from_cat_mates,
+                existing_to_cat_mates,
+            )
+            confession_changes = get_config("mates.confession.reactions.rejected")
+            cat_from_change, cat_to_change = _get_relationship_change_dict(
+                confession_changes, variability
+            )
 
     mate_string = prepare_relationship_string(mate_string, cat_from, cat_to)
+
+    # do the final prep of the rel change dicts
+    cat_from_change["cats_from"] = [cat_from]
+    cat_from_change["cats_to"] = [cat_to]
+    cat_from_change["log"] = mate_string
+
+    cat_to_change["cats_from"] = [cat_to]
+    cat_to_change["cats_to"] = [cat_from]
+    cat_to_change["log"] = mate_string
+
+    # CHANGE VALUES
+    change_relationship_values(
+        **cat_from_change,
+    )
+    change_relationship_values(
+        **cat_to_change,
+    )
+
     game.cur_events_list.append(
         Single_Event(
             mate_string,
@@ -348,6 +484,16 @@ def handle_confession(cat_from) -> bool:
         cat_from.set_mate(cat_to)
 
     return True
+
+
+def _get_relationship_change_dict(confession_changes, variability):
+    cat_from_change = confession_changes["cat_from"]
+    for change in cat_from_change:
+        cat_from_change[change] += random.randint(variability[0], variability[1])
+    cat_to_change = confession_changes["cat_to"]
+    for change in cat_to_change:
+        cat_to_change[change] += random.randint(variability[0], variability[1])
+    return cat_from_change, cat_to_change
 
 
 # ---------------------------------------------------------------------------- #
@@ -369,105 +515,6 @@ def check_if_breakup(cat_from: Cat, cat_to: Cat) -> bool:
         return False
 
     return not int(random.random() * chance_number)
-
-
-def check_if_new_mate(cat_from, cat_to):
-    """Checks if the two cats can become mates, or not. Returns: boolean and event_string"""
-    become_mates = False
-    young_age = ("newborn", "kitten", "adolescent")
-    if cat_to.status.is_outsider != cat_from.status.is_outsider:
-        return False, None
-
-    if not cat_from.is_potential_mate(cat_to):
-        return False, None
-
-    if cat_from.ID in cat_to.mate:
-        return False, None
-
-    # Gather relationships
-    if cat_to.ID in cat_from.relationships:
-        relationship_from = cat_from.relationships[cat_to.ID]
-    else:
-        relationship_from = cat_from.create_one_relationship(cat_to)
-
-    if cat_from.ID in cat_to.relationships:
-        relationship_to = cat_to.relationships[cat_from.ID]
-    else:
-        relationship_to = cat_to.create_one_relationship(cat_from)
-
-    mate_string = None
-    mate_chance = constants.CONFIG["mates"]["chance_fulfilled_condition"]
-    hit = int(random.random() * mate_chance)
-
-    # has to be high because every moon this will be checked for each relationship in the game
-    friends_to_lovers = constants.CONFIG["mates"]["chance_friends_to_lovers"]
-    random_hit = int(random.random() * friends_to_lovers)
-
-    # already return if there is 'no' hit (everything above 0), other checks are not necessary
-    if hit > 0 and random_hit > 0:
-        return False, None
-
-    alive_inclan_from_mates = [
-        mate
-        for mate in cat_from.mate
-        if cat_from.fetch_cat(mate).status.alive_in_player_clan
-    ]
-    alive_inclan_to_mates = [
-        mate
-        for mate in cat_to.mate
-        if cat_to.fetch_cat(mate).status.alive_in_player_clan
-    ]
-    poly = len(alive_inclan_from_mates) > 0 or len(alive_inclan_to_mates) > 0
-
-    if poly and not current_mates_allow_new_mate(cat_from, cat_to):
-        return False, None
-
-    if (
-        not hit
-        and relationship_fulfill_condition(
-            relationship_from, constants.CONFIG["mates"]["mate_condition"]
-        )
-        and relationship_fulfill_condition(
-            relationship_to, constants.CONFIG["mates"]["mate_condition"]
-        )
-    ):
-        become_mates = True
-        if (
-            cat_from.ID in cat_to.previous_mates
-            and cat_to.ID in cat_from.previous_mates
-        ):
-            mate_string = get_mate_string("low_romantic_makeup", poly, cat_from, cat_to)
-        else:
-            mate_string = get_mate_string("low_romantic", poly, cat_from, cat_to)
-    if (
-        not random_hit
-        and relationship_fulfill_condition(
-            relationship_from, constants.CONFIG["mates"]["like_to_romance"]
-        )
-        and relationship_fulfill_condition(
-            relationship_to, constants.CONFIG["mates"]["like_to_romance"]
-        )
-    ):
-        become_mates = True
-        if (
-            cat_from.ID in cat_to.previous_mates
-            and cat_to.ID in cat_from.previous_mates
-        ):
-            mate_string = get_mate_string("low_romantic_makeup", poly, cat_from, cat_to)
-        else:
-            mate_string = get_mate_string("like_to_romance", poly, cat_from, cat_to)
-
-    if not become_mates:
-        return False, None
-
-    if poly:
-        print("----- POLY-POLY-POLY", cat_from.name, cat_to.name)
-        print(cat_from.mate)
-        print(cat_to.mate)
-
-    mate_string = prepare_relationship_string(mate_string, cat_from, cat_to)
-
-    return become_mates, mate_string
 
 
 def relationship_fulfill_condition(relationship, condition):
@@ -494,84 +541,50 @@ def relationship_fulfill_condition(relationship, condition):
     return relationship.relationship_qualifies(condition)
 
 
-def current_mates_allow_new_mate(cat_from, cat_to) -> bool:
+def current_mates_allow_new_mate(
+    cat_from: Cat, cat_to: Cat, cat_from_mates: list[str], cat_to_mates: list[str]
+) -> bool:
     """Check if all current mates are fulfill the given conditions."""
-    current_mate_condition = constants.CONFIG["mates"]["poly"]["current_mate_condition"]
-    current_to_new_condition = constants.CONFIG["mates"]["poly"]["mates_to_each_other"]
+    current_mate_condition = get_config("mates.poly.current_mate_condition")
+    current_to_new_condition = get_config("mates.poly.mate_to_each_other")
 
     # check relationship from current mates from cat_from
-    all_mates_fulfill_current_mate_condition = True
-    all_mates_fulfill_current_to_new = True
-    alive_inclan_from_mates = [
-        mate
-        for mate in cat_from.mate
-        if cat_from.fetch_cat(mate).status.alive_in_player_clan
-    ]
-    if len(alive_inclan_from_mates) > 0:
-        for mate_id in alive_inclan_from_mates:
-            mate_cat = cat_from.fetch_cat(mate_id)
-            if mate_cat.dead:
-                continue
-            if (
-                mate_id in cat_from.relationships
-                and cat_from.ID in mate_cat.relationships
+    for mate_id in cat_from_mates:
+        mate = Cat.fetch_cat(mate_id)
+        if mate_id in cat_from.relationships and cat_from.ID in mate.relationships:
+            if not relationship_fulfill_condition(
+                cat_from.relationships[mate_id], current_mate_condition
+            ) or not relationship_fulfill_condition(
+                mate.relationships[cat_from.ID], current_mate_condition
             ):
-                if not relationship_fulfill_condition(
-                    cat_from.relationships[mate_id], current_mate_condition
-                ) or not relationship_fulfill_condition(
-                    mate_cat.relationships[cat_from.ID], current_mate_condition
-                ):
-                    all_mates_fulfill_current_mate_condition = False
+                return False
 
-            if mate_id in cat_to.relationships and cat_to.ID in mate_cat.relationships:
-                if not relationship_fulfill_condition(
-                    cat_to.relationships[mate_id], current_to_new_condition
-                ) or not relationship_fulfill_condition(
-                    mate_cat.relationships[cat_to.ID], current_to_new_condition
-                ):
-                    all_mates_fulfill_current_to_new = False
-    if (
-        not all_mates_fulfill_current_mate_condition
-        or not all_mates_fulfill_current_to_new
-    ):
-        return False
+        if mate_id in cat_to.relationships and cat_to.ID in mate.relationships:
+            if not relationship_fulfill_condition(
+                cat_to.relationships[mate_id], current_to_new_condition
+            ) or not relationship_fulfill_condition(
+                mate.relationships[cat_to.ID], current_to_new_condition
+            ):
+                return False
 
     # check relationship from current mates from cat_to
-    all_mates_fulfill_current_mate_condition = True
-    all_mates_fulfill_current_to_new = True
-    alive_inclan_to_mates = [
-        mate
-        for mate in cat_to.mate
-        if cat_to.fetch_cat(mate).status.alive_in_player_clan
-    ]
-    if len(alive_inclan_to_mates) > 0:
-        for mate_id in alive_inclan_to_mates:
-            mate_cat = cat_to.fetch_cat(mate_id)
-            if mate_cat.dead:
-                continue
-            if mate_id in cat_to.relationships and cat_to.ID in mate_cat.relationships:
-                if not relationship_fulfill_condition(
-                    cat_to.relationships[mate_id], current_mate_condition
-                ) or not relationship_fulfill_condition(
-                    mate_cat.relationships[cat_to.ID], current_mate_condition
-                ):
-                    all_mates_fulfill_current_mate_condition = False
-
-            if (
-                mate_id in cat_from.relationships
-                and cat_from.ID in mate_cat.relationships
+    for mate_id in cat_to_mates:
+        mate = Cat.fetch_cat(mate_id)
+        if mate_id in cat_to.relationships and cat_to.ID in mate.relationships:
+            if not relationship_fulfill_condition(
+                cat_to.relationships[mate_id], current_mate_condition
+            ) or not relationship_fulfill_condition(
+                mate.relationships[cat_to.ID], current_mate_condition
             ):
-                if not relationship_fulfill_condition(
-                    cat_from.relationships[mate_id], current_to_new_condition
-                ) or not relationship_fulfill_condition(
-                    mate_cat.relationships[cat_from.ID], current_to_new_condition
-                ):
-                    all_mates_fulfill_current_to_new = False
-    if (
-        not all_mates_fulfill_current_mate_condition
-        or not all_mates_fulfill_current_to_new
-    ):
-        return False
+                return False
+
+        if mate_id in cat_from.relationships and cat_from.ID in mate.relationships:
+            if not relationship_fulfill_condition(
+                cat_from.relationships[mate_id], current_to_new_condition
+            ) or not relationship_fulfill_condition(
+                mate.relationships[cat_from.ID], current_to_new_condition
+            ):
+                return False
 
     return True
 
@@ -625,28 +638,23 @@ def prepare_relationship_string(mate_string, cat_from, cat_to):
     return mate_string
 
 
-def get_mate_string(key, poly, cat_from, cat_to):
+def get_mate_string(
+    key: str,
+    poly: bool,
+    cat_from_mates: list[str],
+    cat_to_mates: list[str],
+):
     """Returns the mate string with the certain key, cats and poly."""
     rebuild_dicts()
     if not poly:
         return choice(MATE_DICTS[key])
     else:
         poly_key = ""
-        alive_inclan_from_mates = [
-            mate
-            for mate in cat_from.mate
-            if cat_from.fetch_cat(mate).status.alive_in_player_clan
-        ]
-        alive_inclan_to_mates = [
-            mate
-            for mate in cat_to.mate
-            if cat_to.fetch_cat(mate).status.alive_in_player_clan
-        ]
-        if len(alive_inclan_from_mates) > 0 and len(alive_inclan_to_mates) > 0:
+        if cat_from_mates and cat_to_mates:
             poly_key = "both_mates"
-        elif len(alive_inclan_from_mates) > 0 >= len(alive_inclan_to_mates):
+        elif not cat_to_mates and cat_from_mates:
             poly_key = "m_c_mates"
-        elif len(alive_inclan_from_mates) <= 0 < len(alive_inclan_to_mates):
+        elif not cat_from_mates and cat_to_mates:
             poly_key = "r_c_mates"
         if not poly_key:
             # none of the other involved mates are alive

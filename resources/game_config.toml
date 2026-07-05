@@ -109,6 +109,43 @@ dev_tools = false
     comfort = 10
     trust = 0
 
+    # confession reactions
+    [mates.confession.reactions]
+      variability = [-5, 5]
+
+      [mates.confession.reactions.makeup_fail.cat_from]
+        romance = -20
+        comfort = -20
+        like = -10
+        trust = -5
+      [mates.confession.reactions.makeup_fail.cat_to]
+        romance = -10
+        comfort = -5
+        trust = -5
+        respect = -5
+      [mates.confession.reactions.rejected.cat_from]
+        romance = -10
+        comfort = -5
+      [mates.confession.reactions.rejected.cat_to]
+        romance = -15
+        comfort = -10
+
+      [mates.confession.reactions.makeup.cat_from]
+        romance = 10
+        trust = 5
+      [mates.confession.reactions.makeup.cat_to]
+        romance = 10
+        comfort = 5
+        trust = 5
+        respect = 5
+      [mates.confession.reactions.accepted.cat_from]
+        romance = 10
+        comfort = 5
+      [mates.confession.reactions.accepted.cat_to]
+        romance = 10
+        comfort = 5
+        trust = 5
+
   # both relationships have to fulfill this condition to become mates
   [mates.mate_condition]
     romance = 20
