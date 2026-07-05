@@ -391,7 +391,7 @@ class ChooseMateScreen(Screens):
             self.the_cat.set_mate(self.selected_cat)
 
         else:
-            self.the_cat.unset_mate(self.selected_cat, breakup=True)
+            self.the_cat.unset_mate(self.selected_cat, user_initiated_breakup=True)
 
     def update_both(self):
         """Updates both the current cat and selected cat info."""

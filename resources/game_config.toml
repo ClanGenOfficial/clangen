@@ -142,10 +142,16 @@ dev_tools = false
       comfort = 15
       trust = 20
 
-  # these denote how relationships change upon a breakup
   [mates.breakup]
-    threshold = 120
-    variability = [-10, 10]
+
+    # intial chance of breakup
+    [mates.breakup.initial_chance]
+      threshold = 120
+      default_chance = 30
+      positive_compatibility = 5
+      negative_compatibility = -10
+
+    # default weighting for type of breakup
     [mates.breakup.default_weights]
       had_fight = 3
       decided_to_be_friends = 3
@@ -153,30 +159,33 @@ dev_tools = false
       bad_breakup = 5
       chill_breakup = 5
 
-    [mates.breakup.reactions.had_fight]
-      romance = -20
-      like = -10
-      trust = -15
-    [mates.breakup.reactions.decided_to_be_friends]
-      romance = -50
-      like = 30
-      trust = 20
-      comfort = 10
-      respect = 10
-    [mates.breakup.reactions.lost_feelings]
-      romance = -30
-      like = -10
-      comfort = -10
-    [mates.breakup.reactions.bad_breakup]
-      romance = -20
-      like = -10
-      trust = -30
-      comfort = -20
-      respect = -10
-    [mates.breakup.reactions.chill_breakup]
-      romance = -20
-      comfort = -10
-      respect = 10
+    # these denote how relationships change upon a breakup
+    [mates.breakup.reactions]
+      variability = [-10, 10]
+      [mates.breakup.reactions.had_fight]
+        romance = -20
+        like = -10
+        trust = -15
+      [mates.breakup.reactions.decided_to_be_friends]
+        romance = -50
+        like = 30
+        trust = 20
+        comfort = 10
+        respect = 10
+      [mates.breakup.reactions.lost_feelings]
+        romance = -30
+        like = -10
+        comfort = -10
+      [mates.breakup.reactions.bad_breakup]
+        romance = -20
+        like = -10
+        trust = -30
+        comfort = -20
+        respect = -10
+      [mates.breakup.reactions.chill_breakup]
+        romance = -20
+        comfort = -10
+        respect = 10
 
 
 [new_cat]

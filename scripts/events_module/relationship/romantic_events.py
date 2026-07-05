@@ -47,12 +47,21 @@ def rebuild_dicts():
     current_loaded_lang = i18n.config.get("locale")
 
 
-def handle_mating_and_breakup(cat):
+def handle_mating_and_breakup(cat: Cat):
     """Handle events related to making new mates, and breaking up."""
+    rebuild_dicts()
 
     # check setting first
     if cat.no_mates:
         return
+
+    # just ensure relationships exist
+    for m in cat.mate:
+        mate = Cat.fetch_cat(m)
+        if mate.ID not in cat.relationships:
+            cat.create_one_relationship(mate)
+        if cat.ID not in mate.relationships:
+            mate.create_one_relationship(cat)
 
     handle_moving_on(cat)
     handle_breakup_events(cat)
@@ -93,13 +102,13 @@ def handle_breakup_events(cat: Cat):
     """Triggers and handles any events that results in a breakup"""
 
     for x in cat.mate:
-        mate_ob = Cat.fetch_cat(x)
-        if not isinstance(mate_ob, Cat):
-            continue
+        mate = Cat.fetch_cat(x)
 
-        flag = handle_breakup(cat, mate_ob)
-        if flag:
+        # check the mate's setting
+        if mate.no_mates:
             return
+
+        handle_breakup(cat, mate)
 
 
 def handle_moving_on(cat: Cat):
@@ -111,14 +120,14 @@ def handle_moving_on(cat: Cat):
             cat.mate.remove(mate_id)
             continue
 
-        cat_mate: Cat = Cat.fetch_cat(mate_id)
+        mate: Cat = Cat.fetch_cat(mate_id)
         # check the mate's setting
-        if cat_mate.no_mates:
+        if mate.no_mates:
             return
 
         # check if the mate has been gone for at least 4 moons
         dead_or_gone = (
-            not cat_mate.status.alive_in_player_clan and cat_mate.status.moons_as >= 4
+            not mate.status.alive_in_player_clan and mate.status.moons_as >= 4
         )
 
         # if cat is not grief stricken, then we try to move on
@@ -133,13 +142,11 @@ def handle_moving_on(cat: Cat):
                     chance += get_config("mates.moving_on.facet_influence")
 
             if random.random() <= chance:
-                text = i18n.t("hardcoded.move_on_dead_mate", mate=str(cat_mate.name))
+                text = i18n.t("hardcoded.move_on_dead_mate", mate=str(mate.name))
                 game.cur_events_list.append(
-                    Single_Event(
-                        text, "relation", cat_dict={"m_c": cat, "r_c": cat_mate}
-                    )
+                    Single_Event(text, "relation", cat_dict={"m_c": cat, "r_c": mate})
                 )
-                cat.unset_mate(cat_mate)
+                cat.unset_mate(mate)
 
 
 def handle_new_mates(cat_from, cat_to) -> bool:
@@ -161,89 +168,71 @@ def handle_new_mates(cat_from, cat_to) -> bool:
     return False
 
 
-def handle_breakup(cat_from: Cat, cat_to: Cat) -> bool:
+def handle_breakup(cat_from: Cat, cat_to: Cat):
     """Handles cats breaking up their relationship"""
 
-    rebuild_dicts()
-
-    if cat_from.ID not in cat_to.mate:
-        return False
-
-    if cat_from.no_mates or cat_to.no_mates:
-        return False
-
-    if cat_to.no_mates or cat_from.no_mates:
-        return False
-
     if not check_if_breakup(cat_from, cat_to):
-        return False
+        return
 
-    # Determine if this is a nice breakup or a fight breakup
-    # TODO - make this better
-    if cat_to.ID in cat_from.relationships:
-        relationship_from: Relationship = cat_from.relationships[cat_to.ID]
-    else:
-        relationship_from: Relationship = cat_from.create_one_relationship(cat_to)
-    if cat_from.ID in cat_to.relationships:
-        relationship_to: Relationship = cat_to.relationships[cat_from.ID]
-    else:
-        relationship_to: Relationship = cat_to.create_one_relationship(cat_from)
+    # gather relationships
+    relationship_from: Relationship = cat_from.relationships[cat_to.ID]
+    relationship_to: Relationship = cat_to.relationships[cat_from.ID]
 
-    possible_breakups = constants.CONFIG["mates"]["breakup"]["default_weights"]
+    # Determine the type of breakup
+    possible_breakups = get_config("mates.breakup.default_weights")
 
-    if relationship_from.romance < 40 or relationship_to.romance < 40:
+    # most of these are determined solely by the cat_from's feelings, except for deciding to be friends
+    # CHILL
+    if relationship_from.romance < 40:
         possible_breakups["chill_breakup"] += 2
-    if relationship_from.romance < 20 or relationship_to.romance < 20:
+    # LOST FEELING
+    if relationship_from.romance < 20:
         possible_breakups["lost_feelings"] += 5
-    if (
-        relationship_from.total_relationship_value < 80
-        or relationship_to.total_relationship_value < 80
-    ):
+    # FIGHT/BAD
+    if relationship_from.total_relationship_value < 80:
         possible_breakups["had_fight"] += 3
         possible_breakups["bad_breakup"] += 2
+    # FRIENDLY
     if relationship_from.like > 40 and relationship_to.like > 40:
         possible_breakups["decided_to_be_friends"] += 5
 
-    _b_types = []
-    _b_weights = []
-    for breakup in possible_breakups:
-        _b_types.append(breakup)
-        _b_weights.append(possible_breakups[breakup])
+    breakup_type = random.choices(
+        list(possible_breakups.keys()), weights=list(possible_breakups.values())
+    )[0]
 
-    breakup_type = random.choices(_b_types, weights=_b_weights)[0]
-
-    cat_from.unset_mate(cat_to, breakup=False)
-
+    # GET TEXT
     text = choice(BREAKUP_STRINGS[breakup_type])
     text = event_text_adjust(Cat, text, main_cat=cat_from, random_cat=cat_to)
 
-    breakup_changes = constants.CONFIG["mates"]["breakup"]["reactions"][breakup_type]
+    breakup_changes = get_config(f"mates.breakup.reactions.{breakup_type}")
+    variability = get_config("mates.breakup.reactions.variability")
 
-    # reaction of cat_from
+    # CAT_FROM REACTION
     cat_from_change = breakup_changes.copy()
     for change in cat_from_change:
-        adjust_by = constants.CONFIG["mates"]["breakup"]["variability"]
-        cat_from_change[change] += random.randint(adjust_by[0], adjust_by[1])
+        cat_from_change[change] += random.randint(variability[0], variability[1])
     cat_from_change["cats_from"] = [cat_from]
     cat_from_change["cats_to"] = [cat_to]
     cat_from_change["log"] = text
 
-    # reaction of cat_to
+    # CAT_TO REACTION
     cat_to_change = breakup_changes.copy()
     for change in cat_to_change:
-        adjust_by = constants.CONFIG["mates"]["breakup"]["variability"]
-        cat_to_change[change] += random.randint(adjust_by[0], adjust_by[1])
+        cat_to_change[change] += random.randint(variability[0], variability[1])
 
     cat_to_change["cats_from"] = [cat_to]
     cat_to_change["cats_to"] = [cat_from]
     cat_to_change["log"] = text
 
+    # CHANGE VALUES
     change_relationship_values(
         **cat_from_change,
     )
     change_relationship_values(
         **cat_to_change,
     )
+
+    cat_from.unset_mate(cat_to, user_initiated_breakup=False)
 
     game.cur_events_list.append(
         Single_Event(
@@ -253,7 +242,6 @@ def handle_breakup(cat_from: Cat, cat_to: Cat) -> bool:
             cat_dict={"m_c": cat_from, "r_c": cat_to},
         )
     )
-    return True
 
 
 def handle_confession(cat_from) -> bool:
@@ -367,22 +355,16 @@ def handle_confession(cat_from) -> bool:
 # ---------------------------------------------------------------------------- #
 
 
-def check_if_breakup(cat_from, cat_to):
-    """More in depth check if the cats will break up.
-    Returns:
-        bool (True or False)
+def check_if_breakup(cat_from: Cat, cat_to: Cat) -> bool:
     """
-    if cat_from.ID not in cat_to.mate:
-        return False
-
+    Returns True if the cats should break up
+    """
     # Moving on, not breakups, occur when one mate is dead or outside.
-    if (
-        not cat_from.status.alive_in_player_clan
-        or not cat_to.status.alive_in_player_clan
-    ):
+    if cat_to.status.alive_in_player_clan:
         return False
 
     chance_number = get_breakup_chance(cat_from, cat_to)
+
     if chance_number == 0:
         return False
 
@@ -683,42 +665,33 @@ def get_breakup_chance(cat_from: Cat, cat_to: Cat) -> int:
         integer (number)
     """
     # Gather relationships
-    if cat_to.ID in cat_from.relationships:
-        relationship_from: Relationship = cat_from.relationships[cat_to.ID]
-    else:
-        relationship_from: Relationship = cat_from.create_one_relationship(cat_to)
-
-    if cat_from.ID in cat_to.relationships:
-        relationship_to: Relationship = cat_to.relationships[cat_from.ID]
-    else:
-        relationship_to: Relationship = cat_to.create_one_relationship(cat_from)
+    relationship: Relationship = cat_from.relationships[cat_to.ID]
 
     # No breakup chance if the cat is above the breakup threshold.
-    threshold = constants.CONFIG["mates"]["breakup"]["threshold"]
-    if (
-        relationship_from.total_relationship_value > threshold
-        or relationship_to.total_relationship_value > threshold
-    ):
+    threshold = get_config("mates.breakup.initial_chance.threshold")
+    if relationship.total_relationship_value > threshold:
         return 0
 
-    chance_number = 30
-    chance_number += int(relationship_from.romance / 10)
-    chance_number += int(relationship_to.romance / 10)
-    chance_number += int(relationship_from.like / 10)
-    chance_number += int(relationship_to.like / 10)
-    chance_number += int(relationship_from.respect / 10)
-    chance_number += int(relationship_to.respect / 10)
-    chance_number += int(relationship_from.trust / 10)
-    chance_number += int(relationship_to.trust / 10)
-    chance_number += int(relationship_from.comfort / 10)
-    chance_number += int(relationship_to.comfort / 10)
+    chance_number = get_config("mates.breakup.initial_chance.default_chance")
+    for value in [
+        relationship.romance,
+        relationship.like,
+        relationship.respect,
+        relationship.trust,
+        relationship.comfort,
+    ]:
+        chance_number += int(value / 10)
 
     # change the change based on the personality
-    get_along = get_personality_compatibility(cat_from, cat_to)
-    if get_along == CatCompatibility.POSITIVE:
-        chance_number += 5
-    if get_along == CatCompatibility.NEGATIVE:
-        chance_number -= 10
+    compatibility = get_personality_compatibility(cat_from, cat_to)
+    if compatibility == CatCompatibility.POSITIVE:
+        chance_number += get_config(
+            "mates.breakup.initial_chance.positive_compatibility"
+        )
+    if compatibility == CatCompatibility.NEGATIVE:
+        chance_number += get_config(
+            "mates.breakup.initial_chance.negative_compatibility"
+        )
 
     # Then, at least a 1/5 chance
     chance_number = max(chance_number, 5)
