@@ -6,6 +6,7 @@ import i18n
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatCompatibility
 from scripts.cat_relations.relationship import RelType, Relationship
+from scripts.config import get_config
 from scripts.event_class import Single_Event
 from scripts.game_structure import constants
 from scripts.game_structure import game
@@ -49,6 +50,7 @@ def rebuild_dicts():
 def handle_mating_and_breakup(cat):
     """Handle events related to making new mates, and breaking up."""
 
+    # check setting first
     if cat.no_mates:
         return
 
@@ -100,32 +102,27 @@ def handle_breakup_events(cat: Cat):
             return
 
 
-def handle_moving_on(cat):
+def handle_moving_on(cat: Cat):
     """Handles moving on from dead or outside mates"""
     for mate_id in cat.mate:
+        # check valid mate
         if mate_id not in Cat.all_cats:
             print(f"WARNING: Cat #{cat} has a invalid mate. It will be removed.")
             cat.mate.remove(mate_id)
             continue
 
-        cat_mate = Cat.fetch_cat(mate_id)
+        cat_mate: Cat = Cat.fetch_cat(mate_id)
+        # check the mate's setting
         if cat_mate.no_mates:
             return
 
         # Move on from dead mates
-        if (
-            cat_mate
-            and "grief stricken" not in cat.illnesses
-            and (
-                (cat_mate.dead and cat_mate.dead_for >= 4)
-                or cat_mate.status.is_outsider
-            )
-        ):
-            # randint is a slow function, don't call it unless we have to.
-            if (
-                not cat_mate.no_mates
-                and random.random() <= constants.CONFIG["mates"]["chance_to_move_on"]
-            ):
+        dead_or_gone = (
+            not cat_mate.status.alive_in_player_clan and cat_mate.status.moons_as >= 4
+        )
+
+        if "grief stricken" not in cat.illnesses and dead_or_gone:
+            if random.random() <= get_config("mates.chance_to_move_on"):
                 text = i18n.t("hardcoded.move_on_dead_mate", mate=str(cat_mate.name))
                 game.cur_events_list.append(
                     Single_Event(

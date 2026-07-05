@@ -364,6 +364,13 @@ class Status:
         """
         return self.group_history[-1]["moons_as"] == 0
 
+    @property
+    def moons_as(self) -> int:
+        """
+        Returns the number of moons that the cat has had their current status
+        """
+        return self.group_history[-1]["moons_as"]
+
     @staticmethod
     def get_rank_from_age(age: CatAge, disable_random=False) -> CatRank:
         """
