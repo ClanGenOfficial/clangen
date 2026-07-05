@@ -42,7 +42,7 @@ def rebuild_dicts():
     path = "events/relationship_events/"
     MATE_DICTS = load_lang_resource(f"{path}become_mates.json")
     BREAKUP_STRINGS = load_lang_resource(f"{path}breakup_mates.json")
-    POLY_MATE_DICTS = load_lang_resource(f"{path}become_poly_mates.json")
+    POLY_MATE_DICTS = load_lang_resource(f"{path}become_mates_poly.json")
 
     current_loaded_lang = i18n.config.get("locale")
 
@@ -116,13 +116,23 @@ def handle_moving_on(cat: Cat):
         if cat_mate.no_mates:
             return
 
-        # Move on from dead mates
+        # check if the mate has been gone for at least 4 moons
         dead_or_gone = (
             not cat_mate.status.alive_in_player_clan and cat_mate.status.moons_as >= 4
         )
 
+        # if cat is not grief stricken, then we try to move on
         if "grief stricken" not in cat.illnesses and dead_or_gone:
-            if random.random() <= get_config("mates.chance_to_move_on"):
+            chance = get_config("mates.moving_on.chance")
+            for threshold_reached in [
+                cat.personality.stability > 8,
+                cat.personality.sociability < 8,
+                cat.personality.aggression < 8,
+            ]:
+                if threshold_reached:
+                    chance += get_config("mates.moving_on.facet_influence")
+
+            if random.random() <= chance:
                 text = i18n.t("hardcoded.move_on_dead_mate", mate=str(cat_mate.name))
                 game.cur_events_list.append(
                     Single_Event(
