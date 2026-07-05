@@ -230,12 +230,15 @@ Proceed to the Commands section below.
 
 ### PATH: Linux
 
-!!!to-do
-     images of the process for linux provided by a linux player?
+There are two ways to set your terminal to path with linux. You can either do it the [manual way](#path-mac), like detailed above (but use `/home` instead of `/Users`), or you can open the folder within the linux terminal.
 
-There are two ways to set your terminal to path with linux. You can either do it the [manual way](#path-mac), like detailed above, or you can open the folder within the linux terminal.
+For the manual method, you should get something like this, just like on Mac:
 
-Go to where your unzipped ClanGen source is located on your device, and open it until you get to its internal contents. Right click in an empty space within the file manager, and select open with terminal. It'll automatically open in the correct pathing.
+![open with terminal](https://github.com/rustykitty/clangen/blob/honey-guide/docs-resources/assets/techhelp/LINUX_ls.png)
+
+For the automatic method, go to where your unzipped ClanGen source is located on your device, and open it until you get to its internal contents. Right click in an empty space within the file manager, and select open with terminal. It'll automatically open in the correct location; you don't need to use `cd`.
+
+![open with terminal](https://github.com/rustykitty/clangen/blob/honey-guide/docs-resources/assets/techhelp/LINUX_open_in_terminal.png)
 
 ### Commands
 
