@@ -1,15 +1,13 @@
 import random
 from random import choice
-from typing import Optional
 
 import i18n
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatCompatibility
-from scripts.cat_relations.relationship import RelType, Relationship
+from scripts.cat_relations.relationship import Relationship
 from scripts.config import get_config
 from scripts.event_class import Single_Event
-from scripts.game_structure import constants
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.events_module.text_adjust import event_text_adjust
@@ -31,26 +29,9 @@ BREAKUP_STRINGS = {}
 POLY_MATE_DICTS = {}
 
 
-def rebuild_dicts():
-    global current_loaded_lang
-    global MATE_DICTS
-    global BREAKUP_STRINGS
-    global POLY_MATE_DICTS
-
-    if current_loaded_lang == i18n.config.get("locale"):
-        return
-
-    path = "events/relationship_events/"
-    MATE_DICTS = load_lang_resource(f"{path}become_mates.json")
-    BREAKUP_STRINGS = load_lang_resource(f"{path}breakup_mates.json")
-    POLY_MATE_DICTS = load_lang_resource(f"{path}become_mates_poly.json")
-
-    current_loaded_lang = i18n.config.get("locale")
-
-
-def handle_mating_and_breakup(cat: Cat):
-    """Handle events related to making new mates, and breaking up."""
-    rebuild_dicts()
+def handle_mates_and_breakup(cat: Cat):
+    """Checks if the given cat should move on from prior mates, breakup current ones, or take on a new one."""
+    _rebuild_dicts()
 
     # check setting first
     if cat.no_mates:
@@ -64,53 +45,12 @@ def handle_mating_and_breakup(cat: Cat):
         if cat.ID not in mate.relationships:
             mate.create_one_relationship(cat)
 
-    handle_moving_on(cat)
-    handle_breakup_events(cat)
-    handle_new_mate_events(cat)
+    _handle_moving_on(cat)
+    _handle_breakup_events(cat)
+    _handle_new_mate_events(cat)
 
 
-def handle_new_mate_events(cat: Cat):
-    """Triggers and handles any events that result in a new mate"""
-
-    # First, check high love confession
-    if handle_confession(cat):
-        return
-
-    # Then, handle the mutual interest events
-    # Choose some subset of cats that they have relationships with
-    if not cat.relationships:
-        return
-    subset = [
-        Cat.fetch_cat(x)
-        for x in cat.relationships
-        if x not in cat.mate
-        and Cat.fetch_cat(x).status.alive_in_player_clan
-        and cat.is_potential_mate(Cat.fetch_cat(x))
-    ]
-    if not subset:
-        return
-
-    subset = random.sample(subset, max(int(len(subset) / 3), 1))
-
-    # see if any of them want to pair up
-    for other_cat in subset:
-        handle_new_mates(cat, other_cat)
-
-
-def handle_breakup_events(cat: Cat):
-    """Triggers and handles any events that results in a breakup"""
-
-    for x in cat.mate:
-        mate = Cat.fetch_cat(x)
-
-        # check the mate's setting
-        if mate.no_mates:
-            return
-
-        handle_breakup(cat, mate)
-
-
-def handle_moving_on(cat: Cat):
+def _handle_moving_on(cat: Cat):
     """Handles moving on from dead or outside mates"""
     for mate_id in cat.mate:
         # check valid mate
@@ -148,133 +88,23 @@ def handle_moving_on(cat: Cat):
                 cat.unset_mate(mate)
 
 
-def handle_new_mates(cat_from: Cat, cat_to: Cat):
-    """More in depth check if the cats will become mates."""
+def _handle_breakup_events(cat: Cat):
+    """Triggers and handles any events that results in a breakup"""
 
-    become_mates = False
+    for x in cat.mate:
+        mate = Cat.fetch_cat(x)
 
-    # Gather relationships
-    if cat_to.ID in cat_from.relationships:
-        relationship_from = cat_from.relationships[cat_to.ID]
-    else:
-        relationship_from = cat_from.create_one_relationship(cat_to)
+        # check the mate's setting
+        if mate.no_mates:
+            return
 
-    if cat_from.ID in cat_to.relationships:
-        relationship_to = cat_to.relationships[cat_from.ID]
-    else:
-        relationship_to = cat_to.create_one_relationship(cat_from)
-
-    mate_string = None
-    mate_chance = get_config("mates.chance_fulfilled_condition")
-    becoming_mates = not int(random.random() * mate_chance)
-
-    # has to be high because every moon this will be checked for each relationship in the game
-    friends_to_lovers = get_config("mates.chance_friends_to_lovers")
-    becoming_friend_to_lover = not int(random.random() * friends_to_lovers)
-
-    # already return if there is 'no' hit (everything above 0), other checks are not necessary
-    if not becoming_mates and not becoming_friend_to_lover:
-        return
-
-    # CHECK POLY
-    existing_from_cat_mates, existing_to_cat_mates = _get_existing_mates(
-        cat_from, cat_to
-    )
-    poly = any([existing_from_cat_mates, existing_to_cat_mates])
-
-    if poly and not current_mates_allow_new_mate(
-        cat_from, cat_to, existing_from_cat_mates, existing_to_cat_mates
-    ):
-        return
-
-    # GET TOGETHER
-    if (
-        becoming_mates
-        and relationship_from.relationship_qualifies(get_config("mates.mate_condition"))
-        and relationship_to.relationship_qualifies(get_config("mates.mate_condition"))
-    ):
-        become_mates = True
-        if cat_from.ID in cat_to.previous_mates:
-            mate_string = get_mate_string(
-                "low_romantic_makeup",
-                poly,
-                existing_from_cat_mates,
-                existing_to_cat_mates,
-            )
-        else:
-            mate_string = get_mate_string(
-                "low_romantic",
-                poly,
-                existing_from_cat_mates,
-                existing_to_cat_mates,
-            )
-    elif (
-        becoming_friend_to_lover
-        and relationship_from.relationship_qualifies(
-            get_config("mates.like_to_romance")
-        )
-        and relationship_to.relationship_qualifies(get_config("mates.like_to_romance"))
-    ):
-        become_mates = True
-        if cat_from.ID in cat_to.previous_mates:
-            mate_string = get_mate_string(
-                "low_romantic_makeup",
-                poly,
-                existing_from_cat_mates,
-                existing_to_cat_mates,
-            )
-        else:
-            mate_string = get_mate_string(
-                "like_to_romance",
-                poly,
-                existing_from_cat_mates,
-                existing_to_cat_mates,
-            )
-
-    if not become_mates:
-        return
-
-    if poly:
-        print("----- POLY-POLY-POLY", cat_from.name, cat_to.name)
-        print(cat_from.mate)
-        print(cat_to.mate)
-
-    mate_string = prepare_relationship_string(mate_string, cat_from, cat_to)
-
-    cat_from_change = {
-        "cats_from": [cat_from],
-        "cats_to": [cat_to],
-        "romance": 10,
-        "log": mate_string,
-    }
-    cat_to_change = {
-        "cats_from": [cat_to],
-        "cats_to": [cat_from],
-        "romance": 10,
-        "log": mate_string,
-    }
-    # CHANGE VALUES
-    change_relationship_values(
-        **cat_from_change,
-    )
-    change_relationship_values(
-        **cat_to_change,
-    )
-
-    cat_from.set_mate(cat_to)
-    game.cur_events_list.append(
-        Single_Event(
-            mate_string,
-            ["relation", "misc"],
-            cat_dict={"m_c": cat_from, "r_c": cat_to},
-        )
-    )
+        _attempt_breakup(cat, mate)
 
 
-def handle_breakup(cat_from: Cat, cat_to: Cat):
-    """Handles cats breaking up their relationship"""
+def _attempt_breakup(cat_from: Cat, cat_to: Cat):
+    """Checks if the cats wish to breakup and handles the ensuing result."""
 
-    if not check_if_breakup(cat_from, cat_to):
+    if not _check_if_breakup(cat_from, cat_to):
         return
 
     # gather relationships
@@ -347,11 +177,97 @@ def handle_breakup(cat_from: Cat, cat_to: Cat):
     )
 
 
-def handle_confession(cat_from: Cat) -> bool:
+def _check_if_breakup(cat_from: Cat, cat_to: Cat) -> bool:
     """
-    Check if the cat has a high love for another and mate them if there are in the boundaries
-    :param cat_from: cat in question
+    Returns True if the cats should break up
+    """
+    # Moving on, not breakups, occur when one mate is dead or outside.
+    if cat_to.status.alive_in_player_clan:
+        return False
 
+    chance_number = _get_breakup_chance(cat_from, cat_to)
+
+    if chance_number == 0:
+        return False
+
+    return not int(random.random() * chance_number)
+
+
+def _get_breakup_chance(cat_from: Cat, cat_to: Cat) -> int:
+    """
+    Looks into the current values and calculates the chance of breaking up. The lower, the more likely they will break up.
+    :return: chance of breaking up
+    """
+    # Gather relationships
+    relationship: Relationship = cat_from.relationships[cat_to.ID]
+
+    # No breakup chance if the cat is above the breakup threshold.
+    threshold = get_config("mates.breakup.initial_chance.threshold")
+    if relationship.total_relationship_value > threshold:
+        return 0
+
+    chance_number = get_config("mates.breakup.initial_chance.default_chance")
+    for value in [
+        relationship.romance,
+        relationship.like,
+        relationship.respect,
+        relationship.trust,
+        relationship.comfort,
+    ]:
+        chance_number += int(value / 10)
+
+    # change the change based on the personality
+    compatibility = get_personality_compatibility(cat_from, cat_to)
+    if compatibility == CatCompatibility.POSITIVE:
+        chance_number += get_config(
+            "mates.breakup.initial_chance.positive_compatibility"
+        )
+    if compatibility == CatCompatibility.NEGATIVE:
+        chance_number += get_config(
+            "mates.breakup.initial_chance.negative_compatibility"
+        )
+
+    # Then, at least a 1/5 chance
+    chance_number = max(chance_number, 5)
+
+    return chance_number
+
+
+def _handle_new_mate_events(cat: Cat):
+    """Triggers and handles any events that result in a new mate"""
+
+    # no trying to take a new mate if you're sad
+    if "grief stricken" in cat.illnesses:
+        return
+
+    # First, check high love confession
+    if _attempt_confession(cat):
+        return
+
+    # Then, handle the mutual interest events
+    # Choose some subset of cats that they have relationships with
+    if not cat.relationships:
+        return
+    subset = [
+        Cat.fetch_cat(x)
+        for x in cat.relationships
+        if x not in cat.mate
+        and Cat.fetch_cat(x).status.alive_in_player_clan
+        and cat.is_potential_mate(Cat.fetch_cat(x))
+    ]
+    if not subset:
+        return
+
+    subset = random.sample(subset, max(int(len(subset) / 3), 1))
+
+    # see if any of them want to pair up
+    for other_cat in subset:
+        _attempt_mutual_interest_mates(cat, other_cat)
+
+
+def _attempt_confession(cat_from: Cat) -> bool:
+    """
+    Check if the cat has a high love for another and attempt to become mates. Handles resulting rejection or acceptance.
     return: bool if event is triggered or not
     """
 
@@ -374,13 +290,17 @@ def handle_confession(cat_from: Cat) -> bool:
     if cat_to.status.group != cat_from.status.group:
         return False
 
+    # need to be okay to try and approach this cat
+    if not _check_against_grief(cat_from, cat_to):
+        return False
+
     # CHECK POLY
     existing_from_cat_mates, existing_to_cat_mates = _get_existing_mates(
         cat_from, cat_to
     )
     poly = any([existing_from_cat_mates, existing_to_cat_mates])
 
-    if poly and not current_mates_allow_new_mate(
+    if poly and not _check_current_mates_allow_new_mate(
         cat_from, cat_to, existing_from_cat_mates, existing_to_cat_mates
     ):
         return False
@@ -393,7 +313,7 @@ def handle_confession(cat_from: Cat) -> bool:
     if cat_to.relationships[cat_from.ID].relationship_qualifies(condition):
         become_mates = True
         if cat_from.ID in cat_to.previous_mates:
-            mate_string = get_mate_string(
+            mate_string = _get_mate_string(
                 "high_romantic_makeup",
                 poly,
                 existing_from_cat_mates,
@@ -404,7 +324,7 @@ def handle_confession(cat_from: Cat) -> bool:
                 confession_changes, variability
             )
         else:
-            mate_string = get_mate_string(
+            mate_string = _get_mate_string(
                 "high_romantic",
                 poly,
                 existing_from_cat_mates,
@@ -416,7 +336,7 @@ def handle_confession(cat_from: Cat) -> bool:
             )
     else:
         if cat_from.ID in cat_to.previous_mates:
-            mate_string = get_mate_string(
+            mate_string = _get_mate_string(
                 "makeup_fail",
                 poly,
                 existing_from_cat_mates,
@@ -427,7 +347,7 @@ def handle_confession(cat_from: Cat) -> bool:
                 confession_changes, variability
             )
         else:
-            mate_string = get_mate_string(
+            mate_string = _get_mate_string(
                 "rejected",
                 poly,
                 existing_from_cat_mates,
@@ -438,7 +358,7 @@ def handle_confession(cat_from: Cat) -> bool:
                 confession_changes, variability
             )
 
-    mate_string = prepare_relationship_string(mate_string, cat_from, cat_to)
+    mate_string = _prepare_relationship_string(mate_string, cat_from, cat_to)
 
     # do the final prep of the rel change dicts
     cat_from_change["cats_from"] = [cat_from]
@@ -471,55 +391,139 @@ def handle_confession(cat_from: Cat) -> bool:
     return True
 
 
-def _get_existing_mates(cat_from, cat_to):
-    existing_from_cat_mates = [
-        mate
-        for mate in cat_from.mate
-        if cat_from.fetch_cat(mate).status.alive_in_player_clan
-    ]
-    existing_to_cat_mates = [
-        mate
-        for mate in cat_to.mate
-        if cat_to.fetch_cat(mate).status.alive_in_player_clan
-    ]
-    return existing_from_cat_mates, existing_to_cat_mates
+def _attempt_mutual_interest_mates(cat_from: Cat, cat_to: Cat):
+    """Checks if the two cats have a high enough mutual interest to become mates. Handles the ensuing event if so."""
+
+    become_mates = False
+
+    if not _check_against_grief(cat_from, cat_to):
+        return
+
+    # Gather relationships
+    if cat_to.ID in cat_from.relationships:
+        relationship_from = cat_from.relationships[cat_to.ID]
+    else:
+        relationship_from = cat_from.create_one_relationship(cat_to)
+
+    if cat_from.ID in cat_to.relationships:
+        relationship_to = cat_to.relationships[cat_from.ID]
+    else:
+        relationship_to = cat_to.create_one_relationship(cat_from)
+
+    mate_string = None
+    mate_chance = get_config("mates.chance_fulfilled_condition")
+    becoming_mates = not int(random.random() * mate_chance)
+
+    # has to be high because every moon this will be checked for each relationship in the game
+    friends_to_lovers = get_config("mates.chance_friends_to_lovers")
+    becoming_friend_to_lover = not int(random.random() * friends_to_lovers)
+
+    # already return if there is 'no' hit (everything above 0), other checks are not necessary
+    if not becoming_mates and not becoming_friend_to_lover:
+        return
+
+    # CHECK POLY
+    existing_from_cat_mates, existing_to_cat_mates = _get_existing_mates(
+        cat_from, cat_to
+    )
+    poly = any([existing_from_cat_mates, existing_to_cat_mates])
+
+    if poly and not _check_current_mates_allow_new_mate(
+        cat_from, cat_to, existing_from_cat_mates, existing_to_cat_mates
+    ):
+        return
+
+    # GET TOGETHER
+    if (
+        becoming_mates
+        and relationship_from.relationship_qualifies(get_config("mates.mate_condition"))
+        and relationship_to.relationship_qualifies(get_config("mates.mate_condition"))
+    ):
+        become_mates = True
+        if cat_from.ID in cat_to.previous_mates:
+            mate_string = _get_mate_string(
+                "low_romantic_makeup",
+                poly,
+                existing_from_cat_mates,
+                existing_to_cat_mates,
+            )
+        else:
+            mate_string = _get_mate_string(
+                "low_romantic",
+                poly,
+                existing_from_cat_mates,
+                existing_to_cat_mates,
+            )
+    elif (
+        becoming_friend_to_lover
+        and relationship_from.relationship_qualifies(
+            get_config("mates.like_to_romance")
+        )
+        and relationship_to.relationship_qualifies(get_config("mates.like_to_romance"))
+    ):
+        become_mates = True
+        if cat_from.ID in cat_to.previous_mates:
+            mate_string = _get_mate_string(
+                "low_romantic_makeup",
+                poly,
+                existing_from_cat_mates,
+                existing_to_cat_mates,
+            )
+        else:
+            mate_string = _get_mate_string(
+                "like_to_romance",
+                poly,
+                existing_from_cat_mates,
+                existing_to_cat_mates,
+            )
+
+    if not become_mates:
+        return
+
+    if poly:
+        print("----- POLY-POLY-POLY", cat_from.name, cat_to.name)
+        print(cat_from.mate)
+        print(cat_to.mate)
+
+    mate_string = _prepare_relationship_string(mate_string, cat_from, cat_to)
+
+    cat_from_change = {
+        "cats_from": [cat_from],
+        "cats_to": [cat_to],
+        "romance": 10,
+        "log": mate_string,
+    }
+    cat_to_change = {
+        "cats_from": [cat_to],
+        "cats_to": [cat_from],
+        "romance": 10,
+        "log": mate_string,
+    }
+    # CHANGE VALUES
+    change_relationship_values(
+        **cat_from_change,
+    )
+    change_relationship_values(
+        **cat_to_change,
+    )
+
+    cat_from.set_mate(cat_to)
+    game.cur_events_list.append(
+        Single_Event(
+            mate_string,
+            ["relation", "misc"],
+            cat_dict={"m_c": cat_from, "r_c": cat_to},
+        )
+    )
 
 
-def _get_relationship_change_dict(confession_changes, variability):
-    cat_from_change = confession_changes["cat_from"]
-    for change in cat_from_change:
-        cat_from_change[change] += random.randint(variability[0], variability[1])
-    cat_to_change = confession_changes["cat_to"]
-    for change in cat_to_change:
-        cat_to_change[change] += random.randint(variability[0], variability[1])
-    return cat_from_change, cat_to_change
-
-
-# ---------------------------------------------------------------------------- #
-#                          check if event is triggered                         #
-# ---------------------------------------------------------------------------- #
-
-
-def check_if_breakup(cat_from: Cat, cat_to: Cat) -> bool:
-    """
-    Returns True if the cats should break up
-    """
-    # Moving on, not breakups, occur when one mate is dead or outside.
-    if cat_to.status.alive_in_player_clan:
-        return False
-
-    chance_number = get_breakup_chance(cat_from, cat_to)
-
-    if chance_number == 0:
-        return False
-
-    return not int(random.random() * chance_number)
-
-
-def current_mates_allow_new_mate(
+def _check_current_mates_allow_new_mate(
     cat_from: Cat, cat_to: Cat, cat_from_mates: list[str], cat_to_mates: list[str]
 ) -> bool:
-    """Check if all current mates are fulfill the given conditions."""
+    """
+    Check if all current mates fulfill the required conditions to allow a new mate.
+    :return: True if conditions are fulfilled, False if not
+    """
     current_mate_condition = get_config("mates.poly.current_mate_condition")
     current_to_new_condition = get_config("mates.poly.mate_to_each_other")
 
@@ -564,7 +568,87 @@ def current_mates_allow_new_mate(
     return True
 
 
-def prepare_relationship_string(mate_string, cat_from, cat_to):
+def _check_against_grief(cat_from: Cat, cat_to: Cat) -> bool:
+    """
+    Checks if cat_to will still approach a grief stricken cat_from.
+    :return: True if they will approach, False if they won't
+    """
+    if "grief stricken" in cat_to.illnesses:
+        chance = get_config("mates.approach_grief.chance")
+        # some cats might not be reading the room
+        if cat_from.personality in ("oblivious", "loving"):
+            chance += get_config("mates_approach_grief.specific_trait_influence")
+        for threshold_reached in [
+            cat_from.personality.lawfulness < 8,
+            cat_from.personality.sociability < 8,
+            cat_from.personality.aggression > 8,
+        ]:
+            if threshold_reached:
+                chance += get_config("mates_approach_grief.facet_influence")
+        if random.random() > chance:
+            return False
+
+    return True
+
+
+def _get_existing_mates(cat_from: Cat, cat_to: Cat) -> tuple[list[str], list[str]]:
+    """
+    Returns living and present mates for cat_from and cat_to.
+    return: Tuple with a list of IDs for each cat's mates
+    """
+    existing_from_cat_mates = [
+        mate
+        for mate in cat_from.mate
+        if cat_from.fetch_cat(mate).status.alive_in_player_clan
+    ]
+    existing_to_cat_mates = [
+        mate
+        for mate in cat_to.mate
+        if cat_to.fetch_cat(mate).status.alive_in_player_clan
+    ]
+    return existing_from_cat_mates, existing_to_cat_mates
+
+
+def _get_relationship_change_dict(
+    confession_changes: dict[str, dict], variability: tuple[int, int]
+) -> tuple[dict, dict]:
+    """
+    Compiles rel change dictionaries for both cats according to the given base dictionary. Variability is applied to the values.
+    """
+    cat_from_change = confession_changes["cat_from"]
+    for change in cat_from_change:
+        cat_from_change[change] += random.randint(variability[0], variability[1])
+    cat_to_change = confession_changes["cat_to"]
+    for change in cat_to_change:
+        cat_to_change[change] += random.randint(variability[0], variability[1])
+    return cat_from_change, cat_to_change
+
+
+def _get_mate_string(
+    key: str,
+    poly: bool,
+    cat_from_mates: list[str],
+    cat_to_mates: list[str],
+) -> str:
+    """Returns the mate string with the certain key, cats and poly."""
+    _rebuild_dicts()
+    if not poly:
+        return choice(MATE_DICTS[key])
+    else:
+        poly_key = ""
+        if cat_from_mates and cat_to_mates:
+            poly_key = "both_mates"
+        elif not cat_to_mates and cat_from_mates:
+            poly_key = "m_c_mates"
+        elif not cat_from_mates and cat_to_mates:
+            poly_key = "r_c_mates"
+        if not poly_key:
+            # none of the other involved mates are alive
+            return choice(MATE_DICTS[key])
+        return choice(POLY_MATE_DICTS[key][poly_key])
+
+
+def _prepare_relationship_string(mate_string: str, cat_from: Cat, cat_to: Cat):
     """Prepares the relationship event string for display"""
     # replace mates with their names
     if "[m_c_mates]" in mate_string:
@@ -613,70 +697,18 @@ def prepare_relationship_string(mate_string, cat_from, cat_to):
     return mate_string
 
 
-def get_mate_string(
-    key: str,
-    poly: bool,
-    cat_from_mates: list[str],
-    cat_to_mates: list[str],
-):
-    """Returns the mate string with the certain key, cats and poly."""
-    rebuild_dicts()
-    if not poly:
-        return choice(MATE_DICTS[key])
-    else:
-        poly_key = ""
-        if cat_from_mates and cat_to_mates:
-            poly_key = "both_mates"
-        elif not cat_to_mates and cat_from_mates:
-            poly_key = "m_c_mates"
-        elif not cat_from_mates and cat_to_mates:
-            poly_key = "r_c_mates"
-        if not poly_key:
-            # none of the other involved mates are alive
-            return choice(MATE_DICTS[key])
-        return choice(POLY_MATE_DICTS[key][poly_key])
+def _rebuild_dicts():
+    global current_loaded_lang
+    global MATE_DICTS
+    global BREAKUP_STRINGS
+    global POLY_MATE_DICTS
 
+    if current_loaded_lang == i18n.config.get("locale"):
+        return
 
-# ---------------------------------------------------------------------------- #
-#                             get/calculate chances                            #
-# ---------------------------------------------------------------------------- #
+    path = "events/relationship_events/"
+    MATE_DICTS = load_lang_resource(f"{path}become_mates.json")
+    BREAKUP_STRINGS = load_lang_resource(f"{path}breakup_mates.json")
+    POLY_MATE_DICTS = load_lang_resource(f"{path}become_mates_poly.json")
 
-
-def get_breakup_chance(cat_from: Cat, cat_to: Cat) -> int:
-    """Looks into the current values and calculate the chance of breaking up. The lower, the more likely they will break up.
-    Returns:
-        integer (number)
-    """
-    # Gather relationships
-    relationship: Relationship = cat_from.relationships[cat_to.ID]
-
-    # No breakup chance if the cat is above the breakup threshold.
-    threshold = get_config("mates.breakup.initial_chance.threshold")
-    if relationship.total_relationship_value > threshold:
-        return 0
-
-    chance_number = get_config("mates.breakup.initial_chance.default_chance")
-    for value in [
-        relationship.romance,
-        relationship.like,
-        relationship.respect,
-        relationship.trust,
-        relationship.comfort,
-    ]:
-        chance_number += int(value / 10)
-
-    # change the change based on the personality
-    compatibility = get_personality_compatibility(cat_from, cat_to)
-    if compatibility == CatCompatibility.POSITIVE:
-        chance_number += get_config(
-            "mates.breakup.initial_chance.positive_compatibility"
-        )
-    if compatibility == CatCompatibility.NEGATIVE:
-        chance_number += get_config(
-            "mates.breakup.initial_chance.negative_compatibility"
-        )
-
-    # Then, at least a 1/5 chance
-    chance_number = max(chance_number, 5)
-
-    return chance_number
+    current_loaded_lang = i18n.config.get("locale")

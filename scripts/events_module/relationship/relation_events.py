@@ -51,7 +51,7 @@ class Relation_Events:
         if not random.getrandbits(4):
             Relation_Events.romantic_events(cat)
 
-        romantic_events.handle_mating_and_breakup(cat)
+        romantic_events.handle_mates_and_breakup(cat)
 
     # ---------------------------------------------------------------------------- #
     #                                new event types                               #

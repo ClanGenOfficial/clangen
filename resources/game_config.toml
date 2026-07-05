@@ -78,14 +78,22 @@ dev_tools = false
   # 1/chance of becoming mates, triggers with friends_to_lover (has to be a high number because many relationships are checked each moon)
   chance_friends_to_lovers = 170
 
+  # chance to approach grieving cat
+  [mates.approach_grief]
+    # base chance percentage (20%)
+    chance = 0.2
+    # amount removed from base chance for each facet threshold reached: aggression > 8, lawfulness < 8, sociability < 8
+    facet_influence = 0.1
+    # loving and oblivious get a little bonus cus they feel especially fitting
+    specific_trait_influence = 0.1
+
+
   # chance to move on from a dead or absent mate, fraction represents a percentage. default is 30% chance.
   [mates.moving_on]
     # base chance percentage (40%)
     chance = 0.4
     # amount removed from base chance for each facet threshold reached: stability > 8, sociability < 8, aggression < 8
     facet_influence = -0.1
-
-
 
   # NOTE FOR RELATIONSHIP CONSTRAINTS
   #  0: no condition
