@@ -234,11 +234,11 @@ There are two ways to set your terminal to path with linux. You can either do it
 
 For the manual method, you should get something like this, just like on Mac:
 
-![open with terminal](https://github.com/rustykitty/clangen/blob/honey-guide/docs-resources/assets/techhelp/LINUX_ls.png)
+![open with terminal](https://github.com/rustykitty/clangen/blob/honey-guide/docs-resources/assets/techhelp/LINUX_ls.png?raw=true)
 
 For the automatic method, go to where your unzipped ClanGen source is located on your device, and open it until you get to its internal contents. Right click in an empty space within the file manager, and select open with terminal. It'll automatically open in the correct location; you don't need to use `cd`.
 
-![open with terminal](https://github.com/rustykitty/clangen/blob/honey-guide/docs-resources/assets/techhelp/LINUX_open_in_terminal.png)
+![open with terminal](https://github.com/rustykitty/clangen/blob/honey-guide/docs-resources/assets/techhelp/LINUX_open_in_terminal.png?raw=true)
 
 ### Commands
 
