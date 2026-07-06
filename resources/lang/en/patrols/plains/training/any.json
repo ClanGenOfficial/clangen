@@ -1301,7 +1301,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "cat_sprites/gen_running_WrAp,
+        "patrol_art": "cat_sprites/gen_running_WrAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
