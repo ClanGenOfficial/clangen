@@ -23,6 +23,7 @@ from scripts.cat.save_load import (
     save_cats,
     get_faded_ids,
 )
+from scripts.clan_package.clan_names import get_possible_clan_names
 from scripts.clan_package.settings import save_clan_settings, load_clan_settings
 from scripts.clan_package.settings.clan_settings import reset_loaded_clan_settings
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
@@ -1379,9 +1380,8 @@ class OtherClan:
             used_names = [str(i.name) for i in game.clan.all_other_clans] + [
                 game.clan.name
             ]
-            clan_names = names.names_dict["normal_prefixes"]
-            clan_names.extend(names.names_dict["clan_prefixes"])
-            self.name = choice(clan_names)
+            clan_names = get_possible_clan_names()
+            self.name = choice(clan_names)  # name property will set self.prefix
             while self.name in used_names:  # making sure we don't repeat a name
                 self.name = choice(clan_names)
 

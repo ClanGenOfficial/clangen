@@ -332,6 +332,9 @@ dev_tools = false
   loner = [5, 15, 50, 30]
   rogue = [3, 7, 35, 55]
 
+  # set to True to always use English names instead of the localized version
+  always_use_english = false
+
 [accessory_generation]
   # base 1/chance a cat generates with an accessory 
   base_acc_chance = 150

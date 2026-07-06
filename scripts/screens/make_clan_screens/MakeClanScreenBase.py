@@ -11,6 +11,7 @@ from scripts.cat import save_load
 from scripts.cat.cats import Cat
 from scripts.cat.names import names
 from scripts.clan import Clan
+from scripts.clan_package.clan_names import get_possible_clan_names
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.game_structure import game, constants
 from scripts.game_structure.game import switch_get_value, Switch, game_setting_get
@@ -254,9 +255,7 @@ class MakeClanScreenBase(Screens):
         return chosen_biome
 
     def random_clan_name(self):
-        clan_names = (
-            names.names_dict["normal_prefixes"] + names.names_dict["clan_prefixes"]
-        )
+        clan_names = get_possible_clan_names()
         if self.clan_info.display_name:
             clan_names.remove(self.clan_info.display_name)
 
