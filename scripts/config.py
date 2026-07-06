@@ -20,4 +20,6 @@ def get_config(config_path):
         for key in config_keys:
             config_value = config_value[key]
 
-    return copy.deepcopy(config_value)  # deepcopy so that the actual CONFIG can't be modified
+    return copy.deepcopy(
+        config_value
+    )  # deepcopy so that the actual CONFIG can't be modified
