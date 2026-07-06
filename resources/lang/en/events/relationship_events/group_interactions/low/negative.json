@@ -186,5 +186,42 @@
                 "amount": -5
             }
         ]
+    },
+    {
+        "id": "group_multicat_neg_polymateslow",
+        "strings": [
+            "m_c left camp without telling multi_cat where {PRONOUN/m_c/subject} {VERB/m_c/were/was} going.",
+            "m_c was the last one to leave the nest, but multi_cat finds it messy and unmade.",
+            "m_c wanders away from multi_cat mid-conversation without saying anything."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "mates"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "multi_cat"
+                ],
+                "cat_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "romance"
+                ],
+                "amount": -5
+            }
+        ]
     }
 ]
