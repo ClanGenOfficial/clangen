@@ -298,7 +298,7 @@ def one_moon():
     game.just_died.clear()
 
     # Promote leader and deputy, if needed.
-    check_and_promote_leader()
+    check_leader()
     check_and_promote_deputy()
 
     # Resort
@@ -1242,37 +1242,25 @@ def perform_ceremonies(cat):
     global ceremony_accessory
 
     # Protection check, to ensure "None" cats won't cause a crash.
-    if cat:
-        cat_dead = cat.dead
-    else:
-        cat_dead = True
+    if not cat or cat.dead:
+        return
 
-    if not cat_dead:
-        if cat.status.rank == CatRank.DEPUTY and game.clan.deputy is None:
-            game.clan.deputy = cat
-        if cat.status.rank == CatRank.MEDICINE_CAT and game.clan.medicine_cat is None:
-            game.clan.medicine_cat = cat
+    if cat.status.rank == CatRank.DEPUTY and game.clan.deputy is None:
+        game.clan.deputy = cat
+    if cat.status.rank == CatRank.MEDICINE_CAT and game.clan.medicine_cat is None:
+        game.clan.medicine_cat = cat
 
     # PROMOTE DEPUTY TO LEADER, IF NEEDED -----------------------
-    if game.clan.leader:
-        leader_dead = game.clan.leader.dead
-        leader_outside = game.clan.leader.status.is_outsider
-    else:
-        leader_dead = True
-        # If leader is None, treat them as dead (since they are dead - and faded away.)
-        leader_outside = True
+
     # If a Clan deputy exists, and the leader is dead,
     #  outside, or doesn't exist, make the deputy leader.
-    if (
-        game.clan.deputy is not None
-        and game.clan.deputy.status.alive_in_player_clan
-        and (leader_dead or leader_outside)
-        and cat.status.rank == CatRank.DEPUTY
-    ):
-        game.clan.leader_lives = 9
-        cat.rank_change(CatRank.LEADER)
-        ceremony(cat, CatRank.LEADER)
-        game.clan.deputy = None
+    if cat == game.clan.deputy:
+        # leader gone, time to promote
+        if not game.clan.leader or not game.clan.leader.status.alive_in_player_clan:
+            game.clan.leader_lives = 9
+            ceremony(cat, CatRank.LEADER)
+            game.clan.deputy = None
+            game.clan.leader = cat
 
     # OTHER CEREMONIES ---------------------------------------
 
@@ -2454,35 +2442,23 @@ def coming_out(cat):
     return
 
 
-def check_and_promote_leader():
-    """Checks if a new leader need to be promoted, and promotes them, if needed."""
+def check_leader():
+    """Checks if leader is missing."""
     # check for leader
     if game.clan.leader:
-        leader_invalid = game.clan.leader.status.alive_in_player_clan
+        leader_invalid = not game.clan.leader.status.alive_in_player_clan
     else:
         leader_invalid = True
 
     if leader_invalid:
-        perform_ceremonies(
-            game.clan.leader
-        )  # This is where the deputy will be made leader
-
-        if game.clan.leader:
-            leader_dead = game.clan.leader.dead
-            leader_outside = game.clan.leader.status.is_outsider
-        else:
-            leader_dead = True
-            leader_outside = True
-
-        if leader_dead or leader_outside:
-            game.cur_events_list.insert(
-                0,
-                Single_Event(
-                    event_text_adjust(
-                        Cat, i18n.t("defaults.warn_no_leader"), clan=game.clan
-                    )
-                ),
-            )
+        game.cur_events_list.insert(
+            0,
+            Single_Event(
+                event_text_adjust(
+                    Cat, i18n.t("defaults.warn_no_leader"), clan=game.clan
+                )
+            ),
+        )
 
 
 def check_and_promote_deputy():
