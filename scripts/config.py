@@ -8,17 +8,15 @@ from scripts.game_structure import constants, game
 def get_config(config_path):
     config_value = game.constants.CONFIG
     config_keys = tuple(config_path.split("."))
-    value_found = False
 
     # checking cards first
     for card in game.clan.cruel_cards:
         card_info = constants.CRUEL_CARDS_ALL[card]
         if config_path in card_info["modifiers"]:
             config_value = card_info["modifiers"][config_path]
-            value_found = True
 
     # then checking game_config
-    if not value_found:
+    if config_value == game.constants.CONFIG:
         for key in config_keys:
             config_value = config_value[key]
 
