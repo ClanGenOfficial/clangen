@@ -1385,7 +1385,6 @@ class OtherClan:
             while self.name in used_names:  # making sure we don't repeat a name
                 self.name = choice(clan_names)
 
-
         self.temperament: tuple[str, str]
 
         # detect old saves and convert
