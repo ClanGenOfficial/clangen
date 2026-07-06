@@ -3045,7 +3045,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_fish",
+        "patrol_art": "cat_sprites/gen_hunt_fish_Wr",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
@@ -3094,7 +3094,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_fish",
+        "patrol_art": "cat_sprites/gen_hunt_fish_Wr",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
@@ -3167,7 +3167,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_wareprey_lorelocked1",
-        "patrol_art": "gen_train_patrolapprenticesessionsuccess",
+        "patrol_art": "cat_sprites/gen_train_success_Ap",
         "biome": [
             "wetlands"
         ],
@@ -3201,7 +3201,7 @@
             {
                 "text": "p_l waves a tail across app1's path, stopping {PRONOUN/app1/object} with a stern stare. Remember that a water vole is far more at home in the river than even c_n finest swimmer — and if app1 brings it down in its home element, app1 will suffer the consequences. Every hunt deserves respect.",
                 "exp": 30,
-                "art": "gen_hunt_mentor_app",
+                "art": "cat_sprites/gen_hunt_mentorandapp_WrAp",
                 "prey": [
                     "small"
                 ],
@@ -3231,7 +3231,7 @@
             {
                 "text": "app1 leaps forward, launching {PRONOUN/app1/self} beautifully and catapulting {PRONOUN/app1/object} and the vole into the water. But under the surface, the vole has the advantage, tearing itself free. app1 inhales water as {PRONOUN/app1/subject} {VERB/app1/try/tries} to regain {PRONOUN/app1/poss} bearings, and surfaces hacking it up out of {PRONOUN/app1/poss} lungs.",
                 "exp": 0,
-                "art": "gen_train_soggykitty_mad_app",
+                "art": "cat_sprites/gen_train_soggykittymad_Ap",
                 "injury": [
                     {
                         "cats": [
