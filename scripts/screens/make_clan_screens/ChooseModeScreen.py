@@ -227,7 +227,7 @@ class ChooseModeScreen(MakeClanScreenBase):
             )
             members.append(create_cat(rank=random_rank))
 
-        for _ in range(randrange(2,4)):
+        for _ in range(randrange(2, 4)):
             random_rank = choice(
                 [
                     CatRank.KITTYPET,

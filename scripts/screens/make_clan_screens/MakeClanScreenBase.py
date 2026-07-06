@@ -9,12 +9,7 @@ import pygame_gui
 
 from scripts.cat import save_load
 from scripts.cat.cats import Cat, create_cat
-from scripts.cat.enums import (
-    CatAge,
-    CatRank,
-    CatSocial,
-    CatGroup
-)
+from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup
 from scripts.cat.names import names
 from scripts.cat.status import Status
 from scripts.clan import Clan
@@ -262,14 +257,13 @@ class MakeClanScreenBase(Screens):
                         CatSocial.ROGUE,
                         CatSocial.LONER,
                         CatSocial.KITTYPET,
-
                     ]
                 )
                 c.status.generate_new_status(self, social=random_social)
                 # random chance for cat to generate as dead
-                if randint(1,3) == 1:
+                if randint(1, 3) == 1:
                     c.die()
-                    c.status.change_current_moons_as(new_moons_as=randint(1,10))
+                    c.status.change_current_moons_as(new_moons_as=randint(1, 10))
 
                 # renaming to fit outsider status
                 name_categories = [
