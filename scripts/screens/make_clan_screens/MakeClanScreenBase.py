@@ -248,18 +248,15 @@ class MakeClanScreenBase(Screens):
         game.clan.herb_supply.start_storage(len(self.clan_info.starting_members))
         game.clan.save_herb_supply(game.clan)
         game.clan.grief_strings.clear()
-        # iterate through all the possible cats that were made
+        # find non-selected cats from the 12 generated starters
         for c in switch_get_value(Switch.possible_cats):
-            # for clarity i would probably add a property to `clan_info` that returns members + high rank cats together as one list, but this also works
             if (
                 c not in self.clan_info.starting_members
                 and c != self.clan_info.leader
                 and c != self.clan_info.deputy
                 and c != self.clan_info.medicine_cat
             ):
-                # change to outsider
-                # obv pick a rando social
-                # might need to do extra shit here to remove their initial group history as part of a clan
+                # change non-selected cats to outsiders
                 random_social = choice(
                     [
                         CatSocial.ROGUE,
@@ -269,7 +266,7 @@ class MakeClanScreenBase(Screens):
                     ]
                 )
                 c.status.generate_new_status(self, social=random_social)
-                #random chance for cat to generate as dead
+                # random chance for cat to generate as dead
                 if randint(1,3) == 1:
                     c.die()
                     c.status.change_current_moons_as(new_moons_as=randint(1,10))
