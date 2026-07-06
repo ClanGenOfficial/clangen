@@ -11,7 +11,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "cat_sprites/pln_train_session_ApWr",
+        "patrol_art": "cat_sprites/pln_train_session1_ApWr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -1586,7 +1586,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "cat_sprites/pln_train_session_ApWr",
+        "patrol_art": "cat_sprites/pln_train_session1_ApWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -4041,7 +4041,7 @@
             {
                 "text": "See how fast the monsters go? No, app1, that's too close — s_c yanks {PRONOUN/app1/object} back unceremoniously, though app1 is fox-lengths away from the Thunderpath. Still, app1 and app2 shiver with fear as the monster passes, hurling its great metal body down its set path incomprehensibly fast.",
                 "exp": 30,
-                "art": "cat_sprites/pln_twolegsobject",
+                "art": "backgrounds/pln_twolegsobject",
                 "stat_skill": [
                     "TEACHER,1"
                 ],
@@ -4071,7 +4071,7 @@
             {
                 "text": "Now, this is important, s_c meows, commanding the apprentice's attention. The Thunderpath <i>itself</i> is important. Monsters never leave it, not the fast, deadly, kind. Occasionally a vast lumbering metal beast has been spotted on the plains, but <i>those</i> are easily outrun. The fast monsters? Impossible. So remember, <i>the fast ones stay on the Thunderpath</i>.",
                 "exp": 30,
-                "art": "cat_sprites/pln_twolegsobject",
+                "art": "backgrounds/pln_twolegsobject",
                 "stat_skill": [
                     "INSIGHTFUL,1"
                 ],
@@ -4247,7 +4247,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/pln_twolegsobject",
+                "art": "backgrounds/pln_twolegsobject",
                 "frequency": 4
             }
         ]

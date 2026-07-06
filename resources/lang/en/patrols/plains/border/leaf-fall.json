@@ -253,7 +253,7 @@
             {
                 "text": "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. The patrol catches it in an ambush, and a torn ear and ripped up pelt convinces the youngest that this area isn't one to stay in.",
                 "exp": 60,
-                "art": "animals/gen_coyoteruncolor
+                "art": "animals/gen_coyoteruncolor",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -436,7 +436,7 @@
             {
                 "text": "That isn't just the sound of a coyote, that's the sound of an <i>adolescent</i>, s_c hisses. It's as good a chance as they can ask for — best to teach this youngster to fear cats, rather than prey on them.",
                 "exp": 50,
-                "art": "animals/gen_coyoteruncolor
+                "art": "animals/gen_coyoteruncolor",
                 "can_have_stat": [
                     "any"
                 ],
@@ -525,7 +525,7 @@
             {
                 "text": "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. The patrol try to teach it that cats are to be feared, not food, but it manages to get a couple good bites in of its own.",
                 "exp": 0,
-                "art": "animals/gen_coyoteruncolor
+                "art": "animals/gen_coyoteruncolor",
                 "injury": [
                     {
                         "cats": [

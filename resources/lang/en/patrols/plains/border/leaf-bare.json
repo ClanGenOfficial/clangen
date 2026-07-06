@@ -11,7 +11,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_gen_hunt_LB_snowstorm_Wr: "cat_sprites/gen_hunt_LB_snowstorm_Wr",
+        "patrol_art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -498,7 +498,7 @@
             {
                 "text": "With the border here so flat, there's no trees to climb to escape. But s_c thinks of everything; they go to a well-known burrow that the apprentices play in all the time. It's not a moment too soon, the coyote wanders straight past the entrance as it hunts for field mice, the cats within crouched and silent.",
                 "exp": 50,
-                "art": "animals/coyotecolor",
+                "art": "animals/gen_coyotecolor",
                 "can_have_stat": [
                     "any"
                 ],
@@ -525,7 +525,7 @@
             {
                 "text": "That isn't just the sound of a coyote, that's the sound of a coyote calling for a mate, s_c hisses. It's not good, it means there'll be males attracted in by that female, and the cats return home quickly and silently. c_n needs to know about the danger in the borderlands.",
                 "exp": 50,
-                "art": "animals/coyotecolor",
+                "art": "animals/gen_coyotecolor",
                 "can_have_stat": [
                     "any"
                 ],
@@ -654,7 +654,7 @@
             {
                 "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. One discovers r_c and decides that cat would make a nice courting gift. The patrol runs in to save {PRONOUN/r_c/object}, finding refuge crammed in a rabbit burrow as the coyotes howl outside.",
                 "exp": 0,
-                "art": "animals/coyote",
+                "art": "animals/gen_coyote",
                 "injury": [
                     {
                         "cats": [
@@ -763,7 +763,7 @@
             {
                 "text": "s_c tries to take the lion's share of the effort to lead the coyote away, but {PRONOUN/s_c/poss} strength fails {PRONOUN/s_c/object} and the rest of the patrol needs to rescue {PRONOUN/s_c/object}, cutting short the results of the patrol. Instead, everyone knows the coyote could still be lurking on their borders.",
                 "exp": 0,
-                "art": "animals/coyote",
+                "art": "animals/gen_coyote",
                 "stat_trait": [
                     "ambitious",
                     "bloodthirsty",
@@ -882,7 +882,7 @@
             {
                 "text": "The warriors share a glance and a nod. They have enough cats to try and tackle this problem. Spreading out, they use a search pattern they've all been trained in to isolate the adult coyote's location, and the cover of the snow drifts to approach stealthily. r_c starts the battle strong, sinking {PRONOUN/r_c/poss} teeth into the coyote's hamstring, and the rest of the patrol break cover with screeches, driving the coyote away from c_n.",
                 "exp": 60,
-                "art": "animals/coyoteruncolor",
+                "art": "animals/gen_coyoteruncolor",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -933,7 +933,7 @@
                 "prey": [
                     "small"
                 ],
-                "art": "animals/coyoteruncolor",
+                "art": "animals/gen_coyoteruncolor",
                 "can_have_stat": [
                     "not_pl_rc"
                 ],
@@ -1014,7 +1014,7 @@
             {
                 "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks at each other with dismay. It's extremely dangerous to attack so many coyotes at once, even with a large border patrol, but s_c leads them to attack anyway, and miraculously, the cats drive the pack away from c_n.",
                 "exp": 90,
-                "art": "animals/coyoteruncolor",
+                "art": "animals/gen_coyoteruncolor",
                 "can_have_stat": [
                     "p_l"
                 ],
@@ -1197,7 +1197,7 @@
             {
                 "text": "A yip sounds from close by. s_c has just enough time to yell out a plan, leading the whole large patrol in a skillful battle plan against the coyote that protects the cats from the chance of injury. The coyote tucks tail, and runs for more friendly lands.",
                 "exp": 60,
-                "art": "animals/coyoteruncolor",
+                "art": "animals/gen_coyoteruncolor",
                 "stat_skill": [
                     "FIGHTER,3",
                     "INSIGHTFUL,2",
@@ -1367,7 +1367,7 @@
             {
                 "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. One discovers r_c, and decides that cat would make a nice courting gift. The patrol runs in to save {PRONOUN/r_c/object}, finding refuge crammed in a rabbit burrow as the coyotes howl outside.",
                 "exp": 0,
-                "art": "animals/coyote",
+                "art": "animals/gen_coyote",
                 "injury": [
                     {
                         "cats": [
@@ -1457,7 +1457,7 @@
             {
                 "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks at each other with dismay. It's extremely dangerous to attack so many coyotes at once, even with a large border patrol, but s_c leads an attack anyway. It is a mistake.",
                 "exp": 0,
-                "art": "animals/coyote",
+                "art": "animals/gen_coyote",
                 "can_have_stat": [
                     "p_l"
                 ],
@@ -1537,7 +1537,7 @@
             {
                 "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks at each other with dismay. The patrol tries to lead the pack away with a relay of cats distracting them, but r_c gets caught by a male's jaws, and it's only s_c's first aid that saves {PRONOUN/r_c/object} from dying in the snow.",
                 "exp": 0,
-                "art": "cat_sprites/fst_hunt_howl",
+                "art": "cat_sprites/fst_hunt_howl_Wr",
                 "can_have_stat": [
                     "not_pl_rc"
                 ],
@@ -1585,13 +1585,13 @@
             {
                 "text": "The patrol tries to keep watch on the coyote from a distance, but it spots the cats and they have to scatter. It's not as bad as it could've been though; r_c manages to keep track of the coyote's position, and it doesn't come any further into c_n territory.",
                 "exp": 0,
-                "art": "animals/coyote",
+                "art": "animals/gen_coyote",
                 "frequency": 1
             },
             {
                 "text": "s_c tries to show off {PRONOUN/s_c/poss} strength as the patrol bounds toward battle, but it gets in the way of the attack. Without everyone committed to driving the coyote off, the patrol has to fall back, but they do so in good order.",
                 "exp": 0,
-                "art": "animals/coyote",
+                "art": "animals/gen_coyote",
                 "stat_trait": [
                     "ambitious",
                     "bloodthirsty",
@@ -2305,7 +2305,7 @@
             {
                 "text": "This could be a burrow, r_c agrees. But digging it out to check will chill their paws, and possibly disturb a hibernating occupant, if they're unlucky. Reporting it back at camp is worth doing, whereas poking at StarClan-knows-what under the snow might be dangerous.",
                 "exp": 25,
-                "art": "cat_sprites/gen_train_talkingWW",
+                "art": "cat_sprites/gen_train_talking_WrWr",
                 "frequency": 4
             },
             {
@@ -2391,7 +2391,7 @@
             {
                 "text": "s_c pauses before entering the tunnels. After a careful inspection of the half-buried entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away but could return at any moment. The patrol quickly moves on.",
                 "exp": 20,
-                "art": "cat_sprites/gen_warrior_crouching",
+                "art": "cat_sprites/gen_crouching_Wr",
                 "stat_skill": [
                     "HUNTER,3",
                     "CLEVER,1",
@@ -2418,7 +2418,7 @@
             {
                 "text": "s_c pauses before entering the tunnels. After a careful inspection of the half buried entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away but could return at any moment. The patrol quickly moves on.",
                 "exp": 20,
-                "art": "cat_sprites/gen_warrior_crouching",
+                "art": "cat_sprites/gen_crouching_Wr",
                 "stat_trait": [
                     "careful",
                     "wise",
@@ -2471,7 +2471,7 @@
             {
                 "text": "p_l and r_c pull snow away from the entrance, digging down to confirm the discovery. They nearly fall on the young coyote sheltering inside the shallow hole, and there's a shocked, violent scramble as every animal involved lashes out and retreats, everyone coming out worse for wear.",
                 "exp": 0,
-                "art": "animals/coyoteruncolor",
+                "art": "animals/gen_coyoteruncolor",
                 "injury": [
                     {
                         "cats": [
@@ -2860,7 +2860,7 @@
             {
                 "text": "Careful, p_l warns, ready to yank app1 back by the tail. But app1, while frighteningly keen on attacking a thankfully imaginary badger hiding in the hole, is easily redirected into a good teaching conversation about how a good warrior does that without getting mauled in return.",
                 "exp": 30,
-                "art": "cat_sprites/gen_train_talkingWA.png",
+                "art": "cat_sprites/gen_train_talking_WrAp.png",
                 "can_have_stat": [
                     "app1"
                 ],
@@ -3263,7 +3263,7 @@
             {
                 "text": "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} brought up short when the tunnel abruptly ends. It seems this tunnel leads to nothing but a dead end only a few fox-lengths from the entrance.",
                 "exp": 0,
-                "art": "cat_sprites/gen_train_patrolapprenticesessionfail",
+                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
                 "can_have_stat": [
                     "app1"
                 ],
@@ -3766,7 +3766,7 @@
             {
                 "text": "As app1 shivers, {PRONOUN/app1/poss} paws cold on the frosty ground, {PRONOUN/app1/subject} {VERB/app1/consider/considers} approaching the tunnel. It's just so cold out here, colder than {PRONOUN/app1/subject} {VERB/app1/were/was} expecting, and the wind's starting to pick up. {PRONOUN/app1/subject/CAP} {VERB/app1/huddle/huddles} down in the tunnel, trying to get as much shelter from the wind as possible.",
                 "exp": 0,
-                "art": "cat_sprites/animals/pln_prairiedog_Wr",
+                "art": "cat_sprites/gen_bord_flashflood_Wr",
                 "injury": [
                     {
                         "cats": [
