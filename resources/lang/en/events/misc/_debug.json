@@ -1,0 +1,58 @@
+[
+    {
+        "event_id": "debug_misc_poi_name",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "poi": {
+            "name": ["gather_fourtrees"]
+        },
+        "frequency": 0,
+        "event_text": "DEBUG: visited POI  - {POI/name/gather_fourtrees}"
+    },
+    {
+        "event_id": "debug_misc_poi_tag_trees",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "poi": {
+            "tags": ["trees"]
+        },
+        "frequency": 0,
+        "event_text": "DEBUG: visited 'trees' POI - {POI/tag/trees}"
+    },
+    {
+        "event_id": "debug_misc_poi_tag_prey",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "poi": {
+            "tags": ["prey"]
+        },
+        "frequency": 0,
+        "event_text": "DEBUG: visited 'prey' POI"
+    },
+    {
+        "event_id": "debug_misc_poi_tag_prey:fish",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "poi": {
+            "tags": ["prey:fish"]
+        },
+        "frequency": 0,
+        "event_text": "DEBUG: visited 'prey:fish' POI"
+    }
+]

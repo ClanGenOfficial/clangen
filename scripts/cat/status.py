@@ -544,6 +544,8 @@ class Status:
         # adding a cat who has been in a clan in the past, they will take their old rank if possible
         elif self.is_former_clancat and not self.group.is_afterlife():
             new_rank = self.find_prior_clan_rank()
+            if new_rank == CatRank.NEWBORN and not age == CatAge.NEWBORN:
+                new_rank = CatRank.KITTEN
             # we don't need to change leaders and deps if they're going to an afterlife
             if (
                 new_rank in (CatRank.LEADER, CatRank.DEPUTY)
@@ -638,11 +640,11 @@ class Status:
                 return entry["standing"]
         return []
 
-    def find_prior_clan_rank(self, clan_ID: str = None) -> CatRank:
+    def find_prior_clan_rank(self, clan_ID: str = None) -> Optional[CatRank]:
         """
         Finds the last held clan rank of a current outsider
-        :param clan_ID: pass the ID of a clan to only return the cat's prior rank within that clan. Default is None, if
-        None then the last rank within any Clan will be returned.
+        :param clan_ID: pass the ID of a clan to only return the cat's prior rank within that Clan. Default is None, if
+        None then the last rank within any Clan will be returned. If the cat has never been in a Clan, None is returned.
         """
         if clan_ID:
             past_ranks = [
@@ -656,6 +658,8 @@ class Status:
                 for rank in self.all_ranks.keys()
                 if rank not in [CatRank.LONER, CatRank.KITTYPET, CatRank.ROGUE]
             ]
+        if not past_ranks:
+            return None
 
         return past_ranks[-1]
 
@@ -710,7 +714,7 @@ class Status:
         # if no group given
         if not group_ID:
             for entry in self.standing_history:
-                if CatStanding.EXILED in entry["standing"]:
+                if CatStanding.EXILED == entry["standing"][-1]:
                     return True
             return False
 
@@ -726,6 +730,15 @@ class Status:
         """
         for entry in self.standing_history:
             if entry.get("group") == group_ID and entry.get("near"):
+                return True
+
+        return False
+
+    def left_group(self, group_ID: str = CatGroup.PLAYER_CLAN_ID) -> bool:
+        for entry in self.standing_history:
+            if group_ID and entry["group"] != group_ID:
+                continue
+            if CatStanding.LEFT == entry["standing"][-1]:
                 return True
 
         return False

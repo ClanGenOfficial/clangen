@@ -5,17 +5,21 @@
             "r_c feels like the earth beneath {PRONOUN/r_c/poss} paws has crumbled, with m_c gone. r_c deeply believed nothing bad could ever happen with m_c there, but now... ",
             "r_c can't fathom the future of c_n without m_c. r_c trusted {PRONOUN/m_c/object} more than any cat to protect {PRONOUN/r_c/object}, to protect all of c_n, and now m_c is gone.",
             "r_c had such faith in m_c's skill and spirit that {PRONOUN/r_c/subject} had convinced {PRONOUN/r_c/self} m_c would never really be gone. Looking at m_c's body, r_c feels the hard truth sink in.",
+            "r_c would have followed m_c anywhere, but this is one journey {PRONOUN/m_c/subject} must take alone.",
             "r_c is shocked to {PRONOUN/r_c/poss} bones, seeing m_c's body lying in camp. How could a cat that r_c relied on so deeply be taken away so easily?",
             "r_c trusted m_c to keep {PRONOUN/r_c/object} safe for {PRONOUN/r_c/poss} whole life, but that time together has been cruelly cut short.",
             "r_c feels like a fool for believing {PRONOUN/r_c/poss} parent would be with {PRONOUN/r_c/object} all {PRONOUN/r_c/poss} life. Now that m_c is gone, r_c curses every lost chance to cherish {PRONOUN/m_c/object}.",
-            "m_c was always the first cat r_c turned to for advice and good counsel. How will {PRONOUN/r_c/subject} continue without {PRONOUN/m_c/object}?"
+            "m_c was always the first cat r_c turned to for advice and good counsel. How will {PRONOUN/r_c/subject} continue without {PRONOUN/m_c/object}?",
+            "r_c prays m_c's spirit is somewhere watching over {PRONOUN/r_c/object} now. {PRONOUN/r_c/subject/CAP} can't imagine the rest of {PRONOUN/r_c/poss} life without {PRONOUN/m_c/poss} guidance."
         ],
         "no_body": [
             "r_c shakes {PRONOUN/r_c/poss} head when a Clanmate tells {PRONOUN/r_c/object} what happened to {PRONOUN/r_c/poss} parent. No, it's impossible. {PRONOUN/r_c/subject/CAP} {VERB/r_c/refuse/refuses} to believe m_c would leave {PRONOUN/r_c/object}.",
             "r_c feels like the earth beneath {PRONOUN/r_c/poss} paws has crumbled, with m_c gone. r_c deeply believed nothing bad could ever happen with m_c there, but now... ",
             "r_c can't fathom the future of c_n without m_c. r_c trusted {PRONOUN/m_c/object} more than any cat to protect {PRONOUN/r_c/object}, to protect all of c_n, and now m_c is gone.",
+            "r_c would have followed m_c anywhere, but this is one journey {PRONOUN/m_c/subject} must take alone.",
             "r_c had such faith in m_c's skill and spirit that {PRONOUN/r_c/subject} had convinced {PRONOUN/r_c/self} m_c would never really be gone. Now, the hard truth sinks in.",
-            "r_c feels like a fool for believing {PRONOUN/r_c/poss} parent would be with {PRONOUN/r_c/object} all {PRONOUN/r_c/poss} life. Now that m_c is gone, r_c curses every lost chance to cherish {PRONOUN/m_c/object}."
+            "r_c feels like a fool for believing {PRONOUN/r_c/poss} parent would be with {PRONOUN/r_c/object} all {PRONOUN/r_c/poss} life. Now that m_c is gone, r_c curses every lost chance to cherish {PRONOUN/m_c/object}.",
+            "r_c prays m_c's spirit is somewhere watching over {PRONOUN/r_c/object} now. {PRONOUN/r_c/subject/CAP} can't imagine the rest of {PRONOUN/r_c/poss} life without {PRONOUN/m_c/poss} guidance."
         ]
     },
     "adventurous": {
@@ -85,12 +89,6 @@
         ]
     },
     "daring": {
-        "body": [
-        ],
-        "no_body": [
-        ]
-    },
-    "empathetic": {
         "body": [
         ],
         "no_body": [
@@ -217,12 +215,6 @@
         ]
     },
     "bossy": {
-        "body": [
-        ],
-        "no_body": [
-        ]
-    },
-    "bouncy": {
         "body": [
         ],
         "no_body": [

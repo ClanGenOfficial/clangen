@@ -51,7 +51,7 @@
                         "mutual": false,
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat return from patrol with soggy paws and nothing to show for an afternoon of work."
+                            "cats_from": "cat_from saw cat_to return from patrol with soggy paws and nothing to show for an afternoon of work."
                         }
                     }
                 ],

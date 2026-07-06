@@ -230,7 +230,7 @@ class ListScreen(Screens):
                 self.menu_button_pressed(event)
                 self.mute_button_pressed(event)
 
-        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
+        elif event.type == pygame.KEYDOWN:
             if self.cat_list_bar_elements["search_bar_entry"].is_focused:
                 return
             if event.key == pygame.K_LEFT:
@@ -241,7 +241,7 @@ class ListScreen(Screens):
     def screen_switches(self):
         super().screen_switches()
         self.show_mute_buttons()
-        self.clan_name = game.clan.displayname + "Clan"
+        self.clan_name = game.clan.name
 
         self.set_disabled_menu_buttons(["cats"])
         self.show_menu_buttons()
@@ -711,25 +711,21 @@ class ListScreen(Screens):
 
         if self.current_group == "your_clan":
             group = self.clan_name
-            temper = i18n.t(f"screens.leader_den.{game.clan.temperament}")
+            first_temper, second_temper = game.clan.temperament
+
         else:
             if self.current_group == "dark_forest":
                 group = i18n.t(f"general.the_dark_forest")
             else:
                 group = i18n.t(f"general.{self.current_group}")
             if self.current_group == "starclan":
-                if not game.starclan or not game.starclan.influencing_cats:
-                    self.temper_message.hide()
-
-                    # this means there's probably no cats in starclan, so no temper
-                    return ""
-                temper = i18n.t(f"screens.leader_den.{game.starclan.temperament}")
+                first_temper, second_temper = game.starclan.temperament
             else:
-                if not game.dark_forest or not game.dark_forest.influencing_cats:
-                    self.temper_message.hide()
-                    # this means there's probably no cats in df, so no temper
-                    return ""
-                temper = i18n.t(f"screens.leader_den.{game.dark_forest.temperament}")
+                first_temper, second_temper = game.dark_forest.temperament
+
+        first = i18n.t(f"screens.leader_den.{first_temper}")
+        second = i18n.t(f"screens.leader_den.{second_temper}")
+        temper = f"{first} & {second}"
 
         return i18n.t("screens.list.temper", group=group, temper=temper)
 

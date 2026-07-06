@@ -21,6 +21,7 @@ from scripts.game_structure.game.settings import (
 # please don't do this. we have to.
 import scripts.game_structure.game.settings.settings as all_settings
 from scripts.game_structure import game
+from ..cat.cats import Cat
 from ..ui.elements.checkbox import UICheckbox
 from ..ui.elements.image_horizontal_slider import UIImageHorizontalSlider
 from ..ui.elements.modified_scrolling_container import UIModifiedScrollingContainer
@@ -181,7 +182,7 @@ class SettingsScreen(Screens):
             if self.sub_menu in ("general", "relation", "language"):
                 self.handle_checkbox_events(event)
 
-        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
+        elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 self.change_screen(GameScreen.START)
             elif event.key == pygame.K_RIGHT:
@@ -232,19 +233,6 @@ class SettingsScreen(Screens):
                         self.set_bg("default", "mainmenu_bg")
                         self.open_general_settings()
 
-                    if (
-                        self.sub_menu == "general"
-                        and event.ui_element is self.checkboxes["discord"]
-                    ):
-                        if game_setting_get("discord"):
-                            print("Starting Discord RPC")
-                            game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
-                            game.rpc.start()
-                            game.rpc.start_rpc.set()
-                        else:
-                            print("Stopping Discord RPC")
-                            game.rpc.close()
-
                     break
 
     def screen_switches(self):
@@ -254,6 +242,7 @@ class SettingsScreen(Screens):
         super().screen_switches()
         self.show_mute_buttons()
         self.settings_changed = False
+        self._discord_at_open = game_setting_get("discord")
 
         self.general_settings_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((100, 100), (150, 30))),
@@ -381,11 +370,26 @@ class SettingsScreen(Screens):
     def save_settings(self):
         """Saves the settings, ensuring that they will be retained when the screen changes."""
         self.settings_at_open = all_settings.settings.copy()
+        discord_is_on = game_setting_get("discord")
+        if self._discord_at_open != discord_is_on:
+            self._discord_at_open = discord_is_on
+            if discord_is_on:
+                print("Starting Discord RPC")
+                game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
+                game.rpc.start()
+                game.rpc.start_rpc.set()
+            else:
+                print("Stopping Discord RPC")
+                game.rpc.close()
         MANAGER.set_active_cursor(
             constants.CUSTOM_CURSOR
             if game_setting_get("custom cursor")
             else constants.DEFAULT_CURSOR
         )
+        # rebuild sprites in case shader setting was changed
+        if game.clan:
+            for cat in Cat.all_cats_list:
+                cat.pelt.rebuild_sprite = True
 
     def open_general_settings(self):
         """Opens and draws general_settings"""

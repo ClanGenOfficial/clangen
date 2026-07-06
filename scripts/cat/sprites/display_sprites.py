@@ -413,7 +413,7 @@ def generate_sprite(
             elif cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
                 # underlay
                 temp_sprite.blit(
-                    sprites.sprites["line_ur_overlay" + cat_sprite],
+                    sprites.sprites["line_ur_underlay" + cat_sprite],
                     (0, 0),
                 )
 

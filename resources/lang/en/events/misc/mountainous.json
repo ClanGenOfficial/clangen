@@ -82,7 +82,7 @@
             "clan:kitten"
         ],
         "frequency": 4,
-        "event_text": "Through the long, cold night, m_c brings the young cats of the Clan with {PRONOUN/m_c/object} down the tunnels. {PRONOUN/m_c/subject/CAP} {VERB/m_c/point/points} out the red pawprints of long dead heroes and villains, telling the Clan's triumphs and failures.",
+        "event_text": "Through the long, cold night, m_c brings the young cats of the Clan with {PRONOUN/m_c/object} down the tunnels. {PRONOUN/m_c/subject/CAP} {VERB/m_c/point/points} out the pawprints of long dead Clanmates, telling the Clan's triumphs and failures.",
         "m_c": {
             "age": [
                 "any"
@@ -94,22 +94,7 @@
             "skill": [
                 "LORE,1"
             ]
-        },
-        "r_c": {
-            "age": ["kitten"]
-        },
-        "relationships": [
-            {
-                "cats_from": ["r_c"],
-                "cats_to": ["m_c"],
-                "values": ["like", "respect"],
-                "amount": 15,
-                "mutual": false,
-                "log": {
-                    "cats_from": "from_cat listened raptly to to_cat's stories of c_n's ancestors."
-                }
-            }
-        ]
+        }
     },
     {
         "event_id": "mtn_misc_any_patch_accessory",
@@ -168,7 +153,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c watched the sun set over the peaks, wondering at how the sky gleamed despite the war.",
+        "event_text": "m_c watched the sun set over the peaks, wondering at how the sky shone despite the war.",
         "m_c": {
             "status": [
                 "leader"
@@ -187,5 +172,31 @@
                 "sincere"
             ]
         }
-    }
+    },
+    {
+  "event_id": "mtn_misc_crystalreflection_supernaturalskills",
+  "location": [
+    "mountainous:camp3"
+  ],
+  "season": [
+    "any"
+  ],
+  "frequency": 2,
+  "event_text": "For a heartbeat, m_c thought the reflection staring back at {PRONOUN/m_c/object} in the crystals around camp was not {PRONOUN/m_c/poss} own.",
+  "m_c": {
+    "age": [
+      "any"
+    ],
+    "status": [
+      "any"
+    ],
+    "skill": [
+      "GHOST,2",
+      "CLAIRVOYANT,1",
+      "OMEN,1",
+      "DARK,2",
+      "STAR,2"
+    ]
+  }
+}
 ]

@@ -2,6 +2,13 @@ import os
 import unittest
 from unittest.mock import patch
 
+from scripts.cat.enums import CatGroup
+from scripts.clan_package.settings import (
+    load_clan_settings,
+    set_clan_setting,
+)
+from scripts.game_structure import game
+
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
@@ -12,7 +19,150 @@ from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 from scripts.events_module.relationship.romantic_events import RomanticEvents
 
 
+class TestPregnancySettings(unittest.TestCase):
+    def setUp(self):
+        load_clan_settings()
+        Cat.disable_random = True
+
+    def test_single_parent(self):
+        parent1 = Cat(moons=50, gender="male")
+        parent2 = Cat(moons=50, gender="female")
+
+        # our parents are unmated, thus this would be single parenthood
+        # allowed
+        self.assertTrue(
+            Pregnancy_Events.check_if_can_have_kits(
+                parent1,
+                allow_single_parent=True,
+                allow_unmated=True,
+                allow_affair=True,
+            )
+        )
+        # not allowed
+        self.assertFalse(
+            Pregnancy_Events.check_if_can_have_kits(
+                parent1,
+                allow_single_parent=False,
+                allow_unmated=True,
+                allow_affair=True,
+            )
+        )
+
+        # set mate
+        parent1.mate = [parent2.ID]
+        # single parentage setting shouldn't prevent these cats from having kits
+        self.assertTrue(
+            Pregnancy_Events.check_if_can_have_kits(
+                parent1,
+                allow_single_parent=True,
+                allow_unmated=True,
+                allow_affair=True,
+            )
+        )
+        self.assertTrue(
+            Pregnancy_Events.check_if_can_have_kits(
+                parent1,
+                allow_single_parent=False,
+                allow_unmated=True,
+                allow_affair=True,
+            )
+        )
+
+    def test_unmated(self):
+        parent1 = Cat(moons=50, gender="male")
+        parent2 = Cat(moons=50, gender="female")
+
+        # parent1 is unmated
+        # allow
+        self.assertTrue(
+            Pregnancy_Events.check_if_can_have_kits(
+                parent1,
+                allow_single_parent=True,
+                allow_unmated=True,
+                allow_affair=True,
+            )
+        )
+        # don't allow
+        set_clan_setting("unmated parentage", False)
+        self.assertFalse(
+            Pregnancy_Events.check_if_can_have_kits(
+                parent1,
+                allow_single_parent=True,
+                allow_unmated=False,
+                allow_affair=True,
+            )
+        )
+
+        # set mate
+        parent1.mate = [parent2.ID]
+        # unmated parentage setting shouldn't prevent these cats from having kits
+        self.assertTrue(
+            Pregnancy_Events.check_if_can_have_kits(
+                parent1,
+                allow_single_parent=True,
+                allow_unmated=True,
+                allow_affair=True,
+            )
+        )
+        self.assertTrue(
+            Pregnancy_Events.check_if_can_have_kits(
+                parent1,
+                allow_single_parent=True,
+                allow_unmated=False,
+                allow_affair=True,
+            )
+        )
+
+    def test_affair(self):
+        parent1 = Cat(moons=50, gender="male")
+        parent2 = Cat(moons=50, gender="female")
+
+        # our parents are unmated and so an affair isn't allowed (only mated cats have affairs)
+        # allowed
+        self.assertFalse(
+            Pregnancy_Events.check_if_can_have_kits(
+                parent1,
+                allow_single_parent=False,
+                allow_unmated=False,
+                allow_affair=True,
+            )
+        )
+        # set mate
+        parent1.mate = [parent2.ID]
+        affair_cat = Cat(moons=50, gender="female")
+        parent1.relationships[affair_cat.ID] = Relationship(
+            cat_from=parent1, cat_to=affair_cat, romance=100
+        )
+        # our parents ARE mated and so an affair is allowed
+        # TODO: would love to test this, but the way affairs are set up does not allow it
+        # self.assertEqual(
+        #    Pregnancy_Events.get_second_parent(parent1), (affair_cat, True)
+        # )
+
+        # turn affairs off
+        set_clan_setting("affair", False)
+        # now an affair isn't allowed
+        self.assertEqual(Pregnancy_Events.get_second_parent(parent1), (parent2, False))
+
+
 class CanHaveKits(unittest.TestCase):
+    def test_other_clan_pregnancy(self):
+        test_clan = Clan(save_id="clan")
+        test_clan.pregnancy_data = {}
+        cat = Cat(disable_random=True, moons=50)
+        game.used_group_IDs["5"] = CatGroup.OTHER_CLAN
+        cat.status.add_to_group("5")
+
+        self.assertFalse(Pregnancy_Events.handle_having_kits(cat, test_clan))
+
+    def test_cat_not_working_pregnancy(self):
+        test_clan = Clan(save_id="clan")
+        test_clan.pregnancy_data = {}
+        cat = Cat(disable_random=True, moons=50)
+        cat.get_injured("broken bone")
+
+        self.assertFalse(Pregnancy_Events.handle_having_kits(cat, test_clan))
+
     def test_prevent_kits(self):
         # given
         cat = Cat(disable_random=True)
@@ -21,7 +171,7 @@ class CanHaveKits(unittest.TestCase):
         # then
         self.assertFalse(
             Pregnancy_Events.check_if_can_have_kits(
-                cat, single_parentage=True, allow_unmated=True, allow_affair=True
+                cat, allow_single_parent=True, allow_unmated=True, allow_affair=True
             )
         )
 
@@ -30,7 +180,7 @@ class CanHaveKits(unittest.TestCase):
     )
     def test_no_kit_setting(self, check_if_can_have_kits):
         # given
-        test_clan = Clan(name="clan")
+        test_clan = Clan(save_id="clan")
         test_clan.pregnancy_data = {}
         cat1 = Cat(gender="female", disable_random=True)
         cat1.no_kits = True
@@ -38,8 +188,8 @@ class CanHaveKits(unittest.TestCase):
 
         cat1.mate.append(cat2.ID)
         cat2.mate.append(cat1.ID)
-        relation1 = Relationship(cat1, cat2, mates=True, family=False, romance=100)
-        relation2 = Relationship(cat2, cat1, mates=True, family=False, romance=100)
+        relation1 = Relationship(cat1, cat2, family=False, romance=100)
+        relation2 = Relationship(cat2, cat1, family=False, romance=100)
         cat1.relationships[cat2.ID] = relation1
         cat2.relationships[cat1.ID] = relation2
 
@@ -94,7 +244,7 @@ class Pregnancy(unittest.TestCase):
     )
     def test_single_cat_female(self, check_if_can_have_kits):
         # given
-        clan = Clan(name="clan")
+        clan = Clan(save_id="clan")
         cat = Cat(gender="female", age="adult", moons=40, disable_random=True)
         clan.pregnancy_data = {}
 
@@ -110,7 +260,7 @@ class Pregnancy(unittest.TestCase):
     )
     def test_pair(self, check_if_can_have_kits):
         # given
-        clan = Clan(name="clan")
+        clan = Clan(save_id="clan")
         cat1 = Cat(gender="female", age="adult", moons=40, disable_random=True)
         cat2 = Cat(gender="male", age="adult", moons=40, disable_random=True)
 

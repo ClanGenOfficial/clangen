@@ -23,7 +23,7 @@
             "LORE,1",
             "STORY,1"
         ],
-        "intro_text": "r_c bats an insect aside as the patrol ambles along. p_l hums - does r_c know there's an insect who can blot out the sun?",
+        "intro_text": "r_c bats an insect aside as the patrol ambles along. p_l hums — does r_c know there's an insect who can blot out the sun?",
         "decline_text": "The cats decide training is more important than a story today.",
         "success_outcomes": [
             {
@@ -50,7 +50,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about the locust swarm that blotted out the sun."
+                            "cats_from": "cat_from enjoyed cat_to's story about the locust swarm that blotted out the sun."
                         }
                     }
                 ],
@@ -80,7 +80,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat enjoyed to_cat's story about the scarab who rolls the sun into hiding for leaf-bare."
+                            "cats_from": "cat_from enjoyed cat_to's story about the scarab who rolls the sun into hiding for leaf-bare."
                         }
                     }
                 ],
@@ -106,7 +106,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat flicked a bug away from from_cat."
+                            "cats_from": "cat_to flicked a bug away from cat_from."
                         }
                     }
                 ],

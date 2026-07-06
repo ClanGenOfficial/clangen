@@ -25,7 +25,7 @@ from scripts.ui.icon import Icon
 from scripts.clan_package.clan_symbols import clan_symbol_sprite
 from scripts.ui.theme import get_text_box_theme
 from scripts.events_module.text_adjust import shorten_text_to_fit
-from scripts.clan_package.cotc import get_other_clan, get_other_clan_relation
+from scripts.clan_package.cotc import get_other_clan
 from scripts.ui.scale import ui_scale, ui_scale_dimensions
 from scripts.clan_package.get_clan_cats import (
     find_alive_cats_with_rank,
@@ -223,11 +223,14 @@ class LeaderDenScreen(Screens):
                     i
                     for i in Cat.all_cats.values()
                     if i.status.alive_in_player_clan
+                    and not i.not_working()
                     and i.status.rank
                     not in [CatRank.NEWBORN, CatRank.KITTEN, CatRank.LEADER]
                 ]
+                adults = sorted(adults, key=lambda x: x.experience, reverse=True)
+
                 if adults:
-                    self.helper_cat = random.choice(adults)
+                    self.helper_cat = adults[0]
 
             if self.helper_cat:
                 self.screen_elements["helper_image"] = pygame_gui.elements.UIImage(
@@ -330,14 +333,18 @@ class LeaderDenScreen(Screens):
         self.screen_elements["clan_notice_text"].show()
 
         self.screen_elements["temper_text"] = pygame_gui.elements.UITextBox(
-            relative_rect=ui_scale(pygame.Rect((68, 410), (445, -1))),
+            relative_rect=ui_scale(pygame.Rect((68, -13), (445, -1))),
             html_text="screens.leader_den.temper_text",
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
             text_kwargs={
-                "temper": i18n.t(f"screens.leader_den.{self.clan_temper}"),
-                "clan": game.clan.displayname,
+                "temper": i18n.t(
+                    "screens.leader_den.clan_temper",
+                    first_temper=i18n.t(f"screens.leader_den.{self.clan_temper[0]}"),
+                    second_temper=i18n.t(f"screens.leader_den.{self.clan_temper[1]}"),
+                ),
             },
+            anchors={"top_target": self.screen_elements["clan_notice_text"]},
         )
 
         # INITIAL DISPLAY - display currently chosen interaction OR first clan in list
@@ -431,7 +438,7 @@ class LeaderDenScreen(Screens):
             manager=MANAGER,
         )
         for i, other_clan in enumerate(game.clan.all_other_clans):
-            if other_clan.name == game.clan.displayname:
+            if other_clan.name == game.clan.name:
                 continue
             x_pos = 128
             self.other_clan_selection_elements[f"container{i}"] = UIContainer(
@@ -465,8 +472,8 @@ class LeaderDenScreen(Screens):
             self.other_clan_selection_elements[
                 f"clan_name{i}"
             ] = pygame_gui.elements.UILabel(
-                ui_scale(pygame.Rect((0, 20), (133, -1))),
-                text=f"{other_clan.name}Clan",
+                ui_scale(pygame.Rect((0, 10), (133, -1))),
+                text=other_clan.name,
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 container=self.other_clan_selection_elements[f"container{i}"],
                 manager=MANAGER,
@@ -479,7 +486,15 @@ class LeaderDenScreen(Screens):
                 f"clan_temper{i}"
             ] = pygame_gui.elements.UILabel(
                 ui_scale(pygame.Rect((0, 2), (133, -1))),
-                text=f"screens.leader_den.{other_clan.temperament.strip()}",
+                text=i18n.t(
+                    "screens.leader_den.clan_temper",
+                    first_temper=i18n.t(
+                        f"screens.leader_den.{other_clan.temperament[0]}"
+                    ),
+                    second_temper=i18n.t(
+                        f"screens.leader_den.{other_clan.temperament[1]}"
+                    ),
+                ),
                 object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 container=self.other_clan_selection_elements[f"container{i}"],
                 manager=MANAGER,
@@ -491,9 +506,9 @@ class LeaderDenScreen(Screens):
             self.other_clan_selection_elements[
                 f"clan_rel{i}"
             ] = pygame_gui.elements.UILabel(
-                ui_scale(pygame.Rect((0, 2), (133, -1))),
-                text=f"screens.leader_den.{get_other_clan_relation(other_clan.relations).strip()}",
-                object_id=get_text_box_theme("#text_box_22_horizcenter"),
+                ui_scale(pygame.Rect((0, 0), (133, -1))),
+                text=f"screens.leader_den.{other_clan.get_standing().strip()}",
+                object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
                 container=self.other_clan_selection_elements[f"container{i}"],
                 manager=MANAGER,
                 anchors={
@@ -612,11 +627,11 @@ class LeaderDenScreen(Screens):
 
         x_pos = 10
         y_pos = 182
-        relation = get_other_clan_relation(self.focus_clan.relations)
+        relation = self.focus_clan.get_standing()
 
         self.focus_clan_elements["clan_name"] = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((0, 15), (215, -1))),
-            text=f"{self.focus_clan.name}Clan",
+            text=self.focus_clan.name,
             object_id="#text_box_30_horizcenter",
             container=self.focus_clan_container,
             manager=MANAGER,
@@ -627,7 +642,15 @@ class LeaderDenScreen(Screens):
         )
         self.focus_clan_elements["clan_temper"] = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((0, 5), (215, -1))),
-            text=f"screens.leader_den.{self.focus_clan.temperament.strip()}",
+            text=i18n.t(
+                "screens.leader_den.clan_temper",
+                first_temper=i18n.t(
+                    f"screens.leader_den.{self.focus_clan.temperament[0]}"
+                ),
+                second_temper=i18n.t(
+                    f"screens.leader_den.{self.focus_clan.temperament[1]}"
+                ),
+            ),
             object_id="#text_box_22_horizcenter",
             container=self.focus_clan_container,
             manager=MANAGER,
@@ -710,9 +733,21 @@ class LeaderDenScreen(Screens):
 
         success = False
 
-        player_temper_int = self._find_temper_int(self.clan_temper)
-        other_temper_int = self._find_temper_int(self.focus_clan.temperament)
-        fail_chance = self._compare_temper(player_temper_int, other_temper_int)
+        # FIRST TEMPER
+        temper_dict = constants.TEMPERAMENT_DICTS[0]
+        fail_chance = self._compare_temper(
+            player_temper=self.clan_temper[0],
+            other_temper=self.focus_clan.temperament[0],
+            temper_dict=temper_dict,
+        )
+
+        # ADD SECOND TEMPER
+        temper_dict = constants.TEMPERAMENT_DICTS[1]
+        fail_chance += self._compare_temper(
+            player_temper=self.clan_temper[1],
+            other_temper=self.focus_clan.temperament[1],
+            temper_dict=temper_dict,
+        )
 
         if gathering_cat != game.clan.leader:
             fail_chance = fail_chance * 1.4
@@ -731,67 +766,90 @@ class LeaderDenScreen(Screens):
             },
         )
 
-    def _compare_temper(self, player_temper_int, other_temper_int) -> float:
+    def _compare_temper(
+        self, player_temper: str, other_temper: str, temper_dict: dict
+    ) -> float:
         """
         compares two temper ints and finds the chance of failure between them, adds additional modifiers for distance
-        between two tempers on the temperament chart.  returns percent chance of failure
+        between two tempers on the temperament chart.
+        :param player_temper: the temperament to compare from the player clan
+        :param other_temper: the temperament to compare from the other clan
+        :param temper_dict: the temper dict that pertains to the compared tempers
+        :return: the percent chance of failure
         """
+
+        player_temper_int = self._find_temper_int(
+            temper=player_temper, temper_dict=temper_dict
+        )
+        other_temper_int = self._find_temper_int(
+            temper=other_temper, temper_dict=temper_dict
+        )
+
         # base equation for fail chance (temper_int - temper_int) / 10
         fail_chance = (abs(int(player_temper_int - other_temper_int))) / 10
 
-        temper_dict = constants.TEMPERAMENT_DICT
-        clan_index = 0
-        clan_social = None
-        other_index = 0
-        other_social = None
+        player_x_axis = 0
+        player_y_axis = None
+        other_x_axis = 0
+        other_y_axis = None
+
+        # locating axis
         for row in temper_dict:
-            if self.clan_temper in temper_dict[row]:
-                clan_index = temper_dict[row].index(self.clan_temper)
-                clan_social = row
-            if self.focus_clan.temperament in temper_dict[row]:
-                other_index = temper_dict[row].index(self.focus_clan.temperament)
-                other_social = row
+            if player_temper in temper_dict[row]:
+                player_x_axis = temper_dict[row].index(player_temper)
+                player_y_axis = row
+            if other_temper in temper_dict[row]:
+                other_x_axis = temper_dict[row].index(other_temper)
+                other_y_axis = row
 
-        # checks social distance between tempers and adds modifiers appropriately
-        if clan_social != other_social:
-            fail_chance += 0.05
-            if clan_social == "low social" and other_social == "high_social":
-                fail_chance += 0.1
-            elif other_social == "low social" and clan_social == "high_social":
-                fail_chance += 0.1
+        # checks distance between tempers on the y-axis and adds modifiers appropriately
+        temper_dict_keys = list(temper_dict.keys())
+        if player_y_axis != other_y_axis:
+            fail_chance += 0.1
+            if (
+                player_y_axis == temper_dict_keys[0]
+                and other_y_axis == temper_dict_keys[-1]
+            ):
+                fail_chance += 0.15
+            elif (
+                other_y_axis == temper_dict_keys[0]
+                and player_y_axis == temper_dict_keys[-1]
+            ):
+                fail_chance += 0.15
 
-        # checks aggression distance between tempers and adds modifiers appropriately
-        if clan_index != other_index:
-            fail_chance += 0.05
-            if clan_index == 0 and other_index == 2:
-                fail_chance += 0.1
-            elif other_index == 0 and clan_index == 2:
-                fail_chance += 0.1
+        # checks distance between tempers on the x-axis and adds modifiers appropriately
+        if player_x_axis != other_x_axis:
+            fail_chance += 0.1
+            if player_x_axis == 0 and other_x_axis == 2:
+                fail_chance += 0.15
+            elif other_x_axis == 0 and player_x_axis == 2:
+                fail_chance += 0.15
 
-        if fail_chance > 0.5:
-            fail_chance = 0.5
+        # halve the fail chance
+        fail_chance = fail_chance / 2
 
         return fail_chance
 
     @staticmethod
-    def _find_temper_int(temper: str) -> int:
+    def _find_temper_int(temper: str, temper_dict: dict) -> int:
         """
         returns int value (social rank + aggression rank) of given temperament
         """
-        temper_dict = constants.TEMPERAMENT_DICT
         temper_int = 0
 
-        if temper in temper_dict["low_social"]:
+        temper_keys = list(temper_dict.keys())
+
+        if temper in temper_dict[temper_keys[0]]:
             temper_int += 1
-            social_list = temper_dict["low_social"]
-        elif temper in temper_dict["mid_social"]:
+            temper_list = temper_dict[temper_keys[0]]
+        elif temper in temper_dict[temper_keys[1]]:
             temper_int += 3
-            social_list = temper_dict["mid_social"]
+            temper_list = temper_dict[temper_keys[1]]
         else:
             temper_int += 5
-            social_list = temper_dict["high_social"]
+            temper_list = temper_dict[temper_keys[2]]
 
-        temper_int += int(social_list.index(temper)) + 1
+        temper_int += int(temper_list.index(temper)) + 1
 
         return temper_int
 
@@ -962,7 +1020,15 @@ class LeaderDenScreen(Screens):
             self.screen_elements["temper_text"].set_text(
                 "screens.leader_den.temper_text",
                 text_kwargs={
-                    "temper": i18n.t(f"screens.leader_den.{self.clan_temper}")
+                    "temper": i18n.t(
+                        "screens.leader_den.clan_temper",
+                        first_temper=i18n.t(
+                            f"screens.leader_den.{self.clan_temper[0]}"
+                        ),
+                        second_temper=i18n.t(
+                            f"screens.leader_den.{self.clan_temper[1]}"
+                        ),
+                    )
                 },
             )
         else:

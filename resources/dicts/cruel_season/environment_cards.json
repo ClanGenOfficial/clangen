@@ -1,0 +1,20 @@
+{
+  "environment_placeholder0": {
+    "card_art": "environment/tainted.png",
+    "modifiers": {
+      "mod_name": 1
+    }
+  },
+  "environment_placeholder1": {
+    "card_art": "environment/sickness.png",
+    "modifiers": {
+      "mod_name": 1
+    }
+  },
+  "environment_placeholder2": {
+    "card_art": "environment/tainted.png",
+    "modifiers": {
+      "mod_name": 1
+    }
+  }
+}

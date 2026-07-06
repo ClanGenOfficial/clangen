@@ -50,7 +50,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat appreciated to_cat's reminder of the importance of the seasons."
+                            "cats_from": "cat_from appreciated cat_to's reminder of the importance of the seasons."
                         }
                     }
                 ],
@@ -80,7 +80,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "from_cat appreciated to_cat's reminder of the importance of the life-and-death balance."
+                            "cats_from": "cat_from appreciated cat_to's reminder of the importance of the life-and-death balance."
                         }
                     }
                 ],
@@ -106,7 +106,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat get distracted on patrol."
+                            "cats_from": "cat_from saw cat_to get distracted on patrol."
                         }
                     }
                 ],

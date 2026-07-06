@@ -14,7 +14,9 @@ from scripts.screens.enums import GameScreen
 
 class Switch(StrEnum):
     cat = auto()
-    clan_name = auto()
+    clan_save_id = auto()
+    clan_creation_info = auto()
+    possible_cats = auto()
     cur_screen = auto()
     saved_clan = auto()
     clan_list = auto()
@@ -37,11 +39,15 @@ class Switch(StrEnum):
     no_able_left = auto()
     new_leader = auto()
     switch_clan = auto()
+    keybinds_live = auto()
+    card_conflict_changes = auto()
 
 
 _switches: Dict[str, Union[str, int, bool, list, dict, None]] = {
     "cat": "",
-    "clan_name": "",
+    "clan_name": "",  # TODO: this is unused and undeclared as a strenum?
+    "clan_creation_info": {},
+    "possible_cats": [],
     "cur_screen": GameScreen.START,
     "saved_clan": False,
     "clan_list": [],
@@ -64,6 +70,8 @@ _switches: Dict[str, Union[str, int, bool, list, dict, None]] = {
     "no_able_left": False,
     "new_leader": None,
     "switch_clans": False,
+    "keybinds_live": False,
+    "card_conflict_changes": {},
 }
 """If you are somehow accessing this from outside game_switches.py, something has gone terribly wrong."""
 

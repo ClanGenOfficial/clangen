@@ -1,5 +1,5 @@
 import random
-from typing import Optional
+from typing import Optional, Tuple
 
 import i18n
 import ujson
@@ -23,6 +23,7 @@ from scripts.events_module.event_filters import (
     cat_for_event,
     get_frequency,
     find_new_frequency,
+    event_for_poi,
 )
 from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure import constants, game
@@ -139,7 +140,7 @@ def create_short_event(
             used_frequencies.add(frequency)
             frequency = find_new_frequency(used_frequencies)
 
-            # if we've ended up with 4 frequency twice then we're out of events and it's time to reset
+            # if we've ended up with 4 frequency twice then we're out of events so it's time to reset
             if 4 in used_frequencies and frequency == 4:
                 used_events.clear()
                 used_frequencies.clear()
@@ -178,15 +179,25 @@ def find_needed_events(frequency, event_type=None) -> list:
     """
     event_list = []
 
-    # skip the rest of the loading if there is an unrecognised biome
+    # skip the rest of the loading if there is an unrecognized biome
     temp_biome = (
         game.clan.biome if not game.clan.override_biome else game.clan.override_biome
     )
     if temp_biome not in constants.BIOME_TYPES:
         print(
             f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES "
-            f"in clan.py?"
+            f"in scripts.game_structure.constants?"
         )
+        raise Exception(f"Unrecognized biome {game.clan.biome}.")
+
+    if (
+        debug_id := constants.CONFIG["event_generation"]["debug_ensure_event_id"]
+    ) and "debug" in debug_id:
+        try:
+            event_list.extend(generate_event_objects(event_type, "_debug", 0))
+            frequency = 0
+        except FileNotFoundError:
+            pass
 
     biome = temp_biome.lower()
 
@@ -232,9 +243,11 @@ def generate_event_objects(event_triggered, biome, frequency) -> list:
     :param frequency: The frequency to pull events for
     """
     debug_freq = constants.CONFIG["event_generation"]["debug_override_frequency"]
+    if debug_freq:
+        frequency = debug_freq
 
     file_path = f"{event_triggered}/{biome}.json"
-    load_name = f"{file_path}_{debug_freq if debug_freq else frequency}"
+    load_name = f"{file_path}_{frequency}"
 
     try:
         if file_path in loaded_events:
@@ -278,6 +291,7 @@ def generate_event_objects(event_triggered, biome, frequency) -> list:
                     season=event["season"] if "season" in event else ["any"],
                     sub_type=event["sub_type"] if "sub_type" in event else [],
                     tags=event["tags"] if "tags" in event else [],
+                    poi=event["poi"] if "poi" in event else {},
                     text=event_text,
                     new_accessory=(
                         event["new_accessory"] if "new_accessory" in event else []
@@ -322,7 +336,7 @@ def filter_events(
     excluded_events: list = None,
     ignore_subtyping: bool = False,
     reduction_avoidance_chance: int = 1,
-) -> (Optional[ShortEvent], Optional[Cat]):
+) -> Tuple[Optional[ShortEvent], Optional[Cat]]:
     """
     Filters possible events to find an event that fits the given requirements
     :param possible_events: list of possible events
@@ -369,6 +383,9 @@ def filter_events(
         if not event_for_tags(event.tags, main_cat, random_cat):
             continue
 
+        if not event_for_poi(event.poi):
+            continue
+
         if not game.clan.leader and "lead_name" in event.text:
             continue
         if not game.clan.deputy and "dep_name" in event.text:
@@ -386,12 +403,18 @@ def filter_events(
                     continue
 
         # check for old age
-        if (
-            "old_age" in event.sub_type
-            and main_cat.moons
-            < constants.CONFIG["death_related"]["old_age_death_start"]
-        ):
-            continue
+        if "old_age" in event.sub_type:
+            if (
+                main_cat.moons
+                < constants.CONFIG["death_related"]["old_age_death_start"]
+            ):
+                continue
+            if (
+                random_cat
+                and random_cat.moons
+                < constants.CONFIG["death_related"]["old_age_death_start"]
+            ):
+                continue
         # remove some non-old age events to encourage elders to die of old age more often
         if (
             "old_age" not in event.sub_type
@@ -584,12 +607,22 @@ def filter_events(
             ).copy(),
             injuries=r_c_injuries,
             return_id=False,
+            tags=chosen_event.tags,
         )
 
         if not chosen_cat:
             failed_ids.append(chosen_event.event_id)
             final_events.remove(chosen_event)
             chosen_event = None
+        elif (
+            "old_age" in chosen_event.sub_type
+            and chosen_cat.moons
+            < constants.CONFIG["death_related"]["old_age_death_start"]
+        ):
+            failed_ids.append(chosen_event.event_id)
+            final_events.remove(chosen_event)
+            chosen_event = None
+            chosen_cat = None
         else:
             break
 

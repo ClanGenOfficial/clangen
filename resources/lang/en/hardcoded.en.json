@@ -2,7 +2,7 @@
     "en": {
         "comment": "at some point, this file should become empty and unnecessary.",
         "event_deaths": {
-            "one": "This past moon, m_c has taken {PRONOUN/m_c/poss} place in StarClan. c_n mourns their loss, and {PRONOUN/m_c/poss} Clanmates will miss where {PRONOUN/m_c/subject} had been in their lives. Moments of {PRONOUN/m_c/poss} life are shared in stories around the circle of mourners as those that were closest to {PRONOUN/m_c/object} take {PRONOUN/m_c/object} to {PRONOUN/m_c/poss} final resting place.",
+            "one": "This past moon, m_c has taken {PRONOUN/m_c/poss} place in StarClan. c_n mourns the loss of their Clanmate, and {PRONOUN/m_c/poss} Clanmates will miss where {PRONOUN/m_c/subject} had been in their lives. Moments of {PRONOUN/m_c/poss} life are shared in stories around the circle of mourners as those that were closest to {PRONOUN/m_c/object} take {PRONOUN/m_c/object} to {PRONOUN/m_c/poss} final resting place.",
             "many": "The past moon, %{insert} have taken their place in StarClan. c_n mourns their loss, and their Clanmates will miss where they had been in their lives. Moments of their lives are shared in stories around the circle of mourners as those that were closest to them take them to their final resting place."
         },
         "event_shaken_grief": {
@@ -20,7 +20,7 @@
         "ceremony_leader_bloodthirsty": "%{oldname} has become the new leader. {PRONOUN\/lead_name\/subject\/CAP} {VERB\/lead_name\/stare\/stares} down at {PRONOUN\/lead_name\/poss} Clanmates with unsheathed claws, promising a new era for the Clans.",
         "ceremony_leader_1": "%{oldname} has been promoted to the new leader of the Clan. {PRONOUN\/lead_name\/subject/CAP} {VERB\/lead_name\/travel\/travels} to the Moonstone immediately to get {PRONOUN\/lead_name\/poss} nine lives and {VERB\/lead_name\/are\/is} hailed by {PRONOUN\/lead_name\/poss} new name, lead_name.",
         "ceremony_leader_2": "%{oldname} has become the new leader of the Clan. {PRONOUN\/lead_name\/subject\/CAP} {VERB\/lead_name\/vow\/vows} to protect the Clan, even at the cost of {PRONOUN\/lead_name\/poss} nine lives.",
-        "ceremony_leader_3": "%{oldname} has received {PRONOUN\/m_c\/poss} nine lives and has become the new leader of the Clan. {PRONOUN\/lead_name\/subject\/CAP} {VERB\/lead_name\/feel\/feels} like {PRONOUN\/lead_name\/subject} {VERB/m_c/are/is}n't ready for this new responsibility, but will try {PRONOUN\/lead_name\/poss} best to do what is right for the Clan.",
+        "ceremony_leader_3": "%{oldname} has received {PRONOUN\/lead_name\/poss} nine lives and has become the new leader of the Clan. {PRONOUN\/lead_name\/subject\/CAP} {VERB\/lead_name\/feel\/feels} like {PRONOUN\/lead_name\/subject} {VERB/lead_name/are/is}n't ready for this new responsibility, but will try {PRONOUN\/lead_name\/poss} best to do what is right for the Clan.",
         "ceremony_closer": "Visit lead_name's profile to see {PRONOUN\/lead_name\/poss} full leader ceremony.",
         "ceremony_deputy_bloodthirsty": "m_c has been chosen as the new deputy. {PRONOUN/m_c/subject/CAP} {VERB/m_c/look/looks} at the Clan leader with an odd glint in {PRONOUN/m_c/poss} eyes.",
         "ceremony_deputy": "lead_name chooses m_c to take over as deputy. %{previous}",
@@ -65,8 +65,8 @@
             "many": "With the focus of the Clan, %{herbs} were gathered."
         },
         "focus_raid_prey": {
-            "one": "With the focus of the Clan, %{amount} piece of prey was... acquired.",
-            "many": "With the focus of the Clan, %{amount} pieces of prey were... acquired."
+            "one": "With the focus of the Clan, %{count} piece of prey was... acquired.",
+            "many": "With the focus of the Clan, %{count} pieces of prey were... acquired."
         },
         "focus_injury_hoarding": {
             "zero": "Luckily, nobody in the Clan got %{condition} due to hoarding.",

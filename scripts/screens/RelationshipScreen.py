@@ -413,7 +413,7 @@ class RelationshipScreen(Screens):
         if constants.CONFIG["sorting"]["sort_by_rel_total"]:
             self.all_relations = sorted(
                 self.the_cat.relationships.values(),
-                key=lambda x: abs(x.total_relationship_value),
+                key=lambda x: x.total_abs_relationship_value,
                 reverse=True,
             )
         else:
@@ -549,7 +549,7 @@ class RelationshipScreen(Screens):
             # Column One Details:
             self.inspect_cat_elements["col1"] = pygame_gui.elements.UITextBox(
                 self.inspect_cat.get_info_block(relationship=True),
-                ui_scale(pygame.Rect((10, 185), (100, 70))),
+                ui_scale(pygame.Rect((7, 185), (100, 70))),
                 object_id="#text_box_22_horizleft_spacing_95",
                 manager=MANAGER,
                 container=self.selected_cat_container,
@@ -682,7 +682,7 @@ class RelationshipScreen(Screens):
         if not get_clan_setting("show empty relation"):
             self.filtered_cats = list(
                 filter(
-                    lambda rel: not rel.is_empty,
+                    lambda rel: rel.total_abs_relationship_value != 0,
                     self.filtered_cats,
                 )
             )

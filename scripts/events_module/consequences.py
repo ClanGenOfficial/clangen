@@ -15,6 +15,7 @@ from scripts.cat.enums import (
 )
 from scripts.cat.names import names
 from scripts.cat_relations.enums import RelType
+from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import game, constants
 from scripts.cat.constants import BACKSTORIES, PERMANENT
@@ -71,6 +72,8 @@ def create_new_cat_block(
             int(index) if index.isdigit() else index for index in adoptive_indexes
         ]
         for index in adoptive_indexes:
+            if isinstance(index, int):
+                index = f"n_c:{index}"
             if in_event_cats[index].ID not in adoptive_parents:
                 adoptive_parents.append(in_event_cats[index].ID)
                 adoptive_parents.extend(in_event_cats[index].mate)
@@ -210,7 +213,7 @@ def create_new_cat_block(
     elif rank == CatRank.MEDICINE_CAT:
         chosen_backstory = choice(["wandering_healer1", "wandering_healer2"])
     else:
-        if cat_social == CatSocial.CLANCAT:
+        if cat_social in (CatSocial.CLANCAT, "former clancat"):
             x = "former_clancat"
         else:
             x = cat_social
@@ -247,7 +250,11 @@ def create_new_cat_block(
             BACKSTORIES["backstory_categories"]["baby_clancat_backstories"]
             + BACKSTORIES["backstory_categories"]["former_clancat_backstories"]
         ):
-            cat_social = CatSocial.CLANCAT
+            cat_social = (
+                CatSocial.CLANCAT
+                if cat_social != "former clancat"
+                else "former clancat"
+            )
         elif chosen_backstory in (
             BACKSTORIES["backstory_categories"]["baby_loner_backstories"]
             + BACKSTORIES["backstory_categories"]["loner_backstories"]
@@ -459,7 +466,7 @@ def create_new_cat_block(
                 n_c.relationships[par.ID] = start_relation
 
             # UPDATE INHERITANCE
-            n_c.create_inheritance_new_cat()
+        inheritance_db.load_inheritances(Cat)
 
     return new_cats
 
@@ -622,7 +629,7 @@ def create_new_cat(
         # clancat adults should have already generated with a clan-ish name, thus they skip all of this re-naming
         # little babies will take a clancat name, we love indoctrination
         if (
-            kit or litter or moons < 12
+            (kit or litter or moons < 12) and not outside
         ) and original_group not in game.clan.other_clan_IDs:
             # babies change name, in case their initial name isn't clan-ish
             new_cat.change_name()
@@ -829,10 +836,23 @@ def gather_cat_objects(
         # OVERALL CLAN CATS
         elif abbr == "clan":
             found_cat_list.update(clan_cats)
+            # exclude cats involved in the event
+            found_cat_list.discard(getattr(event, "main_cat", None))
+            found_cat_list.discard(getattr(event, "random_cat", None))
+            if getattr(event, "patrol_cats", None):
+                found_cat_list.difference_update(set(event.patrol_cats))
         elif abbr == "some_clan":  # 1 / 8 of clan cats are affected
-            found_cat_list.update(
-                sample(clan_cats, randint(1, max(1, round(len(clan_cats) / 8))))
-            )
+            if len(
+                clan_cats
+            ):  # to prevent crash if every cat in the clan died just before this
+                found_cat_list.update(
+                    sample(clan_cats, randint(1, max(1, round(len(clan_cats) / 8))))
+                )
+                # exclude cats involved in the event
+                found_cat_list.discard(getattr(event, "main_cat", None))
+                found_cat_list.discard(getattr(event, "random_cat", None))
+                if getattr(event, "patrol_cats", None):
+                    found_cat_list.difference_update(set(event.patrol_cats))
 
         # add/remove cats if found and then continue for loop
         if is_exclusionary and found_cat_list:
@@ -872,7 +892,8 @@ def gather_cat_objects(
             continue
 
         else:
-            print(f"WARNING: Unsupported abbreviation {abbr}")
+            print(f"WARNING: No cats found for {abbr_list}")
+            return list(found_cat_list)
 
     return list(out_set)
 
@@ -931,21 +952,21 @@ def unpack_rel_block(
                     positive = True
 
         if positive:
-            effect = i18n.t("relationships.positive_postscript")
+            effect = "relationships.positive_postscript"
         else:
-            effect = i18n.t("relationships.negative_postscript")
+            effect = "relationships.negative_postscript"
 
         # Get log
         to_log = None
         from_log = None
         if "log" in block:
             to_log = (
-                block["log"].get("cats_to", "") + effect
+                i18n.t(effect, text=block["log"].get("cats_to", ""))
                 if "cats_to" in block["log"]
                 else None
             )
             from_log = (
-                block["log"].get("cats_from", "") + effect
+                i18n.t(effect, text=block["log"].get("cats_from", ""))
                 if "cats_from" in block["log"]
                 else None
             )
@@ -1021,7 +1042,7 @@ def change_relationship_values(
     :param int comfort: amount to change comfort, default 0
     :param int trust: amount to change trust, default 0
     :param str log: the string to append to the relationship log of cats involved
-    :param bool flip_log: If True, this will "flip" the cats used for to_cat and from_cat abbreviation replacements. This should really only be used for mutual relationship changes from events.
+    :param bool flip_log: If True, this will "flip" the cats used for cat_to and cat_from abbreviation replacements. This should really only be used for mutual relationship changes from events.
     """
 
     # This is just for test prints - DON'T DELETE - you can use this to test if relationships are changing
@@ -1072,34 +1093,35 @@ def change_relationship_values(
                 log = i18n.t("relationships.relationship_log")
             if log and isinstance(log, str):
                 replace_dict = {}
-                from_cat = single_cat_to if flip_log else single_cat_from
-                to_cat = single_cat_from if flip_log else single_cat_to
-                if "from_cat" in log:
-                    replace_dict["from_cat"] = (
-                        str(from_cat.name),
-                        choice(from_cat.pronouns),
+                cat_from = single_cat_to if flip_log else single_cat_from
+                cat_to = single_cat_from if flip_log else single_cat_to
+                if "cat_from" in log:
+                    replace_dict["cat_from"] = (
+                        str(cat_from.name),
+                        choice(cat_from.pronouns),
                     )
-                if "to_cat" in log:
-                    replace_dict["to_cat"] = (
-                        str(to_cat.name),
-                        choice(to_cat.pronouns),
+                if "cat_to" in log:
+                    replace_dict["cat_to"] = (
+                        str(cat_to.name),
+                        choice(cat_to.pronouns),
                     )
                 if replace_dict:
                     processed_log = process_text(log, replace_dict)
                 else:
                     processed_log = log
 
-                if from_cat in created_rel_logs:
-                    created_rel_logs[from_cat] = "<br><br>".join(
-                        [created_rel_logs[from_cat], processed_log]
+                if single_cat_from in created_rel_logs:
+                    created_rel_logs[single_cat_from] = "<br><br>".join(
+                        [created_rel_logs[single_cat_from], processed_log]
                     )
                 else:
-                    created_rel_logs.update({from_cat: processed_log})
+                    created_rel_logs.update({single_cat_from: processed_log})
 
-                log_text = processed_log + i18n.t(
+                log_text = i18n.t(
                     "relationships.age_postscript",
-                    name=str(from_cat.name),
-                    count=from_cat.moons,
+                    text=processed_log,
+                    name=str(single_cat_from.name),
+                    count=single_cat_from.moons,
                 )
                 if log_text not in rel.log:
                     rel.log.append(log_text)

@@ -11,6 +11,7 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 from scripts.game_structure import game, constants
 
 from scripts.cat.cats import Cat
+from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.cat.enums import CatAge, CatRank, CatGroup, CatSocial
 from scripts.cat_relations.relationship import Relationship
 
@@ -52,6 +53,7 @@ class TestRelativesFunction(unittest.TestCase):
     def test_is_parent(self):
         parent = Cat(disable_random=True)
         kit = Cat(parent1=parent.ID, disable_random=True)
+        inheritance_db.load_inheritances(Cat)
         self.assertFalse(kit.is_parent(kit))
         self.assertFalse(kit.is_parent(parent))
         self.assertTrue(parent.is_parent(kit))
@@ -61,6 +63,7 @@ class TestRelativesFunction(unittest.TestCase):
         parent = Cat(disable_random=True)
         kit1 = Cat(parent1=parent.ID, disable_random=True)
         kit2 = Cat(parent1=parent.ID, disable_random=True)
+        inheritance_db.load_inheritances(Cat)
         self.assertFalse(parent.is_sibling(kit1))
         self.assertFalse(kit1.is_sibling(parent))
         self.assertTrue(kit2.is_sibling(kit1))
@@ -72,6 +75,7 @@ class TestRelativesFunction(unittest.TestCase):
         sibling1 = Cat(parent1=grand_parent.ID, disable_random=True)
         sibling2 = Cat(parent1=grand_parent.ID, disable_random=True)
         kit = Cat(parent1=sibling1.ID, disable_random=True)
+        inheritance_db.load_inheritances(Cat)
         self.assertFalse(sibling1.is_uncle_aunt(kit))
         self.assertFalse(sibling1.is_uncle_aunt(sibling2))
         self.assertFalse(kit.is_uncle_aunt(sibling2))
@@ -83,6 +87,7 @@ class TestRelativesFunction(unittest.TestCase):
         sibling1 = Cat(parent1=grand_parent.ID, disable_random=True)
         sibling2 = Cat(parent1=grand_parent.ID, disable_random=True)
         kit = Cat(parent1=sibling1.ID, disable_random=True)
+        inheritance_db.load_inheritances(Cat)
         self.assertFalse(sibling1.is_grandparent(kit))
         self.assertFalse(sibling1.is_grandparent(sibling2))
         self.assertFalse(kit.is_grandparent(sibling2))
@@ -98,6 +103,7 @@ class TestPossibleMateFunction(unittest.TestCase):
         sibling1 = Cat(parent1=grand_parent.ID, disable_random=True)
         sibling2 = Cat(parent1=grand_parent.ID, disable_random=True)
         kit = Cat(parent1=sibling1.ID, disable_random=True)
+        inheritance_db.load_inheritances(Cat)
         self.assertFalse(kit.is_potential_mate(grand_parent))
         self.assertFalse(kit.is_potential_mate(sibling1))
         self.assertFalse(kit.is_potential_mate(sibling2))
@@ -113,6 +119,7 @@ class TestPossibleMateFunction(unittest.TestCase):
         sibling1 = Cat(parent1=grand_parent.ID, disable_random=True)
         sibling2 = Cat(parent1=grand_parent.ID, disable_random=True)
         kit = Cat(parent1=sibling1.ID, disable_random=True)
+        inheritance_db.load_inheritances(Cat)
         self.assertFalse(kit.is_potential_mate(grand_parent, for_love_interest=True))
         self.assertFalse(kit.is_potential_mate(sibling1, for_love_interest=True))
         self.assertFalse(kit.is_potential_mate(sibling2, for_love_interest=True))
@@ -143,6 +150,7 @@ class TestPossibleMateFunction(unittest.TestCase):
         senior_adult_cat2 = Cat(moons=96, disable_random=True)
         elder_cat1 = Cat(moons=120, disable_random=True)
         elder_cat2 = Cat(moons=120, disable_random=True)
+        inheritance_db.load_inheritances(Cat)
 
         # check for cat mating with itself
         self.assertFalse(kitten_cat1.is_potential_mate(kitten_cat1))
@@ -222,6 +230,7 @@ class TestPossibleMateFunction(unittest.TestCase):
         senior_adult_cat2 = Cat(moons=96, disable_random=True)
         elder_cat1 = Cat(moons=120, disable_random=True)
         elder_cat2 = Cat(moons=120, disable_random=True)
+        inheritance_db.load_inheritances(Cat)
 
         # check for cat mating with itself
         self.assertFalse(kitten_cat1.is_potential_mate(kitten_cat1, True))
@@ -367,7 +376,6 @@ class TestMateFunctions(unittest.TestCase):
             cat1,
             cat2,
             family=False,
-            mates=True,
             romance=40,
             like=40,
             comfort=40,
@@ -379,7 +387,6 @@ class TestMateFunctions(unittest.TestCase):
             cat2,
             cat1,
             family=False,
-            mates=True,
             romance=40,
             like=40,
             comfort=40,
