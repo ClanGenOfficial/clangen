@@ -20,7 +20,4 @@ def get_config(config_path):
         for key in config_keys:
             config_value = config_value[key]
 
-    if isinstance(config_value, dict) or isinstance(config_value, list):
-        return copy.deepcopy(config_value)
-
-    return config_value
+    return copy.deepcopy(config_value)  # deepcopy so that the actual CONFIG can't be modified
