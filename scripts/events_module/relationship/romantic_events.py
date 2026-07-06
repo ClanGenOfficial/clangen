@@ -104,10 +104,10 @@ def _handle_breakup_events(cat: Cat):
         _attempt_breakup(cat, mate)
 
 
-def _attempt_breakup(cat_from: Cat, cat_to: Cat):
+def _attempt_breakup(cat_from: Cat, cat_to: Cat, disable_random: bool = False):
     """Checks if the cats wish to breakup and handles the ensuing result."""
 
-    if not _check_if_breakup(cat_from, cat_to):
+    if not _check_if_breakup(cat_from, cat_to, disable_random):
         return
 
     # gather relationships
@@ -180,12 +180,12 @@ def _attempt_breakup(cat_from: Cat, cat_to: Cat):
     )
 
 
-def _check_if_breakup(cat_from: Cat, cat_to: Cat) -> bool:
+def _check_if_breakup(cat_from: Cat, cat_to: Cat, disable_random: bool = False) -> bool:
     """
     Returns True if the cats should break up
     """
     # Moving on, not breakups, occur when one mate is dead or outside.
-    if cat_to.status.alive_in_player_clan:
+    if not cat_to.status.alive_in_player_clan:
         return False
 
     chance_number = _get_breakup_chance(cat_from, cat_to)
@@ -193,7 +193,7 @@ def _check_if_breakup(cat_from: Cat, cat_to: Cat) -> bool:
     if chance_number == 0:
         return False
 
-    return not int(random.random() * chance_number)
+    return not int(random.random() * chance_number) or disable_random
 
 
 def _get_breakup_chance(cat_from: Cat, cat_to: Cat) -> int:
@@ -394,7 +394,9 @@ def _attempt_confession(cat_from: Cat) -> bool:
     return True
 
 
-def _attempt_mutual_interest_mates(cat_from: Cat, cat_to: Cat):
+def _attempt_mutual_interest_mates(
+    cat_from: Cat, cat_to: Cat, disable_random: bool = False
+):
     """Checks if the two cats have a high enough mutual interest to become mates. Handles the ensuing event if so."""
 
     become_mates = False
@@ -415,11 +417,13 @@ def _attempt_mutual_interest_mates(cat_from: Cat, cat_to: Cat):
 
     mate_string = None
     mate_chance = get_config("mates.chance_fulfilled_condition")
-    becoming_mates = not int(random.random() * mate_chance)
+    becoming_mates = not int(random.random() * mate_chance) or disable_random
 
     # has to be high because every moon this will be checked for each relationship in the game
     friends_to_lovers = get_config("mates.chance_friends_to_lovers")
-    becoming_friend_to_lover = not int(random.random() * friends_to_lovers)
+    becoming_friend_to_lover = (
+        not int(random.random() * friends_to_lovers) or disable_random
+    )
 
     # already return if there is 'no' hit (everything above 0), other checks are not necessary
     if not becoming_mates and not becoming_friend_to_lover:
