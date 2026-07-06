@@ -525,7 +525,7 @@ def _check_current_mates_allow_new_mate(
     :return: True if conditions are fulfilled, False if not
     """
     current_mate_condition = get_config("mates.poly.current_mate_condition")
-    current_to_new_condition = get_config("mates.poly.mate_to_each_other")
+    current_to_new_condition = get_config("mates.poly.mates_to_each_other")
 
     # check relationship from current mates from cat_from
     for mate_id in cat_from_mates:
@@ -576,15 +576,15 @@ def _check_against_grief(cat_from: Cat, cat_to: Cat) -> bool:
     if "grief stricken" in cat_to.illnesses:
         chance = get_config("mates.approach_grief.chance")
         # some cats might not be reading the room
-        if cat_from.personality in ("oblivious", "loving"):
-            chance += get_config("mates_approach_grief.specific_trait_influence")
+        if cat_from.personality.trait in ("oblivious", "loving"):
+            chance += get_config("mates.approach_grief.specific_trait_influence")
         for threshold_reached in [
             cat_from.personality.lawfulness < 8,
             cat_from.personality.sociability < 8,
             cat_from.personality.aggression > 8,
         ]:
             if threshold_reached:
-                chance += get_config("mates_approach_grief.facet_influence")
+                chance += get_config("mates.approach_grief.facet_influence")
         if random.random() > chance:
             return False
 

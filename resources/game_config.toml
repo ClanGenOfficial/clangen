@@ -76,7 +76,7 @@ dev_tools = false
   chance_fulfilled_condition = 5
 
   # 1/chance of becoming mates, triggers with friends_to_lover (has to be a high number because many relationships are checked each moon)
-  chance_friends_to_lovers = 170
+  chance_friends_to_lovers = 130
 
   # chance to approach grieving cat
   [mates.approach_grief]
@@ -132,10 +132,12 @@ dev_tools = false
         trust = -5
         respect = -5
       [mates.confession.reactions.rejected.cat_from]
-        romance = -10
-        comfort = -5
+        romance = -20
+        like = -5
+        comfort = -20
+        respect = -10
       [mates.confession.reactions.rejected.cat_to]
-        romance = -15
+        romance = -25
         comfort = -10
 
       [mates.confession.reactions.makeup.cat_from]
@@ -165,7 +167,7 @@ dev_tools = false
   # requirements for a like relationship to become romance
   [mates.like_to_romance]
     romance = 0
-    like = 30
+    like = 50
     respect = 0
     comfort = 20
     trust = 0
