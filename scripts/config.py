@@ -1,25 +1,28 @@
+import copy
 import tomllib
 
 from scripts.game_structure import constants, game
 
-with open("resources/game_config.toml", "r", encoding="utf-8") as read_file:
-    CONFIG = tomllib.loads(read_file.read())
-
 
 # config_path passed as a string using dot notation - ex "graduation.min_graduating_age"
 def get_config(config_path):
-    config_value = CONFIG
+    config_value = game.constants.CONFIG
     config_keys = tuple(config_path.split("."))
+    value_found = False
 
     # checking cards first
     for card in game.clan.cruel_cards:
         card_info = constants.CRUEL_CARDS_ALL[card]
         if config_path in card_info["modifiers"]:
             config_value = card_info["modifiers"][config_path]
+            value_found = True
 
     # then checking game_config
-    if config_value == CONFIG:
+    if not value_found:
         for key in config_keys:
             config_value = config_value[key]
+
+    if isinstance(config_value, dict) or isinstance(config_value, list):
+        return copy.deepcopy(config_value)
 
     return config_value
