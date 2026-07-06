@@ -50,8 +50,11 @@ def handle_mates_and_breakup(cat: Cat):
     _handle_new_mate_events(cat)
 
 
-def _handle_moving_on(cat: Cat):
-    """Handles moving on from dead or outside mates"""
+def _handle_moving_on(cat: Cat, disable_random: bool = False):
+    """Handles moving on from dead or outside mates
+    :param cat: cat who may try to move on
+    :param disable_random: used for testing
+    """
     for mate_id in cat.mate:
         # check valid mate
         if mate_id not in Cat.all_cats:
@@ -80,7 +83,7 @@ def _handle_moving_on(cat: Cat):
                 if threshold_reached:
                     chance += get_config("mates.moving_on.facet_influence")
 
-            if random.random() <= chance:
+            if random.random() <= chance or disable_random:
                 text = i18n.t("hardcoded.move_on_dead_mate", mate=str(mate.name))
                 game.cur_events_list.append(
                     Single_Event(text, "relation", cat_dict={"m_c": cat, "r_c": mate})
