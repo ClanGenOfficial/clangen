@@ -1351,6 +1351,7 @@
         "knows_of_only",
         "likes_only",
         "enjoys_only",
+        "cherishes_only",
         "resents_only",
         "envies_only",
         "begrudges_only",
@@ -1638,7 +1639,9 @@
         "loner",
         "-loner",
         "rogue",
-        "-rogue"
+        "-rogue",
+        "clancat",
+        "-clancat"
       ],
       "title": "Status",
       "type": "string"

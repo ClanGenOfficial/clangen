@@ -50,7 +50,6 @@ class ChooseCatsScreen(MakeClanScreenBase):
     def __init__(self, name="choose_cats_screen"):
         super().__init__(name)
 
-        self.rolls_left = constants.CONFIG["clan_creation"]["rerolls"]
         self.selected_cat: Optional[Cat] = None
 
     def screen_switches(self):
@@ -95,6 +94,7 @@ class ChooseCatsScreen(MakeClanScreenBase):
             object_id="@buttonstyles_icon",
             manager=MANAGER,
             sound_id="dice_roll",
+            tool_tip_text="screens.make_clan.reroll_tooltip",
         )
         self.elements["roll2"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 10), (34, 34))),
@@ -105,6 +105,7 @@ class ChooseCatsScreen(MakeClanScreenBase):
             anchors={"top_target": self.elements["roll1"]},
             manager=MANAGER,
             sound_id="dice_roll",
+            tool_tip_text="screens.make_clan.reroll_tooltip",
         )
         self.elements["roll3"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 10), (34, 34))),
@@ -115,10 +116,14 @@ class ChooseCatsScreen(MakeClanScreenBase):
             anchors={"top_target": self.elements["roll2"]},
             manager=MANAGER,
             sound_id="dice_roll",
+            tool_tip_text="screens.make_clan.reroll_tooltip",
         )
 
         # set to infinite or higher than typical
-        if self.rolls_left == -1 or constants.CONFIG["clan_creation"]["rerolls"] > 3:
+        if (
+            MakeClanScreenBase.rolls_left == -1
+            or constants.CONFIG["clan_creation"]["rerolls"] > 3
+        ):
             # hide top and bottom so only center remains
             self.elements["roll1"].hide()
             self.elements["roll3"].hide()
@@ -126,7 +131,7 @@ class ChooseCatsScreen(MakeClanScreenBase):
         if constants.CONFIG["clan_creation"]["rerolls"]:
             self.elements["reroll_count"] = pygame_gui.elements.UILabel(
                 ui_scale(pygame.Rect((0, 0), (30, 30))),
-                str(self.rolls_left),
+                str(MakeClanScreenBase.rolls_left),
                 container=self.elements["roll_container"],
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 anchors={"top_target": self.elements["roll2"]},
@@ -134,17 +139,17 @@ class ChooseCatsScreen(MakeClanScreenBase):
             )
 
         if constants.CONFIG["clan_creation"]["rerolls"] == 3:
-            if self.rolls_left <= 2:
+            if MakeClanScreenBase.rolls_left <= 2:
                 self.elements["roll1"].disable()
-            if self.rolls_left <= 1:
+            if MakeClanScreenBase.rolls_left <= 1:
                 self.elements["roll2"].disable()
-            if self.rolls_left == 0:
+            if MakeClanScreenBase.rolls_left == 0:
                 self.elements["roll3"].disable()
             self.elements["reroll_count"].hide()
         else:
-            if self.rolls_left == 0:
+            if MakeClanScreenBase.rolls_left == 0:
                 self.elements["roll2"].disable()
-            elif self.rolls_left == -1:
+            elif MakeClanScreenBase.rolls_left == -1:
                 self.elements["reroll_count"].hide()
 
         self.create_cat_info()
@@ -198,13 +203,19 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 if self.elements["error_message"]:
                     self.elements["error_message"].hide()
 
+                self.clan_info.clear_cats()
+
                 self.refresh_cat_images_and_info()  # Refresh all the images.
-                self.rolls_left -= 1
+                self.refresh_text_and_buttons()
+                self.update_head_display()
+                MakeClanScreenBase.rolls_left -= 1
                 if constants.CONFIG["clan_creation"]["rerolls"] == 3:
                     event.ui_element.disable()
                 else:
-                    self.elements["reroll_count"].set_text(str(self.rolls_left))
-                    if self.rolls_left == 0:
+                    self.elements["reroll_count"].set_text(
+                        str(MakeClanScreenBase.rolls_left)
+                    )
+                    if MakeClanScreenBase.rolls_left == 0:
                         event.ui_element.disable()
             # PICK RANDOM CATS
             elif event.ui_element == self.elements["random_cats"]:
@@ -239,7 +250,12 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 self.refresh_text_and_buttons()
             # GOING BACK
             elif event.ui_element == self.elements["previous_step"]:
-                self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_NAME)
+                if self.selected_cat:
+                    self.selected_cat = None
+                    self.refresh_cat_images_and_info()
+                    self.refresh_text_and_buttons()
+                else:
+                    self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_NAME)
             elif event.ui_element == self.elements["next_step"]:
                 self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_CAMP)
 
@@ -316,6 +332,16 @@ class ChooseCatsScreen(MakeClanScreenBase):
 
         if self.selected_cat:
             self.elements["random_cats"].hide()
+
+        # refresh dice and remove error text
+        if not self.selected_cat:
+            self.elements["error_message"].hide()
+            self.elements["roll_container"].show()
+            if constants.CONFIG["clan_creation"]["rerolls"] == 3:
+                self.elements["reroll_count"].hide()
+            else:
+                self.elements["roll1"].hide()
+                self.elements["roll3"].hide()
 
         # allow the player forward
         if self.clan_info.has_minimum_cats():

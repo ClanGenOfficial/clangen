@@ -1,0 +1,27 @@
+[
+    {
+        "id": "rom_dec_low3",
+        "strings": [
+            "m_c feels ignored by r_c.",
+            "m_c didn't get the joke r_c was telling.",
+            "m_c and r_c had a conversation where they realized they didn't have much in common.",
+            "m_c didn't realize r_c was flirting with {PRONOUN/m_c/object}."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort",
+                    "romance"
+                ],
+                "amount": -5
+            }
+        ]
+    }
+]

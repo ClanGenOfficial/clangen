@@ -1,0 +1,236 @@
+[
+    {
+        "id": "platonic_de_low1",
+        "strings": [
+            "m_c thinks r_c isn't very considerate of others.",
+            "m_c gets a little irritated seeing r_c ignore a mess in camp.",
+            "r_c accidentally gave m_c a piece of fresh-kill {PRONOUN/m_c/subject} didn't like.",
+            "r_c doesn't seem very concerned when m_c complains about something aching.",
+            "m_c feels like r_c wasn't listening to {PRONOUN/m_c/object}.",
+            "r_c didn't put a lot of thought into an answer for m_c's question.",
+            "m_c doesn't see why r_c is upset about something trivial.",
+            "r_c yawns while m_c is trying to tell {PRONOUN/r_c/object} something.",
+            "m_c asks for the last of r_c's fresh-kill, but r_c says no.",
+            "r_c won't help m_c fix {PRONOUN/m_c/poss} nest.",
+            "m_c saw r_c being rude.",
+            "m_c heard r_c say something mean.",
+            "m_c saw r_c cough up a hairball.",
+            "m_c is annoyed by r_c's negative comments.",
+            "r_c tells m_c to smile more.",
+            "m_c hopes {PRONOUN/m_c/subject} just misheard r_c's rude remark.",
+            "r_c sneezed on m_c.",
+            "m_c doesn't understand why r_c is being so rude.",
+            "m_c was woken up early by r_c."
+        ]
+    },
+    {
+        "id": "platonic_de_low2",
+        "strings": [
+            "m_c and r_c have an argument about who should get a pretty feather, and end up destroying it in their fight.",
+            "m_c has drawn the ire of r_c by deliberately taking the last of {PRONOUN/r_c/poss} favorite nesting materials for {PRONOUN/m_c/self}.",
+            "m_c and r_c keep talking over each other on accident.",
+            "After m_c tidies up an area, r_c accidentally messes it up again.",
+            "m_c confesses something to r_c, but realizes {PRONOUN/r_c/subject} can't relate at all.",
+            "When m_c gets a little hurt, r_c giggles before asking if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} okay.",
+            "m_c tells r_c to talk a little quieter.",
+            "m_c keeps asking r_c to explain a joke, but r_c just says that m_c had to be there.",
+            "m_c stretched in front of r_c. r_c didn't get a great view.",
+            "r_c asked m_c to cover {PRONOUN/m_c/poss} mouth while {PRONOUN/m_c/subject} {VERB/m_c/cough/coughs}, so m_c coughed on {PRONOUN/r_c/object} out of spite."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "id": "dislike_inc_low1",
+        "strings": [
+            "r_c bumped into m_c and didn't even apologize!",
+            "r_c stepped on m_c's paw and pretended not to notice.",
+            "m_c is grossed out by something r_c did.",
+            "r_c says something in passing that m_c keeps getting worked up about.",
+            "m_c tried to explain something to r_c, but {PRONOUN/r_c/subject} just didn't understand.",
+            "r_c hit m_c on the face with {PRONOUN/r_c/poss} tail while passing by.",
+            "m_c doesn't think the object that r_c asked {PRONOUN/m_c/object} to find is real.",
+            "m_c got tricked into doing one of r_c's chores.",
+            "When m_c approached r_c, {PRONOUN/r_c/subject} made a weird face.",
+            "Something good happens to m_c and most Clanmates congratulate {PRONOUN/m_c/object}, but r_c doesn't say anything at all."
+        ]
+    },
+    {
+        "id": "dislike_inc_low2",
+        "strings": [
+            "m_c had a disagreement with r_c about something or other.",
+            "m_c and r_c argued about something trivial and neither of them apologized.",
+            "m_c said something really rude to r_c.",
+            "m_c and r_c are arguing about who should take the blame for something trivial.",
+            "m_c didn't tell r_c about the feather stuck to {PRONOUN/r_c/poss} face, so r_c spent the whole day looking silly.",
+            "When m_c tells r_c about a goal {PRONOUN/m_c/subject} {VERB/m_c/have/has}, r_c snickers at it.",
+            "r_c and m_c have a misunderstanding that makes them grumpy for the rest of the day.",
+            "r_c takes the sunny spot that m_c was about to lay in.",
+            "m_c and r_c splash each other in a puddle, but it doesn't look playful...",
+            "m_c's feelings are hurt by something r_c said, but r_c's apology is half-hearted.",
+            "m_c loses in a race against r_c and acts bitterly about it."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "id": "platonic_de_low_opposites",
+        "strings": [
+            "m_c and r_c disagree on something that should have an obvious answer.",
+            "r_c tells m_c to be happier. m_c explains it's not that simple."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "gloomy",
+                        "grumpy"
+                    ]
+                }
+            },
+            "r_c": {
+                "stat": {
+                    "trait": [
+                        "childish",
+                        "oblivious",
+                        "bold",
+                        "confident"
+                    ]
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "id": "daydreamerseasonal_de_low1",
+        "strings": [
+            "m_c is trying to get r_c to play with {PRONOUN/m_c/object}, but r_c is too enamored with watching the falling leaves."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "trait": [
+                        "daydreamer"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "daydreamerseasonal_de_low2",
+        "strings": [
+            "m_c is trying to get r_c to play with {PRONOUN/m_c/object}, but r_c is too enamored with watching the falling snow."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "trait": [
+                        "daydreamer"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "daydreamerseasonal_de_low3",
+        "strings": [
+            "m_c is trying to get r_c to play with {PRONOUN/m_c/object}, but r_c is too enamored with watching the drifting pollen."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "trait": [
+                        "daydreamer"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "daydreamerseasonal_de_low4",
+        "strings": [
+            "m_c is trying to get r_c to play with {PRONOUN/m_c/object}, but r_c is too enamored with watching a beam of sunlight."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "trait": [
+                        "daydreamer"
+                    ]
+                }
+            }
+        }
+    }
+]
