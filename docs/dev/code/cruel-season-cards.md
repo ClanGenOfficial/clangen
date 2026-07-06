@@ -34,16 +34,16 @@ The modifier name replacing `mod_name` should match the config it's repllacing, 
 Modifier values should match the data type of the config it's replacing.
 
 ## Conflicting Cards
-Some cards will conflict each other. To remedy this, we store groups of conflicting cards in `resources\dicts\cruel_season\card_conflicts.json`
+Some cards will conflict each other. To remedy this, we store groups of conflicting cards in `resources\dicts\cruel_season\card_conflicts.json`.
 Upon card selection, the game will check if the card attempting to be selected is in a conflict group with any existing card.
 
-Each key should be a descriptive name of the nature of the conflict. For example, if multiple cards are modifying the beginning make-up of the Clan (all kittens, all apprentices, all elders, ect.) then the key could be something like "starting_members". The value of that key is then a list of all card IDs that conflict with each other.
+Each key in the `card_conflicts.json` should be a descriptive name of the nature of the conflict. For example, if multiple cards are modifying the beginning make-up of the Clan (all kittens, all apprentices, all elders, etc.) then the key could be something like "starting_members". The value of that key is then a list of all card IDs that conflict with each other.
 
 This example would be written like this in the dict:
 ```json
  "starting_members": ["all_kittens", "all_apprentices", "all_elders"]
 ```
-
+Upon adding a new card, consider what is being modified and check the `card_conflicts.json` to see if it would belong in any of the existing groups, or make a new group if necessary.
 
 ## Accessing The Modifiers
 
