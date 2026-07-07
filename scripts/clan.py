@@ -82,7 +82,7 @@ class Clan:
         camp_bg=None,
         symbol=None,
         game_mode="classic",
-        cruel_cards: list[str] = [],
+        cruel_cards: list[str] = None,
         starting_members=None,
         starting_season="Newleaf",
         self_run_init_functions=True,
@@ -101,7 +101,7 @@ class Clan:
         self.name = display_name if display_name else save_id
 
         # needs to happen immediately so that any config retrievals will be accurate
-        self.cruel_cards: list[str] = cruel_cards
+        self.cruel_cards: list[str] = cruel_cards if cruel_cards else []
 
         self.leader = leader
         self._leader_lives = 9
