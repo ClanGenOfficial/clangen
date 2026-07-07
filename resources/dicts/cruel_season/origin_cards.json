@@ -2,7 +2,7 @@
   "public_enemy": {
     "card_art": "origin/public_enemy.png",
     "modifiers": {
-      "clan_creation.starting_clan_creation": [1, 7]
+      "clan_creation.starting_clan_relation": [1, 7]
     }
   }
 }
