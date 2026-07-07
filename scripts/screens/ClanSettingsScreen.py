@@ -109,7 +109,7 @@ class ClanSettingsScreen(Screens):
         TODO: DOCS
         """
         if event.ui_element in self.checkboxes.values():
-            if event.ui_element == self.checkboxes["deputy"] and get_config(
+            if event.ui_element == self.checkboxes.get("deputy") and get_config(
                 "settings.force_enable.deputy"
             ):
                 set_clan_setting("deputy", True)
