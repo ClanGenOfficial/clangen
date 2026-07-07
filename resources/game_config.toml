@@ -25,6 +25,11 @@ dev_tools = false
   # base 1/chance of a romance interaction with another cat, when a cat has a mate
   chance_romance_not_mate = 15
 
+  # set to True if deputies should be more likely to have negative rel events with the leader
+  deputy_to_leader_neg_buff = false
+  # the higher the number, the more likely the deputy will have a negative respect event with the leader
+  deputy_envy_leader_influence = 0
+
   [relationship.value_change_amount]
     # amount a relationship changes for "high", "medium", and "low" effects for interactions
     low = 8
@@ -492,12 +497,7 @@ dev_tools = false
   war_death_modifier_leader = 35
   war_death_modifier = 330
 
-  # base 1/2^(chance) a completely random murder occurs
-  # aggression and instability will make the denominator lower and increase chance of murder
-  base_random_murder_chance = 25
 
-  # base 1/chance a disliked cat will be murdered
-  base_murder_kill_chance = 80
 
   # age cats will start dying of old age based on old_age_death_curve
   old_age_death_start = 150
@@ -506,6 +506,20 @@ dev_tools = false
   # Average life expectancy with default old_age_death_start of 150 moons:
   #   1 = 189 moons, 2 = 178, 3 = 172, 4.5 (default) = 168, 8 = 163, 20 = 158
   old_age_death_curve = 4.5
+
+  [death_related.murder]
+    # base 1/2^(chance) a completely random murder occurs
+    # aggression and instability will make the denominator lower and increase chance of murder
+    base_random_murder_chance = 25
+
+    # base 1/chance a disliked cat will be murdered
+    base_murder_kill_chance = 80
+
+    # The higher this number, the more likely a deputy will murder their leader.
+    # note that this doesn't make the deputy more likely to murder in general
+    # so they still need to be "capable" of it and have negative relationship with their leader.
+    deputy_murder_modifier = 0
+
 
 [condition_related]
   # 10/chance an illness will occur
