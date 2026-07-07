@@ -73,7 +73,6 @@ class Patrol:
         # False if no debug patrol set, value if one is set
         self.debug_patrol: Union[bool, str] = False
 
-
     def setup_patrol(self, patrol_cats: List[Cat], patrol_type: str) -> str:
         # Add cats
 

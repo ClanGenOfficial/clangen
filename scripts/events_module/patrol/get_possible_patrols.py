@@ -17,6 +17,9 @@ def get_possible_patrols(
     other_clan_rep: Optional[Literal["hostile", "allies", "neutral"]] = None,
     outsider_rep: Optional[Literal["hostile", "welcoming", "neutral"]] = None,
 ) -> list[PatrolEvent]:
+    """
+    Finds and returns a list of PatrolEvent objects for all patrols allowed according to given parameters, clan biome, and current season.
+    """
     path = "patrols/"
 
     # OVERRIDE
@@ -116,6 +119,10 @@ def _load_file(path: str) -> list[PatrolEvent]:
 
 
 def will_allow_outsider_patrols(reputation: int, small_clan: bool) -> Optional[str]:
+    """
+    Checks reputation and clan size to determine if outsider patrols should be allowed and what kind of patrol they can be
+    :return: The type of outsider patrol allowed if outsider patrols are allowed. If they aren't allowed, then this will return None.
+    """
     regular_chance = int(getrandbits(2))
     hostile_chance = int(getrandbits(5))
     welcoming_chance = int(getrandbits(1))

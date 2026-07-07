@@ -174,6 +174,7 @@ class PatrolEvent:
         :return: success outcome, failure outcome
         """
 
+        # find which set of outcomes we'll be using based on if the player choose to antagonize
         if antagonize:
             success_outcomes = self.antag_success_outcomes
             fail_outcomes = self.antag_fail_outcomes
