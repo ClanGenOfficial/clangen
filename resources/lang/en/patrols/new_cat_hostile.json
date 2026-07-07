@@ -2497,7 +2497,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "backgrounds/fst_hunt_twolegplace",
+        "patrol_art": "backgrounds/fst_twolegplace",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},

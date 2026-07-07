@@ -234,7 +234,7 @@
         "tags": [
             "disaster"
         ],
-        "patrol_art": "backgrounds/gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -352,7 +352,7 @@
         "tags": [
             "disaster"
         ],
-        "patrol_art": "backgrounds/gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -466,7 +466,7 @@
         "tags": [
             "disaster"
         ],
-        "patrol_art": "backgrounds/gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -580,7 +580,7 @@
         "tags": [
             "disaster"
         ],
-        "patrol_art": "backgrounds/gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
