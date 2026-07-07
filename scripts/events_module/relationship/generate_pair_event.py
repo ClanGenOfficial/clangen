@@ -126,7 +126,11 @@ def _get_type_of_change(
     elif comp == CatCompatibility.NEGATIVE:
         bool_ballot.append(False)
 
-    if get_config("relationship.deputy_to_leader_neg_buff"):
+    if (
+        get_config("relationship.deputy_to_leader_neg_buff")
+        and main_cat.status.rank == CatRank.DEPUTY
+        and other_cat.status.is_leader
+    ):
         bool_ballot.append(False)
 
     # further influence the partition based on the relationship
