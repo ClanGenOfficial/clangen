@@ -2233,7 +2233,7 @@
                 "path": "resources\/images\/buttons\/view_cruel_cards_hover.png"
             },
             "selected_image": {
-                "path": "resources\/images\/buttons\/view_cruel_cards.png"
+                "path": "resources\/images\/buttons\/view_cruel_cards_hover.png"
             },
             "disabled_image": {
                 "path": "resources\/images\/buttons\/view_cruel_cards.png"
