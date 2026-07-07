@@ -14,7 +14,7 @@ from scripts.cat.names import names
 from scripts.cat.status import Status
 from scripts.clan import Clan
 from scripts.clan_package.clan_names import get_possible_clan_names
-from scripts.clan_package.settings import set_clan_setting
+from scripts.clan_package.settings import set_clan_setting, save_clan_settings
 from scripts.config import get_config
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.game_structure import game, constants
@@ -245,6 +245,7 @@ class MakeClanScreenBase(Screens):
         # i kind of think this should go somewhere else
         if get_config("settings.force_enable.deputy"):
             set_clan_setting("deputy", True)
+            save_clan_settings()
 
         game.cur_events_list.clear()
         game.herb_events_list.clear()
