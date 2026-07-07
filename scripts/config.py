@@ -19,7 +19,7 @@ def get_config(
     config_keys = tuple(config_path.split("."))
 
     # checking cards first
-    card_list = card_list_override
+    card_list = card_list_override if card_list_override else []
     if game.clan and not card_list and not creating_clan:
         card_list = game.clan.cruel_cards
 
