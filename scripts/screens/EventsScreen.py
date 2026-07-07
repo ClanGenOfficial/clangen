@@ -280,45 +280,59 @@ class EventsScreen(Screens):
             manager=MANAGER,
         )
 
+        self.clan_info["container"] = pygame_gui.elements.UIAutoResizingContainer(
+            ui_scale(pygame.Rect((0, 105), (350, 100))),
+            manager=MANAGER,
+            container=self.event_screen_container,
+            anchors={"centerx": "centerx"},
+            resize_left=True,
+        )
+
         self.clan_info["symbol"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((227, 105), (100, 100))),
+            ui_scale(pygame.Rect((0, 0), (100, 100))),
             pygame.transform.scale(
                 clan_symbol_sprite(game.clan), ui_scale_dimensions((100, 100))
             ),
             object_id=f"clan_symbol",
             starting_height=1,
-            container=self.event_screen_container,
+            container=self.clan_info["container"],
             manager=MANAGER,
         )
-
-        self.clan_info["heading"] = pygame_gui.elements.UITextBox(
-            "screens.events.heading",
-            ui_scale(pygame.Rect((340, 155), (250, -1))),
-            object_id=get_text_box_theme("#text_box_30_horizleft_spacing_95"),
-            starting_height=1,
-            container=self.event_screen_container,
-            manager=MANAGER,
-        )
-
         self.clan_info["season"] = pygame_gui.elements.UITextBox(
             "screens.events.season",
-            ui_scale(pygame.Rect((340, 102), (600, 40))),
+            ui_scale(pygame.Rect((10, 0), (250, -1))),
             object_id=get_text_box_theme("#text_box_30"),
             starting_height=1,
-            container=self.event_screen_container,
+            container=self.clan_info["container"],
             manager=MANAGER,
+            anchors={"left_target": self.clan_info["symbol"]},
             text_kwargs={"season": i18n.t(f"general.{game.clan.current_season}")},
         )
         self.clan_info["age"] = pygame_gui.elements.UITextBox(
             "screens.events.age",
-            ui_scale(pygame.Rect((340, 122), (600, 40))),
+            ui_scale(pygame.Rect((10, -10), (250, -1))),
             object_id=get_text_box_theme("#text_box_30"),
             starting_height=1,
-            container=self.event_screen_container,
+            container=self.clan_info["container"],
             manager=MANAGER,
+            anchors={
+                "left_target": self.clan_info["symbol"],
+                "top_target": self.clan_info["season"],
+            },
             text_kwargs={"count": game.clan.age},
         )
-
+        self.clan_info["heading"] = pygame_gui.elements.UITextBox(
+            "screens.events.heading",
+            ui_scale(pygame.Rect((10, -10), (250, -1))),
+            object_id=get_text_box_theme("#text_box_30_horizleft_spacing_95"),
+            starting_height=1,
+            container=self.clan_info["container"],
+            anchors={
+                "left_target": self.clan_info["symbol"],
+                "top_target": self.clan_info["age"],
+            },
+            manager=MANAGER,
+        )
         self.timeskip_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((248, 223), (180, 30))),
             "screens.events.timeskip_button",
