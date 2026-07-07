@@ -2222,5 +2222,22 @@
                 "path": "resources\/images\/cruel_cards\/small_icons\/environment.png"
             }
         }
+    },
+    "#view_cards_button": {
+        "prototype": "@image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources\/images\/buttons\/view_cruel_cards.png"
+            },
+            "hovered_image": {
+                "path": "resources\/images\/buttons\/view_cruel_cards_hover.png"
+            },
+            "selected_image": {
+                "path": "resources\/images\/buttons\/view_cruel_cards_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources\/images\/buttons\/view_cruel_cards.png"
+            }
+        }
     }
 }
