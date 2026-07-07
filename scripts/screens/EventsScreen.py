@@ -43,6 +43,7 @@ from scripts.ui.scale import (
     ui_scale_value,
 )
 from scripts.clan_package.get_clan_cats import get_living_clan_cat_count
+from scripts.ui.windows.view_cards import ViewCardsWindow
 
 
 class EventsScreen(Screens):
@@ -149,7 +150,7 @@ class EventsScreen(Screens):
             elif event.ui_element == self.save_button.unsaved_state:
                 self.save_button.save_game(current_screen=self)
             elif event.ui_element == self.clan_info["view_cards"]:
-                pass # open window
+                ViewCardsWindow()
             elif element in self.page_control.values():
                 if element == self.page_control["first"]:
                     self.current_page = 1
