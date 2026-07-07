@@ -520,6 +520,8 @@ dev_tools = false
     # so they still need to be "capable" of it and have negative relationship with their leader.
     deputy_murder_modifier = 0
 
+    # set to true to have the deputy prefer to murder the leader over other negative relationships
+    deputy_prefer_leader = false
 
 [condition_related]
   # 10/chance an illness will occur

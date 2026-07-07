@@ -8,9 +8,10 @@
   "for_the_throne": {
     "card_art": "danger/for_the_throne.png",
     "modifiers": {
-      "death_related.murder.deputy_murder_modifier": 30,
+      "death_related.murder.deputy_murder_modifier": 40,
       "relationship.deputy_to_leader_neg_buff": true,
-      "relationship.deputy_envy_leader_influence": 3
+      "relationship.deputy_envy_leader_influence": 3,
+      "death_related.murder.deputy_prefer_leader": true
     }
   }
 }
