@@ -527,6 +527,9 @@ dev_tools = false
   # Set this to -1 for it to be infinite
   rerolls = 3
 
+  # other clans will start with a random relation between the two numbers
+  starting_clan_relation = [8, 12]
+
 [graduation]
   # base possible experience gain for apprentices
   # [[lowest_exp_gain, highest_exp_gain], [lowest_exp_gain2, highest_exp_gain2]]
