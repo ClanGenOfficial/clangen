@@ -48,7 +48,7 @@ class RelationshipChangeDict(TypedDict):
 
 
 class RequiredReputationDict(TypedDict, total=False):
-    other_clan: list[Literal["ally", "neutral", "enemy"]]
+    other_clan: list[Literal["ally", "neutral", "hostile"]]
     outsider: list[Literal["welcoming", "neutral", "hostile"]]
 
 
