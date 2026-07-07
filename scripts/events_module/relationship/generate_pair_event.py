@@ -4,7 +4,7 @@ from typing import Optional, Literal
 import i18n
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatCompatibility
+from scripts.cat.enums import CatCompatibility, CatRank
 from scripts.cat_relations.enums import RelType
 from scripts.cat_relations.relationship import Relationship
 from scripts.config import get_config
@@ -126,6 +126,13 @@ def _get_type_of_change(
     elif comp == CatCompatibility.NEGATIVE:
         bool_ballot.append(False)
 
+    if (
+        get_config("relationship.deputy_to_leader_neg_buff")
+        and main_cat.status.rank == CatRank.DEPUTY
+        and other_cat.status.is_leader
+    ):
+        bool_ballot.append(False)
+
     # further influence the partition based on the relationship
     for value in (
         relationship.like,
@@ -160,6 +167,16 @@ def _get_type_of_interaction(
     is_positive: bool = True if type_of_change == "positive" else False
 
     value_weights: dict[RelType, int] = {v: 1 for v in [*RelType]}
+
+    # add a neg deputy change, this is a 0 unless a cruel card is in play
+    if (
+        not is_positive
+        and main_cat.status.rank == CatRank.DEPUTY
+        and other_cat.status.is_leader
+    ):
+        value_weights[RelType.RESPECT] += get_config(
+            "relationship.deputy_envy_leader_influence"
+        )
 
     # change the weights according if the interaction should be positive or negative
     # existing rel values determine the weight added

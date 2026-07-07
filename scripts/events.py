@@ -2157,7 +2157,7 @@ def handle_murder(cat):
 
     # if this cat is unstable and aggressive, we lower the random murder chance
     random_murder_chance = int(
-        constants.CONFIG["death_related"]["base_random_murder_chance"]
+        get_config("death_related.murder.base_random_murder_chance")
     )
     random_murder_chance -= 0.5 * (
         cat.personality.aggression + (16 - cat.personality.stability)
@@ -2174,6 +2174,14 @@ def handle_murder(cat):
         ]
         if not targets:
             return
+
+        if (
+            get_config("death_related.murder.deputy_prefer_leader")
+            and cat.status.rank == CatRank.DEPUTY
+        ):
+            possible_targets = [c for c in targets if c.cat_to.status.is_leader]
+            if possible_targets:
+                targets = possible_targets
 
         chosen_target = random.choice(targets)
 
@@ -2215,10 +2223,18 @@ def handle_murder(cat):
 
     # if we have some, then we need to decide if this cat will kill
     if targets:
-        # chosen target is the cat with the worst relationship
+        # chosen target is the cat with the worst relationship (or leader, if a config is set as such)
+        if (
+            get_config("death_related.murder.deputy_prefer_leader")
+            and cat.status.rank == CatRank.DEPUTY
+        ):
+            possible_targets = [c for c in targets if c.cat_to.status.is_leader]
+            if possible_targets:
+                targets = possible_targets
+
         chosen_target = targets[0]
 
-        kill_chance = constants.CONFIG["death_related"]["base_murder_kill_chance"]
+        kill_chance = get_config("death_related.murder.base_murder_kill_chance")
 
         extreme_neg = len(
             [l for l in chosen_target.get_reltype_tiers() if l.is_extreme_neg]
@@ -2249,6 +2265,9 @@ def handle_murder(cat):
             kill_chance -= 10
             if cat.status.rank == CatRank.DEPUTY:
                 kill_chance -= 15
+
+        if cat.status.rank == CatRank.DEPUTY and chosen_target.cat_to.status.is_leader:
+            kill_chance -= get_config("death_related.murder.deputy_murder_modifier")
 
         kill_chance -= cat.personality.aggression
         kill_chance -= 16 - cat.personality.stability
