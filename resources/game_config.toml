@@ -68,6 +68,9 @@ dev_tools = false
       extreme_pos = 100
 
 [mates]
+  # permit player to change cat mates
+  allow_manual = true
+
   # maximum age difference allowed for cats to be romantic with each other
   age_range = 40
 
@@ -543,6 +546,13 @@ dev_tools = false
   # Set this to -1 for it to be infinite
   rerolls = 3
 
+  # other clans will start with a random relation between the two numbers
+  starting_clan_relation = [8, 12]
+
+[ranks]
+  # permit player to change cat ranks
+  allow_manual = true
+
 [graduation]
   # base possible experience gain for apprentices
   # [[lowest_exp_gain, highest_exp_gain], [lowest_exp_gain2, highest_exp_gain2]]
@@ -908,3 +918,8 @@ dev_tools = false
       2_prey_class_increase = 3
       3_prey_class_increase = 2
       4_prey_class_increase = 1
+
+[settings]
+  # force a game setting to be true, stopping players from changing it
+  [settings.force_enable]
+    "deputy" = false
