@@ -1395,7 +1395,10 @@ class OtherClan:
             while self.name in used_names:  # making sure we don't repeat a name
                 self.name = choice(clan_names)
 
-        self.relations = relations or randint(8, 12)
+        self.relations = relations or randint(
+            get_config("clan_creation.starting_clan_relation")[0],
+            get_config("clan_creation.starting_clan_relation")[1],
+        )
 
         self.temperament: tuple[str, str]
 

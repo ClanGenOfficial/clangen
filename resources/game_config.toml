@@ -530,6 +530,9 @@ dev_tools = false
   # Set this to -1 for it to be infinite
   rerolls = 3
 
+  # other clans will start with a random relation between the two numbers
+  starting_clan_relation = [8, 12]
+
 [ranks]
   # permit player to change cat ranks
   allow_manual = true
