@@ -117,6 +117,7 @@
             "one": "%{new_card} conflicts with %{conflicting_cards_list}. You can either <b>keep</b> %{conflicting_cards_list} or you can <b>replace</b> it with %{new_card}.",
             "many": "%{new_card} conflicts with %{conflicting_cards_list}. You can either <b>keep</b> the already chosen cards or you can <b>replace</b> them with %{new_card}."
 
-        }
+        },
+        "cruel_locked_action": "This action is locked by one or more Cruel Season cards that are currently in play."
     }
 }

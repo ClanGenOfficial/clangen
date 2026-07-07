@@ -899,3 +899,8 @@ dev_tools = false
       2_prey_class_increase = 3
       3_prey_class_increase = 2
       4_prey_class_increase = 1
+
+[settings]
+  # force a game setting to be true, stopping players from changing it
+  [settings.force_enable]
+    "deputy" = false

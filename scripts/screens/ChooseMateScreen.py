@@ -24,6 +24,7 @@ from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.icon import Icon
+from ..ui.windows.cruel_locked_action import CruelLockedAction
 
 
 class ChooseMateScreen(Screens):
@@ -106,6 +107,9 @@ class ChooseMateScreen(Screens):
                 self.selected_mate_index = 0
                 self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.toggle_mate:
+                if not get_config("mates.allow_manual"):
+                    CruelLockedAction()
+                    return
                 if self.work_thread is not None and self.work_thread.is_alive():
                     return
                 self.work_thread = self.loading_screen_start_work(self.change_mate)
@@ -1051,17 +1055,12 @@ class ChooseMateScreen(Screens):
 
         self.toggle_mate = UISurfaceImageButton(
             ui_scale(pygame.Rect((323, 310), (153, 30))),
-            "cruel_season.general.locked"
-            if not get_config("mates.allow_manual")
-            else "screens.choose_mate.set_mate"
+            "screens.choose_mate.set_mate"
             if self.selected_cat.ID in self.the_cat.mate
             else "screens.choose_mate.unset_mate",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
         )
-
-        if not get_config("mates.allow_manual"):
-            self.toggle_mate.disable()
 
         if (
             not get_clan_setting("same sex birth")
