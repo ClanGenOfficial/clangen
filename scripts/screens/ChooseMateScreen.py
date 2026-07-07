@@ -1055,9 +1055,9 @@ class ChooseMateScreen(Screens):
 
         self.toggle_mate = UISurfaceImageButton(
             ui_scale(pygame.Rect((323, 310), (153, 30))),
-            "screens.choose_mate.set_mate"
+            "screens.choose_mate.unset_mate"
             if self.selected_cat.ID in self.the_cat.mate
-            else "screens.choose_mate.unset_mate",
+            else "screens.choose_mate.set_mate",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
         )
