@@ -14,6 +14,8 @@ from scripts.cat.names import names
 from scripts.cat.status import Status
 from scripts.clan import Clan
 from scripts.clan_package.clan_names import get_possible_clan_names
+from scripts.clan_package.settings import set_clan_setting, save_clan_settings
+from scripts.config import get_config
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.game_structure import game, constants
 from scripts.game_structure.game import switch_get_value, Switch, game_setting_get
@@ -239,6 +241,12 @@ class MakeClanScreenBase(Screens):
             **self.clan_info.get_dict(),
         )
         game.clan.create_clan()
+
+        # i kind of think this should go somewhere else
+        if get_config("settings.force_enable.deputy"):
+            set_clan_setting("deputy", True)
+            save_clan_settings()
+
         game.cur_events_list.clear()
         game.herb_events_list.clear()
         game.clan.herb_supply.start_storage(len(self.clan_info.starting_members))
@@ -297,6 +305,7 @@ class MakeClanScreenBase(Screens):
                 # add back to all_cats, cus they get removed during `create_clan()`
                 Cat.all_cats[c.ID] = c
                 Cat.all_cats_list.append(c)
+
         Cat.sort_cats()
         rebuild_top_menu_buttons()
 

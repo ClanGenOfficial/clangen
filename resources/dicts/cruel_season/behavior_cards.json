@@ -4,5 +4,13 @@
     "modifiers": {
       "focus.duration": 6
     }
+  },
+  "fated_paths": {
+    "card_art": "behavior/fate.png",
+    "modifiers": {
+      "ranks.allow_manual": false,
+      "mates.allow_manual": false,
+      "settings.force_enable.deputy": true
+    }
   }
 }
