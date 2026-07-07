@@ -27,7 +27,11 @@ def get_possible_patrols(
     possible_patrols = []
 
     # TYPE PATROL
-    biome = game.clan.biome.casefold() if not game.clan.override_biome else game.clan.override_biome.casefold()
+    biome = (
+        game.clan.biome.casefold()
+        if not game.clan.override_biome
+        else game.clan.override_biome.casefold()
+    )
     season = game.clan.current_season.casefold()
 
     # get all types
