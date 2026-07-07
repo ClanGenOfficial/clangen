@@ -6,13 +6,27 @@ with open("resources/game_config.toml", "r", encoding="utf-8") as read_file:
     CONFIG = tomllib.loads(read_file.read())
 
 
-# config_path passed as a string using dot notation - ex "graduation.min_graduating_age"
-def get_config(config_path):
+def get_config(
+    config_path, creating_clan: bool = False, card_list_override: list[str] = None
+):
+    """
+    Returns a give game config value. If the clan has cruel cards that can replace those values, then it will return the card modifier instead.
+    :param config_path: Path to config value in dot notation - ex "graduation.min_graduating_age"
+    :param creating_clan: Set to True if currently loaded game.clan.cruel_cards should be ignored.
+    :param card_list_override: If you want to specify a list of cruel card IDs to search INSTEAD of using the saved clan cards, then list them here. Best used during clan creation.
+    """
     config_value = CONFIG
     config_keys = tuple(config_path.split("."))
 
     # checking cards first
-    for card in game.clan.cruel_cards:
+    card_list = (
+        card_list_override
+        if card_list_override
+        else game.clan.cruel_cards
+        if not creating_clan
+        else []
+    )
+    for card in card_list:
         card_info = constants.CRUEL_CARDS_ALL[card]
         if config_path in card_info["modifiers"]:
             config_value = card_info["modifiers"][config_path]

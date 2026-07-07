@@ -1374,7 +1374,7 @@ class Cat:
         else:
             unknown_blessing = False
 
-        extra_lives = str(num_of_lives_to_give - len(life_givers))
+        extra_lives = num_of_lives_to_give - len(life_givers)
         possible_lives = ceremony_dict["lives"]
         lives = []
         used_lives = []

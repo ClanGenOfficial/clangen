@@ -25,7 +25,10 @@
         "recruit_title": "recruit 4-7 more cats into the Clan, choose wisely",
         "error_too_young": "Too young to take this role",
         "choose_random": "choose random cats",
-        "choose_leader": "grant this cat {PRONOUN/m_c/poss} nine lives",
+        "choose_leader": {
+            "one": "grant this cat {PRONOUN/m_c/poss} 1 life",
+            "many": "grant this cat {PRONOUN/m_c/poss} %{count} lives"
+        },
         "choose_deputy": "this cat will support the leader",
         "choose_medcat": "this cat will aid the clan",
         "recruit": "recruit",

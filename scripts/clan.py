@@ -100,6 +100,9 @@ class Clan:
         self.save_id = save_id
         self.name = display_name if display_name else save_id
 
+        # needs to happen immediately so that any config retrievals will be accurate
+        self.cruel_cards: list[str] = cruel_cards
+
         self.leader = leader
         self._leader_lives = 9
         self.leader_predecessors = 0
@@ -122,7 +125,6 @@ class Clan:
         self.camp_bg = camp_bg
         self.chosen_symbol = symbol
         self.game_mode = game_mode
-        self.cruel_cards: list[str] = cruel_cards
         self.pregnancy_data = {}
         self.inheritance = {}
         self.custom_pronouns = {}
