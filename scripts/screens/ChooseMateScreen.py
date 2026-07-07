@@ -7,6 +7,7 @@ import pygame_gui.elements
 from scripts.cat.cats import Cat
 from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.game_structure import image_cache
+from ..config import get_config
 from ..ui.elements.sprite_button import UISpriteButton
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
@@ -1048,20 +1049,19 @@ class ChooseMateScreen(Screens):
 
         self.toggle_mate.kill()
 
-        if self.selected_cat.ID in self.the_cat.mate:
-            self.toggle_mate = UISurfaceImageButton(
-                ui_scale(pygame.Rect((323, 310), (153, 30))),
-                "screens.choose_mate.unset_mate",
-                get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
-                object_id="@buttonstyles_squoval",
-            )
-        else:
-            self.toggle_mate = UISurfaceImageButton(
-                ui_scale(pygame.Rect((323, 310), (153, 30))),
-                "screens.choose_mate.set_mate",
-                get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
-                object_id="@buttonstyles_squoval",
-            )
+        self.toggle_mate = UISurfaceImageButton(
+            ui_scale(pygame.Rect((323, 310), (153, 30))),
+            "cruel_season.general.locked"
+            if not get_config("mates.allow_manual")
+            else "screens.choose_mate.set_mate"
+            if self.selected_cat.ID in self.the_cat.mate
+            else "screens.choose_mate.unset_mate",
+            get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
+            object_id="@buttonstyles_squoval",
+        )
+
+        if not get_config("mates.allow_manual"):
+            self.toggle_mate.disable()
 
         if (
             not get_clan_setting("same sex birth")

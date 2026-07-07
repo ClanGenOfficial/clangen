@@ -63,6 +63,9 @@ dev_tools = false
       extreme_pos = 100
 
 [mates]
+  # permit player to change cat mates
+  allow_manual = true
+
   # maximum age difference allowed for cats to be romantic with each other
   age_range = 40
 
@@ -526,6 +529,10 @@ dev_tools = false
 [clan_creation]
   # Set this to -1 for it to be infinite
   rerolls = 3
+
+[ranks]
+  # permit player to change cat ranks
+  allow_manual = true
 
 [graduation]
   # base possible experience gain for apprentices
