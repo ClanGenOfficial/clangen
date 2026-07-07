@@ -297,7 +297,6 @@ class MakeClanScreenBase(Screens):
                 # add back to all_cats, cus they get removed during `create_clan()`
                 Cat.all_cats[c.ID] = c
                 Cat.all_cats_list.append(c)
-
         Cat.sort_cats()
         rebuild_top_menu_buttons()
 
