@@ -12,6 +12,7 @@ from scripts.events_module.parameter_dicts import (
     LostDict,
     SupplyDict,
     FutureEventDict,
+    JoinDict,
 )
 from scripts.game_structure import constants
 
@@ -21,11 +22,11 @@ from scripts.game_structure import constants
 class EventOutcome:
     # display
     outcome_art: str
+    text: str
 
     # constraints
-    text: str
-    frequency: int
-    weight: int = 1
+    frequency: int = 4
+    weight: int = 1  # will be increased via code
     location: list[str] = field(default_factory=list)
     season: list[str] = field(default_factory=list)
     tags: list[str] = field(default_factory=list)
@@ -46,6 +47,7 @@ class EventOutcome:
     death: list[DeathDict] = field(default_factory=list[dict])
     injury: list[InjuryDict] = field(default_factory=list[dict])
     lost: list[LostDict] = field(default_factory=list[dict])
+    join: list[JoinDict] = field(default_factory=list[dict])
     future_event: list[FutureEventDict] = field(default_factory=list[dict])
 
     def __post_init__(self):

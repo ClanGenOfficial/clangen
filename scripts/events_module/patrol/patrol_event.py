@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
-from random import choices, choice
-from typing import List, Union, Dict
+from dataclasses import dataclass, field
+from typing import Union, Literal, Optional
 
 from scripts.cat.cats import Cat
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath
+from scripts.clan_resources.herb.herb import HERBS
 from scripts.events_module.event_filters import (
     get_frequency,
     find_new_frequency,
@@ -18,69 +19,65 @@ from scripts.events_module.event_filters import (
     event_for_herb_supply,
     event_for_cat,
 )
-from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
+from scripts.events_module.parameter_dicts import (
+    InvolvedCatDict,
+    RelationshipConstraintDict,
+)
 from scripts.events_module.patrol.patrol_outcome_new import EventOutcome
 from scripts.game_structure import constants, game
 
+NUM_OF_TRAITS = len(Personality.trait_ranges["normal_traits"].keys()) + len(
+    Personality.trait_ranges["kit_traits"].keys()
+)
+NUM_OF_SKILLS = len(SkillPath)
 
+
+# slots increases performance and can be used since we won't be adding new attrs at runtime
+@dataclass(slots=True)
 class PatrolEvent:
-    NUM_OF_TRAITS = len(Personality.trait_ranges["normal_traits"].keys()) + len(
-        Personality.trait_ranges["kit_traits"].keys()
-    )
-    NUM_OF_SKILLS = len(SkillPath)
+    # identification
+    id: str
+    types: list[Literal["hunting", "herb_gathering", "border", "training"]]
 
-    def __init__(
-        self,
-        patrol_id,
-        biome: List[str] = None,
-        camp: List[str] = None,
-        season: List[str] = None,
-        types: List[str] = None,
-        tags: List[str] = None,
-        frequency: int = 4,
-        poi: Union[Dict[str, List], None] = None,
-        patrol_art: Union[str, None] = None,
-        patrol_art_clean: Union[str, None] = None,
-        intro_text: str = "",
-        decline_text: str = "",
-        chance_of_success=0,
-        success_outcomes: List[dict] = None,
-        fail_outcomes: List[dict] = None,
-        antag_success_outcomes: List[dict] = None,
-        antag_fail_outcomes: List[dict] = None,
-        min_cats=1,
-        max_cats=6,
-        min_max_status: dict = None,
-        relationship_constraints: List[str] = None,
-        pl_skill_constraints: List[str] = None,
-        pl_trait_constraints: List[str] = None,
-    ):
+    # text and outcomes
+    intro_text: str
+    decline_text: str
+    success_outcomes: list[Union[dict, EventOutcome]]
+    fail_outcomes: list[Union[dict, EventOutcome]]
+    antag_success_outcomes: list[Union[dict, EventOutcome]] = field(
+        default_factory=list
+    )
+    antag_fail_outcomes: list[Union[dict, EventOutcome]] = field(default_factory=list)
+
+    # constraints
+    frequency: int = 4
+    weight: int = 1  # will be increased via code
+    chance_of_success: int = 0  # out of 100
+    location: list[str] = field(default_factory=list)
+    season: list[str] = field(default_factory=list)
+    tags: list[str] = field(default_factory=list)
+    poi: Optional[dict[str, list]] = None
+    required_statuses: dict[str, list[int]] = field(default_factory=dict)
+    involved_cats: dict[str, Union[InvolvedCatDict, dict]] = field(default_factory=dict)
+    relationship_constraint: list[RelationshipConstraintDict] = field(
+        default_factory=list[RelationshipConstraintDict]
+    )
+
+    # art
+    patrol_art: Optional[str] = None
+    patrol_art_clean: Optional[str] = None
+
+    def __post_init__(self):
         self.weight = 1
 
-        self.patrol_id = patrol_id
-        self.frequency = frequency
-        self.types = types if types is not None else []
-
-        self.patrol_art = patrol_art
-        self.patrol_art_clean = patrol_art_clean
-
-        self.biome = biome if biome is not None else ["any"]
-        if "any" not in self.biome:
+        if "any" not in self.location:
             # add 4 for every biome not listed
-            self.weight += 4 * (len(constants.BIOME_TYPES) - len(self.biome))
+            self.weight += 4 * (len(constants.BIOME_TYPES) - len(self.location))
 
-        self.camp = camp if camp is not None else ["any"]
-        if "any" not in self.camp:
-            self.weight += 8
-
-        self.season = season if season is not None else ["any"]
         if "any" not in self.season:
             # add 4 for every season not listed
             self.weight += 4 * (len(constants.SEASONS) - len(self.season))
 
-        self.tags = tags if tags is not None else []
-
-        self.poi = poi if poi else {}
         # add 8, 6, 4 or 2 if there are between 1-4 specific named locations
         # todo: check for balancing
         if self.poi.get("name") and not 1 > len(self.poi["name"]) > 5:
@@ -90,83 +87,41 @@ class PatrolEvent:
             # but only if specific ones are not already requested
             self.weight += min(4, len(self.poi.get("tags", [])))
 
-        self.chance_of_success = chance_of_success  # out of 100
-
-        self.min_cats = min_cats
-        self.max_cats = max_cats
-        self.weight += 2 * (
-            6 - (self.max_cats - self.min_cats)
-        )  # the narrower this range, the higher weighted we want it
-
-        self.min_max_status = min_max_status if min_max_status is not None else {}
-        self.weight += len(self.min_max_status) * 2
-
-        self.relationship_constraints = (
-            relationship_constraints if relationship_constraints is not None else []
-        )
         # LOTS of weight on rel constraints
-        self.weight += len(self.relationship_constraints) * 20
-        self.pl_skill_constraints = (
-            pl_skill_constraints if pl_skill_constraints is not None else []
-        )
-        if self.pl_skill_constraints:
-            if "-" in self.pl_skill_constraints[0]:
-                # exclusionary values!
-                self.weight += len(self.pl_skill_constraints)
-            else:
-                # inclusionary values get inverse weighting
-                self.weight += self.NUM_OF_SKILLS - len(self.pl_skill_constraints)
-
-        self.pl_trait_constraints = (
-            pl_trait_constraints if pl_trait_constraints is not None else []
-        )
-        if self.pl_trait_constraints:
-            if "-" in self.pl_trait_constraints[0]:
-                # exclusionary values!
-                self.weight += len(self.pl_trait_constraints)
-            else:
-                # inclusionary values get inverse weighting
-                self.weight += self.NUM_OF_SKILLS - len(self.pl_trait_constraints)
-
-        self.intro_text = intro_text
-        self.decline_text = decline_text
-
-        self.success_outcomes: list[EventOutcome] = []
-        self.fail_outcomes: list[EventOutcome] = []
-        self.antag_success_outcomes: list[EventOutcome] = []
-        self.antag_fail_outcomes: list[EventOutcome] = []
-
-        self._generate_outcomes(
-            success_outcomes, fail_outcomes, antag_success_outcomes, antag_fail_outcomes
-        )
+        self.weight += len(self.relationship_constraint) * 20
 
     @property
     def new_cat(self) -> bool:
         """Returns boolean if there are any outcomes that results in
         a new cat joining (not just meeting)"""
 
-        for out in (
+        for outcome in (
             self.success_outcomes
             + self.fail_outcomes
             + self.antag_fail_outcomes
             + self.antag_success_outcomes
         ):
-            for sublist in out.new_cat:
-                if "join" in sublist:
-                    return True
+            for abbr in outcome.involved_cats:
+                # if "n_c" is in an abbreviation, then that's a potential new cat
+                if "n_c" in abbr:
+                    # now we look at any join parameters to see if this specific cat is joining
+                    for join_cats in outcome.join:
+                        # if the abbr is present, then the cat is joining!
+                        if abbr in join_cats["cats"]:
+                            return True
 
         return False
 
     @property
     def other_clan(self) -> bool:
         """Return boolean indicating if any outcome has any reputation effect"""
-        for out in (
+        for outcome in (
             self.success_outcomes
             + self.fail_outcomes
             + self.antag_fail_outcomes
             + self.antag_success_outcomes
         ):
-            if out.other_clan_rep is not None:
+            if outcome.reputation_changes.get("other_clan"):
                 return True
 
         return False
@@ -183,27 +138,31 @@ class PatrolEvent:
             + self.antag_fail_outcomes
             + self.antag_success_outcomes
         ):
-            herb_list.extend([herb for herb in out.herbs if herb not in herb_list])
+            for supply_change in out.supply:
+                if supply_change["type"] not in HERBS:
+                    continue
+                herb_list.extend(
+                    [herb for herb in supply_change["type"] if herb not in herb_list]
+                )
 
         return herb_list
 
-    def _generate_outcomes(
-        self,
-        success_outcomes: list[dict],
-        fail_outcomes: list[dict],
-        antag_success_outcomes: list[dict],
-        antag_fail_outcomes: list[dict],
-    ):
+    def _generate_outcomes(self):
         """
         Generates outcome objects for each outcome in the patrol
         """
-        for outcome in success_outcomes:
+        success = self.success_outcomes.copy()
+        fail = self.fail_outcomes.copy()
+        antag_success = self.antag_success_outcomes.copy()
+        antag_fail = self.antag_fail_outcomes.copy()
+
+        for outcome in success:
             self.success_outcomes.append(EventOutcome(**outcome))
-        for outcome in fail_outcomes:
+        for outcome in fail:
             self.fail_outcomes.append(EventOutcome(**outcome))
-        for outcome in antag_success_outcomes:
+        for outcome in antag_success:
             self.antag_success_outcomes.append(EventOutcome(**outcome))
-        for outcome in antag_fail_outcomes:
+        for outcome in antag_fail:
             self.antag_fail_outcomes.append(EventOutcome(**outcome))
 
     def find_allowed_outcomes(
