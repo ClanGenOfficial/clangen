@@ -10,6 +10,7 @@ from scripts.clan_package.settings.clan_settings import (
     get_clan_setting,
     switch_clan_setting,
 )
+from scripts.config import get_config
 from scripts.game_structure import constants
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.cat.enums import CatRank
@@ -74,7 +75,7 @@ class WarriorDenScreen(Screens):
                         if (
                             game.clan.last_focus_change is None
                             or game.clan.last_focus_change
-                            + constants.CONFIG["focus"]["duration"]
+                            + get_config("focus.duration")
                             <= game.clan.age
                         ):
                             self.save_button.enable()
@@ -318,7 +319,7 @@ class WarriorDenScreen(Screens):
             )
             moons = (
                 game.clan.last_focus_change
-                + constants.CONFIG["focus"]["duration"]
+                + get_config("focus.duration")
                 - game.clan.age
             )
             moons = moons if moons > 0 else 0
