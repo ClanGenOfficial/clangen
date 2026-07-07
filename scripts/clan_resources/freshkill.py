@@ -6,6 +6,7 @@ import i18n
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
 from scripts.cat.skills import SkillPath
+from scripts.config import get_config
 from scripts.game_structure import constants
 from scripts.clan_package.settings import get_clan_setting
 from scripts.clan_package.get_clan_cats import get_alive_clan_queens
@@ -91,6 +92,10 @@ class FreshkillPile:
         self.fed_kits = []
         self.queens = []
         self.is_manual_feeding = False
+
+        # make sure this is up to date with any cruel cards
+        global PREY_REQUIREMENT
+        PREY_REQUIREMENT = get_config("prey.prey_requirement")
 
     def add_freshkill(self, amount) -> None:
         """
