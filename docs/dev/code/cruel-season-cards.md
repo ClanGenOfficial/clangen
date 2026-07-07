@@ -1,5 +1,9 @@
 # Cruel Season Cards
+The Cruel Season game mode allows the player to choose specific difficulty modifiers in the form of cards. This documentation instructs developers on how to add new cards to the game.
 
+Cards currently leverage the modifiers found in `game_config.toml` to change the game's behavior.  If developers have a new card they'd like to add, its desired behavior needs to be possible through modifying values in `game_config.toml`. 
+
+Developers are welcome to add new values to the config to help facilitate new cards. However, keep in mind that the priority should be to avoid intense tangling of the code as a result of adding card behaviors.
 ## Card JSON structure
 The Card JSONs can be located in resources/dicts/cruel_season.
 
@@ -25,10 +29,10 @@ The structure for a singular card object is as follows:
   }
 ```
 
-`card_art` will store the string for the art file path, in the format of "folder/art.png". Art files will be located in `resources/images/cruel_cards` <br> 
+`card_art` will store the string for the art file path, in the format of `"folder/art.png"`. Art files will be located in `resources/images/cruel_cards` <br> 
 - ex. a behavior card art `sorrow.png` will be written as `behavior/sorrow.png`
 
-The modifier name replacing `mod_name` should match the config it's repllacing, but written in dot notation <br> 
+The modifier key replacing `mod_name` should match the config it's replacing, but written in dot notation. <br> 
 - ex. `["graduation"]["min_graduating_age"]` becomes `"graduation.min_graduating_age"`  
 
 Modifier values should match the data type of the config it's replacing.
@@ -37,7 +41,7 @@ Modifier values should match the data type of the config it's replacing.
 Some cards will conflict each other. To remedy this, we store groups of conflicting cards in `resources\dicts\cruel_season\card_conflicts.json`.
 Upon card selection, the game will check if the card attempting to be selected is in a conflict group with any existing card.
 
-Each key in the `card_conflicts.json` should be a descriptive name of the nature of the conflict. For example, if multiple cards are modifying the beginning make-up of the Clan (all kittens, all apprentices, all elders, etc.) then the key could be something like "starting_members". The value of that key is then a list of all card IDs that conflict with each other.
+Each key in the `card_conflicts.json` should be a descriptive name of the nature of the conflict. For example, if multiple cards are modifying the beginning make-up of the Clan (all kittens, all apprentices, all elders, etc.) then the key could be something like `"starting_members"`. The value of that key is then a list of all card IDs that conflict with each other.
 
 This example would be written like this in the dict:
 ```json
@@ -47,9 +51,9 @@ Upon adding a new card, consider what is being modified and check the `card_conf
 
 ## Accessing The Modifiers
 
-On clan initialization, the player will choose modifier cards. These cards will be added to the `cruel_cards` array in the save's corresponding clan.json file.
+On Clan initialization, the player will choose modifier cards. These cards will be added to the `cruel_cards` array in the save's corresponding `clan.json` file.
 
-To access any modifiers in the game, use `get_config()` in `scripts/config.py`
+To access any modifiers in the game, use `get_config()` in `scripts/config.py`.
 
 ### get_config(config_path)
 
