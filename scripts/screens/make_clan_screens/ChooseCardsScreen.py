@@ -222,7 +222,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
         )
         self.elements["card_description"] = UITextBoxTweaked(
             "",
-            ui_scale(pygame.Rect((0, 0), (280, 80))),
+            ui_scale(pygame.Rect((0, -10), (280, 80))),
             object_id=get_text_box_theme("#text_box_22_horizleft_spacing_95"),
             manager=MANAGER,
             container=self.elements["card_info_container"],
