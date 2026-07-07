@@ -1454,7 +1454,7 @@
     "involved_cats": {
         "m_c": {},
         "r_c": {
-            "age": ["kitten"]
+            "age": ["newborn", "kitten"]
         }
         },
         "relationship_constraint": [
