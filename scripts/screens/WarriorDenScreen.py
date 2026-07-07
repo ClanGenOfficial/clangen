@@ -313,7 +313,8 @@ class WarriorDenScreen(Screens):
             )
         last_change_text = ""
         next_change = ""
-        if game.clan.last_focus_change:
+        # must be 'is not None' to prevent 0 from being picked up as NoneType
+        if game.clan.last_focus_change is not None:
             last_change_text = i18n.t(
                 "general.moon_date", moon=str(game.clan.last_focus_change)
             )
