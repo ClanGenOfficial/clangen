@@ -11,9 +11,7 @@ loaded_events: dict[str, list[PatrolEvent]] = {}
 
 
 def get_possible_patrols(
-    patrol_type: Optional[
-        Literal["hunting", "herb_gathering", "border", "training"]
-    ] = None,
+    patrol_type: str,
     other_clan_rep: Optional[Literal["hostile", "allies", "neutral"]] = None,
     outsider_rep: Optional[Literal["hostile", "welcoming", "neutral"]] = None,
 ) -> list[PatrolEvent]:
@@ -29,9 +27,18 @@ def get_possible_patrols(
     possible_patrols = []
 
     # TYPE PATROL
-    biome = game.clan.biome.lower()
-    season = game.clan.current_season.lower()
-    if patrol_type:  # get specific type
+    biome = game.clan.biome.casefold() if not game.clan.override_biome else game.clan.override_biome.casefold()
+    season = game.clan.current_season.casefold()
+
+    # get all types
+    if patrol_type == "general":
+        for _type in ["medcat", "hunting", "border", "training"]:
+            possible_patrols.extend(
+                _get_all_patrols_of_type(_type, biome, path, season)
+            )
+
+    # get specific type
+    else:
         if patrol_type == "herb_gathering":
             # only one that doesn't match its path sadly
             patrol_type = "medcat"
@@ -39,11 +46,6 @@ def get_possible_patrols(
         possible_patrols.extend(
             _get_all_patrols_of_type(patrol_type, biome, path, season)
         )
-    else:  # get all types
-        for _type in ["medcat", "hunting", "border", "training"]:
-            possible_patrols.extend(
-                _get_all_patrols_of_type(_type, biome, path, season)
-            )
 
     # OTHER CLAN
     possible_patrols.extend(_load_file(f"{path}other_clan.json"))
