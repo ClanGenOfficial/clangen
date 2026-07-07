@@ -8,6 +8,7 @@ from pygame_gui.core import ObjectID, UIContainer
 
 from scripts.cat.cats import Cat, create_example_cats
 from scripts.cat.enums import CatRank, CatAge
+from scripts.config import get_config
 from scripts.game_structure import constants
 from scripts.game_structure.game import Switch, switch_get_value
 from scripts.game_structure.game.switches import switch_set_value
@@ -166,7 +167,14 @@ class ChooseCatsScreen(MakeClanScreenBase):
 
         self.elements["select_cat"] = UIImageButton(
             ui_scale(pygame.Rect((234, 348), (332, 52))),
-            "screens.make_clan.choose_leader",
+            i18n.t(
+                "screens.make_clan.choose_leader",
+                count=get_config(
+                    "death_related.max_leader_lives",
+                    creating_clan=True,
+                    card_list_override=self.clan_info.cruel_cards,
+                ),
+            ),
             object_id="#nine_lives_button",
             starting_height=2,
             visible=False,
@@ -386,7 +394,14 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 self.elements["select_cat"].kill()
                 self.elements["select_cat"] = UIImageButton(
                     ui_scale(pygame.Rect((234, 348), (332, 52))),
-                    "screens.make_clan.choose_leader",
+                    i18n.t(
+                        "screens.make_clan.choose_leader",
+                        count=get_config(
+                            "death_related.max_leader_lives",
+                            creating_clan=True,
+                            card_list_override=self.clan_info.cruel_cards,
+                        ),
+                    ),
                     object_id="#nine_lives_button",
                     starting_height=2,
                     manager=MANAGER,
