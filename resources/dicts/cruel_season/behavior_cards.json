@@ -1,20 +1,16 @@
 {
-  "behavior_placeholder0": {
-    "card_art": "behavior/sorrow.png",
-    "modifiers": {
-      "mod_name": 1
-    }
-  },
-  "behavior_placeholder1": {
-    "card_art": "behavior/fate.png",
-    "modifiers": {
-      "mod_name": 1
-    }
-  },
-  "behavior_placeholder2": {
+  "resolute": {
     "card_art": "behavior/resolute.png",
     "modifiers": {
-      "mod_name": 1
+      "focus.duration": 6
+    }
+  },
+  "fated_paths": {
+    "card_art": "behavior/fate.png",
+    "modifiers": {
+      "ranks.allow_manual": false,
+      "mates.allow_manual": false,
+      "settings.force_enable.deputy": true
     }
   }
 }

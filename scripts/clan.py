@@ -23,6 +23,7 @@ from scripts.cat.save_load import (
     save_cats,
     get_faded_ids,
 )
+from scripts.clan_package.clan_names import get_possible_clan_names
 from scripts.clan_package.settings import save_clan_settings, load_clan_settings
 from scripts.clan_package.settings.clan_settings import reset_loaded_clan_settings
 from scripts.clan_resources.freshkill import FreshkillPile, Nutrition
@@ -35,6 +36,7 @@ from scripts.clan_resources.point_of_interest import (
     get_poi_names_set,
     clear_pois,
 )
+from scripts.config import get_config
 from scripts.events_module.future.future_event import FutureEvent
 from scripts.events_module.generate_events import OngoingEvent
 from scripts.game_structure import constants
@@ -62,7 +64,6 @@ class Clan:
 
     """
 
-    leader_lives = 0
     clan_cats = []
 
     age = 0
@@ -81,7 +82,7 @@ class Clan:
         camp_bg=None,
         symbol=None,
         game_mode="classic",
-        cruel_cards: list[str] = [],
+        cruel_cards: list[str] = None,
         starting_members=None,
         starting_season="Newleaf",
         self_run_init_functions=True,
@@ -99,8 +100,11 @@ class Clan:
         self.save_id = save_id
         self.name = display_name if display_name else save_id
 
+        # needs to happen immediately so that any config retrievals will be accurate
+        self.cruel_cards: list[str] = cruel_cards if cruel_cards else []
+
         self.leader = leader
-        self.leader_lives = 9
+        self._leader_lives = 9
         self.leader_predecessors = 0
         self.deputy = deputy
         self.deputy_predecessors = 0
@@ -121,7 +125,6 @@ class Clan:
         self.camp_bg = camp_bg
         self.chosen_symbol = symbol
         self.game_mode = game_mode
-        self.cruel_cards: list[str] = cruel_cards
         self.pregnancy_data = {}
         self.inheritance = {}
         self.custom_pronouns = {}
@@ -178,6 +181,14 @@ class Clan:
     @name.setter
     def name(self, value):
         self.prefix = value
+
+    @property
+    def leader_lives(self):
+        return min(self._leader_lives, get_config("death_related.max_leader_lives"))
+
+    @leader_lives.setter
+    def leader_lives(self, value):
+        self._leader_lives = min(value, get_config("death_related.max_leader_lives"))
 
     # The clan couldn't save itself in time due to issues arising, for example, from this function: "if deputy is not
     # None: self.deputy.status_change('deputy') -> game.clan.remove_med_cat(self)"
@@ -291,7 +302,7 @@ class Clan:
         for i in range(3):
             generate_and_add_new_poi(game.clan.biome, PoiType.TERRAIN)
 
-        # create leader's ceremony
+        # create leader's ceremony and give lives
         self.leader.generate_lead_ceremony()
 
         self.save_clan()
@@ -1379,13 +1390,15 @@ class OtherClan:
             used_names = [str(i.name) for i in game.clan.all_other_clans] + [
                 game.clan.name
             ]
-            clan_names = names.names_dict["normal_prefixes"]
-            clan_names.extend(names.names_dict["clan_prefixes"])
-            self.name = choice(clan_names)
+            clan_names = get_possible_clan_names()
+            self.name = choice(clan_names)  # name property will set self.prefix
             while self.name in used_names:  # making sure we don't repeat a name
                 self.name = choice(clan_names)
 
-        self.relations = relations or randint(8, 12)
+        self.relations = relations or randint(
+            get_config("clan_creation.starting_clan_relation")[0],
+            get_config("clan_creation.starting_clan_relation")[1],
+        )
 
         self.temperament: tuple[str, str]
 

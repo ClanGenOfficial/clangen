@@ -222,7 +222,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
         )
         self.elements["card_description"] = UITextBoxTweaked(
             "",
-            ui_scale(pygame.Rect((0, 0), (280, 80))),
+            ui_scale(pygame.Rect((0, -10), (280, 80))),
             object_id=get_text_box_theme("#text_box_22_horizleft_spacing_95"),
             manager=MANAGER,
             container=self.elements["card_info_container"],
@@ -284,7 +284,6 @@ class ChooseCardsScreen(MakeClanScreenBase):
         x_pos = 0  # need to start at consistent place and then move by intervals for each card
         layer_num = 1  # need to give each card a consecutive layer to ensure they stay layered correctly
         for name, info in cards.items():
-            # TODO: decide if u actually want the scatter
             y_mod = choice([2, 6, 10])  # just to introduce some random scatter
             self.card_elements[name] = UICruelCardLarge(
                 (x_pos, 10 + y_mod),

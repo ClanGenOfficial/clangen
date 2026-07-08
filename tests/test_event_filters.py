@@ -41,7 +41,7 @@ from scripts.game_structure import game
 
 class TestEventFilters(unittest.TestCase):
     def setUp(self):
-        game.clan = Clan()
+        game.clan = Clan("test")
         game.clan.biome = "Forest"
         game.clan.override_biome = False
         game.clan.camp_bg = "camp1"

@@ -116,9 +116,11 @@ class ChooseModeScreen(MakeClanScreenBase):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.elements["classic_mode_button"]:
                 self.game_mode = "classic"
+                self.clan_info.cruel_cards.clear()
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.elements["expanded_mode_button"]:
                 self.game_mode = "expanded"
+                self.clan_info.cruel_cards.clear()
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.elements["cruel_season_mode_button"]:
                 self.game_mode = "cruel_season"
@@ -226,5 +228,10 @@ class ChooseModeScreen(MakeClanScreenBase):
                 ]
             )
             members.append(create_cat(rank=random_rank))
+
+        switch_set_value(
+            Switch.possible_cats,
+            switch_get_value(Switch.possible_cats)[: randint(2, 4)],
+        )
 
         self.clan_info.starting_members = members
