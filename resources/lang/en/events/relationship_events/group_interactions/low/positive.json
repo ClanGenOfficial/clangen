@@ -99,6 +99,15 @@
             "m_c, multi_cat are reluctant to leave their shared nest and start the day.",
             "multi_cat are left in fits of giggles at m_c's joke."
         ],
+        "involved_cats": {
+            "m_c": {
+                "standing": {
+                    "group": [
+                        "player_clan"
+                    ]
+                }
+            }
+        },
         "relationship_constraint": [
             {
                 "cats_from": [

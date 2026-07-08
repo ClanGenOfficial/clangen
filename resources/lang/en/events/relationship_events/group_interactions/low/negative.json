@@ -194,6 +194,15 @@
             "m_c was the last one to leave the nest, but multi_cat finds it messy and unmade.",
             "multi_cat finds m_c has chosen a piece of prey and tucked in without asking what they'd like from the pile."
         ],
+        "involved_cats": {
+            "m_c": {
+                "standing": {
+                    "group": [
+                        "player_clan"
+                    ]
+                }
+            }
+        },
         "relationship_constraint": [
             {
                 "cats_from": [

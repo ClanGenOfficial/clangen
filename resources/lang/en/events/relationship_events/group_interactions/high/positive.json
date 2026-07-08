@@ -99,6 +99,15 @@
             "m_c declares {PRONOUN/m_c/poss} love for multi_cat in the middle of camp.",
             "m_c, multi_cat talk about having kits."
         ],
+        "involved_cats": {
+            "m_c": {
+                "standing": {
+                    "group": [
+                        "player_clan"
+                    ]
+                }
+            }
+        },
         "relationship_constraint": [
             {
                 "cats_from": [

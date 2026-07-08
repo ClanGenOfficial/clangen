@@ -459,6 +459,15 @@
             "m_c asks multi_cat out on a date to keep the romance alive.",
             "m_c compliments multi_cat over and over again until they all can't stop purring."
         ],
+        "involved_cats": {
+            "m_c": {
+                "standing": {
+                    "group": [
+                        "player_clan"
+                    ]
+                }
+            }
+        },
         "relationship_constraint": [
             {
                 "cats_from": [

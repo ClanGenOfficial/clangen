@@ -580,6 +580,15 @@
             "m_c tripped over multi_cat getting out of the nest this morning.",
             "m_c says something inconsiderate, but doesn't apologize when multi_cat point it out."
         ],
+        "involved_cats": {
+            "m_c": {
+                "standing": {
+                    "group": [
+                        "player_clan"
+                    ]
+                }
+            }
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
