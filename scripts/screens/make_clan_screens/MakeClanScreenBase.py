@@ -318,6 +318,8 @@ class MakeClanScreenBase(Screens):
         Cat.sort_cats()
         rebuild_top_menu_buttons()
 
+        switch_set_value(Switch.possible_cats, [])
+
     def random_biome_selection(self):
         # Select a random biome and background
         possible_biomes = ["Forest", "Mountainous", "Plains", "Beach"]
