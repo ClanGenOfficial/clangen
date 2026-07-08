@@ -25,6 +25,11 @@ dev_tools = false
   # base 1/chance of a romance interaction with another cat, when a cat has a mate
   chance_romance_not_mate = 15
 
+  # set to True if deputies should be more likely to have negative rel events with the leader
+  deputy_to_leader_neg_buff = false
+  # the higher the number, the more likely the deputy will have a negative respect event with the leader
+  deputy_envy_leader_influence = 0
+
   [relationship.value_change_amount]
     # amount a relationship changes for "high", "medium", and "low" effects for interactions
     low = 8
@@ -63,6 +68,9 @@ dev_tools = false
       extreme_pos = 100
 
 [mates]
+  # permit player to change cat mates
+  allow_manual = true
+
   # maximum age difference allowed for cats to be romantic with each other
   age_range = 40
 
@@ -477,6 +485,9 @@ dev_tools = false
   debug_override_frequency = 0
 
 [death_related]
+  # the maximum lives a leader can have
+  max_leader_lives = 9
+
   # base 1/chance that leader will die
   leader_death_chance = 50
 
@@ -489,12 +500,7 @@ dev_tools = false
   war_death_modifier_leader = 35
   war_death_modifier = 330
 
-  # base 1/2^(chance) a completely random murder occurs
-  # aggression and instability will make the denominator lower and increase chance of murder
-  base_random_murder_chance = 25
 
-  # base 1/chance a disliked cat will be murdered
-  base_murder_kill_chance = 80
 
   # age cats will start dying of old age based on old_age_death_curve
   old_age_death_start = 150
@@ -503,6 +509,22 @@ dev_tools = false
   # Average life expectancy with default old_age_death_start of 150 moons:
   #   1 = 189 moons, 2 = 178, 3 = 172, 4.5 (default) = 168, 8 = 163, 20 = 158
   old_age_death_curve = 4.5
+
+  [death_related.murder]
+    # base 1/2^(chance) a completely random murder occurs
+    # aggression and instability will make the denominator lower and increase chance of murder
+    base_random_murder_chance = 25
+
+    # base 1/chance a disliked cat will be murdered
+    base_murder_kill_chance = 80
+
+    # The higher this number, the more likely a deputy will murder their leader.
+    # note that this doesn't make the deputy more likely to murder in general
+    # so they still need to be "capable" of it and have negative relationship with their leader.
+    deputy_murder_modifier = 0
+
+    # set to true to have the deputy prefer to murder the leader over other negative relationships
+    deputy_prefer_leader = false
 
 [condition_related]
   # 10/chance an illness will occur
@@ -523,6 +545,30 @@ dev_tools = false
 [clan_creation]
   # Set this to -1 for it to be infinite
   rerolls = 3
+
+  # other clans will start with a random relation between the two numbers
+  starting_clan_relation = [8, 12]
+
+  # the "default" rank, the majority of cats will take this and random high ranks will originate from this rank
+  majority_rank = "warrior"
+
+  minimum_membership = 7
+  maximum_membership = 10
+
+  [clan_creation.ranks_needed]
+    leader = true
+    deputy = true
+    medicine_cat = true
+
+  [clan_creation.rank_weights]
+    kitten = 1
+    apprentice = 1
+    warrior = 2
+    elder = 1
+
+[ranks]
+  # permit player to change cat ranks
+  allow_manual = true
 
 [graduation]
   # base possible experience gain for apprentices
@@ -889,3 +935,8 @@ dev_tools = false
       2_prey_class_increase = 3
       3_prey_class_increase = 2
       4_prey_class_increase = 1
+
+[settings]
+  # force a game setting to be true, stopping players from changing it
+  [settings.force_enable]
+    "deputy" = false

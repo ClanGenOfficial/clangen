@@ -1,20 +1,41 @@
 {
-  "origin_placeholder0": {
-    "card_art": "origin/eaten.png",
+  "public_enemy": {
+    "card_art": "origin/public_enemy.png",
     "modifiers": {
-      "mod_name": 1
+      "clan_creation.starting_clan_relation": [1, 7]
     }
   },
-  "origin_placeholder1": {
+  "all_kittens": {
     "card_art": "origin/kitten.png",
     "modifiers": {
-      "mod_name": 1
+      "clan_creation.rank_weights": {
+        "kitten": 1
+      },
+      "clan_creation.majority_rank": "kitten",
+      "clan_creation.ranks_needed.leader": false,
+      "clan_creation.ranks_needed.deputy": false,
+      "clan_creation.ranks_needed.medicine_cat": false
     }
   },
-  "origin_placeholder2": {
-    "card_art": "origin/eaten.png",
+  "all_apprentices": {
+    "card_art": "origin/kitten.png",
     "modifiers": {
-      "mod_name": 1
+      "clan_creation.rank_weights": {
+        "apprentice": 1
+      },
+      "clan_creation.majority_rank": "apprentice",
+      "clan_creation.ranks_needed.leader": false,
+      "clan_creation.ranks_needed.deputy": false,
+      "clan_creation.ranks_needed.medicine_cat": false
+    }
+  },
+  "all_elders": {
+    "card_art": "origin/kitten.png",
+    "modifiers": {
+      "clan_creation.rank_weights": {
+        "elder": 1
+      },
+      "clan_creation.majority_rank": "elder"
     }
   }
 }

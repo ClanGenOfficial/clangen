@@ -33,6 +33,7 @@ class Name:
         load_existing_name=False,
         cat=None,
     ):
+        self.load_localized_names()
         self.prefix = prefix
         self.suffix = suffix
         self.specsuffix_hidden = specsuffix_hidden
