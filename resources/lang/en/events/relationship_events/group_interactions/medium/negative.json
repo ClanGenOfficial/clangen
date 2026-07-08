@@ -572,5 +572,42 @@
                 "amount": -10
             }
         ]
+    },
+    {
+        "id": "group_multicat_neg_polymatesmid",
+        "strings": [
+            "m_c wandered away from multi_cat mid-conversation without saying anything.",
+            "m_c tripped over multi_cat getting out of the nest this morning.",
+            "m_c says something inconsiderate, but doesn't apologize when multi_cat point it out."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "mates"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "multi_cat"
+                ],
+                "cat_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "romance"
+                ],
+                "amount": -10
+            }
+        ]
     }
 ]
