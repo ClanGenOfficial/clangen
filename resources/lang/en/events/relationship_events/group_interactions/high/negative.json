@@ -337,5 +337,42 @@
                 "amount": -10
             }
         ]
+    },
+    {
+        "id": "group_multicat_neg_polymateshigh",
+        "strings": [
+            "m_c, multi_cat get in a huge fight.",
+            "multi_cat heard m_c speaking poorly about them.",
+            "multi_cat were talking about the future and m_c reacted with disgust to their plans."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "mates"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "multi_cat"
+                ],
+                "cat_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "romance"
+                ],
+                "amount": -15
+            }
+        ]
     }
 ]
