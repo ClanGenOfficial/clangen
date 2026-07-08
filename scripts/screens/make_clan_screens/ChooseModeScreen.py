@@ -6,6 +6,7 @@ import pygame_gui
 from scripts.cat.cats import create_cat, create_example_cats
 from scripts.cat.enums import CatRank
 from scripts.cat.sprites.load_sprites import sprites
+from scripts.config import get_config
 from scripts.game_structure import image_cache
 from scripts.game_structure.game import Switch, switch_get_value
 from scripts.game_structure.game.settings import game_setting_set
@@ -31,7 +32,17 @@ class ChooseModeScreen(MakeClanScreenBase):
     def screen_switches(self):
         # Reset variables
         if not switch_get_value(Switch.possible_cats):
-            switch_set_value(Switch.possible_cats, create_example_cats())
+            switch_set_value(
+                Switch.possible_cats,
+                create_example_cats(
+                    majority_rank=self.get_config_during_creation(
+                        "clan_creation.majority_rank"
+                    ),
+                    rank_weights=self.get_config_during_creation(
+                        "clan_creation.rank_weights"
+                    ),
+                ),
+            )
 
         super().screen_switches()
         self.elements["previous_step"].disable()
