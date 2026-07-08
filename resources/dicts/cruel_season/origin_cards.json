@@ -4,5 +4,17 @@
     "modifiers": {
       "clan_creation.starting_clan_relation": [1, 7]
     }
+  },
+  "all_kittens": {
+    "card_art": "origin/kitten.png",
+    "modifiers": {
+      "clan_creation.rank_weights": {
+        "kitten": 1
+      },
+      "clan_creation.majority_rank": "kitten",
+      "clan_creation.ranks_needed.leader": false,
+      "clan_creation.ranks_needed.deputy": false,
+      "clan_creation.ranks_needed.medicine_cat": false
+    }
   }
 }

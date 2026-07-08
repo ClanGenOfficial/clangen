@@ -303,7 +303,8 @@ class Clan:
             generate_and_add_new_poi(game.clan.biome, PoiType.TERRAIN)
 
         # create leader's ceremony and give lives
-        self.leader.generate_lead_ceremony()
+        if self.leader:
+            self.leader.generate_lead_ceremony()
 
         self.save_clan()
         save_clanlist(self.save_id)

@@ -549,6 +549,22 @@ dev_tools = false
   # other clans will start with a random relation between the two numbers
   starting_clan_relation = [8, 12]
 
+  majority_rank = "warrior"
+
+  minimum_membership = 7
+  maximum_membership = 10
+
+  [clan_creation.ranks_needed]
+    leader = true
+    deputy = true
+    medicine_cat = true
+
+  [clan_creation.rank_weights]
+    kitten = 1
+    apprentice = 1
+    warrior = 2
+    elder = 1
+
 [ranks]
   # permit player to change cat ranks
   allow_manual = true
