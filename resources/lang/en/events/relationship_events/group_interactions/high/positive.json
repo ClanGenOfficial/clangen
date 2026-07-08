@@ -91,5 +91,42 @@
                 "amount": 10
             }
         ]
+    },
+    {
+        "id": "group_multicat_pos_polymateshigh",
+        "strings": [
+            "m_c gives multi_cat presents to show {PRONOUN/m_c/poss} affection.",
+            "m_c declares {PRONOUN/m_c/poss} love for multi_cat in the middle of camp.",
+            "m_c, multi_cat talk about having kits."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "mates"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cat_to": [
+                    "multi_cat"
+                ],
+                "mutual": true,
+                "values": [
+                    "romance"
+                ],
+                "amount": 15
+            }
+        ]
     }
 ]
