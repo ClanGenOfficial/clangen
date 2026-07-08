@@ -8,7 +8,7 @@ import bisect
 import itertools
 import os.path
 import sys
-from random import choice, randint, sample, random, randrange
+from random import choice, randint, sample, random, randrange, choices
 from typing import Dict, List, Any, Union, Callable, Optional, TYPE_CHECKING, Literal
 
 import i18n
@@ -3432,23 +3432,17 @@ def create_cat(rank, moons=None, biome=None):
 
 
 # Twelve example cats
-def create_example_cats() -> list[Cat]:
-    warrior_indices = sample(range(12), 3)
+def create_example_cats(majority_rank: CatRank, rank_weights: dict) -> list[Cat]:
+    majority_rank_cats = sample(range(12), 3)
 
     chosen_cats = []
     for cat_index in range(12):
-        if cat_index in warrior_indices:
-            chosen_cats.append(create_cat(rank=CatRank.WARRIOR))
+        if cat_index in majority_rank_cats:
+            chosen_cats.append(create_cat(rank=majority_rank))
         else:
-            random_rank = choice(
-                [
-                    CatRank.KITTEN,
-                    CatRank.APPRENTICE,
-                    CatRank.WARRIOR,
-                    CatRank.WARRIOR,
-                    CatRank.ELDER,
-                ]
-            )
+            random_rank = choices(
+                list(rank_weights.keys()), list(rank_weights.values())
+            )[0]
             chosen_cats.append(create_cat(rank=random_rank))
 
     return chosen_cats

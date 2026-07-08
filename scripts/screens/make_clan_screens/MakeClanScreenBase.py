@@ -123,23 +123,32 @@ class ClanInfo:
         )
 
     def has_minimum_cats(self) -> bool:
-        return (
-            self.leader
-            and self.deputy
-            and self.medicine_cat
-            and len(self.starting_members) >= 4
+        return len(self.get_all_cats()) >= get_config(
+            "clan_creation.minimum_membership",
+            creating_clan=True,
+            card_list_override=self.cruel_cards,
         )
 
     def has_maximum_cats(self) -> bool:
-        return (
-            self.leader
-            and self.deputy
-            and self.medicine_cat
-            and len(self.starting_members) >= 7
+        return len(self.get_all_cats()) >= get_config(
+            "clan_creation.maximum_membership",
+            creating_clan=True,
+            card_list_override=self.cruel_cards,
         )
 
     def has_high_ranks_filled(self) -> bool:
         return all([self.leader, self.deputy, self.medicine_cat])
+
+    def get_all_cats(self) -> list:
+        cat_list = self.starting_members.copy()
+        if self.leader:
+            cat_list.append(self.leader)
+        if self.deputy:
+            cat_list.append(self.deputy)
+        if self.medicine_cat:
+            cat_list.append(self.medicine_cat)
+
+        return cat_list
 
 
 class MakeClanScreenBase(Screens):
@@ -309,6 +318,8 @@ class MakeClanScreenBase(Screens):
         Cat.sort_cats()
         rebuild_top_menu_buttons()
 
+        switch_set_value(Switch.possible_cats, [])
+
     def random_biome_selection(self):
         # Select a random biome and background
         possible_biomes = ["Forest", "Mountainous", "Plains", "Beach"]
@@ -390,3 +401,10 @@ class MakeClanScreenBase(Screens):
             self.fullscreen_bgs[name] = screens_core.process_blur_bg(src)
 
         self.set_bg(name)
+
+    def get_config_during_creation(self, config_path):
+        return get_config(
+            config_path,
+            card_list_override=self.clan_info.cruel_cards,
+            creating_clan=True,
+        )

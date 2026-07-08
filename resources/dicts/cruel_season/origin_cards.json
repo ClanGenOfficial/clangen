@@ -4,5 +4,38 @@
     "modifiers": {
       "clan_creation.starting_clan_relation": [1, 7]
     }
+  },
+  "all_kittens": {
+    "card_art": "origin/kitten.png",
+    "modifiers": {
+      "clan_creation.rank_weights": {
+        "kitten": 1
+      },
+      "clan_creation.majority_rank": "kitten",
+      "clan_creation.ranks_needed.leader": false,
+      "clan_creation.ranks_needed.deputy": false,
+      "clan_creation.ranks_needed.medicine_cat": false
+    }
+  },
+  "all_apprentices": {
+    "card_art": "origin/kitten.png",
+    "modifiers": {
+      "clan_creation.rank_weights": {
+        "apprentice": 1
+      },
+      "clan_creation.majority_rank": "apprentice",
+      "clan_creation.ranks_needed.leader": false,
+      "clan_creation.ranks_needed.deputy": false,
+      "clan_creation.ranks_needed.medicine_cat": false
+    }
+  },
+  "all_elders": {
+    "card_art": "origin/kitten.png",
+    "modifiers": {
+      "clan_creation.rank_weights": {
+        "elder": 1
+      },
+      "clan_creation.majority_rank": "elder"
+    }
   }
 }

@@ -303,7 +303,8 @@ class Clan:
             generate_and_add_new_poi(game.clan.biome, PoiType.TERRAIN)
 
         # create leader's ceremony and give lives
-        self.leader.generate_lead_ceremony()
+        if self.leader:
+            self.leader.generate_lead_ceremony()
 
         self.save_clan()
         save_clanlist(self.save_id)
@@ -805,7 +806,11 @@ class Clan:
             biome=clan_data["biome"],
             camp_bg=clan_data["camp_bg"],
             game_mode=clan_data["gamemode"],
-            cruel_cards=clan_data.get("cruel_cards", []),
+            cruel_cards=[
+                c
+                for c in clan_data.get("cruel_cards", [])
+                if c in constants.CRUEL_CARDS_ALL
+            ],
             self_run_init_functions=False,
         )
         game.clan.post_initialization_functions()
