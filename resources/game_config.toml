@@ -1,9 +1,18 @@
-
-# set to true to force the season to be locked at the Clan's starting_season
-lock_season = false
-
 # whether or not development tools are disabled
 dev_tools = false
+
+[seasons]
+  # set to true to force the season to be locked at the Clan's starting_season
+  lock_season = false
+
+  # sets the starting season
+  force_starting_season = false
+
+  # the possible seasons, in order
+  calendar = ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"]
+
+  # how long each season lasts
+  length = 3
 
 [cruel_season]
   card_limit = 12
