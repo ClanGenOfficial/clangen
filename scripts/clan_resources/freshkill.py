@@ -93,10 +93,6 @@ class FreshkillPile:
         self.queens = []
         self.is_manual_feeding = False
 
-        # make sure this is up to date with any cruel cards
-        global PREY_REQUIREMENT
-        PREY_REQUIREMENT = get_config("prey.prey_requirement")
-
     def add_freshkill(self, amount) -> None:
         """
         Add new fresh kill to the pile.
@@ -155,21 +151,22 @@ class FreshkillPile:
         ]
 
         # all normal status cats calculation
+        prey_requirement = get_config("prey.prey_requirement")
         needed_prey = sum(
             [
-                PREY_REQUIREMENT[cat.status.rank]
+                prey_requirement[cat.status.rank]
                 for cat in living_cats
                 if not cat.status.rank.is_baby() and cat.status.alive_in_player_clan
             ]
         )
         # increase the number of prey which are missing for relevant queens and pregnant cats
         needed_prey += (len(relevant_queens) + len(pregnant_cats)) * (
-            PREY_REQUIREMENT["queen/pregnant"] - PREY_REQUIREMENT[CatRank.WARRIOR]
+            prey_requirement["queen/pregnant"] - prey_requirement[CatRank.WARRIOR]
         )
         # increase the number of prey for kits, which are not taken care by a queen
         needed_prey += sum(
             [
-                PREY_REQUIREMENT[cat.status.rank]
+                prey_requirement[cat.status.rank]
                 for cat in living_kits
                 if cat.status.alive_in_player_clan
             ]
@@ -443,7 +440,7 @@ class FreshkillPile:
             if cat in self.queens:
                 rank = "queen/pregnant"
 
-            prey_required = PREY_REQUIREMENT[rank]
+            prey_required = get_config("prey.prey_requirement")[rank]
             amount_allowed = prey_required
 
             total_required_food_for_clan = self.amount_food_needed()
@@ -585,9 +582,10 @@ class FreshkillPile:
         for cat_id in remove:
             self.nutrition_info.pop(cat_id)
 
+        prey_requirement = get_config("prey.prey_requirement")
         # update remaining cat's max scores
         for cat in cats_to_feed:
-            if str(cat.status.rank) not in PREY_REQUIREMENT:
+            if str(cat.status.rank) not in prey_requirement:
                 continue
             # update the nutrition_info
             if cat.ID in self.nutrition_info:
@@ -601,7 +599,7 @@ class FreshkillPile:
                     status_ = "queen/pregnant"
 
                 # check if the max_score is correct, otherwise update
-                required_max = PREY_REQUIREMENT[status_] * factor
+                required_max = prey_requirement[status_] * factor
                 current_score = self.nutrition_info[cat.ID].current_score
                 if self.nutrition_info[cat.ID].max_score != required_max:
                     previous_max = self.nutrition_info[cat.ID].max_score
@@ -628,7 +626,7 @@ class FreshkillPile:
         prey_status = cat.status.rank
         if cat.ID in queen_dict.keys() or "pregnant" in cat.injuries:
             prey_status = "queen/pregnant"
-        max_score = PREY_REQUIREMENT[prey_status] * factor
+        max_score = get_config("prey.prey_requirement")[prey_status] * factor
         nutrition.max_score = max_score
         nutrition.current_score = max_score
         nutrition.percentage = 100
@@ -642,7 +640,6 @@ class FreshkillPile:
 
 
 ADDITIONAL_PREY = constants.CONFIG["prey"]["additional_prey"]
-PREY_REQUIREMENT = constants.CONFIG["prey"]["prey_requirement"]
 CONDITION_INCREASE = constants.CONFIG["prey"]["condition_increase"]
 FEEDING_ORDER = constants.CONFIG["prey"]["feeding_order"]
 HUNTER_BONUS = constants.CONFIG["prey"]["hunter_bonus"]
