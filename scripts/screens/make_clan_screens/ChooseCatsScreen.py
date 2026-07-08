@@ -298,14 +298,21 @@ class ChooseCatsScreen(MakeClanScreenBase):
         possible_cats = switch_get_value(Switch.possible_cats)
         if self.need_leader:
             self.clan_info.leader = choice(
-                [c for c in possible_cats if c.status.rank == CatRank.WARRIOR]
+                [
+                    c
+                    for c in possible_cats
+                    if c.status.rank
+                    == self.get_config_during_creation("clan_creation.majority_rank")
+                ]
             )
         if self.need_deputy:
             self.clan_info.deputy = choice(
                 [
                     c
                     for c in possible_cats
-                    if c.status.rank == CatRank.WARRIOR and c != self.clan_info.leader
+                    if c.status.rank
+                    == self.get_config_during_creation("clan_creation.majority_rank")
+                    and c != self.clan_info.leader
                 ]
             )
         if self.need_med:
@@ -313,7 +320,8 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 [
                     c
                     for c in possible_cats
-                    if c.status.rank == CatRank.WARRIOR
+                    if c.status.rank
+                    == self.get_config_during_creation("clan_creation.majority_rank")
                     and c not in [self.clan_info.leader, self.clan_info.deputy]
                 ]
             )
