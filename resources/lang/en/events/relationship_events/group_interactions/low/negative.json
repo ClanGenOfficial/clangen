@@ -192,7 +192,7 @@
         "strings": [
             "m_c left camp without telling multi_cat where {PRONOUN/m_c/subject} {VERB/m_c/were/was} going.",
             "m_c was the last one to leave the nest, but multi_cat finds it messy and unmade.",
-            "m_c wanders away from multi_cat mid-conversation without saying anything."
+            "multi_cat finds m_c has chosen a piece of prey and tucked in without asking what they'd like from the pile."
         ],
         "relationship_constraint": [
             {
