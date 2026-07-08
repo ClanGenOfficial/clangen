@@ -100,13 +100,8 @@
             "multi_cat are left in fits of giggles at m_c's joke."
         ],
         "involved_cats": {
-            "m_c": {
-                "standing": {
-                    "group": [
-                        "player_clan"
-                    ]
-                }
-            }
+            "m_c": {},
+            "multi_cat": {}
         },
         "relationship_constraint": [
             {

@@ -460,13 +460,8 @@
             "m_c compliments multi_cat over and over again until they all can't stop purring."
         ],
         "involved_cats": {
-            "m_c": {
-                "standing": {
-                    "group": [
-                        "player_clan"
-                    ]
-                }
-            }
+            "m_c": {},
+            "multi_cat": {}
         },
         "relationship_constraint": [
             {

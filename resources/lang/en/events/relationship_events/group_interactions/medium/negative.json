@@ -581,13 +581,8 @@
             "m_c says something inconsiderate, but doesn't apologize when multi_cat point it out."
         ],
         "involved_cats": {
-            "m_c": {
-                "standing": {
-                    "group": [
-                        "player_clan"
-                    ]
-                }
-            }
+            "m_c": {},
+            "multi_cat": {}
         },
         "relationship_constraint": [
             {

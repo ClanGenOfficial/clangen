@@ -100,13 +100,8 @@
             "m_c, multi_cat talk about having kits."
         ],
         "involved_cats": {
-            "m_c": {
-                "standing": {
-                    "group": [
-                        "player_clan"
-                    ]
-                }
-            }
+            "m_c": {},
+            "multi_cat": {}
         },
         "relationship_constraint": [
             {

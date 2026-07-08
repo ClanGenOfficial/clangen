@@ -346,13 +346,8 @@
             "multi_cat were talking about the future and m_c reacted with disgust to their plans."
         ],
         "involved_cats": {
-            "m_c": {
-                "standing": {
-                    "group": [
-                        "player_clan"
-                    ]
-                }
-            }
+            "m_c": {},
+            "multi_cat": {}
         },
         "relationship_constraint": [
             {
