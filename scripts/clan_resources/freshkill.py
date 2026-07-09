@@ -75,13 +75,14 @@ class FreshkillPile:
                 total += v
             self.total_amount = total
         else:
+            amount = get_config("prey.start_amount")
             self.pile = {
-                "expires_in_4": constants.CONFIG["prey"]["start_amount"],
+                "expires_in_4": amount,
                 "expires_in_3": 0,
                 "expires_in_2": 0,
                 "expires_in_1": 0,
             }
-            self.total_amount = constants.CONFIG["prey"]["start_amount"]
+            self.total_amount = amount
         self.timeskip_feed = False
         self.nutrition_info = {}
         self.living_cats = []
