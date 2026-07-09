@@ -24,32 +24,32 @@
   "mouths_to_feed": {
     "card_art": "behavior/fate.png",
     "modifiers": {
-      "pregnancy.one_kit_possibility.young adult": 2,
-      "pregnancy.one_kit_possibility.adult": 4,
+      "pregnancy.one_kit_possibility.young adult": 0,
+      "pregnancy.one_kit_possibility.adult": 3,
       "pregnancy.one_kit_possibility.senior adult": 6,
-      "pregnancy.one_kit_possibility.senior": 2,
+      "pregnancy.one_kit_possibility.senior": 1,
 
       "pregnancy.two_kit_possibility.young adult": 5,
       "pregnancy.two_kit_possibility.adult": 10,
       "pregnancy.two_kit_possibility.senior adult": 11,
-      "pregnancy.two_kit_possibility.senior": 2,
+      "pregnancy.two_kit_possibility.senior": 1,
 
       "pregnancy.three_kit_possibility.young adult": 12,
-      "pregnancy.three_kit_possibility.adult": 11,
+      "pregnancy.three_kit_possibility.adult": 12,
       "pregnancy.three_kit_possibility.senior adult": 6,
-      "pregnancy.three_kit_possibility.senior": 3,
+      "pregnancy.three_kit_possibility.senior": 4,
 
       "pregnancy.four_kit_possibility.young adult": 15,
       "pregnancy.four_kit_possibility.adult": 13,
       "pregnancy.four_kit_possibility.senior adult": 6,
-      "pregnancy.four_kit_possibility.senior": 1,
+      "pregnancy.four_kit_possibility.senior": 2,
 
-      "pregnancy.five_kit_possibility.young adult": 12,
+      "pregnancy.five_kit_possibility.young adult": 13,
       "pregnancy.five_kit_possibility.adult": 5,
       "pregnancy.five_kit_possibility.senior adult": 2,
       "pregnancy.five_kit_possibility.senior": 0,
 
-      "pregnancy.max_kit_possibility.young adult": 9,
+      "pregnancy.max_kit_possibility.young adult": 10,
       "pregnancy.max_kit_possibility.adult": 3,
       "pregnancy.max_kit_possibility.senior adult": 1,
       "pregnancy.max_kit_possibility.senior": 0
