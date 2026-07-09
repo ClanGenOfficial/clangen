@@ -482,7 +482,7 @@
                 "cats_from": [
                     "m_c"
                 ],
-                "cat_to": [
+                "cats_to": [
                     "multi_cat"
                 ],
                 "mutual": true,
