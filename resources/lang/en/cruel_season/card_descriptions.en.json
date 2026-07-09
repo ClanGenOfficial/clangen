@@ -10,6 +10,8 @@
     "public_enemy": "The other Clans do not welcome new neighbors. All Clans will start as hostile.",
     "all_kittens": "The Clan begins with only kittens. What left this group all alone in the world?",
     "all_apprentices": "The Clan begins with only apprentices. Young and alone, how will they grow?",
-    "all_elders": "The Clan begins with only elders. How long will they last?"
+    "all_elders": "The Clan begins with only elders. How long will they last?",
+    "kit_season": "The birth of new kits is a common occurrence in the Clan. Cats are more likely to have kits.",
+    "mouths_to_feed": "Litters are likely to be larger. Will the Clan be able to provide for all its kits?"
   }
 }
