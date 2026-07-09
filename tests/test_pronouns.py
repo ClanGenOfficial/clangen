@@ -39,6 +39,9 @@ def _test():
         "r_c": _r,
         "r_c1": _r,
         "r_c2": _r,
+        "r_c3": _r,
+        "r_c4": _r,
+        "r_c5": _r,
         "n_c": _r,
         "app1": _r,
         "app2": _r,
@@ -111,6 +114,8 @@ def _test_replacement_failure(path: str, repl_dict: dict) -> bool:
 
     for _str in get_all_strings(contents):
         try:
+            # maybe this is gross but it works
+            _str = _str.replace("multi_cat", "Name, Name, and Name")
             processed = process_text(
                 text=_str, cat_dict=repl_dict, raise_exception=True
             )

@@ -1,4 +1,540 @@
 [
+	{
+		"patrol_id": "gen_train_instarsandtime1",
+		"biome": [
+			"any"
+		],
+		"season": [
+			"any"
+		],
+		"types": [
+			"training"
+		],
+		"tags": [],
+		"patrol_art": "gen_speaking_cat_w1",
+		"min_cats": 2,
+		"max_cats": 2,
+		"min_max_status": {
+			"normal adult": [
+				1,
+				2
+			]
+		},
+		"frequency": 2,
+		"intro_text": "p_l asks r_c if {PRONOUN/r_c/subject} {VERB/r_c/need/needs} any help with anything, now that {PRONOUN/p_l/subject} {VERB/p_l/have/has} the time.",
+		"decline_text": "r_c shakes {PRONOUN/r_c/poss} head. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} good right now, and {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} supposed to go on patrol soon, anyways.",
+		"chance_of_success": 60,
+		"relationship_constraint": [
+			"likes",
+			"-mentor/app"
+		],
+		"success_outcomes": [
+			{
+				"text": "r_c leads p_l to a clearing at night, the stars shining overhead. Confused, p_l asks what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} supposed to do. r_c asks {PRONOUN/p_l/object} sit with {PRONOUN/r_c/object} and look up. p_l gasps at the beauty of Silverpelt and the constellations {PRONOUN/p_l/subject} {VERB/r_c/know/knows}. {PRONOUN/p_l/subject/CAP} {VERB/r_c/point/points} them out, though r_c's gaze is locked on p_l.",
+				"exp": 15,
+				"frequency": 2,
+				"relationship_constraint": [
+					"adores"
+				],
+				"relationships": [
+					{
+						"cats_from": [
+							"p_l"
+						],
+						"cats_to": [
+							"r_c"
+						],
+						"mutual": false,
+						"values": [
+							"romance"
+						],
+						"amount": 12,
+						"log": {
+							"cats_from": "cat_to took cat_from stargazing."
+						}
+					},
+					{
+						"cats_from": [
+							"r_c"
+						],
+						"cats_to": [
+							"p_l"
+						],
+						"mutual": false,
+						"values": [
+							"romance",
+							"respect"
+						],
+						"amount": 12,
+						"log": {
+							"cats_from": "cat_from took cat_to stargazing, and cat_to knew more about the stars than cat_from realized."
+						}
+					}
+				],
+				"art": "gen_speaking_cat_w1"
+			},
+			{
+				"min_max_status": {
+					"apprentice": [
+						1,
+						1
+					],
+					"normal adult": [
+						1,
+						1
+					]
+				},
+				"text": "s_c scoffs, saying {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} need help from p_l. The warrior gasps, feigning offence. How dare s_c be so mean to {PRONOUN/p_l/object}! s_c rolls {PRONOUN/s_c/poss} eyes, and, after a little back and forth, mumbles a request for extra battle training. p_l accepts, and even if s_c is anxious, the two end up having a great training session.",
+				"stat_trait": [
+					"insecure",
+					"nervous",
+					"childish",
+					"gloomy",
+					"grumpy",
+					"lonesome",
+					"rebellious"
+				],
+				"can_have_stat": [
+					"not_pl"
+				],
+				"exp": 15,
+				"frequency": 4,
+				"relationships": [
+					{
+						"cats_from": [
+							"p_l"
+						],
+						"cats_to": [
+							"r_c"
+						],
+						"mutual": false,
+						"values": [
+							"comfort",
+							"like"
+						],
+						"amount": 10,
+						"log": {
+							"cats_from": "cat_from took cat_to out training after cat_to admitted {PRONOUN/cat_to/subject} could use it."
+						}
+					},
+					{
+						"cats_from": [
+							"r_c"
+						],
+						"cats_to": [
+							"p_l"
+						],
+						"mutual": false,
+						"values": [
+							"trust",
+							"comfort",
+							"like"
+						],
+						"amount": 8,
+						"log": {
+							"cats_from": "cat_to convinced cat_from to go out training, and it was nice."
+						}
+					}
+				],
+				"art": "gen_train_fightingskill"
+			},
+			{
+				"min_max_status": {
+					"apprentice": [
+						1,
+						1
+					],
+					"normal adult": [
+						1,
+						1
+					]
+				},
+				"text": "p_l may not be r_c's mentor, but that doesn't mean {PRONOUN/p_l/subject} can't help every now and then. r_c accepts, and the two decide to work on some battle training. r_c feels a lot more secure in {PRONOUN/r_c/poss} abilities by the end of it.",
+				"exp": 15,
+				"frequency": 4,
+				"relationships": [
+					{
+						"cats_from": [
+							"p_l"
+						],
+						"cats_to": [
+							"r_c"
+						],
+						"mutual": false,
+						"values": [
+							"comfort",
+							"like"
+						],
+						"amount": 10,
+						"log": {
+							"cats_from": "cat_from took cat_to out battle training."
+						}
+					},
+					{
+						"cats_from": [
+							"r_c"
+						],
+						"cats_to": [
+							"p_l"
+						],
+						"mutual": false,
+						"values": [
+							"trust",
+							"comfort",
+							"like"
+						],
+						"amount": 8,
+						"log": {
+							"cats_from": "cat_to took cat_from out battle training, and cat_from felt more confident after."
+						}
+					}
+				],
+				"art": "gen_train_fightingskill"
+			},
+			{
+				"min_max_status": {
+					"normal adult": [
+						2,
+						2
+					],
+					"apprentice": [
+						-1,
+						-1
+					]
+				},
+				"text": "r_c laughs. s_c, up at the crack of dawn, asking if {PRONOUN/s_c/subject} can do extra work? But if {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} serious, which r_c realizes {PRONOUN/s_c/subject} {VERB/s_c/are/is}, {PRONOUN/r_c/subject} <i>would</i> like help with something. Has s_c ever seen one of those Twoleg ruins in the territory? Yes, the ones with weird symbols covering the walls. r_c tells s_c {PRONOUN/r_c/subject} thinks {PRONOUN/r_c/subject} could learn more about the territory's history there. Perhaps {PRONOUN/s_c/subject} would like to accompany r_c on the way?",
+				"stat_trait": [
+					"childish",
+					"oblivious",
+					"playful",
+					"rebellious",
+					"shameless",
+					"troublesome"
+				],
+				"can_have_stat": [
+					"p_l"
+				],
+				"exp": 15,
+				"frequency": 4,
+				"relationships": [
+					{
+						"cats_from": [
+							"p_l"
+						],
+						"cats_to": [
+							"r_c"
+						],
+						"mutual": true,
+						"values": [
+							"comfort",
+							"like"
+						],
+						"amount": 10,
+						"log": {
+							"cats_from": "cat_from and cat_to had a great time exploring some old Twoleg ruins!"
+						}
+					}
+				],
+				"art": "gen_bump_heads_warriors"
+			},
+			{
+				"min_max_status": {
+					"normal adult": [
+						2,
+						2
+					],
+					"apprentice": [
+						-1,
+						-1
+					]
+				},
+				"text": "r_c suggests exploring an interesting spot in the territory {PRONOUN/r_c/subject} found. p_l agrees, and r_c leads {PRONOUN/p_l/object} to a pond with a little waterfall! The two get a little wet while exploring, but they both feel more confident in their knowledge of the territory.",
+				"relationships": [
+					{
+						"cats_from": [
+							"p_l"
+						],
+						"cats_to": [
+							"r_c"
+						],
+						"mutual": true,
+						"values": [
+							"comfort",
+							"like"
+						],
+						"amount": 12,
+						"log": {
+							"cats_from": "cat_from and cat_to explored the territory together."
+						}
+					}
+				],
+				"exp": 15,
+				"frequency": 4,
+				"art": "gen_bump_heads_warriors"
+			}
+		],
+		"fail_outcomes": [
+			{
+				"min_max_status": {
+					"normal adult": [
+						2,
+						2
+					],
+					"apprentice": [
+						-1,
+						-1
+					]
+				},
+				"text": "r_c suggests they try a new hunting spot. {PRONOUN/r_c/subject/CAP} {VERB/r_c/need/needs} someone to check it out! p_l agrees, and the two start chatting. Caught up in their conversation, p_l misses a hole in the ground and trips. Ouch! r_c helps {PRONOUN/p_l/object} up. Maybe they should just go home.",
+				"exp": 0,
+				"frequency": 4,
+				"injury": [
+					{
+						"cats": [
+							"p_l"
+						],
+						"injuries": [
+							"minor_injury"
+						],
+						"no_results": false
+					}
+				],
+				"art": "gen_train_talkingWW"
+			},
+			{
+				"min_max_status": {
+					"normal adult": [
+						2,
+						2
+					],
+					"apprentice": [
+						-1,
+						-1
+					]
+				},
+				"text": "r_c suggests they try a new hunting spot. {PRONOUN/r_c/subject/CAP} {VERB/r_c/need/needs} someone to check it out! p_l agrees, and the two start chatting. Caught up in their conversation, p_l misses a hole in the ground and makes a <i>nasty</i> fall. Panicked, r_c helps {PRONOUN/p_l/object} up, and carefully helps {PRONOUN/p_l/object} to camp to get treated.",
+				"exp": 0,
+				"frequency": 1,
+				"injury": [
+					{
+						"cats": [
+							"p_l"
+						],
+						"injuries": [
+							"broken bone",
+							"broken jaw",
+							"head damage",
+							"dislocated joint"
+						],
+						"no_results": false
+					}
+				],
+				"history_text": {
+					"scar": "m_c was scarred after gaining injuries exploring the territory.",
+					"death": "m_c died of injuries gained exploring the territory."
+				},
+				"art": "gen_train_talkingWW"
+			},
+			{
+				"min_max_status": {
+					"normal adult": [
+						2,
+						2
+					],
+					"apprentice": [
+						-1,
+						-1
+					]
+				},
+				"text": "r_c notes that p_l seems tired. Maybe {PRONOUN/p_l/subject} should get some rest instead. p_l disagrees, and r_c gives in, suggesting exploring an interesting spot in the territory. When they get there, however, p_l still looks tired and seems distracted. r_c feels disappointed in what could've been a fun outing.",
+				"exp": 0,
+				"frequency": 4,
+				"stat_trait": [
+					"calm",
+					"charismatic",
+					"compassionate",
+					"flamboyant",
+					"loving",
+					"responsible",
+					"sincere",
+					"thoughtful",
+					"wise"
+				],
+				"can_have_stat": [
+					"p_l"
+				],
+				"relationships": [
+					{
+						"cats_from": [
+							"r_c"
+						],
+						"cats_to": [
+							"p_l"
+						],
+						"mutual": false,
+						"values": [
+							"trust",
+							"like"
+						],
+						"amount": -8,
+						"log": {
+							"cats_from": "cat_to was tired and distracted after {PRONOUN/cat_to/subject} promised cat_from {PRONOUN/cat_to/subject} were fine to explore."
+						}
+					}
+				],
+				"art": "gen_anxious1"
+			},
+			{
+				"min_max_status": {
+					"normal adult": [
+						2,
+						2
+					],
+					"apprentice": [
+						-1,
+						-1
+					]
+				},
+				"text": "r_c suggests checking out a potential hunting spot. p_l agrees, and the two start talking on the way there. Somewhere along the line, they get into a disagreement about something mundane. It gets heated, and they decide to just go back home before it escalates.",
+				"exp": 0,
+				"frequency": 4,
+				"relationships": [
+					{
+						"cats_from": [
+							"p_l"
+						],
+						"cats_to": [
+							"r_c"
+						],
+						"mutual": true,
+						"values": [
+							"trust",
+							"comfort"
+						],
+						"amount": -8,
+						"log": {
+							"cats_from": "cat_from and cat_to argued on what was supposed to be a fun outing."
+						}
+					}
+				],
+				"art": "gen_train_argueWW"
+			},
+			{
+				"min_max_status": {
+					"normal adult": [
+						2,
+						2
+					],
+					"apprentice": [
+						-1,
+						-1
+					]
+				},
+				"text": "r_c notes that p_l seems tired. Maybe {PRONOUN/p_l/subject} should get some rest instead. p_l disagrees, and r_c gives in, suggesting exploring an interesting spot in the territory. When they get there, however, p_l still looks tired and seems distracted. When r_c asks if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} okay, p_l snaps back at r_c, and the patrol ends in an argument.",
+				"exp": 0,
+				"frequency": 2,
+				"stat_trait": [
+					"-calm",
+					"-charismatic",
+					"-compassionate",
+					"-flamboyant",
+					"-loving",
+					"-responsible",
+					"-sincere",
+					"-thoughtful",
+					"-wise"
+				],
+				"can_have_stat": [
+					"p_l"
+				],
+				"relationships": [
+					{
+						"cats_from": [
+							"r_c"
+						],
+						"cats_to": [
+							"p_l"
+						],
+						"mutual": false,
+						"values": [
+							"trust",
+							"like"
+						],
+						"amount": -10,
+						"log": {
+							"cats_from": "cat_to was tired and snappy after {PRONOUN/cat_to/subject} promised cat_from {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} fine to explore."
+						}
+					},
+					{
+						"cats_from": [
+							"p_l"
+						],
+						"cats_to": [
+							"r_c"
+						],
+						"mutual": false,
+						"values": [
+							"trust",
+							"comfort"
+						],
+						"amount": -8,
+						"log": {
+							"cats_from": "cat_from and cat_to argued on what was supposed to be a fun outing."
+						}
+					}
+				],
+				"art": "gen_train_argueWW"
+			},
+			{
+				"min_max_status": {
+					"apprentice": [
+						1,
+						1
+					]
+				},
+				"text": "r_c seems distracted today, even after agreeing. p_l tries to get {PRONOUN/r_c/object} to focus on the training, but r_c snaps back that this isn't useful, p_l isn't {PRONOUN/r_c/poss} mentor, and {PRONOUN/r_c/subject} just {VERB/r_c/want/wants} to go home. Fine, then, r_c's loss. The patrol ends on a sour note.",
+				"exp": 0,
+				"frequency": 4,
+				"relationships": [
+					{
+						"cats_from": [
+							"p_l"
+						],
+						"cats_to": [
+							"r_c"
+						],
+						"mutual": false,
+						"values": [
+							"like",
+							"respect"
+						],
+						"amount": -8,
+						"log": {
+							"cats_from": "cat_to argued with cat_from when cat_from wanted to take {PRONOUN/cat_to/object} out training."
+						}
+					},
+					{
+						"cats_from": [
+							"r_c"
+						],
+						"cats_to": [
+							"p_l"
+						],
+						"mutual": false,
+						"values": [
+							"respect",
+							"like"
+						],
+						"amount": -10,
+						"log": {
+							"cats_from": "cat_to didn't listen to cat_from when {PRONOUN/cat_to/subject} wanted to take cat_from out training."
+						}
+					}
+				],
+				"art": "gen_train_argueAW"
+			}
+		]
+	},
     {
         "patrol_id": "gen_train_soloreflect1",
         "biome": [
@@ -21493,5 +22029,189 @@
                 "art": "cat_sprites/gen_catlookingup_Wr"
             }
         ]
+},
+{
+    "patrol_id": "gen_train_newleaf_tadpole",
+    "biome": ["-desert"],
+    "season": ["newleaf"],
+    "types": ["training"],
+    "tags": [],
+    "patrol_art": "train_general_intro",
+    "min_cats": 2,
+    "max_cats": 6,
+    "min_max_status": {
+        "normal adult": [
+            1,
+            6
+        ]
+    },
+    "frequency": 3,
+    "chance_of_success": 60,
+    "intro_text": "p_l leads the patrol to a shallow pool by {POI/tag/water:flowing}, gently warmed by the newleaf sun. p_l peers into the water, searching for soft gelatinous clumps of frogspawn clinging to the reeds. ",
+    "decline_text": "It seems there is no frogspawn here today. The patrol returns to camp.",
+    "success_outcomes": [
+        {
+    "text": "p_l notes that the water is calm, warm, and sheltered. Conditions are perfect for the tadpoles to survive. Come greenleaf, c_n will have plenty of frogs to catch.",
+    "exp": 20,
+    "frequency": 4,
+    "art": "patrol_outcome_art"
+        },
+        {
+    "text": "p_l notices some speckled egg clusters and instructs the patrol to mark the area to discourage other predators.",
+    "exp": 20,
+    "frequency": 4,
+    "art": "patrol_outcome_art"
+        },
+        {
+    "text": "The patrol hears distant croaking echo through the reeds. While there may not be frogspawn here, it is likely to be bountiful come greenleaf.",
+    "exp": 20,
+    "frequency": 4,
+    "art": "patrol_outcome_art"
+        },
+        {
+    "min_max_status": {
+         "apprentice": [
+            1,
+            6
+        ]
+    },
+    "text": "app1 is unimpressed. Why can't c_n collect and eat the frogspawn now? p_l explains the importance of patience: if they wait now, there will be more prey in the future for them to hunt.",
+    "exp": 25,
+    "frequency": 4,
+    "relationships": [
+        {
+            "cats_to": [
+                "p_l"
+            ],
+            "cats_from": ["app1"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": 10,
+            "log": {
+                "cats_from": "cat_from appreciated that cat_to made a good point about patience."
+            }
+        }
+    ]
+},
+        {
+    "min_max_status": {
+         "apprentice": [
+            1,
+            6
+        ]
+    },
+    "text": "Look, app1! There are already tadpoles. p_l explains to app1 that in just a moon or two, the tadpoles will become succulent frogs ready to be hunted.",
+    "exp": 25,
+    "frequency": 4,
+    "relationships": [
+        {
+            "cats_to": [
+                "p_l"
+            ],
+            "cats_from": ["app1"],
+            "mutual": false,
+            "values": ["like"],
+            "amount": 10,
+            "log": {
+                "cats_from": "cat_from was excited by cat_to's enthusiasm about tadpoles."
+            }
+        }
+    ]
+},
+        {
+    "text": "s_c stands with p_l and points out which globules have a dark or milky center. Lucky for c_n, there are plenty of healthy dark-spotted frogspawn waiting to hatch.",
+    "exp": 20,
+    "frequency": 3,
+    "stat_skill": ["TEACHER,1", "CLEVER,1", "SENSE,1"]
+},
+        {
+    "text": "The patrol purrs in satisfaction to see a healthy amount of clusters growing. Meanwhile, s_c wonders to {PRONOUN/s_c/self} if the jelly-like eggs would be of any use to the medicine cats. ",
+    "exp": 20,
+    "frequency": 2,
+    "stat_skill": ["HEALER,0"]
+}
+    ],
+    "fail_outcomes": [
+        {
+    "text": "p_l only notices a few scattered clusters. Frogs may be scarce prey this greenleaf.",
+    "exp": 5,
+    "frequency": 4
+},
+        {
+    "text": "r_c discovers raccoon scat nearby, and p_l finds no frogspawn. It seems like this area has been claimed already.",
+    "exp": 5,
+    "frequency": 4
+},
+        {
+    "min_max_status": {
+         "apprentice": [
+            1,
+            6
+        ]
+    },
+    "text": "app1 reaches a paw into the spawning pool and hefts a glob out before p_l can stop {PRONOUN/app1/object}. Wasn't the point to <i>catch</i> prey? p_l exasperatedly explains their purpose to an embarrassed app1.",
+    "exp": 5,
+    "frequency": 4,
+    "relationships": [
+        {
+            "cats_to": [
+                "p_l"
+            ],
+            "cats_from": ["app1"],
+            "mutual": false,
+            "values": ["like"],
+            "amount": -5,
+            "log": {
+                "cats_from": "cat_from was embarrassed that cat_to scolded {PRONOUN/cat_from/object} for a mistake on patrol."
+            }
+        }
+    ]
+},
+                {
+    "min_max_status": {
+         "apprentice": [
+            1,
+            6
+        ]
+    },
+    "text": "app1 reaches eagerly into the pool, scooping the spawn into {PRONOUN/app1/poss} paw. {PRONOUN/app1/subject/CAP} {VERB/app1/twist/twists} to show off {PRONOUN/app1/poss} catch to p_l and {VERB/app1/send/sends} the glob flying into p_l's face. p_l scolds {PRONOUN/app1/object} for wasting a valuable resource.",
+    "exp": 5,
+    "frequency": 2,
+    "relationships": [
+        {
+            "cats_to": [
+                "p_l"
+            ],
+            "cats_from": ["app1"],
+            "mutual": true,
+            "values": ["like"],
+            "amount": -15,
+            "log": {
+                "cats_from": "cat_from was upset after cat_to berated {PRONOUN/cat_from/object} for a mistake.",
+                "cats_to": "cat_to was furious that cat_from hit {PRONOUN/cat_to/object} in the face with frogspawn."
+            }
+        }
+    ]
+},
+        {
+    "text": "As r_c looks into the water, the muddy bank below {PRONOUN/r_c/object} gives way. {PRONOUN/r_c/subject/CAP} {VERB/r_c/tumble/tumbles} in and {VERB/r_c/squash/squashes} the frogspawn below.",
+    "exp": 5,
+    "frequency": 2,
+    "relationships": [
+        {
+            "cats_to": [
+                "r_c"
+            ],
+            "cats_from": ["patrol"],
+            "mutual": false,
+            "values": ["respect"],
+            "amount": -5,
+            "log": {
+                "cats_from": "cat_from was exasperated when cat_to fell into the water and onto delicate frogspawn."
+            }
+        }
+    ]
+}
+    ]
 }
 ]

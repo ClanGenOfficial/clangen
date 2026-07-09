@@ -29,6 +29,10 @@
         "adoptive_parents": "adoptive parents",
         "user_notes": "Click the check mark to enter notes about your cat!",
         "leader_ceremony": "Leader Ceremony",
+        "age_label": {
+            "one": "%{age} (1 moon)",
+            "many": "%{age} (%{count} moons)"
+        },
         "eyes_label": "eyes: %{eyes}",
         "pelt_label": "pelt: %{pelt}",
         "fur_label": "fur length: %{length}",
@@ -37,9 +41,11 @@
             "one": "parent: %{parents}",
             "many": "parents: %{parents}"
         },
-        "lives_remaining_label": "remaining lives: %{count}",
+        "lives_remaining_label": {
+            "one": "(1 life)",
+            "many": "(%{count} lives)"
+        },
         "experience_label": "experience: %{exp}",
-        "backstory_label": "backstory: %{backstory}",
         "subtab_favorite_tooltip": "favorite this sub-tab — it will be the default sub tab displayed when History is viewed",
         "subtab_unfavorite_tooltip": "un-favorite this sub-tab",
         "no_moons_tooltip": "Show the Moon that certain history events occurred on",

@@ -1,0 +1,190 @@
+[
+
+    {
+        "id": "group_3_negative_gossip",
+        "strings": [
+            "m_c is gossiping with r_c1 about r_c2."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c", "r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["dislikes"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": true,
+                "values": ["comfort"],
+                "amount": 5
+            },
+            {
+                "cats_from": ["m_c", "r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": true,
+                "values": ["respect"],
+                "amount": -5
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["m_c", "r_c1"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "id": "group_3_negative_romanticrivalslow",
+        "strings": [
+            "m_c knows r_c2 is also interested in r_c1.",
+            "m_c is annoyed r_c1 paid more attention to r_c2 than {PRONOUN/r_c1/subject} did to {PRONOUN/m_c/object} recently.",
+            "m_c wants to bring r_c1 a gift, but {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} busy with r_c2.",
+            "m_c wishes r_c1 would lose interest in r_c2.",
+            "m_c wonders if r_c1 likes {PRONOUN/m_c/object} or r_c2 more.",
+            "m_c hopes r_c1 will choose {PRONOUN/m_c/object} over r_c2.",
+            "m_c would spend more time with r_c1 if it weren't for r_c2 always being in the way."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c", "r_c1"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "constraints": ["fancies", "-mates"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c", "r_c2"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["romance"],
+                "amount": 5
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "id": "glutton_multicat",
+        "strings": [
+            "m_c eats as ravenously as a wolverine and by the time {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} done, multi_cat barely have the stomach to finish their own meals.",
+            "While m_c gorges on {PRONOUN/m_c/poss} piece of fresh kill, multi_cat find that eating is suddenly less appealing.",
+            "Spittle and flecks of bone fly while m_c gobbles down prey, reminding multi_cat to seek out better mealtime companionship next time."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "multi_cat": {}
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["comfort", "like"],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "id": "badstory_multicat",
+        "strings": [
+            "m_c shares a suspiciously exaggerated tale with multi_cat, who seem far from convinced of its veracity.",
+            "m_c tells multi_cat a story that seems to grow less believable every meow.",
+            "m_c tells multi_cat a story that earns more skepticism than admiration."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "multi_cat": {}
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["trust", "like"],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "id": "patrolcomplainer_multicat",
+        "strings": [
+            "m_c complained about {PRONOUN/m_c/poss} patrol assignment all day, much to the annoyance of multi_cat.",
+            "m_c complained so relentlessly about {PRONOUN/m_c/poss} patrol assignment that multi_cat could only sigh and bear it."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-kitten",
+                    "-elder",
+                    "-leader",
+                    "-deputy"
+                ]
+            },
+            "multi_cat": {
+                "status": [
+                    "-kitten",
+                    "-elder"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect", "like"],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "id": "neg_observations_low",
+        "strings": [
+			"m_c noticed that r_c1 had a sour expression while looking at a r_c2 in the distance.",
+			"m_c notices how rude r_c1 is being to r_c2.",
+			"m_c doesn't like the way r_c1 interacts with r_c2."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraints": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["begrudges", "dislikes"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["comfort", "like"],
+                "amount": -5
+            }
+        ]
+    }
+]
