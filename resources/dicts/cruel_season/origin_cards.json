@@ -39,11 +39,10 @@
     }
   },
   "barren_stocks": {
-    "cart_art": "origin/public_enemy.png",
+    "card_art": "origin/public_enemy.png",
     "modifiers": {
       "prey.start_amount": 0,
       "clan_resources.herbs.empty_starting_storage": true
-
     }
   }
 }
