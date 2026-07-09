@@ -5,6 +5,8 @@ import i18n
 import pygame
 import pygame_gui
 
+from scripts.config import get_config
+from scripts.events_module.consequences import check_stolen_vitality
 from scripts.game_structure import game
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.ui.elements.checkbox import UICheckbox
@@ -26,6 +28,7 @@ class KillCat(GameWindow):
         )
 
         self.the_cat = cat
+        self.result_text: str = ""
 
         cat_dict = {"m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))}
         self.heading = pygame_gui.elements.UITextBox(
@@ -71,6 +74,21 @@ class KillCat(GameWindow):
             container=self,
         )
 
+    def show_result(self):
+        self.heading.kill()
+        self.death_entry_box.kill()
+        self.all_lives_check.kill()
+        self.done_button.kill()
+
+        self.death_entry_box = pygame_gui.elements.UITextBox(
+            self.result_text,
+            ui_scale(pygame.Rect((0, 20), (400, -1))),
+            object_id="#text_box_30_horizcenter",
+            manager=MANAGER,
+            container=self,
+            anchors={"centerx": "centerx"},
+        )
+
     def process_event(self, event):
         super().process_event(event)
 
@@ -85,9 +103,14 @@ class KillCat(GameWindow):
                     death_message = self.initial
                 if self.the_cat.status.is_leader:
                     if self.take_all:
-                        game.clan.leader_lives = 0
+                        lives_lost = game.clan.leader_lives
+
                     else:
-                        game.clan.leader_lives -= 1
+                        lives_lost = 1
+
+                    game.clan.leader_lives -= lives_lost
+                    if extra_text := check_stolen_vitality(self.the_cat, lives_lost):
+                        self.result_text = extra_text
 
                 if self.the_cat.status.alive_in_player_clan:
                     self.the_cat.die()
@@ -97,7 +120,10 @@ class KillCat(GameWindow):
                 update_sprite(self.the_cat)
                 game.all_screens[GameScreen.PROFILE].exit_screen()
                 game.all_screens[GameScreen.PROFILE].screen_switches()
-                self.kill()
+                if not self.result_text:
+                    self.kill()
+                else:
+                    self.show_result()
             elif event.ui_element == self.all_lives_check:
                 if self.all_lives_check.checked:
                     self.all_lives_check.uncheck()

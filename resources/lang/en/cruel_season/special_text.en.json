@@ -1,0 +1,10 @@
+{
+  "en": {
+    "stolen_vitality": {
+      "one": "With %{lead_name}'s revival, %{dead_name} drops dead.",
+      "many": "With %{lead_name}'s repeated revivals, %{dead_name} drop dead."
+    },
+    "stolen_vitality_failed": "The price could not be paid in full; %{lead_name} pays the rest.",
+    "stolen_vitality_history": "m_c paid the price for r_c's revival."
+  }
+}

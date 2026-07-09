@@ -8,6 +8,11 @@ dev_tools = false
 [cruel_season]
   card_limit = 12
 
+  # for specifying that a hyper-specific reaction should occur due to a card
+  [cruel_season.event]
+    # set to true to also kill a random cat when the leader dies
+    stolen_vitality = false
+
 # settings regarding relationship events, also called "interactions"
 [relationship]
   # sets the max amount of interactions a cat can have each moon

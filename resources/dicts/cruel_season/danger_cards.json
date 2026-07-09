@@ -13,5 +13,11 @@
       "relationship.deputy_envy_leader_influence": 3,
       "death_related.murder.deputy_prefer_leader": true
     }
+  },
+  "stolen_vitality": {
+    "card_art": "danger/death.png",
+    "modifiers": {
+      "cruel_season.event.stolen_vitality": true
+    }
   }
 }
