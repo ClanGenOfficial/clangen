@@ -142,6 +142,7 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
                 starting_height=self.starting_height,
                 anchors=self.anchors,
                 line_spacing=0.95,
+                visible=visible,
             )
             self.join_focus_sets(self.text_layer)
             self.text_layer.disable()

@@ -1,3 +1,4 @@
 {
-    "placeholder_example": ["conflicting_card1", "conflicting_card2"]
+    "clan_ranks": ["all_kittens", "all_apprentices", "all_elders"],
+    "placeholder_example1": ["origin_placeholder0", "danger_placeholder0"]
 }

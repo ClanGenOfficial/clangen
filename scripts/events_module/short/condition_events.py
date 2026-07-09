@@ -278,7 +278,7 @@ class Condition_Events:
                 if game.clan.game_mode == "classic"
                 else "condition_related.illness_chance"
             )
-            random_number = int(random.random() * get_config(game.clan, path))
+            random_number = int(random.random() * get_config(path))
             if (
                 not cat.dead
                 and not cat.is_ill()
@@ -363,10 +363,8 @@ class Condition_Events:
             else "condition_related.injury_chance"
         )
 
-        injury_chance = get_config(game.clan, path) - (
-            get_config(game.clan, "condition_related.war_injury_modifier")
-            if modify_for_war
-            else 0
+        injury_chance = get_config(path) - (
+            get_config("condition_related.war_injury_modifier") if modify_for_war else 0
         )
 
         random_number = int(random.random() * injury_chance)

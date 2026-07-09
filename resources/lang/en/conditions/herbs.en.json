@@ -103,6 +103,10 @@
         "catmint": {
             "one": "catmint pile",
             "many": "catmint piles"
+        },
+        "honey": {
+            "one": "dose of honey",
+            "many": "doses of honey"
         }
     }
 }

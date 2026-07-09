@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from random import choice
+from random import choice, choices, getrandbits, randint
 from re import sub
 from typing import Optional
 from uuid import uuid4
@@ -8,9 +8,14 @@ import pygame
 import pygame_gui
 
 from scripts.cat import save_load
-from scripts.cat.cats import Cat
+from scripts.cat.cats import Cat, create_cat
+from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup
 from scripts.cat.names import names
+from scripts.cat.status import Status
 from scripts.clan import Clan
+from scripts.clan_package.clan_names import get_possible_clan_names
+from scripts.clan_package.settings import set_clan_setting, save_clan_settings
+from scripts.config import get_config
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.game_structure import game, constants
 from scripts.game_structure.game import switch_get_value, Switch, game_setting_get
@@ -54,6 +59,7 @@ class ClanInfo:
     symbol: str = ""
     starting_season: str = "Newleaf"
     game_mode: str = "classic"
+    cruel_cards: list[str] = field(default_factory=list)
 
     def clear(self):
         """
@@ -69,6 +75,7 @@ class ClanInfo:
         self.symbol = ""
         self.starting_season = "Newleaf"
         self.game_mode = "classic"
+        self.cruel_cards = []
 
     def clear_cats(self):
         self.leader = None
@@ -87,6 +94,7 @@ class ClanInfo:
         self.symbol = saved_info["symbol"]
         self.starting_season = saved_info["starting_season"]
         self.game_mode = saved_info["game_mode"]
+        self.cruel_cards = saved_info["cruel_cards"]
 
     def get_dict(self) -> dict:
         """
@@ -103,6 +111,7 @@ class ClanInfo:
             "symbol": self.symbol,
             "starting_season": self.starting_season,
             "game_mode": self.game_mode,
+            "cruel_cards": self.cruel_cards,
         }
 
     def no_cats_chosen(self) -> bool:
@@ -114,23 +123,32 @@ class ClanInfo:
         )
 
     def has_minimum_cats(self) -> bool:
-        return (
-            self.leader
-            and self.deputy
-            and self.medicine_cat
-            and len(self.starting_members) >= 4
+        return len(self.get_all_cats()) >= get_config(
+            "clan_creation.minimum_membership",
+            creating_clan=True,
+            card_list_override=self.cruel_cards,
         )
 
     def has_maximum_cats(self) -> bool:
-        return (
-            self.leader
-            and self.deputy
-            and self.medicine_cat
-            and len(self.starting_members) >= 7
+        return len(self.get_all_cats()) >= get_config(
+            "clan_creation.maximum_membership",
+            creating_clan=True,
+            card_list_override=self.cruel_cards,
         )
 
     def has_high_ranks_filled(self) -> bool:
         return all([self.leader, self.deputy, self.medicine_cat])
+
+    def get_all_cats(self) -> list:
+        cat_list = self.starting_members.copy()
+        if self.leader:
+            cat_list.append(self.leader)
+        if self.deputy:
+            cat_list.append(self.deputy)
+        if self.medicine_cat:
+            cat_list.append(self.medicine_cat)
+
+        return cat_list
 
 
 class MakeClanScreenBase(Screens):
@@ -153,20 +171,23 @@ class MakeClanScreenBase(Screens):
             self.clan_info.update(switch_get_value(Switch.clan_creation_info))
 
         # Buttons that appear on every screen.
-        self.elements["menu_warning"] = pygame_gui.elements.UITextBox(
-            "screens.make_clan.menu_warning",
-            ui_scale(pygame.Rect((25, 25), (600, -1))),
-            object_id=get_text_box_theme("#text_box_22_horizleft"),
-            manager=MANAGER,
-        )
         self.elements["main_menu"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((25, 50), (153, 30))),
+            ui_scale(pygame.Rect((25, 25), (153, 30))),
             "buttons.main_menu",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             manager=MANAGER,
             object_id="@buttonstyles_squoval",
             starting_height=1,
         )
+
+        self.elements["menu_warning"] = pygame_gui.elements.UITextBox(
+            "screens.make_clan.menu_warning",
+            ui_scale(pygame.Rect((25, 0), (200, -1))),
+            object_id=get_text_box_theme("#text_box_22_horizleft_spacing_95"),
+            anchors={"top_target": self.elements["main_menu"]},
+            manager=MANAGER,
+        )
+
         self.elements["previous_step"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((253, 620), (147, 30))),
             "buttons.previous_step",
@@ -229,13 +250,75 @@ class MakeClanScreenBase(Screens):
             **self.clan_info.get_dict(),
         )
         game.clan.create_clan()
+
+        # i kind of think this should go somewhere else
+        if get_config("settings.force_enable.deputy"):
+            set_clan_setting("deputy", True)
+            save_clan_settings()
+
         game.cur_events_list.clear()
         game.herb_events_list.clear()
         game.clan.herb_supply.start_storage(len(self.clan_info.starting_members))
         game.clan.save_herb_supply(game.clan)
         game.clan.grief_strings.clear()
+        # find non-selected cats from the 12 generated starters
+        for c in switch_get_value(Switch.possible_cats):
+            if (
+                c not in self.clan_info.starting_members
+                and c != self.clan_info.leader
+                and c != self.clan_info.deputy
+                and c != self.clan_info.medicine_cat
+            ):
+                # change non-selected cats to outsiders
+                random_social = choice(
+                    [
+                        CatSocial.ROGUE,
+                        CatSocial.LONER,
+                        CatSocial.KITTYPET,
+                    ]
+                )
+                c.status.generate_new_status(self, social=random_social)
+                # random chance for cat to generate as dead
+                if randint(1, 3) == 1:
+                    c.die()
+                    c.status.change_current_moons_as(new_moons_as=randint(1, 10))
+
+                # renaming to fit outsider status
+                name_categories = [
+                    "silly_names",
+                    "human_names",
+                    "loner_names",
+                    "normal_prefixes",
+                ]
+                # defaults in case of error
+                weights = [1, 1, 1, 1]
+                # give kittypets a kittypet name
+                if random_social == CatSocial.KITTYPET:
+                    weights = constants.CONFIG["cat_name_controls"]["kittypet"]
+                    # check if the kittypets come with a pretty acc
+                    if bool(getrandbits(1)):
+                        c.pelt.accessory = (
+                            *c.pelt.accessory,
+                            choice(c.pelt.collar_accessories),
+                        )
+                if random_social == CatSocial.LONER:
+                    weights = constants.CONFIG["cat_name_controls"]["loner"]
+
+                if random_social == CatSocial.ROGUE:
+                    weights = constants.CONFIG["cat_name_controls"]["rogue"]
+
+                selected_category = choices(name_categories, weights, k=1)[0]
+                name = choice(names.names_dict[selected_category])
+                c.change_name(new_prefix=name, new_suffix="")
+
+                # add back to all_cats, cus they get removed during `create_clan()`
+                Cat.all_cats[c.ID] = c
+                Cat.all_cats_list.append(c)
+
         Cat.sort_cats()
         rebuild_top_menu_buttons()
+
+        switch_set_value(Switch.possible_cats, [])
 
     def random_biome_selection(self):
         # Select a random biome and background
@@ -247,13 +330,43 @@ class MakeClanScreenBase(Screens):
         return chosen_biome
 
     def random_clan_name(self):
-        clan_names = (
-            names.names_dict["normal_prefixes"] + names.names_dict["clan_prefixes"]
-        )
+        clan_names = get_possible_clan_names()
         if self.clan_info.display_name:
             clan_names.remove(self.clan_info.display_name)
 
         return choice(clan_names)
+
+    def random_card(self) -> str:
+        """
+        Returns a random cruel card ID
+        """
+        card = None
+
+        # check conflicts
+        i = 0
+        while (not card or self.card_has_conflicts(card)) and i < 20:
+            card = choice(
+                [
+                    c
+                    for c in list(constants.CRUEL_CARDS_ALL.keys())
+                    if c not in self.clan_info.cruel_cards
+                ]
+            )
+            i += 1
+
+        # `i` is just some extra protection so that we don't infinite while loop
+        # though we really SHOULDN'T end up with cards conflicting that much
+
+        return card
+
+    def card_has_conflicts(self, card_name):
+        for conflict_list in constants.CRUEL_CARDS_CONFLICTS.values():
+            if card_name in conflict_list and set(
+                self.clan_info.cruel_cards
+            ).intersection(set(conflict_list)):
+                return True
+
+        return False
 
     def get_camp_art_path(self, campnum) -> Optional[str]:
         if not campnum:
@@ -288,3 +401,10 @@ class MakeClanScreenBase(Screens):
             self.fullscreen_bgs[name] = screens_core.process_blur_bg(src)
 
         self.set_bg(name)
+
+    def get_config_during_creation(self, config_path):
+        return get_config(
+            config_path,
+            card_list_override=self.clan_info.cruel_cards,
+            creating_clan=True,
+        )
