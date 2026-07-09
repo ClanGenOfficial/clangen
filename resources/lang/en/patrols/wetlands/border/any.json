@@ -217,7 +217,7 @@
             "disaster",
             "new_cat"
         ],
-        "patrol_art": "backgrounds/gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},

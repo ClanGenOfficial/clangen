@@ -3267,7 +3267,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "backgrounds/gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -3477,7 +3477,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "backgrounds/gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -3941,7 +3941,7 @@
             "new_cat",
             "disaster"
         ],
-        "patrol_art": "backgrounds/gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -4149,7 +4149,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "backgrounds/gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -4357,7 +4357,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "backgrounds/fst_hunt_twolegplace",
+        "patrol_art": "backgrounds/fst_twolegplace",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},
