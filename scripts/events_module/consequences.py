@@ -1149,28 +1149,35 @@ def check_stolen_vitality(cat, lives_lost: int) -> Optional[str]:
             failed = True
             break
 
-    if len(cats_to_kill) > 1:
+    if len(cats_to_kill) > 0:
         cat_names = adjust_list_text([str(c.name) for c in cats_to_kill])
     else:
-        cat_names = str(cats_to_kill[0].name)
+        cat_names = None
 
     for c in cats_to_kill:
         c.die()
         c.history.add_death(
-            i18n.t("cruel_season.special_text.stolen_vitality_history"), other_cat=cat
+            i18n.t("cruel_season.special_text.stolen_vitality_sacrifice_history"),
+            other_cat=cat,
         )
-
-    text = i18n.t(
-        "cruel_season.special_text.stolen_vitality",
-        lead_name=str(cat.name),
-        dead_name=str(cat_names),
-        count=len(cats_to_kill),
-    )
+    text = ""
+    if cats_to_kill:
+        text += i18n.t(
+            "cruel_season.special_text.stolen_vitality_base",
+            lead_name=str(cat.name),
+            dead_name=str(cat_names),
+            count=len(cats_to_kill),
+        )
     if failed:
         text += " "
         text += i18n.t(
             "cruel_season.special_text.stolen_vitality_failed",
             lead_name=str(cat.name),
         )
+        for i in range(game.clan.leader_lives):
+            cat.history.add_death(
+                i18n.t("cruel_season.special_text.stolen_vitality_lead_history")
+            )
+        game.clan.leader_lives = 0
 
     return text

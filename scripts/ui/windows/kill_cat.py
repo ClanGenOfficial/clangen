@@ -109,6 +109,9 @@ class KillCat(GameWindow):
                         lives_lost = 1
 
                     game.clan.leader_lives -= lives_lost
+                    for i in range(lives_lost):
+                        self.the_cat.history.add_death(death_message)
+
                     if extra_text := check_stolen_vitality(self.the_cat, lives_lost):
                         self.result_text = extra_text
 
@@ -116,7 +119,9 @@ class KillCat(GameWindow):
                     self.the_cat.die()
                 else:
                     self.the_cat.die(grief_allowed=False)
-                self.the_cat.history.add_death(death_message)
+
+                if not self.the_cat.status.is_leader:  # leader already got history
+                    self.the_cat.history.add_death(death_message)
                 update_sprite(self.the_cat)
                 game.all_screens[GameScreen.PROFILE].exit_screen()
                 game.all_screens[GameScreen.PROFILE].screen_switches()

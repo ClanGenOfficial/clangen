@@ -15,7 +15,7 @@
     }
   },
   "stolen_vitality": {
-    "card_art": "danger/death.png",
+    "card_art": "danger/stolen_vitality.png",
     "modifiers": {
       "cruel_season.event.stolen_vitality": true
     }
