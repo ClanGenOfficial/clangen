@@ -218,24 +218,27 @@ Open your devices terminal and type in `ls`. Do not enter.
 
 ![searching terminal for mac](https://github.com/Honeycase/clangen/blob/docs-installing/docs-resources/assets/techhelp/MAC-terminal-search.png?raw=true)
 
-Find where your unzipped clangen source is held in finder. Put the clangen location after cd. For example, `ls Users/username/downloads/clangen`
+Find where your unzipped clangen source is held in finder. Put the clangen location after cd. For example, `ls /Users/username/Downloads/clangen`
 
 This is to check the path you're trying to apply is correct. You should get something similar to below:
 
 ![ls result](https://github.com/Honeycase/clangen/blob/docs-installing/docs-resources/assets/techhelp/MAC-ls-result.png?raw=true)
 
-Once confirmed that the path is correct, change the command from previous to have `cd`. For example, `cd Users/username/downloads/clangen`
+Once confirmed that the path is correct, change the command from previous to have `cd`. For example, `cd /Users/username/Downloads/clangen`
 
 Proceed to the Commands section below.
 
 ### PATH: Linux
 
-!!!to-do
-     images of the process for linux provided by a linux player?
+There are two ways to set your terminal to path with linux. You can either do it the [manual way](#path-mac), like detailed above (but use `/home` instead of `/Users`), or you can open the folder within the linux terminal.
 
-There are two ways to set your terminal to path with linux. You can either do it the [manual way](#path-mac), like detailed above, or you can open the folder within the linux terminal.
+For the manual method, you should get something like this, just like on Mac:
 
-Go to where your unzipped ClanGen source is located on your device, and open it until you get to its internal contents. Right click in an empty space within the file manager, and select open with terminal. It'll automatically open in the correct pathing.
+![open with terminal](https://github.com/rustykitty/clangen/blob/honey-guide/docs-resources/assets/techhelp/LINUX_ls.png?raw=true)
+
+For the automatic method, go to where your unzipped ClanGen source is located on your device, and open it until you get to its internal contents. Right click in an empty space within the file manager, and select open with terminal. It'll automatically open in the correct location; you don't need to use `cd`.
+
+![open with terminal](https://github.com/rustykitty/clangen/blob/honey-guide/docs-resources/assets/techhelp/LINUX_open_in_terminal.png?raw=true)
 
 ### Commands
 
@@ -289,10 +292,13 @@ You're not in path to do the command! Please closely follow the path section for
 
 **"The run.sh file just opens in a text editor instead of running."**
 
-!!! to-do
-     potential execute permissions guide created by a linux user?
+That means that the run.sh file doesn't have execute permissions, you'll have to grant permissions. Open the folder in your terminal, as described [above](#path-linux). Then copy and paste the following command and press enter:
 
-This has something to do with execute permissions, and you can search how to give a .sh file permissions on your browser.
+```sh
+chmod +x run.sh
+```
+
+Then try running the run.sh file again.
 
 For those who don't want to go through permissions, follow the manual way of opening the game.
 
@@ -313,7 +319,7 @@ Try to run the game normally with either the run file or `uv run main.py` instea
 
 ---
 
-**"'uv' is not recognized as an internal or external command'"**
+**"'uv' is not recognized as an internal or external command'"** or **"uv: command not found"**
 
 You either do not have UV installed, or you're using a version of ClanGen that requires a different dependency installer. Make sure to double check that you're on the correct version and that you did every step correctly.
 
