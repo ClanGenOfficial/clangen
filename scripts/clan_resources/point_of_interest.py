@@ -1,6 +1,6 @@
 from enum import StrEnum
 from random import choice
-from typing import Dict, Union, List
+from typing import Dict, Union, List, Literal
 
 import ujson
 
@@ -63,10 +63,20 @@ def add_poi(name, elements):
 
 def get_poi_save_dict():
     return {
-        "gathering": [name for name in _poi_names if name.startswith("gather_")],
-        "moonplace": [name for name in _poi_names if name.startswith("moon_")],
-        "terrain": [name for name in _poi_names if name.startswith("terrain_")],
+        "gathering": get_poi_by_category("gathering"),
+        "moonplace": get_poi_by_category("moonplace"),
+        "terrain": get_poi_by_category("terrain"),
     }
+
+
+def get_poi_by_category(category: Literal["gathering", "moonplace", "terrain"]):
+    if category == "gathering":
+        return [name for name in _poi_names if name.startswith("gather_")]
+    elif category == "moonplace":
+        return [name for name in _poi_names if name.startswith("moon_")]
+    elif category == "terrain":
+        return [name for name in _poi_names if name.startswith("terrain_")]
+    raise Exception("Tried to get POI from a category that doesn't exist!")
 
 
 def load_pois(save_data: Dict[str, List[str]]):
