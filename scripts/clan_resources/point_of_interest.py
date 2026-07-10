@@ -72,7 +72,7 @@ def add_poi(name, elements):
     if name.startswith("gather_"):
         _poi_by_category["gathering"].add(name)
     elif name.startswith("moon_"):
-        _poi_by_category["gathering"].add(name)
+        _poi_by_category["moonplace"].add(name)
     elif name.startswith("terrain_"):
         _poi_by_category["terrain"].add(name)
 
