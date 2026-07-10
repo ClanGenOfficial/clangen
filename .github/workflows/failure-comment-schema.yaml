@@ -1,7 +1,7 @@
 name: Failure Comment (Formatter)
 on:
   workflow_run:
-    workflows: ["Schema_Diff"]
+    workflows: ["schema-diff"]
     types: [completed]
 
 permissions:
