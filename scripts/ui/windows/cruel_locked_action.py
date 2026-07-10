@@ -27,6 +27,7 @@ class CruelLockedAction(GameWindow):
             line_spacing=1,
             manager=MANAGER,
             object_id="#text_box_30_horizcenter",
+            starting_height=self.layer,
             container=self,
             anchors={
                 "centerx": "centerx",
@@ -39,6 +40,7 @@ class CruelLockedAction(GameWindow):
             get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
+            starting_height=self.layer,
             container=self,
             anchors={"top_target": self.conflict_message},
         )

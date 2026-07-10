@@ -13,5 +13,19 @@
       "relationship.deputy_envy_leader_influence": 3,
       "death_related.murder.deputy_prefer_leader": true
     }
+  },
+  "plague_ridden": {
+    "card_art": "danger/forsaken.png",
+    "modifiers": {
+      "condition_related.med_infection_reduction": 0,
+      "condition_related.illness_outbreak_season": ["Leaf-bare", "Leaf-fall", "Greenleaf", "Newleaf"],
+      "condition_related.illness_percentage_max": 1.25
+    }
+  },
+  "stolen_vitality": {
+    "card_art": "danger/stolen_vitality.png",
+    "modifiers": {
+      "cruel_season.event.stolen_vitality": true
+    }
   }
 }
