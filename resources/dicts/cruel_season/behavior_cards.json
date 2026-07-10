@@ -24,7 +24,7 @@
     }
   },
   "kit_season": {
-    "card_art": "behavior/fate.png",
+    "card_art": "behavior/survival_of_fittest.png",
     "modifiers": {
       "pregnancy.birth_cooldown": 2,
       "pregnancy.primary_chance_mated": 20,
@@ -32,7 +32,7 @@
     }
   },
   "mouths_to_feed": {
-    "card_art": "behavior/fate.png",
+    "card_art": "behavior/survival_of_fittest.png",
     "modifiers": {
       "pregnancy.one_kit_possibility.young adult": 0,
       "pregnancy.one_kit_possibility.adult": 4,
