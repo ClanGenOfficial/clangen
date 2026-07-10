@@ -144,7 +144,7 @@
         },
         "duration": 4,
         "medicine_duration": 2,
-        "infectiousness": 15,
+        "infectiousness": 10,
         "risks": [
             {
                 "name": "torn pelt",
@@ -181,7 +181,7 @@
         },
         "duration": 3,
         "medicine_duration": 2,
-        "infectiousness": 30,
+        "infectiousness": 3,
         "risks": [
             {
                 "name": "yellowcough",
@@ -230,7 +230,7 @@
         },
         "duration": 3,
         "medicine_duration": 2,
-        "infectiousness": 15,
+        "infectiousness": 2,
         "risks": [
             {
                 "name": "whitecough",
@@ -444,7 +444,7 @@
         },
         "duration": 3,
         "medicine_duration": 2,
-        "infectiousness": 30,
+        "infectiousness": 10,
         "risks": [
             {
                 "name": "greencough",
@@ -494,7 +494,7 @@
         },
         "duration": 3,
         "medicine_duration": 3,
-        "infectiousness": 30,
+        "infectiousness": 6,
         "risks": [
             {
                 "name": "redcough",

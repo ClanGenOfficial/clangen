@@ -6,6 +6,7 @@ import i18n
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
 from scripts.cat.skills import SkillPath
+from scripts.config import get_config
 from scripts.game_structure import constants
 from scripts.clan_package.settings import get_clan_setting
 from scripts.clan_package.get_clan_cats import get_alive_clan_queens
@@ -75,13 +76,14 @@ class FreshkillPile:
                 total += v
             self.total_amount = total
         else:
+            amount = get_config("prey.start_amount")
             self.pile = {
-                "expires_in_4": constants.CONFIG["prey"]["start_amount"],
+                "expires_in_4": amount,
                 "expires_in_3": 0,
                 "expires_in_2": 0,
                 "expires_in_1": 0,
             }
-            self.total_amount = constants.CONFIG["prey"]["start_amount"]
+            self.total_amount = amount
         self.timeskip_feed = False
         self.nutrition_info = {}
         self.living_cats = []
