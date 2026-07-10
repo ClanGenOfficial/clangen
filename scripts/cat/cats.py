@@ -3369,6 +3369,15 @@ class Cat:
                 if check_cat.status.group_ID == self.status.group_ID
             ]
 
+        elif self.status.is_outsider:
+            # exclude driven off cats and cats that are not in the clan
+            sorted_specific_list = [
+                check_cat
+                for check_cat in sorted_specific_list
+                if check_cat is self
+                or check_cat.status.is_near(CatGroup.PLAYER_CLAN_ID)
+            ]
+
         if filter_func is not None:
             sorted_specific_list = [
                 check_cat
