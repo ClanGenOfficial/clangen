@@ -25,6 +25,7 @@ from scripts.events_module.consequences import (
     create_new_cat_block,
     gather_cat_objects,
     unpack_rel_block,
+    check_stolen_vitality,
 )
 from scripts.events_module.event_filters import filter_relationship_type, event_for_cat
 from scripts.clan_package.cotc import change_clan_reputation, change_clan_relations
@@ -542,7 +543,9 @@ class PatrolOutcome:
         catnames = []
         for _cat in cats_to_kill:
             if _cat.status.is_leader:
+                lives_lost = 0
                 if "all_lives" in used_extra_tags:
+                    lives_lost = game.clan.leader_lives
                     game.clan.leader_lives = 0
                     results.append(
                         event_text_adjust(
@@ -562,6 +565,7 @@ class PatrolOutcome:
                         )
                     )
                 else:
+                    lives_lost = 1
                     game.clan.leader_lives -= 1
                     results.append(
                         event_text_adjust(
@@ -570,6 +574,9 @@ class PatrolOutcome:
                             main_cat=_cat,
                         )
                     )
+                if extra_result := check_stolen_vitality(_cat, lives_lost):
+                    results.append(extra_result)
+
             else:
                 catnames.append(self._profile_link(_cat))
             # Kill Cat

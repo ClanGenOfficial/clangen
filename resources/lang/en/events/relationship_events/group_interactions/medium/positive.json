@@ -451,5 +451,48 @@
                 "amount": 10
             }
         ]
+    },
+    {
+        "id": "group_multicat_pos_polymatesmid",
+        "strings": [
+            "m_c, multi_cat went out to gather flowers for the nest together.",
+            "m_c, multi_cat found some pretty pebbles for each other.",
+            "m_c took multi_cat to stargaze.",
+            "m_c asked multi_cat out on a date to keep the romance alive.",
+            "m_c complimented multi_cat over and over again until they all couldn't stop purring."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "multi_cat": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "mates"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": true,
+                "values": [
+                    "romance"
+                ],
+                "amount": 10
+            }
+        ]
     }
 ]

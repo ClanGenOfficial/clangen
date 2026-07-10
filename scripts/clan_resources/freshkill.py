@@ -296,7 +296,7 @@ class FreshkillPile:
         :param list cats_to_feed: Cats to feed
         :param feed_high_rank_first: If True, feeds from high rank to low. If False, the reverse.
         """
-        feed_order = FEEDING_ORDER.copy()
+        feed_order = get_config("prey.feeding.order")
         if feed_high_rank_first:
             feed_order.reverse()
 
@@ -642,7 +642,6 @@ class FreshkillPile:
 
 ADDITIONAL_PREY = constants.CONFIG["prey"]["additional_prey"]
 CONDITION_INCREASE = constants.CONFIG["prey"]["condition_increase"]
-FEEDING_ORDER = constants.CONFIG["prey"]["feeding_order"]
 HUNTER_BONUS = constants.CONFIG["prey"]["hunter_bonus"]
 HUNTER_EXP_BONUS = constants.CONFIG["prey"]["hunter_exp_bonus"]
 FRESHKILL_EVENT_TRIGGER_FACTOR = constants.CONFIG["prey"]["base_event_trigger_factor"]
