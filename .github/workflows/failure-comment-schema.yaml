@@ -1,4 +1,4 @@
-name: Failure Comment (Formatter)
+name: Failure Comment (Schema)
 on:
   workflow_run:
     workflows: ["schema-diff"]
