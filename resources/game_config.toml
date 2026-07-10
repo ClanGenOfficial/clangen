@@ -861,8 +861,9 @@ dev_tools = false
   # the amount that a cat's prey requirement increases if the cat is sick/injured/pregnant
   condition_increase = 1
 
-  # the rank order in which cats will be fed
-  feeding_order = [
+  [prey.feeding]
+    # the rank order in which cats will be fed
+    order = [
           "newborn",
           "kitten",
           "queen/pregnant",
@@ -876,6 +877,21 @@ dev_tools = false
           "deputy",
           "leader"
       ]
+
+    # the feeding order the game will start with
+    starting_order = "low_rank"
+
+    # set to true to prevent the player from changing the feed order
+    lock_order = false
+
+    # the feeding priority the game will start with
+    starting_priority = ""
+
+    # set to true to prevent the player from changing the feed priority
+    lock_priority = false
+
+    # set to false to prevent the player from manually feeding cats
+    allow_manual_feeding = true
 
   [prey.text_nutrition]
       # nutrition % ranges and their corresponding text displays
