@@ -1458,13 +1458,15 @@ class OtherClan:
 
         :return: One of "ally", "neutral" or "hostile".
         """
-        if self.relations > 17:
-            return "ally"
-        elif 7 <= self.relations <= 17:
+        # makes sure that other clan relations can't surpass limit
+        if self.relations > get_config("reputation.other_clans.relation_cap"):
+            self.relations = get_config("reputation.other_clans.relation_cap")
+            
+        if self.relations <= get_config("reputation.other_clans.hostile"):
+            return "hostile"
+        elif self.relations <= get_config("reputation.other_clans.neutral"):
             return "neutral"
-        return "hostile"  # self.relations < 7
-    
-    # REWORK TO GAME_CONFIG
+        return "ally"
 
 
 class Afterlife:
@@ -1534,7 +1536,7 @@ class Afterlife:
     @stability.setter
     def stability(self, value):
         raise Exception(
-            "ERROR: Afterlife aggresstabilitysion cannot be set manually as it is meant to be calculated from the currently dead cats."
+            "ERROR: Afterlife stability cannot be set manually as it is meant to be calculated from the currently dead cats."
         )
 
     @property

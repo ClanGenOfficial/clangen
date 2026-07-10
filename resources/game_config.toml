@@ -947,11 +947,12 @@ dev_tools = false
 [reputation]
   # manages reputation quotas
   [reputation.other_clans]
-  # ranges for other clan reputation levels
+  # caps for other clan reputation levels
     relation_cap = 30
     ally = 30
     neutral = 17
     hostile = 7
+  #caps for outsider reputation levels
   [reputation.outsiders]
     relation_cap = 100
     welcoming = 100
