@@ -8,6 +8,11 @@ _poi_names = set()
 _poi_tags = set()
 
 _poi_by_tags = {}
+_poi_by_category = {
+    "gathering": set(),
+    "moonplace": set(),
+    "terrain": set(),
+}
 
 _undiscovered_poi_remaining = 3
 
@@ -52,6 +57,12 @@ def add_poi(name, elements):
     _poi_names.update([name])
     _poi_tags.update(elements["tags"])
     _poi_tags.update(tag.split(":", 1)[0] for tag in elements["tags"] if ":" in tag)
+    if name.startswith("gather_"):
+        _poi_by_category["gathering"].add(name)
+    elif name.startswith("moon_"):
+        _poi_by_category["gathering"].add(name)
+    elif name.startswith("terrain_"):
+        _poi_by_category["terrain"].add(name)
 
     global _poi_by_tags
     for tag in elements["tags"]:
@@ -70,13 +81,7 @@ def get_poi_save_dict():
 
 
 def get_poi_by_category(category: Literal["gathering", "moonplace", "terrain"]):
-    if category == "gathering":
-        return [name for name in _poi_names if name.startswith("gather_")]
-    elif category == "moonplace":
-        return [name for name in _poi_names if name.startswith("moon_")]
-    elif category == "terrain":
-        return [name for name in _poi_names if name.startswith("terrain_")]
-    raise Exception("Tried to get POI from a category that doesn't exist!")
+    return list(_poi_by_category[category])
 
 
 def get_random_poi_by_category(category: Literal["gathering", "moonplace", "terrain"]):
