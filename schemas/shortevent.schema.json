@@ -550,7 +550,8 @@
         "goldenrod",
         "poppy",
         "plantain",
-        "catmint"
+        "catmint",
+        "honey"
       ],
       "title": "Herb",
       "type": "string"
