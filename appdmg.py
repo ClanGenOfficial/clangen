@@ -1,6 +1,7 @@
 from pathlib import Path
 import plistlib
 
+
 def get_icon(app_path):
     app_path_obj = Path(app_path)
     plist_path = app_path_obj.joinpath("Contents", "Info.plist")
@@ -8,6 +9,7 @@ def get_icon(app_path):
         plist = plistlib.load(f)
     icon_name = plist["CFBundleIconFile"]
     return str(app_path_obj.joinpath("Contents", "Resources", icon_name))
+
 
 application = "dist/Clangen.app"
 badge_icon = get_icon(application)
