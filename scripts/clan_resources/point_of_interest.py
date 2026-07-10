@@ -79,6 +79,10 @@ def get_poi_by_category(category: Literal["gathering", "moonplace", "terrain"]):
     raise Exception("Tried to get POI from a category that doesn't exist!")
 
 
+def get_random_poi_by_category(category: Literal["gathering", "moonplace", "terrain"]):
+    return choice(get_poi_by_category(category))
+
+
 def load_pois(save_data: Dict[str, List[str]]):
     for category, data in save_data.items():
         for poi in data:
