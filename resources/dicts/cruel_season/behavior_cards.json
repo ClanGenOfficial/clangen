@@ -13,6 +13,16 @@
       "settings.force_enable.deputy": true
     }
   },
+  "survival_of_fittest": {
+    "card_art": "behavior/survival_of_fittest.png",
+    "modifiers": {
+      "prey.feeding.starting_order": "experience_first",
+      "prey.feeding.lock_order": true,
+      "prey.feeding.starting_priority": "hunter_first",
+      "prey.feeding.lock_priority": true,
+      "prey.feeding.allow_manual_feeding": false
+    }
+  }
   "kit_season": {
     "card_art": "behavior/survival_of_fittest.png",
     "modifiers": {
@@ -53,16 +63,6 @@
       "pregnancy.max_kit_possibility.adult": 3,
       "pregnancy.max_kit_possibility.senior adult": 2,
       "pregnancy.max_kit_possibility.senior": 0
-    }
-  },
-  "survival_of_fittest": {
-    "card_art": "behavior/survival_of_fittest.png",
-    "modifiers": {
-      "prey.feeding.starting_order": "experience_first",
-      "prey.feeding.lock_order": true,
-      "prey.feeding.starting_priority": "hunter_first",
-      "prey.feeding.lock_priority": true,
-      "prey.feeding.allow_manual_feeding": false
     }
   }
 }
