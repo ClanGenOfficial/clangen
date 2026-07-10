@@ -26,7 +26,7 @@ class PoiType(StrEnum):
     TERRAIN = "terrain"
 
 
-def get_poi_by_category(category: Literal["gathering", "moonplace", "terrain"]):
+def get_pois_by_category(category: Literal["gathering", "moonplace", "terrain"]):
     return list(_poi_by_category[category])
 
 
@@ -79,14 +79,14 @@ def add_poi(name, elements):
 
 def get_poi_save_dict():
     return {
-        "gathering": get_poi_by_category("gathering"),
-        "moonplace": get_poi_by_category("moonplace"),
-        "terrain": get_poi_by_category("terrain"),
+        "gathering": get_pois_by_category("gathering"),
+        "moonplace": get_pois_by_category("moonplace"),
+        "terrain": get_pois_by_category("terrain"),
     }
 
 
 def get_random_poi_by_category(category: Literal["gathering", "moonplace", "terrain"]):
-    return choice(get_poi_by_category(category))
+    return choice(get_pois_by_category(category))
 
 
 def load_pois(save_data: Dict[str, List[str]]):
