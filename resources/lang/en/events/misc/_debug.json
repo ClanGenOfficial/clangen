@@ -81,7 +81,7 @@
             "category": "gathering"
         },
         "frequency": 0,
-        "event_text": "visited moonplace - {POI/category/moonplace}"
+        "event_text": "visited gathering place - {POI/category/gathering}"
     },
     {
         "event_id": "debug_misc_poi_terrain",
@@ -95,6 +95,6 @@
             "category": "terrain"
         },
         "frequency": 0,
-        "event_text": "visited moonplace - {POI/category/moonplace}"
+        "event_text": "visited some random terrain - {POI/category/terrain}"
     }
 ]
