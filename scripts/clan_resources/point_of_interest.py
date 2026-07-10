@@ -51,6 +51,10 @@ def get_random_poi_by_tag(tag):
     return choice(_poi_by_tags.get(tag, ["MISSING_POI"]))
 
 
+def get_random_poi_by_category(category: Literal["gathering", "moonplace", "terrain"]):
+    return choice(get_pois_by_category(category))
+
+
 def add_poi(name, elements):
     """
     Add a new POI to the Clan
@@ -84,10 +88,6 @@ def get_poi_save_dict():
         "moonplace": get_pois_by_category("moonplace"),
         "terrain": get_pois_by_category("terrain"),
     }
-
-
-def get_random_poi_by_category(category: Literal["gathering", "moonplace", "terrain"]):
-    return choice(get_pois_by_category(category))
 
 
 def load_pois(save_data: Dict[str, List[str]]):
