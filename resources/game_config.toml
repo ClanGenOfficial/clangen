@@ -549,9 +549,6 @@ dev_tools = false
   # other clans will start with a random relation between the two numbers
   starting_clan_relation = [8, 12]
 
-  # outsider reputation
-  starting_outsider_reputation = 80
-
   # the "default" rank, the majority of cats will take this and random high ranks will originate from this rank
   majority_rank = "warrior"
 
