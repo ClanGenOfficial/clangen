@@ -16,6 +16,7 @@ from scripts.ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset
 
 
 from scripts.screens.make_clan_screens.MakeClanScreenBase import MakeClanScreenBase
+from scripts.ui.windows.cruel_locked_action import CruelLockedAction
 
 
 class ChooseCampScreen(MakeClanScreenBase):
@@ -135,15 +136,27 @@ class ChooseCampScreen(MakeClanScreenBase):
                 self.selected_camp_tab = 4
                 self.refresh_selected_camp()
             elif event.ui_element == self.tabs["newleaf_tab"]:
+                if self.get_config_during_creation("seasons.lock_season"):
+                    CruelLockedAction()
+                    return True
                 self.clan_info.starting_season = "Newleaf"
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.tabs["greenleaf_tab"]:
+                if self.get_config_during_creation("seasons.lock_season"):
+                    CruelLockedAction()
+                    return True
                 self.clan_info.starting_season = "Greenleaf"
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.tabs["leaf-fall_tab"]:
+                if self.get_config_during_creation("seasons.lock_season"):
+                    CruelLockedAction()
+                    return True
                 self.clan_info.starting_season = "Leaf-fall"
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.tabs["leaf-bare_tab"]:
+                if self.get_config_during_creation("seasons.lock_season"):
+                    CruelLockedAction()
+                    return True
                 self.clan_info.starting_season = "Leaf-bare"
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.elements["random_background"]:
@@ -192,19 +205,16 @@ class ChooseCampScreen(MakeClanScreenBase):
         elif self.clan_info.biome == "Beach":
             self.elements["beach_biome"].disable()
 
+        config_season = self.get_config_during_creation("seasons.force_starting_season")
+        if config_season:
+            self.clan_info.starting_season = config_season
+
         # enable/disable season buttons
         self.tabs["newleaf_tab"].enable()
         self.tabs["greenleaf_tab"].enable()
         self.tabs["leaf-fall_tab"].enable()
         self.tabs["leaf-bare_tab"].enable()
-        if self.clan_info.starting_season == "Newleaf":
-            self.tabs["newleaf_tab"].disable()
-        elif self.clan_info.starting_season == "Greenleaf":
-            self.tabs["greenleaf_tab"].disable()
-        elif self.clan_info.starting_season == "Leaf-fall":
-            self.tabs["leaf-fall_tab"].disable()
-        elif self.clan_info.starting_season == "Leaf-bare":
-            self.tabs["leaf-bare_tab"].disable()
+        self.tabs[f"{self.clan_info.starting_season.lower()}_tab"].disable()
 
         if self.clan_info.biome and self.selected_camp_tab:
             self.elements["next_step"].enable()

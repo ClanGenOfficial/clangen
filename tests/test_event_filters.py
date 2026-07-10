@@ -199,6 +199,9 @@ class TestEventFilters(unittest.TestCase):
 
 class TestPointsOfInterest(unittest.TestCase):
     def setUp(self):
+        prior_clan = game.clan
+        self.addCleanup(setattr, game, "clan", prior_clan)
+
         game.clan = Clan()
         game.clan.biome = "Forest"
         game.clan.override_biome = False

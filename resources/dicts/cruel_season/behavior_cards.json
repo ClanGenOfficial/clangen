@@ -6,11 +6,63 @@
     }
   },
   "fated_paths": {
-    "card_art": "behavior/fate.png",
+    "card_art": "behavior/resolute.png",
     "modifiers": {
       "ranks.allow_manual": false,
       "mates.allow_manual": false,
       "settings.force_enable.deputy": true
+    }
+  },
+  "survival_of_fittest": {
+    "card_art": "behavior/survival_of_fittest.png",
+    "modifiers": {
+      "prey.feeding.starting_order": "experience_first",
+      "prey.feeding.lock_order": true,
+      "prey.feeding.starting_priority": "hunter_first",
+      "prey.feeding.lock_priority": true,
+      "prey.feeding.allow_manual_feeding": false
+    }
+  },
+  "kit_season": {
+    "card_art": "behavior/fate.png",
+    "modifiers": {
+      "pregnancy.birth_cooldown": 2,
+      "pregnancy.primary_chance_mated": 20,
+      "pregnancy.primary_chance_unmated": 40
+    }
+  },
+  "mouths_to_feed": {
+    "card_art": "behavior/fate.png",
+    "modifiers": {
+      "pregnancy.one_kit_possibility.young adult": 0,
+      "pregnancy.one_kit_possibility.adult": 4,
+      "pregnancy.one_kit_possibility.senior adult": 4,
+      "pregnancy.one_kit_possibility.senior": 2,
+
+      "pregnancy.two_kit_possibility.young adult": 2,
+      "pregnancy.two_kit_possibility.adult": 5,
+      "pregnancy.two_kit_possibility.senior adult": 5,
+      "pregnancy.two_kit_possibility.senior": 2,
+
+      "pregnancy.three_kit_possibility.young adult": 9,
+      "pregnancy.three_kit_possibility.adult": 11,
+      "pregnancy.three_kit_possibility.senior adult": 8,
+      "pregnancy.three_kit_possibility.senior": 3,
+
+      "pregnancy.four_kit_possibility.young adult": 17,
+      "pregnancy.four_kit_possibility.adult": 16,
+      "pregnancy.four_kit_possibility.senior adult": 8,
+      "pregnancy.four_kit_possibility.senior": 1,
+
+      "pregnancy.five_kit_possibility.young adult": 15,
+      "pregnancy.five_kit_possibility.adult": 7,
+      "pregnancy.five_kit_possibility.senior adult": 5,
+      "pregnancy.five_kit_possibility.senior": 0,
+
+      "pregnancy.max_kit_possibility.young adult": 12,
+      "pregnancy.max_kit_possibility.adult": 3,
+      "pregnancy.max_kit_possibility.senior adult": 2,
+      "pregnancy.max_kit_possibility.senior": 0
     }
   }
 }

@@ -1,8 +1,6 @@
 {
   "en": {
-    "environment_placeholder0": "Environment Placeholder 1",
-    "environment_placeholder1": "Environment Placeholder 2",
-    "environment_placeholder2": "Environment Placeholder 3",
+    "lean_meat": "Lean Meat",
     "forsaken": "Forsaken",
     "for_the_throne": "Anything For The Throne",
     "fated_paths": "Fated Paths",
@@ -10,6 +8,17 @@
     "resolute": "Resolute",
     "all_kittens": "Small Paws",
     "all_apprentices": "Young Hearts",
-    "all_elders": "Old Bones"
+    "all_elders": "Old Bones",
+    "stolen_vitality": "Stolen Vitality",
+    "survival_of_fittest": "Survival Of The Fittest",
+    "kit_season": "Kit Season,",
+    "mouths_to_feed": "Mouths To Feed",
+    "plague_ridden": "Plague-ridden",
+    "one_cat": "Lone Steps",
+    "barren_stocks": "Barren Stockpiles",
+    "always_newleaf": "Neverending Pollen",
+    "always_greenleaf": "Neverending Heat",
+    "always_leaf-fall": "Neverending Harvest",
+    "always_leaf-bare": "Neverending Frost"
   }
 }

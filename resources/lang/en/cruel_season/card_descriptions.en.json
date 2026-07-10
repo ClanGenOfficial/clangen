@@ -1,15 +1,24 @@
 {
   "en": {
-    "environment_placeholder0": "this is placeholder mewoowowow moewo mew meow mewowee moew",
-    "environment_placeholder1": "this is placeholder mewoowowow moewo mew meow mewowee moew",
-    "environment_placeholder2": "this is placeholder mewoowowow moewo mew meow mewowee moew",
+    "lean_meat": "The fresh-kill has gone scrawny and thin. All cats will need to eat more prey to survive.",
     "forsaken": "The stars have turned away. Leaders will only be given one life.",
-    "resolute": "The deputy stands firm on their goals: duration before warrior focus can change is doubled.",
     "for_the_throne": "Ambition rules. Deputies are more likely to murder the leader.",
+    "resolute": "The deputy stands firm in their goals: duration before warrior focus can change is doubled.",
     "fated_paths": "Pawsteps are placed according to Silverpelt's design. Mates and ranks cannot be changed manually.",
     "public_enemy": "The other Clans do not welcome new neighbors. All Clans will start as hostile.",
     "all_kittens": "The Clan begins with only kittens. What left this group all alone in the world?",
     "all_apprentices": "The Clan begins with only apprentices. Young and alone, how will they grow?",
-    "all_elders": "The Clan begins with only elders. How long will they last?"
+    "all_elders": "The Clan begins with only elders. How long will they last?",
+    "stolen_vitality": "To create something, something of equal value must be lost. When a leader is revived, a random Clanmate will die in their place.",
+    "survival_of_fittest": "The strongest deserve the most. Feeding order is locked at Experienced First. Feeding priority is locked at Hunters. Selective manual feeding is disabled.",
+    "kit_season": "The Clan's ranks are ever growing, perhaps more than is sustainable. Cats are more likely to have kits.",
+    "mouths_to_feed": "Litters are likely to be larger. Will the Clan be able to provide for all its kits?",
+    "plague_ridden": "Despite the efforts of the Clan, illness has made its home here. Disease and pest spread cannot be prevented by medicine cats.",
+    "one_cat": "A single cat wanders the world, searching for fellowship. The Clan will begin with one member.",
+    "barren_stocks": "No one planned ahead. The Clan begins without any herbs or fresh-kill.",
+    "always_newleaf": "The world always feels like it's just waking up into newleaf.",
+    "always_greenleaf": "There's no escape from the sweltering heat of greenleaf.",
+    "always_leaf-fall": "The leaves are perpetually the oranges and yellows of leaf-fall.",
+    "always_leaf-bare": "The lack of resources that accompany leaf-bare never seem to relent."
   }
 }
