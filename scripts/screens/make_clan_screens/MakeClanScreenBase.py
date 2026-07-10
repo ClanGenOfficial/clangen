@@ -139,15 +139,19 @@ class ClanInfo:
     def has_high_ranks_filled(self) -> bool:
         return all([self.leader, self.deputy, self.medicine_cat])
 
-    def get_all_cats(self) -> list:
-        cat_list = self.starting_members.copy()
+    def get_high_ranks(self) -> list:
+        cat_list = []
         if self.leader:
             cat_list.append(self.leader)
         if self.deputy:
             cat_list.append(self.deputy)
         if self.medicine_cat:
             cat_list.append(self.medicine_cat)
+        return cat_list
 
+    def get_all_cats(self) -> list:
+        cat_list = self.starting_members.copy()
+        cat_list.extend(self.get_high_ranks())
         return cat_list
 
 

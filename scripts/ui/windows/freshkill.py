@@ -42,7 +42,7 @@ class FreshkillManagementWindow(GameWindow):
         self.open_view = None
         self.log = None
         self.low_nutrition_cats = None
-        self.prey_requirement = constants.CONFIG["prey"]["prey_requirement"]
+        self.prey_requirement = get_config("prey.prey_requirement")
         self.feeding_order = get_config("prey.feeding.order")
         self.possible_priorities = ["hunter_first", "sick_injured_first"]
         self.possible_orders = [
