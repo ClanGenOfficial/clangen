@@ -14,7 +14,7 @@
     }
   },
   "enmity": {
-    "card_art": "ADD CARD ART WHEN MERGED",
+    "card_art": "behavior/resolute.png",
     "modifiers": {
       "reputation.other_clans.relation_cap": 7,
       "clan_creation.starting_clan_relation": [1, 7]
