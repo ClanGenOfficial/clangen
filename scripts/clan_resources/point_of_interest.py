@@ -26,6 +26,10 @@ class PoiType(StrEnum):
     TERRAIN = "terrain"
 
 
+def get_poi_by_category(category: Literal["gathering", "moonplace", "terrain"]):
+    return list(_poi_by_category[category])
+
+
 def get_poi_names_set():
     return _poi_names
 
@@ -57,12 +61,6 @@ def add_poi(name, elements):
     _poi_names.update([name])
     _poi_tags.update(elements["tags"])
     _poi_tags.update(tag.split(":", 1)[0] for tag in elements["tags"] if ":" in tag)
-    if name.startswith("gather_"):
-        _poi_by_category["gathering"].add(name)
-    elif name.startswith("moon_"):
-        _poi_by_category["gathering"].add(name)
-    elif name.startswith("terrain_"):
-        _poi_by_category["terrain"].add(name)
 
     global _poi_by_tags
     for tag in elements["tags"]:
@@ -71,6 +69,13 @@ def add_poi(name, elements):
         else:
             _poi_by_tags[tag] = [name]
 
+    if name.startswith("gather_"):
+        _poi_by_category["gathering"].add(name)
+    elif name.startswith("moon_"):
+        _poi_by_category["gathering"].add(name)
+    elif name.startswith("terrain_"):
+        _poi_by_category["terrain"].add(name)
+
 
 def get_poi_save_dict():
     return {
@@ -78,10 +83,6 @@ def get_poi_save_dict():
         "moonplace": get_poi_by_category("moonplace"),
         "terrain": get_poi_by_category("terrain"),
     }
-
-
-def get_poi_by_category(category: Literal["gathering", "moonplace", "terrain"]):
-    return list(_poi_by_category[category])
 
 
 def get_random_poi_by_category(category: Literal["gathering", "moonplace", "terrain"]):
