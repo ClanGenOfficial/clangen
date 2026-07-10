@@ -1,12 +1,26 @@
-
-# set to true to force the season to be locked at the Clan's starting_season
-lock_season = false
-
 # whether or not development tools are disabled
 dev_tools = false
 
+[seasons]
+  # set to true to force the season to be locked at the Clan's starting_season
+  lock_season = false
+
+  # sets the starting season
+  force_starting_season = false
+
+  # the possible seasons, in order
+  calendar = ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"]
+
+  # how long each season lasts
+  length = 3
+
 [cruel_season]
   card_limit = 12
+
+  # for specifying that a hyper-specific reaction should occur due to a card
+  [cruel_season.event]
+    # set to true to also kill a random cat when the leader dies
+    stolen_vitality = false
 
 # settings regarding relationship events, also called "interactions"
 [relationship]
@@ -531,6 +545,14 @@ dev_tools = false
   illness_chance = 250
   classic_illness_chance = 500
 
+  # how much each medicine cat reduces the chance of infection, higher number is better
+  med_infection_reduction = 10
+  # the seasons in which illnesses can spread. Fleas will always be able to spread in all seasons.
+  illness_outbreak_season = ["Leaf-bare", "Leaf-fall"]
+  # if there are more sick cats than this percentage of healthy cats then further outbreaks are prevented
+  # for example: 2 sick cats and 4 healthy cats. 25% of 4 is 1 and there are 2 sick cats. 2 is more than 1, so no illness can spread
+  illness_percentage_max = 0.25
+
   # 5/chance (for most personalities) or 15/chance (for some personalities) an injury will occur 
   classic_injury_chance = 450
   injury_chance = 250
@@ -747,6 +769,9 @@ dev_tools = false
 
 [clan_resources]
   [clan_resources.herbs]
+    # set to True if the Clan should begin with no herbs
+    empty_starting_storage = false
+
     # Clan size * required_herbs_per_cat / adequate number will determine adequate supply qualifier.
     # Clan size * required_herbs_per_cat * excess number will determine excess supply qualifier
     required_herbs_per_cat = 1
@@ -836,8 +861,9 @@ dev_tools = false
   # the amount that a cat's prey requirement increases if the cat is sick/injured/pregnant
   condition_increase = 1
 
-  # the rank order in which cats will be fed
-  feeding_order = [
+  [prey.feeding]
+    # the rank order in which cats will be fed
+    order = [
           "newborn",
           "kitten",
           "queen/pregnant",
@@ -851,6 +877,21 @@ dev_tools = false
           "deputy",
           "leader"
       ]
+
+    # the feeding order the game will start with
+    starting_order = "low_rank"
+
+    # set to true to prevent the player from changing the feed order
+    lock_order = false
+
+    # the feeding priority the game will start with
+    starting_priority = ""
+
+    # set to true to prevent the player from changing the feed priority
+    lock_priority = false
+
+    # set to false to prevent the player from manually feeding cats
+    allow_manual_feeding = true
 
   [prey.text_nutrition]
       # nutrition % ranges and their corresponding text displays

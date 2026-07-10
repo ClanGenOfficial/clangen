@@ -76,9 +76,10 @@
         youngest_first = false
         oldest_first = false
         hungriest_first = false
+        experience_first = false
+
         hunter_first = false
         sick_injured_first = false
-        experience_first = false
 
         ration_prey = false
         auto_feed = true

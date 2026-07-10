@@ -37,5 +37,22 @@
       },
       "clan_creation.majority_rank": "elder"
     }
+  },
+  "one_cat": {
+    "card_art": "origin/kitten.png",
+    "modifiers": {
+      "clan_creation.minimum_membership": 1,
+      "clan_creation.maximum_membership": 1,
+      "clan_creation.ranks_needed.leader": false,
+      "clan_creation.ranks_needed.deputy": false,
+      "clan_creation.ranks_needed.medicine_cat": false
+    }
+  },
+  "barren_stocks": {
+    "card_art": "origin/public_enemy.png",
+    "modifiers": {
+      "prey.start_amount": 0,
+      "clan_resources.herbs.empty_starting_storage": true
+    }
   }
 }

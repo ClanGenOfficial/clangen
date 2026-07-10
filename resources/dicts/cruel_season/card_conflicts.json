@@ -1,4 +1,5 @@
 {
     "clan_ranks": ["all_kittens", "all_apprentices", "all_elders"],
-    "placeholder_example1": ["origin_placeholder0", "danger_placeholder0"]
+    "leader_life": ["forsaken", "stolen_vitality"],
+    "seasons": ["always_newleaf", "always_greenleaf", "always_leaf-fall", "always_leaf-bare"]
 }
