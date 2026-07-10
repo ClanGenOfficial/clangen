@@ -95,9 +95,9 @@
     {
         "id": "group_multicat_pos_polymateshigh",
         "strings": [
-            "m_c gives multi_cat presents to show {PRONOUN/m_c/poss} affection.",
-            "m_c declares {PRONOUN/m_c/poss} love for multi_cat in the middle of camp.",
-            "m_c, multi_cat talk about having kits."
+            "m_c gave multi_cat presents to show {PRONOUN/m_c/poss} affection.",
+            "m_c declared {PRONOUN/m_c/poss} love for multi_cat in the middle of camp.",
+            "m_c, multi_cat talked about having kits."
         ],
         "involved_cats": {
             "m_c": {},
