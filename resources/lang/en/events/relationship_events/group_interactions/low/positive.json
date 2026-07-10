@@ -95,9 +95,9 @@
     {
         "id": "group_multicat_pos_polymateslow",
         "strings": [
-            "m_c, multi_cat share prey and stories of each other's days.",
-            "m_c, multi_cat are reluctant to leave their shared nest and start the day.",
-            "multi_cat are left in fits of giggles at m_c's joke."
+            "m_c, multi_cat shared prey and stories of each other's days.",
+            "m_c, multi_cat were reluctant to leave their shared nest and start the day.",
+            "multi_cat were left in fits of giggles at m_c's joke."
         ],
         "involved_cats": {
             "m_c": {},
