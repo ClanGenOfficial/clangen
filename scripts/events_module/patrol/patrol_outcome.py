@@ -11,6 +11,7 @@ import i18n
 import pygame
 
 from scripts.cat.personality import Personality
+from scripts.config import get_config
 from scripts.events_module.future.prep_and_trigger import prep_future_event
 from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import constants
@@ -36,7 +37,6 @@ from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import (
     ADDITIONAL_PREY,
-    PREY_REQUIREMENT,
     HUNTER_EXP_BONUS,
     HUNTER_BONUS,
     FRESHKILL_ACTIVE,
@@ -820,7 +820,9 @@ class PatrolOutcome:
         if not self.prey or game.clan.game_mode == "classic":
             return ""
 
-        basic_amount = PREY_REQUIREMENT[CatRank.WARRIOR] + ADDITIONAL_PREY
+        basic_amount = (
+            get_config("prey.prey_requirement")[CatRank.WARRIOR] + ADDITIONAL_PREY
+        )
 
         prey_types = {
             "very_small": basic_amount / 2,
