@@ -7,7 +7,10 @@ from scripts.cat.constants import BACKSTORIES
 from scripts.cat.personality import Personality
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
 from scripts.cat.enums import CatRank, CatAge, CatCompatibility, CatGroup, CatStanding
-from scripts.clan_resources.point_of_interest import get_poi_names_set, get_poi_tags_set
+from scripts.clan_resources.point_of_interest import (
+    get_poi_names_set,
+    get_poi_tags_set,
+)
 from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
     RelationshipConstraintDict,
@@ -250,6 +253,10 @@ def event_for_poi(pois: dict[str, list]) -> bool:
 
     if "tags" in pois:
         has_matching_tags = not set(pois.get("tags", [])).isdisjoint(get_poi_tags_set())
+
+    if "category" in pois:
+        return True
+
     return has_matching_name or has_matching_tags
 
 
