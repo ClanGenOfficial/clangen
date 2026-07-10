@@ -16,5 +16,11 @@
     "modifiers": {
       "mod_name": 1
     }
+  },
+  "stranger_danger": {
+    "card_art": "environment/tainted.png",
+    "modifiers": {
+      "outsiders.max_reputation": 29
+    }
   }
 }
