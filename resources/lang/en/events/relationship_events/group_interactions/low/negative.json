@@ -191,8 +191,8 @@
         "id": "group_multicat_neg_polymateslow",
         "strings": [
             "m_c left camp without telling multi_cat where {PRONOUN/m_c/subject} {VERB/m_c/were/was} going.",
-            "m_c was the last one to leave the nest, but multi_cat finds it messy and unmade.",
-            "multi_cat finds m_c has chosen a piece of prey and tucked in without asking what they'd like from the pile."
+            "m_c was the last one to leave the nest, but multi_cat finds it messy and unkempt.",
+            "multi_cat found m_c had chosen a piece of prey and tucked in without asking what they'd like from the pile."
         ],
         "involved_cats": {
             "m_c": {},
