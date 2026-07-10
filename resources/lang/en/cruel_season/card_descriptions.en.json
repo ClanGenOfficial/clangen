@@ -1,17 +1,16 @@
 {
   "en": {
-    "environment_placeholder0": "this is placeholder mewoowowow moewo mew meow mewowee moew",
-    "environment_placeholder1": "this is placeholder mewoowowow moewo mew meow mewowee moew",
-    "environment_placeholder2": "this is placeholder mewoowowow moewo mew meow mewowee moew",
+    "lean_meat": "The fresh-kill has gone scrawny and thin. All cats will need to eat more prey to survive.",
     "forsaken": "The stars have turned away. Leaders will only be given one life.",
-    "resolute": "The deputy stands firm on their goals: duration before warrior focus can change is doubled.",
     "for_the_throne": "Ambition rules. Deputies are more likely to murder the leader.",
+    "resolute": "The deputy stands firm in their goals: duration before warrior focus can change is doubled.",
     "fated_paths": "Pawsteps are placed according to Silverpelt's design. Mates and ranks cannot be changed manually.",
     "public_enemy": "The other Clans do not welcome new neighbors. All Clans will start as hostile.",
     "all_kittens": "The Clan begins with only kittens. What left this group all alone in the world?",
     "all_apprentices": "The Clan begins with only apprentices. Young and alone, how will they grow?",
     "all_elders": "The Clan begins with only elders. How long will they last?",
     "plague_ridden": "Despite the efforts of the Clan, illness has made its home here. Disease and pest spread cannot be prevented by medicine cats.",
-    "one_cat": "A single cat wanders the world, searching for fellowship. The Clan will begin with one member."
+    "one_cat": "A single cat wanders the world, searching for fellowship. The Clan will begin with one member.",
+    "barren_stocks": "No one planned ahead. The Clan begins without any herbs or fresh-kill."
   }
 }
