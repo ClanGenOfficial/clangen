@@ -611,6 +611,7 @@ dev_tools = false
 [outsiders]
   max_reputation = 100
   min_reputation = 0
+  starting_reputation = 80
 
   [outsiders.outside_ex]
     # base possible experience gain for cats outside the clan
