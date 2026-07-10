@@ -181,7 +181,7 @@
         },
         "duration": 3,
         "medicine_duration": 2,
-        "infectiousness": 8,
+        "infectiousness": 3,
         "risks": [
             {
                 "name": "yellowcough",
@@ -494,7 +494,7 @@
         },
         "duration": 3,
         "medicine_duration": 3,
-        "infectiousness": 3,
+        "infectiousness": 6,
         "risks": [
             {
                 "name": "redcough",
