@@ -952,9 +952,3 @@ dev_tools = false
     ally = 30
     neutral = 17
     hostile = 7
-  #caps for outsider reputation levels
-  [reputation.outsiders]
-    relation_cap = 100
-    welcoming = 100
-    neutral = 70
-    hostile = 29
