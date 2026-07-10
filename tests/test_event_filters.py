@@ -11,6 +11,7 @@ from scripts.clan_resources.point_of_interest import (
     get_poi_tags_set,
     clear_pois,
     generate_and_add_new_poi,
+    get_pois_by_category,
 )
 
 try:
@@ -232,6 +233,10 @@ class TestPointsOfInterest(unittest.TestCase):
         self.assertIn("prey", get_poi_tags_set())
         self.assertNotIn("fish", get_poi_tags_set())
 
+        self.assertIn("test_name", get_pois_by_category("gathering"))
+        self.assertNotIn("test_name", get_pois_by_category("moonplace"))
+        self.assertNotIn("test_name", get_pois_by_category("terrain"))
+
     def test_clear_pois(self):
         poi_to_add = {
             "test_name": {
@@ -357,6 +362,7 @@ class TestPointsOfInterest(unittest.TestCase):
             "empty all": {"name": [], "tags": []},
             "empty name": {"name": [], "tags": ["water"]},
             "empty tags": {"name": ["test_name"], "tags": []},
+            "match category": {"category": "gathering"},
         }
 
         for title, event_poi in combinations.items():
