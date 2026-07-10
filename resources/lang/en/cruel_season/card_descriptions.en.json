@@ -10,6 +10,7 @@
     "public_enemy": "The other Clans do not welcome new neighbors. All Clans will start as hostile.",
     "all_kittens": "The Clan begins with only kittens. What left this group all alone in the world?",
     "all_apprentices": "The Clan begins with only apprentices. Young and alone, how will they grow?",
-    "all_elders": "The Clan begins with only elders. How long will they last?"
+    "all_elders": "The Clan begins with only elders. How long will they last?",
+    "survival_of_fittest": "The strongest deserve the most. Feeding order is locked at Experienced First. Feeding priority is locked at Hunters. Manual feeding is disabled."
   }
 }

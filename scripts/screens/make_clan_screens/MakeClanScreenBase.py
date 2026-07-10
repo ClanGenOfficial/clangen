@@ -251,11 +251,6 @@ class MakeClanScreenBase(Screens):
         )
         game.clan.create_clan()
 
-        # i kind of think this should go somewhere else
-        if get_config("settings.force_enable.deputy"):
-            set_clan_setting("deputy", True)
-            save_clan_settings()
-
         game.cur_events_list.clear()
         game.herb_events_list.clear()
         game.clan.herb_supply.start_storage(len(self.clan_info.starting_members))

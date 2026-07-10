@@ -72,6 +72,7 @@ class GameWindow(UIWindow):
                 scale_rect,
                 get_box(BoxStyles.ROUNDED_BOX, scale_rect.size),
                 starting_height=self.layer,
+                object_id="#window_image",
                 manager=MANAGER,
             )
 

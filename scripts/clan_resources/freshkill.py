@@ -6,6 +6,7 @@ import i18n
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
 from scripts.cat.skills import SkillPath
+from scripts.config import get_config
 from scripts.game_structure import constants
 from scripts.clan_package.settings import get_clan_setting
 from scripts.clan_package.get_clan_cats import get_alive_clan_queens
@@ -293,7 +294,7 @@ class FreshkillPile:
         :param list cats_to_feed: Cats to feed
         :param feed_high_rank_first: If True, feeds from high rank to low. If False, the reverse.
         """
-        feed_order = FEEDING_ORDER.copy()
+        feed_order = get_config("prey.feeding.order")
         if feed_high_rank_first:
             feed_order.reverse()
 
@@ -639,7 +640,6 @@ class FreshkillPile:
 ADDITIONAL_PREY = constants.CONFIG["prey"]["additional_prey"]
 PREY_REQUIREMENT = constants.CONFIG["prey"]["prey_requirement"]
 CONDITION_INCREASE = constants.CONFIG["prey"]["condition_increase"]
-FEEDING_ORDER = constants.CONFIG["prey"]["feeding_order"]
 HUNTER_BONUS = constants.CONFIG["prey"]["hunter_bonus"]
 HUNTER_EXP_BONUS = constants.CONFIG["prey"]["hunter_exp_bonus"]
 FRESHKILL_EVENT_TRIGGER_FACTOR = constants.CONFIG["prey"]["base_event_trigger_factor"]

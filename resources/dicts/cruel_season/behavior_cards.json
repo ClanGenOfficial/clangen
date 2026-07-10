@@ -6,11 +6,21 @@
     }
   },
   "fated_paths": {
-    "card_art": "behavior/fate.png",
+    "card_art": "behavior/resolute.png",
     "modifiers": {
       "ranks.allow_manual": false,
       "mates.allow_manual": false,
       "settings.force_enable.deputy": true
+    }
+  },
+  "survival_of_fittest": {
+    "card_art": "behavior/survival_of_fittest.png",
+    "modifiers": {
+      "prey.feeding.starting_order": "experience_first",
+      "prey.feeding.lock_order": true,
+      "prey.feeding.starting_priority": "hunter_first",
+      "prey.feeding.lock_priority": true,
+      "prey.feeding.allow_manual_feeding": false
     }
   }
 }
