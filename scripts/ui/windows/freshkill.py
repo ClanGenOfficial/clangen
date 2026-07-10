@@ -5,6 +5,7 @@ import i18n
 import pygame
 import pygame_gui.elements
 
+from scripts.config import get_config
 from scripts.game_structure import game, constants
 from scripts.cat.cats import Cat
 from scripts.clan_package.settings import (
@@ -40,7 +41,7 @@ class FreshkillManagementWindow(GameWindow):
         self.open_view = None
         self.log = None
         self.low_nutrition_cats = None
-        self.prey_requirement = constants.CONFIG["prey"]["prey_requirement"]
+        self.prey_requirement = get_config("prey.prey_requirement")
         self.feeding_order = constants.CONFIG["prey"]["feeding_order"]
         self.possible_priorities = ["hunter_first", "sick_injured_first"]
         self.possible_orders = [
