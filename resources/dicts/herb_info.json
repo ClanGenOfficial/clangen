@@ -723,5 +723,34 @@
                 "leaf-bare": 6
             }
         }
+    },
+    "honey": {
+        "expiration": 12,
+        "rarity": {
+            "forest": {
+                "newleaf": 2,
+                "greenleaf": 3,
+                "leaf-fall": 5,
+                "leaf-bare": 6
+            },
+            "mountainous": {
+                "newleaf": 3,
+                "greenleaf": 4,
+                "leaf-fall": 4,
+                "leaf-bare": 6
+            },
+            "plains": {
+                "newleaf": 5,
+                "greenleaf": 4,
+                "leaf-fall": 5,
+                "leaf-bare": 6
+            },
+            "beach": {
+                "newleaf": 4,
+                "greenleaf": 3,
+                "leaf-fall": 5,
+                "leaf-bare": 6
+            }
+        }
     }
 }

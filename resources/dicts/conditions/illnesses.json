@@ -195,7 +195,7 @@
         "herbs": {
         "1": [
             "plantain",
-            "juniper",
+            "honey",
             "poppy",
             "moss"
         ],
@@ -244,7 +244,7 @@
         "herbs": {
             "1": [
                 "plantain",
-                "juniper",
+                "honey",
                 "poppy",
                 "moss"
             ],
@@ -293,7 +293,7 @@
                 "poppy"
             ],
             "2": [
-                "wild_garlic"
+                "honey"
             ],
             "3": [
                 "burdock"
@@ -366,7 +366,7 @@
             "1": [
                 "lungwort",
                 "plantain",
-                "juniper",
+                "honey",
                 "ragwort",
                 "poppy",
                 "moss"
@@ -458,7 +458,7 @@
         "herbs": {
             "1": [
                 "plantain",
-                "juniper",
+                "honey",
                 "poppy",
                 "moss"
             ],
@@ -507,7 +507,8 @@
         ],
         "herbs": {
             "1": [
-                "mallow"
+                "mallow",
+                "honey"
             ],
             "2": [
                 "tansy"

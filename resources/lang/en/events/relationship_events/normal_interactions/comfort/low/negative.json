@@ -1,0 +1,54 @@
+[
+    {
+        "id": "comfort_de_low1",
+        "strings": [
+            "m_c overheard a joke from r_c {PRONOUN/m_c/subject} didn't get.",
+            "m_c tries to have a conversation with r_c but it ends up awkward when neither of them speak up.",
+            "r_c rolled {PRONOUN/r_c/poss} eyes after m_c asked for help.",
+            "When m_c asked r_c for help, r_c ignored {PRONOUN/m_c/object}.",
+            "m_c notices a strange glint in r_c's eyes.",
+            "m_c struggles to make sense of something trivial r_c said.",
+            "m_c can't help but feel uneased at r_c's words lately.",
+            "r_c confuses m_c in a conversation.",
+            "m_c is taken aback by one of r_c's comments.",
+            "m_c felt eyes on {PRONOUN/m_c/poss} back, and when {PRONOUN/m_c/subject} looked, r_c was quickly turning away.",
+            "m_c thinks that r_c's tone sounds off today.",
+            "r_c laughs a little too long at one of m_c's jokes.",
+            "m_c sees r_c staring off into the distance. It's kind of creepy.",
+            "r_c doesn't say sorry when bumping into m_c.",
+            "m_c sees the blood of fresh-kill on r_c's paws and feels a prickle of discomfort."
+        ]
+    },
+    {
+        "id": "comfort_de_low2",
+        "strings": [
+            "m_c said something that rubbed r_c the wrong way.",
+            "m_c was being condescending towards r_c all day long.",
+            "r_c is upset after spending the day with m_c's bad attitude.",
+            "m_c and r_c say goodbye, but end up walking in the same direction.",
+            "m_c wonders what {PRONOUN/m_c/subject} did to make r_c so rude towards {PRONOUN/m_c/object} today.",
+            "m_c and r_c reach for the same piece of prey and bicker over it. m_c gets it.",
+            "m_c and r_c reach for the same piece of prey and bicker over it. r_c gets it.",
+            "m_c bickers with r_c over who gets what nest material.",
+            "Late at night, m_c finds r_c sitting alone at the edge of camp. They go back to their dens without speaking.",
+            "The silence between m_c and r_c feels more uncomfortable than usual.",
+            "Both m_c and r_c avoid one another's eye contact.",
+            "After the Clan finds a strange object, m_c notes that r_c has been a little too fascinated with it."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": -5
+            }
+        ]
+    }
+]

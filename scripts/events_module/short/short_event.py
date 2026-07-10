@@ -1,5 +1,5 @@
 from random import choice, randrange, choices, sample
-from typing import List, Optional
+from typing import List, Optional, Dict
 
 import i18n
 
@@ -54,6 +54,7 @@ class ShortEvent:
         season: List[str] = None,
         sub_type: List[str] = None,
         tags: List[str] = None,
+        poi: Optional[Dict[str, List]] = None,
         text: str = "",
         new_accessory: List[str] = None,
         m_c=None,
@@ -85,6 +86,7 @@ class ShortEvent:
             )  # this increases the weight inversely to the number of season constraints
         self.sub_type = sub_type if sub_type else []
         self.tags = tags if tags else []
+        self.poi = poi if poi else {}
         self.text = text
         self.text_template = text
         self.new_accessory = new_accessory if new_accessory else []
@@ -225,7 +227,7 @@ class ShortEvent:
         self.dead_cat_objects.clear()
 
         if other_clan:
-            self.other_clan_name = f"{other_clan.name}Clan"
+            self.other_clan_name = other_clan.name
 
         self.all_involved_cat_ids.append(self.main_cat.ID)
 
@@ -439,7 +441,7 @@ class ShortEvent:
                     i18n.t("defaults.event_dead_outsider"),
                     main_cat=first_cat,
                 )
-            elif first_cat.status.is_outsider:
+            elif not first_cat.status.alive_in_player_clan:
                 n_c_index = self.new_cats.index(cat_list)
                 if (
                     f"n_c:{n_c_index}" in self.exclude_involved
@@ -596,7 +598,7 @@ class ShortEvent:
                     game.clan.leader_lives -= 1
 
                 cat.die(body)
-                self.additional_event_text = get_leader_life_notice()
+                self.additional_event_text = get_leader_life_notice(cat.name)
 
             else:
                 cat.die(body)
@@ -748,15 +750,16 @@ class ShortEvent:
             # new_cat history
             for abbr in block["cats"]:
                 if "n_c" in abbr:
-                    for i, new_cat_objects in enumerate(self.new_cats):
-                        if new_cat_objects[i].dead:
+                    index = int(abbr.replace("n_c:", ""))
+                    for new_cat in self.new_cats[index]:
+                        if new_cat.dead:
                             death_history = history_text_adjust(
                                 block.get("death"),
                                 self.other_clan_name,
                                 game.clan,
                                 self.random_cat,
                             )
-                            new_cat_objects[i].history.add_death(
+                            new_cat.history.add_death(
                                 death_history, other_cat=self.random_cat
                             )
 
@@ -801,12 +804,11 @@ class ShortEvent:
 
                 # NEW CATS
                 elif "n_c" in abbr:
-                    for i, new_cat_objects in enumerate(self.new_cats):
+                    index = int(abbr.replace("n_c:", ""))
+                    for new_cat in self.new_cats[index]:
                         injury = choice(possible_injuries)
-                        new_cat_objects[i].get_injured(
-                            injury, potential_scars=potential_scars
-                        )
-                        self.handle_injury_history(new_cat_objects[i], abbr, injury)
+                        new_cat.get_injured(injury, potential_scars=potential_scars)
+                        self.handle_injury_history(new_cat, abbr, injury)
 
     def handle_injury_history(self, cat, cat_abbr, injury=None):
         """
@@ -884,6 +886,8 @@ class ShortEvent:
             game.clan.freshkill_pile.remove_freshkill(reduce_amount, take_random=True)
         if increase_amount != 0:
             game.clan.freshkill_pile.add_freshkill(increase_amount)
+
+        game.freshkill_event_list.append(self.text)
 
     def handle_herb_supply(self, block):
         """

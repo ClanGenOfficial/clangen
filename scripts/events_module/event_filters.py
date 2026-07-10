@@ -1,14 +1,22 @@
 import re
 from itertools import combinations
 from random import choice, randint
-from typing import List, Optional
+from typing import List, Optional, Dict, Union
 
 from scripts.cat.constants import BACKSTORIES
 from scripts.cat.personality import Personality
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
-from scripts.cat.enums import CatRank, CatAge, CatCompatibility
+from scripts.cat.enums import CatRank, CatAge, CatCompatibility, CatGroup, CatStanding
+from scripts.clan_resources.point_of_interest import get_poi_names_set, get_poi_tags_set
+from scripts.events_module.parameter_dicts import (
+    InvolvedCatDict,
+    RelationshipConstraintDict,
+)
 from scripts.special_dates import get_special_date, contains_special_date_tag
-from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
+from scripts.clan_package.get_clan_cats import (
+    find_alive_cats_with_rank,
+    get_possible_mates,
+)
 from scripts.game_structure import game
 
 ALL_BACKSTORIES_LIST = set(
@@ -56,7 +64,7 @@ def event_for_location(locations: list) -> bool:
     """
     Checks if the clan is within the allowed locations.
     """
-    if "any" in locations:
+    if "any" in locations or not locations:
         return True
 
     if not game.clan:
@@ -93,7 +101,7 @@ def event_for_season(seasons: list) -> bool:
     """
     Checks if the clan is within the given seasons.
     """
-    if not seasons:
+    if not seasons or not seasons:
         return True
 
     if "any" in seasons:
@@ -133,6 +141,10 @@ def event_for_tags(
     for _poss in possible_modes:
         if _poss in tags and mode != _poss:
             return False
+
+    # check romance
+    if "romance" in tags and other_cat and other_cat not in get_possible_mates(cat):
+        return False
 
     # check leader life tags
     if hasattr(cat, "ID"):
@@ -215,6 +227,30 @@ def event_for_tags(
             return False
 
     return True
+
+
+def event_for_poi(pois: dict[str, list]) -> bool:
+    """
+    Checks if the Clan has a POI matching pois
+    :param pois: possible points of interest
+    :return: True if there's a match, False if not
+    """
+    if all(not value for value in pois.values()):
+        # fields may exist but are empty
+        return True
+
+    if not get_poi_names_set():
+        return False  # we know they're requesting something
+
+    has_matching_name, has_matching_tags = False, False
+    if "name" in pois:
+        has_matching_name = not set(pois.get("name", [])).isdisjoint(
+            get_poi_names_set()
+        )
+
+    if "tags" in pois:
+        has_matching_tags = not set(pois.get("tags", [])).isdisjoint(get_poi_tags_set())
+    return has_matching_name or has_matching_tags
 
 
 def event_for_reputation(required_rep: list) -> bool:
@@ -319,31 +355,39 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
 
 
 def event_for_cat(
-    cat_info: dict,
+    cat_info: Union[dict, InvolvedCatDict],
     cat,
     cat_group: list = None,
+    involved_cat_dict: dict = None,  # TODO: this eventually replaces cat_group
     event_id: str = None,
     p_l=None,
     injuries: list = None,
+    other_involved_clan_id: str = None,
 ) -> bool:
     """
     checks if a cat is suitable for the event
     :param cat_info: cat's dict of constraints
     :param cat: the cat object of the cat being checked
     :param cat_group: the group of cats being included within the event
+    :param involved_cat_dict: dict of involved cats, key is event abbreviation and value is cat object
     :param event_id: if event comes with an id, include it here
     :param p_l: if event is a patrol, include patrol leader object here
     :param injuries: list of injuries that the event may give this cat
+    :param other_involved_clan_id: if another Clan is involved, include their ID
     """
+    if not cat_info:
+        return True
 
     func_lookup = {
         "age": _check_cat_age,
         "status": _check_cat_status,
-        "status_history": _check_cat_status_history,
+        "past_status": _check_cat_status_history,
+        "stat": _check_cat_stat,  # TODO: should eventually replace "trait" and "skill"
         "trait": _check_cat_trait,
         "skill": _check_cat_skills,
         "backstory": _check_cat_backstory,
         "gender": _check_cat_gender,
+        "health": _check_cat_health,
     }
 
     for param, func in func_lookup.items():
@@ -362,6 +406,16 @@ def event_for_cat(
             raise TypeError(
                 f"Input contains invalid data, check traceback!\ncat_info: {cat_info}\nevent_id: {event_id}"
             ) from e
+
+    # checking groups
+    if cat_info.get("group"):
+        if not _check_cat_group(cat, cat_info["group"], involved_cat_dict):
+            return False
+    if cat_info.get("standing"):
+        if not _check_cat_standing(
+            cat, cat_info["standing"], involved_cat_dict, other_involved_clan_id
+        ):
+            return False
 
     # checking injuries
     if injuries:
@@ -437,7 +491,9 @@ def _check_cat_status(cat, statuses: list) -> bool:
     if not statuses or "any" in statuses:
         return True
 
-    if (cat.status.rank in statuses) or ("lost" in statuses and cat.status.is_lost()):
+    if (cat.status.rank in statuses) or (
+        "clancat" in statuses and cat.status.is_clancat
+    ):
         return True
 
     is_exclusionary = _check_for_exclusionary_value(statuses)
@@ -445,7 +501,9 @@ def _check_cat_status(cat, statuses: list) -> bool:
     if is_exclusionary:
         statuses = [x.replace("-", "") for x in statuses]
 
-    if (cat.status.rank in statuses) or ("lost" in statuses and cat.status.is_lost()):
+    if (cat.status.rank in statuses) or (
+        "clancat" in statuses and cat.status.is_clancat
+    ):
         return False
 
     return is_exclusionary
@@ -463,6 +521,9 @@ def _check_cat_status_history(cat, statuses: list) -> bool:
     if is_exclusionary:
         statuses = [x.replace("-", "") for x in statuses]
 
+    if "clancat" in statuses and cat.status.is_former_clancat:
+        return not is_exclusionary
+
     for _rank in cat.status.all_ranks.keys():
         if _rank in statuses and _rank != cat.status.rank:
             if is_exclusionary:
@@ -471,6 +532,30 @@ def _check_cat_status_history(cat, statuses: list) -> bool:
                 return True
 
     return is_exclusionary
+
+
+def _check_cat_stat(cat, stat: dict) -> bool:
+    """
+    Checks if the cat matches up with the given stat dict.
+    """
+    has_skill = False
+    has_trait = False
+
+    if stat.get("skill"):
+        if _check_cat_skills(cat, stat["skill"]):
+            has_skill = True
+        else:
+            has_skill = False
+    if stat.get("trait"):
+        if _check_cat_trait(cat, stat["trait"]):
+            has_trait = True
+        else:
+            has_trait = False
+
+    if stat.get("must_have_both"):
+        return has_skill and has_trait
+    else:
+        return has_skill or has_trait
 
 
 def _check_cat_trait(cat, traits: list) -> bool:
@@ -527,6 +612,205 @@ def _check_cat_skills(cat, skills: list[str]) -> bool:
     return is_exclusionary
 
 
+def _check_cat_group(cat, groups: List[str], already_involved_cats: dict) -> bool:
+    """
+    Checks if the cat is in one of the required groups
+    """
+    if not groups:
+        return True
+
+    is_exclusionary = _check_for_exclusionary_value(groups)
+
+    groups = [x.replace("-", "") for x in groups]
+    remaining_tags = groups.copy()
+
+    for tag in groups:
+        if "match" in tag:  # checks if group matches with the tagged cat
+            cat_to_match = tag.replace("match:", "")
+            if cat.status.group == already_involved_cats[cat_to_match].status.group:
+                if is_exclusionary:
+                    return False
+            else:
+                if not is_exclusionary:
+                    return False
+            remaining_tags.remove(tag)
+
+        elif tag == "afterlife":  # checks if group is an afterlife
+            if cat.status.group.is_afterlife():
+                if is_exclusionary:
+                    return False
+            else:
+                if not is_exclusionary:
+                    return False
+            remaining_tags.remove(tag)
+
+        elif tag == "no_group":  # checks if the cat has no group
+            if cat.status.group == CatGroup.NONE:
+                if is_exclusionary:
+                    return False
+            else:
+                if not is_exclusionary:
+                    return False
+            remaining_tags.remove(tag)
+
+    if not remaining_tags:
+        return True
+
+    # checks all the plain group tags that will match the CatGroup enums
+    if remaining_tags and cat.status.group not in remaining_tags:
+        return is_exclusionary
+
+    return not is_exclusionary
+
+
+def _check_cat_standing(
+    cat,
+    standing: Dict[str, list],
+    already_involved_cats: dict,
+    other_clan_id: str = None,
+) -> bool:
+    """
+    Checks if the cat is in one of the required groups
+    :param cat: cat to check
+    :param standing: dict of standing info
+    :param already_involved_cats: dict of cats already involved: key is cat abbr and value is cat object
+    :param other_clan_id: the ID of the other involved clan
+    """
+    if not standing:
+        return True
+
+    qualifies = False
+
+    groups = standing["group"]
+    current_standings = standing.get("currently", [])
+    past_standings = standing.get("past", [])
+
+    group_is_exclusionary = _check_for_exclusionary_value(groups)
+    groups = [x.replace("-", "") for x in groups]
+
+    # unpack some of the group tags into something easier to filter for
+    for tag in standing["group"]:
+        if (
+            "match" in tag
+        ):  # we remove the match tag and replace it with the correct group tag
+            groups.remove(tag)
+            cat_to_match = tag.replace("match:", "")
+            groups.append(already_involved_cats[cat_to_match].status.group)
+        if tag == "afterlife":  # this just simplifies later checks
+            groups.remove(tag)
+            groups.extend(
+                [CatGroup.STARCLAN, CatGroup.DARK_FOREST, CatGroup.UNKNOWN_RESIDENCE]
+            )
+
+    # if it's exclusionary, then we "flip" the group list to be all the groups that weren't mentioned
+    # once again for ease of filtering
+    if group_is_exclusionary:
+        disallowed_groups = groups.copy()
+        groups.clear()
+        for group in [*CatGroup]:
+            if group not in disallowed_groups:
+                groups.append(group)
+
+    # if the cat qualifies for one of the tags, then we're good to go. we mark as qualified and break
+    # CURRENT STANDINGS
+    for tag in current_standings:
+        if tag == CatStanding.LEFT:
+            if _has_current_standing(cat, tag, groups, other_clan_id):
+                qualifies = True
+                break
+        elif tag == CatStanding.LOST:
+            if _has_current_standing(cat, tag, groups, other_clan_id):
+                qualifies = True
+                break
+        elif tag == CatStanding.EXILED:
+            if _has_current_standing(cat, tag, groups, other_clan_id):
+                qualifies = True
+                break
+
+    # PAST STANDINGS
+    for tag in past_standings:
+        if _has_past_standing(cat, tag, groups, other_clan_id):
+            qualifies = True
+            break
+        else:
+            # even if they qualified for current standings, they also need to have the past standings
+            qualifies = False
+
+    return qualifies
+
+
+def _has_current_standing(cat, standing, groups, other_clan_id: str = None) -> bool:
+    """
+    Checks if the cat currently has a certain standing
+    :param standing: the CatStanding to check for
+    :param groups: list of groups to check for the standing. cat only needs to qualify with one group.
+    :param other_clan_id: the ID of the other clan involved in this event
+    """
+    if standing == CatStanding.LEFT:
+        status_func = cat.status.left_group
+    elif standing == CatStanding.LOST:
+        status_func = cat.status.is_lost
+    elif standing == CatStanding.EXILED:
+        status_func = cat.status.is_exiled
+    else:
+        print(f"WARNING: {standing} is unsupported by the standing filter.")
+        return False
+
+    if CatGroup.OTHER_CLAN in groups and other_clan_id:
+        if status_func(other_clan_id):
+            return True
+    if CatGroup.PLAYER_CLAN in groups:
+        if status_func(CatGroup.PLAYER_CLAN_ID):
+            return True
+    if CatGroup.STARCLAN in groups:
+        if status_func(CatGroup.STARCLAN_ID):
+            return True
+    if CatGroup.DARK_FOREST in groups:
+        if status_func(CatGroup.DARK_FOREST_ID):
+            return True
+    if CatGroup.UNKNOWN_RESIDENCE in groups:
+        if status_func(CatGroup.UNKNOWN_RESIDENCE_ID):
+            return True
+    if CatGroup.PLAYER_CLAN in groups:
+        if status_func(CatGroup.PLAYER_CLAN_ID):
+            return True
+
+    return False
+
+
+def _has_past_standing(cat, standing, groups, other_clan_id: str = None) -> bool:
+    """
+    Checks if the cat has had a certain standing
+    :param cat: the cat the check
+    :param standing: the CatStanding to check for
+    :param groups: list of groups to check for the standing. cat only needs to qualify with one group.
+    :param other_clan_id: the ID of the other clan involved in this event
+    """
+
+    if CatGroup.OTHER_CLAN in groups and other_clan_id:
+        if standing in cat.status.get_standing_with_group(other_clan_id):
+            return True
+    if CatGroup.PLAYER_CLAN in groups:
+        if standing in cat.status.get_standing_with_group(CatGroup.PLAYER_CLAN_ID):
+            return True
+    if CatGroup.STARCLAN in groups:
+        if standing in cat.status.get_standing_with_group(CatGroup.STARCLAN_ID):
+            return True
+    if CatGroup.DARK_FOREST in groups:
+        if standing in cat.status.get_standing_with_group(CatGroup.DARK_FOREST_ID):
+            return True
+    if CatGroup.UNKNOWN_RESIDENCE in groups:
+        if standing in cat.status.get_standing_with_group(
+            CatGroup.UNKNOWN_RESIDENCE_ID
+        ):
+            return True
+    if CatGroup.PLAYER_CLAN in groups:
+        if standing in cat.status.get_standing_with_group(CatGroup.PLAYER_CLAN_ID):
+            return True
+
+    return False
+
+
 def _check_cat_backstory(cat, backstories: list) -> bool:
     """
     Checks if cat has the correct backstory.
@@ -577,29 +861,102 @@ def _check_cat_gender(cat, genders: list) -> bool:
     return False
 
 
+def _check_cat_health(cat, health_constraints: dict) -> bool:
+    """
+    Checks if the cat has the required conditions
+    """
+
+    # structuring like this intentionally instead of using .get()
+    # so that a missing value and a False value will be treated differently
+    if "working" in health_constraints:
+        # "working" equals True and cat isn't working
+        if health_constraints["working"] and cat.not_working():
+            return False
+        # "working" equals False and cat IS working
+        elif not health_constraints["working"] and not cat.not_working():
+            return False
+
+    if health_constraints.get("condition"):
+        required_conditions = health_constraints["condition"]
+        if "any" in required_conditions:
+            return True
+
+        is_exclusionary = _check_for_exclusionary_value(required_conditions)
+        if is_exclusionary:
+            required_conditions = [x.replace("-", "") for x in required_conditions]
+
+        current_conditions = set(cat.illnesses.keys())
+        current_conditions.update(cat.injuries.keys())
+        current_conditions.update(cat.permanent_condition.keys())
+
+        if current_conditions.intersection(set(required_conditions)):
+            if is_exclusionary:
+                return False
+        else:
+            if not is_exclusionary:
+                return False
+
+        # need to check if the perm conditions were congenital
+        if health_constraints.get("must_be_congenital", False):
+            perm_conditions = set(cat.permanent_condition.keys())
+            # gathering conditions to check
+            if is_exclusionary:
+                matching = perm_conditions
+            else:
+                matching = perm_conditions.intersection(set(required_conditions))
+            # checking if they're congenital
+            if matching:
+                for cond in matching:
+                    if not cat.permanent_condition[cond].get("born_with"):
+                        return False
+
+        # need to check if the perm conditions were NOT congenital
+        elif health_constraints.get("must_be_acquired", False):
+            perm_conditions = set(cat.permanent_condition.keys())
+            # gathering conditions to check
+            if is_exclusionary:
+                matching = perm_conditions
+            else:
+                matching = perm_conditions.intersection(set(required_conditions))
+            # checking if they're NOT congenital
+            if matching:
+                for cond in matching:
+                    if cat.permanent_condition[cond].get("born_with"):
+                        return False
+
+    return True
+
+
 def cat_for_event(
-    constraint_dict: dict,
+    constraint_dict: Union[dict, InvolvedCatDict],
     possible_cats: list,
+    tags: list,
+    involved_cat_dict: dict = None,  # TODO: this could likely replace comparison cat, eventually
     comparison_cat=None,
     comparison_cat_rel_status: list = None,
     injuries: list = None,
     return_id: bool = True,
+    return_list: bool = False,
 ):
     """
     Checks the given cat list against constraint_dict to find any eligible cats.
     Returns a single cat ID chosen from eligible cats.
     :param constraint_dict: Can include age, status, skill, not_skill, trait, not_trait, relationship_status, and backstory lists
     :param possible_cats: List of possible cat objects
+    :param involved_cat_dict: dict of involved cats, key is event abbreviation and value is cat object
     :param comparison_cat: If you need to search for cats with a specific relationship status, then include a comparison
      cat. Keep in mind that this will search for a possible cat with the given relationship toward comparison cat.
     :param comparison_cat_rel_status: The relationship_status dict for the comparison cat
     :param injuries: List of injuries a cat may get from the event
     :param return_id: If true, return cat ID instead of object
+    :param return_list: if true, return a list of all valid cats instead of a single valid cat
+    :param tags: List of event tags
     """
     # gather funcs to use
     func_dict = {
         "age": _get_cats_with_age,
         "status": _get_cats_with_status,
+        "stat": _get_cats_with_stat,
         "skill": _get_cats_with_skill,
         "trait": _get_cats_with_trait,
         "backstory": _get_cats_with_backstory,
@@ -610,7 +967,17 @@ def cat_for_event(
     for param in func_dict:
         if param not in constraint_dict:
             continue
-        allowed_cats = func_dict[param](allowed_cats, tuple(constraint_dict.get(param)))
+        allowed_cats = func_dict[param](allowed_cats, constraint_dict.get(param))
+
+        # if the list is emptied, return
+        if not allowed_cats:
+            return None
+
+    # checking groups
+    if constraint_dict.get("group"):
+        allowed_cats = _get_cats_from_group(
+            allowed_cats, constraint_dict["group"], involved_cat_dict
+        )
 
         # if the list is emptied, return
         if not allowed_cats:
@@ -631,6 +998,11 @@ def cat_for_event(
             return None
 
     # rel status check
+    if "romance" in tags:
+        allowed_cats = list(
+            set(allowed_cats).intersection(set(get_possible_mates(comparison_cat)[0]))
+        )
+
     if comparison_cat_rel_status or constraint_dict.get("relationship_status"):
         # preliminary check to see if we can just skip to gathering certain rel groups
         allowed_cats, comparison_cat_rel_status = _get_cats_with_rel_status(
@@ -657,12 +1029,11 @@ def cat_for_event(
     if not allowed_cats:
         return None
 
-    cat = choice(allowed_cats)
-
-    if return_id:
-        return cat.ID
+    if return_list:
+        return allowed_cats if not return_id else [c.ID for c in allowed_cats]
     else:
-        return cat
+        cat = choice(allowed_cats)
+        return cat if not return_id else cat.ID
 
 
 def _get_cats_with_rel_status(
@@ -715,7 +1086,7 @@ def _get_cats_with_rel_status(
     return cat_list, rel_status_list
 
 
-def _get_cats_with_age(cat_list: list, ages: tuple) -> list:
+def _get_cats_with_age(cat_list: list, ages: list[str]) -> list:
     """
     Checks cat_list against required ages and returns qualifying cats.
     """
@@ -731,7 +1102,7 @@ def _get_cats_with_age(cat_list: list, ages: tuple) -> list:
         return [kitty for kitty in cat_list if kitty.age in ages]
 
 
-def _get_cats_with_status(cat_list: list, statuses: tuple) -> list:
+def _get_cats_with_status(cat_list: list, statuses: list[str]) -> list:
     """
     Checks cat_list against required statuses and returns qualifying cats.
     """
@@ -747,7 +1118,28 @@ def _get_cats_with_status(cat_list: list, statuses: tuple) -> list:
         return [kitty for kitty in cat_list if kitty.status.rank in statuses]
 
 
-def _get_cats_with_skill(cat_list: list, skills: tuple) -> list:
+def _get_cats_with_stat(cat_list: list, stat: dict) -> list:
+    """
+    Returns list of cats with the required stats
+    """
+    if not stat:
+        return cat_list
+
+    skill_cats = []
+    trait_cats = []
+
+    if stat.get("skill"):
+        skill_cats = _get_cats_with_age(cat_list, stat["skill"])
+    if stat.get("trait"):
+        trait_cats = _get_cats_with_trait(cat_list, stat["trait"])
+
+    if stat.get("must_have_both"):
+        return list(set(skill_cats).intersection(set(trait_cats)))
+    else:
+        return skill_cats + trait_cats
+
+
+def _get_cats_with_skill(cat_list: list, skills: list[str]) -> list:
     """
     Checks cat_list against required skills and returns qualifying cats.
     """
@@ -781,7 +1173,7 @@ def _get_cats_with_skill(cat_list: list, skills: tuple) -> list:
     return cat_list
 
 
-def _get_cats_with_trait(cat_list: list, traits: tuple) -> list:
+def _get_cats_with_trait(cat_list: list, traits: list[str]) -> list:
     """
     Checks cat_list against required traits and returns qualifying cats.
     """
@@ -797,7 +1189,64 @@ def _get_cats_with_trait(cat_list: list, traits: tuple) -> list:
         return [kitty for kitty in cat_list if kitty.personality.trait in traits]
 
 
-def _get_cats_with_backstory(cat_list: list, backstories: tuple) -> list:
+def _get_cats_from_group(
+    cat_list: list, groups: List[str], already_involved_cats: dict
+) -> list:
+    """
+    Returns list of cats who match given group constraints
+    """
+    if not groups:
+        return cat_list
+
+    is_exclusionary = _check_for_exclusionary_value(groups)
+
+    groups = [x.replace("-", "") for x in groups if "-" in x]
+    remaining_tags = groups.copy()
+
+    for tag in groups:
+        if "match" in tag:  # checks if group matches with the tagged cat
+            cat_to_match = tag.replace("match:", "")
+            if is_exclusionary:
+                cat_list = [
+                    c
+                    for c in cat_list
+                    if c.status.group
+                    == already_involved_cats[cat_to_match].status.group
+                ]
+            else:
+                cat_list = [
+                    c
+                    for c in cat_list
+                    if c.status.group
+                    != already_involved_cats[cat_to_match].status.group
+                ]
+            remaining_tags.remove(tag)
+
+        elif tag == "afterlife":  # checks if group is an afterlife
+            if is_exclusionary:
+                cat_list = [c for c in cat_list if c.status.group.is_afterlife()]
+            else:
+                cat_list = [c for c in cat_list if not c.status.group.is_afterlife()]
+            remaining_tags.remove(tag)
+
+        elif tag == "no_group":  # checks if the cat has no group
+            if is_exclusionary:
+                cat_list = [c for c in cat_list if c.status.group]
+            else:
+                cat_list = [c for c in cat_list if not c.status.group]
+            remaining_tags.remove(tag)
+
+    # checks all the plain group tags that will match the CatGroup enums
+    if remaining_tags:
+        if is_exclusionary:
+            return [c for c in cat_list if c.status.group not in remaining_tags]
+        else:
+            return [c for c in cat_list if c.status.group in remaining_tags]
+
+    return cat_list
+
+
+def _get_cats_with_backstory(cat_list: list, backstories: list[str]) -> list:
     """
     Checks cat_list against required backstories and returns qualifying cats.
     """
@@ -826,6 +1275,298 @@ def _check_for_exclusionary_value(possible_values: List[str]) -> bool:
     Checks the given list for an exclusionary value and returns True or False
     """
     return any(value.find("-") == 0 for value in possible_values)
+
+
+def check_rel_constraint_groups(
+    constraints_dict: RelationshipConstraintDict, involved_cats: dict
+) -> bool:
+    """
+    Compares two groups of cats to see if they meet relationship constraints
+    """
+    if not any([involved_cats.get(c) for c in constraints_dict["cats_to"]]) or not any(
+        [involved_cats.get(c) for c in constraints_dict["cats_from"]]
+    ):
+        # if we don't have any cats to compare, then just send back
+        return True
+
+    cats_from = [
+        involved_cats[c]
+        for c in constraints_dict["cats_from"]
+        if c in involved_cats and c != "multi_cat"
+    ]
+    if "multi_cat" in constraints_dict["cats_from"]:
+        cats_from.extend(involved_cats.get("multi_cat", []))
+
+    cats_to = [
+        involved_cats[c]
+        for c in constraints_dict["cats_to"]
+        if c in involved_cats and c != "multi_cat"
+    ]
+    if "multi_cat" in constraints_dict["cats_to"]:
+        cats_to.extend(involved_cats.get("multi_cat", []))
+
+    if not _filter_relationship_type_updated(
+        cats_from=cats_from,
+        cats_to=cats_to,
+        filter_types=constraints_dict["constraints"],
+    ):
+        return False
+
+    if constraints_dict["mutual"]:
+        # flip-flop the cats_to and cats_from
+        if not _filter_relationship_type_updated(
+            cats_from=cats_to,
+            cats_to=cats_from,
+            filter_types=constraints_dict["constraints"],
+        ):
+            return False
+
+    return True
+
+
+def _filter_relationship_type_updated(
+    cats_from: list, cats_to: list, filter_types: List[str]
+) -> bool:
+    """
+    ONLY USE THIS IF: you are utilizing the updated rel constraint dict (the one containing cats_to and cats_from params)
+    I know it sucks ass to have this and the old func, but eventually this one will replace the old one
+
+    filters for specific types of relationships between groups of cat objects
+    :param cats_from: list of cat objects the relationship originates from
+    :param cats_to: list of cat objects the relationship is aimed towards
+    :param filter_types: list of types of allowed relationships
+    :returns: groups match constraints
+    """
+    if not filter_types:
+        return True
+
+    exclusionary_values = []
+    inclusionary_values = []
+    for value in filter_types:
+        if "-" in value:
+            exclusionary_values.append(value.replace("-", ""))
+        else:
+            inclusionary_values.append(value)
+
+    filter_types = exclusionary_values + inclusionary_values
+
+    # the general logic structure that's going to be followed by all the relational tags checks is:
+    # if the cat meets the check AND it's an exclusionary tag: return False
+    # if the cat doesn't meet the check AND it's an inclusionary tag: return False
+    # otherwise, continue onwards
+
+    if "strangers" in filter_types:
+        for cat in cats_from:
+            # if the cats ARE strangers
+            if all([inter_cat.ID not in cat.relationships for inter_cat in cats_to]):
+                if "strangers" in exclusionary_values:
+                    return False
+            # if SOME but not ALL cats are strangers
+            elif "strangers" in inclusionary_values and any(
+                [inter_cat.ID in cat.relationships for inter_cat in cats_to]
+            ):
+                return False
+            # if the cats AREN'T strangers
+            elif "strangers" in inclusionary_values:
+                return False
+        filter_types.remove("strangers")
+
+    if "siblings" in filter_types:
+        for cat in cats_from:
+            # if the cats ARE siblings
+            if all([cat.is_sibling(inter_cat) for inter_cat in cats_to]):
+                if "siblings" in exclusionary_values:
+                    return False
+            # if SOME but not ALL cats are siblings
+            elif "siblings" in inclusionary_values and any(
+                [cat.is_sibling(inter_cat) for inter_cat in cats_to]
+            ):
+                return False
+            # if the cats AREN'T siblings
+            elif "siblings" in inclusionary_values:
+                return False
+        filter_types.remove("siblings")
+
+    if "littermates" in filter_types:
+        for cat in cats_from:
+            # if the cats ARE littermates
+            if all([cat.is_littermate(inter_cat) for inter_cat in cats_to]):
+                if "littermates" in exclusionary_values:
+                    return False
+            # if SOME but not ALL cats are littermates
+            elif "littermates" in inclusionary_values and any(
+                [cat.is_littermate(inter_cat) for inter_cat in cats_to]
+            ):
+                return False
+            # if the cats AREN'T littermates
+            elif "littermates" in inclusionary_values:
+                return False
+        filter_types.remove("littermates")
+
+    if "mates" in filter_types:
+        for cat in cats_from:
+            # if the cat doesn't have enough mates to conceivably be mated to all the required cats, and we aren't trying to exclude mated cats
+            if len(cat.mate) < len(cats_to):
+                if "mates" in inclusionary_values:
+                    # then we know these cats don't qualify
+                    return False
+
+        # Now the expensive test.  We have to see if everyone is mates with each other
+        # Hopefully the cheaper tests mean this is only needed on events with a small number of cats
+        for cat in cats_from:
+            # if the cats ARE mates
+            if all([inter_cat.ID in cat.mate for inter_cat in cats_to]):
+                if "mates" in exclusionary_values:
+                    return False
+            # if SOME but not ALL cats are mates
+            elif "mates" in inclusionary_values and any(
+                [inter_cat.ID in cat.mate for inter_cat in cats_to]
+            ):
+                return False
+            # if the cats AREN'T mates
+            elif "mates" in inclusionary_values:
+                return False
+
+        filter_types.remove("mates")
+
+    # Check if the cats are in a parent/child relationship
+    if "parent/child" in filter_types:
+        for cat in cats_from:
+            # if the cats ARE parent/child
+            if all([cat.is_parent(inter_cat) for inter_cat in cats_to]):
+                if "parent/child" in exclusionary_values:
+                    return False
+            # if SOME but not ALL cats are parent/child
+            elif "parent/child" in inclusionary_values and any(
+                [cat.is_parent(inter_cat) for inter_cat in cats_to]
+            ):
+                return False
+            # if the cats AREN'T parent/child
+            elif "parent/child" in inclusionary_values:
+                return False
+        filter_types.remove("parent/child")
+
+    if "child/parent" in filter_types:
+        for cat in cats_from:
+            # if the cats ARE child/parent
+            if all([inter_cat.is_parent(cat) for inter_cat in cats_to]):
+                if "child/parent" in exclusionary_values:
+                    return False
+            # if SOME but not ALL cats are child/parent
+            elif "child/parent" in inclusionary_values and any(
+                [inter_cat.is_parent(cat) for inter_cat in cats_to]
+            ):
+                return False
+            # if the cats AREN'T child/parent
+            elif "child/parent" in inclusionary_values:
+                return False
+        filter_types.remove("child/parent")
+
+    if "mentor/app" in filter_types:
+        # a cat can only have one mentor at a time, so if there's more than one cats_from and we WANT mentor/app, then this isn't valid
+        if len(cats_from) > 1 and "mentor/app" in inclusionary_values:
+            return False
+
+        # if the cats ARE mentor/app
+        if all([inter_cat.ID in cats_from[0].apprentice for inter_cat in cats_to]):
+            if "mentor/app" in exclusionary_values:
+                return False
+        # if SOME but not ALL cats are mentor/app
+        elif "mentor/app" in inclusionary_values and any(
+            [inter_cat.ID in cats_from[0].apprentice for inter_cat in cats_to]
+        ):
+            return False
+        # if the cats AREN'T mentor/app
+        elif "mentor/app" in inclusionary_values:
+            return False
+        filter_types.remove("mentor/app")
+
+    if "app/mentor" in filter_types:
+        # a cat can only have one mentor at a time, so if there's more than one cats_to and we WANT app/mentor, then this isn't valid
+        if len(cats_to) > 1 and "app/mentor" in inclusionary_values:
+            return False
+
+        # if the cats ARE app/mentor
+        if all([inter_cat.ID in cats_to[0].apprentice for inter_cat in cats_from]):
+            if "app/mentor" in exclusionary_values:
+                return False
+        # if some, but not all cats are app/mentor
+        elif "app/mentor" in inclusionary_values and any(
+            [inter_cat.ID in cats_to[0].apprentice for inter_cat in cats_from]
+        ):
+            return False
+        # if the cats AREN'T app/mentor
+        elif "app/mentor" in inclusionary_values:
+            return False
+        filter_types.remove("app/mentor")
+
+    # return early if there's nothing left to check
+    if not filter_types:
+        return True
+
+    # Filtering relationship values
+    # these don't get exclusionary values because it's giving me a headache
+    compare_group = [c.ID for c in cats_to]
+    for tier in filter_types:
+        for cat in cats_from:
+            # the relationships to check against
+            relevant_relationships = [
+                cat.relationships[cat_id]
+                for cat_id in compare_group
+                if cat_id in cat.relationships
+            ]
+
+            if not relevant_relationships:
+                return False
+
+            # list of all the tier lists from those relationships
+            tier_lists: list[RelTier] = [
+                rel.get_reltype_tiers() for rel in relevant_relationships
+            ]
+
+            # now we look at each list to see if they contain the required tier
+            for t_list in tier_lists:
+                # easy and quick check
+                if tier in t_list:
+                    continue
+
+                # now we do "_only" tag checks
+                if "_only" in tier:
+                    t = tier.replace("_only", "")
+                    if t not in t_list:
+                        return False
+                # now we check if the cat meets a greater tier
+                else:
+                    # find the matching tier enum
+                    rel_tier: RelTier = RelTier(tier)
+
+                    # find the matching type enum
+                    type_tiers = Optional[list[RelType]]
+                    for listed_tiers in rel_type_tiers.values():
+                        if rel_tier in listed_tiers:
+                            type_tiers = listed_tiers
+                            break
+                    if not type_tiers:
+                        # big problem if we reach this
+                        raise Exception(
+                            f"WARNING: failed to find a matching RelTier for {rel_tier} during relationship filtering."
+                        )
+
+                    # get the tier's index within the rel_type's possible tiers
+                    index = type_tiers.index(rel_tier)
+
+                    allowed_tiers = set()
+                    # if it's a pos tier, we allow that index and higher
+                    if rel_tier.is_any_pos:
+                        allowed_tiers = set(type_tiers[index:])
+                    elif rel_tier.is_any_neg:
+                        allowed_tiers = set(type_tiers[0 : index + 1])
+
+                    # if we don't hit match any of the allowed tiers, then we return False
+                    if not allowed_tiers.intersection(set(t_list)):
+                        return False
+
+    return True
 
 
 def filter_relationship_type(group: list, filter_types: List[str], patrol_leader=None):
@@ -859,8 +1600,6 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
 
     test_cat = group[0]
     testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
-
-    qualifies = False
 
     if "strangers" in filter_types:
         qualifies = False
@@ -1012,18 +1751,18 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
     # Filtering relationship values
     # these don't get exclusionary values because it's giving me a headache
     # each cat has to have relationships toward each other matching every level tag
+    group_ids = [cat.ID for cat in group]
     for tier in filter_types:
         for inter_cat in group:
             if len(group) == 2 and inter_cat == group[1]:
                 # if this is a two cat group, then we only look for the first cat's rel toward the second cat.
                 # groups > 2 will require that all cats feel the same way toward each other.
                 continue
-            group_ids = [cat.ID for cat in group]
 
             relevant_relationships = [
-                rel
-                for rel in inter_cat.relationships.values()
-                if rel.cat_to.ID in group_ids and rel.cat_to.ID != inter_cat.ID
+                inter_cat.relationships[cat_id]
+                for cat_id in group_ids
+                if cat_id in inter_cat.relationships
             ]
 
             # list of every cat's tier list
@@ -1059,19 +1798,18 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
 
                     # get the tier's index within the rel_types's list
                     index = rel_type_tiers[rel_type].index(rel_tier)
-                    allowed_tiers = []
+                    allowed_tiers = set()
                     # if it's a pos tier, we allow that index and higher
                     if rel_tier.is_any_pos:
-                        allowed_tiers = rel_type_tiers[rel_type][index:]
+                        allowed_tiers = set(rel_type_tiers[rel_type][index:])
                     # if it's a neg tier, we allow that index and lower
                     elif rel_tier.is_any_neg:
-                        allowed_tiers = rel_type_tiers[rel_type][0 : index + 1]
+                        allowed_tiers = set(rel_type_tiers[rel_type][0 : index + 1])
 
                     discard = True
-                    for _t in tier_list:
-                        if _t in allowed_tiers:
-                            discard = False
-                            break
+                    tier_set = set(tier_list)
+                    if allowed_tiers.intersection(tier_set):
+                        discard = False
                     if discard:
                         return False
 

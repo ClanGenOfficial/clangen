@@ -19,6 +19,7 @@ from scripts.conditions import (
     medicine_cats_can_cover_clan,
     get_amount_cat_for_one_medic,
 )
+from scripts.config import get_config
 from scripts.event_class import Single_Event
 from scripts.events_module.short.scar_events import Scar_Events
 from scripts.events_module.short.short_event_generation import create_short_event
@@ -130,7 +131,7 @@ class Condition_Events:
     def handle_nutrient(cat: Cat, nutrition_info: dict) -> None:
         """
         Handles gaining conditions or death for cats with low nutrient.
-        This function should only be called if the game is in 'expanded' or 'cruel season' mode.
+        This function should only be called if the game is in 'expanded' or 'cruel_season' mode.
 
         Starvation and malnutrtion must be handled separately from other illnesses due to their distinct death triggers.
 
@@ -167,7 +168,7 @@ class Condition_Events:
             if cat.status.is_leader:
                 game.clan.leader_lives -= 1
                 # kill and retrieve leader life text
-                text = get_leader_life_notice()
+                text = get_leader_life_notice(cat.name)
 
             possible_string_list = Condition_Events.ILLNESS_DEATH_STRINGS["starving"]
             event = random.choice(possible_string_list) + " " + text
@@ -271,12 +272,13 @@ class Condition_Events:
             # ---------------------------------------------------------------------------- #
             #                              make cats sick                                  #
             # ---------------------------------------------------------------------------- #
-            random_number = int(
-                random.random()
-                * game.get_config_value(
-                    "condition_related", f"{game.clan.game_mode}_illness_chance"
-                )
+
+            path = (
+                "condition_related.classic_illness_chance"
+                if game.clan.game_mode == "classic"
+                else "condition_related.illness_chance"
             )
+            random_number = int(random.random() * get_config(path))
             if (
                 not cat.dead
                 and not cat.is_ill()
@@ -350,12 +352,22 @@ class Condition_Events:
         Returns: boolean - if an event was triggered
         """
         triggered = False
-        random_number = int(
-            random.random()
-            * game.get_config_value(
-                "condition_related", f"{game.clan.game_mode}_injury_chance"
-            )
+
+        modify_for_war = (
+            game.clan.war["at_war"]
+            and switch_get_value(Switch.war_rel_change_type) != "rel_up"
         )
+        path = (
+            "condition_related.classic_injury_chance"
+            if game.clan.game_mode == "classic"
+            else "condition_related.injury_chance"
+        )
+
+        injury_chance = get_config(path) - (
+            get_config("condition_related.war_injury_modifier") if modify_for_war else 0
+        )
+
+        random_number = int(random.random() * injury_chance)
 
         if cat.dead:
             triggered = True
@@ -595,7 +607,7 @@ class Condition_Events:
                 event = event_text_adjust(Cat, event, main_cat=cat)
                 # add life loss message
                 if cat.status.is_leader:
-                    event = event + " " + get_leader_life_notice()
+                    event = event + " " + get_leader_life_notice(cat.name)
 
                 # add death to history
                 cat.history.add_death(
@@ -729,7 +741,7 @@ class Condition_Events:
                 event = event_text_adjust(Cat, event, main_cat=cat)
                 # add life loss message
                 if cat.status.is_leader:
-                    event = event + " " + get_leader_life_notice()
+                    event = event + " " + get_leader_life_notice(cat.name)
 
                 # add death to history
                 cat.history.add_death(condition=injury, death_text=history_text.strip())
@@ -1081,7 +1093,7 @@ class Condition_Events:
                     if cat.age == CatAge.ADOLESCENT:
                         event += i18n.t(
                             "hardcoded.condition_retire_adolescent_ceremony",
-                            clan=game.clan.displayname,
+                            clan=game.clan.name,
                             newname=cat.name.prefix + cat.name.suffix,
                         )
 

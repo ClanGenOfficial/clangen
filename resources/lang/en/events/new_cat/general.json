@@ -1281,7 +1281,7 @@
         "season": ["any"],
         "sub_type": ["war"],
         "frequency": 2,
-        "event_text": "m_c slinks into o_c_n's nursery in the dead of night, making off with an entire litter of their kits. Rumor has it that their parent abandoned their Clan to try and track down the kits — even better for c_n!",
+        "event_text": "m_c slinks into o_c_n's nursery in the dead of night, making off with an entire litter of their kits. Rumor has it that their parent abandoned their Clan to try and track down the kits. Even better for c_n!",
         "m_c": {
             "status": [
                 "leader",
@@ -2107,7 +2107,8 @@
         "status": ["medicine cat"]
     },
     "new_cat": [
-        ["can_birth",
+        ["age:has_kits",
+        "can_birth",
         "meeting",
         "exists",
         "old_name",
@@ -2158,8 +2159,7 @@
   ],
   "tags": [],
   "exclude_involved": [
-    "m_c",
-    "n_c:0"
+    "m_c"
   ],
   "frequency": 2,
   "event_text": "At the Gathering, o_c_n's leader announces they have exiled a warrior for an unforgivable crime. They advise the other Clans to keep their guards up.",
@@ -2215,8 +2215,7 @@
   ],
   "tags": [],
   "exclude_involved": [
-    "m_c",
-    "n_c:0"
+    "m_c"
   ],
   "frequency": 1,
   "event_text": "At the Gathering, o_c_n's deputy takes their place among the other leaders and declares the previous leader was driven out, but may still stalk the borders.",
@@ -2272,8 +2271,7 @@
   ],
   "tags": [],
   "exclude_involved": [
-    "m_c",
-    "n_c:0"
+    "m_c"
   ],
   "frequency": 1,
   "event_text": "At the Gathering, o_c_n's leader announces their medicine cat has been exiled for a terrible transgression. They warn the other Clans that the exiled cat is not to be trusted and should be killed on sight.",
@@ -2329,8 +2327,7 @@
   ],
   "tags": [],
   "exclude_involved": [
-    "m_c",
-    "n_c:0"
+    "m_c"
   ],
   "frequency": 1,
   "event_text": "At the Gathering, o_c_n's leader announces their deputy did something terrible and was exiled. They look mournful as they deliver the news and advise the others to watch their borders closely.",
@@ -2386,7 +2383,8 @@
         "status": ["medicine cat"]
     },
     "new_cat": [
-        ["can_birth",
+        ["age:has_kits",
+        "can_birth",
         "meeting",
         "exists",
         "old_name",
@@ -2466,7 +2464,8 @@
         "status": ["medicine cat"]
     },
     "new_cat": [
-        ["can_birth",
+        ["age:has_kits",
+        "can_birth",
         "meeting",
         "exists",
         "old_name",
@@ -2508,7 +2507,8 @@
         "trait": ["bloodthirsty", "cold", "cunning", "sneaky"]
     },
     "new_cat": [
-        ["can_birth",
+        ["age:has_kits",
+        "can_birth",
         "meeting",
         "exists",
         "old_name",
@@ -2552,7 +2552,8 @@
         "age": ["young adult", "adult", "senior adult"]
     },
     "new_cat": [
-        ["can_birth",
+        ["age:has_kits",
+        "can_birth",
         "meeting",
         "exists",
         "old_name",
@@ -2618,7 +2619,8 @@
         "trait": ["bloodthirsty", "fierce", "cold", "cunning", "shameless"]
     },
     "new_cat": [
-        ["can_birth",
+        ["age:has_kits",
+        "can_birth",
         "meeting",
         "exists",
         "old_name",
@@ -2702,7 +2704,8 @@
         "trait": ["bloodthirsty", "fierce", "cold", "cunning", "shameless"]
     },
     "new_cat": [
-        ["can_birth",
+        ["age:has_kits",
+        "can_birth",
         "meeting",
         "exists",
         "old_name",
@@ -2803,7 +2806,8 @@
         "trait": ["shameless", "arrogant", "bold", "cold", "ambitious", "cunning", "sneaky"]
     },
     "new_cat": [
-        ["can_birth",
+        ["age:has_kits",
+        "can_birth",
         "meeting",
         "exists",
         "old_name",
@@ -2899,7 +2903,8 @@
         "trait": ["shameless", "arrogant", "bold", "cold", "ambitious", "cunning", "sneaky"]
     },
     "new_cat": [
-        ["can_birth",
+        ["age:has_kits",
+        "can_birth",
         "meeting",
         "exists",
         "old_name",
@@ -3007,7 +3012,8 @@
         "age": ["young adult", "adult", "senior adult"]
     },
     "new_cat": [
-        ["can_birth",
+        ["age:has_kits",
+        "can_birth",
         "meeting",
         "exists",
         "old_name",
@@ -3078,7 +3084,8 @@
         "status": ["leader"]
     },
     "new_cat": [
-        ["can_birth",
+        ["age:has_kits",
+        "can_birth",
         "meeting",
         "exists",
         "old_name",
@@ -3173,7 +3180,8 @@
         "gender": ["male"]
     },
     "new_cat": [
-        ["can_birth",
+        ["age:has_kits",
+        "can_birth",
         "meeting",
         "exists",
         "old_name",
@@ -3296,7 +3304,7 @@
     "sub_type": [],
     "tags": [],
     "frequency": 3,
-    "event_text": "m_c finds a lost elderly kittypet. {PRONOUN/n_c:0/poss/CAP} owner is dead and {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} looking for a new home. m_c meows that c_n would be be willing to care for {PRONOUN/n_c:0/object}.",
+    "event_text": "m_c finds a lost, elderly kittypet whose owner is dead. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/are/is} looking for a new home and m_c meows that c_n would be willing to care for {PRONOUN/n_c:0/object}.",
     "m_c": {
         "status": ["leader", "deputy", "medicine cat"]
     },
