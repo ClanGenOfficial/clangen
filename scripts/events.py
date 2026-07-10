@@ -2351,7 +2351,7 @@ def handle_outbreaks(cat):
         if cat.illnesses[illness]["infectiousness"] == 0:
             continue
         chance = cat.illnesses[illness]["infectiousness"]
-        chance += len(meds) * 7
+        chance += len(meds) * get_config("condition_related.med_infection_reduction")
         if not int(random.random() * chance):  # 1/chance to infect
             # fleas are the only condition allowed to spread outside of cold seasons
             if (

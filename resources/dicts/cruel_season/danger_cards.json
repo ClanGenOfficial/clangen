@@ -13,5 +13,11 @@
       "relationship.deputy_envy_leader_influence": 3,
       "death_related.murder.deputy_prefer_leader": true
     }
+  },
+  "plague_ridden": {
+    "card_art": "danger/forsaken.png",
+    "modifiers": {
+      "condition_related.med_infection_reduction": 0
+    }
   }
 }

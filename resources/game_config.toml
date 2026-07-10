@@ -531,6 +531,9 @@ dev_tools = false
   illness_chance = 250
   classic_illness_chance = 500
 
+  # how much each medicine cat reduces the chance of infection, higher number is better
+  med_infection_reduction = 7
+
   # 5/chance (for most personalities) or 15/chance (for some personalities) an injury will occur 
   classic_injury_chance = 450
   injury_chance = 250
