@@ -11,6 +11,10 @@
     "all_elders": "Old Bones",
     "plague_ridden": "Plague-ridden",
     "one_cat": "Lone Steps",
-    "barren_stocks": "Barren Stockpiles"
+    "barren_stocks": "Barren Stockpiles",
+    "always_newleaf": "Neverending Pollen",
+    "always_greenleaf": "Neverending Heat",
+    "always_leaf-fall": "Neverending Harvest",
+    "always_leaf-bare": "Neverending Frost"
   }
 }
