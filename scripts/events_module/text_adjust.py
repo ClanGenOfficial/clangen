@@ -149,7 +149,7 @@ def poi_repl(inner_details):
             base_string += get_random_poi_by_category("gathering")
         elif category == "MOONPLACE":
             base_string += get_random_poi_by_category("moonplace")
-        elif category == "TERRITORY":
+        elif category == "TERRAIN":
             base_string += get_random_poi_by_category("terrain")
 
     return i18n.t(base_string)
