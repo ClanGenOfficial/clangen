@@ -52,7 +52,11 @@ def get_random_poi_by_tag(tag):
 
 
 def get_random_poi_by_category(category: Literal["gathering", "moonplace", "terrain"]):
-    return choice(get_pois_by_category(category))
+    possible_pois = get_pois_by_category(category)
+    if possible_pois:
+        return choice(possible_pois)
+    # sometimes there are no possible pois during tests
+    return "MISSING_POI"
 
 
 def add_poi(name, elements):
