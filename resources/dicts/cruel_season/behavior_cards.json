@@ -22,7 +22,7 @@
       "prey.feeding.lock_priority": true,
       "prey.feeding.allow_manual_feeding": false
     }
-  }
+  },
   "kit_season": {
     "card_art": "behavior/survival_of_fittest.png",
     "modifiers": {
