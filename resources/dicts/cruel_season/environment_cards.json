@@ -19,28 +19,28 @@
     }
   },
   "always_newleaf": {
-    "card_art": "environment/sickness.png",
+    "card_art": "environment/tainted.png",
     "modifiers": {
       "seasons.lock_season": true,
       "seasons.force_starting_season": "Newleaf"
     }
   },
   "always_greenleaf": {
-    "card_art": "environment/sickness.png",
+    "card_art": "environment/tainted.png",
     "modifiers": {
       "seasons.lock_season": true,
       "seasons.force_starting_season": "Greenleaf"
     }
   },
   "always_leaf-fall": {
-    "card_art": "environment/sickness.png",
+    "card_art": "environment/tainted.png",
     "modifiers": {
       "seasons.lock_season": true,
       "seasons.force_starting_season": "Leaf-fall"
     }
   },
   "always_leaf-bare": {
-    "card_art": "environment/sickness.png",
+    "card_art": "environment/tainted.png",
     "modifiers": {
       "seasons.lock_season": true,
       "seasons.force_starting_season": "Leaf-bare"
