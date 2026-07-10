@@ -1,7 +1,7 @@
 name: Failure Comment (Schema)
 on:
   workflow_run:
-    workflows: ["schema-diff"]
+    workflows: ["Schema_Diff"]
     types: [completed]
 
 permissions:
