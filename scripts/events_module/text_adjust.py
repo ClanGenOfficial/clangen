@@ -143,12 +143,14 @@ def poi_repl(inner_details):
             if names.intersection(get_poi_names_set())
             else "MISSING_POI"
         )
-    elif inner_details[1].upper() == "GATHERING":
-        base_string += get_random_poi_by_category("gathering")
-    elif inner_details[1].upper() == "MOONPLACE":
-        base_string += get_random_poi_by_category("moonplace")
-    elif inner_details[1].upper() == "TERRITORY":
-        base_string += get_random_poi_by_category("terrain")
+    elif inner_details[1].upper() == "CATEGORY":
+        category = inner_details[2].upper()
+        if category == "GATHERING":
+            base_string += get_random_poi_by_category("gathering")
+        elif category == "MOONPLACE":
+            base_string += get_random_poi_by_category("moonplace")
+        elif category == "TERRITORY":
+            base_string += get_random_poi_by_category("terrain")
 
     return i18n.t(base_string)
 
