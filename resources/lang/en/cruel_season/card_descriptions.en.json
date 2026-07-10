@@ -1,11 +1,9 @@
 {
   "en": {
-    "environment_placeholder0": "this is placeholder mewoowowow moewo mew meow mewowee moew",
-    "environment_placeholder1": "this is placeholder mewoowowow moewo mew meow mewowee moew",
-    "environment_placeholder2": "this is placeholder mewoowowow moewo mew meow mewowee moew",
+    "lean_meat": "The fresh-kill has gone scrawny and thin. All cats will need to eat more prey to survive.",
     "forsaken": "The stars have turned away. Leaders will only be given one life.",
-    "resolute": "The deputy stands firm on their goals: duration before warrior focus can change is doubled.",
     "for_the_throne": "Ambition rules. Deputies are more likely to murder the leader.",
+    "resolute": "The deputy stands firm in their goals: duration before warrior focus can change is doubled.",
     "fated_paths": "Pawsteps are placed according to Silverpelt's design. Mates and ranks cannot be changed manually.",
     "public_enemy": "The other Clans do not welcome new neighbors. All Clans will start as hostile.",
     "all_kittens": "The Clan begins with only kittens. What left this group all alone in the world?",
