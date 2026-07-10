@@ -9,30 +9,30 @@ This tab explains how to create back-ups of your saves, whether it's for editing
 
 1. Open data directory in settings / opendatadirectory.bat in the game folder
 2. Right click the saves folder and select "copy"
-3. Paste the folder in a safe spot separate from the clangen directory (such as desktop)
+3. Paste the folder in a safe spot separate from the ClanGen directory (such as desktop)
 4. Rename folder (ex: 0.13 back up)
 
 To apply the back up, take the contents of the duplicated saves folder and copy+paste it into ClanGen's save directory.
 
-If you're replacing the entire save file data, the file path should be clangen/saves/clan, rather than something like clangen/saves/saves/clan. The game only reads a specific file path - it will not find your saves otherwise.
+If you're replacing the entire save file data, the file path should be ClanGen/saves/clan, rather than something like ClanGen/saves/saves/clan. The game only reads a specific file path - it will not find your saves otherwise.
 
-### Macos
+### macOS
 
 1. Open the data directory in settings
 2. Right click the saves folder and select "duplicate" (NOT alias, this makes a short cut)
-3. Drag the duplicate to a separate location from the clangen directory (such as downloads)
+3. Drag the duplicate to a separate location from the ClanGen directory (such as downloads)
 4. Rename folder (ex: 0.13 back up)
 
 To apply the back up, take the contents of the duplicated saves folder and copy+paste it into ClanGen's save directory.
 
 !!! tip
-     If unable to open game, open a modded application and open the data directory in its settings, then navigate to clangen's folder
+     If unable to open game, open a modded application and open the data directory in its settings, then navigate to ClanGen's folder
 
-### Chromeos
+### chromeOS
 
 1. Open data directory in settings or manually navigate to the saves (file path ~/.local/share/ClanGen)
 2. Open the saves folder, and use ctrl+a and ctrl+c to copy all contents
-3. Make a new folder separate from the clangen directory (such as downloads)
+3. Make a new folder separate from the ClanGen directory (such as downloads)
 4. Rename the newly created folder to "cg saves backup" or similar
 5. Paste (ctrl+v) all contents into the created folder
 
@@ -45,7 +45,7 @@ If you are unable to replace content that's already in the file, delete the cont
 !!! tip
      ClanGen's save data is NOT operating system specific. You can move save data between OS's without problems.
 
-Saves are installed *locally* on your device. ClanGen does not offer a cloud service or anything similar, so if you were to move saves between computers, it would have to be done manually.
+Saves are installed *locally* on your device. ClanGen does not offer a cloud service or similar, so if you were to move saves between computers, it would have to be done manually.
 
 Do the following:
 
@@ -56,8 +56,8 @@ Do the following:
 
 ```console
 - Windows: right click the folder > send to > compressed (zip)
-- MacOS: right click the folder > compress
-- ChromeOS: right click the folder > select ZIP
+- macOS: right click the folder > compress
+- chromeOS: right click the folder > select ZIP
 ```
 
 After step 4, we're now switching to the new device.
@@ -65,7 +65,7 @@ After step 4, we're now switching to the new device.
 5. Once on your new device, make sure ClanGen is installed
 6. Go into the storage program/device you used and download the ZIPPED folder you created earlier
 7. Extract/decompress the zipped folder
-8. Navigate to the ClanGen saves on your old device
+8. Navigate to the ClanGen saves from your old device
 9. Open the decompressed folder of your backed-up saves and drag the "saves" folder out to replace the current saves folder within ClanGen's directory
 
 You should now be able to run and play your old saves.

@@ -2,7 +2,7 @@ UV is a program that helps manage virtual environments (your dependencies) by in
 
 The provided README.md in your game folder is already quite helpful, but if you need detailed instructions, follow the section dedicated to your operating system.
 
-Yes, this guide can also work and apply with **up-to-date** mods. You just have to take the initiative to change some details to reflect the mod you're installing. Make sure to read carefully.
+Yes, this guide can also work and apply with **up-to-date** mods. You just have to take the initiative to change some details to reflect the mod you're installing. Make sure to read the instructions carefully.
 
 ---
 
@@ -18,14 +18,14 @@ In short terms, no, we do not recommend using Thonny with ClanGen, but it can be
 
 ### What should I install before attempting to install UV?
 
-First, you need ClanGen's source version of the game. This is essentially the developer version that gives you access to the game's core coding. 
+First, you need ClanGen's source version of the game. This is essentially the developer version that gives you access to the games core coding. 
 
 You can download the source version through either:
 
-- [github releases](https://github.com/ClanGenOfficial/clangen/releases) (source version of stable releases)
-- the green [<> code button](https://github.com/ClanGenOfficial/clangen) to the right (source version of development commits). Make sure you're selected on the right branch before using the <> code button!
+- [github releases](https://github.com/ClanGenOfficial/ClanGen/releases) (source version of stable releases)
+- the green [<> code button](https://github.com/ClanGenOfficial/ClanGen) to the right (source version of development commits). Make sure you're selected on the right branch before using the <> code button!
 
-Secondly, you'll need a terminal program. The terminal program that comes with your device is just fine, and it's recommended to install UV through the devices terminal.
+Secondly, you'll need a terminal program. The terminal program that comes with your device is just fine. It's recommended to install UV through the devices default terminal.
 
 ### Do I need python before installing UV?
 
@@ -35,7 +35,7 @@ Nope! Unlike poetry (the installer ClanGen was using previously), UV installs Py
 
 Probably not in the way you're thinking. UV itself is installed locally onto your device, though the dependencies are installed along with the source copy you're applying them to. If you're using multiple source copies, you'll have separate dependencies for each one of them.
 
-### Does Source work for windows 7 & chromeos 2.31?
+### Does Source work for windows 7 & chromeOS 2.31?
 
 Theoretically, yes. For now, that is. The source version of the game is not operating system specific, so it is not as limited as the application in what can use it.
 
@@ -45,7 +45,7 @@ There will be a time where you are unable to install the required python version
 
 If you are unsure of the terms I'm using and how they apply to installing the game, please check here for definitions! Apologizes if I miss something.
 
-**Operating system**: The devices system, such as Windows, MacOS, ChromeOS, Linux. 
+**Operating system**: The devices system, such as Windows, macOS, chromeOS, Linux. 
 
 - If you do not know what operating system you're using, you can find it in your devices "system" settings.
 
@@ -58,6 +58,8 @@ If you are unsure of the terms I'm using and how they apply to installing the ga
 **PATH**: Path is referring to what your terminal is set to affect.
 
 **Application**: Application is referring to the exe install that has all the core coding compressed into the application launcher. 
+
+**Terminal**: Terminals are a texted-based interface used to affectively communicate with a computer's operating system, allowing the user to input commands and execute tasks.
 
 ---
 
@@ -90,7 +92,7 @@ Search and open Windows PowerShell again. Once the terminal is opened, input the
 uv --version
 ```
 
-Press enter. This is simply checking to see the previous command installed UV correctly. If this command spits out `uv [number] (numbers)`, then it worked.
+Press enter. This is simply checking to see if the previous command installed UV correctly. If this command spits out `uv [number] (numbers)`, then it worked.
 
 ## Running via RUN file
 
@@ -112,7 +114,7 @@ Now that UV is properly installed, you can switch to any other IDE of your choic
 
 Go to where your unzipped ClanGen source is located on your device, and open it until you get to its internal contents. Right click in an empty space within the file explorer, and select open with terminal. It'll automatically open in the correct pathing.
 
-![right clicking file explorer to "open with terminal"](https://github.com/Honeycase/clangen/blob/docs-installing/docs-resources/assets/techhelp/WIN-rightclick_terminal.png?raw=true)
+![right clicking file explorer to "open with terminal"](https://github.com/Honeycase/ClanGen/blob/docs-installing/docs-resources/assets/techhelp/WIN-rightclick_terminal.png?raw=true)
 
 Follow the section "commands" below.
 
@@ -123,27 +125,27 @@ Before we can do any commands, we have to set the terminal to PATH.
 
 - If you're unsure of what this means: the terminal can only affect what you set it to affect. If you leave it to its default pathing, it CAN NOT find ClanGen and apply your commands.
 
-![default powershell pathing](https://github.com/Honeycase/clangen/blob/docs-installing/docs-resources/assets/techhelp/WIN-powershell-default.png?raw=true)
+![default powershell pathing](https://github.com/Honeycase/ClanGen/blob/docs-installing/docs-resources/assets/techhelp/WIN-powershell-default.png?raw=true)
 
-Type `cd` into your terminal. Do not Enter yet. 
+Type `cd` into your terminal. Do not enter yet. 
 
 Go to where your unzipped ClanGen source is located on your device, and open it until you get to its contents. Look at the top of the file explorer, and right click the last folder listed in the file pathing. Select "copy address as text".
 
 - "Copy address as text" copies the entire file pathing to the folder you right clicked, which is perfect for this kind of command.
 
-![copy address as text](https://github.com/Honeycase/clangen/blob/docs-installing/docs-resources/assets/techhelp/WIN-copy-address.png?raw=true)
+![copy address as text](https://github.com/Honeycase/ClanGen/blob/docs-installing/docs-resources/assets/techhelp/WIN-copy-address.png?raw=true)
 
-Paste the text you just copied after the `cd` command. it should end up look similar to `cd C:\Users\username\Documents\clangen-stable/clangen`. Enter.
+Paste the text you just copied after the `cd` command. it should end up look similar to `cd C:\Users\username\Documents\ClanGen-stable/ClanGen`. Enter.
 
-![cd command](https://github.com/Honeycase/clangen/blob/docs-installing/docs-resources/assets/techhelp/WIN_cd_command_example.png?raw=true)
+![cd command](https://github.com/Honeycase/ClanGen/blob/docs-installing/docs-resources/assets/techhelp/WIN_cd_command_example.png?raw=true)
 
-Once the terminal is set to the path, like the example above, use the command `dir` to make sure you're in the correct place.
+Once the terminal is set to the path, use the command `dir` to make sure you're in the correct place.
 
-![dir command](https://github.com/Honeycase/clangen/blob/docs-installing/docs-resources/assets/techhelp/WIN-dir-command.png?raw=true)
+![dir command](https://github.com/Honeycase/ClanGen/blob/docs-installing/docs-resources/assets/techhelp/WIN-dir-command.png?raw=true)
 
 You should see the internal contents of the ClanGen source folder, like above.
 
-If you don't get the internal contents, reset your terminal and try again. If it's just a folder called clangen, you can use `cd clangen` to further add to the terminal path, then confirm with `dir`.
+If you don't get the internal contents, reset your terminal and try again. If it's just a folder called ClanGen, you can use `cd ClanGen` to further add to the terminal path, then confirm with `dir`.
 
 ### Commands
 
@@ -167,19 +169,19 @@ uv run main.py
 
 When using the manual way, you will have to put the terminal to the correct file path and use the open command above every time you want to play (Unless the IDE you intend to use offers a run option). 
 
-# MacOS/Linux
+# macOS/Linux/chrommeOS
 
 !!! warning
      All the commands listed in this guide are COPY AND PASTE. Please do not change the commands!
 
-Please follow this section if you're using MacOS or Linux. The commands are virtually the same, though the errors you might get from attempting to run source might be different.
+Please follow this section if you're using macOS, Linux, or chromeOS. The commands are virtually the same, though the errors you might get from attempting to run source might be different.
 
 ## Installing UV
 
 Open the terminal provided to you by your OS (operating system).
 
-- MAC: Command + space on your keyboard, type in `terminal`, enter
-- LINUX: Open the linux terminal
+- macOS: Command + space on your keyboard, type in `terminal`, enter
+- Linux/chromeOS: Open the linux terminal
 
 Copy the below command and paste it into your terminal:
 
@@ -209,22 +211,22 @@ If the RUN file doesn't end up working for you, or you want to do the manual way
 
 Now that UV is properly installed, you can switch to any other IDE of your choice to install your requirements.
 
-### PATH: MAC
+### PATH: macOS
 
 !!!tip
-      (macos) On the off chance that your source is in applications, you will have to move it to somewhere else, such as downloads or documents, to set the path into your terminal. "applications" is not a directory you're able to use in the terminal.
+      (macOS) On the off chance that your source is in applications, you will have to move it to somewhere else, such as downloads or documents, to set the path into your terminal. "applications" is not a directory you're able to use in the terminal.
 
 Open your devices terminal and type in `ls`. Do not enter. 
 
-![searching terminal for mac](https://github.com/Honeycase/clangen/blob/docs-installing/docs-resources/assets/techhelp/MAC-terminal-search.png?raw=true)
+![searching terminal for mac](https://github.com/Honeycase/ClanGen/blob/docs-installing/docs-resources/assets/techhelp/MAC-terminal-search.png?raw=true)
 
-Find where your unzipped clangen source is held in finder. Put the clangen location after cd. For example, `ls /Users/username/Downloads/clangen`
+Find where your unzipped ClanGen source is held in finder. Put the ClanGen location after cd. For example, `ls /Users/username/Downloads/ClanGen`
 
 This is to check the path you're trying to apply is correct. You should get something similar to below:
 
-![ls result](https://github.com/Honeycase/clangen/blob/docs-installing/docs-resources/assets/techhelp/MAC-ls-result.png?raw=true)
+![ls result](https://github.com/Honeycase/ClanGen/blob/docs-installing/docs-resources/assets/techhelp/MAC-ls-result.png?raw=true)
 
-Once confirmed that the path is correct, change the command from previous to have `cd`. For example, `cd /Users/username/Downloads/clangen`
+Once confirmed that the path is correct, change the command from previous to have `cd`. For example, `cd /Users/username/Downloads/ClanGen`
 
 Proceed to the Commands section below.
 
@@ -232,13 +234,13 @@ Proceed to the Commands section below.
 
 There are two ways to set your terminal to path with linux. You can either do it the [manual way](#path-mac), like detailed above (but use `/home` instead of `/Users`), or you can open the folder within the linux terminal.
 
-For the manual method, you should get something like this, just like on Mac:
+For the manual method, you should get something like this, just like on macOS:
 
-![open with terminal](https://github.com/rustykitty/clangen/blob/honey-guide/docs-resources/assets/techhelp/LINUX_ls.png?raw=true)
+![open with terminal](https://github.com/rustykitty/ClanGen/blob/honey-guide/docs-resources/assets/techhelp/LINUX_ls.png?raw=true)
 
 For the automatic method, go to where your unzipped ClanGen source is located on your device, and open it until you get to its internal contents. Right click in an empty space within the file manager, and select open with terminal. It'll automatically open in the correct location; you don't need to use `cd`.
 
-![open with terminal](https://github.com/rustykitty/clangen/blob/honey-guide/docs-resources/assets/techhelp/LINUX_open_in_terminal.png?raw=true)
+![open with terminal](https://github.com/rustykitty/ClanGen/blob/honey-guide/docs-resources/assets/techhelp/LINUX_open_in_terminal.png?raw=true)
 
 ### Commands
 
@@ -263,7 +265,7 @@ uv run main.py
 When using the manual way, you will have to put the terminal to the correct file path and use the open command above every time you want to play (Unless the IDE you intend to use offers a run option). 
 
 !!! tip
-      MacOS terminal remembers the last path you set it to, so you shouldn't have to reset it 
+      macOS terminal remembers the last path you set it to, so you shouldn't have to reset it 
 
 # Common Problems
 
@@ -276,7 +278,7 @@ Having a problem with installing source? Look here!
 The easiest way to unzip a folder while using linux is:
 
 1. Create a folder in the place you want your Source to be held
-2. Double click your clangen source folder to open it
+2. Double click your ClanGen source folder to open it
 3. Select everything you see in the folder
 4. Drag or copy+paste the contents to the folder in step 1
 
@@ -309,7 +311,7 @@ For those who don't want to go through permissions, follow the manual way of ope
 You should NOT have to pay anything to extract a zip folder. If you do not have a default "extract" option provided by your device, remove the program you were using previously and download [7zip](https://7-zip.org/download.html) or another free alternative.
 
 !!! note
-      MACos's system has the ability to decompress zips with just a double click, so you don't need a separate program for anything.
+      macOS's system has the ability to decompress zips with just a double click, so you don't need a separate program for anything.
 
 ---
 
