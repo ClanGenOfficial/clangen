@@ -1259,8 +1259,8 @@ class Clan:
     @reputation.setter
     def reputation(self, a: int):
         self._reputation = int(a)
-        if self._reputation > get_config("reputation.reputation.outsiders.max"):
-            self._reputation = get_config("reputation.reputation.outsiders.max")
+        if self._reputation > 100:
+            self._reputation = 100
         elif self._reputation < 0:
             self._reputation = 0
 
@@ -1461,7 +1461,7 @@ class OtherClan:
         # makes sure that other clan relations can't surpass limit
         if self.relations > get_config("reputation.other_clans.relation_cap"):
             self.relations = get_config("reputation.other_clans.relation_cap")
-
+            
         if self.relations <= get_config("reputation.other_clans.hostile"):
             return "hostile"
         elif self.relations <= get_config("reputation.other_clans.neutral"):

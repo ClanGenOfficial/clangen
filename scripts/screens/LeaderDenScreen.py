@@ -8,7 +8,6 @@ from pygame_gui.core import UIContainer
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatGroup, CatStanding
 from scripts.clan import OtherClan
-from scripts.config import get_config
 from scripts.game_structure import game
 from scripts.clan_package.settings.clan_settings import (
     set_clan_setting,
@@ -1037,9 +1036,9 @@ class LeaderDenScreen(Screens):
             self.screen_elements["clan_notice_text"].hide()
 
             self.clan_rep = game.clan.reputation
-            if 0 <= int(self.clan_rep) <= get_config("reputation.other_clans.hostile"):
+            if 0 <= int(self.clan_rep) <= 30:
                 reputation = "hostile"
-            elif get_config("reputation.other_clans.hostile") < int(self.clan_rep) <= get_config("reputation.other_clans.neutral"):
+            elif 31 <= int(self.clan_rep) <= 70:
                 reputation = "neutral"
             else:
                 reputation = "welcoming"
