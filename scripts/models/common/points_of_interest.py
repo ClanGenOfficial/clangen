@@ -68,5 +68,5 @@ class PointsOfInterestGroup(RootModel):
         PointsOfInterestGroupByCategory,
     ] = Field(
         ...,
-        description="Specifies Points of Interest constraints. Must use EITHER names or tags.",
+        description="Specifies Points of Interest constraints. Must use names OR tags OR category (not multiple at once).",
     )
