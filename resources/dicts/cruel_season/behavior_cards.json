@@ -12,5 +12,19 @@
       "mates.allow_manual": false,
       "settings.force_enable.deputy": true
     }
+  },
+  "enmity": {
+    "card_art": "ADD CARD ART WHEN MERGED",
+    "modifiers": {
+      "reputation.other_clans.relation_cap": 7,
+      "clan_creation.starting_clan_relation": [1, 7]
+    }
+  },
+  "malicious_aura": {
+    "card_art": "ADD CARD ART WHEN MERGED",
+    "modifiers": {
+      "reputation.outsiders.relation_cap": 29,
+      "clan_creation.starting_outsider_reputation": 15
+    }
   }
 }

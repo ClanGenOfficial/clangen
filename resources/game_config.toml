@@ -549,6 +549,9 @@ dev_tools = false
   # other clans will start with a random relation between the two numbers
   starting_clan_relation = [8, 12]
 
+  # outsider reputation
+  starting_outsider_reputation = 80
+
   # the "default" rank, the majority of cats will take this and random high ranks will originate from this rank
   majority_rank = "warrior"
 
@@ -940,3 +943,17 @@ dev_tools = false
   # force a game setting to be true, stopping players from changing it
   [settings.force_enable]
     "deputy" = false
+
+[reputation]
+  # manages reputation quotas
+  [reputation.other_clans]
+  # ranges for other clan reputation levels
+    relation_cap = 30
+    ally = 30
+    neutral = 17
+    hostile = 7
+  [reputation.outsiders]
+    relation_cap = 100
+    welcoming = 100
+    neutral = 70
+    hostile = 29

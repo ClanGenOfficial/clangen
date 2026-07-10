@@ -1463,6 +1463,8 @@ class OtherClan:
         elif 7 <= self.relations <= 17:
             return "neutral"
         return "hostile"  # self.relations < 7
+    
+    # REWORK TO GAME_CONFIG
 
 
 class Afterlife:
