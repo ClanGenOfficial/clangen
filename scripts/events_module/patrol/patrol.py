@@ -25,7 +25,8 @@ from scripts.events_module.event_filters import (
     event_for_location,
     event_for_season,
     event_for_poi,
-    event_for_required_cat_types, event_for_cat,
+    event_for_required_cat_types,
+    event_for_cat,
 )
 from scripts.events_module.patrol.generate_patrol_list import (
     get_patrol_list,
@@ -254,7 +255,9 @@ class Patrol:
             "debug_override_patrol_stat_requirements"
         ]:
             if self.debug_patrol_id:
-                chosen_patrol = [p for p in patrol_list if p.id == self.debug_patrol_id][0]
+                chosen_patrol = [
+                    p for p in patrol_list if p.id == self.debug_patrol_id
+                ][0]
             else:
                 chosen_patrol = choice(patrol_list)
             print(
@@ -262,9 +265,7 @@ class Patrol:
             )
         # FILTER PATROLS when no debug set
         else:
-            chosen_patrol = self._filter_patrols(
-                patrol_list, patrol_type
-            )
+            chosen_patrol = self._filter_patrols(patrol_list, patrol_type)
 
         return chosen_patrol
 
@@ -390,7 +391,9 @@ class Patrol:
                     chosen_frequency = find_new_frequency(used_frequencies)
 
             if not patrol_override:
-                test_patrol = choices([possible_patrols], [x.weight for x in possible_patrols])[0]
+                test_patrol = choices(
+                    [possible_patrols], [x.weight for x in possible_patrols]
+                )[0]
             else:
                 test_patrol = patrol_override
                 patrol_override = None
@@ -413,7 +416,6 @@ class Patrol:
                 chosen_patrol = test_patrol
 
         return chosen_patrol
-
 
     def _pass_basic_constraints(
         self, patrol: PatrolEvent, patrol_type: str, is_debug_patrol: bool
@@ -490,7 +492,9 @@ class Patrol:
         temp_involved_cats = {}
 
         for abbr, constraints in patrol.involved_cats.items():
-            potential_cats = [c for c in self.patrol_cats if c not in temp_involved_cats.values()]
+            potential_cats = [
+                c for c in self.patrol_cats if c not in temp_involved_cats.values()
+            ]
             while not temp_involved_cats[abbr] and potential_cats:
                 if abbr in self.involved_cats:
                     cat_to_check = self.involved_cats[abbr]
@@ -503,7 +507,7 @@ class Patrol:
                     involved_cat_dict=temp_involved_cats,
                     event_id=patrol.id,
                     p_l=temp_involved_cats["p_l"],
-                    other_involved_clan_id=self.other_clan.id
+                    other_involved_clan_id=self.other_clan.id,
                 ):
                     temp_involved_cats[abbr] = cat_to_check
                 else:
