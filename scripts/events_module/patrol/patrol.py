@@ -3,6 +3,7 @@
 import logging
 import random
 from copy import deepcopy
+from itertools import combinations
 from os.path import exists as path_exists
 from random import choice, randint, choices
 from typing import List, Tuple, Optional, Union, Literal, TypedDict
@@ -41,6 +42,7 @@ from scripts.game_structure import game
 from scripts.events_module.text_adjust import (
     event_text_adjust,
 )
+from scripts.game_structure.game.settings.settings import values
 from scripts.special_dates import SpecialDate, is_today
 
 
@@ -270,57 +272,51 @@ class Patrol:
 
         return chosen_patrol
 
-    def decide_if_romantic(
-        self, romantic_event: Optional[PatrolEvent]
-    ) -> bool:
-        
+    def _decide_if_romantic(self, romantic_event: Optional[PatrolEvent]) -> bool:
+        """
+        Finds the chance of this patrol being romantic based on the cats involved and their current relationship with each other
+        :return: True if patrol should be romantic, False otherwise
+        """
+
         if not romantic_event:
             print("No romantic event")
             return False
 
-        if "rom_two_apps" in romantic_event.tags:
-            if len(patrol_apprentices) < 2:
-                print("somehow, there are not enough apprentices for romantic patrol")
-                return False
-            love1 = patrol_apprentices[0]
-            love2 = patrol_apprentices[1]
-        else:
-            love1 = patrol_leader
-            love2 = random_cat
+        chance_of_romance_patrol = get_config(
+            "patrol_generation.chance_of_romance_patrol"
+        )
 
-        if (
-            not love1.is_potential_mate(love2, for_love_interest=True)
-            and love1.ID not in love2.mate
-        ):
-            print("not a potential mate or current mate")
-            return False
+        for block in romantic_event.relationship_constraint:
+            if "can_romance" in block["constraints"]:
+                # gather the kitty cats
+                cats_from = [
+                    c for a, c in self.involved_cats.items() if a in block["cats_from"]
+                ]
+                cats_to = [
+                    c for a, c in self.involved_cats.items() if a in block["cats_to"]
+                ]
+                # now affect the chance depending on the compatibility
+                for c in cats_from:
+                    compatibility = [
+                        get_personality_compatibility(c, love_cat)
+                        for love_cat in cats_to
+                    ]
+                    for compat in compatibility:
+                        if compat == CatCompatibility.POSITIVE:
+                            chance_of_romance_patrol -= 10
+                        elif compat == CatCompatibility.NEGATIVE:
+                            chance_of_romance_patrol += 10
 
-        print("attempted romance between:", love1.name, love2.name)
-        chance_of_romance_patrol = constants.CONFIG["patrol_generation"][
-            "chance_of_romance_patrol"
-        ]
-
-        if (
-            get_personality_compatibility(love1, love2) == CatCompatibility.POSITIVE
-            or love1.ID in love2.mate
-        ):
-            chance_of_romance_patrol -= 10
-        else:
-            chance_of_romance_patrol += 10
-
-        values = [*RelType]
-        for val in values:
-            value_check = check_relationship_value(love1, love2, val)
-            if value_check < 0:
-                chance_of_romance_patrol -= 1
-            elif value_check > 0:
-                chance_of_romance_patrol += 2
-
-        if (
-            romantic_event.patrol_id
-            == game.constants.CONFIG["patrol_generation"]["debug_ensure_patrol_id"]
-        ):
-            chance_of_romance_patrol = 1
+                    rel_values = [
+                        check_relationship_value(c, love_cat, val)
+                        for val in [*RelType]
+                        for love_cat in cats_to
+                    ]
+                    for v in rel_values:
+                        if v < 0:
+                            chance_of_romance_patrol -= 1
+                        else:
+                            chance_of_romance_patrol += 1
 
         if chance_of_romance_patrol <= 0:
             chance_of_romance_patrol = 1
@@ -379,12 +375,8 @@ class Patrol:
                 romantic_patrols.copy(), chosen_frequency, patrol_override
             )
 
-        if not self.decide_if_romantic(chosen_patrol):
+        if not self._decide_if_romantic(chosen_patrol):
             chosen_patrol = None
-
-        # TODO: check for a romance patrol first
-        # TODO: then decide if we want to use that romance patrol based on compat, ect
-        # TODO: if we're gonna use it, return that patrol. if not, find a normal one to use
 
         # if no romantic patrol possible, we get a normal one!
         if not chosen_patrol:

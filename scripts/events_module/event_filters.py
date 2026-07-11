@@ -1377,6 +1377,21 @@ def _filter_relationship_type_updated(
     # if the cat doesn't meet the check AND it's an inclusionary tag: return False
     # otherwise, continue onwards
 
+    if "can_romance" in filter_types:
+        for cat in cats_from:
+            # if the cats CAN romance
+            if all([cat.is_potential_mate(inter_cat) for inter_cat in cats_to]):
+                if "can_romance" in exclusionary_values:
+                    return False
+            # if some but not ALL can romance
+            elif "can_romance" in inclusionary_values and any(
+                [cat.is_potential_mate(inter_cat) for inter_cat in cats_to]
+            ):
+                return False
+            # if the cats CAN'T romance
+            elif "can_romance" in inclusionary_values:
+                return False
+
     if "strangers" in filter_types:
         for cat in cats_from:
             # if the cats ARE strangers
