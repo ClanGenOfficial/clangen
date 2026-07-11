@@ -559,7 +559,7 @@ class Patrol:
         self.involved_cats = temp_involved_cats
         return True
 
-    def find_allowed_outcomes(
+    def _find_allowed_outcomes(
         self, antagonize: bool = False
     ) -> tuple[EventOutcome, EventOutcome]:
         """
@@ -797,74 +797,25 @@ class Patrol:
         if self.patrol_event is None:
             raise Exception("No patrol event supplied")
 
-        # First Step - Filter outcomes and pick a fail and success outcome
-        success_outcomes = (
-            self.patrol_event.antag_success_outcomes
-            if antagonize
-            else self.patrol_event.success_outcomes
-        )
-        fail_outcomes = (
-            self.patrol_event.antag_fail_outcomes
-            if antagonize
-            else self.patrol_event.fail_outcomes
-        )
+        success_outcome, fail_outcome = self._find_allowed_outcomes(antagonize)
 
-        # Filter the outcomes. Do this only once - this is also where stat cats are determined
-        success_outcomes = PatrolOutcome.prepare_allowed_outcomes(
-            success_outcomes, self
-        )
-        fail_outcomes = PatrolOutcome.prepare_allowed_outcomes(fail_outcomes, self)
-
-        chosen_success = None
-        chosen_failure = None
-
-        # Choose a success and fail outcome
-        chosen_frequency = get_frequency()
-        used_frequencies = set()
-        while not chosen_success or not chosen_failure:
-            if not chosen_success:
-                possible_successes = [
-                    x for x in success_outcomes if x.frequency == chosen_frequency
-                ]
-                if possible_successes:
-                    chosen_success = choices(
-                        possible_successes,
-                        weights=[x.weight for x in possible_successes],
-                    )[0]
-            if not chosen_failure:
-                possible_failures = [
-                    x for x in fail_outcomes if x.frequency == chosen_frequency
-                ]
-                if possible_failures:
-                    chosen_failure = choices(
-                        possible_failures, weights=[x.weight for x in possible_failures]
-                    )[0]
-            if not chosen_success or not chosen_failure:
-                used_frequencies.add(chosen_frequency)
-                chosen_frequency = find_new_frequency(used_frequencies)
-
-        final_event, success = self.calculate_success(chosen_success, chosen_failure)
+        final_event, success = self.calculate_success(success_outcome, fail_outcome)
 
         print(f"PATROL ID: {self.patrol_event.id} | SUCCESS: {success}")
         print(
             f"Patrol Frequency: {self.patrol_event.frequency} | Patrol Weight: {self.patrol_event.weight}"
         )
-        if success:
-            print(
-                f"Outcome Frequency: {chosen_success.frequency} | Outcome Weight: {chosen_success.weight}"
-            )
-        else:
-            print(
-                f"Outcome Frequency: {chosen_failure.frequency} | Outcome Weight: {chosen_failure.weight}"
-            )
+        print(
+            f"Outcome Frequency: {final_event.frequency} | Outcome Weight: {final_event.weight}"
+        )
 
         # Run the chosen outcome
         return final_event.execute_outcome(self)
 
     def calculate_success(
-        self, success_outcome: PatrolOutcome, fail_outcome: PatrolOutcome
-    ) -> Tuple[PatrolOutcome, bool]:
-        """Returns both the chosen event, and a boolean that's True if success, and False is fail."""
+        self, success_outcome: EventOutcome, fail_outcome: EventOutcome
+    ) -> Tuple[EventOutcome, bool]:
+        """Returns both the chosen outcome, and a boolean that's True if success, and False if failure."""
 
         patrol_size = len(self.patrol_cats)
         total_exp = sum([x.experience for x in self.patrol_cats])
@@ -876,11 +827,11 @@ class Patrol:
 
         gm_modifier = get_config(path)
 
-        exp_adustment = (
+        exp_adjustment = (
             (1 + 0.10 * patrol_size) * total_exp / (patrol_size * gm_modifier * 2)
         )
 
-        success_chance = self.patrol_event.chance_of_success + int(exp_adustment)
+        success_chance = self.patrol_event.chance_of_success + int(exp_adjustment)
         success_chance = min(success_chance, 90)
 
         # Now, apply success and fail skill
@@ -890,98 +841,24 @@ class Patrol:
             "| EX_updated chance:",
             success_chance,
         )
-        skill_updates = ""
 
         # Skill and trait stuff
-        for kitty in self.patrol_cats:
-            # SUCCESS OUTCOME
-            is_exclusionary = any(
-                value.find("-") == 0 for value in success_outcome.stat_skill
-            )
-            if is_exclusionary:
-                skills_to_check = [
-                    x.replace("-", "") for x in success_outcome.stat_skill
-                ]
-            else:
-                skills_to_check = success_outcome.stat_skill
-
-            hits = kitty.skills.check_skill_requirement_list(skills_to_check)
-
-            if is_exclusionary and not hits:
-                # if they don't have a disallowed skill, we increase the chance
-                success_chance += (
-                    1 * constants.CONFIG["patrol_generation"]["win_stat_cat_modifier"]
-                )
-            else:
-                # if they had a required skill, we increase
-                success_chance += (
-                    hits
-                    * constants.CONFIG["patrol_generation"]["win_stat_cat_modifier"]
-                )
-
-            # FAIL OUTCOME
-            is_exclusionary = any(
-                value.find("-") == 0 for value in fail_outcome.stat_skill
-            )
-            if is_exclusionary:
-                skills_to_check = [x.replace("-", "") for x in fail_outcome.stat_skill]
-            else:
-                skills_to_check = fail_outcome.stat_skill
-            hits = kitty.skills.check_skill_requirement_list(skills_to_check)
-
-            if is_exclusionary and not hits:
-                # if they don't have a disallowed skill, we decrease chance (fail mod is a negative)
-                success_chance += (
-                    1 * constants.CONFIG["patrol_generation"]["fail_stat_cat_modifier"]
-                )
-            else:
-                # if they had the required skill, we decrease chance (fail mod is a negative)
-                success_chance += (
-                    hits
-                    * constants.CONFIG["patrol_generation"]["fail_stat_cat_modifier"]
-                )
-
-            # SUCCESS OUTCOME
-            is_exclusionary = any(
-                value.find("-") == 0 for value in success_outcome.stat_trait
-            )
-            if is_exclusionary:
-                trait_to_check = [
-                    x.replace("-", "") for x in success_outcome.stat_trait
-                ]
-            else:
-                trait_to_check = success_outcome.stat_trait
-
-            if (is_exclusionary and kitty.personality.trait not in trait_to_check) or (
-                kitty.personality.trait in trait_to_check
-            ):
-                success_chance += constants.CONFIG["patrol_generation"][
-                    "win_stat_cat_modifier"
-                ]
-
-            # FAIL OUTCOME
-            is_exclusionary = any(
-                value.find("-") == 0 for value in fail_outcome.stat_trait
-            )
-            if is_exclusionary:
-                trait_to_check = [x.replace("-", "") for x in fail_outcome.stat_trait]
-            else:
-                trait_to_check = fail_outcome.stat_trait
-
-            if (is_exclusionary and kitty.personality.trait not in trait_to_check) or (
-                kitty.personality.trait in trait_to_check
-            ):
-                success_chance += constants.CONFIG["patrol_generation"][
-                    "fail_stat_cat_modifier"
-                ]
-
-            skill_updates += f"{kitty.name} updated chance to {success_chance} | "
+        for abbr, constraints in success_outcome.involved_cats.items():
+            # if this is present, then we know a cat must fulfill it
+            if stat_block := constraints.get("stat"):
+                cat = self.outcome_cats["success"][abbr]
+                if "skill" in stat_block:
+                    success_chance += get_config(
+                        "patrol_generation.skill_cat_modifier"
+                    ) * cat.skills.check_skill_requirement_list(stat_block["skill"])
+                    print(f"success chance increase to {success_chance}")
+                elif "trait" in stat_block:
+                    success_chance += get_config("patrol_generation.trait_cat_modifier")
+                    print(f"success chance increase to {success_chance}")
 
         if success_chance >= 120:
             success_chance = 115
-            skill_updates += "success chance over 120, updated to 115"
-
-        print(skill_updates)
+            print("success chance over 120, updated to 115")
 
         success = int(random.random() * 120) < success_chance
 

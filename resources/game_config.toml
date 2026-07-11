@@ -443,11 +443,9 @@ dev_tools = false
   classic_difficulty_modifier = 1
 
   # amount to modify patrol success based on patrol stats
-  # increasing this value increases the NUMERATOR for success (denominator is fixed at 120)
-  win_stat_cat_modifier = 10
-  better_stat_modifier = 5
-  best_stat_modifier = 10
-  fail_stat_cat_modifier = -15
+  # for each level in the required skill, success chance is boosted or nerfed accordingly
+  skill_cat_modifier = 5
+  trait_cat_modifier = 10
 
   # base 1/chance for a romance patrol. gets modified further in code
   chance_of_romance_patrol = 16
