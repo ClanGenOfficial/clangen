@@ -1495,10 +1495,6 @@ class OtherClan:
 
         :return: One of "ally", "neutral" or "hostile".
         """
-        # makes sure that other clan relations can't surpass limit
-        if self.relations > get_config("reputation.other_clans.relation_cap"):
-            self.relations = get_config("reputation.other_clans.relation_cap")
-
         if self.relations <= get_config("reputation.other_clans.hostile"):
             return "hostile"
         elif self.relations <= get_config("reputation.other_clans.neutral"):
