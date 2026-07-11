@@ -42,6 +42,10 @@ def get_poi_tags_set():
     return _poi_tags
 
 
+def get_poi_categories_set():
+    return set(_poi_by_category.keys())
+
+
 def get_random_poi_by_tag(tag):
     """
     Return a random POI name that fits the requested tag/s.
