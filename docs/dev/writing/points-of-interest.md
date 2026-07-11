@@ -92,26 +92,28 @@ Points of Interests can use many different tags that denote circumstances around
 
 Patrols and Short Events now have an additional constraint that can be utilized to include either a specific Point of Interest ID or tag. 
 
-You can add this to any short event or patrol to constrain by Point of Interest. However, remember to constrain either via names or by a single tag, but not by both at once.
+You can add this to any short event or patrol to constrain by Point of Interest. However, remember to constrain either via names or by category or by a single tag, but not by multiple at once.
 
 ~~~
 "poi": {
     "name": ["name"]
     "tags": ["tag"]
+    "category": "moonplace"
     }
 ~~~
 
 ## Using the Point Of Interest in a Sentence
 
-Using a system similar to pronoun tags, Points of Interests can be mentioned in Short Events or Patrols with {POI} followed by relevant information; either the Points of Interest's IDs, or tags for a pool of Points of Interest.
+Using a system similar to pronoun tags, Points of Interest can be mentioned in Short Events or Patrols with {POI} followed by relevant information: either the Points of Interest's IDs or (for a pool of Points of Interest) category or tags.
 
-A Point of Interest can either contain multiple names, separated by commas OR a single tag. Multiple tags cannot be used, nor should you mix tags and names.
+A Point of Interest can either contain multiple names separated by commas OR a single tag OR a single category. Multiple tags or categories cannot be used, nor should you mix tags, names, or categories.
 
 A few examples below:
 
 ~~~
 {POI/name/moon_pool,moon_cave,gather_monster}
 {POI/tag/prey:fish}
+{POI/category/moonplace}
 ~~~
 
 Using one in a sentence should appear like this in the event itself versus the displayed result:
