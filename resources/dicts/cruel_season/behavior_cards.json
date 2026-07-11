@@ -64,5 +64,12 @@
       "pregnancy.max_kit_possibility.senior adult": 2,
       "pregnancy.max_kit_possibility.senior": 0
     }
+  },
+  "malicious_aura": {
+    "card_art": "behavior/resolute.png",
+    "modifiers": {
+      "outsiders.max_reputation": 29,
+      "outsiders.starting_reputation": 15
+    }
   }
 }
