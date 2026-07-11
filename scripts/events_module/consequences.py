@@ -416,7 +416,7 @@ def create_new_cat_block(
                     continue
 
                 y = randrange(0, 20)
-                start_relation = Relationship(n_c, inter_cat, False, True)
+                start_relation = Relationship(n_c, inter_cat, True)
                 start_relation.like += 40 + y
                 start_relation.comfort = 40 + y
                 start_relation.respect = 10 + y
@@ -429,7 +429,7 @@ def create_new_cat_block(
                     continue
 
                 y = randrange(0, 20)
-                start_relation = Relationship(par, n_c, False, True)
+                start_relation = Relationship(par, n_c, True)
                 start_relation.like += 60 + y
                 start_relation.comfort = 40 + y
                 start_relation.respect = 30 + y
@@ -437,7 +437,7 @@ def create_new_cat_block(
                 par.relationships[n_c.ID] = start_relation
 
                 y = randrange(0, 20)
-                start_relation = Relationship(n_c, par, False, True)
+                start_relation = Relationship(n_c, par, True)
                 start_relation.like += 40 + y
                 start_relation.comfort = 70 + y
                 start_relation.respect = 30 + y
@@ -452,7 +452,7 @@ def create_new_cat_block(
                 par = Cat.fetch_cat(par)
 
                 y = randrange(0, 20)
-                start_relation = Relationship(par, n_c, False, True)
+                start_relation = Relationship(par, n_c, True)
                 start_relation.like += 60 + y
                 start_relation.comfort = 40 + y
                 start_relation.respect = 30 + y
@@ -460,7 +460,7 @@ def create_new_cat_block(
                 par.relationships[n_c.ID] = start_relation
 
                 y = randrange(0, 20)
-                start_relation = Relationship(n_c, par, False, True)
+                start_relation = Relationship(n_c, par, True)
                 start_relation.like += 40 + y
                 start_relation.comfort = 70 + y
                 start_relation.respect = 30 + y
