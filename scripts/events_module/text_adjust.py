@@ -145,12 +145,7 @@ def poi_repl(inner_details):
         )
     elif inner_details[1].upper() == "CATEGORY":
         category = inner_details[2].upper()
-        if category == "GATHERING":
-            base_string += get_random_poi_by_category("gathering")
-        elif category == "MOONPLACE":
-            base_string += get_random_poi_by_category("moonplace")
-        elif category == "TERRAIN":
-            base_string += get_random_poi_by_category("terrain")
+        base_string += get_random_poi_by_category(inner_details[2].lower())
 
     return i18n.t(base_string)
 
