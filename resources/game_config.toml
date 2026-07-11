@@ -86,7 +86,7 @@ dev_tools = false
   allow_manual = true
   
   # allow mates to happen
-  allow_mating = false
+  allow_mating = true
 
   # maximum age difference allowed for cats to be romantic with each other
   age_range = 40
