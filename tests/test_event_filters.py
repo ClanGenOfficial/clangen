@@ -363,7 +363,7 @@ class TestPointsOfInterest(unittest.TestCase):
             "empty all": {"name": [], "tags": [], "category": None},
             "empty name": {"name": [], "tags": ["water"]},
             "empty tags": {"name": ["test_name"], "tags": []},
-            "None category": {"category": None},
+            "None category": {"name": ["test_name"], "category": None},
         }
 
         for title, event_poi in combinations.items():
