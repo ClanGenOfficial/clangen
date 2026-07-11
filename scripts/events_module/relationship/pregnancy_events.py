@@ -28,6 +28,7 @@ from scripts.events_module.text_adjust import event_text_adjust, adjust_list_tex
 from scripts.events_module.consequences import (
     create_new_cat,
     change_relationship_values,
+    check_stolen_vitality,
 )
 from scripts.events_module.event_filters import (
     get_highest_romantic_relation,
@@ -552,6 +553,8 @@ class Pregnancy_Events:
                 clan.leader_lives -= 1
                 cat.die()
                 death_event = i18n.t("conditions.pregnancy.leader_kitting_death")
+                if extra_result := check_stolen_vitality(cat, 1):
+                    death_event += " " + extra_result
             else:
                 cat.die()
                 death_event = i18n.t(
