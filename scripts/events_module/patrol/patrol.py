@@ -25,7 +25,7 @@ from scripts.events_module.event_filters import (
     event_for_location,
     event_for_season,
     event_for_poi,
-    event_for_required_cat_types,
+    event_for_required_cat_types, event_for_cat,
 )
 from scripts.events_module.patrol.generate_patrol_list import (
     get_patrol_list,
@@ -88,40 +88,10 @@ class Patrol:
         else:
             self.other_clan = None
 
-        # Find valid patrols
-        final_patrols, final_romance_patrols = self.get_possible_patrols(patrol_type)
+        # Find valid patrol
+        self.patrol_event = self.get_possible_patrol(patrol_type)
 
-        print(
-            f"Total Number of Possible Patrols | normal: {len(final_patrols)}, romantic: {len(final_romance_patrols)} "
-        )
-
-        # Choose patrol
-        if final_patrols:
-            normal_event_choice = choices(
-                final_patrols, weights=[x.weight for x in final_patrols]
-            )[0]
-        else:
-            print("ERROR: NO POSSIBLE NORMAL PATROLS FOUND for: ", self.patrol_statuses)
-            raise RuntimeError
-
-        romantic_event_choice = None
-        if final_romance_patrols:
-            romantic_event_choice = choices(
-                final_romance_patrols, [x.weight for x in final_romance_patrols]
-            )[0]
-
-        if romantic_event_choice and Patrol.decide_if_romantic(
-            romantic_event_choice,
-            self.patrol_leader,
-            self.random_cat,
-            self.patrol_apprentices,
-        ):
-            print("did the romance")
-            self.patrol_event = romantic_event_choice
-        else:
-            self.patrol_event = normal_event_choice
-
-        Patrol.used_patrols.append(self.patrol_event.patrol_id)
+        Patrol.used_patrols.append(self.patrol_event.id)
 
         # Return text adjusted patrol intro
         return event_text_adjust(
@@ -240,10 +210,10 @@ class Patrol:
 
         print("Patrol Leader:", str(self.involved_cats["p_l"].name))
 
-    def get_possible_patrols(
+    def get_possible_patrol(
         self,
         patrol_type: str,
-    ) -> Tuple[list[PatrolEvent], list[PatrolEvent]]:
+    ) -> PatrolEvent:
         # ---------------------------------------------------------------------------- #
         #                                LOAD RESOURCES                                #
         # ---------------------------------------------------------------------------- #
@@ -283,44 +253,20 @@ class Patrol:
         if constants.CONFIG["patrol_generation"][
             "debug_override_patrol_stat_requirements"
         ]:
-            final_normal_patrols = final_romance_patrols = patrol_list
-            # Logging
+            if self.debug_patrol_id:
+                chosen_patrol = [p for p in patrol_list if p.id == self.debug_patrol_id][0]
+            else:
+                chosen_patrol = choice(patrol_list)
             print(
                 "All patrol filters regarding location, session, etc. have been removed."
             )
         # FILTER PATROLS when no debug set
         else:
-            final_normal_patrols, final_romance_patrols = self._get_filtered_patrols(
+            chosen_patrol = self._filter_patrols(
                 patrol_list, patrol_type
             )
 
-        # This is a debug option. If the patrol_id set in "debug_ensure_patrol" is possible,
-        # make it the *only* possible patrol
-        if self.debug_patrol_id:
-            for _pat in final_normal_patrols + final_romance_patrols:
-                if _pat.id == self.debug_patrol_id:
-                    patrol_type = choice(_pat.types) if _pat.types != [] else "general"
-                    rom = "non-romance"
-                    if _pat in final_normal_patrols:
-                        final_normal_patrols = [_pat]
-                    elif _pat in final_romance_patrols:
-                        final_romance_patrols = [_pat]
-                        rom = "romance"
-                    print(
-                        f"debug_ensure_patrol_id: "
-                        f'"{constants.CONFIG["patrol_generation"]["debug_ensure_patrol_id"]}" '
-                        f"is a possible {patrol_type} patrol, and was set as the only "
-                        f"{patrol_type} {rom} patrol option"
-                    )
-                    break
-            else:
-                print(
-                    f"debug_ensure_patrol_id: "
-                    f'"{constants.CONFIG["patrol_generation"]["debug_ensure_patrol_id"]}" '
-                    f"is not found. Check output for reason."
-                )
-
-        return final_normal_patrols, final_romance_patrols
+        return chosen_patrol
 
     @staticmethod
     def decide_if_romantic(
@@ -385,47 +331,56 @@ class Patrol:
         self,
         possible_patrols: List[PatrolEvent],
         patrol_type: str,
-    ):
+    ) -> PatrolEvent:
+        chosen_patrol: Optional[PatrolEvent] = None
+
         normal_patrols = []
         romantic_patrols = []
 
+        # run the first set of really basic constraint filtering, just to get our base of valid patrols
+        possible_patrols = [
+            p
+            for p in possible_patrols
+            if self._pass_basic_constraints(
+                p, patrol_type, is_debug_patrol=p.id == self.debug_patrol_id
+            )
+        ]
+        # make sure the hunting patrols are balanced
+        if patrol_type == "hunting":
+            possible_patrols = self.balance_hunting(possible_patrols)
+
+        # separate into the two lists
+        for p in possible_patrols:
+            if "romance" in p.tags:
+                romantic_patrols.append(p)
+            else:
+                normal_patrols.append(p)
+
+        print(
+            f"Total Number of Possible Patrols | normal: {len(normal_patrols)}, romantic: {len(romantic_patrols)} "
+        )
+
         # GET FREQUENCY
-        if not get_config("patrol_generation.debug_override_frequency"):
-            chosen_frequency = get_frequency()
-        else:
-            chosen_frequency = get_config("patrol_generation.debug_override_frequency")
-
+        chosen_frequency = get_frequency()
         used_frequencies = set()
-        # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
-        while not normal_patrols:
-            for patrol in possible_patrols:
-                is_debug_patrol: bool = patrol.id == self.debug_patrol_id
 
-                # CHECK FREQUENCY AND ENSURE ID
-                if patrol.frequency != chosen_frequency and (
-                    self.debug_patrol_id and not is_debug_patrol
-                ):
-                    continue
+        # always try to do the debugged ID first
+        if self.debug_patrol_id:
+            patrol_override = [
+                p for p in possible_patrols if p.id == self.debug_patrol_id
+            ][0]
+            chosen_frequency = patrol_override.frequency
+        else:
+            patrol_override = None
 
-                # Don't check for repeat patrols if ensure_patrol_id is being used.
-                if patrol.id in self.used_patrols and not self.debug_patrol_id:
-                    continue
+        # TODO: check for a romance patrol first
+        # TODO: then decide if we want to use that romance patrol based on compat, ect
+        # TODO: if we're gonna use it, return that patrol. if not, find a normal one to use
 
-                if not self._pass_basic_constraints(
-                    patrol=patrol,
-                    patrol_type=patrol_type,
-                    is_debug_patrol=is_debug_patrol,
-                ):
-                    continue
-
-                # romance events are put in their own list
-                # this lets us better control the distribution of romantic and nonromantic patrols
-                if "romance" in patrol.tags:
-                    romantic_patrols.append(patrol)
-                else:
-                    normal_patrols.append(patrol)
-
-            if not normal_patrols:
+        possible_patrols = normal_patrols.copy()
+        while not chosen_patrol:
+            # make sure we still have possible patrols
+            if not possible_patrols:
                 # if we've circled back around to 4 then we need to reset the used patrols
                 if 4 in used_frequencies and chosen_frequency == 4:
                     self.used_patrols.clear()
@@ -434,11 +389,31 @@ class Patrol:
                     used_frequencies.add(chosen_frequency)
                     chosen_frequency = find_new_frequency(used_frequencies)
 
-        # make sure the hunting patrols are balanced
-        if patrol_type == "hunting":
-            normal_patrols = self.balance_hunting(normal_patrols)
+            if not patrol_override:
+                test_patrol = choices([possible_patrols], [x.weight for x in possible_patrols])[0]
+            else:
+                test_patrol = patrol_override
+                patrol_override = None
 
-        return normal_patrols, romantic_patrols
+            # CHECK FREQUENCY AND ENSURE ID
+            if test_patrol.frequency != chosen_frequency:
+                possible_patrols.remove(test_patrol)
+                continue
+
+            # CHECK REPEAT
+            if (
+                test_patrol.id in self.used_patrols
+                and not self.debug_patrol_id == test_patrol.id
+            ):
+                possible_patrols.remove(test_patrol)
+                continue
+
+            # CHECK IF CATS FIT
+            if self._pass_cat_constraints(test_patrol):
+                chosen_patrol = test_patrol
+
+        return chosen_patrol
+
 
     def _pass_basic_constraints(
         self, patrol: PatrolEvent, patrol_type: str, is_debug_patrol: bool
@@ -470,7 +445,7 @@ class Patrol:
             return False
 
         # CHECK TAGS
-        if not event_for_tags(patrol.tags, Cat):
+        if not event_for_tags(patrol.tags, self.involved_cats["p_l"]):
             if is_debug_patrol:
                 print("DEBUG: requested patrol does not meet constraints (tags)")
             return False
@@ -493,73 +468,54 @@ class Patrol:
                 print("DEBUG: requested patrol does not meet constraints (PoI)")
             return False
 
+        # CHECK NEEDED HERBS
+        if patrol_type == "herb_gathering":
+            # skip this if it's a debug patrol
+            if is_debug_patrol:
+                return True
+
+            target_herbs = game.clan.herb_supply.sorted_by_need
+
+            # if any herb can happen, then we return True
+            if "random_herbs" in patrol.herbs_given:
+                return True
+
+            # if the patrol is not able to give herbs we need, we return False
+            if not set(patrol.herbs_given).intersection(set(target_herbs)):
+                return False
+
         return True
 
-    def _pass_cat_constraints(self, patrol: PatrolEvent, is_debug_patrol: bool) -> bool:
-        potential_cats = self.involved_cats.copy()
+    def _pass_cat_constraints(self, patrol: PatrolEvent) -> bool:
+        temp_involved_cats = {}
 
-        pass
+        for abbr, constraints in patrol.involved_cats.items():
+            potential_cats = [c for c in self.patrol_cats if c not in temp_involved_cats.values()]
+            while not temp_involved_cats[abbr] and potential_cats:
+                if abbr in self.involved_cats:
+                    cat_to_check = self.involved_cats[abbr]
+                else:
+                    cat_to_check = potential_cats[0]
 
-    def _get_filtered_patrols(
-        self, possible_patrols: list[PatrolEvent], patrol_type: str
-    ) -> tuple[list[PatrolEvent], list[PatrolEvent]]:
-        # FILTER
-        normal_patrols, romantic_patrols = self._filter_patrols(
-            possible_patrols, patrol_type
-        )
+                if event_for_cat(
+                    cat_info=constraints,
+                    cat=cat_to_check,
+                    involved_cat_dict=temp_involved_cats,
+                    event_id=patrol.id,
+                    p_l=temp_involved_cats["p_l"],
+                    other_involved_clan_id=self.other_clan.id
+                ):
+                    temp_involved_cats[abbr] = cat_to_check
+                else:
+                    potential_cats.remove(cat_to_check)
 
-        # DOUBLE CHECK PATROL PRESENCE
-        if not normal_patrols:
-            print(
-                "No normal patrols possible. Repeating filter with used patrols cleared."
-            )
-            self.used_patrols.clear()
-            print("used patrols cleared", self.used_patrols)
-            normal_patrols, romantic_patrols = self._filter_patrols(
-                possible_patrols, patrol_type
-            )
+            if not temp_involved_cats.get(abbr):
+                # we've failed to find an appropriate cat
+                return False
 
-            if not normal_patrols:
-                raise Exception(
-                    "No matching patrols found! This may be a localization issue."
-                )
-
-        # FIND PATROL FOR WANTED HERBS
-        if patrol_type == "herb_gathering":
-            target_herbs = game.clan.herb_supply.sorted_by_need
-            herb_filtered_patrols = []
-            herb_romance_patrols = []
-
-            i = 0
-            while not herb_filtered_patrols and i <= len(target_herbs):
-                i += 1
-                herb_filtered_patrols = [
-                    patrol
-                    for patrol in normal_patrols
-                    if target_herbs[i] in patrol.herbs_given
-                    or "random_herbs" in patrol.herbs_given
-                ]
-                herb_romance_patrols = [
-                    patrol
-                    for patrol in romantic_patrols
-                    if target_herbs[i] in patrol.herbs_given
-                    or "random_herbs" in patrol.herbs_given
-                ]
-            # if we want patrols that get the herbs the meddies want, then we use those
-            # otherwise we just use the original patrol lists
-            if herb_filtered_patrols:
-                normal_patrols = herb_filtered_patrols
-                romantic_patrols = herb_romance_patrols
-
-                if self.debug_patrol_id and self.debug_patrol_id not in [
-                    patrol.id for patrol in normal_patrols + romantic_patrols
-                ]:
-                    print(
-                        "DEBUG: requested patrol removed during herb filtering (not target herb)"
-                    )
-
-        # RETURN FOUND PATROLS
-        return normal_patrols, romantic_patrols
+        # if we're here, then we must have filled all the needed cats!
+        self.involved_cats = temp_involved_cats
+        return True
 
     def determine_outcome(
         self, antagonize=False
