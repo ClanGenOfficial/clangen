@@ -787,7 +787,7 @@ class PatrolScreen(Screens):
     def run_patrol_start(self):
         """Runs patrol start. To be run in a separate thread."""
         try:
-            self.display_text = self.patrol_obj.setup_patrol(
+            self.display_text = self.patrol_obj.begin_patrol(
                 self.current_patrol, self.patrol_type
             )
         except RuntimeError:

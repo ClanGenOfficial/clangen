@@ -68,8 +68,12 @@ class Patrol:
         # False if no debug patrol set, value if one is set
         self.debug_patrol: Union[bool, str] = False
 
-    def setup_patrol(self, patrol_cats: List[Cat], patrol_type: str) -> str:
-        # Add cats
+    def begin_patrol(self, patrol_cats: List[Cat], patrol_type: str) -> str:
+        """
+        Handles all the initial patrol setup, returns the prepared patrol intro text.
+        :param patrol_cats: All cats that have been chosen for this patrol
+        :param patrol_type: Type of patrol
+        """
 
         print("PATROL START ---------------------------------------------------")
 

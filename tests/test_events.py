@@ -168,7 +168,7 @@ class TestEvents(unittest.TestCase):
                             patrol_type = "general"
 
                         new_patrol = Patrol()
-                        new_patrol.setup_patrol(to_patrol, patrol_type)
+                        new_patrol.begin_patrol(to_patrol, patrol_type)
                         new_patrol.proceed_patrol("proceed")
 
                         can_patrol = can_patrol[num_to_patrol:]
