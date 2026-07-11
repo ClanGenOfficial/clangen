@@ -69,8 +69,7 @@
     "card_art": "behavior/sorrow.png",
     "modifiers": {
       "mates.allow_manual": false,
-      "mates.chance_fulfilled_condition": 0,
-      "chance_friends_to_lovers": 0
+      "mates.allow_mating": false
     }
   }
 }
