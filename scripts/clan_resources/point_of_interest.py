@@ -77,13 +77,7 @@ def add_poi(name, elements):
         else:
             _poi_by_tags[tag] = [name]
 
-    category = elements["category"]
-    if category == "gathering":
-        _poi_by_category["gathering"].add(name)
-    elif category == "moonplace":
-        _poi_by_category["moonplace"].add(name)
-    elif category == "terrain":
-        _poi_by_category["terrain"].add(name)
+    _poi_by_category[elements["category"]].add(name)
 
 
 def get_poi_save_dict():
