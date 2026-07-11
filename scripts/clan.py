@@ -1489,6 +1489,14 @@ class OtherClan:
         # has indicators that this is unlocalized, just in case
         return f"!!{self.name}Clan!!"
 
+    @property
+    def relations(self):
+        return min(self._relations, get_config("reputation.other_clans.relation_cap"))
+
+    @relations.setter
+    def relations(self, value):
+        self._relations = min(value, get_config("reputation.other_clans.relation_cap"))
+
     def get_standing(self) -> Literal["ally", "neutral", "hostile"]:
         """
         Gets if OtherClan is an ally, neutral, or hostile.
