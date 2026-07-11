@@ -68,7 +68,6 @@
   "underpopulated": {
     "card_art": "behavior/underpopulated.png",
     "modifiers": {
-      "modifiers": {
       "pregnancy.one_kit_possibility.young adult": 12,
       "pregnancy.one_kit_possibility.adult": 10,
       "pregnancy.one_kit_possibility.senior adult": 11,
@@ -99,6 +98,12 @@
       "pregnancy.max_kit_possibility.senior adult": 0,
       "pregnancy.max_kit_possibility.senior": 0
     }
+  },
+  "malicious_aura": {
+    "card_art": "behavior/resolute.png",
+    "modifiers": {
+      "outsiders.max_reputation": 29,
+      "outsiders.starting_reputation": 15
     }
   }
 }
