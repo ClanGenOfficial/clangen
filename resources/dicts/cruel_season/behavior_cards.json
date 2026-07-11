@@ -71,5 +71,12 @@
       "mates.allow_manual": false,
       "mates.allow_mating": false
     }
+  },
+  "malicious_aura": {
+    "card_art": "behavior/resolute.png",
+    "modifiers": {
+      "outsiders.max_reputation": 29,
+      "outsiders.starting_reputation": 15
+    }
   }
 }

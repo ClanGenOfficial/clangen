@@ -7,7 +7,11 @@ from scripts.cat.constants import BACKSTORIES
 from scripts.cat.personality import Personality
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
 from scripts.cat.enums import CatRank, CatAge, CatCompatibility, CatGroup, CatStanding
-from scripts.clan_resources.point_of_interest import get_poi_names_set, get_poi_tags_set
+from scripts.clan_resources.point_of_interest import (
+    get_poi_names_set,
+    get_poi_tags_set,
+    get_poi_categories_set,
+)
 from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
     RelationshipConstraintDict,
@@ -242,7 +246,7 @@ def event_for_poi(pois: dict[str, list]) -> bool:
     if not get_poi_names_set():
         return False  # we know they're requesting something
 
-    has_matching_name, has_matching_tags = False, False
+    has_matching_name, has_matching_tags, has_matching_categories = False, False, False
     if "name" in pois:
         has_matching_name = not set(pois.get("name", [])).isdisjoint(
             get_poi_names_set()
@@ -250,7 +254,11 @@ def event_for_poi(pois: dict[str, list]) -> bool:
 
     if "tags" in pois:
         has_matching_tags = not set(pois.get("tags", [])).isdisjoint(get_poi_tags_set())
-    return has_matching_name or has_matching_tags
+
+    if "category" in pois:
+        has_matching_categories = pois["category"] in get_poi_categories_set()
+
+    return has_matching_name or has_matching_tags or has_matching_categories
 
 
 def event_for_reputation(required_rep: list) -> bool:
