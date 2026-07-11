@@ -206,7 +206,7 @@ class ChooseCatsScreen(MakeClanScreenBase):
 
         # Error message, to appear if you can't choose that cat.
         self.elements["error_message"] = pygame_gui.elements.UITextBox(
-            "screens.make_clan.error_too_young",
+            "screens.make_clan.error_wrong_role",
             ui_scale(pygame.Rect((150, 353), (500, 55))),
             object_id=get_text_box_theme("#text_box_30_horizcenter_red"),
             visible=False,
@@ -446,24 +446,8 @@ class ChooseCatsScreen(MakeClanScreenBase):
             self.elements["select_cat"].hide()
 
         # Show the error message if you try to choose a child for leader, deputy, or med cat.
-        elif (
-            self.selected_cat  # if we have a cat selected
-            and (
-                not self.clan_info.has_high_ranks_filled()
-                and (self.need_leader or self.need_deputy or self.need_med)
-            )  # and we don't have a leadership role
-            and self.selected_cat.age  # and cat age is in one of these
-            in (
-                CatAge.NEWBORN,
-                CatAge.KITTEN,
-                CatAge.ADOLESCENT,
-            )
-        ):
+        elif self.selected_cat and not self._age_valid_for_role():
             self.elements["select_cat"].hide()
-            self.elements["error_message"].set_text(
-                self.elements["error_message"].html_text,
-                text_kwargs={"m_c": self.selected_cat},
-            )
             self.elements["error_message"].show()
 
         # show selected cat and update the select button according to rank
@@ -523,6 +507,25 @@ class ChooseCatsScreen(MakeClanScreenBase):
                     starting_height=2,
                     manager=MANAGER,
                 )
+
+    def _age_valid_for_role(self) -> bool:
+        """
+        Checks if selected cat is valid for the currently required role
+        """
+        if self.need_leader and not self.clan_info.leader:
+            needed_rank = CatRank.LEADER
+        elif self.need_deputy and not self.clan_info.deputy:
+            needed_rank = CatRank.DEPUTY
+        elif self.need_med and not self.clan_info.medicine_cat:
+            needed_rank = CatRank.MEDICINE_CAT
+        else:
+            needed_rank = "member"
+
+        if self.selected_cat.age in self.get_config_during_creation(
+            f"clan_creation.valid_rank_to_age_assignment.{needed_rank}"
+        ):
+            return True
+        return False
 
     def clan_name_header(self):
         """
@@ -781,9 +784,8 @@ class ChooseCatsScreen(MakeClanScreenBase):
                 minimum = 1
             else:
                 # otherwise we treat them as normal
-                minimum = (
-                    self.get_config_during_creation("clan_creation.minimum_membership")
-                    + 1
+                minimum = self.get_config_during_creation(
+                    "clan_creation.minimum_membership"
                 )
             for i in range(
                 minimum,

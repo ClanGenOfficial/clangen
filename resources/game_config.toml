@@ -592,7 +592,7 @@ dev_tools = false
   [clan_creation.valid_rank_to_age_assignment]
     leader = ["young adult", "adult", "senior adult", "senior"]
     deputy = ["young adult", "adult", "senior adult", "senior"]
-    medicine_cat = ["young adult", "adult", "senior adult", "senior"]
+    "medicine cat" = ["young adult", "adult", "senior adult", "senior"]
     member = ["newborn", "kitten", "adolescent", "young adult", "adult", "senior adult", "senior"]
 
 [ranks]
