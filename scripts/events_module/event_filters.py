@@ -3,6 +3,7 @@ from itertools import combinations
 from random import choice, randint
 from typing import List, Optional, Dict, Union, Literal
 
+from scripts.cat.cats import Cat
 from scripts.cat.constants import BACKSTORIES
 from scripts.cat.personality import Personality
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
@@ -284,7 +285,12 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
     return current_standing in required_rel
 
 
-def event_for_freshkill_supply(pile, trigger: Literal["always", "low", "adequate", "full", "excess"], factor, clan_size) -> bool:
+def event_for_freshkill_supply(
+    pile,
+    trigger: Literal["always", "low", "adequate", "full", "excess"],
+    factor,
+    clan_size,
+) -> bool:
     """
     checks if clan has the correct amount of freshkill for event
     """
@@ -352,6 +358,22 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
         if herb_supply.get_herb_rating(chosen_herb) in trigger:
             return True
         return False
+
+
+def event_for_required_cat_types(
+    required_types: dict[str, list[int]], current_cat_types: dict[str, list[Cat]]
+) -> bool:
+    """
+    Checks if the required_types dict is being fulfilled
+    """
+
+    for c_type, amount_range in required_types.items():
+        type_list = current_cat_types.get(c_type, [])
+
+        if amount_range[0] >= len(type_list) >= amount_range[1]:
+            return False
+
+    return True
 
 
 def event_for_cat(

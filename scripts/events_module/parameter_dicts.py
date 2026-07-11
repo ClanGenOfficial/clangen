@@ -21,7 +21,7 @@ class HealthDict(TypedDict, total=False):
 
 
 class InvolvedCatDict(TypedDict, total=False):
-    previous_abbreviation: list[str]
+    prior_abbreviation: list[str]
     status: list[str]
     past_status: list[str]
     age: list[str]
@@ -30,6 +30,7 @@ class InvolvedCatDict(TypedDict, total=False):
     stat: StatDict
     health: HealthDict
     backstory: list[str]
+    has_mentor: bool
 
 
 class RelationshipConstraintDict(TypedDict):

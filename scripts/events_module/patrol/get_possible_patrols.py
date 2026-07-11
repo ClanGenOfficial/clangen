@@ -10,7 +10,7 @@ from scripts.game_structure.localization import load_lang_resource
 loaded_events: dict[str, list[PatrolEvent]] = {}
 
 
-def get_possible_patrols(
+def get_patrol_list(
     patrol_type: str,
     other_clan_rep: Optional[Literal["hostile", "allies", "neutral"]] = None,
     outsider_rep: Optional[Literal["hostile", "welcoming", "neutral"]] = None,
@@ -124,11 +124,12 @@ def _load_file(path: str) -> list[PatrolEvent]:
     return loaded_events[path]
 
 
-def will_allow_outsider_patrols(reputation: int, small_clan: bool) -> Optional[str]:
+def will_allow_outsider_patrols(small_clan: bool) -> Optional[str]:
     """
     Checks reputation and clan size to determine if outsider patrols should be allowed and what kind of patrol they can be
     :return: The type of outsider patrol allowed if outsider patrols are allowed. If they aren't allowed, then this will return None.
     """
+    reputation = game.clan.reputation
     regular_chance = int(getrandbits(2))
     hostile_chance = int(getrandbits(5))
     welcoming_chance = int(getrandbits(1))
