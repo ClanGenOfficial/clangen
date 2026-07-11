@@ -221,8 +221,9 @@ class Patrol:
         # Classic doesn't let you pick patrol type, so instead we specify herb_gathering if meddies are present
         patrol_type = (
             "herb_gathering"
-            if [CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE]
-            in self.patrol_statuses.keys()
+            if {CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE}.intersection(
+                set(self.patrol_statuses.keys())
+            )
             else patrol_type
         )
         # This make sure general only gets hunting, border, or training patrols

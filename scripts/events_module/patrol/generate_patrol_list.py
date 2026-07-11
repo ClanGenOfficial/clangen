@@ -34,22 +34,12 @@ def get_patrol_list(
     )
     season = game.clan.current_season.casefold()
 
-    # get all types
-    if patrol_type == "general":
-        for _type in ["medcat", "hunting", "border", "training"]:
-            possible_patrols.extend(
-                _get_all_patrols_of_type(_type, biome, path, season)
-            )
-
     # get specific type
-    else:
-        if patrol_type == "herb_gathering":
-            # only one that doesn't match its path sadly
-            patrol_type = "medcat"
+    if patrol_type == "herb_gathering":
+        # only one that doesn't match its path sadly
+        patrol_type = "medcat"
 
-        possible_patrols.extend(
-            _get_all_patrols_of_type(patrol_type, biome, path, season)
-        )
+    possible_patrols.extend(_get_all_patrols_of_type(patrol_type, biome, path, season))
 
     # OTHER CLAN
     possible_patrols.extend(_load_file(f"{path}other_clan.json"))
@@ -74,9 +64,9 @@ def _get_all_patrols_of_type(_type: str, biome: str, path: str, season: str):
     Grabs all patrols for a certain type of patrol
     """
     patrols = []
-    patrols.extend(f"{path}general/{_type}.json")
-    patrols.extend(f"{path}{biome}/{_type}/any.json")
-    patrols.extend(f"{path}{biome}/{_type}/{season}.json")
+    patrols.extend(_load_file(f"{path}general/{_type}.json"))
+    patrols.extend(_load_file(f"{path}{biome}/{_type}/any.json"))
+    patrols.extend(_load_file(f"{path}{biome}/{_type}/{season}.json"))
     return patrols
 
 

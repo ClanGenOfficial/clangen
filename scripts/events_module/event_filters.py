@@ -3,7 +3,6 @@ from itertools import combinations
 from random import choice, randint
 from typing import List, Optional, Dict, Union, Literal
 
-from scripts.cat.cats import Cat
 from scripts.cat.constants import BACKSTORIES
 from scripts.cat.personality import Personality
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
@@ -361,7 +360,7 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
 
 
 def event_for_required_cat_types(
-    required_types: dict[str, list[int]], current_cat_types: dict[str, list[Cat]]
+    required_types: dict[str, list[int]], current_cat_types: dict[str, list]
 ) -> bool:
     """
     Checks if the required_types dict is being fulfilled
