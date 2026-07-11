@@ -104,7 +104,7 @@ You can add this to any short event or patrol to constrain by Point of Interest.
 
 ## Using the Point Of Interest in a Sentence
 
-Using a system similar to pronoun tags, Points of Interests can be mentioned in Short Events or Patrols with {POI} followed by relevant information; either the Points of Interest's IDs, or tags or category for pools of points of Interest.
+Using a system similar to pronoun tags, Points of Interest can be mentioned in Short Events or Patrols with {POI} followed by relevant information: either the Points of Interest's IDs or (for a pool of Points of Interest) category or tags.
 
 A Point of Interest can either contain multiple names, separated by commas OR a single tag OR a single category. Multiple tags or categories cannot be used, nor should you mix tags, names, or categories.
 
