@@ -64,5 +64,13 @@
       "pregnancy.max_kit_possibility.senior adult": 2,
       "pregnancy.max_kit_possibility.senior": 0
     }
+  },
+  "heartless": {
+    "card_art": "behavior/sorrow.png",
+    "modifiers": {
+      "mates.allow_manual": false,
+      "mates.chance_fulfilled_condition": 0,
+      "chance_friends_to_lovers": 0
+    }
   }
 }
