@@ -2085,7 +2085,7 @@
                         }
                     }
                 ],
-                "frequency": 1
+                "frequency": 4
             },
             {
                 "text": "s_c stops, suddenly reminded of an old tale. The thrush below is breaking a snail open on a rock. There was a prophecy about that once, although p_l can't quite remember how the story goes...",
@@ -2149,7 +2149,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 rolls {PRONOUN/app1/poss} eyes and asks why {PRONOUN/app1/subject} can't just try catching it. Irritably, p_l replies that {PRONOUN/app1/subject}{VERB/app1/'re/'s} welcome to try, and the bird spots app1 coming immediately, also spoiling app2's chances.",
+                "text": "app1 rolls {PRONOUN/app1/poss} eyes and asks why {PRONOUN/app1/subject} can't just try catching it. p_l replies that {PRONOUN/app1/subject}{VERB/app1/'re/'s} welcome to try, and the bird spots app1 coming immediately, also spoiling app2's chances.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -2166,7 +2166,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from and cat_to squabbled during a training session when app1 wanted to actually hunt instead of practice stalking."
+                            "cats_from": "cat_from ignored cat_to's lesson during training session when app1 wanted to actually hunt instead of practice stalking."
                         }
                     },
                     {
@@ -2182,7 +2182,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from was peeved that cat_to's hasty pounce ruined {PRONOUN/cat_from/poss} chance to learn about bird-hunting."
+                            "cats_from": "cat_from's hasty pounce ruined cat_to's chance to learn about bird-hunting."
                         }
                     }
                 ],
