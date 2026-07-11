@@ -243,7 +243,7 @@ class ProfileScreen(Screens):
                 self.change_screen(GameScreen.RELATIONSHIP)
             elif event.ui_element == self.choose_mate_button:
                 if not get_config("mates.allow_mating"):
-                     CruelLockedAction()
+                    CruelLockedAction()
                 else:
                     self.change_screen(GameScreen.CHOOSE_MATE)
             elif event.ui_element == self.change_adoptive_parent_button:
