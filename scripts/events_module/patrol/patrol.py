@@ -27,7 +27,7 @@ from scripts.events_module.event_filters import (
     event_for_poi,
     event_for_required_cat_types,
 )
-from scripts.events_module.patrol.get_possible_patrols import (
+from scripts.events_module.patrol.generate_patrol_list import (
     get_patrol_list,
     will_allow_outsider_patrols,
 )
@@ -278,11 +278,7 @@ class Patrol:
                 "DEBUG: requested patrol not present (check spelling/mismatched season, biome, patrol type, new cat flag, other clan relations, disaster setting)"
             )
 
-        # FILTER PATROLS
-        final_normal_patrols, final_romance_patrols = self._get_filtered_patrols(
-            patrol_list, patrol_type
-        )
-
+        # DEBUG - NO FILTER
         # This is a debug option, this allows you to remove any constraints of a patrol regarding location, session, biomes, etc.
         if constants.CONFIG["patrol_generation"][
             "debug_override_patrol_stat_requirements"
@@ -291,6 +287,11 @@ class Patrol:
             # Logging
             print(
                 "All patrol filters regarding location, session, etc. have been removed."
+            )
+        # FILTER PATROLS when no debug set
+        else:
+            final_normal_patrols, final_romance_patrols = self._get_filtered_patrols(
+                patrol_list, patrol_type
             )
 
         # This is a debug option. If the patrol_id set in "debug_ensure_patrol" is possible,
@@ -318,6 +319,7 @@ class Patrol:
                     f'"{constants.CONFIG["patrol_generation"]["debug_ensure_patrol_id"]}" '
                     f"is not found. Check output for reason."
                 )
+
         return final_normal_patrols, final_romance_patrols
 
     @staticmethod
@@ -388,7 +390,11 @@ class Patrol:
         romantic_patrols = []
 
         # GET FREQUENCY
-        chosen_frequency = get_frequency()
+        if not get_config("patrol_generation.debug_override_frequency"):
+            chosen_frequency = get_frequency()
+        else:
+            chosen_frequency = get_config("patrol_generation.debug_override_frequency")
+
         used_frequencies = set()
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         while not normal_patrols:

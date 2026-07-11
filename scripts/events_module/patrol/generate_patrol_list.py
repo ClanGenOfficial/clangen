@@ -12,7 +12,7 @@ loaded_events: dict[str, list[PatrolEvent]] = {}
 
 def get_patrol_list(
     patrol_type: str,
-    other_clan_rep: Optional[Literal["hostile", "allies", "neutral"]] = None,
+    other_clan_rep: Optional[Literal["hostile", "ally", "neutral"]] = None,
     outsider_rep: Optional[Literal["hostile", "welcoming", "neutral"]] = None,
 ) -> list[PatrolEvent]:
     """
