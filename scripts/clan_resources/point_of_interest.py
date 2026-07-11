@@ -56,7 +56,7 @@ def get_random_poi_by_category(category: Literal["gathering", "moonplace", "terr
     if possible_pois:
         return choice(possible_pois)
     # sometimes there are no possible pois during tests
-    return "MISSING_POI"
+    return f"MISSING_POI (requested category: {category})"
 
 
 def add_poi(name, elements):
