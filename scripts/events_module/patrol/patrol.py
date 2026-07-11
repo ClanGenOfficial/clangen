@@ -431,6 +431,8 @@ class Patrol:
             if self._pass_cat_constraints(test_patrol):
                 chosen_patrol = test_patrol
 
+        return chosen_patrol
+
     def _pass_basic_constraints(
         self, patrol: PatrolEvent, patrol_type: str, is_debug_patrol: bool
     ) -> bool:
