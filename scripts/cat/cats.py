@@ -2369,6 +2369,10 @@ class Cat:
         if self.ID == other_cat.ID:
             return False
 
+        # Config check
+        if get_config("mates.allow_mating") == False:
+            return False
+
         # No Mates Check
         if not ignore_no_mates and (self.no_mates or other_cat.no_mates):
             return False
