@@ -85,9 +85,7 @@ def add_poi(name, elements):
 
 
 def get_poi_save_dict():
-    return {
-        k: get_pois_by_category(k) for k in ["gathering", "moonplace", "terrain"]
-    }
+    return {k: get_pois_by_category(k) for k in ["gathering", "moonplace", "terrain"]}
 
 
 def load_pois(save_data: Dict[str, List[str]]):
