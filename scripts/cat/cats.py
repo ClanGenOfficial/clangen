@@ -2370,7 +2370,7 @@ class Cat:
             return False
 
         # Config check
-        if get_config("mates.allow_mating") == False:
+        if not get_config("mates.allow_mating"):
             return False
 
         # No Mates Check
