@@ -428,6 +428,10 @@ def event_for_cat(
                 f"Input contains invalid data, check traceback!\ncat_info: {cat_info}\nevent_id: {event_id}"
             ) from e
 
+    # checking mentor
+    if cat_info.get("has_mentor") and not cat.mentor:
+        return False
+
     # checking groups
     if cat_info.get("group"):
         if not _check_cat_group(cat, cat_info["group"], involved_cat_dict):
