@@ -359,10 +359,11 @@ class TestPointsOfInterest(unittest.TestCase):
             "match tag generic to generic": {"tags": ["water"]},
             "match tag exact to exact": {"tags": ["prey:fish"]},
             "match tag generic to exact": {"tags": ["prey"]},
-            "empty all": {"name": [], "tags": []},
+            "match category": {"category": "gathering"},
+            "empty all": {"name": [], "tags": [], "category": None},
             "empty name": {"name": [], "tags": ["water"]},
             "empty tags": {"name": ["test_name"], "tags": []},
-            "match category": {"category": "gathering"},
+            "None category": {"category": None},
         }
 
         for title, event_poi in combinations.items():
@@ -374,6 +375,7 @@ class TestPointsOfInterest(unittest.TestCase):
             "no name": {"name": ["something_else", "aint_it_chief"]},
             "no tag": {"tags": ["Twolegs", "cave"]},
             "match generic tag but not exact": {"tags": ["prey:bird"]},
+            "invalid category": {"category": "not found"},
         }
 
         for title, event_poi in bad_combinations.items():
