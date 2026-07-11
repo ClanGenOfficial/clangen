@@ -253,7 +253,11 @@ def event_for_poi(pois: dict[str, list]) -> bool:
 
     if "tags" in pois:
         has_matching_tags = not set(pois.get("tags", [])).isdisjoint(get_poi_tags_set())
-    return has_matching_name or has_matching_tags or "category" in pois
+
+    if "category" in pois:
+        return True
+
+    return has_matching_name or has_matching_tags
 
 
 def event_for_reputation(required_rep: list) -> bool:
