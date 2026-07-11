@@ -5,7 +5,7 @@ import random
 from copy import deepcopy
 from os.path import exists as path_exists
 from random import choice, randint, choices
-from typing import List, Tuple, Optional, Union, Literal
+from typing import List, Tuple, Optional, Union, Literal, TypedDict
 
 import pygame
 
@@ -43,13 +43,6 @@ from scripts.special_dates import SpecialDate, is_today
 
 logger = logging.getLogger(__name__)
 
-# ---------------------------------------------------------------------------- #
-#                              PATROL CLASS START                              #
-# ---------------------------------------------------------------------------- #
-"""
-When adding new patrols, use \n to add a paragraph break in the text
-"""
-
 
 class Patrol:
     used_patrols = []
@@ -57,6 +50,7 @@ class Patrol:
     def __init__(self):
         self.patrol_event: Optional[PatrolEvent] = None
 
+        # TODO: old attributes, might not need them all anymore
         self.patrol_leader = None
         self.random_cat = None
         self.patrol_cats = []
@@ -217,41 +211,34 @@ class Patrol:
         # PATROL LEADER AND RANDOM CAT CAN NOT CHANGE AFTER SET-UP
 
         # DETERMINE PATROL LEADER
-        # sets medcat as leader if they're in the patrol
+        # sets medcat as patrol leader if they're in the patrol
         if CatRank.MEDICINE_CAT in self.patrol_status_list:
             index = self.patrol_status_list.index(CatRank.MEDICINE_CAT)
             self.patrol_leader = self.patrol_cats[index]
-            # If there is no medicine cat, but there is a medicine cat apprentice, set them as the patrol leader.
-            # This prevents warrior from being treated as medicine cats in medicine cat patrols.
+        # If there is no medicine cat, but there is a medicine cat apprentice, set them as the patrol leader.
+        # This prevents warriors from being treated as medicine cats in medicine cat patrols.
         elif CatRank.MEDICINE_APPRENTICE in self.patrol_status_list:
             index = self.patrol_status_list.index(CatRank.MEDICINE_APPRENTICE)
             self.patrol_leader = self.patrol_cats[index]
             # then we just make sure that this app will also be app1
             self.patrol_apprentices.remove(self.patrol_leader)
             self.patrol_apprentices = [self.patrol_leader] + self.patrol_apprentices
-            # sets leader as patrol leader
+        # if no meddies set leader as patrol leader
         elif CatRank.LEADER in self.patrol_status_list:
             index = self.patrol_status_list.index(CatRank.LEADER)
             self.patrol_leader = self.patrol_cats[index]
+        # if no leader set the deputy as patrol leader
         elif CatRank.DEPUTY in self.patrol_status_list:
             index = self.patrol_status_list.index(CatRank.DEPUTY)
             self.patrol_leader = self.patrol_cats[index]
+        # if no deputy, set oldest or most experienced as patrol leader
         else:
-            # Get the oldest cat
-            possible_leader = [
-                i
-                for i in self.patrol_cats
-                if not i.status.rank.is_any_apprentice_rank()
-            ]
-            if possible_leader:
-                # Flip a coin to pick the most experience, or oldest.
-                if randint(0, 1):
-                    possible_leader.sort(key=lambda x: x.moons)
-                else:
-                    possible_leader.sort(key=lambda x: x.experience)
-                self.patrol_leader = possible_leader[-1]
+            # Flip a coin to pick the most experience, or oldest.
+            if randint(0, 1):
+                self.patrol_cats.sort(key=lambda x: x.moons)
             else:
-                self.patrol_leader = choice(self.patrol_cats)
+                self.patrol_cats.sort(key=lambda x: x.experience)
+            self.involved_cats["p_l"] = self.patrol_cats[-1]
 
         if clan.all_other_clans and len(clan.all_other_clans) > 0:
             self.other_clan = choice(clan.all_other_clans)
@@ -581,9 +568,7 @@ class Patrol:
 
         return normal_patrols, romantic_patrols
 
-    def get_filtered_patrols(
-        self, possible_patrols, patrol_type
-    ):
+    def get_filtered_patrols(self, possible_patrols, patrol_type):
         # FILTER
         normal_patrols, romantic_patrols = self._filter_patrols(
             possible_patrols, patrol_type
