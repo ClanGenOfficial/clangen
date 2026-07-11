@@ -71,3 +71,25 @@ After step 4, we're now switching to the new device.
 You should now be able to run and play your old saves.
 
 I recommend keeping your compressed zip folder until you know for sure that all your saves are working appropriately. While there hasn't been any bugs due to moving saves between devices, there might be user errors!
+
+---
+
+**What is compressing/zipping? And how do I do it?**
+
+"Compressing" a folder refers to zipping (.zip files) the contents into a smaller, easier-to-manage file that can be decompressed to its original size later. It's ideal to compress folders when using storage devices, as it 1: saves space and 2: guarantees that the files will not be malformed during the storage process. 
+
+- While storage programs such as Google Drive are handy and convenient, they have an unfortunate reputation for either downloading files incorrectly or not downloading them at all when downloading off Google Drive in bulk. Zip files fix that by allowing you to download the one zip file, then decompressing on your actual system.
+
+Unsure how to compress files/folder on your Operating system?
+
+- Windows: Right click the folder (make sure it's highlighted), select "Send To", and select Compressed (zipped) folder
+- macOS: Right click the folder and select Compress
+- chromeOS: Right click the folder and select "Zip Selection"
+
+Unsure how to decompress the files/folder later?
+
+- Windows: Right click the zipped folder and select "extract all"
+- macOS: Double click the zipped folder to decompress
+- chromeOS: Chrome does not have a straightforward way to decompress, so double click the zipped folder to open it's contents, highlight all contents using Ctrl + A, then drag all of the contents out of the zipped folder into a regular folder
+
+**When Compressing for ClanGen** it is recommended to *rename* the zipped folder so the main folder is not confused for the actual contents. For example, this is helpful for transferring saves for clangen, as you avoid creating a second "saves" folder that would prevent the game from finding your actual saves.
