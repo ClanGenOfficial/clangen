@@ -139,7 +139,7 @@ class Clan:
         # Reputation is for loners/kittypets/outsiders in general that wish to join the clan.
         # it's a range from 1-100, with 30-70 being neutral, 71-100 being "welcoming",
         # and 1-29 being "hostile". if you're hostile to outsiders, they will VERY RARELY show up.
-        self._reputation = constants.CONFIG["outsiders"]["starting_reputation"]
+        self._reputation = get_config("outsiders.starting_reputation", creating_clan=True, card_list_override=self.cruel_cards)
 
         self.all_other_clans: list[OtherClan] = []
         self.other_clan_IDs = []
@@ -300,9 +300,6 @@ class Clan:
         for _ in range(number_other_clans):
             other_clan = OtherClan()
             self.all_other_clans.append(other_clan)
-
-        # required for cruel card effects to be applied to starting value
-        self.reputation = get_config("outsiders.starting_reputation")
 
         # remove any already loaded points of interest
         clear_pois()
