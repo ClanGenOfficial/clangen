@@ -122,7 +122,7 @@ class TestCondition(unittest.TestCase):
         )
         patrol_cat.history = History(cat=patrol_cat)
         patrol = Patrol()
-        patrol.add_patrol_cats([patrol_cat], clan)
+        patrol._add_patrol_cats([patrol_cat], clan)
         patrol_event = patrol.generate_patrol_events([self.cold_patrol])
 
         # WHEN - THEN

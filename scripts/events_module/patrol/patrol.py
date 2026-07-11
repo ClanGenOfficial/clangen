@@ -3,24 +3,20 @@
 import logging
 import random
 from copy import deepcopy
-from itertools import combinations
 from os.path import exists as path_exists
 from random import choice, randint, choices
-from typing import List, Tuple, Optional, Union, Literal, TypedDict
+from typing import List, Tuple, Optional, Union, Literal
 
 import pygame
 
 from scripts.cat.cats import Cat
 from scripts.cat_relations.enums import RelType
 from scripts.cat.enums import CatAge, CatRank, CatCompatibility
-from scripts.clan import Clan
-from scripts.clan_package.settings import get_clan_setting
 from scripts.config import get_config
 from scripts.events_module.event_filters import (
     event_for_tags,
     get_frequency,
     find_new_frequency,
-    filter_relationship_type,
     check_relationship_value,
     get_personality_compatibility,
     event_for_location,
@@ -42,7 +38,6 @@ from scripts.game_structure import game
 from scripts.events_module.text_adjust import (
     event_text_adjust,
 )
-from scripts.game_structure.game.settings.settings import values
 from scripts.special_dates import SpecialDate, is_today
 
 
@@ -84,7 +79,7 @@ class Patrol:
         print("PATROL START ---------------------------------------------------")
 
         # Add cats
-        self.add_patrol_cats(patrol_cats)
+        self._add_patrol_cats(patrol_cats)
 
         # Choose other clan
         if game.clan.all_other_clans and len(game.clan.all_other_clans) > 0:
@@ -93,7 +88,7 @@ class Patrol:
             self.other_clan = None
 
         # Find valid patrol
-        self.patrol_event = self.get_possible_patrol(patrol_type)
+        self.patrol_event = self._get_possible_patrol(patrol_type)
 
         Patrol.used_patrols.append(self.patrol_event.id)
 
@@ -101,10 +96,10 @@ class Patrol:
         return event_text_adjust(
             Cat,
             self.patrol_event.intro_text,
-            patrol_leader=self.patrol_leader,
+            patrol_leader=self.involved_cats["p_l"],
             random_cat=self.random_cat,
             patrol_cats=self.patrol_cats,
-            patrol_apprentices=self.patrol_apprentices,
+            patrol_apprentices=self.patrol_statuses["all apprentices"],
             new_cats=self.new_cats,
             clan=game.clan,
             other_clan=self.other_clan,
@@ -119,16 +114,16 @@ class Patrol:
         if path == "decline":
             if self.patrol_event:
                 print(
-                    f"PATROL ID: {self.patrol_event.patrol_id} | SUCCESS: N/A (did not proceed)"
+                    f"PATROL ID: {self.patrol_event.id} | SUCCESS: N/A (did not proceed)"
                 )
                 return (
                     event_text_adjust(
                         Cat,
-                        self.patrol_event.decline_text,
-                        patrol_leader=self.patrol_leader,
+                        self.patrol_event.intro_text,
+                        patrol_leader=self.involved_cats["p_l"],
                         random_cat=self.random_cat,
                         patrol_cats=self.patrol_cats,
-                        patrol_apprentices=self.patrol_apprentices,
+                        patrol_apprentices=self.patrol_statuses["all apprentices"],
                         new_cats=self.new_cats,
                         clan=game.clan,
                         other_clan=self.other_clan,
@@ -138,11 +133,11 @@ class Patrol:
                     None,
                 )
             else:
-                return "Error - no event chosen", "", None
+                return "Error - no event chosen", "", [], None
 
         return self.determine_outcome(antagonize=(path == "antag"))
 
-    def add_patrol_cats(self, patrol_cats: List[Cat]) -> None:
+    def _add_patrol_cats(self, patrol_cats: List[Cat]) -> None:
         """
         Sorts and categorizes patrol cats, then determines a patrol leader.
         :param patrol_cats: list of cats which are on the patrol
@@ -214,7 +209,7 @@ class Patrol:
 
         print("Patrol Leader:", str(self.involved_cats["p_l"].name))
 
-    def get_possible_patrol(
+    def _get_possible_patrol(
         self,
         patrol_type: str,
     ) -> PatrolEvent:
@@ -390,7 +385,7 @@ class Patrol:
         self,
         possible_patrols: List[PatrolEvent],
         chosen_frequency: int,
-        patrol_override: Optional[int],
+        patrol_override: Optional[PatrolEvent],
     ) -> PatrolEvent:
         chosen_patrol = None
         used_frequencies = set()
@@ -407,8 +402,8 @@ class Patrol:
                     chosen_frequency = find_new_frequency(used_frequencies)
 
             if not patrol_override:
-                test_patrol = choices(
-                    [possible_patrols], [x.weight for x in possible_patrols]
+                test_patrol = list(
+                    choices([possible_patrols], [x.weight for x in possible_patrols])
                 )[0]
             else:
                 test_patrol = patrol_override
@@ -607,7 +602,7 @@ class Patrol:
 
         final_event, success = self.calculate_success(chosen_success, chosen_failure)
 
-        print(f"PATROL ID: {self.patrol_event.patrol_id} | SUCCESS: {success}")
+        print(f"PATROL ID: {self.patrol_event.id} | SUCCESS: {success}")
         print(
             f"Patrol Frequency: {self.patrol_event.frequency} | Patrol Weight: {self.patrol_event.weight}"
         )
@@ -755,11 +750,9 @@ class Patrol:
                 "debug_ensure_patrol_outcome"
             ]
             # Logging
-            print(
-                f"The outcome of {self.patrol_event.patrol_id} was altered to {success}"
-            )
+            print(f"The outcome of {self.patrol_event.id} was altered to {success}")
 
-        return (success_outcome if success else fail_outcome, success)
+        return success_outcome if success else fail_outcome, success
 
     def balance_hunting(self, possible_patrols: list):
         """Filter the incoming hunting patrol list to balance the different kinds of hunting patrols.
