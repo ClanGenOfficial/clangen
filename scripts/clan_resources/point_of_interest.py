@@ -82,9 +82,7 @@ def add_poi(name, elements):
 
 def get_poi_save_dict():
     return {
-        "gathering": get_pois_by_category("gathering"),
-        "moonplace": get_pois_by_category("moonplace"),
-        "terrain": get_pois_by_category("terrain"),
+        k: get_pois_by_category(k) for k in ["gathering", "moonplace", "terrain"]
     }
 
 
