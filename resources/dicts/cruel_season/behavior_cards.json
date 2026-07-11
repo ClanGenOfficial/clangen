@@ -87,11 +87,11 @@
       "pregnancy.four_kit_possibility.young adult": 7,
       "pregnancy.four_kit_possibility.adult": 4,
       "pregnancy.four_kit_possibility.senior adult": 2,
-      "pregnancy.four_kit_possibility.senior": 1,
+      "pregnancy.four_kit_possibility.senior": 0,
 
       "pregnancy.five_kit_possibility.young adult": 1,
       "pregnancy.five_kit_possibility.adult": 2,
-      "pregnancy.five_kit_possibility.senior adult": 1,
+      "pregnancy.five_kit_possibility.senior adult": 0,
       "pregnancy.five_kit_possibility.senior": 0,
 
       "pregnancy.max_kit_possibility.young adult": 1,
