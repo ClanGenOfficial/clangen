@@ -14,7 +14,7 @@
             "r_c told m_c something awful, and m_c may never look at {PRONOUN/r_c/object} quite the same.",
             "m_c is discomforted by r_c's muttering.",
             "m_c feels extremely unsettled when r_c looks at {PRONOUN/m_c/object}.",
-            "m_c can't stop thinking about the way r_c glared at {PRONOUN/r_c/object} Clanmate."
+            "m_c can't stop thinking about the way r_c glared at {PRONOUN/m_c/poss} Clanmate."
         ]
     },
     {

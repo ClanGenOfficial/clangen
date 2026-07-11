@@ -22034,7 +22034,7 @@
     "patrol_id": "gen_train_newleaf_tadpole",
     "biome": ["-desert"],
     "season": ["newleaf"],
-    "types": ["hunting"],
+    "types": ["training"],
     "tags": [],
     "patrol_art": "train_general_intro",
     "min_cats": 2,

@@ -1,0 +1,11 @@
+{
+  "en": {
+    "stolen_vitality_base": {
+      "one": "With %{lead_name}'s single revival, %{dead_name} dropped dead.",
+      "many": "With %{lead_name}'s repeated revivals, %{dead_name} dropped dead."
+    },
+    "stolen_vitality_failed": "The price could not be paid in full; %{lead_name} pays the rest.",
+    "stolen_vitality_sacrifice_history": "m_c paid the price for r_c's revival.",
+    "stolen_vitality_lead_history": "No cat remained to give their life for m_c's."
+  }
+}

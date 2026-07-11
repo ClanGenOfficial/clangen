@@ -1,12 +1,26 @@
-
-# set to true to force the season to be locked at the Clan's starting_season
-lock_season = false
-
 # whether or not development tools are disabled
 dev_tools = false
 
+[seasons]
+  # set to true to force the season to be locked at the Clan's starting_season
+  lock_season = false
+
+  # sets the starting season
+  force_starting_season = false
+
+  # the possible seasons, in order
+  calendar = ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"]
+
+  # how long each season lasts
+  length = 3
+
 [cruel_season]
   card_limit = 12
+
+  # for specifying that a hyper-specific reaction should occur due to a card
+  [cruel_season.event]
+    # set to true to also kill a random cat when the leader dies
+    stolen_vitality = false
 
 # settings regarding relationship events, also called "interactions"
 [relationship]
@@ -22,11 +36,13 @@ dev_tools = false
   # sets the positive or negative effect that interactions will have on other cats based on personality compatibility
   compatibility_effect = 5
 
-  # Adds a passive buff to relationship events. We divide the value change by passive_influence_div and apply it to all other relationship values.
-  passive_influence_div = 3
-
   # base 1/chance of a romance interaction with another cat, when a cat has a mate
   chance_romance_not_mate = 15
+
+  # set to True if deputies should be more likely to have negative rel events with the leader
+  deputy_to_leader_neg_buff = false
+  # the higher the number, the more likely the deputy will have a negative respect event with the leader
+  deputy_envy_leader_influence = 0
 
   [relationship.value_change_amount]
     # amount a relationship changes for "high", "medium", and "low" effects for interactions
@@ -66,6 +82,9 @@ dev_tools = false
       extreme_pos = 100
 
 [mates]
+  # permit player to change cat mates
+  allow_manual = true
+
   # maximum age difference allowed for cats to be romantic with each other
   age_range = 40
 
@@ -335,6 +354,9 @@ dev_tools = false
   loner = [5, 15, 50, 30]
   rogue = [3, 7, 35, 55]
 
+  # set to True to always use English names instead of the localized version
+  always_use_english = false
+
 [accessory_generation]
   # base 1/chance a cat generates with an accessory 
   base_acc_chance = 150
@@ -475,6 +497,9 @@ dev_tools = false
   debug_override_frequency = 0
 
 [death_related]
+  # the maximum lives a leader can have
+  max_leader_lives = 9
+
   # base 1/chance that leader will die
   leader_death_chance = 50
 
@@ -487,12 +512,7 @@ dev_tools = false
   war_death_modifier_leader = 35
   war_death_modifier = 330
 
-  # base 1/2^(chance) a completely random murder occurs
-  # aggression and instability will make the denominator lower and increase chance of murder
-  base_random_murder_chance = 25
 
-  # base 1/chance a disliked cat will be murdered
-  base_murder_kill_chance = 80
 
   # age cats will start dying of old age based on old_age_death_curve
   old_age_death_start = 150
@@ -502,10 +522,34 @@ dev_tools = false
   #   1 = 189 moons, 2 = 178, 3 = 172, 4.5 (default) = 168, 8 = 163, 20 = 158
   old_age_death_curve = 4.5
 
+  [death_related.murder]
+    # base 1/2^(chance) a completely random murder occurs
+    # aggression and instability will make the denominator lower and increase chance of murder
+    base_random_murder_chance = 25
+
+    # base 1/chance a disliked cat will be murdered
+    base_murder_kill_chance = 80
+
+    # The higher this number, the more likely a deputy will murder their leader.
+    # note that this doesn't make the deputy more likely to murder in general
+    # so they still need to be "capable" of it and have negative relationship with their leader.
+    deputy_murder_modifier = 0
+
+    # set to true to have the deputy prefer to murder the leader over other negative relationships
+    deputy_prefer_leader = false
+
 [condition_related]
   # 10/chance an illness will occur
   illness_chance = 250
   classic_illness_chance = 500
+
+  # how much each medicine cat reduces the chance of infection, higher number is better
+  med_infection_reduction = 10
+  # the seasons in which illnesses can spread. Fleas will always be able to spread in all seasons.
+  illness_outbreak_season = ["Leaf-bare", "Leaf-fall"]
+  # if there are more sick cats than this percentage of healthy cats then further outbreaks are prevented
+  # for example: 2 sick cats and 4 healthy cats. 25% of 4 is 1 and there are 2 sick cats. 2 is more than 1, so no illness can spread
+  illness_percentage_max = 0.25
 
   # 5/chance (for most personalities) or 15/chance (for some personalities) an injury will occur 
   classic_injury_chance = 450
@@ -521,6 +565,30 @@ dev_tools = false
 [clan_creation]
   # Set this to -1 for it to be infinite
   rerolls = 3
+
+  # other clans will start with a random relation between the two numbers
+  starting_clan_relation = [8, 12]
+
+  # the "default" rank, the majority of cats will take this and random high ranks will originate from this rank
+  majority_rank = "warrior"
+
+  minimum_membership = 7
+  maximum_membership = 10
+
+  [clan_creation.ranks_needed]
+    leader = true
+    deputy = true
+    medicine_cat = true
+
+  [clan_creation.rank_weights]
+    kitten = 1
+    apprentice = 1
+    warrior = 2
+    elder = 1
+
+[ranks]
+  # permit player to change cat ranks
+  allow_manual = true
 
 [graduation]
   # base possible experience gain for apprentices
@@ -538,13 +606,18 @@ dev_tools = false
     apprentice = 25
     "mediator apprentice" = 25
 
-[outside_ex]
-  # base possible experience gain for cats outside the clan
-  # [[lowest_exp_gain, highest_exp_gain], [lowest_exp_gain2, highest_exp_gain2]]
-  # use the second range to slightly increase the probability that those values are used
-  base_adolescent_timeskip_ex = [[2, 10], [4, 5]]
-  base_adult_timeskip_ex = [[4, 12], [6, 7]]
-  base_senior_timeskip_ex = [[3, 9], [3, 4]]
+[outsiders]
+  max_reputation = 100
+  min_reputation = 0
+  starting_reputation = 80
+
+  [outsiders.outside_ex]
+    # base possible experience gain for cats outside the clan
+    # [[lowest_exp_gain, highest_exp_gain], [lowest_exp_gain2, highest_exp_gain2]]
+    # use the second range to slightly increase the probability that those values are used
+    base_adolescent_timeskip_ex = [[2, 10], [4, 5]]
+    base_adult_timeskip_ex = [[4, 12], [6, 7]]
+    base_senior_timeskip_ex = [[3, 9], [3, 4]]
 
 [focus]
   # NOTE: 'raid other clans' should be more dangerous than 'hoarding'!!!
@@ -699,6 +772,9 @@ dev_tools = false
 
 [clan_resources]
   [clan_resources.herbs]
+    # set to True if the Clan should begin with no herbs
+    empty_starting_storage = false
+
     # Clan size * required_herbs_per_cat / adequate number will determine adequate supply qualifier.
     # Clan size * required_herbs_per_cat * excess number will determine excess supply qualifier
     required_herbs_per_cat = 1
@@ -788,8 +864,9 @@ dev_tools = false
   # the amount that a cat's prey requirement increases if the cat is sick/injured/pregnant
   condition_increase = 1
 
-  # the rank order in which cats will be fed
-  feeding_order = [
+  [prey.feeding]
+    # the rank order in which cats will be fed
+    order = [
           "newborn",
           "kitten",
           "queen/pregnant",
@@ -803,6 +880,21 @@ dev_tools = false
           "deputy",
           "leader"
       ]
+
+    # the feeding order the game will start with
+    starting_order = "low_rank"
+
+    # set to true to prevent the player from changing the feed order
+    lock_order = false
+
+    # the feeding priority the game will start with
+    starting_priority = ""
+
+    # set to true to prevent the player from changing the feed priority
+    lock_priority = false
+
+    # set to false to prevent the player from manually feeding cats
+    allow_manual_feeding = true
 
   [prey.text_nutrition]
       # nutrition % ranges and their corresponding text displays
@@ -829,13 +921,12 @@ dev_tools = false
   # the bonus prey a hunter skill cat will catch according to exp rank
   [prey.hunter_exp_bonus]
       untrained = 0.1
-      trainee = 1
+      learning = 1
       prepared = 2
-      competent = 3
+      capable = 3
       proficient = 4
-      skilled = 5
-      expert = 6
-      master = 7
+      adept = 5
+      masterful = 6
 
   # hunter_exp_bonus number will be multiplied by the number matching their skill tier.
   # for example, an expert tier 2 hunter will catch an extra 6 * 2 (12 total) prey
@@ -888,3 +979,8 @@ dev_tools = false
       2_prey_class_increase = 3
       3_prey_class_increase = 2
       4_prey_class_increase = 1
+
+[settings]
+  # force a game setting to be true, stopping players from changing it
+  [settings.force_enable]
+    "deputy" = false
