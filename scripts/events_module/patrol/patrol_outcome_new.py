@@ -36,11 +36,11 @@ class EventOutcome:
     relationship_constraint: list[RelationshipConstraintDict] = field(
         default_factory=list[RelationshipConstraintDict]
     )
+
+    # consequences
     relationship_changes: list[RelationshipChangeDict] = field(
         default_factory=list[RelationshipChangeDict]
     )
-
-    # consequences
     exp_gained: int = 0
     reputation_changes: ReputationChangesDict = field(default_factory=dict)
     supply: list[SupplyDict] = field(default_factory=list[dict])

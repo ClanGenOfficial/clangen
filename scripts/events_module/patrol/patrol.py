@@ -5,13 +5,15 @@ import random
 from copy import deepcopy
 from os.path import exists as path_exists
 from random import choice, randint, choices
-from typing import List, Tuple, Optional, Union, Literal
+from typing import List, Tuple, Optional, Union, Literal, TypedDict
 
 import pygame
 
 from scripts.cat.cats import Cat
 from scripts.cat_relations.enums import RelType
 from scripts.cat.enums import CatAge, CatRank, CatCompatibility
+from scripts.clan_package.get_clan_cats import get_living_clan_cat_count
+from scripts.clan_resources.freshkill import FRESHKILL_EVENT_TRIGGER_FACTOR
 from scripts.config import get_config
 from scripts.events_module.event_filters import (
     event_for_tags,
@@ -25,6 +27,10 @@ from scripts.events_module.event_filters import (
     event_for_required_cat_types,
     event_for_cat,
     check_rel_constraint_groups,
+    event_for_reputation,
+    event_for_clan_relations,
+    event_for_freshkill_supply,
+    event_for_herb_supply,
 )
 from scripts.events_module.patrol.generate_patrol_list import (
     get_patrol_list,
@@ -32,6 +38,7 @@ from scripts.events_module.patrol.generate_patrol_list import (
 )
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
+from scripts.events_module.patrol.patrol_outcome_new import EventOutcome
 from scripts.game_structure import constants
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure import game
@@ -49,6 +56,7 @@ class Patrol:
 
     def __init__(self):
         self.patrol_event: Optional[PatrolEvent] = None
+        self.other_clan = None
 
         self.patrol_cats: list[Cat] = []
         """Holds all the cats that are on the patrol"""
@@ -56,10 +64,11 @@ class Patrol:
         """Keys are cat statuses present on the patrol, values are lists of the cats that hold the status"""
         self.involved_cats: dict[str, Cat] = {}
         """Cats directly involved and referenced in the event. Keys are their text abbreviation, values are the associated cat objects"""
+        self.outcome_cats: TypedDict(
+            "outcome_cats", {"success": dict[str, Cat], "failure": dict[str, Cat]}
+        ) = {"success": {}, "failure": {}}
 
         # TODO: old attributes, might not need them all anymore
-        self.random_cat = None
-        self.other_clan = None
         self.intro_text = ""
 
         # Holds new cats for easy access
@@ -329,7 +338,7 @@ class Patrol:
         possible_patrols = [
             p
             for p in possible_patrols
-            if self._pass_basic_constraints(
+            if self._patrol_pass_basic_constraints(
                 p, patrol_type, is_debug_patrol=p.id == self.debug_patrol_id
             )
         ]
@@ -424,12 +433,12 @@ class Patrol:
                 continue
 
             # CHECK IF CATS FIT
-            if self._pass_cat_constraints(test_patrol):
+            if self._patrol_pass_cat_constraints(test_patrol):
                 chosen_patrol = test_patrol
 
         return chosen_patrol
 
-    def _pass_basic_constraints(
+    def _patrol_pass_basic_constraints(
         self, patrol: PatrolEvent, patrol_type: str, is_debug_patrol: bool
     ) -> bool:
         # CHECK PATROL TYPE
@@ -500,7 +509,7 @@ class Patrol:
 
         return True
 
-    def _pass_cat_constraints(self, patrol: PatrolEvent) -> bool:
+    def _patrol_pass_cat_constraints(self, patrol: PatrolEvent) -> bool:
         temp_involved_cats = {}
 
         for abbr, constraints in patrol.involved_cats.items():
@@ -540,6 +549,7 @@ class Patrol:
 
                 # if we're here, then the cat passed!
                 temp_involved_cats[abbr] = cat_to_check
+                break
 
             if not temp_involved_cats.get(abbr):
                 # we've failed to find an appropriate cat
@@ -547,6 +557,238 @@ class Patrol:
 
         # if we're here, then we must have filled all the needed cats!
         self.involved_cats = temp_involved_cats
+        return True
+
+    def find_allowed_outcomes(
+        self, antagonize: bool = False
+    ) -> tuple[EventOutcome, EventOutcome]:
+        """
+        Filters through possible outcomes to find appropriate outcomes for both failure and success
+        :param antagonize: set True if the player chose to antagonize
+        :return: success outcome, failure outcome
+        """
+
+        # find which set of outcomes we'll be using based on if the player choose to antagonize
+        if antagonize:
+            success_outcomes = self.patrol_event.antag_success_outcomes
+            fail_outcomes = self.patrol_event.antag_fail_outcomes
+        else:
+            success_outcomes = self.patrol_event.success_outcomes
+            fail_outcomes = self.patrol_event.fail_outcomes
+
+        # for success and fail options we'll find what frequency is wanted
+        # then pick an outcome of that frequency based on weight
+        # then see if that outcome is allowed per constraints
+        # if it isn't, then grab the next outcome and try again until we have one that passes.
+        # this is the outcome we'll use!
+
+        # we'll get an outcome for both success and failure
+        chosen_success = None
+        chosen_failure = None
+
+        chosen_frequency = get_frequency()
+        used_frequencies = set()
+
+        tested_outcomes = set()
+        while not chosen_success or not chosen_failure:
+            if not chosen_success:
+                possible_outcomes = [
+                    x
+                    for x in success_outcomes
+                    if x.frequency == chosen_frequency and x not in tested_outcomes
+                ]
+                if not possible_outcomes:
+                    used_frequencies.add(chosen_frequency)
+                    chosen_frequency = find_new_frequency(used_frequencies)
+
+                test_outcome = choices(
+                    possible_outcomes, weights=[x.weight for x in possible_outcomes]
+                )[0]
+
+                # try to filter
+                if self._check_outcome_constraints(test_outcome, "success"):
+                    chosen_success = test_outcome
+                else:
+                    tested_outcomes.add(test_outcome)
+
+            if not chosen_success:
+                continue
+
+            if not chosen_failure:
+                possible_outcomes = [
+                    x
+                    for x in fail_outcomes
+                    if x.frequency == chosen_frequency and x not in tested_outcomes
+                ]
+                if not possible_outcomes:
+                    used_frequencies.add(chosen_frequency)
+                    chosen_frequency = find_new_frequency(used_frequencies)
+
+                test_outcome = choices(
+                    possible_outcomes, weights=[x.weight for x in possible_outcomes]
+                )[0]
+                # try to filter
+                if self._check_outcome_constraints(test_outcome, "failure"):
+                    chosen_success = test_outcome
+                else:
+                    tested_outcomes.add(test_outcome)
+
+            if not chosen_failure:
+                continue
+
+        return chosen_success, chosen_failure
+
+    def _check_outcome_constraints(
+        self, outcome: EventOutcome, outcome_type: Literal["success", "failure"]
+    ) -> bool:
+        """
+        Checks the outcome constraints and attempts to find appropriate cats. If the outcome is valid and cats are
+        found, the cats will be added to the matching `self.outcome_cats` dict
+        :param outcome: outcome to check
+        :param outcome_type: the outcome_cats dict that the valid cats should be added to
+        """
+        # BASICS
+        if not event_for_location(outcome.location):
+            return False
+
+        if not event_for_season(outcome.season):
+            return False
+
+        if not event_for_tags(outcome.tags, self.involved_cats["p_l"]):
+            return False
+
+        if outcome.required_reputation:
+            if not event_for_reputation(outcome.required_reputation.get("outsider")):
+                return False
+
+            if not event_for_clan_relations(
+                outcome.required_reputation.get("other_clan"), self.other_clan
+            ):
+                return False
+
+        if outcome.required_cat_types:
+            if not event_for_required_cat_types(
+                outcome.required_cat_types, self.patrol_statuses
+            ):
+                return False
+
+        if outcome.supply:
+            clan_size = get_living_clan_cat_count(Cat)
+            for block in outcome.supply:
+                if "freshkill" in block["type"]:
+                    if not event_for_freshkill_supply(
+                        game.clan.freshkill_pile,
+                        trigger=block["trigger"],
+                        factor=FRESHKILL_EVENT_TRIGGER_FACTOR,
+                        clan_size=clan_size,
+                    ):
+                        return False
+                else:
+                    if not event_for_herb_supply(
+                        trigger=block["trigger"],
+                        supply_type=block["type"],
+                        clan_size=clan_size,
+                    ):
+                        return False
+
+        # CATS
+        uninvolved_cats = [
+            c for c in self.patrol_cats if c not in self.involved_cats.values()
+        ]
+        temp_involved_cats = self.involved_cats.copy()
+        for abbr, constraints in outcome.involved_cats.items():
+            possible_injuries = []
+            # grab any injuries they might get
+            if outcome.injury:
+                for block in outcome.injury:
+                    if abbr in block["cats"]:
+                        possible_injuries.extend(block["injury"])
+
+            # if the abbr is one we've already assigned, then we just test that cat!
+            if test_cat := self.involved_cats.get(abbr):
+                if not event_for_cat(
+                    constraints,
+                    test_cat,
+                    involved_cat_dict=temp_involved_cats,
+                    injuries=possible_injuries,
+                    event_id=self.patrol_event.id,
+                ):
+                    return False
+
+                # check rel constraints
+                if outcome.relationship_constraint:
+                    for block in outcome.relationship_constraint:
+                        if not check_rel_constraint_groups(
+                            constraints_dict=block, involved_cats=temp_involved_cats
+                        ):
+                            return False
+
+            # otherwise, check if this abbr wants to replace an existing one!
+            elif constraints.get("prior_abbreviation"):
+                possible_cats = [
+                    self.involved_cats.get(_a)
+                    for _a in constraints["prior_abbreviation"]
+                ]
+
+                for c in possible_cats:
+                    if not c:
+                        continue
+
+                    if not event_for_cat(
+                        constraints,
+                        c,
+                        involved_cat_dict=temp_involved_cats,
+                        injuries=possible_injuries,
+                        event_id=self.patrol_event.id,
+                    ):
+                        return False
+
+                    # check rel constraints
+                    if outcome.relationship_constraint:
+                        for block in outcome.relationship_constraint:
+                            if not check_rel_constraint_groups(
+                                constraints_dict=block, involved_cats=temp_involved_cats
+                            ):
+                                return False
+
+            # if neither of those is happening, then we check if any of our uninvolved cats can take this spot!
+            else:
+                while not temp_involved_cats[abbr] and uninvolved_cats:
+                    cat_to_check = uninvolved_cats[0]
+
+                    if not event_for_cat(
+                        constraints,
+                        cat_to_check,
+                        involved_cat_dict=temp_involved_cats,
+                        injuries=possible_injuries,
+                        event_id=self.patrol_event.id,
+                    ):
+                        return False
+
+                    # check rel constraints
+                    if outcome.relationship_constraint:
+                        failed = False
+                        for block in outcome.relationship_constraint:
+                            if not check_rel_constraint_groups(
+                                constraints_dict=block, involved_cats=temp_involved_cats
+                            ):
+                                uninvolved_cats.remove(cat_to_check)
+                                failed = True
+                                break
+                        if failed:
+                            continue
+
+                    # if we're here, then the cat passed!
+                    temp_involved_cats[abbr] = cat_to_check
+                    break
+
+                if not temp_involved_cats.get(abbr):
+                    # we've failed to find an appropriate cat
+                    return False
+
+        # if we're here, then we must have found all our cats!
+        self.outcome_cats[outcome_type] = temp_involved_cats
+
         return True
 
     def determine_outcome(
