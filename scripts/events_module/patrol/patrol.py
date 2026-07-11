@@ -27,6 +27,7 @@ from scripts.events_module.event_filters import (
     event_for_poi,
     event_for_required_cat_types,
     event_for_cat,
+    check_rel_constraint_groups,
 )
 from scripts.events_module.patrol.generate_patrol_list import (
     get_patrol_list,
@@ -269,12 +270,10 @@ class Patrol:
 
         return chosen_patrol
 
-    @staticmethod
     def decide_if_romantic(
-        romantic_event, patrol_leader, random_cat, patrol_apprentices: list
+        self, romantic_event: Optional[PatrolEvent]
     ) -> bool:
-        # if no romance was available or the patrol lead and random cat aren't potential mates then use the normal event
-
+        
         if not romantic_event:
             print("No romantic event")
             return False
@@ -333,11 +332,7 @@ class Patrol:
         possible_patrols: List[PatrolEvent],
         patrol_type: str,
     ) -> PatrolEvent:
-        chosen_patrol: Optional[PatrolEvent] = None
-
-        normal_patrols = []
-        romantic_patrols = []
-
+        # GET POSSIBLE PATROLS
         # run the first set of really basic constraint filtering, just to get our base of valid patrols
         possible_patrols = [
             p
@@ -351,6 +346,8 @@ class Patrol:
             possible_patrols = self.balance_hunting(possible_patrols)
 
         # separate into the two lists
+        normal_patrols: list[PatrolEvent] = []
+        romantic_patrols: list[PatrolEvent] = []
         for p in possible_patrols:
             if "romance" in p.tags:
                 romantic_patrols.append(p)
@@ -363,7 +360,6 @@ class Patrol:
 
         # GET FREQUENCY
         chosen_frequency = get_frequency()
-        used_frequencies = set()
 
         # always try to do the debugged ID first
         if self.debug_patrol_id:
@@ -374,11 +370,39 @@ class Patrol:
         else:
             patrol_override = None
 
+        # GET PATROL
+        chosen_patrol: Optional[PatrolEvent] = None
+
+        # first we see if we can get a romantic patrol
+        if romantic_patrols:
+            chosen_patrol = self._get_valid_patrol(
+                romantic_patrols.copy(), chosen_frequency, patrol_override
+            )
+
+        if not self.decide_if_romantic(chosen_patrol):
+            chosen_patrol = None
+
         # TODO: check for a romance patrol first
         # TODO: then decide if we want to use that romance patrol based on compat, ect
         # TODO: if we're gonna use it, return that patrol. if not, find a normal one to use
 
-        possible_patrols = normal_patrols.copy()
+        # if no romantic patrol possible, we get a normal one!
+        if not chosen_patrol:
+            chosen_patrol = self._get_valid_patrol(
+                normal_patrols.copy(), chosen_frequency, patrol_override
+            )
+
+        return chosen_patrol
+
+    def _get_valid_patrol(
+        self,
+        possible_patrols: List[PatrolEvent],
+        chosen_frequency: int,
+        patrol_override: Optional[int],
+    ) -> PatrolEvent:
+        chosen_patrol = None
+        used_frequencies = set()
+
         while not chosen_patrol:
             # make sure we still have possible patrols
             if not possible_patrols:
@@ -414,8 +438,6 @@ class Patrol:
             # CHECK IF CATS FIT
             if self._pass_cat_constraints(test_patrol):
                 chosen_patrol = test_patrol
-
-        return chosen_patrol
 
     def _pass_basic_constraints(
         self, patrol: PatrolEvent, patrol_type: str, is_debug_patrol: bool
@@ -501,7 +523,8 @@ class Patrol:
                 else:
                     cat_to_check = potential_cats[0]
 
-                if event_for_cat(
+                # check cat constraints
+                if not event_for_cat(
                     cat_info=constraints,
                     cat=cat_to_check,
                     involved_cat_dict=temp_involved_cats,
@@ -509,9 +532,24 @@ class Patrol:
                     p_l=temp_involved_cats["p_l"],
                     other_involved_clan_id=self.other_clan.id,
                 ):
-                    temp_involved_cats[abbr] = cat_to_check
-                else:
                     potential_cats.remove(cat_to_check)
+                    continue
+
+                # check rel constraints
+                if patrol.relationship_constraint:
+                    failed = False
+                    for block in patrol.relationship_constraint:
+                        if not check_rel_constraint_groups(
+                            constraints_dict=block, involved_cats=temp_involved_cats
+                        ):
+                            potential_cats.remove(cat_to_check)
+                            failed = True
+                            break
+                    if failed:
+                        continue
+
+                # if we're here, then the cat passed!
+                temp_involved_cats[abbr] = cat_to_check
 
             if not temp_involved_cats.get(abbr):
                 # we've failed to find an appropriate cat

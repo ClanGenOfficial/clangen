@@ -331,7 +331,7 @@ def _get_multi_cats(
         # no matter what, cat is no longer allowed in the possible_cats list
         possible_cats.remove(cat)
 
-        # bad cat :( remove from possibilities and try and new one
+        # bad cat :( remove from possibilities and try a new one
         if failed:
             _temp_involved_cats["multi_cat"].remove(cat)
         else:
