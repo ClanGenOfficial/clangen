@@ -139,7 +139,11 @@ class Clan:
         # Reputation is for loners/kittypets/outsiders in general that wish to join the clan.
         # it's a range from 1-100, with 30-70 being neutral, 71-100 being "welcoming",
         # and 1-29 being "hostile". if you're hostile to outsiders, they will VERY RARELY show up.
-        self._reputation = get_config("outsiders.starting_reputation", creating_clan=True, card_list_override=self.cruel_cards)
+        self._reputation = get_config(
+            "outsiders.starting_reputation",
+            creating_clan=True,
+            card_list_override=self.cruel_cards,
+        )
 
         self.all_other_clans: list[OtherClan] = []
         self.other_clan_IDs = []
