@@ -50,16 +50,17 @@ class Patrol:
     def __init__(self):
         self.patrol_event: Optional[PatrolEvent] = None
 
+        self.patrol_cats: list[Cat] = []
+        """Holds all the cats that are on the patrol"""
+        self.patrol_statuses: dict[str, list[Cat]] = {}
+        """Keys are cat statuses present on the patrol, values are lists of the cats that hold the status"""
+        self.involved_cats: dict[str, Cat] = {}
+        """Cats directly involved and referenced in the event. Keys are their text abbreviation, values are the associated cat objects"""
+
         # TODO: old attributes, might not need them all anymore
-        self.patrol_leader = None
         self.random_cat = None
-        self.patrol_cats = []
-        self.patrol_apprentices = []
         self.other_clan = None
         self.intro_text = ""
-
-        self.patrol_statuses = {}
-        self.patrol_status_list = []
 
         # Holds new cats for easy access
         self.new_cats: List[List[Cat]] = []
@@ -72,7 +73,14 @@ class Patrol:
 
         print("PATROL START ---------------------------------------------------")
 
-        self.add_patrol_cats(patrol_cats, game.clan)
+        # Add cats
+        self.add_patrol_cats(patrol_cats)
+
+        # Choose other clan
+        if game.clan.all_other_clans and len(game.clan.all_other_clans) > 0:
+            self.other_clan = choice(game.clan.all_other_clans)
+        else:
+            self.other_clan = None
 
         self.debug_patrol = (
             constants.CONFIG["patrol_generation"]["debug_ensure_patrol_id"]
@@ -80,12 +88,14 @@ class Patrol:
             else False
         )
 
+        # Find valid patrols
         final_patrols, final_romance_patrols = self.get_possible_patrols(patrol_type)
 
         print(
             f"Total Number of Possible Patrols | normal: {len(final_patrols)}, romantic: {len(final_romance_patrols)} "
         )
 
+        # Choose patrol
         if final_patrols:
             normal_event_choice = choices(
                 final_patrols, weights=[x.weight for x in final_patrols]
@@ -113,6 +123,7 @@ class Patrol:
 
         Patrol.used_patrols.append(self.patrol_event.patrol_id)
 
+        # Return text adjusted patrol intro
         return event_text_adjust(
             Cat,
             self.patrol_event.intro_text,
@@ -157,116 +168,76 @@ class Patrol:
 
         return self.determine_outcome(antagonize=(path == "antag"))
 
-    def add_patrol_cats(self, patrol_cats: List[Cat], clan: Clan) -> None:
-        """Add the list of cats to the patrol class and handles to set all needed values.
-
-        Parameters
-        ----------
-        patrol_cats : list
-            list of cats which are on the patrol
-
-        clan: Clan
-            the Clan class of the game, this parameter is needed to make tests possible
-
-        Returns
-        ----------
+    def add_patrol_cats(self, patrol_cats: List[Cat]) -> None:
         """
+        Sorts and categorizes patrol cats, then determines a patrol leader.
+        :param patrol_cats: list of cats which are on the patrol
+        """
+        # ADD TO PATROL_CATS
+
+        self.patrol_cats = patrol_cats
         for cat in patrol_cats:
-            self.patrol_cats.append(cat)
-
-            if cat.status.rank.is_any_apprentice_rank():
-                self.patrol_apprentices.append(cat)
-
-            self.patrol_status_list.append(cat.status.rank)
-
+            # ADD TO STATUS LIST
             if cat.status.rank in self.patrol_statuses:
-                self.patrol_statuses[cat.status.rank] += 1
+                self.patrol_statuses[cat.status.rank].append(cat)
             else:
-                self.patrol_statuses[cat.status.rank] = 1
+                self.patrol_statuses[cat.status.rank] = [cat]
 
             # Combined patrol_statuses categories
             if cat.status.rank.is_any_medicine_rank():
                 if "healer cats" in self.patrol_statuses:
-                    self.patrol_statuses["healer cats"] += 1
+                    self.patrol_statuses["healer cats"].append(cat)
                 else:
-                    self.patrol_statuses["healer cats"] = 1
+                    self.patrol_statuses["healer cats"] = [cat]
 
             if cat.status.rank.is_any_apprentice_rank():
                 if "all apprentices" in self.patrol_statuses:
-                    self.patrol_statuses["all apprentices"] += 1
+                    self.patrol_statuses["all apprentices"].append(cat)
                 else:
-                    self.patrol_statuses["all apprentices"] = 1
+                    self.patrol_statuses["all apprentices"] = [cat]
 
             if (
                 cat.status.rank.is_any_adult_warrior_like_rank()
                 and cat.age != CatAge.ADOLESCENT
             ):
                 if "normal adult" in self.patrol_statuses:
-                    self.patrol_statuses["normal adult"] += 1
+                    self.patrol_statuses["normal adult"].append(cat)
                 else:
-                    self.patrol_statuses["normal adult"] = 1
+                    self.patrol_statuses["normal adult"] = [cat]
 
             game.patrolled.append(cat.ID)
 
-        # PATROL LEADER AND RANDOM CAT CAN NOT CHANGE AFTER SET-UP
-
         # DETERMINE PATROL LEADER
+        # THIS CANNOT CHANGE AFTER SET-UP
         # sets medcat as patrol leader if they're in the patrol
-        if CatRank.MEDICINE_CAT in self.patrol_status_list:
-            index = self.patrol_status_list.index(CatRank.MEDICINE_CAT)
-            self.patrol_leader = self.patrol_cats[index]
+        if CatRank.MEDICINE_CAT in self.patrol_statuses.keys():
+            possible_leads = self.patrol_statuses[CatRank.MEDICINE_CAT]
+
         # If there is no medicine cat, but there is a medicine cat apprentice, set them as the patrol leader.
         # This prevents warriors from being treated as medicine cats in medicine cat patrols.
-        elif CatRank.MEDICINE_APPRENTICE in self.patrol_status_list:
-            index = self.patrol_status_list.index(CatRank.MEDICINE_APPRENTICE)
-            self.patrol_leader = self.patrol_cats[index]
-            # then we just make sure that this app will also be app1
-            self.patrol_apprentices.remove(self.patrol_leader)
-            self.patrol_apprentices = [self.patrol_leader] + self.patrol_apprentices
+        elif CatRank.MEDICINE_APPRENTICE in self.patrol_statuses.keys():
+            possible_leads = self.patrol_statuses[CatRank.MEDICINE_APPRENTICE]
+
         # if no meddies set leader as patrol leader
-        elif CatRank.LEADER in self.patrol_status_list:
-            index = self.patrol_status_list.index(CatRank.LEADER)
-            self.patrol_leader = self.patrol_cats[index]
+        elif CatRank.LEADER in self.patrol_statuses.keys():
+            possible_leads = self.patrol_statuses[CatRank.LEADER]
+
         # if no leader set the deputy as patrol leader
-        elif CatRank.DEPUTY in self.patrol_status_list:
-            index = self.patrol_status_list.index(CatRank.DEPUTY)
-            self.patrol_leader = self.patrol_cats[index]
+        elif CatRank.DEPUTY in self.patrol_statuses.keys():
+            possible_leads = self.patrol_statuses[CatRank.DEPUTY]
+
         # if no deputy, set oldest or most experienced as patrol leader
         else:
-            # Flip a coin to pick the most experience, or oldest.
-            if randint(0, 1):
-                self.patrol_cats.sort(key=lambda x: x.moons)
-            else:
-                self.patrol_cats.sort(key=lambda x: x.experience)
-            self.involved_cats["p_l"] = self.patrol_cats[-1]
+            possible_leads = self.patrol_cats
 
-        if clan.all_other_clans and len(clan.all_other_clans) > 0:
-            self.other_clan = choice(clan.all_other_clans)
+        # Flip a coin to pick the most experienced or the oldest.
+        if randint(0, 1):
+            possible_leads.sort(key=lambda x: x.moons)
         else:
-            self.other_clan = None
-
-        # DETERMINE RANDOM CAT
-        # Find random cat
-        if len(patrol_cats) > 1:
-            # prioritize grabbing an adult as the random cat
-            if self.patrol_statuses.get("normal adult", 0) > 1:
-                self.random_cat = choice(
-                    [
-                        i
-                        for i in self.patrol_cats
-                        if i != self.patrol_leader and i not in self.patrol_apprentices
-                    ]
-                )
-            # if no adults, grab anyone
-            else:
-                self.random_cat = choice(
-                    [i for i in patrol_cats if i != self.patrol_leader]
-                )
-        else:
-            self.random_cat = choice(patrol_cats)
+            possible_leads.sort(key=lambda x: x.experience)
+        self.involved_cats["p_l"] = possible_leads[-1]
 
         print("Patrol Leader:", str(self.patrol_leader.name))
-        print("Random Cat:", str(self.random_cat.name))
 
     def get_possible_patrols(
         self,
