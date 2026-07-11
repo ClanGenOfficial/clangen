@@ -63,6 +63,28 @@ To access any modifiers in the game, use `get_config()` in `scripts/config.py`.
 
 The function will first check the clan's `cruel_cards` array for a modifier name matching the `config_path` passed into it. If such a card does not exist, it will grab the modifier in `game_config.toml`. Then, it returns the value it finds.
 
+## Locking Actions
+
+If a card needs to block player input then you can utilize the window `CruelLockedAction()`. This window displays text informing the player that the action they tried to take was blocked by one of their active cards.
+
+For example, the card Survival Of The Fittest modifies the feeding behavior of the Clan and needs to prevent changes to that behavior. Thus, if a player tries to change the feeding order/priority in the freshkill window, `CruelLockedAction()` is triggered and the attempted player input ignored.
+
+### Usage Example
+
+```python
+            if event.ui_element == self.tactic_view_elements[order]: # (1)!
+                if get_config("prey.feeding.lock_order"): # (2)!
+                    CruelLockedAction() # (3)!
+                    return # (4)!
+                switch_clan_setting(order)
+                self.tactic_view_elements[order].disable()
+```
+
+1. This event is to change the feeding order
+2. First we check if the config prevents the order from being changed
+3. If it does, the `CruelLockedAction` window is opened
+4. We return before any changes can be made to the feeding order
+
 ## Card Display
 
 ### Art
