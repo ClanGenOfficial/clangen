@@ -48,7 +48,7 @@
       "clan_creation.ranks_needed.medicine_cat": false
     }
   },
-  "young_ancient": {
+  "young_old": {
     "card_art": "origin/kitten.png",
     "modifiers": {
       "clan_creation.majority_rank": "elder",
