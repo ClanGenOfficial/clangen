@@ -608,13 +608,18 @@ dev_tools = false
     apprentice = 25
     "mediator apprentice" = 25
 
-[outside_ex]
-  # base possible experience gain for cats outside the clan
-  # [[lowest_exp_gain, highest_exp_gain], [lowest_exp_gain2, highest_exp_gain2]]
-  # use the second range to slightly increase the probability that those values are used
-  base_adolescent_timeskip_ex = [[2, 10], [4, 5]]
-  base_adult_timeskip_ex = [[4, 12], [6, 7]]
-  base_senior_timeskip_ex = [[3, 9], [3, 4]]
+[outsiders]
+  max_reputation = 100
+  min_reputation = 0
+  starting_reputation = 80
+
+  [outsiders.outside_ex]
+    # base possible experience gain for cats outside the clan
+    # [[lowest_exp_gain, highest_exp_gain], [lowest_exp_gain2, highest_exp_gain2]]
+    # use the second range to slightly increase the probability that those values are used
+    base_adolescent_timeskip_ex = [[2, 10], [4, 5]]
+    base_adult_timeskip_ex = [[4, 12], [6, 7]]
+    base_senior_timeskip_ex = [[3, 9], [3, 4]]
 
 [focus]
   # NOTE: 'raid other clans' should be more dangerous than 'hoarding'!!!
