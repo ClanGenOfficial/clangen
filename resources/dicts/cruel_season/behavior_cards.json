@@ -71,41 +71,5 @@
       "mates.allow_manual": false,
       "mates.allow_mating": false
     }
-  },
-  "underpopulated": {
-    "card_art": "behavior/underpopulated.png",
-    "modifiers": {
-      "modifiers": {
-      "pregnancy.one_kit_possibility.young adult": 3,
-      "pregnancy.one_kit_possibility.adult": 4,
-      "pregnancy.one_kit_possibility.senior adult": 5,
-      "pregnancy.one_kit_possibility.senior": 0,
-
-      "pregnancy.two_kit_possibility.young adult": 10,
-      "pregnancy.two_kit_possibility.adult": 8,
-      "pregnancy.two_kit_possibility.senior adult": 5,
-      "pregnancy.two_kit_possibility.senior": 2,
-
-      "pregnancy.three_kit_possibility.young adult": 12,
-      "pregnancy.three_kit_possibility.adult": 10,
-      "pregnancy.three_kit_possibility.senior adult": 1,
-      "pregnancy.three_kit_possibility.senior": 0,
-
-      "pregnancy.four_kit_possibility.young adult": 7,
-      "pregnancy.four_kit_possibility.adult": 3,
-      "pregnancy.four_kit_possibility.senior adult": 0,
-      "pregnancy.four_kit_possibility.senior": 0,
-
-      "pregnancy.five_kit_possibility.young adult": 1,
-      "pregnancy.five_kit_possibility.adult": 0,
-      "pregnancy.five_kit_possibility.senior adult": 0,
-      "pregnancy.five_kit_possibility.senior": 0,
-
-      "pregnancy.max_kit_possibility.young adult": 0,
-      "pregnancy.max_kit_possibility.adult": 0,
-      "pregnancy.max_kit_possibility.senior adult": 0,
-      "pregnancy.max_kit_possibility.senior": 0
-    }
-    }
   }
 }
