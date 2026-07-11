@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
-from collections import defaultdict
 import logging
 import random
 from copy import deepcopy
