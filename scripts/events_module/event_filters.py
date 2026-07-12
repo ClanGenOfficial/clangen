@@ -1322,21 +1322,19 @@ def check_rel_constraint_groups(
         # if we don't have any cats to compare, then just send back
         return True
 
-    cats_from = [
-        involved_cats[c]
-        for c in constraints_dict["cats_from"]
-        if c in involved_cats and c != "multi_cat"
-    ]
-    if "multi_cat" in constraints_dict["cats_from"]:
-        cats_from.extend(involved_cats.get("multi_cat", []))
+    cats_from = []
+    for abbr in constraints_dict["cats_from"]:
+        if isinstance(involved_cats[abbr], list):
+            cats_from.extend(involved_cats[abbr])
+        else:
+            cats_from.append(involved_cats[abbr])
 
-    cats_to = [
-        involved_cats[c]
-        for c in constraints_dict["cats_to"]
-        if c in involved_cats and c != "multi_cat"
-    ]
-    if "multi_cat" in constraints_dict["cats_to"]:
-        cats_to.extend(involved_cats.get("multi_cat", []))
+    cats_to = []
+    for abbr in constraints_dict["cats_to"]:
+        if isinstance(involved_cats[abbr], list):
+            cats_to.extend(involved_cats[abbr])
+        else:
+            cats_to.append(involved_cats[abbr])
 
     if not _filter_relationship_type_updated(
         cats_from=cats_from,

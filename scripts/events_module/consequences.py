@@ -1034,16 +1034,16 @@ def change_relationship_values(
     """
     changes relationship values according to the parameters.
 
-    :param list[Cat] cats_from: list of cat objects whose rel values will be affected
+    :param cats_from: list of cat objects whose rel values will be affected
     (e.g. cat_from loses trust in cat_to)
-    :param list[Cat] cats_to: list of cats objects who are the target of that rel value
+    :param cats_to: list of cats objects who are the target of that rel value
     (e.g. cat_from loses trust in cat_to)
-    :param int romance: amount to change romantic, default 0
-    :param int like: amount to change platonic, default 0
-    :param int respect: amount to change admiration (respect), default 0
-    :param int comfort: amount to change comfort, default 0
-    :param int trust: amount to change trust, default 0
-    :param str log: the string to append to the relationship log of cats involved
+    :param romance: amount to change romantic, default 0
+    :param like: amount to change platonic, default 0
+    :param respect: amount to change admiration (respect), default 0
+    :param comfort: amount to change comfort, default 0
+    :param trust: amount to change trust, default 0
+    :param log: the string to append to the relationship log of cats involved
     :param bool flip_log: If True, this will "flip" the cats used for cat_to and cat_from abbreviation replacements. This should really only be used for mutual relationship changes from events.
     """
 

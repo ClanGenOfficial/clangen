@@ -664,12 +664,6 @@ class TestNewCatCreation(unittest.TestCase):
                 msg=f"Warrior was not given a suffix.",
             )
 
-
-# this works when run locally but for some reason github actions will always crash it
-# this is no fault of the test because it does work!
-# but when run through actions it thinks that a function in Relationships doesn't exist.
-# so if you want to double-check litter creation, then uncomment this test and run it locally.
-"""
     def test_litter_creation(self):
         with self.subTest("Testing litter creation"):
             parent = Cat(
@@ -753,4 +747,3 @@ class TestNewCatCreation(unittest.TestCase):
                     0,
                     msg="Created a litter, but the kit doesn't have a relationship toward the adoptive parent!",
                 )
-"""

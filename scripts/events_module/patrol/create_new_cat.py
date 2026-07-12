@@ -13,6 +13,7 @@ from scripts.cat_relations.relationship import Relationship
 from scripts.clan import OtherClan
 from scripts.clan_package.settings import get_clan_setting
 from scripts.config import get_config
+from scripts.events_module.consequences import change_relationship_values
 from scripts.events_module.parameter_dicts import InvolvedCatDict
 from scripts.game_structure import game, constants
 
@@ -148,12 +149,17 @@ def updated_create_new_cat(
                         cat_from=c, cat_to=p, family=True
                     )
 
-                p.relationships[c.ID].change_according_dictionary(
-                    get_config("new_cat.parent_buff.parent_to_kit")
-                )
-                c.relationships[p.ID].change_according_dictionary(
-                    get_config("new_cat.parent_buff.kit_to_parent")
-                )
+        change_relationship_values(
+            cats_to=new_cats,
+            cats_from=blood_parents + adoptive_parents,
+            **get_config("new_cat.parent_buff.parent_to_kit"),
+        )
+        change_relationship_values(
+            cats_to=blood_parents + adoptive_parents,
+            cats_from=new_cats,
+            **get_config("new_cat.parent_buff.kit_to_parent"),
+        )
+
     # littermate to littermate
     if is_litter:
         for pair in combinations(new_cats, 2):
@@ -166,12 +172,18 @@ def updated_create_new_cat(
                     cat_from=pair[0], cat_to=pair[1], family=True
                 )
 
-            pair[0].relationships[pair[1].ID].change_according_dictionary(
+            pair[0].relationships[pair[1].ID].change_according_to_dictionary(
                 get_config("new_cat.sib_buff.cat1_to_cat2")
             )
-            pair[1].relationships[pair[0].ID].change_according_dictionary(
+            pair[1].relationships[pair[0].ID].change_according_to_dictionary(
                 get_config("new_cat.sib_buff.cat2_to_cat1")
             )
+
+        change_relationship_values(
+            cats_to=new_cats,
+            cats_from=new_cats,
+            **get_config("new_cat.sib_buff.cat1_to_cat2"),
+        )
 
         pass
 
