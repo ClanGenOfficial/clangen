@@ -99,6 +99,13 @@
       "pregnancy.max_kit_possibility.senior": 0
     }
   },
+  "heartless": {
+    "card_art": "behavior/sorrow.png",
+    "modifiers": {
+      "mates.allow_manual": false,
+      "mates.allow_mating": false
+    }
+  },
   "malicious_aura": {
     "card_art": "behavior/resolute.png",
     "modifiers": {
