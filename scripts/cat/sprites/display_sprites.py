@@ -45,7 +45,7 @@ def generate_sprite(
         dead = cat.dead
 
     # setting the cat_sprite (bc this makes things much easier)
-
+    cat_sprite = ""
     # sick sprites
     if (
         not disable_sick_sprite
