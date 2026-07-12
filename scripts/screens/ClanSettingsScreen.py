@@ -120,7 +120,7 @@ class ClanSettingsScreen(Screens):
                 "mates.allow_mating"
             ):
                 set_clan_setting("affair", False)
-                self.checkboxes["affair"].check()
+                self.checkboxes["affair"].uncheck()
                 CruelLockedAction()
                 return
             for key, value in self.checkboxes.items():
