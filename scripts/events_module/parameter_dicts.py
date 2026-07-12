@@ -69,12 +69,15 @@ class ReputationChangesDict(TypedDict, total=False):
 
 class DeathDict(TypedDict):
     cats: list[str]
+    body: bool
     history: str
 
 
-class InjuryDict(TypedDict):
+class ConditionDict(TypedDict):
     cats: list[str]
-    injury: list[str]
+    no_results: bool
+    condition: list[str]
+    non_lethal: bool
     scar_pool_override: NotRequired[list[str]]
     scar_history: NotRequired[str]
     death_history: NotRequired[str]

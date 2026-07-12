@@ -686,8 +686,8 @@ class Patrol:
         for abbr, constraints in outcome.involved_cats.items():
             possible_injuries = []
             # grab any injuries they might get
-            if outcome.injury:
-                for block in outcome.injury:
+            if outcome.condition:
+                for block in outcome.condition:
                     if abbr in block["cats"]:
                         possible_injuries.extend(block["injury"])
 
