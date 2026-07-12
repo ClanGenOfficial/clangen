@@ -1437,7 +1437,7 @@ class OtherClan:
             while self.name in used_names:  # making sure we don't repeat a name
                 self.name = choice(clan_names)
 
-        self.relations = relations or randint(
+        self._relations = relations or randint(
             get_config("clan_creation.starting_clan_relation")[0],
             get_config("clan_creation.starting_clan_relation")[1],
         )
