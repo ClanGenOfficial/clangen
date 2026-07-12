@@ -11,7 +11,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "bch_train_lore1",
+        "patrol_art": "cat_sprites/bch_train_lore1_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -130,7 +130,7 @@
             {
                 "text": "There is no way r_c is staying around here. {PRONOUN/r_c/subject/CAP} {VERB/r_c/tear/tears} off back to camp at the sight of a broken ginger cat statue.",
                 "exp": 0,
-                "art": "running_warrior",
+                "art": "cat_sprites/gen_running_Wr",
                 "relationships": [
                     {
                         "cats_to": [
@@ -194,7 +194,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_train_solo",
+        "patrol_art": "cat_sprites/gen_train_solo_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -206,7 +206,7 @@
             {
                 "text": "p_l is shocked to find green and black lizards scattered around the beach. {PRONOUN/p_l/subject/CAP} {VERB/p_l/freeze/freezes}, trying not to get bit. When nothing moves, {PRONOUN/p_l/subject} {VERB/p_l/head/heads} back to camp unscathed.",
                 "exp": 5,
-                "art": "running_warrior",
+                "art": "cat_sprites/gen_running_Wr",
                 "frequency": 4
             },
             {
@@ -265,7 +265,7 @@
             {
                 "text": "It's a beach full of lizards! p_l tears back to camp before {PRONOUN/p_l/subject} can get bitten.",
                 "exp": 0,
-                "art": "running_warrior",
+                "art": "cat_sprites/gen_running_Wr",
                 "frequency": 4
             }
         ]
@@ -282,7 +282,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "bch_train_session1",
+        "patrol_art": "cat_sprites/bch_train_session1_ApWr",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -302,7 +302,7 @@
             {
                 "text": "s_c sits on the windward side of app1, trying to give {PRONOUN/app1/object} a little more shelter. It's understandable, {PRONOUN/s_c/subject} {VERB/s_c/sympathize/sympathizes}, but app1 can't rely on cats in distress only showing up when the sea is inviting. The sympathy (and a little physical warmth) puts cheer back into app1, and {PRONOUN/app1/subject} {VERB/app1/take/takes} {PRONOUN/app1/poss} next turn at lifeguarding practice with enthusiasm.",
                 "exp": 30,
-                "art": "gen_train_soggykitty_happy_app",
+                "art": "cat_sprites/gen_train_soggykittyhappy_Ap",
                 "stat_skill": [
                     "SWIMMER,1"
                 ],
@@ -350,7 +350,7 @@
             {
                 "text": "s_c nods. Lifeguarding isn't easy, even in practice. But {PRONOUN/s_c/subject} {VERB/s_c/offer/offers} up the story of a kitten saved by a c_n warrior who had the strength and will to keep the little ball of fur above the waves under nearly impossible circumstances. It makes app1 sit up straight, proud to be carrying on that tradition.",
                 "exp": 30,
-                "art": "gen_train_soggykitty_happy_app",
+                "art": "cat_sprites/gen_train_soggykittyhappy_Ap",
                 "stat_skill": [
                     "LORE,1"
                 ],
@@ -398,7 +398,7 @@
             {
                 "text": "Doesn't app1 want to be an ocean dancer, one of the many cats in c_n's ancestry who managed to master the waves, streaking in and out to save lives that have been lost to the ocean's jaws, s_c asks? And well, when {PRONOUN/s_c/subject} {VERB/s_c/put/puts} it like <i>that</i>... app1's motivation returns.",
                 "exp": 30,
-                "art": "gen_bord_story",
+                "art": "cat_sprites/gen_bord_story_WrWrWr",
                 "stat_skill": [
                     "STORY,1"
                 ],
@@ -448,7 +448,7 @@
             {
                 "text": "Learning the art of water rescue is important, of course, but safety comes first. app1 has {PRONOUN/app1/poss} pelt licked dry and warm again, and the patrol is called off early.",
                 "exp": 0,
-                "art": "gen_train_sunny3",
+                "art": "cat_sprites/gen_train_sunny_WrWr",
                 "relationships": [
                     {
                         "cats_to": [
@@ -473,7 +473,7 @@
             {
                 "text": "app1 is right — this is far, far too cold of a pool to train in, and {PRONOUN/app1/subject}{VERB/app1/'re/'s} shivering too badly to continue. Time to go home. p_l apologizes for bringing the patrol out here.",
                 "exp": 0,
-                "art": "gen_train_soggykitty_mad_app",
+                "art": "cat_sprites/gen_train_soggykittymad_Ap",
                 "relationships": [
                     {
                         "cats_to": [

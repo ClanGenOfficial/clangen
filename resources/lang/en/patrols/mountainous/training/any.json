@@ -1615,7 +1615,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "cat_sprites/gen_train_sunset_WrWr",
+        "patrol_art": "cat_sprites/gen_chatting_WrWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {

@@ -11,7 +11,7 @@
 			"training"
 		],
 		"tags": [],
-		"patrol_art": "gen_speaking_cat_w1",
+		"patrol_art": "cat_sprites/gen_speakingcat_Wr",
 		"min_cats": 2,
 		"max_cats": 2,
 		"min_max_status": {
@@ -71,7 +71,7 @@
 						}
 					}
 				],
-				"art": "gen_speaking_cat_w1"
+				"art": "cat_sprites/gen_speakingcat_Wr"
 			},
 			{
 				"min_max_status": {
@@ -136,7 +136,7 @@
 						}
 					}
 				],
-				"art": "gen_train_fightingskill"
+				"art": "cat_sprites/gen_train_fightingskill_WrWr"
 			},
 			{
 				"min_max_status": {
@@ -189,7 +189,7 @@
 						}
 					}
 				],
-				"art": "gen_train_fightingskill"
+				"art": "cat_sprites/gen_train_fightingskill_WrWr"
 			},
 			{
 				"min_max_status": {
@@ -235,7 +235,7 @@
 						}
 					}
 				],
-				"art": "gen_bump_heads_warriors"
+				"art": "cat_sprites/gen_bumpheads_WrWr"
 			},
 			{
 				"min_max_status": {
@@ -270,7 +270,7 @@
 				],
 				"exp": 15,
 				"frequency": 4,
-				"art": "gen_bump_heads_warriors"
+				"art": "cat_sprites/gen_bumpheads_WrWr"
 			}
 		],
 		"fail_outcomes": [
@@ -299,7 +299,7 @@
 						"no_results": false
 					}
 				],
-				"art": "gen_train_talkingWW"
+				"art": "cat_sprites/gen_train_talking_WrWr"
 			},
 			{
 				"min_max_status": {
@@ -333,7 +333,7 @@
 					"scar": "m_c was scarred after gaining injuries exploring the territory.",
 					"death": "m_c died of injuries gained exploring the territory."
 				},
-				"art": "gen_train_talkingWW"
+				"art": "cat_sprites/gen_train_talking_WrWr"
 			},
 			{
 				"min_max_status": {
@@ -382,7 +382,7 @@
 						}
 					}
 				],
-				"art": "gen_anxious1"
+				"art": "cat_sprites/gen_anxiouslookup_Wr"
 			},
 			{
 				"min_max_status": {
@@ -417,7 +417,7 @@
 						}
 					}
 				],
-				"art": "gen_train_argueWW"
+				"art": "cat_sprites/gen_train_argue_WrWr"
 			},
 			{
 				"min_max_status": {
@@ -483,7 +483,7 @@
 						}
 					}
 				],
-				"art": "gen_train_argueWW"
+				"art": "cat_sprites/gen_train_argue_WrWr"
 			},
 			{
 				"min_max_status": {
@@ -531,7 +531,7 @@
 						}
 					}
 				],
-				"art": "gen_train_argueAW"
+				"art": "cat_sprites/gen_train_argue_ApWr"
 			}
 		]
 	},
@@ -1745,7 +1745,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_vision4_Ap"
+                "art": "cat_sprites/gen_curledup_Ap"
             }
         ]
     },
@@ -2166,7 +2166,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_sunset_WrWr",
+                "art": "cat_sprites/gen_chatting_WrWr",
                 "frequency": 4
             },
             {
@@ -2504,7 +2504,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_sunset_WrWr",
+                "art": "cat_sprites/gen_chatting_WrWr",
                 "frequency": 4
             },
             {
@@ -2555,7 +2555,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_sunset_WrWr",
+                "art": "cat_sprites/gen_chatting_WrWr",
                 "frequency": 4
             },
             {
@@ -2595,7 +2595,7 @@
                         }
                     }
                 ],
-                "art": "halloween/Halloween_patrol_sneakyprank",
+                "art": "halloween/hal_jumpscare_WrWr",
                 "frequency": 4
             },
             {
@@ -3475,7 +3475,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_sunset_WrWr",
+                "art": "cat_sprites/gen_chatting_WrWr",
                 "frequency": 4
             },
             {
@@ -3974,7 +3974,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "frequency": 4
             },
             {
@@ -4021,7 +4021,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "frequency": 4
             }
         ],
@@ -4163,7 +4163,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "cat_sprites/gen_train_vision_Wr",
+        "patrol_art": "cat_sprites/gen_vision_Wr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -4259,7 +4259,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_sunset_WrWr",
+                "art": "cat_sprites/gen_chatting_WrWr",
                 "frequency": 4
             }
         ],
@@ -4330,7 +4330,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "cat_sprites/gen_train_vision_Wr",
+        "patrol_art": "cat_sprites/gen_vision_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -4384,7 +4384,7 @@
         "tags": [
             "app2_mentored"
         ],
-        "patrol_art": "cat_sprites/gen_train_vision_Wr",
+        "patrol_art": "cat_sprites/gen_vision_Wr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -4471,7 +4471,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "cat_sprites/gen_train_vision4_Ap",
+        "patrol_art": "cat_sprites/gen_curledup_Ap",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -4938,7 +4938,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "frequency": 4
             },
             {
@@ -5113,7 +5113,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_success_Ap",
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "frequency": 4
             }
         ],
@@ -5121,7 +5121,7 @@
             {
                 "text": "app1 eats the prey, but later {PRONOUN/app1/subject} {VERB/app1/feel/feels} terrible about it, slinking around guilty and ashamed for the rest of the day.",
                 "exp": 0,
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "frequency": 4
             },
             {
@@ -5514,7 +5514,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_sunset_WrWr",
+                "art": "cat_sprites/gen_chatting_WrWr",
                 "frequency": 4
             },
             {
@@ -6039,7 +6039,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_sunset_WrWr",
+                "art": "cat_sprites/gen_chatting_WrWr",
                 "frequency": 4
             },
             {
@@ -6147,7 +6147,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_sunset_WrWr",
+                "art": "cat_sprites/gen_chatting_WrWr",
                 "frequency": 4
             },
             {
@@ -6538,7 +6538,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "cat_sprites/gen_train_apprenticesession_ApWrWr",
+        "patrol_art": "cat_sprites/gen_train_trainingapp_ApWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -6551,7 +6551,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "art": "cat_sprites/gen_train_success_Ap",
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "text": "Everyone has a nice practice session and their coordination with their Clanmates grows stronger. app1 really gets into it and p_l praises {PRONOUN/app1/object} for {PRONOUN/app1/poss} focus and enthusiasm.",
                 "exp": 20,
                 "relationships": [
@@ -6597,7 +6597,7 @@
                 "frequency": 4
             },
             {
-                "art": "cat_sprites/gen_train_success_Ap",
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "text": "p_l leads the group in a mock-battle exercise, deliberately giving app1 a starring role that has {PRONOUN/app1/object} vibrating with excitement and pride.",
                 "exp": 20,
                 "relationships": [
@@ -6630,7 +6630,7 @@
                 "frequency": 4
             },
             {
-                "art": "cat_sprites/gen_train_success_Ap",
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "text": "Sometimes, the best thing of all is to just help an apprentice get the chance to feel equal to the warriors {PRONOUN/app1/subject}{VERB/app1/'re/'s} trying to become. p_l treats app1 exactly like everyone else. app1's confidence grows and {PRONOUN/app1/poss} eyes light up as the cats work together.",
                 "exp": 20,
                 "relationships": [
@@ -6663,7 +6663,7 @@
                 "frequency": 4
             },
             {
-                "art": "cat_sprites/gen_train_success_Ap",
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "text": "It's good the see the progress app1 is making with {PRONOUN/app1/poss} training, and p_l makes sure to tell {PRONOUN/app1/object} so as the patrol work on their ambushing strategies.",
                 "exp": 20,
                 "relationships": [
@@ -6775,7 +6775,7 @@
                 "text": "app1 does a terrible job, but p_l isn't willing to call {PRONOUN/app1/object} out on it. It's the wrong move for a patrol leader to make, and no cat learns anything from the experience.",
                 "exp": 0,
                 "frequency": 4,
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "relationships": [
                     {
                         "cats_to": ["app1"],
@@ -6807,7 +6807,7 @@
                 "text": "app1 screws up the teamwork exercise, making a decision that betrays {PRONOUN/app1/poss} lack of experience, and while p_l smooths everything over between everyone, the exercise is concluded early.",
                 "exp": 0,
                 "frequency": 4,
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "relationships": [
                     {
                         "cats_to": ["app1"],
@@ -6839,7 +6839,7 @@
                 "text": "app1 doesn't enjoy being singled out for attention and doesn't engage with the learning opportunity. Nothing goes drastically wrong, but p_l doubts anyone learned anything from this afternoon.",
                 "exp": 0,
                 "frequency": 4,
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -6894,7 +6894,7 @@
                     }
                 ],
                 "frequency": 4,
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "relationships": [
                     {
                         "cats_from": ["app1"],
@@ -7012,7 +7012,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_success_Ap",
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "frequency": 1
             },
             {
@@ -7034,7 +7034,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_success_Ap",
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "frequency": 1
             },
             {
@@ -7054,7 +7054,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_success_Ap",
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "frequency": 1
             },
             {
@@ -7143,7 +7143,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_success_Ap",
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "frequency": 1
             }
         ],
@@ -7237,7 +7237,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "frequency": 4
             },
             {
@@ -7264,7 +7264,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "frequency": 4
             },
             {
@@ -14042,7 +14042,7 @@
         "season": ["any"],
         "types": ["training"],
         "tags": [],
-        "patrol_art": "cat_sprites/gen_train_sunset_WrWr",
+        "patrol_art": "cat_sprites/gen_chatting_WrWr",
         "min_cats": 4,
         "max_cats": 4,
         "min_max_status": {
@@ -14081,7 +14081,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_success_Ap"
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap"
             },
             {
                 "text": "r_c agrees and bets on app1. As the spar progresses, p_l and r_c get really into it, shouting encouragement and advice. app1 wins! The apprentices catch their breath on the way back to camp, wondering why r_c looks so smug.",
@@ -14110,7 +14110,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_success_Ap"
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap"
             },
             {
                 "text": "r_c agrees and bets on app2. As the spar progresses, p_l and r_c get really into it, shouting encouragement and advice. app2 wins! The apprentices catch their breath on the way back to camp, wondering why r_c looks so smug.",
@@ -14139,7 +14139,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_success_Ap"
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap"
             },
             {
                 "text": "r_c agrees and bets on app1. As the spar progresses, p_l and r_c get really into it, shouting encouragement and advice. app2 wins! The apprentices catch their breath on the way back to camp, wondering why p_l looks so smug.",
@@ -14168,7 +14168,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_success_Ap"
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap"
             },
             {
                 "text": "r_c agrees and bets on app1. With s_c to counsel {PRONOUN/s_c/poss} favored apprentice, the match isn't even close.",
@@ -14188,7 +14188,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_success_Ap"
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap"
             },
             {
                 "text": "app1 and app2 overhear this scheme and exchange winks. They both pull out their silliest moves — bellyflops, somersaults, and tail-chomps — until p_l and r_c are forced to call off their bet and get this training back on track.",
@@ -14266,7 +14266,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap"
+                "art": "cat_sprites/gen_train_trainingfail_Ap"
             },
             {
                 "text": "r_c doesn't feel comfortable betting on apprentice training like that and tells p_l so to {PRONOUN/p_l/poss} face. Sheepish, p_l suggests the apprentices practice their hunting crouches instead.",
@@ -19539,7 +19539,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_success_Ap",
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "frequency": 4
             },
             {
@@ -19579,7 +19579,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_success_Ap",
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "frequency": 4
             },
             {
@@ -21348,7 +21348,7 @@
                     }
                 }
             ],
-            "art": "cat_sprites/gen_train_success_Ap"
+            "art": "cat_sprites/gen_train_trainingsuccess_Ap"
         },
         {
             "text": "s_c knows exactly what will make these apprentices focus: a good story. But just as {PRONOUN/s_c/subject} {VERB/s_c/settle/settles} down to tell the apprentices of story_list, app3 goes haring off into the bushes after app2, yowling about a game of catch-the-tail. s_c's story falls on deaf ears.",
@@ -21759,7 +21759,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_sunset_WrWr"
+                "art": "cat_sprites/gen_chatting_WrWr"
             },
             {
                 "text": "As they train, r_c demonstrates mastery of the skill they're working on together. p_l is impressed and enjoys working alongside {PRONOUN/r_c/object}.",

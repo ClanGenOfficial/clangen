@@ -11,7 +11,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "cat_sprites/gen_hunt_vision_Wr",
+        "patrol_art": "cat_sprites/gen_vision_Wr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -212,7 +212,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "cat_sprites/gen_hunt_vision_Wr",
+        "patrol_art": "cat_sprites/gen_vision_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -5801,7 +5801,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_sunset_WrWr",
+                "art": "cat_sprites/gen_chatting_WrWr",
                 "frequency": 4
             }
         ],

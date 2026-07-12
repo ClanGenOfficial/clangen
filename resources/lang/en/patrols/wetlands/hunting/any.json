@@ -3167,7 +3167,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_wareprey_lorelocked1",
-        "patrol_art": "cat_sprites/gen_train_success_Ap",
+        "patrol_art": "cat_sprites/gen_train_trainingsuccess_Ap",
         "biome": [
             "wetlands"
         ],

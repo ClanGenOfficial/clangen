@@ -1503,7 +1503,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "cat_sprites/gen_train_sunset_WrWr",
+        "patrol_art": "cat_sprites/gen_chatting_WrWr",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {

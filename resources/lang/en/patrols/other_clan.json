@@ -4003,7 +4003,7 @@
             {
                 "text": "app1 waves {PRONOUN/app1/poss} tail to the other apprentice, but s_c yanks {PRONOUN/app1/object} back. With {PRONOUN/s_c/poss} lip curled, s_c lectures app1 not to nurture friendships with other Clans, since they might one day meet in battle. The o_c_n patrol is well within earshot of this lecture, and app1 slinks back to camp with humiliation burning under {PRONOUN/app1/poss} pelt.",
                 "exp": 0,
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "stat_trait": [
                     "bloodthirsty",
                     "fierce",

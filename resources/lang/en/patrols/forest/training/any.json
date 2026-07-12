@@ -11,7 +11,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "fst_train_session1",
+        "patrol_art": "cat_sprites/fst_train_treeclimb_WrAp",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -196,7 +196,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "fst_train_sett",
+        "patrol_art": "backgrounds/fst_sett",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -391,7 +391,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "fst_train_sett",
+        "patrol_art": "backgrounds/fst_sett",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -586,7 +586,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "fst_train_stuck",
+        "patrol_art": "cat_sprites/fst_train_branchfall_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -613,7 +613,7 @@
                         }
                     }
                 ],
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 4
             },
             {
@@ -634,7 +634,7 @@
                         }
                     }
                 ],
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 4
             },
             {
@@ -652,7 +652,7 @@
                         }
                     }
                 ],
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 1
             },
             {
@@ -673,7 +673,7 @@
                         }
                     }
                 ],
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 4
             },
             {
@@ -699,7 +699,7 @@
                         }
                     }
                 ],
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 4
             }
         ],
@@ -719,7 +719,7 @@
                         }
                     }
                 ],
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 4
             },
             {
@@ -757,7 +757,7 @@
                         }
                     }
                 ],
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 4
             },
             {
@@ -772,7 +772,7 @@
                 "history_text": {
                     "death": "m_c was killed by a falling branch while on patrol."
                 },
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 3
             },
             {
@@ -795,7 +795,7 @@
                     "scar": "m_c carries a scar from when a branch fell on {PRONOUN/m_c/object}.",
                     "death": "m_c died from {PRONOUN/m_c/poss} injuries after a branch fell on {PRONOUN/m_c/object}."
                 },
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 3
             },
             {
@@ -807,7 +807,7 @@
                 "history_text": {
                     "death": "m_c was killed by a falling branch while on patrol."
                 },
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 3
             },
             {
@@ -827,7 +827,7 @@
                     "scar": "m_c carries a scar from when a branch fell on {PRONOUN/m_c/object}.",
                     "death": "m_c died from {PRONOUN/m_c/poss} injuries after a branch fell on {PRONOUN/m_c/object}."
                 },
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 3
             }
         ]
@@ -846,7 +846,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "fst_train_stuck",
+        "patrol_art": "cat_sprites/fst_train_branchfall_Wr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},
@@ -870,7 +870,7 @@
                         }
                     }
                 ],
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 4
             },
             {
@@ -888,7 +888,7 @@
                         }
                     }
                 ],
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 1
             },
             {
@@ -909,7 +909,7 @@
                         }
                     }
                 ],
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 4
             },
             {
@@ -935,7 +935,7 @@
                         }
                     }
                 ],
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 4
             }
         ],
@@ -955,7 +955,7 @@
                         }
                     }
                 ],
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 4
             },
             {
@@ -993,7 +993,7 @@
                         }
                     }
                 ],
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 4
             },
             {
@@ -1005,7 +1005,7 @@
                 "history_text": {
                     "death": "m_c was killed by a falling branch while on patrol."
                 },
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 3
             },
             {
@@ -1025,7 +1025,7 @@
                     "scar": "m_c carries a scar from when a branch fell on {PRONOUN/m_c/object}.",
                     "death": "m_c died from {PRONOUN/m_c/poss} injuries after a branch fell on {PRONOUN/m_c/object}."
                 },
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 3
             }
         ]
@@ -1042,7 +1042,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "fst_train_stuck",
+        "patrol_art": "cat_sprites/fst_train_branchfall_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -1054,7 +1054,7 @@
             {
                 "text": "r_c spends the entire day carefully working {PRONOUN/r_c/poss} way free and gets nothing else done, but at least {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} unharmed.",
                 "exp": 20,
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 4
             },
             {
@@ -1063,7 +1063,7 @@
                 "stat_skill": [
                     "CLEVER,1"
                 ],
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 4
             }
         ],
@@ -1071,7 +1071,7 @@
             {
                 "text": "Pinned under the branches, r_c yowls until {PRONOUN/r_c/poss} voice is hoarse and {PRONOUN/r_c/poss} throat is sore. Thankfully, a patrol passes by after a few hours and frees their hapless Clanmate.",
                 "exp": 0,
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 4
             },
             {
@@ -1083,7 +1083,7 @@
                 "history_text": {
                     "death": "m_c was killed by a falling branch while on patrol."
                 },
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 3
             },
             {
@@ -1103,7 +1103,7 @@
                     "scar": "m_c carries a scar from when a branch fell on {PRONOUN/m_c/object}.",
                     "death": "m_c died from {PRONOUN/m_c/poss} injuries after a branch fell on {PRONOUN/m_c/object}."
                 },
-                "art": "fst_train_stuck_outcome",
+                "art": "cat_sprites/fst_train_stuck_Wr",
                 "frequency": 3
             }
         ]
@@ -1120,7 +1120,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_train_soloapp",
+        "patrol_art": "cat_sprites/gen_train_solo_Ap",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1209,7 +1209,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_train_solo",
+        "patrol_art": "cat_sprites/gen_train_solo_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1762,7 +1762,7 @@
             "rom_two_apps",
             "romance"
         ],
-        "patrol_art": "fst_train_willow1",
+        "patrol_art": "cat_sprites/fst_train_willow_Ap",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1929,7 +1929,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "gen_train_sunset",
+        "patrol_art": "cat_sprites/gen_chatting_WrWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -2250,7 +2250,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringraspberrysolo",
+        "patrol_art": "cat_sprites/gen_med_gatheringraspberrysolo_Wr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -2367,7 +2367,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringraspberrysoloapp",
+        "patrol_art": "cat_sprites/gen_med_gatheringraspberrysolo_Ap",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -2532,7 +2532,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "flatwoods_INTRO",
+        "patrol_art": "halloween/hal_flatwoods",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -2574,7 +2574,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "doverdemon_INTRO",
+        "patrol_art": "halloween/hal_doverdemon",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -2624,7 +2624,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "crows_mocking_INTRO",
+        "patrol_art": "animals/gen_crow",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {

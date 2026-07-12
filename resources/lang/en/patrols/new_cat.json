@@ -7931,7 +7931,7 @@
                 "dead"
             ]
         ],
-        "art": "halloween/friendlyghost_INTRO"
+        "art": "halloween/halloween/hal_friendlyghost_Ur"
     },
         {
             "text": "s_c follows the voice and finds three mysterious loners, who tell {PRONOUN/s_c/object} that {PRONOUN/s_c/subject} {VERB/s_c/are/is} destined to be leader. s_c's eyes gleam. {PRONOUN/s_c/poss/CAP} destiny is before {PRONOUN/s_c/object}, if only {PRONOUN/s_c/subject} {VERB/s_c/have/has} the strength to claim it.",
@@ -7977,7 +7977,7 @@
                 "dead"
             ]
         ],
-        "art": "halloween/friendlyghost_INTRO"
+        "art": "halloween/halloween/hal_friendlyghost_Ur"
         }
     ],
     "fail_outcomes": [
@@ -8041,7 +8041,7 @@
                 "dead"
             ]
         ],
-        "art": "halloween/friendlyghost_INTRO"
+        "art": "halloween/halloween/hal_friendlyghost_Ur"
     },
         {
             "text": "r_c follows the voice and finds three mysterious loners. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} know what all this toil and trouble nonsense is about, but {PRONOUN/r_c/subject} {VERB/r_c/aren't/isn't} interested in sticking around to find out.",
@@ -8073,7 +8073,7 @@
                 "dead"
             ]
             ],
-            "art": "halloween/friendlyghost_INTRO"
+            "art": "halloween/halloween/hal_friendlyghost_Ur"
 
     },
     {

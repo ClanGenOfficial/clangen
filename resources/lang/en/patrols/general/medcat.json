@@ -2728,7 +2728,7 @@
             {
                 "text": "The apprentices get easily distracted without a more experienced cat to keep them on track. They return empty-pawed, much to the disappointment of the Clan.",
                 "exp": 0,
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2986,7 +2986,7 @@
             {
                 "text": "s_c seems a little distracted, deep in thought about something. When app2 asks what's up, s_c blinks slowly at {PRONOUN/app2/object} before confessing how much {PRONOUN/s_c/subject} {VERB/s_c/miss/misses} spending time together. app2 tries to comfort {PRONOUN/s_c/object}, but s_c shakes {PRONOUN/s_c/poss} head, knowing that no matter what {PRONOUN/app2/subject} {VERB/app2/say/says}, their roles are just too different. Both cats are too upset to gather herbs.",
                 "exp": 0,
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "stat_trait": [
                     "lonesome",
                     "insecure"
@@ -6956,7 +6956,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "frequency": 4
             },
             {
@@ -7074,7 +7074,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "frequency": 1
             },
             {
@@ -7779,7 +7779,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "frequency": 4
             },
             {
@@ -7897,7 +7897,7 @@
                         }
                     }
                 ],
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "frequency": 1
             },
             {
@@ -16969,7 +16969,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "backgrounds/gen_GL_gatheringoakleaves",
+        "patrol_art": "backgrounds/gen_GL_gatheringoakleaves1",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -17033,7 +17033,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "backgrounds/gen_GL_gatheringoakleaves",
+        "patrol_art": "backgrounds/gen_GL_gatheringoakleaves2",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -17133,7 +17133,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "backgrounds/gen_GL_gatheringoakleaves",
+        "patrol_art": "backgrounds/gen_GL_gatheringoakleaves1",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -17255,7 +17255,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringplantain_greenleaf1",
+        "patrol_art": "backgrounds/gen_GL_gatheringplantain",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -27973,7 +27973,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "backgrounds/gen_GL_gatheringoakleaves",
+        "patrol_art": "backgrounds/gen_GL_gatheringoakleaves1",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -28039,7 +28039,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "backgrounds/gen_GL_gatheringoakleaves",
+        "patrol_art": "backgrounds/gen_GL_gatheringoakleaves1",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -28142,7 +28142,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "backgrounds/gen_GL_gatheringoakleaves",
+        "patrol_art": "backgrounds/gen_GL_gatheringoakleaves1",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -35323,7 +35323,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "backgrounds/gen_LF_gatheringoakleaves",
+        "patrol_art": "backgrounds/gen_LF_gatheringoakleaves1",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -35387,7 +35387,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "backgrounds/gen_LF_gatheringoakleaves",
+        "patrol_art": "backgrounds/gen_LF_gatheringoakleaves2",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -35488,7 +35488,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "backgrounds/gen_LF_gatheringoakleaves",
+        "patrol_art": "backgrounds/gen_LF_gatheringoakleaves1",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {

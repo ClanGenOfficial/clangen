@@ -570,7 +570,7 @@
             {
                 "text": "Breaking out into a sprint to try and catch the town of prairie dogs off guard, app1 is left wheezing and out of breath as the prey chatters angrily from within their burrows. Awww.",
                 "exp": 0,
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "prey": [
                     "very_small"
                 ],
@@ -579,7 +579,7 @@
             {
                 "text": "s_c instructs the patrol to watch and learn. A heartbeat later, an empty-pawed s_c must eat {PRONOUN/s_c/poss} words.",
                 "exp": 0,
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "prey": [
                     "very_small"
                 ],

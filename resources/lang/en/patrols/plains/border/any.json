@@ -2822,7 +2822,7 @@
             {
                 "text": "This is going to be such a cool story to tell back at camp, app1 tells {PRONOUN/app1/self}. Checking the tunnel out, it looks like a collapsed roof into a wider tunnel system, smelling faintly of something app1 can't identify. Awesome!",
                 "exp": 20,
-                "art": "cat_sprites/gen_train_success_Ap",
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "stat_trait": [
                     "adventurous",
                     "rebellious",
@@ -2976,7 +2976,7 @@
             {
                 "text": "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} brought up short when the tunnel abruptly ends. It seems this tunnel leads to nothing but a dead end only a few fox-lengths from the entrance.",
                 "exp": 0,
-                "art": "cat_sprites/gen_train_success_Ap",
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "stat_trait": [
                     "childish",
                     "playful",
@@ -2987,7 +2987,7 @@
             {
                 "text": "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! The wolverine inside is less pleased to have company.",
                 "exp": 0,
-                "art": "cat_sprites/gen_train_success_Ap",
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "stat_trait": [
                     "childish",
                     "playful",
@@ -3932,7 +3932,7 @@
             {
                 "text": "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} brought up short when the tunnel abruptly ends. It seems this tunnel leads to nothing but a dead end only a few fox-lengths from the entrance.",
                 "exp": 0,
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "can_have_stat": [
                     "app1"
                 ],
@@ -4442,13 +4442,13 @@
             {
                 "text": "p_l turns and finds app1 clawing {PRONOUN/app1/poss} way out of a tiny sinkhole. {PRONOUN/app1/poss/CAP} weight has collapsed the roof of a burrow underneath {PRONOUN/app1/object}. It's worth cleaning up and checking out; c_n can always use more boltholes near the border.",
                 "exp": 30,
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "frequency": 1
             },
             {
                 "text": "s_c's squawk of surprise immediately turns to interest. The tunnels {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} tripped into are unfamiliar to {PRONOUN/s_c/object}, and {PRONOUN/s_c/subject} {VERB/s_c/call/calls} the patrol over to check them out. p_l praises {PRONOUN/s_c/object} for the knowledge {PRONOUN/s_c/subject} {VERB/s_c/display/displays} on burrow safety, making s_c puff up with pride.",
                 "exp": 40,
-                "art": "cat_sprites/gen_train_success_Ap",
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "can_have_stat": [
                     "any",
                     "app"
@@ -4518,7 +4518,7 @@
             {
                 "text": "s_c shivers, levering {PRONOUN/s_c/self} out of the burrow entrance {PRONOUN/s_c/subject} tripped into. p_l asks if {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to explore it, but s_c shakes {PRONOUN/s_c/poss} head no. {PRONOUN/s_c/subject/CAP} can't explain it, but the tunnel gives {PRONOUN/s_c/object} flashes of clair_list/s_c.",
                 "exp": 40,
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "can_have_stat": [
                     "any",
                     "app"
@@ -4548,7 +4548,7 @@
             {
                 "text": "Whoops! s_c grins up at the rest of the patrol, remarkably good-natured about falling into a random hole, all things considered.",
                 "exp": 40,
-                "art": "cat_sprites/gen_train_success_Ap",
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "can_have_stat": [
                     "any",
                     "app"
@@ -4587,7 +4587,7 @@
                     "any",
                     "app"
                 ],
-                "art": "cat_sprites/gen_train_success_Ap",
+                "art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -4701,7 +4701,7 @@
             {
                 "text": "Ow! app1 scrambles out of the burrow {PRONOUN/app1/subject} tripped into, followed by furious hooting and with a new beak bite painfully decorating {PRONOUN/app1/poss} pelt.",
                 "exp": 0,
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "injury": [
                     {
                         "cats": ["app1"],
@@ -4723,7 +4723,7 @@
             {
                 "text": "app1 scrambles back upright, cursing the burrow {PRONOUN/app1/subject} tripped on, but p_l can see {PRONOUN/app1/subject}{VERB/app1/'re/'s} having trouble putting weight on one of {PRONOUN/app1/poss} paws. The patrol is called off, and the cats pad slowly back to camp, taking frequent breaks for app1 to rest.",
                 "exp": 0,
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "injury": [
                     {
                         "cats": ["app1"],
@@ -4750,7 +4750,7 @@
             {
                 "text": "p_l turns back just in time to catch a glimpse of app1 disappearing under the soil as the ground collapses beneath {PRONOUN/app1/object}. {PRONOUN/p_l/poss/CAP} yowls bring the rest of the patrol, frantically digging app1 out from the sinkhole, muddy, panicked, but unharmed.",
                 "exp": 0,
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "injury": [
                     {
                         "cats": ["app1"],
@@ -4779,7 +4779,7 @@
             {
                 "text": "p_l turns back just in time to catch a glimpse of app1 disappearing under the soil as the ground collapses beneath {PRONOUN/app1/object}. {PRONOUN/p_l/poss/CAP} yowls bring the rest of the patrol, frantically digging app1 out from the sinkhole while app1 coughs up mud and mucus.",
                 "exp": 0,
-                "art": "cat_sprites/gen_train_apprenticesessionfail_Ap",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "injury": [
                     {
                         "cats": ["app1"],
@@ -5374,7 +5374,7 @@
             {
                 "text": "Frozen in the face of the large threat, {PRONOUN/s_c/subject} {VERB/s_c/muster/musters} a surge of courage. As the coyote comes into sight {PRONOUN/s_c/subject/} {VERB/s_c/manage/manages} to flee from the coyote, sprinting back to camp to warn the clan.",
                 "exp": 40,
-                "art": "animals/gen_coyote",
+                "art": "animals/animals/gen_coyotedanger",
                 "stat_trait": [
                     "insecure",
                     "nervous"
@@ -5401,7 +5401,7 @@
             {
                 "text": "s_c doesn't have much time to think as {PRONOUN/s_c/subject} {VERB/s_c/hear/hears} the yips. The coyote has {PRONOUN/s_c/poss} scent. Seeing some thunderbeast dung nearby, s_c dives for it, rolling around in it before slinking through the tall grass, being careful to keep hidden. It's a tense moment, but s_c {VERB/s_c/manage/manages} to make it home safe.",
                 "exp": 40,
-                "art": "animals/gen_coyote",
+                "art": "animals/animals/gen_coyotedanger",
                 "stat_skill": [
                     "HUNTER,2",
                     "CLEVER,2",
@@ -5424,7 +5424,7 @@
             {
                 "text": "s_c hears the yips. The coyote has {PRONOUN/s_c/poss} scent. {PRONOUN/s_c/subject/CAP} {VERB/s_c/run/runs}. {VERB/s_c/Run/Runs} as fast as {PRONOUN/s_c/subject} can because {PRONOUN/s_c/poss} life depends on it. But s_c can't run forever, the thudding footsteps are catching up. {PRONOUN/s_c/subject/CAP} {VERB/s_c/see/sees} a group of sleeping thunderbeasts and {VERB/s_c/dart/darts} to them, yowling. As a thunderbeast slowly stands, the coyote turns tail and flees.",
                 "exp": 40,
-                "art": "animals/gen_coyoteruncolor",
+                "art": "animals/animals/gen_coyoterun",
                 "stat_skill": [
                     "RUNNER,2",
                     "CLEVER,2",
@@ -5447,7 +5447,7 @@
             {
                 "text": "s_c hears the yips. The coyote has {PRONOUN/s_c/poss} scent.  {PRONOUN/s_c/subject/CAP} {VERB/s_c/run/runs}. {VERB/s_c/Run/Runs} as fast as {PRONOUN/s_c/subject} can because {PRONOUN/s_c/poss} life depends on it. But s_c can't run forever, the thudding footsteps are catching up.  {PRONOUN/s_c/subject/CAP} {VERB/s_c/see/sees} a group of sleeping thunderbeasts, and {VERB/s_c/dart/darts} to them, yowling. s_c {VERB/s_c/watch/watches} with a new respect and fear as the thunderbeasts kill the predator with ease.",
                 "exp": 40,
-                "art": "animals/gen_coyoteruncolor",
+                "art": "animals/animals/gen_coyoterun",
                 "prey": [
                     "large"
                 ],
@@ -5525,7 +5525,7 @@
             {
                 "text": "{PRONOUN/s_c/subject/CAP} {VERB/s_c/don't/doesn't} feel like {PRONOUN/s_c/subject} {VERB/s_c/have/has} anything like the skill or power, but s_c would give {PRONOUN/s_c/poss} life for c_n, charging in to courageously lead the coyote away from c_n territory. Each yip and bark has to be the herald of {PRONOUN/s_c/poss} doom, each rancid breath the last thing {PRONOUN/s_c/subject}'ll ever smell, but somehow, eventually, limbs and lungs burning, {PRONOUN/s_c/subject} {VERB/s_c/leap/leaps} to refuge.",
                 "exp": 40,
-                "art": "animals/gen_coyote",
+                "art": "animals/animals/gen_coyotedanger",
                 "stat_trait": [
                     "ambitious",
                     "daring",
@@ -5682,7 +5682,7 @@
                 "text": "Frozen in the face of the large threat, s_c is unable to move as the jaws descend upon {PRONOUN/s_c/object}.",
                 "exp": 0,
                 "art": "cat_sprites/gen_dead_Wr_EXPLICIT",
-                "art_clean": "animals/gen_coyote",
+                "art_clean": "animals/animals/gen_coyotedanger",
                 "stat_trait": [
                     "nervous",
                     "insecure"
@@ -5699,7 +5699,7 @@
                 "text": "Maybe s_c should have been paying more attention. {PRONOUN/s_c/subject/CAP} {VERB/s_c/see/sees} darkness around {PRONOUN/s_c/object}, and {VERB/s_c/realize/realizes} the terrible mistake of {PRONOUN/s_c/poss} distraction.",
                 "exp": 0,
                 "art": "cat_sprites/gen_dead_Wr_EXPLICIT",
-                "art_clean": "animals/gen_coyote",
+                "art_clean": "animals/animals/gen_coyotedanger",
                 "dead_cats": [
                     "s_c"
                 ],
