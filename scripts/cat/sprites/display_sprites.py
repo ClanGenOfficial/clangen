@@ -53,12 +53,23 @@ def generate_sprite(
         and age != CatAge.NEWBORN
         and constants.CONFIG["cat_sprites"]["sick_sprites"]
     ):
-        if age == CatAge.KITTEN:
-            cat_sprite = sprite_poses["sick_kitten0"]
-        elif age == CatAge.ADOLESCENT:
-            cat_sprite = sprite_poses["sick_adolescent0"]
+        if age in (CatAge.KITTEN, CatAge.ADOLESCENT):
+            # check if we should default to the old young sprite (this is to be kind to modders)
+            old_young_sprite = "sick_young0" in sprite_poses
+            if old_young_sprite and age in (CatAge.KITTEN, CatAge.ADOLESCENT):
+                cat_sprite = "sick_young0"
+            # otherwise we use the age specific ones
+            if age == CatAge.KITTEN:
+                cat_sprite = sprite_poses["sick_kitten0"]
+            elif age == CatAge.ADOLESCENT:
+                cat_sprite = sprite_poses["sick_adolescent0"]
         elif age == CatAge.SENIOR:
-            cat_sprite = sprite_poses["sick_senior0"]
+            # again, being kind to modders and defaulting to the sick adult if there's no senior
+            cat_sprite = (
+                sprite_poses["sick_adult0"]
+                if "sick_senior0" not in sprite_poses
+                else sprite_poses["sick_senior0"]
+            )
         else:
             cat_sprite = sprite_poses["sick_adult0"]
 
