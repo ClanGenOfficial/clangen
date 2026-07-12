@@ -949,7 +949,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
+                "text": "They're interrupted by Twolegs wandering through the sand dunes a couple times, but it's a successful hunt.",
                 "exp": 20,
                 "prey": [
                     "large"

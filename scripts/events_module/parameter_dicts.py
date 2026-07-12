@@ -1,10 +1,10 @@
-from typing import TypedDict, NotRequired
+from typing import TypedDict, NotRequired, Literal
 
 
 class StandingDict(TypedDict):
     group: list[str]
-    currently: list[str]
-    past: list[str]
+    currently: NotRequired[list[str]]
+    past: NotRequired[list[str]]
 
 
 class StatDict(TypedDict, total=False):
@@ -20,15 +20,24 @@ class HealthDict(TypedDict, total=False):
     must_be_acquired: bool
 
 
-class InvolvedCatDict(TypedDict):
-    status: NotRequired[list[str]]
-    past_status: NotRequired[list[str]]
-    age: NotRequired[list[str]]
-    group: NotRequired[list[str]]
-    standing: NotRequired[StandingDict]
-    stat: NotRequired[StatDict]
-    health: NotRequired[HealthDict]
-    backstory: NotRequired[list[str]]
+class CanCreateNewCatDict(TypedDict, total=False):
+    become_litter: bool
+    assign_blood_parent: list[str]
+    assign_adoptive_parent: list[str]
+    assign_mate: list[str]
+
+
+class InvolvedCatDict(TypedDict, total=False):
+    can_create_new_cat: CanCreateNewCatDict
+    status: list[str]
+    past_status: list[str]
+    age: list[str]
+    gender: Literal["male", "female", "can_birth"]
+    group: list[str]
+    standing: StandingDict
+    stat: StatDict
+    health: HealthDict
+    backstory: list[str]
 
 
 class RelationshipConstraintDict(TypedDict):

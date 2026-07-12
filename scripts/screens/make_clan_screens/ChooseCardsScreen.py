@@ -5,6 +5,7 @@ import pygame
 import pygame_gui
 from pygame_gui.core import UIContainer
 
+from scripts.cat.cats import create_example_cats
 from scripts.config import get_config
 from scripts.game_structure import constants, image_cache
 from scripts.game_structure.game import switch_get_value, Switch, game_setting_get
@@ -222,7 +223,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
         )
         self.elements["card_description"] = UITextBoxTweaked(
             "",
-            ui_scale(pygame.Rect((0, 0), (280, 80))),
+            ui_scale(pygame.Rect((0, -10), (280, 80))),
             object_id=get_text_box_theme("#text_box_22_horizleft_spacing_95"),
             manager=MANAGER,
             container=self.elements["card_info_container"],
@@ -284,7 +285,6 @@ class ChooseCardsScreen(MakeClanScreenBase):
         x_pos = 0  # need to start at consistent place and then move by intervals for each card
         layer_num = 1  # need to give each card a consecutive layer to ensure they stay layered correctly
         for name, info in cards.items():
-            # TODO: decide if u actually want the scatter
             y_mod = choice([2, 6, 10])  # just to introduce some random scatter
             self.card_elements[name] = UICruelCardLarge(
                 (x_pos, 10 + y_mod),
@@ -377,6 +377,20 @@ class ChooseCardsScreen(MakeClanScreenBase):
             self.add_chosen_card(card)
 
     def exit_screen(self):
+        # create new cats because the cats might no longer fit the card constraints
+        switch_set_value(
+            Switch.possible_cats,
+            create_example_cats(
+                majority_rank=self.get_config_during_creation(
+                    "clan_creation.majority_rank"
+                ),
+                rank_weights=self.get_config_during_creation(
+                    "clan_creation.rank_weights"
+                ),
+            ),
+        )
+        self.clan_info.clear_cats()
+
         for ele in self.card_elements.values():
             ele.kill()
         self.card_elements.clear()
