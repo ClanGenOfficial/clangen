@@ -89,7 +89,6 @@ class LostDict(TypedDict):
 class JoinDict(TypedDict):
     cats: list[str]
     change_name: NotRequired[bool]
-    keep_name: NotRequired[bool]
     new_status: NotRequired[list[str]]
 
 

@@ -1,4 +1,5 @@
 from dataclasses import field, dataclass
+from random import choice
 from typing import Union
 
 from scripts.cat.cats import Cat
@@ -16,6 +17,7 @@ from scripts.events_module.parameter_dicts import (
     FutureEventDict,
     JoinDict,
 )
+from scripts.events_module.text_adjust import event_text_adjust
 from scripts.game_structure import constants
 
 
@@ -66,7 +68,10 @@ class EventOutcome:
         return f"{self.text[:30]}..."
 
     def execute_outcome(
-        self, involved_cats: dict[str, Cat], new_cats: list[str], other_clan: OtherClan
+        self,
+        patrol_involved_cats: dict[str, Cat],
+        new_cats: list[str],
+        other_clan: OtherClan,
     ):
         """
         Executes the outcome, applying any specified consequences.
@@ -75,8 +80,22 @@ class EventOutcome:
 
         rel_results = {}
 
-        # handle joining
         # process text
+        processed_text = event_text_adjust(
+            Cat,
+            self.text,
+            patrol_leader=patrol.patrol_leader,
+            random_cat=patrol.random_cat,
+            stat_cat=self.stat_cat,
+            patrol_cats=patrol.patrol_cats,
+            patrol_apprentices=patrol.patrol_apprentices,
+            new_cats=patrol.new_cats,
+            clan=game.clan,
+            other_clan=patrol.other_clan,
+        )
+
+        # handle joining
+        self.handle_joining(patrol_involved_cats)
 
         # handle death
 
@@ -99,3 +118,32 @@ class EventOutcome:
         # handle future event
 
         # return all the bullshit
+
+    def handle_joining(self, patrol_involved_cats):
+        for block in self.join:
+            # gather up the kitties
+            cat_list = []
+            for abbr, cat in patrol_involved_cats.items():
+                if abbr in block:
+                    if isinstance(patrol_involved_cats[abbr], list):
+                        cat_list.extend(patrol_involved_cats[abbr])
+                    else:
+                        cat_list.append(patrol_involved_cats[abbr])
+
+            for cat in cat_list:
+                cat.add_to_clan()
+                if block.get("change_name"):
+                    cat.change_name()
+
+                if block.get("new_status"):
+                    if cat.status.rank not in block["new_status"]:
+                        cat.rank_change(
+                            new_rank=choice(block["new_status"]), resort=True
+                        )
+                if cat.status.rank.is_any_apprentice_rank():
+                    cat.update_mentor()
+                    # ensuring that any cats joining as an apprentice will display the correct skills
+                    cat.skills.primary.interest_only = True
+                    if cat.skills.secondary:
+                        cat.skills.secondary.interest_only = True
+

@@ -108,6 +108,14 @@ def updated_create_new_cat(
             if adoptive_parents
             else None,
         )
+        # check if kittypets get collar
+        if created_cat.status.social == CatSocial.KITTYPET and bool(
+            random.getrandbits(1)
+        ):
+            created_cat.pelt.accessory = (
+                *created_cat.pelt.accessory,
+                choice(created_cat.pelt.collar_accessories),
+            )
 
         # MATES
         _assign_mates(created_cat, involved_cats, option_dict)
