@@ -31,13 +31,14 @@ from scripts.events_module.event_filters import (
     event_for_clan_relations,
     event_for_freshkill_supply,
     event_for_herb_supply,
+    cat_for_event,
 )
+from scripts.events_module.patrol.create_new_cat import updated_create_new_cat
 from scripts.events_module.patrol.generate_patrol_list import (
     get_patrol_list,
     will_allow_outsider_patrols,
 )
 from scripts.events_module.patrol.patrol_event import PatrolEvent
-from scripts.events_module.patrol.patrol_outcome import PatrolOutcome
 from scripts.events_module.patrol.patrol_outcome_new import EventOutcome
 from scripts.game_structure import constants
 from scripts.game_structure.game.settings import game_setting_get
@@ -56,26 +57,22 @@ class Patrol:
 
     def __init__(self):
         self.patrol_event: Optional[PatrolEvent] = None
+        self.debug_patrol_id: str = ""
         self.other_clan = None
 
         self.patrol_cats: list[Cat] = []
         """Holds all the cats that are on the patrol"""
         self.patrol_statuses: dict[str, list[Cat]] = {}
         """Keys are cat statuses present on the patrol, values are lists of the cats that hold the status"""
-        self.involved_cats: dict[str, Cat] = {}
+        self.involved_cats: dict[str, Union[list[Cat], Cat]] = {}
         """Cats directly involved and referenced in the event. Keys are their text abbreviation, values are the associated cat objects"""
         self.outcome_cats: TypedDict(
             "outcome_cats", {"success": dict[str, Cat], "failure": dict[str, Cat]}
         ) = {"success": {}, "failure": {}}
+        self.new_cats: list[Cat] = []
 
         # TODO: old attributes, might not need them all anymore
         self.intro_text = ""
-
-        # Holds new cats for easy access
-        self.new_cats: List[List[Cat]] = []
-
-        # False if no debug patrol set, value if one is set
-        self.debug_patrol_id: Union[bool, str] = False
 
     def begin_patrol(self, patrol_cats: List[Cat], patrol_type: str) -> str:
         """
@@ -512,47 +509,35 @@ class Patrol:
     def _patrol_pass_cat_constraints(self, patrol: PatrolEvent) -> bool:
         temp_involved_cats = {}
 
+        outside_cats = [
+            c
+            for c in Cat.all_cats_list
+            if c.status.is_other_clancat or c.status.is_outsider
+        ]
         for abbr, constraints in patrol.involved_cats.items():
-            potential_cats = [
-                c for c in self.patrol_cats if c not in temp_involved_cats.values()
-            ]
-            while not temp_involved_cats[abbr] and potential_cats:
-                if abbr in self.involved_cats:
-                    cat_to_check = self.involved_cats[abbr]
-                else:
-                    cat_to_check = potential_cats[0]
+            # if we need n_c then we pull outside cats
+            if "n_c" in abbr:
+                potential_cats = [c for c in outside_cats if c not in self.new_cats]
+                random.shuffle(potential_cats)
+            else:
+                potential_cats = [
+                    c for c in self.patrol_cats if c not in temp_involved_cats.values()
+                ]
 
-                # check cat constraints
-                if not event_for_cat(
-                    cat_info=constraints,
-                    cat=cat_to_check,
-                    involved_cat_dict=temp_involved_cats,
-                    event_id=patrol.id,
-                    p_l=temp_involved_cats["p_l"],
-                    other_involved_clan_id=self.other_clan.id,
-                ):
-                    potential_cats.remove(cat_to_check)
-                    continue
+            possible_cats = cat_for_event(
+                constraint_dict=constraints,
+                possible_cats=potential_cats,
+                tags=patrol.tags,
+                return_list=True,
+            )
 
-                # check rel constraints
-                if patrol.relationship_constraint:
-                    failed = False
-                    for block in patrol.relationship_constraint:
-                        if not check_rel_constraint_groups(
-                            constraints_dict=block, involved_cats=temp_involved_cats
-                        ):
-                            potential_cats.remove(cat_to_check)
-                            failed = True
-                            break
-                    if failed:
-                        continue
-
-                # if we're here, then the cat passed!
-                temp_involved_cats[abbr] = cat_to_check
-                break
-
-            if not temp_involved_cats.get(abbr):
-                # we've failed to find an appropriate cat
+            if not self._find_involved_cats(
+                abbr,
+                possible_cats,
+                patrol.relationship_constraint,
+                cat_constraints=constraints,
+                temp_involved_cats=temp_involved_cats,
+            ):
                 return False
 
         # if we're here, then we must have filled all the needed cats!
@@ -692,8 +677,10 @@ class Patrol:
                         return False
 
         # CATS
-        uninvolved_cats = [
-            c for c in self.patrol_cats if c not in self.involved_cats.values()
+        outside_cats = [
+            c
+            for c in Cat.all_cats_list
+            if c.status.is_other_clancat or c.status.is_outsider
         ]
         temp_involved_cats = self.involved_cats.copy()
         for abbr, constraints in outcome.involved_cats.items():
@@ -753,41 +740,85 @@ class Patrol:
 
             # if neither of those is happening, then we check if any of our uninvolved cats can take this spot!
             else:
-                while not temp_involved_cats[abbr] and uninvolved_cats:
-                    cat_to_check = uninvolved_cats[0]
+                if "n_c" in abbr:
+                    potential_cats = [c for c in outside_cats if c not in self.new_cats]
+                    random.shuffle(potential_cats)
+                else:
+                    potential_cats = [
+                        c
+                        for c in self.patrol_cats
+                        if c not in self.involved_cats.values()
+                    ]
 
-                    if not event_for_cat(
-                        constraints,
-                        cat_to_check,
-                        involved_cat_dict=temp_involved_cats,
-                        injuries=possible_injuries,
-                        event_id=self.patrol_event.id,
-                    ):
-                        return False
+                possible_cats = cat_for_event(
+                    constraint_dict=constraints,
+                    possible_cats=potential_cats,
+                    tags=outcome.tags,
+                    return_list=True,
+                )
 
-                    # check rel constraints
-                    if outcome.relationship_constraint:
-                        failed = False
-                        for block in outcome.relationship_constraint:
-                            if not check_rel_constraint_groups(
-                                constraints_dict=block, involved_cats=temp_involved_cats
-                            ):
-                                uninvolved_cats.remove(cat_to_check)
-                                failed = True
-                                break
-                        if failed:
-                            continue
-
-                    # if we're here, then the cat passed!
-                    temp_involved_cats[abbr] = cat_to_check
-                    break
-
-                if not temp_involved_cats.get(abbr):
-                    # we've failed to find an appropriate cat
+                if not self._find_involved_cats(
+                    abbr,
+                    possible_cats,
+                    outcome.relationship_constraint,
+                    cat_constraints=constraints,
+                    temp_involved_cats=temp_involved_cats,
+                ):
                     return False
 
         # if we're here, then we must have found all our cats!
         self.outcome_cats[outcome_type] = temp_involved_cats
+
+        return True
+
+    def _find_involved_cats(
+        self,
+        abbr: str,
+        possible_cats: list[Cat],
+        relationship_constraint,
+        cat_constraints,
+        temp_involved_cats: dict,
+    ) -> bool:
+        # if relationships aren't required, just grab some cats and go!
+        if possible_cats and not relationship_constraint:
+            # take first cat
+            temp_involved_cats[abbr] = possible_cats[0]
+            return False
+
+        # otherwise, let's make sure we fulfill the rel constraints with this cat
+        elif possible_cats:
+            while not temp_involved_cats.get(abbr):
+                # need a temp cat dict that includes our possible kitty
+                _temp_cats = temp_involved_cats.copy()
+                _temp_cats[abbr] = possible_cats[0]
+                # now we check each rel constraint to make sure our new cat is valid
+                for block in relationship_constraint:
+                    if not check_rel_constraint_groups(block, _temp_cats):
+                        # they aren't! so we remove them from the possibilities
+                        possible_cats.remove(_temp_cats[abbr])
+                        if not possible_cats:
+                            # oops! no more cats available! this patrol isn't possible
+                            return False
+                        else:
+                            # still some possibilities, let's try the next!
+                            continue
+
+                    # if we got here, then this cat works!
+                    temp_involved_cats[abbr] = _temp_cats[abbr]
+
+        # there weren't any possible cats, so we'll create a new one if we're allowed
+        else:
+            # we don't need to check relationship constraints if we're making a new cat
+            if "n_c" in abbr and cat_constraints.get("can_create_new_cat"):
+                temp_involved_cats[abbr] = updated_create_new_cat(
+                    option_dict=cat_constraints,
+                    involved_cats=temp_involved_cats,
+                    other_clan=self.other_clan,
+                )
+                self.new_cats.extend(temp_involved_cats[abbr])
+            else:
+                # if we aren't allowed to make a new one, then we can't do this patrol
+                return False
 
         return True
 

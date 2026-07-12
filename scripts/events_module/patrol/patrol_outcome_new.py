@@ -1,6 +1,7 @@
 from dataclasses import field, dataclass
 from typing import Union
 
+from scripts.cat.cats import Cat
 from scripts.events_module.parameter_dicts import (
     RelationshipConstraintDict,
     RelationshipChangeDict,
@@ -63,7 +64,7 @@ class EventOutcome:
         # represented by a short text snippet
         return f"{self.text[:30]}..."
 
-    def execute_outcome(self):
+    def execute_outcome(self, involved_cats: dict[str, Cat]):
         """
         Executes the outcome, applying any specified consequences.
         :returns: Outcome text, results text, list of created rel logs (might be empty)
