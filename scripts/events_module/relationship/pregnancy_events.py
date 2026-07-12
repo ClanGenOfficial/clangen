@@ -69,10 +69,15 @@ class Pregnancy_Events:
         Pregnancy_Events.currently_loaded_lang = i18n.config.get("locale")
 
     @staticmethod
-    def append_second_parent_if_mentioned(
+    def _append_second_parent_if_mentioned(
         involved_cats: List[str], event_text: str, mentioned_cat: Optional[Cat]
     ) -> List[str]:
-        """Appends the second parent/mate ID only if the event text mentions r_c."""
+        """
+        Appends the second parent/mate ID only if the event text mentions r_c.
+        :param involved_cats: the cats involved in the invent, usually the first and second parent
+        
+        :return: involved_cats dict with mentioned_cat included if needed
+        """
         if (
             mentioned_cat
             and "r_c" in event_text
@@ -110,17 +115,23 @@ class Pregnancy_Events:
             return False
         rel = mate.relationships.get(pregnant_cat.ID)
         romance = rel.romance if rel else 0
+        claim_chance = constants.CONFIG["pregnancy"]["base_kit_claim_chance"]
         if romance >= 85:
-            claim_chance = 9
+            claim_chance += 40
         elif romance >= 65:
-            claim_chance = 6
+            claim_chance +=20
         elif romance >= 45:
-            claim_chance = 4
+            # this value just stays the base chance
+            claim_chance = claim_chance
         elif romance >= 25:
-            claim_chance = 2
+            claim_chance -= 20
         else:
-            claim_chance = 1
-        return random.randint(1, 10) <= claim_chance
+            claim_chance -= 30
+        
+        # capping values higher than 100 and lower than 0
+        claim_chance = max(0, min(claim_chance, 100))
+        
+        return random.randint(1, 100) <= claim_chance
 
     @staticmethod
     def handle_affair_discovery_breakup(cheating_cat: Cat, mate_cat: Cat):
