@@ -140,7 +140,11 @@ class Pregnancy_Events:
             return
         if cheating_cat.ID not in mate_cat.mate:
             return
-        if random.random() <= 0.8:
+
+        breakup_chance = constants.CONFIG["mates"]["mates.breakup"][
+            "affair_breakup_chance"
+        ]
+        if random.random() <= breakup_chance:
             mate_cat.unset_mate(cheating_cat, breakup=True, fight=True)
             breakup_text = choice(
                 Pregnancy_Events.BREAKUP_STRINGS["affair_discovery_breakup"]
@@ -163,16 +167,15 @@ class Pregnancy_Events:
 
     @staticmethod
     def set_affair_visibility_on_pregnancy(
-        cat: Optional[Cat] = None,
-        is_affair_known: Optional[bool] = None,
-        pregnant_cat: Optional[Cat] = None,
-        clan=game.clan,
+        cat: Optional[Cat] = False,
+        is_affair_known: Optional[bool] = False,
+        pregnant_cat: Optional[Cat] = False,
     ):
         """Store whether an affair was explicitly announced in pregnancy data."""
         target_cat = cat or pregnant_cat
         if not target_cat or not clan:
             return
-        pregnancy = clan.pregnancy_data.get(target_cat.ID)
+        pregnancy = game.clan.pregnancy_data.get(target_cat.ID)
         if pregnancy is None:
             return
         pregnancy["affair_known"] = is_affair_known
@@ -192,10 +195,10 @@ class Pregnancy_Events:
 
     @staticmethod
     def create_pregnancy_data(
-        pregnant_cat: Cat, second_parent: Optional[Cat], clan=game.clan
+        pregnant_cat: Cat, second_parent: Optional[Cat]
     ):
         """Creates the pregnancy data entry for a new pregnancy."""
-        clan.pregnancy_data[pregnant_cat.ID] = {
+        game.clan.pregnancy_data[pregnant_cat.ID] = {
             "second_parent": str(second_parent.ID) if second_parent else None,
             "moons": 0,
             "amount": 0,
@@ -205,7 +208,6 @@ class Pregnancy_Events:
     def create_pregnancy_announcement(
         pregnant_cat: Cat,
         announcement_key: str,
-        clan=game.clan,
         random_cat: Optional[Cat] = None,
         mentioned_cat: Optional[Cat] = None,
     ):
@@ -220,7 +222,7 @@ class Pregnancy_Events:
             text,
             main_cat=pregnant_cat,
             random_cat=random_cat,
-            clan=clan,
+            clan=game.clan,
         )
         involved_cats = [pregnant_cat.ID]
         involved_cats = Pregnancy_Events.append_second_parent_if_mentioned(
@@ -457,7 +459,7 @@ class Pregnancy_Events:
             # if the pregnant cat is single and had a fling with a random cat, let them
             # announce their surprise pregnancy and leave the Clan and player pointing
             # fingers on who the second parent may be
-            elif allow_coparenting is True and not mate:
+            elif allow_coparenting and not mate:
                 text, involved_cats = Pregnancy_Events.create_pregnancy_announcement(
                     cat, "announcement_surprise", clan
                 )
@@ -520,23 +522,14 @@ class Pregnancy_Events:
                 second_parent = cat
 
             Pregnancy_Events.create_pregnancy_data(pregnant_cat, second_parent, clan)
-            afab_mate = [
-                Cat.fetch_cat(mate_id)
-                for mate_id in pregnant_cat.mate
-                if Cat.fetch_cat(mate_id) and Cat.fetch_cat(mate_id).gender == "female"
-            ]
-            amab_mate = [
-                Cat.fetch_cat(mate_id)
-                for mate_id in pregnant_cat.mate
-                if Cat.fetch_cat(mate_id) and Cat.fetch_cat(mate_id).gender == "male"
-            ]
-            mate = [
-                Cat.fetch_cat(mate_id)
-                for mate_id in pregnant_cat.mate
-                if Cat.fetch_cat(mate_id)
-            ]
-            has_afab_mate = bool(afab_mate)
-            has_amab_mate = bool(amab_mate)
+            for mate_id in pregnant_cat.mate:
+                mate_cat = Cat.fetch_cat(mate_id)
+                mate.append(mate_cat)
+                
+                if mate_cat.gender == "female":
+                    afab_mate.append(mate_cat)
+                else:
+                    amab_mate.append(mate_cat)
 
             # if both cats are faithful to each other and aren't cheaters,
             # the pregnancy will be announced as normal
@@ -547,7 +540,7 @@ class Pregnancy_Events:
             # if the pregnant cat is single and had a fling with a random cat, let them
             # announce their surprise pregnancy and leave the Clan and player pointing
             # fingers on who the second parent may be
-            elif allow_coparenting is True and not mate:
+            elif allow_coparenting and not mate:
                 text, involved_cats = Pregnancy_Events.create_pregnancy_announcement(
                     pregnant_cat, "announcement_surprise", clan
                 )
