@@ -2,6 +2,8 @@ from dataclasses import field, dataclass
 from random import choice
 from typing import Union
 
+import i18n
+
 from scripts.cat.cats import Cat
 from scripts.clan import OtherClan
 from scripts.events_module.parameter_dicts import (
@@ -95,7 +97,7 @@ class EventOutcome:
         )
 
         # handle joining
-        self.handle_joining(patrol_involved_cats)
+        results = [self.handle_joining(patrol_involved_cats)]
 
         # handle death
 
@@ -119,7 +121,8 @@ class EventOutcome:
 
         # return all the bullshit
 
-    def handle_joining(self, patrol_involved_cats):
+    def handle_joining(self, patrol_involved_cats) -> str:
+        joined = []
         for block in self.join:
             # gather up the kitties
             cat_list = []
@@ -147,3 +150,6 @@ class EventOutcome:
                     if cat.skills.secondary:
                         cat.skills.secondary.interest_only = True
 
+            joined.extend(cat_list)
+
+        return i18n.t("screens.patrol.new_outsider", cats=joined)
