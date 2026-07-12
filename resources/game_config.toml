@@ -84,6 +84,9 @@ dev_tools = false
 [mates]
   # permit player to change cat mates
   allow_manual = true
+  
+  # allow mates to happen
+  allow_mating = true
 
   # maximum age difference allowed for cats to be romantic with each other
   age_range = 40
