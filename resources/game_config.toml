@@ -192,6 +192,10 @@ dev_tools = false
       comfort = -10
       respect = 10
 
+    # the chance for a break up to happen after an affair has been discovered
+    # any number lower than this increases the likelyhood of a break up
+    affair_breakup_chance = 0.8
+
 [new_cat]
   # number of welcoming events to add when a new cat joins
   cat_amount_welcoming = 3
