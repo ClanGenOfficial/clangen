@@ -1,0 +1,544 @@
+[
+    {
+        "id": "platonic_de_med1",
+        "strings": [
+            "m_c caught r_c complaining about {PRONOUN/m_c/object} behind {PRONOUN/m_c/poss} back.",
+            "r_c insulted m_c's looks behind {PRONOUN/m_c/poss} back and thought m_c didn't hear it.",
+            "m_c is surprised by the hurtful things r_c can say in an argument.",
+            "r_c accuses m_c of lying about something m_c has no reason to lie about.",
+            "m_c is hurt by one of r_c's pranks, but r_c doesn't seem to believe {PRONOUN/m_c/object}.",
+            "m_c thinks that r_c is acting overly dramatic lately.",
+            "r_c won't give up a warm, sunny spot for m_c, not even for a minute.",
+            "m_c keeps telling r_c to stop saying a joke, but r_c doesn't take {PRONOUN/m_c/poss} request seriously.",
+            "r_c makes a snide remark about one of m_c's friends.",
+            "m_c is baffled by something r_c says about religion.",
+            "r_c makes a crude remark about the Clan to m_c."
+        ]
+    },
+    {
+        "id": "platonic_de_med2",
+        "strings": [
+            "m_c is annoyed that {PRONOUN/m_c/subject} {VERB/m_c/have/has} to pull ticks off of r_c today.",
+            "m_c doesn't like being bossed around by r_c just because {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} young.",
+            "m_c is bored by r_c's stories.",
+            "m_c wishes that r_c would talk a little faster.",
+            "m_c is sick of replacing r_c's stinky bedding."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "elder"
+                ]
+            }
+        }
+    },
+    {
+        "id": "platonic_de_med3",
+        "strings": [
+            "r_c makes sure m_c is following the Warrior Code.",
+            "r_c snaps at m_c for making a joke about the Clan.",
+            "r_c has a fight with m_c about what's right."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": [
+                        "righteous"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "platonic_de_med4",
+        "strings": [
+            "r_c is not backing down in an argument with m_c.",
+            "r_c is getting too violent in an argument with m_c.",
+            "r_c is saying some harsh things to m_c during a disagreement.",
+            "m_c is taken aback by some of the cruel things r_c is saying to {PRONOUN/m_c/object}."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": [
+                        "fierce",
+                        "bloodthirsty",
+                        "vengeful",
+                        "cold"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "dislike_inc_med1",
+        "strings": [
+            "m_c wishes r_c would take things more seriously.",
+            "m_c thinks r_c is acting childish lately.",
+            "m_c keeps complaining about something r_c did.",
+            "m_c considers spreading a rumor about r_c.",
+            "m_c doesn't like r_c's sense of humor.",
+            "m_c stiffens up a little whenever someone mentions r_c.",
+            "m_c is tired of interacting with r_c lately.",
+            "After sharing tongues, m_c washed off r_c's scent from {PRONOUN/m_c/poss} pelt.",
+            "A Clanmate notices m_c mocking r_c behind {PRONOUN/r_c/poss} back.",
+            "When m_c needs someone to do {PRONOUN/m_c/object} a favor, {PRONOUN/m_c/subject} never {VERB/m_c/ask/asks} r_c first."
+        ]
+    },
+    {
+        "id": "dislike_inc_med2",
+        "strings": [
+            "m_c ignores r_c.",
+            "m_c had a huge argument with r_c.",
+            "m_c had a spat with r_c over a piece of prey on the fresh-kill pile.",
+            "m_c and r_c make fun of one another, but it sounds more like insults than playful banter.",
+            "The Clan notices that m_c and r_c always sit far away from one another.",
+            "m_c didn't warn r_c about a rock on the ground, which caused r_c to trip.",
+            "m_c claimed to give r_c a piece of crowfood on accident.",
+            "m_c spent the day arguing with r_c about whether {PRONOUN/r_c/subject} stole something from m_c.",
+            "m_c scoffed loudly at one of r_c's suggestions.",
+            "r_c keeps yawning during m_c's story.",
+            "r_c flicked some sand over m_c's fresh-kill while {PRONOUN/m_c/subject} {VERB/m_c/were/was} eating."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "dislike_inc_med3",
+        "strings": [
+            "m_c had a disagreement with r_c while on patrol earlier.",
+            "m_c stole r_c's catch right out from under {PRONOUN/r_c/poss} claws.",
+            "m_c prays that {PRONOUN/m_c/subject} {VERB/m_c/aren't/isn't} on patrol with r_c tomorrow.",
+            "m_c sighs loudly every time r_c does anything on patrol.",
+            "While on a patrol, m_c secretly pulled back a branch and made it whop r_c in the face.",
+            "m_c pranked r_c during a patrol.",
+            "m_c laughed at r_c for making a mistake on a patrol.",
+            "m_c ignored r_c's advice on a patrol and nearly got hurt because of it.",
+            "m_c and r_c couldn't agree which way to go on a patrol and got home late.",
+            "m_c claimed to catch the prey that r_c caught on their patrol."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "dislike_inc_med4",
+        "strings": [
+            "m_c is thinking about how r_c wronged {PRONOUN/m_c/object}.",
+            "m_c is watching r_c scornfully.",
+            "m_c daydreams about getting back at r_c for wronging {PRONOUN/m_c/object}.",
+            "m_c smiles when r_c gets hurt.",
+            "m_c likes it when r_c is scolded for something.",
+            "The Clan notices that m_c's claws unsheath when r_c is nearby.",
+            "m_c is glaring daggers at r_c."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "vengeful",
+                        "bloodthirsty"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "dislike_inc_med5",
+        "strings": [
+            "r_c is asking m_c to tell {PRONOUN/r_c/object} about how good {PRONOUN/r_c/subject} {VERB/m_c/look/looks}.",
+            "r_c offends m_c with {PRONOUN/r_c/poss} brutal honesty.",
+            "m_c is irritated by r_c's constant bragging.",
+            "r_c gets really close to m_c's face while talking and grosses m_c out with {PRONOUN/r_c/poss} bad breath.",
+            "m_c tells r_c to quiet down, but r_c doesn't listen.",
+            "r_c is boasting about {PRONOUN/r_c/poss} accomplishments to m_c, but m_c isn't impressed."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": [
+                        "shameless",
+                        "bold"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "dislike_inc_med6",
+        "strings": [
+            "r_c pulled a prank on m_c.",
+            "r_c blamed m_c for {PRONOUN/r_c/poss} own mistake.",
+            "m_c is tired of all the pranks r_c pulls on {PRONOUN/m_c/object}.",
+            "m_c notices that things always go wrong when r_c is around.",
+            "m_c starts to always blame r_c if something bad happens.",
+            "m_c thinks r_c is bad luck.",
+            "r_c won't stop bothering m_c."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": [
+                        "troublesome"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "dislike_effect_other1",
+        "strings": [
+            "r_c is spreading a rumor about m_c.",
+            "r_c is mocking m_c.",
+            "r_c is bragging about being better than m_c.",
+            "r_c is belittling m_c's accomplishments.",
+            "r_c is always talking about how much {PRONOUN/r_c/subject} {VERB/r_c/dislike/dislikes} m_c.",
+            "r_c won't stop complaining to m_c!",
+            "r_c's friends are tired of hearing about all of the things {PRONOUN/r_c/subject} {VERB/r_c/hate/hates} about m_c.",
+            "The Clan is starting to get nervous about how much m_c and r_c dislike one another.",
+            "m_c and r_c argue and fight like it's in their blood to do so.",
+            "The Clan worries about whether r_c would help m_c if something went wrong.",
+            "r_c is telling others about how terrible m_c can really be.",
+            "r_c leaves as soon as m_c arrives and refuses to be nearby."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "hates"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "dislike_kit_inc_med1",
+        "strings": [
+            "m_c trips over r_c.",
+            "m_c had to nip r_c on the rump because {PRONOUN/r_c/subject} {VERB/r_c/were/was} being naughty.",
+            "m_c growls at r_c to get out from under {PRONOUN/m_c/poss} paws.",
+            "m_c snaps at r_c's annoying antics.",
+            "m_c tells someone to get r_c away from {PRONOUN/m_c/object}."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-kitten"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "kitten"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "comfort"
+                ],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "dislike_dep_leader_inc_med1",
+        "strings": [
+            "m_c punishes r_c with extra work.",
+            "m_c divides r_c into extra patrols.",
+            "m_c gives r_c a particularly hard task, expecting {PRONOUN/r_c/object} to fail.",
+            "m_c always tries to avoid making r_c the leader of a patrol.",
+            "m_c scolds r_c like a kit for something trivial.",
+            "m_c says r_c sets a bad example of a warrior."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "deputy",
+                    "leader"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "warrior"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "dislike_dep_leader_inc_med2",
+        "strings": [
+            "m_c punishes r_c with extra work.",
+            "m_c divides r_c into extra patrols.",
+            "m_c gives r_c a particularly hard task, expecting {PRONOUN/r_c/object} to fail.",
+            "m_c threatens r_c with never passing {PRONOUN/r_c/poss} assessment!",
+            "m_c tells other cats that r_c is not doing well in {PRONOUN/r_c/poss} training.",
+            "m_c scolds r_c like a kit for something trivial.",
+            "m_c says r_c sets a bad example of a warrior."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "deputy",
+                    "leader"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "apprentice"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "comfort"
+                ],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "dislike_med_inc_med1",
+        "strings": [
+            "m_c gives r_c bitter herbs on purpose.",
+            "m_c snaps at r_c for seeking treatment for something trivial and wasting {PRONOUN/m_c/poss} time.",
+            "m_c always tends to r_c last.",
+            "m_c doesn't warn r_c before applying a stinging poultice.",
+            "When r_c comes to m_c with pain, m_c tells {PRONOUN/r_c/object} to suck it up.",
+            "When r_c asks m_c for advice about a prophetic dream, m_c laughs {PRONOUN/r_c/object} away.",
+            "m_c claims to accidentally have given r_c the wrong herb."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "medicine cat apprentice",
+                    "medicine cat"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "comfort"
+                ],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "dislike_kit_de_med1",
+        "strings": [
+            "m_c sticks {PRONOUN/m_c/poss} tongue out at r_c.",
+            "m_c makes stinky faces at r_c for seemingly no reason.",
+            "m_c calls r_c a stinky dirt-face.",
+            "m_c and r_c play hide and seek, but r_c supposedly forgets to look for m_c for hours."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "dislike_kit_de_med2",
+        "strings": [
+            "m_c tried to have a friendly discussion with r_c about what prey tastes best, but it turned into an argument.",
+            "m_c and r_c always end up arguing over what games to play.",
+            "m_c tells an older Clanmate that r_c did something bad.",
+            "m_c snitches on r_c to an older Clanmate.",
+            "m_c cries that r_c hurt {PRONOUN/m_c/object}, but is lying.",
+            "m_c is not playing fairly with r_c!"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "kitten"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "dislike_kit_inc_med3",
+        "strings": [
+            "m_c whines that r_c won't play with {PRONOUN/m_c/object}, even though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} always around camp.",
+            "m_c doesn't understand why r_c won't let {PRONOUN/m_c/object} play in the medicine cat den."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "elder",
+                    "mediator apprentice",
+                    "medicine cat apprentice"
+                ]
+            }
+        }
+    },
+    {
+        "id": "daydreamer_de_med",
+        "strings": [
+            "m_c has to tap r_c multiple times to get {PRONOUN/r_c/object} to snap out of {PRONOUN/r_c/poss} daydream.",
+            "m_c doesn't understand why r_c won't play like the other kits."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "trait": [
+                        "daydreamer"
+                    ]
+                }
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "parent/child"
+                ]
+            }
+        ]
+    }
+]

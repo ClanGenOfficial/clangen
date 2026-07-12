@@ -36,11 +36,18 @@ class ClanCreatedScreen(MakeClanScreenBase):
             manager=MANAGER,
         )
 
+        if self.clan_info.leader:
+            cat_to_show = self.clan_info.leader
+        elif self.clan_info.deputy:
+            cat_to_show = self.clan_info.deputy
+        elif self.clan_info.medicine_cat:
+            cat_to_show = self.clan_info.medicine_cat
+        else:
+            cat_to_show = self.clan_info.starting_members[0]
+
         self.elements["leader_image"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((350, 125), (100, 100))),
-            pygame.transform.scale(
-                game.clan.leader.sprite, ui_scale_dimensions((100, 100))
-            ),
+            pygame.transform.scale(cat_to_show.sprite, ui_scale_dimensions((100, 100))),
             starting_height=1,
             manager=MANAGER,
         )

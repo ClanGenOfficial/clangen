@@ -8,8 +8,6 @@ from pygame_gui.core.interfaces import IUIManagerInterface
 
 from scripts.game_input import INPUT_ACTION_PRESSED, Action, INPUT_ACTION_RELEASED
 from scripts.game_structure import game
-from scripts.game_structure.game import Switch
-from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import screen
 
 
