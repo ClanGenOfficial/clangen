@@ -9,7 +9,6 @@ from scripts.clan_package.settings import get_clan_setting
 from scripts.game_structure import constants, image_cache
 from scripts.game_structure.game import game_setting_get
 from scripts.ui.scale import ui_scale_dimensions
-from scripts.cat.pelts import Pelt
 
 logger = logging.getLogger(__name__)
 
