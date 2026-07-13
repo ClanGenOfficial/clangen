@@ -535,7 +535,7 @@ class Clan:
         clan_data["patrolled_cats"] = [str(i) for i in game.patrolled]
 
         # OTHER CLANS
-        clan_data["other_clans"] = [vars(i) for i in self.all_other_clans]
+        clan_data["other_clans"] = [i.save_info() for i in self.all_other_clans]
 
         clan_data["war"] = self.war
 
@@ -1438,7 +1438,7 @@ class OtherClan:
             while self.name in used_names:  # making sure we don't repeat a name
                 self.name = choice(clan_names)
 
-        self.relations = relations or randint(
+        self._relations = relations or randint(
             get_config("clan_creation.starting_clan_relation")[0],
             get_config("clan_creation.starting_clan_relation")[1],
         )
@@ -1478,6 +1478,10 @@ class OtherClan:
             else clan_symbol_sprite(self, return_string=True)
         )
 
+    def __repr__(self):
+        # has indicators that this is unlocalized, just in case
+        return f"!!{self.name}Clan!!"
+
     @property
     def name(self):
         return i18n.t("general.clan", name=self.prefix)
@@ -1486,9 +1490,25 @@ class OtherClan:
     def name(self, value):
         self.prefix = value
 
-    def __repr__(self):
-        # has indicators that this is unlocalized, just in case
-        return f"!!{self.name}Clan!!"
+    @property
+    def relations(self):
+        return min(self._relations, get_config("reputation.other_clans.relation_cap"))
+
+    @relations.setter
+    def relations(self, value):
+        self._relations = min(value, get_config("reputation.other_clans.relation_cap"))
+
+    def save_info(self):
+        """
+        Returns all the save information necessary for this clan
+        """
+        return {
+            "group_ID": self.group_ID,
+            "prefix": self.prefix,
+            "relations": self.relations,
+            "temperament": self.temperament,
+            "chosen_symbol": self.chosen_symbol,
+        }
 
     def get_standing(self) -> Literal["ally", "neutral", "hostile"]:
         """
@@ -1496,11 +1516,11 @@ class OtherClan:
 
         :return: One of "ally", "neutral" or "hostile".
         """
-        if self.relations > 17:
-            return "ally"
-        elif 7 <= self.relations <= 17:
+        if self.relations <= get_config("reputation.other_clans.hostile"):
+            return "hostile"
+        elif self.relations <= get_config("reputation.other_clans.neutral"):
             return "neutral"
-        return "hostile"  # self.relations < 7
+        return "ally"
 
 
 class Afterlife:
@@ -1570,7 +1590,7 @@ class Afterlife:
     @stability.setter
     def stability(self, value):
         raise Exception(
-            "ERROR: Afterlife aggresstabilitysion cannot be set manually as it is meant to be calculated from the currently dead cats."
+            "ERROR: Afterlife stability cannot be set manually as it is meant to be calculated from the currently dead cats."
         )
 
     @property
