@@ -104,8 +104,9 @@ class Pregnancy_Events:
             mate = Cat.fetch_cat(mate_id)
             if not mate:
                 continue
-            if include_dead or not mate.dead:
-                return mate
+            if include_dead:
+                if mate.dead
+                    return mate
         return None
 
     @staticmethod
@@ -1011,11 +1012,15 @@ class Pregnancy_Events:
                 if not mate:
                     continue
 
+                breakup_reaction = constants.CONFIG["mates"]["breakup"]["reactions"][
+                    affair_discovery_mate_reaction
+                ]
                 rel = mate.relationships.get(cat.ID)
                 if rel:
-                    rel.romance -= 50
-                    rel.trust -= 30
-                    rel.like -= 40
+                    mate_reaction = breakup_reaction.copy()
+                    for change, amount in mate_reaction.items():
+                        setattr(rel, change, getattr(rel, change) + amount)
+                    
                     log_text = process_text(
                         i18n.t("conditions.pregnancy.affair_rel_log"),
                         {
@@ -1047,11 +1052,14 @@ class Pregnancy_Events:
                 if not mate:
                     continue
 
+                breakup_reaction = constants.CONFIG["mates"]["breakup"]["reactions"][
+                    affair_discovery_other_mate_reaction
+                ]
                 rel = mate.relationships.get(other_cat.ID)
                 if rel:
-                    rel.romance -= 50
-                    rel.trust -= 30
-                    rel.like -= 40
+                    mate_reaction = breakup_reaction.copy()
+                    for change, amount in mate_reaction.items():
+                        setattr(rel, change, getattr(rel, change) + amount)
                     rel.log.append(
                         process_text(
                             i18n.t("conditions.pregnancy.affair_rel_log"),
