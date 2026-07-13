@@ -1502,12 +1502,13 @@ class OtherClan:
         """
         Returns all the save information necessary for this clan
         """
-        return {"group_ID": self.group_ID,
-                "prefix": self.prefix,
-                "relations": self.relations,
-                "temperament": self.temperament,
-                "chosen_symbol": self.chosen_symbol,
-                }
+        return {
+            "group_ID": self.group_ID,
+            "prefix": self.prefix,
+            "relations": self.relations,
+            "temperament": self.temperament,
+            "chosen_symbol": self.chosen_symbol,
+        }
 
     def get_standing(self) -> Literal["ally", "neutral", "hostile"]:
         """
