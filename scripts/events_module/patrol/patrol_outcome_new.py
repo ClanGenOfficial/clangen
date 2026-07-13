@@ -8,8 +8,17 @@ import i18n
 
 from scripts.cat.cats import Cat, ILLNESSES, PERMANENT
 from scripts.cat.constants import INJURIES
+from scripts.cat.enums import CatRank
+from scripts.cat.skills import SkillPath
 from scripts.clan import OtherClan
-from scripts.events_module.consequences import check_stolen_vitality
+from scripts.clan_package.cotc import change_clan_reputation, change_clan_relations
+from scripts.clan_resources.freshkill import (
+    FRESHKILL_ACTIVE,
+    ADDITIONAL_PREY,
+    HUNTER_EXP_BONUS,
+)
+from scripts.config import get_config
+from scripts.events_module.consequences import check_stolen_vitality, unpack_rel_block
 from scripts.events_module.parameter_dicts import (
     RelationshipConstraintDict,
     RelationshipChangeDict,
@@ -105,13 +114,9 @@ class EventOutcome:
             self._handle_joining(patrol_involved_cats),
             self._handle_death(patrol_involved_cats, other_clan),
             self._handle_lost(patrol_involved_cats),
+            self._handle_conditions(patrol_involved_cats, other_clan),
+            self._handle_reputation_changes(other_clan),
         ]
-
-        # handle injuries
-
-        # apply rel effects (append result text)
-
-        # handle rep changes (outsider and other clan)
 
         # handle supply changes (prey and herbs)
 
@@ -120,6 +125,10 @@ class EventOutcome:
         # handle mentor/app stuff
 
         # handle future event
+
+        # apply rel effects (append result text)
+        # TODO: gonna have to change how unpack_rel_block works
+        rel_results.update(unpack_rel_block(Cat, self.relationship_changes, self))
 
         # return all the bullshit
 
@@ -316,7 +325,10 @@ class EventOutcome:
 
     def _handle_conditions(
         self, patrol_involved_cats: dict, other_clan: OtherClan
-    ) -> "":
+    ) -> str:
+        """
+        Handles applying conditions to cats.
+        """
         if not self.condition:
             return ""
 
@@ -377,9 +389,18 @@ class EventOutcome:
                 else:
                     c.get_permanent_condition(chosen_condition)
 
-                if block.get("no_results", False):
-                    pass
-                else:
+                no_results = block.get("no_results", False)
+
+                self.__handle_condition_history(
+                    cat=c,
+                    condition=chosen_condition,
+                    scar_string=block.get("scar_history"),
+                    death_string=block.get("death_history"),
+                    other_clan=other_clan,
+                    default_override=no_results,
+                )
+
+                if not no_results:
                     if c not in cats_and_conditions:
                         cats_and_conditions[c] = [chosen_condition]
                     else:
@@ -389,13 +410,164 @@ class EventOutcome:
             # TODO: localize
             results.append(f"{self._profile_link(c)} got: {' '.join(conditions)}.")
 
-        return results
+        return " ".join(results)
 
-    def __handle_condition_history(self, cat):
+    def __handle_condition_history(
+        self,
+        cat: Cat,
+        condition: str,
+        scar_string: str,
+        death_string: str,
+        other_clan: OtherClan,
+        default_override: bool = False,
+    ):
+        """
+        Handles adding potential history to a cat. default_override will use the default text for the condition.
+        """
+        if not scar_string and not death_string:
+            logging.warning(
+                f"WARNING: Condition was added by outcome: {self} but no scar or death history string was given."
+            )
 
-        
+        if default_override:
+            cat.history.add_possible_history(
+                condition=condition, death_text=None, scar_text=None
+            )
+            return
+
+        if scar_string:
+            scar_string = (
+                scar_string
+                if "o_c_n" not in scar_string
+                else scar_string.replace("o_c_n", other_clan.name)
+            )
+        if death_string:
+            death_string = (
+                death_string
+                if "o_c_n" not in death_string
+                else death_string.replace("o_c_n", other_clan.name)
+            )
+
+        cat.history.add_possible_history(
+            condition=condition, death_text=death_string, scar_text=scar_string
+        )
 
     @staticmethod
     def _profile_link(cat: Cat) -> str:
         """Create a hyperlink to a cat profile from patrol results."""
         return f'<a href="cat://{cat.ID}"><b>{escape(str(cat.name))}</b></a>'
+
+    def _handle_reputation_changes(self, other_clan: OtherClan) -> str:
+        if not self.reputation_changes:
+            return ""
+
+        outside_change = self.reputation_changes.get("outsider")
+        other_clan_change = self.reputation_changes.get("other_clan")
+
+        if outside_change:
+            change_clan_reputation(outside_change)
+            if outside_change > 0:
+                return i18n.t("screens.patrol.outsider_rep_improved")
+            elif outside_change == 0:
+                return i18n.t("screens.patrol.outsider_rep_neutral")
+            else:
+                return i18n.t("screens.patrol.outsider_rep_worsened")
+
+        if other_clan_change:
+            change_clan_relations(other_clan, other_clan_change)
+            if other_clan_change > 0:
+                return i18n.t("screens.patrol.clan_rep_improved", clan=other_clan.name)
+            elif other_clan_change == 0:
+                return i18n.t("screens.patrol.clan_rep_neutral", clan=other_clan.name)
+            else:
+                return i18n.t("screens.patrol.clan_rep_worsened", clan=other_clan.name)
+
+        return ""
+
+    def _handle_supply_changes(self):
+        for block in self.supply:
+            if block["type"] == "freshkill":
+                self.__handle_prey(block)
+            else:
+                self.__handle_herbs(block)
+
+    def __handle_prey(self, prey_info: SupplyDict):
+        """Handle giving prey"""
+
+        if not FRESHKILL_ACTIVE:
+            return ""
+
+        if not prey_info or game.clan.game_mode == "classic":
+            return ""
+
+        basic_amount = (
+            get_config("prey.prey_requirement")[CatRank.WARRIOR] + ADDITIONAL_PREY
+        )
+
+        prey_types = {
+            "increase_tiny": basic_amount / 2,
+            "increase_small": basic_amount,
+            "increase_medium": basic_amount * 1.8,
+            "increase_large": basic_amount * 2.4,
+            "increase_huge": basic_amount * 3.2,
+        }
+
+        basic_amount = prey_types.get(prey_info["adjust"])
+
+        for tag in self.prey:
+            basic_amount = prey_types.get(tag)
+            if basic_amount is not None:
+                used_tag = tag
+                break
+        else:
+            print(f"{self.prey} - no prey amount tags in prey property")
+            return ""
+
+        total_amount = 0
+        highest_hunter_tier = 0
+        for cat in patrol.patrol_cats:
+            total_amount += basic_amount
+            if (
+                cat.skills.primary.path == SkillPath.HUNTER
+                and cat.skills.primary.tier > 0
+            ):
+                level = cat.experience_level
+                tier = cat.skills.primary.tier
+                if tier > highest_hunter_tier:
+                    highest_hunter_tier = tier
+                total_amount += int(
+                    HUNTER_EXP_BONUS[level] * (HUNTER_BONUS[str(tier)] / 10 + 1)
+                )
+            elif (
+                cat.skills.secondary
+                and cat.skills.secondary.path == SkillPath.HUNTER
+                and cat.skills.secondary.tier > 0
+            ):
+                level = cat.experience_level
+                tier = cat.skills.secondary.tier
+                if tier > highest_hunter_tier:
+                    highest_hunter_tier = tier
+                total_amount += int(
+                    HUNTER_EXP_BONUS[level] * (HUNTER_BONUS[str(tier)] / 10 + 1)
+                )
+
+        # additional hunter buff for expanded mode
+        if game.clan.game_mode == "expanded" and highest_hunter_tier:
+            total_amount = int(
+                total_amount * (HUNTER_BONUS[str(highest_hunter_tier)] / 20 + 1)
+            )
+
+        results = ""
+        if total_amount > 0:
+            total_amount = round(total_amount, 2)
+            print(f"PREY ADDED: {total_amount}")
+            game.freshkill_event_list.append(
+                f"{total_amount} pieces of prey were caught on a patrol."
+            )
+            game.clan.freshkill_pile.add_freshkill(total_amount)
+            results = i18n.t(f"screens.patrol.prey_{used_tag}")
+
+        return results
+
+    def __handle_herbs(self):
+        pass

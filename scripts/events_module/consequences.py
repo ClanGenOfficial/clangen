@@ -19,6 +19,7 @@ from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.clan_package.get_clan_cats import get_random_player_clan_cat
 from scripts.clan_package.settings import get_clan_setting
 from scripts.config import get_config
+from scripts.events_module.parameter_dicts import RelationshipChangeDict
 from scripts.game_structure import game, constants
 from scripts.cat.constants import BACKSTORIES, PERMANENT
 from scripts.events_module.text_adjust import process_text, adjust_list_text
@@ -901,7 +902,11 @@ def gather_cat_objects(
 
 
 def unpack_rel_block(
-    Cat, relationship_effects: List[dict], event=None, stat_cat=None, extra_cat=None
+    Cat,
+    relationship_effects: List[Union[dict, RelationshipChangeDict]],
+    event=None,
+    stat_cat=None,
+    extra_cat=None,
 ) -> dict:
     """
     Unpacks the info from the relationship effect block used in patrol and moon events, then adjusts rel values
