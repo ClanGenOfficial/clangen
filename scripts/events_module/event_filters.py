@@ -723,15 +723,15 @@ def _check_cat_standing(
     # CURRENT STANDINGS
     for tag in current_standings:
         if tag == CatStanding.LEFT:
-            if _has_current_standing(cat, tag, groups, other_clan_id):
+            if cat.status.has_left(CatGroup.PLAYER_CLAN):
                 qualifies = True
                 break
         elif tag == CatStanding.LOST:
-            if _has_current_standing(cat, tag, groups, other_clan_id):
+            if cat.status.is_lost(CatGroup.PLAYER_CLAN):
                 qualifies = True
                 break
         elif tag == CatStanding.EXILED:
-            if _has_current_standing(cat, tag, groups, other_clan_id):
+            if cat.status.is_exiled(CatGroup.PLAYER_CLAN):
                 qualifies = True
                 break
 
