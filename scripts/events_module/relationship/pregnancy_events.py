@@ -1013,14 +1013,13 @@ class Pregnancy_Events:
                     continue
 
                 breakup_reaction = constants.CONFIG["mates"]["breakup"]["reactions"][
-                    affair_discovery_mate_reaction
+                    "affair_discovery_mate_reaction"
                 ]
                 rel = mate.relationships.get(cat.ID)
                 if rel:
-                    mate_reaction = breakup_reaction.copy()
-                    for change, amount in mate_reaction.items():
-                        setattr(rel, change, getattr(rel, change) + amount)
-                    
+                    rel.romance += breakup_reaction["romance"]
+                    rel.trust += breakup_reaction["trust"]
+                    rel.like += breakup_reaction["like"]
                     log_text = process_text(
                         i18n.t("conditions.pregnancy.affair_rel_log"),
                         {
@@ -1053,13 +1052,13 @@ class Pregnancy_Events:
                     continue
 
                 breakup_reaction = constants.CONFIG["mates"]["breakup"]["reactions"][
-                    affair_discovery_other_mate_reaction
+                    "affair_discovery_other_mate_reaction"
                 ]
                 rel = mate.relationships.get(other_cat.ID)
                 if rel:
-                    mate_reaction = breakup_reaction.copy()
-                    for change, amount in mate_reaction.items():
-                        setattr(rel, change, getattr(rel, change) + amount)
+                    rel.romance += breakup_reaction["romance"]
+                    rel.trust += breakup_reaction["trust"]
+                    rel.like += breakup_reaction["like"]
                     rel.log.append(
                         process_text(
                             i18n.t("conditions.pregnancy.affair_rel_log"),
@@ -1091,28 +1090,34 @@ class Pregnancy_Events:
                 dislike_value = constants.CONFIG["relationship"]["value_intervals"][
                     "low_neg"
                 ]
+                absent_parent_to_kit_reaction = constants.CONFIG["new_cat"]["parent_buff"][
+                    "absent_parent_to_kit"
+                ]
                 for kit in kits:
-                    second_parent_to_kit = other_cat.relationships.get(kit.ID)
-                    if not second_parent_to_kit:
-                        second_parent_to_kit = Relationship(other_cat, kit, family=True)
-                        other_cat.relationships[kit.ID] = second_parent_to_kit
-                    second_parent_to_kit.like = 0
-                    second_parent_to_kit.comfort = -10
-                    second_parent_to_kit.respect = 0
-                    second_parent_to_kit.trust = 0
+                    absent_parent_to_kit = other_cat.relationships.get(kit.ID)
+                    if not absent_parent_to_kit:
+                        absent_parent_to_kit = Relationship(other_cat, kit, family=True)
+                        other_cat.relationships[kit.ID] = absent_parent_to_kit
+                    absent_parent_to_kit.like += absent_parent_to_kit_reaction["like"]
+                    absent_parent_to_kit.respect += absent_parent_to_kit_reaction["respect"]
+                    absent_parent_to_kit.comfort += absent_parent_to_kit_reaction["comfort"]
+                    absent_parent_to_kit.trust += absent_parent_to_kit_reaction["trust"]
                     kit.relationships.pop(other_cat.ID, None)
-
+            
             for first_cat, second_cat in ((cat, other_cat), (other_cat, cat)):
                 rel = first_cat.relationships.get(second_cat.ID)
                 if not rel:
                     rel = Relationship(first_cat, second_cat)
                     first_cat.relationships[second_cat.ID] = rel
 
+                coparenting_values_neg = constants.CONFIG["prenancy"]["coparenting_values_neg"]
+                coparenting_values_pos = constants.CONFIG["prenancy"]["coparenting_values_pos"]
+                
                 if coparenting_outcome == "negative":
-                    rel.comfort -= 30
-                    rel.trust -= 25
+                    rel.comfort += coparenting_values_neg["comfort"]
+                    rel.trust += coparenting_values_neg["trust"]
                     if rel.romance > 0:
-                        rel.romance -= 20
+                        rel.romance += coparenting_values_neg["romance"]
                     log_text = process_text(
                         i18n.t("conditions.pregnancy.coparenting_rel_log_neg"),
                         {
@@ -1138,8 +1143,10 @@ class Pregnancy_Events:
                         )
                     )
                 elif coparenting_outcome == "positive":
-                    rel.comfort += 20
-                    rel.trust += 20
+                    rel.comfort += coparenting_values_pos["comfort"]
+                    rel.trust += coparenting_values_pos["trust"]
+                    if rel.romance > 0:
+                        rel.romance += coparenting_values_pos["romance"]
                     log_text = process_text(
                         i18n.t("conditions.pregnancy.coparenting_rel_log_pos"),
                         {
