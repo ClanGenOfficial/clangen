@@ -535,7 +535,7 @@ class Clan:
         clan_data["patrolled_cats"] = [str(i) for i in game.patrolled]
 
         # OTHER CLANS
-        clan_data["other_clans"] = [vars(i) for i in self.all_other_clans]
+        clan_data["other_clans"] = [i.save_info() for i in self.all_other_clans]
 
         clan_data["war"] = self.war
 
@@ -1478,6 +1478,10 @@ class OtherClan:
             else clan_symbol_sprite(self, return_string=True)
         )
 
+    def __repr__(self):
+        # has indicators that this is unlocalized, just in case
+        return f"!!{self.name}Clan!!"
+
     @property
     def name(self):
         return i18n.t("general.clan", name=self.prefix)
@@ -1486,10 +1490,6 @@ class OtherClan:
     def name(self, value):
         self.prefix = value
 
-    def __repr__(self):
-        # has indicators that this is unlocalized, just in case
-        return f"!!{self.name}Clan!!"
-
     @property
     def relations(self):
         return min(self._relations, get_config("reputation.other_clans.relation_cap"))
@@ -1497,6 +1497,17 @@ class OtherClan:
     @relations.setter
     def relations(self, value):
         self._relations = min(value, get_config("reputation.other_clans.relation_cap"))
+
+    def save_info(self):
+        """
+        Returns all the save information necessary for this clan
+        """
+        return {"group_ID": self.group_ID,
+                "prefix": self.prefix,
+                "relations": self.relations,
+                "temperament": self.temperament,
+                "chosen_symbol": self.chosen_symbol,
+                }
 
     def get_standing(self) -> Literal["ally", "neutral", "hostile"]:
         """
