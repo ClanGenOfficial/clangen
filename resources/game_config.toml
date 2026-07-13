@@ -989,3 +989,12 @@ dev_tools = false
   # force a game setting to be true, stopping players from changing it
   [settings.force_enable]
     "deputy" = false
+
+[reputation]
+  # manages reputation quotas
+  [reputation.other_clans]
+  # caps for other clan reputation levels
+    relation_cap = 30
+    ally = 30
+    neutral = 17
+    hostile = 7

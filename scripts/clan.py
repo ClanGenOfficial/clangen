@@ -1438,7 +1438,7 @@ class OtherClan:
             while self.name in used_names:  # making sure we don't repeat a name
                 self.name = choice(clan_names)
 
-        self.relations = relations or randint(
+        self._relations = relations or randint(
             get_config("clan_creation.starting_clan_relation")[0],
             get_config("clan_creation.starting_clan_relation")[1],
         )
@@ -1490,17 +1490,25 @@ class OtherClan:
         # has indicators that this is unlocalized, just in case
         return f"!!{self.name}Clan!!"
 
+    @property
+    def relations(self):
+        return min(self._relations, get_config("reputation.other_clans.relation_cap"))
+
+    @relations.setter
+    def relations(self, value):
+        self._relations = min(value, get_config("reputation.other_clans.relation_cap"))
+
     def get_standing(self) -> Literal["ally", "neutral", "hostile"]:
         """
         Gets if OtherClan is an ally, neutral, or hostile.
 
         :return: One of "ally", "neutral" or "hostile".
         """
-        if self.relations > 17:
-            return "ally"
-        elif 7 <= self.relations <= 17:
+        if self.relations <= get_config("reputation.other_clans.hostile"):
+            return "hostile"
+        elif self.relations <= get_config("reputation.other_clans.neutral"):
             return "neutral"
-        return "hostile"  # self.relations < 7
+        return "ally"
 
 
 class Afterlife:
@@ -1570,7 +1578,7 @@ class Afterlife:
     @stability.setter
     def stability(self, value):
         raise Exception(
-            "ERROR: Afterlife aggresstabilitysion cannot be set manually as it is meant to be calculated from the currently dead cats."
+            "ERROR: Afterlife stability cannot be set manually as it is meant to be calculated from the currently dead cats."
         )
 
     @property

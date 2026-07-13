@@ -13,6 +13,13 @@
       "settings.force_enable.deputy": true
     }
   },
+  "enmity": {
+    "card_art": "behavior/resolute.png",
+    "modifiers": {
+      "reputation.other_clans.relation_cap": 7,
+      "clan_creation.starting_clan_relation": [1, 7]
+    }
+  },
   "survival_of_fittest": {
     "card_art": "behavior/survival_of_fittest.png",
     "modifiers": {
