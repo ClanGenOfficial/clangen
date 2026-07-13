@@ -56,10 +56,10 @@ def generate_sprite(
         if age in (CatAge.KITTEN, CatAge.ADOLESCENT):
             # check if we should default to the old young sprite (this is to be kind to modders)
             old_young_sprite = "sick_young0" in sprite_poses
-            if old_young_sprite and age in (CatAge.KITTEN, CatAge.ADOLESCENT):
+            if old_young_sprite:
                 cat_sprite = "sick_young0"
             # otherwise we use the age specific ones
-            if age == CatAge.KITTEN:
+            elif age == CatAge.KITTEN:
                 cat_sprite = sprite_poses["sick_kitten0"]
             elif age == CatAge.ADOLESCENT:
                 cat_sprite = sprite_poses["sick_adolescent0"]
