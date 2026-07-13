@@ -1933,7 +1933,7 @@ def handle_outside_EX(cat):
         if game.clan.game_mode == "classic":
             exp += random.randint(0, 3)
 
-        cat.experience += max(exp * role_modifier, 1)
+        cat.add_experience(max(exp * role_modifier, 1))
 
 
 def handle_apprentice_EX(cat):
@@ -1966,7 +1966,7 @@ def handle_apprentice_EX(cat):
         if game.clan.game_mode == "classic":
             exp += random.randint(0, 3)
 
-        cat.experience += max(exp * mentor_modifier, 1)
+        cat.add_experience(max(exp * mentor_modifier, 1))
 
 
 def invite_new_cats(cat):
