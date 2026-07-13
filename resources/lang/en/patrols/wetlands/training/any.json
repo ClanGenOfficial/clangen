@@ -1245,7 +1245,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "wtlnd_train_moosemyth_storylocked1",
+        "patrol_art": "cat_sprites/wtlnd_train_moosemyth_WrAp",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -1358,7 +1358,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -1402,7 +1402,7 @@
             {
                 "text": "p_l tries to share the ancient history of the safe refuge the swamps offered — but app1 throws back {PRONOUN/app1/poss} head and yowls. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} <i>care</i> what some ancient cat did; {PRONOUN/app1/subject} <i>{VERB/app1/hate/hates}</i> this. Water is awful!",
                 "exp": 0,
-                "art": "gen_train_argue",
+                "art": "cat_sprites/gen_train_argue_WrWrWr",
                 "relationships": [
                     {
                         "cats_to": [
@@ -1442,7 +1442,7 @@
             {
                 "text": "Long ago, rebels were driven from their former Clans and sought a new life, p_l begins. But s_c interrupts {PRONOUN/p_l/object} — so these rebels were too cowardly to fight? The exiles should've attacked and taken over, not surrendered and run.",
                 "exp": 0,
-                "art": "gen_train_argue",
+                "art": "cat_sprites/gen_train_argue_WrWrWr",
                 "can_have_stat": [
                     "app"
                 ],
@@ -1503,7 +1503,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_train_sunset",
+        "patrol_art": "cat_sprites/gen_chatting_WrWr",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -1521,7 +1521,7 @@
             {
                 "text": "Long ago, a leader's son pursued his father's approval and attention by murdering his deputies. But his last victim's mate, a queen nursing the kits of the dead deputy, rose from her nest and struck back with the fury of a mother viper. If the leader's son had been willing to wait for power to come to him, he would've been a great leader. Instead, his ghost lurks in the Dark Forest.",
                 "exp": 30,
-                "art": "gen_bord_story",
+                "art": "cat_sprites/gen_bord_story_WrWrWr",
                 "relationships": [
                     {
                         "cats_to": [
@@ -1582,7 +1582,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_train_ghost",
+        "patrol_art": "cat_sprites/gen_train_ghost_WrWrWr",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -1601,7 +1601,7 @@
             {
                 "text": "In the heartbreaking event that a Clanmate is lost and you're nearby, p_l explains seriously, you cannot leave their body in the wetlands. Their body and spirit will both sink into the murk, the bog will take them, and they'll never be able to find their way to StarClan.",
                 "exp": 30,
-                "art": "scaryghost_INTRO",
+                "art": "halloween/hal_scaryghost_Df",
                 "stat_skill": [
                     "STORY,1"
                 ],
@@ -1642,7 +1642,7 @@
             {
                 "text": "In the heartbreaking event that a Clanmate is lost and you're nearby, p_l explains seriously, you cannot leave their body in the wetlands. Bodies don't decay in the bog. It traps the spirit deep in its murky depths...",
                 "exp": 30,
-                "art": "scaryghost_INTRO",
+                "art": "halloween/hal_scaryghost_Df",
                 "stat_skill": [
                     "LORE,1"
                 ],
@@ -1699,7 +1699,7 @@
             {
                 "text": "p_l starts to talk about undecaying bodies lying in bogs, and that's... a bit beyond what the apprentices can handle, it turns out.",
                 "exp": 0,
-                "art": "gen_scared_cat_app",
+                "art": "cat_sprites/gen_scared_Ap",
                 "relationships": [
                     {
                         "cats_to": [
@@ -1732,7 +1732,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_app_crouching_perplexed",
+        "patrol_art": "cat_sprites/gen_crouchingperplexed_ApAp",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -1751,7 +1751,7 @@
             {
                 "text": "One heartbeat passes. Then another. The light doesn't change. s_c creeps forward, whiskers aquiver. It's a mushroom! A gift from passing spirits, s_c bets, left to light their way through the swamp!",
                 "exp": 30,
-                "art": "gen_happy_cat2",
+                "art": "cat_sprites/gen_happycat_Ap",
                 "stat_skill": [
                     "STORY,0"
                 ],
@@ -1794,7 +1794,7 @@
             {
                 "text": "One heartbeat passes. Then another. The light doesn't change. s_c creeps forward, whiskers aquiver. It's a mushroom! s_c has heard of these; StarClan once left a trail to guide c_n cats out of danger during a disaster!",
                 "exp": 30,
-                "art": "gen_happy_cat2",
+                "art": "cat_sprites/gen_happycat_Ap",
                 "stat_skill": [
                     "LORE,0"
                 ],
@@ -1839,7 +1839,7 @@
             {
                 "text": "It's too weird. app1 refuses to go near the light and almost gets them caught sneaking back into camp with how much {PRONOUN/app1/subject}{VERB/app1/'re/'s} panicking.",
                 "exp": 0,
-                "art": "gen_scared_cat_app",
+                "art": "cat_sprites/gen_scaredcat_Ap",
                 "relationships": [
                     {
                         "cats_to": [

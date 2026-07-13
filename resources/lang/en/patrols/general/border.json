@@ -11,7 +11,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_dog",
+        "patrol_art": "cat_sprites/gen_bord_dog_Wr",
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
@@ -23,7 +23,7 @@
             {
                 "text": "p_l successfully marks c_n's borders.",
                 "exp": 5,
-                "art": "gen_otherclan_mates_date",
+                "art": "cat_sprites/gen_otherclanmatesdate_WrOw",
                 "frequency": 4
             },
             {
@@ -109,7 +109,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_strange",
+        "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
@@ -182,7 +182,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_trackrogue",
+        "patrol_art": "cat_sprites/gen_bord_trackrogue_Wr",
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
@@ -259,7 +259,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_scent_hostile",
+        "patrol_art": "cat_sprites/gen_bord_scenthostile_Wr",
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
@@ -311,7 +311,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "kittybat_INTRO",
+        "patrol_art": "halloween/hal_kittybat_Ln",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -396,7 +396,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "pumpkineyes_INTRO",
+        "patrol_art": "halloween/hal_pumpkineyes_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -620,7 +620,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "scarecrow_INTRO",
+        "patrol_art": "halloween/hal_scarecrow",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -714,7 +714,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_train_argueWW",
+        "patrol_art": "cat_sprites/gen_train_argue_WrWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -736,7 +736,7 @@
             {
                 "text": "At one point during the bickering, the two start to come to a better understanding of each other, resulting in them forging some respect for each other.",
                 "exp": 10,
-                "art": "gen_train_talkingWW",
+                "art": "gen_train_talking_WrWr",
                 "relationships": [
                     {
                         "cats_to": [
@@ -760,7 +760,7 @@
             {
                 "text": "p_l and r_c have been bickering the entire morning. But when p_l spots the shadow of a rogue falling on r_c, {PRONOUN/p_l/subject} {VERB/p_l/react/reacts} without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c with a ferocious snarl. r_c is badly injured but will live thanks to p_l dragging {PRONOUN/r_c/object} back to camp.",
                 "exp": 10,
-                "art": "gen_battle_rogue_warrior",
+                "art": "cat_sprites/gen_battle_RgWr",
                 "injury": [
                     {
                         "cats": [
@@ -856,7 +856,7 @@
             {
                 "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} {VERB/r_c/dislike/dislikes} about s_c. s_c retorts that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, resulting in an impromptu contest to see who can catch the most bugs.",
                 "exp": 10,
-                "art": "fst_hunt_fun3",
+                "art": "cat_sprites/gen_hunt_funrun_WrWr",
                 "can_have_stat": [
                     "p_l"
                 ],
@@ -941,7 +941,7 @@
             {
                 "text": "As the duo are patrolling, they are ambushed by a rogue! r_c is badly injured and succumbs to the wounds when p_l flees, leaving {PRONOUN/r_c/object} behind.",
                 "exp": 0,
-                "art": "gen_dead_cat",
+                "art": "cat_sprites/gen_deadghost_WrSc",
                 "dead_cats": [
                     "r_c"
                 ],
@@ -1048,7 +1048,7 @@
         "season": ["greenleaf"],
         "types": ["border"],
         "tags": [],
-        "patrol_art": "running_two_apps",
+        "patrol_art": "cat_sprites/gen_running_ApAp",
         "min_cats": 4,
         "max_cats": 4,
         "min_max_status": {
@@ -1076,7 +1076,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_soggykitty_happy_app"
+                "art": "cat_sprites/gen_train_soggykittyhappy_Ap"
             },
             {
                 "text": "The splash-fight quickly escalates into an actual tussle. r_c wants to break it up, but p_l holds {PRONOUN/r_c/object} back, noting how app1 is incorporating a tricky move from {PRONOUN/app1/poss} most recent battle-training.",
@@ -1104,7 +1104,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_playbite_2apps"
+                "art": "cat_sprites/gen_train_playbite_ApAp"
             },
             {
                 "text": "app2 has dared to challenge the splash-master, and s_c will not allow such a transgression to go by unpunished. Fortunately, p_l and r_c are in a good mood and allow the apprentices to get out all their energy on the way to the border.",
@@ -1124,7 +1124,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_soggykitty_happy_app"
+                "art": "cat_sprites/gen_train_soggykittyhappy_Ap"
             },
             {
                 "text": "app1 sends a shower of droplets onto s_c's pelt, but {PRONOUN/app1/subject} didn't realize how comfortable s_c is in the water. s_c trots along, water dripping off {PRONOUN/s_c/poss} pelt, perfectly content on the way to the o_c_n border.",
@@ -1144,7 +1144,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_soggykitty_happy_app"
+                "art": "cat_sprites/gen_train_soggykittyhappy_Ap"
             },
             {
                 "text": "Watching app1 and app2 splash each other, s_c shoots a mischievous look at p_l. p_l frowns back, shaking {PRONOUN/p_l/poss} head, but it's too late. <i>Splash!</i> It's a very wet border patrol.",
@@ -1184,7 +1184,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_soggykitty_mad_warrior"
+                "art": "cat_sprites/gen_train_soggykittymad_Wr"
             }
         ],
         "fail_outcomes": [
@@ -1204,7 +1204,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_soggykitty_mad_app"
+                "art": "cat_sprites/gen_train_soggykittymad_Ap"
             },
             {
                 "text": "app2 whines for p_l to make app1 stop splashing {PRONOUN/app2/object}. app1 rolls {PRONOUN/app1/poss} eyes and thinks app2 is acting like a kit.",
@@ -1232,7 +1232,7 @@
                         }
                     }
                 ],
-                "art": "app_cat_looking_up"
+                "art": "cat_sprites/gen_catlookingup_Ap"
             },
             {
                 "text": "app2 has dared to challenge the splash-master, and s_c will not allow such a transgression to go by unpunished. Unfortunately, p_l and r_c aren't in a good mood and scold the apprentices to take this patrol seriously.",
@@ -1272,7 +1272,7 @@
                         }
                     }
                 ],
-                "art": "gen_cat_looking_up3"
+                "art": "cat_sprites/gen_catlookingup_Wr"
             },
             {
                 "text": "s_c isn't going to lose, even in a playful fight, and pounces on app2. Before p_l and r_c can intervene, s_c thrusts app2's head into a rather deep puddle. When app2 resurfaces, {PRONOUN/app2/subject}{VERB/app2/'re/'s} choking and spluttering. s_c is rebuked for taking the game too far.",
@@ -1301,7 +1301,7 @@
                 "history_text": {
                     "death": "m_c died from water in {PRONOUN/m_c/poss} lungs after s_c took a game way too far on patrol."
                 },
-                "art": "gen_train_waterdive_app"
+                "art": "cat_sprites/gen_train_waterdive_Ap"
             }
         ]
     },
@@ -1322,7 +1322,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_twolegplace",
+        "patrol_art": "backgrounds/fst_twolegplace",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -1362,7 +1362,7 @@
                         }
                     }
                 ],
-                "art": "fst_hunt_twolegplace"
+                "art": "backgrounds/fst_twolegplace"
             },
             {
                 "text": "s_c is able to deduce by examining the nearby Twoleg nest that the wood pieces are used to build them. Alarmed, the patrol returns to camp to report their findings.",
@@ -1395,7 +1395,7 @@
                         }
                     }
                 ],
-                "art": "fst_hunt_twolegplace"
+                "art": "backgrounds/fst_twolegplace"
             },
             {
                 "text": "p_l suggests dumping the wood pieces in the nearby pond—the water will surely ruin the wood and prevent the Twolegs from building more nests. The patrol is there until sunhigh dragging the pieces to the pond.",
@@ -1421,7 +1421,7 @@
                         }
                     }
                 ],
-                "art": "mtn_hunt_patrolfollowsstreamtocoldbog"
+                "art": "cat_sprites/mtn_hunt_followsstreamtocoldbog_WrWr"
             },
             {
                 "text": "p_l suggests dumping the wood pieces in the nearby pond to ruin the wood and prevent the Twolegs from building more nests. Before anyone can answer {PRONOUN/p_l/object}, s_c walks over and tugs just the right piece out of place, sending the entire pile tumbling down the slope right into the pond.",
@@ -1470,7 +1470,7 @@
                         }
                     }
                 ],
-                "art": "pln_bord_shortswim1"
+                "art": "backgrounds/pln_shortswim"
             }
         ],
         "fail_outcomes": [
@@ -1508,7 +1508,7 @@
                     "death": "m_c died from the bite of a venomous snake.",
                     "scar": "m_c was scarred by a snake bite."
                 },
-                "art": "gen_scared_cat_warrior"
+                "art": "cat_sprites/gen_scared_Wr"
             },
             {
                 "text": "p_l suggests taking the wood pieces to the nearby pond to waterlog the wood and prevent the Twolegs from building more nests, but the rest of the patrol is reluctant and {PRONOUN/p_l/subject} {VERB/p_l/give/gives} up the idea.",

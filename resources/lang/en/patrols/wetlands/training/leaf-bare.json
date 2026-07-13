@@ -11,7 +11,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_med_vision",
+        "patrol_art": "cat_sprites/gen_med_vision_McWr",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
