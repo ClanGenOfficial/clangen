@@ -116,21 +116,21 @@ class ClanSettingsScreen(Screens):
                 self.checkboxes["deputy"].check()
                 CruelLockedAction()
                 return
-            if event.ui_element == self.checkboxes.get("affair") and not get_config(
+            elif event.ui_element == self.checkboxes.get("affair") and not get_config(
                 "mates.allow_mating"
             ):
                 set_clan_setting("affair", False)
                 self.checkboxes["affair"].uncheck()
                 CruelLockedAction()
                 return
-            if event.ui_element == self.checkboxes.get(
+            elif event.ui_element == self.checkboxes.get(
                 "romantic with former mentor"
             ) and not get_config("mates.allow_mating"):
                 set_clan_setting("romantic with former mentor", False)
                 self.checkboxes["romantic with former mentor"].uncheck()
                 CruelLockedAction()
                 return
-            if event.ui_element == self.checkboxes.get(
+            elif event.ui_element == self.checkboxes.get(
                 "first cousin mates"
             ) and not get_config("mates.allow_mating"):
                 set_clan_setting("first cousin mates", False)
