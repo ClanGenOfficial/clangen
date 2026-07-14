@@ -462,6 +462,14 @@ dev_tools = false
   lineart_color_sc = [47, 51, 64]
   lineart_color_df = [30, 8, 11]
 
+[thought_generation]
+  # the ID of the thoughts to ensure
+  debug_ensure_thought_id = ""
+  # if you want to ensure a specific string from the thought's options, include its index here.
+  # by default the first string will be used (index 0)
+  debug_ensure_thought_index = 0
+
+
 [patrol_generation]
   # modifies success rate based on game mode. higher = more difficult.
   difficulty_modifier = 2.5
