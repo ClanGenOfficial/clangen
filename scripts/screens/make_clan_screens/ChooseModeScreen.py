@@ -1,4 +1,4 @@
-from random import randrange, choice
+from random import randrange, choice, randint
 
 import pygame
 import pygame_gui
@@ -6,6 +6,7 @@ import pygame_gui
 from scripts.cat.cats import create_cat, create_example_cats
 from scripts.cat.enums import CatRank
 from scripts.cat.sprites.load_sprites import sprites
+from scripts.config import get_config
 from scripts.game_structure import image_cache
 from scripts.game_structure.game import Switch, switch_get_value
 from scripts.game_structure.game.settings import game_setting_set
@@ -31,7 +32,17 @@ class ChooseModeScreen(MakeClanScreenBase):
     def screen_switches(self):
         # Reset variables
         if not switch_get_value(Switch.possible_cats):
-            switch_set_value(Switch.possible_cats, create_example_cats())
+            switch_set_value(
+                Switch.possible_cats,
+                create_example_cats(
+                    majority_rank=self.get_config_during_creation(
+                        "clan_creation.majority_rank"
+                    ),
+                    rank_weights=self.get_config_during_creation(
+                        "clan_creation.rank_weights"
+                    ),
+                ),
+            )
 
         super().screen_switches()
         self.elements["previous_step"].disable()
@@ -116,24 +127,30 @@ class ChooseModeScreen(MakeClanScreenBase):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.elements["classic_mode_button"]:
                 self.game_mode = "classic"
+                self.clan_info.cruel_cards.clear()
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.elements["expanded_mode_button"]:
                 self.game_mode = "expanded"
+                self.clan_info.cruel_cards.clear()
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.elements["cruel_season_mode_button"]:
                 self.game_mode = "cruel_season"
                 self.refresh_text_and_buttons()
 
-            # Logic for when to quick-start clan
+            # NEXT STEP
             elif event.ui_element == self.elements["next_step"]:
                 game_setting_set("game_mode", self.game_mode)
                 self.clan_info.game_mode = self.game_mode
+                # Logic for when to quick-start clan
                 if self.elements["random_clan_checkbox"].checked:
                     self.random_quick_start()
                     self.save_clan()
                     self.change_screen(GameScreen.MAKE_CLAN_CLAN_CREATED)
                 else:
-                    self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_NAME)
+                    if self.clan_info.game_mode == "cruel_season":
+                        self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_CARDS)
+                    else:
+                        self.change_screen(GameScreen.MAKE_CLAN_CHOOSE_NAME)
             elif event.ui_element == self.elements["random_clan_checkbox"]:
                 if self.elements["random_clan_checkbox"].checked:
                     self.elements["random_clan_checkbox"].uncheck()
@@ -180,6 +197,19 @@ class ChooseModeScreen(MakeClanScreenBase):
             self.elements["cruel_season_mode_button"].enable()
 
     def random_quick_start(self):
+        # reset in case players went forward, made choices, then came back and quick started
+        game_mode = (
+            self.clan_info.game_mode
+        )  # save game mode, that's the only choice we want to preserve
+        self.clan_info.clear()
+        self.clan_info.game_mode = game_mode
+
+        if self.clan_info.game_mode == "cruel_season":
+            for i in range(randint(3, 8)):
+                random_card = self.random_card()
+                if random_card:
+                    self.clan_info.cruel_cards.append(random_card)
+
         self.clan_info.display_name = self.random_clan_name()
         self.clan_info.biome = self.random_biome_selection()
         self.clan_info.camp_bg = f"camp{randrange(1, 5)}"
@@ -209,5 +239,10 @@ class ChooseModeScreen(MakeClanScreenBase):
                 ]
             )
             members.append(create_cat(rank=random_rank))
+
+        switch_set_value(
+            Switch.possible_cats,
+            switch_get_value(Switch.possible_cats)[: randint(2, 4)],
+        )
 
         self.clan_info.starting_members = members

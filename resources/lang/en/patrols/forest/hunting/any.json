@@ -11,7 +11,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_porcupine",
+        "patrol_art": "animals/animals/animals/fst_porcupinedanger1",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -181,7 +181,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_porcupine",
+        "patrol_art": "animals/animals/animals/fst_porcupinedanger1",
         "min_cats": 1,
         "max_cats": 2,
         "min_max_status": {},
@@ -365,7 +365,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_twolegplace",
+        "patrol_art": "backgrounds/fst_twolegplace",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
@@ -454,7 +454,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_twolegplace",
+        "patrol_art": "backgrounds/fst_twolegplace",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
@@ -556,7 +556,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_squirrelchase",
+        "patrol_art": "animals/fst_squirrelchase",
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
@@ -699,7 +699,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_howl",
+        "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -877,7 +877,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_howl",
+        "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
         "min_cats": 2,
         "max_cats": 4,
         "min_max_status": {
@@ -1031,7 +1031,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_howl",
+        "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1126,7 +1126,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_howl",
+        "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
         "min_cats": 5,
         "max_cats": 6,
         "min_max_status": {
@@ -1280,7 +1280,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_howl",
+        "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
         "min_cats": 2,
         "max_cats": 4,
         "min_max_status": {
@@ -1414,7 +1414,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_howl",
+        "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1509,7 +1509,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_strange",
+        "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -1619,7 +1619,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_strange",
+        "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -1721,7 +1721,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_canopy",
+        "patrol_art": "backgrounds/fst_canopy",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -1810,7 +1810,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_canopy",
+        "patrol_art": "backgrounds/fst_canopy",
         "min_cats": 1,
         "max_cats": 1,
                 "min_max_status": {
@@ -1904,7 +1904,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_canopy",
+        "patrol_art": "backgrounds/fst_canopy",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2115,7 +2115,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_twolegplace",
+        "patrol_art": "backgrounds/fst_twolegplace",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -2274,7 +2274,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_twolegplace",
+        "patrol_art": "backgrounds/fst_twolegplace",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2395,7 +2395,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "gen_hunt_twolegdencatdare",
+        "patrol_art": "cat_sprites/gen_hunt_twolegdencatdare_WrWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -2609,7 +2609,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_gonetwolegtrap",
+        "patrol_art": "cat_sprites/fst_hunt_gonetwolegtrap_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "frequency": 2,
@@ -2703,7 +2703,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_gonetwolegtrap",
+        "patrol_art": "cat_sprites/fst_hunt_gonetwolegtrap_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "frequency": 2,
@@ -2809,7 +2809,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_fun1",
+        "patrol_art": "cat_sprites/gen_hunt_funrun_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -2869,7 +2869,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_fun2",
+        "patrol_art": "cat_sprites/gen_hunt_funrun_Ap",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2925,7 +2925,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "fst_hunt_fun3",
+        "patrol_art": "cat_sprites/gen_hunt_funrun_WrWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -3046,7 +3046,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "fst_hunt_fun4",
+        "patrol_art": "cat_sprites/gen_hunt_funrun_ApAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -3141,7 +3141,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_lillizard",
+        "patrol_art": "cat_sprites/gen_hunt_lizard_Wr",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
@@ -3288,7 +3288,7 @@
             "rom_two_apps",
             "romance"
         ],
-        "patrol_art": "gen_hunt_lillizard",
+        "patrol_art": "cat_sprites/gen_hunt_lizard_Wr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -3387,7 +3387,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_vole",
+        "patrol_art": "animals/fst_vole",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
@@ -3456,7 +3456,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_mouse",
+        "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {
@@ -3510,7 +3510,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_mouse",
+        "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {
@@ -3581,7 +3581,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_rat",
+        "patrol_art": "cat_sprites/gen_hunt_rat_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -3725,7 +3725,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_squirrel",
+        "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
@@ -3774,7 +3774,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_anxious1",
+        "patrol_art": "cat_sprites/gen_anxiouslookup_Wr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -3870,7 +3870,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_gonetwolegtrap",
+        "patrol_art": "cat_sprites/fst_hunt_gonetwolegtrap_Wr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -3941,7 +3941,7 @@
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "fst_hunt_redfox_greenleafscavenge1",
+        "patrol_art": "animals/fst_redfoxscavenge_EXPLICIT",
         "patrol_art_clean": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 6,
@@ -3950,7 +3950,7 @@
             "apprentice": [-1, 2]
         },
         "frequency": 2,
-        "intro_text": "The patrol catches the scent of a fox — but is it red or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
+        "intro_text": "The patrol catches the scent of a fox, but is it red or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -4273,7 +4273,7 @@
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "fst_hunt_foxgray_greenleafscavenge",
+        "patrol_art": "animals/fst_foxgrayscavenge_EXPLICIT",
         "patrol_art_clean": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 6,
@@ -4282,7 +4282,7 @@
             "apprentice": [-1, 2]
         },
         "frequency": 2,
-        "intro_text": "The patrol catches the scent of a fox — but is it red or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
+        "intro_text": "The patrol catches the scent of a fox, but is it red or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 70,
         "success_outcomes": [
@@ -4597,7 +4597,7 @@
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "gen_app_siblings",
+        "patrol_art": "cat_sprites/gen_appsiblings_ApAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -5843,7 +5843,7 @@
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "fst_canopy",
+        "patrol_art": "backgrounds/fst_canopy",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -6166,7 +6166,7 @@
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "fst_canopy",
+        "patrol_art": "backgrounds/fst_canopy",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -6242,7 +6242,7 @@
         "season": ["any"],
         "types": ["hunting"],
         "tags": ["halloween"],
-        "patrol_art": "flatwoods_INTRO",
+        "patrol_art": "halloween/hal_flatwoods",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -6277,7 +6277,7 @@
         "season": ["any"],
         "types": ["hunting"],
         "tags": ["halloween"],
-        "patrol_art": "doverdemon_INTRO",
+        "patrol_art": "halloween/hal_doverdemon",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},

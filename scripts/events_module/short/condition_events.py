@@ -21,6 +21,7 @@ from scripts.conditions import (
 )
 from scripts.config import get_config
 from scripts.event_class import Single_Event
+from scripts.events_module.consequences import check_stolen_vitality
 from scripts.events_module.short.scar_events import Scar_Events
 from scripts.events_module.short.short_event_generation import create_short_event
 from scripts.game_structure import constants
@@ -169,6 +170,8 @@ class Condition_Events:
                 game.clan.leader_lives -= 1
                 # kill and retrieve leader life text
                 text = get_leader_life_notice(cat.name)
+                if extra_text := check_stolen_vitality(cat, 1):
+                    text += " " + extra_text
 
             possible_string_list = Condition_Events.ILLNESS_DEATH_STRINGS["starving"]
             event = random.choice(possible_string_list) + " " + text
@@ -278,7 +281,7 @@ class Condition_Events:
                 if game.clan.game_mode == "classic"
                 else "condition_related.illness_chance"
             )
-            random_number = int(random.random() * get_config(game.clan, path))
+            random_number = int(random.random() * get_config(path))
             if (
                 not cat.dead
                 and not cat.is_ill()
@@ -363,10 +366,8 @@ class Condition_Events:
             else "condition_related.injury_chance"
         )
 
-        injury_chance = get_config(game.clan, path) - (
-            get_config(game.clan, "condition_related.war_injury_modifier")
-            if modify_for_war
-            else 0
+        injury_chance = get_config(path) - (
+            get_config("condition_related.war_injury_modifier") if modify_for_war else 0
         )
 
         random_number = int(random.random() * injury_chance)
@@ -610,6 +611,8 @@ class Condition_Events:
                 # add life loss message
                 if cat.status.is_leader:
                     event = event + " " + get_leader_life_notice(cat.name)
+                    if extra_text := check_stolen_vitality(cat, 1):
+                        event += " " + extra_text
 
                 # add death to history
                 cat.history.add_death(
@@ -744,6 +747,8 @@ class Condition_Events:
                 # add life loss message
                 if cat.status.is_leader:
                     event = event + " " + get_leader_life_notice(cat.name)
+                    if extra_text := check_stolen_vitality(cat, 1):
+                        event += " " + extra_text
 
                 # add death to history
                 cat.history.add_death(condition=injury, death_text=history_text.strip())
@@ -937,6 +942,9 @@ class Condition_Events:
                         "defaults.complications_death_event_leader",
                         condition=translated_condition,
                     )
+                    if extra_text := check_stolen_vitality(cat, 1):
+                        event += " " + extra_text
+
                 event_list.append(event)
 
                 # add to death history

@@ -11,7 +11,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_otherclan_hostile",
+        "patrol_art": "cat_sprites/gen_bord_twocathostile_OwOw",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -238,7 +238,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_gen_newcat_hostile",
+        "patrol_art": "cat_sprites/gen_newcathostile_Ln",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -255,7 +255,7 @@
             {
                 "text": "n_c:0 explains that {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hoping to join c_n in exchange for o_c_n secrets. The patrol is cautious, but n_c:0's exile was controversial, and information can make the difference between life and death. n_c:0 is ultimately brought back to camp.",
                 "exp": 20,
-                "art": "gen_speaking_cat_outsider",
+                "art": "cat_sprites/gen_speakingcat_Ln",
                 "new_cat": [
                     [
                         "backstory:disgraced1,disgraced2,disgraced3"
@@ -299,7 +299,7 @@
             {
                 "text": "It turns out {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} actually innocent. At least that's what n_c:0 feverishly insists, as {PRONOUN/n_c:0/subject} {VERB/n_c:0/ask/asks} to join c_n in exchange for o_c_n secrets. The patrol is unnerved by n_c:0's wild-eyed expression, but it seems like vengeance against o_c_n is {PRONOUN/n_c:0/poss} only motive, and o_c_n is a fierce enemy. n_c:0 is brought back to camp.",
                 "exp": 20,
-                "art": "gen_speaking_cat_outsider",
+                "art": "cat_sprites/gen_speakingcat_Ln",
                 "new_cat": [
                     [
                         "backstory:disgraced1,disgraced2,disgraced3"
@@ -343,7 +343,7 @@
             {
                 "text": "n_c:0 explains that {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hoping to join c_n in exchange for o_c_n secrets. The things n_c:0 did were monstrous, but the patrol is eager to both capitalize on an opportunity for information and spite their hated enemy. With the caveat of a constant guard, n_c:0 is brought back to camp.",
                 "exp": 20,
-                "art": "gen_speaking_cat_outsider",
+                "art": "cat_sprites/gen_speakingcat_Ln",
                 "new_cat": [
                     [
                         "backstory:disgraced1,disgraced3"
@@ -387,7 +387,7 @@
             {
                 "text": "n_c:0 explains that {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hoping to join c_n in exchange for o_c_n secrets. The patrol is appalled: {VERB/n_c:0/do/does} {PRONOUN/n_c:0/subject} really think c_n would let such a monstrous cat into the camp they sleep in, for a little o_c_n hearsay? n_c:0 curses every cat in the patrol as {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} chased from Clan territory.",
                 "exp": 10,
-                "art": "gen_speaking_cat_outsider",
+                "art": "cat_sprites/gen_speakingcat_Ln",
                 "new_cat": [
                     [
                         "meeting",
@@ -482,7 +482,7 @@
                         }
                     }
                 ],
-                "art": "gen_cat_with_kit_loner",
+                "art": "cat_sprites/gen_catwithkit_LnKt",
                 "other_clan_rep": -3,
                 "frequency": 2
             },
@@ -533,7 +533,7 @@
                         }
                     }
                 ],
-                "art": "gen_cat_with_kit_loner",
+                "art": "cat_sprites/gen_catwithkit_LnKt",
                 "other_clan_rep": -3,
                 "frequency": 2
             }
@@ -555,7 +555,7 @@
                 "text": "n_c:0 lunges at sight of the patrol, screaming nonsensically about {PRONOUN/n_c:0/poss} innocence. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/injure/injures} r_c before being torn away and chased off. c_n is quite rattled by the incident, and extra patrols are arranged to watch for this dangerous vagrant.",
                 "exp": 0,
                 "other_clan_rep": 0,
-                "art": "gen_battle_warrior_loner",
+                "art": "cat_sprites/gen_battle_WrLn",
                 "injury": [
                     {
                         "cats": [
@@ -758,7 +758,7 @@
                 "text": "The things n_c:0 did go beyond c_n and o_c_n's rivalry. The patrol is more than happy to sink their claws into this monster of a cat, and only by luck does n_c:0 escape with {PRONOUN/n_c:0/poss} life.",
                 "exp": 15,
                 "other_clan_rep": 2,
-                "art": "gen_battle_warrior_loner",
+                "art": "cat_sprites/gen_battle_WrLn",
                 "new_cat": [
                     [
                         "meeting",
@@ -792,7 +792,7 @@
                 "text": "The things n_c:0 did go beyond c_n and o_c_n's rivalry. The patrol is more than happy to sink their claws into this monster of a cat, and while the intention was merely removal from Clan territory, no one is sad to see {PRONOUN/n_c:0/object} dead.",
                 "exp": 15,
                 "other_clan_rep": 2,
-                "art": "gen_battle_warrior_loner",
+                "art": "cat_sprites/gen_battle_WrLn",
                 "dead_cats": ["n_c:0"],
                 "new_cat": [
                     [
@@ -839,7 +839,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_train_talkingWOCW",
+        "patrol_art": "cat_sprites/gen_train_talking_WrOw",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -923,7 +923,7 @@
                         "age:mate"
                     ]
                 ],
-                "art": "gen_flower_date_warrior_other_clan",
+                "art": "cat_sprites/gen_flowerdate_WrOw",
                 "frequency": 4
             },
             {
@@ -989,7 +989,7 @@
                         "age:mate"
                     ]
                 ],
-                "art": "gen_flower_date_warrior_other_clan",
+                "art": "cat_sprites/gen_flowerdate_WrOw",
                 "frequency": 1
             },
             {
@@ -1057,7 +1057,7 @@
                         "age:mate"
                     ]
                 ],
-                "art": "gen_flower_date_warrior_other_clan",
+                "art": "cat_sprites/gen_flowerdate_WrOw",
                 "frequency": 4
             }
         ],
@@ -1131,11 +1131,11 @@
                         "age:mate"
                     ]
                 ],
-                "art": "gen_flower_date_warrior_other_clan",
+                "art": "cat_sprites/gen_flowerdate_WrOw",
                 "frequency": 1
             },
             {
-                "text": "p_l and n_c:0 spend one last night together — and though p_l tries to convince {PRONOUN/n_c:0/object} that the birdsong is the nightingale and not the lark, n_c:0 knows better. {PRONOUN/n_c:0/subject/CAP} can't bear to live in this fantasy any longer. Though p_l calls after n_c:0, {PRONOUN/n_c:0/subject} {VERB/n_c:0/do/does}n't look back as {PRONOUN/n_c:0/subject} {VERB/n_c:0/flee/flees} into the rosy dawn.",
+                "text": "p_l and n_c:0 spend one last night together, and though p_l tries to convince {PRONOUN/n_c:0/object} that the birdsong is the nightingale and not the lark, n_c:0 knows better. {PRONOUN/n_c:0/subject/CAP} can't bear to live in this fantasy any longer. Though p_l calls after n_c:0, {PRONOUN/n_c:0/subject} {VERB/n_c:0/do/does}n't look back as {PRONOUN/n_c:0/subject} {VERB/n_c:0/flee/flees} into the rosy dawn.",
                 "exp": 5,
                 "other_clan_rep": -1,
                 "injury": [
@@ -1211,7 +1211,7 @@
                         "age:mate"
                     ]
                 ],
-                "art": "gen_flower_date_warrior_other_clan",
+                "art": "cat_sprites/gen_flowerdate_WrOw",
                 "frequency": 1
             },
             {
@@ -1301,7 +1301,7 @@
                         "age:mate"
                     ]
                 ],
-                "art": "gen_battle_warrior_other_clan",
+                "art": "cat_sprites/gen_battle_WrOw",
                 "frequency": 1
             },
             {
@@ -1369,7 +1369,7 @@
                         "age:mate"
                     ]
                 ],
-                "art": "gen_battle_warrior_other_clan",
+                "art": "cat_sprites/gen_battle_WrOw",
                 "frequency": 1
             },
             {
@@ -1460,7 +1460,7 @@
                         "parent:0"
                     ]
                 ],
-                "art": "gen_battle_warrior_other_clan",
+                "art": "cat_sprites/gen_battle_WrOw",
                 "frequency": 4
             }
         ],
@@ -1580,7 +1580,7 @@
                         "clancat"
                     ]
                 ],
-                "art": "gen_battle_warrior_other_clan",
+                "art": "cat_sprites/gen_battle_WrOw",
                 "frequency": 4
             },
             {
@@ -1665,7 +1665,7 @@
                         "age:mate"
                     ]
                 ],
-                "art": "gen_bord_twocat_hostile_warrior_warrior",
+                "art": "cat_sprites/gen_bord_twocathostile_WrWr",
                 "frequency": 4
             }
         ],
@@ -1725,7 +1725,7 @@
                         "clancat"
                     ]
                 ],
-                "art": "gen_battle_warrior_other_clan",
+                "art": "cat_sprites/gen_battle_WrOw",
                 "frequency": 4
             }
         ]
@@ -1742,7 +1742,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_train_argueWW",
+        "patrol_art": "cat_sprites/gen_train_argue_WrWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1767,7 +1767,7 @@
             {
                 "text": "Right in the middle of another argument, the two are attacked along the border by a o_c_n patrol, despite the two hating each other, they fight back to back to fight off the patrol, sending the other patrol fleeing back to their territory.",
                 "exp": 10,
-                "art": "gen_big_fight_warriors_other_clan",
+                "art": "cat_sprites/gen_bigfight_WrWrOw",
                 "relationships": [
                     {
                         "cats_to": [
@@ -1793,7 +1793,7 @@
             {
                 "text": "At one point during the arguing, the two start to come to a better understanding of each other, resulting in them forging some respect for each other.",
                 "exp": 10,
-                "art": "gen_train_talkingWW",
+                "art": "cat_sprites/gen_train_talking_WrWr",
                 "relationships": [
                     {
                         "cats_to": [
@@ -1818,7 +1818,7 @@
             {
                 "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} dislikes about s_c. s_c retorts that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, resulting in an impromptu contest to see who can catch the most bugs.",
                 "exp": 10,
-                "art": "gen_train_talkingWW",
+                "art": "cat_sprites/gen_train_talking_WrWr",
                 "can_have_stat": [
                     "p_l"
                 ],
@@ -1876,7 +1876,7 @@
             {
                 "text": "p_l and r_c had been arguing the entire morning. But when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} the shadow of a rogue falling on r_c, {PRONOUN/p_l/subject} {VERB/p_l/react/reacts} without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c with a ferocious snarl. r_c is badly injured, but will live thanks to p_l dragging {PRONOUN/r_c/object} back to camp.",
                 "exp": 10,
-                "art": "gen_otherclan_ambush",
+                "art": "cat_sprites/gen_ambush_OwWr",
                 "injury": [
                     {
                         "cats": [
@@ -1972,7 +1972,7 @@
             {
                 "text": "In the midst of another argument, p_l swiftly swipes at r_c to shut {PRONOUN/r_c/object} up. r_c hisses, and slashes back. Fur flies as both cats trade blows. The chaotic brawl ends with both of them wounded and a tense silence in the air. When they return to camp, many eyes stare in judgement. The Clan is disappointed in their actions.",
                 "exp": 0,
-                "art": "gen_warrior_infighting",
+                "art": "cat_sprites/gen_ambush_WrWr",
                 "injury": [
                     {
                         "cats": [
@@ -2031,7 +2031,8 @@
             {
                 "text": "As the duo are patrolling, too distracted by their argument, they don't notice the shadow descending on them as they are ambushed by a rogue. r_c is badly injured and succumbs to the wounds when p_l flees, leaving {PRONOUN/r_c/object} behind.",
                 "exp": 0,
-                "art": "gen_dead_cat",
+                "art": "cat_sprites/gen_deadghost_WrSc_EXPLICIT",
+                "art_clean": "cat_sprites/gen_deadghost_WrSc",
                 "dead_cats": [
                     "r_c"
                 ],
@@ -2062,7 +2063,7 @@
             {
                 "text": "As the duo are patrolling, they are ambushed by a o_c_n patrol! p_l is fighting for {PRONOUN/p_l/poss} life, when out of the corner of {PRONOUN/p_l/poss} eye {PRONOUN/p_l/subject} {VERB/p_l/see/sees} r_c fleeing. Outnumbered and overwhelmed, p_l is killed.",
                 "exp": 0,
-                "art": "gen_big_fight_warriors_other_clan",
+                "art": "cat_sprites/gen_bigfight_WrWrOw",
                 "dead_cats": [
                     "p_l"
                 ],
@@ -2183,7 +2184,7 @@
             {
                 "text": "s_c, increasingly irritated by r_c's presence, succumbs to unsettling whispers urging violence. In a moment of fury, s_c snaps, succumbing to the dark whispers and ending r_c's existence.",
                 "exp": 0,
-                "art": "gen_warrior_infighting",
+                "art": "cat_sprites/gen_ambush_WrWr",
                 "can_have_stat": [
                     "p_l"
                 ],
@@ -2216,7 +2217,7 @@
             {
                 "text": "s_c, increasingly irritated by p_l's presence, succumbs to unsettling whispers urging violence.",
                 "exp": 0,
-                "art": "gen_warrior_infighting",
+                "art": "cat_sprites/gen_ambush_WrWr",
                 "can_have_stat": [
                     "r_c"
                 ],
@@ -2249,7 +2250,7 @@
             {
                 "text": "The arguing escalates, attracting the attention of a o_c_n patrol. The rival Clan does not seem impressed by their arguing, and mocks c_n for not even being able to work together.",
                 "exp": 0,
-                "art": "gen_bord_otherclan_allies",
+                "art": "cat_sprites/gen_bord_otherclan_OwOw",
                 "relationships": [
                     {
                         "cats_to": [
@@ -2285,7 +2286,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_otherclan_hostile",
+        "patrol_art": "cat_sprites/gen_bord_twocathostile_OwOw",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -2553,7 +2554,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_otherclan3",
+        "patrol_art": "cat_sprites/gen_bord_otherclanrabbit_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -2946,7 +2947,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_borderherb",
+        "patrol_art": "cat_sprites/gen_med_borderherb_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2956,7 +2957,7 @@
             ]
         },
         "frequency": 2,
-        "intro_text": "p_l pads along, mouth open slightly as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} for any traces of herbs. Oh! {PRONOUN/r_c/subject/CAP} can smell some raspberries nearby — but it seems that they're just over the border.",
+        "intro_text": "p_l pads along, mouth open slightly as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} for any traces of herbs. {PRONOUN/p_l/subject/CAP} {VERB/p_l/scent/scents} some raspberries nearby, but it seems that they're just over the border.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that trespassing isn't worth it in this case.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -2999,7 +3000,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l starts to step over the border but a hiss stops {PRONOUN/p_l/object} in {PRONOUN/p_l/poss} tracks. A o_c_n patrol is running {PRONOUN/p_l/poss} way. As the patrol approaches, {PRONOUN/p_l/subject} {VERB/p_l/blurt/blurts} out that {PRONOUN/p_l/subject}{VERB/r_c/'re/'s} a medicine cat. The warriors either don't hear {PRONOUN/p_l/object} or don't care — they take multiple swipes at {PRONOUN/p_l/object} before {PRONOUN/p_l/subject} can get away.",
+                "text": "p_l starts to step over the border but a hiss stops {PRONOUN/p_l/object} in {PRONOUN/p_l/poss} tracks. A o_c_n patrol is running {PRONOUN/p_l/poss} way. As the patrol approaches, {PRONOUN/p_l/subject} {VERB/p_l/blurt/blurts} out that {PRONOUN/p_l/subject}{VERB/r_c/'re/'s} a medicine cat. The warriors either don't hear {PRONOUN/p_l/object} or don't care. They take multiple swipes at {PRONOUN/p_l/object} before {PRONOUN/p_l/subject} can get away.",
                 "exp": 0,
                 "injury": [
                     {
@@ -3028,7 +3029,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_scent_hostile",
+        "patrol_art": "cat_sprites/gen_bord_scenthostile_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -3150,7 +3151,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_scent_hostile",
+        "patrol_art": "cat_sprites/gen_bord_scenthostile_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -3553,7 +3554,7 @@
                 "min_max_status": {
                     "warrior": [1, 1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp battered and scratched, and immediately apologize to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp battered and scratched, and immediately apologize to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
                 "exp": 0,
                 "injury": [
                     {
@@ -3576,7 +3577,7 @@
                 "min_max_status": {
                     "warrior": [-1, -1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
                 "exp": 0,
                 "injury": [
                     {
@@ -3998,7 +3999,7 @@
                 "min_max_status": {
                     "warrior": [1, 1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp battered and scratched, and immediately apologize to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp battered and scratched, and immediately apologize to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
                 "exp": 0,
                 "injury": [
                     {
@@ -4021,7 +4022,7 @@
                 "min_max_status": {
                     "warrior": [-1, -1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
                 "exp": 0,
                 "injury": [
                     {
@@ -4443,7 +4444,7 @@
                 "min_max_status": {
                     "warrior": [1, 1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp battered and scratched, and immediately apologize to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp battered and scratched, and immediately apologize to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
                 "exp": 0,
                 "injury": [
                     {
@@ -4466,7 +4467,7 @@
                 "min_max_status": {
                     "warrior": [-1, -1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
                 "exp": 0,
                 "injury": [
                     {
@@ -4888,7 +4889,7 @@
                 "min_max_status": {
                     "warrior": [1, 1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp battered and scratched, and immediately apologize to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp battered and scratched, and immediately apologize to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
                 "exp": 0,
                 "injury": [
                     {
@@ -4911,7 +4912,7 @@
                 "min_max_status": {
                     "warrior": [-1, -1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
                 "exp": 0,
                 "injury": [
                     {
@@ -5257,7 +5258,7 @@
                 "min_max_status": {
                     "leader": [-1, -1]
                 },
-                "text": "s_c finds a o_c_n patrol out marking the same border and can't contain {PRONOUN/s_c/poss} hostility. Eventually the other patrol snaps — s_c doesn't make it back to camp. {PRONOUN/s_c/poss/CAP} body is found along the border, and o_c_n boasts about it at the next Gathering.",
+                "text": "s_c finds a o_c_n patrol out marking the same border and can't contain {PRONOUN/s_c/poss} hostility. Eventually the other patrol snaps. s_c doesn't make it back to camp. {PRONOUN/s_c/poss/CAP} body is found along the border, and o_c_n boasts about it at the next Gathering.",
                 "exp": 0,
                 "stat_trait": [
                     "ambitious",
@@ -5387,7 +5388,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_scent_hostile_dislikelocked1",
+        "patrol_art": "cat_sprites/gen_bord_scenthostile_OwOwOw",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -5440,7 +5441,7 @@
                 "frequency": 4
             },
             {
-                "text": "The hatred between them is no secret — r_c has said, in the past, that the world would be better off without p_l in it. But when o_c_n puts that to the test, battling against the border patrol, r_c puts {PRONOUN/r_c/poss} back to p_l like {PRONOUN/r_c/subject} would any of {PRONOUN/r_c/poss} other Clanmates, fighting just as fiercely to protect {PRONOUN/p_l/poss} flank. Maybe p_l is insufferable, but fox-dung if {PRONOUN/r_c/subject}'ll let o_c_n take them!",
+                "text": "The hatred between them is no secret. r_c has said, in the past, that the world would be better off without p_l in it. But when o_c_n puts that to the test, battling against the border patrol, r_c puts {PRONOUN/r_c/poss} back to p_l like {PRONOUN/r_c/subject} would any of {PRONOUN/r_c/poss} other Clanmates, fighting just as fiercely to protect {PRONOUN/p_l/poss} flank. Maybe p_l is insufferable, but fox-dung if {PRONOUN/r_c/subject}'ll let o_c_n take them!",
                 "exp": 50,
                 "relationships": [
                     {
@@ -5465,7 +5466,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c throws {PRONOUN/r_c/self} into battle, determined to throw o_c_n off {PRONOUN/r_c/poss} territory, but as {PRONOUN/r_c/subject} {VERB/r_c/twist and turn/twists and turns} in combat, two warriors from o_c_n surround {PRONOUN/r_c/object}. r_c calls to {PRONOUN/r_c/poss} Clanmate to back them up, but is instead knocked to the ground, pain spreading through the back of {PRONOUN/r_c/object} neck. {PRONOUN/r_c/subject/CAP} struggle for breath, fading rapidly — where was {PRONOUN/r_c/poss} backup, the rest of {PRONOUN/r_c/poss} patrol?",
+                "text": "r_c throws {PRONOUN/r_c/self} into battle, determined to throw o_c_n off {PRONOUN/r_c/poss} territory, but as {PRONOUN/r_c/subject} {VERB/r_c/twist and turn/twists and turns} in combat, two warriors from o_c_n surround {PRONOUN/r_c/object}. r_c calls to {PRONOUN/r_c/poss} Clanmate to back them up, but is instead knocked to the ground, pain spreading through the back of {PRONOUN/r_c/object} neck. {PRONOUN/r_c/subject/CAP} struggle for breath, fading rapidly with no help from p_l.",
                 "exp": 0,
                 "dead_cats": [
                     "r_c"
@@ -5623,7 +5624,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "frequency": 4,
-        "intro_text": "Hmm. The o_c_n scent marks on this area of the border seem a little more faint than usual, especially with such hostility between the two Clans. It could be an opportunity to mark further into o_c_n land — or it could be something to be cautious about.",
+        "intro_text": "The o_c_n scent marks at the border are unusually faint, considering the hostility between the two Clans. It could be an opportunity to mark further into o_c_n land, or it could be something to be cautious about.",
         "decline_text": "Either way, the decision of what to do about the border should be made back at camp, not here. p_l returns home to report it.",
         "chance_of_success": 20,
         "success_outcomes": [
@@ -5642,7 +5643,7 @@
                 "frequency": 4
             },
             {
-                "text": "It's quiet. Too quiet, the high strung s_c decides, backpedaling rapidly — and not a moment too soon. Soundlessly, the thwarted o_c_n patrol drops out of cover, tails lashing furiously as s_c, shivering, digs {PRONOUN/s_c/poss} claws in and runs for home.",
+                "text": "It's quiet. Too quiet, the high strung s_c decides, backpedaling rapidly, and not a moment too soon. Soundlessly, the thwarted o_c_n patrol drops out of cover, tails lashing furiously as s_c, shivering, digs {PRONOUN/s_c/poss} claws in and runs for home.",
                 "exp": 50,
                 "stat_trait": [
                     "calm",
@@ -5668,7 +5669,7 @@
                 "frequency": 4
             },
             {
-                "text": "Starting trouble is s_c's speciality — but this time, trouble was ready for {PRONOUN/s_c/object}, and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} just the sucker who's fallen into someone else's trap. The o_c_n patrol was waiting for some cat to take advantage of the 'weak' section of the border. s_c won't be given the chance to make the same mistake again.",
+                "text": "Starting trouble is s_c's speciality, but this time, trouble was ready for {PRONOUN/s_c/object}, and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} just the sucker who's fallen into someone else's trap. The o_c_n patrol was waiting for some cat to take advantage of the 'weak' section of the border. s_c won't be given the chance to make the same mistake again.",
                 "exp": 0,
                 "stat_trait": [
                     "troublesome",
@@ -5747,7 +5748,7 @@
                 "frequency": 4
             },
             {
-                "text": "It's quiet. Too quiet, the highstrung s_c decides, backpedaling rapidly — and not a moment too soon. Soundlessly, the thwarted o_c_n patrol drops out of cover, their tails lashing furiously. The two patrols, equal in numbers and fury now that the element of surprise is gone, exchange cutting remarks — but no claw blows.",
+                "text": "It's quiet. Too quiet, the high strung s_c decides, backpedaling rapidly, and not a moment too soon. Soundlessly, the thwarted o_c_n patrol drops out of cover, their tails lashing furiously. The two patrols, equal in numbers and fury now that the element of surprise is gone, exchange cutting remarks but no blows.",
                 "exp": 50,
                 "stat_trait": [
                     "calm",
@@ -5953,7 +5954,7 @@
                     "charismatic"
                 ],
                 "can_have_stat": [
-                    "adult"
+                    "p_l"
                 ],
                 "relationships": [
                     {

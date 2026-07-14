@@ -318,7 +318,7 @@ class PatrolScreen(Screens):
             self.open_choose_cats_screen()
 
         self.set_disabled_menu_buttons(["patrols"])
-        self.update_heading_text("general.clan", text_kwargs={"name": game.clan.name})
+        self.update_heading_text("general.clan", text_kwargs={"name": game.clan.prefix})
         self.show_mute_buttons()
         self.show_menu_buttons()
 
@@ -1037,7 +1037,7 @@ class PatrolScreen(Screens):
         if not self.able_cats:
             all_pages = []
         else:
-            all_pages = self.chunks(self.able_cats, 15)
+            all_pages = self.get_list_chunks(self.able_cats, 15)
 
         self.current_page = max(1, min(self.current_page, len(all_pages)))
 

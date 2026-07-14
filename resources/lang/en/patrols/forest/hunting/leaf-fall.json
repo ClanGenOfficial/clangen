@@ -11,7 +11,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_squirrel",
+        "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -265,7 +265,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_leaf-bare_squirrel_treetoptumble",
+        "patrol_art": "cat_sprites/fst_hunt_LB_squirreltreetoptumble_WrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -625,7 +625,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_train_warrior_rainy",
+        "patrol_art": "cat_sprites/gen_train_rainy_Wr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -948,7 +948,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -1124,7 +1124,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_lillizard",
+        "patrol_art": "cat_sprites/gen_hunt_lizard_Wr",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
@@ -1271,7 +1271,7 @@
             "rom_two_apps",
             "romance"
         ],
-        "patrol_art": "gen_hunt_lillizard",
+        "patrol_art": "cat_sprites/gen_hunt_lizard_Wr",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
@@ -1369,7 +1369,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_mouse",
+        "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1431,7 +1431,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_mouse",
+        "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1511,7 +1511,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_mice",
+        "patrol_art": "backgrounds/fst_dirttrail",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1627,7 +1627,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "fst_hunt_mice_ohnotheyrehot",
+        "patrol_art": "cat_sprites/gen_groupwalk_WrWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -1809,7 +1809,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_mice",
+        "patrol_art": "backgrounds/fst_dirttrail",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -1929,7 +1929,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_solo",
+        "patrol_art": "cat_sprites/gen_solo_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2062,7 +2062,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "gen_train_soloapp",
+        "patrol_art": "cat_sprites/gen_train_solo_Ap",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2269,7 +2269,7 @@
         "season": ["leaf-fall"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "gen_hunt_squirrel",
+        "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "frequency": 3,
@@ -2285,7 +2285,7 @@
                 "exp": 30,
                 "frequency": 4,
                 "prey": ["medium"],
-                "art": "gen_happy_cat"
+                "art": "cat_sprites/gen_happycat_Wr"
             },
             {
                 "text": "p_l and r_c murmur theories to each other, then realize the squirrel is almost done \"burying\" nothing. r_c takes advantage of its distraction to catch it.",
@@ -2304,7 +2304,7 @@
                         }
                     }
                 ],
-                "art": "gen_warrior_crouching_perplexed"
+                "art": "cat_sprites/gen_crouchingperplexed_WrWr"
             },
             {
                 "text": "s_c's eyes narrow thoughtfully. This must be related to how squirrels bury nuts for leaf-bare. Perhaps this clever squirrel is trying to mislead other squirrels. Too bad the squirrel is not clever enough to escape p_l's pounce!",
@@ -2324,7 +2324,7 @@
                         }
                     }
                 ],
-                "art": "gen_warrior_crouching"
+                "art": "cat_sprites/gen_crouching_Wr"
             },
             {
                 "text": "s_c explains to the patrol in a low voice how squirrels steal each other's nut caches in leaf-bare. This clever squirrel is trying to throw its rivals off by creating fake caches. p_l is impressed by the squirrel's ingenuity, but not enough to spare it from the fresh-kill pile.",
@@ -2344,7 +2344,7 @@
                         }
                     }
                 ],
-                "art": "gen_speaking_cat_w1"
+                "art": "cat_sprites/gen_speakingcat_Wr"
             },
             {
                 "text": "s_c reasons that the squirrel must be pretending to bury nuts to trick other squirrels. If squirrels can be tricked so easily, c_n might be able to catch more squirrels in leaf-bare by creating more nut caches. After a successful hunt, p_l agrees to help s_c bury some acorns.",
@@ -2364,7 +2364,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_sunset"
+                "art": "cat_sprites/gen_chatting_WrWr"
             },
             {
                 "text": "Only StarClan knows why squirrels do the things they do. s_c is here to hunt, not solve squirrel puzzles. Though s_c makes an impressive number of catches, the squirrel's burial of nothing remains a mystery.",
@@ -2384,7 +2384,7 @@
                         }
                     }
                 ],
-                "art": "gen_hunt_strange"
+                "art": "cat_sprites/gen_hunt_strange_Wr"
             },
             {
                 "min_max_status": {"normal adult": [3, 6]},
@@ -2405,7 +2405,7 @@
                         }
                     }
                 ],
-                "art": "mtn_hunt_kea_leafbare_parentchildapprentice1"
+                "art": "cat_sprites/gen_confused_Wr"
             }
         ],
         "fail_outcomes": [
@@ -2425,7 +2425,7 @@
                         }
                     }
                 ],
-                "art": "gen_cat_looking_up2"
+                "art": "cat_sprites/gen_catlookingup_Wr"
             },
             {
                 "text": "r_c catches that squirrel, but the patrol spends the rest of the afternoon wondering what it was up to, and catch nothing else.",
@@ -2454,7 +2454,7 @@
                         }
                     }
                 ],
-                "art": "gen_warrior_crouching_perplexed"
+                "art": "cat_sprites/gen_crouchingperplexed_WrWr"
             },
             {
                 "text": "s_c bounds up to get a closer look at what the squirrel is doing and inadvertently scares it off. p_l is none too pleased.",
@@ -2474,7 +2474,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueWW"
+                "art": "cat_sprites/gen_train_argue_WrWr"
             },
             {
                 "text": "s_c pleads with the patrol not to hunt this one. {PRONOUN/s_c/subject/CAP} {VERB/s_c/want/wants} to watch it and figure out what it's doing! p_l rolls {PRONOUN/p_l/poss} eyes. They're here to <i>hunt</i>, not study squirrels.",
@@ -2495,7 +2495,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueWW"
+                "art": "cat_sprites/gen_train_argue_WrWr"
             },
             {
                 "min_max_status": {"apprentice": [1, 5]},
@@ -2517,7 +2517,7 @@
                         }
                     }
                 ],
-                "art": "app_cat_looking_up"
+                "art": "cat_sprites/gen_catlookingup_Ap"
             },
             {
                 "text": "s_c reasons that the squirrel must be pretending to bury nuts to trick other squirrels. To help hunting in leaf-bare, s_c suggests that the patrol bury acorns themselves now instead of hunting. p_l rejects the idea, prioritizing hunting in the short-term over potentially baiting squirrels moons from now.",
@@ -2537,7 +2537,7 @@
                         }
                     }
                 ],
-                "art": "gen_cat_looking_up1"
+                "art": "cat_sprites/gen_catlookingup_Wr"
             }
         ]
     },
@@ -2556,7 +2556,7 @@
             "halloween",
             "romance"
         ],
-        "patrol_art": "pipbats_INTRO",
+        "patrol_art": "halloween/hal_pipbats",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
