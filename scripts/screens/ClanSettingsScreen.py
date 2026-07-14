@@ -123,13 +123,6 @@ class ClanSettingsScreen(Screens):
                 self.checkboxes["affair"].uncheck()
                 CruelLockedAction()
                 return
-            if event.ui_element == self.checkboxes.get("affair") and not get_config(
-                "mates.allow_mating"
-            ):
-                set_clan_setting("affair", False)
-                self.checkboxes["affair"].uncheck()
-                CruelLockedAction()
-                return
             if event.ui_element == self.checkboxes.get(
                 "romantic with former mentor"
             ) and not get_config("mates.allow_mating"):
