@@ -567,7 +567,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "bch_hunt_twolegsobject",
+        "patrol_art": "animals/bch_twolegbeach",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -619,7 +619,7 @@
     "season": ["greenleaf"],
     "types": ["hunting"],
     "tags": [],
-    "patrol_art": "bch_hunt_twolegsobject",
+    "patrol_art": "animals/bch_twolegbeach",
     "min_cats": 2,
     "max_cats": 6,
     "min_max_status": {
@@ -667,7 +667,7 @@
                     }
                 }
             ],
-            "art": "fst_hunt_fun3"
+            "art": "cat_sprites/gen_hunt_funrun_WrWr"
         },
         {
             "text": "When the Twolegs leave their white-and-red pelt to run down to the water, p_l gives the signal, and the patrol strikes. p_l knocks over the woven basket, and r_c paws through the Twolegs' trove. The delicious scent was... a huge green fruit? The patrol trades baffled glances. r_c scoops a pawful of red flesh out from the halved fruit and tastes it, {PRONOUN/r_c/poss} eyes growing round with delight. It tastes like meat!",
@@ -706,7 +706,7 @@
                     }
                 }
             ],
-            "art": "gen_happy_cat"
+            "art": "cat_sprites/gen_happycat_Wr"
         },
         {
             "min_max_status": {"normal adult": [3, 6]},
@@ -746,7 +746,7 @@
                     }
                 }
             ],
-            "art": "gen_warrior_crouching_perplexed"
+            "art": "cat_sprites/gen_crouchingperplexed_WrWr"
         },
         {
             "min_max_status": {"normal adult": [2, 2]},
@@ -766,7 +766,7 @@
                     }
                 }
             ],
-            "art": "gen_hunt_heat"
+            "art": "cat_sprites/gen_jolly_Wr"
         },
         {
             "min_max_status": {"normal adult": [3, 6]},
@@ -806,7 +806,7 @@
                     }
                 }
             ],
-            "art": "gen_hunt_heat"
+            "art": "cat_sprites/gen_jolly_Wr"
         },
         {
             "text": "s_c bounces right up to the white-and-red pelt, {PRONOUN/s_c/poss} tail swishing and {PRONOUN/s_c/poss} eyes kit-round and sweet. The Twoleg kits squeal with delight as s_c winds around their legs and <i>mrrow</i>s at them. None of the Twolegs are any the wiser as their feast is slowly picked off, their attention fully focused on s_c.",
@@ -856,7 +856,7 @@
                     }
                 }
             ],
-            "art": "gen_hunt_heat"
+            "art": "cat_sprites/gen_jolly_Wr"
         },
         {
             "min_max_status": {"normal adult": [3, 6]},
@@ -908,7 +908,7 @@
                     }
                 }
             ],
-            "art": "gen_cat_looking_up3"
+            "art": "cat_sprites/gen_catlookingup_Wr"
         }
     ],
     "fail_outcomes": [
@@ -916,13 +916,13 @@
             "text": "Biding their time, the patrol watches as the Twolegs leave their white-and-red pelt to go splash in the water. Then, they strike. p_l knocks over the woven nest so r_c can steal the Twoleg food — but the cats are disappointed to discover fruit, fruit, and more fruit. Why would such powerful animals as Twolegs eat like rodents and birds? The patrol trade confused, irritated looks as they go home empty-pawed.",
             "exp": 0,
             "frequency": 3,
-            "art": "mtn_hunt_kea_leafbare_parentchildapprentice1"
+            "art": "cat_sprites/gen_confused_Wr"
         },
         {
             "text": "Before the patrol can strike, another Twoleg kit trundles past and spots the cats, squealing with glee. p_l shouts the order to retreat, and the cats sprint up the beach into the undergrowth where clumsy Twolegs can't follow.",
             "exp": 0,
             "frequency": 4,
-            "art": "running_two_warriors"
+            "art": "cat_sprites/gen_running_WrWr"
         },
         {
             "text": "When the Twolegs leave their white-and-red pelt to run down to the water, p_l gives the signal, and the patrol strikes. They sprint down to the pelt and snatch up whatever they can, then retreat behind the long grass with their haul. r_c dabs {PRONOUN/r_c/poss} paw on a strange brown bar of something that smells faintly bitter, then leans down for a nibble. Back at the camp, r_c feels the consequences of tasting mysterious Twoleg food.",
@@ -938,7 +938,7 @@
                     ]
                 }
             ],
-            "art": "gen_warrior_crouching"
+            "art": "cat_sprites/gen_crouching_Wr"
         },
         {
             "text": "p_l suggests that s_c distract them, and though s_c looks worried, {PRONOUN/s_c/subject} {VERB/s_c/agree/agrees}. But when a Twoleg kit squeals at the sight of s_c and runs over, hairless paws outstretched, s_c spooks and sprints away. p_l forgoes stealing any of the Twolegs' food in favor of chasing after {PRONOUN/p_l/poss} Clanmate.",
@@ -958,7 +958,7 @@
                     }   
                 }
             ],
-            "art": "running_warrior"
+            "art": "cat_sprites/gen_running_Wr"
         },
         {
             "text": "p_l suggests that s_c distract them. Though s_c agrees, as soon as a Twoleg kit spots {PRONOUN/s_c/object} and comes over with a squeal of delight, s_c's fur bushes up and {PRONOUN/s_c/subject} {VERB/s_c/hiss/hisses}. The Twoleg kit is undeterred, reaching for {PRONOUN/s_c/object} with a smooth paw, and s_c swipes. p_l didn't have <i>that</i> kind of distraction in mind and yowls for the patrol to retreat.",
@@ -977,7 +977,7 @@
                     }
                 }
             ],
-            "art": "gen_angry_cat_warrior"
+            "art": "cat_sprites/gen_angrycat_Wr"
         },
         {
             "text": "p_l suggests that s_c distract them. Though s_c agrees, as soon as a Twoleg kit spots {PRONOUN/s_c/object} and comes over with a squeal of delight, s_c's fur bushes up and {PRONOUN/s_c/subject} {VERB/s_c/take/takes} a swipe. One adult Twoleg lets out a deep cry of anger and runs over to their wailing Twoleg kit. s_c stands {PRONOUN/s_c/poss} ground, but the adult Twoleg grasps {PRONOUN/s_c/object} by the scruff and throws {PRONOUN/s_c/object} away from their kit. s_c lands heavily.",
@@ -994,7 +994,7 @@
                     ]
                 }
             ],
-            "art": "gen_angry_cat_warrior"
+            "art": "cat_sprites/gen_angrycat_Wr"
         },
         {
             "text": "The patrol has arrived too late — the Twolegs pack their food back into the woven nest and gather up their pelt. s_c follows the Twolegs back to their monster, ignoring p_l's order to return to camp. When its belly opens so the Twolegs can place the woven nest in it, s_c leaps into the monster after it! The belly snaps shut, and the patrol watches in horror as the monster takes off with their trapped Clanmate.",
@@ -1002,7 +1002,7 @@
             "frequency": 1,
             "stat_trait": ["fierce", "arrogant", "ambitious", "competitive", "rebellious", "confident", "adventurous", "daring", "bold", "shameless", "troublesome"],
             "lost_cats": ["s_c"],
-            "art": "gen_bord_rescue"
+            "art": "cat_sprites/gen_bord_rescue_Wr"
         },
         {
             "text": "When r_c suggests trying to distract the Twolegs and steal their food, s_c scolds {PRONOUN/r_c/object}. The presence of Twolegs on their territory is a threat, not an opportunity. They should return to camp at once and report this.",
@@ -1023,7 +1023,7 @@
                     }
                 }
             ],
-            "art": "gen_bord_rescue"
+            "art": "cat_sprites/gen_bord_rescue_Wr"
         }
     ]
 }

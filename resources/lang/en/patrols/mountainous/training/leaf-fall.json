@@ -11,7 +11,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "mtn_train_towhee",
+        "patrol_art": "backgrounds/mtn_valleystream",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -234,7 +234,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "mtn_train_towhee",
+        "patrol_art": "backgrounds/mtn_valleystream",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {

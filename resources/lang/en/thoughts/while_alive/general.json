@@ -1391,5 +1391,78 @@
                 ]
             }
         }
-    }
+    },
+    {
+    "id": "gen_parent_gen",
+    "strings": [
+        "Wonders if {PRONOUN/m_c/subject} {VERB/m_c/are/is} a good parent",
+        "Worries about r_c's health",
+        "Worries about {PRONOUN/m_c/poss} kit's future",
+        "Worries {PRONOUN/m_c/subject} {VERB/m_c/are/is} a bad parent",
+        "Hopes StarClan watches over r_c"
+    ],
+    "involved_cats": {
+        "m_c": {},
+        "r_c": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": false,
+                "constraints": ["parent/child"]
+            }
+        ]
+},
+    {
+    "id": "gen_parent_adultkit",
+    "strings": [
+        "Misses when r_c was young",
+        "Is so proud of r_c",
+        "Is concerned about r_c's life choices",
+        "Hopes r_c know they're loved",
+        "Wishes {PRONOUN/m_c/subject} had been more patient with r_c",
+        "Wishes r_c took better care of {PRONOUN/r_c/self}",
+        "Wishes r_c would share tongues with {PRONOUN/m_c/object} more",
+        "Misses when r_c needed {PRONOUN/m_c/object}",
+        "Can't believe how quickly r_c grew up"
+    ],
+    "involved_cats": {
+        "m_c": {},
+        "r_c": {
+            "age": ["-kitten", "-newborn"]
+        }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": false,
+                "constraints": ["parent/child"]
+            }
+        ]
+},
+    {
+    "id": "gen_parent_youngkit",
+    "strings": [
+        "Is exhausted chasing after r_c",
+        "Is snuggled in {PRONOUN/m_c/poss} nest with {PRONOUN/m_c/poss} litter",
+        "Grooms r_c while {PRONOUN/r_c/subject} squeak complaints",
+        "Doesn't want r_c to grow up and face the dangers of the world"
+    ],
+    "involved_cats": {
+        "m_c": {},
+        "r_c": {
+            "age": ["newborn", "kitten"]
+        }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": false,
+                "constraints": ["parent/child"]
+            }
+        ]
+}
 ]

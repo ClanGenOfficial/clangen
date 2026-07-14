@@ -1469,7 +1469,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -1512,7 +1512,7 @@
             {
                 "text": "r_c hisses at p_l to just shut up, for once in {PRONOUN/p_l/poss} life, just <i>shut up</i>, and p_l takes a careful step backwards, disengaging with a glare.",
                 "exp": 0,
-                "art": "gen_train_argue",
+                "art": "cat_sprites/gen_train_argue_WrWrWr",
                 "relationships": [
                     {
                         "cats_to": [
@@ -1552,7 +1552,7 @@
             {
                 "text": "r_c has no time to be placated by <i>stories</i>. {PRONOUN/r_c/subject/CAP} {VERB/r_c/shove/shoves} to the front of the line, meeting p_l's gaze as {PRONOUN/r_c/subject} defiantly {VERB/r_c/drink/drinks} {PRONOUN/r_c/poss} fill.",
                 "exp": 0,
-                "art": "gen_train_argue",
+                "art": "cat_sprites/gen_train_argue_WrWrWr",
                 "can_have_stat": [
                     "not_pl"
                 ],
@@ -1613,7 +1613,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -1657,7 +1657,7 @@
             {
                 "text": "app1 and app2 are off like a bolt before p_l can settle them, off in a fruitless pursuit of fast, alert, clever prey. p_l tries not to be smug when the apprentices slouch back, exhausted and prizeless, but it is a little funny.",
                 "exp": 0,
-                "art": "gen_train_argue",
+                "art": "cat_sprites/gen_train_argue_WrWrWr",
                 "relationships": [
                     {
                         "cats_to": [
@@ -1736,7 +1736,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -1826,7 +1826,7 @@
             {
                 "text": "p_l spins a chilling tale to the patrol, rumors of cats going missing in the frozen desert nights, or corpses found drained of blood, of a foul, reptilian horror... too horrific, in fact. No one needed quite <i>that</i> much gory detail, thanks p_l.",
                 "exp": 0,
-                "art": "gen_train_argue",
+                "art": "cat_sprites/gen_train_argue_WrWrWr",
                 "relationships": [
                     {
                         "cats_to": [
@@ -1861,7 +1861,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -1942,7 +1942,7 @@
             {
                 "text": "app1 is too impatient for this lesson, and runs off to try to hunt. The rest of the patrol wait, mildly irritated, until they hear a yelp. app1 has gotten stuck upside down in a crevice a lizard escaped into, and lifting {PRONOUN/app1/object} out takes the rest of the morning.",
                 "exp": 0,
-                "art": "bch_train_stuck",
+                "art": "cat_sprites/bch_train_stuck_Ap",
                 "relationships": [
                     {
                         "cats_to": [
@@ -1977,7 +1977,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -1996,7 +1996,7 @@
             {
                 "text": "It reminds s_c of an old tale. Khepri the sun beetle moves the sun across the sky, hiding it away at night in his burrow and being reborn in the morning to push it along its tracks in the sky.",
                 "exp": 30,
-                "art": "gen_bord_story",
+                "art": "cat_sprites/gen_bord_story_WrWrWr",
                 "stat_skill": [
                     "STORY,1"
                 ],
@@ -2027,7 +2027,7 @@
             {
                 "text": "Scarabs bring luck, s_c says confidently. In times past, during period of great danger, desert cats would bring a scarab with them for luck, preferably a blue one.",
                 "exp": 30,
-                "art": "gen_bord_story",
+                "art": "cat_sprites/gen_bord_story_WrWrWr",
                 "stat_skill": [
                     "LORE,1"
                 ],
@@ -2060,7 +2060,7 @@
             {
                 "text": "app1 rolls {PRONOUN/app1/poss} eyes. p_l is talking about dung beetles. Khepri is a <i>dung beetle</i>. app1 doesn't want to hear about poop scarabs.",
                 "exp": 0,
-                "art": "gen_train_argue",
+                "art": "cat_sprites/gen_train_argue_WrWrWr",
                 "relationships": [
                     {
                         "cats_to": [
@@ -2112,7 +2112,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -2131,7 +2131,7 @@
             {
                 "text": "They're not <i>bone-bone</i>, p_l explains, tracing a claw across the protruding skull. And they don't look like anything that currently walks the badlands. They're rock, but... bone-shaped? p_l thinks these were a monster, one cursed by StarClan to be entombed by the rock until they became it.",
                 "exp": 30,
-                "art": "gen_warrior_crouching_perplexed",
+                "art": "cat_sprites/gen_crouchingperplexed_WrWr",
                 "stat_skill": [
                     "STORY,1"
                 ],
@@ -2162,7 +2162,7 @@
             {
                 "text": "Look at all the layers of rock above these, p_l whispers. How much time have these bones spent buried, only to be weathered out by water? What was this animal, nothing like a cat, what world did it live in, what wonders did it see? {PRONOUN/p_l/subject/CAP} {VERB/p_l/place/places} a paw on the skull's snout, staring into long dead eyes.",
                 "exp": 30,
-                "art": "gen_warrior_crouching_perplexed",
+                "art": "cat_sprites/gen_crouchingperplexed_WrWr",
                 "stat_skill": [
                     "LORE,1"
                 ],
@@ -2195,7 +2195,7 @@
             {
                 "text": "No one else is interested in the strange rock-bones, and crestfallen, p_l tucks {PRONOUN/p_l/poss} tail as the patrol trudges out of the canyon.",
                 "exp": 0,
-                "art": "gen_train_argue",
+                "art": "cat_sprites/gen_train_argue_WrWrWr",
                 "relationships": [
                     {
                         "cats_to": [

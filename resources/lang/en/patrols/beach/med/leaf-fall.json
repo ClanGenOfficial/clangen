@@ -5,7 +5,7 @@
     "season": ["leaf-fall"],
     "types": ["herb_gathering"],
     "tags": [],
-    "patrol_art": "med_cat_looking_up",
+    "patrol_art": "cat_sprites/gen_med_catlookingup_Mc",
     "min_cats": 1,
     "max_cats": 1,
     "min_max_status": {
@@ -38,7 +38,7 @@
     "exp": 20,
     "frequency": 4,
     "herbs": ["ragwort"],
-    "art": "running_med2"
+    "art": "cat_sprites/gen_med_running2_Mc"
     }
     ],
     "fail_outcomes": [
@@ -46,7 +46,7 @@
     "text": "It should be here, its bright yellow flowers like little suns brightening the gloom. But p_l can't seem to find any ragwort, and the gusts of wind whip away any scent {PRONOUN/p_l/subject} could follow. Lightning flashes behind {PRONOUN/p_l/object} as {PRONOUN/p_l/subject} {VERB/p_l/sprint/sprints} for camp, returning half-drenched and ragwortless.",
     "exp": 0,
     "frequency": 4,
-    "art": "gen_med_rainygathering"
+    "art": "cat_sprites/gen_med_rainygathering_Mc"
     }
     ]
 },
@@ -57,7 +57,7 @@
     "season": ["leaf-fall"],
     "types": ["herb_gathering"],
     "tags": [],
-    "patrol_art": "gen_train_talkingAM",
+    "patrol_art": "cat_sprites/gen_med_talking_ApMc",
     "min_cats": 2,
     "max_cats": 2,
     "min_max_status": {
@@ -102,7 +102,7 @@
     }
     }
     ],
-    "art": "running_med_app"
+    "art": "cat_sprites/gen_med_running_McApmed_app"
     }
     ],
     "fail_outcomes": [
@@ -110,7 +110,7 @@
     "text": "It should be here, its bright yellow flowers like little suns brightening the gloom. But p_l can't seem to find any ragwort, and the gusts of wind whip away any scent {PRONOUN/p_l/subject} could follow. Thunder growls, and the first scattering of raindrops hits app1's coat. p_l's eyes widen. Lightning flashes behind the two cats as they sprint for camp, returning half-drenched and ragwortless.",
     "exp": 0,
     "frequency": 4,
-    "art": "gen_med_rainygathering"
+    "art": "cat_sprites/gen_med_rainygathering_Mc"
     }
     ]
 },
@@ -121,7 +121,7 @@
     "season": ["leaf-fall"],
     "types": ["herb_gathering"],
     "tags": [],
-    "patrol_art": "gen_bord_flashflood",
+    "patrol_art": "cat_sprites/gen_bord_flashflood_Wr",
     "min_cats": 2,
     "max_cats": 2,
     "min_max_status": {
@@ -164,7 +164,7 @@
     }
     }
     ],
-    "art": "running_med_warrior"
+    "art": "cat_sprites/gen_med_running_McWr"
     }
     ],
     "fail_outcomes": [
@@ -172,7 +172,7 @@
     "text": "It should be here, its bright yellow flowers like little suns brightening the gloom. But p_l can't seem to find any ragwort, and the gusts of wind whip away any scent {PRONOUN/p_l/subject} could follow. Lightning flashes behind the two of them as they sprint for camp, returning half-drenched and ragwortless.",
     "exp": 0,
     "frequency": 4,
-    "art": "gen_med_rainygathering"
+    "art": "cat_sprites/gen_med_rainygathering_Mc"
     }
     ]
 }

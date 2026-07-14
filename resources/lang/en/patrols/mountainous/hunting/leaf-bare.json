@@ -231,7 +231,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "mtn_hunt_leafbare_eagleice",
+        "patrol_art": "animals/mtn_eaglefish",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -1153,7 +1153,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_leaf-bare_squirrel_treetoptumble",
+        "patrol_art": "cat_sprites/fst_hunt_LB_squirreltreetoptumble_WrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -2278,7 +2278,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "mtn_hunt_kea_leafbare_parentchildapprentice1",
+        "patrol_art": "cat_sprites/gen_confused_Wr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {

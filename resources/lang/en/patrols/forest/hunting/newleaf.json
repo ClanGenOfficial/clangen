@@ -265,7 +265,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_gen_squirrel_treetoptumble",
+        "patrol_art": "cat_sprites/fst_hunt_gen_squirreltreetoptumble_WrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -625,7 +625,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_squirrel",
+        "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
@@ -674,7 +674,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_train_warrior_rainy",
+        "patrol_art": "cat_sprites/gen_train_rainy_Wr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -841,7 +841,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_canopy",
+        "patrol_art": "backgrounds/fst_canopy",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -998,7 +998,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_canopy",
+        "patrol_art": "backgrounds/fst_canopy",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1095,7 +1095,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -1271,7 +1271,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_lillizard",
+        "patrol_art": "cat_sprites/gen_hunt_lizard_Wr",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
@@ -1418,7 +1418,7 @@
             "rom_two_apps",
             "romance"
         ],
-        "patrol_art": "gen_hunt_lillizard",
+        "patrol_art": "cat_sprites/gen_hunt_lizard_Wr",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
@@ -1516,7 +1516,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_mouse",
+        "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1578,7 +1578,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_mouse",
+        "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1658,7 +1658,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_mice",
+        "patrol_art": "backgrounds/fst_dirttrail",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1774,7 +1774,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "fst_hunt_mice_ohnotheyrehot",
+        "patrol_art": "cat_sprites/gen_groupwalk_WrWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -1956,7 +1956,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_mice",
+        "patrol_art": "backgrounds/fst_dirttrail",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -2076,7 +2076,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_train_solo",
+        "patrol_art": "cat_sprites/gen_train_solo_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2185,7 +2185,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "gen_train_soloapp",
+        "patrol_art": "cat_sprites/gen_train_solo_Ap",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2305,7 +2305,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_eggs_newleaf1",
+        "patrol_art": "cat_sprites/fst_hunt_NL_eggs_ApAp",
         "min_cats": 4,
         "max_cats": 4,
         "min_max_status": {
@@ -2485,7 +2485,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_eggs_newleaf1",
+        "patrol_art": "cat_sprites/fst_hunt_NL_eggs_ApAp",
         "min_cats": 6,
         "max_cats": 6,
         "min_max_status": {
@@ -2666,7 +2666,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_canopy",
+        "patrol_art": "backgrounds/fst_canopy",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2928,7 +2928,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_eggs_newleaf1",
+        "patrol_art": "cat_sprites/fst_hunt_NL_eggs_ApAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {

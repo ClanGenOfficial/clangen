@@ -1,7 +1,7 @@
 # Relationship Events
 
 !!! warning "Under Development"
-    Relationship events are in the midst of being reformatted to work with the below documentation. Group events are currently the only category that matches this documentation.
+    Relationship events are in the midst of being reformatted to work with the below documentation. Group events and Normal interactions are currently the only categories that match this documentation.
 
 
 Relationship events are events that occur each timeskip that are focused entirely on influencing the relationships between certain cats. 
@@ -31,9 +31,11 @@ Within this folder are 3 folders:
 
 Within `normal_interactions` and `welcome_interactions` are folders for each relationship value: `comfort`, `like`, `respect`, `romance`, `trust`. This value will be the "main" value affected by the events inside that folder.
 
-There's one more layer of folders after this one. These dictate the strength of the effect on the "main" value: `low`, `mid`, or `high`.
+There's one more layer of folders after this one. These dictate the strength of the effect on the "main" value: `low`, `medium`, or `high`.
 
 From there, each folder contains a `negative.json` and `positive.json`. Events the decrease the "main" value will go in `negative.json` and events that increase the "main" value will go into `positive.json`.
+
+Altogether this might look like `normal_interations/comfort/medium/negative.json`.
 
 `group_interactions` is unique. It skips the first layer of folders dictating relationship value as its nature in affecting many relationships at once means determining a "main" value is difficult. Instead, consider how large of a relationship change is being made and whether it's largely positive or negative.
 
