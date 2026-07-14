@@ -814,6 +814,9 @@ dev_tools = false
     # herb bonus applied when cats should gather a boosted number of herbs
     general_amount_bonus = 2
 
+    # the amount of herbs a single cat can carry in a patrol - CLEVER quantity mod will apply
+    general_patrol_quantity_per_cat = 6
+
     # adjust weights for finding [1 herb type, 2 herb types, 3 herb types] for each season
     [clan_resources.herbs.forest]
       newleaf = [2, 3, 2]
