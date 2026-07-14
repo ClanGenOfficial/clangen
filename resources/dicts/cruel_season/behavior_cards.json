@@ -129,7 +129,8 @@
   "pride_and_joy": {
     "card_art": "behavior/pride_and_joy.png",
     "modifiers": {
-      "placeholder": true
+      "settings.force_enable.deputy": true,
+      "placeholder.only_leader_kits.deputy": true
     }
   }
 }
