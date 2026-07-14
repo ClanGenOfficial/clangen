@@ -301,16 +301,6 @@
             "When r_c learns of m_c's death, {PRONOUN/r_c/subject} lets out a loud wail and drops to the ground. In this moment, nothing matters but the raw pain of losing m_c."
         ]
     },
-    "sneaky": {
-        "body": [
-            "r_c slinks away from m_c's vigil early to look at the stars in solitude, looking for answers to the pain.",
-            "r_c hides in {PRONOUN/r_c/poss} nest after m_c's vigil, not wanting to be seen in such a vulnerable state."
-        ],
-        "no_body": [
-            "r_c slinks away from m_c's vigil early to look at the stars in solitude, looking for answers to the pain.",
-            "r_c hides in {PRONOUN/r_c/poss} nest after m_c's vigil, not wanting to be seen in such a vulnerable state."
-        ]
-    },
     "strange": {
         "body": [
             "r_c laughs softly through tears, thinking of all the good times and fun {PRONOUN/r_c/subject} had with m_c, knowing m_c wouldn't want {PRONOUN/r_c/object} to stay sad forever.",

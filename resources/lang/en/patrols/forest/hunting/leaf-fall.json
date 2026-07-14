@@ -2461,7 +2461,8 @@
                 "exp": 0,
                 "frequency": 3,
                 "can_have_stat": ["r_c"],
-                "stat_trait": ["-calm", "-careful", "-wise", "-thoughtful", "-sneaky", "-cunning"],
+                "stat_skill": ["-STEALTH,1"],
+                "stat_trait": ["-calm", "-careful", "-wise", "-thoughtful", "-cunning"],
                 "relationships": [
                     {
                         "cats_from": ["patrol"],
