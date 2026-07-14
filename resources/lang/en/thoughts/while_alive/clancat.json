@@ -2668,6 +2668,74 @@
         }
     },
     {
+        "id": "stealth0_skill_gen",
+        "strings": [
+            "Was scolded for sneaking away",
+            "Was caught lying to r_c",
+            "Practices walking silently over dead leaves",
+            "Took an extra piece of fresh-kill from the pile without anyone noticing",
+            "Sits quietly on the far side of camp",
+            "Startled r_c by accidentally sneaking up on {PRONOUN/r_c/object}",
+            "Is trying to find the smallest hiding spot in camp",
+            "Is asking cats to play hide and seek"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "kitten",
+                    "adolescent"
+                ],
+                "stat": {
+                    "skill": [
+                        "STEALTH,0"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "stealth_skill_gen",
+        "strings": [
+            "Startled r_c by accidentally sneaking up on {PRONOUN/r_c/object}",
+            "Took an extra piece of fresh-kill from the pile without anyone noticing",
+            "Sits quietly on the far side of camp",
+            "Smells like {PRONOUN/m_c/subject} may have rolled in catmint recently",
+            "Is currently eavesdropping on two Clanmates, ears pricked",
+            "Is whispering with a fellow Clanmate at the edges of camp",
+            "Left camp without a word to anyone",
+            "Is startling cats by appearing suddenly",
+            "Hasn't been seen in a while",
+            "Obscures {PRONOUN/m_c/poss} scent trail as {PRONOUN/m_c/subject} {VERB/m_c/leave/leaves} camp",
+            "Practices walking silently over dead leaves",
+            "Lies easily and confidently to r_c",
+            "Rolls around in wild garlic to mask {PRONOUN/m_c/poss} scent"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "STEALTH,1"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "stealth3_skill_gen",
+        "strings": [
+            "Knows that even the most paranoid rabbit would be no match for {PRONOUN/m_c/object}"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "STEALTH,3"
+                    ]
+                }
+            }
+        }
+    },
+    {
         "id": "speaker_skill_gen",
         "strings": [
             "Uses a word that r_c has never heard of",

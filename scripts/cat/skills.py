@@ -34,6 +34,12 @@ class SkillPath(Enum):
         "talented swimmer",
         "fish-like swimmer",
     )
+    STEALTH = (
+        "hard to find",
+        "good at hiding",
+        "very sneaky",
+        "quiet as a phantom"
+    )
     SPEAKER = (
         "confident with words",
         "good speaker",
@@ -160,6 +166,7 @@ class Skill:
         SkillPath.RUNNER: "running",
         SkillPath.CLIMBER: "climbing",
         SkillPath.SWIMMER: "swimming",
+        SkillPath.STEALTH: "stealth",
         SkillPath.SPEAKER: "speaking",
         SkillPath.MEDIATOR: "mediating",
         SkillPath.CLEVER: "clever",
@@ -310,6 +317,7 @@ class CatSkills:
         SkillPath.RUNNER: SkillTypeFlag.AGILE,
         SkillPath.CLIMBER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE,
         SkillPath.SWIMMER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE,
+        SkillPath.STEALTH: SkillTypeFlag.AGILE | SkillTypeFlag.SOCIAL | SkillTypeFlag.SMART,
         SkillPath.SPEAKER: SkillTypeFlag.SOCIAL | SkillTypeFlag.SMART,
         SkillPath.MEDIATOR: SkillTypeFlag.SMART | SkillTypeFlag.SOCIAL,
         SkillPath.CLEVER: SkillTypeFlag.SMART,
