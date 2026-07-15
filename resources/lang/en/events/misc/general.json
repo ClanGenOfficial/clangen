@@ -14268,6 +14268,53 @@
             ]
     },
     {
+        "event_id": "gen_misc_failedmurderriver1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["failed_murder"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "r_c falls into the river. m_c helps rescue {PRONOUN/r_c/object}, but r_c swears {PRONOUN/r_c/subject} {VERB/r_c/were/was} pushed in.",
+        "m_c":
+        {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "-kitten"
+            ]
+        },
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["water in their lungs"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["r_c"],
+                "death": ["r_c died after being pushed in the river and inhaling too much water."]
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["trust"],
+                "amount": -20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from thinks cat_to pushed {PRONOUN/cat_from/object} into the river and pretended to save {PRONOUN/cat_from/object}."
+                }
+            }
+            ]
+    },
+    {
     "event_id": "gen_misc_hitmanfailedmurder1",
     "location": ["any"],
     "season": ["any"],
