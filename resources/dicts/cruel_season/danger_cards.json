@@ -1,10 +1,4 @@
 {
-  "forsaken": {
-    "card_art": "danger/forsaken.png",
-    "modifiers": {
-      "death_related.max_leader_lives": 1
-    }
-  },
   "for_the_throne": {
     "card_art": "danger/for_the_throne.png",
     "modifiers": {
