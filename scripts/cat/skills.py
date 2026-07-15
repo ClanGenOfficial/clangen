@@ -34,7 +34,7 @@ class SkillPath(Enum):
         "talented swimmer",
         "fish-like swimmer",
     )
-    STEALTH = ("hard to find", "good at hiding", "very sneaky", "quiet as a phantom")
+    STEALTH = ("hide and seek champ", "sneaky", "very stealthy", "one with shadows")
     SPEAKER = (
         "confident with words",
         "good speaker",
