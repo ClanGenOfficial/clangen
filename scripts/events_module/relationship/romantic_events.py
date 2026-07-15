@@ -1,5 +1,6 @@
 import random
 from random import choice
+from typing import Literal
 
 import i18n
 
@@ -10,7 +11,10 @@ from scripts.config import get_config
 from scripts.event_class import Single_Event
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.events_module.text_adjust import event_text_adjust
+from scripts.events_module.text_adjust import (
+    event_text_adjust,
+    relationship_text_adjust,
+)
 from scripts.events_module.consequences import change_relationship_values
 from scripts.events_module.event_filters import (
     get_highest_romantic_relation,
@@ -30,7 +34,10 @@ POLY_MATE_DICTS = {}
 
 
 def handle_mates_and_breakup(cat: Cat):
-    """Checks if the given cat should move on from prior mates, breakup current ones, or take on a new one."""
+    """
+    Checks if the given cat should move on from prior mates, breakup current ones, or take on a new one.
+    :param cat: Cat to check
+    """
     _rebuild_dicts()
 
     # check setting first
@@ -65,7 +72,7 @@ def _handle_moving_on(cat: Cat, disable_random: bool = False):
         mate: Cat = Cat.fetch_cat(mate_id)
         # check the mate's setting
         if mate.no_mates:
-            return
+            continue
 
         # check if the mate has been gone for at least 4 moons
         dead_or_gone = (
@@ -99,7 +106,7 @@ def _handle_breakup_events(cat: Cat):
 
         # check the mate's setting
         if mate.no_mates:
-            return
+            continue
 
         _attempt_breakup(cat, mate)
 
@@ -190,7 +197,7 @@ def _check_if_breakup(cat_from: Cat, cat_to: Cat, disable_random: bool = False) 
 
     chance_number = _get_breakup_chance(cat_from, cat_to)
 
-    if chance_number == 0:
+    if chance_number == 0 and not disable_random:
         return False
 
     return not int(random.random() * chance_number) or disable_random
@@ -297,18 +304,57 @@ def _attempt_confession(cat_from: Cat) -> bool:
     if not _check_against_grief(cat_from, cat_to):
         return False
 
+    # CONFESS
+    become_mates, cat_from_change, cat_to_change, mate_string = _try_confession(
+        cat_from, cat_to
+    )
+
+    if not become_mates:
+        return False
+
+    # do the final prep of the rel change dicts
+    cat_from_change["cats_from"] = [cat_from]
+    cat_from_change["cats_to"] = [cat_to]
+    cat_from_change["log"] = mate_string
+
+    cat_to_change["cats_from"] = [cat_to]
+    cat_to_change["cats_to"] = [cat_from]
+    cat_to_change["log"] = mate_string
+
+    # CHANGE VALUES
+    change_relationship_values(
+        **cat_from_change,
+    )
+    change_relationship_values(
+        **cat_to_change,
+    )
+
+    game.cur_events_list.append(
+        Single_Event(
+            mate_string,
+            ["relation", "misc"],
+            cat_dict={"m_c": cat_from, "r_c": cat_to},
+        )
+    )
+
+    if become_mates:
+        cat_from.set_mate(cat_to)
+
+    return True
+
+
+def _try_confession(cat_from, cat_to) -> tuple[bool, dict, dict, str]:
     # CHECK POLY
     existing_from_cat_mates, existing_to_cat_mates = _get_existing_mates(
         cat_from, cat_to
     )
     poly = any([existing_from_cat_mates, existing_to_cat_mates])
 
-    if poly and not _check_current_mates_allow_new_mate(
+    if poly and not _current_mates_allow_new_mate(
         cat_from, cat_to, existing_from_cat_mates, existing_to_cat_mates
     ):
-        return False
+        return False, {}, {}, ""
 
-    # CONFESS
     become_mates = False
     # accept confession
     condition = get_config("mates.confession.accept_confession")
@@ -361,37 +407,9 @@ def _attempt_confession(cat_from: Cat) -> bool:
                 confession_changes, variability
             )
 
-    mate_string = _prepare_relationship_string(mate_string, cat_from, cat_to)
+    mate_string = relationship_text_adjust(mate_string, cat_from, cat_to)
 
-    # do the final prep of the rel change dicts
-    cat_from_change["cats_from"] = [cat_from]
-    cat_from_change["cats_to"] = [cat_to]
-    cat_from_change["log"] = mate_string
-
-    cat_to_change["cats_from"] = [cat_to]
-    cat_to_change["cats_to"] = [cat_from]
-    cat_to_change["log"] = mate_string
-
-    # CHANGE VALUES
-    change_relationship_values(
-        **cat_from_change,
-    )
-    change_relationship_values(
-        **cat_to_change,
-    )
-
-    game.cur_events_list.append(
-        Single_Event(
-            mate_string,
-            ["relation", "misc"],
-            cat_dict={"m_c": cat_from, "r_c": cat_to},
-        )
-    )
-
-    if become_mates:
-        cat_from.set_mate(cat_to)
-
-    return True
+    return become_mates, cat_from_change, cat_to_change, mate_string
 
 
 def _attempt_mutual_interest_mates(
@@ -435,7 +453,7 @@ def _attempt_mutual_interest_mates(
     )
     poly = any([existing_from_cat_mates, existing_to_cat_mates])
 
-    if poly and not _check_current_mates_allow_new_mate(
+    if poly and not _current_mates_allow_new_mate(
         cat_from, cat_to, existing_from_cat_mates, existing_to_cat_mates
     ):
         return
@@ -492,7 +510,7 @@ def _attempt_mutual_interest_mates(
         print(cat_from.mate)
         print(cat_to.mate)
 
-    mate_string = _prepare_relationship_string(mate_string, cat_from, cat_to)
+    mate_string = relationship_text_adjust(mate_string, cat_from, cat_to)
 
     cat_from_change = {
         "cats_from": [cat_from],
@@ -524,7 +542,7 @@ def _attempt_mutual_interest_mates(
     )
 
 
-def _check_current_mates_allow_new_mate(
+def _current_mates_allow_new_mate(
     cat_from: Cat, cat_to: Cat, cat_from_mates: list[str], cat_to_mates: list[str]
 ) -> bool:
     """
@@ -577,25 +595,25 @@ def _check_current_mates_allow_new_mate(
 
 def _check_against_grief(cat_from: Cat, cat_to: Cat) -> bool:
     """
-    Checks if cat_to will still approach a grief stricken cat_from.
-    :return: True if they will approach, False if they won't
+    Checks if cat_to will still attempt to become mates with a grief stricken cat_from.
+    :return: True if they will attempt, False if they won't
     """
-    if "grief stricken" in cat_to.illnesses:
-        chance = get_config("mates.approach_grief.chance")
-        # some cats might not be reading the room
-        if cat_from.personality.trait in ("oblivious", "loving"):
-            chance += get_config("mates.approach_grief.specific_trait_influence")
-        for threshold_reached in [
-            cat_from.personality.lawfulness < 8,
-            cat_from.personality.sociability < 8,
-            cat_from.personality.aggression > 8,
-        ]:
-            if threshold_reached:
-                chance += get_config("mates.approach_grief.facet_influence")
-        if random.random() > chance:
-            return False
+    if "grief stricken" not in cat_to.illnesses:
+        return True
 
-    return True
+    chance = get_config("mates.approach_grief.chance")
+    # some cats might not be reading the room
+    if cat_from.personality.trait in ("oblivious", "loving"):
+        chance += get_config("mates.approach_grief.specific_trait_influence")
+    for threshold_reached in [
+        cat_from.personality.lawfulness < 8,
+        cat_from.personality.sociability < 8,
+        cat_from.personality.aggression > 8,
+    ]:
+        if threshold_reached:
+            chance += get_config("mates.approach_grief.facet_influence")
+
+    return random.random() < chance
 
 
 def _get_existing_mates(cat_from: Cat, cat_to: Cat) -> tuple[list[str], list[str]]:
@@ -632,12 +650,20 @@ def _get_relationship_change_dict(
 
 
 def _get_mate_string(
-    key: str,
+    key: Literal[
+        "high_romantic",
+        "low_romantic",
+        "like_to_romance",
+        "rejected",
+        "high_romantic_makeup",
+        "low_romantic_makeup",
+        "makeup_fail",
+    ],
     poly: bool,
     cat_from_mates: list[str],
     cat_to_mates: list[str],
 ) -> str:
-    """Returns the mate string with the certain key, cats and poly."""
+    """Returns a mate string within the given dictionary key based on given mates and poly status."""
     _rebuild_dicts()
     if not poly:
         return choice(MATE_DICTS[key])
@@ -653,55 +679,6 @@ def _get_mate_string(
             # none of the other involved mates are alive
             return choice(MATE_DICTS[key])
         return choice(POLY_MATE_DICTS[key][poly_key])
-
-
-def _prepare_relationship_string(mate_string: str, cat_from: Cat, cat_to: Cat):
-    """Prepares the relationship event string for display"""
-    # replace mates with their names
-    if "[m_c_mates]" in mate_string:
-        mate_names = [
-            str(cat_from.fetch_cat(mate_id).name)
-            for mate_id in cat_from.mate
-            if cat_from.fetch_cat(mate_id) is not None
-            and cat_from.fetch_cat(mate_id).status.alive_in_player_clan
-        ]
-        mate_name_string = mate_names[0]
-        if len(mate_names) == 2:
-            mate_name_string = mate_names[0] + " and " + mate_names[1]
-        if len(mate_names) > 2:
-            mate_name_string = ", ".join(mate_names[:-1]) + ", and " + mate_names[-1]
-        mate_string = mate_string.replace("[m_c_mates]", mate_name_string)
-
-    if "[r_c_mates]" in mate_string:
-        mate_names = [
-            str(cat_to.fetch_cat(mate_id).name)
-            for mate_id in cat_to.mate
-            if cat_to.fetch_cat(mate_id) is not None
-            and cat_to.fetch_cat(mate_id).status.alive_in_player_clan
-        ]
-        mate_name_string = mate_names[0]
-        if len(mate_names) == 2:
-            mate_name_string = mate_names[0] + " and " + mate_names[1]
-        if len(mate_names) > 2:
-            mate_name_string = ", ".join(mate_names[:-1]) + ", and " + mate_names[-1]
-        mate_string = mate_string.replace("[r_c_mates]", mate_name_string)
-
-    if "(m_c_mate/mates)" in mate_string:
-        insert = "mate"
-        if len(cat_from.mate) > 1:
-            insert = "mates"
-        mate_string = mate_string.replace("(m_c_mate/mates)", insert)
-
-    if "(r_c_mate/mates)" in mate_string:
-        insert = "mate"
-        if len(cat_to.mate) > 1:
-            insert = "mates"
-        mate_string = mate_string.replace("(r_c_mate/mates)", insert)
-
-    mate_string = event_text_adjust(
-        Cat, mate_string, main_cat=cat_from, random_cat=cat_to
-    )
-    return mate_string
 
 
 def _rebuild_dicts():
