@@ -648,7 +648,6 @@ def leader_ceremony_text_adjust(
 
 
 def ceremony_text_adjust(
-    Cat,
     text,
     cat,
     old_name=None,
@@ -884,7 +883,7 @@ def shorten_text_to_fit(
     return short_name
 
 
-def relationship_text_adjust(mate_string: str, cat_from, cat_to):
+def relationship_text_adjust(mate_string: str, cat_from, cat_to) -> str:
     """Prepares the relationship event string for display"""
     # replace mates with their names
     if "[m_c_mates]" in mate_string:
@@ -914,6 +913,6 @@ def relationship_text_adjust(mate_string: str, cat_from, cat_to):
         mate_string = mate_string.replace("(r_c_mate/mates)", insert)
 
     mate_string = event_text_adjust(
-        Cat, mate_string, main_cat=cat_from, random_cat=cat_to
+        cat_from, mate_string, main_cat=cat_from, random_cat=cat_to
     )
     return mate_string
