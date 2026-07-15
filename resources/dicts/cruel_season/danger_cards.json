@@ -9,7 +9,7 @@
     }
   },
   "plague_ridden": {
-    "card_art": "danger/forsaken.png",
+    "card_art": "danger/blood.png",
     "modifiers": {
       "condition_related.med_infection_reduction": 0,
       "condition_related.illness_outbreak_season": ["Leaf-bare", "Leaf-fall", "Greenleaf", "Newleaf"],
