@@ -601,4 +601,7 @@ class RelationshipScreen(Screens):
                 ele.kill()
             ele_dict.clear()
 
+        self.prior_chunk.clear()
+        self.chunks.clear()
+
         super().exit_screen()
