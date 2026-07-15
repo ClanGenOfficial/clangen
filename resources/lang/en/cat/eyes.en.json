@@ -29,6 +29,15 @@
         "MUSTARD": "mustard-yellow",
         "EARTHY": "earthy brown",
         "SEA": "sea blue",
-        "BLUEBELL": "bluebell"
+        "BLUEBELL": "bluebell",
+		"OLIVE": "olive",
+		"CATTAIL": "cattail",
+		"GRASSYGREEN": "grassy green",
+		"FERN": "fern",
+		"LICHEN": "lichen",
+		"MOSSY": "mossy",
+		"LEAF": "leaf",
+		"SEASPARKLE": "sea sparkle",
+		"CACTUS": "cactus"
     }
 }
