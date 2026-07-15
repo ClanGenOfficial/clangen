@@ -73,8 +73,7 @@
                 "can_have_stat": ["app"],
                 "stat_trait": [
                     "calm",
-                    "careful",
-                    "sneaky"
+                    "careful"
                 ],
                 "frequency": 4,
                 "relationships": [
@@ -228,7 +227,6 @@
                     "calm",
                     "careful",
                     "nervous",
-                    "sneaky",
                     "strange",
                     "cunning"
                 ],
@@ -390,7 +388,6 @@
                     "calm",
                     "careful",
                     "nervous",
-                    "sneaky",
                     "strange",
                     "cunning"
                 ],

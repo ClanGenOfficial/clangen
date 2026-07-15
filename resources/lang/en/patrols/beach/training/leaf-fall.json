@@ -156,7 +156,6 @@
                 "text": "The whole patrol agrees this beach is abandoned by StarClan. There's no way so many broken ginger cat statues are here naturally, and well, s_c has always been a little odd...",
                 "exp": 0,
                 "stat_trait": [
-                    "sneaky",
                     "strange"
                 ],
                 "relationships": [
@@ -219,7 +218,6 @@
                 "stat_trait": [
                     "adventurous",
                     "shameless",
-                    "sneaky",
                     "strange",
                     "troublesome",
                     "childish",

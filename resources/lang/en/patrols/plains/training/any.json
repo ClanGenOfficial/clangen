@@ -72,8 +72,7 @@
                 "exp": 20,
                 "stat_trait": [
                     "calm",
-                    "careful",
-                    "sneaky"
+                    "careful"
                 ],
                 "can_have_stat": [
                     "app"
@@ -270,7 +269,6 @@
                     "calm",
                     "careful",
                     "nervous",
-                    "sneaky",
                     "strange",
                     "cunning"
                 ],
@@ -451,7 +449,6 @@
                     "calm",
                     "careful",
                     "nervous",
-                    "sneaky",
                     "strange",
                     "cunning"
                 ],
@@ -3348,8 +3345,7 @@
                     "nervous",
                     "insecure",
                     "gloomy",
-                    "careful",
-                    "sneaky"
+                    "careful"
                 ],
                 "relationships": [
                     {

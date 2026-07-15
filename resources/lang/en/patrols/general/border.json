@@ -1150,7 +1150,7 @@
                 "text": "Watching app1 and app2 splash each other, s_c shoots a mischievous look at p_l. p_l frowns back, shaking {PRONOUN/p_l/poss} head, but it's too late. <i>Splash!</i> It's a very wet border patrol.",
                 "exp": 30,
                 "frequency": 4,
-                "stat_trait": ["playful", "childish", "competitive", "flamboyant", "rebellious", "shameless", "troublesome", "sneaky"],
+                "stat_trait": ["playful", "childish", "competitive", "flamboyant", "rebellious", "shameless", "troublesome"],
                 "can_have_stat": ["r_c"],
                 "relationships": [
                     {

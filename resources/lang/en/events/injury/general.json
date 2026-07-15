@@ -4193,8 +4193,7 @@
                 "troublesome",
                 "insecure",
                 "lonesome",
-                "nervous",
-                "sneaky"
+                "nervous"
             ]
         },
         "injury": [
@@ -5414,7 +5413,6 @@
                 "insecure",
                 "careful",
                 "calm",
-                "sneaky",
                 "strange"
             ]
         },
@@ -5457,7 +5455,6 @@
                 "insecure",
                 "careful",
                 "calm",
-                "sneaky",
                 "strange"
             ]
         },
@@ -8447,7 +8444,7 @@
         "m_c": {
             "status": ["leader", "deputy", "warrior"],
             "skill": ["-FIGHTER,1"],
-            "trait": ["nervous", "shameless", "insecure", "cunning", "sneaky", "childish"]
+            "trait": ["nervous", "shameless", "insecure", "cunning", "childish"]
         },
         "injury": [
             {
@@ -9146,8 +9143,7 @@
                 "fierce",
                 "insecure",
                 "grumpy",
-                "shameless",
-                "sneaky"
+                "shameless"
             ]
         },
                 "injury": [

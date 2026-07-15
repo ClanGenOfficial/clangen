@@ -356,7 +356,6 @@
                     "careful",
                     "lonesome",
                     "loyal",
-                    "sneaky",
                     "strange",
                     "cunning",
                     "thoughtful",
@@ -712,7 +711,6 @@
                     "cunning",
                     "lonesome",
                     "loyal",
-                    "sneaky",
                     "strange",
                     "wise"
                 ],
@@ -854,7 +852,6 @@
                     "bold",
                     "confident",
                     "cunning",
-                    "sneaky",
                     "strange"
                 ],
                 "can_have_stat": [
@@ -1034,7 +1031,6 @@
                     "bold",
                     "daring",
                     "confident",
-                    "sneaky",
                     "strange"
                 ],
                 "can_have_stat": [
@@ -1183,7 +1179,6 @@
                     "insecure",
                     "lonesome",
                     "nervous",
-                    "sneaky",
                     "strange",
                     "wise"
                 ],
@@ -1275,7 +1270,6 @@
                     "insecure",
                     "lonesome",
                     "nervous",
-                    "sneaky",
                     "strange",
                     "wise"
                 ],
@@ -3120,7 +3114,6 @@
                     "calm",
                     "careful",
                     "cunning",
-                    "sneaky",
                     "responsible",
                     "thoughtful",
                     "wise"
@@ -3508,7 +3501,6 @@
                     "calm",
                     "careful",
                     "cunning",
-                    "sneaky",
                     "insecure",
                     "nervous",
                     "responsible",
