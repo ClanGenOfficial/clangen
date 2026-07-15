@@ -14314,6 +14314,57 @@
             }
             ]
     },
+        {
+        "event_id": "gen_misc_failedmurderplotting1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["failed_murder"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c is almost in tears as {PRONOUN/m_c/subject} {VERB/m_c/emphasize/emphasizes} to lead_name how cruel r_c has been lately. r_c looks confused and denies everything m_c says.",
+        "m_c":
+        {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy"
+            ],
+            "trait": [
+                "childish",
+                "cunning",
+                "charismatic",
+                "insecure",
+                "shameless"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "-kitten"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["comfort"],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from doesn't understand why cat_to would accuse {PRONOUN/cat_from/object} of being cruel and make {PRONOUN/cat_from/object} look bad in front of the leader."
+                }
+            },
+                        {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["like"],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from accused cat_to of being cruel to {PRONOUN/cat_from/object} in front of the leader in hopes something would be done about {PRONOUN/cat_to/object}."
+                }
+            }
+            ]
+    },
     {
     "event_id": "gen_misc_hitmanfailedmurder1",
     "location": ["any"],
