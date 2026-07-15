@@ -48,7 +48,12 @@
 	    {
 	        "LEAF": "green",
 	        "AQUAMARINE": "green",
-	        "CACTUS": "green"
+	        "CACTUS": "green",
+            "MAPLE": "yellow",
+            "LIME": "green",
+            "BEIGE": "yellow",
+            "PERIWINKLE": "blue",
+            "WILDFIRE": "yellow"
 	}
 
     ]
