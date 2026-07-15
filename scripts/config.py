@@ -1,12 +1,11 @@
 import copy
-import tomllib
 
 from scripts.game_structure import constants, game
 
 
 # config_path passed as a string using dot notation - ex "graduation.min_graduating_age"
 def get_config(config_path):
-    config_value = game.constants.CONFIG
+    config_value = constants.CONFIG
     config_keys = tuple(config_path.split("."))
 
     # checking cards first
@@ -16,7 +15,7 @@ def get_config(config_path):
             config_value = card_info["modifiers"][config_path]
 
     # then checking game_config
-    if config_value == game.constants.CONFIG:
+    if config_value == constants.CONFIG:
         for key in config_keys:
             config_value = config_value[key]
 
