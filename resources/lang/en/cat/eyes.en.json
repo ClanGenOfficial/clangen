@@ -31,13 +31,13 @@
         "SEA": "sea blue",
         "BLUEBELL": "bluebell",
 		"OLIVE": "olive",
-		"CATTAIL": "cattail",
+		"CATTAIL": "cattail green",
 		"GRASSYGREEN": "grassy green",
-		"FERN": "fern",
-		"LICHEN": "lichen",
-		"MOSSY": "mossy",
-		"LEAF": "leaf",
-		"SEASPARKLE": "sea sparkle",
-		"CACTUS": "cactus"
+		"FERN": "fern green",
+		"LICHEN": "lichen green",
+		"MOSSY": "mossy green",
+		"LEAF": "leaf green",
+		"AQUAMARINE": "aquamarine",
+		"CACTUS": "cactus green"
     }
 }
