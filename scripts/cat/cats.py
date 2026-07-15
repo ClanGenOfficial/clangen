@@ -1279,16 +1279,7 @@ class Cat:
         life_givers = []
         dead_relations = []
         life_giving_leader = None
-        num_of_lives_to_give = None
-
-        # set lives to give
-        if not get_config("death_related.leader_lives_random"):
-            num_of_lives_to_give = get_config("death_related.max_leader_lives")
-        else:
-            num_of_lives_to_give = randint(
-                get_config("death_related.min_leader_lives"),
-                get_config("death_related.max_leader_lives"),
-            )
+        num_of_lives_to_give = game.clan.leader_lives
 
         # grab life givers that the cat actually knew in life and sort by amount of relationship!
         relationships = self.relationships.values()
