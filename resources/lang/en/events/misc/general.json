@@ -14115,6 +14115,65 @@
         ]
     },
     {
+        "event_id": "gen_misc_failedmurderpoison",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["failed_murder"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c poisons r_c after giving {PRONOUN/r_c/object} the wrong herb dosage. m_c claims it was an accident, but r_c isn't so sure...",
+        "m_c": {
+            "status": [
+                "medicine cat",
+                "medicine cat apprentice"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "-kitten"
+            ]
+        },
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["poisoned"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["r_c"],
+                "death": "m_c died after a Clanmate gave {PRONOUN/m_c/object} the wrong herb dosage."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["trust"],
+                "amount": -20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from doesn't believe that cat_to accidentally poisoned {PRONOUN/cat_from/object}."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": ["m_c"],
+                "values": [
+                    "trust"
+                ],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from's confidence in cat_to weakened after hearing that {PRONOUN/cat_to/subject} gave a Clanmate the wrong herb dosage."
+                }
+            }
+            ]
+    },
+    {
     "event_id": "gen_misc_hitmanfailedmurder1",
     "location": ["any"],
     "season": ["any"],
