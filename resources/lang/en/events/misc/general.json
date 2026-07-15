@@ -14204,7 +14204,7 @@
         "history": [
             {
                 "cats": ["r_c"],
-                "death": ["r_c died after a Clanmate suggested {PRONOUN/r_c/subject} should try eating deathberries."]
+                "death": "r_c died after a Clanmate suggested {PRONOUN/r_c/subject} should try eating deathberries."
             }
         ],
         "relationships": [
@@ -14251,7 +14251,7 @@
         "history": [
             {
                 "cats": ["r_c"],
-                "death": ["r_c died after a Clanmate gave {PRONOUN/r_c/object} crowfood."]
+                "death": "r_c died after a Clanmate gave {PRONOUN/r_c/object} crowfood."
             }
         ],
         "relationships": [
@@ -14298,7 +14298,7 @@
         "history": [
             {
                 "cats": ["r_c"],
-                "death": ["r_c died after being pushed in the river and inhaling too much water."]
+                "death": "r_c died after being pushed in the river and inhaling too much water."
             }
         ],
         "relationships": [
