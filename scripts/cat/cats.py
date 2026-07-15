@@ -3416,8 +3416,6 @@ def create_cat(rank, moons=None, biome=None):
         new_cat.moons = moons
     elif new_cat.moons >= 160:
         new_cat.moons = randint(120, 155)
-    elif new_cat.moons == 0:
-        new_cat.moons = randint(1, 5)
 
     not_allowed_scars = [
         "NOPAW",

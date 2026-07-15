@@ -53,12 +53,12 @@
     "modifiers": {
       "clan_creation.majority_rank": "elder",
       "clan_creation.rank_weights": {
-        "kitten": 2,
+        "newborn": 2,
         "elder": 1
       },
       "clan_creation.ranks_needed.deputy": false,
       "clan_creation.ranks_needed.medicine_cat": false,
-      "clan_creation.valid_rank_to_age_assignment.member": ["kitten"],
+      "clan_creation.valid_rank_to_age_assignment.member": ["newborn"],
       "clan_creation.minimum_membership": 2,
       "clan_creation.maximum_membership": 2
     }

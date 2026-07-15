@@ -594,6 +594,7 @@ dev_tools = false
     medicine_cat = true
 
   [clan_creation.rank_weights]
+    newborn = 0
     kitten = 1
     apprentice = 1
     warrior = 2
