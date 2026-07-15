@@ -14220,6 +14220,53 @@
             }
             ]
     },
+        {
+        "event_id": "gen_misc_failedmurderpoison3",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["failed_murder"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c offers r_c a piece of prey from the pile. Later, r_c is rushed to the medicine den, having been poisoned by crowfood.",
+        "m_c":
+        {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "-kitten"
+            ]
+        },
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["poisoned"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["r_c"],
+                "death": ["r_c died after a Clanmate gave {PRONOUN/r_c/object} crowfood."]
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["trust"],
+                "amount": -20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from thinks cat_to purposefully offered {PRONOUN/cat_from/object} crowfood."
+                }
+            }
+            ]
+    },
     {
     "event_id": "gen_misc_hitmanfailedmurder1",
     "location": ["any"],
