@@ -38,6 +38,11 @@
 		"MOSSY": "mossy green",
 		"LEAF": "leaf green",
 		"AQUAMARINE": "aquamarine",
-		"CACTUS": "cactus green"
+		"CACTUS": "cactus green",
+        "MAPLE": "maple",
+        "LIME": "lime green",
+        "BEIGE": "beige",
+        "PERIWINKLE": "periwinkle blue",
+        "WILDFIRE": "wildfire"
     }
 }
