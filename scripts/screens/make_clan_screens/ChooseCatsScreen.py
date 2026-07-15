@@ -521,11 +521,9 @@ class ChooseCatsScreen(MakeClanScreenBase):
         else:
             needed_rank = "member"
 
-        if self.selected_cat.age in self.get_config_during_creation(
+        return self.selected_cat.age in self.get_config_during_creation(
             f"clan_creation.valid_rank_to_age_assignment.{needed_rank}"
-        ):
-            return True
-        return False
+        )
 
     def clan_name_header(self):
         """
