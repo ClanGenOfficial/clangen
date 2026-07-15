@@ -2883,7 +2883,6 @@
                     "nervous",
                     "thoughtful",
                     "cunning", 
-                    "sneaky",
                     "wise"
                 ],
                 "prey": [
@@ -3033,8 +3032,7 @@
                     "nervous",
                     "thoughtful",
                     "wise",
-                    "cunning",
-                    "sneaky"
+                    "cunning"
                 ],
                 "prey": [
                     "medium"

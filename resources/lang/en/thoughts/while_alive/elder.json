@@ -1110,7 +1110,7 @@
         }
     },
     {
-        "id": "sneaky_elder",
+        "id": "stealth_elder",
         "strings": [
             "Always seems to find out every cat's secret",
             "Finds <i>another</i> secret exit near the elder's den",
@@ -1123,8 +1123,8 @@
                     "senior"
                 ],
                 "stat": {
-                    "trait": [
-                        "sneaky"
+                    "skill": [
+                        "STEALTH,1"
                     ]
                 }
             }

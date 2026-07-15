@@ -321,7 +321,6 @@
                     "lonesome",
                     "loyal",
                     "nervous",
-                    "sneaky",
                     "strange",
                     "thoughtful",
                     "wise"
@@ -415,7 +414,6 @@
                     "lonesome",
                     "loyal",
                     "nervous",
-                    "sneaky",
                     "strange",
                     "thoughtful",
                     "wise"
@@ -509,7 +507,6 @@
                     "lonesome",
                     "loyal",
                     "nervous",
-                    "sneaky",
                     "strange",
                     "thoughtful",
                     "wise"
@@ -808,8 +805,7 @@
                     "calm",
                     "careful",
                     "insecure",
-                    "nervous",
-                    "sneaky"
+                    "nervous"
                 ],
                 "prey": [
                     "huge"

@@ -5053,7 +5053,6 @@
                     "lonesome",
                     "loyal",
                     "nervous",
-                    "sneaky",
                     "strange",
                     "sincere"
                 ],
@@ -5134,7 +5133,6 @@
                     "lonesome",
                     "loyal",
                     "nervous",
-                    "sneaky",
                     "strange"
                 ],
                 "can_have_stat": [
@@ -9130,8 +9128,7 @@
                 "text": "For s_c, {PRONOUN/s_c/subject} {VERB/s_c/explain/explains}, it's less about how {PRONOUN/s_c/subject} {VERB/s_c/kill/kills} the prey and more about <i>getting</i> to the prey. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} happy to share {PRONOUN/s_c/poss} interest in stalking with r_c, and they turn it into a little game.",
                 "exp": 20,
                 "stat_trait": [
-                    "cunning",
-                    "sneaky"
+                    "cunning"
                 ],
                 "can_have_stat": [
                     "p_l"
@@ -9514,7 +9511,6 @@
                 "text": "app1 doesn't appreciate being singled out — but {PRONOUN/app1/poss} scowl vanishes when p_l tells the patrol to learn from {PRONOUN/app1/poss} example and asks app1 to demonstrate {PRONOUN/app1/poss} stalk.",
                 "exp": 20,
                 "stat_trait": [
-                    "sneaky",
                     "cunning",
                     "nervous",
                     "careful",
@@ -12074,7 +12070,7 @@
                 "text": "s_c shares {PRONOUN/s_c/poss} concern, but p_l's solution is completely useless. s_c thanks {PRONOUN/p_l/object}, privately deciding not to consult {PRONOUN/p_l/object} again about this.",
                 "exp": 0,
                 "can_have_stat": ["r_c"],
-                "stat_trait": ["compassionate", "calm", "wise", "nervous", "careful", "insecure", "charismatic", "cunning", "sneaky", "thoughtful", "faithful", "gloomy", "lonesome", "responsible"],
+                "stat_trait": ["compassionate", "calm", "wise", "nervous", "careful", "insecure", "charismatic", "cunning", "thoughtful", "faithful", "gloomy", "lonesome", "responsible"],
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -17795,7 +17791,6 @@
                     "app1"
                 ],
                 "stat_trait": [
-                    "sneaky",
                     "cunning",
                     "cold"
                 ],
@@ -18119,8 +18114,7 @@
                     "playful",
                     "childish",
                     "shameless",
-                    "strange",
-                    "sneaky"
+                    "strange"
                 ],
                 "relationships": [
                     {
@@ -19207,7 +19201,6 @@
                 "stat_trait": [
                     "troublesome",
                     "rebellious",
-                    "sneaky",
                     "cunning"
                 ],
                 "relationships": [
@@ -19903,7 +19896,6 @@
                     "loyal",
                     "responsible",
                     "shameless",
-                    "sneaky",
                     "strange",
                     "vengeful",
                     "wise",
@@ -19980,7 +19972,6 @@
                     "loyal",
                     "responsible",
                     "shameless",
-                    "sneaky",
                     "strange",
                     "vengeful",
                     "wise",
@@ -20057,7 +20048,6 @@
                     "loyal",
                     "responsible",
                     "shameless",
-                    "sneaky",
                     "strange",
                     "vengeful",
                     "wise",
@@ -20112,7 +20102,6 @@
                     "arrogant",
                     "ambitious",
                     "confident",
-                    "sneaky",
                     "cunning",
                     "fierce",
                     "competitive"
@@ -20258,7 +20247,6 @@
                 "exp": 10,
                 "stat_trait": [
                     "cunning",
-                    "sneaky",
                     "shameless",
                     "flamboyant",
                     "charismatic",
@@ -20359,7 +20347,6 @@
                 "exp": 10,
                 "stat_trait": [
                     "cunning",
-                    "sneaky",
                     "cold",
                     "lonesome",
                     "grumpy",
@@ -20583,7 +20570,6 @@
                     "loyal",
                     "responsible",
                     "shameless",
-                    "sneaky",
                     "strange",
                     "vengeful",
                     "wise",
@@ -20651,7 +20637,6 @@
                     "loyal",
                     "responsible",
                     "shameless",
-                    "sneaky",
                     "strange",
                     "vengeful",
                     "wise",
@@ -20710,7 +20695,6 @@
                     "faithful",
                     "loyal",
                     "shameless",
-                    "sneaky",
                     "strange",
                     "vengeful",
                     "arrogant",
@@ -20786,7 +20770,6 @@
                     "faithful",
                     "loyal",
                     "shameless",
-                    "sneaky",
                     "strange",
                     "vengeful",
                     "arrogant",
@@ -21246,7 +21229,7 @@
             "exp": 20,
             "frequency": 4,
             "can_have_stat": ["adult"],
-            "stat_trait": ["charismatic", "playful", "adventurous", "arrogant", "ambitious", "competitive", "confident", "daring", "bold", "fierce", "rebellious", "shameless", "sneaky", "troublesome"],
+            "stat_trait": ["charismatic", "playful", "adventurous", "arrogant", "ambitious", "competitive", "confident", "daring", "bold", "fierce", "rebellious", "shameless", "troublesome"],
             "relationships": [
                 {
                     "cats_to": ["s_c"],

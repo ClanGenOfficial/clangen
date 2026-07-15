@@ -2803,7 +2803,6 @@
                 "art": "cat_sprites/pln_bord_tunnel_Ap",
                 "stat_trait": [
                     "strange",
-                    "sneaky",
                     "cunning"
                 ],
                 "frequency": 4
