@@ -363,7 +363,11 @@ class RelationshipScreen(Screens):
                 if not all([t.is_neutral for t in r.get_reltype_tiers()])
             ]
         if get_clan_setting("show_family_only"):
-            self.filtered_cats = [r for r in self.filtered_cats if r.family]
+            self.filtered_cats = [
+                r
+                for r in self.filtered_cats
+                if r.cat_from.is_related(r.cat_to, exclude_cousins=False)
+            ]
         elif get_clan_setting("show_romance_only"):
             self.filtered_cats = [
                 r for r in self.filtered_cats if self.romance_allowed(r)
@@ -600,5 +604,8 @@ class RelationshipScreen(Screens):
             for ele in ele_dict.values():
                 ele.kill()
             ele_dict.clear()
+
+        self.prior_chunk.clear()
+        self.chunks.clear()
 
         super().exit_screen()
