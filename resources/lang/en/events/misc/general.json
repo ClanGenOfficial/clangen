@@ -14034,6 +14034,87 @@
         ]
     },
     {
+        "event_id": "gen_misc_failedmurderattack2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 3,
+        "event_text": "m_c bursts into camp, frantic and covered in wounds. {PRONOUN/m_c/subject/CAP} {VERB/m_c/insist/insists} r_c attacked {PRONOUN/m_c/object} while they were on patrol together.",
+        "m_c": {},
+        "r_c": {
+            "status": [
+                "-kitten",
+                "-elder"
+            ]
+        },
+            "injury": [
+                {
+                    "cats": ["r_c"],
+                    "injuries": ["claw-wound", "cat bite"]
+                },
+                {
+                    "cats": ["m_c"],
+                    "injuries": ["scrapes", "torn pelt"]
+                }
+            ],
+            "history": [
+                {
+                    "cats": ["r_c"],
+                "scar": "m_c was scarred after a Clanmate attacked {PRONOUN/m_c/object} while on patrol.",
+                "death": "m_c was killed by {PRONOUN/m_c/poss} wounds caused by a Clanmate."
+                }
+            ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["comfort", "like"],
+                "amount": -20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from became terrified of cat_to after {PRONOUN/cat_to/subject} attacked {PRONOUN/cat_from/object} while on patrol and falsely accused {PRONOUN/cat_from/object} instead."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": ["m_c"],
+                "values": [
+                    "trust"
+                ],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from thought cat_to wasn't being entirely truthful about being attacked by a fellow Clanmate."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "low_social",
+                    "low_aggress"
+                ],
+                "cats_to": ["r_c"],
+                "values": [
+                    "comfort"
+                ],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from was unsettled after hearing cat_to attacked {PRONOUN/cat_from/object} while on patrol."
+                }
+            }
+        ]
+    },
+    {
     "event_id": "gen_misc_hitmanfailedmurder1",
     "location": ["any"],
     "season": ["any"],
