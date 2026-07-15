@@ -951,7 +951,7 @@
             "halloween",
             "romance"
         ],
-        "patrol_art": "pipbats_INTRO",
+        "patrol_art": "halloween/hal_pipbats",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},

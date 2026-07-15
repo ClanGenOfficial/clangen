@@ -11,7 +11,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_shortswim",
+        "patrol_art": "backgrounds/gen_shortswim",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},

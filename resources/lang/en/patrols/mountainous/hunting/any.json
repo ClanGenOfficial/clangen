@@ -11,7 +11,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "mtn_hunt_shrew",
+        "patrol_art": "animals/mtn_shrew",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
@@ -71,7 +71,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_strange",
+        "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -168,7 +168,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_strange",
+        "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -801,7 +801,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "mothman_INTRO",
+        "patrol_art": "halloween/mothman",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -818,7 +818,7 @@
             {
                 "text": "r_c turns tail and runs, feeling air ruffle {PRONOUN/r_c/poss} fur as <i>something</i> passes overhead while {PRONOUN/r_c/subject} {VERB/r_c/pelt/pelts} for home, without even the breath to waste on wailing.",
                 "exp": 35,
-                "art": "mothman_OUTCOME",
+                "art": "halloween/mothmanoutcome",
                 "frequency": 4
             },
             {
@@ -868,7 +868,7 @@
                         ]
                     }
                 ],
-                "art": "mothman_OUTCOME",
+                "art": "halloween/hal_mothmanoutcome",
                 "frequency": 4
             },
             {
@@ -880,7 +880,7 @@
                 "history_text": {
                     "death": "m_c was taken as the Mothman's snack."
                 },
-                "art": "mothman_OUTCOME",
+                "art": "halloween/hal_mothmanoutcome",
                 "frequency": 4
             },
             {
@@ -892,7 +892,7 @@
                 "history_text": {
                     "death": "m_c was killed by the collapsing mountain slopes, an event predicted by the appearance of the Mothman"
                 },
-                "art": "mothman_OUTCOME",
+                "art": "halloween/hal_mothmanoutcome",
                 "frequency": 4
             }
         ]
@@ -911,7 +911,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "belledbuzzard_INTRO",
+        "patrol_art": "halloween/hal_belledbuzzardintro",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -926,7 +926,7 @@
                 "prey": [
                     "huge"
                 ],
-                "art": "belledbuzzard_OUTCOME",
+                "art": "halloween/hal_belledbuzzardoutcome",
                 "frequency": 4
             }
         ],
@@ -947,7 +947,7 @@
                 "history_text": {
                     "death": "m_c died from the yellowcough brought to the Clan by the Belled Buzzard."
                 },
-                "art": "belledbuzzard_OUTCOME",
+                "art": "halloween/hal_belledbuzzardoutcome",
                 "prey": [
                     "very_small"
                 ],
@@ -967,7 +967,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_mouse",
+        "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {
@@ -1021,7 +1021,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_mouse",
+        "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {
@@ -1079,7 +1079,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_hare",
+        "patrol_art": "animals/gen_hare",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
@@ -1155,7 +1155,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_bird",
+        "patrol_art": "cat_sprites/gen_hunt_bird_Wr",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
@@ -1216,7 +1216,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_squirrel",
+        "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},

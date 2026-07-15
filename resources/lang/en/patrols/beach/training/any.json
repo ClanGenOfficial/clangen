@@ -11,7 +11,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "bch_train_session1",
+        "patrol_art": "cat_sprites/bch_train_session1_ApWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -155,7 +155,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "bch_train_stuck",
+        "patrol_art": "cat_sprites/bch_train_stuck_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -403,7 +403,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "bch_train_stuck",
+        "patrol_art": "cat_sprites/bch_train_stuck_Wr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},
@@ -601,7 +601,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "bch_train_stuck",
+        "patrol_art": "cat_sprites/bch_train_stuck_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -675,7 +675,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_train_soloapp",
+        "patrol_art": "cat_sprites/gen_train_solo_Ap",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -764,7 +764,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_train_solo",
+        "patrol_art": "cat_sprites/gen_train_solo_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -880,7 +880,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "bch_train_octopus",
+        "patrol_art": "cat_sprites/bch_train_octopus_WrAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1104,7 +1104,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "bch_train_octopus",
+        "patrol_art": "cat_sprites/bch_train_octopus_WrAp",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -1348,7 +1348,7 @@
             "rom_two_apps",
             "romance"
         ],
-        "patrol_art": "bch_train_stormwaves",
+        "patrol_art": "backgrounds/bch_stormwaves",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1624,7 +1624,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "gen_train_sunset",
+        "patrol_art": "cat_sprites/gen_chatting_WrWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -2119,7 +2119,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "loveland_frog_INTRO",
+        "patrol_art": "halloween/hal_lovelandfrog",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -2187,7 +2187,7 @@
             {
                 "text": "They slipped into the ocean to feed their Clan, again and again, and each time they had to leave the water their heart broke a little more. Eventually, they didn't leave at all. Their fur grew fluffy and buoyant, and now the sea otter floats, happy and fulfilled with the oceanic world.",
                 "exp": 40,
-                "art": "gen_hunt_fish",
+                "art": "cat_sprites/gen_hunt_fish_Wr",
                 "relationships": [
                     {
                         "cats_to": [
@@ -2259,7 +2259,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -2338,7 +2338,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "bch_train_session1",
+        "patrol_art": "cat_sprites/bch_train_session1_ApWr",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -2356,7 +2356,7 @@
             {
                 "text": "The great legend Maowi was once a young apprentice, p_l starts the story, who went out fishing with his older, already grown siblings. They had no faith in him, but speaking a great karakia to give StarClan's blessing to his claws, he won a stingray from the ocean that stretched from horizon to horizon and became c_n's territory.",
                 "exp": 30,
-                "art": "gen_bord_story",
+                "art": "cat_sprites/gen_bord_story_WrWrWr",
                 "relationships": [
                     {
                         "cats_to": [
@@ -2436,7 +2436,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -2514,7 +2514,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -2578,7 +2578,7 @@
             {
                 "text": "Learning about the tides is boring — shoving each other into the water, now <i>that's</i> training! p_l is not pleased.",
                 "exp": 0,
-                "art": "gen_train_soggykitty_mad_warrior",
+                "art": "cat_sprites/gen_train_soggykittymad_Wr",
                 "relationships": [
                     {
                         "cats_to": [

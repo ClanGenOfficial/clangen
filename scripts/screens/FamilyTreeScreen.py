@@ -543,7 +543,7 @@ class FamilyTreeScreen(Screens):
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
             )
-        _current_group = self.chunks(self.current_group, 24)
+        _current_group = self.get_list_chunks(self.current_group, 24)
 
         if self.group_page_number > len(_current_group):
             self.group_page_number = max(len(_current_group), 1)
