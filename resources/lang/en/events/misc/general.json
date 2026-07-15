@@ -14066,8 +14066,8 @@
             "history": [
                 {
                     "cats": ["r_c"],
-                "scar": "m_c was scarred after a Clanmate attacked {PRONOUN/m_c/object} while on patrol.",
-                "death": "m_c was killed by {PRONOUN/m_c/poss} wounds caused by a Clanmate."
+                "scar": "r_c was scarred after a Clanmate attacked {PRONOUN/r_c/object} while on patrol.",
+                "death": "r_c was killed by {PRONOUN/r_c/poss} wounds caused by a Clanmate."
                 }
             ],
         "relationships": [
@@ -14115,7 +14115,7 @@
         ]
     },
     {
-        "event_id": "gen_misc_failedmurderpoison",
+        "event_id": "gen_misc_failedmurderpoison1",
         "location": ["any"],
         "season": ["any"],
         "sub_type": ["failed_murder"],
@@ -14142,7 +14142,7 @@
         "history": [
             {
                 "cats": ["r_c"],
-                "death": "m_c died after a Clanmate gave {PRONOUN/m_c/object} the wrong herb dosage."
+                "death": "r_c died after a Clanmate gave {PRONOUN/r_c/object} the wrong herb dosage."
             }
         ],
         "relationships": [
@@ -14169,6 +14169,51 @@
                 "mutual": false,
                 "log": {
                     "cats_from": "cat_from's confidence in cat_to weakened after hearing that {PRONOUN/cat_to/subject} gave a Clanmate the wrong herb dosage."
+                }
+            }
+            ]
+    },
+    {
+        "event_id": "gen_misc_failedmurderpoison2",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["failed_murder"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "r_c is badly poisoned after eating deathberries. {PRONOUN/r_c/subject/CAP} {VERB/r_c/mumble/mumbles} that they don't taste like how m_c said they would...",
+        "m_c":
+        {
+            "status": [
+                "medicine cat",
+                "medicine cat apprentice"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "kitten"
+            ]
+        },
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["poisoned"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["r_c"],
+                "death": ["r_c died after a Clanmate suggested {PRONOUN/r_c/subject} should try eating deathberries."]
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["trust"],
+                "amount": -20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from thinks cat_to lied to {PRONOUN/cat_from/object} about how good deathberries taste."
                 }
             }
             ]
