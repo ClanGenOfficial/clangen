@@ -658,9 +658,10 @@ class Status:
             ]
         else:
             past_ranks = [
-                rank
-                for rank in self.all_ranks.keys()
-                if rank not in [CatRank.LONER, CatRank.KITTYPET, CatRank.ROGUE]
+                record["rank"]
+                for record in self.group_history
+                if record["rank"]
+                not in [CatRank.LONER, CatRank.KITTYPET, CatRank.ROGUE]
             ]
         if not past_ranks:
             return None
