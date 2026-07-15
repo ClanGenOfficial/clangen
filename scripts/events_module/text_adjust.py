@@ -884,7 +884,7 @@ def shorten_text_to_fit(
     return short_name
 
 
-def relationship_text_adjust(mate_string: str, cat_from: Cat, cat_to: Cat):
+def relationship_text_adjust(mate_string: str, cat_from, cat_to):
     """Prepares the relationship event string for display"""
     # replace mates with their names
     if "[m_c_mates]" in mate_string:
