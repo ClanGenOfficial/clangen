@@ -14320,6 +14320,49 @@
         "season": ["any"],
         "sub_type": ["failed_murder"],
         "tags": [],
+        "frequency": 2,
+        "event_text": "m_c requests to meet up with lead_name, where {PRONOUN/m_c/subject} {VERB/m_c/claim/claims} {PRONOUN/m_c/subject} overheard r_c making plans to overthrow lead_name and take over the Clan.",
+        "m_c":
+        {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy"
+            ],
+            "trait": [
+                "cunning",
+                "charismatic",
+                "troublesome",
+                "bold",
+                "daring",
+                "confident",
+                "vengeful"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "-kitten"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["like"],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from accused cat_to of wanting to take over the Clan in hopes the leader would get rid of {PRONOUN/cat_to/object} soon."
+                }
+            }
+            ]
+    },
+        {
+        "event_id": "gen_misc_failedmurderplotting2",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["failed_murder"],
+        "tags": [],
         "frequency": 3,
         "event_text": "m_c is almost in tears as {PRONOUN/m_c/subject} {VERB/m_c/emphasize/emphasizes} to lead_name how cruel r_c has been lately. r_c looks confused and denies everything m_c says.",
         "m_c":
@@ -14334,7 +14377,8 @@
                 "cunning",
                 "charismatic",
                 "insecure",
-                "shameless"
+                "shameless",
+                "troublesome"
             ]
         },
         "r_c": {
