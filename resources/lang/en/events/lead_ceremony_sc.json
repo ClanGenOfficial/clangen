@@ -620,9 +620,9 @@
       ]
     },
   
-    "sneaky_warrior": {
+    "cunning_warrior": {
       "tags": [],
-      "lead_trait": ["sneaky"],
+      "lead_trait": ["cunning"],
       "star_trait": [],
       "rank": ["warrior", "deputy"],
       "life_giving": [
@@ -633,10 +633,10 @@
       ]
     },
   
-    "sneaky_starclanwarrior": {
+    "cunning_starclanwarrior": {
       "tags": [],
       "lead_trait": [],
-      "star_trait": ["sneaky"],
+      "star_trait": ["cunning"],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {

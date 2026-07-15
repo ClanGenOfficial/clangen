@@ -457,7 +457,6 @@
                     "daring",
                     "gloomy",
                     "shameless",
-                    "sneaky",
                     "grumpy",
                     "cunning",
                     "oblivious"
@@ -794,7 +793,6 @@
                 ],
                 "stat_trait": [
                     "gloomy",
-                    "sneaky",
                     "strange",
                     "insecure",
                     "nervous",
@@ -1455,7 +1453,6 @@
                 ],
                 "stat_trait": [
                     "gloomy",
-                    "sneaky",
                     "strange",
                     "insecure",
                     "bold",
@@ -1680,7 +1677,6 @@
                 "stat_trait": [
                     "bloodthirsty",
                     "vengeful",
-                    "sneaky",
                     "cold",
                     "arrogant"
                 ],
@@ -3454,7 +3450,7 @@
                 "herbs": [
                     "random_herbs"
                 ],
-                "stat_trait": ["insecure", "nervous", "gloomy", "grumpy", "lonesome", "sneaky", "cold", "careful", "childish"],
+                "stat_trait": ["insecure", "nervous", "gloomy", "grumpy", "lonesome", "cold", "careful", "childish"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -5214,7 +5210,6 @@
                     "grumpy",
                     "strict",
                     "strange",
-                    "sneaky",
                     "lonesome"
                 ],
                 "can_have_stat": [
@@ -5250,7 +5245,6 @@
                     "confident",
                     "gloomy",
                     "vengeful",
-                    "sneaky",
                     "righteous"
                 ],
                 "can_have_stat": [
@@ -5452,7 +5446,6 @@
                     "fierce",
                     "oblivious",
                     "shameless",
-                    "sneaky",
                     "strict",
                     "vengeful"
                 ],

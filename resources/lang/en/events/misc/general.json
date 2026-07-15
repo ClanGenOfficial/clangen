@@ -4691,7 +4691,7 @@
         "new_accessory": ["JAY FEATHERS", "BLUE FEATHERS"],
         "m_c": {
             "status": ["-kitten"],
-            "trait": ["adventurous", "ambitious", "confident", "bold", "daring", "troublesome", "rebellious", "fierce", "competitive", "cunning", "shameless", "flamboyant", "sneaky", "arrogant"]
+            "trait": ["adventurous", "ambitious", "confident", "bold", "daring", "troublesome", "rebellious", "fierce", "competitive", "cunning", "shameless", "flamboyant", "arrogant"]
         },
         "injury": [
             {
@@ -4724,7 +4724,7 @@
         },
         "r_c": {
             "status": ["-kitten"],
-            "trait": ["adventurous", "ambitious", "confident", "bold", "daring", "troublesome", "rebellious", "fierce", "competitive", "cunning", "shameless", "flamboyant", "sneaky", "arrogant"]
+            "trait": ["adventurous", "ambitious", "confident", "bold", "daring", "troublesome", "rebellious", "fierce", "competitive", "cunning", "shameless", "flamboyant", "arrogant"]
         },
         "injury": [
             {
@@ -4801,7 +4801,7 @@
         "new_accessory": ["SPARROW FEATHERS"],
         "r_c": {
             "status": ["apprentice"],
-            "trait": ["adventurous", "ambitious", "confident", "bold", "daring", "troublesome", "rebellious", "fierce", "competitive", "cunning", "shameless", "flamboyant", "sneaky", "arrogant"]
+            "trait": ["adventurous", "ambitious", "confident", "bold", "daring", "troublesome", "rebellious", "fierce", "competitive", "cunning", "shameless", "flamboyant", "arrogant"]
         },
         "m_c": {
             "status": ["apprentice"],
@@ -7137,7 +7137,6 @@
                 "strict",
                 "troublesome",
                 "vengeful",
-                "sneaky",
                 "strange"
             ]
         },
@@ -7256,7 +7255,6 @@
                 "strict",
                 "troublesome",
                 "vengeful",
-                "sneaky",
                 "strange"
             ]
         },
@@ -7513,7 +7511,6 @@
                 "strict",
                 "troublesome",
                 "vengeful",
-                "sneaky",
                 "strange"
             ]
         },
@@ -10147,7 +10144,6 @@
                 "oblivious",
                 "daring",
                 "shameless",
-                "sneaky",
                 "strange",
                 "flamboyant"
             ]
@@ -11129,7 +11125,6 @@
                 "ambitious",
                 "confident",
                 "shameless",
-                "sneaky",
                 "vengeful",
                 "cunning",
                 "rebellious"
@@ -11198,7 +11193,6 @@
                 "cold",
                 "ambitious",
                 "shameless",
-                "sneaky",
                 "vengeful",
                 "cunning"
             ]
@@ -11236,7 +11230,6 @@
                 "confident",
                 "adventurous",
                 "shameless",
-                "sneaky",
                 "strange",
                 "cunning",
                 "rebellious"
@@ -12009,7 +12002,6 @@
                 "strict",
                 "troublesome",
                 "vengeful",
-                "sneaky",
                 "strange"
             ]
         },
@@ -12130,7 +12122,6 @@
                 "strict",
                 "troublesome",
                 "vengeful",
-                "sneaky",
                 "strange"
             ]
         },
@@ -12614,7 +12605,6 @@
                 "righteous",
                 "daring",
                 "shameless",
-                "sneaky",
                 "cunning",
                 "rebellious"
             ]
@@ -14259,10 +14249,8 @@
       "elder"
     ],
     "relationship_status": [],
-    "skill": [],
-    "trait": [
-      "-sneaky"
-    ],
+    "skill": ["-STEALTH,1"],
+    "trait": [],
     "backstory": [],
     "dies": false
   },
