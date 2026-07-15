@@ -719,7 +719,7 @@ class Screens:
     # pragma pylint: enable=no-member
 
     @staticmethod
-    def chunks(list_to_chunk: list, items_allowed_in_chunk: int) -> list[list]:
+    def get_list_chunks(list_to_chunk: list, items_allowed_in_chunk: int) -> list[list]:
         return [
             list_to_chunk[x : x + items_allowed_in_chunk]
             for x in range(0, len(list_to_chunk), items_allowed_in_chunk)

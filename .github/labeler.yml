@@ -7,3 +7,5 @@
 "PR:art":
   - changed-files:
     - any-glob-to-any-file: "**/*.png"
+"target:stable":
+  - base-branch: "^release"

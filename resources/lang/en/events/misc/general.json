@@ -15043,6 +15043,426 @@
         }
     ]
 },
+    {
+    "event_id": "gen_misc_warhalfclanquestion1",
+    "location": [
+    "any"
+],
+    "season": [
+    "any"
+],
+    "sub_type": [
+        "war"
+    ],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "The war with o_c_n demands full loyalty from every cat in c_n. m_c's half-Clan heritage makes some cats question where {PRONOUN/m_c/poss} loyalties truly lie.",
+    "m_c": {
+        "status": [
+            "-kitten",
+            "-elder"
+        ],
+        "backstory": [
+            "halfclan1",
+            "halfclan2"
+        ]
+    },
+    "relationships": [
+            {
+                "cats_from": [
+                    "clan",
+                    "low_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from is starting to doubt m_c's loyalty to the Clan because of {PRONOUN/m_c/poss} half-Clan heritage."
+                }
+            }
+        ],
+    "other_clan": {
+        "current_rep": [
+            "hostile"
+        ],
+        "changed": 0
+    }
+    },
+      {
+        "event_id": "gen_misc_warhalfclanquestion2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "Rumors about m_c's half-Clan parentage begin to spread around camp. r_c comes to m_c's defense, claiming that a war won't swivel {PRONOUN/m_c/poss} loyalty to c_n.",
+        "m_c": {
+            "status": [
+                "-kitten",
+                "-elder"
+            ],
+            "backstory": [
+                "halfclan1",
+                "halfclan2"
+            ]
+        },
+        "r_c": {
+        "relationship_status": [
+            "enjoys",
+            "trusts"
+        ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from admires that r_c stood up for m_c when {PRONOUN/m_c/poss} loyalty to c_n was questioned."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "low_lawful"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect",
+                    "trust"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from is skeptical of r_c after {PRONOUN/r_c/subject} defended m_c's half-Clan heritage in the middle of a war."
+                }
+            },
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "trust",
+                    "comfort"
+                ],
+                "amount": 15,
+                "log": {
+                    "cats_from": "m_c appreciates that r_c stood up for {PRONOUN/m_c/object} when {PRONOUN/m_c/poss} half-Clan heritage caused the Clan to doubt {PRONOUN/m_c/object}."
+                }
+            },
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "trust"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "r_c trusts m_c regardless of {PRONOUN/m_c/poss} heritage and stood up for {PRONOUN/m_c/object} in front of the Clan."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 0
+        }
+    },
+     {
+        "event_id": "gen_misc_warotherclanquestion1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "r_c spreads rumors about m_c's origins, claiming {PRONOUN/m_c/subject} could be a spy sent from another Clan to gain intel on the war with o_c_n.",
+        "m_c": {
+            "status": [
+                "-kitten",
+                "-elder"
+            ],
+            "backstory": [
+                "otherclan1",
+                "otherclan2",
+                "otherclan3",
+                "otherclan4",
+                "disgraced1",
+                "disgraced2",
+                "disgraced3",
+                "medicine_cat",
+                "retired_leader",
+                "refugee1",
+                "ostracized_warrior"
+            ]
+        },
+        "r_c": {
+        "relationship_status": [
+            "hates",
+            "distrusts"
+        ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan",
+                    "low_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from wondered if m_c was a spy after r_c brought up {PRONOUN/m_c/poss} origins."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from was appalled that r_c would spread rumors about m_c and make the Clan doubt {PRONOUN/m_c/object}."
+                }
+            },
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "respect",
+                    "comfort",
+                    "trust"
+                ],
+                "amount": -15,
+                "log": {
+                    "cats_from": "m_c can't believe r_c would imply {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a spy from a rival Clan to shatter the Clan's trust in {PRONOUN/m_c/object}."
+                }
+            },
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -15,
+                "log": {
+                    "cats_from": "r_c spread rumors about m_c in hopes of making the Clan believe {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a spy from another Clan."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 0
+        }
+    },
+     {
+        "event_id": "gen_misc_warotherclanfight1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "Realizing they are outmatched, a o_c_n warrior pleads for mercy from m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/pay/pays} no mind to their begging and quickly {VERB/m_c/end/ends} their life.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "trait": [
+                "cold",
+                "fierce",
+                "righteous",
+                "bloodthirsty"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from was unsettled to learn m_c mercilessly killed a rival Clan cat, even in the middle of a war."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "low_lawful",
+                    "high_aggress"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from approves of m_c weakening a warring Clan by killing one of their warriors."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -3
+        }
+    },
+     {
+        "event_id": "gen_misc_warotherclanfight2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "Having been defeated in battle, a o_c_n warrior begs for m_c to spare their life. m_c stares at them with sorrow and lets them get away.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "trait": [
+                "compassionate",
+                "loving",
+                "thoughtful",
+                "sincere"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect",
+                    "comfort"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from approved of m_c sparing a rival Clan cat in the middle of a war."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "low_lawful",
+                    "high_aggress"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from thought m_c should have weakened a warring Clan by killing one of their warriors when {PRONOUN/m_c/subject} had the chance."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 2
+        }
+    },
       {
     "event_id": "gen_rel_loathes1",
     "location": ["any"],

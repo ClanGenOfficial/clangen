@@ -13,7 +13,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "gen_flower_date_warrior_warrior",
+        "patrol_art": "cat_sprites/gen_flowerdate_WrWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -140,7 +140,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringoakleaves_greenleaf2",
+        "patrol_art": "backgrounds/gen_GL_gatheringoakleaves2",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -259,7 +259,7 @@
                         }
                     }
                 ],
-                "art": "app_cat_looking_up"
+                "art": "cat_sprites/gen_catlookingup_Ap"
             },
             {
                 "text": "When p_l mentions that {PRONOUN/p_l/subject} will be teaching the patrol about thrushes, s_c butts in. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} caught <i>so</i> many cinnamon-and-white thrushes before! When p_l informs the rest of the patrol that {PRONOUN/s_c/subject} {VERB/s_c/have/has} been catching ground-nesting veeries, not the types of thrushes that nest higher up, s_c feels too embarrassed to stay and learn with the group.",

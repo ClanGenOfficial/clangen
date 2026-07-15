@@ -13,6 +13,10 @@
         "living_group": "%{group} %{rank}",
         "past_no_group": "past %{rank}",
         "past_group": "past %{group} %{rank}",
+        "lives": {
+            "one": "1 life",
+            "many": "%{count} lives"
+        },
         "leader": {
             "one": "leader",
             "many": "leaders"

@@ -856,7 +856,7 @@
     },
     {
         "patrol_id": "mtn_train_greenleaf_sunsetmyth_storylocked1",
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "biome": [ "mountainous" ],
         "season": [ "greenleaf" ],
         "types": [ "training" ],

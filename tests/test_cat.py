@@ -3,10 +3,12 @@ import unittest
 from unittest.mock import patch
 from copy import deepcopy
 
+import i18n
+
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-from scripts.game_structure import game
+from scripts.game_structure import game, constants
 
 from scripts.cat.cats import Cat
 from scripts.cat_relations.inheritance2 import inheritance_db
@@ -448,6 +450,7 @@ class TestNameRepr(unittest.TestCase):
     def setUpClass(cls):
         os.environ["SDL_VIDEODRIVER"] = "dummy"
         os.environ["SDL_AUDIODRIVER"] = "dummy"
+        constants.CONFIG["cat_name_controls"]["always_use_english"] = True
 
     def test_clancats(self):
         """

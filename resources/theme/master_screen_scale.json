@@ -338,6 +338,10 @@
         "prototype": "#text_box_26",
         "misc": {"text_horiz_alignment": "center"}
     },
+    "#text_box_26_horizleft": {
+        "prototype": "#text_box_26",
+        "misc": {"text_horiz_alignment": "left"}
+    },
     "#text_box_26_horizcenter_vertcenter_spacing_95": {
         "prototype": "#text_box_26_horizcenter",
         "misc": {"text_vert_alignment": "center", "line_spacing": "0.95"}
@@ -1805,102 +1809,6 @@
             }
         }
     },
-    "#freshkill_pile_empty": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/freshkillpile_empty.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/freshkillpile_empty.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/freshkillpile_empty.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/freshkillpile_empty.png"
-            }
-        }
-    },
-    "#freshkill_pile_verylow": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/freshkillpile_verylow.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/freshkillpile_verylow.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/freshkillpile_verylow.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/freshkillpile_verylow.png"
-            }
-        }
-    },
-    "#freshkill_pile_low": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/freshkillpile_low.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/freshkillpile_low.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/freshkillpile_low.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/freshkillpile_low.png"
-            }
-        }
-    },
-    "#freshkill_pile_average": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/freshkillpile_average.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/freshkillpile_average.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/freshkillpile_average.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/freshkillpile_average.png"
-            }
-        }
-    },
-    "#freshkill_pile_good": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/freshkillpile_good.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/freshkillpile_good.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/freshkillpile_good.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/freshkillpile_good.png"
-            }
-        }
-    },
-    "#freshkill_pile_full": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/freshkillpile_full.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/freshkillpile_full.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/freshkillpile_full.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/freshkillpile_full.png"
-            }
-        }
-    },
     "#add_button": {
         "images": {
             "normal_image": {
@@ -2220,6 +2128,23 @@
             },
             "disabled_image": {
                 "path": "resources\/images\/cruel_cards\/small_icons\/environment.png"
+            }
+        }
+    },
+    "#view_cards_button": {
+        "prototype": "@image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources\/images\/buttons\/view_cruel_cards.png"
+            },
+            "hovered_image": {
+                "path": "resources\/images\/buttons\/view_cruel_cards_hover.png"
+            },
+            "selected_image": {
+                "path": "resources\/images\/buttons\/view_cruel_cards_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources\/images\/buttons\/view_cruel_cards.png"
             }
         }
     }

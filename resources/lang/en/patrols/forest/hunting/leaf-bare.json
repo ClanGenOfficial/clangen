@@ -11,7 +11,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_leafbaresnowstorm",
+        "patrol_art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -186,7 +186,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_leafbaresnowstorm",
+        "patrol_art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -269,7 +269,7 @@
         "season": [ "leaf-bare" ],
         "types": [ "hunting" ],
         "tags": [ "romance" ],
-        "patrol_art": "gen_hunt_leafbaresnowstorm",
+        "patrol_art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -426,7 +426,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_mouse",
+        "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -527,7 +527,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_mouse",
+        "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -607,7 +607,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_mouse",
+        "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -717,7 +717,7 @@
         "season": [ "leaf-bare" ],
         "types": [ "hunting" ],
         "tags": [ "romance" ],
-        "patrol_art": "fst_hunt_mice_ohnotheyrehot",
+        "patrol_art": "cat_sprites/gen_groupwalk_WrWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -900,7 +900,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_mice",
+        "patrol_art": "backgrounds/fst_dirttrail",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -1020,7 +1020,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_squirrel",
+        "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1304,7 +1304,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_leaf-bare_squirrel_treetoptumble",
+        "patrol_art": "cat_sprites/fst_hunt_LB_squirreltreetoptumble_WrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -1660,7 +1660,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_leafbaresnowstorm",
+        "patrol_art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -2014,7 +2014,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -3139,7 +3139,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_mouse",
+        "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -3255,7 +3255,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_mice",
+        "patrol_art": "backgrounds/fst_dirttrail",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -3510,7 +3510,7 @@
         "types": [
             "hunting"
         ],
-        "patrol_art": "gen_hunt_leafbaresnowstorm",
+        "patrol_art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -3624,7 +3624,7 @@
             {
                 "text": "s_c explodes from the bushes, just as much of a blur as the bird as it tries to escape, but {PRONOUN/s_c/poss} pounce is too high, {PRONOUN/s_c/poss} claws too quick. app1 tries not to look too impressed, but that's exactly the kind of warrior {PRONOUN/app1/subject} {VERB/app1/want/wants} to be — an astonishing hunter.",
                 "exp": 30,
-                "art": "gen_train_sneakprey",
+                "art": "cat_sprites/gen_train_sneakprey_Ap",
                 "prey": ["medium"],
                 "stat_skill": ["HUNTER,2"],
                 "can_have_stat": ["p_l"],
@@ -3664,7 +3664,7 @@
             {
                 "text": "It's only because app1 was already looking that {PRONOUN/app1/subject} {VERB/app1/spot/spots} s_c, high on the tree above the bright bird, edging forward carefully and stealthily. app1 freezes, watching. s_c descends on the kingfisher from the one direction it wasn't watching, behind and above it, letting momentum do the work of killing as the apprentice watches with shining eyes.",
                 "exp": 30,
-                "art": "gen_train_sneakprey",
+                "art": "cat_sprites/gen_train_sneakprey_Ap",
                 "prey": [
                     "medium"
                 ],
@@ -3710,7 +3710,7 @@
             {
                 "text": "A kingfisher, p_l whispers from app1's side. They'll take it down together, next time it dives for something in the stream. It's a good plan, and though they have to quickly warm up afterwards, sharing tongues to get cold water off pelts, they win a nice prize for the fresh-kill pile.",
                 "exp": 30,
-                "art": "gen_train_sunny6",
+                "art": "cat_sprites/gen_train_sunny_WrAp",
                 "prey": [
                     "small"
                 ],
@@ -3750,7 +3750,7 @@
             {
                 "text": "The patrol brings down the kingfisher in a flurry of feathers, and as app1 regains {PRONOUN/app1/poss} breath, s_c smiles, putting a paw on the bird. For a half-moon each year around the shortest day, the storms will not come, and that is when the kingfishers lay their eggs, in the halcyon days.",
                 "exp": 30,
-                "art": "gen_train_sneakprey",
+                "art": "cat_sprites/gen_train_sneakprey_Ap",
                 "prey": [
                     "small"
                 ],
@@ -3806,7 +3806,7 @@
             {
                 "text": "The patrol brings down the kingfisher in a flurry of feathers. As app1 regains {PRONOUN/app1/poss} breath, p_l scoffs. Don't let anyone tell you foolish myths of halcyon days, app1. Kingfishers nest not in the dead of leaf-bare, but in newleaf, like most birds.",
                 "exp": 30,
-                "art": "gen_train_sneakprey",
+                "art": "cat_sprites/gen_train_sneakprey_Ap",
                 "prey": [
                     "small"
                 ],
@@ -3862,7 +3862,7 @@
             {
                 "text": "p_l encourages app1 to try {PRONOUN/app1/poss} paw. app1 creeps closer, easily tracking the bright bird in the foliage, but the kingfisher has its own hunt. It dips into the frosty stream, and comes up with a small frog held in its beak. A twig snaps under app1's paw, and the bird flees — but it leaves the frog behind for app1 to take!",
                 "exp": 30,
-                "art": "gen_train_sneakprey",
+                "art": "cat_sprites/gen_train_sneakprey_Ap",
                 "prey": [
                     "small"
                 ],
