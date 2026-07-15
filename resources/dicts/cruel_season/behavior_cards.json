@@ -123,7 +123,7 @@
   "burnout": {
     "card_art": "behavior/resolute.png",
     "modifiers": {
-      "medcat_base_capacity": 5
+      "medcats.medcat_base_capacity": 5
     }
   }
 }
