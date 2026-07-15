@@ -512,6 +512,12 @@ dev_tools = false
 [death_related]
   # the maximum lives a leader can have
   max_leader_lives = 9
+  
+  # random leader lives
+  leader_lives_random = false
+
+  # minimum only called on if lives are random
+  min_leader_lives = 1
 
   # base 1/chance that leader will die
   leader_death_chance = 50

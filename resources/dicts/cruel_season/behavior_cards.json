@@ -123,6 +123,8 @@
   "weak_stars": {
     "card_art": "behavior/sorrow.png",
     "modifiers": {
+      "death_related.max_leader_lives": 5,
+      "death_related.leader_lives_random": true
     }
   },
   "forsaken": {
