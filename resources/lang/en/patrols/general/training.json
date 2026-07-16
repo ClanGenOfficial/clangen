@@ -22027,7 +22027,7 @@
   "types": [
     "training"
   ],
-  "patrol_art": "gen_med_gatheringraspberrysoloapp",
+  "patrol_art": "cat_sprites/gen_med_gatheringraspberrysolo_Wr",
   "min_cats": 3,
   "max_cats": 6,
   "min_max_status": {
