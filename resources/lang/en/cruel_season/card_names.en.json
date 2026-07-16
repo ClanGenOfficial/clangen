@@ -9,6 +9,7 @@
     "all_kittens": "Small Paws",
     "all_apprentices": "Young Hearts",
     "all_elders": "Old Bones",
+    "enmity": "Enmity",
     "stolen_vitality": "Stolen Vitality",
     "survival_of_fittest": "Survival Of The Fittest",
     "kit_season": "Kit Season",
@@ -20,6 +21,7 @@
     "always_greenleaf": "Neverending Heat",
     "always_leaf-fall": "Neverending Harvest",
     "always_leaf-bare": "Neverending Frost",
+    "underpopulated": "Underpopulated",
     "heartless": "Heartless",
     "malicious_aura": "Malicious Aura"
   }

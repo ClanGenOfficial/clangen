@@ -148,8 +148,8 @@
         "involved_cats": {
             "r_c": {
                 "stat": {
-                    "trait": [
-                        "sneaky"
+                    "skill": [
+                        "STEALTH,1"
                     ]
                 }
             }

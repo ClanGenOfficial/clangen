@@ -13,7 +13,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "gen_flower_date_warrior_warrior",
+        "patrol_art": "cat_sprites/gen_flowerdate_WrWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -142,7 +142,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "fst_train_newleafmatesonadates_70locked1",
+        "patrol_art": "cat_sprites/gen_talkingmates_WrWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -236,7 +236,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_train_ghost",
+        "patrol_art": "cat_sprites/gen_train_ghost_WrWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -344,7 +344,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "crows_mocking_INTRO",
+        "patrol_art": "animals/gen_crow",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},

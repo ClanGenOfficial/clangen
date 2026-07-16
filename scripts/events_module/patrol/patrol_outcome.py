@@ -763,11 +763,29 @@ class PatrolOutcome:
         patrol_size_modifier = round(len(patrol.patrol_cats) * 0.80)
 
         if "random_herbs" in self.herbs:
+            # we want better control over how many herbs they'll gather in total here
+            quantity_allowed = 0
+            for cat in patrol.patrol_cats:
+                quantity_allowed += constants.CONFIG["clan_resources"]["herbs"][
+                    "general_patrol_quantity_per_cat"
+                ]
+                if cat.skills.primary.path == SkillPath.CLEVER:
+                    quantity_allowed += constants.CONFIG["clan_resources"]["herbs"][
+                        "primary_clever"
+                    ]
+                elif (
+                    cat.skills.secondary
+                    and cat.skills.secondary.path == SkillPath.CLEVER
+                ):
+                    quantity_allowed += constants.CONFIG["clan_resources"]["herbs"][
+                        "secondary_clever"
+                    ]
             # get random herbs, add to storage, and get patrol outcome msg
             list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
                 med_cat=patrol.patrol_leader,
                 general_amount_bonus=large_bonus,
                 specific_quantity_bonus=patrol_size_modifier,
+                specific_quantity_allowed=quantity_allowed,
             )
 
         # now we grab any other herbs that were tagged

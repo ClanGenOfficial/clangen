@@ -173,7 +173,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "mtn_train_sett",
+        "patrol_art": "backgrounds/mtn_sett",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -258,7 +258,6 @@
                     "calm",
                     "careful",
                     "nervous",
-                    "sneaky",
                     "strange",
                     "cunning"
                 ],
@@ -365,7 +364,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "mtn_train_sett",
+        "patrol_art": "backgrounds/mtn_sett",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -439,7 +438,6 @@
                     "calm",
                     "careful",
                     "nervous",
-                    "sneaky",
                     "strange",
                     "cunning"
                 ],
@@ -558,7 +556,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "mtn_train_stuck",
+        "patrol_art": "cat_sprites/mtn_train_stuck_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -807,7 +805,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "mtn_train_stuck",
+        "patrol_art": "cat_sprites/mtn_train_stuck_Wr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},
@@ -998,7 +996,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "mtn_train_stuck",
+        "patrol_art": "cat_sprites/mtn_train_stuck_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -1071,7 +1069,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_train_soloapp",
+        "patrol_art": "cat_sprites/gen_train_solo_Ap",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1160,7 +1158,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_train_solo",
+        "patrol_art": "cat_sprites/gen_train_solo_Ap",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1615,7 +1613,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "gen_train_sunset",
+        "patrol_art": "cat_sprites/gen_chatting_WrWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1778,7 +1776,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "mtn_train_thrush",
+        "patrol_art": "cat_sprites/mtn_train_thrush_WrAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1975,7 +1973,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "mtn_train_thrush",
+        "patrol_art": "cat_sprites/mtn_train_thrush_WrAp",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -2085,7 +2083,7 @@
                         }
                     }
                 ],
-                "frequency": 1
+                "frequency": 4
             },
             {
                 "text": "s_c stops, suddenly reminded of an old tale. The thrush below is breaking a snail open on a rock. There was a prophecy about that once, although p_l can't quite remember how the story goes...",
@@ -2149,7 +2147,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 rolls {PRONOUN/app1/poss} eyes and asks why {PRONOUN/app1/subject} can't just try catching it. Irritably, p_l replies that {PRONOUN/app1/subject}{VERB/app1/'re/'s} welcome to try, and the bird spots app1 coming immediately, also spoiling app2's chances.",
+                "text": "app1 rolls {PRONOUN/app1/poss} eyes and asks why {PRONOUN/app1/subject} can't just try catching it. p_l replies that {PRONOUN/app1/subject}{VERB/app1/'re/'s} welcome to try, and the bird spots app1 coming immediately, also spoiling app2's chances.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -2166,7 +2164,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from and cat_to squabbled during a training session when app1 wanted to actually hunt instead of practice stalking."
+                            "cats_from": "app1 ignored p_l's lesson during training session when app1 wanted to actually hunt instead of practice stalking."
                         }
                     },
                     {
@@ -2182,7 +2180,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from was peeved that cat_to's hasty pounce ruined {PRONOUN/cat_from/poss} chance to learn about bird-hunting."
+                            "cats_from": "cat_from's hasty pounce ruined cat_to's chance to learn about bird-hunting."
                         }
                     }
                 ],
@@ -2802,7 +2800,7 @@
             "romance",
             "all_mentored"
         ],
-        "patrol_art": "mtn_train_snowcrunching",
+        "patrol_art": "cat_sprites/mtn_train_snowcrunching_ApAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -2972,7 +2970,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "crows_mocking_INTRO",
+        "patrol_art": "animals/gen_crow",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -3011,7 +3009,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -3029,7 +3027,7 @@
             {
                 "text": "Long ago there lived a rogue, outcast and hated by all, obsessed with power and fighting. They made a bargain with blood and decay, giving up their ability to speak in exchange for great killing power, and have never regretted the trade.",
                 "exp": 30,
-                "art": "gen_train_ghost",
+                "art": "cat_sprites/gen_train_ghost_WrWrWr",
                 "relationships": [
                     {
                         "cats_to": [

@@ -286,6 +286,7 @@ class History:
             SkillPath.RUNNER: ["running"],
             SkillPath.CLIMBER: ["climbing"],
             SkillPath.SWIMMER: ["swimming"],
+            SkillPath.STEALTH: ["stealth", "deception"],
             SkillPath.SPEAKER: ["arguing"],
             SkillPath.MEDIATOR: ["resolving arguments"],
             SkillPath.CLEVER: ["solving problems"],

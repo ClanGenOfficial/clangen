@@ -103,6 +103,8 @@
         "Singlestripe_long": "dorsal-striped %{color}",
         "Rosette": "rosette",
         "Rosette_long": "unusually spotted %{color}",
+        "Freckled": "freckled",
+        "Freckled_long": "unusually dotted %{color}",
         "Sokoke": "sokoke",
         "Sokoke_long": "%{color} tabby",
         "Masked": "masked",
