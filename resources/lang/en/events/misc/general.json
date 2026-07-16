@@ -14013,7 +14013,7 @@
             {
                 "cats_from": ["r_c"],
                 "cats_to": ["m_c"],
-                "values": ["comfort"],
+                "values": ["comfort", "trust"],
                 "amount": -30,
                 "mutual": false,
                 "log": {
