@@ -971,10 +971,6 @@ class Pregnancy_Events:
                 )
         print_event = " ".join(event_list)
         print_event = print_event.replace("{insert}", insert)
-        if "mc_mate" in cat_dict:
-            print_event = print_event.replace("mc_mate", "mc_mate")
-        if "rc_mate" in cat_dict:
-            print_event = print_event.replace("rc_mate", "rc_mate")
 
         # if the event doesn't mention mc/rc_mate, remove the cheated mate's ID from the event
         involved_cats = Pregnancy_Events.remove_unmentioned_mate_ids(
