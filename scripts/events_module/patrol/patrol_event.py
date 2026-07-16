@@ -10,7 +10,7 @@ from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
     RelationshipConstraintDict,
 )
-from scripts.events_module.text_pool_event import TextPoolEvent
+from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import constants
 
 NUM_OF_TRAITS = len(Personality.trait_ranges["normal_traits"].keys()) + len(

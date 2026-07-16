@@ -19,7 +19,7 @@ from scripts.events_module.event_filters import (
     event_for_tags,
 )
 from scripts.events_module.text_adjust import process_text
-from scripts.events_module.text_pool_event import TextPoolEvent
+from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 

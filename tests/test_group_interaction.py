@@ -10,7 +10,7 @@ from scripts.events_module.parameter_dicts import (
     RelationshipConstraintDict,
 )
 from scripts.events_module.relationship import generate_group_event
-from scripts.events_module.text_pool_event import TextPoolEvent
+from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"

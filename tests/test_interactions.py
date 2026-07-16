@@ -8,7 +8,7 @@ from scripts.cat.enums import CatRank
 from scripts.events_module.event_filters import filter_relationship_type
 from scripts.events_module.parameter_dicts import InvolvedCatDict, StatDict
 from scripts.events_module.relationship import generate_pair_event
-from scripts.events_module.text_pool_event import TextPoolEvent
+from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"

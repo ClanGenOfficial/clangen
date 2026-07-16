@@ -16,7 +16,7 @@ from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
 )
 from scripts.events_module.text_adjust import process_text, adjust_list_text
-from scripts.events_module.text_pool_event import TextPoolEvent
+from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 
