@@ -14197,7 +14197,9 @@
                 "apprentice",
                 "warrior",
                 "deputy",
-                "leader"
+                "leader",
+                "medicine cat",
+                "medicine cat apprentice"
             ]
         },
         "r_c": {
