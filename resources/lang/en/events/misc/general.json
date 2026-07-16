@@ -14110,7 +14110,7 @@
                 "cats_from": [
                     "clan",
                     "low_social",
-                    "low_aggress"
+                    "high_lawful"
                 ],
                 "cats_to": ["r_c"],
                 "values": [
