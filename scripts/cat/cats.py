@@ -32,7 +32,6 @@ from scripts.cat.skills import CatSkills
 from scripts.cat.status import Status, StatusDict
 from scripts.config import get_config
 from scripts.events_module.thoughts.generate_thoughts import (
-    new_death_thought,
     new_thought,
     get_other_cat_for_thought,
 )
@@ -719,6 +718,7 @@ class Cat:
             grief_allowed
             and game.clan
             and self.status.get_last_living_group() == CatGroup.PLAYER_CLAN_ID
+            and not self.status.is_exiled(CatGroup.PLAYER_CLAN_ID)
         ):
             self.grief(body)
             game.dead_cats_to_grieve.append(self)
@@ -2367,6 +2367,10 @@ class Cat:
 
         # just to be sure, check if it is not the same cat
         if self.ID == other_cat.ID:
+            return False
+
+        # Config check
+        if not get_config("mates.allow_mating"):
             return False
 
         # No Mates Check

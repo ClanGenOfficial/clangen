@@ -410,7 +410,9 @@ class ChooseMateScreen(Screens):
         """Updates everything in the mates container, including the list of current mates,
         and the page"""
 
-        self.all_mates = self.chunks([Cat.fetch_cat(i) for i in self.the_cat.mate], 30)
+        self.all_mates = self.get_list_chunks(
+            [Cat.fetch_cat(i) for i in self.the_cat.mate], 30
+        )
         self.update_mates_container_page()
 
     def update_mates_container_page(self):
@@ -504,7 +506,7 @@ class ChooseMateScreen(Screens):
                 i for i in self.all_offspring if self.selected_cat.is_parent(i)
             ]
 
-        self.all_offspring = self.chunks(self.all_offspring, 24)
+        self.all_offspring = self.get_list_chunks(self.all_offspring, 24)
 
         if "kits_selected_pair" in self.checkboxes:
             self.checkboxes["kits_selected_pair"].kill()
@@ -662,7 +664,7 @@ class ChooseMateScreen(Screens):
             container=self.potential_container,
         )
 
-        self.all_potential_mates = self.chunks(self.get_valid_mates(), 24)
+        self.all_potential_mates = self.get_list_chunks(self.get_valid_mates(), 24)
 
         # Update checkboxes
         # TODO

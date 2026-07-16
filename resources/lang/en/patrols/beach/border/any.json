@@ -455,7 +455,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_flashflood",
+        "patrol_art": "cat_sprites/gen_bord_flashflood_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -568,7 +568,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_flashflood",
+        "patrol_art": "cat_sprites/gen_bord_flashflood_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -674,7 +674,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_trackrogue",
+        "patrol_art": "backgrounds/gen_pawprints",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -892,7 +892,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "gen_bord_trackrogue",
+        "patrol_art": "backgrounds/gen_pawprints",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1007,7 +1007,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_trackrogue",
+        "patrol_art": "backgrounds/gen_pawprints",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},
@@ -1212,7 +1212,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "gen_bord_trackrogue",
+        "patrol_art": "backgrounds/gen_pawprints",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1336,7 +1336,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_trackrogue",
+        "patrol_art": "backgrounds/gen_pawprints",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -1510,7 +1510,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "gen_bord_trackrogue",
+        "patrol_art": "backgrounds/gen_pawprints",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -2281,7 +2281,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "loveland_frog_INTRO",
+        "patrol_art": "halloween/hal_lovelandfrog",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},

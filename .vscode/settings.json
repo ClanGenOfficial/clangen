@@ -33,7 +33,8 @@
         {
             "url": "./schemas/relationship_pair_event.schema.json",
             "fileMatch": [
-                "events/relationship_events/normal_interactions/**/*.json"
+                "events/relationship_events/normal_interactions/**/*.json",
+                "events/relationship_events/joining_interactions/**/*.json"
             ]
         },
         {

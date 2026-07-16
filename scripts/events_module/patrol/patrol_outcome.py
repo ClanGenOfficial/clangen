@@ -14,6 +14,7 @@ from scripts.cat.personality import Personality
 from scripts.config import get_config
 from scripts.events_module.future.prep_and_trigger import prep_future_event
 from scripts.clan_package.settings import get_clan_setting
+from scripts.events_module.relationship.relation_events import Relation_Events
 from scripts.game_structure import constants
 from scripts.game_structure.game.settings import game_setting_get
 
@@ -763,11 +764,29 @@ class PatrolOutcome:
         patrol_size_modifier = round(len(patrol.patrol_cats) * 0.80)
 
         if "random_herbs" in self.herbs:
+            # we want better control over how many herbs they'll gather in total here
+            quantity_allowed = 0
+            for cat in patrol.patrol_cats:
+                quantity_allowed += constants.CONFIG["clan_resources"]["herbs"][
+                    "general_patrol_quantity_per_cat"
+                ]
+                if cat.skills.primary.path == SkillPath.CLEVER:
+                    quantity_allowed += constants.CONFIG["clan_resources"]["herbs"][
+                        "primary_clever"
+                    ]
+                elif (
+                    cat.skills.secondary
+                    and cat.skills.secondary.path == SkillPath.CLEVER
+                ):
+                    quantity_allowed += constants.CONFIG["clan_resources"]["herbs"][
+                        "secondary_clever"
+                    ]
             # get random herbs, add to storage, and get patrol outcome msg
             list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
                 med_cat=patrol.patrol_leader,
                 general_amount_bonus=large_bonus,
                 specific_quantity_bonus=patrol_size_modifier,
+                specific_quantity_allowed=quantity_allowed,
             )
 
         # now we grab any other herbs that were tagged
@@ -926,6 +945,7 @@ class PatrolOutcome:
                     outside.append(self._profile_link(cat))
                 else:
                     new.append(self._profile_link(cat))
+                    Relation_Events.welcome_new_cats([cat])
             for type_list, string in [
                 (dead, "screens.patrol.dead_outsider"),
                 (outside, "screens.patrol.met_outsider"),

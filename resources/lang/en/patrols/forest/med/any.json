@@ -128,7 +128,7 @@
         "tags": [
             "all_mentored"
         ],
-        "patrol_art": "fst_med_herblocation2",
+        "patrol_art": "cat_sprites/fst_med_herblocation2",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -178,7 +178,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "fst_med_stumble1",
+        "patrol_art": "cat_sprites/fst_med_stumble_McWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -492,7 +492,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "fst_med_stumble2",
+        "patrol_art": "cat_sprites/fst_med_stumble_McMc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -805,7 +805,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "fst_med_stumble3",
+        "patrol_art": "cat_sprites/fst_med_stumble_WrMc",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
