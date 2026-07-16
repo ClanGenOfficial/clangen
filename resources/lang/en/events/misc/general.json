@@ -14292,11 +14292,7 @@
                 "leader"
             ]
         },
-        "r_c": {
-            "status": [
-                "-kitten"
-            ]
-        },
+        "r_c": {},
         "injury": [
             {
                 "cats": ["r_c"],
