@@ -12,7 +12,6 @@ from scripts.events_module.relationship import (
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatAge
 from scripts.events_module.relationship.romantic_events import RomanticEvents
-from scripts.events_module.relationship.welcoming_events import Welcoming_Events
 from scripts.clan_package.get_clan_cats import (
     get_cats_same_age,
     get_possible_mates,
