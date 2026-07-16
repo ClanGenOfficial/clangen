@@ -54,7 +54,10 @@ class RoleScreen(Screens):
                     self.update_selected_cat()
                 else:
                     print("invalid previous cat", self.previous_cat)
-            elif not get_config("ranks.allow_manual"):
+            elif not get_config("ranks.allow_manual_all") or (
+                not get_config("ranks.allow_manual_deputy")
+                and self.the_cat == game.clan.deputy
+            ):
                 CruelLockedAction()
                 pass
             #
@@ -63,17 +66,26 @@ class RoleScreen(Screens):
             #                               Ye have been warned
             #
             #
+
             elif event.ui_element == self.promote_leader:
-                if self.the_cat == game.clan.deputy:
-                    game.clan.deputy = None
-                game.clan.new_leader(self.the_cat)
-                if switch_get_value(Switch.sort_type) == "rank":
-                    Cat.sort_cats()
-                self.update_selected_cat()
+                if not get_config("ranks.allow_manual_deputy"):
+                    CruelLockedAction()
+                    pass
+                else:
+                    if self.the_cat == game.clan.deputy:
+                        game.clan.deputy = None
+                    game.clan.new_leader(self.the_cat)
+                    if switch_get_value(Switch.sort_type) == "rank":
+                        Cat.sort_cats()
+                    self.update_selected_cat()
             elif event.ui_element == self.promote_deputy:
-                game.clan.deputy = self.the_cat
-                self.the_cat.rank_change(CatRank.DEPUTY, resort=True)
-                self.update_selected_cat()
+                if not get_config("ranks.allow_manual_deputy"):
+                    CruelLockedAction()
+                    pass
+                else:
+                    game.clan.deputy = self.the_cat
+                    self.the_cat.rank_change(CatRank.DEPUTY, resort=True)
+                    self.update_selected_cat()
             elif event.ui_element == self.switch_warrior:
                 self.the_cat.rank_change(CatRank.WARRIOR, resort=True)
                 self.update_selected_cat()

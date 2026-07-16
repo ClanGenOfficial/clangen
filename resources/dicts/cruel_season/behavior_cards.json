@@ -8,7 +8,7 @@
   "fated_paths": {
     "card_art": "behavior/resolute.png",
     "modifiers": {
-      "ranks.allow_manual": false,
+      "ranks.allow_manual_all": false,
       "mates.allow_manual": false,
       "settings.force_enable.deputy": true
     }
@@ -130,7 +130,8 @@
     "card_art": "behavior/pride_and_joy.png",
     "modifiers": {
       "settings.force_enable.deputy": true,
-      "placeholder.only_leader_kits.deputy": true
+      "ranks.allow_manual_deputy": false,
+      "ranks.only_leader_kits_deputy": true
     }
   }
 }
