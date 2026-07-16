@@ -14009,7 +14009,7 @@
                 "cats_from": ["r_c"],
                 "cats_to": ["m_c"],
                 "values": ["comfort"],
-                "amount": -20,
+                "amount": -30,
                 "mutual": false,
                 "log": {
                     "cats_from": "cat_from became terrified of cat_to after {PRONOUN/cat_to/subject} attacked {PRONOUN/cat_from/object} while on patrol."
