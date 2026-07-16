@@ -14114,7 +14114,7 @@
                 ],
                 "cats_to": ["r_c"],
                 "values": [
-                    "comfort"
+                    "comfort", "trust"
                 ],
                 "amount": -15,
                 "mutual": false,
