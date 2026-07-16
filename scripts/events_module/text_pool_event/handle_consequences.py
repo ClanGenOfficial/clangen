@@ -121,7 +121,7 @@ def _handle_joining(event, event_involved_cats) -> str:
     return i18n.t("screens.patrol.new_outsider", cats=adjust_list_text(cat_names))
 
 
-def _handle_death(event, patrol_involved_cats, other_clan: OtherClan) -> str:
+def _handle_death(event, event_involved_cats, other_clan: OtherClan) -> str:
     """
     Handles cats dying on patrol
     """
@@ -137,12 +137,12 @@ def _handle_death(event, patrol_involved_cats, other_clan: OtherClan) -> str:
     dead_cats = []
 
     for block in event.death:
-        for abbr, cat in patrol_involved_cats.items():
+        for abbr, cat in event_involved_cats.items():
             if abbr in block["cats"]:
-                if isinstance(patrol_involved_cats[abbr], list):
-                    dead_cats.extend(patrol_involved_cats[abbr])
+                if isinstance(event_involved_cats[abbr], list):
+                    dead_cats.extend(event_involved_cats[abbr])
                 else:
-                    dead_cats.append(patrol_involved_cats[abbr])
+                    dead_cats.append(event_involved_cats[abbr])
 
         # we default to a body being present
         body = block.get("body", True)
@@ -235,7 +235,7 @@ def __handle_death_history(
     cat.history.add_death(death_text=final_death_history)
 
 
-def _handle_lost(event, patrol_involved_cats: dict) -> str:
+def _handle_lost(event, event_involved_cats: dict) -> str:
     """
     Handles cats being lost
     """
@@ -247,12 +247,12 @@ def _handle_lost(event, patrol_involved_cats: dict) -> str:
     for block in event.lost:
         # gather up the kitties
         cat_list = []
-        for abbr, cat in patrol_involved_cats.items():
+        for abbr, cat in event_involved_cats.items():
             if abbr in block["cats"]:
-                if isinstance(patrol_involved_cats[abbr], list):
-                    cat_list.extend(patrol_involved_cats[abbr])
+                if isinstance(event_involved_cats[abbr], list):
+                    cat_list.extend(event_involved_cats[abbr])
                 else:
-                    cat_list.append(patrol_involved_cats[abbr])
+                    cat_list.append(event_involved_cats[abbr])
 
         for c in cat_list:
             c.become_lost()
@@ -268,7 +268,7 @@ def _handle_lost(event, patrol_involved_cats: dict) -> str:
     return " ".join(results)
 
 
-def _handle_conditions(event, patrol_involved_cats: dict, other_clan: OtherClan) -> str:
+def _handle_conditions(event, event_involved_cats: dict, other_clan: OtherClan) -> str:
     """
     Handles applying conditions to cats.
     """
@@ -283,12 +283,12 @@ def _handle_conditions(event, patrol_involved_cats: dict, other_clan: OtherClan)
     for block in event.condition:
         # gather up the kitties
         cat_list = []
-        for abbr, cat in patrol_involved_cats.items():
+        for abbr, cat in event_involved_cats.items():
             if abbr in block["cats"]:
-                if isinstance(patrol_involved_cats[abbr], list):
-                    cat_list.extend(patrol_involved_cats[abbr])
+                if isinstance(event_involved_cats[abbr], list):
+                    cat_list.extend(event_involved_cats[abbr])
                 else:
-                    cat_list.append(patrol_involved_cats[abbr])
+                    cat_list.append(event_involved_cats[abbr])
 
         possible_conditions = []
         for tag in block["condition"]:
@@ -355,7 +355,6 @@ def _handle_conditions(event, patrol_involved_cats: dict, other_clan: OtherClan)
 
 
 def __handle_condition_history(
-    self,
     event,
     cat: Cat,
     condition: str,
@@ -369,7 +368,7 @@ def __handle_condition_history(
     """
     if not scar_string and not death_string:
         logging.warning(
-            f"WARNING: Condition was added by outcome: {self} but no scar or death history string was given."
+            f"WARNING: Condition was added by outcome: {event} but no scar or death history string was given."
         )
 
     if default_override:
@@ -429,21 +428,20 @@ def _handle_reputation_changes(event, other_clan: OtherClan) -> str:
     return ""
 
 
-def _handle_supply_changes(event):
+def _handle_supply_changes(event, event_involved_cats: dict):
     for block in event.supply:
         if block["type"] == "freshkill":
-            __handle_prey(block)
+            __handle_prey(block, event_involved_cats)
         else:
             __handle_herbs(block)
 
 
-def __handle_prey(event, prey_info: SupplyDict):
+def __handle_prey(
+    prey_info: SupplyDict, event_involved_cats: dict
+) -> str:
     """Handle giving prey"""
 
-    if not FRESHKILL_ACTIVE:
-        return ""
-
-    if not prey_info or game.clan.game_mode == "classic":
+    if (not prey_info or game.clan.game_mode == "classic") or not FRESHKILL_ACTIVE:
         return ""
 
     basic_amount = (
@@ -460,18 +458,9 @@ def __handle_prey(event, prey_info: SupplyDict):
 
     basic_amount = prey_types.get(prey_info["adjust"])
 
-    for tag in event.prey:
-        basic_amount = prey_types.get(tag)
-        if basic_amount is not None:
-            used_tag = tag
-            break
-    else:
-        print(f"{event.prey} - no prey amount tags in prey property")
-        return ""
-
     total_amount = 0
     highest_hunter_tier = 0
-    for cat in patrol.patrol_cats:
+    for cat in event_involved_cats["patrol_cats"]:
         total_amount += basic_amount
         if cat.skills.primary.path == SkillPath.HUNTER and cat.skills.primary.tier > 0:
             level = cat.experience_level
@@ -508,10 +497,69 @@ def __handle_prey(event, prey_info: SupplyDict):
             f"{total_amount} pieces of prey were caught on a patrol."
         )
         game.clan.freshkill_pile.add_freshkill(total_amount)
-        results = i18n.t(f"screens.patrol.prey_{used_tag}")
+        results = i18n.t(
+            f"screens.patrol.prey_{prey_info['adjust'].replace('increase', '')}"
+        )
 
     return results
 
 
-def __handle_herbs(self):
-    pass
+def __handle_herbs(herb_info: SupplyDict) -> str:
+    """Handle giving herbs"""
+
+    if not herb_info or game.clan.game_mode == "classic":
+        return ""
+
+    list_of_herb_strs = []
+    found_herbs = {}
+
+    large_bonus = False
+    if "many_herbs" in self.herbs:
+        large_bonus = True
+
+    patrol_size_modifier = round(len(patrol.patrol_cats) * 0.80)
+
+    if "random_herbs" in self.herbs:
+        # get random herbs, add to storage, and get patrol outcome msg
+        list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
+            med_cat=patrol.patrol_leader,
+            general_amount_bonus=large_bonus,
+            specific_quantity_bonus=patrol_size_modifier,
+        )
+
+    # now we grab any other herbs that were tagged
+    additional_herbs = {}
+    for herb in [x for x in self.herbs if x not in ["many_herbs", "random_herbs"]]:
+        amount = choices([2, 3, 4], weights=[2, 1, 1], k=1)[0]
+        amount *= patrol_size_modifier
+        if large_bonus:
+            amount *= 2
+
+        additional_herbs[herb] = amount
+
+    # add found_herbs to storage and get patrol outcome msg
+    (
+        additional_strs,
+        additional_herbs,
+    ) = game.clan.herb_supply.handle_found_herbs_outcomes(additional_herbs)
+
+    # extend this list in case we already grabbed a bunch of random herbs
+    list_of_herb_strs.extend([x for x in additional_strs if x not in list_of_herb_strs])
+    # update the original found_herbs dict, again just in case we've already grabbed a bunch of random herbs
+    for _h in additional_herbs:
+        if _h not in found_herbs:
+            found_herbs[_h] = additional_herbs[_h]
+        else:
+            found_herbs[_h] += additional_herbs[_h]
+
+    herb_string = adjust_list_text(list_of_herb_strs).capitalize()
+
+    full_amount_count = sum(found_herbs.values())
+
+    game.herb_events_list.append(
+        i18n.t("screens.patrol.herb_log", count=full_amount_count, herbs=herb_string)
+    )
+
+    return i18n.t(
+        "screens.patrol.herbs_gathered", count=full_amount_count, herbs=herb_string
+    )
