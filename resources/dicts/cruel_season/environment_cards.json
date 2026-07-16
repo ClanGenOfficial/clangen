@@ -1,20 +1,49 @@
 {
-  "environment_placeholder0": {
-    "card_art": "environment/tainted.png",
+  "lean_meat": {
+    "card_art": "environment/lean_meat.png",
     "modifiers": {
-      "mod_name": 1
+      "prey.prey_requirement": {
+        "leader": 4,
+        "deputy": 4,
+        "medicine cat": 3,
+        "medicine cat apprentice": 2,
+        "mediator apprentice": 2,
+        "mediator": 3,
+        "warrior": 4,
+        "apprentice": 2,
+        "elder": 2,
+        "queen/pregnant": 6,
+        "kitten": 1,
+        "newborn": 0.5
+      }
     }
   },
-  "environment_placeholder1": {
-    "card_art": "environment/sickness.png",
-    "modifiers": {
-      "mod_name": 1
-    }
-  },
-  "environment_placeholder2": {
+  "always_newleaf": {
     "card_art": "environment/tainted.png",
     "modifiers": {
-      "mod_name": 1
+      "seasons.lock_season": true,
+      "seasons.force_starting_season": "Newleaf"
+    }
+  },
+  "always_greenleaf": {
+    "card_art": "environment/tainted.png",
+    "modifiers": {
+      "seasons.lock_season": true,
+      "seasons.force_starting_season": "Greenleaf"
+    }
+  },
+  "always_leaf-fall": {
+    "card_art": "environment/tainted.png",
+    "modifiers": {
+      "seasons.lock_season": true,
+      "seasons.force_starting_season": "Leaf-fall"
+    }
+  },
+  "always_leaf-bare": {
+    "card_art": "environment/tainted.png",
+    "modifiers": {
+      "seasons.lock_season": true,
+      "seasons.force_starting_season": "Leaf-bare"
     }
   }
 }

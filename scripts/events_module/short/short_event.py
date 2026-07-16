@@ -8,6 +8,7 @@ from scripts.cat.cats import Cat
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_package.settings import get_clan_setting
+from scripts.config import get_config
 from scripts.event_class import Single_Event
 from scripts.events_module.future.prep_and_trigger import prep_future_event
 from scripts.events_module.relationship import relation_events
@@ -22,6 +23,7 @@ from scripts.events_module.consequences import (
     create_new_cat_block,
     unpack_rel_block,
     change_relationship_values,
+    check_stolen_vitality,
 )
 from scripts.clan_package.cotc import change_clan_reputation, change_clan_relations
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
@@ -588,17 +590,21 @@ class ShortEvent:
                 self.types.append("birth_death")
 
             if cat.status.is_leader:
+                lives_lost = 0
                 if "all_lives" in self.tags:
-                    game.clan.leader_lives -= 10
+                    lives_lost = game.clan.leader_lives
+                    game.clan.leader_lives -= lives_lost
                 elif "some_lives" in self.tags:
-                    game.clan.leader_lives -= randrange(
-                        2, self.leads_current_life_count - 1
-                    )
+                    lives_lost = randrange(2, self.leads_current_life_count - 1)
+                    game.clan.leader_lives -= lives_lost
                 else:
+                    lives_lost = 1
                     game.clan.leader_lives -= 1
 
                 cat.die(body)
                 self.additional_event_text = get_leader_life_notice(cat.name)
+                if extra_text := check_stolen_vitality(cat, lives_lost):
+                    self.additional_event_text += " " + extra_text
 
             else:
                 cat.die(body)

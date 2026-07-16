@@ -61,7 +61,7 @@
       "rank": [],
       "life_giving": [
         {
-            "text": "Suddenly, the mist at the edge of the clearing takes shape. Dozens of wispy, starry spirits emerge, quickly surrounding m_c. \"We grant you your remaining [life_num] lives.\" Individually, each voice is distant, but together, the force of their words shakes m_c to {PRONOUN/m_c/poss} core.  \"Use them well, with our blessing.\"  And in a heartbeat, they were gone.",
+            "text": "Suddenly, the mist at the edge of the clearing takes shape. Dozens of wispy, starry spirits emerge, quickly surrounding m_c. \"We grant you your remaining [life_num].\" Individually, each voice is distant, but together, the force of their words shakes m_c to {PRONOUN/m_c/poss} core.  \"Use them well, with our blessing.\"  And in a heartbeat, they were gone.",
           "virtue": []
         }
       ]
@@ -620,9 +620,9 @@
       ]
     },
   
-    "sneaky_warrior": {
+    "cunning_warrior": {
       "tags": [],
-      "lead_trait": ["sneaky"],
+      "lead_trait": ["cunning"],
       "star_trait": [],
       "rank": ["warrior", "deputy"],
       "life_giving": [
@@ -633,10 +633,10 @@
       ]
     },
   
-    "sneaky_starclanwarrior": {
+    "cunning_starclanwarrior": {
       "tags": [],
       "lead_trait": [],
-      "star_trait": ["sneaky"],
+      "star_trait": ["cunning"],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {

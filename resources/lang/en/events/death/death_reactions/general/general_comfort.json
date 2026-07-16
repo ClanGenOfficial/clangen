@@ -154,11 +154,15 @@
     "lonesome": {
         "body": [
             "r_c is nowhere to be found after m_c's vigil. This pain is too personal to share.",
-            "r_c refuses to utter a word to anyone. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} want to talk to anyone, especially not about m_c."
+            "r_c refuses to utter a word to anyone. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} want to talk to anyone, especially not about m_c.",
+            "r_c slinks away from m_c's vigil early to look at the stars in solitude, looking for answers to the pain.",
+            "r_c hides in {PRONOUN/r_c/poss} nest after m_c's vigil, not wanting to be seen in such a vulnerable state."
         ],
         "no_body": [
             "r_c is nowhere to be found after m_c's vigil. This pain is too personal to share.",
-            "r_c refuses to utter a word to anyone. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} want to talk to anyone, especially not about m_c."
+            "r_c refuses to utter a word to anyone. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} want to talk to anyone, especially not about m_c.",
+            "r_c slinks away from m_c's vigil early to look at the stars in solitude, looking for answers to the pain.",
+            "r_c hides in {PRONOUN/r_c/poss} nest after m_c's vigil, not wanting to be seen in such a vulnerable state."
         ]
     },
     "loving": {
@@ -227,16 +231,6 @@
         ],
         "no_body": [
             "When r_c learns of m_c's death, {PRONOUN/r_c/subject} lets out a loud wail and drops to the ground. In this moment, nothing matters but the raw pain of losing m_c."
-        ]
-    },
-    "sneaky": {
-        "body": [
-            "r_c slinks away from m_c's vigil early to look at the stars in solitude, looking for answers to the pain.",
-            "r_c hides in {PRONOUN/r_c/poss} nest after m_c's vigil, not wanting to be seen in such a vulnerable state."
-        ],
-        "no_body": [
-            "r_c slinks away from m_c's vigil early to look at the stars in solitude, looking for answers to the pain.",
-            "r_c hides in {PRONOUN/r_c/poss} nest after m_c's vigil, not wanting to be seen in such a vulnerable state."
         ]
     },
     "strange": {

@@ -550,7 +550,8 @@
         "goldenrod",
         "poppy",
         "plantain",
-        "catmint"
+        "catmint",
+        "honey"
       ],
       "title": "Herb",
       "type": "string"
@@ -975,6 +976,15 @@
       "title": "OutsiderRep",
       "type": "string"
     },
+    "PointsOfInterestCategoryEnum": {
+      "enum": [
+        "gathering",
+        "moonplace",
+        "terrain"
+      ],
+      "title": "PointsOfInterestCategoryEnum",
+      "type": "string"
+    },
     "PointsOfInterestGroup": {
       "anyOf": [
         {
@@ -982,10 +992,28 @@
         },
         {
           "$ref": "#/$defs/PointsOfInterestGroupByTags"
+        },
+        {
+          "$ref": "#/$defs/PointsOfInterestGroupByCategory"
         }
       ],
-      "description": "Specifies Points of Interest constraints. Must use EITHER names or tags.",
+      "description": "Specifies Points of Interest constraints. Must use names OR tags OR category (not multiple at once).",
       "title": "PointsOfInterestGroup"
+    },
+    "PointsOfInterestGroupByCategory": {
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "$ref": "#/$defs/PointsOfInterestCategoryEnum",
+          "description": "The category this POI belongs to.",
+          "title": "Category"
+        }
+      },
+      "required": [
+        "category"
+      ],
+      "title": "PointsOfInterestGroupByCategory",
+      "type": "object"
     },
     "PointsOfInterestGroupByName": {
       "additionalProperties": false,
@@ -1772,7 +1800,6 @@
         "loyal",
         "responsible",
         "shameless",
-        "sneaky",
         "strange",
         "vengeful",
         "wise",
@@ -1811,7 +1838,6 @@
         "-loyal",
         "-responsible",
         "-shameless",
-        "-sneaky",
         "-strange",
         "-vengeful",
         "-wise",

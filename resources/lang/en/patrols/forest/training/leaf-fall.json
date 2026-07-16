@@ -13,7 +13,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "gen_flower_date_warrior_warrior",
+        "patrol_art": "cat_sprites/gen_flowerdate_WrWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {

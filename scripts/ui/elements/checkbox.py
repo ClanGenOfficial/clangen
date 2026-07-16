@@ -52,6 +52,12 @@ class UICheckbox(UIImageButton):
             anchors=anchors,
         )
 
+    def toggle(self):
+        if self.checked:
+            self.uncheck()
+        elif not self.checked:
+            self.check()
+
     def check(self):
         """
         switches the checkbox into the "checked" state

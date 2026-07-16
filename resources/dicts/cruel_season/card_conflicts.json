@@ -1,4 +1,6 @@
 {
-    "placeholder_example0": ["danger_placeholder0", "danger_placeholder1"],
-    "placeholder_example1": ["origin_placeholder0", "danger_placeholder0"]
+    "clan_ranks": ["all_kittens", "all_apprentices", "all_elders"],
+    "leader_life": ["forsaken", "stolen_vitality"],
+    "seasons": ["always_newleaf", "always_greenleaf", "always_leaf-fall", "always_leaf-bare"],
+    "litters": ["underpopulated", "mouths_to_feed"]
 }

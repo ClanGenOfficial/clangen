@@ -2,6 +2,7 @@ from enum import Enum
 from typing import List, Union
 
 from pydantic import BaseModel, ConfigDict, Field, RootModel
+from pydantic_core import MISSING
 
 
 class PointsOfInterestTagEnum(Enum):
@@ -29,6 +30,12 @@ class PointsOfInterestTagEnum(Enum):
     NESTS = "nests"
 
 
+class PointsOfInterestCategoryEnum(Enum):
+    GATHERING = "gathering"
+    MOONPLACE = "moonplace"
+    TERRAIN = "terrain"
+
+
 class PointsOfInterestTag(RootModel):
     root: Union[str, PointsOfInterestTagEnum]
 
@@ -47,8 +54,19 @@ class PointsOfInterestGroupByTags(BaseModel):
     )
 
 
+class PointsOfInterestGroupByCategory(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    category: Union[PointsOfInterestCategoryEnum, MISSING] = Field(
+        ..., description="The category this POI belongs to."
+    )
+
+
 class PointsOfInterestGroup(RootModel):
-    root: Union[PointsOfInterestGroupByName, PointsOfInterestGroupByTags] = Field(
+    root: Union[
+        PointsOfInterestGroupByName,
+        PointsOfInterestGroupByTags,
+        PointsOfInterestGroupByCategory,
+    ] = Field(
         ...,
-        description="Specifies Points of Interest constraints. Must use EITHER names or tags.",
+        description="Specifies Points of Interest constraints. Must use names OR tags OR category (not multiple at once).",
     )

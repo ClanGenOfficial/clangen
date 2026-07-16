@@ -22,10 +22,18 @@
         "leader_title": "pick a leader to guide the Clan through any obstacles",
         "deputy_title": "choose a deputy to support the leader and take charge when things go awry",
         "medcat_title": " choose a medicine cat to heal the Clan and commune with their ancestors",
-        "recruit_title": "recruit 4-7 more cats into the Clan, choose wisely",
+        "recruit_title_range": "recruit %{min}-%{max} cats into the Clan, choose wisely",
+        "recruit_title_single": {
+            "one": "recruit 1 cat into the Clan, choose wisely",
+            "many": "recruit %{count} cats into the Clan, choose wisely"
+        },
+        "done_title": "no more may join the Clan, continue without regret",
         "error_too_young": "Too young to take this role",
         "choose_random": "choose random cats",
-        "choose_leader": "grant this cat {PRONOUN/m_c/poss} nine lives",
+        "choose_leader": {
+            "one": "grant this cat {PRONOUN/m_c/poss} 1 life",
+            "many": "grant this cat {PRONOUN/m_c/poss} %{count} lives"
+        },
         "choose_deputy": "this cat will support the leader",
         "choose_medcat": "this cat will aid the clan",
         "recruit": "recruit",

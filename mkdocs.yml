@@ -20,6 +20,7 @@ nav:
         - User Interface:
             - dev/code/keybind-matrix-handling.md
         - dev/code/cat-status.md
+        - dev/code/cruel-season-cards.md
         - dev/art/cat-sprites/adding-new-sprites.md
         - dev/code/content-adding.md
         - dev/code/localization.md

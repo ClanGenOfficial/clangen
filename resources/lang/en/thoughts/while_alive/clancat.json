@@ -2073,33 +2073,6 @@
         }
     },
     {
-        "id": "sneaky_clan_gen",
-        "strings": [
-            "Took an extra piece of fresh-kill from the pile without anyone noticing",
-            "Sits quietly on the far side of camp",
-            "Found a secret exit out of camp... somehow",
-            "Is sniffing the edges of the camp wall suspiciously",
-            "Smells like {PRONOUN/m_c/subject} may have rolled in catmint recently",
-            "Is currently eavesdropping on two Clanmates, ears pricked",
-            "Is avoiding the conversation topic at paw",
-            "Is spreading rumors about {PRONOUN/m_c/poss} Clanmates",
-            "Is whispering with a fellow Clanmate at the edges of camp",
-            "Recently spent the night outside of camp",
-            "Left camp without a word to anyone",
-            "Obscures {PRONOUN/m_c/poss} scent trail as {PRONOUN/m_c/subject} {VERB/m_c/leave/leaves} camp",
-            "Stirs up trouble between two Clanmates"
-        ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "sneaky"
-                    ]
-                }
-            }
-        }
-    },
-    {
         "id": "strict_clan_gen",
         "strings": [
             "Is surveying the camp scornfully from a higher vantage point",
@@ -2664,6 +2637,80 @@
                 "group": [
                     "-afterlife"
                 ]
+            }
+        }
+    },
+    {
+        "id": "stealth0_skill_gen",
+        "strings": [
+            "Was scolded for sneaking away",
+            "Was caught lying to r_c",
+            "Practices walking silently over dead leaves",
+            "Took an extra piece of fresh-kill from the pile without anyone noticing",
+            "Sits quietly on the far side of camp",
+            "Startled r_c by accidentally sneaking up on {PRONOUN/r_c/object}",
+            "Is trying to find the smallest hiding spot in camp",
+            "Is asking cats to play hide and seek"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "kitten",
+                    "adolescent"
+                ],
+                "stat": {
+                    "skill": [
+                        "STEALTH,0"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "stealth_skill_gen",
+        "strings": [
+            "Took an extra piece of fresh-kill from the pile without anyone noticing",
+            "Sits quietly on the far side of camp",
+            "Found a secret exit out of camp... somehow",
+            "Is sniffing the edges of the camp wall suspiciously",
+            "Smells like {PRONOUN/m_c/subject} may have rolled in catmint recently",
+            "Is currently eavesdropping on two Clanmates, ears pricked",
+            "Is avoiding the conversation topic at paw",
+            "Is spreading rumors about {PRONOUN/m_c/poss} Clanmates",
+            "Is whispering with a fellow Clanmate at the edges of camp",
+            "Recently spent the night outside of camp",
+            "Left camp without a word to anyone",
+            "Obscures {PRONOUN/m_c/poss} scent trail as {PRONOUN/m_c/subject} {VERB/m_c/leave/leaves} camp",
+            "Stirs up trouble between two Clanmates",
+            "Startled r_c by accidentally sneaking up on {PRONOUN/r_c/object}",
+            "Is startling cats by appearing suddenly",
+            "Hasn't been seen in a while",
+            "Practices walking silently over dead leaves",
+            "Lies easily and confidently to r_c",
+            "Rolls around in wild garlic to mask {PRONOUN/m_c/poss} scent"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "STEALTH,1"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "stealth3_skill_gen",
+        "strings": [
+            "Knows that even the most paranoid rabbit would be no match for {PRONOUN/m_c/object}"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "skill": [
+                        "STEALTH,3"
+                    ]
+                }
             }
         }
     },
@@ -5559,7 +5606,7 @@
         ]
     },
     {
-        "id": "sneaky_apprentices",
+        "id": "stealth_apprentices",
         "strings": [
             "Practices stepping across the camp without making a sound",
             "Sneaks out of camp",
@@ -5577,15 +5624,15 @@
                     "mediator apprentice"
                 ],
                 "stat": {
-                    "trait": [
-                        "sneaky"
+                    "skill": [
+                        "STEALTH,0"
                     ]
                 }
             }
         }
     },
     {
-        "id": "sneaky_apprentices_to_mentor",
+        "id": "stealth_apprentices_to_mentor",
         "strings": [
             "Comes back to camp without {PRONOUN/m_c/poss} mentor"
         ],
@@ -5597,8 +5644,8 @@
                     "mediator apprentice"
                 ],
                 "stat": {
-                    "trait": [
-                        "sneaky"
+                    "skill": [
+                        "STEALTH,0"
                     ]
                 }
             }
@@ -9259,7 +9306,6 @@
                         "cold",
                         "nervous",
                         "insecure",
-                        "sneaky",
                         "grumpy",
                         "gloomy"
                     ]
