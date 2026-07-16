@@ -82,7 +82,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 3,
-        "patrol_art": "fst_hunt_mice_ohnotheyrehot",
+        "patrol_art": "cat_sprites/gen_groupwalk_WrWrWr",
         "intro_text": "Trekking near a copse of trees where the waves swish at their paws, the patrol notices a huge blue crab picking at a coconut.",
         "decline_text": "Deciding that it looks too dangerous to approach, the patrol leaves the crab alone.",
         "chance_of_success": 40,
@@ -91,19 +91,19 @@
             {
                 "text": "The patrol watches as the crab hauls a coconut up the tree, only to drop it with a heavy crack before scrambling down to retrieve it and start again. The strange routine leaves the cats puzzled, but they can't help admiring its determination.",
                 "exp": 10,
-                "art": "gen_warrior_crouching_perplexed",
+                "art": "cat_sprites/gen_crouchingperplexed_WrWr",
                 "frequency": 4
             },
             {
                 "text": "The crab is huge, but surely it can't be <i>that</i> dangerous. However, when p_l describes a story {PRONOUN/p_l/subject} once heard about this giant creature killing a fully-grown cat, the group decides to steer clear. Maybe it's best to continue on with their patrol instead.",
                 "exp": 10,
-                "art": "gen_speaking_cat_w1",
+                "art": "cat_sprites/gen_speakingcat_Wr",
                 "frequency": 3
             },
             {
                 "text": "Watching the crab attempt to crack open a coconut, the patrol proposes a plan that's inspired by its technique. While they don't have scuttling legs or strong pinchers, the cats are able to gather rocks into a palm tree and send them crashing down onto the coconut below. A sharp crack of the shell indicates their success, and they happily feast on the fruity, fleshy innards.",
                 "exp": 20,
-                "art": "gen_happy_cat",
+                "art": "cat_sprites/gen_happycat_Wr",
                 "frequency": 2,
                 "relationships": [
                     {
@@ -131,13 +131,13 @@
             {
                 "text": "r_c ventures too near, and the crab's massive claw snaps shut just short of {PRONOUN/r_c/poss} face. Startled, {PRONOUN/r_c/subject} {VERB/r_c/leap/leaps} back into the sand, fur bristling and claws unsheathed. That was far too close! Maybe this is one border threat better left alone.",
                 "exp": 0,
-                "art": "running_warrior",
+                "art": "cat_sprites/gen_running_Wr",
                 "frequency": 4
             },
             {
                 "text": "r_c approaches the crab, but it lashes out with terrifying speed. Its crushing pincers clamp down, leaving {PRONOUN/r_c/object} badly injured before {PRONOUN/r_c/subject} can fully retreat.",
                 "exp": 0,
-                "art": "gen_dragging_warrior_warrior",
+                "art": "cat_sprites/gen_dragging_WrWr",
                 "injury": [
                     {
                         "cats": [
@@ -157,8 +157,8 @@
             {
                 "text": "r_c lunges to drive the crab off, but its pincers strike {PRONOUN/r_c/object} with a brutal force {PRONOUN/r_c/subject} can't escape from. The patrol can only watch in horror as the attack proves fatal.",
                 "exp": 0,
-                "art": "gen_dead_cat_ghost_EXPLICIT",
-                "art_clean": "gen_dead_cat",
+                "art": "cat_sprites/gen_deadghost_WrSc_EXPLICIT",
+                "art_clean": "cat_sprites/gen_deadghost_WrSc",
                 "dead_cats": [
                     "r_c"
                 ],

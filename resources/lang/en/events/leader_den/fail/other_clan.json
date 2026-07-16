@@ -284,7 +284,7 @@
     "rel_change": 7,
     "m_c": {
       "skill": ["SPEAKER,2", "INSIGHTFUL,2"],
-      "trait": ["bloodthirsty", "cunning", "sneaky"]
+      "trait": ["bloodthirsty", "cunning"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["amiable", "gracious", "mellow"]
@@ -294,7 +294,7 @@
     "event_text": "m_c attempts to use {PRONOUN/m_c/poss} honeyed words to get onto o_c_n's good side, only for the other leader to give {PRONOUN/m_c/object} a pointed and <i>very</i> knowing look.",
     "rel_change": -3,
     "m_c": {
-      "trait": ["cunning", "sneaky", "charismatic"]
+      "trait": ["cunning", "charismatic"]
     },
     "player_clan_temper": [],
     "other_clan_temper": ["logical"]
@@ -359,7 +359,7 @@
     "event_text": "At the Gathering, m_c stiffly compliments o_c_n's leader on their strength and prosperity. o_c_n's leader narrows their eyes, unconvinced of {PRONOUN/m_c/poss} sincerity.",
     "rel_change": -1,
     "m_c": { 
-      "trait": [ "insecure", "lonesome", "gloomy", "grumpy", "nervous", "bloodthirsty", "cunning", "sneaky" ]
+      "trait": [ "insecure", "lonesome", "gloomy", "grumpy", "nervous", "bloodthirsty", "cunning" ]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -1000,7 +1000,7 @@
     "rel_change": -1,
     "m_c": {
       "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
-      "trait": ["nervous", "insecure", "gloomy", "thoughtful", "careful", "sneaky", "cunning"]
+      "trait": ["nervous", "insecure", "gloomy", "thoughtful", "careful", "cunning"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["gracious", "amiable", "mellow"]
@@ -1011,7 +1011,7 @@
     "rel_change": -2,
     "m_c": {
       "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
-      "trait": ["fierce", "troublesome", "bloodthirsty", "cold", "charismatic", "playful", "bold", "daring", "righteous", "strict", "compassionate", "thoughtful", "ambitious", "confident", "adventurous", "calm", "careful", "faithful", "loving", "responsible", "loyal", "shameless", "sneaky", "strange", "vengeful", "wise", "arrogant", "competitive", "cunning", "oblivious", "sincere", "flamboyant", "rebellious"]
+      "trait": ["fierce", "troublesome", "bloodthirsty", "cold", "charismatic", "playful", "bold", "daring", "righteous", "strict", "compassionate", "thoughtful", "ambitious", "confident", "adventurous", "calm", "careful", "faithful", "loving", "responsible", "loyal", "shameless", "strange", "vengeful", "wise", "arrogant", "competitive", "cunning", "oblivious", "sincere", "flamboyant", "rebellious"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["gracious", "amiable", "mellow"]

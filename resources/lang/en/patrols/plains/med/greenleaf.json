@@ -11,7 +11,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_herbs",
+        "patrol_art": "cat_sprites/gen_med_herbs_McWrWr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -43,7 +43,7 @@
             }
         ],
         "new_cat": [],
-        "art": "gen_herbs"
+        "art": "cat_sprites/gen_med_herbs_McWrWr"
         },
             {
         "text": "p_l doesn't see r_c's running nose as a burden. To p_l, it's an opportunity. While it prevents r_c from finding herbs, it makes r_c the perfect collector of herbs with less pleasant smells. When the patrol comes across a patch of some particularly pungent-scented herbs hidden amongst some wildflowers, r_c is sent to collect them.",
@@ -65,7 +65,7 @@
             }
         ],
         "new_cat": [],
-        "art": "gen_embarrassed1"
+        "art": "cat_sprites/gen_embarrassed_WrWr"
             }
         ],
         "fail_outcomes": [
@@ -104,7 +104,7 @@
         }
         ],
         "new_cat": [],
-        "art": "fst_med_stumble1"
+        "art": "cat_sprites/fst_med_stumble_McWr"
             }
         ]
     }

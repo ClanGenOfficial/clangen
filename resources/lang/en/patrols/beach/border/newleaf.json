@@ -79,7 +79,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_eagleswim",
+        "patrol_art": "animals/gen_eagledive",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -94,7 +94,7 @@
                 "prey": [
                     "small"
                 ],
-                "art": "dangerous foe_warriors",
+                "art": "cat_sprites/gen_bord_scaryfoe_WrWr",
                 "injury": [
                     {
                         "cats": [
@@ -138,7 +138,7 @@
                 "prey": [
                     "small"
                 ],
-                "art": "fst_hunt_fun3",
+                "art": "cat_sprites/gen_hunt_funrun_WrWr",
                 "relationships": [
                     {
                         "cats_from": [
@@ -195,7 +195,7 @@
                     "troublesome",
                     "adventurous"
                 ],
-                "art": "gen_angry_cat_warrior",
+                "art": "cat_sprites/gen_angrycat_Wr",
                 "relationships": [
                     {
                         "cats_from": [
@@ -228,7 +228,7 @@
                 "can_have_stat": [
                     "any"
                 ],
-                "art": "gen_train_ghost",
+                "art": "cat_sprites/gen_train_ghost_WrWrWr",
                 "relationships": [
                     {
                         "cats_from": [
@@ -255,7 +255,7 @@
             {
                 "text": "As the skua descends toward the petrel, r_c decides to try and rob the bird blind. Unfortunately for r_c, the skua is unbothered, considering it's been harassing birds three times its size for its whole life. It manages to grab the kill and flies off without issue, leaving the patrol members annoyed with each other.",
                 "exp": 0,
-                "art": "gen_train_argueWW",
+                "art": "cat_sprites/gen_train_argue_WrWr",
                 "relationships": [
                     {
                         "cats_from": [
@@ -280,7 +280,7 @@
             {
                 "text": "The skua isn't only after the petrel — it seems to have claimed the whole stretch of shoreline, patrolling its territory with a furious fervor. Every attempt to approach the border is met with diving wings and a peck to the back of the head, sending the cats scattering. Eventually, the patrol has no choice but to give up, and a section of the border goes unmarked.",
                 "exp": 0,
-                "art": "gen_anxious1",
+                "art": "cat_sprites/gen_anxiouslookup_Wr",
                 "injury": [
                     {
                         "cats": [
@@ -296,7 +296,7 @@
             {
                 "text": "r_c throws {PRONOUN/r_c/self} over the petrel, intent on stopping the skua entirely. What r_c doesn't anticipate is a face full of ruffled feathers and a screeching skua to go with it, slamming itself into {PRONOUN/r_c/poss} side. A few harsh pecks later, the large bird swoops back into the air with the petrel, leaving r_c injured and the rest of the patrol unimpressed.",
                 "exp": 0,
-                "art": "gen_embarrassed1",
+                "art": "cat_sprites/gen_embarrassed_WrWr",
                 "injury": [
                     {
                         "cats": [
@@ -331,7 +331,7 @@
             {
                 "text": "The patrol lunges at the kill, intending to steal it before the skua can even blink, but the skua is faster. It snatches up the petrel and is airborne before anyone can even reach its prey, leaving the cats skidding across wet rocks, flustered and empty-pawed.",
                 "exp": 0,
-                "art": "gen_train_soggykitty_mad_warrior",
+                "art": "cat_sprites/gen_train_soggykittymad_Wr",
                 "relationships": [
                     {
                         "cats_from": [
@@ -356,7 +356,7 @@
             {
                 "text": "The patrol confidently advances on the lone skua, but stops in their tracks as soon as two more appear over the rocks, drawn by its screaming. Three skuas versus one patrol is considerably less appealing odds, and the cats agree to back off and leave the birds alone.",
                 "exp": 0,
-                "art": "gen_anxious2",
+                "art": "cat_sprites/gen_anxiouslookdown_Wr",
                 "frequency": 2
             }
         ]

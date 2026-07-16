@@ -4,19 +4,20 @@ The Cruel Season game mode allows the player to choose specific difficulty modif
 Cards currently leverage the modifiers found in `game_config.toml` to change the game's behavior.  If developers have a new card they'd like to add, its desired behavior needs to be possible through modifying values in `game_config.toml`. 
 
 Developers are welcome to add new values to the config to help facilitate new cards. However, keep in mind that the priority should be to avoid intense tangling of the code as a result of adding card behaviors.
+
 ## Card JSON structure
-The Card JSONs can be located in resources/dicts/cruel_season.
+The Card JSONs can be located in `resources/dicts/cruel_season`.
 
 There are 4 different JSON files for each card category. When adding a card, consider the modifier and then add them to the category that best fits it.
 
 ### Categories
 
-|   Category | Description|                                                                      
-|------------|-----------------------------------------------------------------------------|
-| Origin | Affects starting situation of the Clan, but has no ongoing effects. |
+| Category    | Description                                                                                                                                           |                                                                      
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Origin      | Affects starting situation of the Clan, but has no ongoing effects.                                                                                   |
 | Environment | Affects the world and its resources. This could be seasonal, prey/herbs based, or some sort of effect applied to the cats from the world around them. |
-| Behavior | A change to how the cats themselves behave and interact with game mechanics. |
-| Danger | An effect purely centered around hurting, killing, or otherwise placing the cats in dangerous situations.|
+| Behavior    | A change to how the cats themselves behave and interact with game mechanics.                                                                          |
+| Danger      | An effect purely centered around hurting, killing, or otherwise placing the cats in dangerous situations.                                             |
 
 The structure for a singular card object is as follows:
 
@@ -57,9 +58,39 @@ To access any modifiers in the game, use `get_config()` in `scripts/config.py`.
 
 ### get_config(config_path)
 
-
 `config_path` is the config that you want to access in `resources/game_config.toml`. This is passed as a string in dot notation. <br>  
   - ex. `["graduation"]["min_graduating_age"]` becomes `"graduation.min_graduating_age"`  
 
 The function will first check the clan's `cruel_cards` array for a modifier name matching the `config_path` passed into it. If such a card does not exist, it will grab the modifier in `game_config.toml`. Then, it returns the value it finds.
 
+## Locking Actions
+
+If a card needs to block player input then you can utilize the window `CruelLockedAction()`. This window displays text informing the player that the action they tried to take was blocked by one of their active cards.
+
+For example, the card Survival Of The Fittest modifies the feeding behavior of the Clan and needs to prevent changes to that behavior. Thus, if a player tries to change the feeding order/priority in the freshkill window, `CruelLockedAction()` is triggered and the attempted player input ignored.
+
+### Usage Example
+
+```python
+            if event.ui_element == self.tactic_view_elements[order]: # (1)!
+                if get_config("prey.feeding.lock_order"): # (2)!
+                    CruelLockedAction() # (3)!
+                    return # (4)!
+                switch_clan_setting(order)
+                self.tactic_view_elements[order].disable()
+```
+
+1. This event is to change the feeding order
+2. First we check if the config prevents the order from being changed
+3. If it does, the `CruelLockedAction` window is opened
+4. We return before any changes can be made to the feeding order
+
+## Card Display
+
+### Art
+
+If no custom art is available for your new card, you may use one of the existing ones as a placeholder until an artist can create a custom image.  The game will crash if you do not assign art to your card.
+
+### Name and Description
+
+Name and description must be added to the localization files found in `resources/lang/en/cruel_season`. The key should be the `card_name` for both the name and description files. 

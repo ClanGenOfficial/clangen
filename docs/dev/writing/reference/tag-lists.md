@@ -360,6 +360,7 @@ You can utilize [#exclusionary tags](#exclusionary-tags). They function the same
     | **RUNNER**      | `never sits still`              | `fast runner`            | `incredible runner`     | `fast as the wind`            |
     | **CLIMBER**     | `constantly climbing`           | `good climber`           | `great climber`         | `impressive climber`          |
     | **SWIMMER**     | `splashes in puddles`           | `good swimmer`           | `talented swimmer`      | `fish-like swimmer`           |
+    | **STEALTH**     | `hide and seek champ`           | `sneaky`                 | `very stealthy`         | `one with shadows`           |
     | **SPEAKER**     | `confident with words`          | `good speaker`           | `great speaker`         | `eloquent speaker`            |
     | **MEDIATOR**    | `quick to make peace`           | `good mediator`          | `great mediator`        | `skilled mediator`             |
     | **CLEVER**      | `quick witted`                  | `clever`                 | `very clever`           | `incredibly clever`            |
@@ -409,7 +410,6 @@ You can utilize [#exclusionary tags](#exclusionary-tags). They function the same
     * `loyal`
     * `responsible`
     * `shameless`
-    * `sneaky`
     * `strange`
     * `vengeful`
     * `wise`

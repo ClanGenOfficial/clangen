@@ -5,7 +5,7 @@
     "season": ["leaf-bare"],
     "types": ["herb_gathering"],
     "tags": [],
-    "patrol_art": "gen_hunt_leafbaresnowstorm",
+    "patrol_art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
     "min_cats": 2,
     "max_cats": 6,
     "min_max_status": {
@@ -122,7 +122,7 @@
                     }
                 }
             ],
-            "art": "gen_med_cat_cobwebs_success"
+            "art": "cat_sprites/gen_med_cobwebssuccess_Mc"
         }
     ],
     "fail_outcomes": [
@@ -142,7 +142,7 @@
                     }
                 }
             ],
-            "art": "gen_comfort_med_med"
+            "art": "cat_sprites/gen_med_comfort_McMc"
         },
         {
             "text": "The frost has set in too deep, and no life remains on the forest floor. The patrol commiserates about the difficulty of herb-gathering in leaf-bare as they head home.",
@@ -160,7 +160,7 @@
                     }
                 }
             ],
-            "art": "gen_comfort_med_med"
+            "art": "cat_sprites/gen_med_comfort_McMc"
         },
         {
             "text": "No herbs are turned up by the patrol's search. The cats try not to let their short tempers get the best of them as they head home.",
@@ -178,7 +178,7 @@
                     }
                 }
             ],
-            "art": "gen_bord_pissed_med"
+            "art": "cat_sprites/gen_med_pissed_Mc"
         },
         {
             "min_max_status": {"normal adult": [1, 4], "healer cats": [2, 6]},
@@ -209,7 +209,7 @@
                     }
                 }
             ],
-            "art": "gen_speaking_cat_med"
+            "art": "cat_sprites/gen_med_speakingcat_Mc"
         }
     ]
 }

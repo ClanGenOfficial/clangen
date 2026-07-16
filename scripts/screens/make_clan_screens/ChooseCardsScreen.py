@@ -269,7 +269,7 @@ class ChooseCardsScreen(MakeClanScreenBase):
         # chunk the card list, we don't include any cards that have already been chosen
         if update_chunks or not self.card_chunks:
             self.card_chunks = deque(
-                self.chunks(
+                self.get_list_chunks(
                     [
                         x
                         for x in constants.CRUEL_CARDS_ALL.keys()

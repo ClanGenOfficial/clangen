@@ -139,15 +139,19 @@ class ClanInfo:
     def has_high_ranks_filled(self) -> bool:
         return all([self.leader, self.deputy, self.medicine_cat])
 
-    def get_all_cats(self) -> list:
-        cat_list = self.starting_members.copy()
+    def get_high_ranks(self) -> list:
+        cat_list = []
         if self.leader:
             cat_list.append(self.leader)
         if self.deputy:
             cat_list.append(self.deputy)
         if self.medicine_cat:
             cat_list.append(self.medicine_cat)
+        return cat_list
 
+    def get_all_cats(self) -> list:
+        cat_list = self.starting_members.copy()
+        cat_list.extend(self.get_high_ranks())
         return cat_list
 
 
@@ -250,11 +254,6 @@ class MakeClanScreenBase(Screens):
             **self.clan_info.get_dict(),
         )
         game.clan.create_clan()
-
-        # i kind of think this should go somewhere else
-        if get_config("settings.force_enable.deputy"):
-            set_clan_setting("deputy", True)
-            save_clan_settings()
 
         game.cur_events_list.clear()
         game.herb_events_list.clear()

@@ -1,12 +1,26 @@
-
-# set to true to force the season to be locked at the Clan's starting_season
-lock_season = false
-
 # whether or not development tools are disabled
 dev_tools = false
 
+[seasons]
+  # set to true to force the season to be locked at the Clan's starting_season
+  lock_season = false
+
+  # sets the starting season
+  force_starting_season = false
+
+  # the possible seasons, in order
+  calendar = ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"]
+
+  # how long each season lasts
+  length = 3
+
 [cruel_season]
   card_limit = 12
+
+  # for specifying that a hyper-specific reaction should occur due to a card
+  [cruel_season.event]
+    # set to true to also kill a random cat when the leader dies
+    stolen_vitality = false
 
 # settings regarding relationship events, also called "interactions"
 [relationship]
@@ -70,6 +84,9 @@ dev_tools = false
 [mates]
   # permit player to change cat mates
   allow_manual = true
+  
+  # allow mates to happen
+  allow_mating = true
 
   # maximum age difference allowed for cats to be romantic with each other
   age_range = 40
@@ -445,6 +462,14 @@ dev_tools = false
   lineart_color_sc = [47, 51, 64]
   lineart_color_df = [30, 8, 11]
 
+[thought_generation]
+  # the ID of the thoughts to ensure
+  debug_ensure_thought_id = ""
+  # if you want to ensure a specific string from the thought's options, include its index here.
+  # by default the first string will be used (index 0)
+  debug_ensure_thought_index = 0
+
+
 [patrol_generation]
   # modifies success rate based on game mode. higher = more difficult.
   difficulty_modifier = 2.5
@@ -531,6 +556,14 @@ dev_tools = false
   illness_chance = 250
   classic_illness_chance = 500
 
+  # how much each medicine cat reduces the chance of infection, higher number is better
+  med_infection_reduction = 10
+  # the seasons in which illnesses can spread. Fleas will always be able to spread in all seasons.
+  illness_outbreak_season = ["Leaf-bare", "Leaf-fall"]
+  # if there are more sick cats than this percentage of healthy cats then further outbreaks are prevented
+  # for example: 2 sick cats and 4 healthy cats. 25% of 4 is 1 and there are 2 sick cats. 2 is more than 1, so no illness can spread
+  illness_percentage_max = 0.25
+
   # 5/chance (for most personalities) or 15/chance (for some personalities) an injury will occur 
   classic_injury_chance = 450
   injury_chance = 250
@@ -586,13 +619,18 @@ dev_tools = false
     apprentice = 25
     "mediator apprentice" = 25
 
-[outside_ex]
-  # base possible experience gain for cats outside the clan
-  # [[lowest_exp_gain, highest_exp_gain], [lowest_exp_gain2, highest_exp_gain2]]
-  # use the second range to slightly increase the probability that those values are used
-  base_adolescent_timeskip_ex = [[2, 10], [4, 5]]
-  base_adult_timeskip_ex = [[4, 12], [6, 7]]
-  base_senior_timeskip_ex = [[3, 9], [3, 4]]
+[outsiders]
+  max_reputation = 100
+  min_reputation = 0
+  starting_reputation = 80
+
+  [outsiders.outside_ex]
+    # base possible experience gain for cats outside the clan
+    # [[lowest_exp_gain, highest_exp_gain], [lowest_exp_gain2, highest_exp_gain2]]
+    # use the second range to slightly increase the probability that those values are used
+    base_adolescent_timeskip_ex = [[2, 10], [4, 5]]
+    base_adult_timeskip_ex = [[4, 12], [6, 7]]
+    base_senior_timeskip_ex = [[3, 9], [3, 4]]
 
 [focus]
   # NOTE: 'raid other clans' should be more dangerous than 'hoarding'!!!
@@ -747,6 +785,9 @@ dev_tools = false
 
 [clan_resources]
   [clan_resources.herbs]
+    # set to True if the Clan should begin with no herbs
+    empty_starting_storage = false
+
     # Clan size * required_herbs_per_cat / adequate number will determine adequate supply qualifier.
     # Clan size * required_herbs_per_cat * excess number will determine excess supply qualifier
     required_herbs_per_cat = 1
@@ -768,6 +809,9 @@ dev_tools = false
 
     # herb bonus applied when cats should gather a boosted number of herbs
     general_amount_bonus = 2
+
+    # the amount of herbs a single cat can carry in a patrol - CLEVER quantity mod will apply
+    general_patrol_quantity_per_cat = 6
 
     # adjust weights for finding [1 herb type, 2 herb types, 3 herb types] for each season
     [clan_resources.herbs.forest]
@@ -836,8 +880,9 @@ dev_tools = false
   # the amount that a cat's prey requirement increases if the cat is sick/injured/pregnant
   condition_increase = 1
 
-  # the rank order in which cats will be fed
-  feeding_order = [
+  [prey.feeding]
+    # the rank order in which cats will be fed
+    order = [
           "newborn",
           "kitten",
           "queen/pregnant",
@@ -851,6 +896,21 @@ dev_tools = false
           "deputy",
           "leader"
       ]
+
+    # the feeding order the game will start with
+    starting_order = "low_rank"
+
+    # set to true to prevent the player from changing the feed order
+    lock_order = false
+
+    # the feeding priority the game will start with
+    starting_priority = ""
+
+    # set to true to prevent the player from changing the feed priority
+    lock_priority = false
+
+    # set to false to prevent the player from manually feeding cats
+    allow_manual_feeding = true
 
   [prey.text_nutrition]
       # nutrition % ranges and their corresponding text displays
@@ -940,3 +1000,12 @@ dev_tools = false
   # force a game setting to be true, stopping players from changing it
   [settings.force_enable]
     "deputy" = false
+
+[reputation]
+  # manages reputation quotas
+  [reputation.other_clans]
+  # caps for other clan reputation levels
+    relation_cap = 30
+    ally = 30
+    neutral = 17
+    hostile = 7

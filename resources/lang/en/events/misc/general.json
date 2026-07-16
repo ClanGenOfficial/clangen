@@ -4691,7 +4691,7 @@
         "new_accessory": ["JAY FEATHERS", "BLUE FEATHERS"],
         "m_c": {
             "status": ["-kitten"],
-            "trait": ["adventurous", "ambitious", "confident", "bold", "daring", "troublesome", "rebellious", "fierce", "competitive", "cunning", "shameless", "flamboyant", "sneaky", "arrogant"]
+            "trait": ["adventurous", "ambitious", "confident", "bold", "daring", "troublesome", "rebellious", "fierce", "competitive", "cunning", "shameless", "flamboyant", "arrogant"]
         },
         "injury": [
             {
@@ -4724,7 +4724,7 @@
         },
         "r_c": {
             "status": ["-kitten"],
-            "trait": ["adventurous", "ambitious", "confident", "bold", "daring", "troublesome", "rebellious", "fierce", "competitive", "cunning", "shameless", "flamboyant", "sneaky", "arrogant"]
+            "trait": ["adventurous", "ambitious", "confident", "bold", "daring", "troublesome", "rebellious", "fierce", "competitive", "cunning", "shameless", "flamboyant", "arrogant"]
         },
         "injury": [
             {
@@ -4801,7 +4801,7 @@
         "new_accessory": ["SPARROW FEATHERS"],
         "r_c": {
             "status": ["apprentice"],
-            "trait": ["adventurous", "ambitious", "confident", "bold", "daring", "troublesome", "rebellious", "fierce", "competitive", "cunning", "shameless", "flamboyant", "sneaky", "arrogant"]
+            "trait": ["adventurous", "ambitious", "confident", "bold", "daring", "troublesome", "rebellious", "fierce", "competitive", "cunning", "shameless", "flamboyant", "arrogant"]
         },
         "m_c": {
             "status": ["apprentice"],
@@ -7137,7 +7137,6 @@
                 "strict",
                 "troublesome",
                 "vengeful",
-                "sneaky",
                 "strange"
             ]
         },
@@ -7256,7 +7255,6 @@
                 "strict",
                 "troublesome",
                 "vengeful",
-                "sneaky",
                 "strange"
             ]
         },
@@ -7513,7 +7511,6 @@
                 "strict",
                 "troublesome",
                 "vengeful",
-                "sneaky",
                 "strange"
             ]
         },
@@ -10147,7 +10144,6 @@
                 "oblivious",
                 "daring",
                 "shameless",
-                "sneaky",
                 "strange",
                 "flamboyant"
             ]
@@ -11129,7 +11125,6 @@
                 "ambitious",
                 "confident",
                 "shameless",
-                "sneaky",
                 "vengeful",
                 "cunning",
                 "rebellious"
@@ -11198,7 +11193,6 @@
                 "cold",
                 "ambitious",
                 "shameless",
-                "sneaky",
                 "vengeful",
                 "cunning"
             ]
@@ -11236,7 +11230,6 @@
                 "confident",
                 "adventurous",
                 "shameless",
-                "sneaky",
                 "strange",
                 "cunning",
                 "rebellious"
@@ -12009,7 +12002,6 @@
                 "strict",
                 "troublesome",
                 "vengeful",
-                "sneaky",
                 "strange"
             ]
         },
@@ -12130,7 +12122,6 @@
                 "strict",
                 "troublesome",
                 "vengeful",
-                "sneaky",
                 "strange"
             ]
         },
@@ -12614,7 +12605,6 @@
                 "righteous",
                 "daring",
                 "shameless",
-                "sneaky",
                 "cunning",
                 "rebellious"
             ]
@@ -13971,6 +13961,448 @@
             ]
         }
     },
+        {
+        "event_id": "gen_misc_failedmurderattack1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 3,
+        "event_text": "r_c bursts into camp, frantic and covered in wounds. {PRONOUN/r_c/subject/CAP} {VERB/r_c/insist/insists} m_c attacked {PRONOUN/r_c/object} while they were on patrol together.",
+        "m_c": {
+            "status": [
+                "-kitten",
+              "-elder"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "-kitten",
+                "-elder"
+            ]
+        },
+            "injury": [
+                {
+                    "cats": ["r_c"],
+                    "injuries": ["claw-wound", "cat bite"]
+                }
+            ],
+            "history": [
+                {
+                    "cats": ["r_c"],
+                "scar": "m_c was scarred after a Clanmate attacked {PRONOUN/m_c/object} while on patrol.",
+                "death": "m_c was killed by {PRONOUN/m_c/poss} wounds caused by a Clanmate."
+                }
+            ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["comfort", "trust"],
+                "amount": -30,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from became terrified of cat_to after {PRONOUN/cat_to/subject} attacked {PRONOUN/cat_from/object} while on patrol."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": ["m_c"],
+                "values": [
+                    "comfort",
+                    "respect"
+                ],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from was unsettled to learn cat_to attacked {PRONOUN/cat_to/poss} fellow Clanmate."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_failedmurderattack2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 3,
+        "event_text": "m_c bursts into camp, frantic and covered in wounds. {PRONOUN/m_c/subject/CAP} {VERB/m_c/insist/insists} r_c attacked {PRONOUN/m_c/object} while they were on patrol together.",
+        "m_c": {
+            "status": [
+                "-kitten",
+                "-elder"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "-kitten",
+                "-elder"
+            ]
+        },
+            "injury": [
+                {
+                    "cats": ["r_c"],
+                    "injuries": ["claw-wound", "cat bite"]
+                },
+                {
+                    "cats": ["m_c"],
+                    "injuries": ["scrapes", "torn pelt"]
+                }
+            ],
+            "history": [
+                {
+                    "cats": ["r_c"],
+                "scar": "r_c was scarred after a Clanmate attacked {PRONOUN/r_c/object} while on patrol.",
+                "death": "r_c was killed by {PRONOUN/r_c/poss} wounds caused by a Clanmate."
+                }
+            ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["comfort", "like"],
+                "amount": -20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from became terrified of cat_to after {PRONOUN/cat_to/subject} attacked {PRONOUN/cat_from/object} while on patrol and falsely accused {PRONOUN/cat_from/object} instead."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "high_social"
+                ],
+                "cats_to": ["m_c"],
+                "values": [
+                    "trust"
+                ],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from thought cat_to wasn't being entirely truthful about being attacked by a fellow Clanmate."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "low_social",
+                    "high_lawful"
+                ],
+                "cats_to": ["r_c"],
+                "values": [
+                    "comfort", "trust"
+                ],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from was unsettled after hearing cat_to attacked {PRONOUN/cat_from/object} while on patrol."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_failedmurderpoison1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["failed_murder"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c poisons r_c after giving {PRONOUN/r_c/object} the wrong herb dosage. m_c claims it was an accident, but r_c isn't so sure...",
+        "m_c": {
+            "status": [
+                "medicine cat",
+                "medicine cat apprentice"
+            ]
+        },
+        "r_c": {},
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["poisoned"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["r_c"],
+                "death": "r_c died after a Clanmate gave {PRONOUN/r_c/object} the wrong herb dosage."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["trust"],
+                "amount": -20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from didn't believe that cat_to poisoned {PRONOUN/cat_from/object} by accident."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": ["m_c"],
+                "values": [
+                    "trust"
+                ],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from's confidence in cat_to weakened after hearing that {PRONOUN/cat_to/subject} gave a Clanmate the wrong herb dosage."
+                }
+            }
+            ]
+    },
+    {
+        "event_id": "gen_misc_failedmurderpoison2",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["failed_murder"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "r_c is badly poisoned after eating deathberries. When rushed to the medicine den, {PRONOUN/r_c/subject} {VERB/r_c/mumble/mumbles} that they don't taste like how m_c said they would...",
+        "m_c":
+        {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader",
+                "medicine cat",
+                "medicine cat apprentice"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "kitten"
+            ]
+        },
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["poisoned"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["r_c"],
+                "death": "r_c died after a Clanmate suggested {PRONOUN/r_c/subject} should try eating deathberries."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["trust"],
+                "amount": -20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from thinks cat_to lied to {PRONOUN/cat_from/object} about how good deathberries taste."
+                }
+            }
+            ]
+    },
+        {
+        "event_id": "gen_misc_failedmurderpoison3",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["failed_murder"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c offers r_c a piece of prey from the pile. Later, r_c is rushed to the medicine den, having been poisoned by crowfood.",
+        "m_c":
+        {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "-kitten"
+            ]
+        },
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["poisoned"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["r_c"],
+                "death": "r_c died after a Clanmate gave {PRONOUN/r_c/object} crowfood."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["trust"],
+                "amount": -20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from thought cat_to purposefully offered {PRONOUN/cat_from/object} crowfood."
+                }
+            }
+            ]
+    },
+    {
+        "event_id": "gen_misc_failedmurderriver1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["failed_murder"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "r_c falls into the river. m_c helps rescue {PRONOUN/r_c/object}, but r_c swears {PRONOUN/r_c/subject} {VERB/r_c/were/was} pushed in.",
+        "m_c":
+        {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "r_c": {},
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["water in their lungs"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["r_c"],
+                "death": "r_c died after being pushed in the river and inhaling too much water."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["trust"],
+                "amount": -20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from thought cat_to pushed {PRONOUN/cat_from/object} into the river and pretended to save {PRONOUN/cat_from/object}."
+                }
+            }
+            ]
+    },
+        {
+        "event_id": "gen_misc_failedmurderplotting1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["failed_murder"],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "m_c meets with lead_name and claims {PRONOUN/m_c/subject} overheard r_c making plans to overthrow lead_name and take over the Clan.",
+        "m_c":
+        {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy"
+            ],
+            "trait": [
+                "cunning",
+                "charismatic",
+                "troublesome",
+                "bold",
+                "daring",
+                "confident",
+                "vengeful"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "-kitten"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["like"],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from accused cat_to of wanting to take over the Clan in hopes the leader would get rid of {PRONOUN/cat_to/object}."
+                }
+            }
+            ]
+    },
+        {
+        "event_id": "gen_misc_failedmurderplotting2",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["failed_murder"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c is almost in tears as {PRONOUN/m_c/subject} {VERB/m_c/emphasize/emphasizes} to lead_name how cruel r_c has been lately. r_c looks confused and denies everything m_c says.",
+        "m_c":
+        {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy"
+            ],
+            "trait": [
+                "childish",
+                "cunning",
+                "charismatic",
+                "insecure",
+                "shameless",
+                "troublesome"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "-kitten"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["comfort"],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from doesn't understand why cat_to would accuse {PRONOUN/cat_from/object} of being cruel and make {PRONOUN/cat_from/object} look bad in front of the leader."
+                }
+            },
+                        {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["like"],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from accused cat_to of being cruel to {PRONOUN/cat_from/object} in front of the leader in hopes something would be done about {PRONOUN/cat_to/object}."
+                }
+            }
+            ]
+    },
     {
     "event_id": "gen_misc_hitmanfailedmurder1",
     "location": ["any"],
@@ -14259,10 +14691,8 @@
       "elder"
     ],
     "relationship_status": [],
-    "skill": [],
-    "trait": [
-      "-sneaky"
-    ],
+    "skill": ["-STEALTH,1"],
+    "trait": [],
     "backstory": [],
     "dies": false
   },
@@ -15043,6 +15473,426 @@
         }
     ]
 },
+    {
+    "event_id": "gen_misc_warhalfclanquestion1",
+    "location": [
+    "any"
+],
+    "season": [
+    "any"
+],
+    "sub_type": [
+        "war"
+    ],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "The war with o_c_n demands full loyalty from every cat in c_n. m_c's half-Clan heritage makes some cats question where {PRONOUN/m_c/poss} loyalties truly lie.",
+    "m_c": {
+        "status": [
+            "-kitten",
+            "-elder"
+        ],
+        "backstory": [
+            "halfclan1",
+            "halfclan2"
+        ]
+    },
+    "relationships": [
+            {
+                "cats_from": [
+                    "clan",
+                    "low_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from is starting to doubt m_c's loyalty to the Clan because of {PRONOUN/m_c/poss} half-Clan heritage."
+                }
+            }
+        ],
+    "other_clan": {
+        "current_rep": [
+            "hostile"
+        ],
+        "changed": 0
+    }
+    },
+      {
+        "event_id": "gen_misc_warhalfclanquestion2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "Rumors about m_c's half-Clan parentage begin to spread around camp. r_c comes to m_c's defense, claiming that a war won't swivel {PRONOUN/m_c/poss} loyalty to c_n.",
+        "m_c": {
+            "status": [
+                "-kitten",
+                "-elder"
+            ],
+            "backstory": [
+                "halfclan1",
+                "halfclan2"
+            ]
+        },
+        "r_c": {
+        "relationship_status": [
+            "enjoys",
+            "trusts"
+        ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from admires that r_c stood up for m_c when {PRONOUN/m_c/poss} loyalty to c_n was questioned."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "low_lawful"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect",
+                    "trust"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from is skeptical of r_c after {PRONOUN/r_c/subject} defended m_c's half-Clan heritage in the middle of a war."
+                }
+            },
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "trust",
+                    "comfort"
+                ],
+                "amount": 15,
+                "log": {
+                    "cats_from": "m_c appreciates that r_c stood up for {PRONOUN/m_c/object} when {PRONOUN/m_c/poss} half-Clan heritage caused the Clan to doubt {PRONOUN/m_c/object}."
+                }
+            },
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "trust"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "r_c trusts m_c regardless of {PRONOUN/m_c/poss} heritage and stood up for {PRONOUN/m_c/object} in front of the Clan."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 0
+        }
+    },
+     {
+        "event_id": "gen_misc_warotherclanquestion1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "r_c spreads rumors about m_c's origins, claiming {PRONOUN/m_c/subject} could be a spy sent from another Clan to gain intel on the war with o_c_n.",
+        "m_c": {
+            "status": [
+                "-kitten",
+                "-elder"
+            ],
+            "backstory": [
+                "otherclan1",
+                "otherclan2",
+                "otherclan3",
+                "otherclan4",
+                "disgraced1",
+                "disgraced2",
+                "disgraced3",
+                "medicine_cat",
+                "retired_leader",
+                "refugee1",
+                "ostracized_warrior"
+            ]
+        },
+        "r_c": {
+        "relationship_status": [
+            "hates",
+            "distrusts"
+        ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan",
+                    "low_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from wondered if m_c was a spy after r_c brought up {PRONOUN/m_c/poss} origins."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from was appalled that r_c would spread rumors about m_c and make the Clan doubt {PRONOUN/m_c/object}."
+                }
+            },
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "respect",
+                    "comfort",
+                    "trust"
+                ],
+                "amount": -15,
+                "log": {
+                    "cats_from": "m_c can't believe r_c would imply {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a spy from a rival Clan to shatter the Clan's trust in {PRONOUN/m_c/object}."
+                }
+            },
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -15,
+                "log": {
+                    "cats_from": "r_c spread rumors about m_c in hopes of making the Clan believe {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a spy from another Clan."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 0
+        }
+    },
+     {
+        "event_id": "gen_misc_warotherclanfight1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "Realizing they are outmatched, a o_c_n warrior pleads for mercy from m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/pay/pays} no mind to their begging and quickly {VERB/m_c/end/ends} their life.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "trait": [
+                "cold",
+                "fierce",
+                "righteous",
+                "bloodthirsty"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from was unsettled to learn m_c mercilessly killed a rival Clan cat, even in the middle of a war."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "low_lawful",
+                    "high_aggress"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from approves of m_c weakening a warring Clan by killing one of their warriors."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -3
+        }
+    },
+     {
+        "event_id": "gen_misc_warotherclanfight2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "Having been defeated in battle, a o_c_n warrior begs for m_c to spare their life. m_c stares at them with sorrow and lets them get away.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "trait": [
+                "compassionate",
+                "loving",
+                "thoughtful",
+                "sincere"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect",
+                    "comfort"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from approved of m_c sparing a rival Clan cat in the middle of a war."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "low_lawful",
+                    "high_aggress"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from thought m_c should have weakened a warring Clan by killing one of their warriors when {PRONOUN/m_c/subject} had the chance."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 2
+        }
+    },
       {
     "event_id": "gen_rel_loathes1",
     "location": ["any"],
@@ -15548,5 +16398,57 @@
   "r_c": {
       "relationship_status": ["loves_only"]
   }
+},
+   {
+    "event_id": "gen_medapp_mothermouth",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 3,
+    "poi": {
+        "name": ["moon_mothermouth"]
+    },
+    "event_text": "m_c returns from {POI/name/moon_mothermouth} and swears {PRONOUN/m_c/poss} whiskers are bent from brushing against the sides of labyrinthine tunnels for so long!",
+    "m_c": {
+      "status": ["medicine cat apprentice"]
+    }
+},
+    {
+    "event_id": "gen_medapp_moonpool",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 3,
+    "poi": {
+        "name": ["moon_pool"]
+    },
+    "event_text": "m_c returns from {POI/name/moon_pool}, drenched and dismayed. It seems {PRONOUN/m_c/subject} took a tumble into the sacred waters.",
+    "m_c": {
+      "status": ["medicine cat apprentice"]
+    }
+},
+    {
+    "event_id": "gen_medapp_moonmeteor",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 3,
+    "poi": {
+        "name": ["moon_meteor"]
+    },
+    "event_text": "m_c returns from {POI/name/moon_meteor} sneezing sporadically. Perhaps {PRONOUN/m_c/subject} {VERB/m_c/are/is} allergic to moon dust.",
+    "m_c": {
+      "status": ["medicine cat apprentice"]
+    }
+},
+    {
+    "event_id": "gen_medapp_mooncave",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 3,
+    "poi": {
+        "name": ["moon_cave"]
+    },
+    "event_text": "m_c returns from {POI/name/moon_cave}, looking more like a puff of fluff than a cat after hearing StarClan's voices echo around {PRONOUN/m_c/object}.",
+    "m_c": {
+      "status": ["medicine cat apprentice"]
+    }
 }
 ]

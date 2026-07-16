@@ -11,7 +11,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "mtn_train_eagles",
+        "patrol_art": "backgrounds/mtn_eagles",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -232,7 +232,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "mtn_train_eagles",
+        "patrol_art": "backgrounds/mtn_eagles",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -485,7 +485,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_warrior_crouching_perplexed",
+        "patrol_art": "cat_sprites/gen_crouchingperplexed_WrWr",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -504,7 +504,7 @@
             {
                 "text": "Have they ever starved? Felt hunger gnawing their belly, filled it with water just to get a moment's relief, felt their limbs tremble with weakness as their mind desperately yearns for prey? How long did that take, a day, a quarter of a moon? Imagine several moons in a row without food. Stay away from bears emerging from hibernation, p_l warns.",
                 "exp": 30,
-                "art": "gen_train_ghost",
+                "art": "cat_sprites/gen_train_ghost_WrWrWr",
                 "relationships": [
                     {
                         "cats_to": [

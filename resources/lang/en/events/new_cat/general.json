@@ -1141,7 +1141,7 @@
         "season": ["any"],
         "sub_type": ["war"],
         "frequency": 2,
-        "event_text": "n_c:0, the deputy of o_c_n, has defected to c_n in the war, m_c finds {PRONOUN/n_c:0/object} at the border.",
+        "event_text": "The deputy of o_c_n, n_c:0, meets m_c at the border. {PRONOUN/n_c:0/subject/CAP}{VERB/n_c:0/'ve/'s} defected to c_n in the war.",
         "m_c": {
             "status": [
                 "leader", "deputy", "warrior", "medicine cat", "apprentice", "medicine cat apprentice", "mediator", "mediator apprentice"
@@ -1187,7 +1187,7 @@
         "season": ["any"],
         "sub_type": ["war"],
         "frequency": 3,
-        "event_text": "n_c:0, the medicine cat of o_c_n, has defected to c_n in the war, {PRONOUN/n_c:0/subject} {VERB/n_c:0/meet/meets} m_c at the border.",
+        "event_text": "The medicine cat of o_c_n, n_c:0, meets m_c at the border. {PRONOUN/n_c:0/subject/CAP}{VERB/n_c:0/'ve/'s} defected to c_n in the war.",
         "m_c": {
             "status": [
                 "leader", "deputy", "warrior", "medicine cat", "apprentice", "medicine cat apprentice", "mediator", "mediator apprentice"
@@ -1586,7 +1586,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "frequency": 2,
-    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent spot a loner caught in the crossfire and, working together, help get {PRONOUN/n_c:0/subject} to safety.",
+    "event_text": "In a battle against o_c_n, m_c and {PRONOUN/m_c/poss} opponent spot a loner caught in the crossfire and, working together, help get {PRONOUN/n_c:0/object} to safety.",
     "m_c": {
         "status": ["apprentice", "warrior", "deputy", "leader"]
     },
@@ -2504,7 +2504,7 @@
     "event_text": "A loner named n_c:0 seeks m_c's help with kitting. As n_c:0 feared, the birth is hard. m_c watches {PRONOUN/n_c:0/object} struggle and bleed out. The Clan could use more kits, after all.",
     "m_c": {
         "status": ["medicine cat"],
-        "trait": ["bloodthirsty", "cold", "cunning", "sneaky"]
+        "trait": ["bloodthirsty", "cold", "cunning"]
     },
     "new_cat": [
         ["age:has_kits",
@@ -2803,7 +2803,7 @@
     },
     "r_c": {
         "status": ["leader"],
-        "trait": ["shameless", "arrogant", "bold", "cold", "ambitious", "cunning", "sneaky"]
+        "trait": ["shameless", "arrogant", "bold", "cold", "ambitious", "cunning"]
     },
     "new_cat": [
         ["age:has_kits",
@@ -2900,7 +2900,7 @@
     "event_text": "A loner named n_c:0 seeks m_c's help with kitting. After the birth, m_c breaks the news to n_c:0 that one kit was stillborn. Once n_c:0 has left the territory, m_c allows n_c:2 out of the medicine den to join {PRONOUN/n_c:2/poss} new Clan.",
     "m_c": {
         "status": ["medicine cat"],
-        "trait": ["shameless", "arrogant", "bold", "cold", "ambitious", "cunning", "sneaky"]
+        "trait": ["shameless", "arrogant", "bold", "cold", "ambitious", "cunning"]
     },
     "new_cat": [
         ["age:has_kits",

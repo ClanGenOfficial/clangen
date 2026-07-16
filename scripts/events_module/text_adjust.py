@@ -18,6 +18,7 @@ from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.clan_resources.point_of_interest import (
     get_random_poi_by_tag,
+    get_random_poi_by_category,
     get_poi_names_set,
 )
 from scripts.game_structure import localization, game
@@ -142,6 +143,9 @@ def poi_repl(inner_details):
             if names.intersection(get_poi_names_set())
             else "MISSING_POI"
         )
+    elif inner_details[1].upper() == "CATEGORY":
+        category = inner_details[2].upper()
+        base_string += get_random_poi_by_category(inner_details[2].lower())
 
     return i18n.t(base_string)
 
