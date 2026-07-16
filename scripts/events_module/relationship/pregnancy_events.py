@@ -226,7 +226,7 @@ class Pregnancy_Events:
             clan=game.clan,
         )
         involved_cats = [pregnant_cat.ID]
-        involved_cats = Pregnancy_Events.append_second_parent_if_mentioned(
+        involved_cats = Pregnancy_Events._append_second_parent_if_mentioned(
             involved_cats, event_text, mentioned_cat or random_cat
         )
         return text, involved_cats
