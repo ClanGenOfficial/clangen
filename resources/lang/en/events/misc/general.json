@@ -14325,7 +14325,7 @@
         "sub_type": ["failed_murder"],
         "tags": [],
         "frequency": 2,
-        "event_text": "m_c requests to meet up with lead_name, where {PRONOUN/m_c/subject} {VERB/m_c/claim/claims} {PRONOUN/m_c/subject} overheard r_c making plans to overthrow lead_name and take over the Clan.",
+        "event_text": "m_c meets with lead_name and claims {PRONOUN/m_c/subject} overheard r_c making plans to overthrow lead_name and take over the Clan.",
         "m_c":
         {
             "status": [
