@@ -39,7 +39,7 @@ from scripts.events_module.patrol.generate_patrol_list import (
     will_allow_outsider_patrols,
 )
 from scripts.events_module.patrol.patrol_event import PatrolEvent
-from scripts.events_module.patrol.patrol_outcome_new import EventOutcome
+from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import constants
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure import game
@@ -546,7 +546,7 @@ class Patrol:
 
     def _find_allowed_outcomes(
         self, antagonize: bool = False
-    ) -> tuple[EventOutcome, EventOutcome]:
+    ) -> tuple[TextPoolEvent, TextPoolEvent]:
         """
         Filters through possible outcomes to find appropriate outcomes for both failure and success
         :param antagonize: set True if the player chose to antagonize
@@ -624,7 +624,7 @@ class Patrol:
         return chosen_success, chosen_failure
 
     def _check_outcome_constraints(
-        self, outcome: EventOutcome, outcome_type: Literal["success", "failure"]
+        self, outcome: TextPoolEvent, outcome_type: Literal["success", "failure"]
     ) -> bool:
         """
         Checks the outcome constraints and attempts to find appropriate cats. If the outcome is valid and cats are
@@ -844,8 +844,8 @@ class Patrol:
         return final_event.execute_outcome(self)
 
     def calculate_success(
-        self, success_outcome: EventOutcome, fail_outcome: EventOutcome
-    ) -> Tuple[EventOutcome, bool]:
+        self, success_outcome: TextPoolEvent, fail_outcome: TextPoolEvent
+    ) -> Tuple[TextPoolEvent, bool]:
         """Returns both the chosen outcome, and a boolean that's True if success, and False if failure."""
 
         patrol_size = len(self.patrol_cats)
