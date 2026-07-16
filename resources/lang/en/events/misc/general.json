@@ -14159,7 +14159,7 @@
                 "amount": -20,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from doesn't believe that cat_to accidentally poisoned {PRONOUN/cat_from/object}."
+                    "cats_from": "cat_from didn't believe that cat_to poisoned {PRONOUN/cat_from/object} by accident."
                 }
             },
             {
