@@ -241,7 +241,7 @@
     "Mountainous": [
     "Agate", "Alpaca", "Alpine", "Avalanche", "Basalt", "Blizzard", "Boulder", "Caribou", "Cavern", "Cave", "Chamois", "Chasm", "Chough", "Cliff", "Cliff", "Crag",
     "Eagle", "Eagle", "Echo", "Echo", "Flint", "Goat", "Granite", "Gravel", "High", "Ibex", "Lichen",
-    "Mountain", "Peak", "Pebble", "Pika", "Pinnacle", "Rock", "Rocky", "Ram", "Jasper", "Salt", "Shale", "Shard", "Spire", "Stone", "Steppe",
+    "Mountain", "Peak", "Pebble", "Pika", "Pinnacle", "Rock", "", "Ram", "Jasper", "Salt", "Shale", "Shard", "Spire", "Stone", "Steppe",
     "Summit", "Volcano", "Yak", "Yucca", "Whistle", "Whisper", "Whisper", "Mica", "Frigid", "Abyss"
     ],
     "Wetlands": [
@@ -354,7 +354,7 @@
     "Jungle Pocket", "Junkrat", "Juno", "Jupiter", "Just A Way", "Kagamine Len", "Kagamine Rin", "Karkinos", "Katniss", "Kelloggs", "Kepler", "Kerberos", 
     "Kermit", "Kid Cat", "Kingston", "Kion", "Kipling", "Kirara", "Kirby", "Kitsune", 
     "Kismet", "Kitty Cat", "Kitty Softpaws", "Klee", "Klondike", "Knorrig", "Knox", "Kodiak", "Kokichi", "Kong", "Kovu", "Kramig", "L", "Labubu", "La Troienne",
-    "Lady Aria", "Lady Arion", "Lady Centavo", "Lady Figment", "Lady Liberty", "Laranjito", "Lawn Mower", "Lazarus", "Lemon Boy", "L&P", "Lextington", "Liberty Island",
+    "Lady Aria", "Lady Arion", "Lady Centavo", "Lady Figment", "Lady Liberty", "Laranjito", "Lawn Mower", "Lazarus", "Lemon Boy", "Lextington", "Liberty Island",
     "Li Shang", "Libra", "Lil Baby", "Lilleplutt", "Limiting Reactant", "Listens to the Wind", "Litten", "Little Baby", "Little Caesar", "Little Foot", "Little Ghost",
     "Little Guy", "Little Lady", "Little Man", "Little My", "Little Nicky",  "Little One", "Livlig", "Lobo", "Lodesh", "Loki", "Lonesome Glory",
     "Longfellow", "Looks to the Moon", "Looks to the Sky", "Loona", "Lord Kanaloa", "Lottery", "Lookin At Lucky", "Luchasaurus", "Luci-Purr", "Lucifur", "Lugnut",
@@ -369,13 +369,13 @@
     "Nezuko", "Nibblenephim", "Nibbles", "Nibbly", "Nidorina", "Nightcat", "Nimbus", "Ninetales", "Ninja", "Nintendo DS", "Nintendo Switch", "Nintendo", 
     "Nirav", "Nirvana", "Nissan", "Nitro", "Noodlefly", "Nook", "Nottingham", "Nova", "Nucleus", "Nuka", "Nuka Cola", "Nymph", "Nyx", "O'Leary", 
     "Oapie", "Oberon", "Obi Wan", "Octet Rule", "October", "Old Deuteronomy", "Old Man Sam", "Oopsie Daisy", "Orbital", "Orion", "Orisa", "Oshawott", 
-    "Osiris", "Pachirisu", "Paimon", "Pallas", "Papyrus", "Para", "Parhelion", "Pawmi", "Peanut Butter", "Peanut Wigglebutt", "Peeta", "Pekhult", "Pepsi",
+    "Osiris", "Pachirisu", "Paeroa", "Paimon", "Pallas", "Papyrus", "Para", "Parhelion", "Pawmi", "Peanut Butter", "Peanut Wigglebutt", "Peeta", "Pekhult", "Pepsi",
     "Periodic Table", "Periodic Trend", "Perrserker", "Peter Pan", "Peter Parker", "Petrova Line", "Pharah", "Phasmo", "Photon", "Pichu", "Pikachu", "Pina Colada",
     "Ping Pong", "Pinkie Pie", "Pinkie", "Pipkin", "Pippin", "Pisces", "Pistol Star", "Pizza Place", "Plato", "Playstation", "Plentiful Leaves", 
     "Plot Twist", "Pluto", "Pokey", "Poki", "Pokotho", "Polaris", "Polaroid", "Polka", "Polyatomic", "Polyatomic Ion", "Pompompurin", "Ponyboy", "Pork Belly",
     "Porsche", "Pot Roast", "Pouncival", "President Blanket", "Primm Slim", "Pringle", "Private Eye", "Procyon", "Proton", "Pumbaa", "Purdy", "Purri", "Pusheen", 
     "Quantum Mechanics", "Quarter Pounder", "Quartermaster", "Quasar", "Qubo", "Queso Ruby", "Quicky", "Rafiki", "Ramattra", "Rambley", "Rapunzel", 
-    "Ratau", "Ratoo", "Razzle", "Reeses Puff", "Ribosome", "Rick Astley", "Rigel", "Righteous Bread Pudding", "Ringo Starr", "Riolu", "Rizz", "Rizzo", "Rocky", "Rolo", 
+    "Ratau", "Ratoo", "Razzle", "Reeses Puff", "Ribosome", "Rick Astley", "Rigel", "Righteous Bread Pudding", "Ringo Starr", "Riolu", "Rizz", "Rizzo", "Rolo", 
     "Roomba", "Rorschach", "Rubber Duck", "Ruffnut", "Rum Tum Tugger", "Rumpleteazer", "Ryland", "Sage Marro", "Sagittarius", "Sagwa", "Salem", "Sampo", "Samus", "Sans",
     "Sarabi", "Sarek", "Saturn", "Scooby", "Scrooge", "Scrungle", "Sebek", "Sega", "Sekhmet", "Selkie", "Selkirk", "Seraph", "Seven Of Nine", "Shamash", "Shamwow", "Shenzi",
     "Sherb", "Shinx", "Shrek", "Shrimp Fried Rice", "Sillabub", "Silvally", "Sim", "Simba", "Siri", "Sirius", "Six Grains of Gravel", "Skimbleshanks", "Skittles", 
