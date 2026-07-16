@@ -15956,5 +15956,57 @@
   "r_c": {
       "relationship_status": ["loves_only"]
   }
+},
+   {
+    "event_id": "gen_medapp_mothermouth",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 3,
+    "poi": {
+        "name": ["moon_mothermouth"]
+    },
+    "event_text": "m_c returns from {POI/name/moon_mothermouth} and swears {PRONOUN/m_c/poss} whiskers are bent from brushing against the sides of labyrinthine tunnels for so long!",
+    "m_c": {
+      "status": ["medicine cat apprentice"]
+    }
+},
+    {
+    "event_id": "gen_medapp_moonpool",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 3,
+    "poi": {
+        "name": ["moon_pool"]
+    },
+    "event_text": "m_c returns from {POI/name/moon_pool}, drenched and dismayed. It seems {PRONOUN/m_c/subject} took a tumble into the sacred waters.",
+    "m_c": {
+      "status": ["medicine cat apprentice"]
+    }
+},
+    {
+    "event_id": "gen_medapp_moonmeteor",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 3,
+    "poi": {
+        "name": ["moon_meteor"]
+    },
+    "event_text": "m_c returns from {POI/name/moon_meteor} sneezing sporadically. Perhaps {PRONOUN/m_c/subject} {VERB/m_c/are/is} allergic to moon dust.",
+    "m_c": {
+      "status": ["medicine cat apprentice"]
+    }
+},
+    {
+    "event_id": "gen_medapp_mooncave",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 3,
+    "poi": {
+        "name": ["moon_cave"]
+    },
+    "event_text": "m_c returns from {POI/name/moon_cave}, looking more like a puff of fluff than a cat after hearing StarClan's voices echo around {PRONOUN/m_c/object}.",
+    "m_c": {
+      "status": ["medicine cat apprentice"]
+    }
 }
 ]
