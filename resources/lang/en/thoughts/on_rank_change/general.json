@@ -73,7 +73,8 @@
             {
                 "cats_from": ["m_c"],
                 "cats_to": ["r_c"],
-                "constraints": ["app/mentor"]
+                "constraints": ["app/mentor"],
+                "mutual": false
             }
         ],
         "involved_cats": {
@@ -97,7 +98,8 @@
             {
                 "cats_from": ["m_c"],
                 "cats_to": ["r_c"],
-                "constraints": ["child/parent"]
+                "constraints": ["child/parent"],
+                "mutual": false
             }
         ],
         "involved_cats": {
