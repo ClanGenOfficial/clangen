@@ -37763,7 +37763,7 @@
                     "medicine cat": [1, 1],
                     "apprentice": [1, 2]
                  },
-                "text": "app1 interrupts p_l's explanation to ask why c_n doesn't use deathberries to poison their enemies. shaken, p_l explains the cruelty of such an action would be unbecoming to the clan's honor and adherence to the warrior code.",
+                "text": "app1 interrupts p_l's explanation to ask why c_n doesn't use deathberries to poison their enemies. Shaken, p_l explains the cruelty of such an action would be unbecoming to the Clan's honor and adherence to the warrior code.",
                 "exp": 30,
                 "stat_trait": ["bloodthirsty", "vengeful", "strange"],
                 "can_have_stat": ["app1"],
