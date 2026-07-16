@@ -13984,7 +13984,12 @@
         ],
         "frequency": 3,
         "event_text": "r_c bursts into camp, frantic and covered in wounds. {PRONOUN/r_c/subject/CAP} {VERB/r_c/insist/insists} m_c attacked {PRONOUN/r_c/object} while they were on patrol together.",
-        "m_c": {},
+        "m_c": {
+            "status": [
+                "-kitten",
+              "-elder"
+            ]
+        },
         "r_c": {
             "status": [
                 "-kitten",
@@ -14046,7 +14051,12 @@
         ],
         "frequency": 3,
         "event_text": "m_c bursts into camp, frantic and covered in wounds. {PRONOUN/m_c/subject/CAP} {VERB/m_c/insist/insists} r_c attacked {PRONOUN/m_c/object} while they were on patrol together.",
-        "m_c": {},
+        "m_c": {
+            "status": [
+                "-kitten",
+                "-elder"
+            ]
+        },
         "r_c": {
             "status": [
                 "-kitten",
