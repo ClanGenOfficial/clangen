@@ -1110,8 +1110,8 @@ class Pregnancy_Events:
                     rel = Relationship(first_cat, second_cat)
                     first_cat.relationships[second_cat.ID] = rel
 
-                coparenting_values_neg = constants.CONFIG["prenancy"]["coparenting_values_neg"]
-                coparenting_values_pos = constants.CONFIG["prenancy"]["coparenting_values_pos"]
+                coparenting_values_neg = constants.CONFIG["pregnancy"]["coparenting_values_neg"]
+                coparenting_values_pos = constants.CONFIG["pregnancy"]["coparenting_values_pos"]
                 
                 if coparenting_outcome == "negative":
                     rel.comfort += coparenting_values_neg["comfort"]
@@ -1654,10 +1654,13 @@ class Pregnancy_Events:
                 y = random.randrange(0, 10)
                 if second_kitten.ID == kitten.ID:
                     continue
+                relationship_value = constants.CONFIG["new_cat"]["sib_buff"][
+                "littermates_to_eachother"
+                ]
                 start_relation = Relationship(kitten, second_kitten, False, True)
-                start_relation.like += 20 + y
-                start_relation.comfort += 10 + y
-                start_relation.trust += 10 + y
+                start_relation.like += relationship_value["like"] + y
+                start_relation.comfort += relationship_value["comfort"] + y
+                start_relation.trust += relationship_value["trust"] + y
                 kitten.relationships[second_kitten.ID] = start_relation
 
         # check if the possible adoptive cat is not already in the family tree and
