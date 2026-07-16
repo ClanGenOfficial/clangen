@@ -15285,34 +15285,6 @@
         ]
     },
     {
-        "event_id": "gen_misc_wateroceanPOI_mates",
-        "location": ["any"],
-        "season": ["any"],
-        "sub_type": [],
-        "tags": ["romance"],
-        "poi": {
-            "tags": ["water:ocean"]
-        },
-        "frequency": 1,
-        "event_text": "m_c and r_c cozy up together by {POI/tag/water:ocean} and listen to the crash of waves.",
-        "m_c": {
-            "relationship_status": ["mates"]
-        },
-        "r_c": {},
-        "relationships": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "mutual": true,
-                "values": ["romance", "comfort"],
-                "amount": 8,
-                "log": {
-                    "cats_from": "cat_from and cat_to listened to the ocean together."
-                }
-            }
-        ]
-    },
-    {
         "event_id": "gen_misc_hugeboulder_story",
         "location": ["any"],
         "season": ["any"],
