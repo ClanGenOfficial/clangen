@@ -15183,6 +15183,37 @@
         }
     },
     {
+        "event_id": "gen_misc_coveredPOI",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": ["romance"],
+        "poi": {
+            "tags": ["covered"]
+        },
+        "frequency": 1,
+        "event_text": "m_c and r_c get caught in a storm and shelter by {POI/tag/covered}. When they return to camp, they seem closer.",
+        "m_c": {
+            "status": ["-kitten"],
+            "relationship_status": ["-mates"]
+        },
+        "r_c": {
+            "status": ["-kitten"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": true,
+                "values": ["romance", "comfort"],
+                "amount": 8,
+                "log": {
+                    "cats_from": "While sheltering from a storm together, cat_from and cat_to felt a spark of connection."
+                }
+            }
+        ]
+    },
+    {
         "event_id": "gen_misc_fallriskPOI_apps",
         "location": ["any"],
         "season": ["any"],
