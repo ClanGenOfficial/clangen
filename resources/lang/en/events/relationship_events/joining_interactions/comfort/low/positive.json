@@ -1,0 +1,21 @@
+[
+    {
+        "id": "gen_comfort_low_inc1",
+        "strings": [
+			"r_c offered m_c some tips for building a new nest.",
+            "r_c offered m_c some feathers as a welcome gift that {PRONOUN/m_c/subject} could use to decorate {PRONOUN/m_c/poss} new nest."
+        ]
+    },
+    {
+        "id": "gen_comfort_low_inc2",
+        "strings": [
+			"r_c invited m_c into a discussion about {PRONOUN/m_c/poss} journey.",
+			"r_c asked m_c what it was like to wander around."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["-kitten"]
+            }
+        }
+    }
+]

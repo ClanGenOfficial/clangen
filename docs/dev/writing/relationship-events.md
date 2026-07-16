@@ -1,9 +1,5 @@
 # Relationship Events
 
-!!! warning "Under Development"
-    Relationship events are in the midst of being reformatted to work with the below documentation. Group events and Normal interactions are currently the only categories that match this documentation.
-
-
 Relationship events are events that occur each timeskip that are focused entirely on influencing the relationships between certain cats. 
 
 These should be fairly short, like all timeskip events. Less than 300 characters, with shorter being better, is preferred.
@@ -27,9 +23,9 @@ Within this folder are 3 folders:
 |------------------------|-----------------------------------------------------------------------|
 | `group_interactions`   | holds events that include 3 or more cats                              |
 | `normal_interactions`  | the general 2-cat interactions that are most common in the game       |
-| `welcome_interactions` | these are special events only triggered when a new cat joins the Clan |
+| `joining_interactions` | these are special events only triggered when a new cat joins the Clan |
 
-Within `normal_interactions` and `welcome_interactions` are folders for each relationship value: `comfort`, `like`, `respect`, `romance`, `trust`. This value will be the "main" value affected by the events inside that folder.
+Within `normal_interactions` and `joining_interactions` are folders for each relationship value: `comfort`, `like`, `respect`, `romance`, `trust`. This value will be the "main" value affected by the events inside that folder.
 
 There's one more layer of folders after this one. These dictate the strength of the effect on the "main" value: `low`, `medium`, or `high`.
 
