@@ -253,6 +253,12 @@ dev_tools = false
       comfort = 40
       trust = 30
 
+    # default relationships buff for a newborn's relationship towards one of their littermates
+    [new_cat.sib_buff.littermates_to_eachother]
+      like = 20
+      comfort = 10
+      trust = 10
+
   [new_cat.rel_buff]
     # default relationships buff for new cats relationships to other cats in the clan
     [new_cat.rel_buff.new_to_clan_cat]
