@@ -3,28 +3,15 @@
 from dataclasses import dataclass, field
 from typing import Union, Literal, Optional
 
-from scripts.cat.cats import Cat
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath
 from scripts.clan_resources.herb.herb import HERBS
-from scripts.events_module.event_filters import (
-    get_frequency,
-    find_new_frequency,
-    event_for_location,
-    event_for_season,
-    event_for_tags,
-    event_for_reputation,
-    event_for_clan_relations,
-    event_for_freshkill_supply,
-    event_for_herb_supply,
-    event_for_cat,
-)
 from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
     RelationshipConstraintDict,
 )
-from scripts.events_module.patrol.patrol_outcome_new import EventOutcome
-from scripts.game_structure import constants, game
+from scripts.events_module.text_pool_event import TextPoolEvent
+from scripts.game_structure import constants
 
 NUM_OF_TRAITS = len(Personality.trait_ranges["normal_traits"].keys()) + len(
     Personality.trait_ranges["kit_traits"].keys()
@@ -42,12 +29,12 @@ class PatrolEvent:
     # text and outcomes
     intro_text: str
     decline_text: str
-    success_outcomes: list[Union[dict, EventOutcome]]
-    fail_outcomes: list[Union[dict, EventOutcome]]
-    antag_success_outcomes: list[Union[dict, EventOutcome]] = field(
+    success_outcomes: list[Union[dict, TextPoolEvent]]
+    fail_outcomes: list[Union[dict, TextPoolEvent]]
+    antag_success_outcomes: list[Union[dict, TextPoolEvent]] = field(
         default_factory=list
     )
-    antag_fail_outcomes: list[Union[dict, EventOutcome]] = field(default_factory=list)
+    antag_fail_outcomes: list[Union[dict, TextPoolEvent]] = field(default_factory=list)
 
     # constraints
     frequency: int = 4
@@ -157,10 +144,10 @@ class PatrolEvent:
         antag_fail = self.antag_fail_outcomes.copy()
 
         for outcome in success:
-            self.success_outcomes.append(EventOutcome(**outcome))
+            self.success_outcomes.append(TextPoolEvent(**outcome))
         for outcome in fail:
-            self.fail_outcomes.append(EventOutcome(**outcome))
+            self.fail_outcomes.append(TextPoolEvent(**outcome))
         for outcome in antag_success:
-            self.antag_success_outcomes.append(EventOutcome(**outcome))
+            self.antag_success_outcomes.append(TextPoolEvent(**outcome))
         for outcome in antag_fail:
-            self.antag_fail_outcomes.append(EventOutcome(**outcome))
+            self.antag_fail_outcomes.append(TextPoolEvent(**outcome))
