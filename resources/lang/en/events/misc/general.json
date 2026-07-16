@@ -14138,11 +14138,7 @@
                 "medicine cat apprentice"
             ]
         },
-        "r_c": {
-            "age": [
-                "-kitten"
-            ]
-        },
+        "r_c": {},
         "injury": [
             {
                 "cats": ["r_c"],
