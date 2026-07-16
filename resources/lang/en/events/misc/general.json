@@ -14186,7 +14186,7 @@
         "sub_type": ["failed_murder"],
         "tags": [],
         "frequency": 3,
-        "event_text": "r_c is badly poisoned after eating deathberries. While being rushed to the medicine den, {PRONOUN/r_c/subject} {VERB/r_c/mumble/mumbles} that they don't taste like how m_c said they would...",
+        "event_text": "r_c is badly poisoned after eating deathberries. When rushed to the medicine den, {PRONOUN/r_c/subject} {VERB/r_c/mumble/mumbles} that they don't taste like how m_c said they would...",
         "m_c":
         {
             "status": [
