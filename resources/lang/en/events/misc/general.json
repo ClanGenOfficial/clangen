@@ -14356,7 +14356,7 @@
                 "amount": -15,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from accused cat_to of wanting to take over the Clan in hopes the leader would get rid of {PRONOUN/cat_to/object} soon."
+                    "cats_from": "cat_from accused cat_to of wanting to take over the Clan in hopes the leader would get rid of {PRONOUN/cat_to/object}."
                 }
             }
             ]
