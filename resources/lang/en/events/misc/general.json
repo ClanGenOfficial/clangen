@@ -14270,7 +14270,7 @@
                 "amount": -20,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from thinks cat_to purposefully offered {PRONOUN/cat_from/object} crowfood."
+                    "cats_from": "cat_from thought cat_to purposefully offered {PRONOUN/cat_from/object} crowfood."
                 }
             }
             ]
