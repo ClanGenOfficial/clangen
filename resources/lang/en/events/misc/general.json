@@ -14313,7 +14313,7 @@
                 "amount": -20,
                 "mutual": false,
                 "log": {
-                    "cats_from": "cat_from thinks cat_to pushed {PRONOUN/cat_from/object} into the river and pretended to save {PRONOUN/cat_from/object}."
+                    "cats_from": "cat_from thought cat_to pushed {PRONOUN/cat_from/object} into the river and pretended to save {PRONOUN/cat_from/object}."
                 }
             }
             ]
