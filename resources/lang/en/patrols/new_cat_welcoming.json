@@ -191,7 +191,8 @@
                 "exp": 10,
                 "new_cat": [
                     [
-                        "status:medicine cat"
+                        "status:medicine cat",
+                        "backstory:wandering_healer1,loner_backstories"
                     ],
                     [
                         "loner"
@@ -308,7 +309,8 @@
                     [
                         "age:adult",
                         "status:medicine cat",
-                        "loner"
+                        "loner",
+                       "backstory:wandering_healer1,loner_backstories"
                     ],
                     [
                         "status:apprentice",
@@ -370,7 +372,8 @@
                         "age:adult",
                         "status:medicine cat",
                         "parent:0",
-                        "loner"
+                        "loner",
+                        "backstory:wandering_healer1,loner_backstories"
                     ],
                     [
                         "age:adolescent",
@@ -3230,7 +3233,8 @@
                 "new_cat": [
                     [
                         "status:medicine cat",
-                        "loner"
+                        "loner",
+                        "backstory:wandering_healer1,wandering_healer2,loner_backstories"
                     ]
                 ],
                 "relationships": [
@@ -3288,7 +3292,7 @@
                         "status:medicine cat",
                         "meeting",
                         "loner",
-                        "backstory:wandering_healer2"
+                        "backstory:wandering_healer1,loner_backstories"
                     ]
                 ],
                 "frequency": 4
@@ -3360,7 +3364,8 @@
                 "new_cat": [
                     [
                         "status:medicine cat",
-                        "loner"
+                        "loner",
+                        "backstory:wandering_healer1,loner_backstories"
                     ]
                 ],
                 "relationships": [
