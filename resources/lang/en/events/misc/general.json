@@ -14335,7 +14335,8 @@
         },
         "r_c": {
             "status": [
-                "-kitten"
+                "-kitten",
+                "-leader"
             ]
         },
         "relationships": [
@@ -14377,7 +14378,8 @@
         },
         "r_c": {
             "status": [
-                "-kitten"
+                "-kitten",
+                "-leader"
             ]
         },
         "relationships": [
