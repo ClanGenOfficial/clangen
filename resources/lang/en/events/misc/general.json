@@ -15083,7 +15083,7 @@
         "event_text": "m_c and r_c watch birds perform courtship rituals near {POI/tag/prey:flying} and talk loudly about how ridiculous lovers can be. Their Clanmates exchange glances.",
         "m_c": {
             "age": ["adolescent", "young adult"],
-            "relationship_status": ["-mates", "fancies"]
+            "relationship_status": ["fancies", "-mates"]
         },
         "r_c": {
             "age": ["adolescent", "young adult"]
