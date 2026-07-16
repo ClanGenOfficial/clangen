@@ -455,7 +455,7 @@ class ShortEvent:
                         main_cat=first_cat,
                     )
             else:
-                relation_events.welcome_new_cats([first_cat])
+                relation_events.trigger_joining_relationship_events([first_cat])
             self.all_involved_cat_ids.extend([cat.ID for cat in cat_list])
 
             if extra_text:
