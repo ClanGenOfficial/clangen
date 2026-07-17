@@ -235,8 +235,8 @@
         "strings": [
             "Hopes to earn the respect of the warriors",
             "Is learning how to organize patrols",
-            "Looks to lead_name for advice on {PRONOUN/m_c/poss} new role",
-            "Appreciates lead_name's faith in {PRONOUN/m_c/object}",
+            "Looks to r_c for advice on {PRONOUN/m_c/poss} new role",
+            "Appreciates r_c's faith in {PRONOUN/m_c/object}",
             "Feels honored to be chosen as deputy",
             "Feels {PRONOUN/m_c/subject} {VERB/m_c/have/has} earned this honor"
         ],
@@ -244,6 +244,11 @@
             "m_c": {
                 "status": [
                     "deputy"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "leader"
                 ]
             }
         }
