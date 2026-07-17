@@ -286,7 +286,7 @@ class ChooseSymbolScreen(MakeClanScreenBase):
                         symbol_list.remove(symbol)
 
         # separate list into chunks for pages
-        symbol_chunks = self.chunks(symbol_list, 45)
+        symbol_chunks = self.get_list_chunks(symbol_list, 45)
 
         # clamp current page to a valid page number
         self.current_page = max(1, min(self.current_page, len(symbol_chunks)))

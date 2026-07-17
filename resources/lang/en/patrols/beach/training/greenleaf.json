@@ -11,7 +11,7 @@
         "types": [
             "training"
         ],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -28,7 +28,7 @@
             {
                 "text": "This is the history p_l is here to teach — every greenleaf, the Twolegs come to this beach, a great migration in their monsters. They swim in this bay, and occasionally the bays to either side, but no more than that, a constrained invasion. Leave them to their rituals. c_n will return to this beach when the seasons change.",
                 "exp": 30,
-                "art": "bch_hunt_twolegsobject",
+                "art": "animals/bch_twolegbeach",
                 "relationships": [
                     {
                         "cats_to": [
@@ -91,7 +91,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "fst_hunt_heat",
+        "patrol_art": "cat_sprites/gen_hunt_heat_WrWr",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -108,7 +108,7 @@
             {
                 "text": "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favor. There's nothing like swimming in greenleaf, and the patrol devolves into a waterfight.",
                 "exp": 20,
-                "art": "gen_train_soggykitty_happy_warrior",
+                "art": "cat_sprites/gen_train_soggykittyhappy_Wr",
                 "relationships": [
                     {   
                         "cats_to": [
@@ -133,7 +133,7 @@
             {
                 "text": "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/purr/purrs}, welcoming it and returning the favor, batting back in mock splash-fight as the rest of the patrol fades away, just the two of them in their own little world.",
                 "exp": 20,
-                "art": "fst_train_newleafmatesonadates_70locked1",
+                "art": "cat_sprites/gen_talkingmates_WrWr",
                 "relationships": [
                     {
                         "cats_to": [
@@ -184,7 +184,7 @@
     "season": ["greenleaf"],
     "types": ["training"],
     "tags": [],
-    "patrol_art": "bch_bord_trackrogue",
+    "patrol_art": "backgrounds/bch_pawprints",
     "min_cats": 2,
     "max_cats": 2,
     "min_max_status": {
@@ -219,7 +219,7 @@
 }
 }
 ],
-    "art": "bch_bord_trackrogue"
+    "art": "backgrounds/bch_pawprints"
 },
 {
     "text": "If app1 wants to catch the birds, {PRONOUN/app1/subject} mustn't stick out so much. Following p_l's lead, they both roll in the mud, let themselves dry in the sun, and crouch in wait. A seabird wades closer, but app1 pounces too early, {PRONOUN/app1/poss} paws swishing through the air as the bird flaps away in a flurry of feathers. It's a process, p_l purrs - app1 got the principle.",
@@ -237,7 +237,7 @@
 }
 }
 ],
-    "art": "bch_train_lore1"
+    "art": "cat_sprites/bch_train_lore1_Wr"
 },
 {
     "text": "app1 watches the sea slowly return, rivulets turning into puddles and lapping waves as the water reclaims the land. With it, p_l explains, are traveling countless tiny mud snails — as small as a single kitten-claw, they cling to the underside of the water's surface. They move with the tide itself and are the fastest sealife in the mudflats.",
@@ -256,7 +256,7 @@
 }
 }
 ],
-    "art": "bch_bord_trackrogue"
+    "art": "backgrounds/bch_pawprints"
 },
 {
     "text": "app1 inquires about the little spirally piles of sand on the ground. p_l describes how sand worms live everywhere here, feeding on the algae and depositing leftover sand at the end of their tunnels. The worms are food for the birds, and the birds are food for c_n. If app1 can catch them! They'll work on pouncing techniques next.",
@@ -274,7 +274,7 @@
 }
 }
 ],
-    "art": "bch_bord_trackrogue"
+    "art": "backgrounds/bch_pawprints"
 }
 ],
     "fail_outcomes": [
@@ -294,7 +294,7 @@
 }
 }
 ],
-    "art": "running_warrior_app"
+    "art": "cat_sprites/gen_running_WrAp"
 },
 {
     "text": "p_l reminds app1 not to get distracted. {PRONOUN/app1/subject/CAP} suddenly {VERB/app1/realize/realizes} there is water staining {PRONOUN/app1/poss} paws. The sea can return faster than {PRONOUN/app1/subject} think{VERB/app1//s}, p_l chides, and getting caught out by the rising water is dangerous. Cats have been lost that way. Staring at the ground, app1 quickly trudges after {PRONOUN/app1/poss} mentor.",
@@ -312,7 +312,7 @@
 }
 }
 ],
-    "art": "bch_bord_trackrogue"
+    "art": "backgrounds/bch_pawprints"
 }
 ]
 }

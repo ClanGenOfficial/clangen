@@ -1,5 +1,6 @@
 {
     "clan_ranks": ["all_kittens", "all_apprentices", "all_elders"],
     "leader_life": ["forsaken", "stolen_vitality"],
-    "seasons": ["always_newleaf", "always_greenleaf", "always_leaf-fall", "always_leaf-bare"]
+    "seasons": ["always_newleaf", "always_greenleaf", "always_leaf-fall", "always_leaf-bare"],
+    "litters": ["underpopulated", "mouths_to_feed"]
 }

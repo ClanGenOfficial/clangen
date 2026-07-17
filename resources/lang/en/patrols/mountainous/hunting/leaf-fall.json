@@ -1010,7 +1010,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_leaf-bare_squirrel_treetoptumble",
+        "patrol_art": "cat_sprites/fst_hunt_LB_squirreltreetoptumble_WrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -1401,7 +1401,7 @@
     "season": ["leaf-fall"],
     "types": ["hunting"],
     "tags": [],
-    "patrol_art": "gen_bord_shortswim",
+    "patrol_art": "backgrounds/gen_shortswim",
     "min_cats": 2,
     "max_cats": 6,
     "min_max_status": {
@@ -1430,7 +1430,7 @@
                     }
                 }
             ],
-            "art": "gen_hunt_fish"
+            "art": "cat_sprites/gen_hunt_fish_Wr"
         },
         {
             "min_max_status": {"normal adult": [3, 6]},
@@ -1450,7 +1450,7 @@
                     }
                 }
             ],
-            "art": "gen_hunt_fish"
+            "art": "cat_sprites/gen_hunt_fish_Wr"
         },
         {
             "min_max_status": {"apprentice": [1, 1]},
@@ -1480,7 +1480,7 @@
                     }
                 }
             ],
-            "art": "bch_train_session1"
+            "art": "cat_sprites/bch_train_session1_ApWr"
         },
         {
             "min_max_status": {"apprentice": [2, 4]},
@@ -1510,7 +1510,7 @@
                     }
                 }
             ],
-            "art": "bch_train_session1"
+            "art": "cat_sprites/bch_train_session1_ApWr"
         },
         {
             "text": "When the stream comes into view, s_c is the first to the streambank. {PRONOUN/s_c/subject/CAP} {VERB/s_c/step/steps} onto the slick rocks poking up above the current, {PRONOUN/s_c/poss} footing sure. When the first salmon shoots up from the water, s_c is perfectly positioned to pick it off. With {PRONOUN/s_c/poss} confidence in the water, the patrol brings home a plentiful haul of salmon.",
@@ -1530,7 +1530,7 @@
                     }
                 }
             ],
-            "art": "gen_train_soggykitty_happy_warrior"
+            "art": "cat_sprites/gen_train_soggykittyhappy_Wr"
         },
         {
             "text": "s_c has been waiting all year for this moment! p_l leads the way to the stream, and s_c bounds to the water's edge, crouched and ready. When the first salmon flies above the waves, {PRONOUN/s_c/poss} sharp reflexes and hunter's instinct make dispatching it a breeze. The patrol passes an exciting afternoon of salmon-catching and returns home with plenty of fish.",
@@ -1550,7 +1550,7 @@
                     }
                 }
             ],
-            "art": "gen_hunt_fish"
+            "art": "cat_sprites/gen_hunt_fish_Wr"
         }
     ],
     "fail_outcomes": [
@@ -1558,7 +1558,7 @@
             "text": "p_l leads the way to the stream. The patrol's excitement wanes as they wait... and wait... for a salmon to appear. In past seasons, this stream has been used as a migratory channel, but p_l wonders if that has changed this year. Whatever the case, this salmon run will have to be canceled, because the salmon certainly aren't running.",
             "exp": 0,
             "frequency": 4,
-            "art": "gen_warrior_crouching_perplexed"
+            "art": "cat_sprites/gen_crouchingperplexed_WrWr"
         },
         {
             "text": "p_l leads the way to the stream. s_c, in {PRONOUN/s_c/poss} eagerness, leaps out onto a rock in the middle of the fast-flowing current. The spray from the rapids has made the rock much more slippery than it appears, and s_c plunges into the water with a yowl of fear. p_l leaps in after {PRONOUN/s_c/object}, hauling {PRONOUN/s_c/object} out of the shallows. s_c coughs, water clogging {PRONOUN/s_c/poss} throat. p_l forgoes the hunt in favor of helping s_c back to camp.",
@@ -1590,7 +1590,7 @@
             "history_text": {
                 "death": "m_c died to complications caused by water in {PRONOUN/m_c/poss} lungs."
             },
-            "art": "gen_fallenwater_cat2"
+            "art": "cat_sprites/gen_fallenwater_Wr"
         },
         {
             "text": "When s_c reaches the stream, {PRONOUN/s_c/subject} eyes the speed of the current and the spray-slick rocks doubtfully. Perhaps a late greenleaf storm has swelled the stream, or perhaps the water is running unusually high today. Whatever it may be, s_c judges the stream too dangerous for hunting today.",
@@ -1620,7 +1620,7 @@
                     }
                 }
             ],
-            "art": "gen_warrior_perplexed"
+            "art": "cat_sprites/gen_crouchingperplexed_Wr"
         },
         {
             "text": "p_l leads the way to the stream, and the cats position themselves along the bank. When the first salmon appears, p_l bats it into r_c's paws. The hunt continues all afternoon. As daylight wanes, a salmon pops up right in front of r_c. {PRONOUN/r_c/poss/CAP} caution faded after such an easy hunt, r_c leaps, snatching the salmon out of the air... and launching {PRONOUN/r_c/self} into the waves. r_c's yowl of fear is cut short when the relentless current flings {PRONOUN/r_c/object} into the rocks.",
@@ -1628,7 +1628,7 @@
             "frequency": 1,
             "dead_cats": ["r_c"],
             "prey": ["small"],
-            "art": "gen_drowning_warrior"
+            "art": "cat_sprites/gen_drowning_Wr"
         }
     ]
 },
@@ -1638,7 +1638,7 @@
     	"season": ["leaf-fall"],
     	"types": ["hunting"],
         "tags": ["halloween", "romance"],
-    	"patrol_art": "pipbats_INTRO",
+    	"patrol_art": "halloween/hal_pipbats",
     	"min_cats": 3,
     	"max_cats": 6,
     	"min_max_status": {},

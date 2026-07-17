@@ -11,7 +11,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_heat",
+        "patrol_art": "cat_sprites/gen_jolly_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -380,7 +380,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_gen_squirrel_treetoptumble",
+        "patrol_art": "cat_sprites/fst_hunt_gen_squirreltreetoptumble_WrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {

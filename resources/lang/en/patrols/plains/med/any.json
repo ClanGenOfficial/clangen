@@ -121,7 +121,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "pln_med_herblocation2",
+        "patrol_art": "cat_sprites/pln_med_herblocation_Ap",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
