@@ -37605,7 +37605,7 @@
                     "healer cats": [1, 1],
                     "normal adult": [1, 2]
                  },
-                "text": "p_l warns the r_c of the dangers of deathberries. Their eyes linger intensely as they meow that even a drop of deathberry juice can potentially kill another.",
+                "text": "p_l warns the r_c of the dangers of deathberries. {PRONOUN/p_l/subject/CAP} eyes linger intensely as {PRONOUN/p_l/subject} {VERB/p_l/meow/meows} that even a drop of deathberry juice can potentially kill another.",
                 "exp": 30,
                 "relationship_constraint": ["distrusts"],
                  "relationships": [
