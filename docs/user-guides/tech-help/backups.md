@@ -1,6 +1,6 @@
 ## Creating Back-ups
 
-This tab explains how to create backups of your saves, whether it's for editing purposes, to have a backup in case of evil behaviour while updating, or to transfer them between devices. 
+This tab explains how to create backups of your saves, whether it's for editing purposes, to have a backup while updating, or to transfer them between devices. 
 
 !!! warning
      When backing up a specific clan, make sure you are grabbing both the clan folder AND the clan's clan.json file. The Clan will not function without one or the other.
