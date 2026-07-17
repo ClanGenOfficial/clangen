@@ -17,6 +17,7 @@ from scripts.events_module.event_filters import (
     get_highest_romantic_relation,
     get_personality_compatibility,
 )
+from scripts.config import get_config
 
 
 class RomanticEvents:
@@ -286,6 +287,10 @@ class RomanticEvents:
             rel_list, exclude_mate=True
         )
         if not highest_romantic_relation:
+            return False
+    
+        # Config check
+        if not get_config("mates.allow_mating"):
             return False
 
         condition = constants.CONFIG["mates"]["confession"]["make_confession"]
