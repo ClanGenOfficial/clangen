@@ -18142,7 +18142,8 @@
                             "cats_from": "cat_from and cat_to were in a good mood after they failed to find any ragwort and were spared its disgusting smell."
                         }
                     }
-                ]
+                ],
+                "frequency": 4
             }
         ]
     },
@@ -24528,7 +24529,8 @@
                             "cats_from": "cat_from was pleased to see cat_to bring back wildflowers to decorate the camp in newleaf."
                         }
                     }
-                ]
+                ],
+                "frequency": 3
             }
         ]
     },
@@ -26842,7 +26844,8 @@
                             "cats_from": "cat_from and cat_to kept each other's spirits up during an unsuccessful herb-gathering patrol."
                         }
                     }
-                ]
+                ],
+                "frequency": 4
             }
         ]
     },
