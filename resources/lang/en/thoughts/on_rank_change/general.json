@@ -157,9 +157,6 @@
                 "past_status": [
                     "rogue", "kittypet", "loner"
                 ],
-                "stat": {
-                    "trait": ["arrogant", "confident", "competitive", "ambitious", "bold", "daring", "shameless", "flamboyant", "fierce", "adventurous"]
-                },
                 "backstory": ["-abandoned_backstories", "-orphaned2"]
             }
         }
