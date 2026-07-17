@@ -288,7 +288,7 @@ class RomanticEvents:
         )
         if not highest_romantic_relation:
             return False
-    
+
         # Config check
         if not get_config("mates.allow_mating"):
             return False
