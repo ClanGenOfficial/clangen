@@ -435,7 +435,7 @@ class MedDenScreen(Screens):
         if not self.meds:
             all_pages = []
         else:
-            all_pages = self.chunks(self.meds, 1)
+            all_pages = self.get_list_chunks(self.meds, 1)
 
         if self.current_med > len(all_pages):
             if len(all_pages) == 0:
@@ -508,7 +508,7 @@ class MedDenScreen(Screens):
         if not tab_list:
             all_pages = []
         else:
-            all_pages = self.chunks(tab_list, 10)
+            all_pages = self.get_list_chunks(tab_list, 10)
 
         self.current_page = max(1, min(self.current_page, len(all_pages)))
 

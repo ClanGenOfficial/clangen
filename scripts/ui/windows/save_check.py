@@ -58,6 +58,7 @@ class SaveCheckWindow(GameWindow):
             "windows.save_check_message",
             ui_scale(pygame.Rect((20, 20), (260, -1))),
             line_spacing=1,
+            starting_height=top_stack_menu_layer_height,
             object_id="#text_box_30_horizcenter",
             container=self,
         )

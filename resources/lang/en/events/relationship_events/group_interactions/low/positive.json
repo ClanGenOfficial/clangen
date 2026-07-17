@@ -91,5 +91,46 @@
                 "amount": 5
             }
         ]
+    },
+    {
+        "id": "group_multicat_pos_polymateslow",
+        "strings": [
+            "m_c, multi_cat shared prey and stories of each other's days.",
+            "m_c, multi_cat were reluctant to leave their shared nest and start the day.",
+            "multi_cat were left in fits of giggles at m_c's joke."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "multi_cat": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "mates"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": true,
+                "values": [
+                    "romance"
+                ],
+                "amount": 5
+            }
+        ]
     }
 ]

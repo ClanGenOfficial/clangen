@@ -5,7 +5,7 @@
     "season": ["newleaf"],
     "types": ["herb_gathering"],
     "tags": [],
-    "patrol_art": "pln_med_herblocation2",
+    "patrol_art": "cat_sprites/pln_med_herblocation_Ap",
     "min_cats": 1,
     "max_cats": 1,
     "min_max_status": {
@@ -36,7 +36,7 @@
     "exp": 20,
     "frequency": 4,
     "herbs": ["plantain"],
-    "art": "gen_med_gatheringplantain_greenleaf1"
+    "art": "backgrounds/gen_GL_gatheringplantain"
 }
     ],
     "fail_outcomes": [
@@ -44,7 +44,7 @@
     "text": "Not long into {PRONOUN/p_l/poss} search, the fog thickens, obscuring p_l's own paws and dappling {PRONOUN/p_l/poss} pelt. Last night's rain, caught in the meadow, rises into haze under the strengthening newleaf sun. p_l can't see anything like this, and sea plantain only has a faint smell. Best to wait for the sun to burn the fog away.",
     "exp": 0,
     "frequency": 4,
-    "art": "pln_med_herblocation2"
+    "art": "cat_sprites/pln_med_herblocation_Ap"
     },
      {
     "text": "Not long into {PRONOUN/p_l/poss} search, the fog thickens, obscuring p_l's own paws and dappling {PRONOUN/p_l/poss} pelt. In the haze, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} see them coming. Hooves crunching fresh grass are the only warning before a flock of sheep push and jostle against p_l on all sides. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} bruised and disoriented by the time {PRONOUN/p_l/subject} {VERB/p_l/get/gets} away.",
@@ -58,7 +58,7 @@
             "no_results": false
         }
     ],
-    "art": "running_med"
+    "art": "cat_sprites/gen_med_running_Mcmed"
 },
 
      {
@@ -77,7 +77,7 @@
         "death": "p_l died from {PRONOUN/app1/poss} injuries after being trampled by a flock of sheep.",
         "scar": "p_l was scarred after being trampled by a flock of sheep."
     },
-    "art": "running_med2"
+    "art": "cat_sprites/gen_med_running2_Mcmed2"
 }
     ]
 },
@@ -89,7 +89,7 @@
     "season": ["newleaf"],
     "types": ["herb_gathering"],
     "tags": [],
-    "patrol_art": "gen_app_med_meadow",
+    "patrol_art": "cat_sprites/gen_med_meadow_ApMc",
     "min_cats": 2,
     "max_cats": 2,
     "min_max_status": {
@@ -132,7 +132,7 @@
     }
     }
     ],
-    "art": "gen_med_gatheringplantain_greenleaf1"
+    "art": "backgrounds/gen_GL_gatheringplantain"
 }
     ],
     "fail_outcomes": [
@@ -140,7 +140,7 @@
     "text": "Not long into their search, the fog thickens, obscuring their own paws and dappling their pelts. Last night's rain, caught in the meadow, rises into haze under the strengthening newleaf sun. p_l can't see anything like this, and sea plantain only has a faint smell. Best to wait for the sun to burn the fog away.",
     "exp": 0,
     "frequency": 4,
-    "art": "gen_app_med_meadow"
+    "art": "cat_sprites/gen_med_meadow_ApMc"
     },
      {
     "text": "Not long into their search, the fog thickens, obscuring their own paws and dappling their pelts. In the haze, the two of them drift apart. Hooves crunching fresh grass are their only warning before a flock of sheep push and jostle against app1 on all sides. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} bruised and panicked by the time {PRONOUN/app1/subject} {VERB/app1/get/gets} away.",
@@ -166,7 +166,7 @@
     }
     }
     ],
-    "art": "running_med_app"
+    "art": "cat_sprites/gen_med_running_McApmed_app"
 },
      {
     "text": "Not long into their search, the fog thickens, obscuring their own paws and dappling their pelts. In the haze, the two of them drift apart and p_l doesn't see it coming. Hooves crunching fresh grass are the only warning before a flock of sheep envelop app1, trampling {PRONOUN/app1/object} underhoof. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} battered and panicked by the time {PRONOUN/app1/subject} finally {VERB/app1/get/gets} away.",

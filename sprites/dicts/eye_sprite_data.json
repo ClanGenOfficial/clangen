@@ -37,7 +37,24 @@
             "MUSTARD": "yellow",
             "EARTHY": "yellow",
             "SEA": "blue",
-            "BLUEBELL": "blue"
-        }
+            "BLUEBELL": "blue",
+	        "OLIVE": "green",
+	        "CATTAIL": "green",
+	        "GRASSYGREEN": "green",
+	        "FERN": "green",
+	        "LICHEN": "green",
+	        "MOSSY": "green"
+        },
+	    {
+	        "LEAF": "green",
+	        "AQUAMARINE": "green",
+	        "CACTUS": "green",
+            "MAPLE": "yellow",
+            "LIME": "green",
+            "SAND": "yellow",
+            "PERIWINKLE": "blue",
+            "WILDFIRE": "yellow"
+	}
+
     ]
 }

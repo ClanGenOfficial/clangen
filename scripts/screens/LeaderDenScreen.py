@@ -1085,7 +1085,7 @@ class LeaderDenScreen(Screens):
         ]
 
         # separate them into chunks for the pages
-        outsider_chunks = self.chunks(outsiders, 20)
+        outsider_chunks = self.get_list_chunks(outsiders, 20)
 
         # clamp current page to a valid page number
         self.current_page = max(1, min(self.current_page, len(outsider_chunks)))

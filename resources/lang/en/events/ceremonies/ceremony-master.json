@@ -156,7 +156,6 @@
       "general_backstory",
       "calm",
       "cold",
-      "sneaky",
       "strict",
       "wise",
       "cunning"
@@ -197,7 +196,6 @@
       "careful",
       "cold",
       "compassionate",
-      "sneaky",
       "strict",
       "vengeful",
       "wise",
@@ -333,7 +331,6 @@
       "fierce",
       "lonesome",
       "shameless",
-      "sneaky",
       "troublesome",
       "vengeful",
       "arrogant",
@@ -530,7 +527,6 @@
       "lonesome",
       "compassionate",
       "responsible",
-      "sneaky",
       "strict",
       "wise"
     ],
@@ -1836,7 +1832,7 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "sneaky"
+      "cunning"
     ],
     "(old_name)'s eyes glint as {PRONOUN/m_c/subject} {VERB/m_c/get/gets} the medicine cat name of m_c. No one seems to notice that {PRONOUN/m_c/subject} {VERB/m_c/don't/didn't} agree to all of the vows of being a medicine cat: only nodding at some and agreeing to others with a meow."
   ],
@@ -2540,7 +2536,7 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "sneaky"
+      "quiet"
     ],
     "(old_name) pads forward silently before sitting in front of {PRONOUN/m_c/poss} leader. {PRONOUN/m_c/subject/CAP} {VERB/m_c/remain/remains} just as quiet as {PRONOUN/m_c/poss} steps forward for l_n to name {PRONOUN/m_c/object} m_c and honor {PRONOUN/m_c/poss} r_h."
   ],
@@ -3400,7 +3396,6 @@
       "general_backstory",
       "flamboyant",
       "rebellious",
-      "sneaky",
       "shameless",
       "charismatic"
     ],
@@ -3449,5 +3444,47 @@
       "sincere"
     ],
     "m_c sits with a puffed out pelt of pride, hearing c_n celebrate {PRONOUN/m_c/poss} achievements. Retiring means trusting younger, fresher cats to take up the fight to keep c_n safe, but {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} done the best {PRONOUN/m_c/subject} could've to pass on {PRONOUN/m_c/poss} lessons."
+  ],
+  "leader_1": [
+    [
+      "leader",
+      "general_mentor",
+      "general_parents",
+      "no_leader",
+      "general_backstory",
+      "bloodthirsty"
+    ],
+  "(old_name) has become the new leader. {PRONOUN/m_c/subject/CAP} {VERB/m_c/stare/stares} down at {PRONOUN/m_c/poss} Clanmates with unsheathed claws, promising a new era for the Clans."
+  ],
+  "leader_2": [
+    [
+      "leader",
+      "general_mentor",
+      "general_parents",
+      "no_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "(old_name) has been promoted to the new leader of the Clan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/travel/travels} to the Moonstone immediately to get {PRONOUN/m_c/poss} nine lives and {VERB/m_c/are/is} hailed by {PRONOUN/m_c/poss} new name, m_c."
+  ],
+  "leader_3": [
+    [
+      "leader",
+      "general_mentor",
+      "general_parents",
+      "no_leader",
+      "general_backstory",
+      "all_traits"
+    ],"(old_name) has become the new leader of the Clan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/vow/vows} to protect the Clan, even at the cost of {PRONOUN/m_c/poss} nine lives."
+  ],
+  "leader_4": [
+    [
+      "leader",
+      "general_mentor",
+      "general_parents",
+      "no_leader",
+      "general_backstory",
+      "all_traits"
+    ],"(old_name) has received {PRONOUN/m_c/poss} nine lives and has become the new leader of the Clan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} like {PRONOUN/m_c/subject} {VERB/m_c/are/is}n't ready for this new responsibility, but will try {PRONOUN/m_c/poss} best to do what is right for the Clan."
   ]
 }

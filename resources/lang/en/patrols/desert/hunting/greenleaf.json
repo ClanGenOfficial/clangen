@@ -10,7 +10,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_heat",
+        "patrol_art": "cat_sprites/gen_hunt_heat_WrWr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {

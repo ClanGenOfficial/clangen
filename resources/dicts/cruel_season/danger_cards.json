@@ -1,26 +1,31 @@
 {
-  "danger_placeholder0": {
-    "card_art": "danger/death.png",
+  "forsaken": {
+    "card_art": "danger/forsaken.png",
     "modifiers": {
-      "mod_name": 1
+      "death_related.max_leader_lives": 1
     }
   },
-  "danger_placeholder1": {
-    "card_art": "danger/blood.png",
+  "for_the_throne": {
+    "card_art": "danger/for_the_throne.png",
     "modifiers": {
-      "mod_name": 1
+      "death_related.murder.deputy_murder_modifier": 40,
+      "relationship.deputy_to_leader_neg_buff": true,
+      "relationship.deputy_envy_leader_influence": 3,
+      "death_related.murder.deputy_prefer_leader": true
     }
   },
-  "danger_placeholder2": {
-    "card_art": "danger/hanged.png",
+  "plague_ridden": {
+    "card_art": "danger/forsaken.png",
     "modifiers": {
-      "mod_name": 1
+      "condition_related.med_infection_reduction": 0,
+      "condition_related.illness_outbreak_season": ["Leaf-bare", "Leaf-fall", "Greenleaf", "Newleaf"],
+      "condition_related.illness_percentage_max": 1.25
     }
   },
-  "danger_placeholder3": {
-    "card_art": "danger/tower.png",
+  "stolen_vitality": {
+    "card_art": "danger/stolen_vitality.png",
     "modifiers": {
-      "mod_name": 1
+      "cruel_season.event.stolen_vitality": true
     }
   }
 }

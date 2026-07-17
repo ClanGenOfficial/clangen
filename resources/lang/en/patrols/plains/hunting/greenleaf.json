@@ -135,7 +135,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "pln_hunt_twolegsobject1",
+        "patrol_art": "backgrounds/pln_twolegsobject",
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
@@ -1030,7 +1030,7 @@
             "hunting"
         ],
         "tags": ["clan:leader"],
-        "patrol_art": "gen_hunt_burrow",
+        "patrol_art": "cat_sprites/gen_hunt_burrow_Wr",
         "patrol_art_clean": null,
         "min_cats": 3,
         "max_cats": 6,

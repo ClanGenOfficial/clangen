@@ -13,7 +13,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newcat",
+        "patrol_art": "cat_sprites/gen_bord_newcat_Ln",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -87,7 +87,7 @@
                         }
                     }
                 ],
-                "art": "gen_cat_with_kit_loner",
+                "art": "cat_sprites/gen_catwithkit_LnKt",
                 "outsider_rep": 1,
                 "frequency": 1
             }
@@ -160,7 +160,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newcat",
+        "patrol_art": "cat_sprites/gen_bord_newcat_Ln",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -433,7 +433,7 @@
             {
                 "text": "The two friends have been looking for a safe place ever since n_c:0 gave birth. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
                 "exp": 10,
-                "art": "gen_cat_with_kit_loner",
+                "art": "cat_sprites/catwithkit_LnKt",
                 "new_cat": [
                     [
                         "age:has_kits",
@@ -478,7 +478,7 @@
             {
                 "text": "The two have been looking for a safe place ever since n_c:0 gave birth. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
                 "exp": 10,
-                "art": "gen_cat_with_kit_loner",
+                "art": "cat_sprites/catwithkit_LnKt",
                 "new_cat": [
                     [
                         "age:adult",
@@ -523,7 +523,7 @@
             {
                 "text": "The two siblings have been looking for a safe place ever since n_c:1 gave birth. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
                 "exp": 10,
-                "art": "gen_cat_with_kit_loner",
+                "art": "cat_sprites/catwithkit_LnKt",
                 "new_cat": [
                     [
                         "age:senior",
@@ -699,7 +699,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newcat",
+        "patrol_art": "cat_sprites/gen_bord_newcat_Ln",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -757,7 +757,7 @@
                         }
                     }
                 ],
-                "art": "gen_cat_with_kit_loner",
+                "art": "cat_sprites/catwithkit_LnKt",
                 "outsider_rep": 1,
                 "frequency": 1
             }
@@ -1056,7 +1056,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newcatthunderpath",
+        "patrol_art": "cat_sprites/gen_bord_newcatthunderpath_LnWr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -1084,7 +1084,7 @@
                         }
                     }
                 ],
-                "art": "gen_bord_patrolwoundedlonerrescue",
+                "art": "cat_sprites/woundedcatrescue_WrLn",
                 "outsider_rep": 1,
                 "injury": [
                     {
@@ -1167,7 +1167,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newcatthunderpath",
+        "patrol_art": "cat_sprites/gen_bord_newcatthunderpath_LnWr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -1195,7 +1195,7 @@
                         }
                     }
                 ],
-                "art": "gen_bord_patrolwoundedlonerrescue",
+                "art": "cat_sprites/woundedcatrescue_WrLn",
                 "outsider_rep": 1,
                 "injury": [
                     {
@@ -1533,7 +1533,7 @@
                         }
                     }
                 ],
-                "art": "gen_bump_heads_warrior_loner",
+                "art": "cat_sprites/gen_bumpheads_WrLn",
                 "outsider_rep": 1,
                 "frequency": 4
             },
@@ -1582,7 +1582,7 @@
                         }
                     }
                 ],
-                "art": "gen_outsiderwar_mates_headbump",
+                "art": "cat_sprites/gen_matesheadbump_OwWr",
                 "outsider_rep": 1,
                 "frequency": 4
             },
@@ -1631,7 +1631,7 @@
                         }
                     }
                 ],
-                "art": "gen_outsiderwar_mates_headbump",
+                "art": "cat_sprites/gen_matesheadbump_OwWr",
                 "outsider_rep": 1,
                 "frequency": 4
             },
@@ -1693,7 +1693,7 @@
                         }
                     }
                 ],
-                "art": "gen_outsiderwar_mates_headbump",
+                "art": "cat_sprites/gen_matesheadbump_OwWr",
                 "outsider_rep": 1,
                 "frequency": 4
             }
@@ -1746,7 +1746,7 @@
                         }
                     }
                 ],
-                "art": "gen_flower_date_warrior_loner",
+                "art": "cat_sprites/gen_flowerdate_WrLn",
                 "outsider_rep": 0,
                 "frequency": 4
             },
@@ -1939,7 +1939,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newkit",
+        "patrol_art": "cat_sprites/gen_bord_newkit_Kt",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -2017,7 +2017,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newkit",
+        "patrol_art": "cat_sprites/gen_bord_newkit_Kt",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -2087,7 +2087,7 @@
         "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
-        "patrol_art": "gen_med_newmed",
+        "patrol_art": "cat_sprites/gen_bord_newmed1_Ln",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -2210,7 +2210,7 @@
         "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
-        "patrol_art": "gen_med_newmed",
+        "patrol_art": "cat_sprites/gen_bord_newmed2_Ln",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -2341,7 +2341,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_lonerchase",
+        "patrol_art": "cat_sprites/gen_bord_dogchase_Ln",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -2497,7 +2497,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_med_rescue",
+        "patrol_art": "cat_sprites/gen_med_rescue_Mc",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -2617,7 +2617,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_med_rescue",
+        "patrol_art": "cat_sprites/gen_med_rescue_Mc",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -2741,7 +2741,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_med_rescue",
+        "patrol_art": "cat_sprites/gen_med_rescue_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2866,7 +2866,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_med_rescue",
+        "patrol_art": "cat_sprites/gen_med_rescue_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -3267,7 +3267,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -3477,7 +3477,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -3941,7 +3941,7 @@
             "new_cat",
             "disaster"
         ],
-        "patrol_art": "gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -4149,7 +4149,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -4357,7 +4357,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "fst_hunt_twolegplace",
+        "patrol_art": "backgrounds/fst_twolegplace",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},
@@ -4505,7 +4505,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_chase",
+        "patrol_art": "cat_sprites/gen_bord_dogchase_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "frequency": 1,
@@ -4536,7 +4536,7 @@
                         }
             ],
                 "frequency": 3,
-                "art": "gen_kittypet_friends_with_dog1"
+                "art": "cat_sprites/gen_kittypetfriendswithdog_Kp"
             },
             {
                 "text": "s_c whirls around to find the source of the noise, and comes face-to-face with a startled looking kittypet. The kittypet stutters out an apology, hastily explaining that the dog is {PRONOUN/n_c:0/poss} friend, and nervously asking s_c not to hurt them. Any other day, s_c might have clawed <i>both</i> of their faces off, but right now, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} in too much shock at the concept of a cat and dog being friends to even consider it.",
@@ -4561,7 +4561,7 @@
             ],
                 "stat_trait": ["bloodthirsty", "arrogant", "vengeful", "fierce", "cold", "grumpy"],
                 "frequency": 4,
-                "art": "gen_kittypet_friends_with_dog1"
+                "art": "cat_sprites/gen_kittypetfriendswithdog_Kp"
     
             },
             {
@@ -4587,7 +4587,7 @@
                             }
                         }
             ],
-                "art": "gen_kittypet_friends_with_dog1",
+                "art": "cat_sprites/gen_kittypetfriendswithdog_Kp",
                 "outsider_rep": 1,
                 "frequency": 3
             }
@@ -4596,7 +4596,7 @@
             {
                 "text": "Momentarily distracted, p_l doesn't have time to react as the increasingly-infuriating dog nips at {PRONOUN/p_l/poss} ear. {PRONOUN/p_l/subject/CAP} {VERB/p_l/hiss/hisses}, lashing out at the dog just as an incredibly apologetic kittypet rushes over, leading the whimpering dog away. p_l stares after them in shock. Did that dog actually listen to the kittypet...? Perhaps better to head back to camp, and process this bizarre experience.",
                 "exp": 2,
-                "art": "gen_kittypet_friends_with_dog1",
+                "art": "cat_sprites/gen_kittypetfriendswithdog_Kp",
                 "new_cat": [
                     [
                         "kittypet",
@@ -4635,7 +4635,7 @@
             {
                 "text": "p_l spins around just in time to see an impressively vicious kittypet lunging at {PRONOUN/p_l/object}. Once {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} recovered from {PRONOUN/p_l/poss} momentary shock, p_l easily overpowers the kittypet, who's snarling something about the dog being {PRONOUN/n_c:0/poss} 'friend'. The odd pair quickly run off, leaving behind a slightly dazed — and very confused — p_l.",
                 "exp": 2,
-                "art": "gen_battle_warrior_danger",
+                "art": "cat_sprites/gen_battle_WrLn",
                 "new_cat": [
                     [
                         "kittypet",
@@ -4727,7 +4727,7 @@
                         }
             ],
                 "frequency": 4,
-                "art": "gen_kittypet_friends_with_dog1"
+                "art": "cat_sprites/gen_kittypetfriendswithdog_Kp"
         },
         {
                 "text": "p_l lets out a vicious yowl, ignoring the now shrill voice calling out to {PRONOUN/p_l/object}, pleading with {PRONOUN/p_l/object} to stop as {PRONOUN/p_l/subject} {VERB/p_l/attack/attacks} the dog, violently tearing at the dog's pelt as it yaps and whines. After the tussle, the dog hauls itself towards the now teary-eyed kittypet, and p_l can't help but smirk at {PRONOUN/n_c:0/poss} terrified expression.",
@@ -4754,7 +4754,7 @@
                     "bloodthirsty",
                     "vengeful"
                 ],
-                "art": "gen_kittypet_friends_with_dog1",
+                "art": "cat_sprites/gen_kittypetfriendswithdog_Kp",
                 "frequency": 4
             }
         ],
@@ -4781,7 +4781,7 @@
                             }
                         }
             ],
-                "art": "gen_battle_warrior_danger",
+                "art": "cat_sprites/gen_battle_WrLn",
                 "injury": [
                     {
                         "cats": [
@@ -4816,7 +4816,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_found_scent_dangerous",
+        "patrol_art": "cat_sprites/gen_foundscent_WrRg",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -4833,7 +4833,7 @@
             {
                 "text": "p_l slowly makes {PRONOUN/p_l/poss} way forward, caution in {PRONOUN/p_l/poss} step. To {PRONOUN/p_l/poss} surprise, p_l finds two young cats shaking, curled around each other. The warrior is saddened to hear the two detail how they had been looking for a place to live when a sudden snowstorm hit. p_l nods, helping them back to camp so they may heal and finally experience a safe space.",
                 "exp": 15,
-                "art": "gen_warrior_two_outsiders",
+                "art": "cat_sprites/gen_groupwalk_WrLnLn",
                 "relationships": [
                     {
                         "cats_to": [
@@ -4909,7 +4909,7 @@
             {
                 "text": "p_l cautiously makes {PRONOUN/p_l/poss} way forward, intending to find the source of the noise. However, upon finding the source, p_l is horrified. Two recently lifeless bodies lay before {PRONOUN/p_l/object}, curled around each other. The frostbite dotting their pelts indicates that the two cats must've gotten stuck in a terrible snowstorm, and p_l does {PRONOUN/p_l/poss} best to honor their lives with a proper burial.",
                 "exp": 0,
-                "art": "gen_hunt_leafbaresnowstorm",
+                "art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
                 "relationships": [],
                 "new_cat": [
                     [
@@ -4931,7 +4931,7 @@
             {
                 "text": "The warrior swallows {PRONOUN/p_l/poss} unease and pads toward the sound, only to be horrified at what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} seeing. Two elderly cats lay dead, frostbite scorching their legs. p_l lets out a saddened whimper before shooting a glare up towards the cloudy sky. StarClan, how could you do this to these innocent cats?",
                 "exp": 0,
-                "art": "gen_cat_looking_up1",
+                "art": "cat_sprites/gen_catlookingup_Wr",
                 "stat_skill": [
                     "DARK,2"
                 ],
@@ -4955,7 +4955,7 @@
             {
                 "text": "p_l bounds through a thorny bush, a sneer across {PRONOUN/p_l/poss} face. A pair of kittypets meets {PRONOUN/p_l/poss} gaze, startled. As p_l lets out a warning yowl to signify {PRONOUN/p_l/poss} intention to fight, the two kittypets quickly dart away.",
                 "exp": 0,
-                "art": "gen_angry_cat_warrior",
+                "art": "cat_sprites/gen_angrycat_Wr",
                 "relationships": [
                     {
                         "cats_to": [
@@ -4990,7 +4990,7 @@
             {
                 "text": "p_l wasn't going to let any cat get the upper paw on {PRONOUN/p_l/object}. Without a second thought, {PRONOUN/p_l/subject} {VERB/p_l/throw/throws} {PRONOUN/p_l/self} at an unsuspecting kittypet, ignoring the scent of sickness on {PRONOUN/n_c:0/object}. Yowls from another kittypet begging p_l to stop makes {PRONOUN/p_l/object} take a step back... but <i>it's too late</i>. The kittypet is dead, p_l has blood on {PRONOUN/p_l/poss} paws and the glare of the other kittypet tells {PRONOUN/p_l/object} that {PRONOUN/p_l/subject} had just made a new enemy.",
                 "exp": 15,
-                "art": "gen_gen_newcat_hostile",
+                "art": "cat_sprites/gen_newcathostile_Ln",
                 "stat_trait": [
                     "fierce",
                     "bloodthirsty",
@@ -5034,7 +5034,8 @@
             {
                 "text": "p_l rushes towards the scents, intending to put up a fight, but {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't spared that chance. A blow from a cat heaps larger than {PRONOUN/p_l/object} knocks p_l into the snow. Before {PRONOUN/p_l/subject} can react, a strike from another cat spills {PRONOUN/p_l/poss} blood across the sparkling white, killing {PRONOUN/p_l/object} instantly.",
                 "exp": 0,
-                "art": "gen_dead_cat",
+                "art": "cat_sprites/gen_deadghost_WrSc_EXPLICIT",
+                "art_clean": "cat_sprites/gen_deadghost_WrSc",
                 "dead_cats": [
                     "p_l"
                 ],
@@ -5047,7 +5048,7 @@
             {
                 "text": "The warrior bounds through a bush, a snarl across {PRONOUN/p_l/poss} face. Before p_l can demand the rogues leave, a fight ensues. p_l is outnumbered two to one, and it is a miracle that {PRONOUN/p_l/subject} {VERB/p_l/make/makes} it out alive, barely escaping claw wounds. {PRONOUN/p_l/poss/CAP} luck doesn't last, though, and an oncoming snowstorm bites into {PRONOUN/p_l/poss} pelt on {PRONOUN/p_l/poss} way home.",
                 "exp": 5,
-                "art": "gen_battle_warrior_danger",
+                "art": "cat_sprites/gen_battle_WrRg",
                 "injury": [
                     {
                         "cats": [
@@ -5082,7 +5083,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "running_two_warriors",
+        "patrol_art": "cat_sprites/running_WrWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -5172,7 +5173,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_train_talkingWL",
+                "art": "cat_sprites/gen_train_talking_WrLn",
                 "frequency": 1
             },
             {
@@ -5232,7 +5233,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_gen_newcat_hostile",
+                "art": "cat_sprites/gen_newcathostile_Ln",
                 "frequency": 1
             },
             {
@@ -5318,7 +5319,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_speaking_cat_w3",
+                "art": "cat_sprites/gen_speakingcat_Wr",
                 "frequency": 4
             },
             {
@@ -5401,7 +5402,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_speaking_cat_w2",
+                "art": "cat_sprites/gen_speakingcat_Wr",
                 "frequency": 4
             }
         ],
@@ -5515,7 +5516,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_happy_cat3",
+                "art": "cat_sprites/gen_happycat_Ln",
                 "frequency": 1
             },
             {
@@ -5592,7 +5593,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_bord_twocat_hostile_loner_loner",
+                "art": "cat_sprites/gen_bord_twocathostile_LnLn",
                 "frequency": 1
             },
             {
@@ -5671,7 +5672,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_bord_twocat_hostile_warrior_warrior",
+                "art": "cat_sprites/gen_bord_twocathostile_WrWr",
                 "frequency": 4
             }
         ],
@@ -5746,7 +5747,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_bord_twocat_hostile_warrior_warrior",
+                "art": "cat_sprites/gen_bord_twocathostile_WrWr",
                 "frequency": 4
             },
             {
@@ -5817,7 +5818,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_battle_warrior_loner",
+                "art": "cat_sprites/gen_battle_WrLn",
                 "frequency": 4
             },
             {
@@ -5893,7 +5894,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_gen_newcat_hostile",
+                "art": "cat_sprites/gen_newcathostile_Ln",
                 "frequency": 4
             },
             {
@@ -5945,7 +5946,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_bord_twocat_hostile_loner_loner",
+                "art": "cat_sprites/gen_bord_twocathostile_LnLn",
                 "frequency": 4
             }
         ],
@@ -6020,7 +6021,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_battle_warrior_loner",
+                "art": "cat_sprites/gen_battle_WrLn",
                 "frequency": 4
             },
             {
@@ -6114,7 +6115,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_happy_cat3",
+                "art": "cat_sprites/gen_happycat_Ln",
                 "frequency": 4
             }
         ]
@@ -6829,7 +6830,7 @@
         "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
-        "patrol_art": "gen_bord_rescue",
+        "patrol_art": "cat_sprites/gen_bord_rescue_Wr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -7876,7 +7877,7 @@
     "season": [ "any" ],
     "types": [ "border" ],
     "tags": [ "new_cat" ],
-    "patrol_art": "gen_found_scent_dangerous",
+    "patrol_art": "cat_sprites/gen_foundscent_WrRg",
     "min_cats": 2,
     "max_cats": 2,
     "min_max_status": {
@@ -7930,7 +7931,7 @@
                 "dead"
             ]
         ],
-        "art": "friendlyghost_INTRO"
+        "art": "halloween/halloween/hal_friendlyghost_Ur"
     },
         {
             "text": "s_c follows the voice and finds three mysterious loners, who tell {PRONOUN/s_c/object} that {PRONOUN/s_c/subject} {VERB/s_c/are/is} destined to be leader. s_c's eyes gleam. {PRONOUN/s_c/poss/CAP} destiny is before {PRONOUN/s_c/object}, if only {PRONOUN/s_c/subject} {VERB/s_c/have/has} the strength to claim it.",
@@ -7976,7 +7977,7 @@
                 "dead"
             ]
         ],
-        "art": "friendlyghost_INTRO"
+        "art": "halloween/halloween/hal_friendlyghost_Ur"
         }
     ],
     "fail_outcomes": [
@@ -7996,7 +7997,7 @@
             }
         }
     ],
-    "art": "running_two_warriors"
+    "art": "cat_sprites/gen_running_WrWr"
         },
         {
             "text": "r_c follows the voice and finds three mysterious loners, but before {PRONOUN/r_c/subject} can find out how these loners know {PRONOUN/r_c/poss} name, p_l reappears and the loners vanish. p_l and r_c return to camp, a tension hanging between them.",
@@ -8040,7 +8041,7 @@
                 "dead"
             ]
         ],
-        "art": "friendlyghost_INTRO"
+        "art": "halloween/halloween/hal_friendlyghost_Ur"
     },
         {
             "text": "r_c follows the voice and finds three mysterious loners. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} know what all this toil and trouble nonsense is about, but {PRONOUN/r_c/subject} {VERB/r_c/aren't/isn't} interested in sticking around to find out.",
@@ -8072,7 +8073,7 @@
                 "dead"
             ]
             ],
-            "art": "friendlyghost_INTRO"
+            "art": "halloween/halloween/hal_friendlyghost_Ur"
 
     },
     {
@@ -8112,8 +8113,8 @@
                 "dead"
             ]
             ],
-    "art": "gen_dead_cat_ghost_EXPLICIT",
-    "art_clean": "gen_dead_cat"
+    "art": "cat_sprites/gen_deadghost_WrSc_EXPLICIT",
+    "art_clean": "cat_sprites/gen_deadghost_WrSc"
 }
     ],
     "antag_success_outcomes": [
@@ -8131,7 +8132,7 @@
                 "unknown"
             ]
         ],
-        "art": "scaryghost_INTRO"
+        "art": "halloween/scaryghost_INTRO"
 },
 {
     "text": "Fear and adrenaline racing through {PRONOUN/r_c/poss} veins, r_c leaps through the mist with claws outstretched. When {PRONOUN/r_c/subject} {VERB/r_c/find/finds} the loner, {PRONOUN/r_c/subject} {VERB/r_c/rip/rips} {PRONOUN/n_c:0/poss} throat out without hesitation. p_l finds r_c panting over the body, {PRONOUN/r_c/poss} chest and muzzle stained in blood.",
@@ -8161,8 +8162,8 @@
                 "dead"
             ]
         ],
-    "art": "gen_dead_cat_outsider_ghost_EXPLICIT",
-    "art_clean": "gen_dead_cat_outsider"
+    "art": "cat_sprites/gen_deadghost_LnUr_EXPLICIT",
+    "art_clean": "cat_sprites/gen_deadghost_LnUr"
 }
 ],
     "antag_fail_outcomes": [
@@ -8170,7 +8171,7 @@
     "text": "No matter how fast r_c chases after the voice, {PRONOUN/r_c/subject} can't find the source. The voice grows increasingly malevolent and taunting, and r_c eventually gives up the pursuit to go find p_l.",
     "exp": 0,
     "frequency": 4,
-    "art": "scaryghost_INTRO"
+    "art": "halloween/scaryghost_INTRO"
 },
 {
     "text": "r_c chases the voice, and leaps with outstretched claws at the silhouette of a cat in the mist. p_l lets out a shriek of surprise, and r_c immediately releases {PRONOUN/r_c/poss} leader, helping {PRONOUN/p_l/object} back to camp to treat {PRONOUN/p_l/poss} wound.",
@@ -8200,7 +8201,7 @@
             }
         }
     ],
-    "art": "gen_battle_warrior_warrior"
+    "art": "cat_sprites/gen_battle_WrWr"
 }
     ]
 },
@@ -8254,7 +8255,7 @@
                     }
                 ],
                 "outsider_rep": 1,
-                "art": "gen_train_soggykitty_happy_outsider"
+                "art": "cat_sprites/gen_train_soggykittyhappy_Ln"
             }
         ],
         "fail_outcomes": [
@@ -8270,7 +8271,7 @@
                     ]
                 ],
                 "outsider_rep": 0,
-                "art": "gen_train_soggykitty_mad_outsider"
+                "art": "cat_sprites/gen_train_soggykittymad_Ln"
             }
         ],
         "antag_success_outcomes": [
@@ -8286,7 +8287,7 @@
                     ]
                 ],
                 "outsider_rep": -2,
-                "art": "gen_train_soggykitty_mad_outsider"
+                "art": "cat_sprites/gen_train_soggykittymad_Ln"
             }
         ],
         "antag_fail_outcomes": [
@@ -8332,7 +8333,7 @@
                     }
                 ],
                 "outsider_rep": -1,
-                "art": "gen_train_soggykitty_mad_outsider"
+                "art": "cat_sprites/gen_train_soggykittymad_Ln"
             }
         ]
     }
