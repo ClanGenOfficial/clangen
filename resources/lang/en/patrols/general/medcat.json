@@ -37560,6 +37560,7 @@
                             "p_l"
                         ],
                         "cats_from": [
+                            "clan",
                             "high_lawful"
                         ],
                         "mutual": false,
@@ -37639,14 +37640,14 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from was glad it seemed cat_to heeded {PRONOUN/cat_from/poss} warning about deathberries."
+                            "cats_from": "cat_from was glad cat_to seemed to heed {PRONOUN/cat_from/poss} warning about deathberries.."
                         }
                     }
                 ],
                 "frequency": 3
             },
           {
-                "text": "p_l explains the danger of deathberries but reminds the patrol that all herbs have their purpose. In this case, the flesh can be used to treat festering wounds and the entire berry can be used to alleviate the suffering of mortally wounded warriors.",
+                "text": "p_l explains the danger of deathberries but reminds the patrol that all herbs have their purpose. In this case, the flesh can be used to treat festering wounds, and the entire berry can be used to alleviate the suffering of mortally wounded warriors.",
                 "stat_trait": ["compassionate", "thoughtful", "sincere", "wise"],
                 "can_have_stat": ["p_l"],
                 "exp": 30,
@@ -37660,19 +37661,19 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "comfort",
+                            "respect",
                             "like"
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "cat_from was relieved cat_to always seemed to consider how to best take care of the wounded."
+                            "cats_from": "cat_from was impressed cat_to knew multiple beneficial uses for deathberries."
                         }
                     }
                 ],
                 "frequency": 3
             },
           {
-                "text": "p_l shows the patrol how to identify the leaves and bark texture of yew, so they can detect deathberry bushes even when they are not laden with their crimson fruit.",
+                "text": "p_l shows the patrol how to identify the leaves and bark texture of yew, so they can detect deathberry bushes even when the branches are not laden with their crimson fruit.",
                 "exp": 30,
                 "stat_skill": ["TEACHER,1", "SENSE,1"],
                 "can_have_stat": ["p_l"],
@@ -37724,7 +37725,7 @@
                 "frequency": 4
             },
           {
-                "text": "s_c doesn't heed p_l's warning and slips a deathberry in {PRONOUN/s_c/poss} mouth when p_l isn't looking. Later that day, when s_c convulses and dies, {PRONOUN/s_c/subject} {VERB/s_c/have/has} no one but {PRONOUN/s_c/self} to blame.",
+                "text": "s_c doesn't heed p_l's warning and slips a few deathberries in {PRONOUN/s_c/poss} mouth when p_l isn't looking. Later that day, when s_c convulses and dies, {PRONOUN/s_c/subject} {VERB/s_c/have/has} no one but {PRONOUN/s_c/self} to blame.",
                 "exp": 0,
                 "stat_trait": ["troublesome", "childish", "daring", "shameless", "strange", "arrogant", "oblivious"],
                 "can_have_stat": ["r_c"],
@@ -37735,7 +37736,7 @@
                 }
             },
                       {
-                "text": "As p_l is explaining the characteristics of a deathberry bush, {PRONOUN/p_l/subject} realize this is not in fact a deathberry bush: it is a raspberry bush. While p_l tries to play off {PRONOUN/p_l/poss} mistake as intentional, the rest of the patrol shares skeptical glances.",
+                "text": "As p_l is explaining the characteristics of a deathberry bush, {PRONOUN/p_l/subject} {VERB/p_l/realize/realizes} this is not in fact a deathberry bush: it is a raspberry bush. While p_l tries to play off {PRONOUN/p_l/poss} mistake as intentional, the rest of the patrol shares skeptical glances.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -37763,7 +37764,7 @@
                     "medicine cat": [1, 1],
                     "apprentice": [1, 2]
                  },
-                "text": "app1 interrupts p_l's explanation to ask why c_n doesn't use deathberries to poison their enemies. Shaken, p_l explains the cruelty of such an action would be unbecoming to the Clan's honor and adherence to the warrior code.",
+                "text": "app1 interrupts p_l's explanation to ask why c_n doesn't use deathberries to poison their enemies. Shaken, p_l explains the cruelty of such an action would be unbecoming to the Clan's honor and adherence to the Warrior Code.",
                 "exp": 30,
                 "stat_trait": ["bloodthirsty", "vengeful", "strange"],
                 "can_have_stat": ["app1"],
@@ -37777,12 +37778,10 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "like",
                             "trust",
                             "comfort"
                         ],
-                        "amount": -10,
+                        "amount": -15,
                         "log": {
                             "cats_from": "cat_from was shaken by cat_to's suggestion to use deathberries to poison other clans."
                         }
@@ -37813,7 +37812,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from was positive that cat_from had nefarious reasons for collecting deathberries, despite being a medicine cat."
+                            "cats_from": "cat_from questioned cat_from's motives for collecting deathberries, despite being a medicine cat."
                         }
                     }
                 ],
