@@ -124,12 +124,14 @@ class FreshkillPileTest(unittest.TestCase):
         """
         # given
         freshkill_pile = FreshkillPile()
-        self.assertEqual(freshkill_pile.pile["expires_in_2"], self.amount)
+        self.assertEqual(freshkill_pile.pile["expires_in_3"], self.amount)
+        self.assertEqual(freshkill_pile.pile["expires_in_2"], 0)
         self.assertEqual(freshkill_pile.pile["expires_in_1"], 0)
 
         # then
         freshkill_pile.add_freshkill(1)
-        self.assertEqual(freshkill_pile.pile["expires_in_2"], self.amount + 1)
+        self.assertEqual(freshkill_pile.pile["expires_in_3"], self.amount + 1)
+        self.assertEqual(freshkill_pile.pile["expires_in_2"], 0)
         self.assertEqual(freshkill_pile.pile["expires_in_1"], 0)
 
     def test_remove_freshkill(self) -> None:
@@ -146,7 +148,7 @@ class FreshkillPileTest(unittest.TestCase):
         freshkill_pile2.remove_freshkill(5, True)
 
         # then
-        self.assertEqual(freshkill_pile1.pile["expires_in_2"], self.amount)
+        self.assertEqual(freshkill_pile1.pile["expires_in_3"], self.amount)
         self.assertEqual(freshkill_pile1.pile["expires_in_1"], 5)
         self.assertEqual(freshkill_pile2.total_amount, self.amount - 5)
 
@@ -156,14 +158,21 @@ class FreshkillPileTest(unittest.TestCase):
         """
         # given
         freshkill_pile = FreshkillPile()
-        self.assertEqual(freshkill_pile.pile["expires_in_2"], self.amount)
+        self.assertEqual(freshkill_pile.pile["expires_in_3"], self.amount)
+        self.assertEqual(freshkill_pile.pile["expires_in_2"], 0)
         self.assertEqual(freshkill_pile.pile["expires_in_1"], 0)
 
         # then
         freshkill_pile.time_skip([], [])
+        self.assertEqual(freshkill_pile.pile["expires_in_3"], 0)
+        self.assertEqual(freshkill_pile.pile["expires_in_2"], self.amount)
+        self.assertEqual(freshkill_pile.pile["expires_in_1"], 0)
+        freshkill_pile.time_skip([], [])
+        self.assertEqual(freshkill_pile.pile["expires_in_3"], 0)
         self.assertEqual(freshkill_pile.pile["expires_in_2"], 0)
         self.assertEqual(freshkill_pile.pile["expires_in_1"], self.amount)
         freshkill_pile.time_skip([], [])
+        self.assertEqual(freshkill_pile.pile["expires_in_3"], 0)
         self.assertEqual(freshkill_pile.pile["expires_in_2"], 0)
         self.assertEqual(freshkill_pile.pile["expires_in_1"], 0)
 
@@ -173,7 +182,7 @@ class FreshkillPileTest(unittest.TestCase):
         """
         # we'll set the freshkill pile up with enough to feed the kitten and that's all
         current_amount = self.prey_requirement["kitten"]
-        self.freshkill_pile.pile["expires_in_2"] = current_amount
+        self.freshkill_pile.pile["expires_in_3"] = current_amount
         self.freshkill_pile.total_amount = current_amount
 
         # feed them
@@ -201,7 +210,7 @@ class FreshkillPileTest(unittest.TestCase):
 
         # then set up the pile with enough to feed the leader and that's all
         current_amount = self.prey_requirement["leader"]
-        self.freshkill_pile.pile["expires_in_2"] = current_amount
+        self.freshkill_pile.pile["expires_in_3"] = current_amount
         self.freshkill_pile.total_amount = current_amount
 
         # set the tactic to high rank
@@ -240,7 +249,7 @@ class FreshkillPileTest(unittest.TestCase):
 
         # then set up the pile with enough to feed the kitten and that's all
         current_amount = self.prey_requirement["kitten"]
-        self.freshkill_pile.pile["expires_in_2"] = current_amount
+        self.freshkill_pile.pile["expires_in_3"] = current_amount
         self.freshkill_pile.total_amount = current_amount
 
         # set the tactic to youngest
@@ -273,7 +282,7 @@ class FreshkillPileTest(unittest.TestCase):
         # then set up the pile with enough to feed the oldest and that's all
         oldest = sorted(self.cat_list, key=lambda x: x.moons, reverse=True)[0]
         current_amount = self.prey_requirement[oldest.status.rank]
-        self.freshkill_pile.pile["expires_in_2"] = current_amount
+        self.freshkill_pile.pile["expires_in_3"] = current_amount
         self.freshkill_pile.total_amount = current_amount
 
         # set the tactic to youngest
@@ -306,7 +315,7 @@ class FreshkillPileTest(unittest.TestCase):
         most_exp = list_of_cats[0]
         # then set up the pile with enough to feed the most experienced and that's all
         current_amount = self.prey_requirement[most_exp.status.rank]
-        self.freshkill_pile.pile["expires_in_2"] = current_amount
+        self.freshkill_pile.pile["expires_in_3"] = current_amount
         self.freshkill_pile.total_amount = current_amount
 
         # set the tactic to experienced
@@ -341,7 +350,7 @@ class FreshkillPileTest(unittest.TestCase):
 
         # then set up the pile with enough to feed the deputy and that's all
         current_amount = self.prey_requirement["deputy"]
-        self.freshkill_pile.pile["expires_in_2"] = current_amount
+        self.freshkill_pile.pile["expires_in_3"] = current_amount
         self.freshkill_pile.total_amount = current_amount
 
         # set the tactic to hungry
@@ -375,7 +384,7 @@ class FreshkillPileTest(unittest.TestCase):
 
         # then set up the pile with enough to feed the hunter and that's all
         current_amount = self.prey_requirement["leader"]
-        self.freshkill_pile.pile["expires_in_2"] = current_amount
+        self.freshkill_pile.pile["expires_in_3"] = current_amount
         self.freshkill_pile.total_amount = current_amount
 
         # set priority to hunter
@@ -407,7 +416,7 @@ class FreshkillPileTest(unittest.TestCase):
 
         # then set up the pile with enough to feed the injured and that's all
         current_amount = self.prey_requirement["deputy"]
-        self.freshkill_pile.pile["expires_in_2"] = current_amount
+        self.freshkill_pile.pile["expires_in_3"] = current_amount
         self.freshkill_pile.total_amount = current_amount
 
         # set priority to injured
@@ -452,7 +461,7 @@ class FreshkillPileTest(unittest.TestCase):
         current_amount = self.prey_requirement["queen/pregnant"] + (
             self.prey_requirement["warrior"] / 2
         )
-        freshkill_pile.pile["expires_in_2"] = current_amount
+        freshkill_pile.pile["expires_in_3"] = current_amount
         freshkill_pile.total_amount = current_amount
 
         freshkill_pile.add_cat_to_nutrition(mother)
@@ -491,7 +500,7 @@ class FreshkillPileTest(unittest.TestCase):
         freshkill_pile = FreshkillPile()
         # be able to feed one queen and some of the warrior
         current_amount = self.prey_requirement["queen/pregnant"]
-        freshkill_pile.pile["expires_in_2"] = current_amount
+        freshkill_pile.pile["expires_in_3"] = current_amount
         freshkill_pile.total_amount = current_amount
 
         freshkill_pile.add_cat_to_nutrition(pregnant_cat)
