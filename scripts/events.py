@@ -121,8 +121,9 @@ def one_moon():
     check_war()
 
     for cat in Cat.all_cats_list:
-        if game.clan.leader.is_parent(cat):
+        if game.clan.leader is not None and game.clan.leader.is_parent(cat):
             leaders_kits.append(cat)
+
 
     if game.clan.game_mode in ("expanded", "cruel_season") and game.clan.freshkill_pile:
         # feed the cats and update the nutrient status
