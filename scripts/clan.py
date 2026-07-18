@@ -299,12 +299,9 @@ class Clan:
             if the_cat.status.rank == CatRank.APPRENTICE:
                 the_cat.rank_change(CatRank.APPRENTICE)
 
-
         # find non-selected cats from the 12 generated starters
         for c in switch_get_value(Switch.possible_cats):
-            if (
-                c.ID not in Cat.all_cats
-            ):
+            if c.ID not in Cat.all_cats:
                 # change non-selected cats to outsiders
                 random_social = choice(
                     [
@@ -351,7 +348,6 @@ class Clan:
                 Cat.all_cats[c.ID] = c
                 Cat.all_cats_list.append(c)
                 self.clan_cats.append(c.ID)
-
 
         save_cats(game.clan.save_id, Cat, game)
         number_other_clans = randint(3, 5)
