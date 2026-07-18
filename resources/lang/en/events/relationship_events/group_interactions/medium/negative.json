@@ -576,7 +576,7 @@
     {
         "id": "group_multicat_neg_gossipingdislike",
         "strings": [
-            "m_c overhears multi_cat discussing how they all dislike m_c."
+            "m_c overhears multi_cat discussing how they dislike m_c."
         ],
         "involved_cats": {
             "m_c": {},
@@ -624,7 +624,7 @@
     {
         "id": "group_multicat_neg_gossipingavoids",
         "strings": [
-            "m_c overhears multi_cat discussing how they all feel uncomfortable around m_c."
+            "m_c overhears multi_cat discussing how they feel uncomfortable around m_c."
         ],
         "involved_cats": {
             "m_c": {},
