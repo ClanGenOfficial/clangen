@@ -2,7 +2,6 @@
 # -*- coding: ascii -*-
 import logging
 import random
-from copy import deepcopy
 from os.path import exists as path_exists
 from random import choice, randint, choices
 from typing import List, Tuple, Optional, Union, Literal, TypedDict
@@ -103,11 +102,7 @@ class Patrol:
         return event_text_adjust(
             Cat,
             self.patrol_event.intro_text,
-            patrol_leader=self.involved_cats["p_l"],
-            random_cat=self.random_cat,
-            patrol_cats=self.patrol_cats,
-            patrol_apprentices=self.patrol_statuses["all apprentices"],
-            new_cats=self.new_cats,
+            involved_cat_dict=self.involved_cats,
             clan=game.clan,
             other_clan=self.other_clan,
         )
@@ -127,11 +122,7 @@ class Patrol:
                     event_text_adjust(
                         Cat,
                         self.patrol_event.intro_text,
-                        patrol_leader=self.involved_cats["p_l"],
-                        random_cat=self.random_cat,
-                        patrol_cats=self.patrol_cats,
-                        patrol_apprentices=self.patrol_statuses["all apprentices"],
-                        new_cats=self.new_cats,
+                        involved_cat_dict=self.involved_cats,
                         clan=game.clan,
                         other_clan=self.other_clan,
                     ),
@@ -844,7 +835,7 @@ class Patrol:
 
         # Run the chosen outcome
         return handle_consequences.execute_outcome(
-            chosen_outcome, self.involved_cats, self.other_clan, need_result_string=True
+            chosen_outcome, self.involved_cats, self.other_clan
         )
 
     def calculate_success(
