@@ -47,7 +47,6 @@ def execute_outcome(
         clan=game.clan,
         other_clan=other_clan,
     )
-    # TODO: rel logs too
 
     results = [
         _handle_joining(event, event_involved_cats),
@@ -60,9 +59,11 @@ def execute_outcome(
 
     _handle_exp(event, event_involved_cats)
     _handle_mentor_app(event_involved_cats)
-    _handle_future_event(event)
+    _handle_future_event(event, event_involved_cats)
 
-    for block in event.relationship_changes:
+    # just gonna make this a copy so that we don't accidentally change the base info
+    rel_changes = event.relationship_changes.copy()
+    for block in rel_changes:
         if "log" in block:
             for group in block["log"]:
                 block["log"][group] = event_text_adjust(
@@ -74,8 +75,9 @@ def execute_outcome(
                 )
 
     # apply rel effects (append result text)
-    # TODO: gonna have to change how unpack_rel_block works
-    rel_results.update(unpack_rel_block(Cat, event.relationship_changes, self))
+    rel_results.update(
+        unpack_rel_block(Cat, rel_changes, involved_cats=event_involved_cats)
+    )
 
     # return all the bullshit
     if need_result_string:
@@ -345,6 +347,7 @@ def _handle_conditions(
             no_results = block.get("no_results", False)
 
             __handle_condition_history(
+                event=event,
                 cat=c,
                 condition=chosen_condition,
                 scar_string=block.get("scar_history"),
@@ -684,27 +687,17 @@ def _handle_mentor_app(event_involved_cats: dict[str, Union[Cat, list[Cat]]]):
 
 
 # TODO: adjust
-def _handle_future_event(patrol):
+def _handle_future_event(
+    event: TextPoolEvent, event_involved_cats: dict[str, Union[Cat, list[Cat]]]
+):
     """
     collects required info for the future event and sends it to be prepped
     """
-    if not self.future_event:
+    if not event.future_event:
         return
 
-    possible_cats = {
-        "p_l": patrol.patrol_leader,
-        "r_c": patrol.random_cat,
-        "s_c": self.stat_cat,
-    }
-
-    for x, app in enumerate(patrol.patrol_apprentices):
-        possible_cats[f"app{x}"] = app
-
-    for x, newbie in enumerate(self.new_cat):
-        possible_cats[f"n_c:{x}"] = newbie
-
     prep_future_event(
-        event=self,
-        event_id=patrol.patrol_event.patrol_id,
-        possible_cats=possible_cats,
+        event=event,
+        event_id=event.id,
+        possible_cats=event_involved_cats,
     )

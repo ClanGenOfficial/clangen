@@ -905,8 +905,8 @@ def unpack_rel_block(
     Cat,
     relationship_effects: List[Union[dict, RelationshipChangeDict]],
     event=None,
-    stat_cat=None,
     extra_cat=None,
+    involved_cats: dict = None,
 ) -> dict:
     """
     Unpacks the info from the relationship effect block used in patrol and moon events, then adjusts rel values
@@ -915,8 +915,8 @@ def unpack_rel_block(
     :param Cat Cat: Cat class
     :param list[dict] relationship_effects: the relationship effect block
     :param event: the controlling class of the event (e.g. Patrol, HandleShortEvents), default None
-    :param Cat stat_cat: if passing the Patrol class, must include stat_cat separately
     :param Cat extra_cat: if not passing an event class, include the single affected cat object here. If you are not passing a full event class, then be aware that you can only include "m_c" as a cat abbreviation in your rel block.  The other cat abbreviations will not work.
+    :param involved_cats: Dict of involved cats with abbreviation as key and cat object as value
     :returns: List of all created rel logs for this rel block.
     """
     possible_values = [*RelType]
@@ -938,8 +938,24 @@ def unpack_rel_block(
             is_clan_reaction = True
 
         # Gather actual cat objects:
-        cats_from_ob = gather_cat_objects(Cat, cats_from, event, stat_cat, extra_cat)
-        cats_to_ob = gather_cat_objects(Cat, cats_to, event, stat_cat, extra_cat)
+        cats_from_ob = []
+        cats_to_ob = []
+        if involved_cats:
+            for abbr in cats_from:
+                cats_from_ob.extend(
+                    involved_cats[abbr]
+                    if isinstance(involved_cats[abbr], list)
+                    else [involved_cats[abbr]]
+                )
+            for abbr in cats_to:
+                cats_to_ob.extend(
+                    involved_cats[abbr]
+                    if isinstance(involved_cats[abbr], list)
+                    else [involved_cats[abbr]]
+                )
+        else:
+            cats_from_ob = gather_cat_objects(Cat, cats_from, event, extra_cat)
+            cats_to_ob = gather_cat_objects(Cat, cats_to, event, extra_cat)
 
         # Remove any "None" that might have snuck in
         if None in cats_from_ob:
