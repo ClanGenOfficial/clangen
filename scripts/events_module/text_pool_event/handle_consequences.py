@@ -30,7 +30,6 @@ def execute_outcome(
     event: TextPoolEvent,
     event_involved_cats: dict[str, Union[Cat, list[Cat]]],
     other_clan: OtherClan,
-    need_result_string: bool = False,
 ):
     """
     Executes the outcome, applying any specified consequences.
@@ -80,8 +79,7 @@ def execute_outcome(
     )
 
     # return all the bullshit
-    if need_result_string:
-        return processed_text
+    return processed_text, results, rel_results, event.outcome_art
 
 
 def _handle_joining(
