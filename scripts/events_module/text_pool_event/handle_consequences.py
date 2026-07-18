@@ -21,14 +21,12 @@ from scripts.config import get_config
 from scripts.events_module.consequences import unpack_rel_block, check_stolen_vitality
 from scripts.events_module.future.prep_and_trigger import prep_future_event
 from scripts.events_module.parameter_dicts import SupplyDict
-from scripts.events_module.patrol import patrol
 from scripts.events_module.text_adjust import event_text_adjust, adjust_list_text
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game, constants
 
 
 def execute_outcome(
-    self,
     event: TextPoolEvent,
     event_involved_cats: dict[str, Union[Cat, list[Cat]]],
     other_clan: OtherClan,
@@ -68,12 +66,12 @@ def execute_outcome(
         if "log" in block:
             for group in block["log"]:
                 block["log"][group] = event_text_adjust(
-        Cat,
-        chosen_string,
-        involved_cat_dict=event_involved_cats,
-        clan=game.clan,
-        other_clan=other_clan,
-    )
+                    Cat,
+                    chosen_string,
+                    involved_cat_dict=event_involved_cats,
+                    clan=game.clan,
+                    other_clan=other_clan,
+                )
 
     # apply rel effects (append result text)
     # TODO: gonna have to change how unpack_rel_block works

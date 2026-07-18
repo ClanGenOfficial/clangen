@@ -39,6 +39,7 @@ from scripts.events_module.patrol.generate_patrol_list import (
     will_allow_outsider_patrols,
 )
 from scripts.events_module.patrol.patrol_event import PatrolEvent
+from scripts.events_module.text_pool_event import handle_consequences
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import constants
 from scripts.game_structure.game.settings import game_setting_get
@@ -690,7 +691,7 @@ class Patrol:
             if outcome.condition:
                 for block in outcome.condition:
                     if abbr in block["cats"]:
-                        possible_injuries.extend(block["injury"])
+                        possible_injuries.extend(block["condition"])
 
             # if the abbr is one we've already assigned, then we just test that cat!
             if test_cat := self.involved_cats.get(abbr):
@@ -831,18 +832,20 @@ class Patrol:
 
         success_outcome, fail_outcome = self._find_allowed_outcomes(antagonize)
 
-        final_event, success = self.calculate_success(success_outcome, fail_outcome)
+        chosen_outcome, success = self.calculate_success(success_outcome, fail_outcome)
 
         print(f"PATROL ID: {self.patrol_event.id} | SUCCESS: {success}")
         print(
             f"Patrol Frequency: {self.patrol_event.frequency} | Patrol Weight: {self.patrol_event.weight}"
         )
         print(
-            f"Outcome Frequency: {final_event.frequency} | Outcome Weight: {final_event.weight}"
+            f"Outcome Frequency: {chosen_outcome.frequency} | Outcome Weight: {chosen_outcome.weight}"
         )
 
         # Run the chosen outcome
-        return final_event.execute_outcome(self)
+        return handle_consequences.execute_outcome(
+            chosen_outcome, self.involved_cats, self.other_clan, need_result_string=True
+        )
 
     def calculate_success(
         self, success_outcome: TextPoolEvent, fail_outcome: TextPoolEvent
