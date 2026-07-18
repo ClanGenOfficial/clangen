@@ -1,6 +1,7 @@
 import logging
 from html import escape
-from random import choice, randint, choices
+from random import choice, randint
+from typing import Union, Literal
 
 import i18n
 
@@ -29,8 +30,7 @@ from scripts.game_structure import game, constants
 def execute_outcome(
     self,
     event: TextPoolEvent,
-    event_involved_cats: dict[str, Cat],
-    new_cats: list[str],
+    event_involved_cats: dict[str, Union[Cat, list[Cat]]],
     other_clan: OtherClan,
     need_result_string: bool = False,
 ):
@@ -40,19 +40,14 @@ def execute_outcome(
     """
 
     rel_results = {}
-
+    chosen_string = choice(event.strings)
     # process text
     processed_text = event_text_adjust(
         Cat,
-        event.text,
-        patrol_leader=patrol.patrol_leader,
-        random_cat=patrol.random_cat,
-        stat_cat=self.stat_cat,
-        patrol_cats=patrol.patrol_cats,
-        patrol_apprentices=patrol.patrol_apprentices,
-        new_cats=patrol.new_cats,
+        chosen_string,
+        involved_cat_dict=event_involved_cats,
         clan=game.clan,
-        other_clan=patrol.other_clan,
+        other_clan=other_clan,
     )
     # TODO: rel logs too
 
@@ -62,12 +57,23 @@ def execute_outcome(
         _handle_lost(event, event_involved_cats),
         _handle_conditions(event, event_involved_cats, other_clan),
         _handle_reputation_changes(event, other_clan),
-        _handle_supply_changes(event, event_involved_cats)
+        _handle_supply_changes(event, event_involved_cats),
     ]
 
     _handle_exp(event, event_involved_cats)
     _handle_mentor_app(event_involved_cats)
     _handle_future_event(event)
+
+    for block in event.relationship_changes:
+        if "log" in block:
+            for group in block["log"]:
+                block["log"][group] = event_text_adjust(
+        Cat,
+        chosen_string,
+        involved_cat_dict=event_involved_cats,
+        clan=game.clan,
+        other_clan=other_clan,
+    )
 
     # apply rel effects (append result text)
     # TODO: gonna have to change how unpack_rel_block works
@@ -75,10 +81,12 @@ def execute_outcome(
 
     # return all the bullshit
     if need_result_string:
-        return
+        return processed_text
 
 
-def _handle_joining(event, event_involved_cats) -> str:
+def _handle_joining(
+    event: TextPoolEvent, event_involved_cats: dict[str, Union[Cat, list[Cat]]]
+) -> str:
     """
     Handles cats joining the Clan
     """
@@ -119,7 +127,11 @@ def _handle_joining(event, event_involved_cats) -> str:
     return i18n.t("screens.patrol.new_outsider", cats=adjust_list_text(cat_names))
 
 
-def _handle_death(event, event_involved_cats, other_clan: OtherClan) -> str:
+def _handle_death(
+    event: TextPoolEvent,
+    event_involved_cats: dict[str, Union[Cat, list[Cat]]],
+    other_clan: OtherClan,
+) -> str:
     """
     Handles cats dying on patrol
     """
@@ -217,9 +229,7 @@ def _handle_death(event, event_involved_cats, other_clan: OtherClan) -> str:
     return " ".join(results)
 
 
-def __handle_death_history(
-    event, cat: Cat, death_text: str, other_clan: OtherClan
-) -> None:
+def __handle_death_history(cat: Cat, death_text: str, other_clan: OtherClan) -> None:
     """Handles adding death history for dead cats."""
 
     if not death_text:
@@ -233,7 +243,9 @@ def __handle_death_history(
     cat.history.add_death(death_text=final_death_history)
 
 
-def _handle_lost(event, event_involved_cats: dict) -> str:
+def _handle_lost(
+    event: TextPoolEvent, event_involved_cats: dict[str, Union[Cat, list[Cat]]]
+) -> str:
     """
     Handles cats being lost
     """
@@ -266,7 +278,11 @@ def _handle_lost(event, event_involved_cats: dict) -> str:
     return " ".join(results)
 
 
-def _handle_conditions(event, event_involved_cats: dict, other_clan: OtherClan) -> str:
+def _handle_conditions(
+    event: TextPoolEvent,
+    event_involved_cats: dict[str, Union[Cat, list[Cat]]],
+    other_clan: OtherClan,
+) -> str:
     """
     Handles applying conditions to cats.
     """
@@ -353,7 +369,7 @@ def _handle_conditions(event, event_involved_cats: dict, other_clan: OtherClan) 
 
 
 def __handle_condition_history(
-    event,
+    event: TextPoolEvent,
     cat: Cat,
     condition: str,
     scar_string: str,
@@ -398,7 +414,7 @@ def _profile_link(cat: Cat) -> str:
     return f'<a href="cat://{cat.ID}"><b>{escape(str(cat.name))}</b></a>'
 
 
-def _handle_reputation_changes(event, other_clan: OtherClan) -> str:
+def _handle_reputation_changes(event: TextPoolEvent, other_clan: OtherClan) -> str:
     if not event.reputation_changes:
         return ""
 
@@ -426,7 +442,12 @@ def _handle_reputation_changes(event, other_clan: OtherClan) -> str:
     return ""
 
 
-def _handle_supply_changes(event, event_involved_cats: dict):
+def _handle_supply_changes(
+    event: TextPoolEvent, event_involved_cats: dict[str, Union[Cat, list[Cat]]]
+):
+    """
+    Handles applying supply increases
+    """
     herb_blocks = []
     prey_blocks = []
     for block in event.supply:
@@ -439,7 +460,9 @@ def _handle_supply_changes(event, event_involved_cats: dict):
     __handle_prey(prey_blocks, event_involved_cats)
 
 
-def __handle_prey(prey_info: list[SupplyDict], event_involved_cats: dict) -> str:
+def __handle_prey(
+    prey_info: list[SupplyDict], event_involved_cats: dict[str, Union[Cat, list[Cat]]]
+) -> str:
     """Handle giving prey"""
 
     if (not prey_info or game.clan.game_mode == "classic") or not FRESHKILL_ACTIVE:
@@ -512,7 +535,9 @@ def __handle_prey(prey_info: list[SupplyDict], event_involved_cats: dict) -> str
     return " ".join(results)
 
 
-def __handle_herbs(herb_info: list[SupplyDict], event_involved_cats: dict) -> str:
+def __handle_herbs(
+    herb_info: list[SupplyDict], event_involved_cats: dict[str, Union[Cat, list[Cat]]]
+) -> str:
     """Handle giving herbs"""
 
     if not herb_info or game.clan.game_mode == "classic":
@@ -561,7 +586,19 @@ def __handle_herbs(herb_info: list[SupplyDict], event_involved_cats: dict) -> st
     )
 
 
-def __get_herb_increase_amount(event_involved_cats, increase_tag) -> int:
+def __get_herb_increase_amount(
+    event_involved_cats: dict[str, Union[Cat, list[Cat]]],
+    increase_tag: Literal[
+        "increase_tiny",
+        "increase_small",
+        "increase_medium",
+        "increase_large",
+        "increase_huge",
+    ],
+) -> int:
+    """
+    finds out how many herbs can be gathered by given cats with given increase_tag
+    """
     increase_amount = get_config(
         f"clan_resources.herb.increase_amounts.{increase_tag}"
     ) * len(event_involved_cats["patrol_cats"])
@@ -582,7 +619,9 @@ def __get_herb_increase_amount(event_involved_cats, increase_tag) -> int:
     return increase_amount
 
 
-def _handle_exp(event: TextPoolEvent, event_involved_cats: dict):
+def _handle_exp(
+    event: TextPoolEvent, event_involved_cats: dict[str, Union[Cat, list[Cat]]]
+):
     """
     Awards exp to the patrol cats
     """
@@ -603,13 +642,20 @@ def _handle_exp(event: TextPoolEvent, event_involved_cats: dict):
 
     patrol_exp = 2 * event.exp_gained
     gained_exp = patrol_exp + base_exp + max_boost
-    gained_exp = max(gained_exp * (1 - 0.1 * len(event_involved_cats["patrol_cats"])) / mode_modifier, 1)
+    gained_exp = max(
+        gained_exp
+        * (1 - 0.1 * len(event_involved_cats["patrol_cats"]))
+        / mode_modifier,
+        1,
+    )
 
     # Apprentice exp, does not depend on success
     if game.clan.game_mode == "classic":
         app_exp = 0
     else:
-        app_exp = max(randint(1, 7) * (1 - 0.1 * len(event_involved_cats["patrol_cats"])), 1)
+        app_exp = max(
+            randint(1, 7) * (1 - 0.1 * len(event_involved_cats["patrol_cats"])), 1
+        )
 
     if gained_exp or app_exp:
         for cat in event_involved_cats["patrol_cats"]:
@@ -618,15 +664,14 @@ def _handle_exp(event: TextPoolEvent, event_involved_cats: dict):
             else:
                 cat.experience = cat.experience + gained_exp
 
-def _handle_mentor_app( event_involved_cats: dict):
+
+def _handle_mentor_app(event_involved_cats: dict[str, Union[Cat, list[Cat]]]):
     """Handles mentors influencing apprentices"""
 
     for cat in event_involved_cats["patrol_cats"]:
         mentor = Cat.fetch_cat(cat.mentor)
         if mentor in event_involved_cats["patrol_cats"]:
-            affect_personality = cat.personality.mentor_influence(
-                mentor.personality
-            )
+            affect_personality = cat.personality.mentor_influence(mentor.personality)
             affect_skills = cat.skills.mentor_influence(mentor)
             if affect_personality:
                 cat.history.add_facet_mentor_influence(
@@ -639,10 +684,11 @@ def _handle_mentor_app( event_involved_cats: dict):
                 )
                 print(str(cat.name), affect_skills)
 
+
 # TODO: adjust
 def _handle_future_event(patrol):
     """
-    collects required info and sends it to be prepped
+    collects required info for the future event and sends it to be prepped
     """
     if not self.future_event:
         return

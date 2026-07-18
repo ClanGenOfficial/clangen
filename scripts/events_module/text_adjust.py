@@ -1,7 +1,7 @@
 import re
 from math import floor
 from random import choice, sample, randint
-from typing import Type, List, TYPE_CHECKING
+from typing import Type, List, TYPE_CHECKING, Union
 import logging
 
 import i18n
@@ -371,15 +371,12 @@ def event_text_adjust(
     Cat: Type["Cat"],
     text,
     *,
-    patrol_leader=None,
     main_cat=None,
     random_cat=None,
-    stat_cat=None,
     victim_cat=None,
-    patrol_cats: list = None,
-    patrol_apprentices: list = None,
     new_cats: list = None,
     multi_cats: list = None,
+    involved_cat_dict: dict = None,
     clan=None,
     other_clan=None,
     chosen_herb: str = None,
@@ -388,21 +385,16 @@ def event_text_adjust(
     handles finding abbreviations in the text and replacing them appropriately, returns the adjusted text
     :param Cat Cat: always pass the Cat class
     :param str text: the text being adjusted
-    :param Cat patrol_leader: Cat object for patrol_leader (p_l), if present
     :param Cat main_cat: Cat object for main_cat (m_c), if present
     :param Cat random_cat: Cat object for random_cat (r_c), if present
-    :param Cat stat_cat: Cat object for stat_cat (s_c), if present
     :param Cat victim_cat: Cat object for victim_cat (mur_c), if present
-    :param list[Cat] patrol_cats: List of Cat objects for cats in patrol, if present
-    :param list[Cat] patrol_apprentices: List of Cat objects for patrol_apprentices (app#), if present
     :param list[Cat] new_cats: List of Cat objects for new_cats (n_c:index), if present
     :param list[Cat] multi_cats: List of Cat objects for multi_cat (multi_cat), if present
+    :param involved_cat_dict: dict of cat designations and their associated cat objects
     :param Clan clan: pass game.clan
     :param OtherClan other_clan: OtherClan object for other_clan (o_c_n), if present
     :param str chosen_herb: string of chosen_herb (chosen_herb), if present
     """
-    if not patrol_apprentices:
-        patrol_apprentices = []
     if not new_cats:
         new_cats = []
 
@@ -427,56 +419,23 @@ def event_text_adjust(
         if cat_tag:
             text = text.replace("cat_tag", cat_tag)
 
+    for abbr, cat in involved_cat_dict.items():
+        if abbr in text:
+            if isinstance(cat, list):
+                cat_name = adjust_list_text([str(c.name) for c in cat])
+                text.replace(abbr, cat_name)
+            else:
+                replace_dict[abbr] = (str(cat.name), choice(cat.pronouns))
+
     # main_cat
     if "m_c" in text:
         if main_cat:
             replace_dict["m_c"] = (str(main_cat.name), choice(main_cat.pronouns))
 
-    # patrol_lead
-    if "p_l" in text:
-        if patrol_leader:
-            replace_dict["p_l"] = (
-                str(patrol_leader.name),
-                choice(patrol_leader.pronouns),
-            )
-
     # random_cat
     if "r_c" in text:
         if random_cat:
             replace_dict["r_c"] = (str(random_cat.name), get_pronouns(random_cat))
-
-    # stat cat
-    if "s_c" in text:
-        if stat_cat:
-            replace_dict["s_c"] = (str(stat_cat.name), get_pronouns(stat_cat))
-
-    # other_cats
-    if patrol_cats:
-        other_cats = [
-            i
-            for i in patrol_cats
-            if i not in [patrol_leader, random_cat, patrol_apprentices]
-        ]
-        other_cat_abbr = ["o_c1", "o_c2", "o_c3", "o_c4"]
-        for i, abbr in enumerate(other_cat_abbr):
-            if abbr not in text:
-                continue
-            if len(other_cats) > i:
-                replace_dict[abbr] = (
-                    str(other_cats[i].name),
-                    choice(other_cats[i].pronouns),
-                )
-
-    # patrol_apprentices
-    app_abbr = ["app1", "app2", "app3", "app4", "app5", "app6"]
-    for i, abbr in enumerate(app_abbr):
-        if abbr not in text:
-            continue
-        if len(patrol_apprentices) > i:
-            replace_dict[abbr] = (
-                str(patrol_apprentices[i].name),
-                choice(patrol_apprentices[i].pronouns),
-            )
 
     # new_cats (include pre version)
     if "n_c" in text:

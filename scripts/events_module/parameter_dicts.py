@@ -55,6 +55,7 @@ class RelationshipChangeDict(TypedDict):
     mutual: bool
     values: list[str]
     amount: int
+    log: dict[str, str]
 
 
 class RequiredReputationDict(TypedDict, total=False):
