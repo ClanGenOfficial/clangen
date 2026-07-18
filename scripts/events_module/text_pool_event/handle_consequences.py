@@ -1,6 +1,6 @@
 import logging
 from html import escape
-from random import choice, randint
+from random import choice, randint, choices
 
 import i18n
 
@@ -429,16 +429,19 @@ def _handle_reputation_changes(event, other_clan: OtherClan) -> str:
 
 
 def _handle_supply_changes(event, event_involved_cats: dict):
+    herb_blocks = []
+    prey_blocks = []
     for block in event.supply:
         if block["type"] == "freshkill":
-            __handle_prey(block, event_involved_cats)
+            prey_blocks.append(block)
         else:
-            __handle_herbs(block)
+            herb_blocks.append(block)
+
+    __handle_herbs(herb_blocks, event_involved_cats)
+    __handle_prey(prey_blocks, event_involved_cats)
 
 
-def __handle_prey(
-    prey_info: SupplyDict, event_involved_cats: dict
-) -> str:
+def __handle_prey(prey_info: list[SupplyDict], event_involved_cats: dict) -> str:
     """Handle giving prey"""
 
     if (not prey_info or game.clan.game_mode == "classic") or not FRESHKILL_ACTIVE:
@@ -456,18 +459,18 @@ def __handle_prey(
         "increase_huge": basic_amount * 3.2,
     }
 
-    basic_amount = prey_types.get(prey_info["adjust"])
-
-    total_amount = 0
+    results = []
+    final_amount = 0
+    hunter_bonus = 0
     highest_hunter_tier = 0
+
     for cat in event_involved_cats["patrol_cats"]:
-        total_amount += basic_amount
         if cat.skills.primary.path == SkillPath.HUNTER and cat.skills.primary.tier > 0:
             level = cat.experience_level
             tier = cat.skills.primary.tier
             if tier > highest_hunter_tier:
                 highest_hunter_tier = tier
-            total_amount += int(
+            hunter_bonus += int(
                 HUNTER_EXP_BONUS[level] * (HUNTER_BONUS[str(tier)] / 10 + 1)
             )
         elif (
@@ -479,78 +482,73 @@ def __handle_prey(
             tier = cat.skills.secondary.tier
             if tier > highest_hunter_tier:
                 highest_hunter_tier = tier
-            total_amount += int(
+            hunter_bonus += int(
                 HUNTER_EXP_BONUS[level] * (HUNTER_BONUS[str(tier)] / 10 + 1)
             )
 
-    # additional hunter buff for expanded mode
-    if game.clan.game_mode == "expanded" and highest_hunter_tier:
-        total_amount = int(
-            total_amount * (HUNTER_BONUS[str(highest_hunter_tier)] / 20 + 1)
+    for prey in prey_info:
+        amount_gained = (
+            prey_types.get(prey["adjust"]) * len(event_involved_cats["patrol_cats"])
+            + hunter_bonus
         )
 
-    results = ""
-    if total_amount > 0:
-        total_amount = round(total_amount, 2)
-        print(f"PREY ADDED: {total_amount}")
-        game.freshkill_event_list.append(
-            f"{total_amount} pieces of prey were caught on a patrol."
-        )
-        game.clan.freshkill_pile.add_freshkill(total_amount)
-        results = i18n.t(
-            f"screens.patrol.prey_{prey_info['adjust'].replace('increase', '')}"
-        )
+        # additional hunter buff for expanded mode
+        if game.clan.game_mode == "expanded" and highest_hunter_tier:
+            amount_gained = int(
+                amount_gained * (HUNTER_BONUS[str(highest_hunter_tier)] / 20 + 1)
+            )
 
-    return results
+        if amount_gained > 0:
+            final_amount += round(amount_gained, 2)
+            print(f"PREY ADDED: {amount_gained}")
+            results.append(i18n.t(
+                f"screens.patrol.prey_{prey['adjust'].replace('increase', '')}"
+            ))
+
+    game.freshkill_event_list.append(
+        f"{final_amount} pieces of prey were caught on a patrol."
+    )
+
+    game.clan.freshkill_pile.add_freshkill(final_amount)
+
+    return " ".join(results)
 
 
-def __handle_herbs(herb_info: SupplyDict) -> str:
+def __handle_herbs(herb_info: list[SupplyDict], event_involved_cats: dict) -> str:
     """Handle giving herbs"""
 
     if not herb_info or game.clan.game_mode == "classic":
         return ""
 
+    # herb names for display message
     list_of_herb_strs = []
+    # dict of herbs and amount found, for determining plural/singular count later on
     found_herbs = {}
 
-    large_bonus = False
-    if "many_herbs" in self.herbs:
-        large_bonus = True
+    for herb in herb_info:
+        herb_tag = herb["type"]
+        change_type = herb["adjust"]
 
-    patrol_size_modifier = round(len(patrol.patrol_cats) * 0.80)
+        quantity_allowed = __get_herb_increase_amount(event_involved_cats, change_type)
 
-    if "random_herbs" in self.herbs:
-        # get random herbs, add to storage, and get patrol outcome msg
-        list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
-            med_cat=patrol.patrol_leader,
-            general_amount_bonus=large_bonus,
-            specific_quantity_bonus=patrol_size_modifier,
-        )
-
-    # now we grab any other herbs that were tagged
-    additional_herbs = {}
-    for herb in [x for x in self.herbs if x not in ["many_herbs", "random_herbs"]]:
-        amount = choices([2, 3, 4], weights=[2, 1, 1], k=1)[0]
-        amount *= patrol_size_modifier
-        if large_bonus:
-            amount *= 2
-
-        additional_herbs[herb] = amount
-
-    # add found_herbs to storage and get patrol outcome msg
-    (
-        additional_strs,
-        additional_herbs,
-    ) = game.clan.herb_supply.handle_found_herbs_outcomes(additional_herbs)
-
-    # extend this list in case we already grabbed a bunch of random herbs
-    list_of_herb_strs.extend([x for x in additional_strs if x not in list_of_herb_strs])
-    # update the original found_herbs dict, again just in case we've already grabbed a bunch of random herbs
-    for _h in additional_herbs:
-        if _h not in found_herbs:
-            found_herbs[_h] = additional_herbs[_h]
+        if herb_tag == "random_herbs":
+            # we want better control over how many herbs they'll gather in total here
+            # get random herbs, add to storage, and get patrol outcome msg
+            new_herb_strings, new_found_herbs = game.clan.herb_supply.get_found_herbs(
+                med_cat=event_involved_cats["p_l"],
+                specific_quantity_allowed=quantity_allowed,
+            )
         else:
-            found_herbs[_h] += additional_herbs[_h]
+            # add found_herbs to storage and get patrol outcome msg
+            (
+                new_herb_strings,
+                new_found_herbs,
+            ) = game.clan.herb_supply.handle_found_herbs_outcomes(
+                {herb_tag: quantity_allowed}
+            )
+
+        list_of_herb_strs.append(new_herb_strings)
+        found_herbs.update(new_found_herbs)
 
     herb_string = adjust_list_text(list_of_herb_strs).capitalize()
 
@@ -563,3 +561,24 @@ def __handle_herbs(herb_info: SupplyDict) -> str:
     return i18n.t(
         "screens.patrol.herbs_gathered", count=full_amount_count, herbs=herb_string
     )
+
+
+def __get_herb_increase_amount(event_involved_cats, increase_tag):
+    increase_amount = get_config(
+        f"clan_resources.herb.increase_amounts.{increase_tag}"
+    ) * len(event_involved_cats["patrol_cats"])
+    random_variance = get_config("clan_resources.herb.gathering_variance")
+    increase_amount += randint(random_variance[0], random_variance[1])
+    for c in event_involved_cats["patrol_cats"]:
+        increase_amount += constants.CONFIG["clan_resources"]["herbs"][
+            "general_patrol_quantity_per_cat"
+        ]
+        if c.skills.primary.path == SkillPath.CLEVER:
+            increase_amount += constants.CONFIG["clan_resources"]["herbs"][
+                "primary_clever"
+            ]
+        elif c.skills.secondary and c.skills.secondary.path == SkillPath.CLEVER:
+            increase_amount += constants.CONFIG["clan_resources"]["herbs"][
+                "secondary_clever"
+            ]
+    return increase_amount

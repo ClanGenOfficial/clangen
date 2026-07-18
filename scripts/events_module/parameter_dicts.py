@@ -99,10 +99,6 @@ class SupplyDict(TypedDict):
     type: str
     trigger: Literal["always", "excess", "full", "adequate", "low"]
     adjust: Literal[
-        "reduce_eighth",
-        "reduce_quarter",
-        "reduce_half",
-        "reduce_full",
         "increase_tiny",
         "increase_small",
         "increase_medium",
