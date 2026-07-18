@@ -361,8 +361,7 @@ def _handle_conditions(
                     cats_and_conditions[c].append(chosen_condition)
 
     for c, conditions in cats_and_conditions.items():
-        # TODO: localize
-        results.append(f"{_profile_link(c)} got: {' '.join(conditions)}.")
+        results.append(i18n.t("general.got_condition", cat=c, conditions=conditions))
 
     return " ".join(results)
 
@@ -684,7 +683,6 @@ def _handle_mentor_app(event_involved_cats: dict[str, Union[Cat, list[Cat]]]):
                 print(str(cat.name), affect_skills)
 
 
-# TODO: adjust
 def _handle_future_event(
     event: TextPoolEvent, event_involved_cats: dict[str, Union[Cat, list[Cat]]]
 ):

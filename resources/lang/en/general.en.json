@@ -224,6 +224,7 @@
         "grieving": "grieving",
         "fleas": "flea-ridden",
         "is_infected": "is infected",
-        "is_festering": "is festering"
+        "is_festering": "is festering",
+        "got_condition": "%{cat} got: %{conditions}."
     }
 }
