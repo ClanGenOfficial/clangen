@@ -18,6 +18,7 @@ from scripts.clan_resources.freshkill import (
 )
 from scripts.config import get_config
 from scripts.events_module.consequences import unpack_rel_block, check_stolen_vitality
+from scripts.events_module.future.prep_and_trigger import prep_future_event
 from scripts.events_module.parameter_dicts import SupplyDict
 from scripts.events_module.patrol import patrol
 from scripts.events_module.text_adjust import event_text_adjust, adjust_list_text
@@ -61,15 +62,12 @@ def execute_outcome(
         _handle_lost(event, event_involved_cats),
         _handle_conditions(event, event_involved_cats, other_clan),
         _handle_reputation_changes(event, other_clan),
+        _handle_supply_changes(event, event_involved_cats)
     ]
 
-    # handle supply changes (prey and herbs)
-
-    # handle exp
-
-    # handle mentor/app stuff
-
-    # handle future event
+    _handle_exp(event, event_involved_cats)
+    _handle_mentor_app(event_involved_cats)
+    _handle_future_event(event)
 
     # apply rel effects (append result text)
     # TODO: gonna have to change how unpack_rel_block works
@@ -501,9 +499,9 @@ def __handle_prey(prey_info: list[SupplyDict], event_involved_cats: dict) -> str
         if amount_gained > 0:
             final_amount += round(amount_gained, 2)
             print(f"PREY ADDED: {amount_gained}")
-            results.append(i18n.t(
-                f"screens.patrol.prey_{prey['adjust'].replace('increase', '')}"
-            ))
+            results.append(
+                i18n.t(f"screens.patrol.prey_{prey['adjust'].replace('increase', '')}")
+            )
 
     game.freshkill_event_list.append(
         f"{final_amount} pieces of prey were caught on a patrol."
@@ -563,7 +561,7 @@ def __handle_herbs(herb_info: list[SupplyDict], event_involved_cats: dict) -> st
     )
 
 
-def __get_herb_increase_amount(event_involved_cats, increase_tag):
+def __get_herb_increase_amount(event_involved_cats, increase_tag) -> int:
     increase_amount = get_config(
         f"clan_resources.herb.increase_amounts.{increase_tag}"
     ) * len(event_involved_cats["patrol_cats"])
@@ -582,3 +580,87 @@ def __get_herb_increase_amount(event_involved_cats, increase_tag):
                 "secondary_clever"
             ]
     return increase_amount
+
+
+def _handle_exp(event: TextPoolEvent, event_involved_cats: dict):
+    """
+    Awards exp to the patrol cats
+    """
+
+    if not event.exp_gained:
+        return
+
+    if game.clan.game_mode == "classic":
+        mode_modifier = 1
+    else:
+        mode_modifier = 3
+
+    base_exp = 0
+    if "masterful" in (x.experience_level for x in event_involved_cats["patrol_cats"]):
+        max_boost = 10
+    else:
+        max_boost = 0
+
+    patrol_exp = 2 * event.exp_gained
+    gained_exp = patrol_exp + base_exp + max_boost
+    gained_exp = max(gained_exp * (1 - 0.1 * len(event_involved_cats["patrol_cats"])) / mode_modifier, 1)
+
+    # Apprentice exp, does not depend on success
+    if game.clan.game_mode == "classic":
+        app_exp = 0
+    else:
+        app_exp = max(randint(1, 7) * (1 - 0.1 * len(event_involved_cats["patrol_cats"])), 1)
+
+    if gained_exp or app_exp:
+        for cat in event_involved_cats["patrol_cats"]:
+            if cat.status.rank.is_any_apprentice_rank():
+                cat.experience = cat.experience + app_exp
+            else:
+                cat.experience = cat.experience + gained_exp
+
+def _handle_mentor_app( event_involved_cats: dict):
+    """Handles mentors influencing apprentices"""
+
+    for cat in event_involved_cats["patrol_cats"]:
+        mentor = Cat.fetch_cat(cat.mentor)
+        if mentor in event_involved_cats["patrol_cats"]:
+            affect_personality = cat.personality.mentor_influence(
+                mentor.personality
+            )
+            affect_skills = cat.skills.mentor_influence(mentor)
+            if affect_personality:
+                cat.history.add_facet_mentor_influence(
+                    mentor.ID, affect_personality[0], affect_personality[1]
+                )
+                print(str(cat.name), affect_personality)
+            if affect_skills:
+                cat.history.add_skill_mentor_influence(
+                    affect_skills[0], affect_skills[1], affect_skills[2]
+                )
+                print(str(cat.name), affect_skills)
+
+# TODO: adjust
+def _handle_future_event(patrol):
+    """
+    collects required info and sends it to be prepped
+    """
+    if not self.future_event:
+        return
+
+    possible_cats = {
+        "p_l": patrol.patrol_leader,
+        "r_c": patrol.random_cat,
+        "s_c": self.stat_cat,
+    }
+
+    for x, app in enumerate(patrol.patrol_apprentices):
+        possible_cats[f"app{x}"] = app
+
+    for x, newbie in enumerate(self.new_cat):
+        possible_cats[f"n_c:{x}"] = newbie
+
+    prep_future_event(
+        event=self,
+        event_id=patrol.patrol_event.patrol_id,
+        possible_cats=possible_cats,
+    )
