@@ -71,9 +71,6 @@ class Patrol:
         ) = {"success": {}, "failure": {}}
         self.new_cats: list[Cat] = []
 
-        # TODO: old attributes, might not need them all anymore
-        self.intro_text = ""
-
     def begin_patrol(self, patrol_cats: List[Cat], patrol_type: str) -> str:
         """
         Handles all the initial patrol setup, returns the prepared patrol intro text.
