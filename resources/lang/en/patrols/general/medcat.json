@@ -37505,7 +37505,7 @@
         ]
     },
     {
-        "patrol_id": "gen_med_lflb_yewcolor_storylocked1",
+        "patrol_id": "gen_med_deathberry_lflb",
         "biome": [
             "-desert"
         ],
@@ -37516,23 +37516,20 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "min_cats": 3,
+        "patrol_art": "cat_sprites/gen_med_gatheringraspberrysolo_Wr",
+        "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
             "healer cats": [1, 6]
         },
-        "frequency": 3,
-        "chance_of_success": 60,
-        "pl_skill_constraint": [
-            "STORY,1"
-        ],
-        "intro_text": "As the patrol spreads out under p_l's watch, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a deathberry bush, and {VERB/p_l/call/calls} the cats back. To stress the lesson about caution, p_l tells the story of how the yew got its color.",
-        "decline_text": "It's probably fine to let the patrol go without telling the story, the bush has been pointed out and {PRONOUN/p_l/poss} Clanmates warned.",
+        "frequency": 2,
+        "chance_of_success": 30,
+        "intro_text": "Though the patrol sets out to find betony, they instead come across a crimson-berried yew. This deathberry bush could be a learning opportunity.",
+        "decline_text": "p_l decides to stay clear of the deathberry bush. While knowledge obliges caution, perhaps, in this case, ignorance is bliss.",
         "success_outcomes": [
             {
-                "text": "Two lovers met in leaf-bare at the border between their Clans, under the shelter of a bushy white-berried yew. One night, it was not love that met there, but a great battle between their rival Clans, one neither would stagger from alive. The yew drank of their blood, and in the colder moons, even now, you can see it shining in its deathberries.",
-                "exp": 40,
+                "text": "p_l explains to the patrol how to identify a deathberry bush and what differentiates their berries from valuable raspberries.",
+                "exp": 30,
                 "relationships": [
                     {
                         "cats_to": [
@@ -37548,7 +37545,154 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "cat_from enjoyed the sad story of how deathberries got their color from the blood of two doomed lovers."
+                            "cats_from": "cat_from was grateful that cat_to took the time to show them how to identify dangerous deathberries."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+          {
+                "text": "p_l explains how to identify the berries and decides to harvest a few in case they are needed for deadly injuries.",
+                "exp": 30,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "clan",
+                            "high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was concerned to hear that cat_to gathered deathberries on patrol."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+             {
+                "text": "p_l shows the patrol how to identify deathberries and tells them the story of how the berries gained their blood-red hue.",
+                "exp": 30,
+                "stat_skill": ["LORE,1", "STORY,1"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from enjoyed the story cat_to told about deathberries."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                 "min_max_status": {
+                    "healer cats": [1, 1],
+                    "normal adult": [1, 2]
+                 },
+                "text": "p_l warns the r_c of the dangers of deathberries. {PRONOUN/p_l/subject/CAP} eyes linger intensely as {PRONOUN/p_l/subject} {VERB/p_l/meow/meows} that even a drop of deathberry juice can potentially kill another.",
+                "exp": 30,
+                "relationship_constraint": ["distrusts"],
+                 "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was offput that cat_to insinuated {PRONOUN/cat_from/subject} would do anything untoward with deathberries."
+                        }
+                    },
+                                       {
+                        "cats_to": [
+                            "r_c"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was glad cat_to seemed to heed {PRONOUN/cat_from/poss} warning about deathberries.."
+                        }
+                    }
+                ],
+                "frequency": 3
+            },
+          {
+                "text": "p_l explains the danger of deathberries but reminds the patrol that all herbs have their purpose. In this case, the flesh can be used to treat festering wounds, and the entire berry can be used to alleviate the suffering of mortally wounded warriors.",
+                "stat_trait": ["compassionate", "thoughtful", "sincere", "wise"],
+                "can_have_stat": ["p_l"],
+                "exp": 30,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed cat_to knew multiple beneficial uses for deathberries."
+                        }
+                    }
+                ],
+                "frequency": 3
+            },
+          {
+                "text": "p_l shows the patrol how to identify the leaves and bark texture of yew, so they can detect deathberry bushes even when the branches are not laden with their crimson fruit.",
+                "exp": 30,
+                "stat_skill": ["TEACHER,1", "SENSE,1"],
+                "can_have_stat": ["p_l"],
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from appreciated that cat_to took the time to show {PRONOUN/cat_from/object} how to identify deathberries."
                         }
                     }
                 ],
@@ -37557,7 +37701,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l is so busy preventing any cat from touching the deathberries — they're <i>called that for a reason</i> — that {PRONOUN/p_l/subject} never {VERB/p_l/begin/begins} {PRONOUN/p_l/poss} story.",
+                "text": "The patrol insists they know what deathberries look like and ignore p_l's explanation.",
                 "exp": 0,
                 "relationships": [
                     {
@@ -37574,11 +37718,105 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from wanted to tell a story about deathberries on patrol, but cat_to was distracted."
+                            "cats_from": "cat_from was annoyed when cat_from ignored {PRONOUN/cat_from/poss} advice about deathberries."
                         }
                     }
                 ],
                 "frequency": 4
+            },
+          {
+                "text": "s_c doesn't heed p_l's warning and slips a few deathberries in {PRONOUN/s_c/poss} mouth when p_l isn't looking. Later that day, when s_c convulses and dies, {PRONOUN/s_c/subject} {VERB/s_c/have/has} no one but {PRONOUN/s_c/self} to blame.",
+                "exp": 0,
+                "stat_trait": ["troublesome", "childish", "daring", "shameless", "strange", "arrogant", "oblivious"],
+                "can_have_stat": ["r_c"],
+                "frequency": 2,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                  "death": "m_c was killed after {PRONOUN/m_c/subject} failed to heed a medicine cat's warning and knowingly ingested a deathberry on patrol."
+                }
+            },
+                      {
+                "text": "As p_l is explaining the characteristics of a deathberry bush, {PRONOUN/p_l/subject} {VERB/p_l/realize/realizes} this is not in fact a deathberry bush: it is a raspberry bush. While p_l tries to play off {PRONOUN/p_l/poss} mistake as intentional, the rest of the patrol shares skeptical glances.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from couldn't believe that cat_to mistook a raspberry bush for a deathberry bush."
+                        }
+                    }
+                ],
+                "frequency": 2
+            },
+          {
+                 "min_max_status": {
+                    "medicine cat": [1, 1],
+                    "apprentice": [1, 2]
+                 },
+                "text": "app1 interrupts p_l's explanation to ask why c_n doesn't use deathberries to poison their enemies. Shaken, p_l explains the cruelty of such an action would be unbecoming to the Clan's honor and adherence to the Warrior Code.",
+                "exp": 30,
+                "stat_trait": ["bloodthirsty", "vengeful", "strange"],
+                "can_have_stat": ["app1"],
+                 "relationships": [
+                    {
+                        "cats_to": [
+                            "app1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "cat_from was shaken by cat_to's suggestion to use deathberries to poison other clans."
+                        }
+                    }
+                ],
+                "frequency": 3
+            },
+          {
+                "text": "p_l explains how to identify a deathberry bush. After when {PRONOUN/p_l/subject} {VERB/p_l/suggest/suggests} collecting some, r_c bristles in fear and refuses to go near the deadly bush.",
+                "exp": 0,
+                "frequency": 3
+            },
+             {
+                "text": "p_l explains how to identify a deathberry bush. When {PRONOUN/p_l/subject} {VERB/p_l/suggest/suggests} collecting some, r_c remains by the wayside, watching p_l carefully, wary of p_l's intentions.",
+                "exp": 0,
+               "relationships": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from questioned cat_from's motives for collecting deathberries, despite being a medicine cat."
+                        }
+                    }
+                ],
+                "frequency": 3
             }
         ]
     },
