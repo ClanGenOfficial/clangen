@@ -381,7 +381,7 @@
     {
         "id": "group_3_negative_storyjealousy",
         "strings": [
-            "r_c2 tells m_c that r_c1's stories are better.",
+            "r_c2 tells m_c that r_c1's stories are better."
         ],
         "involved_cats": {
             "m_c": {},
