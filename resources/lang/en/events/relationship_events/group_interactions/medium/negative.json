@@ -248,13 +248,13 @@
                 "amount": -10
             }
         ]
-    }
+    },
     {
         "id": "group_3_negative_leaderjealousy",
         "strings": [
             "m_c is jealous that r_c1 was praised by the r_c2.",
             "r_c2 was more impressed by what r_c1 brought back from a hunting patrol than what m_c did.",
-            "m_c is jealous that r_c2 chose r_c1 for a border skirmish over m_c.",
+            "m_c is jealous that r_c2 chose r_c1 for a border skirmish over m_c."
         ],
         "involved_cats": {
             "m_c": {
@@ -477,7 +477,7 @@
             "m_c wants to asks r_c2 to eat with {PRONOUN/m_c/object}, but {PRONOUN/r_c2/subject}{VERB/r_c2/'re/'s} busy with r_c1.",
             "r_c2 accuses m_c of copying one of r_c1's jokes.",
             "m_c wishes that r_c2 liked {PRONOUN/m_c/object} as much as {PRONOUN/r_c2/subject} {VERB/r_c2/like/likes} r_c1.",
-            "m_c wants to get to know r_c2 better, but {PRONOUN/r_c2/subject}{VERB/r_c2/'re/'s} already close to r_c.",
+            "m_c wants to get to know r_c2 better, but {PRONOUN/r_c2/subject}{VERB/r_c2/'re/'s} already close to r_c."
         ],
         "involved_cats": {
             "m_c": {},
