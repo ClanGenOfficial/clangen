@@ -1847,7 +1847,7 @@
         "types": [
             "hunting"
         ],
-        "tags": [],
+        "tags": ["clan:leader"],
         "patrol_art": "cat_sprites/gen_train_solo_Ap",
         "min_cats": 1,
         "max_cats": 1,
