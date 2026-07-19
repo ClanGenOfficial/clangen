@@ -13,19 +13,15 @@
             "r_c panics over something that m_c finds trivial.",
             "m_c thinks r_c is a bit of a mouse-brain.",
             "m_c thinks r_c is shirking {PRONOUN/r_c/poss} duties.",
-            "m_c notices that r_c makes other Clanmates laugh more than {PRONOUN/m_c/subject} {VERB/m_c/do/does}.",
-            "m_c wishes that a Clanmate liked {PRONOUN/m_c/object} as much as they like r_c.",
             "m_c was scolded for something that r_c gets praised for.",
             "m_c worries that the Clan trusts r_c more than {PRONOUN/m_c/object}.",
             "m_c thinks that r_c stole one of {PRONOUN/m_c/poss} ideas.",
             "The Clan likes one of r_c's suggestions, but it was just m_c's reworded.",
             "m_c tries to do something like r_c but ends up embarrassing {PRONOUN/m_c/self}.",
-            "A Clanmate accuses m_c of copying one of r_c's jokes.",
             "m_c wishes {PRONOUN/m_c/subject} looked more like r_c.",
             "m_c thinks that r_c is more talented than {PRONOUN/m_c/object}.",
             "r_c has a talent that m_c wants to have.",
-            "m_c tried on an accessory that r_c threw away, but realized r_c looked a lot better in it.",
-            "m_c worries that one of {PRONOUN/m_c/poss} friends prefers r_c."
+            "m_c tried on an accessory that r_c threw away but realized r_c looked a lot better in it."
         ]
     },
     {
@@ -87,7 +83,6 @@
             "m_c is upset that r_c slept through patrol assignments.",
             "m_c thinks that r_c acted disrespectfully during a patrol.",
             "m_c notices that r_c seems to disappear whenever difficult tasks are being discussed.",
-            "r_c was meant to take a piece of prey to a Clanmate, but m_c saw {PRONOUN/r_c/object} eat it.",
             "r_c didn't finish a chore that m_c asked {PRONOUN/r_c/object} to do."
         ],
         "involved_cats": {
@@ -163,15 +158,12 @@
     {
         "id": "respect_patrol_de_med",
         "strings": [
-            "m_c is jealous that r_c was praised by the leader.",
-            "m_c is jealous that r_c got to fight in a border skirmish when {PRONOUN/m_c/subject} didn't.",
             "m_c is jealous that r_c got to go on border patrol this morning.",
             "r_c caught a giant piece of prey that m_c wishes {PRONOUN/m_c/subject} did.",
             "m_c tried to show off on a hunting patrol, but r_c got all the attention instead.",
             "m_c wishes {PRONOUN/m_c/subject} could be as good a fighter as r_c.",
             "m_c tries not to get envious hearing one of r_c's crazy patrol stories.",
             "m_c had a plan during a patrol, but r_c's was a lot better.",
-            "The leader was more impressed by what r_c brought back from a hunting patrol than what m_c did.",
             "m_c is jealous that r_c went on patrol without {PRONOUN/m_c/object}.",
             "m_c doesn't understand how r_c got so good at hunting."
         ],
@@ -277,8 +269,7 @@
         "strings": [
             "m_c hisses at r_c for getting a bigger piece of prey.",
             "m_c tells r_c {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} deserve all the attention from the older cats.",
-            "m_c says r_c's name is stupid, but m_c is just jealous.",
-            "An older Clanmate tells m_c to be nice to r_c."
+            "m_c says r_c's name is stupid, but m_c is just jealous."
         ],
         "involved_cats": {
             "m_c": {

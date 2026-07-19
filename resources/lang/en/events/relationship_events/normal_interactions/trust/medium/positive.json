@@ -8,7 +8,6 @@
             "m_c is grateful that r_c has kept a secret of {PRONOUN/m_c/inposs}.",
             "r_c seems respectful of m_c's boundaries as of late.",
             "r_c explained something in detail to m_c that others wouldn't explain to {PRONOUN/m_c/object}.",
-            "m_c overhears r_c dispelling a false rumor about a Clanmate.",
             "r_c helps m_c fix a matted piece of fur on {PRONOUN/m_c/poss} back.",
             "m_c notices how r_c is being helpful around camp."
         ]
@@ -88,8 +87,7 @@
         "id": "trust_inc_med3",
         "strings": [
             "r_c is telling m_c in great detail how {PRONOUN/r_c/subject} would protect {PRONOUN/m_c/object} from any danger.",
-            "r_c gets riled up on m_c's behalf during a debate.",
-            "r_c snaps at a Clanmate for disagreeing with m_c."
+            "r_c gets riled up on m_c's behalf during a debate."
         ],
         "involved_cats": {
             "r_c": {
@@ -142,7 +140,6 @@
         "strings": [
             "r_c is teaching m_c how to walk without making a sound.",
             "r_c is showing m_c how to sneak up on {PRONOUN/m_c/poss} enemies.",
-            "r_c convinces m_c to help {PRONOUN/r_c/object} pull a prank on a Clanmate.",
             "m_c is whispering quietly with r_c."
         ],
         "involved_cats": {

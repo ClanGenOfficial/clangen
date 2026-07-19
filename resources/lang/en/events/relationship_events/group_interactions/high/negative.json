@@ -42,7 +42,149 @@
             }
         ]
     },
-
+    {
+        "id": "group_3_negative_turnfriendagainstrival",
+        "strings": [
+            "r_c1 tries to undermine r_c2's good opinion of m_c.",
+            "r_c1 has been pitting r_c2 against m_c."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "constraints": ["distrusts", "dislikes"]
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "constraints": ["praises"]
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": true,
+                "constraints": ["listens_to", "likes"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["trust", "respect"],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "group_3_pos_warning",
+        "strings": [
+            "r_c1 claims that m_c wants r_c2 dead.",
+            "r_c1 warns r_c2 that m_c seems out to get {PRONOUN/r_c2/object}.",
+            "r_c1 cautions r_c2 about being alone with m_c."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["loathes"]
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "constraints": ["listens_to"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": 5
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": -15
+            }
+        ]
+    },
+    {
+        "id": "group_3_neg_rudekit",
+        "strings": [
+            "r_c1 scolds m_c for being rude to r_c2.",
+            "r_c1 makes m_c apologize to r_c2 for {PRONOUN/m_c/poss} bad behavior.",
+            "m_c tramples r_c2 during a rambunctious game, and r_c1 rebukes {PRONOUN/m_c/object} in front of {PRONOUN/r_c2/object}."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c1"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "amount": -10,
+                "values": ["comfort"]
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "amount": 10,
+                "values": ["respect"]
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "amount": -5,
+                "values": ["like"]
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "amount": 10,
+                "values": ["respect"]
+            }
+        ]
+    },
     {
         "id": "group_3_negative_romanticrivalshigh_jealousofmate",
         "strings": [

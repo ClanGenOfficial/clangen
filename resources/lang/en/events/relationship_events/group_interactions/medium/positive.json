@@ -131,6 +131,219 @@
         ]
     },
     {
+        "id": "group_3_helpfulrespect",
+        "strings": [
+            "m_c sees r_c1 help r_c2 get unstuck from some brambles.",
+            "m_c overhears r_c1 dispelling a false rumor about r_c2.",
+            "m_c wasn't going to help r_c2 but realized that r_c1 would do it in a heartbeat.",
+            "m_c hears r_c1 laugh at r_c2's joke even though it was lame."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["knows_of", "likes"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": 10
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "id": "group_3_pos_helpful",
+        "strings": [
+            "r_c1 sends r_c2 to help m_c with something {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} struggling with.",
+            "r_c1 includes m_c1 in a conversation with r_c2 that m_c struggled to join.",
+            "r_c1 and r_c2 pitch in to help m_c with a task."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["r_c1", "r_c2"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "constraints": ["-dislikes", "-fears", "-begrudges"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1", "r_c2"],
+                "mutual": false,
+                "values": ["respect", "trust"],
+                "amount": 7
+            }   
+        ]
+    },
+    {
+        "id": "group_3_pos_defensivefriend",
+        "strings": [
+            "r_c1 snaps at r_c2 for disagreeing with m_c.",
+            "r_c1 won't hear a bad word about m_c from r_c2.",
+            "r_c1 jumps to m_c's defense when {PRONOUN/m_c/subject} {VERB/m_c/argue/argues} with r_c2."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {
+                "stat": {
+                    "trait": ["fierce", "loyal", "faithful"]
+                }
+            },
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "constraints": ["trusts", "respects"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "values": ["trust", "like"],
+                "mutual": true,
+                "amount": 8
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["m_c", "r_c1"],
+                "values": ["trust", "like"],
+                "mutual": false,
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "id": "group_3_pos_enemyofmyenemy",
+        "strings": [
+            "r_c1 helps m_c hide from r_c2.",
+            "r_c1 lets m_c know that r_c2 was talking badly about {PRONOUN/m_c/object}."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["r_c1", "m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["dislikes"]
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "constraints": ["dislikes"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["like", "trust"],
+                "amount": 7
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "id": "group_3_pos_friendofmyfriend",
+        "strings": [
+            "Both m_c and r_c1 enthusiastically congratulate r_c2 on something.",
+            "m_c and r_c1 grow closer through their mutual connection to r_c2."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c", "r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["praises", "likes"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": true,
+                "values": ["like", "comfort"],
+                "amount": 7
+            }
+        ]
+    },
+    {
+        "id": "group_3_pos_thirdwheel",
+        "strings": [
+            "m_c went on patrol with r_c1 and r_c2 and says they talked the entire time and almost left {PRONOUN/m_c/object} behind."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["-kitten", "-elder", "-mediator", "-mediator apprentice"]
+            },
+            "r_c1": {
+                "status": ["-kitten", "-elder", "-mediator", "-mediator apprentice"]
+            },
+            "r_c2": {
+                "status": ["-kitten", "-elder", "-mediator", "-mediator apprentice"]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": true,
+                "values": ["like", "comfort"],
+                "amount": 7
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1", "r_c2"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": -5
+            }
+        ]
+    },
+    {
         "id": "group_multicat_pos_kit_kitsitting",
         "strings": [
             "multi_cat are on their best behavior around m_c.",

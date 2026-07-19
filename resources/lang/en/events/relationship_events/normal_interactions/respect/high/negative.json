@@ -9,15 +9,9 @@
             "m_c learns about a terrible mistake r_c made.",
             "m_c thinks r_c keeps getting in the way instead of helping others.",
             "m_c is complaining that r_c never does anything helpful.",
-            "m_c doesn't get why r_c gets more praise for doing the same thing everyone else does.",
-            "m_c can't stand hearing about how helpful r_c is.",
-            "m_c gets hit with waves of envy whenever r_c is laughing with friends.",
-            "m_c can't understand why Clanmates like r_c so much.",
             "m_c notices that r_c always gets better fresh-kill to eat.",
-            "A Clanmate tells m_c that r_c's stories are better.",
             "m_c knows that r_c would be saved before {PRONOUN/m_c/object} during an emergency.",
-            "m_c has big plans for the day, but they're thwarted by r_c doing something more important.",
-            "m_c wants to spend time with friends, but all of them have plans with r_c."
+            "m_c has big plans for the day, but they're thwarted by r_c doing something more important."
         ]
     },
     {
@@ -65,12 +59,7 @@
         "id": "respect_existingjealousy_de_high1",
         "strings": [
             "m_c is complaining that r_c never does anything helpful.",
-            "m_c can't stand hearing about how helpful r_c is.",
-            "m_c can't understand why a Clanmate likes r_c so much.",
-            "m_c seethes at the thought of r_c succeeding.",
-            "m_c plans to embarrass r_c in front of all their Clanmates.",
-            "m_c wants to prove that r_c isn't worthy of any cat's respect.",
-            "m_c tries to turn r_c's friends against {PRONOUN/r_c/object}."
+            "m_c seethes at the thought of r_c succeeding."
         ],
         "relationship_constraint": [
             {

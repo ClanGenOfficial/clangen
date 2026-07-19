@@ -22,7 +22,6 @@
             "m_c tells r_c something interesting about another Clan.",
             "m_c and r_c purr about something small together.",
             "m_c spends some time sheltering with r_c during a storm.",
-            "Both m_c and r_c enthusiastically congratulate another Clanmate on something.",
             "m_c chats with r_c while grabbing something to eat."
         ],
         "relationship_changes": [
@@ -199,8 +198,7 @@
     {
         "id": "like_inc_med9",
         "strings": [
-            "m_c feels bad that {PRONOUN/m_c/subject} caused a problem for r_c.",
-            "m_c convinces r_c to help {PRONOUN/m_c/object} pull a prank on a Clanmate."
+            "m_c feels bad that {PRONOUN/m_c/subject} caused a problem for r_c."
         ],
         "involved_cats": {
             "m_c": {
@@ -811,14 +809,13 @@
     {
         "id": "like_incfromneg_med1",
         "strings": [
-            "m_c realized that {PRONOUN/m_c/subject} {VERB/m_c/were/was} too harsh in {PRONOUN/m_c/poss} judgement of r_c.",
+            "m_c realized that {PRONOUN/m_c/subject} {VERB/m_c/were/was} too harsh in {PRONOUN/m_c/poss} judgment of r_c.",
             "m_c is still hurt by r_c but wants to make amends.",
             "m_c decides to be the bigger cat and plans to make amends with r_c.",
             "Despite past disagreements, r_c is kind to m_c in passing.",
             "m_c hears r_c purring during a nap.",
             "m_c is frustrated with r_c, but hears {PRONOUN/r_c/object} crying alone and immediately feels guilty.",
             "Though m_c has been unhappy with r_c, m_c helps {PRONOUN/r_c/object} with something.",
-            "m_c wants to apologize to r_c and finds {PRONOUN/r_c/object} playing with a Clanmate.",
             "r_c does something endearing, which surprises m_c.",
             "m_c stumbles upon r_c looking at the stars with wonder in {PRONOUN/r_c/poss} eyes.",
             "m_c is rethinking how {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} about r_c and gives {PRONOUN/r_c/object} another chance."

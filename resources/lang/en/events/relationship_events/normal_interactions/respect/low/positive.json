@@ -18,7 +18,6 @@
         "id": "respect_inc_low2",
         "strings": [
             "m_c is impressed by r_c helping others today.",
-            "m_c sees r_c help a Clanmate get unstuck from some brambles.",
             "m_c notices that r_c is fixing a damaged part of the camp without being asked.",
             "When tucking in for the night, m_c saw that r_c fixed {PRONOUN/m_c/poss} nest.",
             "r_c motivated m_c to get out of {PRONOUN/m_c/poss} nest this morning.",
@@ -108,7 +107,6 @@
             "r_c says {PRONOUN/r_c/subject} {VERB/r_c/hope/hopes} m_c has a nice day.",
             "m_c sees r_c be kind to one of m_c's friends.",
             "m_c thinks r_c is very polite.",
-            "m_c hears r_c laugh at a Clanmate's joke even though it was lame.",
             "r_c gets a bug off of m_c's pelt and takes it out of camp.",
             "m_c thinks r_c is a very good listener."
         ],

@@ -93,10 +93,8 @@
     {
         "id": "respect_inc_high3",
         "strings": [
-            "m_c defends r_c from a Clanmate's rude remarks.",
             "r_c's name comes up in a heated conversation, and m_c is the first to stand up for {PRONOUN/r_c/object}.",
             "In the middle of an argument, m_c tells r_c that they'll still always be friends.",
-            "m_c calls out a Clanmate for spreading a rumor about r_c.",
             "m_c and r_c agree with each other when no one else does."
         ],
         "relationship_constraint": [

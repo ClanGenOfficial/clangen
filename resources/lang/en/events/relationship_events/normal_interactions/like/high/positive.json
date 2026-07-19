@@ -240,14 +240,10 @@
         "strings": [
             "m_c is surprised to hear r_c express an ideal {PRONOUN/m_c/subject} can agree with.",
             "m_c didn't realize how generous r_c could be.",
-            "m_c sees r_c stand up for a Clanmate despite the pushback from {PRONOUN/r_c/poss} peers.",
             "m_c overhears r_c saying something kind about {PRONOUN/m_c/object}.",
             "m_c tries to look at r_c's actions from another perspective and starts to like {PRONOUN/r_c/object} more.",
-            "m_c notices that some of {PRONOUN/m_c/poss} Clanmates talk very highly of r_c.",
-            "The way r_c jumps to help a Clanmate makes m_c think {PRONOUN/r_c/subject} might not be all that bad.",
             "There's something soothing about r_c that m_c never realized before.",
             "m_c realizes how smart r_c is when it comes to certain things.",
-            "m_c talks to one of r_c's friends and begins to understand why others like {PRONOUN/r_c/object}.",
             "m_c considers how to make amends with r_c after a long night of deliberation."
         ],
         "relationship_constraint": [
@@ -270,10 +266,10 @@
         "strings": [
             "m_c and r_c joke around about how bad the other Clans smell.",
             "r_c can't help but laugh when m_c tells a funny joke.",
-            "A Clanmate claims that m_c and r_c were sharing tongues.",
+            "The Clan notes m_c and r_c sharing tongues.",
             "m_c and r_c sincerely apologize to one another.",
             "r_c admits that m_c did something clever.",
-            "m_c and r_c fight over a piece of prey, but soon decide to share it instead.",
+            "m_c and r_c fight over a piece of prey but soon decide to share it instead.",
             "The Clan has noticed m_c and r_c are smiling at each other more today.",
             "m_c and r_c realize they have more in common than previously thought.",
             "r_c thinks that m_c isn't so bad after all."
