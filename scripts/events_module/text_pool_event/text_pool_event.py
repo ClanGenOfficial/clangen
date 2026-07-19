@@ -25,6 +25,7 @@ class TextPoolEvent:
     # display
     strings: list[str] = field(default_factory=list)
     outcome_art: Optional[str] = None
+    outcome_art_clean: Optional[str] = None
 
     # weighting
     frequency: Optional[int] = None

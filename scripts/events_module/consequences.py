@@ -767,17 +767,17 @@ def create_new_cat(
 
 
 def gather_cat_objects(
-    Cat, abbr_list: List[str], event, stat_cat=None, extra_cat=None
+    Cat, abbr_list: List[str], event, extra_cat=None, involved_cats:Optional[dict] = None
 ) -> list:
     """
     gathers cat objects from list of abbreviations used within an event format block
     :param Cat Cat: Cat class
     :param list[str] abbr_list: The list of abbreviations
     :param event: the controlling class of the event (e.g. Patrol, HandleShortEvents), default None
-    :param Cat stat_cat: if passing the Patrol class, must include stat_cat separately
     :param Cat extra_cat: if not passing an event class, include the single affected cat object here. If you are not
     passing a full event class, then be aware that you can only include "m_c" as a cat abbreviation in your rel block.
     The other cat abbreviations will not work.
+    :param involved_cats: dict of cats involved in the event. Key is their abbreviation string and value is the cat object.
     :return: list of cat objects
     """
 
@@ -790,28 +790,19 @@ def gather_cat_objects(
             is_exclusionary = True
             abbr = abbr.replace("-", "")
 
+        if involved_cats and abbr in involved_cats:
+            found_cat = involved_cats[abbr]
+            if is_exclusionary:
+                out_set -= set(found_cat)
+            else:
+                out_set += set(found_cat)
+            continue
+
         found_cat = None
         if abbr == "m_c":
             found_cat = extra_cat if extra_cat else event.main_cat
         elif abbr == "r_c":
             found_cat = event.random_cat
-        # PATROL SPECIFIC
-        elif abbr == "p_l":
-            found_cat = event.patrol_leader
-        elif abbr == "s_c":
-            found_cat = stat_cat
-        elif abbr == "app1" and len(event.patrol_apprentices) >= 1:
-            found_cat = event.patrol_apprentices[0]
-        elif abbr == "app2" and len(event.patrol_apprentices) >= 2:
-            found_cat = event.patrol_apprentices[1]
-        elif abbr == "app3" and len(event.patrol_apprentices) >= 3:
-            found_cat = event.patrol_apprentices[2]
-        elif abbr == "app4" and len(event.patrol_apprentices) >= 4:
-            found_cat = event.patrol_apprentices[3]
-        elif abbr == "app5" and len(event.patrol_apprentices) >= 5:
-            found_cat = event.patrol_apprentices[4]
-        elif abbr == "app6" and len(event.patrol_apprentices) >= 6:
-            found_cat = event.patrol_apprentices[5]
 
         # add/remove cat if found and then continue for loop
         if is_exclusionary and found_cat:
@@ -938,24 +929,8 @@ def unpack_rel_block(
             is_clan_reaction = True
 
         # Gather actual cat objects:
-        cats_from_ob = []
-        cats_to_ob = []
-        if involved_cats:
-            for abbr in cats_from:
-                cats_from_ob.extend(
-                    involved_cats[abbr]
-                    if isinstance(involved_cats[abbr], list)
-                    else [involved_cats[abbr]]
-                )
-            for abbr in cats_to:
-                cats_to_ob.extend(
-                    involved_cats[abbr]
-                    if isinstance(involved_cats[abbr], list)
-                    else [involved_cats[abbr]]
-                )
-        else:
-            cats_from_ob = gather_cat_objects(Cat, cats_from, event, extra_cat)
-            cats_to_ob = gather_cat_objects(Cat, cats_to, event, extra_cat)
+        cats_from_ob = gather_cat_objects(Cat, cats_from, event, extra_cat, involved_cats)
+        cats_to_ob = gather_cat_objects(Cat, cats_to, event, extra_cat, involved_cats)
 
         # Remove any "None" that might have snuck in
         if None in cats_from_ob:

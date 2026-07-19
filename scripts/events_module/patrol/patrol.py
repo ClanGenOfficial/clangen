@@ -140,7 +140,7 @@ class Patrol:
         # ADD TO PATROL_CATS
 
         self.patrol_cats = patrol_cats
-        self.patrol_statuses["all_cats"] = patrol_cats
+        self.patrol_statuses["patrol_cats"] = patrol_cats
         for cat in patrol_cats:
             # ADD TO STATUS LIST
             if cat.status.rank in self.patrol_statuses:
@@ -712,8 +712,11 @@ class Patrol:
                 ]
                 # find all the cats that were listed in the abbreviations
                 abbr_cats = [self.involved_cats.get(_a) for _a in prior_abbreviations]
+                # if it's "any" then that's easy-peasy, just allow any of the cats
+                if "any" in abbr_cats:
+                    possible_cats = self.involved_cats["patrol_cats"]
                 # if it's meant to be exclusionary, then possible_cats will be all cats not in abbr_cats
-                if is_exclusionary:
+                elif is_exclusionary:
                     possible_cats = [
                         c
                         for c in self.involved_cats["patrol_cats"]
