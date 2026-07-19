@@ -1266,11 +1266,6 @@ class Cat:
 
         if chosen_intro := choice(possible_intros):
             intro = choice(chosen_intro["text"])
-            intro = leader_ceremony_text_adjust(
-                Cat,
-                intro,
-                self,
-            )
         else:
             intro = "this should not appear"
 
@@ -1314,7 +1309,7 @@ class Cat:
         # if we have relations, then make sure we only take the top 8
         if dead_relations:
             for i, rel in enumerate(dead_relations):
-                if i <= num_of_lives_to_give - 1:
+                if i >= num_of_lives_to_give - 1:
                     break
                 if rel.cat_to.status.is_leader:
                     life_giving_leader = rel.cat_to
@@ -1376,7 +1371,7 @@ class Cat:
 
         extra_lives = num_of_lives_to_give - len(life_givers)
         possible_lives = ceremony_dict["lives"]
-        lives = []
+        ceremony_entries = [{"involved": None, "text": intro}]
         used_lives = []
         used_virtues = []
         for giver in life_givers:
@@ -1467,14 +1462,12 @@ class Cat:
             else:
                 virtue = None
 
-            lives.append(
-                leader_ceremony_text_adjust(
-                    Cat,
-                    chosen_life["text"],
-                    leader=self,
-                    life_giver=giver,
-                    virtue=virtue,
-                )
+            ceremony_entries.append(
+                {
+                    "involved": giver_cat.ID,
+                    "text": chosen_life["text"],
+                    "virtue": virtue,
+                }
             )
         if unknown_blessing:
             possible_blessing = []
@@ -1492,16 +1485,14 @@ class Cat:
                 possible_blessing.append(possible_lives[life])
             chosen_blessing = choice(possible_blessing)
             chosen_text = choice(chosen_blessing["life_giving"])
-            lives.append(
-                leader_ceremony_text_adjust(
-                    Cat,
-                    chosen_text["text"],
-                    leader=self,
-                    virtue=chosen_text["virtue"],
-                    extra_lives=extra_lives,
-                )
+            ceremony_entries.append(
+                {
+                    "involved": None,
+                    "text": chosen_text["text"],
+                    "virtue": chosen_text["virtue"],
+                    "extra_lives": extra_lives,
+                }
             )
-        all_lives = "<br><br>".join(lives)
 
         # ---------------------------------------------------------------------------- #
         #                                    OUTRO                                     #
@@ -1530,21 +1521,42 @@ class Cat:
 
         if chosen_outro:
             if life_givers:
-                giver = life_givers[-1]
+                outro_giver_cat = self.fetch_cat(life_givers[-1])
+                outro_giver = outro_giver_cat.ID if outro_giver_cat else None
             else:
-                giver = None
-            outro = choice(chosen_outro["text"])
-            outro = leader_ceremony_text_adjust(
-                Cat,
-                outro,
-                leader=self,
-                life_giver=giver,
-            )
+                outro_giver = None
+            outro_text = choice(chosen_outro["text"])
         else:
-            outro = "this should not appear"
+            outro_text = "this should not appear"
+            outro_giver = None
 
-        full_ceremony = "<br><br>".join([intro, all_lives, outro])
-        self.history.lead_ceremony = full_ceremony
+        ceremony_entries.append({"involved": outro_giver, "text": outro_text})
+
+        self.history.lead_ceremony = ceremony_entries
+
+    def render_lead_ceremony(self):
+        """Render data with current name and pronouns."""
+
+        data = self.history.lead_ceremony
+        if not data:
+            return ""
+        if isinstance(data, str):
+            # legacy ceremony is a string
+            return data
+
+        paragraphs = [
+            leader_ceremony_text_adjust(
+                Cat,
+                entry["text"],
+                leader=self,
+                life_giver=entry.get("involved"),
+                virtue=entry.get("virtue"),
+                extra_lives=entry.get("extra_lives"),
+            )
+            for entry in data
+        ]
+
+        return "<br><br>".join(paragraphs)
 
     # ---------------------------------------------------------------------------- #
     #                              moon skip functions                             #
