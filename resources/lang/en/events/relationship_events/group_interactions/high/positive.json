@@ -140,8 +140,7 @@
             },
             "r_c2": {
                 "health": {
-                    "working": false,
-                    "condition": ["-redcough", "-wasting disease"]
+                    "working": false
                 }
             }
         },

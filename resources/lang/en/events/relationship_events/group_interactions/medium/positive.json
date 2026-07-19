@@ -185,7 +185,7 @@
                 "cats_from": ["r_c1", "r_c2"],
                 "cats_to": ["m_c"],
                 "mutual": false,
-                "constraints": ["-dislikes", "-fears", "-begrudges"]
+                "constraints": ["likes", "knows_of", "considers", "relates_to"]
             }
         ],
         "relationship_changes": [
@@ -365,7 +365,7 @@
                 "status": ["kitten"]
             }
         },
-        "relationship_constraints": [
+        "relationship_constraint": [
             {
                 "cats_from": ["m_c"],
                 "cats_to": ["multi_cat"],
@@ -467,7 +467,7 @@
                 "status": ["kitten"]
             }
         },
-        "relationship_constraints": [
+        "relationship_constraint": [
             {
                 "cats_from": ["m_c"],
                 "cats_to": ["multi_cat"],

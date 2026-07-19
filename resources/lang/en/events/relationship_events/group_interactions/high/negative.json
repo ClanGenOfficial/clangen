@@ -360,7 +360,7 @@
                 ]
             }
         },
-        "relationship_constraints": [
+        "relationship_constraint": [
             {
                 "cats_from": ["m_c"],
                 "cats_to": ["r_c1"],
@@ -371,7 +371,7 @@
                 "cats_from": ["m_c"],
                 "cats_to": ["multi_cat"],
                 "mutual": true,
-                "constraints": ["sibling"]
+                "constraints": ["siblings"]
             }
         ],
         "relationship_changes": [
