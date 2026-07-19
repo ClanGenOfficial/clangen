@@ -16465,7 +16465,7 @@
         "poi": {
             "category": "gathering"
         },
-        "event_text": "m_c won't stop asking r_c when it's their turn to join the Gathering at {POI/category/gathering}.",
+        "event_text": "m_c won't stop asking r_c when it's {PRONOUN/m_c/poss} turn to join the Gathering at {POI/category/gathering}.",
         "m_c": {
             "status": [
                 "apprentice"
