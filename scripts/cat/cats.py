@@ -1519,18 +1519,14 @@ class Cat:
 
         chosen_outro = choice(possible_outros)
 
+        outro_entry = {"involved": None, "text": "this should not appear"}
         if chosen_outro:
-            if life_givers:
-                outro_giver_cat = self.fetch_cat(life_givers[-1])
-                outro_giver = outro_giver_cat.ID if outro_giver_cat else None
-            else:
-                outro_giver = None
-            outro_text = choice(chosen_outro["text"])
-        else:
-            outro_text = "this should not appear"
-            outro_giver = None
+            outro_entry["text"] = choice(chosen_outro["text"])
+            outro_giver_cat = self.fetch_cat(life_givers[-1]) if life_givers else None
+            if outro_giver_cat:
+                outro_entry["involved"] = outro_giver_cat.ID
 
-        ceremony_entries.append({"involved": outro_giver, "text": outro_text})
+        ceremony_entries.append(outro_entry)
 
         self.history.lead_ceremony = ceremony_entries
 
