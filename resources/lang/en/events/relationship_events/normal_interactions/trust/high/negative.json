@@ -29,6 +29,10 @@
             "r_c destroys something dear to m_c.",
             "r_c blackmails m_c with one of {PRONOUN/m_c/poss} secrets."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [

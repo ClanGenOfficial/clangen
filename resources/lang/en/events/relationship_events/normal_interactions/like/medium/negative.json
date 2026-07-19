@@ -248,6 +248,10 @@
             "r_c is telling others about how terrible m_c can really be.",
             "r_c leaves as soon as m_c arrives and refuses to be nearby."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [

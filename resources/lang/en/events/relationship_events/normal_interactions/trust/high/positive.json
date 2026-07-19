@@ -61,6 +61,10 @@
             "m_c depends on r_c to back {PRONOUN/m_c/object} up during a debate.",
             "m_c and r_c swap secrets with each other."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [

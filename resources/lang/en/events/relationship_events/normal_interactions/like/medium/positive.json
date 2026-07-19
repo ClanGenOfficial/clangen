@@ -819,6 +819,10 @@
             "m_c stumbles upon r_c looking at the stars with wonder in {PRONOUN/r_c/poss} eyes.",
             "m_c is rethinking how {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} about r_c and gives {PRONOUN/r_c/object} another chance."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
@@ -851,6 +855,10 @@
             "m_c cheers r_c up after a small disagreement.",
             "During one of m_c and r_c's arguments, they both start purring at how petty they're being."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [

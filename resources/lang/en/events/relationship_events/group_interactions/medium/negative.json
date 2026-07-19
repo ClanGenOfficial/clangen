@@ -350,10 +350,15 @@
     {
         "id": "group_multi_negative_groupjealousy",
         "strings": [
-            "m_c gets hit with waves of envy whenever r_c is laughing with multi_cat.",
-            "m_c can't understand why multi_cat like r_c so much.",
-            "m_c wants to spend time with multi_cat, but all of them have plans with r_c."
+            "m_c gets hit with waves of envy whenever r_c1 is laughing with multi_cat.",
+            "m_c can't understand why multi_cat like r_c1 so much.",
+            "m_c wants to spend time with multi_cat, but all of them have plans with r_c1."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "multi_cat": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": ["multi_cat"],

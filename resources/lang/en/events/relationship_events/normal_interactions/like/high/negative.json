@@ -257,6 +257,10 @@
             "m_c doesn't believe r_c is capable of good.",
             "m_c refuses to do any work with r_c."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [

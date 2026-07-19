@@ -59,6 +59,10 @@
             "m_c thinks r_c doesn't seem as annoying as usual.",
             "m_c notices r_c has finally kicked a bad habit."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
@@ -89,6 +93,10 @@
             "m_c clears up a misunderstanding with r_c.",
             "m_c admits that {PRONOUN/m_c/subject} {VERB/m_c/have/has}n't always been patient with r_c."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [

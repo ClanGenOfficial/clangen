@@ -88,6 +88,10 @@
             "m_c sees r_c stumble while hunting and thinks it's cute.",
             "m_c realizes {PRONOUN/m_c/subject} {VERB/m_c/have/has} more than just a crush on r_c."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
@@ -143,6 +147,10 @@
             "m_c can't imagine any cat other than r_c as {PRONOUN/m_c/poss} mate.",
             "m_c can't stop purring when {PRONOUN/m_c/subject} {VERB/m_c/remember/remembers} r_c's laugh."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
@@ -169,6 +177,10 @@
             "m_c thinks no other cat is anywhere near as fun or interesting as r_c.",
             "m_c had a lovely dream about r_c."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [

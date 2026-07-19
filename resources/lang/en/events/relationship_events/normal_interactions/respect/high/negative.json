@@ -61,6 +61,10 @@
             "m_c is complaining that r_c never does anything helpful.",
             "m_c seethes at the thought of r_c succeeding."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
