@@ -77,6 +77,77 @@
         ]
     },
     {
+        "id": "group_3_neg_irrationaljealousy",
+        "strings": [
+            "m_c insists that r_c1 has eyes for r_c2, even though r_c1 denies it.",
+            "Where other cats see a casual friendship between r_c1 and r_c2, m_c is convinced there's something more.",
+            "r_c1 is fed up with m_c's green-eyed accusations and insists {PRONOUN/r_c1/subject} {VERB/r_c1/have/has} no interest in r_c2."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": ["arrogant", "insecure", "vengeful", "competitive"]
+                }
+            },
+            "r_c1": {
+                "age": ["adult"]
+            },
+            "r_c2": {
+                "age": ["adult"]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "constraints": ["mates"],
+                "mutual": true
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "constraints": ["uninterested_only", "likes", "-parent/child", "-littermates", "-siblings"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": true,
+                "values": ["romance"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": -15
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": -15
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "values": ["trust", "respect"],
+                "amount": -15
+            }
+        ]
+    },
+    {
         "id": "muddypaws_multicat_warrior",
         "strings": [
             "m_c tracked a trail of muddy pawprints into the warrior's den, straight through the nests of multi_cat.",
@@ -574,203 +645,11 @@
         ]
     },
     {
-        "id": "group_multicat_neg_gossipingdislike",
-        "strings": [
-            "m_c overhears multi_cat discussing how they dislike m_c."
-        ],
-        "involved_cats": {
-            "m_c": {},
-            "multi_cat": {}
-        },
-        "relationship_constraint": [
-            {
-                "cats_from": ["multi_cat"],
-                "cats_to": ["m_c"],
-                "mutual": false,
-                "constraints": [
-                    "dislikes"
-                ]
-            }
-        ],
-        "relationship_changes": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "multi_cat"
-                ],
-                "mutual": false,
-                "values": [
-                    "like", "comfort"
-                ],
-                "amount": -10
-            },
-            {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "multi_cat"
-                ],
-                "mutual": false,
-                "values": [
-                    "like", "comfort"
-                ],
-                "amount": 5
-            }
-        ]
-    },
-    {
-        "id": "group_multicat_neg_gossipingavoids",
-        "strings": [
-            "m_c overhears multi_cat discussing how they feel uncomfortable around m_c."
-        ],
-        "involved_cats": {
-            "m_c": {},
-            "multi_cat": {}
-        },
-        "relationship_constraint": [
-            {
-                "cats_from": ["multi_cat"],
-                "cats_to": ["m_c"],
-                "mutual": false,
-                "constraints": [
-                    "avoids"
-                ]
-            }
-        ],
-        "relationship_changes": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "multi_cat"
-                ],
-                "mutual": false,
-                "values": [
-                    "like", "comfort"
-                ],
-                "amount": -10
-            },
-            {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "multi_cat"
-                ],
-                "mutual": false,
-                "values": [
-                    "like", "comfort"
-                ],
-                "amount": 5
-            }
-        ]
-    },
-    {
-        "id": "group_multicat_neg_gossipingfears",
-        "strings": [
-            "m_c overhears multi_cat discussing how they need to do something about m_c's presence in the Clan."
-        ],
-        "involved_cats": {
-            "m_c": {},
-            "multi_cat": {}
-        },
-        "relationship_constraint": [
-            {
-                "cats_from": ["multi_cat"],
-                "cats_to": ["m_c"],
-                "mutual": false,
-                "constraints": [
-                    "fears"
-                ]
-            }
-        ],
-        "relationship_changes": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "multi_cat"
-                ],
-                "mutual": false,
-                "values": [
-                    "like", "comfort"
-                ],
-                "amount": -15
-            },
-            {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "multi_cat"
-                ],
-                "mutual": false,
-                "values": [
-                    "like", "comfort"
-                ],
-                "amount": 5
-            }
-        ]
-    },
-    {
-        "id": "group_multicat_neg_gossipinghates",
-        "strings": [
-            "m_c overhears multi_cat discussing how they could drive m_c out of the Clan."
-        ],
-        "involved_cats": {
-            "m_c": {},
-            "multi_cat": {}
-        },
-        "relationship_constraint": [
-            {
-                "cats_from": ["multi_cat"],
-                "cats_to": ["m_c"],
-                "mutual": false,
-                "constraints": [
-                    "hates"
-                ]
-            }
-        ],
-        "relationship_changes": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "multi_cat"
-                ],
-                "mutual": false,
-                "values": [
-                    "like", "comfort"
-                ],
-                "amount": -15
-            },
-            {
-                "cats_from": [
-                    "multi_cat"
-                ],
-                "cats_to": [
-                    "multi_cat"
-                ],
-                "mutual": false,
-                "values": [
-                    "like", "comfort"
-                ],
-                "amount": 5
-            }
-        ]
-    },
-    {
         "id": "group_multicat_friendlydebatesoured",
         "strings": [
-            "m_c, multi_cat's friendly debate over their favorite colors soured when m_c took it too seriously.",
-            "m_c, multi_cat's friendly debate over their favorite season soured when m_c took it too seriously.",
-            "m_c, multi_cat's friendly debate over their favorite fresh-kill soured when m_c took it too seriously."
+            "m_c, multi_cat's friendly debate over their favorite colors sours when m_c takes it too seriously.",
+            "m_c, multi_cat's friendly debate over their favorite season sours when m_c takes it too seriously.",
+            "m_c, multi_cat's friendly debate over their favorite fresh-kill sours when m_c takes it too seriously."
         ],
         "involved_cats": {
             "m_c": {
@@ -874,6 +753,431 @@
                 "mutual": false,
                 "values": ["like", "comfort"],
                 "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "group_3_neg_parentsarguekit",
+        "strings": [
+            "m_c and r_c1 argue over whose fault r_c2's recent bad behavior is.",
+            "r_c2 hides in {PRONOUN/r_c2/poss} nest in the nursery while m_c and r_c1 argue.",
+            "r_c2's bad behavior puts a strain on m_c and r_c1's coparenting."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "trait": ["unruly", "bossy", "bullying", "attention-seeker", "impulsive", "noisy"]
+                }
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c", "r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["parent/child"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": true,
+                "values": ["like", "trust"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["m_c", "r_c1"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "id": "group_3_neg_badkitsitter",
+        "strings": [
+            "m_c chews r_c1 out when {PRONOUN/r_c1/subject} {VERB/r_c1/wander/wanders} off while {PRONOUN/r_c1/subject} {VERB/r_c1/were/was} supposed to be watching r_c2.",
+            "m_c isn't happy to find r_c1 letting r_c2 run wild.",
+            "m_c scolds r_c1 for doing a poor job of kitsitting r_c2."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {
+                "stat": {
+                    "skill": ["-KIT,0"]
+                },
+                "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"]
+            },
+            "r_c2": {
+                "status": [
+                    "kitten"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["parent/child"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["like", "trust"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["comfort", "like"],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "group_3_neg_bystanderseesscolding",
+        "strings": [
+            "m_c feels uncomfortable hearing how sharply r_c1 scolds r_c2.",
+            "r_c1 shouts at r_c2 so loudly that m_c hears it from across the camp.",
+            "m_c thinks r_c1 is too harsh on r_c2."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["-kitten"],
+                "health": {
+                    "condition": ["-deaf"]
+                }
+            },
+            "r_c1": {
+                "stat": {
+                    "trait": ["-calm", "-wise", "-compassionate"]
+                }
+            },
+            "r_c2": {
+                "status": [
+                    "kitten", "apprentice"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["parent/child"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["like", "trust"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["comfort", "like"],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "group_3_neg_mamabear",
+        "strings": [
+            "r_c1 snarls at m_c for speaking too sharply to {PRONOUN/r_c1/poss} kit, r_c2.",
+            "r_c1 intervenes when m_c rebukes r_c2 and tells {PRONOUN/m_c/object} to be gentler with {PRONOUN/r_c1/poss} kit.",
+            "m_c thinks twice before scolding r_c2, knowing how protective r_c1 can be."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["-kitten", "-apprentice", "-medicine cat apprentice", "-mediator apprentice"]
+            },
+            "r_c1": {},
+            "r_c2": {
+                "status": [
+                    "kitten", "apprentice"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["parent/child"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["comfort", "like"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "id": "group_3_neg_badrolemodel",
+        "strings": [
+            "r_c1 doesn't like m_c visiting the nursery; {PRONOUN/r_c1/subject} {VERB/r_c1/think/thinks} {PRONOUN/m_c/subject} {VERB/m_c/set/sets} a bad example for r_c2.",
+            "r_c2 has learned some very bad words recently, and r_c1 suspects that m_c is the one who taught them to {PRONOUN/r_c2/object}.",
+            "r_c2 won't stop calling everyone a fox-heart, and r_c1 blames m_c for teaching {PRONOUN/r_c2/object} that word.",
+            "r_c2 won't stop calling everything a load of fox-dung, and r_c1 blames m_c for teaching {PRONOUN/r_c2/object} that word.",
+            "r_c1 scolds m_c for being a bad influence on r_c2. When {PRONOUN/r_c1/subject} {VERB/r_c1/turn/turns} {PRONOUN/r_c1/poss} back, m_c winks at r_c2."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": ["troublesome", "rebellious", "charismatic", "cunning", "childish", "playful"]
+                }
+            },
+            "r_c1": {
+                "stat": {
+                    "trait": ["-childish"]
+                }
+            },
+            "r_c2": {
+                "status": [
+                    "kitten"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["parent/child"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": -5
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like", "respect"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["m_c"],
+                "mutual": true,
+                "values": ["comfort", "like"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "id": "group_3_neg_appinterferingwithromance",
+        "strings": [
+            "m_c is sad that r_c1 doesn't spend as much time with {PRONOUN/m_c/object} since {PRONOUN/r_c1/subject} started training r_c2.",
+            "m_c feels like r_c1 is neglecting their relationship because {PRONOUN/r_c1/subject}{VERB/r_c1/'re'/s} too busy training r_c2.",
+            "m_c can't wait until r_c2's training is over so m_c can have r_c1 all to {PRONOUN/m_c/self} again.",
+            "m_c sometimes wishes r_c2 had a different mentor so r_c1 wouldn't be so busy all the time.",
+            "m_c plans to spend a special day with r_c1, but it coincides with one of r_c2's assessments, so r_c1 apologizes and cancels on m_c."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {
+                "status": [
+                    "apprentice", "mediator apprentice", "medicine cat apprentice"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["mentor/app"]
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "mutual": true,
+                "constraints": ["mates"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["romance"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "group_3_neg_hatetheinlaws1",
+        "strings": [
+            "m_c's overt disdain for r_c1's parent, r_c2, is starting to put a strain on their relationship.",
+            "r_c1 wishes m_c would get along better with r_c2.",
+            "r_c1 tries to change m_c's mind about r_c2."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["hates"]
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "mutual": true,
+                "constraints": ["mates"]
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["child/parent", "likes"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": true,
+                "values": ["romance"],
+                "amount": -15
+            }
+        ]
+    },
+    {
+        "id": "group_3_neg_hatetheinlaws2",
+        "strings": [
+            "m_c's overt disdain for r_c1's littermate, r_c2, is starting to put a strain on their relationship.",
+            "r_c1 wishes m_c would get along better with r_c2.",
+            "r_c1 tries to change m_c's mind about r_c2.",
+            "r_c1 wishes {PRONOUN/r_c1/subject} could spend time with {PRONOUN/r_c1/poss} mate and littermate at the same time without r_c2 and m_c sniping at each other."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["hates"]
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "mutual": true,
+                "constraints": ["mates"]
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": true,
+                "constraints": ["littermates", "likes"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": true,
+                "values": ["romance"],
+                "amount": -15
+            }
+        ]
+    },
+    {
+        "id": "group_3_neg_hatethebestie",
+        "strings": [
+            "m_c's overt disdain for r_c1's best friend, r_c2, is starting to put a strain on their relationship.",
+            "r_c1 wishes m_c would get along better with r_c2.",
+            "r_c1 tries to change m_c's mind about r_c2.",
+            "r_c1 wishes {PRONOUN/r_c1/subject} could spend time with {PRONOUN/r_c1/poss} mate and best friend at the same time without r_c2 and m_c sniping at each other."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["hates"]
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "mutual": true,
+                "constraints": ["mates"]
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": true,
+                "constraints": ["-littermates", "-parent/child", "-mates", "cherishes", "relates_to"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": true,
+                "values": ["romance"],
+                "amount": -15
             }
         ]
     }
