@@ -76,25 +76,57 @@ class TestPatrolCats(unittest.TestCase):
         )
 
 
-# check that involved cats are found correctly - both for base and for outcome
+class TestInvolvedCats(unittest.TestCase):
+    def setUp(self):
+        game.clan = Clan("test")
+        game.clan.biome = "Forest"
+        game.clan.override_biome = False
+        game.clan.camp_bg = "camp1"
+        game.clan.starting_season = "Newleaf"
+        game.clan.game_mode = "classic"
+
+        self.patrol_class = Patrol()
+
+    # test p_l found
+    def test_overall_pl(self):
+        war1 = create_cat(rank=CatRank.WARRIOR)
+        war2 = create_cat(rank=CatRank.WARRIOR)
+        app = create_cat(rank=CatRank.APPRENTICE)
+
+    # test r_c found (and is not p_l)
+
+    # test n_c found
+
+    # test outcome p_l is also overall p_l
+
+    # test s_c can be p_l
+
+    # test s_c CANNOT be a certain cat
 
 
-# check that in a list of given outcomes, only possible ones are allowed
+class TestOutcomeExecution(unittest.TestCase):
+    def setUp(self):
+        game.clan = Clan("test")
+        game.clan.biome = "Forest"
+        game.clan.override_biome = False
+        game.clan.camp_bg = "camp1"
+        game.clan.starting_season = "Newleaf"
+        game.clan.game_mode = "classic"
 
+        self.patrol_class = Patrol()
 
-# check outcome execution
-# check joining clan
+    # check joining clan
 
-# check dying
+    # check dying
 
-# check getting lost
+    # check getting lost
 
-# check gaining condition
+    # check gaining condition
 
-# check reputation changing
+    # check reputation changing
 
-# check supply changing
+    # check supply changing
 
-# check exp increasing
+    # check exp increasing
 
-# check mentor app influence applying
+    # check mentor app influence applying
