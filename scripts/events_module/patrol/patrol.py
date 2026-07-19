@@ -702,11 +702,28 @@ class Patrol:
 
             # otherwise, check if this abbr wants to replace an existing one!
             elif constraints.get("prior_abbreviation"):
-                possible_cats = [
-                    self.involved_cats.get(_a)
-                    for _a in constraints["prior_abbreviation"]
+                # check for exclusionary status
+                is_exclusionary = any(
+                    value.find("-") == 0 for value in constraints["prior_abbreviation"]
+                )
+                # now grab the "clean" abbreviations
+                prior_abbreviations = [
+                    a.replace("-", "") for a in constraints["prior_abbreviation"]
                 ]
+                # find all the cats that were listed in the abbreviations
+                abbr_cats = [self.involved_cats.get(_a) for _a in prior_abbreviations]
+                # if it's meant to be exclusionary, then possible_cats will be all cats not in abbr_cats
+                if is_exclusionary:
+                    possible_cats = [
+                        c
+                        for c in self.involved_cats["patrol_cats"]
+                        if c not in abbr_cats
+                    ]
+                # otherwise it's just abbr_cats
+                else:
+                    possible_cats = abbr_cats
 
+                # now we find out if any of these possible cats will work for the patrol
                 for c in possible_cats:
                     if not c:
                         continue
