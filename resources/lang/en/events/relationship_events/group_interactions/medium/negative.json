@@ -70,6 +70,7 @@
             "m_c thinks r_c2 shouldn't tell such graphic stories of battle, but r_c1 is listening raptly."
         ],
         "involved_cats": {
+            "m_c": {},
             "r_c1": {
                 "stat": {
                     "trait": [
