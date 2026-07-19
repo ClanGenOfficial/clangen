@@ -105,7 +105,7 @@
         "auto_feed": "auto feed",
         "feeding_order": "<b>Feeding Order</b>",
         "priority": "<b>Prioritize</b>",
-        "freshkill_help_tooltip": "The Clan will catch some amount of prey over each timeskip, but successful hunting patrols are the most important source of freshkill. Freshkill can't be stored endlessly: after four moons, prey will rot and will be discarded. Cats under 3 moons with a parent (queen) taking care of them won't need food. Cats will only display here if their hunger status is less than stuffed!<br><br>Ranks are fed in the following order, from lowest to highest. Each rank lists how much prey they will need for a moon.",
+        "freshkill_help_tooltip": "The Clan will catch some amount of prey over each timeskip, but successful hunting patrols are the most important source of freshkill. Freshkill can't be stored endlessly: after three moons, prey will rot and will be discarded. Cats under 3 moons with a parent (queen) taking care of them won't need food. Cats will only display here if their hunger status is less than stuffed!<br><br>Ranks are fed in the following order, from lowest to highest. Each rank lists how much prey they will need for a moon.",
         "nutrition_text": "nutrition: %{nutrition_text}",
         "freshkill_pile_tooltip": "<b>Current amount:</b> %{current_prey_amount} pieces  -  <b>Needed amount:</b> %{needed_amount} pieces",
         "no_hungry_cats": "No cats are in need of food.",
