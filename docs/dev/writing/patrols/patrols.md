@@ -1,0 +1,679 @@
+# Patrols
+
+## Guidelines
+When considering patrols, keep in mind challenge vs reward. That isn't to say certain patrol events should necessarily be locked behind certain patrol sizes, but try to imagine what a group of cats that size would do in a given situation, and how likely it would be for them to succeed in whatever it is they're trying to do. If making large size and small sized variants of the same patrol, it's encouraged to give different outcomes even if the success chance is the same for both variants. For example, 6 cats have very different options for dealing with an owl than 2 cats do.
+
+!!! todo "TODO"
+    add some guidelines here for success chance, just an idea of number baselines compared to the current patrol spread
+
+
+## Usable Cat References
+
+| abbreviation | use                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `p_l`        | The patrol leader: the cat in the patrol with the highest relevant rank and, within involved cats of that rank, is either the oldest or the most experienced.  For medicine cat patrols, this will either be a medicine cat or medicine cat apprentice. For normal patrols, this will go from the highest to lowest rank (leader > deputy > warrior > apprentice).                                                                                                       |
+| `r_c`        | A random cat: this cat is chosen at complete random and will not be the patrol leader. You can specify constraints on this cat to require it to have certain attributes rather than being entirely random.                                                                                                                                                                                                                                                               |
+| `r_c#`       | An additional random cat: this cat is chosen at complete random and will not be the patrol leader. You can specify constraints on this cat to require it to have certain attributes rather than being entirely random. The `#` is replaced with a number: 1-4. It's recommended to begin at 1 and increment as needed.                                                                                                                                                   |
+| `s_c`        | A special cat: this cat has some constraints being required of it and could be a cat who was previously assigned an abbreviation. For example, if the patrol as a whole requires `r_c` to be a warrior and you wish to add an outcome in which any cat with the `calm` trait, including `r_c`, could also play a role, then you would use `s_c` for that cat.                                                                                                            |      
+| `s_c#`       | An additional special cat: this cat has some constraints being required of it and could be a cat who was previously assigned an abbreviation. For example, if the patrol as a whole requires `r_c` to be a warrior and you wish to add an outcome in which any cat with the `calm` trait, including `r_c`, could also play a role, then you would use `s_c` for that cat.The `#` is replaced with a number: 1-5. It's recommended to begin at 1 and increment as needed. |                                                                                                                                                                                                                                                                                 |
+| `n_c:#`      | A newly generated or existing outsider/other clan cat: The `#` is replaced with a number: 0-6. It's recommended to begin at 0 and increment as needed.                                                                                                                                                                                                                                                                                                                   |
+
+
+## Formatting
+
+!!! tip
+    If you are new to patrol writing, I recommend going through the [Full Featured Patrol Example](#full-featured-patrol-example) line by line and reading the following parameter explanations as you do.
+
+    Likewise, before beginning, be sure to at least read the first section of [Coding Terms for Writers to Know](reference/terminology.md#coding-terms-for-writers-to-know). This explains much of the terminology used here.
+
+### Minimum Required
+>The smallest amount of information you're required to include in this format. 
+
+
+```json
+{
+    "id": "test",
+    "types": [],
+    "frequency": 4,
+    "required_cat_types": {
+        "patrol_cats": [1, 6]
+    },
+    "chance_of_success": 100,
+    "patrol_art": "art.png",
+    "patrol_art_clean": "pleasant_art.png",
+    "intro_text": "Patrol heads out to do some-such.",
+    "decline_text": "Patrol turns around",
+    "success_outcomes": [
+        TextPoolEvent
+    ],
+    "fail_outcomes": [
+        TextPoolEvent
+    ],
+}
+```
+
+### Full Format
+
+```json
+{
+    "id": "test",
+    "types": [],
+    "frequency": 4,
+    "location": [],
+    "season": [],
+    "tags": [],
+    "poi": {},
+    "required_cat_types": {
+        "patrol_cats": [1, 6]
+    },
+    "involved_cats": {
+            "p_l": {
+                "status": [],
+                "past_status": [],
+                "age": [],
+                "standing": {
+                    "group": [],
+                    "currently": [],
+                    "past": []
+                  },
+                "stat": {
+                    "skill": [],
+                    "trait": [],
+                    "must_have_both": false
+                },
+                "health": {
+                    "working": true,
+                    "condition": [],
+                    "must_be_congenital": false,
+                    "must_be_acquired": false
+                },
+                "backstory": []
+            },
+    },
+    "relationship_constraint": [
+            {
+                "cats_from": [],
+                "cats_to": [],
+                "mutual": false,
+                "constraints": []
+            }
+        ],
+    "chance_of_success": 100,
+    "patrol_art": "art.png",
+    "patrol_art_clean": "pleasant_art.png",
+    "intro_text": "Patrol heads out to do some-such.",
+    "decline_text": "Patrol turns around",
+    "success_outcomes": [
+        TextPoolEvent
+    ],
+    "fail_outcomes": [
+        TextPoolEvent
+    ],
+    "antag_success_outcomes": [
+        TextPoolEvent
+    ],
+    "antag_fail_outcomes": [
+        TextPoolEvent
+    ],
+}
+```
+
+***
+
+#### id:str
+> The id is a unique string used to identify the patrol. It does not affect patrol behavior, but it allows us to easily find patrols.
+
+> An id is formatted as following: `biome_type_enemy_seasondescription#`, enemy and season are optional (some patrols do not have a specific enemy or season), # is a number at the end of the descriptive section starting at 1 and incrementing up as you create new versions of that patrol. 
+
+>- If you are making new_cat or other_clan patrols, please include if the patrol is hostile/neutral/welcoming or hostile/neutral/allies in the ID
+>- If the patrol is under some kind of constraint, like being skill locked or relationship locked, please indicate that in the ID 
+
+| Abbreviations |      Meaning                     |
+|---------------|----------------------------------|
+| mtn           | appears in the mountainous biome |
+| pln           | appears in the plains biome      |
+| fst           | appears in the forest biome      |
+| bch           | appears in the beach biome       |
+| wtlnd         | appears in the wetlands biome    |
+| dst           | appears in the desert biome      |
+| gen           | appears in any biome             |
+| hunt          | hunting type patrol              |
+| bord          | border type patrol               |
+| train         | training type patrol             |
+| med           | herb gathering type patrol       |
+
+Example:
+>`fst_hunt_foxgray_leafbarescavenge_huntinglocked3` is a hunting patrol in the forest biome, involves a gray fox, and takes place in leafbare. The word scavenge tells us it's about a gray fox scavenging something, huntinglocked indicates it's locked behind p_l having the hunting skill, and 3 tells us it is the third variant of this patrol that exists in the game. 
+
+How to make sure your patrol_id is unique:
+> ctrl (or command) + f through the .json file you're writing the patrol into. As each patrol_id contains the biome & type within it and we have different jsons for different biomes/patrol types/seasons, if your potential patrol_id isn't in the json already, your patrol_id will be unique.
+
+!!! caution
+    No NSFW patrol_ids. No exceptions.
+
+
+***
+
+#### types: list[str]
+> This controls the type of patrol
+
+| string           |                                          |
+|------------------|------------------------------------------|
+| "hunting"        | hunting patrol                           |
+| "herb_gathering" | herb_gathering (ie, medicine cat) patrol |
+| "border"         | border patrol                            |
+| "training"       | training patrol                          |
+
+**Differences between the types** 
+> Training patrols are an easy difficulty for [success chance](#chance-of-success-int), but the lowest with regards to [exp reward](#exp-int). They are a relatively safe patrol type of low danger, and the [injuries](#injury-listdictstr-various) cats can obtain on them should either be rare (low weighed outcome), or minor. Training patrols have high [relationship rewards](#relationships-listdictstr-various).
+
+> Hunting patrols are of moderate difficulty for [success chance](#chance-of-success-int).  Hunting patrols are subject to [extra filtering](../advanced-documentation.md) that effects what patrols are available based on their [prey reward](#prey-liststr). This filtering ensures that we cannot starve out the player's cats simply by adding too many patrols that give out a certain prey reward. Hunting patrols are of medium danger, and the [injuries](#injury-listdictstr-various) cats can obtain on them should either be minor and common (high frequency outcome), moderate and of a mid frequency, or severe and of a low frequency. The same guidelines apply to [killing cats](#dead_cats-liststr) on this patrol type. Hunting patrols should have only minor [relationship rewards](#relationships-listdictstr-various) (less than 5) unless the hunting patrol text focuses on the relationship, e.g a warrior and a apprentice hunting together with the warrior teaching the apprentice.
+
+> Border patrols needs to be the hardest and most dangerous, with a high difficulty for [success chance](#chance-of-success-int).  This is where experienced cats should shine! The [injuries](#injury-listdictstr-various) cats can obtain on them should be a wide range. Failure outcomes on border patrols that don't cause injury should be rare. You are encouraged to apply minor injuries even on success outcome. The same guidelines apply to [killing cats](#dead_cats-liststr) on this patrol type, with the exception that you cannot kill cats on any success outcomes. This is by far the mostly likely patrol type to have cats become [lost](#lost_cats-liststr) on.
+
+> Herb gathering patrols are of moderate difficulty for [success chance](#chance-of-success-int) (like hunting patrols). Herb gathering patrols are focused on gathering herbs and thus need to have a [herb reward](#herbs-liststr) under most circumstances. Herb gathering patrols are of medium danger, and the [injuries](#injury-listdictstr-various) cats can obtain on them should either be minor and common (high frequency outcome), moderate and of a mid frequency, or severe and of a low frequency. The same guidelines apply to [killing cats](#dead_cats-liststr) on this patrol type. Herb gathering patrols should be highly seasonal, as not all herbs are available in all seasons, or in the same seasons in different [biomes](../reference/biomes.md). 
+
+> The subtypes of [new_cat](#outsider_rep) and [other_clan](#other_clan_rep) patrols should primarily use the type specific success, danger, injuries, death, and rewards of whatever the primary patrol type is. For example, use the success chance for herd gathering patrols if your medicine cat finds an injured kitten. However, a subtype is more likely to move away from the 'normal' setting for that type of patrol as they are by definition unusual examples of that patrol type. Brainstorm with other developers!
+
+
+!!! tip
+    There are two further subtypes of patrols which occur as isolated events within the four main types. These are other_clan and new_cat patrols. Other clan patrols deal with the Clans neighboring the player Clan and are discussed [here](#other_clan_rep). New cat patrols deal with patrols where a new cat joins the player Clan. The chance of finding a new_cat patrol is discussed [here](#outsider_rep), the new_cat tag is discussed [here](#tags-liststr), and the code to generate a new_cat is discussed [here](#new_cat-listliststr). A patrol is firstly one of the four types, e.g herb gathering, and then can also be a other_clan or new_cat (or both!) patrol in addition to the four basic types. 
+
+
+***
+
+#### frequency: int
+>Controls how common a patrol is. This works on a 1-4 scale. 
+
+| int | commonality |
+|-----|-------------|
+| 1   | Very Rare   |
+| 2   | Rare        |
+| 3   | Uncommon    |
+| 4   | Common      |
+
+!!! tip
+    It's good to consider frequency as relative to that patrol's set up.  While players likely aren't sending out a patrol of 2 apprentices every moon, that doesn't mean a 2-app patrol event should be marked as Rare frequency. Rather, consider it in terms of "in 10 *instances* of this patrol set up, how often should this specific patrol appear?". Seeing this sort of patrol in 4/10 instances would mean it's a common event! Seeing it just once within those 10 instances would mean it's a very rare event.
+
+!!! warning
+    Don't try to boost a patrol's frequency to make up for it being heavily constrained! While we used to do that with our old system, the new code automatically decides how to weight a patrol according to its constraints in a way that is completely divorced from the frequency. We decide event rarities and the code decides if events should be prioritized in specific instances.
+
+
+***
+
+#### location:list[str]
+This controls the biome and camp the event appears in. [Tagging Instructions](../reference/tag-lists.md#locations)
+
+***
+
+#### season: list[str]
+List of seasons in which the event may occur. You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
+You can tag with a mix of "newleaf", "greenleaf", "leaf-fall", "leaf-bare", or remove the parameter altogether to allow for any season.
+
+***
+
+#### tags: list[str]
+>Tags are used for some filtering purposes, and some odd-and-ends. Tags never affect outcome. [General Tags](../reference/tag-lists.md#general-tags).
+
+***
+
+#### poi: Dict
+> [POI Constraint Tagging](points-of-interest.md/#using-points-of-interest)
+
+***
+
+#### required_cat_types: Dict[str, List[int]]
+>Optional. Allows specification of the minimum and maximum number of specific types of cats that are allowed on the patrol, as well as the general number of cats allowed in the patrol. The format for each dictionary entry is 
+>
+>`"status_type": [min_value, max_value]`
+>
+>To specify that a type of cat can't be on the patrol, use [-1, -1]
+
+| status types                |                                                               |
+|-----------------------------|---------------------------------------------------------------|
+| `"patrol_cats"`             | Amount of cats allowed in the patrol.                         |
+| `"medicine cat"`            | Amount of medicine cats (not including apprentices)           |
+| `"warrior"`                 | Amount of warriors (not including leader or deputy)           |
+| `"leader"`                  | Amount of leaders                                             |
+| `"deputy"`                  | Amount of deputies                                            |
+| `"apprentice"`              | Amount of warrior apprentices                                 |
+| `"medicine cat apprentice"` | Amount of medicine cat apprentices                            |
+| `"healer cats"`             | Amount of medicine cats and medicine cat apprentices combined |
+| `"normal adult"`            | Amount of warriors, leaders and deputies                      |
+| `"all apprentices"`         | Amount of warrior apprentices and medicine cat apprentices.   |
+
+!!! warning
+    You *must* at least specify `patrol_cats`.
+
+***
+
+#### involved_cats: Dict[str, var]
+This dictionary holds all constraints for the cats whom we wish to reference in the patrol.
+
+Each entry is an individual cat, with the key being their [event designation](#usable-cat-references) (`r_c`, `p_l`, etc.) and the value being their personal constraints.
+
+```json
+            "abbr": {
+                "status": [],
+                "past_status": [],
+                "age": [],
+                "standing": {
+                    "group": [],
+                    "currently": [],
+                    "past": []
+                  },
+                "stat": {
+                    "skill": [],
+                    "trait": [],
+                    "must_have_both": false
+                },
+                "health": {
+                    "working": true,
+                    "condition": [],
+                    "must_be_congenital": false,
+                    "must_be_acquired": false
+                },
+                "backstory": []
+            }
+```
+
+**Specifying an outsider or other clan cat**
+If you would like to include an outsider or other clan cat, you can specify them using the `n_c:#` designation and some additional parameters.
+
+If the outsider/other_clan cat can be newly generated rather than having to utilize an existing cat, you can add the `can_create_new_cat` parameter.
+```json
+    "can_create_new_cat": {
+        "become_litter": false,
+        "assign_blood_parent": [],
+        "assign_adoptive_parent": [],
+        "assign_mate": []
+    }
+```
+> **`become_litter`** - True will generate a 2-5 litter of kittens rather than a single cat. This means the abbreviation for this litter should not be used within the text of the event, since they have no singular name or pronoun.
+> **`assign_blood_parent`** - List of designations for cats who will become this cat's blood parents. These cats must have already been specified prior in `involved_cats`.
+> **`assign_adoptive_parent`** - List of designations for cats who will become this cat's adoptive parents. These cats must have already been specified prior in `involved_cats`.
+> **`assign_mate`** - List of designations for cats who will become this cat's mates. These cats must have already been specified prior in `involved_cats`.
+
+**status: list[str]**
+>Constrains the event to only happen if the cat holds a certain role. You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
+
+> [Status Tag List](../reference/tag-lists.md#__tabbed_2_2)
+> 
+> You can also remove the parameter to allow the event to occur for all roles except "newborns", who are only allowed if specifically tagged as such.
+
+***
+
+**past_status: list[str]**
+>Constrains the event to only happen if the cat held a certain role in the past. You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
+
+> [Status Tag List](../reference/tag-lists.md#__tabbed_2_2)
+
+***
+**age: list[str]**
+>Constrains the event to only occur if the cat is within a certain age group. You can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
+
+> [Age Tag List](../reference/tag-lists.md#__tabbed_2_1)
+> 
+> You can also remove the parameter to allow the event to occur for all ages except "newborns", who are only allowed if specifically tagged as such.
+
+***
+
+**standing: dict[str: var]**
+>Constrains the event to only happen if the cat matches with the dictated group standings. A group standing is the relationship between a cat and a group, for example: if they are an exile or lost.
+
+```json
+    "standing": {
+        "group": [],
+        "currently": [],
+        "past": []
+      },
+```
+>**`"group"`** - the group we are checking the cat's standing with. you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags). tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to qualify against *one* of the groups. [possible group tags.](../reference/tag-lists.md#groups). You should not try to tag `no_group`.
+
+>**`"currently"`** - the standing the cat should currently possess with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have *one* of the standings. [possible standing tags.](../reference/tag-lists.md#standings)
+
+>**`"past"`** - standings the cat used to have with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have had *one* of the standings. [possible standing tags.](../reference/tag-lists.md#standings)
+
+!!! warning
+    Keep in mind that currently the only cats who receive and are included in relationship events are player Clan cats. Cats currently outside the Clan cannot be part of an event. `standing` can still be constrained for in the context of a cat who *used* to be lost, exiled, etc.
+
+***
+
+
+**stat: dict[str: list]**
+> Constrains the event to only occur if the cat holds specific skills or traits. You can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
+
+```json
+    "stat": {
+        "skill": [],
+        "trait": [],
+        "must_have_both": false
+    },
+```
+>**`"skill"`** - list of allowed skills from [Skill Tag List](../reference/tag-lists.md#__tabbed_3_1)
+> 
+> **`"trait"`** - list of allowed traits from [Trait Tag List](../reference/tag-lists.md#__tabbed_3_2)
+> 
+> **`"must_have_both"`** - defaults to `false`. if set to `true`, the cat's trait *and* skills must qualify. if `false`, the cat must have *either* a listed trait or a listed skill.
+
+***
+
+**health: dict[str: var]**
+> Constrains the event to only occur if the cat's health matches the constraints.
+ 
+```json
+    "health": {
+        "working": true,
+        "condition": [],
+        "must_be_congenital": false,
+        "must_be_acquired": false
+    }
+```
+> **`"working"`** - by default, this is always set to `true`. if set to `false`, the cat can't be a working cat (aka, they are currently disabled by a condition of some kind)
+
+> **`"condition`** - a list of conditions that the cat must have *at least* one of. if any condition is allowed, use `"any"`. supports [exclusionary tags](../reference/tag-lists.md#exclusionary-tags). check [illness](reference/tag-lists.md/#__tabbed_1_3), [injury](../reference/tag-lists.md#__tabbed_1_2), and [permanent condition](../reference/tag-lists.md#__tabbed_1_4) references for lists of current condition possibilities.
+
+> **`"must_be_congenital"`** - by default, this is always set to `false`. if set to `true`, the cat must have been born with a permanent condition listed in the `condition`.
+
+> **`"must_be_acquired"`** - by default, this is always set to `false`. if set to `true`, the cat must have acquired a permanent condition listed in `condition` later in life.
+
+!!! warning
+    `must_be_congenital` and `must_be_acquired` naturally conflict with each other. Be careful not to set both of them to `true`, else they won't behave correctly.
+
+!!! note
+    Be careful when specifying `must_be_congenital`. If you force a condition to be congenital when it can never generate as such, the event will never trigger! The same also applies for forcing a condition to be non-congenital when it is always generated as such.
+
+***
+
+**backstory:list**
+>Constrains the event to only occur if the cat has a listed backstory. To find what each backstory describes, you can find more by going to `resources/lang/en/cat/backstories.en.json`.  You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
+
+> [Backstory Tag List](../reference/tag-lists.md#backstories)
+
+***
+
+#### relationship_constraint: list[dict]
+Constrains the event to only occur is the specified relationships exist. Multiple dictionary blocks can be added to specify multiple required configurations of relationships.
+```json
+        "relationship_constraint": [
+            {
+                "cats_from": [],
+                "cats_to": [],
+                "mutual": false,
+                "constraints": []
+            }
+        ]
+```
+**cats_from:list**
+>The cats from whom the relationship originates. Use the designations (`p_l`, `r_c`, etc.) of cats listed in `involved_cats`.
+
+**cats_to:list**
+>The cats who are the target of the relationship. Use the designations (`p_l`, `r_c`, etc.) of cats listed in `involved_cats`.
+
+***
+
+#### chance of success: int
+>Control the chance for a patrol to succeed. Not an exact chance, since there are a lot of other factors (exp, skills, number of cats on the patrol) that affect the chance. Still, a higher number here indicates a higher chance to succeed. For a full explanation of how the game calculated success chance, check the [advanced documentation for success chance](advanced-documentation.md/#success-chance-calculation).
+
+> You do not need to adjust the success chance for different patrol sizes.  The success rate for a solo cat patrol should match its full patrol size variation.  Remember that each cat added to a patrol buffs its success chance, we don't need to give them any extra help.
+
+> The rarer the patrol, the more you should feel comfortable differing from these guidelines. Factors that make patrols rarer are [frequency](#frequency-int), and the amount of constraints that cats must qualify for.
+
+> For medicine cat patrols that involve 'magic', such as ghosts, StarClan, the Dark Forest, or anything else unnatural, you should not automatically use the default medicine success values. Instead, consult an experienced writer for adjusting your chance of success.
+
+> Border patrols gain most of their danger not necessarily from an increased chance of failing, but from worse consequences being associated with their failure (death, massive injury). However, border patrols also tend to be more varied in their chance of success than most patrol types, with both extremely safe and extremely risky patrols present in the patrol pool. You are both welcome and encouraged to adjust the chance of success away from the default values.
+
+> Tiri has made default success chances to work from for the general [non biome specific patrols](#default-success-any-biome), for [beach](#default-success-beach), for [desert](#default-success-desert), for [forest](#default-success-forest), for [mountains](#default-success-mountainous), for [plains](#default-success-plains), and for [wetlands](#default-success-wetlands).
+
+
+
+##### Default Success Any Biome:
+
+> This section covers the chance of success for the patrols that are general to any biome and season, in the resources/dicts/patrols/general folder, for border, hunting, medcat, and training. Therefore all these patrols do not have a chance of success that varies with the seasons.
+
+| Patrol type             | Success chance         |
+|-------------------------|------------------------|
+| border                  | 40                     |
+| hunting                 | 50                     |
+| herb_gathering          | 50                     |
+| training                | 60                     |
+
+
+
+##### Default Success Beach:
+
+| Season                        | Patrol type              | Success chance           |
+|-------------------------------|--------------------------|--------------------------|
+| Non-seasonal default          | training                 | 60                       |
+| greenleaf                     | training                 | 65                       |
+| leaf-bare                     | training                 | 55                       |
+| leaf-fall                     | training                 | 60                       |
+| newleaf                       | training                 | 60                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+| Non-seasonal default          | hunting                  | 50                       |
+| greenleaf                     | hunting                  | 50                       |
+| leaf-bare                     | hunting                  | 40                       |
+| leaf-fall                     | hunting                  | 50                       |
+| newleaf                       | hunting                  | 50                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+| Non-seasonal default          | border                   | 40                       |
+| greenleaf                     | border                   | 50                       |
+| leaf-bare                     | border                   | 40                       |
+| leaf-fall                     | border                   | 40                       |
+| newleaf                       | border                   | 40                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+| Non-seasonal default          | herb_gathering           | 50                       |
+| greenleaf                     | herb_gathering           | 60                       |
+| leaf-bare                     | herb_gathering           | 40                       |
+| leaf-fall                     | herb_gathering           | 50                       |
+| newleaf                       | herb_gathering           | 50                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+
+
+
+##### Default Success Desert:
+
+| Season                        | Patrol type              | Success chance           |
+|-------------------------------|--------------------------|--------------------------|
+| Non-seasonal default          | training                 | 60                       |
+| greenleaf                     | training                 | 40                       |
+| leaf-bare                     | training                 | 70                       |
+| leaf-fall                     | training                 | 60                       |
+| newleaf                       | training                 | 60                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+| Non-seasonal default          | hunting                  | 50                       |
+| greenleaf                     | hunting                  | 30                       |
+| leaf-bare                     | hunting                  | 65                       |
+| leaf-fall                     | hunting                  | 50                       |
+| newleaf                       | hunting                  | 50                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+| Non-seasonal default          | border                   | 40                       |
+| greenleaf                     | border                   | 20                       |
+| leaf-bare                     | border                   | 60                       |
+| leaf-fall                     | border                   | 40                       |
+| newleaf                       | border                   | 40                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+| Non-seasonal default          | herb_gathering           | 40                       |
+| greenleaf                     | herb_gathering           | 30                       |
+| leaf-bare                     | herb_gathering           | 50                       |
+| leaf-fall                     | herb_gathering           | 40                       |
+| newleaf                       | herb_gathering           | 40                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+
+
+
+##### Default Success Forest:
+
+| Season                        | Patrol type              | Success chance           |
+|-------------------------------|--------------------------|--------------------------|
+| Non-seasonal default          | training                 | 60                       |
+| greenleaf                     | training                 | 70                       |
+| leaf-bare                     | training                 | 50                       |
+| leaf-fall                     | training                 | 60                       |
+| newleaf                       | training                 | 60                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+| Non-seasonal default          | hunting                  | 50                       |
+| greenleaf                     | hunting                  | 60                       |
+| leaf-bare                     | hunting                  | 35                       |
+| leaf-fall                     | hunting                  | 50                       |
+| newleaf                       | hunting                  | 50                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+| Non-seasonal default          | border                   | 40                       |
+| greenleaf                     | border                   | 50                       |
+| leaf-bare                     | border                   | 30                       |
+| leaf-fall                     | border                   | 40                       |
+| newleaf                       | border                   | 40                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+| Non-seasonal default          | herb_gathering           | 50                       |
+| greenleaf                     | herb_gathering           | 60                       |
+| leaf-bare                     | herb_gathering           | 40                       |
+| leaf-fall                     | herb_gathering           | 50                       |
+| newleaf                       | herb_gathering           | 50                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+
+
+
+##### Default Success Mountainous:
+
+| Season                        | Patrol type              | Success chance           |
+|-------------------------------|--------------------------|--------------------------|
+| Non-seasonal default          | training                 | 60                       |
+| greenleaf                     | training                 | 70                       |
+| leaf-bare                     | training                 | 40                       |
+| leaf-fall                     | training                 | 60                       |
+| newleaf                       | training                 | 60                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+| Non-seasonal default          | hunting                  | 50                       |
+| greenleaf                     | hunting                  | 65                       |
+| leaf-bare                     | hunting                  | 35                       |
+| leaf-fall                     | hunting                  | 50                       |
+| newleaf                       | hunting                  | 50                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+| Non-seasonal default          | border                   | 40                       |
+| greenleaf                     | border                   | 60                       |
+| leaf-bare                     | border                   | 20                       |
+| leaf-fall                     | border                   | 40                       |
+| newleaf                       | border                   | 40                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+| Non-seasonal default          | herb_gathering           | 60                       |
+| greenleaf                     | herb_gathering           | 70                       |
+| leaf-bare                     | herb_gathering           | 40                       |
+| leaf-fall                     | herb_gathering           | 60                       |
+| newleaf                       | herb_gathering           | 60                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+
+
+
+##### Default Success Plains:
+
+| Season                        | Patrol type              | Success chance           |
+|-------------------------------|--------------------------|--------------------------|
+| Non-seasonal default          | training                 | 60                       |
+| greenleaf                     | training                 | 70                       |
+| leaf-bare                     | training                 | 50                       |
+| leaf-fall                     | training                 | 60                       |
+| newleaf                       | training                 | 60                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+| Non-seasonal default          | hunting                  | 50                       |
+| greenleaf                     | hunting                  | 60                       |
+| leaf-bare                     | hunting                  | 35                       |
+| leaf-fall                     | hunting                  | 50                       |
+| newleaf                       | hunting                  | 50                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+| Non-seasonal default          | border                   | 40                       |
+| greenleaf                     | border                   | 50                       |
+| leaf-bare                     | border                   | 30                       |
+| leaf-fall                     | border                   | 40                       |
+| newleaf                       | border                   | 40                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+| Non-seasonal default          | herb_gathering           | 50                       |
+| greenleaf                     | herb_gathering           | 60                       |
+| leaf-bare                     | herb_gathering           | 40                       |
+| leaf-fall                     | herb_gathering           | 50                       |
+| newleaf                       | herb_gathering           | 50                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+
+
+
+##### Default Success Wetlands:
+
+| Season                        | Patrol type              | Success chance           |
+|-------------------------------|--------------------------|--------------------------|
+| Non-seasonal default          | training                 | 60                       |
+| greenleaf                     | training                 | 65                       |
+| leaf-bare                     | training                 | 55                       |
+| leaf-fall                     | training                 | 60                       |
+| newleaf                       | training                 | 60                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+| Non-seasonal default          | hunting                  | 50                       |
+| greenleaf                     | hunting                  | 50                       |
+| leaf-bare                     | hunting                  | 40                       |
+| leaf-fall                     | hunting                  | 50                       |
+| newleaf                       | hunting                  | 50                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+| Non-seasonal default          | border                   | 40                       |
+| greenleaf                     | border                   | 50                       |
+| leaf-bare                     | border                   | 40                       |
+| leaf-fall                     | border                   | 40                       |
+| newleaf                       | border                   | 40                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+| Non-seasonal default          | herb_gathering           | 60                       |
+| greenleaf                     | herb_gathering           | 70                       |
+| leaf-bare                     | herb_gathering           | 50                       |
+| leaf-fall                     | herb_gathering           | 60                       |
+| newleaf                       | herb_gathering           | 60                       |
+| ----------------------------- | ------------------------ | ------------------------ |
+
+
+
+***
+
+
+***
+
+#### patrol_art: str
+>The name of displayed patrol art file, without any file extension (no .png).
+>
+> Example: "patrol_art": "bord_general_intro",
+
+
+***
+
+#### patrol_art_clean: str
+>If patrol_art contains gore, this line can hold a clean version. The existence of a non-empty string in this parameter marks the patrol art in "patrol_art" as explicit. The game will then use the clean version if the "Allow mild gore and blood in patrol artwork" setting is off, and the explicit version if this setting is on. Specify art by using the name of the image without the file extension (no .png).
+>
+> Example: "patrol_art_clean": "bord_general_intro",
+
+
+***
+
+
+#### intro_text: str
+>The text that displays when the patrol first starts.
+
+
+***
+
+#### decline_text: str
+>The text that displays if the patrol is declined (do not proceed)
+
+
+***
+
+#### success_outcomes: list[TextPoolEvent]
+> The possible success outcomes. Utilize the [patrol outcome format](patrol_outcome.md). Patrols must have at least one success.
+
+***
+
+#### fail_outcomes: list[TextPoolEvent]
+> The possible fail outcomes. Utilize the [patrol outcome format](patrol_outcome.md). Patrols must have at least one fail.
+
+***
+
+#### antag_success_outcomes: list[TextPoolEvent]
+> The possible antagonize success outcomes. Utilize the [patrol outcome format](patrol_outcome.md). Antagonize outcomes can be added for patrols involving outsiders, other clan cats, or afterlife visitors.
+
+***
+
+#### antag_fail_outcomes: list[TextPoolEvent]
+> The possible antagonize fail outcomes. Utilize the [patrol outcome format](patrol_outcome.md).Antagonize outcomes can be added for patrols involving outsiders, other clan cats, or afterlife visitors.
