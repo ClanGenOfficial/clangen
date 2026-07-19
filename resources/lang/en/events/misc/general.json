@@ -16469,7 +16469,8 @@
         "m_c": {
             "status": [
                 "apprentice"
-            ]
+            ],
+            "relationship_status": ["app/mentor"]
         },
         "r_c": {
             "status": [
@@ -16491,7 +16492,7 @@
         "poi": {
             "category": "gathering"
         },
-        "event_text": "During the Gathering at {POI/category/gathering}, c_n overhears that o_c_n is struggling to find prey.",
+        "event_text": "During the Gathering at {POI/category/gathering}, m_c overhears that o_c_n is struggling to find prey.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -16511,7 +16512,7 @@
         "poi": {
             "category": "gathering"
         },
-        "event_text": "During the Gathering at {POI/category/gathering}, c_n overhears that o_c_n is suffering from a herb blight.",
+        "event_text": "During the Gathering at {POI/category/gathering}, m_c overhears that o_c_n is suffering from a herb blight.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -16531,7 +16532,7 @@
         "poi": {
             "category": "gathering"
         },
-        "event_text": "During the Gathering at {POI/category/gathering}, c_n overhears that o_c_n is dealing with a greencough outbreak.",
+        "event_text": "During the Gathering at {POI/category/gathering}, m_c overhears that o_c_n is dealing with a greencough outbreak.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -16581,7 +16582,7 @@
         "season": [
             "any"
         ],
-        "frequency": 4,
+        "frequency": 2,
         "poi": {
             "category": "moonplace"
         },
@@ -16601,11 +16602,11 @@
         "season": [
             "any"
         ],
-        "frequency": 4,
+        "frequency": 2,
         "poi": {
             "category": "moonplace"
         },
-        "event_text": "m_c seems shaken after their half-moon visit to {POI/category/moonplace}.",
+        "event_text": "m_c seems shaken after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
         "m_c": {
             "status": ["medicine cat"]
         }
@@ -16618,11 +16619,62 @@
         "season": [
             "any"
         ],
-        "frequency": 4,
+        "frequency": 2,
         "poi": {
             "category": "moonplace"
         },
         "event_text": "m_c seems disappointed by StarClan's wisdom after a visit to {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    },
+    {
+        "event_id": "gen_moonplace_content",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c seems content after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    },
+    {
+        "event_id": "gen_moonplace_comforted",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c seems comforted by StarClan's wisdom after a visit to {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    },
+        {
+        "event_id": "gen_moonplace_determined",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c seems determined after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
         "m_c": {
             "status": ["medicine cat"]
         }
