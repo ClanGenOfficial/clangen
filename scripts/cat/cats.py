@@ -1522,9 +1522,10 @@ class Cat:
         outro_entry = {"involved": None, "text": "this should not appear"}
         if chosen_outro:
             outro_entry["text"] = choice(chosen_outro["text"])
-            outro_giver_cat = self.fetch_cat(life_givers[-1]) if life_givers else None
-            if outro_giver_cat:
-                outro_entry["involved"] = outro_giver_cat.ID
+            if "r_c" in outro_entry["text"] and life_givers:
+                outro_giver_cat = self.fetch_cat(life_givers[-1])
+                if outro_giver_cat:
+                    outro_entry["involved"] = outro_giver_cat.ID
 
         ceremony_entries.append(outro_entry)
 
