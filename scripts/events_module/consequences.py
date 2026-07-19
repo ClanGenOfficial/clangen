@@ -767,7 +767,11 @@ def create_new_cat(
 
 
 def gather_cat_objects(
-    Cat, abbr_list: List[str], event, extra_cat=None, involved_cats:Optional[dict] = None
+    Cat,
+    abbr_list: List[str],
+    event,
+    extra_cat=None,
+    involved_cats: Optional[dict] = None,
 ) -> list:
     """
     gathers cat objects from list of abbreviations used within an event format block
@@ -817,23 +821,21 @@ def gather_cat_objects(
 
         # SMALL CAT GROUPS
         found_cat_list = set()
-        if abbr == "patrol":
-            found_cat_list.update(event.patrol_cats)
-        elif re.match(r"n_c:[0-9]+", abbr):  # new_cats
+        if re.match(r"n_c:[0-9]+", abbr):  # new_cats
             index = re.match(r"n_c:([0-9]+)", abbr).group(1)
             index = int(index)
             if index < len(event.new_cats):
                 found_cat_list.update(event.new_cats[index])
-        elif abbr == "multi":
-            cat_num = randint(1, max(1, len(event.patrol_cats) - 1))
-            found_cat_list.update(sample(event.patrol_cats, cat_num))
+        elif abbr == "multi" and involved_cats:
+            cat_num = randint(1, max(1, len(involved_cats["patrol_cats"]) - 1))
+            found_cat_list.update(sample(involved_cats["patrol_cats"], cat_num))
         # OVERALL CLAN CATS
         elif abbr == "clan":
             found_cat_list.update(clan_cats)
             # exclude cats involved in the event
             found_cat_list.discard(getattr(event, "main_cat", None))
             found_cat_list.discard(getattr(event, "random_cat", None))
-            if getattr(event, "patrol_cats", None):
+            if involved_cats and involved_cats.get("patrol_cats"):
                 found_cat_list.difference_update(set(event.patrol_cats))
         elif abbr == "some_clan":  # 1 / 8 of clan cats are affected
             if len(
@@ -845,7 +847,7 @@ def gather_cat_objects(
                 # exclude cats involved in the event
                 found_cat_list.discard(getattr(event, "main_cat", None))
                 found_cat_list.discard(getattr(event, "random_cat", None))
-                if getattr(event, "patrol_cats", None):
+                if involved_cats and involved_cats.get("patrol_cats"):
                     found_cat_list.difference_update(set(event.patrol_cats))
 
         # add/remove cats if found and then continue for loop
@@ -929,7 +931,9 @@ def unpack_rel_block(
             is_clan_reaction = True
 
         # Gather actual cat objects:
-        cats_from_ob = gather_cat_objects(Cat, cats_from, event, extra_cat, involved_cats)
+        cats_from_ob = gather_cat_objects(
+            Cat, cats_from, event, extra_cat, involved_cats
+        )
         cats_to_ob = gather_cat_objects(Cat, cats_to, event, extra_cat, involved_cats)
 
         # Remove any "None" that might have snuck in
