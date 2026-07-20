@@ -326,7 +326,6 @@ class TestOutcomeExecution(unittest.TestCase):
             msg=f"{outsider1} should be part of the player_clan, instead {outsider1} is rank: {outsider1.status.rank} with group: {outsider1.status.group}. The patrol's n_c:0 is {self.patrol_class.involved_cats['n_c:0']}",
         )
 
-    # check dying
     def test_dying(self):
         war1 = create_cat(rank=CatRank.WARRIOR)
         app1 = create_cat(rank=CatRank.APPRENTICE)
@@ -367,7 +366,6 @@ class TestOutcomeExecution(unittest.TestCase):
             msg=f"{war1.history.died_by[0]['text']} should be 'test'.",
         )
 
-    # check getting lost
     def test_lost(self):
         war1 = create_cat(rank=CatRank.WARRIOR)
         app1 = create_cat(rank=CatRank.APPRENTICE)
@@ -403,7 +401,6 @@ class TestOutcomeExecution(unittest.TestCase):
             msg=f"{war1} should be lost.",
         )
 
-    # check gaining condition
     def test_condition(self):
         war1 = create_cat(rank=CatRank.WARRIOR)
         app1 = create_cat(rank=CatRank.APPRENTICE)
@@ -439,7 +436,6 @@ class TestOutcomeExecution(unittest.TestCase):
             msg=f"{war1} and {app1} should be sore.",
         )
 
-    # check reputation changing
     def test_rep_change(self):
         war1 = create_cat(rank=CatRank.WARRIOR)
         app1 = create_cat(rank=CatRank.APPRENTICE)
@@ -479,7 +475,6 @@ class TestOutcomeExecution(unittest.TestCase):
             msg=f"Clan and outsider reputation should be increased.",
         )
 
-    # check supply changing
     def test_supply_change(self):
         war1 = create_cat(rank=CatRank.WARRIOR)
         war1.skills.primary.path = SkillPath.CLIMBER
@@ -535,6 +530,3 @@ class TestOutcomeExecution(unittest.TestCase):
             msg=f"{total_herb_count} + 9 should equal {game.clan.herb_supply.total}",
         )
 
-    # check exp increasing
-
-    # check mentor app influence applying
