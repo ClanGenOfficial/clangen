@@ -15,7 +15,7 @@ from scripts.models.relationship_pair_event.relationship_constraint_dict import 
     PairEventRelationshipConstraint,
 )
 from scripts.models.common.location import Location
-from scripts.models.thought.tag import Tag
+from scripts.models.common.tag import Tag
 
 
 class RelationshipPairEventSchemaItem(BaseModel):

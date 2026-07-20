@@ -394,6 +394,9 @@ This can even be added as an empty dict: `can_create_new_cat: {}` to simply mark
 
 ***
 
+**has_mentor:bool**
+> Set True if the cat must be mentored. This does not require the mentor to be present on the patrol.
+
 #### relationship_constraint: list[dict]
 Constrains the event to only occur is the specified relationships exist. Multiple dictionary blocks can be added to specify multiple required configurations of relationships.
 ```json

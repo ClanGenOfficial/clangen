@@ -6,11 +6,13 @@ from typing import Dict, List, Literal, Optional, Tuple, Union
 from pydantic import BaseModel, Field, ConfigDict
 from pydantic_core import MISSING
 from scripts.models.common.biome import Biome
+from scripts.models.common.location import Location
 from scripts.models.common.min_max_status import MinMaxStatusDictKey
 from scripts.models.common.points_of_interest import PointsOfInterestGroup
 from scripts.models.common.relationship_status import RelationshipStatus
 from scripts.models.common.season import Season
 from scripts.models.common.skill import Skill
+from scripts.models.common.tag import Tag
 from scripts.models.patrol.outcome import Outcome
 from scripts.models.patrol.patrol_tag import PatrolTag
 from scripts.models.patrol.patrol_type import PatrolType
@@ -18,17 +20,18 @@ from scripts.models.patrol.patrol_type import PatrolType
 
 class PatrolSchemaItem(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    patrol_id: str = Field(
+    id: str = Field(
         ..., description="Unique string used to identify the patrol."
     )
-    biome: List[Union[Biome, Literal["any"]]] = Field(
-        ..., description="Controls the biome(s) the patrol appears in"
+    location: Union[Location, MISSING] = Field(
+        MISSING,
+        description="Constrains the event to only occur if a player chooses a specific biome.",
     )
     season: List[Season] = Field(
         ..., description="Controls the season(s) the patrol appears in."
     )
     types: List[PatrolType] = Field(..., description="Controls the type of patrol.")
-    tags: List[PatrolTag] = Field(
+    tags: List[Tag] = Field(
         ...,
         description="Tags are used for some filtering purposes, and some odd-and-ends. Tags never affect outcome.",
     )
@@ -44,13 +47,7 @@ class PatrolSchemaItem(BaseModel):
         None,
         description='If patrol_art contains gore, this line can hold a clean version. The existence of a non-empty string in this parameter marks the patrol art in "patrol_art" as explicit.',
     )
-    min_cats: int = Field(
-        ..., description="Minimum total number of cats for this patrol."
-    )
-    max_cats: int = Field(
-        ..., description="Maximum total number of cats for this patrol"
-    )
-    min_max_status: Union[Dict[MinMaxStatusDictKey, Tuple[int, int]], MISSING] = Field(
+    required_cat_types: Union[Dict[MinMaxStatusDictKey, Tuple[int, int]], MISSING] = Field(
         MISSING,
         description="Allows specification of the minimum and maximum number of specific types of cats that are allowed on the patrol.",
     )

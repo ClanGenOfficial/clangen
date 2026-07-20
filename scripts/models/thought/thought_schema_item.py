@@ -11,7 +11,7 @@ from scripts.models.thought.relationship_constraint_dict import (
     ThoughtRelationshipConstraint,
 )
 from scripts.thoughts.text_pool_event.involved_cats import InvolvedCats
-from scripts.models.thought.tag import Tag
+from scripts.models.common.tag import Tag
 
 
 class ThoughtSchemaItem(BaseModel):

@@ -14,6 +14,10 @@ class TagEnum(Enum):
     low_lives = "low_lives"
     clan_apps = "clan:apps"
     romance = "romance"
+    halloween = "halloween"
+    april_fools = "april_fools"
+    new_years = "new_years"
+    disaster = "disaster"
 
 
 class Tag(RootModel):
