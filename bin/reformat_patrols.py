@@ -387,8 +387,22 @@ def reformat_outcome(
                     join_dict["change_name"] = False
 
                 elif rank_match:
-                    if tag in (CatRank.NEWBORN, CatRank.KITTEN) and not "age" in cat_dict:
+                    if (
+                        tag in (CatRank.NEWBORN, CatRank.KITTEN)
+                        and not "age" in cat_dict
+                    ):
                         cat_dict["age"] = [tag]
+                    if (
+                        tag in (CatRank.WARRIOR, CatRank.MEDICINE_CAT)
+                        and not "age" in cat_dict
+                    ):
+                        cat_dict["age"] = [
+                            CatAge.ADULT,
+                            CatAge.YOUNG_ADULT,
+                            CatAge.SENIOR_ADULT,
+                        ]
+                    if tag in (CatRank.APPRENTICE, CatRank.MEDICINE_APPRENTICE):
+                        cat_dict["age"] = [CatAge.ADOLESCENT]
                     join_dict["new_status"] = [tag.replace("status:", "")]
 
                 elif age_match:
