@@ -442,10 +442,24 @@ def _assign_current_standing(
 def _assign_past_status_and_standing(
     created_cat, option_dict, involved_cats, other_clan: OtherClan
 ):
-    chosen_past_status = None
+    status = StatusDict()
     if option_dict.get("past_status"):
-        chosen_past_status = CatRank(choice(option_dict["past_status"]))
-        created_cat.status.generate_new_status(rank=chosen_past_status)
+        # check for "clancat" first since it's not really a rank
+        if "clancat" in option_dict["past_status"]:
+            status["social"] = CatSocial.CLANCAT
+            option_dict["past_status"].remove("clancat")
+
+        status["rank"] = CatRank(choice(option_dict["past_status"]))
+        # if no group given and the rank/social is a clancat, then assign to other clan
+        if not option_dict.get("group") and (
+            status["rank"].is_any_clancat_rank()
+            or status.get("social") == CatSocial.CLANCAT
+        ):
+            status["group_ID"] = _get_id_for_group(
+                [CatGroup.OTHER_CLAN], involved_cats, other_clan
+            )
+
+        created_cat.status.generate_new_status(status)
     if option_dict.get("standing", {}).get("past"):
         group = _get_id_for_group(
             option_dict["standing"]["group"], involved_cats, other_clan
@@ -472,7 +486,7 @@ def _assign_past_status_and_standing(
                 if option_dict.get("status")
                 else None,
             )
-        if option_dict.get("status") and created_cat.status.rank == chosen_past_status:
+        if option_dict.get("status") and created_cat.status.rank == status["rank"]:
             created_cat.status._change_rank(CatRank(choice(option_dict["status"])))
 
     # this simulates a "history" as whomever they used to be
