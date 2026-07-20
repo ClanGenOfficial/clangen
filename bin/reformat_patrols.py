@@ -141,6 +141,11 @@ def reformat():
                     if p.get("max_cats") == 1:
                         replace_rc_to_pl = True
                         p["intro_text"] = p["intro_text"].replace(f"app{i}", f"p_l")
+                        if f"r_c{i}" in reformatted_patrol["involved_cats"]:
+                            reformatted_patrol["involved_cats"][
+                                "p_l"
+                            ] = reformatted_patrol["involved_cats"][f"r_c{i}"]
+                            reformatted_patrol["involved_cats"].pop(f"r_c{i}")
                     else:
                         p["intro_text"] = p["intro_text"].replace(f"app{i}", f"r_c{i}")
             reformatted_patrol["intro_text"] = p.get("intro_text")
@@ -488,11 +493,14 @@ def reformat_outcome(
 
             cat_list = []
             for c in injury["cats"]:
+                name_change = False
                 for i in range(0, 7):
                     if f"app{i}" == c:
                         cat_list.append(f"r_c{i}")
+                        name_change = True
                         continue
-                cat_list.append(c)
+                if not name_change:
+                    cat_list.append(c)
 
             injury_dict = ConditionDict(
                 cats=cat_list,
@@ -517,11 +525,14 @@ def reformat_outcome(
     if outcome.get("lost_cats"):
         cat_list = []
         for c in outcome["cats"]:
+            name_change = False
             for i in range(0, 7):
                 if f"app{i}" == c:
                     cat_list.append(f"r_c{i}")
+                    name_change = True
                     continue
-            cat_list.append(c)
+            if not name_change:
+                cat_list.append(c)
         reformatted_outcome["lost"] = [LostDict(cats=cat_list)]
 
     if new_cats_joining:
