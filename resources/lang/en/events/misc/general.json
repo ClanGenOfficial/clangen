@@ -14335,7 +14335,8 @@
         },
         "r_c": {
             "status": [
-                "-kitten"
+                "-kitten",
+                "-leader"
             ]
         },
         "relationships": [
@@ -14377,7 +14378,8 @@
         },
         "r_c": {
             "status": [
-                "-kitten"
+                "-kitten",
+                "-leader"
             ]
         },
         "relationships": [
@@ -16450,5 +16452,248 @@
     "m_c": {
       "status": ["medicine cat apprentice"]
     }
-}
+},
+    {
+        "event_id": "gen_gathering_appbegging",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "gathering"
+        },
+        "event_text": "m_c won't stop asking r_c when it's {PRONOUN/m_c/poss} turn to join the Gathering at {POI/category/gathering}.",
+        "m_c": {
+            "status": [
+                "apprentice"
+            ],
+            "relationship_status": ["app/mentor"]
+        },
+        "r_c": {
+            "status": [
+                "warrior",
+                "leader",
+                "deputy"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_gathering_gossipprey",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "gathering"
+        },
+        "event_text": "During the Gathering at {POI/category/gathering}, m_c overhears that o_c_n is struggling to find prey.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_gathering_gossipherbs",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "gathering"
+        },
+        "event_text": "During the Gathering at {POI/category/gathering}, m_c overhears that o_c_n is suffering from a herb blight.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_gathering_gossipillness",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "gathering"
+        },
+        "event_text": "During the Gathering at {POI/category/gathering}, m_c overhears that o_c_n is dealing with a greencough outbreak.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_gathering_firstgatheringstory",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "gathering"
+        },
+        "event_text": "m_c gathers the Clan to tell a story about the first time the Clans convened for a Gathering at {POI/category/gathering}.",
+        "m_c": {
+            "skill": ["STORY,1", "LORE,1"]
+        }
+    },
+        {
+        "event_id": "gen_gathering_deputygossip",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "gathering"
+        },
+        "event_text": "m_c overhears some interesting gossip from the other deputies at {POI/category/gathering}.",
+        "m_c": {
+            "status": ["deputy"]
+        }
+    },
+    {
+        "event_id": "gen_moonplace_leadermeeting",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "As soon as m_c returns from {POI/category/moonplace}, {PRONOUN/m_c/subject} {VERB/m_c/visit/visits} r_c in {PRONOUN/r_c/poss} den for a private conversation.",
+        "m_c": {
+            "status": ["medicine cat"]
+        },
+        "r_c": {
+            "status": ["leader"]
+        }
+    },
+    {
+        "event_id": "gen_moonplace_shaken",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c seems shaken after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    },
+    {
+        "event_id": "gen_moonplace_disappointed",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c seems disappointed by StarClan's wisdom after a visit to {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    },
+    {
+        "event_id": "gen_moonplace_content",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c seems content after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    },
+    {
+        "event_id": "gen_moonplace_comforted",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c seems comforted by StarClan's wisdom after a visit to {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    },
+        {
+        "event_id": "gen_moonplace_determined",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c seems determined after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    },
+    {
+        "event_id": "gen_moonplace_gossip",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c overhears some interesting gossip from the other medicine cats at {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    }
 ]
