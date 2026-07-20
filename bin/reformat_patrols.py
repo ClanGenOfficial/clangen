@@ -394,7 +394,7 @@ def reformat_outcome(
                             cat_dict["age"] = [age_tag]
 
                 elif tag in ("kittypet", "rogue", "loner", "clancat"):
-                    if not cat_dict["status"]:
+                    if not cat_dict.get("status"):
                         cat_dict["status"] = [tag]
                     else:
                         cat_dict["status"].append(tag)
@@ -523,7 +523,7 @@ def reformat_outcome(
 
     if outcome.get("lost_cats"):
         cat_list = []
-        for c in outcome["cats"]:
+        for c in outcome["lost_cats"]:
             name_change = False
             for i in range(0, 7):
                 if f"app{i}" == c:
