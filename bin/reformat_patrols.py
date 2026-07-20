@@ -1,9 +1,9 @@
 import os
-from typing import re
 
 import ujson
+import re
 
-from scripts.cat.enums import CatAge
+from scripts.cat.enums import CatAge, CatRank
 from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
     StatDict,
@@ -33,7 +33,7 @@ def reformat():
     for path in file_set:
         new_patrols = []
         try:
-            with open(path, "r") as read_file:
+            with open(f"{root_dir}/{path}", "r") as read_file:
                 patrols = read_file.read()
                 patrol_dict = ujson.loads(patrols)
 
@@ -45,16 +45,20 @@ def reformat():
             all_mentored = False
             specific_mentored = []
 
-            reformatted_patrol = {"id": p.get("id")}
+            reformatted_patrol = {"id": p.get("patrol_id")}
             if p.get("types"):
                 reformatted_patrol["types"] = p.get("types")
+            if "herb_gathering" in reformatted_patrol["types"]:
+                medicine_cat_allowed = True
+            else:
+                medicine_cat_allowed = False
             if p.get("frequency"):
                 reformatted_patrol["frequency"] = p.get("frequency")
             if p.get("biome"):
-                if p["biome"] != "any":
+                if "any" not in p["biome"]:
                     reformatted_patrol["location"] = p.get("biome")
             if p.get("season"):
-                if p["season"] != "any":
+                if "any" not in p["season"]:
                     reformatted_patrol["season"] = p.get("season")
 
             # TAGGING
@@ -109,11 +113,14 @@ def reformat():
                 ]
 
             text_to_search = p.get("intro_text") + p.get("decline_text")
-            if "r_c" in text_to_search:
+            if "r_c" in text_to_search and p.get("max_cats") != 1:
                 involved_cats["r_c"] = {}
             for i in range(0, 7):
                 if f"app{i}" in text_to_search:
-                    involved_cats[f"r_c{i}"] = InvolvedCatDict()
+                    rank_list = [CatRank.APPRENTICE]
+                    if medicine_cat_allowed:
+                        rank_list.append(CatRank.MEDICINE_APPRENTICE)
+                    involved_cats[f"r_c{i}"] = InvolvedCatDict(status=rank_list)
                     if all_mentored or i in specific_mentored:
                         involved_cats[f"r_c{i}"]["has_mentor"] = True
 
@@ -125,34 +132,63 @@ def reformat():
             if p.get("patrol_art_clean"):
                 reformatted_patrol["patrol_art_clean"] = p.get("patrol_art_clean")
 
+            replace_rc_to_pl = False
+            if p.get("max_cats") == 1 and "r_c" in p.get("intro_text"):
+                replace_rc_to_pl = True
+                p.get("intro_text").replace("r_c", "p_l")
             reformatted_patrol["intro_text"] = p.get("intro_text")
+            if p.get("max_cats") == 1 and "r_c" in p.get("decline_text"):
+                replace_rc_to_pl = True
+                p.get("decline_text").replace("r_c", "p_l")
             reformatted_patrol["decline_text"] = p.get("decline_text")
 
             reformatted_patrol["success_outcomes"] = []
             for outcome in p["success_outcomes"]:
                 reformatted_patrol["success_outcomes"].append(
-                    reformat_outcome(outcome, reformatted_patrol["involved_cats"])
+                    reformat_outcome(
+                        outcome,
+                        reformatted_patrol["involved_cats"],
+                        replace_rc_to_pl,
+                        medicine_cat_allowed,
+                    )
                 )
 
             reformatted_patrol["fail_outcomes"] = []
             for outcome in p["fail_outcomes"]:
                 reformatted_patrol["fail_outcomes"].append(
-                    reformat_outcome(outcome, reformatted_patrol["involved_cats"])
+                    reformat_outcome(
+                        outcome,
+                        reformatted_patrol["involved_cats"],
+                        replace_rc_to_pl,
+                        medicine_cat_allowed,
+                    )
                 )
 
             if p.get("antag_success_outcomes"):
                 reformatted_patrol["antag_success_outcomes"] = []
                 for outcome in p["antag_success_outcomes"]:
                     reformatted_patrol["antag_success_outcomes"].append(
-                        reformat_outcome(outcome, reformatted_patrol["involved_cats"])
+                        reformat_outcome(
+                            outcome,
+                            reformatted_patrol["involved_cats"],
+                            replace_rc_to_pl,
+                            medicine_cat_allowed,
+                        )
                     )
             if p.get("antag_fail_outcomes"):
                 reformatted_patrol["antag_fail_outcomes"] = []
                 for outcome in p["antag_fail_outcomes"]:
                     reformatted_patrol["antag_fail_outcomes"].append(
-                        reformat_outcome(outcome, reformatted_patrol["involved_cats"])
+                        reformat_outcome(
+                            outcome,
+                            reformatted_patrol["involved_cats"],
+                            replace_rc_to_pl,
+                            medicine_cat_allowed,
+                        )
                     )
 
+            if not reformatted_patrol["involved_cats"]:
+                reformatted_patrol.pop("involved_cats")
             new_patrols.append(reformatted_patrol)
 
         dict_text = ujson.dumps(new_patrols, indent=4)
@@ -164,7 +200,12 @@ def reformat():
             write_file.write(dict_text)
 
 
-def reformat_outcome(outcome: dict, already_involved_cats: dict) -> dict:
+def reformat_outcome(
+    outcome: dict,
+    already_involved_cats: dict,
+    replace_rc: bool,
+    medicine_cat_allowed: bool,
+) -> dict:
     reformatted_outcome = {"tags": [], "frequency": outcome.get("frequency")}
 
     if outcome.get("art"):
@@ -172,6 +213,8 @@ def reformat_outcome(outcome: dict, already_involved_cats: dict) -> dict:
     if outcome.get("art_clean"):
         reformatted_outcome["outcome_art_clean"] = outcome.get("art_clean")
 
+    if replace_rc:
+        outcome["text"] = outcome["text"].replace("r_c", "p_l")
     reformatted_outcome["strings"] = [outcome.get("text")]
 
     if outcome.get("min_max_status"):
@@ -183,7 +226,10 @@ def reformat_outcome(outcome: dict, already_involved_cats: dict) -> dict:
         involved_cats["r_c"] = {}
     for i in range(0, 7):
         if f"app{i}" in text_to_search and f"app{i}" not in already_involved_cats:
-            involved_cats[f"r_c{i}"] = {}
+            rank_list = [CatRank.APPRENTICE]
+            if medicine_cat_allowed:
+                rank_list.append(CatRank.MEDICINE_APPRENTICE)
+            involved_cats[f"r_c{i}"] = InvolvedCatDict(status=rank_list)
 
     if "s_c" in text_to_search:
         can_have_stat = outcome.get("can_have_stat")
