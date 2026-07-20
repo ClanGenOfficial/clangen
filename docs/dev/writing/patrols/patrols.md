@@ -289,6 +289,8 @@ If the outsider/other_clan cat can be newly generated rather than having to util
         "assign_mate": []
     }
 ```
+This can even be added as an empty dict: `can_create_new_cat: {}` to simply mark it as a new cat creation without any additional specifications.
+
 > **`become_litter`** - True will generate a 2-5 litter of kittens rather than a single cat. This means the abbreviation for this litter should not be used within the text of the event, since they have no singular name or pronoun.
 > **`assign_blood_parent`** - List of designations for cats who will become this cat's blood parents. These cats must have already been specified prior in `involved_cats`.
 > **`assign_adoptive_parent`** - List of designations for cats who will become this cat's adoptive parents. These cats must have already been specified prior in `involved_cats`.

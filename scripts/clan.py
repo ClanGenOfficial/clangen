@@ -23,6 +23,7 @@ from scripts.cat.save_load import (
     save_cats,
     get_faded_ids,
 )
+from scripts.cat.status import StatusDict
 from scripts.clan_package.clan_names import get_possible_clan_names
 from scripts.clan_package.settings import save_clan_settings, load_clan_settings
 from scripts.clan_package.settings.clan_settings import (
@@ -261,7 +262,7 @@ class Clan:
         )
 
         self.instructor = Cat(
-            status_dict={"rank": instructor_rank, "group_ID": CatGroup.STARCLAN_ID},
+            status_dict=StatusDict(rank=instructor_rank, group_ID=CatGroup.STARCLAN_ID),
             backstory=choice(
                 BACKSTORIES["backstory_categories"]["clan_guide_backstories"]
             ),
@@ -737,11 +738,12 @@ class Clan:
                 game.clan.add_cat(game.clan.instructor)
         else:
             game.clan.instructor = Cat(
-                status_dict={
-                    "rank": choice((CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER)),
-                    "group": CatGroup.STARCLAN,
-                }
+                status_dict=StatusDict(
+                    rank=choice([CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER]),
+                    group_ID=CatGroup.STARCLAN_ID,
+                )
             )
+
             # update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
@@ -890,10 +892,10 @@ class Clan:
             game.clan.add_cat(game.clan.instructor)
         else:
             game.clan.instructor = Cat(
-                status_dict={
-                    "rank": choice((CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER)),
-                    "group": CatGroup.STARCLAN,
-                }
+                status_dict=StatusDict(
+                    rank=choice([CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER]),
+                    group_ID=CatGroup.STARCLAN_ID,
+                )
             )
             # update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True

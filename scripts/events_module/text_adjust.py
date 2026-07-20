@@ -397,6 +397,8 @@ def event_text_adjust(
     """
     if not new_cats:
         new_cats = []
+    if not involved_cat_dict:
+        involved_cat_dict = {}
 
     if not text:
         text = "This should not appear, report as a bug please! Tried to adjust the text, but no text was provided."

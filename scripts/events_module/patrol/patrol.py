@@ -502,7 +502,7 @@ class Patrol:
         outside_cats = [
             c
             for c in Cat.all_cats_list
-            if c.status.is_other_clancat or c.status.is_outsider
+            if (c.status.is_other_clancat or c.status.is_outsider) and not c.dead
         ]
         for abbr, constraints in patrol.involved_cats.items():
             # if we need n_c then we pull outside cats
@@ -677,7 +677,7 @@ class Patrol:
         outside_cats = [
             c
             for c in Cat.all_cats_list
-            if c.status.is_other_clancat or c.status.is_outsider
+            if (c.status.is_other_clancat or c.status.is_outsider) and not c.dead
         ]
         temp_involved_cats = self.involved_cats.copy()
         for abbr, constraints in outcome.involved_cats.items():

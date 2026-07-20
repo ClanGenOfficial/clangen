@@ -1,14 +1,19 @@
 import os
 import unittest
 
-from scripts.cat.cats import create_cat
-from scripts.cat.enums import CatRank
-from scripts.clan import Clan
-from scripts.events_module.parameter_dicts import InvolvedCatDict
+from scripts.cat.cats import create_cat, Cat
+from scripts.cat.enums import CatRank, CatGroup
+from scripts.cat.sprites.load_sprites import sprites
+from scripts.cat.status import StatusDict
+from scripts.clan import Clan, OtherClan
+from scripts.events_module.parameter_dicts import InvolvedCatDict, JoinDict, DeathDict
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.events_module.patrol.patrol_event import PatrolEvent
+from scripts.events_module.text_pool_event import handle_consequences
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
+from scripts.game_structure.game import Switch
+from scripts.game_structure.game.switches import switch_set_value
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
@@ -260,18 +265,99 @@ class TestInvolvedCats(unittest.TestCase):
 
 class TestOutcomeExecution(unittest.TestCase):
     def setUp(self):
+        # load in the spritesheets
+        # we have to do this to prevent a crash, even though we won't be displaying anything
+        sprites.load_all()
+        Cat.all_cats.clear()
+        Cat.all_cats_list.clear()
+
         game.clan = Clan("test")
+        game.clan.instructor = Cat(
+            status_dict=StatusDict(group_ID=CatGroup.STARCLAN_ID, rank=CatRank.WARRIOR)
+        )
+        game.clan.instructor.dead = True
         game.clan.biome = "Forest"
         game.clan.override_biome = False
         game.clan.camp_bg = "camp1"
         game.clan.starting_season = "Newleaf"
         game.clan.game_mode = "classic"
-
+        switch_set_value(Switch.clan_save_id, "test")
         self.patrol_class = Patrol()
 
-    # check joining clan
+    def test_joining_clan(self):
+        war1 = create_cat(rank=CatRank.WARRIOR)
+        outsider1 = create_cat(rank=CatRank.LONER)
+
+        patrol = PatrolEvent(
+            id="test",
+            types=["hunting"],
+            intro_text="test",
+            decline_text="test",
+            involved_cats={
+                "n_c:0": InvolvedCatDict(),
+            },
+            success_outcomes=[
+                TextPoolEvent(strings=[""], join=[JoinDict(cats=["n_c:0"])])
+            ],
+            fail_outcomes=[TextPoolEvent()],
+        )
+
+        self.patrol_class._add_patrol_cats([war1])
+        self.patrol_class._patrol_pass_cat_constraints(patrol)
+        self.patrol_class._check_outcome_constraints(
+            patrol.success_outcomes[0], "success"
+        )
+        handle_consequences.execute_outcome(
+            patrol.success_outcomes[0],
+            self.patrol_class.involved_cats,
+            other_clan=OtherClan(),
+        )
+
+        self.assertTrue(
+            outsider1.status.alive_in_player_clan,
+            msg=f"{outsider1} should be part of the player_clan, instead {outsider1} is rank: {outsider1.status.rank} with group: {outsider1.status.group}. The patrol's n_c:0 is {self.patrol_class.involved_cats["n_c:0"]}",
+        )
 
     # check dying
+    def test_dying(self):
+        war1 = create_cat(rank=CatRank.WARRIOR)
+        app1 = create_cat(rank=CatRank.APPRENTICE)
+
+        patrol = PatrolEvent(
+            id="test",
+            types=["hunting"],
+            intro_text="test",
+            decline_text="test",
+            involved_cats={},
+            success_outcomes=[
+                TextPoolEvent(
+                    strings=[""],
+                    death=[DeathDict(cats=["p_l"], body=True, history="test")],
+                )
+            ],
+            fail_outcomes=[TextPoolEvent()],
+        )
+
+        self.patrol_class._add_patrol_cats([war1, app1])
+        self.patrol_class._patrol_pass_cat_constraints(patrol)
+        self.patrol_class._check_outcome_constraints(
+            patrol.success_outcomes[0], "success"
+        )
+        handle_consequences.execute_outcome(
+            patrol.success_outcomes[0],
+            self.patrol_class.involved_cats,
+            other_clan=OtherClan(),
+        )
+
+        self.assertTrue(
+            war1.dead,
+            msg=f"{war1} should be dead.",
+        )
+        self.assertEqual(
+            war1.history.died_by[0]["text"],
+            "test",
+            msg=f"{war1.history.died_by[0]["text"]} should be 'test'.",
+        )
 
     # check getting lost
 
