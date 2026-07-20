@@ -408,6 +408,10 @@
         "history": {
           "title": "History",
           "type": "string"
+        },
+        "no_results": {
+          "title": "No Results",
+          "type": "boolean"
         }
       },
       "required": [

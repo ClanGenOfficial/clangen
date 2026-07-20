@@ -317,7 +317,9 @@ def reformat_outcome(
             if "dead" in attr_list:
                 if not new_cat_death_dict:
                     new_cat_death_dict = DeathDict(
-                        cats=[], history="This cat died while wandering."
+                        cats=[],
+                        history="This cat died while wandering.",
+                        no_results="unknown" in attr_list,
                     )
                 new_cat_death_dict["cats"].append(cat_abbr)
             if "exists" not in attr_list:

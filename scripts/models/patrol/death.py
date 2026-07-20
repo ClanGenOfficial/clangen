@@ -13,3 +13,4 @@ class Death(BaseModel):
     cats: list[GatherCat]
     body: Union[bool, MISSING] = MISSING
     history: str
+    no_results: Union[bool, MISSING] = MISSING

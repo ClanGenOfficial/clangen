@@ -208,6 +208,9 @@ def _handle_death(
             c.die(body)
 
         # CREATE RESULTS
+        if block.get("no_results"):
+            continue
+
         if player_cat_names:
             results.append(
                 i18n.t(

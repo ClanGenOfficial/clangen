@@ -72,6 +72,7 @@ class DeathDict(TypedDict):
     cats: list[str]
     body: NotRequired[bool]
     history: str
+    no_results: NotRequired[bool]
 
 
 class ConditionDict(TypedDict):
