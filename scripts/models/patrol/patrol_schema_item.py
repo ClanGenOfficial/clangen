@@ -1,20 +1,15 @@
 from __future__ import annotations
 
-from enum import Enum
-from typing import Dict, List, Literal, Optional, Tuple, Union
+from typing import Dict, List, Optional, Tuple, Union
 
 from pydantic import BaseModel, Field, ConfigDict
 from pydantic_core import MISSING
 
-from scripts.events_module.parameter_dicts import RelationshipConstraintDict
-from scripts.models.common.biome import Biome
 from scripts.models.common.gather_cat import GatherCatEnum
 from scripts.models.common.location import Location
 from scripts.models.common.min_max_status import MinMaxStatusDictKey
 from scripts.models.common.points_of_interest import PointsOfInterestGroup
-from scripts.models.common.relationship_status import RelationshipStatus
 from scripts.models.common.season import Season
-from scripts.models.common.skill import Skill
 from scripts.models.common.tag import Tag
 from scripts.models.patrol.outcome import Outcome
 from scripts.models.patrol.patrol_type import PatrolType
@@ -22,8 +17,6 @@ from scripts.models.text_pool_event.cat_dict import CatDict
 from scripts.models.text_pool_event.relationship_constraint_dict import (
     RelationshipConstraint,
 )
-from scripts.thoughts.text_pool_event.involved_cats import InvolvedCats
-
 
 class PatrolSchemaItem(BaseModel):
     model_config = ConfigDict(extra="forbid")

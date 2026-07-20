@@ -5,10 +5,12 @@ from typing import Union, Literal
 from pydantic import BaseModel, ConfigDict
 from pydantic_core import MISSING
 
+from scripts.models.common.herb import Herb
+
 
 class Supply(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    type: str
+    type: Union[Literal["random_herbs", "freshkill"], Herb]
     trigger: Union[
         list[Literal["always", "low", "adequate", "full", "excess"]], MISSING
     ] = MISSING

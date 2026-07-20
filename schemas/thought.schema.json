@@ -203,9 +203,52 @@
       "title": "Biome",
       "type": "string"
     },
+    "CanCreateNewCat": {
+      "additionalProperties": false,
+      "properties": {
+        "become_litter": {
+          "title": "Become Litter",
+          "type": "boolean"
+        },
+        "assign_blood_parent": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Assign Blood Parent",
+          "type": "array"
+        },
+        "assign_adoptive_parent": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Assign Adoptive Parent",
+          "type": "array"
+        },
+        "assign_mate": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Assign Mate",
+          "type": "array"
+        }
+      },
+      "title": "CanCreateNewCat",
+      "type": "object"
+    },
     "CatDict": {
       "additionalProperties": false,
       "properties": {
+        "prior_abbreviation": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Prior Abbreviation",
+          "type": "array"
+        },
+        "can_create_new_cat": {
+          "$ref": "#/$defs/CanCreateNewCat",
+          "title": "Can Create New Cat"
+        },
         "status": {
           "items": {
             "$ref": "#/$defs/StatusAny"
@@ -226,6 +269,15 @@
           },
           "title": "Age",
           "type": "array"
+        },
+        "gender": {
+          "enum": [
+            "male",
+            "female",
+            "can_birth"
+          ],
+          "title": "Gender",
+          "type": "string"
         },
         "group": {
           "items": {
@@ -252,6 +304,10 @@
           },
           "title": "Backstory",
           "type": "array"
+        },
+        "has_mentor": {
+          "title": "Has Mentor",
+          "type": "boolean"
         }
       },
       "title": "CatDict",
@@ -753,7 +809,11 @@
         "mid_lives",
         "low_lives",
         "clan:apps",
-        "romance"
+        "romance",
+        "halloween",
+        "april_fools",
+        "new_years",
+        "disaster"
       ],
       "title": "TagEnum",
       "type": "string"

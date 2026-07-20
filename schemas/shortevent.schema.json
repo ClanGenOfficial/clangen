@@ -462,6 +462,14 @@
         {
           "pattern": "^-?n_c:[0-9]+$",
           "type": "string"
+        },
+        {
+          "pattern": "^-?r_c[0-9]+$",
+          "type": "string"
+        },
+        {
+          "pattern": "^-?s_c[0-9]+$",
+          "type": "string"
         }
       ],
       "title": "GatherCat"
@@ -476,18 +484,6 @@
         "-p_l",
         "s_c",
         "-s_c",
-        "app1",
-        "-app1",
-        "app2",
-        "-app2",
-        "app3",
-        "-app3",
-        "app4",
-        "-app4",
-        "app5",
-        "-app5",
-        "app6",
-        "-app6",
         "clan",
         "-clan",
         "some_clan",
