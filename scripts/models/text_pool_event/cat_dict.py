@@ -1,8 +1,9 @@
-from typing import Union, List
+from typing import Union, List, Literal
 
 from pydantic import BaseModel, ConfigDict
 from pydantic_core import MISSING
 
+from scripts.events_module.parameter_dicts import CanCreateNewCatDict
 from scripts.models.common.age import Age
 from scripts.models.common.backstory import Backstory
 from scripts.models.common.group import Group
@@ -14,11 +15,15 @@ from scripts.models.text_pool_event.status_any import StatusAny
 
 class CatDict(BaseModel):
     model_config = ConfigDict(extra="forbid")
+    prior_abbreviation: Union[List[str], MISSING] = MISSING
+    can_create_new_cat: Union[CanCreateNewCatDict, MISSING] = CanCreateNewCatDict
     status: Union[List[StatusAny], MISSING] = MISSING
     past_status: Union[List[StatusAny], MISSING] = MISSING
     age: Union[List[Age], MISSING] = MISSING
+    gender: Union[Literal["male", "female", "can_birth"], MISSING] = MISSING
     group: Union[List[Group], MISSING] = MISSING
     standing: Union[StandingDict, MISSING] = MISSING
     stat: Union[StatDict, MISSING] = MISSING
     health: Union[HealthDict, MISSING] = MISSING
     backstory: Union[List[Backstory], MISSING] = MISSING
+    has_mentor: Union[bool, MISSING] = MISSING

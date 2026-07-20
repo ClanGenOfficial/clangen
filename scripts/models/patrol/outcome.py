@@ -4,13 +4,16 @@ from typing import Annotated, Dict, List, Tuple, Union
 
 from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
-from scripts.models.common.gather_cat import GatherCat
+from scripts.models.common.gather_cat import GatherCat, GatherCatEnum
 from scripts.models.common.herb import Herb
+from scripts.models.common.location import Location
 from scripts.models.common.min_max_status import MinMaxStatusDictKey
 from scripts.models.common.new_cat import NewCat
 from scripts.models.common.future_event import FutureEvent
 from scripts.models.common.relationship_status import RelationshipStatus
+from scripts.models.common.season import Season
 from scripts.models.common.skill import Skill
+from scripts.models.common.tag import Tag
 from scripts.models.common.trait import Trait
 from scripts.models.patrol.can_have_status import CanHaveStat
 from scripts.models.patrol.history_text import HistoryText
@@ -19,80 +22,37 @@ from scripts.models.patrol.leader_lives_lost import LeaderLivesLost
 from scripts.models.patrol.patrol_herb import PatrolHerb
 from scripts.models.patrol.prey import Prey
 from scripts.models.common.relationship import Relationship
+from scripts.models.text_pool_event.cat_dict import CatDict
 
 
 class Outcome(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    text: str = Field(..., description="Displayed outcome text.")
-    frequency: Annotated[
-        int,
-        Field(
-            description="Controls how common an outcome is.",
-            json_schema_extra={
-                "default": 4
-            },  # Necessary so that JSON Schema still shows a default without making the field optional
-        ),
-    ]
-    exp: int = Field(..., description="Base exp gain.")
-    stat_skill: Union[List[Skill], MISSING] = Field(
+    location: Union[Location, MISSING] = Field(
         MISSING,
-        description="Makes this a stat outcome which can occur if a stat cat can be found.",
+        description="Constrains the event to only occur if a player chooses a specific biome.",
     )
-    stat_trait: Union[List[Trait], MISSING] = Field(
+    season: Union[List[Season], MISSING] = Field(
         MISSING,
-        description="Makes this a stat outcome which can occur if a stat cat can be found.",
+        description="Constrains the event to only occur once the Clan is in a specific season.",
     )
-    can_have_stat: Union[List[CanHaveStat], MISSING] = Field(
+    tags: Union[
+        List[Tag],
         MISSING,
-        description="Overrides default behavior or adds additional requirements for stat_cat picking.",
+    ] = Field(MISSING, description="Used for some filtering purposes")
+    strings: List[str] = Field(
+        ..., description="List of the text that will be displayed in-game as events."
     )
-    prey: Union[List[Prey], MISSING] = Field(
-        MISSING, description="Indicates how much prey each cat brings back."
-    )
-    herbs: Union[List[Union[Herb, PatrolHerb]], MISSING] = Field(
-        MISSING, description="Indicates which herbs will be given."
-    )
-    lost_cats: Union[List[GatherCat], MISSING] = Field(
-        MISSING, description="Indicates which cats will become lost."
-    )
-    dead_cats: Union[List[Union[GatherCat, LeaderLivesLost]], MISSING] = Field(
-        MISSING, description="Indicates which cats will die."
-    )
-    injury: Union[List[InjuryItem], MISSING] = Field(
-        MISSING, description="Indicates which cats get injured and how."
-    )
-    min_max_status: Union[Dict[MinMaxStatusDictKey, Tuple[int, int]], MISSING] = Field(
+    involved_cats: Union[dict[GatherCatEnum, CatDict], MISSING] = Field(
         MISSING,
-        description="Allows specification of the minimum and maximum number of specific types of cats that are allowed on the patrol.",
+        description="Used to add constraints for the various involved cats.",
     )
-    history_text: Union[HistoryText, MISSING] = Field(
-        MISSING, description="Controls the history-text for scars and death."
-    )
-    relationships: Union[List[Relationship], MISSING] = Field(
-        MISSING, description="Indicates effect on cat relationships."
-    )
-    relationship_constraint: Union[List[RelationshipStatus], MISSING] = Field(
+    relationship_constraint: Union[
+        List[PairEventRelationshipConstraint], MISSING
+    ] = Field(
         MISSING,
-        description="Dictates what relationships m_c must have towards r_c. Do not use this section if there is no r_c in the event.",
+        description="Used to require specific relationships between the cats",
     )
-    new_cat: Union[List[NewCat], MISSING] = Field(
+    relationship_changes: Union[List[PairEventRelationshipChange], MISSING] = Field(
         MISSING,
-        description="Adds new cat(s), either joining the clan or as outside cats. The {index} value corresponds to their index value on this list (e.g. n_c:0 refers to the first cat in this list).",
+        description="Used to change specific relationships between the cats",
     )
-    art: Union[str, MISSING] = Field(
-        MISSING,
-        description="Name of outcome-specific art, without file extension (no .png). If no art is specified, the intro art will be used.",
-    )
-    art_clean: Union[str, MISSING] = Field(
-        MISSING,
-        description="Name of non-gore outcome-specific art, without file extension (no .png). Adding a clean version of the art marks the normal version as containing gore.",
-    )
-    outsider_rep: Union[int, MISSING] = Field(
-        MISSING,
-        description="How much outsider reputation will change. Can be positive or negative.",
-    )
-    other_clan_rep: Union[int, MISSING] = Field(
-        MISSING,
-        description="How much reputation with other Clan will change. Can be positive or negative.",
-    )
-    future_event: Union[FutureEvent, MISSING] = MISSING

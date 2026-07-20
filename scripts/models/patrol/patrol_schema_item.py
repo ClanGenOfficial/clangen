@@ -5,7 +5,10 @@ from typing import Dict, List, Literal, Optional, Tuple, Union
 
 from pydantic import BaseModel, Field, ConfigDict
 from pydantic_core import MISSING
+
+from scripts.events_module.parameter_dicts import RelationshipConstraintDict
 from scripts.models.common.biome import Biome
+from scripts.models.common.gather_cat import GatherCatEnum
 from scripts.models.common.location import Location
 from scripts.models.common.min_max_status import MinMaxStatusDictKey
 from scripts.models.common.points_of_interest import PointsOfInterestGroup
@@ -16,13 +19,16 @@ from scripts.models.common.tag import Tag
 from scripts.models.patrol.outcome import Outcome
 from scripts.models.patrol.patrol_tag import PatrolTag
 from scripts.models.patrol.patrol_type import PatrolType
+from scripts.models.text_pool_event.cat_dict import CatDict
+from scripts.models.text_pool_event.relationship_constraint_dict import (
+    RelationshipConstraint,
+)
+from scripts.thoughts.text_pool_event.involved_cats import InvolvedCats
 
 
 class PatrolSchemaItem(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    id: str = Field(
-        ..., description="Unique string used to identify the patrol."
-    )
+    id: str = Field(..., description="Unique string used to identify the patrol.")
     location: Union[Location, MISSING] = Field(
         MISSING,
         description="Constrains the event to only occur if a player chooses a specific biome.",
@@ -47,7 +53,9 @@ class PatrolSchemaItem(BaseModel):
         None,
         description='If patrol_art contains gore, this line can hold a clean version. The existence of a non-empty string in this parameter marks the patrol art in "patrol_art" as explicit.',
     )
-    required_cat_types: Union[Dict[MinMaxStatusDictKey, Tuple[int, int]], MISSING] = Field(
+    required_cat_types: Union[
+        Dict[MinMaxStatusDictKey, Tuple[int, int]], MISSING
+    ] = Field(
         MISSING,
         description="Allows specification of the minimum and maximum number of specific types of cats that are allowed on the patrol.",
     )
@@ -62,13 +70,13 @@ class PatrolSchemaItem(BaseModel):
         ...,
         description="Controls chance to succeed. Higher number is higher chance to succeed.",
     )
-    relationship_constraint: Union[List[RelationshipStatus], MISSING] = Field(
+    involved_cats: Union[dict[GatherCatEnum, CatDict], MISSING] = Field(
         MISSING,
-        description="Dictates what relationships m_c must have towards r_c. Do not use this section if there is no r_c in the event.",
+        description="Used to add constraints for the various involved cats.",
     )
-    pl_skill_constraint: Union[List[Skill], MISSING] = Field(
+    relationship_constraint: Union[List[RelationshipConstraint], MISSING] = Field(
         MISSING,
-        description="Only allow this patrol if the patrol leader (p_l) meets at least one of these skill requirements.",
+        description="Dictates what relationships cats can have towards each other.",
     )
     intro_text: str = Field(
         ..., description="The text that displays when the patrol first starts."
