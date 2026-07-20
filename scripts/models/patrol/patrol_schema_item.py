@@ -17,7 +17,6 @@ from scripts.models.common.season import Season
 from scripts.models.common.skill import Skill
 from scripts.models.common.tag import Tag
 from scripts.models.patrol.outcome import Outcome
-from scripts.models.patrol.patrol_tag import PatrolTag
 from scripts.models.patrol.patrol_type import PatrolType
 from scripts.models.text_pool_event.cat_dict import CatDict
 from scripts.models.text_pool_event.relationship_constraint_dict import (

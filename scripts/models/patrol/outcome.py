@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Annotated, Dict, List, Tuple, Union
+from typing import Annotated, Dict, List, Tuple, Union, Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
@@ -23,6 +23,8 @@ from scripts.models.patrol.patrol_herb import PatrolHerb
 from scripts.models.patrol.prey import Prey
 from scripts.models.common.relationship import Relationship
 from scripts.models.text_pool_event.cat_dict import CatDict
+from scripts.models.text_pool_event.relationship_change_dict import RelationshipChange
+from scripts.models.text_pool_event.relationship_constraint_dict import RelationshipConstraint
 
 
 class Outcome(BaseModel):
@@ -42,17 +44,26 @@ class Outcome(BaseModel):
     strings: List[str] = Field(
         ..., description="List of the text that will be displayed in-game as events."
     )
+    required_cat_types: Union[
+        Dict[MinMaxStatusDictKey, Tuple[int, int]], MISSING
+    ] = Field(
+        MISSING,
+        description="Allows specification of the minimum and maximum number of specific types of cats that are allowed on the patrol.",
+    )
     involved_cats: Union[dict[GatherCatEnum, CatDict], MISSING] = Field(
         MISSING,
         description="Used to add constraints for the various involved cats.",
     )
+    required_reputation: Union[dict[Literal["outsider", "other_clan"], list], MISSING] = MISSING
     relationship_constraint: Union[
-        List[PairEventRelationshipConstraint], MISSING
+        List[RelationshipConstraint], MISSING
     ] = Field(
         MISSING,
         description="Used to require specific relationships between the cats",
     )
-    relationship_changes: Union[List[PairEventRelationshipChange], MISSING] = Field(
+    exp_gained: int
+    reputation_changes: Union[dict[Literal["outsider", "other_clan"], int], MISSING] = MISSING
+    relationship_changes: Union[List[RelationshipChange], MISSING] = Field(
         MISSING,
         description="Used to change specific relationships between the cats",
     )
