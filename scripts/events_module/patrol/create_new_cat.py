@@ -30,17 +30,34 @@ def updated_create_new_cat(
     :param other_clan: the other clan involved in this event
     :return: list of created cats
     """
+    option_dict = option_dict.copy()
     # STATUS
     status = StatusDict()
     if option_dict.get("status"):
+        # check for "clancat" first since it's not really a rank
+        if "clancat" in option_dict["status"]:
+            status["social"] = CatSocial.CLANCAT
+            option_dict["status"].remove("clancat")
         status["rank"] = CatRank(choice(option_dict["status"]))
-        # if no group given and the rank is a clancat, then assign to other clan
-        if not option_dict.get("group") and status["rank"].is_any_clancat_rank():
+        # if no group given and the rank/social is a clancat, then assign to other clan
+        if not option_dict.get("group") and (
+            status["rank"].is_any_clancat_rank()
+            or status.get("social") == CatSocial.CLANCAT
+        ):
             status["group_ID"] = _get_id_for_group(
                 [CatGroup.OTHER_CLAN], involved_cats, other_clan
             )
     if option_dict.get("age"):
         status["age"] = CatAge(choice(option_dict["age"]))
+
+    # check if we need to match age to an assigned mate
+    if option_dict.get("can_create_new_cat", {}).get("assign_mate"):
+        possible_ages = []
+        for m in option_dict["can_create_new_cat"].get("assign_mate", []):
+            if m in involved_cats:
+                possible_ages.append(involved_cats[m].age)
+        status["age"] = choice(possible_ages)
+
     if option_dict.get("group"):
         status["group_ID"] = _get_id_for_group(
             option_dict["group"], involved_cats, other_clan
