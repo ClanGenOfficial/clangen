@@ -6,7 +6,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
 from scripts.models.common.season import Season
-from scripts.models.shortevent.location import Location
+from scripts.models.common.location import Location
 from scripts.models.thought.relationship_constraint_dict import (
     ThoughtRelationshipConstraint,
 )

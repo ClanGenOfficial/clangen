@@ -13,7 +13,7 @@ from scripts.models.relationship_group_event.relationship_change_dict import (
 from scripts.models.relationship_group_event.relationship_constraint_dict import (
     GroupEventRelationshipConstraint,
 )
-from scripts.models.shortevent.location import Location
+from scripts.models.common.location import Location
 from scripts.models.thought.tag import Tag
 
 

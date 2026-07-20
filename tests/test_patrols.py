@@ -529,4 +529,3 @@ class TestOutcomeExecution(unittest.TestCase):
             total_herb_count + 9 == game.clan.herb_supply.total,
             msg=f"{total_herb_count} + 9 should equal {game.clan.herb_supply.total}",
         )
-
