@@ -48,12 +48,10 @@ def reformat():
             reformatted_patrol = {"id": p.get("patrol_id")}
             if p.get("types"):
                 reformatted_patrol["types"] = p.get("types")
-            else:
-                pass
-            if "herb_gathering" in reformatted_patrol["types"]:
-                medicine_cat_allowed = True
-            else:
-                medicine_cat_allowed = False
+                if "herb_gathering" in reformatted_patrol["types"]:
+                    medicine_cat_allowed = True
+                else:
+                    medicine_cat_allowed = False
             if p.get("frequency"):
                 reformatted_patrol["frequency"] = p.get("frequency")
             if p.get("biome"):
