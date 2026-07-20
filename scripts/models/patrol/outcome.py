@@ -1,30 +1,24 @@
 from __future__ import annotations
 
-from typing import Annotated, Dict, List, Tuple, Union, Literal
+from typing import Dict, List, Tuple, Union, Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 from scripts.models.common.gather_cat import GatherCat, GatherCatEnum
-from scripts.models.common.herb import Herb
 from scripts.models.common.location import Location
 from scripts.models.common.min_max_status import MinMaxStatusDictKey
-from scripts.models.common.new_cat import NewCat
 from scripts.models.common.future_event import FutureEvent
-from scripts.models.common.relationship_status import RelationshipStatus
 from scripts.models.common.season import Season
-from scripts.models.common.skill import Skill
 from scripts.models.common.tag import Tag
-from scripts.models.common.trait import Trait
-from scripts.models.patrol.can_have_status import CanHaveStat
-from scripts.models.patrol.history_text import HistoryText
-from scripts.models.patrol.injury_item import InjuryItem
-from scripts.models.patrol.leader_lives_lost import LeaderLivesLost
-from scripts.models.patrol.patrol_herb import PatrolHerb
-from scripts.models.patrol.prey import Prey
-from scripts.models.common.relationship import Relationship
+from scripts.models.patrol.condition import Condition
+from scripts.models.patrol.death import Death
+from scripts.models.patrol.join import Join
+from scripts.models.patrol.supply import Supply
 from scripts.models.text_pool_event.cat_dict import CatDict
 from scripts.models.text_pool_event.relationship_change_dict import RelationshipChange
-from scripts.models.text_pool_event.relationship_constraint_dict import RelationshipConstraint
+from scripts.models.text_pool_event.relationship_constraint_dict import (
+    RelationshipConstraint,
+)
 
 
 class Outcome(BaseModel):
@@ -54,16 +48,26 @@ class Outcome(BaseModel):
         MISSING,
         description="Used to add constraints for the various involved cats.",
     )
-    required_reputation: Union[dict[Literal["outsider", "other_clan"], list], MISSING] = MISSING
-    relationship_constraint: Union[
-        List[RelationshipConstraint], MISSING
-    ] = Field(
+    required_reputation: Union[
+        dict[Literal["outsider", "other_clan"], list], MISSING
+    ] = MISSING
+    relationship_constraint: Union[List[RelationshipConstraint], MISSING] = Field(
         MISSING,
         description="Used to require specific relationships between the cats",
     )
     exp_gained: int
-    reputation_changes: Union[dict[Literal["outsider", "other_clan"], int], MISSING] = MISSING
+    reputation_changes: Union[
+        dict[Literal["outsider", "other_clan"], int], MISSING
+    ] = MISSING
     relationship_changes: Union[List[RelationshipChange], MISSING] = Field(
         MISSING,
         description="Used to change specific relationships between the cats",
+    )
+    supply: Union[List[Supply], MISSING] = MISSING
+    death: Union[List[Death], MISSING] = MISSING
+    condition: Union[List[Condition], MISSING] = MISSING
+    lost: Union[List[Dict[Literal["cats"], list[GatherCat]]], MISSING] = MISSING
+    join: Union[List[Join], MISSING] = MISSING
+    future_event: Union[List[FutureEvent], MISSING] = Field(
+        MISSING, description="Schedules another event to happen in the future."
     )

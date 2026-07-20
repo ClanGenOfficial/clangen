@@ -3,8 +3,7 @@ from typing import List, Optional
 from pydantic import BaseModel, ConfigDict, Field
 
 from scripts.models.common.gather_cat import GatherCat
-from scripts.models.common.relationship import Log
-from scripts.models.patrol.value import Value
+from scripts.models.common.value import Value
 
 
 class RelationshipChange(BaseModel):
