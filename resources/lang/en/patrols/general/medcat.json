@@ -37,7 +37,7 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": 8,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from and cat_to discussed medicine cat business while sunning themselves on patrol."
                         }
@@ -61,7 +61,7 @@
                             "like",
                             "comfort"
                         ],
-                        "amount": 8,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from and cat_to chatted about the herb stores and herb-gathering spots while sunning themselves."
                         }
@@ -83,7 +83,7 @@
                         "values": [
                             "like"
                         ],
-                        "amount": 5,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from and cat_to sunned themselves on patrol before gathering herbs."
                         }
@@ -116,7 +116,7 @@
                         "values": [
                             "like"
                         ],
-                        "amount": 5,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from and cat_to sunned themselves on patrol before gathering herbs."
                         }
@@ -128,7 +128,7 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 5,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from appreciated that cat_to made sure everyone got a nice basking spot while they were relaxing."
                         }
@@ -499,7 +499,7 @@
                         "values": [
                             "trust"
                         ],
-                        "amount": 5,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from trusted cat_to to interpret r_c's vision."
                         }
@@ -512,7 +512,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 8,
+                        "amount": 10,
                         "log": {
                             "cats_from": "p_l helped r_c interpret a vision."
                         }
@@ -534,7 +534,7 @@
                         "values": [
                             "trust"
                         ],
-                        "amount": 5,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from trusted cat_to to interpret r_c's vision."
                         }
@@ -547,7 +547,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 8,
+                        "amount": 10,
                         "log": {
                             "cats_from": "p_l helped r_c interpret a vision."
                         }
@@ -569,7 +569,7 @@
                         "values": [
                             "trust"
                         ],
-                        "amount": 5,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from trusted cat_to to interpret r_c's vision."
                         }
@@ -582,7 +582,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 8,
+                        "amount": 10,
                         "log": {
                             "cats_from": "p_l helped r_c interpret a vision."
                         }
@@ -594,7 +594,7 @@
                         "values": [
                             "comfort"
                         ],
-                        "amount": -5,
+                        "amount": -8,
                         "log": {
                             "cats_from": "cat_from worried about what cat_to's vision could mean and why {PRONOUN/cat_to/subject} received it."
                         }
@@ -684,7 +684,7 @@
                         "values": [
                             "trust"
                         ],
-                        "amount": 5,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from trusted cat_to to interpret r_c's vision."
                         }
@@ -697,7 +697,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 5,
+                        "amount": 10,
                         "log": {
                             "cats_from": "r_c confided in s_c about a vision, and s_c promised to look into it."
                         }
@@ -723,7 +723,7 @@
                         "values": [
                             "trust"
                         ],
-                        "amount": 5,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from trusted cat_to to interpret r_c's dream."
                         }
@@ -736,7 +736,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 8,
+                        "amount": 10,
                         "log": {
                             "cats_from": "p_l and r_c discussed a dream-vision they both had."
                         }
@@ -755,9 +755,9 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "trust"
                         ],
-                        "amount": -5,
+                        "amount": -10,
                         "log": {
                             "cats_from": "cat_from was disappointed to hear that cat_to couldn't interpret r_c's vision."
                         }
@@ -1079,9 +1079,7 @@
         "max_cats": 2,
         "min_max_status": {
             "medicine cat apprentice": [1, 1],
-            "medicine cat": [1, 1],
-            "warrior": [-1, -1],
-            "apprentice": [-1, -1]
+            "medicine cat": [1, 1]
         },
         "frequency": 4,
         "intro_text": "app1 looks to p_l, wondering if {PRONOUN/app1/subject} should speak to p_l about the dream {PRONOUN/app1/subject} had last night.",
@@ -1377,7 +1375,7 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -10,
+                        "amount": -8,
                         "log": {
                             "cats_from": "cat_from confided in cat_to about a vision in hopes that cat_to could help, but {PRONOUN/cat_to/subject} couldn't."
                         }
@@ -1416,7 +1414,7 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": -15,
+                        "amount": -10,
                         "log": {
                             "cats_from": "cat_from confided in cat_to about a vision, but cat_to dismissed it completely without listening."
                         }
@@ -1436,7 +1434,7 @@
                             "comfort",
                             "trust"
                         ],
-                        "amount": -10,
+                        "amount": -8,
                         "log": {
                             "cats_from": "cat_from confided in cat_to about a vision, but cat_to told {PRONOUN/cat_from/object} that it was just a normal dream."
                         }
@@ -1494,7 +1492,7 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": -15,
+                        "amount": -12,
                         "log": {
                             "cats_from": "cat_from could tell that cat_to was angry that cat_from received a vision instead of {PRONOUN/cat_to/object}."
                         }
@@ -1540,7 +1538,7 @@
                             "trust",
                             "comfort"
                         ],
-                        "amount": -15,
+                        "amount": -12,
                         "log": {
                             "cats_from": "cat_from felt embarrassed and chastened when cat_to dismissed {PRONOUN/cat_from/poss} vision and told {PRONOUN/cat_from/object} {PRONOUN/cat_from/subject} {VERB/cat_from/weren't/wasn't} the sort of cat to receive visions."
                         }
@@ -1764,7 +1762,7 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 8,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from was amazed to encounter a ghost while patrolling with cat_to."
                         }
@@ -1786,7 +1784,7 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 8,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from was amazed to encounter a ghost while patrolling with cat_to."
                         }
@@ -1812,7 +1810,7 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": 10,
+                        "amount": 15,
                         "log": {
                             "cats_from": "cat_from was amazed by cat_to's confidence when the patrol encountered the spirit of a StarClan cat."
                         }
@@ -1850,7 +1848,7 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -20,
+                        "amount": -15,
                         "log": {
                             "cats_from": "cat_from lost faith in cat_to when {PRONOUN/cat_from/subject} saw {PRONOUN/cat_to/object} be rebuked by a StarClan spirit."
                         }
@@ -1906,7 +1904,6 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "comfort"
                         ],
                         "amount": -10,
@@ -1942,7 +1939,6 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "comfort"
                         ],
                         "amount": -10,
@@ -1975,7 +1971,6 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "comfort"
                         ],
                         "amount": -10,
@@ -2111,7 +2106,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "With respectful nods, the patrol pauses. app1 takes {PRONOUN/app1/poss} lead from p_l and tucks {PRONOUN/app1/poss} paws together neatly, sitting to converse with the StarClan cat.",
+                "text": "With respectful nods, the patrol pauses. app1 takes {PRONOUN/app1/poss} cue from p_l and tucks {PRONOUN/app1/poss} paws together neatly, sitting to converse with the StarClan cat.",
                 "exp": 30,
                 "herbs": [
                     "random_herbs"
@@ -2214,7 +2209,7 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -20,
+                        "amount": -15,
                         "log": {
                             "cats_from": "cat_from lost faith in cat_to when {PRONOUN/cat_from/subject} saw {PRONOUN/cat_to/object} be rebuked by a StarClan spirit."
                         }
@@ -2302,7 +2297,7 @@
                         "cats_from": ["r_c"],
                         "mutual": false,
                         "values": [
-                            "respect",
+                            "comfort",
                             "trust"
                         ],
                         "amount": 10,
@@ -2337,7 +2332,7 @@
                         "cats_from": ["r_c"],
                         "mutual": false,
                         "values": [
-                            "respect",
+                            "comfort",
                             "trust"
                         ],
                         "amount": 10,
@@ -2361,7 +2356,7 @@
                 "frequency": 1
             },
             {
-                "text": "p_l had seen before how connected s_c was to StarClan, and began telling {PRONOUN/s_c/object} more than {PRONOUN/p_l/subject} would have told any other Clan cat about their ancestors. p_l and s_c spend much of their patrol gathering herbs and discussing the hard-hitting questions on prophecies and StarClan's gifts.",
+                "text": "p_l had seen before how connected s_c was to StarClan and began telling {PRONOUN/s_c/object} more than {PRONOUN/p_l/subject} would have told any other Clan cat about their ancestors. p_l and s_c spend much of their patrol gathering herbs and discussing the hard-hitting questions on prophecies and StarClan's gifts.",
                 "exp": 10,
                 "stat_skill": [
                     "LORE,1",
@@ -2377,7 +2372,7 @@
                         "cats_from": ["s_c"],
                         "mutual": false,
                         "values": [
-                            "respect",
+                            "comfort",
                             "trust"
                         ],
                         "amount": 10,
@@ -2392,7 +2387,7 @@
                         "values": [
                             "comfort", "like", "respect"
                         ],
-                        "amount": 12,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from appreciated cat_to's genuine interest in learning about StarClan's mysteries and knew it came from a place of understanding."
                         }
@@ -2568,7 +2563,7 @@
                             "like",
                             "trust"
                         ],
-                        "amount": 5,
+                        "amount": 8,
                         "log": {
                             "cats_from": "cat_from and cat_to chatted while gathering herbs."
                         }
@@ -2591,7 +2586,7 @@
                             "like",
                             "trust"
                         ],
-                        "amount": 5,
+                        "amount": 8,
                         "log": {
                             "cats_from": "cat_from and cat_to gathered herbs quicker than usual so they had a chance to bask and chat in the sun."
                         }
@@ -3957,7 +3952,7 @@
                 "frequency": 4
             },
             {
-                "text": "r_c, deep in thought, asks p_l if {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} considered taking on another apprentice. p_l swishes {PRONOUN/p_l/poss} tail, and asks what brought this on. {PRONOUN/r_c/subject/CAP} {VERB/r_c/were/was} honestly just wondering, r_c explains, as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} not sure {PRONOUN/r_c/self} when {PRONOUN/r_c/subject} {VERB/r_c/want/wants} to. p_l nods, and says {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been thinking about it — but they've reached the herbs and have to pick them now.",
+                "text": "r_c, deep in thought, asks p_l if {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} considered taking on another apprentice. p_l swishes {PRONOUN/p_l/poss} tail, and asks what brought this on. {PRONOUN/r_c/subject/CAP} {VERB/r_c/were/was} honestly just wondering, r_c explains, as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} not sure {PRONOUN/r_c/self} when {PRONOUN/r_c/subject} {VERB/r_c/want/wants} to. p_l nods, and says {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been thinking about it, but they've reached the herbs and have to pick them now.",
                 "exp": 20,
                 "herbs": [
                     "random_herbs"
@@ -3971,7 +3966,7 @@
                             "like",
                             "trust"
                         ],
-                        "amount": 8,
+                        "amount": 10,
                         "log": {
                             "cats_from": "cat_from and cat_to spent an herb-gathering patrol discussing the possibility of taking on another medicine cat apprentice."
                         }
@@ -3991,10 +3986,10 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "respect",
+                            "comfort",
                             "trust"
                         ],
-                        "amount": 5,
+                        "amount": 8,
                         "log": {
                             "cats_from": "cat_from and cat_to had a good discussion about the latest news in the Clan while gathering herbs."
                         }
@@ -4017,7 +4012,7 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": 5,
+                        "amount": 8,
                         "log": {
                             "cats_from": "cat_from and cat_to had a good discussion about signs from StarClan while gathering herbs."
                         }
@@ -4030,20 +4025,6 @@
             {
                 "text": "The two medicine cats walk in circles for a while before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from and cat_to were embarrassed that they forgot the location of a herb patch."
-                        }
-                    }
-                ],
                 "frequency": 4
             },
             {
@@ -4091,7 +4072,7 @@
                         "values": [
                             "comfort"
                         ],
-                        "amount": -8,
+                        "amount": -10,
                         "log": {
                             "cats_from": "cat_from felt uncomfortable when cat_to snapped at {PRONOUN/cat_from/object} while they were gathering herbs."
                         }
@@ -4108,8 +4089,7 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": [
-                            "like",
-                            "trust"
+                            "like"
                         ],
                         "amount": -8,
                         "log": {
@@ -8307,7 +8287,7 @@
                             "like",
                             "comfort"
                         ],
-                        "amount": -10,
+                        "amount": -5,
                         "log": {
                             "cats_from": "cat_from knew cat_to was laughing at {PRONOUN/cat_from/object}."
                         }
@@ -8567,7 +8547,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
+                        "amount": -5,
                         "log": {
                             "cats_from": "cat_from was unhappy with cat_to for munching on the mallow the patrol was meant to be gathering."
                         }
@@ -8777,7 +8757,7 @@
             "LORE,1",
             "STORY,1"
         ],
-        "intro_text": "app1 is probably not <i>trying</i> to be annoying — but {PRONOUN/app1/poss} complaints about the taste of ragwort help no one, and it's just slowing the entire patrol down.",
+        "intro_text": "app1 is probably not <i>trying</i> to be annoying, but {PRONOUN/app1/poss} complaints about the taste of ragwort help no one, and it's just slowing the entire patrol down.",
         "decline_text": "Toughen up, honestly.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -8823,7 +8803,7 @@
                         ],
                         "mutual": true,
                         "values": [
-                            "respect"
+                            "like"
                         ],
                         "amount": -10,
                         "log": {
@@ -8848,7 +8828,7 @@
                         "values": [
                             "like", "comfort"
                         ],
-                        "amount": -10,
+                        "amount": -8,
                         "log": {
                             "cats_from": "p_l snapped at app1 for sidetracking an herb-gathering patrol by complaining about the foul taste of ragwort."
                         }
@@ -8934,24 +8914,6 @@
                         ]
                     }
                 ],
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "r_c"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from was impatient gathering raspberry with cat_to and got scratched by the thorny bush."
-                        }
-                    }
-                ],
                 "frequency": 4
             }
         ]
@@ -9026,7 +8988,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
+                        "amount": -8,
                         "log": {
                             "cats_from": "cat_from blamed cat_to for distracting {PRONOUN/cat_from/object} when the patrol was supposed to be gathering tansy."
                         }
@@ -9063,7 +9025,7 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -10,
+                        "amount": -8,
                         "log": {
                             "cats_from": "p_l didn't keep a close enough eye on the patrol, and app1 got poisoned as a result."
                         }
@@ -9095,25 +9057,6 @@
                 "history_text": {
                     "death": "m_c poisoned {PRONOUN/m_c/self} collecting excessive amounts of tansy as an apprentice."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "app1"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect",
-                            "trust"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_to ignored cat_from's warning about tansy and got sick."
-                        }
-                    }
-                ],
                 "frequency": 4
             }
         ]
@@ -9163,7 +9106,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": 10,
+                        "amount": 8,
                         "log": {
                             "cats_from": "cat_from learned from cat_to about how not all illnesses and injuries are physical in nature."
                         }
@@ -9631,9 +9574,9 @@
                             "respect",
                             "like"
                         ],
-                        "amount": -8,
+                        "amount": -5,
                         "log": {
-                          "cats_from": "cat_from was visibly frustrated by cat_to while patrolling in the rain empty-pawed."
+                          "cats_from": "cat_from was frustrated by cat_to while patrolling in the rain empty-pawed."
                         }
                     }
                 ],
@@ -9786,7 +9729,6 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
                             "like"
                         ],
                         "amount": -5,
@@ -9943,7 +9885,7 @@
                         "values": [
                             "comfort"
                         ],
-                        "amount": -7,
+                        "amount": -5,
                         "log": {
                             "cats_from": "cat_from could tell cat_to was frustrated with {PRONOUN/cat_from/object} during an unsuccessful cobweb-gathering patrol."
                         }
@@ -9960,7 +9902,7 @@
                             "respect",
                             "like"
                         ],
-                        "amount": -7,
+                        "amount": -5,
                         "log": {
                             "cats_from": "cat_from struggled to keep {PRONOUN/cat_from/poss} temper when cat_to ruined the few cobwebs that cat_from's patrol managed to collect."
                         }
@@ -10155,7 +10097,7 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -10,
+                        "amount": -7,
                         "log": {
                             "cats_from": "cat_from was disappointed in cat_to for letting {PRONOUN/cat_to/poss} distraction sidetrack a gathering patrol."
                         }
@@ -13087,6 +13029,11 @@
         ],
         "fail_outcomes": [
             {
+                "text": "The patrol is fruitless, and the patrol returns to camp with no burdock.",
+                "exp": 0,
+                "frequency": 4
+            },
+            {
                 "text": "Maybe {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. {PRONOUN/p_l/subject/CAP} {VERB/p_l/return/returns} to camp without any burdock, prickling with frustration.",
                 "exp": 0,
                 "relationships": [
@@ -13101,7 +13048,7 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -8,
+                        "amount": -5,
                         "log": {
                             "cats_from": "cat_from accompanied cat_to to harvest burdock root, but cat_to wasn't able to find any, and cat_from felt like the day was a waste."
                         }
@@ -13117,13 +13064,13 @@
                         "values": [
                             "like"
                         ],
-                        "amount": -8,
+                        "amount": -5,
                         "log": {
                             "cats_from": "cat_from was irritated with cat_to for being unhelpful during an herb-gathering patrol."
                         }
                     }
                 ],
-                "frequency": 4
+                "frequency": 2
             }
         ]
     },
@@ -13191,24 +13138,6 @@
             {
                 "text": "p_l can't find the burdock plant {PRONOUN/p_l/subject} {VERB/p_l/were/was} thinking about. Maybe it was trampled by some animal... Oh, well.",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from felt like cat_to wasted {PRONOUN/cat_from/poss} time when their herb-gathering patrol found no burdock."
-                        }
-                    }
-                ],
                 "frequency": 4
             },
             {
@@ -13232,8 +13161,7 @@
                         "mutual": false,
                         "values": [
                             "like",
-                            "comfort",
-                            "respect"
+                            "comfort"
                         ],
                         "amount": -8,
                         "log": {
@@ -13586,7 +13514,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
+                        "amount": -7,
                         "log": {
                             "cats_from": "cat_from lost {PRONOUN/cat_from/poss} temper with cat_to when cat_to trampled a crucial catmint plant in {PRONOUN/cat_to/poss} excitement about the herb."
                         }
@@ -13823,7 +13751,7 @@
             "normal adult": [2, 5]
         },
         "frequency": 4,
-        "intro_text": "The heat of greenleaf warms {PRONOUN/p_l/poss} pelt as p_l wanders, aimlessly searching for daisies to harvest their leaves. {PRONOUN/p_l/subject/CAP} {VERB/p_l/assemble/assembles} a little group of warriors to help {PRONOUN/p_l/object} carry the herbs.",
+        "intro_text": "The heat of greenleaf warms {PRONOUN/p_l/poss} pelt as p_l wanders, searching for daisies to harvest their leaves. {PRONOUN/p_l/subject/CAP} {VERB/p_l/assemble/assembles} a little group of warriors to help {PRONOUN/p_l/object} carry the herbs.",
         "decline_text": "They're stopped before they leave camp — these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -13919,6 +13847,11 @@
             }
         ],
         "fail_outcomes": [
+            { 
+                "text": "Despite greenleaf's abundance, other wildflowers with less useful medicinal properties have choked up the daisy patch and hogged all the sunlight. p_l's patrol returns empty-pawed.",
+                "exp": 0,   
+                "frequency": 4
+            },
             {
                 "text": "With the warriors more interested in hunting whatever has been snacking on the daisies than helping p_l find any more plants, it's a frustrating and unproductive afternoon.",
                 "exp": 0,
@@ -14360,6 +14293,11 @@
                         }
                     }
                 ],
+                "frequency": 4
+            },
+            {
+                "text": "When the patrol arrives at the dandelion fields, they find the stems stripped of their leaves. The scent of rabbits suggests the culprits.",
+                "exp": 0,
                 "frequency": 4
             }
         ]
@@ -15091,12 +15029,17 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -8,
+                        "amount": -5,
                         "log": {
                             "cats_from": "cat_from and cat_to were short with each other during a herb gathering patrol."
                         }
                     }
                 ],
+                "frequency": 4
+            },
+            {
+                "text": "The greenleaf sun coupled with the lack of recent rain has left the goldenrod dry and shriveled. p_l decides it's best to leave the plants to recover, and the patrol returns home empty-pawed.",
+                "exp": 0,
                 "frequency": 4
             }
         ]
@@ -15297,7 +15240,7 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -10,
+                        "amount": -7,
                         "log": {
                             "cats_from": "cat_from lost faith in cat_to when cat_to was unable to locate a juniper tree during an herb-gathering patrol."
                         }
@@ -15418,7 +15361,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
+                        "amount": -5,
                         "log": {
                             "cats_from": "cat_from was irate when cat_to spent an herb-gathering patrol complaining about juniper needles instead of gathering them."
                         }
@@ -16264,12 +16207,17 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -8,
+                        "amount": -5,
                         "log": {
                             "cats_from": "cat_from and cat_to were short with each other during an unsuccessful herb-gathering patrol."
                         }
                     }
                 ],
+                "frequency": 4
+            },
+            {
+                "text": "The mallow is surprisingly small considering greenleaf's usual abundance. Perhaps too many roots over too many seasons have leached all the nutrients from the soil. p_l realizes that c_n may need to find a new source of mallow.",
+                "exp": 0,
                 "frequency": 4
             }
         ]
@@ -16593,12 +16541,17 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -8,
+                        "amount": -5,
                         "log": {
                             "cats_from": "cat_from and cat_to were short with each other during an unsuccessful herb-gathering patrol."
                         }
                     }
                 ],
+                "frequency": 4
+            },
+            {
+                "text": "Marigold being easy to spot means it's easy to tell when there is <i>no</i> marigold nearby, either. p_l calls off the patrol, resigned to returning to camp with empty paws.",
+                "exp": 0,
                 "frequency": 4
             }
         ]
@@ -16891,7 +16844,7 @@
                 "frequency": 1
             },
             {
-                "text": "s_c spots mullein plants growing plenty of leaves on their strange central stems, and knocks them over so that the entire bundle can be carried home by the patrol. As a bonus, {PRONOUN/s_c/poss} plant pruning operation exposes a couple hidden thyme plants creeping along the soil, and {PRONOUN/s_c/subject}'re added to the day's harvest.",
+                "text": "s_c spots mullein plants growing plenty of leaves on their strange central stems and knocks them over so that the entire bundle can be carried home by the patrol. As a bonus, {PRONOUN/s_c/poss} plant pruning operation exposes a couple hidden thyme plants creeping along the soil, and {PRONOUN/s_c/subject}'re added to the day's harvest.",
                 "exp": 10,
                 "stat_skill": [
                     "SENSE,2"
@@ -16925,27 +16878,8 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l could swear that there's usually some mullein around here — but not this time.",
+                "text": "p_l could swear that there's usually some mullein around here, but not this time.",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": -7,
-                        "log": {
-                            "cats_from": "cat_from was unimpressed that cat_to couldn't find any of the mullein the patrol was supposed to be gathering."
-                        }
-                    }
-                ],
                 "frequency": 4
             }
         ]
@@ -17535,13 +17469,18 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
+                        "amount": -7,
                         "log": {
                             "cats_from": "p_l was cross with cat_to when {PRONOUN/p_l/subject} discovered {PRONOUN/cat_to/subject} had been trampling plantain on purpose."
                         }
                     }
                 ],
                 "frequency": 4
+            },
+            {
+                "text": "The plantain hasn't been as aggressive this year, which is fortunate for the warriors but unfortunate for p_l's herb-gathering mission. {PRONOUN/p_l/subject/CAP} must return to camp empty-pawed.",
+                "exp": 0,
+                "frequency": 3
             }
         ]
     },
@@ -18175,9 +18114,25 @@
                             "trust",
                             "respect"
                         ],
-                        "amount": -10,
+                        "amount": -7,
                         "log": {
                             "cats_from": "cat_from lost faith in cat_to when cat_to admitted to not being able to identify ragwort during an herb-gathering patrol."
+                        }
+                    }
+                ],
+                "frequency": 4
+            },
+            {
+                "text": "p_l isn't able to locate any ragwort, which everyone pretends to be disappointed about. The patrol is in a good mood heading home without stinky ragwort in their jaws.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["patrol"],
+                        "values": ["like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to were in a good mood after they failed to find any ragwort and were spared its disgusting smell."
                         }
                     }
                 ],
@@ -18663,7 +18618,7 @@
                             "trust",
                             "respect"
                         ],
-                        "amount": -10,
+                        "amount": -7,
                         "log": {
                             "cats_from": "cat_from lost faith in cat_to when cat_to admitted to not being able to identify tansy during an herb-gathering patrol."
                         }
@@ -18998,25 +18953,6 @@
             {
                 "text": "p_l has no time — and no thyme. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} forced to give up on the search for today.",
                 "exp": 0,
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from felt like cat_to wasted {PRONOUN/cat_from/poss} time with an unsuccessful thyme-gathering patrol."
-                        }
-                    }
-                ],
                 "frequency": 4
             }
         ]
@@ -19355,12 +19291,17 @@
                             "trust",
                             "respect"
                         ],
-                        "amount": -10,
+                        "amount": -7,
                         "log": {
                             "cats_from": "cat_from lost faith in cat_to when cat_to admitted to not being able to identify wild garlic during an herb-gathering patrol."
                         }
                     }
                 ],
+                "frequency": 4
+            },
+            {
+                "text": "p_l returns to a patch of wild garlic {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} harvested from in the past, but it seems another animal has found {PRONOUN/p_l/poss} stash. The churned-up earth and the flecks of chewed bulbs are no good to the medicine den.",
+                "exp": 0,
                 "frequency": 4
             }
         ]
@@ -19710,7 +19651,7 @@
             ]
         },
         "frequency": 4,
-        "intro_text": "Hmm. p_l heads out, deciding that c_n needs more blackberry leaves in their stores.",
+        "intro_text": "p_l heads out, deciding that c_n needs more blackberry leaves in their stores.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} second thoughts about leaving {PRONOUN/p_l/poss} patients behind and {VERB/p_l/decide/decides} to go another day.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -20213,7 +20154,7 @@
             ]
         },
         "frequency": 4,
-        "intro_text": "Hmm. p_l heads out, deciding that c_n needs more blackberry leaves in their stores, bringing along anyone who isn't busy with other work.",
+        "intro_text": "p_l heads out, deciding that c_n needs more blackberry leaves in their stores, bringing along anyone who isn't busy with other work.",
         "decline_text": "They're stopped before they leave camp — these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 20,
         "success_outcomes": [
@@ -20394,24 +20335,6 @@
                     "scar": "m_c was scarred by frostbite after searching for berries in leaf-bare.",
                     "death": "m_c died of frostbite after searching for berries in leaf-bare."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from saw cat_to mess up while on patrol."
-                        }
-                    }
-                ],
                 "frequency": 3
             },
             {
@@ -20431,24 +20354,6 @@
                     "scar": "m_c was scarred by frostbite after searching for berries in leaf-bare.",
                     "death": "m_c died of frostbite after searching for berries in leaf-bare."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from saw p_l mess up while on patrol."
-                        }
-                    }
-                ],
                 "frequency": 3
             },
             {
@@ -20809,7 +20714,6 @@
                         "mutual": false,
                         "values": [
                             "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
@@ -20828,7 +20732,6 @@
                         "mutual": false,
                         "values": [
                             "like",
-                            "respect",
                             "comfort",
                             "trust"
                         ],
@@ -22864,24 +22767,6 @@
                     "scar": "m_c was scarred after falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare.",
                     "death": "m_c died from injuries sustained after falling from a juniper tree."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "r_c"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from saw cat_to mess up while on patrol."
-                        }
-                    }
-                ],
                 "frequency": 3
             },
             {
@@ -22902,24 +22787,6 @@
                     "scar": "m_c was scarred after falling from a juniper tree, trying to harvest its leaves in the cold snow of leaf-bare.",
                     "death": "m_c died from injuries sustained after falling from a juniper tree."
                 },
-                "relationships": [
-                    {
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "cats_from": [
-                            "patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "cat_from saw p_l mess up while on patrol."
-                        }
-                    }
-                ],
                 "frequency": 3
             },
             {
@@ -23595,6 +23462,11 @@
                     }
                 ],
                 "frequency": 4
+            },
+            {
+                "text": "The betony hasn't quite recovered from a late frost, and p_l decides it's best to let the plants recover before harvesting any this season.",
+                "exp": 0,
+                "frequency": 4
             }
         ]
     },
@@ -24260,7 +24132,7 @@
                         "values": [
                             "respect"
                         ],
-                        "amount": -8,
+                        "amount": -5,
                         "log": {
                             "cats_from": "cat_from accompanied cat_to to harvest burdock root, but cat_to wasn't able to find any, and cat_from felt like the day was a waste."
                         }
@@ -24282,6 +24154,11 @@
                         }
                     }
                 ],
+                "frequency": 4
+            },
+            {
+                "text": "After a late frost, the ground is too solid to dig up any burdock roots. The patrol gives up and heads home.",
+                "exp": 0,
                 "frequency": 4
             }
         ]
@@ -24631,6 +24508,22 @@
                     }
                 ],
                 "frequency": 4
+            },
+            {
+                "text": "The warriors bring back heaps of wildflowers but no daisies. p_l is amused by their helplessness. At least these flowers can help beautify the camp, and after all, gathering daisies isn't life-or-death.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_from": ["clan", "high_social", "-patrol"],
+                        "cats_to": ["patrol"],
+                        "values": ["like"],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from was pleased to see cat_to bring back wildflowers to decorate the camp in newleaf."
+                        }
+                    }
+                ],
+                "frequency": 3
             }
         ]
     },
@@ -24991,12 +24884,17 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
+                        "amount": -7,
                         "log": {
                             "cats_from": "cat_from lost {PRONOUN/cat_from/poss} temper with cat_to when cat_to trampled a crucial catmint plant in {PRONOUN/cat_to/poss} excitement about the herb."
                         }
                     }
                 ],
+                "frequency": 4
+            },
+            {
+                "text": "p_l is suspicious when the patrol finds the catmint half-chewed and missing leaves. The patrol gets an earful about how important the herb is for all sorts of coughs and illnesses, but no cat wants to fess up to snacking.",
+                "exp": 0,
                 "frequency": 4
             }
         ]
@@ -26089,14 +25987,14 @@
                             "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "p_l"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "like",
                             "respect"
                         ],
-                        "amount": -8,
+                        "amount": -5,
                         "log": {
                             "cats_from": "cat_from and cat_to were short with each other during a herb gathering patrol."
                         }
@@ -26303,7 +26201,7 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -10,
+                        "amount": -7,
                         "log": {
                             "cats_from": "cat_from lost faith in cat_to when cat_to was unable to locate a juniper tree during an herb-gathering patrol."
                         }
@@ -26424,7 +26322,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -10,
+                        "amount": -7,
                         "log": {
                             "cats_from": "cat_from was irate when cat_to spent an herb-gathering patrol complaining about juniper needles instead of gathering them."
                         }
@@ -26925,6 +26823,22 @@
                     }
                 ],
                 "frequency": 3
+            },
+            {
+                "text": "Though they fail to find any lungwort, the patrol keeps each other's spirits up. They can always try again another day.",
+                "exp": 0,
+                "relationships": [
+                    {
+                        "cats_from": ["patrol"],
+                        "cats_to": ["patrol"],
+                        "values": ["like"],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to kept each other's spirits up during an unsuccessful herb-gathering patrol."
+                        }
+                    }
+                ],
+                "frequency": 4
             }
         ]
     },
@@ -27266,7 +27180,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -8,
+                        "amount": -5,
                         "log": {
                             "cats_from": "cat_from was irritated when cat_to dismissed {PRONOUN/cat_from/poss} concerns over the poor growth of mallow."
                         }
@@ -27597,7 +27511,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -8,
+                        "amount": -5,
                         "log": {
                             "cats_from": "cat_from was irritated when cat_to dismissed {PRONOUN/cat_from/poss} concerns over the poor growth of marigold."
                         }
@@ -27944,7 +27858,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -8,
+                        "amount": -5,
                         "log": {
                             "cats_from": "cat_from was irritated when cat_to dismissed {PRONOUN/cat_from/poss} concerns over the poor growth of mullein."
                         }
@@ -28562,7 +28476,7 @@
                             "like",
                             "respect"
                         ],
-                        "amount": -8,
+                        "amount": -5,
                         "log": {
                             "cats_from": "cat_from was irritated when cat_to dismissed {PRONOUN/cat_from/poss} concerns over the poor growth of plantain."
                         }
@@ -29568,7 +29482,7 @@
                             "trust",
                             "respect"
                         ],
-                        "amount": -10,
+                        "amount": -7,
                         "log": {
                             "cats_from": "cat_from lost faith in cat_to when cat_to admitted to not being able to identify tansy during an herb-gathering patrol."
                         }
@@ -30261,7 +30175,7 @@
                             "trust",
                             "respect"
                         ],
-                        "amount": -10,
+                        "amount": -7,
                         "log": {
                             "cats_from": "cat_from lost faith in cat_to when cat_to admitted to not being able to identify wild garlic during an herb-gathering patrol."
                         }
@@ -33648,7 +33562,7 @@
                             "respect",
                             "trust"
                         ],
-                        "amount": -10,
+                        "amount": -7,
                         "log": {
                             "cats_from": "cat_from lost faith in cat_to when cat_to was unable to locate a juniper tree during an herb-gathering patrol."
                         }
