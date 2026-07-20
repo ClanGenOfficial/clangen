@@ -196,7 +196,7 @@ def reformat():
             "\/", "/"
         )  # ujson tries to escape "/", but doesn't end up doing a good job.
 
-        with open(path, "w") as write_file:
+        with open(f"{root_dir}/{path}", "w") as write_file:
             write_file.write(dict_text)
 
 
@@ -431,6 +431,10 @@ def reformat_outcome(
                 else:
                     reformatted_outcome["tags"].append(c)
                 continue
+            for i in range(0, 7):
+                if f"app{i}" == c:
+                    death_dict["cats"].append(f"r_c{i}")
+                    continue
             death_dict["cats"].append(c)
 
         reformatted_outcome["death"] = [death_dict]
@@ -449,15 +453,23 @@ def reformat_outcome(
                 non_lethal = True
                 injury["injuries"].remove("non_lethal")
 
+            cat_list = []
+            for c in injury["cats"]:
+                for i in range(0, 7):
+                    if f"app{i}" == c:
+                        cat_list.append(f"r_c{i}")
+                        continue
+                cat_list.append(c)
+
             injury_dict = ConditionDict(
-                cats=injury["cats"],
+                cats=cat_list,
                 condition=injury["injuries"],
             )
             if non_lethal:
                 injury_dict["non_lethal"] = True
-            if "scars" in injury:
+            if injury.get("scars"):
                 injury_dict["scar_pool_override"] = injury["scars"]
-            if "no_results" in injury:
+            if injury.get("no_results"):
                 injury_dict["no_results"] = injury["no_results"]
             if outcome.get("history_text"):
                 scar_history = outcome["history_text"].get("scar")
@@ -470,7 +482,14 @@ def reformat_outcome(
             reformatted_outcome["injury"].append(injury_dict)
 
     if outcome.get("lost_cats"):
-        reformatted_outcome["lost"] = [LostDict(cats=outcome["lost_cats"])]
+        cat_list = []
+        for c in outcome["cats"]:
+            for i in range(0, 7):
+                if f"app{i}" == c:
+                    cat_list.append(f"r_c{i}")
+                    continue
+            cat_list.append(c)
+        reformatted_outcome["lost"] = [LostDict(cats=cat_list)]
 
     if new_cats_joining:
         reformatted_outcome["join"] = new_cats_joining
