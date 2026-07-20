@@ -657,6 +657,8 @@ class Patrol:
         if outcome.supply:
             clan_size = get_living_clan_cat_count(Cat)
             for block in outcome.supply:
+                if not block.get("trigger"):
+                    continue
                 if "freshkill" in block["type"]:
                     if not event_for_freshkill_supply(
                         game.clan.freshkill_pile,

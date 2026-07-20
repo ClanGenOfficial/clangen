@@ -25,6 +25,8 @@ from scripts.events_module.text_adjust import event_text_adjust, adjust_list_tex
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game, constants
 
+disable_random: bool = False
+
 
 def execute_outcome(
     event: TextPoolEvent,
@@ -454,6 +456,9 @@ def _handle_supply_changes(
     """
     Handles applying supply increases
     """
+    if not event.supply:
+        return
+
     herb_blocks = []
     prey_blocks = []
     for block in event.supply:
@@ -605,24 +610,32 @@ def __get_herb_increase_amount(
     """
     finds out how many herbs can be gathered by given cats with given increase_tag
     """
-    increase_amount = get_config(
-        f"clan_resources.herb.increase_amounts.{increase_tag}"
+    # find how many herbs each cat is allowed
+    amount_per_cat = get_config(
+        f"clan_resources.herbs.increase_amounts.{increase_tag}"
     ) * len(event_involved_cats["patrol_cats"])
-    random_variance = get_config("clan_resources.herb.gathering_variance")
-    increase_amount += randint(random_variance[0], random_variance[1])
+
+    # some random variance is also created
+    random_variance = get_config("clan_resources.herbs.gathering_variance")
+
+    total_increase = 0
     for c in event_involved_cats["patrol_cats"]:
-        increase_amount += constants.CONFIG["clan_resources"]["herbs"][
-            "general_patrol_quantity_per_cat"
-        ]
+        # now we find how much this specific cat found
+        amount_gathered = amount_per_cat
+        if not disable_random:
+            # add that random variation
+            amount_gathered += randint(random_variance[0], random_variance[1])
+
+        # give skill buffs
         if c.skills.primary.path == SkillPath.CLEVER:
-            increase_amount += constants.CONFIG["clan_resources"]["herbs"][
-                "primary_clever"
-            ]
+            amount_gathered += get_config("clan_resources.herbs.primary_clever")
         elif c.skills.secondary and c.skills.secondary.path == SkillPath.CLEVER:
-            increase_amount += constants.CONFIG["clan_resources"]["herbs"][
-                "secondary_clever"
-            ]
-    return increase_amount
+            amount_gathered += get_config("clan_resources.herbs.secondary_clever")
+
+        # now add it to the total increase
+        total_increase += amount_gathered
+
+    return total_increase
 
 
 def _handle_exp(

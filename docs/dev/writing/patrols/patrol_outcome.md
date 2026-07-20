@@ -313,7 +313,7 @@ Change block:
 > The type of supply changing. Can be: `freshkill`, `random_herb`, or any single specific herb name.
 
 **trigger**
-> If the Clan's current level of the specified supply type should be at a certain threshold for this outcome to occur, specify it here.  Allowed specification are: 'low', 'adequate', 'full', 'excess'.  You **do not have** to specify a trigger.
+> If the Clan's current level of the specified supply type should be at a certain threshold for this outcome to occur, specify it here.  Allowed specification are: `always` 'low', 'adequate', 'full', 'excess'.  You **do not have** to specify a trigger.
 
 **adjust**
 > The amount to increase the specified supply type. Allowed increase tags are: `increase_tiny`, `increase_small`, `increase_medium`, `increase_large`, `increase_huge`.

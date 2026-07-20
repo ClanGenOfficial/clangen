@@ -98,7 +98,7 @@ class JoinDict(TypedDict):
 
 class SupplyDict(TypedDict):
     type: str
-    trigger: Literal["always", "excess", "full", "adequate", "low"]
+    trigger: NotRequired[Literal["always", "excess", "full", "adequate", "low"]]
     adjust: Literal[
         "increase_tiny",
         "increase_small",
