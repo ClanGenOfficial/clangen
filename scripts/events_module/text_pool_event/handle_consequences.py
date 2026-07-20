@@ -416,28 +416,36 @@ def _handle_reputation_changes(event: TextPoolEvent, other_clan: OtherClan) -> s
     if not event.reputation_changes:
         return ""
 
+    results = []
+
     outside_change = event.reputation_changes.get("outsider")
     other_clan_change = event.reputation_changes.get("other_clan")
 
     if outside_change:
         change_clan_reputation(outside_change)
         if outside_change > 0:
-            return i18n.t("screens.patrol.outsider_rep_improved")
+            results.append(i18n.t("screens.patrol.outsider_rep_improved"))
         elif outside_change == 0:
-            return i18n.t("screens.patrol.outsider_rep_neutral")
+            results.append(i18n.t("screens.patrol.outsider_rep_neutral"))
         else:
-            return i18n.t("screens.patrol.outsider_rep_worsened")
+            results.append(i18n.t("screens.patrol.outsider_rep_worsened"))
 
     if other_clan_change:
         change_clan_relations(other_clan, other_clan_change)
         if other_clan_change > 0:
-            return i18n.t("screens.patrol.clan_rep_improved", clan=other_clan.name)
+            results.append(
+                i18n.t("screens.patrol.clan_rep_improved", clan=other_clan.name)
+            )
         elif other_clan_change == 0:
-            return i18n.t("screens.patrol.clan_rep_neutral", clan=other_clan.name)
+            results.append(
+                i18n.t("screens.patrol.clan_rep_neutral", clan=other_clan.name)
+            )
         else:
-            return i18n.t("screens.patrol.clan_rep_worsened", clan=other_clan.name)
+            results.append(
+                i18n.t("screens.patrol.clan_rep_worsened", clan=other_clan.name)
+            )
 
-    return ""
+    return "\n".join(results)
 
 
 def _handle_supply_changes(

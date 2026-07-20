@@ -6,7 +6,8 @@ from scripts.cat.enums import CatRank, CatGroup
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.cat.status import StatusDict
 from scripts.clan import Clan, OtherClan
-from scripts.events_module.parameter_dicts import InvolvedCatDict, JoinDict, DeathDict, LostDict, ConditionDict
+from scripts.events_module.parameter_dicts import InvolvedCatDict, JoinDict, DeathDict, LostDict, ConditionDict, \
+    ReputationChangesDict
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.text_pool_event import handle_consequences
@@ -429,8 +430,45 @@ class TestOutcomeExecution(unittest.TestCase):
             "sore" in war1.injuries and "sore" in app1.injuries,
             msg=f"{war1} and {app1} should be sore.",
         )
-    # check reputation changing
 
+    # check reputation changing
+    def test_rep_change(self):
+        war1 = create_cat(rank=CatRank.WARRIOR)
+        app1 = create_cat(rank=CatRank.APPRENTICE)
+
+        patrol = PatrolEvent(
+            id="test",
+            types=["hunting"],
+            intro_text="test",
+            decline_text="test",
+            involved_cats={"p_l": InvolvedCatDict(), "r_c": InvolvedCatDict()},
+            success_outcomes=[
+                TextPoolEvent(
+                    strings=[""],
+                    reputation_changes=ReputationChangesDict(other_clan=2, outsider=2),
+                )
+            ],
+            fail_outcomes=[TextPoolEvent()],
+        )
+        other_clan = OtherClan()
+        starting_clan_rep = other_clan.relations
+        starting_outsider_rep = game.clan.reputation
+
+        self.patrol_class._add_patrol_cats([war1, app1])
+        self.patrol_class._patrol_pass_cat_constraints(patrol)
+        self.patrol_class._check_outcome_constraints(
+            patrol.success_outcomes[0], "success"
+        )
+        handle_consequences.execute_outcome(
+            patrol.success_outcomes[0],
+            self.patrol_class.involved_cats,
+            other_clan=other_clan,
+        )
+
+        self.assertTrue(
+            starting_clan_rep + 2 == other_clan.relations and starting_outsider_rep + 2 == game.clan.reputation,
+            msg=f"Clan and outsider reputation should be increased.",
+        )
     # check supply changing
 
     # check exp increasing
