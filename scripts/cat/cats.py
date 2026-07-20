@@ -950,11 +950,12 @@ class Cat:
                 and child.moons < 12
                 and not child.status.alive_in_player_clan
             ):
+                child.history.add_beginning()
                 child.status.add_to_group(
                     new_group_ID=CatGroup.PLAYER_CLAN_ID, age=child.age
                 )
-                child.add_to_clan()
-                child.history.add_beginning()
+                if game.clan:
+                    game.clan.add_cat(child)
                 ids.append(child_id)
 
         return ids
