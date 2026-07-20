@@ -507,8 +507,14 @@ class Patrol:
         for abbr, constraints in patrol.involved_cats.items():
             # if we need n_c then we pull outside cats
             if "n_c" in abbr:
-                potential_cats = [c for c in outside_cats if c not in self.new_cats]
+                potential_cats = [
+                    c
+                    for c in outside_cats
+                    if c not in self.new_cats and c not in temp_involved_cats.values()
+                ]
                 random.shuffle(potential_cats)
+            elif "p_l" == abbr:
+                potential_cats = [self.involved_cats["p_l"]]
             else:
                 potential_cats = [
                     c for c in self.patrol_cats if c not in temp_involved_cats.values()
@@ -519,6 +525,7 @@ class Patrol:
                 possible_cats=potential_cats,
                 tags=patrol.tags,
                 return_list=True,
+                return_id=False,
             )
 
             if not self._find_involved_cats(
@@ -531,7 +538,7 @@ class Patrol:
                 return False
 
         # if we're here, then we must have filled all the needed cats!
-        self.involved_cats = temp_involved_cats
+        self.involved_cats.update(temp_involved_cats)
         return True
 
     def _find_allowed_outcomes(
@@ -713,7 +720,7 @@ class Patrol:
                 # find all the cats that were listed in the abbreviations
                 abbr_cats = [self.involved_cats.get(_a) for _a in prior_abbreviations]
                 # if it's "any" then that's easy-peasy, just allow any of the cats
-                if "any" in abbr_cats:
+                if "any" in prior_abbreviations:
                     possible_cats = self.involved_cats["patrol_cats"]
                 # if it's meant to be exclusionary, then possible_cats will be all cats not in abbr_cats
                 elif is_exclusionary:
@@ -747,6 +754,10 @@ class Patrol:
                                 constraints_dict=block, involved_cats=temp_involved_cats
                             ):
                                 return False
+
+                    # if we made it here, this cat works! use them
+                    temp_involved_cats[abbr] = c
+                    break
 
             # if neither of those is happening, then we check if any of our uninvolved cats can take this spot!
             else:
@@ -793,7 +804,7 @@ class Patrol:
         if possible_cats and not relationship_constraint:
             # take first cat
             temp_involved_cats[abbr] = possible_cats[0]
-            return False
+            return True
 
         # otherwise, let's make sure we fulfill the rel constraints with this cat
         elif possible_cats:
@@ -819,7 +830,7 @@ class Patrol:
         # there weren't any possible cats, so we'll create a new one if we're allowed
         else:
             # we don't need to check relationship constraints if we're making a new cat
-            if "n_c" in abbr and cat_constraints.get("can_create_new_cat"):
+            if "n_c" in abbr and "can_create_new_cat" in cat_constraints:
                 temp_involved_cats[abbr] = updated_create_new_cat(
                     option_dict=cat_constraints,
                     involved_cats=temp_involved_cats,

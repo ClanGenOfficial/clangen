@@ -43,7 +43,7 @@ class PatrolEvent:
     location: list[str] = field(default_factory=list)
     season: list[str] = field(default_factory=list)
     tags: list[str] = field(default_factory=list)
-    poi: Optional[dict[str, list]] = None
+    poi: Optional[dict[str, list]] = field(default_factory=dict)
     required_cat_types: dict[str, list[int]] = field(default_factory=dict)
     involved_cats: dict[str, Union[InvolvedCatDict, dict]] = field(default_factory=dict)
     relationship_constraint: list[RelationshipConstraintDict] = field(

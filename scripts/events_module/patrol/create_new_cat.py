@@ -109,9 +109,7 @@ def updated_create_new_cat(
             else None,
         )
         # check if kittypets get collar
-        if created_cat.status.social == CatSocial.KITTYPET and bool(
-            random.getrandbits(1)
-        ):
+        if created_cat.status.social == CatSocial.KITTYPET and bool(getrandbits(1)):
             created_cat.pelt.accessory = (
                 *created_cat.pelt.accessory,
                 choice(created_cat.pelt.collar_accessories),
