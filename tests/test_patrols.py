@@ -6,7 +6,7 @@ from scripts.cat.enums import CatRank, CatGroup
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.cat.status import StatusDict
 from scripts.clan import Clan, OtherClan
-from scripts.events_module.parameter_dicts import InvolvedCatDict, JoinDict, DeathDict
+from scripts.events_module.parameter_dicts import InvolvedCatDict, JoinDict, DeathDict, LostDict
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.text_pool_event import handle_consequences
@@ -360,7 +360,40 @@ class TestOutcomeExecution(unittest.TestCase):
         )
 
     # check getting lost
+    def test_lost(self):
+        war1 = create_cat(rank=CatRank.WARRIOR)
+        app1 = create_cat(rank=CatRank.APPRENTICE)
 
+        patrol = PatrolEvent(
+            id="test",
+            types=["hunting"],
+            intro_text="test",
+            decline_text="test",
+            involved_cats={},
+            success_outcomes=[
+                TextPoolEvent(
+                    strings=[""],
+                    lost=[LostDict(cats=["p_l"])],
+                )
+            ],
+            fail_outcomes=[TextPoolEvent()],
+        )
+
+        self.patrol_class._add_patrol_cats([war1, app1])
+        self.patrol_class._patrol_pass_cat_constraints(patrol)
+        self.patrol_class._check_outcome_constraints(
+            patrol.success_outcomes[0], "success"
+        )
+        handle_consequences.execute_outcome(
+            patrol.success_outcomes[0],
+            self.patrol_class.involved_cats,
+            other_clan=OtherClan(),
+        )
+
+        self.assertTrue(
+            war1.status.is_lost(CatGroup.PLAYER_CLAN_ID),
+            msg=f"{war1} should be lost.",
+        )
     # check gaining condition
 
     # check reputation changing
