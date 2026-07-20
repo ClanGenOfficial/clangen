@@ -74,7 +74,7 @@ def reformat():
                         continue
                     if "mentored" in tag:
                         specific_mentored.append(
-                            tag.replace("mentored", "").replace("app", "")
+                            tag.replace("_mentored", "").replace("app", "")
                         )
                         continue
                     if tag == "new_cat":
@@ -498,7 +498,6 @@ def reformat_outcome(
                     if f"app{i}" == c:
                         cat_list.append(f"r_c{i}")
                         name_change = True
-                        continue
                 if not name_change:
                     cat_list.append(c)
 
