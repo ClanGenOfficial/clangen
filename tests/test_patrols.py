@@ -6,7 +6,7 @@ from scripts.cat.enums import CatRank, CatGroup
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.cat.status import StatusDict
 from scripts.clan import Clan, OtherClan
-from scripts.events_module.parameter_dicts import InvolvedCatDict, JoinDict, DeathDict, LostDict
+from scripts.events_module.parameter_dicts import InvolvedCatDict, JoinDict, DeathDict, LostDict, ConditionDict
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.text_pool_event import handle_consequences
@@ -395,7 +395,40 @@ class TestOutcomeExecution(unittest.TestCase):
             msg=f"{war1} should be lost.",
         )
     # check gaining condition
+    def test_condition(self):
+        war1 = create_cat(rank=CatRank.WARRIOR)
+        app1 = create_cat(rank=CatRank.APPRENTICE)
 
+        patrol = PatrolEvent(
+            id="test",
+            types=["hunting"],
+            intro_text="test",
+            decline_text="test",
+            involved_cats={"p_l": InvolvedCatDict(), "r_c": InvolvedCatDict()},
+            success_outcomes=[
+                TextPoolEvent(
+                    strings=[""],
+                    condition=[ConditionDict(cats=["p_l", "r_c"], condition=["sore"])],
+                )
+            ],
+            fail_outcomes=[TextPoolEvent()],
+        )
+
+        self.patrol_class._add_patrol_cats([war1, app1])
+        self.patrol_class._patrol_pass_cat_constraints(patrol)
+        self.patrol_class._check_outcome_constraints(
+            patrol.success_outcomes[0], "success"
+        )
+        handle_consequences.execute_outcome(
+            patrol.success_outcomes[0],
+            self.patrol_class.involved_cats,
+            other_clan=OtherClan(),
+        )
+
+        self.assertTrue(
+            "sore" in war1.injuries and "sore" in app1.injuries,
+            msg=f"{war1} and {app1} should be sore.",
+        )
     # check reputation changing
 
     # check supply changing

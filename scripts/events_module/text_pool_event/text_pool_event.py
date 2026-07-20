@@ -65,4 +65,4 @@ class TextPoolEvent:
         pass
 
     def __repr__(self):
-        return self.id if self.id else f"{self.strings[1][:30]}..."
+        return self.id if self.id else f"string event: {self.strings[0]}"

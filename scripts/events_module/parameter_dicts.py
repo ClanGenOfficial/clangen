@@ -76,9 +76,9 @@ class DeathDict(TypedDict):
 
 class ConditionDict(TypedDict):
     cats: list[str]
-    no_results: bool
     condition: list[str]
-    non_lethal: bool
+    no_results: NotRequired[bool]
+    non_lethal: NotRequired[bool]
     scar_pool_override: NotRequired[list[str]]
     scar_history: NotRequired[str]
     death_history: NotRequired[str]
