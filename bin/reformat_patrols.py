@@ -68,7 +68,7 @@ def reformat():
                     if tag == "rom_two_apps":
                         if "romance" not in p["tags"]:
                             preserved_tags.append(tag)
-                            continue
+                        continue
                     if tag == "all_mentored":
                         all_mentored = True
                         continue
@@ -138,14 +138,29 @@ def reformat():
                 p["intro_text"] = p["intro_text"].replace("r_c", "p_l")
             for i in range(0, 7):
                 if f"app{i}" in p["intro_text"]:
-                    p["intro_text"] = p["intro_text"].replace(f"app{i}", f"r_c{i}")
+                    if p.get("max_cats") == 1:
+                        replace_rc_to_pl = True
+                        p["intro_text"] = p["intro_text"].replace(f"app{i}", f"p_l")
+                    else:
+                        p["intro_text"] = p["intro_text"].replace(f"app{i}", f"r_c{i}")
             reformatted_patrol["intro_text"] = p.get("intro_text")
             if p.get("max_cats") == 1 and "r_c" in p.get("decline_text"):
                 replace_rc_to_pl = True
                 p["decline_text"] = p["decline_text"].replace("r_c", "p_l")
             for i in range(0, 7):
                 if f"app{i}" in p["decline_text"]:
-                    p["decline_text"] = p["decline_text"].replace(f"app{i}", f"r_c{i}")
+                    if p.get("max_cats") == 1:
+                        replace_rc_to_pl = True
+                        p["decline_text"] = p["decline_text"].replace(f"app{i}", f"p_l")
+                        if f"r_c{i}" in reformatted_patrol["involved_cats"]:
+                            reformatted_patrol["involved_cats"][
+                                "p_l"
+                            ] = reformatted_patrol["involved_cats"][f"r_c{i}"]
+                            reformatted_patrol["involved_cats"].pop(f"r_c{i}")
+                    else:
+                        p["decline_text"] = p["decline_text"].replace(
+                            f"app{i}", f"r_c{i}"
+                        )
             reformatted_patrol["decline_text"] = p.get("decline_text")
 
             reformatted_patrol["success_outcomes"] = []
@@ -209,7 +224,7 @@ def reformat():
 def reformat_outcome(
     outcome: dict,
     already_involved_cats: dict,
-    replace_rc: bool,
+    replace_name: bool,
     medicine_cat_allowed: bool,
 ) -> dict:
     reformatted_outcome = {"tags": [], "frequency": outcome.get("frequency")}
@@ -219,7 +234,7 @@ def reformat_outcome(
     if outcome.get("art_clean"):
         reformatted_outcome["outcome_art_clean"] = outcome.get("art_clean")
 
-    if replace_rc:
+    if replace_name:
         outcome["text"] = outcome["text"].replace("r_c", "p_l")
 
     for i in range(0, 7):
@@ -236,9 +251,14 @@ def reformat_outcome(
         involved_cats["r_c"] = {}
     for i in range(0, 7):
         if f"app{i}" in text_to_search and f"app{i}" not in already_involved_cats:
-            reformatted_outcome["strings"][0] = outcome["text"].replace(
-                f"app{i}", f"r_c{i}"
-            )
+            if replace_name:
+                reformatted_outcome["strings"][0] = outcome["text"].replace(
+                    f"app{i}", f"p_l"
+                )
+            else:
+                reformatted_outcome["strings"][0] = outcome["text"].replace(
+                    f"app{i}", f"r_c{i}"
+                )
             rank_list = [CatRank.APPRENTICE]
             if medicine_cat_allowed:
                 rank_list.append(CatRank.MEDICINE_APPRENTICE)
