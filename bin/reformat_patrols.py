@@ -121,7 +121,7 @@ def reformat():
                     if medicine_cat_allowed:
                         rank_list.append(CatRank.MEDICINE_APPRENTICE)
                     involved_cats[f"r_c{i}"] = InvolvedCatDict(status=rank_list)
-                    if all_mentored or i in specific_mentored:
+                    if all_mentored or str(i) in specific_mentored:
                         involved_cats[f"r_c{i}"]["has_mentor"] = True
 
             reformatted_patrol["involved_cats"] = involved_cats
@@ -310,7 +310,7 @@ def reformat_outcome(
     if outcome.get("new_cat"):
         for i, attr_list in enumerate(outcome["new_cat"]):
             join_dict = JoinDict(cats=[])
-            cat_abbr = f"n_c{i}"
+            cat_abbr = f"n_c:{i}"
             if "meeting" not in attr_list:
                 join_dict["cats"].append(cat_abbr)
             if "dead" in attr_list:
