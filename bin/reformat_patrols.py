@@ -406,7 +406,7 @@ def reformat_outcome(
                     tag_list = bs_tags.split(",")
                     cat_dict["backstory"] = tag_list
 
-                involved_cats[cat_abbr] = cat_dict
+            involved_cats[cat_abbr] = cat_dict
 
             new_cats_joining.append(join_dict)
 
