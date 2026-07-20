@@ -235,7 +235,10 @@ def reformat_outcome(
     if "r_c" in text_to_search and "r_c" not in already_involved_cats:
         involved_cats["r_c"] = {}
     for i in range(0, 7):
-        if f"r_c{i}" in text_to_search and f"r_c{i}" not in already_involved_cats:
+        if f"app{i}" in text_to_search and f"app{i}" not in already_involved_cats:
+            reformatted_outcome["strings"][0] = outcome["text"].replace(
+                f"app{i}", f"r_c{i}"
+            )
             rank_list = [CatRank.APPRENTICE]
             if medicine_cat_allowed:
                 rank_list.append(CatRank.MEDICINE_APPRENTICE)
