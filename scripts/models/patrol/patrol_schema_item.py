@@ -18,6 +18,7 @@ from scripts.models.text_pool_event.relationship_constraint_dict import (
     RelationshipConstraint,
 )
 
+
 class PatrolSchemaItem(BaseModel):
     model_config = ConfigDict(extra="forbid")
     id: str = Field(..., description="Unique string used to identify the patrol.")
