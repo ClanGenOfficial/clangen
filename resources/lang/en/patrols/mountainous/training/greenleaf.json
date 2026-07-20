@@ -860,7 +860,7 @@
         "biome": [ "mountainous" ],
         "season": [ "greenleaf" ],
         "types": [ "training" ],
-        "tags": [],
+        "tags": ["clan:leader"],
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
