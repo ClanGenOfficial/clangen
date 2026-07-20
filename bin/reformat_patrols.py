@@ -136,10 +136,16 @@ def reformat():
             if p.get("max_cats") == 1 and "r_c" in p.get("intro_text"):
                 replace_rc_to_pl = True
                 p["intro_text"] = p["intro_text"].replace("r_c", "p_l")
+            for i in range(0, 7):
+                if f"app{i}" in p["intro_text"]:
+                    p["intro_text"] = p["intro_text"].replace(f"app{i}", f"r_c{i}")
             reformatted_patrol["intro_text"] = p.get("intro_text")
             if p.get("max_cats") == 1 and "r_c" in p.get("decline_text"):
                 replace_rc_to_pl = True
                 p["decline_text"] = p["decline_text"].replace("r_c", "p_l")
+            for i in range(0, 7):
+                if f"app{i}" in p["decline_text"]:
+                    p["decline_text"] = p["decline_text"].replace(f"app{i}", f"r_c{i}")
             reformatted_patrol["decline_text"] = p.get("decline_text")
 
             reformatted_patrol["success_outcomes"] = []
@@ -215,6 +221,10 @@ def reformat_outcome(
 
     if replace_rc:
         outcome["text"] = outcome["text"].replace("r_c", "p_l")
+
+    for i in range(0, 7):
+        if f"app{i}" in outcome["text"]:
+            outcome["text"] = outcome["text"].replace(f"app{i}", f"r_c{i}")
     reformatted_outcome["strings"] = [outcome.get("text")]
 
     if outcome.get("min_max_status"):
@@ -225,7 +235,7 @@ def reformat_outcome(
     if "r_c" in text_to_search and "r_c" not in already_involved_cats:
         involved_cats["r_c"] = {}
     for i in range(0, 7):
-        if f"app{i}" in text_to_search and f"app{i}" not in already_involved_cats:
+        if f"r_c{i}" in text_to_search and f"r_c{i}" not in already_involved_cats:
             rank_list = [CatRank.APPRENTICE]
             if medicine_cat_allowed:
                 rank_list.append(CatRank.MEDICINE_APPRENTICE)
