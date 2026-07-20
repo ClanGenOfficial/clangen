@@ -70,7 +70,7 @@ class ReputationChangesDict(TypedDict, total=False):
 
 class DeathDict(TypedDict):
     cats: list[str]
-    body: bool
+    body: NotRequired[bool]
     history: str
 
 
