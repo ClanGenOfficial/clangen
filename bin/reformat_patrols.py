@@ -135,11 +135,11 @@ def reformat():
             replace_rc_to_pl = False
             if p.get("max_cats") == 1 and "r_c" in p.get("intro_text"):
                 replace_rc_to_pl = True
-                p.get("intro_text").replace("r_c", "p_l")
+                p["intro_text"] = p["intro_text"].replace("r_c", "p_l")
             reformatted_patrol["intro_text"] = p.get("intro_text")
             if p.get("max_cats") == 1 and "r_c" in p.get("decline_text"):
                 replace_rc_to_pl = True
-                p.get("decline_text").replace("r_c", "p_l")
+                p["decline_text"] = p["decline_text"].replace("r_c", "p_l")
             reformatted_patrol["decline_text"] = p.get("decline_text")
 
             reformatted_patrol["success_outcomes"] = []
@@ -268,7 +268,7 @@ def reformat_outcome(
             )
 
     new_cats_joining = []
-    new_cat_death_dict = DeathDict(cats=[], history="This cat died while wandering.")
+    new_cat_death_dict = None
     if outcome.get("new_cat"):
         for i, attr_list in enumerate(outcome["new_cat"]):
             join_dict = JoinDict(cats=[])
@@ -276,6 +276,10 @@ def reformat_outcome(
             if "meeting" not in attr_list:
                 join_dict["cats"].append(cat_abbr)
             if "dead" in attr_list:
+                if not new_cat_death_dict:
+                    new_cat_death_dict = DeathDict(
+                        cats=[], history="This cat died while wandering."
+                    )
                 new_cat_death_dict["cats"].append(cat_abbr)
 
             cat_dict = InvolvedCatDict()
@@ -396,12 +400,14 @@ def reformat_outcome(
     if outcome.get("prey"):
         reformatted_outcome["supply"] = []
         for prey in outcome["prey"]:
+            if prey == "very_small":
+                prey = "tiny"
             reformatted_outcome["supply"].append(
                 SupplyDict(type="freshkill", adjust=f"increase_{prey}")
             )
     if outcome.get("herbs"):
         reformatted_outcome["supply"] = []
-        many_herb = False
+        many_herb = "many_herbs" in outcome["herbs"]
         for herb in outcome["herbs"]:
             if herb == "many_herbs":
                 many_herb = True
@@ -474,6 +480,8 @@ def reformat_outcome(
 
     if not reformatted_outcome["tags"]:
         reformatted_outcome.pop("tags")
+    if not reformatted_outcome["involved_cats"]:
+        reformatted_outcome.pop("involved_cats")
 
     return reformatted_outcome
 
