@@ -48,6 +48,8 @@ def reformat():
             reformatted_patrol = {"id": p.get("patrol_id")}
             if p.get("types"):
                 reformatted_patrol["types"] = p.get("types")
+            else:
+                pass
             if "herb_gathering" in reformatted_patrol["types"]:
                 medicine_cat_allowed = True
             else:
@@ -311,6 +313,7 @@ def reformat_outcome(
         for i, attr_list in enumerate(outcome["new_cat"]):
             join_dict = JoinDict(cats=[])
             cat_abbr = f"n_c:{i}"
+            cat_dict = InvolvedCatDict()
             if "meeting" not in attr_list:
                 join_dict["cats"].append(cat_abbr)
             if "dead" in attr_list:
@@ -319,8 +322,9 @@ def reformat_outcome(
                         cats=[], history="This cat died while wandering."
                     )
                 new_cat_death_dict["cats"].append(cat_abbr)
+            if "exists" not in attr_list:
+                cat_dict["can_create_new_cat"] = CanCreateNewCatDict()
 
-            cat_dict = InvolvedCatDict()
             for tag in attr_list:
                 parent_match = re.match(r"parent:([,0-9]+)", tag)
                 adoptive_match = re.match(r"adoptive:(.+)", tag)
@@ -383,6 +387,8 @@ def reformat_outcome(
                     join_dict["change_name"] = False
 
                 elif rank_match:
+                    if tag in (CatRank.NEWBORN, CatRank.KITTEN) and not "age" in cat_dict:
+                        cat_dict["age"] = [tag]
                     join_dict["new_status"] = [tag.replace("status:", "")]
 
                 elif age_match:
@@ -399,7 +405,7 @@ def reformat_outcome(
                     else:
                         cat_dict["status"].append(tag)
                 elif tag == "former clancat":
-                    cat_dict["past_status"] = [tag]
+                    cat_dict["past_status"] = ["clancat"]
 
                 elif backstory_match:
                     bs_tags = tag.replace("backstory:", "")
