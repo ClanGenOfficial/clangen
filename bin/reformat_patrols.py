@@ -56,7 +56,7 @@ def reformat():
                 reformatted_patrol["types"] = p.get("types")
                 if "herb_gathering" in reformatted_patrol["types"]:
                     medicine_cat_allowed = True
-                    
+
             if p.get("frequency"):
                 reformatted_patrol["frequency"] = p.get("frequency")
             if p.get("biome"):
@@ -392,13 +392,14 @@ def reformat_outcome(
                     join_dict["change_name"] = False
 
                 elif rank_match:
+                    clean_tag = tag.replace("status:", "")
                     if (
-                        tag in (CatRank.NEWBORN, CatRank.KITTEN)
+                        clean_tag in (CatRank.NEWBORN, CatRank.KITTEN)
                         and not "age" in cat_dict
                     ):
-                        cat_dict["age"] = [tag]
+                        cat_dict["age"] = [clean_tag]
                     if (
-                        tag in (CatRank.WARRIOR, CatRank.MEDICINE_CAT)
+                        clean_tag in (CatRank.WARRIOR, CatRank.MEDICINE_CAT)
                         and not "age" in cat_dict
                     ):
                         cat_dict["age"] = [
@@ -406,9 +407,9 @@ def reformat_outcome(
                             CatAge.YOUNG_ADULT,
                             CatAge.SENIOR_ADULT,
                         ]
-                    if tag in (CatRank.APPRENTICE, CatRank.MEDICINE_APPRENTICE):
+                    if clean_tag in (CatRank.APPRENTICE, CatRank.MEDICINE_APPRENTICE):
                         cat_dict["age"] = [CatAge.ADOLESCENT]
-                    join_dict["new_status"] = [tag.replace("status:", "")]
+                    join_dict["new_status"] = [clean_tag]
 
                 elif age_match:
                     age_tag = tag.replace("age:", "")
