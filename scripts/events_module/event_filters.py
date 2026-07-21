@@ -503,6 +503,7 @@ def _check_cat_status(cat, statuses: list) -> bool:
         (cat.status.rank in statuses)
         or ("clancat" in statuses and cat.status.is_clancat)
         or ("lost" in statuses and cat.status.is_lost())
+        or ("guide" in statuses and cat == game.clan.instructor)
     ):
         return True
 
@@ -515,6 +516,7 @@ def _check_cat_status(cat, statuses: list) -> bool:
         (cat.status.rank in statuses)
         or ("clancat" in statuses and cat.status.is_clancat)
         or ("lost" in statuses and cat.status.is_lost())
+        or ("guide" in statuses and cat == game.clan.instructor)
     ):
         return False
 
@@ -1125,9 +1127,19 @@ def _get_cats_with_status(cat_list: list, statuses: list[str]) -> list:
 
     if is_exclusionary:
         statuses = [x.replace("-", "") for x in statuses]
-        return [kitty for kitty in cat_list if kitty.status.rank not in statuses]
+        return [
+            kitty
+            for kitty in cat_list
+            if kitty.status.rank not in statuses
+            and not ("guide" in statuses and kitty == game.clan.instructor)
+        ]
     else:
-        return [kitty for kitty in cat_list if kitty.status.rank in statuses]
+        return [
+            kitty
+            for kitty in cat_list
+            if kitty.status.rank in statuses
+            or ("guide" in statuses and kitty == game.clan.instructor)
+        ]
 
 
 def _get_cats_with_stat(cat_list: list, stat: dict) -> list:
@@ -1212,7 +1224,7 @@ def _get_cats_from_group(
 
     is_exclusionary = _check_for_exclusionary_value(groups)
 
-    groups = [x.replace("-", "") for x in groups if "-" in x]
+    groups = [x.replace("-", "") for x in groups]
     remaining_tags = groups.copy()
 
     for tag in groups:
