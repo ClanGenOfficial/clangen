@@ -439,7 +439,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -500,7 +500,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -561,7 +561,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -614,7 +614,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -657,7 +657,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from thought cat_to's choice of freezing cold water for lifeguarding training was at fault for app1's shivering."
+                            "cats_from": "cat_from thought cat_to's choice of freezing cold water for lifeguarding training was at fault for r_c1's shivering."
                         }
                     }
                 ],

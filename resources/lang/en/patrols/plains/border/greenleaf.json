@@ -2278,7 +2278,7 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_train_argue_ApAp",
                 "strings": [
-                    "r_c4 and app1 skid to a halt at a rock that peeks above the plains, arguing about which direction to go. app3 and app2 both side with r_c4, and even worse, they're all <i>right</i>, making app1 grumble resentfully as {PRONOUN/app3/subject} trail behind the others."
+                    "r_c4 and r_c1 skid to a halt at a rock that peeks above the plains, arguing about which direction to go. r_c3 and r_c2 both side with r_c4, and even worse, they're all <i>right</i>, making r_c1 grumble resentfully as {PRONOUN/r_c3/subject} trail behind the others."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2309,7 +2309,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -2323,11 +2323,11 @@
                     },
                     {
                         "cats_from": [
-                            "app4"
+                            "r_c4"
                         ],
                         "cats_to": [
-                            "app2",
-                            "app3"
+                            "r_c2",
+                            "r_c3"
                         ],
                         "mutual": false,
                         "values": [
@@ -2336,7 +2336,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from appreciated that cat_to backed {PRONOUN/cat_from/object} up when cat_from argued with app1 about which direction to go on patrol."
+                            "cats_from": "cat_from appreciated that cat_to backed {PRONOUN/cat_from/object} up when cat_from argued with r_c1 about which direction to go on patrol."
                         }
                     }
                 ]
@@ -2345,7 +2345,7 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_bord_twocathostile_ApAp",
                 "strings": [
-                    "app1 and app2 tumble around, skidding to a halt to bat at each other and shove, claws sheathed. r_c4 calls back, telling them to hurry up or get left behind. app1 and app2 bound along to catch up, still scuffling."
+                    "r_c1 and r_c2 tumble around, skidding to a halt to bat at each other and shove, claws sheathed. r_c4 calls back, telling them to hurry up or get left behind. r_c1 and r_c2 bound along to catch up, still scuffling."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2368,10 +2368,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -2750,7 +2750,7 @@
                     {
                         "cats": [
                             "r_c1",
-                            "app1"
+                            "r_c1"
                         ],
                         "history": "m_c was taken by an eagle as an apprentice, out on a border patrol with {PRONOUN/m_c/poss} friends."
                     }
@@ -2825,7 +2825,7 @@
                 "frequency": 3,
                 "outcome_art": "animals/gen_eagledive",
                 "strings": [
-                    "Though they don't know it, the racing apprentices are being stalked. A golden eagle falls out of the sky, aiming for app2. r_c4 yowls, and app2 manages to flinch, only getting caught by a glancing blow. As the other apprentices drive the bird off, s_c runs in to help app2, stopping the blood loss."
+                    "Though they don't know it, the racing apprentices are being stalked. A golden eagle falls out of the sky, aiming for r_c2. r_c4 yowls, and r_c2 manages to flinch, only getting caught by a glancing blow. As the other apprentices drive the bird off, s_c runs in to help r_c2, stopping the blood loss."
                 ],
                 "involved_cats": {
                     "r_c2": {
@@ -2853,10 +2853,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app4"
+                            "r_c4"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -2873,7 +2873,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -2898,7 +2898,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from heard that cat_to stopped app2's bleeding when the patrol was attacked by an eagle."
+                            "cats_from": "cat_from heard that cat_to stopped r_c2's bleeding when the patrol was attacked by an eagle."
                         }
                     }
                 ],
@@ -3003,7 +3003,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_battle_ApAp",
                 "strings": [
-                    "app1 tries to retake the lead as the apprentices race along the border, but r_c2 shoves {PRONOUN/app1/object} off the track. That coyote-heart! app1 regains {PRONOUN/app1/poss} feet and pounces, sending r_c2 tumbling, and then r_c2 rears up with claws extended. By the time the other apprentices break up the fight, blood has been shed and grudges created."
+                    "r_c1 tries to retake the lead as the apprentices race along the border, but r_c2 shoves {PRONOUN/r_c1/object} off the track. That coyote-heart! r_c1 regains {PRONOUN/r_c1/poss} feet and pounces, sending r_c2 tumbling, and then r_c2 rears up with claws extended. By the time the other apprentices break up the fight, blood has been shed and grudges created."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -3021,10 +3021,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [

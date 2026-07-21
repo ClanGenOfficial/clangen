@@ -4905,7 +4905,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -5131,7 +5131,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -9163,7 +9163,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -9212,7 +9212,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -9235,7 +9235,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Tail lashing excitedly, r_c1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with {PRONOUN/r_c1/poss} belly low to the ground. r_c2 tries to be even sneakier, and so r_c1 ups {PRONOUN/app1/poss} game, until they're both probably the most obvious pair of cats in the neighborhood."
+                    "Tail lashing excitedly, r_c1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with {PRONOUN/r_c1/poss} belly low to the ground. r_c2 tries to be even sneakier, and so r_c1 ups {PRONOUN/r_c1/poss} game, until they're both probably the most obvious pair of cats in the neighborhood."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -9253,10 +9253,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -9281,7 +9281,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Carelessly, r_c2 is seen by Twolegs and locked, hissing and spitting, in a monster's den. Overnight, {PRONOUN/r_c2/subject} {VERB/r_c2/hear/hears} app1 yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, r_c2 presses {PRONOUN/r_c2/poss} pelt against app1 as they pad home."
+                    "Carelessly, r_c2 is seen by Twolegs and locked, hissing and spitting, in a monster's den. Overnight, {PRONOUN/r_c2/subject} {VERB/r_c2/hear/hears} r_c1 yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, r_c2 presses {PRONOUN/r_c2/poss} pelt against r_c1 as they pad home."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -9299,10 +9299,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -9340,10 +9340,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [

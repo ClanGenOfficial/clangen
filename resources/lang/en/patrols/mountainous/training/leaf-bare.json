@@ -67,7 +67,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -105,7 +105,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -153,7 +153,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -163,7 +163,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "cat_from and cat_to played in the snow, and when r_c1 got cold, app2 dug {PRONOUN/r_c1/object} a hollow to get cozy and warm in."
+                            "cats_from": "cat_from and cat_to played in the snow, and when r_c1 got cold, r_c2 dug {PRONOUN/r_c1/object} a hollow to get cozy and warm in."
                         }
                     }
                 ]
@@ -182,7 +182,7 @@
                             "r_c1"
                         ],
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -214,7 +214,7 @@
                             "r_c1"
                         ],
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -227,7 +227,7 @@
                     },
                     {
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "cats_to": [
                             "r_c1"
@@ -262,7 +262,7 @@
                             "r_c1"
                         ],
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -605,7 +605,7 @@
                     {
                         "cats_to": [
                             "r_c1",
-                            "app2"
+                            "r_c2"
                         ],
                         "cats_from": [
                             "p_l"
@@ -626,7 +626,7 @@
                         ],
                         "cats_from": [
                             "r_c1",
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -651,7 +651,7 @@
                     {
                         "cats_to": [
                             "r_c1",
-                            "app2"
+                            "r_c2"
                         ],
                         "cats_from": [
                             "p_l"
@@ -672,7 +672,7 @@
                         ],
                         "cats_from": [
                             "r_c1",
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -708,7 +708,7 @@
                     {
                         "cats_to": [
                             "r_c1",
-                            "app2"
+                            "r_c2"
                         ],
                         "cats_from": [
                             "p_l"
@@ -729,7 +729,7 @@
                         ],
                         "cats_from": [
                             "r_c1",
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -773,7 +773,7 @@
                     {
                         "cats_to": [
                             "r_c1",
-                            "app2"
+                            "r_c2"
                         ],
                         "cats_from": [
                             "p_l"
@@ -794,7 +794,7 @@
                         ],
                         "cats_from": [
                             "r_c1",
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -1490,7 +1490,7 @@
                         ],
                         "cats_from": [
                             "r_c1",
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -1550,7 +1550,7 @@
                         ],
                         "cats_from": [
                             "r_c1",
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -1610,7 +1610,7 @@
                         ],
                         "cats_from": [
                             "r_c1",
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -1670,7 +1670,7 @@
                         ],
                         "cats_from": [
                             "r_c1",
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -1688,7 +1688,7 @@
                         ],
                         "cats_from": [
                             "r_c1",
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -1729,7 +1729,7 @@
                     {
                         "cats_to": [
                             "r_c1",
-                            "app2"
+                            "r_c2"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1750,7 +1750,7 @@
                         ],
                         "cats_from": [
                             "r_c1",
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [

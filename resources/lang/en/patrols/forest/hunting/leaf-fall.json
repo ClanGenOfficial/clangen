@@ -133,18 +133,11 @@
                 "strings": [
                     "p_l slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} right not to \u00e2\u20ac\u201d {PRONOUN/p_l/poss} catch is flawless, and {PRONOUN/p_l/subject} {VERB/p_l/return/returns} home with {PRONOUN/p_l/poss} chest puffed out in pride."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "p_l"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -171,18 +164,11 @@
                 "strings": [
                     "Though {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} a little sloppy, and the squirrel quickly spots {PRONOUN/p_l/object}, p_l manages to secure the catch in the end!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "p_l"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -211,13 +197,6 @@
                 "strings": [
                     "Poor p_l focuses too hard on making sure {PRONOUN/p_l/poss} hunting crouch is correct \u00e2\u20ac\u201d by the time {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} ready, the squirrel is long gone."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "supply": [
                     {
@@ -282,7 +261,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -302,7 +281,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -338,7 +317,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -358,7 +337,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -399,7 +378,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -1205,7 +1184,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -1301,7 +1280,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "values": [
                             "trust",
@@ -1833,7 +1812,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "app1 pounces on the little creature and misses, but {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} seem overly concerned, stopping nearly every step to chat to r_c2, who's just as keen to talk."
+                    "r_c1 pounces on the little creature and misses, but {PRONOUN/r_c1/subject} {VERB/r_c1/don't/doesn't} seem overly concerned, stopping nearly every step to chat to r_c2, who's just as keen to talk."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1851,10 +1830,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -1872,7 +1851,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "app1 and r_c2 go for the prey at the same time, bonking their heads together. It makes both of them laugh while apologizing, and they don't leave each other's side for the rest of the patrol, apologies turning to chatting turning to whispered conversations."
+                    "r_c1 and r_c2 go for the prey at the same time, bonking their heads together. It makes both of them laugh while apologizing, and they don't leave each other's side for the rest of the patrol, apologies turning to chatting turning to whispered conversations."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1890,10 +1869,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -1919,10 +1898,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -2086,7 +2065,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "values": [
                             "trust",
@@ -2223,7 +2202,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -2243,7 +2222,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -2279,7 +2258,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -2299,7 +2278,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -2340,7 +2319,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -3011,13 +2990,6 @@
                 "strings": [
                     "A f_tp_s and three f_tp_p, one of which is definitely more of a mouthful than a meal, but still! Surely that's enough to count for {PRONOUN/p_l/poss} duty to c_n for the day. Scarpering back to camp, p_l realizes {PRONOUN/p_l/subject} forgot to thank StarClan for {PRONOUN/p_l/poss} success when a huge roll of thunder booms across the forest. Err, sorry StarClan! And thank you!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 25,
                 "relationship_changes": [
                     {
@@ -3025,7 +2997,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "app1"
+                            "p_l"
                         ],
                         "values": [
                             "respect"
@@ -3042,7 +3014,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "p_l"
                         ],
                         "values": [
                             "respect"
@@ -3066,13 +3038,6 @@
                 "strings": [
                     "p_l finds a f_mp_s, and catches it with what {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is enough grace that {PRONOUN/p_l/subject} {VERB/p_l/are/is} actually disappointed {PRONOUN/p_l/poss} mentor isn't here to see it. But just as {PRONOUN/p_l/subject} {VERB/p_l/are/is} trying to figure out if there's a quicker way back to camp, the storm breaks. p_l waits it out under a bush, wondering if maybe nest-cleaning duty would've been a better idea."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 25,
                 "relationship_changes": [
                     {
@@ -3080,7 +3045,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "app1"
+                            "p_l"
                         ],
                         "values": [
                             "respect"
@@ -3097,7 +3062,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "p_l"
                         ],
                         "values": [
                             "respect"
@@ -3121,13 +3086,6 @@
                 "strings": [
                     "p_l doesn't want to go far with bad weather incoming \u00e2\u20ac\u201d but {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} have to. Only a dozen fox-lengths from camp, an oak tree is shedding acorns like raindrops. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wait/waits} there, alert and patient, ambushing three f_tp_p before heading home to a warm dry nest and an impressed mentor."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 25,
                 "relationship_changes": [
                     {
@@ -3135,7 +3093,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "app1"
+                            "p_l"
                         ],
                         "values": [
                             "respect"
@@ -3161,18 +3119,11 @@
                 "strings": [
                     "The thunderstorm breaks while p_l is out hunting, scaring {PRONOUN/p_l/object} halfway out of {PRONOUN/p_l/poss} fur and causing {PRONOUN/p_l/object} to leap halfway up a tree before the deafening sound proves itself rain rather than danger. The fall back off the tree isn't high, but {PRONOUN/p_l/subject} {VERB/p_l/land/lands} without grace and with {PRONOUN/p_l/poss} fur still standing on end."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "injury": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "minor_injury"
@@ -3185,13 +3136,6 @@
                 "strings": [
                     "p_l daringly heads out hunting and then daringly ends up on the wrong side of a swollen creek, sore and tired as the rain pours down, daringly crouched under a bush to daringly wait out the storm. Fox-dung!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -3200,7 +3144,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "app1"
+                            "p_l"
                         ],
                         "values": [
                             "trust",
@@ -3216,7 +3160,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "s_c"
+                            "p_l"
                         ],
                         "condition": [
                             "minor_injury"
@@ -3806,7 +3750,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_to": [
                             "s_c"

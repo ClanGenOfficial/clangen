@@ -1472,7 +1472,7 @@
                             "r_c1"
                         ],
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "values": [
                             "like",
@@ -1507,7 +1507,7 @@
                             "r_c1"
                         ],
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "values": [
                             "like",
@@ -1533,7 +1533,7 @@
                         "amount": 5,
                         "mutual": true,
                         "log": {
-                            "cats_from": "cat_from noticed cat_to practicing a tricky battle move in a play-fight with app2."
+                            "cats_from": "cat_from noticed cat_to practicing a tricky battle move in a play-fight with r_c2."
                         }
                     }
                 ]
@@ -1572,7 +1572,7 @@
                             "r_c1"
                         ],
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "values": [
                             "like",
@@ -1616,7 +1616,7 @@
                             "r_c1"
                         ],
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "values": [
                             "like",
@@ -1671,7 +1671,7 @@
                             "r_c1"
                         ],
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "values": [
                             "like",
@@ -1745,7 +1745,7 @@
                             "r_c1"
                         ],
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "values": [
                             "like",
@@ -1784,7 +1784,7 @@
                             "r_c1"
                         ],
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "values": [
                             "like"
@@ -1800,7 +1800,7 @@
                             "r_c1"
                         ],
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "values": [
                             "respect"
@@ -1847,7 +1847,7 @@
                             "r_c1"
                         ],
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "values": [
                             "like",
@@ -1864,7 +1864,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "app2",
+                            "r_c2",
                             "r_c1"
                         ],
                         "values": [
@@ -1873,7 +1873,7 @@
                         "amount": -3,
                         "mutual": true,
                         "log": {
-                            "cats_from": "cat_from was annoyed when r_c1 and app2 goofed off during a border patrol."
+                            "cats_from": "cat_from was annoyed when r_c1 and r_c2 goofed off during a border patrol."
                         }
                     },
                     {
@@ -1881,7 +1881,7 @@
                             "r_c"
                         ],
                         "cats_to": [
-                            "app2",
+                            "r_c2",
                             "r_c1"
                         ],
                         "values": [
@@ -1890,7 +1890,7 @@
                         "amount": -3,
                         "mutual": true,
                         "log": {
-                            "cats_from": "cat_from was annoyed when r_c1 and app2 goofed off during a border patrol."
+                            "cats_from": "cat_from was annoyed when r_c1 and r_c2 goofed off during a border patrol."
                         }
                     }
                 ]
@@ -1929,7 +1929,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "cats_to": [
                             "s_c"

@@ -50,7 +50,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_to": [
                             "p_l"
@@ -83,7 +83,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_to": [
                             "p_l"
@@ -227,7 +227,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "values": [
                             "respect"
@@ -263,7 +263,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "values": [
                             "respect",
@@ -1962,7 +1962,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -1976,7 +1976,7 @@
                     },
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -2012,7 +2012,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -2026,7 +2026,7 @@
                     },
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -2065,7 +2065,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -2079,7 +2079,7 @@
                     },
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -2122,7 +2122,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -2136,7 +2136,7 @@
                     },
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -2183,7 +2183,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from and cat_to got into an argument when p_l tried to teach app1 about how dangerous porcupines can be."
+                            "cats_from": "cat_from and cat_to got into an argument when p_l tried to teach r_c1 about how dangerous porcupines can be."
                         }
                     }
                 ]
@@ -2216,7 +2216,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "app1 didn't take p_l's lesson about porcupines seriously."
+                            "cats_from": "r_c1 didn't take p_l's lesson about porcupines seriously."
                         }
                     }
                 ]
@@ -2254,7 +2254,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "app1 and r_c2 watch the big bushy lump of a creature with wide eyes, tails twitching with excitement. p_l points out the cascade of spines lying flat on its hairy back as the porcupine snuffles happily around the forest floor, sounding like a happy newborn kit in the nursery."
+                    "r_c1 and r_c2 watch the big bushy lump of a creature with wide eyes, tails twitching with excitement. p_l points out the cascade of spines lying flat on its hairy back as the porcupine snuffles happily around the forest floor, sounding like a happy newborn kit in the nursery."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2275,11 +2275,11 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "r_c1",
+                            "r_c2",
+                            "r_c3",
+                            "r_c4",
+                            "r_c5"
                         ],
                         "values": [
                             "trust",
@@ -2292,11 +2292,11 @@
                     },
                     {
                         "cats_to": [
-                            "app1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "r_c1",
+                            "r_c2",
+                            "r_c3",
+                            "r_c4",
+                            "r_c5"
                         ],
                         "cats_from": [
                             "p_l"
@@ -2315,7 +2315,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l points out the cascade of spines lying flat on its hairy back as the porcupine snuffles happily around the forest floor, sounding like a happy newborn kit in the nursery. app1 looks a bit disbelieving, so p_l darts towards the porcupine, making it throw its back up at the cats in a full threat display, spines just as fluffed up as r_c2's pelt."
+                    "p_l points out the cascade of spines lying flat on its hairy back as the porcupine snuffles happily around the forest floor, sounding like a happy newborn kit in the nursery. r_c1 looks a bit disbelieving, so p_l darts towards the porcupine, making it throw its back up at the cats in a full threat display, spines just as fluffed up as r_c2's pelt."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2336,11 +2336,11 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "r_c1",
+                            "r_c2",
+                            "r_c3",
+                            "r_c4",
+                            "r_c5"
                         ],
                         "values": [
                             "trust",
@@ -2353,11 +2353,11 @@
                     },
                     {
                         "cats_to": [
-                            "app1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "r_c1",
+                            "r_c2",
+                            "r_c3",
+                            "r_c4",
+                            "r_c5"
                         ],
                         "cats_from": [
                             "p_l"
@@ -2376,7 +2376,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c points out the dangers of the creature, explaining how some c_n stories tell of a warrior who, in an impossible battle defending a nursery full of kits, sacrificed his body and let StarClan transform his back into an impenetrable wall of thorns to protect his Clan. app1 and r_c2 spend the walk back to c_n wondering what this ancient warrior was like."
+                    "s_c points out the dangers of the creature, explaining how some c_n stories tell of a warrior who, in an impossible battle defending a nursery full of kits, sacrificed his body and let StarClan transform his back into an impenetrable wall of thorns to protect his Clan. r_c1 and r_c2 spend the walk back to c_n wondering what this ancient warrior was like."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2405,11 +2405,11 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "r_c1",
+                            "r_c2",
+                            "r_c3",
+                            "r_c4",
+                            "r_c5"
                         ],
                         "mutual": false,
                         "values": [
@@ -2423,11 +2423,11 @@
                     },
                     {
                         "cats_to": [
-                            "app1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "r_c1",
+                            "r_c2",
+                            "r_c3",
+                            "r_c4",
+                            "r_c5"
                         ],
                         "cats_from": [
                             "p_l"
@@ -2444,10 +2444,10 @@
                     },
                     {
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -2464,7 +2464,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c points out the dangers of the creature, finding some spines the porcupine has dropped and showing app1 and r_c2 exactly how they hook into a pelt, or worse, the flesh beneath. It's dangerous, s_c teaches, but it can also be used to defend the Clan \u00e2\u20ac\u201d this is why porcupine spines are so valuable for reinforcing c_n's defenses."
+                    "s_c points out the dangers of the creature, finding some spines the porcupine has dropped and showing r_c1 and r_c2 exactly how they hook into a pelt, or worse, the flesh beneath. It's dangerous, s_c teaches, but it can also be used to defend the Clan \u00e2\u20ac\u201d this is why porcupine spines are so valuable for reinforcing c_n's defenses."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2492,11 +2492,11 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "r_c1",
+                            "r_c2",
+                            "r_c3",
+                            "r_c4",
+                            "r_c5"
                         ],
                         "mutual": false,
                         "values": [
@@ -2510,11 +2510,11 @@
                     },
                     {
                         "cats_to": [
-                            "app1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "r_c1",
+                            "r_c2",
+                            "r_c3",
+                            "r_c4",
+                            "r_c5"
                         ],
                         "cats_from": [
                             "p_l"
@@ -2536,7 +2536,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "app1 refuses to believe that the happy snuffly creature they visited can possibly be dangerous prey, and starts an argument with p_l about it. r_c2 sides with p_l, and no one learns anything in the squabbling."
+                    "r_c1 refuses to believe that the happy snuffly creature they visited can possibly be dangerous prey, and starts an argument with p_l about it. r_c2 sides with p_l, and no one learns anything in the squabbling."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2557,7 +2557,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -2566,15 +2566,15 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from and cat_to got into an argument when p_l tried to teach app1 about how dangerous porcupines can be."
+                            "cats_from": "cat_from and cat_to got into an argument when p_l tried to teach r_c1 about how dangerous porcupines can be."
                         }
                     },
                     {
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -2583,7 +2583,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "app2 sided with p_l when app1 argued with {PRONOUN/p_l/object} about how dangerous porcupines can be."
+                            "cats_from": "r_c2 sided with p_l when r_c1 argued with {PRONOUN/p_l/object} about how dangerous porcupines can be."
                         }
                     }
                 ]
@@ -2591,7 +2591,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "app1 maintains that porcupines are prey, not weird transformed dead cats or anything like that, just prey, and p_l can't get {PRONOUN/app1/object} to take the training session seriously. {PRONOUN/app1/subject/CAP} {VERB/app1/distract/distracts} r_c2 as well, and eventually p_l has to give up on teaching."
+                    "r_c1 maintains that porcupines are prey, not weird transformed dead cats or anything like that, just prey, and p_l can't get {PRONOUN/r_c1/object} to take the training session seriously. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/distract/distracts} r_c2 as well, and eventually p_l has to give up on teaching."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2609,7 +2609,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -2621,15 +2621,15 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "app1 didn't take p_l's lesson about porcupines seriously."
+                            "cats_from": "r_c1 didn't take p_l's lesson about porcupines seriously."
                         }
                     },
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -2687,7 +2687,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c2 bursts out from cover, pouncing on app1 with claws sheathed and giggling. app1 rolls with the blow and kicks r_c2 off, bounding after {PRONOUN/r_c2/object} with promises of getting {PRONOUN/r_c2/object} back! On and on the chase goes, neither interested in winning it as they play under the dappled light of the canopy."
+                    "r_c2 bursts out from cover, pouncing on r_c1 with claws sheathed and giggling. r_c1 rolls with the blow and kicks r_c2 off, bounding after {PRONOUN/r_c2/object} with promises of getting {PRONOUN/r_c2/object} back! On and on the chase goes, neither interested in winning it as they play under the dappled light of the canopy."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2705,10 +2705,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -2725,7 +2725,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c2 emerges into the hidden soft light under the willow tree. Seeing app1, {PRONOUN/r_c2/subject} {VERB/r_c2/trot/trots} up, asking why app1 wanted to meet there. app1 looks away with a purr, making up some nonsense about fight training. Instead, both apprentices hang out there all afternoon, awkward and thrilled."
+                    "r_c2 emerges into the hidden soft light under the willow tree. Seeing r_c1, {PRONOUN/r_c2/subject} {VERB/r_c2/trot/trots} up, asking why r_c1 wanted to meet there. r_c1 looks away with a purr, making up some nonsense about fight training. Instead, both apprentices hang out there all afternoon, awkward and thrilled."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2743,10 +2743,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -2755,7 +2755,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "app1 met with app2 under the pretense of fight training. They hung out all day, just the two of them."
+                            "cats_from": "r_c1 met with r_c2 under the pretense of fight training. They hung out all day, just the two of them."
                         }
                     }
                 ]
@@ -2793,10 +2793,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -2805,7 +2805,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "app1 met with app2 to spend time together \u00e2\u20ac\u201d just the two of them."
+                            "cats_from": "r_c1 met with r_c2 to spend time together \u00e2\u20ac\u201d just the two of them."
                         }
                     }
                 ]
@@ -2815,7 +2815,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c2 bursts out from cover, pouncing on app1 with claws sheathed and giggling. app1 rolls with the blow and kicks r_c2 off \u00e2\u20ac\u201d but then {PRONOUN/app1/subject} {VERB/app1/scramble/scrambles} to {PRONOUN/app1/poss} paws, looking hurt, and {VERB/app1/storm/storms} off in a huff, leaving r_c2 confused and wondering."
+                    "r_c2 bursts out from cover, pouncing on r_c1 with claws sheathed and giggling. r_c1 rolls with the blow and kicks r_c2 off \u00e2\u20ac\u201d but then {PRONOUN/r_c1/subject} {VERB/r_c1/scramble/scrambles} to {PRONOUN/r_c1/poss} paws, looking hurt, and {VERB/r_c1/storm/storms} off in a huff, leaving r_c2 confused and wondering."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2833,10 +2833,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -2850,10 +2850,10 @@
                     },
                     {
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -2861,7 +2861,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from arranged a special meeting with app2, but app2 stormed off in a huff."
+                            "cats_from": "cat_from arranged a special meeting with r_c2, but r_c2 stormed off in a huff."
                         }
                     }
                 ]
@@ -2869,7 +2869,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c2 emerges into the hidden soft light under the willow tree. Seeing app1, {PRONOUN/r_c2/subject} {VERB/r_c2/trot/trots} up, asking why app1 wanted to meet there. Nerve breaking, app1 stutters out some nonsense about hunting and then runs off into the forest."
+                    "r_c2 emerges into the hidden soft light under the willow tree. Seeing r_c1, {PRONOUN/r_c2/subject} {VERB/r_c2/trot/trots} up, asking why r_c1 wanted to meet there. Nerve breaking, r_c1 stutters out some nonsense about hunting and then runs off into the forest."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2887,10 +2887,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -2904,10 +2904,10 @@
                     },
                     {
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -3347,7 +3347,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -3378,7 +3378,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -3437,13 +3437,6 @@
                 "strings": [
                     "Ha! p_l pounces, the pathetic bug crunching underneath {PRONOUN/p_l/poss} mighty blow, splattering and \u00e2\u20ac\u201d ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/p_l/poss} paws, between {PRONOUN/p_l/poss} toes, EWWWWW!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20
             },
             {
@@ -3451,13 +3444,6 @@
                 "strings": [
                     "Ha! p_l leaps, tail lashing furiously as the beetle buzzes under {PRONOUN/p_l/poss} forepaws, claws sheathed. {PRONOUN/p_l/subject/CAP} {VERB/p_l/bat/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN/p_l/poss} colorful prey flits around {PRONOUN/p_l/poss} head in confused, concussed beetle-behavior, unused to being an apprentice's new favorite toy."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20
             },
             {
@@ -3466,11 +3452,6 @@
                     "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/p_l/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} notice {PRONOUN/p_l/poss} own skill catching and keeping the bug."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c": {
                         "prior_abbreviation": [
                             "any"
@@ -3491,13 +3472,6 @@
                 "strings": [
                     "While p_l is wiggling {PRONOUN/p_l/poss} butt into the perfect pouncing position, the beetle flies off. Awwwww."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             },
             {
@@ -3505,13 +3479,6 @@
                 "strings": [
                     "Slimy, yet satisfying! Curiosity completed, p_l wanders off \u00e2\u20ac\u201d but has to report to the medicine cat den later, when {PRONOUN/p_l/poss} stomach reminds {PRONOUN/p_l/object} why cats don't eat random bugs."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -3520,7 +3487,7 @@
                             "high_social"
                         ],
                         "cats_to": [
-                            "app1"
+                            "p_l"
                         ],
                         "values": [
                             "like"
@@ -3535,7 +3502,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "stomachache"
@@ -3579,7 +3546,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Scrambling up the hill, app1 shoves r_c2 up a slightly too big step, both of them panting as they run. Strange-smelling mist swirls around them as they search for the StarClan cat, until r_c2 bumps into a huge, tall pillar \u00e2\u20ac\u201d one that blinks down with slow, glowing red eyes."
+                    "Scrambling up the hill, r_c1 shoves r_c2 up a slightly too big step, both of them panting as they run. Strange-smelling mist swirls around them as they search for the StarClan cat, until r_c2 bumps into a huge, tall pillar \u00e2\u20ac\u201d one that blinks down with slow, glowing red eyes."
                 ],
                 "involved_cats": {
                     "r_c1": {

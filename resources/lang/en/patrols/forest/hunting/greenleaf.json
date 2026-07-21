@@ -169,13 +169,6 @@
                 "strings": [
                     "p_l slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} right not to \u00e2\u20ac\u201d {PRONOUN/p_l/poss} catch is flawless, and {PRONOUN/p_l/subject} {VERB/p_l/return/returns} home with {PRONOUN/p_l/poss} chest puffed out in pride."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -183,7 +176,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "app1"
+                            "p_l"
                         ],
                         "values": [
                             "respect"
@@ -207,13 +200,6 @@
                 "strings": [
                     "Though {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} a little sloppy and the squirrel quickly spots {PRONOUN/p_l/object}, p_l manages to secure the catch in the end!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "supply": [
                     {
@@ -229,13 +215,6 @@
                 "strings": [
                     "Poor p_l focuses too hard on making sure {PRONOUN/p_l/poss} hunting crouch is correct \u00e2\u20ac\u201d by the time {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} ready, the squirrel is long gone."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "supply": [
                     {
@@ -300,7 +279,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -319,7 +298,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -355,7 +334,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -374,7 +353,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -414,7 +393,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -1129,7 +1108,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_to": [
                             "p_l"
@@ -1149,7 +1128,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "values": [
                             "like",
@@ -1185,7 +1164,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_to": [
                             "p_l"
@@ -1204,7 +1183,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "values": [
                             "like",
@@ -1245,7 +1224,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "values": [
                             "respect",
@@ -1259,7 +1238,7 @@
                     },
                     {
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_to": [
                             "p_l"
@@ -2072,13 +2051,6 @@
                 "strings": [
                     "p_l quickly switches to a proper hunting crouch and pounces on the hissing stranger. It was a rat! A quick bite is enough to end the battle. p_l spends the rest of {PRONOUN/p_l/poss} time dozing in the shade."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -2086,7 +2058,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "app1"
+                            "p_l"
                         ],
                         "values": [
                             "respect"
@@ -2112,13 +2084,6 @@
                 "strings": [
                     "p_l can't resist the shady spot and ignores the hiss for a lovely nap. {PRONOUN/p_l/subject/CAP}'ll figure out how to explain it to {PRONOUN/p_l/poss} mentor later."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -2126,7 +2091,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "app1"
+                            "p_l"
                         ],
                         "values": [
                             "respect"
@@ -2204,7 +2169,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "values": [
                             "trust",
@@ -2245,7 +2210,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "values": [
                             "like"
@@ -2258,7 +2223,7 @@
                     },
                     {
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_to": [
                             "p_l"
@@ -2788,7 +2753,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "app1 pounces on the little creature and misses, but {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} seem overly concerned, stopping nearly every step to chat to r_c2, who's just as keen to talk."
+                    "r_c1 pounces on the little creature and misses, but {PRONOUN/r_c1/subject} {VERB/r_c1/don't/doesn't} seem overly concerned, stopping nearly every step to chat to r_c2, who's just as keen to talk."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2806,10 +2771,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -2827,7 +2792,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "app1 and r_c2 go for the prey at the same time, bonking their heads together. It makes both of them laugh while apologizing, and they don't leave each other's side for the rest of the patrol, apologies turning to chatting turning to whispered conversations."
+                    "r_c1 and r_c2 go for the prey at the same time, bonking their heads together. It makes both of them laugh while apologizing, and they don't leave each other's side for the rest of the patrol, apologies turning to chatting turning to whispered conversations."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2845,10 +2810,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -2874,10 +2839,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -4548,7 +4513,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "values": [
                             "respect"
@@ -4645,7 +4610,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -4684,7 +4649,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -5303,7 +5268,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "p_l"
                         ],
                         "condition": [
                             "minor_injury"
@@ -5529,7 +5494,7 @@
                             "high_stable"
                         ],
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "values": [
                             "respect"

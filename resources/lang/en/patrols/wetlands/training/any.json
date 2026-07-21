@@ -1154,7 +1154,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -1192,7 +1192,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -1201,7 +1201,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "r_c1 met with app2 under the pretense of fight training. They hung out the whole night, just the two of them."
+                            "cats_from": "r_c1 met with r_c2 under the pretense of fight training. They hung out the whole night, just the two of them."
                         }
                     }
                 ]
@@ -1242,7 +1242,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -1251,7 +1251,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "r_c1 met with app2 to spend time together \u00e2\u20ac\u201d just the two of them."
+                            "cats_from": "r_c1 met with r_c2 to spend time together \u00e2\u20ac\u201d just the two of them."
                         }
                     }
                 ]
@@ -1279,7 +1279,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -1291,7 +1291,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "r_c1 wanted to show app2 the beauty of the fireflies in the darkness, but app2 never showed."
+                            "cats_from": "r_c1 wanted to show r_c2 the beauty of the fireflies in the darkness, but r_c2 never showed."
                         }
                     }
                 ]
@@ -1320,7 +1320,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -1334,7 +1334,7 @@
                     },
                     {
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -2316,10 +2316,10 @@
                         ],
                         "cats_from": [
                             "r_c1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "r_c2",
+                            "r_c3",
+                            "r_c4",
+                            "r_c5"
                         ],
                         "mutual": false,
                         "values": [
@@ -2334,10 +2334,10 @@
                     {
                         "cats_to": [
                             "r_c1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "r_c2",
+                            "r_c3",
+                            "r_c4",
+                            "r_c5"
                         ],
                         "cats_from": [
                             "p_l"
@@ -2367,10 +2367,10 @@
                         ],
                         "cats_from": [
                             "r_c1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "r_c2",
+                            "r_c3",
+                            "r_c4",
+                            "r_c5"
                         ],
                         "mutual": false,
                         "values": [
@@ -2387,10 +2387,10 @@
                         ],
                         "cats_from": [
                             "r_c1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "r_c2",
+                            "r_c3",
+                            "r_c4",
+                            "r_c5"
                         ],
                         "mutual": false,
                         "values": [
@@ -2405,10 +2405,10 @@
                     {
                         "cats_to": [
                             "r_c1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "r_c2",
+                            "r_c3",
+                            "r_c4",
+                            "r_c5"
                         ],
                         "cats_from": [
                             "p_l"
@@ -2440,10 +2440,10 @@
                         ],
                         "cats_from": [
                             "r_c1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "r_c2",
+                            "r_c3",
+                            "r_c4",
+                            "r_c5"
                         ],
                         "mutual": false,
                         "values": [

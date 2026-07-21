@@ -2253,7 +2253,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -2298,7 +2298,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -2333,7 +2333,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -5044,7 +5044,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -5167,7 +5167,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -5206,7 +5206,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -5509,7 +5509,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 misses a w_tp_s, and app2 and r_c3 startle a pair of w_tp_p. They don't let it get them down, instead capturing a plump rabbit with a beautiful team ambush! But when they bring it back to camp, r_c1 tries to take sole credit for the prey, and instead of familial talent, it's familial discord that's displayed, as the apprentices get into a massive argument in the middle of camp."
+                    "r_c1 misses a w_tp_s, and r_c2 and r_c3 startle a pair of w_tp_p. They don't let it get them down, instead capturing a plump rabbit with a beautiful team ambush! But when they bring it back to camp, r_c1 tries to take sole credit for the prey, and instead of familial talent, it's familial discord that's displayed, as the apprentices get into a massive argument in the middle of camp."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -5774,7 +5774,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 thinks app2's w_tp_s looks infinitely more delicious than {PRONOUN/r_c1/poss} own contributions of two w_tp_p, while r_c3 insists that {PRONOUN/r_c3/subject}'d much rather bring back w_tp_p than the w_mp_s {PRONOUN/r_c3/subject} caught."
+                    "r_c1 thinks r_c2's w_tp_s looks infinitely more delicious than {PRONOUN/r_c1/poss} own contributions of two w_tp_p, while r_c3 insists that {PRONOUN/r_c3/subject}'d much rather bring back w_tp_p than the w_mp_s {PRONOUN/r_c3/subject} caught."
                 ],
                 "involved_cats": {
                     "r_c1": {

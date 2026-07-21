@@ -50,7 +50,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_to": [
                             "p_l"
@@ -83,7 +83,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_to": [
                             "p_l"
@@ -195,7 +195,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "values": [
                             "respect",
@@ -1342,7 +1342,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -1356,7 +1356,7 @@
                     },
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1391,7 +1391,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -1405,7 +1405,7 @@
                     },
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1449,7 +1449,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -1463,7 +1463,7 @@
                     },
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "s_c"
@@ -1505,7 +1505,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -1519,7 +1519,7 @@
                     },
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1553,7 +1553,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1586,7 +1586,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1598,7 +1598,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from and cat_to got into an argument while p_l tried to teach app1 about octopi."
+                            "cats_from": "cat_from and cat_to got into an argument while p_l tried to teach r_c1 about octopi."
                         }
                     }
                 ]
@@ -1636,7 +1636,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "app1 and r_c2 watch the massive creature the tides have washed in with wide eyes, tails twitching with excitement. p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water."
+                    "r_c1 and r_c2 watch the massive creature the tides have washed in with wide eyes, tails twitching with excitement. p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1657,11 +1657,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "patrol_cats"
                         ],
                         "values": [
                             "trust",
@@ -1674,11 +1670,7 @@
                     },
                     {
                         "cats_to": [
-                            "app1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "patrol_cats"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1697,7 +1689,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water. app1 flinches backwards and r_c2's pelt puffs up as the creature suddenly lunges after a fish. Once the fish has disappeared into the suddenly frightening beak, the octopus goes back to swaying like harmless kelp."
+                    "p_l points out the hooked beak as the octopus waves a lazy tentacle ever so temptingly just below the surface of the water. r_c1 flinches backwards and r_c2's pelt puffs up as the creature suddenly lunges after a fish. Once the fish has disappeared into the suddenly frightening beak, the octopus goes back to swaying like harmless kelp."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1718,11 +1710,11 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "r_c1",
+                            "r_c2",
+                            "r_c3",
+                            "r_c4",
+                            "r_c5"
                         ],
                         "values": [
                             "trust",
@@ -1735,11 +1727,11 @@
                     },
                     {
                         "cats_to": [
-                            "app1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "r_c1",
+                            "r_c2",
+                            "r_c3",
+                            "r_c4",
+                            "r_c5"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1758,7 +1750,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c points out the dangers of the creature, explaining how some c_n stories tell of a Dark Forest cat who tried to escape into the ocean, only to be cursed by StarClan into a monster with legs sprouting from each claw. app1 and r_c2 watch the octopus contort itself, more liquid than animal, and they can see how it could be a sea cat."
+                    "s_c points out the dangers of the creature, explaining how some c_n stories tell of a Dark Forest cat who tried to escape into the ocean, only to be cursed by StarClan into a monster with legs sprouting from each claw. r_c1 and r_c2 watch the octopus contort itself, more liquid than animal, and they can see how it could be a sea cat."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1788,11 +1780,11 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "r_c1",
+                            "r_c2",
+                            "r_c3",
+                            "r_c4",
+                            "r_c5"
                         ],
                         "mutual": false,
                         "values": [
@@ -1806,11 +1798,11 @@
                     },
                     {
                         "cats_to": [
-                            "app1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "r_c1",
+                            "r_c2",
+                            "r_c3",
+                            "r_c4",
+                            "r_c5"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1827,10 +1819,10 @@
                     },
                     {
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -1847,7 +1839,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c points out the dangers of the creature, showing app1 exactly how the octopus has no direction that it can't move its limbs, as the octopus sways around in the rockpool waiting for the tides to free it. It's dangerous, s_c teaches, and r_c2 wouldn't be able to predict how it can move in a fight. Something to be careful of."
+                    "s_c points out the dangers of the creature, showing r_c1 exactly how the octopus has no direction that it can't move its limbs, as the octopus sways around in the rockpool waiting for the tides to free it. It's dangerous, s_c teaches, and r_c2 wouldn't be able to predict how it can move in a fight. Something to be careful of."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1875,11 +1867,11 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "r_c1",
+                            "r_c2",
+                            "r_c3",
+                            "r_c4",
+                            "r_c5"
                         ],
                         "mutual": false,
                         "values": [
@@ -1893,11 +1885,11 @@
                     },
                     {
                         "cats_to": [
-                            "app1",
-                            "app2",
-                            "app3",
-                            "app4",
-                            "app5"
+                            "r_c1",
+                            "r_c2",
+                            "r_c3",
+                            "r_c4",
+                            "r_c5"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1919,7 +1911,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "app1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey. p_l can't get {PRONOUN/app1/object} to take the training session seriously. {PRONOUN/app1/subject/CAP} {VERB/app1/distract/distracts} r_c2 as well, and eventually p_l has to give up on teaching."
+                    "r_c1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey. p_l can't get {PRONOUN/r_c1/object} to take the training session seriously. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/distract/distracts} r_c2 as well, and eventually p_l has to give up on teaching."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1937,7 +1929,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1949,15 +1941,15 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "app1 didn't take p_l's lesson about octopi seriously."
+                            "cats_from": "r_c1 didn't take p_l's lesson about octopi seriously."
                         }
                     },
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -1974,7 +1966,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "app1 cannot believe that the octopus can fit into the tiny crevice that p_l points out and starts an argument about it. r_c2 sides with p_l, and no one learns anything in the squabbling."
+                    "r_c1 cannot believe that the octopus can fit into the tiny crevice that p_l points out and starts an argument about it. r_c2 sides with p_l, and no one learns anything in the squabbling."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1995,7 +1987,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -2004,15 +1996,15 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from and cat_to got into an argument when p_l tried to teach app1 about how dangerous octopi can be."
+                            "cats_from": "cat_from and cat_to got into an argument when p_l tried to teach r_c1 about how dangerous octopi can be."
                         }
                     },
                     {
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -2021,7 +2013,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "app2 sided with p_l when app1 argued with {PRONOUN/p_l/object} about how dangerous octopi can be."
+                            "cats_from": "r_c2 sided with p_l when r_c1 argued with {PRONOUN/p_l/object} about how dangerous octopi can be."
                         }
                     }
                 ]
@@ -2070,7 +2062,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c2 picks {PRONOUN/r_c2/poss} way up the cliff path, asking what app1 wanted to show {PRONOUN/r_c2/object}. app1 brings {PRONOUN/r_c2/object} to a point where the wind hits the land, and r_c2 gasps, watching the gigantic waves breaking against the cliff. It's thrilling, a little scary, and very cool."
+                    "r_c2 picks {PRONOUN/r_c2/poss} way up the cliff path, asking what r_c1 wanted to show {PRONOUN/r_c2/object}. r_c1 brings {PRONOUN/r_c2/object} to a point where the wind hits the land, and r_c2 gasps, watching the gigantic waves breaking against the cliff. It's thrilling, a little scary, and very cool."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2088,10 +2080,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -2108,7 +2100,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "When r_c2 arrives, app1 shows {PRONOUN/r_c2/object} the spot {PRONOUN/app1/subject}{VERB/app1/'ve/'s} found, where the apprentices can see the gigantic storm waves breaking against the land. Both of them gasp when a lightning bolt strikes the sea, throwing the world into black and white. The apprentices huddle against each other, warmed by the other's pelt."
+                    "When r_c2 arrives, r_c1 shows {PRONOUN/r_c2/object} the spot {PRONOUN/r_c1/subject}{VERB/r_c1/'ve/'s} found, where the apprentices can see the gigantic storm waves breaking against the land. Both of them gasp when a lightning bolt strikes the sea, throwing the world into black and white. The apprentices huddle against each other, warmed by the other's pelt."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2126,10 +2118,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -2176,10 +2168,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -2188,7 +2180,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "app1 met with app2 to spend time together \u00e2\u20ac\u201d just the two of them."
+                            "cats_from": "r_c1 met with r_c2 to spend time together \u00e2\u20ac\u201d just the two of them."
                         }
                     }
                 ]
@@ -2198,7 +2190,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c2 rounds the top of the cliff, and seeing app1, asks why app1 wanted to meet there. app1 stutters out some nonsense about hunting and then runs off into the rain."
+                    "r_c2 rounds the top of the cliff, and seeing r_c1, asks why r_c1 wanted to meet there. r_c1 stutters out some nonsense about hunting and then runs off into the rain."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2216,10 +2208,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -2233,10 +2225,10 @@
                     },
                     {
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -2252,7 +2244,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c2 refuses to come up the cliff while it's so stormy, and app1 gives up on {PRONOUN/app1/poss} idea, disappointed {PRONOUN/app1/subject} didn't get to spend time with r_c2."
+                    "r_c2 refuses to come up the cliff while it's so stormy, and r_c1 gives up on {PRONOUN/r_c1/poss} idea, disappointed {PRONOUN/r_c1/subject} didn't get to spend time with r_c2."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2270,10 +2262,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app2"
+                            "r_c2"
                         ],
                         "cats_from": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -2331,7 +2323,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c2 drapes {PRONOUN/app1/object} with a bunch of seaweed and proclaims {PRONOUN/app1/subject} {VERB/app1/are/is} clothed like a Twoleg. {PRONOUN/app1/subject/CAP} {VERB/app1/chase/chases} after r_c2, who's not as keen to get seaweed slime all over {PRONOUN/r_c2/self}, and the two young cats play on the safe sands all afternoon."
+                    "r_c2 drapes {PRONOUN/r_c1/object} with a bunch of seaweed and proclaims {PRONOUN/r_c1/subject} {VERB/r_c1/are/is} clothed like a Twoleg. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/chase/chases} after r_c2, who's not as keen to get seaweed slime all over {PRONOUN/r_c2/self}, and the two young cats play on the safe sands all afternoon."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2349,10 +2341,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -2369,7 +2361,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "app1 finds a gigantic, flawless shell that washed up on the beach with last night's tide and calls r_c2 over. Both apprentices startle backwards when a hermit crab starts scurrying away from them. They chase it, shouting joyfully, eyes wide and silly. The hermit crab has to wait until they finally get bored to make its escape."
+                    "r_c1 finds a gigantic, flawless shell that washed up on the beach with last night's tide and calls r_c2 over. Both apprentices startle backwards when a hermit crab starts scurrying away from them. They chase it, shouting joyfully, eyes wide and silly. The hermit crab has to wait until they finally get bored to make its escape."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2387,10 +2379,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -2407,7 +2399,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "app1 finds a shell with a brilliant internal sheen. Picking it up, {PRONOUN/app1/subject} shyly {VERB/app1/present/presents} it to r_c2, wondering if r_c2 might like it for {PRONOUN/r_c2/poss} nest. Blushing to the tips of {PRONOUN/r_c2/poss} ears, r_c2 accepts {PRONOUN/app1/poss} gift."
+                    "r_c1 finds a shell with a brilliant internal sheen. Picking it up, {PRONOUN/r_c1/subject} shyly {VERB/r_c1/present/presents} it to r_c2, wondering if r_c2 might like it for {PRONOUN/r_c2/poss} nest. Blushing to the tips of {PRONOUN/r_c2/poss} ears, r_c2 accepts {PRONOUN/r_c1/poss} gift."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2425,10 +2417,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -2437,7 +2429,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "app1 presented app2 with a pretty shiny shell, and app2 kept it in {PRONOUN/app2/poss} nest."
+                            "cats_from": "r_c1 presented r_c2 with a pretty shiny shell, and r_c2 kept it in {PRONOUN/r_c2/poss} nest."
                         }
                     }
                 ]
@@ -2447,7 +2439,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "app1 tries to give r_c2 a shell, but {PRONOUN/r_c2/subject} {VERB/r_c2/do/does}n't want it, and the crestfallen app1 slinks off."
+                    "r_c1 tries to give r_c2 a shell, but {PRONOUN/r_c2/subject} {VERB/r_c2/do/does}n't want it, and the crestfallen r_c1 slinks off."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2465,10 +2457,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -2476,7 +2468,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "app1 presented app2 with a pretty shell and was crushed when app2 rejected it."
+                            "cats_from": "r_c1 presented r_c2 with a pretty shell and was crushed when r_c2 rejected it."
                         }
                     }
                 ]
@@ -3363,7 +3355,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -3375,7 +3367,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "p_l indulged app1 and let {PRONOUN/app1/object} run off during training."
+                            "cats_from": "p_l indulged r_c1 and let {PRONOUN/r_c1/object} run off during training."
                         }
                     }
                 ]
@@ -3479,8 +3471,8 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "app1",
-                            "app2"
+                            "r_c1",
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [

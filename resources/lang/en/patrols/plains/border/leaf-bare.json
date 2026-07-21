@@ -5102,7 +5102,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -5423,7 +5423,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "cat_to wrongly identified a tunnel as safe, and app2 was killed by a wolverine as a result."
+                            "cats_from": "cat_to wrongly identified a tunnel as safe, and r_c2 was killed by a wolverine as a result."
                         }
                     },
                     {
@@ -5441,7 +5441,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from believed cat_to's negligence on patrol was responsible for app2's death."
+                            "cats_from": "cat_from believed cat_to's negligence on patrol was responsible for r_c2's death."
                         }
                     }
                 ],
@@ -5449,7 +5449,7 @@
                     {
                         "cats": [
                             "r_c2",
-                            "app2"
+                            "r_c2"
                         ],
                         "history": "m_c was killed when another apprentice made the wrong judgment call on a border patrol."
                     }

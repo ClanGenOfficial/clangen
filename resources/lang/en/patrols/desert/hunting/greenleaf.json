@@ -269,8 +269,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c1",
-                            "app1"
+                            "r_c1"
                         ],
                         "history": "This cat died from heat stroke."
                     }

@@ -592,7 +592,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -601,7 +601,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "app2 tried to comfort r_c1 when {PRONOUN/r_c1/subject} {VERB/r_c1/were/was} too nervous to go near an eagle nest for training."
+                            "cats_from": "r_c2 tried to comfort r_c1 when {PRONOUN/r_c1/subject} {VERB/r_c1/were/was} too nervous to go near an eagle nest for training."
                         }
                     }
                 ]
@@ -647,7 +647,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": true,
                         "values": [

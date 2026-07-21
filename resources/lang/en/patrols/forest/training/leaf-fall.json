@@ -462,7 +462,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "app2"
+                            "r_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -489,7 +489,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from and cat_to were amused to see r_c1 and app2 flirting on patrol."
+                            "cats_from": "cat_from and cat_to were amused to see r_c1 and r_c2 flirting on patrol."
                         }
                     }
                 ]

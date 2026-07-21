@@ -274,7 +274,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -282,7 +282,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "app1 argued with p_l about whether towhee birds can imitate cats' cries."
+                            "cats_from": "r_c1 argued with p_l about whether towhee birds can imitate cats' cries."
                         }
                     }
                 ]
@@ -323,7 +323,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "app1 startles, hearing a cat cry out! r_c2 races over the ridge, looking for the caller, as behind them p_l nearly falls over laughing. It's a bird, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}. The spotted towhee has fooled many a young cat. They don't need to feel bad, it's just something to learn from."
+                    "r_c1 startles, hearing a cat cry out! r_c2 races over the ridge, looking for the caller, as behind them p_l nearly falls over laughing. It's a bird, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}. The spotted towhee has fooled many a young cat. They don't need to feel bad, it's just something to learn from."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -378,7 +378,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "As they approach the bog, app1 hears the yowl of a cat. An intruder! {PRONOUN/app1/subject/CAP} {VERB/app1/go/goes} haring off with r_c2, shrieking with fury, as p_l sighs and settles down to wait. When they eventually return, p_l teaches them about towhee birds, who can call like a cat."
+                    "As they approach the bog, r_c1 hears the yowl of a cat. An intruder! {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/go/goes} haring off with r_c2, shrieking with fury, as p_l sighs and settles down to wait. When they eventually return, p_l teaches them about towhee birds, who can call like a cat."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -541,7 +541,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "app1 refuses to believe that the cat cry {PRONOUN/app1/subject} {VERB/app1/hear/hears} from the bog comes from a little towhee bird and argues with p_l and r_c2 all the way back to camp."
+                    "r_c1 refuses to believe that the cat cry {PRONOUN/r_c1/subject} {VERB/r_c1/hear/hears} from the bog comes from a little towhee bird and argues with p_l and r_c2 all the way back to camp."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -560,10 +560,10 @@
                     {
                         "cats_from": [
                             "p_l",
-                            "app2"
+                            "r_c2"
                         ],
                         "cats_to": [
-                            "app1"
+                            "r_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -571,7 +571,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "app1 argued with p_l and app2 about whether towhee birds can imitate cats' cries."
+                            "cats_from": "r_c1 argued with p_l and r_c2 about whether towhee birds can imitate cats' cries."
                         }
                     }
                 ]
