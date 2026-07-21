@@ -247,9 +247,6 @@ def reformat_outcome(
     if replace_name:
         outcome["text"] = outcome["text"].replace("r_c", "p_l")
 
-    for i in range(0, 7):
-        if f"app{i}" in outcome["text"]:
-            outcome["text"] = outcome["text"].replace(f"app{i}", f"r_c{i}")
     reformatted_outcome["strings"] = [outcome.get("text")]
 
     if outcome.get("min_max_status"):
