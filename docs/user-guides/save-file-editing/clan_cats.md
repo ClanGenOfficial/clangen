@@ -136,8 +136,8 @@ These are the pronouns that are used for the cat in text. Such as she/her, he/hi
 
 `"en": []` is the language that the pronouns are coded for.
     
-- "subject": she, they, him. Example: "they went on a walk at the border".
-- "object": her, them, his. Example: "m_c is worried about them."
+- "subject": she, they, he. Example: "they went on a walk at the border".
+- "object": her, them, him. Example: "m_c is worried about them."
 - "poss": her, their, his. Example: "r_c is angry that m_c stole a piece of their fresh kill"
 - "inposs": hers, theirs, his. Example: "r_c grunts that it was theirs in the first place."
 - "self": herself, themself/themselves, himself. Example: "r_c gives themself a rough time about a mistake."

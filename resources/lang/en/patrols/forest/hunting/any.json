@@ -1044,7 +1044,7 @@
         "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "r_c tracks the noise and discovers a coyote scavenging off a carcass. This is a predator {PRONOUN/r_c/poss} cannot fight. {PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to return to camp and report the intruder to the leader. Perhaps a patrol can return later to take what the coyote leaves behind.",
+                "text": "r_c tracks the noise and discovers a coyote scavenging off a carcass. This is a predator {PRONOUN/r_c/subject} cannot fight. {PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to return to camp and report the intruder to the leader. Perhaps a patrol can return later to take what the coyote leaves behind.",
                 "exp": 30,
                 "frequency": 4
             },
