@@ -1282,7 +1282,7 @@
         "chance_of_success": 25,
         "patrol_art": "halloween/hal_mothman",
         "intro_text": "As p_l pads through the shadowy trees, the sun already hidden by the mountain slopes, {PRONOUN/p_l/subject} {VERB/p_l/freeze/freezes}. Up ahead, a Twoleg peers down from above, its black wings a huge backdrop to hypnotic, glowing red eyes...",
-        "decline_text": "This is no creature for mortal eyes. p_l screws {PRONOUN/p_l/poss} eyelids shut, muttering prayer after prayer after prayer to StarClan itself \u00e2\u20ac\u201d and when {PRONOUN/p_l/subject} {VERB/p_l/open/opens} them again, the moth-Twoleg is gone.",
+        "decline_text": "This is no creature for mortal eyes. p_l screws {PRONOUN/p_l/poss} eyelids shut, muttering prayer after prayer after prayer to StarClan itself — and when {PRONOUN/p_l/subject} {VERB/p_l/open/opens} them again, the moth-Twoleg is gone.",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1378,7 +1378,7 @@
                 "frequency": 4,
                 "outcome_art": "halloween/hal_mothmanoutcome",
                 "strings": [
-                    "The vast moth-Twoleg flies off, and p_l tries to shake off the encounter \u00e2\u20ac\u201d but the mountain itself seems to be against {PRONOUN/p_l/object} tonight, collapsing beneath {PRONOUN/p_l/poss} feet."
+                    "The vast moth-Twoleg flies off, and p_l tries to shake off the encounter — but the mountain itself seems to be against {PRONOUN/p_l/object} tonight, collapsing beneath {PRONOUN/p_l/poss} feet."
                 ],
                 "exp_gained": 0,
                 "death": [
@@ -1418,7 +1418,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The bigger deer raises its head, blood dripping from its lips, head lifting higher and higher and higher as it rears backwards, jaws dropping open in a blood-curdling scream \u00e2\u20ac\u201d one mirrored by p_l as p_l shrieks and runs."
+                    "The bigger deer raises its head, blood dripping from its lips, head lifting higher and higher and higher as it rears backwards, jaws dropping open in a blood-curdling scream — one mirrored by p_l as p_l shrieks and runs."
                 ],
                 "exp_gained": 0,
                 "condition": [
@@ -1533,7 +1533,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The potential wolf scent makes p_l nervous enough to dance in place \u00e2\u20ac\u201d and that's what saves {PRONOUN/p_l/object}, being already moving when the trap is sprung. The dogish beast isn't built to pounce. p_l races away, streaking home through a rock maze that leave the frustrated wolf howling in {PRONOUN/p_l/poss} wake."
+                    "The potential wolf scent makes p_l nervous enough to dance in place — and that's what saves {PRONOUN/p_l/object}, being already moving when the trap is sprung. The dogish beast isn't built to pounce. p_l races away, streaking home through a rock maze that leave the frustrated wolf howling in {PRONOUN/p_l/poss} wake."
                 ],
                 "exp_gained": 40,
                 "relationship_changes": [
@@ -1766,7 +1766,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c0 would give their life to protect c_n, and as {PRONOUN/r_c0/subject} {VERB/r_c0/charge/charges} past the huge wolf to lead it far, far from c_n, {PRONOUN/r_c0/subject} {VERB/r_c0/accept/accepts} it. Fear gives {PRONOUN/r_c0/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c0/subject} {VERB/r_c0/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c0/object}, landing in a refuge. r_c0 is injured, desperate, and terrified \u00e2\u20ac\u201d but {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} alive."
+                    "r_c0 would give their life to protect c_n, and as {PRONOUN/r_c0/subject} {VERB/r_c0/charge/charges} past the huge wolf to lead it far, far from c_n, {PRONOUN/r_c0/subject} {VERB/r_c0/accept/accepts} it. Fear gives {PRONOUN/r_c0/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c0/subject} {VERB/r_c0/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c0/object}, landing in a refuge. r_c0 is injured, desperate, and terrified — but {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} alive."
                 ],
                 "involved_cats": {
                     "r_c0": {}

@@ -1252,7 +1252,7 @@
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
         "intro_text": "r_c0 suggests the patrol hunts near the border, in areas that might soon be harder to access when the snows arrive.",
-        "decline_text": "The cats are called back to camp \u00e2\u20ac\u201d there's something the deputy needs to discuss with them.",
+        "decline_text": "The cats are called back to camp — there's something the deputy needs to discuss with them.",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1321,7 +1321,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "These are the times that it really pays to have a hunter of s_c0's caliber on the patrol \u00e2\u20ac\u201d {PRONOUN/s_c0/subject} really {VERB/s_c0/go/goes} above and beyond, impressing everyone and leaving a trail of terror among the local mice."
+                    "These are the times that it really pays to have a hunter of s_c0's caliber on the patrol — {PRONOUN/s_c0/subject} really {VERB/s_c0/go/goes} above and beyond, impressing everyone and leaving a trail of terror among the local mice."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1439,7 +1439,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l watches r_c0 leap with the thrill of the hunt, quite literally snatching victory from thin air. {PRONOUN/p_l/subject/CAP}'d feel sorry for the lover bats \u00e2\u20ac\u201d but r_c0 is just showing who the best potential mates are. Showing the pipistrelles, of course. No one else."
+                    "p_l watches r_c0 leap with the thrill of the hunt, quite literally snatching victory from thin air. {PRONOUN/p_l/subject/CAP}'d feel sorry for the lover bats — but r_c0 is just showing who the best potential mates are. Showing the pipistrelles, of course. No one else."
                 ],
                 "involved_cats": {
                     "r_c0": {}

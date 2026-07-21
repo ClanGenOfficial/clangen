@@ -632,7 +632,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Concerned for the Clan, p_l creeps through the woods, searching for the sett. It's empty when {PRONOUN/p_l/subject} {VERB/p_l/arrive/arrives}; its owner must be out foraging late. The sunlight blinds the beast as it fumbles its way back, and p_l attacks \u00e2\u20ac\u201d but all it gives {PRONOUN/p_l/poss} is the opportunity for a lucky hit and an easy retreat, and p_l must give up the idea of saving the Clan single-pawed."
+                    "Concerned for the Clan, p_l creeps through the woods, searching for the sett. It's empty when {PRONOUN/p_l/subject} {VERB/p_l/arrive/arrives}; its owner must be out foraging late. The sunlight blinds the beast as it fumbles its way back, and p_l attacks — but all it gives {PRONOUN/p_l/poss} is the opportunity for a lucky hit and an easy retreat, and p_l must give up the idea of saving the Clan single-pawed."
                 ],
                 "exp_gained": 40,
                 "relationship_changes": [
@@ -694,7 +694,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 sets out to separate truth from rumor. There are fresh tracks in the mud under the canopy, but they're smaller than s_c0 expected. To confirm {PRONOUN/s_c0/poss} theory, {PRONOUN/s_c0/subject} {VERB/s_c0/stake/stakes} out the sett itself, and when the beast pokes its head out at night, {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} able to confirm it's a juvenile \u00e2\u20ac\u201d young and inexperienced. s_c0 pads quietly back to camp with the intel."
+                    "s_c0 sets out to separate truth from rumor. There are fresh tracks in the mud under the canopy, but they're smaller than s_c0 expected. To confirm {PRONOUN/s_c0/poss} theory, {PRONOUN/s_c0/subject} {VERB/s_c0/stake/stakes} out the sett itself, and when the beast pokes its head out at night, {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} able to confirm it's a juvenile — young and inexperienced. s_c0 pads quietly back to camp with the intel."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -740,7 +740,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Well, the only way to know is to check! Once {PRONOUN/s_c0/subject} {VERB/s_c0/find/finds} the sett, s_c0 scrambles inside for a look \u00e2\u20ac\u201d and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c0/object} up the burrow tunnel."
+                    "Well, the only way to know is to check! Once {PRONOUN/s_c0/subject} {VERB/s_c0/find/finds} the sett, s_c0 scrambles inside for a look — and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c0/object} up the burrow tunnel."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -790,7 +790,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "p_l carefully approaches the burrow to figure out if there's anything new inside. It's so dark, and it all smells the same... {PRONOUN/p_l/subject/CAP} {VERB/p_l/try/tries} to creep just a little closer \u00e2\u20ac\u201d but the ground drops away steeply beneath {PRONOUN/p_l/poss} paws and {PRONOUN/p_l/subject} {VERB/p_l/lose/loses} {PRONOUN/p_l/poss} footing, skidding right into the disturbed badger's lethal jaws."
+                    "p_l carefully approaches the burrow to figure out if there's anything new inside. It's so dark, and it all smells the same... {PRONOUN/p_l/subject/CAP} {VERB/p_l/try/tries} to creep just a little closer — but the ground drops away steeply beneath {PRONOUN/p_l/poss} paws and {PRONOUN/p_l/subject} {VERB/p_l/lose/loses} {PRONOUN/p_l/poss} footing, skidding right into the disturbed badger's lethal jaws."
                 ],
                 "exp_gained": 0,
                 "death": [
@@ -805,7 +805,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "While p_l is carefully sniffing at the burrow entrance, there's a rustle from the woods behind {PRONOUN/p_l/object}. It's difficult to say who's more surprised \u00e2\u20ac\u201d p_l or the badger. It charges for the sett; p_l leaps out of the way, but its claws catch {PRONOUN/p_l/poss} pelt. p_l limps back to camp with blood trailing in {PRONOUN/p_l/poss} wake to report the whole sorry adventure."
+                    "While p_l is carefully sniffing at the burrow entrance, there's a rustle from the woods behind {PRONOUN/p_l/object}. It's difficult to say who's more surprised — p_l or the badger. It charges for the sett; p_l leaps out of the way, but its claws catch {PRONOUN/p_l/poss} pelt. p_l limps back to camp with blood trailing in {PRONOUN/p_l/poss} wake to report the whole sorry adventure."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -919,7 +919,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking anyone's head in front of a predator. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/lead/leads} the patrol on a search of the clearing around the sett until they come upon some fresh badger scat \u00e2\u20ac\u201d stinky, horrible, and perfect proof of the new occupant of the sett."
+                    "s_c0 decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking anyone's head in front of a predator. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/lead/leads} the patrol on a search of the clearing around the sett until they come upon some fresh badger scat — stinky, horrible, and perfect proof of the new occupant of the sett."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1030,7 +1030,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Well, the only way to know is to check! Once they find the sett, s_c0 scrambles inside for a look \u00e2\u20ac\u201d and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c0/object} up the burrow tunnel."
+                    "Well, the only way to know is to check! Once they find the sett, s_c0 scrambles inside for a look — and comes nose to nose with its occupant. It's only by the grace of StarClan that {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} able to redirect that speed and twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows {PRONOUN/s_c0/object} up the burrow tunnel."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1081,7 +1081,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "As the patrol is sniffing around the burrow entrance, they hear a rustle from the woods. It's difficult to say who's more surprised \u00e2\u20ac\u201d the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c0 is battered in the process, but everyone gets home in one piece... including the badger."
+                    "As the patrol is sniffing around the burrow entrance, they hear a rustle from the woods. It's difficult to say who's more surprised — the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c0 is battered in the process, but everyone gets home in one piece... including the badger."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -1218,7 +1218,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. s_c0 climbs into the trees to set up a trap, rigging a branch to fall on the rogue's head \u00e2\u20ac\u201d and it works, sending the startled intruder yowling as they flee c_n territory."
+                    "The pawprints lead to a trespassing rogue. s_c0 climbs into the trees to set up a trap, rigging a branch to fall on the rogue's head — and it works, sending the startled intruder yowling as they flee c_n territory."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1706,7 +1706,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. s_c0 climbs into the trees with r_c0 to set up a trap, rigging a branch to fall on the rogue's head \u00e2\u20ac\u201d and it works, sending the startled intruder yowling as they flee c_n territory."
+                    "The pawprints lead to a trespassing rogue. s_c0 climbs into the trees with r_c0 to set up a trap, rigging a branch to fall on the rogue's head — and it works, sending the startled intruder yowling as they flee c_n territory."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1745,7 +1745,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. s_c0 climbs into the trees with p_l to set up a trap, rigging a branch to fall on the rogue's head \u00e2\u20ac\u201d and it works, sending the startled intruder yowling as they flee c_n territory."
+                    "The pawprints lead to a trespassing rogue. s_c0 climbs into the trees with p_l to set up a trap, rigging a branch to fall on the rogue's head — and it works, sending the startled intruder yowling as they flee c_n territory."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -2372,7 +2372,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. s_c0 climbs into the trees with {PRONOUN/s_c0/poss} Clanmates to set up a trap, rigging a branch to fall on the rogue's head \u00e2\u20ac\u201d and it works, sending the startled intruder yowling as they flee c_n territory."
+                    "The pawprints lead to a trespassing rogue. s_c0 climbs into the trees with {PRONOUN/s_c0/poss} Clanmates to set up a trap, rigging a branch to fall on the rogue's head — and it works, sending the startled intruder yowling as they flee c_n territory."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -3112,7 +3112,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l would give {PRONOUN/p_l/poss} life to protect c_n, and as {PRONOUN/p_l/subject} {VERB/p_l/charge/charges} past the huge dog to lead it far, far from c_n, {PRONOUN/p_l/subject} {VERB/p_l/accept/accepts} it. Fear gives {PRONOUN/p_l/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/p_l/subject} {VERB/p_l/fly/flies} out of the dog's jaws while it shakes {PRONOUN/p_l/object}, landing in a refuge. p_l is injured, desperate, and terrified \u00e2\u20ac\u201d but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alive."
+                    "p_l would give {PRONOUN/p_l/poss} life to protect c_n, and as {PRONOUN/p_l/subject} {VERB/p_l/charge/charges} past the huge dog to lead it far, far from c_n, {PRONOUN/p_l/subject} {VERB/p_l/accept/accepts} it. Fear gives {PRONOUN/p_l/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/p_l/subject} {VERB/p_l/fly/flies} out of the dog's jaws while it shakes {PRONOUN/p_l/object}, landing in a refuge. p_l is injured, desperate, and terrified — but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alive."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -3591,7 +3591,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 tries to take the lion's share of the effort to lead the dog away, but {PRONOUN/s_c0/poss} strength fails {PRONOUN/s_c0/object} \u00e2\u20ac\u201d the rest of the patrol needs to rescue {PRONOUN/s_c0/object}, cutting short the results of the patrol. Instead, everyone knows the dog could still be lurking on {PRONOUN/s_c0/poss} borders."
+                    "s_c0 tries to take the lion's share of the effort to lead the dog away, but {PRONOUN/s_c0/poss} strength fails {PRONOUN/s_c0/object} — the rest of the patrol needs to rescue {PRONOUN/s_c0/object}, cutting short the results of the patrol. Instead, everyone knows the dog could still be lurking on {PRONOUN/s_c0/poss} borders."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -4305,7 +4305,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter won't be a threat to the Clan. If they don't starve, c_n will hunt them down \u00e2\u20ac\u201d they do not share territory with foxes."
+                    "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter won't be a threat to the Clan. If they don't starve, c_n will hunt them down — they do not share territory with foxes."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -4683,7 +4683,7 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "Never threaten a mother's young \u00e2\u20ac\u201d the red vixen kills r_c0 in the skirmish."
+                    "Never threaten a mother's young — the red vixen kills r_c0 in the skirmish."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -4947,7 +4947,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c0/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c0 as one of c_n's most talented and skillful fighters \u00e2\u20ac\u201d a gray fox is a dangerous competitor."
+                    "s_c0 displays incredible skill, driving the mother vixen out of the territory almost by {PRONOUN/s_c0/self}. Now neither the gray fox nor her cubs pose a threat to the Clan. It places s_c0 as one of c_n's most talented and skillful fighters — a gray fox is a dangerous competitor."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -5350,7 +5350,7 @@
         "chance_of_success": 50,
         "patrol_art": "hal/flatwoods",
         "intro_text": "Padding through the forest at night on a dare, the apprentices gasp as light streaks across the sky. A StarClan cat has fallen!",
-        "decline_text": "Before the apprentices can pursue the fallen StarClan cat, the worst possible thing happens \u00e2\u20ac\u201d a warrior discovers them and sends them back to camp with a loud scolding.",
+        "decline_text": "Before the apprentices can pursue the fallen StarClan cat, the worst possible thing happens — a warrior discovers them and sends them back to camp with a loud scolding.",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5418,7 +5418,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The border patrol is immediately diverted to tracking this new unknown \u00e2\u20ac\u201d with feet the size of a small dog, c_n needs to know what this thing is. It takes every bit of their talents at tracking through the woods, but the cats catch a glimpse of a giant, furred Twoleg, crossing a distant clearing and disappearing forever."
+                    "The border patrol is immediately diverted to tracking this new unknown — with feet the size of a small dog, c_n needs to know what this thing is. It takes every bit of their talents at tracking through the woods, but the cats catch a glimpse of a giant, furred Twoleg, crossing a distant clearing and disappearing forever."
                 ],
                 "exp_gained": 20
             }
@@ -5459,7 +5459,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It leaps up onto a fallen log \u00e2\u20ac\u201d whatever it is: bulbous head; long, spindly limbs; pale, hairless skin like a skink. p_l hisses, and it echoes in a whisper, skittering off into the woods."
+                    "It leaps up onto a fallen log — whatever it is: bulbous head; long, spindly limbs; pale, hairless skin like a skink. p_l hisses, and it echoes in a whisper, skittering off into the woods."
                 ],
                 "exp_gained": 20
             }

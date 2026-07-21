@@ -44,7 +44,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_flowerdate_WrWr",
-        "intro_text": "p_l thinks r_c0 is, well, really, just \u00e2\u20ac\u201d uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c0 might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c0 to spend some time together, just the two of them, this afternoon!",
+        "intro_text": "p_l thinks r_c0 is, well, really, just — uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c0 might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c0 to spend some time together, just the two of them, this afternoon!",
         "decline_text": "Unfortunately, r_c0 is sent on an afternoon border patrol before p_l can say anything.",
         "success_outcomes": [
             {
@@ -147,7 +147,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l awkwardly stutters {PRONOUN/p_l/poss} way through asking r_c0 out \u00e2\u20ac\u201d and {PRONOUN/r_c0/subject} {VERB/r_c0/say/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone."
+                    "p_l awkwardly stutters {PRONOUN/p_l/poss} way through asking r_c0 out — and {PRONOUN/r_c0/subject} {VERB/r_c0/say/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -225,7 +225,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "backgrounds/gen_GL_gatheringoakleaves2",
-        "intro_text": "As the afternoon turns to evening and the patrol finally reaches the shade of one of the older trees in the territory, p_l asks the apprentices to gather 'round. High above the thrushes sing, and p_l prepares to tell the story of a unique bird of c_n's territory \u00e2\u20ac\u201d one fondly recalled from kithood.",
+        "intro_text": "As the afternoon turns to evening and the patrol finally reaches the shade of one of the older trees in the territory, p_l asks the apprentices to gather 'round. High above the thrushes sing, and p_l prepares to tell the story of a unique bird of c_n's territory — one fondly recalled from kithood.",
         "decline_text": "p_l gets too distracted by the lovely birdsong to continue.",
         "success_outcomes": [
             {
@@ -258,7 +258,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Veeries, named after their calls, are shy cinnamon-and-white thrushes. They nest on the grounds of dense forests, which makes it easy to steal their nutrient-rich eggs\u00e2\u20ac\u201dor, p_l adds, to watch the chicks grow up and fledge."
+                    "Veeries, named after their calls, are shy cinnamon-and-white thrushes. They nest on the grounds of dense forests, which makes it easy to steal their nutrient-rich eggs—or, p_l adds, to watch the chicks grow up and fledge."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -312,7 +312,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Wood thrushes are recognized by their soft <i>ee-oh-lay</i>s ending in a metallic trill, describes p_l, so beautiful that it almost tugs at one's heartstrings. Though rare, one might find these black speckled ginger-and-white birds foraging on the forest floor\u00e2\u20ac\u201dproviding an opportunity to catch one, or just a moment to observe nature."
+                    "Wood thrushes are recognized by their soft <i>ee-oh-lay</i>s ending in a metallic trill, describes p_l, so beautiful that it almost tugs at one's heartstrings. Though rare, one might find these black speckled ginger-and-white birds foraging on the forest floor—providing an opportunity to catch one, or just a moment to observe nature."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [

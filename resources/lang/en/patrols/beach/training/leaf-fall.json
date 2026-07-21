@@ -632,7 +632,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittymad_Ap",
                 "strings": [
-                    "r_c1 is right \u00e2\u20ac\u201d this is far, far too cold of a pool to train in, and {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} shivering too badly to continue. Time to go home. p_l apologizes for bringing the patrol out here."
+                    "r_c1 is right — this is far, far too cold of a pool to train in, and {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} shivering too badly to continue. Time to go home. p_l apologizes for bringing the patrol out here."
                 ],
                 "involved_cats": {
                     "r_c1": {

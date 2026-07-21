@@ -44,7 +44,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_flowerdate_WrWr",
-        "intro_text": "p_l thinks r_c0 is, well, really, just \u00e2\u20ac\u201d uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c0 might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c0 to spend some time together, just the two of them, this afternoon!",
+        "intro_text": "p_l thinks r_c0 is, well, really, just — uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c0 might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c0 to spend some time together, just the two of them, this afternoon!",
         "decline_text": "Unfortunately, r_c0 is sent on an afternoon border patrol before p_l can say anything.",
         "success_outcomes": [
             {
@@ -147,7 +147,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l awkwardly stutters {PRONOUN/p_l/poss} way through asking r_c0 out \u00e2\u20ac\u201d and {PRONOUN/r_c0/subject} {VERB/r_c0/say/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone."
+                    "p_l awkwardly stutters {PRONOUN/p_l/poss} way through asking r_c0 out — and {PRONOUN/r_c0/subject} {VERB/r_c0/say/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -226,7 +226,7 @@
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_vision_McWr",
         "intro_text": "Snow swirls around c_n's camp, piling up in unusually deep snowdrifts. p_l gathers some apprentices to {PRONOUN/p_l/object} for a story.",
-        "decline_text": "Trying to get apprentices to do anything is like \u00e2\u20ac\u201d well, herding cats.",
+        "decline_text": "Trying to get apprentices to do anything is like — well, herding cats.",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -312,7 +312,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0, wary of any more work, stalks off before p_l can assign {PRONOUN/s_c0/object} more chores \u00e2\u20ac\u201d and misses out on p_l's excellent storytelling as a result."
+                    "s_c0, wary of any more work, stalks off before p_l can assign {PRONOUN/s_c0/object} more chores — and misses out on p_l's excellent storytelling as a result."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -444,7 +444,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Hearing p_l describe the Underwater Panther, how she's always waiting, just out of reach, ready to pull cats down \u00e2\u20ac\u201d r_c1 starts shivering, and p_l calls the whole thing off to go get {PRONOUN/r_c1/object} warmed up."
+                    "Hearing p_l describe the Underwater Panther, how she's always waiting, just out of reach, ready to pull cats down — r_c1 starts shivering, and p_l calls the whole thing off to go get {PRONOUN/r_c1/object} warmed up."
                 ],
                 "involved_cats": {
                     "r_c1": {

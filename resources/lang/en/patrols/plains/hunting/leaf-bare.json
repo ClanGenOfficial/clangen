@@ -1077,7 +1077,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l sniffs carefully \u00e2\u20ac\u201d no, the scent is definitely here. {PRONOUN/p_l/subject/CAP} {VERB/p_l/creep/creeps} round the edge of the snowdrift, {VERB/p_l/spot/spots} a little burrow entrance, and {VERB/p_l/settle/settles} down to wait. When {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} back into camp, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} cold and stiff \u00e2\u20ac\u201d but with mice to add to the fresh-kill pile."
+                    "p_l sniffs carefully — no, the scent is definitely here. {PRONOUN/p_l/subject/CAP} {VERB/p_l/creep/creeps} round the edge of the snowdrift, {VERB/p_l/spot/spots} a little burrow entrance, and {VERB/p_l/settle/settles} down to wait. When {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} back into camp, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} cold and stiff — but with mice to add to the fresh-kill pile."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
@@ -1230,13 +1230,13 @@
         },
         "chance_of_success": 20,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "p_l catches scent of a mouse nearby. But {PRONOUN/p_l/subject} {VERB/p_l/lash/lashes} {PRONOUN/p_l/poss} tail, confused \u00e2\u20ac\u201d everything is covered in snow, where could the prey be?",
+        "intro_text": "p_l catches scent of a mouse nearby. But {PRONOUN/p_l/subject} {VERB/p_l/lash/lashes} {PRONOUN/p_l/poss} tail, confused — everything is covered in snow, where could the prey be?",
         "decline_text": "p_l is too irritated to follow the scent.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "Hold on \u00e2\u20ac\u201d the mouse must be under the snow, not on top of it. p_l patiently waits for a sound, listening to the near silence of a snow-covered world, however something underpaw starts to skitter close by. Pouncing blindly forward, {PRONOUN/p_l/subject} {VERB/p_l/sink/sinks} into the snow well over {PRONOUN/p_l/poss} head \u00e2\u20ac\u201d but {PRONOUN/p_l/subject} can feel prey in {PRONOUN/p_l/poss} paws!"
+                    "Hold on — the mouse must be under the snow, not on top of it. p_l patiently waits for a sound, listening to the near silence of a snow-covered world, however something underpaw starts to skitter close by. Pouncing blindly forward, {PRONOUN/p_l/subject} {VERB/p_l/sink/sinks} into the snow well over {PRONOUN/p_l/poss} head — but {PRONOUN/p_l/subject} can feel prey in {PRONOUN/p_l/poss} paws!"
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1429,7 +1429,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "Oh. This is what those lessons with the high hunting pounce were for. r_c1 positions {PRONOUN/r_c1/self} and launches up, diving gracefully into the snow. After a heartbeat, {PRONOUN/r_c1/subject} {VERB/r_c1/pop/pops} back up, sending a flurry of snow everywhere and laughing excitedly \u00e2\u20ac\u201d {PRONOUN/r_c1/subject} can feel a mouse pinned under {PRONOUN/r_c1/poss} paws!"
+                    "Oh. This is what those lessons with the high hunting pounce were for. r_c1 positions {PRONOUN/r_c1/self} and launches up, diving gracefully into the snow. After a heartbeat, {PRONOUN/r_c1/subject} {VERB/r_c1/pop/pops} back up, sending a flurry of snow everywhere and laughing excitedly — {PRONOUN/r_c1/subject} can feel a mouse pinned under {PRONOUN/r_c1/poss} paws!"
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1584,12 +1584,12 @@
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
         "intro_text": "The patrol heads out at sunhigh, trying to press the weak warmth of the sun into their pelts. p_l is a little irritated to see that r_c1 is more focused on r_c2 than the challenge of hunting during leaf-bare.",
-        "decline_text": "The cats are called back to camp \u00e2\u20ac\u201d there's something the deputy needs to discuss with them.",
+        "decline_text": "The cats are called back to camp — there's something the deputy needs to discuss with them.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "While p_l was right \u00e2\u20ac\u201d r_c1 definitely cares more about how {PRONOUN/r_c1/subject} {VERB/r_c1/look/looks} to r_c2 than hunting \u00e2\u20ac\u201d it turns out fine. The patrol picks up a good haul of mice that were out trying to navigate the recent snowfalls, and p_l indulgently tells r_c1 {PRONOUN/r_c1/poss} reaction speed was very good within earshot of r_c2."
+                    "While p_l was right — r_c1 definitely cares more about how {PRONOUN/r_c1/subject} {VERB/r_c1/look/looks} to r_c2 than hunting — it turns out fine. The patrol picks up a good haul of mice that were out trying to navigate the recent snowfalls, and p_l indulgently tells r_c1 {PRONOUN/r_c1/poss} reaction speed was very good within earshot of r_c2."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1772,7 +1772,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "There is a time and a place for r_c1 to try {PRONOUN/r_c1/poss} luck looking good in front of r_c2 \u00e2\u20ac\u201d and that time is now! {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/trot/trots} back to camp at the front of the hunting patrol, carrying the mice {PRONOUN/r_c1/subject} caught with slightly more than the right amount of pride."
+                    "There is a time and a place for r_c1 to try {PRONOUN/r_c1/poss} luck looking good in front of r_c2 — and that time is now! {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/trot/trots} back to camp at the front of the hunting patrol, carrying the mice {PRONOUN/r_c1/subject} caught with slightly more than the right amount of pride."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1834,7 +1834,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 is so busy watching if r_c2 is watching <i>{PRONOUN/r_c1/object}</i> that {PRONOUN/r_c1/subject} {VERB/r_c1/forget/forgets} to watch {PRONOUN/r_c1/poss} own paws \u00e2\u20ac\u201d and falling into the cold river impressed nobody."
+                    "r_c1 is so busy watching if r_c2 is watching <i>{PRONOUN/r_c1/object}</i> that {PRONOUN/r_c1/subject} {VERB/r_c1/forget/forgets} to watch {PRONOUN/r_c1/poss} own paws — and falling into the cold river impressed nobody."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1900,8 +1900,8 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "r_c0 suggests the patrol hunts close to home \u00e2\u20ac\u201d there's no use exhausting themselves pushing through the high snowdrifts.",
-        "decline_text": "The cats are called back to camp \u00e2\u20ac\u201d there's something the deputy needs to discuss with them.",
+        "intro_text": "r_c0 suggests the patrol hunts close to home — there's no use exhausting themselves pushing through the high snowdrifts.",
+        "decline_text": "The cats are called back to camp — there's something the deputy needs to discuss with them.",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1970,7 +1970,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "These are the times that it really pays to have a hunter of s_c0's caliber on the patrol \u00e2\u20ac\u201d {PRONOUN/s_c0/subject} really {VERB/s_c0/go/goes} above and beyond, impressing everyone and leaving a trail of terror among the local mice."
+                    "These are the times that it really pays to have a hunter of s_c0's caliber on the patrol — {PRONOUN/s_c0/subject} really {VERB/s_c0/go/goes} above and beyond, impressing everyone and leaving a trail of terror among the local mice."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -2079,7 +2079,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 watches, copying how the fox walks close to the snow, ears down, imagining what it might be listening for until \u00e2\u20ac\u201d that's it! s_c0 leaps into the air, diving headfirst into the snow. The patrol snickers as {PRONOUN/s_c0/poss} rear flails above the snow, but that snickering turns to praise when s_c0 pops back up with a fat mouse hanging from {PRONOUN/s_c0/poss} jaws."
+                    "s_c0 watches, copying how the fox walks close to the snow, ears down, imagining what it might be listening for until — that's it! s_c0 leaps into the air, diving headfirst into the snow. The patrol snickers as {PRONOUN/s_c0/poss} rear flails above the snow, but that snickering turns to praise when s_c0 pops back up with a fat mouse hanging from {PRONOUN/s_c0/poss} jaws."
                 ],
                 "involved_cats": {
                     "s_c0": {

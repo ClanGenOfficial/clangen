@@ -206,7 +206,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l goes to a known herb patch \u00e2\u20ac\u201d but the plant has died! They don't give up, hunting around in the area until they find a smaller overlooked bush that still has leaves on it."
+                    "p_l goes to a known herb patch — but the plant has died! They don't give up, hunting around in the area until they find a smaller overlooked bush that still has leaves on it."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -223,7 +223,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l goes to a known herb patch \u00e2\u20ac\u201d but the plant has died! They give up and return to camp, feeling terrible."
+                    "p_l goes to a known herb patch — but the plant has died! They give up and return to camp, feeling terrible."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -299,7 +299,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l and r_c0 decide on a little friendly competition \u00e2\u20ac\u201d one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
+                    "p_l and r_c0 decide on a little friendly competition — one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [

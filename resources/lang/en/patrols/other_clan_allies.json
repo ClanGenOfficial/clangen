@@ -1626,7 +1626,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Once, there was a cat called Scrap. Possessed of few talents and no courage, she \u00e2\u20ac\u201d So she was a typical c_n cat then, the o_c_n apprentice laughs. p_l glares, breaking into a hiss that startles the impudent adolescent away from the border."
+                    "Once, there was a cat called Scrap. Possessed of few talents and no courage, she — So she was a typical c_n cat then, the o_c_n apprentice laughs. p_l glares, breaking into a hiss that startles the impudent adolescent away from the border."
                 ],
                 "exp_gained": 0,
                 "reputation_changes": {
@@ -1738,7 +1738,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l decides to bring r_c0 with {PRONOUN/p_l/object} to o_c_n and orders the others back to camp. As they approach o_c_n, they are immediately greeted by the leader, who recognizes p_l \u00e2\u20ac\u201d knowing {PRONOUN/p_l/object} to be a kind and caring cat \u00e2\u20ac\u201d and thanks both of them sincerely."
+                    "p_l decides to bring r_c0 with {PRONOUN/p_l/object} to o_c_n and orders the others back to camp. As they approach o_c_n, they are immediately greeted by the leader, who recognizes p_l — knowing {PRONOUN/p_l/object} to be a kind and caring cat — and thanks both of them sincerely."
                 ],
                 "involved_cats": {
                     "r_c0": {}

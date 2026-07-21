@@ -40,7 +40,7 @@
                 "frequency": 4,
                 "outcome_art": "animals/bch_twolegbeach",
                 "strings": [
-                    "This is the history p_l is here to teach \u00e2\u20ac\u201d every greenleaf, the Twolegs come to this beach, a great migration in their monsters. They swim in this bay, and occasionally the bays to either side, but no more than that, a constrained invasion. Leave them to their rituals. c_n will return to this beach when the seasons change."
+                    "This is the history p_l is here to teach — every greenleaf, the Twolegs come to this beach, a great migration in their monsters. They swim in this bay, and occasionally the bays to either side, but no more than that, a constrained invasion. Leave them to their rituals. c_n will return to this beach when the seasons change."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -344,7 +344,7 @@
                 "frequency": 2,
                 "outcome_art": "backgrounds/bch_pawprints",
                 "strings": [
-                    "r_c1 watches the sea slowly return, rivulets turning into puddles and lapping waves as the water reclaims the land. With it, p_l explains, are traveling countless tiny mud snails \u00e2\u20ac\u201d as small as a single kitten-claw, they cling to the underside of the water's surface. They move with the tide itself and are the fastest sealife in the mudflats."
+                    "r_c1 watches the sea slowly return, rivulets turning into puddles and lapping waves as the water reclaims the land. With it, p_l explains, are traveling countless tiny mud snails — as small as a single kitten-claw, they cling to the underside of the water's surface. They move with the tide itself and are the fastest sealife in the mudflats."
                 ],
                 "involved_cats": {
                     "r_c1": {

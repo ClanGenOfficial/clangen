@@ -39,7 +39,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The scent leads to a trespassing rogue. s_c0 sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/yowl/yowls} a warning and the rogue scrambles out of the way \u00e2\u20ac\u201d {PRONOUN/s_c0/subject} {VERB/s_c0/want/wants} to scare them, not kill them. The trespasser heeds the warning and leaves the mountains."
+                    "The scent leads to a trespassing rogue. s_c0 sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/yowl/yowls} a warning and the rogue scrambles out of the way — {PRONOUN/s_c0/subject} {VERB/s_c0/want/wants} to scare them, not kill them. The trespasser heeds the warning and leaves the mountains."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -396,7 +396,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The scent leads to a trespassing rogue. s_c0 sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c0/subject/CAP} a warning and the rogue scrambles out of the way \u00e2\u20ac\u201d {PRONOUN/s_c0/subject} {VERB/s_c0/want/wants} to scare them, not kill them. The trespasser heeds the warning and leaves the mountains."
+                    "The scent leads to a trespassing rogue. s_c0 sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c0/subject/CAP} a warning and the rogue scrambles out of the way — {PRONOUN/s_c0/subject} {VERB/s_c0/want/wants} to scare them, not kill them. The trespasser heeds the warning and leaves the mountains."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -973,7 +973,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The scent leads to a trespassing rogue. s_c0 sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/yowl/yowls} a warning and the rogue scrambles out of the way \u00e2\u20ac\u201d {PRONOUN/s_c0/subject} {VERB/s_c0/want/wants} to scare them, not kill them. The intruder leaves the mountains, and s_c0's patrol is impressed by {PRONOUN/s_c0/poss} cunning."
+                    "The scent leads to a trespassing rogue. s_c0 sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/yowl/yowls} a warning and the rogue scrambles out of the way — {PRONOUN/s_c0/subject} {VERB/s_c0/want/wants} to scare them, not kill them. The intruder leaves the mountains, and s_c0's patrol is impressed by {PRONOUN/s_c0/poss} cunning."
                 ],
                 "involved_cats": {
                     "s_c0": {

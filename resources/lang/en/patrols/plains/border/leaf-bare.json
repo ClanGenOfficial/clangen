@@ -20,7 +20,7 @@
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
         "intro_text": "Here on the plains, the reaches of c_n's territory are vast, particularly in the direction p_l and {PRONOUN/p_l/poss} patrol are heading, where there is endless grass (under the blanket of snow) but no permanent water sources.",
-        "decline_text": "The patrol is interrupted by a hunting patrol that needs help carrying prey back to camp \u00e2\u20ac\u201d border marking will wait til later.",
+        "decline_text": "The patrol is interrupted by a hunting patrol that needs help carrying prey back to camp — border marking will wait til later.",
         "success_outcomes": [
             {
                 "frequency": 1,
@@ -52,7 +52,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_hunt_funrun_WrWr",
                 "strings": [
-                    "s_c0 isn't just talented at running fast \u00e2\u20ac\u201d {PRONOUN/s_c0/subject} {VERB/s_c0/have/has} some very good advice about moving in snow too and {PRONOUN/s_c0/subject} {VERB/s_c0/share/shares} {PRONOUN/s_c0/poss} tips for endurance. The other cats purr gratitude at the end of the day. Everyone's exhausted, but they made it the entire length of that far off border thanks to s_c0."
+                    "s_c0 isn't just talented at running fast — {PRONOUN/s_c0/subject} {VERB/s_c0/have/has} some very good advice about moving in snow too and {PRONOUN/s_c0/subject} {VERB/s_c0/share/shares} {PRONOUN/s_c0/poss} tips for endurance. The other cats purr gratitude at the end of the day. Everyone's exhausted, but they made it the entire length of that far off border thanks to s_c0."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -451,7 +451,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_running_WrWr",
                 "strings": [
-                    "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks at each other with dismay \u00e2\u20ac\u201d c_n really doesn't need a breeding pair setting up near them, they need to report this back straight away."
+                    "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks at each other with dismay — c_n really doesn't need a breeding pair setting up near them, they need to report this back straight away."
                 ],
                 "exp_gained": 60,
                 "relationship_changes": [
@@ -506,7 +506,7 @@
                 "frequency": 4,
                 "outcome_art": "animals/coyotecolor",
                 "strings": [
-                    "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up. Not a moment too soon \u00e2\u20ac\u201d from their perch in the oak, the patrol hears the scrabbling of paws and a yip of frustration. That confirms the coyote exists and is interested in cat meat. They wait for the predator to give up, so they can go warn c_n."
+                    "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up. Not a moment too soon — from their perch in the oak, the patrol hears the scrabbling of paws and a yip of frustration. That confirms the coyote exists and is interested in cat meat. They wait for the predator to give up, so they can go warn c_n."
                 ],
                 "exp_gained": 40,
                 "relationship_changes": [
@@ -790,7 +790,7 @@
                 "outcome_art": "cat_sprites/gen_dead_Wr_EXPLICIT",
                 "outcome_art_clean": "cat_sprites/gen_deadghost_WrSc",
                 "strings": [
-                    "Ears pricked, the patrol stalks closer and fans out, crossing the border. On the other side, a female assesses the males trying to court her. One offers a gift to the female, and p_l's stomach drops. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/were/was} only out of sight for seconds \u00e2\u20ac\u201d but r_c0 won't be coming home."
+                    "Ears pricked, the patrol stalks closer and fans out, crossing the border. On the other side, a female assesses the males trying to court her. One offers a gift to the female, and p_l's stomach drops. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/were/was} only out of sight for seconds — but r_c0 won't be coming home."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -1111,7 +1111,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "cat_sprites/gen_bord_dogscent_Wr",
-        "intro_text": "Approaching the border, the patrol stops in their tracks. A coyote has marked over c_n's border markings \u00e2\u20ac\u201d so recently that it stinks from several fox-lengths away, sharply disgusting in the muffled frosty world, so recently that the canine might be still here.",
+        "intro_text": "Approaching the border, the patrol stops in their tracks. A coyote has marked over c_n's border markings — so recently that it stinks from several fox-lengths away, sharply disgusting in the muffled frosty world, so recently that the canine might be still here.",
         "decline_text": "The patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp.",
         "success_outcomes": [
             {
@@ -1710,7 +1710,7 @@
                 "outcome_art": "cat_sprites/gen_deadghost_Wr_EXPLICIT",
                 "outcome_art_clean": "cat_sprites/gen_deadghost_WrSc",
                 "strings": [
-                    "Ears pricked, the patrol stalks closer and fans out, crossing the border. On the other side, a female assesses the males trying to court her. One offers a gift to the female, and p_l's stomach drops. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/were/was} only out of sight for seconds \u00e2\u20ac\u201d but r_c0 won't be coming home."
+                    "Ears pricked, the patrol stalks closer and fans out, crossing the border. On the other side, a female assesses the males trying to court her. One offers a gift to the female, and p_l's stomach drops. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/were/was} only out of sight for seconds — but r_c0 won't be coming home."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -2330,7 +2330,7 @@
                 "frequency": 4,
                 "outcome_art": "backgrounds/pln_sett",
                 "strings": [
-                    "s_c0 is an expert on the network of tunnels and burrows that dot the plains, and the entire patrol immediately looks to {PRONOUN/s_c0/object}. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/nod/nods} \u00e2\u20ac\u201d {PRONOUN/s_c0/subject} {VERB/s_c0/know/knows} just the place, an old sett. By the smell of the wind, the storm blowing down on them can wick away all warmth from a pelt. The patrol needs to shelter and wait it out."
+                    "s_c0 is an expert on the network of tunnels and burrows that dot the plains, and the entire patrol immediately looks to {PRONOUN/s_c0/object}. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/nod/nods} — {PRONOUN/s_c0/subject} {VERB/s_c0/know/knows} just the place, an old sett. By the smell of the wind, the storm blowing down on them can wick away all warmth from a pelt. The patrol needs to shelter and wait it out."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -2656,7 +2656,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittymad_Wr",
                 "strings": [
-                    "s_c0 insists they can all get back to camp before the storm hits. The rest of the patrol won't risk it \u00e2\u20ac\u201d they're going to hide in some tunnels, but s_c0 takes a chance and does what {PRONOUN/s_c0/subject} {VERB/s_c0/do/does} best, racing the wind home. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/arrive/arrives} in one piece. One shivering, sodden piece."
+                    "s_c0 insists they can all get back to camp before the storm hits. The rest of the patrol won't risk it — they're going to hide in some tunnels, but s_c0 takes a chance and does what {PRONOUN/s_c0/subject} {VERB/s_c0/do/does} best, racing the wind home. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/arrive/arrives} in one piece. One shivering, sodden piece."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -2872,7 +2872,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_talking_WrWr",
                 "strings": [
-                    "r_c0 congratulates p_l on the discovery \u00e2\u20ac\u201d this'll be welcome news back at camp. But once p_l turns away, {PRONOUN/r_c0/subject} can't help the small twitches at the end of {PRONOUN/r_c0/poss} tail. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/were/was} so close to finding those tunnels {PRONOUN/r_c0/self}! If only r_c0 had spotted hole, half buried and disguised in the snow."
+                    "r_c0 congratulates p_l on the discovery — this'll be welcome news back at camp. But once p_l turns away, {PRONOUN/r_c0/subject} can't help the small twitches at the end of {PRONOUN/r_c0/poss} tail. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/were/was} so close to finding those tunnels {PRONOUN/r_c0/self}! If only r_c0 had spotted hole, half buried and disguised in the snow."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -3198,7 +3198,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/pln_bord_tunnel_Wr",
                 "strings": [
-                    "Checking the new tunnels proves a good move \u00e2\u20ac\u201d not only are they unoccupied, albeit with snow and grass stalks blown into the shallow chamber's terminus, but the tunnels immediately prove necessary. A rainstorm rolls in, too warm for snow or sleet but too cold to be out walking in. p_l and r_c1 shelter in their newly found refuge."
+                    "Checking the new tunnels proves a good move — not only are they unoccupied, albeit with snow and grass stalks blown into the shallow chamber's terminus, but the tunnels immediately prove necessary. A rainstorm rolls in, too warm for snow or sleet but too cold to be out walking in. p_l and r_c1 shelter in their newly found refuge."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -4252,7 +4252,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/pln_bord_tunnel_Wr",
-        "intro_text": "p_l is on high alert as {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} along the border \u00e2\u20ac\u201d after all, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} here alone. But out of the corner of {PRONOUN/p_l/poss} eye, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a weird splash of shadows in the white of the snow-dabbed fields. Is that a burrow entrance?",
+        "intro_text": "p_l is on high alert as {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} along the border — after all, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} here alone. But out of the corner of {PRONOUN/p_l/poss} eye, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a weird splash of shadows in the white of the snow-dabbed fields. Is that a burrow entrance?",
         "decline_text": "p_l decides not to check the tunnels. After all, who knows what might be hiding inside?",
         "success_outcomes": [
             {
@@ -4267,7 +4267,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_flashflood_Wr",
                 "strings": [
-                    "The weather is caving in. The burrow is small, cramped, and hard to wiggle into \u00e2\u20ac\u201d but it's out of the wind and cold rain, and that's what counts for the next couple of hours. p_l emerges uncomfortable, covered in dirt, and stinking of rabbit, but safe and sound."
+                    "The weather is caving in. The burrow is small, cramped, and hard to wiggle into — but it's out of the wind and cold rain, and that's what counts for the next couple of hours. p_l emerges uncomfortable, covered in dirt, and stinking of rabbit, but safe and sound."
                 ],
                 "exp_gained": 20
             },
@@ -4404,7 +4404,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_flashflood_Wr",
                 "strings": [
-                    "The weather is caving in. The burrow is small, cramped, and hard to wiggle into \u00e2\u20ac\u201d but it's out of the wind and cold rain, and that's what counts for the next couple of hours. p_l emerges uncomfortable, covered in dirt, and shivering."
+                    "The weather is caving in. The burrow is small, cramped, and hard to wiggle into — but it's out of the wind and cold rain, and that's what counts for the next couple of hours. p_l emerges uncomfortable, covered in dirt, and shivering."
                 ],
                 "exp_gained": 20,
                 "condition": [
@@ -5047,14 +5047,14 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/mtn_train_LB_snowcrunching_ApAp",
-        "intro_text": "The apprentices are at the border \u00e2\u20ac\u201d not exactly a patrol they were sent on. Not exactly a patrol they're supposed to do without a warrior, actually. Not a patrol <i>anyone</i> is supposed to do with a storm rolling in. Anyway, is that a tunnel entrance over there?",
+        "intro_text": "The apprentices are at the border — not exactly a patrol they were sent on. Not exactly a patrol they're supposed to do without a warrior, actually. Not a patrol <i>anyone</i> is supposed to do with a storm rolling in. Anyway, is that a tunnel entrance over there?",
         "decline_text": "Eventually the apprentices get tired. Whatever, they're not supposed to be out here without a warrior anyway.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "outcome_art": "cat_sprites/pln_bord_tunnel_Wr",
                 "strings": [
-                    "They don't know this tunnel \u00e2\u20ac\u201d but it knows them, marked by scent and claw as one of the safe refuges in the network c_n constantly maintains and expands in their territory. It knows them, and it saves them, because while they explore it the storm breaks outside, and what was a fun adventure becomes a little more scary as they huddle underground to escape the cold."
+                    "They don't know this tunnel — but it knows them, marked by scent and claw as one of the safe refuges in the network c_n constantly maintains and expands in their territory. It knows them, and it saves them, because while they explore it the storm breaks outside, and what was a fun adventure becomes a little more scary as they huddle underground to escape the cold."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -5293,7 +5293,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_flashflood_Wr",
                 "strings": [
-                    "The apprentices huddle around the burrow entrance cautiously. But as thunder rolls in over the flat horizon, sending the world into almost night levels of darkness, s_c0 convinces them to go in \u00e2\u20ac\u201d they need shelter, they need the protection of walls around them. They have each other, they're going to be fine."
+                    "The apprentices huddle around the burrow entrance cautiously. But as thunder rolls in over the flat horizon, sending the world into almost night levels of darkness, s_c0 convinces them to go in — they need shelter, they need the protection of walls around them. They have each other, they're going to be fine."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -5388,7 +5388,7 @@
                 "outcome_art": "cat_sprites/gen_dead_Ap_EXPLICIT",
                 "outcome_art_clean": "cat_sprites/gen_deadghost_ApSc",
                 "strings": [
-                    "The apprentices gather round the tunnel, investigating. They defer to s_c0 over whether the tunnel's safe. When s_c0 nods, r_c2 scrambles inside \u00e2\u20ac\u201d but inside lurks a sleepy wolverine."
+                    "The apprentices gather round the tunnel, investigating. They defer to s_c0 over whether the tunnel's safe. When s_c0 nods, r_c2 scrambles inside — but inside lurks a sleepy wolverine."
                 ],
                 "involved_cats": {
                     "r_c2": {

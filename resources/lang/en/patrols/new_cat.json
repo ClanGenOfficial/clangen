@@ -2475,7 +2475,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. s_c0 steps up and tells the patrol they'll be taking this kittypet back to camp for healing \u00e2\u20ac\u201d in Tigger's name. {PRONOUN/s_c0/subject/CAP}'ll tell the story later."
+                    "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. s_c0 steps up and tells the patrol they'll be taking this kittypet back to camp for healing — in Tigger's name. {PRONOUN/s_c0/subject/CAP}'ll tell the story later."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -7935,7 +7935,7 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_battle_WrLn",
                 "strings": [
-                    "p_l spins around just in time to see an impressively vicious kittypet lunging at {PRONOUN/p_l/object}. Once {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} recovered from {PRONOUN/p_l/poss} momentary shock, p_l easily overpowers the kittypet, who's snarling something about the dog being {PRONOUN/n_c:0/poss} 'friend'. The odd pair quickly run off, leaving behind a slightly dazed \u00e2\u20ac\u201d and very confused \u00e2\u20ac\u201d p_l."
+                    "p_l spins around just in time to see an impressively vicious kittypet lunging at {PRONOUN/p_l/object}. Once {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} recovered from {PRONOUN/p_l/poss} momentary shock, p_l easily overpowers the kittypet, who's snarling something about the dog being {PRONOUN/n_c:0/poss} 'friend'. The odd pair quickly run off, leaving behind a slightly dazed — and very confused — p_l."
                 ],
                 "involved_cats": {
                     "n_c:0": {
@@ -8564,7 +8564,7 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_train_talking_WrLn",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u00e2\u20ac\u201d n_c:0 \u00e2\u20ac\u201d is in love with the other \u00e2\u20ac\u201d n_c:1 \u00e2\u20ac\u201d who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells n_c:0 {PRONOUN/n_c:0/subject} should take no for an answer. n_c:1 shoots p_l a grateful look."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells n_c:0 {PRONOUN/n_c:0/subject} should take no for an answer. n_c:1 shoots p_l a grateful look."
                 ],
                 "involved_cats": {
                     "n_c:0": {
@@ -8658,7 +8658,7 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_newcathostile_Ln",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u00e2\u20ac\u201d n_c:0 \u00e2\u20ac\u201d is in love with the other \u00e2\u20ac\u201d n_c:1 \u00e2\u20ac\u201d who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells the kittypets to keep their drama away from c_n's border."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells the kittypets to keep their drama away from c_n's border."
                 ],
                 "involved_cats": {
                     "n_c:0": {
@@ -8734,7 +8734,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_speakingcat_Wr",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u00e2\u20ac\u201d n_c:0 \u00e2\u20ac\u201d is in love with the other \u00e2\u20ac\u201d n_c:1 \u00e2\u20ac\u201d who is having none of it. s_c0 steps forward to help them see each other's side and come to a resolution. n_c:0 apologizes for badgering n_c:1, and n_c:1 admits {PRONOUN/n_c:1/subject} {VERB/n_c:1/do/does} feel some fondness for {PRONOUN/n_c:0/object}, but {PRONOUN/n_c:1/subject} {VERB/n_c:1/are/is}n't ready for that kind of commitment."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. s_c0 steps forward to help them see each other's side and come to a resolution. n_c:0 apologizes for badgering n_c:1, and n_c:1 admits {PRONOUN/n_c:1/subject} {VERB/n_c:1/do/does} feel some fondness for {PRONOUN/n_c:0/object}, but {PRONOUN/n_c:1/subject} {VERB/n_c:1/are/is}n't ready for that kind of commitment."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -8843,7 +8843,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_speakingcat_Wr",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u00e2\u20ac\u201d n_c:0 \u00e2\u20ac\u201d is in love with the other \u00e2\u20ac\u201d n_c:1 \u00e2\u20ac\u201d who is having none of it. s_c0 steps forward to help them see each other's side and come to a resolution. n_c:0 apologizes for badgering n_c:1, and n_c:1 admits {PRONOUN/n_c:1/subject} {VERB/n_c:1/do/does} feel some fondness for {PRONOUN/n_c:0/object}, but {PRONOUN/n_c:1/subject} {VERB/n_c:1/are/is}n't ready for that kind of commitment."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. s_c0 steps forward to help them see each other's side and come to a resolution. n_c:0 apologizes for badgering n_c:1, and n_c:1 admits {PRONOUN/n_c:1/subject} {VERB/n_c:1/do/does} feel some fondness for {PRONOUN/n_c:0/object}, but {PRONOUN/n_c:1/subject} {VERB/n_c:1/are/is}n't ready for that kind of commitment."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -8951,7 +8951,7 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_happycat_Ln",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u00e2\u20ac\u201d n_c:0 \u00e2\u20ac\u201d is in love with the other \u00e2\u20ac\u201d n_c:1 \u00e2\u20ac\u201d who is having none of it. p_l steps in and tells n_c:0 {PRONOUN/n_c:0/subject} should take no for an answer. n_c:1 shoots p_l a grateful and flirty look, and p_l hastily backs off. n_c:0 catches that glance, jealousy in {PRONOUN/n_c:0/poss} eyes."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l steps in and tells n_c:0 {PRONOUN/n_c:0/subject} should take no for an answer. n_c:1 shoots p_l a grateful and flirty look, and p_l hastily backs off. n_c:0 catches that glance, jealousy in {PRONOUN/n_c:0/poss} eyes."
                 ],
                 "involved_cats": {
                     "n_c:0": {
@@ -9076,7 +9076,7 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_bord_twocathostile_LnLn",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u00e2\u20ac\u201d n_c:0 \u00e2\u20ac\u201d is in love with the other \u00e2\u20ac\u201d n_c:1 \u00e2\u20ac\u201d who is having none of it. p_l steps in and lectures n_c:0, but it just seems to annoy both kittypets. Maybe they just like to argue."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l steps in and lectures n_c:0, but it just seems to annoy both kittypets. Maybe they just like to argue."
                 ],
                 "involved_cats": {
                     "n_c:0": {
@@ -9273,7 +9273,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_twocathostile_WrWr",
                 "strings": [
-                    "p_l rolls {PRONOUN/p_l/poss} eyes and interrupts the kittypets' argument to tell them both to scram \u00e2\u20ac\u201d and to go tell all their kittypet friends to keep their personal lives on the other side of the border."
+                    "p_l rolls {PRONOUN/p_l/poss} eyes and interrupts the kittypets' argument to tell them both to scram — and to go tell all their kittypet friends to keep their personal lives on the other side of the border."
                 ],
                 "involved_cats": {
                     "n_c:0": {
@@ -9449,7 +9449,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_newcathostile_Ln",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u00e2\u20ac\u201d n_c:0 \u00e2\u20ac\u201d is in love with the other \u00e2\u20ac\u201d n_c:1 \u00e2\u20ac\u201d who is having none of it. p_l interrupts to tell n_c:1 that an ugly mangepelt like {PRONOUN/n_c:1/self} should be pleased that any cat at all has shown an interest."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l interrupts to tell n_c:1 that an ugly mangepelt like {PRONOUN/n_c:1/self} should be pleased that any cat at all has shown an interest."
                 ],
                 "involved_cats": {
                     "n_c:0": {
@@ -9541,7 +9541,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_twocathostile_LnLn",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u00e2\u20ac\u201d n_c:0 \u00e2\u20ac\u201d is in love with the other \u00e2\u20ac\u201d n_c:1 \u00e2\u20ac\u201d who is having none of it. p_l interrupts to tell n_c:0 that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} flattering a prideful and vain-hearted mouse-brain. Neither kittypet seems to appreciate this."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l interrupts to tell n_c:0 that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} flattering a prideful and vain-hearted mouse-brain. Neither kittypet seems to appreciate this."
                 ],
                 "involved_cats": {
                     "n_c:0": {
@@ -9723,7 +9723,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_happycat_Ln",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet \u00e2\u20ac\u201d n_c:0 \u00e2\u20ac\u201d is in love with the other \u00e2\u20ac\u201d n_c:1 \u00e2\u20ac\u201d who is having none of it. p_l interrupts to tell n_c:1 that {PRONOUN/n_c:1/subject}{VERB/n_c:1/'re/'s} one of the ugliest badger-faced fleapelts p_l's ever had the displeasure of looking on. Inexplicably, n_c:1 bats {PRONOUN/n_c:1/poss} eyelashes at p_l and giggles. n_c:0 looks on jealously."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l interrupts to tell n_c:1 that {PRONOUN/n_c:1/subject}{VERB/n_c:1/'re/'s} one of the ugliest badger-faced fleapelts p_l's ever had the displeasure of looking on. Inexplicably, n_c:1 bats {PRONOUN/n_c:1/poss} eyelashes at p_l and giggles. n_c:0 looks on jealously."
                 ],
                 "involved_cats": {
                     "n_c:0": {
@@ -13137,7 +13137,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": "p_l's patrol pads along the shore towards the border. A recent storm has washed away some of the markers near the waterline and they need to be refreshed. There in the surf, however, they find a great wooden thing\u00e2\u20ac\u201da piece of a floating nest. Its jagged edges loom over the cats. A pitiful, low sound emanates from within, but the faint scent of Twoleg lingers in the air. p_l hesitates.",
+        "intro_text": "p_l's patrol pads along the shore towards the border. A recent storm has washed away some of the markers near the waterline and they need to be refreshed. There in the surf, however, they find a great wooden thing—a piece of a floating nest. Its jagged edges loom over the cats. A pitiful, low sound emanates from within, but the faint scent of Twoleg lingers in the air. p_l hesitates.",
         "decline_text": "p_l decides to turn back to camp and report the encounter, rather than risk investigating something potentially dangerous.",
         "success_outcomes": [
             {

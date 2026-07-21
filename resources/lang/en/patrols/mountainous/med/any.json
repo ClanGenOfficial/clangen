@@ -204,7 +204,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l is focused, determined to prove {PRONOUN/p_l/poss} independence. {PRONOUN/p_l/subject/CAP} {VERB/p_l/find/finds} the herbs easily and {VERB/p_l/bring/brings} them back to camp with {PRONOUN/p_l/poss} head held up high \u00e2\u20ac\u201d no sweat, no stress, no fuss."
+                    "p_l is focused, determined to prove {PRONOUN/p_l/poss} independence. {PRONOUN/p_l/subject/CAP} {VERB/p_l/find/finds} the herbs easily and {VERB/p_l/bring/brings} them back to camp with {PRONOUN/p_l/poss} head held up high — no sweat, no stress, no fuss."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -324,7 +324,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l and r_c0 decide on a little friendly competition \u00e2\u20ac\u201d one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
+                    "p_l and r_c0 decide on a little friendly competition — one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [

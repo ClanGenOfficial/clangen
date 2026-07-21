@@ -1313,7 +1313,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. s_c0 gets between the patrol (furious at the intrusion) and the hapless intruder \u00e2\u20ac\u201d in Tigger's name, this cat deserves their help."
+                    "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. s_c0 gets between the patrol (furious at the intrusion) and the hapless intruder — in Tigger's name, this cat deserves their help."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1798,7 +1798,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "n_c:0 \u00e2\u20ac\u201d p_l's heart leaps and drops with every single visit, each time a gamble on if {PRONOUN/p_l/poss} hidden love will still be there for the next stolen moment. p_l will fight for them, please, <i>please</i> n_c:0, come back to c_n. Stay."
+                    "n_c:0 — p_l's heart leaps and drops with every single visit, each time a gamble on if {PRONOUN/p_l/poss} hidden love will still be there for the next stolen moment. p_l will fight for them, please, <i>please</i> n_c:0, come back to c_n. Stay."
                 ],
                 "involved_cats": {
                     "n_c:0": {

@@ -400,7 +400,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "Frankly, extra limbs or not (bat wings, at that \u00e2\u20ac\u201d this'll make a great story back at camp), the patrol needs to get this plump crying ball of fur back to their Twolegs. The world will eat this kittypet alive if they don't help them."
+                    "Frankly, extra limbs or not (bat wings, at that — this'll make a great story back at camp), the patrol needs to get this plump crying ball of fur back to their Twolegs. The world will eat this kittypet alive if they don't help them."
                 ],
                 "exp_gained": 15,
                 "reputation_changes": {
@@ -2060,7 +2060,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/mtn_hunt_followsstreamtocoldbog_WrWr",
                 "strings": [
-                    "p_l suggests dumping the wood pieces in the nearby pond\u00e2\u20ac\u201dthe water will surely ruin the wood and prevent the Twolegs from building more nests. The patrol is there until sunhigh dragging the pieces to the pond."
+                    "p_l suggests dumping the wood pieces in the nearby pond—the water will surely ruin the wood and prevent the Twolegs from building more nests. The patrol is there until sunhigh dragging the pieces to the pond."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
