@@ -58,11 +58,11 @@ class PatrolEvent:
     def __post_init__(self):
         self.weight = 1
 
-        if "any" not in self.location:
+        if self.location and "any" not in self.location:
             # add 4 for every biome not listed
             self.weight += 4 * (len(constants.BIOME_TYPES) - len(self.location))
 
-        if "any" not in self.season:
+        if self.season and "any" not in self.season:
             # add 4 for every season not listed
             self.weight += 4 * (len(constants.SEASONS) - len(self.season))
 
@@ -148,10 +148,25 @@ class PatrolEvent:
         self.antag_fail_outcomes.clear()
 
         for outcome in success:
-            self.success_outcomes.append(TextPoolEvent(**outcome))
+            self.success_outcomes.append(
+                TextPoolEvent(
+                    id=f"{self.id}_success{success.index(outcome)}", **outcome
+                )
+            )
         for outcome in fail:
-            self.fail_outcomes.append(TextPoolEvent(**outcome))
+            self.fail_outcomes.append(
+                TextPoolEvent(id=f"{self.id}_fail{fail.index(outcome)}", **outcome)
+            )
         for outcome in antag_success:
-            self.antag_success_outcomes.append(TextPoolEvent(**outcome))
+            self.antag_success_outcomes.append(
+                TextPoolEvent(
+                    id=f"{self.id}_antag_success{antag_success.index(outcome)}",
+                    **outcome,
+                )
+            )
         for outcome in antag_fail:
-            self.antag_fail_outcomes.append(TextPoolEvent(**outcome))
+            self.antag_fail_outcomes.append(
+                TextPoolEvent(
+                    id=f"{self.id}_antag_fail{antag_fail.index(outcome)}", **outcome
+                )
+            )

@@ -364,7 +364,7 @@ class Patrol:
                 romantic_patrols.copy(), chosen_frequency, patrol_override
             )
 
-        if not self._decide_if_romantic(chosen_patrol):
+        if chosen_patrol and not self._decide_if_romantic(chosen_patrol):
             chosen_patrol = None
 
         # if no romantic patrol possible, we get a normal one!
@@ -396,8 +396,8 @@ class Patrol:
                     chosen_frequency = find_new_frequency(used_frequencies)
 
             if not patrol_override:
-                test_patrol = list(
-                    choices([possible_patrols], [x.weight for x in possible_patrols])
+                test_patrol = choices(
+                    possible_patrols, [x.weight for x in possible_patrols]
                 )[0]
             else:
                 test_patrol = patrol_override
@@ -419,6 +419,8 @@ class Patrol:
             # CHECK IF CATS FIT
             if self._patrol_pass_cat_constraints(test_patrol):
                 chosen_patrol = test_patrol
+            else:
+                possible_patrols.remove(test_patrol)
 
         return chosen_patrol
 
@@ -579,6 +581,7 @@ class Patrol:
                 if not possible_outcomes:
                     used_frequencies.add(chosen_frequency)
                     chosen_frequency = find_new_frequency(used_frequencies)
+                    continue
 
                 test_outcome = choices(
                     possible_outcomes, weights=[x.weight for x in possible_outcomes]

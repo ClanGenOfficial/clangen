@@ -422,6 +422,8 @@ def event_text_adjust(
             text = text.replace("cat_tag", cat_tag)
 
     for abbr, cat in involved_cat_dict.items():
+        if abbr in [*CatRank]:  # we don't want to replace mentions of ranks
+            continue
         if abbr in text:
             if isinstance(cat, list):
                 cat_name = adjust_list_text([str(c.name) for c in cat])
