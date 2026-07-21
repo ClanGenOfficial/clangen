@@ -1296,7 +1296,7 @@
                     "can_romance"
                 ]
             }
-        ]
+        ],
         "chance_of_success": 70,
         "patrol_art": "train_general_intro",
         "intro_text": "r_c1 runs along in the heat of the desert day, cajoling p_l, who's really not keen on this sudden adventure at an unreasonably hot hour.",
@@ -1557,7 +1557,7 @@
                     "can_romance"
                 ]
             }
-        ]
+        ],
         "chance_of_success": 70,
         "patrol_art": "train_general_intro",
         "intro_text": "Fluffed up against the cold, r_c1 and p_l walk to an outlook overlooking the sandy scrubland.",
@@ -1922,7 +1922,7 @@
                     "can_romance"
                 ]
             }
-        ]
+        ],
         "chance_of_success": 50,
         "patrol_art": "train_general_intro",
         "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c0/subject} wouldn't mind showing p_l their hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?",

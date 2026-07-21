@@ -3497,7 +3497,7 @@
                     "can_romance"
                 ]
             }
-        ]
+        ],
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_hunt_twolegdencatdare_WrWr",
         "intro_text": "{PRONOUN/r_c0/poss/CAP} eyes daring p_l to say no, r_c0 suggests hunting by the Twoleg dens.",
