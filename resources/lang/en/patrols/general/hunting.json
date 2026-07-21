@@ -9140,7 +9140,7 @@
                     "apprentice"
                 ]
             },
-            "r_c2": {
+            "p_l": {
                 "status": [
                     "apprentice"
                 ]
@@ -9148,7 +9148,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_hunt_twolegdenappdare_ApAp",
-        "intro_text": "{PRONOUN/r_c2/poss/CAP} eyes daring r_c1 to say no, r_c2 suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
+        "intro_text": "{PRONOUN/p_l/poss/CAP} eyes daring r_c1 to say no, p_l suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
         "decline_text": "On second thought, they decide to reline their nests today instead.",
         "success_outcomes": [
             {
@@ -9163,7 +9163,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -9191,20 +9191,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "A friendly Twoleg makes a 'psspsspss' noise and pours kittypet food on the ground for r_c2. They fetch r_c1, and both apprentices loudly proclaim how much better fresh-kill is, but both are also wide-eyed and thrilled by the experience."
+                    "A friendly Twoleg makes a 'psspsspss' noise and pours kittypet food on the ground for p_l. They fetch r_c1, and both apprentices loudly proclaim how much better fresh-kill is, but both are also wide-eyed and thrilled by the experience."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -9212,7 +9200,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -9235,20 +9223,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Tail lashing excitedly, r_c1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with {PRONOUN/r_c1/poss} belly low to the ground. r_c2 tries to be even sneakier, and so r_c1 ups {PRONOUN/r_c1/poss} game, until they're both probably the most obvious pair of cats in the neighborhood."
+                    "Tail lashing excitedly, r_c1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with {PRONOUN/r_c1/poss} belly low to the ground. p_l tries to be even sneakier, and so r_c1 ups {PRONOUN/r_c1/poss} game, until they're both probably the most obvious pair of cats in the neighborhood."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -9256,7 +9232,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -9281,20 +9257,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Carelessly, r_c2 is seen by Twolegs and locked, hissing and spitting, in a monster's den. Overnight, {PRONOUN/r_c2/subject} {VERB/r_c2/hear/hears} r_c1 yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, r_c2 presses {PRONOUN/r_c2/poss} pelt against r_c1 as they pad home."
+                    "Carelessly, p_l is seen by Twolegs and locked, hissing and spitting, in a monster's den. Overnight, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} r_c1 yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, p_l presses {PRONOUN/p_l/poss} pelt against r_c1 as they pad home."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -9302,7 +9266,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -9343,7 +9307,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -9373,7 +9337,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -9391,7 +9355,7 @@
                 "lost": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c1"
                         ]
                     }
                 ]

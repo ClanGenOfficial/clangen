@@ -15346,38 +15346,16 @@
                 2
             ]
         },
-        "involved_cats": {
-            "r_c2": {
-                "status": [
-                    "apprentice",
-                    "medicine cat apprentice"
-                ]
-            }
-        },
         "chance_of_success": 70,
         "patrol_art": "cat_sprites/gen_med_cobweb_ApAp",
-        "intro_text": "As the apprentices head out to collect cobwebs, r_c2 screws up {PRONOUN/r_c2/poss} face into a stupid expression around the stick {PRONOUN/r_c2/subject} {VERB/r_c2/hold/holds} in {PRONOUN/r_c2/poss} mouth.",
+        "intro_text": "As the apprentices head out to collect cobwebs, p_l screws up {PRONOUN/p_l/poss} face into a stupid expression around the stick {PRONOUN/p_l/subject} {VERB/p_l/hold/holds} in {PRONOUN/p_l/poss} mouth.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "It makes r_c1 laugh, muffled through {PRONOUN/r_c1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day. r_c2 seems to lighten up every situation."
+                    "It makes r_c1 laugh, muffled through {PRONOUN/r_c1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day. p_l seems to lighten up every situation."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -15409,22 +15387,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "<i>Murrp</i>ing with laughter, r_c1 clacks the stick {PRONOUN/r_c1/subject} {VERB/r_c1/hold/holds} in {PRONOUN/r_c1/poss} own mouth against r_c2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices' muffled purrs and laughs."
+                    "<i>Murrp</i>ing with laughter, r_c1 clacks the stick {PRONOUN/r_c1/subject} {VERB/r_c1/hold/holds} in {PRONOUN/r_c1/poss} own mouth against p_l's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices' muffled purrs and laughs."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -15432,7 +15396,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -15467,7 +15431,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -15483,7 +15447,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -15519,7 +15483,19 @@
             ]
         },
         "involved_cats": {
+            "r_c1": {
+                "status": [
+                    "apprentice",
+                    "medicine cat apprentice"
+                ]
+            },
             "r_c2": {
+                "status": [
+                    "apprentice",
+                    "medicine cat apprentice"
+                ]
+            },
+            "p_l": {
                 "status": [
                     "apprentice",
                     "medicine cat apprentice"
@@ -15534,28 +15510,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c3 ignores it, but it makes r_c1 laugh, muffled through {PRONOUN/r_c1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day. r_c2 seems to lighten up every situation."
+                    "p_l ignores it, but it makes r_c1 laugh, muffled through {PRONOUN/r_c1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day. r_c2 seems to lighten up every situation."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "r_c3": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -15587,28 +15543,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "<i>Murrp</i>ing with laughter, r_c1 clacks the stick {PRONOUN/r_c1/subject} {VERB/r_c1/hold/holds} in {PRONOUN/r_c1/poss} own mouth against r_c2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices' muffled purrs and laughs, even though r_c3 seems solely focused on the chore, content to let the others muck about so long as everything gets done."
+                    "<i>Murrp</i>ing with laughter, r_c1 clacks the stick {PRONOUN/r_c1/subject} {VERB/r_c1/hold/holds} in {PRONOUN/r_c1/poss} own mouth against r_c2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices' muffled purrs and laughs, even though p_l seems solely focused on the chore, content to let the others muck about so long as everything gets done."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "r_c3": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -15651,7 +15587,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "r_c3"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -15685,48 +15621,21 @@
             "all apprentices": [
                 4,
                 6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ],
-            "medicine cat": [
-                -1,
-                -1
             ]
         },
         "involved_cats": {
-            "r_c2": {
-                "status": [
-                    "apprentice",
-                    "medicine cat apprentice"
-                ]
-            }
+            "r_c1": {}
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_med_cobweb_ApAp",
-        "intro_text": "As the apprentices head out to collect cobwebs, r_c2 screws up {PRONOUN/r_c2/poss} face into a stupid expression around the stick {PRONOUN/r_c2/subject} {VERB/r_c2/hold/holds} in {PRONOUN/r_c2/poss} mouth.",
+        "intro_text": "As the apprentices head out to collect cobwebs, p_l screws up {PRONOUN/p_l/poss} face into a stupid expression around the stick {PRONOUN/p_l/subject} {VERB/p_l/hold/holds} in {PRONOUN/p_l/poss} mouth.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "The other apprentices ignore it, but it makes r_c1 laugh, muffled through {PRONOUN/r_c1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, and r_c2 seems to lighten up every situation."
+                    "The other apprentices ignore it, but it makes r_c1 laugh, muffled through {PRONOUN/r_c1/poss} own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, and p_l seems to lighten up every situation."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -15734,7 +15643,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -15758,22 +15667,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "<i>Murrp</i>ing with laughter, r_c1 clacks the stick {PRONOUN/r_c1/subject} {VERB/r_c1/hold/holds} in {PRONOUN/r_c1/poss} own mouth against r_c2's. The stick bashing continues as {PRONOUN/r_c1/subject} {VERB/r_c1/collect/collects} cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, even though the other apprentices seem solely focused on the chore, content to let the others muck about so long as everything gets done."
+                    "<i>Murrp</i>ing with laughter, r_c1 clacks the stick {PRONOUN/r_c1/subject} {VERB/r_c1/hold/holds} in {PRONOUN/r_c1/poss} own mouth against p_l's. The stick bashing continues as {PRONOUN/r_c1/subject} {VERB/r_c1/collect/collects} cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, even though the other apprentices seem solely focused on the chore, content to let the others muck about so long as everything gets done."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -15781,7 +15676,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -16183,23 +16078,15 @@
                 -1
             ]
         },
-        "involved_cats": {
-            "r_c3": {
-                "status": [
-                    "apprentice",
-                    "medicine cat apprentice"
-                ]
-            }
-        },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_gatheringmoss_ApAp",
-        "intro_text": "As the apprentices head out to collect moss, r_c3 screws up {PRONOUN/r_c3/poss} face into a stupid expression at the menial nature of the task.",
+        "intro_text": "As the apprentices head out to collect moss, p_l screws up {PRONOUN/p_l/poss} face into a stupid expression at the menial nature of the task.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "Despite r_c3's annoyance, r_c2 insists there's nothing to apologize for. r_c2 bumps r_c1's shoulder affectionately, brushing past {PRONOUN/r_c1/object} with a smile as {PRONOUN/r_c2/subject} {VERB/r_c2/leave/leaves} camp. It's a fine way to spend the afternoon and a cool cat to spend it with!"
+                    "Despite p_l's annoyance, r_c2 insists there's nothing to apologize for. r_c2 bumps r_c1's shoulder affectionately, brushing past {PRONOUN/r_c1/object} with a smile as {PRONOUN/r_c2/subject} {VERB/r_c2/leave/leaves} camp. It's a fine way to spend the afternoon and a cool cat to spend it with!"
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -16209,12 +16096,6 @@
                         ]
                     },
                     "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "r_c3": {
                         "status": [
                             "apprentice",
                             "medicine cat apprentice"
@@ -16246,7 +16127,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c3"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [

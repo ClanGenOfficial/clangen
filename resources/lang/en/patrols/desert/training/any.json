@@ -1277,7 +1277,7 @@
                     "apprentice"
                 ]
             },
-            "r_c2": {
+            "p_l": {
                 "status": [
                     "apprentice"
                 ]
@@ -1285,26 +1285,14 @@
         },
         "chance_of_success": 70,
         "patrol_art": "train_general_intro",
-        "intro_text": "r_c1 runs along in the heat of the desert day, cajoling r_c2, who's really not keen on this sudden adventure at an unreasonably hot hour.",
+        "intro_text": "r_c1 runs along in the heat of the desert day, cajoling p_l, who's really not keen on this sudden adventure at an unreasonably hot hour.",
         "decline_text": "The apprentices are called back to camp to kitsit.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "Rounding a bend in the rocky path, r_c1 ducks under a thorn tree, and through a gap between two rock pillars, and r_c2 emerges into the alcove beyond with a gasp. A little hidden pool lies perfectly still and quiet in the shade, and both apprentices leap into the water with exclamations of relief."
+                    "Rounding a bend in the rocky path, r_c1 ducks under a thorn tree, and through a gap between two rock pillars, and p_l emerges into the alcove beyond with a gasp. A little hidden pool lies perfectly still and quiet in the shade, and both apprentices leap into the water with exclamations of relief."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
@@ -1312,7 +1300,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -1329,20 +1317,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "When r_c1 shows r_c2 the hidden pool {PRONOUN/r_c1/subject}{VERB/r_c1/'ve/'s} found, r_c2 can barely believe it! They spend the hot midday playing in the water, splashing and play-fighting and having the time of their lives!"
+                    "When r_c1 shows p_l the hidden pool {PRONOUN/r_c1/subject}{VERB/r_c1/'ve/'s} found, p_l can barely believe it! They spend the hot midday playing in the water, splashing and play-fighting and having the time of their lives!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
@@ -1350,7 +1326,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -1367,17 +1343,12 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "When s_c shows r_c2 the hidden pool they've found, r_c2 can barely believe it! Stuttering but determined, s_c explains that they wondered if, possibly, maybe, r_c2 would like to hang out... just the two of them? r_c2 looks away with a purr and mumbles a soft yes to the ground, suddenly unable to make eye contact. They swim and bask in the sun together, quietly thrilled."
+                    "When s_c shows p_l the hidden pool they've found, p_l can barely believe it! Stuttering but determined, s_c explains that they wondered if, possibly, maybe, p_l would like to hang out... just the two of them? p_l looks away with a purr and mumbles a soft yes to the ground, suddenly unable to make eye contact. They swim and bask in the sun together, quietly thrilled."
                 ],
                 "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c": {
                         "prior_abbreviation": [
-                            "any"
+                            "-p_l"
                         ],
                         "stat": {
                             "trait": [
@@ -1400,7 +1371,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -1409,7 +1380,7 @@
                         ],
                         "amount": 18,
                         "log": {
-                            "cats_from": "r_c1 asked r_c2 to hang out, just the two of them, in a beautiful oasis."
+                            "cats_from": "r_c1 asked p_l to hang out, just the two of them, in a beautiful oasis."
                         }
                     }
                 ]
@@ -1553,7 +1524,7 @@
                     "apprentice"
                 ]
             },
-            "r_c2": {
+            "p_l": {
                 "status": [
                     "apprentice"
                 ]
@@ -1561,26 +1532,14 @@
         },
         "chance_of_success": 70,
         "patrol_art": "train_general_intro",
-        "intro_text": "Fluffed up against the cold, r_c1 and r_c2 walk to an outlook overlooking the sandy scrubland.",
+        "intro_text": "Fluffed up against the cold, r_c1 and p_l walk to an outlook overlooking the sandy scrubland.",
         "decline_text": "Oh no! They both forgot that they were on elder nest change duty this evening!",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "Watching the glowing dots scurrying around on the sand, bluer than blue, r_c1 purrs, telling r_c2 this is what {PRONOUN/r_c1/subject} wanted to show {PRONOUN/r_c2/object}. r_c2 can't believe that scorpions glow in the dark, how cool! They watch them together, chatting about the weird arachnids and having a great time."
+                    "Watching the glowing dots scurrying around on the sand, bluer than blue, r_c1 purrs, telling p_l this is what {PRONOUN/r_c1/subject} wanted to show {PRONOUN/p_l/object}. p_l can't believe that scorpions glow in the dark, how cool! They watch them together, chatting about the weird arachnids and having a great time."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
@@ -1588,7 +1547,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -1597,7 +1556,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "r_c1 took r_c2 out to see the glowing scorpions, and they spent the evening together."
+                            "cats_from": "r_c1 took p_l out to see the glowing scorpions, and they spent the evening together."
                         }
                     }
                 ]
@@ -1605,20 +1564,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "With the full moon and the spread of stars in the night sky being mirrored by the glowing scorpions scurrying around on the ground, r_c2 realizes that this is all very romantic. Excited, {PRONOUN/r_c2/subject} {VERB/r_c2/put/puts} {PRONOUN/r_c2/poss} paw over r_c1's, and both of them blush to their ear-tips."
+                    "With the full moon and the spread of stars in the night sky being mirrored by the glowing scorpions scurrying around on the ground, p_l realizes that this is all very romantic. Excited, {PRONOUN/p_l/subject} {VERB/p_l/put/puts} {PRONOUN/p_l/poss} paw over r_c1's, and both of them blush to their ear-tips."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
@@ -1626,7 +1573,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -1635,7 +1582,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "r_c1 took r_c2 out to see the glowing scorpions, and they spent a romantic evening together."
+                            "cats_from": "r_c1 took p_l out to see the glowing scorpions, and they spent a romantic evening together."
                         }
                     }
                 ]
@@ -1643,17 +1590,12 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "When s_c shows r_c2 the glowing scorpions, r_c2 can barely believe it! Stuttering but determined, s_c explains that they wondered if, possibly, maybe, r_c2 would like to hang out... just the two of them? r_c2 looks away with a purr and mumbles a soft yes to the ground, suddenly unable to make eye contact. They swim and bask in the sun together, quietly thrilled."
+                    "When s_c shows p_l the glowing scorpions, p_l can barely believe it! Stuttering but determined, s_c explains that they wondered if, possibly, maybe, p_l would like to hang out... just the two of them? p_l looks away with a purr and mumbles a soft yes to the ground, suddenly unable to make eye contact. They swim and bask in the sun together, quietly thrilled."
                 ],
                 "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c": {
                         "prior_abbreviation": [
-                            "any"
+                            "-p_l"
                         ],
                         "stat": {
                             "trait": [
@@ -1676,7 +1618,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -1685,7 +1627,7 @@
                         ],
                         "amount": 18,
                         "log": {
-                            "cats_from": "r_c1 took r_c2 out to see the glowing scorpions and asked r_c2 if {PRONOUN/r_c2/subject} wanted to spend the evening just the two of them."
+                            "cats_from": "r_c1 took p_l out to see the glowing scorpions and asked p_l if {PRONOUN/p_l/subject} wanted to spend the evening just the two of them."
                         }
                     }
                 ]
@@ -1695,20 +1637,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Watching the glowing dots scurrying around on the sand, bluer than blue, r_c1 purrs, telling r_c2 this is what they wanted to show them. r_c2 looks horrified \u00e2\u20ac\u201d scorpions? They don't care that the bugs glow, ewww!"
+                    "Watching the glowing dots scurrying around on the sand, bluer than blue, r_c1 purrs, telling p_l this is what they wanted to show them. p_l looks horrified \u00e2\u20ac\u201d scorpions? They don't care that the bugs glow, ewww!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -1716,7 +1646,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -1733,7 +1663,7 @@
                             "r_c1"
                         ],
                         "cats_to": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -1749,20 +1679,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c2 stops them on the outlook, and asks why r_c1 wanted to wander off into the wilderness so badly. r_c1 stutters out some nonsense about hunting and then runs off into the desert."
+                    "p_l stops them on the outlook, and asks why r_c1 wanted to wander off into the wilderness so badly. r_c1 stutters out some nonsense about hunting and then runs off into the desert."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -1770,7 +1688,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -1784,7 +1702,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c1"

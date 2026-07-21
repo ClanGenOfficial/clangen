@@ -1796,10 +1796,6 @@
                 3
             ],
             "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
                 2,
                 2
             ]
@@ -1812,20 +1808,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 pounces on the little creature and misses, but {PRONOUN/r_c1/subject} {VERB/r_c1/don't/doesn't} seem overly concerned, stopping nearly every step to chat to r_c2, who's just as keen to talk."
+                    "r_c1 pounces on the little creature and misses, but {PRONOUN/r_c1/subject} {VERB/r_c1/don't/doesn't} seem overly concerned, stopping nearly every step to chat to p_l, who's just as keen to talk."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 15,
                 "relationship_changes": [
                     {
@@ -1833,7 +1817,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -1851,20 +1835,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c1 and r_c2 go for the prey at the same time, bonking their heads together. It makes both of them laugh while apologizing, and they don't leave each other's side for the rest of the patrol, apologies turning to chatting turning to whispered conversations."
+                    "r_c1 and p_l go for the prey at the same time, bonking their heads together. It makes both of them laugh while apologizing, and they don't leave each other's side for the rest of the patrol, apologies turning to chatting turning to whispered conversations."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 15,
                 "relationship_changes": [
                     {
@@ -1872,7 +1844,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -1901,7 +1873,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [

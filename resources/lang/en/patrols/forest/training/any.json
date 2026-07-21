@@ -2641,7 +2641,7 @@
                     "apprentice"
                 ]
             },
-            "r_c2": {
+            "p_l": {
                 "status": [
                     "apprentice"
                 ]
@@ -2649,26 +2649,14 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_train_willow_Ap",
-        "intro_text": "Off in the woods, r_c1 waits for r_c2 underneath the low-hanging branches of a willow. The tip of {PRONOUN/r_c1/poss} tail twitches in excitement.",
+        "intro_text": "Off in the woods, r_c1 waits for p_l underneath the low-hanging branches of a willow. The tip of {PRONOUN/r_c1/poss} tail twitches in excitement.",
         "decline_text": "Oh no! They both forgot that they were on elder nest change duty today!",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c2 bursts out from cover, pouncing on r_c1 with claws sheathed and giggling. r_c1 rolls with the blow and kicks r_c2 off, bounding after {PRONOUN/r_c2/object} with promises of getting {PRONOUN/r_c2/object} back! On and on the chase goes, neither interested in winning it as they play under the dappled light of the canopy."
+                    "p_l bursts out from cover, pouncing on r_c1 with claws sheathed and giggling. r_c1 rolls with the blow and kicks p_l off, bounding after {PRONOUN/p_l/object} with promises of getting {PRONOUN/p_l/object} back! On and on the chase goes, neither interested in winning it as they play under the dappled light of the canopy."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
@@ -2676,7 +2664,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -2693,20 +2681,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c2 emerges into the hidden soft light under the willow tree. Seeing r_c1, {PRONOUN/r_c2/subject} {VERB/r_c2/trot/trots} up, asking why r_c1 wanted to meet there. r_c1 looks away with a purr, making up some nonsense about fight training. Instead, both apprentices hang out there all afternoon, awkward and thrilled."
+                    "p_l emerges into the hidden soft light under the willow tree. Seeing r_c1, {PRONOUN/p_l/subject} {VERB/p_l/trot/trots} up, asking why r_c1 wanted to meet there. r_c1 looks away with a purr, making up some nonsense about fight training. Instead, both apprentices hang out there all afternoon, awkward and thrilled."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
@@ -2714,7 +2690,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -2723,7 +2699,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "r_c1 met with r_c2 under the pretense of fight training. They hung out all day, just the two of them."
+                            "cats_from": "r_c1 met with p_l under the pretense of fight training. They hung out all day, just the two of them."
                         }
                     }
                 ]
@@ -2731,14 +2707,9 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c2 emerges into the hidden soft light under the willow tree. Seeing s_c, they trot up, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that {PRONOUN/s_c/subject} wondered if, possibly, maybe, r_c2 would like to hang out... just the two of them? r_c2 looks away with a purr and mumbles a soft yes to the willow roots, suddenly unable to make eye contact."
+                    "p_l emerges into the hidden soft light under the willow tree. Seeing s_c, they trot up, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that {PRONOUN/s_c/subject} wondered if, possibly, maybe, p_l would like to hang out... just the two of them? p_l looks away with a purr and mumbles a soft yes to the willow roots, suddenly unable to make eye contact."
                 ],
                 "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c": {
                         "stat": {
                             "trait": [
@@ -2764,7 +2735,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -2773,7 +2744,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "r_c1 met with r_c2 to spend time together \u00e2\u20ac\u201d just the two of them."
+                            "cats_from": "r_c1 met with p_l to spend time together \u00e2\u20ac\u201d just the two of them."
                         }
                     }
                 ]
@@ -2783,20 +2754,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c2 bursts out from cover, pouncing on r_c1 with claws sheathed and giggling. r_c1 rolls with the blow and kicks r_c2 off \u00e2\u20ac\u201d but then {PRONOUN/r_c1/subject} {VERB/r_c1/scramble/scrambles} to {PRONOUN/r_c1/poss} paws, looking hurt, and {VERB/r_c1/storm/storms} off in a huff, leaving r_c2 confused and wondering."
+                    "p_l bursts out from cover, pouncing on r_c1 with claws sheathed and giggling. r_c1 rolls with the blow and kicks p_l off \u00e2\u20ac\u201d but then {PRONOUN/r_c1/subject} {VERB/r_c1/scramble/scrambles} to {PRONOUN/r_c1/poss} paws, looking hurt, and {VERB/r_c1/storm/storms} off in a huff, leaving p_l confused and wondering."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -2804,7 +2763,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -2818,7 +2777,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -2829,7 +2788,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from arranged a special meeting with r_c2, but r_c2 stormed off in a huff."
+                            "cats_from": "cat_from arranged a special meeting with p_l, but p_l stormed off in a huff."
                         }
                     }
                 ]
@@ -2837,20 +2796,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c2 emerges into the hidden soft light under the willow tree. Seeing r_c1, {PRONOUN/r_c2/subject} {VERB/r_c2/trot/trots} up, asking why r_c1 wanted to meet there. Nerve breaking, r_c1 stutters out some nonsense about hunting and then runs off into the forest."
+                    "p_l emerges into the hidden soft light under the willow tree. Seeing r_c1, {PRONOUN/p_l/subject} {VERB/p_l/trot/trots} up, asking why r_c1 wanted to meet there. Nerve breaking, r_c1 stutters out some nonsense about hunting and then runs off into the forest."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -2858,7 +2805,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -2872,7 +2819,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c1"

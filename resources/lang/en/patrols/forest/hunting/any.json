@@ -4452,10 +4452,6 @@
             "apprentice": [
                 1,
                 6
-            ],
-            "all apprentices": [
-                2,
-                2
             ]
         },
         "involved_cats": {
@@ -4464,7 +4460,7 @@
                     "apprentice"
                 ]
             },
-            "r_c2": {
+            "p_l": {
                 "status": [
                     "apprentice"
                 ]
@@ -4472,26 +4468,14 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_funrun_ApAp",
-        "intro_text": "As r_c1 tears through the forest with r_c2, stretching {PRONOUN/r_c1/poss} legs on a run, {PRONOUN/r_c1/subject} {VERB/r_c1/spot/spots} movement out of the corner of {PRONOUN/r_c1/poss} eye.",
+        "intro_text": "As r_c1 tears through the forest with p_l, stretching {PRONOUN/r_c1/poss} legs on a run, {PRONOUN/r_c1/subject} {VERB/r_c1/spot/spots} movement out of the corner of {PRONOUN/r_c1/poss} eye.",
         "decline_text": "They keep going, not wanting to slow down.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "With a huge leap, r_c1 darts sideways and pulls the tail feathers off a blackbird taking flight. A missed catch, but new nest lining? {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/toss/tosses} some of the feathers at r_c2, and the two apprentices end up scuffling like kits."
+                    "With a huge leap, r_c1 darts sideways and pulls the tail feathers off a blackbird taking flight. A missed catch, but new nest lining? {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/toss/tosses} some of the feathers at p_l, and the two apprentices end up scuffling like kits."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
@@ -4499,7 +4483,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -4523,20 +4507,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "Laughing, r_c1 bounces gleefully off a tree trunk. It redirects {PRONOUN/r_c1/poss} momentum far better than {PRONOUN/r_c1/subject} {VERB/r_c1/were/was} expecting, and it's difficult to say who's more surprised \u00e2\u20ac\u201d the mouse, or the apprentice slamming into it! Not a very clean catch, but the look on r_c2's face, so shocked and impressed, makes {PRONOUN/r_c1/object} blush."
+                    "Laughing, r_c1 bounces gleefully off a tree trunk. It redirects {PRONOUN/r_c1/poss} momentum far better than {PRONOUN/r_c1/subject} {VERB/r_c1/were/was} expecting, and it's difficult to say who's more surprised \u00e2\u20ac\u201d the mouse, or the apprentice slamming into it! Not a very clean catch, but the look on p_l's face, so shocked and impressed, makes {PRONOUN/r_c1/object} blush."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
@@ -4571,25 +4543,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 skids to a halt and tries to sprint after it, but the bird {PRONOUN/r_c1/subject} saw escapes {PRONOUN/r_c1/poss} paws. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/chatter/chatters} angrily at it. It tries to poop on {PRONOUN/r_c1/object}. Such is life. r_c2 snickers at {PRONOUN/r_c1/object} too, and r_c1 sulks."
+                    "r_c1 skids to a halt and tries to sprint after it, but the bird {PRONOUN/r_c1/subject} saw escapes {PRONOUN/r_c1/poss} paws. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/chatter/chatters} angrily at it. It tries to poop on {PRONOUN/r_c1/object}. Such is life. p_l snickers at {PRONOUN/r_c1/object} too, and r_c1 sulks."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c1"
                         ],
                         "cats_from": [
                             "p_l"
@@ -4839,10 +4799,6 @@
             "apprentice": [
                 1,
                 6
-            ],
-            "all apprentices": [
-                2,
-                2
             ]
         },
         "chance_of_success": 60,
@@ -4853,20 +4809,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 pounces on the little creature and misses, but {PRONOUN/r_c1/subject} {VERB/r_c1/don't/doesn't} seem overly concerned, stopping nearly every step to chat to r_c2, who's just as keen to talk."
+                    "r_c1 pounces on the little creature and misses, but {PRONOUN/r_c1/subject} {VERB/r_c1/don't/doesn't} seem overly concerned, stopping nearly every step to chat to p_l, who's just as keen to talk."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 15,
                 "relationship_changes": [
                     {
@@ -4874,7 +4818,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -4898,20 +4842,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c1 and r_c2 go for the prey at the same time, bonking their heads together. It makes both of them laugh while apologizing. They don't leave each other's side for the rest of the patrol, apologies turning to chatter turning to whispered conversations."
+                    "r_c1 and p_l go for the prey at the same time, bonking their heads together. It makes both of them laugh while apologizing. They don't leave each other's side for the rest of the patrol, apologies turning to chatter turning to whispered conversations."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 15,
                 "relationship_changes": [
                     {
@@ -4919,7 +4851,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -4954,7 +4886,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
