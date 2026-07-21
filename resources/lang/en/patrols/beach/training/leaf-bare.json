@@ -176,10 +176,10 @@
                 "frequency": 4,
                 "outcome_art": "backgrounds/bch_stormwaves",
                 "strings": [
-                    "Let us speak of the nursery tales, s_c begins. Of Clans founded amid driftwood and loss, of the moon giving her blessing to warriors who swim under her gaze, of the magic of the sea, currently awful, but just as much awe inspiring. Outside it rages \u00e2\u20ac\u201d but here in camp, c_n is safe."
+                    "Let us speak of the nursery tales, s_c0 begins. Of Clans founded amid driftwood and loss, of the moon giving her blessing to warriors who swim under her gaze, of the magic of the sea, currently awful, but just as much awe inspiring. Outside it rages \u00e2\u20ac\u201d but here in camp, c_n is safe."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "STORY,1"
@@ -194,7 +194,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -228,7 +228,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -248,10 +248,10 @@
                 "frequency": 4,
                 "outcome_art": "backgrounds/bch_stormwaves",
                 "strings": [
-                    "This day will be a day of heroes, s_c whispers, capturing {PRONOUN/s_c/poss} Clanmates' attention. Heroes born, or made, or found \u00e2\u20ac\u201d such things always appear in c_n's history, a stranger arriving soaked from a storm, a new life brought into the world as winds howl outside, a warrior rising to need. The storms mark it."
+                    "This day will be a day of heroes, s_c0 whispers, capturing {PRONOUN/s_c0/poss} Clanmates' attention. Heroes born, or made, or found \u00e2\u20ac\u201d such things always appear in c_n's history, a stranger arriving soaked from a storm, a new life brought into the world as winds howl outside, a warrior rising to need. The storms mark it."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "LORE,1"
@@ -266,7 +266,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -300,7 +300,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"

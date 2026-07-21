@@ -80,10 +80,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them."
+                    "s_c0 makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -98,7 +98,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -118,10 +118,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It's not worth the risk. s_c convinces the patrol to head for home."
+                    "It's not worth the risk. s_c0 convinces the patrol to head for home."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -138,7 +138,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats",
@@ -156,7 +156,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats",
@@ -240,10 +240,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c makes a careful judgment and keeps going, but {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c/object}."
+                    "s_c0 makes a careful judgment and keeps going, but {PRONOUN/s_c0/subject} {VERB/s_c0/make/makes} sure to stay on the high ground as the rain pours down around {PRONOUN/s_c0/object}."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -259,10 +259,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It's not worth the risk. s_c heads home."
+                    "It's not worth the risk. s_c0 heads home."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -342,10 +342,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the courage of LionClan, the strength of TigerClan, and the dexterity of LeopardClan. Shaken but no more than bruised, the patrol manages to retreat to safety."
+                    "The patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c0 is there, fighting with the courage of LionClan, the strength of TigerClan, and the dexterity of LeopardClan. Shaken but no more than bruised, the patrol manages to retreat to safety."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -399,7 +399,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -435,10 +435,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious, but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
+                    "s_c0 signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c0/subject} {VERB/s_c0/explain/explains} {PRONOUN/s_c0/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} being too cautious, but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -538,10 +538,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the reaction time to escape, running for {PRONOUN/s_c/poss} life."
+                    "s_c0 walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c0 has the reaction time to escape, running for {PRONOUN/s_c0/poss} life."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -580,7 +580,7 @@
                             "n_c:2"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -607,10 +607,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious, but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety."
+                    "s_c0 has a bad feeling about this. And maybe {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} being too cautious, but then {PRONOUN/s_c0/subject} {VERB/s_c0/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c0 retreats to safety."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -713,10 +713,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the courage of LionClan, the strength of TigerClan, and the dexterity of LeopardClan. Shaken but no more than bruised, the patrol manages to retreat to safety."
+                    "The patrol walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c0 is there, fighting with the courage of LionClan, the strength of TigerClan, and the dexterity of LeopardClan. Shaken but no more than bruised, the patrol manages to retreat to safety."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -752,7 +752,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -768,10 +768,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c/subject} {VERB/s_c/explain/explains} {PRONOUN/s_c/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious, but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
+                    "s_c0 signals for the patrol to stop. Carefully and quietly,{PRONOUN/s_c0/subject} {VERB/s_c0/explain/explains} {PRONOUN/s_c0/poss} concerns about the unknown situation. And maybe {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} being too cautious, but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -871,10 +871,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the reaction time to escape, running for {PRONOUN/s_c/poss} life."
+                    "s_c0 walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c0 has the reaction time to escape, running for {PRONOUN/s_c0/poss} life."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -913,7 +913,7 @@
                             "n_c:2"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -940,10 +940,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c has a bad feeling about this. And maybe {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} being too cautious, but then {PRONOUN/s_c/subject} {VERB/s_c/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety."
+                    "s_c0 has a bad feeling about this. And maybe {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} being too cautious, but then {PRONOUN/s_c0/subject} {VERB/s_c0/pick/picks} up on the scent of strange cats around the Twoleg den. Forewarned, s_c0 retreats to safety."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1066,10 +1066,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates. {PRONOUN/s_c/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run."
+                    "s_c0 immediately leaps to protect {PRONOUN/s_c0/poss} Clanmates. {PRONOUN/s_c0/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1143,10 +1143,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol."
+                    "s_c0 revels in the battle, leaping into the fray with {PRONOUN/s_c0/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1202,7 +1202,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1440,10 +1440,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates. {PRONOUN/s_c/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run."
+                    "s_c0 immediately leaps to protect {PRONOUN/s_c0/poss} Clanmates. {PRONOUN/s_c0/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1497,7 +1497,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1533,10 +1533,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol."
+                    "s_c0 revels in the battle, leaping into the fray with {PRONOUN/s_c0/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1592,7 +1592,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [

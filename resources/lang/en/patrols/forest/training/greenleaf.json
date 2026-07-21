@@ -104,10 +104,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN/s_c/poss} words carefully. It's all worth it to hear r_c's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world."
+                    "s_c0 has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN/s_c0/poss} words carefully. It's all worth it to hear r_c's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "SPEAKER,1",
@@ -137,7 +137,7 @@
                         ],
                         "amount": 13,
                         "log": {
-                            "cats_from": "s_c's social adeptness made {PRONOUN/s_c/poss} romantic greenleaf stroll with r_c0 all the better."
+                            "cats_from": "s_c0's social adeptness made {PRONOUN/s_c0/poss} romantic greenleaf stroll with r_c0 all the better."
                         }
                     }
                 ]
@@ -371,10 +371,10 @@
                 "frequency": 4,
                 "outcome_art": "gen_train_patrolapprenticesessionfail",
                 "strings": [
-                    "When p_l mentions that {PRONOUN/p_l/subject} will be teaching the patrol about thrushes, s_c butts in. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} caught <i>so</i> many cinnamon-and-white thrushes before! When p_l informs the rest of the patrol that {PRONOUN/s_c/subject} {VERB/s_c/have/has} been catching ground-nesting veeries, not the types of thrushes that nest higher up, s_c feels too embarrassed to stay and learn with the group."
+                    "When p_l mentions that {PRONOUN/p_l/subject} will be teaching the patrol about thrushes, s_c0 butts in. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'ve/'s} caught <i>so</i> many cinnamon-and-white thrushes before! When p_l informs the rest of the patrol that {PRONOUN/s_c0/subject} {VERB/s_c0/have/has} been catching ground-nesting veeries, not the types of thrushes that nest higher up, s_c0 feels too embarrassed to stay and learn with the group."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "-CLIMBER,0"
@@ -398,7 +398,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [

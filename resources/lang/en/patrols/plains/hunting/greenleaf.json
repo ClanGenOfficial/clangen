@@ -206,10 +206,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c looks closely at the Twoleg object, studying it, wondering how specifically the Twolegs managed to make it stick together. It'd be wonderful if c_n had access to such good prey carrying bags."
+                    "s_c0 looks closely at the Twoleg object, studying it, wondering how specifically the Twolegs managed to make it stick together. It'd be wonderful if c_n had access to such good prey carrying bags."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -363,10 +363,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c holds the patrol back until {PRONOUN/s_c/subject} {VERB/s_c/spot/spots} the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unsheathed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate to the fury of c_n."
+                    "s_c0 holds the patrol back until {PRONOUN/s_c0/subject} {VERB/s_c0/spot/spots} the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unsheathed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate to the fury of c_n."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -381,7 +381,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -539,10 +539,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The squirrel blissfully snuffles around in the grass, completely unaware of the looming danger it's in. s_c stalks, as quiet as a shadow, and doesn't even need to pounce; {PRONOUN/s_c/subject} just walk right up behind it and take the kill."
+                    "The squirrel blissfully snuffles around in the grass, completely unaware of the looming danger it's in. s_c0 stalks, as quiet as a shadow, and doesn't even need to pounce; {PRONOUN/s_c0/subject} just walk right up behind it and take the kill."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -990,10 +990,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c murmurs instructions to {PRONOUN/s_c/poss} Clanmates, who nod silently and move into position. p_l feints at a squirrel, who raises the alarm and turns to run; r_c0 blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, not a single squirrel left behind."
+                    "s_c0 murmurs instructions to {PRONOUN/s_c0/poss} Clanmates, who nod silently and move into position. p_l feints at a squirrel, who raises the alarm and turns to run; r_c0 blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c0; and s_c0 lunges in for the kill. A flawless hunt, not a single squirrel left behind."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1025,7 +1025,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1139,10 +1139,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c immediately drops into a practiced crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
+                    "s_c0 immediately drops into a practiced crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1534,10 +1534,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c finds {PRONOUN/s_c/self} face to fang with a rattling snake. It coils and strikes fast as lightning, yet still a whisker slower than s_c. As the snake's teeth sink into empty air, s_c's own fangs sink into its head. That night there's one less threat on c_n territory, and even more bellies full in camp. "
+                    "s_c0 finds {PRONOUN/s_c0/self} face to fang with a rattling snake. It coils and strikes fast as lightning, yet still a whisker slower than s_c0. As the snake's teeth sink into empty air, s_c0's own fangs sink into its head. That night there's one less threat on c_n territory, and even more bellies full in camp. "
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1555,7 +1555,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"

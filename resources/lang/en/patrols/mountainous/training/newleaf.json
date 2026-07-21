@@ -133,7 +133,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As they hide, watching the eagles feed their chicks, s_c tells r_c1 the story of an eagle chick that once fell from its nest and was abandoned by its parents. c_n took it in, and when it fledged over its first winter, it turned into a fierce she-cat whose claws could stand up to even the mightiest predator."
+                    "As they hide, watching the eagles feed their chicks, s_c0 tells r_c1 the story of an eagle chick that once fell from its nest and was abandoned by its parents. c_n took it in, and when it fledged over its first winter, it turned into a fierce she-cat whose claws could stand up to even the mightiest predator."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -141,7 +141,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "STORY,1",
@@ -191,7 +191,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c shows r_c1 the way the eagle rips apart its prey to feed to its nestlings, explaining how that beak lethally rips and twists, pointing out how the eagle holds its claws to grip its prey. It's a comprehensive \u00e2\u20ac\u201d if scary \u00e2\u20ac\u201d lesson, and r_c1 learns a lot."
+                    "s_c0 shows r_c1 the way the eagle rips apart its prey to feed to its nestlings, explaining how that beak lethally rips and twists, pointing out how the eagle holds its claws to grip its prey. It's a comprehensive \u00e2\u20ac\u201d if scary \u00e2\u20ac\u201d lesson, and r_c1 learns a lot."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -199,7 +199,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "TEACHER,1"
@@ -442,10 +442,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As they hide, watching the eagles feed their chicks, s_c tells the apprentices the story of an eagle chick that once fell from its nest and was abandoned by its parents. c_n took it in, and when it fledged over its first winter, it turned into a fierce she-cat whose claws could stand up to even the mightiest predator."
+                    "As they hide, watching the eagles feed their chicks, s_c0 tells the apprentices the story of an eagle chick that once fell from its nest and was abandoned by its parents. c_n took it in, and when it fledged over its first winter, it turned into a fierce she-cat whose claws could stand up to even the mightiest predator."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "LORE,1",
@@ -495,7 +495,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c shows r_c1 the way the eagle rips apart its prey to feed to its nestlings, explaining how that beak lethally rips and twists, pointing out how the eagle holds its claws to grip its prey. It's a comprehensive \u00e2\u20ac\u201d if scary \u00e2\u20ac\u201d lesson, and r_c1 learns a lot."
+                    "s_c0 shows r_c1 the way the eagle rips apart its prey to feed to its nestlings, explaining how that beak lethally rips and twists, pointing out how the eagle holds its claws to grip its prey. It's a comprehensive \u00e2\u20ac\u201d if scary \u00e2\u20ac\u201d lesson, and r_c1 learns a lot."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -503,7 +503,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "TEACHER,1"

@@ -133,10 +133,10 @@
                 "frequency": 2,
                 "outcome_art": "med_general_intro",
                 "strings": [
-                    "s_c is certain {PRONOUN/s_c/subject} caught a whiff of catmint. {PRONOUN/s_c/subject/CAP} {VERB/s_c/convince/convinces} the patrol to keep looking even as it grows dark. s_c is triumphant in the end, but these few scraggly catmint leaves cost the patrol frozen paws."
+                    "s_c0 is certain {PRONOUN/s_c0/subject} caught a whiff of catmint. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/convince/convinces} the patrol to keep looking even as it grows dark. s_c0 is triumphant in the end, but these few scraggly catmint leaves cost the patrol frozen paws."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -193,10 +193,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_med_cobwebssuccess_Mc",
                 "strings": [
-                    "s_c reasons that some herbs are less affected by the cold and the patrol should take this chance to stock up on them. The cats return laden with cobwebs and burdock root."
+                    "s_c0 reasons that some herbs are less affected by the cold and the patrol should take this chance to stock up on them. The cats return laden with cobwebs and burdock root."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -213,7 +213,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -325,7 +325,7 @@
                 "frequency": 2,
                 "outcome_art": "cat_sprites/gen_med_speakingcat_Mc",
                 "strings": [
-                    "p_l and r_c0 get snippy with each other as the day wears on. s_c reminds them that neither cat is responsible for leaf-bare's scarcity, and their tempers cool. Still, no herbs turn up."
+                    "p_l and r_c0 get snippy with each other as the day wears on. s_c0 reminds them that neither cat is responsible for leaf-bare's scarcity, and their tempers cool. Still, no herbs turn up."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -339,7 +339,7 @@
                 },
                 "involved_cats": {
                     "r_c0": {},
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "MEDIATOR,1"
@@ -371,7 +371,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"

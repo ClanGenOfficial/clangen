@@ -35,10 +35,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l finds the sticky thing in the grass and examines it. s_c suddenly appears beside {PRONOUN/p_l/object} and, before p_l can tell {PRONOUN/s_c/object} to be careful, s_c bends down and takes a lick. s_c wrinkles {PRONOUN/s_c/poss} nose and gags, trying to spit the disgusting taste out of {PRONOUN/s_c/poss} mouth."
+                    "p_l finds the sticky thing in the grass and examines it. s_c0 suddenly appears beside {PRONOUN/p_l/object} and, before p_l can tell {PRONOUN/s_c0/object} to be careful, s_c0 bends down and takes a lick. s_c0 wrinkles {PRONOUN/s_c0/poss} nose and gags, trying to spit the disgusting taste out of {PRONOUN/s_c0/poss} mouth."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "childish",
@@ -118,10 +118,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_hunt_funrun_WrWr",
                 "strings": [
-                    "s_c isn't just talented at running fast \u00e2\u20ac\u201d {PRONOUN/s_c/subject} {VERB/s_c/have/has} some very good advice about finding paths in thick grass too and {PRONOUN/s_c/subject} {VERB/s_c/share/shares} {PRONOUN/s_c/poss} tips for endurance. The other cats purr gratitude at the end of the day. Everyone's exhausted, but they made it the entire length of that far off border thanks to s_c."
+                    "s_c0 isn't just talented at running fast \u00e2\u20ac\u201d {PRONOUN/s_c0/subject} {VERB/s_c0/have/has} some very good advice about finding paths in thick grass too and {PRONOUN/s_c0/subject} {VERB/s_c0/share/shares} {PRONOUN/s_c0/poss} tips for endurance. The other cats purr gratitude at the end of the day. Everyone's exhausted, but they made it the entire length of that far off border thanks to s_c0."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -136,7 +136,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -259,10 +259,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_running_WrWr",
                 "strings": [
-                    "Before they reach the far border itself, p_l spots s_c limping. It's nothing, {PRONOUN/s_c/subject} {VERB/s_c/say/says}, and refuses to stop. But in these far reaches, in territory not commonly checked, other predators intrude. When a young, inexperienced cougar charges the patrol, s_c <i>should</i> have been able to run fast enough to escape. <i>Should.</i>"
+                    "Before they reach the far border itself, p_l spots s_c0 limping. It's nothing, {PRONOUN/s_c0/subject} {VERB/s_c0/say/says}, and refuses to stop. But in these far reaches, in territory not commonly checked, other predators intrude. When a young, inexperienced cougar charges the patrol, s_c0 <i>should</i> have been able to run fast enough to escape. <i>Should.</i>"
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "troublesome",
@@ -282,7 +282,7 @@
                 "death": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "history": "This cat was killed after continuing to patrol the far border while injured by a young, inexperienced cougar."
                     }
@@ -459,10 +459,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "s_c sets up a careful ambush ahead of the coyote, and the surprising, darting attack bloodies the coyote's flank, dissuading it from heading further into c_n territory."
+                    "s_c0 sets up a careful ambush ahead of the coyote, and the surprising, darting attack bloodies the coyote's flank, dissuading it from heading further into c_n territory."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -493,7 +493,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -514,10 +514,10 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyote",
                 "strings": [
-                    "With the border here so flat, there's no trees to climb to escape. But s_c thinks of everything; they go to a well-known burrow that the apprentices play in all the time. It's not a moment too soon, the coyote wanders straight past the entrance as it hunts for field mice, the cats within crouched and silent."
+                    "With the border here so flat, there's no trees to climb to escape. But s_c0 thinks of everything; they go to a well-known burrow that the apprentices play in all the time. It's not a moment too soon, the coyote wanders straight past the entrance as it hunts for field mice, the cats within crouched and silent."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -532,7 +532,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -553,10 +553,10 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "That isn't just the sound of a coyote, that's the sound of an <i>adolescent</i>, s_c hisses. It's as good a chance as they can ask for \u00e2\u20ac\u201d best to teach this youngster to fear cats, rather than prey on them."
+                    "That isn't just the sound of a coyote, that's the sound of an <i>adolescent</i>, s_c0 hisses. It's as good a chance as they can ask for \u00e2\u20ac\u201d best to teach this youngster to fear cats, rather than prey on them."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -588,7 +588,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -608,10 +608,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_running_WrWr",
                 "strings": [
-                    "s_c selflessly takes the lion's share of the run as the patrol leads the coyote on, exhausting {PRONOUN/s_c/self} almost to the point of danger, but leading the coyote far away from c_n borders. {PRONOUN/s_c/poss/CAP} Clanmates support {PRONOUN/s_c/object} on the long walk home once it's all over, their purrs mixing with s_c's exhausted pants."
+                    "s_c0 selflessly takes the lion's share of the run as the patrol leads the coyote on, exhausting {PRONOUN/s_c0/self} almost to the point of danger, but leading the coyote far away from c_n borders. {PRONOUN/s_c0/poss/CAP} Clanmates support {PRONOUN/s_c0/object} on the long walk home once it's all over, their purrs mixing with s_c0's exhausted pants."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -649,7 +649,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -720,11 +720,11 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. It decides r_c0 is a suitable snack.  s_c runs in to save {PRONOUN/r_c0/object}, fighting like an entire patrol just by {PRONOUN/s_c/self}."
+                    "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. It decides r_c0 is a suitable snack.  s_c0 runs in to save {PRONOUN/r_c0/object}, fighting like an entire patrol just by {PRONOUN/s_c0/self}."
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "FIGHTER,3"
@@ -740,7 +740,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -756,7 +756,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -818,10 +818,10 @@
                 "frequency": 2,
                 "outcome_art": "animals/animals/gen_coyotedanger",
                 "strings": [
-                    "s_c tries to take the lion's share of the effort to lead the coyote away, but {PRONOUN/s_c/poss} strength fails {PRONOUN/s_c/object} and the rest of the patrol needs to rescue {PRONOUN/s_c/object}, cutting short the results of the patrol. Instead, everyone knows the coyote could still be lurking on their borders."
+                    "s_c0 tries to take the lion's share of the effort to lead the coyote away, but {PRONOUN/s_c0/poss} strength fails {PRONOUN/s_c0/object} and the rest of the patrol needs to rescue {PRONOUN/s_c0/object}, cutting short the results of the patrol. Instead, everyone knows the coyote could still be lurking on their borders."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1027,10 +1027,10 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "s_c uses {PRONOUN/s_c/poss} tracking talents to lead the patrol to their enemy. They bump into the coyote in the mist with prey stolen from c_n lying at its feet. Not only does the patrol manage to maul the canine, they also recapture the food."
+                    "s_c0 uses {PRONOUN/s_c0/poss} tracking talents to lead the patrol to their enemy. They bump into the coyote in the mist with prey stolen from c_n lying at its feet. Not only does the patrol manage to maul the canine, they also recapture the food."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "CLEVER,2",
@@ -1064,7 +1064,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1106,10 +1106,10 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "That isn't just the sound of a coyote, that's the sound of an <i>adolescent</i>, s_c hisses. It's as good a chance as they can ask for \u00e2\u20ac\u201d best to teach this youngster to fear cats, rather than prey on them."
+                    "That isn't just the sound of a coyote, that's the sound of an <i>adolescent</i>, s_c0 hisses. It's as good a chance as they can ask for \u00e2\u20ac\u201d best to teach this youngster to fear cats, rather than prey on them."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1244,10 +1244,10 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. With s_c's talent for battle, this coyote won't make it to adulthood."
+                    "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. With s_c0's talent for battle, this coyote won't make it to adulthood."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1294,7 +1294,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1314,11 +1314,11 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. The patrol takes it down, but it takes a vicious bite out of r_c0 first. s_c's first aid while the cats carry r_c0 back to camp saves {PRONOUN/r_c0/poss} life."
+                    "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. The patrol takes it down, but it takes a vicious bite out of r_c0 first. s_c0's first aid while the cats carry r_c0 back to camp saves {PRONOUN/r_c0/poss} life."
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "HEALER,0"
@@ -1366,7 +1366,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -1493,10 +1493,10 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "A yip sounds from close by. s_c has just enough time to yell out a plan, leading the whole large patrol in a skillful battle plan against the coyote that protects the cats from the chance of injury. The coyote tucks tail, and runs for more friendly lands."
+                    "A yip sounds from close by. s_c0 has just enough time to yell out a plan, leading the whole large patrol in a skillful battle plan against the coyote that protects the cats from the chance of injury. The coyote tucks tail, and runs for more friendly lands."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1529,7 +1529,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1565,10 +1565,10 @@
                 "frequency": 1,
                 "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "s_c selflessly throws {PRONOUN/s_c/self} into the fight, and every time the coyote tries to grab at {PRONOUN/s_c/poss} Clanmates, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} there with claws, fur puffed out to twice {PRONOUN/s_c/poss} normal size. With s_c defending them, the patrol drives the coyote off, yowling triumphantly."
+                    "s_c0 selflessly throws {PRONOUN/s_c0/self} into the fight, and every time the coyote tries to grab at {PRONOUN/s_c0/poss} Clanmates, {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} there with claws, fur puffed out to twice {PRONOUN/s_c0/poss} normal size. With s_c0 defending them, the patrol drives the coyote off, yowling triumphantly."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1606,7 +1606,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1809,10 +1809,10 @@
                 "frequency": 1,
                 "outcome_art": "animals/animals/gen_coyotedanger",
                 "strings": [
-                    "s_c tries to show off {PRONOUN/s_c/poss} strength as the patrol bounds toward battle, but it gets in the way of the attack. Without everyone committed to driving the coyote off, the patrol has to fall back, but they do so in good order."
+                    "s_c0 tries to show off {PRONOUN/s_c0/poss} strength as the patrol bounds toward battle, but it gets in the way of the attack. Without everyone committed to driving the coyote off, the patrol has to fall back, but they do so in good order."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1832,7 +1832,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats",

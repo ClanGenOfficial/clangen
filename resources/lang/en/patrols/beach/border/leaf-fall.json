@@ -38,10 +38,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c scrambles back the way {PRONOUN/s_c/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris \u00e2\u20ac\u201d and a large dead sheep. s_c pounces on the opportunity to scavenge."
+                    "s_c0 scrambles back the way {PRONOUN/s_c0/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris \u00e2\u20ac\u201d and a large dead sheep. s_c0 pounces on the opportunity to scavenge."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -63,10 +63,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c/subject} {VERB/s_c/turn/turns} and {VERB/s_c/run/runs} for home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c/poss/CAP} caution saved {PRONOUN/s_c/poss} life."
+                    "s_c0 shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c0/subject} {VERB/s_c0/turn/turns} and {VERB/s_c0/run/runs} for home. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/are/is} proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c0/poss/CAP} caution saved {PRONOUN/s_c0/poss} life."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],

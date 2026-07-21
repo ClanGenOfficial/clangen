@@ -86,10 +86,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c chooses to hunt with r_c, the spiritual warrior gently guiding the conversation. r_c0 feels deeply privileged and far more at peace after confiding in {PRONOUN/s_c/object}."
+                    "s_c0 chooses to hunt with r_c, the spiritual warrior gently guiding the conversation. r_c0 feels deeply privileged and far more at peace after confiding in {PRONOUN/s_c0/object}."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -107,7 +107,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -134,10 +134,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c nods, and pads beside r_c0 as they hunt. {PRONOUN/s_c/subject/CAP} don't know if it was a vision from StarClan, but {PRONOUN/s_c/subject} felt flashes of r_c's dreams \u00e2\u20ac\u201d a feeling of dream_list \u00e2\u20ac\u201d and s_c isn't going to leave r_c0 alone to figure it out {PRONOUN/r_c0/self}."
+                    "s_c0 nods, and pads beside r_c0 as they hunt. {PRONOUN/s_c0/subject/CAP} don't know if it was a vision from StarClan, but {PRONOUN/s_c0/subject} felt flashes of r_c's dreams \u00e2\u20ac\u201d a feeling of dream_list \u00e2\u20ac\u201d and s_c0 isn't going to leave r_c0 alone to figure it out {PRONOUN/r_c0/self}."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -152,7 +152,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -179,10 +179,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c chooses to hunt with r_c, the spiritual warrior gently guiding the conversation. r_c0 feels deeply privileged and far more at peace after confiding in {PRONOUN/p_l/object}."
+                    "s_c0 chooses to hunt with r_c, the spiritual warrior gently guiding the conversation. r_c0 feels deeply privileged and far more at peace after confiding in {PRONOUN/p_l/object}."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -197,7 +197,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -286,10 +286,10 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "Did r_c0 eat too many mice before sleeping? s_c inquires. That always disturbs <i>{PRONOUN/s_c/poss}</i> sleep. Once, {PRONOUN/s_c/subject} had this crazy dream where {PRONOUN/s_c/poss} paws had turned into mushrooms, and when s_c nibbled on {PRONOUN/s_c/poss} own paw, {PRONOUN/s_c/subject} started to \u00e2\u20ac\u201d no, r_c0 interrupts, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} pretty sure that's not what happened in this case."
+                    "Did r_c0 eat too many mice before sleeping? s_c0 inquires. That always disturbs <i>{PRONOUN/s_c0/poss}</i> sleep. Once, {PRONOUN/s_c0/subject} had this crazy dream where {PRONOUN/s_c0/poss} paws had turned into mushrooms, and when s_c0 nibbled on {PRONOUN/s_c0/poss} own paw, {PRONOUN/s_c0/subject} started to \u00e2\u20ac\u201d no, r_c0 interrupts, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} pretty sure that's not what happened in this case."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -305,7 +305,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -376,10 +376,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c often feels like StarClan walks with {PRONOUN/s_c/object}, and this is just another instance on the path. {PRONOUN/s_c/subject/CAP} {VERB/s_c/use/uses} the solo patrol to collect {PRONOUN/s_c/poss} thoughts, and by the time {PRONOUN/s_c/subject} {VERB/s_c/pad/pads} home with a good catch, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} ready for the next step {PRONOUN/s_c/poss} vision hinted at."
+                    "s_c0 often feels like StarClan walks with {PRONOUN/s_c0/object}, and this is just another instance on the path. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/use/uses} the solo patrol to collect {PRONOUN/s_c0/poss} thoughts, and by the time {PRONOUN/s_c0/subject} {VERB/s_c0/pad/pads} home with a good catch, {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} ready for the next step {PRONOUN/s_c0/poss} vision hinted at."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -403,10 +403,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As {PRONOUN/s_c/subject} {VERB/s_c/hunt/hunts}, s_c's eyes are caught by omen_list/s_c, and {PRONOUN/s_c/poss} dream snaps into clarity. It draws the hunt short, but that's not important right now."
+                    "As {PRONOUN/s_c0/subject} {VERB/s_c0/hunt/hunts}, s_c0's eyes are caught by omen_list/s_c0, and {PRONOUN/s_c0/poss} dream snaps into clarity. It draws the hunt short, but that's not important right now."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -428,10 +428,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c often feels like StarClan walks with {PRONOUN/s_c/object}, and this is just another instance on the path. {PRONOUN/s_c/subject/CAP} {VERB/s_c/use/uses} the solo patrol to collect {PRONOUN/s_c/poss} thoughts, and by the time {PRONOUN/s_c/subject} {VERB/s_c/pad/pads} home with a good catch, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} ready for the next step {PRONOUN/s_c/poss} vision hinted at."
+                    "s_c0 often feels like StarClan walks with {PRONOUN/s_c0/object}, and this is just another instance on the path. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/use/uses} the solo patrol to collect {PRONOUN/s_c0/poss} thoughts, and by the time {PRONOUN/s_c0/subject} {VERB/s_c0/pad/pads} home with a good catch, {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} ready for the next step {PRONOUN/s_c0/poss} vision hinted at."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1111,10 +1111,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c drops into the perfect hunter's crouch and slowly creeps closer. {PRONOUN/s_c/subject/CAP} suddenly {VERB/s_c/hiss/hisses} loudly, scaring the rat away and startling {PRONOUN/s_c/poss} Clanmates. s_c explains crossly that the rat was carrying a foul, sickly-sweet scent on its breath. It would have poisoned any cat that bit it."
+                    "s_c0 drops into the perfect hunter's crouch and slowly creeps closer. {PRONOUN/s_c0/subject/CAP} suddenly {VERB/s_c0/hiss/hisses} loudly, scaring the rat away and startling {PRONOUN/s_c0/poss} Clanmates. s_c0 explains crossly that the rat was carrying a foul, sickly-sweet scent on its breath. It would have poisoned any cat that bit it."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1131,7 +1131,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1151,10 +1151,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Before any cat makes a move, s_c stops the patrol. {PRONOUN/s_c/subject/CAP} {VERB/s_c/explain/explains} that rogues and loners are taught at a young age to stay away from rats that touch Twoleg crowfood to avoid the deadly sickness they carry."
+                    "Before any cat makes a move, s_c0 stops the patrol. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/explain/explains} that rogues and loners are taught at a young age to stay away from rats that touch Twoleg crowfood to avoid the deadly sickness they carry."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1170,7 +1170,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1190,10 +1190,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Before any cat makes a move, s_c stops the patrol. {PRONOUN/s_c/subject/CAP} {VERB/s_c/explain/explains} that rats found in Twoleg crowfood often carry a deadly disease found in carrion. It's not worth the risk of catching, no matter how hungry the Clan is this leaf-bare."
+                    "Before any cat makes a move, s_c0 stops the patrol. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/explain/explains} that rats found in Twoleg crowfood often carry a deadly disease found in carrion. It's not worth the risk of catching, no matter how hungry the Clan is this leaf-bare."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1210,7 +1210,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1230,11 +1230,11 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c0 kills the distracted rat easily, but p_l points out the putrid scent. c_n could use the prey, but it isn't safe to risk sickness. s_c cocks {PRONOUN/s_c/poss} head. If they aren't going to eat it, can they at least name it? Before p_l can figure out how to reply to that, s_c touches {PRONOUN/s_c/poss} nose to the body of the rat. Henceforth, this rat will be known as Stinkyrat, honored for its stinkiness. Stinkyrat! Stinkyrat!"
+                    "r_c0 kills the distracted rat easily, but p_l points out the putrid scent. c_n could use the prey, but it isn't safe to risk sickness. s_c0 cocks {PRONOUN/s_c0/poss} head. If they aren't going to eat it, can they at least name it? Before p_l can figure out how to reply to that, s_c0 touches {PRONOUN/s_c0/poss} nose to the body of the rat. Henceforth, this rat will be known as Stinkyrat, honored for its stinkiness. Stinkyrat! Stinkyrat!"
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "childish",
@@ -1250,7 +1250,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1281,10 +1281,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Without thinking, s_c pounces at the rat. The patrol watches completely stunned as s_c misses the rat by several tail lengths and scares it off. The disgruntled patrol heads home and s_c has to explain why {PRONOUN/s_c/subject} missed an easy catch in the middle of leaf-bare."
+                    "Without thinking, s_c0 pounces at the rat. The patrol watches completely stunned as s_c0 misses the rat by several tail lengths and scares it off. The disgruntled patrol heads home and s_c0 has to explain why {PRONOUN/s_c0/subject} missed an easy catch in the middle of leaf-bare."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1302,7 +1302,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1363,10 +1363,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Without thinking, s_c recklessly pounces at the rat. The patrol watches completely stunned as s_c actually catches the rat. While s_c is smugly carrying the fresh-kill home, s_c's mouth begins to sour. {PRONOUN/s_c/subject/CAP} {VERB/s_c/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days s_c falls violently ill and never recovers."
+                    "Without thinking, s_c0 recklessly pounces at the rat. The patrol watches completely stunned as s_c0 actually catches the rat. While s_c0 is smugly carrying the fresh-kill home, s_c0's mouth begins to sour. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days s_c0 falls violently ill and never recovers."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1384,7 +1384,7 @@
                 "death": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "history": "m_c died after tasting a tainted rat."
                     }
@@ -1393,10 +1393,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Without thinking, s_c recklessly pounces at the rat. The patrol watches completely stunned as s_c actually catches the rat. While s_c is smugly carrying the fresh-kill home, s_c's mouth begins to sour. {PRONOUN/s_c/subject/CAP} {VERB/s_c/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days s_c falls violently ill."
+                    "Without thinking, s_c0 recklessly pounces at the rat. The patrol watches completely stunned as s_c0 actually catches the rat. While s_c0 is smugly carrying the fresh-kill home, s_c0's mouth begins to sour. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/bury/buries} the sickly rat away from camp, but it's too late. Over the next few days s_c0 falls violently ill."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1414,7 +1414,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "condition": [
                             "carrionplace disease",
@@ -1548,10 +1548,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Even s_c, for all {PRONOUN/s_c/poss} talents, can't bring back prey for the fresh-kill pile if there's only scraps to catch."
+                    "Even s_c0, for all {PRONOUN/s_c0/poss} talents, can't bring back prey for the fresh-kill pile if there's only scraps to catch."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "HUNTER,0"
@@ -1656,10 +1656,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The prey just does <i>not</i> want to cooperate today, and it takes all of s_c's talents to bring what feels like not nearly enough fresh-kill back to camp."
+                    "The prey just does <i>not</i> want to cooperate today, and it takes all of s_c0's talents to bring what feels like not nearly enough fresh-kill back to camp."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "HUNTER,0"
@@ -2927,10 +2927,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Look, s_c might be a talented hunter, but {PRONOUN/s_c/subject} can't succeed if there's no prey in the first place \u00e2\u20ac\u201d this hunting spot just didn't work out well."
+                    "Look, s_c0 might be a talented hunter, but {PRONOUN/s_c0/subject} can't succeed if there's no prey in the first place \u00e2\u20ac\u201d this hunting spot just didn't work out well."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -3092,10 +3092,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c catches every single bit of prey the patrol brings home. The other cats aren't happy with how this is going to look, comparing themselves to s_c."
+                    "s_c0 catches every single bit of prey the patrol brings home. The other cats aren't happy with how this is going to look, comparing themselves to s_c0."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -3110,7 +3110,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -3137,10 +3137,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c tries to show off, and it screws up the coordination of the entire patrol. Wonderful. Great job s_c."
+                    "s_c0 tries to show off, and it screws up the coordination of the entire patrol. Wonderful. Great job s_c0."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -3160,7 +3160,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -3331,10 +3331,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It turns out to not really matter where they hunt \u00e2\u20ac\u201d s_c's hunting skills carry the day. Not that the other members of the patrol don't bring back their own perfectly respectable kills too."
+                    "It turns out to not really matter where they hunt \u00e2\u20ac\u201d s_c0's hunting skills carry the day. Not that the other members of the patrol don't bring back their own perfectly respectable kills too."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -3349,7 +3349,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -3376,10 +3376,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c tries to show off, and it screws up the coordination of the entire patrol. Wonderful. Great job s_c."
+                    "s_c0 tries to show off, and it screws up the coordination of the entire patrol. Wonderful. Great job s_c0."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -3399,7 +3399,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -3587,10 +3587,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The cats defer to s_c as the expert, and s_c nods, laying out {PRONOUN/s_c/poss} thoughts and consulting with everyone to make sure each cat is comfortable with the part they'll play. It's a good use of {PRONOUN/s_c/poss} skills, one that rewards the cats handsomely."
+                    "The cats defer to s_c0 as the expert, and s_c0 nods, laying out {PRONOUN/s_c0/poss} thoughts and consulting with everyone to make sure each cat is comfortable with the part they'll play. It's a good use of {PRONOUN/s_c0/poss} skills, one that rewards the cats handsomely."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -3605,7 +3605,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -3633,10 +3633,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c tries to show off, and it screws up the coordination of the entire patrol. Wonderful. Great job s_c."
+                    "s_c0 tries to show off, and it screws up the coordination of the entire patrol. Wonderful. Great job s_c0."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -3656,7 +3656,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -3844,10 +3844,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c knows <i>exactly</i> how to take advantage of the growing gloom, giving the rest of the patrol a couple of ideas that tip the balance from a successful patrol to an astonishingly outstanding one."
+                    "s_c0 knows <i>exactly</i> how to take advantage of the growing gloom, giving the rest of the patrol a couple of ideas that tip the balance from a successful patrol to an astonishingly outstanding one."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -3862,7 +3862,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -3890,10 +3890,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c tries to show off, but it screws up the coordination of the entire patrol. Wonderful. Great job, s_c."
+                    "s_c0 tries to show off, but it screws up the coordination of the entire patrol. Wonderful. Great job, s_c0."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -3913,7 +3913,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -4046,10 +4046,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "With so many hunters out together, one would think they'd manage to find more. But no cat can control the luck of the hunt, not even a skilled hunter like s_c."
+                    "With so many hunters out together, one would think they'd manage to find more. But no cat can control the luck of the hunt, not even a skilled hunter like s_c0."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -4180,10 +4180,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Talent can't make up for a dung day. Teamwork can't either. But together? It sort-of makes up for it. s_c would be better pleased if {PRONOUN/s_c/subject}'d had more success, but that's life sometimes: not every hunt can be fruitful."
+                    "Talent can't make up for a dung day. Teamwork can't either. But together? It sort-of makes up for it. s_c0 would be better pleased if {PRONOUN/s_c0/subject}'d had more success, but that's life sometimes: not every hunt can be fruitful."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -4314,10 +4314,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c is complimented on {PRONOUN/s_c/poss} hunting talents. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} humble about it, but that doesn't make it less true."
+                    "s_c0 is complimented on {PRONOUN/s_c0/poss} hunting talents. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} humble about it, but that doesn't make it less true."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -4332,7 +4332,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -4484,10 +4484,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c has a good idea that takes advantage of the number of cats in the patrol: one that nets them all a very successful haul of prey."
+                    "s_c0 has a good idea that takes advantage of the number of cats in the patrol: one that nets them all a very successful haul of prey."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -4502,7 +4502,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -4654,10 +4654,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Not only does s_c personally catch a terrifying amount of prey, but {PRONOUN/s_c/subject} {VERB/s_c/offer/offers} up support to everyone else to do the same, and the patrol brings a truly awe-inspiring haul home."
+                    "Not only does s_c0 personally catch a terrifying amount of prey, but {PRONOUN/s_c0/subject} {VERB/s_c0/offer/offers} up support to everyone else to do the same, and the patrol brings a truly awe-inspiring haul home."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -4672,7 +4672,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -4812,10 +4812,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The only apprentice to catch anything is s_c. {PRONOUN/s_c/subject/CAP} {VERB/s_c/make/makes} sure everyone else knows it. Extensively."
+                    "The only apprentice to catch anything is s_c0. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/make/makes} sure everyone else knows it. Extensively."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -4830,7 +4830,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -5039,10 +5039,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Who needs a warrior to tell them what to do when they have s_c, who will tell them what to do just as extensively and annoyingly. Even more irritatingly, s_c gets the most prey by far."
+                    "Who needs a warrior to tell them what to do when they have s_c0, who will tell them what to do just as extensively and annoyingly. Even more irritatingly, s_c0 gets the most prey by far."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -5057,7 +5057,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -5267,10 +5267,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c wins the competition, easily. But {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} magnanimous in victory, managing to not completely look like a mouse-brain. Maybe that's the more impressive achievement."
+                    "s_c0 wins the competition, easily. But {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} magnanimous in victory, managing to not completely look like a mouse-brain. Maybe that's the more impressive achievement."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -5285,7 +5285,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -5492,10 +5492,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c, who actually really likes hunting, is open about offering {PRONOUN/s_c/poss} help."
+                    "s_c0, who actually really likes hunting, is open about offering {PRONOUN/s_c0/poss} help."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -5510,7 +5510,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -5692,10 +5692,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c, swearing the patrol to secrecy, leads them to their absolute favorite hunting spot, where the apprentices catch so much prey that they need two separate trips to carry it all home."
+                    "s_c0, swearing the patrol to secrecy, leads them to their absolute favorite hunting spot, where the apprentices catch so much prey that they need two separate trips to carry it all home."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -5710,7 +5710,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -5854,10 +5854,10 @@
                 "frequency": 4,
                 "outcome_art": "halloween/hal_kittylion_Ln",
                 "strings": [
-                    "Boldly, s_c steps forward to interrogate the small lion, who explains that it is a kittypet that must put up with its Twolegs' insistence on something called \"costumes\". It even offers to let s_c try its accessory!"
+                    "Boldly, s_c0 steps forward to interrogate the small lion, who explains that it is a kittypet that must put up with its Twolegs' insistence on something called \"costumes\". It even offers to let s_c0 try its accessory!"
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6147,10 +6147,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "However much s_c dislikes r_c, feeding the Clan is more important. They manage to get through the patrol without any major disputes \u00e2\u20ac\u201d and catch a decent amount of prey, too."
+                    "However much s_c0 dislikes r_c, feeding the Clan is more important. They manage to get through the patrol without any major disputes \u00e2\u20ac\u201d and catch a decent amount of prey, too."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6175,7 +6175,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -6232,10 +6232,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pair manage to keep the hunting patrol relatively on track, until s_c bursts into laughter after p_l slips and falls during a catch. Furious and <i>very</i> close to clawing s_c's obnoxious face off, p_l storms off back to camp."
+                    "The pair manage to keep the hunting patrol relatively on track, until s_c0 bursts into laughter after p_l slips and falls during a catch. Furious and <i>very</i> close to clawing s_c0's obnoxious face off, p_l storms off back to camp."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "childish",
@@ -6256,7 +6256,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -6325,10 +6325,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Already on edge from the constant bickering, when r_c0 makes a particularly hurtful remark, s_c retaliates, {PRONOUN/s_c/poss} claws scratching r_c's cheek. The pair silently return to camp \u00e2\u20ac\u201d each cat seething \u00e2\u20ac\u201d and refuse to tell any cat what happened."
+                    "Already on edge from the constant bickering, when r_c0 makes a particularly hurtful remark, s_c0 retaliates, {PRONOUN/s_c0/poss} claws scratching r_c's cheek. The pair silently return to camp \u00e2\u20ac\u201d each cat seething \u00e2\u20ac\u201d and refuse to tell any cat what happened."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6345,7 +6345,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -6361,7 +6361,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -6454,10 +6454,10 @@
                 "frequency": 4,
                 "outcome_art": "hunt_general_intro",
                 "strings": [
-                    "While every cat brings back impressive catches, s_c's massive haul really leaves every cat gaping. It's not exactly hard to decide the winner."
+                    "While every cat brings back impressive catches, s_c0's massive haul really leaves every cat gaping. It's not exactly hard to decide the winner."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6472,7 +6472,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -6497,10 +6497,10 @@
                 "frequency": 4,
                 "outcome_art": "hunt_general_intro",
                 "strings": [
-                    "Every cat seems a little hesitant, until s_c agrees that it's a great idea, encouraging the other warriors to join in. Giving s_c a grateful look, r_c0 organises the competition, and the patrol have a fun \u00e2\u20ac\u201d and productive \u00e2\u20ac\u201d afternoon!"
+                    "Every cat seems a little hesitant, until s_c0 agrees that it's a great idea, encouraging the other warriors to join in. Giving s_c0 a grateful look, r_c0 organises the competition, and the patrol have a fun \u00e2\u20ac\u201d and productive \u00e2\u20ac\u201d afternoon!"
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6518,7 +6518,7 @@
                             "r_c0"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -6541,10 +6541,10 @@
                 "frequency": 4,
                 "outcome_art": "hunt_general_intro",
                 "strings": [
-                    "The competition goes great, with every cat enjoying the friendly rivalry... until two cats take that rivalry a little too far, getting into an argument on what prey is worth more. Luckily, s_c is there to smooth things over, coming up with a compromise that both cats grudgingly admit is fair."
+                    "The competition goes great, with every cat enjoying the friendly rivalry... until two cats take that rivalry a little too far, getting into an argument on what prey is worth more. Luckily, s_c0 is there to smooth things over, coming up with a compromise that both cats grudgingly admit is fair."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6559,7 +6559,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -6584,10 +6584,10 @@
                 "frequency": 4,
                 "outcome_art": "hunt_general_intro",
                 "strings": [
-                    "A friendly competition is just what the patrol needed, every cat enjoying the opportunity to show-off their skills! Well, except s_c, who was taking the entire competition <i>very</i> seriously. Luckily, the other warriors were kind \u00e2\u20ac\u201d and smart \u00e2\u20ac\u201d enough to just give {PRONOUN/s_c/object} the win."
+                    "A friendly competition is just what the patrol needed, every cat enjoying the opportunity to show-off their skills! Well, except s_c0, who was taking the entire competition <i>very</i> seriously. Luckily, the other warriors were kind \u00e2\u20ac\u201d and smart \u00e2\u20ac\u201d enough to just give {PRONOUN/s_c0/object} the win."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6628,10 +6628,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c rolls {PRONOUN/s_c/poss} eyes, callously dismissing the idea as a game for immature apprentices. Cheeks burning, r_c0 ducks {PRONOUN/r_c0/poss} head, continuing the patrol in silence."
+                    "s_c0 rolls {PRONOUN/s_c0/poss} eyes, callously dismissing the idea as a game for immature apprentices. Cheeks burning, r_c0 ducks {PRONOUN/r_c0/poss} head, continuing the patrol in silence."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6666,7 +6666,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -6754,10 +6754,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The competition is going great, every cat enjoying their respective hunts, until s_c gets just a <i>little</i> too excited chasing a rabbit through the territory, blundering into everyone else's hunts and scaring away all nearby prey. Thanks a lot, s_c."
+                    "The competition is going great, every cat enjoying their respective hunts, until s_c0 gets just a <i>little</i> too excited chasing a rabbit through the territory, blundering into everyone else's hunts and scaring away all nearby prey. Thanks a lot, s_c0."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6774,7 +6774,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -6798,10 +6798,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The <i>point</i> of the competition, an irritated r_c0 explains to s_c, was to have a fun afternoon hunting and showing off your catches. It was <i>not</i> to sabotage every other cat's hunts in order to win! Well, s_c grumbles, no cat made those rules clear to {PRONOUN/s_c/object}."
+                    "The <i>point</i> of the competition, an irritated r_c0 explains to s_c0, was to have a fun afternoon hunting and showing off your catches. It was <i>not</i> to sabotage every other cat's hunts in order to win! Well, s_c0 grumbles, no cat made those rules clear to {PRONOUN/s_c0/object}."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6817,7 +6817,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -6910,10 +6910,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_flowerdate_WrWr",
                 "strings": [
-                    "p_l is amazed by how intuitively s_c can anticipate {PRONOUN/p_l/poss} movements and how natural it feels to work as a team with {PRONOUN/s_c/object}. After a very successful hunt, p_l and s_c exchange admiring looks, a pleasant tension hanging in the air."
+                    "p_l is amazed by how intuitively s_c0 can anticipate {PRONOUN/p_l/poss} movements and how natural it feels to work as a team with {PRONOUN/s_c0/object}. After a very successful hunt, p_l and s_c0 exchange admiring looks, a pleasant tension hanging in the air."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "SENSE,1",
@@ -6959,10 +6959,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_happycat_Wr",
                 "strings": [
-                    "p_l and s_c corner a large prey animal, but the wind changes and their prey perks up at the last moment. Without hesitation, s_c bolts forward and slams a paw down on it. p_l is amazed by {PRONOUN/s_c/poss} lightning-fast reflexes and returns to camp a little hot around the ears."
+                    "p_l and s_c0 corner a large prey animal, but the wind changes and their prey perks up at the last moment. Without hesitation, s_c0 bolts forward and slams a paw down on it. p_l is amazed by {PRONOUN/s_c0/poss} lightning-fast reflexes and returns to camp a little hot around the ears."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "HUNTER,1",
@@ -6978,7 +6978,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -6991,7 +6991,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "cat_from was impressed by s_c's reflexes."
+                            "cats_from": "cat_from was impressed by s_c0's reflexes."
                         }
                     },
                     {
@@ -7025,10 +7025,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_romanticstroll_WrWr",
                 "strings": [
-                    "p_l and s_c work hard and soon have a sizeable haul. s_c winks at p_l, commenting that the two of them have a lot of chemistry \u00e2\u20ac\u201d when it comes to hunting, of course. p_l feels a little hot under {PRONOUN/p_l/poss} fur."
+                    "p_l and s_c0 work hard and soon have a sizeable haul. s_c0 winks at p_l, commenting that the two of them have a lot of chemistry \u00e2\u20ac\u201d when it comes to hunting, of course. p_l feels a little hot under {PRONOUN/p_l/poss} fur."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "charismatic",
@@ -7073,10 +7073,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_speakingromance_WrWr",
                 "strings": [
-                    "After a successful hunt together, p_l comments that the two of them make a great team, {PRONOUN/p_l/poss} whiskers twitching flirtatiously. s_c shrugs and attributes their success to the favorable direction of the wind."
+                    "After a successful hunt together, p_l comments that the two of them make a great team, {PRONOUN/p_l/poss} whiskers twitching flirtatiously. s_c0 shrugs and attributes their success to the favorable direction of the wind."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "oblivious",
@@ -7092,7 +7092,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -7337,10 +7337,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bumpheads_WrWr",
                 "strings": [
-                    "p_l always enjoys hunting with {PRONOUN/p_l/poss} mate and seeing {PRONOUN/s_c/poss} skill in action. Unsurprisingly, they have to make two trips to account for all of s_c's kills."
+                    "p_l always enjoys hunting with {PRONOUN/p_l/poss} mate and seeing {PRONOUN/s_c0/poss} skill in action. Unsurprisingly, they have to make two trips to account for all of s_c0's kills."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "HUNTER,2"
@@ -7358,7 +7358,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -7384,10 +7384,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bumpheads_WrWr",
                 "strings": [
-                    "Some of their Clanmates might not understand why p_l loves s_c so much, but when they're alone like this, s_c's dry wit always gets p_l purring. It doesn't hurt that their hunt is successful, too."
+                    "Some of their Clanmates might not understand why p_l loves s_c0 so much, but when they're alone like this, s_c0's dry wit always gets p_l purring. It doesn't hurt that their hunt is successful, too."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "cold",
@@ -7434,10 +7434,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bumpheads_WrWr",
                 "strings": [
-                    "As {PRONOUN/s_c/subject} always {VERB/s_c/do/does}, s_c turns the hunt into a game. p_l is happy to play along, and they return to camp with a hefty piece of prey each."
+                    "As {PRONOUN/s_c0/subject} always {VERB/s_c0/do/does}, s_c0 turns the hunt into a game. p_l is happy to play along, and they return to camp with a hefty piece of prey each."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "competitive",
@@ -7483,10 +7483,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bumpheads_WrWr",
                 "strings": [
-                    "p_l always feels safe alone with s_c, knowing {PRONOUN/p_l/poss} mate's fighting abilities. It doesn't hurt that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} rather muscular from all that practice... s_c spots p_l admiring {PRONOUN/s_c/object} instead of hunting and teases {PRONOUN/p_l/object}."
+                    "p_l always feels safe alone with s_c0, knowing {PRONOUN/p_l/poss} mate's fighting abilities. It doesn't hurt that {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} rather muscular from all that practice... s_c0 spots p_l admiring {PRONOUN/s_c0/object} instead of hunting and teases {PRONOUN/p_l/object}."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "FIGHTER,1"
@@ -7530,10 +7530,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittyhappy_Wr",
                 "strings": [
-                    "s_c suggests a bit of fishing, and p_l playfully groans. Why does going out with s_c mean {PRONOUN/p_l/subject} always {VERB/p_l/get/gets} {PRONOUN/p_l/poss} paws wet? Still, s_c is undeniably effective at hunting in the water."
+                    "s_c0 suggests a bit of fishing, and p_l playfully groans. Why does going out with s_c0 mean {PRONOUN/p_l/subject} always {VERB/p_l/get/gets} {PRONOUN/p_l/poss} paws wet? Still, s_c0 is undeniably effective at hunting in the water."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "SWIMMER,1"
@@ -7577,10 +7577,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_speakingromance_WrWr",
                 "strings": [
-                    "s_c suggests hunting birds, and p_l playfully groans. Why does going out with s_c mean {PRONOUN/p_l/subject} always {VERB/p_l/end/ends} up stuck in a tree? Still, s_c is undeniably effective at hunting among the treetops."
+                    "s_c0 suggests hunting birds, and p_l playfully groans. Why does going out with s_c0 mean {PRONOUN/p_l/subject} always {VERB/p_l/end/ends} up stuck in a tree? Still, s_c0 is undeniably effective at hunting among the treetops."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "CLIMBER,1"
@@ -7624,10 +7624,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_romanticstroll_WrWr",
                 "strings": [
-                    "During the hunt, p_l brings {PRONOUN/p_l/poss} mate a small morsel {PRONOUN/p_l/subject} just caught. s_c is pleased to have a little mid-hunting snack, and p_l teases {PRONOUN/s_c/object} about {PRONOUN/s_c/poss} growling stomach."
+                    "During the hunt, p_l brings {PRONOUN/p_l/poss} mate a small morsel {PRONOUN/p_l/subject} just caught. s_c0 is pleased to have a little mid-hunting snack, and p_l teases {PRONOUN/s_c0/object} about {PRONOUN/s_c0/poss} growling stomach."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "troublesome",
@@ -7699,10 +7699,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_chatting_WrWr",
                 "strings": [
-                    "While they hunt, s_c subtly brings up the subject of kits \u00e2\u20ac\u201d <i>their</i> kits. p_l purrs and indulges s_c in a conversation about their future."
+                    "While they hunt, s_c0 subtly brings up the subject of kits \u00e2\u20ac\u201d <i>their</i> kits. p_l purrs and indulges s_c0 in a conversation about their future."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "KIT,1"
@@ -7806,10 +7806,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_argue_WrWr",
                 "strings": [
-                    "s_c suggests fishing, but p_l shoots down the idea, sick of getting {PRONOUN/p_l/poss} paws wet for {PRONOUN/s_c/poss} sake. s_c feels a little hurt."
+                    "s_c0 suggests fishing, but p_l shoots down the idea, sick of getting {PRONOUN/p_l/poss} paws wet for {PRONOUN/s_c0/poss} sake. s_c0 feels a little hurt."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "SWIMMER,1"
@@ -7827,7 +7827,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -7852,10 +7852,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_argue_WrWr",
                 "strings": [
-                    "s_c suggests hunting birds, but p_l shoots down the idea, sick of balancing on precarious branches for {PRONOUN/s_c/poss} sake. s_c feels a little hurt."
+                    "s_c0 suggests hunting birds, but p_l shoots down the idea, sick of balancing on precarious branches for {PRONOUN/s_c0/poss} sake. s_c0 feels a little hurt."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "CLIMBER,1"
@@ -7873,7 +7873,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -7898,10 +7898,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_argue_WrWr",
                 "strings": [
-                    "As they hunt, s_c gently corrects p_l's hunting crouch, and p_l takes offense. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} s_c's mate, not a wet-eared apprentice, and {VERB/p_l/need/needs} no advice on how to hunt!"
+                    "As they hunt, s_c0 gently corrects p_l's hunting crouch, and p_l takes offense. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} s_c0's mate, not a wet-eared apprentice, and {VERB/p_l/need/needs} no advice on how to hunt!"
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "TEACHER,1",
@@ -7917,7 +7917,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -7946,10 +7946,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/fst_train_NL_matesonadates_WrWr",
                 "strings": [
-                    "p_l and s_c stalk a distracted bird gathering up detritus in its beak. Just before {PRONOUN/s_c/subject} {VERB/s_c/pounce/pounces}, s_c pauses and flicks {PRONOUN/s_c/poss} tail to a branch overhead where another bird nests. The first bird flies up to join its mate and add to their nest, and p_l and s_c watch, their hunt forgotten. p_l purrs at s_c's sappy nature and twines {PRONOUN/p_l/poss} tail with {PRONOUN/s_c/inposs}."
+                    "p_l and s_c0 stalk a distracted bird gathering up detritus in its beak. Just before {PRONOUN/s_c0/subject} {VERB/s_c0/pounce/pounces}, s_c0 pauses and flicks {PRONOUN/s_c0/poss} tail to a branch overhead where another bird nests. The first bird flies up to join its mate and add to their nest, and p_l and s_c0 watch, their hunt forgotten. p_l purrs at s_c0's sappy nature and twines {PRONOUN/p_l/poss} tail with {PRONOUN/s_c0/inposs}."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "loving",
@@ -7966,7 +7966,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -7989,10 +7989,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_catlookingup_Wr",
                 "strings": [
-                    "During the hunt, p_l brings {PRONOUN/p_l/poss} mate a small morsel {PRONOUN/p_l/subject} just caught. s_c isn't happy to see p_l break the Warrior Code so casually and refuses the offer coldly. The rest of the hunt is tense."
+                    "During the hunt, p_l brings {PRONOUN/p_l/poss} mate a small morsel {PRONOUN/p_l/subject} just caught. s_c0 isn't happy to see p_l break the Warrior Code so casually and refuses the offer coldly. The rest of the hunt is tense."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "strict",
@@ -8014,7 +8014,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -8035,7 +8035,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -8060,10 +8060,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_catlookingup_Wr",
                 "strings": [
-                    "During the hunt, p_l brings {PRONOUN/p_l/poss} mate a small morsel {PRONOUN/p_l/subject} just caught. s_c takes offense at {PRONOUN/s_c/poss} mate's implication that {PRONOUN/s_c/subject} can't hunt for {PRONOUN/s_c/self} and rejects the offer. The rest of the hunt is tense."
+                    "During the hunt, p_l brings {PRONOUN/p_l/poss} mate a small morsel {PRONOUN/p_l/subject} just caught. s_c0 takes offense at {PRONOUN/s_c0/poss} mate's implication that {PRONOUN/s_c0/subject} can't hunt for {PRONOUN/s_c0/self} and rejects the offer. The rest of the hunt is tense."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "strict",
@@ -8088,7 +8088,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -8114,10 +8114,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_sunny2_ApAp",
                 "strings": [
-                    "p_l expects hunting with s_c to be easy \u00e2\u20ac\u201d after all, {PRONOUN/p_l/poss} mate has one of the sharpest noses in the Clan. However, it seems s_c is too captivated by p_l's scent to catch many prey scents..."
+                    "p_l expects hunting with s_c0 to be easy \u00e2\u20ac\u201d after all, {PRONOUN/p_l/poss} mate has one of the sharpest noses in the Clan. However, it seems s_c0 is too captivated by p_l's scent to catch many prey scents..."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "SENSE,1"
@@ -8135,7 +8135,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -8222,10 +8222,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c stops the patrol from catching the rabbit and takes the opportunity to teach them about illnesses that can pass from prey to cat."
+                    "s_c0 stops the patrol from catching the rabbit and takes the opportunity to teach them about illnesses that can pass from prey to cat."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -8240,7 +8240,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -8389,10 +8389,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c sticks {PRONOUN/s_c/poss} nose into the hole only to come face-to-face with a skunk! The whole patrol is sprayed!"
+                    "s_c0 sticks {PRONOUN/s_c0/poss} nose into the hole only to come face-to-face with a skunk! The whole patrol is sprayed!"
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -8412,7 +8412,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "values": [
                             "respect",
@@ -8521,10 +8521,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c sticks {PRONOUN/s_c/poss} nose into the hole, only to come face-to-face with a skunk! {PRONOUN/s_c/subject/CAP} is sprayed!"
+                    "s_c0 sticks {PRONOUN/s_c0/poss} nose into the hole, only to come face-to-face with a skunk! {PRONOUN/s_c0/subject/CAP} is sprayed!"
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -8544,7 +8544,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "values": [
                             "like",
@@ -8662,10 +8662,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It's a terrible day for hunting, the prey running sparse and alert. But, s_c takes {PRONOUN/s_c/poss} time and doesn't let the conditions discourage {PRONOUN/s_c/object}, until eventually the right opportunity presents itself and {PRONOUN/s_c/subject} {VERB/s_c/pull/pulls} off a perfect catch!"
+                    "It's a terrible day for hunting, the prey running sparse and alert. But, s_c0 takes {PRONOUN/s_c0/poss} time and doesn't let the conditions discourage {PRONOUN/s_c0/object}, until eventually the right opportunity presents itself and {PRONOUN/s_c0/subject} {VERB/s_c0/pull/pulls} off a perfect catch!"
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "calm",
@@ -8719,10 +8719,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c is too hasty, bouncing after first one prey, then another, until it ends with {PRONOUN/s_c/object} empty-pawed and exhausted. {PRONOUN/s_c/poss/CAP} mentor is disappointed \u00e2\u20ac\u201d {PRONOUN/s_c/subject} clearly {VERB/s_c/need/needs} more training."
+                    "s_c0 is too hasty, bouncing after first one prey, then another, until it ends with {PRONOUN/s_c0/object} empty-pawed and exhausted. {PRONOUN/s_c0/poss/CAP} mentor is disappointed \u00e2\u20ac\u201d {PRONOUN/s_c0/subject} clearly {VERB/s_c0/need/needs} more training."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "adventurous",
@@ -8745,7 +8745,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "values": [
                             "respect"
@@ -8854,10 +8854,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c spots the Twolegs unloading metal boxes from their monsters and abruptly tells the patrol they need to leave. Now."
+                    "s_c0 spots the Twolegs unloading metal boxes from their monsters and abruptly tells the patrol they need to leave. Now."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -8875,7 +8875,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "values": [
                             "trust",
@@ -8892,10 +8892,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees."
+                    "A Twoleg spots s_c0 and crouches down, clicking softly. s_c0 hisses and flees."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -8937,11 +8937,11 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses \u00e2\u20ac\u201d are they hurt? Do they want to make friends? Before {PRONOUN/s_c/subject} can decide whether to step closer, there's a swoosh, and a net falls around {PRONOUN/r_c0/object}. s_c fights desperately, but the Twolegs take {PRONOUN/r_c0/object} away in the monster."
+                    "A Twoleg spots s_c0 and crouches down, clicking softly. s_c0 pauses \u00e2\u20ac\u201d are they hurt? Do they want to make friends? Before {PRONOUN/s_c0/subject} can decide whether to step closer, there's a swoosh, and a net falls around {PRONOUN/r_c0/object}. s_c0 fights desperately, but the Twolegs take {PRONOUN/r_c0/object} away in the monster."
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -8961,7 +8961,7 @@
                 "lost": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ]
                     }
                 ]
@@ -9012,10 +9012,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c spots the Twolegs unloading metal boxes from their monsters, and recognizes that it can't be anything good, leaving immediately."
+                    "s_c0 spots the Twolegs unloading metal boxes from their monsters, and recognizes that it can't be anything good, leaving immediately."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -9031,10 +9031,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c spits in the Twolegs' direction and decides to pick a different place to hunt."
+                    "s_c0 spits in the Twolegs' direction and decides to pick a different place to hunt."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -9079,10 +9079,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c has heard terrible things about Twolegs, but {PRONOUN/s_c/subject} still {VERB/s_c/creep/creeps} closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} taken far away with the injured Twoleg."
+                    "s_c0 has heard terrible things about Twolegs, but {PRONOUN/s_c0/subject} still {VERB/s_c0/creep/creeps} closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around {PRONOUN/s_c0/object}. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/are/is} taken far away with the injured Twoleg."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -9102,7 +9102,7 @@
                 "lost": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ]
                     }
                 ]
@@ -9284,10 +9284,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there: a strange, suspicious box. Wisely, s_c avoids it, and returns to c_n territory."
+                    "A little carelessly, s_c0 jumps a fence to hunt in a den's garden. But there's a new thing there: a strange, suspicious box. Wisely, s_c0 avoids it, and returns to c_n territory."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "compassionate",
@@ -9408,10 +9408,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol stops on the edge of the Thunderpath. s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat."
+                    "The patrol stops on the edge of the Thunderpath. s_c0 organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -9429,7 +9429,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "values": [
                             "respect",
@@ -9452,10 +9452,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c is patient enough to wait until the Thunderpath is completely clear, then trot across to hunt on the other side."
+                    "s_c0 is patient enough to wait until the Thunderpath is completely clear, then trot across to hunt on the other side."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -9614,10 +9614,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c reacts quickly, tearing off after the rabbit and slamming a paw on its head to bring it down. The patrol congratulates {PRONOUN/s_c/object}."
+                    "s_c0 reacts quickly, tearing off after the rabbit and slamming a paw on its head to bring it down. The patrol congratulates {PRONOUN/s_c0/object}."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -9635,7 +9635,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -9649,7 +9649,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -9674,10 +9674,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Claws tearing into the ground, s_c bounds after the rabbit, reaching full sprint before the rest of the patrol has worked out what's going on. {PRONOUN/s_c/subject/CAP} {VERB/s_c/collide/collides} with the fleeing prey, bringing it down in a dramatic tangle of kicking legs."
+                    "Claws tearing into the ground, s_c0 bounds after the rabbit, reaching full sprint before the rest of the patrol has worked out what's going on. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/collide/collides} with the fleeing prey, bringing it down in a dramatic tangle of kicking legs."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -9695,7 +9695,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -9708,7 +9708,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -9766,10 +9766,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c is quicker than anyone else, tearing after the rabbit, but in {PRONOUN/s_c/poss} haste {PRONOUN/s_c/subject} {VERB/s_c/put/puts} a paw wrong and {VERB/s_c/stop/stops} as a sharp twinge of pain shoots up {PRONOUN/s_c/poss} leg."
+                    "s_c0 is quicker than anyone else, tearing after the rabbit, but in {PRONOUN/s_c0/poss} haste {PRONOUN/s_c0/subject} {VERB/s_c0/put/puts} a paw wrong and {VERB/s_c0/stop/stops} as a sharp twinge of pain shoots up {PRONOUN/s_c0/poss} leg."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -9784,7 +9784,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -9808,7 +9808,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "condition": [
                             "sprain"
@@ -9858,10 +9858,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c reacts quickly, tearing off after the rabbit and slamming a paw on its head to bring it down."
+                    "s_c0 reacts quickly, tearing off after the rabbit and slamming a paw on its head to bring it down."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -9879,7 +9879,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "values": [
                             "respect"
@@ -9901,10 +9901,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "<i>BAM</i>. s_c slams into the rabbit in a tumbling collision of teeth and claws."
+                    "<i>BAM</i>. s_c0 slams into the rabbit in a tumbling collision of teeth and claws."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -9922,7 +9922,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "values": [
                             "respect"
@@ -9959,10 +9959,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c reacts quickly, tearing after the rabbit, but in {PRONOUN/s_c/poss} haste {PRONOUN/s_c/subject} {VERB/s_c/put/puts} a paw wrong and {VERB/s_c/stop/stops} as a sharp twinge of pain shoots up {PRONOUN/s_c/poss} leg."
+                    "s_c0 reacts quickly, tearing after the rabbit, but in {PRONOUN/s_c0/poss} haste {PRONOUN/s_c0/subject} {VERB/s_c0/put/puts} a paw wrong and {VERB/s_c0/stop/stops} as a sharp twinge of pain shoots up {PRONOUN/s_c0/poss} leg."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -9983,7 +9983,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "condition": [
                             "sprain"
@@ -10062,10 +10062,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_hunt_mouse_Wr",
                 "strings": [
-                    "s_c's determination in the face of slim hunting odds inspires the rest of the patrol. They stay out in the cold longer than is wise, but they have something to show for it at the end of the day."
+                    "s_c0's determination in the face of slim hunting odds inspires the rest of the patrol. They stay out in the cold longer than is wise, but they have something to show for it at the end of the day."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -10094,7 +10094,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "values": [
                             "respect"
@@ -10171,10 +10171,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_hunt_mouse_Wr",
                 "strings": [
-                    "In leaf-bare, the Clan relies on s_c more than ever. {PRONOUN/s_c/subject/CAP} {VERB/s_c/rise/rises} to the challenge and ensures the hunt succeeds against the odds."
+                    "In leaf-bare, the Clan relies on s_c0 more than ever. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/rise/rises} to the challenge and ensures the hunt succeeds against the odds."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -10192,7 +10192,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "values": [
                             "trust",
@@ -10215,10 +10215,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_hunt_mouse_Wr",
                 "strings": [
-                    "s_c's sharp senses are critical to the patrol's success. Without {PRONOUN/s_c/object}, it would be nigh impossible to follow any scent trail in the cold."
+                    "s_c0's sharp senses are critical to the patrol's success. Without {PRONOUN/s_c0/object}, it would be nigh impossible to follow any scent trail in the cold."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -10236,7 +10236,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "values": [
                             "trust",
@@ -10285,10 +10285,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_argue_WrWr",
                 "strings": [
-                    "The lack of prey prompts a joke from s_c about how leaf-bare should really be called <i>prey</i>-bare. The rest of the patrol is not amused."
+                    "The lack of prey prompts a joke from s_c0 about how leaf-bare should really be called <i>prey</i>-bare. The rest of the patrol is not amused."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -10307,7 +10307,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "values": [
                             "like"
@@ -10351,10 +10351,10 @@
                 "frequency": 2,
                 "outcome_art": "cat_sprites/gen_LB_snowpatrol_ApWr",
                 "strings": [
-                    "s_c refuses to allow the patrol to end in failure. No matter how numb the cats' paws become, s_c persists in the hunt. They don't return completely empty-pawed, but they pay the price for it."
+                    "s_c0 refuses to allow the patrol to end in failure. No matter how numb the cats' paws become, s_c0 persists in the hunt. They don't return completely empty-pawed, but they pay the price for it."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "confident",
@@ -10380,7 +10380,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "values": [
                             "respect"
@@ -10395,7 +10395,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "values": [
                             "comfort"
@@ -10429,10 +10429,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_comfort_WrWr",
                 "strings": [
-                    "As the patrol searches in vain for prey scents, s_c becomes worked up. The Clan relies on {PRONOUN/s_c/poss} skill to feed them, and s_c is failing them! The patrol comforts s_c as they return with empty, cold paws."
+                    "As the patrol searches in vain for prey scents, s_c0 becomes worked up. The Clan relies on {PRONOUN/s_c0/poss} skill to feed them, and s_c0 is failing them! The patrol comforts s_c0 as they return with empty, cold paws."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -10451,7 +10451,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "values": [
                             "comfort"
@@ -10468,10 +10468,10 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_deadghost_WrSc",
                 "strings": [
-                    "p_l realizes the snowfall will make tracking prey impossible and calls off the patrol. s_c insists on continuing alone; the Clan is relying on {PRONOUN/s_c/object}. The next day, a search party finds {PRONOUN/s_c/poss} body next to a cache of stiff, frozen prey."
+                    "p_l realizes the snowfall will make tracking prey impossible and calls off the patrol. s_c0 insists on continuing alone; the Clan is relying on {PRONOUN/s_c0/object}. The next day, a search party finds {PRONOUN/s_c0/poss} body next to a cache of stiff, frozen prey."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "HUNTER,1"
@@ -10489,7 +10489,7 @@
                             "clan"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "values": [
                             "respect"
@@ -10509,7 +10509,7 @@
                 "death": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "history": "m_c froze to death while hunting in leaf-bare."
                     }
@@ -10563,10 +10563,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The waves of rats overwhelm the rest of the patrol, but s_c can see the Rat King writhing within its nest. {PRONOUN/s_c/subject/CAP} {VERB/s_c/bolt/bolts} away from the others, trusting {PRONOUN/s_c/poss} claws to take on the legend. It dies with a horrible shriek, as the rest of the patrol watch in awe."
+                    "The waves of rats overwhelm the rest of the patrol, but s_c0 can see the Rat King writhing within its nest. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/bolt/bolts} away from the others, trusting {PRONOUN/s_c0/poss} claws to take on the legend. It dies with a horrible shriek, as the rest of the patrol watch in awe."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -10584,7 +10584,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "values": [
                             "respect"
@@ -10665,10 +10665,10 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "s_c knows {PRONOUN/s_c/subject} {VERB/s_c/are/is} one of the Clan's greatest hunters. {PRONOUN/s_c/subject/CAP} {VERB/s_c/spot/spots} the Rat King and charge into its lair. But the King proves too great a foe for a single cat, and it sends s_c back with wounds to tell {PRONOUN/s_c/poss} tale."
+                    "s_c0 knows {PRONOUN/s_c0/subject} {VERB/s_c0/are/is} one of the Clan's greatest hunters. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/spot/spots} the Rat King and charge into its lair. But the King proves too great a foe for a single cat, and it sends s_c0 back with wounds to tell {PRONOUN/s_c0/poss} tale."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -10687,7 +10687,7 @@
                             "high_aggress"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "values": [
                             "respect"
@@ -10724,10 +10724,10 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "s_c knows {PRONOUN/s_c/subject} {VERB/s_c/are/is} one of the Clan's greatest hunters. {PRONOUN/s_c/subject/CAP} {VERB/s_c/spot/spots} the Rat King and {VERB/s_c/charge/charges} into its lair. But the King proves too great a foe for a single cat, and it kills the would-be kingslayer."
+                    "s_c0 knows {PRONOUN/s_c0/subject} {VERB/s_c0/are/is} one of the Clan's greatest hunters. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/spot/spots} the Rat King and {VERB/s_c0/charge/charges} into its lair. But the King proves too great a foe for a single cat, and it kills the would-be kingslayer."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -10742,7 +10742,7 @@
                 "death": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "history": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King."
                     }

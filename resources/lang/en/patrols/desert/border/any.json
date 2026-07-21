@@ -45,10 +45,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c sets up an ambush for the wandering dog. When the dog nears {PRONOUN/s_c/poss} hiding spot, s_c leaps out with claws unsheathed, bloodies its snout, and leads it on a wild chasing dance across the border and out of c_n territory."
+                    "s_c0 sets up an ambush for the wandering dog. When the dog nears {PRONOUN/s_c0/poss} hiding spot, s_c0 leaps out with claws unsheathed, bloodies its snout, and leads it on a wild chasing dance across the border and out of c_n territory."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -63,7 +63,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -83,10 +83,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "{PRONOUN/s_c/subject/CAP} {VERB/s_c/don't/doesn't} feel like {PRONOUN/s_c/subject} {VERB/s_c/have/has} the skill or power to take on a dog single-pawed, but s_c would give {PRONOUN/s_c/poss} life for c_n. {PRONOUN/s_c/subject/CAP} {VERB/s_c/charge/charges} in courageously to lead the dog away from c_n territory. Each booming bark could be the herald of {PRONOUN/s_c/poss} doom, each rancid breath the last thing {PRONOUN/s_c/subject} might ever smell, but somehow, limbs and lungs burning, {PRONOUN/s_c/subject} eventually {VERB/s_c/leap/leaps} to refuge."
+                    "{PRONOUN/s_c0/subject/CAP} {VERB/s_c0/don't/doesn't} feel like {PRONOUN/s_c0/subject} {VERB/s_c0/have/has} the skill or power to take on a dog single-pawed, but s_c0 would give {PRONOUN/s_c0/poss} life for c_n. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/charge/charges} in courageously to lead the dog away from c_n territory. Each booming bark could be the herald of {PRONOUN/s_c0/poss} doom, each rancid breath the last thing {PRONOUN/s_c0/subject} might ever smell, but somehow, limbs and lungs burning, {PRONOUN/s_c0/subject} eventually {VERB/s_c0/leap/leaps} to refuge."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -109,7 +109,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -294,7 +294,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c sets up a careful ambush ahead of the dog, and {PRONOUN/s_c/poss} surprising, darting attack bloodies the dog's flank, dissuading it from heading further into c_n territory."
+                    "s_c0 sets up a careful ambush ahead of the dog, and {PRONOUN/s_c0/poss} surprising, darting attack bloodies the dog's flank, dissuading it from heading further into c_n territory."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -303,7 +303,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -318,7 +318,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -334,7 +334,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -353,7 +353,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c selflessly takes the lion's share of the run the patrol leads the dog on, exhausting {PRONOUN/s_c/self} almost to the point of danger but leading the dog far away from c_n borders. {PRONOUN/s_c/poss/CAP} Clanmates support {PRONOUN/s_c/object} on the long walk home once it's all over, their purrs mixing with s_c's exhausted pants."
+                    "s_c0 selflessly takes the lion's share of the run the patrol leads the dog on, exhausting {PRONOUN/s_c0/self} almost to the point of danger but leading the dog far away from c_n borders. {PRONOUN/s_c0/poss/CAP} Clanmates support {PRONOUN/s_c0/object} on the long walk home once it's all over, their purrs mixing with s_c0's exhausted pants."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -362,7 +362,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -384,7 +384,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -400,7 +400,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -481,7 +481,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c has just enough time to yowl out a plan, leading the whole large patrol in a skillful battle maneuver against the dog that protects the cats from the chance of injury. The dog tucks tail and runs for more friendly lands."
+                    "s_c0 has just enough time to yowl out a plan, leading the whole large patrol in a skillful battle maneuver against the dog that protects the cats from the chance of injury. The dog tucks tail and runs for more friendly lands."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -490,7 +490,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -521,7 +521,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -541,7 +541,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c selflessly throw {PRONOUN/s_c/self} into the fight, and every time the dog tries to grab at {PRONOUN/s_c/poss} Clanmates, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} there with unsheathed claws, fur puffed out to twice {PRONOUN/s_c/poss} normal size. With s_c defending them, the patrol drives the dog off, yowling triumphantly."
+                    "s_c0 selflessly throw {PRONOUN/s_c0/self} into the fight, and every time the dog tries to grab at {PRONOUN/s_c0/poss} Clanmates, {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} there with unsheathed claws, fur puffed out to twice {PRONOUN/s_c0/poss} normal size. With s_c0 defending them, the patrol drives the dog off, yowling triumphantly."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -550,7 +550,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -588,7 +588,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -642,7 +642,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c tries to take the lion's share of the effort to lead the dog away, but {PRONOUN/s_c/poss} strength fails {PRONOUN/s_c/object} \u00e2\u20ac\u201d the rest of the patrol needs to rescue {PRONOUN/s_c/object}, cutting the patrol short. Everyone knows the dog could still be lurking on their borders."
+                    "s_c0 tries to take the lion's share of the effort to lead the dog away, but {PRONOUN/s_c0/poss} strength fails {PRONOUN/s_c0/object} \u00e2\u20ac\u201d the rest of the patrol needs to rescue {PRONOUN/s_c0/object}, cutting the patrol short. Everyone knows the dog could still be lurking on their borders."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -651,7 +651,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -669,7 +669,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -827,7 +827,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c tries to protect {PRONOUN/s_c/poss} Clanmates, but too much defense gets in the way of actually attacking the dog. Without everyone committed to driving the dog off, the patrol has to fall back, but they do so in good order."
+                    "s_c0 tries to protect {PRONOUN/s_c0/poss} Clanmates, but too much defense gets in the way of actually attacking the dog. Without everyone committed to driving the dog off, the patrol has to fall back, but they do so in good order."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -836,7 +836,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -871,7 +871,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1053,10 +1053,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c unleashes all {PRONOUN/s_c/poss} battle experience, darting this way and that, ripping chunks of dog fur out as the patrol drives it into the distance."
+                    "s_c0 unleashes all {PRONOUN/s_c0/poss} battle experience, darting this way and that, ripping chunks of dog fur out as the patrol drives it into the distance."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1071,7 +1071,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -1223,10 +1223,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c calls out a battle plan, and the cats flow into it, carefully covering each other. They drive the dog backwards until it loses its nerve, tucks tail, and runs from c_n territory, fleeing deep into the wilderness."
+                    "s_c0 calls out a battle plan, and the cats flow into it, carefully covering each other. They drive the dog backwards until it loses its nerve, tucks tail, and runs from c_n territory, fleeing deep into the wilderness."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1241,7 +1241,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1386,10 +1386,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c calls out a battle plan, and the cats flow into it, carefully covering each other and driving the dog backwards until it loses its nerve, tucks tail, and runs from c_n territory, deep into the wilderness."
+                    "s_c0 calls out a battle plan, and the cats flow into it, carefully covering each other and driving the dog backwards until it loses its nerve, tucks tail, and runs from c_n territory, deep into the wilderness."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1404,7 +1404,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"

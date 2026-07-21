@@ -39,10 +39,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} {VERB/s_c/yowl/yowls} a warning and the rogue scrambles out of the way \u00e2\u20ac\u201d {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to scare them, not kill them. The trespasser heeds the warning and leaves the mountains."
+                    "The scent leads to a trespassing rogue. s_c0 sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/yowl/yowls} a warning and the rogue scrambles out of the way \u00e2\u20ac\u201d {PRONOUN/s_c0/subject} {VERB/s_c0/want/wants} to scare them, not kill them. The trespasser heeds the warning and leaves the mountains."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -58,10 +58,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The scent leads to a trespassing rogue. s_c leaps off a rocky outcrop onto the rogue and easily overwhelms the lone cat. {PRONOUN/s_c/subject/CAP} {VERB/s_c/accept/accepts} the rogue's surrender graciously and {VERB/s_c/escort/escorts} them out of c_n territory."
+                    "The scent leads to a trespassing rogue. s_c0 leaps off a rocky outcrop onto the rogue and easily overwhelms the lone cat. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/accept/accepts} the rogue's surrender graciously and {VERB/s_c0/escort/escorts} them out of c_n territory."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -77,10 +77,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/s_c/poss} perch on a high rock above the rogue, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength."
+                    "Boldly, s_c0 follows the scent to a trespassing rogue and confronts them, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/s_c0/poss} perch on a high rock above the rogue, {PRONOUN/s_c0/subject} {VERB/s_c0/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c0/poss} own strength."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -117,10 +117,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The scent leads to a trespassing rogue. s_c tries to set up a trap by starting a rockslide, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on."
+                    "The scent leads to a trespassing rogue. s_c0 tries to set up a trap by starting a rockslide, but {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}n't as smart as {PRONOUN/s_c0/subject} {VERB/s_c0/think/thinks} {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}. The trap fails, and the rogue wanders on."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -170,10 +170,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The scent leads to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject} would like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory."
+                    "The scent leads to a trespassing rogue. s_c0 throws {PRONOUN/s_c0/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c0 isn't as good of a fighter as {PRONOUN/s_c0/subject} would like to think. The rogue escapes {PRONOUN/s_c0/poss} grasp and runs off further into c_n territory."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -241,10 +241,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Boldly, s_c follows the scent to a trespassing rogue and confronts them. Fur puffed but ears pricked forward curiously, {PRONOUN/s_c/subject} {VERB/s_c/ask/asks} what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off in a huff back over the border."
+                    "Boldly, s_c0 follows the scent to a trespassing rogue and confronts them. Fur puffed but ears pricked forward curiously, {PRONOUN/s_c0/subject} {VERB/s_c0/ask/asks} what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off in a huff back over the border."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "ambitious",
@@ -396,10 +396,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} a warning and the rogue scrambles out of the way \u00e2\u20ac\u201d {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to scare them, not kill them. The trespasser heeds the warning and leaves the mountains."
+                    "The scent leads to a trespassing rogue. s_c0 sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c0/subject/CAP} a warning and the rogue scrambles out of the way \u00e2\u20ac\u201d {PRONOUN/s_c0/subject} {VERB/s_c0/want/wants} to scare them, not kill them. The trespasser heeds the warning and leaves the mountains."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -435,10 +435,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The scent leads to a trespassing rogue. s_c leaps off a rocky outcrop onto the rogue and easily overwhelms the lone cat. {PRONOUN/s_c/subject/CAP} {VERB/s_c/accept/accepts} the rogue's surrender graciously and {VERB/s_c/escort/escorts} them out of c_n territory."
+                    "The scent leads to a trespassing rogue. s_c0 leaps off a rocky outcrop onto the rogue and easily overwhelms the lone cat. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/accept/accepts} the rogue's surrender graciously and {VERB/s_c0/escort/escorts} them out of c_n territory."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -453,7 +453,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -473,10 +473,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/s_c/poss} perch on a high rock above the rogue, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength."
+                    "Boldly, s_c0 follows the scent to a trespassing rogue and confronts them, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/s_c0/poss} perch on a high rock above the rogue, {PRONOUN/s_c0/subject} {VERB/s_c0/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c0/poss} own strength."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -503,7 +503,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -551,10 +551,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by starting a rockslide, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on."
+                    "The pawprints lead to a trespassing rogue. s_c0 tries to set up a trap by starting a rockslide, but {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}n't as smart as {PRONOUN/s_c0/subject} {VERB/s_c0/think/thinks} {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}. The trap fails, and the rogue wanders on."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -569,7 +569,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -589,10 +589,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The scent leads to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject} would like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory."
+                    "The scent leads to a trespassing rogue. s_c0 throws {PRONOUN/s_c0/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c0 isn't as good of a fighter as {PRONOUN/s_c0/subject} would like to think. The rogue escapes {PRONOUN/s_c0/poss} grasp and runs off further into c_n territory."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -607,7 +607,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -633,7 +633,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -778,10 +778,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Boldly, s_c follows the scent to a trespassing rogue and confronts them. Fur puffed but ears pricked forward curiously, {PRONOUN/s_c/subject} {VERB/s_c/ask/asks} what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off in a huff back over the border."
+                    "Boldly, s_c0 follows the scent to a trespassing rogue and confronts them. Fur puffed but ears pricked forward curiously, {PRONOUN/s_c0/subject} {VERB/s_c0/ask/asks} what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off in a huff back over the border."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "ambitious",
@@ -808,7 +808,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -935,10 +935,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The scent leads to a trespassing rogue. s_c leaps off a rocky outcrop onto the rogue and easily overwhelms the lone cat. {PRONOUN/s_c/subject/CAP} {VERB/s_c/accept/accepts} the rogue's surrender graciously and {VERB/s_c/escort/escorts} them out of c_n territory."
+                    "The scent leads to a trespassing rogue. s_c0 leaps off a rocky outcrop onto the rogue and easily overwhelms the lone cat. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/accept/accepts} the rogue's surrender graciously and {VERB/s_c0/escort/escorts} them out of c_n territory."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -953,7 +953,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -973,10 +973,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} {VERB/s_c/yowl/yowls} a warning and the rogue scrambles out of the way \u00e2\u20ac\u201d {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to scare them, not kill them. The intruder leaves the mountains, and s_c's patrol is impressed by {PRONOUN/s_c/poss} cunning."
+                    "The scent leads to a trespassing rogue. s_c0 sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/yowl/yowls} a warning and the rogue scrambles out of the way \u00e2\u20ac\u201d {PRONOUN/s_c0/subject} {VERB/s_c0/want/wants} to scare them, not kill them. The intruder leaves the mountains, and s_c0's patrol is impressed by {PRONOUN/s_c0/poss} cunning."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1012,10 +1012,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Boldly, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/s_c/poss} perch on a high rock above the rogue, {PRONOUN/s_c/subject} {VERB/s_c/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c/poss} own strength."
+                    "Boldly, s_c0 follows the scent to a trespassing rogue and confronts them, pointing out the clearly-marked border which the rogue has crossed. From {PRONOUN/s_c0/poss} perch on a high rock above the rogue, {PRONOUN/s_c0/subject} {VERB/s_c0/listen/listens} to the rogue stutter out an explanation and a quick apology, unimpressed and confident in {PRONOUN/s_c0/poss} own strength."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1042,7 +1042,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1090,10 +1090,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The scent leads to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue before p_l gives the signal, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject} would like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory. s_c scrambles to {PRONOUN/s_c/poss} paws, the judgmental stares of the patrol clinging to {PRONOUN/s_c/poss} pelt."
+                    "The scent leads to a trespassing rogue. s_c0 throws {PRONOUN/s_c0/self} at the rogue before p_l gives the signal, hissing furiously, but this is one battle-hardened trespasser, and s_c0 isn't as good of a fighter as {PRONOUN/s_c0/subject} would like to think. The rogue escapes {PRONOUN/s_c0/poss} grasp and runs off further into c_n territory. s_c0 scrambles to {PRONOUN/s_c0/poss} paws, the judgmental stares of the patrol clinging to {PRONOUN/s_c0/poss} pelt."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1108,7 +1108,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1128,10 +1128,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by starting a rockslide, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on."
+                    "The pawprints lead to a trespassing rogue. s_c0 tries to set up a trap by starting a rockslide, but {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}n't as smart as {PRONOUN/s_c0/subject} {VERB/s_c0/think/thinks} {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}. The trap fails, and the rogue wanders on."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1146,7 +1146,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1274,10 +1274,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Boldly, s_c follows the scent to a trespassing rogue and confronts them. Fur puffed but ears pricked forward curiously, {PRONOUN/s_c/subject} {VERB/s_c/ask/asks} what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off in a huff back over the border."
+                    "Boldly, s_c0 follows the scent to a trespassing rogue and confronts them. Fur puffed but ears pricked forward curiously, {PRONOUN/s_c0/subject} {VERB/s_c0/ask/asks} what the rogue is doing in c_n territory. It seems to embarrass the other cat, who walks off in a huff back over the border."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "ambitious",
@@ -1304,7 +1304,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"

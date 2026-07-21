@@ -104,10 +104,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN/s_c/poss} words carefully. It's all worth it to hear r_c's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world."
+                    "s_c0 has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN/s_c0/poss} words carefully. It's all worth it to hear r_c's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "SPEAKER,1",
@@ -137,7 +137,7 @@
                         ],
                         "amount": 13,
                         "log": {
-                            "cats_from": "s_c's social adeptness made {PRONOUN/s_c/poss} romantic leaf-bare stroll with r_c0 all the better."
+                            "cats_from": "s_c0's social adeptness made {PRONOUN/s_c0/poss} romantic leaf-bare stroll with r_c0 all the better."
                         }
                     }
                 ]
@@ -312,10 +312,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c, wary of any more work, stalks off before p_l can assign {PRONOUN/s_c/object} more chores \u00e2\u20ac\u201d and misses out on p_l's excellent storytelling as a result."
+                    "s_c0, wary of any more work, stalks off before p_l can assign {PRONOUN/s_c0/object} more chores \u00e2\u20ac\u201d and misses out on p_l's excellent storytelling as a result."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "shameless",
@@ -336,7 +336,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -349,7 +349,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"

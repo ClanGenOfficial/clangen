@@ -68,10 +68,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_story_WrWr",
                 "strings": [
-                    "Everything the patrol sees exists together in a delicate balance, s_c explains. A warrior must respect all life, from the crawling ant to the leaping rabbit. Yes, even though warriors hunt and eat them. One day, as each member of c_n dies, their bodies will become the dirt, and the dirt will feed the grass, and the rabbits eat the grass. Every creature is connected in the great cycle."
+                    "Everything the patrol sees exists together in a delicate balance, s_c0 explains. A warrior must respect all life, from the crawling ant to the leaping rabbit. Yes, even though warriors hunt and eat them. One day, as each member of c_n dies, their bodies will become the dirt, and the dirt will feed the grass, and the rabbits eat the grass. Every creature is connected in the great cycle."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "STORY,1"

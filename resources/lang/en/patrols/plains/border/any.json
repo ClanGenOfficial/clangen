@@ -47,10 +47,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c immediately leaps to protect {PRONOUN/s_c/poss} Clanmates. {PRONOUN/s_c/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run."
+                    "s_c0 immediately leaps to protect {PRONOUN/s_c0/poss} Clanmates. {PRONOUN/s_c0/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -65,7 +65,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -84,10 +84,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol."
+                    "s_c0 revels in the battle, leaping into the fray with {PRONOUN/s_c0/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -246,10 +246,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the intruders with such ferocity that the rogues are taken aback. Alarmed by the Clan cat's lack of fear and self-preservation, the rogues freeze. s_c sees {PRONOUN/s_c/poss} opportunity to run and takes it, racing back to the camp to gather more warriors and return."
+                    "s_c0 snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/throw/throws} {PRONOUN/s_c0/self} at the intruders with such ferocity that the rogues are taken aback. Alarmed by the Clan cat's lack of fear and self-preservation, the rogues freeze. s_c0 sees {PRONOUN/s_c0/poss} opportunity to run and takes it, racing back to the camp to gather more warriors and return."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -264,7 +264,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -286,10 +286,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the intruders with such ferocity that the rogues are taken aback. Their shock only lasts a moment before they descend upon the warrior once more. Eventually, s_c has no choice but to escape before {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} killed."
+                    "s_c0 snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/throw/throws} {PRONOUN/s_c0/self} at the intruders with such ferocity that the rogues are taken aback. Their shock only lasts a moment before they descend upon the warrior once more. Eventually, s_c0 has no choice but to escape before {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} killed."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -306,7 +306,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -434,10 +434,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c informs the rogues of a prey-rich forest outside of c_n territory."
+                    "s_c0 takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c0 informs the rogues of a prey-rich forest outside of c_n territory."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -452,7 +452,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "some_clan",
@@ -473,10 +473,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c informs the rogues of a prey-rich forest outside of c_n territory."
+                    "s_c0 takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c0 informs the rogues of a prey-rich forest outside of c_n territory."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -492,7 +492,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -691,10 +691,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, and drives {PRONOUN/n_c:0/object} off c_n territory."
+                    "The pawprints lead to a trespassing rogue. s_c0 throws {PRONOUN/s_c0/self} at the rogue, hissing furiously, and drives {PRONOUN/n_c:0/object} off c_n territory."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -756,10 +756,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using grass to cover an abandoned rabbit burrow, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on."
+                    "The pawprints lead to a trespassing rogue. s_c0 tries to set up a trap by using grass to cover an abandoned rabbit burrow, but {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}n't as smart as {PRONOUN/s_c0/subject} {VERB/s_c0/think/thinks} {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}. The trap fails, and the rogue wanders on."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -821,10 +821,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. Intimidated by {PRONOUN/s_c/poss} confidence, the rogue gives in and leaves without a fight."
+                    "Boldly, s_c0 follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c0/subject} {VERB/s_c0/demand/demands} the rogue leave c_n territory. Intimidated by {PRONOUN/s_c0/poss} confidence, the rogue gives in and leaves without a fight."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -910,10 +910,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the marshy terrain to cut off the rogue's escape path, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on."
+                    "The pawprints lead to a trespassing rogue. s_c0 tries to set up a trap by using the marshy terrain to cut off the rogue's escape path, but {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}n't as smart as {PRONOUN/s_c0/subject} {VERB/s_c0/think/thinks} {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}. The trap fails, and the rogue wanders on."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -985,10 +985,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory."
+                    "The pawprints lead to a trespassing rogue. s_c0 throws {PRONOUN/s_c0/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c0 isn't as good of a fighter as {PRONOUN/s_c0/subject}'d like to think. The rogue escapes {PRONOUN/s_c0/poss} grasp and runs off further into c_n territory."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1008,7 +1008,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_to": [
                             "n_c:0"
@@ -1020,7 +1020,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "s_c found n_c:0 trepassing and attacked {PRONOUN/n_c:0/object}, but n_c:0 managed to escape."
+                            "cats_from": "s_c0 found n_c:0 trepassing and attacked {PRONOUN/n_c:0/object}, but n_c:0 managed to escape."
                         }
                     }
                 ],
@@ -1139,10 +1139,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. The rogue is not impressed by this adolescent and ignores {PRONOUN/s_c/object} completely."
+                    "Boldly, s_c0 follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c0/subject} {VERB/s_c0/demand/demands} the rogue leave c_n territory. The rogue is not impressed by this adolescent and ignores {PRONOUN/s_c0/object} completely."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "ambitious",
@@ -1174,7 +1174,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_to": [
                             "n_c:0"
@@ -1185,7 +1185,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "s_c found n_c:0 trespassing on c_n territory and told {PRONOUN/n_c:0/object} to leave, but n_c:0 ignored {PRONOUN/s_c/object}."
+                            "cats_from": "s_c0 found n_c:0 trespassing on c_n territory and told {PRONOUN/n_c:0/object} to leave, but n_c:0 ignored {PRONOUN/s_c0/object}."
                         }
                     }
                 ],
@@ -1343,10 +1343,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. With a furious hiss, s_c throws themselves at the rogue and, together with r_c, drives them off c_n territory."
+                    "The pawprints lead to a trespassing rogue. With a furious hiss, s_c0 throws themselves at the rogue and, together with r_c, drives them off c_n territory."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1372,7 +1372,7 @@
                         ],
                         "cats_to": [
                             "r_c0",
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1388,7 +1388,7 @@
                             "n_c:0"
                         ],
                         "cats_to": [
-                            "s_c",
+                            "s_c0",
                             "r_c0"
                         ],
                         "mutual": true,
@@ -1411,10 +1411,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. s_c sets up a trap by using grass to cover an abandoned rabbit burrow. It makes the startled intruder cower to realize {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} been caught and trapped by c_n, and {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} escorted to the border with the lesson firmly learned."
+                    "The pawprints lead to a trespassing rogue. s_c0 sets up a trap by using grass to cover an abandoned rabbit burrow. It makes the startled intruder cower to realize {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} been caught and trapped by c_n, and {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} escorted to the border with the lesson firmly learned."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1439,7 +1439,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1455,7 +1455,7 @@
                             "n_c:0"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1464,7 +1464,7 @@
                         ],
                         "amount": -30,
                         "log": {
-                            "cats_from": "s_c caught n_c:0 trespassing and drove {PRONOUN/n_c:0/object} off the territory."
+                            "cats_from": "s_c0 caught n_c:0 trespassing and drove {PRONOUN/n_c:0/object} off the territory."
                         }
                     },
                     {
@@ -1472,7 +1472,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1493,7 +1493,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Boldly, s_c follows the pawprints to a trespassing rogue and confronts {PRONOUN/n_c:0/object}. Fur puffed up and scowling, s_c and r_c0 demand the rogue leave c_n territory. The rogue is intimidated by their confidence and leaves without a fight."
+                    "Boldly, s_c0 follows the pawprints to a trespassing rogue and confronts {PRONOUN/n_c:0/object}. Fur puffed up and scowling, s_c0 and r_c0 demand the rogue leave c_n territory. The rogue is intimidated by their confidence and leaves without a fight."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -1502,7 +1502,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1543,7 +1543,7 @@
                         ],
                         "cats_to": [
                             "r_c0",
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1560,7 +1560,7 @@
                         ],
                         "cats_to": [
                             "r_c0",
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1582,7 +1582,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight."
+                    "Boldly, s_c0 follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -1591,7 +1591,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1731,10 +1731,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. s_c throws {PRONOUN/s_c/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c isn't as good of a fighter as {PRONOUN/s_c/subject}'d like to think. The rogue escapes {PRONOUN/s_c/poss} grasp and runs off further into c_n territory."
+                    "The pawprints lead to a trespassing rogue. s_c0 throws {PRONOUN/s_c0/self} at the rogue, hissing furiously, but this is one battle-hardened trespasser, and s_c0 isn't as good of a fighter as {PRONOUN/s_c0/subject}'d like to think. The rogue escapes {PRONOUN/s_c0/poss} grasp and runs off further into c_n territory."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1779,10 +1779,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the marshy terrain to cut off the rogue's escape path, but {PRONOUN/s_c/subject} {VERB/s_c/are/is}n't as smart as {PRONOUN/s_c/subject} {VERB/s_c/think/thinks} {PRONOUN/s_c/subject} {VERB/s_c/are/is}. The trap fails, and the rogue wanders on."
+                    "The pawprints lead to a trespassing rogue. s_c0 tries to set up a trap by using the marshy terrain to cut off the rogue's escape path, but {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}n't as smart as {PRONOUN/s_c0/subject} {VERB/s_c0/think/thinks} {PRONOUN/s_c0/subject} {VERB/s_c0/are/is}. The trap fails, and the rogue wanders on."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1822,7 +1822,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1969,7 +1969,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. The rogue is not impressed by the adolescent, but with the full patrol backing {PRONOUN/s_c/object} up, the rogue leaves c_n territory."
+                    "Boldly, s_c0 follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c0/subject} {VERB/s_c0/demand/demands} the rogue leave c_n territory. The rogue is not impressed by the adolescent, but with the full patrol backing {PRONOUN/s_c0/object} up, the rogue leaves c_n territory."
                 ],
                 "required_cat_types": {
                     "apprentice": [
@@ -1978,7 +1978,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "ambitious",
@@ -2053,7 +2053,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. The rogue is not impressed by the adolescent but reluctantly leaves c_n territory."
+                    "Boldly, s_c0 follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c0/subject} {VERB/s_c0/demand/demands} the rogue leave c_n territory. The rogue is not impressed by the adolescent but reluctantly leaves c_n territory."
                 ],
                 "required_cat_types": {
                     "apprentice": [
@@ -2062,7 +2062,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "ambitious",
@@ -2099,7 +2099,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -2215,7 +2215,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Boldly, s_c follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c/subject} {VERB/s_c/demand/demands} the rogue leave c_n territory. The rogue is not impressed by the adolescent and refuses to leave c_n territory."
+                    "Boldly, s_c0 follows the pawprints to a trespassing rogue and confronts them. Fur puffed up and scowling, {PRONOUN/s_c0/subject} {VERB/s_c0/demand/demands} the rogue leave c_n territory. The rogue is not impressed by the adolescent and refuses to leave c_n territory."
                 ],
                 "required_cat_types": {
                     "apprentice": [
@@ -2224,7 +2224,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "ambitious",
@@ -2259,7 +2259,7 @@
                             "n_c:0"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -2333,10 +2333,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c spins a vivid, engaging tale of a massive war their ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, but it also emphasizes the importance of the patrol and motivates everyone."
+                    "s_c0 spins a vivid, engaging tale of a massive war their ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, but it also emphasizes the importance of the patrol and motivates everyone."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "SPEAKER,1",
@@ -2352,7 +2352,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -2397,7 +2397,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -2445,10 +2445,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c takes r_c0 aside and reminds {PRONOUN/r_c0/object} coldly to focus on {PRONOUN/r_c0/poss} duties."
+                    "s_c0 takes r_c0 aside and reminds {PRONOUN/r_c0/object} coldly to focus on {PRONOUN/r_c0/poss} duties."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -2468,7 +2468,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -2488,7 +2488,7 @@
                             "r_c0"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -2775,10 +2775,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_ghost_WrWrWr",
                 "strings": [
-                    "The tom drove the molly off and was cursed by StarClan for his cruelty. And good thing too, s_c pipes up! Evil like that should always be punished!"
+                    "The tom drove the molly off and was cursed by StarClan for his cruelty. And good thing too, s_c0 pipes up! Evil like that should always be punished!"
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "compassionate",
@@ -2816,7 +2816,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -2978,10 +2978,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c displays incredible skill, driving the mother red vixen out of the territory almost by {PRONOUN/s_c/self}. Now neither the fox nor her cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters."
+                    "s_c0 displays incredible skill, driving the mother red vixen out of the territory almost by {PRONOUN/s_c0/self}. Now neither the fox nor her cubs pose a threat to the Clan. It truly proves s_c0's place as one of c_n's most talented and skillful fighters."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -2996,7 +2996,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -3032,10 +3032,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. {PRONOUN/s_c/poss/CAP} bravery ensures the patrol's success, and the cats arrive back at camp singing {PRONOUN/s_c/poss} praises to make sure the Clan knows it."
+                    "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c0 at a critical moment. {PRONOUN/s_c0/poss/CAP} bravery ensures the patrol's success, and the cats arrive back at camp singing {PRONOUN/s_c0/poss} praises to make sure the Clan knows it."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -3058,7 +3058,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "clan",
@@ -3316,10 +3316,10 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "s_c is determined to win, but {PRONOUN/s_c/poss} confidence is misplaced. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c/object}. The patrol rallies around s_c, but they have to give up on the fight."
+                    "s_c0 is determined to win, but {PRONOUN/s_c0/poss} confidence is misplaced. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} a good fighter, but not a great one, and the red vixen manages to sink her teeth into {PRONOUN/s_c0/object}. The patrol rallies around s_c0, but they have to give up on the fight."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -3334,7 +3334,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -3353,7 +3353,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -3545,10 +3545,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_scared_Ap",
                 "strings": [
-                    "The apprentices gather round the weird dead-ended metal tunnel, poking at its rusty sides. s_c suddenly flinches backwards. Get away from that, it's a trap!"
+                    "The apprentices gather round the weird dead-ended metal tunnel, poking at its rusty sides. s_c0 suddenly flinches backwards. Get away from that, it's a trap!"
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -3581,7 +3581,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -3600,10 +3600,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Can they go back home yet? It's not the first time s_c's asked, but the others cave at last. The apprentices pad home, though not everyone on the patrol is entirely pleased to be doing so."
+                    "Can they go back home yet? It's not the first time s_c0's asked, but the others cave at last. The apprentices pad home, though not everyone on the patrol is entirely pleased to be doing so."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -3620,7 +3620,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "multi"
@@ -3639,7 +3639,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -3656,10 +3656,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_talking_ApAp",
                 "strings": [
-                    "The apprentices huddle around the burrow entrance. It'll be okay, s_c reassures. They've had lessons on burrows and this one has no tracks at the front, so it's empty. Together, everyone plucks up just enough bravery to explore it and run home, whispering the story of what it was like that night to each other in the apprentice den."
+                    "The apprentices huddle around the burrow entrance. It'll be okay, s_c0 reassures. They've had lessons on burrows and this one has no tracks at the front, so it's empty. Together, everyone plucks up just enough bravery to explore it and run home, whispering the story of what it was like that night to each other in the apprentice den."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -3677,7 +3677,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -3727,7 +3727,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -3762,7 +3762,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -3865,10 +3865,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/pln_bord_tunnel_Wr",
                 "strings": [
-                    "s_c bounds forward to the entrance, tail lashing excitedly. There's a shriek, and something pulls {PRONOUN/s_c/subject} in."
+                    "s_c0 bounds forward to the entrance, tail lashing excitedly. There's a shriek, and something pulls {PRONOUN/s_c0/subject} in."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -3888,7 +3888,7 @@
                 "death": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "history": "This cat was killed as an apprentice, patrolling the border and investigating things {PRONOUN/m_c/subject} shouldn't have."
                     }
@@ -3898,10 +3898,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/pln_bord_tunnel_Wr",
                 "strings": [
-                    "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! The wolverine inside is less pleased to have company."
+                    "s_c0 rushes into the tunnels with a gleeful meow! A new place to explore and discover! The wolverine inside is less pleased to have company."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -3918,7 +3918,7 @@
                 "death": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "history": "This cat was killed after an unfortunate meeting with a wolverine."
                     }
@@ -4305,10 +4305,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "strings": [
-                    "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} brought up short when the tunnel abruptly ends. It seems this tunnel leads to nothing but a dead end only a few fox-lengths from the entrance."
+                    "s_c0 rushes into the tunnels with a gleeful meow! A new place to explore and discover! {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} brought up short when the tunnel abruptly ends. It seems this tunnel leads to nothing but a dead end only a few fox-lengths from the entrance."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -4327,10 +4327,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "strings": [
-                    "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! The wolverine inside is less pleased to have company."
+                    "s_c0 rushes into the tunnels with a gleeful meow! A new place to explore and discover! The wolverine inside is less pleased to have company."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -4347,7 +4347,7 @@
                 "death": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "history": "This cat was killed after an unfortunate meeting with a wolverine."
                     }
@@ -4501,10 +4501,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_running2_Wr",
                 "strings": [
-                    "s_c pauses before entering the tunnels. After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away but could return at any moment. s_c quickly moves on."
+                    "s_c0 pauses before entering the tunnels. After a careful inspection of the entrance, s_c0 concludes that a wolverine has claimed this as its home. The predator seems to be away but could return at any moment. s_c0 quickly moves on."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -4523,10 +4523,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_running2_Wr",
                 "strings": [
-                    "s_c pauses before entering the tunnels. After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away but could return at any moment. s_c quickly moves on."
+                    "s_c0 pauses before entering the tunnels. After a careful inspection of the entrance, s_c0 concludes that a wolverine has claimed this as its home. The predator seems to be away but could return at any moment. s_c0 quickly moves on."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -4624,10 +4624,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_hunt_heat_WrWr",
                 "strings": [
-                    "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} brought up short when the tunnel abruptly ends. It seems this tunnel leads to nothing but a dead end only a few fox-lengths from the entrance."
+                    "s_c0 rushes into the tunnels with a gleeful meow! A new place to explore and discover! {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} brought up short when the tunnel abruptly ends. It seems this tunnel leads to nothing but a dead end only a few fox-lengths from the entrance."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -4647,10 +4647,10 @@
                 "outcome_art": "cat_sprites/gen_dead_Wr_EXPLICIT",
                 "outcome_art_clean": "cat_sprites/gen_deadghost_WrSc",
                 "strings": [
-                    "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! The wolverine inside is less pleased to have company."
+                    "s_c0 rushes into the tunnels with a gleeful meow! A new place to explore and discover! The wolverine inside is less pleased to have company."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -4667,7 +4667,7 @@
                 "death": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "history": "This cat was killed after an unfortunate meeting with a wolverine."
                     }
@@ -5141,10 +5141,10 @@
                 "frequency": 4,
                 "outcome_art": "backgrounds/pln_sett",
                 "strings": [
-                    "These aren't new, but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery. That kind typically moves in packs. With s_c taking the bulk of the risk, the two cats persuade the young boar it should look for a new home elsewhere."
+                    "These aren't new, but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery. That kind typically moves in packs. With s_c0 taking the bulk of the risk, the two cats persuade the young boar it should look for a new home elsewhere."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "FIGHTER,2"
@@ -5176,7 +5176,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -5228,10 +5228,10 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/pln_bord_tunnel_Wr",
                 "strings": [
-                    "s_c pauses before entering the tunnels. After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away but could return at any moment. The patrol quickly moves on."
+                    "s_c0 pauses before entering the tunnels. After a careful inspection of the entrance, s_c0 concludes that a wolverine has claimed this as its home. The predator seems to be away but could return at any moment. The patrol quickly moves on."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "HUNTER,3",
@@ -5249,7 +5249,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -5270,10 +5270,10 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/pln_bord_tunnel_Wr",
                 "strings": [
-                    "s_c pauses before entering the tunnels. After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away but could return at any moment. The patrol quickly moves on."
+                    "s_c0 pauses before entering the tunnels. After a careful inspection of the entrance, s_c0 concludes that a wolverine has claimed this as its home. The predator seems to be away but could return at any moment. The patrol quickly moves on."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "careful",
@@ -5290,7 +5290,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -5496,7 +5496,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "condition": [
                             "claw-wound",
@@ -5560,10 +5560,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_trainingfail_Ap",
                 "strings": [
-                    "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} brought up short when the tunnel abruptly ends. It seems this tunnel leads to nothing but a dead end only a few fox-lengths from the entrance."
+                    "s_c0 rushes into the tunnels with a gleeful meow! A new place to explore and discover! {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} brought up short when the tunnel abruptly ends. It seems this tunnel leads to nothing but a dead end only a few fox-lengths from the entrance."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "childish",
@@ -5580,7 +5580,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -5836,10 +5836,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_twocathostile_WrWr",
                 "strings": [
-                    "These aren't new, but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery. That kind typically moves in packs. With s_c willing to take the bulk of the risk, the two cats persuade the young boar it should look for a new home elsewhere."
+                    "These aren't new, but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery. That kind typically moves in packs. With s_c0 willing to take the bulk of the risk, the two cats persuade the young boar it should look for a new home elsewhere."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -5871,7 +5871,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -5907,10 +5907,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_twocathostile_WrWr",
                 "strings": [
-                    "These aren't new, but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery. That kind typically moves in packs. s_c devises a plan to block the entrance with dirt and mark the place for a bigger patrol to deal with."
+                    "These aren't new, but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery. That kind typically moves in packs. s_c0 devises a plan to block the entrance with dirt and mark the place for a bigger patrol to deal with."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -5925,7 +5925,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -5945,10 +5945,10 @@
                 "frequency": 2,
                 "outcome_art": "cat_sprites/gen_hunt_burrow_Wr",
                 "strings": [
-                    "s_c pauses before entering the tunnels. After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away but could return at any moment. The patrol quickly moves on."
+                    "s_c0 pauses before entering the tunnels. After a careful inspection of the entrance, s_c0 concludes that a wolverine has claimed this as its home. The predator seems to be away but could return at any moment. The patrol quickly moves on."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -5966,7 +5966,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -5987,10 +5987,10 @@
                 "frequency": 2,
                 "outcome_art": "cat_sprites/gen_hunt_burrow_Wr",
                 "strings": [
-                    "s_c pauses before entering the tunnels. After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away for the moment, but could return soon. The patrol quickly moves on."
+                    "s_c0 pauses before entering the tunnels. After a careful inspection of the entrance, s_c0 concludes that a wolverine has claimed this as its home. The predator seems to be away for the moment, but could return soon. The patrol quickly moves on."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6008,7 +6008,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -6050,10 +6050,10 @@
                 "frequency": 4,
                 "outcome_art": "backgrounds/pln_sett",
                 "strings": [
-                    "These aren't new, but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety. s_c charges in to drive it off, but two cats isn't enough to move a badger from a den, and all it gets {PRONOUN/s_c/object} is trouble."
+                    "These aren't new, but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety. s_c0 charges in to drive it off, but two cats isn't enough to move a badger from a den, and all it gets {PRONOUN/s_c0/object} is trouble."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6072,7 +6072,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -6091,7 +6091,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "condition": [
                             "claw-wound"
@@ -6106,10 +6106,10 @@
                 "outcome_art": "cat_sprites/gen_dead_Wr_EXPLICIT",
                 "outcome_art_clean": "backgrounds/pln_sett",
                 "strings": [
-                    "These aren't new, but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety. s_c charges in to drive it off, but two cats isn't enough to move a badger from a den, and all it gets {PRONOUN/s_c/object} is trouble."
+                    "These aren't new, but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety. s_c0 charges in to drive it off, but two cats isn't enough to move a badger from a den, and all it gets {PRONOUN/s_c0/object} is trouble."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6128,7 +6128,7 @@
                 "death": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "history": "This cat was killed after an unfortunate meeting with a badger."
                     }
@@ -6138,10 +6138,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_crouchingperplexed_Wr",
                 "strings": [
-                    "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} brought up short when the tunnel abruptly ends. It seems this tunnel leads to nothing but a dead end only a few fox-lengths from the entrance."
+                    "s_c0 rushes into the tunnels with a gleeful meow! A new place to explore and discover! {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} brought up short when the tunnel abruptly ends. It seems this tunnel leads to nothing but a dead end only a few fox-lengths from the entrance."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6158,7 +6158,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -6272,10 +6272,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "strings": [
-                    "s_c's squawk of surprise immediately turns to interest. The tunnels {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} tripped into are unfamiliar to {PRONOUN/s_c/object}, and {PRONOUN/s_c/subject} {VERB/s_c/call/calls} the patrol over to check them out. p_l praises {PRONOUN/s_c/object} for the knowledge {PRONOUN/s_c/subject} {VERB/s_c/display/displays} on burrow safety, making s_c puff up with pride."
+                    "s_c0's squawk of surprise immediately turns to interest. The tunnels {PRONOUN/s_c0/subject}{VERB/s_c0/'ve/'s} tripped into are unfamiliar to {PRONOUN/s_c0/object}, and {PRONOUN/s_c0/subject} {VERB/s_c0/call/calls} the patrol over to check them out. p_l praises {PRONOUN/s_c0/object} for the knowledge {PRONOUN/s_c0/subject} {VERB/s_c0/display/displays} on burrow safety, making s_c0 puff up with pride."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6291,7 +6291,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -6310,7 +6310,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -6327,10 +6327,10 @@
                 "frequency": 4,
                 "outcome_art": "backgrounds/pln_sett",
                 "strings": [
-                    "s_c didn't know this old badger sett was here, and the patrol halts to allow the apprentice to explore. It's valuable to know where all the hideyholes are within the grasslands, just in case of danger. p_l doesn't mind taking the time to let s_c discover the tunnels, which are known and safe."
+                    "s_c0 didn't know this old badger sett was here, and the patrol halts to allow the apprentice to explore. It's valuable to know where all the hideyholes are within the grasslands, just in case of danger. p_l doesn't mind taking the time to let s_c0 discover the tunnels, which are known and safe."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6351,7 +6351,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -6368,10 +6368,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_trainingfail_Ap",
                 "strings": [
-                    "s_c shivers, levering {PRONOUN/s_c/self} out of the burrow entrance {PRONOUN/s_c/subject} tripped into. p_l asks if {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to explore it, but s_c shakes {PRONOUN/s_c/poss} head no. {PRONOUN/s_c/subject/CAP} can't explain it, but the tunnel gives {PRONOUN/s_c/object} flashes of clair_list/s_c."
+                    "s_c0 shivers, levering {PRONOUN/s_c0/self} out of the burrow entrance {PRONOUN/s_c0/subject} tripped into. p_l asks if {PRONOUN/s_c0/subject} {VERB/s_c0/want/wants} to explore it, but s_c0 shakes {PRONOUN/s_c0/poss} head no. {PRONOUN/s_c0/subject/CAP} can't explain it, but the tunnel gives {PRONOUN/s_c0/object} flashes of clair_list/s_c0."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6388,7 +6388,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -6400,7 +6400,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "p_l offered s_c the chance to explore a tunnel, but s_c wanted to carry on with the patrol."
+                            "cats_from": "p_l offered s_c0 the chance to explore a tunnel, but s_c0 wanted to carry on with the patrol."
                         }
                     }
                 ]
@@ -6409,10 +6409,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "strings": [
-                    "Whoops! s_c grins up at the rest of the patrol, remarkably good-natured about falling into a random hole, all things considered."
+                    "Whoops! s_c0 grins up at the rest of the patrol, remarkably good-natured about falling into a random hole, all things considered."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6430,7 +6430,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -6450,10 +6450,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_trainingsuccess_Ap",
                 "strings": [
-                    "p_l would've told s_c about any known tunnels near here. Is this a new one? It turns out no, but it's a (newly collapsed) entrance to a known network, and the patrol makes sure to particularly praise s_c for discovering it, even if accidentally."
+                    "p_l would've told s_c0 about any known tunnels near here. Is this a new one? It turns out no, but it's a (newly collapsed) entrance to a known network, and the patrol makes sure to particularly praise s_c0 for discovering it, even if accidentally."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6470,7 +6470,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -6489,7 +6489,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -6506,10 +6506,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/pln_bord_tunnel_Ap",
                 "strings": [
-                    "The apprentice has made an accidental discovery, tripping into a well-hidden burrow entrance. It's always valuable to have a safe place to retreat to near c_n's borders, s_c points out. {PRONOUN/s_c/subject/CAP} {VERB/s_c/check/checks} over the tunnel \u00e2\u20ac\u201d the scents inside are long stale, but the construction is still good. One day, in danger, it might save a Clanmate's life."
+                    "The apprentice has made an accidental discovery, tripping into a well-hidden burrow entrance. It's always valuable to have a safe place to retreat to near c_n's borders, s_c0 points out. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/check/checks} over the tunnel \u00e2\u20ac\u201d the scents inside are long stale, but the construction is still good. One day, in danger, it might save a Clanmate's life."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6525,7 +6525,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -6545,7 +6545,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_talking_ApWr",
                 "strings": [
-                    "r_c1 seems a little freaked out by {PRONOUN/r_c1/poss} discovery \u00e2\u20ac\u201d understandable, considering {PRONOUN/r_c1/subject} fell into it. s_c sings a nursery song as {PRONOUN/s_c/subject} {VERB/s_c/free/frees} r_c1. Dig a tunnel, dig, dig a tunnel, when you're done, you dig a bigger tunnel, dig a tunnel, dig, dig a tunnel, quick before the hyena come."
+                    "r_c1 seems a little freaked out by {PRONOUN/r_c1/poss} discovery \u00e2\u20ac\u201d understandable, considering {PRONOUN/r_c1/subject} fell into it. s_c0 sings a nursery song as {PRONOUN/s_c0/subject} {VERB/s_c0/free/frees} r_c1. Dig a tunnel, dig, dig a tunnel, when you're done, you dig a bigger tunnel, dig a tunnel, dig, dig a tunnel, quick before the hyena come."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -6553,7 +6553,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6569,7 +6569,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats",
@@ -6586,7 +6586,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats",
@@ -6603,7 +6603,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -6878,10 +6878,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_speakingcat_Wr",
                 "strings": [
-                    "It's always valuable to have a safe place to retreat to near c_n's borders, s_c points out. {PRONOUN/s_c/subject/CAP} {VERB/s_c/check/checks} over the tunnel \u00e2\u20ac\u201d the scents inside are long stale, but the construction is still good. The patrol carefully marks the burrow. One day, in danger, it might save a Clanmate's life."
+                    "It's always valuable to have a safe place to retreat to near c_n's borders, s_c0 points out. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/check/checks} over the tunnel \u00e2\u20ac\u201d the scents inside are long stale, but the construction is still good. The patrol carefully marks the burrow. One day, in danger, it might save a Clanmate's life."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6897,7 +6897,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -6917,10 +6917,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_hunt_burrow_Wr",
                 "strings": [
-                    "This newly discovered tunnel reminds s_c of an old nursery song, and {PRONOUN/s_c/subject} {VERB/s_c/sing/sings} it quietly as the cats assess the tunnel for safety. Dig a tunnel, dig, dig a tunnel, when you're done, you dig a bigger tunnel, dig a tunnel, dig, dig a tunnel, quick before the hyena come."
+                    "This newly discovered tunnel reminds s_c0 of an old nursery song, and {PRONOUN/s_c0/subject} {VERB/s_c0/sing/sings} it quietly as the cats assess the tunnel for safety. Dig a tunnel, dig, dig a tunnel, when you're done, you dig a bigger tunnel, dig a tunnel, dig, dig a tunnel, quick before the hyena come."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6936,7 +6936,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats",
@@ -6953,7 +6953,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats",
@@ -6974,10 +6974,10 @@
                 "frequency": 4,
                 "outcome_art": "backgrounds/gen_dirttunnel",
                 "strings": [
-                    "s_c is brought forward to check it out. After careful consideration, {PRONOUN/s_c/subject} {VERB/s_c/determine/determines} that this burrow was dug by a hedgehog, then enlarged by a stoat, explaining its recent appearance. The home renovator appears to have moved on, leaving it open for c_n's use."
+                    "s_c0 is brought forward to check it out. After careful consideration, {PRONOUN/s_c0/subject} {VERB/s_c0/determine/determines} that this burrow was dug by a hedgehog, then enlarged by a stoat, explaining its recent appearance. The home renovator appears to have moved on, leaving it open for c_n's use."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -6993,7 +6993,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -7013,10 +7013,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_hunt_burrow_Wr",
                 "strings": [
-                    "As r_c0 steps forward to check it out, s_c yowls to stop! {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} spotted the subtle signs of tracks leading into the burrow, and if it's inhabited... A grumble from inside backs {PRONOUN/s_c/object} up."
+                    "As r_c0 steps forward to check it out, s_c0 yowls to stop! {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'ve/'s} spotted the subtle signs of tracks leading into the burrow, and if it's inhabited... A grumble from inside backs {PRONOUN/s_c0/object} up."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "HUNTER,2",
@@ -7033,7 +7033,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -7053,10 +7053,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_crouching_Wr",
                 "strings": [
-                    "Careful consideration is right up s_c's alley. {PRONOUN/s_c/subject/CAP} {VERB/s_c/investigate/investigates} the tunnel slowly and thoroughly before {PRONOUN/s_c/subject} {VERB/s_c/give/gives} the okay for the patrol to mark the new discovery as a useful and safe feature for c_n to use."
+                    "Careful consideration is right up s_c0's alley. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/investigate/investigates} the tunnel slowly and thoroughly before {PRONOUN/s_c0/subject} {VERB/s_c0/give/gives} the okay for the patrol to mark the new discovery as a useful and safe feature for c_n to use."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -7076,7 +7076,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -7112,10 +7112,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/pln_bord_tunnel_Wr",
                 "strings": [
-                    "s_c stops the patrol before they can move to enter the tunnels. After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away for the moment but could return soon. The patrol quickly moves on."
+                    "s_c0 stops the patrol before they can move to enter the tunnels. After a careful inspection of the entrance, s_c0 concludes that a wolverine has claimed this as its home. The predator seems to be away for the moment but could return soon. The patrol quickly moves on."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -7132,7 +7132,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -7152,10 +7152,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/pln_bord_tunnel_Wr",
                 "strings": [
-                    "s_c stops the patrol before they can move to enter the tunnels. After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away for the moment, but could return soon. The patrol quickly moves on."
+                    "s_c0 stops the patrol before they can move to enter the tunnels. After a careful inspection of the entrance, s_c0 concludes that a wolverine has claimed this as its home. The predator seems to be away for the moment, but could return soon. The patrol quickly moves on."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -7172,7 +7172,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -7194,10 +7194,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittymad_Wr",
                 "strings": [
-                    "s_c boldly clambers in the tight entrance, only to be greeted by an explosion of ruffled feathers. The burrowing owls hoot their outrage and engage in some outright chemical warfare, and the rest of the patrol stiffles laughter as s_c backpedals, covered in bird poop."
+                    "s_c0 boldly clambers in the tight entrance, only to be greeted by an explosion of ruffled feathers. The burrowing owls hoot their outrage and engage in some outright chemical warfare, and the rest of the patrol stiffles laughter as s_c0 backpedals, covered in bird poop."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -7217,7 +7217,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -7237,10 +7237,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittymad_Wr",
                 "strings": [
-                    "s_c boldly clambers in the tight entrance, only to be greeted by an explosion of ruffled feathers. The burrowing owls hoot their outrage and engage in some outright chemical warfare, and the rest of the patrol stiffles laughter as s_c backpedals, covered in bird poop."
+                    "s_c0 boldly clambers in the tight entrance, only to be greeted by an explosion of ruffled feathers. The burrowing owls hoot their outrage and engage in some outright chemical warfare, and the rest of the patrol stiffles laughter as s_c0 backpedals, covered in bird poop."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -7260,7 +7260,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -7278,7 +7278,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "condition": [
                             "beak_bite"
@@ -7321,10 +7321,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_jolly_Wr",
                 "strings": [
-                    "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} brought up short when the tunnel abruptly ends. It seems this tunnel leads to nothing but a dead end only a few fox-lengths from the entrance."
+                    "s_c0 rushes into the tunnels with a gleeful meow! A new place to explore and discover! {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} brought up short when the tunnel abruptly ends. It seems this tunnel leads to nothing but a dead end only a few fox-lengths from the entrance."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -7341,7 +7341,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -7360,10 +7360,10 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "s_c rushes into the tunnels with a gleeful meow! It's greeting by whimsical, echoing giggles, as the hyena cub inside laughs nervously and bites."
+                    "s_c0 rushes into the tunnels with a gleeful meow! It's greeting by whimsical, echoing giggles, as the hyena cub inside laughs nervously and bites."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -7380,7 +7380,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -7398,7 +7398,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -7565,10 +7565,10 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyotedanger",
                 "strings": [
-                    "Frozen in the face of the large threat, {PRONOUN/s_c/subject} {VERB/s_c/muster/musters} a surge of courage. As the coyote comes into sight {PRONOUN/s_c/subject/} {VERB/s_c/manage/manages} to flee from the coyote, sprinting back to camp to warn the clan."
+                    "Frozen in the face of the large threat, {PRONOUN/s_c0/subject} {VERB/s_c0/muster/musters} a surge of courage. As the coyote comes into sight {PRONOUN/s_c0/subject/} {VERB/s_c0/manage/manages} to flee from the coyote, sprinting back to camp to warn the clan."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -7606,10 +7606,10 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyotedanger",
                 "strings": [
-                    "s_c doesn't have much time to think as {PRONOUN/s_c/subject} {VERB/s_c/hear/hears} the yips. The coyote has {PRONOUN/s_c/poss} scent. Seeing some thunderbeast dung nearby, s_c dives for it, rolling around in it before slinking through the tall grass, being careful to keep hidden. It's a tense moment, but s_c {VERB/s_c/manage/manages} to make it home safe."
+                    "s_c0 doesn't have much time to think as {PRONOUN/s_c0/subject} {VERB/s_c0/hear/hears} the yips. The coyote has {PRONOUN/s_c0/poss} scent. Seeing some thunderbeast dung nearby, s_c0 dives for it, rolling around in it before slinking through the tall grass, being careful to keep hidden. It's a tense moment, but s_c0 {VERB/s_c0/manage/manages} to make it home safe."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -7630,7 +7630,7 @@
                             "high_social"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -7648,10 +7648,10 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "s_c hears the yips. The coyote has {PRONOUN/s_c/poss} scent. {PRONOUN/s_c/subject/CAP} {VERB/s_c/run/runs}. {VERB/s_c/Run/Runs} as fast as {PRONOUN/s_c/subject} can because {PRONOUN/s_c/poss} life depends on it. But s_c can't run forever, the thudding footsteps are catching up. {PRONOUN/s_c/subject/CAP} {VERB/s_c/see/sees} a group of sleeping thunderbeasts and {VERB/s_c/dart/darts} to them, yowling. As a thunderbeast slowly stands, the coyote turns tail and flees."
+                    "s_c0 hears the yips. The coyote has {PRONOUN/s_c0/poss} scent. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/run/runs}. {VERB/s_c0/Run/Runs} as fast as {PRONOUN/s_c0/subject} can because {PRONOUN/s_c0/poss} life depends on it. But s_c0 can't run forever, the thudding footsteps are catching up. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/see/sees} a group of sleeping thunderbeasts and {VERB/s_c0/dart/darts} to them, yowling. As a thunderbeast slowly stands, the coyote turns tail and flees."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -7672,7 +7672,7 @@
                             "high_social"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -7690,10 +7690,10 @@
                 "frequency": 3,
                 "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "s_c hears the yips. The coyote has {PRONOUN/s_c/poss} scent.  {PRONOUN/s_c/subject/CAP} {VERB/s_c/run/runs}. {VERB/s_c/Run/Runs} as fast as {PRONOUN/s_c/subject} can because {PRONOUN/s_c/poss} life depends on it. But s_c can't run forever, the thudding footsteps are catching up.  {PRONOUN/s_c/subject/CAP} {VERB/s_c/see/sees} a group of sleeping thunderbeasts, and {VERB/s_c/dart/darts} to them, yowling. s_c {VERB/s_c/watch/watches} with a new respect and fear as the thunderbeasts kill the predator with ease."
+                    "s_c0 hears the yips. The coyote has {PRONOUN/s_c0/poss} scent.  {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/run/runs}. {VERB/s_c0/Run/Runs} as fast as {PRONOUN/s_c0/subject} can because {PRONOUN/s_c0/poss} life depends on it. But s_c0 can't run forever, the thudding footsteps are catching up.  {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/see/sees} a group of sleeping thunderbeasts, and {VERB/s_c0/dart/darts} to them, yowling. s_c0 {VERB/s_c0/watch/watches} with a new respect and fear as the thunderbeasts kill the predator with ease."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -7714,7 +7714,7 @@
                             "high_social"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -7738,10 +7738,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_running_Wr",
                 "strings": [
-                    "s_c bolts back to camp, easily keeping ahead of the beast. {PRONOUN/s_c/subject/CAP} {VERB/s_c/burst/bursts} into camp, yowling a warning with plenty of time for c_n to prepare to drive the coyote away."
+                    "s_c0 bolts back to camp, easily keeping ahead of the beast. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/burst/bursts} into camp, yowling a warning with plenty of time for c_n to prepare to drive the coyote away."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -7778,10 +7778,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "s_c sets up an ambush for the wandering coyote, bloodying its snout and leading it on a wild chasing dance across the border and out of c_n territory."
+                    "s_c0 sets up an ambush for the wandering coyote, bloodying its snout and leading it on a wild chasing dance across the border and out of c_n territory."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -7796,7 +7796,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -7817,10 +7817,10 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyotedanger",
                 "strings": [
-                    "{PRONOUN/s_c/subject/CAP} {VERB/s_c/don't/doesn't} feel like {PRONOUN/s_c/subject} {VERB/s_c/have/has} anything like the skill or power, but s_c would give {PRONOUN/s_c/poss} life for c_n, charging in to courageously lead the coyote away from c_n territory. Each yip and bark has to be the herald of {PRONOUN/s_c/poss} doom, each rancid breath the last thing {PRONOUN/s_c/subject}'ll ever smell, but somehow, eventually, limbs and lungs burning, {PRONOUN/s_c/subject} {VERB/s_c/leap/leaps} to refuge."
+                    "{PRONOUN/s_c0/subject/CAP} {VERB/s_c0/don't/doesn't} feel like {PRONOUN/s_c0/subject} {VERB/s_c0/have/has} anything like the skill or power, but s_c0 would give {PRONOUN/s_c0/poss} life for c_n, charging in to courageously lead the coyote away from c_n territory. Each yip and bark has to be the herald of {PRONOUN/s_c0/poss} doom, each rancid breath the last thing {PRONOUN/s_c0/subject}'ll ever smell, but somehow, eventually, limbs and lungs burning, {PRONOUN/s_c0/subject} {VERB/s_c0/leap/leaps} to refuge."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -7843,7 +7843,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -7946,10 +7946,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "s_c knows coyotes are dangerous, but {PRONOUN/s_c/subject} {VERB/s_c/are/is} stronger and better than a simple beast. However, s_c underestimates the coyote's power. In the struggle, the coyote manages to overpower {PRONOUN/s_c/object} and delivers a vicious bite, leaving {PRONOUN/s_c/object} with a deep wound on {PRONOUN/s_c/poss} leg. {PRONOUN/s_c/subject/CAP} narrowly escapes with {PRONOUN/s_c/poss} life."
+                    "s_c0 knows coyotes are dangerous, but {PRONOUN/s_c0/subject} {VERB/s_c0/are/is} stronger and better than a simple beast. However, s_c0 underestimates the coyote's power. In the struggle, the coyote manages to overpower {PRONOUN/s_c0/object} and delivers a vicious bite, leaving {PRONOUN/s_c0/object} with a deep wound on {PRONOUN/s_c0/poss} leg. {PRONOUN/s_c0/subject/CAP} narrowly escapes with {PRONOUN/s_c0/poss} life."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -7965,7 +7965,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "clan",
@@ -7985,7 +7985,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "condition": [
                             "mangled leg"
@@ -8000,10 +8000,10 @@
                 "outcome_art": "cat_sprites/gen_dead_Wr_EXPLICIT",
                 "outcome_art_clean": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "s_c knows coyotes are dangerous, but {PRONOUN/s_c/subject} {VERB/s_c/are/is} stronger and better than a simple beast. However, s_c underestimates the coyote's power. In the struggle, the coyote manages to overpower {PRONOUN/s_c/object} and delivers a vicious bite, pulling s_c down to the ground."
+                    "s_c0 knows coyotes are dangerous, but {PRONOUN/s_c0/subject} {VERB/s_c0/are/is} stronger and better than a simple beast. However, s_c0 underestimates the coyote's power. In the struggle, the coyote manages to overpower {PRONOUN/s_c0/object} and delivers a vicious bite, pulling s_c0 down to the ground."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -8019,7 +8019,7 @@
                 "death": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "history": "This cat died after trying to take on a coyote alone."
                     }
@@ -8030,10 +8030,10 @@
                 "outcome_art": "cat_sprites/gen_dead_Wr_EXPLICIT",
                 "outcome_art_clean": "animals/animals/gen_coyotedanger",
                 "strings": [
-                    "Frozen in the face of the large threat, s_c is unable to move as the jaws descend upon {PRONOUN/s_c/object}."
+                    "Frozen in the face of the large threat, s_c0 is unable to move as the jaws descend upon {PRONOUN/s_c0/object}."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -8049,7 +8049,7 @@
                 "death": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "history": "This cat died by the jaws of a coyote after freezing up."
                     }
@@ -8060,10 +8060,10 @@
                 "outcome_art": "cat_sprites/gen_dead_Wr_EXPLICIT",
                 "outcome_art_clean": "animals/animals/gen_coyotedanger",
                 "strings": [
-                    "Maybe s_c should have been paying more attention. {PRONOUN/s_c/subject/CAP} {VERB/s_c/see/sees} darkness around {PRONOUN/s_c/object}, and {VERB/s_c/realize/realizes} the terrible mistake of {PRONOUN/s_c/poss} distraction."
+                    "Maybe s_c0 should have been paying more attention. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/see/sees} darkness around {PRONOUN/s_c0/object}, and {VERB/s_c0/realize/realizes} the terrible mistake of {PRONOUN/s_c0/poss} distraction."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -8082,7 +8082,7 @@
                 "death": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "history": "This cat died due to not paying attention to {PRONOUN/m_c/poss} surroundings."
                     }

@@ -59,10 +59,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Anticipating the heat of the greenleaf sun, s_c has positioned themselves in the shadowed depths around a shaded tiny pool in the rocks. As predicted, it's not long until the water draws in a Thunderpath-runner, and the bird is dispatched neatly and quietly."
+                    "Anticipating the heat of the greenleaf sun, s_c0 has positioned themselves in the shadowed depths around a shaded tiny pool in the rocks. As predicted, it's not long until the water draws in a Thunderpath-runner, and the bird is dispatched neatly and quietly."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -84,10 +84,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but also s_c, and they settle back down to wait until it's cooler to try and bring their catch back to c_n."
+                    "s_c0 watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but also s_c0, and they settle back down to wait until it's cooler to try and bring their catch back to c_n."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -188,10 +188,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but sadly not in the place s_c waits."
+                    "s_c0 watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but sadly not in the place s_c0 waits."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "responsible",
@@ -232,10 +232,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Refusing to stop hunting, s_c boldly decides to go into a canyon where it'll be cooler. They don't find any prey, but don't overheat either."
+                    "Refusing to stop hunting, s_c0 boldly decides to go into a canyon where it'll be cooler. They don't find any prey, but don't overheat either."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "adventurous",
@@ -303,10 +303,10 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "s_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
+                    "s_c0 collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "adventurous",
@@ -323,7 +323,7 @@
                 "death": [
                     {
                         "cats": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "history": "This cat died from heat stroke."
                     }

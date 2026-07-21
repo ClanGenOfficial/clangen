@@ -133,7 +133,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As they watch the hummingbird nest in the shadow of the eagle nest, s_c tells r_c1 how the hummingbird arrival signals the start of greenleaf and how the Clan will know it's leaf-fall when the birds leave their territory. The more hummingbirds there are that year, the better a greenleaf it'll be."
+                    "As they watch the hummingbird nest in the shadow of the eagle nest, s_c0 tells r_c1 how the hummingbird arrival signals the start of greenleaf and how the Clan will know it's leaf-fall when the birds leave their territory. The more hummingbirds there are that year, the better a greenleaf it'll be."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -141,7 +141,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "TEACHER,1"
@@ -190,7 +190,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As they watch the hummingbird nest in the shadow of the eagle nest, s_c tells r_c1 how c_n's founders followed the hummingbird's wisdom, setting up the Clan in the shadow of the dangers of the mountain to protect c_n cats from the attention of Twolegs and endless wars with other cat Clans."
+                    "As they watch the hummingbird nest in the shadow of the eagle nest, s_c0 tells r_c1 how c_n's founders followed the hummingbird's wisdom, setting up the Clan in the shadow of the dangers of the mountain to protect c_n cats from the attention of Twolegs and endless wars with other cat Clans."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -198,7 +198,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "SPEAKER,2",
@@ -457,10 +457,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As they watch the hummingbird nest in the shadow of the eagle nest, s_c tells the apprentices how the hummingbird arrival signals the start of greenleaf and how the Clan will know it's leaf-fall when the birds leave their territory. The more hummingbirds there are that year, the better a greenleaf it'll be."
+                    "As they watch the hummingbird nest in the shadow of the eagle nest, s_c0 tells the apprentices how the hummingbird arrival signals the start of greenleaf and how the Clan will know it's leaf-fall when the birds leave their territory. The more hummingbirds there are that year, the better a greenleaf it'll be."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "TEACHER,1"
@@ -511,10 +511,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As they watch the hummingbird nest in the shadow of the eagle nest, s_c tells the apprentices how c_n's founders followed the hummingbird's wisdom, setting up the Clan in the shadow of the dangers of the mountain to protect c_n cats from the attention of Twolegs and endless wars with other cat Clans."
+                    "As they watch the hummingbird nest in the shadow of the eagle nest, s_c0 tells the apprentices how c_n's founders followed the hummingbird's wisdom, setting up the Clan in the shadow of the dangers of the mountain to protect c_n cats from the attention of Twolegs and endless wars with other cat Clans."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "SPEAKER,2",
@@ -793,7 +793,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 leaps into the meadows, bouncing around as hummingbirds flit away before {PRONOUN/r_c1/object}. s_c watches {PRONOUN/r_c1/object} indulgently, and when {PRONOUN/r_c1/subject} {VERB/r_c1/slow/slows} down s_c explains about how c_n uses hunting the agile birds as the ultimate test \u00e2\u20ac\u201d it's considered the mark of a truly fantastic hunter to catch one without using claws and pluck a single shining feather."
+                    "r_c1 leaps into the meadows, bouncing around as hummingbirds flit away before {PRONOUN/r_c1/object}. s_c0 watches {PRONOUN/r_c1/object} indulgently, and when {PRONOUN/r_c1/subject} {VERB/r_c1/slow/slows} down s_c0 explains about how c_n uses hunting the agile birds as the ultimate test \u00e2\u20ac\u201d it's considered the mark of a truly fantastic hunter to catch one without using claws and pluck a single shining feather."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -801,7 +801,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "TEACHER,1"
@@ -850,7 +850,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c pulls r_c1's attention towards the flashing hummingbirds darting about. Once upon a time, a fire threatened to consume everything but the bare rock of the mountains, but StarClan caught its embers, stopping it from spreading. They released those embers in greenleaf, to fly above the flowering meadows they'd saved from destruction."
+                    "s_c0 pulls r_c1's attention towards the flashing hummingbirds darting about. Once upon a time, a fire threatened to consume everything but the bare rock of the mountains, but StarClan caught its embers, stopping it from spreading. They released those embers in greenleaf, to fly above the flowering meadows they'd saved from destruction."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -858,7 +858,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "SPEAKER,2",
@@ -1074,10 +1074,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The apprentices leap into the meadows, bouncing around as hummingbirds flit away before them. p_l watches them indulgently, and when they slow down s_c explains about how c_n uses hunting the agile birds as the ultimate test \u00e2\u20ac\u201d it's considered the mark of a truly fantastic hunter to catch one without using claws and pluck a single shining feather."
+                    "The apprentices leap into the meadows, bouncing around as hummingbirds flit away before them. p_l watches them indulgently, and when they slow down s_c0 explains about how c_n uses hunting the agile birds as the ultimate test \u00e2\u20ac\u201d it's considered the mark of a truly fantastic hunter to catch one without using claws and pluck a single shining feather."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "TEACHER,1"
@@ -1128,10 +1128,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c pulls the apprentices' attention towards the flashing hummingbirds darting about. Once upon a time, a fire threatened to consume everything but the bare rock of the mountains, but StarClan caught its embers, stopping it from spreading. They released those embers in greenleaf, to fly above the flowering meadows they'd saved from destruction."
+                    "s_c0 pulls the apprentices' attention towards the flashing hummingbirds darting about. Once upon a time, a fire threatened to consume everything but the bare rock of the mountains, but StarClan caught its embers, stopping it from spreading. They released those embers in greenleaf, to fly above the flowering meadows they'd saved from destruction."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "SPEAKER,2",
@@ -1270,10 +1270,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/p_l/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} notice {PRONOUN/p_l/poss} own skill catching and keeping the bug."
+                    "s_c0 pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/p_l/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} notice {PRONOUN/p_l/poss} own skill catching and keeping the bug."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1401,10 +1401,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c listens attentively as p_l tells the patrol about the pretty queen who gave them sunset. s_c can't help but send a silent thanks up to StarClan, since the evening grants c_n some of the best conditions to gather prey in the mountains."
+                    "s_c0 listens attentively as p_l tells the patrol about the pretty queen who gave them sunset. s_c0 can't help but send a silent thanks up to StarClan, since the evening grants c_n some of the best conditions to gather prey in the mountains."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "thoughtful",
@@ -1446,10 +1446,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c is sympathetic to the poor she-cat in the story. To have been killed by an evil leader, her last act was the gift of the sunset... s_c doesn't know what {PRONOUN/s_c/subject} would do if {PRONOUN/s_c/subject} {VERB/s_c/were/was} in the same situation."
+                    "s_c0 is sympathetic to the poor she-cat in the story. To have been killed by an evil leader, her last act was the gift of the sunset... s_c0 doesn't know what {PRONOUN/s_c0/subject} would do if {PRONOUN/s_c0/subject} {VERB/s_c0/were/was} in the same situation."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "compassionate",
@@ -1489,7 +1489,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1509,10 +1509,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c scoffs. Couldn't the she-cat have killed her evil leader, rather than being killed? {PRONOUN/s_c/subject/CAP} might respect {PRONOUN/s_c/poss} leader, but if lead_name ever was so cruel, then s_c would have no issue rebelling."
+                    "s_c0 scoffs. Couldn't the she-cat have killed her evil leader, rather than being killed? {PRONOUN/s_c0/subject/CAP} might respect {PRONOUN/s_c0/poss} leader, but if lead_name ever was so cruel, then s_c0 would have no issue rebelling."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "bloodthirsty",
@@ -1552,7 +1552,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats",
@@ -1573,10 +1573,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Despite s_c's protests about wasting time on a nursery tale, {PRONOUN/s_c/subject} {VERB/s_c/find/finds} {PRONOUN/s_c/self} enjoying listening to p_l telling the story. Perhaps it isn't so bad to listen to a fable once in a while."
+                    "Despite s_c0's protests about wasting time on a nursery tale, {PRONOUN/s_c0/subject} {VERB/s_c0/find/finds} {PRONOUN/s_c0/self} enjoying listening to p_l telling the story. Perhaps it isn't so bad to listen to a fable once in a while."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "grumpy",
@@ -1616,7 +1616,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1632,7 +1632,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1648,10 +1648,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c promises that if c_n ever has a terrible leader while <i>{PRONOUN/s_c/subject}{VERB/s_c/'re/'s}</i> alive, {PRONOUN/s_c/subject}'ll make sure to save the Clan. Yes, that she-cat gave them the sunset with her death \u00e2\u20ac\u201d but her Clan's evil leader lived on."
+                    "s_c0 promises that if c_n ever has a terrible leader while <i>{PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s}</i> alive, {PRONOUN/s_c0/subject}'ll make sure to save the Clan. Yes, that she-cat gave them the sunset with her death \u00e2\u20ac\u201d but her Clan's evil leader lived on."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "fierce",
@@ -1690,7 +1690,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats",
@@ -1711,10 +1711,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c wonders, if that was how they got sunset... then how did they get sunrise...? Perhaps {PRONOUN/s_c/subject}'ll ask p_l later back at camp."
+                    "s_c0 wonders, if that was how they got sunset... then how did they get sunrise...? Perhaps {PRONOUN/s_c0/subject}'ll ask p_l later back at camp."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "thoughtful",
@@ -1751,7 +1751,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1794,10 +1794,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Right as p_l gets to the good part, s_c interrupts by yawning and walking off. p_l feels disheartened and doesn't continue."
+                    "Right as p_l gets to the good part, s_c0 interrupts by yawning and walking off. p_l feels disheartened and doesn't continue."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "troublesome",
@@ -1817,7 +1817,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1837,10 +1837,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c says that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} not interested in nursery tales and would rather sink {PRONOUN/s_c/poss} teeth into some good prey. p_l twitches {PRONOUN/p_l/poss} whiskers skeptically but lets {PRONOUN/s_c/object} go without comment."
+                    "s_c0 says that {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} not interested in nursery tales and would rather sink {PRONOUN/s_c0/poss} teeth into some good prey. p_l twitches {PRONOUN/p_l/poss} whiskers skeptically but lets {PRONOUN/s_c0/object} go without comment."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "cold",
@@ -1862,7 +1862,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1882,10 +1882,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c cringes, unable to bear hearing such a sad tale. p_l wraps a tail around {PRONOUN/s_c/object} and smoothly turns the conversation to happier things."
+                    "s_c0 cringes, unable to bear hearing such a sad tale. p_l wraps a tail around {PRONOUN/s_c0/object} and smoothly turns the conversation to happier things."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "compassionate",
@@ -1908,7 +1908,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1924,10 +1924,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c finds this particular tale depressing and pads away to train by {PRONOUN/s_c/self}."
+                    "s_c0 finds this particular tale depressing and pads away to train by {PRONOUN/s_c0/self}."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "gloomy",
@@ -1944,7 +1944,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1964,10 +1964,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Right as p_l gets to the good part, s_c interrupts, excitedly describing the ending {PRONOUN/s_c/self}. p_l feels quite put out."
+                    "Right as p_l gets to the good part, s_c0 interrupts, excitedly describing the ending {PRONOUN/s_c0/self}. p_l feels quite put out."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "flamboyant",
@@ -1986,7 +1986,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -2006,7 +2006,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [

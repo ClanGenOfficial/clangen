@@ -97,10 +97,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "If StarClan hissed at them, they should've hissed back, s_c argues. Their ancestors are nothing without them!"
+                    "If StarClan hissed at them, they should've hissed back, s_c0 argues. Their ancestors are nothing without them!"
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "rebellious"
@@ -118,7 +118,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -136,7 +136,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [

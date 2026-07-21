@@ -42,10 +42,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_ghost_WrWrWr",
                 "strings": [
-                    "It was generations ago, far before s_c's time. But there was once a great flock of insects that swarmed across c_n's land, so thick in the air they shaded out the sun. They ate damn near every grass seed on the plains, and the prairie was left battered for seasons afterward."
+                    "It was generations ago, far before s_c0's time. But there was once a great flock of insects that swarmed across c_n's land, so thick in the air they shaded out the sun. They ate damn near every grass seed on the plains, and the prairie was left battered for seasons afterward."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "LORE,1"
@@ -81,10 +81,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_ghost_WrWrWr",
                 "strings": [
-                    "Khepri the scarab rolls the sun into hiding for leaf-bare, s_c tells the patrol. Each winter, the moon journeys to rescue her sibling from below the horizon, fighting to take the sun from Khepri's grasp and bring warmth back to the land and renew the grass."
+                    "Khepri the scarab rolls the sun into hiding for leaf-bare, s_c0 tells the patrol. Each winter, the moon journeys to rescue her sibling from below the horizon, fighting to take the sun from Khepri's grasp and bring warmth back to the land and renew the grass."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "STORY,1"

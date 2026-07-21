@@ -520,10 +520,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found."
+                    "It takes all of s_c0's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -564,10 +564,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Night falls, and still s_c insists they keep going \u00e2\u20ac\u201d lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves."
+                    "Night falls, and still s_c0 insists they keep going \u00e2\u20ac\u201d lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -699,10 +699,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found."
+                    "It takes all of s_c0's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -725,10 +725,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Night falls, and still s_c insists to {PRONOUN/s_c/self} that {PRONOUN/s_c/subject} {VERB/s_c/need/needs} to keep going \u00e2\u20ac\u201d {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} those precious speckled leaves."
+                    "Night falls, and still s_c0 insists to {PRONOUN/s_c0/self} that {PRONOUN/s_c0/subject} {VERB/s_c0/need/needs} to keep going \u00e2\u20ac\u201d {PRONOUN/s_c0/subject} just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until {PRONOUN/s_c0/subject} {VERB/s_c0/find/finds} those precious speckled leaves."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -919,10 +919,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found."
+                    "It takes all of s_c0's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -979,10 +979,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Night falls, and still s_c insists they keep going \u00e2\u20ac\u201d they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
+                    "Night falls, and still s_c0 insists they keep going \u00e2\u20ac\u201d they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1154,11 +1154,11 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c has always been good at talking, but chatting with r_c0 {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} like {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} have to be. It's just an herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when {PRONOUN/s_c/subject} {VERB/s_c/return/returns} to camp, smiling softly."
+                    "s_c0 has always been good at talking, but chatting with r_c0 {PRONOUN/s_c0/subject} {VERB/s_c0/feel/feels} like {PRONOUN/s_c0/subject} {VERB/s_c0/don't/doesn't} have to be. It's just an herb gathering patrol, but s_c0 feels more relaxed than {PRONOUN/s_c0/subject}{VERB/s_c0/'ve/'s} felt in moons when {PRONOUN/s_c0/subject} {VERB/s_c0/return/returns} to camp, smiling softly."
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "MEDIATOR,1",
@@ -1227,10 +1227,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+                    "Not only do they not find anything, p_l wants to murder s_c0. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "troublesome",
@@ -1334,11 +1334,11 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c has always been good at talking, but chatting with r_c0 {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} like {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} have to be. It's just an herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when {PRONOUN/s_c/subject} {VERB/s_c/return/returns} to camp, smiling softly."
+                    "s_c0 has always been good at talking, but chatting with r_c0 {PRONOUN/s_c0/subject} {VERB/s_c0/feel/feels} like {PRONOUN/s_c0/subject} {VERB/s_c0/don't/doesn't} have to be. It's just an herb gathering patrol, but s_c0 feels more relaxed than {PRONOUN/s_c0/subject}{VERB/s_c0/'ve/'s} felt in moons when {PRONOUN/s_c0/subject} {VERB/s_c0/return/returns} to camp, smiling softly."
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "MEDIATOR,1",
@@ -1407,10 +1407,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Not only do they not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+                    "Not only do they not find anything, p_l wants to murder s_c0. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "troublesome",

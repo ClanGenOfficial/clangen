@@ -147,7 +147,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As the \"rocks\" wake and reveal themselves to be the most massive animals r_c1 and r_c2 have ever seen, s_c reassures them \u00e2\u20ac\u201d they may never have seen these frightening seals before, but c_n has. s_c spends the morning quizzing the apprentices until each is able to identify a male nosy-seal with his trunk versus the comparatively smaller females."
+                    "As the \"rocks\" wake and reveal themselves to be the most massive animals r_c1 and r_c2 have ever seen, s_c0 reassures them \u00e2\u20ac\u201d they may never have seen these frightening seals before, but c_n has. s_c0 spends the morning quizzing the apprentices until each is able to identify a male nosy-seal with his trunk versus the comparatively smaller females."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -160,7 +160,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "TEACHER,1"
@@ -211,7 +211,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As the sun hits them and the massive boulders wake with grumbling snorts, r_c1 and r_c2 both look about to run. s_c quickly calms them, explaining that these massive yearly visitors to c_n are nosy-seals and that if the cats don't bother them, they won't bother the cats."
+                    "As the sun hits them and the massive boulders wake with grumbling snorts, r_c1 and r_c2 both look about to run. s_c0 quickly calms them, explaining that these massive yearly visitors to c_n are nosy-seals and that if the cats don't bother them, they won't bother the cats."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -224,7 +224,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "compassionate",
@@ -367,7 +367,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittyhappy_Ap",
                 "strings": [
-                    "s_c rolls {PRONOUN/s_c/poss} eyes. Yes, they <i>are</i> really here to walk and run and jump around the rockpools. It rained last night, and the rock is slippery, so these are perfect conditions. s_c tells the tale of a kit once saved by a warrior sprinting along the rocks in a storm, as r_c1 falls over and skids harmlessly into a pool."
+                    "s_c0 rolls {PRONOUN/s_c0/poss} eyes. Yes, they <i>are</i> really here to walk and run and jump around the rockpools. It rained last night, and the rock is slippery, so these are perfect conditions. s_c0 tells the tale of a kit once saved by a warrior sprinting along the rocks in a storm, as r_c1 falls over and skids harmlessly into a pool."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -375,7 +375,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "LORE,1"
@@ -440,7 +440,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittyhappy_Ap",
                 "strings": [
-                    "s_c chides r_c1 for {PRONOUN/r_c1/poss} skepticism. Rock scrambling is its own art form, in c_n's territory. What if r_c1 needs to cross an exposed area during a storm, or if a battle between Clans occurred in the tide pools? r_c1 concedes and pays attention as s_c teaches, gaining sure-footed confidence that will serve {PRONOUN/r_c1/object} well."
+                    "s_c0 chides r_c1 for {PRONOUN/r_c1/poss} skepticism. Rock scrambling is its own art form, in c_n's territory. What if r_c1 needs to cross an exposed area during a storm, or if a battle between Clans occurred in the tide pools? r_c1 concedes and pays attention as s_c0 teaches, gaining sure-footed confidence that will serve {PRONOUN/r_c1/object} well."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -448,7 +448,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "TEACHER,1"
@@ -503,7 +503,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittyhappy_Ap",
                 "strings": [
-                    "s_c laughs. No, they're here for something way cooler \u00e2\u20ac\u201d literally. Wetter, too. Here the rockpools are of deceptively different depths, so s_c's going to teach r_c1 how to judge which ones are deep enough to dive into and which ones won't even get {PRONOUN/r_c1/poss} belly fur wet."
+                    "s_c0 laughs. No, they're here for something way cooler \u00e2\u20ac\u201d literally. Wetter, too. Here the rockpools are of deceptively different depths, so s_c0's going to teach r_c1 how to judge which ones are deep enough to dive into and which ones won't even get {PRONOUN/r_c1/poss} belly fur wet."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -511,7 +511,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "SWIMMER,1"
@@ -566,7 +566,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_hunt_funrun_Wr",
                 "strings": [
-                    "If r_c1 thinks {PRONOUN/r_c1/subject} {VERB/r_c1/know/knows} how to walk on the rocks, {PRONOUN/r_c1/subject}'ll have to prove it \u00e2\u20ac\u201d and catch s_c. r_c1 scrambles after {PRONOUN/s_c/object}, around and around the slick rocks. But s_c is always a fox-length away, taunting and encouraging by turns, and r_c1 is left panting, exhausted, and admiring."
+                    "If r_c1 thinks {PRONOUN/r_c1/subject} {VERB/r_c1/know/knows} how to walk on the rocks, {PRONOUN/r_c1/subject}'ll have to prove it \u00e2\u20ac\u201d and catch s_c0. r_c1 scrambles after {PRONOUN/s_c0/object}, around and around the slick rocks. But s_c0 is always a fox-length away, taunting and encouraging by turns, and r_c1 is left panting, exhausted, and admiring."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -574,7 +574,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "RUNNER,1"

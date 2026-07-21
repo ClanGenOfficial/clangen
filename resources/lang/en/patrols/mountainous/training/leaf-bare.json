@@ -122,7 +122,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "After a while romping around in the heavy snow, r_c1 complains of the cold seeping into {PRONOUN/r_c1/poss} fur. s_c digs a little hollow, and invites {PRONOUN/r_c1/object} in to curl up with {PRONOUN/s_c/object}. Strictly for warmth purposes of course. They both stay there as the sun rises. Strictly for warmth."
+                    "After a while romping around in the heavy snow, r_c1 complains of the cold seeping into {PRONOUN/r_c1/poss} fur. s_c0 digs a little hollow, and invites {PRONOUN/r_c1/object} in to curl up with {PRONOUN/s_c0/object}. Strictly for warmth purposes of course. They both stay there as the sun rises. Strictly for warmth."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -130,7 +130,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "compassionate",
@@ -431,10 +431,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c wants to point out not the wolves, but the ravens around them. Wolves mostly tolerate ravens at their kills because it helps them find prey. Long ago, that bargain was offered to the cats of the world, but they foolishly betrayed the ravens and took the birds for food instead, and since then only the dogs have benefited from allies in the sky."
+                    "s_c0 wants to point out not the wolves, but the ravens around them. Wolves mostly tolerate ravens at their kills because it helps them find prey. Long ago, that bargain was offered to the cats of the world, but they foolishly betrayed the ravens and took the birds for food instead, and since then only the dogs have benefited from allies in the sky."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "SPEAKER,2",
@@ -486,7 +486,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c shows r_c1 that, even from this distance, they can judge how the wolves killed their prey, nipping it to exhaustion and then wrestling it down. It's not c_n's usual way, but it's important to remember that whatever works, works. Something to keep in mind for r_c1 if {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} ever part of a hunting patrol targeting large prey."
+                    "s_c0 shows r_c1 that, even from this distance, they can judge how the wolves killed their prey, nipping it to exhaustion and then wrestling it down. It's not c_n's usual way, but it's important to remember that whatever works, works. Something to keep in mind for r_c1 if {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} ever part of a hunting patrol targeting large prey."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -494,7 +494,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "TEACHER,1"
@@ -690,10 +690,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c wants to point out not the wolves, but the ravens around them. Wolves mostly tolerate ravens at their kills because it helps them find prey. Long ago, that bargain was offered to the cats of the world, but they foolishly betrayed the ravens and took the birds for food instead, and since then only the dogs have benefited from allies in the sky."
+                    "s_c0 wants to point out not the wolves, but the ravens around them. Wolves mostly tolerate ravens at their kills because it helps them find prey. Long ago, that bargain was offered to the cats of the world, but they foolishly betrayed the ravens and took the birds for food instead, and since then only the dogs have benefited from allies in the sky."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "SPEAKER,2",
@@ -747,7 +747,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c shows the apprentices that, even from this distance, they can judge how the wolves killed their prey, nipping it to exhaustion and then wrestling it down. It's not c_n's usual way, but it's important to remember that whatever works, works, and to keep it in mind for r_c1 and r_c2 if they're ever part of a hunting patrol targeting large prey."
+                    "s_c0 shows the apprentices that, even from this distance, they can judge how the wolves killed their prey, nipping it to exhaustion and then wrestling it down. It's not c_n's usual way, but it's important to remember that whatever works, works, and to keep it in mind for r_c1 and r_c2 if they're ever part of a hunting patrol targeting large prey."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -760,7 +760,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "TEACHER,1"
@@ -887,10 +887,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c can't help {PRONOUN/s_c/poss} fascination as p_l speaks about how a warrior was so powerful that they needed to tear a hole in Silverpelt just to be able to stop them. s_c hopes to one day be that powerful."
+                    "s_c0 can't help {PRONOUN/s_c0/poss} fascination as p_l speaks about how a warrior was so powerful that they needed to tear a hole in Silverpelt just to be able to stop them. s_c0 hopes to one day be that powerful."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "DARK,1"
@@ -923,7 +923,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -942,10 +942,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c hears the tale and is inspired. {PRONOUN/s_c/subject/CAP} {VERB/s_c/wish/wishes} {PRONOUN/s_c/subject} {VERB/s_c/were/was} as strong as the cats in the tale."
+                    "s_c0 hears the tale and is inspired. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/wish/wishes} {PRONOUN/s_c0/subject} {VERB/s_c0/were/was} as strong as the cats in the tale."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "bloodthirsty",
@@ -984,7 +984,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1000,10 +1000,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "At the end of the tale, s_c is inspired by how strong the outcast warrior is, but going against StarClan seems like a fool's errand. While s_c wouldn't mind being free of some of the rules of the Clan, {PRONOUN/s_c/subject} wouldn't dare go against StarClan."
+                    "At the end of the tale, s_c0 is inspired by how strong the outcast warrior is, but going against StarClan seems like a fool's errand. While s_c0 wouldn't mind being free of some of the rules of the Clan, {PRONOUN/s_c0/subject} wouldn't dare go against StarClan."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "rebellious",
@@ -1041,7 +1041,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1079,10 +1079,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l notices how eager and happy s_c seems to be and feels a bit uneasy after finishing the tale. No cat should be <i>that</i> pleased to hear this story..."
+                    "p_l notices how eager and happy s_c0 seems to be and feels a bit uneasy after finishing the tale. No cat should be <i>that</i> pleased to hear this story..."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "DARK,1"
@@ -1118,7 +1118,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1131,7 +1131,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1150,10 +1150,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "At the end of the tale, p_l asks s_c what {PRONOUN/s_c/subject} {VERB/s_c/think/thinks}. s_c admits to not paying attention to some nursery story meant to scare kits."
+                    "At the end of the tale, p_l asks s_c0 what {PRONOUN/s_c0/subject} {VERB/s_c0/think/thinks}. s_c0 admits to not paying attention to some nursery story meant to scare kits."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "rebellious",
@@ -1177,7 +1177,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1189,8 +1189,8 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "p_l was annoyed that s_c called {PRONOUN/p_l/poss} tale of the Dark Forest a nursery story meant to scare kits.",
-                            "cats_to": "s_c was annoyed that p_l wasted a patrol's time with some nursery story."
+                            "cats_from": "p_l was annoyed that s_c0 called {PRONOUN/p_l/poss} tale of the Dark Forest a nursery story meant to scare kits.",
+                            "cats_to": "s_c0 was annoyed that p_l wasted a patrol's time with some nursery story."
                         }
                     }
                 ]
@@ -1392,10 +1392,10 @@
                 "frequency": 4,
                 "outcome_art": "halloween/hal_scaryghost_Df",
                 "strings": [
-                    "s_c is so concerned with the health of the long dead apprentice it actually derails p_l's story, and {PRONOUN/p_l/subject} {VERB/p_l/have/has} to remind {PRONOUN/s_c/object} that this apprentice is long beyond helping."
+                    "s_c0 is so concerned with the health of the long dead apprentice it actually derails p_l's story, and {PRONOUN/p_l/subject} {VERB/p_l/have/has} to remind {PRONOUN/s_c0/object} that this apprentice is long beyond helping."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "nervous",

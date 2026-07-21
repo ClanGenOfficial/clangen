@@ -35,10 +35,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l finds the sticky thing in the grass and examines it. s_c suddenly appears beside {PRONOUN/p_l/object} and, before p_l can tell {PRONOUN/s_c/object} to be careful, s_c bends down and takes a lick. s_c wrinkles {PRONOUN/s_c/poss} nose and gags, trying to spit the disgusting taste out of {PRONOUN/s_c/poss} mouth."
+                    "p_l finds the sticky thing in the grass and examines it. s_c0 suddenly appears beside {PRONOUN/p_l/object} and, before p_l can tell {PRONOUN/s_c0/object} to be careful, s_c0 bends down and takes a lick. s_c0 wrinkles {PRONOUN/s_c0/poss} nose and gags, trying to spit the disgusting taste out of {PRONOUN/s_c0/poss} mouth."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "trait": [
                                 "childish",
@@ -59,7 +59,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "values": [
                             "respect"
@@ -75,7 +75,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "values": [
                             "trust",

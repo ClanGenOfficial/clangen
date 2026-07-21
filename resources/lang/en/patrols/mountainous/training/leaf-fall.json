@@ -140,7 +140,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "On a scrub by the bog, a small towhee opens its beak and calls like a cat. r_c1 pokes s_c for an explanation. An ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted, she got away, but she never managed to catch that bird and get her voice back."
+                    "On a scrub by the bog, a small towhee opens its beak and calls like a cat. r_c1 pokes s_c0 for an explanation. An ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted, she got away, but she never managed to catch that bird and get her voice back."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -148,7 +148,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "SPEAKER,2",
@@ -199,7 +199,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c points out the towhee sitting on a rock overlooking the bog, and it's only that warning that keeps r_c1 from startling when the bird opens its beak and calls like a cat. It can be difficult to track intruders around c_n's territory, s_c explains, and this is one of the reasons why. But it can also work in c_n's favor too."
+                    "s_c0 points out the towhee sitting on a rock overlooking the bog, and it's only that warning that keeps r_c1 from startling when the bird opens its beak and calls like a cat. It can be difficult to track intruders around c_n's territory, s_c0 explains, and this is one of the reasons why. But it can also work in c_n's favor too."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -207,7 +207,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "TEACHER,1"
@@ -433,10 +433,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "On a scrub by the bog, a small towhee opens its beak and calls like a cat. The apprentices poke s_c for an explanation. You see, an ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted, she got away, but she never managed to catch that bird and get her voice back."
+                    "On a scrub by the bog, a small towhee opens its beak and calls like a cat. The apprentices poke s_c0 for an explanation. You see, an ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted, she got away, but she never managed to catch that bird and get her voice back."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "SPEAKER,2",
@@ -487,10 +487,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c points out the towhee sitting on a rock overlooking the bog, and it's only that warning that keeps the apprentices from startling when the bird opens its beak and calls like a cat. It can be difficult to track intruders around c_n's territory, s_c explains, and this is one of the reasons why. But it can also work in c_n's favor too."
+                    "s_c0 points out the towhee sitting on a rock overlooking the bog, and it's only that warning that keeps the apprentices from startling when the bird opens its beak and calls like a cat. It can be difficult to track intruders around c_n's territory, s_c0 explains, and this is one of the reasons why. But it can also work in c_n's favor too."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "TEACHER,1"

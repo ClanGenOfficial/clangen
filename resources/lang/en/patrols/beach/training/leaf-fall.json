@@ -83,10 +83,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c laughs! The ginger cat statues are Twoleg objects; {PRONOUN/s_c/subject} {VERB/s_c/spin/spins} a tale almost unbelievable, but {PRONOUN/s_c/subject} {VERB/s_c/swear/swears} it's true! The ginger cat statues used to live on something called a \"boat.\""
+                    "s_c0 laughs! The ginger cat statues are Twoleg objects; {PRONOUN/s_c0/subject} {VERB/s_c0/spin/spins} a tale almost unbelievable, but {PRONOUN/s_c0/subject} {VERB/s_c0/swear/swears} it's true! The ginger cat statues used to live on something called a \"boat.\""
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -102,7 +102,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -123,10 +123,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Those ginger cat statues? s_c heard a kittypet call him Garfield. s_c explains that, for whatever reason, Twolegs worship the ginger cat so much that they made statues they throw into the ocean."
+                    "Those ginger cat statues? s_c0 heard a kittypet call him Garfield. s_c0 explains that, for whatever reason, Twolegs worship the ginger cat so much that they made statues they throw into the ocean."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -194,10 +194,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The whole patrol agrees this beach is abandoned by StarClan. There's no way so many broken ginger cat statues are here naturally, and well, s_c has always been a little odd..."
+                    "The whole patrol agrees this beach is abandoned by StarClan. There's no way so many broken ginger cat statues are here naturally, and well, s_c0 has always been a little odd..."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -212,7 +212,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -272,10 +272,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "There are green and black lizards! s_c realizes they're not real immediately and decides to come back to this location to collect fake lizards for future pranks on Clanmates."
+                    "There are green and black lizards! s_c0 realizes they're not real immediately and decides to come back to this location to collect fake lizards for future pranks on Clanmates."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -298,7 +298,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -315,10 +315,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c remembers seeing these green and black lizards being shown to {PRONOUN/s_c/object} by a kittypet before, who called them \"lego dragons.\" s_c wonders if Legodragon would be a proper name for a warrior."
+                    "s_c0 remembers seeing these green and black lizards being shown to {PRONOUN/s_c0/object} by a kittypet before, who called them \"lego dragons.\" s_c0 wonders if Legodragon would be a proper name for a warrior."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -339,7 +339,7 @@
                             "high_stable"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -413,7 +413,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittyhappy_Ap",
                 "strings": [
-                    "s_c sits on the windward side of r_c1, trying to give {PRONOUN/r_c1/object} a little more shelter. It's understandable, {PRONOUN/s_c/subject} {VERB/s_c/sympathize/sympathizes}, but r_c1 can't rely on cats in distress only showing up when the sea is inviting. The sympathy (and a little physical warmth) puts cheer back into r_c1, and {PRONOUN/r_c1/subject} {VERB/r_c1/take/takes} {PRONOUN/r_c1/poss} next turn at lifeguarding practice with enthusiasm."
+                    "s_c0 sits on the windward side of r_c1, trying to give {PRONOUN/r_c1/object} a little more shelter. It's understandable, {PRONOUN/s_c0/subject} {VERB/s_c0/sympathize/sympathizes}, but r_c1 can't rely on cats in distress only showing up when the sea is inviting. The sympathy (and a little physical warmth) puts cheer back into r_c1, and {PRONOUN/r_c1/subject} {VERB/r_c1/take/takes} {PRONOUN/r_c1/poss} next turn at lifeguarding practice with enthusiasm."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -421,7 +421,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "SWIMMER,1"
@@ -436,7 +436,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -474,7 +474,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittyhappy_Ap",
                 "strings": [
-                    "s_c nods. Lifeguarding isn't easy, even in practice. But {PRONOUN/s_c/subject} {VERB/s_c/offer/offers} up the story of a kitten saved by a c_n warrior who had the strength and will to keep the little ball of fur above the waves under nearly impossible circumstances. It makes r_c1 sit up straight, proud to be carrying on that tradition."
+                    "s_c0 nods. Lifeguarding isn't easy, even in practice. But {PRONOUN/s_c0/subject} {VERB/s_c0/offer/offers} up the story of a kitten saved by a c_n warrior who had the strength and will to keep the little ball of fur above the waves under nearly impossible circumstances. It makes r_c1 sit up straight, proud to be carrying on that tradition."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -482,7 +482,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "LORE,1"
@@ -497,7 +497,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -535,7 +535,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_story_WrWrWr",
                 "strings": [
-                    "Doesn't r_c1 want to be an ocean dancer, one of the many cats in c_n's ancestry who managed to master the waves, streaking in and out to save lives that have been lost to the ocean's jaws, s_c asks? And well, when {PRONOUN/s_c/subject} {VERB/s_c/put/puts} it like <i>that</i>... r_c1's motivation returns."
+                    "Doesn't r_c1 want to be an ocean dancer, one of the many cats in c_n's ancestry who managed to master the waves, streaking in and out to save lives that have been lost to the ocean's jaws, s_c0 asks? And well, when {PRONOUN/s_c0/subject} {VERB/s_c0/put/puts} it like <i>that</i>... r_c1's motivation returns."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -543,7 +543,7 @@
                             "apprentice"
                         ]
                     },
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "STORY,1"
@@ -558,7 +558,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c1"

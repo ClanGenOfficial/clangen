@@ -39,10 +39,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c approaches the other patrol first, calling out a greeting and smoothly beginning a friendly conversation. The two patrols sit and chat for a little while before once again parting to patrol their respective territories."
+                    "s_c0 approaches the other patrol first, calling out a greeting and smoothly beginning a friendly conversation. The two patrols sit and chat for a little while before once again parting to patrol their respective territories."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -60,7 +60,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "multi"
@@ -79,10 +79,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c excitedly trots up to the other patrol, greeting them pleasantly. They seem to be on good terms with the other cats on this patrol and strike up conversation about specific happenings in their Clan, asking if so-and-so had kits or if a certain apprentice had been made a warrior yet."
+                    "s_c0 excitedly trots up to the other patrol, greeting them pleasantly. They seem to be on good terms with the other cats on this patrol and strike up conversation about specific happenings in their Clan, asking if so-and-so had kits or if a certain apprentice had been made a warrior yet."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -103,7 +103,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "multi"
@@ -122,10 +122,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c approaches the other patrol first, calling out a greeting and then remarking on a recent battle between o_c_n and one of the other Clans. s_c compliments the o_c_n cats on their battle prowess."
+                    "s_c0 approaches the other patrol first, calling out a greeting and then remarking on a recent battle between o_c_n and one of the other Clans. s_c0 compliments the o_c_n cats on their battle prowess."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -144,10 +144,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c approaches the other patrol first, calling out a greeting and then remarking on a recent battle between o_c_n and one of the other Clans. s_c compliments the o_c_n cats on their battle prowess."
+                    "s_c0 approaches the other patrol first, calling out a greeting and then remarking on a recent battle between o_c_n and one of the other Clans. s_c0 compliments the o_c_n cats on their battle prowess."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -183,10 +183,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol stops to talk with the other cats but s_c is quick to begin taunting them, poking fun at the other Clan. When the two patrols part ways tails are whipping and voices border on a hiss."
+                    "The patrol stops to talk with the other cats but s_c0 is quick to begin taunting them, poking fun at the other Clan. When the two patrols part ways tails are whipping and voices border on a hiss."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -207,7 +207,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "multi"
@@ -227,10 +227,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol stops to talk with the other cats but s_c is nervous to talk with o_c_n cats. The other patrol notices and takes offense at the lack of friendly demeanor."
+                    "The patrol stops to talk with the other cats but s_c0 is nervous to talk with o_c_n cats. The other patrol notices and takes offense at the lack of friendly demeanor."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -249,7 +249,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "multi"
@@ -361,10 +361,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c leaps for the rabbit, making a swift kill just before a o_c_n patrol comes into view. The o_c_n cats seem miffed by this trespass, but not yet hostile thanks to your alliance. Thankfully s_c smooths things over with the other patrol by graciously gifting them the rabbit. They part ways, fortunately without damaging the relationship between Clans."
+                    "s_c0 leaps for the rabbit, making a swift kill just before a o_c_n patrol comes into view. The o_c_n cats seem miffed by this trespass, but not yet hostile thanks to your alliance. Thankfully s_c0 smooths things over with the other patrol by graciously gifting them the rabbit. They part ways, fortunately without damaging the relationship between Clans."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -379,7 +379,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -390,7 +390,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "cat_from was grateful for s_c's skills in preventing a fight with o_c_n."
+                            "cats_from": "cat_from was grateful for s_c0's skills in preventing a fight with o_c_n."
                         }
                     },
                     {
@@ -422,10 +422,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 is about to leap for the rabbit when s_c grabs {PRONOUN/r_c0/object} by the scruff and pulls {PRONOUN/r_c0/object} back!  A moment later, r_c0 sees the group of o_c_n cats that had just come into view. Good thing s_c stopped them before they could blatantly trespass in full view of the other Clan."
+                    "r_c0 is about to leap for the rabbit when s_c0 grabs {PRONOUN/r_c0/object} by the scruff and pulls {PRONOUN/r_c0/object} back!  A moment later, r_c0 sees the group of o_c_n cats that had just come into view. Good thing s_c0 stopped them before they could blatantly trespass in full view of the other Clan."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -443,7 +443,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -487,10 +487,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c pounces with no hesitation! {PRONOUN/s_c/subject/CAP} easily {VERB/s_c/kill/kills} the rabbit before glancing up and coming face-to-face with a o_c_n cat. s_c is promptly chased back over the border. The other cat glares, hissing and spitting until the patrol leaves the area."
+                    "s_c0 pounces with no hesitation! {PRONOUN/s_c0/subject/CAP} easily {VERB/s_c0/kill/kills} the rabbit before glancing up and coming face-to-face with a o_c_n cat. s_c0 is promptly chased back over the border. The other cat glares, hissing and spitting until the patrol leaves the area."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -709,10 +709,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning and the patrol scatters when they hear the cry. Just in time, too, as a large dog jumps at the patrol! s_c rallies the patrol to drive the dog away, thankfully avoiding any injuries. The o_c_n cat is grateful for the rescue."
+                    "The patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning and the patrol scatters when they hear the cry. Just in time, too, as a large dog jumps at the patrol! s_c0 rallies the patrol to drive the dog away, thankfully avoiding any injuries. The o_c_n cat is grateful for the rescue."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -730,7 +730,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "multi"
@@ -749,10 +749,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol follows the scent and finds a wounded o_c_n warrior. It seems the cat had been caught by a dog and chased into c_n territory. The dog is gone now, but the warrior can't make it back across the border on their own. s_c insists that the patrol escort the warrior back to the o_c_n camp and the o_c_n leader is grateful for the service."
+                    "The patrol follows the scent and finds a wounded o_c_n warrior. It seems the cat had been caught by a dog and chased into c_n territory. The dog is gone now, but the warrior can't make it back across the border on their own. s_c0 insists that the patrol escort the warrior back to the o_c_n camp and the o_c_n leader is grateful for the service."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -771,7 +771,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "multi"
@@ -803,10 +803,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c can't contain {PRONOUN/s_c/poss} annoyance at the trespass when the patrol finds a lost o_c_n apprentice to be the source of the scent, reprimanding them heavily. The apprentice is nearly in tears when s_c finally lets them go and the patrol leads them back to the border line, tension thick in the air."
+                    "s_c0 can't contain {PRONOUN/s_c0/poss} annoyance at the trespass when the patrol finds a lost o_c_n apprentice to be the source of the scent, reprimanding them heavily. The apprentice is nearly in tears when s_c0 finally lets them go and the patrol leads them back to the border line, tension thick in the air."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -828,7 +828,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "multi"
@@ -1000,10 +1000,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l follows the scent and finds a wounded o_c_n warrior. It seems the cat had been caught by a dog and chased into c_n territory.  The dog is gone now, but the warrior can't make it back across the border on their own. s_c insists on escorting the warrior back to the o_c_n camp, and the o_c_n leader is grateful for the service."
+                    "p_l follows the scent and finds a wounded o_c_n warrior. It seems the cat had been caught by a dog and chased into c_n territory.  The dog is gone now, but the warrior can't make it back across the border on their own. s_c0 insists on escorting the warrior back to the o_c_n camp, and the o_c_n leader is grateful for the service."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1035,10 +1035,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c can't contain {PRONOUN/s_c/poss} annoyance at the trespass when {PRONOUN/s_c/subject} {VERB/s_c/find/finds} a lost o_c_n apprentice to be the source of the scent, reprimanding them heavily. The apprentice is nearly in tears when s_c finally lets them go and grumpily leads them back to the border line, tension thick in the air."
+                    "s_c0 can't contain {PRONOUN/s_c0/poss} annoyance at the trespass when {PRONOUN/s_c0/subject} {VERB/s_c0/find/finds} a lost o_c_n apprentice to be the source of the scent, reprimanding them heavily. The apprentice is nearly in tears when s_c0 finally lets them go and grumpily leads them back to the border line, tension thick in the air."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1216,7 +1216,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c comes across a patrol from o_c_n, out on a similar mission to them, and turns to follow the same marking path as them, keen to catch up on what their ally has been up to."
+                    "s_c0 comes across a patrol from o_c_n, out on a similar mission to them, and turns to follow the same marking path as them, keen to catch up on what their ally has been up to."
                 ],
                 "required_cat_types": {
                     "warrior": [
@@ -1225,7 +1225,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1244,7 +1244,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/strike/strikes} up a friendly conversation, keen to catch up on what their ally has been up to. {PRONOUN/s_c/subject/CAP} {VERB/s_c/send/sends} the patrol off with several friendly messages to pass on from different c_n cats and an update from c_n's leader."
+                    "s_c0 comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c0/object}. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/strike/strikes} up a friendly conversation, keen to catch up on what their ally has been up to. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/send/sends} the patrol off with several friendly messages to pass on from different c_n cats and an update from c_n's leader."
                 ],
                 "required_cat_types": {
                     "deputy": [
@@ -1253,7 +1253,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1272,7 +1272,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/strike/strikes} up a friendly conversation, keen to catch up on what their ally has been up to. The cats leave with several messages to pass on from both sides and a renewed sense of goodwill and trust between them."
+                    "s_c0 comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c0/object}. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/strike/strikes} up a friendly conversation, keen to catch up on what their ally has been up to. The cats leave with several messages to pass on from both sides and a renewed sense of goodwill and trust between them."
                 ],
                 "required_cat_types": {
                     "leader": [
@@ -1281,7 +1281,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1300,7 +1300,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully."
+                    "As s_c0 marks the border, {PRONOUN/s_c0/subject} {VERB/s_c0/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c0 plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully."
                 ],
                 "required_cat_types": {
                     "warrior": [
@@ -1309,7 +1309,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1333,7 +1333,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness."
+                    "As s_c0 marks the border, {PRONOUN/s_c0/subject} {VERB/s_c0/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c0 plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness."
                 ],
                 "required_cat_types": {
                     "deputy": [
@@ -1342,7 +1342,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1366,7 +1366,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they hide behind their mentor, but s_c manages to coax them out, praising the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness."
+                    "As s_c0 marks the border, {PRONOUN/s_c0/subject} {VERB/s_c0/encounter/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they hide behind their mentor, but s_c0 manages to coax them out, praising the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness."
                 ],
                 "required_cat_types": {
                     "leader": [
@@ -1375,7 +1375,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1909,7 +1909,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "multi"
@@ -1975,7 +1975,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "multi"

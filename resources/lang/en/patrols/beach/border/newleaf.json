@@ -38,10 +38,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c scrambles back the way {PRONOUN/s_c/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris \u00e2\u20ac\u201d and a large dead sheep. s_c pounces on the opportunity to scavenge."
+                    "s_c0 scrambles back the way {PRONOUN/s_c0/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris \u00e2\u20ac\u201d and a large dead sheep. s_c0 pounces on the opportunity to scavenge."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -63,10 +63,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c/subject} {VERB/s_c/turn/turns} and {VERB/s_c/run/runs} for home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c/poss/CAP} caution saved {PRONOUN/s_c/poss} life."
+                    "s_c0 shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c0/subject} {VERB/s_c0/turn/turns} and {VERB/s_c0/run/runs} for home. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/are/is} proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c0/poss/CAP} caution saved {PRONOUN/s_c0/poss} life."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -179,10 +179,10 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_hunt_funrun_WrWr",
                 "strings": [
-                    "s_c darts toward the skua's fresh-kill before it can react, snatching the petrel in {PRONOUN/s_c/poss} jaws. By the time the skua dives, s_c and the patrol are already gone. It screams at the empty rocks and flies away, reeling from the heist, while the cats swap praises over stolen prey."
+                    "s_c0 darts toward the skua's fresh-kill before it can react, snatching the petrel in {PRONOUN/s_c0/poss} jaws. By the time the skua dives, s_c0 and the patrol are already gone. It screams at the empty rocks and flies away, reeling from the heist, while the cats swap praises over stolen prey."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -200,7 +200,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -253,10 +253,10 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_angrycat_Wr",
                 "strings": [
-                    "The skua screams and dives toward the patrol, abandoning its kill in favor of harassment. Without thinking, s_c plants {PRONOUN/s_c/poss} paws into the sand and shrieks back, stopping the bird cold. Unnerved and slightly confused, the skua turns and flies off with the petrel, leaving the cats alone. The patrol stares at s_c before erupting into triumphant purrs, praising {PRONOUN/s_c/object} on {PRONOUN/s_c/poss} quick thinking."
+                    "The skua screams and dives toward the patrol, abandoning its kill in favor of harassment. Without thinking, s_c0 plants {PRONOUN/s_c0/poss} paws into the sand and shrieks back, stopping the bird cold. Unnerved and slightly confused, the skua turns and flies off with the petrel, leaving the cats alone. The patrol stares at s_c0 before erupting into triumphant purrs, praising {PRONOUN/s_c0/object} on {PRONOUN/s_c0/poss} quick thinking."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -276,7 +276,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -294,10 +294,10 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_train_ghost_WrWrWr",
                 "strings": [
-                    "Before the patrol can make a move, s_c steps forward. Storm petrels are an omen of bad weather, {PRONOUN/s_c/subject} {VERB/s_c/explain/explains}, and the skua is actually trying to <i>protect</i> them. s_c urges them to move along, focus on the border, and leave the birds to their conflict. The cats feel a chill that has nothing to do with the wind and continue with the patrol."
+                    "Before the patrol can make a move, s_c0 steps forward. Storm petrels are an omen of bad weather, {PRONOUN/s_c0/subject} {VERB/s_c0/explain/explains}, and the skua is actually trying to <i>protect</i> them. s_c0 urges them to move along, focus on the border, and leave the birds to their conflict. The cats feel a chill that has nothing to do with the wind and continue with the patrol."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -317,7 +317,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [

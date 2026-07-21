@@ -55,10 +55,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The squirrel blissfully snuffles around in the sand, completely unaware of the looming danger it's in. s_c stalks, as quiet as a shadow, and doesn't even need to pounce; {PRONOUN/s_c/subject} just {VERB/s_c/walk/walks} right up behind it and {VERB/s_c/make/makes} the kill."
+                    "The squirrel blissfully snuffles around in the sand, completely unaware of the looming danger it's in. s_c0 stalks, as quiet as a shadow, and doesn't even need to pounce; {PRONOUN/s_c0/subject} just {VERB/s_c0/walk/walks} right up behind it and {VERB/s_c0/make/makes} the kill."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -515,10 +515,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. s_c moves in once {PRONOUN/s_c/subject} {VERB/s_c/realize/realizes} the snake is intimidated by the squirrel, killing <i>both</i> of them before either can fully react! The patrol lets s_c carry both home, eager to show the Clan what {PRONOUN/s_c/subject} accomplished."
+                    "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. s_c0 moves in once {PRONOUN/s_c0/subject} {VERB/s_c0/realize/realizes} the snake is intimidated by the squirrel, killing <i>both</i> of them before either can fully react! The patrol lets s_c0 carry both home, eager to show the Clan what {PRONOUN/s_c0/subject} accomplished."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -533,7 +533,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -716,11 +716,11 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c murmurs instructions to {PRONOUN/s_c/poss} Clanmates, who nod silently and move into position. p_l feints at a squirrel, who raises the alarm and turns to run; r_c0 blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, with not a single squirrel left behind."
+                    "s_c0 murmurs instructions to {PRONOUN/s_c0/poss} Clanmates, who nod silently and move into position. p_l feints at a squirrel, who raises the alarm and turns to run; r_c0 blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c0; and s_c0 lunges in for the kill. A flawless hunt, with not a single squirrel left behind."
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "s_c": {
+                    "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -738,7 +738,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"

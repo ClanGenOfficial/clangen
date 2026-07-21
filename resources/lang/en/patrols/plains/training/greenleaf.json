@@ -70,10 +70,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_curledup_Ap",
                 "strings": [
-                    "It's not much, s_c huffs apologetically, but hold on. {PRONOUN/s_c/subject/CAP} {VERB/s_c/make/makes} a little nest under to a huge clump of grass, right near the stems, and {VERB/s_c/offer/offers} it to r_c0. There \u00e2\u20ac\u201d the water within the stems and the partial shade will keep that area cool. Time for a break to let themselves cool down."
+                    "It's not much, s_c0 huffs apologetically, but hold on. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/make/makes} a little nest under to a huge clump of grass, right near the stems, and {VERB/s_c0/offer/offers} it to r_c0. There \u00e2\u20ac\u201d the water within the stems and the partial shade will keep that area cool. Time for a break to let themselves cool down."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "TEACHER,1"
@@ -88,7 +88,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -105,7 +105,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -126,10 +126,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_chatting_WrWr",
                 "strings": [
-                    "s_c tries to distract r_c0 from the heat by telling the story of The Earth-Cat's Ticks, where trees are the ticks sucking sap-blood from the grassy pelt of the earth. It's a little disgusting, but in a funny way, and it gives r_c0 something to make a face about that isn't the exhausting heat."
+                    "s_c0 tries to distract r_c0 from the heat by telling the story of The Earth-Cat's Ticks, where trees are the ticks sucking sap-blood from the grassy pelt of the earth. It's a little disgusting, but in a funny way, and it gives r_c0 something to make a face about that isn't the exhausting heat."
                 ],
                 "involved_cats": {
-                    "s_c": {
+                    "s_c0": {
                         "stat": {
                             "skill": [
                                 "STORY,1"
@@ -144,7 +144,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
