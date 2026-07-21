@@ -384,16 +384,16 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c has an unexpected severe reaction to the cacti, {PRONOUN/r_c/poss} throat swelling shut in seconds. Unable to call for help, {PRONOUN/p_l/subject} fade away toward StarClan. c_n will have to mourn one more cat."
+                    "r_c0 has an unexpected severe reaction to the cacti, {PRONOUN/r_c0/poss} throat swelling shut in seconds. Unable to call for help, {PRONOUN/p_l/subject} fade away toward StarClan. c_n will have to mourn one more cat."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c died trying to communicate with StarClan using a rare and dangerous ritual in an attempt to save {PRONOUN/m_c/poss} Clan."
                     }
@@ -780,7 +780,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "sore"
@@ -1044,16 +1044,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "By the time they give up and return to camp, p_l is approaching explosion point with r_c. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'ve/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today."
+                    "By the time they give up and return to camp, p_l is approaching explosion point with r_c0. {PRONOUN/r_c0/subject/CAP}{VERB/r_c0/'ve/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1079,7 +1079,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "sore"
@@ -1123,10 +1123,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c starts up a conversation with {PRONOUN/p_l/object} about the herbs they're looking for. p_l launches into the usual spiel, and to {PRONOUN/p_l/poss} astonishment, r_c is actually interested. It makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}."
+                    "r_c0 starts up a conversation with {PRONOUN/p_l/object} about the herbs they're looking for. p_l launches into the usual spiel, and to {PRONOUN/p_l/poss} astonishment, r_c0 is actually interested. It makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 10,
                 "relationship_changes": [
@@ -1135,7 +1135,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1154,10 +1154,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c has always been good at talking, but chatting with r_c {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} like {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} have to be. It's just an herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when {PRONOUN/s_c/subject} {VERB/s_c/return/returns} to camp, smiling softly."
+                    "s_c has always been good at talking, but chatting with r_c0 {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} like {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} have to be. It's just an herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when {PRONOUN/s_c/subject} {VERB/s_c/return/returns} to camp, smiling softly."
                 ],
                 "involved_cats": {
-                    "r_c": {},
+                    "r_c0": {},
                     "s_c": {
                         "stat": {
                             "skill": [
@@ -1177,7 +1177,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1197,10 +1197,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs."
+                    "It's an exhausting day. p_l starts chatting with r_c0 to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1209,7 +1209,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1238,7 +1238,7 @@
                             ]
                         },
                         "prior_abbreviations": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 },
@@ -1246,7 +1246,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1304,10 +1304,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The ground is slippery and damp, and as p_l falls, r_c catches {PRONOUN/p_l/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly."
+                    "The ground is slippery and damp, and as p_l falls, r_c0 catches {PRONOUN/p_l/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 10,
                 "relationship_changes": [
@@ -1316,7 +1316,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1326,7 +1326,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "r_c caught p_l when p_l slipped on some damp earth."
+                            "cats_from": "r_c0 caught p_l when p_l slipped on some damp earth."
                         }
                     }
                 ]
@@ -1334,10 +1334,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c has always been good at talking, but chatting with r_c {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} like {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} have to be. It's just an herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when {PRONOUN/s_c/subject} {VERB/s_c/return/returns} to camp, smiling softly."
+                    "s_c has always been good at talking, but chatting with r_c0 {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} like {PRONOUN/s_c/subject} {VERB/s_c/don't/doesn't} have to be. It's just an herb gathering patrol, but s_c feels more relaxed than {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} felt in moons when {PRONOUN/s_c/subject} {VERB/s_c/return/returns} to camp, smiling softly."
                 ],
                 "involved_cats": {
-                    "r_c": {},
+                    "r_c0": {},
                     "s_c": {
                         "stat": {
                             "skill": [
@@ -1357,7 +1357,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1377,10 +1377,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common."
+                    "It's an exhausting day. p_l starts chatting with r_c0 to pass the time, but they have nothing in common."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1389,7 +1389,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1418,7 +1418,7 @@
                             ]
                         },
                         "prior_abbreviations": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 },
@@ -1429,7 +1429,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1470,17 +1470,17 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 50,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l and r_c take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
+        "intro_text": "p_l and r_c0 take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
         "decline_text": "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l and r_c decide to search in the slot canyons, where the deep clefts may yet harbor water and plant life. It's a mark of both of their skill and experience that they return home with herbs for c_n, scavenged from the impossible heat."
+                    "p_l and r_c0 decide to search in the slot canyons, where the deep clefts may yet harbor water and plant life. It's a mark of both of their skill and experience that they return home with herbs for c_n, scavenged from the impossible heat."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
@@ -1512,7 +1512,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l and r_c decide on a little friendly competition \u00e2\u20ac\u201d one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
+                    "p_l and r_c0 decide on a little friendly competition \u00e2\u20ac\u201d one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
@@ -1546,7 +1546,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Both p_l and r_c are tense and it shows. Even though it should not be this hard to find any herbs they fail to find even a single one. They return to camp frustrated and irritated with each other."
+                    "Both p_l and r_c0 are tense and it shows. Even though it should not be this hard to find any herbs they fail to find even a single one. They return to camp frustrated and irritated with each other."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1572,7 +1572,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Even though there should be many herbs, they fail to find anything. p_l blames r_c for distracting {PRONOUN/p_l/object}, and they get into a huge argument."
+                    "Even though there should be many herbs, they fail to find anything. p_l blames r_c0 for distracting {PRONOUN/p_l/object}, and they get into a huge argument."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1590,7 +1590,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "p_l blamed r_c for a failed herb-gathering patrol and the two got into a huge argument."
+                            "cats_from": "p_l blamed r_c0 for a failed herb-gathering patrol and the two got into a huge argument."
                         }
                     }
                 ]
@@ -1598,13 +1598,13 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "As the medicine cats search deep within the slot canyons for the precious herbs that will keep c_n going, a light rain shower falls. Water, on any other day good news, instead spells doom. The rushing water sweeps through the canyon in a flash flood. r_c hears it coming, shoving p_l towards the canyon walls, but they can't both fit on the little ledge, and r_c loses their grip on the rock, falling beneath the rushing water."
+                    "As the medicine cats search deep within the slot canyons for the precious herbs that will keep c_n going, a light rain shower falls. Water, on any other day good news, instead spells doom. The rushing water sweeps through the canyon in a flash flood. r_c0 hears it coming, shoving p_l towards the canyon walls, but they can't both fit on the little ledge, and r_c0 loses their grip on the rock, falling beneath the rushing water."
                 ],
                 "exp_gained": 0,
                 "lost": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 ]

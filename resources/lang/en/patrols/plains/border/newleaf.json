@@ -152,10 +152,10 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_chatting_WrWr",
                 "strings": [
-                    "They trek, and they wander, and they amble, and they pad. But as the sun creeps over the sky, before they reach the far border itself, p_l spots r_c limping. It's nothing, {PRONOUN/r_c/subject} {VERB/r_c/say/says}, just slept on the leg wrong. But far from camp isn't the right place to be limping, and p_l calls the patrol off."
+                    "They trek, and they wander, and they amble, and they pad. But as the sun creeps over the sky, before they reach the far border itself, p_l spots r_c0 limping. It's nothing, {PRONOUN/r_c0/subject} {VERB/r_c0/say/says}, just slept on the leg wrong. But far from camp isn't the right place to be limping, and p_l calls the patrol off."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -164,7 +164,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -180,7 +180,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "sprain",
@@ -665,7 +665,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -714,8 +714,8 @@
                             "minor_injury",
                             "torn ear"
                         ],
-                        "scar_history": "Driving off coyotes left its scars on r_c.",
-                        "death_history": "r_c died from injuries sustained in keeping coyotes away from c_n's borders."
+                        "scar_history": "Driving off coyotes left its scars on r_c0.",
+                        "death_history": "r_c0 died from injuries sustained in keeping coyotes away from c_n's borders."
                     }
                 ]
             },
@@ -793,10 +793,10 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyotedanger",
                 "strings": [
-                    "The patrol tries to lead the coyote away from the Clan's borders, but with so few cats it's impossible to cover each other's backs. r_c falls to the coyote as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their Clanmate."
+                    "The patrol tries to lead the coyote away from the Clan's borders, but with so few cats it's impossible to cover each other's backs. r_c0 falls to the coyote as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their Clanmate."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -814,14 +814,14 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from heard that cat_to's patrol wasn't able to lead a coyote away and r_c was killed as a result."
+                            "cats_from": "cat_from heard that cat_to's patrol wasn't able to lead a coyote away and r_c0 was killed as a result."
                         }
                     }
                 ],
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "This cat died to keep the Clan safe from a large coyote."
                     }
@@ -831,10 +831,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "The patrol tries bravely to lead the coyote away from c_n borders, but with so few cats it's impossible to cover each other's backs. r_c gets caught while running, and it's all the rest of the patrol can do to distract the coyote long enough to get {PRONOUN/r_c/object} to safety."
+                    "The patrol tries bravely to lead the coyote away from c_n borders, but with so few cats it's impossible to cover each other's backs. r_c0 gets caught while running, and it's all the rest of the patrol can do to distract the coyote long enough to get {PRONOUN/r_c0/object} to safety."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -852,14 +852,14 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from heard that cat_to's patrol wasn't able to lead a coyote away and r_c was injured as a result."
+                            "cats_from": "cat_from heard that cat_to's patrol wasn't able to lead a coyote away and r_c0 was injured as a result."
                         }
                     }
                 ],
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -898,10 +898,10 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "The warriors share a glance and a nod. They have enough cats to try and tackle this problem. Spreading out, they use a search pattern they've all been trained in to isolate the adult coyote's location, and the cover of the mist to approach stealthily. r_c starts the battle strong, sinking {PRONOUN/r_c/poss} teeth into the coyote's hamstring, and the rest of the patrol break cover with screeches, driving the coyote away from c_n."
+                    "The warriors share a glance and a nod. They have enough cats to try and tackle this problem. Spreading out, they use a search pattern they've all been trained in to isolate the adult coyote's location, and the cover of the mist to approach stealthily. r_c0 starts the battle strong, sinking {PRONOUN/r_c0/poss} teeth into the coyote's hamstring, and the rest of the patrol break cover with screeches, driving the coyote away from c_n."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 60,
                 "relationship_changes": [
@@ -923,7 +923,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -972,7 +972,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1263,10 +1263,10 @@
                 "frequency": 1,
                 "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "That smells like a nursing female. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. The patrol attacks as one, managing to inflict heavy damage, but r_c takes a solid blow that has s_c scurrying to {PRONOUN/r_c/poss} side to administer first aid, and the coyote is allowed to escape."
+                    "That smells like a nursing female. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. The patrol attacks as one, managing to inflict heavy damage, but r_c0 takes a solid blow that has s_c scurrying to {PRONOUN/r_c0/poss} side to administer first aid, and the coyote is allowed to escape."
                 ],
                 "involved_cats": {
-                    "r_c": {},
+                    "r_c0": {},
                     "s_c": {
                         "stat": {
                             "skill": [
@@ -1275,7 +1275,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1318,7 +1318,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1334,23 +1334,23 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "bite-wound"
                         ],
                         "scar_history": "A nursing coyote scarred r_c's pelt.",
-                        "death_history": "r_c died from injuries sustained keeping coyotes away from c_n's borders."
+                        "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
                     },
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "blood loss"
                         ],
                         "scar_history": "A nursing coyote scarred r_c's pelt.",
-                        "death_history": "r_c died from injuries sustained keeping coyotes away from c_n's borders."
+                        "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
                     }
                 ]
             },
@@ -1599,22 +1599,22 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "minor_injury"
                         ],
-                        "scar_history": "A nursing coyote scarred r_c.",
+                        "scar_history": "A nursing coyote scarred r_c0.",
                         "death_history": "m_c died of injuries inflicted by a nursing coyote."
                     },
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
                         ],
-                        "scar_history": "A nursing coyote scarred r_c.",
+                        "scar_history": "A nursing coyote scarred r_c0.",
                         "death_history": "m_c died of injuries inflicted by a nursing coyote."
                     },
                     {
@@ -1625,7 +1625,7 @@
                             "scrapes",
                             "torn ear"
                         ],
-                        "scar_history": "A nursing coyote scarred r_c.",
+                        "scar_history": "A nursing coyote scarred r_c0.",
                         "death_history": "m_c died of injuries inflicted by a nursing coyote."
                     }
                 ]
@@ -1645,7 +1645,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1677,8 +1677,8 @@
                             "minor_injury",
                             "torn ear"
                         ],
-                        "scar_history": "Driving off coyotes left its scars on r_c.",
-                        "death_history": "r_c died from injuries sustained in keeping coyotes away from c_n's borders."
+                        "scar_history": "Driving off coyotes left its scars on r_c0.",
+                        "death_history": "r_c0 died from injuries sustained in keeping coyotes away from c_n's borders."
                     }
                 ]
             },
@@ -1697,7 +1697,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1730,8 +1730,8 @@
                             "minor_injury",
                             "torn ear"
                         ],
-                        "scar_history": "Driving off coyotes left its scars on r_c.",
-                        "death_history": "r_c died from injuries sustained in keeping coyotes away from c_n's borders."
+                        "scar_history": "Driving off coyotes left its scars on r_c0.",
+                        "death_history": "r_c0 died from injuries sustained in keeping coyotes away from c_n's borders."
                     }
                 ]
             },
@@ -1739,10 +1739,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "The warriors share a glance and a nod. They have enough cats to try and tackle this problem. Spreading out, they use a search pattern they've all been trained in to isolate the adult coyote's location, and the cover of the mist to approach stealthily. But r_c misjudges the first attack, and instead the patrol has to focus on defence and getting out of there mostly unscathed."
+                    "The warriors share a glance and a nod. They have enough cats to try and tackle this problem. Spreading out, they use a search pattern they've all been trained in to isolate the adult coyote's location, and the cover of the mist to approach stealthily. But r_c0 misjudges the first attack, and instead the patrol has to focus on defence and getting out of there mostly unscathed."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1752,7 +1752,7 @@
                             "high_aggress"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "respect"
@@ -1767,13 +1767,13 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "torn ear"
                         ],
-                        "scar_history": "A coyote encounter left its scars on r_c.",
-                        "death_history": "r_c died from injuries sustained keeping coyotes away from c_n's borders."
+                        "scar_history": "A coyote encounter left its scars on r_c0.",
+                        "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
                     }
                 ]
             },
@@ -1781,10 +1781,10 @@
                 "frequency": 1,
                 "outcome_art": "animals/animals/gen_coyotedanger",
                 "strings": [
-                    "The patrol tries to keep watch on the coyote from a distance, but it spots the cats and they have to scatter. It's not as bad as it could've been though; r_c manages to keep track of the coyote's position, and it doesn't come any further into c_n territory."
+                    "The patrol tries to keep watch on the coyote from a distance, but it spots the cats and they have to scatter. It's not as bad as it could've been though; r_c0 manages to keep track of the coyote's position, and it doesn't come any further into c_n territory."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0
             },
@@ -1837,16 +1837,16 @@
                 "outcome_art": "cat_sprites/gen_dead_Wr_EXPLICIT",
                 "outcome_art_clean": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "With so many cats all working as one, the coyote started to get beaten back. But just as the tide of the fight seems about to turn, one lucky strike hits r_c, and those vicious jaws take {PRONOUN/r_c/object} to StarClan."
+                    "With so many cats all working as one, the coyote started to get beaten back. But just as the tide of the fight seems about to turn, one lucky strike hits r_c, and those vicious jaws take {PRONOUN/r_c0/object} to StarClan."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -1864,7 +1864,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "This cat died to keep the Clan safe from a large coyote."
                     }
@@ -1874,16 +1874,16 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "The patrol fights bravely, but you only need to be unlucky once. r_c gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend {PRONOUN/r_c/object}, and r_c is safely helped back to camp, where the medicine den awaits."
+                    "The patrol fights bravely, but you only need to be unlucky once. r_c0 gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend {PRONOUN/r_c0/object}, and r_c0 is safely helped back to camp, where the medicine den awaits."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "clan",
@@ -1902,7 +1902,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"

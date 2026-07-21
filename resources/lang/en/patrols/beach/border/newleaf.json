@@ -98,7 +98,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c was swept out to sea by a flood."
                     }
@@ -133,10 +133,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_scaryfoe_WrWr",
                 "strings": [
-                    "When the skua descends, r_c takes {PRONOUN/r_c/poss} chance and launches {PRONOUN/r_c/self} at the skua before it can fly away with its kill. The bird batters its wings, snaps its beak, and screams at the patrol. r_c holds firm and lashes {PRONOUN/r_c/poss} claws across the bird's wings. The skua finally gives up and retreats. r_c may be bruised, but the petrel is {PRONOUN/r_c/inposs}."
+                    "When the skua descends, r_c0 takes {PRONOUN/r_c0/poss} chance and launches {PRONOUN/r_c0/self} at the skua before it can fly away with its kill. The bird batters its wings, snaps its beak, and screams at the patrol. r_c0 holds firm and lashes {PRONOUN/r_c0/poss} claws across the bird's wings. The skua finally gives up and retreats. r_c0 may be bruised, but the petrel is {PRONOUN/r_c0/inposs}."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -145,7 +145,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -167,7 +167,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "bruises"
@@ -337,10 +337,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_argue_WrWr",
                 "strings": [
-                    "As the skua descends toward the petrel, r_c decides to try and rob the bird blind. Unfortunately for r_c, the skua is unbothered, considering it's been harassing birds three times its size for its whole life. It manages to grab the kill and flies off without issue, leaving the patrol members annoyed with each other."
+                    "As the skua descends toward the petrel, r_c0 decides to try and rob the bird blind. Unfortunately for r_c, the skua is unbothered, considering it's been harassing birds three times its size for its whole life. It manages to grab the kill and flies off without issue, leaving the patrol members annoyed with each other."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -349,7 +349,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -385,10 +385,10 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_embarrassed_WrWr",
                 "strings": [
-                    "r_c throws {PRONOUN/r_c/self} over the petrel, intent on stopping the skua entirely. What r_c doesn't anticipate is a face full of ruffled feathers and a screeching skua to go with it, slamming itself into {PRONOUN/r_c/poss} side. A few harsh pecks later, the large bird swoops back into the air with the petrel, leaving r_c injured and the rest of the patrol unimpressed."
+                    "r_c0 throws {PRONOUN/r_c0/self} over the petrel, intent on stopping the skua entirely. What r_c0 doesn't anticipate is a face full of ruffled feathers and a screeching skua to go with it, slamming itself into {PRONOUN/r_c0/poss} side. A few harsh pecks later, the large bird swoops back into the air with the petrel, leaving r_c0 injured and the rest of the patrol unimpressed."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -397,7 +397,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -413,7 +413,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "beak_bite"

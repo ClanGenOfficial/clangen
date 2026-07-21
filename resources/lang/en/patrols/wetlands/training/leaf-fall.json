@@ -67,10 +67,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c refuses to believe their ancestors ever blotted out the sun \u00e2\u20ac\u201d not that they couldn't, but that they wouldn't ever hurt the Clans, their own beloved descendants."
+                    "r_c0 refuses to believe their ancestors ever blotted out the sun \u00e2\u20ac\u201d not that they couldn't, but that they wouldn't ever hurt the Clans, their own beloved descendants."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -79,7 +79,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -107,7 +107,7 @@
                             ]
                         },
                         "prior_abbreviations": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 },

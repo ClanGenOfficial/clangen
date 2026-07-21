@@ -639,7 +639,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c died in a rogue ambush while on a solo patrol."
                     }
@@ -972,7 +972,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c died in a rogue ambush while on a solo patrol."
                     }
@@ -1286,10 +1286,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and eventually the patrol retreats, r_c badly wounded."
+                    "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and eventually the patrol retreats, r_c0 badly wounded."
                 ],
                 "involved_cats": {
-                    "r_c": {},
+                    "r_c0": {},
                     "n_c:0": {
                         "can_create_new_cat": {},
                         "status": [
@@ -1333,7 +1333,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "battle_injury"
@@ -1645,10 +1645,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and eventually the patrol retreats, r_c badly wounded."
+                    "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and eventually the patrol retreats, r_c0 badly wounded."
                 ],
                 "involved_cats": {
-                    "r_c": {},
+                    "r_c0": {},
                     "n_c:0": {
                         "can_create_new_cat": {},
                         "status": [
@@ -1709,7 +1709,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "battle_injury"

@@ -25,10 +25,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The prey gets sluggish in the heat, as the cats stay cool and ready. When the patrol spots a couple of nests in the reeds they get to work, fishing the eggs out carefully and lying in wait until they catch the songbird parents too. r_c even manages to add a cuckoo to their catches."
+                    "The prey gets sluggish in the heat, as the cats stay cool and ready. When the patrol spots a couple of nests in the reeds they get to work, fishing the eggs out carefully and lying in wait until they catch the songbird parents too. r_c0 even manages to add a cuckoo to their catches."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 15,
                 "relationship_changes": [

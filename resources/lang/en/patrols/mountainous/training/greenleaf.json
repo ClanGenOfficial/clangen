@@ -1418,7 +1418,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1464,7 +1464,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1527,7 +1527,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1588,7 +1588,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1665,7 +1665,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1726,7 +1726,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1773,16 +1773,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As p_l starts the story, r_c continues practicing {PRONOUN/r_c/poss} moves and then pounces straight into a tree trunk. Whoops. Nothing quite like a visit to the medicine cat den to disrupt the flow of a story."
+                    "As p_l starts the story, r_c0 continues practicing {PRONOUN/r_c0/poss} moves and then pounces straight into a tree trunk. Whoops. Nothing quite like a visit to the medicine cat den to disrupt the flow of a story."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "scrapes",
@@ -1809,7 +1809,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1854,7 +1854,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1897,7 +1897,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1936,7 +1936,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1978,7 +1978,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },

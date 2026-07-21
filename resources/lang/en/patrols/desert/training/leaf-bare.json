@@ -31,12 +31,12 @@
                     "trait": []
                 }
             },
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_hunt_GL_randomrain_Wr",
         "intro_text": "The coolness of the rain sliding along r_c's pelt is something to be savored, a rare treat as the gentle rain showers c_n. And the ground \u00e2\u20ac\u201d it's so green, so alive! Why in StarClan's name does c_n not call this season greenleaf, when everything around them springs to life?!",
-        "decline_text": "Not every cat on the patrol is such a fan of the damp, and while r_c is given time to live in the moment, they all want to move on soon.",
+        "decline_text": "Not every cat on the patrol is such a fan of the damp, and while r_c0 is given time to live in the moment, they all want to move on soon.",
         "success_outcomes": [
             {
                 "frequency": 4,

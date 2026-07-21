@@ -105,10 +105,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c notices r_c beginning to shiver as {PRONOUN/r_c/subject} {VERB/r_c/trudge/trudges} with puffed out fur. {PRONOUN/s_c/subject/CAP} take the next opportunity to herd the patrol under the cover of a rock with a scrappy bush clinging to it. There's no reason to risk frostbite here, time to warm up."
+                    "s_c notices r_c0 beginning to shiver as {PRONOUN/r_c0/subject} {VERB/r_c0/trudge/trudges} with puffed out fur. {PRONOUN/s_c/subject/CAP} take the next opportunity to herd the patrol under the cover of a rock with a scrappy bush clinging to it. There's no reason to risk frostbite here, time to warm up."
                 ],
                 "involved_cats": {
-                    "r_c": {},
+                    "r_c0": {},
                     "s_c": {
                         "stat": {
                             "trait": [
@@ -121,7 +121,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -132,7 +132,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -166,10 +166,10 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "They trek, and they wander, and they amble, and they pad. But as the sun creeps over the sky, before they reach the far border itself, p_l spots r_c limping. It's nothing, {PRONOUN/r_c/subject} {VERB/r_c/say/says}, just slept on the leg wrong. But far from camp isn't the right place to be limping, and p_l calls the patrol off."
+                    "They trek, and they wander, and they amble, and they pad. But as the sun creeps over the sky, before they reach the far border itself, p_l spots r_c0 limping. It's nothing, {PRONOUN/r_c0/subject} {VERB/r_c0/say/says}, just slept on the leg wrong. But far from camp isn't the right place to be limping, and p_l calls the patrol off."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -178,7 +178,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -194,7 +194,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "sprain",
@@ -333,7 +333,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -790,10 +790,10 @@
                 "outcome_art": "cat_sprites/gen_dead_Wr_EXPLICIT",
                 "outcome_art_clean": "cat_sprites/gen_deadghost_WrSc",
                 "strings": [
-                    "Ears pricked, the patrol stalks closer and fans out, crossing the border. On the other side, a female assesses the males trying to court her. One offers a gift to the female, and p_l's stomach drops. {PRONOUN/r_c/subject/CAP} {VERB/r_c/were/was} only out of sight for seconds \u00e2\u20ac\u201d but r_c won't be coming home."
+                    "Ears pricked, the patrol stalks closer and fans out, crossing the border. On the other side, a female assesses the males trying to court her. One offers a gift to the female, and p_l's stomach drops. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/were/was} only out of sight for seconds \u00e2\u20ac\u201d but r_c0 won't be coming home."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -817,7 +817,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c was killed by a coyote male trying to offer a courting gift to a female."
                     }
@@ -839,10 +839,10 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyotedanger",
                 "strings": [
-                    "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. One discovers r_c and decides that cat would make a nice courting gift. The patrol runs in to save {PRONOUN/r_c/object}, finding refuge crammed in a rabbit burrow as the coyotes howl outside."
+                    "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. One discovers r_c0 and decides that cat would make a nice courting gift. The patrol runs in to save {PRONOUN/r_c0/object}, finding refuge crammed in a rabbit burrow as the coyotes howl outside."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "injury": [
@@ -858,7 +858,7 @@
                     },
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -872,10 +872,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. One discovers r_c, and decides that cat would make a nice courting gift. s_c runs in to save {PRONOUN/r_c/object}, fighting like an entire patrol just by {PRONOUN/s_c/self}."
+                    "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. One discovers r_c, and decides that cat would make a nice courting gift. s_c runs in to save {PRONOUN/r_c0/object}, fighting like an entire patrol just by {PRONOUN/s_c/self}."
                 ],
                 "involved_cats": {
-                    "r_c": {},
+                    "r_c0": {},
                     "s_c": {
                         "stat": {
                             "skill": [
@@ -884,7 +884,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -933,8 +933,8 @@
                             "minor_injury",
                             "torn ear"
                         ],
-                        "scar_history": "Driving off coyotes left its scars on r_c.",
-                        "death_history": "r_c died from injuries sustained in keeping coyotes away from c_n's borders."
+                        "scar_history": "Driving off coyotes left its scars on r_c0.",
+                        "death_history": "r_c0 died from injuries sustained in keeping coyotes away from c_n's borders."
                     }
                 ]
             },
@@ -1013,10 +1013,10 @@
                 "outcome_art": "cat_sprites/gen_dead_Wr_EXPLICIT",
                 "outcome_art_clean": "cat_sprites/gen_deadghost_WrSc",
                 "strings": [
-                    "The patrol tries to lead the coyote away from the Clan's borders, but with so few cats it's impossible to cover each other's backs. r_c falls to the coyote as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their Clanmate."
+                    "The patrol tries to lead the coyote away from the Clan's borders, but with so few cats it's impossible to cover each other's backs. r_c0 falls to the coyote as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their Clanmate."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1034,14 +1034,14 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "cat_from heard that cat_to's patrol wasn't able to lead a coyote away and r_c was killed as a result."
+                            "cats_from": "cat_from heard that cat_to's patrol wasn't able to lead a coyote away and r_c0 was killed as a result."
                         }
                     }
                 ],
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c died to keep the Clan safe from a large coyote."
                     }
@@ -1051,10 +1051,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_running_WrWr",
                 "strings": [
-                    "The patrol tries bravely to lead the coyote away from c_n borders, but with so few cats it's impossible to cover each other's backs. r_c gets caught while running, and it's all the rest of the patrol can do to distract the coyote long enough to get {PRONOUN/r_c/object} to safety."
+                    "The patrol tries bravely to lead the coyote away from c_n borders, but with so few cats it's impossible to cover each other's backs. r_c0 gets caught while running, and it's all the rest of the patrol can do to distract the coyote long enough to get {PRONOUN/r_c0/object} to safety."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1072,14 +1072,14 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from heard that cat_to's patrol wasn't able to lead a coyote away and r_c was injured as a result."
+                            "cats_from": "cat_from heard that cat_to's patrol wasn't able to lead a coyote away and r_c0 was injured as a result."
                         }
                     }
                 ],
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -1118,10 +1118,10 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "The warriors share a glance and a nod. They have enough cats to try and tackle this problem. Spreading out, they use a search pattern they've all been trained in to isolate the adult coyote's location, and the cover of the snow drifts to approach stealthily. r_c starts the battle strong, sinking {PRONOUN/r_c/poss} teeth into the coyote's hamstring, and the rest of the patrol break cover with screeches, driving the coyote away from c_n."
+                    "The warriors share a glance and a nod. They have enough cats to try and tackle this problem. Spreading out, they use a search pattern they've all been trained in to isolate the adult coyote's location, and the cover of the snow drifts to approach stealthily. r_c0 starts the battle strong, sinking {PRONOUN/r_c0/poss} teeth into the coyote's hamstring, and the rest of the patrol break cover with screeches, driving the coyote away from c_n."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 60,
                 "relationship_changes": [
@@ -1143,7 +1143,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1192,7 +1192,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1667,10 +1667,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "The warriors share a glance and a nod. They have enough cats to try and tackle this problem. Spreading out, they use a search pattern they've all been trained in to isolate the adult coyote's location, and the cover of the snow to approach stealthily. But r_c misjudges the first attack, and instead the patrol has to focus on defence and getting out of there mostly unscathed."
+                    "The warriors share a glance and a nod. They have enough cats to try and tackle this problem. Spreading out, they use a search pattern they've all been trained in to isolate the adult coyote's location, and the cover of the snow to approach stealthily. But r_c0 misjudges the first attack, and instead the patrol has to focus on defence and getting out of there mostly unscathed."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1680,7 +1680,7 @@
                             "high_aggress"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "respect"
@@ -1695,13 +1695,13 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "torn ear"
                         ],
-                        "scar_history": "A coyote encounter left its scars on r_c.",
-                        "death_history": "r_c died from injuries sustained keeping coyotes away from c_n's borders."
+                        "scar_history": "A coyote encounter left its scars on r_c0.",
+                        "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
                     }
                 ]
             },
@@ -1710,16 +1710,16 @@
                 "outcome_art": "cat_sprites/gen_deadghost_Wr_EXPLICIT",
                 "outcome_art_clean": "cat_sprites/gen_deadghost_WrSc",
                 "strings": [
-                    "Ears pricked, the patrol stalks closer and fans out, crossing the border. On the other side, a female assesses the males trying to court her. One offers a gift to the female, and p_l's stomach drops. {PRONOUN/r_c/subject/CAP} {VERB/r_c/were/was} only out of sight for seconds \u00e2\u20ac\u201d but r_c won't be coming home."
+                    "Ears pricked, the patrol stalks closer and fans out, crossing the border. On the other side, a female assesses the males trying to court her. One offers a gift to the female, and p_l's stomach drops. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/were/was} only out of sight for seconds \u00e2\u20ac\u201d but r_c0 won't be coming home."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c was killed by a coyote male trying to offer a courting gift to a female."
                     }
@@ -1741,10 +1741,10 @@
                 "frequency": 1,
                 "outcome_art": "animals/animals/gen_coyotedanger",
                 "strings": [
-                    "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. One discovers r_c, and decides that cat would make a nice courting gift. The patrol runs in to save {PRONOUN/r_c/object}, finding refuge crammed in a rabbit burrow as the coyotes howl outside."
+                    "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. One discovers r_c, and decides that cat would make a nice courting gift. The patrol runs in to save {PRONOUN/r_c0/object}, finding refuge crammed in a rabbit burrow as the coyotes howl outside."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1753,7 +1753,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1762,7 +1762,7 @@
                         ],
                         "amount": 30,
                         "log": {
-                            "cats_from": "cat_to put {PRONOUN/cat_to/self} in danger to rescue r_c from the jaws of a coyote."
+                            "cats_from": "cat_to put {PRONOUN/cat_to/self} in danger to rescue r_c0 from the jaws of a coyote."
                         }
                     }
                 ],
@@ -1779,7 +1779,7 @@
                     },
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -1793,10 +1793,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. One discovers r_c, and decides that cat would make a nice courting gift. s_c runs in to save {PRONOUN/r_c/object}, fighting like an entire patrol just by {PRONOUN/s_c/self}."
+                    "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. One discovers r_c, and decides that cat would make a nice courting gift. s_c runs in to save {PRONOUN/r_c0/object}, fighting like an entire patrol just by {PRONOUN/s_c/self}."
                 ],
                 "involved_cats": {
-                    "r_c": {},
+                    "r_c0": {},
                     "s_c": {
                         "stat": {
                             "skill": [
@@ -1805,7 +1805,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1816,7 +1816,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1838,8 +1838,8 @@
                             "minor_injury",
                             "torn ear"
                         ],
-                        "scar_history": "Driving off coyotes left its scars on r_c.",
-                        "death_history": "r_c died from injuries sustained in keeping coyotes away from c_n's borders."
+                        "scar_history": "Driving off coyotes left its scars on r_c0.",
+                        "death_history": "r_c0 died from injuries sustained in keeping coyotes away from c_n's borders."
                     }
                 ]
             },
@@ -1909,7 +1909,7 @@
                         "cats": [
                             "multi"
                         ],
-                        "history": "r_c died from injuries sustained keeping coyotes away from c_n's borders."
+                        "history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
                     }
                 ],
                 "injury": [
@@ -1922,7 +1922,7 @@
                             "scrapes"
                         ],
                         "scar_history": "Courting coyotes scarred r_c's pelt.",
-                        "death_history": "r_c died from injuries sustained keeping coyotes away from c_n's borders."
+                        "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
                     },
                     {
                         "cats": [
@@ -1932,7 +1932,7 @@
                             "scrapes"
                         ],
                         "scar_history": "Courting coyotes scarred r_c's pelt.",
-                        "death_history": "r_c died from injuries sustained keeping coyotes away from c_n's borders."
+                        "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
                     }
                 ]
             },
@@ -1940,10 +1940,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/fst_hunt_howl_Wr",
                 "strings": [
-                    "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks at each other with dismay. The patrol tries to lead the pack away with a relay of cats distracting them, but r_c gets caught by a male's jaws, and it's only s_c's first aid that saves {PRONOUN/r_c/object} from dying in the snow."
+                    "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks at each other with dismay. The patrol tries to lead the pack away with a relay of cats distracting them, but r_c0 gets caught by a male's jaws, and it's only s_c's first aid that saves {PRONOUN/r_c0/object} from dying in the snow."
                 ],
                 "involved_cats": {
-                    "r_c": {},
+                    "r_c0": {},
                     "s_c": {
                         "stat": {
                             "skill": [
@@ -1952,7 +1952,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1963,7 +1963,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1979,23 +1979,23 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "bite-wound"
                         ],
                         "scar_history": "Courting coyotes scarred r_c's pelt.",
-                        "death_history": "r_c died from injuries sustained keeping coyotes away from c_n's borders."
+                        "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
                     },
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "blood loss"
                         ],
                         "scar_history": "Courting coyotes scarred r_c's pelt.",
-                        "death_history": "r_c died from injuries sustained keeping coyotes away from c_n's borders."
+                        "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
                     }
                 ]
             },
@@ -2003,10 +2003,10 @@
                 "frequency": 1,
                 "outcome_art": "animals/animals/gen_coyotedanger",
                 "strings": [
-                    "The patrol tries to keep watch on the coyote from a distance, but it spots the cats and they have to scatter. It's not as bad as it could've been though; r_c manages to keep track of the coyote's position, and it doesn't come any further into c_n territory."
+                    "The patrol tries to keep watch on the coyote from a distance, but it spots the cats and they have to scatter. It's not as bad as it could've been though; r_c0 manages to keep track of the coyote's position, and it doesn't come any further into c_n territory."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0
             },
@@ -2059,16 +2059,16 @@
                 "outcome_art": "cat_sprites/gen_deadghost_Wr_EXPLICIT",
                 "outcome_art_clean": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "With so many cats all working as one, the coyote started to get beaten back. But just as the tide of the fight seems about to turn, one lucky strike hits r_c, and those vicious jaws take {PRONOUN/r_c/object} to StarClan."
+                    "With so many cats all working as one, the coyote started to get beaten back. But just as the tide of the fight seems about to turn, one lucky strike hits r_c, and those vicious jaws take {PRONOUN/r_c0/object} to StarClan."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -2086,7 +2086,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c died to keep the Clan safe from a large coyote."
                     }
@@ -2096,16 +2096,16 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "The patrol fights bravely, but you only need to be unlucky once. r_c gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend {PRONOUN/r_c/object}, and r_c is safely helped back to camp, where the medicine den awaits."
+                    "The patrol fights bravely, but you only need to be unlucky once. r_c0 gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend {PRONOUN/r_c0/object}, and r_c0 is safely helped back to camp, where the medicine den awaits."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "clan",
@@ -2124,7 +2124,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -2607,10 +2607,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_flashflood_Wr",
                 "strings": [
-                    "No one can remember any tunnels near this stretch of border, and the patrol huddles under a bush instead. The storm hits, not with snow or hail, but with dreadful, bone-chilling sleet that sucks the heat from the cats' pelts and slicks their fur against the skin. r_c becomes unresponsive."
+                    "No one can remember any tunnels near this stretch of border, and the patrol huddles under a bush instead. The storm hits, not with snow or hail, but with dreadful, bone-chilling sleet that sucks the heat from the cats' pelts and slicks their fur against the skin. r_c0 becomes unresponsive."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -2627,14 +2627,14 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from and cat_to were unable to find shelter before a snowstorm hit, and r_c froze to death."
+                            "cats_from": "cat_from and cat_to were unable to find shelter before a snowstorm hit, and r_c0 froze to death."
                         }
                     }
                 ],
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c died of {PRONOUN/m_c/poss} injuries when {PRONOUN/m_c/poss} border patrol failed to find shelter in a sleet storm."
                     }
@@ -2861,10 +2861,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_talking_WrWr",
                 "strings": [
-                    "This could be a burrow, r_c agrees. But digging it out to check will chill their paws, and possibly disturb a hibernating occupant, if they're unlucky. Reporting it back at camp is worth doing, whereas poking at StarClan-knows-what under the snow might be dangerous."
+                    "This could be a burrow, r_c0 agrees. But digging it out to check will chill their paws, and possibly disturb a hibernating occupant, if they're unlucky. Reporting it back at camp is worth doing, whereas poking at StarClan-knows-what under the snow might be dangerous."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 25
             },
@@ -2872,10 +2872,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_talking_WrWr",
                 "strings": [
-                    "r_c congratulates p_l on the discovery \u00e2\u20ac\u201d this'll be welcome news back at camp. But once p_l turns away, {PRONOUN/r_c/subject} can't help the small twitches at the end of {PRONOUN/r_c/poss} tail. {PRONOUN/r_c/subject/CAP} {VERB/r_c/were/was} so close to finding those tunnels {PRONOUN/r_c/self}! If only r_c had spotted hole, half buried and disguised in the snow."
+                    "r_c0 congratulates p_l on the discovery \u00e2\u20ac\u201d this'll be welcome news back at camp. But once p_l turns away, {PRONOUN/r_c0/subject} can't help the small twitches at the end of {PRONOUN/r_c0/poss} tail. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/were/was} so close to finding those tunnels {PRONOUN/r_c0/self}! If only r_c0 had spotted hole, half buried and disguised in the snow."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 25,
                 "relationship_changes": [
@@ -2884,7 +2884,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -3067,10 +3067,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
                 "strings": [
-                    "p_l and r_c pull snow away from the entrance, digging down to confirm the discovery. It's a new set of tunnels, yes. But all the excavations in the cold leave them both shivering."
+                    "p_l and r_c0 pull snow away from the entrance, digging down to confirm the discovery. It's a new set of tunnels, yes. But all the excavations in the cold leave them both shivering."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "injury": [
@@ -3094,10 +3094,10 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "p_l and r_c pull snow away from the entrance, digging down to confirm the discovery. They nearly fall on the young coyote sheltering inside the shallow hole, and there's a shocked, violent scramble as every animal involved lashes out and retreats, everyone coming out worse for wear."
+                    "p_l and r_c0 pull snow away from the entrance, digging down to confirm the discovery. They nearly fall on the young coyote sheltering inside the shallow hole, and there's a shocked, violent scramble as every animal involved lashes out and retreats, everyone coming out worse for wear."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "injury": [
@@ -3117,10 +3117,10 @@
                 "frequency": 4,
                 "outcome_art": "animals/gen_scarybadger",
                 "strings": [
-                    "p_l and r_c pull snow away from the entrance, digging down to confirm the discovery. Inside, the indignant new owner of the burrow pushes back violently, leaving p_l bleeding as the badger snarls."
+                    "p_l and r_c0 pull snow away from the entrance, digging down to confirm the discovery. Inside, the indignant new owner of the burrow pushes back violently, leaving p_l bleeding as the badger snarls."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "injury": [
@@ -3139,16 +3139,16 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "It seems this hole is home to a cranky wolverine, a fact that the patrol learns very quickly when r_c is snagged by the jaws of the predator. r_c won't be making it back to camp..."
+                    "It seems this hole is home to a cranky wolverine, a fact that the patrol learns very quickly when r_c0 is snagged by the jaws of the predator. r_c0 won't be making it back to camp..."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "This cat was killed after an unfortunate meeting with a wolverine."
                     }

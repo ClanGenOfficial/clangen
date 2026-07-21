@@ -76,7 +76,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "respect"
@@ -440,16 +440,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. The snake backs up and hisses, before turning and slithering away. r_c wastes no time in pouncing on the squirrel now that it's safe to approach, securing the meal for the Clan!"
+                    "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. The snake backs up and hisses, before turning and slithering away. r_c0 wastes no time in pouncing on the squirrel now that it's safe to approach, securing the meal for the Clan!"
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 40,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -474,16 +474,16 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. The snake backs up and hisses, and the squirrel lunges! The patrol is stupefied, watching it attack and send the snake fleeing, before r_c remembers what they're doing and kills the squirrel before it, too, flees."
+                    "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. The snake backs up and hisses, and the squirrel lunges! The patrol is stupefied, watching it attack and send the snake fleeing, before r_c0 remembers what they're doing and kills the squirrel before it, too, flees."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 40,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -578,10 +578,10 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. r_c moves in once {PRONOUN/r_c/subject} {VERB/r_c/realize/realizes} the snake is intimidated by it, but {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} anticipate it turning on {PRONOUN/r_c/object} instead! With no squirrel, no snake, and an envenomed bite, r_c is rushed home to the medicine cat den."
+                    "Watching from a careful distance, the patrol observes the squirrel chittering at it, kicking up sand and wildly whipping its tail in the air. r_c0 moves in once {PRONOUN/r_c0/subject} {VERB/r_c0/realize/realizes} the snake is intimidated by it, but {PRONOUN/r_c0/subject} {VERB/r_c0/don't/doesn't} anticipate it turning on {PRONOUN/r_c0/object} instead! With no squirrel, no snake, and an envenomed bite, r_c0 is rushed home to the medicine cat den."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -598,14 +598,14 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from and cat_to were unable to stop a rattlesnake from biting r_c."
+                            "cats_from": "cat_from and cat_to were unable to stop a rattlesnake from biting r_c0."
                         }
                     }
                 ],
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "snake bite",
@@ -637,11 +637,11 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "p_l's patrol strolls leisurely along the coastline, enjoying the greenleaf sun. r_c raises {PRONOUN/r_c/poss} tail, signaling for the others to be still; {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} scented ground squirrels nearby.",
+        "intro_text": "p_l's patrol strolls leisurely along the coastline, enjoying the greenleaf sun. r_c0 raises {PRONOUN/r_c0/poss} tail, signaling for the others to be still; {PRONOUN/r_c0/subject}{VERB/r_c0/'ve/'s} scented ground squirrels nearby.",
         "decline_text": "p_l quietly shakes {PRONOUN/p_l/poss} head and leads the patrol elsewhere. Better not to disturb the squirrels, who are loud and territorial.",
         "success_outcomes": [
             {
@@ -678,13 +678,13 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "First order of business is blocking their access to any nearby burrows, which r_c takes care of. After that, it's a matter of finding and catching the squirrels, which proves to be simple, especially with their access to safety denied. No one could ask for a better hunt."
+                    "First order of business is blocking their access to any nearby burrows, which r_c0 takes care of. After that, it's a matter of finding and catching the squirrels, which proves to be simple, especially with their access to safety denied. No one could ask for a better hunt."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -709,7 +709,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c murmurs instructions to {PRONOUN/s_c/poss} Clanmates, who nod silently and move into position. p_l feints at a squirrel, who raises the alarm and turns to run; r_c blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, with not a single squirrel left behind."
+                    "s_c murmurs instructions to {PRONOUN/s_c/poss} Clanmates, who nod silently and move into position. p_l feints at a squirrel, who raises the alarm and turns to run; r_c0 blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, with not a single squirrel left behind."
                 ],
                 "involved_cats": {
                     "s_c": {
@@ -757,13 +757,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It only takes one squirrel spotting r_c to raise the alarm before they've all vanished into their burrows. Though the others made a few catches before they scattered, they didn't get nearly what they would have otherwise."
+                    "It only takes one squirrel spotting r_c0 to raise the alarm before they've all vanished into their burrows. Though the others made a few catches before they scattered, they didn't get nearly what they would have otherwise."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "multi"
@@ -848,16 +848,16 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "As the patrol gets close, a Twoleg kit runs at them, screaming unintelligibly. While running away, r_c sprains a leg."
+                    "As the patrol gets close, a Twoleg kit runs at them, screaming unintelligibly. While running away, r_c0 sprains a leg."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "sprain"
@@ -898,10 +898,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_hunt_funrun_WrWr",
                 "strings": [
-                    "When the Twolegs leave their white-and-red pelt to run down to the water's edge, shrieking and laughing to each other, the patrol strikes. Moving as one, they sprint over the tussock toward the woven nest. p_l batters the nest onto its side, spilling its contents, and r_c snatches up the prize \u00e2\u20ac\u201d a slippery clear sac full of mouthwatering chicken. The cats vanish back into the grass before the Twolegs ever learn they were there."
+                    "When the Twolegs leave their white-and-red pelt to run down to the water's edge, shrieking and laughing to each other, the patrol strikes. Moving as one, they sprint over the tussock toward the woven nest. p_l batters the nest onto its side, spilling its contents, and r_c0 snatches up the prize \u00e2\u20ac\u201d a slippery clear sac full of mouthwatering chicken. The cats vanish back into the grass before the Twolegs ever learn they were there."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -969,10 +969,10 @@
                 "frequency": 2,
                 "outcome_art": "cat_sprites/gen_happycat_Wr",
                 "strings": [
-                    "When the Twolegs leave their white-and-red pelt to run down to the water, p_l gives the signal, and the patrol strikes. p_l knocks over the woven basket, and r_c paws through the Twolegs' trove. The delicious scent was... a huge green fruit? The patrol trades baffled glances. r_c scoops a pawful of red flesh out from the halved fruit and tastes it, {PRONOUN/r_c/poss} eyes growing round with delight. It tastes like meat!"
+                    "When the Twolegs leave their white-and-red pelt to run down to the water, p_l gives the signal, and the patrol strikes. p_l knocks over the woven basket, and r_c0 paws through the Twolegs' trove. The delicious scent was... a huge green fruit? The patrol trades baffled glances. r_c0 scoops a pawful of red flesh out from the halved fruit and tastes it, {PRONOUN/r_c0/poss} eyes growing round with delight. It tastes like meat!"
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -1040,7 +1040,7 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_crouchingperplexed_WrWr",
                 "strings": [
-                    "The Twolegs leave their white-and-red pelt to return to their monster, and the patrol strikes. p_l keeps watch while the others snatch the Twolegs' feast. When they return to camp, eyes wide, they share their mysterious haul with their Clanmates. r_c likes the salty taste of the orange crackly triangles, whereas p_l doesn't find the miniature red, green, and yellow fresh-kill that get stuck in {PRONOUN/p_l/poss} teeth very flavorful."
+                    "The Twolegs leave their white-and-red pelt to return to their monster, and the patrol strikes. p_l keeps watch while the others snatch the Twolegs' feast. When they return to camp, eyes wide, they share their mysterious haul with their Clanmates. r_c0 likes the salty taste of the orange crackly triangles, whereas p_l doesn't find the miniature red, green, and yellow fresh-kill that get stuck in {PRONOUN/p_l/poss} teeth very flavorful."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -1049,7 +1049,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -1117,7 +1117,7 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_jolly_Wr",
                 "strings": [
-                    "r_c strolls down the beach, meowing sweetly. The Twolegs screech and run over, and p_l sprints down to the white-and-red pelt to snatch something fishy. Once r_c extricates {PRONOUN/r_c/self} from the Twoleg kits' clutches and the patrol returns to camp with their spoils, {PRONOUN/r_c/subject} and p_l wonder why Twolegs would put delicious tuna between two strange slabs of something that smells of wheat."
+                    "r_c0 strolls down the beach, meowing sweetly. The Twolegs screech and run over, and p_l sprints down to the white-and-red pelt to snatch something fishy. Once r_c0 extricates {PRONOUN/r_c0/self} from the Twoleg kits' clutches and the patrol returns to camp with their spoils, {PRONOUN/r_c0/subject} and p_l wonder why Twolegs would put delicious tuna between two strange slabs of something that smells of wheat."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -1126,7 +1126,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -1158,7 +1158,7 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_jolly_Wr",
                 "strings": [
-                    "r_c strolls down the beach, meowing sweetly. The Twolegs screech and run over, and the patrol snatches as much Twoleg food as they can. Once r_c extricates {PRONOUN/r_c/self} from the Twoleg kits' clutches and the patrol returns to camp, they share all sorts of mysteries with their Clanmates \u00e2\u20ac\u201d creamy goop-covered tubers, strange cylindrical meat in a wheaty casing, and large shell-less chicken eggs made soft and opaque."
+                    "r_c0 strolls down the beach, meowing sweetly. The Twolegs screech and run over, and the patrol snatches as much Twoleg food as they can. Once r_c0 extricates {PRONOUN/r_c0/self} from the Twoleg kits' clutches and the patrol returns to camp, they share all sorts of mysteries with their Clanmates \u00e2\u20ac\u201d creamy goop-covered tubers, strange cylindrical meat in a wheaty casing, and large shell-less chicken eggs made soft and opaque."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -1167,7 +1167,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -1184,7 +1184,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "r_c distracted some Twolegs on the beach so p_l could steal their food."
+                            "cats_from": "r_c0 distracted some Twolegs on the beach so p_l could steal their food."
                         }
                     },
                     {
@@ -1462,10 +1462,10 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_confused_Wr",
                 "strings": [
-                    "Biding their time, the patrol watches as the Twolegs leave their white-and-red pelt to go splash in the water. Then, they strike. p_l knocks over the woven nest so r_c can steal the Twoleg food \u00e2\u20ac\u201d but the cats are disappointed to discover fruit, fruit, and more fruit. Why would such powerful animals as Twolegs eat like rodents and birds? The patrol trade confused, irritated looks as they go home empty-pawed."
+                    "Biding their time, the patrol watches as the Twolegs leave their white-and-red pelt to go splash in the water. Then, they strike. p_l knocks over the woven nest so r_c0 can steal the Twoleg food \u00e2\u20ac\u201d but the cats are disappointed to discover fruit, fruit, and more fruit. Why would such powerful animals as Twolegs eat like rodents and birds? The patrol trade confused, irritated looks as they go home empty-pawed."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0
             },
@@ -1481,10 +1481,10 @@
                 "frequency": 2,
                 "outcome_art": "cat_sprites/gen_crouching_Wr",
                 "strings": [
-                    "When the Twolegs leave their white-and-red pelt to run down to the water, p_l gives the signal, and the patrol strikes. They sprint down to the pelt and snatch up whatever they can, then retreat behind the long grass with their haul. r_c dabs {PRONOUN/r_c/poss} paw on a strange brown bar of something that smells faintly bitter, then leans down for a nibble. Back at the camp, r_c feels the consequences of tasting mysterious Twoleg food."
+                    "When the Twolegs leave their white-and-red pelt to run down to the water, p_l gives the signal, and the patrol strikes. They sprint down to the pelt and snatch up whatever they can, then retreat behind the long grass with their haul. r_c0 dabs {PRONOUN/r_c0/poss} paw on a strange brown bar of something that smells faintly bitter, then leans down for a nibble. Back at the camp, r_c0 feels the consequences of tasting mysterious Twoleg food."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "supply": [
@@ -1496,7 +1496,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "poisoned",
@@ -1673,10 +1673,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_rescue_Wr",
                 "strings": [
-                    "When r_c suggests trying to distract the Twolegs and steal their food, s_c scolds {PRONOUN/r_c/object}. The presence of Twolegs on their territory is a threat, not an opportunity. They should return to camp at once and report this."
+                    "When r_c0 suggests trying to distract the Twolegs and steal their food, s_c scolds {PRONOUN/r_c0/object}. The presence of Twolegs on their territory is a threat, not an opportunity. They should return to camp at once and report this."
                 ],
                 "involved_cats": {
-                    "r_c": {},
+                    "r_c0": {},
                     "s_c": {
                         "stat": {
                             "trait": [
@@ -1696,7 +1696,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [

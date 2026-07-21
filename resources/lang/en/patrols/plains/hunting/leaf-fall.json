@@ -51,7 +51,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "respect"
@@ -94,7 +94,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "respect"
@@ -645,11 +645,11 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "p_l's patrol strolls leisurely through the plains, enjoying the cool air. r_c raises {PRONOUN/r_c/poss} tail, signaling the others to be still; {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} scented ground squirrels nearby.",
+        "intro_text": "p_l's patrol strolls leisurely through the plains, enjoying the cool air. r_c0 raises {PRONOUN/r_c0/poss} tail, signaling the others to be still; {PRONOUN/r_c0/subject}{VERB/r_c0/'ve/'s} scented ground squirrels nearby.",
         "decline_text": "p_l quietly shakes {PRONOUN/p_l/poss} head and leads the patrol elsewhere. Better not to disturb the squirrels, who are loud and territorial.",
         "success_outcomes": [
             {
@@ -686,7 +686,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "First order of business is blocking their access to any nearby burrows, which r_c takes care of. After that, it's a matter of finding and catching the squirrels, which proves to be simple, especially with their access to safety denied. No one could ask for a better hunt."
+                    "First order of business is blocking their access to any nearby burrows, which r_c0 takes care of. After that, it's a matter of finding and catching the squirrels, which proves to be simple, especially with their access to safety denied. No one could ask for a better hunt."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -717,7 +717,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c murmurs instructions to {PRONOUN/s_c/poss} Clanmates, who nod silently and move into position. p_l feints at a squirrel, who raises the alarm and turns to run; r_c blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, not a single squirrel left behind."
+                    "s_c murmurs instructions to {PRONOUN/s_c/poss} Clanmates, who nod silently and move into position. p_l feints at a squirrel, who raises the alarm and turns to run; r_c0 blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, not a single squirrel left behind."
                 ],
                 "involved_cats": {
                     "s_c": {
@@ -779,13 +779,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It only takes one squirrel spotting r_c to raise the alarm before they've all vanished into their burrows. Though the others made a few catches before they scattered, they didn't get nearly what they would have otherwise."
+                    "It only takes one squirrel spotting r_c0 to raise the alarm before they've all vanished into their burrows. Though the others made a few catches before they scattered, they didn't get nearly what they would have otherwise."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "multi"
@@ -958,7 +958,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "respect"
@@ -996,7 +996,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "respect"
@@ -1247,17 +1247,17 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "r_c suggests the patrol hunts near the border, in areas that might soon be harder to access when the snows arrive.",
+        "intro_text": "r_c0 suggests the patrol hunts near the border, in areas that might soon be harder to access when the snows arrive.",
         "decline_text": "The cats are called back to camp \u00e2\u20ac\u201d there's something the deputy needs to discuss with them.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "As they arrive, the patrol startles two mice, and r_c reacts quick enough to kill one with an inelegant pounce. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt."
+                    "As they arrive, the patrol startles two mice, and r_c0 reacts quick enough to kill one with an inelegant pounce. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -1295,7 +1295,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1366,13 +1366,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames {PRONOUN/r_c/object} for it."
+                    "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames {PRONOUN/r_c0/object} for it."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1439,16 +1439,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l watches r_c leap with the thrill of the hunt, quite literally snatching victory from thin air. {PRONOUN/p_l/subject/CAP}'d feel sorry for the lover bats \u00e2\u20ac\u201d but r_c is just showing who the best potential mates are. Showing the pipistrelles, of course. No one else."
+                    "p_l watches r_c0 leap with the thrill of the hunt, quite literally snatching victory from thin air. {PRONOUN/p_l/subject/CAP}'d feel sorry for the lover bats \u00e2\u20ac\u201d but r_c0 is just showing who the best potential mates are. Showing the pipistrelles, of course. No one else."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"

@@ -258,23 +258,23 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_med_stumble_McWr",
-        "intro_text": "r_c trips over a tree root while helping p_l to collect herbs.",
-        "decline_text": "{PRONOUN/r_c/subject/CAP} quickly {VERB/r_c/pick/picks} {PRONOUN/r_c/self} up and {VERB/r_c/continue/continues} on.",
+        "intro_text": "r_c0 trips over a tree root while helping p_l to collect herbs.",
+        "decline_text": "{PRONOUN/r_c0/subject/CAP} quickly {VERB/r_c0/pick/picks} {PRONOUN/r_c0/self} up and {VERB/r_c0/continue/continues} on.",
         "success_outcomes": [
             {
                 "frequency": 1,
                 "strings": [
-                    "Though p_l checks {PRONOUN/r_c/object} over and doesn't find any injuries, r_c <i>insists</i> that {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to lean on p_l's shoulder all the way back to camp. p_l complies, and r_c purrs the entire way home."
+                    "Though p_l checks {PRONOUN/r_c0/object} over and doesn't find any injuries, r_c0 <i>insists</i> that {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} to lean on p_l's shoulder all the way back to camp. p_l complies, and r_c0 purrs the entire way home."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -285,7 +285,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "When r_c tripped on patrol, {PRONOUN/r_c/subject} insisted on leaning against p_l all the way back to camp."
+                            "cats_from": "When r_c0 tripped on patrol, {PRONOUN/r_c0/subject} insisted on leaning against p_l all the way back to camp."
                         }
                     },
                     {
@@ -293,7 +293,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -329,7 +329,7 @@
                             ]
                         },
                         "prior_abbreviations": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 },
@@ -366,13 +366,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Thankfully, r_c is able to pick {PRONOUN/r_c/self} up, {PRONOUN/r_c/poss} only injuries being the ones to {PRONOUN/r_c/poss} pride. StarClan, did that <i>really</i> have to happen in front of p_l?"
+                    "Thankfully, r_c0 is able to pick {PRONOUN/r_c0/self} up, {PRONOUN/r_c0/poss} only injuries being the ones to {PRONOUN/r_c0/poss} pride. StarClan, did that <i>really</i> have to happen in front of p_l?"
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -391,7 +391,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -407,7 +407,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c checks r_c over and, upon confirming that there are no injuries, tells {PRONOUN/r_c/object} that {PRONOUN/r_c/object}{VERB/r_c/'re/'s} fine and to walk it off."
+                    "s_c checks r_c0 over and, upon confirming that there are no injuries, tells {PRONOUN/r_c0/object} that {PRONOUN/r_c0/object}{VERB/r_c0/'re/'s} fine and to walk it off."
                 ],
                 "involved_cats": {
                     "s_c": {
@@ -430,7 +430,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -445,7 +445,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "s_c"
@@ -464,13 +464,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l checks r_c over and, while the other cat is not seriously injured, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} definitely a little more battered than {PRONOUN/r_c/subject} {VERB/r_c/were/was} when they set out."
+                    "p_l checks r_c0 over and, while the other cat is not seriously injured, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} definitely a little more battered than {PRONOUN/r_c0/subject} {VERB/r_c0/were/was} when they set out."
                 ],
                 "exp_gained": 0,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "minor_injury"
@@ -481,7 +481,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c sees r_c falling and rushes to help. However, before s_c can reach {PRONOUN/s_c/poss} Clanmate, {PRONOUN/s_c/subject} {VERB/s_c/trip/trips} over the <i>same</i> tree root and {VERB/s_c/end/ends} up joining r_c on the ground. Thankfully, neither cat is seriously injured and, after sharing a laugh over their shared misfortune, they decide to call it a day and head back to camp, leaning on each other the whole way home."
+                    "s_c sees r_c0 falling and rushes to help. However, before s_c can reach {PRONOUN/s_c/poss} Clanmate, {PRONOUN/s_c/subject} {VERB/s_c/trip/trips} over the <i>same</i> tree root and {VERB/s_c/end/ends} up joining r_c0 on the ground. Thankfully, neither cat is seriously injured and, after sharing a laugh over their shared misfortune, they decide to call it a day and head back to camp, leaning on each other the whole way home."
                 ],
                 "involved_cats": {
                     "s_c": {
@@ -529,7 +529,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c can't help the <i>mrrp</i>s of laughter that escape {PRONOUN/s_c/object} at the sight. Sweet StarClan, if only r_c could see {PRONOUN/r_c/poss} own face! However, karma quickly comes for s_c, who is so busy laughing at r_c's misfortune that {PRONOUN/s_c/subject} completely {VERB/s_c/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c/poss} path. <i>Meowch!</i>"
+                    "s_c can't help the <i>mrrp</i>s of laughter that escape {PRONOUN/s_c/object} at the sight. Sweet StarClan, if only r_c0 could see {PRONOUN/r_c0/poss} own face! However, karma quickly comes for s_c, who is so busy laughing at r_c's misfortune that {PRONOUN/s_c/subject} completely {VERB/s_c/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c/poss} path. <i>Meowch!</i>"
                 ],
                 "involved_cats": {
                     "s_c": {
@@ -551,7 +551,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -579,13 +579,13 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c yowls out in pain, alerting p_l and causing {PRONOUN/p_l/object} to drop everything and rush over. The medicine cat tries to help {PRONOUN/p_l/poss} companion to stand, but it quickly becomes clear that that won't be happening. r_c will need to be carried back to camp."
+                    "r_c0 yowls out in pain, alerting p_l and causing {PRONOUN/p_l/object} to drop everything and rush over. The medicine cat tries to help {PRONOUN/p_l/poss} companion to stand, but it quickly becomes clear that that won't be happening. r_c0 will need to be carried back to camp."
                 ],
                 "exp_gained": 0,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "blunt_force_injury"
@@ -620,23 +620,23 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_med_stumble_McMc",
-        "intro_text": "r_c trips over a tree root while out collecting herbs with p_l.",
-        "decline_text": "{PRONOUN/r_c/subject/CAP} quickly {VERB/r_c/pick/picks} {PRONOUN/r_c/self} up and {VERB/r_c/continue/continues} on.",
+        "intro_text": "r_c0 trips over a tree root while out collecting herbs with p_l.",
+        "decline_text": "{PRONOUN/r_c0/subject/CAP} quickly {VERB/r_c0/pick/picks} {PRONOUN/r_c0/self} up and {VERB/r_c0/continue/continues} on.",
         "success_outcomes": [
             {
                 "frequency": 1,
                 "strings": [
-                    "Though p_l checks {PRONOUN/r_c/object} over and doesn't find any injuries, r_c <i>insists</i> that {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to lean on p_l's shoulder all the way back to camp. p_l complies, and r_c purrs the entire way home."
+                    "Though p_l checks {PRONOUN/r_c0/object} over and doesn't find any injuries, r_c0 <i>insists</i> that {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} to lean on p_l's shoulder all the way back to camp. p_l complies, and r_c0 purrs the entire way home."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -647,7 +647,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "When r_c tripped on patrol, {PRONOUN/r_c/subject} insisted on leaning against p_l all the way back to camp."
+                            "cats_from": "When r_c0 tripped on patrol, {PRONOUN/r_c0/subject} insisted on leaning against p_l all the way back to camp."
                         }
                     },
                     {
@@ -655,7 +655,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -691,7 +691,7 @@
                             ]
                         },
                         "prior_abbreviations": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 },
@@ -728,13 +728,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Thankfully, r_c is able to pick {PRONOUN/r_c/self} up, {PRONOUN/r_c/poss} only injuries being the ones to {PRONOUN/r_c/poss} pride. StarClan, did that <i>really</i> have to happen in front of p_l?"
+                    "Thankfully, r_c0 is able to pick {PRONOUN/r_c0/self} up, {PRONOUN/r_c0/poss} only injuries being the ones to {PRONOUN/r_c0/poss} pride. StarClan, did that <i>really</i> have to happen in front of p_l?"
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -753,7 +753,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -769,7 +769,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c checks r_c over and, upon confirming that there are no injuries, tells {PRONOUN/r_c/object} that {PRONOUN/r_c/object}{VERB/r_c/'re/'s} fine and to walk it off."
+                    "s_c checks r_c0 over and, upon confirming that there are no injuries, tells {PRONOUN/r_c0/object} that {PRONOUN/r_c0/object}{VERB/r_c0/'re/'s} fine and to walk it off."
                 ],
                 "involved_cats": {
                     "s_c": {
@@ -792,7 +792,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -807,7 +807,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "s_c"
@@ -826,13 +826,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l checks r_c over and, while the other medicine cat is not seriously injured, {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} definitely a little more battered than {PRONOUN/r_c/subject} {VERB/r_c/were/was} when they set out."
+                    "p_l checks r_c0 over and, while the other medicine cat is not seriously injured, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} definitely a little more battered than {PRONOUN/r_c0/subject} {VERB/r_c0/were/was} when they set out."
                 ],
                 "exp_gained": 0,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "minor_injury"
@@ -843,7 +843,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c sees r_c falling and rushes to help. However, before s_c can reach {PRONOUN/s_c/poss} Clanmate, {PRONOUN/s_c/subject} {VERB/s_c/trip/trips} over the <i>same</i> tree root and {VERB/s_c/end/ends} up joining r_c on the ground. Thankfully, neither cat is seriously injured and, after sharing a laugh over their joint misfortune, they decide to call it a day and head back to camp, leaning on each other the whole way home."
+                    "s_c sees r_c0 falling and rushes to help. However, before s_c can reach {PRONOUN/s_c/poss} Clanmate, {PRONOUN/s_c/subject} {VERB/s_c/trip/trips} over the <i>same</i> tree root and {VERB/s_c/end/ends} up joining r_c0 on the ground. Thankfully, neither cat is seriously injured and, after sharing a laugh over their joint misfortune, they decide to call it a day and head back to camp, leaning on each other the whole way home."
                 ],
                 "involved_cats": {
                     "s_c": {
@@ -891,7 +891,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c can't help the <i>mrrp</i>s of laughter that escape {PRONOUN/s_c/object} at the sight. Sweet StarClan, if only r_c could see {PRONOUN/r_c/poss} own face! However, karma quickly comes for s_c, who is so busy laughing at r_c's misfortune that {PRONOUN/s_c/subject} completely {VERB/s_c/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c/poss} path. <i>Meowch!</i>"
+                    "s_c can't help the <i>mrrp</i>s of laughter that escape {PRONOUN/s_c/object} at the sight. Sweet StarClan, if only r_c0 could see {PRONOUN/r_c0/poss} own face! However, karma quickly comes for s_c, who is so busy laughing at r_c's misfortune that {PRONOUN/s_c/subject} completely {VERB/s_c/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c/poss} path. <i>Meowch!</i>"
                 ],
                 "involved_cats": {
                     "s_c": {
@@ -913,7 +913,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -941,13 +941,13 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c yowls out in pain, alerting p_l and causing {PRONOUN/p_l/object} to drop everything and rush over. p_l tries to help {PRONOUN/p_l/poss} fellow medicine cat to stand, but it quickly becomes clear that that won't be happening. r_c will need to be carried back to camp."
+                    "r_c0 yowls out in pain, alerting p_l and causing {PRONOUN/p_l/object} to drop everything and rush over. p_l tries to help {PRONOUN/p_l/poss} fellow medicine cat to stand, but it quickly becomes clear that that won't be happening. r_c0 will need to be carried back to camp."
                 ],
                 "exp_gained": 0,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "blunt_force_injury"
@@ -986,17 +986,17 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_med_stumble_WrMc",
-        "intro_text": "p_l trips over a tree root while out collecting herbs with r_c.",
+        "intro_text": "p_l trips over a tree root while out collecting herbs with r_c0.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/pick/picks} {PRONOUN/p_l/self} up and {VERB/p_l/continue/continues} on.",
         "success_outcomes": [
             {
                 "frequency": 1,
                 "strings": [
-                    "Though p_l has no visible injuries, {PRONOUN/p_l/subject} <i>{VERB/p_l/insist/insists}</i> that {PRONOUN/p_l/subject} {VERB/p_l/need/needs} to lean on r_c's shoulder all the way back to camp. r_c complies, and p_l purrs the entire way home."
+                    "Though p_l has no visible injuries, {PRONOUN/p_l/subject} <i>{VERB/p_l/insist/insists}</i> that {PRONOUN/p_l/subject} {VERB/p_l/need/needs} to lean on r_c's shoulder all the way back to camp. r_c0 complies, and p_l purrs the entire way home."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -1005,7 +1005,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1013,7 +1013,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "When p_l tripped on patrol, {PRONOUN/p_l/subject} insisted on leaning against r_c all the way back to camp."
+                            "cats_from": "When p_l tripped on patrol, {PRONOUN/p_l/subject} insisted on leaning against r_c0 all the way back to camp."
                         }
                     }
                 ],
@@ -1051,7 +1051,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1060,8 +1060,8 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "When s_c tripped on patrol, {PRONOUN/s_c/subject} tried to play it off in front of r_c.",
-                            "cats_to": "r_c was amused by how s_c played it off when {PRONOUN/s_c/subject} tripped over a root while on patrol."
+                            "cats_from": "When s_c tripped on patrol, {PRONOUN/s_c/subject} tried to play it off in front of r_c0.",
+                            "cats_to": "r_c0 was amused by how s_c played it off when {PRONOUN/s_c/subject} tripped over a root while on patrol."
                         }
                     }
                 ],
@@ -1086,7 +1086,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1099,7 +1099,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1130,7 +1130,7 @@
                             ]
                         },
                         "prior_abbreviations": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 },
@@ -1175,7 +1175,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c hurries over to help p_l and, while the medicine cat is not seriously injured, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} definitely a little more battered than {PRONOUN/p_l/subject} {VERB/p_l/were/was} when they set out."
+                    "r_c0 hurries over to help p_l and, while the medicine cat is not seriously injured, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} definitely a little more battered than {PRONOUN/p_l/subject} {VERB/p_l/were/was} when they set out."
                 ],
                 "exp_gained": 0,
                 "injury": [
@@ -1202,7 +1202,7 @@
                             ]
                         },
                         "prior_abbreviations": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 },
@@ -1251,7 +1251,7 @@
                             ]
                         },
                         "prior_abbreviations": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 },
@@ -1290,7 +1290,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l yowls out in pain, alerting r_c and causing {PRONOUN/r_c/object} to drop everything and rush over. r_c tries to help the medicine cat to stand, but it quickly becomes clear that that won't be happening. p_l will need to be carried back to camp."
+                    "p_l yowls out in pain, alerting r_c0 and causing {PRONOUN/r_c0/object} to drop everything and rush over. r_c0 tries to help the medicine cat to stand, but it quickly becomes clear that that won't be happening. p_l will need to be carried back to camp."
                 ],
                 "exp_gained": 0,
                 "injury": [

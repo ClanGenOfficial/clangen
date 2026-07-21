@@ -18,11 +18,11 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "It is extremely hot out today, and the hunting patrol is having a hard time staying on task. r_c debates turning back home.",
+        "intro_text": "It is extremely hot out today, and the hunting patrol is having a hard time staying on task. r_c0 debates turning back home.",
         "decline_text": "The patrol decides to head back to camp. They can hunt a different day.",
         "success_outcomes": [
             {
@@ -63,7 +63,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The patrol seeks out an abandoned badger sett to wait out the heat of the day, one that c_n often uses to train apprentices. While they wait, r_c spots a hawk flying oddly. It lands a short distance away, dehydrated and panting, and the patrol silently closes in on it through the grass."
+                    "The patrol seeks out an abandoned badger sett to wait out the heat of the day, one that c_n often uses to train apprentices. While they wait, r_c0 spots a hawk flying oddly. It lands a short distance away, dehydrated and panting, and the patrol silently closes in on it through the grass."
                 ],
                 "exp_gained": 15,
                 "relationship_changes": [
@@ -131,13 +131,13 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c collapses from heat exhaustion, and has to be carried back to camp."
+                    "r_c0 collapses from heat exhaustion, and has to be carried back to camp."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -162,7 +162,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "hot_injury"
@@ -234,21 +234,21 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "As r_c pokes {PRONOUN/r_c/poss} head around the strange smelling whatever-it-is, {PRONOUN/r_c/subject} {VERB/r_c/poke/pokes} past a piece of metal that tears through {PRONOUN/r_c/poss} ear, sending {PRONOUN/r_c/object} skittering backwards with a yelp."
+                    "As r_c0 pokes {PRONOUN/r_c0/poss} head around the strange smelling whatever-it-is, {PRONOUN/r_c0/subject} {VERB/r_c0/poke/pokes} past a piece of metal that tears through {PRONOUN/r_c0/poss} ear, sending {PRONOUN/r_c0/object} skittering backwards with a yelp."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "torn ear"
                         ],
-                        "scar_history": "r_c was scarred by a sharp piece of Twoleg garbage.",
+                        "scar_history": "r_c0 was scarred by a sharp piece of Twoleg garbage.",
                         "death_history": "m_c died after being cut by a piece of Twoleg garbage."
                     }
                 ]
@@ -429,7 +429,7 @@
                     "As the patrol descends on the swift vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, and once the patrol switches to r_c's defense, the foxes flee into the plains."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -453,7 +453,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -517,7 +517,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "respect"
@@ -560,7 +560,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "respect"
@@ -918,11 +918,11 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "p_l's patrol strolls leisurely through the plains, enjoying the warmth of greenleaf. r_c raises {PRONOUN/r_c/poss} tail, signaling the others to be still; {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} scented ground squirrels nearby.",
+        "intro_text": "p_l's patrol strolls leisurely through the plains, enjoying the warmth of greenleaf. r_c0 raises {PRONOUN/r_c0/poss} tail, signaling the others to be still; {PRONOUN/r_c0/subject}{VERB/r_c0/'ve/'s} scented ground squirrels nearby.",
         "decline_text": "p_l quietly shakes {PRONOUN/p_l/poss} head and leads the patrol elsewhere. Better not to disturb the squirrels, who are loud and territorial.",
         "success_outcomes": [
             {
@@ -959,7 +959,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "First order of business is blocking their access to any nearby burrows, which r_c takes care of. After that, it's a matter of finding and catching the squirrels, which proves to be simple, especially with their access to safety denied. No one could ask for a better hunt."
+                    "First order of business is blocking their access to any nearby burrows, which r_c0 takes care of. After that, it's a matter of finding and catching the squirrels, which proves to be simple, especially with their access to safety denied. No one could ask for a better hunt."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -990,7 +990,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c murmurs instructions to {PRONOUN/s_c/poss} Clanmates, who nod silently and move into position. p_l feints at a squirrel, who raises the alarm and turns to run; r_c blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, not a single squirrel left behind."
+                    "s_c murmurs instructions to {PRONOUN/s_c/poss} Clanmates, who nod silently and move into position. p_l feints at a squirrel, who raises the alarm and turns to run; r_c0 blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, not a single squirrel left behind."
                 ],
                 "involved_cats": {
                     "s_c": {
@@ -1052,13 +1052,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It only takes one squirrel spotting r_c to raise the alarm before they've all vanished into their burrows. Though the others made a few catches before they scattered, they didn't get nearly what they would have otherwise."
+                    "It only takes one squirrel spotting r_c0 to raise the alarm before they've all vanished into their burrows. Though the others made a few catches before they scattered, they didn't get nearly what they would have otherwise."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "multi"
@@ -1231,7 +1231,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "respect"
@@ -1269,7 +1269,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "respect"
@@ -1580,16 +1580,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake. {PRONOUN/r_c/subject/CAP} {VERB/r_c/flinch/flinches} away just as the snake snaps its dripping fangs shut a whisker-length from {PRONOUN/r_c/poss} nose. r_c bolts back to the patrol. They'll need to alter their hunting path \u00e2\u20ac\u201d that was too close!"
+                    "r_c0 finds {PRONOUN/r_c0/self} face to fang with a rattling snake. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/flinch/flinches} away just as the snake snaps its dripping fangs shut a whisker-length from {PRONOUN/r_c0/poss} nose. r_c0 bolts back to the patrol. They'll need to alter their hunting path \u00e2\u20ac\u201d that was too close!"
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 5,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1616,10 +1616,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake. {PRONOUN/r_c/subject/CAP} panics, stumbling, and the snake strikes. Its fangs pierce r_c's paw as effortlessly as wind through grass, and every step is like walking on burning thorns as {PRONOUN/r_c/subject} {VERB/r_c/drag/drags} {PRONOUN/r_c/self} into the medicine cat den."
+                    "r_c0 finds {PRONOUN/r_c0/self} face to fang with a rattling snake. {PRONOUN/r_c0/subject/CAP} panics, stumbling, and the snake strikes. Its fangs pierce r_c's paw as effortlessly as wind through grass, and every step is like walking on burning thorns as {PRONOUN/r_c0/subject} {VERB/r_c0/drag/drags} {PRONOUN/r_c0/self} into the medicine cat den."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1628,7 +1628,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1643,7 +1643,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "snake bite",
@@ -1657,10 +1657,10 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake, but {PRONOUN/r_c/subject} could barely see it at all. Indescribable pain pierces {PRONOUN/r_c/poss} eye, filling {PRONOUN/r_c/poss} head, {PRONOUN/r_c/poss} ears, {PRONOUN/r_c/poss} blood. r_c doesn't notice the rest of the patrol rush {PRONOUN/r_c/poss} into the medicine cat den. Not even as {PRONOUN/r_c/poss} screams echo through camp."
+                    "r_c0 finds {PRONOUN/r_c0/self} face to fang with a rattling snake, but {PRONOUN/r_c0/subject} could barely see it at all. Indescribable pain pierces {PRONOUN/r_c0/poss} eye, filling {PRONOUN/r_c0/poss} head, {PRONOUN/r_c0/poss} ears, {PRONOUN/r_c0/poss} blood. r_c0 doesn't notice the rest of the patrol rush {PRONOUN/r_c0/poss} into the medicine cat den. Not even as {PRONOUN/r_c0/poss} screams echo through camp."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1669,7 +1669,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1684,7 +1684,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "snake bite",
@@ -1704,16 +1704,16 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c finds {PRONOUN/r_c/self} face to fang with a rattling snake. There is no time to react. Effortlessly, the snake's teeth find r_c's veins. For a horrific moment, every drop of blood in r_c's body burns, and then {PRONOUN/r_c/poss} Clan finds {PRONOUN/r_c/object} cold."
+                    "r_c0 finds {PRONOUN/r_c0/self} face to fang with a rattling snake. There is no time to react. Effortlessly, the snake's teeth find r_c's veins. For a horrific moment, every drop of blood in r_c's body burns, and then {PRONOUN/r_c0/poss} Clan finds {PRONOUN/r_c0/object} cold."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": ""
                     }

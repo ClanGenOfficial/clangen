@@ -596,7 +596,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c was ambushed by rogues while on a solo patrol."
                     }
@@ -809,10 +809,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "There is a downpour, and a sudden flood from the overflowing river in the swamp sweeps all of the cats in the patrol away. p_l yowls out a warning, and most of the patrol react fast and strike out strongly for passing pieces of driftwood, but r_c doesn't make it, sinking beneath the water."
+                    "There is a downpour, and a sudden flood from the overflowing river in the swamp sweeps all of the cats in the patrol away. p_l yowls out a warning, and most of the patrol react fast and strike out strongly for passing pieces of driftwood, but r_c0 doesn't make it, sinking beneath the water."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -830,14 +830,14 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "cat_to made the choice to continue a patrol on an overcast day, and r_c lost {PRONOUN/r_c/poss} life in the ensuing flash flood."
+                            "cats_from": "cat_to made the choice to continue a patrol on an overcast day, and r_c0 lost {PRONOUN/r_c0/poss} life in the ensuing flash flood."
                         }
                     }
                 ],
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c was drowned by floodwaters."
                     }
@@ -930,7 +930,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c was drowned by floodwaters."
                     }
@@ -1055,7 +1055,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c was killed by a flood."
                     }
@@ -1104,7 +1104,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1120,7 +1120,7 @@
                             "n_c:0"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1128,7 +1128,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "r_c drove n_c:0 off c_n's territory."
+                            "cats_from": "r_c0 drove n_c:0 off c_n's territory."
                         }
                     }
                 ],
@@ -1176,7 +1176,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1192,7 +1192,7 @@
                             "n_c:0"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1200,7 +1200,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "r_c drove n_c:0 off c_n's territory."
+                            "cats_from": "r_c0 drove n_c:0 off c_n's territory."
                         }
                     }
                 ],
@@ -1241,7 +1241,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1257,7 +1257,7 @@
                             "n_c:0"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1265,7 +1265,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "r_c drove n_c:0 off c_n's territory."
+                            "cats_from": "r_c0 drove n_c:0 off c_n's territory."
                         }
                     }
                 ],
@@ -1321,7 +1321,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1337,7 +1337,7 @@
                             "n_c:0"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1345,7 +1345,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "r_c demanded n_c:0 leave c_n's territory."
+                            "cats_from": "r_c0 demanded n_c:0 leave c_n's territory."
                         }
                     }
                 ],
@@ -1428,7 +1428,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c was killed by an invading rogue."
                     }
@@ -1543,7 +1543,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1559,7 +1559,7 @@
                             "n_c:0"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1567,7 +1567,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "r_c drove n_c:0 off c_n's territory."
+                            "cats_from": "r_c0 drove n_c:0 off c_n's territory."
                         }
                     }
                 ],
@@ -1699,7 +1699,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c was killed by an invading rogue."
                     }
@@ -1732,11 +1732,11 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": "While on patrol, r_c notices some suspicious pawprints in the swamp mud.",
+        "intro_text": "While on patrol, r_c0 notices some suspicious pawprints in the swamp mud.",
         "decline_text": "They decide not to investigate.",
         "success_outcomes": [
             {
@@ -1815,7 +1815,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat."
+                    "r_c0 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat."
                 ],
                 "exp_gained": 10
             },
@@ -1850,7 +1850,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "r_c",
+                            "r_c0",
                             "s_c"
                         ],
                         "mutual": false,
@@ -1868,7 +1868,7 @@
                         ],
                         "cats_to": [
                             "s_c",
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1972,7 +1972,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Boldly, s_c follows the pawprints to a trespassing rogue and confronts {PRONOUN/n_c:0/object}. Fur puffed up and scowling, s_c and r_c demand the rogue leave c_n territory. The rogue is intimidated by their confidence and leaves without a fight."
+                    "Boldly, s_c follows the pawprints to a trespassing rogue and confronts {PRONOUN/n_c:0/object}. Fur puffed up and scowling, s_c and r_c0 demand the rogue leave c_n territory. The rogue is intimidated by their confidence and leaves without a fight."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -2021,7 +2021,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "r_c",
+                            "r_c0",
                             "s_c"
                         ],
                         "mutual": false,
@@ -2038,7 +2038,7 @@
                             "n_c:0"
                         ],
                         "cats_to": [
-                            "r_c",
+                            "r_c0",
                             "s_c"
                         ],
                         "mutual": true,
@@ -2150,7 +2150,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Fewer eyes watching that embarrassing moment."
+                    "It turns out they were r_c's own pawprints... r_c0 huffs with embarrassment, suddenly grateful that their patrol is so small. Fewer eyes watching that embarrassing moment."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -2169,7 +2169,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -2185,7 +2185,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "It turns out they were r_c's own pawprints... r_c huffs with embarrassment and can't meet the eyes of the rest of the patrol."
+                    "It turns out they were r_c's own pawprints... r_c0 huffs with embarrassment and can't meet the eyes of the rest of the patrol."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -2194,7 +2194,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -2640,7 +2640,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -2678,7 +2678,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -2775,12 +2775,12 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 10,
         "patrol_art": "bord_general_intro",
-        "intro_text": "On their way to mark the far corners of their swamps, r_c starts telling a story of their ancestors to keep every cat entertained.",
-        "decline_text": "The patrol seems uninterested, so r_c drops the idea. ",
+        "intro_text": "On their way to mark the far corners of their swamps, r_c0 starts telling a story of their ancestors to keep every cat entertained.",
+        "decline_text": "The patrol seems uninterested, so r_c0 drops the idea. ",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2791,7 +2791,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -2822,7 +2822,7 @@
                             ]
                         },
                         "prior_abbreviations": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 },
@@ -2895,14 +2895,14 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c skids on mud as {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} getting to an exciting part and has to stop the story to pay attention to the path. "
+                    "r_c0 skids on mud as {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} getting to an exciting part and has to stop the story to pay attention to the path. "
                 ],
                 "exp_gained": 0
             },
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c takes r_c aside and reminds {PRONOUN/r_c/object} coldly to focus on {PRONOUN/r_c/poss} duties."
+                    "s_c takes r_c0 aside and reminds {PRONOUN/r_c0/object} coldly to focus on {PRONOUN/r_c0/poss} duties."
                 ],
                 "involved_cats": {
                     "s_c": {
@@ -2928,7 +2928,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -2937,7 +2937,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "s_c told r_c to stop telling a story and focus on {PRONOUN/r_c/poss} duties during a border patrol."
+                            "cats_from": "s_c told r_c0 to stop telling a story and focus on {PRONOUN/r_c0/poss} duties during a border patrol."
                         }
                     }
                 ]
@@ -3339,10 +3339,10 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "Never threaten a mother's young \u00e2\u20ac\u201d the red vixen kills r_c in the skirmish."
+                    "Never threaten a mother's young \u00e2\u20ac\u201d the red vixen kills r_c0 in the skirmish."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -3359,12 +3359,12 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from heard that cat_to was unable to save r_c in a fight with a red vixen."
+                            "cats_from": "cat_from heard that cat_to was unable to save r_c0 in a fight with a red vixen."
                         }
                     },
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -3382,7 +3382,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c fell in battle with a red fox."
                     }
@@ -3391,10 +3391,10 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The mother red fox's snapping jaws leave r_c dripping blood into the mud, forcing the patrol to back off."
+                    "The mother red fox's snapping jaws leave r_c0 dripping blood into the mud, forcing the patrol to back off."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -3418,7 +3418,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -3468,7 +3468,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -3651,16 +3651,16 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "The patrol finds a stocky gray vixen wandering their wetland, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine."
+                    "The patrol finds a stocky gray vixen wandering their wetland, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c0 gets a little battered, but everyone is mostly fine."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 15,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "minor_injury"

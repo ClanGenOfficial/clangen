@@ -207,18 +207,18 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_bord_flashflood_Wr",
         "intro_text": "Dark clouds gather on the seaward horizon. p_l walks through the sand, weaving from dune to dune, eager to be back before the storm hits. But not without ragwort. {PRONOUN/p_l/poss/CAP} warrior companion pads along behind, warily glancing at the sky and p_l in turns.",
-        "decline_text": "Actually, ragwort can wait, because the storm won't. p_l and r_c turn back to camp.",
+        "decline_text": "Actually, ragwort can wait, because the storm won't. p_l and r_c0 turn back to camp.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_med_running_McWr",
                 "strings": [
-                    "Thankfully, ragwort still flowers late into the season. It's a vital herb for joint pain and general strength, p_l reminds r_c (and {PRONOUN/p_l/self}), but that doesn't quite lessen the foul taste of the leaf-covered stems as they hurry back to camp. By the time the thunder growls overhead, p_l has it safely stored away."
+                    "Thankfully, ragwort still flowers late into the season. It's a vital herb for joint pain and general strength, p_l reminds r_c0 (and {PRONOUN/p_l/self}), but that doesn't quite lessen the foul taste of the leaf-covered stems as they hurry back to camp. By the time the thunder growls overhead, p_l has it safely stored away."
                 ],
                 "exp_gained": 25,
                 "relationship_changes": [
@@ -227,7 +227,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [

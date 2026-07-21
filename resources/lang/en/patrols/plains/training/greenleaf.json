@@ -32,11 +32,11 @@
                     "trait": []
                 }
             },
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_heat_WrWr",
-        "intro_text": "Ugh. r_c loves the plains, but the baking hot sun isn't its best look.",
+        "intro_text": "Ugh. r_c0 loves the plains, but the baking hot sun isn't its best look.",
         "decline_text": "It's too hot for this \u00e2\u20ac\u201d let's head back to camp.",
         "success_outcomes": [
             {
@@ -70,7 +70,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_curledup_Ap",
                 "strings": [
-                    "It's not much, s_c huffs apologetically, but hold on. {PRONOUN/s_c/subject/CAP} {VERB/s_c/make/makes} a little nest under to a huge clump of grass, right near the stems, and {VERB/s_c/offer/offers} it to r_c. There \u00e2\u20ac\u201d the water within the stems and the partial shade will keep that area cool. Time for a break to let themselves cool down."
+                    "It's not much, s_c huffs apologetically, but hold on. {PRONOUN/s_c/subject/CAP} {VERB/s_c/make/makes} a little nest under to a huge clump of grass, right near the stems, and {VERB/s_c/offer/offers} it to r_c0. There \u00e2\u20ac\u201d the water within the stems and the partial shade will keep that area cool. Time for a break to let themselves cool down."
                 ],
                 "involved_cats": {
                     "s_c": {
@@ -108,7 +108,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -126,7 +126,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_chatting_WrWr",
                 "strings": [
-                    "s_c tries to distract r_c from the heat by telling the story of The Earth-Cat's Ticks, where trees are the ticks sucking sap-blood from the grassy pelt of the earth. It's a little disgusting, but in a funny way, and it gives r_c something to make a face about that isn't the exhausting heat."
+                    "s_c tries to distract r_c0 from the heat by telling the story of The Earth-Cat's Ticks, where trees are the ticks sucking sap-blood from the grassy pelt of the earth. It's a little disgusting, but in a funny way, and it gives r_c0 something to make a face about that isn't the exhausting heat."
                 ],
                 "involved_cats": {
                     "s_c": {
@@ -185,7 +185,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_chatting_WrWr",
                 "strings": [
-                    "Ah, but r_c will miss this heat in leaf-bare, p_l banters back. A cat always wants what they don't have; the grass is always greener on the other side of the river."
+                    "Ah, but r_c0 will miss this heat in leaf-bare, p_l banters back. A cat always wants what they don't have; the grass is always greener on the other side of the river."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -194,7 +194,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -202,7 +202,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "When r_c complained of the heat, p_l reminded {PRONOUN/r_c/object} {PRONOUN/r_c/subject}'ll miss it in leaf-bare."
+                            "cats_from": "When r_c0 complained of the heat, p_l reminded {PRONOUN/r_c0/object} {PRONOUN/r_c0/subject}'ll miss it in leaf-bare."
                         }
                     }
                 ]

@@ -225,10 +225,10 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together under a bush, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball. Still, when they return to camp, r_c is cold and chilled."
+                    "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together under a bush, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball. Still, when they return to camp, r_c0 is cold and chilled."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -252,7 +252,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "cold_injury"
@@ -296,7 +296,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -372,7 +372,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "cold_injury"
@@ -575,10 +575,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats huddle together, desperately trying to conserve warmth, no one notices that r_c has stopped responding. At some point in the storm, {PRONOUN/r_c/poss} life slips away, and {PRONOUN/r_c/poss} distraught Clanmates are left to carry {PRONOUN/r_c/poss} body home."
+                    "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats huddle together, desperately trying to conserve warmth, no one notices that r_c0 has stopped responding. At some point in the storm, {PRONOUN/r_c0/poss} life slips away, and {PRONOUN/r_c0/poss} distraught Clanmates are left to carry {PRONOUN/r_c0/poss} body home."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -602,7 +602,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c froze to death while hunting in a storm."
                     }
@@ -611,16 +611,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "A storm descends, sudden and violent, putting an end to any other thoughts but survival. When the snowstorm leaves, finally, the cats trudge back home, but r_c hasn't escaped unscathed, {PRONOUN/r_c/poss} body chilled and refusing to warm up properly."
+                    "A storm descends, sudden and violent, putting an end to any other thoughts but survival. When the snowstorm leaves, finally, the cats trudge back home, but r_c0 hasn't escaped unscathed, {PRONOUN/r_c0/poss} body chilled and refusing to warm up properly."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "cold_injury"
@@ -671,7 +671,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "trust",
@@ -703,7 +703,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "trust",
@@ -747,7 +747,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "trust",
@@ -1113,23 +1113,23 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_groupwalk_WrWrWr",
-        "intro_text": "As the patrol heads out into the forest to hunt, r_c seems to be absolutely unconcerned with {PRONOUN/r_c/poss} duties, instead ambling along as through the prey is going to waltz into {PRONOUN/r_c/poss} paws.",
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c0 seems to be absolutely unconcerned with {PRONOUN/r_c0/poss} duties, instead ambling along as through the prey is going to waltz into {PRONOUN/r_c0/poss} paws.",
         "decline_text": "The cats are called back to camp \u00e2\u20ac\u201d there's something the deputy needs to discuss with them.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c makes it look easy, and when the patrol is done mousing everyone else ends up carrying catches mostly brought down by {PRONOUN/r_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/lead/leads} the way back to camp, sauntering with a distinctly smug sway of {PRONOUN/r_c/poss} hips."
+                    "r_c0 makes it look easy, and when the patrol is done mousing everyone else ends up carrying catches mostly brought down by {PRONOUN/r_c0/object}. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/lead/leads} the way back to camp, sauntering with a distinctly smug sway of {PRONOUN/r_c0/poss} hips."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1146,7 +1146,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1181,7 +1181,7 @@
                             ]
                         },
                         "prior_abbreviations": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 },
@@ -1189,7 +1189,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1206,7 +1206,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1249,7 +1249,7 @@
                             ]
                         },
                         "prior_abbreviations": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 },
@@ -1257,7 +1257,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1274,7 +1274,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1301,13 +1301,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c doesn't bring much home, impressing nobody."
+                    "r_c0 doesn't bring much home, impressing nobody."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1352,17 +1352,17 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/fst_dirttrail",
-        "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a sheltered gully. It's a little far from camp, and the walk will be chilly, but the hunting around there is good, particularly for mice.",
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c0 suggests a sheltered gully. It's a little far from camp, and the walk will be chilly, but the hunting around there is good, particularly for mice.",
         "decline_text": "The cats are called back to camp \u00e2\u20ac\u201d there's something the deputy needs to discuss with them.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "As they arrive, the patrol startles two mice, and r_c reacts quick enough with an inelegant pounce to kill one. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt."
+                    "As they arrive, the patrol startles two mice, and r_c0 reacts quick enough with an inelegant pounce to kill one. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -1400,7 +1400,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1471,13 +1471,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames {PRONOUN/r_c/object} for it."
+                    "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames {PRONOUN/r_c0/object} for it."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1537,7 +1537,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -1576,7 +1576,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -1619,7 +1619,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -1708,7 +1708,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -1746,7 +1746,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -2011,11 +2011,11 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/fst_hunt_LB_squirreltreetoptumble_WrWr",
-        "intro_text": "As the patrol walks through the forest, a loud chittering from above interrupts them. r_c looks up just in time to get a shower of twigs and dead leaves to the face, while p_l exclaims aloud as {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above.",
+        "intro_text": "As the patrol walks through the forest, a loud chittering from above interrupts them. r_c0 looks up just in time to get a shower of twigs and dead leaves to the face, while p_l exclaims aloud as {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above.",
         "decline_text": "Though they snort in amusement, the patrol decides to move on to easier prey, rather than waste their energy amongst the trees.",
         "success_outcomes": [
             {
@@ -2053,7 +2053,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "A mischievous look in {PRONOUN/p_l/poss} eye, p_l challenges {PRONOUN/p_l/poss} Clanmates \u00e2\u20ac\u201d whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c calls out in triumph, proudly showing off the squirrel swinging from {PRONOUN/r_c/poss} jaws."
+                    "A mischievous look in {PRONOUN/p_l/poss} eye, p_l challenges {PRONOUN/p_l/poss} Clanmates \u00e2\u20ac\u201d whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c0 calls out in triumph, proudly showing off the squirrel swinging from {PRONOUN/r_c0/poss} jaws."
                 ],
                 "exp_gained": 40,
                 "relationship_changes": [
@@ -2193,7 +2193,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets} from the branches and {VERB/r_c/land/lands} heavily on the ground. {PRONOUN/r_c/poss/CAP} Clanmates help {PRONOUN/r_c/object} home and settle {PRONOUN/r_c/object} into the medicine cat den, guilt and regret prickling at them for pursuing such a foolhardy hunt."
+                    "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c0 yowls in fear as {PRONOUN/r_c0/subject} {VERB/r_c0/plummet/plummets} from the branches and {VERB/r_c0/land/lands} heavily on the ground. {PRONOUN/r_c0/poss/CAP} Clanmates help {PRONOUN/r_c0/object} home and settle {PRONOUN/r_c0/object} into the medicine cat den, guilt and regret prickling at them for pursuing such a foolhardy hunt."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -2223,7 +2223,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "blunt_force_injury"
@@ -2254,23 +2254,23 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "As the patrol walks through the woods, r_c explains an idea {PRONOUN/r_c/subject} had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
+        "intro_text": "As the patrol walks through the woods, r_c0 explains an idea {PRONOUN/r_c0/subject} had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
         "decline_text": "The patrol decides they'd rather not spend time on something that might not work when they could be doing something they know <i>does</i>, especially in leaf-bare where every hunt counts.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. It's pretty tedious, and they end up having to move a few times, but it does work, and the patrol heads home with a decent amount of prey."
+                    "r_c0 suggests baiting the squirrels with food and picking them off when they come out to eat. It's pretty tedious, and they end up having to move a few times, but it does work, and the patrol heads home with a decent amount of prey."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -2295,13 +2295,13 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. Waiting is the most difficult part; the squirrels don't seem to expect the trap, and they come home laden with prey."
+                    "r_c0 suggests baiting the squirrels with food and picking them off when they come out to eat. Waiting is the most difficult part; the squirrels don't seem to expect the trap, and they come home laden with prey."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -2326,7 +2326,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap \u00e2\u20ac\u201d with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home."
+                    "r_c0 suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap \u00e2\u20ac\u201d with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home."
                 ],
                 "involved_cats": {
                     "s_c": {
@@ -2345,7 +2345,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -2406,13 +2406,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c suggests finding squirrels sheltered in trees, climbing above them, and shaking the branches to scare them down. Unfortunately for them, the idea is a little too far out there, and while they do manage a few small catches, the patrol comes home freezing cold with little to show for it."
+                    "r_c0 suggests finding squirrels sheltered in trees, climbing above them, and shaking the branches to scare them down. Unfortunately for them, the idea is a little too far out there, and while they do manage a few small catches, the patrol comes home freezing cold with little to show for it."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -2470,17 +2470,17 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
         "intro_text": "Snow falling around the patrol hushes the world around and between them into a white-tinted haze, and p_l grows increasingly on edge. Something's wrong. Where is r_c?",
-        "decline_text": "r_c eventually catches up.",
+        "decline_text": "r_c0 eventually catches up.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol backtracks. r_c is found, huddled under a bush \u00e2\u20ac\u201d {PRONOUN/r_c/subject} lost the path and sight of {PRONOUN/r_c/poss} patrol but sensibly remained put. It's one more obstacle in a miserable day of hunting. They return with prey, but it's exhausting and barely worth the effort."
+                    "The patrol backtracks. r_c0 is found, huddled under a bush \u00e2\u20ac\u201d {PRONOUN/r_c0/subject} lost the path and sight of {PRONOUN/r_c0/poss} patrol but sensibly remained put. It's one more obstacle in a miserable day of hunting. They return with prey, but it's exhausting and barely worth the effort."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -2489,7 +2489,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "like"
@@ -2511,7 +2511,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l nearly jumps out of {PRONOUN/p_l/poss} pelt when r_c materializes next to {PRONOUN/p_l/object}. Where in StarClan {VERB/r_c/have/has} {PRONOUN/r_c/subject} been?! Apparently, r_c has found a copse of trees so thick and overgrown that their branches have protected the leaf litter beneath them from the snowfall. If they can find prey anywhere, it'll be there."
+                    "p_l nearly jumps out of {PRONOUN/p_l/poss} pelt when r_c0 materializes next to {PRONOUN/p_l/object}. Where in StarClan {VERB/r_c0/have/has} {PRONOUN/r_c0/subject} been?! Apparently, r_c0 has found a copse of trees so thick and overgrown that their branches have protected the leaf litter beneath them from the snowfall. If they can find prey anywhere, it'll be there."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -2520,7 +2520,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "like",
@@ -2560,7 +2560,7 @@
                             ]
                         },
                         "prior_abbreviations": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 },
@@ -2571,7 +2571,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "like",
@@ -2596,7 +2596,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l is silently furious at r_c when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} {PRONOUN/r_c/object}. A snowstorm is no time to go haring off by {PRONOUN/r_c/self}, and {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} destroyed the patrol's hunting chances."
+                    "p_l is silently furious at r_c0 when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} {PRONOUN/r_c0/object}. A snowstorm is no time to go haring off by {PRONOUN/r_c0/self}, and {PRONOUN/r_c0/subject}{VERB/r_c0/'ve/'s} destroyed the patrol's hunting chances."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -2605,7 +2605,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "like",
@@ -2628,13 +2628,13 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "This is bad. When {PRONOUN/p_l/subject} {VERB/p_l/find/finds} r_c, there's barely any warmth left in {PRONOUN/r_c/poss} pelt, and p_l can't wake {PRONOUN/r_c/object}. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} left with an impossible decision \u00e2\u20ac\u201d leave r_c there in the snow, or risk everyone else. p_l chooses r_c, and the warmth of {PRONOUN/r_c/poss} Clanmates curling around {PRONOUN/r_c/object} saves r_c's life, though none of the patrol can escape the consequences of the cold."
+                    "This is bad. When {PRONOUN/p_l/subject} {VERB/p_l/find/finds} r_c, there's barely any warmth left in {PRONOUN/r_c0/poss} pelt, and p_l can't wake {PRONOUN/r_c0/object}. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} left with an impossible decision \u00e2\u20ac\u201d leave r_c0 there in the snow, or risk everyone else. p_l chooses r_c, and the warmth of {PRONOUN/r_c0/poss} Clanmates curling around {PRONOUN/r_c0/object} saves r_c's life, though none of the patrol can escape the consequences of the cold."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -2707,7 +2707,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -2984,7 +2984,7 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
@@ -2994,13 +2994,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c leads the patrol towards the nest, pushing past the rotting wood blocking the entrance. The patrol gets to work rounding up and piling up the rats, and by nightfall they have so much it takes two trips to bring them back! r_c is congratulated for {PRONOUN/r_c/poss} ingenious plan."
+                    "r_c0 leads the patrol towards the nest, pushing past the rotting wood blocking the entrance. The patrol gets to work rounding up and piling up the rats, and by nightfall they have so much it takes two trips to bring them back! r_c0 is congratulated for {PRONOUN/r_c0/poss} ingenious plan."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -3026,13 +3026,13 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c leads the patrol towards the nest, and they quickly get to work hunting down the rats cornered near the smooth stones. It's a tough fight, with rats attempting to flee or attack the patrol, but in the end the patrol amasses a hefty pile of prey for c_n."
+                    "r_c0 leads the patrol towards the nest, and they quickly get to work hunting down the rats cornered near the smooth stones. It's a tough fight, with rats attempting to flee or attack the patrol, but in the end the patrol amasses a hefty pile of prey for c_n."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -3068,7 +3068,7 @@
                             ]
                         },
                         "prior_abbreviations": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 },
@@ -3151,13 +3151,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c leads the cats to the abandoned Twoleg nest, but as the cats search and search, all they can find are abandoned rat nests. r_c is scolded for wasting the patrol's valuable time."
+                    "r_c0 leads the cats to the abandoned Twoleg nest, but as the cats search and search, all they can find are abandoned rat nests. r_c0 is scolded for wasting the patrol's valuable time."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -3182,13 +3182,13 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c leads the cats to the abandoned Twoleg nest, but the rats are livelier than {PRONOUN/r_c/subject} expected. A harsh battle forces the patrol to retreat, r_c being the most grievously wounded."
+                    "r_c0 leads the cats to the abandoned Twoleg nest, but the rats are livelier than {PRONOUN/r_c0/subject} expected. A harsh battle forces the patrol to retreat, r_c0 being the most grievously wounded."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -3212,7 +3212,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "rat_bite"
@@ -3259,7 +3259,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -3290,7 +3290,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -3379,7 +3379,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -3417,7 +3417,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -3704,7 +3704,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -3735,7 +3735,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -3768,7 +3768,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c froze to death."
                     }
@@ -3783,7 +3783,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "frostbite"
@@ -3825,10 +3825,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "With a flick of {PRONOUN/r_c/poss} tail, p_l directs {PRONOUN/p_l/poss} Clanmates into a silent ring of hunters surrounding the oblivious birds. When the time is right, the cats spring in unison, catching half of the flock."
+                    "With a flick of {PRONOUN/r_c0/poss} tail, p_l directs {PRONOUN/p_l/poss} Clanmates into a silent ring of hunters surrounding the oblivious birds. When the time is right, the cats spring in unison, catching half of the flock."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 15,
                 "relationship_changes": [
@@ -3966,16 +3966,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l tries to organize {PRONOUN/p_l/poss} Clanmates into a silent ring of hunters around the unsuspecting birds, and it works... until r_c misses {PRONOUN/r_c/poss} cue to pounce, and the flock flies away before anyone else can catch them."
+                    "p_l tries to organize {PRONOUN/p_l/poss} Clanmates into a silent ring of hunters around the unsuspecting birds, and it works... until r_c0 misses {PRONOUN/r_c0/poss} cue to pounce, and the flock flies away before anyone else can catch them."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -4013,12 +4013,12 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "As {PRONOUN/r_c/subject} {VERB/r_c/give/gives} up on digging out an escaped mouse from its snowy tunnels, r_c <i>swears</i> {PRONOUN/r_c/subject} can smell something.",
-        "decline_text": "Must be the wind, blowing a stale scent back at {PRONOUN/r_c/object}.",
+        "intro_text": "As {PRONOUN/r_c0/subject} {VERB/r_c0/give/gives} up on digging out an escaped mouse from its snowy tunnels, r_c0 <i>swears</i> {PRONOUN/r_c0/subject} can smell something.",
+        "decline_text": "Must be the wind, blowing a stale scent back at {PRONOUN/r_c0/object}.",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4174,7 +4174,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -4205,7 +4205,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -4248,7 +4248,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -4336,7 +4336,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "minor_injury",
@@ -5164,7 +5164,7 @@
                             "LEFTEAR",
                             "RIGHTEAR"
                         ],
-                        "scar_history": "r_c tore {PRONOUN/r_c/poss} ear while learning a harsh lesson about underestimating prey as an apprentice."
+                        "scar_history": "r_c0 tore {PRONOUN/r_c0/poss} ear while learning a harsh lesson about underestimating prey as an apprentice."
                     }
                 ]
             }
@@ -5202,17 +5202,17 @@
                     "trait": []
                 }
             },
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 35,
         "patrol_art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
-        "intro_text": "Shivering among the snow as they hunt for signs of prey, p_l overhears r_c worrying that c_n will wither away if things don't improve soon.",
+        "intro_text": "Shivering among the snow as they hunt for signs of prey, p_l overhears r_c0 worrying that c_n will wither away if things don't improve soon.",
         "decline_text": "Well, in that case they should focus on the hunt then.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "c_n will be fine, p_l tells r_c firmly. Why, once, long ago, there was a Clan who went through so much suffering they were reduced down to two single dewdrops. They managed to hold on and rise again \u00e2\u20ac\u201d and c_n will too, just as soon as newleaf arrives."
+                    "c_n will be fine, p_l tells r_c0 firmly. Why, once, long ago, there was a Clan who went through so much suffering they were reduced down to two single dewdrops. They managed to hold on and rise again \u00e2\u20ac\u201d and c_n will too, just as soon as newleaf arrives."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -5237,7 +5237,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -5267,7 +5267,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"

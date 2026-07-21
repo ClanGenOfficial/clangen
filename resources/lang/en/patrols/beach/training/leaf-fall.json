@@ -25,10 +25,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c explains that the sea has always given mysterious gifts to c_n and that those strange ginger cat statues are probably just another gift from the ocean... Probably."
+                    "r_c0 explains that the sea has always given mysterious gifts to c_n and that those strange ginger cat statues are probably just another gift from the ocean... Probably."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 5,
                 "relationship_changes": [
@@ -54,10 +54,10 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The strange ginger cat statues seem to be purring slightly. r_c suggests they leave the beach as soon as possible; those things don't seem... entirely of this world."
+                    "The strange ginger cat statues seem to be purring slightly. r_c0 suggests they leave the beach as soon as possible; those things don't seem... entirely of this world."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 5,
                 "relationship_changes": [
@@ -165,16 +165,16 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_running_Wr",
                 "strings": [
-                    "There is no way r_c is staying around here. {PRONOUN/r_c/subject/CAP} {VERB/r_c/tear/tears} off back to camp at the sight of a broken ginger cat statue."
+                    "There is no way r_c0 is staying around here. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/tear/tears} off back to camp at the sight of a broken ginger cat statue."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"

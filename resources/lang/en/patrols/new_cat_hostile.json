@@ -929,11 +929,11 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_newcatthunderpath_LnWr",
-        "intro_text": "r_c finds a wounded cat near the Thunderpath.",
+        "intro_text": "r_c0 finds a wounded cat near the Thunderpath.",
         "decline_text": "They leave the wounded cat alone.",
         "success_outcomes": [
             {
@@ -998,7 +998,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As r_c inspects the cat, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} that {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} already hunting with {PRONOUN/n_c:0/poss} ancestors."
+                    "As r_c0 inspects the cat, {PRONOUN/r_c0/subject} {VERB/r_c0/find/finds} that {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} already hunting with {PRONOUN/n_c:0/poss} ancestors."
                 ],
                 "involved_cats": {
                     "n_c:0": {
@@ -1153,10 +1153,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As p_l inspects the cat, {PRONOUN/p_l/subject} {VERB/r_c/find/finds} that {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} already hunting with {PRONOUN/n_c:0/poss} ancestors."
+                    "As p_l inspects the cat, {PRONOUN/p_l/subject} {VERB/r_c0/find/finds} that {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} already hunting with {PRONOUN/n_c:0/poss} ancestors."
                 ],
                 "involved_cats": {
-                    "r_c": {},
+                    "r_c0": {},
                     "n_c:0": {
                         "can_create_new_cat": {}
                     }
@@ -1484,10 +1484,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c tells p_l {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} as good as scent-blind, and the patrol ignores the scent."
+                    "r_c0 tells p_l {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} as good as scent-blind, and the patrol ignores the scent."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1496,7 +1496,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "like",
@@ -2199,11 +2199,11 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_newkit_Kt",
-        "intro_text": "r_c finds an abandoned kit whose parents are nowhere to be found.",
+        "intro_text": "r_c0 finds an abandoned kit whose parents are nowhere to be found.",
         "decline_text": "They decide to leave the kit alone.",
         "success_outcomes": [
             {
@@ -2422,11 +2422,11 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_newmed1_Ln",
-        "intro_text": "The patrol scents a loner on the territory. r_c finds the loner, who offers their healing skills in exchange for shelter.",
+        "intro_text": "The patrol scents a loner on the territory. r_c0 finds the loner, who offers their healing skills in exchange for shelter.",
         "decline_text": "The patrol declines their offer and sends them off.",
         "success_outcomes": [
             {
@@ -2950,10 +2950,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c stays hidden and goes to the cat while the rest of the patrol lures the dog away. They're unharmed, and this display of bravery makes them want to join the Clan!"
+                    "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c0 stays hidden and goes to the cat while the rest of the patrol lures the dog away. They're unharmed, and this display of bravery makes them want to join the Clan!"
                 ],
                 "involved_cats": {
-                    "r_c": {},
+                    "r_c0": {},
                     "n_c:0": {
                         "can_create_new_cat": {},
                         "status": [
@@ -3077,10 +3077,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c stayed hidden while the rest of the patrol lured the dog away, but when {PRONOUN/r_c/subject} {VERB/r_c/go/goes} to find the cat, {PRONOUN/r_c/subject} {VERB/r_c/see/sees} that it's still running! Oh well, at least they're alright."
+                    "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c0 stayed hidden while the rest of the patrol lured the dog away, but when {PRONOUN/r_c0/subject} {VERB/r_c0/go/goes} to find the cat, {PRONOUN/r_c0/subject} {VERB/r_c0/see/sees} that it's still running! Oh well, at least they're alright."
                 ],
                 "involved_cats": {
-                    "r_c": {},
+                    "r_c0": {},
                     "n_c:0": {
                         "can_create_new_cat": {},
                         "status": [
@@ -3356,10 +3356,10 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "p_l starts to pad towards the bush. Before {PRONOUN/p_l/subject} can even reach it, however, a gang of rogues burst out of hiding! A fight ensues and though the rogues are eventually driven off, r_c is badly injured in the process."
+                    "p_l starts to pad towards the bush. Before {PRONOUN/p_l/subject} can even reach it, however, a gang of rogues burst out of hiding! A fight ensues and though the rogues are eventually driven off, r_c0 is badly injured in the process."
                 ],
                 "involved_cats": {
-                    "r_c": {},
+                    "r_c0": {},
                     "n_c:0": {
                         "can_create_new_cat": {},
                         "status": [
@@ -3403,7 +3403,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "battle_injury"
@@ -3534,10 +3534,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l hears r_c softly calling {PRONOUN/p_l/object} through the bushes. p_l drops the idea of following mouse scent, hurrying to {PRONOUN/p_l/poss} mate's side. r_c, head poking into the nest's garden through a gap in the fence, murmurs something about Twoleg kits. Twoleg kits? No, r_c corrects, the <i>Twolegs' kits</i>, the Twolegs <i>have kittens</i> wandering through the nest's garden. Uneasily, the patrol leaves, but both cats' minds return to the young cats in the days that follow."
+                    "p_l hears r_c0 softly calling {PRONOUN/p_l/object} through the bushes. p_l drops the idea of following mouse scent, hurrying to {PRONOUN/p_l/poss} mate's side. r_c, head poking into the nest's garden through a gap in the fence, murmurs something about Twoleg kits. Twoleg kits? No, r_c0 corrects, the <i>Twolegs' kits</i>, the Twolegs <i>have kittens</i> wandering through the nest's garden. Uneasily, the patrol leaves, but both cats' minds return to the young cats in the days that follow."
                 ],
                 "involved_cats": {
-                    "r_c": {},
+                    "r_c0": {},
                     "n_c:0": {
                         "can_create_new_cat": {},
                         "status": [
@@ -3619,7 +3619,7 @@
                     "Near the Twoleg den, p_l suddenly hears furious growls. Tiny, adorable, furious growls. A kitten tries to pounce on p_l, barely coming up to {PRONOUN/p_l/poss} elbows. Before little teeth can do any damage, p_l gently flips the tiny cat over and places a gentle paw on their back, completely pinning them as they struggle with all their might. r_c, called over by the mighty fight, asks the little warrior what on earth they're doing. Why, they're defending their territory of course! It might not be the done thing in c_n, but p_l is enchanted by the tiny warrior's bravery, and is willing to vouch for them."
                 ],
                 "involved_cats": {
-                    "r_c": {},
+                    "r_c0": {},
                     "n_c:0": {
                         "can_create_new_cat": {},
                         "status": [
@@ -3929,10 +3929,10 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l sees a worn and weary queen protecting {PRONOUN/n_c:0/poss} mewling litter. Not happy but unwilling and unable to go against {PRONOUN/p_l/poss} beloved code, {PRONOUN/p_l/subject} {VERB/p_l/take/takes} them all back to camp, refusing to let r_c say a word against it."
+                    "p_l sees a worn and weary queen protecting {PRONOUN/n_c:0/poss} mewling litter. Not happy but unwilling and unable to go against {PRONOUN/p_l/poss} beloved code, {PRONOUN/p_l/subject} {VERB/p_l/take/takes} them all back to camp, refusing to let r_c0 say a word against it."
                 ],
                 "involved_cats": {
-                    "r_c": {},
+                    "r_c0": {},
                     "n_c:0": {
                         "can_create_new_cat": {},
                         "age": [
@@ -4063,10 +4063,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Sure that it is a sign from StarClan, p_l follows the faint wailing. Instead, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost {PRONOUN/n_c:0/poss} life in a harsh kitting, {PRONOUN/n_c:0/poss} newborn kits clinging to a body that will never move again. p_l hesitates, but wraps {PRONOUN/p_l/self} around the kits and orders r_c back to the camp to fetch help. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} going to have to argue to keep them."
+                    "Sure that it is a sign from StarClan, p_l follows the faint wailing. Instead, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost {PRONOUN/n_c:0/poss} life in a harsh kitting, {PRONOUN/n_c:0/poss} newborn kits clinging to a body that will never move again. p_l hesitates, but wraps {PRONOUN/p_l/self} around the kits and orders r_c0 back to the camp to fetch help. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} going to have to argue to keep them."
                 ],
                 "involved_cats": {
-                    "r_c": {},
+                    "r_c0": {},
                     "n_c:0": {
                         "can_create_new_cat": {},
                         "age": [

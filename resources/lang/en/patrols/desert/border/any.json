@@ -25,7 +25,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -137,7 +137,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -156,7 +156,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c died to keep c_n safe from a large dog."
                     }
@@ -171,7 +171,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -190,7 +190,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -704,7 +704,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The patrol tries to lead the dog away from the Clan's borders, but with so few cats it's impossible to cover each other's backs. r_c falls to the dog as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their Clanmate."
+                    "The patrol tries to lead the dog away from the Clan's borders, but with so few cats it's impossible to cover each other's backs. r_c0 falls to the dog as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their Clanmate."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -713,7 +713,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -730,14 +730,14 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from heard that cat_to failed to save r_c on a patrol with a dog."
+                            "cats_from": "cat_from heard that cat_to failed to save r_c0 on a patrol with a dog."
                         }
                     }
                 ],
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c died to keep the Clan safe from a large dog."
                     }
@@ -746,7 +746,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The patrol tries bravely to lead the dog away from c_n borders, but with so few cats it's impossible to cover each other's backs. r_c gets caught while running and it's all the rest of the patrol can do to distract the dog long enough to get r_c to safety."
+                    "The patrol tries bravely to lead the dog away from c_n borders, but with so few cats it's impossible to cover each other's backs. r_c0 gets caught while running and it's all the rest of the patrol can do to distract the dog long enough to get r_c0 to safety."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -755,7 +755,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -779,7 +779,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -792,7 +792,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol tries to keep watch on the dog from a distance, but it spots the cats and forces them to scatter. It's not as bad as it could've been, though; r_c manages to keep track of the dog's position, and it doesn't come any further into c_n territory."
+                    "The patrol tries to keep watch on the dog from a distance, but it spots the cats and forces them to scatter. It's not as bad as it could've been, though; r_c0 manages to keep track of the dog's position, and it doesn't come any further into c_n territory."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -801,7 +801,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -892,7 +892,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "With so many cats all working as one, the patrol starts to beat the dog back. But just as the tide of the fight seems about to turn in their favour, one lucky strike hits r_c, and those vicious jaws send {PRONOUN/r_c/object} to StarClan."
+                    "With so many cats all working as one, the patrol starts to beat the dog back. But just as the tide of the fight seems about to turn in their favour, one lucky strike hits r_c, and those vicious jaws send {PRONOUN/r_c0/object} to StarClan."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -901,7 +901,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -926,7 +926,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c died to keep the Clan safe from a large dog."
                     }
@@ -935,7 +935,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The patrol fights bravely, but you only need to be unlucky once. One snap of the beast's huge jaws takes r_c out of the fight. The rest of the patrol rallies to defend {PRONOUN/r_c/object}, and r_c is safely helped back to camp, where the medicine cat den awaits."
+                    "The patrol fights bravely, but you only need to be unlucky once. One snap of the beast's huge jaws takes r_c0 out of the fight. The rest of the patrol rallies to defend {PRONOUN/r_c0/object}, and r_c0 is safely helped back to camp, where the medicine cat den awaits."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -944,7 +944,7 @@
                     ]
                 },
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -969,7 +969,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -1106,7 +1106,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "This cat was killed in a fight with a small dog, but they took the dog out with them."
                     }
@@ -1139,7 +1139,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "small_bite_injury"
@@ -1266,13 +1266,13 @@
                     "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait, exasperated, in a safe spot for the beast to calm down."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1296,13 +1296,13 @@
                     "The dog gets a lucky hit in on r_c, though together the patrol is still able to drive it off successfully."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "small_bite_injury"
@@ -1429,13 +1429,13 @@
                     "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait, exasperated, in a safe spot for the beast to calm down."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1459,13 +1459,13 @@
                     "The dog gets a lucky hit in on r_c, though together the patrol is still able to drive it off successfully."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "small_bite_injury"
@@ -1500,10 +1500,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l thinks {PRONOUN/p_l/subject} {VERB/p_l/know/knows} what to expect as {PRONOUN/p_l/subject} {VERB/p_l/urge/urges} {PRONOUN/p_l/poss} patrol forward towards the noise, yet {PRONOUN/p_l/subject} {VERB/p_l/are/is} shocked to find a pack of wild dogs feasting on an animal big enough to feed c_n for six moons. The cats stare in awe for a moment before r_c orders them to leave; if these animals can take down a beast like that, what's stopping the creatures from killing them, too?"
+                    "p_l thinks {PRONOUN/p_l/subject} {VERB/p_l/know/knows} what to expect as {PRONOUN/p_l/subject} {VERB/p_l/urge/urges} {PRONOUN/p_l/poss} patrol forward towards the noise, yet {PRONOUN/p_l/subject} {VERB/p_l/are/is} shocked to find a pack of wild dogs feasting on an animal big enough to feed c_n for six moons. The cats stare in awe for a moment before r_c0 orders them to leave; if these animals can take down a beast like that, what's stopping the creatures from killing them, too?"
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 10,
                 "relationship_changes": [

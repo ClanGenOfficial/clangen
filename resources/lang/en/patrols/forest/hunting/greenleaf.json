@@ -51,7 +51,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "respect"
@@ -441,11 +441,11 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_hunt_gen_squirreltreetoptumble_WrWr",
-        "intro_text": "As the patrol walks through the forest, a loud chittering from above interrupts them. r_c looks up just in time to get a shower of twigs and leaves to the face, while p_l exclaims aloud when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above.",
+        "intro_text": "As the patrol walks through the forest, a loud chittering from above interrupts them. r_c0 looks up just in time to get a shower of twigs and leaves to the face, while p_l exclaims aloud when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above.",
         "decline_text": "Though they snort in amusement, the patrol decides to move on to easier prey rather than waste their energy amongst the trees.",
         "success_outcomes": [
             {
@@ -483,7 +483,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "A mischievous look in {PRONOUN/p_l/poss} eye, p_l challenges {PRONOUN/p_l/poss} Clanmates \u00e2\u20ac\u201d whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c calls out in triumph. Not only {VERB/r_c/do/does} {PRONOUN/r_c/subject} have the squirrel, but {PRONOUN/r_c/subject} now also {VERB/r_c/have/has} a pawful of oak leaves for the medicine cat!"
+                    "A mischievous look in {PRONOUN/p_l/poss} eye, p_l challenges {PRONOUN/p_l/poss} Clanmates \u00e2\u20ac\u201d whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c0 calls out in triumph. Not only {VERB/r_c0/do/does} {PRONOUN/r_c0/subject} have the squirrel, but {PRONOUN/r_c0/subject} now also {VERB/r_c0/have/has} a pawful of oak leaves for the medicine cat!"
                 ],
                 "exp_gained": 40,
                 "relationship_changes": [
@@ -505,7 +505,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -639,7 +639,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets} from the branches and {VERB/r_c/land/lands} heavily on the ground. {PRONOUN/r_c/poss/CAP} Clanmates help {PRONOUN/r_c/object} home and settle {PRONOUN/r_c/object} into the medicine cat den, guilt and regret prickling at the cats for pursuing such a foolhardy hunt."
+                    "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c0 yowls in fear as {PRONOUN/r_c0/subject} {VERB/r_c0/plummet/plummets} from the branches and {VERB/r_c0/land/lands} heavily on the ground. {PRONOUN/r_c0/poss/CAP} Clanmates help {PRONOUN/r_c0/object} home and settle {PRONOUN/r_c0/object} into the medicine cat den, guilt and regret prickling at the cats for pursuing such a foolhardy hunt."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -669,7 +669,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "broken bone"
@@ -705,23 +705,23 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
-        "intro_text": "As the patrol walks through the woods, r_c explains an idea {PRONOUN/r_c/subject} had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
+        "intro_text": "As the patrol walks through the woods, r_c0 explains an idea {PRONOUN/r_c0/subject} had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
         "decline_text": "The patrol decides they'd rather not spend time on something that might not work when they could be doing something they know <i>does</i>.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. It's pretty tedious, and they end up having to move a few times, but it does work, and the patrol heads home with a decent amount of prey."
+                    "r_c0 suggests baiting the squirrels with food and picking them off when they come out to eat. It's pretty tedious, and they end up having to move a few times, but it does work, and the patrol heads home with a decent amount of prey."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -746,13 +746,13 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. Waiting is the most difficult part; the squirrels don't seem to expect the trap, and they come home laden with prey."
+                    "r_c0 suggests baiting the squirrels with food and picking them off when they come out to eat. Waiting is the most difficult part; the squirrels don't seem to expect the trap, and they come home laden with prey."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -777,7 +777,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap \u00e2\u20ac\u201d with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home."
+                    "r_c0 suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap \u00e2\u20ac\u201d with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home."
                 ],
                 "involved_cats": {
                     "s_c": {
@@ -796,7 +796,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -857,13 +857,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c suggests finding squirrels sheltered in trees, climbing above them, and shaking the branches to scare them down. Unfortunately for {PRONOUN/r_c/object}, the idea is a little too far out there, and while the cats do manage a few small catches, the day is mostly wasted with little to show for it."
+                    "r_c0 suggests finding squirrels sheltered in trees, climbing above them, and shaking the branches to scare them down. Unfortunately for {PRONOUN/r_c0/object}, the idea is a little too far out there, and while the cats do manage a few small catches, the day is mostly wasted with little to show for it."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1287,10 +1287,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It takes some coordination and cunning, but with r_c acting as a distraction and p_l leading the rest of the patrol in a flanking maneuver, the cats manage to jump on and subdue the hawk. It takes most of them to drag it back to camp where they are greeted with amazed purrs."
+                    "It takes some coordination and cunning, but with r_c0 acting as a distraction and p_l leading the rest of the patrol in a flanking maneuver, the cats manage to jump on and subdue the hawk. It takes most of them to drag it back to camp where they are greeted with amazed purrs."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 45,
                 "relationship_changes": [
@@ -1368,10 +1368,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c instructs the cats in the patrol to work as a unit in order to take down this hawk. r_c distracts the hawk while the rest of the patrol sneaks around its back to pounce on and overwhelm it. After a brief but chaotic struggle, s_c lands the killing blow. This is a huge win for the patrol and the Clan."
+                    "s_c instructs the cats in the patrol to work as a unit in order to take down this hawk. r_c0 distracts the hawk while the rest of the patrol sneaks around its back to pounce on and overwhelm it. After a brief but chaotic struggle, s_c lands the killing blow. This is a huge win for the patrol and the Clan."
                 ],
                 "involved_cats": {
-                    "r_c": {},
+                    "r_c0": {},
                     "s_c": {
                         "prior_abbreviation": [
                             "any"
@@ -1440,10 +1440,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c tries to distract the hawk so that p_l can lead the rest of the patrol in a flanking maneuver, but the hawk lashes out at them too frequently, forcing them to give it too wide of a berth. p_l calls off the attempt; it's clear this hawk is still too strong to kill, and the cats will need to find easier prey today."
+                    "r_c0 tries to distract the hawk so that p_l can lead the rest of the patrol in a flanking maneuver, but the hawk lashes out at them too frequently, forcing them to give it too wide of a berth. p_l calls off the attempt; it's clear this hawk is still too strong to kill, and the cats will need to find easier prey today."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1508,16 +1508,16 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c tries to distract the hawk so that p_l can lead the rest of the patrol in a flanking maneuver, but the hawk lashes out and slashes {PRONOUN/r_c/object} ferociously. {PRONOUN/r_c/subject/CAP} {VERB/r_c/retreat/retreats} back into the undergrowth, and p_l calls off the attempt, not wanting to risk more injury \u00e2\u20ac\u201d or death \u00e2\u20ac\u201d just for some extra meat."
+                    "r_c0 tries to distract the hawk so that p_l can lead the rest of the patrol in a flanking maneuver, but the hawk lashes out and slashes {PRONOUN/r_c0/object} ferociously. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/retreat/retreats} back into the undergrowth, and p_l calls off the attempt, not wanting to risk more injury \u00e2\u20ac\u201d or death \u00e2\u20ac\u201d just for some extra meat."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "claw-wound"
@@ -1686,10 +1686,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Stealthily, r_c stalks forward. The squirrel has no idea what's coming as {PRONOUN/r_c/subject} {VERB/r_c/pounce/pounces} on it and {VERB/r_c/break/breaks} its neck. r_c sends a silent thanks to StarClan for this prey."
+                    "Stealthily, r_c0 stalks forward. The squirrel has no idea what's coming as {PRONOUN/r_c0/subject} {VERB/r_c0/pounce/pounces} on it and {VERB/r_c0/break/breaks} its neck. r_c0 sends a silent thanks to StarClan for this prey."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 10,
                 "supply": [
@@ -1702,10 +1702,10 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c rapidly pads towards the squirrel, {PRONOUN/r_c/poss} tailtip twitching in excitement. The squirrel is alerted to {PRONOUN/r_c/poss} presence by a bird's alarm call, but r_c launches {PRONOUN/r_c/self} forward and cuts off its escape with a bite to the back of the head."
+                    "r_c0 rapidly pads towards the squirrel, {PRONOUN/r_c0/poss} tailtip twitching in excitement. The squirrel is alerted to {PRONOUN/r_c0/poss} presence by a bird's alarm call, but r_c0 launches {PRONOUN/r_c0/self} forward and cuts off its escape with a bite to the back of the head."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 10,
                 "supply": [
@@ -1755,23 +1755,23 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "The patrol heads out, determined to visit a distant clearing, where the grass has set to seed and attracted birds. However, still several fox-length from the clearing, p_l looks around and realizes r_c isn't with the patrol.",
-        "decline_text": "r_c eventually catches up.",
+        "intro_text": "The patrol heads out, determined to visit a distant clearing, where the grass has set to seed and attracted birds. However, still several fox-length from the clearing, p_l looks around and realizes r_c0 isn't with the patrol.",
+        "decline_text": "r_c0 eventually catches up.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c seems confused when {PRONOUN/r_c/subject} {VERB/r_c/come/comes} trotting up, responding to p_l's yowls. {PRONOUN/r_c/subject/CAP} thought this was the hunting spot? Situation solved, p_l decides it may as well be, and the patrol disperses to do their actual job. It doesn't turn out to be a particularly bountiful corner of the woods though."
+                    "r_c0 seems confused when {PRONOUN/r_c0/subject} {VERB/r_c0/come/comes} trotting up, responding to p_l's yowls. {PRONOUN/r_c0/subject/CAP} thought this was the hunting spot? Situation solved, p_l decides it may as well be, and the patrol disperses to do their actual job. It doesn't turn out to be a particularly bountiful corner of the woods though."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1796,13 +1796,13 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The patrol backtracks and finds r_c at the bottom of a precarious looking embankment. r_c shouts up an encouragement to join {PRONOUN/r_c/object} \u00e2\u20ac\u201d {PRONOUN/r_c/subject} {VERB/r_c/have/has} found a fallen bird's nest and {VERB/r_c/need/needs} help carrying the delicious nestlings back to camp."
+                    "The patrol backtracks and finds r_c0 at the bottom of a precarious looking embankment. r_c0 shouts up an encouragement to join {PRONOUN/r_c0/object} \u00e2\u20ac\u201d {PRONOUN/r_c0/subject} {VERB/r_c0/have/has} found a fallen bird's nest and {VERB/r_c0/need/needs} help carrying the delicious nestlings back to camp."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1827,7 +1827,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It's not ideal. s_c apologizes \u00e2\u20ac\u201d {PRONOUN/s_c/subject} {VERB/s_c/were/was} too caught up in assessing the prey levels in the clearing, and hadn't realized the patrol couldn't see {PRONOUN/r_c/object}. Still, everything is smoothed over nicely, and the cats bring home a successful prize of seed-fattened birds."
+                    "It's not ideal. s_c apologizes \u00e2\u20ac\u201d {PRONOUN/s_c/subject} {VERB/s_c/were/was} too caught up in assessing the prey levels in the clearing, and hadn't realized the patrol couldn't see {PRONOUN/r_c0/object}. Still, everything is smoothed over nicely, and the cats bring home a successful prize of seed-fattened birds."
                 ],
                 "involved_cats": {
                     "s_c": {
@@ -1879,13 +1879,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol finds where r_c has wandered off to, but it takes too much time, and no one accomplishes much of anything. There's a lot of grumbling as the cats return home."
+                    "The patrol finds where r_c0 has wandered off to, but it takes too much time, and no one accomplishes much of anything. There's a lot of grumbling as the cats return home."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1910,13 +1910,13 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "p_l, leading the search for r_c, hears a yowl in the distance. It's r_c, drenched and mud-soaked at the bottom of a steep embankment. The patrol works to rescue {PRONOUN/r_c/object}, calling off their hunt."
+                    "p_l, leading the search for r_c, hears a yowl in the distance. It's r_c, drenched and mud-soaked at the bottom of a steep embankment. The patrol works to rescue {PRONOUN/r_c0/object}, calling off their hunt."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1940,7 +1940,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "sprain",
@@ -2284,7 +2284,7 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 50,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
@@ -2294,13 +2294,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c leads the patrol towards the nest, pushing past the rotting wood blocking the entrance. The patrol gets to work rounding up and piling up the rats, and by nightfall they have so much it takes two trips to bring them back! r_c is congratulated for {PRONOUN/r_c/poss} ingenious plan."
+                    "r_c0 leads the patrol towards the nest, pushing past the rotting wood blocking the entrance. The patrol gets to work rounding up and piling up the rats, and by nightfall they have so much it takes two trips to bring them back! r_c0 is congratulated for {PRONOUN/r_c0/poss} ingenious plan."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -2326,13 +2326,13 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c leads the patrol towards the nest, and they quickly get to work hunting down the rats cornered near the smooth stones. It's a tough fight, with rats attempting to flee or attack the patrol, but in the end the patrol amasses a hefty pile of prey for c_n."
+                    "r_c0 leads the patrol towards the nest, and they quickly get to work hunting down the rats cornered near the smooth stones. It's a tough fight, with rats attempting to flee or attack the patrol, but in the end the patrol amasses a hefty pile of prey for c_n."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -2368,7 +2368,7 @@
                             ]
                         },
                         "prior_abbreviations": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 },
@@ -2451,13 +2451,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c leads the cats to the abandoned Twoleg nest, but as the cats search and search, all they can find are abandoned rats' nests. r_c is scolded for wasting the patrol's valuable time."
+                    "r_c0 leads the cats to the abandoned Twoleg nest, but as the cats search and search, all they can find are abandoned rats' nests. r_c0 is scolded for wasting the patrol's valuable time."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -2482,7 +2482,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c leads the cats to the abandoned Twoleg nest, but the rats are livelier than {PRONOUN/r_c/subject} expected. A harsh battle forces the patrol to retreat, r_c being the most grievously wounded."
+                    "r_c0 leads the cats to the abandoned Twoleg nest, but the rats are livelier than {PRONOUN/r_c0/subject} expected. A harsh battle forces the patrol to retreat, r_c0 being the most grievously wounded."
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -2494,7 +2494,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "rat_bite"
@@ -2535,10 +2535,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c pounces on the little creature! The nice mouthful is a great start to what turns into a decent hunting patrol, the cicadas buzzing as the canopy shields the cats from the sun."
+                    "r_c0 pounces on the little creature! The nice mouthful is a great start to what turns into a decent hunting patrol, the cicadas buzzing as the canopy shields the cats from the sun."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 15,
                 "relationship_changes": [
@@ -2569,10 +2569,10 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The lizard drops its tail, and r_c dives for it, while p_l pounces for the lizard. Surely this counts for two catches? Neither of them cares much, and it's a happy afternoon hunting together."
+                    "The lizard drops its tail, and r_c0 dives for it, while p_l pounces for the lizard. Surely this counts for two catches? Neither of them cares much, and it's a happy afternoon hunting together."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 15,
                 "relationship_changes": [
@@ -2581,7 +2581,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -2604,10 +2604,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c is basically on top of the skittering lizard and does a ridiculous hop to come down on it with claws extended. r_c compliments {PRONOUN/s_c/object} on the catch with a laugh in {PRONOUN/r_c/poss} meow, and s_c has to agree with {PRONOUN/r_c/object}, purring with amusement."
+                    "s_c is basically on top of the skittering lizard and does a ridiculous hop to come down on it with claws extended. r_c0 compliments {PRONOUN/s_c/object} on the catch with a laugh in {PRONOUN/r_c0/poss} meow, and s_c has to agree with {PRONOUN/r_c0/object}, purring with amusement."
                 ],
                 "involved_cats": {
-                    "r_c": {},
+                    "r_c0": {},
                     "s_c": {
                         "prior_abbreviation": [
                             "any"
@@ -2682,10 +2682,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c and p_l go for the prey at the same time, bonking their heads together. Not a bad collision, and both of them are mature enough to let it go, but neither is pleased to have missed an easy catch."
+                    "r_c0 and p_l go for the prey at the same time, bonking their heads together. Not a bad collision, and both of them are mature enough to let it go, but neither is pleased to have missed an easy catch."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -2856,10 +2856,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c drops into a crouch and lightly stalks towards the vole. {PRONOUN/r_c/subject/CAP} {VERB/r_c/pause/pauses}, waggling {PRONOUN/r_c/poss} haunches before pouncing. {PRONOUN/r_c/subject/CAP} {VERB/r_c/catch/catches} the vole easily and {VERB/r_c/deliver/delivers} a killing bite to the back of its head."
+                    "r_c0 drops into a crouch and lightly stalks towards the vole. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/pause/pauses}, waggling {PRONOUN/r_c0/poss} haunches before pouncing. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/catch/catches} the vole easily and {VERB/r_c0/deliver/delivers} a killing bite to the back of its head."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 10,
                 "supply": [
@@ -2872,10 +2872,10 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c drops into a crouch and begins stalking forward. When {PRONOUN/r_c/subject} {VERB/r_c/get/gets} close, the vole suddenly stops chewing and r_c takes the opportunity to pounce. {PRONOUN/r_c/subject/CAP} {VERB/r_c/kill/kills} the prey quickly and {VERB/r_c/lick/licks} the blood from {PRONOUN/r_c/poss} lips with satisfaction."
+                    "r_c0 drops into a crouch and begins stalking forward. When {PRONOUN/r_c0/subject} {VERB/r_c0/get/gets} close, the vole suddenly stops chewing and r_c0 takes the opportunity to pounce. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/kill/kills} the prey quickly and {VERB/r_c0/lick/licks} the blood from {PRONOUN/r_c0/poss} lips with satisfaction."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 10,
                 "supply": [
@@ -2933,10 +2933,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c drops into a crouch and begins to stalk forward. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} preparing to pounce when {PRONOUN/r_c/poss} paw lightly brushes a twig and the vole immediately takes off. {PRONOUN/r_c/subject/CAP} {VERB/r_c/give/gives} chase, but the critter disappears into a burrow. Mouse-dung!"
+                    "r_c0 drops into a crouch and begins to stalk forward. {PRONOUN/r_c0/subject/CAP}{VERB/r_c0/'re/'s} preparing to pounce when {PRONOUN/r_c0/poss} paw lightly brushes a twig and the vole immediately takes off. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/give/gives} chase, but the critter disappears into a burrow. Mouse-dung!"
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -2945,7 +2945,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "respect"
@@ -3141,10 +3141,10 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c tries to climb up after them but slips and falls, twisting {PRONOUN/r_c/poss} paw."
+                    "r_c0 tries to climb up after them but slips and falls, twisting {PRONOUN/r_c0/poss} paw."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "supply": [
@@ -3156,7 +3156,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "sprain"
@@ -3287,16 +3287,16 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c collapses from the unbearable heat. p_l carries {PRONOUN/r_c/object} back to camp."
+                    "r_c0 collapses from the unbearable heat. p_l carries {PRONOUN/r_c0/object} back to camp."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -3321,7 +3321,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "hot_injury"
@@ -3394,16 +3394,16 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "As r_c pokes around the strange smelling whatever-it-is, {PRONOUN/r_c/subject} {VERB/r_c/poke/pokes} a piece of metal still holding the heat of fire in it, and {VERB/r_c/skitter/skitters} backwards with a yelp."
+                    "As r_c0 pokes around the strange smelling whatever-it-is, {PRONOUN/r_c0/subject} {VERB/r_c0/poke/pokes} a piece of metal still holding the heat of fire in it, and {VERB/r_c0/skitter/skitters} backwards with a yelp."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "burn"
@@ -3639,10 +3639,10 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping {PRONOUN/r_c/object} back to the medicine cat den."
+                    "The patrol launches into battle, but r_c0 is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping {PRONOUN/r_c0/object} back to the medicine cat den."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "supply": [
@@ -3654,7 +3654,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -3961,10 +3961,10 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping {PRONOUN/r_c/object} back to the medicine cat den."
+                    "The patrol launches into battle, but r_c0 is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping {PRONOUN/r_c0/object} back to the medicine cat den."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "supply": [
@@ -3976,7 +3976,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -4234,7 +4234,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c fell in a solo battle with a red fox."
                     }
@@ -4268,7 +4268,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -4690,23 +4690,23 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 10,
         "patrol_art": "cat_sprites/gen_groupwalk_WrWrWr",
-        "intro_text": "As the patrol heads out into the forest to hunt, r_c seems to be absolutely unconcerned with {PRONOUN/r_c/poss} duties, instead ambling along as through the prey is going to waltz into {PRONOUN/r_c/poss} paws.",
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c0 seems to be absolutely unconcerned with {PRONOUN/r_c0/poss} duties, instead ambling along as through the prey is going to waltz into {PRONOUN/r_c0/poss} paws.",
         "decline_text": "The cats are called back to camp \u00e2\u20ac\u201d there's something the deputy needs to discuss with them.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c makes it look easy, and when the patrol is done mousing, almost everything the cats carry was caught by r_c. {PRONOUN/r_c/subject/CAP} {VERB/r_c/lead/leads} the way back to camp, sauntering along with a distinctly smug sway of {PRONOUN/r_c/poss} hips."
+                    "r_c0 makes it look easy, and when the patrol is done mousing, almost everything the cats carry was caught by r_c0. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/lead/leads} the way back to camp, sauntering along with a distinctly smug sway of {PRONOUN/r_c0/poss} hips."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -4723,7 +4723,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -4758,7 +4758,7 @@
                             ]
                         },
                         "prior_abbreviations": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 },
@@ -4766,7 +4766,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -4783,7 +4783,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -4826,7 +4826,7 @@
                             ]
                         },
                         "prior_abbreviations": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 },
@@ -4834,7 +4834,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -4851,7 +4851,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -4878,13 +4878,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c doesn't bring much home, impressing nobody."
+                    "r_c0 doesn't bring much home, impressing nobody."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -4929,17 +4929,17 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 10,
         "patrol_art": "backgrounds/fst_dirttrail",
-        "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice.",
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c0 suggests a sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice.",
         "decline_text": "The cats are called back to camp \u00e2\u20ac\u201d there's something the deputy needs to discuss with them.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "As they arrive, the patrol startles two mice, and r_c reacts quick enough with an inelegant pounce to kill one. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt."
+                    "As they arrive, the patrol startles two mice, and r_c0 reacts quick enough with an inelegant pounce to kill one. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -4977,7 +4977,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -5048,13 +5048,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c's suggested hunting grounds don't work out, not that anyone blames {PRONOUN/r_c/object} for it."
+                    "r_c's suggested hunting grounds don't work out, not that anyone blames {PRONOUN/r_c0/object} for it."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -5510,17 +5510,17 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
-        "intro_text": "The greenleaf air is warm on {PRONOUN/p_l/poss} whiskers as p_l leads {PRONOUN/p_l/poss} patrol out. p_l suddenly motions for a halt. The cats can see a squirrel chewing on a nut beneath a tree. Surely if they try to catch it, it'll just retreat up into the branches. But r_c seems to want to try.",
+        "intro_text": "The greenleaf air is warm on {PRONOUN/p_l/poss} whiskers as p_l leads {PRONOUN/p_l/poss} patrol out. p_l suddenly motions for a halt. The cats can see a squirrel chewing on a nut beneath a tree. Surely if they try to catch it, it'll just retreat up into the branches. But r_c0 seems to want to try.",
         "decline_text": "They decide it's not worth the effort and look for other prey.",
         "success_outcomes": [
             {
                 "frequency": 3,
                 "strings": [
-                    "The entire time r_c stalks towards the squirrel, the rest of the patrol holds their breath, sure that it will notice {PRONOUN/r_c/object}. The squirrel is too engrossed in its meal, however, and r_c kills it with little trouble."
+                    "The entire time r_c0 stalks towards the squirrel, the rest of the patrol holds their breath, sure that it will notice {PRONOUN/r_c0/object}. The squirrel is too engrossed in its meal, however, and r_c0 kills it with little trouble."
                 ],
                 "exp_gained": 20,
                 "supply": [
@@ -5533,7 +5533,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c cautiously begins stalking the squirrel. To no one's surprise, the squirrel notices {PRONOUN/r_c/object} before {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} close enough and scurries up the tree. r_c takes off after it, scaling the tree quickly. {PRONOUN/r_c/subject/CAP} {VERB/r_c/manage/manages} to catch the squirrel, but the slippery bark under-paw causes {PRONOUN/r_c/object} to fall. r_c hits the ground with a thud, the breath knocked out of {PRONOUN/r_c/object}, but the squirrel still in {PRONOUN/r_c/poss} grasp."
+                    "r_c0 cautiously begins stalking the squirrel. To no one's surprise, the squirrel notices {PRONOUN/r_c0/object} before {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} close enough and scurries up the tree. r_c0 takes off after it, scaling the tree quickly. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/manage/manages} to catch the squirrel, but the slippery bark under-paw causes {PRONOUN/r_c0/object} to fall. r_c0 hits the ground with a thud, the breath knocked out of {PRONOUN/r_c0/object}, but the squirrel still in {PRONOUN/r_c0/poss} grasp."
                 ],
                 "exp_gained": 15,
                 "supply": [
@@ -5545,7 +5545,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "minor_injury"
@@ -5566,7 +5566,7 @@
                             ]
                         },
                         "prior_abbreviations": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 },
@@ -5601,13 +5601,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "When the squirrel scurries up the tree as expected, r_c clambers after it. Unfortunately, {PRONOUN/r_c/subject} {VERB/r_c/return/returns} empty-pawed, and looking a bit worse for wear."
+                    "When the squirrel scurries up the tree as expected, r_c0 clambers after it. Unfortunately, {PRONOUN/r_c0/subject} {VERB/r_c0/return/returns} empty-pawed, and looking a bit worse for wear."
                 ],
                 "exp_gained": 0,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "minor_injury"

@@ -29,23 +29,23 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": "The sun is hot on r_c's pelt as {PRONOUN/r_c/subject} {VERB/r_c/follow/follows} p_l to what's apparently a 'really good spot' for herbs. r_c doesn't know what makes one spot better than any other, but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} just happy to have the chance to help p_l. As p_l dives into the greenery, as enthusiastic as any proud hunter, a brilliant yellow and black butterfly lands right on {PRONOUN/p_l/poss} raised butt.",
+        "intro_text": "The sun is hot on r_c's pelt as {PRONOUN/r_c0/subject} {VERB/r_c0/follow/follows} p_l to what's apparently a 'really good spot' for herbs. r_c0 doesn't know what makes one spot better than any other, but {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} just happy to have the chance to help p_l. As p_l dives into the greenery, as enthusiastic as any proud hunter, a brilliant yellow and black butterfly lands right on {PRONOUN/p_l/poss} raised butt.",
         "decline_text": "It's not meant to be \u00e2\u20ac\u201d a yowl interrupts their herbal hunt. The Clan needs p_l back at camp.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "Uh. Does p_l realize where it landed? r_c stifles a laugh, choking it into a purr as {PRONOUN/r_c/subject} {VERB/r_c/help/helps} p_l escape {PRONOUN/p_l/poss} inappropriately placed unwanted passenger, gently batting the butterfly off {PRONOUN/p_l/object}. p_l should take it as a compliment, {PRONOUN/r_c/subject} {VERB/r_c/suggest/suggests}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} blame the butterfly for mistaking p_l for a beautiful flower."
+                    "Uh. Does p_l realize where it landed? r_c0 stifles a laugh, choking it into a purr as {PRONOUN/r_c0/subject} {VERB/r_c0/help/helps} p_l escape {PRONOUN/p_l/poss} inappropriately placed unwanted passenger, gently batting the butterfly off {PRONOUN/p_l/object}. p_l should take it as a compliment, {PRONOUN/r_c0/subject} {VERB/r_c0/suggest/suggests}. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/don't/doesn't} blame the butterfly for mistaking p_l for a beautiful flower."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -56,7 +56,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from and cat_to shared a moment of amusement when a butterfly landed on p_l's haunches. r_c didn't blame the butterfly for mistaking p_l for a beautiful flower."
+                            "cats_from": "cat_from and cat_to shared a moment of amusement when a butterfly landed on p_l's haunches. r_c0 didn't blame the butterfly for mistaking p_l for a beautiful flower."
                         }
                     }
                 ],
@@ -70,7 +70,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "Err... A little help? p_l asks, and r_c pads closer, helplessly aware that there's absolutely no dignified way to remove an insect from another cat's hindquarters. If p_l could just \u00e2\u20ac\u201d no, maybe if r_c moves around \u00e2\u20ac\u201d whoops, no, and they both fall instead, butterfly fluttering smugly off as r_c tries not to die of embarrassment on {PRONOUN/r_c/poss} back in the flowers with p_l smiling so prettily."
+                    "Err... A little help? p_l asks, and r_c0 pads closer, helplessly aware that there's absolutely no dignified way to remove an insect from another cat's hindquarters. If p_l could just \u00e2\u20ac\u201d no, maybe if r_c0 moves around \u00e2\u20ac\u201d whoops, no, and they both fall instead, butterfly fluttering smugly off as r_c0 tries not to die of embarrassment on {PRONOUN/r_c0/poss} back in the flowers with p_l smiling so prettily."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -88,7 +88,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "cat_from and cat_to shared a moment of amusement when r_c struggled to bat a butterfly away from p_l."
+                            "cats_from": "cat_from and cat_to shared a moment of amusement when r_c0 struggled to bat a butterfly away from p_l."
                         }
                     }
                 ],
@@ -104,7 +104,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Try as {PRONOUN/r_c/subject} might, r_c is more of a hindrance than a help for herb-hunting, and {PRONOUN/r_c/subject} {VERB/r_c/know/knows} it, apologizing profusely. p_l waves it off with flick of {PRONOUN/p_l/poss} tail, but it's not what either cat was hoping for from the afternoon."
+                    "Try as {PRONOUN/r_c0/subject} might, r_c0 is more of a hindrance than a help for herb-hunting, and {PRONOUN/r_c0/subject} {VERB/r_c0/know/knows} it, apologizing profusely. p_l waves it off with flick of {PRONOUN/p_l/poss} tail, but it's not what either cat was hoping for from the afternoon."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -113,7 +113,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "respect"
@@ -125,7 +125,7 @@
                     },
                     {
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_to": [
                             "p_l"

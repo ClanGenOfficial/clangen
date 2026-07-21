@@ -898,7 +898,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -956,7 +956,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1013,7 +1013,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1059,16 +1059,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c listens, shivering, as p_l describes the birth of the Dark Forest, the ancient, barely won battle between the good cats of the stars and the traitor amidst. {PRONOUN/r_c/subject/CAP} can't stop thinking about it in {PRONOUN/r_c/poss} nest that night, {PRONOUN/r_c/poss} sleep broken and uneasy."
+                    "r_c0 listens, shivering, as p_l describes the birth of the Dark Forest, the ancient, barely won battle between the good cats of the stars and the traitor amidst. {PRONOUN/r_c0/subject/CAP} can't stop thinking about it in {PRONOUN/r_c0/poss} nest that night, {PRONOUN/r_c0/poss} sleep broken and uneasy."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "constant nightmares"
@@ -1090,7 +1090,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1169,7 +1169,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -1266,16 +1266,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l tries, but the wind keeps creeping through the outer walls of the den, and the story is cut short as the cats work to repair it. r_c starts shivering halfway through the repair job."
+                    "p_l tries, but the wind keeps creeping through the outer walls of the den, and the story is cut short as the cats work to repair it. r_c0 starts shivering halfway through the repair job."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "shivering"
@@ -1325,12 +1325,12 @@
                     "trait": []
                 }
             },
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "intro_text": "Many seasons ago, p_l begins, there was born a powerful, StarClan-gifted apprentice, one coveted by the Clans around them. Pulled in many directions, they could not keep the peace, as all demanded their time and skill.",
-        "decline_text": "r_c doesn't have time to listen to p_l's story \u00e2\u20ac\u201d {PRONOUN/r_c/subject} {VERB/r_c/apologize/apologizes}, but {PRONOUN/r_c/subject} rather {VERB/r_c/feel/feels} like that long dead overworked apprentice {PRONOUN/r_c/self}, right now!",
+        "decline_text": "r_c0 doesn't have time to listen to p_l's story \u00e2\u20ac\u201d {PRONOUN/r_c0/subject} {VERB/r_c0/apologize/apologizes}, but {PRONOUN/r_c0/subject} rather {VERB/r_c0/feel/feels} like that long dead overworked apprentice {PRONOUN/r_c0/self}, right now!",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1364,7 +1364,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Rudely, r_c leaves in the middle of p_l's tale, stealing the momentum from it. p_l trails off, embarrassed."
+                    "Rudely, r_c0 leaves in the middle of p_l's tale, stealing the momentum from it. p_l trails off, embarrassed."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1373,7 +1373,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1382,8 +1382,8 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "p_l told a boring story about some special apprentice, and r_c wandered off in the middle.",
-                            "cats_to": "r_c wandered off at the most exciting part of p_l's tale of leaf-bare's creation."
+                            "cats_from": "p_l told a boring story about some special apprentice, and r_c0 wandered off in the middle.",
+                            "cats_to": "r_c0 wandered off at the most exciting part of p_l's tale of leaf-bare's creation."
                         }
                     }
                 ]
@@ -1413,7 +1413,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"

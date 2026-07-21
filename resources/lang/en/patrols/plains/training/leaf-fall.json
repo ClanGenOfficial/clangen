@@ -31,11 +31,11 @@
                     "trait": []
                 }
             },
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": "r_c bats an insect aside as the patrol ambles along. p_l hums \u00e2\u20ac\u201d does r_c know there's an insect who can blot out the sun?",
+        "intro_text": "r_c0 bats an insect aside as the patrol ambles along. p_l hums \u00e2\u20ac\u201d does r_c0 know there's an insect who can blot out the sun?",
         "decline_text": "The cats decide training is more important than a story today.",
         "success_outcomes": [
             {
@@ -122,7 +122,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_crouchingperplexed_Wr",
                 "strings": [
-                    "The bug r_c batted flies up to {PRONOUN/r_c/poss} face and buzzes, and p_l completely loses track of the story {PRONOUN/p_l/subject} {VERB/p_l/were/was} about to tell as {PRONOUN/p_l/subject} {VERB/p_l/help/helps} r_c out with the irritated insect."
+                    "The bug r_c0 batted flies up to {PRONOUN/r_c0/poss} face and buzzes, and p_l completely loses track of the story {PRONOUN/p_l/subject} {VERB/p_l/were/was} about to tell as {PRONOUN/p_l/subject} {VERB/p_l/help/helps} r_c0 out with the irritated insect."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -131,7 +131,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [

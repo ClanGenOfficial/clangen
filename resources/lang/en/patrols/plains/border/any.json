@@ -158,10 +158,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and eventually the patrol retreats, r_c badly wounded."
+                    "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and eventually the patrol retreats, r_c0 badly wounded."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -185,7 +185,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "battle_injury"
@@ -226,7 +226,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -332,7 +332,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -351,7 +351,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "This cat was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol."
                     }
@@ -414,7 +414,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -548,16 +548,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters, and the patrol is forced to retreat, r_c badly injured."
+                    "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters, and the patrol is forced to retreat, r_c0 badly injured."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -576,7 +576,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "battle_injury"
@@ -647,7 +647,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -663,7 +663,7 @@
                             "n_c:0"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -671,7 +671,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "r_c drove n_c:0 off c_n's territory."
+                            "cats_from": "r_c0 drove n_c:0 off c_n's territory."
                         }
                     }
                 ],
@@ -719,7 +719,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -735,7 +735,7 @@
                             "n_c:0"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -743,7 +743,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "r_c drove n_c:0 off c_n's territory."
+                            "cats_from": "r_c0 drove n_c:0 off c_n's territory."
                         }
                     }
                 ],
@@ -784,7 +784,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -800,7 +800,7 @@
                             "n_c:0"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -808,7 +808,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "r_c drove n_c:0 off c_n's territory."
+                            "cats_from": "r_c0 drove n_c:0 off c_n's territory."
                         }
                     }
                 ],
@@ -864,7 +864,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -880,7 +880,7 @@
                             "n_c:0"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -888,7 +888,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "r_c demanded n_c:0 leave c_n's territory."
+                            "cats_from": "r_c0 demanded n_c:0 leave c_n's territory."
                         }
                     }
                 ],
@@ -971,7 +971,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c was killed by an invading rogue."
                     }
@@ -1253,11 +1253,11 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_bord_trackrogue_WrRg",
-        "intro_text": "While on patrol, r_c notices some suspicious pawprints in the mud by the short grass.",
+        "intro_text": "While on patrol, r_c0 notices some suspicious pawprints in the mud by the short grass.",
         "decline_text": "They decide not to investigate.",
         "success_outcomes": [
             {
@@ -1336,7 +1336,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat."
+                    "r_c0 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat."
                 ],
                 "exp_gained": 10
             },
@@ -1371,7 +1371,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "r_c",
+                            "r_c0",
                             "s_c"
                         ],
                         "mutual": false,
@@ -1389,7 +1389,7 @@
                         ],
                         "cats_to": [
                             "s_c",
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1493,7 +1493,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Boldly, s_c follows the pawprints to a trespassing rogue and confronts {PRONOUN/n_c:0/object}. Fur puffed up and scowling, s_c and r_c demand the rogue leave c_n territory. The rogue is intimidated by their confidence and leaves without a fight."
+                    "Boldly, s_c follows the pawprints to a trespassing rogue and confronts {PRONOUN/n_c:0/object}. Fur puffed up and scowling, s_c and r_c0 demand the rogue leave c_n territory. The rogue is intimidated by their confidence and leaves without a fight."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -1542,7 +1542,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "r_c",
+                            "r_c0",
                             "s_c"
                         ],
                         "mutual": false,
@@ -1559,7 +1559,7 @@
                             "n_c:0"
                         ],
                         "cats_to": [
-                            "r_c",
+                            "r_c0",
                             "s_c"
                         ],
                         "mutual": true,
@@ -1671,7 +1671,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Fewer eyes watching that embarrassing moment."
+                    "It turns out they were r_c's own pawprints... r_c0 huffs with embarrassment, suddenly grateful that their patrol is so small. Fewer eyes watching that embarrassing moment."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -1690,7 +1690,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1706,7 +1706,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "It turns out they were r_c's own pawprints... r_c huffs with embarrassment and can't meet the eyes of the rest of the patrol."
+                    "It turns out they were r_c's own pawprints... r_c0 huffs with embarrassment and can't meet the eyes of the rest of the patrol."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1715,7 +1715,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -2161,7 +2161,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -2199,7 +2199,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -2296,12 +2296,12 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 10,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": "On {PRONOUN/r_c/poss} way to mark the far corners of {PRONOUN/r_c/poss} plains, r_c starts telling a story of {PRONOUN/r_c/poss} ancestors to keep every cat entertained.",
-        "decline_text": "r_c nearly trips into a rabbit burrow and decides to watch where {PRONOUN/r_c/poss} paws are going instead.",
+        "intro_text": "On {PRONOUN/r_c0/poss} way to mark the far corners of {PRONOUN/r_c0/poss} plains, r_c0 starts telling a story of {PRONOUN/r_c0/poss} ancestors to keep every cat entertained.",
+        "decline_text": "r_c0 nearly trips into a rabbit burrow and decides to watch where {PRONOUN/r_c0/poss} paws are going instead.",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2312,7 +2312,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -2344,7 +2344,7 @@
                             ]
                         },
                         "prior_abbreviations": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 },
@@ -2419,7 +2419,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "{PRONOUN/r_c/subject/CAP} {VERB/r_c/try/tries}, but {PRONOUN/r_c/poss} Clanmates seem unenthused, so r_c stops."
+                    "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/try/tries}, but {PRONOUN/r_c0/poss} Clanmates seem unenthused, so r_c0 stops."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -2428,7 +2428,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -2445,7 +2445,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c takes r_c aside and reminds {PRONOUN/r_c/object} coldly to focus on {PRONOUN/r_c/poss} duties."
+                    "s_c takes r_c0 aside and reminds {PRONOUN/r_c0/object} coldly to focus on {PRONOUN/r_c0/poss} duties."
                 ],
                 "involved_cats": {
                     "s_c": {
@@ -2471,7 +2471,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -2485,7 +2485,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "s_c"
@@ -2644,16 +2644,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "One of those moons is getting awfully... close... r_c gets caught in a strange wind that picks {PRONOUN/r_c/object} up, claws scrabbling wildly, sucked towards the frightening foreign moon as it takes {PRONOUN/r_c/object} away from c_n."
+                    "One of those moons is getting awfully... close... r_c0 gets caught in a strange wind that picks {PRONOUN/r_c0/object} up, claws scrabbling wildly, sucked towards the frightening foreign moon as it takes {PRONOUN/r_c0/object} away from c_n."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "lost": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 ]
@@ -3238,17 +3238,17 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "Never threaten a mother's young \u00e2\u20ac\u201d the red vixen kills r_c in the skirmish."
+                    "Never threaten a mother's young \u00e2\u20ac\u201d the red vixen kills r_c0 in the skirmish."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
                             "patrol_cats",
-                            "-r_c"
+                            "-r_c0"
                         ],
                         "cats_from": [
                             "clan",
@@ -3260,14 +3260,14 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from heard that cat_to was unable to save r_c in a fight with a red vixen."
+                            "cats_from": "cat_from heard that cat_to was unable to save r_c0 in a fight with a red vixen."
                         }
                     }
                 ],
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c fell in battle with a fox."
                     }
@@ -3276,10 +3276,10 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "The mother red fox's snapping jaws leave r_c dripping blood onto the grass, forcing the patrol to back off."
+                    "The mother red fox's snapping jaws leave r_c0 dripping blood onto the grass, forcing the patrol to back off."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -3303,7 +3303,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -5698,12 +5698,12 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/pln_bord_tunnel_Wr",
         "intro_text": "While on a dawn patrol, with the sun still hugging the distant horizon, p_l finds an opening to what seems to be a new set of tunnels.",
-        "decline_text": "p_l and r_c decide not to check the tunnels. After all, who knows what might be hiding inside?",
+        "decline_text": "p_l and r_c0 decide not to check the tunnels. After all, who knows what might be hiding inside?",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5725,7 +5725,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_talking_WrWr",
                 "strings": [
-                    "r_c congratulates p_l on the discovery \u00e2\u20ac\u201d this'll be welcome news back at camp. But once p_l turns away, {PRONOUN/r_c/subject} can't help the small twitches at the end of {PRONOUN/r_c/poss} tail. {PRONOUN/r_c/subject/CAP} {VERB/r_c/were/was} so close to finding those tunnels {PRONOUN/r_c/self}!"
+                    "r_c0 congratulates p_l on the discovery \u00e2\u20ac\u201d this'll be welcome news back at camp. But once p_l turns away, {PRONOUN/r_c0/subject} can't help the small twitches at the end of {PRONOUN/r_c0/poss} tail. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/were/was} so close to finding those tunnels {PRONOUN/r_c0/self}!"
                 ],
                 "exp_gained": 25,
                 "relationship_changes": [
@@ -5734,7 +5734,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -5793,7 +5793,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_twocathostile_WrWr",
                 "strings": [
-                    "These aren't new, but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery. That kind typically moves in packs. Two cats aren't enough drive it out, but no one tell r_c and p_l that, because somehow they manage to do it anyway."
+                    "These aren't new, but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what it's doing so far from its cete is a mystery. That kind typically moves in packs. Two cats aren't enough drive it out, but no one tell r_c0 and p_l that, because somehow they manage to do it anyway."
                 ],
                 "exp_gained": 40,
                 "relationship_changes": [
@@ -6179,13 +6179,13 @@
                 "outcome_art": "cat_sprites/gen_dead_Wr_EXPLICIT",
                 "outcome_art_clean": "cat_sprites/gen_deadghost_WrSc",
                 "strings": [
-                    "It seems this hole is home to a cranky wolverine, a fact that the patrol learns very quickly when r_c is snagged by the jaws of the predator. r_c won't be making it back to camp..."
+                    "It seems this hole is home to a cranky wolverine, a fact that the patrol learns very quickly when r_c0 is snagged by the jaws of the predator. r_c0 won't be making it back to camp..."
                 ],
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c was killed after an unfortunate meeting with a wolverine."
                     }
@@ -6195,13 +6195,13 @@
                 "frequency": 2,
                 "outcome_art": "animals/gen_scarybadger",
                 "strings": [
-                    "The tunnels prove to be a currently in-use badger sett. The patrol quickly retreats, but not before r_c gains a nasty wound."
+                    "The tunnels prove to be a currently in-use badger sett. The patrol quickly retreats, but not before r_c0 gains a nasty wound."
                 ],
                 "exp_gained": 0,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -6859,11 +6859,11 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/pln_bord_tunnel_Wr",
-        "intro_text": "Patrolling the border and updating the markings, r_c calls out to the rest of the patrol, making p_l stand up on {PRONOUN/p_l/poss} hind legs to peek over the grass. r_c has found an opening to what seems to be a new set of tunnels.",
+        "intro_text": "Patrolling the border and updating the markings, r_c0 calls out to the rest of the patrol, making p_l stand up on {PRONOUN/p_l/poss} hind legs to peek over the grass. r_c0 has found an opening to what seems to be a new set of tunnels.",
         "decline_text": "The patrol decides not to check the tunnels. After all, who knows what might be hiding inside?",
         "success_outcomes": [
             {
@@ -7013,7 +7013,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_hunt_burrow_Wr",
                 "strings": [
-                    "As r_c steps forward to check it out, s_c yowls to stop! {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} spotted the subtle signs of tracks leading into the burrow, and if it's inhabited... A grumble from inside backs {PRONOUN/s_c/object} up."
+                    "As r_c0 steps forward to check it out, s_c yowls to stop! {PRONOUN/s_c/subject/CAP}{VERB/s_c/'ve/'s} spotted the subtle signs of tracks leading into the burrow, and if it's inhabited... A grumble from inside backs {PRONOUN/s_c/object} up."
                 ],
                 "involved_cats": {
                     "s_c": {
@@ -7025,7 +7025,7 @@
                         },
                         "prior_abbreviations": [
                             "-p_l",
-                            "-r_c"
+                            "-r_c0"
                         ]
                     }
                 },
@@ -7413,7 +7413,7 @@
                 "outcome_art": "cat_sprites/gen_deadghost__WrSc_EXPLICIT",
                 "outcome_art_clean": "cat_sprites/gen_deadghost_WrSc",
                 "strings": [
-                    "It seems this hole is home to a cranky wolverine, a fact that the patrol learns very quickly when r_c cries out in pain. The cats back out of the tunnel quickly, but not quickly enough to save {PRONOUN/r_c/poss} Clanmate."
+                    "It seems this hole is home to a cranky wolverine, a fact that the patrol learns very quickly when r_c0 cries out in pain. The cats back out of the tunnel quickly, but not quickly enough to save {PRONOUN/r_c0/poss} Clanmate."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -7431,14 +7431,14 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from and cat_to were unable to save r_c from a wolverine on patrol."
+                            "cats_from": "cat_from and cat_to were unable to save r_c0 from a wolverine on patrol."
                         }
                     }
                 ],
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "This cat was killed after an unfortunate meeting with a wolverine."
                     }
@@ -7448,7 +7448,7 @@
                 "frequency": 4,
                 "outcome_art": "animals/gen_scarybadger",
                 "strings": [
-                    "The tunnels prove to be a currently in-use badger sett. The patrol quickly retreats, but not before r_c gains a nasty wound."
+                    "The tunnels prove to be a currently in-use badger sett. The patrol quickly retreats, but not before r_c0 gains a nasty wound."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -7466,14 +7466,14 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from and cat_to's intrusion into a tunnel resulted in r_c getting badly injured."
+                            "cats_from": "cat_from and cat_to's intrusion into a tunnel resulted in r_c0 getting badly injured."
                         }
                     }
                 ],
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -7867,16 +7867,16 @@
                 "outcome_art": "cat_sprites/gen_dead_Wr_EXPLICIT",
                 "outcome_art_clean": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/lead/leads} the huge coyote away from the Clan, in {PRONOUN/r_c/poss} heart, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} that's what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing. As darkness closes in around {PRONOUN/r_c/object} and the coyote's jaws descend again, r_c tries to sink {PRONOUN/r_c/poss} claws into its face, and hopes desperately that {PRONOUN/r_c/subject} led it far enough."
+                    "r_c0 would give {PRONOUN/r_c0/poss} life to protect c_n, and as {PRONOUN/r_c0/subject} {VERB/r_c0/lead/leads} the huge coyote away from the Clan, in {PRONOUN/r_c0/poss} heart, {PRONOUN/r_c0/subject} {VERB/r_c0/accept/accepts} that's what {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} doing. As darkness closes in around {PRONOUN/r_c0/object} and the coyote's jaws descend again, r_c0 tries to sink {PRONOUN/r_c0/poss} claws into its face, and hopes desperately that {PRONOUN/r_c0/subject} led it far enough."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -7894,7 +7894,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "This cat died to lead a coyote away from c_n."
                     }
@@ -7904,16 +7904,16 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge coyote to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives {PRONOUN/r_c/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the coyote's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified \u00e2\u20ac\u201d but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive."
+                    "r_c0 would give {PRONOUN/r_c0/poss} life to protect c_n, and as {PRONOUN/r_c0/subject} {VERB/r_c0/charge/charges} past the huge coyote to lead it far, far from c_n, {PRONOUN/r_c0/subject} {VERB/r_c0/accept/accepts} it. Fear gives {PRONOUN/r_c0/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c0/subject} {VERB/r_c0/fly/flies} out of the coyote's jaws while it shakes {PRONOUN/r_c0/object}, landing in a refuge. r_c0 is injured, desperate, and terrified \u00e2\u20ac\u201d but {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} alive."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -7932,7 +7932,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"

@@ -270,17 +270,17 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 50,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l and r_c take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
+        "intro_text": "p_l and r_c0 take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
         "decline_text": "Unfortunately, they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l and r_c decide to cast a wide net, searching for the herbs scattered throughout the plains. As the sun sinks towards the horizon, they return with their mouths stuffed full of herbs taken from their well-memorized sources, pawpads sore from the long walk."
+                    "p_l and r_c0 decide to cast a wide net, searching for the herbs scattered throughout the plains. As the sun sinks towards the horizon, they return with their mouths stuffed full of herbs taken from their well-memorized sources, pawpads sore from the long walk."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
@@ -312,7 +312,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l and r_c decide on a little friendly competition \u00e2\u20ac\u201d one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
+                    "p_l and r_c0 decide on a little friendly competition \u00e2\u20ac\u201d one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
@@ -346,7 +346,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Both p_l and r_c are tense, and it shows. Even though it should not be this hard to find any herbs, they fail to track down a single one. They return to camp frustrated and irritated with each other."
+                    "Both p_l and r_c0 are tense, and it shows. Even though it should not be this hard to find any herbs, they fail to track down a single one. They return to camp frustrated and irritated with each other."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -372,7 +372,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Even though there should be many herbs, they fail to find anything. p_l blames r_c for distracting them, and they get into a huge argument."
+                    "Even though there should be many herbs, they fail to find anything. p_l blames r_c0 for distracting them, and they get into a huge argument."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [

@@ -221,7 +221,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "respect"
@@ -264,7 +264,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "respect"
@@ -622,11 +622,11 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "p_l's patrol strolls leisurely through the plains, enjoying the smells of newleaf. r_c raises {PRONOUN/r_c/poss} tail, signaling the others to be still; {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} scented ground squirrels nearby.",
+        "intro_text": "p_l's patrol strolls leisurely through the plains, enjoying the smells of newleaf. r_c0 raises {PRONOUN/r_c0/poss} tail, signaling the others to be still; {PRONOUN/r_c0/subject}{VERB/r_c0/'ve/'s} scented ground squirrels nearby.",
         "decline_text": "p_l quietly shakes {PRONOUN/p_l/poss} head and leads the patrol elsewhere. Better not to disturb the squirrels, who are still thin and hungry from hibernation.",
         "success_outcomes": [
             {
@@ -663,7 +663,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "First order of business is blocking their access to any nearby burrows, which r_c takes care of. After that, it's a matter of finding and catching the squirrels, which proves to be simple, especially with their access to safety denied. No one could ask for a better hunt."
+                    "First order of business is blocking their access to any nearby burrows, which r_c0 takes care of. After that, it's a matter of finding and catching the squirrels, which proves to be simple, especially with their access to safety denied. No one could ask for a better hunt."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -694,7 +694,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c murmurs instructions to {PRONOUN/s_c/poss} Clanmates, who nod silently and move into position. p_l feints at a squirrel, who raises the alarm and turns to run; r_c blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, not a single squirrel left behind."
+                    "s_c murmurs instructions to {PRONOUN/s_c/poss} Clanmates, who nod silently and move into position. p_l feints at a squirrel, who raises the alarm and turns to run; r_c0 blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c; and s_c lunges in for the kill. A flawless hunt, not a single squirrel left behind."
                 ],
                 "involved_cats": {
                     "s_c": {
@@ -756,13 +756,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It only takes one squirrel spotting r_c to raise the alarm before they've all vanished into their burrows. Though the others made a few catches before they scattered, they didn't get nearly what they would have otherwise."
+                    "It only takes one squirrel spotting r_c0 to raise the alarm before they've all vanished into their burrows. Though the others made a few catches before they scattered, they didn't get nearly what they would have otherwise."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "multi"
@@ -935,7 +935,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "respect"
@@ -973,7 +973,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "values": [
                             "respect"
@@ -1224,17 +1224,17 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "r_c suggests that the patrol might consider going out to a distant spot on the plains. With slightly higher ground, it should be drier, proving better footing for hunting, and {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} the grass there will be lush enough to attract mice.",
+        "intro_text": "r_c0 suggests that the patrol might consider going out to a distant spot on the plains. With slightly higher ground, it should be drier, proving better footing for hunting, and {PRONOUN/r_c0/subject} {VERB/r_c0/think/thinks} the grass there will be lush enough to attract mice.",
         "decline_text": "The cats are called back to camp \u00e2\u20ac\u201d there's something the deputy needs to discuss with them.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "As they arrive, the patrol startles two mice, and r_c reacts quick enough to kill one with an inelegant pounce. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt."
+                    "As they arrive, the patrol startles two mice, and r_c0 reacts quick enough to kill one with an inelegant pounce. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -1272,7 +1272,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1343,13 +1343,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames {PRONOUN/r_c/object} for it."
+                    "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames {PRONOUN/r_c0/object} for it."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1404,10 +1404,10 @@
                 "frequency": 2,
                 "outcome_art": "cat_sprites/gen_hunt_groupwalk_WrWrWr",
                 "strings": [
-                    "As soon as the doe departs, the cats slink out of the bushes and descend on the fawn. Working in perfect coordination, p_l and r_c kill the fawn while the others stand guard, watching for the parents. When the fawn's cries go quiet, the cats drag their prize back to camp."
+                    "As soon as the doe departs, the cats slink out of the bushes and descend on the fawn. Working in perfect coordination, p_l and r_c0 kill the fawn while the others stand guard, watching for the parents. When the fawn's cries go quiet, the cats drag their prize back to camp."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 40,
                 "relationship_changes": [
@@ -1457,10 +1457,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_running_WrWr",
                 "strings": [
-                    "As soon as the doe departs, the cats race out of the bushes to attack the fawn. Killing it is harder than they anticipated, and r_c is struck in the muzzle by a flailing hoof, but eventually the cats bring it down. They have to work together to haul a prize of this size back to camp before the parents discover them."
+                    "As soon as the doe departs, the cats race out of the bushes to attack the fawn. Killing it is harder than they anticipated, and r_c0 is struck in the muzzle by a flailing hoof, but eventually the cats bring it down. They have to work together to haul a prize of this size back to camp before the parents discover them."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -1508,7 +1508,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "bruises"
@@ -1620,16 +1620,16 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_dragging_WrWr",
                 "strings": [
-                    "When the doe departs, the cats descend on the fawn. Its squeals and cries alert the nearby doe, who returns in a fury, her hooves thumping the earth. The patrol scatters, but r_c is caught under one of those brutally hard hooves. Instead of dragging the fawn back for the fresh-kill pile, the patrol must help r_c back to the medicine cat den."
+                    "When the doe departs, the cats descend on the fawn. Its squeals and cries alert the nearby doe, who returns in a fury, her hooves thumping the earth. The patrol scatters, but r_c0 is caught under one of those brutally hard hooves. Instead of dragging the fawn back for the fresh-kill pile, the patrol must help r_c0 back to the medicine cat den."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "blunt_force_injury"
@@ -1644,16 +1644,16 @@
                 "outcome_art": "cat_sprites/gen_deadghost_WrSc_EXPLICIT",
                 "outcome_art_clean": "cat_sprites/gen_deadghost_WrSc",
                 "strings": [
-                    "When the doe departs, the cats descend on the fawn. Its squeals and cries alert the nearby doe, who returns in a fury, her hooves thumping the earth. The patrol scatters, but not before r_c is caught under one of those brutally hard hooves. Though p_l screeches and attacks the doe, hoping to drive her away from r_c, it's too late. r_c lies motionless beside the quivering and bloodied fawn."
+                    "When the doe departs, the cats descend on the fawn. Its squeals and cries alert the nearby doe, who returns in a fury, her hooves thumping the earth. The patrol scatters, but not before r_c0 is caught under one of those brutally hard hooves. Though p_l screeches and attacks the doe, hoping to drive her away from r_c, it's too late. r_c0 lies motionless beside the quivering and bloodied fawn."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c was killed when a doe discovered {PRONOUN/m_c/object} attacking her fawn and stomped {PRONOUN/m_c/object} to death."
                     }

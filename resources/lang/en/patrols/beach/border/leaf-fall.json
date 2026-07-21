@@ -98,7 +98,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c was swept out to sea by a flood."
                     }
@@ -179,10 +179,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_running_Wr",
                 "strings": [
-                    "r_c ventures too near, and the crab's massive claw snaps shut just short of {PRONOUN/r_c/poss} face. Startled, {PRONOUN/r_c/subject} {VERB/r_c/leap/leaps} back into the sand, fur bristling and claws unsheathed. That was far too close! Maybe this is one border threat better left alone."
+                    "r_c0 ventures too near, and the crab's massive claw snaps shut just short of {PRONOUN/r_c0/poss} face. Startled, {PRONOUN/r_c0/subject} {VERB/r_c0/leap/leaps} back into the sand, fur bristling and claws unsheathed. That was far too close! Maybe this is one border threat better left alone."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0
             },
@@ -190,16 +190,16 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_dragging_WrWr",
                 "strings": [
-                    "r_c approaches the crab, but it lashes out with terrifying speed. Its crushing pincers clamp down, leaving {PRONOUN/r_c/object} badly injured before {PRONOUN/r_c/subject} can fully retreat."
+                    "r_c0 approaches the crab, but it lashes out with terrifying speed. Its crushing pincers clamp down, leaving {PRONOUN/r_c0/object} badly injured before {PRONOUN/r_c0/subject} can fully retreat."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "broken bone"
@@ -214,16 +214,16 @@
                 "outcome_art": "cat_sprites/gen_deadghost_WrSc_EXPLICIT",
                 "outcome_art_clean": "cat_sprites/gen_deadghost_WrSc",
                 "strings": [
-                    "r_c lunges to drive the crab off, but its pincers strike {PRONOUN/r_c/object} with a brutal force {PRONOUN/r_c/subject} can't escape from. The patrol can only watch in horror as the attack proves fatal."
+                    "r_c0 lunges to drive the crab off, but its pincers strike {PRONOUN/r_c0/object} with a brutal force {PRONOUN/r_c0/subject} can't escape from. The patrol can only watch in horror as the attack proves fatal."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c was pinched to death by a coconut crab."
                     }

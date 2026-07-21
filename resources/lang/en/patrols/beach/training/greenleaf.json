@@ -141,10 +141,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittyhappy_Wr",
                 "strings": [
-                    "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favor. There's nothing like swimming in greenleaf, and the patrol devolves into a waterfight."
+                    "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c0 swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favor. There's nothing like swimming in greenleaf, and the patrol devolves into a waterfight."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -171,10 +171,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_talkingmates_WrWr",
                 "strings": [
-                    "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/purr/purrs}, welcoming it and returning the favor, batting back in mock splash-fight as the rest of the patrol fades away, just the two of them in their own little world."
+                    "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c0 swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/purr/purrs}, welcoming it and returning the favor, batting back in mock splash-fight as the rest of the patrol fades away, just the two of them in their own little world."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -183,7 +183,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [

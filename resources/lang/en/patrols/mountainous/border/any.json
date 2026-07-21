@@ -278,16 +278,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and eventually the patrol retreats, r_c badly wounded."
+                    "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and eventually the patrol retreats, r_c0 badly wounded."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "battle_injury"
@@ -377,7 +377,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol."
                     }
@@ -557,10 +557,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_otherclan_RgRg",
                 "strings": [
-                    "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters, and the patrol is forced to retreat, r_c badly injured."
+                    "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters, and the patrol is forced to retreat, r_c0 badly injured."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -585,7 +585,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "battle_injury"
@@ -718,7 +718,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol."
                     }
@@ -742,11 +742,11 @@
             ]
         },
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": "On their way to mark the far corners of their mountain, r_c starts telling a story of {PRONOUN/r_c/poss} ancestors to keep every cat entertained.",
+        "intro_text": "On their way to mark the far corners of their mountain, r_c0 starts telling a story of {PRONOUN/r_c0/poss} ancestors to keep every cat entertained.",
         "decline_text": "A shadow flies over them, and r_c's storytelling is forgotten as the patrol makes sure it wasn't an eagle.",
         "success_outcomes": [
             {
@@ -758,7 +758,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -789,7 +789,7 @@
                             ]
                         },
                         "prior_abbreviations": [
-                            "r_c"
+                            "r_c0"
                         ]
                     }
                 },
@@ -847,13 +847,13 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_hunt_heat_WrWr",
                 "strings": [
-                    "The rocky terrain is too rough to keep up a story, and eventually r_c peters out, breathless and panting."
+                    "The rocky terrain is too rough to keep up a story, and eventually r_c0 peters out, breathless and panting."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -872,7 +872,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c takes r_c aside and reminds {PRONOUN/r_c/object} coldly to focus on {PRONOUN/r_c/poss} duties."
+                    "s_c takes r_c0 aside and reminds {PRONOUN/r_c0/object} coldly to focus on {PRONOUN/r_c0/poss} duties."
                 ],
                 "involved_cats": {
                     "s_c": {
@@ -893,7 +893,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "s_c"
@@ -1302,7 +1302,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "persistent headaches"
@@ -1350,7 +1350,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "seizure prone"
@@ -1368,7 +1368,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c was taken as the Mothman's snack."
                     }
@@ -1384,7 +1384,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c was killed by the collapsing mountain slopes, an event predicted by the appearance of the Mothman."
                     }
@@ -1603,7 +1603,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -1620,7 +1620,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "clan",
@@ -1729,16 +1729,16 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/lead/leads} the huge wolf away from the Clan, in {PRONOUN/r_c/poss} heart, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} that's what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing. As darkness closes in around {PRONOUN/r_c/object} and the wolf's jaws descend again, r_c tries to sink {PRONOUN/r_c/poss} claws into its face, and hopes desperately that {PRONOUN/r_c/subject} led it far enough."
+                    "r_c0 would give {PRONOUN/r_c0/poss} life to protect c_n, and as {PRONOUN/r_c0/subject} {VERB/r_c0/lead/leads} the huge wolf away from the Clan, in {PRONOUN/r_c0/poss} heart, {PRONOUN/r_c0/subject} {VERB/r_c0/accept/accepts} that's what {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} doing. As darkness closes in around {PRONOUN/r_c0/object} and the wolf's jaws descend again, r_c0 tries to sink {PRONOUN/r_c0/poss} claws into its face, and hopes desperately that {PRONOUN/r_c0/subject} led it far enough."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -1757,7 +1757,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "history": "m_c died to keep c_n safe from a wolf."
                     }
@@ -1766,16 +1766,16 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c would give their life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge wolf to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives {PRONOUN/r_c/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified \u00e2\u20ac\u201d but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive."
+                    "r_c0 would give their life to protect c_n, and as {PRONOUN/r_c0/subject} {VERB/r_c0/charge/charges} past the huge wolf to lead it far, far from c_n, {PRONOUN/r_c0/subject} {VERB/r_c0/accept/accepts} it. Fear gives {PRONOUN/r_c0/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c0/subject} {VERB/r_c0/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c0/object}, landing in a refuge. r_c0 is injured, desperate, and terrified \u00e2\u20ac\u201d but {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} alive."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "clan"
@@ -1794,7 +1794,7 @@
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -1916,16 +1916,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c turns to flee and it's only by the grace of StarClan that {PRONOUN/r_c/poss} eyes are drawn to a small cave, a rocky refuge as the wolves bark their fury outside. Not all of r_c makes it inside."
+                    "r_c0 turns to flee and it's only by the grace of StarClan that {PRONOUN/r_c0/poss} eyes are drawn to a small cave, a rocky refuge as the wolves bark their fury outside. Not all of r_c0 makes it inside."
                 ],
                 "involved_cats": {
-                    "r_c": {}
+                    "r_c0": {}
                 },
                 "exp_gained": 40,
                 "injury": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "condition": [
                             "mangled tail"

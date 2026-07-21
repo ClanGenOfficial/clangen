@@ -40,17 +40,17 @@
             }
         ],
         "involved_cats": {
-            "r_c": {}
+            "r_c0": {}
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_flowerdate_WrWr",
-        "intro_text": "p_l thinks r_c is, well, really, just \u00e2\u20ac\u201d uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c to spend some time together, just the two of them, this afternoon!",
-        "decline_text": "Unfortunately, r_c is sent on an afternoon border patrol before p_l can say anything.",
+        "intro_text": "p_l thinks r_c0 is, well, really, just \u00e2\u20ac\u201d uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c0 might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c0 to spend some time together, just the two of them, this afternoon!",
+        "decline_text": "Unfortunately, r_c0 is sent on an afternoon border patrol before p_l can say anything.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c agrees to the walk, tail-tip twitching with excitement. It's a feeling p_l openly mirrors, ears forward, pelt prickling with anxiety in the best way as they pad through the forest together. The mildest of leaf-bare frosts is an excuse to huddle close for warmth."
+                    "r_c0 agrees to the walk, tail-tip twitching with excitement. It's a feeling p_l openly mirrors, ears forward, pelt prickling with anxiety in the best way as they pad through the forest together. The mildest of leaf-bare frosts is an excuse to huddle close for warmth."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -59,7 +59,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -77,7 +77,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "All of p_l's bravery is rewarded when r_c says yes! The pair head out for their romantic stroll, paws and tails leaving sweeping tracks in the frosted forest floor, an artwork irrelevant to two cats much more absorbed in each other than the world around them."
+                    "All of p_l's bravery is rewarded when r_c0 says yes! The pair head out for their romantic stroll, paws and tails leaving sweeping tracks in the frosted forest floor, an artwork irrelevant to two cats much more absorbed in each other than the world around them."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -86,7 +86,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -127,7 +127,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -137,7 +137,7 @@
                         ],
                         "amount": 13,
                         "log": {
-                            "cats_from": "s_c's social adeptness made {PRONOUN/s_c/poss} romantic leaf-bare stroll with r_c all the better."
+                            "cats_from": "s_c's social adeptness made {PRONOUN/s_c/poss} romantic leaf-bare stroll with r_c0 all the better."
                         }
                     }
                 ]
@@ -147,13 +147,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l awkwardly stutters {PRONOUN/p_l/poss} way through asking r_c out \u00e2\u20ac\u201d and {PRONOUN/r_c/subject} {VERB/r_c/say/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone."
+                    "p_l awkwardly stutters {PRONOUN/p_l/poss} way through asking r_c0 out \u00e2\u20ac\u201d and {PRONOUN/r_c0/subject} {VERB/r_c0/say/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -164,7 +164,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "p_l felt embarrassed when r_c rejected {PRONOUN/p_l/poss} offer of a romantic stroll."
+                            "cats_from": "p_l felt embarrassed when r_c0 rejected {PRONOUN/p_l/poss} offer of a romantic stroll."
                         }
                     },
                     {
@@ -172,7 +172,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -180,7 +180,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "r_c felt awkward when p_l asked {PRONOUN/r_c/object} out on a romantic stroll, and r_c rejected the offer."
+                            "cats_from": "r_c0 felt awkward when p_l asked {PRONOUN/r_c0/object} out on a romantic stroll, and r_c0 rejected the offer."
                         }
                     }
                 ]
