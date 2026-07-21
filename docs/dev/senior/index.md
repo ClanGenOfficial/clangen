@@ -25,17 +25,6 @@ This is a list of requirements and instructions for performing a release.
     - [ ] If it's a **patch**, add the current version number as heading and add what has been fixed ([example](https://github.com/ClanGenOfficial/clangen/blob/5131bbf06538c522dcec66db34bc69dba4f7c9da/changelog.txt))
 - [ ] Make sure that `changelog.txt` DOES NOT contain things like directional quotes (`“` or `”`)
 - [ ] Push your `changelog.txt` changes
-#### Optimizing the assets
-- [ ] Install `just`
-    - **macOS:** `brew install just`
-    - **Windows:** `winget install Casey.Just`
-    - **Linux:** install `just` from your distro's package manager, or follow the instructions in the [`just` README](https://github.com/casey/just#installation)
-- [ ] Install `oxipng`
-    - **macOS:** `brew install oxipng`
-    - **Windows:** `winget install oxipng`
-    - **Linux:** install `oxipng` from your distro's package manager, or install it with Rust: `cargo install oxipng`
-- [ ] From the repository root, run `just optimize-images`
-- [ ] Commit and push any optimized asset changes
 #### Publishing the release
 - [ ] <a href="https://github.com/ClanGenOfficial/clangen/releases" target="_blank">Go to the releases page on GitHub</a>
 - [ ] Click `Draft a new release`
