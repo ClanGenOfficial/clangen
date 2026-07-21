@@ -303,9 +303,7 @@ def reformat_outcome(
             if "not_rc" in can_have_stat:
                 prior_abbreviations.append("-r_c")
 
-            involved_cats["s_c"] = InvolvedCatDict(
-                stat=stat
-            )
+            involved_cats["s_c"] = InvolvedCatDict(stat=stat)
             if prior_abbreviations:
                 involved_cats["s_c"]["prior_abbreviations"] = prior_abbreviations
 
