@@ -236,6 +236,14 @@ dev_tools = false
       comfort = 70
       trust = 60
 
+    # default relationship buff for an absent parent towards their kits
+    [new_cat.parent_buff.absent_parent_to_kit]
+      romance = 0
+      like = 0
+      respect = 0
+      comfort = -10
+      trust = 0
+
   [new_cat.sib_buff]
     # default relationships buff for siblings' relationships in one direction
     [new_cat.sib_buff.cat1_to_cat2]
