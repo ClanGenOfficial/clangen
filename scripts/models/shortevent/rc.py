@@ -30,7 +30,7 @@ class RC(BaseModel):
     )
     group: Union[List[Group], MISSING] = Field(
         MISSING,
-        description='List of groups r_c can belong to. If they can be anything, use "any".',
+        description='List of groups r_c can belong to. Defaults to "player_clan".',
     )
     skill: Union[List[Union[Skill, Literal["any"]]], MISSING] = Field(
         MISSING,
