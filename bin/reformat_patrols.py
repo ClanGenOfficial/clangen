@@ -14,6 +14,7 @@ from scripts.events_module.parameter_dicts import (
     ConditionDict,
     LostDict,
     ReputationChangesDict,
+    RelationshipConstraintDict,
 )
 
 root_dir = "../resources/lang/en/patrols"
@@ -568,5 +569,51 @@ def reformat_outcome(
     return reformatted_outcome
 
 
+def second_reformat():
+    for path in file_set:
+        new_patrols = []
+        try:
+            if path == ".\\prey_text_replacements.json":
+                continue
+            with open(f"{root_dir}/{path}", "r") as read_file:
+                patrols = read_file.read()
+                patrol_dict = ujson.loads(patrols)
+
+        except:
+            print(f"Something went wrong with {path}")
+            continue
+
+        for p in patrol_dict:
+            reformatted_patrol = check_romance(p)
+
+            new_patrols.append(reformatted_patrol)
+
+        if new_patrols != patrol_dict:
+            dict_text = ujson.dumps(new_patrols, indent=4)
+            dict_text = dict_text.replace(
+                "\/", "/"
+            )  # ujson tries to escape "/", but doesn't end up doing a good job.
+
+            with open(f"{root_dir}/{path}", "w") as write_file:
+                write_file.write(dict_text)
+
+
+def check_romance(d: dict):
+    reformatted_dict = d.copy()
+    if d.get("tags"):
+        if "romance" in d["tags"]:
+            new_block = RelationshipConstraintDict(
+                cats_to=["patrol_cats"],
+                cats_from=["patrol_cats"],
+                mutual=True,
+                constraints=["can_romance"],
+            )
+            if d.get("relationship_constraint"):
+                reformatted_dict["relationship_constraint"].append(new_block)
+            else:
+                reformatted_dict["relationship_constraint"] = [new_block]
+    return reformatted_dict
+
+
 load_paths()
-reformat()
+second_reformat()
