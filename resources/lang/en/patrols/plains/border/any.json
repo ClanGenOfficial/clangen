@@ -1188,7 +1188,7 @@
                             "cats_from": "s_c0 found n_c:0 trespassing on c_n territory and told {PRONOUN/n_c:0/object} to leave, but n_c:0 ignored {PRONOUN/s_c0/object}."
                         }
                     }
-                ],
+                ]
             },
             {
                 "frequency": 3,
@@ -3941,7 +3941,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c1",
+                            "r_c1"
                         ],
                         "history": "This cat was killed after an unfortunate meeting with a badger."
                     }
@@ -4235,7 +4235,7 @@
                 "death": [
                     {
                         "cats": [
-                            "p_l",
+                            "p_l"
                         ],
                         "history": "This cat was killed as an apprentice, patrolling the border alone and investigating things {PRONOUN/m_c/subject} shouldn't have."
                     }
@@ -4252,7 +4252,7 @@
                 "death": [
                     {
                         "cats": [
-                            "p_l",
+                            "p_l"
                         ],
                         "history": "This cat was killed as an apprentice, patrolling the border alone and investigating things {PRONOUN/m_c/subject} shouldn't have."
                     }
@@ -4364,8 +4364,7 @@
                 "death": [
                     {
                         "cats": [
-                            "p_l",
-                        ],
+                            "p_l"                        ],
                         "history": "This cat was killed after an unfortunate meeting with a wolverine."
                     }
                 ]
@@ -5526,7 +5525,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c1",
+                            "r_c1"
                         ],
                         "history": "This cat was killed after an unfortunate meeting with a badger."
                     }
@@ -5550,7 +5549,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c1",
+                            "r_c1"
                         ],
                         "history": "m_c was killed after an unfortunate meeting with a wolverine."
                     }
@@ -5634,7 +5633,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c1",
+                            "r_c1"
                         ],
                         "history": "m_c was killed saving an older warrior from a badger."
                     }

@@ -959,7 +959,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c1",
+                            "r_c1"
                         ],
                         "history": "m_c was killed by the poison of a death tree raining down on {PRONOUN/m_c/object}."
                     }
