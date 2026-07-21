@@ -384,9 +384,12 @@ class Patrol:
         chosen_patrol = None
         used_frequencies = set()
 
+        patrols_to_test = possible_patrols.copy()
+
         while not chosen_patrol:
             # make sure we still have possible patrols
-            if not possible_patrols:
+            if not patrols_to_test:
+                patrols_to_test = possible_patrols.copy()
                 # if we've circled back around to 4 then we need to reset the used patrols
                 if 4 in used_frequencies and chosen_frequency == 4:
                     self.used_patrols.clear()
@@ -394,10 +397,11 @@ class Patrol:
                 else:
                     used_frequencies.add(chosen_frequency)
                     chosen_frequency = find_new_frequency(used_frequencies)
+                continue
 
             if not patrol_override:
                 test_patrol = choices(
-                    possible_patrols, [x.weight for x in possible_patrols]
+                    patrols_to_test, [x.weight for x in patrols_to_test]
                 )[0]
             else:
                 test_patrol = patrol_override
@@ -405,7 +409,7 @@ class Patrol:
 
             # CHECK FREQUENCY AND ENSURE ID
             if test_patrol.frequency != chosen_frequency:
-                possible_patrols.remove(test_patrol)
+                patrols_to_test.remove(test_patrol)
                 continue
 
             # CHECK REPEAT
@@ -413,14 +417,14 @@ class Patrol:
                 test_patrol.id in self.used_patrols
                 and not self.debug_patrol_id == test_patrol.id
             ):
-                possible_patrols.remove(test_patrol)
+                patrols_to_test.remove(test_patrol)
                 continue
 
             # CHECK IF CATS FIT
             if self._patrol_pass_cat_constraints(test_patrol):
                 chosen_patrol = test_patrol
             else:
-                possible_patrols.remove(test_patrol)
+                patrols_to_test.remove(test_patrol)
 
         return chosen_patrol
 
@@ -576,7 +580,7 @@ class Patrol:
                 possible_outcomes = [
                     x
                     for x in success_outcomes
-                    if x.frequency == chosen_frequency and x not in tested_outcomes
+                    if x.frequency == chosen_frequency and x.id not in tested_outcomes
                 ]
                 if not possible_outcomes:
                     used_frequencies.add(chosen_frequency)
@@ -591,32 +595,29 @@ class Patrol:
                 if self._check_outcome_constraints(test_outcome, "success"):
                     chosen_success = test_outcome
                 else:
-                    tested_outcomes.add(test_outcome)
-
-            if not chosen_success:
-                continue
+                    tested_outcomes.add(test_outcome.id)
+                    continue
 
             if not chosen_failure:
                 possible_outcomes = [
                     x
                     for x in fail_outcomes
-                    if x.frequency == chosen_frequency and x not in tested_outcomes
+                    if x.frequency == chosen_frequency and x.id not in tested_outcomes
                 ]
                 if not possible_outcomes:
                     used_frequencies.add(chosen_frequency)
                     chosen_frequency = find_new_frequency(used_frequencies)
+                    continue
 
                 test_outcome = choices(
                     possible_outcomes, weights=[x.weight for x in possible_outcomes]
                 )[0]
                 # try to filter
                 if self._check_outcome_constraints(test_outcome, "failure"):
-                    chosen_success = test_outcome
+                    chosen_failure = test_outcome
                 else:
-                    tested_outcomes.add(test_outcome)
-
-            if not chosen_failure:
-                continue
+                    tested_outcomes.add(test_outcome.id)
+                    continue
 
         return chosen_success, chosen_failure
 

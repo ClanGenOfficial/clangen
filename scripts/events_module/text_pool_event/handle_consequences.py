@@ -80,8 +80,13 @@ def execute_outcome(
         unpack_rel_block(Cat, rel_changes, involved_cats=event_involved_cats)
     )
 
+    final_results = []
+    for r in results:
+        if r:
+            final_results.append(r)
+
     # return all the bullshit
-    return processed_text, results, rel_results, event.outcome_art
+    return processed_text, "\n".join(final_results), rel_results, event.outcome_art
 
 
 def _handle_joining(
@@ -455,13 +460,14 @@ def _handle_reputation_changes(event: TextPoolEvent, other_clan: OtherClan) -> s
 
 def _handle_supply_changes(
     event: TextPoolEvent, event_involved_cats: dict[str, Union[Cat, list[Cat]]]
-):
+) -> str:
     """
     Handles applying supply increases
     """
     if not event.supply:
-        return
+        return ""
 
+    results = []
     herb_blocks = []
     prey_blocks = []
     for block in event.supply:
@@ -470,8 +476,9 @@ def _handle_supply_changes(
         else:
             herb_blocks.append(block)
 
-    __handle_herbs(herb_blocks, event_involved_cats)
-    __handle_prey(prey_blocks, event_involved_cats)
+    results.append(__handle_herbs(herb_blocks, event_involved_cats))
+    results.append(__handle_prey(prey_blocks, event_involved_cats))
+    return "\n".join(results)
 
 
 def __handle_prey(

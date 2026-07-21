@@ -799,7 +799,10 @@ def gather_cat_objects(
             if is_exclusionary:
                 out_set -= set(found_cat)
             else:
-                out_set += set(found_cat)
+                if isinstance(found_cat, list):
+                    out_set.update(set(found_cat))
+                else:
+                    out_set.add(found_cat)
             continue
 
         found_cat = None
