@@ -22,11 +22,8 @@ NUM_OF_SKILLS = len(SkillPath)
 # slots increases performance and can be used since we won't be adding new attrs at runtime
 @dataclass(slots=True)
 class PatrolEvent:
-    # identification
     id: str
-    types: list[Literal["hunting", "herb_gathering", "border", "training"]]
 
-    # text and outcomes
     intro_text: str
     decline_text: str
     success_outcomes: list[Union[dict, TextPoolEvent]]
@@ -36,7 +33,7 @@ class PatrolEvent:
     )
     antag_fail_outcomes: list[Union[dict, TextPoolEvent]] = field(default_factory=list)
 
-    # constraints
+    types: list[Literal["hunting", "herb_gathering", "border", "training"]] = "border"
     frequency: int = 4
     weight: int = 1  # will be increased via code
     chance_of_success: int = 0  # out of 100
@@ -49,6 +46,10 @@ class PatrolEvent:
     relationship_constraint: list[RelationshipConstraintDict] = field(
         default_factory=list[RelationshipConstraintDict]
     )
+
+    herbs_given: list = field(default_factory=list)
+    new_cat: bool = False
+    other_clan: bool = False
 
     # art
     patrol_art: Optional[str] = None
@@ -77,8 +78,13 @@ class PatrolEvent:
         # LOTS of weight on rel constraints
         self.weight += len(self.relationship_constraint) * 20
 
-    @property
-    def new_cat(self) -> bool:
+        self._generate_outcomes()
+
+        self.new_cat = self.get_new_cat()
+        self.other_clan = self.get_other_clan()
+        self.herbs_given = self.get_herbs_given()
+
+    def get_new_cat(self) -> bool:
         """Returns boolean if there are any outcomes that results in
         a new cat joining (not just meeting)"""
 
@@ -88,19 +94,12 @@ class PatrolEvent:
             + self.antag_fail_outcomes
             + self.antag_success_outcomes
         ):
-            for abbr in outcome.involved_cats:
-                # if "n_c" is in an abbreviation, then that's a potential new cat
-                if "n_c" in abbr:
-                    # now we look at any join parameters to see if this specific cat is joining
-                    for join_cats in outcome.join:
-                        # if the abbr is present, then the cat is joining!
-                        if abbr in join_cats["cats"]:
-                            return True
+            if outcome.join:
+                return True
 
         return False
 
-    @property
-    def other_clan(self) -> bool:
+    def get_other_clan(self) -> bool:
         """Return boolean indicating if any outcome has any reputation effect"""
         for outcome in (
             self.success_outcomes
@@ -113,8 +112,7 @@ class PatrolEvent:
 
         return False
 
-    @property
-    def herbs_given(self) -> list:
+    def get_herbs_given(self) -> list:
         """
         returns list of herbs available to get from this patrol
         """
@@ -128,9 +126,9 @@ class PatrolEvent:
             for supply_change in out.supply:
                 if supply_change["type"] not in HERBS:
                     continue
-                herb_list.extend(
-                    [herb for herb in supply_change["type"] if herb not in herb_list]
-                )
+                if supply_change["type"] in herb_list:
+                    continue
+                herb_list.append(supply_change["type"])
 
         return herb_list
 
@@ -142,6 +140,12 @@ class PatrolEvent:
         fail = self.fail_outcomes.copy()
         antag_success = self.antag_success_outcomes.copy()
         antag_fail = self.antag_fail_outcomes.copy()
+
+        # clear old dicts so we can replace them
+        self.success_outcomes.clear()
+        self.fail_outcomes.clear()
+        self.antag_success_outcomes.clear()
+        self.antag_fail_outcomes.clear()
 
         for outcome in success:
             self.success_outcomes.append(TextPoolEvent(**outcome))

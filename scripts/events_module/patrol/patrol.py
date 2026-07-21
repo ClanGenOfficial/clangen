@@ -138,7 +138,6 @@ class Patrol:
         # ADD TO PATROL_CATS
 
         self.patrol_cats = patrol_cats
-        self.involved_cats["patrol_cats"] = patrol_cats
         for cat in patrol_cats:
             # ADD TO STATUS LIST
             if cat.status.rank in self.involved_cats:
@@ -951,7 +950,7 @@ class Patrol:
             else game.clan.override_biome
         )
         season = game.clan.current_season
-        prey_size = ["very_small", "small", "medium", "large", "huge"]
+        prey_size = ["tiny", "small", "medium", "large", "huge"]
         prey_size_random_weights = PATROL_BALANCE[biome][season]
 
         chosen_prey_size = choices(prey_size, weights=prey_size_random_weights)[0]
@@ -962,14 +961,14 @@ class Patrol:
             # count the outcomes + prey size
             prey_size_to_outcome_amounts = {}
             for outcome in patrol.success_outcomes:
-                # ignore skill or trait outcomes
-                if outcome.stat_trait or outcome.stat_skill:
-                    continue
-                if outcome.prey:
-                    outcome_prey_size = outcome.prey[0]
-                    if outcome_prey_size not in prey_size_to_outcome_amounts:
-                        prey_size_to_outcome_amounts[outcome_prey_size] = 0
-                    prey_size_to_outcome_amounts[outcome_prey_size] += 1
+                if outcome.supply:
+                    for block in outcome.supply:
+                        if block["type"] != "freshkill":
+                            continue
+                        outcome_prey_size = block["adjust"].replace("increase_", "")
+                        if outcome_prey_size not in prey_size_to_outcome_amounts:
+                            prey_size_to_outcome_amounts[outcome_prey_size] = 0
+                        prey_size_to_outcome_amounts[outcome_prey_size] += 1
 
             # get the prey size with the most outcomes
             most_prey_size = ""
