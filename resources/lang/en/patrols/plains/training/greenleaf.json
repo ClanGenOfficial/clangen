@@ -169,7 +169,7 @@
                     "r_c's right, and even worse, there's not a lick of shade to be had. The cats turn back for home, but by the time they return to camp, they're dehydrated and exhausted."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "multi"

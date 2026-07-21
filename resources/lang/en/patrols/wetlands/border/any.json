@@ -3415,7 +3415,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -3465,7 +3465,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -3657,7 +3657,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 15,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -3953,7 +3953,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"

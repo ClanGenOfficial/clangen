@@ -718,7 +718,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -758,7 +758,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -895,7 +895,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1140,7 +1140,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1312,7 +1312,7 @@
                     "Carelessly, p_l is seen by Twolegs and locked, hissing and spitting, in a monster's den. Overnight, {PRONOUN/p_l/subject} {VERB/p_l/discover/discovers} that a broken window is just wide enough to push {PRONOUN/p_l/self} out to safety through, but the glass leaves {PRONOUN/p_l/object} bleeding as {PRONOUN/p_l/subject} {VERB/p_l/run/runs} back to c_n."
                 ],=
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -2755,7 +2755,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -2815,7 +2815,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -3037,7 +3037,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "multi"
@@ -3118,7 +3118,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -3633,7 +3633,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -3695,7 +3695,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -4249,7 +4249,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -4739,7 +4739,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -4804,7 +4804,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -5135,7 +5135,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -5201,7 +5201,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -5428,7 +5428,7 @@
                     "r_c0 brings back the ocean's bounty to camp. A wonderful and easy catch!"
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "some_clan"
@@ -5483,7 +5483,7 @@
                     "Frozen, the cats watch the massive lumbering frog, the size of a Twoleg and just as bipedal. It halts and, like the rumble of thunder, issues a massive croak that creaks like cracking wood. All r_c0 can do is shiver."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -5779,7 +5779,7 @@
                         "adjust": "increase_medium"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -6047,7 +6047,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -6524,7 +6524,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -8226,7 +8226,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -8394,7 +8394,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -8545,7 +8545,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -9038,7 +9038,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -9190,7 +9190,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -9579,7 +9579,7 @@
                     "r_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c0/subject} {VERB/r_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, flapping its wings and thrusting its beak forward. r_c0 isn't quick enough to avoid the bite, and the patrol has to help {PRONOUN/r_c0/object} back to camp."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -9599,7 +9599,7 @@
                     "r_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c0/subject} {VERB/r_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c0 scrambles back\u00e2\u20ac\u201dright over the edge of the cliff. With a howl, {PRONOUN/r_c0/subject} {VERB/r_c0/plummet/plummets}. The patrol rushes down to find r_c0 lying on the low tide sandbank, barely able to limp back to camp."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -9619,7 +9619,7 @@
                     "r_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c0/subject} {VERB/r_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c0 scrambles back\u00e2\u20ac\u201dright over the edge of the cliff. With a howl, {PRONOUN/r_c0/subject} {VERB/r_c0/plummet/plummets}. The patrol rushes down to find r_c0 clinging onto the rocks and coughing water."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -9700,7 +9700,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -9765,7 +9765,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"

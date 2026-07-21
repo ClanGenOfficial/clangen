@@ -46,7 +46,7 @@
                         "adjust": "increase_medium"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -71,7 +71,7 @@
                         "adjust": "increase_medium"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -110,7 +110,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"

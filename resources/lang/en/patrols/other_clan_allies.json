@@ -878,7 +878,7 @@
                 "reputation_changes": {
                     "other_clan": -1
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1094,7 +1094,7 @@
                 "reputation_changes": {
                     "other_clan": -1
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1495,7 +1495,7 @@
                 "reputation_changes": {
                     "other_clan": -3
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"

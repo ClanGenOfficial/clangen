@@ -602,7 +602,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -854,7 +854,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1493,7 +1493,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1619,7 +1619,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"

@@ -249,7 +249,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -369,7 +369,7 @@
                     "The prey must be hiding; p_l catches nothing. As a snowstorm descends and visibility drops, p_l hides under a bush. By the time the storm has cleared enough to return to camp, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} shivering and numb."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -599,7 +599,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1486,7 +1486,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"

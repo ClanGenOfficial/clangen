@@ -177,7 +177,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -627,7 +627,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "multi"
@@ -705,7 +705,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "multi"
@@ -856,7 +856,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1331,7 +1331,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1596,7 +1596,7 @@
                     "That smells like a nursing female. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the patrol and charges. An adult coyote is no joke, however, and she gives as good as she gets."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1668,7 +1668,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "multi"
@@ -1721,7 +1721,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "multi"
@@ -1764,7 +1764,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1899,7 +1899,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"

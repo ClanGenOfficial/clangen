@@ -335,7 +335,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -441,7 +441,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -551,7 +551,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "multi"
@@ -976,7 +976,7 @@
                         "history": "m_c died to keep coyotes away from c_n's borders."
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "multi"
@@ -1053,7 +1053,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "multi"
@@ -1205,7 +1205,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1469,7 +1469,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "multi"
@@ -1634,7 +1634,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1921,7 +1921,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1967,7 +1967,7 @@
                         "history": "m_c died from injuries sustained keeping coyotes away from c_n's borders."
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "multi"
@@ -2043,7 +2043,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "multi"
@@ -2179,7 +2179,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -2685,7 +2685,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -2712,7 +2712,7 @@
                     }
                 },
                 "exp_gained": 20,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -2807,7 +2807,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -2902,7 +2902,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c2"
@@ -2948,7 +2948,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -2987,7 +2987,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "multi"
@@ -3038,7 +3038,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"

@@ -222,7 +222,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -547,7 +547,7 @@
                     ]
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -581,7 +581,7 @@
                     "p_l eventually manages to rescue r_c, but {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} to be helped back to camp, battered and injured."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -868,7 +868,7 @@
                     "p_l eventually manages to rescue r_c, but {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} to be helped back to camp, battered and injured."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -959,7 +959,7 @@
                     "p_l eventually manages to pull {PRONOUN/p_l/self} free, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} wheezing and injured. It's all {PRONOUN/p_l/subject} can do to find some beach grass to shelter in through the night out on the shore, until a patrol finds {PRONOUN/p_l/object} the next morning and helps {PRONOUN/p_l/object} to the medicine cat den."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1069,7 +1069,7 @@
                     "The apprentice wanders along obliviously and slips, tumbling right down into a rocky pool. Bruised and sore, p_l has to report to the medicine cat den when {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -3125,7 +3125,7 @@
                     "Frozen, the cats watch the massive lumbering frog, the size of a Twoleg and just as bipedal. It halts and, like the rumble of thunder, issues a massive croak that creaks like cracking wood. All r_c0 can do is shiver."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -3230,7 +3230,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"

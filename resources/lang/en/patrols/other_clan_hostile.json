@@ -215,7 +215,7 @@
                 "reputation_changes": {
                     "other_clan": -1
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -821,7 +821,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1079,7 +1079,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -1538,7 +1538,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "n_c:0",
@@ -1630,7 +1630,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -1724,7 +1724,7 @@
                         "history": "m_c was killed by {PRONOUN/m_c/poss} mate's Clanmates."
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "n_c:0"
@@ -1850,7 +1850,7 @@
                         "no_results": false
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "n_c:2"
@@ -2001,7 +2001,7 @@
                         "no_results": false
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -2406,7 +2406,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -2527,7 +2527,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0",
@@ -3109,7 +3109,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -3153,7 +3153,7 @@
                 "reputation_changes": {
                     "other_clan": -1
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -3598,7 +3598,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -3778,7 +3778,7 @@
                 "reputation_changes": {
                     "other_clan": -1
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -3940,7 +3940,7 @@
                 "reputation_changes": {
                     "other_clan": -1
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -4123,7 +4123,7 @@
                 "reputation_changes": {
                     "other_clan": -1
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -4636,7 +4636,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -4664,7 +4664,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -4692,7 +4692,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -4720,7 +4720,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -4847,7 +4847,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -5383,7 +5383,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -5411,7 +5411,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -5439,7 +5439,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -5467,7 +5467,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -5594,7 +5594,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -6130,7 +6130,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -6158,7 +6158,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -6186,7 +6186,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -6214,7 +6214,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -6341,7 +6341,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -6877,7 +6877,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -6905,7 +6905,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -6933,7 +6933,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -6961,7 +6961,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -7088,7 +7088,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -7985,7 +7985,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -8336,7 +8336,7 @@
                 "reputation_changes": {
                     "other_clan": -2
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -8696,7 +8696,7 @@
                 "reputation_changes": {
                     "other_clan": -1
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"

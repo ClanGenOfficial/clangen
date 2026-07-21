@@ -333,7 +333,7 @@
                     ]
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -361,7 +361,7 @@
                     ]
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -3087,7 +3087,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "multi"
@@ -7594,7 +7594,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -7670,7 +7670,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -8637,7 +8637,7 @@
                     "Everything seems to be going well \u00e2\u20ac\u201d then r_c0 trips over {PRONOUN/r_c0/poss} paws and introduces {PRONOUN/r_c0/poss} muzzle to the ground at speed. Maybe they all need to go back to basics."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -9514,7 +9514,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -9558,7 +9558,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -10197,7 +10197,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -10841,7 +10841,7 @@
                     "Everything seems to be going well \u00e2\u20ac\u201d then r_c0 trips over {PRONOUN/r_c0/poss} paws and introduces {PRONOUN/r_c0/poss} muzzle to the ground at speed. Maybe they need to go back to basics."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -11269,7 +11269,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -11715,7 +11715,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -12109,7 +12109,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -13631,7 +13631,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -14089,7 +14089,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -14785,7 +14785,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -15208,7 +15208,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -15651,7 +15651,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -15861,7 +15861,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -15967,7 +15967,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -16189,7 +16189,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -16565,7 +16565,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -16739,7 +16739,7 @@
                     "Everything seems to be going well - then r_c0 trips over {PRONOUN/r_c0/poss} paws and introduces {PRONOUN/r_c0/poss} muzzle to the ground at speed. Maybe they need to go back to basics."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -17844,7 +17844,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -18422,7 +18422,7 @@
                     "Everyone keeps their claws in (no matter the temptations), but r_c0 slips at a crucial moment while {PRONOUN/r_c0/subject} and p_l spar, and {PRONOUN/r_c0/subject} {VERB/r_c0/wince/winces} as {PRONOUN/r_c0/subject} {VERB/r_c0/get/gets} up. Time to stop."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -18719,7 +18719,7 @@
                     "They've barely started yet, only a few heartbeats into an argument, when r_c0 takes a tumble that cuts training short."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -19948,7 +19948,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -20872,7 +20872,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -20916,7 +20916,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -25154,7 +25154,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -26313,7 +26313,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -29665,7 +29665,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -30841,7 +30841,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c3"
@@ -31016,7 +31016,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -31174,7 +31174,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -32348,7 +32348,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"

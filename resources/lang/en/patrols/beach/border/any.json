@@ -182,7 +182,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -573,7 +573,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -852,7 +852,7 @@
                     "There is a downpour, and a sudden flood from the overflowing river sweeps p_l away. Injured, gasping for air and paddling desperately, p_l remembers enough of {PRONOUN/p_l/poss} training to keep an eye out for driftwood. {PRONOUN/p_l/subject/CAP} {VERB/p_l/sink/sinks} {PRONOUN/p_l/poss} claws into the first piece that's swept past {PRONOUN/p_l/object}. It saves {PRONOUN/p_l/poss} life."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -872,7 +872,7 @@
                     "There is a downpour, and a sudden flood from the overflowing river sweeps p_l away. With the little warning {PRONOUN/p_l/subject} {VERB/p_l/have/has}, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a branch being carried by the water and {VERB/p_l/strike/strikes} out strongly for it. Hurt and shivering from both exhaustion and the cold, {PRONOUN/p_l/subject} nevertheless {VERB/p_l/cling/clings} to safety as the floodwaters run their course."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1172,7 +1172,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1349,7 +1349,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -1643,7 +1643,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1811,7 +1811,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -2650,7 +2650,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -2742,7 +2742,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -2934,7 +2934,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 15,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -3192,7 +3192,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -3298,7 +3298,7 @@
                     "Frozen, the cats watch the massive lumbering frog, the size of a Twoleg and just as bipedal. It halts and, like the rumble of thunder, issues a massive croak that creaks like cracking wood. All r_c0 can do is shiver."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"

@@ -826,7 +826,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"

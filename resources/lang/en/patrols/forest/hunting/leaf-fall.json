@@ -651,7 +651,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1076,7 +1076,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1550,7 +1550,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -2878,7 +2878,7 @@
                     "The bright colors of the leaf litter masquerade as solid ground, and p_l falls into the pile up to {PRONOUN/p_l/poss} neck, bumping into what feel like the sharpest twigs in the forest as {PRONOUN/p_l/subject} {VERB/p_l/does/do}. It takes {PRONOUN/p_l/object} an embarrassingly long time to clamber out, and by the time {PRONOUN/p_l/subject} {VERB/p_l/do/does}, the storm breaks, adding to an awful afternoon."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -2908,7 +2908,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -3092,7 +3092,7 @@
                     "The thunderstorm breaks while p_l is out hunting, scaring {PRONOUN/p_l/object} halfway out of {PRONOUN/p_l/poss} fur and causing {PRONOUN/p_l/object} to leap halfway up a tree before the deafening sound proves itself rain rather than danger. The fall back off the tree isn't high, but {PRONOUN/p_l/subject} {VERB/p_l/land/lands} without grace and with {PRONOUN/p_l/poss} fur still standing on end."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -3129,7 +3129,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"

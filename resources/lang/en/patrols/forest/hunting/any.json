@@ -210,7 +210,7 @@
                     "The porcupine whips around, digging the quills of its tail into r_c! The patrol bolts away and returns to camp, r_c0 with a nose full of quills."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -398,7 +398,7 @@
                     "The porcupine whips around, digging the quills of its tail into r_c! r_c0 returns to camp with a nose full of quills and a wounded pride."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -922,7 +922,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1190,7 +1190,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1416,7 +1416,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1786,7 +1786,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -3049,7 +3049,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -3292,7 +3292,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -6221,7 +6221,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -6283,7 +6283,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -6847,7 +6847,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -7118,7 +7118,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -7595,7 +7595,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -9298,7 +9298,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -9465,7 +9465,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -9616,7 +9616,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -10109,7 +10109,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -10260,7 +10260,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -10383,7 +10383,7 @@
                     "p_l doesn't want to talk about it when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} want to talk about anything..."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"

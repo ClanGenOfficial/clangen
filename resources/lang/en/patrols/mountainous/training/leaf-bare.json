@@ -275,7 +275,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -1065,7 +1065,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1272,7 +1272,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1797,7 +1797,7 @@
                         "history": "The view point c_n thought was safe from avalanches... was not."
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"

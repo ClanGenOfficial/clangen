@@ -172,7 +172,7 @@
                         "adjust": "increase_medium"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"

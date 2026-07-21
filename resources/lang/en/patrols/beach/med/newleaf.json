@@ -57,7 +57,7 @@
                     "Not long into {PRONOUN/p_l/poss} search, the fog thickens, obscuring p_l's own paws and dappling {PRONOUN/p_l/poss} pelt. In the haze, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} see them coming. Hooves crunching fresh grass are the only warning before a flock of sheep push and jostle against p_l on all sides. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} bruised and disoriented by the time {PRONOUN/p_l/subject} {VERB/p_l/get/gets} away."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -75,7 +75,7 @@
                     "Not long into {PRONOUN/p_l/poss} search, the fog thickens, obscuring p_l's own paws and dappling {PRONOUN/p_l/poss} pelt. In the haze, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} see them coming. Hooves crunching fresh grass are the only warning before a flock of sheep envelop p_l, trampling {PRONOUN/p_l/object} underhoof. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} battered and panicked by the time {PRONOUN/p_l/subject} finally {VERB/p_l/get/gets} away."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -222,7 +222,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -266,7 +266,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"

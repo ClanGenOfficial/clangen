@@ -182,7 +182,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -573,7 +573,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -2575,7 +2575,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -3300,7 +3300,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -3350,7 +3350,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -3777,7 +3777,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -3842,7 +3842,7 @@
                     "The apprentices gather round the weird dead-ended metal tunnel, poking at its rusty sides, clearing away the soil piled on its roof, crawling in to claw at the back. The trap shuts with a violent snap."
                 ],
                 "exp_gained": 20,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -3978,7 +3978,7 @@
                         "history": "m_c died of injuries inflicted by a badger after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dared to leap into an unknown burrow."
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -4173,7 +4173,7 @@
                     "p_l sticks {PRONOUN/p_l/poss} head into {PRONOUN/p_l/poss} new discovery and finds a furious prairie dog. It delivers a stinging lesson about putting one's head into random holes in the ground."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -4265,7 +4265,7 @@
                     "The shallow cave is home to a young badger, inexperienced, far from its natal family, and dangerous. p_l escapes, battered, bruised, and bleeding, but the adolescent predator won't follow p_l back to camp, not in territory that's unfamiliar and new to it."
                 ],
                 "exp_gained": 20,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -4377,7 +4377,7 @@
                     "The tunnels prove to be a currently in-use badger sett. p_l retreats with a nasty wound."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -4550,7 +4550,7 @@
                     "Whoops! It seems a fox was calling this home. p_l backs out of the tunnels and thankfully the fox doesn't follow, just as surprised as {PRONOUN/p_l/object}."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -4584,7 +4584,7 @@
                     "The shallow cave is home to a young badger, inexperienced, far from its natal family, and dangerous. p_l escapes, battered, bruised, and bleeding, but the subadult predator won't follow p_l back to camp, not in territory that's unfamiliar and new to it."
                 ],
                 "exp_gained": 20,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -4697,7 +4697,7 @@
                     "The tunnels prove to be a currently in-use badger sett. p_l retreats with a nasty wound."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -5316,7 +5316,7 @@
                     "Whoops! It seems a fox was calling this home. The patrol backs out of the tunnels and thankfully the fox doesn't follow, just as surprised as they are."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -5493,7 +5493,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -5639,7 +5639,7 @@
                         "history": "m_c was killed saving an older warrior from a badger."
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -5658,7 +5658,7 @@
                     "The tunnels prove to be a currently in-use badger sett. The patrol quickly retreats, but not before p_l gains a nasty wound."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -6034,7 +6034,7 @@
                     "Whoops! It seems a fox was calling this home. The patrol backs out of the tunnels and thankfully the fox doesn't follow, just as surprised as they are."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -6088,7 +6088,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -6198,7 +6198,7 @@
                     "The tunnels prove to be a currently in-use badger sett. The patrol quickly retreats, but not before r_c0 gains a nasty wound."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -6635,7 +6635,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -6685,7 +6685,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -6730,7 +6730,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -6774,7 +6774,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -7275,7 +7275,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -7395,7 +7395,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -7470,7 +7470,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -7929,7 +7929,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -7982,7 +7982,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"

@@ -100,7 +100,7 @@
                     "There's no time to answer r_c's question. The patrol has been out too long, in conditions too dry and places too exposed to the scorching sun. They prioritize finding shade, but they'll need to check themselves for heatstroke when they return to camp."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "multi"

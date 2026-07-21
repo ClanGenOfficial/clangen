@@ -467,7 +467,7 @@
                     "p_l checks r_c0 over and, while the other cat is not seriously injured, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} definitely a little more battered than {PRONOUN/r_c0/subject} {VERB/r_c0/were/was} when they set out."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -515,7 +515,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -565,7 +565,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -582,7 +582,7 @@
                     "r_c0 yowls out in pain, alerting p_l and causing {PRONOUN/p_l/object} to drop everything and rush over. The medicine cat tries to help {PRONOUN/p_l/poss} companion to stand, but it quickly becomes clear that that won't be happening. r_c0 will need to be carried back to camp."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -829,7 +829,7 @@
                     "p_l checks r_c0 over and, while the other medicine cat is not seriously injured, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} definitely a little more battered than {PRONOUN/r_c0/subject} {VERB/r_c0/were/was} when they set out."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -877,7 +877,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -927,7 +927,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -944,7 +944,7 @@
                     "r_c0 yowls out in pain, alerting p_l and causing {PRONOUN/p_l/object} to drop everything and rush over. p_l tries to help {PRONOUN/p_l/poss} fellow medicine cat to stand, but it quickly becomes clear that that won't be happening. r_c0 will need to be carried back to camp."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1178,7 +1178,7 @@
                     "r_c0 hurries over to help p_l and, while the medicine cat is not seriously injured, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} definitely a little more battered than {PRONOUN/p_l/subject} {VERB/p_l/were/was} when they set out."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -1226,7 +1226,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -1276,7 +1276,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -1293,7 +1293,7 @@
                     "p_l yowls out in pain, alerting r_c0 and causing {PRONOUN/r_c0/object} to drop everything and rush over. r_c0 tries to help the medicine cat to stand, but it quickly becomes clear that that won't be happening. p_l will need to be carried back to camp."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"

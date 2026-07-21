@@ -777,7 +777,7 @@
                     "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1076,7 +1076,7 @@
                     "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} {VERB/p_l/return/returns} to camp disappointed but determined to try again. It's simply too important to not keep a good supply of."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"

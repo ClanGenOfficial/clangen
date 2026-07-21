@@ -651,7 +651,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1139,7 +1139,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1761,7 +1761,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -3032,7 +3032,7 @@
                     "When {PRONOUN/p_l/subject} {VERB/p_l/round/rounds} a bend in the path, p_l hears a bird call. Jerking {PRONOUN/p_l/poss} head up, {PRONOUN/p_l/subject} {VERB/p_l/lose/loses} {PRONOUN/p_l/poss} footing and {VERB/p_l/skid/skids} down a slope more mud than grass. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} not that badly hurt, but p_l is tender enough after that fall to give up and go home."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -3062,7 +3062,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -3176,7 +3176,7 @@
                     "While rounding a bend in the path, p_l hears a bird call. Jerking {PRONOUN/p_l/poss} head up, {PRONOUN/p_l/subject} {VERB/p_l/lose/loses} {PRONOUN/p_l/poss} footing and {VERB/p_l/skid/skids} down a slope that's more mud than grass. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} not that badly hurt, but p_l is tender enough after that fall to give up and go home."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -3212,7 +3212,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -3867,7 +3867,7 @@
                     "Full of mouth-watering desire for the rich yolk of eggs, p_l risks venturing out onto a thin spindly branch. Too spindly, in fact, and though {PRONOUN/p_l/subject} {VERB/p_l/catch/catches} {PRONOUN/p_l/self} on a lower branch with a scrabbling struggle, {PRONOUN/p_l/subject}'ll be feeling that tonight when {PRONOUN/p_l/subject} {VERB/p_l/stretch/stretches} out in {PRONOUN/p_l/poss} nest. Ow."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -3902,7 +3902,7 @@
                     "Full of mouth-watering desire for the rich egg yolks, p_l risks venturing out onto a thin spindly branch. Too spindly, in fact. {PRONOUN/p_l/subject/CAP} {VERB/p_l/topple/topples} from the treetop, clawing desperately, fruitlessly for a hold on the branches {PRONOUN/p_l/subject} whip past, gaining speed as {PRONOUN/p_l/subject} whirl {PRONOUN/p_l/poss} body around until {PRONOUN/p_l/subject} {VERB/p_l/see/sees} the ground approaching. The next thing p_l knows is waking in the medicine cat den, foggy and weak."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -4052,7 +4052,7 @@
                     "The branch p_l pads out on is more than strong enough to bear {PRONOUN/p_l/poss} weight \u00e2\u20ac\u201d but in the wind and rain, trembling and slippery, {PRONOUN/p_l/subject} {VERB/p_l/lose/loses} {PRONOUN/p_l/poss} grip. {PRONOUN/p_l/poss/CAP} next thought is foggy confusion, gazing up at the inside of the medicine cat den."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -4124,7 +4124,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -4534,7 +4534,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -4573,7 +4573,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"

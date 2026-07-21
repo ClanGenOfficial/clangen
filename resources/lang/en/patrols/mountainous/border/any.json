@@ -284,7 +284,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -582,7 +582,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1147,7 +1147,7 @@
                     "After some consideration the patrol finds a place to cross. As they reach about halfway across a strong rush of water crashes over them. The water mercilessly crashes them against the river's sharp boulders and violently sends them careening over a small waterfall. Thankfully, at the bottom of the waterfall the water is calmer and they wash up on the riverbed, but not without the consequences of trying to fight one of nature's strongest forces."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -1238,7 +1238,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -1299,7 +1299,7 @@
                     "p_l returns home from {PRONOUN/p_l/poss} uneventful patrol."
                 ],
                 "exp_gained": 35,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1347,7 +1347,7 @@
                     "All p_l remembers from then is the eyes... the glowing red eyes..."
                 ],
                 "exp_gained": 10,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1421,7 +1421,7 @@
                     "The bigger deer raises its head, blood dripping from its lips, head lifting higher and higher and higher as it rears backwards, jaws dropping open in a blood-curdling scream \u00e2\u20ac\u201d one mirrored by p_l as p_l shrieks and runs."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -1441,7 +1441,7 @@
                     "The bigger deer raises its head, blood dripping from its lips, head lifting higher and higher and higher. p_l shrieks and runs, branches tearing through {PRONOUN/p_l/poss} pelt as, horrifyingly, something crashes after {PRONOUN/p_l/object}, chasing {PRONOUN/p_l/object} for a pawful of frantic heartbeats."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -1791,7 +1791,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1844,7 +1844,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -1922,7 +1922,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 40,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"

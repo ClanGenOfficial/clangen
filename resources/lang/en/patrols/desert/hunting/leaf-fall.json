@@ -215,7 +215,7 @@
                     "p_l collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"

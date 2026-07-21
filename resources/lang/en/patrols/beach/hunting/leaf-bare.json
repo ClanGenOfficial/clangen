@@ -659,7 +659,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1146,7 +1146,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1266,7 +1266,7 @@
                     "The prey must be hiding; p_l catches nothing. As a snowstorm descends and visibility drops, {PRONOUN/p_l/subject} {VERB/p_l/hide/hides} in a sea cave, shivering and tightly tucked up against the cold. When {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp p_l is cold and chilled but otherwise unharmed."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1484,7 +1484,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"

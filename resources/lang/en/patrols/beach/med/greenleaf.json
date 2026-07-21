@@ -69,7 +69,7 @@
                     "That plant is lungwort, as invaluable as it is elusive. p_l searches, without luck, until the greenleaf heat grows too oppressive. Then {PRONOUN/p_l/subject} {VERB/p_l/slink/slinks} back to camp on unsteady paws, panting. Maybe {PRONOUN/p_l/subject} stayed out there a little too long."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -89,7 +89,7 @@
                     "That plant is lungwort, as invaluable as it is elusive. p_l searches stubbornly, without luck, even as the greenleaf heat grows ever more oppressive. It's only after {PRONOUN/p_l/poss} paws get unsteady that {PRONOUN/p_l/subject} stumble{VERB/p_l//s} back to camp, panting."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -224,7 +224,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"

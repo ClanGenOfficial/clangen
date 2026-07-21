@@ -290,7 +290,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -545,7 +545,7 @@
                     "While p_l is carefully sniffing at the burrow entrance, there's a rustle from the woods behind {PRONOUN/p_l/object}. It's difficult to say who's more surprised \u00e2\u20ac\u201d p_l or the badger. It charges for the sett and p_l leaps out of the way, but its claws catch {PRONOUN/p_l/poss} pelt. p_l limps back to camp with blood trailing in {PRONOUN/p_l/poss} wake to report the whole sorry adventure."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -816,7 +816,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1158,7 +1158,7 @@
                     ]
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1194,7 +1194,7 @@
                     "p_l eventually manages to rescue r_c, but {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} to be helped back to camp, battered and injured."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1490,7 +1490,7 @@
                     "p_l eventually manages to rescue r_c, but {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} to be helped back to camp, battered and injured."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1586,7 +1586,7 @@
                     "p_l eventually manages to pull {PRONOUN/p_l/self} free, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} battered and injured. It's all {PRONOUN/p_l/subject} can do to find a bush to shelter under through the night in the cold forest until a patrol finds {PRONOUN/p_l/object} the next morning and helps {PRONOUN/p_l/object} to the medicine cat den."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1696,7 +1696,7 @@
                     "The apprentice wanders along obliviously and slips, tumbling right down a well-hidden gully. Bruised and sore, p_l has to report to the medicine cat den when {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -3414,7 +3414,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -3533,7 +3533,7 @@
                     "p_l doesn't want to talk about it when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} back to camp. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} want to talk about anything."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"

@@ -164,7 +164,7 @@
                         "adjust": "increase_small"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -370,7 +370,7 @@
                     "The skua isn't only after the petrel \u00e2\u20ac\u201d it seems to have claimed the whole stretch of shoreline, patrolling its territory with a furious fervor. Every attempt to approach the border is met with diving wings and a peck to the back of the head, sending the cats scattering. Eventually, the patrol has no choice but to give up, and a section of the border goes unmarked."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -410,7 +410,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"

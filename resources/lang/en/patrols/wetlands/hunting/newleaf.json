@@ -112,7 +112,7 @@
                     "p_l eventually decides to continue on and... it doesn't go well. By the time {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to cut {PRONOUN/p_l/poss} losses and head back to camp, p_l's tired, cranky, and soaked to the bone with absolutely nothing to show for it. Even worse, {PRONOUN/p_l/subject} fell in earlier and now {PRONOUN/p_l/subject} can't stop hacking up water."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -137,7 +137,7 @@
                     "<i>Pfft,</i> what's a little extra water to a cat like p_l? Nothing, that's what! p_l swaggers on {PRONOUN/p_l/poss} way... only to slip on a patch of mud and fall into the water. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} eventually able to pull {PRONOUN/p_l/self} out of the water, but not without inhaling quite a bit."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"

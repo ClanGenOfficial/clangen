@@ -8950,7 +8950,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c2"
@@ -9362,7 +9362,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -9436,7 +9436,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -13136,7 +13136,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -13298,7 +13298,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -13324,7 +13324,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -13741,7 +13741,7 @@
                     "r_c0 approaches the strange cat, thinking that they might be a wandering spirit in need of help. But as r_c0 gets closer, the strange cat shrieks, an awful, blood curdling scream that makes {PRONOUN/r_c0/poss} fur stand on end. Overcome by terror, {PRONOUN/r_c0/subject} {VERB/r_c0/flee/flees} back to camp, dropping what little herbs {PRONOUN/r_c0/subject} had gathered."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -13850,7 +13850,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -15233,7 +15233,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -15314,7 +15314,7 @@
                     "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c0 holding one of {PRONOUN/r_c0/poss} paws off the ground. It seems that the other cat stepped on a thorn. Ouch! {PRONOUN/r_c0/subject/CAP}'ll have to go back to camp and fix that up."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -20565,7 +20565,7 @@
                     "p_l, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/p_l/poss} balance and tumbles to the ground."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -20818,7 +20818,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -21002,7 +21002,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -22141,7 +22141,7 @@
                     "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -22667,7 +22667,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -26018,7 +26018,7 @@
                     "While plucking them from the bush, p_l feels one of the berries split in {PRONOUN/p_l/poss} mouth, and a deceptively good taste coats {PRONOUN/p_l/poss} tongue. These aren't raspberries. {PRONOUN/p_l/subject/CAP} {VERB/p_l/rush/rushes} to force {PRONOUN/p_l/self} to throw up, and it works, expelling the deathberries from {PRONOUN/p_l/poss} system, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} weak and shaky for the rest of the day."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -26158,7 +26158,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -28133,7 +28133,7 @@
                     "p_l carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/p_l/subject/CAP} {VERB/p_l/overbalance/overbalances}, falling into a deep snowbank that {PRONOUN/p_l/subject} {VERB/p_l/emerge/emerges} from with a deep shiver racking {PRONOUN/p_l/poss} body."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -28456,7 +28456,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -28520,7 +28520,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -28656,7 +28656,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -28925,7 +28925,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -28944,7 +28944,7 @@
                     "p_l carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. {PRONOUN/p_l/subject/CAP} {VERB/p_l/overbalance/overbalances}, falling into a deep snowbank that {PRONOUN/p_l/subject} {VERB/p_l/emerge/emerges} from with a deep shiver racking {PRONOUN/p_l/poss} body."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -29085,7 +29085,7 @@
                     "p_l digs and digs and digs, but eventually {PRONOUN/p_l/subject} {VERB/p_l/have/has} to admit failure and give up the search for burdock root. The cold has leached all the heat from {PRONOUN/p_l/poss} pelt, and {PRONOUN/p_l/subject} {VERB/p_l/arrive/arrives} back at camp miserable and cold."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -29372,7 +29372,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -29399,7 +29399,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -29506,7 +29506,7 @@
                     "The patrol digs and digs and digs, but eventually has to admit failure and give up the search for burdock root. Both cats are shivering and chilled to the bone by the time they return to camp, empty-pawed and miserable."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -29741,7 +29741,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -29760,7 +29760,7 @@
                     "The patrol digs and digs and digs, but eventually has to admit failure and give up the search for burdock root. p_l in particular is shivering and chilled to the bone by the time {PRONOUN/p_l/subject} {VERB/p_l/return/returns}, empty-pawed and miserable."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -29901,7 +29901,7 @@
                     "Not only does p_l end up soaked to the skin, but {PRONOUN/p_l/subject} also {VERB/p_l/don't/doesn't} end up finding any daisies under the snow! By the time {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} left cold, wet, and shivering violently. What a terrible, horrible, no good, very bad day."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -30164,7 +30164,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -30191,7 +30191,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -30307,7 +30307,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -30519,7 +30519,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -30538,7 +30538,7 @@
                     "Not only does the patrol end up soaked to the skin, but they also don't end up finding any daisies under the snow either! p_l in particular is shivering and chilled to the bone by the time {PRONOUN/p_l/subject} and the others return to camp. What a terrible, horrible, no good, very bad day."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -30691,7 +30691,7 @@
                     "Not only does p_l end up soaked to the skin, but {PRONOUN/p_l/subject} also {VERB/p_l/don't/doesn't} end up finding any dandelions under the snow! By the time {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} left cold, wet, and shivering violently. What a terrible, horrible, no good, very bad day."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -30982,7 +30982,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -31009,7 +31009,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -31125,7 +31125,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -31386,7 +31386,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -31405,7 +31405,7 @@
                     "Not only does the patrol end up soaked to the skin, but they also don't end up finding any dandelions under the snow either! p_l in particular is shivering and chilled to the bone by the time {PRONOUN/p_l/subject} and the others return to camp. What a terrible, horrible, no good, very bad day."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -31546,7 +31546,7 @@
                     "p_l, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -31831,7 +31831,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -31869,7 +31869,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -31889,7 +31889,7 @@
                     "The duo carefully edges out onto a skinny branch to try to get some juniper leaves. However, the branch is not strong enough to hold their combined weight and snaps, sending them both plummeting to the ground."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -32117,7 +32117,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -32137,7 +32137,7 @@
                     "p_l, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -35803,7 +35803,7 @@
                     "p_l, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/p_l/poss} balance and tumbles to the ground."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -36065,7 +36065,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -36249,7 +36249,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -37409,7 +37409,7 @@
                     "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} {VERB/p_l/return/returns} to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -37941,7 +37941,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -46459,7 +46459,7 @@
                     "p_l, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/p_l/poss} balance and tumbles to the ground."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -46726,7 +46726,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -46909,7 +46909,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -48077,7 +48077,7 @@
                     "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -48603,7 +48603,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -51554,7 +51554,7 @@
                     "While plucking them from the bush, p_l feels one of the berries split in {PRONOUN/p_l/poss} mouth, and a deceptively good taste coats {PRONOUN/p_l/poss} tongue. These aren't raspberries. {PRONOUN/p_l/subject/CAP} {VERB/p_l/rush/rushes} to force {PRONOUN/p_l/self} to throw up, and it works, expelling the deathberries from {PRONOUN/p_l/poss} system, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} weak and shaky for the rest of the day."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -51695,7 +51695,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -53241,7 +53241,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"

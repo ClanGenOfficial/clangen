@@ -2638,7 +2638,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -3438,7 +3438,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "n_c:0"
@@ -3626,7 +3626,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "n_c:0"
@@ -3821,7 +3821,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "n_c:0"
@@ -3894,7 +3894,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "n_c:0"
@@ -5579,7 +5579,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -5984,7 +5984,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -7140,7 +7140,7 @@
                     "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. {PRONOUN/p_l/subject/CAP} desperately {VERB/p_l/try/tries} to save a kitten, but can't, and a Clanmate finds {PRONOUN/p_l/object} there sobbing hours later."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -7371,7 +7371,7 @@
                     "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. {PRONOUN/p_l/subject/CAP} desperately {VERB/p_l/try/tries} to save a kitten, but can't, and a Clanmate finds {PRONOUN/p_l/object} there sobbing hours later."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -7974,7 +7974,7 @@
                 "reputation_changes": {
                     "outsider": -1
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -8075,7 +8075,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "n_c:0"
@@ -8135,7 +8135,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "n_c:0"
@@ -8205,7 +8205,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "n_c:0"
@@ -8362,7 +8362,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "n_c:0"
@@ -8419,7 +8419,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "n_c:0"
@@ -8486,7 +8486,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "n_c:0"
@@ -8665,7 +8665,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "n_c:0"
@@ -8727,7 +8727,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "n_c:0"
@@ -8789,7 +8789,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "n_c:0"
@@ -8952,7 +8952,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "n_c:0"
@@ -9023,7 +9023,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "n_c:0"
@@ -9061,7 +9061,7 @@
                 "reputation_changes": {
                     "outsider": -1
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -9093,7 +9093,7 @@
                 "reputation_changes": {
                     "outsider": -1
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -9394,7 +9394,7 @@
                 "reputation_changes": {
                     "outsider": -1
                 },
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -9704,7 +9704,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -9741,7 +9741,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -9961,7 +9961,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "n_c:0"
@@ -10034,7 +10034,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "n_c:0"
@@ -10200,7 +10200,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -10276,7 +10276,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -10849,7 +10849,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -11226,7 +11226,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"

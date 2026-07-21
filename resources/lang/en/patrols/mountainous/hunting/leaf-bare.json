@@ -260,7 +260,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -526,7 +526,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -791,7 +791,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -926,7 +926,7 @@
                     "The prey must be hiding; p_l catches nothing. As a snowstorm descends and visibility drops, {PRONOUN/p_l/subject} {VERB/p_l/hide/hides} in a mountain cave, shivering and tightly tucked up against the cold. When {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp, p_l is cold and chilled, {PRONOUN/p_l/poss} paws and tail prickling with the danger of frostbite."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1156,7 +1156,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1882,7 +1882,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -2095,7 +2095,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -2444,7 +2444,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -2502,7 +2502,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -2807,7 +2807,7 @@
                     "p_l waggles {PRONOUN/p_l/poss} haunches and launches {PRONOUN/p_l/self} at the common buzzard. {PRONOUN/p_l/subject/CAP} barely {VERB/p_l/have/has} time to get away as the buzzard spreads {PRONOUN/p_l/poss} wings and snaps at {PRONOUN/p_l/object}, leaving {PRONOUN/p_l/object} with a nasty peck! Ouch!"
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -2873,7 +2873,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -3300,7 +3300,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"

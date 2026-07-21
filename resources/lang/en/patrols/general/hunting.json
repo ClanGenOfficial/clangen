@@ -1346,7 +1346,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 30,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1411,7 +1411,7 @@
                     }
                 },
                 "exp_gained": 30,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -1592,7 +1592,7 @@
                     "While out in the hunting grounds, p_l's nose begins to run. {PRONOUN/p_l/subject/CAP} try to ignore it at first, but soon it ruins {PRONOUN/p_l/poss} ability to track scent, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} forced back to camp early."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -1706,7 +1706,7 @@
                     "While out in the hunting grounds, p_l's nose begins to run. {PRONOUN/p_l/subject/CAP} try to ignore it at first, but soon it ruins {PRONOUN/p_l/poss} ability to track scent, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} forced back to camp early."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -1873,7 +1873,7 @@
                     "While out in the hunting grounds, p_l's nose begins to run. {PRONOUN/p_l/subject/CAP} try to ignore it at first, but soon it ruins {PRONOUN/p_l/poss} ability to track scent, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} forced back to camp early."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -1988,7 +1988,7 @@
                     "While out in the hunting grounds, p_l's nose begins to run. {PRONOUN/p_l/subject/CAP} try to ignore it at first, but soon it ruins {PRONOUN/p_l/poss} ability to track scent, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} forced back to camp early."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -2103,7 +2103,7 @@
                     "While out in the hunting grounds, p_l's nose begins to run. {PRONOUN/p_l/subject/CAP} try to ignore it at first, but soon it ruins {PRONOUN/p_l/poss} ability to track scent, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} forced back to camp early."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -2248,7 +2248,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -2395,7 +2395,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -2542,7 +2542,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -2692,7 +2692,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -2839,7 +2839,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -3011,7 +3011,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -3230,7 +3230,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -3469,7 +3469,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -3726,7 +3726,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -3983,7 +3983,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "p_l"
@@ -4932,7 +4932,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -5158,7 +5158,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -5383,7 +5383,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -5583,7 +5583,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -5783,7 +5783,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -6060,7 +6060,7 @@
                     "The patrol confronts the strange cat \u00e2\u20ac\u201d they are obviously an intruder on c_n territory, and they don't look like the friendly type. The strange cat shrieks, an awful, blood-curdling scream that makes r_c's fur stand on end. Overcome by terror, the patrol flees back to camp."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -6377,7 +6377,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -8291,7 +8291,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0",
@@ -8447,7 +8447,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -8764,7 +8764,7 @@
                     "While on the hunt, p_l tumbles right down a steep slope while {PRONOUN/p_l/poss} attention is elsewhere. Bruised and sore, p_l has to report to the medicine cat den when {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -9541,7 +9541,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -9805,7 +9805,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -9980,7 +9980,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -10111,7 +10111,7 @@
                         "adjust": "increase_medium"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "multi"
@@ -10412,7 +10412,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "multi"
@@ -10646,7 +10646,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"
@@ -10705,7 +10705,7 @@
                         "adjust": "increase_tiny"
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "patrol_cats"

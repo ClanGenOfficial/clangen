@@ -238,7 +238,7 @@
                     }
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -480,7 +480,7 @@
                     "While p_l is carefully sniffing at the burrow entrance, there's a clatter of rocks behind {PRONOUN/p_l/object}. It's difficult to say who's more surprised \u00e2\u20ac\u201d p_l or the badger. It charges for the sett and p_l leaps out of the way, but its claws catch {PRONOUN/p_l/poss} pelt, and it's a bloodied cat that limps back into camp to report the whole sorry adventure."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -749,7 +749,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1076,7 +1076,7 @@
                     ]
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1110,7 +1110,7 @@
                     "p_l eventually manages to rescue r_c, but {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} to be helped back to camp, battered and injured."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1397,7 +1397,7 @@
                     "p_l eventually manages to rescue r_c, but {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} to be helped back to camp, battered and injured."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1488,7 +1488,7 @@
                     "p_l eventually manages to pull {PRONOUN/p_l/self} free, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} battered and injured. It's all {PRONOUN/p_l/subject} can do to find a small cave to shelter in through the night on the cold mountain until a patrol finds {PRONOUN/p_l/object} the next morning and helps {PRONOUN/p_l/object} to the medicine cat den."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -1598,7 +1598,7 @@
                     "The apprentice wanders along obliviously and slips, tumbling right down through a gap in the path. Bruised and sore, p_l has to report to the medicine cat den when {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp."
                 ],
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -2295,7 +2295,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
@@ -3572,7 +3572,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "s_c0"
@@ -3836,7 +3836,7 @@
                     "r_c0": {}
                 },
                 "exp_gained": 0,
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c0"
@@ -4246,7 +4246,7 @@
                         }
                     }
                 ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "r_c1"
