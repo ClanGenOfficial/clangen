@@ -304,8 +304,10 @@ def reformat_outcome(
                 prior_abbreviations.append("-r_c")
 
             involved_cats["s_c"] = InvolvedCatDict(
-                prior_abbreviation=prior_abbreviations, stat=stat
+                stat=stat
             )
+            if prior_abbreviations:
+                involved_cats["s_c"]["prior_abbreviations"] = prior_abbreviations
 
     new_cats_joining = []
     new_cat_death_dict = None
