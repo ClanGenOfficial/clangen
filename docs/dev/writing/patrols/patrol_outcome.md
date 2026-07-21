@@ -203,7 +203,7 @@ It's possible to "reuse" a cat under a new designation, but with tighter constra
 
 For example:
 ```json
-"s_c":{
+"s_c0":{
     "prior_abbreviation": ["p_l", "r_c1"],
     "status": ["warrior"]
 }
@@ -213,6 +213,9 @@ In this example, `s_c` can be either `p_l` or `r_c1`, but only if those cats are
 You can utilize any prior declared cat designation *or* to allow any cat in the patrol to be s_c, you can use `any`.
 
 These can also be exclusionary tags such as: `-p_l` to allow any cat *except* `p_l` to take this role.
+
+!!! tip
+    `s_c` used to be used only for trait and skill constrained cats. Now it's for *any* sort of constraint. This could be a health constraint, group constraint, literally any constraint.
 
 ***
 

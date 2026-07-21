@@ -3,9 +3,6 @@
 ## Guidelines
 When considering patrols, keep in mind challenge vs reward. That isn't to say certain patrol events should necessarily be locked behind certain patrol sizes, but try to imagine what a group of cats that size would do in a given situation, and how likely it would be for them to succeed in whatever it is they're trying to do. If making large size and small sized variants of the same patrol, it's encouraged to give different outcomes even if the success chance is the same for both variants. For example, 6 cats have very different options for dealing with an owl than 2 cats do.
 
-!!! todo "TODO"
-    add some guidelines here for success chance, just an idea of number baselines compared to the current patrol spread
-
 
 ## Usable Cat References
 
@@ -279,6 +276,7 @@ Each entry is an individual cat, with the key being their [event designation](#u
 ```
 
 **Specifying an outsider or other clan cat**
+
 If you would like to include an outsider or other clan cat, you can specify them using the `n_c:#` designation and some additional parameters.
 
 If the outsider/other_clan cat can be newly generated rather than having to utilize an existing cat, you can add the `can_create_new_cat` parameter.
@@ -293,8 +291,11 @@ If the outsider/other_clan cat can be newly generated rather than having to util
 This can even be added as an empty dict: `can_create_new_cat: {}` to simply mark it as a new cat creation without any additional specifications.
 
 > **`become_litter`** - True will generate a 2-5 litter of kittens rather than a single cat. This means the abbreviation for this litter should not be used within the text of the event, since they have no singular name or pronoun.
+> 
 > **`assign_blood_parent`** - List of designations for cats who will become this cat's blood parents. These cats must have already been specified prior in `involved_cats`.
+> 
 > **`assign_adoptive_parent`** - List of designations for cats who will become this cat's adoptive parents. These cats must have already been specified prior in `involved_cats`.
+> 
 > **`assign_mate`** - List of designations for cats who will become this cat's mates. These cats must have already been specified prior in `involved_cats`.
 
 **status: list[str]**
@@ -712,8 +713,9 @@ Check the `required_cat_types` for extraneous or confusing information. For exam
         "apprentice": [-1, -1]
     }
 ```
-- The `warrior` entry should be `[2, 2]` as `patrol_cats` has established that there can never be more than 2 cats on this patrol.
-- The `apprentice` entry could be removed. It's trying to ensure that no apprentices are allowed, but we've already specified that 2 warriors are necessary on the patrol and only 2 cats can be on the patrol. Thus we know those 2 cats must already be warriors.
+
+* The `warrior` entry should be `[2, 2]` as `patrol_cats` has established that there can never be more than 2 cats on this patrol.
+* The `apprentice` entry could be removed. It's trying to ensure that no apprentices are allowed, but we've already specified that 2 warriors are necessary on the patrol and only 2 cats can be on the patrol. Thus we know those 2 cats must already be warriors.
 
 A "cleaned" version of that example would be:
 ```json
@@ -770,7 +772,7 @@ However, let's say that we actually *do* have a specific cat we would like to be
 
 With all of this in mind, let's look at common mishaps that may be present in patrols.
 
-**Utilizing s_c needlessly**
+* Utilizing s_c needlessly
 ```json
     "involved_cats": {
         "s_c0": {
@@ -782,7 +784,6 @@ With all of this in mind, let's look at common mishaps that may be present in pa
     }
 ```
 In this example, the only `prior_abbreviation` allowed is `p_l`!  In this case, we shouldn't be using `s_c` at all and should just apply this constraint to `p_l` like:
-
 ```json
     "involved_cats": {
         "p_l": {
@@ -793,7 +794,7 @@ In this example, the only `prior_abbreviation` allowed is `p_l`!  In this case, 
     }
 ```
 
-**No `prior_abbreviation`
+* No `prior_abbreviation`
 ```json
     "involved_cats": {
         "s_c0": {
@@ -803,11 +804,10 @@ In this example, the only `prior_abbreviation` allowed is `p_l`!  In this case, 
         }   
     }
 ```
-If no `prior_abbreviation` is given, then `s_c` is treated like any other cat designation. That is, it will find a cat who has not been given a designation yet. Since this is the *normal* behavior for cat designations, there's no need for this to be an `s_c` abbreviation. 
-
+If no `prior_abbreviation` is given, then `s_c` is treated like any other cat designation. That is, it will find a cat who has not been given a designation yet. Since this is the *normal* behavior for cat designations, there's no need for this to be an `s_c` abbreviation.
 The patrol should be assessed to check if:
 
-> A prior abbreviation should be added, such as `"any"`
+    * A prior abbreviation should be added, such as `"any"`
 ```json
     "involved_cats": {
         "s_c0": {
@@ -819,8 +819,7 @@ The patrol should be assessed to check if:
     }
 ```
 
-> Or `s_c0` replaced with a normal designation
-
+    * Or `s_c0` replaced with a normal designation
 ```json
     "involved_cats": {
         "r_c0": {
@@ -835,7 +834,7 @@ The patrol should be assessed to check if:
 
 Check if this patrol is a near-duplicate to other patrols. If it is, consider if you could utilize outcome-level `location`, `season`, `tags`, or other constraints to combine the patrols.
 
-### `can_romance` Constraints
+### Romance Constraints
 
 Patrols used to be determined as "romance" purely based off the `romance` tag. Now they can also dictate *who* on the patrol is engaging in romance via the `relationship_constraint` constraint: `can_romance`.
 
