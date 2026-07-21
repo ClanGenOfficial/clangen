@@ -694,3 +694,153 @@ Constrains the event to only occur is the specified relationships exist. Multipl
 
 #### antag_fail_outcomes: list[TextPoolEvent]
 > The possible antagonize fail outcomes. Utilize the [patrol outcome format](patrol_outcome.md).Antagonize outcomes can be added for patrols involving outsiders, other clan cats, or afterlife visitors.
+
+***
+
+## What To Consider When Assessing Older Patrols
+
+When assessing an older patrol for ways to make its information clearer or more condensed, there's a few common problems you can look for.
+
+### Required Cats
+
+Check the `required_cat_types` for extraneous or confusing information. For example:
+
+```json
+    "required_cat_types":{
+        "patrol_cats": [2, 2],
+        "warrior": [2, 6],
+        "apprentice": [-1, -1]
+    }
+```
+- The `warrior` entry should be `[2, 2]` as `patrol_cats` has established that there can never be more than 2 cats on this patrol.
+- The `apprentice` entry could be removed. It's trying to ensure that no apprentices are allowed, but we've already specified that 2 warriors are necessary on the patrol and only 2 cats can be on the patrol. Thus we know those 2 cats must already be warriors.
+
+A "cleaned" version of that example would be:
+```json
+    "required_cat_types":{
+        "patrol_cats": [2, 2],
+        "warrior": [2, 2]
+    }
+```
+
+### Use of s_c
+
+#### Explanation of Use
+
+`s_c`'s current use is to allow already-designated cats as well as un-designated cats to take on a new `s_c` designation. 
+
+For example, let's say our patrol intro is `"p_l leads the patrol towards a gully where they encounter a fox."`.  We decide we want an outcome to allow *any* cat in the patrol with the `FIGHTER` skill to defeat the fox. We *could* add a new `involved_cat` role for a `r_c`, but the cat who is `p_l` won't be able to take this role as they are already `p_l`.  If we did this, it would look like:
+
+```json
+    "involved_cats": {
+        "r_c0": {
+            "stat": {
+                "skill": ["FIGHTER,1"]
+            }      
+        }   
+    }
+```
+
+If we want `p_l` to have a chance to take that role, then we can make our `FIGHTER` involved cat `s_c0` and specify their `prior_abbreviation` as `["any"]`. Now any cat, including `p_l` can be `s_c0`.  This would change our `involved_cats` to look like this:
+
+```json
+    "involved_cats": {
+        "s_c0": {
+            "prior_abbreviation": ["any"],
+            "stat": {
+                "skill": ["FIGHTER,1"]
+            }      
+        }   
+    }
+```
+
+However, let's say that we actually *do* have a specific cat we would like to be the fighter!  Perhaps we *only* want `p_l` to be the `FIGHTER` cat.  In this case, we don't even need to use `s_c` or `prior_abbreviation`.  Instead, we could just specify it as a further constraint on `p_l` like so:
+
+```json
+    "involved_cats": {
+        "p_l": {
+            "stat": {
+                "skill": ["FIGHTER,1"]
+            }      
+        }   
+    }
+```
+
+#### Applying This Knowledge
+
+With all of this in mind, let's look at common mishaps that may be present in patrols.
+
+**Utilizing s_c needlessly**
+```json
+    "involved_cats": {
+        "s_c0": {
+            "prior_abbreviation": ["p_l"],
+            "stat": {
+                "skill": ["FIGHTER,1"]
+            }      
+        }   
+    }
+```
+In this example, the only `prior_abbreviation` allowed is `p_l`!  In this case, we shouldn't be using `s_c` at all and should just apply this constraint to `p_l` like:
+
+```json
+    "involved_cats": {
+        "p_l": {
+            "stat": {
+                "skill": ["FIGHTER,1"]
+            }      
+        }   
+    }
+```
+
+**No `prior_abbreviation`
+```json
+    "involved_cats": {
+        "s_c0": {
+            "stat": {
+                "skill": ["FIGHTER,1"]
+            }      
+        }   
+    }
+```
+If no `prior_abbreviation` is given, then `s_c` is treated like any other cat designation. That is, it will find a cat who has not been given a designation yet. Since this is the *normal* behavior for cat designations, there's no need for this to be an `s_c` abbreviation. 
+
+The patrol should be assessed to check if:
+
+> A prior abbreviation should be added, such as `"any"`
+```json
+    "involved_cats": {
+        "s_c0": {
+            "prior_abbreviation": ["any"]
+            "stat": {
+                "skill": ["FIGHTER,1"]
+            }      
+        }   
+    }
+```
+
+> Or `s_c0` replaced with a normal designation
+
+```json
+    "involved_cats": {
+        "r_c0": {
+            "stat": {
+                "skill": ["FIGHTER,1"]
+            }      
+        }   
+    }
+```
+
+### Near-Duplicate Patrols
+
+Check if this patrol is a near-duplicate to other patrols. If it is, consider if you could utilize outcome-level `location`, `season`, `tags`, or other constraints to combine the patrols.
+
+### `can_romance` Constraints
+
+Patrols used to be determined as "romance" purely based off the `romance` tag. Now they can also dictate *who* on the patrol is engaging in romance via the `relationship_constraint` constraint: `can_romance`.
+
+Previously, the `romance` tag assumed that all cats on the patrol were intended as romantic interests with each other. Thus, the automatic script conversion created the new `can_romance` `relationship_constraint` dicts as being from `patrol_cats` *to* `patrol_cats`.
+
+This isn't necessarily accurate to the intention of all these patrols, and thus the `cats_from` and `cats_to` of these `relationship_constraint` dicts should be assessed. Don't worry! Patrols that have been mistagged in this fashion won't appear in the game, they'll be filtered out as impossible. So we won't have patrols trying to pair two cats together inappropriately, we'll just have patrols that don't appear at all.
+
+You can also check if the `romance` tag and `relationship_constraint` could be moved into an outcome rather than being patrol-wide. 
