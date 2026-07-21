@@ -1768,11 +1768,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Stealthily, r_c0 stalks forward. The squirrel has no idea what's coming as the cat pounces on it and breaks its neck. r_c0 sends a silent thanks to StarClan for this prey."
+                    "Stealthily, p_l stalks forward. The squirrel has no idea what's coming as the cat pounces on it and breaks its neck. p_l sends a silent thanks to StarClan for this prey."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -1784,11 +1781,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 rapidly pads towards the squirrel, {PRONOUN/r_c0/poss} tailtip twitching in excitement. The squirrel is alerted to their presence with a bird's alarm call, but r_c0 launches {PRONOUN/r_c0/self} forward and cuts off its escape with a bite to the back of the head."
+                    "p_l rapidly pads towards the squirrel, {PRONOUN/p_l/poss} tailtip twitching in excitement. The squirrel is alerted to their presence with a bird's alarm call, but p_l launches {PRONOUN/p_l/self} forward and cuts off its escape with a bite to the back of the head."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -2473,11 +2467,8 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "The patrol launches into battle, but r_c0 is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping {PRONOUN/r_c0/object} back to the medicine cat den."
+                    "The patrol launches into battle, but p_l is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping {PRONOUN/p_l/object} back to the medicine cat den."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -2506,7 +2497,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "condition": [
                             "big_bite_injury"

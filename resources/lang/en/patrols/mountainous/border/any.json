@@ -1729,16 +1729,13 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c0 would give {PRONOUN/r_c0/poss} life to protect c_n, and as {PRONOUN/r_c0/subject} {VERB/r_c0/lead/leads} the huge wolf away from the Clan, in {PRONOUN/r_c0/poss} heart, {PRONOUN/r_c0/subject} {VERB/r_c0/accept/accepts} that's what {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} doing. As darkness closes in around {PRONOUN/r_c0/object} and the wolf's jaws descend again, r_c0 tries to sink {PRONOUN/r_c0/poss} claws into its face, and hopes desperately that {PRONOUN/r_c0/subject} led it far enough."
+                    "p_l would give {PRONOUN/p_l/poss} life to protect c_n, and as {PRONOUN/p_l/subject} {VERB/p_l/lead/leads} the huge wolf away from the Clan, in {PRONOUN/p_l/poss} heart, {PRONOUN/p_l/subject} {VERB/p_l/accept/accepts} that's what {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} doing. As darkness closes in around {PRONOUN/p_l/object} and the wolf's jaws descend again, p_l tries to sink {PRONOUN/p_l/poss} claws into its face, and hopes desperately that {PRONOUN/p_l/subject} led it far enough."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "clan"
@@ -1757,7 +1754,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "history": "m_c died to keep c_n safe from a wolf."
                     }
@@ -1766,16 +1763,13 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c0 would give their life to protect c_n, and as {PRONOUN/r_c0/subject} {VERB/r_c0/charge/charges} past the huge wolf to lead it far, far from c_n, {PRONOUN/r_c0/subject} {VERB/r_c0/accept/accepts} it. Fear gives {PRONOUN/r_c0/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c0/subject} {VERB/r_c0/fly/flies} out of the dog's jaws while it shakes {PRONOUN/r_c0/object}, landing in a refuge. r_c0 is injured, desperate, and terrified — but {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} alive."
+                    "p_l would give their life to protect c_n, and as {PRONOUN/p_l/subject} {VERB/p_l/charge/charges} past the huge wolf to lead it far, far from c_n, {PRONOUN/p_l/subject} {VERB/p_l/accept/accepts} it. Fear gives {PRONOUN/p_l/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/p_l/subject} {VERB/p_l/fly/flies} out of the dog's jaws while it shakes {PRONOUN/p_l/object}, landing in a refuge. p_l is injured, desperate, and terrified — but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alive."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "clan"
@@ -1794,7 +1788,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -1916,16 +1910,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 turns to flee and it's only by the grace of StarClan that {PRONOUN/r_c0/poss} eyes are drawn to a small cave, a rocky refuge as the wolves bark their fury outside. Not all of r_c0 makes it inside."
+                    "p_l turns to flee and it's only by the grace of StarClan that {PRONOUN/p_l/poss} eyes are drawn to a small cave, a rocky refuge as the wolves bark their fury outside. Not all of p_l makes it inside."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 40,
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "condition": [
                             "mangled tail"
