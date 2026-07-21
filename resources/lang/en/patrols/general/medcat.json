@@ -15892,11 +15892,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5",
-                            "r_c6"
+                            "apprentice"
                         ],
                         "mutual": false,
                         "values": [
@@ -15928,11 +15924,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5",
-                            "r_c6"
+                            "apprentice"
                         ],
                         "mutual": true,
                         "values": [
@@ -15964,11 +15956,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5",
-                            "r_c6"
+                            "apprentice"
                         ],
                         "cats_from": [
                             "r_c1"

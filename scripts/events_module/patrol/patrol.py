@@ -62,8 +62,6 @@ class Patrol:
 
         self.patrol_cats: list[Cat] = []
         """Holds all the cats that are on the patrol"""
-        self.patrol_statuses: dict[str, list[Cat]] = {}
-        """Keys are cat statuses present on the patrol, values are lists of the cats that hold the status"""
         self.involved_cats: dict[str, Union[list[Cat], Cat]] = {}
         """Cats directly involved and referenced in the event. Keys are their text abbreviation, values are the associated cat objects"""
         self.outcome_cats: TypedDict(
@@ -140,56 +138,56 @@ class Patrol:
         # ADD TO PATROL_CATS
 
         self.patrol_cats = patrol_cats
-        self.patrol_statuses["patrol_cats"] = patrol_cats
+        self.involved_cats["patrol_cats"] = patrol_cats
         for cat in patrol_cats:
             # ADD TO STATUS LIST
-            if cat.status.rank in self.patrol_statuses:
-                self.patrol_statuses[cat.status.rank].append(cat)
+            if cat.status.rank in self.involved_cats:
+                self.involved_cats[cat.status.rank].append(cat)
             else:
-                self.patrol_statuses[cat.status.rank] = [cat]
+                self.involved_cats[cat.status.rank] = [cat]
 
             # Combined patrol_statuses categories
             if cat.status.rank.is_any_medicine_rank():
-                if "healer cats" in self.patrol_statuses:
-                    self.patrol_statuses["healer cats"].append(cat)
+                if "healer cats" in self.involved_cats:
+                    self.involved_cats["healer cats"].append(cat)
                 else:
-                    self.patrol_statuses["healer cats"] = [cat]
+                    self.involved_cats["healer cats"] = [cat]
 
             if cat.status.rank.is_any_apprentice_rank():
-                if "all apprentices" in self.patrol_statuses:
-                    self.patrol_statuses["all apprentices"].append(cat)
+                if "all apprentices" in self.involved_cats:
+                    self.involved_cats["all apprentices"].append(cat)
                 else:
-                    self.patrol_statuses["all apprentices"] = [cat]
+                    self.involved_cats["all apprentices"] = [cat]
 
             if (
                 cat.status.rank.is_any_adult_warrior_like_rank()
                 and cat.age != CatAge.ADOLESCENT
             ):
-                if "normal adult" in self.patrol_statuses:
-                    self.patrol_statuses["normal adult"].append(cat)
+                if "normal adult" in self.involved_cats:
+                    self.involved_cats["normal adult"].append(cat)
                 else:
-                    self.patrol_statuses["normal adult"] = [cat]
+                    self.involved_cats["normal adult"] = [cat]
 
             game.patrolled.append(cat.ID)
 
         # DETERMINE PATROL LEADER
         # THIS CANNOT CHANGE AFTER SET-UP
         # sets medcat as patrol leader if they're in the patrol
-        if CatRank.MEDICINE_CAT in self.patrol_statuses.keys():
-            possible_leads = self.patrol_statuses[CatRank.MEDICINE_CAT]
+        if CatRank.MEDICINE_CAT in self.involved_cats.keys():
+            possible_leads = self.involved_cats[CatRank.MEDICINE_CAT]
 
         # If there is no medicine cat, but there is a medicine cat apprentice, set them as the patrol leader.
         # This prevents warriors from being treated as medicine cats in medicine cat patrols.
-        elif CatRank.MEDICINE_APPRENTICE in self.patrol_statuses.keys():
-            possible_leads = self.patrol_statuses[CatRank.MEDICINE_APPRENTICE]
+        elif CatRank.MEDICINE_APPRENTICE in self.involved_cats.keys():
+            possible_leads = self.involved_cats[CatRank.MEDICINE_APPRENTICE]
 
         # if no meddies set leader as patrol leader
-        elif CatRank.LEADER in self.patrol_statuses.keys():
-            possible_leads = self.patrol_statuses[CatRank.LEADER]
+        elif CatRank.LEADER in self.involved_cats.keys():
+            possible_leads = self.involved_cats[CatRank.LEADER]
 
         # if no leader set the deputy as patrol leader
-        elif CatRank.DEPUTY in self.patrol_statuses.keys():
-            possible_leads = self.patrol_statuses[CatRank.DEPUTY]
+        elif CatRank.DEPUTY in self.involved_cats.keys():
+            possible_leads = self.involved_cats[CatRank.DEPUTY]
 
         # if no deputy, set oldest or most experienced as patrol leader
         else:
@@ -218,7 +216,7 @@ class Patrol:
         patrol_type = (
             "herb_gathering"
             if {CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE}.intersection(
-                set(self.patrol_statuses.keys())
+                set(self.involved_cats.keys())
             )
             else patrol_type
         )
@@ -448,7 +446,7 @@ class Patrol:
 
         # CHECK CAT TYPES
         if not event_for_required_cat_types(
-            patrol.required_cat_types, self.patrol_statuses
+            patrol.required_cat_types, self.involved_cats
         ):
             if is_debug_patrol:
                 print("DEBUG: requested patrol does not meet cat type requirements.")
@@ -650,7 +648,7 @@ class Patrol:
 
         if outcome.required_cat_types:
             if not event_for_required_cat_types(
-                outcome.required_cat_types, self.patrol_statuses
+                outcome.required_cat_types, self.involved_cats
             ):
                 return False
 

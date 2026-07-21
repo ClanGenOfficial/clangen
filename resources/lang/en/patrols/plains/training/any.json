@@ -3187,11 +3187,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "cats_from": [
                             "p_l"
@@ -3281,11 +3277,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "cats_from": [
                             "s_c"
@@ -3305,11 +3297,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "mutual": false,
                         "values": [
@@ -3344,11 +3332,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "cats_from": [
                             "s_c"
@@ -3368,11 +3352,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "mutual": false,
                         "values": [
@@ -4458,11 +4438,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "mutual": false,
                         "values": [
@@ -4476,11 +4452,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "cats_from": [
                             "p_l"
@@ -4516,11 +4488,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "mutual": false,
                         "values": [
@@ -4534,11 +4502,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "cats_from": [
                             "p_l"
@@ -4580,11 +4544,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "mutual": false,
                         "values": [
@@ -4598,11 +4558,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "cats_from": [
                             "p_l"
@@ -4678,11 +4634,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "mutual": false,
                         "values": [
@@ -4696,11 +4648,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "cats_from": [
                             "p_l"
@@ -4763,11 +4711,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "mutual": false,
                         "values": [
@@ -4781,11 +4725,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "cats_from": [
                             "p_l"
@@ -4841,11 +4781,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "mutual": false,
                         "values": [
@@ -4859,11 +4795,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "cats_from": [
                             "p_l"
@@ -4902,11 +4834,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "mutual": false,
                         "values": [
@@ -4920,11 +4848,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "cats_from": [
                             "p_l"
@@ -4962,11 +4886,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "mutual": false,
                         "values": [
@@ -4980,11 +4900,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "cats_from": [
                             "p_l"
@@ -5015,11 +4931,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "mutual": false,
                         "values": [
@@ -5191,11 +5103,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "mutual": false,
                         "values": [
@@ -5525,11 +5433,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "mutual": false,
                         "values": [
@@ -5574,11 +5478,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "mutual": false,
                         "values": [
@@ -5613,11 +5513,7 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "mutual": false,
                         "values": [
@@ -5647,11 +5543,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "cats_to": [
                             "p_l"
@@ -5788,11 +5680,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "mutual": true,
                         "values": [

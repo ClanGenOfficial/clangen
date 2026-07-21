@@ -2702,11 +2702,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c1",
-                            "r_c2",
-                            "r_c3",
-                            "r_c4",
-                            "r_c5"
+                            "apprentice"
                         ],
                         "mutual": false,
                         "values": [

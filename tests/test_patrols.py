@@ -46,7 +46,7 @@ class TestPatrolCats(unittest.TestCase):
         ]
         self.patrol_class._add_patrol_cats(patrol_cats)
 
-        self.assertEqual(patrol_cats, self.patrol_class.patrol_statuses["patrol_cats"])
+        self.assertEqual(patrol_cats, self.patrol_class.involved_cats["patrol_cats"])
 
     def test_rank(self):
         war1 = create_cat(rank=CatRank.WARRIOR)
@@ -55,9 +55,7 @@ class TestPatrolCats(unittest.TestCase):
         patrol_cats = [war1, war2, app]
         self.patrol_class._add_patrol_cats(patrol_cats)
 
-        self.assertCountEqual(
-            [war2, war1], self.patrol_class.patrol_statuses["warrior"]
-        )
+        self.assertCountEqual([war2, war1], self.patrol_class.involved_cats["warrior"])
 
     def test_normal_adult(self):
         war1 = create_cat(rank=CatRank.WARRIOR)
@@ -67,7 +65,7 @@ class TestPatrolCats(unittest.TestCase):
         self.patrol_class._add_patrol_cats(patrol_cats)
 
         self.assertCountEqual(
-            [war2, war1], self.patrol_class.patrol_statuses["normal adult"]
+            [war2, war1], self.patrol_class.involved_cats["normal adult"]
         )
 
     def test_all_apprentices(self):
@@ -77,9 +75,7 @@ class TestPatrolCats(unittest.TestCase):
         patrol_cats = [war1, war2, app]
         self.patrol_class._add_patrol_cats(patrol_cats)
 
-        self.assertCountEqual(
-            [app], self.patrol_class.patrol_statuses["all apprentices"]
-        )
+        self.assertCountEqual([app], self.patrol_class.involved_cats["all apprentices"])
 
     def test_healer_cats(self):
         war1 = create_cat(rank=CatRank.WARRIOR)
@@ -89,7 +85,7 @@ class TestPatrolCats(unittest.TestCase):
         self.patrol_class._add_patrol_cats(patrol_cats)
 
         self.assertCountEqual(
-            [med, med_app], self.patrol_class.patrol_statuses["healer cats"]
+            [med, med_app], self.patrol_class.involved_cats["healer cats"]
         )
 
 
