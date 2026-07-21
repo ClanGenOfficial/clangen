@@ -407,12 +407,25 @@ Constrains the event to only occur is the specified relationships exist. Multipl
             }
         ]
 ```
+
 **cats_from:list**
->The cats from whom the relationship originates. Use the designations (`p_l`, `r_c0`, etc.) of cats listed in `involved_cats`.
+>The cats from whom the relationship originates. Use the designations (`p_l`, `r_c`, etc.) of cats listed in `involved_cats`.
 
 **cats_to:list**
->The cats who are the target of the relationship. Use the designations (`p_l`, `r_c0`, etc.) of cats listed in `involved_cats`.
+>The cats who are the target of the relationship. Use the designations (`p_l`, `r_c`, etc.) of cats listed in `involved_cats`.
 
+!!! caution "For example"
+    If we want to ensure that `p_l` trusts `r_c`, we would put `p_l` in the `cats_from` list and `r_c` in the `cats_to` list. The feeling of trust is going *from* `p_l` *to* `r_c`.
+
+**mutual:bool**
+>Defaults to `false`. Set this to `true` if the constraints should be mutual between the `cats_from` and `cats_to` groups.
+
+!!! caution "For example"
+    To work off of our earlier example: if we want `r_c` to *also* trust `p_l`, then we would set `mutual` to `true`.
+
+!!! tip
+    Specify `"can_romance"` as a constraint to allow the cats to have romantic interactions 
+  
 ***
 
 #### chance of success: int

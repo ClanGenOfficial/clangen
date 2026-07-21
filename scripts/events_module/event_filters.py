@@ -1035,7 +1035,7 @@ def cat_for_event(
             return None
 
     # rel status check
-    if "romance" in tags:
+    if "romance" in tags and comparison_cat:
         allowed_cats = list(
             set(allowed_cats).intersection(set(get_possible_mates(comparison_cat)[0]))
         )
