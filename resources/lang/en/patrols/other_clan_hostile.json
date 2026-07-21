@@ -539,11 +539,6 @@
                             "cats_to": "cat_from cursed cat_to for not letting {PRONOUN/cat_from/object} into c_n."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -579,11 +574,6 @@
                         "log": {
                             "cats_from": "cat_to chased cat_from from the territory after {PRONOUN/n_c:0/subject} asked to join c_n."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -761,12 +751,7 @@
                         ]
                     }
                 },
-                "exp_gained": 0,
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                "exp_gained": 0
             },
             {
                 "frequency": 3,
@@ -830,11 +815,6 @@
                             "battle_injury"
                         ]
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -876,11 +856,6 @@
                             "cats_from": "Disgusted by the crimes cat_from was exiled for, cat_to helped attack {PRONOUN/n_c:0/object} after {PRONOUN/n_c:0/subject} trespassed on c_n territory.",
                             "cats_to": "Disgusted by the crimes cat_from was exiled for, cat_to helped attack {PRONOUN/n_c:0/object} after {PRONOUN/n_c:0/subject} trespassed on c_n territory."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -929,11 +904,6 @@
                             "n_c:0"
                         ],
                         "history": ""
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -1004,11 +974,6 @@
                         "log": {
                             "cats_from": "cat_from watched n_c:0 humiliatingly defeat cat_to on patrol."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -1087,11 +1052,6 @@
                         "condition": [
                             "battle_injury"
                         ]
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -1200,11 +1160,6 @@
                         "log": {
                             "cats_from": "cat_from begged cat_to to join c_n, but cat_to refused and left Clan-life altogether."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -1364,11 +1319,6 @@
                             "cats_from": "cat_from begged cat_to to join c_n, but cat_to refused and left Clan-life altogether."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -1454,11 +1404,6 @@
                         "cats": [
                             "p_l"
                         ]
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -1547,11 +1492,6 @@
                         "condition": [
                             "grief stricken"
                         ]
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -1651,11 +1591,6 @@
                         "scar_history": "m_c was scarred by {PRONOUN/m_c/poss} mate's Clanmates.",
                         "death_history": "m_c died from injuries inflicted by {PRONOUN/m_c/poss} mate's Clanmates."
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -1734,11 +1669,6 @@
                             "lasting grief"
                         ],
                         "death_history": "m_c was killed by {PRONOUN/m_c/poss} mate's Clanmates."
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -2113,11 +2043,6 @@
                         "log": {
                             "cats_from": "cat_from heard about cat_to's cross-Clan relationship and couldn't help admiring the romance of it all."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }

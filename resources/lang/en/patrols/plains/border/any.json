@@ -674,11 +674,6 @@
                             "cats_from": "r_c0 drove n_c:0 off c_n's territory."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -746,11 +741,6 @@
                             "cats_from": "r_c0 drove n_c:0 off c_n's territory."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -810,11 +800,6 @@
                         "log": {
                             "cats_from": "r_c0 drove n_c:0 off c_n's territory."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -891,11 +876,6 @@
                             "cats_from": "r_c0 demanded n_c:0 leave c_n's territory."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -929,12 +909,7 @@
                         ]
                     }
                 },
-                "exp_gained": 0,
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                "exp_gained": 0
             },
             {
                 "frequency": 3,
@@ -974,11 +949,6 @@
                             "r_c0"
                         ],
                         "history": "m_c was killed by an invading rogue."
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -1022,11 +992,6 @@
                         "log": {
                             "cats_from": "s_c0 found n_c:0 trepassing and attacked {PRONOUN/n_c:0/object}, but n_c:0 managed to escape."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -1112,11 +1077,6 @@
                         "log": {
                             "cats_from": "p_l drove n_c:0 off c_n's territory."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -1326,11 +1286,6 @@
                             "cats_from": "cat_from and cat_to drove a rogue off the territory together."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -1400,11 +1355,6 @@
                         "log": {
                             "cats_from": "cat_to caught n_c:0 trespassing and drove {PRONOUN/n_c:0/object} off the territory."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -1482,11 +1432,6 @@
                         "log": {
                             "cats_from": "cat_from was impressed by cat_to's plan to ambush a trespassing rogue."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -1572,11 +1517,6 @@
                             "cats_from": "cat_to caught n_c:0 trespassing and saw {PRONOUN/n_c:0/object} off the territory."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -1658,11 +1598,6 @@
                         "log": {
                             "cats_from": "cat_to caught n_c:0 trespassing and saw {PRONOUN/n_c:0/object} off the territory."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -1769,11 +1704,6 @@
                             "cats_from": "cat_to caught n_c:0 trespassing and tried to drive {PRONOUN/n_c:0/object} off the territory, but n_c:0 escaped."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -1832,11 +1762,6 @@
                         "log": {
                             "cats_from": "cat_to's attempt to ambush a rogue on patrol failed in front of cat_from."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -1945,11 +1870,6 @@
                             "cats_from": "cat_to caught n_c:0 trespassing and drove {PRONOUN/n_c:0/object} off the territory."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -2043,11 +1963,6 @@
                             "cats_from": "cat_to caught n_c:0 trespassing and saw {PRONOUN/n_c:0/object} off the territory."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -2126,11 +2041,6 @@
                         "log": {
                             "cats_from": "cat_to caught n_c:0 trespassing and saw {PRONOUN/n_c:0/object} off the territory."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -2270,11 +2180,6 @@
                         "log": {
                             "cats_from": "cat_to caught n_c:0 trespassing and demanded {PRONOUN/n_c:0/subject} leave the territory, but n_c:0 ignored {PRONOUN/cat_to/object}."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }

@@ -158,12 +158,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             }
         ],
         "antag_success_outcomes": [
@@ -213,11 +208,6 @@
                             "cats_from": "cat_from was not impressed by cat_to's hostility and decided not to join {PRONOUN/cat_to/poss} Clan.",
                             "cats_to": "cat_to couldn't imagine cat_from being a good addition to the Clan; and made that very clear when they met."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -1574,12 +1564,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             }
         ],
         "antag_success_outcomes": [
@@ -1629,11 +1614,6 @@
                             "cats_from": "cat_from was not impressed by cat_to's hostility and decided not to join {PRONOUN/cat_to/poss} Clan.",
                             "cats_to": "cat_to couldn't imagine cat_from being a good addition to the Clan; and made that very clear when they met."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -1797,12 +1777,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             }
         ],
         "antag_success_outcomes": [
@@ -1834,12 +1809,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             }
         ]
     },
@@ -2001,12 +1971,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             }
         ],
         "antag_success_outcomes": [
@@ -2038,12 +2003,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             }
         ]
     },
@@ -2152,11 +2112,6 @@
                         "history": "This cat died while wandering.",
                         "no_results": false
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -2177,11 +2132,6 @@
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -2220,11 +2170,6 @@
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -2332,11 +2277,6 @@
                         "history": "This cat died while wandering.",
                         "no_results": false
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -2381,11 +2321,6 @@
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -2710,11 +2645,6 @@
                         "history": "This cat died while wandering.",
                         "no_results": false
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -2747,11 +2677,6 @@
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -2820,11 +2745,6 @@
                             "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner friend, n_c:0, over the border."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -2885,11 +2805,6 @@
                             "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner mate, n_c:0, over the border."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -2949,11 +2864,6 @@
                             "cats_from": "n_c:0 met {PRONOUN/n_c:0/poss} Clancat mate, cat_to, over the border.",
                             "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner mate, n_c:0, over the border."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -3105,11 +3015,6 @@
                             "p_l"
                         ]
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -3164,11 +3069,6 @@
                         "log": {
                             "cats_from": "cat_from and cat_to fell in love over the course of many stolen moments at the border."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -3245,11 +3145,6 @@
                             "cats_from": "cat_to and n_c:0 were mates hiding their relationship from cat_to's Clan."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -3324,11 +3219,6 @@
                         "log": {
                             "cats_from": "cat_to and n_c:0 were mates hiding their relationship from cat_to's Clan."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -3721,12 +3611,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             }
         ],
         "antag_success_outcomes": [
@@ -3776,11 +3661,6 @@
                             "cats_from": "cat_from was not impressed by cat_to's hostility and decided not to join {PRONOUN/cat_to/poss} Clan.",
                             "cats_to": "cat_to couldn't imagine cat_from being a good addition to the Clan; and made that very clear when they met."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -3947,12 +3827,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             }
         ],
         "antag_success_outcomes": [
@@ -4002,11 +3877,6 @@
                             "cats_from": "cat_from was not impressed by cat_to's hostility and decided not to join {PRONOUN/cat_to/poss} Clan.",
                             "cats_to": "cat_to couldn't imagine cat_from being a good addition to the Clan; and made that very clear when they met."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -4148,12 +4018,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             },
             {
                 "frequency": 3,
@@ -4184,11 +4049,6 @@
                         "scar_history": "m_c was scarred when a loner attacked {PRONOUN/m_c/object}.",
                         "death_history": "m_c died of injuries inflicted by a loner."
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -4209,12 +4069,7 @@
                 "exp_gained": 10,
                 "reputation_changes": {
                     "outsider": -2
-                },
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             }
         ],
         "antag_fail_outcomes": [
@@ -4251,11 +4106,6 @@
                         "log": {
                             "cats_from": "cat_to was part of the patrol that watched n_c:0 get chased by a dog instead of helping {PRONOUN/n_c:0/object}."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -6579,11 +6429,6 @@
                         "scar_history": "m_c gained a scar after tussling with a rogue.",
                         "death_history": "m_c died from injuries sustained in a fight with a rogue."
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -7764,11 +7609,6 @@
                             "cats_from": "cat_from tamed the dog that was chasing cat_to."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -7815,11 +7655,6 @@
                         "log": {
                             "cats_to": "cat_to was unsettled by n_c:0 being friends with the dog that was chasing {PRONOUN/cat_to/object}."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -7924,11 +7759,6 @@
                         "scar_history": "m_c was scarred after a dog nipped {PRONOUN/m_c/poss} ear.",
                         "death_history": "m_c died of an injury inflicted by a dog."
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -7999,11 +7829,6 @@
                         "scar_history": "m_c was scarred after a kittypet took them by surprise, though {PRONOUN/p_l/subject} {VERB/p_l/tell/tells} everyone it was a bloodthirsty rogue.",
                         "death_history": "m_c died from injuries given by a particularly vicious kittypet."
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -8039,11 +7864,6 @@
                             "cats_from": "cat_to ignored cat_from's cries and clawed {PRONOUN/cat_from/poss} dog friend's face."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -8077,11 +7897,6 @@
                         "log": {
                             "cats_from": "cat_to ignored cat_from's cries and clawed {PRONOUN/cat_from/poss} dog friend's face."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -8129,11 +7944,6 @@
                         ],
                         "scar_history": "m_c was scarred when a kittypet took {PRONOUN/m_c/object} by surprise, though {PRONOUN/m_c/subject} {VERB/m_c/tell/tells} everyone it was a bloodthirsty rogue.",
                         "death_history": "m_c died from injuries given by a particularly vicious kittypet."
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -10006,12 +9816,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             },
             {
                 "frequency": 4,
@@ -10040,12 +9845,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             },
             {
                 "frequency": 3,
@@ -10075,11 +9875,6 @@
                         ],
                         "scar_history": "m_c gained a scar from a fight with an angry kittypet.",
                         "death_history": "m_c died from injuries inflicted by a kittypet."
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -10335,11 +10130,6 @@
                         "history": "This cat died while wandering.",
                         "no_results": false
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -10368,11 +10158,6 @@
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -10616,11 +10401,6 @@
                         "history": "This cat died while wandering.",
                         "no_results": false
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -10649,11 +10429,6 @@
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -11665,11 +11440,6 @@
                             "cats_from": "cat_to and cat_from trained and talked for hours about how each other's lives are."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -11710,11 +11480,6 @@
                         "log": {
                             "cats_from": "cat_to and cat_from talked for hours about how each other's lives are."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -11769,11 +11534,6 @@
                             "cats_from": "cat_to and cat_from talked for hours and quickly became friends."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -11827,11 +11587,6 @@
                             "cats_from": "cat_to and cat_from talked for hours about kittypet life and quickly became friends."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -11852,12 +11607,7 @@
                         ]
                     }
                 },
-                "exp_gained": 0,
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                "exp_gained": 0
             },
             {
                 "frequency": 4,
@@ -11875,12 +11625,7 @@
                         ]
                     }
                 },
-                "exp_gained": 0,
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                "exp_gained": 0
             },
             {
                 "frequency": 4,
@@ -11911,11 +11656,6 @@
                         ],
                         "scar_history": "m_c was scarred after being attacked by a startled loner.",
                         "death_history": "m_c died from injuries {PRONOUN/p_l/subject} sustained after being attacked by a startled loner."
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -11948,11 +11688,6 @@
                         ],
                         "scar_history": "m_c was scarred after being attacked by a startled kittypet.",
                         "death_history": "m_c died from injuries {PRONOUN/p_l/subject} sustained after being attacked by a startled kittypet."
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -12003,11 +11738,6 @@
                             "p_l"
                         ]
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -12057,11 +11787,6 @@
                             "p_l"
                         ]
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -12085,12 +11810,7 @@
                 "exp_gained": 10,
                 "reputation_changes": {
                     "outsider": -2
-                },
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             },
             {
                 "frequency": 4,
@@ -12111,12 +11831,7 @@
                 "exp_gained": 10,
                 "reputation_changes": {
                     "outsider": -2
-                },
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             },
             {
                 "frequency": 4,
@@ -12184,11 +11899,6 @@
                         "scar_history": "m_c was scarred after fighting with another cat.",
                         "death_history": "m_c died from injuries sustained after fighting with another cat."
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -12244,11 +11954,6 @@
                         "scar_history": "m_c was scarred after foolishly trying to take on a c_n apprentice.",
                         "death_history": "m_c died from injuries sustained after foolishly trying to take on a c_n apprentice."
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -12289,11 +11994,6 @@
                         "log": {
                             "cats_from": "cat_from tried to warn cat_to to not cause any trouble, but cat_to ignored {PRONOUN/cat_from/object}."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -12350,11 +12050,6 @@
                             "cats_from": "cat_from found out that cat_to failed to chase a kittypet out of the territory."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -12408,11 +12103,6 @@
                         ],
                         "scar_history": "m_c was scarred after losing a fight with a loner.",
                         "death_history": "m_c died from injuries sustained after losing a fight with a loner."
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -12499,11 +12189,6 @@
                         ],
                         "scar_history": "m_c was scarred after losing a fight with a kittypet.",
                         "death_history": "m_c died from injuries sustained after losing a fight with a kittypet."
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -12988,11 +12673,6 @@
                         "history": "This cat died while wandering.",
                         "no_results": true
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -13050,11 +12730,6 @@
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": true
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -13209,12 +12884,7 @@
                         ]
                     }
                 },
-                "exp_gained": 0,
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                "exp_gained": 0
             }
         ],
         "antag_success_outcomes": [
@@ -13239,12 +12909,7 @@
                 "exp_gained": 10,
                 "reputation_changes": {
                     "outsider": -2
-                },
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             }
         ],
         "antag_fail_outcomes": [
@@ -13302,11 +12967,6 @@
                         "log": {
                             "cats_from": "cat_from found out that cat_to failed to chase a kittypet out of the territory."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
                     }
                 ]
             }

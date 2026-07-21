@@ -22,11 +22,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 drops into a crouch and stalks towards the shrew. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/pounce/pounces} on it, swiftly killing it with a bite to the back of the head."
+                    "p_l drops into a crouch and stalks towards the shrew. {PRONOUN/p_l/subject/CAP} {VERB/p_l/pounce/pounces} on it, swiftly killing it with a bite to the back of the head."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -38,11 +35,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 drops into a crouch and silently treads towards the shrew. At the last second, the shrew looks up, but r_c0 is quick to pounce and cut off its escape."
+                    "p_l drops into a crouch and silently treads towards the shrew. At the last second, the shrew looks up, but p_l is quick to pounce and cut off its escape."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {

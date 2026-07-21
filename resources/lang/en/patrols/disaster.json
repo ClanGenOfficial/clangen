@@ -332,12 +332,7 @@
                         ]
                     }
                 },
-                "exp_gained": 30,
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                "exp_gained": 30
             },
             {
                 "frequency": 4,
@@ -508,12 +503,7 @@
                         ]
                     }
                 },
-                "exp_gained": 30,
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                "exp_gained": 30
             },
             {
                 "frequency": 1,
@@ -528,12 +518,7 @@
                         ]
                     }
                 },
-                "exp_gained": 30,
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                "exp_gained": 30
             },
             {
                 "frequency": 4,
@@ -683,12 +668,7 @@
                         ]
                     }
                 },
-                "exp_gained": 30,
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                "exp_gained": 30
             },
             {
                 "frequency": 1,
@@ -703,12 +683,7 @@
                         ]
                     }
                 },
-                "exp_gained": 30,
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                "exp_gained": 30
             },
             {
                 "frequency": 4,
@@ -841,12 +816,7 @@
                         ]
                     }
                 },
-                "exp_gained": 30,
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                "exp_gained": 30
             },
             {
                 "frequency": 1,
@@ -861,12 +831,7 @@
                         ]
                     }
                 },
-                "exp_gained": 30,
-                "join": [
-                    {
-                        "cats": []
-                    }
-                ]
+                "exp_gained": 30
             },
             {
                 "frequency": 4,
