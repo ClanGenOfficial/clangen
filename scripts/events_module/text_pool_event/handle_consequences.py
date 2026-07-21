@@ -69,7 +69,7 @@ def execute_outcome(
             for group in block["log"]:
                 block["log"][group] = event_text_adjust(
                     Cat,
-                    chosen_string,
+                    block["log"][group],
                     involved_cat_dict=event_involved_cats,
                     clan=game.clan,
                     other_clan=other_clan,
@@ -79,6 +79,8 @@ def execute_outcome(
     rel_results.update(
         unpack_rel_block(Cat, rel_changes, involved_cats=event_involved_cats)
     )
+    if rel_results:
+        results.append(i18n.t(f"screens.patrol.relationship_changed"))
 
     final_results = []
     for r in results:
@@ -86,7 +88,7 @@ def execute_outcome(
             final_results.append(r)
 
     # return all the bullshit
-    return processed_text, "\n".join(final_results), rel_results, event.outcome_art
+    return processed_text, "\n".join(final_results), rel_results
 
 
 def _handle_joining(
@@ -478,7 +480,7 @@ def _handle_supply_changes(
 
     results.append(__handle_herbs(herb_blocks, event_involved_cats))
     results.append(__handle_prey(prey_blocks, event_involved_cats))
-    return "\n".join(results)
+    return " ".join(results)
 
 
 def __handle_prey(
@@ -543,10 +545,10 @@ def __handle_prey(
         if amount_gained > 0:
             final_amount += round(amount_gained, 2)
             print(f"PREY ADDED: {amount_gained}")
-            results.append(
-                i18n.t(f"screens.patrol.prey_{prey['adjust'].replace('increase', '')}")
-            )
+            adjust_type = prey["adjust"].replace("increase_", "")
+            results.append(i18n.t(f"screens.patrol.prey_{adjust_type}"))
 
+    # TODO: localize
     game.freshkill_event_list.append(
         f"{final_amount} pieces of prey were caught on a patrol."
     )

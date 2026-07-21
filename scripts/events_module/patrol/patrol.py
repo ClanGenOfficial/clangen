@@ -779,6 +779,7 @@ class Patrol:
                     possible_cats=potential_cats,
                     tags=outcome.tags,
                     return_list=True,
+                    return_id=False,
                 )
 
                 if not self._find_involved_cats(
@@ -848,7 +849,7 @@ class Patrol:
 
     def determine_outcome(
         self, antagonize=False
-    ) -> Tuple[str, str, list, Optional[str]]:
+    ) -> Tuple[str, str, list, pygame.Surface]:
         if self.patrol_event is None:
             raise Exception("No patrol event supplied")
 
@@ -866,8 +867,10 @@ class Patrol:
 
         # Run the chosen outcome
         return handle_consequences.execute_outcome(
-            chosen_outcome, self.involved_cats, self.other_clan
-        )
+            chosen_outcome,
+            self.outcome_cats["success" if success else "failure"],
+            self.other_clan,
+        ) + (self.get_patrol_art(chosen_outcome),)
 
     def calculate_success(
         self, success_outcome: TextPoolEvent, fail_outcome: TextPoolEvent
@@ -995,20 +998,29 @@ class Patrol:
             filtered_patrols = possible_patrols
         return filtered_patrols
 
-    def get_patrol_art(self) -> pygame.Surface:
+    def get_patrol_art(self, outcome: TextPoolEvent = None) -> pygame.Surface:
         """Return's patrol art surface"""
         if not self.patrol_event or not isinstance(self.patrol_event.patrol_art, str):
             return pygame.Surface((600, 600), flags=pygame.SRCALPHA)
 
         root_dir = "resources/images/patrol_art/"
 
-        if not game_setting_get("gore") and self.patrol_event.patrol_art_clean:
-            file_name = self.patrol_event.patrol_art_clean
+        clean_art = (
+            self.patrol_event.patrol_art_clean
+            if not outcome
+            else outcome.outcome_art_clean
+        )
+        if not game_setting_get("gore") and clean_art:
+            file_name = clean_art
         else:
-            file_name = self.patrol_event.patrol_art
+            file_name = (
+                self.patrol_event.patrol_art if not outcome else outcome.outcome_art
+            )
 
-        if not isinstance(file_name, str) or not path_exists(
-            f"{root_dir}{file_name}.png"
+        if (
+            not outcome
+            and not isinstance(file_name, str)
+            or not path_exists(f"{root_dir}{file_name}.png")
         ):
             if "herb_gathering" in self.patrol_event.types:
                 file_name = "med"
