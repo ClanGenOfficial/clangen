@@ -33,6 +33,8 @@ def reformat():
     for path in file_set:
         new_patrols = []
         try:
+            if path == ".\\prey_text_replacements.json":
+                continue
             with open(f"{root_dir}/{path}", "r") as read_file:
                 patrols = read_file.read()
                 patrol_dict = ujson.loads(patrols)
@@ -45,13 +47,16 @@ def reformat():
             all_mentored = False
             specific_mentored = []
 
+            if isinstance(p, str):
+                continue
+
             reformatted_patrol = {"id": p.get("patrol_id")}
+            medicine_cat_allowed = False
             if p.get("types"):
                 reformatted_patrol["types"] = p.get("types")
                 if "herb_gathering" in reformatted_patrol["types"]:
                     medicine_cat_allowed = True
-                else:
-                    medicine_cat_allowed = False
+                    
             if p.get("frequency"):
                 reformatted_patrol["frequency"] = p.get("frequency")
             if p.get("biome"):
@@ -432,7 +437,7 @@ def reformat_outcome(
 
     reformatted_outcome["involved_cats"] = involved_cats
 
-    if outcome.get("relationship_constraints"):
+    if outcome.get("relationship_constraint"):
         reformatted_outcome["relationship_constraint"] = [
             {
                 "cats_from": ["p_l"],
@@ -452,10 +457,8 @@ def reformat_outcome(
     if reputation_changes:
         reformatted_outcome["reputation_changes"] = reputation_changes
 
-    if outcome.get("relationship_effects"):
-        reformatted_outcome["relationship_changes"] = outcome.get(
-            "relationship_effects"
-        )
+    if outcome.get("relationships"):
+        reformatted_outcome["relationship_changes"] = outcome.get("relationships")
 
     if outcome.get("prey"):
         reformatted_outcome["supply"] = []
@@ -558,9 +561,6 @@ def reformat_outcome(
 
     if new_cats_joining:
         reformatted_outcome["join"] = new_cats_joining
-
-    if outcome.get("future_event"):
-        reformatted_outcome["future_event"] = outcome.get("future_event")
 
     if not reformatted_outcome["tags"]:
         reformatted_outcome.pop("tags")
