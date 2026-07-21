@@ -30,36 +30,32 @@
                     "apprentice"
                 ],
                 "has_mentor": true
-            },
-            "r_c2": {
-                "status": [
-                    "apprentice"
-                ],
-                "has_mentor": true
             }
         },
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "cats_from": [
+                    "patrol_cats"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "can_romance"
+                ]
+            }
+        ],
         "chance_of_success": 70,
         "patrol_art": "cat_sprites/mtn_train_snowcrunching_ApAp",
-        "intro_text": "The apprentices emerge into a predawn world hushed and smothered in a fresh blanket of snow! r_c1 and r_c2 tear off into the territory near camp, looking to play.",
+        "intro_text": "The apprentices emerge into a predawn world hushed and smothered in a fresh blanket of snow! r_c1 and p_l tear off into the territory near camp, looking to play.",
         "decline_text": "Their mentors are already up for the day, and call them back. There'll be time to play later.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "The snow seems to have melted and refrozen during the night, and r_c1 darts lightly over the top of the thin crust. r_c2 follows {PRONOUN/r_c1/object}, only to immediately hear a crack and sink up to {PRONOUN/r_c2/poss} ear tips in the fluffy stuff. Teasingly, r_c1 runs around near {PRONOUN/r_c2/object}, and it turns into a game of r_c2 romping through the snow trying to catch {PRONOUN/r_c1/object}."
+                    "The snow seems to have melted and refrozen during the night, and r_c1 darts lightly over the top of the thin crust. p_l follows {PRONOUN/r_c1/object}, only to immediately hear a crack and sink up to {PRONOUN/p_l/poss} ear tips in the fluffy stuff. Teasingly, r_c1 runs around near {PRONOUN/p_l/object}, and it turns into a game of p_l romping through the snow trying to catch {PRONOUN/r_c1/object}."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
@@ -67,7 +63,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -84,20 +80,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c1 finds a snowdrift, and over the course of an hour {PRONOUN/r_c1/subject} and r_c2 turn it into a very respectable snow den, complete with a short entrance tunnel. They're debating what to call the camp of their little Clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision."
+                    "r_c1 finds a snowdrift, and over the course of an hour {PRONOUN/r_c1/subject} and p_l turn it into a very respectable snow den, complete with a short entrance tunnel. They're debating what to call the camp of their little Clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
@@ -105,7 +89,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -125,11 +109,6 @@
                     "After a while romping around in the heavy snow, r_c1 complains of the cold seeping into {PRONOUN/r_c1/poss} fur. s_c0 digs a little hollow, and invites {PRONOUN/r_c1/object} in to curl up with {PRONOUN/s_c0/object}. Strictly for warmth purposes of course. They both stay there as the sun rises. Strictly for warmth."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "trait": [
@@ -142,7 +121,7 @@
                             ]
                         },
                         "prior_abbreviations": [
-                            "r_c2"
+                            "p_l"
                         ]
                     }
                 },
@@ -153,7 +132,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -163,7 +142,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "cat_from and cat_to played in the snow, and when r_c1 got cold, r_c2 dug {PRONOUN/r_c1/object} a hollow to get cozy and warm in."
+                            "cats_from": "cat_from and cat_to played in the snow, and when r_c1 got cold, p_l dug {PRONOUN/r_c1/object} a hollow to get cozy and warm in."
                         }
                     }
                 ]
@@ -182,7 +161,7 @@
                             "r_c1"
                         ],
                         "cats_to": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -200,13 +179,6 @@
                 "strings": [
                     "As they play in the snow, r_c1 falls over {PRONOUN/r_c1/self} embarrassingly, and suddenly decides {PRONOUN/r_c1/subject} {VERB/r_c1/remember/remembers} that {PRONOUN/r_c1/subject} {VERB/r_c1/have/has} other things {PRONOUN/r_c1/subject} should be doing."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -214,7 +186,7 @@
                             "r_c1"
                         ],
                         "cats_to": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -227,7 +199,7 @@
                     },
                     {
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "cats_to": [
                             "r_c1"
@@ -248,13 +220,6 @@
                 "strings": [
                     "Both apprentices are back at camp in time for a normal day of training, but r_c1 has to confess {PRONOUN/r_c1/poss} predawn adventure when {PRONOUN/r_c1/subject} {VERB/r_c1/go/goes} to medicine cat den with a running nose."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -262,7 +227,7 @@
                             "r_c1"
                         ],
                         "cats_to": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -861,7 +826,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "A dead warrior woke in StarClan, business unfinished and hate for the living in their heart. They brought ruin and destruction upon the living Clan — but c_n was not without allies. The other cats of StarClan leapt to battle and tore a hole in Silverpelt, casting out the traitor, condemning them to walk a path of decay and cruelty."
+                    "A dead warrior woke in StarClan, business unfinished and hate for the living in their heart. They brought ruin and destruction upon the living Clan \u00e2\u20ac\u201d but c_n was not without allies. The other cats of StarClan leapt to battle and tore a hole in Silverpelt, casting out the traitor, condemning them to walk a path of decay and cruelty."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -1330,7 +1295,7 @@
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "intro_text": "Many seasons ago, p_l begins, there was born a powerful, StarClan-gifted apprentice, one coveted by the Clans around them. Pulled in many directions, they could not keep the peace, as all demanded their time and skill.",
-        "decline_text": "r_c0 doesn't have time to listen to p_l's story — {PRONOUN/r_c0/subject} {VERB/r_c0/apologize/apologizes}, but {PRONOUN/r_c0/subject} rather {VERB/r_c0/feel/feels} like that long dead overworked apprentice {PRONOUN/r_c0/self}, right now!",
+        "decline_text": "r_c0 doesn't have time to listen to p_l's story \u00e2\u20ac\u201d {PRONOUN/r_c0/subject} {VERB/r_c0/apologize/apologizes}, but {PRONOUN/r_c0/subject} rather {VERB/r_c0/feel/feels} like that long dead overworked apprentice {PRONOUN/r_c0/self}, right now!",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1480,7 +1445,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_ghost_WrWrWr",
                 "strings": [
-                    "The Mountain's Roar is not rage of blood and sinew, no anger of tooth or claw. It's unfeeling, unthinking, and uncaring, the deep rumble of the snowcaps themselves falling to their doom, p_l tells them. If they ever, <i>ever</i> feel their whiskers tremble with the noise, the only solution is to run — not down, but to the side, away from where the snow will flow. Do they understand?"
+                    "The Mountain's Roar is not rage of blood and sinew, no anger of tooth or claw. It's unfeeling, unthinking, and uncaring, the deep rumble of the snowcaps themselves falling to their doom, p_l tells them. If they ever, <i>ever</i> feel their whiskers tremble with the noise, the only solution is to run \u00e2\u20ac\u201d not down, but to the side, away from where the snow will flow. Do they understand?"
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -1600,7 +1565,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_ghost_WrWrWr",
                 "strings": [
-                    "There are tricks to it, p_l explains. Avalanches fall like sudden floods of water or mud, but with unimaginable force. Survival is a matter of luck if they get caught. So don't get caught — run to the side of the slope, out of the path of the flow, horizontal. Climb, climb anything. The tree will get swept away, but they might float."
+                    "There are tricks to it, p_l explains. Avalanches fall like sudden floods of water or mud, but with unimaginable force. Survival is a matter of luck if they get caught. So don't get caught \u00e2\u20ac\u201d run to the side of the slope, out of the path of the flow, horizontal. Climb, climb anything. The tree will get swept away, but they might float."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [

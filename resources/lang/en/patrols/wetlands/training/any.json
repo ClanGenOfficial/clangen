@@ -392,7 +392,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Harshly, s_c0 tells {PRONOUN/s_c0/poss} Clanmate that {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} on {PRONOUN/r_c0/poss} own — this patrol is too important to wait for some mouse-brain who fell in the water."
+                    "Harshly, s_c0 tells {PRONOUN/s_c0/poss} Clanmate that {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} on {PRONOUN/r_c0/poss} own \u00e2\u20ac\u201d this patrol is too important to wait for some mouse-brain who fell in the water."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -656,7 +656,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Harshly, s_c0 tells {PRONOUN/s_c0/poss} Clanmate that {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} on {PRONOUN/r_c0/poss} own — this patrol is too important to wait for some mouse-brain who got stuck."
+                    "Harshly, s_c0 tells {PRONOUN/s_c0/poss} Clanmate that {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} on {PRONOUN/r_c0/poss} own \u00e2\u20ac\u201d this patrol is too important to wait for some mouse-brain who got stuck."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -921,7 +921,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l heads off to map out the paths of solid ground through a boggy area {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} always found confusing. Hunting, fighting, driving off predators — it all requires knowledge of {PRONOUN/p_l/poss} home turf, and it's always worth making sure {PRONOUN/p_l/poss} mental map is up to date. It feels a little like more work though and isn't exactly the peaceful break {PRONOUN/p_l/subject} hoped for."
+                    "p_l heads off to map out the paths of solid ground through a boggy area {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} always found confusing. Hunting, fighting, driving off predators \u00e2\u20ac\u201d it all requires knowledge of {PRONOUN/p_l/poss} home turf, and it's always worth making sure {PRONOUN/p_l/poss} mental map is up to date. It feels a little like more work though and isn't exactly the peaceful break {PRONOUN/p_l/subject} hoped for."
                 ],
                 "exp_gained": 20
             },
@@ -1125,6 +1125,20 @@
                 ]
             }
         },
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "cats_from": [
+                    "patrol_cats"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "can_romance"
+                ]
+            }
+        ],
         "chance_of_success": 70,
         "patrol_art": "train_general_intro",
         "intro_text": "Fireflies swarm over the heart of c_n's territory, gleaming, dancing, and flashing around r_c1 as {PRONOUN/r_c1/subject} {VERB/r_c1/wait/waits} for r_c2.",
@@ -1251,7 +1265,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "r_c1 met with r_c2 to spend time together — just the two of them."
+                            "cats_from": "r_c1 met with r_c2 to spend time together \u00e2\u20ac\u201d just the two of them."
                         }
                     }
                 ]
@@ -1387,6 +1401,18 @@
                     "dislikes",
                     "-mates"
                 ]
+            },
+            {
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "cats_from": [
+                    "patrol_cats"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "can_romance"
+                ]
             }
         ],
         "involved_cats": {
@@ -1425,7 +1451,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 shows off how far {PRONOUN/r_c0/subject} can pounce, so p_l shows off how fast {PRONOUN/p_l/subject} can run, so r_c0 shows off how sharp {PRONOUN/r_c0/poss} claws are, so p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, sp r_c0 shows off how long {PRONOUN/r_c0/poss} legs are, so p_l shows off how cool {PRONOUN/p_l/poss} scars are — this goes on all afternoon."
+                    "r_c0 shows off how far {PRONOUN/r_c0/subject} can pounce, so p_l shows off how fast {PRONOUN/p_l/subject} can run, so r_c0 shows off how sharp {PRONOUN/r_c0/poss} claws are, so p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, sp r_c0 shows off how long {PRONOUN/r_c0/poss} legs are, so p_l shows off how cool {PRONOUN/p_l/poss} scars are \u00e2\u20ac\u201d this goes on all afternoon."
                 ],
                 "exp_gained": 15,
                 "relationship_changes": [
@@ -1501,6 +1527,20 @@
         "involved_cats": {
             "r_c0": {}
         },
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "cats_from": [
+                    "patrol_cats"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "can_romance"
+                ]
+            }
+        ],
         "chance_of_success": 50,
         "patrol_art": "train_general_intro",
         "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c0/subject} wouldn't mind showing p_l {PRONOUN/r_c0/poss} hunting techniques, and perhaps training together?",
@@ -1735,7 +1775,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Ha! p_l pounces, the pathetic bug crunching underneath {PRONOUN/p_l/poss} mighty blow, splattering and... Ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/p_l/poss} paws, between {PRONOUN/p_l/poss} toes — EWWWWW!"
+                    "Ha! p_l pounces, the pathetic bug crunching underneath {PRONOUN/p_l/poss} mighty blow, splattering and... Ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/p_l/poss} paws, between {PRONOUN/p_l/poss} toes \u00e2\u20ac\u201d EWWWWW!"
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1803,7 +1843,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "Slimy, yet satisfying! Curiosity completed, p_l wanders off — but has to report to the medicine cat den later, when {PRONOUN/p_l/poss} stomach reminds {PRONOUN/p_l/object} why cats don't eat random bugs."
+                    "Slimy, yet satisfying! Curiosity completed, p_l wanders off \u00e2\u20ac\u201d but has to report to the medicine cat den later, when {PRONOUN/p_l/poss} stomach reminds {PRONOUN/p_l/object} why cats don't eat random bugs."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1891,7 +1931,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Once upon a time, p_l murmurs, voice barely a whisper, Twolegs attacked the wetlands, ripping down trees, choking off rivers, and reshaping the earth itself. Seeing the destruction, the stars blessed the fallen trees to rise, undead and massive, and drive the Twolegs from the swamps. Moose are very dangerous — but their presence shields c_n."
+                    "Once upon a time, p_l murmurs, voice barely a whisper, Twolegs attacked the wetlands, ripping down trees, choking off rivers, and reshaping the earth itself. Seeing the destruction, the stars blessed the fallen trees to rise, undead and massive, and drive the Twolegs from the swamps. Moose are very dangerous \u00e2\u20ac\u201d but their presence shields c_n."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -2027,7 +2067,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": "It's been a hard swimming lesson — r_c1 has just fallen back in, and {PRONOUN/r_c1/subject} {VERB/r_c1/try/tries} to clamber out with {PRONOUN/r_c1/poss} claws dug into a tree root. {PRONOUN/r_c1/subject/CAP}{VERB/r_c1/'re/'s} looking particularly sorry for {PRONOUN/r_c1/self}, so p_l suggests they take a break; {PRONOUN/p_l/subject} {VERB/p_l/have/has} a story to share. Does r_c1 know why c_n lives in the quagmire?",
+        "intro_text": "It's been a hard swimming lesson \u00e2\u20ac\u201d r_c1 has just fallen back in, and {PRONOUN/r_c1/subject} {VERB/r_c1/try/tries} to clamber out with {PRONOUN/r_c1/poss} claws dug into a tree root. {PRONOUN/r_c1/subject/CAP}{VERB/r_c1/'re/'s} looking particularly sorry for {PRONOUN/r_c1/self}, so p_l suggests they take a break; {PRONOUN/p_l/subject} {VERB/p_l/have/has} a story to share. Does r_c1 know why c_n lives in the quagmire?",
         "decline_text": "No, and though {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} polite, r_c1 doesn't want to hear about it. {PRONOUN/r_c1/subject/CAP}{VERB/r_c1/'d/'s} just like some help drying off.",
         "success_outcomes": [
             {
@@ -2062,7 +2102,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_argue_WrWrWr",
                 "strings": [
-                    "p_l tries to share the ancient history of the safe refuge the swamps offered — but r_c1 throws back {PRONOUN/r_c1/poss} head and yowls. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/don't/doesn't} <i>care</i> what some ancient cat did; {PRONOUN/r_c1/subject} <i>{VERB/r_c1/hate/hates}</i> this. Water is awful!"
+                    "p_l tries to share the ancient history of the safe refuge the swamps offered \u00e2\u20ac\u201d but r_c1 throws back {PRONOUN/r_c1/poss} head and yowls. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/don't/doesn't} <i>care</i> what some ancient cat did; {PRONOUN/r_c1/subject} <i>{VERB/r_c1/hate/hates}</i> this. Water is awful!"
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2112,7 +2152,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_argue_WrWrWr",
                 "strings": [
-                    "Long ago, rebels were driven from their former Clans and sought a new life, p_l begins. But s_c0 interrupts {PRONOUN/p_l/object} — so these rebels were too cowardly to fight? The exiles should've attacked and taken over, not surrendered and run."
+                    "Long ago, rebels were driven from their former Clans and sought a new life, p_l begins. But s_c0 interrupts {PRONOUN/p_l/object} \u00e2\u20ac\u201d so these rebels were too cowardly to fight? The exiles should've attacked and taken over, not surrendered and run."
                 ],
                 "involved_cats": {
                     "s_c0": {

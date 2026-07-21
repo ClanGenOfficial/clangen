@@ -409,6 +409,20 @@
                 -1
             ]
         },
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "cats_from": [
+                    "patrol_cats"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "can_romance"
+                ]
+            }
+        ],
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
@@ -761,7 +775,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It's frustrating that it only wins them a single minnow, but the patrol drives out the kit fox, and s_c0 reminds them that's what matters — that now the fox won't keep poaching from c_n's hunting grounds in the future."
+                    "It's frustrating that it only wins them a single minnow, but the patrol drives out the kit fox, and s_c0 reminds them that's what matters \u00e2\u20ac\u201d that now the fox won't keep poaching from c_n's hunting grounds in the future."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1386,7 +1400,7 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_train_sneakprey_Wr",
                 "strings": [
-                    "It's a kingfisher, p_l whispers. Go on, give it a shot. r_c1 creeps closer, easily tracking the bright bird in the foliage, but the kingfisher has its own hunt. It dips into the frosty stream, and comes up with a small frog held in its beak. A twig snaps under r_c1's paw, and the bird flees — but it leaves the frog behind for r_c1 to take!"
+                    "It's a kingfisher, p_l whispers. Go on, give it a shot. r_c1 creeps closer, easily tracking the bright bird in the foliage, but the kingfisher has its own hunt. It dips into the frosty stream, and comes up with a small frog held in its beak. A twig snaps under r_c1's paw, and the bird flees \u00e2\u20ac\u201d but it leaves the frog behind for r_c1 to take!"
                 ],
                 "involved_cats": {
                     "r_c1": {

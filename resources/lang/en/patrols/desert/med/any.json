@@ -211,7 +211,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l goes to a known herb patch — but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} give up, hunting around in the area until {PRONOUN/p_l/subject} find a smaller overlooked patch that still has leaves on it."
+                    "p_l goes to a known herb patch \u00e2\u20ac\u201d but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} give up, hunting around in the area until {PRONOUN/p_l/subject} find a smaller overlooked patch that still has leaves on it."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -234,7 +234,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l goes to a known herb patch — but the plant has died! {PRONOUN/p_l/subject/CAP} give up and return to camp, feeling terrible."
+                    "p_l goes to a known herb patch \u00e2\u20ac\u201d but the plant has died! {PRONOUN/p_l/subject/CAP} give up and return to camp, feeling terrible."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -564,7 +564,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Night falls, and still s_c0 insists they keep going — lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves."
+                    "Night falls, and still s_c0 insists they keep going \u00e2\u20ac\u201d lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -725,7 +725,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Night falls, and still s_c0 insists to {PRONOUN/s_c0/self} that {PRONOUN/s_c0/subject} {VERB/s_c0/need/needs} to keep going — {PRONOUN/s_c0/subject} just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until {PRONOUN/s_c0/subject} {VERB/s_c0/find/finds} those precious speckled leaves."
+                    "Night falls, and still s_c0 insists to {PRONOUN/s_c0/self} that {PRONOUN/s_c0/subject} {VERB/s_c0/need/needs} to keep going \u00e2\u20ac\u201d {PRONOUN/s_c0/subject} just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until {PRONOUN/s_c0/subject} {VERB/s_c0/find/finds} those precious speckled leaves."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -979,7 +979,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Night falls, and still s_c0 insists they keep going — they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
+                    "Night falls, and still s_c0 insists they keep going \u00e2\u20ac\u201d they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1115,6 +1115,20 @@
                 1
             ]
         },
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "cats_from": [
+                    "patrol_cats"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "can_romance"
+                ]
+            }
+        ]
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
         "intro_text": "p_l goes out with a warrior escort, both for safety and for carrying capacity should {PRONOUN/p_l/subject} find anything.",
@@ -1283,10 +1297,6 @@
                 2,
                 6
             ],
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 2,
                 6
@@ -1296,6 +1306,20 @@
                 -1
             ]
         },
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "cats_from": [
+                    "patrol_cats"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "can_romance"
+                ]
+            }
+        ]
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
         "intro_text": "p_l heads out, leading a patrol of medicine cats to gather herbs together.",
@@ -1512,7 +1536,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l and r_c0 decide on a little friendly competition — one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
+                    "p_l and r_c0 decide on a little friendly competition \u00e2\u20ac\u201d one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [

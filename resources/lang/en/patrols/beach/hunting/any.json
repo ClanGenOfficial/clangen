@@ -224,7 +224,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 leads them to some seaweed on the beach — it's not clean, but it's extremely effective, and the patrol hunts well."
+                    "s_c0 leads them to some seaweed on the beach \u00e2\u20ac\u201d it's not clean, but it's extremely effective, and the patrol hunts well."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1354,6 +1354,20 @@
         "involved_cats": {
             "r_c0": {}
         },
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "cats_from": [
+                    "patrol_cats"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "can_romance"
+                ]
+            }
+        ],
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_hunt_twolegdencatdare_WrWr",
         "intro_text": "{PRONOUN/r_c0/poss/CAP} eyes daring p_l to say no, r_c0 suggests hunting by the Twoleg dens.",
@@ -1610,7 +1624,7 @@
                     }
                 ]
             }
-        ]
+        ],
     },
     {
         "id": "bch_hunt_gonetwolegtrap1",
@@ -2167,7 +2181,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "As the patrol passes along the sand between the waves and some rockpools, they find one of the oddest things any of them have ever seen — an octopus on land. It's clearly headed for the ocean.",
+        "intro_text": "As the patrol passes along the sand between the waves and some rockpools, they find one of the oddest things any of them have ever seen \u00e2\u20ac\u201d an octopus on land. It's clearly headed for the ocean.",
         "decline_text": "A little impressed and a lot weirded out, the patrol decided to leave the poor creature alone.",
         "success_outcomes": [
             {
@@ -2189,7 +2203,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The cats watch the roiling, uncoordinated, twisting mass of limbs, completely weirded out. The small octopus is almost to the sea before someone thinks to catch the thing. It's not a slick hunt — more of a scramble."
+                    "The cats watch the roiling, uncoordinated, twisting mass of limbs, completely weirded out. The small octopus is almost to the sea before someone thinks to catch the thing. It's not a slick hunt \u00e2\u20ac\u201d more of a scramble."
                 ],
                 "exp_gained": 15,
                 "supply": [
@@ -2266,7 +2280,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 convinces the patrol to let it go — the poor thing is clearly struggling so much already, and this feels unfair."
+                    "s_c0 convinces the patrol to let it go \u00e2\u20ac\u201d the poor thing is clearly struggling so much already, and this feels unfair."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -2331,7 +2345,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "As p_l passes along the sand between the waves and some rockpools, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} one of the oddest things {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} ever seen — an octopus on land. It's clearly headed for the ocean.",
+        "intro_text": "As p_l passes along the sand between the waves and some rockpools, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} one of the oddest things {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} ever seen \u00e2\u20ac\u201d an octopus on land. It's clearly headed for the ocean.",
         "decline_text": "A little impressed and a lot weirded out, p_l decided to leave the poor creature alone.",
         "success_outcomes": [
             {
@@ -2350,7 +2364,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l watches the roiling, uncoordinated, twisting mass of limbs, completely weirded out. The small octopus is almost to the sea before p_l thinks to catch the thing. It's not a slick hunt — more of a scramble."
+                    "p_l watches the roiling, uncoordinated, twisting mass of limbs, completely weirded out. The small octopus is almost to the sea before p_l thinks to catch the thing. It's not a slick hunt \u00e2\u20ac\u201d more of a scramble."
                 ],
                 "exp_gained": 15,
                 "supply": [
@@ -2409,7 +2423,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 lets it go — the poor thing is clearly struggling so much already, and this feels unfair."
+                    "s_c0 lets it go \u00e2\u20ac\u201d the poor thing is clearly struggling so much already, and this feels unfair."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -2455,13 +2469,13 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "As the patrol passes along the sand between the waves and some rockpools, they find one of the oddest things any of them have ever seen — a huge octopus on land. It's clearly headed for the ocean.",
+        "intro_text": "As the patrol passes along the sand between the waves and some rockpools, they find one of the oddest things any of them have ever seen \u00e2\u20ac\u201d a huge octopus on land. It's clearly headed for the ocean.",
         "decline_text": "A little impressed and a lot weirded out, the patrol decided to leave the poor creature alone.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol pounces in a coordinated strike on the massive potential prey — but this prey has more arms than there are cats, and it takes all their energy to wrestle with the titanically strong long arms. The patrol takes a couple hours to rest afterwards before they try moving it, and in the end, they almost lose the octopus' body to the tides."
+                    "The patrol pounces in a coordinated strike on the massive potential prey \u00e2\u20ac\u201d but this prey has more arms than there are cats, and it takes all their energy to wrestle with the titanically strong long arms. The patrol takes a couple hours to rest afterwards before they try moving it, and in the end, they almost lose the octopus' body to the tides."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -2771,7 +2785,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "s_c0 dances around nervously, but the patrol wants to give this hunt a try. {PRONOUN/s_c0/poss/CAP} anxiety doesn't help, and the deflated octopus manages to grab and bite {PRONOUN/s_c0/object} with its hooked beak — maybe s_c0 was right to be cautious."
+                    "s_c0 dances around nervously, but the patrol wants to give this hunt a try. {PRONOUN/s_c0/poss/CAP} anxiety doesn't help, and the deflated octopus manages to grab and bite {PRONOUN/s_c0/object} with its hooked beak \u00e2\u20ac\u201d maybe s_c0 was right to be cautious."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -4295,7 +4309,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump seagull. With careful signals, the cats set up an ambush. There aren't many of them, but the fox doesn't need to know that — with a massive explosion of yowls, the cats sound like a full battle patrol, and the fox yips with fear as the cats pounce to take possession of the bird."
+                    "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump seagull. With careful signals, the cats set up an ambush. There aren't many of them, but the fox doesn't need to know that \u00e2\u20ac\u201d with a massive explosion of yowls, the cats sound like a full battle patrol, and the fox yips with fear as the cats pounce to take possession of the bird."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -4401,7 +4415,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 reminds the rest of the patrol that things don't always need to end in a fight. Following the trail, they uncover a food cache of dead fish buried in a dune. They still don't know what kind of fox left the trail, and they don't need to — these fish will make great additions to the fresh-kill pile back home."
+                    "s_c0 reminds the rest of the patrol that things don't always need to end in a fight. Following the trail, they uncover a food cache of dead fish buried in a dune. They still don't know what kind of fox left the trail, and they don't need to \u00e2\u20ac\u201d these fish will make great additions to the fresh-kill pile back home."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -4656,7 +4670,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol tracks down a red fox and finds it with fresh-kill dangling from its jaws. s_c0 bursts from cover without warning, trying to intimidate the fox. At least {PRONOUN/s_c0/subject} {VERB/s_c0/scare/scares} the fox off — but it takes its catch with it. The other cats aren't particularly pleased with s_c0."
+                    "The patrol tracks down a red fox and finds it with fresh-kill dangling from its jaws. s_c0 bursts from cover without warning, trying to intimidate the fox. At least {PRONOUN/s_c0/subject} {VERB/s_c0/scare/scares} the fox off \u00e2\u20ac\u201d but it takes its catch with it. The other cats aren't particularly pleased with s_c0."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -4695,7 +4709,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_to's hasty attack scared a fox off — and it took its prey with it. cat_from wasn't happy with cat_to."
+                            "cats_from": "cat_to's hasty attack scared a fox off \u00e2\u20ac\u201d and it took its prey with it. cat_from wasn't happy with cat_to."
                         }
                     }
                 ],
@@ -5416,7 +5430,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 sniffs the still-struggling prey — and jerks backwards when it crosses its Twoleg-like forefins. No, this isn't something {PRONOUN/r_c0/subject} {VERB/r_c0/feel/feels} comfortable bringing back to camp."
+                    "r_c0 sniffs the still-struggling prey \u00e2\u20ac\u201d and jerks backwards when it crosses its Twoleg-like forefins. No, this isn't something {PRONOUN/r_c0/subject} {VERB/r_c0/feel/feels} comfortable bringing back to camp."
                 ],
                 "exp_gained": 0
             }
@@ -5763,7 +5777,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Confident of {PRONOUN/r_c1/poss} success, r_c1 pounces on the struggling stingray — only to feel a sharp, deep pain in {PRONOUN/r_c1/poss} side where the stingray's barb hits home."
+                    "Confident of {PRONOUN/r_c1/poss} success, r_c1 pounces on the struggling stingray \u00e2\u20ac\u201d only to feel a sharp, deep pain in {PRONOUN/r_c1/poss} side where the stingray's barb hits home."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -5791,7 +5805,7 @@
                         "scar_pool_override": [
                             "QUILLSIDE"
                         ],
-                        "scar_history": "m_c was permanently marked by the barb of a stingray as an apprentice — but {PRONOUN/m_c/subject} survived.",
+                        "scar_history": "m_c was permanently marked by the barb of a stingray as an apprentice \u00e2\u20ac\u201d but {PRONOUN/m_c/subject} survived.",
                         "death_history": "m_c died from the strike of a stingray encountered on a hunt as a foolish apprentice."
                     }
                 ]
@@ -5834,7 +5848,7 @@
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
         "intro_text": "The two siblings head out together, declaring a friendly competition to stock the fresh-kill pile. They're going to prove themselves!",
-        "decline_text": "Their mentors hold them back with a gentle word — the warriors have other plans for the apprentices today.",
+        "decline_text": "Their mentors hold them back with a gentle word \u00e2\u20ac\u201d the warriors have other plans for the apprentices today.",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5928,7 +5942,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It turns out s_c0 has really been listening to {PRONOUN/s_c0/poss} mentor's tips for hunting — and {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} willing to pass it on!"
+                    "It turns out s_c0 has really been listening to {PRONOUN/s_c0/poss} mentor's tips for hunting \u00e2\u20ac\u201d and {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} willing to pass it on!"
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -6140,7 +6154,7 @@
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
         "intro_text": "The clouds are out, making the world murky. And just like the clouds, r_c1 and {PRONOUN/r_c1/poss} littermate are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
-        "decline_text": "Their mentors hold them back with a gentle word — the warriors have other plans for the apprentices today.",
+        "decline_text": "Their mentors hold them back with a gentle word \u00e2\u20ac\u201d the warriors have other plans for the apprentices today.",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -6325,7 +6339,7 @@
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
         "intro_text": "The siblings head out together, declaring a friendly competition to stock the fresh-kill pile. They're going to prove themselves!",
-        "decline_text": "Their mentors hold them back with a gentle word — the warriors have other plans for the apprentices today.",
+        "decline_text": "Their mentors hold them back with a gentle word \u00e2\u20ac\u201d the warriors have other plans for the apprentices today.",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -6590,7 +6604,7 @@
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
         "intro_text": "The clouds are out, making the world murky. And just like the clouds, r_c1 and {PRONOUN/r_c1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!",
-        "decline_text": "Their mentors hold them back with a gentle word — the warriors have other plans for the apprentices today.",
+        "decline_text": "Their mentors hold them back with a gentle word \u00e2\u20ac\u201d the warriors have other plans for the apprentices today.",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -6845,7 +6859,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Watching s_c0's displays of athleticism makes r_c1 feel small — surely {PRONOUN/r_c1/subject}'ll never be able to do that?"
+                    "Watching s_c0's displays of athleticism makes r_c1 feel small \u00e2\u20ac\u201d surely {PRONOUN/r_c1/subject}'ll never be able to do that?"
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -7004,7 +7018,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Giving in and accepting that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} just going to look stupid in front of {PRONOUN/r_c1/poss} cool older sibling, r_c1 tells p_l about the trouble {PRONOUN/r_c1/subject}{VERB/r_c1/'ve/'s} been having with {PRONOUN/r_c1/poss} pounce. It's such a simple thing — {PRONOUN/r_c1/subject} should have it by now! But p_l is actually super helpful and reassuring about it — it's nice."
+                    "Giving in and accepting that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} just going to look stupid in front of {PRONOUN/r_c1/poss} cool older sibling, r_c1 tells p_l about the trouble {PRONOUN/r_c1/subject}{VERB/r_c1/'ve/'s} been having with {PRONOUN/r_c1/poss} pounce. It's such a simple thing \u00e2\u20ac\u201d {PRONOUN/r_c1/subject} should have it by now! But p_l is actually super helpful and reassuring about it \u00e2\u20ac\u201d it's nice."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -7043,7 +7057,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "If r_c1 ever wanted help — s_c0 knows they're not littermates, but they're still siblings, and s_c0 is totally here for {PRONOUN/r_c1/object} if r_c1 ever wants extra training. It's still an awkward offer. But it's nice."
+                    "If r_c1 ever wanted help \u00e2\u20ac\u201d s_c0 knows they're not littermates, but they're still siblings, and s_c0 is totally here for {PRONOUN/r_c1/object} if r_c1 ever wants extra training. It's still an awkward offer. But it's nice."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -7183,7 +7197,7 @@
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
         "intro_text": "r_c1 bounds out of camp, determined to show off to p_l!",
-        "decline_text": "And both are immediately recalled — the camp needs new nesting materials, not more prey.",
+        "decline_text": "And both are immediately recalled \u00e2\u20ac\u201d the camp needs new nesting materials, not more prey.",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -7444,7 +7458,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Watching s_c0's displays of athleticism makes r_c1 feel small — surely {PRONOUN/r_c1/subject}'ll never be able to do that?"
+                    "Watching s_c0's displays of athleticism makes r_c1 feel small \u00e2\u20ac\u201d surely {PRONOUN/r_c1/subject}'ll never be able to do that?"
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -7598,7 +7612,7 @@
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
         "intro_text": "r_c1 bounds out of camp, determined to show off to {PRONOUN/r_c1/poss} older siblings!",
-        "decline_text": "And everyone is immediately recalled — the camp needs new nesting materials, not more prey.",
+        "decline_text": "And everyone is immediately recalled \u00e2\u20ac\u201d the camp needs new nesting materials, not more prey.",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -7885,7 +7899,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 nets them two healthy b_tp_a_p to take back to camp, but it only irritates {PRONOUN/s_c0/poss} sibling. r_c0 never even got the chance to even try for a pounce — {VERB/r_c0/are/is} {PRONOUN/r_c0/subject} only there to carry around s_c0's prey?"
+                    "s_c0 nets them two healthy b_tp_a_p to take back to camp, but it only irritates {PRONOUN/s_c0/poss} sibling. r_c0 never even got the chance to even try for a pounce \u00e2\u20ac\u201d {VERB/r_c0/are/is} {PRONOUN/r_c0/subject} only there to carry around s_c0's prey?"
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -8009,7 +8023,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It isn't a very successful hunt — they'll have to head out again for more soon."
+                    "It isn't a very successful hunt \u00e2\u20ac\u201d they'll have to head out again for more soon."
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -8022,7 +8036,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "They don't manage anything like the number of catches they were both expecting to get — a bit disappointing, even if they're not entirely empty-pawed."
+                    "They don't manage anything like the number of catches they were both expecting to get \u00e2\u20ac\u201d a bit disappointing, even if they're not entirely empty-pawed."
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -8072,8 +8086,8 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "The sun's out, and r_c0 has been assigned a moderately tolerable hunting partner — {PRONOUN/r_c0/poss} sibling!",
-        "decline_text": "Cancel that — a border patrol needs backup.",
+        "intro_text": "The sun's out, and r_c0 has been assigned a moderately tolerable hunting partner \u00e2\u20ac\u201d {PRONOUN/r_c0/poss} sibling!",
+        "decline_text": "Cancel that \u00e2\u20ac\u201d a border patrol needs backup.",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -8142,7 +8156,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 jokes that {PRONOUN/r_c0/subject} can't possibly be related to s_c0 — clearly s_c0 was born from reef sharks, not cats, with the way {PRONOUN/s_c0/subject} {VERB/s_c0/glide/glides} through the water."
+                    "r_c0 jokes that {PRONOUN/r_c0/subject} can't possibly be related to s_c0 \u00e2\u20ac\u201d clearly s_c0 was born from reef sharks, not cats, with the way {PRONOUN/s_c0/subject} {VERB/s_c0/glide/glides} through the water."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -8448,7 +8462,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Together, they collect a b_tp_a_s, a couple b_tp_dl_p, an old b_mp_a_s and two b_tp_a_p. It should be a great patrol, returning with so much prey — but r_c0 is acting obnoxious and {PRONOUN/r_c0/poss} sibling has little time or patience for it."
+                    "Together, they collect a b_tp_a_s, a couple b_tp_dl_p, an old b_mp_a_s and two b_tp_a_p. It should be a great patrol, returning with so much prey \u00e2\u20ac\u201d but r_c0 is acting obnoxious and {PRONOUN/r_c0/poss} sibling has little time or patience for it."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -8483,7 +8497,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 makes a dumb comment that accidentally cuts deep. {PRONOUN/r_c0/poss/CAP} sibling works with {PRONOUN/r_c0/object} long enough to bring back a great haul of prey — but no longer."
+                    "r_c0 makes a dumb comment that accidentally cuts deep. {PRONOUN/r_c0/poss/CAP} sibling works with {PRONOUN/r_c0/object} long enough to bring back a great haul of prey \u00e2\u20ac\u201d but no longer."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -8773,7 +8787,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 nets them four healthy b_tp_a_p to take back to camp, but it only irritates {PRONOUN/s_c0/poss} siblings. r_c0 never even got the chance to even try for a pounce — {VERB/r_c0/are/is} {PRONOUN/r_c0/subject} only there to carry around s_c0's prey?"
+                    "s_c0 nets them four healthy b_tp_a_p to take back to camp, but it only irritates {PRONOUN/s_c0/poss} siblings. r_c0 never even got the chance to even try for a pounce \u00e2\u20ac\u201d {VERB/r_c0/are/is} {PRONOUN/r_c0/subject} only there to carry around s_c0's prey?"
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -8821,7 +8835,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It isn't a very successful hunt — they'll have to head out again for more soon."
+                    "It isn't a very successful hunt \u00e2\u20ac\u201d they'll have to head out again for more soon."
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -8834,7 +8848,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "They don't manage anything like the number of catches they were all expecting to get — a bit disappointing, even if they're not entirely empty-pawed."
+                    "They don't manage anything like the number of catches they were all expecting to get \u00e2\u20ac\u201d a bit disappointing, even if they're not entirely empty-pawed."
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -8884,8 +8898,8 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "The sun's out, and r_c0 has been assigned a moderately tolerable hunting patrol — {PRONOUN/r_c0/poss} siblings!",
-        "decline_text": "Cancel that — a border patrol needs backup.",
+        "intro_text": "The sun's out, and r_c0 has been assigned a moderately tolerable hunting patrol \u00e2\u20ac\u201d {PRONOUN/r_c0/poss} siblings!",
+        "decline_text": "Cancel that \u00e2\u20ac\u201d a border patrol needs backup.",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -8954,7 +8968,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 jokes that {PRONOUN/r_c0/subject} can't possibly be related to s_c0 — clearly s_c0 was born from reef sharks, not cats, with the way {PRONOUN/s_c0/subject} {VERB/s_c0/glide/glides} through the water."
+                    "r_c0 jokes that {PRONOUN/r_c0/subject} can't possibly be related to s_c0 \u00e2\u20ac\u201d clearly s_c0 was born from reef sharks, not cats, with the way {PRONOUN/s_c0/subject} {VERB/s_c0/glide/glides} through the water."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -9093,7 +9107,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Together, they collect a b_tp_a_s, a couple b_tp_dl_p, an old b_mp_a_s and two b_tp_a_p. It should be a great patrol, returning with so much prey — but r_c0 is acting obnoxious and {PRONOUN/r_c0/poss} siblings have little time or patience for it."
+                    "Together, they collect a b_tp_a_s, a couple b_tp_dl_p, an old b_mp_a_s and two b_tp_a_p. It should be a great patrol, returning with so much prey \u00e2\u20ac\u201d but r_c0 is acting obnoxious and {PRONOUN/r_c0/poss} siblings have little time or patience for it."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -9128,7 +9142,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 makes a dumb comment that accidentally cuts deep. {PRONOUN/r_c0/poss/CAP} siblings work with {PRONOUN/r_c0/object} long enough to bring back a great haul of prey — but no longer."
+                    "r_c0 makes a dumb comment that accidentally cuts deep. {PRONOUN/r_c0/poss/CAP} siblings work with {PRONOUN/r_c0/object} long enough to bring back a great haul of prey \u00e2\u20ac\u201d but no longer."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -9596,7 +9610,7 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/mtn_train_stuck_Wr",
                 "strings": [
-                    "r_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c0/subject} {VERB/r_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c0 scrambles back—right over the edge of the cliff. With a howl, {PRONOUN/r_c0/subject} {VERB/r_c0/plummet/plummets}. The patrol rushes down to find r_c0 lying on the low tide sandbank, barely able to limp back to camp."
+                    "r_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c0/subject} {VERB/r_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c0 scrambles back\u00e2\u20ac\u201dright over the edge of the cliff. With a howl, {PRONOUN/r_c0/subject} {VERB/r_c0/plummet/plummets}. The patrol rushes down to find r_c0 lying on the low tide sandbank, barely able to limp back to camp."
                 ],
                 "exp_gained": 0,
                 "condition": [
@@ -9616,7 +9630,7 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_fallenwater_Wr",
                 "strings": [
-                    "r_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c0/subject} {VERB/r_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c0 scrambles back—right over the edge of the cliff. With a howl, {PRONOUN/r_c0/subject} {VERB/r_c0/plummet/plummets}. The patrol rushes down to find r_c0 clinging onto the rocks and coughing water."
+                    "r_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c0/subject} {VERB/r_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c0 scrambles back\u00e2\u20ac\u201dright over the edge of the cliff. With a howl, {PRONOUN/r_c0/subject} {VERB/r_c0/plummet/plummets}. The patrol rushes down to find r_c0 clinging onto the rocks and coughing water."
                 ],
                 "exp_gained": 0,
                 "condition": [
@@ -9635,7 +9649,7 @@
                 "frequency": 1,
                 "outcome_art": "backgrounds/bch_stormwaves",
                 "strings": [
-                    "r_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c0/subject} {VERB/r_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c0 scrambles back—right over the edge of the cliff. With a howl, {PRONOUN/r_c0/subject} {VERB/r_c0/plummet/plummets}. The patrol rushes to climb down, and finds r_c0 sprawled on a rock. Motionless."
+                    "r_c0 spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c0/subject} {VERB/r_c0/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c0 scrambles back\u00e2\u20ac\u201dright over the edge of the cliff. With a howl, {PRONOUN/r_c0/subject} {VERB/r_c0/plummet/plummets}. The patrol rushes to climb down, and finds r_c0 sprawled on a rock. Motionless."
                 ],
                 "exp_gained": 0,
                 "death": [

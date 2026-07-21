@@ -414,6 +414,20 @@
                 -1
             ]
         },
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "cats_from": [
+                    "patrol_cats"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "can_romance"
+                ]
+            }
+        ]
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
         "intro_text": "It starts raining soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
@@ -656,7 +670,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The patrol sneaks closer, until p_l realizes that the vixen is approaching her den — a den where cubs must surely hide. A competitor denning within c_n's borders is an outrage, and the patrol leaps to attack, pinning the vixen in a cluster of boulders. Her body, and that of her cubs, will go to the fresh-kill pile tonight."
+                    "The patrol sneaks closer, until p_l realizes that the vixen is approaching her den \u00e2\u20ac\u201d a den where cubs must surely hide. A competitor denning within c_n's borders is an outrage, and the patrol leaps to attack, pinning the vixen in a cluster of boulders. Her body, and that of her cubs, will go to the fresh-kill pile tonight."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
