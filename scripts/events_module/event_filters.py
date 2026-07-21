@@ -377,7 +377,7 @@ def event_for_required_cat_types(
     for c_type, amount_range in required_types.items():
         type_list = current_cat_types.get(c_type, [])
 
-        if amount_range[0] >= len(type_list) >= amount_range[1]:
+        if amount_range[0] > len(type_list) or len(type_list) > amount_range[1]:
             return False
 
     return True
