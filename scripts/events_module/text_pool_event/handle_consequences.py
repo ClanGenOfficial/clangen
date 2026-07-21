@@ -373,7 +373,13 @@ def _handle_conditions(
                     cats_and_conditions[c].append(chosen_condition)
 
     for c, conditions in cats_and_conditions.items():
-        results.append(i18n.t("general.got_condition", cat=c, conditions=conditions))
+        results.append(
+            i18n.t(
+                "general.got_condition",
+                cat=_profile_link(c),
+                conditions=adjust_list_text(conditions),
+            )
+        )
 
     return " ".join(results)
 
@@ -543,7 +549,7 @@ def __handle_prey(
             )
 
         if amount_gained > 0:
-            final_amount += round(amount_gained, 2)
+            final_amount += round(amount_gained)
             print(f"PREY ADDED: {amount_gained}")
             adjust_type = prey["adjust"].replace("increase_", "")
             results.append(i18n.t(f"screens.patrol.prey_{adjust_type}"))

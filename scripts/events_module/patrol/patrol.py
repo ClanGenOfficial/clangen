@@ -350,8 +350,14 @@ class Patrol:
         if self.debug_patrol_id:
             patrol_override = [
                 p for p in possible_patrols if p.id == self.debug_patrol_id
-            ][0]
-            chosen_frequency = patrol_override.frequency
+            ]
+            if patrol_override:
+                patrol_override = patrol_override[0]
+                chosen_frequency = patrol_override.frequency
+            else:
+                print(
+                    "Debug patrol wasn't in the list of possible patrols, make sure to choose the matching patrol type in-game!"
+                )
         else:
             patrol_override = None
 
@@ -603,6 +609,7 @@ class Patrol:
                     continue
 
             if not chosen_failure:
+                used_frequencies = set()
                 possible_outcomes = [
                     x
                     for x in fail_outcomes
@@ -942,7 +949,7 @@ class Patrol:
 
         return success_outcome if success else fail_outcome, success
 
-    def balance_hunting(self, possible_patrols: list):
+    def balance_hunting(self, possible_patrols: list[PatrolEvent]):
         """Filter the incoming hunting patrol list to balance the different kinds of hunting patrols.
         With this filtering, there should be more prey possible patrols.
 
@@ -994,7 +1001,7 @@ class Patrol:
 
             if chosen_prey_size == most_prey_size:
                 filtered_patrols.append(patrol)
-            elif self.debug_patrol_id and self.debug_patrol_id == patrol.patrol_id:
+            elif self.debug_patrol_id and self.debug_patrol_id == patrol.id:
                 print(
                     "DEBUG: requested patrol does not meet constraints (failed prey balancing)"
                 )
@@ -1006,7 +1013,7 @@ class Patrol:
             filtered_patrols = possible_patrols
         return filtered_patrols
 
-    def get_patrol_art(self, outcome: TextPoolEvent = None) -> pygame.Surface:
+    def get_patrol_art(self, outcome: TextPoolEvent = None) -> Optional[pygame.Surface]:
         """Return's patrol art surface"""
         if not self.patrol_event or not isinstance(self.patrol_event.patrol_art, str):
             return pygame.Surface((600, 600), flags=pygame.SRCALPHA)
@@ -1025,11 +1032,12 @@ class Patrol:
                 self.patrol_event.patrol_art if not outcome else outcome.outcome_art
             )
 
-        if (
-            not outcome
-            and not isinstance(file_name, str)
-            or not path_exists(f"{root_dir}{file_name}.png")
+        if not isinstance(file_name, str) or not path_exists(
+            f"{root_dir}{file_name}.png"
         ):
+            if outcome:
+                return None
+
             if "herb_gathering" in self.patrol_event.types:
                 file_name = "med"
             elif "hunting" in self.patrol_event.types:
