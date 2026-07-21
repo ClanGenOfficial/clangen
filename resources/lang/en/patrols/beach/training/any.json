@@ -255,7 +255,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/bch_train_stuck_Wr",
-        "intro_text": "As {PRONOUN/r_c0/subject} {VERB/r_c0/lag/lags} behind on patrol, the dune r_c's crossing shifts beneath {PRONOUN/r_c0/poss} paws. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly for safe footing \u00e2\u20ac\u201d just as the sand caves in beneath {PRONOUN/r_c0/object} and the world goes dark.",
+        "intro_text": "As {PRONOUN/r_c0/subject} {VERB/r_c0/lag/lags} behind on patrol, the dune r_c's crossing shifts beneath {PRONOUN/r_c0/poss} paws. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly for safe footing — just as the sand caves in beneath {PRONOUN/r_c0/object} and the world goes dark.",
         "decline_text": "Thankfully, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} on the edge of the obstruction and {VERB/r_c0/wriggle/wriggles} {PRONOUN/r_c0/poss} way clear.",
         "success_outcomes": [
             {
@@ -633,7 +633,7 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/bch_train_stuck_Wr",
-        "intro_text": "As r_c0 trails behind p_l, the dune {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} crossing shifts beneath r_c's paws. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly for safe footing \u00e2\u20ac\u201d just as the sand caves in beneath {PRONOUN/r_c0/object} and the world goes dark.",
+        "intro_text": "As r_c0 trails behind p_l, the dune {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} crossing shifts beneath r_c's paws. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly for safe footing — just as the sand caves in beneath {PRONOUN/r_c0/object} and the world goes dark.",
         "decline_text": "Thankfully, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} on the edge of the obstruction and {VERB/r_c0/wriggle/wriggles} {PRONOUN/r_c0/poss} way clear.",
         "success_outcomes": [
             {
@@ -914,7 +914,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/bch_train_stuck_Wr",
-        "intro_text": "p_l is training alone out on the coast when suddenly, the dune {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} standing on shifts beneath {PRONOUN/p_l/poss} paws. {PRONOUN/p_l/subject/CAP} {VERB/p_l/look/looks} around wildly for safe footing \u00e2\u20ac\u201d just as the sand caves in beneath {PRONOUN/p_l/object} and the world goes dark.",
+        "intro_text": "p_l is training alone out on the coast when suddenly, the dune {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} standing on shifts beneath {PRONOUN/p_l/poss} paws. {PRONOUN/p_l/subject/CAP} {VERB/p_l/look/looks} around wildly for safe footing — just as the sand caves in beneath {PRONOUN/p_l/object} and the world goes dark.",
         "decline_text": "Thankfully, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} on the edge of the obstruction and {VERB/p_l/wriggle/wriggles} {PRONOUN/p_l/poss} way clear.",
         "success_outcomes": [
             {
@@ -1123,7 +1123,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l heads off to map out a field of sand dunes {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} always found confusing. Hunting, fighting, driving off predators \u00e2\u20ac\u201d it all requires knowledge of {PRONOUN/p_l/poss} home turf. It's always worth making sure {PRONOUN/p_l/poss} mental map is up to date. It feels like work though, and it isn't the peaceful break {PRONOUN/p_l/subject} hoped for."
+                    "p_l heads off to map out a field of sand dunes {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} always found confusing. Hunting, fighting, driving off predators — it all requires knowledge of {PRONOUN/p_l/poss} home turf. It's always worth making sure {PRONOUN/p_l/poss} mental map is up to date. It feels like work though, and it isn't the peaceful break {PRONOUN/p_l/subject} hoped for."
                 ],
                 "exp_gained": 20
             },
@@ -2184,7 +2184,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "r_c1 met with r_c2 to spend time together \u00e2\u20ac\u201d just the two of them."
+                            "cats_from": "r_c1 met with r_c2 to spend time together — just the two of them."
                         }
                     }
                 ]
@@ -2922,7 +2922,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 shows off how far {PRONOUN/r_c0/subject} can pounce, so p_l shows off how fast {PRONOUN/p_l/subject} can run, so r_c0 shows off how sharp {PRONOUN/r_c0/poss} claws are, so p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, so r_c0 shows off how long {PRONOUN/r_c0/poss} legs are, so p_l shows off how cool {PRONOUN/p_l/poss} scars are \u00e2\u20ac\u201d this goes on all afternoon."
+                    "r_c0 shows off how far {PRONOUN/r_c0/subject} can pounce, so p_l shows off how fast {PRONOUN/p_l/subject} can run, so r_c0 shows off how sharp {PRONOUN/r_c0/poss} claws are, so p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, so r_c0 shows off how long {PRONOUN/r_c0/poss} legs are, so p_l shows off how cool {PRONOUN/p_l/poss} scars are — this goes on all afternoon."
                 ],
                 "exp_gained": 15,
                 "relationship_changes": [
@@ -3313,14 +3313,14 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": "p_l notices r_c1 fall awkwardly again and calls a halt to the lesson, saying they all need to catch their breath. Instead, p_l will tell the apprentices about the Fox Warrior \u00e2\u20ac\u201d have they heard this piece of Clan history?",
+        "intro_text": "p_l notices r_c1 fall awkwardly again and calls a halt to the lesson, saying they all need to catch their breath. Instead, p_l will tell the apprentices about the Fox Warrior — have they heard this piece of Clan history?",
         "decline_text": "r_c1, surly and embarrassed, stalks off away from the training grounds before p_l can offer the comfort of {PRONOUN/p_l/poss} story.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "outcome_art": "gen_hunt_vision",
                 "strings": [
-                    "The Fox Warrior was not the biggest, or fastest, or strongest of his Clan. A fox took his eye, a dog weakened his leg, and frostbite almost took his life, yet he took them all without a flinch, never backing down. His only wish was to shield his Clan. Some say he still sneaks down from StarClan to defend c_n on occasion \u00e2\u20ac\u201d a true warrior, never forgotten."
+                    "The Fox Warrior was not the biggest, or fastest, or strongest of his Clan. A fox took his eye, a dog weakened his leg, and frostbite almost took his life, yet he took them all without a flinch, never backing down. His only wish was to shield his Clan. Some say he still sneaks down from StarClan to defend c_n on occasion — a true warrior, never forgotten."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -3348,7 +3348,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 can't sit still and listen to p_l's story, not when {PRONOUN/r_c1/poss} ego's smarting from {PRONOUN/r_c1/poss} failures. p_l doesn't push it, instead letting r_c1 go and run off {PRONOUN/r_c1/poss} energy \u00e2\u20ac\u201d there'll be time enough for listening another day, and r_c1's persistence is as Fox Warrior-like as anyone could wish."
+                    "r_c1 can't sit still and listen to p_l's story, not when {PRONOUN/r_c1/poss} ego's smarting from {PRONOUN/r_c1/poss} failures. p_l doesn't push it, instead letting r_c1 go and run off {PRONOUN/r_c1/poss} energy — there'll be time enough for listening another day, and r_c1's persistence is as Fox Warrior-like as anyone could wish."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -3623,7 +3623,7 @@
                 "frequency": 4,
                 "outcome_art": "gen_hunt_vision",
                 "strings": [
-                    "Though they wash over the land, the tides are connected to the moon, p_l meows. At night this becomes obvious \u00e2\u20ac\u201d the new moon and the full moon both produce spring tides of unusual strength. And every so often, if the moon is displeased, a spring tide gains twice the height and strength, producing a king tide."
+                    "Though they wash over the land, the tides are connected to the moon, p_l meows. At night this becomes obvious — the new moon and the full moon both produce spring tides of unusual strength. And every so often, if the moon is displeased, a spring tide gains twice the height and strength, producing a king tide."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -3670,7 +3670,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittymad_Wr",
                 "strings": [
-                    "Learning about the tides is boring \u00e2\u20ac\u201d shoving each other into the water, now <i>that's</i> training! p_l is not pleased."
+                    "Learning about the tides is boring — shoving each other into the water, now <i>that's</i> training! p_l is not pleased."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
