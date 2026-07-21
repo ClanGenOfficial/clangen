@@ -37,7 +37,7 @@ def get_patrol_list(
     # get specific type
     if patrol_type == "herb_gathering":
         # only one that doesn't match its path sadly
-        patrol_type = "medcat"
+        patrol_type = "med"
 
     possible_patrols.extend(_get_all_patrols_of_type(patrol_type, biome, path, season))
 

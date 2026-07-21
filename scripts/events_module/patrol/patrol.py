@@ -500,7 +500,7 @@ class Patrol:
         return True
 
     def _patrol_pass_cat_constraints(self, patrol: PatrolEvent) -> bool:
-        temp_involved_cats = {}
+        temp_involved_cats = self.involved_cats.copy()
 
         outside_cats = [
             c
@@ -583,6 +583,10 @@ class Patrol:
                     if x.frequency == chosen_frequency and x.id not in tested_outcomes
                 ]
                 if not possible_outcomes:
+                    if len(used_frequencies) == 4:
+                        raise Exception(
+                            f"Valid success outcome could not be found for {self.patrol_event.id}"
+                        )
                     used_frequencies.add(chosen_frequency)
                     chosen_frequency = find_new_frequency(used_frequencies)
                     continue
@@ -605,6 +609,10 @@ class Patrol:
                     if x.frequency == chosen_frequency and x.id not in tested_outcomes
                 ]
                 if not possible_outcomes:
+                    if len(used_frequencies) == 4:
+                        raise Exception(
+                            f"Valid fail outcome could not be found for {self.patrol_event.id}"
+                        )
                     used_frequencies.add(chosen_frequency)
                     chosen_frequency = find_new_frequency(used_frequencies)
                     continue
