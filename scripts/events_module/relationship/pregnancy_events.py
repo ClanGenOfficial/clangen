@@ -105,7 +105,7 @@ class Pregnancy_Events:
             if not mate:
                 continue
             if include_dead:
-                if mate.dead
+                if mate.dead:
                     return mate
         return None
 
