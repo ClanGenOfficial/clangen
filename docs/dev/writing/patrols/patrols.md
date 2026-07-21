@@ -9,14 +9,12 @@ When considering patrols, keep in mind challenge vs reward. That isn't to say ce
 
 ## Usable Cat References
 
-| abbreviation | use                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `p_l`        | The patrol leader: the cat in the patrol with the highest relevant rank and, within involved cats of that rank, is either the oldest or the most experienced.  For medicine cat patrols, this will either be a medicine cat or medicine cat apprentice. For normal patrols, this will go from the highest to lowest rank (leader > deputy > warrior > apprentice).                                                                                                       |
-| `r_c`        | A random cat: this cat is chosen at complete random and will not be the patrol leader. You can specify constraints on this cat to require it to have certain attributes rather than being entirely random.                                                                                                                                                                                                                                                               |
-| `r_c#`       | An additional random cat: this cat is chosen at complete random and will not be the patrol leader. You can specify constraints on this cat to require it to have certain attributes rather than being entirely random. The `#` is replaced with a number: 1-4. It's recommended to begin at 1 and increment as needed.                                                                                                                                                   |
-| `s_c`        | A special cat: this cat has some constraints being required of it and could be a cat who was previously assigned an abbreviation. For example, if the patrol as a whole requires `r_c` to be a warrior and you wish to add an outcome in which any cat with the `calm` trait, including `r_c`, could also play a role, then you would use `s_c` for that cat.                                                                                                            |      
-| `s_c#`       | An additional special cat: this cat has some constraints being required of it and could be a cat who was previously assigned an abbreviation. For example, if the patrol as a whole requires `r_c` to be a warrior and you wish to add an outcome in which any cat with the `calm` trait, including `r_c`, could also play a role, then you would use `s_c` for that cat.The `#` is replaced with a number: 1-5. It's recommended to begin at 1 and increment as needed. |                                                                                                                                                                                                                                                                                 |
-| `n_c:#`      | A newly generated or existing outsider/other clan cat: The `#` is replaced with a number: 0-6. It's recommended to begin at 0 and increment as needed.                                                                                                                                                                                                                                                                                                                   |
+| abbreviation | use                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `p_l`        | The patrol leader: the cat in the patrol with the highest relevant rank and, within involved cats of that rank, is either the oldest or the most experienced.  For medicine cat patrols, this will either be a medicine cat or medicine cat apprentice. For normal patrols, this will go from the highest to lowest rank (leader > deputy > warrior > apprentice).                                                                                                         |                                                                                                 |
+| `r_c#`       | A random cat: this cat is chosen at complete random and will not be the patrol leader. You can specify constraints on this cat to require it to have certain attributes rather than being entirely random. The `#` is replaced with a number: 0-5. It's recommended to begin at 1 and increment as needed.                                                                                                                                                                 | |      
+| `s_c#`       | An additional special cat: this cat has some constraints being required of it and could be a cat who was previously assigned an abbreviation. For example, if the patrol as a whole requires `r_c0` to be a warrior and you wish to add an outcome in which any cat with the `calm` trait, including `r_c0`, could also play a role, then you would use `s_c` for that cat.The `#` is replaced with a number: 0-5. It's recommended to begin at 1 and increment as needed. |                                                                                                                                                                                                                                                                                 |
+| `n_c:#`      | A newly generated or existing outsider/other clan cat: The `#` is replaced with a number: 0-6. It's recommended to begin at 0 and increment as needed.                                                                                                                                                                                                                                                                                                                     |
 
 
 ## Formatting
@@ -250,7 +248,7 @@ You can tag with a mix of "newleaf", "greenleaf", "leaf-fall", "leaf-bare", or r
 #### involved_cats: Dict[str, var]
 This dictionary holds all constraints for the cats whom we wish to reference in the patrol.
 
-Each entry is an individual cat, with the key being their [event designation](#usable-cat-references) (`r_c`, `p_l`, etc.) and the value being their personal constraints.
+Each entry is an individual cat, with the key being their [event designation](#usable-cat-references) (`r_c0`, `p_l`, etc.) and the value being their personal constraints.
 
 ```json
             "abbr": {
@@ -410,10 +408,10 @@ Constrains the event to only occur is the specified relationships exist. Multipl
         ]
 ```
 **cats_from:list**
->The cats from whom the relationship originates. Use the designations (`p_l`, `r_c`, etc.) of cats listed in `involved_cats`.
+>The cats from whom the relationship originates. Use the designations (`p_l`, `r_c0`, etc.) of cats listed in `involved_cats`.
 
 **cats_to:list**
->The cats who are the target of the relationship. Use the designations (`p_l`, `r_c`, etc.) of cats listed in `involved_cats`.
+>The cats who are the target of the relationship. Use the designations (`p_l`, `r_c0`, etc.) of cats listed in `involved_cats`.
 
 ***
 
@@ -633,8 +631,6 @@ Constrains the event to only occur is the specified relationships exist. Multipl
 
 ***
 
-
-***
 
 #### patrol_art: str
 >The name of displayed patrol art file, without any file extension (no .png).
