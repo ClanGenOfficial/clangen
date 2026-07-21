@@ -16,6 +16,9 @@ When considering patrols, keep in mind challenge vs reward. That isn't to say ce
 | `s_c#`       | An additional special cat: this cat has some constraints being required of it and could be a cat who was previously assigned an abbreviation. For example, if the patrol as a whole requires `r_c0` to be a warrior and you wish to add an outcome in which any cat with the `calm` trait, including `r_c0`, could also play a role, then you would use `s_c` for that cat.The `#` is replaced with a number: 0-5. It's recommended to begin at 1 and increment as needed. |                                                                                                                                                                                                                                                                                 |
 | `n_c:#`      | A newly generated or existing outsider/other clan cat: The `#` is replaced with a number: 0-6. It's recommended to begin at 0 and increment as needed.                                                                                                                                                                                                                                                                                                                     |
 
+!!! tip
+    While not usable within the text of the events, you *can* use keys listed in [required_cat_types](#required_cat_types-dictstr-listint) to gather cats for other parts of the event, such as the `cats_from`/`cats_to` lists. For example, if apprentices are able to come on the patrol, then you can use `"apprentice"` in the `cats_from` list of `relationship_constraint` to specify constraints that the apprentices as a whole must abide by.
+
 
 ## Formatting
 
