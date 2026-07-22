@@ -1146,6 +1146,53 @@
         ]
     },
     {
+        "event_id": "gen_misc_murderreveal_leaderdream1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "murder_reveal"
+        ],
+        "frequency": 2,
+        "event_text": "m_c is troubled by a StarClan dream. Images of blood spilled between Clanmates swirled around {PRONOUN/m_c/object}. When {PRONOUN/m_c/subject} {VERB/m_c/wake/wakes}, the details fade, leaving behind a sense of unease and a certainty that mur_c's death was no accident.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "leader"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_misc_murderreveal_leaderdream2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "murder_reveal"
+        ],
+        "frequency": 2,
+        "event_text": "m_c dreams of mur_c, but StarClan keeps this vision steady. {PRONOUN/mur_c/subject/CAP} {VERB/mur_c/stand/stands} before {PRONOUN/m_c/object} with unwavering persistence and tufts of fur beneath {PRONOUN/mur_c/subject}'s claws. m_c wakes with the image burned into {PRONOUN/m_c/poss} pelt.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "leader"
+            ],
+            "skill": [
+                "PROPHET,3"
+            ]
+        }
+    },
+    {
         "event_id": "gen_misc_hiddenmurderreveal_medcat1",
         "location": [
             "any"
@@ -16694,6 +16741,132 @@
         "event_text": "m_c overhears some interesting gossip from the other medicine cats at {POI/category/moonplace}.",
         "m_c": {
             "status": ["medicine cat"]
+        }
+    },
+    {
+        "event_id": "gen_misc_leaderproud_starclan1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "event_text": "m_c dreams of standing before r_c. The clan will all join {PRONOUN/r_c/object} someday. \"Are they proud of me?\" m_c asks, voice small. r_c replies with warmth. \"We all are.\"",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "leader"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "leader"
+            ],
+            "group": [
+                "starclan"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_misc_starclanparent_comfort1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "event_text": "m_c dreams of r_c in StarClan. {PRONOUN/r_c/poss/CAP} warmth encircles the two long enough for m_c to wake with the feeling lingering on {PRONOUN/m_c/poss} pelt.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ],
+            "relationship_status": [
+                "child/parent"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ],
+            "group": [
+                "starclan"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_misc_leaderproud_darkforest1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "event_text": "m_c dreams of standing before r_c. A shudder rolls through {PRONOUN/m_c/object} as muck seeps under {PRONOUN/m_c/poss} paws. \"Are you proud of me?\" m_c asks, the question spoken aloud before {PRONOUN/m_c/subject} has the chance to think. r_c only sneers. \"Proud? Of what?\"",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "leader"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "leader"
+            ],
+            "group": [
+                "dark_forest"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_misc_darkforestparent_taunt1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "event_text": "m_c dreams of r_c, missing {PRONOUN/m_c/poss} parent, only to find {PRONOUN/r_c/poss} cold eyes and a voice that whispers {PRONOUN/m_c/subject} will never be enough. m_c wakes gasping, the words still crawling under {PRONOUN/m_c/poss} skin.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ],
+            "relationship_status": [
+                "child/parent"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ],
+            "group": [
+                "dark_forest"
+            ]
         }
     }
 ]
