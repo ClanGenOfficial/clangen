@@ -4443,13 +4443,6 @@
                 "strings": [
                     "It's amazing that birds just leave these lying about! p_l finds a low-hanging nest, shoos away the sparrow, and trots home with the eggs, one by one adding them to the fresh-kill pile, fluffing out {PRONOUN/p_l/poss} chest fur in pride."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 25,
                 "supply": [
                     {
@@ -4463,13 +4456,6 @@
                 "strings": [
                     "Going out by {PRONOUN/p_l/self} makes everything much harder, and instead of fishing eggs out, p_l accidentally knocks {PRONOUN/p_l/poss} target nest out of the tree. But at least a couple of the eggs are unbroken, and that's better than nothing. {PRONOUN/p_l/subject/CAP} {VERB/p_l/lap/laps} up the yolk from the broken eggs — better than letting them go to waste!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 25,
                 "supply": [
                     {
@@ -4483,13 +4469,6 @@
                 "strings": [
                     "It doesn't take long to find a nest, positioned high in the crook between two thin branches of a hazelnut tree. But p_l isn't confident {PRONOUN/p_l/subject} can safely make that climb. Instead, {PRONOUN/p_l/subject} {VERB/p_l/grab/grabs} a stick and {VERB/p_l/jab/jabs} at the nest from further away, sending it plummeting out of the tree. Some of the eggs inside are smashed open, but there's still a couple left to bring home."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 25,
                 "supply": [
                     {
@@ -4505,13 +4484,6 @@
                 "strings": [
                     "Step one: find nests... has conclusively failed. At least {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alone though — p_l trips over a branch on the forest floor as {PRONOUN/p_l/subject} {VERB/p_l/walk/walks} with {PRONOUN/p_l/poss} eyes pinned skyward, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} grateful no one was there to see it."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             },
             {
@@ -4520,11 +4492,6 @@
                     "It doesn't take long to find a nest, positioned high in the crook between two thin branches of a hazelnut tree. But p_l is confident {PRONOUN/s_c0/subject} can safely make that climb! {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} rather less confident once up so high in the air, and eventually {PRONOUN/s_c0/subject} {VERB/s_c0/retreat/retreats}, shaking."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "prior_abbreviation": [
                             "any"
@@ -4548,18 +4515,11 @@
                 "strings": [
                     "Going out by {PRONOUN/p_l/self} makes everything much harder, and instead of fishing eggs out, p_l accidentally knocks {PRONOUN/p_l/poss} target nest and {PRONOUN/p_l/self} out of the tree. {PRONOUN/p_l/subject/CAP} {VERB/p_l/hit/hits} the ground hard, hearing the crack of something breaking."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "blunt_force_injury"
@@ -4575,11 +4535,6 @@
                     "It doesn't take long to find a nest, positioned high in the crook between two thin branches of a hazelnut tree. But p_l is confident {PRONOUN/s_c0/subject} can safely make that climb! {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} rather less confident once up so high in the air, and {PRONOUN/s_c0/poss} claws slip, sending {PRONOUN/p_l/object} plummeting earthwards."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "prior_abbreviation": [
                             "any"
@@ -4614,11 +4569,6 @@
                     "It doesn't take long to find a nest, positioned high in the crook between two thin branches of a hazelnut tree. But p_l is confident {PRONOUN/s_c0/subject} can safely make that climb! {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} rather less confident once up so high in the air, and {PRONOUN/s_c0/poss} claws slip, sending {PRONOUN/p_l/object} plummeting earthwards, where StarClan awaits."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "prior_abbreviation": [
                             "any"

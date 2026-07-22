@@ -1239,13 +1239,6 @@
                 1
             ]
         },
-        "involved_cats": {
-            "p_l": {
-                "status": [
-                    "apprentice"
-                ]
-            }
-        },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
         "intro_text": "p_l decides to hunt out near the Twoleg dens.",
@@ -1358,18 +1351,11 @@
                 "strings": [
                     "Carelessly, p_l is seen by Twolegs and taken from c_n."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "lost": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ]
                     }
                 ]

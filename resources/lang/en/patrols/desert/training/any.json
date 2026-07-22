@@ -3024,7 +3024,7 @@
         ]
     },
     {
-        "id": "dst_train_lblfnl_beetlesolor_c1",
+        "id": "dst_train_lblfnl_beetlesoloapp",
         "types": [
             "training"
         ],
@@ -3047,13 +3047,6 @@
                 1
             ]
         },
-        "involved_cats": {
-            "p_l": {
-                "status": [
-                    "apprentice"
-                ]
-            }
-        },
         "chance_of_success": 60,
         "patrol_art": "train_general_intro",
         "intro_text": "p_l crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/p_l/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock.",
@@ -3064,13 +3057,6 @@
                 "strings": [
                     "Ha! p_l pounces, the pathetic bug crunching underneath {PRONOUN/p_l/poss} mighty blow, splattering and — ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/p_l/poss} paws, between {PRONOUN/p_l/poss} toes, EWWWWW!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20
             },
             {
@@ -3078,13 +3064,6 @@
                 "strings": [
                     "Ha! p_l leaps, tail lashing furiously as the beetle buzzes under {PRONOUN/p_l/poss} forepaws, claws sheathed. {PRONOUN/p_l/subject/CAP} {VERB/p_l/bat/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN/p_l/poss} colorful prey flits around {PRONOUN/p_l/poss} head in confused, concussed beetle-behavior, unused to being an apprentice's new favorite toy."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20
             },
             {
@@ -3093,11 +3072,6 @@
                     "s_c0 pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/p_l/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} notice {PRONOUN/p_l/poss} own skill catching and keeping the bug."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "prior_abbreviation": [
                             "any"
@@ -3118,13 +3092,6 @@
                 "strings": [
                     "While p_l is wiggling {PRONOUN/p_l/poss} butt into the perfect pouncing position, the beetle flies off. Awwwww."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             },
             {
@@ -3132,13 +3099,6 @@
                 "strings": [
                     "Slimy, yet satisfying! Curiosity completed, p_l wanders off — but has to report to the medicine cat den later, when {PRONOUN/p_l/poss} stomach reminds {PRONOUN/p_l/object} why cats don't eat random bugs."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -3147,7 +3107,7 @@
                             "high_social"
                         ],
                         "cats_to": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "values": [
                             "like"
@@ -3162,7 +3122,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "stomachache"

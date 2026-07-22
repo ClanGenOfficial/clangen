@@ -4685,15 +4685,8 @@
             ],
             "apprentice": [
                 1,
-                6
+                1
             ]
-        },
-        "involved_cats": {
-            "p_l": {
-                "status": [
-                    "apprentice"
-                ]
-            }
         },
         "chance_of_success": 10,
         "patrol_art": "hunt_general_intro",
@@ -4705,13 +4698,6 @@
                 "strings": [
                     "p_l pounces on the mouse, with a squeak of surprise from both prey and apprentice."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 40,
                 "supply": [
                     {
@@ -4725,13 +4711,6 @@
                 "strings": [
                     "p_l leaps onto the mouse and makes the kill easily! {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} really getting the hang of hunting!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 40,
                 "supply": [
                     {
@@ -4747,13 +4726,6 @@
                 "strings": [
                     "p_l narrowly misses the mouse."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "supply": [
                     {

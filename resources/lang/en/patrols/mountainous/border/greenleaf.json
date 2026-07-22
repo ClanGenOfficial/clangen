@@ -208,14 +208,11 @@
             ],
             "apprentice": [
                 1,
-                6
+                1
             ]
         },
         "involved_cats": {
             "p_l": {
-                "status": [
-                    "apprentice"
-                ],
                 "has_mentor": true
             }
         },
@@ -229,13 +226,6 @@
                 "strings": [
                     "The scent leads to a trespassing rogue. p_l runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory. Well, they probably weren't super friendly then, p_l assumes."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10
             },
             {
@@ -277,13 +267,6 @@
                 "strings": [
                     "p_l soon realizes that underneath the strange scent, there are pawprints that smell of c_n. Someone must have wandered through this section of the border recently. In fact... {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} pretty sure this is {PRONOUN/p_l/poss} mentor's scent. And {PRONOUN/p_l/poss} mentor has been hinting {PRONOUN/p_l/subject}'ll have an assessment soon."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10
             }
         ],
@@ -293,13 +276,6 @@
                 "strings": [
                     "The strange scent leads to a stinky dogwood tree, newly in bloom... p_l huffs with embarrassment, suddenly grateful {PRONOUN/p_l/subject} {VERB/p_l/are/is} alone. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} want to look dumb in front of other cats."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             },
             {
@@ -307,18 +283,11 @@
                 "strings": [
                     "Following the trail with {PRONOUN/p_l/poss} nose to the ground, p_l doesn't see the blow that kills {PRONOUN/p_l/object}."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "history": "m_c was killed by an invading rogue."
                     }
@@ -329,18 +298,11 @@
                 "strings": [
                     "Following the trail with {PRONOUN/p_l/poss} nose to the ground, p_l doesn't see the blow coming. {PRONOUN/p_l/subject/CAP} {VERB/p_l/haul/hauls} {PRONOUN/p_l/self} to {PRONOUN/p_l/poss} feet, squealing with pain, and {VERB/p_l/run/runs} for home."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "battle_injury"

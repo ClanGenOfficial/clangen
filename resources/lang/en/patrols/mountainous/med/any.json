@@ -188,14 +188,6 @@
                 1
             ]
         },
-        "involved_cats": {
-            "p_l": {
-                "status": [
-                    "apprentice",
-                    "medicine cat apprentice"
-                ]
-            }
-        },
         "chance_of_success": 65,
         "patrol_art": "cat_sprites/mtn_med_herblocation_Ap",
         "intro_text": "p_l has been sent out into the mountains to try to find herbs alone.",
@@ -206,14 +198,6 @@
                 "strings": [
                     "p_l is focused, determined to prove {PRONOUN/p_l/poss} independence. {PRONOUN/p_l/subject/CAP} {VERB/p_l/find/finds} the herbs easily and {VERB/p_l/bring/brings} them back to camp with {PRONOUN/p_l/poss} head held up high — no sweat, no stress, no fuss."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -227,14 +211,6 @@
                 "strings": [
                     "p_l goes to an herb patch {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sure {PRONOUN/p_l/subject} {VERB/p_l/know/knows}, only to find the plants withered and dead. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} give up, hunting around in the area until {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a smaller overlooked bush that still has leaves on it."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -250,14 +226,6 @@
                 "strings": [
                     "p_l goes to an herb patch {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sure {PRONOUN/p_l/subject} {VERB/p_l/know/knows}, only to find the plants withered and dead. {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} up and return to camp, {PRONOUN/p_l/poss} tail dragging miserably along the ground."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             }
         ]

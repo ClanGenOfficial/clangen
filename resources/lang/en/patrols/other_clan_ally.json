@@ -1064,11 +1064,8 @@
                 ],
                 "frequency": 3,
                 "strings": [
-                    "r_c0 follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning, but they aren't quick enough and a large dog suddenly descends upon r_c0. r_c0 is killed before {PRONOUN/r_c0/subject} can run."
+                    "p_l follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning, but they aren't quick enough and a large dog suddenly descends upon p_l. p_l is killed before {PRONOUN/p_l/subject} can run."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 0,
                 "reputation_changes": {
                     "other_clan": -1
@@ -1076,7 +1073,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "history": "m_c followed the scent of a trespassing cat and was killed by a dog."
                     }
@@ -1085,11 +1082,8 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c0 follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning and r_c0 sprints for the same tree when they hear the cry. Just in time, too, as a large dog jumps at them, catching r_c0 but thankfully only injuring {PRONOUN/r_c0/object} before r_c0 tears {PRONOUN/r_c0/self} free and scales the tree."
+                    "p_l follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning and p_l sprints for the same tree when they hear the cry. Just in time, too, as a large dog jumps at them, catching p_l but thankfully only injuring {PRONOUN/p_l/object} before p_l tears {PRONOUN/p_l/self} free and scales the tree."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 0,
                 "reputation_changes": {
                     "other_clan": -1
@@ -1097,7 +1091,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "condition": [
                             "bite-wound",
