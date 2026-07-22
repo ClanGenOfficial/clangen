@@ -778,7 +778,7 @@ class Patrol:
                         injuries=possible_injuries,
                         event_id=self.patrol_event.id,
                     ):
-                        return False
+                        continue
 
                     # check rel constraints
                     if outcome.relationship_constraint:
@@ -786,11 +786,14 @@ class Patrol:
                             if not check_rel_constraint_groups(
                                 constraints_dict=block, involved_cats=temp_involved_cats
                             ):
-                                return False
+                                continue
 
                     # if we made it here, this cat works! use them
                     temp_involved_cats[abbr] = c
                     break
+
+                if abbr not in temp_involved_cats:
+                    return False
 
             # if neither of those is happening, then we check if any of our uninvolved cats can take this spot!
             else:
