@@ -1168,31 +1168,6 @@
         }
     },
     {
-        "event_id": "gen_misc_murderreveal_leaderdream2",
-        "location": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "murder_reveal"
-        ],
-        "frequency": 2,
-        "event_text": "m_c dreams of mur_c, but StarClan keeps this vision steady. {PRONOUN/mur_c/subject/CAP} {VERB/mur_c/stand/stands} before {PRONOUN/m_c/object} with unwavering persistence and tufts of fur beneath {PRONOUN/mur_c/subject}'s claws. m_c wakes with the image burned into {PRONOUN/m_c/poss} pelt.",
-        "m_c": {
-            "age": [
-                "any"
-            ],
-            "status": [
-                "leader"
-            ],
-            "skill": [
-                "PROPHET,3"
-            ]
-        }
-    },
-    {
         "event_id": "gen_misc_hiddenmurderreveal_medcat1",
         "location": [
             "any"
@@ -16744,7 +16719,7 @@
         }
     },
     {
-        "event_id": "gen_misc_leaderproud_starclan1",
+        "event_id": "gen_misc_leader_starclan1",
         "location": [
             "any"
         ],
@@ -16752,10 +16727,13 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c dreams of standing before r_c. The clan will all join {PRONOUN/r_c/object} someday. \"Are they proud of me?\" m_c asks, voice small. r_c replies with warmth. \"We all are.\"",
+        "event_text": "m_c dreams of r_c surrounded by swirling mist and light. {PRONOUN/r_c/subject/CAP} {VERB/r_c/are/is} silent, but the message is clear and comforting when m_c wakes.",
         "m_c": {
             "age": [
                 "any"
+            ],
+            "skill": [
+                "STAR,3"
             ],
             "status": [
                 "leader"
@@ -16787,7 +16765,7 @@
                 ],
                 "amount": 4,
                 "log": {
-                    "cats_from": "cat_from felt comforted after dreaming of cat_to's pride in them."
+                    "cats_from": "cat_from felt comforted after dreaming of cat_to watching over their leadership."
                 }
             }
         ]
@@ -16801,10 +16779,13 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c dreams of r_c in StarClan. {PRONOUN/r_c/poss/CAP} warmth encircles the two long enough for m_c to wake with the feeling lingering on {PRONOUN/m_c/poss} pelt.",
+        "event_text": "m_c dreams of r_c in mist and light. {PRONOUN/r_c/poss/CAP} warmth encircles the two long enough for m_c to wake with the feeling lingering on {PRONOUN/m_c/poss} pelt.",
         "m_c": {
             "age": [
                 "any"
+            ],
+            "skill": [
+                "STAR,2"
             ],
             "status": [
                 "any"
@@ -16845,7 +16826,7 @@
         ]
     },
     {
-        "event_id": "gen_misc_leaderproud_darkforest1",
+        "event_id": "gen_misc_leader_darkforest1",
         "location": [
             "any"
         ],
@@ -16853,10 +16834,13 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c dreams of standing before r_c. A shudder rolls through {PRONOUN/m_c/object} as muck seeps under {PRONOUN/m_c/poss} paws. \"Are you proud of me?\" m_c asks, the question spoken aloud before {PRONOUN/m_c/subject} has the chance to think. r_c only sneers. \"Proud? Of what?\"",
+        "event_text": "m_c dreams of darkness and cold. A shudder rolls through {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} {VERB/m_c/notice/notices} r_c staring back at {PRONOUN/m_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/are/is} silent, ready to pounce. When m_c wakes, the unease lingers on {PRONOUN/m_c/poss} pelt, a reminder of the message received.",
         "m_c": {
             "age": [
                 "any"
+            ],
+            "skill": [
+                "DARK,3"
             ],
             "status": [
                 "leader"
@@ -16883,10 +16867,13 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c dreams of r_c, missing {PRONOUN/m_c/poss} parent, only to find {PRONOUN/r_c/poss} cold eyes and a voice that whispers {PRONOUN/m_c/subject} will never be enough. m_c wakes gasping, the words still crawling under {PRONOUN/m_c/poss} skin.",
+        "event_text": "m_c dreams of r_c lurking in the shadows. Voices emerge from the dark and circle the two in bitter coldness. m_c wakes gasping, the words still crawling under {PRONOUN/m_c/poss} skin.",
         "m_c": {
             "age": [
                 "any"
+            ],
+            "skill": [
+                "DARK,2"
             ],
             "status": [
                 "any"
