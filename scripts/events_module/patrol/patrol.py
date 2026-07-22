@@ -293,20 +293,22 @@ class Patrol:
                     compatibility = [
                         get_personality_compatibility(c, love_cat)
                         for love_cat in cats_to
+                        if love_cat != c
                     ]
                     for compat in compatibility:
                         if compat == CatCompatibility.POSITIVE:
-                            chance_of_romance_patrol -= 10
+                            chance_of_romance_patrol -= 5
                         elif compat == CatCompatibility.NEGATIVE:
-                            chance_of_romance_patrol += 10
+                            chance_of_romance_patrol += 5
 
                     rel_values = [
                         check_relationship_value(c, love_cat, val)
                         for val in [*RelType]
                         for love_cat in cats_to
+                        if love_cat != c
                     ]
                     for v in rel_values:
-                        if v < 0:
+                        if v > 0:
                             chance_of_romance_patrol -= 1
                         else:
                             chance_of_romance_patrol += 1
