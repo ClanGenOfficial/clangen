@@ -1157,7 +1157,7 @@
             "murder_reveal"
         ],
         "frequency": 2,
-        "event_text": "m_c is troubled by a StarClan dream. Images of blood spilled between Clanmates swirled around {PRONOUN/m_c/object}. When {PRONOUN/m_c/subject} {VERB/m_c/wake/wakes}, the details fade, leaving behind a sense of unease and a certainty that mur_c's death was no accident.",
+        "event_text": "While deep in a dream, m_c is surrounded by images of blood spilled between Clanmates swirling around {PRONOUN/m_c/object}. When {PRONOUN/m_c/subject} {VERB/m_c/wake/wakes}, the visions fade, leaving behind unease and the certainty that mur_c's death was no accident.",
         "m_c": {
             "age": [
                 "any"
