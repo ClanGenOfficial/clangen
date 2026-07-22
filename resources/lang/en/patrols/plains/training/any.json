@@ -5778,13 +5778,6 @@
                 -1
             ]
         },
-        "involved_cats": {
-            "r_c1": {
-                "status": [
-                    "apprentice"
-                ]
-            }
-        },
         "chance_of_success": 50,
         "patrol_art": "halloween/hal_fresno",
         "intro_text": "This is just weird — what's made the grass here grow to such a uniform low height? Why is it so green? Why has it grown in such a neat circle?",
