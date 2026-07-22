@@ -403,13 +403,6 @@
                 "strings": [
                     "Unfortunately, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} end up finding anything, and {PRONOUN/p_l/subject} {VERB/p_l/slink/slinks} back to camp empty-pawed."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             }
         ]
@@ -921,13 +914,6 @@
                 "strings": [
                     "p_l pounces on the mouse, with a squeak of surprise from both prey and apprentice. Still, no one else was around to see {PRONOUN/p_l/poss} inelegant kill, and p_l feels very mature, bringing in prey to the fresh-kill pile by {PRONOUN/p_l/self}."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -959,13 +945,6 @@
                 "strings": [
                     "p_l leaps onto the mouse, making an easy kill! {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} really getting the hang of hunting!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -973,7 +952,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "values": [
                             "respect"
@@ -999,13 +978,6 @@
                 "strings": [
                     "p_l narrowly misses the mouse."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "supply": [
                     {

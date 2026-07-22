@@ -1583,13 +1583,6 @@
                 "strings": [
                     "At least this is a good chance to learn the territory! p_l heads off to map out a thick field of tall grass {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} always found confusing."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20
             },
             {
@@ -1598,13 +1591,6 @@
                 "strings": [
                     "p_l clambers over a rise in the ground and stumbles across a tiny, perfect pond!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20
             },
             {
@@ -1639,13 +1625,6 @@
                 "strings": [
                     "p_l gets lost in the territory and doesn't learn anything."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             },
             {
@@ -1673,18 +1652,11 @@
                 "strings": [
                     "The apprentice wanders along obliviously and slips, and tumbling right down into a well-hidden gully. Bruised and sore, p_l has to report to the medicine cat den when {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "minor_injury"

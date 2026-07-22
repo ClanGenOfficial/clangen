@@ -6970,7 +6970,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "shock"
@@ -7102,9 +7102,6 @@
                 ],
                 "join": [
                     {
-                        "cats": []
-                    },
-                    {
                         "cats": [
                             "n_c:1"
                         ],
@@ -7178,9 +7175,6 @@
                 ],
                 "join": [
                     {
-                        "cats": []
-                    },
-                    {
                         "cats": [
                             "n_c:1"
                         ],
@@ -7201,7 +7195,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "shock"

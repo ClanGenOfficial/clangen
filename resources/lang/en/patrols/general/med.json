@@ -18,10 +18,6 @@
                 1,
                 6
             ],
-            "healer cats": [
-                1,
-                6
-            ],
             "normal adult": [
                 -1,
                 -1
@@ -1326,7 +1322,7 @@
             ],
             "healer cats": [
                 1,
-                6
+                1
             ]
         },
         "chance_of_success": 40,
@@ -2626,11 +2622,7 @@
             ],
             "healer cats": [
                 1,
-                6
-            ],
-            "normal adult": [
-                1,
-                6
+                1
             ]
         },
         "chance_of_success": 30,
@@ -2990,7 +2982,6 @@
         "involved_cats": {
             "p_l": {
                 "status": [
-                    "apprentice",
                     "medicine cat apprentice"
                 ]
             }
@@ -4918,8 +4909,7 @@
         "involved_cats": {
             "r_c1": {
                 "status": [
-                    "apprentice",
-                    "medicine cat apprentice"
+                    "apprentice"
                 ]
             }
         },

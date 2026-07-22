@@ -1713,7 +1713,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "minor_injury"

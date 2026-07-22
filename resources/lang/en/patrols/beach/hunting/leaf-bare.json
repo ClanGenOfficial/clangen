@@ -187,18 +187,11 @@
                 "strings": [
                     "The wind blows a scent towards {PRONOUN/p_l/object}, and p_l immediately drops into a crouch. {PRONOUN/p_l/subject/CAP} {VERB/p_l/track/tracks} it down to a shallow burrow; when {PRONOUN/p_l/subject} {VERB/p_l/shimmy/shimmies} {PRONOUN/p_l/poss} head and shoulders inside, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a sleeping squirrel! It's an easy kill and a good meal for someone at camp."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -225,18 +218,11 @@
                 "strings": [
                     "p_l walks in circles for a bit and is about to give up and go home, when {PRONOUN/p_l/subject} nearly {VERB/p_l/trip/trips} over a ground squirrel burrow. A chitter from within gets {PRONOUN/p_l/object} excited, and {PRONOUN/p_l/subject} {VERB/p_l/thrust/thrusts} a paw into the entrance and {VERB/p_l/yank/yanks} a squirrel out!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -265,13 +251,6 @@
                 "strings": [
                     "Unfortunately, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} end up finding anything, and {PRONOUN/p_l/subject} {VERB/p_l/slink/slinks} back to camp empty-pawed."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "supply": [
                     {

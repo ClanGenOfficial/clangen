@@ -1252,13 +1252,6 @@
                 "strings": [
                     "Hold on — the mouse must be under the snow, not on top of it. p_l patiently waits for a sound, listening to the near silence of a snow-covered world, however something underpaw starts to skitter close by. Pouncing blindly forward, {PRONOUN/p_l/subject} {VERB/p_l/sink/sinks} into the snow well over {PRONOUN/p_l/poss} head — but {PRONOUN/p_l/subject} can feel prey in {PRONOUN/p_l/poss} paws!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -1266,7 +1259,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "values": [
                             "trust",
@@ -1293,13 +1286,6 @@
                 "strings": [
                     "Confused and crestfallen, p_l wanders back to camp."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             },
             {
@@ -1307,13 +1293,6 @@
                 "strings": [
                     "It's under the snow! Flush with enthusiasm, p_l digs at the snowbank, spraying white powder everywhere. But the mouse is long gone before {PRONOUN/p_l/subject} can dig down to it, escaped off into another series of tunnels."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20
             },
             {
@@ -1321,18 +1300,11 @@
                 "strings": [
                     "It's under the snow! Flush with enthusiasm, p_l digs at the snowbank, spraying white powder everywhere. But the mouse is long gone before {PRONOUN/p_l/subject} can dig down to it, escaped off into another series of tunnels, and p_l shivers as {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} back to camp."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "cold_injury"

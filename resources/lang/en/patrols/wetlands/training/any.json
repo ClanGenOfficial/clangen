@@ -1777,13 +1777,6 @@
                 "strings": [
                     "Ha! p_l pounces, the pathetic bug crunching underneath {PRONOUN/p_l/poss} mighty blow, splattering and... Ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/p_l/poss} paws, between {PRONOUN/p_l/poss} toes — EWWWWW!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20
             },
             {
@@ -1791,13 +1784,6 @@
                 "strings": [
                     "Ha! p_l leaps, tail lashing as the beetle buzzes under {PRONOUN/p_l/poss} paws. {PRONOUN/p_l/subject/CAP} {VERB/p_l/bat/bats} the bug off the rock and onto the ground, then {VERB/p_l/pounce/pounces} after it. p_l jumps and twists as {PRONOUN/p_l/poss} colorful prey flits around {PRONOUN/p_l/poss} head in typical concussed beetle fashion, unused to being an apprentice's new favorite toy."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20
             },
             {
@@ -1806,11 +1792,6 @@
                     "s_c0 pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/p_l/poss} back. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/watch/watches} the insect scurry from one paw to the other, so entranced by its color and tiny, perfect legs that {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} notice {PRONOUN/p_l/poss} own skill in catching and keeping the bug."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "prior_abbreviation": [
                             "any"
@@ -1831,13 +1812,6 @@
                 "strings": [
                     "While p_l is wiggling {PRONOUN/p_l/poss} butt into the perfect pouncing position, the beetle flies off. Awwwww."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             },
             {
@@ -1845,13 +1819,6 @@
                 "strings": [
                     "Slimy, yet satisfying! Curiosity completed, p_l wanders off — but has to report to the medicine cat den later, when {PRONOUN/p_l/poss} stomach reminds {PRONOUN/p_l/object} why cats don't eat random bugs."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -1860,7 +1827,7 @@
                             "high_social"
                         ],
                         "cats_to": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "values": [
                             "like"
@@ -1875,7 +1842,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "stomachache"

@@ -149,7 +149,7 @@
             ],
             "apprentice": [
                 1,
-                6
+                1
             ]
         },
         "involved_cats": {
@@ -233,13 +233,6 @@
                 "strings": [
                     "Unfortunately, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} end up finding anything, and {PRONOUN/p_l/subject} {VERB/p_l/slink/slinks} back to camp empty-pawed."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             }
         ]
@@ -924,7 +917,7 @@
             ],
             "apprentice": [
                 1,
-                6
+                1
             ]
         },
         "involved_cats": {
@@ -944,13 +937,6 @@
                 "strings": [
                     "While checking in the tall grass for signs of {PRONOUN/p_l/poss} prey, the mouse bursts from cover. It runs nearly under p_l's claws, and {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} pounce so much as fall on it! Still, no one else was around to see {PRONOUN/p_l/poss} inelegant kill, and p_l feels very mature, bringing in prey to the fresh-kill pile by {PRONOUN/p_l/self}."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -958,7 +944,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "values": [
                             "respect"
@@ -982,13 +968,6 @@
                 "strings": [
                     "p_l leaps onto the mouse and makes the kill easily. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} really getting the hang of hunting!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -996,7 +975,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "values": [
                             "respect"
@@ -1022,13 +1001,6 @@
                 "strings": [
                     "p_l narrowly misses the mouse."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "supply": [
                     {

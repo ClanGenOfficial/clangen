@@ -149,7 +149,7 @@
             ],
             "apprentice": [
                 1,
-                6
+                1
             ]
         },
         "involved_cats": {
@@ -977,10 +977,6 @@
             ],
             "apprentice": [
                 1,
-                6
-            ],
-            "all apprentices": [
-                1,
                 1
             ]
         },
@@ -1001,13 +997,6 @@
                 "strings": [
                     "p_l bunches up {PRONOUN/p_l/poss} hind legs and pounces when the bird has its head down to peck for food. It doesn't stand a chance; p_l dispatches it with a bite to the neck and walks back to camp with {PRONOUN/p_l/poss} tail held high and {PRONOUN/p_l/poss} mouth full of feathers."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "supply": [
                     {
@@ -1021,13 +1010,6 @@
                 "strings": [
                     "p_l won't be telling the other apprentices what a struggle wrestling with the bird was. {PRONOUN/p_l/subject/CAP} {VERB/p_l/get/gets} wing-slapped quite a few times, but in the end, {VERB/p_l/manage/manages} to finish off {PRONOUN/p_l/poss} prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} it back to camp with only a few feathers stuck in {PRONOUN/p_l/poss} pelt."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "supply": [
                     {
@@ -1043,13 +1025,6 @@
                 "strings": [
                     "p_l pounces on the bird, but lands on bare earth as it flies away before {PRONOUN/p_l/subject} even {VERB/p_l/hit/hits} the ground. Sneezing dust, p_l looks up to find the bird sitting in a tree branch, mocking {PRONOUN/p_l/object}. Oh well."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             }
         ]
@@ -1073,12 +1048,8 @@
             ],
             "apprentice": [
                 1,
-                6
+                2
             ],
-            "all apprentices": [
-                1,
-                1
-            ]
         },
         "involved_cats": {
             "r_c1": {
@@ -2030,7 +2001,7 @@
             ],
             "apprentice": [
                 1,
-                6
+                1
             ]
         },
         "involved_cats": {
@@ -2870,11 +2841,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 drops into a crouch and lightly stalks towards the vole. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/pause/pauses}, waggling {PRONOUN/r_c0/poss} haunches before pouncing. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/catch/catches} the vole easily and {VERB/r_c0/deliver/delivers} a killing bite to the back of its head."
+                    "p_l drops into a crouch and lightly stalks towards the vole. {PRONOUN/p_l/subject/CAP} {VERB/p_l/pause/pauses}, waggling {PRONOUN/p_l/poss} haunches before pouncing. {PRONOUN/p_l/subject/CAP} {VERB/p_l/catch/catches} the vole easily and {VERB/p_l/deliver/delivers} a killing bite to the back of its head."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -2886,11 +2854,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 drops into a crouch and begins stalking forward. When {PRONOUN/r_c0/subject} {VERB/r_c0/get/gets} close, the vole suddenly stops chewing and r_c0 takes the opportunity to pounce. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/kill/kills} the prey quickly and {VERB/r_c0/lick/licks} the blood from {PRONOUN/r_c0/poss} lips with satisfaction."
+                    "p_l drops into a crouch and begins stalking forward. When {PRONOUN/p_l/subject} {VERB/p_l/get/gets} close, the vole suddenly stops chewing and p_l takes the opportunity to pounce. {PRONOUN/p_l/subject/CAP} {VERB/p_l/kill/kills} the prey quickly and {VERB/p_l/lick/licks} the blood from {PRONOUN/p_l/poss} lips with satisfaction."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -2947,11 +2912,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 drops into a crouch and begins to stalk forward. {PRONOUN/r_c0/subject/CAP}{VERB/r_c0/'re/'s} preparing to pounce when {PRONOUN/r_c0/poss} paw lightly brushes a twig and the vole immediately takes off. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/give/gives} chase, but the critter disappears into a burrow. Mouse-dung!"
+                    "p_l drops into a crouch and begins to stalk forward. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} preparing to pounce when {PRONOUN/p_l/poss} paw lightly brushes a twig and the vole immediately takes off. {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} chase, but the critter disappears into a burrow. Mouse-dung!"
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -2959,7 +2921,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "values": [
                             "respect"
@@ -5333,7 +5295,7 @@
             ],
             "apprentice": [
                 1,
-                6
+                1
             ]
         },
         "involved_cats": {
@@ -5354,13 +5316,6 @@
                 "strings": [
                     "Darting around the forest, still close to camp, p_l manages to snag a f_tp_s and a stinky f_tp_s. {PRONOUN/p_l/object/CAP} mentor looks both impressed and exhausted to see {PRONOUN/p_l/object} report back so soon."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 25,
                 "supply": [
                     {
@@ -5374,13 +5329,6 @@
                 "strings": [
                     "p_l is thrilled to find a nice f_mp_s, and even more thrilled to catch the second one {PRONOUN/p_l/subject} {VERB/p_l/find/finds}!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 25,
                 "supply": [
                     {
@@ -5444,18 +5392,11 @@
                 "strings": [
                     "It turns out running headlong at prey isn't an effective hunting technique — though it's a fantastic technique for crashing into things. A little wiser, a little disheveled, and a little less hyper, p_l heads back to camp."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "minor_injury"
