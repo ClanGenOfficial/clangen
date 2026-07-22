@@ -17,6 +17,18 @@ from scripts.events_module.parameter_dicts import (
     RelationshipConstraintDict,
 )
 
+"""
+I'm preserving this file for future reference and modder usage, if modders so desire.
+
+Modders please note that this script does not convert patrols perfectly. 
+It does its best and it gets the majority of the work done, however our prior patrol format was extremely lenient 
+compared to the newer format. This makes it difficult to track things like inconsistent abbreviation usage. I had to 
+fix a lot of patrols by hand. I recommend you preserve the already-fixed vanilla patrols and convert your modded patrols
+ specifically, then add those modded patrols back into the correct files after you have corrected any problems. This 
+ way you do not have to manually fix all the vanilla patrols as well (i already went through hell for you).
+"""
+
+
 root_dir = "../resources/lang/en/patrols"
 file_set = set()
 
