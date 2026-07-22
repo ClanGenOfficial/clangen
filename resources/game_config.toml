@@ -348,6 +348,16 @@ dev_tools = false
   # by default, the chance is 40% and the range is from 0-100%, any value higher or lower will be capped
   base_kit_claim_chance = 40
 
+  [pregnancy.coparenting_values_neg]
+      romance = -20
+      comfort = -30
+      trust = -25
+
+  [pregnancy.coparenting_values_pos]
+      romance = 20
+      comfort = 30
+      trust = 25
+      
 [cat_generation]
   # base 1/chance that a cat will generate with a permanent condition. gets modified further in code
   base_permanent_condition = 90
