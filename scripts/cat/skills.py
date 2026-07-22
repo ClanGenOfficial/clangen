@@ -665,7 +665,7 @@ class CatSkills:
             if self.meets_skill_requirement(info[0], min_tier):
                 if info[0] == self.primary.path:
                     skills_meet += self.primary.tier
-                else:
+                elif self.secondary:
                     skills_meet += self.secondary.tier
                 break
 

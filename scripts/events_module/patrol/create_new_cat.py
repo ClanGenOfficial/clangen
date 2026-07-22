@@ -458,7 +458,7 @@ def _assign_past_status_and_standing(
                 [CatGroup.OTHER_CLAN], involved_cats, other_clan
             )
 
-        created_cat.status.generate_new_status(status)
+        created_cat.status.generate_new_status(**status)
     if option_dict.get("standing", {}).get("past"):
         group = _get_id_for_group(
             option_dict["standing"]["group"], involved_cats, other_clan

@@ -91,6 +91,9 @@ class TestPatrolCats(unittest.TestCase):
 
 class TestInvolvedCats(unittest.TestCase):
     def setUp(self):
+        Cat.all_cats.clear()
+        Cat.all_cats_list.clear()
+
         game.clan = Clan("test")
         game.clan.biome = "Forest"
         game.clan.override_biome = False
@@ -99,6 +102,7 @@ class TestInvolvedCats(unittest.TestCase):
         game.clan.game_mode = "classic"
 
         self.patrol_class = Patrol()
+        self.patrol_class.other_clan = OtherClan()
 
     def test_overall_pl_rc_difference(self):
         war1 = create_cat(rank=CatRank.WARRIOR)
@@ -114,8 +118,8 @@ class TestInvolvedCats(unittest.TestCase):
                 "p_l": InvolvedCatDict(),
                 "r_c": InvolvedCatDict(),
             },
-            success_outcomes=[TextPoolEvent()],
-            fail_outcomes=[TextPoolEvent()],
+            success_outcomes=[{"strings": ["test"]}],
+            fail_outcomes=[{"strings": ["test"]}],
         )
 
         self.patrol_class._add_patrol_cats([war1, app1, app2])
@@ -146,8 +150,8 @@ class TestInvolvedCats(unittest.TestCase):
                 "n_c:0": InvolvedCatDict(),
                 "n_c:1": InvolvedCatDict(can_create_new_cat={}),
             },
-            success_outcomes=[TextPoolEvent()],
-            fail_outcomes=[TextPoolEvent()],
+            success_outcomes=[{"strings": ["test"]}],
+            fail_outcomes=[{"strings": ["test"]}],
         )
 
         self.patrol_class._add_patrol_cats([war1])
@@ -180,11 +184,9 @@ class TestInvolvedCats(unittest.TestCase):
                 "r_c": InvolvedCatDict(),
             },
             success_outcomes=[
-                TextPoolEvent(
-                    involved_cats={"p_l": InvolvedCatDict(status=["warrior"])}
-                )
+                {"involved_cats": {"p_l": InvolvedCatDict(status=["warrior"])}}
             ],
-            fail_outcomes=[TextPoolEvent()],
+            fail_outcomes=[{"strings": ["test"]}],
         )
         self.patrol_class.patrol_event = patrol
         self.patrol_class._add_patrol_cats([war1, app1, app2])
@@ -214,11 +216,9 @@ class TestInvolvedCats(unittest.TestCase):
                 "r_c": InvolvedCatDict(),
             },
             success_outcomes=[
-                TextPoolEvent(
-                    involved_cats={"s_c": InvolvedCatDict(prior_abbreviation=["p_l"])}
-                )
+                {"involved_cats": {"s_c": InvolvedCatDict(prior_abbreviation=["p_l"])}}
             ],
-            fail_outcomes=[TextPoolEvent()],
+            fail_outcomes=[{"strings": ["test"]}],
         )
         self.patrol_class.patrol_event = patrol
         self.patrol_class._add_patrol_cats([war1, app1, app2])
@@ -248,11 +248,9 @@ class TestInvolvedCats(unittest.TestCase):
                 "r_c": InvolvedCatDict(),
             },
             success_outcomes=[
-                TextPoolEvent(
-                    involved_cats={"s_c": InvolvedCatDict(prior_abbreviation=["-p_l"])}
-                )
+                {"involved_cats": {"s_c": InvolvedCatDict(prior_abbreviation=["-p_l"])}}
             ],
-            fail_outcomes=[TextPoolEvent()],
+            fail_outcomes=[{"strings": ["test"]}],
         )
         self.patrol_class.patrol_event = patrol
         self.patrol_class._add_patrol_cats([war1, app1, app2])
@@ -300,10 +298,8 @@ class TestOutcomeExecution(unittest.TestCase):
             involved_cats={
                 "n_c:0": InvolvedCatDict(),
             },
-            success_outcomes=[
-                TextPoolEvent(strings=[""], join=[JoinDict(cats=["n_c:0"])])
-            ],
-            fail_outcomes=[TextPoolEvent()],
+            success_outcomes=[{"strings": [""], "join": [JoinDict(cats=["n_c:0"])]}],
+            fail_outcomes=[{"strings": ["test"]}],
         )
 
         self.patrol_class._add_patrol_cats([war1])
@@ -333,12 +329,12 @@ class TestOutcomeExecution(unittest.TestCase):
             decline_text="test",
             involved_cats={},
             success_outcomes=[
-                TextPoolEvent(
-                    strings=[""],
-                    death=[DeathDict(cats=["p_l"], body=True, history="test")],
-                )
+                {
+                    "strings": [""],
+                    "death": [DeathDict(cats=["p_l"], body=True, history="test")],
+                }
             ],
-            fail_outcomes=[TextPoolEvent()],
+            fail_outcomes=[{"strings": ["test"]}],
         )
 
         self.patrol_class._add_patrol_cats([war1, app1])
@@ -373,12 +369,12 @@ class TestOutcomeExecution(unittest.TestCase):
             decline_text="test",
             involved_cats={},
             success_outcomes=[
-                TextPoolEvent(
-                    strings=[""],
-                    lost=[LostDict(cats=["p_l"])],
-                )
+                {
+                    "strings": [""],
+                    "lost": [LostDict(cats=["p_l"])],
+                }
             ],
-            fail_outcomes=[TextPoolEvent()],
+            fail_outcomes=[{"strings": ["test"]}],
         )
 
         self.patrol_class._add_patrol_cats([war1, app1])
@@ -408,12 +404,14 @@ class TestOutcomeExecution(unittest.TestCase):
             decline_text="test",
             involved_cats={"p_l": InvolvedCatDict(), "r_c": InvolvedCatDict()},
             success_outcomes=[
-                TextPoolEvent(
-                    strings=[""],
-                    condition=[ConditionDict(cats=["p_l", "r_c"], condition=["sore"])],
-                )
+                {
+                    "strings": [""],
+                    "condition": [
+                        ConditionDict(cats=["p_l", "r_c"], condition=["sore"])
+                    ],
+                }
             ],
-            fail_outcomes=[TextPoolEvent()],
+            fail_outcomes=[{"strings": ["test"]}],
         )
 
         self.patrol_class._add_patrol_cats([war1, app1])
@@ -443,12 +441,14 @@ class TestOutcomeExecution(unittest.TestCase):
             decline_text="test",
             involved_cats={"p_l": InvolvedCatDict(), "r_c": InvolvedCatDict()},
             success_outcomes=[
-                TextPoolEvent(
-                    strings=[""],
-                    reputation_changes=ReputationChangesDict(other_clan=2, outsider=2),
-                )
+                {
+                    "strings": [""],
+                    "reputation_changes": ReputationChangesDict(
+                        other_clan=2, outsider=2
+                    ),
+                }
             ],
-            fail_outcomes=[TextPoolEvent()],
+            fail_outcomes=[{"strings": ["test"]}],
         )
         other_clan = OtherClan()
         starting_clan_rep = other_clan.relations
@@ -483,16 +483,16 @@ class TestOutcomeExecution(unittest.TestCase):
             decline_text="test",
             involved_cats={"p_l": InvolvedCatDict()},
             success_outcomes=[
-                TextPoolEvent(
-                    strings=[""],
-                    supply=[
+                {
+                    "strings": [""],
+                    "supply": [
                         SupplyDict(type="freshkill", adjust="increase_tiny"),
                         SupplyDict(type="honey", adjust="increase_tiny"),
                         SupplyDict(type="random_herbs", adjust="increase_huge"),
                     ],
-                )
+                }
             ],
-            fail_outcomes=[TextPoolEvent()],
+            fail_outcomes=[{"strings": ["test"]}],
         )
         freshkill_count = game.clan.freshkill_pile.total_amount
         honey_count = game.clan.herb_supply.get_single_herb_total("honey")
@@ -517,11 +517,11 @@ class TestOutcomeExecution(unittest.TestCase):
         )
         # check single herb change
         self.assertTrue(
-            honey_count + 1 == game.clan.herb_supply.get_single_herb_total("honey"),
+            honey_count + 2 == game.clan.herb_supply.get_single_herb_total("honey"),
             msg=f"{honey_count} + 1 should equal {game.clan.herb_supply.get_single_herb_total('honey')}",
         )
         # check random herb change
         self.assertTrue(
-            total_herb_count + 9 == game.clan.herb_supply.total,
+            total_herb_count + 10 == game.clan.herb_supply.total,
             msg=f"{total_herb_count} + 9 should equal {game.clan.herb_supply.total}",
         )

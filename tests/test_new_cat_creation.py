@@ -53,14 +53,14 @@ class TestNewCatCreation(unittest.TestCase):
                 test_cat = cat_list[0]
 
                 self.assertEqual(
-                    test_cat.status.rank,
                     rank,
+                    test_cat.status.rank,
                     msg=f"{rank} was not assigned correctly as the current rank.",
                 )
                 if rank != CatRank.NEWBORN:
                     self.assertEqual(
-                        list(test_cat.status.all_ranks.keys())[0],
                         rank_list[i - 1],
+                        list(test_cat.status.all_ranks.keys())[0],
                         msg=f"{rank_list[i - 1]} was not assigned correctly as a past rank.",
                     )
 
