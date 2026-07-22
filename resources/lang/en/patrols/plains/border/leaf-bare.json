@@ -4538,9 +4538,6 @@
         },
         "involved_cats": {
             "p_l": {
-                "status": [
-                    "apprentice"
-                ],
                 "has_mentor": true
             }
         },
@@ -4555,13 +4552,6 @@
                 "strings": [
                     "p_l pokes {PRONOUN/p_l/poss} head into the shallow cave, one whisker at a time, eyes wide. Huh. Well, there's no one home, and from the look of the soggy grass blown in by the wind and the frost climbing the walls, no one has been home in a while. There's also no c_n scent though. Perhaps because this is too shallow to be a refuge from predators?"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20
             },
             {
@@ -4570,13 +4560,6 @@
                 "strings": [
                     "This burrow is weird. p_l's never seen a tunnel with straight walls, or metal ones, for that matter. Pelt standing up in a little mohawk along {PRONOUN/p_l/poss} spine, {PRONOUN/p_l/subject} {VERB/p_l/back/backs} away."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20
             },
             {
@@ -4585,13 +4568,6 @@
                 "strings": [
                     "As p_l shivers, {PRONOUN/p_l/poss} paws cold on the frosty ground, a stream of warm air escapes the unknown tunnel entrance. That can't be good, something's breathing in there. p_l has had enough adventure for one day, and goes back to camp."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20
             },
             {
@@ -4600,18 +4576,11 @@
                 "strings": [
                     "This is no burrow. p_l shivers. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} know what it <i>is</i>, but tunnels don't have straight edges and sharp corners, p_l knows that much. {PRONOUN/p_l/subject/CAP} should go report this to {PRONOUN/p_l/poss} mentor maybe? Yeah, yeah that sounds good."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "cats_from": [
                             "some_clan"
@@ -4633,18 +4602,11 @@
                 "strings": [
                     "p_l is brave, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not stupid. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} just stick {PRONOUN/p_l/poss} head into an unknown tunnel, instead wait and scenting and watching for ages until a furry flat head pokes above ground. A stoat. It eyes p_l, but both are far away enough to shuffle awkwardly around eachother rather than fighting, as the thin predator heads off to find food and p_l turns for home."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "cats_from": [
                             "clan",
@@ -4667,13 +4629,6 @@
                 "strings": [
                     "p_l carefully explores the tunnel {PRONOUN/p_l/subject} spotted, seeing how a bush normally conceals its entrance. The idea of having a secret, hidden place that only {PRONOUN/p_l/subject} {VERB/p_l/know/knows} about is incredibly appealing."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20
             },
             {
@@ -4682,13 +4637,6 @@
                 "strings": [
                     "This is yet another thing to deal with on an adventure that became terrifying a long time ago. No. p_l heads home instead, back to {PRONOUN/p_l/poss} nice safe den."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20
             },
             {
@@ -4697,18 +4645,11 @@
                 "strings": [
                     "This is going to be such a cool story to tell back at camp, p_l tells {PRONOUN/p_l/self}. Checking the tunnel out, it looks like a collapsed roof into a wider tunnel system, smelling faintly of something p_l can't identify. Awesome!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "cats_from": [
                             "clan",
@@ -4732,13 +4673,6 @@
                 "strings": [
                     "p_l sticks {PRONOUN/p_l/poss} head into {PRONOUN/p_l/poss} new discovery and finds a furious prairie dog. {PRONOUN/p_l/subject/CAP} exchange blows and chatter at each other, both escaping unscathed and irritated."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20
             }
         ],
@@ -4750,18 +4684,11 @@
                 "strings": [
                     "As p_l shivers, {PRONOUN/p_l/poss} paws cold on the frosty ground, a stream of warm air escapes the unknown tunnel entrance. It's warm in there! {PRONOUN/p_l/subject/CAP} {VERB/p_l/bound/bounds} forward, but the tunnel is warm because it's inhabited."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "history": "This cat was killed after an unfortunate meeting with a wolverine."
                     }
@@ -4773,18 +4700,11 @@
                 "strings": [
                     "As p_l shivers, {PRONOUN/p_l/poss} paws cold on the frosty ground, {PRONOUN/p_l/subject} {VERB/p_l/consider/considers} approaching the tunnel. It's just so cold out here, colder than {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting, and the wind's starting to pick up. But no, no {PRONOUN/p_l/subject} should go back to camp instead. {PRONOUN/p_l/poss/CAP} inexperience lets the leaf-bare storm catch up with {PRONOUN/p_l/object}."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "history": "This cat was killed after a leaf-bare storm caught {PRONOUN/s_c0/object} on patrol as an apprentice."
                     }
@@ -4796,18 +4716,11 @@
                 "strings": [
                     "As p_l shivers, {PRONOUN/p_l/poss} paws cold on the frosty ground, {PRONOUN/p_l/subject} {VERB/p_l/consider/considers} approaching the tunnel. It's just so cold out here, colder than {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting, and the wind's starting to pick up. {PRONOUN/p_l/subject/CAP} {VERB/p_l/huddle/huddles} down in the tunnel, trying to get as much shelter from the wind as possible."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "sore"
@@ -4817,7 +4730,7 @@
                     },
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "frostbite"
@@ -4833,18 +4746,11 @@
                 "strings": [
                     "p_l sticks {PRONOUN/p_l/poss} head into {PRONOUN/p_l/poss} new discovery and finds a furious prairie dog. It delivers a stinging lesson about putting one's head into random holes in the ground."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "bruises"
@@ -4854,7 +4760,7 @@
                     },
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "torn ear"
@@ -4864,7 +4770,7 @@
                     },
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "claw-wound"
@@ -4883,18 +4789,11 @@
                 "strings": [
                     "This burrow is weird. p_l's never seen a tunnel with straight walls, or metal ones, for that matter. But c_n can always benefit from knowing about new tunnels, so {PRONOUN/p_l/subject} {VERB/p_l/creep/creeps} in. The trap door slams shut behind {PRONOUN/p_l/object}."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "lost": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ]
                     }
                 ]
@@ -4905,18 +4804,11 @@
                 "strings": [
                     "This is going to be such a cool story to tell back at camp, p_l tells {PRONOUN/p_l/self}. Checking the tunnel out, it looks like a collapsed roof into a wider tunnel system, smelling faintly of something p_l can't identify. Huh, p_l wonders what-"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "history": "This cat was killed as an apprentice, patrolling the border alone and investigating things {PRONOUN/m_c/subject} shouldn't have."
                     }
@@ -4929,18 +4821,11 @@
                 "strings": [
                     "Okay, so that might be a tunnel. p_l should go check it out, right? c_n cares about tunnels and stuff. {PRONOUN/p_l/subject/CAP} {VERB/p_l/clamber/clambers} in, and then there's a sharp pain."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "history": "This cat was killed as an apprentice, patrolling the border alone and investigating things {PRONOUN/m_c/subject} shouldn't have."
                     }

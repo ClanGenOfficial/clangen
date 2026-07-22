@@ -2941,11 +2941,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "Following the sound to its source, p_l finds a raven and catches it! Who knew they could mimic cats? It feels good to eat one for once, though r_c0 hurries to avoid any wolves."
+                    "Following the sound to its source, p_l finds a raven and catches it! Who knew they could mimic cats? It feels good to eat one for once, though p_l hurries to avoid any wolves."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -3049,7 +3046,7 @@
                 "death": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "history": "This cat found out why c_n despises ravens."
                     }

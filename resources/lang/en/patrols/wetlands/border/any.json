@@ -1435,9 +1435,6 @@
         },
         "involved_cats": {
             "p_l": {
-                "status": [
-                    "apprentice"
-                ],
                 "has_mentor": true
             }
         },
@@ -1467,7 +1464,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -1483,7 +1480,7 @@
                             "n_c0"
                         ],
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -1491,7 +1488,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "r_c0 drove n_c:0 off c_n's territory."
+                            "cats_from": "p_l drove n_c:0 off c_n's territory."
                         }
                     }
                 ]
@@ -1510,13 +1507,6 @@
                 "strings": [
                     "It turns out they were p_l's own pawprints... p_l huffs with embarrassment, suddenly grateful {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alone. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} want to look dumb in front of other cats."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             },
             {
@@ -1582,11 +1572,6 @@
                     "Following the trail with {PRONOUN/p_l/poss} nose to the ground, p_l doesn't see the blow that kills {PRONOUN/p_l/object}."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "n_c0": {
                         "status": [
                             "rogue"
@@ -1609,14 +1594,14 @@
                         ],
                         "amount": -30,
                         "log": {
-                            "cats_from": "cat_to's scent was found on r_c1's cold body."
+                            "cats_from": "cat_to's scent was found on p_l's cold body."
                         }
                     }
                 ],
                 "death": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "history": "m_c was killed by an invading rogue."
                     }

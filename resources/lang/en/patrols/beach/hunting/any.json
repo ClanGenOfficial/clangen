@@ -796,11 +796,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 drops down into a hunting crouch, certain that a mouse must be the source of the noise. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/find/finds} {PRONOUN/r_c0/self} to be correct when {PRONOUN/r_c0/subject} {VERB/r_c0/pounce/pounces} into the grass and {VERB/r_c0/return/returns} to camp with the tasty morsel dangling from {PRONOUN/r_c0/poss} jaws."
+                    "p_l drops down into a hunting crouch, certain that a mouse must be the source of the noise. {PRONOUN/p_l/subject/CAP} {VERB/p_l/find/finds} {PRONOUN/p_l/self} to be correct when {PRONOUN/p_l/subject} {VERB/p_l/pounce/pounces} into the grass and {VERB/p_l/return/returns} to camp with the tasty morsel dangling from {PRONOUN/p_l/poss} jaws."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -871,16 +868,13 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c0 doesn't hesitate in checking the source of the noise and comes face-to-face with a huge, snarling dog! r_c0 yowls for help, but {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} alone on this patrol, and {PRONOUN/r_c0/subject} {VERB/r_c0/have/has} the sudden realization that no one can help {PRONOUN/r_c0/object} now. The dog kills the lone cat with little trouble."
+                    "p_l doesn't hesitate in checking the source of the noise and comes face-to-face with a huge, snarling dog! p_l yowls for help, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alone on this patrol, and {PRONOUN/p_l/subject} {VERB/p_l/have/has} the sudden realization that no one can help {PRONOUN/p_l/object} now. The dog kills the lone cat with little trouble."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "history": "m_c was killed by a dog while patrolling alone."
                     }
@@ -889,16 +883,13 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c0 heads toward the source of the noise and comes face-to-face with an angry fox! Though {PRONOUN/r_c0/subject} {VERB/r_c0/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c0/object} before {PRONOUN/r_c0/subject} can sprint away."
+                    "p_l heads toward the source of the noise and comes face-to-face with an angry fox! Though {PRONOUN/p_l/subject} {VERB/p_l/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/p_l/object} before {PRONOUN/p_l/subject} can sprint away."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -1109,7 +1100,7 @@
                 "lost": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ]
                     }
                 ]
@@ -1127,7 +1118,7 @@
                             "low_lawful"
                         ],
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "values": [
                             "respect",
@@ -1143,7 +1134,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "condition": [
                             "blood loss",

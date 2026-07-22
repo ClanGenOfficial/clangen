@@ -1434,11 +1434,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As r_c0 reflects on clair_list/r_c0 from {PRONOUN/r_c0/poss} vision, {PRONOUN/r_c0/subject} still {VERB/r_c0/find/finds} that {PRONOUN/r_c0/subject} can't make sense of it."
+                    "As p_l reflects on clair_list/p_l from {PRONOUN/p_l/poss} vision, {PRONOUN/p_l/subject} still {VERB/p_l/find/finds} that {PRONOUN/p_l/subject} can't make sense of it."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 0
             },
             {
@@ -2544,22 +2541,16 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_med_angrycat_Mc",
                 "strings": [
-                    "r_c0 feels hounded, never given a moment's peace. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/hiss/hisses} at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return."
+                    "p_l feels hounded, never given a moment's peace. {PRONOUN/p_l/subject/CAP} {VERB/p_l/hiss/hisses} at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 30
             },
             {
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_med_angrycat_Mc",
                 "strings": [
-                    "r_c0 hisses at the unknown cat, fur bristling. The ghost vanishes, leaving r_c0 alone... for now."
+                    "p_l hisses at the unknown cat, fur bristling. The ghost vanishes, leaving p_l alone... for now."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 30
             }
         ],
@@ -2568,11 +2559,8 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_med_angrycat_Mc",
                 "strings": [
-                    "r_c0 feels hounded, never given a moment's peace. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/hiss/hisses} at the StarClan cat. But when {PRONOUN/r_c0/subject} {VERB/r_c0/turn/turns} around, there's only a rather upset-looking Clanmate, there to fetch {PRONOUN/r_c0/object} to camp to help with an emergency."
+                    "p_l feels hounded, never given a moment's peace. {PRONOUN/p_l/subject/CAP} {VERB/p_l/hiss/hisses} at the StarClan cat. But when {PRONOUN/p_l/subject} {VERB/p_l/turn/turns} around, there's only a rather upset-looking Clanmate, there to fetch {PRONOUN/p_l/object} to camp to help with an emergency."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -2582,7 +2570,7 @@
                             "low_stable"
                         ],
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -2600,11 +2588,8 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_med_angrycat_Mc",
                 "strings": [
-                    "r_c0 feels hounded, never given a moment's peace. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/hiss/hisses} at the StarClan cat. The ghost shakes their head in disapproval but vanishes."
+                    "p_l feels hounded, never given a moment's peace. {PRONOUN/p_l/subject/CAP} {VERB/p_l/hiss/hisses} at the StarClan cat. The ghost shakes their head in disapproval but vanishes."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 0
             }
         ]
@@ -2979,13 +2964,6 @@
                 1
             ]
         },
-        "involved_cats": {
-            "p_l": {
-                "status": [
-                    "medicine cat apprentice"
-                ]
-            }
-        },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_ghost_McSc",
         "intro_text": "As p_l pads through c_n territory, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} a presence join {PRONOUN/p_l/object}.",
@@ -2996,14 +2974,6 @@
                 "strings": [
                     "This is utterly unnerving, but with a respectful and shaky nod, p_l pauses, tucks {PRONOUN/p_l/poss} paws together neatly, and sits to converse with the StarClan cat."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 30,
                 "supply": [
                     {
@@ -3017,14 +2987,6 @@
                 "strings": [
                     "The scent of a familiar pelt reaches p_l's nose — {PRONOUN/p_l/subject} {VERB/p_l/know/knows} this cat! {PRONOUN/p_l/subject/CAP} {VERB/p_l/wheel/wheels} around and {VERB/p_l/bury/buries} {PRONOUN/p_l/poss} face in sparkling fur, purring frantically."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 30,
                 "supply": [
                     {
@@ -3040,14 +3002,6 @@
                 "strings": [
                     "The connection wavers, and as quickly as the feeling of company appears, it vanishes. p_l pads uncertainly back to camp, wondering if it was even real in the first place."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             },
             {
@@ -3055,14 +3009,6 @@
                 "strings": [
                     "p_l turns to the ghost with a smile, but the StarClan cat meets {PRONOUN/p_l/poss} eyes with fire in their gaze. StarClan is unhappy with {PRONOUN/p_l/object}, and things must change. p_l cowers in front of them, wishing {PRONOUN/p_l/subject} {VERB/p_l/were/was} anywhere else."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             }
         ],
@@ -3073,14 +3019,6 @@
                 "strings": [
                     "p_l feels hounded, never given a moment's peace, and {PRONOUN/p_l/subject} {VERB/p_l/hiss/hisses} at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 30
             },
             {
@@ -3089,14 +3027,6 @@
                 "strings": [
                     "p_l hisses at the unknown cat, fur bristling. The ghost vanishes, leaving p_l alone... for now."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 30
             }
         ],
@@ -3107,14 +3037,6 @@
                 "strings": [
                     "p_l feels hounded, never given a moment's peace, and {PRONOUN/p_l/subject} {VERB/p_l/hiss/hisses} at the StarClan cat. But when {PRONOUN/p_l/subject} {VERB/p_l/turn/turns} around, there's only a rather upset-looking Clanmate, there to fetch {PRONOUN/p_l/object} to camp to help with an emergency."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -3124,7 +3046,7 @@
                             "low_stable"
                         ],
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -12038,10 +11960,6 @@
         },
         "involved_cats": {
             "p_l": {
-                "status": [
-                    "apprentice",
-                    "medicine cat apprentice"
-                ],
                 "has_mentor": true
             }
         },
@@ -12055,14 +11973,6 @@
                 "strings": [
                     "p_l is plucking some goldenrod when {PRONOUN/p_l/poss} attention is suddenly grabbed by omen_list_sight/p_l. The fur on {PRONOUN/p_l/poss} back begins to prickle slightly, the sound of {PRONOUN/p_l/poss} heartbeat like thunder in {PRONOUN/p_l/poss} ears. {PRONOUN/p_l/subject/CAP} {VERB/p_l/turn/turns} and {VERB/p_l/hare/hares} back to camp, herbs forgotten. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to tell {PRONOUN/p_l/poss} mentor about this as soon as possible!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "supply": [
                     {
@@ -12078,14 +11988,6 @@
                 "strings": [
                     "p_l feels a pit of dread beginning to form in {PRONOUN/p_l/poss} belly — {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} forgotten where to find the herb {PRONOUN/p_l/poss} mentor wanted. {PRONOUN/p_l/subject/CAP} {VERB/p_l/taste/tastes} the air, hoping desperately for some hint of its telltale scent, but it's a useless effort. {PRONOUN/p_l/subject/CAP}'ll have to swallow {PRONOUN/p_l/poss} pride and return to ask for directions."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             }
         ]

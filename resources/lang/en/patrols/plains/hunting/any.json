@@ -2857,13 +2857,6 @@
                 1
             ]
         },
-        "involved_cats": {
-            "p_l": {
-                "status": [
-                    "apprentice"
-                ]
-            }
-        },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
         "intro_text": "p_l decides to hunt out near the Twoleg dens.",
@@ -2874,13 +2867,6 @@
                 "strings": [
                     "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} interrupted by Twolegs wandering through the woods a couple times, so {PRONOUN/p_l/subject} {VERB/p_l/miss/misses} a couple catches, but overall, it works out."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "supply": [
                     {
@@ -3001,18 +2987,11 @@
                 "strings": [
                     "Carelessly, p_l is seen by Twolegs and taken from c_n."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "lost": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ]
                     }
                 ]
@@ -4326,13 +4305,6 @@
                 1
             ]
         },
-        "involved_cats": {
-            "p_l": {
-                "status": [
-                    "apprentice"
-                ]
-            }
-        },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
         "intro_text": "As p_l jumps up onto a rock to survey the plains, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} the blood red pelt of a truly massive red fox.",
@@ -4343,13 +4315,6 @@
                 "strings": [
                     "Terrified beyond sense, {PRONOUN/p_l/subject} {VERB/p_l/freeze/freezes} — and the massive fox sees {PRONOUN/p_l/object}. It paces closer, giving p_l a heartstopping view of its distorted, stretched legs and giant gaping mouth. In one might spring, it crashes past p_l and into the grass. Bobbing back up with a mouse, it makes eye contact with the shivering apprentice, then lopes off."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 25
             },
             {
@@ -4357,13 +4322,6 @@
                 "strings": [
                     "p_l crouches to the rock, but it's too late — the fox has seen {PRONOUN/p_l/object}. {PRONOUN/p_l/subject/CAP} {VERB/p_l/freeze/freezes} in terror, certain {PRONOUN/p_l/subject} can't outrun those terrifyingly lanky legs and {PRONOUN/p_l/subject}'ll be ripped apart. {PRONOUN/p_l/subject/CAP} {VERB/p_l/whisper/whispers} prayers as the fox stalks closer, revealing just how enormous it is. It stares down at p_l on the rock, its head bigger than {PRONOUN/p_l/poss} entire body. A heartbeat passes, then it disappears into the long grass without a sound."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 25
             },
             {
@@ -4371,13 +4329,6 @@
                 "strings": [
                     "Slowly, so as not to attract attention, p_l lowers {PRONOUN/p_l/self} to the rock. There's something off about the situation here. It's not just a big red fox; it's impossibly big, with legs stretched and distorted until they look more like a deer's than a fox's. Could this be the rare, massive, but mostly harmless maned wolf that the elders told p_l stories of in the nursery?"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 25
             }
         ],
@@ -4387,13 +4338,6 @@
                 "strings": [
                     "Terror gives p_l strength, and {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} stop running until {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} back in camp, gasping about the grassland monster {PRONOUN/p_l/subject} saw."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             },
             {
@@ -4446,7 +4390,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "small_bite_injury",
@@ -4462,13 +4406,6 @@
                 "strings": [
                     "Heart filled with daring, p_l slips off the rock and pads towards the monster in the grass, sure that StarClan will reward {PRONOUN/p_l/poss} bravery. A surprised <i>whuff</i> of air seems to come from everywhere and nowhere, as the puzzled maned wolf picks up the apprentice at {PRONOUN/p_l/poss} feet and tosses {PRONOUN/p_l/object} aside so it can get back to hunting."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "condition": [
                     {

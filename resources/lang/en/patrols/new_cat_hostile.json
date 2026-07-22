@@ -1098,10 +1098,9 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As p_l inspects the cat, {PRONOUN/p_l/subject} {VERB/r_c0/find/finds} that {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} already hunting with {PRONOUN/n_c:0/poss} ancestors."
+                    "As p_l inspects the cat, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} that {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} already hunting with {PRONOUN/n_c:0/poss} ancestors."
                 ],
                 "involved_cats": {
-                    "r_c0": {},
                     "n_c0": {
                         "can_create_new_cat": {}
                     }
@@ -4960,13 +4959,6 @@
                 1
             ]
         },
-        "involved_cats": {
-            "p_l": {
-                "status": [
-                    "apprentice"
-                ]
-            }
-        },
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
         "intro_text": "It's a cold day in c_n's territory, and p_l is the only cat stepping out. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} by {PRONOUN/p_l/self} when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a cat screaming for help.",
@@ -4978,11 +4970,6 @@
                     "It's probably dangerous. But curiosity leads p_l on, where {PRONOUN/p_l/subject} carefully {VERB/p_l/peek/peeks} over a ridge as the source of the cries. A pampered helpless kittypet runs back and forth over the Thunderpath, pleading fearfully for Twolegs, again and again and again. It isn't until their voice has gone hoarse and scratchy that p_l leaps out to surprise them. Those Twolegs aren't coming back, and the kittypet can either follow p_l, or freeze."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
@@ -5040,11 +5027,6 @@
                     "StarClan, but the cat {PRONOUN/p_l/subject} {VERB/p_l/find/finds} is weird, {PRONOUN/n_c:0/poss} fur soft and thin, {PRONOUN/n_c:0/poss} cries desperate as {PRONOUN/n_c:0/subject} {VERB/n_c:0/call/calls} in confusion. p_l watches until {PRONOUN/p_l/poss} paws are cold and uncomfortable, crouched behind cover, but the dumb outsider doesn't even try to steal prey. {PRONOUN/n_c:0/subject/CAP} just {VERB/n_c:0/wail/wails} for help, quieter and quieter as {PRONOUN/n_c:0/subject} {VERB/n_c:0/begin/begins} to lose {PRONOUN/n_c:0/poss} voice. Finally, p_l can't take it anymore. Striding out, {PRONOUN/p_l/subject} {VERB/p_l/tell/tells} the cat to follow {PRONOUN/p_l/object}. lead_name will know what to do with this."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
@@ -5102,11 +5084,6 @@
                     "p_l follows the sad cries to find a kittypet, lost and alone and cold. {PRONOUN/p_l/subject/CAP} {VERB/p_l/watch/watches} from under a rock overhang, but no, actually the kittypet is <i>that stupid</i> and it really seems likely {PRONOUN/n_c:0/subject}'ll freeze to death if p_l doesn't do something. p_l decides bring them back to camp so it'll be lead_name's problem to deal with, not p_l's."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
@@ -5165,13 +5142,6 @@
                 "strings": [
                     "The cat seems to be moving all over the place, and finally, p_l gives up and goes home, too tired to catch more than a mouthful."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
@@ -5209,13 +5179,6 @@
                 "strings": [
                     "p_l screams that this is c_n's territory and there's no help for anyone else. A kittypet runs from {PRONOUN/p_l/object}, terrified of the echoing voice."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "reputation_changes": {
                     "outsider": -2
@@ -5228,13 +5191,6 @@
                 "strings": [
                     "p_l charges after the sound to attack the cat, only for a kittypet to bowl {PRONOUN/p_l/object} right over as the terrified Twoleg pet, fully grown and fat, runs p_l over in their haste to get away."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1

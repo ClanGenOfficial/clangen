@@ -177,10 +177,6 @@
         },
         "involved_cats": {
             "p_l": {
-                "status": [
-                    "apprentice",
-                    "medicine cat apprentice"
-                ],
                 "has_mentor": true
             }
         },
@@ -194,14 +190,6 @@
                 "strings": [
                     "p_l is focused, determined to prove {PRONOUN/p_l/poss} independence. {PRONOUN/p_l/subject/CAP} {VERB/p_l/find/finds} the herbs easily and bring them back to camp with {PRONOUN/p_l/poss} head held up high — no sweat, no stress, no fuss."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -215,14 +203,6 @@
                 "strings": [
                     "p_l goes to an herb patch {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sure {PRONOUN/p_l/subject} {VERB/p_l/know/knows}, only to find the plants withered and dead. {PRONOUN/p_l/subject/CAP} {VERB/p_l/refuse/refuses} to give up, however, tenaciously searching the area until {PRONOUN/p_l/subject} {VERB/p_l/come/comes} across a smaller, overlooked patch that still has some leaves hanging on."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -238,14 +218,6 @@
                 "strings": [
                     "p_l goes to an herb patch {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sure {PRONOUN/p_l/subject} {VERB/p_l/know/knows}, only to find the plants withered and dead. {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} up and {VERB/p_l/return/returns} to camp, {PRONOUN/p_l/poss} tail dragging miserably along the ground."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             }
         ]

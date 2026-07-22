@@ -4183,15 +4183,8 @@
             ],
             "apprentice": [
                 1,
-                6
+                1
             ]
-        },
-        "involved_cats": {
-            "p_l": {
-                "status": [
-                    "apprentice"
-                ]
-            }
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_funrun_Ap",
@@ -4203,13 +4196,6 @@
                 "strings": [
                     "With a huge leap, {PRONOUN/p_l/subject} {VERB/p_l/dart/darts} sideways and {VERB/p_l/pull/pulls} the tail feathers off a blackbird taking flight. A missed catch, but new nest lining?"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -4223,13 +4209,6 @@
                 "strings": [
                     "Laughing, {PRONOUN/p_l/subject} {VERB/p_l/bounce/bounces} gleefully off a tree trunk. It redirects {PRONOUN/p_l/poss} momentum far better than {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting, and it's difficult to say who's more surprised — the mouse, or the apprentice slamming into it! Not a very clean catch, but one {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} proud of anyway."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -4245,13 +4224,6 @@
                 "strings": [
                     "p_l darts to the side, but whatever made the flash of movement is long gone. How frustrating!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "supply": [
                     {

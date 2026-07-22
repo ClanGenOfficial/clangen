@@ -6865,9 +6865,6 @@
         },
         "involved_cats": {
             "p_l": {
-                "status": [
-                    "apprentice"
-                ],
                 "has_mentor": true
             }
         },
@@ -6882,13 +6879,6 @@
                 "strings": [
                     "{PRONOUN/p_l/subject/CAP} {VERB/p_l/eat/eats} the prey without anyone noticing and {VERB/p_l/return/returns} to camp thrilled with {PRONOUN/p_l/poss} little transgression."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20
             },
             {
@@ -7042,13 +7032,6 @@
                 "strings": [
                     "p_l eats the prey, but later {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} terrible about it, slinking around guilty and ashamed for the rest of the day."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             },
             {

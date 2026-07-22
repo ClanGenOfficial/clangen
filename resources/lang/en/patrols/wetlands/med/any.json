@@ -175,14 +175,6 @@
                 1
             ]
         },
-        "involved_cats": {
-            "p_l": {
-                "status": [
-                    "apprentice",
-                    "medicine cat apprentice"
-                ]
-            }
-        },
         "chance_of_success": 65,
         "patrol_art": "med_general_intro",
         "intro_text": "p_l has been sent out into the swamps to try to find herbs alone.",
@@ -193,14 +185,6 @@
                 "strings": [
                     "p_l is focused and determined to prove their independence. They find the herbs easily, and bring them back to camp with their head held up high, no sweat, no stress, no fuss."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10
             },
             {
@@ -208,14 +192,6 @@
                 "strings": [
                     "p_l goes to a known herb patch — but the plant has died! They don't give up, hunting around in the area until they find a smaller overlooked bush that still has leaves on it."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10
             }
         ],
@@ -225,14 +201,6 @@
                 "strings": [
                     "p_l goes to a known herb patch — but the plant has died! They give up and return to camp, feeling terrible."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             }
         ]

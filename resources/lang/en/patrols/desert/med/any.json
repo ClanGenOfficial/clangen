@@ -174,14 +174,6 @@
                 1
             ]
         },
-        "involved_cats": {
-            "p_l": {
-                "status": [
-                    "apprentice",
-                    "medicine cat apprentice"
-                ]
-            }
-        },
         "chance_of_success": 40,
         "patrol_art": "med_general_intro",
         "intro_text": "p_l has been sent out into the desert to try to find some specific herbs alone.",
@@ -192,14 +184,6 @@
                 "strings": [
                     "p_l is focused and determined to prove {PRONOUN/p_l/poss} independence. {PRONOUN/p_l/subject/CAP} {VERB/p_l/find/finds} the herbs easily, and bring them back to camp with {PRONOUN/p_l/poss} head held up high, no sweat, no stress, no fuss."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -213,14 +197,6 @@
                 "strings": [
                     "p_l goes to a known herb patch — but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} give up, hunting around in the area until {PRONOUN/p_l/subject} find a smaller overlooked patch that still has leaves on it."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -236,14 +212,6 @@
                 "strings": [
                     "p_l goes to a known herb patch — but the plant has died! {PRONOUN/p_l/subject/CAP} give up and return to camp, feeling terrible."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             }
         ]
@@ -384,16 +352,13 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c0 has an unexpected severe reaction to the cacti, {PRONOUN/r_c0/poss} throat swelling shut in seconds. Unable to call for help, {PRONOUN/p_l/subject} fade away toward StarClan. c_n will have to mourn one more cat."
+                    "p_l has an unexpected severe reaction to the cacti, {PRONOUN/p_l/poss} throat swelling shut in seconds. Unable to call for help, {PRONOUN/p_l/subject} fade away toward StarClan. c_n will have to mourn one more cat."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "history": "m_c died trying to communicate with StarClan using a rare and dangerous ritual in an attempt to save {PRONOUN/m_c/poss} Clan."
                     }

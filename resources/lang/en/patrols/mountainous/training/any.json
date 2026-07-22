@@ -4330,13 +4330,6 @@
                 1
             ]
         },
-        "involved_cats": {
-            "p_l": {
-                "status": [
-                    "apprentice"
-                ]
-            }
-        },
         "chance_of_success": 50,
         "patrol_art": "animals/gen_crow",
         "intro_text": "p_l gathers {PRONOUN/p_l/poss} strength, butt wiggling with excitement, legs tense, and throws {PRONOUN/p_l/self} upward, twisting in the air in a massive pounce that surely would bring down the mightiest prey! <i>OoOooo,</i> a voice says mockingly.",
@@ -4347,13 +4340,6 @@
                 "strings": [
                     "Well it's not like they can do better, p_l shouts back at the crows! Humph. Birdbrains."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 15
             }
         ],
@@ -4363,13 +4349,6 @@
                 "strings": [
                     "Who said that?! How dare they insult c_n's mightiest hunter! p_l yowls threats at the bushes as {PRONOUN/p_l/subject} {VERB/p_l/search/searches} for {PRONOUN/p_l/poss} foe. Above, the crows laugh quietly to each other."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             }
         ]

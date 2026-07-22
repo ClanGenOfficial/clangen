@@ -8395,15 +8395,8 @@
             ],
             "apprentice": [
                 1,
-                6
+                1
             ]
-        },
-        "involved_cats": {
-            "p_l": {
-                "status": [
-                    "apprentice"
-                ]
-            }
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
@@ -8416,11 +8409,6 @@
                     "Oh StarClan, p_l can't live with leaving some poor sad soul alone on the mountainside in the cold! Following the piteous cries, p_l finds a terrified kittypet crouched by a Thunderpath, desperately searching for a monster and the Twolegs that it contains. But it's alright, p_l is here, and c_n will be able to help."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
@@ -8478,11 +8466,6 @@
                     "StarClan, but the cat {PRONOUN/p_l/subject} {VERB/p_l/find/finds} is weird, {PRONOUN/n_c:0/poss} fur soft and thin, {PRONOUN/n_c:0/poss} cries desperate as they call in confusion. p_l comes down to {PRONOUN/n_c:0/object}, startling the poor thing half out of {PRONOUN/n_c:0/poss} pelt. The cat calms down as p_l offers to bring {PRONOUN/n_c:0/object} back to camp, where {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sure the day will seem less bleak once p_l can get {PRONOUN/n_c:0/object} food and a warm nest."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
@@ -8540,11 +8523,6 @@
                     "p_l follows the sad cries to find a kittypet, lost and alone and cold. The apprentice introduces {PRONOUN/p_l/self} cheerfully, and the desperate kittypet nearly tumbles {PRONOUN/p_l/object} over in {PRONOUN/n_c:0/poss} haste to press {PRONOUN/n_c:0/poss} nose to p_l's shoulder, breaking into desperately grateful purrs."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
@@ -8603,13 +8581,6 @@
                 "strings": [
                     "The cat seems to be moving all over the place, and finally, p_l gives up and goes home, too tired to catch more than a mouthful."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
@@ -8647,13 +8618,6 @@
                 "strings": [
                     "p_l screams that this is c_n's territory and there's no help for anyone else. A kittypet runs from {PRONOUN/p_l/object}, terrified of the echoing voice."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "reputation_changes": {
                     "outsider": -2
@@ -8666,13 +8630,6 @@
                 "strings": [
                     "p_l charges after the sound to attack the cat, only for a kittypet to bowl {PRONOUN/p_l/object} right over as the terrified Twoleg pet, fully grown and fat, runs p_l over in their haste to get away."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1

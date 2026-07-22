@@ -157,7 +157,7 @@
             ],
             "apprentice": [
                 1,
-                6
+                1
             ]
         },
         "chance_of_success": 50,
@@ -170,13 +170,6 @@
                 "strings": [
                     "p_l considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day — except their burrow is occupied, and p_l instead has to wait out the heat in the uncomfortable shade of a cactus."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 15,
                 "supply": [
                     {
@@ -223,13 +216,6 @@
                 "strings": [
                     "Making the smart choice, p_l doesn't move from the shade, taking a good long nap in the heat."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             },
             {
@@ -250,7 +236,7 @@
                             ]
                         },
                         "prior_abbreviation": [
-                            "r_c1"
+                            "p_l"
                         ]
                     }
                 },
@@ -261,18 +247,11 @@
                 "strings": [
                     "p_l doesn't make it back to camp. A patrol sent out for them find their body, collapsed in a shadeless part of the territory and already starting to dry out and mummify."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "history": "This cat died from heat stroke."
                     }
@@ -283,18 +262,11 @@
                 "strings": [
                     "When p_l doesn't return to camp that evening, a search party goes out for them. They find p_l collapsed and badly affected by heat stroke, and carry them back to camp where there might be a way to help them. However, p_l's breathing stops on the journey home, and they slip to StarClan."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "heat exhaustion"

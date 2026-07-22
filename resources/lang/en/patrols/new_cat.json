@@ -10460,15 +10460,8 @@
             ],
             "apprentice": [
                 1,
-                6
+                1
             ]
-        },
-        "involved_cats": {
-            "p_l": {
-                "status": [
-                    "apprentice"
-                ]
-            }
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
@@ -10481,11 +10474,6 @@
                     "It's probably dangerous, but... there's no way p_l could live with leaving some poor soul alone on the mountainside in the cold. Following the piteous cries, p_l rounds a bend and spots a puffed-out bundle of terrified screams sitting by the side of one of the few Thunderpaths that cross c_n territory. {PRONOUN/p_l/subject/CAP} {VERB/p_l/sigh/sighs}, climbing down the slope and calling out in reassurance to the kittypet."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
@@ -10543,11 +10531,6 @@
                     "StarClan, but the cat {PRONOUN/p_l/subject} {VERB/p_l/find/finds} is weird, {PRONOUN/n_c:0/poss} fur soft and thin, {PRONOUN/n_c:0/poss} cries desperate as {PRONOUN/n_c:0/subject} call in confusion. p_l comes down to {PRONOUN/n_c:0/object}, startling the poor thing half out of {PRONOUN/n_c:0/poss} pelt, and asks if {PRONOUN/n_c:0/subject} {VERB/n_c:0/need/needs} assistance. This cat clearly doesn't belong here."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
@@ -10605,11 +10588,6 @@
                     "p_l follows the sad cries to find a kittypet, lost and alone and cold. The apprentice introduces {PRONOUN/p_l/self} cheerfully. Slowly, the desperate kittypet loses a little of {PRONOUN/n_c:0/poss} fear as p_l guides {PRONOUN/n_c:0/object} back to camp, sure that the Leader will know what to do with {PRONOUN/n_c:0/object}."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
@@ -10668,13 +10646,6 @@
                 "strings": [
                     "The cat seems to be moving all over the place, and finally, p_l gives up and goes home, too tired to catch more than a mouthful."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
@@ -10712,13 +10683,6 @@
                 "strings": [
                     "p_l screams that this is c_n's territory and there's no help for anyone else. A kittypet runs from {PRONOUN/p_l/object}, terrified of the echoing voice."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "reputation_changes": {
                     "outsider": -2
@@ -10731,13 +10695,6 @@
                 "strings": [
                     "p_l charges after the sound to attack the cat, only for a kittypet to bowl {PRONOUN/p_l/object} right over as the terrified Twoleg pet, fully grown and fat, runs p_l over in their haste to get away."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1

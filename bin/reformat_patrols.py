@@ -609,7 +609,7 @@ def second_reformat():
             write_file.write(dict_text)
 
 
-def check_romance(d: dict):
+def _check_romance(d: dict):
     reformatted_dict = d.copy()
     if d.get("tags"):
         if "romance" in d["tags"]:
@@ -626,6 +626,42 @@ def check_romance(d: dict):
     return reformatted_dict
 
 
+def check_solo_patrols():
+    for path in file_set:
+        try:
+            if path == ".\\prey_text_replacements.json":
+                continue
+            with open(f"{root_dir}/{path}", "r") as read_file:
+                patrols = read_file.read()
+                patrol_dict = ujson.loads(patrols)
+
+        except:
+            print(f"Something went wrong with {path}")
+            continue
+
+        for p in patrol_dict:
+            if p.get("required_cat_types")["patrol_cats"] == [1, 1]:
+                for abbr in p.get("involved_cats", {}).keys():
+                    if abbr != "p_l" and "s_c" not in abbr:
+                        print(p["id"])
+                        break
+                for outcome in (
+                    p.get("success_outcomes")
+                    + p.get("fail_outcomes")
+                    + p.get("antag_success_outcomes", [])
+                    + p.get("antag_fail_outcomes", [])
+                ):
+                    done = False
+                    for abbr in outcome.get("involved_cats", {}).keys():
+                        if abbr != "p_l" and "s_c" not in abbr and "n_c" not in abbr:
+                            print(p["id"])
+                            done = True
+                            break
+                    if done:
+                        break
+
+
 load_paths()
 # reformat()
-second_reformat()
+# second_reformat()
+check_solo_patrols()
