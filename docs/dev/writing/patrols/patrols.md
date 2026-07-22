@@ -869,7 +869,7 @@ Each cat can only have one designation, with the exception of `s_c` designations
 
 For example, you might see:
 ```json
-    "strings" = ["p_l dies."],
+    "strings": ["p_l dies."],
     "death": {
         "cats": ["r_c0"]
     },
@@ -877,7 +877,7 @@ For example, you might see:
 
 * `p_l` is dying in the string, but `r_c0` is dying in the `death` dict. It's likely that this patrol used to be written with the assumption that `p_l` was also `r_c`. This no longer works and so this should be adjusted to:
 ```json
-    "strings" = ["p_l dies."],
+    "strings": ["p_l dies."],
     "death": {
         "cats": ["p_l"]
     },
