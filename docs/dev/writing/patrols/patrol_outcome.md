@@ -322,10 +322,12 @@ Change block:
 > If the Clan's current level of the specified supply type should be at a certain threshold for this outcome to occur, specify it here.  Allowed specification are: `always` 'low', 'adequate', 'full', 'excess'.  You **do not have** to specify a trigger.
 
 **adjust**
-> The amount to increase the specified supply type. Allowed increase tags are: `increase_tiny`, `increase_small`, `increase_medium`, `increase_large`, `increase_huge`.
+> The amount to increase the specified supply type. Allowed increase tags are: `increase_tiny`, `increase_small`, `increase_medium`, `increase_large`, `increase_huge`. Keep in mind that this increase is "per" cat on the patrol. A 3 cat patrol being given an `increase_medium` will take home 3 times as much as a similar 1 cat patrol.
 
 !!! tip
     `increase_medium` should be the "default" increase used.
+
+    When awarding multiple herb types, consider downgrading the increases from `medium` to `small` or even `tiny`. Consider what a cat could reasonably carry back and how you might acknowledge an unusual amount in the text.
 
 ***
 
