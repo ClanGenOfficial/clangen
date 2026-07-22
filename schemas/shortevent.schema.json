@@ -827,7 +827,7 @@
           "type": "array"
         },
         "group": {
-          "description": "List of groups m_c can belong to. Defaults to \"player_clan\" if omitted.",
+          "description": "List of groups m_c can belong to. Defaults to \"player_clan\".",
           "items": {
             "$ref": "#/$defs/Group"
           },
@@ -1174,7 +1174,7 @@
           "type": "array"
         },
         "group": {
-          "description": "List of groups r_c can belong to. Defaults to \"player_clan\" if omitted.",
+          "description": "List of groups r_c can belong to. Defaults to \"player_clan\".",
           "items": {
             "$ref": "#/$defs/Group"
           },

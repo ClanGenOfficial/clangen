@@ -16771,7 +16771,26 @@
             "group": [
                 "starclan"
             ]
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "comfort"
+                ],
+                "amount": 4,
+                "log": {
+                    "cats_from": "cat_from felt comforted after dreaming of cat_to's pride in them."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_starclanparent_comfort1",
@@ -16804,7 +16823,26 @@
             "group": [
                 "starclan"
             ]
-        }
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "comfort"
+                ],
+                "amount": 4,
+                "log": {
+                    "cats_from": "cat_from felt comforted after dreaming of cat_to."
+                }
+            }
+        ]
     },
     {
         "event_id": "gen_misc_leaderproud_darkforest1",
