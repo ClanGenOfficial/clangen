@@ -125,7 +125,10 @@
                                 "calm",
                                 "careful"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 10,

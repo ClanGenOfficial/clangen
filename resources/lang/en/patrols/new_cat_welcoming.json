@@ -8774,7 +8774,10 @@
                                 "wise",
                                 "thoughtful"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     },
                     "n_c0": {
                         "can_create_new_cat": {},
@@ -8872,7 +8875,10 @@
                                 "loving",
                                 "compassionate"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,

@@ -8476,7 +8476,10 @@
                                 "thoughtful",
                                 "wise"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -8532,7 +8535,10 @@
                                 "playful",
                                 "righteous"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -9109,7 +9115,10 @@
                                 "thoughtful",
                                 "wise"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -10182,7 +10191,10 @@
                                 "loyal",
                                 "strict"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,

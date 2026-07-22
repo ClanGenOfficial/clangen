@@ -584,18 +584,29 @@ def second_reformat():
             continue
 
         for p in patrol_dict:
-            reformatted_patrol = check_romance(p)
+            # reformatted_patrol = check_romance(p)
+
+            for outcome in (
+                p.get("success_outcomes")
+                + p.get("fail_outcomes")
+                + p.get("antag_success_outcomes", [])
+                + p.get("antag_fail_outcomes", [])
+            ):
+                for abbr, constraints in outcome.get("involved_cats", {}).items():
+                    if "s_c" in abbr and not constraints.get("prior_abbreviation"):
+                        outcome["involved_cats"][abbr]["prior_abbreviation"] = ["any"]
+
+            reformatted_patrol = p
 
             new_patrols.append(reformatted_patrol)
 
-        if new_patrols != patrol_dict:
-            dict_text = ujson.dumps(new_patrols, indent=4)
-            dict_text = dict_text.replace(
-                "\/", "/"
-            )  # ujson tries to escape "/", but doesn't end up doing a good job.
+        dict_text = ujson.dumps(new_patrols, indent=4)
+        dict_text = dict_text.replace(
+            "\/", "/"
+        )  # ujson tries to escape "/", but doesn't end up doing a good job.
 
-            with open(f"{root_dir}/{path}", "w") as write_file:
-                write_file.write(dict_text)
+        with open(f"{root_dir}/{path}", "w") as write_file:
+            write_file.write(dict_text)
 
 
 def check_romance(d: dict):
@@ -616,4 +627,5 @@ def check_romance(d: dict):
 
 
 load_paths()
+# reformat()
 second_reformat()

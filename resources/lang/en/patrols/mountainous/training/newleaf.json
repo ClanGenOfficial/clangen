@@ -147,7 +147,10 @@
                                 "STORY,1",
                                 "LORE,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 15,
@@ -204,7 +207,10 @@
                             "skill": [
                                 "TEACHER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 15,
@@ -451,7 +457,10 @@
                                 "LORE,1",
                                 "STORY,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -508,7 +517,10 @@
                             "skill": [
                                 "TEACHER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 15,

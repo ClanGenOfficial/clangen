@@ -2205,7 +2205,10 @@
                                 "LORE,2",
                                 "INSIGHTFUL,2"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -2264,7 +2267,10 @@
                                 "thoughtful",
                                 "strange"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -2375,7 +2381,10 @@
                                 "daring",
                                 "shameless"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -2466,7 +2475,10 @@
                                 "daring",
                                 "shameless"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -2649,7 +2661,10 @@
                                 "LORE,1",
                                 "STAR,3"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 40,
@@ -2713,7 +2728,10 @@
                                 "strict",
                                 "wise"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 40,
@@ -2862,7 +2880,10 @@
                                 "troublesome",
                                 "insecure"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,

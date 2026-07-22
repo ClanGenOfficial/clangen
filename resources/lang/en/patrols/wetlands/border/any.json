@@ -1545,7 +1545,10 @@
                                 "playful",
                                 "righteous"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     },
                     "n_c0": {
                         "status": [
@@ -2346,7 +2349,10 @@
                                 "playful",
                                 "righteous"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     },
                     "n_c0": {
                         "status": [
@@ -2425,7 +2431,10 @@
                                 "playful",
                                 "righteous"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     },
                     "n_c0": {
                         "status": [
@@ -2582,7 +2591,10 @@
                                 "playful",
                                 "righteous"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     },
                     "n_c0": {
                         "status": [

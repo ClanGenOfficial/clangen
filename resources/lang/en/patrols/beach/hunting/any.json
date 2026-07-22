@@ -1247,7 +1247,10 @@
                                 "cunning",
                                 "strange"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -1287,7 +1290,10 @@
                                 "shameless",
                                 "rebellious"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0
@@ -6875,7 +6881,10 @@
                                 "RUNNER,1",
                                 "SWIMMER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -7073,7 +7082,10 @@
                                 "RUNNER,1",
                                 "SWIMMER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -7474,7 +7486,10 @@
                                 "RUNNER,1",
                                 "SWIMMER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 30,
@@ -7689,7 +7704,10 @@
                                 "RUNNER,1",
                                 "SWIMMER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 30,
@@ -9519,7 +9537,10 @@
                             "skill": [
                                 "FIGHTER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 35,

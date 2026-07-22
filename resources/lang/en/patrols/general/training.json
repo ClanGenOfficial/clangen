@@ -2368,7 +2368,10 @@
                                 "thoughtful",
                                 "wise"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "relationship_constraint": [
@@ -5344,7 +5347,10 @@
                                 "thoughtful",
                                 "wise"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -5538,7 +5544,10 @@
                                 "troublesome",
                                 "vengeful"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -5595,7 +5604,10 @@
                                 "thoughtful",
                                 "wise"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -6183,7 +6195,10 @@
                                 "CLAIRVOYANT,2",
                                 "PROPHET,2"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -6243,7 +6258,10 @@
                                 "faithful",
                                 "strange"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -6340,7 +6358,10 @@
                                 "cold",
                                 "righteous"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -6676,7 +6697,10 @@
                                 "shameless",
                                 "strange"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -6888,7 +6912,10 @@
                                 "arrogant",
                                 "oblivious"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20
@@ -6912,7 +6939,10 @@
                                 "strange",
                                 "sincere"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -6944,7 +6974,10 @@
                                 "cunning",
                                 "grumpy"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20
@@ -6966,7 +6999,10 @@
                                 "thoughtful",
                                 "wise"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -7033,7 +7069,10 @@
                                 "nervous",
                                 "strange"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -7078,7 +7117,10 @@
                                 "playful",
                                 "righteous"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -7121,7 +7163,10 @@
                                 "thoughtful",
                                 "wise"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0
@@ -7145,7 +7190,10 @@
                                 "troublesome",
                                 "vengeful"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -9288,7 +9336,10 @@
                             "skill": [
                                 "TEACHER,2"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -9933,7 +9984,10 @@
                             "skill": [
                                 "TEACHER,2"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -10406,7 +10460,10 @@
                             "skill": [
                                 "TEACHER,2"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -13365,7 +13422,10 @@
                                 "TEACHER,1",
                                 "HUNTER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 30,
@@ -13617,7 +13677,10 @@
                             "skill": [
                                 "HUNTER,3"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 40,
@@ -13943,7 +14006,10 @@
                                 "TEACHER,1",
                                 "HUNTER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 30,
@@ -14288,7 +14354,10 @@
                                 "TEACHER,1",
                                 "HUNTER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 30,
@@ -15401,7 +15470,10 @@
                                 "TEACHER,1",
                                 "FIGHTER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 30,
@@ -15805,7 +15877,10 @@
                                 "TEACHER,1",
                                 "FIGHTER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 30,
@@ -16142,7 +16217,10 @@
                                 "TEACHER,1",
                                 "FIGHTER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 30,
@@ -22051,7 +22129,10 @@
                                 "childish",
                                 "shameless"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -22102,7 +22183,10 @@
                                 "nervous",
                                 "insecure"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -24477,7 +24561,9 @@
     {
         "id": "gen_train_leaffall_eclipsemyth_storylocked1",
         "frequency": 3,
-        "types": ["training"],
+        "types": [
+            "training"
+        ],
         "location": [
             "forest",
             "mountainous",
@@ -30411,7 +30497,10 @@
                             "skill": [
                                 "FIGHTER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -30464,7 +30553,10 @@
                                 "TEACHER,0",
                                 "INSIGHTFUL,0"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -30534,7 +30626,10 @@
                             "skill": [
                                 "TEACHER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -30585,7 +30680,10 @@
                             "skill": [
                                 "TEACHER,3"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 30,
@@ -30638,7 +30736,10 @@
                             "skill": [
                                 "RUNNER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -30674,7 +30775,10 @@
                             "skill": [
                                 "KIT,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -30722,7 +30826,10 @@
                                 "shameless",
                                 "troublesome"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -30801,7 +30908,10 @@
                             "skill": [
                                 "HUNTER,2"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -30852,7 +30962,10 @@
                             "skill": [
                                 "FIGHTER,0"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -30914,7 +31027,10 @@
                             "skill": [
                                 "STORY,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -30994,7 +31110,10 @@
                                 "wise",
                                 "cold"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,

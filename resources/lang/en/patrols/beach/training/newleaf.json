@@ -165,7 +165,10 @@
                             "skill": [
                                 "TEACHER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -234,7 +237,10 @@
                                 "thoughtful",
                                 "wise"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,

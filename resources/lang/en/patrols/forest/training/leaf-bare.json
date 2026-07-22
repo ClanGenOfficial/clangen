@@ -281,10 +281,12 @@
                     },
                     {
                         "cats_to": [
-                            "patrol_cats", "-p_l"
+                            "patrol_cats",
+                            "-p_l"
                         ],
                         "cats_from": [
-                            "patrol_cats", "-p_l"
+                            "patrol_cats",
+                            "-p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -326,7 +328,10 @@
                                 "childish",
                                 "grumpy"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,

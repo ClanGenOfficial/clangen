@@ -201,7 +201,10 @@
                                 "childish",
                                 "playful"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -1573,7 +1576,10 @@
                                 "playful",
                                 "righteous"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20
@@ -1601,7 +1607,10 @@
                                 "nervous",
                                 "careful"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0
@@ -2747,7 +2756,10 @@
                             "skill": [
                                 "TEACHER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 15,
@@ -3013,7 +3025,10 @@
                                 "LORE,1",
                                 "STORY,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20
@@ -3034,7 +3049,10 @@
                             "skill": [
                                 "TEACHER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 15,
@@ -3389,7 +3407,10 @@
                                 "CLEVER,1",
                                 "TEACHER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 15,
@@ -3603,7 +3624,10 @@
                                 "arrogant",
                                 "competitive"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,

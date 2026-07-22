@@ -3535,7 +3535,10 @@
                                 "RUNNER,1",
                                 "SWIMMER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -3733,7 +3736,10 @@
                                 "RUNNER,1",
                                 "SWIMMER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -4134,7 +4140,10 @@
                                 "RUNNER,1",
                                 "SWIMMER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 30,
@@ -4349,7 +4358,10 @@
                                 "RUNNER,1",
                                 "SWIMMER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 30,

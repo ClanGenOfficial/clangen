@@ -1122,7 +1122,10 @@
                                 "playful",
                                 "righteous"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     },
                     "n_c0": {
                         "status": [
@@ -1918,7 +1921,10 @@
                                 "playful",
                                 "righteous"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     },
                     "n_c0": {
                         "status": [
@@ -1997,7 +2003,10 @@
                                 "playful",
                                 "righteous"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     },
                     "n_c0": {
                         "status": [
@@ -2154,7 +2163,10 @@
                                 "playful",
                                 "righteous"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     },
                     "n_c0": {
                         "status": [
@@ -4269,7 +4281,8 @@
                 "death": [
                     {
                         "cats": [
-                            "p_l"                        ],
+                            "p_l"
+                        ],
                         "history": "This cat was killed after an unfortunate meeting with a wolverine."
                     }
                 ]

@@ -180,7 +180,10 @@
                                 "nervous",
                                 "strange"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 15,

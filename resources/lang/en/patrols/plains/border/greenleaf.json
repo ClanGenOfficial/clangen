@@ -2768,7 +2768,10 @@
                             "skill": [
                                 "FIGHTER,0"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,

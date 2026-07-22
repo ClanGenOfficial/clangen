@@ -6456,7 +6456,8 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "clan", "high_aggress"
+                            "clan",
+                            "high_aggress"
                         ],
                         "values": [
                             "like",

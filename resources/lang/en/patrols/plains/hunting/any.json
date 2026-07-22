@@ -503,7 +503,10 @@
                             "skill": [
                                 "RUNNER,0"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 15,
@@ -544,7 +547,10 @@
                             "skill": [
                                 "HUNTER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 15,
@@ -585,7 +591,10 @@
                             "trait": [
                                 "cunning"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 15,
@@ -627,7 +636,10 @@
                                 "CLEVER,0",
                                 "INSIGHTFUL,0"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 15,
@@ -749,7 +761,10 @@
                                 "flamboyant",
                                 "shameless"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -2923,7 +2938,10 @@
                                 "nervous",
                                 "strange"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -2970,7 +2988,10 @@
                                 "thoughtful",
                                 "wise"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0
@@ -4393,7 +4414,10 @@
                                 "fierce",
                                 "shameless"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0
@@ -7510,7 +7534,10 @@
                                 "RUNNER,1",
                                 "SWIMMER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -7708,7 +7735,10 @@
                                 "RUNNER,1",
                                 "SWIMMER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -8109,7 +8139,10 @@
                                 "RUNNER,1",
                                 "SWIMMER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 30,
@@ -8324,7 +8357,10 @@
                                 "RUNNER,1",
                                 "SWIMMER,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 30,

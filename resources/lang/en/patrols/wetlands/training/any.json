@@ -179,7 +179,10 @@
                                 "childish",
                                 "playful"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -2131,7 +2134,10 @@
                                 "cold",
                                 "grumpy"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -2502,7 +2508,10 @@
                             "skill": [
                                 "STORY,0"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 30,
@@ -2555,7 +2564,10 @@
                             "skill": [
                                 "LORE,0"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 30,

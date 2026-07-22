@@ -3284,7 +3284,10 @@
                                 "GHOST,1",
                                 "STAR,2"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 30,
@@ -3338,7 +3341,10 @@
                                 "cold",
                                 "arrogant"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 0,
@@ -8566,7 +8572,10 @@
                             "trait": [
                                 "arrogant"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 10,
@@ -8616,7 +8625,10 @@
                                 "responsible",
                                 "righteous"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 10,
@@ -14621,7 +14633,10 @@
                             "skill": [
                                 "SENSE,2"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -22321,7 +22336,10 @@
                                 "SENSE,2",
                                 "CLEVER,3"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -22365,7 +22383,10 @@
                                 "responsible",
                                 "arrogant"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -48243,7 +48264,10 @@
                                 "SENSE,2",
                                 "CLEVER,3"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -48287,7 +48311,10 @@
                                 "responsible",
                                 "arrogant"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
@@ -53667,7 +53694,10 @@
                                 "SENSE,0",
                                 "HEALER,0"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
                     }
                 },
                 "exp_gained": 20,
