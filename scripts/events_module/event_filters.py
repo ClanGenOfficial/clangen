@@ -1319,6 +1319,8 @@ def check_rel_constraint_groups(
 
     cats_from = []
     for abbr in constraints_dict["cats_from"]:
+        if abbr not in involved_cats:
+            continue
         if isinstance(involved_cats[abbr], list):
             cats_from.extend(involved_cats[abbr])
         else:
@@ -1326,6 +1328,8 @@ def check_rel_constraint_groups(
 
     cats_to = []
     for abbr in constraints_dict["cats_to"]:
+        if abbr not in involved_cats:
+            continue
         if isinstance(involved_cats[abbr], list):
             cats_to.extend(involved_cats[abbr])
         else:

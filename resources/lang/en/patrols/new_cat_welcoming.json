@@ -1259,14 +1259,6 @@
                             "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -1301,15 +1293,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             }
         ],
         "antag_success_outcomes": [
@@ -1368,14 +1352,6 @@
                             "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -1410,15 +1386,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             }
         ]
     },
@@ -1464,6 +1432,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -1472,6 +1441,7 @@
                         ]
                     },
                     "n_c1": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -1556,14 +1526,6 @@
                             "cats_from": "cat_from was grateful for cat_to helping {PRONOUN/cat_from/object} with {PRONOUN/cat_from/poss} relationship conflict."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -1574,6 +1536,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -1582,6 +1545,7 @@
                         ]
                     },
                     "n_c1": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -1648,14 +1612,6 @@
                             "cats_from": "cat_from rejected {PRONOUN/cat_from/poss} friend, cat_to, <b>only</b> seeing cat_to as a friend."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -1679,6 +1635,7 @@
                         }
                     },
                     "n_c0": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -1687,6 +1644,7 @@
                         ]
                     },
                     "n_c1": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -1756,14 +1714,6 @@
                         "log": {
                             "cats_from": "cat_from was grateful for cat_to helping {PRONOUN/cat_from/object} resolve {PRONOUN/cat_from/poss} relationship conflict."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -1785,6 +1735,7 @@
                         }
                     },
                     "n_c0": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -1793,6 +1744,7 @@
                         ]
                     },
                     "n_c1": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -1863,14 +1815,6 @@
                             "cats_from": "cat_from was grateful for cat_to helping {PRONOUN/cat_from/object} resolve {PRONOUN/cat_from/poss} relationship conflict."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -1883,6 +1827,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -1891,6 +1836,7 @@
                         ]
                     },
                     "n_c1": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -1990,14 +1936,6 @@
                             "cats_from": "cat_from was jealous that n_c:1 seemed more interested in cat_to than {PRONOUN/cat_from/object}."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -2008,6 +1946,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -2016,6 +1955,7 @@
                         ]
                     },
                     "n_c1": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -2083,14 +2023,6 @@
                             "cats_from": "cat_from was annoyed when cat_to tried to intervene in {PRONOUN/cat_from/poss} argument with {PRONOUN/cat_from/poss} friend."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -2114,6 +2046,7 @@
                         }
                     },
                     "n_c0": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -2122,6 +2055,7 @@
                         ]
                     },
                     "n_c1": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -2185,14 +2119,6 @@
                             "cats_from": "cat_to and cat_from are friends and were in the middle of an argument before being interrupted."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -2205,6 +2131,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -2213,6 +2140,7 @@
                         ]
                     },
                     "n_c1": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -2276,14 +2204,6 @@
                             "cats_from": "cat_to and cat_from are friends and were in the middle of an argument before being interrupted."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -2294,6 +2214,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -2302,6 +2223,7 @@
                         ]
                     },
                     "n_c1": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -2363,14 +2285,6 @@
                             "cats_from": "cat_to and cat_from are friends and were in the middle of an argument before being interrupted."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -2381,6 +2295,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -2389,6 +2304,7 @@
                         ]
                     },
                     "n_c1": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -2455,14 +2371,6 @@
                             "cats_from": "cat_from rejected {PRONOUN/cat_from/poss} friend, cat_to, <b>only</b> seeing cat_to as a friend."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -2473,6 +2381,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -2481,6 +2390,7 @@
                         ]
                     },
                     "n_c1": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -2548,14 +2458,6 @@
                             "cats_from": "cat_from rejected {PRONOUN/cat_from/poss} friend, cat_to, <b>only</b> seeing cat_to as a friend."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -2568,6 +2470,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -2576,6 +2479,7 @@
                         ]
                     },
                     "n_c1": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -2637,14 +2541,6 @@
                         "scar_history": "m_c was scarred from a fight with a kittypet.",
                         "death_history": "m_c died from injuries inflicted by a kittypet."
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -2655,6 +2551,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -2663,6 +2560,7 @@
                         ]
                     },
                     "n_c1": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -2759,14 +2657,6 @@
                         "log": {
                             "cats_from": "cat_to and cat_from are friends and were in the middle of an argument before being interrupted."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -5868,15 +5758,7 @@
                 "exp_gained": 10,
                 "reputation_changes": {
                     "outsider": -2
-                },
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             }
         ],
         "antag_fail_outcomes": [
@@ -5928,14 +5810,6 @@
                         "log": {
                             "cats_from": "cat_from met an old friend, cat_to, at the border even though cat_to said {PRONOUN/cat_to/subject} didn't want to see {PRONOUN/cat_from/object} again."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             }

@@ -1242,14 +1242,6 @@
                             "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -1284,15 +1276,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             }
         ],
         "antag_success_outcomes": [
@@ -1351,14 +1335,6 @@
                             "cats_to": "After many moons of traveling together, cat_to considers cat_from {PRONOUN/cat_to/poss} closest friend."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -1393,15 +1369,7 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
-                },
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             }
         ]
     },
@@ -5688,14 +5656,6 @@
                             "cats_from": "cat_from and the other rogues were about to ambush cat_to but were scared off by cat_to's yowling."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -5741,14 +5701,6 @@
                         "log": {
                             "cats_from": "rom_cat and the other rogues were about to ambush cat_to in an abandoned Twoleg nest but cat_to got away."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -6095,14 +6047,6 @@
                             "cats_from": "cat_from and the other rogues were about to ambush cat_to but were scared off by cat_to's yowling."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -6148,14 +6092,6 @@
                         "log": {
                             "cats_from": "cat_from and the other rogues were about to ambush cat_to's patrol in an abandoned Twoleg nest but cat_to got away."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -6457,15 +6393,7 @@
                 "exp_gained": 10,
                 "reputation_changes": {
                     "outsider": -2
-                },
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
-                ]
+                }
             }
         ],
         "antag_fail_outcomes": [
@@ -6516,14 +6444,6 @@
                         "log": {
                             "cats_from": "cat_to met an old friend, cat_from, at the border even though cat_to didn't want to see {PRONOUN/cat_from/object} again."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -6814,14 +6734,6 @@
                             "cats_from": "cat_from and the other rogues were about to ambush cat_to but were scared off by cat_to's yowling."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -6867,14 +6779,6 @@
                         "log": {
                             "cats_from": "cat_from and the other rogues were about to ambush cat_to's patrol in an abandoned Twoleg nest but cat_to got away."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -7156,14 +7060,6 @@
                             "cats_from": "cat_from and the other rogues were about to ambush cat_to but were scared off by cat_to's yowling."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -7208,14 +7104,6 @@
                         "log": {
                             "cats_from": "cat_from and the other rogues ambushed cat_to in an abandoned Twoleg nest and cat_to got away."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -8122,14 +8010,6 @@
                         "history": "This cat died while wandering.",
                         "no_results": false
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -8161,14 +8041,6 @@
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -8213,14 +8085,6 @@
                         "log": {
                             "cats_from": "cat_from scared cat_to away."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -8272,14 +8136,6 @@
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -8448,14 +8304,6 @@
                             "cats_from": "cat_from was grateful for cat_to helping {PRONOUN/cat_from/object} with {PRONOUN/cat_from/poss} relationship conflict."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -8523,14 +8371,6 @@
                         "log": {
                             "cats_from": "cat_from rejected {PRONOUN/cat_from/poss} friend, cat_to, <b>only</b> seeing cat_to as a friend."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -8633,14 +8473,6 @@
                             "cats_from": "cat_from was grateful for cat_to helping {PRONOUN/cat_from/object} resolve {PRONOUN/cat_from/poss} relationship conflict."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -8738,14 +8570,6 @@
                         "log": {
                             "cats_from": "cat_from was grateful for cat_to helping {PRONOUN/cat_from/object} resolve {PRONOUN/cat_from/poss} relationship conflict."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -8866,14 +8690,6 @@
                             "cats_from": "cat_from was jealous that n_c:1 seemed more interested in cat_to than {PRONOUN/cat_from/object}."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -8958,14 +8774,6 @@
                         "log": {
                             "cats_from": "cat_from was annoyed when cat_to tried to intervene in {PRONOUN/cat_from/poss} argument with {PRONOUN/cat_from/poss} friend."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -9061,14 +8869,6 @@
                             "cats_from": "cat_to and cat_from are friends and were in the middle of an argument before being interrupted."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -9152,14 +8952,6 @@
                             "cats_from": "cat_to and cat_from are long-time friends."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -9238,14 +9030,6 @@
                         "log": {
                             "cats_from": "cat_to and cat_from are long-time friends."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -9330,14 +9114,6 @@
                         "log": {
                             "cats_from": "cat_from rejected {PRONOUN/cat_from/poss} friend. cat_to, <b>only</b> seeing cat_to as a friend."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -9424,14 +9200,6 @@
                             "cats_from": "cat_from rejected {PRONOUN/cat_from/poss} friend, cat_to, <b>only</b> seeing cat_to as a friend."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -9512,14 +9280,6 @@
                         ],
                         "scar_history": "m_c was scarred from a fight with a kittypet.",
                         "death_history": "m_c died from injuries inflicted by a kittypet."
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -9619,14 +9379,6 @@
                         "log": {
                             "cats_from": "cat_to and cat_from are long-time friends."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             }

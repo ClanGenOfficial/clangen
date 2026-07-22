@@ -626,7 +626,7 @@ class CatSkills:
             except KeyError:
                 raise KeyError(f"{path} is not a real skill path")
 
-        elif isinstance(path, SkillPath):
+        if isinstance(path, SkillPath):
             if self.primary:
                 if path == self.primary.path and self.primary.tier >= min_tier:
                     return True
