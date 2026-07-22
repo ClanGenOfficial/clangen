@@ -1413,11 +1413,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c0 waggles {PRONOUN/r_c0/poss} haunches and leaps, pinning the mouse beneath a paw as {PRONOUN/r_c0/subject} {VERB/r_c0/make/makes} the killing bite."
+                    "p_l locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. p_l waggles {PRONOUN/p_l/poss} haunches and leaps, pinning the mouse beneath a paw as {PRONOUN/p_l/subject} {VERB/p_l/make/makes} the killing bite."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -1429,11 +1426,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 pinpoints the location of the prey and begins creeping forward. {PRONOUN/r_c0/subject/CAP}{VERB/r_c0/'re/'s} almost within pouncing distance when the mouse suddenly bolts. With a lash of {PRONOUN/r_c0/poss} tail, r_c0 leaps after the mouse, barely snagging it before it reaches a burrow. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/purr/purrs} in satisfaction as prey-blood hits {PRONOUN/r_c0/poss} tongue."
+                    "p_l pinpoints the location of the prey and begins creeping forward. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} almost within pouncing distance when the mouse suddenly bolts. With a lash of {PRONOUN/p_l/poss} tail, p_l leaps after the mouse, barely snagging it before it reaches a burrow. {PRONOUN/p_l/subject/CAP} {VERB/p_l/purr/purrs} in satisfaction as prey-blood hits {PRONOUN/p_l/poss} tongue."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -1460,7 +1454,7 @@
         ]
     },
     {
-        "id": "mtn_hunt_mouse_warriorr_c1",
+        "id": "mtn_hunt_mouse_warriorapp1",
         "types": [
             "hunting"
         ],
@@ -1490,15 +1484,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 pounces on the mouse, with a squeak of surprise from both prey and apprentice."
+                    "p_l pounces on the mouse, with a squeak of surprise from both prey and apprentice."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -1510,15 +1497,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c1 leaps onto the mouse, an easy kill! {PRONOUN/r_c1/subject/CAP}{VERB/r_c1/'re/'s} really getting the hang of hunting!"
+                    "p_l leaps onto the mouse, an easy kill! {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} really getting the hang of hunting!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -1709,11 +1689,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 creeps towards the bird, setting {PRONOUN/r_c0/poss} paws down gently. The bird notices the cat sneaking towards it and attempts to take off. r_c0 bounds forward and smacks the bird to the ground with an outstretched paw. Outstanding!"
+                    "p_l creeps towards the bird, setting {PRONOUN/p_l/poss} paws down gently. The bird notices the cat sneaking towards it and attempts to take off. p_l bounds forward and smacks the bird to the ground with an outstretched paw. Outstanding!"
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 15,
                 "supply": [
                     {

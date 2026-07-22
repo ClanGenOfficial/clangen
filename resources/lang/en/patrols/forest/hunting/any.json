@@ -243,12 +243,9 @@
                 2
             ]
         },
-        "involved_cats": {
-            "r_c0": {}
-        },
         "chance_of_success": 10,
         "patrol_art": "animals/animals/animals/fst_porcupinedanger1",
-        "intro_text": "r_c0 encounters a porcupine, bristling with quills.",
+        "intro_text": "p_l encounters a porcupine, bristling with quills.",
         "decline_text": "The patrol steers clear of the porcupine. They don't have enough cats to confront this creature safely.",
         "success_outcomes": [
             {
@@ -373,20 +370,20 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 leaps back just as the porcupine whips its tail towards {PRONOUN/r_c0/object}! That was close! They decide to give the porcupine a wide berth."
+                    "p_l leaps back just as the porcupine whips its tail towards {PRONOUN/p_l/object}! That was close! They decide to give the porcupine a wide berth."
                 ],
                 "exp_gained": 0
             },
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c0 doesn't react quickly enough to the porcupine's warning. It charges sideways at {PRONOUN/r_c0/object}, its quills ready to impale! r_c0 is badly injured and dies a few days later from the wounds."
+                    "p_l doesn't react quickly enough to the porcupine's warning. It charges sideways at {PRONOUN/p_l/object}, its quills ready to impale! p_l is badly injured and dies a few days later from the wounds."
                 ],
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "history": "m_c was killed by an angry porcupine while on patrol."
                     }
@@ -395,13 +392,13 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The porcupine whips around, digging the quills of its tail into r_c! r_c0 returns to camp with a nose full of quills and a wounded pride."
+                    "The porcupine whips around, digging the quills of its tail into r_c! p_l returns to camp with a nose full of quills and a wounded pride."
                 ],
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "condition": [
                             "quilled by a porcupine"
@@ -431,18 +428,15 @@
                 6
             ]
         },
-        "involved_cats": {
-            "r_c0": {}
-        },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "While hunting, r_c0 comes across a rabbit burrow.",
-        "decline_text": "r_c0 decides to ignore the burrow.",
+        "intro_text": "While hunting, p_l comes across a rabbit burrow.",
+        "decline_text": "p_l decides to ignore the burrow.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 catches the rabbit hiding in its burrow."
+                    "p_l catches the rabbit hiding in its burrow."
                 ],
                 "exp_gained": 10,
                 "supply": [
@@ -910,11 +904,8 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The squirrels dart up a tree, and r_c0 tries to climb up after them but slips and falls, twisting {PRONOUN/r_c0/poss} paw."
+                    "The squirrels dart up a tree, and r_c0 tries to climb up after them but slips and falls, twisting {PRONOUN/p_l/poss} paw."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 0,
                 "supply": [
                     {
@@ -925,7 +916,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "condition": [
                             "sprain"
@@ -5118,7 +5109,7 @@
         ],
         "required_cat_types": {
             "patrol_cats": [
-                1,
+                2,
                 3
             ],
             "apprentice": [

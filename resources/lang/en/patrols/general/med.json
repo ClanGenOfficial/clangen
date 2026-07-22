@@ -13558,18 +13558,15 @@
                 6
             ]
         },
-        "involved_cats": {
-            "r_c0": {}
-        },
         "chance_of_success": 50,
         "patrol_art": "med_general_intro",
-        "intro_text": "As r_c0 follows a trail into a darkly shadowed part of the territory on the hunt for herbs, night shadows begin to play with {PRONOUN/r_c0/poss} vision. Was that movement up ahead? r_c0 spots the unmistakable silhouette of a cat ahead. Malicious eyes and bristled fur meet {PRONOUN/r_c0/object} as {PRONOUN/r_c0/subject} {VERB/r_c0/walk/walks} amongst the shadows. The stranger's fur is translucent, and it moves as though made from a strange dark mist.",
-        "decline_text": "r_c's tail bristles with fear, a cold shiver creeping along {PRONOUN/r_c0/poss} back. This is definitely not a StarClan cat, and {PRONOUN/r_c0/subject} quickly {VERB/r_c0/turn/turns} the back to camp — herbs can wait until morning.",
+        "intro_text": "As p_l follows a trail into a darkly shadowed part of the territory on the hunt for herbs, night shadows begin to play with {PRONOUN/p_l/poss} vision. Was that movement up ahead? p_l spots the unmistakable silhouette of a cat ahead. Malicious eyes and bristled fur meet {PRONOUN/p_l/object} as {PRONOUN/p_l/subject} {VERB/p_l/walk/walks} amongst the shadows. The stranger's fur is translucent, and it moves as though made from a strange dark mist.",
+        "decline_text": "r_c's tail bristles with fear, a cold shiver creeping along {PRONOUN/p_l/poss} back. This is definitely not a StarClan cat, and {PRONOUN/p_l/subject} quickly {VERB/p_l/turn/turns} the back to camp — herbs can wait until morning.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 approaches the strange cat, thinking that they might be a wandering spirit in need of help. The dark silhouette seems to flicker in and out of view as {PRONOUN/r_c0/subject} {VERB/r_c0/move/moves} toward it, gradually reappearing further and further away. r_c0 stops, watching the stranger in the distance with confusion. Glowing, haunted eyes return {PRONOUN/r_c0/poss} gaze from the shadows. r_c0 shivers and decides to hunt for herbs someplace else."
+                    "p_l approaches the strange cat, thinking that they might be a wandering spirit in need of help. The dark silhouette seems to flicker in and out of view as {PRONOUN/p_l/subject} {VERB/p_l/move/moves} toward it, gradually reappearing further and further away. p_l stops, watching the stranger in the distance with confusion. Glowing, haunted eyes return {PRONOUN/p_l/poss} gaze from the shadows. p_l shivers and decides to hunt for herbs someplace else."
                 ],
                 "exp_gained": 10
             }
@@ -13578,13 +13575,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 approaches the strange cat, thinking that they might be a wandering spirit in need of help. But as r_c0 gets closer, the strange cat shrieks, an awful, blood curdling scream that makes {PRONOUN/r_c0/poss} fur stand on end. Overcome by terror, {PRONOUN/r_c0/subject} {VERB/r_c0/flee/flees} back to camp, dropping what little herbs {PRONOUN/r_c0/subject} had gathered."
+                    "p_l approaches the strange cat, thinking that they might be a wandering spirit in need of help. But as p_l gets closer, the strange cat shrieks, an awful, blood curdling scream that makes {PRONOUN/p_l/poss} fur stand on end. Overcome by terror, {PRONOUN/p_l/subject} {VERB/p_l/flee/flees} back to camp, dropping what little herbs {PRONOUN/p_l/subject} had gathered."
                 ],
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "condition": [
                             "shock"

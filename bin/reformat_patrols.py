@@ -659,9 +659,28 @@ def check_solo_patrols():
                             break
                     if done:
                         break
+            elif p.get("required_cat_types")["patrol_cats"][0] == 1:
+                for abbr in p.get("involved_cats", {}).keys():
+                    if abbr != "p_l" and "s_c" not in abbr:
+                        print(p["id"])
+                        break
+                for outcome in (
+                    p.get("success_outcomes")
+                    + p.get("fail_outcomes")
+                    + p.get("antag_success_outcomes", [])
+                    + p.get("antag_fail_outcomes", [])
+                ):
+                    done = False
+                    for abbr in outcome.get("involved_cats", {}).keys():
+                        if "r_c" in abbr:
+                            print(p["id"])
+                            done = True
+                            break
+                    if done:
+                        break
 
 
 load_paths()
 # reformat()
-second_reformat()
-# check_solo_patrols()
+# second_reformat()
+check_solo_patrols()

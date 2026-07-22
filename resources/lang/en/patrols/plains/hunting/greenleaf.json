@@ -234,21 +234,18 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "As r_c0 pokes {PRONOUN/r_c0/poss} head around the strange smelling whatever-it-is, {PRONOUN/r_c0/subject} {VERB/r_c0/poke/pokes} past a piece of metal that tears through {PRONOUN/r_c0/poss} ear, sending {PRONOUN/r_c0/object} skittering backwards with a yelp."
+                    "As p_l pokes {PRONOUN/p_l/poss} head around the strange smelling whatever-it-is, {PRONOUN/p_l/subject} {VERB/p_l/poke/pokes} past a piece of metal that tears through {PRONOUN/p_l/poss} ear, sending {PRONOUN/p_l/object} skittering backwards with a yelp."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "condition": [
                             "torn ear"
                         ],
-                        "scar_history": "r_c0 was scarred by a sharp piece of Twoleg garbage.",
+                        "scar_history": "m_c was scarred by a sharp piece of Twoleg garbage.",
                         "death_history": "m_c died after being cut by a piece of Twoleg garbage."
                     }
                 ]

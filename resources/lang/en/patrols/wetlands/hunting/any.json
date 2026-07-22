@@ -4723,11 +4723,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 very carefully walks to the water's edge and waits for {PRONOUN/r_c0/poss} chance. When the fish is near, {PRONOUN/r_c0/subject} {VERB/r_c0/hook/hooks} it out of the water with {PRONOUN/r_c0/poss} claws. More fresh-kill!"
+                    "p_l very carefully walks to the water's edge and waits for {PRONOUN/p_l/poss} chance. When the fish is near, {PRONOUN/p_l/subject} {VERB/p_l/hook/hooks} it out of the water with {PRONOUN/p_l/poss} claws. More fresh-kill!"
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -4739,11 +4736,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 pads closer to the water's edge, careful to keep {PRONOUN/r_c0/poss} shadow away from the water. The fish doesn't seem to notice {PRONOUN/r_c0/object} and darts too close. r_c's paw flashes into the water and the fish flops onto the bank. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/kill/kills} it and happily {VERB/r_c0/carry/carries} it back to camp."
+                    "p_l pads closer to the water's edge, careful to keep {PRONOUN/p_l/poss} shadow away from the water. The fish doesn't seem to notice {PRONOUN/p_l/object} and darts too close. r_c's paw flashes into the water and the fish flops onto the bank. {PRONOUN/p_l/subject/CAP} {VERB/p_l/kill/kills} it and happily {VERB/p_l/carry/carries} it back to camp."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {

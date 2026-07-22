@@ -5416,18 +5416,15 @@
                 6
             ]
         },
-        "involved_cats": {
-            "r_c0": {}
-        },
         "chance_of_success": 30,
         "patrol_art": "halloween/hal_bch_bishopfish",
-        "intro_text": "As r_c0 skids down the sand dunes, {PRONOUN/r_c0/subject} {VERB/r_c0/spot/spots} a distant heap being washed ashore by the waves.",
-        "decline_text": "Sniffing the heap, r_c0 decides that this is just too disgusting to be considered food.",
+        "intro_text": "As p_l skids down the sand dunes, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a distant heap being washed ashore by the waves.",
+        "decline_text": "Sniffing the heap, p_l decides that this is just too disgusting to be considered food.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 sniffs the still-struggling prey — and jerks backwards when it crosses its Twoleg-like forefins. No, this isn't something {PRONOUN/r_c0/subject} {VERB/r_c0/feel/feels} comfortable bringing back to camp."
+                    "p_l sniffs the still-struggling prey — and jerks backwards when it crosses its Twoleg-like forefins. No, this isn't something {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} comfortable bringing back to camp."
                 ],
                 "exp_gained": 0
             }
@@ -5436,7 +5433,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 brings back the ocean's bounty to camp. A wonderful and easy catch!"
+                    "p_l brings back the ocean's bounty to camp. A wonderful and easy catch!"
                 ],
                 "exp_gained": 0,
                 "condition": [
@@ -5531,11 +5528,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 very carefully walks to the water's edge and waits for {PRONOUN/r_c0/poss} chance. When the fish is near, {PRONOUN/r_c0/subject} {VERB/r_c0/hook/hooks} it out of the water with {PRONOUN/r_c0/poss} claws. More fresh-kill!"
+                    "p_l very carefully walks to the water's edge and waits for {PRONOUN/p_l/poss} chance. When the fish is near, {PRONOUN/p_l/subject} {VERB/p_l/hook/hooks} it out of the water with {PRONOUN/p_l/poss} claws. More fresh-kill!"
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -5547,11 +5541,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 pads closer to the water's edge, careful to keep {PRONOUN/r_c0/poss} shadow away from the water. The fish doesn't seem to notice {PRONOUN/r_c0/object} and darts too close. r_c's paw flashes into the water and the fish flops onto the rock. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/kill/kills} it and happily {VERB/r_c0/carry/carries} it back to camp."
+                    "p_l pads closer to the water's edge, careful to keep {PRONOUN/p_l/poss} shadow away from the water. The fish doesn't seem to notice {PRONOUN/p_l/object} and darts too close. r_c's paw flashes into the water and the fish flops onto the rock. {PRONOUN/p_l/subject/CAP} {VERB/p_l/kill/kills} it and happily {VERB/p_l/carry/carries} it back to camp."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {

@@ -2472,30 +2472,16 @@
                 -1
             ]
         },
-        "involved_cats": {
-            "r_c1": {
-                "status": [
-                    "apprentice"
-                ]
-            }
-        },
         "chance_of_success": 50,
         "patrol_art": "halloween/hal_fresno",
         "intro_text": "This is just weird — what's made the grass here grow to such a uniform low height? Why is it so green? Why has it grown in such a neat circle?",
-        "decline_text": "Look, r_c1 knows grass, and this is too weird to want to spend time in. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/head/heads} home without ever seeing the Fresno Nightcrawler.",
+        "decline_text": "Look, p_l knows grass, and this is too weird to want to spend time in. {PRONOUN/p_l/subject/CAP} {VERB/p_l/head/heads} home without ever seeing the Fresno Nightcrawler.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "Okay, r_c1 knows that Twolegs have, well, two legs, but that is just <i>excessive</i>, the Twoleg that owns this weird green circle is almost nothing but leg! Friendly though, and they don't try to invade r_c1's space."
+                    "Okay, p_l knows that Twolegs have, well, two legs, but that is just <i>excessive</i>, the Twoleg that owns this weird green circle is almost nothing but leg! Friendly though, and they don't try to invade p_l's space."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             }
         ],
@@ -2503,20 +2489,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "AH! r_c1 gets run over by an <i>enormously</i> tall Twoleg running in random circles around the green grass."
+                    "AH! p_l gets run over by an <i>enormously</i> tall Twoleg running in random circles around the green grass."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "condition": [
                             "shock",
