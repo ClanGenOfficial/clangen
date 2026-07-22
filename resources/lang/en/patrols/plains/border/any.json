@@ -635,7 +635,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 10,
@@ -702,7 +703,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 10,
@@ -762,7 +764,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 10,
@@ -837,7 +840,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 10,
@@ -906,7 +910,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 0
@@ -920,7 +925,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 0,
@@ -971,7 +977,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 0,
@@ -1039,7 +1046,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 10,
@@ -1130,7 +1138,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 0,
@@ -1162,7 +1171,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 0,
@@ -1232,7 +1242,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 10,
@@ -1317,7 +1328,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 10,
@@ -1380,7 +1392,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 10,
@@ -1478,7 +1491,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 10,
@@ -1562,7 +1576,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 10,
@@ -1685,7 +1700,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 0,
@@ -1728,7 +1744,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 0,
@@ -1816,7 +1833,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 10,
@@ -1929,7 +1947,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 10,
@@ -2011,7 +2030,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 10,
@@ -2171,7 +2191,8 @@
                     "n_c0": {
                         "status": [
                             "rogue"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 0,

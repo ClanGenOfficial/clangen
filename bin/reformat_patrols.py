@@ -593,8 +593,8 @@ def second_reformat():
                 + p.get("antag_fail_outcomes", [])
             ):
                 for abbr, constraints in outcome.get("involved_cats", {}).items():
-                    if "s_c" in abbr and not constraints.get("prior_abbreviation"):
-                        outcome["involved_cats"][abbr]["prior_abbreviation"] = ["any"]
+                    if "n_c" in abbr and not constraints.get("can_create_new_cat"):
+                        outcome["involved_cats"][abbr]["can_create_new_cat"] = {}
 
             reformatted_patrol = p
 
@@ -663,5 +663,5 @@ def check_solo_patrols():
 
 load_paths()
 # reformat()
-# second_reformat()
-check_solo_patrols()
+second_reformat()
+# check_solo_patrols()

@@ -7469,7 +7469,8 @@
                     "n_c0": {
                         "status": [
                             "kittypet"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 5,
@@ -7518,7 +7519,8 @@
                     "n_c0": {
                         "status": [
                             "kittypet"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 5,
@@ -7558,7 +7560,8 @@
                         ],
                         "status": [
                             "kittypet"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 10,
@@ -7607,7 +7610,8 @@
                     "n_c0": {
                         "status": [
                             "kittypet"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 2,
@@ -7653,7 +7657,8 @@
                     "n_c0": {
                         "status": [
                             "kittypet"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 2,
@@ -7725,7 +7730,8 @@
                     "n_c0": {
                         "status": [
                             "kittypet"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 5,
@@ -7794,7 +7800,8 @@
                     "n_c0": {
                         "status": [
                             "kittypet"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 0,
@@ -8056,12 +8063,14 @@
                     "n_c0": {
                         "status": [
                             "kittypet"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     },
                     "n_c1": {
                         "status": [
                             "kittypet"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 0,
@@ -8098,7 +8107,8 @@
                     "n_c0": {
                         "status": [
                             "kittypet"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     },
                     "n_c1": {
                         "can_create_new_cat": {},
@@ -8228,6 +8238,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -8236,6 +8247,7 @@
                         ]
                     },
                     "n_c1": {
+                        "can_create_new_cat": {},
                         "status": [
                             "kittypet"
                         ],
@@ -8319,7 +8331,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     },
                     "n_c1": {
                         "status": [
@@ -8327,7 +8340,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 20,
@@ -8400,7 +8414,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     },
                     "n_c1": {
                         "status": [
@@ -8408,7 +8423,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 20,
@@ -8498,7 +8514,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     },
                     "n_c1": {
                         "status": [
@@ -8506,7 +8523,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 20,
@@ -8588,7 +8606,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     },
                     "n_c1": {
                         "status": [
@@ -8596,7 +8615,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 20,
@@ -8705,7 +8725,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     },
                     "n_c1": {
                         "status": [
@@ -8713,7 +8734,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 20,
@@ -8803,7 +8825,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     },
                     "n_c1": {
                         "status": [
@@ -8811,7 +8834,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 20,
@@ -8886,7 +8910,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     },
                     "n_c1": {
                         "status": [
@@ -8894,7 +8919,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 20,
@@ -8967,7 +8993,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     },
                     "n_c1": {
                         "status": [
@@ -8975,7 +9002,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 20,
@@ -9046,7 +9074,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     },
                     "n_c1": {
                         "status": [
@@ -9054,7 +9083,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 20,
@@ -9130,7 +9160,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     },
                     "n_c1": {
                         "status": [
@@ -9138,7 +9169,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 20,
@@ -9217,7 +9249,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     },
                     "n_c1": {
                         "status": [
@@ -9225,7 +9258,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 20,
@@ -9296,7 +9330,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     },
                     "n_c1": {
                         "status": [
@@ -9304,7 +9339,8 @@
                         ],
                         "age": [
                             "young adult"
-                        ]
+                        ],
+                        "can_create_new_cat": {}
                     }
                 },
                 "exp_gained": 20,
