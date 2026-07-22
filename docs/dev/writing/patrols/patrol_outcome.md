@@ -73,7 +73,11 @@ Outcomes utilize the `TextPoolEvent` format.
             "cats_to": [],
             "mutual": false,
             "values": [],
-            "amount": 0
+            "amount": 0,
+            "log": {
+                "cats_from": "",
+                "cats_to": ""
+            }
         }
     ],
     "supply": [
