@@ -800,7 +800,7 @@ def gather_cat_objects(
                 if isinstance(found_cat, list):
                     out_set -= found_cat
                 else:
-                    out_set.remove(found_cat)
+                    out_set.discard(found_cat)
             else:
                 if isinstance(found_cat, list):
                     out_set.update(set(found_cat))
@@ -819,7 +819,7 @@ def gather_cat_objects(
             if found_cat not in out_set:
                 # continue to avoid KeyError
                 continue
-            out_set.remove(found_cat)
+            out_set.discard(found_cat)
             continue
         if not is_exclusionary and found_cat:
             out_set.add(found_cat)

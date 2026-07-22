@@ -9540,7 +9540,7 @@
                     "medicine cat apprentice"
                 ]
             },
-            "r_c2": {
+            "p_l": {
                 "status": [
                     "apprentice",
                     "medicine cat apprentice"
@@ -9549,29 +9549,15 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_meadow_ApAp",
-        "intro_text": "r_c1 and r_c2 head out to collect herbs together.",
+        "intro_text": "r_c1 and p_l head out to collect herbs together.",
         "decline_text": "A Clanmate calls them back to camp.",
         "success_outcomes": [
             {
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_train_talking_ApAp",
                 "strings": [
-                    "r_c1 and r_c2 work together to hunt down, pick, and bundle herbs. They return to camp feeling more confident in each other and in their own skills."
+                    "r_c1 and p_l work together to hunt down, pick, and bundle herbs. They return to camp feeling more confident in each other and in their own skills."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
@@ -9579,7 +9565,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -9604,22 +9590,8 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_train_talking_ApAp",
                 "strings": [
-                    "r_c1 takes the lead and finds a great patch from which to harvest. r_c2 is impressed and helps {PRONOUN/r_c1/object} carry plenty back."
+                    "r_c1 takes the lead and finds a great patch from which to harvest. p_l is impressed and helps {PRONOUN/r_c1/object} carry plenty back."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
@@ -9627,7 +9599,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -9636,7 +9608,7 @@
                         ],
                         "amount": 12,
                         "log": {
-                            "cats_from": "r_c2 was impressed by the great herb patch r_c1 found."
+                            "cats_from": "p_l was impressed by the great herb patch r_c1 found."
                         }
                     },
                     {
@@ -9644,7 +9616,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -9668,15 +9640,9 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_catlookingup_Ap",
                 "strings": [
-                    "s_c0 leads r_c2 to a plentiful, herb-rich area and harvests them with the practiced ease of a full medicine cat. r_c2 wonders what the point of {PRONOUN/r_c2/object} being there is if s_c0 can do it all {PRONOUN/s_c0/self}."
+                    "s_c0 leads p_l to a plentiful, herb-rich area and harvests them with the practiced ease of a full medicine cat. p_l wonders what the point of {PRONOUN/p_l/object} being there is if s_c0 can do it all {PRONOUN/s_c0/self}."
                 ],
                 "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "skill": [
@@ -9696,7 +9662,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -9705,7 +9671,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "r_c2 was jealous of r_c1's skill in herb-gathering when they patrolled together."
+                            "cats_from": "p_l was jealous of r_c1's skill in herb-gathering when they patrolled together."
                         }
                     }
                 ],
@@ -9720,15 +9686,9 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_catlookingup_Ap",
                 "strings": [
-                    "s_c0 bosses r_c2 around the whole time. To make matters worse, s_c0 <i>is</i> right about the best places and techniques for herb-gathering. The patrol is highly productive, but r_c2 seethes with resentment."
+                    "s_c0 bosses p_l around the whole time. To make matters worse, s_c0 <i>is</i> right about the best places and techniques for herb-gathering. The patrol is highly productive, but p_l seethes with resentment."
                 ],
                 "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "skill": [
@@ -9758,7 +9718,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -9767,7 +9727,7 @@
                         ],
                         "amount": -13,
                         "log": {
-                            "cats_from": "r_c1 bossed r_c2 around the whole time on an herb-gathering patrol, and to make matters worse, the patrol was highly successful."
+                            "cats_from": "r_c1 bossed p_l around the whole time on an herb-gathering patrol, and to make matters worse, the patrol was highly successful."
                         }
                     }
                 ],
@@ -9782,15 +9742,9 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bumpheads_ApAp",
                 "strings": [
-                    "s_c0 seems uncertain of {PRONOUN/s_c0/self}, and r_c2 reminds {PRONOUN/s_c0/object} that {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} a medicine cat apprentice for a reason. Grateful for {PRONOUN/r_c2/poss} confidence in {PRONOUN/s_c0/object}, s_c0 leads the two of them on a successful patrol."
+                    "s_c0 seems uncertain of {PRONOUN/s_c0/self}, and p_l reminds {PRONOUN/s_c0/object} that {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} a medicine cat apprentice for a reason. Grateful for {PRONOUN/p_l/poss} confidence in {PRONOUN/s_c0/object}, s_c0 leads the two of them on a successful patrol."
                 ],
                 "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "trait": [
@@ -9812,7 +9766,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -9826,7 +9780,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -9839,7 +9793,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "r_c1 was grateful for r_c2's vote of confidence in {PRONOUN/r_c1/object}."
+                            "cats_from": "r_c1 was grateful for p_l's vote of confidence in {PRONOUN/r_c1/object}."
                         }
                     }
                 ],
@@ -9854,15 +9808,9 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bumpheads_ApAp",
                 "strings": [
-                    "While they're gathering, s_c0 comments that r_c2 seems down about something. {PRONOUN/r_c2/subject/CAP} {VERB/r_c2/confess/confesses} what's been bothering {PRONOUN/r_c2/object} lately, and s_c0 gives {PRONOUN/r_c2/object} a sympathetic ear and some good advice."
+                    "While they're gathering, s_c0 comments that p_l seems down about something. {PRONOUN/p_l/subject/CAP} {VERB/p_l/confess/confesses} what's been bothering {PRONOUN/p_l/object} lately, and s_c0 gives {PRONOUN/p_l/object} a sympathetic ear and some good advice."
                 ],
                 "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "trait": [
@@ -9885,7 +9833,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -9901,7 +9849,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -9926,15 +9874,9 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bumpheads_ApAp",
                 "strings": [
-                    "While they're gathering, s_c0 comments that r_c2 seems down about something. {PRONOUN/r_c2/subject/CAP} {VERB/r_c2/confess/confesses} what's been bothering {PRONOUN/r_c2/object} lately, and s_c0 gives {PRONOUN/r_c2/object} a sympathetic ear and some good advice."
+                    "While they're gathering, s_c0 comments that p_l seems down about something. {PRONOUN/p_l/subject/CAP} {VERB/p_l/confess/confesses} what's been bothering {PRONOUN/p_l/object} lately, and s_c0 gives {PRONOUN/p_l/object} a sympathetic ear and some good advice."
                 ],
                 "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "skill": [
@@ -9954,7 +9896,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -9970,7 +9912,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -9995,15 +9937,9 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_crouchingperplexed_ApAp",
                 "strings": [
-                    "As they gather herbs, s_c0 suddenly stops and calls r_c2 over to show {PRONOUN/r_c2/object} omen_list_sight/s_c0. The apprentices discuss what it might mean on their way back to camp."
+                    "As they gather herbs, s_c0 suddenly stops and calls p_l over to show {PRONOUN/p_l/object} omen_list_sight/s_c0. The apprentices discuss what it might mean on their way back to camp."
                 ],
                 "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "skill": [
@@ -10022,7 +9958,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -10046,15 +9982,9 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_foundscent_ApWr",
                 "strings": [
-                    "r_c2 scents juniper off to {PRONOUN/r_c2/poss} left. s_c0 scents clair_list_smell/s_c0 to the right. No matter how carefully {PRONOUN/r_c2/subject} {VERB/r_c2/scent/scents} the air, r_c2 can't catch that scent and suggests it might be a sign. They discuss it while herb-gathering."
+                    "p_l scents juniper off to {PRONOUN/p_l/poss} left. s_c0 scents clair_list_smell/s_c0 to the right. No matter how carefully {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} the air, p_l can't catch that scent and suggests it might be a sign. They discuss it while herb-gathering."
                 ],
                 "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "skill": [
@@ -10073,7 +10003,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -10097,15 +10027,9 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_speakingcat_Ap",
                 "strings": [
-                    "As the apprentices gather herbs, r_c2 brushes {PRONOUN/r_c2/poss} pelt against s_c0's. s_c0 is filled with prophecy_list_emotion/s_c0. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/share/shares} this with r_c2, wondering if it might be a sign."
+                    "As the apprentices gather herbs, p_l brushes {PRONOUN/p_l/poss} pelt against s_c0's. s_c0 is filled with prophecy_list_emotion/s_c0. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/share/shares} this with p_l, wondering if it might be a sign."
                 ],
                 "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "skill": [
@@ -10124,7 +10048,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -10148,15 +10072,9 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_speakingcat_Ap",
                 "strings": [
-                    "s_c0 strikes up conversation with r_c2 as they gather herbs, wondering what {PRONOUN/r_c2/subject} {VERB/r_c2/think/thinks} about StarClan and fate. r_c2 takes the question seriously and the apprentices discuss as they work."
+                    "s_c0 strikes up conversation with p_l as they gather herbs, wondering what {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} about StarClan and fate. p_l takes the question seriously and the apprentices discuss as they work."
                 ],
                 "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "skill": [
@@ -10175,7 +10093,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -10200,15 +10118,9 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_catlookingup_Ap",
                 "strings": [
-                    "s_c0 and r_c2 have a productive gathering patrol, but r_c2 can't say {PRONOUN/r_c2/subject} particularly {VERB/r_c2/enjoy/enjoys} s_c0's company. Something about {PRONOUN/s_c0/object} gets on {PRONOUN/r_c2/poss} nerves."
+                    "s_c0 and p_l have a productive gathering patrol, but p_l can't say {PRONOUN/p_l/subject} particularly {VERB/p_l/enjoy/enjoys} s_c0's company. Something about {PRONOUN/s_c0/object} gets on {PRONOUN/p_l/poss} nerves."
                 ],
                 "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "trait": [
@@ -10237,7 +10149,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -10246,7 +10158,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "Despite a successful gathering patrol, r_c2 was reminded that {PRONOUN/r_c2/subject} {VERB/r_c2/find/finds} s_c0 irritating."
+                            "cats_from": "Despite a successful gathering patrol, p_l was reminded that {PRONOUN/p_l/subject} {VERB/p_l/find/finds} s_c0 irritating."
                         }
                     }
                 ],
@@ -10261,15 +10173,9 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_hunt_funrun_Ap",
                 "strings": [
-                    "s_c0 turns the gathering into a competition, and r_c2 finds {PRONOUN/r_c2/self} getting invested. A little extra incentive proves helpful, and both apprentices bring back hefty bundles of herbs."
+                    "s_c0 turns the gathering into a competition, and p_l finds {PRONOUN/p_l/self} getting invested. A little extra incentive proves helpful, and both apprentices bring back hefty bundles of herbs."
                 ],
                 "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "trait": [
@@ -10293,7 +10199,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -10319,22 +10225,8 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_train_argue_ApAp",
                 "strings": [
-                    "No matter how much they search, neither apprentice can find a patch of herbs ready to be harvested. r_c1 blames r_c2, and r_c2 blames r_c1. They return to camp still squabbling."
+                    "No matter how much they search, neither apprentice can find a patch of herbs ready to be harvested. r_c1 blames p_l, and p_l blames r_c1. They return to camp still squabbling."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -10342,7 +10234,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -10493,22 +10385,8 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_appsiblings_ApAp",
                 "strings": [
-                    "r_c1 and r_c2 have a great walk together, chattering away like starlings. Unfortunately, they were sent to gather herbs, not hang out."
+                    "r_c1 and p_l have a great walk together, chattering away like starlings. Unfortunately, they were sent to gather herbs, not hang out."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -10516,7 +10394,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -10672,15 +10550,9 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_train_argue_ApAp",
                 "strings": [
-                    "s_c0 strikes up conversation with r_c2 as they gather herbs, wondering what {PRONOUN/r_c2/subject} {VERB/r_c2/think/thinks} about StarClan and fate. r_c2 doesn't take the conversation seriously and s_c0 ends the patrol early, feeling annoyed."
+                    "s_c0 strikes up conversation with p_l as they gather herbs, wondering what {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} about StarClan and fate. p_l doesn't take the conversation seriously and s_c0 ends the patrol early, feeling annoyed."
                 ],
                 "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "skill": [
@@ -10696,7 +10568,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "cats_from": [
                             "s_c0"
@@ -10724,15 +10596,9 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_train_argue_ApAp",
                 "strings": [
-                    "s_c0 turns the gathering into a competition, but r_c2 refuses to play {PRONOUN/s_c0/poss} game. Eventually, s_c0 grows so frustrated that {PRONOUN/s_c0/subject} {VERB/s_c0/stalk/stalks} off and {VERB/s_c0/abandon/abandons} the patrol."
+                    "s_c0 turns the gathering into a competition, but p_l refuses to play {PRONOUN/s_c0/poss} game. Eventually, s_c0 grows so frustrated that {PRONOUN/s_c0/subject} {VERB/s_c0/stalk/stalks} off and {VERB/s_c0/abandon/abandons} the patrol."
                 ],
                 "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "trait": [
@@ -10756,7 +10622,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -10765,7 +10631,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "r_c2 dismissed s_c0's idea to turn their herb-gathering patrol into a competition. s_c0 was annoyed and stormed off."
+                            "cats_from": "p_l dismissed s_c0's idea to turn their herb-gathering patrol into a competition. s_c0 was annoyed and stormed off."
                         }
                     }
                 ]
@@ -11049,15 +10915,9 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bumpheads_ApAp",
                 "strings": [
-                    "s_c0 seems uncertain of {PRONOUN/s_c0/self}, and r_c2 reminds {PRONOUN/s_c0/object} that {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} a medicine cat apprentice for a reason. Grateful for {PRONOUN/r_c2/poss} confidence in {PRONOUN/s_c0/object}, s_c0 leads the group on a successful patrol."
+                    "s_c0 seems uncertain of {PRONOUN/s_c0/self}, and p_l reminds {PRONOUN/s_c0/object} that {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} a medicine cat apprentice for a reason. Grateful for {PRONOUN/p_l/poss} confidence in {PRONOUN/s_c0/object}, s_c0 leads the group on a successful patrol."
                 ],
                 "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "trait": [
@@ -11093,7 +10953,7 @@
                     },
                     {
                         "cats_to": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -11106,7 +10966,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "r_c1 was grateful for r_c2's vote of confidence in {PRONOUN/r_c1/object}."
+                            "cats_from": "r_c1 was grateful for p_l's vote of confidence in {PRONOUN/r_c1/object}."
                         }
                     }
                 ],
@@ -11121,15 +10981,9 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bumpheads_ApAp",
                 "strings": [
-                    "While they're gathering, s_c0 comments that r_c2 seems down about something. {PRONOUN/r_c2/subject/CAP} {VERB/r_c2/confess/confesses} what's been bothering {PRONOUN/r_c2/object} lately, and s_c0 gives {PRONOUN/r_c2/object} a sympathetic ear and some good advice."
+                    "While they're gathering, s_c0 comments that p_l seems down about something. {PRONOUN/p_l/subject/CAP} {VERB/p_l/confess/confesses} what's been bothering {PRONOUN/p_l/object} lately, and s_c0 gives {PRONOUN/p_l/object} a sympathetic ear and some good advice."
                 ],
                 "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "trait": [
@@ -11168,7 +11022,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -16590,10 +16444,6 @@
                 2
             ],
             "medicine cat": [
-                1,
-                1
-            ],
-            "normal adult": [
                 1,
                 1
             ]
@@ -26202,7 +26052,7 @@
         ]
     },
     {
-        "id": "gen_med_gatheringraspberrysolor_c1",
+        "id": "gen_med_gatheringraspberrysoloapp",
         "types": [
             "herb_gathering"
         ],
@@ -26226,10 +26076,6 @@
         },
         "involved_cats": {
             "p_l": {
-                "status": [
-                    "apprentice",
-                    "medicine cat apprentice"
-                ],
                 "has_mentor": true
             }
         },
@@ -26243,14 +26089,6 @@
                 "strings": [
                     "p_l identifies them as raspberries and carefully chews off a branch laden with them to bring back to camp. {PRONOUN/p_l/subject/CAP} can't quite remember what raspberries treat, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} pretty sure it's something to do with kitting."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 30,
                 "supply": [
                     {
@@ -26264,14 +26102,6 @@
                 "strings": [
                     "These... could be deathberries. Might be raspberries. But maybe deathberries. It's not worth the risk; {PRONOUN/p_l/subject} can ask {PRONOUN/p_l/poss} mentor for more training about it later."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 30
             }
         ],
@@ -26281,14 +26111,6 @@
                 "strings": [
                     "p_l confidently gathers them and prances back to camp, where {PRONOUN/p_l/subject} {VERB/p_l/are/is} then informed that {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} gathered raspberries, not cranberries, and this isn't going to help the Clan's elders with their problems."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             },
             {
@@ -26296,14 +26118,6 @@
                 "strings": [
                     "p_l plucks the berries, several splitting in {PRONOUN/p_l/poss} mouth, and is surprised at how good they taste — after all, every herb {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} trying to learn tastes awful, so it's surprising that one tastes good. As {PRONOUN/p_l/subject} {VERB/p_l/start/starts} back to camp, however, {PRONOUN/p_l/subject} {VERB/p_l/wobble/wobbles} a bit, and the world goes dark. {PRONOUN/p_l/poss/CAP} body is found soon after, but it's too late to help."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "death": [
                     {
@@ -26319,14 +26133,6 @@
                 "strings": [
                     "p_l carefully plucks the delicious-tasting berries, and as soon as the deceptive taste hits {PRONOUN/p_l/poss} tongue, {PRONOUN/p_l/subject} {VERB/p_l/realize/realizes} {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} made a terrible mistake. Trying to force {PRONOUN/p_l/self} to vomit, {PRONOUN/p_l/subject} {VERB/p_l/crawl/crawls} back to camp, weakly hoping {PRONOUN/p_l/poss} mentor will help {PRONOUN/p_l/object}."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "condition": [
                     {

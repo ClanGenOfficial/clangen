@@ -80,11 +80,11 @@ class PatrolEvent:
 
         self._generate_outcomes()
 
-        self.new_cat = self.get_new_cat()
-        self.other_clan = self.get_other_clan()
-        self.herbs_given = self.get_herbs_given()
+        self.new_cat = self._get_new_cat()
+        self.other_clan = self._get_other_clan()
+        self.herbs_given = self._get_herbs_given()
 
-    def get_new_cat(self) -> bool:
+    def _get_new_cat(self) -> bool:
         """Returns boolean if there are any outcomes that results in
         a new cat joining (not just meeting)"""
 
@@ -99,7 +99,7 @@ class PatrolEvent:
 
         return False
 
-    def get_other_clan(self) -> bool:
+    def _get_other_clan(self) -> bool:
         """Return boolean indicating if any outcome has any reputation effect"""
         for outcome in (
             self.success_outcomes
@@ -112,7 +112,7 @@ class PatrolEvent:
 
         return False
 
-    def get_herbs_given(self) -> list:
+    def _get_herbs_given(self) -> list:
         """
         returns list of herbs available to get from this patrol
         """
@@ -124,7 +124,7 @@ class PatrolEvent:
             + self.antag_success_outcomes
         ):
             for supply_change in out.supply:
-                if supply_change["type"] not in HERBS:
+                if supply_change["type"] == "freshkill":
                     continue
                 if supply_change["type"] in herb_list:
                     continue

@@ -843,3 +843,42 @@ Previously, the `romance` tag assumed that all cats on the patrol were intended 
 This isn't necessarily accurate to the intention of all these patrols, and thus the `cats_from` and `cats_to` of these `relationship_constraint` dicts should be assessed. Don't worry! Patrols that have been mistagged in this fashion won't appear in the game, they'll be filtered out as impossible. So we won't have patrols trying to pair two cats together inappropriately, we'll just have patrols that don't appear at all.
 
 You can also check if the `romance` tag and `relationship_constraint` could be moved into an outcome rather than being patrol-wide. 
+
+### Don't Re-iterate
+
+There's no need to "repeat" a constraint in a different manner. For example:
+
+```json
+    "required_cat_types":{
+        "patrol_cats": [1, 1],
+        "warrior": [1, 1]
+    },
+    "involved_cats": {
+        "p_l": {
+            "status": ["warrior"]    
+        }   
+    }
+```
+
+* We know this patrol only allows 1 warrior. Thus, we don't need to constraint `p_l` to be a warrior as only warriors are allowed.
+
+
+### Keep It Consistent
+
+Each cat can only have one designation, with the exception of `s_c` designations. This differs from the prior version of patrols, where a cat could have many designations (i.e. `app1` could also be `r_c` and `p_l` depending on what other cats were on the patrol). This inconsistency means that some old patrols will have "mismatched" designations.  
+
+For example, you might see:
+```json
+    "strings" = ["p_l dies."],
+    "death": {
+        "cats": ["r_c0"]
+    },
+```
+
+* `p_l` is dying in the string, but `r_c0` is dying in the `death` dict. It's likely that this patrol used to be written with the assumption that `p_l` was also `r_c`. This no longer works and so this should be adjusted to:
+```json
+    "strings" = ["p_l dies."],
+    "death": {
+        "cats": ["p_l"]
+    },
+```

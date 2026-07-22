@@ -126,15 +126,12 @@ def event_for_season(seasons: list) -> bool:
     return is_exclusionary
 
 
-def event_for_tags(
-    tags: list, cat, other_cat=None, mentor_tags_fulfilled: dict = None
-) -> bool:
+def event_for_tags(tags: list, cat, other_cat=None) -> bool:
     """
     Checks if current tags disqualify the event.
     :param tags: Tags to check validity for.
     :param cat: Main cat to compare against tags.
     :param other_cat: Secondary cat to compare against tags.
-    :param mentor_tags_fulfilled: Dict of mentor values used to validate mentor tags. Only utilized by patrols.
     """
     if not tags:
         return True
@@ -220,14 +217,6 @@ def event_for_tags(
     # filtering for dates
     if contains_special_date_tag(tags):
         if not special_date or special_date.patrol_tag not in tags:
-            return False
-
-    if "all_mentored" in tags:
-        return mentor_tags_fulfilled.get("general", False)
-    for _tag in tags:
-        if re.match(r"app[1-6]_mentored", _tag) and not mentor_tags_fulfilled.get(
-            _tag, False
-        ):
             return False
 
     return True
@@ -376,6 +365,8 @@ def event_for_required_cat_types(
 
     for c_type, amount_range in required_types.items():
         type_list = current_cat_types.get(c_type, [])
+        if amount_range[1] == -1 and not type_list:
+            continue
 
         if amount_range[0] > len(type_list) or len(type_list) > amount_range[1]:
             return False

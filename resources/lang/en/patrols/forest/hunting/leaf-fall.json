@@ -2017,7 +2017,7 @@
             ],
             "apprentice": [
                 1,
-                6
+                1
             ]
         },
         "involved_cats": {
@@ -2037,13 +2037,6 @@
                 "strings": [
                     "p_l pounces on the mouse, with a squeak of surprise from both prey and apprentice."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
@@ -2051,7 +2044,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "values": [
                             "trust",
@@ -2076,13 +2069,6 @@
                 "strings": [
                     "p_l leaps onto the mouse and makes the kill easily! {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} really getting the hang of hunting!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
@@ -2090,7 +2076,7 @@
                             "some_clan"
                         ],
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "values": [
                             "trust",
@@ -2117,13 +2103,6 @@
                 "strings": [
                     "p_l narrowly misses the mouse."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "supply": [
                     {

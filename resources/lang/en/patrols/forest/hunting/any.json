@@ -3321,7 +3321,7 @@
             ],
             "apprentice": [
                 1,
-                6
+                1
             ]
         },
         "involved_cats": {
@@ -3441,18 +3441,11 @@
                 "strings": [
                     "Carelessly, p_l is seen by Twolegs and taken from c_n."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "lost": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ]
                     }
                 ]
@@ -4989,11 +4982,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 drops into a crouch and lightly stalks towards the vole. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/pause/pauses}, waggling {PRONOUN/r_c0/poss} haunches before pouncing. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/catch/catches} the vole easily and {VERB/r_c0/deliver/delivers} a killing bite to the back of its head."
+                    "p_l drops into a crouch and lightly stalks towards the vole. {PRONOUN/p_l/subject/CAP} {VERB/p_l/pause/pauses}, waggling {PRONOUN/p_l/poss} haunches before pouncing. {PRONOUN/p_l/subject/CAP} {VERB/p_l/catch/catches} the vole easily and {VERB/p_l/deliver/delivers} a killing bite to the back of its head."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -5005,11 +4995,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 drops into a crouch and begins stalking forward. When {PRONOUN/r_c0/subject} {VERB/r_c0/get/gets} close, the vole suddenly stops chewing and r_c0 takes the opportunity to pounce. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/kill/kills} the prey quickly and {VERB/r_c0/lick/licks} the blood from {PRONOUN/r_c0/poss} lips with satisfaction."
+                    "p_l drops into a crouch and begins stalking forward. When {PRONOUN/p_l/subject} {VERB/p_l/get/gets} close, the vole suddenly stops chewing and p_l takes the opportunity to pounce. {PRONOUN/p_l/subject/CAP} {VERB/p_l/kill/kills} the prey quickly and {VERB/p_l/lick/licks} the blood from {PRONOUN/p_l/poss} lips with satisfaction."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -5066,11 +5053,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 drops into a crouch and begins to stalk forward. {PRONOUN/r_c0/subject/CAP}{VERB/r_c0/'re/'s} preparing to pounce when {PRONOUN/r_c0/poss} paw lightly brushes a twig and the vole immediately takes off. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/give/gives} chase, but the critter disappears into a burrow. Mouse-dung!"
+                    "p_l drops into a crouch and begins to stalk forward. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} preparing to pounce when {PRONOUN/p_l/poss} paw lightly brushes a twig and the vole immediately takes off. {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} chase, but the critter disappears into a burrow. Mouse-dung!"
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 0,
                 "supply": [
                     {
@@ -5486,11 +5470,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Stealthily, r_c0 stalks forward. The squirrel has no idea what's coming as the cat pounces on it and breaks its neck. r_c0 sends a silent thanks to StarClan for this prey."
+                    "Stealthily, p_l stalks forward. The squirrel has no idea what's coming as the cat pounces on it and breaks its neck. p_l sends a silent thanks to StarClan for this prey."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -5502,11 +5483,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 rapidly pads towards the squirrel, {PRONOUN/r_c0/poss} tailtip twitching in excitement. The squirrel is alerted to {PRONOUN/r_c0/poss} presence with a bird's alarm call, but r_c0 launches {PRONOUN/r_c0/self} forward and cuts off its escape with a bite to the back of the head."
+                    "p_l rapidly pads towards the squirrel, {PRONOUN/p_l/poss} tailtip twitching in excitement. The squirrel is alerted to {PRONOUN/p_l/poss} presence with a bird's alarm call, but p_l launches {PRONOUN/p_l/self} forward and cuts off its escape with a bite to the back of the head."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -6247,11 +6225,8 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "The patrol launches into battle, but r_c0 is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping {PRONOUN/r_c0/object} back to the medicine cat den."
+                    "The patrol launches into battle, but p_l is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping {PRONOUN/p_l/object} back to the medicine cat den."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -6280,7 +6255,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "condition": [
                             "big_bite_injury"

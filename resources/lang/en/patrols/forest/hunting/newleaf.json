@@ -893,11 +893,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Stealthily, r_c0 stalks forward. The squirrel has no idea what's coming as {PRONOUN/r_c0/subject} {VERB/r_c0/pounce/pounces} on it and {VERB/r_c0/break/breaks} its neck. r_c0 sends a silent thanks to StarClan for this prey."
+                    "Stealthily, p_l stalks forward. The squirrel has no idea what's coming as {PRONOUN/p_l/subject} {VERB/p_l/pounce/pounces} on it and {VERB/p_l/break/breaks} its neck. p_l sends a silent thanks to StarClan for this prey."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -909,11 +906,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 rapidly pads towards the squirrel, {PRONOUN/r_c0/poss} tailtip twitching in excitement. The squirrel is alerted to {PRONOUN/r_c0/poss} presence by a bird's alarm call, but r_c0 launches {PRONOUN/r_c0/self} forward and cuts off its escape with a bite to the back of the head."
+                    "p_l rapidly pads towards the squirrel, {PRONOUN/p_l/poss} tailtip twitching in excitement. The squirrel is alerted to {PRONOUN/p_l/poss} presence by a bird's alarm call, but p_l launches {PRONOUN/p_l/self} forward and cuts off its escape with a bite to the back of the head."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {

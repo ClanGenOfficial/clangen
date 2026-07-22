@@ -398,7 +398,7 @@ def __handle_condition_history(
     """
     if not scar_string and not death_string:
         logging.warning(
-            f"WARNING: Condition was added by outcome: {event} but no scar or death history string was given."
+            f"WARNING: Condition was added by outcome: {event} but no scar or death history string was given. This is okay if {condition} shouldn't kill or scar."
         )
 
     if default_override:

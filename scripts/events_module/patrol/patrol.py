@@ -371,7 +371,7 @@ class Patrol:
         chosen_patrol: Optional[PatrolEvent] = None
 
         # first we see if we can get a romantic patrol
-        if romantic_patrols:
+        if romantic_patrols and not patrol_override:
             chosen_patrol = self._get_valid_patrol(
                 romantic_patrols.copy(), chosen_frequency, patrol_override
             )
@@ -426,7 +426,8 @@ class Patrol:
 
             # CHECK FREQUENCY AND ENSURE ID
             if test_patrol.frequency != chosen_frequency:
-                patrols_to_test.remove(test_patrol)
+                if test_patrol in patrols_to_test:
+                    patrols_to_test.remove(test_patrol)
                 continue
 
             # CHECK REPEAT
@@ -434,14 +435,16 @@ class Patrol:
                 test_patrol.id in self.used_patrols
                 and not self.debug_patrol_id == test_patrol.id
             ):
-                patrols_to_test.remove(test_patrol)
+                if test_patrol in patrols_to_test:
+                    patrols_to_test.remove(test_patrol)
                 continue
 
             # CHECK IF CATS FIT
             if self._patrol_pass_cat_constraints(test_patrol):
                 chosen_patrol = test_patrol
             else:
-                patrols_to_test.remove(test_patrol)
+                if test_patrol in patrols_to_test:
+                    patrols_to_test.remove(test_patrol)
                 checked_patrols.add(test_patrol.id)
 
         return chosen_patrol
