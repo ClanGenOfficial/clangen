@@ -565,7 +565,7 @@
                                 "LONER,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -1131,7 +1131,7 @@
                                 "rebellious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -1188,7 +1188,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -1314,7 +1314,7 @@
                                 "rebellious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -1372,7 +1372,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -1560,7 +1560,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -1604,7 +1604,7 @@
                                 "SWIMMER,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c2"
                         ]
                     }
@@ -1659,7 +1659,7 @@
                                 "troublesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -1835,7 +1835,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -1920,7 +1920,7 @@
                                 "shameless"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -2097,7 +2097,7 @@
                                 "CLEVER,3"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l"
                         ]
                     }

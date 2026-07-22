@@ -1602,7 +1602,7 @@
                                 "FIGHTER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -1641,7 +1641,7 @@
                                 "FIGHTER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -1680,7 +1680,7 @@
                                 "CLEVER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -1719,7 +1719,7 @@
                                 "CLEVER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -1771,7 +1771,7 @@
                                 "righteous"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -1823,7 +1823,7 @@
                                 "righteous"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -2747,7 +2747,7 @@
                                 "STORY,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }

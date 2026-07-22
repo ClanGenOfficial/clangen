@@ -39,6 +39,18 @@ class GatherCatEnum(Enum):
     not_low_aggress = "-low_aggress"
     patrol_cats = "patrol_cats"
     not_patrol_cats = "-patrol_cats"
+    apprentice = "apprentice"
+    not_apprentice = "-apprentice"
+    medicine_cat_apprentice = "medicine cat apprentice"
+    not_medicine_cat_apprentice = "-medicine cat apprentice"
+    warrior = "warrior"
+    not_warrior = "-warrior"
+    medicine_cat = "medicine cat"
+    not_medicine_cat = "-medicine cat"
+    deputy = "deputy"
+    not_deputy = "-deputy"
+    leader = "leader"
+    not_leader = "-leader"
 
 
 class GatherCat(RootModel):

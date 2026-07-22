@@ -124,7 +124,7 @@
                                 "rebellious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l"
                         ]
                     }
@@ -251,7 +251,7 @@
                                 "troublesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -1050,7 +1050,7 @@
                                 "strict"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -1490,7 +1490,7 @@
                                 "DREAM,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-r_c0"
                         ]
                     }
@@ -1834,7 +1834,7 @@
                                 "DREAM,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -2038,7 +2038,7 @@
                                 "wise"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -2163,7 +2163,7 @@
                                 "DREAM,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -2791,7 +2791,7 @@
                                 "strict"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -2894,7 +2894,7 @@
                                 "troublesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -2982,7 +2982,7 @@
                                 "gloomy"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -3090,7 +3090,7 @@
                                 "rebellious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -3407,7 +3407,7 @@
                                 "charismatic"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -3467,7 +3467,7 @@
                                 "wise"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -3738,7 +3738,7 @@
                                 "grumpy"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -3795,7 +3795,7 @@
                                 "gloomy"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -3920,7 +3920,7 @@
                                 "TEACHER,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -3998,7 +3998,7 @@
                                 "shameless"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -4074,7 +4074,7 @@
                                 "lonesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -4150,7 +4150,7 @@
                                 "vengeful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -4210,7 +4210,7 @@
                                 "careful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -4288,7 +4288,7 @@
                                 "sincere"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -4364,7 +4364,7 @@
                                 "gloomy"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -4447,7 +4447,7 @@
                                 "strange"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -4485,7 +4485,7 @@
                                 "grumpy"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -4603,7 +4603,7 @@
                                 "SPEAKER,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -4647,7 +4647,7 @@
                                 "wise"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -4693,7 +4693,7 @@
                                 "SPEAKER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -4732,7 +4732,7 @@
                                 "MEDIATOR,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -4772,7 +4772,7 @@
                                 "CLEVER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -4817,7 +4817,7 @@
                                 "INSIGHTFUL,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -4856,7 +4856,7 @@
                                 "TEACHER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -4897,7 +4897,7 @@
                                 "cold"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -4936,7 +4936,7 @@
                                 "charismatic"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -5012,7 +5012,7 @@
                                 "vengeful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -5056,7 +5056,7 @@
                                 "wise"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -5411,7 +5411,7 @@
                                 "vengeful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -6777,7 +6777,7 @@
                                 "troublesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -7343,7 +7343,7 @@
                                 "SPEAKER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -7399,7 +7399,7 @@
                                 "MEDIATOR,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -7463,7 +7463,7 @@
                                 "CLEVER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -7524,7 +7524,7 @@
                                 "INSIGHTFUL,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -7580,7 +7580,7 @@
                                 "HEALER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -7812,7 +7812,7 @@
                                 "strange"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -7869,7 +7869,7 @@
                                 "confident"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -8086,7 +8086,7 @@
                                 "competitive"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l"
                         ]
                     }
@@ -8253,7 +8253,7 @@
                                 "gloomy"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -8294,7 +8294,7 @@
                                 "careful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -8335,7 +8335,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -8376,7 +8376,7 @@
                                 "troublesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -8431,7 +8431,7 @@
                                 "sincere"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -8487,7 +8487,7 @@
                                 "competitive"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -8525,7 +8525,7 @@
                                 "lonesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -8749,7 +8749,7 @@
                                 "strange"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -8804,7 +8804,7 @@
                                 "TEACHER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -8862,7 +8862,7 @@
                                 "cold"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -8907,7 +8907,7 @@
                                 "troublesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -8949,7 +8949,7 @@
                                 "competitive"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -9611,7 +9611,7 @@
                                 "ambitious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -9666,7 +9666,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l"
                         ]
                     }
@@ -9845,7 +9845,7 @@
                                 "wise"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -9890,7 +9890,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -10081,7 +10081,7 @@
                                 "righteous"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -10578,7 +10578,7 @@
                                 "grumpy"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -10619,7 +10619,7 @@
                                 "insecure"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -10675,7 +10675,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -10714,7 +10714,7 @@
                                 "sincere"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -10754,7 +10754,7 @@
                                 "ambitious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -10793,7 +10793,7 @@
                                 "lonesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -11070,7 +11070,7 @@
                                 "grumpy"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -11111,7 +11111,7 @@
                                 "insecure"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -11152,7 +11152,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -11194,7 +11194,7 @@
                                 "loving"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -11234,7 +11234,7 @@
                                 "ambitious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -11274,7 +11274,7 @@
                                 "lonesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -11420,7 +11420,7 @@
                                 "loving"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -11537,7 +11537,7 @@
                                 "grumpy"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -11595,7 +11595,7 @@
                                 "insecure"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -11653,7 +11653,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -11694,7 +11694,7 @@
                                 "loving"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -11732,7 +11732,7 @@
                                 "lonesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -11914,7 +11914,7 @@
                                 "grumpy"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -11970,7 +11970,7 @@
                                 "insecure"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -12026,7 +12026,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -12083,7 +12083,7 @@
                                 "loving"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -12122,7 +12122,7 @@
                                 "lonesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -12481,7 +12481,7 @@
                                 "playful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -12755,7 +12755,7 @@
                                 "charismatic"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -12829,7 +12829,7 @@
                                 "playful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -12868,7 +12868,7 @@
                                 "cunning"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -12908,7 +12908,7 @@
                                 "competitive"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -13201,7 +13201,7 @@
                                 "HUNTER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -13748,7 +13748,7 @@
                                 "ambitious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -13803,7 +13803,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l"
                         ]
                     }
@@ -14068,7 +14068,7 @@
                                 "righteous"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -14688,7 +14688,7 @@
                                 "bloodthirsty"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -14783,7 +14783,7 @@
                                 "bloodthirsty"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -15091,7 +15091,7 @@
                                 "bloodthirsty"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -15186,7 +15186,7 @@
                                 "bloodthirsty"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -15651,7 +15651,7 @@
                                 "FIGHTER,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -15877,7 +15877,7 @@
                                 "FIGHTER,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -16271,7 +16271,7 @@
                                 "ambitious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -16326,7 +16326,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l"
                         ]
                     }
@@ -16611,7 +16611,7 @@
                                 "bloodthirsty"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -17135,7 +17135,7 @@
                                 "responsible"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -17210,7 +17210,7 @@
                                 "troublesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -17336,7 +17336,7 @@
                             ],
                             "must_have_both": true
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -17375,7 +17375,7 @@
                                 "SPEAKER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -17712,7 +17712,7 @@
                                 "STAR,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -17957,7 +17957,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -19605,7 +19605,7 @@
                                 "MEDIATOR,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -19650,7 +19650,7 @@
                                 "careful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -19701,7 +19701,7 @@
                                 "oblivious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -19798,7 +19798,7 @@
                                 "TEACHER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -19851,7 +19851,7 @@
                                 "flamboyant"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -20488,7 +20488,7 @@
                                 "TEACHER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l",
                             "r_c0"
                         ]
@@ -20618,7 +20618,7 @@
                                 "ambitious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -21744,7 +21744,7 @@
                                 "cunning"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -21818,7 +21818,7 @@
                                 "sincere"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -21892,7 +21892,7 @@
                                 "ambitious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -22204,7 +22204,7 @@
                                 "righteous"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -22247,7 +22247,7 @@
                                 "playful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -22292,7 +22292,7 @@
                                 "vengeful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -24477,6 +24477,7 @@
     {
         "id": "gen_train_leaffall_eclipsemyth_storylocked1",
         "frequency": 3,
+        "types": ["training"],
         "location": [
             "forest",
             "mountainous",
@@ -24579,7 +24580,7 @@
                                 "rebellious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -24733,7 +24734,7 @@
                                 "gloomy"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l"
                         ]
                     }
@@ -25778,7 +25779,7 @@
                                 "righteous"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -25840,7 +25841,7 @@
                                 "troublesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -25901,7 +25902,7 @@
                                 "gloomy"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -25952,7 +25953,7 @@
                                 "cunning"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -25999,7 +26000,7 @@
                                 "responsible"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -26048,7 +26049,7 @@
                                 "strange"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -26217,7 +26218,7 @@
                                 "FIGHTER,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -26282,7 +26283,7 @@
                                 "oblivious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c2"
                         ]
                     }
@@ -26332,7 +26333,7 @@
                                 "flamboyant"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c2"
                         ]
                     }
@@ -26376,7 +26377,7 @@
                                 "strange"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c2"
                         ]
                     }
@@ -26459,7 +26460,7 @@
                                 "FIGHTER,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c2"
                         ]
                     }
@@ -26620,7 +26621,7 @@
                                 "vengeful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c2"
                         ]
                     }
@@ -26684,7 +26685,7 @@
                                 "thoughtful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c2"
                         ]
                     }
@@ -26832,7 +26833,7 @@
                                 "vengeful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -26880,7 +26881,7 @@
                                 "wise"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -26927,7 +26928,7 @@
                                 "thoughtful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -26971,7 +26972,7 @@
                                 "KITTYPET,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -27079,7 +27080,7 @@
                                 "vengeful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -27170,7 +27171,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -27209,7 +27210,7 @@
                                 "adventurous"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -27250,7 +27251,7 @@
                                 "vengeful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -27289,7 +27290,7 @@
                                 "playful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -27331,7 +27332,7 @@
                                 "compassionate"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -27374,7 +27375,7 @@
                                 "ambitious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -27447,7 +27448,7 @@
                                 "gloomy"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -27489,7 +27490,7 @@
                                 "compassionate"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -27533,7 +27534,7 @@
                                 "strict"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -27573,7 +27574,7 @@
                                 "lonesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -27615,7 +27616,7 @@
                                 "sincere"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -27657,7 +27658,7 @@
                                 "ambitious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -27697,7 +27698,7 @@
                                 "cunning"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -27735,7 +27736,7 @@
                                 "strange"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -27773,7 +27774,7 @@
                                 "vengeful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -27830,7 +27831,7 @@
                                 "careful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -27868,7 +27869,7 @@
                                 "grumpy"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -27906,7 +27907,7 @@
                                 "oblivious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -27966,7 +27967,7 @@
                                 "FIGHTER,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -28641,7 +28642,7 @@
                                 "strange"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -28692,7 +28693,7 @@
                                 "adventurous"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -28822,7 +28823,7 @@
                                 "rebellious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -28915,7 +28916,7 @@
                                 "rebellious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -29008,7 +29009,7 @@
                                 "rebellious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -29070,7 +29071,7 @@
                                 "competitive"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -29137,7 +29138,7 @@
                             ],
                             "must_have_both": true
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -29202,7 +29203,7 @@
                             ],
                             "must_have_both": true
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -29264,7 +29265,7 @@
                                 "bold"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -29333,7 +29334,7 @@
                             ],
                             "must_have_both": true
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -29402,7 +29403,7 @@
                             ],
                             "must_have_both": true
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -29466,7 +29467,7 @@
                             ],
                             "must_have_both": true
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -29540,7 +29541,7 @@
                                 "CLAIRVOYANT,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -29599,7 +29600,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -29688,7 +29689,7 @@
                                 "rebellious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -29766,7 +29767,7 @@
                                 "rebellious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -29832,7 +29833,7 @@
                                 "rebellious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -29924,7 +29925,7 @@
                                 "rebellious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -29984,7 +29985,7 @@
                                 "calm"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -30006,7 +30007,7 @@
                                 "shameless"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -30057,7 +30058,7 @@
                                 "rebellious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -30114,7 +30115,7 @@
                                 "fierce"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -31718,7 +31719,7 @@
                                 "charismatic"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -31757,7 +31758,7 @@
                                 "cold"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -31824,7 +31825,7 @@
                                 "adventurous"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -31871,7 +31872,7 @@
                                 "strange"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -32010,7 +32011,7 @@
                                 "fierce"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -32055,7 +32056,7 @@
                                 "oblivious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -32096,7 +32097,7 @@
                                 "confident"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }

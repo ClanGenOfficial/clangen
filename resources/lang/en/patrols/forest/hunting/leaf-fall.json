@@ -979,7 +979,7 @@
                                 "righteous"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -1426,7 +1426,7 @@
                                 "INSIGHTFUL,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -2408,7 +2408,7 @@
                                 "HUNTER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -2475,7 +2475,7 @@
                                 "troublesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -3620,7 +3620,7 @@
                             ],
                             "must_have_both": true
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }

@@ -80,7 +80,7 @@ Outcomes utilize the `TextPoolEvent` format.
         {
             "type": "",
             "trigger": [],
-            "adjust": []
+            "adjust": ""
         }
     ],
     "death": [

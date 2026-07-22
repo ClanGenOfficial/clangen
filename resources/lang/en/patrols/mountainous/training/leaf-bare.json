@@ -120,7 +120,7 @@
                                 "wise"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -861,7 +861,7 @@
                                 "DARK,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -919,7 +919,7 @@
                                 "confident"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -976,7 +976,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -1053,7 +1053,7 @@
                                 "DARK,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -1132,7 +1132,7 @@
                                 "bold"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -1369,7 +1369,7 @@
                                 "compassionate"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l"
                         ]
                     }

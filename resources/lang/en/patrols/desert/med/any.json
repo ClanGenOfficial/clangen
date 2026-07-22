@@ -1179,7 +1179,7 @@
                                 "SPEAKER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -1251,7 +1251,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -1369,7 +1369,7 @@
                                 "SPEAKER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -1441,7 +1441,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }

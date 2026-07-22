@@ -129,7 +129,7 @@
                                 "CLIMBER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -1000,7 +1000,7 @@
                                 "vengeful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-r_c0"
                         ]
                     }
@@ -1345,7 +1345,7 @@
                                 "vengeful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -1984,7 +1984,7 @@
                                 "righteous"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -2444,7 +2444,7 @@
                                 "HUNTER,3"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -2491,7 +2491,7 @@
                                 "flamboyant"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -2724,7 +2724,7 @@
                                 "STORY,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -3721,7 +3721,7 @@
                                 "DARK,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -3779,7 +3779,7 @@
                                 "confident"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -3836,7 +3836,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -3913,7 +3913,7 @@
                                 "DARK,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -3992,7 +3992,7 @@
                                 "bold"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]
@@ -4151,7 +4151,7 @@
                                 "wise"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }

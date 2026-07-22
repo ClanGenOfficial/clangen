@@ -874,7 +874,7 @@
                                 "thoughtful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -956,7 +956,7 @@
                                 "responsible"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -1219,7 +1219,7 @@
                                 "arrogant"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -1840,7 +1840,7 @@
                                 "thoughtful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -1914,7 +1914,7 @@
                                 "responsible"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -2280,7 +2280,7 @@
                                 "arrogant"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -3592,7 +3592,7 @@
                                 "STAR,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -3764,7 +3764,7 @@
                                 "arrogant"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -4725,7 +4725,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -5839,7 +5839,7 @@
                                 "STAR,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -6513,7 +6513,7 @@
                                 "charismatic"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -6615,7 +6615,7 @@
                                 "rebellious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c2"
                         ]
                     }
@@ -7147,7 +7147,7 @@
                                 "charismatic"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -7369,7 +7369,7 @@
                                 "charismatic"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -7595,7 +7595,7 @@
                                 "charismatic"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -7718,7 +7718,7 @@
                                 "rebellious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -7780,7 +7780,7 @@
                                 "responsible"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -7873,7 +7873,7 @@
                                 "STAR,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -7935,7 +7935,7 @@
                                 "lonesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -7991,7 +7991,7 @@
                                 "righteous"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -8045,7 +8045,7 @@
                                 "playful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -8186,7 +8186,7 @@
                                 "careful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -8234,7 +8234,7 @@
                                 "lonesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -8292,7 +8292,7 @@
                                 "vengeful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -8371,7 +8371,7 @@
                                 "troublesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -8693,7 +8693,7 @@
                                 "CLEVER,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -8731,7 +8731,7 @@
                                 "cunning"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -9117,7 +9117,7 @@
                                 "FIGHTER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -9230,7 +9230,7 @@
                                 "FIGHTER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -9325,7 +9325,7 @@
                                 "shameless"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -9376,7 +9376,7 @@
                                 "righteous"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -9650,7 +9650,7 @@
                                 "SENSE,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -9706,7 +9706,7 @@
                             ],
                             "must_have_both": true
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -9754,7 +9754,7 @@
                                 "gloomy"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -9821,7 +9821,7 @@
                                 "thoughtful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -9884,7 +9884,7 @@
                                 "MEDIATOR,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -9946,7 +9946,7 @@
                                 "OMEN,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -9991,7 +9991,7 @@
                                 "CLAIRVOYANT,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -10036,7 +10036,7 @@
                                 "PROPHET,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -10081,7 +10081,7 @@
                                 "STAR,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -10137,7 +10137,7 @@
                                 "oblivious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -10187,7 +10187,7 @@
                                 "troublesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -10264,7 +10264,7 @@
                                 "HEALER,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -10339,7 +10339,7 @@
                                 "loyal"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -10421,7 +10421,7 @@
                                 "playful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -10477,7 +10477,7 @@
                                 "playful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -10520,7 +10520,7 @@
                                 "gloomy"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -10559,7 +10559,7 @@
                                 "STAR,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -10610,7 +10610,7 @@
                                 "troublesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -10650,7 +10650,7 @@
                                 "HUNTER,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -10823,7 +10823,7 @@
                                 "SENSE,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -10879,7 +10879,7 @@
                             ],
                             "must_have_both": true
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -10927,7 +10927,7 @@
                                 "gloomy"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -10994,7 +10994,7 @@
                                 "thoughtful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -11069,7 +11069,7 @@
                                 "MEDIATOR,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -11130,7 +11130,7 @@
                                 "OMEN,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -11181,7 +11181,7 @@
                                 "CLAIRVOYANT,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -11232,7 +11232,7 @@
                                 "PROPHET,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -11277,7 +11277,7 @@
                                 "STAR,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -11345,7 +11345,7 @@
                                 "oblivious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -11396,7 +11396,7 @@
                                 "troublesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -11493,7 +11493,7 @@
                                 "HEALER,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -11568,7 +11568,7 @@
                                 "loyal"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -11650,7 +11650,7 @@
                                 "playful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -11706,7 +11706,7 @@
                                 "playful"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -11748,7 +11748,7 @@
                                 "gloomy"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -11787,7 +11787,7 @@
                                 "STAR,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -11838,7 +11838,7 @@
                                 "troublesome"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c1"
                         ]
                     }
@@ -11877,7 +11877,7 @@
                                 "HUNTER,0"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -12284,7 +12284,7 @@
                                 "arrogant"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l"
                         ]
                     }
@@ -16322,7 +16322,7 @@
                                 "righteous"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -16537,7 +16537,7 @@
                                 "sincere"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -16777,7 +16777,7 @@
                                 "SPEAKER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -16854,7 +16854,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -17022,7 +17022,7 @@
                                 "MEDIATOR,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -17099,7 +17099,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -18784,7 +18784,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -20389,7 +20389,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -22541,7 +22541,7 @@
                                 "CLEVER,3"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -22589,7 +22589,7 @@
                                 "arrogant"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -22636,7 +22636,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -23281,7 +23281,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -23453,7 +23453,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -23624,7 +23624,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -25404,7 +25404,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -27711,7 +27711,7 @@
                                 "MEDIATOR,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -27789,7 +27789,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -27925,7 +27925,7 @@
                                 "MEDIATOR,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -28003,7 +28003,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -28860,7 +28860,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -29661,7 +29661,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -30458,7 +30458,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -31321,7 +31321,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -32072,7 +32072,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -32286,7 +32286,7 @@
                                 "SPEAKER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -32363,7 +32363,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -32496,7 +32496,7 @@
                                 "MEDIATOR,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -32573,7 +32573,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -35623,7 +35623,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -37804,7 +37804,7 @@
                                 "CLEVER,3"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -37852,7 +37852,7 @@
                                 "arrogant"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -37899,7 +37899,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -38436,7 +38436,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -38575,7 +38575,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -38762,7 +38762,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -38933,7 +38933,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -40785,7 +40785,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -42916,7 +42916,7 @@
                                 "SPEAKER,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -42993,7 +42993,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -43126,7 +43126,7 @@
                                 "MEDIATOR,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -43203,7 +43203,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -46276,7 +46276,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -48463,7 +48463,7 @@
                                 "CLEVER,3"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -48511,7 +48511,7 @@
                                 "arrogant"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -48558,7 +48558,7 @@
                                 "childish"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }
@@ -49202,7 +49202,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -49362,7 +49362,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -49533,7 +49533,7 @@
                                 "SENSE,2"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -53493,7 +53493,7 @@
                                 "oblivious"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "r_c0"
                         ]
                     }

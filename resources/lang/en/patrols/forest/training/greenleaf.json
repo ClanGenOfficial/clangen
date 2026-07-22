@@ -115,7 +115,7 @@
                                 "INSIGHTFUL,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "p_l"
                         ]
                     }
@@ -385,7 +385,7 @@
                             ],
                             "must_have_both": true
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l"
                         ]
                     }

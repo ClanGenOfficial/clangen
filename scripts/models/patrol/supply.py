@@ -14,12 +14,10 @@ class Supply(BaseModel):
     trigger: Union[
         list[Literal["always", "low", "adequate", "full", "excess"]], MISSING
     ] = MISSING
-    adjust: list[
-        Literal[
-            "increase_tiny",
-            "increase_small",
-            "increase_medium",
-            "increase_large",
-            "increase_huge",
-        ]
+    adjust: Literal[
+        "increase_tiny",
+        "increase_small",
+        "increase_medium",
+        "increase_large",
+        "increase_huge",
     ]

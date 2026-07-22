@@ -464,6 +464,10 @@
           "type": "string"
         },
         {
+          "pattern": "^-?n_c[0-9]+$",
+          "type": "string"
+        },
+        {
           "pattern": "^-?r_c[0-9]+$",
           "type": "string"
         },
@@ -509,7 +513,19 @@
         "low_aggress",
         "-low_aggress",
         "patrol_cats",
-        "-patrol_cats"
+        "-patrol_cats",
+        "apprentice",
+        "-apprentice",
+        "medicine cat apprentice",
+        "-medicine cat apprentice",
+        "warrior",
+        "-warrior",
+        "medicine cat",
+        "-medicine cat",
+        "deputy",
+        "-deputy",
+        "leader",
+        "-leader"
       ],
       "title": "GatherCatEnum",
       "type": "string"

@@ -345,7 +345,7 @@
                                 "MEDIATOR,1"
                             ]
                         },
-                        "prior_abbreviations": [
+                        "prior_abbreviation": [
                             "-p_l",
                             "-r_c0"
                         ]

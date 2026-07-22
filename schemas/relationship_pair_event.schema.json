@@ -240,7 +240,15 @@
       "properties": {
         "prior_abbreviation": {
           "items": {
-            "type": "string"
+            "anyOf": [
+              {
+                "$ref": "#/$defs/GatherCat"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
           },
           "title": "Prior Abbreviation",
           "type": "array"
@@ -312,6 +320,82 @@
       },
       "title": "CatDict",
       "type": "object"
+    },
+    "GatherCat": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/GatherCatEnum"
+        },
+        {
+          "pattern": "^-?n_c:[0-9]+$",
+          "type": "string"
+        },
+        {
+          "pattern": "^-?n_c[0-9]+$",
+          "type": "string"
+        },
+        {
+          "pattern": "^-?r_c[0-9]+$",
+          "type": "string"
+        },
+        {
+          "pattern": "^-?s_c[0-9]+$",
+          "type": "string"
+        }
+      ],
+      "title": "GatherCat"
+    },
+    "GatherCatEnum": {
+      "enum": [
+        "m_c",
+        "-m_c",
+        "r_c",
+        "-r_c",
+        "p_l",
+        "-p_l",
+        "s_c",
+        "-s_c",
+        "clan",
+        "-clan",
+        "some_clan",
+        "-some_clan",
+        "patrol",
+        "-patrol",
+        "multi",
+        "-multi",
+        "high_lawful",
+        "-high_lawful",
+        "low_lawful",
+        "-low_lawful",
+        "high_social",
+        "-high_social",
+        "low_social",
+        "-low_social",
+        "high_stable",
+        "-high_stable",
+        "low_stable",
+        "-low_stable",
+        "high_aggress",
+        "-high_aggress",
+        "low_aggress",
+        "-low_aggress",
+        "patrol_cats",
+        "-patrol_cats",
+        "apprentice",
+        "-apprentice",
+        "medicine cat apprentice",
+        "-medicine cat apprentice",
+        "warrior",
+        "-warrior",
+        "medicine cat",
+        "-medicine cat",
+        "deputy",
+        "-deputy",
+        "leader",
+        "-leader"
+      ],
+      "title": "GatherCatEnum",
+      "type": "string"
     },
     "Group": {
       "anyOf": [
@@ -1029,6 +1113,8 @@
         "high_lives",
         "mid_lives",
         "low_lives",
+        "some_lives",
+        "all_lives",
         "clan:apps",
         "romance",
         "halloween",

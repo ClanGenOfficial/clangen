@@ -252,7 +252,15 @@
       "properties": {
         "prior_abbreviation": {
           "items": {
-            "type": "string"
+            "anyOf": [
+              {
+                "$ref": "#/$defs/GatherCat"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
           },
           "title": "Prior Abbreviation",
           "type": "array"
@@ -651,6 +659,10 @@
           "type": "string"
         },
         {
+          "pattern": "^-?n_c[0-9]+$",
+          "type": "string"
+        },
+        {
           "pattern": "^-?r_c[0-9]+$",
           "type": "string"
         },
@@ -696,7 +708,19 @@
         "low_aggress",
         "-low_aggress",
         "patrol_cats",
-        "-patrol_cats"
+        "-patrol_cats",
+        "apprentice",
+        "-apprentice",
+        "medicine cat apprentice",
+        "-medicine cat apprentice",
+        "warrior",
+        "-warrior",
+        "medicine cat",
+        "-medicine cat",
+        "deputy",
+        "-deputy",
+        "leader",
+        "-leader"
       ],
       "title": "GatherCatEnum",
       "type": "string"
@@ -1108,6 +1132,16 @@
           "title": "Tags",
           "type": "array"
         },
+        "outcome_art": {
+          "description": "The name of displayed patrol art file, without any file extension (no .png).",
+          "title": "Outcome Art",
+          "type": "string"
+        },
+        "outcome_art_clean": {
+          "description": "If patrol_art contains gore, this line can hold a clean version. The existence of a non-empty string in this parameter marks the patrol art in \"patrol_art\" as explicit.",
+          "title": "Outcome Art Clean",
+          "type": "string"
+        },
         "strings": {
           "description": "List of the text that will be displayed in-game as events.",
           "items": {
@@ -1402,9 +1436,7 @@
       },
       "required": [
         "id",
-        "season",
         "types",
-        "tags",
         "patrol_art",
         "frequency",
         "chance_of_success",
@@ -1643,7 +1675,7 @@
         "cats_from": {
           "description": "The cat from whom the relationship originates.",
           "items": {
-            "$ref": "#/$defs/Cat"
+            "$ref": "#/$defs/GatherCat"
           },
           "title": "Cats From",
           "type": "array"
@@ -1651,7 +1683,7 @@
         "cats_to": {
           "description": "The target of the relationship.",
           "items": {
-            "$ref": "#/$defs/Cat"
+            "$ref": "#/$defs/GatherCat"
           },
           "title": "Cats To",
           "type": "array"
@@ -2003,18 +2035,15 @@
           "type": "array"
         },
         "adjust": {
-          "items": {
-            "enum": [
-              "increase_tiny",
-              "increase_small",
-              "increase_medium",
-              "increase_large",
-              "increase_huge"
-            ],
-            "type": "string"
-          },
+          "enum": [
+            "increase_tiny",
+            "increase_small",
+            "increase_medium",
+            "increase_large",
+            "increase_huge"
+          ],
           "title": "Adjust",
-          "type": "array"
+          "type": "string"
         }
       },
       "required": [
@@ -2042,6 +2071,8 @@
         "high_lives",
         "mid_lives",
         "low_lives",
+        "some_lives",
+        "all_lives",
         "clan:apps",
         "romance",
         "halloween",
