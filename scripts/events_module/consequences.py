@@ -797,7 +797,10 @@ def gather_cat_objects(
         if involved_cats and abbr in involved_cats:
             found_cat = involved_cats[abbr]
             if is_exclusionary:
-                out_set -= set(found_cat)
+                if isinstance(found_cat, list):
+                    out_set -= found_cat
+                else:
+                    out_set.remove(found_cat)
             else:
                 if isinstance(found_cat, list):
                     out_set.update(set(found_cat))

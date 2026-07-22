@@ -97,10 +97,16 @@ def updated_create_new_cat(
 
     for p in option_dict["can_create_new_cat"].get("assign_blood_parent", []):
         if p in involved_cats:
-            blood_parents.append(involved_cats[p])
+            if isinstance(involved_cats[p], list):
+                blood_parents.extend(involved_cats[p])
+            else:
+                blood_parents.append(involved_cats[p])
     for p in option_dict["can_create_new_cat"].get("assign_adoptive_parent", []):
         if p in involved_cats:
-            adoptive_parents.append(involved_cats[p])
+            if isinstance(involved_cats[p], list):
+                adoptive_parents.extend(involved_cats[p])
+            else:
+                adoptive_parents.append(involved_cats[p])
 
     # GENDER
     gender = option_dict.get("gender", None)
@@ -194,13 +200,6 @@ def updated_create_new_cat(
                 pair[0].relationships[pair[1].ID] = Relationship(
                     cat_from=pair[0], cat_to=pair[1], family=True
                 )
-
-            pair[0].relationships[pair[1].ID].change_according_to_dictionary(
-                get_config("new_cat.sib_buff.cat1_to_cat2")
-            )
-            pair[1].relationships[pair[0].ID].change_according_to_dictionary(
-                get_config("new_cat.sib_buff.cat2_to_cat1")
-            )
 
         change_relationship_values(
             cats_to=new_cats,
