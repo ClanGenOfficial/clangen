@@ -325,7 +325,7 @@
                     "It's just an odd loner singing to {PRONOUN/n_c:0/self}. The patrol greets {PRONOUN/n_c:0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -350,19 +350,19 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:2": {
+                    "n_c2": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
@@ -373,9 +373,9 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:2"
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -409,7 +409,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:2"
+                            "n_c2"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -496,7 +496,7 @@
                     "It's just an odd loner singing to {PRONOUN/n_c:0/self}. p_l greets {PRONOUN/n_c:0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -511,7 +511,7 @@
                     "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} p_l, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} {PRONOUN/p_l/object} to sing too. {PRONOUN/p_l/subject/CAP} politely {VERB/p_l/decline/declines} and continues on {PRONOUN/p_l/poss} solo patrol."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -537,19 +537,19 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:2": {
+                    "n_c2": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
@@ -560,9 +560,9 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:2"
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
                         ],
                         "cats_to": [
                             "s_c0"
@@ -661,7 +661,7 @@
                     "It's just an odd loner singing to {PRONOUN/n_c:0/self}. The patrol greets {PRONOUN/n_c:0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -676,7 +676,7 @@
                     "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} the patrol, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} them to sing, too. The patrol politely declines but compliments the loner's songs."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -706,9 +706,9 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:2"
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -809,7 +809,7 @@
                     "It's just an odd loner singing to {PRONOUN/n_c:0/self}. p_l greets {PRONOUN/n_c:0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -824,7 +824,7 @@
                     "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} p_l, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} {PRONOUN/p_l/object} to sing too. {PRONOUN/p_l/subject/CAP} politely {VERB/p_l/decline/declines} but {VERB/p_l/compliment/compliments} the loner's songs."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -850,19 +850,19 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:2": {
+                    "n_c2": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
@@ -873,9 +873,9 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:2"
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
                         ],
                         "cats_to": [
                             "s_c0"
@@ -976,19 +976,19 @@
                     "The patrol descends into battle without a second thought, eventually driving the rogues away."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:2": {
+                    "n_c2": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
@@ -999,9 +999,9 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:2"
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -1044,19 +1044,19 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:2": {
+                    "n_c2": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
@@ -1067,9 +1067,9 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:2"
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -1087,7 +1087,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:2"
+                            "n_c2"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -1123,19 +1123,19 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:2": {
+                    "n_c2": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
@@ -1146,9 +1146,9 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:2"
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -1182,7 +1182,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:2"
+                            "n_c2"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -1208,19 +1208,19 @@
                     "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are recovered the next day, covered in battle wounds and cold."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:2": {
+                    "n_c2": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
@@ -1255,19 +1255,19 @@
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:2": {
+                    "n_c2": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
@@ -1278,9 +1278,9 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:2"
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -1350,19 +1350,19 @@
                     "The patrol descends into battle without a second thought, easily driving the rogues away as they use their knowledge of the rocky terrain to their advantage."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:2": {
+                    "n_c2": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
@@ -1373,9 +1373,9 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:2"
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -1418,19 +1418,19 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:2": {
+                    "n_c2": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
@@ -1441,9 +1441,9 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:2"
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -1477,7 +1477,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:2"
+                            "n_c2"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -1513,19 +1513,19 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:2": {
+                    "n_c2": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
@@ -1536,9 +1536,9 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:2"
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -1572,7 +1572,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:2"
+                            "n_c2"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -1614,19 +1614,19 @@
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:2": {
+                    "n_c2": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
@@ -1654,9 +1654,9 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:2"
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
                         ],
                         "cats_to": [
                             "patrol_cats"

@@ -507,7 +507,9 @@
         "high_aggress",
         "-high_aggress",
         "low_aggress",
-        "-low_aggress"
+        "-low_aggress",
+        "patrol_cats",
+        "-patrol_cats"
       ],
       "title": "GatherCatEnum",
       "type": "string"
@@ -1317,6 +1319,8 @@
     },
     "RelationshipStatus": {
       "enum": [
+        "can_romance",
+        "-can_romance",
         "strangers",
         "siblings",
         "-siblings",

@@ -13976,13 +13976,6 @@
                 "strings": [
                     "Unfortunately, neither cat steps up to teach. r_c1 looks disappointed — what was p_l expecting, for {PRONOUN/r_c1/object} to lead the training?"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -14008,13 +14001,6 @@
                 "strings": [
                     "After {PRONOUN/p_l/poss} third attempt to explain the training exercise, p_l sighs and cancels the training session. r_c1's attention is clearly elsewhere."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -14040,13 +14026,6 @@
                 "strings": [
                     "r_c1 wants to practice fighting instead of hunting, but p_l has made up {PRONOUN/p_l/poss} mind to practice hunting, so that's what they'll do. r_c1 retaliates by not paying attention and ignoring p_l's commands until an irate p_l cancels the session altogether."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -14120,13 +14099,6 @@
                 "strings": [
                     "Despite p_l's encouragement, r_c1 is too nervous to fully get into the training exercise."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -14154,13 +14126,6 @@
                 "strings": [
                     "p_l suggests r_c1 practice {PRONOUN/r_c1/poss} pounce by aiming for that rock over there. r_c1 springs forward, landing right on the rock - the surprisingly sharp rock. p_l cancels the rest of the session in favor of taking r_c1 back to camp to get the cut looked at."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -18068,13 +18033,6 @@
                 "strings": [
                     "p_l guides r_c1 to sit, asking what's wrong. r_c1, cuddled close to p_l's side, whispers that {PRONOUN/r_c1/subject} {VERB/r_c1/feel/feels} like a failure, and that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} not doing well enough. p_l tugs {PRONOUN/r_c1/object} close, murmuring that r_c1's more than {PRONOUN/r_c1/poss} failures. Failure hurts, yes, but with it comes a chance to learn. All {PRONOUN/r_c1/subject} can do is try not to make the same mistake twice."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 5,
                 "relationship_changes": [
                     {
@@ -18119,13 +18077,6 @@
                 "strings": [
                     "p_l asks what's wrong and r_c1 breaks down, wailing that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} not doing well enough even though {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} <i>really</i> trying. p_l curls around {PRONOUN/r_c1/object}, purring softly, and tells a story of {PRONOUN/p_l/poss} own apprentice days and {PRONOUN/p_l/poss} own mistakes. p_l chuckles at the look on {PRONOUN/r_c1/poss} face, promising that nobody but {PRONOUN/r_c1/object} will remember {PRONOUN/r_c1/poss} mistakes."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 5,
                 "relationship_changes": [
                     {
@@ -18172,13 +18123,6 @@
                 "strings": [
                     "p_l tries to ask r_c1 if there's something {PRONOUN/p_l/subject} can help with, or if {PRONOUN/r_c1/subject} {VERB/r_c1/want/wants} to talk about it. r_c1 shuts down, muttering a request to please just keep the patrol focused on training."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -18205,13 +18149,6 @@
                 "strings": [
                     "p_l asks r_c1 if there's something {PRONOUN/p_l/subject} can help with, or if {PRONOUN/r_c1/subject} {VERB/r_c1/want/wants} to talk about it. When r_c1 confesses {PRONOUN/r_c1/poss} insecurities, p_l is surprised - that's all? r_c1 shouldn't worry about something small like that. This reply does little to assuage r_c1's anxiety."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -24449,8 +24386,7 @@
                     "skill": [
                         "STORY,1",
                         "LORE,1"
-                    ],
-                    "trait": []
+                    ]
                 }
             }
         },

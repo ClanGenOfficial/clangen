@@ -23,7 +23,7 @@
                     "The patrol relents and the loner is allowed to join the Clan."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -42,7 +42,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -61,7 +61,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "new_status": [
                             "warrior"
@@ -75,7 +75,7 @@
                     "The patrol relents and the loner is allowed to join the Clan, bringing along {PRONOUN/n_c:0/poss} litter of hungry kits."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -85,11 +85,11 @@
                             "loner"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -107,7 +107,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -126,12 +126,12 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "kitten"
@@ -147,7 +147,7 @@
                     "The loner seems to have second thoughts. {PRONOUN/n_c:0/subject/CAP} quickly {VERB/n_c:0/turn/turns} tail and {VERB/n_c:0/take/takes} off. Good riddance then."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -161,7 +161,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -185,7 +185,7 @@
                     "The patrol tells the cat to leave or feel their claws. The loner seems to choose life and quickly takes off."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -199,7 +199,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -223,7 +223,7 @@
                     "The patrol advances threateningly towards the loner, who retaliates with a quick swipe to p_l's muzzle. While p_l is stunned, {PRONOUN/n_c:0/subject} {VERB/n_c:0/make/makes} {PRONOUN/n_c:0/poss} getaway."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -237,7 +237,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "clan"
@@ -279,7 +279,7 @@
                     "p_l relents and the loner is allowed to join the Clan."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -298,7 +298,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -317,7 +317,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "new_status": [
                             "warrior"
@@ -331,7 +331,7 @@
                     "p_l relents and the loner is allowed to join the Clan, bringing along {PRONOUN/n_c:0/poss} litter of hungry kits."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -341,11 +341,11 @@
                             "loner"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -363,7 +363,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -382,12 +382,12 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "kitten"
@@ -403,7 +403,7 @@
                     "The loner seems to have second thoughts. {PRONOUN/n_c:0/subject/CAP} quickly {VERB/n_c:0/turn/turns} tail and {VERB/n_c:0/take/takes} off. Good riddance then."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -423,7 +423,7 @@
                     "p_l tells the cat to leave or feel {PRONOUN/p_l/poss} claws. The loner seems to choose life and quickly takes off."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -437,7 +437,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -461,7 +461,7 @@
                     "p_l advances threateningly towards the loner, who retaliates with a quick swipe to {PRONOUN/p_l/poss} muzzle. While p_l is stunned, {PRONOUN/n_c:0/subject} {VERB/n_c:0/make/makes} {PRONOUN/n_c:0/poss} getaway."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -475,7 +475,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "clan"
@@ -517,7 +517,7 @@
                     "The patrol relents and the kittypet is allowed to join the Clan."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -536,7 +536,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -555,7 +555,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "new_status": [
                             "warrior"
@@ -569,7 +569,7 @@
                     "The patrol relents and the kittypet is allowed to join the Clan, bringing along {PRONOUN/n_c:0/poss} litter of hungry kits."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -579,11 +579,11 @@
                             "kittypet"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -601,7 +601,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -620,12 +620,12 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "kitten"
@@ -641,7 +641,7 @@
                     "The kittypet gradually becomes more and more frightened at the patrol's descriptions of Clan life. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/decide/decides} to turn tail and run."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "kittypet"
@@ -703,7 +703,7 @@
                     "p_l relents and the kittypet is allowed to join the Clan."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -722,7 +722,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -741,7 +741,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "new_status": [
                             "warrior"
@@ -755,7 +755,7 @@
                     "p_l relents and the kittypet is allowed to join the Clan, bringing along {PRONOUN/n_c:0/poss} litter of hungry kits."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -765,11 +765,11 @@
                             "kittypet"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -784,7 +784,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -803,12 +803,12 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "kitten"
@@ -824,7 +824,7 @@
                     "The kittypet gradually becomes more and more frightened at p_l's descriptions of Clan life. They decide to turn tail and run."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "kittypet"
@@ -856,7 +856,7 @@
                     "p_l advances threateningly towards the kittypet, who retaliates with a quick swipe to {PRONOUN/p_l/poss} muzzle. While p_l is stunned, {PRONOUN/n_c:0/subject} {VERB/n_c:0/make/makes} {PRONOUN/n_c:0/poss} getaway."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -898,7 +898,7 @@
                     "The patrol approaches the cat and sees some signs of life. The patrol, after some hesitation, decides to bring the cat back to camp so that {PRONOUN/n_c:0/subject} can be treated by the medicine cat. The cat thanks them profusely and promises to repay them by joining the Clan and being the best warrior {PRONOUN/n_c:0/subject} can."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner",
@@ -911,7 +911,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -930,7 +930,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "condition": [
                             "blunt_force_injury"
@@ -943,7 +943,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     }
                 ]
@@ -956,7 +956,7 @@
                     "As r_c0 inspects the cat, {PRONOUN/r_c0/subject} {VERB/r_c0/find/finds} that {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} already hunting with {PRONOUN/n_c:0/poss} ancestors."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {}
                     }
                 },
@@ -964,7 +964,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -998,7 +998,7 @@
                     "The patrol tries to drive the cat away, but {PRONOUN/n_c:0/subject} {VERB/n_c:0/trip/trips} and {VERB/n_c:0/stumble/stumbles} over a loose twig. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/lie/lies} on the ground and {VERB/n_c:0/don't/doesn't} get back up. The patrol takes a bit of time to bury {PRONOUN/n_c:0/object}, just to keep the scavengers away."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {}
                     }
                 },
@@ -1009,7 +1009,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -1043,7 +1043,7 @@
                     "p_l approaches the cat and sees some signs of life. After some hesitation, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to bring the cat back to camp so that {PRONOUN/n_c:0/subject} can be treated by the medicine cat. The cat thanks {PRONOUN/p_l/object} profusely and promises to repay {PRONOUN/p_l/object} by joining the Clan and being the best warrior {PRONOUN/n_c:0/subject} can."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner",
@@ -1056,7 +1056,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -1075,7 +1075,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "condition": [
                             "blunt_force_injury"
@@ -1088,7 +1088,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     }
                 ]
@@ -1102,7 +1102,7 @@
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {}
                     }
                 },
@@ -1110,7 +1110,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -1144,7 +1144,7 @@
                     "p_l tries to drive the cat away, but {PRONOUN/n_c:0/subject} {VERB/n_c:0/trip/trips} and {VERB/n_c:0/stumble/stumbles} over a loose twig. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/lie/lies} on the ground and {VERB/n_c:0/don't/doesn't} get back up. p_l takes a bit of time to bury {PRONOUN/n_c:0/object}, just to keep the scavengers away."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {}
                     }
                 },
@@ -1155,7 +1155,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -1192,7 +1192,7 @@
                     "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. Begrudgingly, p_l orders the patrol to drag {PRONOUN/n_c:0/object} back to camp. This cat needs medical attention."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "senior"
@@ -1210,7 +1210,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -1229,7 +1229,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "condition": [
                             "carrionplace disease"
@@ -1240,7 +1240,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     }
                 ]
@@ -1262,7 +1262,7 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "senior"
@@ -1280,7 +1280,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -1299,7 +1299,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "condition": [
                             "carrionplace disease"
@@ -1310,7 +1310,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     }
                 ]
@@ -1321,7 +1321,7 @@
                     "Swerving to follow the scent trail, the patrol almost falls over a hissing queen. Reeling with surprise, no one hears exactly what she spits out about never letting herself be taken, but she grabs something and flees. It's only as the patrol regroups that they hear the distressed calls of her other kittens."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "gender": "female",
                         "status": [
@@ -1332,11 +1332,11 @@
                             "senior adult"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -1346,10 +1346,10 @@
                             "abandoned2"
                         ]
                     },
-                    "n_c:2": {
+                    "n_c2": {
                         "can_create_new_cat": {
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -1367,7 +1367,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -1386,14 +1386,14 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "values": [
                             "like"
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "n_c:0 surprised cat_from when cat_from's patrol almost stepped over n_c:0 and {PRONOUN/n_c:0/poss} kits on accident."
+                            "cats_from": "n_c0 surprised cat_from when cat_from's patrol almost stepped over n_c:0 and {PRONOUN/n_c:0/poss} kits on accident."
                         }
                     }
                 ],
@@ -1403,7 +1403,7 @@
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "newborn"
@@ -1460,7 +1460,7 @@
                     "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They drive the struggling kittypet off c_n territory, protecting the Clan from a source of sickness. No mercy for intruders."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "senior"
@@ -1478,7 +1478,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -1493,7 +1493,7 @@
                     "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They try to drive the kittypet off, but {PRONOUN/n_c:0/poss} too weak, and the warriors too practiced at battle."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "senior"
@@ -1511,7 +1511,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -1549,7 +1549,7 @@
                     "There's no guarantee that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} still in the area, so p_l opens {PRONOUN/p_l/poss} mouth to pick up {PRONOUN/n_c:0/poss} scent. n_c:0 is basking on some Twoleg rubbish, but when {PRONOUN/n_c:0/subject} {VERB/n_c:0/spot/spots} p_l, {PRONOUN/n_c:0/subject} {VERB/n_c:0/jump/jumps} down, trotting over with tail up, happily touching noses with p_l."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult"
@@ -1566,7 +1566,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -1579,7 +1579,7 @@
                         ],
                         "amount": 30,
                         "log": {
-                            "cats_from": "n_c:0 met {PRONOUN/n_c:0/poss} Clancat friend, cat_to, over the border.",
+                            "cats_from": "n_c0 met {PRONOUN/n_c:0/poss} Clancat friend, cat_to, over the border.",
                             "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner friend, n_c:0, over the border."
                         }
                     }
@@ -1592,7 +1592,7 @@
                     "Since n_c:0 stumbled into {PRONOUN/p_l/poss} life, everything's changed. {PRONOUN/p_l/subject/CAP}'d never trade the flutter in {PRONOUN/p_l/poss} whiskers, the thrill in {PRONOUN/p_l/poss} heart at these stolen moments. But c_n would never approve."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {
                             "assign_mate": [
                                 "p_l"
@@ -1610,7 +1610,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -1627,7 +1627,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -1639,7 +1639,7 @@
                         ],
                         "amount": 50,
                         "log": {
-                            "cats_from": "n_c:0 met {PRONOUN/n_c:0/poss} Clancat mate, cat_to, over the border.",
+                            "cats_from": "n_c0 met {PRONOUN/n_c:0/poss} Clancat mate, cat_to, over the border.",
                             "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner mate, n_c:0, over the border."
                         }
                     }
@@ -1652,7 +1652,7 @@
                     "Every heartbeat {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} spent with n_c:0 has been uncertain, new, exciting, and as temporary as a flower's bloom. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/aren't/isn't} coming home with p_l, p_l's accepted that. But they can still see each other, for as long as n_c:0 lingers near c_n's borders."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {
                             "assign_mate": [
                                 "p_l"
@@ -1670,7 +1670,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -1687,7 +1687,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -1699,7 +1699,7 @@
                         ],
                         "amount": 50,
                         "log": {
-                            "cats_from": "n_c:0 met {PRONOUN/n_c:0/poss} Clancat mate, cat_to, over the border.",
+                            "cats_from": "n_c0 met {PRONOUN/n_c:0/poss} Clancat mate, cat_to, over the border.",
                             "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner mate, n_c:0, over the border."
                         }
                     }
@@ -1708,10 +1708,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "n_c:0 — p_l's heart leaps and drops with every single visit, each time a gamble on if {PRONOUN/p_l/poss} hidden love will still be there for the next stolen moment. p_l will fight for them, please, <i>please</i> n_c:0, come back to c_n. Stay."
+                    "n_c0 — p_l's heart leaps and drops with every single visit, each time a gamble on if {PRONOUN/p_l/poss} hidden love will still be there for the next stolen moment. p_l will fight for them, please, <i>please</i> n_c:0, come back to c_n. Stay."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {
                             "assign_mate": [
                                 "p_l"
@@ -1729,7 +1729,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -1746,7 +1746,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -1783,7 +1783,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     }
                 ]
@@ -1797,7 +1797,7 @@
                     "The sweetest times last the least long. Every heartbeat spent with n_c:0 is uncertain, new, exciting, and as temporary as a flower's bloom. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/aren't/isn't} coming home with p_l, p_l's accepted that. But the thing is, p_l can go with {PRONOUN/n_c:0/object}."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {
                             "assign_mate": [
                                 "p_l"
@@ -1812,7 +1812,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -1829,7 +1829,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -1859,7 +1859,7 @@
                     "Come back to c_n, p_l urges when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} n_c:0, resuming the argument they've been having. Come back, join c_n, be p_l's mate for real. But n_c:0 shakes {PRONOUN/n_c:0/poss} head. c_n will never accept an outsider. <br>Then leave. Leave, and if p_l ever sees n_c:0 again, well, p_l will <i>not</i> forgive this."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {
                             "assign_mate": [
                                 "p_l"
@@ -1874,7 +1874,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -1890,7 +1890,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -1907,7 +1907,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -1931,7 +1931,7 @@
                     "Come back to c_n, p_l urges when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} n_c:0, resuming the argument they've been having. Come back, join c_n, be p_l's mate for real. But n_c:0 shakes {PRONOUN/n_c:0/poss} head. c_n will never accept an outsider. <br>Then leave. Leave, and if p_l ever sees n_c:0 again, well, p_l will <i>not</i> forgive this."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {
                             "assign_mate": [
                                 "p_l"
@@ -1949,7 +1949,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -1965,7 +1965,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -1982,7 +1982,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -2006,7 +2006,7 @@
                     "Come back to c_n, p_l urges when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} n_c:0, resuming the argument they've been having. It's useless. In response to p_l urging {PRONOUN/n_c:0/object}, hounding {PRONOUN/n_c:0/object}, demanding things n_c:0 isn't prepared to give, the loner simply turns {PRONOUN/n_c:0/poss} back, walking away for the last time."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {
                             "assign_mate": [
                                 "p_l"
@@ -2024,7 +2024,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -2040,7 +2040,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -2057,7 +2057,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -2102,7 +2102,7 @@
                     "The kit is taken back to camp and nursed back to health."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "kitten"
@@ -2119,7 +2119,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -2131,14 +2131,14 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "n_c:0 was found by cat_to and {PRONOUN/cat_to/poss} patrol and taken into the Clan as a kit."
+                            "cats_from": "n_c0 was found by cat_to and {PRONOUN/cat_to/poss} patrol and taken into the Clan as a kit."
                         }
                     }
                 ],
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "new_status": [
                             "kitten"
@@ -2212,7 +2212,7 @@
                     "The kit is taken back to camp and nursed back to health."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "kitten"
@@ -2229,7 +2229,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -2241,14 +2241,14 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "n_c:0 was found by cat_to and taken into the Clan as a kit."
+                            "cats_from": "n_c0 was found by cat_to and taken into the Clan as a kit."
                         }
                     }
                 ],
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "new_status": [
                             "kitten"
@@ -2325,7 +2325,7 @@
                     "The new medicine cat is welcomed into the Clan."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -2348,7 +2348,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -2367,7 +2367,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "new_status": [
                             "medicine cat"
@@ -2381,7 +2381,7 @@
                     "The new medicine cat is welcomed into the Clan along with {PRONOUN/n_c:0/poss} litter of kits."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -2391,11 +2391,11 @@
                             "loner"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -2413,7 +2413,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -2432,7 +2432,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "new_status": [
                             "medicine cat"
@@ -2440,7 +2440,7 @@
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "kitten"
@@ -2456,7 +2456,7 @@
                     "After hearing more about your Clan, the loner decides not to join, quickly turning and taking off."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -2473,7 +2473,7 @@
                     "Healer or not, the patrol tells the cat to leave or feel their claws. The loner seems to choose life and quickly takes off."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -2487,7 +2487,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -2511,7 +2511,7 @@
                     "The patrol advances threateningly towards the loner, who retaliates with a quick swipe to p_l's muzzle. While p_l is stunned, they make their getaway."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -2525,7 +2525,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "clan"
@@ -2567,7 +2567,7 @@
                     "The new medicine cat is welcomed into the Clan."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -2590,7 +2590,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -2609,7 +2609,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "new_status": [
                             "medicine cat"
@@ -2623,7 +2623,7 @@
                     "The new medicine cat is welcomed into the Clan along with {PRONOUN/n_c:0/poss} litter of kits."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -2637,11 +2637,11 @@
                             "loner_backstories"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -2659,7 +2659,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -2678,7 +2678,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "new_status": [
                             "medicine cat"
@@ -2686,7 +2686,7 @@
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "kitten"
@@ -2702,7 +2702,7 @@
                     "After hearing more about your Clan, the loner decides not to join, quickly turning and taking off."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -2719,7 +2719,7 @@
                     "Healer or not, p_l tells the cat to leave or feel {PRONOUN/p_l/poss} claws. The loner seems to choose life and quickly takes off."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -2733,7 +2733,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -2757,7 +2757,7 @@
                     "p_l advances threateningly towards the loner, who retaliates with a quick swipe to {PRONOUN/p_l/poss} muzzle. While p_l is stunned, they make their getaway."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -2771,7 +2771,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "clan"
@@ -2814,7 +2814,7 @@
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -2828,7 +2828,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -2847,7 +2847,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "condition": [
                             "blunt_force_injury"
@@ -2860,7 +2860,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     }
                 ]
@@ -2881,7 +2881,7 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -2895,7 +2895,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -2914,7 +2914,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "condition": [
                             "blunt_force_injury"
@@ -2927,7 +2927,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     }
                 ]
@@ -2941,7 +2941,7 @@
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -2958,7 +2958,7 @@
                     "The patrol watches as the loner climbs up a spindly tree to escape the dog, and then promptly proceed to chase the dog out of the territory and viciously spit at the loner not to cross the border."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -2972,7 +2972,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "clan"
@@ -2996,7 +2996,7 @@
                     "The loner escapes the dog by climbing a tree and scowls at the patrol, who stood by watching. The patrol leers back in return. c_n doesn't owe loners anything."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "loner"
@@ -3010,7 +3010,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "clan"
@@ -3079,7 +3079,7 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
@@ -3090,7 +3090,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -3142,7 +3142,7 @@
                     "p_l takes the lead in checking the source of the noise and comes face-to-face with a rogue hiding in the bush! The rogue takes a swipe at p_l but doesn't get much damage in before p_l retaliates and chases the intruder out of c_n territory."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
@@ -3153,7 +3153,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -3195,19 +3195,19 @@
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:2": {
+                    "n_c2": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
@@ -3218,9 +3218,9 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:2"
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -3276,19 +3276,19 @@
                     "p_l finds a gang of rogues in the bush! p_l turns tail and runs, the sound of gloating the last thing in p_l's ears, hearing how little the rogues think of c_n."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
                         ]
                     },
-                    "n_c:2": {
+                    "n_c2": {
                         "can_create_new_cat": {},
                         "status": [
                             "rogue"
@@ -3299,9 +3299,9 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0",
-                            "n_c:1",
-                            "n_c:2"
+                            "n_c0",
+                            "n_c1",
+                            "n_c2"
                         ],
                         "cats_to": [
                             "clan"
@@ -3373,7 +3373,7 @@
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "kittypet"
@@ -3384,11 +3384,11 @@
                             "senior adult"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -3407,7 +3407,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -3426,7 +3426,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -3435,12 +3435,12 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "kitten"
@@ -3455,7 +3455,7 @@
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "kittypet"
@@ -3466,11 +3466,11 @@
                             "senior adult"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -3489,7 +3489,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -3508,7 +3508,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -3517,12 +3517,12 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "kitten"
@@ -3547,7 +3547,7 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "kittypet"
@@ -3558,11 +3558,11 @@
                             "senior adult"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -3581,7 +3581,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -3600,7 +3600,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -3609,12 +3609,12 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "kitten"
@@ -3696,7 +3696,7 @@
                     "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l finds a panting, bleeding queen, one desperately trying to keep {PRONOUN/n_c:0/poss} newborn litter quiet. p_l brings the queen back to camp where the Clan, suspicious but obedient to the code, takes them in."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -3704,11 +3704,11 @@
                         ],
                         "gender": "can_birth"
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -3726,7 +3726,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -3745,7 +3745,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "new_status": [
                             "warrior"
@@ -3753,7 +3753,7 @@
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "newborn"
@@ -3768,7 +3768,7 @@
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -3776,11 +3776,11 @@
                         ],
                         "gender": "can_birth"
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -3798,7 +3798,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -3817,12 +3817,12 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "newborn"
@@ -3902,7 +3902,7 @@
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -3910,11 +3910,11 @@
                         ],
                         "gender": "can_birth"
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -3933,7 +3933,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -3952,7 +3952,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -3964,7 +3964,7 @@
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "newborn"
@@ -3978,7 +3978,7 @@
                     "p_l and {PRONOUN/p_l/poss} patrol come across a litter of frantically mewling kits desperately trying to wake up their dead parent. Unsure but not willing for them to die they bring the kits back to the Clan to be raised as one of them."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -3986,11 +3986,11 @@
                         ],
                         "gender": "can_birth"
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -4009,7 +4009,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -4028,7 +4028,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -4040,7 +4040,7 @@
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "newborn"
@@ -4127,7 +4127,7 @@
                     "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds {PRONOUN/p_l/self} nose to nose with a panting, bleeding queen, one desperately trying to keep {PRONOUN/n_c:0/poss} newborn litter quiet. p_l brings the queen back to camp where the Clan, suspicious but obedient to the code, takes them in."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -4135,11 +4135,11 @@
                         ],
                         "gender": "can_birth"
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -4157,7 +4157,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -4176,12 +4176,12 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "newborn"
@@ -4195,7 +4195,7 @@
                     "p_l sees a worn and weary queen protecting {PRONOUN/n_c:0/poss} mewling litter. Not happy but unwilling and unable to go against {PRONOUN/p_l/poss} beloved code, {PRONOUN/p_l/subject} {VERB/p_l/take/takes} them all back to camp."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -4203,11 +4203,11 @@
                         ],
                         "gender": "can_birth"
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -4225,7 +4225,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -4244,12 +4244,12 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "newborn"
@@ -4336,7 +4336,7 @@
                     "Sure that it is a sign from StarClan, p_l follows the faint wailing. Instead, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost {PRONOUN/n_c:0/poss} life in a harsh kitting, {PRONOUN/n_c:0/poss} newborn kits clinging to a body that will never move again. p_l hesitates, but wraps {PRONOUN/p_l/self} around the kits. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} going to have to argue to keep them."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -4344,11 +4344,11 @@
                         ],
                         "gender": "can_birth"
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -4367,7 +4367,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -4386,7 +4386,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -4398,7 +4398,7 @@
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "newborn"
@@ -4412,7 +4412,7 @@
                     "p_l comes across a litter of frantically mewling kits desperately trying to wake up their dead parent. Unsure but not willing for them to die {PRONOUN/p_l/subject} {VERB/p_l/bring/brings} the kits back to the Clan to be raised as one of them."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -4420,11 +4420,11 @@
                         ],
                         "gender": "can_birth"
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -4443,7 +4443,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -4462,7 +4462,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -4474,7 +4474,7 @@
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "newborn"
@@ -4557,7 +4557,7 @@
                     "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds {PRONOUN/p_l/self} nose to nose with a panting, bleeding queen, one desperately trying to keep {PRONOUN/n_c:0/poss} newborn litter quiet. {PRONOUN/p_l/subject/CAP} {VERB/p_l/watch/watches} uncertainly, but when the queen begs for help {PRONOUN/p_l/subject} can't refuse."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -4565,11 +4565,11 @@
                         ],
                         "gender": "can_birth"
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -4587,7 +4587,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -4606,12 +4606,12 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "newborn"
@@ -4625,7 +4625,7 @@
                     "p_l follows the strange sounds on the wind and finds a struggling queen with {PRONOUN/n_c:0/poss} newborn kits clinging to {PRONOUN/n_c:0/object}. Panicking, {PRONOUN/p_l/subject} {VERB/p_l/run/runs} for home. It alerts c_n to the problem, and begrudgingly they take the queen and kits in."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -4633,11 +4633,11 @@
                         ],
                         "gender": "can_birth"
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -4655,7 +4655,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -4674,12 +4674,12 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "newborn"
@@ -4762,7 +4762,7 @@
                     "p_l comes across a litter of frantically mewling kits desperately trying to wake up their dead parent. Unsure but not willing for them to die {PRONOUN/p_l/subject} {VERB/p_l/bring/brings} the kits back to the Clan to be raised as one of them."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -4770,11 +4770,11 @@
                         ],
                         "gender": "can_birth"
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -4793,7 +4793,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -4812,7 +4812,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -4821,7 +4821,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "newborn"
@@ -4835,7 +4835,7 @@
                     "It takes ages for p_l to pinpoint the sounds. Eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, {PRONOUN/n_c:0/poss} newborn kits by {PRONOUN/n_c:0/poss} side. It's against everything p_l has been told about outsiders, but {PRONOUN/p_l/subject} can't leave the kittens to die."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -4843,11 +4843,11 @@
                         ],
                         "gender": "can_birth"
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -4866,7 +4866,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -4885,7 +4885,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -4894,7 +4894,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "newborn"
@@ -4983,7 +4983,7 @@
                             "apprentice"
                         ]
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "kittypet"
@@ -4997,7 +4997,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -5016,7 +5016,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "condition": [
                             "cold_injury"
@@ -5029,7 +5029,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     }
                 ]
@@ -5045,7 +5045,7 @@
                             "apprentice"
                         ]
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "kittypet"
@@ -5059,7 +5059,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -5078,7 +5078,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "condition": [
                             "cold_injury"
@@ -5091,7 +5091,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     }
                 ]
@@ -5107,7 +5107,7 @@
                             "apprentice"
                         ]
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "kittypet"
@@ -5121,7 +5121,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -5140,7 +5140,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "condition": [
                             "cold_injury"
@@ -5153,7 +5153,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     }
                 ]

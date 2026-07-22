@@ -37,12 +37,15 @@ class GatherCatEnum(Enum):
     not_high_aggress = "-high_aggress"
     low_aggress = "low_aggress"
     not_low_aggress = "-low_aggress"
+    patrol_cats = "patrol_cats"
+    not_patrol_cats = "-patrol_cats"
 
 
 class GatherCat(RootModel):
     root: Union[
         GatherCatEnum,
         Annotated[str, StringConstraints(pattern=r"^-?n_c:[0-9]+$")],
+        Annotated[str, StringConstraints(pattern=r"^-?n_c[0-9]+$")],
         Annotated[str, StringConstraints(pattern=r"^-?r_c[0-9]+$")],
         Annotated[str, StringConstraints(pattern=r"^-?s_c[0-9]+$")],
     ]

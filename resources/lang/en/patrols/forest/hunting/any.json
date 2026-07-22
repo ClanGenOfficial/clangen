@@ -5092,11 +5092,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c0 waggles {PRONOUN/r_c0/poss} haunches and leaps, pinning the mouse beneath a paw as {PRONOUN/r_c0/subject} {VERB/r_c0/make/makes} the killing bite."
+                    "p_l locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. p_l waggles {PRONOUN/p_l/poss} haunches and leaps, pinning the mouse beneath a paw as {PRONOUN/p_l/subject} {VERB/p_l/make/makes} the killing bite."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -5108,11 +5105,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 pinpoints the location of the prey and begins creeping forward. {PRONOUN/r_c0/subject/CAP}{VERB/r_c0/'re/'s} almost within pouncing distance when the mouse suddenly bolts. With a lash of {PRONOUN/r_c0/poss} tail, r_c0 leaps after the mouse, barely snagging it before it reaches a burrow. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/purr/purrs} in satisfaction as prey-blood hits {PRONOUN/r_c0/poss} tongue."
+                    "p_l pinpoints the location of the prey and begins creeping forward. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} almost within pouncing distance when the mouse suddenly bolts. With a lash of {PRONOUN/p_l/poss} tail, p_l leaps after the mouse, barely snagging it before it reaches a burrow. {PRONOUN/p_l/subject/CAP} {VERB/p_l/purr/purrs} in satisfaction as prey-blood hits {PRONOUN/p_l/poss} tongue."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 10,
                 "supply": [
                     {
@@ -5279,14 +5273,11 @@
                 "strings": [
                     "The rat rears up and hisses at r_c, but while it's distracted, p_l takes it out with a quick strike."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "cats_to": [
                             "p_l"
@@ -5417,11 +5408,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 creeps towards the bird, setting {PRONOUN/r_c0/poss} paws down gently. The bird notices the cat sneaking towards it and attempts to take off. r_c0 bounds forward and smacks the bird to the ground with an outstretched paw. Outstanding!"
+                    "p_l creeps towards the bird, setting {PRONOUN/p_l/poss} paws down gently. The bird notices the cat sneaking towards it and attempts to take off. p_l bounds forward and smacks the bird to the ground with an outstretched paw. Outstanding!"
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 15,
                 "supply": [
                     {
@@ -6985,7 +6973,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 catches a great f_mp_s, and two f_tp_p! But {PRONOUN/s_c0/poss} sibling comes up empty-pawed. s_c0 offers to let {PRONOUN/r_c0/object} claim the smaller prey as {PRONOUN/r_c0/poss} own, but the insulting suggestion just causes a massive argument."
+                    "s_c0 catches a great f_mp_s, and two f_tp_p! But {PRONOUN/s_c0/poss} sibling comes up empty-pawed. s_c0 offers to let {PRONOUN/p_l/object} claim the smaller prey as {PRONOUN/p_l/poss} own, but the insulting suggestion just causes a massive argument."
                 ],
                 "involved_cats": {
                     "r_c0": {},

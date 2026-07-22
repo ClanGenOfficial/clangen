@@ -486,7 +486,7 @@ dev_tools = false
   # forces patrol with this id to occur, assuming it's possible by constraints
   debug_ensure_patrol_id = ""
 
-  # set to true to remove all constraints for patrols regarding location, session, biomes, etc.
+  # set to true to remove all constraints for patrols regarding location, season, biomes, etc.
   debug_override_patrol_stat_requirements = false
 
   # set to true (NO QUOTES) to ensure the debug patrol succeeds

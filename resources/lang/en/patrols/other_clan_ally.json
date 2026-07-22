@@ -1841,7 +1841,7 @@
                     "p_l seizes the opportunity to weaken o_c_n and orders the patrol to steal the two kits."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "kitten"
@@ -1850,7 +1850,7 @@
                             "stolenkit3"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {},
                         "age": [
                             "kitten"
@@ -1867,12 +1867,12 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ]
                     }
                 ]
@@ -1883,7 +1883,7 @@
                     "p_l gasps at seeing the two kits. How did they get so far from camp? Ordering the patrol to bring the kits back to camp, p_l doesn't notice the patrol exchange glances before keeping silent as they steal the kits from o_c_n."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "kitten"
@@ -1892,7 +1892,7 @@
                             "stolenkit3"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {},
                         "age": [
                             "kitten"
@@ -1928,12 +1928,12 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ]
                     }
                 ]

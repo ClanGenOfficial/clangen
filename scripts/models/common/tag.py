@@ -12,6 +12,7 @@ class TagEnum(Enum):
     high_lives = "high_lives"
     mid_lives = "mid_lives"
     low_lives = "low_lives"
+    some_lives = "some_lives"
     clan_apps = "clan:apps"
     romance = "romance"
     halloween = "halloween"

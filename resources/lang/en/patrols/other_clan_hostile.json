@@ -315,10 +315,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_speakingcat_Ln",
                 "strings": [
-                    "n_c:0 explains that {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hoping to join c_n in exchange for o_c_n secrets. The patrol is cautious, but n_c:0's exile was controversial, and information can make the difference between life and death. n_c:0 is ultimately brought back to camp."
+                    "n_c0 explains that {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hoping to join c_n in exchange for o_c_n secrets. The patrol is cautious, but n_c:0's exile was controversial, and information can make the difference between life and death. n_c:0 is ultimately brought back to camp."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "backstory": [
                             "disgraced1",
@@ -334,7 +334,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -355,7 +355,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "values": [
                             "trust",
@@ -370,7 +370,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     }
                 ]
@@ -382,7 +382,7 @@
                     "It turns out {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} actually innocent. At least that's what n_c:0 feverishly insists, as {PRONOUN/n_c:0/subject} {VERB/n_c:0/ask/asks} to join c_n in exchange for o_c_n secrets. The patrol is unnerved by n_c:0's wild-eyed expression, but it seems like vengeance against o_c_n is {PRONOUN/n_c:0/poss} only motive, and o_c_n is a fierce enemy. n_c:0 is brought back to camp."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "backstory": [
                             "disgraced1",
@@ -398,7 +398,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -419,7 +419,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "values": [
                             "trust",
@@ -434,7 +434,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     }
                 ]
@@ -443,10 +443,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_speakingcat_Ln",
                 "strings": [
-                    "n_c:0 explains that {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hoping to join c_n in exchange for o_c_n secrets. The things n_c:0 did were monstrous, but the patrol is eager to both capitalize on an opportunity for information and spite their hated enemy. With the caveat of a constant guard, n_c:0 is brought back to camp."
+                    "n_c0 explains that {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hoping to join c_n in exchange for o_c_n secrets. The things n_c:0 did were monstrous, but the patrol is eager to both capitalize on an opportunity for information and spite their hated enemy. With the caveat of a constant guard, n_c:0 is brought back to camp."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "backstory": [
                             "disgraced1",
@@ -461,7 +461,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -482,7 +482,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "values": [
                             "trust",
@@ -497,7 +497,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     }
                 ]
@@ -506,10 +506,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_speakingcat_Ln",
                 "strings": [
-                    "n_c:0 explains that {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hoping to join c_n in exchange for o_c_n secrets. The patrol is appalled: {VERB/n_c:0/do/does} {PRONOUN/n_c:0/subject} really think c_n would let such a monstrous cat into the camp they sleep in, for a little o_c_n hearsay? n_c:0 curses every cat in the patrol as {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} chased from Clan territory."
+                    "n_c0 explains that {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hoping to join c_n in exchange for o_c_n secrets. The patrol is appalled: {VERB/n_c:0/do/does} {PRONOUN/n_c:0/subject} really think c_n would let such a monstrous cat into the camp they sleep in, for a little o_c_n hearsay? n_c:0 curses every cat in the patrol as {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} chased from Clan territory."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "past_status": [
                             "clancat"
@@ -523,7 +523,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -544,10 +544,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "n_c:0 offers o_c_n secrets in exchange for a place in c_n. With how unstable their relations have been lately, those secrets could be crucial — which is exactly why c_n won't escalate the situation by sheltering a o_c_n exile. n_c:0 is chased far from the territory."
+                    "n_c0 offers o_c_n secrets in exchange for a place in c_n. With how unstable their relations have been lately, those secrets could be crucial — which is exactly why c_n won't escalate the situation by sheltering a o_c_n exile. n_c:0 is chased far from the territory."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "past_status": [
                             "clancat"
@@ -561,7 +561,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -584,7 +584,7 @@
                     "When the patrol confronts n_c:0, they're shocked to see kits at {PRONOUN/n_c:0/poss} side. n_c:0 pleads that, though {PRONOUN/n_c:0/subject} {VERB/n_c:0/know/knows} c_n will never accept {PRONOUN/n_c:0/object}, {PRONOUN/n_c:0/poss} litter doesn't deserve banishment. Cautious but sympathetic — how horrible could o_c_n be, to exile kits? — p_l escorts n_c:0 from Clan territory while the others bring the litter to their new home."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult",
@@ -594,11 +594,11 @@
                             "clancat"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -616,7 +616,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -638,7 +638,7 @@
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "kitten"
@@ -653,7 +653,7 @@
                     "When the patrol confronts n_c:0, they're shocked to see kits at {PRONOUN/n_c:0/poss} side. n_c:0 pleads that, though {PRONOUN/n_c:0/subject} {VERB/n_c:0/know/knows} c_n will never accept {PRONOUN/n_c:0/object}, {PRONOUN/n_c:0/poss} litter doesn't deserve banishment. n_c:0's exile was already controversial, p_l thinks, and the kits are innocent. Perhaps c_n could accept n_c:0... if {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} willing to divulge a few of {PRONOUN/n_c:0/poss} former Clan's secrets."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "backstory": [
                             "disgraced1",
@@ -665,11 +665,11 @@
                             "senior adult"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "become_litter": true,
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "age": [
@@ -687,7 +687,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -708,7 +708,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "values": [
                             "trust",
@@ -723,12 +723,12 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "new_status": [
                             "kitten"
@@ -741,10 +741,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "n_c:0, holding a mouse, bolts at sight of the patrol. c_n hopes {PRONOUN/n_c:0/poss} trespassing was just for prey..."
+                    "n_c0, holding a mouse, bolts at sight of the patrol. c_n hopes {PRONOUN/n_c:0/poss} trespassing was just for prey..."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "past_status": [
                             "clancat"
@@ -757,11 +757,11 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_battle_WrLn",
                 "strings": [
-                    "n_c:0 lunges at sight of the patrol, screaming nonsensically about {PRONOUN/n_c:0/poss} innocence. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/injure/injures} r_c0 before being torn away and chased off. c_n is quite rattled by the incident, and extra patrols are arranged to watch for this dangerous vagrant."
+                    "n_c0 lunges at sight of the patrol, screaming nonsensically about {PRONOUN/n_c:0/poss} innocence. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/injure/injures} r_c0 before being torn away and chased off. c_n is quite rattled by the incident, and extra patrols are arranged to watch for this dangerous vagrant."
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "past_status": [
                             "clancat"
@@ -776,7 +776,7 @@
                             "-r_c0"
                         ],
                         "cats_to": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "values": [
                             "like",
@@ -793,7 +793,7 @@
                             "r_c0"
                         ],
                         "cats_to": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "values": [
                             "like",
@@ -826,7 +826,7 @@
                     "The things n_c:0 did go beyond c_n and o_c_n's rivalry. The patrol is more than happy to sink their claws into this monster of a cat, and only by luck does n_c:0 escape with {PRONOUN/n_c:0/poss} life."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "past_status": [
                             "clancat"
@@ -840,7 +840,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -866,7 +866,7 @@
                     "The things n_c:0 did go beyond c_n and o_c_n's rivalry. The patrol is more than happy to sink their claws into this monster of a cat, and while the intention was merely removal from Clan territory, no one is sad to see {PRONOUN/n_c:0/object} dead."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "past_status": [
                             "clancat"
@@ -880,7 +880,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -901,7 +901,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "history": ""
                     }
@@ -915,7 +915,7 @@
                     "The things n_c:0 did go beyond c_n and o_c_n's rivalry. But when p_l begins the attack, n_c:0 sweeps {PRONOUN/p_l/poss} legs out from under {PRONOUN/p_l/object} so swiftly and smoothly p_l and {PRONOUN/p_l/poss} Clanmates are too stunned to retaliate until n_c:0 is cackling far, far away."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "past_status": [
                             "clancat"
@@ -926,7 +926,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -948,7 +948,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "values": [
                             "like",
@@ -983,7 +983,7 @@
                     "The things n_c:0 did go beyond c_n and o_c_n's rivalry. But when p_l begins the attack, n_c:0 proves a formidable enemy; {PRONOUN/n_c:0/subject} {VERB/n_c:0/cackle/cackles} as {PRONOUN/n_c:0/subject} {VERB/n_c:0/dash/dashes} away, a bloody p_l's concerned Clanmates still helping {PRONOUN/p_l/poss} to {PRONOUN/p_l/poss} feet."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "past_status": [
                             "clancat"
@@ -994,7 +994,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -1016,7 +1016,7 @@
                             "patrol_cats"
                         ],
                         "cats_to": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "values": [
                             "like",
@@ -1094,7 +1094,7 @@
                     "p_l begs n_c:0 to come back with {PRONOUN/p_l/object}. n_c:0 shakes {PRONOUN/n_c:0/poss} head regretfully, reminding {PRONOUN/p_l/object} that their Clans would never accept it. Instead, n_c:0 declares {PRONOUN/n_c:0/poss} intent to live beyond the borders, and asks p_l to join {PRONOUN/n_c:0/object} when {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} ready."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {
                             "assign_mate": [
                                 "p_l"
@@ -1115,7 +1115,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1132,7 +1132,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1146,7 +1146,7 @@
                     },
                     {
                         "cats_to": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1170,7 +1170,7 @@
                     "p_l begs n_c:0 to come back with {PRONOUN/p_l/object} and gasps in joy when n_c:0 agrees. With one last look over {PRONOUN/n_c:0/poss} shoulder to {PRONOUN/n_c:0/poss} old Clan, n_c:0 follows {PRONOUN/n_c:0/poss} mate to their new life together."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {
                             "assign_mate": [
                                 "p_l"
@@ -1191,7 +1191,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1208,7 +1208,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1240,7 +1240,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     }
                 ]
@@ -1249,10 +1249,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_flowerdate_WrOw",
                 "strings": [
-                    "n_c:0 urges p_l to give up {PRONOUN/p_l/poss} life in c_n and join {PRONOUN/n_c:0/object} in o_c_n. When p_l refuses, n_c:0 bows {PRONOUN/n_c:0/poss} head and admits {PRONOUN/n_c:0/subject} can't live without {PRONOUN/p_l/object}. n_c:0 will wait for p_l beyond the border, until p_l is ready to start their life together away from the Clans."
+                    "n_c0 urges p_l to give up {PRONOUN/p_l/poss} life in c_n and join {PRONOUN/n_c:0/object} in o_c_n. When p_l refuses, n_c:0 bows {PRONOUN/n_c:0/poss} head and admits {PRONOUN/n_c:0/subject} can't live without {PRONOUN/p_l/object}. n_c:0 will wait for p_l beyond the border, until p_l is ready to start their life together away from the Clans."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {
                             "assign_mate": [
                                 "p_l"
@@ -1273,7 +1273,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1290,7 +1290,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1307,7 +1307,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1330,7 +1330,7 @@
                     "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} made up {PRONOUN/p_l/poss} mind. p_l presses {PRONOUN/p_l/poss} pelt to n_c:0's, purring bittersweetly. {PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} said {PRONOUN/p_l/poss} goodbyes, and so has n_c:0. Now all that's left is to travel to the outer border together to start their shared life."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {
                             "assign_mate": [
                                 "p_l"
@@ -1351,7 +1351,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1368,7 +1368,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1382,7 +1382,7 @@
                     },
                     {
                         "cats_to": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1414,7 +1414,7 @@
                     "p_l and n_c:0 spend one last night together, and though p_l tries to convince {PRONOUN/n_c:0/object} that the birdsong is the nightingale and not the lark, n_c:0 knows better. {PRONOUN/n_c:0/subject/CAP} can't bear to live in this fantasy any longer. Though p_l calls after n_c:0, {PRONOUN/n_c:0/subject} {VERB/n_c:0/do/does}n't look back as {PRONOUN/n_c:0/subject} {VERB/n_c:0/flee/flees} into the rosy dawn."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {
                             "assign_mate": [
                                 "p_l"
@@ -1435,7 +1435,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1452,7 +1452,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1466,7 +1466,7 @@
                     },
                     {
                         "cats_to": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1486,7 +1486,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "n_c:0",
+                            "n_c0",
                             "p_l"
                         ],
                         "condition": [
@@ -1502,7 +1502,7 @@
                     "As they discuss running away together, p_l and n_c:0 lose track of time together and only realize the sun is rising when a o_c_n dawn patrol catches them together on the border. n_c:0's Clanmates are enraged and, despite n_c:0's wails of protest, pounce on p_l, clawing {PRONOUN/p_l/object} within a mouse-length of {PRONOUN/p_l/poss} life. n_c:0, horrified by {PRONOUN/n_c:0/poss} Clanmates' actions, flees the territory."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {
                             "assign_mate": [
                                 "p_l"
@@ -1523,7 +1523,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1540,7 +1540,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1554,7 +1554,7 @@
                     },
                     {
                         "cats_to": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1583,7 +1583,7 @@
                     },
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "condition": [
                             "grief stricken"
@@ -1600,7 +1600,7 @@
                     "As they discuss running away together, p_l and n_c:0 lose track of time together and only realize the sun is rising when a o_c_n dawn patrol catches them together on the border. n_c:0's Clanmates are enraged. Though n_c:0 tries to pull them off p_l, the o_c_n warriors leave p_l cold on the ground. n_c:0 flees, howling in grief for {PRONOUN/n_c:0/poss} lost love."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {
                             "assign_mate": [
                                 "p_l"
@@ -1621,7 +1621,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1638,7 +1638,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1662,7 +1662,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "condition": [
                             "grief stricken",
@@ -1679,7 +1679,7 @@
                     "p_l and n_c:2 spend the night discussing their future. At dawn, a patrol from o_c_n arrives and finds p_l on their territory. Before n_c:2 can explain, one hot-blooded warrior pounces on p_l and goes for {PRONOUN/p_l/poss} throat, but p_l sinks {PRONOUN/p_l/poss} jaws into the warrior's neck first. n_c:2 wails that p_l has killed {PRONOUN/n_c:2/poss} sibling, then flees, leaving p_l and the remaining o_c_n warriors staring at each other."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "status": [
                             "clancat"
@@ -1688,10 +1688,10 @@
                             "senior"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "status": [
@@ -1701,13 +1701,13 @@
                             "adult"
                         ]
                     },
-                    "n_c:2": {
+                    "n_c2": {
                         "can_create_new_cat": {
                             "assign_mate": [
                                 "p_l"
                             ],
                             "assign_blood_parent": [
-                                "n_c:0"
+                                "n_c0"
                             ]
                         },
                         "past_status": [
@@ -1725,7 +1725,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:2"
+                            "n_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -1742,7 +1742,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:2"
+                            "n_c2"
                         ],
                         "mutual": true,
                         "values": [
@@ -1759,7 +1759,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:2"
+                            "n_c2"
                         ],
                         "mutual": false,
                         "values": [
@@ -1774,7 +1774,7 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -1783,7 +1783,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "n_c:2"
+                            "n_c2"
                         ],
                         "condition": [
                             "grief stricken"
@@ -1811,7 +1811,7 @@
                     "As they discuss running away together, p_l and n_c:0 lose track of time together and only realize the sun is rising when a c_n dawn patrol finds them. p_l tries to calm {PRONOUN/p_l/poss} Clanmates, but it's futile. They pounce on n_c:0, and though p_l tries to defend {PRONOUN/n_c:0/object}, n_c:0 is too grievously injured in the fray."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {
                             "assign_mate": [
                                 "p_l"
@@ -1832,7 +1832,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1849,7 +1849,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1919,13 +1919,13 @@
                 "death": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "history": "m_c was killed by {PRONOUN/m_c/poss} mate's Clanmates."
                     },
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -1945,7 +1945,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     }
                 ]
@@ -1957,7 +1957,7 @@
                     "Before n_c:0 can speak, p_l's Clanmate emerges from the bushes and confronts {PRONOUN/p_l/object}, forcing {PRONOUN/p_l/object} to renounce {PRONOUN/p_l/poss} relationship with n_c:0. p_l looks between n_c:0 and {PRONOUN/p_l/poss} Clanmate, then silently follows {PRONOUN/p_l/poss} Clanmate back to c_n territory. n_c:0 tries to follow, but p_l's Clanmate drives {PRONOUN/n_c:0/object} beyond the border."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {
                             "assign_mate": [
                                 "p_l"
@@ -1978,7 +1978,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1995,7 +1995,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -2055,7 +2055,7 @@
                     "p_l and n_c:0 spend moonhigh together discussing whether to run away together, but then a rustle from both sides of the border reveals that their Clans have found them. Before p_l or n_c:0 can explain, battle erupts between the two patrols, fur flying and blood soaking the ground. Both p_l and n_c:0 are left cold in the aftermath, still reaching out for each other."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {
                             "assign_mate": [
                                 "p_l"
@@ -2113,13 +2113,13 @@
                     {
                         "cats": [
                             "p_l",
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "history": "m_c died in a fight with {PRONOUN/m_c/poss} mate's Clanmates."
                     },
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
@@ -2128,7 +2128,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     }
                 ]
@@ -8558,7 +8558,7 @@
                     "p_l seizes the opportunity to weaken o_c_n and orders the patrol to steal the two kits."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
                             "kitten"
@@ -8567,7 +8567,7 @@
                             "stolenkit3"
                         ]
                     },
-                    "n_c:1": {
+                    "n_c1": {
                         "can_create_new_cat": {},
                         "age": [
                             "kitten"
@@ -8584,12 +8584,12 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c:0"
+                            "n_c0"
                         ]
                     },
                     {
                         "cats": [
-                            "n_c:1"
+                            "n_c1"
                         ]
                     }
                 ]

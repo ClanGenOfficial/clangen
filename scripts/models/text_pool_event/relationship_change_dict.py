@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Optional, Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -27,3 +27,4 @@ class RelationshipChange(BaseModel):
         ...,
         description="Exact amount the relationship value will be affected. Can be positive or negative.",
     )
+    log: dict[Literal["cats_from", "cats_to"], str]

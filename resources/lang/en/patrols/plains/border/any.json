@@ -632,7 +632,7 @@
                     "The pawprints lead to a trespassing rogue. p_l quickly hides themselves in the long grass and sets up an ambush, sending the rogue fleeing off c_n territory."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -660,7 +660,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "r_c0"
@@ -699,7 +699,7 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -727,7 +727,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "r_c0"
@@ -759,7 +759,7 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -787,7 +787,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "r_c0"
@@ -834,7 +834,7 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -862,7 +862,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "r_c0"
@@ -903,7 +903,7 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -917,7 +917,7 @@
                     "Following the trail with {PRONOUN/p_l/poss} nose to the ground, p_l doesn't see the blow that kills {PRONOUN/p_l/object}."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -930,7 +930,7 @@
                             "clan"
                         ],
                         "cats_to": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -968,7 +968,7 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -981,7 +981,7 @@
                             "s_c0"
                         ],
                         "cats_to": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1036,7 +1036,7 @@
                     "The pawprints lead to a trespassing rogue. p_l quickly hides {PRONOUN/p_l/self} in the long grass and sets up an ambush that lets {PRONOUN/p_l/object} pretend to be a far bigger and more impressive fighter. p_l sends the rogue fleeing off c_n territory."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -1064,7 +1064,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -1124,7 +1124,7 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -1137,7 +1137,7 @@
                             "s_c0"
                         ],
                         "cats_to": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1156,7 +1156,7 @@
                     "Following the trail with {PRONOUN/p_l/poss} nose to the ground, p_l doesn't see the blow that kills {PRONOUN/p_l/object}."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -1169,7 +1169,7 @@
                             "clan"
                         ],
                         "cats_to": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1226,7 +1226,7 @@
                     "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the long grass and sets up an ambush, sending the rogue fleeing off c_n territory."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -1254,7 +1254,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -1311,7 +1311,7 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -1340,7 +1340,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "s_c0",
@@ -1374,7 +1374,7 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -1402,7 +1402,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "s_c0"
@@ -1472,7 +1472,7 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -1501,7 +1501,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "r_c0",
@@ -1556,7 +1556,7 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -1584,7 +1584,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -1679,7 +1679,7 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -1689,7 +1689,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -1722,7 +1722,7 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -1732,7 +1732,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -1810,7 +1810,7 @@
                     "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the long grass and sets up an ambush, sending the rogue fleeing off c_n territory."
                 ],
                 "involved_cats": {
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -1855,7 +1855,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -1920,7 +1920,7 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -1948,7 +1948,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -1999,7 +1999,7 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -2027,7 +2027,7 @@
                     },
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "patrol_cats"
@@ -2156,7 +2156,7 @@
                             ]
                         }
                     },
-                    "n_c:0": {
+                    "n_c0": {
                         "status": [
                             "rogue"
                         ]
@@ -2166,7 +2166,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "n_c:0"
+                            "n_c0"
                         ],
                         "cats_to": [
                             "s_c0"

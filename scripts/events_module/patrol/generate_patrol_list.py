@@ -76,7 +76,7 @@ def _generate_all_patrols(path) -> list[PatrolEvent]:
     """
     patrols = []
     # loops through all types, biomes, and seasons to compile all the available patrols
-    for _type in ["medcat", "hunting", "border", "training"]:
+    for _type in ["med", "hunting", "border", "training"]:
         for biome in game.constants.BIOME_TYPES:
             for season in game.constants.SEASONS:
                 patrols.extend(
@@ -86,7 +86,7 @@ def _generate_all_patrols(path) -> list[PatrolEvent]:
     # OTHER CLAN
     patrols.extend(_load_file(f"{path}other_clan.json"))
     patrols.extend(_load_file(f"{path}other_clan_hostile.json"))
-    patrols.extend(_load_file(f"{path}other_clan_allies.json"))
+    patrols.extend(_load_file(f"{path}other_clan_ally.json"))
 
     # OUTSIDER
     patrols.extend(_load_file(f"{path}new_cat.json"))

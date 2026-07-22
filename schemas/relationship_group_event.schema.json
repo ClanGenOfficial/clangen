@@ -403,13 +403,27 @@
           "description": "Exact amount the relationship value will be affected. Can be positive or negative.",
           "title": "Amount",
           "type": "integer"
+        },
+        "log": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "propertyNames": {
+            "enum": [
+              "cats_from",
+              "cats_to"
+            ]
+          },
+          "title": "Log",
+          "type": "object"
         }
       },
       "required": [
         "cats_from",
         "cats_to",
         "values",
-        "amount"
+        "amount",
+        "log"
       ],
       "title": "GroupEventRelationshipChange",
       "type": "object"
@@ -780,6 +794,8 @@
     },
     "RelationshipStatus": {
       "enum": [
+        "can_romance",
+        "-can_romance",
         "strangers",
         "siblings",
         "-siblings",

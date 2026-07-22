@@ -5,6 +5,7 @@ from pydantic_core import MISSING
 
 from scripts.models.common.age import Age
 from scripts.models.common.backstory import Backstory
+from scripts.models.common.gather_cat import GatherCat
 from scripts.models.common.group import Group
 from scripts.models.text_pool_event.can_create_new_cat import CanCreateNewCat
 from scripts.models.text_pool_event.health_dict import HealthDict
@@ -15,7 +16,7 @@ from scripts.models.text_pool_event.status_any import StatusAny
 
 class CatDict(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    prior_abbreviation: Union[List[str], MISSING] = MISSING
+    prior_abbreviation: Union[List[Union[GatherCat, Literal["any"]]], MISSING] = MISSING
     can_create_new_cat: Union[CanCreateNewCat, MISSING] = MISSING
     status: Union[List[StatusAny], MISSING] = MISSING
     past_status: Union[List[StatusAny], MISSING] = MISSING

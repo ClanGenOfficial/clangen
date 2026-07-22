@@ -5,15 +5,14 @@ from typing import Dict, List, Optional, Tuple, Union
 from pydantic import BaseModel, Field, ConfigDict
 from pydantic_core import MISSING
 
-from scripts.models.common.gather_cat import GatherCatEnum
 from scripts.models.common.location import Location
 from scripts.models.common.min_max_status import MinMaxStatusDictKey
 from scripts.models.common.points_of_interest import PointsOfInterestGroup
 from scripts.models.common.season import Season
 from scripts.models.common.tag import Tag
+from scripts.models.patrol.involved_cats import InvolvedCatsPatrolEvent
 from scripts.models.patrol.outcome import Outcome
 from scripts.models.patrol.patrol_type import PatrolType
-from scripts.models.text_pool_event.cat_dict import CatDict
 from scripts.models.text_pool_event.relationship_constraint_dict import (
     RelationshipConstraint,
 )
@@ -27,11 +26,11 @@ class PatrolSchemaItem(BaseModel):
         description="Constrains the event to only occur if a player chooses a specific biome.",
     )
     season: List[Season] = Field(
-        ..., description="Controls the season(s) the patrol appears in."
+        MISSING, description="Controls the season(s) the patrol appears in."
     )
     types: List[PatrolType] = Field(..., description="Controls the type of patrol.")
     tags: List[Tag] = Field(
-        ...,
+        MISSING,
         description="Tags are used for some filtering purposes, and some odd-and-ends. Tags never affect outcome.",
     )
     poi: Union[PointsOfInterestGroup, MISSING] = Field(
@@ -63,7 +62,7 @@ class PatrolSchemaItem(BaseModel):
         ...,
         description="Controls chance to succeed. Higher number is higher chance to succeed.",
     )
-    involved_cats: Union[dict[GatherCatEnum, CatDict], MISSING] = Field(
+    involved_cats: Union[InvolvedCatsPatrolEvent, MISSING] = Field(
         MISSING,
         description="Used to add constraints for the various involved cats.",
     )
