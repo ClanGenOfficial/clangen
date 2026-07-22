@@ -442,7 +442,7 @@ def event_text_adjust(
             replace_dict["r_c"] = (str(random_cat.name), get_pronouns(random_cat))
 
     # new_cats (include pre version)
-    if "n_c" in text:
+    if "n_c" in text and not involved_cat_dict:
         for i, cat_list in enumerate(new_cats):
             if len(new_cats) > 1:
                 pronoun = get_new_pronouns("default plural")[0]
