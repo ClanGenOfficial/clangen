@@ -590,7 +590,8 @@ class Patrol:
         chosen_failure = None
 
         chosen_frequency = get_frequency()
-        used_frequencies = set()
+        used_success_frequencies = set()
+        used_fail_frequencies = set()
 
         tested_outcomes = set()
         while not chosen_success or not chosen_failure:
@@ -601,12 +602,12 @@ class Patrol:
                     if x.frequency == chosen_frequency and x.id not in tested_outcomes
                 ]
                 if not possible_outcomes:
-                    if len(used_frequencies) == 4:
+                    if len(used_success_frequencies) == 4:
                         raise Exception(
                             f"Valid success outcome could not be found for {self.patrol_event.id}"
                         )
-                    used_frequencies.add(chosen_frequency)
-                    chosen_frequency = find_new_frequency(used_frequencies)
+                    used_success_frequencies.add(chosen_frequency)
+                    chosen_frequency = find_new_frequency(used_success_frequencies)
                     continue
 
                 test_outcome = choices(
@@ -621,19 +622,18 @@ class Patrol:
                     continue
 
             if not chosen_failure:
-                used_frequencies = set()
                 possible_outcomes = [
                     x
                     for x in fail_outcomes
                     if x.frequency == chosen_frequency and x.id not in tested_outcomes
                 ]
                 if not possible_outcomes:
-                    if len(used_frequencies) == 4:
+                    if len(used_fail_frequencies) == 4:
                         raise Exception(
                             f"Valid fail outcome could not be found for {self.patrol_event.id}"
                         )
-                    used_frequencies.add(chosen_frequency)
-                    chosen_frequency = find_new_frequency(used_frequencies)
+                    used_fail_frequencies.add(chosen_frequency)
+                    chosen_frequency = find_new_frequency(used_fail_frequencies)
                     continue
 
                 test_outcome = choices(

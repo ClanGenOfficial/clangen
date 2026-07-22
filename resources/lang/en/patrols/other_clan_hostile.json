@@ -8033,11 +8033,8 @@
                 ],
                 "frequency": 4,
                 "strings": [
-                    "It's too good of an opportunity to pass up — too good to be true. The o_c_n patrol is waiting for {PRONOUN/r_c0/object}, and as soon as r_c0 steps fully into o_c_n territory, it's all over."
+                    "It's too good of an opportunity to pass up — too good to be true. The o_c_n patrol is waiting for {PRONOUN/p_l/object}, and as soon as p_l steps fully into o_c_n territory, it's all over."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 0,
                 "reputation_changes": {
                     "other_clan": -1
@@ -8045,7 +8042,7 @@
                 "death": [
                     {
                         "cats": [
-                            "patrol_cats"
+                            "p_l"
                         ],
                         "history": "m_c was killed in a border ambush by a hostile Clan."
                     }
