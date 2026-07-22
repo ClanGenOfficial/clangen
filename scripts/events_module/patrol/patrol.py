@@ -14,6 +14,7 @@ from scripts.cat.enums import CatAge, CatRank, CatCompatibility
 from scripts.clan_package.get_clan_cats import get_living_clan_cat_count
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_TRIGGER_FACTOR
 from scripts.config import get_config
+from scripts.events_module.consequences import gather_cat_objects
 from scripts.events_module.event_filters import (
     event_for_tags,
     get_frequency,
@@ -278,12 +279,15 @@ class Patrol:
         for block in romantic_event.relationship_constraint:
             if "can_romance" in block["constraints"]:
                 # gather the kitty cats
-                cats_from = [
-                    c for a, c in self.involved_cats.items() if a in block["cats_from"]
-                ]
-                cats_to = [
-                    c for a, c in self.involved_cats.items() if a in block["cats_to"]
-                ]
+                cats_from = gather_cat_objects(
+                    Cat,
+                    block["cats_from"],
+                    event=self,
+                    involved_cats=self.involved_cats,
+                )
+                cats_to = gather_cat_objects(
+                    Cat, block["cats_to"], event=self, involved_cats=self.involved_cats
+                )
                 # now affect the chance depending on the compatibility
                 for c in cats_from:
                     compatibility = [
@@ -386,19 +390,24 @@ class Patrol:
         possible_patrols: List[PatrolEvent],
         chosen_frequency: int,
         patrol_override: Optional[PatrolEvent],
-    ) -> PatrolEvent:
+    ) -> Optional[PatrolEvent]:
         chosen_patrol = None
         used_frequencies = set()
 
         patrols_to_test = possible_patrols.copy()
-
+        checked_patrols = set()
         while not chosen_patrol:
             # make sure we still have possible patrols
             if not patrols_to_test:
+                if len(checked_patrols) >= len(possible_patrols):
+                    # we have checked all possible patrols and found none possible
+                    # hopefully this is because we were checking romance patrols, not normal patrols
+                    return None
                 patrols_to_test = possible_patrols.copy()
                 # if we've circled back around to 4 then we need to reset the used patrols
                 if 4 in used_frequencies and chosen_frequency == 4:
                     self.used_patrols.clear()
+                    patrols_to_test = possible_patrols.copy()
                     used_frequencies.clear()
                 else:
                     used_frequencies.add(chosen_frequency)
@@ -431,6 +440,7 @@ class Patrol:
                 chosen_patrol = test_patrol
             else:
                 patrols_to_test.remove(test_patrol)
+                checked_patrols.add(test_patrol.id)
 
         return chosen_patrol
 

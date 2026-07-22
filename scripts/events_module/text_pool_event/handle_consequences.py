@@ -599,7 +599,7 @@ def __handle_herbs(
                 {herb_tag: quantity_allowed}
             )
 
-        list_of_herb_strs.append(new_herb_strings)
+        list_of_herb_strs.extend(new_herb_strings)
         found_herbs.update(new_found_herbs)
 
     herb_string = adjust_list_text(list_of_herb_strs).capitalize()
@@ -629,9 +629,7 @@ def __get_herb_increase_amount(
     finds out how many herbs can be gathered by given cats with given increase_tag
     """
     # find how many herbs each cat is allowed
-    amount_per_cat = get_config(
-        f"clan_resources.herbs.increase_amounts.{increase_tag}"
-    ) * len(event_involved_cats["patrol_cats"])
+    amount_per_cat = get_config(f"clan_resources.herbs.increase_amounts.{increase_tag}")
 
     # some random variance is also created
     random_variance = get_config("clan_resources.herbs.gathering_variance")

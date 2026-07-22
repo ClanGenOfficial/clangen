@@ -808,10 +808,10 @@ dev_tools = false
     # herb bonus applied when cats should gather a boosted number of herbs
     general_amount_bonus = 2
 
-    gathering_variance = [1, 3]
+    gathering_variance = [-1, 1]
     [clan_resources.herbs.increase_amounts]
-      increase_tiny = 1
-      increase_small = 2
+      increase_tiny = 2
+      increase_small = 3
       increase_medium = 4
       increase_large = 6
       increase_huge = 8
