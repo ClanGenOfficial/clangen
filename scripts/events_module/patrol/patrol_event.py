@@ -60,11 +60,14 @@ class PatrolEvent:
 
         if self.location and "any" not in self.location:
             # add 4 for every biome not listed
-            self.weight += 4 * (len(constants.BIOME_TYPES) - len(self.location))
+            self.weight += 2 * (len(constants.BIOME_TYPES) - len(self.location))
 
         if self.season and "any" not in self.season:
             # add 4 for every season not listed
-            self.weight += 4 * (len(constants.SEASONS) - len(self.season))
+            self.weight += 2 * (len(constants.SEASONS) - len(self.season))
+
+        if self.tags:
+            self.weight += len(self.tags) * 2
 
         # add 8, 6, 4 or 2 if there are between 1-4 specific named locations
         # todo: check for balancing
@@ -74,6 +77,11 @@ class PatrolEvent:
             # add 4-1 depending on how many specific points of interest are included
             # but only if specific ones are not already requested
             self.weight += min(4, len(self.poi.get("tags", [])))
+
+        self.weight += TextPoolEvent.involved_cat_weight(self.involved_cats)
+
+        # - 1 is for the patrol_cats that they all have
+        self.weight += (len(self.required_cat_types.keys()) - 1) * 2
 
         # LOTS of weight on rel constraints
         self.weight += len(self.relationship_constraint) * 20
