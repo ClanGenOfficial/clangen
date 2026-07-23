@@ -275,6 +275,18 @@ Each entry is an individual cat, with the key being their [event designation](#u
             }
 ```
 
+**When To Use**
+
+`p_l` is the only cat designation you can *assume* has a cat attached at all times. With this in mind, you do not need to add a `p_l` entry to `involved_cats` unless you would like to add constraints regarding the sort of cat `p_l` is.
+
+With all other cat designations (`r_c0`, `n_c0`, ect.) if you want to be able to reference the cat designation within the text or within other constraint/consequence lists (cats who die, cats who must abide by relationship constraints, etc.), then you *must* declare them within either the patrol-wide `involved_cats` or the relevant outcome `involved_cats`. This can be an empty dict if no constraints are needed:
+```json
+"r_c0": {}
+```
+
+!!! tip
+    You do not need to "repeat" constraints! If a patrol can only have apprentices on it via the `required_cat_types` then you don't need to specify that `r_c0` is an apprentice.
+
 **Specifying an outsider or other clan cat**
 
 If you would like to include an outsider or other clan cat, you can specify them using the `n_c#` designation and some additional parameters.

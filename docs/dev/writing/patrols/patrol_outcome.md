@@ -201,7 +201,7 @@ Utilizes the same functionality as the greater patrol parameter: [required_cat_t
 ### involved_cats: dict[str: dict]
 Utilizes the same functionality as the greater patrol parameter: [required_cat_types](patrols.md/#involved_cats-dictstr-var)
 
-You can either specify further constraints for cats already specified in the greater patrol parameter, or you can specify new involved cats for the patrol.
+You can either specify further constraints for cats already specified in the greater patrol `involved_cats`, or you can specify new involved cats for the patrol.
 
 It's possible to "reuse" a cat under a new designation, but with tighter constraints. You can utilize the `s_c` designations for this use. You will need to add the `prior_abbreviation` parameter to the dictionary for the `s_c` cat:
 
