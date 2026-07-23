@@ -6,6 +6,7 @@ import pygame_gui
 from scripts.cat.cats import create_cat, create_example_cats
 from scripts.cat.enums import CatRank
 from scripts.cat.sprites.load_sprites import sprites
+from scripts.config import get_config
 from scripts.game_structure import image_cache
 from scripts.game_structure.game import Switch, switch_get_value
 from scripts.game_structure.game.settings import game_setting_set
@@ -31,7 +32,17 @@ class ChooseModeScreen(MakeClanScreenBase):
     def screen_switches(self):
         # Reset variables
         if not switch_get_value(Switch.possible_cats):
-            switch_set_value(Switch.possible_cats, create_example_cats())
+            switch_set_value(
+                Switch.possible_cats,
+                create_example_cats(
+                    majority_rank=self.get_config_during_creation(
+                        "clan_creation.majority_rank"
+                    ),
+                    rank_weights=self.get_config_during_creation(
+                        "clan_creation.rank_weights"
+                    ),
+                ),
+            )
 
         super().screen_switches()
         self.elements["previous_step"].disable()
@@ -116,9 +127,11 @@ class ChooseModeScreen(MakeClanScreenBase):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.elements["classic_mode_button"]:
                 self.game_mode = "classic"
+                self.clan_info.cruel_cards.clear()
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.elements["expanded_mode_button"]:
                 self.game_mode = "expanded"
+                self.clan_info.cruel_cards.clear()
                 self.refresh_text_and_buttons()
             elif event.ui_element == self.elements["cruel_season_mode_button"]:
                 self.game_mode = "cruel_season"
@@ -226,5 +239,10 @@ class ChooseModeScreen(MakeClanScreenBase):
                 ]
             )
             members.append(create_cat(rank=random_rank))
+
+        switch_set_value(
+            Switch.possible_cats,
+            switch_get_value(Switch.possible_cats)[: randint(2, 4)],
+        )
 
         self.clan_info.starting_members = members

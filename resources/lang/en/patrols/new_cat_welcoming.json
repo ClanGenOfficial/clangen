@@ -13,7 +13,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newcat",
+        "patrol_art": "cat_sprites/gen_bord_newcat_Ln",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -71,7 +71,7 @@
                         }
                     }
                 ],
-                "art": "gen_cat_with_kit_loner",
+                "art": "cat_sprites/gen_catwithkit_LnKt",
                 "outsider_rep": 1,
                 "frequency": 1
             }
@@ -150,7 +150,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newcat",
+        "patrol_art": "cat_sprites/gen_bord_newcat_Ln",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -191,7 +191,8 @@
                 "exp": 10,
                 "new_cat": [
                     [
-                        "status:medicine cat"
+                        "status:medicine cat",
+                        "backstory:wandering_healer1,loner_backstories"
                     ],
                     [
                         "loner"
@@ -308,7 +309,8 @@
                     [
                         "age:adult",
                         "status:medicine cat",
-                        "loner"
+                        "loner",
+                       "backstory:wandering_healer1,loner_backstories"
                     ],
                     [
                         "status:apprentice",
@@ -370,7 +372,8 @@
                         "age:adult",
                         "status:medicine cat",
                         "parent:0",
-                        "loner"
+                        "loner",
+                        "backstory:wandering_healer1,loner_backstories"
                     ],
                     [
                         "age:adolescent",
@@ -423,7 +426,7 @@
             {
                 "text": "The two friends have been looking for a safe place ever since n_c:0 gave birth. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
                 "exp": 10,
-                "art": "gen_cat_with_kit_loner",
+                "art": "cat_sprites/gen_catwithkit_LnKt",
                 "new_cat": [
                     [
                         "age:has_kits",
@@ -468,7 +471,7 @@
             {
                 "text": "The two have been looking for a safe place ever since n_c:0 gave birth. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
                 "exp": 10,
-                "art": "gen_cat_with_kit_loner",
+                "art": "cat_sprites/gen_catwithkit_LnKt",
                 "new_cat": [
                     [
                         "age:adult",
@@ -513,7 +516,7 @@
             {
                 "text": "The two siblings have been looking for a safe place ever since n_c:1 gave birth. They promise to earn their keep, and the patrol brings them back to camp with little further convincing.",
                 "exp": 10,
-                "art": "gen_cat_with_kit_loner",
+                "art": "cat_sprites/gen_catwithkit_LnKt",
                 "new_cat": [
                     [
                         "age:senior",
@@ -690,7 +693,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "running_two_warriors",
+        "patrol_art": "cat_sprites/gen_running_WrWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -796,7 +799,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_train_talkingWL",
+                "art": "cat_sprites/gen_train_talking_WrLn",
                 "frequency": 1
             },
             {
@@ -872,7 +875,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_gen_newcat_hostile",
+                "art": "cat_sprites/gen_bord_newcathostile_Ln",
                 "frequency": 1
             },
             {
@@ -958,7 +961,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_speaking_cat_w3",
+                "art": "cat_sprites/gen_speakingcat_Wr",
                 "frequency": 4
             },
             {
@@ -1041,7 +1044,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_speaking_cat_w2",
+                "art": "cat_sprites/gen_speakingcat_Wr",
                 "frequency": 4
             }
         ],
@@ -1155,7 +1158,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_happy_cat3",
+                "art": "cat_sprites/gen_happycat_Ln",
                 "frequency": 1
             },
             {
@@ -1232,7 +1235,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_bord_twocat_hostile_loner_loner",
+                "art": "cat_sprites/gen_bord_twocathostile_LnLn",
                 "frequency": 1
             },
             {
@@ -1311,7 +1314,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_bord_twocat_hostile_warrior_warrior",
+                "art": "cat_sprites/gen_bord_twocathostile_WrWr",
                 "frequency": 4
             }
         ],
@@ -1386,7 +1389,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_bord_twocat_hostile_warrior_warrior",
+                "art": "cat_sprites/gen_bord_twocathostile_WrWr",
                 "frequency": 4
             },
             {
@@ -1457,7 +1460,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_battle_warrior_loner",
+                "art": "cat_sprites/gen_battle_WrLn",
                 "frequency": 4
             },
             {
@@ -1533,7 +1536,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_gen_newcat_hostile",
+                "art": "cat_sprites/gen_bord_newcathostile_Ln",
                 "frequency": 4
             },
             {
@@ -1610,7 +1613,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_bord_twocat_hostile_loner_loner",
+                "art": "cat_sprites/gen_bord_twocathostile_LnLn",
                 "frequency": 4
             }
         ],
@@ -1685,7 +1688,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_battle_warrior_loner",
+                "art": "cat_sprites/gen_battle_WrLn",
                 "frequency": 4
             },
             {
@@ -1795,7 +1798,7 @@
                         "exists"
                     ]
                 ],
-                "art": "gen_happy_cat3",
+                "art": "cat_sprites/gen_happycat_Ln",
                 "frequency": 4
             }
         ]
@@ -1814,7 +1817,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newcat",
+        "patrol_art": "cat_sprites/gen_bord_newcat_Ln",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -1950,7 +1953,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newcatkittypet1",
+        "patrol_art": "cat_sprites/gen_bord_newcat_Kp",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -2162,7 +2165,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newcatthunderpath",
+        "patrol_art": "cat_sprites/gen_bord_newcatthunderpath_LnWr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -2200,7 +2203,7 @@
                         }
                     }
                 ],
-                "art": "gen_bord_patrolwoundedlonerrescue",
+                "art": "cat_sprites/gen_bord_woundedcatrescue_WrLn",
                 "new_cat": [
                     [
                         "loner"
@@ -2279,7 +2282,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newcatthunderpath",
+        "patrol_art": "cat_sprites/gen_bord_newcatthunderpath_LnWr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -2322,7 +2325,7 @@
                         }
                     }
                 ],
-                "art": "gen_bord_patrolwoundedlonerrescue",
+                "art": "cat_sprites/gen_bord_woundedcatrescue_WrLn",
                 "outsider_rep": 1,
                 "frequency": 4
             }
@@ -2661,7 +2664,7 @@
                 ],
                 "outsider_rep": 1,
                 "frequency": 4,
-                "art": "gen_bump_heads_warrior_loner"
+                "art": "cat_sprites/gen_bumpheads_WrLn"
             },
             {
                 "text": "Since n_c:0 stumbled into {PRONOUN/p_l/poss} life, everything's changed. {PRONOUN/p_l/subject/CAP}'d never trade the flutter in {PRONOUN/p_l/poss} whiskers, the thrill in {PRONOUN/p_l/poss} heart at these stolen moments. c_n would welcome {PRONOUN/n_c:0/object}, p_l is sure of it, but n_c:0 still isn't sure.",
@@ -2708,7 +2711,7 @@
                         }
                     }
                 ],
-                "art": "gen_outsiderwar_mates_headbump",
+                "art": "cat_sprites/gen_matesheadbump_OwWr",
                 "outsider_rep": 1,
                 "frequency": 4
             },
@@ -2757,7 +2760,7 @@
                         }
                     }
                 ],
-                "art": "gen_outsiderwar_mates_headbump",
+                "art": "cat_sprites/gen_matesheadbump_OwWr",
                 "outsider_rep": 1,
                 "frequency": 4
             },
@@ -2871,7 +2874,7 @@
                         }
                     }
                 ],
-                "art": "gen_flower_date_warrior_loner",
+                "art": "cat_sprites/gen_flowerdate_WrLn",
                 "outsider_rep": 0,
                 "frequency": 4
             },
@@ -3067,7 +3070,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newkit",
+        "patrol_art": "cat_sprites/gen_newkit_Kt",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -3145,7 +3148,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_bord_newkit",
+        "patrol_art": "cat_sprites/gen_newkit_Kt",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -3215,7 +3218,7 @@
         "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
-        "patrol_art": "gen_med_newmed",
+        "patrol_art": "cat_sprites/gen_bord_newmed2_Ln",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -3230,7 +3233,8 @@
                 "new_cat": [
                     [
                         "status:medicine cat",
-                        "loner"
+                        "loner",
+                        "backstory:wandering_healer1,wandering_healer2,loner_backstories"
                     ]
                 ],
                 "relationships": [
@@ -3288,7 +3292,7 @@
                         "status:medicine cat",
                         "meeting",
                         "loner",
-                        "backstory:wandering_healer2"
+                        "backstory:wandering_healer1,loner_backstories"
                     ]
                 ],
                 "frequency": 4
@@ -3345,7 +3349,7 @@
         "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
-        "patrol_art": "gen_med_newmed",
+        "patrol_art": "cat_sprites/gen_bord_newmed2_Ln",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -3360,7 +3364,8 @@
                 "new_cat": [
                     [
                         "status:medicine cat",
-                        "loner"
+                        "loner",
+                        "backstory:wandering_healer1,loner_backstories"
                     ]
                 ],
                 "relationships": [
@@ -3473,7 +3478,7 @@
         "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
-        "patrol_art": "gen_bord_lonerchase",
+        "patrol_art": "cat_sprites/gen_bord_dogchase_Ln",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -3882,7 +3887,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_med_rescue",
+        "patrol_art": "cat_sprites/gen_med_rescue_Mc",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -4002,7 +4007,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_med_rescue",
+        "patrol_art": "cat_sprites/gen_med_rescue_Mc",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -4126,7 +4131,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_med_rescue",
+        "patrol_art": "cat_sprites/gen_med_rescue_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -4251,7 +4256,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "gen_med_rescue",
+        "patrol_art": "cat_sprites/gen_med_rescue_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -4652,7 +4657,7 @@
         "tags": [
             "new_cat"
         ],
-        "patrol_art": "fst_hunt_twolegplace",
+        "patrol_art": "backgrounds/fst_twolegplace",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},
@@ -5500,7 +5505,7 @@
         "season": ["any"],
         "types": ["border"],
         "tags": ["new_cat"],
-        "patrol_art": "gen_bord_rescue",
+        "patrol_art": "cat_sprites/gen_bord_rescue_Wr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -6471,7 +6476,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_med_gatheringgoldenrod_loner_greenleaf1_v3",
+        "patrol_art": "cat_sprites/gen_med_GL_gatheringgoldenrod_Ln",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -6485,7 +6490,7 @@
             {
                 "text": "The loner tells p_l that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just as refreshing as the stream the loner was looking for. p_l is sure the loner has scented the border markings but directs {PRONOUN/n_c:0/object} to a river anyway. A river <i>outside</i> of c_n's territory.",
                 "exp": 15,
-                "art": "gen_happy_cat3",
+                "art": "cat_sprites/gen_happycat_Ln",
                 "new_cat": [
                     [
                         "age:adult",
@@ -6536,7 +6541,7 @@
             {
                 "text": "s_c is unimpressed by the loner's poor attempt to conceal a piece of fresh-kill behind {PRONOUN/n_c:0/self}. The loner tries to play it off, but p_l escorts {PRONOUN/n_c:0/object} to the border without a word and confiscates the stolen prey.",
                 "exp": 15,
-                "art": "gen_train_talkingWL",
+                "art": "cat_sprites/gen_train_talking_WrLn",
                 "can_have_stat": [
                     "p_l"
                 ],
@@ -6599,7 +6604,7 @@
             {
                 "text": "s_c banters with the cocky loner as {PRONOUN/s_c/subject} {VERB/s_c/escort/escorts} {PRONOUN/n_c:0/object} to the border. The loner seems impressed and disappointed that a clever and attractive cat like s_c is a Clan cat. When it comes time to part at the border, both cats linger an extra heartbeat.",
                 "exp": 15,
-                "art": "gen_train_talkingWL",
+                "art": "cat_sprites/gen_train_talking_WrLn",
                 "can_have_stat": [
                     "p_l"
                 ],
@@ -6663,7 +6668,7 @@
             {
                 "text": "p_l is stunned into silence by the loner's suave charm. That gives the loner a chance to pick up the dead rabbit {PRONOUN/n_c:0/subject} stole from c_n territory and run off. p_l curses and yowls after {PRONOUN/n_c:0/object} to no avail.",
                 "exp": 0,
-                "art": "gen_happy_cat3",
+                "art": "cat_sprites/gen_happycat_Ln",
                 "new_cat": [
                     [
                         "age:adult",
@@ -6730,7 +6735,7 @@
             {
                 "text": "s_c is easily swayed by the playful loner, and the two cats spend sun-high romping around the territory together. When they bid each other farewell and s_c returns to where {PRONOUN/s_c/subject} first found {PRONOUN/n_c:0/object}, s_c scents the prey-blood. The loner was poaching.",
                 "exp": 0,
-                "art": "gen_train_talkingWL",
+                "art": "cat_sprites/gen_train_talking_WrLn",
                 "can_have_stat": [
                     "p_l"
                 ],
@@ -6806,7 +6811,7 @@
             {
                 "text": "s_c doesn't hesitate to flirt back, and though the loner is doing a poor job of concealing a piece of stolen fresh-kill, s_c decides the loner is more interesting than getting back a scrap of food.",
                 "exp": 0,
-                "art": "gen_flower_date_warrior_loner",
+                "art": "cat_sprites/gen_flowerdate_WrLn",
                 "can_have_stat": [
                     "p_l"
                 ],
@@ -6850,7 +6855,7 @@
             {
                 "text": "The charming loner explains that {PRONOUN/n_c:0/poss} kittens need food. s_c is touched and approaches to offer help, when the loner suddenly attacks. s_c fights {PRONOUN/n_c:0/object} off, newly wary of smooth-talking strangers.",
                 "exp": 0,
-                "art": "gen_battle_warrior_loner",
+                "art": "cat_sprites/gen_battle_WrLn",
                 "can_have_stat": [
                     "p_l"
                 ],
@@ -6931,7 +6936,7 @@
             {
                 "text": "As p_l explains that the loner is on c_n territory, the loner asks question after question about what c_n is, what a Clan is, what a warrior is? p_l is just getting to an explanation of the Code when the loner whips around and sprints away.",
                 "exp": 0,
-                "art": "gen_bord_newcat",
+                "art": "cat_sprites/gen_bord_newcat_Ln",
                 "new_cat": [
                     [
                         "age:adult",
@@ -6963,7 +6968,7 @@
             {
                 "text": "s_c demands that the loner leave, and the loner refuses. s_c unsheathes {PRONOUN/s_c/poss} claws and repeats the order. The loner unsheathes {PRONOUN/n_c:0/poss} claws and repeats {PRONOUN/n_c:0/poss} refusal. Neither cat gets home unscathed that day.",
                 "exp": 0,
-                "art": "gen_battle_warrior_loner",
+                "art": "cat_sprites/gen_battle_WrLn",
                 "can_have_stat": [
                     "p_l"
                 ],
@@ -7037,7 +7042,7 @@
             {
                 "text": "Eyeing the piece of stolen fresh-kill hiding behind the grinning loner, p_l thanks {PRONOUN/n_c:0/object} for {PRONOUN/n_c:0/poss} contribution to the fresh-kill pile and escorts {PRONOUN/n_c:0/object} to the border. n_c:0 doesn't think p_l's much fun.",
                 "exp": 15,
-                "art": "mtn_hunt_kea_leafbare_parentchildapprentice1",
+                "art": "cat_sprites/gen_confused_Wr",
                 "new_cat": [
                     [
                         "age:adult",
@@ -7104,7 +7109,7 @@
             {
                 "text": "s_c demands that the loner leave. The loner suggests that s_c only wants to watch {PRONOUN/n_c:0/object} leave, {PRONOUN/n_c:0/poss} tail flicking flirtatiously. s_c's temper flares, and {PRONOUN/s_c/subject} {VERB/s_c/chase/chases} this audacious loner out of c_n's territory.",
                 "exp": 15,
-                "art": "gen_angry_cat_warrior",
+                "art": "cat_sprites/gen_angrycat_Wr",
                 "can_have_stat": [
                     "p_l"
                 ],
@@ -7178,7 +7183,7 @@
             {
                 "text": "As the loner flirts and swaggers in front of s_c, s_c interrupts to demand that the loner leave c_n territory immediately. The loner turns as if to leave, then whips around and leaps at s_c with unsheathed claws. s_c easily sidesteps the attack and knocks the loner off {PRONOUN/n_c:0/poss} paws. The loner hisses, but it's clear who's won.",
                 "exp": 15,
-                "art": "gen_angry_cat_loner",
+                "art": "cat_sprites/gen_angrycat_Ln",
                 "can_have_stat": [
                     "p_l"
                 ],

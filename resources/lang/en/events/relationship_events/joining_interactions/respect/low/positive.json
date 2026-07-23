@@ -1,0 +1,16 @@
+[
+    {
+        "id": "gen_respect_low_pos1",
+        "strings": [
+			"r_c was quick to make sure m_c would feel comfortable in camp."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": 5
+            }]
+    }
+]

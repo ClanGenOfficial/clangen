@@ -408,7 +408,7 @@ class ChooseAdoptiveParentScreen(Screens):
         """Updates everything in the mates container, including the list of current mates, checkboxes
         and the page"""
 
-        self.all_adoptive_parents = self.chunks(
+        self.all_adoptive_parents = self.get_list_chunks(
             [
                 Cat.fetch_cat(i)
                 for i in self.the_cat.adoptive_parents
@@ -504,7 +504,9 @@ class ChooseAdoptiveParentScreen(Screens):
             container=self.potential_container,
         )
 
-        self.all_potential_parents = self.chunks(self.get_valid_adoptive_parents(), 24)
+        self.all_potential_parents = self.get_list_chunks(
+            self.get_valid_adoptive_parents(), 24
+        )
 
         if "unrelated_only" in self.checkboxes:
             self.checkboxes["unrelated_only"].kill()
@@ -521,7 +523,9 @@ class ChooseAdoptiveParentScreen(Screens):
             container=self.potential_container,
         )
 
-        self.all_potential_parents = self.chunks(self.get_valid_adoptive_parents(), 24)
+        self.all_potential_parents = self.get_list_chunks(
+            self.get_valid_adoptive_parents(), 24
+        )
 
         self.update_potential_mates_container_page()
 

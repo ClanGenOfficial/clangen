@@ -13,3 +13,33 @@ jobs:
       uses: actions/labeler@v6
       with:
         sync-labels: true
+    - name: "Label PRs under 50 changed lines as easy to review"
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const label = "easy-review";
+          const { owner, repo } = context.repo;
+          const pull_number = context.issue.number;
+          const { data: pullRequest } = await github.rest.pulls.get({
+            owner,
+            repo,
+            pull_number,
+          });
+          const changedLines = pullRequest.additions + pullRequest.deletions;
+          const hasLabel = pullRequest.labels.some(({ name }) => name === label);
+
+          if (changedLines < 50 && !hasLabel) {
+            await github.rest.issues.addLabels({
+              owner,
+              repo,
+              issue_number: pull_number,
+              labels: [label],
+            });
+          } else if (changedLines >= 50 && hasLabel) {
+            await github.rest.issues.removeLabel({
+              owner,
+              repo,
+              issue_number: pull_number,
+              name: label,
+            });
+          }

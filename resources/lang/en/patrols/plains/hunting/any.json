@@ -11,7 +11,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "pln_hunt_prairiedog1",
+        "patrol_art": "animals/pln_prairiedog",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
@@ -52,7 +52,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "pln_hunt_prairiedog1",
+        "patrol_art": "animals/pln_prairiedog",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
@@ -73,7 +73,7 @@
             {
                 "text": "r_c performs a flawless approach, using a muddy dip to creep closer below the sentry's view. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bunch/bunches} up {PRONOUN/r_c/poss} hindquarters, building up power, and {VERB/r_c/leap/leaps} from cover, grabbing the outermost, most isolated prairie dog. p_l runs in to help finish it off, tail lashing excitedly as {PRONOUN/p_l/subject} {VERB/p_l/congratulate/congratulates} the muddy victor.",
                 "exp": 15,
-                "art": "gen_train_soggykitty_happy_warrior",
+                "art": "cat_sprites/gen_train_soggykittyhappy_Wr",
                 "prey": [
                     "medium"
                 ],
@@ -116,7 +116,7 @@
             {
                 "text": "What they need is speed. s_c finds a good, semi-sheltered path to build up momentum and uses it to burst out towards the prairie dogs at full sprint, {PRONOUN/s_c/poss} velocity flattening {PRONOUN/s_c/poss} fur against {PRONOUN/s_c/poss} skin. The sentry barks an alarm, but s_c is too fast, taking out a prairie dog in a spinning collision of fur, teeth, and claws.",
                 "exp": 15,
-                "art": "running_warrior2",
+                "art": "cat_sprites/gen_running2_Wr",
                 "prey": [
                     "medium"
                 ],
@@ -149,7 +149,7 @@
             {
                 "text": "This is challenging, but s_c can see a little cover downwind. Without {PRONOUN/s_c/poss} scent to betray {PRONOUN/s_c/object}, and relying on {PRONOUN/s_c/poss} talent and the hard work {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} done to nurture it, s_c takes one of the prairie dogs down.",
                 "exp": 15,
-                "art": "gen_happy_cat",
+                "art": "cat_sprites/gen_happycat_Wr",
                 "prey": [
                     "medium"
                 ],
@@ -190,7 +190,6 @@
                     "any"
                 ],
                 "stat_trait": [
-                    "sneaky",
                     "cunning"
                 ],
                 "relationships": [
@@ -216,7 +215,7 @@
             {
                 "text": "s_c suggests applying teamwork to the problem. They have the cats, they don't have to do this alone. Just... like prairie dogs, s_c supposes. It works — using a signal to make the sentry alarm in one direction while attacking from another, and the cats grin to each other in victory.",
                 "exp": 15,
-                "art": "gen_train_talkingWW",
+                "art": "cat_sprites/gen_train_talking_WrWr",
                 "prey": [
                     "medium"
                 ],
@@ -268,7 +267,7 @@
             {
                 "text": "r_c performs a flawless approach, using a muddy dip to creep closer below the sentry's view. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bunch/bunches} up {PRONOUN/r_c/poss} hindquarters, building up power, and {VERB/r_c/leap/leaps} from cover, but the sentry alarm barks, and the prairie dogs evaporate into their waiting burrows, leaving r_c muddy and preyless.",
                 "exp": 0,
-                "art": "gen_train_soggykitty_mad_warrior",
+                "art": "cat_sprites/gen_train_soggykittymad_Wr",
                 "prey": [
                     "very_small"
                 ],
@@ -277,7 +276,7 @@
             {
                 "text": "Breaking out into a sprint to try and catch the town of prairie dogs off guard, r_c is left wheezing and out of breath as the prey chatters angrily from within their burrows. Mouse-dung.",
                 "exp": 0,
-                "art": "pln_hunt_fun1",
+                "art": "cat_sprites/gen_hunt_funrun_Wr",
                 "prey": [
                     "very_small"
                 ],
@@ -286,7 +285,7 @@
             {
                 "text": "s_c instructs the patrol to watch and learn. A heartbeat later, an empty-pawed s_c must eat {PRONOUN/s_c/poss} words.",
                 "exp": 0,
-                "art": "pln_hunt_fun1",
+                "art": "cat_sprites/gen_hunt_funrun_Wr",
                 "prey": [
                     "very_small"
                 ],
@@ -335,7 +334,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "pln_hunt_prairiedog1",
+        "patrol_art": "animals/pln_prairiedog",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
@@ -350,7 +349,7 @@
             {
                 "text": "app1 spots a boggy area nearby. Dragging {PRONOUN/app1/self} through the mud, pressing {PRONOUN/app1/self} so low it gets on {PRONOUN/app1/poss} whiskers, {PRONOUN/app1/subject} creep closer below the sentry's view. {PRONOUN/app1/subject/CAP} {VERB/app1/leap/leaps} from cover, grabbing the outermost, most isolated prairie dog. p_l runs in to help finish it off, tail lashing excitedly as {PRONOUN/p_l/subject} {VERB/p_l/congratulate/congratulates} the muddy victor.",
                 "exp": 15,
-                "art": "gen_train_soggykitty_happy_app",
+                "art": "cat_sprites/gen_train_soggykittyhappy_Ap",
                 "prey": [
                     "medium"
                 ],
@@ -393,7 +392,7 @@
             {
                 "text": "s_c has a need, a need for speed! The sentry barks an alarm, but s_c is too fast, taking out a prairie dog in a spinning collision of fur, teeth, and claws.",
                 "exp": 15,
-                "art": "running_app2",
+                "art": "cat_sprites/gen_running2_Ap",
                 "prey": [
                     "medium"
                 ],
@@ -426,7 +425,7 @@
             {
                 "text": "This is challenging, but s_c can see a little cover downwind. Without {PRONOUN/s_c/poss} scent to betray {PRONOUN/s_c/object}, and relying on {PRONOUN/s_c/poss} hard work {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been putting in to studying hunting, s_c takes one of the prairie dogs down.",
                 "exp": 15,
-                "art": "gen_happy_cat2",
+                "art": "cat_sprites/gen_happycat_Ap",
                 "prey": [
                     "medium"
                 ],
@@ -459,7 +458,7 @@
             {
                 "text": "It's a hard approach, but... s_c will give it a try. {PRONOUN/s_c/poss/CAP} pawsteps are silent, shoulders dropped, freezing completely as the sentry glances in {PRONOUN/s_c/poss} direction. It's not quick. But s_c gets to a fox-length away, and in a clumsy pounce, takes the sentry out!",
                 "exp": 15,
-                "art": "gen_train_patrolapprenticesessionsuccess",
+                "art": "cat_sprites/gen_train_apprenticesessionsuccess_Ap",
                 "prey": [
                     "medium"
                 ],
@@ -467,7 +466,6 @@
                     "app"
                 ],
                 "stat_trait": [
-                    "sneaky",
                     "cunning"
                 ],
                 "relationships": [
@@ -493,7 +491,7 @@
             {
                 "text": "s_c pipes up and suggests one of cats attacks from one direction and the other attacks from the other direction at the same time. p_l agrees to the plan and congratulates s_c when it works.",
                 "exp": 15,
-                "art": "gen_speaking_cat_app",
+                "art": "cat_sprites/gen_speakingcat_Ap",
                 "prey": [
                     "medium"
                 ],
@@ -561,7 +559,7 @@
             {
                 "text": "app1 spots a boggy area nearby. Dragging {PRONOUN/app1/self} through the mud, pressing {PRONOUN/app1/self} so low it gets on {PRONOUN/app1/poss} whiskers, {PRONOUN/app1/subject} creep closer below the sentry's view. {PRONOUN/app1/subject/CAP} {VERB/app1/leap/leaps} from cover, but the sentry alarm barks, and the prairie dogs evaporate into their waiting burrows, leaving app1 muddy and preyless.",
                 "exp": 0,
-                "art": "gen_train_soggykitty_mad_app",
+                "art": "cat_sprites/gen_train_soggykittymad_Ap",
                 "prey": [
                     "very_small"
                 ],
@@ -570,7 +568,7 @@
             {
                 "text": "Breaking out into a sprint to try and catch the town of prairie dogs off guard, app1 is left wheezing and out of breath as the prey chatters angrily from within their burrows. Awww.",
                 "exp": 0,
-                "art": "gen_train_patrolapprenticesessionfail",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "prey": [
                     "very_small"
                 ],
@@ -579,7 +577,7 @@
             {
                 "text": "s_c instructs the patrol to watch and learn. A heartbeat later, an empty-pawed s_c must eat {PRONOUN/s_c/poss} words.",
                 "exp": 0,
-                "art": "gen_train_patrolapprenticesessionfail",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "prey": [
                     "very_small"
                 ],
@@ -628,7 +626,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "pln_hunt_twolegplace",
+        "patrol_art": "backgrounds/pln_twolegplace",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
@@ -713,7 +711,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "pln_hunt_twolegplace",
+        "patrol_art": "backgrounds/pln_twolegplace",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
@@ -728,7 +726,7 @@
                 "prey": [
                     "medium"
                 ],
-                "art": "gen_hunt_twolegdencatdare",
+                "art": "cat_sprites/gen_hunt_twolegdencatdare_WrWr",
             "relationships": [
                 {
                     "cats_from": ["patrol"],
@@ -750,7 +748,7 @@
                 "prey": [
                     "medium"
                 ],
-                "art": "gen_hunt_twolegdencatdare",
+                "art": "cat_sprites/gen_hunt_twolegdencatdare_WrWr",
                 "relationships": [
                     {
                         "cats_to": [
@@ -782,7 +780,7 @@
             {
                 "text": "Twolegs are mysterious, dangerous beasts. It's not courage or risk-taking that's needed here, no. Instead, the clever s_c plots out their strategy, gesturing with {PRONOUN/s_c/poss} paws to sketch out the safe routes near the dwelling, the dead monster that will block the Twoleg's line of sight.",
                 "exp": 20,
-                "art": "gen_hunt_twolegdencatdare",
+                "art": "cat_sprites/gen_hunt_twolegdencatdare_WrWr",
                 "can_have_stat": [
                     "any"
                 ],
@@ -831,14 +829,13 @@
             {
                 "text": "Twolegs squawk inside, loud and unpredictably dangerous. But outside the bigger predators have brought down a deer that stinks of smoke and killing metal. s_c twitches {PRONOUN/s_c/poss} tail. Surely the Twolegs won't miss a little bit of such large prey.",
                 "exp": 20,
-                "art": "gen_hunt_strange",
+                "art": "cat_sprites/gen_hunt_strange_Wr",
                 "can_have_stat": [
                     "any"
                 ],
                 "stat_trait": [
                     "careful",
-                    "cunning",
-                    "sneaky"
+                    "cunning"
                 ],
                 "prey": [
                     "medium"
@@ -897,7 +894,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "pln_bord_shortswim1",
+        "patrol_art": "backgrounds/gen_shortswim",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
@@ -912,7 +909,7 @@
                 "prey": [
                     "medium"
                 ],
-                "art": "gen_hunt_rabbit",
+                "art": "animals/gen_rabbit",
                 "relationships": [
                     {
                         "cats_to": [
@@ -939,13 +936,13 @@
                 "prey": [
                     "medium"
                 ],
-                "art": "gen_hunt_strangerabbit",
+                "art": "animals/gen_strangerabbit",
                 "frequency": 4
             },
             {
                 "text": "Sometimes it's better to let the prey come to you. s_c, evaluating the layout of the rabbits' \"camp,\" positions the patrol between the best rabbit feeding grounds and the rabbits' burrows. Then all they have to do is wait.",
                 "exp": 20,
-                "art": "gen_hunt_burrow",
+                "art": "cat_sprites/gen_hunt_burrow_Wr",
                 "can_have_stat": [
                     "any"
                 ],
@@ -978,7 +975,7 @@
             {
                 "text": "s_c makes sure that as the sun creeps over the horizon it flashes its light into the eyes of the patrol's prey. The trick wins both prey and purrs from {PRONOUN/s_c/poss} Clanmates.",
                 "exp": 20,
-                "art": "gen_hunt_rabbit",
+                "art": "animals/gen_rabbit",
                 "can_have_stat": [
                     "any"
                 ],
@@ -1014,13 +1011,13 @@
             {
                 "text": "Some days you win some — some days you lose some. It's nobody's fault.",
                 "exp": 0,
-                "art": "gen_hunt_rabbit",
+                "art": "animals/gen_rabbit",
                 "frequency": 4
             },
             {
                 "text": "This warren was a bad call, and its rabbits twitch out of sight with the vigilance of the recently-hunted. Though p_l picks up a mouse on the way home, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} still disappointed.",
                 "exp": 0,
-                "art": "gen_hunt_sneakprey",
+                "art": "cat_sprites/gen_hunt_sneakprey_Wr",
                 "prey": [
                     "very_small"
                 ],
@@ -1029,7 +1026,7 @@
             {
                 "text": "Boldly, s_c charges towards a feeding bunny. And sure, s_c gets <i>{PRONOUN/s_c/poss}</i> rabbit, but what about the rest of the patrol? It does not leave the rest of them feeling particularly impressed.",
                 "exp": 20,
-                "art": "gen_hunting_rabbit",
+                "art": "cat_sprites/gen_hunting_rabbit_Wr",
                 "can_have_stat": [
                     "any"
                 ],
@@ -1080,7 +1077,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "pln_hunt_windmill",
+        "patrol_art": "backgrounds/pln_windmill",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -1169,7 +1166,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_strange",
+        "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -1279,7 +1276,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_strange",
+        "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -1429,7 +1426,6 @@
                     "lonesome",
                     "loyal",
                     "nervous",
-                    "sneaky",
                     "strange",
                     "thoughtful",
                     "wise"
@@ -1520,7 +1516,6 @@
                     "lonesome",
                     "loyal",
                     "nervous",
-                    "sneaky",
                     "strange",
                     "thoughtful",
                     "wise"
@@ -1611,7 +1606,6 @@
                     "lonesome",
                     "loyal",
                     "nervous",
-                    "sneaky",
                     "strange",
                     "thoughtful",
                     "wise"
@@ -1959,7 +1953,6 @@
                     "lonesome",
                     "loyal",
                     "nervous",
-                    "sneaky",
                     "strange"
                 ],
                 "prey": [
@@ -2098,7 +2091,6 @@
                     "lonesome",
                     "loyal",
                     "nervous",
-                    "sneaky",
                     "strange"
                 ],
                 "can_have_stat": [
@@ -2164,7 +2156,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "gen_hunt_twolegdencatdare",
+        "patrol_art": "cat_sprites/gen_hunt_twolegdencatdare_WrWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -2268,7 +2260,6 @@
                     "lonesome",
                     "loyal",
                     "nervous",
-                    "sneaky",
                     "strange"
                 ],
                 "relationships": [
@@ -2394,7 +2385,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "pln_hunt_gonetwolegtrap1",
+        "patrol_art": "cat_sprites/pln_hunt_gonetwolegtrap1_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -2432,7 +2423,6 @@
                     "lonesome",
                     "loyal",
                     "nervous",
-                    "sneaky",
                     "strange"
                 ],
                 "frequency": 4,
@@ -2537,7 +2527,6 @@
                     "lonesome",
                     "loyal",
                     "nervous",
-                    "sneaky",
                     "strange"
                 ],
                 "frequency": 4,
@@ -2740,7 +2729,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunting_rabbit",
+        "patrol_art": "cat_sprites/gen_hunting_rabbit",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
@@ -2752,7 +2741,7 @@
             {
                 "text": "Rudely, their first target bolts, and it needs the entire patrol to bring it down, swerving and zigzagging until they corner it. But they <i>do</i> corner it. One rabbit split between so many cats isn't a huge bounty, but they're too tired to continue hunting.",
                 "exp": 20,
-                "art": "gen_hunt_rabbit",
+                "art": "animals/gen_rabbit",
                 "prey": [
                     "small"
                 ],
@@ -2779,7 +2768,7 @@
             {
                 "text": "The rabbits aren't interested in cooperating. Between every cat present, they only manage a single kill. But it's not a failure, and as they pad home, s_c tells the story of the Prince Rabbit with a Thousand Enemies.",
                 "exp": 20,
-                "art": "gen_hunt_rabbit",
+                "art": "animals/gen_rabbit",
                 "can_have_stat": [
                     "any"
                 ],
@@ -2829,7 +2818,7 @@
             {
                 "text": "The ambush goes cartoonishly poorly, and it's only s_c's skill that still nets them one rabbit, snatching a sliver of victory from the jaws of failure.",
                 "exp": 20,
-                "art": "pln_hunt_fun1",
+                "art": "cat_sprites/gen_hunt_funrun_Wr",
                 "can_have_stat": [
                     "any"
                 ],
@@ -2865,7 +2854,7 @@
             {
                 "text": "Isn't <i>every</i> season rabbit season? The unnecessary confusion starts an equally unnecessary argument, and no hunting gets down as the patrol talks in circles.",
                 "exp": 0,
-                "art": "gen_train_argue",
+                "art": "cat_sprites/gen_train_argue_WrWrWr",
                 "relationships": [
                     {
                         "cats_to": [
@@ -2889,7 +2878,7 @@
             {
                 "text": "It doesn't matter how tightly the patrol locks down the entrance to this burrow — the rabbits escape elsewhere. Crafty rabbits.",
                 "exp": 0,
-                "art": "gen_hunt_burrow",
+                "art": "cat_sprites/gen_hunt_burrow_Wr",
                 "frequency": 4
             }
         ]
@@ -4006,8 +3995,7 @@
                     "calm",
                     "careful",
                     "insecure",
-                    "nervous",
-                    "sneaky"
+                    "nervous"
                 ],
                 "prey": ["large"],
                 "relationships": [
@@ -4073,7 +4061,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "pln_fresno",
+        "patrol_art": "halloween/hal_fresno",
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {
@@ -4125,7 +4113,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "pln_UFO",
+        "patrol_art": "halloween/hal_UFO",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -4186,7 +4174,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "pln_hunt_gef",
+        "patrol_art": "halloween/hal_gef",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -4233,7 +4221,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_mouse",
+        "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {
@@ -4284,7 +4272,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_mouse",
+        "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {
@@ -4355,7 +4343,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_hare",
+        "patrol_art": "animals/gen_hare",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
@@ -4420,7 +4408,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_hare",
+        "patrol_art": "animals/gen_hare",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -6653,7 +6641,7 @@
         "types": [
             "hunting"
         ],
-        "patrol_art": "gen_hunt_strange",
+        "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},

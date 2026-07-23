@@ -18,6 +18,7 @@ from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.clan_resources.point_of_interest import (
     get_random_poi_by_tag,
+    get_random_poi_by_category,
     get_poi_names_set,
 )
 from scripts.game_structure import localization, game
@@ -142,6 +143,9 @@ def poi_repl(inner_details):
             if names.intersection(get_poi_names_set())
             else "MISSING_POI"
         )
+    elif inner_details[1].upper() == "CATEGORY":
+        category = inner_details[2].upper()
+        base_string += get_random_poi_by_category(inner_details[2].lower())
 
     return i18n.t(base_string)
 
@@ -610,7 +614,7 @@ def leader_ceremony_text_adjust(
     leader,
     life_giver=None,
     virtue=None,
-    extra_lives=None,
+    extra_lives: int = None,
 ):
     """
     used to adjust the text for leader ceremonies
@@ -633,7 +637,10 @@ def leader_ceremony_text_adjust(
         text = text.replace("[virtue]", virtue)
 
     if extra_lives:
-        text = text.replace("[life_num]", str(extra_lives))
+        text = text.replace(
+            "[life_num]",
+            i18n.t("general.lives", count=extra_lives),
+        )
 
     text = text.replace("c_n", game.clan.name)
 

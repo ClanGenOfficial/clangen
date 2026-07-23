@@ -4,7 +4,7 @@ from typing import Optional, Literal
 import i18n
 
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatCompatibility
+from scripts.cat.enums import CatCompatibility, CatRank
 from scripts.cat_relations.enums import RelType
 from scripts.cat_relations.relationship import Relationship
 from scripts.config import get_config
@@ -31,12 +31,14 @@ def trigger_interaction(
     main_cat: Cat,
     other_cat: Cat,
     specific_type: Optional[RelType] = None,
+    is_joining: bool = False,
 ) -> bool:
     """
     Start an interaction between two cats
     :param main_cat: The main cat that the event revolves around
     :param other_cat: The other cat that the event revolves around
     :param specific_type: Use to specify if the event must change a certain aspect of the relationship
+    :param is_joining: Set True if generated interaction should be "joining" instead of "normal"
     :return: True if interaction occurred, False otherwise
     """
     # only interact between two player clan cats
@@ -70,7 +72,7 @@ def trigger_interaction(
         list(intensity_chances.keys()), list(intensity_chances.values())
     )[0]
 
-    path = f"events/relationship_events/normal_interactions/{type_of_interaction}/{chosen_intensity}/{type_of_change}.json"
+    path = f"events/relationship_events/{'joining_interactions' if is_joining else 'normal_interactions'}/{type_of_interaction}/{chosen_intensity}/{type_of_change}.json"
     events = _load_file(path)
 
     # find valid event
@@ -126,6 +128,13 @@ def _get_type_of_change(
     elif comp == CatCompatibility.NEGATIVE:
         bool_ballot.append(False)
 
+    if (
+        get_config("relationship.deputy_to_leader_neg_buff")
+        and main_cat.status.rank == CatRank.DEPUTY
+        and other_cat.status.is_leader
+    ):
+        bool_ballot.append(False)
+
     # further influence the partition based on the relationship
     for value in (
         relationship.like,
@@ -160,6 +169,16 @@ def _get_type_of_interaction(
     is_positive: bool = True if type_of_change == "positive" else False
 
     value_weights: dict[RelType, int] = {v: 1 for v in [*RelType]}
+
+    # add a neg deputy change, this is a 0 unless a cruel card is in play
+    if (
+        not is_positive
+        and main_cat.status.rank == CatRank.DEPUTY
+        and other_cat.status.is_leader
+    ):
+        value_weights[RelType.RESPECT] += get_config(
+            "relationship.deputy_envy_leader_influence"
+        )
 
     # change the weights according if the interaction should be positive or negative
     # existing rel values determine the weight added
@@ -391,36 +410,11 @@ def _apply_base_influence(
         intensity=intensity,
         relationship=relationship,
     )
-    # only high intensity gives passive buffs
-    if intensity == "high":
-        passive_buff = int(amount / get_config("relationship.passive_influence_div"))
-        # just adding a teeny bit of variety
-        buffs = [passive_buff - 1, passive_buff, passive_buff + 1]
-        # the passive buff creates a cascade effect
-        # so a negative interaction will affect all values to a negative degree
-        # and a positive interaction will affect all values to a positive degree
-
-        if type_of_interaction == RelType.ROMANCE:
-            relationship.romance += amount
-
-        for rel_out in (
-            RelType.LIKE,
-            RelType.RESPECT,
-            RelType.TRUST,
-            RelType.COMFORT,
-        ):
-            setattr(
-                relationship,
-                rel_out,
-                getattr(relationship, rel_out)
-                + (choice(buffs) if type_of_interaction != rel_out else amount),
-            )
-    else:
-        setattr(
-            relationship,
-            type_of_interaction,
-            getattr(relationship, type_of_interaction) + amount,
-        )
+    setattr(
+        relationship,
+        type_of_interaction,
+        getattr(relationship, type_of_interaction) + amount,
+    )
 
     relationship.log.append(
         i18n.t(
