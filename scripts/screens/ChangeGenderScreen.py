@@ -309,7 +309,7 @@ class ChangeGenderScreen(Screens):
         pronoun_frame = "resources/images/pronoun_frame.png"
         n = 0
         for pronounset in self.the_cat.pronouns:
-            displayname = pronoun_get_cases(pronounset)
+            displayname = self.pronoun_get_cases(pronounset)
             short_name = shorten_text_to_fit(displayname, 170, 13)
 
             # Create block for each pronounset
@@ -420,7 +420,7 @@ class ChangeGenderScreen(Screens):
             if x not in pronouns.get_default_pronouns().values()
         ]
         for pronounset in all_pronouns:
-            displayname = pronoun_get_cases(pronounset)
+            displayname = self.pronoun_get_cases(pronounset)
             short_name = shorten_text_to_fit(displayname, 140, 13)
 
             if pronounset in self.pronouns_dict:
