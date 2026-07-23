@@ -309,16 +309,7 @@ class ChangeGenderScreen(Screens):
         pronoun_frame = "resources/images/pronoun_frame.png"
         n = 0
         for pronounset in self.the_cat.pronouns:
-            displayname = []
-            pronounset_keys = list(pronounset.keys())
-            pronounset_keys.remove("conju")
-            pronounset_keys.remove("gender")
-
-            for i, case in enumerate(pronounset_keys):
-                if i >= len(pronounset_keys) - 1:
-                    displayname.append(f"{pronounset[case]}")
-                else:
-                    displayname.append(f"{pronounset[case]}/")
+            displayname = pronoun_get_cases(pronounset)
             short_name = shorten_text_to_fit(displayname, 170, 13)
 
             # Create block for each pronounset
@@ -429,16 +420,7 @@ class ChangeGenderScreen(Screens):
             if x not in pronouns.get_default_pronouns().values()
         ]
         for pronounset in all_pronouns:
-            displayname = []
-            pronounset_keys = list(pronounset.keys())
-            pronounset_keys.remove("conju")
-            pronounset_keys.remove("gender")
-
-            for i, case in enumerate(pronounset_keys):
-                if i >= len(pronounset_keys) - 1:
-                    displayname.append(f"{pronounset[case]}")
-                else:
-                    displayname.append(f"{pronounset[case]}/")
+            displayname = pronoun_get_cases(pronounset)
             short_name = shorten_text_to_fit(displayname, 140, 13)
 
             if pronounset in self.pronouns_dict:
@@ -544,6 +526,13 @@ class ChangeGenderScreen(Screens):
                 ui_scale_value(min_scrollable_height),
             ),
         )
+
+    def pronoun_get_cases(self, pronounset) -> str:
+        # Gets all pronoun cases in pronounset for display
+        pronounset_values = list(pronounset.values())
+        displayname = (x for x in pronounset_values if not isinstance(x, int))
+        displayname = "/".join(displayname)
+        return displayname
 
     def reset_buttons_and_boxes(self):
         # kills everything when switching cats
