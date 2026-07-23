@@ -117,7 +117,7 @@ class Patrol:
                 return (
                     event_text_adjust(
                         Cat,
-                        self.patrol_event.intro_text,
+                        self.patrol_event.decline_text,
                         involved_cat_dict=self.involved_cats,
                         clan=game.clan,
                         other_clan=self.other_clan,
