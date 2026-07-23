@@ -6,6 +6,7 @@
         "settings_info": "settings + info",
         "quit": "quit",
         "event_edit": "event edit",
+        "bug_report": "report a bug!",
         "edit_deaths": "edit deaths",
         "edit_injuries": "edit injuries",
         "edit_misc": "edit misc",
@@ -45,6 +46,8 @@
         "cancel": "cancel",
         "save_clan": "save clan",
         "saving": "saving...",
-        "clan_saved": "saved!"
+        "clan_saved": "saved!",
+        "keep_cards": "keep",
+        "replace_cards": "replace"
     }
 }

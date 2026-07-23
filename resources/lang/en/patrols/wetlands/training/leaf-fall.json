@@ -11,7 +11,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_train_ghost",
+        "patrol_art": "cat_sprites/gen_train_ghost_WrWrWr",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {

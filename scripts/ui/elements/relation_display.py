@@ -1,6 +1,7 @@
 import i18n
 import pygame
 import pygame_gui
+from pygame_gui.core import UIContainer
 
 from scripts.cat_relations.enums import RelType
 from scripts.ui.elements.relation_status_fill_bar import UIRelationStatusFillBar
@@ -9,10 +10,10 @@ from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
 from scripts.ui.scale import ui_scale
 
 
-class UIRelationDisplay(pygame_gui.elements.UIAutoResizingContainer):
+class UIRelationDisplay(UIContainer):
     def __init__(
         self,
-        position: tuple,
+        unscaled_position: tuple,
         relationship,
         romance: bool = False,
         container=None,
@@ -20,12 +21,12 @@ class UIRelationDisplay(pygame_gui.elements.UIAutoResizingContainer):
         anchors=None,
         starting_height=1,
     ):
-        dimensions = (0, 0)
+        dimensions = (100, 160)
         self.rel_elements = {}
         bar_size = (96, 10)
 
         super().__init__(
-            relative_rect=ui_scale(pygame.Rect(position, dimensions)),
+            relative_rect=ui_scale(pygame.Rect(unscaled_position, dimensions)),
             container=container,
             manager=manager,
             anchors=anchors,

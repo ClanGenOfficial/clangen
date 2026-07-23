@@ -9,6 +9,7 @@ import pygame_gui
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, game
+from ..config import get_config
 from ..ui.elements.text_box_tweaked import UITextBoxTweaked
 from ..ui.elements.surface_image_button import UISurfaceImageButton
 from ..ui.theme import get_text_box_theme
@@ -22,6 +23,7 @@ from ..cat.enums import CatRank
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
+from ..ui.windows.cruel_locked_action import CruelLockedAction
 
 if TYPE_CHECKING:
     from scripts.cat.cats import Cat
@@ -52,6 +54,15 @@ class RoleScreen(Screens):
                     self.update_selected_cat()
                 else:
                     print("invalid previous cat", self.previous_cat)
+            elif not get_config("ranks.allow_manual"):
+                CruelLockedAction()
+                pass
+            #
+            #
+            #   ANYTHING BELOW HERE WILL NOT TRIGGER IF CRUEL SEASON DISABLES ROLE SWITCHING
+            #                               Ye have been warned
+            #
+            #
             elif event.ui_element == self.promote_leader:
                 if self.the_cat == game.clan.deputy:
                     game.clan.deputy = None
@@ -87,7 +98,7 @@ class RoleScreen(Screens):
                 self.the_cat.rank_change(CatRank.MEDIATOR_APPRENTICE, resort=True)
                 self.update_selected_cat()
 
-        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
+        elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 self.change_screen(GameScreen.PROFILE)
             elif event.key == pygame.K_RIGHT:
@@ -531,7 +542,7 @@ class RoleScreen(Screens):
         else:
             output = "screens.role.blurb_unknown"
 
-        return i18n.t(output, name=self.the_cat.name, clan=game.clan.displayname)
+        return i18n.t(output, name=self.the_cat.name, clan=game.clan.name)
 
     def exit_screen(self):
         self.back_button.kill()

@@ -96,7 +96,7 @@ class PatrolScreen(Screens):
             self.menu_button_pressed(event)
             self.mute_button_pressed(event)
 
-        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
+        elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 self.change_screen(GameScreen.LIST)
             # elif event.key == pygame.K_RIGHT:
@@ -306,23 +306,21 @@ class PatrolScreen(Screens):
 
     def screen_switches(self):
         super().screen_switches()
-        self.set_disabled_menu_buttons(["patrols"])
-        self.update_heading_text(
-            "general.clan", text_kwargs={"name": game.clan.displayname}
-        )
-        self.show_mute_buttons()
-        self.show_menu_buttons()
 
         if (
             self.in_progress_data is not None
             and self.in_progress_data["current_moon"] == game.clan.age
-            and self.in_progress_data["clan_name"]
-            == i18n.t("general.clan", clan=game.clan.displayname)
+            and self.in_progress_data["clan_name"] == game.clan.name
         ):
             self.display_change_load(self.in_progress_data)
         else:
             self.in_progress_data = None
             self.open_choose_cats_screen()
+
+        self.set_disabled_menu_buttons(["patrols"])
+        self.update_heading_text("general.clan", text_kwargs={"name": game.clan.prefix})
+        self.show_mute_buttons()
+        self.show_menu_buttons()
 
     def display_change_save(self) -> Dict:
         if self.start_patrol_thread is not None and self.start_patrol_thread.is_alive():
@@ -1039,7 +1037,7 @@ class PatrolScreen(Screens):
         if not self.able_cats:
             all_pages = []
         else:
-            all_pages = self.chunks(self.able_cats, 15)
+            all_pages = self.get_list_chunks(self.able_cats, 15)
 
         self.current_page = max(1, min(self.current_page, len(all_pages)))
 

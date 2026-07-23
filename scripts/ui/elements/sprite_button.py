@@ -3,9 +3,12 @@ import pygame_gui
 from pygame_gui.core import ObjectID
 from pygame_gui.core.interfaces import IUIManagerInterface
 
+from scripts.game_input import INPUT_ACTION_PRESSED, INPUT_ACTION_RELEASED, Action
 from scripts.game_structure.game import game_setting_get
+from scripts.game_structure.screen_settings import MANAGER
 from scripts.ui.elements.cat_button import CatButton
-from scripts.ui.scale import ui_scale_value
+from scripts.ui.generate_box import get_box, BoxStyles
+from scripts.ui.scale import ui_scale_value, ui_scale
 
 
 class UISpriteButton:
@@ -31,8 +34,11 @@ class UISpriteButton:
         mask=None,
         mask_padding=None,
     ):
-        # The transparent button. This a subclass that UIButton that also hold the cat_id.
+        self.visible = visible
+        self.is_focused = False
+        self.is_enabled = True
 
+        # The transparent button. This a subclass that UIButton that also hold the cat_id.
         self.button = CatButton(
             relative_rect,
             "",
@@ -75,6 +81,18 @@ class UISpriteButton:
             starting_height=starting_height,
         )
         del input_sprite
+        self.target_indicator = pygame_gui.elements.UIImage(
+            pygame.Rect(
+                (relative_rect.x, relative_rect.y),
+                (relative_rect.width, relative_rect.height),
+            ),
+            get_box(BoxStyles.TARGET_BOX, (60, 60)),
+            container=container,
+            starting_height=1,
+            manager=MANAGER,
+            visible=False,
+            anchors={"centerx": "centerx"},
+        )
         self.button.join_focus_sets(self.image)
         self.image.check_hover = self.__image_check_hover
 
@@ -87,23 +105,42 @@ class UISpriteButton:
     def return_cat_object(self):
         return self.button.return_cat_object()
 
+    def focus(self):
+        self.is_focused = True
+        self.button.focus()
+        self.target_indicator.show()
+
+    def unfocus(self):
+        self.is_focused = False
+        self.button.unfocus()
+        self.target_indicator.hide()
+
     def enable(self):
+        self.is_enabled = True
         self.button.enable()
+        self.target_indicator.disable()
 
     def disable(self):
+        self.is_enabled = False
         self.button.disable()
+        self.target_indicator.enable()
 
     def hide(self):
+        self.visible = False
         self.image.hide()
         self.button.hide()
+        self.target_indicator.hide()
 
     def show(self):
+        self.visible = True
         self.image.show()
         self.button.show()
+        self.target_indicator.show()
 
     def kill(self):
         self.button.kill()
         self.image.kill()
+        self.target_indicator.kill()
         del self
 
     def set_image(self, new_image):

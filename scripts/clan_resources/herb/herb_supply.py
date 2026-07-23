@@ -7,6 +7,7 @@ from scripts.cat.skills import SkillPath
 from scripts.clan_resources.herb.herb import Herb, HERBS
 from scripts.clan_resources.herb.herb_effects import HerbEffect
 from scripts.clan_resources.supply import Supply
+from scripts.config import get_config
 from scripts.game_structure import constants
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
@@ -164,6 +165,10 @@ class HerbSupply:
         start's a Clan's storage. Clans begin with a random set of herbs.
         """
         self.set_required_herb_count(clan_size)
+
+        if get_config("clan_resources.herbs.empty_starting_storage"):
+            # return before we can add any herbs
+            return
 
         for herb in self.base_herb_list:
             if randint(1, 4) == 1:
@@ -422,6 +427,7 @@ class HerbSupply:
         med_cat,
         general_amount_bonus: bool = False,
         specific_quantity_bonus: float = 0,
+        specific_quantity_allowed: Optional[int] = None,
     ) -> vars():
         """
         Takes a med cat and chooses "random" herbs for them to find. Herbs found are based on cat's skill, how badly
@@ -429,6 +435,7 @@ class HerbSupply:
         :param med_cat: cat object for med doing the gathering
         :param general_amount_bonus: set to True if cat should gather a boosted number of herbs
         :param specific_quantity_bonus: a specific float to multiply the gathered herb amount by
+        :param specific_quantity_allowed: a specific int of allowed total quantity of herbs, best used for fine balancing control
         """
         # meds with relevant skills will get a boost to the herbs they find
         # SENSE finds wider types of herbs (3 moss, 1 lungwort, 2 catmint)
@@ -487,6 +494,7 @@ class HerbSupply:
             quantity_modifier *= specific_quantity_bonus
 
         # now we find what herbs have actually been found and their quantity
+        allowed_quantity = specific_quantity_allowed
         for herb in herb_list:
             if amount_of_herbs == 0:
                 break
@@ -507,14 +515,21 @@ class HerbSupply:
                     quantity_modifier = quantity_modifier / 2
                 elif rarity in (1, 2):
                     quantity_modifier += 1
-                found_herbs[herb] = max(
+                amount = max(
                     1,
                     int(
                         choices(population=[2, 3, 4], weights=weight, k=1)[0]
                         * quantity_modifier
                     ),
                 )
+                found_herbs[herb] = (
+                    min(allowed_quantity, amount) if allowed_quantity else amount
+                )
                 amount_of_herbs -= 1
+                if allowed_quantity:
+                    allowed_quantity -= found_herbs[herb]
+                if allowed_quantity is not None and allowed_quantity <= 0:
+                    break
 
         return self.handle_found_herbs_outcomes(found_herbs)
 

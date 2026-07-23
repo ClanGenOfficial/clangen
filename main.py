@@ -13,6 +13,7 @@ from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan import Afterlife, clan_class
 
 from scripts.debug_console import debug_mode
+from scripts.game_input import INPUT_ACTION_PRESSED
 from scripts.game_structure import constants, game
 from scripts.game_structure.audio.audio_manager import AudioManager
 from scripts.game_structure.discord_rpc import _DiscordRPC
@@ -25,6 +26,7 @@ from scripts.game_structure.game.switches import (
 )
 from scripts.game_structure.load_cat import load_cats, version_convert
 from scripts.game_structure.screen_settings import MANAGER, screen, screen_scale
+from scripts.game_input import controller_manager, keyboard_manager
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
 from scripts.screens import all_screens
@@ -42,6 +44,8 @@ game.rpc.start_rpc.set()
 
 # LOAD cats & clan
 finished_loading = False
+
+controller_manager.init()
 
 
 def load_data():
@@ -67,7 +71,7 @@ def load_data():
     clan_list = read_clans()
     if clan_list:
         switch_set_value(Switch.clan_list, clan_list)
-        switch_set_value(Switch.clan_name, clan_list[0])
+        switch_set_value(Switch.clan_save_id, clan_list[0])
         try:
             game.starclan = Afterlife()
             game.dark_forest = Afterlife()
@@ -131,8 +135,8 @@ def loading_animation(scale: float = 1):
         i += 1
         if i >= total_frames:
             i = 0
-
         for event in pygame.event.get():
+            controller_manager.process_event(event)
             if event.type == pygame.QUIT:
                 quit_game(savesettings=False)
 
@@ -193,17 +197,15 @@ while 1:
     game.all_screens[game.current_screen].on_use()
     # EVENTS
     for event in pygame.event.get():
-        if (
-            event.type == pygame.KEYDOWN
-            and game_setting_get("keybinds")
-            and debug_mode.debug_menu.visible
-        ):
+        if event.type == INPUT_ACTION_PRESSED and debug_mode.debug_menu.visible:
             pass
         else:
+            consumed = MANAGER.process_events(event)
             # todo ...shouldn't this be `get_switch(Switch.cur_screen)`?
-            all_screens.get_screen(game.current_screen.replace(" ", "_")).handle_event(
-                event
-            )
+            if not consumed:
+                all_screens.get_screen(
+                    game.current_screen.replace(" ", "_")
+                ).handle_event(event)
 
         if not game.audio.disabled and not game.audio.muted:
             game.audio.sound.handle_sound_events(event)
@@ -216,7 +218,12 @@ while 1:
                     GameScreen.START,
                     GameScreen.SWITCH_CLAN,
                     GameScreen.SETTINGS,
-                    GameScreen.MAKE_CLAN,
+                    GameScreen.MAKE_CLAN_CHOOSE_MODE,
+                    GameScreen.MAKE_CLAN_CHOOSE_CARDS,
+                    GameScreen.MAKE_CLAN_CHOOSE_NAME,
+                    GameScreen.MAKE_CLAN_CHOOSE_CATS,
+                    GameScreen.MAKE_CLAN_CHOOSE_SYMBOL,
+                    GameScreen.MAKE_CLAN_CLAN_CREATED,
                 )
                 or not game.clan
             ):
@@ -251,7 +258,8 @@ while 1:
                     show_confirm_dialog=False,
                 )
 
-        MANAGER.process_events(event)
+        controller_manager.process_event(event)
+        keyboard_manager.process_event(event)
 
     MANAGER.update(time_delta)
 

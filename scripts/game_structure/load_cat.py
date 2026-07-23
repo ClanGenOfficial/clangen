@@ -25,14 +25,18 @@ from scripts.game_structure import game
 from ..cat.personality import Personality
 from ..cat.skills import CatSkills
 from ..cat.status import StatusDict
-from ..clan_resources.point_of_interest import generate_and_add_new_poi, PoiType
+from ..clan_resources.point_of_interest import (
+    clear_pois,
+    generate_and_add_new_poi,
+    PoiType,
+)
 from ..housekeeping.datadir import get_save_dir
 
 logger = logging.getLogger(__name__)
 
 
 def load_cats():
-    load_faded_cat_ids(switch_get_value(Switch.clan_name))
+    load_faded_cat_ids(switch_get_value(Switch.clan_save_id))
     try:
         json_load()
     except FileNotFoundError:
@@ -705,6 +709,9 @@ def version_convert(version_info):
 
     # generate points of interest
     if version < 5:
+        # remove any already loaded points of interest
+        clear_pois()
+
         generate_and_add_new_poi(biome=game.clan.biome, category=PoiType.GATHERING)
         generate_and_add_new_poi(biome=game.clan.biome, category=PoiType.MOONPLACE)
 

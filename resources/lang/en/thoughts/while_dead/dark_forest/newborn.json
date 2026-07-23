@@ -1,7 +1,7 @@
 [
     {
         "id": "gen_dead_newborn",
-        "thoughts": [
+        "strings": [
             "Mewls pitifully for milk",
             "Wobbles around the Dark Forest",
             "Is crying for milk to no avail",
@@ -18,25 +18,46 @@
             "Mewls as someone bats {PRONOUN/m_c/object} around",
             "Is feeling incredibly lonely"
         ],
-        "main_age_constraint": [
-            "newborn"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "newborn"
+                ]
+            }
+        }
     },
     {
         "id": "gen_dead_newborn_to_alive_parent",
-        "thoughts":[
+        "strings": [
             "Desperately misses r_c",
             "Misses the fleeting feeling of warmth at r_c's belly",
             "Wishes that r_c could bathe {PRONOUN/m_c/object} again"
         ],
+        "involved_cats": {
+            "m_c": {
+                "age": [
+                    "newborn"
+                ]
+            },
+            "r_c": {
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        },
         "relationship_constraint": [
-            "child/parent"
-        ],
-        "random_living_status": [
-            "living"
-        ],
-        "main_age_constraint": [
-            "newborn"
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
         ]
     }
 ]

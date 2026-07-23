@@ -460,7 +460,7 @@
           "$ref": "#/$defs/GatherCatEnum"
         },
         {
-          "pattern": "^n_c:[0-9]+$",
+          "pattern": "^-?n_c:[0-9]+$",
           "type": "string"
         }
       ],
@@ -550,7 +550,8 @@
         "goldenrod",
         "poppy",
         "plantain",
-        "catmint"
+        "catmint",
+        "honey"
       ],
       "title": "Herb",
       "type": "string"
@@ -975,6 +976,15 @@
       "title": "OutsiderRep",
       "type": "string"
     },
+    "PointsOfInterestCategoryEnum": {
+      "enum": [
+        "gathering",
+        "moonplace",
+        "terrain"
+      ],
+      "title": "PointsOfInterestCategoryEnum",
+      "type": "string"
+    },
     "PointsOfInterestGroup": {
       "anyOf": [
         {
@@ -982,10 +992,28 @@
         },
         {
           "$ref": "#/$defs/PointsOfInterestGroupByTags"
+        },
+        {
+          "$ref": "#/$defs/PointsOfInterestGroupByCategory"
         }
       ],
-      "description": "Specifies Points of Interest constraints. Must use EITHER names or tags.",
+      "description": "Specifies Points of Interest constraints. Must use names OR tags OR category (not multiple at once).",
       "title": "PointsOfInterestGroup"
+    },
+    "PointsOfInterestGroupByCategory": {
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "$ref": "#/$defs/PointsOfInterestCategoryEnum",
+          "description": "The category this POI belongs to.",
+          "title": "Category"
+        }
+      },
+      "required": [
+        "category"
+      ],
+      "title": "PointsOfInterestGroupByCategory",
+      "type": "object"
     },
     "PointsOfInterestGroupByName": {
       "additionalProperties": false,
@@ -1351,6 +1379,7 @@
         "knows_of_only",
         "likes_only",
         "enjoys_only",
+        "cherishes_only",
         "resents_only",
         "envies_only",
         "begrudges_only",
@@ -1633,22 +1662,14 @@
         "elder",
         "-elder",
         "any",
-        "living",
-        "starclan",
-        "darkforest",
-        "unknownresidence",
         "kittypet",
         "-kittypet",
         "loner",
         "-loner",
         "rogue",
         "-rogue",
-        "former Clancat",
-        "exiled",
-        "lost",
-        "-lost",
-        "outside cat",
-        "clancat"
+        "clancat",
+        "-clancat"
       ],
       "title": "Status",
       "type": "string"
@@ -1779,7 +1800,6 @@
         "loyal",
         "responsible",
         "shameless",
-        "sneaky",
         "strange",
         "vengeful",
         "wise",
@@ -1818,7 +1838,6 @@
         "-loyal",
         "-responsible",
         "-shameless",
-        "-sneaky",
         "-strange",
         "-vengeful",
         "-wise",

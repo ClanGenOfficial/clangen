@@ -14,7 +14,7 @@
             "disaster",
             "new_cat"
         ],
-        "patrol_art": "gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -217,7 +217,7 @@
             "disaster",
             "new_cat"
         ],
-        "patrol_art": "gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -1873,7 +1873,7 @@
             "apprentice": [-1, 2]
         },
         "frequency": 2,
-        "intro_text": "The patrol catches the scent of a fox — but is it red or gray?",
+        "intro_text": "The patrol catches the scent of a fox, but is it red or gray?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -2198,7 +2198,7 @@
             "apprentice": [-1, 2]
         },
         "frequency": 2,
-        "intro_text": "The patrol catches the scent of a fox — but is it red or gray?",
+        "intro_text": "The patrol catches the scent of a fox, but is it red or gray?",
         "decline_text": "The patrol decides not to pursue the fox.",
         "chance_of_success": 60,
         "success_outcomes": [
