@@ -131,18 +131,18 @@ Outcomes utilize the `TextPoolEvent` format.
 ***
 
 ### location:list[str]
-This controls the biome and camp the event appears in. [Tagging Instructions](reference/tag-lists.md#locations)
+This controls the biome and camp the event appears in. [Tagging Instructions](../reference/tag-lists.md#locations)
 
 ***
 
 ### season: list[str]
-List of seasons in which the event may occur. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
+List of seasons in which the event may occur. You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
 You can tag with a mix of "newleaf", "greenleaf", "leaf-fall", "leaf-bare", or remove the parameter altogether to allow for any season.
 
 ***
 
 ### tags: list[str]
-Used to dictate some odds-and-ends about event constraints: [General Tags](reference/tag-lists.md#general-tags).
+Used to dictate some odds-and-ends about event constraints: [General Tags](../reference/tag-lists.md#general-tags).
 
 !!! note
     You do not need to use the `romance` tag for events intended to be romantic. These are already filtered as necessary.
@@ -270,7 +270,7 @@ Constrains the event to only occur if the specified relationships exist. Multipl
     Specify `"can_romance"` as a constraint to allow the cats to have romantic interactions 
 
 **constraints:list**
->The list of required relationships. You can include any tags in [Relationship Tiers](reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](reference/tag-lists.md#interpersonal-relationships). For the purposes of tag use explanations in those references: `cats_from` is considered "cat1" and `cats_to` is considered "cat2".
+>The list of required relationships. You can include any tags in [Relationship Tiers](../reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](../reference/tag-lists.md#interpersonal-relationships). For the purposes of tag use explanations in those references: `cats_from` is considered "cat1" and `cats_to` is considered "cat2".
 
 !!! caution "For example"
     To work off of our earlier example: we would list `trusts` in our `constraints`
@@ -304,7 +304,7 @@ How the player Clan's reputation will change with outsiders or the other_clan. S
 ***
 
 ### relationship_changes:list[dict[str, various]]
-Indicates effects on cat relationships. Check [Writing Relationship Changes](/reference/common-formats.md#writing-relationship-changes) for full parameters.
+Indicates effects on cat relationships. Check [Writing Relationship Changes](../reference/common-formats.md#writing-relationship-changes) for full parameters.
 
 ***
 

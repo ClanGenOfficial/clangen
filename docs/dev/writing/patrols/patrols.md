@@ -20,9 +20,7 @@ When considering patrols, keep in mind challenge vs reward. That isn't to say ce
 ## Formatting
 
 !!! tip
-    If you are new to patrol writing, I recommend going through the [Full Featured Patrol Example](#full-featured-patrol-example) line by line and reading the following parameter explanations as you do.
-
-    Likewise, before beginning, be sure to at least read the first section of [Coding Terms for Writers to Know](reference/terminology.md#coding-terms-for-writers-to-know). This explains much of the terminology used here.
+    Before beginning, be sure to at least read the first section of [Coding Terms for Writers to Know](../reference/terminology.md#coding-terms-for-writers-to-know). This explains much of the terminology used here.
 
 ### Minimum Required
 >The smallest amount of information you're required to include in this format. 
@@ -163,20 +161,15 @@ How to make sure your patrol_id is unique:
 | "training"       | training patrol                          |
 
 **Differences between the types** 
-> Training patrols are an easy difficulty for [success chance](#chance-of-success-int), but the lowest with regards to [exp reward](#exp-int). They are a relatively safe patrol type of low danger, and the [injuries](#injury-listdictstr-various) cats can obtain on them should either be rare (low weighed outcome), or minor. Training patrols have high [relationship rewards](#relationships-listdictstr-various).
+> Training patrols are an easy difficulty for [success chance](#chance-of-success-int), but the lowest with regards to [exp reward](patrol_outcome.md/#exp_gained-int). They are a relatively safe patrol type of low danger, and the [injuries](patrol_outcome.md/#condition-listdict) cats can obtain on them should either be rare (low weighed outcome), or minor. Training patrols have high [relationship rewards](patrol_outcome.md/#relationship_changeslistdictstr-various).
 
-> Hunting patrols are of moderate difficulty for [success chance](#chance-of-success-int).  Hunting patrols are subject to [extra filtering](../advanced-documentation.md) that effects what patrols are available based on their [prey reward](#prey-liststr). This filtering ensures that we cannot starve out the player's cats simply by adding too many patrols that give out a certain prey reward. Hunting patrols are of medium danger, and the [injuries](#injury-listdictstr-various) cats can obtain on them should either be minor and common (high frequency outcome), moderate and of a mid frequency, or severe and of a low frequency. The same guidelines apply to [killing cats](#dead_cats-liststr) on this patrol type. Hunting patrols should have only minor [relationship rewards](#relationships-listdictstr-various) (less than 5) unless the hunting patrol text focuses on the relationship, e.g a warrior and a apprentice hunting together with the warrior teaching the apprentice.
+> Hunting patrols are of moderate difficulty for [success chance](#chance-of-success-int).  Hunting patrols are subject to [extra filtering](../advanced-documentation.md) that effects what patrols are available based on their [prey reward](patrol_outcome.md/#supplylistdict). This filtering ensures that we cannot starve out the player's cats simply by adding too many patrols that give out a certain prey reward. Hunting patrols are of medium danger, and the [injuries](patrol_outcome.md/#condition-listdict) cats can obtain on them should either be minor and common (high frequency outcome), moderate and of a mid frequency, or severe and of a low frequency. The same guidelines apply to [killing cats](patrol_outcome.md/#death-listdict) on this patrol type. Hunting patrols should have only minor [relationship rewards](patrol_outcome.md/#relationship_changeslistdictstr-various) (less than 5) unless the hunting patrol text focuses on the relationship, e.g a warrior and a apprentice hunting together with the warrior teaching the apprentice.
 
-> Border patrols needs to be the hardest and most dangerous, with a high difficulty for [success chance](#chance-of-success-int).  This is where experienced cats should shine! The [injuries](#injury-listdictstr-various) cats can obtain on them should be a wide range. Failure outcomes on border patrols that don't cause injury should be rare. You are encouraged to apply minor injuries even on success outcome. The same guidelines apply to [killing cats](#dead_cats-liststr) on this patrol type, with the exception that you cannot kill cats on any success outcomes. This is by far the mostly likely patrol type to have cats become [lost](#lost_cats-liststr) on.
+> Border patrols needs to be the hardest and most dangerous, with a high difficulty for [success chance](#chance-of-success-int).  This is where experienced cats should shine! The [injuries](patrol_outcome.md/#condition-listdict) cats can obtain on them should be a wide range. Failure outcomes on border patrols that don't cause injury should be rare. You are encouraged to apply minor injuries even on success outcome. The same guidelines apply to [killing cats](patrol_outcome.md/#death-listdict) on this patrol type, with the exception that you cannot kill cats on any success outcomes. This is by far the mostly likely patrol type to have cats become [lost](patrol_outcome.md/#lost-listdict) on.
 
-> Herb gathering patrols are of moderate difficulty for [success chance](#chance-of-success-int) (like hunting patrols). Herb gathering patrols are focused on gathering herbs and thus need to have a [herb reward](#herbs-liststr) under most circumstances. Herb gathering patrols are of medium danger, and the [injuries](#injury-listdictstr-various) cats can obtain on them should either be minor and common (high frequency outcome), moderate and of a mid frequency, or severe and of a low frequency. The same guidelines apply to [killing cats](#dead_cats-liststr) on this patrol type. Herb gathering patrols should be highly seasonal, as not all herbs are available in all seasons, or in the same seasons in different [biomes](../reference/biomes.md). 
+> Herb gathering patrols are of moderate difficulty for [success chance](#chance-of-success-int) (like hunting patrols). Herb gathering patrols are focused on gathering herbs and thus need to have a [herb reward](patrol_outcome.md/#supplylistdict) under most circumstances. Herb gathering patrols are of medium danger, and the [injuries](patrol_outcome.md/#condition-listdict) cats can obtain on them should either be minor and common (high frequency outcome), moderate and of a mid frequency, or severe and of a low frequency. The same guidelines apply to [killing cats](patrol_outcome.md/#death-listdict) on this patrol type. Herb gathering patrols should be highly seasonal, as not all herbs are available in all seasons, or in the same seasons in different [biomes](../reference/biomes.md). 
 
-> The subtypes of [new_cat](#outsider_rep) and [other_clan](#other_clan_rep) patrols should primarily use the type specific success, danger, injuries, death, and rewards of whatever the primary patrol type is. For example, use the success chance for herb gathering patrols if your medicine cat finds an injured kitten. However, a subtype is more likely to move away from the 'normal' setting for that type of patrol as they are by definition unusual examples of that patrol type. Brainstorm with other developers!
-
-
-!!! tip
-    There are two further subtypes of patrols which occur as isolated events within the four main types. These are other_clan and new_cat patrols. Other clan patrols deal with the Clans neighboring the player Clan and are discussed [here](#other_clan_rep). New cat patrols deal with patrols where a new cat joins the player Clan. The chance of finding a new_cat patrol is discussed [here](#outsider_rep), the new_cat tag is discussed [here](#tags-liststr), and the code to generate a new_cat is discussed [here](#new_cat-listliststr). A patrol is firstly one of the four types, e.g herb gathering, and then can also be a other_clan or new_cat (or both!) patrol in addition to the four basic types. 
-
+> The subtypes of [new_cat](patrol_outcome.md/#required_reputation-dict) and [other_clan](patrol_outcome.md/#required_reputation-dict) patrols should primarily use the type specific success, danger, injuries, death, and rewards of whatever the primary patrol type is. For example, use the success chance for herb gathering patrols if your medicine cat finds an injured kitten. However, a subtype is more likely to move away from the 'normal' setting for that type of patrol as they are by definition unusual examples of that patrol type. Brainstorm with other developers!
 
 ***
 
@@ -216,7 +209,7 @@ You can tag with a mix of "newleaf", "greenleaf", "leaf-fall", "leaf-bare", or r
 ***
 
 #### poi: Dict
-> [POI Constraint Tagging](points-of-interest.md/#using-points-of-interest)
+> [POI Constraint Tagging](../points-of-interest.md/#using-points-of-interest)
 
 ***
 
@@ -326,7 +319,7 @@ This can even be added as an empty dict: `can_create_new_cat: {}` to simply mark
 
 ***
 **age: list[str]**
->Constrains the event to only occur if the cat is within a certain age group. You can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
+>Constrains the event to only occur if the cat is within a certain age group. You can utilize [exclusionary tags](../reference/tag-lists.md/#exclusionary-tags).
 
 > [Age Tag List](../reference/tag-lists.md#__tabbed_2_1)
 > 
@@ -344,7 +337,7 @@ This can even be added as an empty dict: `can_create_new_cat: {}` to simply mark
         "past": []
       },
 ```
->**`"group"`** - the group we are checking the cat's standing with. you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags). tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to qualify against *one* of the groups. [possible group tags.](../reference/tag-lists.md#groups). You should not try to tag `no_group`.
+>**`"group"`** - the group we are checking the cat's standing with. you can utilize [exclusionary tags](../reference/tag-lists.md/#exclusionary-tags). tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to qualify against *one* of the groups. [possible group tags.](../reference/tag-lists.md#groups). You should not try to tag `no_group`.
 
 >**`"currently"`** - the standing the cat should currently possess with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have *one* of the standings. [possible standing tags.](../reference/tag-lists.md#standings)
 
@@ -357,7 +350,7 @@ This can even be added as an empty dict: `can_create_new_cat: {}` to simply mark
 
 
 **stat: dict[str: list]**
-> Constrains the event to only occur if the cat holds specific skills or traits. You can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
+> Constrains the event to only occur if the cat holds specific skills or traits. You can utilize [exclusionary tags](../reference/tag-lists.md/#exclusionary-tags).
 
 ```json
     "stat": {
@@ -387,7 +380,7 @@ This can even be added as an empty dict: `can_create_new_cat: {}` to simply mark
 ```
 > **`"working"`** - by default, this is always set to `true`. if set to `false`, the cat can't be a working cat (aka, they are currently disabled by a condition of some kind)
 
-> **`"condition`** - a list of conditions that the cat must have *at least* one of. if any condition is allowed, use `"any"`. supports [exclusionary tags](../reference/tag-lists.md#exclusionary-tags). check [illness](reference/tag-lists.md/#__tabbed_1_3), [injury](../reference/tag-lists.md#__tabbed_1_2), and [permanent condition](../reference/tag-lists.md#__tabbed_1_4) references for lists of current condition possibilities.
+> **`"condition`** - a list of conditions that the cat must have *at least* one of. if any condition is allowed, use `"any"`. supports [exclusionary tags](../reference/tag-lists.md#exclusionary-tags). check [illness](../reference/tag-lists.md/#__tabbed_1_3), [injury](../reference/tag-lists.md#__tabbed_1_2), and [permanent condition](../reference/tag-lists.md#__tabbed_1_4) references for lists of current condition possibilities.
 
 > **`"must_be_congenital"`** - by default, this is always set to `false`. if set to `true`, the cat must have been born with a permanent condition listed in the `condition`.
 
@@ -445,7 +438,7 @@ Constrains the event to only occur is the specified relationships exist. Multipl
 ***
 
 #### chance of success: int
->Control the chance for a patrol to succeed. Not an exact chance, since there are a lot of other factors (exp, skills, number of cats on the patrol) that affect the chance. Still, a higher number here indicates a higher chance to succeed. For a full explanation of how the game calculated success chance, check the [advanced documentation for success chance](advanced-documentation.md/#success-chance-calculation).
+>Control the chance for a patrol to succeed. Not an exact chance, since there are a lot of other factors (exp, skills, number of cats on the patrol) that affect the chance. Still, a higher number here indicates a higher chance to succeed. For a full explanation of how the game calculated success chance, check the [advanced documentation for success chance](../advanced-documentation.md/#success-chance-calculation).
 
 > You do not need to adjust the success chance for different patrol sizes.  The success rate for a solo cat patrol should match its full patrol size variation.  Remember that each cat added to a patrol buffs its success chance, we don't need to give them any extra help.
 
