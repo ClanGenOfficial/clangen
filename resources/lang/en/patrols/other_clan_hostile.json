@@ -628,9 +628,6 @@
                 ],
                 "join": [
                     {
-                        "cats": []
-                    },
-                    {
                         "cats": [
                             "n_c1"
                         ],
@@ -1782,17 +1779,6 @@
                         "condition": [
                             "grief stricken"
                         ]
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             }

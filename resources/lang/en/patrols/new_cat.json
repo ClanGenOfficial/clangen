@@ -2529,18 +2529,12 @@
                 ],
                 "join": [
                     {
-                        "cats": []
-                    },
-                    {
                         "cats": [
                             "n_c1"
                         ],
                         "new_status": [
                             "newborn"
                         ]
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -4455,9 +4449,6 @@
                 ],
                 "join": [
                     {
-                        "cats": []
-                    },
-                    {
                         "cats": [
                             "n_c1"
                         ],
@@ -4816,9 +4807,6 @@
                 ],
                 "join": [
                     {
-                        "cats": []
-                    },
-                    {
                         "cats": [
                             "n_c1"
                         ],
@@ -4891,9 +4879,6 @@
                     }
                 ],
                 "join": [
-                    {
-                        "cats": []
-                    },
                     {
                         "cats": [
                             "n_c1"
@@ -5555,17 +5540,6 @@
                             "cats_from": "cat_from and the other rogues ambushed cat_to in an abandoned Twoleg nest and cat_to got away."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -5895,17 +5869,6 @@
                         "history": "This cat died while wandering.",
                         "no_results": false
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -5989,17 +5952,6 @@
                             "multi"
                         ],
                         "history": "m_c died in an ambush set by rogues."
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -6636,17 +6588,6 @@
                         "history": "This cat died while wandering.",
                         "no_results": false
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -6959,17 +6900,6 @@
                         "log": {
                             "cats_from": "cat_from and the other rogues ambushed cat_to in an abandoned Twoleg nest and cat_to got away."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -12035,17 +11965,6 @@
                         "history": "This cat died while wandering.",
                         "no_results": true
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -12133,17 +12052,6 @@
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": true
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -12242,17 +12150,6 @@
                         "history": "This cat died while wandering.",
                         "no_results": true
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -12303,17 +12200,6 @@
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": true
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             },
@@ -12375,17 +12261,6 @@
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": true
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             }

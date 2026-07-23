@@ -470,20 +470,6 @@
                             "cats_from": "cat_to and a group of rogues ambushed cat_from on patrol."
                         }
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             },
             {
@@ -579,23 +565,6 @@
                             "r_c0"
                         ],
                         "history": "m_c was ambushed by rogues while on a solo patrol."
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             }

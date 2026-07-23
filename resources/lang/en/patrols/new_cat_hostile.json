@@ -1398,18 +1398,12 @@
                 ],
                 "join": [
                     {
-                        "cats": []
-                    },
-                    {
                         "cats": [
                             "n_c1"
                         ],
                         "new_status": [
                             "newborn"
                         ]
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -3245,17 +3239,6 @@
                         "scar_history": "m_c gained a scar after tussling with a rogue.",
                         "death_history": "m_c was died from injuries sustained in a fight with a rogue."
                     }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    }
                 ]
             }
         ],
@@ -3314,17 +3297,6 @@
                             "cats_from": "cat_from and the other rogues almost attacked p_l's patrol before they ran away. Wow, c_n cats really think they're so big and bad towards outsiders, but they're too mouse-hearted to fight them!",
                             "cats_to": "cat_to heard that p_l's patrol almost got attacked by cat_from and the other rogues. Thankfully, the patrol got away, but those mange-pelts are still out there, still talking bad about c_n."
                         }
-                    }
-                ],
-                "join": [
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
-                    },
-                    {
-                        "cats": []
                     }
                 ]
             }
@@ -3959,9 +3931,6 @@
                 ],
                 "join": [
                     {
-                        "cats": []
-                    },
-                    {
                         "cats": [
                             "n_c1"
                         ],
@@ -4034,9 +4003,6 @@
                     }
                 ],
                 "join": [
-                    {
-                        "cats": []
-                    },
                     {
                         "cats": [
                             "n_c1"
@@ -4393,9 +4359,6 @@
                 ],
                 "join": [
                     {
-                        "cats": []
-                    },
-                    {
                         "cats": [
                             "n_c1"
                         ],
@@ -4468,9 +4431,6 @@
                     }
                 ],
                 "join": [
-                    {
-                        "cats": []
-                    },
                     {
                         "cats": [
                             "n_c1"
