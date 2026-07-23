@@ -54,7 +54,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_to was part of the patrol that invited n_c:0 to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited n_c0 to c_n."
                         }
                     }
                 ],
@@ -73,7 +73,7 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_catwithkit_LnKt",
                 "strings": [
-                    "The patrol convinces the loner to join the Clan with {PRONOUN/n_c:0/poss} litter of kits."
+                    "The patrol convinces the loner to join the Clan with {PRONOUN/n_c0/poss} litter of kits."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -120,7 +120,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_to was part of the patrol that invited n_c:0 and {PRONOUN/n_c:0/poss} kits to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited n_c0 and {PRONOUN/n_c0/poss} kits to c_n."
                         }
                     }
                 ],
@@ -177,7 +177,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The loner is unimpressed by their hostility and decides this Clan is not for {PRONOUN/n_c:0/object}."
+                    "The loner is unimpressed by their hostility and decides this Clan is not for {PRONOUN/n_c0/object}."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -296,7 +296,7 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "One of them, n_c:0, is a healer, and {PRONOUN/n_c:0/subject}'d be happy to share {PRONOUN/n_c:0/poss} skills for a place in c_n. The two are brought back to camp."
+                    "One of them, n_c0, is a healer, and {PRONOUN/n_c0/subject}'d be happy to share {PRONOUN/n_c0/poss} skills for a place in c_n. The two are brought back to camp."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -421,7 +421,7 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "One of them, n_c:0, is learning to be a healer, and {PRONOUN/n_c:0/subject}'d be happy to share {PRONOUN/n_c:0/poss} skills for a place in c_n. Considering their age, the patrol feels obligated to bring the young cats back to camp."
+                    "One of them, n_c0, is learning to be a healer, and {PRONOUN/n_c0/subject}'d be happy to share {PRONOUN/n_c0/poss} skills for a place in c_n. Considering their age, the patrol feels obligated to bring the young cats back to camp."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -579,7 +579,7 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "One of them, n_c:0, is a healer, and {PRONOUN/n_c:0/subject}'d be happy to share {PRONOUN/n_c:0/poss} skills if {PRONOUN/n_c:0/subject} and {PRONOUN/n_c:0/poss} child could join c_n. The two are brought back to camp."
+                    "One of them, n_c0, is a healer, and {PRONOUN/n_c0/subject}'d be happy to share {PRONOUN/n_c0/poss} skills if {PRONOUN/n_c0/subject} and {PRONOUN/n_c0/poss} child could join c_n. The two are brought back to camp."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -725,7 +725,7 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "One of them, n_c:1, is a healer, and {PRONOUN/n_c:1/subject}'d be happy to share {PRONOUN/n_c:1/poss} skills if {PRONOUN/n_c:1/subject} and {PRONOUN/n_c:1/poss} little sibling could join c_n. The two are brought back to camp."
+                    "One of them, n_c1, is a healer, and {PRONOUN/n_c1/subject}'d be happy to share {PRONOUN/n_c1/poss} skills if {PRONOUN/n_c1/subject} and {PRONOUN/n_c1/poss} little sibling could join c_n. The two are brought back to camp."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -884,7 +884,7 @@
                 "frequency": 2,
                 "outcome_art": "cat_sprites/catwithkit_LnKt",
                 "strings": [
-                    "The two friends have been looking for a safe place ever since n_c:0 gave birth. They promise to earn their keep, and the patrol brings them back to camp with little further convincing."
+                    "The two friends have been looking for a safe place ever since n_c0 gave birth. They promise to earn their keep, and the patrol brings them back to camp with little further convincing."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -952,7 +952,7 @@
                         "amount": 25,
                         "mutual": true,
                         "log": {
-                            "cats_from": "cat_from's love for {PRONOUN/cat_from/poss} friend, n_c:0, transferred easily to {PRONOUN/n_c:0/poss} child, cat_to.",
+                            "cats_from": "cat_from's love for {PRONOUN/cat_from/poss} friend, n_c0, transferred easily to {PRONOUN/n_c0/poss} child, cat_to.",
                             "cats_to": "Having spent every moment of {PRONOUN/cat_to/poss} life alongside cat_from, cat_to nearly considers {PRONOUN/cat_from/object} a secondary parent."
                         }
                     }
@@ -979,7 +979,7 @@
                 "frequency": 2,
                 "outcome_art": "cat_sprites/catwithkit_LnKt",
                 "strings": [
-                    "The two have been looking for a safe place ever since n_c:0 gave birth. They promise to earn their keep, and the patrol brings them back to camp with little further convincing."
+                    "The two have been looking for a safe place ever since n_c0 gave birth. They promise to earn their keep, and the patrol brings them back to camp with little further convincing."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -1072,7 +1072,7 @@
                 "frequency": 2,
                 "outcome_art": "cat_sprites/catwithkit_LnKt",
                 "strings": [
-                    "The two siblings have been looking for a safe place ever since n_c:1 gave birth. They promise to earn their keep, and the patrol brings them back to camp with little further convincing."
+                    "The two siblings have been looking for a safe place ever since n_c1 gave birth. They promise to earn their keep, and the patrol brings them back to camp with little further convincing."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -1160,7 +1160,7 @@
                         "amount": 25,
                         "mutual": true,
                         "log": {
-                            "cats_from": "cat_from's love for {PRONOUN/cat_from/poss} sibling, n_c:0, transferred easily to {PRONOUN/n_c:0/poss} child, cat_to.",
+                            "cats_from": "cat_from's love for {PRONOUN/cat_from/poss} sibling, n_c0, transferred easily to {PRONOUN/n_c0/poss} child, cat_to.",
                             "cats_to": "Having spent every moment of {PRONOUN/cat_to/poss} life alongside cat_from, cat_to nearly considers {PRONOUN/cat_from/object} a secondary parent."
                         }
                     }
@@ -1447,7 +1447,7 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/catwithkit_LnKt",
                 "strings": [
-                    "p_l convinces the loner to join the Clan with {PRONOUN/n_c:0/poss} litter of kits."
+                    "p_l convinces the loner to join the Clan with {PRONOUN/n_c0/poss} litter of kits."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -1551,7 +1551,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The loner is unimpressed by their hostility and decides this Clan is not for {PRONOUN/n_c:0/object}."
+                    "The loner is unimpressed by their hostility and decides this Clan is not for {PRONOUN/n_c0/object}."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -1660,7 +1660,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The patrol convinces the kittypet to join the Clan with {PRONOUN/n_c:0/poss} litter of kits."
+                    "The patrol convinces the kittypet to join the Clan with {PRONOUN/n_c0/poss} litter of kits."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -1707,7 +1707,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_to was part of the patrol that invited n_c:0 and {PRONOUN/cat_from/poss} kits to c_n."
+                            "cats_from": "cat_to was part of the patrol that invited n_c0 and {PRONOUN/cat_from/poss} kits to c_n."
                         }
                     }
                 ],
@@ -1764,7 +1764,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The kittypet is taken aback by their hostility and decides that Clan life is not for {PRONOUN/n_c:0/object}."
+                    "The kittypet is taken aback by their hostility and decides that Clan life is not for {PRONOUN/n_c0/object}."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -1854,7 +1854,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l convinces the kittypet to join the Clan with {PRONOUN/n_c:0/poss} litter of kits."
+                    "p_l convinces the kittypet to join the Clan with {PRONOUN/n_c0/poss} litter of kits."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -1958,7 +1958,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The kittypet is taken aback by p_l's hostility and decides that Clan life is not for {PRONOUN/n_c:0/object}."
+                    "The kittypet is taken aback by p_l's hostility and decides that Clan life is not for {PRONOUN/n_c0/object}."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2000,7 +2000,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/woundedcatrescue_WrLn",
                 "strings": [
-                    "The patrol approaches the injured cat and sees signs of life. They gingerly pick up the cat and take {PRONOUN/n_c:0/object} back to camp to be treated by the medicine cat. The cat is grateful for their help and decides to join the Clan."
+                    "The patrol approaches the injured cat and sees signs of life. They gingerly pick up the cat and take {PRONOUN/n_c0/object} back to camp to be treated by the medicine cat. The cat is grateful for their help and decides to join the Clan."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2064,7 +2064,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As r_c0 inspects the cat, {PRONOUN/r_c0/subject} {VERB/r_c0/find/finds} that {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} already hunting with {PRONOUN/n_c:0/poss} ancestors."
+                    "As r_c0 inspects the cat, {PRONOUN/r_c0/subject} {VERB/r_c0/find/finds} that {PRONOUN/n_c0/subject} {VERB/n_c0/are/is} already hunting with {PRONOUN/n_c0/poss} ancestors."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2085,7 +2085,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The cats attempt to carry the cat back to camp, but {PRONOUN/n_c:0/subject} {VERB/n_c:0/pass/passes} on the way. They stop to bury the cat before continuing home."
+                    "The cats attempt to carry the cat back to camp, but {PRONOUN/n_c0/subject} {VERB/n_c0/pass/passes} on the way. They stop to bury the cat before continuing home."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2120,7 +2120,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol tries to drive the cat away, but {PRONOUN/n_c:0/subject} {VERB/n_c:0/trip/trips} and {VERB/n_c:0/stumble/stumbles} over a loose twig. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/lie/lies} on the ground and {VERB/n_c:0/don't/doesn't} get back up. The patrol takes a bit of time to bury {PRONOUN/n_c:0/object}, just to keep the scavengers away."
+                    "The patrol tries to drive the cat away, but {PRONOUN/n_c0/subject} {VERB/n_c0/trip/trips} and {VERB/n_c0/stumble/stumbles} over a loose twig. {PRONOUN/n_c0/subject/CAP} {VERB/n_c0/lie/lies} on the ground and {VERB/n_c0/don't/doesn't} get back up. The patrol takes a bit of time to bury {PRONOUN/n_c0/object}, just to keep the scavengers away."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2165,7 +2165,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/woundedcatrescue_WrLn",
                 "strings": [
-                    "p_l approaches the injured cat and sees signs of life. {PRONOUN/p_l/subject/CAP} gingerly {VERB/p_l/pick/picks} up the cat and {VERB/p_l/take/takes} {PRONOUN/n_c:0/object} back to camp to be treated by the medicine cat. The cat is grateful for their help and decides to join the Clan."
+                    "p_l approaches the injured cat and sees signs of life. {PRONOUN/p_l/subject/CAP} gingerly {VERB/p_l/pick/picks} up the cat and {VERB/p_l/take/takes} {PRONOUN/n_c0/object} back to camp to be treated by the medicine cat. The cat is grateful for their help and decides to join the Clan."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2229,7 +2229,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As p_l inspects the cat, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} that {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} already hunting with {PRONOUN/n_c:0/poss} ancestors."
+                    "As p_l inspects the cat, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} that {PRONOUN/n_c0/subject} {VERB/n_c0/are/is} already hunting with {PRONOUN/n_c0/poss} ancestors."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2271,7 +2271,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l tries to drive the cat away, but {PRONOUN/n_c:0/subject} {VERB/n_c:0/trip/trips} and {VERB/n_c:0/stumble/stumbles} over a loose twig. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/lie/lies} on the ground and {VERB/n_c:0/don't/doesn't} get back up. p_l takes a bit of time to bury {PRONOUN/n_c:0/object}, just to keep the scavengers away."
+                    "p_l tries to drive the cat away, but {PRONOUN/n_c0/subject} {VERB/n_c0/trip/trips} and {VERB/n_c0/stumble/stumbles} over a loose twig. {PRONOUN/n_c0/subject/CAP} {VERB/n_c0/lie/lies} on the ground and {VERB/n_c0/don't/doesn't} get back up. p_l takes a bit of time to bury {PRONOUN/n_c0/object}, just to keep the scavengers away."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2319,7 +2319,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. p_l doesn't care if this kittypet wants {PRONOUN/n_c:0/poss} Twoleg. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/smell/smells} sick and needs medicine cat attention."
+                    "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c0/poss} Twoleg's name. p_l doesn't care if this kittypet wants {PRONOUN/n_c0/poss} Twoleg. {PRONOUN/n_c0/subject/CAP} {VERB/n_c0/smell/smells} sick and needs medicine cat attention."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2352,7 +2352,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_to was part of the patrol that took in n_c:0 when {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} sick."
+                            "cats_from": "cat_to was part of the patrol that took in n_c0 when {PRONOUN/n_c0/subject} {VERB/n_c0/were/was} sick."
                         }
                     }
                 ],
@@ -2378,7 +2378,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. s_c0 steps up and tells the patrol they'll be taking this kittypet back to camp for healing — in Tigger's name. {PRONOUN/s_c0/subject/CAP}'ll tell the story later."
+                    "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c0/poss} Twoleg's name. s_c0 steps up and tells the patrol they'll be taking this kittypet back to camp for healing — in Tigger's name. {PRONOUN/s_c0/subject/CAP}'ll tell the story later."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -2422,7 +2422,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_to was part of the patrol that took in n_c:0 when {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} sick."
+                            "cats_from": "cat_to was part of the patrol that took in n_c0 when {PRONOUN/n_c0/subject} {VERB/n_c0/were/was} sick."
                         }
                     }
                 ],
@@ -2508,7 +2508,7 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "cat_to was part of the patrol that <i>rudely</i> stepped over n_c:0 when {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} hiding with {PRONOUN/n_c:0/poss} kits from Clan cats."
+                            "cats_from": "cat_to was part of the patrol that <i>rudely</i> stepped over n_c0 when {PRONOUN/n_c0/subject} {VERB/n_c0/were/was} hiding with {PRONOUN/n_c0/poss} kits from Clan cats."
                         }
                     },
                     {
@@ -2523,7 +2523,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "n_c0 surprised cat_from when cat_from's patrol almost stepped over n_c:0 and {PRONOUN/n_c:0/poss} kits on accident."
+                            "cats_from": "n_c0 surprised cat_from when cat_from's patrol almost stepped over n_c0 and {PRONOUN/n_c0/poss} kits on accident."
                         }
                     }
                 ],
@@ -2587,7 +2587,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They drive the struggling kittypet off c_n territory, protecting the Clan from a source of sickness, no matter the cost."
+                    "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c0/poss} Twoleg's name. They drive the struggling kittypet off c_n territory, protecting the Clan from a source of sickness, no matter the cost."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2620,7 +2620,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c:0/poss} Twoleg's name. They try to drive the kittypet off, but {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} too weak and the warriors too practiced at unnecessarily strong battle moves."
+                    "The patrol immediately stops their border marking and switches to tracking the scent of the intruder instead. At the end of the trail they find an old kittypet, wheezing {PRONOUN/n_c0/poss} Twoleg's name. They try to drive the kittypet off, but {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} too weak and the warriors too practiced at unnecessarily strong battle moves."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2676,7 +2676,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bumpheads_WrLn",
                 "strings": [
-                    "There's no guarantee that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} still in the area, so p_l tastes the air to pick up {PRONOUN/n_c:0/poss} scent. n_c:0 is basking on some Twoleg rubbish, but when {PRONOUN/n_c:0/subject} {VERB/n_c:0/spot/spots} p_l, {PRONOUN/n_c:0/subject} {VERB/n_c:0/jump/jumps} down, trotting over with tail up, happily touching noses with p_l."
+                    "There's no guarantee that {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} still in the area, so p_l tastes the air to pick up {PRONOUN/n_c0/poss} scent. n_c0 is basking on some Twoleg rubbish, but when {PRONOUN/n_c0/subject} {VERB/n_c0/spot/spots} p_l, {PRONOUN/n_c0/subject} {VERB/n_c0/jump/jumps} down, trotting over with tail up, happily touching noses with p_l."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2709,8 +2709,8 @@
                         ],
                         "amount": 30,
                         "log": {
-                            "cats_from": "n_c0 met {PRONOUN/n_c:0/poss} Clancat friend, cat_to, over the border.",
-                            "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner friend, n_c:0, over the border."
+                            "cats_from": "n_c0 met {PRONOUN/n_c0/poss} Clancat friend, cat_to, over the border.",
+                            "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner friend, n_c0, over the border."
                         }
                     }
                 ]
@@ -2719,7 +2719,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_matesheadbump_OwWr",
                 "strings": [
-                    "Since n_c:0 stumbled into {PRONOUN/p_l/poss} life, everything's changed. p_l knows how this ends, knows n_c:0 has refused the chance to meet c_n, but {PRONOUN/p_l/subject}'d never trade the flutter in {PRONOUN/p_l/poss} whiskers, the thrill in {PRONOUN/p_l/poss} heart at these stolen moments. This isn't going to last, but that isn't going to stop {PRONOUN/p_l/object}."
+                    "Since n_c0 stumbled into {PRONOUN/p_l/poss} life, everything's changed. p_l knows how this ends, knows n_c0 has refused the chance to meet c_n, but {PRONOUN/p_l/subject}'d never trade the flutter in {PRONOUN/p_l/poss} whiskers, the thrill in {PRONOUN/p_l/poss} heart at these stolen moments. This isn't going to last, but that isn't going to stop {PRONOUN/p_l/object}."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2769,8 +2769,8 @@
                         ],
                         "amount": 50,
                         "log": {
-                            "cats_from": "n_c0 met {PRONOUN/n_c:0/poss} Clancat mate, cat_to, over the border.",
-                            "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner mate, n_c:0, over the border."
+                            "cats_from": "n_c0 met {PRONOUN/n_c0/poss} Clancat mate, cat_to, over the border.",
+                            "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner mate, n_c0, over the border."
                         }
                     }
                 ]
@@ -2779,7 +2779,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_matesheadbump_OwWr",
                 "strings": [
-                    "The sweetest times last the least long. Every heartbeat spent with n_c:0 is uncertain, new, exciting, and as temporary as a flower's bloom. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/aren't/isn't} coming home with p_l, p_l's accepted that. But they can still see each other, for as long as n_c:0 lingers near c_n's borders."
+                    "The sweetest times last the least long. Every heartbeat spent with n_c0 is uncertain, new, exciting, and as temporary as a flower's bloom. {PRONOUN/n_c0/subject/CAP} {VERB/n_c0/aren't/isn't} coming home with p_l, p_l's accepted that. But they can still see each other, for as long as n_c0 lingers near c_n's borders."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2829,8 +2829,8 @@
                         ],
                         "amount": 50,
                         "log": {
-                            "cats_from": "n_c0 met {PRONOUN/n_c:0/poss} Clancat mate, cat_to, over the border.",
-                            "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner mate, n_c:0, over the border."
+                            "cats_from": "n_c0 met {PRONOUN/n_c0/poss} Clancat mate, cat_to, over the border.",
+                            "cats_to": "cat_to met {PRONOUN/cat_to/poss} loner mate, n_c0, over the border."
                         }
                     }
                 ]
@@ -2839,7 +2839,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_matesheadbump_OwWr",
                 "strings": [
-                    "n_c0 is still here. p_l's heart leaps and drops with every single visit, each time a gamble on if {PRONOUN/p_l/poss} hidden love will still be there for the next stolen moment. {PRONOUN/p_l/subject/CAP} can't take the uncertainty for much longer, but {PRONOUN/p_l/subject} can't let go of this connection {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} either. Please, <i>please</i> n_c:0, come back to c_n. Stay."
+                    "n_c0 is still here. p_l's heart leaps and drops with every single visit, each time a gamble on if {PRONOUN/p_l/poss} hidden love will still be there for the next stolen moment. {PRONOUN/p_l/subject/CAP} can't take the uncertainty for much longer, but {PRONOUN/p_l/subject} can't let go of this connection {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} either. Please, <i>please</i> n_c0, come back to c_n. Stay."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2872,8 +2872,8 @@
                         ],
                         "amount": 30,
                         "log": {
-                            "cats_from": "cat_to convinced n_c:0 to join {PRONOUN/cat_to/poss} Clan and stay with {PRONOUN/cat_to/object}.",
-                            "cats_to": "cat_to convinced {PRONOUN/cat_to/poss} mate, n_c:0, to join the Clan and stay with {PRONOUN/cat_to/object}."
+                            "cats_from": "cat_to convinced n_c0 to join {PRONOUN/cat_to/poss} Clan and stay with {PRONOUN/cat_to/object}.",
+                            "cats_to": "cat_to convinced {PRONOUN/cat_to/poss} mate, n_c0, to join the Clan and stay with {PRONOUN/cat_to/object}."
                         }
                     },
                     {
@@ -2908,7 +2908,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "Upon n_c:0 joining the Clan, it was found out that cat_to and n_c:0 were in a forbidden relationship. cat_to hid this secret from the rest of the Clan."
+                            "cats_from": "Upon n_c0 joining the Clan, it was found out that cat_to and n_c0 were in a forbidden relationship. cat_to hid this secret from the rest of the Clan."
                         }
                     }
                 ],
@@ -2926,7 +2926,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_flowerdate_WrLn",
                 "strings": [
-                    "The sweetest times last the least long. Every heartbeat spent with n_c:0 is uncertain, new, exciting, and as temporary as a flower's bloom. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/aren't/isn't} coming home with p_l, p_l's accepted that. But the thing is, p_l can go with {PRONOUN/n_c:0/object}."
+                    "The sweetest times last the least long. Every heartbeat spent with n_c0 is uncertain, new, exciting, and as temporary as a flower's bloom. {PRONOUN/n_c0/subject/CAP} {VERB/n_c0/aren't/isn't} coming home with p_l, p_l's accepted that. But the thing is, p_l can go with {PRONOUN/n_c0/object}."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -2973,7 +2973,7 @@
                         ],
                         "amount": 50,
                         "log": {
-                            "cats_from": "cat_to decided to run away from {PRONOUN/cat_to/poss} Clan to be with n_c:0."
+                            "cats_from": "cat_to decided to run away from {PRONOUN/cat_to/poss} Clan to be with n_c0."
                         }
                     }
                 ],
@@ -2988,7 +2988,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "{PRONOUN/n_c:0/subject/CAP}{VERB/n_c:0/'re/'s} gone. p_l desperately searches for {PRONOUN/n_c:0/poss} scent, but n_c:0 has moved on from the lands just outside c_n's borders. It's not like p_l wasn't warned, by the Clan, by their traditions, by n_c:0 {PRONOUN/n_c:0/self} who said {PRONOUN/n_c:0/subject} could only stay for so long, but..."
+                    "{PRONOUN/n_c0/subject/CAP}{VERB/n_c0/'re/'s} gone. p_l desperately searches for {PRONOUN/n_c0/poss} scent, but n_c0 has moved on from the lands just outside c_n's borders. It's not like p_l wasn't warned, by the Clan, by their traditions, by n_c0 {PRONOUN/n_c0/self} who said {PRONOUN/n_c0/subject} could only stay for so long, but..."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -3018,7 +3018,7 @@
                         ],
                         "amount": 30,
                         "log": {
-                            "cats_from": "cat_to tried to meet {PRONOUN/cat_to/poss} mate, n_c:0, by the border, but {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} gone already."
+                            "cats_from": "cat_to tried to meet {PRONOUN/cat_to/poss} mate, n_c0, by the border, but {PRONOUN/n_c0/subject} {VERB/n_c0/were/was} gone already."
                         }
                     },
                     {
@@ -3045,7 +3045,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Come back to c_n, p_l urges when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} n_c:0, resuming the argument they've been having. Come back, join c_n, be p_l's mate for real. But n_c:0 shakes {PRONOUN/n_c:0/poss} head. Freedom isn't given up so lightly. <br>Then leave. Leave, and if p_l ever sees n_c:0 again, well, p_l will <i>not</i> forgive this."
+                    "Come back to c_n, p_l urges when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} n_c0, resuming the argument they've been having. Come back, join c_n, be p_l's mate for real. But n_c0 shakes {PRONOUN/n_c0/poss} head. Freedom isn't given up so lightly. <br>Then leave. Leave, and if p_l ever sees n_c0 again, well, p_l will <i>not</i> forgive this."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -3077,7 +3077,7 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "...but n_c:0 had already told cat_to that {PRONOUN/n_c:0/subject} refused to join. cat_to, who was tired of being separated from n_c:0, tried to pressure n_c:0 into joining {PRONOUN/cat_to/poss} Clan but n_c:0 still refused. cat_to then told {PRONOUN/n_c:0/poss} to leave and never return."
+                            "cats_from": "...but n_c0 had already told cat_to that {PRONOUN/n_c0/subject} refused to join. cat_to, who was tired of being separated from n_c0, tried to pressure n_c0 into joining {PRONOUN/cat_to/poss} Clan but n_c0 still refused. cat_to then told {PRONOUN/n_c0/poss} to leave and never return."
                         }
                     },
                     {
@@ -3094,7 +3094,7 @@
                         ],
                         "amount": 30,
                         "log": {
-                            "cats_from": "The two cats had been discussing whether n_c:0 should finally join c_n or not. They would finally be together for real if {PRONOUN/n_c:0/subject} joined..."
+                            "cats_from": "The two cats had been discussing whether n_c0 should finally join c_n or not. They would finally be together for real if {PRONOUN/n_c0/subject} joined..."
                         }
                     },
                     {
@@ -3110,7 +3110,7 @@
                         ],
                         "amount": 40,
                         "log": {
-                            "cats_from": "cat_to and n_c:0 were mates hiding their relationship from cat_to's Clan."
+                            "cats_from": "cat_to and n_c0 were mates hiding their relationship from cat_to's Clan."
                         }
                     }
                 ]
@@ -3120,7 +3120,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Come back to c_n, p_l urges when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} n_c:0, resuming the argument they've been having. It's useless. In response to p_l urging {PRONOUN/n_c:0/object}, hounding {PRONOUN/n_c:0/object}, demanding things n_c:0 isn't prepared to give, the loner simply turns {PRONOUN/n_c:0/poss} back, walking away for the last time."
+                    "Come back to c_n, p_l urges when {PRONOUN/p_l/subject} {VERB/p_l/find/finds} n_c0, resuming the argument they've been having. It's useless. In response to p_l urging {PRONOUN/n_c0/object}, hounding {PRONOUN/n_c0/object}, demanding things n_c0 isn't prepared to give, the loner simply turns {PRONOUN/n_c0/poss} back, walking away for the last time."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -3152,7 +3152,7 @@
                         ],
                         "amount": -50,
                         "log": {
-                            "cats_from": "...but n_c:0 said {PRONOUN/n_c:0/subject} {VERB/n_c:0/weren't/wasn't} ready to join. cat_to, who was tired of n_c:0's indecision, tried to coerce n_c:0 into joining {PRONOUN/cat_to/poss} Clan but n_c:0 wasn't having it, sick of cat_to's pressuring."
+                            "cats_from": "...but n_c0 said {PRONOUN/n_c0/subject} {VERB/n_c0/weren't/wasn't} ready to join. cat_to, who was tired of n_c0's indecision, tried to coerce n_c0 into joining {PRONOUN/cat_to/poss} Clan but n_c0 wasn't having it, sick of cat_to's pressuring."
                         }
                     },
                     {
@@ -3169,7 +3169,7 @@
                         ],
                         "amount": 30,
                         "log": {
-                            "cats_from": "The two cats had been discussing whether n_c:0 should finally join c_n or not. They would finally be together for real if {PRONOUN/n_c:0/subject} joined..."
+                            "cats_from": "The two cats had been discussing whether n_c0 should finally join c_n or not. They would finally be together for real if {PRONOUN/n_c0/subject} joined..."
                         }
                     },
                     {
@@ -3185,7 +3185,7 @@
                         ],
                         "amount": 40,
                         "log": {
-                            "cats_from": "cat_to and n_c:0 were mates hiding their relationship from cat_to's Clan."
+                            "cats_from": "cat_to and n_c0 were mates hiding their relationship from cat_to's Clan."
                         }
                     }
                 ]
@@ -3491,7 +3491,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The new medicine cat is welcomed into the Clan along with {PRONOUN/n_c:0/poss} litter of kits."
+                    "The new medicine cat is welcomed into the Clan along with {PRONOUN/n_c0/poss} litter of kits."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -3598,7 +3598,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The loner is unimpressed by their hostility and decides this Clan is not for {PRONOUN/n_c:0/object}."
+                    "The loner is unimpressed by their hostility and decides this Clan is not for {PRONOUN/n_c0/object}."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -3707,7 +3707,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The new medicine cat is welcomed into the Clan along with {PRONOUN/n_c:0/poss} litter of kits."
+                    "The new medicine cat is welcomed into the Clan along with {PRONOUN/n_c0/poss} litter of kits."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -3814,7 +3814,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The loner is unimpressed by their hostility and decides this Clan is not for {PRONOUN/n_c:0/object}."
+                    "The loner is unimpressed by their hostility and decides this Clan is not for {PRONOUN/n_c0/object}."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -3901,7 +3901,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_to was part of the patrol that saved n_c:0 from a dog."
+                            "cats_from": "cat_to was part of the patrol that saved n_c0 from a dog."
                         }
                     }
                 ],
@@ -3955,7 +3955,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_to was part of the patrol that saved n_c:0 from a dog."
+                            "cats_from": "cat_to was part of the patrol that saved n_c0 from a dog."
                         }
                     }
                 ],
@@ -3972,7 +3972,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c0 stayed hidden while the rest of the patrol lured the dog away, but when {PRONOUN/r_c0/subject} {VERB/r_c0/go/goes} to find the cat, {PRONOUN/r_c0/subject} {VERB/r_c0/see/sees} that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} still running! Oh well, at least {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} alright."
+                    "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c0 stayed hidden while the rest of the patrol lured the dog away, but when {PRONOUN/r_c0/subject} {VERB/r_c0/go/goes} to find the cat, {PRONOUN/r_c0/subject} {VERB/r_c0/see/sees} that {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} still running! Oh well, at least {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} alright."
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -4072,7 +4072,7 @@
                         ],
                         "amount": -40,
                         "log": {
-                            "cats_from": "cat_to was part of the patrol that watched n_c:0 get chased by a dog instead of helping {PRONOUN/n_c:0/object}."
+                            "cats_from": "cat_to was part of the patrol that watched n_c0 get chased by a dog instead of helping {PRONOUN/n_c0/object}."
                         }
                     }
                 ]
@@ -4112,7 +4112,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds {PRONOUN/p_l/self} nose to nose with a panting, bleeding queen, one desperately trying to keep {PRONOUN/n_c:0/poss} newborn litter quiet. p_l brings the queen back to camp where the Clan can assist."
+                    "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds {PRONOUN/p_l/self} nose to nose with a panting, bleeding queen, one desperately trying to keep {PRONOUN/n_c0/poss} newborn litter quiet. p_l brings the queen back to camp where the Clan can assist."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -4180,7 +4180,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l follows the strange sounds on the wind and finds a struggling queen with {PRONOUN/n_c:0/poss} newborn kits clinging to {PRONOUN/n_c:0/object}. r_c0 sprints back to camp to find help while p_l tries to make the queen eat some strengthening herbs. Thankful for the help, the queen joins c_n with {PRONOUN/n_c:0/poss} kits."
+                    "p_l follows the strange sounds on the wind and finds a struggling queen with {PRONOUN/n_c0/poss} newborn kits clinging to {PRONOUN/n_c0/object}. r_c0 sprints back to camp to find help while p_l tries to make the queen eat some strengthening herbs. Thankful for the help, the queen joins c_n with {PRONOUN/n_c0/poss} kits."
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -4317,7 +4317,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Sure that it is a sign from StarClan, p_l follows the faint wailing. Instead, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost {PRONOUN/n_c:0/poss} life in a harsh kitting, {PRONOUN/n_c:0/poss} newborn kits clinging to a body that will never move again. p_l instantly wraps {PRONOUN/p_l/self} around the kits and orders r_c0 back to camp to find help and a queen willing to nurse them."
+                    "Sure that it is a sign from StarClan, p_l follows the faint wailing. Instead, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost {PRONOUN/n_c0/poss} life in a harsh kitting, {PRONOUN/n_c0/poss} newborn kits clinging to a body that will never move again. p_l instantly wraps {PRONOUN/p_l/self} around the kits and orders r_c0 back to camp to find help and a queen willing to nurse them."
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -4394,7 +4394,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, {PRONOUN/n_c:0/poss} newborn kits by {PRONOUN/n_c:0/poss} side. p_l makes sure the queen is given a vigil. As the kits grow older, they'll have questions about their parent."
+                    "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, {PRONOUN/n_c0/poss} newborn kits by {PRONOUN/n_c0/poss} side. p_l makes sure the queen is given a vigil. As the kits grow older, they'll have questions about their parent."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -4546,7 +4546,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds {PRONOUN/p_l/self} nose to nose with a panting, bleeding queen, one desperately trying to keep {PRONOUN/n_c:0/poss} newborn litter quiet. p_l brings the queen back to camp where the Clan can assist."
+                    "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds {PRONOUN/p_l/self} nose to nose with a panting, bleeding queen, one desperately trying to keep {PRONOUN/n_c0/poss} newborn litter quiet. p_l brings the queen back to camp where the Clan can assist."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -4614,7 +4614,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l follows the strange sounds on the wind and finds a struggling queen with {PRONOUN/n_c:0/poss} newborn kits clinging to {PRONOUN/n_c:0/object}. p_l tries to make the queen eat some strengthening herbs and slowly helps {PRONOUN/n_c:0/object} back to camp. Thankful for the help, the queen joins c_n with {PRONOUN/n_c:0/poss} kits."
+                    "p_l follows the strange sounds on the wind and finds a struggling queen with {PRONOUN/n_c0/poss} newborn kits clinging to {PRONOUN/n_c0/object}. p_l tries to make the queen eat some strengthening herbs and slowly helps {PRONOUN/n_c0/object} back to camp. Thankful for the help, the queen joins c_n with {PRONOUN/n_c0/poss} kits."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -4755,7 +4755,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Sure that it is a sign from StarClan, p_l follows the faint wailing. Instead, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost {PRONOUN/n_c:0/poss} life in a harsh kitting, {PRONOUN/n_c:0/poss} newborn kits clinging to a body that will never move again. p_l instantly wraps {PRONOUN/p_l/self} around the kits and starts thinking about what {PRONOUN/p_l/subject}'ll need to do to move them to camp."
+                    "Sure that it is a sign from StarClan, p_l follows the faint wailing. Instead, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost {PRONOUN/n_c0/poss} life in a harsh kitting, {PRONOUN/n_c0/poss} newborn kits clinging to a body that will never move again. p_l instantly wraps {PRONOUN/p_l/self} around the kits and starts thinking about what {PRONOUN/p_l/subject}'ll need to do to move them to camp."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -4831,7 +4831,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/find/finds} the hidden birthing nest of a dead, cold queen, {PRONOUN/n_c:0/poss} newborn kits by {PRONOUN/n_c:0/poss} side. p_l makes sure the queen is given a vigil. As the kits grow older, they'll have questions about their parent."
+                    "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/find/finds} the hidden birthing nest of a dead, cold queen, {PRONOUN/n_c0/poss} newborn kits by {PRONOUN/n_c0/poss} side. p_l makes sure the queen is given a vigil. As the kits grow older, they'll have questions about their parent."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -4976,7 +4976,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds {PRONOUN/p_l/self} nose to nose with a panting, bleeding queen, one desperately trying to keep {PRONOUN/n_c:0/poss} newborn litter quiet. {PRONOUN/p_l/subject/CAP} {VERB/p_l/run/runs} for home, desperate to bring help."
+                    "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds {PRONOUN/p_l/self} nose to nose with a panting, bleeding queen, one desperately trying to keep {PRONOUN/n_c0/poss} newborn litter quiet. {PRONOUN/p_l/subject/CAP} {VERB/p_l/run/runs} for home, desperate to bring help."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -5044,7 +5044,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l follows the strange sounds on the wind and finds a struggling queen with {PRONOUN/n_c:0/poss} newborn kits clinging to {PRONOUN/n_c:0/object}. Panicking, {PRONOUN/p_l/subject} {VERB/p_l/ask/asks} the queen to hold on just a little longer while {PRONOUN/p_l/subject} {VERB/p_l/fetch/fetches} help, then {VERB/p_l/sprint/sprints} for home, yowling in case any patrol is nearby to assist."
+                    "p_l follows the strange sounds on the wind and finds a struggling queen with {PRONOUN/n_c0/poss} newborn kits clinging to {PRONOUN/n_c0/object}. Panicking, {PRONOUN/p_l/subject} {VERB/p_l/ask/asks} the queen to hold on just a little longer while {PRONOUN/p_l/subject} {VERB/p_l/fetch/fetches} help, then {VERB/p_l/sprint/sprints} for home, yowling in case any patrol is nearby to assist."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -5191,7 +5191,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Sure that it is a sign from StarClan, p_l follows the faint wailing. Instead, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost {PRONOUN/n_c:0/poss} life in a harsh kitting, {PRONOUN/n_c:0/poss} newborn kits clinging to a body that will never move again. p_l tries to comfort the poor kittens, curling around them to share {PRONOUN/p_l/poss} body heat, and wails until a passing patrol hears {PRONOUN/p_l/object}."
+                    "Sure that it is a sign from StarClan, p_l follows the faint wailing. Instead, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a queen who lost {PRONOUN/n_c0/poss} life in a harsh kitting, {PRONOUN/n_c0/poss} newborn kits clinging to a body that will never move again. p_l tries to comfort the poor kittens, curling around them to share {PRONOUN/p_l/poss} body heat, and wails until a passing patrol hears {PRONOUN/p_l/object}."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -5264,7 +5264,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, {PRONOUN/n_c:0/poss} newborn kits by {PRONOUN/n_c:0/poss} side. p_l vows to be the new kits' family, to make sure they'll grow up loved and accepted."
+                    "It takes ages for p_l to pinpoint the sounds, but eventually {PRONOUN/p_l/subject} {VERB/p_l/uncover/uncovers} the hidden birthing nest of a dead, cold queen, {PRONOUN/n_c0/poss} newborn kits by {PRONOUN/n_c0/poss} side. p_l vows to be the new kits' family, to make sure they'll grow up loved and accepted."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -5403,7 +5403,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c:0/self}. p_l greets {PRONOUN/n_c:0/object}, and as the loner's home isn't on c_n territory, it's a polite interaction without any hostility. The older cat looks like {PRONOUN/n_c:0/subject} could use a meal, so p_l invites {PRONOUN/n_c:0/object} to c_n's camp. The loner agrees."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. p_l greets {PRONOUN/n_c0/object}, and as the loner's home isn't on c_n territory, it's a polite interaction without any hostility. The older cat looks like {PRONOUN/n_c0/subject} could use a meal, so p_l invites {PRONOUN/n_c0/object} to c_n's camp. The loner agrees."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -5453,7 +5453,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} p_l, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} {PRONOUN/p_l/object} to sing along. Instead, p_l offers the strange, battered-looking cat an introduction to c_n. It's got to be far less lonely than {PRONOUN/n_c:0/poss} current life."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. When {PRONOUN/n_c0/subject} {VERB/n_c0/see/sees} p_l, {PRONOUN/n_c0/subject} {VERB/n_c0/invite/invites} {PRONOUN/p_l/object} to sing along. Instead, p_l offers the strange, battered-looking cat an introduction to c_n. It's got to be far less lonely than {PRONOUN/n_c0/poss} current life."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -5730,7 +5730,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c:0/self}. The patrol greets {PRONOUN/n_c:0/object}, and as the loner's home isn't on c_n territory, it's a polite interaction without any hostility. The older cat looks like {PRONOUN/n_c:0/subject} could use a meal, so p_l invites {PRONOUN/n_c:0/object} to c_n's camp. The loner agrees."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. The patrol greets {PRONOUN/n_c0/object}, and as the loner's home isn't on c_n territory, it's a polite interaction without any hostility. The older cat looks like {PRONOUN/n_c0/subject} could use a meal, so p_l invites {PRONOUN/n_c0/object} to c_n's camp. The loner agrees."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -5780,7 +5780,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} r_c, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} them to sing along. Instead, r_c0 offers the strange, battered-looking cat an introduction to c_n. It's got to be far less lonely than {PRONOUN/n_c:0/poss} current life."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. When {PRONOUN/n_c0/subject} {VERB/n_c0/see/sees} r_c, {PRONOUN/n_c0/subject} {VERB/n_c0/invite/invites} them to sing along. Instead, r_c0 offers the strange, battered-looking cat an introduction to c_n. It's got to be far less lonely than {PRONOUN/n_c0/poss} current life."
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -6121,7 +6121,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l goes to check the bush and finds a loner sheepishly hiding inside. It seems the stranger was thinking of asking to join the Clan. {PRONOUN/n_c:0/subject/CAP}{VERB/n_c:0/'re/'s} a bit intimidated, but after speaking to p_l for a little while, {PRONOUN/n_c:0/subject} {VERB/n_c:0/decide/decides} to join the Clan."
+                    "p_l goes to check the bush and finds a loner sheepishly hiding inside. It seems the stranger was thinking of asking to join the Clan. {PRONOUN/n_c0/subject/CAP}{VERB/n_c0/'re/'s} a bit intimidated, but after speaking to p_l for a little while, {PRONOUN/n_c0/subject} {VERB/n_c0/decide/decides} to join the Clan."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -6168,7 +6168,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l pads towards the bush to check on the noise when a rabbit bursts out with a young cat chasing it! Impressed with {PRONOUN/n_c:0/poss} hunting skills, p_l stops the cat and invites {PRONOUN/n_c:0/object} to join the Clan, to which the young cat agrees."
+                    "p_l pads towards the bush to check on the noise when a rabbit bursts out with a young cat chasing it! Impressed with {PRONOUN/n_c0/poss} hunting skills, p_l stops the cat and invites {PRONOUN/n_c0/object} to join the Clan, to which the young cat agrees."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -6366,7 +6366,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "A loner and {PRONOUN/n_c:0/poss} kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/inform/informs} {PRONOUN/p_l/object} there's no room in c_n."
+                    "A loner and {PRONOUN/n_c0/poss} kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/inform/informs} {PRONOUN/p_l/object} there's no room in c_n."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -6400,7 +6400,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "A loner and {PRONOUN/n_c:0/poss} kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/tell/tells} the loner {PRONOUN/p_l/subject} meant it when {PRONOUN/p_l/subject} said {PRONOUN/p_l/subject} didn't want to see them again. The loner hisses and scratches at p_l. Rumors start at camp over what p_l said to the loner."
+                    "A loner and {PRONOUN/n_c0/poss} kits emerge from the bush, but p_l shakes {PRONOUN/p_l/poss} head, and {VERB/p_l/tell/tells} the loner {PRONOUN/p_l/subject} meant it when {PRONOUN/p_l/subject} said {PRONOUN/p_l/subject} didn't want to see them again. The loner hisses and scratches at p_l. Rumors start at camp over what p_l said to the loner."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -6475,7 +6475,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c:0/self}. The patrol greets {PRONOUN/n_c:0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility. The older cat looks like {PRONOUN/n_c:0/subject} could use a meal, so p_l invites {PRONOUN/n_c:0/object} to c_n's camp. The loner agrees."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. The patrol greets {PRONOUN/n_c0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility. The older cat looks like {PRONOUN/n_c0/subject} could use a meal, so p_l invites {PRONOUN/n_c0/object} to c_n's camp. The loner agrees."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -6525,7 +6525,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} the patrol, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} them to sing too. Instead, p_l offers the somewhat battered-looking and strange cat an introduction to c_n. It's got to be far less lonely than {PRONOUN/n_c:0/poss} current life."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. When {PRONOUN/n_c0/subject} {VERB/n_c0/see/sees} the patrol, {PRONOUN/n_c0/subject} {VERB/n_c0/invite/invites} them to sing too. Instead, p_l offers the somewhat battered-looking and strange cat an introduction to c_n. It's got to be far less lonely than {PRONOUN/n_c0/poss} current life."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -6808,7 +6808,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c:0/self}. p_l greets {PRONOUN/n_c:0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility. The older cat looks like {PRONOUN/n_c:0/subject} could use a meal, so p_l invites {PRONOUN/n_c:0/object} to c_n's camp. The loner agrees."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. p_l greets {PRONOUN/n_c0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility. The older cat looks like {PRONOUN/n_c0/subject} could use a meal, so p_l invites {PRONOUN/n_c0/object} to c_n's camp. The loner agrees."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -6858,7 +6858,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} p_l, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} {PRONOUN/p_l/object} to sing too. Instead, p_l offers the somewhat battered-looking and strange cat an introduction to c_n. It's got to be far less lonely than {PRONOUN/n_c:0/poss} current life."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. When {PRONOUN/n_c0/subject} {VERB/n_c0/see/sees} p_l, {PRONOUN/n_c0/subject} {VERB/n_c0/invite/invites} {PRONOUN/p_l/object} to sing too. Instead, p_l offers the somewhat battered-looking and strange cat an introduction to c_n. It's got to be far less lonely than {PRONOUN/n_c0/poss} current life."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -7463,7 +7463,7 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_kittypetfriendswithdog_Kp",
                 "strings": [
-                    "Confused, p_l turns towards the source of the voice. A plump kittypet bounds forwards, saying that {PRONOUN/n_c:0/poss} name is n_c:0, and asking p_l not to hurt {PRONOUN/n_c:0/poss} friend. It takes p_l a while to realize {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} talking about the dog. Too stunned to argue, p_l watches n_c:0 walk away, {PRONOUN/n_c:0/poss} canine companion excitedly following. The other warriors were not going to believe this!"
+                    "Confused, p_l turns towards the source of the voice. A plump kittypet bounds forwards, saying that {PRONOUN/n_c0/poss} name is n_c0, and asking p_l not to hurt {PRONOUN/n_c0/poss} friend. It takes p_l a while to realize {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} talking about the dog. Too stunned to argue, p_l watches n_c0 walk away, {PRONOUN/n_c0/poss} canine companion excitedly following. The other warriors were not going to believe this!"
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -7498,7 +7498,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_kittypetfriendswithdog_Kp",
                 "strings": [
-                    "s_c0 whirls around to find the source of the noise, and comes face-to-face with a startled looking kittypet. The kittypet stutters out an apology, hastily explaining that the dog is {PRONOUN/n_c:0/poss} friend, and nervously asking s_c0 not to hurt them. Any other day, s_c0 might have clawed <i>both</i> of their faces off, but right now, {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} in too much shock at the concept of a cat and dog being friends to even consider it."
+                    "s_c0 whirls around to find the source of the noise, and comes face-to-face with a startled looking kittypet. The kittypet stutters out an apology, hastily explaining that the dog is {PRONOUN/n_c0/poss} friend, and nervously asking s_c0 not to hurt them. Any other day, s_c0 might have clawed <i>both</i> of their faces off, but right now, {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} in too much shock at the concept of a cat and dog being friends to even consider it."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -7537,7 +7537,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_to": "cat_to was unsettled by n_c:0 being friends with the dog that was chasing {PRONOUN/cat_to/object}."
+                            "cats_to": "cat_to was unsettled by n_c0 being friends with the dog that was chasing {PRONOUN/cat_to/object}."
                         }
                     }
                 ]
@@ -7546,7 +7546,7 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_kittypetfriendswithdog_Kp",
                 "strings": [
-                    "p_l lashes out to swipe at the dog but is interrupted by a kittypet rushing to stand in {PRONOUN/p_l/poss} way. p_l's fur bristles for a moment, but the kittypet tells {PRONOUN/p_l/object} to calm down, that this is {PRONOUN/n_c:0/poss} friend. As p_l recovers from. <i>Whatever this is</i>, {PRONOUN/p_l/subject} offers the kittypet a place to stay in c_n. This kittypet's skill in communicating with dogs may come in handy later."
+                    "p_l lashes out to swipe at the dog but is interrupted by a kittypet rushing to stand in {PRONOUN/p_l/poss} way. p_l's fur bristles for a moment, but the kittypet tells {PRONOUN/p_l/object} to calm down, that this is {PRONOUN/n_c0/poss} friend. As p_l recovers from. <i>Whatever this is</i>, {PRONOUN/p_l/subject} offers the kittypet a place to stay in c_n. This kittypet's skill in communicating with dogs may come in handy later."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -7630,7 +7630,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_to lashed out at the n_c:0's dog friend after it nipped at {PRONOUN/cat_to/poss} ear."
+                            "cats_from": "cat_to lashed out at the n_c0's dog friend after it nipped at {PRONOUN/cat_to/poss} ear."
                         }
                     }
                 ],
@@ -7651,7 +7651,7 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_battle_WrLn",
                 "strings": [
-                    "p_l spins around just in time to see an impressively vicious kittypet lunging at {PRONOUN/p_l/object}. Once {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} recovered from {PRONOUN/p_l/poss} momentary shock, p_l easily overpowers the kittypet, who's snarling something about the dog being {PRONOUN/n_c:0/poss} 'friend'. The odd pair quickly run off, leaving behind a slightly dazed — and very confused — p_l."
+                    "p_l spins around just in time to see an impressively vicious kittypet lunging at {PRONOUN/p_l/object}. Once {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} recovered from {PRONOUN/p_l/poss} momentary shock, p_l easily overpowers the kittypet, who's snarling something about the dog being {PRONOUN/n_c0/poss} 'friend'. The odd pair quickly run off, leaving behind a slightly dazed — and very confused — p_l."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -7724,7 +7724,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_kittypetfriendswithdog_Kp",
                 "strings": [
-                    "p_l ignores the voice, swiping {PRONOUN/p_l/poss} claws across the dog's face. Out of the corner of {PRONOUN/p_l/poss} eye, {PRONOUN/p_l/subject} sees a kittypet halt in {PRONOUN/n_c:0/poss} tracks, letting out a cry of dismay. It only takes another snarl from p_l for both kittypet and dog to flee."
+                    "p_l ignores the voice, swiping {PRONOUN/p_l/poss} claws across the dog's face. Out of the corner of {PRONOUN/p_l/poss} eye, {PRONOUN/p_l/subject} sees a kittypet halt in {PRONOUN/n_c0/poss} tracks, letting out a cry of dismay. It only takes another snarl from p_l for both kittypet and dog to flee."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -7758,7 +7758,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_kittypetfriendswithdog_Kp",
                 "strings": [
-                    "p_l lets out a vicious yowl, ignoring the now shrill voice calling out to {PRONOUN/p_l/object}, pleading with {PRONOUN/p_l/object} to stop as {PRONOUN/p_l/subject} {VERB/p_l/attack/attacks} the dog, violently tearing at the dog's pelt as it yaps and whines. After the tussle, the dog hauls itself towards the now teary-eyed kittypet, and p_l can't help but smirk at {PRONOUN/n_c:0/poss} terrified expression."
+                    "p_l lets out a vicious yowl, ignoring the now shrill voice calling out to {PRONOUN/p_l/object}, pleading with {PRONOUN/p_l/object} to stop as {PRONOUN/p_l/subject} {VERB/p_l/attack/attacks} the dog, violently tearing at the dog's pelt as it yaps and whines. After the tussle, the dog hauls itself towards the now teary-eyed kittypet, and p_l can't help but smirk at {PRONOUN/n_c0/poss} terrified expression."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -8101,7 +8101,7 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_newcathostile_Ln",
                 "strings": [
-                    "p_l wasn't going to let any cat get the upper paw on {PRONOUN/p_l/object}. Without a second thought, {PRONOUN/p_l/subject} {VERB/p_l/throw/throws} {PRONOUN/p_l/self} at an unsuspecting kittypet, ignoring the scent of sickness on {PRONOUN/n_c:0/object}. Yowls from another kittypet begging p_l to stop makes {PRONOUN/p_l/object} take a step back... but <i>it's too late</i>. The kittypet is dead, p_l has blood on {PRONOUN/p_l/poss} paws and the glare of the other kittypet tells {PRONOUN/p_l/object} that {PRONOUN/p_l/subject} had just made a new enemy."
+                    "p_l wasn't going to let any cat get the upper paw on {PRONOUN/p_l/object}. Without a second thought, {PRONOUN/p_l/subject} {VERB/p_l/throw/throws} {PRONOUN/p_l/self} at an unsuspecting kittypet, ignoring the scent of sickness on {PRONOUN/n_c0/object}. Yowls from another kittypet begging p_l to stop makes {PRONOUN/p_l/object} take a step back... but <i>it's too late</i>. The kittypet is dead, p_l has blood on {PRONOUN/p_l/poss} paws and the glare of the other kittypet tells {PRONOUN/p_l/object} that {PRONOUN/p_l/subject} had just made a new enemy."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -8234,7 +8234,7 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_train_talking_WrLn",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells n_c:0 {PRONOUN/n_c:0/subject} should take no for an answer. n_c:1 shoots p_l a grateful look."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells n_c0 {PRONOUN/n_c0/subject} should take no for an answer. n_c1 shoots p_l a grateful look."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -8322,7 +8322,7 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_newcathostile_Ln",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells the kittypets to keep their drama away from c_n's border."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l inserts {PRONOUN/p_l/self} into the situation and tells the kittypets to keep their drama away from c_n's border."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -8392,7 +8392,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_speakingcat_Wr",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. s_c0 steps forward to help them see each other's side and come to a resolution. n_c:0 apologizes for badgering n_c:1, and n_c:1 admits {PRONOUN/n_c:1/subject} {VERB/n_c:1/do/does} feel some fondness for {PRONOUN/n_c:0/object}, but {PRONOUN/n_c:1/subject} {VERB/n_c:1/are/is}n't ready for that kind of commitment."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. s_c0 steps forward to help them see each other's side and come to a resolution. n_c0 apologizes for badgering n_c1, and n_c1 admits {PRONOUN/n_c1/subject} {VERB/n_c1/do/does} feel some fondness for {PRONOUN/n_c0/object}, but {PRONOUN/n_c1/subject} {VERB/n_c1/are/is}n't ready for that kind of commitment."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -8467,7 +8467,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "n_c1 feels some fondness for n_c:0, but {PRONOUN/n_c:1/subject} {VERB/n_c:1/are/is}n't ready for that kind of commitment with {PRONOUN/n_c:0/object}."
+                            "cats_from": "n_c1 feels some fondness for n_c0, but {PRONOUN/n_c1/subject} {VERB/n_c1/are/is}n't ready for that kind of commitment with {PRONOUN/n_c0/object}."
                         }
                     },
                     {
@@ -8495,7 +8495,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_speakingcat_Wr",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. s_c0 steps forward to help them see each other's side and come to a resolution. n_c:0 apologizes for badgering n_c:1, and n_c:1 admits {PRONOUN/n_c:1/subject} {VERB/n_c:1/do/does} feel some fondness for {PRONOUN/n_c:0/object}, but {PRONOUN/n_c:1/subject} {VERB/n_c:1/are/is}n't ready for that kind of commitment."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. s_c0 steps forward to help them see each other's side and come to a resolution. n_c0 apologizes for badgering n_c1, and n_c1 admits {PRONOUN/n_c1/subject} {VERB/n_c1/do/does} feel some fondness for {PRONOUN/n_c0/object}, but {PRONOUN/n_c1/subject} {VERB/n_c1/are/is}n't ready for that kind of commitment."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -8567,7 +8567,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "n_c1 feels some fondness for n_c:0, but {PRONOUN/n_c:1/subject} {VERB/n_c:1/are/is}n't ready for that kind of commitment with {PRONOUN/n_c:0/object}."
+                            "cats_from": "n_c1 feels some fondness for n_c0, but {PRONOUN/n_c1/subject} {VERB/n_c1/are/is}n't ready for that kind of commitment with {PRONOUN/n_c0/object}."
                         }
                     },
                     {
@@ -8597,7 +8597,7 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_happycat_Ln",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l steps in and tells n_c:0 {PRONOUN/n_c:0/subject} should take no for an answer. n_c:1 shoots p_l a grateful and flirty look, and p_l hastily backs off. n_c:0 catches that glance, jealousy in {PRONOUN/n_c:0/poss} eyes."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l steps in and tells n_c0 {PRONOUN/n_c0/subject} should take no for an answer. n_c1 shoots p_l a grateful and flirty look, and p_l hastily backs off. n_c0 catches that glance, jealousy in {PRONOUN/n_c0/poss} eyes."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -8707,7 +8707,7 @@
                         ],
                         "amount": -15,
                         "log": {
-                            "cats_from": "cat_from was jealous that n_c:1 seemed more interested in cat_to than {PRONOUN/cat_from/object}."
+                            "cats_from": "cat_from was jealous that n_c1 seemed more interested in cat_to than {PRONOUN/cat_from/object}."
                         }
                     }
                 ]
@@ -8716,7 +8716,7 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_bord_twocathostile_LnLn",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l steps in and lectures n_c:0, but it just seems to annoy both kittypets. Maybe they just like to argue."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l steps in and lectures n_c0, but it just seems to annoy both kittypets. Maybe they just like to argue."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -8984,7 +8984,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_battle_WrLn",
                 "strings": [
-                    "p_l interrupts the kittypets' argument to tell them both to scram. One kittypet takes a swipe at p_l, but p_l easily knocks the soft-pawed kittypet to the ground and tells {PRONOUN/n_c:0/object} to leave c_n territory before {PRONOUN/n_c:0/subject} {VERB/n_c:0/make/makes} more of a fool out of {PRONOUN/n_c:0/self}."
+                    "p_l interrupts the kittypets' argument to tell them both to scram. One kittypet takes a swipe at p_l, but p_l easily knocks the soft-pawed kittypet to the ground and tells {PRONOUN/n_c0/object} to leave c_n territory before {PRONOUN/n_c0/subject} {VERB/n_c0/make/makes} more of a fool out of {PRONOUN/n_c0/self}."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -9065,7 +9065,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_newcathostile_Ln",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l interrupts to tell n_c:1 that an ugly mangepelt like {PRONOUN/n_c:1/self} should be pleased that any cat at all has shown an interest."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l interrupts to tell n_c1 that an ugly mangepelt like {PRONOUN/n_c1/self} should be pleased that any cat at all has shown an interest."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -9151,7 +9151,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bord_twocathostile_LnLn",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l interrupts to tell n_c:0 that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} flattering a prideful and vain-hearted mouse-brain. Neither kittypet seems to appreciate this."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l interrupts to tell n_c0 that {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} flattering a prideful and vain-hearted mouse-brain. Neither kittypet seems to appreciate this."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -9192,7 +9192,7 @@
                         ],
                         "amount": -25,
                         "log": {
-                            "cats_from": "cat_to rudely insulted n_c:1 calling {PRONOUN/n_c:1/object} a prideful and vain-hearted mouse-brain and neither n_c:0 or n_c:1 seemed appreciative."
+                            "cats_from": "cat_to rudely insulted n_c1 calling {PRONOUN/n_c1/object} a prideful and vain-hearted mouse-brain and neither n_c0 or n_c1 seemed appreciative."
                         }
                     },
                     {
@@ -9281,7 +9281,7 @@
                         ],
                         "amount": -35,
                         "log": {
-                            "cats_from": "cat_to told cat_from and {PRONOUN/cat_from/poss} friend to get lost while they were in the middle of an argument. n_c:0 fought cat_to and then {PRONOUN/n_c:0/subject} and n_c:1 were driven away."
+                            "cats_from": "cat_to told cat_from and {PRONOUN/cat_from/poss} friend to get lost while they were in the middle of an argument. n_c0 fought cat_to and then {PRONOUN/n_c0/subject} and n_c1 were driven away."
                         }
                     },
                     {
@@ -9321,7 +9321,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_happycat_Ln",
                 "strings": [
-                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c:0 — is in love with the other — n_c:1 — who is having none of it. p_l interrupts to tell n_c:1 that {PRONOUN/n_c:1/subject}{VERB/n_c:1/'re/'s} one of the ugliest badger-faced fleapelts p_l's ever had the displeasure of looking on. Inexplicably, n_c:1 bats {PRONOUN/n_c:1/poss} eyelashes at p_l and giggles. n_c:0 looks on jealously."
+                    "Through eavesdropping, p_l and r_c0 learn that one kittypet — n_c0 — is in love with the other — n_c1 — who is having none of it. p_l interrupts to tell n_c1 that {PRONOUN/n_c1/subject}{VERB/n_c1/'re/'s} one of the ugliest badger-faced fleapelts p_l's ever had the displeasure of looking on. Inexplicably, n_c1 bats {PRONOUN/n_c1/poss} eyelashes at p_l and giggles. n_c0 looks on jealously."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -9585,7 +9585,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol follows the sound, intent on finding the intruder. They come upon a kittypet sniffing around. When the kittypet notices them, however, {PRONOUN/n_c:0/subject} {VERB/n_c:0/turn/turns} tail and makes a hasty getaway. At least {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} off the territory now."
+                    "The patrol follows the sound, intent on finding the intruder. They come upon a kittypet sniffing around. When the kittypet notices them, however, {PRONOUN/n_c0/subject} {VERB/n_c0/turn/turns} tail and makes a hasty getaway. At least {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} off the territory now."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -9707,7 +9707,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol approaches cautiously. The loner draws {PRONOUN/n_c:0/self} up, but doing so causes {PRONOUN/n_c:0/object} to let out another hiss. p_l offers to bring {PRONOUN/n_c:0/object} to camp. Though {PRONOUN/n_c:0/subject} {VERB/n_c:0/seem/seems} hesitant, the loner agrees."
+                    "The patrol approaches cautiously. The loner draws {PRONOUN/n_c0/self} up, but doing so causes {PRONOUN/n_c0/object} to let out another hiss. p_l offers to bring {PRONOUN/n_c0/object} to camp. Though {PRONOUN/n_c0/subject} {VERB/n_c0/seem/seems} hesitant, the loner agrees."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -9764,7 +9764,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The patrol approaches cautiously. The loner lifts {PRONOUN/n_c:0/poss} head and asks for help. p_l agrees. {PRONOUN/p_l/subject/CAP} can't leave a fellow cat to die."
+                    "The patrol approaches cautiously. The loner lifts {PRONOUN/n_c0/poss} head and asks for help. p_l agrees. {PRONOUN/p_l/subject/CAP} can't leave a fellow cat to die."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -9821,7 +9821,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The loner hisses defensively as the patrol comes closer. s_c0 speaks soothingly to the loner, assuring {PRONOUN/n_c:0/object} that {PRONOUN/s_c0/subject} {VERB/s_c0/mean/means} no harm and simply {VERB/s_c0/want/wants} to help. The loner seems distrustful but allows p_l to help {PRONOUN/n_c:0/object} back to camp."
+                    "The loner hisses defensively as the patrol comes closer. s_c0 speaks soothingly to the loner, assuring {PRONOUN/n_c0/object} that {PRONOUN/s_c0/subject} {VERB/s_c0/mean/means} no harm and simply {VERB/s_c0/want/wants} to help. The loner seems distrustful but allows p_l to help {PRONOUN/n_c0/object} back to camp."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -9978,7 +9978,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l approaches cautiously. The loner draws {PRONOUN/n_c:0/self} up, but doing so causes {PRONOUN/n_c:0/object} to let out another hiss. p_l offers to bring {PRONOUN/n_c:0/object} to camp. Though {PRONOUN/n_c:0/subject} {VERB/n_c:0/seem/seems} hesitant, the loner agrees."
+                    "p_l approaches cautiously. The loner draws {PRONOUN/n_c0/self} up, but doing so causes {PRONOUN/n_c0/object} to let out another hiss. p_l offers to bring {PRONOUN/n_c0/object} to camp. Though {PRONOUN/n_c0/subject} {VERB/n_c0/seem/seems} hesitant, the loner agrees."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -10035,7 +10035,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l approaches cautiously. The loner lifts {PRONOUN/n_c:0/poss} head and asks for help. p_l agrees. {PRONOUN/p_l/subject/CAP} can't leave a fellow cat to die."
+                    "p_l approaches cautiously. The loner lifts {PRONOUN/n_c0/poss} head and asks for help. p_l agrees. {PRONOUN/p_l/subject/CAP} can't leave a fellow cat to die."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -10092,7 +10092,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The loner hisses defensively as s_c0 comes closer. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/speak/speaks} soothingly to the loner, assuring {PRONOUN/n_c:0/object} that {PRONOUN/s_c0/subject} {VERB/s_c0/mean/means} no harm and simply {VERB/s_c0/mean/means} to help. The loner seems distrustful but allows s_c0 to help {PRONOUN/n_c:0/object} back to camp."
+                    "The loner hisses defensively as s_c0 comes closer. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/speak/speaks} soothingly to the loner, assuring {PRONOUN/n_c0/object} that {PRONOUN/s_c0/subject} {VERB/s_c0/mean/means} no harm and simply {VERB/s_c0/mean/means} to help. The loner seems distrustful but allows s_c0 to help {PRONOUN/n_c0/object} back to camp."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -10316,7 +10316,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "StarClan, but the cat {PRONOUN/p_l/subject} {VERB/p_l/find/finds} is weird, {PRONOUN/n_c:0/poss} fur soft and thin, {PRONOUN/n_c:0/poss} cries desperate as {PRONOUN/n_c:0/subject} call in confusion. p_l comes down to {PRONOUN/n_c:0/object}, startling the poor thing half out of {PRONOUN/n_c:0/poss} pelt, and asks if {PRONOUN/n_c:0/subject} {VERB/n_c:0/need/needs} assistance. This cat clearly doesn't belong here."
+                    "StarClan, but the cat {PRONOUN/p_l/subject} {VERB/p_l/find/finds} is weird, {PRONOUN/n_c0/poss} fur soft and thin, {PRONOUN/n_c0/poss} cries desperate as {PRONOUN/n_c0/subject} call in confusion. p_l comes down to {PRONOUN/n_c0/object}, startling the poor thing half out of {PRONOUN/n_c0/poss} pelt, and asks if {PRONOUN/n_c0/subject} {VERB/n_c0/need/needs} assistance. This cat clearly doesn't belong here."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -10373,7 +10373,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l follows the sad cries to find a kittypet, lost and alone and cold. The apprentice introduces {PRONOUN/p_l/self} cheerfully. Slowly, the desperate kittypet loses a little of {PRONOUN/n_c:0/poss} fear as p_l guides {PRONOUN/n_c:0/object} back to camp, sure that the Leader will know what to do with {PRONOUN/n_c:0/object}."
+                    "p_l follows the sad cries to find a kittypet, lost and alone and cold. The apprentice introduces {PRONOUN/p_l/self} cheerfully. Slowly, the desperate kittypet loses a little of {PRONOUN/n_c0/poss} fear as p_l guides {PRONOUN/n_c0/object} back to camp, sure that the Leader will know what to do with {PRONOUN/n_c0/object}."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -10511,7 +10511,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol races towards the sound. They're puzzled when they only see a Twoleg, but realization soon dawns when the bag it holds thrashes and wails. Jumping into action, the c_n cats startle the Twoleg into letting go of the bag. While the angered Twoleg is distracted, p_l and r_c0 hurriedly get the shivering old cat out of sight, promising {PRONOUN/n_c:0/object} safety in c_n for as long as {PRONOUN/n_c:0/subject} {VERB/n_c:0/wish/wishes}."
+                    "The patrol races towards the sound. They're puzzled when they only see a Twoleg, but realization soon dawns when the bag it holds thrashes and wails. Jumping into action, the c_n cats startle the Twoleg into letting go of the bag. While the angered Twoleg is distracted, p_l and r_c0 hurriedly get the shivering old cat out of sight, promising {PRONOUN/n_c0/object} safety in c_n for as long as {PRONOUN/n_c0/subject} {VERB/n_c0/wish/wishes}."
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -10575,7 +10575,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 sees the Twoleg, the thrashing bag, the stones piled within and realizes it's now or never to save this poor cat. The patrol leaps and claws at the Twoleg while s_c0 sneaks over to the bag, gently hurrying the elderly cat to a safe hiding place. As the patrol retreats, s_c0 softly reassures the old cat, promising that c_n would be honored to take {PRONOUN/n_c:0/object} in."
+                    "s_c0 sees the Twoleg, the thrashing bag, the stones piled within and realizes it's now or never to save this poor cat. The patrol leaps and claws at the Twoleg while s_c0 sneaks over to the bag, gently hurrying the elderly cat to a safe hiding place. As the patrol retreats, s_c0 softly reassures the old cat, promising that c_n would be honored to take {PRONOUN/n_c0/object} in."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -11018,7 +11018,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l finds a kittypet collapsed by the Thunderpath, wailing for {PRONOUN/n_c:0/poss} housefolk. p_l comforts {PRONOUN/n_c:0/object}, asking why {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} left here. The only explanation {PRONOUN/n_c:0/object} have is that {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} sick. Perhaps {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} too much of a burden? p_l offers {PRONOUN/n_c:0/object} a place in c_n, at least until {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} better. {PRONOUN/n_c:0/subject/CAP} tentatively {VERB/n_c:0/accept/accepts}, looking longingly at the Thunderpath as {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} led away."
+                    "p_l finds a kittypet collapsed by the Thunderpath, wailing for {PRONOUN/n_c0/poss} housefolk. p_l comforts {PRONOUN/n_c0/object}, asking why {PRONOUN/n_c0/subject} {VERB/n_c0/were/was} left here. The only explanation {PRONOUN/n_c0/object} have is that {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} sick. Perhaps {PRONOUN/n_c0/subject} {VERB/n_c0/were/was} too much of a burden? p_l offers {PRONOUN/n_c0/object} a place in c_n, at least until {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} better. {PRONOUN/n_c0/subject/CAP} tentatively {VERB/n_c0/accept/accepts}, looking longingly at the Thunderpath as {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} led away."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -11091,7 +11091,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/discover/discovers} the cooling body of a kittypet; it seems {PRONOUN/n_c:0/subject} attempted to run after {PRONOUN/n_c:0/poss} Twolegs, but was run over by another monster. p_l silently sends a prayer for the kittypet, and can't help but to curse the Twolegs who abandoned such a loyal cat."
+                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/discover/discovers} the cooling body of a kittypet; it seems {PRONOUN/n_c0/subject} attempted to run after {PRONOUN/n_c0/poss} Twolegs, but was run over by another monster. p_l silently sends a prayer for the kittypet, and can't help but to curse the Twolegs who abandoned such a loyal cat."
                 ],
                 "exp_gained": 0,
                 "reputation_changes": {
@@ -11190,7 +11190,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "Is that... a kittypet? In c_n territory? How strange. p_l knows that {PRONOUN/p_l/subject} should chase the kittypet back home to {PRONOUN/n_c:0/poss} Twolegs, but... {PRONOUN/p_l/subject} can't help but be a little curious. Besides, what harm could a <i>kittypet</i> do? p_l approaches the kittypet and strikes up a conversation. Without either cat realizing it, they wind up talking for hours."
+                    "Is that... a kittypet? In c_n territory? How strange. p_l knows that {PRONOUN/p_l/subject} should chase the kittypet back home to {PRONOUN/n_c0/poss} Twolegs, but... {PRONOUN/p_l/subject} can't help but be a little curious. Besides, what harm could a <i>kittypet</i> do? p_l approaches the kittypet and strikes up a conversation. Without either cat realizing it, they wind up talking for hours."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -11231,7 +11231,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "A loner? Interesting. Never one to pass up a good conversation, s_c0 saunters up to the outsider and begins chatting with {PRONOUN/n_c:0/object}. The two cats end up talking as though they're old friends: which, by the time they part ways, it feels like they are."
+                    "A loner? Interesting. Never one to pass up a good conversation, s_c0 saunters up to the outsider and begins chatting with {PRONOUN/n_c0/object}. The two cats end up talking as though they're old friends: which, by the time they part ways, it feels like they are."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -11357,7 +11357,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "What in StarClan's name is a <i>kittypet</i> doing here? c_n's territory is no place for such a pampered creature! p_l approaches the other young cat, intending to guide {PRONOUN/n_c:0/object} back to wherever {PRONOUN/n_c:0/subject} came from. However, p_l's presence clearly intimidates the kittypet, who bolts away the moment {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} {PRONOUN/p_l/object}."
+                    "What in StarClan's name is a <i>kittypet</i> doing here? c_n's territory is no place for such a pampered creature! p_l approaches the other young cat, intending to guide {PRONOUN/n_c0/object} back to wherever {PRONOUN/n_c0/subject} came from. However, p_l's presence clearly intimidates the kittypet, who bolts away the moment {PRONOUN/n_c0/subject} {VERB/n_c0/see/sees} {PRONOUN/p_l/object}."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -11407,7 +11407,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "What in StarClan's name is a <i>kittypet</i> doing here? c_n's territory is no place for such a pampered creature. p_l approaches the other young cat, intending to send {PRONOUN/n_c:0/object} back to wherever {PRONOUN/n_c:0/subject} came from. However, p_l's presence clearly intimidates the kittypet, who takes a swipe at p_l and bolts away the moment {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} {PRONOUN/p_l/object}."
+                    "What in StarClan's name is a <i>kittypet</i> doing here? c_n's territory is no place for such a pampered creature. p_l approaches the other young cat, intending to send {PRONOUN/n_c0/object} back to wherever {PRONOUN/n_c0/subject} came from. However, p_l's presence clearly intimidates the kittypet, who takes a swipe at p_l and bolts away the moment {PRONOUN/n_c0/subject} {VERB/n_c0/see/sees} {PRONOUN/p_l/object}."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -11439,7 +11439,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l never planned for things to happen like this, but when {PRONOUN/p_l/subject} {VERB/p_l/approach/approaches} the loner and {VERB/p_l/begin/begins} talking with {PRONOUN/n_c:0/object}, {PRONOUN/p_l/subject} can't help but feel intrigued by the life the other young cat leads. Perhaps it would do {PRONOUN/p_l/object} good to experience what the world has to offer outside of c_n..."
+                    "p_l never planned for things to happen like this, but when {PRONOUN/p_l/subject} {VERB/p_l/approach/approaches} the loner and {VERB/p_l/begin/begins} talking with {PRONOUN/n_c0/object}, {PRONOUN/p_l/subject} can't help but feel intrigued by the life the other young cat leads. Perhaps it would do {PRONOUN/p_l/object} good to experience what the world has to offer outside of c_n..."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -11488,7 +11488,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "It's positively <i>shameful,</i> but upon approaching the kittypet and speaking with {PRONOUN/n_c:0/object}, p_l finds {PRONOUN/p_l/self}... <i>intrigued</i> by the tales of the kittypet's life. Surely it'd be okay for a few days, right? For {PRONOUN/p_l/object} to go and experience that life? Just a few days, nobody has to know..."
+                    "It's positively <i>shameful,</i> but upon approaching the kittypet and speaking with {PRONOUN/n_c0/object}, p_l finds {PRONOUN/p_l/self}... <i>intrigued</i> by the tales of the kittypet's life. Surely it'd be okay for a few days, right? For {PRONOUN/p_l/object} to go and experience that life? Just a few days, nobody has to know..."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -11539,7 +11539,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The loner may not be causing any trouble <i>at the moment,</i> but that doesn't mean {PRONOUN/n_c:0/subject} won't in the future. p_l hisses out a warning that the loner quickly heeds, scampering away with {PRONOUN/n_c:0/poss} tail between {PRONOUN/n_c:0/poss} legs."
+                    "The loner may not be causing any trouble <i>at the moment,</i> but that doesn't mean {PRONOUN/n_c0/subject} won't in the future. p_l hisses out a warning that the loner quickly heeds, scampering away with {PRONOUN/n_c0/poss} tail between {PRONOUN/n_c0/poss} legs."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -11560,7 +11560,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "A kittypet? This'll be <i>easy.</i> With a series of hisses accompanied by bared teeth and unsheathed claws, p_l manages to intimidate the pampered creature into running back to {PRONOUN/n_c:0/poss} Twolegs."
+                    "A kittypet? This'll be <i>easy.</i> With a series of hisses accompanied by bared teeth and unsheathed claws, p_l manages to intimidate the pampered creature into running back to {PRONOUN/n_c0/poss} Twolegs."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -11581,7 +11581,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l hisses out a warning, but the loner refuses to leave without a fight, which {PRONOUN/n_c:0/subject} promptly {VERB/n_c:0/lose/loses}."
+                    "p_l hisses out a warning, but the loner refuses to leave without a fight, which {PRONOUN/n_c0/subject} promptly {VERB/n_c0/lose/loses}."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -11649,7 +11649,7 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "p_l hisses out a warning and is surprised when the kittypet refuses to leave without a fight. <i>Un</i>surprisingly, {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} quickly put in {PRONOUN/n_c:0/poss} place, with p_l easily winning the ensuing scuffle."
+                    "p_l hisses out a warning and is surprised when the kittypet refuses to leave without a fight. <i>Un</i>surprisingly, {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} quickly put in {PRONOUN/n_c0/poss} place, with p_l easily winning the ensuing scuffle."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -11706,7 +11706,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The loner may not be causing any trouble <i>at the moment,</i> but that doesn't mean {PRONOUN/n_c:0/subject} won't in the future. p_l hisses out a warning, but the loner pays no attention, acting as though {PRONOUN/n_c:0/subject} {VERB/n_c:0/don't/doesn't} even <i>see</i> p_l!"
+                    "The loner may not be causing any trouble <i>at the moment,</i> but that doesn't mean {PRONOUN/n_c0/subject} won't in the future. p_l hisses out a warning, but the loner pays no attention, acting as though {PRONOUN/n_c0/subject} {VERB/n_c0/don't/doesn't} even <i>see</i> p_l!"
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -12425,7 +12425,7 @@
                 "outcome_art": "cat_sprites/gen_deadghost_LnUr_EXPLICIT",
                 "outcome_art_clean": "cat_sprites/gen_deadghost_LnUr",
                 "strings": [
-                    "Fear and adrenaline racing through {PRONOUN/r_c0/poss} veins, r_c0 leaps through the mist with claws outstretched. When {PRONOUN/r_c0/subject} {VERB/r_c0/find/finds} the loner, {PRONOUN/r_c0/subject} {VERB/r_c0/rip/rips} {PRONOUN/n_c:0/poss} throat out without hesitation. p_l finds r_c0 panting over the body, {PRONOUN/r_c0/poss} chest and muzzle stained in blood."
+                    "Fear and adrenaline racing through {PRONOUN/r_c0/poss} veins, r_c0 leaps through the mist with claws outstretched. When {PRONOUN/r_c0/subject} {VERB/r_c0/find/finds} the loner, {PRONOUN/r_c0/subject} {VERB/r_c0/rip/rips} {PRONOUN/n_c0/poss} throat out without hesitation. p_l finds r_c0 panting over the body, {PRONOUN/r_c0/poss} chest and muzzle stained in blood."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -12564,7 +12564,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittyhappy_Ln",
                 "strings": [
-                    "Wary, p_l slinks into the shadows. At the sound of a hiss, the patrol joins {PRONOUN/p_l/object} and comes face to face with a trapped cat! The patrol heaves the debris off the stranger, who thanks them between coughs of water. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/introduce/introduces} {PRONOUN/n_c:0/self} as n_c:0, \"chief mouser,\" recently shipwrecked. p_l suggests {PRONOUN/n_c:0/subject} accompany them to camp."
+                    "Wary, p_l slinks into the shadows. At the sound of a hiss, the patrol joins {PRONOUN/p_l/object} and comes face to face with a trapped cat! The patrol heaves the debris off the stranger, who thanks them between coughs of water. {PRONOUN/n_c0/subject/CAP} {VERB/n_c0/introduce/introduces} {PRONOUN/n_c0/self} as n_c0, \"chief mouser,\" recently shipwrecked. p_l suggests {PRONOUN/n_c0/subject} accompany them to camp."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -12615,7 +12615,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittymad_Ln",
                 "strings": [
-                    "Wary, p_l slinks into shadow. At the sound of a hiss, the patrol joins {PRONOUN/p_l/object} and comes face to face with a trapped cat!  After much heaving and scratching, the debris is lifted, and the stranger drags {PRONOUN/n_c:0/self} free, only to stagger past the Clan cats and stumble away inland, eyes wide and fur bushed out. Well, at least {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} alive, p_l concludes. But the patrol lost a lot of time and heads back with the border unmarked."
+                    "Wary, p_l slinks into shadow. At the sound of a hiss, the patrol joins {PRONOUN/p_l/object} and comes face to face with a trapped cat!  After much heaving and scratching, the debris is lifted, and the stranger drags {PRONOUN/n_c0/self} free, only to stagger past the Clan cats and stumble away inland, eyes wide and fur bushed out. Well, at least {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} alive, p_l concludes. But the patrol lost a lot of time and heads back with the border unmarked."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -12637,7 +12637,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittymad_Ln",
                 "strings": [
-                    "p_l bristles and stalks inside, {PRONOUN/p_l/poss} patrol fanning out behind them. Inside, a wide-eyed kittypet is backed against the wooden boards, fur standing on end. How this stranger got into c_n's territory, {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't know - but {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't care. p_l corrals {PRONOUN/n_c:0/object} outside and chases {PRONOUN/n_c:0/object} across the border. The tide will take care of the rest of the Twoleg mess eventually."
+                    "p_l bristles and stalks inside, {PRONOUN/p_l/poss} patrol fanning out behind them. Inside, a wide-eyed kittypet is backed against the wooden boards, fur standing on end. How this stranger got into c_n's territory, {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't know - but {PRONOUN/p_l/subject} {VERB/p_l/do/does}n't care. p_l corrals {PRONOUN/n_c0/object} outside and chases {PRONOUN/n_c0/object} across the border. The tide will take care of the rest of the Twoleg mess eventually."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -12662,7 +12662,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittymad_Ln",
                 "strings": [
-                    "p_l bristles and stalks inside, {PRONOUN/p_l/poss} patrol fanning out behind {PRONOUN/p_l/object}. Inside, a wide-eyed kittypet is backed up against the wooden boards, fur standing on end. But at the sight of the patrol, {PRONOUN/n_c:0/subject} {VERB/n_c:0/bare/bares} {PRONOUN/n_c:0/poss} teeth. The swatting, hissing whirlwind of a kittypet proves far more trouble than expected, and p_l eventually leaves {PRONOUN/n_c:0/object} there, {PRONOUN/p_l/poss} tail lashing in frustration."
+                    "p_l bristles and stalks inside, {PRONOUN/p_l/poss} patrol fanning out behind {PRONOUN/p_l/object}. Inside, a wide-eyed kittypet is backed up against the wooden boards, fur standing on end. But at the sight of the patrol, {PRONOUN/n_c0/subject} {VERB/n_c0/bare/bares} {PRONOUN/n_c0/poss} teeth. The swatting, hissing whirlwind of a kittypet proves far more trouble than expected, and p_l eventually leaves {PRONOUN/n_c0/object} there, {PRONOUN/p_l/poss} tail lashing in frustration."
                 ],
                 "involved_cats": {
                     "n_c0": {

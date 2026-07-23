@@ -322,7 +322,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c:0/self}. The patrol greets {PRONOUN/n_c:0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. The patrol greets {PRONOUN/n_c0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -493,7 +493,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c:0/self}. p_l greets {PRONOUN/n_c:0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. p_l greets {PRONOUN/n_c0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -508,7 +508,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} p_l, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} {PRONOUN/p_l/object} to sing too. {PRONOUN/p_l/subject/CAP} politely {VERB/p_l/decline/declines} and continues on {PRONOUN/p_l/poss} solo patrol."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. When {PRONOUN/n_c0/subject} {VERB/n_c0/see/sees} p_l, {PRONOUN/n_c0/subject} {VERB/n_c0/invite/invites} {PRONOUN/p_l/object} to sing too. {PRONOUN/p_l/subject/CAP} politely {VERB/p_l/decline/declines} and continues on {PRONOUN/p_l/poss} solo patrol."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -658,7 +658,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c:0/self}. The patrol greets {PRONOUN/n_c:0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. The patrol greets {PRONOUN/n_c0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -673,7 +673,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} the patrol, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} them to sing, too. The patrol politely declines but compliments the loner's songs."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. When {PRONOUN/n_c0/subject} {VERB/n_c0/see/sees} the patrol, {PRONOUN/n_c0/subject} {VERB/n_c0/invite/invites} them to sing, too. The patrol politely declines but compliments the loner's songs."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -806,7 +806,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c:0/self}. p_l greets {PRONOUN/n_c:0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. p_l greets {PRONOUN/n_c0/object}, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility."
                 ],
                 "involved_cats": {
                     "n_c0": {
@@ -821,7 +821,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "It's just an odd loner singing to {PRONOUN/n_c:0/self}. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/see/sees} p_l, {PRONOUN/n_c:0/subject} {VERB/n_c:0/invite/invites} {PRONOUN/p_l/object} to sing too. {PRONOUN/p_l/subject/CAP} politely {VERB/p_l/decline/declines} but {VERB/p_l/compliment/compliments} the loner's songs."
+                    "It's just an odd loner singing to {PRONOUN/n_c0/self}. When {PRONOUN/n_c0/subject} {VERB/n_c0/see/sees} p_l, {PRONOUN/n_c0/subject} {VERB/n_c0/invite/invites} {PRONOUN/p_l/object} to sing too. {PRONOUN/p_l/subject/CAP} politely {VERB/p_l/decline/declines} but {VERB/p_l/compliment/compliments} the loner's songs."
                 ],
                 "involved_cats": {
                     "n_c0": {

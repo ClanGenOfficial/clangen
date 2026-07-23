@@ -672,7 +672,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "r_c0 drove n_c:0 off c_n's territory."
+                            "cats_from": "r_c0 drove n_c0 off c_n's territory."
                         }
                     }
                 ]
@@ -687,7 +687,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. s_c0 throws {PRONOUN/s_c0/self} at the rogue, hissing furiously, and drives {PRONOUN/n_c:0/object} off c_n territory."
+                    "The pawprints lead to a trespassing rogue. s_c0 throws {PRONOUN/s_c0/self} at the rogue, hissing furiously, and drives {PRONOUN/n_c0/object} off c_n territory."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -740,7 +740,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "r_c0 drove n_c:0 off c_n's territory."
+                            "cats_from": "r_c0 drove n_c0 off c_n's territory."
                         }
                     }
                 ]
@@ -801,7 +801,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "r_c0 drove n_c:0 off c_n's territory."
+                            "cats_from": "r_c0 drove n_c0 off c_n's territory."
                         }
                     }
                 ]
@@ -877,7 +877,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "r_c0 demanded n_c:0 leave c_n's territory."
+                            "cats_from": "r_c0 demanded n_c0 leave c_n's territory."
                         }
                     }
                 ]
@@ -997,7 +997,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "s_c0 found n_c:0 trepassing and attacked {PRONOUN/n_c:0/object}, but n_c:0 managed to escape."
+                            "cats_from": "s_c0 found n_c0 trepassing and attacked {PRONOUN/n_c0/object}, but n_c0 managed to escape."
                         }
                     }
                 ]
@@ -1083,7 +1083,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "p_l drove n_c:0 off c_n's territory."
+                            "cats_from": "p_l drove n_c0 off c_n's territory."
                         }
                     }
                 ]
@@ -1157,7 +1157,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "s_c0 found n_c:0 trespassing on c_n territory and told {PRONOUN/n_c:0/object} to leave, but n_c:0 ignored {PRONOUN/s_c0/object}."
+                            "cats_from": "s_c0 found n_c0 trespassing on c_n territory and told {PRONOUN/n_c0/object} to leave, but n_c0 ignored {PRONOUN/s_c0/object}."
                         }
                     }
                 ]
@@ -1280,7 +1280,7 @@
                         ],
                         "amount": -30,
                         "log": {
-                            "cats_from": "cat_to caught n_c:0 trespassing and drove {PRONOUN/n_c:0/object} off the territory."
+                            "cats_from": "cat_to caught n_c0 trespassing and drove {PRONOUN/n_c0/object} off the territory."
                         }
                     },
                     {
@@ -1368,7 +1368,7 @@
                         ],
                         "amount": -30,
                         "log": {
-                            "cats_from": "cat_to caught n_c:0 trespassing and drove {PRONOUN/n_c:0/object} off the territory."
+                            "cats_from": "cat_to caught n_c0 trespassing and drove {PRONOUN/n_c0/object} off the territory."
                         }
                     }
                 ]
@@ -1376,7 +1376,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. s_c0 sets up a trap by using grass to cover an abandoned rabbit burrow. It makes the startled intruder cower to realize {PRONOUN/n_c:0/subject}{VERB/n_c:0/'ve/'s} been caught and trapped by c_n, and {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} escorted to the border with the lesson firmly learned."
+                    "The pawprints lead to a trespassing rogue. s_c0 sets up a trap by using grass to cover an abandoned rabbit burrow. It makes the startled intruder cower to realize {PRONOUN/n_c0/subject}{VERB/n_c0/'ve/'s} been caught and trapped by c_n, and {PRONOUN/n_c0/subject}{VERB/n_c0/'re/'s} escorted to the border with the lesson firmly learned."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1430,7 +1430,7 @@
                         ],
                         "amount": -30,
                         "log": {
-                            "cats_from": "s_c0 caught n_c:0 trespassing and drove {PRONOUN/n_c:0/object} off the territory."
+                            "cats_from": "s_c0 caught n_c0 trespassing and drove {PRONOUN/n_c0/object} off the territory."
                         }
                     },
                     {
@@ -1454,7 +1454,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Boldly, s_c0 follows the pawprints to a trespassing rogue and confronts {PRONOUN/n_c:0/object}. Fur puffed up and scowling, s_c0 and r_c0 demand the rogue leave c_n territory. The rogue is intimidated by their confidence and leaves without a fight."
+                    "Boldly, s_c0 follows the pawprints to a trespassing rogue and confronts {PRONOUN/n_c0/object}. Fur puffed up and scowling, s_c0 and r_c0 demand the rogue leave c_n territory. The rogue is intimidated by their confidence and leaves without a fight."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -1531,7 +1531,7 @@
                         ],
                         "amount": -30,
                         "log": {
-                            "cats_from": "cat_to caught n_c:0 trespassing and saw {PRONOUN/n_c:0/object} off the territory."
+                            "cats_from": "cat_to caught n_c0 trespassing and saw {PRONOUN/n_c0/object} off the territory."
                         }
                     }
                 ]
@@ -1614,7 +1614,7 @@
                         ],
                         "amount": -30,
                         "log": {
-                            "cats_from": "cat_to caught n_c:0 trespassing and saw {PRONOUN/n_c:0/object} off the territory."
+                            "cats_from": "cat_to caught n_c0 trespassing and saw {PRONOUN/n_c0/object} off the territory."
                         }
                     }
                 ]
@@ -1720,7 +1720,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "cat_to caught n_c:0 trespassing and tried to drive {PRONOUN/n_c:0/object} off the territory, but n_c:0 escaped."
+                            "cats_from": "cat_to caught n_c0 trespassing and tried to drive {PRONOUN/n_c0/object} off the territory, but n_c0 escaped."
                         }
                     }
                 ]
@@ -1764,7 +1764,7 @@
                         ],
                         "amount": -20,
                         "log": {
-                            "cats_from": "cat_to caught n_c:0 trespassing and tried to ambush {PRONOUN/n_c:0/object}, but n_c:0 escaped."
+                            "cats_from": "cat_to caught n_c0 trespassing and tried to ambush {PRONOUN/n_c0/object}, but n_c0 escaped."
                         }
                     },
                     {
@@ -1888,7 +1888,7 @@
                         ],
                         "amount": -30,
                         "log": {
-                            "cats_from": "cat_to caught n_c:0 trespassing and drove {PRONOUN/n_c:0/object} off the territory."
+                            "cats_from": "cat_to caught n_c0 trespassing and drove {PRONOUN/n_c0/object} off the territory."
                         }
                     }
                 ]
@@ -1985,7 +1985,7 @@
                         ],
                         "amount": -30,
                         "log": {
-                            "cats_from": "cat_to caught n_c:0 trespassing and saw {PRONOUN/n_c:0/object} off the territory."
+                            "cats_from": "cat_to caught n_c0 trespassing and saw {PRONOUN/n_c0/object} off the territory."
                         }
                     }
                 ]
@@ -2068,7 +2068,7 @@
                         ],
                         "amount": -30,
                         "log": {
-                            "cats_from": "cat_to caught n_c:0 trespassing and saw {PRONOUN/n_c:0/object} off the territory."
+                            "cats_from": "cat_to caught n_c0 trespassing and saw {PRONOUN/n_c0/object} off the territory."
                         }
                     }
                 ]
@@ -2211,7 +2211,7 @@
                         ],
                         "amount": -30,
                         "log": {
-                            "cats_from": "cat_to caught n_c:0 trespassing and demanded {PRONOUN/n_c:0/subject} leave the territory, but n_c:0 ignored {PRONOUN/cat_to/object}."
+                            "cats_from": "cat_to caught n_c0 trespassing and demanded {PRONOUN/n_c0/subject} leave the territory, but n_c0 ignored {PRONOUN/cat_to/object}."
                         }
                     }
                 ]
