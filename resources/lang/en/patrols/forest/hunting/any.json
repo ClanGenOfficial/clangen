@@ -4340,7 +4340,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Nothing's going to escape {PRONOUN/s_c0/poss} claws! s_c0 skids to a halt and then leaps into action, claw just barely catching in the tail of the squirrel {PRONOUN/s_c0/subject} saw and bringing it down. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/purr/purrs} with satisfaction and {VERB/s_c0/pad/pads} back to r_c, sharing in the excitement of the hunt with {PRONOUN/r_c0/object}."
+                    "Nothing's going to escape {PRONOUN/s_c0/poss} claws! s_c0 skids to a halt and then leaps into action, claw just barely catching in the tail of the squirrel {PRONOUN/s_c0/subject} saw and bringing it down. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/purr/purrs} with satisfaction and {VERB/s_c0/pad/pads} back to r_c0, sharing in the excitement of the hunt with {PRONOUN/r_c0/object}."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -5237,7 +5237,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The rat rears up and hisses at r_c, but while it's distracted, p_l takes it out with a quick strike."
+                    "The rat rears up and hisses at r_c0, but while it's distracted, p_l takes it out with a quick strike."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [

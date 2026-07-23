@@ -1988,7 +1988,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_hunt_fish_Wr",
                 "strings": [
-                    "p_l crouches on one slick rock, almost nose-to-nose with the rushing rapids below. r_c0 takes the other side of the stream. Both cats narrow their eyes in concentration, ready, ready... p_l strikes as a salmon flips up out of the water, batting it to r_c, who kills it neatly. They continue all afternoon and bring home a sizeable haul."
+                    "p_l crouches on one slick rock, almost nose-to-nose with the rushing rapids below. r_c0 takes the other side of the stream. Both cats narrow their eyes in concentration, ready, ready... p_l strikes as a salmon flips up out of the water, batting it to r_c0, who kills it neatly. They continue all afternoon and bring home a sizeable haul."
                 ],
                 "required_cat_types": {
                     "normal adult": [

@@ -1616,7 +1616,7 @@
                 "outcome_art": "cat_sprites/gen_deadghost_WrSc_EXPLICIT",
                 "outcome_art_clean": "cat_sprites/gen_deadghost_WrSc",
                 "strings": [
-                    "When the doe departs, the cats descend on the fawn. Its squeals and cries alert the nearby doe, who returns in a fury, her hooves thumping the earth. The patrol scatters, but not before r_c0 is caught under one of those brutally hard hooves. Though p_l screeches and attacks the doe, hoping to drive her away from r_c, it's too late. r_c0 lies motionless beside the quivering and bloodied fawn."
+                    "When the doe departs, the cats descend on the fawn. Its squeals and cries alert the nearby doe, who returns in a fury, her hooves thumping the earth. The patrol scatters, but not before r_c0 is caught under one of those brutally hard hooves. Though p_l screeches and attacks the doe, hoping to drive her away from r_c0, it's too late. r_c0 lies motionless beside the quivering and bloodied fawn."
                 ],
                 "involved_cats": {
                     "r_c0": {}

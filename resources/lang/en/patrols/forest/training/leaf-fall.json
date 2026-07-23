@@ -240,7 +240,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 explodes out of the leaf drift, bowling over r_c2! Laughing, p_l bats at r_c, claws sheathed, and skids off the path into the leaves as the patrol devolves into rustling, raucous, riotous fun."
+                    "r_c1 explodes out of the leaf drift, bowling over r_c2! Laughing, p_l bats at r_c0, claws sheathed, and skids off the path into the leaves as the patrol devolves into rustling, raucous, riotous fun."
                 ],
                 "involved_cats": {
                     "r_c0": {},

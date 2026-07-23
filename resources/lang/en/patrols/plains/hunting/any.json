@@ -5944,7 +5944,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol switches to tracking down that annoying voice instead. It takes the rest of the afternoon, and p_l is tricked into pouncing on r_c, but finally they pin down the chattering mongoose and make it <i>quite</i> clear how irritating he's been."
+                    "The patrol switches to tracking down that annoying voice instead. It takes the rest of the afternoon, and p_l is tricked into pouncing on r_c0, but finally they pin down the chattering mongoose and make it <i>quite</i> clear how irritating he's been."
                 ],
                 "involved_cats": {
                     "r_c0": {}

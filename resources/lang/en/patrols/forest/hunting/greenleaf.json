@@ -1875,7 +1875,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "p_l, leading the search for r_c, hears a yowl in the distance. It's r_c, drenched and mud-soaked at the bottom of a steep embankment. The patrol works to rescue {PRONOUN/r_c0/object}, calling off their hunt."
+                    "p_l, leading the search for r_c0, hears a yowl in the distance. It's r_c0, drenched and mud-soaked at the bottom of a steep embankment. The patrol works to rescue {PRONOUN/r_c0/object}, calling off their hunt."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [

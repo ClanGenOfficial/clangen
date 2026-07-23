@@ -337,7 +337,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_argue_WrWr",
                 "strings": [
-                    "As the skua descends toward the petrel, r_c0 decides to try and rob the bird blind. Unfortunately for r_c, the skua is unbothered, considering it's been harassing birds three times its size for its whole life. It manages to grab the kill and flies off without issue, leaving the patrol members annoyed with each other."
+                    "As the skua descends toward the petrel, r_c0 decides to try and rob the bird blind. Unfortunately for r_c0, the skua is unbothered, considering it's been harassing birds three times its size for its whole life. It manages to grab the kill and flies off without issue, leaving the patrol members annoyed with each other."
                 ],
                 "involved_cats": {
                     "r_c0": {}

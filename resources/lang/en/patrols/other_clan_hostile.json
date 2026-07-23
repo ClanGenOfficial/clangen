@@ -2303,7 +2303,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_ambush_OwWr",
                 "strings": [
-                    "p_l and r_c0 had been arguing the entire morning. But when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} the shadow of a rogue falling on r_c, {PRONOUN/p_l/subject} {VERB/p_l/react/reacts} without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c0 with a ferocious snarl. r_c0 is badly injured, but will live thanks to p_l dragging {PRONOUN/r_c0/object} back to camp."
+                    "p_l and r_c0 had been arguing the entire morning. But when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} the shadow of a rogue falling on r_c0, {PRONOUN/p_l/subject} {VERB/p_l/react/reacts} without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c0 with a ferocious snarl. r_c0 is badly injured, but will live thanks to p_l dragging {PRONOUN/r_c0/object} back to camp."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
@@ -3415,7 +3415,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c0 checks the area: it seems to be clear of o_c_n patrols. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/leap/leaps} for the rabbit, easily killing it, but very quickly {VERB/r_c0/find/finds} that {PRONOUN/r_c0/subject} should've double checked before trespassing. A o_c_n patrol rushes into view from where they were hiding and descends upon r_c, killing {PRONOUN/r_c0/object} before anyone else can help. Was one rabbit worth this?"
+                    "r_c0 checks the area: it seems to be clear of o_c_n patrols. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/leap/leaps} for the rabbit, easily killing it, but very quickly {VERB/r_c0/find/finds} that {PRONOUN/r_c0/subject} should've double checked before trespassing. A o_c_n patrol rushes into view from where they were hiding and descends upon r_c0, killing {PRONOUN/r_c0/object} before anyone else can help. Was one rabbit worth this?"
                 ],
                 "exp_gained": 0,
                 "reputation_changes": {
@@ -7696,7 +7696,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l has felt the glares r_c0 has sent {PRONOUN/p_l/poss} way all morning, and given them back just as vehemently when r_c's own back is turned. But when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} the shadow of a o_c_n warrior falling on r_c, {PRONOUN/p_l/subject} {VERB/p_l/react/reacts} without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c0 with a ferocious snarl."
+                    "p_l has felt the glares r_c0 has sent {PRONOUN/p_l/poss} way all morning, and given them back just as vehemently when r_c's own back is turned. But when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} the shadow of a o_c_n warrior falling on r_c0, {PRONOUN/p_l/subject} {VERB/p_l/react/reacts} without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c0 with a ferocious snarl."
                 ],
                 "involved_cats": {
                     "r_c0": {}

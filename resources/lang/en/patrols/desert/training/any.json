@@ -841,7 +841,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l works all day to free r_c, and the patrol gets nothing else done."
+                    "p_l works all day to free r_c0, and the patrol gets nothing else done."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1928,7 +1928,7 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "train_general_intro",
-        "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c0/subject} wouldn't mind showing p_l their hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?",
+        "intro_text": "p_l approaches r_c0, asking if {PRONOUN/r_c0/subject} wouldn't mind showing p_l their hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?",
         "decline_text": "r_c0 declines gently, explaining that {PRONOUN/r_c0/subject} {VERB/r_c0/have/has} too much work to do.",
         "success_outcomes": [
             {

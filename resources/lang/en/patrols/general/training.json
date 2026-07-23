@@ -455,7 +455,7 @@
                 "frequency": 2,
                 "outcome_art": "cat_sprites/gen_train_argue_WrWr",
                 "strings": [
-                    "r_c0 notes that p_l seems tired. Maybe {PRONOUN/p_l/subject} should get some rest instead. p_l disagrees, and r_c0 gives in, suggesting exploring an interesting spot in the territory. When they get there, however, p_l still looks tired and seems distracted. When r_c0 asks if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} okay, p_l snaps back at r_c, and the patrol ends in an argument."
+                    "r_c0 notes that p_l seems tired. Maybe {PRONOUN/p_l/subject} should get some rest instead. p_l disagrees, and r_c0 gives in, suggesting exploring an interesting spot in the territory. When they get there, however, p_l still looks tired and seems distracted. When r_c0 asks if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} okay, p_l snaps back at r_c0, and the patrol ends in an argument."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -3731,7 +3731,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_argue_WrWrWr",
                 "strings": [
-                    "Not every pair of Clanmates are born friends. But great StarClan! s_c0 is just <i>so</i> easily offended, so surly, and so ill-tempered. After one too many complaints, r_c0 explodes, lashing out with words far more cutting than claws, and storms off. The rest of the patrol shares awkward glances. They should scold r_c, but too many of them agree with {PRONOUN/r_c0/poss} opinion of s_c0."
+                    "Not every pair of Clanmates are born friends. But great StarClan! s_c0 is just <i>so</i> easily offended, so surly, and so ill-tempered. After one too many complaints, r_c0 explodes, lashing out with words far more cutting than claws, and storms off. The rest of the patrol shares awkward glances. They should scold r_c0, but too many of them agree with {PRONOUN/r_c0/poss} opinion of s_c0."
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -5713,7 +5713,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_chatting_WrWr",
                 "strings": [
-                    "s_c0 chooses to train with r_c, and the spiritual warrior guides the conversation. r_c0 feels deeply privileged and far more at peace after confiding in {PRONOUN/s_c0/object}."
+                    "s_c0 chooses to train with r_c0, and the spiritual warrior guides the conversation. r_c0 feels deeply privileged and far more at peace after confiding in {PRONOUN/s_c0/object}."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -8356,7 +8356,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_playbite_WrWr",
                 "strings": [
-                    "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/don't/doesn't} need to be so serious about it! s_c0 baps r_c, claws sheathed, and runs off cackling to avoid getting tagged back."
+                    "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/don't/doesn't} need to be so serious about it! s_c0 baps r_c0, claws sheathed, and runs off cackling to avoid getting tagged back."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -8826,7 +8826,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_argue_WrWr",
                 "strings": [
-                    "When s_c0 opens {PRONOUN/s_c0/poss} jaws to start instructing r_c, r_c0 groans. For once, {PRONOUN/r_c0/subject} {VERB/r_c0/don't/doesn't} want to be treated like s_c0's apprentice. s_c0 feels stung by the rejection of {PRONOUN/s_c0/poss} help and storms off."
+                    "When s_c0 opens {PRONOUN/s_c0/poss} jaws to start instructing r_c0, r_c0 groans. For once, {PRONOUN/r_c0/subject} {VERB/r_c0/don't/doesn't} want to be treated like s_c0's apprentice. s_c0 feels stung by the rejection of {PRONOUN/s_c0/poss} help and storms off."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -10566,7 +10566,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "It's really nice to have the space to focus and a good training partner to work on things with. p_l feels light and free when {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} with r_c, and {PRONOUN/p_l/subject} can't help but admire the way the sunlight gleams on {PRONOUN/r_c0/poss} pelt."
+                    "It's really nice to have the space to focus and a good training partner to work on things with. p_l feels light and free when {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} with r_c0, and {PRONOUN/p_l/subject} can't help but admire the way the sunlight gleams on {PRONOUN/r_c0/poss} pelt."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -11140,7 +11140,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 isn't a confident cat — but for r_c, {PRONOUN/s_c0/subject} {VERB/s_c0/swear/swears}, {PRONOUN/s_c0/subject}'ll always stay strong."
+                    "s_c0 isn't a confident cat — but for r_c0, {PRONOUN/s_c0/subject} {VERB/s_c0/swear/swears}, {PRONOUN/s_c0/subject}'ll always stay strong."
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -11222,7 +11222,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Training goes okay — nothing special. But afterwards, s_c0 curls around r_c, grooming the hard-to-reach place on the back of {PRONOUN/r_c0/poss} neck, and quietly whispers {PRONOUN/s_c0/poss} gratitude for the wonderful life they share together."
+                    "Training goes okay — nothing special. But afterwards, s_c0 curls around r_c0, grooming the hard-to-reach place on the back of {PRONOUN/r_c0/poss} neck, and quietly whispers {PRONOUN/s_c0/poss} gratitude for the wonderful life they share together."
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -12899,7 +12899,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "For s_c0, {PRONOUN/s_c0/subject} {VERB/s_c0/explain/explains}, it's less about how {PRONOUN/s_c0/subject} {VERB/s_c0/kill/kills} the prey and more about <i>getting</i> to the prey. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} happy to share {PRONOUN/s_c0/poss} interest in stalking with r_c, and they turn it into a little game."
+                    "For s_c0, {PRONOUN/s_c0/subject} {VERB/s_c0/explain/explains}, it's less about how {PRONOUN/s_c0/subject} {VERB/s_c0/kill/kills} the prey and more about <i>getting</i> to the prey. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} happy to share {PRONOUN/s_c0/poss} interest in stalking with r_c0, and they turn it into a little game."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -16760,7 +16760,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The two cats set up in the sparring area. p_l can't lay a paw on r_c, {PRONOUN/p_l/poss} focus disrupted as r_c0 whips {PRONOUN/r_c0/poss} tail along p_l's throat teasingly."
+                    "The two cats set up in the sparring area. p_l can't lay a paw on r_c0, {PRONOUN/p_l/poss} focus disrupted as r_c0 whips {PRONOUN/r_c0/poss} tail along p_l's throat teasingly."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
@@ -17764,7 +17764,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 knows how hard it is, feeling the pull of the ancestors watching over {PRONOUN/s_c0/object}. With r_c, {PRONOUN/s_c0/subject} {VERB/s_c0/go/goes} to a quiet area near camp and show {PRONOUN/r_c0/object} how to breathe, to feel connected to the world around {PRONOUN/r_c0/object} and let {PRONOUN/r_c0/poss} worries evaporate from {PRONOUN/r_c0/poss} pelt."
+                    "s_c0 knows how hard it is, feeling the pull of the ancestors watching over {PRONOUN/s_c0/object}. With r_c0, {PRONOUN/s_c0/subject} {VERB/s_c0/go/goes} to a quiet area near camp and show {PRONOUN/r_c0/object} how to breathe, to feel connected to the world around {PRONOUN/r_c0/object} and let {PRONOUN/r_c0/poss} worries evaporate from {PRONOUN/r_c0/poss} pelt."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -19019,7 +19019,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Yes, it definitely is dumb, p_l decides, eye twitching. {PRONOUN/p_l/subject/CAP}'ll prove {PRONOUN/p_l/poss} point in combat instead! p_l tackles r_c, both cats going flying in a ball of fur and insults and unnecessary physical contact."
+                    "Yes, it definitely is dumb, p_l decides, eye twitching. {PRONOUN/p_l/subject/CAP}'ll prove {PRONOUN/p_l/poss} point in combat instead! p_l tackles r_c0, both cats going flying in a ball of fur and insults and unnecessary physical contact."
                 ],
                 "exp_gained": 15,
                 "relationship_changes": [
@@ -19244,7 +19244,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "train_general_intro",
-        "intro_text": "Out for training with r_c, p_l is reaching the limit of {PRONOUN/p_l/poss} patience.",
+        "intro_text": "Out for training with r_c0, p_l is reaching the limit of {PRONOUN/p_l/poss} patience.",
         "decline_text": "Time for training to end. Now.",
         "success_outcomes": [
             {
@@ -19278,7 +19278,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/breathe/breathes}, reminding {PRONOUN/p_l/self} of {PRONOUN/p_l/poss} responsibilities as leader of the Clan. How would it look if {PRONOUN/p_l/subject} just exploded at r_c, no matter how justified?"
+                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/breathe/breathes}, reminding {PRONOUN/p_l/self} of {PRONOUN/p_l/poss} responsibilities as leader of the Clan. How would it look if {PRONOUN/p_l/subject} just exploded at r_c0, no matter how justified?"
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -19521,7 +19521,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "train_general_intro",
-        "intro_text": "r_c, sick of hearing other cats gossip about how much p_l hates {PRONOUN/r_c0/object}, pulls p_l aside to confront {PRONOUN/p_l/object}.",
+        "intro_text": "r_c0, sick of hearing other cats gossip about how much p_l hates {PRONOUN/r_c0/object}, pulls p_l aside to confront {PRONOUN/p_l/object}.",
         "decline_text": "r_c's nerves make {PRONOUN/r_c0/object} think better of the idea.",
         "success_outcomes": [
             {
@@ -20022,7 +20022,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l has some harsh advice for r_c, blunt and kind of insulting. But r_c0 checks {PRONOUN/r_c0/poss} temper and listens instead, and the shocked, wide-eyed admiration of p_l when r_c0 bursts unseen from cover to knock {PRONOUN/p_l/object} to the ground is worth all the effort."
+                    "p_l has some harsh advice for r_c0, blunt and kind of insulting. But r_c0 checks {PRONOUN/r_c0/poss} temper and listens instead, and the shocked, wide-eyed admiration of p_l when r_c0 bursts unseen from cover to knock {PRONOUN/p_l/object} to the ground is worth all the effort."
                 ],
                 "exp_gained": 15,
                 "relationship_changes": [
@@ -20831,7 +20831,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "They push themselves hard, rushing through their training so that they can have some time to catch up with each other. And yet, with r_c, even stretching {PRONOUN/p_l/poss} speed to its limit feels like a game to p_l. Still, when both of them collapse in a sunbeam, heaving for breath and stretching out muscles that want to cramp, it's p_l's favorite bit of the day. {PRONOUN/p_l/subject/CAP} {VERB/p_l/knead/kneads} helpfully at r_c's legs, easing the sore muscles as they both relax in the sun together."
+                    "They push themselves hard, rushing through their training so that they can have some time to catch up with each other. And yet, with r_c0, even stretching {PRONOUN/p_l/poss} speed to its limit feels like a game to p_l. Still, when both of them collapse in a sunbeam, heaving for breath and stretching out muscles that want to cramp, it's p_l's favorite bit of the day. {PRONOUN/p_l/subject/CAP} {VERB/p_l/knead/kneads} helpfully at r_c's legs, easing the sore muscles as they both relax in the sun together."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -20930,7 +20930,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "They head out of camp, and r_c0 is nearly giddy with the chance to spend time together, but s_c0 just isn't able to lighten up for long enough to enjoy it. There's something weighing {PRONOUN/s_c0/object} down, like rot in crowfood, and {PRONOUN/s_c0/subject} {VERB/s_c0/apologize/apologizes} to r_c, cutting the patrol short."
+                    "They head out of camp, and r_c0 is nearly giddy with the chance to spend time together, but s_c0 just isn't able to lighten up for long enough to enjoy it. There's something weighing {PRONOUN/s_c0/object} down, like rot in crowfood, and {PRONOUN/s_c0/subject} {VERB/s_c0/apologize/apologizes} to r_c0, cutting the patrol short."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -31906,7 +31906,7 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_bumpheads_WrWr",
                 "strings": [
-                    "s_c0's infectious energy transfers to r_c, and the two have a fun, productive training session together."
+                    "s_c0's infectious energy transfers to r_c0, and the two have a fun, productive training session together."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -32188,7 +32188,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_catlookingup_Wr",
                 "strings": [
-                    "s_c0 is confident in {PRONOUN/s_c0/poss} ability to get along with r_c, but despite {PRONOUN/s_c0/poss} charms, r_c0 seems unreceptive. Unused to rejection, s_c0 ends the training session early."
+                    "s_c0 is confident in {PRONOUN/s_c0/poss} ability to get along with r_c0, but despite {PRONOUN/s_c0/poss} charms, r_c0 seems unreceptive. Unused to rejection, s_c0 ends the training session early."
                 ],
                 "involved_cats": {
                     "s_c0": {

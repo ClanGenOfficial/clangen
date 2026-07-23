@@ -1891,7 +1891,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. With a furious hiss, s_c0 throws {PRONOUN/s_c0/self} at the rogue and, together with r_c, drives them off c_n territory."
+                    "The pawprints lead to a trespassing rogue. With a furious hiss, s_c0 throws {PRONOUN/s_c0/self} at the rogue and, together with r_c0, drives them off c_n territory."
                 ],
                 "involved_cats": {
                     "s_c0": {

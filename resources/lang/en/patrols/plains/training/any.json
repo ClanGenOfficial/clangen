@@ -944,7 +944,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Creeping in as close as possible, s_c0 purrs to r_c, keeping {PRONOUN/r_c0/object} calm as {PRONOUN/s_c0/subject} carefully {VERB/s_c0/dig/digs} down to {PRONOUN/r_c0/object}. r_c0 blinks up at {PRONOUN/s_c0/object}, holding on to {PRONOUN/s_c0/poss} presence in the scary situation."
+                    "Creeping in as close as possible, s_c0 purrs to r_c0, keeping {PRONOUN/r_c0/object} calm as {PRONOUN/s_c0/subject} carefully {VERB/s_c0/dig/digs} down to {PRONOUN/r_c0/object}. r_c0 blinks up at {PRONOUN/s_c0/object}, holding on to {PRONOUN/s_c0/poss} presence in the scary situation."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -990,7 +990,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l works all day to free r_c, and the patrol gets nothing else done."
+                    "p_l works all day to free r_c0, and the patrol gets nothing else done."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1099,7 +1099,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The patrol eventually manages to rescue r_c, but {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} to be helped back to camp, battered and injured."
+                    "The patrol eventually manages to rescue r_c0, but {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} to be helped back to camp, battered and injured."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -1139,7 +1139,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "p_l eventually manages to rescue r_c, but {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} to be helped back to camp, battered and injured."
+                    "p_l eventually manages to rescue r_c0, but {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} to be helped back to camp, battered and injured."
                 ],
                 "exp_gained": 0,
                 "condition": [
@@ -1290,7 +1290,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Creeping in as close as possible, s_c0 purrs to r_c, keeping {PRONOUN/r_c0/object} calm as {PRONOUN/s_c0/subject} carefully {VERB/s_c0/dig/digs} down to {PRONOUN/r_c0/object}. r_c0 blinks up at {PRONOUN/s_c0/object}, holding on to {PRONOUN/s_c0/poss} presence in the scary situation."
+                    "Creeping in as close as possible, s_c0 purrs to r_c0, keeping {PRONOUN/r_c0/object} calm as {PRONOUN/s_c0/subject} carefully {VERB/s_c0/dig/digs} down to {PRONOUN/r_c0/object}. r_c0 blinks up at {PRONOUN/s_c0/object}, holding on to {PRONOUN/s_c0/poss} presence in the scary situation."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1440,7 +1440,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "p_l eventually manages to rescue r_c, but {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} to be helped back to camp, battered and injured."
+                    "p_l eventually manages to rescue r_c0, but {PRONOUN/r_c0/subject} {VERB/r_c0/need/needs} to be helped back to camp, battered and injured."
                 ],
                 "exp_gained": 0,
                 "condition": [
@@ -3850,7 +3850,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_chatting_WrWr",
-        "intro_text": "p_l approaches r_c, asking if {PRONOUN/r_c0/subject} wouldn't mind showing p_l {PRONOUN/r_c0/poss} hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?",
+        "intro_text": "p_l approaches r_c0, asking if {PRONOUN/r_c0/subject} wouldn't mind showing p_l {PRONOUN/r_c0/poss} hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?",
         "decline_text": "r_c0 declines gently, explaining that {PRONOUN/r_c0/subject} {VERB/r_c0/have/has} too much work to do.",
         "success_outcomes": [
             {

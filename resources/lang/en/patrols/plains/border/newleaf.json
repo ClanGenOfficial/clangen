@@ -1837,7 +1837,7 @@
                 "outcome_art": "cat_sprites/gen_dead_Wr_EXPLICIT",
                 "outcome_art_clean": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "With so many cats all working as one, the coyote started to get beaten back. But just as the tide of the fight seems about to turn, one lucky strike hits r_c, and those vicious jaws take {PRONOUN/r_c0/object} to StarClan."
+                    "With so many cats all working as one, the coyote started to get beaten back. But just as the tide of the fight seems about to turn, one lucky strike hits r_c0, and those vicious jaws take {PRONOUN/r_c0/object} to StarClan."
                 ],
                 "involved_cats": {
                     "r_c0": {}

@@ -1596,7 +1596,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pawprints lead to a trespassing rogue. s_c0 throws {PRONOUN/s_c0/self} at the rogue with a furious hiss and, together with r_c, drives them off c_n territory."
+                    "The pawprints lead to a trespassing rogue. s_c0 throws {PRONOUN/s_c0/self} at the rogue with a furious hiss and, together with r_c0, drives them off c_n territory."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -3825,7 +3825,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "With so many cats all working as one, the dog starts to get beaten back. But just as the tide of the fight seems about to turn, one lucky strike hits r_c, and those vicious jaws take {PRONOUN/r_c0/object} to StarClan."
+                    "With so many cats all working as one, the dog starts to get beaten back. But just as the tide of the fight seems about to turn, one lucky strike hits r_c0, and those vicious jaws take {PRONOUN/r_c0/object} to StarClan."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -4223,7 +4223,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The dog gets a lucky hit in on r_c, though together all the cats are still able to drive it off successfully."
+                    "The dog gets a lucky hit in on r_c0, though together all the cats are still able to drive it off successfully."
                 ],
                 "involved_cats": {
                     "r_c0": {}

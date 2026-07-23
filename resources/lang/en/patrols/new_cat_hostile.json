@@ -3368,7 +3368,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l hears r_c0 softly calling {PRONOUN/p_l/object} through the bushes. p_l drops the idea of following mouse scent, hurrying to {PRONOUN/p_l/poss} mate's side. r_c, head poking into the nest's garden through a gap in the fence, murmurs something about Twoleg kits. Twoleg kits? No, r_c0 corrects, the <i>Twolegs' kits</i>, the Twolegs <i>have kittens</i> wandering through the nest's garden. Uneasily, the patrol leaves, but both cats' minds return to the young cats in the days that follow."
+                    "p_l hears r_c0 softly calling {PRONOUN/p_l/object} through the bushes. p_l drops the idea of following mouse scent, hurrying to {PRONOUN/p_l/poss} mate's side. r_c0, head poking into the nest's garden through a gap in the fence, murmurs something about Twoleg kits. Twoleg kits? No, r_c0 corrects, the <i>Twolegs' kits</i>, the Twolegs <i>have kittens</i> wandering through the nest's garden. Uneasily, the patrol leaves, but both cats' minds return to the young cats in the days that follow."
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -3450,7 +3450,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "Near the Twoleg den, p_l suddenly hears furious growls. Tiny, adorable, furious growls. A kitten tries to pounce on p_l, barely coming up to {PRONOUN/p_l/poss} elbows. Before little teeth can do any damage, p_l gently flips the tiny cat over and places a gentle paw on their back, completely pinning them as they struggle with all their might. r_c, called over by the mighty fight, asks the little warrior what on earth they're doing. Why, they're defending their territory of course! It might not be the done thing in c_n, but p_l is enchanted by the tiny warrior's bravery, and is willing to vouch for them."
+                    "Near the Twoleg den, p_l suddenly hears furious growls. Tiny, adorable, furious growls. A kitten tries to pounce on p_l, barely coming up to {PRONOUN/p_l/poss} elbows. Before little teeth can do any damage, p_l gently flips the tiny cat over and places a gentle paw on their back, completely pinning them as they struggle with all their might. r_c0, called over by the mighty fight, asks the little warrior what on earth they're doing. Why, they're defending their territory of course! It might not be the done thing in c_n, but p_l is enchanted by the tiny warrior's bravery, and is willing to vouch for them."
                 ],
                 "involved_cats": {
                     "r_c0": {},

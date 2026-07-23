@@ -862,7 +862,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 chooses to pad pelt-to-pelt with r_c, the spiritual medicine cat guiding the conversation. r_c0 feels deeply privileged and far more at peace, after confiding in {PRONOUN/s_c0/object}. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/know/knows} that c_n is in safe paws."
+                    "s_c0 chooses to pad pelt-to-pelt with r_c0, the spiritual medicine cat guiding the conversation. r_c0 feels deeply privileged and far more at peace, after confiding in {PRONOUN/s_c0/object}. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/know/knows} that c_n is in safe paws."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -5726,7 +5726,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c, deep in thought, asks p_l what {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} the nature of StarClan is. p_l swishes {PRONOUN/p_l/poss} tail and asks what brought this on. It's just something {PRONOUN/r_c0/subject}{VERB/r_c0/'ve/'s} been dwelling on recently, r_c0 explains, and {PRONOUN/r_c0/subject} wanted the opinion of someone {PRONOUN/r_c0/subject} {VERB/r_c0/trust/trusts}. p_l nods, and says {PRONOUN/p_l/subject}'ll think about it — but they've reached the herbs and have to pick them now."
+                    "r_c0, deep in thought, asks p_l what {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} the nature of StarClan is. p_l swishes {PRONOUN/p_l/poss} tail and asks what brought this on. It's just something {PRONOUN/r_c0/subject}{VERB/r_c0/'ve/'s} been dwelling on recently, r_c0 explains, and {PRONOUN/r_c0/subject} wanted the opinion of someone {PRONOUN/r_c0/subject} {VERB/r_c0/trust/trusts}. p_l nods, and says {PRONOUN/p_l/subject}'ll think about it — but they've reached the herbs and have to pick them now."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -5849,7 +5849,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c, deep in thought, asks p_l if {PRONOUN/p_l/subject} {VERB/p_l/remember/remembers} story_list, a particular story the elders are fond of. p_l swishes {PRONOUN/p_l/poss} tail and asks why. It's just something {PRONOUN/r_c0/subject}{VERB/r_c0/'ve/'s} been dwelling on  recently, r_c0 explains, and {PRONOUN/r_c0/subject} wanted to know what p_l thought of it. p_l nods, and says {PRONOUN/p_l/subject}'ll answer at camp — but they've reached the herbs and have to pick them now."
+                    "r_c0, deep in thought, asks p_l if {PRONOUN/p_l/subject} {VERB/p_l/remember/remembers} story_list, a particular story the elders are fond of. p_l swishes {PRONOUN/p_l/poss} tail and asks why. It's just something {PRONOUN/r_c0/subject}{VERB/r_c0/'ve/'s} been dwelling on  recently, r_c0 explains, and {PRONOUN/r_c0/subject} wanted to know what p_l thought of it. p_l nods, and says {PRONOUN/p_l/subject}'ll answer at camp — but they've reached the herbs and have to pick them now."
                 ],
                 "exp_gained": 20,
                 "supply": [
@@ -5955,7 +5955,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c, deep in thought, asks p_l if {PRONOUN/p_l/subject} ever {VERB/p_l/ponder/ponders} {PRONOUN/p_l/poss} own mortality. p_l swishes {PRONOUN/p_l/poss} tail and asks what brought this on. It's just something {PRONOUN/r_c0/subject}{VERB/r_c0/'ve/'s} been dwelling on recently, r_c0 explains, and {PRONOUN/r_c0/subject} wanted the opinion of someone {PRONOUN/r_c0/subject} {VERB/r_c0/trust/trusts}. p_l nods and says {PRONOUN/p_l/subject}'ll think about it — but they've reached the herbs and have to pick them now."
+                    "r_c0, deep in thought, asks p_l if {PRONOUN/p_l/subject} ever {VERB/p_l/ponder/ponders} {PRONOUN/p_l/poss} own mortality. p_l swishes {PRONOUN/p_l/poss} tail and asks what brought this on. It's just something {PRONOUN/r_c0/subject}{VERB/r_c0/'ve/'s} been dwelling on recently, r_c0 explains, and {PRONOUN/r_c0/subject} wanted the opinion of someone {PRONOUN/r_c0/subject} {VERB/r_c0/trust/trusts}. p_l nods and says {PRONOUN/p_l/subject}'ll think about it — but they've reached the herbs and have to pick them now."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -6019,7 +6019,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c, deep in thought, asks p_l if {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} considered taking on another apprentice. p_l swishes {PRONOUN/p_l/poss} tail, and asks what brought this on. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/were/was} honestly just wondering, r_c0 explains, as {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} not sure {PRONOUN/r_c0/self} when {PRONOUN/r_c0/subject} {VERB/r_c0/want/wants} to. p_l nods, and says {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been thinking about it, but they've reached the herbs and have to pick them now."
+                    "r_c0, deep in thought, asks p_l if {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} considered taking on another apprentice. p_l swishes {PRONOUN/p_l/poss} tail, and asks what brought this on. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/were/was} honestly just wondering, r_c0 explains, as {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} not sure {PRONOUN/r_c0/self} when {PRONOUN/r_c0/subject} {VERB/r_c0/want/wants} to. p_l nods, and says {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been thinking about it, but they've reached the herbs and have to pick them now."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -7404,7 +7404,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_running_McWr",
-        "intro_text": "While out collecting herbs with r_c, p_l can't help but notice just how hard {PRONOUN/p_l/poss} companion is pushing {PRONOUN/r_c0/self}.",
+        "intro_text": "While out collecting herbs with r_c0, p_l can't help but notice just how hard {PRONOUN/p_l/poss} companion is pushing {PRONOUN/r_c0/self}.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to keep {PRONOUN/p_l/poss} thoughts to {PRONOUN/p_l/self}.",
         "success_outcomes": [
             {
@@ -7581,7 +7581,7 @@
                         "amount": -8,
                         "log": {
                             "cats_from": "p_l pushed r_c0 to talk about {PRONOUN/r_c0/poss} exhaustion, and r_c0 snapped at {PRONOUN/p_l/object}.",
-                            "cats_to": "When p_l tried to lend a friendly ear to r_c, r_c0 snapped at {PRONOUN/p_l/object}."
+                            "cats_to": "When p_l tried to lend a friendly ear to r_c0, r_c0 snapped at {PRONOUN/p_l/object}."
                         }
                     }
                 ]
@@ -16517,7 +16517,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 can't think of anything to be able to help p_l's mood. As the patrol continues, p_l's foul mood infects r_c, making {PRONOUN/r_c0/object} grumpy and irritable as well, until the patrol is called off."
+                    "r_c0 can't think of anything to be able to help p_l's mood. As the patrol continues, p_l's foul mood infects r_c0, making {PRONOUN/r_c0/object} grumpy and irritable as well, until the patrol is called off."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -20930,7 +20930,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/r_c0/poss} balance and tumbles to the ground."
+                    "r_c0, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/r_c0/poss} balance and tumbles to the ground."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -32035,7 +32035,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
+                    "r_c0, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -32078,7 +32078,7 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard and dying on impact."
+                    "r_c0, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard and dying on impact."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -35969,7 +35969,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/r_c0/poss} balance and tumbles to the ground."
+                    "r_c0, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/r_c0/poss} balance and tumbles to the ground."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -36172,7 +36172,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/r_c0/poss} balance and tumbles to the ground."
+                    "r_c0, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/r_c0/poss} balance and tumbles to the ground."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -46829,7 +46829,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/r_c0/poss} balance and tumbles to the ground."
+                    "r_c0, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/r_c0/poss} balance and tumbles to the ground."
                 ],
                 "involved_cats": {
                     "r_c0": {}

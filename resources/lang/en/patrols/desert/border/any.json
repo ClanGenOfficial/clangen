@@ -892,7 +892,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "With so many cats all working as one, the patrol starts to beat the dog back. But just as the tide of the fight seems about to turn in their favour, one lucky strike hits r_c, and those vicious jaws send {PRONOUN/r_c0/object} to StarClan."
+                    "With so many cats all working as one, the patrol starts to beat the dog back. But just as the tide of the fight seems about to turn in their favour, one lucky strike hits r_c0, and those vicious jaws send {PRONOUN/r_c0/object} to StarClan."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -1293,7 +1293,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The dog gets a lucky hit in on r_c, though together the patrol is still able to drive it off successfully."
+                    "The dog gets a lucky hit in on r_c0, though together the patrol is still able to drive it off successfully."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -1456,7 +1456,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The dog gets a lucky hit in on r_c, though together the patrol is still able to drive it off successfully."
+                    "The dog gets a lucky hit in on r_c0, though together the patrol is still able to drive it off successfully."
                 ],
                 "involved_cats": {
                     "r_c0": {}

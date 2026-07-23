@@ -86,7 +86,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 chooses to hunt with r_c, the spiritual warrior gently guiding the conversation. r_c0 feels deeply privileged and far more at peace after confiding in {PRONOUN/s_c0/object}."
+                    "s_c0 chooses to hunt with r_c0, the spiritual warrior gently guiding the conversation. r_c0 feels deeply privileged and far more at peace after confiding in {PRONOUN/s_c0/object}."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -179,7 +179,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 chooses to hunt with r_c, the spiritual warrior gently guiding the conversation. r_c0 feels deeply privileged and far more at peace after confiding in {PRONOUN/p_l/object}."
+                    "s_c0 chooses to hunt with r_c0, the spiritual warrior gently guiding the conversation. r_c0 feels deeply privileged and far more at peace after confiding in {PRONOUN/p_l/object}."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -5677,7 +5677,7 @@
         "chance_of_success": 50,
         "patrol_art": "halloween/jumpscare_INTRO",
         "intro_text": "The patrol splits up to hunt, but after a while r_c0 is nowhere to be found.",
-        "decline_text": "p_l heads home without r_c, annoyed that {PRONOUN/r_c0/subject} would abandon the patrol.",
+        "decline_text": "p_l heads home without r_c0, annoyed that {PRONOUN/r_c0/subject} would abandon the patrol.",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5748,7 +5748,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l decides to continue on without r_c0 and manages to make a few catches. Although things are going well, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} something is watching {PRONOUN/p_l/object}... and getting closer! p_l lets out a terrified screech as something leaps out of the shadows and knocks {PRONOUN/p_l/object} over! p_l hops up, ready to strike, only to come face-to-face with {PRONOUN/p_l/poss} attacker... r_c, purring with laughter!"
+                    "p_l decides to continue on without r_c0 and manages to make a few catches. Although things are going well, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} something is watching {PRONOUN/p_l/object}... and getting closer! p_l lets out a terrified screech as something leaps out of the shadows and knocks {PRONOUN/p_l/object} over! p_l hops up, ready to strike, only to come face-to-face with {PRONOUN/p_l/poss} attacker... r_c0, purring with laughter!"
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -5910,7 +5910,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "However much s_c0 dislikes r_c, feeding the Clan is more important. They manage to get through the patrol without any major disputes — and catch a decent amount of prey, too."
+                    "However much s_c0 dislikes r_c0, feeding the Clan is more important. They manage to get through the patrol without any major disputes — and catch a decent amount of prey, too."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -8599,7 +8599,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l stands guard while r_c0 hunts. When p_l sees a Twoleg edging toward r_c, {PRONOUN/p_l/subject} {VERB/p_l/signal/signals} to r_c0 and {VERB/p_l/leads/leads} the patrol back to camp."
+                    "p_l stands guard while r_c0 hunts. When p_l sees a Twoleg edging toward r_c0, {PRONOUN/p_l/subject} {VERB/p_l/signal/signals} to r_c0 and {VERB/p_l/leads/leads} the patrol back to camp."
                 ],
                 "required_cat_types": {
                     "normal adult": [

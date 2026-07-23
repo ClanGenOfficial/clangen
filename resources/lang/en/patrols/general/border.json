@@ -746,7 +746,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c, being ever so curious, decides to see if {PRONOUN/r_c0/subject} can decipher the meaning behind this Twoleg ritual. After some time, {PRONOUN/r_c0/subject} {VERB/r_c0/realize/realizes} it's some kind of friendly exchange. Each time the Twoleg kits go to the den, they receive a bit of prey from the older Twolegs. The patrol takes note and continues on their way, amused by the Twolegs' strange customs."
+                    "r_c0, being ever so curious, decides to see if {PRONOUN/r_c0/subject} can decipher the meaning behind this Twoleg ritual. After some time, {PRONOUN/r_c0/subject} {VERB/r_c0/realize/realizes} it's some kind of friendly exchange. Each time the Twoleg kits go to the den, they receive a bit of prey from the older Twolegs. The patrol takes note and continues on their way, amused by the Twolegs' strange customs."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -820,7 +820,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c, being ever so curious, decides to see if {PRONOUN/r_c0/subject} can decipher the meaning behind this Twoleg ritual. However, after some time, {PRONOUN/r_c0/subject} {VERB/r_c0/give/gives} up, concluding that it's just another strange Twoleg custom that Clan cats will never understand."
+                    "r_c0, being ever so curious, decides to see if {PRONOUN/r_c0/subject} can decipher the meaning behind this Twoleg ritual. However, after some time, {PRONOUN/r_c0/subject} {VERB/r_c0/give/gives} up, concluding that it's just another strange Twoleg custom that Clan cats will never understand."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -1072,7 +1072,7 @@
                 "frequency": 2,
                 "outcome_art": "cat_sprites/gen_battle_RgWr",
                 "strings": [
-                    "p_l and r_c0 have been bickering the entire morning. But when p_l spots the shadow of a rogue falling on r_c, {PRONOUN/p_l/subject} {VERB/p_l/react/reacts} without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c0 with a ferocious snarl. r_c0 is badly injured but will live thanks to p_l dragging {PRONOUN/r_c0/object} back to camp."
+                    "p_l and r_c0 have been bickering the entire morning. But when p_l spots the shadow of a rogue falling on r_c0, {PRONOUN/p_l/subject} {VERB/p_l/react/reacts} without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c0 with a ferocious snarl. r_c0 is badly injured but will live thanks to p_l dragging {PRONOUN/r_c0/object} back to camp."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
