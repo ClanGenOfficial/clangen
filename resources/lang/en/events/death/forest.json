@@ -235,10 +235,14 @@
             "greenleaf"
         ],
         "frequency": 3,
-        "event_text": "m_c sneaks out of camp and finds pretty violet flowers to play with. Later, r_c finds {PRONOUN/m_c/object} lying in the poisonous aconite, motionless.",
+        "event_text": "m_c sneaks out of camp and plays with pretty violet flowers. Later, r_c finds {PRONOUN/m_c/object} lying in the poisonous aconite, motionless.",
         "m_c": {
             "age": [
                 "kitten"
+            ],
+            "trait": [
+                "fearless",
+                "impulsive"
             ],
             "dies": true
         },
@@ -284,8 +288,7 @@
         "history": [
             {
                 "cats": [
-                    "m_c",
-                    "r_c"
+                    "m_c"
                 ],
                 "death": "m_c died when the camp was flooded by the overflowing lake."
             }
@@ -331,8 +334,8 @@
         "season": [
             "any"
         ],
-        "frequency": 4,
-        "event_text": "m_c toddles into the lake, but finds {PRONOUN/m_c/self} unable to swim for long. {PRONOUN/m_c/subject/CAP} don't make it back to shore.",
+        "frequency": 3,
+        "event_text": "m_c toddles into the lake, but finds {PRONOUN/m_c/self} unable to swim for long. {PRONOUN/m_c/subject/CAP} {VERB/m_c/do/does}n't make it back to shore.",
         "m_c": {
             "age": [
                 "kitten"

@@ -622,7 +622,8 @@
         "m_c": {
             "age": [
                 "-kitten",
-                "-adolescent"
+                "-adolescent",
+                "-senior"
             ],
             "trait": [
                 "compassionate",
@@ -646,7 +647,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died from water-inhalation after helping {PRONOUN/m_c/poss} Clanmates escape when the camp was flooded by the overflowing lake."
+                "death": "m_c died from water-inhalation after helping {PRONOUN/m_c/poss} Clanmates escape when the camp was flooded."
             }
         ]
     },
@@ -656,20 +657,16 @@
             "forest:camp4"
         ],
         "season": [
-            "newleaf",
-            "greenleaf"
+            "-leaf-bare"
         ],
         "frequency": 4,
-        "event_text": "m_c toddles into the lake, but finds {PRONOUN/m_c/self} unable to swim for long. r_c rescues {PRONOUN/m_c/object}, but m_c is still left coughing up water.",
+        "event_text": "m_c toddles into the lake but can't swim for long. Though r_c rescues {PRONOUN/m_c/object}, m_c is still left coughing up water.",
         "m_c": {
             "age": [
                 "kitten"
             ]
         },
         "r_c": {
-            "age": [
-               "-kitten" 
-            ],
             "skill": [
                 "SWIMMER,1"
             ]
@@ -715,16 +712,13 @@
             "leaf-bare"
         ],
         "frequency": 3,
-        "event_text": "m_c toddles into the lake, but finds {PRONOUN/m_c/self} unable to swim for long. r_c rescues {PRONOUN/m_c/object}, but m_c is still left coughing up water and shivering. r_c isn't much better, {PRONOUN/r_c/poss} pelt soaked through.",
+        "event_text": "m_c toddles into the chilly lake but can't swim for long. Though r_c rescues {PRONOUN/m_c/object}, m_c is still left coughing up water and shivering. r_c's pelt is also soaked through.",
         "m_c": {
             "age": [
                 "kitten"
             ]
         },
         "r_c": {
-            "age": [
-               "-kitten" 
-            ],
             "skill": [
                 "SWIMMER,1"
             ]
@@ -804,7 +798,7 @@
                     "m_c"
                 ],
                 "scar": "m_c was scarred after being bitten by a pike.",
-                "death": "m_c died to injuries inflicted by a pike."
+                "death": "m_c died of injuries inflicted by a pike."
             }
         ]
     },
@@ -818,10 +812,14 @@
             "greenleaf"
         ],
         "frequency": 3,
-        "event_text": "m_c sneaks out of camp and finds pretty violet flowers to play with. {PRONOUN/m_c/subject/CAP} barely {VERB/m_c/make/makes} it back to camp, sweating and whining about {PRONOUN/m_c/poss} hurting belly.",
+        "event_text": "m_c sneaks out of camp and plays with pretty violet flowers. {PRONOUN/m_c/subject/CAP} barely {VERB/m_c/make/makes} it back to camp, sweating and whining about {PRONOUN/m_c/poss} hurting belly.",
         "m_c": {
             "age": [
                 "kitten"
+            ],
+            "trait": [
+                "fearless",
+                "impulsive"
             ]
         },
         "injury": [
