@@ -559,12 +559,7 @@
                 ],
                 "involved_cats": {
                     "s_c0": {
-                        "stat": {
-                            "skill": [
-                                "KITTYPET,0",
-                                "LONER,0"
-                            ]
-                        },
+                        "past_status": ["kittypet", "loner"],
                         "prior_abbreviation": [
                             "r_c0"
                         ]
@@ -935,12 +930,7 @@
                         "prior_abbreviation": [
                             "any"
                         ],
-                        "stat": {
-                            "skill": [
-                                "ROGUE,0",
-                                "LONER,0"
-                            ]
-                        }
+                        "past_status": ["rogue", "loner"]
                     }
                 },
                 "exp_gained": 10,

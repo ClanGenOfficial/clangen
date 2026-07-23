@@ -23969,12 +23969,7 @@
         },
         "involved_cats": {
             "p_l": {
-                "stat": {
-                    "skill": [
-                        "KITTYPET,0"
-                    ],
-                    "trait": []
-                }
+                "past_status": ["kittypet"],
             },
             "r_c0": {}
         },
@@ -24099,13 +24094,7 @@
         },
         "involved_cats": {
             "p_l": {
-                "stat": {
-                    "skill": [
-                        "ROGUE,0",
-                        "LONER,0"
-                    ],
-                    "trait": []
-                }
+                "past_status": ["rogue", "loner"]
             }
         },
         "chance_of_success": 60,
@@ -24909,12 +24898,7 @@
                         "prior_abbreviation": [
                             "any"
                         ],
-                        "stat": {
-                            "skill": [
-                                "KITTYPET,0",
-                                "LONER,0"
-                            ]
-                        }
+                        "past_status": ["kittypet", "loner"]
                     }
                 },
                 "exp_gained": 15
@@ -26884,11 +26868,6 @@
                     "Frowning, s_c0 sternly asks r_c1 if {PRONOUN/r_c1/subject}'d refuse to fight the kittypet if they trespassed, just because {PRONOUN/r_c1/subject}'d had a conversation with them? r_c1 quickly replies that {PRONOUN/r_c1/subject} would fight them, and s_c0 nods in approval — so long as r_c1 is willing to challenge the kittypet if they trespass onto c_n territory, that was all that mattered."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "trait": [
@@ -26935,11 +26914,6 @@
                     "s_c0 sits down next to r_c1, explaining that, while talking to cats outside of c_n was okay, r_c1 had to remember they weren't friends. r_c1's loyalty must always be to c_n. r_c1 nods, promising that {PRONOUN/r_c1/subject}'d always put c_n before everything else."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "trait": [
@@ -26983,11 +26957,6 @@
                     "s_c0 reassures r_c1 that having friends outside of c_n was okay, so long as {PRONOUN/r_c1/poss} loyalty was to c_n first and foremost. r_c1 promises that it is and thanks s_c0."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "trait": [
@@ -27030,17 +26999,8 @@
                     "Smiling, s_c0 reassures r_c1 that being friends with a kittypet didn't make {PRONOUN/r_c1/object} disloyal — after all, s_c0 was a kittypet {PRONOUN/s_c0/self}. The two spend some time chatting about s_c0's time before c_n, and r_c1 learns a surprising amount!"
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c0": {
-                        "stat": {
-                            "skill": [
-                                "KITTYPET,0"
-                            ]
-                        },
+                        "past_status": ["kittypet"],
                         "prior_abbreviation": [
                             "p_l"
                         ]
@@ -27073,13 +27033,6 @@
                 "strings": [
                     "Quickly reassuring the distressed apprentice, p_l promises {PRONOUN/r_c1/object} that, no, being friends with a kittypet doesn't make {PRONOUN/r_c1/object} disloyal to c_n, so long as {PRONOUN/r_c1/subject} will always put {PRONOUN/r_c1/poss} Clan first."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
@@ -27134,11 +27087,6 @@
                     "Angered, s_c0 snaps that if r_c1 wants to be friends with a soft kittypet, {PRONOUN/r_c1/subject} could go become one — c_n didn't need cats like that."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
                     "s_c0": {
                         "stat": {
                             "trait": [

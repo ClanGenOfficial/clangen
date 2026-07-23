@@ -1158,12 +1158,7 @@
                         "prior_abbreviation": [
                             "any"
                         ],
-                        "stat": {
-                            "skill": [
-                                "ROGUE,0",
-                                "LONER,0"
-                            ]
-                        }
+                        "past_status": ["rogue", "loner"]
                     }
                 },
                 "exp_gained": 30,
