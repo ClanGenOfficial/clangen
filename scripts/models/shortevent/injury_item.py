@@ -7,7 +7,7 @@ from pydantic_core import MISSING
 
 from scripts.models.common.injury import Injury
 from scripts.models.common.scar import Scar
-from scripts.models.shortevent.cat import Cat
+from scripts.models.common.cat import Cat
 
 
 class InjuryItem(BaseModel):

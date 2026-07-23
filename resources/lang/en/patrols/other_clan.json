@@ -206,7 +206,7 @@
                 ]
             },
             {
-                "text": "s_c pins {PRONOUN/s_c/poss} ears at the sight of the o_c_n cats. As the patrols cross paths, s_c's aggression is obvious — and the other patrol definitely notices. While they don't remark on the hostility, the patrol gets the sense that the rude behavior has been noted.",
+                "text": "s_c pins {PRONOUN/s_c/poss} ears at the sight of the o_c_n cats. As the patrols cross paths, s_c's aggression is obvious, and the other patrol definitely notices. While they don't remark on the hostility, the patrol gets the sense that the rude behavior has been noted.",
                 "exp": 0,
                 "stat_trait": [
                     "vengeful",
@@ -232,7 +232,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from was frustrated when cat_to was openly aggressive another Clan's patrol."
+                            "cats_from": "cat_from was frustrated when cat_to was openly aggressive towards another Clan's patrol."
                         }
                     }
                 ]
@@ -304,7 +304,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_otherclan3",
+        "patrol_art": "cat_sprites/gen_bord_otherclanrabbit_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -401,7 +401,6 @@
                     "careful",
                     "calm",
                     "wise",
-                    "sneaky",
                     "responsible"
                 ],
                 "prey": [
@@ -554,7 +553,7 @@
         ]
     },
     {
-        "patrol_id": "gen_med_borderherb2",
+        "patrol_id": "cat_sprites/gen_med_borderherb_Mc2",
         "biome": [
             "any"
         ],
@@ -565,7 +564,7 @@
             "herb_gathering"
         ],
         "tags": [],
-        "patrol_art": "gen_med_borderherb",
+        "patrol_art": "cat_sprites/gen_med_borderherb_Mc",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -575,7 +574,7 @@
             ]
         },
         "frequency": 2,
-        "intro_text": "p_l pads along, mouth open slightly as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} for any traces of herbs. Oh! {PRONOUN/p_l/subject/CAP} can smell some raspberries nearby — but it seems that they're just over the border.",
+        "intro_text": "p_l pads along, mouth open slightly as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} for any traces of herbs. {PRONOUN/p_l/subject/CAP} {VERB/p_l/scent/scents} some raspberries nearby, but it seems that they're just over the border.",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that trespassing isn't worth it in this case.",
         "chance_of_success": 50,
         "success_outcomes": [
@@ -618,7 +617,7 @@
                 "frequency": 4
             },
             {
-                "text": "p_l starts to step over the border but a hiss stops {PRONOUN/p_l/object} in {PRONOUN/p_l/poss} tracks. A o_c_n patrol is running {PRONOUN/p_l/poss} way. p_l forces {PRONOUN/p_l/poss} fur to lie flat as the patrol approaches and swiftly blurts out that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} a medicine cat. The warriors either don't hear {PRONOUN/p_l/object} or don't care — they get in a good scratch before p_l can retreat.",
+                "text": "p_l starts to step over the border but a hiss stops {PRONOUN/p_l/object} in {PRONOUN/p_l/poss} tracks. A o_c_n patrol is running {PRONOUN/p_l/poss} way. p_l forces {PRONOUN/p_l/poss} fur to lie flat as the patrol approaches and swiftly blurts out that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} a medicine cat. The warriors either don't hear {PRONOUN/p_l/object} or don't care. They get in a good scratch before p_l can retreat.",
                 "exp": 0,
                 "injury": [
                     {
@@ -661,7 +660,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "After poking around a bit, the patrol discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border — while p_l understands it was an honest mistake, {PRONOUN/p_l/subject} still {VERB/p_l/lecture/lectures} the apprentice on the importance of respecting border lines.",
+                "text": "After poking around a bit, the patrol discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border. While p_l understands it was an honest mistake, {PRONOUN/p_l/subject} still {VERB/p_l/lecture/lectures} the apprentice on the importance of respecting border lines.",
                 "exp": 10,
                 "other_clan_rep": 2,
                 "frequency": 4
@@ -834,6 +833,15 @@
                         }
                     }
                 ]
+            },
+            {
+                "min_max_status": {
+                    "leader": [1, 1]
+                },
+                "text": "How dare they trespass! p_l bounds after the scent, tracking it to the c_n camp. Inside, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} the o_c_n deputy waiting patiently outside. p_l remembers arranging a meeting at the last Gathering to discuss a recent event, and it turns out, {PRONOUN/p_l/subject} just showed up late.",
+                "exp": 0,
+                "other_clan_rep": -1,
+                "frequency": 4
             }
         ],
         "antag_success_outcomes": [
@@ -867,7 +875,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "After poking around a bit, p_l discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border — while p_l understands that it was an honest mistake, {PRONOUN/p_l/subject} still {VERB/p_l/give/gives} the apprentice a firm lecture on the importance of respecting border lines.",
+                "text": "After poking around a bit, p_l discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border. While p_l understands that it was an honest mistake, {PRONOUN/p_l/subject} still {VERB/p_l/give/gives} the apprentice a firm lecture on the importance of respecting border lines.",
                 "exp": 10,
                 "other_clan_rep": 2,
                 "frequency": 4
@@ -952,7 +960,16 @@
                 "min_max_status": {
                     "leader": [-1, -1]
                 },
-                "text": "How dare they trespass! p_l bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside, they find the o_c_n deputy conversing with lead_name.  {PRONOUN/lead_name/subject/CAP} {VERB/lead_name/tell/tells} p_l off for so hastily jumping to conclusions. The o_c_n deputy was only delivering some news.",
+                "text": "How dare they trespass! p_l bounds after the scent, tracking it to the c_n camp. Inside, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} the o_c_n deputy conversing with lead_name. {PRONOUN/lead_name/subject/CAP} {VERB/lead_name/tell/tells} p_l off for so hastily jumping to conclusions. The o_c_n deputy was only delivering some news.",
+                "exp": 0,
+                "other_clan_rep": -1,
+                "frequency": 4
+            },
+            {
+                "min_max_status": {
+                    "leader": [1, 1]
+                },
+                "text": "How dare they trespass! p_l bounds after the scent, tracking it to the c_n camp. Inside, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} the o_c_n deputy conversing with dep_name. p_l remembers arranging a meeting at the last Gathering to discuss a recent event, and it turns out, {PRONOUN/p_l/subject} just showed up late.",
                 "exp": 0,
                 "other_clan_rep": -1,
                 "frequency": 4
@@ -979,7 +996,7 @@
             "border"
         ],
         "tags": ["clan:deputy"],
-        "patrol_art": "gen_warrior_crouching",
+        "patrol_art": "cat_sprites/gen_crouching_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1004,7 +1021,7 @@
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 4,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -1014,7 +1031,7 @@
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 2,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -1027,7 +1044,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -1040,14 +1057,14 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. The young cat seems distraught when they realize their mistake and apologizes profusely. r_c escorts them back to the o_c_n camp and explains the situation to their deputy, who thanks {PRONOUN/r_c/object} for {PRONOUN/r_c/poss} restraint.",
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 1,
-                "art": "gen_bord_otherclan_app_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOa"
             },
             {
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border, holding prey. Calmly, they tell the apprentice they're on the wrong side of the territory and lead them back to their mentor and rightful side, where the apprentice scampers and is scolded by the o_c_n warrior.",
@@ -1062,7 +1079,7 @@
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 1,
-                "art": "gen_bord_otherclan_app_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOa"
             },
             {
                 "min_max_status": {
@@ -1079,7 +1096,7 @@
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 1,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object}, and turns to follow the same marking path as them. {PRONOUN/s_c/subject/CAP} strike up a friendly conversation, and while s_c doesn't give anything away about c_n, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors. Trust, but verify.",
@@ -1089,7 +1106,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 4,
-                "art": "gen_speaking_cat_other1"
+                "art": "cat_sprites/gen_speaking_Ow"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully.",
@@ -1105,7 +1122,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! Tactlessly, the apprentice immediately turns to their mentor and begins loudly asking <i>why</i> the c_n cat smells like <i>that</i>? s_c laughs good-naturedly and launches into a silly story about rolling in all manner of strange-smelling things in order to trick nasty dogs. The two patrols part in good spirits.",
@@ -1120,7 +1137,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             },
             {
                 "min_max_status": {
@@ -1139,7 +1156,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             },
             {
                 "min_max_status": {
@@ -1158,7 +1175,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have, and s_c compliments them both on how the young cat's training is progressing.",
@@ -1174,7 +1191,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             }
         ],
         "fail_outcomes": [
@@ -1184,7 +1201,7 @@
                 "exp": 0,
                 "other_clan_rep": -1,
                 "frequency": 4,
-                "art": "gen_bord_otherclan_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOw"
             },
             {
                 "text": "r_c marks a little, but {PRONOUN/r_c/subject} {VERB/r_c/reach/reaches} a section where the border is muddled and {VERB/r_c/have/has} to give up and go home. Unclear borders won't make o_c_n too happy, though...",
@@ -1211,7 +1228,7 @@
                 "exp": 0,
                 "other_clan_rep": -3,
                 "frequency": 2,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "min_max_status": {
@@ -1221,7 +1238,7 @@
                 "exp": 0,
                 "other_clan_rep": -1,
                 "frequency": 2,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -1248,7 +1265,7 @@
                 "exp": 0,
                 "other_clan_rep": -2,
                 "frequency": 2,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "min_max_status": {
@@ -1257,7 +1274,7 @@
                 "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the leader of o_c_n out doing the same thing. Both cats find a point where they can't agree on the right border path and agree to bring the subject up at the next Gathering instead.",
                 "exp": 0,
                 "frequency": 2,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -1284,7 +1301,7 @@
                 "exp": 0,
                 "other_clan_rep": -2,
                 "frequency": 2,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "text": "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged, it's very tense.",
@@ -1302,7 +1319,7 @@
                 ],
                 "other_clan_rep": -1,
                 "frequency": 4,
-                "art": "gen_bord_otherclan_hostile"
+                "art": "cat_sprites/gen_bord_twocathostile_OwOw"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! Tactlessly, the apprentice immediately turns to their mentor and begins loudly asking <i>why</i> the c_n cat smells like <i>that</i>? s_c bristles and stomps away while the apprentice's mentor stutters apologies behind {PRONOUN/s_c/object}.",
@@ -1315,7 +1332,7 @@
                 ],
                 "other_clan_rep": -2,
                 "frequency": 3,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have. The apprentice peppers {PRONOUN/s_c/object} with questions. Some of them are, perhaps, probing a bit too far into c_n's personal affairs, but s_c answers everything enthusiastically. The apprentice's mentor seems surprised at {PRONOUN/s_c/poss} candor... and perhaps a bit concerned at some of the answers.",
@@ -1341,7 +1358,7 @@
                 ],
                 "other_clan_rep": -1,
                 "frequency": 3,
-                "art": "gen_bord_otherclan_app_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOa"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have, but s_c interrupts and tersely informs the pair that s_c doesn't have time for questions. s_c leaves the two stunned cats behind to continue {PRONOUN/s_c/poss} patrol.",
@@ -1359,23 +1376,25 @@
                 ],
                 "other_clan_rep": -1,
                 "frequency": 3,
-                "art": "gen_bord_otherclan_app_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOa"
             },
             {
                 "min_max_status": {
                     "deputy": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
-                "relationships": [{
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "relationships": [
+                    {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "cat_from heard about cat_to starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
-                }],
+                    }
+                ],
                 "exp": 0,
                 "injury": [
                     {
@@ -1393,21 +1412,22 @@
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
-                "art": "gen_battle_warrior_other_clan"
+                "art": "cat_sprites/gen_battle_WrOw"
             },
             {
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
-                "relationships": [{
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "relationships": [
+                    {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "cat_from heard about cat_to starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
                 }],
                 "exp": 0,
@@ -1427,7 +1447,7 @@
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
-                "art": "gen_battle_warrior_other_clan"
+                "art": "cat_sprites/gen_battle_WrOw"
             }
         ]
     },
@@ -1443,7 +1463,7 @@
             "border"
         ],
         "tags": ["clan:deputy"],
-        "patrol_art": "gen_warrior_crouching",
+        "patrol_art": "cat_sprites/gen_crouching_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1468,7 +1488,7 @@
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 4,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -1478,7 +1498,7 @@
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 2,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -1491,7 +1511,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -1504,14 +1524,14 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. The young cat seems distraught when they realize their mistake and apologizes profusely. r_c escorts them back to the o_c_n camp and explains the situation to their deputy, who thanks {PRONOUN/r_c/object} for {PRONOUN/r_c/poss} restraint.",
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 1,
-                "art": "gen_bord_otherclan_app_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOa"
             },
             {
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border, holding prey. Calmly, they tell the apprentice they're on the wrong side of the territory and lead them back to their mentor and rightful side, where the apprentice scampers and is scolded by the o_c_n warrior.",
@@ -1526,7 +1546,7 @@
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 1,
-                "art": "gen_bord_otherclan_app_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOa"
             },
             {
                 "min_max_status": {
@@ -1543,7 +1563,7 @@
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 1,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object}, and turns to follow the same marking path as them. {PRONOUN/s_c/subject/CAP} {VERB/s_c/strike/strikes} up a friendly conversation, and while s_c doesn't give anything away about c_n, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors. Trust, but verify.",
@@ -1553,7 +1573,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 4,
-                "art": "gen_speaking_cat_other1"
+                "art": "cat_sprites/gen_speaking_Ow"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully.",
@@ -1569,7 +1589,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! Tactlessly, the apprentice immediately turns to their mentor and begins loudly asking <i>why</i> the c_n cat smells like <i>that</i>? s_c laughs good-naturedly and launches into a silly story about rolling in all manner of strange-smelling things in order to trick nasty dogs. The two patrols part in good spirits.",
@@ -1584,7 +1604,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             },
             {
                 "min_max_status": {
@@ -1603,7 +1623,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             },
             {
                 "min_max_status": {
@@ -1622,7 +1642,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have, and s_c compliments them both on how the young cat's training is progressing.",
@@ -1638,7 +1658,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             }
         ],
         "fail_outcomes": [
@@ -1648,7 +1668,7 @@
                 "exp": 0,
                 "other_clan_rep": -1,
                 "frequency": 4,
-                "art": "gen_bord_otherclan_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOw"
             },
             {
                 "text": "r_c marks a little, but {PRONOUN/r_c/subject} {VERB/r_c/reach/reaches} a section where the border is muddled and {VERB/r_c/have/has} to give up and go home. Unclear borders won't make o_c_n too happy, though...",
@@ -1675,7 +1695,7 @@
                 "exp": 0,
                 "other_clan_rep": -3,
                 "frequency": 2,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "min_max_status": {
@@ -1685,7 +1705,7 @@
                 "exp": 0,
                 "other_clan_rep": -1,
                 "frequency": 2,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -1712,7 +1732,7 @@
                 "exp": 0,
                 "other_clan_rep": -2,
                 "frequency": 2,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "min_max_status": {
@@ -1721,7 +1741,7 @@
                 "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the leader of o_c_n out doing the same thing. Both cats find a point where they can't agree on the right border path and agree to bring the subject up at the next Gathering instead.",
                 "exp": 0,
                 "frequency": 2,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -1748,7 +1768,7 @@
                 "exp": 0,
                 "other_clan_rep": -2,
                 "frequency": 2,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "text": "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged, it's very tense.",
@@ -1766,7 +1786,7 @@
                 ],
                 "other_clan_rep": -1,
                 "frequency": 4,
-                "art": "gen_bord_otherclan_hostile"
+                "art": "cat_sprites/gen_bord_twocathostile_OwOw"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! Tactlessly, the apprentice immediately turns to their mentor and begins loudly asking <i>why</i> the c_n cat smells like <i>that</i>? s_c bristles and stomps away while the apprentice's mentor stutters apologies behind {PRONOUN/s_c/object}.",
@@ -1779,7 +1799,7 @@
                 ],
                 "other_clan_rep": -2,
                 "frequency": 3,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have. The apprentice peppers {PRONOUN/s_c/object} with questions. Some of them are, perhaps, probing a bit too far into c_n's personal affairs, but s_c answers everything enthusiastically. The apprentice's mentor seems surprised at {PRONOUN/s_c/poss} candor... and perhaps a bit concerned at some of the answers.",
@@ -1805,7 +1825,7 @@
                 ],
                 "other_clan_rep": -1,
                 "frequency": 3,
-                "art": "gen_bord_otherclan_app_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOa"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have, but s_c interrupts and tersely informs the pair that s_c doesn't have time for questions. s_c leaves the two stunned cats behind to continue {PRONOUN/s_c/poss} patrol.",
@@ -1823,21 +1843,22 @@
                 ],
                 "other_clan_rep": -1,
                 "frequency": 3,
-                "art": "gen_bord_otherclan_app_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOa"
             },
             {
                 "min_max_status": {
                     "deputy": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
-                "relationships": [{
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "relationships": [
+                {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "cat_from heard about cat_to starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
                 }],
                 "exp": 0,
@@ -1857,23 +1878,25 @@
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
-                "art": "gen_battle_warrior_other_clan"
+                "art": "cat_sprites/gen_battle_WrOw"
             },
             {
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
-                "relationships": [{
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "relationships": [
+                    {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "cat_from heard about cat_to starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
-                }],
+                }
+            ],
                 "exp": 0,
                 "injury": [
                     {
@@ -1891,7 +1914,7 @@
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
-                "art": "gen_battle_warrior_other_clan"
+                "art": "cat_sprites/gen_battle_WrOw"
             }
         ]
     },
@@ -1907,7 +1930,7 @@
             "border"
         ],
         "tags": ["clan:deputy"],
-        "patrol_art": "gen_warrior_crouching",
+        "patrol_art": "cat_sprites/gen_crouching_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1932,7 +1955,7 @@
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 4,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -1942,7 +1965,7 @@
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 2,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -1955,7 +1978,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -1968,14 +1991,14 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. The young cat seems distraught when they realize their mistake and apologizes profusely. r_c escorts them back to the o_c_n camp and explains the situation to their deputy, who thanks {PRONOUN/r_c/object} for {PRONOUN/r_c/poss} restraint.",
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 1,
-                "art": "gen_bord_otherclan_app_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOa"
             },
             {
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border, holding prey. Calmly, they tell the apprentice they're on the wrong side of the territory and lead them back to their mentor and rightful side, where the apprentice scampers and is scolded by the o_c_n warrior.",
@@ -1990,7 +2013,7 @@
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 1,
-                "art": "gen_bord_otherclan_app_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOa"
             },
             {
                 "min_max_status": {
@@ -2007,7 +2030,7 @@
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 1,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object}, and turns to follow the same marking path as them. {PRONOUN/s_c/subject/CAP} {VERB/s_c/strike/strikes} up a friendly conversation, and while s_c doesn't give anything away about c_n, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors. Trust, but verify.",
@@ -2017,7 +2040,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 4,
-                "art": "gen_speaking_cat_other1"
+                "art": "cat_sprites/gen_speaking_Ow"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully.",
@@ -2033,7 +2056,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! Tactlessly, the apprentice immediately turns to their mentor and begins loudly asking <i>why</i> the c_n cat smells like <i>that</i>? s_c laughs good-naturedly and launches into a silly story about rolling in all manner of strange-smelling things in order to trick nasty dogs. The two patrols part in good spirits.",
@@ -2048,7 +2071,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             },
             {
                 "min_max_status": {
@@ -2067,7 +2090,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             },
             {
                 "min_max_status": {
@@ -2086,7 +2109,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have, and s_c compliments them both on how the young cat's training is progressing.",
@@ -2102,7 +2125,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             }
         ],
         "fail_outcomes": [
@@ -2112,7 +2135,7 @@
                 "exp": 0,
                 "other_clan_rep": -1,
                 "frequency": 4,
-                "art": "gen_bord_otherclan_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOw"
             },
             {
                 "text": "r_c marks a little, but {PRONOUN/r_c/subject} {VERB/r_c/reach/reaches} a section where the border is muddled and {VERB/r_c/have/has} to give up and go home. Unclear borders won't make o_c_n too happy, though...",
@@ -2139,7 +2162,7 @@
                 "exp": 0,
                 "other_clan_rep": -3,
                 "frequency": 2,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "min_max_status": {
@@ -2149,7 +2172,7 @@
                 "exp": 0,
                 "other_clan_rep": -1,
                 "frequency": 2,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -2176,7 +2199,7 @@
                 "exp": 0,
                 "other_clan_rep": -2,
                 "frequency": 2,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "min_max_status": {
@@ -2185,7 +2208,7 @@
                 "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the leader of o_c_n out doing the same thing. Both cats find a point where they can't agree on the right border path and agree to bring the subject up at the next Gathering instead.",
                 "exp": 0,
                 "frequency": 2,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -2212,7 +2235,7 @@
                 "exp": 0,
                 "other_clan_rep": -2,
                 "frequency": 2,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "text": "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged, it's very tense.",
@@ -2230,7 +2253,7 @@
                 ],
                 "other_clan_rep": -1,
                 "frequency": 4,
-                "art": "gen_bord_otherclan_hostile"
+                "art": "cat_sprites/gen_bord_twocathostile_OwOw"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! Tactlessly, the apprentice immediately turns to their mentor and begins loudly asking <i>why</i> the c_n cat smells like <i>that</i>? s_c bristles and stomps away while the apprentice's mentor stutters apologies behind {PRONOUN/s_c/object}.",
@@ -2243,7 +2266,7 @@
                 ],
                 "other_clan_rep": -2,
                 "frequency": 3,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have. The apprentice peppers {PRONOUN/s_c/object} with questions. Some of them are, perhaps, probing a bit too far into c_n's personal affairs, but s_c answers everything enthusiastically. The apprentice's mentor seems surprised at {PRONOUN/s_c/poss} candor... and perhaps a bit concerned at some of the answers.",
@@ -2269,7 +2292,7 @@
                 ],
                 "other_clan_rep": -1,
                 "frequency": 3,
-                "art": "gen_bord_otherclan_app_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOa"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have, but s_c interrupts and tersely informs the pair that s_c doesn't have time for questions. s_c leaves the two stunned cats behind to continue {PRONOUN/s_c/poss} patrol.",
@@ -2287,21 +2310,22 @@
                 ],
                 "other_clan_rep": -1,
                 "frequency": 3,
-                "art": "gen_bord_otherclan_app_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOa"
             },
             {
                 "min_max_status": {
                     "deputy": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
-                "relationships": [{
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "relationships": [
+                    {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "cat_from heard about cat_to starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
                 }],
                 "exp": 0,
@@ -2321,21 +2345,22 @@
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
-                "art": "gen_battle_warrior_other_clan"
+                "art": "cat_sprites/gen_battle_WrOw"
             },
             {
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
-                "relationships": [{
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "relationships": [
+                    {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "cat_from heard about cat_to starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
                 }],
                 "exp": 0,
@@ -2355,7 +2380,7 @@
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
-                "art": "gen_battle_warrior_other_clan"
+                "art": "cat_sprites/gen_battle_WrOw"
             }
         ]
     },
@@ -2371,7 +2396,7 @@
             "border"
         ],
         "tags": ["clan:deputy"],
-        "patrol_art": "gen_warrior_crouching",
+        "patrol_art": "cat_sprites/gen_crouching_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2396,7 +2421,7 @@
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 4,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -2406,7 +2431,7 @@
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 2,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -2419,7 +2444,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -2432,14 +2457,14 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. The young cat seems distraught when they realize their mistake and apologizes profusely. r_c escorts them back to the o_c_n camp and explains the situation to their deputy, who thanks {PRONOUN/r_c/object} for {PRONOUN/r_c/poss} restraint.",
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 1,
-                "art": "gen_bord_otherclan_app_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOa"
             },
             {
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border, holding prey. Calmly, they tell the apprentice they're on the wrong side of the territory and lead them back to their mentor and rightful side, where the apprentice scampers and is scolded by the o_c_n warrior.",
@@ -2454,7 +2479,7 @@
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 1,
-                "art": "gen_bord_otherclan_app_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOa"
             },
             {
                 "min_max_status": {
@@ -2471,7 +2496,7 @@
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 1,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object}, and turns to follow the same marking path as them. {PRONOUN/s_c/subject/CAP} {VERB/s_c/strike/strikes} up a friendly conversation, and while s_c doesn't give anything away about c_n, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors. Trust, but verify.",
@@ -2481,7 +2506,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 4,
-                "art": "gen_speaking_cat_other1"
+                "art": "cat_sprites/gen_speaking_Ow"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully.",
@@ -2497,7 +2522,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! Tactlessly, the apprentice immediately turns to their mentor and begins loudly asking <i>why</i> the c_n cat smells like <i>that</i>? s_c laughs good-naturedly and launches into a silly story about rolling in all manner of strange-smelling things in order to trick nasty dogs. The two patrols part in good spirits.",
@@ -2512,7 +2537,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             },
             {
                 "min_max_status": {
@@ -2531,7 +2556,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             },
             {
                 "min_max_status": {
@@ -2550,7 +2575,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have, and s_c compliments them both on how the young cat's training is progressing.",
@@ -2566,7 +2591,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             }
         ],
         "fail_outcomes": [
@@ -2576,7 +2601,7 @@
                 "exp": 0,
                 "other_clan_rep": -1,
                 "frequency": 4,
-                "art": "gen_bord_otherclan_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOw"
             },
             {
                 "text": "r_c marks a little, but {PRONOUN/r_c/subject} {VERB/r_c/reach/reaches} a section where the border is muddled and {VERB/r_c/have/has} to give up and go home. Unclear borders won't make o_c_n too happy, though...",
@@ -2603,7 +2628,7 @@
                 "exp": 0,
                 "other_clan_rep": -3,
                 "frequency": 2,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "min_max_status": {
@@ -2613,7 +2638,7 @@
                 "exp": 0,
                 "other_clan_rep": -1,
                 "frequency": 2,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -2640,7 +2665,7 @@
                 "exp": 0,
                 "other_clan_rep": -2,
                 "frequency": 2,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "min_max_status": {
@@ -2649,7 +2674,7 @@
                 "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the leader of o_c_n out doing the same thing. Both cats find a point where they can't agree on the right border path and agree to bring the subject up at the next Gathering instead.",
                 "exp": 0,
                 "frequency": 2,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -2676,7 +2701,7 @@
                 "exp": 0,
                 "other_clan_rep": -2,
                 "frequency": 2,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "text": "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged, it's very tense.",
@@ -2694,7 +2719,7 @@
                 ],
                 "other_clan_rep": -1,
                 "frequency": 4,
-                "art": "gen_bord_otherclan_hostile"
+                "art": "cat_sprites/gen_bord_twocathostile_OwOw"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! Tactlessly, the apprentice immediately turns to their mentor and begins loudly asking <i>why</i> the c_n cat smells like <i>that</i>? s_c bristles and stomps away while the apprentice's mentor stutters apologies behind {PRONOUN/s_c/object}.",
@@ -2707,7 +2732,7 @@
                 ],
                 "other_clan_rep": -2,
                 "frequency": 3,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have. The apprentice peppers {PRONOUN/s_c/object} with questions. Some of them are, perhaps, probing a bit too far into c_n's personal affairs, but s_c answers everything enthusiastically. The apprentice's mentor seems surprised at {PRONOUN/s_c/poss} candor... and perhaps a bit concerned at some of the answers.",
@@ -2733,7 +2758,7 @@
                 ],
                 "other_clan_rep": -1,
                 "frequency": 3,
-                "art": "gen_bord_otherclan_app_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOa"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have, but s_c interrupts and tersely informs the pair that s_c doesn't have time for questions. s_c leaves the two stunned cats behind to continue {PRONOUN/s_c/poss} patrol.",
@@ -2751,21 +2776,22 @@
                 ],
                 "other_clan_rep": -1,
                 "frequency": 3,
-                "art": "gen_bord_otherclan_app_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOa"
             },
             {
                 "min_max_status": {
                     "deputy": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
-                "relationships": [{
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "relationships": [
+                    {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "cat_from heard about cat_to starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
                 }],
                 "exp": 0,
@@ -2785,21 +2811,22 @@
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
-                "art": "gen_battle_warrior_other_clan"
+                "art": "cat_sprites/gen_battle_WrOw"
             },
             {
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
-                "relationships": [{
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "relationships": [
+                    {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "cat_from heard about cat_to starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
                 }],
                 "exp": 0,
@@ -2819,7 +2846,7 @@
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
-                "art": "gen_battle_warrior_other_clan"
+                "art": "cat_sprites/gen_battle_WrOw"
             }
         ]
     },
@@ -2835,7 +2862,7 @@
             "border"
         ],
         "tags": ["clan:deputy"],
-        "patrol_art": "gen_warrior_crouching",
+        "patrol_art": "cat_sprites/gen_crouching_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2860,7 +2887,7 @@
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 4,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -2870,7 +2897,7 @@
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 2,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -2883,7 +2910,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -2896,14 +2923,14 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border and holding prey. The young cat seems distraught when they realize their mistake and apologizes profusely. r_c escorts them back to the o_c_n camp and explains the situation to their deputy, who thanks {PRONOUN/r_c/object} for {PRONOUN/r_c/poss} restraint.",
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 1,
-                "art": "gen_bord_otherclan_app_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOa"
             },
             {
                 "text": "r_c comes across a o_c_n apprentice on the wrong side of the border, holding prey. Calmly, they tell the apprentice they're on the wrong side of the territory and lead them back to their mentor and rightful side, where the apprentice scampers and is scolded by the o_c_n warrior.",
@@ -2918,7 +2945,7 @@
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 1,
-                "art": "gen_bord_otherclan_app_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOa"
             },
             {
                 "min_max_status": {
@@ -2935,7 +2962,7 @@
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 1,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "text": "s_c comes across a patrol from o_c_n, out on a similar mission to {PRONOUN/s_c/object}, and turns to follow the same marking path as them. {PRONOUN/s_c/subject/CAP} {VERB/s_c/strike/strikes} up a friendly conversation, and while s_c doesn't give anything away about c_n, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors. Trust, but verify.",
@@ -2945,7 +2972,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 4,
-                "art": "gen_speaking_cat_other1"
+                "art": "cat_sprites/gen_speaking_Ow"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully.",
@@ -2961,7 +2988,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! Tactlessly, the apprentice immediately turns to their mentor and begins loudly asking <i>why</i> the c_n cat smells like <i>that</i>? s_c laughs good-naturedly and launches into a silly story about rolling in all manner of strange-smelling things in order to trick nasty dogs. The two patrols part in good spirits.",
@@ -2976,7 +3003,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             },
             {
                 "min_max_status": {
@@ -2995,7 +3022,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             },
             {
                 "min_max_status": {
@@ -3014,7 +3041,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have, and s_c compliments them both on how the young cat's training is progressing.",
@@ -3030,7 +3057,7 @@
                 ],
                 "other_clan_rep": 2,
                 "frequency": 3,
-                "art": "gen_train_app_otherclan"
+                "art": "cat_sprites/gen_train_appmentor_ApOw"
             }
         ],
         "fail_outcomes": [
@@ -3040,7 +3067,7 @@
                 "exp": 0,
                 "other_clan_rep": -1,
                 "frequency": 4,
-                "art": "gen_bord_otherclan_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOw"
             },
             {
                 "text": "r_c marks a little, but {PRONOUN/r_c/subject} {VERB/r_c/reach/reaches} a section where the border is muddled and {VERB/r_c/have/has} to give up and go home. Unclear borders won't make o_c_n too happy, though...",
@@ -3067,7 +3094,7 @@
                 "exp": 0,
                 "other_clan_rep": -3,
                 "frequency": 2,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "min_max_status": {
@@ -3077,7 +3104,7 @@
                 "exp": 0,
                 "other_clan_rep": -1,
                 "frequency": 2,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -3104,7 +3131,7 @@
                 "exp": 0,
                 "other_clan_rep": -2,
                 "frequency": 2,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "min_max_status": {
@@ -3113,7 +3140,7 @@
                 "text": "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the leader of o_c_n out doing the same thing. Both cats find a point where they can't agree on the right border path and agree to bring the subject up at the next Gathering instead.",
                 "exp": 0,
                 "frequency": 2,
-                "art": "gen_train_talkingOCWW"
+                "art": "cat_sprites/gen_train_talking_OwWr"
             },
             {
                 "min_max_status": {
@@ -3140,7 +3167,7 @@
                 "exp": 0,
                 "other_clan_rep": -2,
                 "frequency": 2,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "text": "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. {PRONOUN/s_c/subject/CAP} {VERB/s_c/stare/stares} at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged, it's very tense.",
@@ -3158,7 +3185,7 @@
                 ],
                 "other_clan_rep": -1,
                 "frequency": 4,
-                "art": "gen_bord_otherclan_hostile"
+                "art": "cat_sprites/gen_bord_twocathostile_OwOw"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! Tactlessly, the apprentice immediately turns to their mentor and begins loudly asking <i>why</i> the c_n cat smells like <i>that</i>? s_c bristles and stomps away while the apprentice's mentor stutters apologies behind {PRONOUN/s_c/object}.",
@@ -3171,7 +3198,7 @@
                 ],
                 "other_clan_rep": -2,
                 "frequency": 3,
-                "art": "gen_angry_cat_warrior"
+                "art": "cat_sprites/gen_angrycat_Wr"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have. The apprentice peppers {PRONOUN/s_c/object} with questions. Some of them are, perhaps, probing a bit too far into c_n's personal affairs, but s_c answers everything enthusiastically. The apprentice's mentor seems surprised at {PRONOUN/s_c/poss} candor... and perhaps a bit concerned at some of the answers.",
@@ -3197,7 +3224,7 @@
                 ],
                 "other_clan_rep": -1,
                 "frequency": 3,
-                "art": "gen_bord_otherclan_app_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOa"
             },
             {
                 "text": "As s_c marks the border, {PRONOUN/s_c/subject} {VERB/s_c/encounter/encounters} a o_c_n cat out with their new apprentice. The cat encourages their apprentice to ask s_c any questions they have, but s_c interrupts and tersely informs the pair that s_c doesn't have time for questions. s_c leaves the two stunned cats behind to continue {PRONOUN/s_c/poss} patrol.",
@@ -3215,13 +3242,13 @@
                 ],
                 "other_clan_rep": -1,
                 "frequency": 3,
-                "art": "gen_bord_otherclan_app_allies"
+                "art": "cat_sprites/gen_bord_otherclan_OwOa"
             },
             {
                 "min_max_status": {
                     "deputy": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! {PRONOUN/r_c/subject/CAP} {VERB/r_c/come/comes} back to camp scratched up, and immediately {VERB/r_c/apologize/apologizes} to the deputy for the diplomatic incident {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} inadvertently caused.",
                 "exp": 0,
                 "injury": [
                     {
@@ -3239,21 +3266,22 @@
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
-                "art": "gen_battle_warrior_other_clan"
+                "art": "cat_sprites/gen_battle_WrOw"
             },
             {
                 "min_max_status": {
                     "warrior": [-1,-1]
                 },
-                "text": "r_c is having trouble focusing today and puts a mark in the wrong place — and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
-                "relationships": [{
+                "text": "r_c is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN/r_c/object} doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls {PRONOUN/r_c/self} back to camp wounded and bleeding.",
+                "relationships": [
+                    {
                     "cats_from": ["some_clan"],
                     "cats_to": ["r_c"],
                     "mutual": false,
                     "values": ["trust"],
                     "amount": -5,
                     "log": {
-                        "cats_from": "cat_from heard about cat_to starting accidentally starting a fight with a misplaced border marking."
+                        "cats_from": "cat_from heard about cat_to accidentally starting a fight because of a misplaced border marking."
                     }
                 }],
                 "exp": 0,
@@ -3273,7 +3301,7 @@
                 },
                 "other_clan_rep": -1,
                 "frequency": 2,
-                "art": "gen_battle_warrior_other_clan"
+                "art": "cat_sprites/gen_battle_WrOw"
             }
         ]
     },
@@ -3523,7 +3551,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_train_talkingAW",
+        "patrol_art": "cat_sprites/gen_train_talking_ApWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -3543,7 +3571,7 @@
             {
                 "text": "s_c waits for app1 to catch up to {PRONOUN/s_c/object} before proposing a super exciting, top secret mission just for {PRONOUN/app1/object}! All app1 has to do is sneak across the border and <i>borrow</i> some of that catmint. Eager to please s_c, app1 bounds across the border without a second thought, snatching a large clump of the valuable herb before returning to s_c. Not particularly sneaky, but {PRONOUN/app1/poss} little escapade goes unnoticed regardless.",
                 "exp": 5,
-                "art": "gen_hunt_huntassessment",
+                "art": "cat_sprites/gen_hunt_huntassessment_Ap",
                 "can_have_stat": [
                     "p_l"
                 ],
@@ -3598,7 +3626,7 @@
                 "frequency": 4
             },
             {
-                "text": "Sick of app1's useless ambling, s_c orders {PRONOUN/app1/object} to steal from o_c_n's territory. app1 hesitates — surely stealing prey from other Clans is wrong? Looking anxiously across the border, app1 shakes {PRONOUN/app1/poss} head. {PRONOUN/app1/subject/CAP} won't do it. Startled by app1's refusal, s_c stalks off to continue the patrol, fuming — and maybe a tiny bit impressed.",
+                "text": "Sick of app1's useless ambling, s_c orders {PRONOUN/app1/object} to steal from o_c_n's territory. app1 hesitates — surely stealing prey from other Clans is wrong? Looking anxiously across the border, app1 shakes {PRONOUN/app1/poss} head. {PRONOUN/app1/subject/CAP} won't do it. s_c stalks off to continue the patrol, fuming but slightly impressed.",
                 "exp": 10,
                 "can_have_stat": [
                     "p_l"
@@ -3610,7 +3638,7 @@
                     "fierce",
                     "bold"
                 ],
-                "art": "gen_train_argueAW",
+                "art": "cat_sprites/gen_train_argue_ApWr",
                 "relationships": [
                     {
                         "cats_to": [
@@ -3651,7 +3679,7 @@
             {
                 "text": "Sighing to {PRONOUN/p_l/self}, p_l brightly suggests a super exciting mission for app1. All {PRONOUN/app1/subject} have to do is spot the closest bush in o_c_n territory, and sprint there and back as fast as {PRONOUN/app1/subject} can. While a slightly risky decision on p_l's part, the tiny transgression thankfully goes unnoticed, and gives app1 the thrill {PRONOUN/app1/subject} {VERB/app1/need/needs} to actually focus during the rest of the patrol. And besides, p_l reasons, what o_c_n doesn't know can't hurt them.",
                 "exp": 5,
-                "art": "running_app2",
+                "art": "cat_sprites/running2_Ap",
                 "relationships": [
                     {
                         "cats_to": [
@@ -3677,7 +3705,7 @@
             {
                 "text": "In hindsight, maybe it wasn't the best idea to suggest app1 sneak onto o_c_n territory. But app1 wasn't going to steal any prey, truly, p_l insists to the o_c_n patrol, {PRONOUN/app1/subject} just got overexcited! p_l's rambling excuses and apologies do little to soothe tensions, and the pair eventually return back to camp with heads and tails hung low. This was not going to be fun to explain.",
                 "exp": 0,
-                "art": "gen_bord_otherclan_hostile",
+                "art": "cat_sprites/gen_bord_twocathostile_OwOw",
                 "other_clan_rep": -1,
                 "relationships": [
                     {
@@ -3718,7 +3746,7 @@
             {
                 "text": "Of course, s_c wouldn't risk <i>{PRONOUN/s_c/poss}</i> reputation stealing o_c_n's prey. But {PRONOUN/s_c/subject} wouldn't be too upset if a particularly irritating apprentice did. It only takes a few sly words of encouragement for app1 to sneak across the border... right as a furious o_c_n patrol arrives. s_c allows the scuffle to go on for a bit, before ever-so-apologetically excusing the apprentice's recklessness.",
                 "exp": 0,
-                "art": "gen_battle_app_other_clan",
+                "art": "cat_sprites/gen_battle_ApOw",
                 "other_clan_rep": -2,
                 "can_have_stat": [
                     "p_l"
@@ -3726,8 +3754,7 @@
                 "stat_trait": [
                     "bloodthirsty",
                     "vengeful",
-                    "cunning",
-                    "sneaky"
+                    "cunning"
                 ],
                 "injury": [
                     {
@@ -3812,7 +3839,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_otherclan_app_allies",
+        "patrol_art": "cat_sprites/gen_bord_otherclan_OwOa",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -3851,7 +3878,7 @@
                 "can_have_stat": [
                     "app1"
                 ],
-                "art": "gen_happy_cat2",
+                "art": "cat_sprites/gen_happycat_Ap",
                 "other_clan_rep": 2,
                 "relationships": [
                     {
@@ -3877,7 +3904,7 @@
             {
                 "text": "app1 watches the other apprentice from across the border as the two patrols get on with marking their side of the border in silence. Every so often, app1 looks up and catches the other apprentice's eye; would they have been friends, if they were born in the same Clan? The patrol passes without incident, and app1 can't help casting a look back at the border as {PRONOUN/app1/subject} {VERB/app1/leave/leaves}.",
                 "exp": 15,
-                "art": "gen_train_speakingromance1",
+                "art": "cat_sprites/gen_train_speakingromance_WrWr",
                 "stat_trait": [
                     "careful",
                     "nervous",
@@ -3903,7 +3930,7 @@
                 "text": "Before app1 gets the chance to greet the other apprentice, r_c spots {PRONOUN/r_c/poss} friend from o_c_n and chirps a hello. The patrol stops for a chat, and app1 peeps at the other apprentice from behind the cluster of {PRONOUN/app1/poss} Clanmates.",
                 "exp": 10,
                 "other_clan_rep": 1,
-                "art": "gen_speaking_cat_w3",
+                "art": "cat_sprites/gen_speakingcat_Wr",
                 "frequency": 1
             }
         ],
@@ -3932,7 +3959,7 @@
             {
                 "text": "app1 calls out a greeting to the other apprentice, {PRONOUN/app1/poss} eyes shining and tail raised. The other apprentice glances at their mentor for a cue, and their mentor scowls at app1. Once they've left the border, p_l chides app1, reminding {PRONOUN/app1/object} not to be overly friendly with o_c_n.",
                 "exp": 0,
-                "art": "gen_train_argueWA",
+                "art": "cat_sprites/gen_train_argue_WrAp",
                 "stat_trait": [
                     "childish",
                     "playful",
@@ -3974,7 +4001,7 @@
             {
                 "text": "app1 waves {PRONOUN/app1/poss} tail to the other apprentice, but s_c yanks {PRONOUN/app1/object} back. With {PRONOUN/s_c/poss} lip curled, s_c lectures app1 not to nurture friendships with other Clans, since they might one day meet in battle. The o_c_n patrol is well within earshot of this lecture, and app1 slinks back to camp with humiliation burning under {PRONOUN/app1/poss} pelt.",
                 "exp": 0,
-                "art": "gen_train_patrolapprenticesessionfail",
+                "art": "cat_sprites/gen_train_trainingfail_Ap",
                 "stat_trait": [
                     "bloodthirsty",
                     "fierce",
@@ -4066,7 +4093,6 @@
                     "confident",
                     "daring",
                     "flamboyant",
-                    "sneaky",
                     "daring",
                     "cunning",
                     "rebellious",
@@ -4077,7 +4103,7 @@
                     "app1"
                 ],
                 "other_clan_rep": -2,
-                "art": "gen_bord_twocat_hostile_app_warrior",
+                "art": "cat_sprites/gen_bord_twocathostile_ApWr",
                 "relationships": [
                     {
                         "cats_to": [
@@ -4098,9 +4124,9 @@
                 "frequency": 4
             },
             {
-                "text": "app1 doesn't get the chance to meow hello to the o_c_n apprentice — s_c hisses and arches {PRONOUN/s_c/poss} back, staring down the other patrol. The o_c_n warriors respond in kind, fluffing out their pelts and slitting their eyes. Tension hangs heavy in the air, and both patrols spend more time posturing than border-marking.",
+                "text": "app1 doesn't get the chance to meow hello to the o_c_n apprentice, because s_c hisses and arches {PRONOUN/s_c/poss} back, staring down the other patrol. The o_c_n warriors respond in kind, fluffing out their pelts and slitting their eyes. Tension hangs heavy in the air, and both patrols spend more time posturing than border-marking.",
                 "exp": 15,
-                "art": "gen_bord_twocat_hostile_app_warrior",
+                "art": "cat_sprites/gen_bord_twocathostile_ApWr",
                 "stat_trait": [
                     "bloodthirsty",
                     "fierce",
@@ -4138,7 +4164,7 @@
             {
                 "text": "app1 takes the opportunity to extol the virtues of c_n and how much {PRONOUN/app1/subject} {VERB/app1/pity/pities} this other apprentice for having the misfortune to be born into o_c_n. By the end of {PRONOUN/app1/poss} tirade, the other apprentice is seething with irritation and embarrassment. The patrols part ways with pinned-back ears and prickling pelts.",
                 "exp": 15,
-                "art": "gen_bord_twocat_hostile_app_warrior",
+                "art": "cat_sprites/gen_bord_twocathostile_ApWr",
                 "stat_trait": [
                     "arrogant",
                     "troublesome",
@@ -4146,7 +4172,6 @@
                     "confident",
                     "daring",
                     "flamboyant",
-                    "sneaky",
                     "daring",
                     "cunning",
                     "rebellious",
@@ -4179,14 +4204,14 @@
             {
                 "text": "app1 glances up at the other apprentice from time to time while marking the border. {PRONOUN/app1/subject/CAP} never {VERB/app1/get/gets} a chance to meow hello, because r_c spots the o_c_n apprentice peering over the border and coolly asks them to focus on their own territory. A o_c_n warrior responds that r_c should concern {PRONOUN/r_c/self} with <i>{PRONOUN/r_c/poss}</i> apprentices, not o_c_n's. Pelts bristle and ears flatten before the patrols part ways.",
                 "exp": 15,
-                "art": "gen_bord_twocat_hostile_app_warrior",
+                "art": "cat_sprites/gen_bord_twocathostile_ApWr",
                 "other_clan_rep": -2,
                 "frequency": 2
             },
             {
                 "text": "app1 arches {PRONOUN/app1/poss} back and spits an insult at the o_c_n apprentice. They're as scrawny as a mouse in leaf-bare! Doesn't o_c_n bother feeding their kits? Oh, sorry, they're an <i>apprentice?</i> Wow, app1 didn't think an apprentice could even <i>be</i> that small. Pelts bristle and ears flatten before the patrols part ways.",
                 "exp": 15,
-                "art": "gen_bord_twocat_hostile_app_warrior",
+                "art": "cat_sprites/gen_bord_twocathostile_ApWr",
                 "stat_skill": [
                     "SPEAKER,1"
                 ],
@@ -4198,7 +4223,6 @@
                     "confident",
                     "daring",
                     "flamboyant",
-                    "sneaky",
                     "daring",
                     "cunning",
                     "rebellious",
@@ -4232,7 +4256,7 @@
             {
                 "text": "The sneering comment has barely left app1's mouth before the other apprentice bunches their hind legs and springs across the border, claws out! The two apprentices tussle for a moment, hissing and spitting, then r_c and a o_c_n warrior drag them off each other. app1 trades spiteful looks with the other apprentice as the patrols hurry away from each other. {PRONOUN/app1/subject/CAP}'ll be hearing about this back at camp.",
                 "exp": 0,
-                "art": "gen_battle_app_app",
+                "art": "cat_sprites/gen_battle_ApAp",
                 "other_clan_rep": -2,
                 "injury": [
                     {
@@ -4286,7 +4310,7 @@
             {
                 "text": "app1 raises {PRONOUN/app1/poss} hackles, staring down the other apprentice until they spit a challenge back. Tempers flare, and the patrols size each other up. It doesn't take much for the o_c_n patrol to decide c_n has put a paw wrong and leap across the border with claws unsheathed and teeth bared. s_c breaks up the skirmish, convincing {PRONOUN/s_c/poss} Clanmates not to waste all the medicine cat's herbs on a petty dispute.",
                 "exp": 0,
-                "art": "gen_battle_app_other_clan",
+                "art": "cat_sprites/gen_battle_ApOw",
                 "stat_skill": [
                     "MEDIATOR,1",
                     "SPEAKER,1",
@@ -4367,9 +4391,9 @@
                 "frequency": 4
             },
             {
-                "text": "o_c_n came looking for a fight, and app1 is eager to give it to them. The rest of {PRONOUN/app1/poss} patrol has no choice but to back {PRONOUN/app1/object} up; they can't let an apprentice get shredded. The skirmish rages until most of them are bloodied and panting — neither patrol wants to admit defeat, but if things escalate any further, they might be carrying their Clanmates home for a vigil.",
+                "text": "o_c_n came looking for a fight, and app1 is eager to give it to them. The rest of {PRONOUN/app1/poss} patrol has no choice but to back {PRONOUN/app1/object} up; they can't let an apprentice get shredded. The skirmish rages until most of them are bloody and panting. Neither patrol wants to admit defeat, but if things escalate any further, they might be carrying their Clanmates home for a vigil.",
                 "exp": 0,
-                "art": "gen_battle_app_other_clan",
+                "art": "cat_sprites/gen_battle_ApOw",
                 "other_clan_rep": -2,
                 "injury": [
                     {
@@ -4507,7 +4531,7 @@
                     "charismatic"
                 ],
                 "can_have_stat": [
-                    "adult"
+                    "p_l"
                 ],
                 "relationships": [
                     {
@@ -4815,7 +4839,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_otherclan_allies",
+        "patrol_art": "cat_sprites/gen_bord_otherclan_OwOw",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
@@ -4832,12 +4856,12 @@
         "pl_skill_constraint": [
             "LORE,1"
         ],
-        "intro_text": "The border patrol, busy remarking, comes across a o_c_n patrol doing the same, and the apprentices from both sides perk up at the chance for a break in the monotony. Chuckling, p_l offers the chance for a small tale — <i>if</i> they can all sit still for it!",
+        "intro_text": "The border patrol, busy remarking, comes across a o_c_n patrol doing the same, and the apprentices from both sides perk up at the chance for a break in the monotony. Chuckling, p_l offers the chance for a small tale <i>if</i> they can all sit still for it!",
         "decline_text": "The apprentices can't sit still, but it's no great loss, the patrol just continue on with their work.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Once, there was a cat called Scrap. And she was a little bit of nothing, no talents, no courage, no beauty, she thought herself worthless and stupid. Yet when her Clan was threatened by invading rogues, she rose up. Nervous, flighty, scared and small — the savior of her Clan, marked with moth wings tucked behind her ear.",
+                "text": "Once, there was a cat called Scrap. And she was a little bit of nothing, no talents, no courage, no beauty, she thought herself worthless and stupid. Yet when her Clan was threatened by invading rogues, she rose up. Nervous, flighty, scared and small, and the savior of her Clan, marked with moth wings tucked behind her ear.",
                 "exp": 20,
                 "other_clan_rep": 2,
                 "frequency": 4,
@@ -4864,7 +4888,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Just as flighty as Scrap and significantly more social, the apprentices just won't sit down and shut up. p_l's storytelling skills are wasted — though the o_c_n cats seem to appreciate the attempt.",
+                "text": "Just as flighty as Scrap and significantly more social, the apprentices just won't sit down and shut up. p_l's storytelling skills are wasted, though the o_c_n cats seem to appreciate the attempt.",
                 "exp": 0,
                 "other_clan_rep": 0,
                 "frequency": 4
@@ -4872,7 +4896,7 @@
         ],
         "antag_success_outcomes": [
             {
-                "text": "Once, there was a cat called Scrap. Possessed of few talents and no courage in her own eyes, she nevertheless rose to the occasion when her Clan needed her — as would <i>any</i> c_n warrior, p_l warns the o_c_n patrol.",
+                "text": "Once, there was a cat called Scrap. Possessed of few talents and no courage in her own eyes, she nevertheless rose to the occasion when her Clan needed her, as would <i>any</i> c_n warrior, p_l warns the o_c_n patrol.",
                 "exp": 10,
                 "other_clan_rep": -2,
                 "frequency": 4
@@ -4880,7 +4904,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "Once, there was a cat called Scrap. Possessed of few talents and no courage, she — Oh, she was a typical c_n cat then, the o_c_n apprentice laughs. p_l glares, breaking into a hiss that startles the impudent adolescent away from the border.",
+                "text": "Once, there was a cat called Scrap. Possessed of few talents and no courage, she — So she was a typical c_n cat then, the o_c_n apprentice laughs. p_l glares, breaking into a hiss that startles the impudent adolescent away from the border.",
                 "exp": 0,
                 "other_clan_rep": -1,
                 "frequency": 4

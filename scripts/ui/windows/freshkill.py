@@ -5,6 +5,7 @@ import i18n
 import pygame
 import pygame_gui.elements
 
+from scripts.config import get_config
 from scripts.game_structure import game, constants
 from scripts.cat.cats import Cat
 from scripts.clan_package.settings import (
@@ -22,6 +23,7 @@ from scripts.ui.elements.image_button import UIImageButton
 from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
+from scripts.ui.windows.cruel_locked_action import CruelLockedAction
 from scripts.ui.windows.window_base_class import GameWindow
 from scripts.ui.scale import ui_scale, ui_scale_offset, ui_scale_value
 
@@ -40,8 +42,8 @@ class FreshkillManagementWindow(GameWindow):
         self.open_view = None
         self.log = None
         self.low_nutrition_cats = None
-        self.prey_requirement = constants.PREY_CONFIG["prey_requirement"]
-        self.feeding_order = constants.PREY_CONFIG["feeding_order"]
+        self.prey_requirement = get_config("prey.prey_requirement")
+        self.feeding_order = get_config("prey.feeding.order")
         self.possible_priorities = ["hunter_first", "sick_injured_first"]
         self.possible_orders = [
             "low_rank",
@@ -157,6 +159,16 @@ class FreshkillManagementWindow(GameWindow):
                 manager=MANAGER,
             )
             self.update_cats_list()
+
+        if not self.low_nutrition_cats:
+            self.feed_view_elements["no_cats_message"] = pygame_gui.elements.UITextBox(
+                "windows.no_hungry_cats",
+                ui_scale(pygame.Rect((0, 160), (500, -1))),
+                manager=MANAGER,
+                container=self,
+                object_id="#text_box_30_horizcenter",
+                anchors={"centerx": "centerx"},
+            )
 
         # BOTTOM BUTTONS
         scale_rect = ui_scale(pygame.Rect((0, 0), (85, 30)))
@@ -448,11 +460,17 @@ class FreshkillManagementWindow(GameWindow):
         """
 
         if event.ui_element == self.feed_view_elements.get("auto_feed"):
+            if not get_config("prey.feeding.allow_manual_feeding"):
+                CruelLockedAction()
+                return
             self.setting_switch(self.feed_view_elements.get("auto_feed"), "auto_feed")
             return
 
         for order in self.possible_orders:
             if event.ui_element == self.tactic_view_elements[order]:
+                if get_config("prey.feeding.lock_order"):
+                    CruelLockedAction()
+                    return
                 switch_clan_setting(order)
                 self.tactic_view_elements[order].disable()
                 # enable all other buttons, since only one of these can be chosen at a time
@@ -466,6 +484,9 @@ class FreshkillManagementWindow(GameWindow):
                 return
         for priority in self.possible_priorities:
             if event.ui_element == self.tactic_view_elements[priority]:
+                if get_config("prey.feeding.lock_priority"):
+                    CruelLockedAction()
+                    return
                 self.setting_switch(self.tactic_view_elements[priority], priority)
                 # next we need to run through the other settings to uncheck them, cus only one of these can be checked at a time.
                 for other_priority in self.possible_priorities:
@@ -488,6 +509,9 @@ class FreshkillManagementWindow(GameWindow):
             self.feed_view_elements["cat_list"].cache_clear()
             self.update_cats_list()
         elif event.ui_element == self.feed_view_elements.get("feed_selected"):
+            if not get_config("prey.feeding.allow_manual_feeding"):
+                CruelLockedAction()
+                return
             self.handle_feeding(
                 [Cat.fetch_cat(i) for i in self.feed_view_elements["cat_list"].selected]
             )

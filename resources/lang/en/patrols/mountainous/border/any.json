@@ -23,7 +23,7 @@
             {
                 "text": "The patrol descends into battle without a second thought, easily driving the rogues away as they use their knowledge of the rocky terrain to their advantage.",
                 "exp": 30,
-                "art": "gen_bord_roguerunaway",
+                "art": "cat_sprites/gen_bord_roguerunaway_RgRg",
                 "frequency": 4
             },
             {
@@ -32,7 +32,7 @@
                 "stat_skill": [
                     "FIGHTER,3"
                 ],
-                "art": "gen_bord_roguerunaway",
+                "art": "cat_sprites/gen_bord_roguerunaway_RgRg",
                 "frequency": 4
             },
             {
@@ -43,7 +43,7 @@
                     "fierce",
                     "vengeful"
                 ],
-                "art": "gen_bord_roguerunaway",
+                "art": "cat_sprites/gen_bord_roguerunaway_RgRg",
                 "frequency": 4
             },
             {
@@ -68,7 +68,7 @@
                         }
                     }
                 ],
-                "art": "gen_bord_roguerunaway",
+                "art": "cat_sprites/gen_bord_roguerunaway_RgRg",
                 "frequency": 4
             },
             {
@@ -90,7 +90,7 @@
                         }
                     }
                 ],
-                "art": "gen_bord_roguerunaway",
+                "art": "cat_sprites/gen_bord_roguerunaway_RgRg",
                 "frequency": 2
             },
             {
@@ -101,17 +101,24 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "cats_to": [
+                            "s_c"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect", 
+                            "trust"
+                        ],
                         "amount": 5,
                         "log": {
                             "cats_from": "cat_from was impressed when cat_to convinced rogues to leave the territory."
                         }
                     }
                 ],
-                "art": "gen_bord_otherclan_allies",
+                "art": "cat_sprites/gen_bord_otherclan_OwOw",
                 "frequency": 4
             },
             {
@@ -138,7 +145,7 @@
                         }
                     }
                 ],
-                "art": "gen_bord_otherclan_allies",
+                "art": "cat_sprites/gen_bord_otherclan_OwOw",
                 "frequency": 4
             },
             {
@@ -173,7 +180,7 @@
                         }
                     }
                 ],
-                "art": "gen_bord_roguerunaway",
+                "art": "cat_sprites/gen_bord_roguerunaway_RgRg",
                 "frequency": 4
             }
         ],
@@ -187,7 +194,7 @@
                 "history_text": {
                     "death": "m_c was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
                 },
-                "art": "gen_bord_otherclan_hostile",
+                "art": "cat_sprites/gen_bord_otherclan_RgRg",
                 "frequency": 4
             },
             {
@@ -394,7 +401,7 @@
                 "history_text": {
                     "death": "m_c was killed when rogues attacked {PRONOUN/m_c/poss} patrol."
                 },
-                "art": "gen_bord_otherclan_hostile",
+                "art": "cat_sprites/gen_bord_otherclan_RgRg",
                 "frequency": 4
             },
             {
@@ -433,7 +440,7 @@
                         }
                     }
                 ],
-                "art": "gen_bord_otherclan_hostile",
+                "art": "cat_sprites/gen_bord_otherclan_RgRg",
                 "frequency": 4
             }
         ],
@@ -441,7 +448,7 @@
             {
                 "text": "The patrol descends into battle without a second thought, but the rogues are stronger than expected, and eventually the patrol is forced to retreat.",
                 "exp": 0,
-                "art": "gen_bord_otherclan_hostile",
+                "art": "cat_sprites/gen_bord_otherclan_RgRg",
                 "frequency": 4
             }
         ],
@@ -449,7 +456,7 @@
             {
                 "text": "The patrol descends into battle without a second thought, eventually driving the rogues away.",
                 "exp": 30,
-                "art": "gen_bord_roguerunaway",
+                "art": "cat_sprites/gen_bord_roguerunaway_RgRg",
                 "frequency": 4
             }
         ]
@@ -478,7 +485,7 @@
             {
                 "text": "Stunned for a moment, r_c is nearly caught in the teeth of the first rogue, but {PRONOUN/r_c/subject} {VERB/r_c/use/uses} {PRONOUN/r_c/poss} superior knowledge of the rocky terrain to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from {PRONOUN/r_c/poss} lungs.",
                 "exp": 30,
-                "art": "fst_hunt_fun1",
+                "art": "cat_sprites/gen_hunt_funrun_Wr",
                 "frequency": 4
             },
             {
@@ -487,7 +494,7 @@
                 "stat_skill": [
                     "FIGHTER,3"
                 ],
-                "art": "fst_hunt_fun1",
+                "art": "cat_sprites/gen_hunt_funrun_Wr",
                 "frequency": 4
             },
             {
@@ -508,7 +515,7 @@
                     "fierce",
                     "vengeful"
                 ],
-                "art": "gen_bord_otherclan_hostile",
+                "art": "cat_sprites/gen_bord_otherclan_RgRg",
                 "frequency": 4
             },
             {
@@ -520,7 +527,7 @@
                 "history_text": {
                     "death": "m_c was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol."
                 },
-                "art": "gen_bord_otherclan_hostile",
+                "art": "cat_sprites/gen_bord_otherclan_RgRg",
                 "frequency": 3
             }
         ]
@@ -537,12 +544,12 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 2,
-        "intro_text": "On their way to mark the far corners of their mountain, r_c starts telling a story of their ancestors to keep every cat entertained.",
+        "intro_text": "On their way to mark the far corners of their mountain, r_c starts telling a story of {PRONOUN/r_c/poss} ancestors to keep every cat entertained.",
         "decline_text": "A shadow flies over them, and r_c's storytelling is forgotten as the patrol makes sure it wasn't an eagle.",
         "chance_of_success": 20,
         "success_outcomes": [
@@ -626,7 +633,7 @@
                         }
                     }
                 ],
-                "art": "fst_hunt_heat",
+                "art": "cat_sprites/gen_hunt_heat_WrWr",
                 "frequency": 4
             },
             {
@@ -640,8 +647,8 @@
                 ],
                 "relationships": [
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["r_c"],
+                        "cats_to": ["r_c"],
+                        "cats_from": ["s_c"],
                         "mutual": true,
                         "values": ["like", "respect", "comfort"],
                         "amount": -10,
@@ -667,7 +674,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "mnt_bord_waterfall",
+        "patrol_art": "backgrounds/mnt_waterfall",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -905,7 +912,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "mothman_INTRO",
+        "patrol_art": "halloween/hal_mothman",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -922,7 +929,7 @@
             {
                 "text": "r_c turns tail and runs, feeling air ruffle {PRONOUN/r_c/poss} fur as <i>something</i> passes overhead while {PRONOUN/r_c/subject} {VERB/r_c/pelt/pelts} for home, without even the breath to waste on wailing.",
                 "exp": 35,
-                "art": "mothman_OUTCOME",
+                "art": "halloween/hal_mothmanoutcome",
                 "frequency": 4
             },
             {
@@ -938,7 +945,7 @@
                         ]
                     }
                 ],
-                "art": "mothman_OUTCOME",
+                "art": "halloween/hal_mothmanoutcome",
                 "frequency": 3
             },
             {
@@ -950,13 +957,12 @@
                     "insecure",
                     "calm",
                     "careful",
-                    "sneaky",
                     "strange",
                     "wise",
                     "cunning",
                     "gloomy"
                 ],
-                "art": "mothman_OUTCOME",
+                "art": "halloween/hal_mothmanoutcome",
                 "frequency": 4
             }
         ],
@@ -974,7 +980,7 @@
                         ]
                     }
                 ],
-                "art": "mothman_OUTCOME",
+                "art": "halloween/hal_mothmanoutcome",
                 "frequency": 3
             },
             {
@@ -986,7 +992,7 @@
                 "history_text": {
                     "death": "m_c was taken as the Mothman's snack."
                 },
-                "art": "mothman_OUTCOME",
+                "art": "halloween/hal_mothmanoutcome",
                 "frequency": 4
             },
             {
@@ -998,7 +1004,7 @@
                 "history_text": {
                     "death": "m_c was killed by the collapsing mountain slopes, an event predicted by the appearance of the Mothman."
                 },
-                "art": "mothman_OUTCOME",
+                "art": "halloween/hal_mothmanoutcome",
                 "frequency": 4
             }
         ]
@@ -1017,7 +1023,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "jerseydevil_INTRO",
+        "patrol_art": "halloween/hal_jerseydevil",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},

@@ -1,7 +1,7 @@
 [
     {
         "id": "med_cat_app_gen",
-        "thoughts": [
+        "strings": [
             "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} good enough to become a medicine cat",
             "Helps apply a poultice to a small wound",
             "Is enjoying learning all the herbs a medicine cat needs!",
@@ -23,7 +23,7 @@
     },
     {
         "id": "med_cat_alive_apprentice",
-        "thoughts": [
+        "strings": [
             "Wonders if r_c would have been a better healer",
             "Wishes the other apprentices could understand how {PRONOUN/m_c/subject} {VERB/m_c/feel/feels}",
             "Wishes {PRONOUN/m_c/subject} understood the apprentice's inside jokes",
@@ -33,18 +33,22 @@
             "Is realizing how lonely it can be to be a medicine cat apprentice",
             "Is watching other apprentices train"
         ],
-        "random_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "apprentice",
+                    "mediator apprentice",
+                    "medicine cat apprentice"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "medicine_cat_apprentice_alive_elder",
-        "thoughts": [
+        "strings": [
             "Was asked to gather fresh moss for the elders' bedding",
             "Plans to visit the elders soon",
             "Is checking in on the elders' den",
@@ -55,16 +59,20 @@
             "Is learning how to relieve r_c's joint pain",
             "Is studying the effects of aging with r_c's reluctant help"
         ],
-        "random_status_constraint": [
-            "elder"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "elder"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "medicine_cat_apprentice_to_medicine_cat",
-        "thoughts": [
+        "strings": [
             "Wants to help r_c gather fresh herbs",
             "Is watching r_c work",
             "Asks r_c about the best way to help with bee stings",
@@ -73,16 +81,20 @@
             "Hopes to learn from r_c's expertise",
             "Asks r_c how to tell the difference between a sprain and a dislocated joint"
         ],
-        "random_status_constraint": [
-            "medicine cat"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "medicine cat"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
     },
     {
         "id": "insecure_medicine_cat_apprentice",
-        "thoughts": [
+        "strings": [
             "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} a good enough medicine cat apprentice",
             "Is always worrying about {PRONOUN/m_c/poss} patients",
             "Is worried about a greencough outbreak",
@@ -91,14 +103,20 @@
             "Is holding back tears after using the wrong herbs",
             "Is upset after {PRONOUN/m_c/subject} froze at the sight of blood from a minor wound"
         ],
-        "main_trait_constraint": [
-            "insecure",
-            "nervous"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "insecure",
+                        "nervous"
+                    ]
+                }
+            }
+        }
     },
     {
         "id": "meanie_medicine_cat_apprentice",
-        "thoughts": [
+        "strings": [
             "Is hoping {PRONOUN/m_c/poss} medicine cat name will end in -claw",
             "Wants to learn some battle moves... just in case",
             "Is keeping something hidden in the back of medicine cat den",
@@ -107,62 +125,84 @@
             "Is seen secretly leaving camp to wash {PRONOUN/m_c/poss} paws in a creek",
             "Is studying the effects of deathberries"
         ],
-        "main_trait_constraint": [
-            "bloodthirsty",
-            "cold",
-            "vengeful",
-            "fierce"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "bloodthirsty",
+                        "cold",
+                        "vengeful",
+                        "fierce"
+                    ]
+                }
+            }
+        }
     },
     {
         "id": "nice_medicine_cat_apprentice",
-        "thoughts": [
+        "strings": [
             "Is vowing to help any cat in need",
             "Is looking to StarClan for guidance in a difficult decision",
             "Is thinking about how to keep the Clan safe and healthy",
             "Is dreaming about taking care of a patient",
             "Is arguing that rogues and loners deserve help too"
         ],
-        "main_trait_constraint": [
-            "thoughtful",
-            "righteous",
-            "loving",
-            "compassionate",
-            "sincere"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "thoughtful",
+                        "righteous",
+                        "loving",
+                        "compassionate",
+                        "sincere"
+                    ]
+                }
+            }
+        }
     },
     {
         "id": "nice_medicine_cat_apprentice_to_meanie_med",
-        "thoughts": [
+        "strings": [
             "Is unsure of r_c's treatment methods",
             "Wonders why r_c decided to be a medicine cat",
             "Is worried r_c likes to hurt patients",
             "Is skeptical of StarClan's choice of r_c as a medicine cat",
             "Is startled to find r_c has a stockpile of deathberries"
         ],
-        "main_trait_constraint": [
-            "thoughtful",
-            "righteous",
-            "loving",
-            "compassionate",
-            "sincere"
-        ],
-        "random_trait_constraint": [
-            "bloodthirsty",
-            "cold",
-            "vengeful",
-            "fierce"
-        ],
-        "random_status_constraint": [
-            "medicine cat"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "thoughtful",
+                        "righteous",
+                        "loving",
+                        "compassionate",
+                        "sincere"
+                    ]
+                }
+            },
+            "r_c": {
+                "status": [
+                    "medicine cat"
+                ],
+                "group": [
+                    "-afterlife"
+                ],
+                "stat": {
+                    "trait": [
+                        "bloodthirsty",
+                        "cold",
+                        "vengeful",
+                        "fierce"
+                    ]
+                }
+            }
+        }
     },
     {
         "id": "medicine_cat_apprentice_meanie_to_meanie_med",
-        "thoughts": [
+        "strings": [
             "Is plotting the downfall of c_n with r_c",
             "Is meeting secretly with r_c to discuss a new 'treatment' method",
             "Is helping r_c secretly gather deathberries",
@@ -172,69 +212,93 @@
             "Is learning the best way to make a death look like an accident from r_c",
             "Is discussing attacking other medicine cats at the next half-moon with r_c"
         ],
-        "random_trait_constraint": [
-            "bloodthirsty",
-            "cold",
-            "vengeful",
-            "fierce"
-        ],
-        "random_status_constraint": [
-            "medicine cat"
-        ],
-        "main_trait_constraint": [
-            "bloodthirsty",
-            "cold",
-            "vengeful",
-            "fierce"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "bloodthirsty",
+                        "cold",
+                        "vengeful",
+                        "fierce"
+                    ]
+                }
+            },
+            "r_c": {
+                "status": [
+                    "medicine cat"
+                ],
+                "group": [
+                    "-afterlife"
+                ],
+                "stat": {
+                    "trait": [
+                        "bloodthirsty",
+                        "cold",
+                        "vengeful",
+                        "fierce"
+                    ]
+                }
+            }
+        }
     },
     {
         "id": "meanie_medicine_cat_apprentice_to_nice_med",
-        "thoughts": [
+        "strings": [
             "Thinks r_c is far too soft with {PRONOUN/r_c/poss} patients",
-	    "Wishes r_c wasn't so soft",
-	    "Has to promise r_c {PRONOUN/m_c/subject} won't gather deathberries again"
+            "Wishes r_c wasn't so soft",
+            "Has to promise r_c {PRONOUN/m_c/subject} won't gather deathberries again"
         ],
-        "random_trait_constraint": [
-            "thoughtful",
-            "righteous",
-            "loving",
-            "compassionate",
-            "sincere"
-        ],
-        "random_status_constraint": [
-            "medicine cat"
-        ],
-        "main_trait_constraint": [
-            "bloodthirsty",
-            "cold",
-            "vengeful",
-            "fierce"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "bloodthirsty",
+                        "cold",
+                        "vengeful",
+                        "fierce"
+                    ]
+                }
+            },
+            "r_c": {
+                "status": [
+                    "medicine cat"
+                ],
+                "group": [
+                    "-afterlife"
+                ],
+                "stat": {
+                    "trait": [
+                        "thoughtful",
+                        "righteous",
+                        "loving",
+                        "compassionate",
+                        "sincere"
+                    ]
+                }
+            }
+        }
     },
     {
         "id": "med_cat_app_to_dead_SC_kit",
-        "thoughts": [
+        "strings": [
             "Is wondering if r_c would have bothered {PRONOUN/m_c/object} while {PRONOUN/m_c/subject} {VERB/m_c/were/was} sorting herbs",
             "Wonders if {PRONOUN/m_c/subject} would have had to treat r_c for kittencough",
             "Wonders if r_c would have wanted to be a medicine cat too"
         ],
-        "random_status_constraint": [
-            "kitten"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "kitten"
+                ],
+                "group": [
+                    "starclan"
+                ]
+            }
+        }
     },
     {
         "id": "general_med_cat_app_to_dead_starclan_newborn1",
-        "thoughts": [
+        "strings": [
             "Wonders if {PRONOUN/m_c/subject} would have gotten the chance to do r_c's first check-up",
             "Can still smell the bitter herbs that {PRONOUN/m_c/subject} desperately fetched to try and save r_c's life",
             "Thought {PRONOUN/m_c/subject} heard r_c's mewls, but was wrong",
@@ -256,16 +320,23 @@
             "Is asking {PRONOUN/m_c/poss} mentor why StarClan allows newborns to join Silverpelt",
             "Is vowing to never let another newborn join StarClan's ranks"
         ],
-        "random_status_constraint": [
-            "newborn"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "newborn"
+                ],
+                "group": [
+                    "starclan"
+                ]
+            }
+        }
     },
     {
         "id": "plain_med_cat_app_to_dead_starclan_newborn",
-        "thoughts": [
+        "location": [
+            "plains"
+        ],
+        "strings": [
             "Is wondering if r_c was a part of the stars last night",
             "Thought {PRONOUN/m_c/subject} heard r_c's mewls, but it was just the wind",
             "Is questioning who would provide for r_c in StarClan",
@@ -279,45 +350,65 @@
             "Wonders if the newborns in StarClan will ever get to play and run across open fields",
             "Prays to StarClan that the passed newborn kits get to feel the wind across their pelt"
         ],
-        "biome": [
-            "plains"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "group": [
+                    "starclan"
+                ]
+            }
+        }
     },
     {
         "id": "med_cat_app_dead_app",
-        "thoughts": [
+        "strings": [
             "Is wondering if r_c would have been {PRONOUN/m_c/poss} friend",
             "Wonders if {PRONOUN/m_c/subject} would have swapped secrets with r_c"
         ],
-        "random_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "apprentice",
+                    "mediator apprentice",
+                    "medicine cat apprentice"
+                ],
+                "group": [
+                    "starclan"
+                ]
+            }
+        }
     },
     {
         "id": "med_cat_app_to_alive_non-medcat_crush",
-        "thoughts": [
+        "strings": [
             "Brags to r_c about the important work {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} doing",
             "Gives r_c a tour of the medicine cat den to impress {PRONOUN/r_c/object}",
             "Fusses over a <i>teeny</i> tiny scratch r_c got",
             "Feels bad for hoping r_c might get hurt so {PRONOUN/m_c/subject} could see {PRONOUN/r_c/object}"
         ],
-        "random_status_constraint": [
-            "-medicine cat apprentice",
-            "-medicine cat"
-        ],
-        "random_living_status": [
-            "living"
-        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "-medicine cat apprentice",
+                    "-medicine cat"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        },
         "relationship_constraint": [
-            "fancies_only"
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "fancies_only"
+                ]
+            }
         ]
     }
 ]

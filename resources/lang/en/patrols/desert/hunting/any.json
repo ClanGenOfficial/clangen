@@ -321,7 +321,6 @@
                     "lonesome",
                     "loyal",
                     "nervous",
-                    "sneaky",
                     "strange",
                     "thoughtful",
                     "wise"
@@ -415,7 +414,6 @@
                     "lonesome",
                     "loyal",
                     "nervous",
-                    "sneaky",
                     "strange",
                     "thoughtful",
                     "wise"
@@ -509,7 +507,6 @@
                     "lonesome",
                     "loyal",
                     "nervous",
-                    "sneaky",
                     "strange",
                     "thoughtful",
                     "wise"
@@ -808,8 +805,7 @@
                     "calm",
                     "careful",
                     "insecure",
-                    "nervous",
-                    "sneaky"
+                    "nervous"
                 ],
                 "prey": [
                     "huge"
@@ -1214,7 +1210,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_mouse",
+        "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {
@@ -1268,7 +1264,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_mouse",
+        "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {
@@ -1326,7 +1322,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_bird",
+        "patrol_art": "cat_sprites/gen_hunt_bird_Wr",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
