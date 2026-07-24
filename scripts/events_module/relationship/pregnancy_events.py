@@ -75,7 +75,7 @@ class Pregnancy_Events:
         """
         Appends the second parent/mate ID only if the event text mentions r_c.
         :param involved_cats: the cats involved in the invent, usually the first and second parent
-        
+
         :return: involved_cats dict with mentioned_cat included if needed
         """
         if (
@@ -121,7 +121,7 @@ class Pregnancy_Events:
         if romance >= 85:
             claim_chance += 40
         elif romance >= 65:
-            claim_chance +=20
+            claim_chance += 20
         elif romance >= 45:
             # this value just stays the base chance
             claim_chance = claim_chance
@@ -129,10 +129,10 @@ class Pregnancy_Events:
             claim_chance -= 20
         else:
             claim_chance -= 30
-        
+
         # capping values higher than 100 and lower than 0
         claim_chance = max(0, min(claim_chance, 100))
-        
+
         return random.randint(1, 100) <= claim_chance
 
     @staticmethod
@@ -196,9 +196,7 @@ class Pregnancy_Events:
         return pregnancy.get("affair_known")
 
     @staticmethod
-    def create_pregnancy_data(
-        pregnant_cat: Cat, second_parent: Optional[Cat]
-    ):
+    def create_pregnancy_data(pregnant_cat: Cat, second_parent: Optional[Cat]):
         """Creates the pregnancy data entry for a new pregnancy."""
         game.clan.pregnancy_data[pregnant_cat.ID] = {
             "second_parent": str(second_parent.ID) if second_parent else None,
@@ -477,8 +475,7 @@ class Pregnancy_Events:
             ):
                 announcement_key = choice(["announcement_affair", "announcement"])
                 Pregnancy_Events.set_affair_visibility_on_pregnancy(
-                    cat,
-                    announcement_key == "announcement_affair"
+                    cat, announcement_key == "announcement_affair"
                 )
                 random_cat = mate[0]
                 text, involved_cats = Pregnancy_Events.create_pregnancy_announcement(
@@ -526,7 +523,7 @@ class Pregnancy_Events:
             for mate_id in pregnant_cat.mate:
                 mate_cat = Cat.fetch_cat(mate_id)
                 mate.append(mate_cat)
-                
+
                 if mate_cat.gender == "female":
                     afab_mate.append(mate_cat)
                 else:
@@ -570,8 +567,7 @@ class Pregnancy_Events:
             ):
                 announcement_key = choice(["announcement_affair", "announcement"])
                 Pregnancy_Events.set_affair_visibility_on_pregnancy(
-                    pregnant_cat,
-                    announcement_key == "announcement_affair"
+                    pregnant_cat, announcement_key == "announcement_affair"
                 )
                 random_cat = amab_mate[0] if amab_mate else None
                 text, involved_cats = Pregnancy_Events.create_pregnancy_announcement(
@@ -1085,15 +1081,19 @@ class Pregnancy_Events:
             and coparenting_outcome
         ):
             if coparenting_outcome == "negative":
-                absent_parent_to_kit_reaction = constants.CONFIG["new_cat"]["parent_buff"][
-                    "absent_parent_to_kit"
-                ]
+                absent_parent_to_kit_reaction = constants.CONFIG["new_cat"][
+                    "parent_buff"
+                ]["absent_parent_to_kit"]
                 for kit in kits:
                     absent_parent_to_kit = Relationship(other_cat, kit, family=True)
                     other_cat.relationships[kit.ID] = absent_parent_to_kit
                     absent_parent_to_kit.like += absent_parent_to_kit_reaction["like"]
-                    absent_parent_to_kit.respect += absent_parent_to_kit_reaction["respect"]
-                    absent_parent_to_kit.comfort += absent_parent_to_kit_reaction["comfort"]
+                    absent_parent_to_kit.respect += absent_parent_to_kit_reaction[
+                        "respect"
+                    ]
+                    absent_parent_to_kit.comfort += absent_parent_to_kit_reaction[
+                        "comfort"
+                    ]
                     absent_parent_to_kit.trust += absent_parent_to_kit_reaction["trust"]
                     kit_to_absent_parent = Relationship(kit, other_cat, family=True)
                     kit.relationships[other_cat.ID] = kit_to_absent_parent
@@ -1106,9 +1106,13 @@ class Pregnancy_Events:
                     rel = Relationship(first_cat, second_cat)
                     first_cat.relationships[second_cat.ID] = rel
 
-                coparenting_values_neg = constants.CONFIG["pregnancy"]["coparenting_values_neg"]
-                coparenting_values_pos = constants.CONFIG["pregnancy"]["coparenting_values_pos"]
-                
+                coparenting_values_neg = constants.CONFIG["pregnancy"][
+                    "coparenting_values_neg"
+                ]
+                coparenting_values_pos = constants.CONFIG["pregnancy"][
+                    "coparenting_values_pos"
+                ]
+
                 if coparenting_outcome == "negative":
                     rel.comfort += coparenting_values_neg["comfort"]
                     rel.trust += coparenting_values_neg["trust"]
@@ -1651,7 +1655,7 @@ class Pregnancy_Events:
                 if second_kitten.ID == kitten.ID:
                     continue
                 relationship_value = constants.CONFIG["new_cat"]["sib_buff"][
-                "littermates_to_eachother"
+                    "littermates_to_eachother"
                 ]
                 start_relation = Relationship(kitten, second_kitten, False, True)
                 start_relation.like += relationship_value["like"] + y
