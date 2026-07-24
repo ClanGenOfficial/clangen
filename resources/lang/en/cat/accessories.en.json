@@ -139,6 +139,26 @@
             "many": "greek valerians",
             "one": "greek valerian"
         },
+        "LARKSPUR": {
+            "zero": "larkspur",
+            "many": "larkspurs",
+            "one": "larkspur"
+        },
+        "GHOST ORCHID": {
+            "zero": "ghost orchid",
+            "many": "ghost orchids",
+            "one": "ghost orchid"
+        },
+        "PINE PINK ORCHID": {
+            "zero": "pink orchid",
+            "many": "pink orchids",
+            "one": "pink orchid"
+        },
+        "ACORN": {
+            "zero": "acorn",
+            "many": "acorns",
+            "one": "acorn"
+        },
         "DRY HERBS": {
             "zero": "herb-covered pelt",
             "many": "dry herbs",
@@ -328,6 +348,21 @@
             "zero": "goldfinch feather",
             "many": "goldfinch feathers",
             "one": "goldfinch feather"
+        },
+        "DAMSELFLY ORANGE": {
+            "zero": "orange damselfly",
+            "many": "orange damselflies",
+            "one": "orange damselfly"
+        },
+        "DAMSELFLY BLUE": {
+            "zero": "blue damselfly",
+            "many": "blue damselflies",
+            "one": "blue damselfly"
+        },
+        "DAMSELFLY RED": {
+            "zero": "red damselfly",
+            "many": "red damselflies",
+            "one": "red damselfly"
         },
         "BOW": {
             "zero": "bow",
