@@ -301,6 +301,10 @@ dev_tools = false
   # for this check, only other unmated cats can be the affair partner
   unmated_random_affair_chance = 10
 
+  # the base chance a cat who's been cheated on will help raise their mate's kits after an affair
+  # by default, the chance is 40% and the range is from 0-100%, any value higher or lower will be capped
+  base_kit_claim_chance = 40
+
   # The kit number is incremental. It is 1-6 as default so if you change these numbers, you should probably keep this in mind.
   # As in, your max kits number should probably be 5 more than the min kits number.
   # But that's not required - just makes more sense that way with how the litters are generated.
@@ -343,10 +347,6 @@ dev_tools = false
     adult = 0
     "senior adult" = 0
     senior = 0
-
-  # the base chance a cat who's been cheated on will help raise their mate's kits after an affair
-  # by default, the chance is 40% and the range is from 0-100%, any value higher or lower will be capped
-  base_kit_claim_chance = 40
 
   [pregnancy.coparenting_values_neg]
       romance = -20
