@@ -588,6 +588,9 @@ dev_tools = false
   minimum_membership = 7
   maximum_membership = 10
 
+  # pick a subset of the cats the player chooses. all others are immediately killed.
+  subset_range = [-1, -1]
+
   [clan_creation.ranks_needed]
     leader = true
     deputy = true

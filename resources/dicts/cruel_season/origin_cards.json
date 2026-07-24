@@ -54,5 +54,11 @@
       "prey.start_amount": 0,
       "clan_resources.herbs.empty_starting_storage": true
     }
+  },
+  "dwindling_members": {
+    "card_art": "origin/public_enemy.png",
+    "modifiers": {
+      "clan_creation.subset_range": [2, 2]
+    }
   }
 }

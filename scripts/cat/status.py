@@ -483,8 +483,7 @@ class Status:
     ):
         """
         Removes from previous group and sets standing with that group to Lost.
-        :param new_social_status: Indicates what social category the cat now belongs to (i.e. they've been taken by
-        Twolegs and are now a kittypet)
+        :param new_social_status: Indicates what social category the cat now belongs to (i.e. they've been taken by Twolegs and are now a kittypet)
         :param specific_group: If you want to make this cat "lost" from a group they aren't currently part of, include the group ID here
         """
         # find matching rank enum

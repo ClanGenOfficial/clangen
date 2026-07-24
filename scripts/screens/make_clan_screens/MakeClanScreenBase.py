@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
-from random import choice, choices, getrandbits, randint
+from random import choice, choices, getrandbits, randint, sample
 from re import sub
-from typing import Optional
+from typing import Optional, List
 from uuid import uuid4
 
 import pygame
@@ -16,7 +16,9 @@ from scripts.clan import Clan
 from scripts.clan_package.clan_names import get_possible_clan_names
 from scripts.clan_package.settings import set_clan_setting, save_clan_settings
 from scripts.config import get_config
+from scripts.events import one_moon_handle_grief
 from scripts.events_module.patrol.patrol import Patrol
+from scripts.events_module.short.short_event_generation import create_short_event
 from scripts.game_structure import game, constants
 from scripts.game_structure.game import switch_get_value, Switch, game_setting_get
 from scripts.game_structure.game.switches import switch_set_value
@@ -256,6 +258,11 @@ class MakeClanScreenBase(Screens):
 
         game.cur_events_list.clear()
         game.herb_events_list.clear()
+
+        self._choose_subset_of_cats(
+            subset_range=self.get_config_during_creation("clan_creation.subset_range")
+        )
+
         game.clan.herb_supply.start_storage(len(self.clan_info.starting_members))
         game.clan.save_herb_supply(game.clan)
         game.clan.grief_strings.clear()
@@ -263,6 +270,31 @@ class MakeClanScreenBase(Screens):
         rebuild_top_menu_buttons()
 
         switch_set_value(Switch.possible_cats, [])
+
+    def _choose_subset_of_cats(self, subset_range: List[int]):
+        if subset_range == [-1, -1]:
+            return
+        member_amount = len(self.clan_info.get_all_cats())
+        max_cats = member_amount if subset_range[1] == -1 else subset_range[1]
+        min_cats = max_cats if subset_range[0] == -1 else subset_range[0]
+
+        num_cats_allowed = randint(min_cats, max_cats)
+
+        while (
+            len(
+                all_cats := [
+                    cat
+                    for cat in self.clan_info.get_all_cats()
+                    if cat.status.alive_in_player_clan
+                ]
+            )
+            > num_cats_allowed
+        ):
+            cat = all_cats[randint(0, len(all_cats) - 1)]
+            while cat.status.alive_in_player_clan:
+                create_short_event(event_type="birth_death", main_cat=cat)
+        game.save_events()
+        one_moon_handle_grief()
 
     def random_biome_selection(self):
         # Select a random biome and background
