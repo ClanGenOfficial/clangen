@@ -542,7 +542,7 @@ class RoleScreen(Screens):
         else:
             output = "screens.role.blurb_unknown"
 
-        return i18n.t(output, name=self.the_cat.name, clan=game.clan.prefix)
+        return i18n.t(output, name=self.the_cat.name, clan=game.clan.name)
 
     def exit_screen(self):
         self.back_button.kill()
