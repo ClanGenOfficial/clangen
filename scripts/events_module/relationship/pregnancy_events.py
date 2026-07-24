@@ -520,6 +520,9 @@ class Pregnancy_Events:
                 second_parent = cat
 
             Pregnancy_Events.create_pregnancy_data(pregnant_cat, second_parent, clan)
+            mate = []
+            afab_mate = []
+            amab_mate = []
             for mate_id in pregnant_cat.mate:
                 mate_cat = Cat.fetch_cat(mate_id)
                 mate.append(mate_cat)
@@ -528,7 +531,9 @@ class Pregnancy_Events:
                     afab_mate.append(mate_cat)
                 else:
                     amab_mate.append(mate_cat)
-
+            has_afab_mate = bool(afab_mate)
+            has_amab_mate = bool(amab_mate)
+            
             # if both cats are faithful to each other and aren't cheaters,
             # the pregnancy will be announced as normal
             if second_parent and second_parent.ID in pregnant_cat.mate:
