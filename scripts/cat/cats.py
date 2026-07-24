@@ -381,8 +381,11 @@ class Cat:
             }[self.status.social]
             if baby:
                 social_category = f"baby_{social_category}"
-            self.backstory = choice(
-                BACKSTORIES["backstory_categories"][social_category]
+            possible_backstories = BACKSTORIES["backstory_categories"][social_category]
+            self.backstory = (
+                possible_backstories[0]
+                if self.disable_random
+                else choice(possible_backstories)
             )
 
     def init_faded(self, ID, status, prefix, suffix, moons, **kwargs):
