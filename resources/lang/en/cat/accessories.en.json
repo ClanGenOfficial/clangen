@@ -324,10 +324,10 @@
             "many": "road runner feathers",
             "one": "road runner feather"
         },
-        "GOLDFICH": {
-            "zero": "goldfich feather",
-            "many": "goldfich feathers",
-            "one": "goldfich feather"
+        "GOLDFINCH": {
+            "zero": "goldfinch feather",
+            "many": "goldfinch feathers",
+            "one": "goldfinch feather"
         },
         "BOW": {
             "zero": "bow",
