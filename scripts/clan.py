@@ -105,6 +105,7 @@ class Clan:
 
         # needs to happen immediately so that any config retrievals will be accurate
         self.cruel_cards: list[str] = cruel_cards if cruel_cards else []
+        game.clan = self
 
         self.leader = leader
         self._leader_lives = 9
