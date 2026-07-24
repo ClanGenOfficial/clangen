@@ -196,7 +196,9 @@ class Pregnancy_Events:
         return pregnancy.get("affair_known")
 
     @staticmethod
-    def create_pregnancy_data(pregnant_cat: Cat, second_parent: Optional[Cat], clan=game.clan):
+    def create_pregnancy_data(
+        pregnant_cat: Cat, second_parent: Optional[Cat], clan=game.clan
+    ):
         """Creates the pregnancy data entry for a new pregnancy."""
         clan.pregnancy_data[pregnant_cat.ID] = {
             "second_parent": str(second_parent.ID) if second_parent else None,
@@ -447,7 +449,9 @@ class Pregnancy_Events:
             # same sex birth enables all cats to get pregnant,
             # therefore the main cat will be used, regarding of gender
             Pregnancy_Events.create_pregnancy_data(cat, other_cat, clan)
-            mate = [Cat.fetch_cat(mate_id) for mate_id in cat.mate if Cat.fetch_cat(mate_id)]
+            mate = [
+                Cat.fetch_cat(mate_id) for mate_id in cat.mate if Cat.fetch_cat(mate_id)
+            ]
             if not mate:
                 mate = None
             # if both cats are faithful to each other and aren't cheaters,
@@ -533,7 +537,7 @@ class Pregnancy_Events:
                     amab_mate.append(mate_cat)
             has_afab_mate = bool(afab_mate)
             has_amab_mate = bool(amab_mate)
-            
+
             # if both cats are faithful to each other and aren't cheaters,
             # the pregnancy will be announced as normal
             if second_parent and second_parent.ID in pregnant_cat.mate:
