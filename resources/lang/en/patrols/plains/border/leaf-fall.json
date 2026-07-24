@@ -552,15 +552,15 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": [
-                            "clan"
+                            "clan", "high_aggress"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 15,
+                        "amount": 5,
                         "log": {
-                            "cats_from": "cat_to laid down {PRONOUN/cat_to/poss} life to protect c_n from coyotes."
+                            "cats_from": "After cat_from hears about how cat_to attacked a coyote, {PRONOUN/cat_from/subject} {VERB/cat_from/look/looks} at {PRONOUN/cat_to/object} with a touch more respect."
                         }
                     }
                 ],

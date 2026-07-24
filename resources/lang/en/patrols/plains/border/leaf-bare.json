@@ -637,15 +637,15 @@
                     {
                         "cats_to": ["patrol"],
                         "cats_from": [
-                            "clan"
+                            "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 20,
+                        "amount": -5,
                         "log": {
-                            "cats_from": "cat_to laid down {PRONOUN/cat_to/poss} life to protect c_n from coyotes."
+                            "cats_from": "cat_from looks somewhat uncomfortable around cat_to since their patrol in which a Clanmate was killed and offered as a courting gift by a coyote."
                         }
                     }
                 ],
