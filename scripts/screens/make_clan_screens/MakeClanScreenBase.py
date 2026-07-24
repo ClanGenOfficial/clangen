@@ -240,7 +240,6 @@ class MakeClanScreenBase(Screens):
         game.just_died.clear()
         game.dead_cats_to_grieve.clear()
         save_load.faded_ids.clear()
-        Cat.outside_cats.clear()
         Patrol.used_patrols.clear()
 
         # extra sanitization for filenames
