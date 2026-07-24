@@ -447,9 +447,9 @@ class Pregnancy_Events:
             # same sex birth enables all cats to get pregnant,
             # therefore the main cat will be used, regarding of gender
             Pregnancy_Events.create_pregnancy_data(cat, other_cat, clan)
-            mate = [
-                Cat.fetch_cat(mate_id) for mate_id in cat.mate if Cat.fetch_cat(mate_id) else None
-            ]
+            mate = [Cat.fetch_cat(mate_id) for mate_id in cat.mate if Cat.fetch_cat(mate_id)]
+            if not mate:
+                mate = None
             # if both cats are faithful to each other and aren't cheaters,
             # the pregnancy will be announced as normal
             if other_cat and other_cat.ID in cat.mate:
