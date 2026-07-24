@@ -15,7 +15,8 @@
             "BLACK CICADA": "head"
         },
         {
-            "ROAD RUNNER FEATHER": "body"
+            "ROAD RUNNER FEATHER": "body",
+            "GOLDFICH": "body"
         }
     ]
 }

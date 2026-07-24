@@ -118,6 +118,13 @@ class TestHandleAccessories(unittest.TestCase):
         self.chosen_event.execute_event()
         self.assertFalse(self.chosen_event.main_cat.pelt.accessory)
 
+    def test_nopaw_cats_do_not_get_paw_accessories(self):
+        self.chosen_event.new_accessory = self.pelts.paw_accessories
+        self.chosen_event.main_cat.pelt.scars = ("NOPAW",)
+
+        self.chosen_event.execute_event()
+        self.assertFalse(self.chosen_event.main_cat.pelt.accessory)
+
 
 class TestHandleTransition(unittest.TestCase):
     def setUp(self):

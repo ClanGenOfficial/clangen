@@ -49,7 +49,15 @@
             "CACTUS FLOWER": "head",
             "PRAIRIE FIRE": "head",
             "VERBENA EAR": "head",
-            "VERBENA PELT": "body"
+            "VERBENA PELT": "body",
+            "CREEPING ZINNIA BRACELET": "paw",
+            "VINE BRACELET": "paw"
+        },
+        {
+            "PINECONE": "head",
+            "SHINING BEDSTRAW": "head",
+            "CREEPING ZINNIA": "head",
+            "GREEK VALERIAN": "head"
         },
         {
             "DRY HERBS": "body",

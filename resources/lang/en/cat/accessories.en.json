@@ -109,6 +109,36 @@
             "many": "verbenas",
             "one": "bunch of verbenas"
         },
+        "CREEPING ZINNIA BRACELET": {
+            "zero": "creeping zinnia bracelet",
+            "many": "creeping zinnia bracelets",
+            "one": "creeping zinnia bracelet"
+        },
+        "VINE BRACELET": {
+            "zero": "vine bracelet",
+            "many": "vine bracelets",
+            "one": "vine bracelet"
+        },
+        "PINECONE": {
+            "zero": "pinecone",
+            "many": "pinecones",
+            "one": "pinecone"
+        },
+        "SHINING BEDSTRAW": {
+            "zero": "shining bedstraw",
+            "many": "shining bedstraws",
+            "one": "shining bedstraw"
+        },
+        "CREEPING ZINNIA": {
+            "zero": "creeping zinnia",
+            "many": "zinnias",
+            "one": "bunch of zinnias"
+        },
+        "GREEK VALERIAN": {
+            "zero": "greek valerian",
+            "many": "greek valerians",
+            "one": "greek valerian"
+        },
         "DRY HERBS": {
             "zero": "herb-covered pelt",
             "many": "dry herbs",
@@ -293,6 +323,11 @@
             "zero": "road runner feather",
             "many": "road runner feathers",
             "one": "road runner feather"
+        },
+        "GOLDFICH": {
+            "zero": "goldfich feather",
+            "many": "goldfich feathers",
+            "one": "goldfich feather"
         },
         "BOW": {
             "zero": "bow",
