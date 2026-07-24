@@ -516,9 +516,7 @@ class ShortEvent:
                         acc_list.remove(acc)
 
         if hasattr(self.main_cat.pelt, "scars"):
-            if (
-                "NOPAW" in self.main_cat.pelt.scars
-            ):
+            if "NOPAW" in self.main_cat.pelt.scars:
                 for acc in Pelt.paw_accessories:
                     if acc in acc_list:
                         acc_list.remove(acc)
