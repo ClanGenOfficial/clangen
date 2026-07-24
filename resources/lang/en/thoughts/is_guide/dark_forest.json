@@ -2,18 +2,18 @@
     {
         "id": "gen_guide_df",
         "strings": [
-            "Hello. I am here to drag the dead cats of c_n into the Dark Forest.",
-            "Growls at the thought of never fading.",
-            "Wonders if {PRONOUN/m_c/subject} could kill the cats {PRONOUN/m_c/subject}'s stuck with.",
-            "Is furious at the fact that {PRONOUN/m_c/subject} has been dragged down to be a guide.",
-            "Misses {PRONOUN/m_c/poss} family.",
-            "Scowls at the new cats {PRONOUN/m_c/subject}'s let into the Dark Forest.",
-            "Watches the Clans with annoyance.",
-            "Watches the Clans with a smirk.",
-            "Revolts at the thought of joining StarClan.",
-            "Frowns when the medicine cat doesn't listen to {PRONOUN/m_c/poss} 'prophecy.'",
-            "Smiles when the medicine cat fails to hear StarClans omen.",
-            "Stares across the Dark Forest border and into the shining fields of Starclan."
+            "Hello. I am here to drag the dead cats of c_n into the Dark Forest",
+            "Growls at the thought of never fading",
+            "Wonders if {PRONOUN/m_c/subject} could kill the cats {PRONOUN/m_c/subject}'s stuck with",
+            "Is furious at the fact that {PRONOUN/m_c/subject} has been dragged down to be a guide",
+            "Misses {PRONOUN/m_c/poss} family",
+            "Scowls at the new cats {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} let into the Dark Forest",
+            "Watches the Clans with annoyance",
+            "Watches the Clans with a smirk",
+            "Is revolted at the thought of joining StarClan",
+            "Frowns when the medicine cat doesn't listen to {PRONOUN/m_c/poss} 'prophecy'",
+            "Smiles when the medicine cat fails to hear StarClans omen",
+            "Stares across the Dark Forest border and into the shining fields of Starclan"
         ]
     }
 ]
