@@ -535,8 +535,6 @@ class Pregnancy_Events:
                     afab_mate.append(mate_cat)
                 else:
                     amab_mate.append(mate_cat)
-            has_afab_mate = bool(afab_mate)
-            has_amab_mate = bool(amab_mate)
 
             # if both cats are faithful to each other and aren't cheaters,
             # the pregnancy will be announced as normal
@@ -557,14 +555,14 @@ class Pregnancy_Events:
                 allow_affair is True
                 and second_parent
                 and second_parent.ID not in pregnant_cat.mate
-                and has_afab_mate
+                and afab_mate
             ):
                 random_cat = afab_mate[0] if afab_mate else None
                 text, involved_cats = Pregnancy_Events.create_pregnancy_announcement(
                     pregnant_cat,
                     "announcement_affair_samesex",
                     random_cat=random_cat,
-                )
+)
             # and lastly, if the pregnant cat got knocked up by another cat who ISN'T their mate,
             # let the player guess whether it's an affair or not, sometimes the events will tell you,
             # sometimes they won't...
@@ -572,7 +570,7 @@ class Pregnancy_Events:
                 allow_affair is True
                 and second_parent
                 and second_parent.ID not in pregnant_cat.mate
-                and has_amab_mate
+                and amab_mate
             ):
                 announcement_key = choice(["announcement_affair", "announcement"])
                 Pregnancy_Events.set_affair_visibility_on_pregnancy(
