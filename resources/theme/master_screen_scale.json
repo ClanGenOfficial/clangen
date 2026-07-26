@@ -187,15 +187,15 @@
             "misc": {
                 "text_horiz_alignment": "center",
                 "text_vert_alignment": "center",
-                "padding": "5, 5"
+                "text_vert_alignment_padding": "2"
             }
     },
         "@buttonstyles_header_mirrored": {
         "prototype": "buttonstyles_prototype",
             "misc": {
                 "text_horiz_alignment": "center",
-                "text_vert_alignment": "top",
-                "padding": "5, 5"
+                "text_vert_alignment": "center",
+                "text_vert_alignment_padding": "2"
             }
         },
     "@buttonstyles_rounded_rect": {"prototype": "buttonstyles_prototype"},
