@@ -72,22 +72,18 @@ buttonstyles = {
         "scale_only": False,
     },
     "header": {
-        "normal":
-            pygame.image.load(
-                "resources/images/generated_buttons/header_normal.png"
-            ).convert_alpha(),
-        "hovered":
-            pygame.image.load(
-                "resources/images/generated_buttons/header_hovered.png"
-            ).convert_alpha(),
-        "selected":
-            pygame.image.load(
-                "resources/images/generated_buttons/header_disabled.png"
-            ).convert_alpha(),
-        "disabled":
-            pygame.image.load(
-                "resources/images/generated_buttons/header_disabled.png"
-            ).convert_alpha(),
+        "normal": pygame.image.load(
+            "resources/images/generated_buttons/header_normal.png"
+        ).convert_alpha(),
+        "hovered": pygame.image.load(
+            "resources/images/generated_buttons/header_hovered.png"
+        ).convert_alpha(),
+        "selected": pygame.image.load(
+            "resources/images/generated_buttons/header_disabled.png"
+        ).convert_alpha(),
+        "disabled": pygame.image.load(
+            "resources/images/generated_buttons/header_disabled.png"
+        ).convert_alpha(),
         "ninetile": False,
         "scale_only": False,
     },
