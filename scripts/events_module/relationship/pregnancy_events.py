@@ -562,7 +562,7 @@ class Pregnancy_Events:
                     pregnant_cat,
                     "announcement_affair_samesex",
                     random_cat=random_cat,
-)
+                )
             # and lastly, if the pregnant cat got knocked up by another cat who ISN'T their mate,
             # let the player guess whether it's an affair or not, sometimes the events will tell you,
             # sometimes they won't...
