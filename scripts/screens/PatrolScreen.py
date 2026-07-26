@@ -908,8 +908,8 @@ class PatrolScreen(Screens):
         self.elements["proceed"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((550, 433), (172, 30))),
             "screens.patrol.proceed",
-            get_button_dict(ButtonStyles.DROPDOWN, (172, 30)),
-            object_id="@buttonstyles_dropdown",
+            get_button_dict(ButtonStyles.PROFILE_MIDDLE, (172, 30)),
+            object_id="@buttonstyles_profile_middle",
             starting_height=2,
             manager=MANAGER,
         )
