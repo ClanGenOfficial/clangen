@@ -16712,14 +16712,7 @@
     ],
     "m_c": {
         "status": ["apprentice"]
-    },
-     "supplies": [
-            {
-                "type": "freshkill",
-                "trigger": ["always"],
-                "adjust": "increase_3"
-            }
-        ]
+    }
 },
     {
     "event_id": "gen_misc_accessoryrookeryPOI3",
