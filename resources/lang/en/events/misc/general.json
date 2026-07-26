@@ -16757,7 +16757,10 @@
             "cats_to": ["m_c"],
             "mutual": true,
             "values": ["like"],
-            "amount": 8
+            "amount": 8,
+            "log": {
+                 "cats_from": "cat_from gifted cat_to feathers from a hunt."
+                }
         }
     ]
 },
@@ -16805,9 +16808,13 @@
             "cats_to": ["m_c"],
             "mutual": true,
             "values": ["like"],
-            "amount": 8
+            "amount": 8,
+            "log": {
+                 "cats_from": "cat_from gifted cat_to feathers from a hunt."
+                }
         }
-    ]
+    ],
+    "log": {}
 },
 {
     "event_id": "gen_misc_accessorygullcliffsPOI4",
