@@ -16713,5 +16713,137 @@
     "m_c": {
         "status": ["apprentice"]
     }
+},
+    {
+    "event_id": "gen_misc_accessoryrookeryPOI3",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "tags": [],
+    "frequency": 3,
+    "poi": {
+    "name": ["terrain_rookery"]
+        },
+    "event_text": "m_c returns from a hunt at {POI/name/terrain_rookery}, adorned with some feathers from {PRONOUN/m_c/poss} catch.",
+    "new_accessory": ["BLUE FEATHERS","JAY FEATHERS"],
+    "m_c": {
+        "status": ["-kitten","-elder"]
+        }
+    },
+    {
+    "event_id": "gen_misc_accessoryrookeryPOI4",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "tags": [],
+    "frequency": 3,
+    "poi": {
+    "name": ["terrain_rookery"]
+    },
+    "event_text": "r_c returns from a hunt at {POI/name/terrain_rookery} and gifts some beautiful feathers from {PRONOUN/r_c/poss} catch to m_c.",
+    "new_accessory": ["BLUE FEATHERS","JAY FEATHERS"],
+    "m_c": {
+        "age": ["any"],
+        "dies": false
+    },
+    "r_c": {
+        "status": ["-newborn", "-kitten","-elder"],
+        "relationship_status": ["likes"],
+        "dies": false
+    },
+    "relationships": [
+        {
+            "cats_from": ["r_c"],
+            "cats_to": ["m_c"],
+            "mutual": true,
+            "values": ["like"],
+            "amount": 8,
+            "log": {
+                 "cats_from": "cat_from gifted cat_to feathers from a hunt."
+                }
+        }
+    ]
+},
+{
+    "event_id": "gen_misc_accessoryeaglenestPOI3",
+    "location": [],
+    "season": [],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 3,
+    "poi": {
+    "name": ["terrain_eaglenest"]
+    },
+    "event_text": "After a visit near {POI/name/terrain_eaglenest}, m_c returns to camp adorned with feathers.",
+    "new_accessory": ["SPARROW FEATHERS"],
+    "m_c": {
+        "status": ["-kitten","-elder"],
+        "dies": false
+    }
+},
+{
+    "event_id": "gen_misc_accessorygullcliffsPOI3",
+    "location": ["beach"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "tags": [],
+    "frequency": 3,
+    "poi": {
+    "name": ["terrain_gullcliffs"]
+    },
+    "event_text": "r_c returns from a hunt at {POI/name/terrain_gullcliffs} and gifts some beautiful feathers from {PRONOUN/r_c/poss} catch to m_c.",
+    "new_accessory": ["GULL FEATHERS"],
+    "m_c": {
+        "age": ["any"],
+        "dies": false
+    },
+    "r_c": {
+        "status": ["-kitten","-elder"],
+        "relationship_status": ["likes"],
+        "dies": false
+    },
+    "relationships": [
+        {
+            "cats_from": ["r_c"],
+            "cats_to": ["m_c"],
+            "mutual": true,
+            "values": ["like"],
+            "amount": 8,
+            "log": {
+                 "cats_from": "cat_from gifted cat_to feathers from a hunt."
+                }
+        }
+    ]
+},
+{
+    "event_id": "gen_misc_accessorygullcliffsPOI4",
+    "location": ["beach"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "tags": [],
+    "frequency": 3,
+    "poi": {
+    "name": ["terrain_gullcliffs"]
+    },
+    "event_text": "m_c returns from a hunt at {POI/name/terrain_gullcliffs}, adorned with some feathers from {PRONOUN/m_c/poss} catch.",
+    "new_accessory": ["GULL FEATHERS"],
+    "m_c": {
+        "status": ["-kitten","-elder"],
+        "dies": false
+    }
+},
+{
+    "event_id": "gen_misc_accessory8",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "m_c takes a moment to pick a specific bird from the fresh-kill pile, and is later seen wearing its feathers.",
+    "new_accessory": ["BLUE FEATHERS","SPARROW FEATHERS","JAY FEATHERS","RED FEATHERS"],
+    "m_c": {
+        "age": ["any"],
+        "dies": false
+    }
 }
 ]
