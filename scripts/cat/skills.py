@@ -12,9 +12,9 @@ class SkillPath(Enum):
     HUNTER = ("moss ball hunter", "good hunter", "great hunter", "renowned hunter")
     FIGHTER = (
         "avid play-fighter",
-        "good fighter",
+        "strong fighter",
         "formidable fighter",
-        "unusually strong fighter",
+        "indomitable fighter",
     )
     RUNNER = (
         "never sits still",
@@ -54,7 +54,7 @@ class SkillPath(Enum):
         "valuable insight",
         "trusted advisor",
     )
-    SENSE = ("oddly observant", "natural intuition", "keen eye", "unnatural senses")
+    SENSE = ("stares intently", "perceptive", "sharp senses", "uncanny senses")
     KIT = (
         "active imagination",
         "good kitsitter",
@@ -73,7 +73,7 @@ class SkillPath(Enum):
         "lore keeper",
         "lore master",
     )
-    CAMP = ("picky nest builder", "steady paws", "den builder", "camp keeper")
+    CAMP = ("always tidies up", "nest weaver", "den builder", "camp keeper")
     HEALER = ("interested in herbs", "good healer", "great healer", "fantastic healer")
     STAR = (
         "curious about StarClan",
