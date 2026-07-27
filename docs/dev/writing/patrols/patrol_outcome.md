@@ -7,9 +7,11 @@ Outcomes utilize the `TextPoolEvent` format.
 
 ```json
 {
+    "frequency": 4,
     "strings": [
         "m_c spent time chatting with r_c."
-    ]
+    ],
+    "exp_gained": 0
 }
 ```
 
@@ -144,9 +146,6 @@ You can tag with a mix of "newleaf", "greenleaf", "leaf-fall", "leaf-bare", or r
 ### tags: list[str]
 Used to dictate some odds-and-ends about event constraints: [General Tags](../reference/tag-lists.md#general-tags).
 
-!!! note
-    You do not need to use the `romance` tag for events intended to be romantic. These are already filtered as necessary.
-
 ***
 
 #### frequency: int
@@ -194,14 +193,14 @@ For example:
 Utilizes the same functionality as the greater patrol parameter: [required_cat_types](patrols.md/#required_cat_types-dictstr-listint)
 
 !!! caution
-    Remember that the greater patrol parameter will have already been applied and the outcome specific `required_cat_types` will determine if more specific patrol make-ups have access to this outcome specifically.
+    Remember that the greater patrol parameter will have already been applied, so adding an outcome-specific `required_cat_types` will require even *more* specific patrol compositions.
 
 ***
 
 ### involved_cats: dict[str: dict]
 Utilizes the same functionality as the greater patrol parameter: [required_cat_types](patrols.md/#involved_cats-dictstr-var)
 
-You can either specify further constraints for cats already specified in the greater patrol `involved_cats`, or you can specify new involved cats for the patrol.
+You can either specify further constraints for cats already specified in the greater patrol `involved_cats`, or you can specify new involved cats for this outcome.
 
 It's possible to "reuse" a cat under a new designation, but with tighter constraints. You can utilize the `s_c` designations for this use. You will need to add the `prior_abbreviation` parameter to the dictionary for the `s_c` cat:
 
