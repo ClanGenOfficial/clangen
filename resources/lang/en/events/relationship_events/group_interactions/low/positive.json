@@ -309,11 +309,11 @@
         ],
         "involved_cats": {
             "m_c": {
-                "status": ["warrior", "deputy", "leader"],
+                "status": ["warrior", "deputy", "leader", "mediator", "medicine cat"],
                 "past_status": ["kitten"]
             },
             "multi_cat": {
-                "status": ["warrior", "deputy", "leader"],
+                "status": ["warrior", "deputy", "leader", "mediator", "medicine cat"],
                 "past_status": ["kitten"]
             }
         },
