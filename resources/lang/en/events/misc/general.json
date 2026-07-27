@@ -4708,7 +4708,7 @@
         ]
     },
     {
-        "event_id": "gen_misc_any_accessoryrookeryPOI1",
+        "event_id": "gen_misc_any_accessoryrookeryPOI2",
         "location": ["any"],
         "season": ["any"],
         "sub_type": ["accessory"],
