@@ -16839,7 +16839,7 @@
     "sub_type": ["accessory"],
     "tags": [],
     "frequency": 2,
-    "event_text": "m_c takes a moment to pick a specific bird from the fresh-kill pile, and is later seen wearing its feathers.",
+    "event_text": "m_c takes a moment to pick a specific bird from the fresh-kill pile and is later seen wearing its feathers.",
     "new_accessory": ["BLUE FEATHERS","SPARROW FEATHERS","JAY FEATHERS","RED FEATHERS"],
     "m_c": {
         "age": ["any"],
