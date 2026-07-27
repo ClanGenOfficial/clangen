@@ -866,7 +866,7 @@
     {
         "id": "group_3_neg_appinterferingwithromance",
         "strings": [
-            "m_c is sad that r_c1 doesn't spend as much time with {PRONOUN/m_c/object} since {PRONOUN/r_c1/subject} started training r_c2.",
+            "m_c is sad that r_c1 doesn't spend as much time with {PRONOUN/m_c/object} since r_c1 started training r_c2.",
             "m_c feels like r_c1 is neglecting their relationship because {PRONOUN/r_c1/subject}{VERB/r_c1/'re'/s} too busy training r_c2.",
             "m_c can't wait until r_c2's training is over so m_c can have r_c1 all to {PRONOUN/m_c/self} again.",
             "m_c sometimes wishes r_c2 had a different mentor so r_c1 wouldn't be so busy all the time.",
