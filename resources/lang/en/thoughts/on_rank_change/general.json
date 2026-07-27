@@ -216,8 +216,22 @@
     {
         "id": "becoming_leader_rank",
         "strings": [
-            "Feels {PRONOUN/m_c/poss} nine lives rushing through {PRONOUN/m_c/poss} veins",
-            "Is ready for the challenges that lie ahead",
+            "Is ready for the challenges that lie ahead"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "leader"
+                ]
+            }
+        }
+    },
+    {
+        "id": "becoming_leader_rank_withwarriors",
+        "tags": [
+            "clan:warrior"
+        ],
+        "strings": [
             "Knows every cat in the Clan now relies on {PRONOUN/m_c/object}",
             "Accepts the fealty of {PRONOUN/m_c/poss} Clanmates",
             "Meets with the senior warriors to discuss {PRONOUN/m_c/poss} new leadership"
@@ -233,12 +247,32 @@
     {
         "id": "becoming_deputy_rank",
         "strings": [
-            "Hopes to earn the respect of the warriors",
             "Is learning how to organize patrols",
             "Looks to r_c for advice on {PRONOUN/m_c/poss} new role",
             "Appreciates r_c's faith in {PRONOUN/m_c/object}",
             "Feels honored to be chosen as deputy",
             "Feels {PRONOUN/m_c/subject} {VERB/m_c/have/has} earned this honor"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "deputy"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "leader"
+                ]
+            }
+        }
+    },
+    {
+        "id": "becoming_deputy_rank_withwarriors",
+        "tags": [
+            "clan:warrior"
+        ],
+        "strings": [
+            "Hopes to earn the respect of the warriors"
         ],
         "involved_cats": {
             "m_c": {
@@ -268,7 +302,10 @@
         }
     },
     {
-        "id": "becoming_mediator_rank",
+        "id": "becoming_mediator_rank_withwarriors",
+        "tags": [
+            "clan:warrior"
+        ],
         "strings": [
             "Appreciates {PRONOUN/m_c/poss} Clanmates' trust in {PRONOUN/m_c/object} as a mediator",
             "Meets with {PRONOUN/m_c/poss} Clanmates one-on-one to discuss {PRONOUN/m_c/poss} new role"
