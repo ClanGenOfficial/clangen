@@ -4,14 +4,20 @@
         "m_c has suspicions of being pregnant and is overjoyed by confirmation!",
         "m_c is shocked to be told that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant.",
         "m_c worries when {PRONOUN/m_c/subject} {VERB/m_c/are/is} told that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant. {PRONOUN/m_c/subject/CAP} just {VERB/m_c/are/is}n't ready.",
-        "m_c's eyes sparkle with determination when {PRONOUN/m_c/subject} {VERB/m_c/are/is} informed that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant."
+        "m_c's eyes sparkle with determination when {PRONOUN/m_c/subject} {VERB/m_c/are/is} informed that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant.",
+        "m_c growls at learning {PRONOUN/m_c/subject} {VERB/m_c/are/is} pregnant. Stomping out of the medicine den, {PRONOUN/m_c/subject} {VERB/m_c/wonder/wonders} how {PRONOUN/m_c/subject} will care for kits {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} want.",
+        "m_c dashes out of the medicine den after learning {PRONOUN/m_c/subject} {VERB/m_c/are/is} pregnant. By sun-high, half the clan is bugged about parenting advice.",
+        "m_c's eyes fill with tears when {PRONOUN/m_c/subject} {VERB/m_c/tell/tells} {PRONOUN/m_c/poss} mate the news. They both happily tell the clan, after trying for so long, the clan will have more kits.",
+        "m_c purrs with delight when {PRONOUN/m_c/subject} {VERB/m_c/are/is} told the news. New kits bring more warriors."
     ],
     "litter_guess": {
         "small": [
             "m_c hopes the litter will be small. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} overwhelmed at the idea of a big litter.",
             "m_c thinks {PRONOUN/m_c/subject}'ll have a small litter.",
             "m_c hopes {PRONOUN/m_c/subject}'ll have a small litter. No way could {PRONOUN/m_c/subject} handle too many kits.",
-            "m_c, citing queens' intuition, claims {PRONOUN/m_c/subject} {VERB/m_c/know/knows} {PRONOUN/m_c/subject}'ll have a small litter."
+            "m_c, citing queens' intuition, claims {PRONOUN/m_c/subject} {VERB/m_c/know/knows} {PRONOUN/m_c/subject}'ll have a small litter.",
+            "m_c feels a lack of kicking from {PRONOUN/m_c/poss} new litter. {PRONOUN/m_c/subject} decided it must be a small litter.",
+            "m_c's barely gained any weight from {PRONOUN/m_c/poss} litter. {PRONOUN/m_c/poss} friends say {PRONOUN/m_c/subject} must be having a small litter."
         ],
         "large": [
             "m_c is hoping for a big litter!",
