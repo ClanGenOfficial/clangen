@@ -700,6 +700,9 @@ def version_convert(version_info):
                 if death["text"] == "multi_lives":
                     # skip these as changing them will break stuff
                     continue
+                if death["text"].startswith("m_c lost a life"):
+                    # skip these as it duplicates the existing death text 
+                    continue
                 death["text"] = (
                     "m_c lost a life when {PRONOUN/m_c/subject} " + death["text"]
                 )
