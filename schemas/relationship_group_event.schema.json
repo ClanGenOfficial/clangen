@@ -529,7 +529,7 @@
       "title": "Injury",
       "type": "string"
     },
-    "InvolvedCats": {
+    "InvolvedCatsGroupEvent": {
       "additionalProperties": false,
       "properties": {
         "m_c": {
@@ -569,7 +569,7 @@
           "title": "Multi Cat"
         }
       },
-      "title": "InvolvedCats",
+      "title": "InvolvedCatsGroupEvent",
       "type": "object"
     },
     "KitTrait": {
@@ -694,7 +694,7 @@
           "type": "array"
         },
         "involved_cats": {
-          "$ref": "#/$defs/InvolvedCats",
+          "$ref": "#/$defs/InvolvedCatsGroupEvent",
           "description": "Used to add constraints for the various involved cats.",
           "title": "Involved Cats"
         },
@@ -782,6 +782,7 @@
         "knows_of_only",
         "likes_only",
         "enjoys_only",
+        "cherishes_only",
         "resents_only",
         "envies_only",
         "begrudges_only",
@@ -925,7 +926,9 @@
         "loner",
         "-loner",
         "rogue",
-        "-rogue"
+        "-rogue",
+        "clancat",
+        "-clancat"
       ],
       "title": "Status",
       "type": "string"
@@ -994,7 +997,6 @@
         "loyal",
         "responsible",
         "shameless",
-        "sneaky",
         "strange",
         "vengeful",
         "wise",
@@ -1033,7 +1035,6 @@
         "-loyal",
         "-responsible",
         "-shameless",
-        "-sneaky",
         "-strange",
         "-vengeful",
         "-wise",

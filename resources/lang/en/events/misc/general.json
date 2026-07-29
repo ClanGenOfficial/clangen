@@ -696,7 +696,7 @@
             "murder_reveal"
         ],
         "frequency": 2,
-        "event_text": "r_c overheard m_c muttering in {PRONOUN/m_c/poss} sleep, claws slashing at the air. {PRONOUN/m_c/poss/CAP} muttering confirms what r_c always suspected —  m_c was the one responsible for mur_c's death.",
+        "event_text": "r_c overheard m_c muttering in {PRONOUN/m_c/poss} sleep, claws slashing at the air. {PRONOUN/m_c/poss/CAP} muttering confirms what r_c always suspected:  m_c was the one responsible for mur_c's death.",
         "m_c": {
             "age": [
                 "any"
@@ -3860,7 +3860,7 @@
             "accessory"
         ],
         "frequency": 3,
-        "event_text": "m_c is just too cute — r_c gives {PRONOUN/m_c/object} a pretty acc_singular as a gift.",
+        "event_text": "m_c is just too cute. r_c gives {PRONOUN/m_c/object} a pretty acc_singular as a gift.",
         "new_accessory": [
             "WILD",
             "PLANT"
@@ -4691,7 +4691,7 @@
         "new_accessory": ["JAY FEATHERS", "BLUE FEATHERS"],
         "m_c": {
             "status": ["-kitten"],
-            "trait": ["adventurous", "ambitious", "confident", "bold", "daring", "troublesome", "rebellious", "fierce", "competitive", "cunning", "shameless", "flamboyant", "sneaky", "arrogant"]
+            "trait": ["adventurous", "ambitious", "confident", "bold", "daring", "troublesome", "rebellious", "fierce", "competitive", "cunning", "shameless", "flamboyant", "arrogant"]
         },
         "injury": [
             {
@@ -4708,7 +4708,7 @@
         ]
     },
     {
-        "event_id": "gen_misc_any_accessoryrookeryPOI1",
+        "event_id": "gen_misc_any_accessoryrookeryPOI2",
         "location": ["any"],
         "season": ["any"],
         "sub_type": ["accessory"],
@@ -4724,7 +4724,7 @@
         },
         "r_c": {
             "status": ["-kitten"],
-            "trait": ["adventurous", "ambitious", "confident", "bold", "daring", "troublesome", "rebellious", "fierce", "competitive", "cunning", "shameless", "flamboyant", "sneaky", "arrogant"]
+            "trait": ["adventurous", "ambitious", "confident", "bold", "daring", "troublesome", "rebellious", "fierce", "competitive", "cunning", "shameless", "flamboyant", "arrogant"]
         },
         "injury": [
             {
@@ -4801,7 +4801,7 @@
         "new_accessory": ["SPARROW FEATHERS"],
         "r_c": {
             "status": ["apprentice"],
-            "trait": ["adventurous", "ambitious", "confident", "bold", "daring", "troublesome", "rebellious", "fierce", "competitive", "cunning", "shameless", "flamboyant", "sneaky", "arrogant"]
+            "trait": ["adventurous", "ambitious", "confident", "bold", "daring", "troublesome", "rebellious", "fierce", "competitive", "cunning", "shameless", "flamboyant", "arrogant"]
         },
         "m_c": {
             "status": ["apprentice"],
@@ -7095,6 +7095,189 @@
         ]
     },
     {
+        "event_id": "gen_misc_any_war_mediatorleader1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 4,
+        "event_text": "m_c is giving r_c advice on the war, though it's unclear how helpful it really is.",
+        "m_c": {
+            "status": [
+                "mediator",
+                "mediator apprentice"
+            ],
+            "relationship_status": [
+                "dislikes"
+            ],
+            "trait": [
+                "cunning"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "leader"
+            ],
+            "trait": [
+                "bold",
+                "charismatic",
+                "confident",
+                "daring",
+                "righteous",
+                "ambitious",
+                "bloodthirsty",
+                "cold",
+                "fierce",
+                "shameless",
+                "strict",
+                "troublesome",
+                "vengeful",
+                "strange"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_to": [
+                    "m_c"
+                ],
+                "cats_from": [
+                    "r_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "trust"
+                ],
+                "amount": -20,
+                "log": {
+                    "cats_from": "cat_from suspected that cat_to intentionally gave {PRONOUN/cat_from/object} bad advice about an ongoing war."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_any_war_mediatorleader2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 2,
+        "event_text": "m_c is conversing with r_c about ways to potentially end this war without bloodshed.",
+        "m_c": {
+            "status": [
+                "mediator",
+                "mediator apprentice"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "leader"
+            ],
+            "trait": [
+                "calm",
+                "careful",
+                "insecure",
+                "lonesome",
+                "loyal",
+                "nervous",
+                "compassionate",
+                "faithful",
+                "loving",
+                "responsible",
+                "thoughtful",
+                "wise",
+                "childish",
+                "playful"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "trust"
+                ],
+                "amount": 20,
+                "log": {
+                    "cats_from": "cat_from consulted cat_to about how to end the war with o_c_n."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_any_war_mediatorleader3",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 2,
+        "event_text": "m_c is conversing with r_c about ways to potentially end this war, though not without bloodshed.",
+        "m_c": {
+            "status": [
+                "mediator",
+                "mediator apprentice"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "leader"
+            ],
+            "trait": [
+                "bold",
+                "charismatic",
+                "confident",
+                "daring",
+                "righteous",
+                "ambitious",
+                "bloodthirsty",
+                "cold",
+                "fierce",
+                "shameless",
+                "strict",
+                "troublesome",
+                "vengeful",
+                "strange"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "trust"
+                ],
+                "amount": 20,
+                "log": {
+                    "cats_from": "cat_from consulted cat_to about how to end the war with o_c_n."
+                }
+            }
+        ]
+    },
+    {
         "event_id": "gen_misc_any_medicinecatotherclan1",
         "location": [
             "any"
@@ -7292,12 +7475,15 @@
         ]
     },
     {
-        "event_id": "gen_misc_any_medicinecatdream1",
+        "event_id": "gen_misc_any_mediatorwar1",
         "location": [
             "any"
         ],
         "season": [
             "any"
+        ],
+        "sub_type": [
+            "war"
         ],
         "frequency": 2,
         "event_text": "m_c is conversing with r_c about ways to potentially end this war — though not without bloodshed.",
@@ -7325,7 +7511,6 @@
                 "strict",
                 "troublesome",
                 "vengeful",
-                "sneaky",
                 "strange"
             ]
         },
@@ -9959,7 +10144,6 @@
                 "oblivious",
                 "daring",
                 "shameless",
-                "sneaky",
                 "strange",
                 "flamboyant"
             ]
@@ -10941,7 +11125,6 @@
                 "ambitious",
                 "confident",
                 "shameless",
-                "sneaky",
                 "vengeful",
                 "cunning",
                 "rebellious"
@@ -11010,7 +11193,6 @@
                 "cold",
                 "ambitious",
                 "shameless",
-                "sneaky",
                 "vengeful",
                 "cunning"
             ]
@@ -11048,7 +11230,6 @@
                 "confident",
                 "adventurous",
                 "shameless",
-                "sneaky",
                 "strange",
                 "cunning",
                 "rebellious"
@@ -11821,7 +12002,6 @@
                 "strict",
                 "troublesome",
                 "vengeful",
-                "sneaky",
                 "strange"
             ]
         },
@@ -11942,7 +12122,6 @@
                 "strict",
                 "troublesome",
                 "vengeful",
-                "sneaky",
                 "strange"
             ]
         },
@@ -12426,7 +12605,6 @@
                 "righteous",
                 "daring",
                 "shameless",
-                "sneaky",
                 "cunning",
                 "rebellious"
             ]
@@ -12822,7 +13000,7 @@
             "changed": -8
         }
     },
-        {
+    {
         "event_id": "gen_misc_war_gatheringgossipers",
         "location": [
             "any"
@@ -13783,6 +13961,450 @@
             ]
         }
     },
+        {
+        "event_id": "gen_misc_failedmurderattack1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 3,
+        "event_text": "r_c bursts into camp, frantic and covered in wounds. {PRONOUN/r_c/subject/CAP} {VERB/r_c/insist/insists} m_c attacked {PRONOUN/r_c/object} while they were on patrol together.",
+        "m_c": {
+            "status": [
+                "-kitten",
+              "-elder"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "-kitten",
+                "-elder"
+            ]
+        },
+            "injury": [
+                {
+                    "cats": ["r_c"],
+                    "injuries": ["claw-wound", "cat bite"]
+                }
+            ],
+            "history": [
+                {
+                    "cats": ["r_c"],
+                "scar": "m_c was scarred after a Clanmate attacked {PRONOUN/m_c/object} while on patrol.",
+                "death": "m_c was killed by {PRONOUN/m_c/poss} wounds caused by a Clanmate."
+                }
+            ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["comfort", "trust"],
+                "amount": -30,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from became terrified of cat_to after {PRONOUN/cat_to/subject} attacked {PRONOUN/cat_from/object} while on patrol."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": ["m_c"],
+                "values": [
+                    "comfort",
+                    "respect"
+                ],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from was unsettled to learn cat_to attacked {PRONOUN/cat_to/poss} fellow Clanmate."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_failedmurderattack2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "failed_murder"
+        ],
+        "frequency": 3,
+        "event_text": "m_c bursts into camp, frantic and covered in wounds. {PRONOUN/m_c/subject/CAP} {VERB/m_c/insist/insists} r_c attacked {PRONOUN/m_c/object} while they were on patrol together.",
+        "m_c": {
+            "status": [
+                "-kitten",
+                "-elder"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "-kitten",
+                "-elder"
+            ]
+        },
+            "injury": [
+                {
+                    "cats": ["r_c"],
+                    "injuries": ["claw-wound", "cat bite"]
+                },
+                {
+                    "cats": ["m_c"],
+                    "injuries": ["scrapes", "torn pelt"]
+                }
+            ],
+            "history": [
+                {
+                    "cats": ["r_c"],
+                "scar": "r_c was scarred after a Clanmate attacked {PRONOUN/r_c/object} while on patrol.",
+                "death": "r_c was killed by {PRONOUN/r_c/poss} wounds caused by a Clanmate."
+                }
+            ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["comfort", "like"],
+                "amount": -20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from became terrified of cat_to after {PRONOUN/cat_to/subject} attacked {PRONOUN/cat_from/object} while on patrol and falsely accused {PRONOUN/cat_from/object} instead."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "high_social"
+                ],
+                "cats_to": ["m_c"],
+                "values": [
+                    "trust"
+                ],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from thought cat_to wasn't being entirely truthful about being attacked by a fellow Clanmate."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "low_social",
+                    "high_lawful"
+                ],
+                "cats_to": ["r_c"],
+                "values": [
+                    "comfort", "trust"
+                ],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from was unsettled after hearing cat_to attacked {PRONOUN/cat_from/object} while on patrol."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_failedmurderpoison1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["failed_murder"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c poisons r_c after giving {PRONOUN/r_c/object} the wrong herb dosage. m_c claims it was an accident, but r_c isn't so sure...",
+        "m_c": {
+            "status": [
+                "medicine cat",
+                "medicine cat apprentice"
+            ]
+        },
+        "r_c": {},
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["poisoned"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["r_c"],
+                "death": "r_c died after a Clanmate gave {PRONOUN/r_c/object} the wrong herb dosage."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["trust"],
+                "amount": -20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from didn't believe that cat_to poisoned {PRONOUN/cat_from/object} by accident."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": ["m_c"],
+                "values": [
+                    "trust"
+                ],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from's confidence in cat_to weakened after hearing that {PRONOUN/cat_to/subject} gave a Clanmate the wrong herb dosage."
+                }
+            }
+            ]
+    },
+    {
+        "event_id": "gen_misc_failedmurderpoison2",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["failed_murder"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "r_c is badly poisoned after eating deathberries. When rushed to the medicine den, {PRONOUN/r_c/subject} {VERB/r_c/mumble/mumbles} that they don't taste like how m_c said they would...",
+        "m_c":
+        {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader",
+                "medicine cat",
+                "medicine cat apprentice"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "kitten"
+            ]
+        },
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["poisoned"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["r_c"],
+                "death": "r_c died after a Clanmate suggested {PRONOUN/r_c/subject} should try eating deathberries."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["trust"],
+                "amount": -20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from thinks cat_to lied to {PRONOUN/cat_from/object} about how good deathberries taste."
+                }
+            }
+            ]
+    },
+        {
+        "event_id": "gen_misc_failedmurderpoison3",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["failed_murder"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c offers r_c a piece of prey from the pile. Later, r_c is rushed to the medicine den, having been poisoned by crowfood.",
+        "m_c":
+        {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "-kitten"
+            ]
+        },
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["poisoned"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["r_c"],
+                "death": "r_c died after a Clanmate gave {PRONOUN/r_c/object} crowfood."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["trust"],
+                "amount": -20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from thought cat_to purposefully offered {PRONOUN/cat_from/object} crowfood."
+                }
+            }
+            ]
+    },
+    {
+        "event_id": "gen_misc_failedmurderriver1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["failed_murder"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "r_c falls into the river. m_c helps rescue {PRONOUN/r_c/object}, but r_c swears {PRONOUN/r_c/subject} {VERB/r_c/were/was} pushed in.",
+        "m_c":
+        {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy",
+                "leader"
+            ]
+        },
+        "r_c": {},
+        "injury": [
+            {
+                "cats": ["r_c"],
+                "injuries": ["water in their lungs"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["r_c"],
+                "death": "r_c died after being pushed in the river and inhaling too much water."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["trust"],
+                "amount": -20,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from thought cat_to pushed {PRONOUN/cat_from/object} into the river and pretended to save {PRONOUN/cat_from/object}."
+                }
+            }
+            ]
+    },
+        {
+        "event_id": "gen_misc_failedmurderplotting1",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["failed_murder"],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "m_c meets with lead_name and claims {PRONOUN/m_c/subject} overheard r_c making plans to overthrow lead_name and take over the Clan.",
+        "m_c":
+        {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy"
+            ],
+            "trait": [
+                "cunning",
+                "charismatic",
+                "troublesome",
+                "bold",
+                "daring",
+                "confident",
+                "vengeful"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "-kitten",
+                "-leader"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["like"],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from accused cat_to of wanting to take over the Clan in hopes the leader would get rid of {PRONOUN/cat_to/object}."
+                }
+            }
+            ]
+    },
+        {
+        "event_id": "gen_misc_failedmurderplotting2",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["failed_murder"],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "m_c is almost in tears as {PRONOUN/m_c/subject} {VERB/m_c/emphasize/emphasizes} to lead_name how cruel r_c has been lately. r_c looks confused and denies everything m_c says.",
+        "m_c":
+        {
+            "status": [
+                "apprentice",
+                "warrior",
+                "deputy"
+            ],
+            "trait": [
+                "childish",
+                "cunning",
+                "charismatic",
+                "insecure",
+                "shameless",
+                "troublesome"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "-kitten",
+                "-leader"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "values": ["comfort"],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from doesn't understand why cat_to would accuse {PRONOUN/cat_from/object} of being cruel and make {PRONOUN/cat_from/object} look bad in front of the leader."
+                }
+            },
+                        {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["like"],
+                "amount": -15,
+                "mutual": false,
+                "log": {
+                    "cats_from": "cat_from accused cat_to of being cruel to {PRONOUN/cat_from/object} in front of the leader in hopes something would be done about {PRONOUN/cat_to/object}."
+                }
+            }
+            ]
+    },
     {
     "event_id": "gen_misc_hitmanfailedmurder1",
     "location": ["any"],
@@ -14071,10 +14693,8 @@
       "elder"
     ],
     "relationship_status": [],
-    "skill": [],
-    "trait": [
-      "-sneaky"
-    ],
+    "skill": ["-STEALTH,1"],
+    "trait": [],
     "backstory": [],
     "dies": false
   },
@@ -14854,5 +15474,1376 @@
                 }
         }
     ]
+},
+    {
+    "event_id": "gen_misc_warhalfclanquestion1",
+    "location": [
+    "any"
+],
+    "season": [
+    "any"
+],
+    "sub_type": [
+        "war"
+    ],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "The war with o_c_n demands full loyalty from every cat in c_n. m_c's half-Clan heritage makes some cats question where {PRONOUN/m_c/poss} loyalties truly lie.",
+    "m_c": {
+        "status": [
+            "-kitten",
+            "-elder"
+        ],
+        "backstory": [
+            "halfclan1",
+            "halfclan2"
+        ]
+    },
+    "relationships": [
+            {
+                "cats_from": [
+                    "clan",
+                    "low_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from is starting to doubt m_c's loyalty to the Clan because of {PRONOUN/m_c/poss} half-Clan heritage."
+                }
+            }
+        ],
+    "other_clan": {
+        "current_rep": [
+            "hostile"
+        ],
+        "changed": 0
+    }
+    },
+      {
+        "event_id": "gen_misc_warhalfclanquestion2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "Rumors about m_c's half-Clan parentage begin to spread around camp. r_c comes to m_c's defense, claiming that a war won't swivel {PRONOUN/m_c/poss} loyalty to c_n.",
+        "m_c": {
+            "status": [
+                "-kitten",
+                "-elder"
+            ],
+            "backstory": [
+                "halfclan1",
+                "halfclan2"
+            ]
+        },
+        "r_c": {
+        "relationship_status": [
+            "enjoys",
+            "trusts"
+        ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from admires that r_c stood up for m_c when {PRONOUN/m_c/poss} loyalty to c_n was questioned."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "low_lawful"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect",
+                    "trust"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from is skeptical of r_c after {PRONOUN/r_c/subject} defended m_c's half-Clan heritage in the middle of a war."
+                }
+            },
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "trust",
+                    "comfort"
+                ],
+                "amount": 15,
+                "log": {
+                    "cats_from": "m_c appreciates that r_c stood up for {PRONOUN/m_c/object} when {PRONOUN/m_c/poss} half-Clan heritage caused the Clan to doubt {PRONOUN/m_c/object}."
+                }
+            },
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "trust"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "r_c trusts m_c regardless of {PRONOUN/m_c/poss} heritage and stood up for {PRONOUN/m_c/object} in front of the Clan."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 0
+        }
+    },
+     {
+        "event_id": "gen_misc_warotherclanquestion1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "r_c spreads rumors about m_c's origins, claiming {PRONOUN/m_c/subject} could be a spy sent from another Clan to gain intel on the war with o_c_n.",
+        "m_c": {
+            "status": [
+                "-kitten",
+                "-elder"
+            ],
+            "backstory": [
+                "otherclan1",
+                "otherclan2",
+                "otherclan3",
+                "otherclan4",
+                "disgraced1",
+                "disgraced2",
+                "disgraced3",
+                "medicine_cat",
+                "retired_leader",
+                "refugee1",
+                "ostracized_warrior"
+            ]
+        },
+        "r_c": {
+        "relationship_status": [
+            "hates",
+            "distrusts"
+        ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan",
+                    "low_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from wondered if m_c was a spy after r_c brought up {PRONOUN/m_c/poss} origins."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from was appalled that r_c would spread rumors about m_c and make the Clan doubt {PRONOUN/m_c/object}."
+                }
+            },
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "respect",
+                    "comfort",
+                    "trust"
+                ],
+                "amount": -15,
+                "log": {
+                    "cats_from": "m_c can't believe r_c would imply {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a spy from a rival Clan to shatter the Clan's trust in {PRONOUN/m_c/object}."
+                }
+            },
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -15,
+                "log": {
+                    "cats_from": "r_c spread rumors about m_c in hopes of making the Clan believe {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a spy from another Clan."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 0
+        }
+    },
+     {
+        "event_id": "gen_misc_warotherclanfight1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "Realizing they are outmatched, a o_c_n warrior pleads for mercy from m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/pay/pays} no mind to their begging and quickly {VERB/m_c/end/ends} their life.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "trait": [
+                "cold",
+                "fierce",
+                "righteous",
+                "bloodthirsty"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from was unsettled to learn m_c mercilessly killed a rival Clan cat, even in the middle of a war."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "low_lawful",
+                    "high_aggress"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from approves of m_c weakening a warring Clan by killing one of their warriors."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": -3
+        }
+    },
+     {
+        "event_id": "gen_misc_warotherclanfight2",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [],
+        "frequency": 3,
+        "event_text": "Having been defeated in battle, a o_c_n warrior begs for m_c to spare their life. m_c stares at them with sorrow and lets them get away.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader"
+            ],
+            "trait": [
+                "compassionate",
+                "loving",
+                "thoughtful",
+                "sincere"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "clan",
+                    "high_lawful"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect",
+                    "comfort"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from approved of m_c sparing a rival Clan cat in the middle of a war."
+                }
+            },
+            {
+                "cats_from": [
+                    "clan",
+                    "low_lawful",
+                    "high_aggress"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "respect"
+                ],
+                "amount": -10,
+                "log": {
+                    "cats_from": "cat_from thought m_c should have weakened a warring Clan by killing one of their warriors when {PRONOUN/m_c/subject} had the chance."
+                }
+            }
+        ],
+        "other_clan": {
+            "current_rep": [
+                "hostile"
+            ],
+            "changed": 2
+        }
+    },
+      {
+    "event_id": "gen_rel_loathes1",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c's claws unsheathe whenever r_c is near.",
+    "m_c": {
+        "relationship_status": ["loathes_only"]
+    },
+    "r_c": {}
+},
+    {
+    "event_id": "gen_rel_loathes2",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c hopes r_c gets horribly wounded.",
+    "m_c": {
+        "relationship_status": ["loathes_only"]
+    },
+    "r_c": {}
+},
+    {
+    "event_id": "gen_rel_loathes3",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c cannot stomach that fox-hearted r_c.",
+    "m_c": {
+        "relationship_status": ["loathes_only"]
+    },
+    "r_c": {}
+},
+      {
+    "event_id": "gen_rel_resents1",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c thinks the praise r_c receives is a load of mouse-dung.",
+    "m_c": {
+        "relationship_status": ["resents_only"]
+    },
+    "r_c": {}
+},
+      {
+    "event_id": "gen_rel_resents2",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c tastes mouse-bile every time {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} about r_c.",
+    "m_c": {
+        "relationship_status": ["resents_only"]
+    },
+    "r_c": {}
+},
+      {
+    "event_id": "gen_rel_resents3",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c thinks {PRONOUN/m_c/subject} would be a better deputy than r_c.",
+    "m_c": {
+        "status": ["-kitten", "-deputy", "-leader", "-medicine cat apprentice", "-medicine cat"],
+        "relationship_status": ["resents_only"]
+    },
+    "r_c": {
+        "status": ["deputy"]
+    }
+},
+      {
+    "event_id": "gen_rel_discredits1",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c is convinced r_c is influenced by the Dark Forest.",
+    "m_c": {
+        "relationship_status": ["discredits_only"]
+    },
+    "r_c": {}
+},
+          {
+    "event_id": "gen_rel_discredits2",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c knows r_c is plotting against {PRONOUN/m_c/object}.",
+    "m_c": {
+        "relationship_status": ["discredits_only"]
+    },
+    "r_c": {}
+},
+      {
+    "event_id": "gen_rel_discredits3",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c thinks r_c lets Clanmates {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} like die intentionally.",
+    "m_c": {
+        "relationship_status": ["discredits_only"]
+    },
+    "r_c": {
+        "age": [],
+        "status": ["medicine cat", "medicine cat apprentice"]
+    }
+},
+          {
+    "event_id": "gen_rel_discredits4",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c whispers to {PRONOUN/m_c/poss} friends doubts about r_c's leadership.",
+    "m_c": {
+        "relationship_status": ["discredits_only"],
+         "status": ["-deputy", "-leader"]
+    },
+    "r_c": {
+        "status": ["leader", "deputy"]
+    }
+},
+    {
+    "event_id": "gen_rel_runsfrom1",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c refuses to socialize or patrol with r_c.",
+    "m_c": {
+        "relationship_status": ["runs_from_only"],
+        "status": ["-kitten", "-elder"]
+    },
+    "r_c": {
+        "status": ["-kitten", "-elder"]
+    }
+},
+      {
+    "event_id": "gen_rel_runsfrom2",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c thinks if they were alone together r_c would hurt {PRONOUN/m_c/object}.",
+    "m_c": {
+        "relationship_status": ["runs_from_only"]
+    },
+    "r_c": {}
+},
+          {
+    "event_id": "gen_rel_runsfrom3",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 1,
+    "event_text": "m_c isn't sure {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} safe in c_n... not with r_c around.",
+    "m_c": {
+        "relationship_status": ["runs_from_only"]
+    },
+    "r_c": {}
+},
+    {
+  "event_id": "gen_rel_enjoys1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c always meows a morning greeting to r_c.",
+  "m_c": {
+    "relationship_status": ["enjoys_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_enjoys2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c frequently shares tongues with r_c.",
+  "m_c": {
+    "relationship_status": ["enjoys_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_enjoys3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c enjoys r_c's company.",
+  "m_c": {
+    "relationship_status": ["enjoys_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_respects1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c rarely disagrees with r_c.",
+  "m_c": {
+    "relationship_status": ["respects_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_respects2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c follows r_c's lead on patrol.",
+  "m_c": {
+    "relationship_status": ["respects_only"],
+      "status": ["-kitten", "-elder"]
+  },
+  "r_c": {
+      "status": ["-kitten", "-elder"]
+  }
+},
+    {
+  "event_id": "gen_rel_respects3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c looks up to r_c.",
+  "m_c": {
+    "relationship_status": ["respects_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_trusts1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c trusts r_c's judgment.",
+  "m_c": {
+    "relationship_status": ["trusts_only"]
+  },
+  "r_c": {}
+},
+     {
+  "event_id": "gen_rel_trusts2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c is at ease with r_c around.",
+  "m_c": {
+    "relationship_status": ["trusts_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_trusts3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c always has r_c's back on patrol.",
+  "m_c": {
+    "relationship_status": ["trusts_only"],
+      "status": ["-kitten", "-elder"]
+  },
+  "r_c": {
+      "status": ["-kitten", "-elder"]
+  }
+},
+    {
+  "event_id": "gen_rel_understands1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c understands what drives r_c.",
+  "m_c": {
+    "relationship_status": ["understands_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_understands2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c can often read r_c's moods.",
+  "m_c": {
+    "relationship_status": ["understands_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_understands3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c can often predict r_c's course of action.",
+  "m_c": {
+    "relationship_status": ["understands_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_adores1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c finds r_c charming.",
+  "m_c": {
+    "relationship_status": ["adores_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_adores2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c feels flustered around r_c.",
+  "m_c": {
+    "relationship_status": ["adores_only"]
+  },
+  "r_c": {}
+},
+     {
+  "event_id": "gen_rel_adores3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c likes being close with r_c.",
+  "m_c": {
+    "relationship_status": ["adores_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_cherishes1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c and r_c spend all their spare time together.",
+  "m_c": {
+    "relationship_status": ["cherishes_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_cherishes2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c holds r_c dear.",
+  "m_c": {
+    "relationship_status": ["cherishes_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_cherishes3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c cannot imagine {PRONOUN/m_c/poss} life without r_c.",
+  "m_c": {
+    "relationship_status": ["cherishes_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_admires1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c strives to be more like r_c.",
+  "m_c": {
+    "relationship_status": ["admires_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_admires2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "r_c always manages to impress m_c.",
+  "m_c": {
+    "relationship_status": ["admires_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_admires3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c considers r_c one of the finest cats in c_n.",
+  "m_c": {
+    "relationship_status": ["admires_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_confides_in1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c confides in r_c after a stressful day.",
+  "m_c": {
+    "relationship_status": ["confides_in_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_confides_in2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c knows c_n is safe in r_c's paws.",
+  "m_c": {
+    "relationship_status": ["confides_in_only"]
+  },
+  "r_c": {
+      "status": ["leader", "deputy", "medicine cat"]
+  }
+},
+    {
+  "event_id": "gen_rel_confides_in3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c trusts r_c with {PRONOUN/m_c/poss} most vulnerable thoughts.",
+  "m_c": {
+    "relationship_status": ["confides_in_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_knows_deeply1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c knows r_c better than almost anyone.",
+  "m_c": {
+    "relationship_status": ["knows_deeply_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_knows_deeply2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c can tell what r_c is thinking at a glance.",
+  "m_c": {
+    "relationship_status": ["knows_deeply_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_knows_deeply3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c knows r_c by heart.",
+  "m_c": {
+    "relationship_status": ["knows_deeply_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_loves1",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c's heart belongs to r_c.",
+  "m_c": {
+    "relationship_status": ["loves_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_loves2",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c wants to share everything in life with r_c.",
+  "m_c": {
+    "relationship_status": ["loves_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_loves3",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c sighs and purrs and the mere thought of r_c.",
+  "m_c": {
+    "relationship_status": ["loves_only"]
+  },
+  "r_c": {}
+},
+    {
+  "event_id": "gen_rel_loves4",
+  "location": ["any"],
+  "season": ["any"],
+  "frequency": 1,
+  "event_text": "m_c and r_c twine tails when they pass by each other.",
+  "m_c": {
+    "relationship_status": ["loves_only"]
+  },
+  "r_c": {
+      "relationship_status": ["loves_only"]
+  }
+},
+   {
+    "event_id": "gen_medapp_mothermouth",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 3,
+    "poi": {
+        "name": ["moon_mothermouth"]
+    },
+    "event_text": "m_c returns from {POI/name/moon_mothermouth} and swears {PRONOUN/m_c/poss} whiskers are bent from brushing against the sides of labyrinthine tunnels for so long!",
+    "m_c": {
+      "status": ["medicine cat apprentice"]
+    }
+},
+    {
+    "event_id": "gen_medapp_moonpool",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 3,
+    "poi": {
+        "name": ["moon_pool"]
+    },
+    "event_text": "m_c returns from {POI/name/moon_pool}, drenched and dismayed. It seems {PRONOUN/m_c/subject} took a tumble into the sacred waters.",
+    "m_c": {
+      "status": ["medicine cat apprentice"]
+    }
+},
+    {
+    "event_id": "gen_medapp_moonmeteor",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 3,
+    "poi": {
+        "name": ["moon_meteor"]
+    },
+    "event_text": "m_c returns from {POI/name/moon_meteor} sneezing sporadically. Perhaps {PRONOUN/m_c/subject} {VERB/m_c/are/is} allergic to moon dust.",
+    "m_c": {
+      "status": ["medicine cat apprentice"]
+    }
+},
+    {
+    "event_id": "gen_medapp_mooncave",
+    "location": ["any"],
+    "season": ["any"],
+    "frequency": 3,
+    "poi": {
+        "name": ["moon_cave"]
+    },
+    "event_text": "m_c returns from {POI/name/moon_cave}, looking more like a puff of fluff than a cat after hearing StarClan's voices echo around {PRONOUN/m_c/object}.",
+    "m_c": {
+      "status": ["medicine cat apprentice"]
+    }
+},
+    {
+        "event_id": "gen_gathering_appbegging",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "gathering"
+        },
+        "event_text": "m_c won't stop asking r_c when it's {PRONOUN/m_c/poss} turn to join the Gathering at {POI/category/gathering}.",
+        "m_c": {
+            "status": [
+                "apprentice"
+            ],
+            "relationship_status": ["app/mentor"]
+        },
+        "r_c": {
+            "status": [
+                "warrior",
+                "leader",
+                "deputy"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_gathering_gossipprey",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "gathering"
+        },
+        "event_text": "During the Gathering at {POI/category/gathering}, m_c overhears that o_c_n is struggling to find prey.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_gathering_gossipherbs",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "gathering"
+        },
+        "event_text": "During the Gathering at {POI/category/gathering}, m_c overhears that o_c_n is suffering from a herb blight.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_gathering_gossipillness",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "gathering"
+        },
+        "event_text": "During the Gathering at {POI/category/gathering}, m_c overhears that o_c_n is dealing with a greencough outbreak.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_gathering_firstgatheringstory",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "gathering"
+        },
+        "event_text": "m_c gathers the Clan to tell a story about the first time the Clans convened for a Gathering at {POI/category/gathering}.",
+        "m_c": {
+            "skill": ["STORY,1", "LORE,1"]
+        }
+    },
+        {
+        "event_id": "gen_gathering_deputygossip",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "gathering"
+        },
+        "event_text": "m_c overhears some interesting gossip from the other deputies at {POI/category/gathering}.",
+        "m_c": {
+            "status": ["deputy"]
+        }
+    },
+    {
+        "event_id": "gen_moonplace_leadermeeting",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "As soon as m_c returns from {POI/category/moonplace}, {PRONOUN/m_c/subject} {VERB/m_c/visit/visits} r_c in {PRONOUN/r_c/poss} den for a private conversation.",
+        "m_c": {
+            "status": ["medicine cat"]
+        },
+        "r_c": {
+            "status": ["leader"]
+        }
+    },
+    {
+        "event_id": "gen_moonplace_shaken",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c seems shaken after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    },
+    {
+        "event_id": "gen_moonplace_disappointed",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c seems disappointed by StarClan's wisdom after a visit to {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    },
+    {
+        "event_id": "gen_moonplace_content",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c seems content after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    },
+    {
+        "event_id": "gen_moonplace_comforted",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c seems comforted by StarClan's wisdom after a visit to {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    },
+        {
+        "event_id": "gen_moonplace_determined",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c seems determined after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    },
+    {
+        "event_id": "gen_moonplace_gossip",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c overhears some interesting gossip from the other medicine cats at {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    },
+    {
+    "event_id": "gen_acc_appfeathers",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "frequency": 3,
+    "event_text": "m_c returns to camp from a successful hunt, a bird clutched in {PRONOUN/m_c/poss} jaws and its feathers adorning {PRONOUN/m_c/poss} tail.",
+    "new_accessory": [
+        "RED FEATHERS",
+        "BLUE FEATHERS",
+        "JAY FEATHERS",
+        "GULL FEATHERS",
+        "SPARROW FEATHERS"
+    ],
+    "m_c": {
+        "status": ["apprentice"]
+    }
+},
+    {
+    "event_id": "gen_misc_accessoryrookeryPOI3",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "tags": [],
+    "frequency": 3,
+    "poi": {
+    "name": ["terrain_rookery"]
+        },
+    "event_text": "m_c returns from a hunt at {POI/name/terrain_rookery}, adorned with some feathers from {PRONOUN/m_c/poss} catch.",
+    "new_accessory": ["BLUE FEATHERS","JAY FEATHERS"],
+    "m_c": {
+        "status": ["-kitten","-elder"]
+        }
+    },
+    {
+    "event_id": "gen_misc_accessoryrookeryPOI4",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "tags": [],
+    "frequency": 3,
+    "poi": {
+    "name": ["terrain_rookery"]
+    },
+    "event_text": "r_c returns from a hunt at {POI/name/terrain_rookery} and gifts some beautiful feathers from {PRONOUN/r_c/poss} catch to m_c.",
+    "new_accessory": ["BLUE FEATHERS","JAY FEATHERS"],
+    "m_c": {
+        "age": ["any"],
+        "dies": false
+    },
+    "r_c": {
+        "status": ["-newborn", "-kitten","-elder"],
+        "relationship_status": ["likes"],
+        "dies": false
+    },
+    "relationships": [
+        {
+            "cats_from": ["r_c"],
+            "cats_to": ["m_c"],
+            "mutual": true,
+            "values": ["like"],
+            "amount": 8,
+            "log": {
+                 "cats_from": "r_c gifted m_c feathers from a hunt."
+                }
+        }
+    ]
+},
+{
+    "event_id": "gen_misc_accessoryeaglenestPOI3",
+    "location": [],
+    "season": [],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 3,
+    "poi": {
+    "name": ["terrain_eaglenest"]
+    },
+    "event_text": "After a visit near {POI/name/terrain_eaglenest}, m_c returns to camp adorned with feathers.",
+    "new_accessory": ["SPARROW FEATHERS"],
+    "m_c": {
+        "status": ["-kitten","-elder"],
+        "dies": false
+    }
+},
+{
+    "event_id": "gen_misc_accessorygullcliffsPOI3",
+    "location": ["beach"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "tags": [],
+    "frequency": 3,
+    "poi": {
+    "name": ["terrain_gullcliffs"]
+    },
+    "event_text": "r_c returns from a hunt at {POI/name/terrain_gullcliffs} and gifts some beautiful feathers from {PRONOUN/r_c/poss} catch to m_c.",
+    "new_accessory": ["GULL FEATHERS"],
+    "m_c": {
+        "age": ["any"],
+        "dies": false
+    },
+    "r_c": {
+        "status": ["-kitten","-elder"],
+        "relationship_status": ["likes"],
+        "dies": false
+    },
+    "relationships": [
+        {
+            "cats_from": ["r_c"],
+            "cats_to": ["m_c"],
+            "mutual": true,
+            "values": ["like"],
+            "amount": 8,
+            "log": {
+                 "cats_from": "r_c gifted m_c feathers from a hunt."
+                }
+        }
+    ]
+},
+{
+    "event_id": "gen_misc_accessorygullcliffsPOI4",
+    "location": ["beach"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "tags": [],
+    "frequency": 3,
+    "poi": {
+    "name": ["terrain_gullcliffs"]
+    },
+    "event_text": "m_c returns from a hunt at {POI/name/terrain_gullcliffs}, adorned with some feathers from {PRONOUN/m_c/poss} catch.",
+    "new_accessory": ["GULL FEATHERS"],
+    "m_c": {
+        "status": ["-kitten","-elder"],
+        "dies": false
+    }
+},
+{
+    "event_id": "gen_misc_accessory8",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "m_c takes a moment to pick a specific bird from the fresh-kill pile and is later seen wearing its feathers.",
+    "new_accessory": ["BLUE FEATHERS","SPARROW FEATHERS","JAY FEATHERS","RED FEATHERS"],
+    "m_c": {
+        "age": ["any"],
+        "dies": false
+    }
 }
 ]

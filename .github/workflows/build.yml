@@ -151,8 +151,8 @@ jobs:
         if: startsWith(matrix.os, 'macos')
         run: |
           rm -r dist/Clangen
-          npm install -g archanyhm/node-appdmg
-          appdmg appdmg.json ${{ matrix.artifact_name }}
+          uv sync --group mac-build
+          uv run dmgbuild -s appdmg.py "Clangen" ${{ matrix.artifact_name }}
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact_name }}

@@ -7,6 +7,7 @@ import pygame_gui.elements
 from scripts.cat.cats import Cat
 from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.game_structure import image_cache
+from ..config import get_config
 from ..ui.elements.sprite_button import UISpriteButton
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
@@ -23,6 +24,7 @@ from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.icon import Icon
+from ..ui.windows.cruel_locked_action import CruelLockedAction
 
 
 class ChooseMateScreen(Screens):
@@ -105,6 +107,9 @@ class ChooseMateScreen(Screens):
                 self.selected_mate_index = 0
                 self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.toggle_mate:
+                if not get_config("mates.allow_manual"):
+                    CruelLockedAction()
+                    return
                 if self.work_thread is not None and self.work_thread.is_alive():
                     return
                 self.work_thread = self.loading_screen_start_work(self.change_mate)
@@ -405,7 +410,9 @@ class ChooseMateScreen(Screens):
         """Updates everything in the mates container, including the list of current mates,
         and the page"""
 
-        self.all_mates = self.chunks([Cat.fetch_cat(i) for i in self.the_cat.mate], 30)
+        self.all_mates = self.get_list_chunks(
+            [Cat.fetch_cat(i) for i in self.the_cat.mate], 30
+        )
         self.update_mates_container_page()
 
     def update_mates_container_page(self):
@@ -499,7 +506,7 @@ class ChooseMateScreen(Screens):
                 i for i in self.all_offspring if self.selected_cat.is_parent(i)
             ]
 
-        self.all_offspring = self.chunks(self.all_offspring, 24)
+        self.all_offspring = self.get_list_chunks(self.all_offspring, 24)
 
         if "kits_selected_pair" in self.checkboxes:
             self.checkboxes["kits_selected_pair"].kill()
@@ -657,7 +664,7 @@ class ChooseMateScreen(Screens):
             container=self.potential_container,
         )
 
-        self.all_potential_mates = self.chunks(self.get_valid_mates(), 24)
+        self.all_potential_mates = self.get_list_chunks(self.get_valid_mates(), 24)
 
         # Update checkboxes
         # TODO
@@ -1048,20 +1055,14 @@ class ChooseMateScreen(Screens):
 
         self.toggle_mate.kill()
 
-        if self.selected_cat.ID in self.the_cat.mate:
-            self.toggle_mate = UISurfaceImageButton(
-                ui_scale(pygame.Rect((323, 310), (153, 30))),
-                "screens.choose_mate.unset_mate",
-                get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
-                object_id="@buttonstyles_squoval",
-            )
-        else:
-            self.toggle_mate = UISurfaceImageButton(
-                ui_scale(pygame.Rect((323, 310), (153, 30))),
-                "screens.choose_mate.set_mate",
-                get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
-                object_id="@buttonstyles_squoval",
-            )
+        self.toggle_mate = UISurfaceImageButton(
+            ui_scale(pygame.Rect((323, 310), (153, 30))),
+            "screens.choose_mate.unset_mate"
+            if self.selected_cat.ID in self.the_cat.mate
+            else "screens.choose_mate.set_mate",
+            get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
+            object_id="@buttonstyles_squoval",
+        )
 
         if (
             not get_clan_setting("same sex birth")

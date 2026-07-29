@@ -16,6 +16,7 @@ MENU_SCREENS = [
     GameScreen.START,
     GameScreen.SWITCH_CLAN,
     GameScreen.MAKE_CLAN_CHOOSE_MODE,
+    GameScreen.MAKE_CLAN_CHOOSE_CARDS,
     GameScreen.MAKE_CLAN_CHOOSE_NAME,
     GameScreen.MAKE_CLAN_CHOOSE_CATS,
     GameScreen.MAKE_CLAN_CHOOSE_SYMBOL,
