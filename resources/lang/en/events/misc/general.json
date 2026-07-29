@@ -16845,5 +16845,274 @@
         "age": ["any"],
         "dies": false
     }
-}
+},
+    {
+        "event_id": "gen_misc_transition_kittentomale",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "transition"
+        ],
+        "frequency": 4,
+        "event_text": "m_c has known since {PRONOUN/m_c/subject} {VERB/m_c/were/was} born {PRONOUN/m_c/subject} felt different about {PRONOUN/m_c/poss} gender. When m_c declares {PRONOUN/m_c/subject} {VERB/m_c/are/is} a tom, who can tell {PRONOUN/m_c/object} otherwise?",
+        "m_c": {
+            "gender": [
+                "female"
+            ],
+            "age": [
+            "kitten"
+            ]
+        },
+        "new_gender": [
+            "trans male"
+        ]
+    },
+        {
+        "event_id": "gen_misc_transition_kittentofemale",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "transition"
+        ],
+        "frequency": 4,
+        "event_text": "m_c has known since {PRONOUN/m_c/subject} {VERB/m_c/were/was} born {PRONOUN/m_c/subject} felt different about {PRONOUN/m_c/poss} gender. When m_c declares {PRONOUN/m_c/subject} {VERB/m_c/are/is} a she-cat, who can tell {PRONOUN/m_c/object} otherwise?",
+        "m_c": {
+            "gender": [
+                "male"
+            ],
+            "age": [
+            "kitten"
+            ]
+        },
+        "new_gender": [
+            "trans female"
+        ]
+    },
+    {
+        "event_id": "gen_misc_transition_kittentononbinary",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "transition"
+        ],
+        "frequency": 4,
+        "event_text": "m_c has known since {PRONOUN/m_c/subject} {VERB/m_c/were/was} born {PRONOUN/m_c/subject} felt different about {PRONOUN/m_c/poss} gender. When m_c declares {PRONOUN/m_c/subject} {VERB/m_c/are/is} not a tom, not a she-cat, <i>just</i> a cat, who can tell {PRONOUN/m_c/object} otherwise?",
+        "m_c": {
+            "gender": [
+                "female",
+                "male"
+            ],
+            "age": [
+            "kitten"
+            ]
+        },
+        "new_gender": [
+            "nonbinary"
+        ]
+    },
+    {
+        "event_id": "gen_misc_transition_eldertomale",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "transition"
+        ],
+        "frequency": 4,
+        "event_text": "m_c has always felt a disconnect in {PRONOUN/m_c/poss} concept of self. Though it has taken several seasons to realize, m_c has decided that being a tom suits {PRONOUN/m_c/object} better.",
+        "m_c": {
+            "gender": [
+                "female"
+            ],
+            "age": [
+            "senior",
+            "senior adult"
+            ]
+        },
+        "new_gender": [
+            "trans male"
+        ]
+    },
+    {
+        "event_id": "gen_misc_transition_eldertofemale",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "transition"
+        ],
+        "frequency": 4,
+        "event_text": "m_c has always felt a disconnect in {PRONOUN/m_c/poss} concept of self. Though it has taken several seasons to realize, m_c has decided that being a she-cat suits {PRONOUN/m_c/object} better.",
+        "m_c": {
+            "gender": [
+                "male"
+            ],
+            "age": [
+            "senior",
+            "senior adult"
+            ]
+        },
+        "new_gender": [
+            "trans female"
+        ]
+    },
+    {
+        "event_id": "gen_misc_transition_eldertomale",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "transition"
+        ],
+        "frequency": 4,
+        "event_text": "m_c has always felt a disconnect in {PRONOUN/m_c/poss} concept of self. Though it has taken several seasons to realize, m_c has decided that being just a cat suits {PRONOUN/m_c/object} better.",
+        "m_c": {
+            "gender": [
+                "male",
+                "female"
+            ],
+            "age": [
+            "senior",
+            "senior adult"
+            ]
+        },
+        "new_gender": [
+            "nonbinary"
+        ]
+    },
+  {
+        "event_id": "gen_misc_transition_parentcomingout_from_male",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "transition"
+        ],
+        "frequency": 4,
+        "event_text": "The first cat m_c tells about {PRONOUN/m_c/poss} transition is {PRONOUN/m_c/poss} parent, r_c. Overjoyed for {PRONOUN/r_c/poss} child, r_c helps m_c spread the news to the rest of the Clan.",
+        "m_c": {
+            "gender": [
+                "male"
+            ]
+        },
+        "new_gender": [
+            "trans female",
+            "nonbinary"
+        ],
+        "relationship_status": ["child/parent"],
+      "relationships": [
+          {
+              "cats_from": ["m_c"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["like", "comfort"],
+            "amount": 5,
+            "log": {
+                "cats_from": "cat_to helped cat_from tell the rest of the clan about {PRONOUN/cat_from/poss} transition."
+            }
+        }
+      ],
+        "r_c": {
+            "relationship_status": ["parent/child"]
+        }
+    },
+    {
+        "event_id": "gen_misc_transition_parentcomingout_from_female",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "transition"
+        ],
+        "frequency": 4,
+        "event_text": "The first cat m_c tells about {PRONOUN/m_c/poss} transition is {PRONOUN/m_c/poss} parent, r_c. Overjoyed for {PRONOUN/r_c/poss} child, r_c helps m_c spread the news to the rest of the Clan.",
+        "m_c": {
+            "gender": [
+                "female"
+            ]
+        },
+        "new_gender": [
+            "trans male",
+            "nonbinary"
+        ],
+        "relationship_status": ["child/parent"],
+      "relationships": [
+          {
+              "cats_from": ["m_c"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["like", "comfort"],
+            "amount": 5,
+            "log": {
+                "cats_from": "cat_to helped cat_from tell the rest of the clan about {PRONOUN/cat_from/poss} transition."
+            }
+        }
+      ],
+        "r_c": {
+            "relationship_status": ["parent/child"]
+        }
+    },
+    {
+        "event_id": "gen_misc_transition_dysphoriareassurance_frommale",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "transition"
+        ],
+        "frequency": 4,
+        "event_text": "m_c has never felt like {PRONOUN/m_c/poss} body matches the way {PRONOUN/m_c/subject} {VERB/m_c/see/sees} {PRONOUN/m_c/self}. After some time, m_c has realized, though c_n's acceptance of {PRONOUN/m_c/poss} gender may not lessen the feeling, m_c feels accepted by the Clan's support.",
+        "m_c": {
+            "age": ["-kitten"],
+            "gender": [
+                "male"
+            ]
+        },
+        "new_gender": [
+            "trans female",
+            "nonbinary"
+        ],
+      "relationships": [
+          {
+            "cats_from": ["m_c"],
+            "cats_to": ["clan"],
+            "mutual": false,
+            "values": ["like", "comfort"],
+            "amount": 5,
+            "log": {
+                "cats_from": "cat_from is comforted by the cat_to's acceptance of {PRONOUN/cat_from/poss} gender."
+            }
+        }
+      ]
+    }
 ]
