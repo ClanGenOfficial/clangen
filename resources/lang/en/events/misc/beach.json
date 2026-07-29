@@ -197,5 +197,153 @@
                 "adjust": "reduce_half"
             }
         ]
+    },
+    {
+        "event_id": "bch_crab_freshkill_steal",
+        "location": [
+            "beach"
+        ],
+        "season": ["any"],
+        "frequency": 3,
+        "event_text": "A cast of crabs invades the fresh-kill pile. c_n manages to fend them off but not before damaging the pile. ",
+        "supplies": [
+            {
+            "type": "freshkill",
+            "adjust": "reduce_quarter"
+            }
+        ]
+    },
+    {
+        "event_id": "bch_coconutcrab_freshkill_steal",
+        "location": ["beach"],
+        "season": ["any"],
+        "frequency": 3,
+        "event_text": "m_c discovers a giant Coconut crab helping itself to the fresh-kill. Rushing to chase off the crab before it could deal further damage, thankfully m_c emerges unscathed.  ",
+        "m_c": {
+            "skill": [
+                "-FIGHTER,3"
+            ],
+            "status": [
+                "-kitten"
+            ]
+        },
+        "relationships": [
+        {
+          "cats_from": [
+                    "some_clan",
+                    "high_social",
+                    "high_stable"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "trust",
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from is impressed that cat_to drove off a Coconut crab."
+            }
+        }
+        ],
+        "supplies": [
+            {
+            "type": "freshkill",
+            "trigger": ["adequate","full"],
+            "adjust": "reduce_eighth"
+          }
+        ]
+    },
+    {
+    "event_id": "bch_pelican_freshkill",
+    "location": ["beach:camp1_camp3_camp4"],
+    "season": ["any"],
+    "frequency": 3,
+    "event_text": "A pelican lands in camp attracted by the abundant fresh-kill. Luckily m_c chased away the bird before it could swallow c_n's prey.",
+    "m_c": {
+        "status": [
+            "-kitten"
+        ]
+    },
+    "relationships": [
+        {
+          "cats_from": [
+                    "some_clan",
+                    "high_social",
+                    "high_stable"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "trust",
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from is thankful to cat_to for defending the fresh-kill from a hungry pelican."
+            }
+        }
+    ]
+    },
+    {
+    "event_id": "bch_pelican_freshkill_duo",
+    "location": ["beach:camp1_camp3_camp4"],
+    "season": ["any"],
+    "frequency": 2,
+    "event_text": "A pelican lands in camp keen on raiding the abundant fresh-kill. m_c and r_c had other ideas and they chase the bird off together. No bird would be stealing from c_n on their watch!",
+    "m_c": {
+        "status": ["apprentice"],
+        "trait": [
+            "-lonesome",
+            "-shy"
+        ]
+    },
+    "r_c": {
+        "status": ["apprentice"],
+        "trait": [
+            "-lonesome",
+            "-shy"
+        ]
+    },
+    "relationships": [
+         {
+          "cats_from": [
+                    "some_clan",
+                    "high_social",
+                    "high_stable"
+                ],
+                "cats_to": [
+                    "m_c", 
+                    "r_c"
+                ],
+                "values": [
+                    "trust",
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from is thankful to cat_to for defending the fresh-kill from a hungry pelican."
+            }
+        },
+        {
+            "cats_from": [
+                "m_c"
+            ],
+            "cats_to": [
+                "r_c"
+            ],
+            "values": [
+                "trust",
+                "respect"
+            ],
+            "amount": 10,
+            "log": {
+                "cats_from": "cat_from defended the fresh-kill together with cat_to.",
+                "cats_to": "cat_to defended the fresh-kill together with cat_from."
+            }
+        }
+    ]
     }
 ]
