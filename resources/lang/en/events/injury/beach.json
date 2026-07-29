@@ -1005,7 +1005,7 @@
             "amount": 10,
             "mutual": false,
             "log": {
-                 "cats_from": "cat_from appreicates that cat_to tried to chase off seagulls that were stealing prey.."
+                 "cats_from": "cat_from appreicates that cat_to tried to chase off seagulls that were stealing prey."
              }
         }
     ]
@@ -1049,7 +1049,7 @@
     "location": ["beach"],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "m_c and r_c try to chase away a giant Coconut crab helping itself to the fresh-kill. The crab proves to be too much to handle for m_c, even with r_c's help.",
+    "event_text": "m_c and r_c try to chase away a giant Coconut crab helping itself to the fresh-kill. Togethor they drive the crab away, but r_c has to escort m_c to the medicine den right after .",
     "m_c": {
         "status": ["-kitten"],
         "trait": [
@@ -1068,7 +1068,7 @@
     "injury": [
         {
             "cats": ["m_c"],
-            "injuries": ["blunt_force_injury"]
+            "injuries": ["broken jaw", "broken bone", "head damage"]
         }
     ],
     "history": [
