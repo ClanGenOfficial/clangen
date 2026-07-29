@@ -380,7 +380,7 @@ You can utilize [#exclusionary tags](#exclusionary-tags). They function the same
     | **DREAM**       | `vivid dreamer`, `sleep-talker`                        | `strange dreamer`        | `dream walker`          | `dream shaper`                 |
     | **CLAIRVOYANT** | `swayed by feelings`, `oddly insightful`               | `somewhat clairvoyant`   | `fairly clairvoyant`    | `incredibly clairvoyant`       |
     | **PROPHET**     | `likes riddles`, `studies prophecies`                  | `prophecy seeker`        | `prophecy interpreter`  | `prophet`                      |
-    | **GHOST**       | `morbid curiosity`, `notices wisps                     | `ghost sense`            | `ghost sight`           | `ghost speaker`                |
+    | **GHOST**       | `morbid curiosity`, `notices wisps`                    | `ghost sense`            | `ghost sight`           | `ghost speaker`                |
 
 === "Traits"
 
