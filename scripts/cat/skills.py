@@ -418,7 +418,7 @@ class CatSkills:
             "hidden": self.hidden.name if self.hidden else None,
         }
 
-    def skill_string(self, short=False):
+    def skill_string(self, short=False, is_adolescent=False):
         output = []
 
         if short:
@@ -428,9 +428,15 @@ class CatSkills:
                 output.append(self.secondary.get_short_skill_string())
         else:
             if self.primary:
-                output.append(i18n.t(f"cat.skills.{self.primary.skill}"))
+                if is_adolescent:
+                    output.append(i18n.t(f"cat.skills.{self.primary.skill}.5"))
+                else:
+                    output.append(i18n.t(f"cat.skills.{self.primary.skill}"))
             if self.secondary:
-                output.append(i18n.t(f"cat.skills.{self.secondary.skill}"))
+                if is_adolescent:
+                    output.append(i18n.t(f"cat.skills.{self.secondary.skill}.5"))
+                else:
+                    output.append(i18n.t(f"cat.skills.{self.secondary.skill}"))
 
         if not output:
             return "???"
