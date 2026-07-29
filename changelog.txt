@@ -1,3 +1,59 @@
+<strong>v0.13.3</strong>
+- Fixes various typos
+- Small UI adjustment in the Leader's Den to prevent text overlaps
+- Adjustments to the frequency of some events
+- Added an outcome to an event that was missing unconstrained antagonize outcomes
+- Fixed missing "war" tag in a war-only event
+- Fixed kittens sometimes being generated with adolescent parents
+- Fixed "r_c" appearing in some condition-related events instead of being replaced with a cat name
+- Fixed the deaths of other Clan cats not being displayed in the Other Clans event tab
+
+- Adjusted the amount of herbs that can be rewarded during a patrol. There is now a maximum number of herbs each cat on patrol can "carry home". `CLEVER` and `SENSE` skill cats can still gather more herbs than typical cats, but will still have to contend with the maximum limit the patrol as a whole can carry.
+
+
+<strong>v0.13.2</strong>
+- Prevented starting and trailing spaces from being used for Clan names (this could cause crashes)
+- Newborns who are exiled and then return to the Clan are no longer perpetually stuck at the newborn rank for their entire life.
+- Other Clans no longer have a chance to generate with an already-used name
+- Fixed the filtering for romance in short events
+- Prevented kittens from "assigned task" thoughts
+- Fixed other_clan group ID bloat that would occur when loading old saves. Can't be retroactively fixed for affected saves, but shouldn't be particularly detrimental to normal play.
+- Apprentice wrangling rel events are now properly age filtered. No more kittens planning lessons for apprentices.
+- Fixed other clan cats who do not join the player clan still receiving "welcome" events as though they had
+- Various inverted relationship effects fixed.
+- Fixed unwanted capitalization of pelt pattern for kits listed under queens in allegiances
+- Allowed un-parented kits to use the longer version of their description in allegiances
+- Fixed issue where Clan ID was showing up in the leader's den screen and switch Clan screen
+- Added further protection to save conversion for sprite poses, just in case any cats had been assigned mismatched pose indexes prior to save conversion.
+- Mild typo fixes, added missing pronoun/verb tags, and slightly reworded some things to avoid text display errors.
+
+- Moved "unspoken apology" rel event from comfort decrease to comfort increase (and now requires "avoids" tier)
+- Lowered frequencies of the "grim job" med cat patrol and the plains "far border" patrol
+- Adjusted the wording of a couple poly mate events
+
+<strong>v0.13.1</strong>
+- Fixed patrol results not displaying all received conditions when the outcome applies multiple conditions.
+- Fixed the Warrior Den screen crashing the game when all focus settings are false.
+- Fixed an event that would cause a crash when assigning an adoptive parent.
+- Fixed freshkill log not resetting on timeskip.
+- Fixed freshkill supply change events not appearing in the log.
+- Fixed freshkill consumption display to prevent weird decimals.
+- Fixed cats not dying on a patrol despite text implying they do.
+- Fixed a patrol where a cat would join the Clan when they weren't meant to.
+- Fixed constraints on the "go on patrol" relationship event so that kits wouldn't receive it.
+- Fixed a patrol that could result in a cat receiving a nonsensical permanent condition.
+- Fixed version number not appearing in the bottom right corner.
+- Fixed medicine cats receiving some ill-fitting thoughts.
+- Fixed a crash related to how we retrieve default risk chances.
+- Fixed apprentices kit-sitting their own littermates.
+- Fixed a self-interaction in a training patrol.
+- Fixed a variety of typos.
+
+- Changed relationship constraints of "maim" events
+- Added new events regarding other Clan relationships to help balance out the "new leader breaks alliances" event.
+- Allowed more outsider events to pull from existing outsiders instead of generating new ones
+- Adjusted frequency of a variety of events
+
 <strong>v0.13.0</strong>
 
 After seasons of silence, StarClan has finally spoken!

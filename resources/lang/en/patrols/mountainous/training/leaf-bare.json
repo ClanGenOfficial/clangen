@@ -15,7 +15,7 @@
             "romance",
             "all_mentored"
         ],
-        "patrol_art": "mtn_train_snowcrunching",
+        "patrol_art": "cat_sprites/mtn_train_snowcrunching_ApAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -183,7 +183,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "mtn_train_wolfravens",
+        "patrol_art": "cat_sprites/mtn_train_LB_wolfravens_WrAp",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -366,7 +366,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "mtn_train_wolfravens",
+        "patrol_art": "cat_sprites/mtn_train_LB_wolfravens_WrAp",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -890,7 +890,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -907,7 +907,7 @@
             {
                 "text": "After moons of having their Clan attacked and targeted, the apprentice raged, calling on their hidden power. They summoned a powerful snowstorm and created leaf-bare in their anger before fleeing the Clans, never to return and never to walk the stars, their life and talents wasted by cruel petty fighting.",
                 "exp": 30,
-                "art": "scaryghost_INTRO",
+                "art": "halloween/hal_scaryghost_Df",
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -951,7 +951,7 @@
             {
                 "text": "s_c is so concerned with the health of the long dead apprentice it actually derails p_l's story, and {PRONOUN/p_l/subject} {VERB/p_l/have/has} to remind {PRONOUN/s_c/object} that this apprentice is long beyond helping.",
                 "exp": 0,
-                "art": "scaryghost_INTRO",
+                "art": "halloween/hal_scaryghost_Df",
                 "can_have_stat": [
                     "not_pl"
                 ],
@@ -991,7 +991,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_leafbaresnowstorm",
+        "patrol_art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -1013,7 +1013,7 @@
             {
                 "text": "The Mountain's Roar is not rage of blood and sinew, no anger of tooth or claw. It's unfeeling, unthinking, and uncaring, the deep rumble of the snowcaps themselves falling to their doom, p_l tells them. If they ever, <i>ever</i> feel their whiskers tremble with the noise, the only solution is to run — not down, but to the side, away from where the snow will flow. Do they understand?",
                 "exp": 30,
-                "art": "gen_train_ghost",
+                "art": "cat_sprites/gen_train_ghost_WrWrWr",
                 "stat_skill": [
                     "STORY,1"
                 ],
@@ -1067,7 +1067,7 @@
             {
                 "text": "Somberly, p_l lists the cats {PRONOUN/p_l/subject} {VERB/p_l/know/knows} who died to an avalanche, who thought they were faster, who didn't heed the signs. Most of these cats were dead long before p_l was born, {PRONOUN/p_l/poss} knowledge of history going back generations, but this is what history is <i>for</i>. To learn from it.",
                 "exp": 30,
-                "art": "gen_train_ghost",
+                "art": "cat_sprites/gen_train_ghost_WrWrWr",
                 "stat_skill": [
                     "LORE,1"
                 ],
@@ -1121,7 +1121,7 @@
             {
                 "text": "There are tricks to it, p_l explains. Avalanches fall like sudden floods of water or mud, but with unimaginable force. Survival is a matter of luck if they get caught. So don't get caught — run to the side of the slope, out of the path of the flow, horizontal. Climb, climb anything. The tree will get swept away, but they might float.",
                 "exp": 30,
-                "art": "gen_train_ghost",
+                "art": "cat_sprites/gen_train_ghost_WrWrWr",
                 "stat_skill": [
                     "CLEVER,1",
                     "INSIGHTFUL,1",
@@ -1177,7 +1177,7 @@
             {
                 "text": "p_l sees the apprentices nerves and takes a moment to reassure them. The patrol is safe on this side of the valley. The important things to remember with avalanches is the warning sides, the trembling of snowpack under paw, the whisker-quiver that warns of danger.",
                 "exp": 30,
-                "art": "gen_bord_story",
+                "art": "cat_sprites/gen_bord_story_WrWrWr",
                 "stat_skill": [
                     "CLEVER,1",
                     "INSIGHTFUL,1",
