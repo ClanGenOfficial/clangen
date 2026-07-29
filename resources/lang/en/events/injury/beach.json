@@ -966,5 +966,27 @@
       "scar": "m_c was scarred after failing to climb the broken ship."
     }
   ]
-}
+},
+{
+    "event_id": "bch_injury_gull_prey",
+    "location": [
+        "beach":"camp1_camp3_camp4"
+    ],
+    "season": ["any"],
+    "frequency": 3,
+    "event_text": "A flock of seagulls descended upon the fresh-kill pile. m_c tried to chase them off, but was pecked for {PRONOUN/m_c/poss} troubles.",
+    "m_c": {
+        "status": []
+    },
+    "injury": [
+        {
+            "cats": [
+                "m_c"
+            ],
+            "injuries": [
+                "beak_bite"
+            ]
+        }
+    ],
+    "supplies": []
 ]
