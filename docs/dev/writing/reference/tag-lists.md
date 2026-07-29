@@ -350,10 +350,15 @@ You can utilize [#exclusionary tags](#exclusionary-tags). They function the same
 === "Skills"
 
     > !!! note
-        Remember, skills are formatted as `SKILL,#`.  For example, `TEACHER,1` is `quick to help` and `SPEAKER,4` is `eloquent speaker`.
+        Remember, skills are formatted as `SKILL,#`.  For example, `TEACHER,1` is `good teacher` and `SPEAKER,3` is `eloquent speaker`.
 
     > !!! note
-        Tier 0 skills are "interest" skills for kits and adolescents. They will show up differently depending on if the cat is an adolescent or a kit.
+        Tier 0 skills are "interest" skills for kits and adolescents.
+        They will show up differently depending on if the cat is an adolescent or a kit. <br /><br />
+        The first string under
+        0 is the name that appears for kits and the second is the one that shows up for adolescents.
+        For example, a kit with `TEACHER,0` will be `good at sharing`, while
+        an adolescent with `TEACHER,0` will be `quick to help`.
 
     > | **SKILL,**       | **0**                            | **1**                     | **2**                    | **3**                          |
     |------------------|:----------------------------------:|:---------------------------:|:--------------------------:|:--------------------------------:|
