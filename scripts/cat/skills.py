@@ -358,12 +358,12 @@ class CatSkills:
                 output.append(self.secondary.get_short_skill_string())
         else:
             if self.primary:
-                if is_adolescent:
+                if is_adolescent and self.primary.tier == 0:
                     output.append(i18n.t(f"cat.skills.{self.primary.skill}.5"))
                 else:
                     output.append(i18n.t(f"cat.skills.{self.primary.skill}"))
             if self.secondary:
-                if is_adolescent:
+                if is_adolescent and self.secondary.tier == 0:
                     output.append(i18n.t(f"cat.skills.{self.secondary.skill}.5"))
                 else:
                     output.append(i18n.t(f"cat.skills.{self.secondary.skill}"))
