@@ -1033,10 +1033,9 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # CAT SKILLS
-        is_adolescent = False
-        if the_cat.age == CatAge.ADOLESCENT:
-            is_adolescent = True
-        output += the_cat.skills.skill_string(is_adolescent=is_adolescent)
+        output += the_cat.skills.skill_string(
+            is_adolescent=(the_cat.age == CatAge.ADOLESCENT)
+        )
         # NEWLINE ----------
         output += "\n"
 
