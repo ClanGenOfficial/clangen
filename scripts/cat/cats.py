@@ -3228,7 +3228,7 @@ class Cat:
                         count=1,
                     ),
                     i18n.t(f"cat.personality.{self.personality.trait}"),
-                    self.skills.skill_string(),
+                    self.skills.skill_string(is_adolescent=(self.age == CatAge.ADOLESCENT)),
                 ]
             )
         elif patrol:
