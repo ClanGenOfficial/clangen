@@ -575,6 +575,10 @@ dev_tools = false
   # SUBTRACTS from the denominator so higher = more likely to get injured
   war_injury_modifier = 225
 
+[medcats]
+  # base number of cats each medcat can care for, before skill/experience modifiers
+  medcat_base_capacity = 10
+
 [clan_creation]
   # Set this to -1 for it to be infinite
   rerolls = 3

@@ -119,5 +119,11 @@
       "outsiders.max_reputation": 29,
       "outsiders.starting_reputation": 15
     }
+  },
+  "burnout": {
+    "card_art": "behavior/resolute.png",
+    "modifiers": {
+      "medcats.medcat_base_capacity": 5
+    }
   }
 }
