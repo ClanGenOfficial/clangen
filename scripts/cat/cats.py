@@ -3374,6 +3374,17 @@ class Cat:
                 if check_cat.status.group_ID == self.status.group_ID
             ]
 
+        filter_near = (
+            not self.dead and (self.status.is_outsider or self.status.is_other_clancat)
+        ) or self.status.group == CatGroup.UNKNOWN_RESIDENCE
+        if filter_near:
+            sorted_specific_list = [
+                check_cat
+                for check_cat in sorted_specific_list
+                if check_cat is self
+                or check_cat.status.is_near(CatGroup.PLAYER_CLAN_ID)
+            ]
+
         if filter_func is not None:
             sorted_specific_list = [
                 check_cat
