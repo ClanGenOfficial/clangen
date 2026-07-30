@@ -583,7 +583,8 @@
         "poppy",
         "plantain",
         "catmint",
-        "honey"
+        "honey",
+        "yew_berries"
       ],
       "title": "Herb",
       "type": "string"

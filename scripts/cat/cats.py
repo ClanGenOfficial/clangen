@@ -116,7 +116,6 @@ class Cat:
     }
 
     all_cats: Dict[str, Cat] = {}  # ID: object
-    outside_cats: Dict[str, Cat] = {}  # cats outside the clan
     id_iter = itertools.count()
 
     all_cats_list: List[Cat] = []
@@ -938,7 +937,7 @@ class Cat:
         self.status.add_to_group(new_group_ID=CatGroup.PLAYER_CLAN_ID, age=self.age)
 
         if game.clan:
-            game.clan.add_to_clan(self)
+            game.clan.add_cat(self)
 
         # check if there are kits under 12 moons with this cat and also add them to the clan
         children = self.get_children()
@@ -951,11 +950,12 @@ class Cat:
                 and child.moons < 12
                 and not child.status.alive_in_player_clan
             ):
+                child.history.add_beginning()
                 child.status.add_to_group(
                     new_group_ID=CatGroup.PLAYER_CLAN_ID, age=child.age
                 )
-                child.add_to_clan()
-                child.history.add_beginning()
+                if game.clan:
+                    game.clan.add_cat(child)
                 ids.append(child_id)
 
         return ids
@@ -3372,6 +3372,17 @@ class Cat:
                 check_cat
                 for check_cat in sorted_specific_list
                 if check_cat.status.group_ID == self.status.group_ID
+            ]
+
+        filter_near = (
+            not self.dead and (self.status.is_outsider or self.status.is_other_clancat)
+        ) or self.status.group == CatGroup.UNKNOWN_RESIDENCE
+        if filter_near:
+            sorted_specific_list = [
+                check_cat
+                for check_cat in sorted_specific_list
+                if check_cat is self
+                or check_cat.status.is_near(CatGroup.PLAYER_CLAN_ID)
             ]
 
         if filter_func is not None:

@@ -105,6 +105,7 @@ class Clan:
 
         # needs to happen immediately so that any config retrievals will be accurate
         self.cruel_cards: list[str] = cruel_cards if cruel_cards else []
+        game.clan = self
 
         self.leader = leader
         self._leader_lives = 9
@@ -416,17 +417,6 @@ class Clan:
         """Adds cat into the list of clan cats"""
         if cat.ID in Cat.all_cats and cat.ID not in self.clan_cats:
             self.clan_cats.append(cat.ID)
-
-    def add_to_clan(self, cat):
-        """
-        TODO: DOCS
-        """
-        if (
-            cat.ID in Cat.all_cats
-            and cat.status.alive_in_player_clan
-            and cat.ID in Cat.outside_cats
-        ):
-            Cat.outside_cats.pop(cat.ID)
 
     def remove_cat(self, ID):  # ID is cat.ID
         """

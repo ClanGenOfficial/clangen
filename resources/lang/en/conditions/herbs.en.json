@@ -107,6 +107,10 @@
         "honey": {
             "one": "dose of honey",
             "many": "doses of honey"
+        },
+        "yew_berries": {
+            "one": "yew berry",
+            "many": "yew berries"
         }
     }
 }
