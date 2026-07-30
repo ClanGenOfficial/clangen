@@ -16893,23 +16893,25 @@
                 "dark_forest"
             ]
         }
-    "event_id": "gen_acc_appfeathers",
-    "location": ["any"],
-    "season": ["any"],
-    "sub_type": ["accessory"],
-    "frequency": 3,
-    "event_text": "m_c returns to camp from a successful hunt, a bird clutched in {PRONOUN/m_c/poss} jaws and its feathers adorning {PRONOUN/m_c/poss} tail.",
-    "new_accessory": [
-        "RED FEATHERS",
-        "BLUE FEATHERS",
-        "JAY FEATHERS",
-        "GULL FEATHERS",
-        "SPARROW FEATHERS"
-    ],
-    "m_c": {
-        "status": ["apprentice"]
-    }
-},
+    },
+    {
+        "event_id": "gen_acc_appfeathers",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["accessory"],
+        "frequency": 3,
+        "event_text": "m_c returns to camp from a successful hunt, a bird clutched in {PRONOUN/m_c/poss} jaws and its feathers adorning {PRONOUN/m_c/poss} tail.",
+        "new_accessory": [
+            "RED FEATHERS",
+            "BLUE FEATHERS",
+            "JAY FEATHERS",
+            "GULL FEATHERS",
+            "SPARROW FEATHERS"
+        ],
+        "m_c": {
+            "status": ["apprentice"]
+        }
+    },
     {
     "event_id": "gen_misc_accessoryrookeryPOI3",
     "location": ["any"],
