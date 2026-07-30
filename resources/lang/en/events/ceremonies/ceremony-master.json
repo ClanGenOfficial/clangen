@@ -845,6 +845,72 @@
     ],
     "(old_name) has always wished to be the hero of {PRONOUN/m_c/poss} Clan, a warrior admired by all. Touching noses with m_c, (mentor) hopes that {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to stay wary of the dangers of their territory and not endanger {PRONOUN/m_c/self}."
   ],
+  "app_55":[
+    [
+      "apprentice",
+      "yes_mentor",
+      "general_parents",
+      "yes_leader",
+      "general_backstory",
+      "quiet",
+      "nervous",
+      "skittish"
+    ],
+    "(old_name) wants to sob at the thought of being anything but a kit, comforted by {PRONOUN/m_c/poss} mother and littermates. Nevertheless, {PRONOUN/m_c/subject} {VERB/m_c/step/steps} up before {PRONOUN/m_c/poss} leader, named m_c, and apprenticed to (mentor)."
+  ],
+  "app_56":[
+    [
+      "apprentice",
+      "yes_mentor",
+      "general_parents",
+      "yes_leader",
+      "general_backstory",
+      "confident",
+      "daring",
+      "bullying"
+    ],
+    "(old_name) stries confidentally up to {PRONOUN/m_c/poss} Clan leader, tail flicking with impaitence. {PRONOUN/m_c/subject/CAP} is named m_c as {PRONOUN/m_c/subject} touches noses with (mentor)."
+  ],
+  "app_57":[
+    [
+      "apprentice",
+      "yes_mentor",
+      "general_parents",
+      "yes_leader",
+      "general_backstory",
+      "nervous",
+      "skittish",
+      "quiet",
+      "all_traits"
+    ],
+    "(old_name) is so focused on the leader, when {PRONOUN/m_c/poss} mother nudges {PRONOUN/m_c/object} forward, {PRONOUN/m_c/subject} {VERB/m_c/let/lets} out a terrified yelp. With much embarrasment, newly apprenticed m_c touches noses with (mentor)."
+  ],
+  "app_58":[
+    [
+      "apprentice",
+      "yes_mentor",
+      "general_parents",
+      "yes_leader",
+      "general_backstory",
+      "attention-seeker",
+      "daring",
+      "loud"
+    ],
+    "On (old_name)'s way to the leader, {PRONOUN/m_c/subject} {VERB/m_c/spot/spots} a bulging tree root. Veering to the side, {PRONOUN/m_c/subject} purposely {VERB/m_c/trip/trips} over the root, wailing for the medicine cat. {PRONOUN/m_c/poss/CAP} leader yowls {PRONOUN/m_c/poss} new name, m_c, and {PRONOUN/m_c/poss} new mentor, (mentor), follows hesitantly to the medicine den."
+  ],
+  "app_59":[
+    [
+      "apprentice",
+      "yes_mentor",
+      "general_parents",
+      "yes_leader",
+      "general_backstory",
+      "bullying",
+      "loud",
+      "attention-seeker"
+    ],
+    "(old_name) shoves (mentor) aside, yowling about how {PRONOUN/(mentor)/subject} {VERB/(mentor)/were/was} in the way. Chest puffed out, m_c is made an apprentice. {PRONOUN/m_c/subject/CAP} {VERB/m_c/turn/turns} around sheepishly, looking at {PRONOUN/m_c/poss} new mentor, (mentor)."
+  ],
   "med_app_0": [
     [
       "medicine cat apprentice",
