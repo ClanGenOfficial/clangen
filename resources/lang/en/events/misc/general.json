@@ -17017,13 +17017,13 @@
         "m_c": {
             "gender": [
                 "male"
-            ]
+            ],
+            "relationship_status": ["child/parent"]
         },
         "new_gender": [
             "trans female",
             "nonbinary"
         ],
-        "relationship_status": ["child/parent"],
       "relationships": [
           {
               "cats_from": ["m_c"],
@@ -17036,9 +17036,7 @@
             }
         }
       ],
-        "r_c": {
-            "relationship_status": ["parent/child"]
-        }
+        "r_c": {}
     },
     {
         "event_id": "gen_misc_transition_parentcomingout_from_female",
@@ -17056,16 +17054,16 @@
         "m_c": {
             "gender": [
                 "female"
-            ]
+            ],
+            "relationship_status": ["child/parent"]
         },
         "new_gender": [
             "trans male",
             "nonbinary"
         ],
-        "relationship_status": ["child/parent"],
       "relationships": [
           {
-              "cats_from": ["m_c"],
+            "cats_from": ["m_c"],
             "cats_to": ["r_c"],
             "mutual": false,
             "values": ["like", "comfort"],
@@ -17075,9 +17073,7 @@
             }
         }
       ],
-        "r_c": {
-            "relationship_status": ["parent/child"]
-        }
+        "r_c": {}
     },
     {
         "event_id": "gen_misc_transition_dysphoriareassurance_frommale",
