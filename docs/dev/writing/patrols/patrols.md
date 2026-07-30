@@ -10,7 +10,7 @@ When considering patrols, keep in mind challenge vs reward. That isn't to say ce
 |--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `p_l`        | The patrol leader: the cat in the patrol with the highest relevant rank and, within involved cats of that rank, is either the oldest or the most experienced.  For medicine cat patrols, this will either be a medicine cat or medicine cat apprentice. For normal patrols, this will go from the highest to lowest rank (leader > deputy > warrior > apprentice).                                                                                                         |                                                                                                 |
 | `r_c#`       | A random cat: this cat is chosen at complete random and will not be the patrol leader. You can specify constraints on this cat to require it to have certain attributes rather than being entirely random. The `#` is replaced with a number: 0-5. It's recommended to begin at 0 and increment as needed.                                                                                                                                                                 | |      
-| `s_c#`       | An additional special cat: this cat has some constraints being required of it and could be a cat who was previously assigned an abbreviation. For example, if the patrol as a whole requires `r_c0` to be a warrior and you wish to add an outcome in which any cat with the `calm` trait, including `r_c0`, could also play a role, then you would use `s_c` for that cat.The `#` is replaced with a number: 0-5. It's recommended to begin at 0 and increment as needed. |                                                                                                                                                                                                                                                                                 |
+| `s_c#`       | An additional special cat, mainly used in outcomes: this cat has some constraints being required of it and could be a cat who was previously assigned an abbreviation. For example, if the patrol as a whole requires `r_c0` to be a warrior and you wish to add an outcome in which any cat with the `calm` trait, including `r_c0`, could also play a role, then you would use `s_c` for that cat. The `#` is replaced with a number: 0-5. It's recommended to begin at 0 and increment as needed. |                                                                                                                                                                                                                                                                                 |
 | `n_c#`       | A newly generated or existing outsider/other clan cat: The `#` is replaced with a number: 0-6. It's recommended to begin at 0 and increment as needed.                                                                                                                                                                                                                                                                                                                     |
 
 !!! tip
@@ -167,7 +167,7 @@ How to make sure your patrol_id is unique:
 
 > Border patrols needs to be the hardest and most dangerous, with a high difficulty for [success chance](#chance-of-success-int).  This is where experienced cats should shine! The [injuries](patrol_outcome.md/#condition-listdict) cats can obtain on them should be a wide range. Failure outcomes on border patrols that don't cause injury should be rare. You are encouraged to apply minor injuries even on success outcome. The same guidelines apply to [killing cats](patrol_outcome.md/#death-listdict) on this patrol type, with the exception that you cannot kill cats on any success outcomes. This is by far the mostly likely patrol type to have cats become [lost](patrol_outcome.md/#lost-listdict) on.
 
-> Herb gathering patrols are of moderate difficulty for [success chance](#chance-of-success-int) (like hunting patrols). Herb gathering patrols are focused on gathering herbs and thus need to have a [herb reward](patrol_outcome.md/#supplylistdict) under most circumstances. Herb gathering patrols are of medium danger, and the [injuries](patrol_outcome.md/#condition-listdict) cats can obtain on them should either be minor and common (high frequency outcome), moderate and of a mid frequency, or severe and of a low frequency. The same guidelines apply to [killing cats](patrol_outcome.md/#death-listdict) on this patrol type. Herb gathering patrols should be highly seasonal, as not all herbs are available in all seasons, or in the same seasons in different [biomes](../reference/biomes.md). 
+> Herb gathering patrols are of moderate difficulty for [success chance](#chance-of-success-int) (like hunting patrols). Herb gathering patrols are focused on gathering herbs, so successful outcomes must have a [herb reward](patrol_outcome.md/#supplylistdict) under most circumstances. Herb gathering patrols are of medium danger, and the [injuries](patrol_outcome.md/#condition-listdict) cats can obtain on them should either be minor and common (high frequency outcome), moderate and of a mid frequency, or severe and of a low frequency. The same guidelines apply to [killing cats](patrol_outcome.md/#death-listdict) on this patrol type. Herb gathering patrols should be highly seasonal, as not all herbs are available in all seasons, or in the same seasons in different [biomes](../reference/biomes.md). 
 
 > The subtypes of [new_cat](patrol_outcome.md/#required_reputation-dict) and [other_clan](patrol_outcome.md/#required_reputation-dict) patrols should primarily use the type specific success, danger, injuries, death, and rewards of whatever the primary patrol type is. For example, use the success chance for herb gathering patrols if your medicine cat finds an injured kitten. However, a subtype is more likely to move away from the 'normal' setting for that type of patrol as they are by definition unusual examples of that patrol type. Brainstorm with other developers!
 
@@ -270,7 +270,7 @@ Each entry is an individual cat, with the key being their [event designation](#u
 
 **When To Use**
 
-`p_l` is the only cat designation you can *assume* has a cat attached at all times. With this in mind, you do not need to add a `p_l` entry to `involved_cats` unless you would like to add constraints regarding the sort of cat `p_l` is.
+`p_l` is the only cat designation you can *assume* has a cat attached at all times. With this in mind, you do not need to add a `p_l` entry to `involved_cats` unless you would like to add constraints regarding the sort of cat `p_l` is. **Important**: This will not override the game's selection process for patrol leaders. (e.g. You cannot use these constraints to make `p_l` a warrior leading their deputy on patrol, because the deputy will automatically be `p_l`.)
 
 With all other cat designations (`r_c0`, `n_c0`, ect.) if you want to be able to reference the cat designation within the text or within other constraint/consequence lists (cats who die, cats who must abide by relationship constraints, etc.), then you *must* declare them within either the patrol-wide `involved_cats` or the relevant outcome `involved_cats`. This can be an empty dict if no constraints are needed:
 ```json
@@ -280,9 +280,9 @@ With all other cat designations (`r_c0`, `n_c0`, ect.) if you want to be able to
 !!! tip
     You do not need to "repeat" constraints! If a patrol can only have apprentices on it via the `required_cat_types` then you don't need to specify that `r_c0` is an apprentice.
 
-**Specifying an outsider or other clan cat**
+**Specifying an outsider or other Clan cat**
 
-If you would like to include an outsider or other clan cat, you can specify them using the `n_c#` designation and some additional parameters.
+If you would like to include an outsider or other Clan cat, you can specify them using the `n_c#` designation and some additional parameters.
 
 If the outsider/other_clan cat can be newly generated rather than having to utilize an existing cat, you can add the `can_create_new_cat` parameter.
 ```json
@@ -378,7 +378,7 @@ This can even be added as an empty dict: `can_create_new_cat: {}` to simply mark
         "must_be_acquired": false
     }
 ```
-> **`"working"`** - by default, this is always set to `true`. if set to `false`, the cat can't be a working cat (aka, they are currently disabled by a condition of some kind)
+> **`"working"`** - by default, this is always set to `true`. if set to `false`, the cat can't be a working cat (aka, they are currently disabled by a condition of some kind). In the case of patrols, it is impossible for a non-working cat to be patrolling, so this will not be used.
 
 > **`"condition`** - a list of conditions that the cat must have *at least* one of. if any condition is allowed, use `"any"`. supports [exclusionary tags](../reference/tag-lists.md#exclusionary-tags). check [illness](../reference/tag-lists.md/#__tabbed_1_3), [injury](../reference/tag-lists.md#__tabbed_1_2), and [permanent condition](../reference/tag-lists.md#__tabbed_1_4) references for lists of current condition possibilities.
 
@@ -699,7 +699,7 @@ Constrains the event to only occur is the specified relationships exist. Multipl
 ***
 
 #### antag_fail_outcomes: list[TextPoolEvent]
-> The possible antagonize fail outcomes. Utilize the [patrol outcome format](patrol_outcome.md).Antagonize outcomes can be added for patrols involving outsiders, other clan cats, or afterlife visitors.
+> The possible antagonize fail outcomes. Utilize the [patrol outcome format](patrol_outcome.md). Antagonize outcomes can be added for patrols involving outsiders, other clan cats, or afterlife visitors.
 
 ***
 

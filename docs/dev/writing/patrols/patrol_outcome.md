@@ -223,7 +223,7 @@ These can also be exclusionary tags such as: `-p_l` to allow any cat *except* `p
 ***
 
 ### required_reputation: dict:
-Constraints the event to only occur if the player clan has the required reputation.
+Constrains the event to only occur if the player clan has the required reputation.
 ```json
     "required_reputation": {
         "outsider": [],
@@ -381,7 +381,7 @@ Condition block:
 > List of possible conditions. One condition will be chosen from this list. You can also utilize [Injury Pools](../reference/tag-lists.md#__tabbed_1_1)
 
 **non_lethal**
-> Set to True if this condition shouldn't be allowed to kill the cat.
+> Set to True to prevent this condition from killing the cat. It's not necessary if the condition is already non-lethal (eg. scrapes)
 
 **scar_pool_override**
 > Override the default scars given for the assigned condition. Instead, a scar will be chosen from this list.
