@@ -17,7 +17,7 @@ import i18n
 import ujson
 
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
-from scripts.cat.enums import CatRank, CatGroup, CatSocial
+from scripts.cat.enums import CatRank, CatGroup, CatSocial, CatCompatibility
 from scripts.cat.names import names
 from scripts.cat.save_load import (
     save_cats,
@@ -1697,6 +1697,28 @@ class Afterlife:
         if not num_of_influencers:
             return 0
         return total // num_of_influencers
+
+    def get_compatibility(self, cat: Cat) -> CatCompatibility:
+        differences = [
+            abs(self.lawfulness - cat.personality.lawfulness),
+            abs(self.sociability - cat.personality.sociability),
+            abs(self.aggression - cat.personality.aggression),
+            abs(self.stability - cat.personality.stability),
+        ]
+
+        running_total = 0
+        for x in differences:
+            if x <= 4:
+                running_total += 1
+            elif x >= 6:
+                running_total -= 1
+
+        if running_total >= 2:
+            return CatCompatibility.POSITIVE
+        elif running_total <= -2:
+            return CatCompatibility.NEGATIVE
+        else:
+            return CatCompatibility.NEUTRAL
 
 
 def get_temper_alignment(

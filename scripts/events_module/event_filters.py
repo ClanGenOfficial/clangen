@@ -1879,7 +1879,7 @@ def check_relationship_value(cat_from, cat_to, rel_value=None):
 
 def get_personality_compatibility(cat1, cat2):
     """
-    Returns matching CatCompatibility enum according to personalitiesof given cat objects.
+    Returns matching CatCompatibility enum according to personalities of given cat objects.
     :param cat1: Cat object of first cat
     :param cat2: Cat object of second cat
     """
