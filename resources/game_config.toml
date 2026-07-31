@@ -25,7 +25,7 @@ dev_tools = false
 # settings regarding afterlife affinity
 [affinity]
   # controls how much an affinity change is affected by the cat's compatibility with the afterlife
-  base_compatibility_multiplier = 1.5
+  base_compatibility_multiplier = 0.5
 
   # how affinities are affected by a cat murdering another
   [affinity.murder]
@@ -34,8 +34,8 @@ dev_tools = false
 
   # how much an afterlife connection skill affects affinity
   [affinity.skill_favor]
-    match = 0.5
-    conflict = -0.5
+    match = 20
+    conflict = -20
 
 # settings regarding relationship events, also called "interactions"
 [relationship]

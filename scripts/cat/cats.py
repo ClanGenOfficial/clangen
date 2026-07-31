@@ -531,22 +531,20 @@ class Cat:
                 if cat_default_afterlife_id == CatGroup.STARCLAN_ID:
                     affinity = self.starclan_affinity
                     if SkillPath.STAR in self.skills.skill_path_list:
-                        affinity += affinity * get_config("affinity.skill_favor.match")
+                        affinity += get_config("affinity.skill_favor.match")
                     elif SkillPath.DARK in self.skills.skill_path_list:
-                        affinity += affinity * get_config(
-                            "affinity.skill_favor.conflict"
-                        )
+                        affinity += get_config("affinity.skill_favor.conflict")
 
                     afterlife_group = CatGroup.STARCLAN
                     rejected_ID = CatGroup.DARK_FOREST_ID
                 else:
                     affinity = self.dark_forest_affinity
                     if SkillPath.DARK in self.skills.skill_path_list:
-                        affinity += affinity * get_config(
-                            "affinity.skill_favor.match"
-                        )
+                        affinity += affinity * get_config("affinity.skill_favor.match")
                     elif SkillPath.STAR in self.skills.skill_path_list:
-                        affinity += affinity * get_config("affinity.skill_favor.conflict")
+                        affinity += affinity * get_config(
+                            "affinity.skill_favor.conflict"
+                        )
 
                     afterlife_group = CatGroup.DARK_FOREST
                     rejected_ID = CatGroup.STARCLAN_ID
@@ -1091,16 +1089,22 @@ class Cat:
         :param dark_forest_change: The amount to change dark forest affinity by
         """
         modifier = get_config("affinity.base_compatibility_multiplier")
-        for afterlife, change in zip(
-            [game.starclan, game.dark_forest], [starclan_change, dark_forest_change]
-        ):
-            if change:
-                compatibility = afterlife.get_compatibility(self)
 
-                if compatibility == CatCompatibility.POSITIVE:
-                    change += round(change * modifier)
-                elif compatibility == CatCompatibility.NEGATIVE:
-                    change -= round(change * modifier)
+        if starclan_change:
+            compatibility = game.starclan.get_compatibility(self)
+
+            if compatibility == CatCompatibility.POSITIVE:
+                starclan_change += round(starclan_change * modifier)
+            elif compatibility == CatCompatibility.NEGATIVE:
+                starclan_change -= round(starclan_change * modifier)
+
+        if dark_forest_change:
+            compatibility = game.dark_forest.get_compatibility(self)
+
+            if compatibility == CatCompatibility.POSITIVE:
+                dark_forest_change += round(dark_forest_change * modifier)
+            elif compatibility == CatCompatibility.NEGATIVE:
+                dark_forest_change -= round(dark_forest_change * modifier)
 
         self.starclan_affinity += starclan_change
         self.dark_forest_affinity += dark_forest_change

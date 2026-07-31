@@ -413,7 +413,11 @@ class CatSkills:
 
     @property
     def skill_path_list(self) -> list[SkillPath]:
-        return [self.primary.path, self.secondary.path]
+        paths = [self.primary.path]
+        if self.secondary:
+            paths.append(self.secondary.path)
+
+        return paths
 
     def get_skill_dict(self):
         return {
