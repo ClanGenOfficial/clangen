@@ -29,8 +29,8 @@ dev_tools = false
 
   # how affinities are affected by a cat murdering another
   [affinity.murder]
-    starclan_change = -30
-    dark_forest_change = 30
+    starclan_change = -40
+    dark_forest_change = 40
 
   # how much an afterlife connection skill affects affinity
   [affinity.skill_favor]
