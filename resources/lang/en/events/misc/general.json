@@ -16934,7 +16934,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c has always felt a disconnect in {PRONOUN/m_c/poss} concept of self. Though it has taken several seasons to realize, m_c has decided that being a tom suits {PRONOUN/m_c/object} better.",
+        "event_text": "m_c has always felt a disconnect in {PRONOUN/m_c/poss} concept of self. Though it has taken many seasons to realize, m_c has decided that being a tom suits {PRONOUN/m_c/object} better.",
         "m_c": {
             "gender": [
                 "female"
