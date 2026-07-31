@@ -510,7 +510,7 @@
     {
         "id": "group_3_neg_badkitsitter",
         "strings": [
-            "m_c chews r_c1 out when {PRONOUN/r_c1/subject} {VERB/r_c1/wander/wanders} off while {PRONOUN/r_c1/subject} {VERB/r_c1/were/was} supposed to be watching r_c2.",
+            "m_c chews r_c1 out after {PRONOUN/r_c1/subject} wandered off while {PRONOUN/r_c1/subject} {VERB/r_c1/were/was} supposed to be watching r_c2.",
             "m_c isn't happy to find r_c1 letting r_c2 run wild.",
             "m_c scolds r_c1 for doing a poor job of kitsitting r_c2."
         ],
@@ -570,8 +570,8 @@
                 }
             },
             "r_c2": {
-                "status": [
-                    "kitten", "apprentice"
+                "age": [
+                    "kitten", "adolescent"
                 ]
             }
         },
@@ -597,6 +597,77 @@
                 "mutual": false,
                 "values": ["comfort", "like"],
                 "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "group_3_neg_irrationaljealousy",
+        "strings": [
+            "m_c insists that r_c1 has eyes for r_c2, even though r_c1 denies it.",
+            "Where other cats see a casual friendship between r_c1 and r_c2, m_c is convinced there's something more.",
+            "r_c1 is fed up with m_c's green-eyed accusations and insists {PRONOUN/r_c1/subject} {VERB/r_c1/have/has} no interest in r_c2."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": ["arrogant", "insecure", "vengeful", "competitive"]
+                }
+            },
+            "r_c1": {
+                "age": ["adult"]
+            },
+            "r_c2": {
+                "age": ["adult"]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "constraints": ["mates"],
+                "mutual": true
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "constraints": ["uninterested_only", "likes", "-parent/child", "-littermates", "-siblings"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": true,
+                "values": ["romance"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["trust"],
+                "amount": -15
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": -15
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "values": ["trust", "respect"],
+                "amount": -15
             }
         ]
     }

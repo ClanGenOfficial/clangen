@@ -77,77 +77,6 @@
         ]
     },
     {
-        "id": "group_3_neg_irrationaljealousy",
-        "strings": [
-            "m_c insists that r_c1 has eyes for r_c2, even though r_c1 denies it.",
-            "Where other cats see a casual friendship between r_c1 and r_c2, m_c is convinced there's something more.",
-            "r_c1 is fed up with m_c's green-eyed accusations and insists {PRONOUN/r_c1/subject} {VERB/r_c1/have/has} no interest in r_c2."
-        ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": ["arrogant", "insecure", "vengeful", "competitive"]
-                }
-            },
-            "r_c1": {
-                "age": ["adult"]
-            },
-            "r_c2": {
-                "age": ["adult"]
-            }
-        },
-        "relationship_constraint": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c1"],
-                "constraints": ["mates"],
-                "mutual": true
-            },
-            {
-                "cats_from": ["r_c1"],
-                "cats_to": ["r_c2"],
-                "constraints": ["uninterested_only", "likes", "-parent/child", "-littermates", "-siblings"]
-            }
-        ],
-        "relationship_changes": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c1"],
-                "mutual": true,
-                "values": ["romance"],
-                "amount": -10
-            },
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c1"],
-                "mutual": false,
-                "values": ["trust"],
-                "amount": -15
-            },
-            {
-                "cats_from": ["r_c1"],
-                "cats_to": ["m_c"],
-                "mutual": false,
-                "values": ["comfort"],
-                "amount": -15
-            },
-            {
-                "cats_from": ["r_c1"],
-                "cats_to": ["r_c2"],
-                "mutual": false,
-                "values": ["comfort"],
-                "amount": -10
-            },
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c2"],
-                "mutual": false,
-                "values": ["trust", "respect"],
-                "amount": -15
-            }
-        ]
-    },
-    {
         "id": "muddypaws_multicat_warrior",
         "strings": [
             "m_c tracked a trail of muddy pawprints into the warrior's den, straight through the nests of multi_cat.",
@@ -688,10 +617,10 @@
     {
         "id": "group_multicat_pryingquestions",
         "strings": [
-            "multi_cat's questions about m_c's parents make {PRONOUN/m_c/object} uncomfortable.",
-            "multi_cat don't mean to pry, but their questions about m_c's parents only remind m_c that {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't know the answers.",
+            "multi_cat's questions about m_c's birth parents make {PRONOUN/m_c/object} uncomfortable.",
+            "multi_cat don't mean to pry, but their questions about m_c's birth parents only remind m_c that {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't know the answers.",
             "multi_cat joke about their parents, and m_c feels left out of the conversation.",
-            "m_c makes up things about {PRONOUN/m_c/poss} parents to feel included when multi_cat trade stories about their parents."
+            "m_c makes up things about {PRONOUN/m_c/poss} birth parents to feel included when multi_cat trade stories about their parents."
         ],
         "involved_cats": {
             "m_c": {
@@ -758,13 +687,13 @@
     {
         "id": "group_3_neg_mamabear",
         "strings": [
-            "r_c1 snarls at m_c for speaking too sharply to {PRONOUN/r_c1/poss} kit, r_c2.",
-            "r_c1 intervenes when m_c rebukes r_c2 and tells {PRONOUN/m_c/object} to be gentler with {PRONOUN/r_c1/poss} kit.",
+            "r_c1 snarls at m_c for speaking too sharply to r_c1's kit, r_c2.",
+            "m_c rebukes r_c2, but r_c1 overhears and tells m_c to be gentler with {PRONOUN/r_c1/poss} kit.",
             "m_c thinks twice before scolding r_c2, knowing how protective r_c1 can be."
         ],
         "involved_cats": {
             "m_c": {
-                "status": ["-kitten", "-apprentice", "-medicine cat apprentice", "-mediator apprentice"]
+                "age": ["-kitten", "-adolescent"]
             },
             "r_c1": {},
             "r_c2": {
@@ -808,7 +737,7 @@
     {
         "id": "group_3_neg_badrolemodel",
         "strings": [
-            "r_c1 doesn't like m_c visiting the nursery; {PRONOUN/r_c1/subject} {VERB/r_c1/think/thinks} {PRONOUN/m_c/subject} {VERB/m_c/set/sets} a bad example for r_c2.",
+            "r_c1 doesn't like m_c visiting the nursery because {PRONOUN/r_c1/subject} {VERB/r_c1/think/thinks} m_c sets a bad example for r_c2.",
             "r_c2 has learned some very bad words recently, and r_c1 suspects that m_c is the one who taught them to {PRONOUN/r_c2/object}.",
             "r_c2 won't stop calling everyone a fox-heart, and r_c1 blames m_c for teaching {PRONOUN/r_c2/object} that word.",
             "r_c2 won't stop calling everything a load of fox-dung, and r_c1 blames m_c for teaching {PRONOUN/r_c2/object} that word.",
