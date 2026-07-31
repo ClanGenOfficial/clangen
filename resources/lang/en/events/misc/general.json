@@ -15015,7 +15015,7 @@
     },
     {
         "event_id": "gen_misc_greenleaf_splashdate",
-        "location": ["any", "-desert"],
+        "location": ["-desert"],
         "season": ["greenleaf"],
         "sub_type": [],
         "tags": ["romance"],
