@@ -183,8 +183,6 @@
         }
     },
     "@buttonstyles_rounded_rect": {"prototype": "buttonstyles_prototype"},
-    "@buttonstyles_rank_icon": {"prototype": "buttonstyles_prototype"},
-
     "@buttonstyles_icon": {
         "prototype": "@buttonstyles_rounded_rect",
         "font": {"name": "clangen", "size": "21"},
