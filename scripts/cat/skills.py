@@ -4,7 +4,19 @@ from typing import Union
 
 import i18n
 
+from scripts.config import get_config
 from scripts.cat.enums import CatRank, CatAge
+
+
+def scale_progress(current: float, ceiling: int, amount: float) -> float:
+    """adjusts skill/experience gain for difficulty and distance to ceiling"""
+
+    modifier = get_config("progress.difficulty_modifier")
+    if not modifier or amount <= 0 or ceiling <= 0:
+        return amount
+    headroom = min(max(1 - current / ceiling, 1e-9), 1.0)
+    gain_factor = headroom**modifier
+    return amount * gain_factor
 
 
 class SkillPath(Enum):
@@ -12,9 +24,9 @@ class SkillPath(Enum):
     HUNTER = ("moss ball hunter", "good hunter", "great hunter", "renowned hunter")
     FIGHTER = (
         "avid play-fighter",
-        "good fighter",
+        "strong fighter",
         "formidable fighter",
-        "unusually strong fighter",
+        "indomitable fighter",
     )
     RUNNER = (
         "never sits still",
@@ -54,7 +66,7 @@ class SkillPath(Enum):
         "valuable insight",
         "trusted advisor",
     )
-    SENSE = ("oddly observant", "natural intuition", "keen eye", "unnatural senses")
+    SENSE = ("stares intently", "perceptive", "sharp senses", "uncanny senses")
     KIT = (
         "active imagination",
         "good kitsitter",
@@ -73,7 +85,7 @@ class SkillPath(Enum):
         "lore keeper",
         "lore master",
     )
-    CAMP = ("picky nest builder", "steady paws", "den builder", "camp keeper")
+    CAMP = ("always tidies up", "nest weaver", "den builder", "camp keeper")
     HEALER = ("interested in herbs", "good healer", "great healer", "fantastic healer")
     STAR = (
         "curious about StarClan",
@@ -480,19 +492,30 @@ class CatSkills:
 
         if can_primary and can_secondary:
             if random.randint(1, 2) == 1:
-                self.primary.points += amount_effect
+                self._add_skill(self.primary, amount_effect)
                 path = self.primary.path
             else:
-                self.secondary.points += amount_effect
+                self._add_skill(self.secondary, amount_effect)
                 path = self.secondary.path
         elif can_primary:
-            self.primary.points += amount_effect
+            self._add_skill(self.primary, amount_effect)
             path = self.primary.path
         else:
-            self.secondary.points += amount_effect
+            self._add_skill(self.secondary, amount_effect)
             path = self.secondary.path
 
         return mentor.ID, path, amount_effect
+
+    @staticmethod
+    def _add_skill(skill: Skill, amount: int):
+        """adds skill points, scaled by progress.difficulty_modifier"""
+
+        scaled = scale_progress(skill.points, Skill.point_range[1], amount)
+        # stochastic rounding so points still increase on average
+        gain = int(scaled)
+        if random.random() < scaled - gain:
+            gain += 1
+        skill.points += gain
 
     def progress_skill(self, the_cat):
         """
@@ -542,11 +565,11 @@ class CatSkills:
                     amount_effect = random.randint(1, 4)
                     if self.primary and self.secondary:
                         if random.randint(1, 2) == 1:
-                            self.primary.points += amount_effect
+                            self._add_skill(self.primary, amount_effect)
                         else:
-                            self.secondary.points += amount_effect
+                            self._add_skill(self.secondary, amount_effect)
                     elif self.primary:
-                        self.primary.points += amount_effect
+                        self._add_skill(self.primary, amount_effect)
 
             elif the_cat.status.rank.is_any_apprentice_rank():
                 # Check to see if the cat gains a secondary
@@ -561,11 +584,11 @@ class CatSkills:
                     amount_effect = random.randint(2, 5)
                     if self.primary and self.secondary:
                         if random.randint(1, 2) == 1:
-                            self.primary.points += amount_effect
+                            self._add_skill(self.primary, amount_effect)
                         else:
-                            self.secondary.points += amount_effect
+                            self._add_skill(self.secondary, amount_effect)
                     elif self.primary:
-                        self.primary.points += amount_effect
+                        self._add_skill(self.primary, amount_effect)
 
             elif the_cat.moons > 120:
                 # for old cats, we want to check if the skills start to degrade at all, age is the great equalizer
@@ -609,7 +632,7 @@ class CatSkills:
                 # That chance decreases as the cat gets older.
                 # This is to simulate them reaching their "peak"
                 if not int(random.random() * int(the_cat.moons / 4)):
-                    self.primary.points += 1
+                    self._add_skill(self.primary, 1)
         else:
             # For outside cats, just check interest and flip it if needed.
             # Going on age, rather than status here.

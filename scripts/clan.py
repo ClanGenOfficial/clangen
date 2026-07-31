@@ -312,6 +312,8 @@ class Clan:
                     ]
                 )
                 c.status.generate_new_status(self, social=random_social)
+                # re-assign backstory once cat has new status
+                c.assign_backstory()
                 # random chance for cat to generate as dead
                 if randint(1, 3) == 1:
                     c.die()
