@@ -310,7 +310,7 @@ class RoleScreen(Screens):
             CatRank.MEDICINE_CAT: "icon_medic.png",
             CatRank.MEDICINE_APPRENTICE: "icon_medic_app.png",
             CatRank.MEDIATOR: "icon_mediator.png",
-            CatRank.MEDIATOR_APPRENTICE: "icon_mediator.png",
+            CatRank.MEDIATOR_APPRENTICE: "icon_mediator_app.png",
             CatRank.WARRIOR: "icon_warrior.png",
             CatRank.APPRENTICE: "icon_warrior_app.png",
             CatRank.KITTEN: "icon_kit.png",
