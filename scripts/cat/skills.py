@@ -4,13 +4,12 @@ from typing import Union
 
 import i18n
 
+from scripts.config import get_config
 from scripts.cat.enums import CatRank, CatAge
 
 
 def scale_progress(current: float, ceiling: int, amount: float) -> float:
     """adjusts skill/experience gain for difficulty and distance to ceiling"""
-
-    from scripts.config import get_config
 
     modifier = get_config("progress.difficulty_modifier")
     if not modifier or amount <= 0 or ceiling <= 0:
