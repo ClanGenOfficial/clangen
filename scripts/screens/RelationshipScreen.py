@@ -481,7 +481,7 @@ class RelationshipScreen(Screens):
                 anchors={"left_target": prev_element} if prev_element else None,
                 manager=MANAGER,
             )
-            
+
             if relationship.cat_to.ID in self.main_cat.mate:
                 self.relation_elements[f"rel_indicator{i}"] = UIModifiedImage(
                     ui_scale(pygame.Rect((-115, 35), (10, 10))),
@@ -491,7 +491,7 @@ class RelationshipScreen(Screens):
                         "left_target": self.relation_elements[f"rel{i}_nameplate"]
                     },
                     manager=MANAGER,
-                    object_id="#rel_indicator"
+                    object_id="#rel_indicator",
                 )
                 self.relation_elements[f"rel_indicator{i}"].set_tooltip(
                     i18n.t("general.mate", count=1)
@@ -506,7 +506,7 @@ class RelationshipScreen(Screens):
                         "left_target": self.relation_elements[f"rel{i}_nameplate"]
                     },
                     manager=MANAGER,
-                    object_id="#rel_indicator"
+                    object_id="#rel_indicator",
                 )
                 self.relation_elements[f"rel_indicator{i}"].set_tooltip(
                     i18n.t("general.ex_mate", count=1)
@@ -521,7 +521,7 @@ class RelationshipScreen(Screens):
                         "left_target": self.relation_elements[f"rel{i}_nameplate"]
                     },
                     manager=MANAGER,
-                    object_id="#rel_indicator"
+                    object_id="#rel_indicator",
                 )
                 self.relation_elements[f"rel_indicator{i}"].set_tooltip(
                     i18n.t("general.related_text", count=1)
