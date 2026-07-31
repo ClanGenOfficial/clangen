@@ -319,15 +319,8 @@
         },
         "relationship_changes": [
             {
-                "cats_from": ["multi_cat"],
-                "cats_to": ["m_c"],
-                "mutual": true,
-                "values": ["like", "comfort"],
-                "amount": 5
-            },
-            {
-                "cats_from": ["multi_cat"],
-                "cats_to": ["multi_cat"],
+                "cats_from": ["multi_cat", "m_c"],
+                "cats_to": ["multi_cat", "m_c"],
                 "mutual": false,
                 "values": ["like", "comfort"],
                 "amount": 5
