@@ -414,7 +414,7 @@
           "virtue": ["acceptance", "bravery", "certainty", "clear judgment", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         },
         {
-          "text": "As r_c gives a life for [virtue], {PRONOUN/r_c/subject} {VERB/m_c/urge/urges} m_c to keep {PRONOUN/m_c/poss} head on straight and to remember to sheathe {PRONOUN/r_c/poss} claws.",
+          "text": "As r_c gives a life for [virtue], {PRONOUN/r_c/subject} {VERB/r_c/urge/urges} m_c to keep {PRONOUN/m_c/poss} head on straight and to remember to sheathe {PRONOUN/m_c/poss} claws.",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgment", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         }
       ]
