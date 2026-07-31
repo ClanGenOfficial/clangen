@@ -32,6 +32,10 @@ dev_tools = false
     starclan_change = -30
     dark_forest_change = 30
 
+  # how much an afterlife connection skill affects affinity
+  [affinity.skill_favor]
+    match = 0.5
+    conflict = -0.5
 
 # settings regarding relationship events, also called "interactions"
 [relationship]

@@ -28,7 +28,7 @@ from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
-from scripts.cat.skills import CatSkills
+from scripts.cat.skills import CatSkills, SkillPath
 from scripts.cat.status import Status, StatusDict
 from scripts.config import get_config
 from scripts.events_module.thoughts.generate_thoughts import (
@@ -530,10 +530,24 @@ class Cat:
             else:
                 if cat_default_afterlife_id == CatGroup.STARCLAN_ID:
                     affinity = self.starclan_affinity
+                    if SkillPath.STAR in self.skills.skill_path_list:
+                        affinity += affinity * get_config("affinity.skill_favor.match")
+                    elif SkillPath.DARK in self.skills.skill_path_list:
+                        affinity += affinity * get_config(
+                            "affinity.skill_favor.conflict"
+                        )
+
                     afterlife_group = CatGroup.STARCLAN
                     rejected_ID = CatGroup.DARK_FOREST_ID
                 else:
                     affinity = self.dark_forest_affinity
+                    if SkillPath.DARK in self.skills.skill_path_list:
+                        affinity += affinity * get_config(
+                            "affinity.skill_favor.match"
+                        )
+                    elif SkillPath.STAR in self.skills.skill_path_list:
+                        affinity += affinity * get_config("affinity.skill_favor.conflict")
+
                     afterlife_group = CatGroup.DARK_FOREST
                     rejected_ID = CatGroup.STARCLAN_ID
 
