@@ -17018,7 +17018,7 @@
             "gender": [
                 "male"
             ],
-            "relationship_status": ["child/parent"]
+            "relationship_status": ["child/parent", "trusts"]
         },
         "new_gender": [
             "trans female",
@@ -17055,7 +17055,7 @@
             "gender": [
                 "female"
             ],
-            "relationship_status": ["child/parent"]
+            "relationship_status": ["child/parent", "trusts"]
         },
         "new_gender": [
             "trans male",
