@@ -129,7 +129,7 @@ class Cat:
         prefix=None,
         gender=None,
         status_dict: StatusDict = None,
-        backstory: str = "clanborn",
+        backstory: str = None,
         parent1: str = None,
         parent2: str = None,
         adoptive_parents=None,
@@ -308,9 +308,7 @@ class Cat:
 
         # backstory
         if self.backstory is None:
-            self.backstory = "clanborn"
-        else:
-            self.backstory = self.backstory  # fixme why does this exist
+            self.assign_backstory()
 
         # sex!?!??!?!?!??!?!?!?!??
         if self.gender is None:
@@ -369,6 +367,26 @@ class Cat:
 
         if self.ID is not None and self.ID != "0":
             Cat.insert_cat(self)
+
+    def assign_backstory(self):
+        """Assign a backstory based on social status."""
+        if self.status.social == CatSocial.CLANCAT:
+            self.backstory = "clanborn"
+        else:
+            baby = self.age in (CatAge.NEWBORN, CatAge.KITTEN)
+            social_category = {
+                CatSocial.LONER: "loner_backstories",
+                CatSocial.ROGUE: "rogue_backstories",
+                CatSocial.KITTYPET: "kittypet_backstories",
+            }[self.status.social]
+            if baby:
+                social_category = f"baby_{social_category}"
+            possible_backstories = BACKSTORIES["backstory_categories"][social_category]
+            self.backstory = (
+                possible_backstories[0]
+                if self.disable_random
+                else choice(possible_backstories)
+            )
 
     def init_faded(self, ID, status, prefix, suffix, moons, **kwargs):
         """Perform faded-specific initialization
