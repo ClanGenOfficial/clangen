@@ -436,7 +436,18 @@ class RelationshipScreen(Screens):
             image_cache.load_image("resources/images/heart_small.png").convert_alpha(),
             ui_scale_dimensions((10, 10)),
         )
-
+        broken_heart_image = pygame.transform.scale(
+            image_cache.load_image(
+                "resources/images/broken_heart_small.png"
+            ).convert_alpha(),
+            ui_scale_dimensions((10, 10)),
+        )
+        related_image = pygame.transform.scale(
+            image_cache.load_image(
+                "resources/images/related_small.png"
+            ).convert_alpha(),
+            ui_scale_dimensions((10, 10)),
+        )
         prev_element = None
         for i, relationship in enumerate(current_chunk):
             if i >= 4:
@@ -469,8 +480,28 @@ class RelationshipScreen(Screens):
             )
             if relationship.cat_to.ID in self.main_cat.mate:
                 self.relation_elements[f"heart{i}"] = UIModifiedImage(
-                    ui_scale(pygame.Rect((-25, 35), (10, 10))),
+                    ui_scale(pygame.Rect((-115, 35), (10, 10))),
                     heart_image,
+                    container=container,
+                    anchors={
+                        "left_target": self.relation_elements[f"rel{i}_nameplate"]
+                    },
+                    manager=MANAGER,
+                )
+            elif relationship.cat_to.ID in self.main_cat.previous_mates:
+                self.relation_elements[f"broken_heart{i}"] = UIModifiedImage(
+                    ui_scale(pygame.Rect((-115, 35), (10, 10))),
+                    broken_heart_image,
+                    container=container,
+                    anchors={
+                        "left_target": self.relation_elements[f"rel{i}_nameplate"]
+                    },
+                    manager=MANAGER,
+                )
+            elif self.main_cat.is_related(relationship.cat_to, exclude_cousins=False):
+                self.relation_elements[f"related{i}"] = UIModifiedImage(
+                    ui_scale(pygame.Rect((-25, 35), (10, 10))),
+                    related_image,
                     container=container,
                     anchors={
                         "left_target": self.relation_elements[f"rel{i}_nameplate"]
