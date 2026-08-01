@@ -160,7 +160,7 @@
             "Ever since the birth, rumor's gone around that m_c's {insert} belongs to r_c and, while no one wants to confirm anything, no one really has to when the evidence is mewling right there...",
 			      "r_c adamantly denies that m_c's newly born {insert} belongs to {PRONOUN/r_c/object} when questioned, but it's hard to believe {PRONOUN/r_c/object} when they're so similar...",
 			      "Everyone in the Clan can see that m_c's {insert} clearly looks like r_c... rc_mate has been glaring at {PRONOUN/r_c/object} and m_c ever since the {insert} was born.",
-			      "rc_mate has been demanding answers from r_c ever since m_c's {insert} was born, the {insert} looks way too much like r_c!"
+			      "rc_mate has been demanding answers from r_c ever since m_c's {insert} was born. The {insert} looks far too much like r_c!"
         ],
         "affair_secret": [
             "m_c secretly had a {insert} with r_c.",
