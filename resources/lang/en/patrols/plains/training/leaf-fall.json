@@ -11,7 +11,7 @@
         "types": [
             "training"
         ],
-        "patrol_art": "gen_bord_story",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -29,7 +29,7 @@
             {
                 "text": "It was generations ago, far before s_c's time. But there was once a great flock of insects that swarmed across c_n's land, so thick in the air they shaded out the sun. They ate damn near every grass seed on the plains, and the prairie was left battered for seasons afterward.",
                 "exp": 30,
-                "art": "gen_train_ghost",
+                "art": "cat_sprites/gen_train_ghost_WrWrWr",
                 "stat_skill": [
                     "LORE,1"
                 ],
@@ -59,7 +59,7 @@
             {
                 "text": "Khepri the scarab rolls the sun into hiding for leaf-bare, s_c tells the patrol. Each winter, the moon journeys to rescue her sibling from below the horizon, fighting to take the sun from Khepri's grasp and bring warmth back to the land and renew the grass.",
                 "exp": 30,
-                "art": "gen_train_ghost",
+                "art": "cat_sprites/gen_train_ghost_WrWrWr",
                 "stat_skill": [
                     "STORY,1"
                 ],
@@ -91,7 +91,7 @@
             {
                 "text": "The bug r_c batted flies up to {PRONOUN/r_c/poss} face and buzzes, and p_l completely loses track of the story {PRONOUN/p_l/subject} {VERB/p_l/were/was} about to tell as {PRONOUN/p_l/subject} {VERB/p_l/help/helps} r_c out with the irritated insect.",
                 "exp": 0,
-                "art": "gen_warrior_crouching_perplexed",
+                "art": "cat_sprites/gen_crouchingperplexed_Wr",
                 "relationships": [
                     {
                         "cats_to": [

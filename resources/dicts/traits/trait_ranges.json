@@ -156,12 +156,6 @@
             "aggression": [7, 12],
             "stability": [9, 16]
         },
-        "sneaky": {
-            "lawfulness": [0, 7],
-            "sociability": [0, 7],
-            "aggression": [6, 12],
-            "stability": [8, 16]
-        },
         "strange": {
             "lawfulness": [5, 10],
             "sociability": [0, 8],

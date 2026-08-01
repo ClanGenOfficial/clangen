@@ -61,7 +61,7 @@
       "rank": [],
       "life_giving": [
         {
-            "text": "Suddenly, the mist at the edge of the clearing takes shape. Dozens of wispy, starry spirits emerge, quickly surrounding m_c. \"We grant you your remaining [life_num] lives.\" Individually, each voice is distant, but together, the force of their words shakes m_c to {PRONOUN/m_c/poss} core.  \"Use them well, with our blessing.\"  And in a heartbeat, they were gone.",
+            "text": "Suddenly, the mist at the edge of the clearing takes shape. Dozens of wispy, starry spirits emerge, quickly surrounding m_c. \"We grant you your remaining [life_num].\" Individually, each voice is distant, but together, the force of their words shakes m_c to {PRONOUN/m_c/poss} core.  \"Use them well, with our blessing.\"  And in a heartbeat, they were gone.",
           "virtue": []
         }
       ]
@@ -414,7 +414,7 @@
           "virtue": ["acceptance", "bravery", "certainty", "clear judgment", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         },
         {
-          "text": "As r_c gives a life for [virtue], {PRONOUN/r_c/subject} {VERB/m_c/urge/urges} m_c to keep {PRONOUN/m_c/poss} head on straight and to remember to sheathe {PRONOUN/r_c/poss} claws.",
+          "text": "As r_c gives a life for [virtue], {PRONOUN/r_c/subject} {VERB/r_c/urge/urges} m_c to keep {PRONOUN/m_c/poss} head on straight and to remember to sheathe {PRONOUN/m_c/poss} claws.",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgment", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         }
       ]
@@ -620,9 +620,9 @@
       ]
     },
   
-    "sneaky_warrior": {
+    "cunning_warrior": {
       "tags": [],
-      "lead_trait": ["sneaky"],
+      "lead_trait": ["cunning"],
       "star_trait": [],
       "rank": ["warrior", "deputy"],
       "life_giving": [
@@ -633,10 +633,10 @@
       ]
     },
   
-    "sneaky_starclanwarrior": {
+    "cunning_starclanwarrior": {
       "tags": [],
       "lead_trait": [],
-      "star_trait": ["sneaky"],
+      "star_trait": ["cunning"],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {

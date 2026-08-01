@@ -6,8 +6,17 @@ from pydantic import BaseModel
 
 from scripts.models.common.common_schema import CommonSchema
 from scripts.models.patrol.patrol_schema import PatrolSchema
+from scripts.models.relationship_group_event.relationship_group_schema import (
+    RelationshipGroupEvent,
+)
+from scripts.models.relationship_pair_event.relationship_group_schema import (
+    RelationshipPairEvent,
+)
 from scripts.models.shortevent.short_event_schema import ShortEventSchema
 from scripts.models.thought.thought_schema import ThoughtSchema
+from scripts.models.points_of_interest.points_of_interest_schema import (
+    PointsOfInterestSchema,
+)
 from scripts.models.util import (
     create_generate_json_schema_with_externals,
     get_defs_from_pydantic_model,
@@ -70,6 +79,13 @@ def main():
     dump_model_schema(PatrolSchema, "schemas/patrol.schema.json")
     dump_model_schema(ShortEventSchema, "schemas/shortevent.schema.json")
     dump_model_schema(ThoughtSchema, "schemas/thought.schema.json")
+    dump_model_schema(
+        RelationshipGroupEvent, "schemas/relationship_group_event.schema.json"
+    )
+    dump_model_schema(
+        RelationshipPairEvent, "schemas/relationship_pair_event.schema.json"
+    )
+    dump_model_schema(PointsOfInterestSchema, "schemas/poi.schema.json")
 
 
 if __name__ == "__main__":

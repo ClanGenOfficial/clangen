@@ -12,6 +12,10 @@ from ...game_structure.constants import DISPLAY_SETTINGS
 def load_clan_settings():
     reset_loaded_clan_settings()
 
+    if not switch_get_value(Switch.clan_list):
+        # if settings files does not exist, default has been loaded by __init__
+        return
+
     if os.path.exists(
         get_save_dir() + f"/{switch_get_value(Switch.clan_list)[0]}/clan_settings.json"
     ):
@@ -41,13 +45,11 @@ def load_clan_settings():
             if key in clan_settings:
                 clan_settings[key] = value
 
-    # if settings files does not exist, default has been loaded by __init__
-
 
 def save_clan_settings():
     safe_save(
         Path(get_save_dir())
-        / switch_get_value(Switch.clan_name)
+        / switch_get_value(Switch.clan_save_id)
         / "clan_settings.json",
         clan_settings,
     )

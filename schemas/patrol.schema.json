@@ -312,7 +312,7 @@
           "$ref": "#/$defs/GatherCatEnum"
         },
         {
-          "pattern": "^n_c:[0-9]+$",
+          "pattern": "^-?n_c:[0-9]+$",
           "type": "string"
         }
       ],
@@ -402,7 +402,9 @@
         "goldenrod",
         "poppy",
         "plantain",
-        "catmint"
+        "catmint",
+        "honey",
+        "yew_berries"
       ],
       "title": "Herb",
       "type": "string"
@@ -926,6 +928,11 @@
           "title": "Tags",
           "type": "array"
         },
+        "poi": {
+          "$ref": "#/$defs/PointsOfInterestGroup",
+          "description": "The relevant points of interest. Points of Interest never affect outcome.",
+          "title": "Poi"
+        },
         "patrol_art": {
           "anyOf": [
             {
@@ -1138,6 +1145,120 @@
       "title": "PermCondition",
       "type": "string"
     },
+    "PointsOfInterestCategoryEnum": {
+      "enum": [
+        "gathering",
+        "moonplace",
+        "terrain"
+      ],
+      "title": "PointsOfInterestCategoryEnum",
+      "type": "string"
+    },
+    "PointsOfInterestGroup": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/PointsOfInterestGroupByName"
+        },
+        {
+          "$ref": "#/$defs/PointsOfInterestGroupByTags"
+        },
+        {
+          "$ref": "#/$defs/PointsOfInterestGroupByCategory"
+        }
+      ],
+      "description": "Specifies Points of Interest constraints. Must use names OR tags OR category (not multiple at once).",
+      "title": "PointsOfInterestGroup"
+    },
+    "PointsOfInterestGroupByCategory": {
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "$ref": "#/$defs/PointsOfInterestCategoryEnum",
+          "description": "The category this POI belongs to.",
+          "title": "Category"
+        }
+      },
+      "required": [
+        "category"
+      ],
+      "title": "PointsOfInterestGroupByCategory",
+      "type": "object"
+    },
+    "PointsOfInterestGroupByName": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "description": "Points of Interest with these specific IDs will be allowed.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Name",
+          "type": "array"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "PointsOfInterestGroupByName",
+      "type": "object"
+    },
+    "PointsOfInterestGroupByTags": {
+      "additionalProperties": false,
+      "properties": {
+        "tags": {
+          "description": "Points of Interest with these tags will be allowed.",
+          "items": {
+            "$ref": "#/$defs/PointsOfInterestTag"
+          },
+          "title": "Tags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "tags"
+      ],
+      "title": "PointsOfInterestGroupByTags",
+      "type": "object"
+    },
+    "PointsOfInterestTag": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "#/$defs/PointsOfInterestTagEnum"
+        }
+      ],
+      "title": "PointsOfInterestTag"
+    },
+    "PointsOfInterestTagEnum": {
+      "enum": [
+        "cave",
+        "covered",
+        "fall_risk",
+        "hole",
+        "prey",
+        "prey:flying",
+        "prey:water",
+        "prey:ground",
+        "prey:eggs",
+        "prey:fish",
+        "rocks",
+        "tainted",
+        "trees",
+        "Twolegs",
+        "Twolegs:abandoned",
+        "Twolegs:present",
+        "unstable",
+        "water",
+        "water:still",
+        "water:flowing",
+        "water:ocean",
+        "nests"
+      ],
+      "title": "PointsOfInterestTagEnum",
+      "type": "string"
+    },
     "Prey": {
       "enum": [
         "very_small",
@@ -1269,6 +1390,7 @@
         "knows_of_only",
         "likes_only",
         "enjoys_only",
+        "cherishes_only",
         "resents_only",
         "envies_only",
         "begrudges_only",
@@ -1398,22 +1520,14 @@
         "elder",
         "-elder",
         "any",
-        "living",
-        "starclan",
-        "darkforest",
-        "unknownresidence",
         "kittypet",
         "-kittypet",
         "loner",
         "-loner",
         "rogue",
         "-rogue",
-        "former Clancat",
-        "exiled",
-        "lost",
-        "-lost",
-        "outside cat",
-        "clancat"
+        "clancat",
+        "-clancat"
       ],
       "title": "Status",
       "type": "string"
@@ -1446,7 +1560,6 @@
         "loyal",
         "responsible",
         "shameless",
-        "sneaky",
         "strange",
         "vengeful",
         "wise",
@@ -1485,7 +1598,6 @@
         "-loyal",
         "-responsible",
         "-shameless",
-        "-sneaky",
         "-strange",
         "-vengeful",
         "-wise",

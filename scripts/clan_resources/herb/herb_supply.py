@@ -7,6 +7,7 @@ from scripts.cat.skills import SkillPath
 from scripts.clan_resources.herb.herb import Herb, HERBS
 from scripts.clan_resources.herb.herb_effects import HerbEffect
 from scripts.clan_resources.supply import Supply
+from scripts.config import get_config
 from scripts.game_structure import constants
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
@@ -164,6 +165,10 @@ class HerbSupply:
         start's a Clan's storage. Clans begin with a random set of herbs.
         """
         self.set_required_herb_count(clan_size)
+
+        if get_config("clan_resources.herbs.empty_starting_storage"):
+            # return before we can add any herbs
+            return
 
         for herb in self.base_herb_list:
             if randint(1, 4) == 1:

@@ -1,7 +1,7 @@
 [
     {
         "id": "general_formerclancat_thoughts",
-        "thoughts": [
+        "strings": [
             "Thinks about {PRONOUN/m_c/poss} former Clanmates forlornly",
             "Wonders if StarClan still watches over {PRONOUN/m_c/object}",
             "Wonders if {PRONOUN/m_c/subject} could start {PRONOUN/m_c/poss} own Clan",
@@ -13,15 +13,19 @@
     },
     {
         "id": "formerclancat_tragedy_thoughts",
-        "thoughts": [
+        "strings": [
             "Wonders what happened to {PRONOUN/m_c/poss} Clanmates",
             "Wakes up shaking after a nightmare",
             "Wonders if there's anything left of {PRONOUN/m_c/poss} old Clan",
             "Misses {PRONOUN/m_c/poss} family",
             "Wishes {PRONOUN/m_c/subject} could have helped {PRONOUN/m_c/poss} Clan more"
         ],
-        "main_backstory_constraint": [
-            "tragedy_survivor1"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "tragedy_survivor1"
+                ]
+            }
+        }
     }
 ]

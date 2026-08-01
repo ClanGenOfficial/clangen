@@ -16,14 +16,26 @@ class Pelt:
     # POSES
     all_poses = sprites.POSE_DATA["poses"]
     newborn_poses = [x for x in all_poses if "newborn" in x]
-    kitten_poses = [x for x in all_poses if "kitten" in x]
-    adolescent_long_poses = [x for x in all_poses if "adolescent_long" in x]
-    adolescent_short_poses = [
-        x for x in all_poses if "adolescent" in x and "long" not in x
+    kitten_poses = [x for x in all_poses if "kitten" in x and "sick" not in x]
+    adolescent_long_poses = [
+        x for x in all_poses if "adolescent_long" in x and "sick" not in x
     ]
-    adult_short_poses = [x for x in all_poses if "adult_short" in x and "para" not in x]
-    adult_long_poses = [x for x in all_poses if "adult_long" in x and "para" not in x]
-    senior_poses = [x for x in all_poses if "senior" in x]
+    adolescent_short_poses = [
+        x
+        for x in all_poses
+        if "adolescent" in x and "long" not in x and "sick" not in x
+    ]
+    adult_short_poses = [
+        x
+        for x in all_poses
+        if "adult_short" in x and "para" not in x and "sick" not in x
+    ]
+    adult_long_poses = [
+        x
+        for x in all_poses
+        if "adult_long" in x and "para" not in x and "sick" not in x
+    ]
+    senior_poses = [x for x in all_poses if "senior" in x and "sick" not in x]
 
     # PELT LENGTH
     pelt_length = ["short", "medium", "long"]
@@ -657,9 +669,7 @@ class Pelt:
         possible_pelts = [
             Pelt.pelt_categories[x] for x in Pelt.pelt_categories if x != "torties"
         ]
-        chosen_pelt = choice(
-            random.choices(possible_pelts, weights=(35, 20, 30, 15), k=1)[0]
-        )
+        chosen_pelt = choice(random.choices(possible_pelts, weights=weights, k=1)[0])
 
         # Tortie chance
         tortie_chance_f = constants.CONFIG["cat_generation"][

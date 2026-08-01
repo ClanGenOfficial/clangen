@@ -11,7 +11,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_squirrel",
+        "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -265,7 +265,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_leaf-bare_squirrel_treetoptumble",
+        "patrol_art": "cat_sprites/fst_hunt_LB_squirreltreetoptumble_WrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -625,7 +625,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_train_warrior_rainy",
+        "patrol_art": "cat_sprites/gen_train_rainy_Wr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -948,7 +948,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_abandontwolegdis",
+        "patrol_art": "backgrounds/gen_abandontwolegdis",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -1113,170 +1113,6 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_leaf-fall_ratking1",
-        "biome": [
-            "forest"
-        ],
-        "season": [
-            "leaf-fall"
-        ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 4,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 1,
-        "intro_text": "A legend has been sighted. Recently, warriors have reported sighting a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seen. Will p_l's patrol look for this legendary monster?",
-        "decline_text": "No. Such a thing can't exist, right? It has to be an elder's imagination. p_l decides to take their patrol elsewhere to hunt.",
-        "chance_of_success": 30,
-        "success_outcomes": [
-            {
-                "text": "The Rat King's lair is heavily defended by smaller rats. While the patrol doesn't find any sign of the Rat King, they manage to defeat and bring back a feast of small rats.",
-                "exp": 30,
-                "prey": [
-                    "medium"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The rats defending the Rat King's lair are more numerous than they thought. The patrol catches whatever rats they can, but p_l swears that {PRONOUN/p_l/subject} saw it — multiple eyes glowing in the dark, watching {PRONOUN/p_l/object}.",
-                "exp": 30,
-                "prey": [
-                    "large"
-                ],
-                "frequency": 1
-            },
-            {
-                "text": "The waves of rats overwhelm the rest of the patrol, but s_c can see the Rat King writhing within its nest. They bolt away from the others, trusting their claws to take on the legend. It dies with a horrible shriek, as the rest of the patrol watch in awe.",
-                "exp": 30,
-                "stat_skill": [
-                    "HUNTER,3"
-                ],
-                "prey": [
-                    "large"
-                ],
-            "relationships": [
-                {
-                    "cats_from": ["patrol"],
-                    "cats_to": ["s_c"],
-                    "values": ["respect"],
-                    "mutual": false,
-                    "amount": 18,
-                    "log":
-                    {
-                        "cats_from": "cat_from witnessed the birth of a legend when cat_to killed the Rat King."
-                    }
-                },
-                {
-                    "cats_from": ["clan"],
-                    "cats_to": ["patrol"],
-                    "values": ["respect"],
-                    "mutual": false,
-                    "amount": 10,
-                    "log": 
-                    {
-                        "cats_from": "cat_from watches cat_to and {PRONOUN/cat_to/poss} patrol return triumphant from the vanquishing of the Rat King."
-                    }
-                }
-            ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "There are more rats defending the Rat King's lair than they thought. Fighting off waves of them, the patrol retreats back to the Clan with empty paws.",
-                "exp": 0,
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "The Rat King and their minions overwhelm the patrol, biting into fur and limbs. p_l orders a retreat, hoping the Clan can heal so many wounded.",
-                "exp": 0,
-                "injury": [
-                    {
-                        "cats": [
-                            "patrol"
-                        ],
-                        "injuries": [
-                            "rat_bite"
-                        ],
-                        "scars": [
-                            "RATBITE"
-                        ]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c was scarred fighting a Rat King.",
-                    "death": "m_c died of a rat bite sustained while fighting a Rat King."
-                },
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 3
-            },
-            {
-                "text": "s_c knows {PRONOUN/s_c/subject} {VERB/s_c/are/is} one of the Clan's greatest hunters. {PRONOUN/s_c/subject/CAP} {VERB/s_c/spot/spots} the Rat King and charge into its lair. But the King proves too great a foe for a single cat, and it sends s_c back with wounds to tell the tale.",
-                "exp": 0,
-                "stat_skill": [
-                    "HUNTER,1"
-                ],
-                "injury": [
-                    {
-                        "cats": [
-                            "patrol"
-                        ],
-                        "injuries": [
-                            "rat_bite"
-                        ],
-                        "scars": [
-                            "RATBITE"
-                        ]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c was scarred fighting a Rat King.",
-                    "death": "m_c died of a rat bite sustained while fighting a Rat King."
-                },
-                "prey": [
-                    "very_small"
-                ],
-            "relationships": [
-                {
-                    "cats_from": ["clan", "high_aggress"],
-                    "cats_to": ["s_c"],
-                    "values": ["respect"],
-                    "mutual": false,
-                    "amount": 8,
-                    "log":
-                    {
-                        "cats_from": "cat_from heard cat_to's stories of facing the Rat King."
-                    }
-                }
-            ],
-                "frequency": 3
-            },
-            {
-                "text": "s_c knows {PRONOUN/s_c/subject} {VERB/s_c/are/is} one of the Clan's greatest hunters. {PRONOUN/s_c/subject/CAP} {VERB/s_c/spot/spots} the Rat King and charge into its lair. But the King proves too great a foe for a single cat, and it kills the would-be kingslayer.",
-                "exp": 0,
-                "stat_skill": [
-                    "HUNTER,2"
-                ],
-                "dead_cats": [
-                    "s_c"
-                ],
-                "history_text": {
-                    "death": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King."
-                },
-                "frequency": 3
-            }
-        ]
-    },
-    {
         "patrol_id": "fst_hunt_leaf-fall_lillizard1",
         "biome": [
             "forest"
@@ -1288,7 +1124,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_lillizard",
+        "patrol_art": "cat_sprites/gen_hunt_lizard_Wr",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {},
@@ -1435,7 +1271,7 @@
             "rom_two_apps",
             "romance"
         ],
-        "patrol_art": "gen_hunt_lillizard",
+        "patrol_art": "cat_sprites/gen_hunt_lizard_Wr",
         "min_cats": 2,
         "max_cats": 3,
         "min_max_status": {
@@ -1533,7 +1369,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_mouse",
+        "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1595,7 +1431,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_mouse",
+        "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -1675,7 +1511,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_mice",
+        "patrol_art": "backgrounds/fst_dirttrail",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1791,7 +1627,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "fst_hunt_mice_ohnotheyrehot",
+        "patrol_art": "cat_sprites/gen_groupwalk_WrWrWr",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -1973,7 +1809,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "fst_hunt_mice",
+        "patrol_art": "backgrounds/fst_dirttrail",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -2093,7 +1929,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_solo",
+        "patrol_art": "cat_sprites/gen_solo_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2226,7 +2062,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "gen_train_soloapp",
+        "patrol_art": "cat_sprites/gen_train_solo_Ap",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -2433,7 +2269,7 @@
         "season": ["leaf-fall"],
         "types": ["hunting"],
         "tags": [],
-        "patrol_art": "gen_hunt_squirrel",
+        "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "frequency": 3,
@@ -2449,7 +2285,7 @@
                 "exp": 30,
                 "frequency": 4,
                 "prey": ["medium"],
-                "art": "gen_happy_cat"
+                "art": "cat_sprites/gen_happycat_Wr"
             },
             {
                 "text": "p_l and r_c murmur theories to each other, then realize the squirrel is almost done \"burying\" nothing. r_c takes advantage of its distraction to catch it.",
@@ -2468,7 +2304,7 @@
                         }
                     }
                 ],
-                "art": "gen_warrior_crouching_perplexed"
+                "art": "cat_sprites/gen_crouchingperplexed_WrWr"
             },
             {
                 "text": "s_c's eyes narrow thoughtfully. This must be related to how squirrels bury nuts for leaf-bare. Perhaps this clever squirrel is trying to mislead other squirrels. Too bad the squirrel is not clever enough to escape p_l's pounce!",
@@ -2488,7 +2324,7 @@
                         }
                     }
                 ],
-                "art": "gen_warrior_crouching"
+                "art": "cat_sprites/gen_crouching_Wr"
             },
             {
                 "text": "s_c explains to the patrol in a low voice how squirrels steal each other's nut caches in leaf-bare. This clever squirrel is trying to throw its rivals off by creating fake caches. p_l is impressed by the squirrel's ingenuity, but not enough to spare it from the fresh-kill pile.",
@@ -2508,7 +2344,7 @@
                         }
                     }
                 ],
-                "art": "gen_speaking_cat_w1"
+                "art": "cat_sprites/gen_speakingcat_Wr"
             },
             {
                 "text": "s_c reasons that the squirrel must be pretending to bury nuts to trick other squirrels. If squirrels can be tricked so easily, c_n might be able to catch more squirrels in leaf-bare by creating more nut caches. After a successful hunt, p_l agrees to help s_c bury some acorns.",
@@ -2528,7 +2364,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_sunset"
+                "art": "cat_sprites/gen_chatting_WrWr"
             },
             {
                 "text": "Only StarClan knows why squirrels do the things they do. s_c is here to hunt, not solve squirrel puzzles. Though s_c makes an impressive number of catches, the squirrel's burial of nothing remains a mystery.",
@@ -2548,7 +2384,7 @@
                         }
                     }
                 ],
-                "art": "gen_hunt_strange"
+                "art": "cat_sprites/gen_hunt_strange_Wr"
             },
             {
                 "min_max_status": {"normal adult": [3, 6]},
@@ -2569,7 +2405,7 @@
                         }
                     }
                 ],
-                "art": "mtn_hunt_kea_leafbare_parentchildapprentice1"
+                "art": "cat_sprites/gen_confused_Wr"
             }
         ],
         "fail_outcomes": [
@@ -2589,7 +2425,7 @@
                         }
                     }
                 ],
-                "art": "gen_cat_looking_up2"
+                "art": "cat_sprites/gen_catlookingup_Wr"
             },
             {
                 "text": "r_c catches that squirrel, but the patrol spends the rest of the afternoon wondering what it was up to, and catch nothing else.",
@@ -2618,14 +2454,15 @@
                         }
                     }
                 ],
-                "art": "gen_warrior_crouching_perplexed"
+                "art": "cat_sprites/gen_crouchingperplexed_WrWr"
             },
             {
                 "text": "s_c bounds up to get a closer look at what the squirrel is doing and inadvertently scares it off. p_l is none too pleased.",
                 "exp": 0,
                 "frequency": 3,
                 "can_have_stat": ["r_c"],
-                "stat_trait": ["-calm", "-careful", "-wise", "-thoughtful", "-sneaky", "-cunning"],
+                "stat_skill": ["-STEALTH,1"],
+                "stat_trait": ["-calm", "-careful", "-wise", "-thoughtful", "-cunning"],
                 "relationships": [
                     {
                         "cats_from": ["patrol"],
@@ -2638,7 +2475,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueWW"
+                "art": "cat_sprites/gen_train_argue_WrWr"
             },
             {
                 "text": "s_c pleads with the patrol not to hunt this one. {PRONOUN/s_c/subject/CAP} {VERB/s_c/want/wants} to watch it and figure out what it's doing! p_l rolls {PRONOUN/p_l/poss} eyes. They're here to <i>hunt</i>, not study squirrels.",
@@ -2659,7 +2496,7 @@
                         }
                     }
                 ],
-                "art": "gen_train_argueWW"
+                "art": "cat_sprites/gen_train_argue_WrWr"
             },
             {
                 "min_max_status": {"apprentice": [1, 5]},
@@ -2681,7 +2518,7 @@
                         }
                     }
                 ],
-                "art": "app_cat_looking_up"
+                "art": "cat_sprites/gen_catlookingup_Ap"
             },
             {
                 "text": "s_c reasons that the squirrel must be pretending to bury nuts to trick other squirrels. To help hunting in leaf-bare, s_c suggests that the patrol bury acorns themselves now instead of hunting. p_l rejects the idea, prioritizing hunting in the short-term over potentially baiting squirrels moons from now.",
@@ -2701,7 +2538,7 @@
                         }
                     }
                 ],
-                "art": "gen_cat_looking_up1"
+                "art": "cat_sprites/gen_catlookingup_Wr"
             }
         ]
     },
@@ -2720,7 +2557,7 @@
             "halloween",
             "romance"
         ],
-        "patrol_art": "pipbats_INTRO",
+        "patrol_art": "halloween/hal_pipbats",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},

@@ -12,6 +12,8 @@ body:
           required: true
         - label: This issue was encountered (or replicated) on a non-edited Clan
           required: true
+        - label: I confirm that I am NOT playing on a modded version of the game (e.g. LifeGen)
+          required: true
   - type: textarea
     id: description
     attributes:
@@ -35,6 +37,24 @@ body:
       default: 2
     validations:
       required: true
+  - type: dropdown
+    id: gamemode
+    attributes:
+      label: Gamemode
+      description: Which gamemode were you playing when you encountered this issue?
+      options:
+        - Classic Mode
+        - Expanded Mode
+        - Cruel Season
+      default: 2
+    validations:
+      required: true
+  - type: textarea
+    id: cards
+    attributes:
+      label: Challenge cards
+      description: If you were playing in Cruel Season mode, list the cards that were in use.
+      placeholder: Neverending Cold, Persistent Twolegs, Lean Meat...
   - type: textarea
     id: reproduce
     attributes:
