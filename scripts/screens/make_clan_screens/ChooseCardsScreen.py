@@ -33,6 +33,9 @@ class ChooseCardsScreen(MakeClanScreenBase):
 
         self.card_elements: dict[str, UICruelCardLarge] = {}
         self.card_chunks: deque[list[UICruelCardLarge]] = deque([])
+        # using this to track the pseudo index of the currently viewed chunk
+        # this is important for later UX concerns when a player picks a card and we reset the chunk deque
+        self.chunk_index: int = 0
 
         self.card_icon_elements: dict[str, UICruelCardIcon] = {}
 
@@ -47,9 +50,15 @@ class ChooseCardsScreen(MakeClanScreenBase):
             # CYCLE CARDS
             elif event.ui_element == self.elements["page_left"]:
                 self.card_chunks.rotate()
+                self.chunk_index -= 1
+                if self.chunk_index < 0:
+                    self.chunk_index = len(self.card_chunks)
                 self.update_cruel_cards()
             elif event.ui_element == self.elements["page_right"]:
                 self.card_chunks.rotate(-1)
+                self.chunk_index += 1
+                if self.chunk_index > len(self.card_chunks):
+                    self.chunk_index = 0
                 self.update_cruel_cards()
 
             # CHOOSE CARDS
@@ -278,6 +287,13 @@ class ChooseCardsScreen(MakeClanScreenBase):
                     12,
                 )
             )
+
+        if update_chunks and self.chunk_index:
+            if self.chunk_index > len(self.card_chunks) - 1:
+                self.chunk_index = len(self.card_chunks) - 1
+            for i in range(self.chunk_index):
+                self.card_chunks.rotate(-1)
+
         chunk = self.card_chunks[0]
 
         cards = {k: v for k, v in constants.CRUEL_CARDS_ALL.items() if k in chunk}
@@ -400,5 +416,6 @@ class ChooseCardsScreen(MakeClanScreenBase):
         self.card_icon_elements.clear()
 
         self.card_chunks.clear()
+        self.chunk_index = 0
 
         super().exit_screen()
