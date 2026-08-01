@@ -30,6 +30,8 @@ class ChooseModeScreen(MakeClanScreenBase):
         self.game_mode = "classic"
 
     def screen_switches(self):
+        super().screen_switches()
+
         # Reset variables
         if not switch_get_value(Switch.possible_cats):
             switch_set_value(
@@ -44,7 +46,6 @@ class ChooseModeScreen(MakeClanScreenBase):
                 ),
             )
 
-        super().screen_switches()
         self.elements["previous_step"].disable()
         self.elements["next_step"].enable()
 
