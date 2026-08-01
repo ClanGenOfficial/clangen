@@ -171,19 +171,19 @@
         "affair_mated": [
 			      "mc_mate is such a wonderful cat, deserving of being a parent... so why does m_c's {insert} look more like r_c instead?",
 			      "Everyone in the Clan can see that m_c's {insert} clearly looks like r_c... mc_mate has been glaring at {PRONOUN/m_c/object} and r_c ever since the {insert} was born.",
-			      "mc_mate has been demanding answers from m_c ever since the {insert} was born, the {insert} looks way too much like r_c!",
+			      "mc_mate has been demanding answers from m_c ever since the {insert} was born. The {insert} looks way too much like r_c!",
             "m_c can see it, mc_mate can see it, r_c can see it, everyone in c_n can see how the new {insert} looks a bit too much like r_c for it to be coincidence..."
         ],
         "affair_mated_secret": [
 			      "m_c secretly had a {insert} with r_c instead of mc_mate.",
 			      "mc_mate refuses believe any of the rumors about m_c's new {insert} belonging to r_c, even if there is a strong resemblance.",
 			      "m_c stresses the fact that the new {insert} looks so much like mc_mate to avoid raising suspicion of them having r_c's features.",
-			      "mc_mate happily crawls into the nursery to see m_c and the new {insert}, completely unaware that this {insert} was made from m_c and r_c.",
+			      "mc_mate happily crawls into the nursery to see m_c and the new {insert}, completely unaware that this {insert} is m_c's and r_c's.",
 			      "Watching mc_mate look over {PRONOUN/m_c/poss} new {insert}, m_c silently vows to make sure that {PRONOUN/mc_mate/subject} never {VERB/mc_mate/find/finds} out that this {insert} is actually r_c's.",
-            "m_c feels a bit guilty about hiding the fact that {PRONOUN/m_c/poss} new {insert} is r_c's, but mc_mate was looking forward to this birth as much as {PRONOUN/m_c/subject} {VERB/m_c/were/was}, so why come clean and spoil it?"
+            "m_c feels guilty about hiding that {PRONOUN/m_c/poss} new {insert} is r_c's, but mc_mate was looking forward to this birth as much as {PRONOUN/m_c/subject} {VERB/m_c/were/was}, so why come clean and spoil it?"
         ],
         "affair_mated_samesex": [
-            "mc_mate looks over m_c's new {insert} with mixed feelings. On one hand, m_c did cheat on {PRONOUN/mc_mate/object} with r_c, but at the same time, {PRONOUN/mc_mate/subject} can help m_c raise this {insert} together."
+            "mc_mate looks over m_c's new {insert} with mixed feelings. On one paw, m_c did cheat on {PRONOUN/mc_mate/object} with r_c, but at the same time, {PRONOUN/mc_mate/subject} can help m_c raise this {insert} together."
         ],
         "affair_mated_dead_mate": [
             "mc_mate was such a wonderful cat, deserving of being a parent, even after death... so why does m_c's {insert} look more like r_c instead?",
