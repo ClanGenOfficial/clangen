@@ -695,9 +695,9 @@ def _handle_exp(
     if gained_exp or app_exp:
         for cat in event_involved_cats["patrol_cats"]:
             if cat.status.rank.is_any_apprentice_rank():
-                cat.experience = cat.experience + app_exp
+                cat.add_experience(app_exp)
             else:
-                cat.experience = cat.experience + gained_exp
+                cat.add_experience(gained_exp)
 
 
 def _handle_mentor_app(event_involved_cats: dict[str, Union[Cat, list[Cat]]]):
