@@ -337,17 +337,18 @@ class EventsScreen(Screens):
             },
             manager=MANAGER,
         )
-        self.clan_info["view_cards"] = UIImageButton(
-            ui_scale(pygame.Rect((0, 0), (38, 50))),
-            "",
-            manager=MANAGER,
-            object_id="#view_cards_button",
-            container=self.clan_info["container"],
-            anchors={
-                "centery": "centery",
-                "left_target": self.clan_info["season"],
-            },
-        )
+        if game.clan.game_mode == "cruel_season":
+            self.clan_info["view_cards"] = UIImageButton(
+                ui_scale(pygame.Rect((0, 0), (38, 50))),
+                "",
+                manager=MANAGER,
+                object_id="#view_cards_button",
+                container=self.clan_info["container"],
+                anchors={
+                    "centery": "centery",
+                    "left_target": self.clan_info["season"],
+                },
+            )
         self.timeskip_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((248, 223), (180, 30))),
             "screens.events.timeskip_button",
