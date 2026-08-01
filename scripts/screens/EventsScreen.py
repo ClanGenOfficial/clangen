@@ -149,7 +149,7 @@ class EventsScreen(Screens):
                 self.save_button.reset_save()
             elif event.ui_element == self.save_button.unsaved_state:
                 self.save_button.save_game(current_screen=self)
-            elif event.ui_element == self.clan_info["view_cards"]:
+            elif event.ui_element == self.clan_info.get("view_cards"):
                 ViewCardsWindow()
             elif element in self.page_control.values():
                 if element == self.page_control["first"]:
