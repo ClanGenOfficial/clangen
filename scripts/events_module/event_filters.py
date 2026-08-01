@@ -455,7 +455,7 @@ def event_for_cat(
 
         if cat_group and not filter_relationship_type(
             group=cat_group,
-            filter_types=cat_info["relationship_status"],
+            compiled_filters=cat_info["relationship_status"],
             patrol_leader=p_l,
         ):
             return False
@@ -1026,7 +1026,7 @@ def cat_for_event(
             if comparison_cat_rel_status:
                 if not filter_relationship_type(
                     group=[comparison_cat, cat],
-                    filter_types=comparison_cat_rel_status,
+                    compiled_filters=comparison_cat_rel_status,
                 ):
                     allowed_cats.remove(cat)
                     continue
@@ -1035,7 +1035,7 @@ def cat_for_event(
             if constraint_dict.get("relationship_status"):
                 if not filter_relationship_type(
                     group=[cat, comparison_cat],
-                    filter_types=constraint_dict["relationship_status"],
+                    compiled_filters=constraint_dict["relationship_status"],
                 ):
                     allowed_cats.remove(cat)
 
@@ -1801,7 +1801,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
                         rel_tier: RelTier = RelTier(tier)
                     except ValueError:
                         print(
-                            f"ERROR: {tier} is not a valid RelTier. The original filter list was: {filter_types}."
+                            f"ERROR: {tier} is not a valid RelTier. The orignal filter list was: {filter_types}."
                         )
                         continue
 
