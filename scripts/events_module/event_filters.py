@@ -455,7 +455,7 @@ def event_for_cat(
 
         if cat_group and not filter_relationship_type(
             group=cat_group,
-            filter_types=cat_info["relationship_status"],
+            compiled_filters=cat_info["relationship_status"],
             patrol_leader=p_l,
         ):
             return False
@@ -1025,7 +1025,8 @@ def cat_for_event(
             # checking comparison cat's rel values toward cat
             if comparison_cat_rel_status:
                 if not filter_relationship_type(
-                    group=[comparison_cat, cat], filter_types=comparison_cat_rel_status
+                    group=[comparison_cat, cat],
+                    compiled_filters=comparison_cat_rel_status,
                 ):
                     allowed_cats.remove(cat)
                     continue
@@ -1034,7 +1035,7 @@ def cat_for_event(
             if constraint_dict.get("relationship_status"):
                 if not filter_relationship_type(
                     group=[cat, comparison_cat],
-                    filter_types=constraint_dict["relationship_status"],
+                    compiled_filters=constraint_dict["relationship_status"],
                 ):
                     allowed_cats.remove(cat)
 
@@ -1598,13 +1599,12 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
     exclusionary_values = []
     inclusionary_values = []
     for value in filter_types:
-        value.strip()  # don't remove this, it solves a weird issue where a space is added to the value when it shouldn't be
         if "-" in value:
             exclusionary_values.append(value.replace("-", ""))
         else:
             inclusionary_values.append(value)
 
-    filter_types = exclusionary_values + inclusionary_values
+    compiled_filters = exclusionary_values + inclusionary_values
 
     if patrol_leader:
         if patrol_leader in group:
@@ -1614,7 +1614,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
     test_cat = group[0]
     testing_cats = [cat for cat in group if cat.ID != test_cat.ID]
 
-    if "strangers" in filter_types:
+    if "strangers" in compiled_filters:
         qualifies = False
         if any([inter_cat.ID in test_cat.relationships for inter_cat in testing_cats]):
             if "strangers" in exclusionary_values:
@@ -1626,9 +1626,9 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
         if "strangers" in exclusionary_values and not qualifies:
             return False
 
-        filter_types.remove("strangers")
+        compiled_filters.remove("strangers")
 
-    if "siblings" in filter_types:
+    if "siblings" in compiled_filters:
         qualifies = False
         if not all([test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]):
             if "siblings" in exclusionary_values:
@@ -1637,9 +1637,9 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
                 return False
         if "siblings" in exclusionary_values and not qualifies:
             return False
-        filter_types.remove("siblings")
+        compiled_filters.remove("siblings")
 
-    if "littermates" in filter_types:
+    if "littermates" in compiled_filters:
         qualifies = False
         if not all([test_cat.is_littermate(inter_cat) for inter_cat in testing_cats]):
             if "littermates" in exclusionary_values:
@@ -1648,9 +1648,9 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
                 return False
         if "littermates" in exclusionary_values and not qualifies:
             return False
-        filter_types.remove("littermates")
+        compiled_filters.remove("littermates")
 
-    if "mates" in filter_types:
+    if "mates" in compiled_filters:
         # first test if more than one cat
         if len(group) == 1:
             return False
@@ -1674,10 +1674,10 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
                 if "mates" in exclusionary_values and not qualifies:
                     return False
 
-        filter_types.remove("mates")
+        compiled_filters.remove("mates")
 
     # check if all cats are mates with p_l (they do not have to be mates with each other)
-    if "mates_with_pl" in filter_types:
+    if "mates_with_pl" in compiled_filters:
         # First test if there is more than one cat
         if len(group) == 1:
             return False
@@ -1694,10 +1694,10 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
                     return False
             if "mates_with_pl" in exclusionary_values and not qualifies:
                 return False
-        filter_types.remove("mates_with_pl")
+        compiled_filters.remove("mates_with_pl")
 
     # Check if the cats are in a parent/child relationship
-    if "parent/child" in filter_types:
+    if "parent/child" in compiled_filters:
         # It should be exactly two cats for a "parent/child" event
         if len(group) != 2:
             return False
@@ -1710,9 +1710,9 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
                 return False
         if "parent/child" in exclusionary_values and not qualifies:
             return False
-        filter_types.remove("parent/child")
+        compiled_filters.remove("parent/child")
 
-    if "child/parent" in filter_types:
+    if "child/parent" in compiled_filters:
         # It should be exactly two cats for a "child/parent" event
         if len(group) != 2:
             return False
@@ -1725,9 +1725,9 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
                 return False
         if "child/parent" in exclusionary_values and not qualifies:
             return False
-        filter_types.remove("child/parent")
+        compiled_filters.remove("child/parent")
 
-    if "mentor/app" in filter_types:
+    if "mentor/app" in compiled_filters:
         # It should be exactly two cats for a "mentor/app" event
         qualifies = False
         if len(group) != 2:
@@ -1740,9 +1740,9 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
                 return False
         if "mentor/app" in exclusionary_values and not qualifies:
             return False
-        filter_types.remove("mentor/app")
+        compiled_filters.remove("mentor/app")
 
-    if "app/mentor" in filter_types:
+    if "app/mentor" in compiled_filters:
         # It should be exactly two cats for an "app/mentor" event
         if len(group) != 2:
             return False
@@ -1755,17 +1755,17 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
                 return False
         if "app/mentor" in exclusionary_values and not qualifies:
             return False
-        filter_types.remove("app/mentor")
+        compiled_filters.remove("app/mentor")
 
     # return early if there's nothing left to check
-    if not filter_types:
+    if not compiled_filters:
         return True
 
     # Filtering relationship values
     # these don't get exclusionary values because it's giving me a headache
     # each cat has to have relationships toward each other matching every level tag
     group_ids = [cat.ID for cat in group]
-    for tier in filter_types:
+    for tier in compiled_filters:
         for inter_cat in group:
             if len(group) == 2 and inter_cat == group[1]:
                 # if this is a two cat group, then we only look for the first cat's rel toward the second cat.
@@ -1797,7 +1797,13 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
                 # otherwise we allow both the given tier and any greater tiers
                 else:
                     # finding the matching tier enum
-                    rel_tier: RelTier = RelTier(tier)
+                    try:
+                        rel_tier: RelTier = RelTier(tier)
+                    except ValueError:
+                        print(
+                            f"ERROR: {tier} is not a valid RelTier. The orignal filter list was: {filter_types}."
+                        )
+                        continue
 
                     # find the matching rel_type enum
 
