@@ -356,7 +356,7 @@ You can utilize [#exclusionary tags](#exclusionary-tags). They function the same
     |------------------|:----------------------------------:|:---------------------------:|:--------------------------:|:--------------------------------:|
     | **TEACHER**     | `quick to help`                 | `good teacher`           | `great teacher`         | `excellent teacher`           |
     | **HUNTER**      | `moss-ball hunter`              | `good hunter`            | `great hunter`          | `renowned hunter`             |
-    | **FIGHTER**     | `avid play-fighter`             | `good fighter`           | `formidable fighter`    | `unusually strong fighter`     |
+    | **FIGHTER**     | `avid play-fighter`             | `strong fighter`           | `formidable fighter`    | `indomitable fighter`     |
     | **RUNNER**      | `never sits still`              | `fast runner`            | `incredible runner`     | `fast as the wind`            |
     | **CLIMBER**     | `constantly climbing`           | `good climber`           | `great climber`         | `impressive climber`          |
     | **SWIMMER**     | `splashes in puddles`           | `good swimmer`           | `talented swimmer`      | `fish-like swimmer`           |
@@ -365,11 +365,11 @@ You can utilize [#exclusionary tags](#exclusionary-tags). They function the same
     | **MEDIATOR**    | `quick to make peace`           | `good mediator`          | `great mediator`        | `skilled mediator`             |
     | **CLEVER**      | `quick witted`                  | `clever`                 | `very clever`           | `incredibly clever`            |
     | **INSIGHTFUL**  | `careful listener`              | `helpful insight`        | `valuable insight`      | `trusted advisor`              |
-    | **SENSE**       | `oddly observant`               | `natural intuition`      | `keen eye`              | `unnatural senses`             |
+    | **SENSE**       | `stares intently`               | `perceptive`      | `sharp senses`              | `uncanny senses`             |
     | **KIT**         | `active imagination`            | `good kitsitter`         | `great kitsitter`       | `beloved kitsitter`           |
     | **STORY**       | `lover of stories`              | `good storyteller`       | `great storyteller`     | `masterful storyteller`        |
     | **LORE**        | `interested in Clan history`    | `learner of lore`        | `lore keeper`           | `lore master`                  |
-    | **CAMP**        | `picky nest builder`            | `steady paws`            | `den builder`           | `camp keeper`                  |
+    | **CAMP**        | `always tidies up`            | `nest weaver`            | `den builder`           | `camp keeper`                  |
     | **HEALER**      | `interested in herbs`           | `good healer`            | `great healer`          | `fantastic healer`             |
     | **STAR**        | `curious about StarClan`        | `connection to StarClan` | `deep StarClan bond`    | `unshakable StarClan link`    |
     | **DARK**        | `interested in the Dark Forest` | `Dark Forest affinity`   | `deep Dark Forest bond` | `unshakable Dark Forest link` |
