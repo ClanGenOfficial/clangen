@@ -14,7 +14,7 @@
     ],
     "announcement_affair": [
         "m_c has suspicions of being pregnant and is overjoyed by confirmation! r_c's suspicions of something else have arisen.",
-        "m_c is shocked to be told that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant. Surprisingly, r_c seemed to be more shocked than {PRONOUN/m_c/subject} {VERB/m_c/are/is}.",
+        "m_c is shocked to be told that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant. r_c seems more shocked than {PRONOUN/m_c/subject} {VERB/m_c/are/is}.",
         "m_c worries when {PRONOUN/m_c/subject} {VERB/m_c/are/is} told that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant. {PRONOUN/m_c/subject/CAP} just {VERB/m_c/are/is}n't ready.",
         "m_c's eyes sparkle with determination when {PRONOUN/m_c/subject} {VERB/m_c/are/is} informed that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant.",
 		    "r_c took m_c to the medicine cat den after {PRONOUN/m_c/subject} {VERB/m_c/were/was} feeling nauseous. When m_c and r_c left the medicine cat den, m_c announces that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant! Though, some cats noticed that r_c doesn't seem as enthusiastic as m_c is at the news.",
