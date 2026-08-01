@@ -46,10 +46,10 @@ class ChooseCardsScreen(MakeClanScreenBase):
 
             # CYCLE CARDS
             elif event.ui_element == self.elements["page_left"]:
-                self.card_chunks.rotate(-1)
+                self.card_chunks.rotate()
                 self.update_cruel_cards()
             elif event.ui_element == self.elements["page_right"]:
-                self.card_chunks.rotate()
+                self.card_chunks.rotate(-1)
                 self.update_cruel_cards()
 
             # CHOOSE CARDS
