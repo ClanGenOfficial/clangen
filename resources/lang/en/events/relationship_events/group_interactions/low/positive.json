@@ -132,5 +132,199 @@
                 "amount": 5
             }
         ]
+    },
+    {
+        "id": "group_multicat_friendlydebate",
+        "strings": [
+            "m_c, multi_cat had a friendly debate over their favorite colors.",
+            "m_c, multi_cat had a friendly debate over their favorite season.",
+            "m_c, multi_cat had a friendly debate over their favorite fresh-kill."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "multi_cat": {}
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat", "m_c"],
+                "cats_to": ["m_c", "multi_cat"],
+                "mutual": true,
+                "values": ["like", "comfort"],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_discusstrust",
+        "strings": [
+            "m_c, multi_cat discuss whether they think c_n is headed in a good direction.",
+            "m_c, multi_cat discuss whether c_n is doing better or worse than it was last season.",
+            "m_c, multi_cat discuss the latest news from the Gathering."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["-kitten"]
+            },
+            "multi_cat": {
+                "status": ["-kitten"]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat", "m_c"],
+                "cats_to": ["multi_cat", "m_c"],
+                "mutual": false,
+                "values": ["like", "trust"],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_newnests",
+        "strings": [
+            "multi_cat notice that m_c refreshed the nests in the warriors' den.",
+            "multi_cat appreciate the soft, fresh moss that m_c added to their nests earlier that day."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["apprentice"]
+            },
+            "multi_cat": {
+                "status": ["warrior", "deputy", "leader"]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like", "respect"],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_pos_gossipingdislike",
+        "strings": [
+            "multi_cat agree they dislike m_c."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "multi_cat": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "constraints": [
+                    "dislikes"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "multi_cat"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "like", "comfort"
+                ],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_neg_gossipingavoids",
+        "strings": [
+            "multi_cat discuss how they feel uncomfortable around m_c."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "multi_cat": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "constraints": [
+                    "avoids"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "multi_cat"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "like", "comfort"
+                ],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_warriorsreminisceapp",
+        "strings": [
+            "m_c, multi_cat reminisce about being apprentices.",
+            "m_c, multi_cat trade stories of apprenticehood hijinks over a meal.",
+            "multi_cat purr with laughter as m_c describes a foolish apprenticehood adventure."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["warrior", "deputy", "leader"],
+                "past_status": ["apprentice"]
+            },
+            "multi_cat": {
+                "status": ["warrior", "deputy", "leader"],
+                "past_status": ["apprentice"]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat", "m_c"],
+                "cats_to": ["multi_cat", "m_c"],
+                "mutual": false,
+                "values": ["like", "comfort"],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_warriorsreminiscekit",
+        "strings": [
+            "m_c, multi_cat reminisce about being kits.",
+            "m_c, multi_cat trade stories of nursery hijinks over a meal.",
+            "multi_cat purr with laughter as m_c describes a foolish kithood adventure."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": ["warrior", "deputy", "leader", "mediator", "medicine cat"],
+                "past_status": ["kitten"]
+            },
+            "multi_cat": {
+                "status": ["warrior", "deputy", "leader", "mediator", "medicine cat"],
+                "past_status": ["kitten"]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat", "m_c"],
+                "cats_to": ["multi_cat", "m_c"],
+                "mutual": false,
+                "values": ["like", "comfort"],
+                "amount": 5
+            }
+        ]
     }
 ]
