@@ -564,7 +564,7 @@ class ProfileScreen(Screens):
         if not self.the_cat.thought:
             if self.the_cat is game.clan.instructor:
                 self.the_cat.get_new_thought(CatThought.IS_GUIDE)
-            if self.the_cat.status.is_other_clancat:
+            elif self.the_cat.status.is_other_clancat:
                 # this isn't great, but it's only being run if someone checks an
                 # other clan cat when booting the game before doing a timeskip
                 other_clan_cats = [
