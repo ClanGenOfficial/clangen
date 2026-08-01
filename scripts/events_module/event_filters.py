@@ -1598,7 +1598,6 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
     exclusionary_values = []
     inclusionary_values = []
     for value in filter_types:
-        value.strip()  # don't remove this, it solves a weird issue where a space is added to the value when it shouldn't be
         if "-" in value:
             exclusionary_values.append(value.replace("-", ""))
         else:
