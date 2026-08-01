@@ -317,7 +317,7 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. The patrol catches it in an ambush, and a torn ear and ripped up pelt convinces the youngest that this area isn't one to stay in."
+                    "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. The patrol catches it in an ambush, and a torn ear and ripped up pelt convinces the youngest that this area isn't one to stay in."
                 ],
                 "exp_gained": 60,
                 "relationship_changes": [
@@ -672,7 +672,7 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. The patrol try to teach it that cats are to be feared, not food, but it manages to get a couple good bites in of its own."
+                    "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. The patrol try to teach it that cats are to be feared, not food, but it manages to get a couple good bites in of its own."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -720,7 +720,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. It decides r_c0 is a suitable snack.  s_c0 runs in to save {PRONOUN/r_c0/object}, fighting like an entire patrol just by {PRONOUN/s_c0/self}."
+                    "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. It decides r_c is a suitable snack.  s_c runs in to save {PRONOUN/r_c/object}, fighting like an entire patrol just by {PRONOUN/s_c/self}."
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -1202,7 +1202,7 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. The patrol catches it in an ambush, and with so many cats, this is one coyote that won't live to threaten c_n in the future."
+                    "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. The patrol catches it in an ambush, and with so many cats, this is one coyote that won't live to threaten c_n in the future."
                 ],
                 "exp_gained": 60,
                 "relationship_changes": [
@@ -1244,7 +1244,7 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. With s_c0's talent for battle, this coyote won't make it to adulthood."
+                    "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. With s_c's talent for battle, this coyote won't make it to adulthood."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1314,7 +1314,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. The patrol takes it down, but it takes a vicious bite out of r_c0 first. s_c0's first aid while the cats carry r_c0 back to camp saves {PRONOUN/r_c0/poss} life."
+                    "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. The patrol takes it down, but it takes a vicious bite out of r_c first. s_c's first aid while the cats carry r_c back to camp saves {PRONOUN/r_c/poss} life."
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -1706,7 +1706,7 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. This coyote won't see the first day of leaf-bare — but it lashes out as the patrol finishes it off."
+                    "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. This coyote won't see the first day of leaf-bare — but it lashes out as the patrol finishes it off."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -1770,7 +1770,7 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. But seeing the patrol, the coyote slips away without a trace, an opportunity to secure c_n's borders lost."
+                    "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. But seeing the patrol, the coyote slips away without a trace, an opportunity to secure c_n's borders lost."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
