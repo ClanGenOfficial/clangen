@@ -414,6 +414,22 @@
         }
     },
     {
+        "id": "rom_inc_high_matetraitinsecure",
+        "strings": [
+            "The way r_c worries over other cats' feelings charms m_c.",
+            "m_c wants to see r_c blossom and grow as a cat.",
+            "m_c looks beyond how r_c sometimes lashes out at others and sees {PRONOUN/r_c/object} for who {PRONOUN/r_c/subject} could become."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {
+                "stat": {
+                    "trait": ["insecure"]
+                }
+            }
+        }
+    },
+    {
         "id": "rom_inc_high_matetraitrighteous",
         "strings": [
             "m_c finds r_c's strength of belief inspiring and attractive.",
