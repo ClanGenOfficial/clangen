@@ -274,9 +274,13 @@ class MakeClanScreenBase(Screens):
         return chosen_biome
 
     def random_clan_name(self):
-        clan_names = get_possible_clan_names()
-        if self.clan_info.display_name:
-            clan_names.remove(self.clan_info.display_name)
+        # ensuring that the new random name will not be the same one
+        # a custom name typed by the player isn't in the list, so filter rather than remove
+        clan_names = [
+            name
+            for name in get_possible_clan_names()
+            if name != self.clan_info.display_name
+        ]
 
         return choice(clan_names)
 
