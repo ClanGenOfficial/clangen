@@ -25,9 +25,9 @@
         "fighting": "fighting",
         "FIGHTER,0": "avid play-fighter",
         "FIGHER,0.5": "adept tussler",
-        "FIGHTER,1": "good fighter",
+        "FIGHTER,1": "strong fighter",
         "FIGHTER,2": "formidable fighter",
-        "FIGHTER,3": "unusually strong fighter",
+        "FIGHTER,3": "indomitable fighter",
 
         "running": "running",
         "RUNNER,0": "never sits still",
@@ -88,9 +88,9 @@
         "observing": "observing",
         "SENSE,0": "stares intently",
         "SENSE,0.5": "notices little details",
-        "SENSE,1": "natural intuition",
-        "SENSE,2": "keen eye",
-        "SENSE,3": "unnatural senses",
+        "SENSE,1": "perceptive",
+        "SENSE,2": "sharp senses",
+        "SENSE,3": "uncanny senses",
 
         "caretaking": "caretaking",
         "KIT,0": "good playmate",
@@ -116,7 +116,7 @@
         "campkeeping": "campkeeping",
         "CAMP,0": "always tidies up",
         "CAMP,0.5": "well-organized",
-        "CAMP,1": "steady paws",
+        "CAMP,1": "nest weaver",
         "CAMP,2": "den builder",
         "CAMP,3": "camp keeper",
 
