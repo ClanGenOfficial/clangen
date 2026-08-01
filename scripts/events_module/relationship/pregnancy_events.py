@@ -117,7 +117,7 @@ class Pregnancy_Events:
             return False
         rel = mate.relationships.get(pregnant_cat.ID)
         romance = rel.romance if rel else 0
-        claim_chance = constants.CONFIG["pregnancy"]["base_kit_claim_chance"]
+        claim_chance = get_config("pregnancy.base_claim_kit_chance")
         if romance >= 85:
             claim_chance += 40
         elif romance >= 65:
@@ -143,9 +143,7 @@ class Pregnancy_Events:
         if cheating_cat.ID not in mate_cat.mate:
             return
 
-        breakup_chance = constants.CONFIG["mates"]["mates.breakup"][
-            "affair_breakup_chance"
-        ]
+        breakup_chance = get_config("mates.mates_breakup.affair_breakup_chance")
         if random.random() <= breakup_chance:
             mate_cat.unset_mate(cheating_cat, breakup=True, fight=True)
             breakup_text = choice(
@@ -397,7 +395,7 @@ class Pregnancy_Events:
         # kits chance. We will only apply it to "cat" in this case
         # which is enough to stop the couple from adopting about within
         # the window.
-        cat.birth_cooldown = constants.CONFIG["pregnancy"]["birth_cooldown"]
+        cat.birth_cooldown = get_config("pregnancy.birth_cooldown")
 
         game.cur_events_list.append(
             Single_Event(print_event, "birth_death", cat_dict=cats_involved)
@@ -755,7 +753,7 @@ class Pregnancy_Events:
         insert = i18n.t("conditions.pregnancy.kit_amount", count=kits_amount)
 
         # Since cat has given birth, apply the birth cooldown.
-        cat.birth_cooldown = constants.CONFIG["pregnancy"]["birth_cooldown"]
+        cat.birth_cooldown = get_config("pregnancy.birth_cooldown")
 
         # choose event string
         # TODO: currently they don't choose which 'mate' is the 'blood' parent or not
@@ -1013,9 +1011,7 @@ class Pregnancy_Events:
                 if not mate:
                     continue
 
-                breakup_reaction = constants.CONFIG["mates"]["breakup"]["reactions"][
-                    "affair_discovery_mate_reaction"
-                ]
+                breakup_reaction = get_config("mates.breakup.reactions.affair_discovery_mate_reaction")
                 rel = mate.relationships.get(cat.ID)
                 if rel:
                     rel.romance += breakup_reaction["romance"]
@@ -1052,9 +1048,7 @@ class Pregnancy_Events:
                 if not mate:
                     continue
 
-                breakup_reaction = constants.CONFIG["mates"]["breakup"]["reactions"][
-                    "affair_discovery_other_mate_reaction"
-                ]
+                breakup_reaction = get_config("mates.mates.breakup.reactions.affair_discovery_other_mate_reaction")
                 rel = mate.relationships.get(other_cat.ID)
                 if rel:
                     rel.romance += breakup_reaction["romance"]
@@ -1088,9 +1082,7 @@ class Pregnancy_Events:
             and coparenting_outcome
         ):
             if coparenting_outcome == "negative":
-                absent_parent_to_kit_reaction = constants.CONFIG["new_cat"][
-                    "parent_buff"
-                ]["absent_parent_to_kit"]
+                absent_parent_to_kit_reaction = get_config("new_cat.parent_buff.absent_parent_to_kit")
                 for kit in kits:
                     absent_parent_to_kit = Relationship(other_cat, kit, family=True)
                     other_cat.relationships[kit.ID] = absent_parent_to_kit
@@ -1113,12 +1105,8 @@ class Pregnancy_Events:
                     rel = Relationship(first_cat, second_cat)
                     first_cat.relationships[second_cat.ID] = rel
 
-                coparenting_values_neg = constants.CONFIG["pregnancy"][
-                    "coparenting_values_neg"
-                ]
-                coparenting_values_pos = constants.CONFIG["pregnancy"][
-                    "coparenting_values_pos"
-                ]
+                coparenting_values_neg = get_config("pregnancy.coparenting_values_neg")
+                coparenting_values_pos = get_config("pregnancy.coparenting_values_pos")
 
                 if coparenting_outcome == "negative":
                     rel.comfort += coparenting_values_neg["comfort"]
@@ -1334,9 +1322,9 @@ class Pregnancy_Events:
 
         # RANDOM AFFAIR & COPARENTING
         if coparenting:
-            chance = constants.CONFIG["pregnancy"]["unmated_random_affair_chance"]
+            chance = get_config("pregnancy.unmated_random_affair_chance")
         else:
-            chance = constants.CONFIG["pregnancy"]["random_affair_chance"]
+            chance = get_config("pregnancy.random_affair_chance")
 
         # 'buff' affairs & coparenting if the current biggest family is big + this cat doesn't belong there
         if not Pregnancy_Events.biggest_family:
@@ -1592,7 +1580,7 @@ class Pregnancy_Events:
             # don't delete the game.clan condition, this is needed for a test
             if game.clan and not int(
                 random.random()
-                * constants.CONFIG["cat_generation"]["base_permanent_condition"]
+                * get_config("cat_generation.base_permanent_condition")
             ):
                 kit.congenital_condition(kit)
                 for condition in kit.permanent_condition:
@@ -1622,9 +1610,7 @@ class Pregnancy_Events:
                     if the_cat.dead:
                         continue
                     if the_cat.ID in kit.get_parents():
-                        parent_to_kit = constants.CONFIG["new_cat"]["parent_buff"][
-                            "parent_to_kit"
-                        ]
+                        parent_to_kit = get_config("new_cat.parent_buff.parent_to_kit")
                         y = random.randrange(0, 15)
                         start_relation = Relationship(the_cat, kit, False, True)
                         start_relation.like = parent_to_kit[RelType.LIKE] + y
@@ -1633,9 +1619,7 @@ class Pregnancy_Events:
                         start_relation.trust = parent_to_kit[RelType.TRUST] + y
                         the_cat.relationships[kit.ID] = start_relation
 
-                        kit_to_parent = constants.CONFIG["new_cat"]["parent_buff"][
-                            "kit_to_parent"
-                        ]
+                        kit_to_parent = get_config("new_cat.parent_buff.kit_to_parent")
                         y = random.randrange(0, 15)
                         start_relation = Relationship(kit, the_cat, False, True)
                         start_relation.like += kit_to_parent[RelType.LIKE] + y
@@ -1661,9 +1645,7 @@ class Pregnancy_Events:
                 y = random.randrange(0, 10)
                 if second_kitten.ID == kitten.ID:
                     continue
-                relationship_value = constants.CONFIG["new_cat"]["sib_buff"][
-                    "littermates_to_eachother"
-                ]
+                relationship_value = get_config("new_cat.sib_buff.littermates_to_eachother")
                 start_relation = Relationship(kitten, second_kitten, False, True)
                 start_relation.like += relationship_value["like"] + y
                 start_relation.comfort += relationship_value["comfort"] + y
@@ -1691,12 +1673,8 @@ class Pregnancy_Events:
                 for parent_id in final_adoptive_parents:
                     parent = Cat.fetch_cat(parent_id)
                     if parent:
-                        kit_to_parent = constants.CONFIG["new_cat"]["parent_buff"][
-                            "kit_to_parent"
-                        ]
-                        parent_to_kit = constants.CONFIG["new_cat"]["parent_buff"][
-                            "parent_to_kit"
-                        ]
+                        kit_to_parent = get_config("new_cat.parent_buff.kit_to_parent")
+                        parent_to_kit = get_config("new_cat.parent_buff.parent_to_kit")
                         change_relationship_values(
                             cats_from=[kit],
                             cats_to=[parent],
@@ -1724,9 +1702,7 @@ class Pregnancy_Events:
 
         for kit in all_kitten:
             for c in all_relatives:
-                ext_relative_modifier = constants.CONFIG["new_cat"][
-                    "ext_relative_modifier"
-                ]
+                ext_relative_modifier = get_config("new_cat.ext_relative_modifier")
                 rel_reflection = ext_relative_modifier * len(parents)
                 variation_range = math.ceil(20 / len(parents))
                 y = random.randrange(-variation_range, variation_range)
@@ -1817,25 +1793,13 @@ class Pregnancy_Events:
     @staticmethod
     def get_amount_of_kits(cat):
         """Get the amount of kits which will be born."""
-        min_kits = constants.CONFIG["pregnancy"]["min_kits"]
-        min_kit = [min_kits] * constants.CONFIG["pregnancy"]["one_kit_possibility"][
-            cat.age.value
-        ]
-        two_kits = [min_kits + 1] * constants.CONFIG["pregnancy"][
-            "two_kit_possibility"
-        ][cat.age.value]
-        three_kits = [min_kits + 2] * constants.CONFIG["pregnancy"][
-            "three_kit_possibility"
-        ][cat.age.value]
-        four_kits = [min_kits + 3] * constants.CONFIG["pregnancy"][
-            "four_kit_possibility"
-        ][cat.age.value]
-        five_kits = [min_kits + 4] * constants.CONFIG["pregnancy"][
-            "five_kit_possibility"
-        ][cat.age.value]
-        max_kits = [constants.CONFIG["pregnancy"]["max_kits"]] * constants.CONFIG[
-            "pregnancy"
-        ]["max_kit_possibility"][cat.age.value]
+        min_kits = get_config("pregnancy.min_kits")
+        min_kit = [min_kits] * get_config("pregnancy.one_kit_possibility.cat.age.value")
+        two_kits = [min_kits + 1] * get_config("pregnancy.two_kit_possibility.cat.age.value")
+        three_kits = [min_kits + 2] * get_config("pregnancy.three_kit_possibility.cat.age.value")
+        four_kits = [min_kits + 3] * get_config("pregnancy.four_kit_possibility.cat.age.value")
+        five_kits = [min_kits + 4] * get_config("pregnancy.five_kit_possibility.cat.age.value")
+        max_kits = get_config("pregnancy.max_kit_possibility.cat.age.value") * get_config("pregnancy.max_kit_possibility.cat.age.value")
         amount = choice(
             min_kit + two_kits + three_kits + four_kits + five_kits + max_kits
         )
@@ -1938,9 +1902,9 @@ class Pregnancy_Events:
         """Returns a chance based on different values."""
         # Now that the second parent is determined, we can calculate the balanced chance for kits
         # get the chance for pregnancy
-        inverse_chance = constants.CONFIG["pregnancy"]["primary_chance_unmated"]
+        inverse_chance = get_config("pregnancy.primary_chance_unmated")
         if len(first_parent.mate) > 0 and not affair:
-            inverse_chance = constants.CONFIG["pregnancy"]["primary_chance_mated"]
+            inverse_chance = get_config("pregnancy.primary_chance_mated")
 
         # SETTINGS
         # - decrease inverse chance if only mated pairs can have kits
