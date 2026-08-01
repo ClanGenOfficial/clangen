@@ -1012,7 +1012,9 @@ class Pregnancy_Events:
                 if not mate:
                     continue
 
-                breakup_reaction = get_config("mates.breakup.reactions.affair_discovery_mate_reaction")
+                breakup_reaction = get_config(
+                    "mates.breakup.reactions.affair_discovery_mate_reaction"
+                )
                 rel = mate.relationships.get(cat.ID)
                 if rel:
                     rel.romance += breakup_reaction["romance"]
@@ -1049,7 +1051,9 @@ class Pregnancy_Events:
                 if not mate:
                     continue
 
-                breakup_reaction = get_config("mates.mates.breakup.reactions.affair_discovery_other_mate_reaction")
+                breakup_reaction = get_config(
+                    "mates.mates.breakup.reactions.affair_discovery_other_mate_reaction"
+                )
                 rel = mate.relationships.get(other_cat.ID)
                 if rel:
                     rel.romance += breakup_reaction["romance"]
@@ -1083,7 +1087,9 @@ class Pregnancy_Events:
             and coparenting_outcome
         ):
             if coparenting_outcome == "negative":
-                absent_parent_to_kit_reaction = get_config("new_cat.parent_buff.absent_parent_to_kit")
+                absent_parent_to_kit_reaction = get_config(
+                    "new_cat.parent_buff.absent_parent_to_kit"
+                )
                 for kit in kits:
                     absent_parent_to_kit = Relationship(other_cat, kit, family=True)
                     other_cat.relationships[kit.ID] = absent_parent_to_kit
@@ -1580,8 +1586,7 @@ class Pregnancy_Events:
             # try to give them a permanent condition. 1/90 chance
             # don't delete the game.clan condition, this is needed for a test
             if game.clan and not int(
-                random.random()
-                * get_config("cat_generation.base_permanent_condition")
+                random.random() * get_config("cat_generation.base_permanent_condition")
             ):
                 kit.congenital_condition(kit)
                 for condition in kit.permanent_condition:
@@ -1646,7 +1651,9 @@ class Pregnancy_Events:
                 y = random.randrange(0, 10)
                 if second_kitten.ID == kitten.ID:
                     continue
-                relationship_value = get_config("new_cat.sib_buff.littermates_to_eachother")
+                relationship_value = get_config(
+                    "new_cat.sib_buff.littermates_to_eachother"
+                )
                 start_relation = Relationship(kitten, second_kitten, False, True)
                 start_relation.like += relationship_value["like"] + y
                 start_relation.comfort += relationship_value["comfort"] + y
