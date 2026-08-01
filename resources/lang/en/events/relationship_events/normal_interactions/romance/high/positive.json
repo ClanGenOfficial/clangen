@@ -283,16 +283,7 @@
                     "trait": ["troublesome"]
                 }
             }
-        },
-        "relationship_changes": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "mutual": false,
-                "amount": 15,
-                "values": ["romance"]
-            }
-        ]
+        }
     },
     {
         "id": "rom_inc_high_matetraitlonesome",
@@ -308,16 +299,7 @@
                     "trait": ["lonesome"]
                 }
             }
-        },
-        "relationship_changes": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "mutual": false,
-                "amount": 15,
-                "values": ["romance"]
-            }
-        ]
+        }
     },
     {
         "id": "rom_inc_high_matetraitfierce",
@@ -333,16 +315,7 @@
                     "trait": ["fierce"]
                 }
             }
-        },
-        "relationship_changes": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "mutual": false,
-                "amount": 15,
-                "values": ["romance"]
-            }
-        ]
+        }
     },
     {
         "id": "rom_inc_high_matetraitbloodthirsty",
@@ -358,16 +331,7 @@
                     "trait": ["bloodthirsty"]
                 }
             }
-        },
-        "relationship_changes": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "mutual": false,
-                "amount": 15,
-                "values": ["romance"]
-            }
-        ]
+        }
     },
     {
         "id": "rom_inc_high_matetraitcold",
@@ -383,16 +347,7 @@
                     "trait": ["cold"]
                 }
             }
-        },
-        "relationship_changes": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "mutual": false,
-                "amount": 15,
-                "values": ["romance"]
-            }
-        ]
+        }
     },
     {
         "id": "rom_inc_high_matetraitplayful",
@@ -408,16 +363,7 @@
                     "trait": ["playful"]
                 }
             }
-        },
-        "relationship_changes": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "mutual": false,
-                "amount": 15,
-                "values": ["romance"]
-            }
-        ]
+        }
     },
     {
         "id": "rom_inc_high_matetraitcharismatic",
@@ -433,16 +379,7 @@
                     "trait": ["charismatic"]
                 }
             }
-        },
-        "relationship_changes": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "mutual": false,
-                "amount": 15,
-                "values": ["romance"]
-            }
-        ]
+        }
     },
     {
         "id": "rom_inc_high_matetraitbolddaring",
@@ -458,16 +395,7 @@
                     "trait": ["bold", "daring"]
                 }
             }
-        },
-        "relationship_changes": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "mutual": false,
-                "amount": 15,
-                "values": ["romance"]
-            }
-        ]
+        }
     },
     {
         "id": "rom_inc_high_matetraitnervous",
@@ -483,16 +411,7 @@
                     "trait": ["nervous"]
                 }
             }
-        },
-        "relationship_changes": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "mutual": false,
-                "amount": 15,
-                "values": ["romance"]
-            }
-        ]
+        }
     },
     {
         "id": "rom_inc_high_matetraitrighteous",
@@ -508,15 +427,6 @@
                     "trait": ["righteous"]
                 }
             }
-        },
-        "relationship_changes": [
-            {
-                "cats_from": ["m_c"],
-                "cats_to": ["r_c"],
-                "mutual": false,
-                "amount": 15,
-                "values": ["romance"]
-            }
-        ]
+        }
     }
 ]
