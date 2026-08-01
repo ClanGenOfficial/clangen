@@ -39,6 +39,7 @@ from scripts.events_module.event_filters import (
     get_personality_compatibility,
 )
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
+from scripts.config import get_config
 
 
 class Pregnancy_Events:
