@@ -165,7 +165,7 @@
         "affair_secret": [
             "m_c secretly had a {insert} with r_c.",
             "m_c hopes that {PRONOUN/m_c/poss} {insert} doesn't look too much like r_c, otherwise questions might follow.",
-			      "rc_mate refuses believe any of the rumors about m_c's new {insert} belonging to {PRONOUN/rc_mate/poss} mate, r_c, even if there are strong resemblances.",
+			      "rc_mate refuses believe any of the rumors about m_c's new {insert} belonging to {PRONOUN/rc_mate/poss} mate, r_c, even if there is a strong resemblance.",
             "r_c goes to visit m_c in the nursery with {PRONOUN/m_c/poss} new {insert}, on a completely innocent mission to deliver food to the new parent."
         ],
         "affair_mated": [
