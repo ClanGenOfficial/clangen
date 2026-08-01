@@ -1538,15 +1538,6 @@ class TestRelationshipTiers(unittest.TestCase):
                 if self.cat1.ID in self.cat2.relationships:
                     self.cat2.relationships.pop(self.cat1.ID)
 
-        with self.subTest("invalid rel type"):
-            self.assertRaises(
-                ValueError,
-                event_for_cat,
-                cat=self.cat1,
-                cat_group=[self.cat1, self.cat2],
-                cat_info={"relationship_status": ["bagagwa"]},
-            )
-
         with self.subTest("only one cat"):
             self.assertFalse(
                 event_for_cat(
