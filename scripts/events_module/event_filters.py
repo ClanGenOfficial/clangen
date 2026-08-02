@@ -1052,7 +1052,7 @@ def _get_cats_with_rel_status(
     cat_list: list, cat, rel_status_list: list
 ) -> tuple[list, list]:
     is_exclusionary = _check_for_exclusionary_value(rel_status_list)
-    rel_status_list = [x.replace("-", " ") for x in rel_status_list]
+    rel_status_list = [x.replace("-", "") for x in rel_status_list]
 
     if "siblings" in rel_status_list:
         if is_exclusionary:

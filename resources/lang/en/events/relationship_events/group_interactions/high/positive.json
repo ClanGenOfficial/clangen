@@ -93,6 +93,76 @@
         ]
     },
     {
+        "id": "group_multicat_pos_gossipinghates",
+        "strings": [
+            "multi_cat discuss how they could drive m_c out of the Clan."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "multi_cat": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "constraints": [
+                    "hates"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "multi_cat"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust", "comfort"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_pos_gossipingfears",
+        "strings": [
+            "multi_cat discuss how they need to do something about m_c's presence in the Clan."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "multi_cat": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["multi_cat"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "constraints": [
+                    "fears"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "multi_cat"
+                ],
+                "cats_to": [
+                    "multi_cat"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust", "comfort"
+                ],
+                "amount": 10
+            }
+        ]
+    },
+    {
         "id": "group_multicat_pos_polymateshigh",
         "strings": [
             "m_c gave multi_cat presents to show {PRONOUN/m_c/poss} affection.",
@@ -130,6 +200,34 @@
                     "romance"
                 ],
                 "amount": 15
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_pastoutsidersreminisce",
+        "strings": [
+            "m_c, multi_cat reminisce about life outside c_n.",
+            "m_c, multi_cat trade stories of their lives before they came to c_n.",
+            "m_c, multi_cat purr with laughter as they tell each other of scrapes they got into while living outside the Clan.",
+            "m_c, multi_cat agree they're glad they became part of c_n."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "past_status": ["loner", "rogue", "kittypet"],
+                "backstory": ["-abandoned_backstories", "-baby_loner_backstories", "-baby_kittypet_backstories", "-orphaned_backstories"]
+            },
+            "multi_cat": {
+                "past_status": ["loner", "rogue", "kittypet"],
+                "backstory": ["-abandoned_backstories", "-baby_loner_backstories", "-baby_kittypet_backstories", "-orphaned_backstories"]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["multi_cat", "m_c"],
+                "cats_to": ["multi_cat", "m_c"],
+                "mutual": false,
+                "values": ["like", "comfort"],
+                "amount": 10
             }
         ]
     }
