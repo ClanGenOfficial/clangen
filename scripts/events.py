@@ -606,25 +606,8 @@ def mediator_events(cat):
 
 def get_moon_freshkill():
     """Adding auto freshkill for the current moon."""
-    healthy_hunter = list(
-        filter(
-            lambda c: c.status.rank
-            in (CatRank.WARRIOR, CatRank.APPRENTICE, CatRank.LEADER, CatRank.DEPUTY)
-            and c.status.alive_in_player_clan
-            and not c.not_working(),
-            Cat.all_cats.values(),
-        )
-    )
 
-    prey_amount = 0
-    for cat in healthy_hunter:
-        lower_value = constants.CONFIG["prey"]["auto_warrior_prey"][0]
-        upper_value = constants.CONFIG["prey"]["auto_warrior_prey"][1]
-        if cat.status.rank == CatRank.APPRENTICE:
-            lower_value = constants.CONFIG["prey"]["auto_apprentice_prey"][0]
-            upper_value = constants.CONFIG["prey"]["auto_apprentice_prey"][1]
-
-        prey_amount += random.randint(lower_value, upper_value)
+    prey_amount = game.clan.freshkill_pile.get_moonskip_catch_amount()
     game.freshkill_event_list.append(
         i18n.t("hardcoded.prey_catch_count", count=prey_amount)
     )

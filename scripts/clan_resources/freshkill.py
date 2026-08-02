@@ -1,4 +1,5 @@
 import random
+from statistics import mean
 from typing import List
 
 import i18n
@@ -173,6 +174,58 @@ class FreshkillPile:
         )
 
         self.needed_prey = needed_prey
+
+    @staticmethod
+    def get_moonskip_catch_amount(disable_random: bool = False) -> int:
+        # first try to find all the warrior-like healthy cats
+        possible_hunters = list(
+            filter(
+                lambda c: c.status.rank
+                in (CatRank.WARRIOR, CatRank.APPRENTICE, CatRank.LEADER, CatRank.DEPUTY)
+                and c.status.alive_in_player_clan
+                and not c.not_working(),
+                Cat.all_cats.values(),
+            )
+        )
+
+        # uh oh! there aren't any, so we'll try and find any healthy cats of other ranks
+        if not possible_hunters:
+            possible_hunters = list(
+                filter(
+                    lambda c: c.status.alive_in_player_clan and not c.not_working(),
+                    Cat.all_cats.values(),
+                )
+            )
+
+        # still none, so this time we take whoever is left
+        using_sick_hunters = False
+        if not possible_hunters:
+            possible_hunters = list(
+                filter(
+                    lambda c: c.status.alive_in_player_clan,
+                    Cat.all_cats.values(),
+                )
+            )
+            using_sick_hunters = True
+
+        prey_amount = 0
+        for cat in possible_hunters:
+            if using_sick_hunters:
+                if disable_random:
+                    prey_amount += mean(get_config("prey.auto_catch.not_working"))
+                    continue
+                prey_amount += random.choice(get_config("prey.auto_catch.not_working"))
+            else:
+                if disable_random:
+                    prey_amount += mean(
+                        get_config(f"prey.auto_catch.{cat.status.rank}")
+                    )
+                    continue
+                prey_amount += random.choice(
+                    get_config(f"prey.auto_catch.{cat.status.rank}")
+                )
+
+        return prey_amount
 
     def time_skip(self, living_cats: list, event_list: list) -> None:
         """Handles the time skip for the freshkill pile. Decrements the timers on prey items and feeds listed cats
