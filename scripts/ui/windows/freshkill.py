@@ -262,8 +262,8 @@ class FreshkillManagementWindow(GameWindow):
 
         current_prey_amount = int(game.clan.freshkill_pile.total_amount)
         needed_amount = math.ceil(game.clan.freshkill_pile.amount_food_needed())
-        predicted_catch = game.clan.freshkill_pile.get_moonskip_catch_amount(
-            disable_random=True
+        predicted_catch = round(
+            game.clan.freshkill_pile.get_moonskip_catch_amount(disable_random=True)
         )
         expiring_amount = int(game.clan.freshkill_pile.pile["expires_in_1"])
 

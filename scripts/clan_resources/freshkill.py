@@ -133,7 +133,9 @@ class FreshkillPile:
         self.total_amount = sum(self.pile.values())
 
     def _update_needed_food(self, living_cats: List[Cat]) -> None:
-        queen_dict, living_kits = get_alive_clan_queens(self.living_cats)
+        queen_dict, living_kits = get_alive_clan_queens(
+            living_cats if living_cats else self.living_cats
+        )
         relevant_queens = []
         # kits under 3 months are feed by the queen
         for queen_id, their_kits in queen_dict.items():
