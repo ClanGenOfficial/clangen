@@ -798,14 +798,6 @@ dev_tools = false
     adequate = 3
     excess = 2
 
-    # amount of herbs types found modifier for medcats with skill SENSE
-    primary_sense = 3
-    secondary_sense = 2
-
-    # quantity of herbs modifier for medcats with skill CLEVER
-    primary_clever = 3
-    secondary_clever = 2
-
     # base effects for herbs that have specified effects
     base_mortality_effect = 3
     base_duration_effect = 1
