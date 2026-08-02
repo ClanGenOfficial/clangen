@@ -25,6 +25,7 @@ from scripts.ui.scale import ui_scale, ui_scale_dimensions
 from scripts.ui.theme import get_text_box_theme
 from scripts.ui.windows.cruel_card_conflicts import CruelCardConflicts
 from scripts.ui.windows.cruel_card_limit import CruelCardLimit
+from scripts.ui.windows.deck_list_input import ViewCardsWindow
 
 
 class ChooseCardsScreen(MakeClanScreenBase):
@@ -73,6 +74,10 @@ class ChooseCardsScreen(MakeClanScreenBase):
                     self.handle_card_chosen(random_card)
                     self.update_card_info(random_card)
 
+            # DECK LIST INPUT
+            elif event.ui_element == self.elements["decklist"]:
+                ViewCardsWindow(self.clan_info.cruel_cards)
+
             # UNDO CHOICES
             elif event.ui_element in self.card_icon_elements.values():
                 self.clan_info.cruel_cards.remove(event.card_name)
@@ -116,6 +121,13 @@ class ChooseCardsScreen(MakeClanScreenBase):
             self.reset_chosen_cards()
 
             switch_set_value(Switch.card_conflict_changes, {})
+
+        if switch_get_value(Switch.confirmed_deck_list):
+            chosen_cards = switch_get_value(Switch.confirmed_deck_list)
+            self.clan_info.cruel_cards.extend(chosen_cards)
+            self.update_cruel_cards(update_chunks=True)
+            self.reset_chosen_cards()
+            switch_set_value(Switch.confirmed_deck_list, [])
 
         super().on_use()
 
@@ -179,18 +191,30 @@ class ChooseCardsScreen(MakeClanScreenBase):
 
         # RANDOM CARD
         self.elements["random_card"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((88, -10), (34, 34))),
+            ui_scale(pygame.Rect((92, -10), (34, 34))),
             Icon.DICE,
-            get_button_dict(ButtonStyles.ICON, (34, 34)),
-            object_id="@buttonstyles_icon",
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (34, 34)),
+            object_id="@buttonstyles_icon_tab_right",
             manager=MANAGER,
             sound_id="dice_roll",
             anchors={
                 "top_target": self.elements["card_container"],
             },
             starting_height=-1,
+            tool_tip_text="screens.make_clan.random_card",
         )
-
+        self.elements["decklist"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((92, 10), (34, 34))),
+            Icon.NOTEPAD,
+            get_button_dict(ButtonStyles.ICON_TAB_RIGHT, (34, 34)),
+            object_id="@buttonstyles_icon_tab_right",
+            manager=MANAGER,
+            anchors={
+                "top_target": self.elements["random_card"],
+            },
+            starting_height=-1,
+            tool_tip_text="screens.make_clan.deck_list",
+        )
         # CARD INFO
         self.elements["info_box"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((20, -50), (300, 150))),

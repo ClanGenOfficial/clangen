@@ -120,6 +120,8 @@
             "many": "%{new_card} conflicts with %{conflicting_cards_list}. You can either <b>keep</b> the already chosen cards or you can <b>replace</b> them with %{new_card}."
 
         },
-        "cruel_locked_action": "This action is locked by one or more Cruel Season cards that are currently in play."
+        "cruel_locked_action": "This action is locked by one or more Cruel Season cards that are currently in play.",
+        "deck_list_conflict": "Error: Adding these cards would cause a card conflict.",
+        "deck_list_limit": "Error: This deck would put you over the %{amount} card limit."
     }
 }
