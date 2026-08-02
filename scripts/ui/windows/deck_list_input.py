@@ -89,10 +89,8 @@ class ViewCardsWindow(GameWindow):
         # now check the validity of the given cards
         final_card_list = []
         for card in card_list:
-            if card in internal_card_names:
-                final_card_list.append(card)
-            elif card in display_card_name_mapping:
-                final_card_list.append(display_card_name_mapping[card])
+            if card in final_card_list:
+                continue
 
             # CHECK CONFLICTS
             for conflict_list in constants.CRUEL_CARDS_CONFLICTS.values():
@@ -102,6 +100,14 @@ class ViewCardsWindow(GameWindow):
                     self.elements["warning"].set_text("windows.deck_list_conflict")
                     self.elements["warning"].show()
                     failed = True
+
+            if card in internal_card_names:
+                final_card_list.append(card)
+            elif card in display_card_name_mapping:
+                internal = display_card_name_mapping[card]
+                if internal in card_list:
+                    continue
+                final_card_list.append(internal)
 
         # CHECK DECK LIMIT
         if not failed and (len(final_card_list) + len(self.current_cards)) >= (
