@@ -611,7 +611,6 @@ def leader_ceremony_text_adjust(
 
 
 def ceremony_text_adjust(
-    Cat,
     text,
     cat,
     old_name=None,
@@ -845,3 +844,38 @@ def shorten_text_to_fit(
         short_name += "..."
 
     return short_name
+
+
+def relationship_text_adjust(mate_string: str, cat_from, cat_to) -> str:
+    """Prepares the relationship event string for display"""
+    # replace mates with their names
+    if "[m_c_mates]" in mate_string:
+        mate_names = [
+            str(cat_from.fetch_cat(mate_id).name)
+            for mate_id in cat_from.mate
+            if cat_from.fetch_cat(mate_id) is not None
+            and cat_from.fetch_cat(mate_id).status.alive_in_player_clan
+        ]
+        mate_string = mate_string.replace("[m_c_mates]", adjust_list_text(mate_names))
+
+    if "[r_c_mates]" in mate_string:
+        mate_names = [
+            str(cat_to.fetch_cat(mate_id).name)
+            for mate_id in cat_to.mate
+            if cat_to.fetch_cat(mate_id) is not None
+            and cat_to.fetch_cat(mate_id).status.alive_in_player_clan
+        ]
+        mate_string = mate_string.replace("[r_c_mates]", adjust_list_text(mate_names))
+
+    if "(m_c_mate/mates)" in mate_string:
+        insert = i18n.t("general.mate", count=len(cat_from.mate))
+        mate_string = mate_string.replace("(m_c_mate/mates)", insert)
+
+    if "(r_c_mate/mates)" in mate_string:
+        insert = i18n.t("general.mate", count=len(cat_from.mate))
+        mate_string = mate_string.replace("(r_c_mate/mates)", insert)
+
+    mate_string = event_text_adjust(
+        cat_from, mate_string, main_cat=cat_from, random_cat=cat_to
+    )
+    return mate_string
