@@ -13,7 +13,7 @@ keywords = [
     "fan-edit",
     "warrior cats",
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 dependencies = [
     "black~=23.0",
     "cryptography~=42.0",

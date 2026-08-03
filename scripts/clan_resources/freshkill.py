@@ -78,8 +78,7 @@ class FreshkillPile:
         else:
             amount = get_config("prey.start_amount")
             self.pile = {
-                "expires_in_4": amount,
-                "expires_in_3": 0,
+                "expires_in_3": amount,
                 "expires_in_2": 0,
                 "expires_in_1": 0,
             }
@@ -103,7 +102,7 @@ class FreshkillPile:
             amount : int|float
                 the amount which should be added to the pile
         """
-        self.pile["expires_in_4"] += amount
+        self.pile["expires_in_3"] += amount
         self.total_amount += amount
         self.total_amount = round(self.total_amount, 2)
 
@@ -120,7 +119,7 @@ class FreshkillPile:
         """
         if amount == 0:
             return
-        order = ["expires_in_1", "expires_in_2", "expires_in_3", "expires_in_4"]
+        order = ["expires_in_1", "expires_in_2", "expires_in_3"]
         if take_random:
             random.shuffle(order)
         for key in order:
@@ -489,7 +488,6 @@ class FreshkillPile:
             "expires_in_1",
             "expires_in_2",
             "expires_in_3",
-            "expires_in_4",
         ]
         amount_still_needed = amount_allowed
         for pile in order_of_expiration:

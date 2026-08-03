@@ -2418,8 +2418,7 @@
                     "competitive",
                     "arrogant",
                     "ambitious",
-                    "confident",
-                    "sneaky"
+                    "confident"
                 ],
                 "prey": [
                     "large"
@@ -2598,8 +2597,7 @@
                     "competitive",
                     "arrogant",
                     "ambitious",
-                    "confident",
-                    "sneaky"
+                    "confident"
                 ],
                 "prey": [
                     "large"
@@ -3018,8 +3016,7 @@
                     "competitive",
                     "arrogant",
                     "ambitious",
-                    "confident",
-                    "sneaky"
+                    "confident"
                 ],
                 "can_have_stat": [
                     "app1"
@@ -3117,8 +3114,7 @@
                     "nervous",
                     "responsible",
                     "wise",
-                    "cunning",
-                    "sneaky"
+                    "cunning"
                 ],
                 "prey": [
                     "medium"

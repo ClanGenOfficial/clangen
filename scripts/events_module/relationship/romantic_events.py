@@ -20,6 +20,7 @@ from scripts.events_module.event_filters import (
     get_highest_romantic_relation,
     get_personality_compatibility,
 )
+from scripts.config import get_config
 
 
 # ---------------------------------------------------------------------------- #
@@ -287,6 +288,10 @@ def _attempt_confession(cat_from: Cat) -> bool:
     )
 
     if not chosen_relationship:
+        return False
+
+    # Config check
+    if not get_config("mates.allow_mating"):
         return False
 
     # check if it meets confession threshold

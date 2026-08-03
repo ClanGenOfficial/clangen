@@ -1,3 +1,16 @@
+<strong>v0.13.3</strong>
+- Fixes various typos
+- Small UI adjustment in the Leader's Den to prevent text overlaps
+- Adjustments to the frequency of some events
+- Added an outcome to an event that was missing unconstrained antagonize outcomes
+- Fixed missing "war" tag in a war-only event
+- Fixed kittens sometimes being generated with adolescent parents
+- Fixed "r_c" appearing in some condition-related events instead of being replaced with a cat name
+- Fixed the deaths of other Clan cats not being displayed in the Other Clans event tab
+
+- Adjusted the amount of herbs that can be rewarded during a patrol. There is now a maximum number of herbs each cat on patrol can "carry home". `CLEVER` and `SENSE` skill cats can still gather more herbs than typical cats, but will still have to contend with the maximum limit the patrol as a whole can carry.
+
+
 <strong>v0.13.2</strong>
 - Prevented starting and trailing spaces from being used for Clan names (this could cause crashes)
 - Newborns who are exiled and then return to the Clan are no longer perpetually stuck at the newborn rank for their entire life.

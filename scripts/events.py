@@ -22,7 +22,6 @@ from scripts.cat.enums import (
     CatGroup,
     CatStanding,
     CatSocial,
-    CatThought,
 )
 from scripts.cat.names import Name
 from scripts.cat.save_load import save_cats, add_cat_to_fade_id
@@ -38,8 +37,8 @@ from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents, generate_events
 from scripts.events_module.outsider_events import OutsiderEvents
 from scripts.events_module.patrol.patrol import Patrol
+from scripts.events_module.relationship import relation_events
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
-from scripts.events_module.relationship.relation_events import Relation_Events
 from scripts.events_module.short.condition_events import Condition_Events
 from scripts.events_module.short.short_event_generation import create_short_event
 from scripts.game_structure import constants
@@ -95,7 +94,7 @@ def one_moon():
     game.mediated = []
     switch_set_value(Switch.saved_clan, False)
     new_cat_invited = False
-    Relation_Events.clear_trigger_dict()
+    relation_events.clear_trigger_dict()
     Patrol.used_patrols.clear()
     game.patrolled.clear()
     game.just_died.clear()
@@ -1085,7 +1084,7 @@ def one_moon_cat(cat):
 
     # relationships have to be handled separately, because of the ceremony name change
     if cat.status.alive_in_player_clan:
-        Relation_Events.handle_relationships(cat)
+        relation_events.handle_relationships(cat)
 
     # now we make sure ill and injured cats don't get interactions they shouldn't
     if cat.is_ill() or cat.is_injured():
@@ -1259,6 +1258,7 @@ def perform_ceremonies(cat):
         if not game.clan.leader or not game.clan.leader.status.alive_in_player_clan:
             game.clan.leader_lives = 9
             ceremony(cat, CatRank.LEADER)
+            cat.generate_lead_ceremony()
             game.clan.deputy = None
             game.clan.leader = cat
 
@@ -1496,7 +1496,6 @@ def _is_suitable_medcat_app(cat) -> bool:
         "fierce",
         "rebellious",
         "troublesome",
-        "sneaky",
         "vengeful",
     ]:
         chance = chance * 2
@@ -1932,7 +1931,7 @@ def handle_outside_EX(cat):
         if game.clan.game_mode == "classic":
             exp += random.randint(0, 3)
 
-        cat.experience += max(exp * role_modifier, 1)
+        cat.add_experience(max(exp * role_modifier, 1))
 
 
 def handle_apprentice_EX(cat):
@@ -1965,7 +1964,7 @@ def handle_apprentice_EX(cat):
         if game.clan.game_mode == "classic":
             exp += random.randint(0, 3)
 
-        cat.experience += max(exp * mentor_modifier, 1)
+        cat.add_experience(max(exp * mentor_modifier, 1))
 
 
 def invite_new_cats(cat):
