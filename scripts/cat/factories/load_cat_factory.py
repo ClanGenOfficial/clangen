@@ -31,10 +31,8 @@ class LoadCatFactory(BaseCatFactory):
     ) as read_file:
         CONVERT = ujson.loads(read_file.read())
 
-    def __init__(self, rng: "Random"):
-        self.rng = rng  # needed for converting skills from old format
-
-    def create_cat(self, **kwargs) -> Cat:
+    @classmethod
+    def create_cat(cls, **kwargs) -> Cat:
         """
         Takes a dict from save data & constructs the cat
         :param kwargs: save file dict
@@ -42,9 +40,9 @@ class LoadCatFactory(BaseCatFactory):
         """
         if "ID" not in kwargs:
             raise KeyError("Cat ID missing!")
-        self.cat_id = kwargs["ID"]
+        cls.cat_id = kwargs["ID"]
 
-        pelt = self._build_pelt(kwargs)
+        pelt = cls._build_pelt(kwargs=kwargs)
 
         gender = GenderDict(
             sex=kwargs["gender"],
@@ -79,7 +77,7 @@ class LoadCatFactory(BaseCatFactory):
             favourite=kwargs.get("favourite", False),
         )
 
-        status = self._convert_status(
+        status = cls._convert_status(
             kwargs.get("status"),
             kwargs.get("moons"),
             old_bools=[
@@ -91,8 +89,8 @@ class LoadCatFactory(BaseCatFactory):
             ],
         )
 
-        backstory = self._convert_backstory(kwargs.get("backstory"))
-        skills, backstory = self._convert_skill_and_backstory(
+        backstory = cls._convert_backstory(kwargs.get("backstory"))
+        skills, backstory = cls._convert_skill_and_backstory(
             kwargs.get("skill_dict"),
             kwargs.get("skill"),
             backstory,
@@ -106,14 +104,14 @@ class LoadCatFactory(BaseCatFactory):
         )
 
         cat_params = {
-            "ID": self.cat_id,
+            "ID": cls.cat_id,
             "gender_dict": gender,
             "pelt": pelt,
             "moons": kwargs["moons"],
             "status": status,
             "backstory": backstory,
             "skills": skills,
-            "personality": self._build_personality(
+            "personality": cls._build_personality(
                 kwargs.get("facets"),
                 kwargs["trait"],
                 CatAge.get_from_moons(kwargs["moons"]).is_baby(),
@@ -132,7 +130,7 @@ class LoadCatFactory(BaseCatFactory):
         # Unfortunately, these two have to be handled *after* the creation of the cat
         # because of the horrible nested cat. fixme.
 
-        cat.history = self._convert_history(
+        cat.history = cls._convert_history(
             kwargs.get("died_by", []), kwargs.get("scar_event", []), cat=cat
         )
         cat.name = Name(
@@ -144,8 +142,9 @@ class LoadCatFactory(BaseCatFactory):
         )
         return cat
 
+    @classmethod
     def _convert_status(
-        self,
+        cls,
         status_dict: Optional[Union[Dict, str]],
         moons: int,
         old_bools: List[Optional[bool]],
@@ -158,9 +157,9 @@ class LoadCatFactory(BaseCatFactory):
         :return: valid status
         """
         if status_dict is None:
-            raise TypeError(f"Status is None for cat ID: {self.cat_id}")
+            raise TypeError(f"Status is None for cat ID: {cls.cat_id}")
         if moons is None:
-            raise TypeError(f"Moons is None for cat ID: {self.cat_id}")
+            raise TypeError(f"Moons is None for cat ID: {cls.cat_id}")
 
         if isinstance(status_dict, str):
             age = CatAge.get_from_moons(moons)
@@ -209,13 +208,14 @@ class LoadCatFactory(BaseCatFactory):
 
         return eye_color, eye_color2
 
-    def _build_pelt(self, kwargs):
+    @classmethod
+    def _build_pelt(cls, kwargs):
         """
         Handles some check & convert functionality for pelts
         :param kwargs: Everything we've ever passed into the factory
         :return: A dict of the keys needed to build the pelt
         """
-        eye_colour, eye_colour2 = self._convert_eye_color(
+        eye_colour, eye_colour2 = cls._convert_eye_color(
             kwargs["eye_colour"], kwargs.get("eye_color2")
         )
 
@@ -272,7 +272,7 @@ class LoadCatFactory(BaseCatFactory):
                 "opacity": kwargs.get("opacity", 100),
             }
         )
-        pelt.check_and_convert(convert_dict=self.CONVERT)
+        pelt.check_and_convert(convert_dict=cls.CONVERT)
 
         return pelt
 
@@ -286,8 +286,9 @@ class LoadCatFactory(BaseCatFactory):
         # if the key isn't found, return it as the value (no need to convert)
         return BACKSTORIES["conversion"].get(backstory, backstory)
 
+    @classmethod
     def _build_personality(
-        self, facets: str, trait: str, is_kit_trait: bool
+        cls, facets: str, trait: str, is_kit_trait: bool
     ) -> Personality:
         """
         Builds the personality object from the inputs provided
@@ -307,11 +308,12 @@ class LoadCatFactory(BaseCatFactory):
                 stable=facets[3],
             )
         else:
-            print(f"WARNING: no facets found for cat ID: {self.cat_id}")
+            print(f"WARNING: no facets found for cat ID: {cls.cat_id}")
             return Personality(trait=trait, kit_trait=is_kit_trait)
 
+    @classmethod
     def _convert_skill_and_backstory(
-        self, skill_dict, skill, backstory, rank, age
+        cls, skill_dict, skill, backstory, rank, age
     ) -> Tuple[CatSkills, str]:
         """
         Handle conversion of some *very old* skills & backstories
@@ -327,14 +329,14 @@ class LoadCatFactory(BaseCatFactory):
         if skill:
             if backstory is not None:
                 if skill == "formerly a loner":
-                    backstory = self.rng.choice(BACKSTORIES["loner_backstories"])
+                    backstory = cls.rng.choice(BACKSTORIES["loner_backstories"])
                 elif skill == "formerly a kittypet":
-                    backstory = self.rng.choice(BACKSTORIES["kittypet_backstories"])
+                    backstory = cls.rng.choice(BACKSTORIES["kittypet_backstories"])
                 else:
                     backstory = "clanborn"
             return CatSkills.get_skills_from_old(skill, rank, age), backstory
         else:
-            raise Exception(f"No skill data provided for cat ID: {self.cat_id}")
+            raise Exception(f"No skill data provided for cat ID: {cls.cat_id}")
 
     @staticmethod
     def _convert_history(died_by, scar_events, cat) -> History:
