@@ -3233,7 +3233,6 @@ class Cat:
 #                               END OF CAT CLASS                               #
 # ---------------------------------------------------------------------------- #
 
-
 # CAT CLASS ITEMS
 cat_class = Cat
 game.cat_class = Cat
