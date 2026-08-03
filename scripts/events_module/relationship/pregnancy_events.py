@@ -930,7 +930,6 @@ class Pregnancy_Events:
             else:
                 # A one blood parent litter is the only option left.
                 kit = NewCatFactory.create_cat(
-                    CatType.NEW,
                     parent1=cat.ID,
                     moons=0,
                     backstory=backstory,
