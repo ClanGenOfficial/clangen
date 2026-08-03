@@ -15,6 +15,7 @@ from scripts.cat.enums import (
     CatThought,
 )
 from scripts.cat.factories.enums import CatType
+from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.names import names, Name
 from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.cat_relations.relationship import Relationship, RelType

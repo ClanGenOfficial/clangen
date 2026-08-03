@@ -18,13 +18,12 @@ from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
 from scripts.cat.skills import CatSkills
 from scripts.cat.status import Status
-
-if TYPE_CHECKING:
-    from random import Random
+from random import Random
 
 
 class LoadCatFactory(BaseCatFactory):
     cat_id = None
+    rng = Random()
 
     with open(
         f"resources/dicts/conversion_dict.json", "r", encoding="utf-8"

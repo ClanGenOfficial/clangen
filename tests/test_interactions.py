@@ -2,6 +2,7 @@ import os
 import unittest
 from random import Random
 
+from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.cat_relations.enums import rel_type_tiers, RelType
 
 from scripts.cat.enums import CatRank

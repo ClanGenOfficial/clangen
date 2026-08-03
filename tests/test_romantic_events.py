@@ -5,7 +5,7 @@ from random import Random
 from scripts.cat.factories.test_cat_factory import TestCatFactory
 
 from scripts.cat.enums import CatRank, CatSocial, CatGroup
-from scripts.cat.status import StatusDict
+from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.clan import Clan
 from scripts.game_structure import game
 from scripts.game_structure.game import Switch
