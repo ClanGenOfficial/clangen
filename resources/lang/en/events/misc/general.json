@@ -13674,7 +13674,128 @@
             "changed": -15
         }
     },
-    {
+    
+
+        {
+            "event_id": "gen_misc_otherclannewleader6",
+            "location": [
+                "any"
+            ],
+            "season": [
+                "any"
+            ],
+            "tags": [],
+            "exclude_involved": [
+                "m_c"
+            ],
+            "frequency": 1,
+            "event_text": "During the Gathering at {POI/category/gathering}, a new apprentice from o_c_n excitedly gossips about how their new leader might break off the alliance with c_n. m_c doesn't seem as amused as the apprentice.",
+            "m_c": {
+                "age": [
+                    "adolescent",
+                    "young adult",
+                    "adult",
+                    "senior adult",
+                    "senior"
+                ]
+            },
+            "other_clan": {
+                "current_rep": [
+                    "ally"
+                ],
+                "changed": -5
+            }
+        },
+        
+            {
+                "event_id": "gen_misc_otherclannewleader7",
+                "location": [
+                    "any"
+                ],
+                "season": [
+                    "any"
+                ],
+                "tags": [],
+                "exclude_involved": [
+                    "m_c"
+                ],
+                "frequency": 1,
+                "event_text": "m_c just about dies laughing when o_c_n's new leader is announced. Surely they could've picked a more capable cat? m_c has to be silenced by {PRONOUN/m_c/poss} own leader just to continue the Gathering.",
+                "m_c": {
+                    "age": [
+                        "adolescent",
+                        "young adult",
+                        "adult",
+                        "senior adult",
+                        "senior"
+                    ]
+                },
+                "other_clan": {
+                    "current_rep": [
+                        "ally"
+                    ],
+                    "changed": -10
+                }
+            },
+            
+                {
+                    "event_id": "gen_misc_otherclannewleader8",
+                    "location": [
+                        "any"
+                    ],
+                    "season": [
+                        "any"
+                    ],
+                    "tags": [],
+                    "exclude_involved": [
+                        "m_c"
+                    ],
+                    "frequency": 1,
+                    "event_text": "m_c purrs when o_c_n announces they have more apprentices.",
+                    "m_c": {
+                        "age": [
+                            "adolescent"
+                        ]
+                    },
+                    "other_clan": {
+                        "current_rep": [
+                            "ally"
+                        ],
+                        "changed": 5
+                    }
+                },
+                
+                    {
+                        "event_id": "gen_misc_otherclannewleader9",
+                        "location": [
+                            "any"
+                        ],
+                        "season": [
+                            "any"
+                        ],
+                        "tags": [],
+                        "exclude_involved": [
+                            "m_c"
+                        ],
+                        "frequency": 1,
+                        "event_text": "During the Gathering at {POI/category/gathering}, m_c spots a beautiful cat from o_c_n. {PRONOUN/m_c/subject/CAP} can't stop staring at them until a clanmate shoves {PRONOUN/m_c/object}, snapping {PRONOUN/m_c/object} out of it.",
+                        "m_c": {
+                            "age": [
+                                "adolescent",
+                        "young adult",
+                        "adult",
+                        "senior adult",
+                        "senior"
+                            ]
+                        },
+                        "other_clan": {
+                            "current_rep": [
+                                "ally"
+                            ],
+                            "changed": 10
+                        }
+                    },
+                    {
         "event_id": "gen_misc_otherclanhostilerelboost1",
         "location": [
             "any"
