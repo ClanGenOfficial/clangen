@@ -6,8 +6,9 @@ import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID, UIContainer
 
-from scripts.cat.cats import Cat, create_example_cats
+from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatAge
+from scripts.cat.factories.create_example_cat import create_example_cats
 from scripts.config import get_config
 from scripts.game_structure import constants
 from scripts.game_structure.game import Switch, switch_get_value

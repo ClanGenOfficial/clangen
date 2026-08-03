@@ -1,6 +1,7 @@
 from __future__ import annotations
 
-from random import randint, sample, choice
+from random import randint, sample, choices
+from typing import TYPE_CHECKING
 
 from scripts.cat.enums import CatRank, CatAge
 from scripts.cat.factories.cat_factory import CatFactory
@@ -10,32 +11,24 @@ from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.cat.pelts import Pelt
 from scripts.game_structure import game
 
+if TYPE_CHECKING:
+    from scripts.cat.cats import Cat
 
-def create_example_cats():
-    """
-    Creates the cats for MakeClanScreen
-    :return: None
-    """
-    warrior_indices = sample(range(12), 3)
 
+def create_example_cats(majority_rank: CatRank, rank_weights: dict) -> list["Cat"]:
+    majority_rank_cats = sample(range(12), 3)
+
+    chosen_cats = []
     for cat_index in range(12):
-        if cat_index in warrior_indices:
-            game.choose_cats[cat_index] = NewCatFactory.create_cat(
-                rank=CatRank.WARRIOR, no_disabling_scars=True
-            )
+        if cat_index in majority_rank_cats:
+            chosen_cats.append(NewCatFactory.create_cat(rank=majority_rank))
         else:
-            random_rank = choice(
-                [
-                    CatRank.KITTEN,
-                    CatRank.APPRENTICE,
-                    CatRank.WARRIOR,
-                    CatRank.WARRIOR,
-                    CatRank.ELDER,
-                ]
-            )
-            game.choose_cats[cat_index] = NewCatFactory.create_cat(
-                rank=random_rank, no_disabling_scars=True
-            )
+            random_rank = choices(
+                list(rank_weights.keys()), list(rank_weights.values())
+            )[0]
+            chosen_cats.append(NewCatFactory.create_cat(rank=random_rank))
+
+    return chosen_cats
 
 
 def create_option_preview_cat(scar: str = None, acc: str = None):
@@ -45,6 +38,7 @@ def create_option_preview_cat(scar: str = None, acc: str = None):
     :param acc: Desired accessory (only one)
     """
     new_cat = TestCatFactory.create_cat(
+        moons=60,
         loading_cat=True,
         pelt=Pelt(
             name="SingleColour",
@@ -66,6 +60,5 @@ def create_option_preview_cat(scar: str = None, acc: str = None):
             accessory=[acc] if acc else [],
         ),
     )
-    new_cat.age = CatAge.ADULT
 
     return new_cat
