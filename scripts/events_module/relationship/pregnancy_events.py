@@ -14,7 +14,6 @@ from scripts.cat.enums import (
     CatCompatibility,
     CatThought,
 )
-from scripts.cat.factories.cat_factory import CatFactory
 from scripts.cat.factories.enums import CatType
 from scripts.cat.names import names, Name
 from scripts.cat.factories.typed_dicts import StatusDict

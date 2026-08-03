@@ -4,7 +4,6 @@ from random import randint, sample, choices
 from typing import TYPE_CHECKING
 
 from scripts.cat.enums import CatRank, CatAge
-from scripts.cat.factories.cat_factory import CatFactory
 from scripts.cat.factories.enums import CatType
 from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.factories.test_cat_factory import TestCatFactory
