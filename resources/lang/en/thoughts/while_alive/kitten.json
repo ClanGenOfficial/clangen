@@ -1091,15 +1091,9 @@
             "Wants r_c to be {PRONOUN/m_c/poss} apprentice",
             "Was sent out of the nursery for being too rowdy around the new litter"
         ],
-        "main_status_constraint": [
-            "kitten"
-        ],
-        "random_age_constraint": [
-            "newborn"
-        ],
-        "random_living_status": [
-            "living"
-        ]
+        "involved_cats": {
+            
+        }
     },
     {
         "id": "Stolen_kit",
@@ -1115,61 +1109,76 @@
             "Is unsure what to think about c_n",
             "c_n isn't as bad as {PRONOUN/m_c/object} thought"
         ],
-        "main_age_constraint": [
-            "kitten"
-        ],
-        "main_backstory_constraint": [
-            "stolenkit3"
-        ]
+        "involved_cats": {
+            "m_c": {
+
+             "backstory": [
+                    "stolenkit3"
+                ]
+            }
+        }
     },
     {
         "id": "Stolen_kit_to_other_kit",
         "strings": [
             "Is hesitant to play with r_c",
             "Watches r_c carefully",
-            "Is slowly warming up to r_c",
+            "Is slowing warming up to r_c",
             "Isn't sure what to think about r_c",
             "Is invited by r_c to play mossball",
             "Dislikes how r_c talks about {PRONOUN/m_c/poss} former clan"
         ],
-        "main_age_constraint": [
-            "kitten"
-        ],
-        "random_age_constraint": [
-            "kitten"
-        ],
-        "main_backstory_constraint": [
-            "stolenkit3"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "stolenkit3"
+                ]
+            },
+            "r_c": {
+                "age": [
+                    "kitten"
+                ],
+                "backstory": [
+                    "-former_clancat_backstories"
+                ],
+                "group": ["-afterlife"]
+            }
+        }
     },
     {
         "id": "Stolen_kit_bold",
         "strings": [
             "Is caught trying to escape",
-            "Nips r_c to demonstrate {PRONOUN/m_c/poss} strength",
+            "Nips r_c to demostrate {PRONOUN/m_c/poss} strength",
             "Started a fight with r_c",
             "Says that c_n kits are mouse brained",
             "Tests how much {PRONOUN/m_c/object} can get away with"
         ],
-        "main_age_constraint": [
-            "kitten"
-        ],
-        "random_age_constraint": [
-            "kitten"
-        ],
-        "main_trait_constraint": [
-            "bossy",
-            "bullying",
-            "noisy",
-            "fearless",
-            "impulsive",
-            "unruly",
-            "troublesome",
-            "daring"
-        ],
-        "main_backstory_constraint": [
-            "stolenkit3"
-        ]
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "bossy",
+                        "bullying",
+                        "noisy",
+                        "fearless",
+                        "impulsive",
+                        "unruly",
+                        "troublesome",
+                        "daring"
+
+                    ]
+                },
+                "backstory": [
+                    "stolenkit3"
+                ]
+            },
+            "r_c": {
+                "age": ["kitten"],
+                "backstory": ["-former_clancat_backstories"],
+                "group": ["-afterlife"]
+            }
+        }
     },
     {
         "id": "Stolen_kit_nervous",
@@ -1180,35 +1189,22 @@
             "Cries in sleep for parent",
             "Feels lonely without {PRONOUN/m_c/poss} littermates",
             "Has given up on returning home",
-            "Hopes that c_n doesn't kill {PRONOUN/m_c/subject}"
+            "Hopes that c_n doesn't hurt {PRONOUN/m_c/subject}",
+            "Fears all the new cats"
         ],
-        "main_age_constraint": [
-            "kitten"
-        ],
-        "main_trait_constraint": [
-            "skittish",
-            "quiet",
-            "self-conscious",
-            "sweet",
-            "daydreamer"
-        ],
-        "main_backstory_constraint": [
-            "stolenkit3"
-        ]
-        "involved_cats": {
-            "m_c": {
-                "status": [
-                    "kitten"
-                ]
-            },
-            "r_c": {
-                "age": [
-                    "newborn"
-                ],
-                "group": [
-                    "-afterlife"
-                ]
-            }
+        "involved_cats":{
+            "m_c":{
+                "stat": {
+                    "trait": [
+                        "skittish",
+                        "quiet",
+                        "self-conscious",
+                        "sweet",
+                        "daydreamer"
+                    ]
+                },
+            "backstory": ["stolenkit3"]
+        }
         }
     }
 ]
