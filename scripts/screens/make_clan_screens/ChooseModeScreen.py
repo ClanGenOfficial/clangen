@@ -4,6 +4,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.enums import CatRank
+from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.config import get_config
 from scripts.game_structure import image_cache
@@ -224,9 +225,9 @@ class ChooseModeScreen(MakeClanScreenBase):
         self.clan_info.symbol = symbol
 
         # MEMBERS
-        self.clan_info.leader = NewCatFactory.create_cat(CatRank.WARRIOR)
-        self.clan_info.deputy = NewCatFactory.create_cat(CatRank.WARRIOR)
-        self.clan_info.medicine_cat = NewCatFactory.create_cat(CatRank.WARRIOR)
+        self.clan_info.leader = NewCatFactory.create_cat(rank=CatRank.WARRIOR)
+        self.clan_info.deputy = NewCatFactory.create_cat(rank=CatRank.WARRIOR)
+        self.clan_info.medicine_cat = NewCatFactory.create_cat(rank=CatRank.WARRIOR)
         members = []
         for _ in range(randrange(4, 8)):
             random_rank = choice(

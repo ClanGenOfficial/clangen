@@ -215,7 +215,7 @@ class TestPointsOfInterest(unittest.TestCase):
         game.clan.starting_season = "Newleaf"
         game.clan.game_mode = "classic"
 
-        self.test_cat = cat_factory.create_cat(CatRank.LEADER, moons=50)
+        self.test_cat = cat_factory.create_cat(rank=CatRank.LEADER, moons=50)
         game.clan.leader = self.test_cat
 
         clear_pois()
@@ -2082,15 +2082,13 @@ class TestRelationshipTiersMultiCat(unittest.TestCase):
 
 class TestCatConstraint(unittest.TestCase):
     def test_ages(self):
-        cat = cat_factory.create_cat()
+        cat = cat_factory.create_cat(moons=0)
 
         # ages used
         newborn = CatAge.NEWBORN
         age = CatAge.ADULT
         unmatched_age = CatAge.SENIOR
 
-        # newborn-specific
-        cat.age = CatAge.NEWBORN
         with self.subTest("empty newborn"):
             self.assertFalse(event_for_cat(cat=cat, cat_info={"age": []}))
         with self.subTest('"any" newborn'):
@@ -2101,7 +2099,7 @@ class TestCatConstraint(unittest.TestCase):
             self.assertTrue(event_for_cat(cat=cat, cat_info={"age": [newborn]}))
 
         # set cat age to the general testing age
-        cat.age = age
+        cat.moons = 60
 
         # general
         with self.subTest("empty"):
