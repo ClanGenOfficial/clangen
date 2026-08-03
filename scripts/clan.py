@@ -11,7 +11,7 @@ TODO: Docs
 import os
 import statistics
 from random import choice, choices, randint, getrandbits
-from typing import Literal
+from typing import Literal, Optional
 
 import i18n
 import ujson
@@ -126,7 +126,7 @@ class Clan:
         # This is the first cat in starclan, to "guide" the other dead cats there.
         self.clan_cats = []
         self.biome = biome
-        self.override_biome = None
+        self.override_biome: Optional[str] = None
         self.camp_bg = camp_bg
         self.chosen_symbol = symbol
         self.game_mode = game_mode
