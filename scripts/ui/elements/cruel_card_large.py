@@ -131,7 +131,7 @@ class UICruelCardLarge(UIImage):
                     {"mouse_button": pygame.BUTTON_LEFT},
                 )
 
-        elif event.type == pygame.MOUSEBUTTONDOWN:
+        elif event.type == pygame.MOUSEBUTTONDOWN and event.button not in (4, 5):
             scaled_mouse_pos = self.ui_manager.calculate_scaled_mouse_position(
                 event.pos
             )

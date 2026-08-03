@@ -116,7 +116,13 @@ class ClanSettingsScreen(Screens):
                 self.checkboxes["deputy"].check()
                 CruelLockedAction()
                 return
-
+            elif event.ui_element == self.checkboxes.get("affair") and not get_config(
+                "mates.allow_mating"
+            ):
+                set_clan_setting("affair", False)
+                self.checkboxes["affair"].uncheck()
+                CruelLockedAction()
+                return
             for key, value in self.checkboxes.items():
                 if value == event.ui_element:
                     switch_clan_setting(key)

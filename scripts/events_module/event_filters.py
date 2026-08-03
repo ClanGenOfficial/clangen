@@ -12,6 +12,7 @@ from scripts.clan_resources.point_of_interest import (
     get_poi_tags_set,
     get_poi_categories_set,
 )
+from scripts.cat_relations.relationship import Relationship
 from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
     RelationshipConstraintDict,
@@ -1052,7 +1053,7 @@ def _get_cats_with_rel_status(
     cat_list: list, cat, rel_status_list: list
 ) -> tuple[list, list]:
     is_exclusionary = _check_for_exclusionary_value(rel_status_list)
-    rel_status_list = [x.replace("-", " ") for x in rel_status_list]
+    rel_status_list = [x.replace("-", "") for x in rel_status_list]
 
     if "siblings" in rel_status_list:
         if is_exclusionary:
@@ -1830,7 +1831,7 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
 
 def get_highest_romantic_relation(
     relationships, exclude_mate=False, potential_mate=False
-):
+) -> Relationship:
     """Returns the relationship with the highest romantic value."""
     max_love_value = 0
     current_max_relationship = None
