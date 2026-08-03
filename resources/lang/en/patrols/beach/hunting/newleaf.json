@@ -57,7 +57,7 @@
                     "amount": 3,
                     "log":
                     {
-                        "cats_from": "from_cat saw to_cat return to camp with a juicy squirrel."
+                        "cats_from": "cat_from saw cat_to return to camp with a juicy squirrel."
                     }
                 }
             ]
@@ -116,7 +116,7 @@
                     "amount": 8,
                     "log":
                     {
-                        "cats_from": "from_cat saw to_cat return to camp with a juicy squirrel."
+                        "cats_from": "cat_from saw cat_to return to camp with a juicy squirrel."
                     }
                 }
             ]
@@ -137,7 +137,7 @@
                     "amount": 8,
                     "log":
                     {
-                        "cats_from": "from_cat saw to_cat return to camp with a juicy squirrel."
+                        "cats_from": "cat_from saw cat_to return to camp with a juicy squirrel."
                     }
                 }
             ]
@@ -198,7 +198,7 @@
                         "values": ["like"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat watched to_cat's hunting improve under {PRONOUN/from_cat/poss} tutelage."
+                            "cats_from": "cat_from watched cat_to's hunting improve under {PRONOUN/cat_from/poss} tutelage."
                         }
                     },
                     {
@@ -208,7 +208,7 @@
                         "values": ["respect"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat got great hunting advice from to_cat."
+                            "cats_from": "cat_from got great hunting advice from cat_to."
                         }
                     }
                 ],
@@ -228,7 +228,7 @@
                         "values": ["respect"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat witnessed first-paw how to_cat's hunting training has paid off."
+                            "cats_from": "cat_from witnessed first-paw how cat_to's hunting training has paid off."
                         }
                     },
                     {
@@ -238,7 +238,7 @@
                         "values": ["comfort", "like"],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat felt great when to_cat praised {PRONOUN/from_cat/poss} hunting."
+                            "cats_from": "cat_from felt great when cat_to praised {PRONOUN/cat_from/poss} hunting."
                         }
                     }
                 ],
@@ -257,7 +257,7 @@
                         "values": ["comfort"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat avoided to_cat for a bit after messing up in a hunt in front of {PRONOUN/to_cat/object}."
+                            "cats_from": "cat_from avoided cat_to for a bit after messing up in a hunt in front of {PRONOUN/cat_to/object}."
                         }
                     }
                 ],
@@ -285,7 +285,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 4,
-        "intro_text": "As the patrol walks through the sandy beaches of their territory, a low sound kicks up just at the edges of their hearing. p_l comes to an abrupt stop and scrambles backwards, hissing at the others to stop as well, once {PRONOUN/p_l/subject} {VERB/p_l/realize/realizes} what's making it - there's a rattlesnake, staring down a ground squirrel!",
+        "intro_text": "As the patrol walks through the sandy beaches of their territory, a low sound kicks up just at the edges of their hearing. p_l comes to an abrupt stop and scrambles backwards, hissing at the others to stop as well, once {PRONOUN/p_l/subject} {VERB/p_l/realize/realizes} what's making it — there's a rattlesnake, staring down a ground squirrel!",
         "decline_text": "The patrol wastes no time in turning tail and going home, not wanting to risk being on the receiving end of a rattlesnake even if there's a squirrel to be caught.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -309,7 +309,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed by how to_cat caught a squirrel fighting with a rattlesnake."
+                            "cats_from": "cat_from was impressed by how cat_to caught a squirrel fighting with a rattlesnake."
                         }
                     }
                 ],
@@ -335,7 +335,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed by how to_cat caught a squirrel fighting with a rattlesnake."
+                            "cats_from": "cat_from was impressed by how cat_to caught a squirrel fighting with a rattlesnake."
                         }
                     }
                 ],
@@ -364,7 +364,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "from_cat was highly impressed by how to_cat used a squirrel and rattlesnake's fight to sneakily kill both pieces of prey."
+                            "cats_from": "cat_from was highly impressed by how cat_to used a squirrel and rattlesnake's fight to sneakily kill both pieces of prey."
                         }
                     }
                 ],
@@ -389,7 +389,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat stood around watching a squirrel and a rattlesnake fight instead of catching any prey."
+                            "cats_from": "cat_from and cat_to stood around watching a squirrel and a rattlesnake fight instead of catching any prey."
                         }
                     }
                 ],
@@ -406,15 +406,12 @@
                         "injuries": [
                             "snake bite",
                             "poisoned"
-                        ],
-                        "scars": [
-                            "SNAKE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by a rattlesnake.",
-                    "death": "m_c died after succumbing to a rattlesnake's venom."
+                    "death": "m_c succumbed to a rattlesnake's venom."
                 },
                 "relationships": [
                     {
@@ -428,7 +425,7 @@
                         "values": ["trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat and to_cat were unable to stop a rattlesnake from biting m_c."
+                            "cats_from": "cat_from and cat_to were unable to stop a rattlesnake from biting r_c."
                         }
                     }
                 ],
@@ -477,7 +474,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat successfully hunted ground squirrels together."
+                            "cats_from": "cat_from and cat_to successfully hunted ground squirrels together."
                         }
                     }
                 ],
@@ -503,7 +500,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat trusted to_cat to block ground squirrels' burrows so the patrol could trap them."
+                            "cats_from": "cat_from trusted cat_to to block ground squirrels' burrows so the patrol could trap them."
                         }
                     }
                 ],
@@ -531,7 +528,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat approved of to_cat's plan to pick off ground squirrels and enjoyed a successful hunt."
+                            "cats_from": "cat_from approved of cat_to's plan to pick off ground squirrels and enjoyed a successful hunt."
                         }
                     }
                 ],
@@ -556,7 +553,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat silently blamed to_cat for alerting squirrels to the patrol's presence and spoiling a hunt."
+                            "cats_from": "cat_from silently blamed cat_to for alerting squirrels to the patrol's presence and spoiling a hunt."
                         }
                     }
                 ],

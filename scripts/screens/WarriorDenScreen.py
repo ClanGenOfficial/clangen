@@ -10,6 +10,7 @@ from scripts.clan_package.settings.clan_settings import (
     get_clan_setting,
     switch_clan_setting,
 )
+from scripts.config import get_config
 from scripts.game_structure import constants
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.cat.enums import CatRank
@@ -50,9 +51,9 @@ class WarriorDenScreen(Screens):
         self.active_code = None
         self.original_focus_code = None
         self.other_clan_settings = [
-            "sabotage other clans",
-            "aid other clans",
-            "raid other clans",
+            "sabotage_other_clans",
+            "aid_other_clans",
+            "raid_other_clans",
         ]
 
         self.has_mediators = True
@@ -74,7 +75,7 @@ class WarriorDenScreen(Screens):
                         if (
                             game.clan.last_focus_change is None
                             or game.clan.last_focus_change
-                            + constants.CONFIG["focus"]["duration"]
+                            + get_config("focus.duration")
                             <= game.clan.age
                         ):
                             self.save_button.enable()
@@ -95,15 +96,7 @@ class WarriorDenScreen(Screens):
                 if self.active_code in self.other_clan_settings:
                     SelectFocusClansWindow()
                 else:
-                    # change the setting
-                    switch_clan_setting(self.original_focus_code)
-                    switch_clan_setting(self.active_code)
-                    game.clan.last_focus_change = game.clan.age
-                    self.original_focus_code = self.active_code
-
-                    self.save_button.disable()
-                    self.update_buttons()
-                    self.create_top_info()
+                    self.change_setting()
 
     def screen_switches(self):
         """
@@ -292,6 +285,12 @@ class WarriorDenScreen(Screens):
 
             self.update_buttons()
 
+        if not self.active_code:
+            switch_clan_setting("business_as_usual")
+            self.active_code = "business_as_usual"
+            self.original_focus_code = "business_as_usual"
+            self.update_buttons()
+
     def create_top_info(self):
         """
         Create the top display text.
@@ -310,19 +309,18 @@ class WarriorDenScreen(Screens):
         if self.original_focus_code in self.other_clan_settings:
             desc = i18n.t(
                 "screens.warrior_den.involved_clans",
-                clans=adjust_list_text(
-                    [f"{clan}clan" for clan in game.clan.clans_in_focus]
-                ),
+                clans=adjust_list_text(game.clan.clans_in_focus),
             )
         last_change_text = ""
         next_change = ""
-        if game.clan.last_focus_change:
+        # must be 'is not None' to prevent 0 from being picked up as NoneType
+        if game.clan.last_focus_change is not None:
             last_change_text = i18n.t(
                 "general.moon_date", moon=str(game.clan.last_focus_change)
             )
             moons = (
                 game.clan.last_focus_change
-                + constants.CONFIG["focus"]["duration"]
+                + get_config("focus.duration")
                 - game.clan.age
             )
             moons = moons if moons > 0 else 0
@@ -376,10 +374,22 @@ class WarriorDenScreen(Screens):
             text_kwargs={"info": i18n.t(f"settings.{self.active_code}_tooltip")},
         )
 
+    def change_setting(self):
+        """
+        Handles changing the focus setting to match self.active_code
+        """
+        switch_clan_setting(self.original_focus_code)
+        switch_clan_setting(self.active_code)
+        game.clan.last_focus_change = game.clan.age
+        self.original_focus_code = self.active_code
+
+        self.save_button.disable()
+        self.update_buttons()
+        self.create_top_info()
+
     def save_focus(self):
         """
         Saves the focus when the clan to focus on in screen 'SelectFocusClan' are selected.
         """
         if len(game.clan.clans_in_focus) > 0:
-            game.clan.last_focus_change = game.clan.age
-            self.original_focus_code = self.active_code
+            self.change_setting()

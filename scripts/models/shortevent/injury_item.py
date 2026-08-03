@@ -2,15 +2,16 @@ from __future__ import annotations
 
 from typing import List, Union
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
 from scripts.models.common.injury import Injury
 from scripts.models.common.scar import Scar
-from scripts.models.shortevent.cat import Cat
+from scripts.models.common.cat import Cat
 
 
 class InjuryItem(BaseModel):
+    model_config = ConfigDict(extra="forbid")
     cats: Union[
         List[Cat],
         MISSING,

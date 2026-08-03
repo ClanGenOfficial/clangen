@@ -1,0 +1,41 @@
+{
+    "spritesheet": "patches_white_little",
+    "sprite_list": [
+        [
+            "LITTLE",
+            "LIGHTTUXEDO",
+            "BUZZARDFANG",
+            "TIP",
+            "PAWS",
+            "BROKENBLAZE",
+            "SCOURGE",
+            "BLAZE",
+            "BIB",
+            "VEE",
+            "HONEY",
+            "BELLY",
+            "TAILTIP",
+            "TOES"],
+        [
+            "EXTRA",
+            "TOESTAIL",
+            "RAVENPAW",
+            "LILTWO",
+            "MUSTACHE",
+            "REVERSEHEART",
+            "SPARKLE",
+            "RIGHTEAR",
+            "LEFTEAR",
+            "ESTRELLA",
+            "REVERSEEYE",
+            "BACKSPOT",
+            "EYEBAGS",
+            "LOCKET"
+        ],
+        [
+            "BLAZEMASK",
+            "TEARS",
+            "LUNA"
+        ]
+    ]
+}

@@ -6,10 +6,12 @@ import contextlib
 import os
 import random
 
+import i18n
 import ujson
 
 from scripts.game_structure import constants
 from scripts.cat.enums import CatRank, CatGroup, CatAge
+from scripts.game_structure.localization import load_lang_resource
 from scripts.housekeeping.datadir import get_save_dir
 
 
@@ -18,57 +20,9 @@ class Name:
     Stores & handles name generation.
     """
 
-    if os.path.exists("resources/dicts/names/names.json"):
-        with open("resources/dicts/names/names.json", encoding="utf-8") as read_file:
-            names_dict = ujson.loads(read_file.read())
-
-        if os.path.exists(get_save_dir() + "/prefixlist.txt"):
-            with open(
-                str(get_save_dir() + "/prefixlist.txt"), "r", encoding="utf-8"
-            ) as read_file:
-                name_list = read_file.read()
-                if_names = len(name_list)
-            if if_names > 0:
-                new_names = name_list.split("\n")
-                for new_name in new_names:
-                    if new_name != "":
-                        if new_name.startswith("-"):
-                            while new_name[1:] in names_dict["normal_prefixes"]:
-                                names_dict["normal_prefixes"].remove(new_name[1:])
-                        else:
-                            names_dict["normal_prefixes"].append(new_name)
-
-        if os.path.exists(get_save_dir() + "/suffixlist.txt"):
-            with open(
-                str(get_save_dir() + "/suffixlist.txt"), "r", encoding="utf-8"
-            ) as read_file:
-                name_list = read_file.read()
-                if_names = len(name_list)
-            if if_names > 0:
-                new_names = name_list.split("\n")
-                for new_name in new_names:
-                    if new_name != "":
-                        if new_name.startswith("-"):
-                            while new_name[1:] in names_dict["normal_suffixes"]:
-                                names_dict["normal_suffixes"].remove(new_name[1:])
-                        else:
-                            names_dict["normal_suffixes"].append(new_name)
-
-        if os.path.exists(get_save_dir() + "/specialsuffixes.txt"):
-            with open(
-                str(get_save_dir() + "/specialsuffixes.txt", "r"), encoding="utf-8"
-            ) as read_file:
-                name_list = read_file.read()
-                if_names = len(name_list)
-            if if_names > 0:
-                new_names = name_list.split("\n")
-                for new_name in new_names:
-                    if new_name != "":
-                        if new_name.startswith("-"):
-                            del names_dict["special_suffixes"][new_name[1:]]
-                        elif ":" in new_name:
-                            _tmp = new_name.split(":")
-                            names_dict["special_suffixes"][_tmp[0]] = _tmp[1]
+    current_save_dir = None
+    currently_loaded_lang = None
+    names_dict = {}
 
     def __init__(
         self,
@@ -80,6 +34,7 @@ class Name:
         cat=None,
         pelt=None,
     ):
+        self.load_localized_names()
         self.prefix = prefix
         self.suffix = suffix
         self.specsuffix_hidden = specsuffix_hidden
@@ -177,12 +132,97 @@ class Name:
                     double_animal = False
                 i += 1
 
+    def load_localized_names(self):
+        """
+        Loads the correct names for the given language. Includes override for always using English names, in case localization wants to be ignored
+        :return: None
+        """
+
+        # allowing the user to override the localized language names if desired
+        if always_english := constants.CONFIG["cat_name_controls"][
+            "always_use_english"
+        ]:
+            lang = "en"
+        else:
+            lang = i18n.config.get("locale")
+
+        if (
+            self.current_save_dir == get_save_dir()
+            and self.currently_loaded_lang == lang
+        ):
+            # nothing to do here, all good
+            return
+
+        if always_english:
+            with open("resources/lang/en/names.json", encoding="utf-8") as read_file:
+                names_dict = ujson.loads(read_file.read())
+        else:
+            names_dict = load_lang_resource("names.json")
+
+        save_dir = get_save_dir()
+
+        # here onwards is copied wholesale from the original Name class
+
+        if os.path.exists(save_dir + "/prefixlist.txt"):
+            with open(
+                str(save_dir + "/prefixlist.txt"), "r", encoding="utf-8"
+            ) as read_file:
+                name_list = read_file.read()
+                if_names = len(name_list)
+            if if_names > 0:
+                new_names = name_list.split("\n")
+                for new_name in new_names:
+                    if new_name != "":
+                        if new_name.startswith("-"):
+                            while new_name[1:] in names_dict["normal_prefixes"]:
+                                names_dict["normal_prefixes"].remove(new_name[1:])
+                        else:
+                            names_dict["normal_prefixes"].append(new_name)
+
+        if os.path.exists(save_dir + "/suffixlist.txt"):
+            with open(
+                str(save_dir + "/suffixlist.txt"), "r", encoding="utf-8"
+            ) as read_file:
+                name_list = read_file.read()
+                if_names = len(name_list)
+            if if_names > 0:
+                new_names = name_list.split("\n")
+                for new_name in new_names:
+                    if new_name != "":
+                        if new_name.startswith("-"):
+                            while new_name[1:] in names_dict["normal_suffixes"]:
+                                names_dict["normal_suffixes"].remove(new_name[1:])
+                        else:
+                            names_dict["normal_suffixes"].append(new_name)
+
+        if os.path.exists(save_dir + "/specialsuffixes.txt"):
+            with open(
+                str(save_dir + "/specialsuffixes.txt", "r"), encoding="utf-8"
+            ) as read_file:
+                name_list = read_file.read()
+                if_names = len(name_list)
+            if len(name_list) > 0:
+                new_names = name_list.split("\n")
+                for new_name in new_names:
+                    if new_name != "":
+                        if new_name.startswith("-"):
+                            del names_dict["special_suffixes"][new_name[1:]]
+                        elif ":" in new_name:
+                            _tmp = new_name.split(":")
+                            names_dict["special_suffixes"][_tmp[0]] = _tmp[1]
+
+        self.names_dict = names_dict
+        self.current_save_dir = save_dir
+        self.currently_loaded_lang = lang
+
     def __str__(self):
         return self.__repr__()
 
     # Generate possible prefix
     def give_prefix(self, eyes, colour, biome):
         """Generate possible prefix."""
+        self.load_localized_names()
+
         # decided in constants.CONFIG: cat_name_controls
         if constants.CONFIG["cat_name_controls"]["always_name_after_appearance"]:
             named_after_appearance = True
@@ -239,6 +279,8 @@ class Name:
     # Generate possible suffix
     def give_suffix(self, pelt, biome, tortie_pattern):
         """Generate possible suffix."""
+        self.load_localized_names()
+
         if pelt is None or pelt == "SingleColour":
             self.suffix = random.choice(self.names_dict["normal_suffixes"])
         else:
@@ -271,9 +313,24 @@ class Name:
         self.prefix = prefix
         self.suffix = suffix
 
+    def get_specsuffix_name(self, rank: CatRank = CatRank.LEADER):
+        """
+        Return the cat's name with the appropriate special suffix. If no specsuffix is given for that rank, returns
+        default prefix + suffix. If specsuffix_hidden is true, return default prefix + suffix.
+        :param rank: CatRank matching
+        :return: Cat's name string
+        """
+        self.load_localized_names()
+
+        if rank in self.names_dict["special_suffixes"] and not self.specsuffix_hidden:
+            return self.prefix + self.names_dict["special_suffixes"][rank]
+
+        return self.prefix + self.suffix
+
     def __repr__(self):
         # Handles predefined suffixes (such as newborns being kit),
         # then suffixes based on ages (fixes #2004, just trust me)
+        self.load_localized_names()
 
         # Handles suffix assignment with outside cats
         if (

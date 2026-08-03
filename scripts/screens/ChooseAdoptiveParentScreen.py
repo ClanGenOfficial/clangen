@@ -408,7 +408,7 @@ class ChooseAdoptiveParentScreen(Screens):
         """Updates everything in the mates container, including the list of current mates, checkboxes
         and the page"""
 
-        self.all_adoptive_parents = self.chunks(
+        self.all_adoptive_parents = self.get_list_chunks(
             [
                 Cat.fetch_cat(i)
                 for i in self.the_cat.adoptive_parents
@@ -504,7 +504,9 @@ class ChooseAdoptiveParentScreen(Screens):
             container=self.potential_container,
         )
 
-        self.all_potential_parents = self.chunks(self.get_valid_adoptive_parents(), 24)
+        self.all_potential_parents = self.get_list_chunks(
+            self.get_valid_adoptive_parents(), 24
+        )
 
         if "unrelated_only" in self.checkboxes:
             self.checkboxes["unrelated_only"].kill()
@@ -521,7 +523,9 @@ class ChooseAdoptiveParentScreen(Screens):
             container=self.potential_container,
         )
 
-        self.all_potential_parents = self.chunks(self.get_valid_adoptive_parents(), 24)
+        self.all_potential_parents = self.get_list_chunks(
+            self.get_valid_adoptive_parents(), 24
+        )
 
         self.update_potential_mates_container_page()
 
@@ -706,7 +710,7 @@ class ChooseAdoptiveParentScreen(Screens):
             [
                 i18n.t("general.moons_age", count=self.the_cat.moons),
                 i18n.t(f"general.{self.the_cat.status.rank.lower()}", count=1),
-                self.the_cat.genderalign,
+                self.the_cat.genderalign_string,
                 i18n.t(f"cat.personality.{self.the_cat.personality.trait}"),
             ]
         )
@@ -888,7 +892,7 @@ class ChooseAdoptiveParentScreen(Screens):
             [
                 i18n.t("general.moons_age", count=self.selected_cat.moons),
                 i18n.t(f"general.{self.selected_cat.status.rank.lower()}", count=1),
-                self.selected_cat.genderalign,
+                self.selected_cat.genderalign_string,
                 i18n.t(f"cat.personality.{self.selected_cat.personality.trait}"),
             ]
         )

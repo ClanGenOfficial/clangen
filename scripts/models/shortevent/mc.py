@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import List, Union, Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
 from scripts.models.common.age import Age
@@ -13,9 +13,11 @@ from scripts.models.common.relationship_status import (
 )
 from scripts.models.common.skill import Skill
 from scripts.models.common.status import Status
+from scripts.models.shortevent.gender import GenderEnum
 
 
 class MC(BaseModel):
+    model_config = ConfigDict(extra="forbid")
     age: Union[List[Union[Age, Literal["any"]]], MISSING] = Field(
         MISSING,
         description='List of ages m_c can be. If they can be anything, use "any".',
@@ -41,4 +43,7 @@ class MC(BaseModel):
     )
     dies: Union[bool, MISSING] = Field(
         MISSING, description="m_c will die due to this event. Default is False."
+    )
+    gender: Union[List[GenderEnum], MISSING] = Field(
+        MISSING, description="m_c will have this gender."
     )

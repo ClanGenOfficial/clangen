@@ -1,0 +1,16 @@
+[
+    {
+        "id": "gen_romance_low_neg1",
+        "strings": [
+			"m_c didn't spare r_c a second glance."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["romance"],
+                "amount": -5
+            }]
+    }
+]

@@ -28,7 +28,9 @@ These blocks indicate a change in the involved cats' relationships. You can incl
     "mutual": false,
     "values": [],
     "amount": 5,
-    "log": {}
+    "log": {
+        "cats_from": ""
+    }
 }
 ```
 
@@ -46,14 +48,17 @@ For `cats_from` and `cats_to` you may use any of cat abbreviations already utili
 | `patrol`       | If this is a patrol, you can use this to affect all cats within the patrol                                                                                                                           |
 | `clan`         | The entire player Clan's feelings are affected                                                                                                                                                       |
 | `some_clan`    | This will affect a random set of cats equalling 1/8th of the player Clan                                                                                                                             |
-| `low_lawful`   | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All tagged cats with a 0-8 lawfulness facet are affected. MUST BE LISTED AFTER NON-FACET TAGS.       |
-| `high_lawful`  | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 9-16 lawfulness facet are affected. MUST BE LISTED AFTER NON-FACET TAGS. |
-| `low_social`   | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 0-8 sociable facet are affected. MUST BE LISTED AFTER NON-FACET TAGS.    |
-| `high_social`  | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 9-16 sociable facet are affected. MUST BE LISTED AFTER NON-FACET TAGS.   |
-| `low_stable`   | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 0-8 stability facet are affected. MUST BE LISTED AFTER NON-FACET TAGS.   |
-| `high_stable`  | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 9-16 stability facet are affected. MUST BE LISTED AFTER NON-FACET TAGS.  |
-| `low_aggress`  | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 0-8 aggression facet are affected. MUST BE LISTED AFTER NON-FACET TAGS.  |
-| `high_aggress` | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All player Clan cats with a 9-16 aggression facet are affected. MUST BE LISTED AFTER NON-FACET TAGS. |
+| `low_lawful`   | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All cats with a 0-8 lawfulness facet in prior tagged group (eg. Clan, patrol) are affected. MUST BE LISTED AFTER NON-FACET TAGS.       |
+| `high_lawful`  | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All cats with a 9-16 lawfulness facet in prior tagged group (eg. Clan, patrol) are affected. MUST BE LISTED AFTER NON-FACET TAGS. |
+| `low_social`   | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All cats with a 0-8 sociable facet in prior tagged group (eg. Clan, patrol) are affected. MUST BE LISTED AFTER NON-FACET TAGS.    |
+| `high_social`  | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All cats with a 9-16 sociable facet in prior tagged group (eg. Clan, patrol) are affected. MUST BE LISTED AFTER NON-FACET TAGS.   |
+| `low_stable`   | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All cats with a 0-8 stability facet in prior tagged group (eg. Clan, patrol) are affected. MUST BE LISTED AFTER NON-FACET TAGS.   |
+| `high_stable`  | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All cats with a 9-16 stability facet in prior tagged group (eg. Clan, patrol) are affected. MUST BE LISTED AFTER NON-FACET TAGS.  |
+| `low_aggress`  | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All cats with a 0-8 aggression facet in prior tagged group (eg. Clan, patrol) are affected. MUST BE LISTED AFTER NON-FACET TAGS.  |
+| `high_aggress` | Use in conjunction with other tags to constrain the affected cats. **It cannot be used alone.** All cats with a 9-16 aggression facet in prior tagged group (eg. Clan, patrol) are affected. MUST BE LISTED AFTER NON-FACET TAGS. |
+
+!!! tip
+    To *exclude* certain cats from the relationship change, you can utilize any of these abbreviations as an [exclusionary tag](tag-lists.md/#exclusionary-tags)! So, for example, you could write `["patrol", "-p_l", "-app1"]` to affect the entire patrol *except* `p_l` and `app1`. Keep in mind that the order of abbreviations matters here! You can only *remove* cats from previously stated groups. So if we were to reverse the previous example like this: `["-p_l", "-app1", "patrol"]`, then it wouldn't work correctly, as `patrol` is being stated last and the code didn't know what group to remove `p_l` and `app1` from. 
 
 ### mutual:bool
 Optional. Controls if the relation effect will be applied in both directions. Defaults to False.
@@ -75,13 +80,26 @@ The relationship types that will be changed.
 | `respect` | Respect is affected.                                                                                                                                                                                                 |
 
 ### amount:int
-The amount that the chosen relationship types will change by. 8 is a low amount, 16 is a high amount.
+The amount that the chosen relationship types will change by.
+
+
+| Amount | Intensity | Meaning                                                                                                                                                                              |
+|--------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `5`    | Low       | An incidental interaction. Perhaps these cats chatted and gained 5 comfort toward each other.                                                                                             |
+| `10`   | Medium    | A regular interaction. Perhaps these cats worked on difficult fighting exercises and gained 10 trust in each other.                                                               |
+| `15`   | High      | A meaningful interaction. Perhaps these cats are mentor and apprentice, bonding on a one-on-one training patrol, and gained 15 respect toward each other. |
+| `20`   | Very High | A relationship-defining event. Perhaps one cat saved another cat's life, and the other cat gained 20 trust toward them.                                                              |
+| `50`   | Extreme   | A life-altering event. Only to be used in extreme rare cases such as a lawful cat witnessing a cold-blooded murder.                                                                   |
+
+!!! warning "If the relationship change affects multiple values..."
+    The amount will affect *all* of those values. Be careful with high amounts when applied to multiple relationship values. For high intensity changes (15+), it's best to affect only one (or two at most) value.
+
 
 ### log:dict[str]
 The string that will display within the relationship logs. A string can be specified for both the `cats_from` and `cats_to` groups. 
 
 !!! tip "Writing Logs"
-    When writing a log string, you can utilize the same abbreviations that you have already used within the event format. You can also use the abbreviations `from_cat` and `to_cat` to utilize names and pronouns for individual cats within their respective groups, which is handy when you've indicated a change should occur across multiple cats. For example: "to_cat was part of the patrol that invited n_c:0 to c_n." would appear in the log as "PatrolCat was part of the patrol that invited NewCat to ExampleClan."
+    When writing a log string, you can utilize the same abbreviations that you have already used within the event format. You can also use the abbreviations `cat_from` and `cat_to` to utilize names and pronouns for individual cats within their respective groups, which is handy when you've indicated a change should occur across multiple cats. For example: "cat_to was part of the patrol that invited n_c:0 to c_n." would appear in the log as "PatrolCat was part of the patrol that invited NewCat to ExampleClan."
 
 ```json
 "log": {

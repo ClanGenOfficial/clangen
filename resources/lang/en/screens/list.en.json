@@ -15,7 +15,7 @@
         "filter_id": "ID",
         "filter_rank": "rank",
         "filter_name": "name",
-        "filter_reverse_name": "name \u2193"
-        
+        "filter_reverse_name": "name \u2193",
+        "temper": "%{group} is seen as %{temper}."
     }
 }

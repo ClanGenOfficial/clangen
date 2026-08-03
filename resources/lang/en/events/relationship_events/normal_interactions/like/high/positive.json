@@ -1,0 +1,458 @@
+[
+    {
+        "id": "like_inc_high1",
+        "strings": [
+            "m_c wants to spend more time with r_c!",
+            "m_c is always happy to be around r_c.",
+            "m_c talks all the time about r_c.",
+            "m_c thinks very often about r_c.",
+            "m_c defends r_c in conversations.",
+            "m_c wants r_c to stay safe and happy.",
+            "m_c has a lot of fun with r_c!",
+            "r_c always knows how to make m_c laugh.",
+            "m_c doesn't think there's ever a dull moment with r_c.",
+            "m_c has had a great time hanging out with r_c lately.",
+            "m_c makes plans in hopes that r_c will get involved.",
+            "m_c won't stand for slander about r_c.",
+            "m_c checks in on r_c every day.",
+            "m_c is glad to have a Clanmate like r_c."
+        ]
+    },
+    {
+        "id": "like_inc_high2",
+        "strings": [
+            "m_c is having a wonderful time discussing recent Clan news with r_c.",
+            "m_c and r_c enjoy each other's company.",
+            "While looking at the stars, m_c and r_c make up some constellations.",
+            "m_c eats with r_c all the time!",
+            "m_c dispels a bad rumor about r_c.",
+            "m_c and r_c plan all their days together.",
+            "m_c and r_c always have something to share with each other.",
+            "The whole Clan notices how close m_c and r_c are lately.",
+            "m_c is happy to run into r_c today."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "id": "like_inc_high3",
+        "strings": [
+            "m_c thinks about how lucky {PRONOUN/m_c/subject} {VERB/m_c/are/is} to have someone like r_c as a friend.",
+            "m_c considers r_c to be one of {PRONOUN/m_c/poss} close friends.",
+            "m_c always has something good to say about r_c.",
+            "m_c can think of a hundred good things to say about r_c.",
+            "Some of m_c's favorite memories are with r_c.",
+            "m_c couldn't imagine how boring things would be without a friend like r_c."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "enjoys"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "like_inc_high4",
+        "strings": [
+            "m_c tells a joke that only r_c can understand.",
+            "m_c is always happy to share a piece of fresh-kill with r_c.",
+            "m_c and r_c reminisce about happy memories together.",
+            "m_c purrs whenever r_c comes around.",
+            "m_c and r_c don't start their days without one another.",
+            "m_c saved a piece of fresh-kill that {PRONOUN/m_c/subject} {VERB/m_c/know/knows} is r_c's favorite."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "cherishes"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "id": "like_inc_high5",
+        "strings": [
+            "m_c can't imagine {PRONOUN/m_c/poss} life if {PRONOUN/m_c/subject} never met r_c.",
+            "m_c thinks of r_c as {PRONOUN/m_c/poss} best friend.",
+            "Wherever r_c is found, m_c is always with {PRONOUN/r_c/object}.",
+            "Clanmates are envious of m_c and r_c's bond.",
+            "m_c and r_c can always rely on each other.",
+            "There's nothing that can separate m_c and r_c.",
+            "The first one to panic when r_c gets hurt is always m_c.",
+            "The Clan notices that m_c and r_c have picked up each other's mannerisms.",
+            "m_c and r_c are inseparable, and can almost always be found with each other."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "cherishes"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "like_inc_high6",
+        "strings": [
+            "m_c thinks r_c tells the best stories.",
+            "m_c doesn't understand why no one visits r_c to listen to {PRONOUN/r_c/poss} great stories.",
+            "m_c always brings food to r_c so {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} have to walk to the fresh-kill pile.",
+            "m_c listens to r_c talk about what life was like when {PRONOUN/r_c/subject} {VERB/r_c/were/was} young.",
+            "m_c values r_c's insights on life."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "elder"
+                ]
+            }
+        }
+    },
+    {
+        "id": "like_kit_inc_high",
+        "strings": [
+            "m_c and r_c agree to be best friends forever.",
+            "m_c and r_c are absolutely inseparable.",
+            "m_c and r_c only ever want to play with each other.",
+            "m_c doesn't want to do anything without r_c.",
+            "m_c wants to stay up all night playing with r_c.",
+            "m_c and r_c develop a secret language together.",
+            "m_c can't wait to be apprentices with r_c."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "kitten"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "kitten"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "likes"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like",
+                    "comfort",
+                    "trust"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "id": "like_inc_high_grumpymedcat1",
+        "strings": [
+            "m_c grumbles while checking on r_c, but r_c appreciates the care and hard work m_c does anyways.",
+            "m_c complains when treating a very minor wound r_c has, but obviously cares very much even if {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} show it.",
+            "m_c rolls {PRONOUN/m_c/poss} eyes while listening to r_c's most recent complaint, but makes sure to thoroughly check {PRONOUN/r_c/object} for any ailments.",
+            "r_c is a little hesitant to ask m_c to check on something minor, but knows that even though m_c can be grumpy sometimes, {PRONOUN/m_c/subject} always takes care of {PRONOUN/r_c/object}."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "medicine cat",
+                    "medicine cat apprentice"
+                ],
+                "stat": {
+                    "trait": [
+                        "cold",
+                        "grumpy"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "like_incfromneg_high1",
+        "strings": [
+            "m_c is surprised to hear r_c express an ideal {PRONOUN/m_c/subject} can agree with.",
+            "m_c didn't realize how generous r_c could be.",
+            "m_c sees r_c stand up for a Clanmate despite the pushback from {PRONOUN/r_c/poss} peers.",
+            "m_c overhears r_c saying something kind about {PRONOUN/m_c/object}.",
+            "m_c tries to look at r_c's actions from another perspective and starts to like {PRONOUN/r_c/object} more.",
+            "m_c notices that some of {PRONOUN/m_c/poss} Clanmates talk very highly of r_c.",
+            "The way r_c jumps to help a Clanmate makes m_c think {PRONOUN/r_c/subject} might not be all that bad.",
+            "There's something soothing about r_c that m_c never realized before.",
+            "m_c realizes how smart r_c is when it comes to certain things.",
+            "m_c talks to one of r_c's friends and begins to understand why others like {PRONOUN/r_c/object}.",
+            "m_c considers how to make amends with r_c after a long night of deliberation."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "dislikes"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "like_incfromneg_high2",
+        "strings": [
+            "m_c and r_c joke around about how bad the other Clans smell.",
+            "r_c can't help but laugh when m_c tells a funny joke.",
+            "A Clanmate claims that m_c and r_c were sharing tongues.",
+            "m_c and r_c sincerely apologize to one another.",
+            "r_c admits that m_c did something clever.",
+            "m_c and r_c fight over a piece of prey, but soon decide to share it instead.",
+            "The Clan has noticed m_c and r_c are smiling at each other more today.",
+            "m_c and r_c realize they have more in common than previously thought.",
+            "r_c thinks that m_c isn't so bad after all."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "dislikes_only"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "id": "like_incfromneg_high3",
+        "strings": [
+            "m_c reconsiders the depth of {PRONOUN/m_c/poss} hatred for r_c.",
+            "m_c isn't sure {PRONOUN/m_c/subject} can ever truly forgive r_c, but the strength of {PRONOUN/m_c/poss} anger has begun to fade."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "hates"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "like_gathering_inc_high",
+        "strings": [
+            "m_c and r_c heckled another Clan at the Gathering together.",
+            "m_c and r_c defended their Clan at the Gathering together."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "-kitten"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "-kitten"
+                ]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "id": "like_patrol_incfromneg_high3",
+        "strings": [
+            "m_c and r_c worked well together on a patrol.",
+            "When they return from a patrol, m_c and r_c seem more at peace with each other than usual.",
+            "m_c and r_c had a great time on a patrol."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader",
+                    "medicine cat apprentice",
+                    "medicine cat"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "apprentice",
+                    "warrior",
+                    "deputy",
+                    "leader",
+                    "medicine cat apprentice",
+                    "medicine cat"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "dislikes_only"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": 15
+            }
+        ]
+    },
+    {
+        "id": "daydreamer_inc_high",
+        "strings": [
+            "m_c watches fondly as r_c explains the lore of the story in {PRONOUN/r_c/poss} head.",
+            "m_c adores r_c's active imagination."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "trait": [
+                        "daydreamer"
+                    ]
+                }
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "parent/child"
+                ]
+            }
+        ]
+    }
+]

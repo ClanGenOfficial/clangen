@@ -2,8 +2,6 @@ from enum import Enum
 
 
 class KitTrait(Enum):
-    bouncy = "bouncy"
-    not_bouncy = "-bouncy"
     unruly = "unruly"
     not_unruly = "-unruly"
     shy = "shy"

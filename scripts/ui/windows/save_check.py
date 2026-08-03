@@ -23,23 +23,16 @@ from scripts.ui.scale import ui_scale, ui_scale_dimensions
 
 class SaveCheckWindow(GameWindow):
     def __init__(self, last_screen, is_main_menu, mm_btn):
-        if game.is_close_menu_open:
-            return
-        game.is_close_menu_open = True
         super().__init__(
             ui_scale(pygame.Rect((250, 200), (300, 200))),
         )
 
-        self.clan_name = "UndefinedClan"
-        if game.clan:
-            self.clan_name = f"{game.clan.name}Clan"
         self.last_screen = last_screen
         self.isMainMenu = is_main_menu
         self.mm_btn = mm_btn
         # adding a variable for starting_height to make sure that this menu is always on top
         top_stack_menu_layer_height = 10000
         if self.isMainMenu:
-            self.mm_btn.disable()
             self.main_menu_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((0, 155), (152, 30))),
                 i18n.t("buttons.main_menu_lower"),
@@ -65,6 +58,7 @@ class SaveCheckWindow(GameWindow):
             "windows.save_check_message",
             ui_scale(pygame.Rect((20, 20), (260, -1))),
             line_spacing=1,
+            starting_height=top_stack_menu_layer_height,
             object_id="#text_box_30_horizcenter",
             container=self,
         )
@@ -114,30 +108,27 @@ class SaveCheckWindow(GameWindow):
         self.main_menu_button.enable()
 
     def process_event(self, event):
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+        if event.type == pygame_gui.UI_BUTTON_PRESSED:
             if event.ui_element == self.main_menu_button:
                 if self.isMainMenu:
-                    game.is_close_menu_open = False
                     self.mm_btn.enable()
                     game.last_screen_forupdate = switch_get_value(Switch.cur_screen)
                     switch_set_value(Switch.cur_screen, GameScreen.START)
                     game.switch_screens = True
                     self.kill()
                 else:
-                    game.is_close_menu_open = False
                     quit_game(savesettings=False, clearevents=False)
             elif event.ui_element == self.save_button:
                 if game.clan is not None:
                     self.save_button_saving_state.show()
                     self.save_button.disable()
-                    save_cats(switch_get_value(Switch.clan_name), Cat, game)
+                    save_cats(switch_get_value(Switch.clan_save_id), Cat, game)
                     game.clan.save_clan()
                     game.clan.save_pregnancy(game.clan)
                     game.save_events()
                     self.save_button_saving_state.hide()
                     self.save_button_saved_state.show()
             elif event.ui_element == self.back_button:
-                game.is_close_menu_open = False
                 if self.isMainMenu:
                     self.mm_btn.enable()
 

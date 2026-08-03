@@ -18,7 +18,7 @@ from scripts.ui.scale import ui_scale
 class NoMediatorsWindow(GameWindow):
     def __init__(self):
         super().__init__(
-            ui_scale(pygame.Rect((300, 200), (250, 170))),
+            ui_scale(pygame.Rect((250, 200), (300, 170))),
             window_display_title="No Mediators",
             click_outside_to_close=False,
         )

@@ -1,8 +1,9 @@
 import os
 import shutil
+from typing import List
 import unittest
 from pathlib import Path
-from random import choice, Random
+from random import choice, shuffle, randint, Random
 from uuid import uuid4
 
 from scripts import events
@@ -16,6 +17,7 @@ from scripts.clan_package.get_clan_cats import (
     get_living_clan_cat_count,
 )
 from scripts.clan_package.settings import set_clan_setting
+from scripts.events_module.patrol.patrol import Patrol
 from scripts.events_module.short.short_event_generation import (
     filter_events,
 )
@@ -41,8 +43,8 @@ class TestEvents(unittest.TestCase):
         game.starclan = Afterlife()
         game.dark_forest = Afterlife()
         game.clan = Clan(
-            name=cls.test_clan_name,
-            displayname="Test",
+            save_id=cls.test_clan_name,
+            display_name="Test",
             leader=cat_factory.create_cat(rank=CatRank.LEADER),
             deputy=cat_factory.create_cat(rank=CatRank.DEPUTY),
             medicine_cat=cat_factory.create_cat(rank=CatRank.MEDICINE_CAT),
@@ -73,7 +75,7 @@ class TestEvents(unittest.TestCase):
         game.herb_events_list.clear()
         game.clan.herb_supply.start_storage(15)
         game.clan.save_herb_supply(game.clan)
-        Cat.grief_strings.clear()
+        game.clan.grief_strings.clear()
         Cat.sort_cats()
         # prevent them from just dying of starvation
         set_clan_setting("business as usual", False)
@@ -87,8 +89,8 @@ class TestEvents(unittest.TestCase):
         """
         rempath = get_save_dir() + "/" + cls.test_clan_name
         shutil.rmtree(rempath)
-        if os.path.exists(rempath + "clan.json"):
-            os.remove(rempath + "clan.json")
+        if os.path.exists(rempath + "/clan.json"):
+            os.remove(rempath + "/clan.json")
 
         if cls.previously_loaded_clan:
             with open(Path(get_save_dir()) / "currentclan.txt", "w") as currentclanfile:
@@ -141,6 +143,37 @@ class TestEvents(unittest.TestCase):
                                 )
                             )
                         )
+
+                    can_patrol = []
+                    for cat in Cat.all_cats_list:
+                        if (
+                            cat.in_camp
+                            and cat.ID not in game.patrolled
+                            and cat.status.rank.is_allowed_to_patrol()
+                            and cat.status.alive_in_player_clan
+                            and not cat.not_working()
+                        ):
+                            can_patrol.append(cat)
+                    shuffle(can_patrol)
+
+                    while can_patrol:
+                        num_to_patrol = min(len(can_patrol), randint(1, 6))
+                        to_patrol: List[Cat] = can_patrol[:num_to_patrol]
+                        meds_to_patrol = [
+                            cat
+                            for cat in to_patrol
+                            if cat.status.rank.is_any_medicine_rank()
+                        ]
+                        if meds_to_patrol:
+                            patrol_type = "med"
+                        else:
+                            patrol_type = "general"
+
+                        new_patrol = Patrol()
+                        new_patrol.setup_patrol(to_patrol, patrol_type)
+                        new_patrol.proceed_patrol("proceed")
+
+                        can_patrol = can_patrol[num_to_patrol:]
 
                 if not _ % 100:
                     print(f"CLANCATS ALIVE: {get_living_clan_cat_count(Cat)}")

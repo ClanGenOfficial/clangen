@@ -31,7 +31,8 @@ def generate_sprite(
     :param disable_sick_sprite: If true, never use the not_working lineart.
                     If false, use the cat.not_working() to determine the no_working art.
     """
-    sprite_poses = sprites.POSE_DATA["poses"]
+    poses: list = sprites.POSE_DATA["poses"]
+    sprite_poses = {x: str(poses.index(x)) for x in poses}
 
     if life_state is not None:
         age = life_state
@@ -44,7 +45,7 @@ def generate_sprite(
         dead = cat.dead
 
     # setting the cat_sprite (bc this makes things much easier)
-
+    cat_sprite = ""
     # sick sprites
     if (
         not disable_sick_sprite
@@ -53,7 +54,22 @@ def generate_sprite(
         and constants.CONFIG["cat_sprites"]["sick_sprites"]
     ):
         if age in (CatAge.KITTEN, CatAge.ADOLESCENT):
-            cat_sprite = sprite_poses["sick_young0"]
+            # check if we should default to the old young sprite (this is to be kind to modders)
+            old_young_sprite = "sick_young0" in sprite_poses
+            if old_young_sprite:
+                cat_sprite = "sick_young0"
+            # otherwise we use the age specific ones
+            elif age == CatAge.KITTEN:
+                cat_sprite = sprite_poses["sick_kitten0"]
+            elif age == CatAge.ADOLESCENT:
+                cat_sprite = sprite_poses["sick_adolescent0"]
+        elif age == CatAge.SENIOR:
+            # again, being kind to modders and defaulting to the sick adult if there's no senior
+            cat_sprite = (
+                sprite_poses["sick_adult0"]
+                if "sick_senior0" not in sprite_poses
+                else sprite_poses["sick_senior0"]
+            )
         else:
             cat_sprite = sprite_poses["sick_adult0"]
 
@@ -133,7 +149,17 @@ def generate_sprite(
 
         # draw white patches
         if cat.pelt.white_patches is not None:
-            sprite_name = f"{sprites.WHITE_DATA['spritesheet']}{cat.pelt.white_patches}{cat_sprite}"
+            patch = cat.pelt.white_patches
+            if patch in cat.pelt.mostly_white or patch == "FULLWHITE":
+                spritesheet = sprites.WHITE_MOSTLY_DATA["spritesheet"]
+            elif patch in cat.pelt.high_white:
+                spritesheet = sprites.WHITE_HIGH_DATA["spritesheet"]
+            elif patch in cat.pelt.mid_white:
+                spritesheet = sprites.WHITE_MID_DATA["spritesheet"]
+            else:
+                spritesheet = sprites.WHITE_LITTLE_DATA["spritesheet"]
+
+            sprite_name = f"{spritesheet}{patch}{cat_sprite}"
             white_patches = sprites.sprites[sprite_name].copy()
 
             # Apply tint to white patches.
@@ -157,9 +183,7 @@ def generate_sprite(
         # draw vit & points
 
         if cat.pelt.points:
-            sprite_name = (
-                f"{sprites.WHITE_DATA['spritesheet']}{cat.pelt.points}{cat_sprite}"
-            )
+            sprite_name = f"{sprites.WHITE_POINT_DATA['spritesheet']}{cat.pelt.points}{cat_sprite}"
 
             points = sprites.sprites[sprite_name].copy()
             if (
@@ -179,9 +203,7 @@ def generate_sprite(
             new_sprite.blit(points, (0, 0))
 
         if cat.pelt.vitiligo:
-            sprite_name = (
-                f"{sprites.WHITE_DATA['spritesheet']}{cat.pelt.vitiligo}{cat_sprite}"
-            )
+            sprite_name = f"{sprites.WHITE_VITILIGO_DATA['spritesheet']}{cat.pelt.vitiligo}{cat_sprite}"
 
             new_sprite.blit(
                 sprites.sprites[sprite_name],
@@ -193,13 +215,18 @@ def generate_sprite(
             f"{sprites.EYE_DATA['spritesheet'][0]}{cat.pelt.eye_colour}{cat_sprite}"
         )
         eyes = sprites.sprites[sprite_name].copy()
-        if cat.pelt.eye_colour2 != None:
-            sprite_name = f"{sprites.EYE_DATA['spritesheet'][1]}{cat.pelt.eye_colour2}{cat_sprite}"
-            eyes.blit(
-                sprites.sprites[sprite_name],
-                (0, 0),
-            )
         new_sprite.blit(eyes, (0, 0))
+        if cat.pelt.eye_colour2 != None:
+            heterochromia_name = f"{sprites.EYE_DATA['spritesheet'][0]}{cat.pelt.eye_colour2}{cat_sprite}"
+            eyes2 = sprites.sprites[heterochromia_name].copy()
+            eyes2.blit(
+                sprites.sprites["heterochromiamask" + cat_sprite],
+                (0, 0),
+                special_flags=pygame.BLEND_RGBA_MULT,
+            )
+
+            # Add eye onto cat
+            new_sprite.blit(eyes2, (0, 0))
 
         if not scars_hidden:
             for scar in cat.pelt.scars:
@@ -400,7 +427,7 @@ def generate_sprite(
             elif cat.status.group == CatGroup.UNKNOWN_RESIDENCE:
                 # underlay
                 temp_sprite.blit(
-                    sprites.sprites["line_ur_overlay" + cat_sprite],
+                    sprites.sprites["line_ur_underlay" + cat_sprite],
                     (0, 0),
                 )
 

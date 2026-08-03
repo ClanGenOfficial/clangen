@@ -237,7 +237,7 @@ Pop-Culture Examples: Cloudstar (Warrior Cats), Zazu (Lion King); C-3PO (Star Wa
 * “I could pretend to have characteristics of many other traits if it suits my goals.”  
 * “I may understand how to steer a conversation to my advantage, and I'm good at 'figuring out' other cats."  
 * “I will use my skills to help the cats I care about from behind-the-scenes.”  
-* “I may share some traits with **[sneaky](#sneaky), [ambitious](#ambitious), and [playful](#playful)** cats.”
+* “I may share some traits with [ambitious](#ambitious), and [playful](#playful)** cats.”
 
 **Pop-Culture Examples:** Hawkfrost (Warrior Cats); Sherlock Holmes (Original \+ BBC); Bugs Bunny; Scar (The Lion King); Loki (Marvel); Prince Hans (Frozen); Vash the Stampede (Trigun); Iago (Othello); Dr. Facilier (The Princess and the Frog); Garak (DS9)
 
@@ -357,15 +357,15 @@ Pop-Culture Examples: Cloudstar (Warrior Cats), Zazu (Lion King); C-3PO (Star Wa
 
 ### **Loving**
 
-***\[0\] lawfulness | \[0\] sociability | \[0\] aggression | \[0\] stability*** 
+***\[6, 13\] lawfulness | \[9, 16\] sociability | \[0, 8\] aggression | \[5, 14\] stability*** 
 
-* “I often think of other’s needs as much or even before my own.”  
-* “I may get attached too quickly to those I care about, making it harder to cut ties.”  
-* “My willingness to assist others may make it easier to take advantage of me.”  
-* “I am often seen as trustworthy or familiar to other cats.”  
-* “I might share some traits with **[compassionate](#compassionate), [sincere](#sincere), and [loyal](#loyal)** cats.”
+* "I put my loved ones above all else."
+* "I may become infatuated easily."
+* "I'm willing to sacrifice both myself and other people if it was for the sake of someone I love."
+* "At my worst, my love and care can devolve into possessiveness or obsession over my crush or mate."
+* “I might share some traits with **[compassionate](#compassionate), [charismatic](#charismatic), and [loyal](#loyal)** cats.”
 
-**Pop-Culture Examples:** Leafpool (Warrior Cats); Jake (Adventure Time); Briarlight (Warrior Cats); Anna (Frozen); Klaus (Klaus); Antonio (Twelfth Night);  Kanga (Winnie the Pooh)
+**Pop-Culture Examples:** Cloudtail (Warrior Cats); Ashfur (Warrior Cats); Marinette (Miraculous Ladybug); Rosetail (Warrior Cats); Betty (Adventure Time); Emma (the Promised Neverland); Tighten (Megamind)
 
 ---
 
@@ -498,20 +498,6 @@ Pop-Culture Examples: Cloudstar (Warrior Cats), Zazu (Lion King); C-3PO (Star Wa
 
 ---
 
-### **Sneaky**
-
-***\[0,7\] lawfulness | \[0,7\] sociability | \[6,12\] aggression | \[8,16\] stability*** 
-
-* “I value privacy and can often be seen as shifty or suspicious whenever I take time to myself.”  
-* "I like to figure out secrets, and keep them close to my chest in case I need them later."  
-* “I put little stock in rules and I believe lying isn't always wrong; it’s better to ask forgiveness than permission.”  
-* “I learn a lot of things by hanging on the sidelines and watching things unfold."  
-* “I might share some traits with **[cunning](#cunning), [cold](#cold), and [troublesome](#troublesome)** cats.”
-
-**Pop-Culture Examples:** Darkstripe (Warrior Cats); Sombra (Overwatch); Antonio (The Tempest); Redd (Animal Crossing); Randall Boggs (Monsters Inc.); Axel (Kingdom Hearts)
-
----
-
 ### **Strange**
 
 ***\[5,10\] lawfulness | \[0,8\] sociability | \[5,10\] aggression | \[5,10\] stability*** 
@@ -637,7 +623,7 @@ Pop-Culture Examples: Cloudstar (Warrior Cats), Zazu (Lion King); C-3PO (Star Wa
 * "Rules are just the weak kits' way of keeping us strong ones down."
 * "Nobody's mean to my littermates but me!"
 * “I might share some traits with **[fearless](#fearless), [know-it-all](#know-it-all), and [impulsive](#impulsive)** kits.”
-* "I might grow up to be a **[cold](#cold), [sneaky](#sneaky), or [adventurous](#adventurous)** cat."
+* "I might grow up to be a **[cold](#cold), or [adventurous](#adventurous)** cat."
 
 **Pop-Culture Examples:** Dudley Dursley (Harry Potter)
 

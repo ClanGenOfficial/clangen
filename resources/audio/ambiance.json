@@ -1,0 +1,32 @@
+{
+    "menu_playlist": ["menu_ambiance.mp3"],
+
+    "seasonal": {
+        "newleaf": ["seasonal/newleaf_baby_birds1.mp3", "seasonal/newleaf_baby_birds2.mp3", "seasonal/newleaf_rain.mp3"],
+        "greenleaf": ["seasonal/greenleaf_cicadas.mp3", "seasonal/greenleaf_crickets.mp3", "seasonal/greenleaf_thunderstorm.mp3"],
+        "leaf-fall": ["seasonal/leaffall_crows.mp3", "seasonal/leaffall_squirrel_fly.mp3", "seasonal/leaffall_rain.mp3"],
+        "leaf-bare": ["seasonal/leafbare_geese.mp3", "seasonal/leafbare_howling_wind.mp3", "seasonal/leafbare_snow_steps.mp3"]
+    },
+
+    "beach": {
+        "base": ["biome_beach/beach_base.mp3"],
+        "fjord": ["biome_beach/fjord_pebble1.mp3", "biome_beach/fjord_pebble2.mp3", "biome_beach/fjord_pebble3.mp3"],
+        "shipwreck": ["biome_beach/shipwreck_creak1.mp3", "biome_beach/shipwreck_creak2.mp3"]
+    },
+    "forest": {
+        "base": ["biome_forest/forest_base.mp3"],
+        "lakeside": ["biome_forest/lakeside_splash_and_loons.mp3", "biome_forest/lakeside_waves.mp3", "biome_forest/lakeside_wind.mp3"]
+    },
+    "mountainous": {
+        "base": ["biome_mountainous/mountain_base.mp3"],
+        "cavern": ["biome_mountainous/cavern_bats.mp3", "biome_mountainous/cavern_drip1.mp3", "biome_mountainous/cavern_dripping2.mp3"],
+        "crystal_river": ["biome_mountainous/crystal_river_synth.mp3", "biome_mountainous/crystal_river_water1.mp3", "biome_mountainous/crystal_river_water2.mp3"]
+    },
+    "plains": {
+        "base": ["biome_plains/plains_base.mp3"],
+        "tunnels": ["biome_plains/tunnels_digging1.mp3", "biome_plains/tunnels_digging2.mp3"],
+        "wastelands": ["biome_plains/wasteland_construction.mp3", "biome_plains/wasteland_crow.mp3", "biome_plains/wasteland_hawk.mp3", "biome_plains/wasteland_squeaky1.mp3", "biome_plains/wasteland_squeaky2.mp3"]
+    }
+
+
+}

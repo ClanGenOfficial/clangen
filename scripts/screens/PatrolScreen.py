@@ -18,6 +18,7 @@ from .Screens import Screens
 from .enums import GameScreen
 from ..clan_package.settings import get_clan_setting
 from ..game_structure import image_cache, constants
+from ..game_structure.game.switches import switch_set_value, Switch
 from ..game_structure.game.settings import game_setting_get
 from ..cat.enums import CatRank
 from ..game_structure.propagating_thread import PropagatingThread
@@ -25,6 +26,7 @@ from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.icon import Icon
+from ..ui.windows.rel_change_details import RelChangeDetailWindow
 
 
 class PatrolScreen(Screens):
@@ -64,6 +66,7 @@ class PatrolScreen(Screens):
         self.current_patrol = None
         self.display_text = ""
         self.results_text = ""
+        self.rel_results = {}
         self.start_patrol_thread: Optional[PropagatingThread] = None
         self.proceed_patrol_thread: Optional[PropagatingThread] = None
         self.outcome_art = None
@@ -72,6 +75,15 @@ class PatrolScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_DOUBLE_CLICKED:
             if self.patrol_stage == "choose_cats":
                 self.handle_choose_cats_events(event)
+
+        elif event.type == pygame_gui.UI_TEXT_BOX_LINK_CLICKED:
+            if event.link_target.startswith("cat://"):
+                cat_id = event.link_target.split("cat://", maxsplit=1)[1]
+                cat = Cat.fetch_cat(cat_id)
+                if isinstance(cat, Cat):
+                    switch_set_value(Switch.cat, cat.ID)
+                    game.last_screen_forProfile = GameScreen.PATROL
+                    self.change_screen(GameScreen.PROFILE)
 
         elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if self.patrol_stage == "choose_cats":
@@ -84,7 +96,7 @@ class PatrolScreen(Screens):
             self.menu_button_pressed(event)
             self.mute_button_pressed(event)
 
-        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
+        elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 self.change_screen(GameScreen.LIST)
             # elif event.key == pygame.K_RIGHT:
@@ -289,13 +301,11 @@ class PatrolScreen(Screens):
         elif event.ui_element == self.elements["clan_return"]:
             self.in_progress_data = None
             self.change_screen(GameScreen.CAMP)
+        elif event.ui_element == self.elements.get("rel_detail"):
+            RelChangeDetailWindow(self.rel_results)
 
     def screen_switches(self):
         super().screen_switches()
-        self.set_disabled_menu_buttons(["patrols"])
-        self.update_heading_text(f"{game.clan.displayname}Clan")
-        self.show_mute_buttons()
-        self.show_menu_buttons()
 
         if (
             self.in_progress_data is not None
@@ -306,6 +316,11 @@ class PatrolScreen(Screens):
         else:
             self.in_progress_data = None
             self.open_choose_cats_screen()
+
+        self.set_disabled_menu_buttons(["patrols"])
+        self.update_heading_text("general.clan", text_kwargs={"name": game.clan.prefix})
+        self.show_mute_buttons()
+        self.show_menu_buttons()
 
     def display_change_save(self) -> Dict:
         if self.start_patrol_thread is not None and self.start_patrol_thread.is_alive():
@@ -331,6 +346,7 @@ class PatrolScreen(Screens):
 
         variable_dict["display_text"] = self.display_text
         variable_dict["results_text"] = self.results_text
+        variable_dict["rel_results"] = self.rel_results.copy()
         variable_dict["outcome_art"] = self.outcome_art
 
         variable_dict["current_moon"] = game.clan.age
@@ -841,17 +857,20 @@ class PatrolScreen(Screens):
             if x != self.patrol_obj.patrol_leader:
                 members.append(str(x.name))
         for x in self.patrol_obj.patrol_cats:
-            if x.personality.trait not in traits:
-                traits.append(x.personality.trait)
+            if (t := i18n.t(f"cat.personality.{x.personality.trait}")) not in traits:
+                traits.append(t)
 
-            if x.skills.primary and x.skills.primary.get_short_skill() not in skills:
-                skills.append(x.skills.primary.get_short_skill())
+            if (
+                x.skills.primary
+                and (skill := x.skills.primary.get_short_skill_string()) not in skills
+            ):
+                skills.append(skill)
 
             if (
                 x.skills.secondary
-                and x.skills.secondary.get_short_skill() not in skills
+                and (skill := x.skills.secondary.get_short_skill_string()) not in skills
             ):
-                skills.append(x.skills.secondary.get_short_skill())
+                skills.append(skill)
 
         self.elements["patrol_info"] = pygame_gui.elements.UITextBox(
             "screens.patrol.label_patrol_info",
@@ -870,7 +889,7 @@ class PatrolScreen(Screens):
 
         # Draw Patrol Cats
         pos_x = 400
-        pos_y = 475
+        pos_y = 488
         for u in range(6):
             if u < len(self.patrol_obj.patrol_cats):
                 self.elements["cat" + str(u)] = pygame_gui.elements.UIImage(
@@ -918,18 +937,21 @@ class PatrolScreen(Screens):
             (
                 self.display_text,
                 self.results_text,
+                self.rel_results,
                 self.outcome_art,
             ) = self.patrol_obj.proceed_patrol("decline")
         elif user_input in ["antag", "antagonize"]:
             (
                 self.display_text,
                 self.results_text,
+                self.rel_results,
                 self.outcome_art,
             ) = self.patrol_obj.proceed_patrol("antag")
         else:
             (
                 self.display_text,
                 self.results_text,
+                self.rel_results,
                 self.outcome_art,
             ) = self.patrol_obj.proceed_patrol("proceed")
 
@@ -966,6 +988,18 @@ class PatrolScreen(Screens):
             object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
             manager=MANAGER,
         )
+
+        if self.rel_results:
+            self.elements["rel_detail"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((500, -2), (36, 36))),
+                Icon.MAGNIFY,
+                get_button_dict(ButtonStyles.ICON_TAB_BOTTOM, (36, 36)),
+                object_id="@buttonstyles_squoval",
+                manager=MANAGER,
+                anchors={"top_target": self.elements["event_bg"]},
+                tool_tip_text="see relationship changes",
+            )
+
         self.elements["patrol_results"].set_text(self.results_text)
 
         self.elements["patrol_text"].set_text(self.display_text)
@@ -1002,7 +1036,7 @@ class PatrolScreen(Screens):
         if not self.able_cats:
             all_pages = []
         else:
-            all_pages = self.chunks(self.able_cats, 15)
+            all_pages = self.get_list_chunks(self.able_cats, 15)
 
         self.current_page = max(1, min(self.current_page, len(all_pages)))
 
@@ -1099,18 +1133,20 @@ class PatrolScreen(Screens):
             for x in self.current_patrol:
                 if (
                     x.skills.primary
-                    and x.skills.primary.get_short_skill() not in patrol_skills
+                    and x.skills.primary.get_short_skill_string() not in patrol_skills
                 ):
-                    patrol_skills.append(x.skills.primary.get_short_skill())
+                    patrol_skills.append(x.skills.primary.get_short_skill_string())
 
                 if (
                     x.skills.secondary
-                    and x.skills.secondary.get_short_skill() not in patrol_skills
+                    and x.skills.secondary.get_short_skill_string() not in patrol_skills
                 ):
-                    patrol_skills.append(x.skills.secondary.get_short_skill())
+                    patrol_skills.append(x.skills.secondary.get_short_skill_string())
 
-                if x.personality.trait not in patrol_traits:
-                    patrol_traits.append(x.personality.trait)
+                if (
+                    t := i18n.t(f"cat.personality.{x.personality.trait}")
+                ) not in patrol_traits:
+                    patrol_traits.append(t)
 
         self.elements["skills_box"].set_text(
             "screens.patrol.current_patrol_info",

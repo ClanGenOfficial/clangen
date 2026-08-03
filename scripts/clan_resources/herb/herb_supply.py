@@ -1,14 +1,13 @@
-import statistics
-from random import choice, randint, choices
+from random import choice, randint, choices, random
 from typing import Optional
 
 import i18n
 
-from scripts.cat.enums import CatRank
 from scripts.cat.skills import SkillPath
 from scripts.clan_resources.herb.herb import Herb, HERBS
 from scripts.clan_resources.herb.herb_effects import HerbEffect
 from scripts.clan_resources.supply import Supply
+from scripts.config import get_config
 from scripts.game_structure import constants
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
@@ -166,6 +165,10 @@ class HerbSupply:
         start's a Clan's storage. Clans begin with a random set of herbs.
         """
         self.set_required_herb_count(clan_size)
+
+        if get_config("clan_resources.herbs.empty_starting_storage"):
+            # return before we can add any herbs
+            return
 
         for herb in self.base_herb_list:
             if randint(1, 4) == 1:
@@ -424,6 +427,7 @@ class HerbSupply:
         med_cat,
         general_amount_bonus: bool = False,
         specific_quantity_bonus: float = 0,
+        specific_quantity_allowed: Optional[int] = None,
     ) -> vars():
         """
         Takes a med cat and chooses "random" herbs for them to find. Herbs found are based on cat's skill, how badly
@@ -431,6 +435,7 @@ class HerbSupply:
         :param med_cat: cat object for med doing the gathering
         :param general_amount_bonus: set to True if cat should gather a boosted number of herbs
         :param specific_quantity_bonus: a specific float to multiply the gathered herb amount by
+        :param specific_quantity_allowed: a specific int of allowed total quantity of herbs, best used for fine balancing control
         """
         # meds with relevant skills will get a boost to the herbs they find
         # SENSE finds wider types of herbs (3 moss, 1 lungwort, 2 catmint)
@@ -489,6 +494,7 @@ class HerbSupply:
             quantity_modifier *= specific_quantity_bonus
 
         # now we find what herbs have actually been found and their quantity
+        allowed_quantity = specific_quantity_allowed
         for herb in herb_list:
             if amount_of_herbs == 0:
                 break
@@ -509,14 +515,21 @@ class HerbSupply:
                     quantity_modifier = quantity_modifier / 2
                 elif rarity in (1, 2):
                     quantity_modifier += 1
-                found_herbs[herb] = max(
+                amount = max(
                     1,
                     int(
                         choices(population=[2, 3, 4], weights=weight, k=1)[0]
                         * quantity_modifier
                     ),
                 )
+                found_herbs[herb] = (
+                    min(allowed_quantity, amount) if allowed_quantity else amount
+                )
                 amount_of_herbs -= 1
+                if allowed_quantity:
+                    allowed_quantity -= found_herbs[herb]
+                if allowed_quantity is not None and allowed_quantity <= 0:
+                    break
 
         return self.handle_found_herbs_outcomes(found_herbs)
 
@@ -659,21 +672,34 @@ class HerbSupply:
 
             chosen_effect = choice(possible_effects)
 
+            # check if perm condition gets treatment
             if (
                 treatment_cat.is_disabled()
                 and name in treatment_cat.permanent_condition
             ):
-                # if chance of death is already low, med cat doesn't treat
-                if condition.get("mortality") and condition.get("mortality", 0) > 20:
-                    self.__apply_lack_of_herb(treatment_cat, name, chosen_effect)
-                    return
-                # if chance of risk is already low, med cat doesn't treat
-                no_treatment = False
+                condition_default = source_dict[name]
+                will_not_treat = False
+                # only treat if mortality is worse than 20 or the condition's default mortality (whichever is higher)
+                if condition.get("mortality") and condition["mortality"] > max(
+                    condition_default["mortality"][treatment_cat.age], 20
+                ):
+                    will_not_treat = True
                 for risk in condition.get("risks", []):
-                    if risk["chance"] > 20:
-                        self.__apply_lack_of_herb(treatment_cat, name, chosen_effect)
-                        no_treatment = True
-                if no_treatment:
+                    # only treat if risk chance is worse than 20 or the risk's default chance (whichever is higher)
+                    default_chance = 20
+                    for default_risk in condition_default.get("risks", []):
+                        if default_risk["name"] == risk["name"]:
+                            default_chance = risk["chance"]
+                            break
+
+                    if risk["chance"] > default_chance:
+                        will_not_treat = True
+                    else:  # if any risk needs treatment, then we'll treat
+                        will_not_treat = False
+                        break
+
+                if will_not_treat:
+                    self.__apply_lack_of_herb(treatment_cat, name, chosen_effect)
                     return
 
             if game.clan.game_mode == "classic":
@@ -711,7 +737,7 @@ class HerbSupply:
                     treatment_cat, name, herb_used, chosen_effect, amount_used, strength
                 )
 
-            else:
+            elif random() > 0.30:  # 70% chance that lack of treatment is detrimental
                 self.__apply_lack_of_herb(treatment_cat, name, chosen_effect)
 
     def _gather_herbs(self, med_cat):

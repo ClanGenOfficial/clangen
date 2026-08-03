@@ -2,25 +2,22 @@
     "general": {
         "body": [
             "r_c can hardly process the sight of m_c's body before {PRONOUN/r_c/object}. Somehow, the world feels colder and crueler now.",
-            "r_c looks at all the cats sitting vigil for m_c, and wonders how any of them will cope without m_c in their lives.",
+            "r_c looks at all the cats sitting vigil for m_c and wonders how any of them will cope without m_c in their lives.",
             "It just doesn't feel real. r_c stares at m_c's body blankly, waiting for this horrible nightmare to end.",
             "r_c struggles to come to grips with the fact that m_c will no longer be part of {PRONOUN/r_c/poss} life to see {PRONOUN/r_c/object} through the hard times.",
-            "In the losses r_c weathered in the past, m_c had always been there to comfort {PRONOUN/r_c/object}. Now that it's {PRONOUN/m_c/poss} death that r_c is grieving, {PRONOUN/r_c/subject} {VERB/r_c/are/is} alone.",
             "r_c blinks back tears as the realization sinks in that {PRONOUN/r_c/subject}'ll never share a joke or a companionable silence with m_c ever again in this life.",
-            "m_c was such a source of solace and peace for r_c that {PRONOUN/r_c/object} {VERB/r_c/wonder/wonders} how {PRONOUN/r_c/subject}'ll get by without {PRONOUN/m_c/object}.",
+            "m_c was such a source of solace and peace for r_c that {PRONOUN/r_c/subject} {VERB/r_c/wonder/wonders} how {PRONOUN/r_c/subject}'ll get by without {PRONOUN/m_c/object}.",
             "r_c curls around m_c's body one last time, grooming {PRONOUN/m_c/poss} fur flat. It's the least {PRONOUN/r_c/subject} can do for a cat that gave r_c so much.",
             "r_c hides {PRONOUN/r_c/poss} face in m_c's cold fur so {PRONOUN/r_c/poss} Clanmates can't see how hard this loss has hit {PRONOUN/r_c/object}.",
-            "The loss of m_c gives r_c the flutters of anxiety and pangs of sorrow that only {PRONOUN/m_c/subject} {VERB/m_c/were/was} able to soothe. But now m_c is gone, forever.",
-            "m_c is dead? r_c's heart seizes at the news, {PRONOUN/r_c/poss} mind racing as {PRONOUN/r_c/subject} {VERB/r_c/try/tries} to imagine life without {PRONOUN/m_c/object}."
+            "m_c is dead? r_c's heart seizes at the news, {PRONOUN/r_c/poss} mind racing as {PRONOUN/r_c/subject} {VERB/r_c/try/tries} to imagine life without {PRONOUN/m_c/object}.",
+            "As r_c's Clanmates comfort {PRONOUN/r_c/object} during the vigil, {PRONOUN/r_c/subject} can't help but wonder if things will ever feel normal again without m_c in {PRONOUN/r_c/poss} life."
         ],
         "no_body": [
-            "r_c looks at all the cats sitting vigil for m_c, and wonders how any of them will cope without m_c in their lives.",
+            "r_c looks at all the cats sitting vigil for m_c and wonders how any of them will cope without m_c in their lives.",
             "r_c struggles to come to grips with the fact that m_c will no longer be part of {PRONOUN/r_c/poss} life to see {PRONOUN/r_c/object} through the hard times.",
-            "In the losses r_c weathered in the past, m_c had always been there to comfort {PRONOUN/r_c/object}. Now that it's {PRONOUN/m_c/poss} death that r_c is grieving, {PRONOUN/r_c/subject} {VERB/r_c/are/is} alone.",
-            "r_c blinks back tears as the realization sinks in that {PRONOUN/r_c/subject}'ll never share a joke or a companionable silence with m_c ever again in this life.",
-            "m_c was such a source of solace and peace for r_c that {PRONOUN/r_c/object} {VERB/r_c/wonder/wonders} how {PRONOUN/r_c/subject}'ll get by without {PRONOUN/m_c/object}.",
-            "The loss of m_c gives r_c the flutters of anxiety and pangs of sorrow that only {PRONOUN/m_c/subject} {VERB/m_c/were/was} able to soothe. But now m_c is gone, forever.",
-            "m_c is dead? r_c's heart seizes at the news, {PRONOUN/r_c/poss} mind racing as {PRONOUN/r_c/subject} {VERB/r_c/try/tries} to imagine life without {PRONOUN/m_c/object}."
+            "m_c was such a source of solace and peace for r_c that {PRONOUN/r_c/subject} {VERB/r_c/wonder/wonders} how {PRONOUN/r_c/subject}'ll get by without {PRONOUN/m_c/object}.",
+            "m_c is dead? r_c's heart seizes at the news, {PRONOUN/r_c/poss} mind racing as {PRONOUN/r_c/subject} {VERB/r_c/try/tries} to imagine life without {PRONOUN/m_c/object}.",
+            "As r_c's Clanmates comfort {PRONOUN/r_c/object} during the vigil, {PRONOUN/r_c/subject} can't help but wonder if things will ever feel normal again without m_c in {PRONOUN/r_c/poss} life."
         ]
     },
     "adventurous": {
@@ -68,7 +65,7 @@
     },
     "careful": {
         "body": [
-            "Staring at m_c's lifeless body, r_c replays every moment that lead to this, over and over, wondering what {PRONOUN/r_c/subject} could have done to stop it."
+            "Staring at m_c's lifeless body, r_c replays every moment that led to this, over and over, wondering what {PRONOUN/r_c/subject} could have done to stop it."
         ],
         "no_body": [
             "r_c replays every moment that lead to losing m_c, over and over, wondering what {PRONOUN/r_c/subject} could have done to stop it."
@@ -102,10 +99,12 @@
     },
     "compassionate": {
         "body": [
-            "r_c moves quietly from cat to cat, sharing tearful but fond memories of m_c and making sure that no Clanmate grieves alone."
+            "r_c moves quietly from cat to cat, sharing tearful but fond memories of m_c and making sure that no Clanmate grieves alone.",
+            "r_c's heart aches, not just for {PRONOUN/r_c/poss} personal loss of m_c, but for everyone else who also feels the pain of losing {PRONOUN/m_c/object}. The weight of everyone's pain is almost unbearable to r_c."
         ],
         "no_body": [
-            "r_c moves quietly from cat to cat, sharing tearful but fond memories of m_c and making sure that no Clanmate grieves alone."
+            "r_c moves quietly from cat to cat, sharing tearful but fond memories of m_c and making sure that no Clanmate grieves alone.",
+            "r_c's heart aches, not just for {PRONOUN/r_c/poss} personal loss of m_c, but for everyone else who also feels the pain of losing {PRONOUN/m_c/object}. The weight of everyone's pain is almost unbearable to r_c."
         ]
     },
     "confident": {
@@ -122,14 +121,6 @@
         ],
         "no_body": [
             "Filled with overwhelming emotions, r_c yowls at the sky during m_c's vigil, to demand that StarClan send m_c back to {PRONOUN/r_c/object}."
-        ]
-    },
-    "empathetic": {
-        "body": [
-            "r_c's heart aches, not just for {PRONOUN/r_c/poss} personal loss of m_c, but for everyone else who also feels the pain of losing {PRONOUN/m_c/object}. The weight of everyone's pain is almost unbearable to r_c."
-        ],
-        "no_body": [
-            "r_c's heart aches, not just for {PRONOUN/r_c/poss} personal loss of m_c, but for everyone else who also feels the pain of losing {PRONOUN/m_c/object}. The weight of everyone's pain is almost unbearable to r_c."
         ]
     },
     "faithful": {
@@ -163,20 +154,24 @@
     "lonesome": {
         "body": [
             "r_c is nowhere to be found after m_c's vigil. This pain is too personal to share.",
-            "r_c refuses to utter a word to anyone. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} want to talk to anyone, especially not about m_c."
+            "r_c refuses to utter a word to anyone. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} want to talk to anyone, especially not about m_c.",
+            "r_c slinks away from m_c's vigil early to look at the stars in solitude, looking for answers to the pain.",
+            "r_c hides in {PRONOUN/r_c/poss} nest after m_c's vigil, not wanting to be seen in such a vulnerable state."
         ],
         "no_body": [
             "r_c is nowhere to be found after m_c's vigil. This pain is too personal to share.",
-            "r_c refuses to utter a word to anyone. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} want to talk to anyone, especially not about m_c."
+            "r_c refuses to utter a word to anyone. {PRONOUN/r_c/subject/CAP} {VERB/r_c/don't/doesn't} want to talk to anyone, especially not about m_c.",
+            "r_c slinks away from m_c's vigil early to look at the stars in solitude, looking for answers to the pain.",
+            "r_c hides in {PRONOUN/r_c/poss} nest after m_c's vigil, not wanting to be seen in such a vulnerable state."
         ]
     },
     "loving": {
         "body": [
-            "r_c's tender heart breaks at the sight of m_c's body. Nothing will ever be the same again, how could it ever be?",
+            "r_c's tender heart breaks at the sight of m_c's body. Nothing will ever be the same again. How could it ever be?",
             "The sight of c_n grieving the loss of m_c is almost too much for r_c. The collective pain washes over {PRONOUN/r_c/object} in crashing waves."
         ],
         "no_body": [
-            "r_c's tender heart aches at the loss of m_c. Nothing will ever be the same again, how could it ever be?",
+            "r_c's tender heart aches at the loss of m_c. Nothing will ever be the same again. How could it ever be?",
             "The sight of c_n grieving the loss of m_c is almost too much for r_c. The collective pain washes over {PRONOUN/r_c/object} in crashing waves."
         ]
     },
@@ -192,10 +187,10 @@
     },
     "nervous": {
         "body": [
-            "r_c shakes uncontrollably at m_c's vigil. Staring at {PRONOUN/m_c/poss} body, replaying every recent interaction and wondering what m_c was thinking of when {PRONOUN/m_c/subject} died."
+            "r_c shakes uncontrollably at m_c's vigil, staring at {PRONOUN/m_c/poss} body and replaying every recent interaction, wondering what m_c was thinking of when {PRONOUN/m_c/subject} died."
         ],
         "no_body": [
-            "r_c shakes uncontrollably at m_c's vigil. Staring into the sky, replaying every recent interaction and wondering what m_c was thinking of when {PRONOUN/m_c/subject} died."
+            "r_c shakes uncontrollably at m_c's vigil, staring into the sky and replaying every recent interaction, wondering what m_c was thinking of when {PRONOUN/m_c/subject} died."
         ]
     },
     "playful": {
@@ -238,16 +233,6 @@
             "When r_c learns of m_c's death, {PRONOUN/r_c/subject} lets out a loud wail and drops to the ground. In this moment, nothing matters but the raw pain of losing m_c."
         ]
     },
-    "sneaky": {
-        "body": [
-            "r_c slinks away from m_c's vigil early to look at the stars in solitude, looking for answers to the pain.",
-            "r_c hides in {PRONOUN/r_c/poss} nest after m_c's vigil, not wanting to be seen in such a vulnerable state."
-        ],
-        "no_body": [
-            "r_c slinks away from m_c's vigil early to look at the stars in solitude, looking for answers to the pain.",
-            "r_c hides in {PRONOUN/r_c/poss} nest after m_c's vigil, not wanting to be seen in such a vulnerable state."
-        ]
-    },
     "strange": {
         "body": [
             "r_c laughs softly through tears, thinking of all the good times and fun {PRONOUN/r_c/subject} had with m_c, knowing m_c wouldn't want {PRONOUN/r_c/object} to stay sad forever.",
@@ -260,10 +245,10 @@
     },
     "strict": {
         "body": [
-            "r_c watches over m_c's vigil closely, making sure every little detail is correct. {PRONOUN/r_c/poss/CAP} friend deserves nothing less than perfection."
+            "r_c watches over m_c's vigil closely, making sure every little detail is correct. A cat like m_c deserves nothing less than perfection."
         ],
         "no_body": [
-            "r_c watches over m_c's vigil closely, making sure every little detail is correct. {PRONOUN/r_c/poss/CAP} friend deserves nothing less than perfection."
+            "r_c watches over m_c's vigil closely, making sure every little detail is correct. A cat like m_c deserves nothing less than perfection."
         ]
     },
     "thoughtful": {
@@ -417,18 +402,18 @@
     },
     "know-it-all": {
         "body": [
-            "r_c begs the older cats for explanations, but the vague answers only make it worse. If m_c was here, {PRONOUN/r_c/subject} would tell {PRONOUN/r_c/object} the truth..."
+            "r_c begs the older cats for explanations, but the vague answers only make it worse. If m_c was here, {PRONOUN/m_c/subject} would tell {PRONOUN/r_c/object} the truth..."
         ],
         "no_body": [
-            "r_c begs the older cats for explanations, but the vague answers only make it worse. If m_c was here, {PRONOUN/r_c/subject} would tell {PRONOUN/r_c/object} the truth..."
+            "r_c begs the older cats for explanations, but the vague answers only make it worse. If m_c was here, {PRONOUN/m_c/subject} would tell {PRONOUN/r_c/object} the truth..."
         ]
     },
     "noisy": {
         "body": [
-            "The chilling sound of r_c's heartbreaking wails make all of c_n feel the loss of m_c twice as hard."
+            "The chilling sound of r_c's heartbroken wails make all of c_n feel the loss of m_c twice as hard."
         ],
         "no_body": [
-            "The chilling sound of r_c's heartbreaking wails make all of c_n feel the loss of m_c twice as hard."
+            "The chilling sound of r_c's heartbroken wails make all of c_n feel the loss of m_c twice as hard."
         ]
     },
     "polite": {

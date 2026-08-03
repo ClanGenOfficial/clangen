@@ -11,7 +11,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_shortswim",
+        "patrol_art": "backgrounds/gen_shortswim",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -51,7 +51,7 @@
                         "mutual": false,
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat return from patrol with soggy paws and nothing to show for an afternoon of work."
+                            "cats_from": "cat_from saw cat_to return from patrol with soggy paws and nothing to show for an afternoon of work."
                         }
                     }
                 ],

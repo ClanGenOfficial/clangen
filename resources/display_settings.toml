@@ -13,7 +13,6 @@
         "fullscreen scaling" = false
         "no sprite antialiasing" = false
         "custom cursor" = false
-        keybinds = false
         shaders = false
         gore = false
         discord = false
@@ -34,10 +33,13 @@
             false, true
         ]
         music_volume = [
-            100
+            50
+        ]
+        ambiance_volume = [
+            50
         ]
         sound_volume = [
-            100
+            50
         ]
         audio_mute = [
             false, true
@@ -61,6 +63,7 @@
     
     [clan.relation]
         affair = false
+        "unmated parentage" = false
         "same sex birth" = false
         "same sex adoption" = false
         "single parentage" = false
@@ -73,9 +76,10 @@
         youngest_first = false
         oldest_first = false
         hungriest_first = false
+        experience_first = false
+
         hunter_first = false
         sick_injured_first = false
-        experience_first = false
 
         ration_prey = false
         auto_feed = true
@@ -93,11 +97,23 @@
         hoarding = false
     
     [clan.other]
-        "show dead relation" = [
+        "show_dead_relation" = [
             false, true
         ]
-        "show_empty relation" = [
+        "show_neutral_relation" = [
             false, true
+        ]
+        "show_family_only" = [
+            false, true
+        ]
+        "show_romance_only" = [
+            false, true
+        ]
+        "show_positive" = [
+            true, false
+        ]
+        "show_negative" = [
+            true, false
         ]
         "den labels" = [
             true, false

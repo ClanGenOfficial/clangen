@@ -39,8 +39,8 @@ if os.path.exists("auto-updated"):
 setup_data_dir()
 timestr = time.strftime("%Y%m%d_%H%M%S")
 
-stdout_file = open(get_log_dir() + f"/stdout_{timestr}.log", "a")
-stderr_file = open(get_log_dir() + f"/stderr_{timestr}.log", "a")
+stdout_file = open(get_log_dir() + f"/stdout_{timestr}.log", "a", encoding="utf-8")
+stderr_file = open(get_log_dir() + f"/stderr_{timestr}.log", "a", encoding="utf-8")
 sys.stdout = UnbufferedStreamDuplexer(sys.stdout, stdout_file)
 sys.stderr = UnbufferedStreamDuplexer(sys.stderr, stderr_file)
 
@@ -71,7 +71,14 @@ def log_crash(logtype, value, tb):
     """
     Log uncaught exceptions to file
     """
-    logging.critical("Uncaught exception", exc_info=(logtype, value, tb))
+    try:
+        version_number = get_version_info().version_number
+    except:  # don't want the crash handler to crash
+        version_number = "version unknown"
+    logging.critical(
+        f"Uncaught exception (ClanGen {version_number})",
+        exc_info=(logtype, value, tb),
+    )
     sys.__excepthook__(type, value, tb)
 
 

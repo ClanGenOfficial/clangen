@@ -1,4 +1,5 @@
 {
+
     "comment": "If you add new illnesses, make sure to add their key to illnesses.en.json otherwise they will not display",
     "seizure": {
         "severity": "severe",
@@ -40,6 +41,43 @@
             "3": [
                 "ragwort",
                 "juniper"
+            ]
+        }
+    },
+    "breathless fit": {
+        "severity": "severe",
+        "mortality": {
+            "newborn": 2,
+            "kitten": 5,
+            "adolescent": 10,
+            "young adult": 20,
+            "adult": 20,
+            "senior adult": 20,
+            "senior": 5
+        },
+        "medicine_mortality": {
+            "newborn": 30,
+            "kitten": 50,
+            "adolescent": 70,
+            "young adult": 100,
+            "adult": 100,
+            "senior adult": 100,
+            "senior": 70
+        },
+        "duration": 1,
+        "medicine_duration": 1,
+        "infectiousness": 0,
+        "risks": [],
+        "herbs": {
+            "1": [
+                "betony"
+            ],
+            "2": [
+                "rosemary",
+                "juniper"
+            ],
+            "3": [
+                "mullein"
             ]
         }
     },
@@ -107,7 +145,7 @@
         },
         "duration": 4,
         "medicine_duration": 2,
-        "infectiousness": 15,
+        "infectiousness": 10,
         "risks": [
             {
                 "name": "torn pelt",
@@ -144,17 +182,21 @@
         },
         "duration": 3,
         "medicine_duration": 2,
-        "infectiousness": 30,
+        "infectiousness": 3,
         "risks": [
             {
                 "name": "yellowcough",
                 "chance": 60
+            },
+            {
+                "name": "sore throat",
+                "chance": 20
             }
         ],
         "herbs": {
         "1": [
             "plantain",
-            "juniper",
+            "honey",
             "poppy",
             "moss"
         ],
@@ -189,17 +231,21 @@
         },
         "duration": 3,
         "medicine_duration": 2,
-        "infectiousness": 15,
+        "infectiousness": 2,
         "risks": [
             {
                 "name": "whitecough",
                 "chance": 10
+            },
+            {
+                "name": "sore throat",
+                "chance": 20
             }
         ],
         "herbs": {
             "1": [
                 "plantain",
-                "juniper",
+                "honey",
                 "poppy",
                 "moss"
             ],
@@ -248,7 +294,7 @@
                 "poppy"
             ],
             "2": [
-                "wild_garlic"
+                "honey"
             ],
             "3": [
                 "burdock"
@@ -321,7 +367,7 @@
             "1": [
                 "lungwort",
                 "plantain",
-                "juniper",
+                "honey",
                 "ragwort",
                 "poppy",
                 "moss"
@@ -360,6 +406,10 @@
             {
                 "name": "whitecough",
                 "chance": 15
+            },
+            {
+                "name": "sore throat",
+                "chance": 20
             }
         ],
         "herbs": {
@@ -395,17 +445,21 @@
         },
         "duration": 3,
         "medicine_duration": 2,
-        "infectiousness": 30,
+        "infectiousness": 10,
         "risks": [
             {
                 "name": "greencough",
                 "chance": 18
+            },
+            {
+                "name": "sore throat",
+                "chance": 20
             }
         ],
         "herbs": {
             "1": [
                 "plantain",
-                "juniper",
+                "honey",
                 "poppy",
                 "moss"
             ],
@@ -441,16 +495,21 @@
         },
         "duration": 3,
         "medicine_duration": 3,
-        "infectiousness": 30,
+        "infectiousness": 6,
         "risks": [
             {
                 "name": "redcough",
                 "chance": 80
+            },
+            {
+                "name": "sore throat",
+                "chance": 20
             }
         ],
         "herbs": {
             "1": [
-                "mallow"
+                "mallow",
+                "honey"
             ],
             "2": [
                 "tansy"
@@ -500,7 +559,8 @@
                 "dandelion"
             ],
             "3": [
-                "burdock"
+                "burdock",
+                "yew_berries"
             ]
         }
     },
@@ -689,6 +749,10 @@
             {
                 "name": "constant nightmares",
                 "chance": 15
+            },
+            {
+                "name": "selective mutism",
+                "chance": 150
             }
         ],
         "herbs": {

@@ -23,20 +23,6 @@ def get_other_clan(clan_name):
             return clan
 
 
-def get_other_clan_relation(relation):
-    """
-    converts int value into string relation and returns string: "hostile", "neutral", or "ally"
-    :param relation: the other_clan.relations value
-    """
-
-    if int(relation) >= 17:
-        return "ally"
-    elif 7 < int(relation) < 17:
-        return "neutral"
-    elif int(relation) <= 7:
-        return "hostile"
-
-
 def change_clan_relations(other_clan, difference):
     """
     will change the Clan's relation with other clans according to the difference parameter.
@@ -62,7 +48,3 @@ def change_clan_reputation(difference):
     will change the Clan's reputation with outsider cats according to the difference parameter.
     """
     game.clan.reputation += difference
-    if game.clan.reputation < 0:
-        game.clan.reputation = 0  # clamp to 0
-    elif game.clan.reputation > 100:
-        game.clan.reputation = 100  # clamp to 100

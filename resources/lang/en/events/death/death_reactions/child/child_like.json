@@ -86,12 +86,6 @@
         "no_body": [
         ]
     },
-    "empathetic": {
-        "body": [
-        ],
-        "no_body": [
-        ]
-    },
     "faithful": {
         "body": [
         ],
@@ -164,12 +158,6 @@
         "no_body": [
         ]
     },
-    "sneaky": {
-        "body": [
-        ],
-        "no_body": [
-        ]
-    },
     "strange": {
         "body": [
         ],
@@ -213,12 +201,6 @@
         ]
     },
     "bossy": {
-        "body": [
-        ],
-        "no_body": [
-        ]
-    },
-    "bouncy": {
         "body": [
         ],
         "no_body": [

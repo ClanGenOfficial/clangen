@@ -13,8 +13,9 @@ from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan import Afterlife, clan_class
 
 from scripts.debug_console import debug_mode
+from scripts.game_input import INPUT_ACTION_PRESSED
 from scripts.game_structure import constants, game
-from scripts.game_structure.audio import music_manager, sound_manager
+from scripts.game_structure.audio.audio_manager import AudioManager
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure.game.save_load import read_clans
 from scripts.game_structure.game.settings import game_setting_get
@@ -25,6 +26,7 @@ from scripts.game_structure.game.switches import (
 )
 from scripts.game_structure.load_cat import load_cats, version_convert
 from scripts.game_structure.screen_settings import MANAGER, screen, screen_scale
+from scripts.game_input import controller_manager, keyboard_manager
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
 from scripts.screens import all_screens
@@ -43,9 +45,25 @@ game.rpc.start_rpc.set()
 # LOAD cats & clan
 finished_loading = False
 
+controller_manager.init()
+
 
 def load_data():
     global finished_loading
+
+    # load audio
+    try:
+        if not getattr(game, "audio", None):
+            game.audio = AudioManager()
+            pygame.mixer.pre_init(buffer=44100)
+            pygame.mixer.init()
+
+            # loading sounds here bc they depend on mixer being initialized
+            game.audio.sound.load_sounds()
+    except pygame.error:
+        print("Failed to initialize audio. Audio will be disabled.")
+        game.audio.disabled = True
+        game.audio.muted = True
 
     # load in the spritesheets
     sprites.load_all()
@@ -53,7 +71,7 @@ def load_data():
     clan_list = read_clans()
     if clan_list:
         switch_set_value(Switch.clan_list, clan_list)
-        switch_set_value(Switch.clan_name, clan_list[0])
+        switch_set_value(Switch.clan_save_id, clan_list[0])
         try:
             game.starclan = Afterlife()
             game.dark_forest = Afterlife()
@@ -61,7 +79,6 @@ def load_data():
             version_info = clan_class.load_clan()
             version_convert(version_info)
             game.load_events()
-            scripts.screens.screens_core.screens_core.rebuild_core()
         except Exception as e:
             logging.exception("File failed to load")
             if switch_get_value(Switch.error_message) is None:
@@ -69,6 +86,8 @@ def load_data():
                     Switch.error_message, "There was an error loading the cats file!"
                 )
                 switch_set_value(Switch.traceback, e)
+
+        scripts.screens.screens_core.screens_core.rebuild_core()
 
     finished_loading = True
 
@@ -117,8 +136,8 @@ def loading_animation(scale: float = 1):
         i += 1
         if i >= total_frames:
             i = 0
-
         for event in pygame.event.get():
+            controller_manager.process_event(event)
             if event.type == pygame.QUIT:
                 quit_game(savesettings=False)
 
@@ -155,19 +174,11 @@ def load_game():
 
 load_game()
 
-pygame.mixer.pre_init(buffer=44100)
-try:
-    pygame.mixer.init()
-except pygame.error:
-    print("Failed to initialize sound. Sound will be disabled.")
-    music_manager.audio_disabled = True
-    music_manager.muted = True
 all_screens.get_screen(GameScreen.START).screen_switches()
 
 # dev screen info now lives in scripts/screens/screens_core
 
 fps = switch_get_value(Switch.fps)
-music_manager.check_music(GameScreen.START)
 
 if game_setting_get("custom cursor"):
     MANAGER.set_active_cursor(constants.CUSTOM_CURSOR)
@@ -179,25 +190,26 @@ while 1:
 
     if switch_get_value(Switch.switch_clan):
         load_game()
+        # have to manually reload errors because it only happens when screen is switched to
+        game.all_screens[GameScreen.START].reload_errors()
 
     # Draw screens
     # This occurs before events are handled to stop pygame_gui buttons from blinking.
     game.all_screens[game.current_screen].on_use()
     # EVENTS
     for event in pygame.event.get():
-        if (
-            event.type == pygame.KEYDOWN
-            and game_setting_get("keybinds")
-            and debug_mode.debug_menu.visible
-        ):
+        if event.type == INPUT_ACTION_PRESSED and debug_mode.debug_menu.visible:
             pass
         else:
+            consumed = MANAGER.process_events(event)
             # todo ...shouldn't this be `get_switch(Switch.cur_screen)`?
-            all_screens.get_screen(game.current_screen.replace(" ", "_")).handle_event(
-                event
-            )
+            if not consumed:
+                all_screens.get_screen(
+                    game.current_screen.replace(" ", "_")
+                ).handle_event(event)
 
-        sound_manager.handle_sound_events(event)
+        if not game.audio.disabled and not game.audio.muted:
+            game.audio.sound.handle_sound_events(event)
 
         if event.type == pygame.QUIT:
             # Don't display if on the start screen or there is no clan.
@@ -207,7 +219,12 @@ while 1:
                     GameScreen.START,
                     GameScreen.SWITCH_CLAN,
                     GameScreen.SETTINGS,
-                    GameScreen.MAKE_CLAN,
+                    GameScreen.MAKE_CLAN_CHOOSE_MODE,
+                    GameScreen.MAKE_CLAN_CHOOSE_CARDS,
+                    GameScreen.MAKE_CLAN_CHOOSE_NAME,
+                    GameScreen.MAKE_CLAN_CHOOSE_CATS,
+                    GameScreen.MAKE_CLAN_CHOOSE_SYMBOL,
+                    GameScreen.MAKE_CLAN_CLAN_CREATED,
                 )
                 or not game.clan
             ):
@@ -242,7 +259,8 @@ while 1:
                     show_confirm_dialog=False,
                 )
 
-        MANAGER.process_events(event)
+        controller_manager.process_event(event)
+        keyboard_manager.process_event(event)
 
     MANAGER.update(time_delta)
 
@@ -254,12 +272,6 @@ while 1:
         ).exit_screen()
         all_screens.get_screen(game.current_screen.replace(" ", "_")).screen_switches()
         game.switch_screens = False
-    if (
-        not music_manager.audio_disabled
-        and not pygame.mixer.music.get_busy()
-        and not music_manager.muted
-    ):
-        music_manager.play_queued()
 
     debug_mode.pre_update(clock)
     # END FRAME
@@ -269,3 +281,6 @@ while 1:
     debug_mode.post_update(screen)
 
     pygame.display.update()
+
+    if not game.audio.disabled and not game.audio.muted:
+        game.audio.start()

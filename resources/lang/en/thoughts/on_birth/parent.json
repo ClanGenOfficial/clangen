@@ -1,8 +1,7 @@
 [
-
     {
         "id": "gen_new_parent",
-        "thoughts": [
+        "strings": [
             "Watches over the new litter",
             "Is brimming with love",
             "Is thinking of {PRONOUN/m_c/poss} new responsibilities",
@@ -16,15 +15,78 @@
             "Enjoys some very special family moments",
             "Remembers what a full night of sleep used to feel like",
             "Realizes how much work kits can be",
-            "Needs a moment away from the new litter"
+            "Needs a moment away from the new litter",
+            "Can't believe the new litter is finally here",
+            "Grooms the new litter",
+            "Hasn't stopped purring since the litter arrived",
+            "Hasn't left the nursery since the litter arrived",
+            "Won't let anyone look at the new litter just yet",
+            "Wants to show every cat the new litter",
+            "Is still indecisive on names",
+            "Fondly remembers sleeping through the night",
+            "Hopes the new litter's crying isn't keeping everyone up",
+            "Has never been so exhausted in all {PRONOUN/m_c/poss} life"
         ]
     },
-        {
+    {
         "id": "gen_new_parent_to_friend",
-        "thoughts": [
+        "strings": [
             "Asks r_c to watch over the kits"
         ],
-            "random_age_constraint": ["young adult", "adult", "senior adult", "senior"],
-            "relationship_constraint": ["trusts"]
+        "involved_cats": {
+            "r_c": {
+                "age": [
+                    "young adult",
+                    "adult",
+                    "senior adult",
+                    "senior"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "trusts"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "gen_parent_to_newborn",
+        "strings": [
+            "Stops r_c from falling out of the nest",
+            "Makes sure r_c has fed enough",
+            "Hissed at a Clanmate who got too close to r_c",
+            "Considers renaming r_c",
+            "Is proud of r_c for sleeping through the night"
+        ],
+        "involved_cats": {
+            "r_c": {
+                "age": [
+                    "newborn"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "parent/child"
+                ]
+            }
+        ]
     }
 ]
