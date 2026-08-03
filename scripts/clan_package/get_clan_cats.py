@@ -1,4 +1,5 @@
-from typing import Union, Type, TYPE_CHECKING, Tuple, List
+from random import choice
+from typing import Union, Type, TYPE_CHECKING, Tuple, List, Optional
 
 if TYPE_CHECKING:
     from scripts.cat.cats import Cat
@@ -143,3 +144,15 @@ def get_possible_mates(cat) -> Tuple[List["Cat"], List["Cat"]]:
                 existing_romance_mates.append(inter_cat)
             possible_mates.append(inter_cat)
     return possible_mates, existing_romance_mates
+
+
+def get_random_player_clan_cat(cat, not_allowed: list["Cat"] = None) -> Optional["Cat"]:
+    cat_list = [
+        c
+        for c in cat.all_cats.values()
+        if c.status.alive_in_player_clan and c not in not_allowed
+    ]
+    if not cat_list:
+        return None
+
+    return choice(cat_list)

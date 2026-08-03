@@ -3,12 +3,12 @@
         "m_c announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits.",
         "m_c has suspicions of being pregnant and is overjoyed by confirmation!",
         "m_c is shocked to be told that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant.",
-        "m_c worries when {PRONOUN/m_c/subject} {VERB/m_c/are/is} told that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant — {PRONOUN/m_c/subject} just {VERB/m_c/are/is}n't ready.",
+        "m_c worries when {PRONOUN/m_c/subject} {VERB/m_c/are/is} told that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant. {PRONOUN/m_c/subject/CAP} just {VERB/m_c/are/is}n't ready.",
         "m_c's eyes sparkle with determination when {PRONOUN/m_c/subject} {VERB/m_c/are/is} informed that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant."
     ],
     "litter_guess": {
         "small": [
-            "m_c hopes the litter will be small — {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} overwhelmed at the idea of a big litter.",
+            "m_c hopes the litter will be small. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} overwhelmed at the idea of a big litter.",
             "m_c thinks {PRONOUN/m_c/subject}'ll have a small litter.",
             "m_c hopes {PRONOUN/m_c/subject}'ll have a small litter. No way could {PRONOUN/m_c/subject} handle too many kits.",
             "m_c, citing queens' intuition, claims {PRONOUN/m_c/subject} {VERB/m_c/know/knows} {PRONOUN/m_c/subject}'ll have a small litter."
@@ -19,21 +19,21 @@
             "m_c thinks {PRONOUN/m_c/subject}'ll have a large litter.",
             "m_c hopes {PRONOUN/m_c/subject}'ll have a large litter. m_c always wanted a big family after all.",
             "m_c, citing queens' intuition, claims {PRONOUN/m_c/subject} {VERB/m_c/know/knows} {PRONOUN/m_c/subject}'ll have a big litter.",
-            "m_c feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} eating enough at each meal to feed the whole Clan — {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} predicting a big litter. Or perhaps one very plump kit."
+            "m_c feels like {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} eating enough at each meal to feed the whole Clan. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} predicting a big litter. Or perhaps one very plump kit."
         ],
         "unsure": [
             "m_c is unsure how many kits {PRONOUN/m_c/subject}'ll have.",
             "m_c wonders how much of {PRONOUN/m_c/poss} expanding belly is kits and how much is pregnancy weight.",
-            "m_c has no idea how big {PRONOUN/m_c/subject} should craft the nest in the nursery {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} creating — but it needs the softest materials, the best moss.",
+            "m_c has no idea how big {PRONOUN/m_c/subject} should craft the nest in the nursery {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} creating, but it needs the softest materials, the best moss.",
             "m_c wonders how many names {PRONOUN/m_c/subject} should think about for {PRONOUN/m_c/poss} kits. {PRONOUN/m_c/subject/CAP} have no idea how many {PRONOUN/m_c/subject}'ll need... and what if {PRONOUN/m_c/subject} {VERB/m_c/meet/meets} {PRONOUN/m_c/poss} litter for the first time and one of the names just doesn't fit?!",
             "m_c feels like {PRONOUN/m_c/poss} entire existence is one long trip between water and the dirtplace, again and again. This pregnancy is so much harder than {PRONOUN/m_c/subject} {VERB/m_c/were/was} expecting.",
             "m_c curls up, purring at {PRONOUN/m_c/poss} belly, hoping the unknown number of kittens within can hear {PRONOUN/m_c/poss} love for them. {PRONOUN/m_c/subject/CAP} can't wait to meet them.",
             "All the old tales about queens fighting to the death to protect their babies suddenly make sense to m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} up to fighting the sun itself, powered by the love {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} for {PRONOUN/m_c/poss} yet-to-arrive litter.",
             "m_c has begun hoarding little trinkets, stashing bits of fluff and feather and shiny smooth rocks into {PRONOUN/m_c/poss} birthing nest to stock it with kitten toys.",
-            "m_c invites {PRONOUN/m_c/poss} friends to feel {PRONOUN/m_c/poss} litter kick — surely these kittens are going to be talented warriors, because, well — <i>ow</i>.",
+            "m_c invites {PRONOUN/m_c/poss} friends to feel {PRONOUN/m_c/poss} litter kick. Surely these kittens will be talented warriors, because <i>ow</i>.",
             "m_c is unsure how many kits {PRONOUN/m_c/subject}'ll have, nor {VERB/m_c/do/does} {PRONOUN/m_c/subject} care. As long as they're happy and healthy, that's all that matters.",
             "m_c doesn't know or care how many kits {PRONOUN/m_c/subject}'ll have.",
-            "{PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} endearingly proud to be carrying the next generation — it's all m_c can talk about."
+            "{PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} endearingly proud to be carrying the next generation. It's all m_c can talk about."
         ]
     },
     "major_severity": [
@@ -53,10 +53,10 @@
     "minor_severity": [
         " {PRONOUN/m_c/subject/CAP} won't be moving into the nursery just yet.",
         " {PRONOUN/m_c/subject/CAP} {VERB/m_c/choose/chooses} to continue {PRONOUN/m_c/poss} duties as usual for now.",
-        " c_n wants to congratulate m_c — but the rising celebration is interrupted by m_c snapping, completely unprovoked, that this pregnancy doesn't make {PRONOUN/m_c/object} a wilting flower and {PRONOUN/m_c/subject} will not be moving {PRONOUN/m_c/poss} nest.",
+        " c_n wants to congratulate m_c, but the rising celebration is interrupted by m_c snapping, completely unprovoked, that this pregnancy doesn't make {PRONOUN/m_c/object} a wilting flower and {PRONOUN/m_c/subject} will not be moving {PRONOUN/m_c/poss} nest.",
         " {PRONOUN/m_c/subject/CAP} {VERB/m_c/aren't/isn't} keen on being confined to the nursery just yet.",
-        " Life goes on for now — {PRONOUN/m_c/subject}'ll move into the nursery, but not this moon.",
-        " {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} still full of energy and moving to the nursery would feel stifling — maybe next moon.",
+        " Life goes on for now. {PRONOUN/m_c/subject/CAP}'ll move into the nursery, but not this moon.",
+        " {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} still full of energy and moving to the nursery would feel stifling. Maybe next moon.",
         " Surely it's not time to move into the nursery, though.",
         " {PRONOUN/m_c/subject/CAP} couldn't imagine being trapped in the nursery yet and {VERB/m_c/insist/insists} {PRONOUN/m_c/subject} can keep working.",
 	    " {PRONOUN/m_c/subject/CAP} {VERB/m_c/dare/dares} any cat to force {PRONOUN/m_c/object} into that stuffy old nursery and, to {PRONOUN/m_c/poss} delight, no cat tries to. Maybe next moon, but not now.",
@@ -151,7 +151,7 @@
             "This will all be worth it, m_c promises {PRONOUN/m_c/self} as the pains of afterbirth rock {PRONOUN/m_c/poss} exhausted and bleeding body.",
             "m_c chokes down the herbs given to {PRONOUN/m_c/object}, retching at the taste but knowing {PRONOUN/m_c/subject} {VERB/m_c/need/needs} them to stop the blood loss. ",
             "m_c wonders if {PRONOUN/m_c/poss} body will ever recover from the painful birth and blood loss.",
-            "There were complications — painful ones — but m_c just about pulled through."
+            "There were painful complications, but m_c just about pulled through."
         ],
         "outside_alone": [
             "Rumors reach the Clan that m_c gave birth to a {insert}."
