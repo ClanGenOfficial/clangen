@@ -17,10 +17,8 @@ if TYPE_CHECKING:
 
 
 class FadedCatFactory(BaseCatFactory):
-    def __init__(self, rng: "Random"):
-        self.rng = rng
-
-    def create_cat(self, **kwargs) -> Cat:
+    @classmethod
+    def create_cat(cls, **kwargs) -> Cat:
         if isinstance(kwargs["status"], str):
             status = Status(rank=kwargs["status"])
             # they are definitely dead

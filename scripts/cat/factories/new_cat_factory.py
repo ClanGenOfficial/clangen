@@ -22,10 +22,10 @@ BASE_RNG = random.Random
 
 
 class NewCatFactory(BaseCatFactory):
-    def __init__(self, rng: random.Random):
-        self.rng = rng if rng else BASE_RNG()
+    rng = BASE_RNG()
 
-    def create_cat(self, **overrides):
+    @classmethod
+    def create_cat(cls, **overrides):
         """
         Create a new cat with randomness. Override any elements of the creation with keyword arguments
         :param overrides: Any desired overrides to the random generation
@@ -39,11 +39,11 @@ class NewCatFactory(BaseCatFactory):
             status_dict["rank"] = overrides.get("rank")
 
         # the worst combined dependency ever
-        age, moons, status = self._determine_age_moons_and_status(
+        age, moons, status = cls._determine_age_moons_and_status(
             moons=overrides.get("moons"), status_dict=status_dict
         )
 
-        gender_dict = self._get_random_gender_and_genderalign(age)
+        gender_dict = cls._get_random_gender_and_genderalign(age)
         # if specified, override the randomizer
         gender_dict["sex"] = overrides.get("gender", gender_dict["sex"])
         gender_dict["genderalign"] = overrides.get(
@@ -53,7 +53,7 @@ class NewCatFactory(BaseCatFactory):
         if pelt := overrides.get("pelt"):
             pelt = Pelt(pelt)
         else:
-            pelt = self._get_random_pelt(
+            pelt = cls._get_random_pelt(
                 gender_dict["sex"],
                 (overrides.get("parent1"), overrides.get("parent2")),
                 age,
@@ -61,7 +61,7 @@ class NewCatFactory(BaseCatFactory):
             )
 
         skills = overrides.get(
-            "skill_dict", self._get_random_skills_dict(status.rank, age)
+            "skill_dict", cls._get_random_skills_dict(status.rank, age)
         )
         if not isinstance(skills, CatSkills):
             skills = CatSkills(skill_dict=skills)
@@ -71,14 +71,14 @@ class NewCatFactory(BaseCatFactory):
             mate = [mate]
 
         cat_params = {
-            "ID": self.get_free_id(),
+            "ID": cls.get_free_id(),
             "gender_dict": gender_dict,
             "pelt": pelt,
             "moons": moons,
             "status": status,
             "backstory": overrides.get("backstory", "clanborn"),
             "skills": skills,
-            "personality": self._get_random_personality(age),
+            "personality": cls._get_random_personality(age),
             "mentorship": MentorshipDict(
                 mentor=None,
                 former_mentor=[],
@@ -103,7 +103,7 @@ class NewCatFactory(BaseCatFactory):
                 favourite=False,
             ),
             "experience": overrides.get(
-                "experience", self._get_random_experience(age, moons)
+                "experience", cls._get_random_experience(age, moons)
             ),
             "birth_cooldown": overrides.get("birth_cooldown", 0),
             "faded": False,
@@ -124,10 +124,12 @@ class NewCatFactory(BaseCatFactory):
 
         return cat
 
-    def _get_random_age(self):
-        return self.rng.choice([*CatAge])
+    @classmethod
+    def _get_random_age(cls):
+        return cls.rng.choice([*CatAge])
 
-    def _get_random_age_from_rank(self, rank):
+    @classmethod
+    def _get_random_age_from_rank(cls, rank):
         """
         :param rank: Provided cat's rank
         :return: Random CatAge appropriate for the cat's rank
@@ -135,7 +137,7 @@ class NewCatFactory(BaseCatFactory):
         if not isinstance(rank, CatRank):
             rank = CatRank(rank)
 
-        if rank == CatRank.NEWBORN or type(self.rng) != BASE_RNG:
+        if rank == CatRank.NEWBORN:
             return CatAge.NEWBORN
         if rank == CatRank.KITTEN:
             return CatAge.KITTEN
@@ -144,7 +146,7 @@ class NewCatFactory(BaseCatFactory):
         if rank.is_any_apprentice_rank():
             return CatAge.ADOLESCENT
 
-        return self.rng.choice(
+        return cls.rng.choice(
             [
                 CatAge.YOUNG_ADULT,
                 CatAge.ADULT,
@@ -153,22 +155,25 @@ class NewCatFactory(BaseCatFactory):
             ]
         )
 
-    def _get_random_status_from_age(self, age):
+    @classmethod
+    def _get_random_status_from_age(cls, age):
         status = Status()
-        status.generate_new_status(age, disable_random=type(self.rng) != BASE_RNG)
+        status.generate_new_status(age)
 
         return status
 
-    def _get_random_moons(self, age: CatAge) -> int:
+    @classmethod
+    def _get_random_moons(cls, age: CatAge) -> int:
         """
         Generate random moons appropriate for the given age
         :param age: CatAge
         :return: Appropriate moons
         """
-        return self.rng.randint(Cat.age_moons[age][0], Cat.age_moons[age][1])
+        return cls.rng.randint(Cat.age_moons[age][0], Cat.age_moons[age][1])
 
+    @classmethod
     def _determine_age_moons_and_status(
-        self, moons, status_dict
+        cls, moons, status_dict
     ) -> Tuple[CatAge, int, Status]:
         """
         Figure out the age, moons and status of a cat depending on what's provided
@@ -181,26 +186,26 @@ class NewCatFactory(BaseCatFactory):
         if status_dict and moons is not None:
             return CatAge.get_from_moons(moons), moons, Status(**status_dict)
         if not status_dict and moons is None:
-            age = self._get_random_age()
-            status = self._get_random_status_from_age(age)
-            moons = self._get_random_moons(age)
+            age = cls._get_random_age()
+            status = cls._get_random_status_from_age(age)
+            moons = cls._get_random_moons(age)
         elif not status_dict and moons is not None:
             age = CatAge.get_from_moons(moons)
-            status = self._get_random_status_from_age(age)
+            status = cls._get_random_status_from_age(age)
         elif status_dict and moons is None:
             if "rank" in status_dict:
-                age = self._get_random_age_from_rank(status_dict["rank"])
+                age = cls._get_random_age_from_rank(status_dict["rank"])
             elif (
                 "group_history" in status_dict
                 and "rank" in status_dict["group_history"][-1]
             ):
-                age = self._get_random_age_from_rank(
+                age = cls._get_random_age_from_rank(
                     status_dict["group_history"][-1]["rank"]
                 )
             else:
-                age = self._get_random_age()
+                age = cls._get_random_age()
             status = Status(**status_dict)
-            moons = self._get_random_moons(age)
+            moons = cls._get_random_moons(age)
         else:
             status = None
 
@@ -209,17 +214,18 @@ class NewCatFactory(BaseCatFactory):
 
         return age, moons, status
 
-    def _get_random_gender_and_genderalign(self, age) -> dict:
+    @classmethod
+    def _get_random_gender_and_genderalign(cls, age) -> dict:
         gender = {
-            "sex": self.rng.choice(("male", "female")),
+            "sex": cls.rng.choice(("male", "female")),
         }
         gender["genderalign"] = gender["sex"]
 
-        if age.is_baby() or type(self.rng) != BASE_RNG:
+        if age.is_baby():
             return gender
 
-        trans_chance = self.rng.randint(0, 50)
-        nb_chance = self.rng.randint(0, 75)
+        trans_chance = cls.rng.randint(0, 50)
+        nb_chance = cls.rng.randint(0, 75)
 
         if nb_chance == 1:
             gender["genderalign"] = "nonbinary"
@@ -259,47 +265,45 @@ class NewCatFactory(BaseCatFactory):
             )
         return pelt
 
-    def _get_random_personality(self, age: CatAge):
-        if type(self.rng) != BASE_RNG:
-            return Personality(
-                lawful=8, social=8, aggress=8, stable=8, kit_trait=age.is_baby()
-            )
+    @classmethod
+    def _get_random_personality(cls, age: CatAge):
         return Personality(kit_trait=age.is_baby())
 
-    def _get_random_experience(self, age, moons: int) -> int:
-        if age.is_baby() or type(self.rng) != BASE_RNG:
+    @classmethod
+    def _get_random_experience(cls, age, moons: int) -> int:
+        if age.is_baby():
             return 0
 
         if age == CatAge.ADOLESCENT:
             experience = 0
             ran = constants.CONFIG["graduation"]["base_app_timeskip_ex"]
             for i in range(Cat.age_moons[CatAge.ADOLESCENT][0], moons, -1):
-                exp = self.rng.choice(
+                exp = cls.rng.choice(
                     list(range(ran[0][0], ran[0][1] + 1))
                     + list(range(ran[1][0], ran[1][1] + 1))
                 )
                 experience += exp + 3
             return experience
         elif age in (CatAge.YOUNG_ADULT, CatAge.ADULT):
-            return self.rng.randint(
+            return cls.rng.randint(
                 Cat.experience_levels_range["prepared"][0],
                 Cat.experience_levels_range["proficient"][1],
             )
         elif age == CatAge.SENIOR_ADULT:
-            return self.rng.randint(
+            return cls.rng.randint(
                 Cat.experience_levels_range["competent"][0],
                 Cat.experience_levels_range["expert"][1],
             )
         elif age == CatAge.SENIOR:
-            return self.rng.randint(
+            return cls.rng.randint(
                 Cat.experience_levels_range["expert"][0],
                 Cat.experience_levels_range["master"][1],
             )
         else:
             return 0
 
-    def _get_random_skills_dict(self, rank, age):
-        skills = CatSkills.generate_new_catskills(rank, age, rng=self.rng)
+    def _get_random_skills_dict(cls, rank, age):
+        skills = CatSkills.generate_new_catskills(rank, age, rng=cls.rng)
         return skills
 
     @staticmethod

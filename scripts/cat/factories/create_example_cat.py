@@ -5,6 +5,7 @@ from random import randint, sample, choice
 from scripts.cat.enums import CatRank, CatAge
 from scripts.cat.factories.cat_factory import CatFactory
 from scripts.cat.factories.enums import CatType
+from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.pelts import Pelt
 from scripts.game_structure import game
 
@@ -18,8 +19,8 @@ def create_example_cats():
 
     for cat_index in range(12):
         if cat_index in warrior_indices:
-            game.choose_cats[cat_index] = CatFactory.create_cat(
-                cat_type=CatType.NEW, rank=CatRank.WARRIOR, no_disabling_scars=True
+            game.choose_cats[cat_index] = NewCatFactory.create_cat(
+                rank=CatRank.WARRIOR, no_disabling_scars=True
             )
         else:
             random_rank = choice(
