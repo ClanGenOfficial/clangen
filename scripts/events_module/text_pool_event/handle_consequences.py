@@ -21,6 +21,7 @@ from scripts.config import get_config
 from scripts.events_module.consequences import unpack_rel_block, check_stolen_vitality
 from scripts.events_module.future.prep_and_trigger import prep_future_event
 from scripts.events_module.parameter_dicts import SupplyDict
+from scripts.events_module.relationship import relation_events
 from scripts.events_module.text_adjust import event_text_adjust, adjust_list_text
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game, constants
@@ -130,6 +131,8 @@ def _handle_joining(
         joined.extend(cat_list)
         for c in joined:
             cat_names.append(_profile_link(c))
+
+        relation_events.trigger_joining_relationship_events(joined)
 
     return i18n.t("screens.patrol.new_outsider", cats=adjust_list_text(cat_names))
 
