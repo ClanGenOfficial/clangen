@@ -173,7 +173,7 @@ class Clan:
         rebuild_top_menu_buttons()
 
     @property
-    def current_season(self):
+    def current_season(self) -> str:
         season_length = get_config("seasons.length")
         modifiers = {
             season: i * season_length
