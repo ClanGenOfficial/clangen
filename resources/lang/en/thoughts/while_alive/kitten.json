@@ -1092,7 +1092,19 @@
             "Was sent out of the nursery for being too rowdy around the new litter"
         ],
         "involved_cats": {
-            
+              "m_c": {
+                "status": [
+                    "kitten"
+                ]
+            },
+            "r_c": {
+                "age": [
+                    "newborn"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+        }
         }
     },
     {
