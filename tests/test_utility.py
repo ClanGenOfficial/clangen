@@ -18,7 +18,7 @@ from scripts.events_module.event_filters import (
 )
 from scripts.clan_package.get_clan_cats import get_alive_clan_queens
 
-cat_factory = TestCatFactory(rng=Random())
+cat_factory = TestCatFactory()
 
 
 class TestPersonalityCompatibility(unittest.TestCase):

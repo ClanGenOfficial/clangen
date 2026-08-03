@@ -20,6 +20,7 @@ from scripts.game_structure.game.switches import (
 )
 from ..cat.factories.cat_factory import CatFactory
 from ..cat.factories.enums import CatType
+from ..cat.factories.load_cat_factory import LoadCatFactory
 from ..cat.factories.typed_dicts import MentorshipDict, StatusDict
 from ..cat.names import Name
 from ..cat.pronouns import get_new_pronouns
@@ -79,7 +80,7 @@ def json_load():
     # create new cat objects
     for i, cat_dict in enumerate(cat_data):
         try:
-            cat = CatFactory.create_cat(cat_type=CatType.LOAD_JSON, **cat_dict)
+            cat = LoadCatFactory.create_cat(**cat_dict)
             Cat.all_cats[cat.ID] = cat
             all_cats.append(cat)
 
@@ -207,6 +208,7 @@ def csv_load(all_cats):
                     former_apprentices=[],
                 )
 
+                # FIXME this won't work at the moment I don't think?
                 the_cat = CatFactory.create_cat(
                     CatType.LOAD_CSV,
                     ID=attr[0],

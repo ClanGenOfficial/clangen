@@ -291,17 +291,18 @@ class NewCatFactory(BaseCatFactory):
             )
         elif age == CatAge.SENIOR_ADULT:
             return cls.rng.randint(
-                Cat.experience_levels_range["competent"][0],
-                Cat.experience_levels_range["expert"][1],
+                Cat.experience_levels_range["proficient"][0],
+                Cat.experience_levels_range["adept"][1],
             )
         elif age == CatAge.SENIOR:
             return cls.rng.randint(
-                Cat.experience_levels_range["expert"][0],
-                Cat.experience_levels_range["master"][1],
+                Cat.experience_levels_range["adept"][0],
+                Cat.experience_levels_range["masterful"][1],
             )
         else:
             return 0
 
+    @classmethod
     def _get_random_skills_dict(cls, rank, age):
         skills = CatSkills.generate_new_catskills(rank, age, rng=cls.rng)
         return skills

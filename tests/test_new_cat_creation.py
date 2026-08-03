@@ -6,7 +6,7 @@ from scripts.cat.constants import BACKSTORIES
 from scripts.cat.enums import CatRank, CatAge, CatGroup, CatStanding
 from scripts.cat.skills import SkillPath
 from scripts.cat.sprites.load_sprites import sprites
-from scripts.cat.status import StatusDict
+from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.clan import OtherClan, Clan
 from scripts.clan_package.settings import set_clan_setting
 from scripts.events_module.parameter_dicts import (

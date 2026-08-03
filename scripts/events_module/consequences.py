@@ -13,7 +13,7 @@ from scripts.cat.enums import (
     CatStanding,
     CatThought,
 )
-from scripts.cat.factories.cat_factory import CatFactory
+from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.factories.enums import CatType
 from scripts.cat.names import names
 from scripts.cat_relations.enums import RelType
@@ -595,8 +595,7 @@ def create_new_cat(
             _gender = gender
 
         # first we generate the cat as though they are not part of the clan yet
-        new_cat = CatFactory.create_cat(
-            CatType.NEW,
+        new_cat = NewCatFactory.create_cat(
             moons=moons,
             status_dict={
                 "social": original_social,

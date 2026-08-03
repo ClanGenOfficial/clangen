@@ -10,7 +10,7 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.pelts import Pelt
 
-cat_factory = TestCatFactory(rng=Random())
+cat_factory = TestCatFactory()
 
 
 class TestHandleEvent(unittest.TestCase):

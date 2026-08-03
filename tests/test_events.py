@@ -25,7 +25,7 @@ from scripts.game_structure import game
 from scripts.game_structure.game.save_load import read_clans
 from scripts.housekeeping.datadir import get_save_dir
 
-cat_factory = TestCatFactory(rng=Random())
+cat_factory = TestCatFactory()
 
 
 class TestEvents(unittest.TestCase):
@@ -147,8 +147,7 @@ class TestEvents(unittest.TestCase):
                     can_patrol = []
                     for cat in Cat.all_cats_list:
                         if (
-                            cat.in_camp
-                            and cat.ID not in game.patrolled
+                            cat.ID not in game.patrolled
                             and cat.status.rank.is_allowed_to_patrol()
                             and cat.status.alive_in_player_clan
                             and not cat.not_working()

@@ -18,7 +18,7 @@ from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.cat.enums import CatAge, CatRank, CatGroup, CatSocial
 from scripts.cat_relations.relationship import Relationship
 
-cat_factory = TestCatFactory(rng=Random())
+cat_factory = TestCatFactory()
 
 
 class TestCreationAge(unittest.TestCase):
@@ -732,9 +732,7 @@ class TestSocialAssignment(unittest.TestCase):
 
         for rank in clancat_ranks:
             with self.subTest("clancat social assignment", rank=rank):
-                cat = cat_factory.create_cat(
-                    status_dict={"rank": rank}
-                )
+                cat = cat_factory.create_cat(status_dict={"rank": rank})
                 self.assertEqual(cat.status.social, CatSocial.CLANCAT)
 
     def test_outsider_social(self):
@@ -743,7 +741,5 @@ class TestSocialAssignment(unittest.TestCase):
 
         for rank, social in zip(outsider_ranks, outsider_social):
             with self.subTest("outsider social assignment"):
-                cat = cat_factory.create_cat(
-                    status_dict={"rank": rank}
-                )
+                cat = cat_factory.create_cat(status_dict={"rank": rank})
                 self.assertTrue(cat.status.social == social)

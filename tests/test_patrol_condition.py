@@ -12,7 +12,7 @@ from scripts.cat.history import History
 from scripts.clan import Clan
 from scripts.events_module.patrol.patrol import Patrol
 
-cat_factory = TestCatFactory(rng=Random())
+cat_factory = TestCatFactory()
 
 
 class TestCondition(unittest.TestCase):

@@ -6,6 +6,7 @@ from scripts.cat.enums import CatRank, CatAge
 from scripts.cat.factories.cat_factory import CatFactory
 from scripts.cat.factories.enums import CatType
 from scripts.cat.factories.new_cat_factory import NewCatFactory
+from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.cat.pelts import Pelt
 from scripts.game_structure import game
 
@@ -32,8 +33,8 @@ def create_example_cats():
                     CatRank.ELDER,
                 ]
             )
-            game.choose_cats[cat_index] = CatFactory.create_cat(
-                cat_type=CatType.NEW, rank=random_rank, no_disabling_scars=True
+            game.choose_cats[cat_index] = NewCatFactory.create_cat(
+                rank=random_rank, no_disabling_scars=True
             )
 
 
@@ -43,8 +44,7 @@ def create_option_preview_cat(scar: str = None, acc: str = None):
     :param scar: Desired scar (only one)
     :param acc: Desired accessory (only one)
     """
-    new_cat = CatFactory.create_cat(
-        CatType.TEST,
+    new_cat = TestCatFactory.create_cat(
         loading_cat=True,
         pelt=Pelt(
             name="SingleColour",

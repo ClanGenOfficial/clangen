@@ -36,7 +36,7 @@ from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
 from scripts.cat.skills import CatSkills, scale_progress
-from scripts.cat.status import Status, StatusDict
+from scripts.cat.status import Status
 from scripts.config import get_config
 from scripts.events_module.thoughts.generate_thoughts import (
     new_thought,

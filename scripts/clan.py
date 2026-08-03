@@ -18,7 +18,7 @@ import ujson
 
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.enums import CatRank, CatGroup, CatSocial
-from scripts.cat.factories.cat_factory import CatFactory
+from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.factories.enums import CatType
 from scripts.cat.names import names
 from scripts.cat.save_load import (
@@ -263,8 +263,7 @@ class Clan:
             )
         )
 
-        self.instructor = CatFactory.create_cat(
-            CatType.NEW,
+        self.instructor = NewCatFactory.create_cat(
             status_dict={"rank": instructor_rank, "group_ID": CatGroup.STARCLAN_ID},
             backstory=choice(
                 BACKSTORIES["backstory_categories"]["clan_guide_backstories"]
@@ -781,8 +780,7 @@ class Clan:
                 game.clan.instructor = Cat.all_cats[instructor_info]
                 game.clan.add_cat(game.clan.instructor)
         else:
-            game.clan.instructor = CatFactory.create_cat(
-                cat_type=CatType.NEW,
+            game.clan.instructor = NewCatFactory.create_cat(
                 status_dict={
                     "rank": choice((CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER)),
                     "group": CatGroup.STARCLAN,
@@ -935,8 +933,7 @@ class Clan:
             game.clan.instructor = Cat.all_cats[clan_data["instructor"]]
             game.clan.add_cat(game.clan.instructor)
         else:
-            game.clan.instructor = CatFactory.create_cat(
-                CatType.NEW,
+            game.clan.instructor = NewCatFactory.create_cat(
                 status_dict={
                     "rank": choice((CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER)),
                     "group": CatGroup.STARCLAN,

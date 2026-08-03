@@ -12,7 +12,7 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.conditions import medicine_cats_can_cover_clan
 
-cat_factory = TestCatFactory(rng=Random())
+cat_factory = TestCatFactory()
 
 
 class TestsMedCondition(unittest.TestCase):

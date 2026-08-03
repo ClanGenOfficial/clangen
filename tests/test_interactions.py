@@ -2,7 +2,6 @@ import os
 import unittest
 from random import Random
 
-from scripts.cat.status import StatusDict
 from scripts.cat_relations.enums import rel_type_tiers, RelType
 
 from scripts.cat.enums import CatRank
@@ -19,7 +18,7 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 from scripts.cat.cats import Relationship
 from scripts.cat.skills import SkillPath, Skill
 
-cat_factory = TestCatFactory(rng=Random())
+cat_factory = TestCatFactory()
 
 
 class RelationshipConstraints(unittest.TestCase):
@@ -339,7 +338,9 @@ class SingleInteractionCatConstraints(unittest.TestCase):
     def test_status(self):
         # given
         warrior = cat_factory.create_cat(status_dict=StatusDict(rank=CatRank.WARRIOR))
-        medicine = cat_factory.create_cat(status_dict=StatusDict(rank=CatRank.MEDICINE_CAT))
+        medicine = cat_factory.create_cat(
+            status_dict=StatusDict(rank=CatRank.MEDICINE_CAT)
+        )
 
         # when
         warrior_to_all = TextPoolEvent(

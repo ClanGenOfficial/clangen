@@ -1,10 +1,10 @@
 import os
 import unittest
-from scripts.cat.status import StatusDict
 from random import Random
 
 from scripts.cat.enums import CatRank
 from scripts.cat.factories.test_cat_factory import TestCatFactory
+from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.clan import Clan
 from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
@@ -19,7 +19,7 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Relationship
 
-cat_factory = TestCatFactory(rng=Random())
+cat_factory = TestCatFactory()
 
 
 class MainCatFiltering(unittest.TestCase):
@@ -40,9 +40,9 @@ class MainCatFiltering(unittest.TestCase):
         # this is really just to test that the involved cat constraints are being detected and filtered
         # the filtering is already tested in test_event_filters.py, so I don't feel the need to rehash all of it in detail
 
-        main_cat = cat_factory.create_cat(status_dict=StatusDict(rank=CatRank.WARRIOR)
-        )
-        rand_medicine1 = cat_factory.create_cat(status_dict=StatusDict(rank=CatRank.MEDICINE_CAT)
+        main_cat = cat_factory.create_cat(status_dict=StatusDict(rank=CatRank.WARRIOR))
+        rand_medicine1 = cat_factory.create_cat(
+            status_dict=StatusDict(rank=CatRank.MEDICINE_CAT)
         )
         rand_medicine2 = cat_factory.create_cat(
             disable_random=True, status_dict=StatusDict(rank=CatRank.MEDICINE_CAT)
@@ -144,15 +144,15 @@ class MainCatFiltering(unittest.TestCase):
             )
 
     def test_relationship_constraints(self):
-        main_cat = cat_factory.create_cat(status_dict=StatusDict(rank=CatRank.WARRIOR)
+        main_cat = cat_factory.create_cat(status_dict=StatusDict(rank=CatRank.WARRIOR))
+        rand1 = cat_factory.create_cat(
+            status_dict=StatusDict(rank=CatRank.MEDICINE_CAT)
         )
-        rand1 = cat_factory.create_cat(status_dict=StatusDict(rank=CatRank.MEDICINE_CAT)
-        )
-        rand2 = cat_factory.create_cat(status_dict=StatusDict(rank=CatRank.MEDICINE_CAT)
+        rand2 = cat_factory.create_cat(
+            status_dict=StatusDict(rank=CatRank.MEDICINE_CAT)
         )
         rand3 = cat_factory.create_cat(status_dict=StatusDict(rank=CatRank.WARRIOR))
-        rand4 = cat_factory.create_cat(status_dict=StatusDict(rank=CatRank.APPRENTICE)
-        )
+        rand4 = cat_factory.create_cat(status_dict=StatusDict(rank=CatRank.APPRENTICE))
 
         other_cats = [rand1, rand2, rand3, rand4]
 

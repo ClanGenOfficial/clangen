@@ -19,7 +19,7 @@ from scripts.clan import Clan
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 from scripts.events_module.relationship.romantic_events import RomanticEvents
 
-cat_factory = TestCatFactory(rng=Random())
+cat_factory = TestCatFactory()
 
 
 class TestPregnancySettings(unittest.TestCase):

@@ -32,7 +32,7 @@ from scripts.clan_resources.freshkill import FreshkillPile
 from scripts.clan_package.get_clan_cats import get_alive_clan_queens
 
 
-cat_factory = TestCatFactory(rng=Random())
+cat_factory = TestCatFactory()
 
 
 class FreshkillPileTest(unittest.TestCase):

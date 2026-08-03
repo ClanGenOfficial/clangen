@@ -28,7 +28,7 @@ from scripts.cat.enums import CatRank
 from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.cat.enums import CatRank, CatAge, CatSocial, CatGroup, CatStanding
-from scripts.cat.status import StatusDict
+from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan import Clan
@@ -42,7 +42,7 @@ from scripts.events_module.event_filters import (
 )
 from scripts.game_structure import game
 
-cat_factory = TestCatFactory(rng=Random())
+cat_factory = TestCatFactory()
 
 
 class TestEventFilters(unittest.TestCase):

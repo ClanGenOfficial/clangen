@@ -10,7 +10,7 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 from scripts.cat.cats import Relationship
 from scripts.events_module.relationship.romantic_events import RomanticEvents
 
-cat_factory = TestCatFactory(rng=Random())
+cat_factory = TestCatFactory()
 
 
 class RelationshipConditions(unittest.TestCase):

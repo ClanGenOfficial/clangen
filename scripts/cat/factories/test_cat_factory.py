@@ -9,19 +9,23 @@ from scripts.cat.status import Status
 
 
 class TestCatFactory(NewCatFactory):
-    def _get_random_age(self):
+    @classmethod
+    def _get_random_age(cls):
         return CatAge.NEWBORN
 
-    def _get_random_age_from_rank(self, rank):
+    @classmethod
+    def _get_random_age_from_rank(cls, rank):
         return CatAge.NEWBORN
 
-    def _get_random_status_from_age(self, age):
+    @classmethod
+    def _get_random_status_from_age(cls, age):
         status = Status()
         status.generate_new_status(age, disable_random=True)
 
         return status
 
-    def _get_random_moons(self, age: CatAge) -> int:
+    @classmethod
+    def _get_random_moons(cls, age: CatAge) -> int:
         """
         Generate random moons appropriate for the given age
         :param age: CatAge
@@ -29,18 +33,22 @@ class TestCatFactory(NewCatFactory):
         """
         return 0
 
-    def _get_random_gender_and_genderalign(self, age) -> dict:
+    @classmethod
+    def _get_random_gender_and_genderalign(cls, age) -> dict:
         return {"sex": "female", "genderalign": "female"}
 
-    def _get_random_personality(self, age: CatAge):
+    @classmethod
+    def _get_random_personality(cls, age: CatAge):
         return Personality(
             lawful=8, social=8, aggress=8, stable=8, kit_trait=age.is_baby()
         )
 
-    def _get_random_experience(self, age, moons: int) -> int:
+    @classmethod
+    def _get_random_experience(cls, age, moons: int) -> int:
         return 0
 
-    def _get_random_skills_dict(self, rank, age):
+    @classmethod
+    def _get_random_skills_dict(cls, rank, age):
         return CatSkills(
             primary_path=SkillPath.OMEN,
             primary_points=0,
