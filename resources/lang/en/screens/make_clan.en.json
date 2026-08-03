@@ -28,7 +28,7 @@
             "many": "recruit %{count} cats into the Clan, choose wisely"
         },
         "done_title": "no more may join the Clan, continue without regret",
-        "error_too_young": "Too young to take this role",
+        "error_wrong_role": "This cat cannot take this role",
         "choose_random": "choose random cats",
         "choose_leader": {
             "one": "grant this cat {PRONOUN/m_c/poss} 1 life",
