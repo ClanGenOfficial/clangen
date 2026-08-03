@@ -558,7 +558,8 @@ dev_tools = false
 
 [event_generation]
   # forces event with this id to occur
-  debug_ensure_event_id = ""
+  debug_ensure_event_id = "
+"
 
   # forces events of this kind to occur. can be:
   #   "new_cat" | "death" | "injury" | "misc"
@@ -568,7 +569,7 @@ dev_tools = false
   debug_override_requirements = false
 
   # forces the given frequency, frequency can be a number from 1-4
-  debug_override_frequency = 0
+  debug_override_frequency = 
 
 [death_related]
   # the maximum lives a leader can have
