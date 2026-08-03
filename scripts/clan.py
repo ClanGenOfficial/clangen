@@ -300,7 +300,7 @@ class Clan:
             if the_cat != self.instructor:
                 the_cat.backstory = "clan_founder"
             if the_cat.status.rank == CatRank.APPRENTICE:
-                the_cat.rank_change(CatRank.APPRENTICE)
+                the_cat.rank_change(CatRank.APPRENTICE, new_thought=False)
 
         # find non-selected cats from the 12 generated starters
         for c in switch_get_value(Switch.possible_cats):
