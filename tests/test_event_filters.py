@@ -651,8 +651,12 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
             )
 
     def test_app_mentor(self):
-        app = cat_factory.create_cat(moons=8, status_dict=StatusDict(rank=CatRank.APPRENTICE))
-        mentor = cat_factory.create_cat(moons=26, status_dict=StatusDict(rank=CatRank.WARRIOR))
+        app = cat_factory.create_cat(
+            moons=8, status_dict=StatusDict(rank=CatRank.APPRENTICE)
+        )
+        mentor = cat_factory.create_cat(
+            moons=26, status_dict=StatusDict(rank=CatRank.WARRIOR)
+        )
 
         app.update_mentor(new_mentor=mentor.ID)
 
@@ -690,9 +694,12 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
             )
 
     def test_mentor_app(self):
-        app = cat_factory.create_cat(moons=8, )
+        app = cat_factory.create_cat(
+            moons=8,
+        )
         mentor = cat_factory.create_cat(
-            moons=26, status_dict=StatusDict(rank=CatRank.WARRIOR), 
+            moons=26,
+            status_dict=StatusDict(rank=CatRank.WARRIOR),
         )
 
         app.update_mentor(new_mentor=mentor.ID)
@@ -731,9 +738,12 @@ class TestInterpersonalRelationshipConstraints(unittest.TestCase):
             )
 
     def test_multiple(self):
-        app = cat_factory.create_cat(moons=8, )
+        app = cat_factory.create_cat(
+            moons=8,
+        )
         mentor = cat_factory.create_cat(
-            moons=26, status_dict=StatusDict(rank=CatRank.WARRIOR), 
+            moons=26,
+            status_dict=StatusDict(rank=CatRank.WARRIOR),
         )
 
         app.update_mentor(new_mentor=mentor.ID)
@@ -917,9 +927,18 @@ class TestInterpersonalRelationshipConstraints2(unittest.TestCase):
 
     def test_littermates(self):
         parent = cat_factory.create_cat()
-        cat1 = cat_factory.create_cat(parent1=parent.ID, moons=1, )
-        cat2 = cat_factory.create_cat(parent1=parent.ID, moons=1, )
-        sib = cat_factory.create_cat(parent1=parent.ID, moons=10, )
+        cat1 = cat_factory.create_cat(
+            parent1=parent.ID,
+            moons=1,
+        )
+        cat2 = cat_factory.create_cat(
+            parent1=parent.ID,
+            moons=1,
+        )
+        sib = cat_factory.create_cat(
+            parent1=parent.ID,
+            moons=10,
+        )
 
         inheritance_db.load_inheritances(Cat)
 
@@ -1113,7 +1132,9 @@ class TestInterpersonalRelationshipConstraints2(unittest.TestCase):
 
     def test_parent_child(self):
         parent = cat_factory.create_cat()
-        cat1 = cat_factory.create_cat(parent1=parent.ID, )
+        cat1 = cat_factory.create_cat(
+            parent1=parent.ID,
+        )
         cat2 = cat_factory.create_cat()
 
         inheritance_db.load_inheritances(Cat)
@@ -1170,7 +1191,9 @@ class TestInterpersonalRelationshipConstraints2(unittest.TestCase):
 
     def test_child_parent(self):
         parent = cat_factory.create_cat()
-        cat1 = cat_factory.create_cat(parent1=parent.ID, )
+        cat1 = cat_factory.create_cat(
+            parent1=parent.ID,
+        )
         cat2 = cat_factory.create_cat()
 
         inheritance_db.load_inheritances(Cat)
@@ -1226,10 +1249,16 @@ class TestInterpersonalRelationshipConstraints2(unittest.TestCase):
             )
 
     def test_app_mentor(self):
-        app = cat_factory.create_cat(moons=8, status_dict=StatusDict(rank=CatRank.APPRENTICE))
-        mentor = cat_factory.create_cat(moons=26, status_dict=StatusDict(rank=CatRank.WARRIOR))
+        app = cat_factory.create_cat(
+            moons=8, status_dict=StatusDict(rank=CatRank.APPRENTICE)
+        )
+        mentor = cat_factory.create_cat(
+            moons=26, status_dict=StatusDict(rank=CatRank.WARRIOR)
+        )
 
-        app2 = cat_factory.create_cat(moons=8, status_dict=StatusDict(rank=CatRank.APPRENTICE))
+        app2 = cat_factory.create_cat(
+            moons=8, status_dict=StatusDict(rank=CatRank.APPRENTICE)
+        )
 
         app.update_mentor(new_mentor=mentor.ID)
 
@@ -1322,10 +1351,16 @@ class TestInterpersonalRelationshipConstraints2(unittest.TestCase):
             )
 
     def test_mentor_app(self):
-        app = cat_factory.create_cat(moons=8, status_dict=StatusDict(rank=CatRank.APPRENTICE))
-        mentor = cat_factory.create_cat(moons=26, status_dict=StatusDict(rank=CatRank.WARRIOR))
+        app = cat_factory.create_cat(
+            moons=8, status_dict=StatusDict(rank=CatRank.APPRENTICE)
+        )
+        mentor = cat_factory.create_cat(
+            moons=26, status_dict=StatusDict(rank=CatRank.WARRIOR)
+        )
 
-        app2 = cat_factory.create_cat(moons=8, status_dict=StatusDict(rank=CatRank.APPRENTICE))
+        app2 = cat_factory.create_cat(
+            moons=8, status_dict=StatusDict(rank=CatRank.APPRENTICE)
+        )
 
         app.update_mentor(new_mentor=mentor.ID)
 
@@ -1405,9 +1440,12 @@ class TestInterpersonalRelationshipConstraints2(unittest.TestCase):
             )
 
     def test_multiple(self):
-        app = cat_factory.create_cat(moons=8, )
+        app = cat_factory.create_cat(
+            moons=8,
+        )
         mentor = cat_factory.create_cat(
-            moons=26, status_dict=StatusDict(rank=CatRank.WARRIOR), 
+            moons=26,
+            status_dict=StatusDict(rank=CatRank.WARRIOR),
         )
         involved_cats = {"mentor": mentor, "app": app}
 
@@ -1435,7 +1473,6 @@ class TestRelationshipTiers(unittest.TestCase):
             config = tomllib.loads(read_file.read())
 
         cls.thresholds = list(config["relationship"]["value_intervals"].values())
-
 
         cls.cat1 = cat_factory.create_cat()
         cls.cat2 = cat_factory.create_cat()
@@ -1752,7 +1789,6 @@ class TestRelationshipTiersMultiCat(unittest.TestCase):
 
         cls.thresholds = list(config["relationship"]["value_intervals"].values())
 
-
         cls.cat1 = cat_factory.create_cat()
         cls.cat2 = cat_factory.create_cat()
         cls.cat3 = cat_factory.create_cat()
@@ -2045,10 +2081,6 @@ class TestRelationshipTiersMultiCat(unittest.TestCase):
 
 
 class TestCatConstraint(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-
-
     def test_ages(self):
         cat = cat_factory.create_cat()
 

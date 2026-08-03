@@ -20,6 +20,7 @@ from scripts.events_module.relationship import romantic_events
 
 cat_factory = TestCatFactory()
 
+
 class MovingOn(unittest.TestCase):
     def setUp(self):
         game.clan = Clan(save_id="clan")
@@ -204,9 +205,7 @@ class MutualLove(unittest.TestCase):
             cat_from=self.cat2, cat_to=self.cat1
         )
 
-        romantic_events._attempt_mutual_interest_mates(
-            self.cat1, self.cat2
-        )
+        romantic_events._attempt_mutual_interest_mates(self.cat1, self.cat2)
 
         self.assertNotIn(
             self.cat2.ID, self.cat1.mate, msg="Neither cat should qualify to mate"
@@ -223,10 +222,7 @@ class MutualLove(unittest.TestCase):
             cat_from=self.cat2, cat_to=self.cat1
         )
 
-        romantic_events._attempt_mutual_interest_mates(
-            self.cat1, self.cat2
-        )
-
+        romantic_events._attempt_mutual_interest_mates(self.cat1, self.cat2)
 
         self.assertNotIn(
             self.cat2.ID, self.cat1.mate, msg="cat2 should not qualify to mate"
@@ -243,9 +239,7 @@ class MutualLove(unittest.TestCase):
             cat_from=self.cat2, cat_to=self.cat1, romance=20, like=30, comfort=20
         )
 
-        romantic_events._attempt_mutual_interest_mates(
-            self.cat1, self.cat2
-        )
+        romantic_events._attempt_mutual_interest_mates(self.cat1, self.cat2)
 
         self.assertIn(self.cat2.ID, self.cat1.mate, msg="Cats should have mated")
 
@@ -260,9 +254,7 @@ class MutualLove(unittest.TestCase):
             cat_from=self.cat2, cat_to=self.cat1, romance=0, like=50, comfort=20
         )
 
-        romantic_events._attempt_mutual_interest_mates(
-            self.cat1, self.cat2
-        )
+        romantic_events._attempt_mutual_interest_mates(self.cat1, self.cat2)
 
         self.assertIn(self.cat2.ID, self.cat1.mate, msg="Cats should have mated")
 
