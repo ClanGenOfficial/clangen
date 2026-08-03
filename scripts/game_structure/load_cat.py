@@ -2,6 +2,7 @@ import logging
 import os
 from math import floor
 from random import choice
+from typing import Union
 
 import i18n
 import ujson
@@ -18,7 +19,6 @@ from scripts.game_structure.game.switches import (
     switch_set_value,
     Switch,
 )
-from ..cat.factories.cat_factory import CatFactory
 from ..cat.factories.enums import CatType
 from ..cat.factories.load_cat_factory import LoadCatFactory
 from ..cat.factories.typed_dicts import MentorshipDict, StatusDict
@@ -44,12 +44,7 @@ def load_cats():
     try:
         json_load()
     except FileNotFoundError:
-        try:
-            csv_load(Cat.all_cats)
-        except FileNotFoundError as e:
-            switch_set_value(Switch.error_message, "Can't find clan_cats.json!")
-            switch_set_value(Switch.traceback, e)
-            raise
+        csv_load(Cat.all_cats)
 
 
 def json_load():
@@ -138,275 +133,24 @@ def json_load():
 
 def csv_load(all_cats):
     if switch_get_value(Switch.clan_list)[0].strip() == "":
-        cat_data = ""
+        return
     else:
+        switch_set_value(Switch.error_message, "Can't find clan_cats.json")
         if os.path.exists(
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "cats.csv"
         ):
-            with open(
-                get_save_dir()
-                + "/"
-                + switch_get_value(Switch.clan_list)[0]
-                + "cats.csv",
-                "r",
-                encoding="utf-8",
-            ) as read_file:
-                cat_data = read_file.read()
-        else:
-            with open(
-                get_save_dir()
-                + "/"
-                + switch_get_value(Switch.clan_list)[0]
-                + "cats.txt",
-                "r",
-                encoding="utf-8",
-            ) as read_file:
-                cat_data = read_file.read()
-    if len(cat_data) > 0:
-        cat_data = cat_data.replace("\t", ",")
-        for i in cat_data.split("\n"):
-            # CAT: ID(0) - prefix:suffix(1) - gender(2) - status(3) - age(4) - trait(5) - parent1(6) - parent2(7) - mentor(8)
-            # PELT: pelt(9) - colour(10) - white(11) - length(12)
-            # SPRITE: kitten(13) - apprentice(14) - warrior(15) - elder(16) - eye colour(17) - reverse(18)
-            # - white patches(19) - pattern(20) - tortiebase(21) - tortiepattern(22) - tortiecolour(23) - skin(24) - skill(25) - NONE(26) - spec(27) - accessory(28) -
-            # spec2(29) - moons(30) - mate(31)
-            # dead(32) - SPRITE:dead(33) - exp(34) - dead for _ moons(35) - current apprentice(36)
-            # (BOOLS, either TRUE OR FALSE) paralyzed(37) - no kits(38) - exiled(39)
-            # genderalign(40) - former apprentices list (41)[FORMER APPS SHOULD ALWAYS BE MOVED TO THE END]
-            if i.strip() != "":
-                attr = i.split(",")
-                for x in range(len(attr)):
-                    attr[x] = attr[x].strip()
-                    if attr[x] in ["None", "None "]:
-                        attr[x] = None
-                    elif attr[x].upper() == "TRUE":
-                        attr[x] = True
-                    elif attr[x].upper() == "FALSE":
-                        attr[x] = False
-                switch_set_value(
-                    Switch.error_message,
-                    f"There was an error loading cat # {str(attr[0])} (code: 1)",
-                )
-                the_pelt = Pelt(
-                    colour=attr[2], name=attr[11], length=attr[9], eye_color=attr[17]
-                )
-                switch_set_value(
-                    Switch.error_message,
-                    f"There was an error loading cat # {str(attr[0])} (code: 2)",
-                )
-
-                inheritance = {
-                    "parent1": attr[6],
-                    "parent2": attr[7],
-                }
-
-                mentorship = MentorshipDict(
-                    mentor=attr[8],
-                    former_mentor=[],
-                    patrol_with_mentor=0,
-                    apprentice=[],
-                    former_apprentices=[],
-                )
-
-                # FIXME this won't work at the moment I don't think?
-                the_cat = CatFactory.create_cat(
-                    CatType.LOAD_CSV,
-                    ID=attr[0],
-                    gender=attr[2],
-                    status={"rank": attr[3]},
-                    inheritance=inheritance,
-                    mentorship=mentorship,
-                    pelt=the_pelt,
-                )
-
-                the_cat.name = Name(
-                    prefix=attr[1].split(":")[0],
-                    suffix=attr[1].split(":")[1],
-                )
-
-                switch_set_value(
-                    Switch.error_message,
-                    f"There was an error loading cat # {str(attr[0])} (code: 3)",
-                )
-                the_cat.mentor = attr[8]
-                switch_set_value(
-                    Switch.error_message,
-                    f"There was an error loading cat # {str(attr[0])} (code: 4)",
-                )
-                (
-                    the_cat.pelt.cat_sprites["kitten"],
-                    the_cat.pelt.cat_sprites["adolescent"],
-                ) = int(attr[13]), int(attr[14])
-                switch_set_value(
-                    Switch.error_message,
-                    f"There was an error loading cat # {str(attr[0])} (code: 5)",
-                )
-                the_cat.pelt.cat_sprites["adult"], the_cat.pelt.cat_sprites["elder"] = (
-                    int(attr[15]),
-                    int(attr[16]),
-                )
-                switch_set_value(
-                    Switch.error_message,
-                    f"There was an error loading cat # {str(attr[0])} (code: 6)",
-                )
-                (
-                    the_cat.pelt.cat_sprites["young adult"],
-                    the_cat.pelt.cat_sprites["senior adult"],
-                ) = int(attr[15]), int(attr[15])
-                switch_set_value(
-                    Switch.error_message,
-                    f"There was an error loading cat # {str(attr[0])} (code: 7)",
-                )
-                (
-                    the_cat.pelt.reverse,
-                    the_cat.pelt.white_patches,
-                    the_cat.pelt.tortie_marking,
-                ) = (attr[18], attr[19], attr[20])
-                switch_set_value(
-                    Switch.error_message,
-                    f"There was an error loading cat # {str(attr[0])} (code: 8)",
-                )
-                (
-                    the_cat.pelt.tortie_base,
-                    the_cat.pelt.tortie_pattern,
-                    the_cat.pelt.tortie_colour,
-                ) = (attr[21], attr[22], attr[23])
-                switch_set_value(
-                    Switch.error_message,
-                    f"There was an error loading cat # {str(attr[0])} (code: 9)",
-                )
-                the_cat.trait, the_cat.pelt.skin, the_cat.specialty = (
-                    attr[5],
-                    attr[24],
-                    attr[27],
-                )
-                switch_set_value(
-                    Switch.error_message,
-                    f"There was an error loading cat # {str(attr[0])} (code: 10)",
-                )
-                the_cat.skill = attr[25]
-                if len(attr) > 28:
-                    the_cat.pelt.accessory = (attr[28],)
-                if len(attr) > 29:
-                    the_cat.specialty2 = attr[29]
-                else:
-                    the_cat.specialty2 = None
-                switch_set_value(
-                    Switch.error_message,
-                    f"There was an error loading cat # {str(attr[0])} (code: 11)",
-                )
-                if len(attr) > 34:
-                    the_cat.experience = int(attr[34])
-                    experiencelevels = [
-                        "very low",
-                        "low",
-                        "slightly low",
-                        "average",
-                        "somewhat high",
-                        "high",
-                        "very high",
-                        "master",
-                        "max",
-                    ]
-                    the_cat.experience_level = experiencelevels[
-                        floor(int(the_cat.experience) / 10)
-                    ]
-                else:
-                    the_cat.experience = 0
-                switch_set_value(
-                    Switch.error_message,
-                    f"There was an error loading cat # {str(attr[0])} (code: 12)",
-                )
-                if len(attr) > 30:
-                    # Attributes that are to be added after the update
-                    the_cat.moons = int(attr[30])
-                    if len(attr) >= 31:
-                        # assigning mate to cat, if any
-                        the_cat.mate = [attr[31]]
-                    if len(attr) >= 32:
-                        # Is the cat dead
-                        the_cat.status.send_to_afterlife(target_ID=CatGroup.STARCLAN_ID)
-                        the_cat.pelt.cat_sprites["dead"] = attr[33]
-                switch_set_value(
-                    Switch.error_message,
-                    f"There was an error loading cat # {str(attr[0])} (code: 13)",
-                )
-                if len(attr) > 35:
-                    the_cat.dead_for = int(attr[35])
-                switch_set_value(
-                    Switch.error_message,
-                    f"There was an error loading cat # {str(attr[0])} (code: 14)",
-                )
-                if len(attr) > 36 and attr[36] is not None:
-                    the_cat.apprentice = attr[36].split(";")
-                switch_set_value(
-                    Switch.error_message,
-                    f"There was an error loading cat # {str(attr[0])} (code: 15)",
-                )
-                if len(attr) > 37:
-                    the_cat.pelt.paralyzed = bool(attr[37])
-                if len(attr) > 38:
-                    the_cat.no_kits = bool(attr[38])
-                if len(attr) > 39:
-                    if bool(attr[39]):
-                        the_cat.status.exile_from_group()
-                if len(attr) > 40:
-                    the_cat.genderalign = attr[40]
-                if len(attr) > 41 and attr[41] is not None:  # KEEP THIS AT THE END
-                    the_cat.former_apprentices = attr[41].split(";")
-        switch_set_value(
-            Switch.error_message,
-            "There was an error loading this clan's mentors, apprentices, relationships, or sprite info.",
-        )
-        for inter_cat in all_cats.values():
-            # Load the mentors and apprentices after all cats have been loaded
             switch_set_value(
                 Switch.error_message,
-                f"There was an error loading this clan's mentors/apprentices. Last cat read was {inter_cat}",
+                "CSV Clans are no longer supported. Please use an external tool to update your Clan to the modern format.",
             )
-            inter_cat.mentor = Cat.all_cats.get(inter_cat.mentor)
-            apps = []
-            former_apps = []
-            for app_id in inter_cat.apprentice:
-                app = Cat.all_cats.get(app_id)
-                # Make sure if cat isn't an apprentice, they're a former apprentice
-                if app.status.rank == CatRank.APPRENTICE:
-                    apps.append(app)
-                else:
-                    former_apps.append(app)
-            for f_app_id in inter_cat.former_apprentices:
-                f_app = Cat.all_cats.get(f_app_id)
-                former_apps.append(f_app)
-            inter_cat.apprentice = [
-                a.ID for a in apps
-            ]  # Switch back to IDs. I don't want to risk breaking everything.
-            inter_cat.former_apprentices = [a.ID for a in former_apps]
-            if not inter_cat.dead:
-                switch_set_value(
-                    Switch.error_message,
-                    f"There was an error loading this clan's relationships. Last cat read was {inter_cat}",
-                )
-                inter_cat.load_relationship_of_cat()
+        elif os.path.exists(
+            get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "cats.txt"
+        ):
             switch_set_value(
                 Switch.error_message,
-                f"There was an error loading a cat's sprite info. Last cat read was {inter_cat}",
+                "TXT Clans are no longer supported. Please use an external tool to update your Clan to the modern format.",
             )
-            # update_sprite(inter_cat)
-        # generate the relationship if some is missing
-        if not the_cat.dead:
-            switch_set_value(
-                Switch.error_message,
-                f"There was an error when relationships were created.",
-            )
-            for id in all_cats.keys():
-                the_cat = all_cats.get(id)
-                switch_set_value(
-                    Switch.error_message,
-                    f"There was an error when relationships for cat #{the_cat} are created.",
-                )
-                if the_cat.relationships is not None and len(the_cat.relationships) < 1:
-                    the_cat.create_all_relationships()
-        switch_set_value(Switch.error_message, "")
+        raise FileNotFoundError
 
 
 def save_check():
