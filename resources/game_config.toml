@@ -655,10 +655,18 @@ dev_tools = false
     medicine_cat = true
 
   [clan_creation.rank_weights]
+    newborn = 0
     kitten = 1
     apprentice = 1
     warrior = 2
     elder = 1
+
+  # sets what age is allowed to take each rank
+  [clan_creation.valid_rank_to_age_assignment]
+    leader = ["young adult", "adult", "senior adult", "senior"]
+    deputy = ["young adult", "adult", "senior adult", "senior"]
+    "medicine cat" = ["young adult", "adult", "senior adult", "senior"]
+    member = ["newborn", "kitten", "adolescent", "young adult", "adult", "senior adult", "senior"]
 
 [ranks]
   # permit player to change cat ranks
