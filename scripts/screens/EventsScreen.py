@@ -149,7 +149,7 @@ class EventsScreen(Screens):
                 self.save_button.reset_save()
             elif event.ui_element == self.save_button.unsaved_state:
                 self.save_button.save_game(current_screen=self)
-            elif event.ui_element == self.clan_info["view_cards"]:
+            elif event.ui_element == self.clan_info.get("view_cards"):
                 ViewCardsWindow()
             elif element in self.page_control.values():
                 if element == self.page_control["first"]:
@@ -337,17 +337,18 @@ class EventsScreen(Screens):
             },
             manager=MANAGER,
         )
-        self.clan_info["view_cards"] = UIImageButton(
-            ui_scale(pygame.Rect((0, 0), (38, 50))),
-            "",
-            manager=MANAGER,
-            object_id="#view_cards_button",
-            container=self.clan_info["container"],
-            anchors={
-                "centery": "centery",
-                "left_target": self.clan_info["season"],
-            },
-        )
+        if game.clan.game_mode == "cruel_season":
+            self.clan_info["view_cards"] = UIImageButton(
+                ui_scale(pygame.Rect((0, 0), (38, 50))),
+                "",
+                manager=MANAGER,
+                object_id="#view_cards_button",
+                container=self.clan_info["container"],
+                anchors={
+                    "centery": "centery",
+                    "left_target": self.clan_info["season"],
+                },
+            )
         self.timeskip_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((248, 223), (180, 30))),
             "screens.events.timeskip_button",
