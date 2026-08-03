@@ -2440,7 +2440,9 @@ class Cat:
             not is_former_mentor or get_clan_setting("romantic with former mentor")
         )
 
-    def unset_mate(self, other_cat: Cat, breakup: bool = False, fight: bool = False):
+    def unset_mate(
+        self, other_cat: Cat, user_initiated_breakup: bool = False, fight: bool = False
+    ):
         """Unset the mate from both self and other_cat"""
         if not other_cat:
             return
@@ -2457,7 +2459,7 @@ class Cat:
             return
 
         # If only deal with relationships if this is a breakup.
-        if breakup:
+        if user_initiated_breakup:
             self_relationship = None
             if not self.dead:
                 if other_cat.ID not in self.relationships:

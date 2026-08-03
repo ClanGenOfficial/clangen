@@ -1784,7 +1784,6 @@ def ceremony(cat, promoted_to, preparedness="prepared"):
         involved_living_parent,
         involved_dead_parent,
     ) = ceremony_text_adjust(
-        Cat,
         ceremony_text,
         cat,
         dead_mentor=dead_mentor,

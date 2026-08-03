@@ -8,10 +8,10 @@ from scripts.game_structure import constants
 from scripts.events_module.relationship import (
     generate_group_event,
     generate_pair_event,
+    romantic_events,
 )
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatAge
-from scripts.events_module.relationship.romantic_events import RomanticEvents
 from scripts.clan_package.get_clan_cats import (
     get_cats_same_age,
     get_possible_mates,
@@ -40,7 +40,7 @@ def handle_relationships(cat: Cat):
     if not random.getrandbits(4):
         _trigger_romantic_event(cat)
 
-    RomanticEvents.handle_mating_and_breakup(cat)
+        romantic_events.handle_mates_and_breakup(cat)
 
 
 # ---------------------------------------------------------------------------- #
