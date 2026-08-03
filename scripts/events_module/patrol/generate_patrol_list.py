@@ -28,10 +28,11 @@ def get_patrol_list(
 
     # TYPE PATROL
     biome = (
-        game.clan.biome.casefold()
+        game.clan.biome
         if not game.clan.override_biome
-        else game.clan.override_biome.casefold()
+        else game.clan.override_biome
     )
+    biome = biome.casefold()
     season = game.clan.current_season.casefold()
 
     # get specific type
