@@ -391,6 +391,9 @@ class RelationshipScreen(Screens):
             if self.relation_elements:
                 self.kill_relation_buttons()
             self.prior_chunk.clear()
+            self.elements["page_number"].set_text("0/0")
+            self.elements["next_page_button"].disable()
+            self.elements["previous_page_button"].disable()
             return
 
         # PAGE ARROWS
