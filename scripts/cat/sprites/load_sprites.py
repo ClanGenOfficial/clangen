@@ -17,11 +17,15 @@ class Sprites:
     cat_tints = {}
     white_patches_tints = {}
     clan_symbols = []
+    empty_indexes = []
 
     with open(
         "sprites/dicts/pose_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
         POSE_DATA = ujson.loads(read_file.read())
+    for i, pose in enumerate(POSE_DATA["poses"]):
+        if pose == "":
+            empty_indexes.append(i)
 
     with open(
         "sprites/dicts/collar_sprite_data.json", "r", encoding="utf-8"
@@ -170,6 +174,10 @@ class Sprites:
                 if no_index:
                     full_name = f"{name}"
                 else:
+                    if i in self.empty_indexes:
+                        i += 1
+                        continue
+
                     full_name = f"{name}{i}"
 
                 try:

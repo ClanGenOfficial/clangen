@@ -56,7 +56,6 @@ class ChangeGenderScreen(Screens):
         self.removalboxes_text = {}
         self.boxes = {}
         self.box_labels = {}
-        self.conju = 2
         self.current_container = None
         self.saved_container = None
 
@@ -81,7 +80,7 @@ class ChangeGenderScreen(Screens):
                     self.selected_cat_elements[
                         "cat_gender"
                     ] = pygame_gui.elements.UITextBox(
-                        self.the_cat.get_genderalign_string(),
+                        self.the_cat.genderalign_string,
                         ui_scale(pygame.Rect((126, 250), (250, 250))),
                         object_id=get_text_box_theme(
                             "#text_box_30_horizcenter_spacing_95"
@@ -221,9 +220,9 @@ class ChangeGenderScreen(Screens):
 
         # In what case would a cat have no genderalign? -key
         if not self.the_cat.genderalign:
-            text = self.the_cat.get_gender_string()
+            text = self.the_cat.gender_string
         else:
-            text = self.the_cat.get_genderalign_string()
+            text = self.the_cat.genderalign_string
 
         self.selected_cat_elements["cat_gender"] = pygame_gui.elements.UITextBox(
             text,
@@ -264,7 +263,7 @@ class ChangeGenderScreen(Screens):
         )
         self.selected_cat_elements["gender"] = pygame_gui.elements.UITextEntryLine(
             ui_scale(pygame.Rect((350, 220), (165, 30))),
-            placeholder_text=self.the_cat.get_genderalign_string(),
+            placeholder_text=self.the_cat.genderalign_string,
             manager=MANAGER,
         )
         self.buttons["save"] = UISurfaceImageButton(
@@ -310,10 +309,7 @@ class ChangeGenderScreen(Screens):
         pronoun_frame = "resources/images/pronoun_frame.png"
         n = 0
         for pronounset in self.the_cat.pronouns:
-            displayname = (
-                f"{pronounset['subject']}/{pronounset['object']}/"
-                f"{pronounset['inposs']}/{pronounset['self']}"
-            )
+            displayname = self.pronoun_get_cases(pronounset)
             short_name = shorten_text_to_fit(displayname, 170, 13)
 
             # Create block for each pronounset
@@ -424,10 +420,7 @@ class ChangeGenderScreen(Screens):
             if x not in pronouns.get_default_pronouns().values()
         ]
         for pronounset in all_pronouns:
-            displayname = (
-                f"{pronounset['subject']}/{pronounset['object']}/"
-                f"{pronounset['inposs']}/{pronounset['self']}"
-            )
+            displayname = self.pronoun_get_cases(pronounset)
             short_name = shorten_text_to_fit(displayname, 140, 13)
 
             if pronounset in self.pronouns_dict:
@@ -533,6 +526,13 @@ class ChangeGenderScreen(Screens):
                 ui_scale_value(min_scrollable_height),
             ),
         )
+
+    def pronoun_get_cases(self, pronounset) -> str:
+        # Gets all pronoun cases in pronounset for display
+        pronounset_values = list(pronounset.values())
+        displayname = (x for x in pronounset_values if not isinstance(x, int))
+        displayname = "/".join(displayname)
+        return displayname
 
     def reset_buttons_and_boxes(self):
         # kills everything when switching cats

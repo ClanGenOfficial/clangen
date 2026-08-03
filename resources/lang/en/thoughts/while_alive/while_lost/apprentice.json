@@ -1,7 +1,7 @@
 [
     {
         "id": "lost_apprentice_thoughts",
-        "thoughts": [
+        "strings": [
             "Is missing {PRONOUN/m_c/poss} mentor's guidance",
             "Misses the elders stories",
             "Wishes {PRONOUN/m_c/subject} could've become a warrior",

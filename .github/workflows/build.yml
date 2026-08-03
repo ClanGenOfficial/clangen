@@ -19,28 +19,21 @@ jobs:
         include:
           - os: ubuntu-22.04
             artifact_name: Clangen_Linux64_glibc2.35+.tar.xz
-            python_version: "3.11"
+            python_version: "3.12"
             python_arch: "x64"
             itch_channel: linux64_glibc_235
             api_artifact_name: linux2.35
-            
-          - os: windows-latest
-            artifact_name: Clangen_Win64.zip
-            python_version: "3.8"
-            python_arch: "x64"
-            itch_channel: win64
-            api_artifact_name: win64
-            
+
           - os: windows-latest
             artifact_name: Clangen_Win64_Windows10+.zip
-            python_version: "3.11"
+            python_version: "3.12"
             python_arch: "x64"
             itch_channel: win64_10
             api_artifact_name: win10+
             
           - os: macos-15-intel
             artifact_name: Clangen_macOS64.dmg
-            python_version: "3.11"
+            python_version: "3.12"
             python_arch: "x64"
             itch_channel: osx64
             api_artifact_name: macOS
@@ -151,8 +144,8 @@ jobs:
         if: startsWith(matrix.os, 'macos')
         run: |
           rm -r dist/Clangen
-          npm install -g archanyhm/node-appdmg
-          appdmg appdmg.json ${{ matrix.artifact_name }}
+          uv sync --group mac-build
+          uv run dmgbuild -s appdmg.py "Clangen" ${{ matrix.artifact_name }}
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact_name }}

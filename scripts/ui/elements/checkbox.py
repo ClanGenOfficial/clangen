@@ -23,8 +23,8 @@ class UICheckbox(UIImageButton):
     def __init__(
         self,
         position: tuple,
-        container: IContainerLikeInterface,
-        manager,
+        container: IContainerLikeInterface = None,
+        manager=None,
         visible: bool = True,
         tool_tip_text: str = None,
         starting_height: int = 1,
@@ -51,6 +51,12 @@ class UICheckbox(UIImageButton):
             object_id=object_id,
             anchors=anchors,
         )
+
+    def toggle(self):
+        if self.checked:
+            self.uncheck()
+        elif not self.checked:
+            self.check()
 
     def check(self):
         """

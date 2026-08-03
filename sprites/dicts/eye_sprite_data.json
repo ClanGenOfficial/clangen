@@ -27,7 +27,34 @@
             "PALEYELLOW": "yellow",
             "GOLD": "yellow",
             "GREENYELLOW": "yellow",
-            "ORANGE": "yellow"
-        }
+            "ORANGE": "yellow",
+            "DAWN": "yellow",
+            "DUSK": "yellow"
+        },
+        {
+            "AURORA": "blue",
+            "FOREST": "green",
+            "MUSTARD": "yellow",
+            "EARTHY": "yellow",
+            "SEA": "blue",
+            "BLUEBELL": "blue",
+	        "OLIVE": "green",
+	        "CATTAIL": "green",
+	        "GRASSYGREEN": "green",
+	        "FERN": "green",
+	        "LICHEN": "green",
+	        "MOSSY": "green"
+        },
+	    {
+	        "LEAF": "green",
+	        "AQUAMARINE": "green",
+	        "CACTUS": "green",
+            "MAPLE": "yellow",
+            "LIME": "green",
+            "SAND": "yellow",
+            "PERIWINKLE": "blue",
+            "WILDFIRE": "yellow"
+	}
+
     ]
 }

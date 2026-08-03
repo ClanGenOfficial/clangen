@@ -15,7 +15,12 @@ MENU_SCREENS = [
     GameScreen.SETTINGS,
     GameScreen.START,
     GameScreen.SWITCH_CLAN,
-    GameScreen.MAKE_CLAN,
+    GameScreen.MAKE_CLAN_CHOOSE_MODE,
+    GameScreen.MAKE_CLAN_CHOOSE_CARDS,
+    GameScreen.MAKE_CLAN_CHOOSE_NAME,
+    GameScreen.MAKE_CLAN_CHOOSE_CATS,
+    GameScreen.MAKE_CLAN_CHOOSE_SYMBOL,
+    GameScreen.MAKE_CLAN_CLAN_CREATED,
 ]
 
 EVENTS_PER_PAGE = 10
@@ -155,14 +160,41 @@ SUPPLY_ADJUSTMENTS = [
     "increase_#",
 ]
 
+CRUEL_CARDS_ALL: dict = {}
+with open(
+    "resources/dicts/cruel_season/behavior_cards.json", "r", encoding="utf-8"
+) as read_file:
+    CRUEL_CARDS_BEHAVIOR: dict = ujson.loads(read_file.read())
+CRUEL_CARDS_ALL.update(CRUEL_CARDS_BEHAVIOR)
+
+with open(
+    "resources/dicts/cruel_season/danger_cards.json", "r", encoding="utf-8"
+) as read_file:
+    CRUEL_CARDS_DANGER: dict = ujson.loads(read_file.read())
+CRUEL_CARDS_ALL.update(CRUEL_CARDS_DANGER)
+
+with open(
+    "resources/dicts/cruel_season/environment_cards.json", "r", encoding="utf-8"
+) as read_file:
+    CRUEL_CARDS_ENVIRONMENT: dict = ujson.loads(read_file.read())
+CRUEL_CARDS_ALL.update(CRUEL_CARDS_ENVIRONMENT)
+
+with open(
+    "resources/dicts/cruel_season/origin_cards.json", "r", encoding="utf-8"
+) as read_file:
+    CRUEL_CARDS_ORIGIN: dict = ujson.loads(read_file.read())
+CRUEL_CARDS_ALL.update(CRUEL_CARDS_ORIGIN)
+
+with open(
+    "resources/dicts/cruel_season/card_conflicts.json", "r", encoding="utf-8"
+) as read_file:
+    CRUEL_CARDS_CONFLICTS: dict = ujson.loads(read_file.read())
+
 with open("resources/game_config.toml", "r", encoding="utf-8") as read_file:
     CONFIG = tomllib.loads(read_file.read())
 
 with open("resources/display_settings.toml", "r", encoding="utf-8") as read_file:
     DISPLAY_SETTINGS = tomllib.loads(read_file.read())
-
-with open("resources/prey_config.toml", "r", encoding="utf-8") as read_file:
-    PREY_CONFIG = tomllib.loads(read_file.read())
 
 with open("resources/placements.json", "r", encoding="utf-8") as read_file:
     LAYOUTS = ujson.loads(read_file.read())

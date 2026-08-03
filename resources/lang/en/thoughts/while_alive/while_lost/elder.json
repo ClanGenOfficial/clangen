@@ -1,7 +1,7 @@
 [
     {
         "id": "lost_elder_thoughts",
-        "thoughts": [
+        "strings": [
             "Wishes {PRONOUN/m_c/subject} had some help getting around",
             "Is saddened by the fact that {PRONOUN/m_c/subject} can't tell stories to anyone",
             "Misses the kits stumbling around and bothering {PRONOUN/m_c/object}",

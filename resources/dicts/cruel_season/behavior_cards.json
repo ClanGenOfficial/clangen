@@ -1,0 +1,129 @@
+{
+  "resolute": {
+    "card_art": "behavior/resolute.png",
+    "modifiers": {
+      "focus.duration": 6
+    }
+  },
+  "fated_paths": {
+    "card_art": "behavior/resolute.png",
+    "modifiers": {
+      "ranks.allow_manual": false,
+      "mates.allow_manual": false,
+      "settings.force_enable.deputy": true
+    }
+  },
+  "enmity": {
+    "card_art": "behavior/resolute.png",
+    "modifiers": {
+      "reputation.other_clans.relation_cap": 7,
+      "clan_creation.starting_clan_relation": [1, 7]
+    }
+  },
+  "survival_of_fittest": {
+    "card_art": "behavior/survival_of_fittest.png",
+    "modifiers": {
+      "prey.feeding.starting_order": "experience_first",
+      "prey.feeding.lock_order": true,
+      "prey.feeding.starting_priority": "hunter_first",
+      "prey.feeding.lock_priority": true,
+      "prey.feeding.allow_manual_feeding": false
+    }
+  },
+  "kit_season": {
+    "card_art": "behavior/survival_of_fittest.png",
+    "modifiers": {
+      "pregnancy.birth_cooldown": 2,
+      "pregnancy.primary_chance_mated": 20,
+      "pregnancy.primary_chance_unmated": 40
+    }
+  },
+  "mouths_to_feed": {
+    "card_art": "behavior/survival_of_fittest.png",
+    "modifiers": {
+      "pregnancy.one_kit_possibility.young adult": 0,
+      "pregnancy.one_kit_possibility.adult": 4,
+      "pregnancy.one_kit_possibility.senior adult": 4,
+      "pregnancy.one_kit_possibility.senior": 2,
+
+      "pregnancy.two_kit_possibility.young adult": 2,
+      "pregnancy.two_kit_possibility.adult": 5,
+      "pregnancy.two_kit_possibility.senior adult": 5,
+      "pregnancy.two_kit_possibility.senior": 2,
+
+      "pregnancy.three_kit_possibility.young adult": 9,
+      "pregnancy.three_kit_possibility.adult": 11,
+      "pregnancy.three_kit_possibility.senior adult": 8,
+      "pregnancy.three_kit_possibility.senior": 3,
+
+      "pregnancy.four_kit_possibility.young adult": 17,
+      "pregnancy.four_kit_possibility.adult": 16,
+      "pregnancy.four_kit_possibility.senior adult": 8,
+      "pregnancy.four_kit_possibility.senior": 1,
+
+      "pregnancy.five_kit_possibility.young adult": 15,
+      "pregnancy.five_kit_possibility.adult": 7,
+      "pregnancy.five_kit_possibility.senior adult": 5,
+      "pregnancy.five_kit_possibility.senior": 0,
+
+      "pregnancy.max_kit_possibility.young adult": 12,
+      "pregnancy.max_kit_possibility.adult": 3,
+      "pregnancy.max_kit_possibility.senior adult": 2,
+      "pregnancy.max_kit_possibility.senior": 0
+    }
+  },
+  "underpopulated": {
+    "card_art": "behavior/underpopulated.png",
+    "modifiers": {
+      "pregnancy.one_kit_possibility.young adult": 12,
+      "pregnancy.one_kit_possibility.adult": 10,
+      "pregnancy.one_kit_possibility.senior adult": 11,
+      "pregnancy.one_kit_possibility.senior": 5,
+
+      "pregnancy.two_kit_possibility.young adult": 11,
+      "pregnancy.two_kit_possibility.adult": 14,
+      "pregnancy.two_kit_possibility.senior adult": 16,
+      "pregnancy.two_kit_possibility.senior": 4,
+
+      "pregnancy.three_kit_possibility.young adult": 17,
+      "pregnancy.three_kit_possibility.adult": 15,
+      "pregnancy.three_kit_possibility.senior adult": 5,
+      "pregnancy.three_kit_possibility.senior": 1,
+
+      "pregnancy.four_kit_possibility.young adult": 7,
+      "pregnancy.four_kit_possibility.adult": 4,
+      "pregnancy.four_kit_possibility.senior adult": 2,
+      "pregnancy.four_kit_possibility.senior": 0,
+
+      "pregnancy.five_kit_possibility.young adult": 1,
+      "pregnancy.five_kit_possibility.adult": 2,
+      "pregnancy.five_kit_possibility.senior adult": 0,
+      "pregnancy.five_kit_possibility.senior": 0,
+
+      "pregnancy.max_kit_possibility.young adult": 1,
+      "pregnancy.max_kit_possibility.adult": 0,
+      "pregnancy.max_kit_possibility.senior adult": 0,
+      "pregnancy.max_kit_possibility.senior": 0
+    }
+  },
+  "heartless": {
+    "card_art": "behavior/sorrow.png",
+    "modifiers": {
+      "mates.allow_manual": false,
+      "mates.allow_mating": false
+    }
+  },
+  "clumsy_paws": {
+    "card_art": "behavior/sorrow.png",
+    "modifiers": {
+      "progress.difficulty_modifier": 0.5
+    }
+  },
+  "malicious_aura": {
+    "card_art": "behavior/resolute.png",
+    "modifiers": {
+      "outsiders.max_reputation": 29,
+      "outsiders.starting_reputation": 15
+    }
+  }
+}
