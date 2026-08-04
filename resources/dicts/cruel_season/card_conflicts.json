@@ -1,7 +1,7 @@
 {
     "clan_ranks": ["all_kittens", "all_apprentices", "all_elders"],
-    "leader_life": ["forsaken", "stolen_vitality"],
+    "singe_leader_life": ["forsaken", "stolen_vitality"],
     "seasons": ["always_newleaf", "always_greenleaf", "always_leaf-fall", "always_leaf-bare"],
     "litters": ["underpopulated", "mouths_to_feed"],
-    "leader_lives": ["weak_stars", "forsaken"]
+    "leader_life_count": ["weak_stars", "forsaken"]
 }
