@@ -529,13 +529,15 @@ class ChangeGenderScreen(Screens):
 
     def pronoun_get_cases(self, pronounset) -> str:
         # Gets all pronoun cases in pronounset for display
-        displayname = "/".join((
-            pronounset["subject"],
-            pronounset["object"],
-            pronounset["poss"],
-            pronounset["inposs"],
-            pronounset["self"],
-        ))
+        displayname = "/".join(
+            (
+                pronounset["subject"],
+                pronounset["object"],
+                pronounset["poss"],
+                pronounset["inposs"],
+                pronounset["self"],
+            )
+        )
         return displayname
 
     def reset_buttons_and_boxes(self):
