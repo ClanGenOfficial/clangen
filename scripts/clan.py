@@ -16,16 +16,15 @@ from typing import Literal, Optional
 import i18n
 import ujson
 
-from scripts.cat.cats import Cat, cat_class, BACKSTORIES
+from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.cat.enums import CatRank, CatGroup, CatSocial
 from scripts.cat.factories.new_cat_factory import NewCatFactory
-from scripts.cat.factories.enums import CatType
+from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.cat.names import names
 from scripts.cat.save_load import (
     save_cats,
     get_faded_ids,
 )
-from scripts.cat.status import StatusDict
 from scripts.clan_package.clan_names import get_possible_clan_names
 from scripts.clan_package.settings import save_clan_settings, load_clan_settings
 from scripts.clan_package.settings.clan_settings import (
@@ -39,7 +38,6 @@ from scripts.clan_resources.point_of_interest import (
     get_poi_save_dict,
     generate_and_add_new_poi,
     PoiType,
-    get_poi_names_set,
     clear_pois,
 )
 from scripts.config import get_config

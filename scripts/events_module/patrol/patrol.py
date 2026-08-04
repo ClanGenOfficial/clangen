@@ -198,6 +198,7 @@ class Patrol:
             possible_leads.sort(key=lambda x: x.moons)
         else:
             possible_leads.sort(key=lambda x: x.experience)
+
         self.involved_cats["p_l"] = possible_leads[-1]
         self.involved_cats["patrol_cats"] = patrol_cats
 

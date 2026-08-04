@@ -1,11 +1,12 @@
 import os
 import unittest
 
-from scripts.cat.cats import create_cat, Cat
+from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank, CatGroup
+from scripts.cat.factories.test_cat_factory import TestCatFactory
+from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.cat.skills import SkillPath
 from scripts.cat.sprites.load_sprites import sprites
-from scripts.cat.status import StatusDict
 from scripts.clan import Clan, OtherClan
 from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
@@ -19,7 +20,6 @@ from scripts.events_module.parameter_dicts import (
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.text_pool_event import handle_consequences
-from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
 from scripts.game_structure.game import Switch
 from scripts.game_structure.game.switches import switch_set_value
@@ -41,26 +41,26 @@ class TestPatrolCats(unittest.TestCase):
 
     def test_all_cats(self):
         patrol_cats = [
-            create_cat(rank=CatRank.WARRIOR),
-            create_cat(rank=CatRank.WARRIOR),
+            TestCatFactory.create_cat(rank=CatRank.WARRIOR),
+            TestCatFactory.create_cat(rank=CatRank.WARRIOR),
         ]
         self.patrol_class._add_patrol_cats(patrol_cats)
 
         self.assertEqual(patrol_cats, self.patrol_class.involved_cats["patrol_cats"])
 
     def test_rank(self):
-        war1 = create_cat(rank=CatRank.WARRIOR)
-        war2 = create_cat(rank=CatRank.WARRIOR)
-        app = create_cat(rank=CatRank.APPRENTICE)
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+        war2 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+        app = TestCatFactory.create_cat(rank=CatRank.APPRENTICE)
         patrol_cats = [war1, war2, app]
         self.patrol_class._add_patrol_cats(patrol_cats)
 
         self.assertCountEqual([war2, war1], self.patrol_class.involved_cats["warrior"])
 
     def test_normal_adult(self):
-        war1 = create_cat(rank=CatRank.WARRIOR)
-        war2 = create_cat(rank=CatRank.WARRIOR)
-        app = create_cat(rank=CatRank.APPRENTICE, moons=13)
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+        war2 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+        app = TestCatFactory.create_cat(rank=CatRank.APPRENTICE, moons=13)
         patrol_cats = [war1, war2, app]
         self.patrol_class._add_patrol_cats(patrol_cats)
 
@@ -69,18 +69,18 @@ class TestPatrolCats(unittest.TestCase):
         )
 
     def test_all_apprentices(self):
-        war1 = create_cat(rank=CatRank.WARRIOR)
-        war2 = create_cat(rank=CatRank.WARRIOR)
-        app = create_cat(rank=CatRank.APPRENTICE)
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+        war2 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+        app = TestCatFactory.create_cat(rank=CatRank.APPRENTICE)
         patrol_cats = [war1, war2, app]
         self.patrol_class._add_patrol_cats(patrol_cats)
 
         self.assertCountEqual([app], self.patrol_class.involved_cats["all apprentices"])
 
     def test_healer_cats(self):
-        war1 = create_cat(rank=CatRank.WARRIOR)
-        med_app = create_cat(rank=CatRank.MEDICINE_APPRENTICE)
-        med = create_cat(rank=CatRank.MEDICINE_CAT)
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+        med_app = TestCatFactory.create_cat(rank=CatRank.MEDICINE_APPRENTICE)
+        med = TestCatFactory.create_cat(rank=CatRank.MEDICINE_CAT)
         patrol_cats = [war1, med_app, med]
         self.patrol_class._add_patrol_cats(patrol_cats)
 
@@ -91,6 +91,9 @@ class TestPatrolCats(unittest.TestCase):
 
 class TestInvolvedCats(unittest.TestCase):
     def setUp(self):
+        # load in the spritesheets
+        # we have to do this to prevent a crash, even though we won't be displaying anything
+        sprites.load_all()
         Cat.all_cats.clear()
         Cat.all_cats_list.clear()
 
@@ -105,9 +108,13 @@ class TestInvolvedCats(unittest.TestCase):
         self.patrol_class.other_clan = OtherClan()
 
     def test_overall_pl_rc_difference(self):
-        war1 = create_cat(rank=CatRank.WARRIOR)
-        app1 = create_cat(rank=CatRank.APPRENTICE)
-        app2 = create_cat(rank=CatRank.APPRENTICE)
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR, moons=20, experience=50)
+        app1 = TestCatFactory.create_cat(
+            rank=CatRank.APPRENTICE, moons=10, experience=1
+        )
+        app2 = TestCatFactory.create_cat(
+            rank=CatRank.APPRENTICE, moons=10, experience=1
+        )
 
         patrol = PatrolEvent(
             id="test",
@@ -138,8 +145,8 @@ class TestInvolvedCats(unittest.TestCase):
         )
 
     def test_new_cat_found(self):
-        war1 = create_cat(rank=CatRank.WARRIOR)
-        outsider1 = create_cat(rank=CatRank.LONER)
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+        outsider1 = TestCatFactory.create_cat(rank=CatRank.LONER)
 
         patrol = PatrolEvent(
             id="test",
@@ -170,9 +177,13 @@ class TestInvolvedCats(unittest.TestCase):
         )
 
     def test_pl_persistence(self):
-        war1 = create_cat(rank=CatRank.WARRIOR)
-        app1 = create_cat(rank=CatRank.APPRENTICE)
-        app2 = create_cat(rank=CatRank.APPRENTICE)
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR, moons=20, experience=50)
+        app1 = TestCatFactory.create_cat(
+            rank=CatRank.APPRENTICE, moons=10, experience=1
+        )
+        app2 = TestCatFactory.create_cat(
+            rank=CatRank.APPRENTICE, moons=10, experience=1
+        )
 
         patrol = PatrolEvent(
             id="test",
@@ -202,9 +213,9 @@ class TestInvolvedCats(unittest.TestCase):
         )
 
     def test_sc_share_abbr(self):
-        war1 = create_cat(rank=CatRank.WARRIOR)
-        app1 = create_cat(rank=CatRank.APPRENTICE)
-        app2 = create_cat(rank=CatRank.APPRENTICE)
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+        app1 = TestCatFactory.create_cat(rank=CatRank.APPRENTICE)
+        app2 = TestCatFactory.create_cat(rank=CatRank.APPRENTICE)
 
         patrol = PatrolEvent(
             id="test",
@@ -234,9 +245,9 @@ class TestInvolvedCats(unittest.TestCase):
         )
 
     def test_sc_not_cat(self):
-        war1 = create_cat(rank=CatRank.WARRIOR)
-        app1 = create_cat(rank=CatRank.APPRENTICE)
-        app2 = create_cat(rank=CatRank.APPRENTICE)
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+        app1 = TestCatFactory.create_cat(rank=CatRank.APPRENTICE)
+        app2 = TestCatFactory.create_cat(rank=CatRank.APPRENTICE)
 
         patrol = PatrolEvent(
             id="test",
@@ -275,7 +286,7 @@ class TestOutcomeExecution(unittest.TestCase):
         Cat.all_cats_list.clear()
 
         game.clan = Clan("test", game_mode="expanded")
-        game.clan.instructor = Cat(
+        game.clan.instructor = TestCatFactory.create_cat(
             status_dict=StatusDict(group_ID=CatGroup.STARCLAN_ID, rank=CatRank.WARRIOR)
         )
         game.clan.instructor.dead = True
@@ -287,8 +298,8 @@ class TestOutcomeExecution(unittest.TestCase):
         self.patrol_class = Patrol()
 
     def test_joining_clan(self):
-        war1 = create_cat(rank=CatRank.WARRIOR)
-        outsider1 = create_cat(rank=CatRank.LONER)
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+        outsider1 = TestCatFactory.create_cat(rank=CatRank.LONER)
 
         patrol = PatrolEvent(
             id="test",
@@ -319,8 +330,10 @@ class TestOutcomeExecution(unittest.TestCase):
         )
 
     def test_dying(self):
-        war1 = create_cat(rank=CatRank.WARRIOR)
-        app1 = create_cat(rank=CatRank.APPRENTICE)
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR, moons=20, experience=50)
+        app1 = TestCatFactory.create_cat(
+            rank=CatRank.APPRENTICE, moons=10, experience=1
+        )
 
         patrol = PatrolEvent(
             id="test",
@@ -359,8 +372,10 @@ class TestOutcomeExecution(unittest.TestCase):
         )
 
     def test_lost(self):
-        war1 = create_cat(rank=CatRank.WARRIOR)
-        app1 = create_cat(rank=CatRank.APPRENTICE)
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR, moons=20, experience=50)
+        app1 = TestCatFactory.create_cat(
+            rank=CatRank.APPRENTICE, moons=10, experience=1
+        )
 
         patrol = PatrolEvent(
             id="test",
@@ -394,8 +409,8 @@ class TestOutcomeExecution(unittest.TestCase):
         )
 
     def test_condition(self):
-        war1 = create_cat(rank=CatRank.WARRIOR)
-        app1 = create_cat(rank=CatRank.APPRENTICE)
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+        app1 = TestCatFactory.create_cat(rank=CatRank.APPRENTICE)
 
         patrol = PatrolEvent(
             id="test",
@@ -431,8 +446,8 @@ class TestOutcomeExecution(unittest.TestCase):
         )
 
     def test_rep_change(self):
-        war1 = create_cat(rank=CatRank.WARRIOR)
-        app1 = create_cat(rank=CatRank.APPRENTICE)
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+        app1 = TestCatFactory.create_cat(rank=CatRank.APPRENTICE)
 
         patrol = PatrolEvent(
             id="test",
@@ -472,7 +487,7 @@ class TestOutcomeExecution(unittest.TestCase):
         )
 
     def test_supply_change(self):
-        war1 = create_cat(rank=CatRank.WARRIOR)
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
         war1.skills.primary.path = SkillPath.CLIMBER
         war1.skills.secondary = None
 
