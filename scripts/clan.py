@@ -18,6 +18,8 @@ import ujson
 
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.enums import CatRank, CatGroup, CatSocial
+from scripts.cat.factories.new_cat_factory import NewCatFactory
+from scripts.cat.factories.enums import CatType
 from scripts.cat.names import names
 from scripts.cat.save_load import (
     save_cats,
@@ -261,7 +263,7 @@ class Clan:
             )
         )
 
-        self.instructor = Cat(
+        self.instructor = NewCatFactory.create_cat(
             status_dict={"rank": instructor_rank, "group_ID": CatGroup.STARCLAN_ID},
             backstory=choice(
                 BACKSTORIES["backstory_categories"]["clan_guide_backstories"]
@@ -298,7 +300,7 @@ class Clan:
             if the_cat != self.instructor:
                 the_cat.backstory = "clan_founder"
             if the_cat.status.rank == CatRank.APPRENTICE:
-                the_cat.rank_change(CatRank.APPRENTICE)
+                the_cat.rank_change(CatRank.APPRENTICE, new_thought=False)
 
         # find non-selected cats from the 12 generated starters
         for c in switch_get_value(Switch.possible_cats):
@@ -778,11 +780,11 @@ class Clan:
                 game.clan.instructor = Cat.all_cats[instructor_info]
                 game.clan.add_cat(game.clan.instructor)
         else:
-            game.clan.instructor = Cat(
+            game.clan.instructor = NewCatFactory.create_cat(
                 status_dict={
                     "rank": choice((CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER)),
                     "group": CatGroup.STARCLAN,
-                }
+                },
             )
             # update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
@@ -931,11 +933,11 @@ class Clan:
             game.clan.instructor = Cat.all_cats[clan_data["instructor"]]
             game.clan.add_cat(game.clan.instructor)
         else:
-            game.clan.instructor = Cat(
+            game.clan.instructor = NewCatFactory.create_cat(
                 status_dict={
                     "rank": choice((CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER)),
                     "group": CatGroup.STARCLAN,
-                }
+                },
             )
             # update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
@@ -1742,4 +1744,4 @@ def _find_alignment(temper_dict: dict, first_value: int, second_value: int) -> s
 
 
 clan_class = Clan()
-clan_class.remove_cat(cat_class.ID)
+# clan_class.remove_cat(cat_class.ID)
