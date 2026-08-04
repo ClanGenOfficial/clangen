@@ -24,6 +24,10 @@ class TestCatFactory(NewCatFactory):
 
         return status
 
+    @staticmethod
+    def _get_random_backstory_from_status(status: Status, age: CatAge):
+        return "clanborn"
+
     @classmethod
     def _get_random_moons(cls, age: CatAge) -> int:
         """

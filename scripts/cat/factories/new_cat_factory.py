@@ -2,8 +2,8 @@ import random
 from typing import Tuple
 
 from scripts.cat import save_load
-from scripts.cat.cats import Cat
-from scripts.cat.enums import CatAge, CatRank
+from scripts.cat.cats import Cat, BACKSTORIES
+from scripts.cat.enums import CatAge, CatRank, CatSocial
 from scripts.cat.factories.base_factory import BaseCatFactory
 from scripts.cat.factories.typed_dicts import (
     MentorshipDict,
@@ -76,7 +76,10 @@ class NewCatFactory(BaseCatFactory):
             "pelt": pelt,
             "moons": moons,
             "status": status,
-            "backstory": overrides.get("backstory", "clanborn"),
+            "backstory": overrides.get(
+                "backstory",
+                cls._get_random_backstory_from_status(status, age),
+            ),
             "skills": skills,
             "personality": cls._get_random_personality(age),
             "mentorship": MentorshipDict(
@@ -161,6 +164,18 @@ class NewCatFactory(BaseCatFactory):
         status.generate_new_status(age)
 
         return status
+    @staticmethod
+    def _get_random_backstory_from_status(status: Status, age: CatAge):
+        if status.social == CatSocial.CLANCAT:
+            return "clanborn"
+
+        social_category = str(status.rank) + "_backstories"
+
+        if age.is_baby():
+            social_category = f"baby_{social_category}"
+        possible_backstories = BACKSTORIES["backstory_categories"][social_category]
+
+        return random.choice(possible_backstories)
 
     @classmethod
     def _get_random_moons(cls, age: CatAge) -> int:
