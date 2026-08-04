@@ -558,8 +558,8 @@ dev_tools = false
 
 [event_generation]
   # forces event with this id to occur
-  debug_ensure_event_id = "
-"
+  debug_ensure_event_id = ""
+
 
   # forces events of this kind to occur. can be:
   #   "new_cat" | "death" | "injury" | "misc"
