@@ -1202,7 +1202,7 @@
             "Feels lonely without {PRONOUN/m_c/poss} littermates",
             "Has given up on returning home",
             "Hopes that c_n doesn't hurt {PRONOUN/m_c/subject}",
-            "Fears all the new cats"
+            "Fears all the new cats around {PRONOUN/m_c/poss}"
         ],
         "involved_cats":{
             "m_c":{
