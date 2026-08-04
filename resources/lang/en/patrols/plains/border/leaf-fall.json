@@ -251,7 +251,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. The patrol catches it in an ambush, and a torn ear and ripped up pelt convinces the youngest that this area isn't one to stay in.",
+                "text": "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. The patrol catches it in an ambush, and a torn ear and ripped up pelt convinces the youngest that this area isn't one to stay in.",
                 "exp": 60,
                 "art": "animals/animals/gen_coyoterun",
                 "relationships": [
@@ -523,7 +523,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. The patrol try to teach it that cats are to be feared, not food, but it manages to get a couple good bites in of its own.",
+                "text": "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. The patrol try to teach it that cats are to be feared, not food, but it manages to get a couple good bites in of its own.",
                 "exp": 0,
                 "art": "animals/animals/gen_coyoterun",
                 "injury": [
@@ -567,7 +567,7 @@
                 "frequency": 4
             },
             {
-                "text": "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. It decides r_c is a suitable snack.  s_c runs in to save {PRONOUN/r_c/object}, fighting like an entire patrol just by {PRONOUN/s_c/self}.",
+                "text": "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. It decides r_c is a suitable snack.  s_c runs in to save {PRONOUN/r_c/object}, fighting like an entire patrol just by {PRONOUN/s_c/self}.",
                 "exp": 0,
                 "art": "cat_sprites/gen_coyote_Wr",
                 "can_have_stat": [
@@ -947,7 +947,7 @@
                 "frequency": 4
             },
             {
-                "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. The patrol catches it in an ambush, and with so many cats, this is one coyote that won't live to threaten c_n in the future.",
+                "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. The patrol catches it in an ambush, and with so many cats, this is one coyote that won't live to threaten c_n in the future.",
                 "exp": 60,
                 "art": "animals/animals/gen_coyoterun",
                 "relationships": [
@@ -981,7 +981,7 @@
                 "frequency": 4
             },
             {
-                "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. With s_c's talent for battle, this coyote won't make it to adulthood.",
+                "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. With s_c's talent for battle, this coyote won't make it to adulthood.",
                 "exp": 70,
                 "art": "animals/animals/gen_coyoterun",
                 "can_have_stat": [
@@ -1033,7 +1033,7 @@
                 "frequency": 4
             },
             {
-                "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. The patrol takes it down, but it takes a vicious bite out of r_c first. s_c's first aid while the cats carry r_c back to camp saves {PRONOUN/r_c/poss} life.",
+                "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. The patrol takes it down, but it takes a vicious bite out of r_c first. s_c's first aid while the cats carry r_c back to camp saves {PRONOUN/r_c/poss} life.",
                 "exp": 80,
                 "art": "cat_sprites/gen_coyote_Wr",
                 "can_have_stat": [
@@ -1337,7 +1337,7 @@
                 "frequency": 4
             },
             {
-                "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. This coyote won't see the first day of leaf-bare — but it lashes out as the patrol finishes it off.",
+                "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. This coyote won't see the first day of leaf-bare — but it lashes out as the patrol finishes it off.",
                 "exp": 0,
                 "art": "animals/animals/gen_coyoterun",
                 "injury": [
@@ -1393,7 +1393,7 @@
                 "frequency": 4
             },
             {
-                "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. But seeing the patrol, the coyote slips away without a trace, an opportunity to secure c_n's borders lost.",
+                "text": "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. But seeing the patrol, the coyote slips away without a trace, an opportunity to secure c_n's borders lost.",
                 "exp": 0,
                 "art": "animals/animals/gen_coyoterun",
                 "relationships": [

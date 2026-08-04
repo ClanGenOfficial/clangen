@@ -813,7 +813,7 @@
             "exp": 30,
             "frequency": 3,
             "prey": ["large"],
-            "stat_trait": ["flamboyant", "charismatic", "playful", "shameless", "bold", "daring", "adventurous", "rebellious", "sneaky", "strange", "troublesome"],
+            "stat_trait": ["flamboyant", "charismatic", "playful", "shameless", "bold", "daring", "adventurous", "rebellious", "strange", "troublesome"],
             "relationships": [
                 {
                     "cats_to": ["s_c"],

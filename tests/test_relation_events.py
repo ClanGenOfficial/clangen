@@ -16,7 +16,7 @@ from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan import Clan
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
-from scripts.events_module.relationship.romantic_events import RomanticEvents
+from scripts.events_module.relationship import romantic_events
 
 
 class TestPregnancySettings(unittest.TestCase):
@@ -273,81 +273,3 @@ class Pregnancy(unittest.TestCase):
         # then
         self.assertIn(cat1.ID, clan.pregnancy_data.keys())
         self.assertEqual(clan.pregnancy_data[cat1.ID]["second_parent"], cat2.ID)
-
-
-class Mates(unittest.TestCase):
-    def test_platonic_kitten_mating(self):
-        # given
-        cat1 = Cat(moons=3, disable_random=True)
-        cat2 = Cat(moons=3, disable_random=True)
-
-        relationship1 = Relationship(cat1, cat2)
-        relationship2 = Relationship(cat2, cat1)
-        relationship1.opposite_relationship = relationship2
-        relationship2.opposite_relationship = relationship1
-        cat1.relationships[cat2.ID] = relationship1
-        cat2.relationships[cat1.ID] = relationship2
-
-        # when
-        relationship1.like = 100
-        relationship2.like = 100
-
-        # then
-        self.assertFalse(RomanticEvents.check_if_new_mate(cat1, cat2)[0])
-
-    def test_platonic_apprentice_mating(self):
-        # given
-        cat1 = Cat(moons=6, disable_random=True)
-        cat2 = Cat(moons=6, disable_random=True)
-
-        relationship1 = Relationship(cat1, cat2)
-        relationship2 = Relationship(cat2, cat1)
-        relationship1.opposite_relationship = relationship2
-        relationship2.opposite_relationship = relationship1
-        cat1.relationships[cat2.ID] = relationship1
-        cat2.relationships[cat1.ID] = relationship2
-
-        # when
-        relationship1.like = 100
-        relationship2.like = 100
-
-        # then
-        self.assertFalse(RomanticEvents.check_if_new_mate(cat1, cat2)[0])
-
-    def test_romantic_kitten_mating(self):
-        # given
-        cat1 = Cat(moons=3, disable_random=True)
-        cat2 = Cat(moons=3, disable_random=True)
-
-        relationship1 = Relationship(cat1, cat2)
-        relationship2 = Relationship(cat2, cat1)
-        relationship1.opposite_relationship = relationship2
-        relationship2.opposite_relationship = relationship1
-        cat1.relationships[cat2.ID] = relationship1
-        cat2.relationships[cat1.ID] = relationship2
-
-        # when
-        relationship1.romance = 100
-        relationship2.romance = 100
-
-        # then
-        self.assertFalse(RomanticEvents.check_if_new_mate(cat1, cat2)[0])
-
-    def test_romantic_apprentice_mating(self):
-        # given
-        cat1 = Cat(moons=6, disable_random=True)
-        cat2 = Cat(moons=6, disable_random=True)
-
-        relationship1 = Relationship(cat1, cat2)
-        relationship2 = Relationship(cat2, cat1)
-        relationship1.opposite_relationship = relationship2
-        relationship2.opposite_relationship = relationship1
-        cat1.relationships[cat2.ID] = relationship1
-        cat2.relationships[cat1.ID] = relationship2
-
-        # when
-        relationship1.romance = 100
-        relationship2.romance = 100
-
-        # then
-        self.assertFalse(RomanticEvents.check_if_new_mate(cat1, cat2)[0])

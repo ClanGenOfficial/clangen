@@ -98,11 +98,24 @@ dev_tools = false
   chance_fulfilled_condition = 5
 
   # 1/chance of becoming mates, triggers with friends_to_lover (has to be a high number because many relationships are checked each moon)
-  chance_friends_to_lovers = 170
+  chance_friends_to_lovers = 130
+
+  # chance to approach grieving cat
+  [mates.approach_grief]
+    # base chance percentage (20%)
+    chance = 0.2
+    # amount removed from base chance for each facet threshold reached: aggression > 8, lawfulness < 8, sociability < 8
+    facet_influence = 0.1
+    # loving and oblivious get a little bonus cus they feel especially fitting
+    specific_trait_influence = 0.1
+
 
   # chance to move on from a dead or absent mate, fraction represents a percentage. default is 30% chance.
-  chance_to_move_on = 0.3
-
+  [mates.moving_on]
+    # base chance percentage (40%)
+    chance = 0.4
+    # amount removed from base chance for each facet threshold reached: stability > 8, sociability < 8, aggression < 8
+    facet_influence = -0.1
 
   # NOTE FOR RELATIONSHIP CONSTRAINTS
   #  0: no condition
@@ -126,6 +139,45 @@ dev_tools = false
     comfort = 10
     trust = 0
 
+    # confession reactions
+    [mates.confession.reactions]
+      variability = [-5, 5]
+
+      [mates.confession.reactions.makeup_fail.cat_from]
+        romance = -20
+        comfort = -20
+        like = -10
+        trust = -5
+      [mates.confession.reactions.makeup_fail.cat_to]
+        romance = -10
+        comfort = -5
+        trust = -5
+        respect = -5
+      [mates.confession.reactions.rejected.cat_from]
+        romance = -20
+        like = -5
+        comfort = -20
+        respect = -10
+      [mates.confession.reactions.rejected.cat_to]
+        romance = -25
+        comfort = -10
+
+      [mates.confession.reactions.makeup.cat_from]
+        romance = 10
+        trust = 5
+      [mates.confession.reactions.makeup.cat_to]
+        romance = 10
+        comfort = 5
+        trust = 5
+        respect = 5
+      [mates.confession.reactions.accepted.cat_from]
+        romance = 10
+        comfort = 5
+      [mates.confession.reactions.accepted.cat_to]
+        romance = 10
+        comfort = 5
+        trust = 5
+
   # both relationships have to fulfill this condition to become mates
   [mates.mate_condition]
     romance = 20
@@ -137,7 +189,7 @@ dev_tools = false
   # requirements for a like relationship to become romance
   [mates.like_to_romance]
     romance = 0
-    like = 30
+    like = 50
     respect = 0
     comfort = 20
     trust = 0
@@ -159,10 +211,16 @@ dev_tools = false
       comfort = 15
       trust = 20
 
-  # these denote how relationships change upon a breakup
   [mates.breakup]
-    threshold = 120
-    variability = [-10, 10]
+
+    # intial chance of breakup
+    [mates.breakup.initial_chance]
+      threshold = 120
+      default_chance = 30
+      positive_compatibility = 5
+      negative_compatibility = -10
+
+    # default weighting for type of breakup
     [mates.breakup.default_weights]
       had_fight = 3
       decided_to_be_friends = 3
@@ -170,30 +228,33 @@ dev_tools = false
       bad_breakup = 5
       chill_breakup = 5
 
-    [mates.breakup.reactions.had_fight]
-      romance = -20
-      like = -10
-      trust = -15
-    [mates.breakup.reactions.decided_to_be_friends]
-      romance = -50
-      like = 30
-      trust = 20
-      comfort = 10
-      respect = 10
-    [mates.breakup.reactions.lost_feelings]
-      romance = -30
-      like = -10
-      comfort = -10
-    [mates.breakup.reactions.bad_breakup]
-      romance = -20
-      like = -10
-      trust = -30
-      comfort = -20
-      respect = -10
-    [mates.breakup.reactions.chill_breakup]
-      romance = -20
-      comfort = -10
-      respect = 10
+    # these denote how relationships change upon a breakup
+    [mates.breakup.reactions]
+      variability = [-10, 10]
+      [mates.breakup.reactions.had_fight]
+        romance = -20
+        like = -10
+        trust = -15
+      [mates.breakup.reactions.decided_to_be_friends]
+        romance = -50
+        like = 30
+        trust = 20
+        comfort = 10
+        respect = 10
+      [mates.breakup.reactions.lost_feelings]
+        romance = -30
+        like = -10
+        comfort = -10
+      [mates.breakup.reactions.bad_breakup]
+        romance = -20
+        like = -10
+        trust = -30
+        comfort = -20
+        respect = -10
+      [mates.breakup.reactions.chill_breakup]
+        romance = -20
+        comfort = -10
+        respect = 10
 
 
 [new_cat]
@@ -600,10 +661,18 @@ dev_tools = false
     medicine_cat = true
 
   [clan_creation.rank_weights]
+    newborn = 0
     kitten = 1
     apprentice = 1
     warrior = 2
     elder = 1
+
+  # sets what age is allowed to take each rank
+  [clan_creation.valid_rank_to_age_assignment]
+    leader = ["young adult", "adult", "senior adult", "senior"]
+    deputy = ["young adult", "adult", "senior adult", "senior"]
+    "medicine cat" = ["young adult", "adult", "senior adult", "senior"]
+    member = ["newborn", "kitten", "adolescent", "young adult", "adult", "senior adult", "senior"]
 
 [ranks]
   # permit player to change cat ranks
@@ -637,6 +706,10 @@ dev_tools = false
     base_adolescent_timeskip_ex = [[2, 10], [4, 5]]
     base_adult_timeskip_ex = [[4, 12], [6, 7]]
     base_senior_timeskip_ex = [[3, 9], [3, 4]]
+
+[progress]
+  # default = 0. higher = more difficult skill and experience progression.
+  difficulty_modifier = 0
 
 [focus]
   # NOTE: 'raid other clans' should be more dangerous than 'hoarding'!!!

@@ -595,15 +595,15 @@
         }
     },
     {
-        "id": "sneaky_medicine_cat",
+        "id": "stealth_medicine_cat",
         "strings": [
             "Seems to be hiding something in the medicine {PRONOUN/m_c/subject} {VERB/m_c/give/gives} to the leader"
         ],
         "involved_cats": {
             "m_c": {
                 "stat": {
-                    "trait": [
-                        "sneaky"
+                    "skill": [
+                        "STEALTH,1"
                     ]
                 }
             }

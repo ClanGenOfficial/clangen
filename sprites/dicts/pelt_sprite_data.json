@@ -13,7 +13,8 @@
         "colours_sokoke": ["Sokoke"],
         "colours_agouti": ["Agouti"],
         "colours_singlestripe": ["Singlestripe"],
-        "colours_masked": ["Masked"]
+        "colours_masked": ["Masked"],
+        "colours_freckled": ["Freckled"]
     },
     "sprite_list": [
         {
@@ -51,6 +52,7 @@
         "smoke",
         "rosette",
         "speckled",
+        "freckled",
         "mackerel",
         "classic",
         "sokoke",
@@ -69,7 +71,8 @@
         ],
         "spotted": [
             "Speckled",
-            "Rosette"
+            "Rosette",
+            "Freckled"
         ],
         "plain": [
             "SingleColour",

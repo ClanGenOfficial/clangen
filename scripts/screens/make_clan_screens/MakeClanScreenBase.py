@@ -240,7 +240,6 @@ class MakeClanScreenBase(Screens):
         game.just_died.clear()
         game.dead_cats_to_grieve.clear()
         save_load.faded_ids.clear()
-        Cat.outside_cats.clear()
         Patrol.used_patrols.clear()
 
         # extra sanitization for filenames
@@ -260,60 +259,6 @@ class MakeClanScreenBase(Screens):
         game.clan.herb_supply.start_storage(len(self.clan_info.starting_members))
         game.clan.save_herb_supply(game.clan)
         game.clan.grief_strings.clear()
-        # find non-selected cats from the 12 generated starters
-        for c in switch_get_value(Switch.possible_cats):
-            if (
-                c not in self.clan_info.starting_members
-                and c != self.clan_info.leader
-                and c != self.clan_info.deputy
-                and c != self.clan_info.medicine_cat
-            ):
-                # change non-selected cats to outsiders
-                random_social = choice(
-                    [
-                        CatSocial.ROGUE,
-                        CatSocial.LONER,
-                        CatSocial.KITTYPET,
-                    ]
-                )
-                c.status.generate_new_status(self, social=random_social)
-                # random chance for cat to generate as dead
-                if randint(1, 3) == 1:
-                    c.die()
-                    c.status.change_current_moons_as(new_moons_as=randint(1, 10))
-
-                # renaming to fit outsider status
-                name_categories = [
-                    "silly_names",
-                    "human_names",
-                    "loner_names",
-                    "normal_prefixes",
-                ]
-                # defaults in case of error
-                weights = [1, 1, 1, 1]
-                # give kittypets a kittypet name
-                if random_social == CatSocial.KITTYPET:
-                    weights = constants.CONFIG["cat_name_controls"]["kittypet"]
-                    # check if the kittypets come with a pretty acc
-                    if bool(getrandbits(1)):
-                        c.pelt.accessory = (
-                            *c.pelt.accessory,
-                            choice(c.pelt.collar_accessories),
-                        )
-                if random_social == CatSocial.LONER:
-                    weights = constants.CONFIG["cat_name_controls"]["loner"]
-
-                if random_social == CatSocial.ROGUE:
-                    weights = constants.CONFIG["cat_name_controls"]["rogue"]
-
-                selected_category = choices(name_categories, weights, k=1)[0]
-                name = choice(names.names_dict[selected_category])
-                c.change_name(new_prefix=name, new_suffix="")
-
-                # add back to all_cats, cus they get removed during `create_clan()`
-                Cat.all_cats[c.ID] = c
-                Cat.all_cats_list.append(c)
-
         Cat.sort_cats()
         rebuild_top_menu_buttons()
 

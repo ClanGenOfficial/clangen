@@ -364,6 +364,13 @@ class Status:
         """
         return self.group_history[-1]["moons_as"] == 0
 
+    @property
+    def moons_as(self) -> int:
+        """
+        Returns the number of moons that the cat has had their current status
+        """
+        return self.group_history[-1]["moons_as"]
+
     @staticmethod
     def get_rank_from_age(age: CatAge, disable_random=False) -> CatRank:
         """
@@ -658,9 +665,10 @@ class Status:
             ]
         else:
             past_ranks = [
-                rank
-                for rank in self.all_ranks.keys()
-                if rank not in [CatRank.LONER, CatRank.KITTYPET, CatRank.ROGUE]
+                record["rank"]
+                for record in self.group_history
+                if record["rank"]
+                not in [CatRank.LONER, CatRank.KITTYPET, CatRank.ROGUE]
             ]
         if not past_ranks:
             return None

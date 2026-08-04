@@ -156,7 +156,6 @@
       "general_backstory",
       "calm",
       "cold",
-      "sneaky",
       "strict",
       "wise",
       "cunning"
@@ -197,7 +196,6 @@
       "careful",
       "cold",
       "compassionate",
-      "sneaky",
       "strict",
       "vengeful",
       "wise",
@@ -333,7 +331,6 @@
       "fierce",
       "lonesome",
       "shameless",
-      "sneaky",
       "troublesome",
       "vengeful",
       "arrogant",
@@ -530,7 +527,6 @@
       "lonesome",
       "compassionate",
       "responsible",
-      "sneaky",
       "strict",
       "wise"
     ],
@@ -848,6 +844,72 @@
       "arrogant"
     ],
     "(old_name) has always wished to be the hero of {PRONOUN/m_c/poss} Clan, a warrior admired by all. Touching noses with m_c, (mentor) hopes that {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to stay wary of the dangers of their territory and not endanger {PRONOUN/m_c/self}."
+  ],
+  "app_55":[
+    [
+      "apprentice",
+      "yes_mentor",
+      "general_parents",
+      "yes_leader",
+      "general_backstory",
+      "quiet",
+      "nervous",
+      "skittish"
+    ],
+    "(old_name) wants to sob at the thought of being anything but a kit, comforted by {PRONOUN/m_c/poss} mother and littermates. Nevertheless, {PRONOUN/m_c/subject} {VERB/m_c/step/steps} up before {PRONOUN/m_c/poss} leader, {VERB/m_c/take/takes} the name m_c, and {VERB/m_c/are/is} apprenticed to (mentor)."
+  ],
+  "app_56":[
+    [
+      "apprentice",
+      "yes_mentor",
+      "general_parents",
+      "yes_leader",
+      "general_backstory",
+      "confident",
+      "daring",
+      "bullying"
+    ],
+    "(old_name) strides up to {PRONOUN/m_c/poss} Clan leader, tail flicking. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} named m_c as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with (mentor)."
+  ],
+  "app_57":[
+    [
+      "apprentice",
+      "yes_mentor",
+      "general_parents",
+      "yes_leader",
+      "general_backstory",
+      "nervous",
+      "skittish",
+      "quiet",
+      "all_traits"
+    ],
+    "(old_name) is so focused on the leader, when {PRONOUN/m_c/poss} mother nudges {PRONOUN/m_c/object} forward, {PRONOUN/m_c/subject} {VERB/m_c/yelp/yelps}. With much embarrassment, the newly-apprenticed m_c touches noses with (mentor)."
+  ],
+  "app_58":[
+    [
+      "apprentice",
+      "yes_mentor",
+      "general_parents",
+      "yes_leader",
+      "general_backstory",
+      "attention-seeker",
+      "daring",
+      "loud"
+    ],
+    "On (old_name)'s way to the leader, {PRONOUN/m_c/subject} {VERB/m_c/make/makes} a big scene in front of {PRONOUN/m_c/poss} assembled Clanmates. The leader assigns {PRONOUN/m_c/object} to (mentor), who looks wary of mentoring a pawful like m_c."
+  ],
+  "app_59":[
+    [
+      "apprentice",
+      "yes_mentor",
+      "general_parents",
+      "yes_leader",
+      "general_backstory",
+      "bullying",
+      "loud",
+      "attention-seeker"
+    ],
+    "(old_name) shoves (mentor) aside, yowling about how {PRONOUN/(mentor)/subject} {VERB/(mentor)/were/was} in the way. Chest puffed out, m_c is made an apprentice. {PRONOUN/m_c/subject/CAP} {VERB/m_c/turn/turns} around sheepishly, looking at {PRONOUN/m_c/poss} new mentor, (mentor)."
   ],
   "med_app_0": [
     [
@@ -1836,7 +1898,7 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "sneaky"
+      "cunning"
     ],
     "(old_name)'s eyes glint as {PRONOUN/m_c/subject} {VERB/m_c/get/gets} the medicine cat name of m_c. No one seems to notice that {PRONOUN/m_c/subject} {VERB/m_c/don't/didn't} agree to all of the vows of being a medicine cat: only nodding at some and agreeing to others with a meow."
   ],
@@ -2540,7 +2602,7 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "sneaky"
+      "quiet"
     ],
     "(old_name) pads forward silently before sitting in front of {PRONOUN/m_c/poss} leader. {PRONOUN/m_c/subject/CAP} {VERB/m_c/remain/remains} just as quiet as {PRONOUN/m_c/poss} steps forward for l_n to name {PRONOUN/m_c/object} m_c and honor {PRONOUN/m_c/poss} r_h."
   ],
@@ -3400,7 +3462,6 @@
       "general_backstory",
       "flamboyant",
       "rebellious",
-      "sneaky",
       "shameless",
       "charismatic"
     ],

@@ -135,10 +135,10 @@
         ],
         "involved_cats": {
             "m_c": {
-                "status": ["apprentice", "mediator_apprentice"]
+                "status": ["apprentice", "mediator apprentice"]
             },
             "multi_cat": {
-                "status": ["apprentice", "mediator_apprentice"]
+                "status": ["apprentice", "mediator apprentice"]
             }
         },
         "relationship_changes": [
@@ -366,7 +366,7 @@
             "r_c1": {},
             "multi_cat": {}
         },
-        "relationship_constraints": [
+        "relationship_constraint": [
             {
                 "cats_from": ["m_c"],
                 "cats_to": ["r_c1"],
@@ -398,7 +398,7 @@
             "m_c hurls insults at multi_cat for <i>thinking</i> they deserve a chance to play as the leader.",
             "m_c is appalled when multi_cat won't let {PRONOUN/m_c/object} play as the leader, so {PRONOUN/m_c/subject} {VERB/m_c/begin/begins} insulting everyone.",
             "A fight over a toy escalates into a screaming match between m_c, multi_cat.",
-            "m_c calls multi_cat a bunch of wusses after a play-fight, and it escalates into a fight between the them all.",
+            "m_c calls multi_cat a bunch of wusses after a play-fight, and it escalates into a fight between them all.",
             "m_c, multi_cat can't settle who gets a toy.",
             "m_c won't stop instigating a fight between multi_cat.",
             "m_c orders multi_cat to give {PRONOUN/m_c/object} a toy they are playing with and starts a fight when told no.",
@@ -510,7 +510,7 @@
                 ]
             }
         },
-        "relationship_constraints": [
+        "relationship_constraint": [
             {
                 "cats_from": ["m_c"],
                 "cats_to": ["multi_cat"],
@@ -610,6 +610,233 @@
                 "values": [
                     "romance"
                 ],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "group_multicat_pryingquestions",
+        "strings": [
+            "multi_cat's questions about m_c's birth parents make {PRONOUN/m_c/object} uncomfortable.",
+            "multi_cat don't mean to pry, but their questions about m_c's birth parents only remind m_c that {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't know the answers.",
+            "multi_cat joke about their parents, and m_c feels left out of the conversation.",
+            "m_c makes up things about {PRONOUN/m_c/poss} birth parents to feel included when multi_cat trade stories about their parents."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "backstory": ["orphaned_backstories", "abandoned_backstories"]
+            },
+            "multi_cat": {
+                "backstory": ["clanborn_backstories"]
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["multi_cat"],
+                "mutual": false,
+                "values": ["like", "comfort"],
+                "amount": -10
+            }
+        ]
+    },
+    {
+        "id": "group_3_neg_parentsarguekit",
+        "strings": [
+            "m_c and r_c1 argue over whose fault r_c2's recent bad behavior is.",
+            "r_c2 hides in {PRONOUN/r_c2/poss} nest in the nursery while m_c and r_c1 argue.",
+            "r_c2's bad behavior puts a strain on m_c and r_c1's coparenting."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {
+                "status": [
+                    "kitten"
+                ],
+                "stat": {
+                    "trait": ["unruly", "bossy", "bullying", "attention-seeker", "impulsive", "noisy"]
+                }
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c", "r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["parent/child"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": true,
+                "values": ["like", "trust"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["m_c", "r_c1"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": -5
+            }
+        ]
+    },
+    {
+        "id": "group_3_neg_mamabear",
+        "strings": [
+            "r_c1 snarls at m_c for speaking too sharply to r_c1's kit, r_c2.",
+            "m_c rebukes r_c2, but r_c1 overhears and tells m_c to be gentler with {PRONOUN/r_c1/poss} kit.",
+            "m_c thinks twice before scolding r_c2, knowing how protective r_c1 can be."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "age": ["-kitten", "-adolescent"]
+            },
+            "r_c1": {},
+            "r_c2": {
+                "status": [
+                    "kitten", "apprentice"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["parent/child"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["comfort", "like"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "id": "group_3_neg_badrolemodel",
+        "strings": [
+            "r_c1 doesn't like m_c visiting the nursery because {PRONOUN/r_c1/subject} {VERB/r_c1/think/thinks} m_c sets a bad example for r_c2.",
+            "r_c2 has learned some very bad words recently, and r_c1 suspects that m_c is the one who taught them to {PRONOUN/r_c2/object}.",
+            "r_c2 won't stop calling everyone a fox-heart, and r_c1 blames m_c for teaching {PRONOUN/r_c2/object} that word.",
+            "r_c2 won't stop calling everything a load of fox-dung, and r_c1 blames m_c for teaching {PRONOUN/r_c2/object} that word.",
+            "r_c1 scolds m_c for being a bad influence on r_c2. When {PRONOUN/r_c1/subject} {VERB/r_c1/turn/turns} {PRONOUN/r_c1/poss} back, m_c winks at r_c2."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": ["troublesome", "rebellious", "charismatic", "cunning", "childish", "playful"]
+                }
+            },
+            "r_c1": {
+                "stat": {
+                    "trait": ["-childish", "-playful"]
+                }
+            },
+            "r_c2": {
+                "status": [
+                    "kitten"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["parent/child"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": -5
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like", "respect"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["m_c"],
+                "mutual": true,
+                "values": ["comfort", "like"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "id": "group_3_neg_appinterferingwithromance",
+        "strings": [
+            "m_c is sad that r_c1 doesn't spend as much time with {PRONOUN/m_c/object} since r_c1 started training r_c2.",
+            "m_c feels like r_c1 is neglecting their relationship because {PRONOUN/r_c1/subject}{VERB/r_c1/'re'/s} too busy training r_c2.",
+            "m_c can't wait until r_c2's training is over so m_c can have r_c1 all to {PRONOUN/m_c/self} again.",
+            "m_c sometimes wishes r_c2 had a different mentor so r_c1 wouldn't be so busy all the time.",
+            "m_c plans to spend a special day with r_c1, but it coincides with one of r_c2's assessments, so r_c1 apologizes and cancels on m_c."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {
+                "status": [
+                    "apprentice", "mediator apprentice", "medicine cat apprentice"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["mentor/app"]
+            },
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["m_c"],
+                "mutual": true,
+                "constraints": ["mates"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["romance"],
+                "amount": -10
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "values": ["respect"],
                 "amount": -10
             }
         ]

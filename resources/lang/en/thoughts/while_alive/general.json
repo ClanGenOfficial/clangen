@@ -243,8 +243,7 @@
                         "charismatic",
                         "childish",
                         "cunning",
-                        "playful",
-                        "sneaky"
+                        "playful"
                     ]
                 }
             },
@@ -1200,7 +1199,7 @@
         }
     },
     {
-        "id": "sneaky_gen",
+        "id": "stealth_gen",
         "strings": [
             "Taunted a dog stuck behind a Twoleg fence",
             "Is acting suspicious",
@@ -1216,8 +1215,8 @@
         "involved_cats": {
             "m_c": {
                 "stat": {
-                    "trait": [
-                        "sneaky"
+                    "skill": [
+                        "STEALTH,1"
                     ]
                 }
             },
