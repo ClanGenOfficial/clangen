@@ -2,8 +2,7 @@
     {
         "id": "gen_romance_low_neg1",
         "strings": [
-			"m_c didn't spare r_c a second glance.",
-            "m_c realized r_c wasn't the cat {PRONOUN/m_c/subject} thought {PRONOUN/r_c/subject} were."
+			"m_c didn't spare r_c a second glance."
         ],
         "relationship_changes": [
             {
@@ -13,12 +12,5 @@
                 "values": ["romance"],
                 "amount": -5
             }]
-    },
-    {
-        "id": "gen_romance_low_neg2",
-        "strings": [
-			"m_c's previous attraction was merely a fleeting feeling.",
-            "Now that r_c has joined c_n, "
-        ]
     }
 ]
