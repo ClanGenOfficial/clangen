@@ -207,7 +207,7 @@ class LoadCatFactory(BaseCatFactory):
         return eye_color, eye_color2
 
     @classmethod
-    def _build_pelt(cls, kwargs):
+    def _build_pelt(cls, kwargs) -> Pelt:
         """
         Handles some check & convert functionality for pelts
         :param kwargs: Everything we've ever passed into the factory
@@ -217,9 +217,9 @@ class LoadCatFactory(BaseCatFactory):
             kwargs["eye_colour"], kwargs.get("eye_color2")
         )
 
-        if kwargs.get("tint") == "none":
+        if kwargs.get("tint").lower() == "none":
             kwargs["tint"] = None
-        if kwargs.get("white_patches_tint") == "none":
+        if kwargs.get("white_patches_tint").lower() == "none":
             kwargs["white_patches_tint"] = None
             # this then gets set to "offwhite" later
 
