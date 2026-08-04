@@ -9,9 +9,6 @@ import pytest
 from scripts.models.relationship_group_event.relationship_group_schema import (
     RelationshipGroupEvent,
 )
-from scripts.models.relationship_group_event.relationship_group_schema_item import (
-    RelationshipGroupEventSchemaItem,
-)
 from scripts.models.relationship_pair_event.relationship_pair_schema import (
     RelationshipPairEvent,
 )
