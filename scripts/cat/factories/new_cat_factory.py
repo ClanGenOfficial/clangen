@@ -1,6 +1,8 @@
+import abc
 import random
 from typing import Tuple
 
+from abc import ABC, abstractmethod
 from scripts.cat import save_load
 from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.cat.enums import CatAge, CatRank, CatSocial
@@ -21,7 +23,7 @@ from scripts.game_structure import game, constants
 BASE_RNG = random.Random
 
 
-class NewCatFactory(BaseCatFactory):
+class NewCatFactory(BaseCatFactory, ABC):
     rng = BASE_RNG()
 
     @classmethod
@@ -128,11 +130,13 @@ class NewCatFactory(BaseCatFactory):
         return cat
 
     @classmethod
-    def _get_random_age(cls):
+    @abstractmethod
+    def _get_random_age(cls) -> CatAge:
         return cls.rng.choice([*CatAge])
 
     @classmethod
-    def _get_random_age_from_rank(cls, rank):
+    @abstractmethod
+    def _get_random_age_from_rank(cls, rank) -> CatAge:
         """
         :param rank: Provided cat's rank
         :return: Random CatAge appropriate for the cat's rank
@@ -159,12 +163,15 @@ class NewCatFactory(BaseCatFactory):
         )
 
     @classmethod
-    def _get_random_status_from_age(cls, age):
+    @abstractmethod
+    def _get_random_status_from_age(cls, age) -> Status:
         status = Status()
         status.generate_new_status(age)
 
         return status
+
     @staticmethod
+    @abstractmethod
     def _get_random_backstory_from_status(status: Status, age: CatAge):
         if status.social == CatSocial.CLANCAT:
             return "clanborn"
@@ -178,6 +185,7 @@ class NewCatFactory(BaseCatFactory):
         return random.choice(possible_backstories)
 
     @classmethod
+    @abstractmethod
     def _get_random_moons(cls, age: CatAge) -> int:
         """
         Generate random moons appropriate for the given age
@@ -230,6 +238,7 @@ class NewCatFactory(BaseCatFactory):
         return age, moons, status
 
     @classmethod
+    @abstractmethod
     def _get_random_gender_and_genderalign(cls, age) -> dict:
         gender = {
             "sex": cls.rng.choice(("male", "female")),
@@ -281,10 +290,12 @@ class NewCatFactory(BaseCatFactory):
         return pelt
 
     @classmethod
+    @abstractmethod
     def _get_random_personality(cls, age: CatAge):
         return Personality(kit_trait=age.is_baby())
 
     @classmethod
+    @abstractmethod
     def _get_random_experience(cls, age, moons: int) -> int:
         if age.is_baby():
             return 0
@@ -318,6 +329,7 @@ class NewCatFactory(BaseCatFactory):
             return 0
 
     @classmethod
+    @abstractmethod
     def _get_random_skills_dict(cls, rank, age):
         skills = CatSkills.generate_new_catskills(rank, age, rng=cls.rng)
         return skills
