@@ -1198,7 +1198,7 @@
             "Is avoiding everyone",
             "Tries to stay quiet",
             "Hopes that no one notices {PRONOUN/m_c/object}",
-            "Cries in sleep for parent",
+            "Cries in {PRONOUN/m_c/poss} sleep for {PRONOUN/m_c/poss} parent",
             "Feels lonely without {PRONOUN/m_c/poss} littermates",
             "Has given up on returning home",
             "Hopes that c_n doesn't hurt {PRONOUN/m_c/subject}",
