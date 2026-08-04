@@ -1018,8 +1018,7 @@ class PatrolScreen(Screens):
         # ASSIGN TO ABLE CATS
         for the_cat in Cat.all_cats_list:
             if (
-                the_cat.in_camp
-                and the_cat.ID not in game.patrolled
+                the_cat.ID not in game.patrolled
                 and the_cat.status.rank.is_allowed_to_patrol()
                 and the_cat.status.alive_in_player_clan
                 and the_cat not in self.current_patrol
