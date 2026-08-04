@@ -217,9 +217,12 @@ class LoadCatFactory(BaseCatFactory):
             kwargs["eye_colour"], kwargs.get("eye_color2")
         )
 
-        if kwargs.get("tint").lower() == "none":
+        if isinstance(kwargs.get("tint"), str) and kwargs.get("tint").lower() == "none":
             kwargs["tint"] = None
-        if kwargs.get("white_patches_tint").lower() == "none":
+        if (
+            isinstance(kwargs.get("white_patches_tint"), str)
+            and kwargs.get("white_patches_tint").lower() == "none"
+        ):
             kwargs["white_patches_tint"] = None
             # this then gets set to "offwhite" later
 
