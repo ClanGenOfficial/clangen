@@ -135,6 +135,7 @@
           "clancat"
         ],
         "standing": {
+          "group": ["player_clan"],
           "past": [
             "-lost",
             "-exiled",
