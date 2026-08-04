@@ -133,7 +133,9 @@
                 ],
                 "past_status": [
                     "clancat"
-                ]
+                ],
+              "standing": {
+                    "past": ["-lost", "-exiled", "-left"]
             }
         }
     },
