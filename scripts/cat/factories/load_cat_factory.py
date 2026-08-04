@@ -1,9 +1,10 @@
-from typing import Dict, Tuple, Optional, Union, List, TYPE_CHECKING
+from random import Random
+from typing import Dict, Tuple, Optional, Union, List
 
 import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
-from scripts.cat.enums import CatAge, CatGroup, CatRank
+from scripts.cat.enums import CatAge, CatGroup
 from scripts.cat.factories.base_factory import BaseCatFactory
 from scripts.cat.factories.typed_dicts import (
     MentorshipDict,
@@ -18,7 +19,6 @@ from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
 from scripts.cat.skills import CatSkills
 from scripts.cat.status import Status
-from random import Random
 
 
 class LoadCatFactory(BaseCatFactory):

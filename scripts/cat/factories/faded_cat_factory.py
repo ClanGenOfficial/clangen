@@ -1,14 +1,9 @@
-from typing import TYPE_CHECKING
-
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatGroup
 from scripts.cat.factories.base_factory import BaseCatFactory
 from scripts.cat.factories.typed_dicts import InheritanceDict, GenderDict
 from scripts.cat.names import Name
 from scripts.cat.status import Status
-
-if TYPE_CHECKING:
-    from random import Random
 
 # be aware that there are many, many warnings in this file.
 # this will continue to be the case until someone makes faded cats separate from regular cats.

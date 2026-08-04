@@ -1,14 +1,12 @@
 from __future__ import annotations
 
-from random import randint, sample, choices
+from random import sample, choices
 from typing import TYPE_CHECKING
 
-from scripts.cat.enums import CatRank, CatAge
-from scripts.cat.factories.enums import CatType
+from scripts.cat.enums import CatRank
 from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.cat.pelts import Pelt
-from scripts.game_structure import game
 
 if TYPE_CHECKING:
     from scripts.cat.cats import Cat
