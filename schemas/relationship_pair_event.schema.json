@@ -566,7 +566,6 @@
           "type": "array"
         },
         "mutual": {
-          "default": null,
           "description": "Controls if the relationship is required in both directions",
           "title": "Mutual",
           "type": "boolean"
@@ -583,6 +582,7 @@
       "required": [
         "cats_from",
         "cats_to",
+        "mutual",
         "constraints"
       ],
       "title": "PairEventRelationshipConstraint",
