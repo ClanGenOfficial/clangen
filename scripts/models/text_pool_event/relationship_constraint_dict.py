@@ -16,7 +16,7 @@ class RelationshipConstraint(BaseModel):
         ...,
         description="The target of the relationship.",
     )
-    mutual: Optional[bool] = Field(
+    mutual: bool = Field(
         None,
         description="Controls if the relationship is required in both directions",
     )
