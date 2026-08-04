@@ -261,6 +261,7 @@ class NewCatFactory(BaseCatFactory, ABC):
         return gender
 
     @staticmethod
+    @abstractmethod
     def _get_random_pelt(gender, parents, age, no_disabling_scars: bool):
         pelt = Pelt.generate_new_pelt(
             gender,
