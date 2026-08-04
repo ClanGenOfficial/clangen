@@ -119,26 +119,31 @@
             }
         }
     },
-        {
-        "id": "newly_joined_clancat",
-        "strings": [
-          "Hopes {PRONOUN/m_c/subject} can gain the trust of {PRONOUN/m_c/poss} new Clan",
-          "Never imagined c_n's camp looked like this"
+  {
+    "id": "newly_joined_clancat",
+    "strings": [
+      "Hopes {PRONOUN/m_c/subject} can gain the trust of {PRONOUN/m_c/poss} new Clan",
+      "Never imagined c_n's camp looked like this"
+    ],
+    "involved_cats": {
+      "m_c": {
+        "age": [
+          "-newborn",
+          "-kitten"
         ],
-      "involved_cats": {
-            "m_c": {
-              "age": [
-                    "-newborn",
-                    "-kitten"
-                ],
-                "past_status": [
-                    "clancat"
-                ],
-              "standing": {
-                    "past": ["-lost", "-exiled", "-left"]
-            }
+        "past_status": [
+          "clancat"
+        ],
+        "standing": {
+          "past": [
+            "-lost",
+            "-exiled",
+            "-left"
+          ]
         }
-    },
+      }
+    }
+  },
       {
         "id": "newly_joined_elder",
         "strings": [
