@@ -49,7 +49,6 @@ class LoadCatFactory(BaseCatFactory):
             pronouns=kwargs.get("pronouns"),
         )
 
-        # todo do I want to do this this way
         mate = kwargs.get("mate", [])
         inheritance = InheritanceDict(
             parent1=kwargs["parent1"],
