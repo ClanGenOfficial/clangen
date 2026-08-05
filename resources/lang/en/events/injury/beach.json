@@ -997,6 +997,7 @@
     "supplies": [
         {
             "type": "freshkill",
+            "trigger": ["adequate","full","excess"],
             "adjust": "reduce_quarter"
         }
     ],
@@ -1088,6 +1089,7 @@
     "supplies": [
         {
             "type": "freshkill",
+            "trigger": ["adequate","full","excess"],
             "adjust": "reduce_eighth"
         }
     ]
@@ -1128,6 +1130,7 @@
     "supplies": [
         {
             "type": "freshkill",
+            "trigger": ["excess","full"],
             "adjust": "reduce_eighth"
         }
     ]

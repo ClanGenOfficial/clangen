@@ -114,9 +114,7 @@
         "supplies": [
             {
                 "type": "all_herb",
-                "trigger": [
-                    "excess"
-                ],
+                "trigger": ["excess"],
                 "adjust": "reduce_half"
             }
         ]
@@ -158,10 +156,7 @@
         "supplies": [
             {
                 "type": "freshkill",
-                "trigger": [
-                    "full",
-                    "excess"
-                ],
+                "trigger": ["adequate"],
                 "adjust": "reduce_full"
             }
         ]
@@ -177,9 +172,7 @@
            "supplies": [
             {
                 "type": "freshkill",
-                "trigger": [
-                    "full"
-                ],
+                "trigger": ["adequate","full","excess"],
                 "adjust": "reduce_half"
             }
         ]
@@ -195,9 +188,7 @@
            "supplies": [
             {
                 "type": "freshkill",
-                "trigger": [
-                    "full"
-                ],
+                "trigger": ["full","excess"],
                 "adjust": "reduce_half"
             }
         ]
@@ -213,6 +204,7 @@
         "supplies": [
             {
             "type": "freshkill",
+            "trigger": ["adequate"],
             "adjust": "reduce_quarter"
             }
         ]
@@ -234,7 +226,7 @@
         "supplies": [
             {
             "type": "freshkill",
-            "trigger": ["adequate","full"],
+            "trigger": ["always"],
             "adjust": "reduce_eighth"
           }
         ]
