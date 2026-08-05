@@ -19,7 +19,7 @@ class CruelLockedAction(GameWindow):
     def __init__(self) -> None:
         super().__init__(
             ui_scale(pygame.Rect((200, 240), (400, 150))),
-            window_display_title="Cruel Locked Action",
+            window_display_title=i18n.t("window.cruel_locked_action_title"),
         )
         self.conflict_message = UITextBoxTweaked(
             "windows.cruel_locked_action",
