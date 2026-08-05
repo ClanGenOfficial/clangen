@@ -2,6 +2,7 @@ import pygame
 import pygame_gui
 from pygame_gui.core import UIContainer
 from pygame_gui.elements import UIAutoResizingContainer, UIImage
+import i18n
 
 from scripts.game_structure import constants, game, image_cache
 from scripts.game_structure.screen_settings import MANAGER
@@ -17,7 +18,7 @@ class ViewCardsWindow(GameWindow):
     def __init__(self):
         super().__init__(
             ui_scale(pygame.Rect((160, 95), (480, 510))),
-            window_display_title="View Cruel Cards",
+            window_display_title=i18n.t("screens.events.view_cruel_cards"),
         )
 
         self.elements = {}
