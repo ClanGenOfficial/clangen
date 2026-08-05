@@ -1047,7 +1047,7 @@
     "event_id": "bch_injury_crab_prey_duo",
     "location": ["beach"],
     "season": ["any"],
-    "frequency": 3,
+    "frequency": 2,
     "event_text": "m_c and r_c try to chase away a giant Coconut crab helping itself to the fresh-kill. Togethor they drive the crab away, but r_c has to escort m_c to the medicine den right after .",
     "m_c": {
         "status": ["-kitten"],
