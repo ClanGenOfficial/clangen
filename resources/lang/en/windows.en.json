@@ -128,6 +128,7 @@
         "cruel_cards_limit_title": "Cruel Card Limit",
         "cruel_locked_action_title": "Cruel Locked Action",
         "game_over_title": "Game Over",
-        "freshkill_management_title": "Freshkill Management"
+        "freshkill_management_title": "Freshkill Management",
+        "no_mediators_title": "No Mediators"
     }
 }
