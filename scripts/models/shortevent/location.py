@@ -22,7 +22,7 @@ class Location(RootModel):
             Literal["any"],
             Annotated[
                 str,
-                StringConstraints(pattern=r"^[a-z]+:(camp[0-9]_)*camp[0-9]$"),
+                StringConstraints(pattern=r"^-?[a-z]+:(camp[0-9]_)*camp[0-9]$"),
                 AfterValidator(validate_biome_camp),
             ],
         ]

@@ -1,8 +1,11 @@
 import os
 import unittest
+from random import Random
+
+from scripts.cat.factories.test_cat_factory import TestCatFactory
 
 from scripts.cat.enums import CatRank, CatSocial, CatGroup
-from scripts.cat.status import StatusDict
+from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.clan import Clan
 from scripts.game_structure import game
 from scripts.game_structure.game import Switch
@@ -11,20 +14,23 @@ from scripts.game_structure.game.switches import switch_set_value
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-from scripts.cat.cats import Cat, Relationship
+from scripts.cat.cats import Relationship
 from scripts.events_module.relationship import romantic_events
+
+
+cat_factory = TestCatFactory()
 
 
 class MovingOn(unittest.TestCase):
     def setUp(self):
         game.clan = Clan(save_id="clan")
-        game.clan.instructor = Cat(
+        game.clan.instructor = cat_factory.create_cat(
             status_dict=StatusDict(rank=CatRank.WARRIOR, group_ID=CatGroup.STARCLAN_ID)
         )
         switch_set_value(Switch.clan_save_id, "clan")
 
-        self.cat1 = Cat(moons=100, disable_random=True)
-        self.cat2 = Cat(moons=100, disable_random=True)
+        self.cat1 = cat_factory.create_cat(moons=100)
+        self.cat2 = cat_factory.create_cat(moons=100)
 
         self.cat1.set_mate(self.cat2)
 
@@ -33,7 +39,7 @@ class MovingOn(unittest.TestCase):
         Check if a cat will move on too soon from dead mate
         """
         self.cat2.die()
-        romantic_events._handle_moving_on(self.cat1, disable_random=True)
+        romantic_events._handle_moving_on(self.cat1)
         self.assertIn(
             self.cat2.ID, self.cat1.mate, msg="cat2 should still be a mate of cat1"
         )
@@ -43,7 +49,7 @@ class MovingOn(unittest.TestCase):
         Check if the cat will move on too soon from missing mate
         """
         self.cat2.status.leave_group(CatSocial.ROGUE)
-        romantic_events._handle_moving_on(self.cat1, disable_random=True)
+        romantic_events._handle_moving_on(self.cat1)
 
         self.assertIn(
             self.cat2.ID, self.cat1.mate, msg="cat2 should still be a mate of cat1"
@@ -55,7 +61,7 @@ class MovingOn(unittest.TestCase):
         """
         self.cat2.die()
         self.cat1.get_ill("grief stricken")
-        romantic_events._handle_moving_on(self.cat1, disable_random=True)
+        romantic_events._handle_moving_on(self.cat1)
 
         self.assertIn(
             self.cat2.ID, self.cat1.mate, msg="cat2 should still be a mate of cat1"
@@ -67,7 +73,7 @@ class MovingOn(unittest.TestCase):
         """
         self.cat2.die()
         self.cat2.status.change_current_moons_as(4)
-        romantic_events._handle_moving_on(self.cat1, disable_random=True)
+        romantic_events._handle_moving_on(self.cat1)
 
         self.assertNotIn(
             self.cat2.ID, self.cat1.mate, msg="cat2 should no longer be a mate of cat1"
@@ -79,7 +85,7 @@ class MovingOn(unittest.TestCase):
         """
         self.cat2.status.leave_group(CatSocial.ROGUE)
         self.cat2.status.change_current_moons_as(4)
-        romantic_events._handle_moving_on(self.cat1, disable_random=True)
+        romantic_events._handle_moving_on(self.cat1)
 
         self.assertNotIn(
             self.cat2.ID, self.cat1.mate, msg="cat2 should no longer be a mate of cat1"
@@ -89,13 +95,13 @@ class MovingOn(unittest.TestCase):
 class BreakingUp(unittest.TestCase):
     def setUp(self):
         game.clan = Clan(save_id="clan")
-        game.clan.instructor = Cat(
+        game.clan.instructor = cat_factory.create_cat(
             status_dict=StatusDict(rank=CatRank.WARRIOR, group_ID=CatGroup.STARCLAN_ID)
         )
         switch_set_value(Switch.clan_save_id, "clan")
 
-        self.cat1 = Cat(moons=100, disable_random=True)
-        self.cat2 = Cat(moons=100, disable_random=True)
+        self.cat1 = cat_factory.create_cat(moons=100)
+        self.cat2 = cat_factory.create_cat(moons=100)
 
         self.cat1.set_mate(self.cat2)
         romantic_events._rebuild_dicts()
@@ -118,7 +124,7 @@ class BreakingUp(unittest.TestCase):
         """
         Test that cats will break up when their relationship is below the threshold
         """
-        romantic_events._attempt_breakup(self.cat1, self.cat2, disable_random=True)
+        romantic_events._attempt_breakup(self.cat1, self.cat2)
         self.assertNotIn(
             self.cat2.ID, self.cat1.mate, msg="cat2 should no longer be a mate of cat1"
         )
@@ -127,13 +133,13 @@ class BreakingUp(unittest.TestCase):
 class Confessing(unittest.TestCase):
     def setUp(self):
         game.clan = Clan(save_id="clan")
-        game.clan.instructor = Cat(
+        game.clan.instructor = cat_factory.create_cat(
             status_dict=StatusDict(rank=CatRank.WARRIOR, group_ID=CatGroup.STARCLAN_ID)
         )
         switch_set_value(Switch.clan_save_id, "clan")
 
-        self.cat1 = Cat(moons=100, disable_random=True)
-        self.cat2 = Cat(moons=100, disable_random=True)
+        self.cat1 = cat_factory.create_cat(moons=100)
+        self.cat2 = cat_factory.create_cat(moons=100)
 
         romantic_events._rebuild_dicts()
 
@@ -178,13 +184,13 @@ class Confessing(unittest.TestCase):
 class MutualLove(unittest.TestCase):
     def setUp(self):
         game.clan = Clan(save_id="clan")
-        game.clan.instructor = Cat(
+        game.clan.instructor = cat_factory.create_cat(
             status_dict=StatusDict(rank=CatRank.WARRIOR, group_ID=CatGroup.STARCLAN_ID)
         )
         switch_set_value(Switch.clan_save_id, "clan")
 
-        self.cat1 = Cat(moons=100, disable_random=True)
-        self.cat2 = Cat(moons=100, disable_random=True)
+        self.cat1 = cat_factory.create_cat(moons=100)
+        self.cat2 = cat_factory.create_cat(moons=100)
 
         romantic_events._rebuild_dicts()
 
@@ -199,9 +205,7 @@ class MutualLove(unittest.TestCase):
             cat_from=self.cat2, cat_to=self.cat1
         )
 
-        romantic_events._attempt_mutual_interest_mates(
-            self.cat1, self.cat2, disable_random=True
-        )
+        romantic_events._attempt_mutual_interest_mates(self.cat1, self.cat2)
 
         self.assertNotIn(
             self.cat2.ID, self.cat1.mate, msg="Neither cat should qualify to mate"
@@ -218,9 +222,7 @@ class MutualLove(unittest.TestCase):
             cat_from=self.cat2, cat_to=self.cat1
         )
 
-        romantic_events._attempt_mutual_interest_mates(
-            self.cat1, self.cat2, disable_random=True
-        )
+        romantic_events._attempt_mutual_interest_mates(self.cat1, self.cat2)
 
         self.assertNotIn(
             self.cat2.ID, self.cat1.mate, msg="cat2 should not qualify to mate"
@@ -237,9 +239,7 @@ class MutualLove(unittest.TestCase):
             cat_from=self.cat2, cat_to=self.cat1, romance=20, like=30, comfort=20
         )
 
-        romantic_events._attempt_mutual_interest_mates(
-            self.cat1, self.cat2, disable_random=True
-        )
+        romantic_events._attempt_mutual_interest_mates(self.cat1, self.cat2)
 
         self.assertIn(self.cat2.ID, self.cat1.mate, msg="Cats should have mated")
 
@@ -254,9 +254,7 @@ class MutualLove(unittest.TestCase):
             cat_from=self.cat2, cat_to=self.cat1, romance=0, like=50, comfort=20
         )
 
-        romantic_events._attempt_mutual_interest_mates(
-            self.cat1, self.cat2, disable_random=True
-        )
+        romantic_events._attempt_mutual_interest_mates(self.cat1, self.cat2)
 
         self.assertIn(self.cat2.ID, self.cat1.mate, msg="Cats should have mated")
 
@@ -264,7 +262,7 @@ class MutualLove(unittest.TestCase):
 class TestAgeConstraints(unittest.TestCase):
     def setUp(self):
         game.clan = Clan(save_id="clan")
-        game.clan.instructor = Cat(
+        game.clan.instructor = cat_factory.create_cat(
             status_dict=StatusDict(rank=CatRank.WARRIOR, group_ID=CatGroup.STARCLAN_ID)
         )
         switch_set_value(Switch.clan_save_id, "clan")
@@ -272,8 +270,8 @@ class TestAgeConstraints(unittest.TestCase):
         romantic_events._rebuild_dicts()
 
     def test_kittens(self):
-        cat1 = Cat(moons=2, disable_random=True)
-        cat2 = Cat(moons=2, disable_random=True)
+        cat1 = cat_factory.create_cat(moons=2)
+        cat2 = cat_factory.create_cat(moons=2)
 
         cat1.relationships[cat2.ID] = Relationship(cat_from=cat1, cat_to=cat2)
         cat2.relationships[cat1.ID] = Relationship(cat_from=cat2, cat_to=cat1)
@@ -283,8 +281,8 @@ class TestAgeConstraints(unittest.TestCase):
         self.assertNotIn(cat2.ID, cat1.mate, msg="Neither cat should qualify to mate")
 
     def test_adolescents(self):
-        cat1 = Cat(moons=8, disable_random=True)
-        cat2 = Cat(moons=8, disable_random=True)
+        cat1 = cat_factory.create_cat(moons=8)
+        cat2 = cat_factory.create_cat(moons=8)
 
         cat1.relationships[cat2.ID] = Relationship(cat_from=cat1, cat_to=cat2)
         cat2.relationships[cat1.ID] = Relationship(cat_from=cat2, cat_to=cat1)
