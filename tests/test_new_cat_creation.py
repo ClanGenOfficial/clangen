@@ -4,9 +4,10 @@ from itertools import combinations
 from scripts.cat.cats import Cat
 from scripts.cat.constants import BACKSTORIES
 from scripts.cat.enums import CatRank, CatAge, CatGroup, CatStanding
+from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.cat.skills import SkillPath
 from scripts.cat.sprites.load_sprites import sprites
-from scripts.cat.status import StatusDict
+from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.clan import OtherClan, Clan
 from scripts.clan_package.settings import set_clan_setting
 from scripts.events_module.parameter_dicts import (
@@ -71,8 +72,8 @@ class TestNewCatCreation(unittest.TestCase):
             "no_group",
             "match:m_c",
         ]
-        extra_cat = Cat(
-            disable_random=True, status_dict=StatusDict(rank=CatRank.WARRIOR)
+        extra_cat = TestCatFactory.create_cat(
+            status_dict=StatusDict(rank=CatRank.WARRIOR)
         )
         for group in group_list:
             with self.subTest("Testing group assignments"):
@@ -257,8 +258,8 @@ class TestNewCatCreation(unittest.TestCase):
             )
 
     def test_mate_assignment(self):
-        mate1 = Cat(status_dict=StatusDict(rank=CatRank.LONER), disable_random=True)
-        mate2 = Cat(status_dict=StatusDict(rank=CatRank.LONER), disable_random=True)
+        mate1 = TestCatFactory.create_cat(status_dict=StatusDict(rank=CatRank.LONER))
+        mate2 = TestCatFactory.create_cat(status_dict=StatusDict(rank=CatRank.LONER))
 
         with self.subTest("Testing mate assignments"):
             # test that a single mate can be assigned
