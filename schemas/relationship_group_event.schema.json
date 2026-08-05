@@ -341,15 +341,7 @@
           "type": "string"
         },
         {
-          "pattern": "^-?n_c[0-9]+$",
-          "type": "string"
-        },
-        {
-          "pattern": "^-?r_c[0-9]+$",
-          "type": "string"
-        },
-        {
-          "pattern": "^-?s_c[0-9]+$",
+          "pattern": "^-?(n_c|r_c|s_c)[0-9]+$",
           "type": "string"
         }
       ],

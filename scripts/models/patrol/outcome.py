@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Dict, List, Tuple, Union, Literal, Optional
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, RootModel
 from pydantic_core import MISSING
 from scripts.models.common.gather_cat import GatherCat
 from scripts.models.common.location import Location
@@ -19,6 +19,11 @@ from scripts.models.text_pool_event.relationship_change_dict import Relationship
 from scripts.models.text_pool_event.relationship_constraint_dict import (
     RelationshipConstraint,
 )
+
+
+class RequiredRepution(BaseModel):
+    outsider: list[Literal["welcoming", "neutral", "hostile"]] | MISSING = MISSING
+    other_clan: list[Literal["ally", "neutral", "hostile"]] | MISSING = MISSING
 
 
 class Outcome(BaseModel):
@@ -64,9 +69,10 @@ class Outcome(BaseModel):
         MISSING,
         description="Used to add constraints for the various involved cats.",
     )
-    required_reputation: Union[
-        dict[Literal["outsider", "other_clan"], list], MISSING
-    ] = MISSING
+    required_reputation: Union[RequiredRepution, MISSING] = Field(
+        MISSING,
+        description="Constrains the event to only occur if the player clan has the required reputation",
+    )
     relationship_constraint: Union[List[RelationshipConstraint], MISSING] = Field(
         MISSING,
         description="Used to require specific relationships between the cats",

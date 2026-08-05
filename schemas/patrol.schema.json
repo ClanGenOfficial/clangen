@@ -680,15 +680,7 @@
           "type": "string"
         },
         {
-          "pattern": "^-?n_c[0-9]+$",
-          "type": "string"
-        },
-        {
-          "pattern": "^-?r_c[0-9]+$",
-          "type": "string"
-        },
-        {
-          "pattern": "^-?s_c[0-9]+$",
+          "pattern": "^-?(n_c|r_c|s_c)[0-9]+$",
           "type": "string"
         }
       ],
@@ -1206,18 +1198,9 @@
           "title": "Involved Cats"
         },
         "required_reputation": {
-          "additionalProperties": {
-            "items": {},
-            "type": "array"
-          },
-          "propertyNames": {
-            "enum": [
-              "outsider",
-              "other_clan"
-            ]
-          },
-          "title": "Required Reputation",
-          "type": "object"
+          "$ref": "#/$defs/RequiredRepution",
+          "description": "Constrains the event to only occur if the player clan has the required reputation",
+          "title": "Required Reputation"
         },
         "relationship_constraint": {
           "description": "Used to require specific relationships between the cats",
@@ -1834,6 +1817,36 @@
       ],
       "title": "RelationshipStatus",
       "type": "string"
+    },
+    "RequiredRepution": {
+      "properties": {
+        "outsider": {
+          "items": {
+            "enum": [
+              "welcoming",
+              "neutral",
+              "hostile"
+            ],
+            "type": "string"
+          },
+          "title": "Outsider",
+          "type": "array"
+        },
+        "other_clan": {
+          "items": {
+            "enum": [
+              "ally",
+              "neutral",
+              "hostile"
+            ],
+            "type": "string"
+          },
+          "title": "Other Clan",
+          "type": "array"
+        }
+      },
+      "title": "RequiredRepution",
+      "type": "object"
     },
     "Scar": {
       "enum": [
