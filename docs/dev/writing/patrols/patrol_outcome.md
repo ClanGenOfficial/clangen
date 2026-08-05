@@ -93,7 +93,8 @@ Outcomes utilize the `TextPoolEvent` format.
         {
             "cats": [],
             "body": true,
-            "history": ""
+            "history": "",
+            "no_results": false
         }
     ],
     "condition": [
@@ -342,7 +343,8 @@ Death block:
         {
             "cats": [],
             "body": true,
-            "history": ""
+            "history": "",
+            "no_results": false
         }
 ```
 **cats**
@@ -353,6 +355,9 @@ Death block:
 
 **history**
 > String to add to the cat's death history.  Use `m_c` in place of the dead cat's name and pronoun.
+
+**no_results**
+> Not required. Set to True to prevent the result text for this death from appearing on the patrol screen. Defaults to False.
 
 ***
 
