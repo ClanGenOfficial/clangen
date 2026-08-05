@@ -335,7 +335,7 @@ This can even be added as an empty dict: `can_create_new_cat: {}` to simply mark
 ***
 
 **group:list[str]**
->Constraints the thought to only happen if the cat is a member of a listed group or a member of no group. This should only be used to dictate what group a new cat is originally part of. you can use tags in: [possible group tags](reference/tag-lists.md#groups) and you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
+>Constraints the thought to only happen if the cat is a member of a listed group or a member of no group. This should only be used to dictate what group a new cat is originally part of. you can use tags in: [possible group tags](../reference/tag-lists.md#groups) and you can utilize [exclusionary tags](../reference/tag-lists.md/#exclusionary-tags).
 > 
 ***
 
