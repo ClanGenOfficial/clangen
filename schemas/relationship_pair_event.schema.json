@@ -722,8 +722,7 @@
         "cats_from",
         "cats_to",
         "values",
-        "amount",
-        "log"
+        "amount"
       ],
       "title": "PairEventRelationshipChange",
       "type": "object"
