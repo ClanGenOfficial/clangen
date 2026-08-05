@@ -324,7 +324,12 @@ This can even be added as an empty dict: `can_create_new_cat: {}` to simply mark
 > [Age Tag List](../reference/tag-lists.md#__tabbed_2_1)
 > 
 > You can also remove the parameter to allow the event to occur for all ages except "newborns", who are only allowed if specifically tagged as such.
+> 
+***
 
+**group:list[str]**
+>Constraints the thought to only happen if the cat is a member of a listed group or a member of no group. you can use tags in: [possible group tags](reference/tag-lists.md#groups) and you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
+> 
 ***
 
 **standing: dict[str: var]**
