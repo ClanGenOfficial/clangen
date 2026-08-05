@@ -10,7 +10,7 @@ from scripts import events
 from scripts.cat import save_load
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
-from scripts.cat.factories.test_cat_factory import TestCatFactory
+from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan import Clan, Afterlife
 from scripts.clan_package.get_clan_cats import (
@@ -24,8 +24,6 @@ from scripts.events_module.short.short_event_generation import (
 from scripts.game_structure import game
 from scripts.game_structure.game.save_load import read_clans
 from scripts.housekeeping.datadir import get_save_dir
-
-cat_factory = TestCatFactory()
 
 
 class TestEvents(unittest.TestCase):
@@ -45,15 +43,15 @@ class TestEvents(unittest.TestCase):
         game.clan = Clan(
             save_id=cls.test_clan_name,
             display_name="Test",
-            leader=cat_factory.create_cat(rank=CatRank.LEADER),
-            deputy=cat_factory.create_cat(rank=CatRank.DEPUTY),
-            medicine_cat=cat_factory.create_cat(rank=CatRank.MEDICINE_CAT),
+            leader=NewCatFactory.create_cat(rank=CatRank.LEADER),
+            deputy=NewCatFactory.create_cat(rank=CatRank.DEPUTY),
+            medicine_cat=NewCatFactory.create_cat(rank=CatRank.MEDICINE_CAT),
             biome="Forest",
             camp_bg="camp1",
             symbol="symbolADDER0",
             game_mode="expanded",
             starting_members=[
-                cat_factory.create_cat(rank=rank)
+                NewCatFactory.create_cat(rank=rank)
                 for rank in [
                     CatRank.KITTEN,
                     CatRank.APPRENTICE,
@@ -131,7 +129,7 @@ class TestEvents(unittest.TestCase):
                     # to give a good chance for event variety without bloat
                     while get_living_clan_cat_count(Cat) < 8:
                         game.clan.add_cat(
-                            cat_factory.create_cat(
+                            NewCatFactory.create_cat(
                                 rank=choice(
                                     [
                                         CatRank.KITTEN,
