@@ -248,6 +248,7 @@ Each entry is an individual cat, with the key being their [event designation](#u
                 "status": [],
                 "past_status": [],
                 "age": [],
+                "group": [],
                 "standing": {
                     "group": [],
                     "currently": [],
