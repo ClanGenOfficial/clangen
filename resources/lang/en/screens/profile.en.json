@@ -60,6 +60,8 @@
         "change_gender_transmale": "change to trans\nmale",
         "change_gender_transfemale": "change to trans\nfemale",
         "change_gender_nonbinary": "change to\nnonbinary",
-        "nutrition_text": "nutrition: %{nutrition_text}"
+        "nutrition_text": "nutrition: %{nutrition_text}",
+        "randomize_prefix_tooltip": "Randomize the prefix",
+        "randomize_suffix_tooltip": "Randomize the suffix"
     }
 }

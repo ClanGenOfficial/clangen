@@ -1,3 +1,4 @@
+import i18n
 import pygame
 import pygame_gui
 
@@ -70,7 +71,7 @@ class ChangeCatNameWindow(GameWindow):
             object_id="@buttonstyles_icon",
             manager=MANAGER,
             container=self,
-            tool_tip_text="Randomize the prefix",
+            tool_tip_text=i18n.t("screens.profile.randomize_prefix_tooltip"),
             sound_id="dice_roll",
         )
 
@@ -81,7 +82,7 @@ class ChangeCatNameWindow(GameWindow):
             object_id="@buttonstyles_icon",
             manager=MANAGER,
             container=self,
-            tool_tip_text="Randomize the suffix",
+            tool_tip_text=i18n.t("screens.profile.randomize_suffix_tooltip"),
             sound_id="dice_roll",
         )
 
