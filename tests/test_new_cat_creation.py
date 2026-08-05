@@ -31,7 +31,6 @@ class TestNewCatCreation(unittest.TestCase):
 
         game.clan = Clan(save_id="test")
         game.clan.biome = "Forest"
-        game.clan.override_biome = False
         game.clan.camp_bg = "camp1"
         game.clan.starting_season = "Newleaf"
         game.clan.game_mode = "classic"
@@ -667,10 +666,10 @@ class TestNewCatCreation(unittest.TestCase):
 
     def test_litter_creation(self):
         with self.subTest("Testing litter creation"):
-            parent = Cat(
+            parent = TestCatFactory.create_cat(
                 status_dict=StatusDict(rank=CatRank.LONER), disable_random=True
             )
-            adoptive = Cat(
+            adoptive = TestCatFactory.create_cat(
                 status_dict=StatusDict(rank=CatRank.LONER), disable_random=True
             )
 
