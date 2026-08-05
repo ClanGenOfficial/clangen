@@ -124,6 +124,7 @@
         "herb_management_title": "Herb Management",
         "view_cruel_cards": "View Cruel Cards",
         "randomize_prefix_tooltip": "Randomize the prefix",
-        "randomize_suffix_tooltip": "Randomize the suffix"
+        "randomize_suffix_tooltip": "Randomize the suffix",
+        "cruel_cards_limit_title": "Cruel Card Limit"
     }
 }
