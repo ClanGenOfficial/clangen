@@ -994,6 +994,12 @@
             "scar": "m_c was scarred after defending the fresh-kill from seagulls."
         }
     ],
+    "supplies": [
+        {
+            "type": "freshkill",
+            "adjust": "reduce_quarter"
+        }
+    ],
     "relationships": [
         {
             "cats_from": [
@@ -1014,7 +1020,7 @@
     "location": ["beach"],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "m_c rushes to chase away a giant Coconut crab helping itself to the fresh-kill. The crab proves to be too much to handle for {PRONOUN/m_c/poss}.",
+    "event_text": "m_c rushes to chase away a giant Coconut crab helping itself to the fresh-kill. The crab punches back with a force that sends m_c straight to the Medicine den.",
     "m_c": {
         "status": ["-kitten"],
         "trait": [
@@ -1078,6 +1084,12 @@
             "death": "m_c died from {PRONOUN/m_c/poss} wounds defending prey from a Coconut crab.",
             "scar": "m_c was scarred attempting to chase away a Coconut crab."
         }
+    ],
+    "supplies": [
+        {
+            "type": "freshkill",
+            "adjust": "reduce_eighth"
+        }
     ]
 },
 {
@@ -1111,6 +1123,12 @@
             ],
             "death": "m_c died from {PRONOUN/m_c/poss} wounds defending prey from a pelican.",
             "scar": "m_c was scarred after a pelican tried to steal to prey."
+        }
+    ],
+    "supplies": [
+        {
+            "type": "freshkill",
+            "adjust": "reduce_eighth"
         }
     ]
 },
