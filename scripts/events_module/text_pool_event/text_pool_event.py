@@ -103,7 +103,11 @@ class TextPoolEvent:
                 else:
                     weight += len(constraints["group"])
             if constraints.get("standing"):
-                if "-" in constraints["standing"][0]:
+                if "-" in constraints["standing"]["past"]:
+                    weight += len(CatStanding) - len(constraints["standing"])
+                else:
+                    weight += len(constraints["standing"])
+                if "-" in constraints["standing"]["current"]:
                     weight += len(CatStanding) - len(constraints["standing"])
                 else:
                     weight += len(constraints["standing"])
