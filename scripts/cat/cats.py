@@ -266,7 +266,7 @@ class Cat:
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
 
-        if self.ID is not None and self.ID != "0":
+        if self.ID is not None:
             Cat.insert_cat(self)
 
     @property

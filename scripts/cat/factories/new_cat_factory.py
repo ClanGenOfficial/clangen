@@ -126,7 +126,6 @@ class NewCatFactory(BaseCatFactory, ABC):
         )
 
         Cat.all_cats[cat.ID] = cat
-        Cat.all_cats_list.append(cat)
 
         return cat
 
