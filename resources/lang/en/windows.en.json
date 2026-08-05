@@ -121,6 +121,9 @@
 
         },
         "cruel_locked_action": "This action is locked by one or more Cruel Season cards that are currently in play.",
-        "herb_management_title": "Herb Management"
+        "herb_management_title": "Herb Management",
+        "view_cruel_cards": "View Cruel Cards",
+        "randomize_prefix_tooltip": "Randomize the prefix",
+        "randomize_suffix_tooltip": "Randomize the suffix"
     }
 }

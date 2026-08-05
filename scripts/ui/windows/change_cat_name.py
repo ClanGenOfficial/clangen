@@ -71,7 +71,7 @@ class ChangeCatNameWindow(GameWindow):
             object_id="@buttonstyles_icon",
             manager=MANAGER,
             container=self,
-            tool_tip_text=i18n.t("screens.profile.randomize_prefix_tooltip"),
+            tool_tip_text=i18n.t("windows.randomize_prefix_tooltip"),
             sound_id="dice_roll",
         )
 
@@ -82,7 +82,7 @@ class ChangeCatNameWindow(GameWindow):
             object_id="@buttonstyles_icon",
             manager=MANAGER,
             container=self,
-            tool_tip_text=i18n.t("screens.profile.randomize_suffix_tooltip"),
+            tool_tip_text=i18n.t("windows.randomize_suffix_tooltip"),
             sound_id="dice_roll",
         )
 
