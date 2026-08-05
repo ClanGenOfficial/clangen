@@ -314,7 +314,9 @@ class Clan:
                 )
                 c.status.generate_new_status(self, social=random_social)
                 # re-assign backstory once cat has new status
-                c.assign_backstory()
+                c.backstory = NewCatFactory._get_random_backstory_from_status(
+                    c.status, c.age
+                )
                 # random chance for cat to generate as dead
                 if randint(1, 3) == 1:
                     c.die()
