@@ -27,4 +27,7 @@ class RelationshipChange(BaseModel):
         ...,
         description="Exact amount the relationship value will be affected. Can be positive or negative.",
     )
-    log: dict[Literal["cats_from", "cats_to"], str]
+    log: dict[Literal["cats_from", "cats_to"], str] = Field(
+        ...,
+        description="The string that will display within the relationship logs. A string can be specified for both the cats_from and cats_to groups",
+    )

@@ -207,10 +207,12 @@
       "additionalProperties": false,
       "properties": {
         "become_litter": {
+          "description": "True will generate a 2-5 litter of kittens rather than a single cat. This means the abbreviation for this litter should not be used within the text of the event, since they have no singular name or pronoun",
           "title": "Become Litter",
           "type": "boolean"
         },
         "assign_blood_parent": {
+          "description": "List of designations for cats who will become this cat's blood parents. These cats must have already been specified prior in involved_cats",
           "items": {
             "type": "string"
           },
@@ -218,6 +220,7 @@
           "type": "array"
         },
         "assign_adoptive_parent": {
+          "description": "List of designations for cats who will become this cat's adoptive parents. These cats must have already been specified prior in involved_cats",
           "items": {
             "type": "string"
           },
@@ -225,6 +228,7 @@
           "type": "array"
         },
         "assign_mate": {
+          "description": "List of designations for cats who will become this cat's mates. These cats must have already been specified prior in involved_cats",
           "items": {
             "type": "string"
           },
@@ -300,6 +304,7 @@
           "type": "string"
         },
         "group": {
+          "description": "",
           "items": {
             "$ref": "#/$defs/Group"
           },
@@ -308,17 +313,21 @@
         },
         "standing": {
           "$ref": "#/$defs/StandingDict",
+          "description": "Constrains the event to only happen if the cat matches with the dictated group standings. A group standing is the relationship between a cat and a group, for example: if they are an exile or lost",
           "title": "Standing"
         },
         "stat": {
           "$ref": "#/$defs/StatDict",
+          "description": "Constrains the event to only occur if the cat holds specific skills or traits. You can utilize exclusionary tags",
           "title": "Stat"
         },
         "health": {
           "$ref": "#/$defs/HealthDict",
+          "description": "Constrains the event to only occur if the cat's health matches the constraints",
           "title": "Health"
         },
         "backstory": {
+          "description": "Constrains the event to only occur if the cat has a listed backstory. To find what each backstory describes, you can find more by going to resources/lang/en/cat/backstories.en.json. You can utilize exclusionary tags",
           "items": {
             "$ref": "#/$defs/Backstory"
           },
@@ -326,6 +335,7 @@
           "type": "array"
         },
         "has_mentor": {
+          "description": "Set True if the cat must be mentored. This does not require the mentor to be present on the patrol",
           "title": "Has Mentor",
           "type": "boolean"
         }
@@ -345,6 +355,7 @@
       "additionalProperties": false,
       "properties": {
         "cats": {
+          "description": "List of cats who will receive these conditions. patrol_cats can be used to give the condition to the entire patrol",
           "items": {
             "$ref": "#/$defs/GatherCat"
           },
@@ -352,14 +363,17 @@
           "type": "array"
         },
         "no_results": {
+          "description": "Set to True if there should be no result text about this condition application",
           "title": "No Results",
           "type": "boolean"
         },
         "non_lethal": {
+          "description": "Set to True to prevent this condition from killing the cat. It's not necessary if the condition is already non-lethal (eg. scrapes)",
           "title": "Non Lethal",
           "type": "boolean"
         },
         "condition": {
+          "description": "List of possible conditions. One condition will be chosen from this list. You can also utilize Injury Pools",
           "items": {
             "anyOf": [
               {
@@ -377,6 +391,7 @@
           "type": "array"
         },
         "scar_pool_override": {
+          "description": "Override the default scars given for the assigned condition. Instead, a scar will be chosen from this list",
           "items": {
             "$ref": "#/$defs/Scar"
           },
@@ -384,10 +399,12 @@
           "type": "array"
         },
         "scar_history": {
+          "description": "String to be added to the cat's history if the condition creates a scar. Use m_c in place of the dead cat's name and pronoun",
           "title": "Scar History",
           "type": "string"
         },
         "death_history": {
+          "description": "String to be added to the cat's history if the condition kills them. Use m_c in place of the dead cat's name and pronoun",
           "title": "Death History",
           "type": "string"
         }
@@ -403,6 +420,7 @@
       "additionalProperties": false,
       "properties": {
         "cats": {
+          "description": "List of cats who will die. patrol_cats can be used to kill the entire patrol",
           "items": {
             "$ref": "#/$defs/GatherCat"
           },
@@ -410,14 +428,17 @@
           "type": "array"
         },
         "body": {
+          "description": "True if the body can be retrieved, False if the body has been lost",
           "title": "Body",
           "type": "boolean"
         },
         "history": {
+          "description": "String to add to the cat's death history. Use m_c in place of the dead cat's name and pronoun",
           "title": "History",
           "type": "string"
         },
         "no_results": {
+          "description": "Set to True to prevent this condition from killing the cat. It's not necessary if the condition is already non-lethal (eg. scrapes)",
           "title": "No Results",
           "type": "boolean"
         }
@@ -769,10 +790,12 @@
       "additionalProperties": false,
       "properties": {
         "working": {
+          "description": "By default, this is always set to true. if set to false, the cat can't be a working cat (aka, they are currently disabled by a condition of some kind)",
           "title": "Working",
           "type": "boolean"
         },
         "condition": {
+          "description": "A list of conditions that the cat must have at least one of. if any condition is allowed, use \"any\"",
           "items": {
             "anyOf": [
               {
@@ -794,10 +817,12 @@
           "type": "array"
         },
         "must_be_congenital": {
+          "description": "By default, this is always set to false. if set to true, the cat must have been born with a permanent condition listed in the condition",
           "title": "Must Be Congenital",
           "type": "boolean"
         },
         "must_be_acquired": {
+          "description": "By default, this is always set to false. if set to true, the cat must have acquired a permanent condition listed in condition later in life",
           "title": "Must Be Acquired",
           "type": "boolean"
         }
@@ -1007,6 +1032,7 @@
       "additionalProperties": false,
       "properties": {
         "cats": {
+          "description": "List of cats who will join",
           "items": {
             "$ref": "#/$defs/GatherCat"
           },
@@ -1014,10 +1040,12 @@
           "type": "array"
         },
         "change_name": {
+          "description": "True if the cat should take on a more Clan-like name",
           "title": "Change Name",
           "type": "boolean"
         },
         "new_status": {
+          "description": "A list of possible ranks for the cat to take within the Clan. If left blank, the cat will take on a rank appropriate for their age",
           "items": {
             "$ref": "#/$defs/Status"
           },
@@ -1200,6 +1228,7 @@
           "type": "array"
         },
         "exp_gained": {
+          "description": "The amount of exp cats receive (sorta). The exact amount also depends on the number of cats and current EXP levels, but in general, a higher number here means more exp. If exp is 0, no exp will be given",
           "title": "Exp Gained",
           "type": "integer"
         },
@@ -1225,6 +1254,7 @@
           "type": "array"
         },
         "supply": {
+          "description": "Indicates changes to the supply of the Clan. Each supply change block is a new change",
           "items": {
             "$ref": "#/$defs/Supply"
           },
@@ -1232,6 +1262,7 @@
           "type": "array"
         },
         "death": {
+          "description": "Indicate which cats should die as a result of this outcome. You can specify different \"types\" of death as separate blocks",
           "items": {
             "$ref": "#/$defs/Death"
           },
@@ -1239,6 +1270,7 @@
           "type": "array"
         },
         "condition": {
+          "description": "Indicate which cats should receive conditions and what conditions they receive. You can add multiple condition blocks",
           "items": {
             "$ref": "#/$defs/Condition"
           },
@@ -1246,6 +1278,7 @@
           "type": "array"
         },
         "lost": {
+          "description": "Indicate which cats should be lost from their Clan. You can add multiple lost blocks",
           "items": {
             "additionalProperties": {
               "items": {
@@ -1262,6 +1295,7 @@
           "type": "array"
         },
         "join": {
+          "description": "Indicate which cats will join the player Clan. You can add multiple join blocks",
           "items": {
             "$ref": "#/$defs/Join"
           },
@@ -1650,6 +1684,7 @@
           "additionalProperties": {
             "type": "string"
           },
+          "description": "The string that will display within the relationship logs. A string can be specified for both the cats_from and cats_to groups",
           "propertyNames": {
             "enum": [
               "cats_from",
@@ -1895,6 +1930,7 @@
       "additionalProperties": false,
       "properties": {
         "group": {
+          "description": "the group we are checking the cat's standing with. you can utilize exclusionary tags. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to qualify against one of the groups. You should not try to tag no_group",
           "items": {
             "$ref": "#/$defs/Group"
           },
@@ -1902,6 +1938,7 @@
           "type": "array"
         },
         "currently": {
+          "description": "the standing the cat should currently possess with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have one of the standings",
           "items": {
             "$ref": "#/$defs/Standing"
           },
@@ -1909,6 +1946,7 @@
           "type": "array"
         },
         "past": {
+          "description": "standings the cat used to have with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have had one of the standings",
           "items": {
             "$ref": "#/$defs/Standing"
           },
@@ -1926,6 +1964,7 @@
       "additionalProperties": false,
       "properties": {
         "skill": {
+          "description": "List of allowed skills",
           "items": {
             "$ref": "#/$defs/Skill"
           },
@@ -1933,6 +1972,7 @@
           "type": "array"
         },
         "trait": {
+          "description": "List of allowed traits",
           "items": {
             "$ref": "#/$defs/AllTrait"
           },
@@ -1940,6 +1980,7 @@
           "type": "array"
         },
         "must_have_both": {
+          "description": " if set to true, the cat's trait AND skills must BOTH qualify. Otherwise, the cat must have either/or a listed trait or a listed skill",
           "title": "Must Have Both",
           "type": "boolean"
         }
@@ -2012,9 +2053,11 @@
               "$ref": "#/$defs/Herb"
             }
           ],
+          "description": "The type of supply changing",
           "title": "Type"
         },
         "trigger": {
+          "description": "If the Clan's current level of the specified supply type should be at a certain threshold for this outcome to occur, specify it here. You do NOT have to specify a trigger",
           "items": {
             "enum": [
               "always",
@@ -2029,6 +2072,7 @@
           "type": "array"
         },
         "adjust": {
+          "description": "Keep in mind that this increase is \"per\" cat on the patrol. A 3 cat patrol being given an increase_medium will take home 3 times as much as a similar 1 cat patrol",
           "enum": [
             "increase_tiny",
             "increase_small",

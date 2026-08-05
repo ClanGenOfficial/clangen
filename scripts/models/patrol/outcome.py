@@ -71,7 +71,10 @@ class Outcome(BaseModel):
         MISSING,
         description="Used to require specific relationships between the cats",
     )
-    exp_gained: int
+    exp_gained: int = Field(
+        ...,
+        description="The amount of exp cats receive (sorta). The exact amount also depends on the number of cats and current EXP levels, but in general, a higher number here means more exp. If exp is 0, no exp will be given",
+    )
     reputation_changes: Union[
         dict[Literal["outsider", "other_clan"], int], MISSING
     ] = MISSING
@@ -79,11 +82,26 @@ class Outcome(BaseModel):
         MISSING,
         description="Used to change specific relationships between the cats",
     )
-    supply: Union[List[Supply], MISSING] = MISSING
-    death: Union[List[Death], MISSING] = MISSING
-    condition: Union[List[Condition], MISSING] = MISSING
-    lost: Union[List[Dict[Literal["cats"], list[GatherCat]]], MISSING] = MISSING
-    join: Union[List[Join], MISSING] = MISSING
+    supply: Union[List[Supply], MISSING] = Field(
+        MISSING,
+        description="Indicates changes to the supply of the Clan. Each supply change block is a new change",
+    )
+    death: Union[List[Death], MISSING] = Field(
+        MISSING,
+        description='Indicate which cats should die as a result of this outcome. You can specify different "types" of death as separate blocks',
+    )
+    condition: Union[List[Condition], MISSING] = Field(
+        MISSING,
+        description="Indicate which cats should receive conditions and what conditions they receive. You can add multiple condition blocks",
+    )
+    lost: Union[List[Dict[Literal["cats"], list[GatherCat]]], MISSING] = Field(
+        MISSING,
+        description="Indicate which cats should be lost from their Clan. You can add multiple lost blocks",
+    )
+    join: Union[List[Join], MISSING] = Field(
+        MISSING,
+        description="Indicate which cats will join the player Clan. You can add multiple join blocks",
+    )
     future_event: Union[List[FutureEvent], MISSING] = Field(
         MISSING, description="Schedules another event to happen in the future."
     )
