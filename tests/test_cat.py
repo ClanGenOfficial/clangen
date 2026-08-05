@@ -400,8 +400,8 @@ class TestMateFunctions(unittest.TestCase):
         cat2.relationships[cat1.ID] = relation2
 
         # when
-        cat1.unset_mate(cat2, breakup=True)
-        cat2.unset_mate(cat2, breakup=True)
+        cat1.unset_mate(cat2, user_initiated_breakup=True)
+        cat2.unset_mate(cat2, user_initiated_breakup=True)
 
         # then
         # TODO: maybe not correct check

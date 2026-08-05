@@ -12,6 +12,8 @@ body:
           required: true
         - label: This issue was encountered (or replicated) on a non-edited Clan
           required: true
+        - label: I confirm that I am NOT playing on a modded version of the game (e.g. LifeGen)
+          required: true
   - type: textarea
     id: description
     attributes:
