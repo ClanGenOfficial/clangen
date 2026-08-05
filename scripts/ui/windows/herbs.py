@@ -27,7 +27,7 @@ class HerbManagementWindow(GameWindow):
     def __init__(self):
         super().__init__(
             ui_scale(pygame.Rect((125, 150), (550, 400))),
-            window_display_title="Herb Management",
+            window_display_title=i18n.t("windows.herb_management_title"),
         )
 
         self.help_button = UIImageButton(
