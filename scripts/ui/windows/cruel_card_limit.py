@@ -16,7 +16,7 @@ class CruelCardLimit(GameWindow):
     def __init__(self):
         super().__init__(
             ui_scale(pygame.Rect((300, 200), (250, 170))),
-            window_display_title="Cruel Card Limit",
+            window_display_title=i18n.t("windows.cruel_cards_limit_title"),
         )
 
         self.limit_message = UITextBoxTweaked(
