@@ -160,9 +160,15 @@
         ],
         "relationships": [
             {
-                "cats_from": ["r_c"],
-                "cats_to": ["m_c"],
-                "values": ["comfort"],
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "comfort"
+                ],
                 "amount": -10,
                 "log": {
                     "cats_from": "cat_from was too slow to save cat_to from an owl."
@@ -170,7 +176,7 @@
             }
         ]
     },
-        {
+    {
         "event_id": "fst_mushroom_death",
         "location": [
             "forest:camp1"
@@ -191,7 +197,7 @@
                 "-HEALER,1"
             ],
             "trait": [
-               "-nervous",
+                "-nervous",
                 "-strict",
                 "-thoughtful",
                 "-calm",
@@ -212,17 +218,386 @@
         ]
     },
     {
-    "event_id": "fst_death_extinction_bear",
-    "location": ["forest:camp3"],
-    "season": ["leaf-fall"],
-    "sub_type": ["mass_death"],
-    "frequency": 2,
-    "event_text": "multi_cat were killed after a shelter-seeking bear lumbered into the grotto and discovered it was occupied.",
-    "history": [
-      {
-        "cats": ["multi_cat"],
-        "death": "m_c was killed by a bear rampaging through camp."
-      }
-    ]
-}
+        "event_id": "fst_death_extinction_bear",
+        "location": [
+            "forest:camp3"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "sub_type": [
+            "mass_death"
+        ],
+        "frequency": 2,
+        "event_text": "multi_cat were killed after a shelter-seeking bear lumbered into the grotto and discovered it was occupied.",
+        "history": [
+            {
+                "cats": [
+                    "multi_cat"
+                ],
+                "death": "m_c was killed by a bear rampaging through camp."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_any_lakeside_undertow_no_body1",
+        "location": [
+            "forest:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "no_body"
+        ],
+        "frequency": 3,
+        "event_text": "m_c steps into the shallows at the lake's edge, but the bottom drops away beneath {PRONOUN/m_c/poss} paws. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} dragged under by the undertow before {PRONOUN/m_c/subject} can find footing again.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c drowned after being pulled under by an undertow."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_any_lakeside_murder_no_body1",
+        "location": [
+            "forest:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "murder"
+        ],
+        "tags": [
+            "no_body"
+        ],
+        "frequency": 1,
+        "event_text": "A thick fog rolls across the lake and swallows the camp whole. Once it abates, m_c is found dead at the water's edge, a familiar scent staining the sand.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "trait": [
+                "-flamboyant",
+                "-oblivious"
+            ],
+            "dies": false
+        },
+        "exclude_involved": [
+            "r_c"
+        ],
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was found mysteriously murdered at the lake's edge."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_any_lakeside_largepike_no_body1",
+        "location": [
+            "forest:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "tags": [
+            "no_body"
+        ],
+        "frequency": 1,
+        "event_text": "m_c and r_c are fishing at the lake's edge when r_c hears a splash and a cut-off yowl. By the time {PRONOUN/r_c/subject} {VERB/r_c/reach/reaches} the rocks, only ripples remain.",
+        "m_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader",
+                "apprentice"
+            ],
+            "skill": [
+                "-SWIMMER,2",
+                "-SWIMMER,4",
+                "-SWIMMER,3"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "status": [
+                "warrior",
+                "deputy",
+                "leader",
+                "apprentice"
+            ]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was dragged from the shore by a large pike."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_any_lakeside_log1",
+        "location": [
+            "forest:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 3,
+        "event_text": "Drift logs washing up on the shore is nothing new; m_c has crossed plenty of them without a second thought. This one looks no different. Yet, it rots underneath {PRONOUN/m_c/poss} paws without warning, and the lake takes {PRONOUN/m_c/object}.",
+        "m_c": {
+            "age": [
+                "any",
+                "-kitten"
+            ],
+            "trait": [
+                "-careful",
+                "-nervous",
+                "-responsible"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c fell into the lake after a drift log rotted away."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_newleaf_lakeside_snowmeltcurrent1",
+        "location": [
+            "forest:camp4"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "frequency": 3,
+        "event_text": "The snowmelt has swollen the lake and quickened the current. m_c wades into what should be familiar shallows. The current catches {PRONOUN/m_c/object} before {PRONOUN/m_c/subject} {VERB/m_c/realize/realizes} its changed.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c drowned after being pulled into the lake by strong currents."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_newleaf_lakeside_swanattack1",
+        "location": [
+            "forest:camp4"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "frequency": 2,
+        "event_text": "m_c wades into the newly thawed lake, not noticing the swan nesting nearby until it's already moving. By the time {PRONOUN/m_c/subject} {VERB/m_c/reach/reaches} the bank, {PRONOUN/m_c/poss} wounds are too grievous to survive.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c died after being attacked by a swan."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_newleaf_lakeside_swanattack2",
+        "location": [
+            "forest:camp4"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "frequency": 2,
+        "event_text": "The reeds at the water's edge are full of interesting things to a kit. m_c has nearly reached the swan's nest before anyone realizes, and the swan is faster before anyone can reach m_c.",
+        "m_c": {
+            "status": [
+                "kitten"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c died after being attacked by a swan."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_greenleaf_lakeside_suddenlyalongcamezeus1",
+        "location": [
+            "forest:camp4"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "frequency": 1,
+        "event_text": "The hot season seems to bring the worst storms, even m_c knows this. Yet, {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} still on the open shore when the lightning finds the water.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c died after being struck by lightning."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_extinction_greenleaf_lakeside_algaebloom1",
+        "location": [
+            "forest:camp4"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "sub_type": [
+            "mass_death"
+        ],
+        "frequency": 1,
+        "event_text": "A toxic algae bloom has been creeping across the lake for days, and multi_cat drank from the wrong part of the lake before anyone thought to warn them.",
+        "history": [
+            {
+                "cats": [
+                    "multi_cat"
+                ],
+                "death": "m_c was poisoned by an algae bloom."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_leaffall_lakeside_coldswimming1",
+        "location": [
+            "forest:camp4"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "frequency": 3,
+        "event_text": "The lake looks the same to the naked eye, which is good enough for m_c to go swimming. But, the temperatures had dropped faster than thought, and the shock was too much for {PRONOUN/m_c/object} to handle.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c drowned in the lake."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_leafbare_lakeside_icebreak1",
+        "location": [
+            "forest:camp4"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "The ice over the lake cove looked solid. m_c ventures out onto it and makes it halfway before r_c hears the crack. {PRONOUN/r_c/subject/CAP} {VERB/r_c/get/gets} to the edge in time to see {PRONOUN/m_c/object} go under.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "trait": [
+                "-careful",
+                "-nervous",
+                "-responsible"
+            ],
+            "skill": [
+                "-SWIMMER,2"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c broke through the ice on the lake and drowned."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_leafbare_lakeside_blizzard1",
+        "location": [
+            "forest:camp4"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "tags": [
+            "no_body"
+        ],
+        "frequency": 2,
+        "event_text": "m_c is walking along the shore when a sudden blizzard blinds {PRONOUN/m_c/object}. r_c finds only {PRONOUN/m_c/poss} tracks later, leading to the waters edge.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was lost in a blizzard and never found."
+            }
+        ]
+    }
 ]
