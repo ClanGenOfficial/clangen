@@ -292,7 +292,7 @@
           "type": "string"
         },
         "group": {
-          "description": "",
+          "description": "Constraints the thought to only happen if the cat is a member of a listed group or a member of no group. This should only be used to dictate what group a new cat is originally part of",
           "items": {
             "$ref": "#/$defs/Group"
           },
