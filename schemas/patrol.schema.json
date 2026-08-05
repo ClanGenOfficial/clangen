@@ -255,6 +255,7 @@
       "additionalProperties": false,
       "properties": {
         "prior_abbreviation": {
+          "description": "Specifies s_c choices. Read the docs. It's too long for this.",
           "items": {
             "anyOf": [
               {
@@ -271,9 +272,11 @@
         },
         "can_create_new_cat": {
           "$ref": "#/$defs/CanCreateNewCat",
+          "description": "Add if the outsider/other_clan cat can be newly generated rather than having to utilize an existing cat. Can even be added as an empty dict to simply mark it as a new cat creation without any additional specifications",
           "title": "Can Create New Cat"
         },
         "status": {
+          "description": "Constrains the event to only happen if the cat holds a certain role. You can utilize exclusionary tags. You can also remove the parameter to allow the event to occur for all roles except \"newborns\", who are only allowed if specifically tagged as such.",
           "items": {
             "$ref": "#/$defs/StatusAny"
           },
@@ -281,6 +284,7 @@
           "type": "array"
         },
         "past_status": {
+          "description": "Constrains the event to only happen if the cat held a certain role in the past",
           "items": {
             "$ref": "#/$defs/StatusAny"
           },
@@ -288,6 +292,7 @@
           "type": "array"
         },
         "age": {
+          "description": "Constrains the event to only occur if the cat is within a certain age group. You can also remove the parameter to allow the event to occur for all ages except \"newborns\", who are only allowed if specifically tagged as such",
           "items": {
             "$ref": "#/$defs/Age"
           },
@@ -295,6 +300,7 @@
           "type": "array"
         },
         "gender": {
+          "description": "Constrains the event to only occur if the cat has a certain birth gender. can_birth will allow either female or male cats dependant upon the player's settings",
           "enum": [
             "male",
             "female",
