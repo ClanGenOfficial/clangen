@@ -838,11 +838,7 @@ class HerbSupply:
         # create and append log message
         message = i18n.t(
             "screens.med_den.herb_used",
-            herb=(
-                self.herb[herb_used].plural_display
-                if amount_used > 1
-                else str("a ") + self.herb[herb_used].singular_display
-            ),
+            herb=i18n.t("general.article", noun=self.herb[herb_used].name),
             condition=condition,
             effect=effect_message,
         )
