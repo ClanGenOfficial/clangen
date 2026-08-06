@@ -854,9 +854,10 @@
       "general_backstory",
       "quiet",
       "nervous",
-      "skittish"
+      "skittish",
+      "all_traits"
     ],
-    "(old_name) wants to sob at the thought of being anything but a kit, comforted by p1 and other kits in the nursery. Nevertheless, {PRONOUN/m_c/subject} {VERB/m_c/step/steps} up before {PRONOUN/m_c/poss} leader, {VERB/m_c/take/takes} the name m_c, and {VERB/m_c/are/is} apprenticed to (mentor)."
+    "(old_name) wants to sob at the thought of being anything but a kit, comforted by p1 and the smells of the nursery. Nevertheless, {PRONOUN/m_c/subject} {VERB/m_c/step/steps} up before {PRONOUN/m_c/poss} leader, {VERB/m_c/take/takes} the name m_c, and {VERB/m_c/are/is} apprenticed to (mentor)."
   ],
   "app_56":[
     [
