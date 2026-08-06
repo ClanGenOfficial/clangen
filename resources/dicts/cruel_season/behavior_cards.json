@@ -113,6 +113,12 @@
       "mates.allow_mating": false
     }
   },
+  "clumsy_paws": {
+    "card_art": "behavior/sorrow.png",
+    "modifiers": {
+      "progress.difficulty_modifier": 0.5
+    }
+  },
   "malicious_aura": {
     "card_art": "behavior/resolute.png",
     "modifiers": {

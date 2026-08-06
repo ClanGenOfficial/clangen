@@ -18,6 +18,8 @@ import ujson
 
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.enums import CatRank, CatGroup, CatSocial
+from scripts.cat.factories.new_cat_factory import NewCatFactory
+from scripts.cat.factories.enums import CatType
 from scripts.cat.names import names
 from scripts.cat.save_load import (
     save_cats,
@@ -261,7 +263,7 @@ class Clan:
             )
         )
 
-        self.instructor = Cat(
+        self.instructor = NewCatFactory.create_cat(
             status_dict={"rank": instructor_rank, "group_ID": CatGroup.STARCLAN_ID},
             backstory=choice(
                 BACKSTORIES["backstory_categories"]["clan_guide_backstories"]
@@ -298,7 +300,7 @@ class Clan:
             if the_cat != self.instructor:
                 the_cat.backstory = "clan_founder"
             if the_cat.status.rank == CatRank.APPRENTICE:
-                the_cat.rank_change(CatRank.APPRENTICE)
+                the_cat.rank_change(CatRank.APPRENTICE, new_thought=False)
 
         # find non-selected cats from the 12 generated starters
         for c in switch_get_value(Switch.possible_cats):
@@ -312,6 +314,10 @@ class Clan:
                     ]
                 )
                 c.status.generate_new_status(self, social=random_social)
+                # re-assign backstory once cat has new status
+                c.backstory = NewCatFactory._get_random_backstory_from_status(
+                    c.status, c.age
+                )
                 # random chance for cat to generate as dead
                 if randint(1, 3) == 1:
                     c.die()
@@ -776,11 +782,11 @@ class Clan:
                 game.clan.instructor = Cat.all_cats[instructor_info]
                 game.clan.add_cat(game.clan.instructor)
         else:
-            game.clan.instructor = Cat(
+            game.clan.instructor = NewCatFactory.create_cat(
                 status_dict={
                     "rank": choice((CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER)),
                     "group": CatGroup.STARCLAN,
-                }
+                },
             )
             # update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
@@ -929,11 +935,11 @@ class Clan:
             game.clan.instructor = Cat.all_cats[clan_data["instructor"]]
             game.clan.add_cat(game.clan.instructor)
         else:
-            game.clan.instructor = Cat(
+            game.clan.instructor = NewCatFactory.create_cat(
                 status_dict={
                     "rank": choice((CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER)),
                     "group": CatGroup.STARCLAN,
-                }
+                },
             )
             # update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
@@ -1418,15 +1424,15 @@ class Clan:
                 statistics.median([i.personality.stability for i in all_other_cats])
             )
 
+        if not leader and not deputy and not medicine_cats and not all_other_cats:
+            print("returned default temper: stoic, observant")
+            return "stoic", "observant"
+
         # mean of [leader, leader, leader, deputy, deputy, medicine_cats, all_other_cats]
         clan_sociability = round(statistics.mean(sociability_list))
         clan_aggression = round(statistics.mean(aggression_list))
         clan_lawfulness = round(statistics.mean(lawfulness_list))
         clan_stability = round(statistics.mean(stability_list))
-
-        if not leader and not deputy and not all_other_cats:
-            print("returned default temper: stoic, observant")
-            return "stoic", "observant"
 
         return get_temper_alignment(
             clan_sociability, clan_aggression, clan_lawfulness, clan_stability
@@ -1740,4 +1746,4 @@ def _find_alignment(temper_dict: dict, first_value: int, second_value: int) -> s
 
 
 clan_class = Clan()
-clan_class.remove_cat(cat_class.ID)
+# clan_class.remove_cat(cat_class.ID)
