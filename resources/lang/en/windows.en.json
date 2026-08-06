@@ -115,7 +115,7 @@
         "pos_clan_rel_log": "The Clan gained %{value_list} towards %{name_list}.",
         "neg_clan_rel_log": "The Clan lost %{value_list} towards %{name_list}.",
         "cruel_card_limit": "You can only choose %{amount} cards. Remove a card to choose a new one.",
-        "cruel_cards_conflict": {
+        "cruel_card_conflict": {
             "one": "%{new_card} conflicts with %{conflicting_cards_list}. You can either <b>keep</b> %{conflicting_cards_list} or you can <b>replace</b> it with %{new_card}.",
             "many": "%{new_card} conflicts with %{conflicting_cards_list}. You can either <b>keep</b> the already chosen cards or you can <b>replace</b> them with %{new_card}."
 
@@ -125,8 +125,8 @@
         "view_cruel_cards": "View Cruel Cards",
         "randomize_prefix_tooltip": "Randomize the prefix",
         "randomize_suffix_tooltip": "Randomize the suffix",
-        "cruel_cards_limit_title": "Cruel Card Limit",
-        "cruel_cards_conflict_title": "Cruel Cards Conflict",
+        "cruel_card_limit_title": "Cruel Card Limit",
+        "cruel_card_conflict_title": "Cruel Card Conflict",
         "cruel_locked_action_title": "Cruel Locked Action",
         "game_over_title": "Game Over",
         "freshkill_management_title": "Freshkill Management",

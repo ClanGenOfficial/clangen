@@ -19,7 +19,7 @@ class CruelCardConflicts(GameWindow):
     def __init__(self, new_card: str, chosen_cards: list):
         super().__init__(
             ui_scale(pygame.Rect((200, 240), (400, 200))),
-            window_display_title=i18n.t("windows.cruel_cards_conflict_title"),
+            window_display_title=i18n.t("windows.cruel_card_conflict_title"),
         )
 
         self.new_card = new_card
@@ -35,7 +35,7 @@ class CruelCardConflicts(GameWindow):
 
         self.conflict_message = UITextBoxTweaked(
             i18n.t(
-                "windows.cruel_cards_conflict",
+                "windows.cruel_card_conflict",
                 new_card=i18n.t(f"cruel_season.card_names.{new_card}"),
                 conflicting_cards_list=adjust_list_text(
                     [
