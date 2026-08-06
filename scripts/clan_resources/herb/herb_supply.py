@@ -837,7 +837,7 @@ class HerbSupply:
 
         # create and append log message
         message = i18n.t(
-            "screens.med_den.herb_used",
+            "conditions.herbs.herb_used",
             herb=i18n.t("general.article", noun=self.herb[herb_used].name),
             condition=condition,
             effect=effect_message,
