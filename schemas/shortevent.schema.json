@@ -727,7 +727,7 @@
             "type": "string"
           },
           {
-            "pattern": "^[a-z]+:(camp[0-9]_)*camp[0-9]$",
+            "pattern": "^-?[a-z]+:(camp[0-9]_)*camp[0-9]$",
             "type": "string"
           }
         ]
