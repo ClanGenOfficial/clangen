@@ -29,7 +29,7 @@ class UpdateAvailableWindow(GameWindow):
 
         self.begin_update_title = UIImageButton(
             ui_scale(pygame.Rect((97, 15), (200, 40))),
-            "",
+            "windows.begin_update_title",
             object_id="#new_update_button",
             container=self,
         )
