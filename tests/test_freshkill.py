@@ -113,6 +113,9 @@ class FreshkillPileTest(unittest.TestCase):
         if os.path.exists(rempath + "/clan.json"):
             os.remove(rempath + "/clan.json")
 
+        Cat.all_cats.clear()
+        Cat.all_cats_list.clear()
+
     @classmethod
     def tearDownClass(cls):
         if cls.previously_loaded_clan:

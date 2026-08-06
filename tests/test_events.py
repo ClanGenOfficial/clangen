@@ -10,7 +10,7 @@ from scripts import events
 from scripts.cat import save_load
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
-from scripts.cat.factories.test_cat_factory import TestCatFactory
+from scripts.cat.factories.new_cat_factory import NewCatFactory as cat_factory
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan import Clan, Afterlife
 from scripts.clan_package.get_clan_cats import (
@@ -24,8 +24,6 @@ from scripts.events_module.short.short_event_generation import (
 from scripts.game_structure import game
 from scripts.game_structure.game.save_load import read_clans
 from scripts.housekeeping.datadir import get_save_dir
-
-cat_factory = TestCatFactory()
 
 
 class TestEvents(unittest.TestCase):
