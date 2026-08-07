@@ -539,7 +539,7 @@ class Clan:
             "starting_season": self.starting_season,
             "temperament": self.temperament,
             "just_died": game.just_died,
-            "dead_cats_to_grieve": [x.ID for x in game.dead_cats_to_grieve],
+            "dead_cats_to_grieve": [x.ID for x in game.dead_cats_to_grieve if x],
             "grief_to_assign": game.clan.grief_strings,
             "version_name": SAVE_VERSION_NUMBER,
             "version_commit": get_version_info().version_number,
@@ -1016,7 +1016,9 @@ class Clan:
         # Cats who need to be grieved
         if "dead_cats_to_grieve" in clan_data:
             game.dead_cats_to_grieve = [
-                Cat.fetch_cat(x) for x in clan_data["dead_cats_to_grieve"]
+                cat
+                for x in clan_data["dead_cats_to_grieve"]
+                if (cat := Cat.fetch_cat(x))
             ]
 
         # Cats who are gonna grieve
