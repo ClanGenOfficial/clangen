@@ -257,7 +257,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died after poisoning {PRONOUN/m_c/self} with aconite."
+                "death": "m_c was poisoned by aconite."
             }
         ]
     },
@@ -335,7 +335,7 @@
             "any"
         ],
         "frequency": 3,
-        "event_text": "m_c toddles into the lake, but finds {PRONOUN/m_c/self} unable to swim for long. {PRONOUN/m_c/subject/CAP} {VERB/m_c/do/does}n't make it back to shore.",
+        "event_text": "m_c toddles into the lake but finds {PRONOUN/m_c/self} unable to swim for long. {PRONOUN/m_c/subject/CAP} {VERB/m_c/do/does}n't make it back to shore.",
         "m_c": {
             "age": [
                 "kitten"

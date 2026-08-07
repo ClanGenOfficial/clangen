@@ -775,7 +775,7 @@
             "greenleaf"
         ],
         "frequency": 1,
-        "event_text": "m_c enjoys a swim in the lake, until a pike bites {PRONOUN/m_c/object}. {PRONOUN/m_c/subject/CAP} barely {VERB/m_c/make/makes} it back to shore, blood blossoming in the water.",
+        "event_text": "m_c is bitten by a pike while swimming in the lake. {PRONOUN/m_c/subject/CAP} barely {VERB/m_c/make/makes} it back to shore, blood blossoming in the water.",
         "m_c": {
             "age": [
                 "-kitten"
@@ -837,7 +837,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "death": "m_c died after poisoning {PRONOUN/m_c/self} with aconite."
+                "death": "m_c was poisoned by aconite."
             }
         ]
     }
