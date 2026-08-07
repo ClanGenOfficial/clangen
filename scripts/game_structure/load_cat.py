@@ -45,6 +45,10 @@ def load_cats():
         json_load()
     except FileNotFoundError:
         csv_load(Cat.all_cats)
+    except Exception:
+        Cat.all_cats.clear()
+        Cat.all_cats_list.clear()
+        raise
 
 
 def json_load():
