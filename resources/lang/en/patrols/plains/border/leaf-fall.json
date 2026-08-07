@@ -560,7 +560,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "After cat_from hears about how cat_to attacked a coyote, {PRONOUN/cat_from/subject} {VERB/cat_from/look/looks} at {PRONOUN/cat_to/object} with a touch more respect."
+                            "cats_from": "cat_from gained respect toward cat_to after hearing that {PRONOUN/cat_to/subject} attacked a coyote."
                         }
                     }
                 ],

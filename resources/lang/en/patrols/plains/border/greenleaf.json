@@ -772,7 +772,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from mistrusts cat_to's judgement after {PRONOUN/cat_to/subject} led the patrol into an attack on a young coyote that resulted in the loss of a Clanmate to its parents."
+                            "cats_from": "cat_from doubted cat_to's judgment after {PRONOUN/cat_to/subject} led an attack on a young coyote and its parents killed their Clanmate."
                         }
                     }
                 ],

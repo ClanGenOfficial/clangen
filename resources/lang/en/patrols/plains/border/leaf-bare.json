@@ -635,7 +635,7 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["patrol", "-r_c"],
                         "cats_from": [
                             "patrol"
                         ],
@@ -645,7 +645,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from looks somewhat uncomfortable around cat_to since their patrol in which a Clanmate was killed and offered as a courting gift by a coyote."
+                            "cats_from": "cat_from looked uneasy around cat_to after r_c was killed by a coyote while the cats patrolled together."
                         }
                     }
                 ],
