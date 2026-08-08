@@ -74,7 +74,7 @@ The pose `DATA` sheet is also unique.
 
 You can now combine and layer patches for more unique variations. To add a new patch combination locate sprites/dicts/white_patches_combos.json. 
 
-Each patch combination is added to a list that dictates the size of the combined patch and how it is inherited. For example, some little patches combined may still be categorized as little. Use your best judgment in sorting.
+Each patch combination is added to a list that dictates the size of the combined patch and how it is inherited. For example, some `little` patches combined may still be categorized as `little` or, if they cover enough of the cat, they could be added as a `mid` patch instead. Use your best judgment in sorting.
 
 To add a new patch combination create a list in the dict based on the following format:
 
