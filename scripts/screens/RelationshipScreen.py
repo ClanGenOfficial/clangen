@@ -1,5 +1,6 @@
 from typing import Optional
 
+import i18n
 import pygame
 import pygame_gui
 from pygame_gui.core import UIContainer
@@ -40,6 +41,24 @@ class RelationshipScreen(Screens):
         "show_negative",
         "show_neutral_relation",
     ]
+    mate_indicator = pygame.transform.scale(
+        image_cache.load_image(
+            "resources/images/relationship_screen/mate_indicator.png"
+        ).convert_alpha(),
+        ui_scale_dimensions((10, 10)),
+    )
+    ex_mate_indicator = pygame.transform.scale(
+        image_cache.load_image(
+            "resources/images/relationship_screen/ex_mate_indicator.png"
+        ).convert_alpha(),
+        ui_scale_dimensions((10, 10)),
+    )
+    related_indicator = pygame.transform.scale(
+        image_cache.load_image(
+            "resources/images/relationship_screen/related_indicator.png"
+        ).convert_alpha(),
+        ui_scale_dimensions((10, 10)),
+    )
 
     def __init__(self, name=None):
         super().__init__(name)
@@ -432,11 +451,6 @@ class RelationshipScreen(Screens):
             },
         )
 
-        heart_image = pygame.transform.scale(
-            image_cache.load_image("resources/images/heart_small.png").convert_alpha(),
-            ui_scale_dimensions((10, 10)),
-        )
-
         prev_element = None
         for i, relationship in enumerate(current_chunk):
             if i >= 4:
@@ -467,16 +481,55 @@ class RelationshipScreen(Screens):
                 anchors={"left_target": prev_element} if prev_element else None,
                 manager=MANAGER,
             )
+
             if relationship.cat_to.ID in self.main_cat.mate:
-                self.relation_elements[f"heart{i}"] = UIModifiedImage(
-                    ui_scale(pygame.Rect((-25, 35), (10, 10))),
-                    heart_image,
+                self.relation_elements[f"rel_indicator{i}"] = UIModifiedImage(
+                    ui_scale(pygame.Rect((-115, 35), (10, 10))),
+                    self.mate_indicator,
                     container=container,
                     anchors={
                         "left_target": self.relation_elements[f"rel{i}_nameplate"]
                     },
                     manager=MANAGER,
+                    object_id="#rel_indicator",
                 )
+                self.relation_elements[f"rel_indicator{i}"].set_tooltip(
+                    i18n.t("general.mate", count=1)
+                )
+
+            elif relationship.cat_to.ID in self.main_cat.previous_mates:
+                self.relation_elements[f"rel_indicator{i}"] = UIModifiedImage(
+                    ui_scale(pygame.Rect((-115, 35), (10, 10))),
+                    self.ex_mate_indicator,
+                    container=container,
+                    anchors={
+                        "left_target": self.relation_elements[f"rel{i}_nameplate"]
+                    },
+                    manager=MANAGER,
+                    object_id="#rel_indicator",
+                )
+                self.relation_elements[f"rel_indicator{i}"].set_tooltip(
+                    i18n.t("general.ex_mate", count=1)
+                )
+
+            elif self.main_cat.is_related(relationship.cat_to, exclude_cousins=False):
+                self.relation_elements[f"rel_indicator{i}"] = UIModifiedImage(
+                    ui_scale(pygame.Rect((-25, 35), (10, 10))),
+                    self.related_indicator,
+                    container=container,
+                    anchors={
+                        "left_target": self.relation_elements[f"rel{i}_nameplate"]
+                    },
+                    manager=MANAGER,
+                    object_id="#rel_indicator",
+                )
+                self.relation_elements[f"rel_indicator{i}"].set_tooltip(
+                    i18n.t("general.related_text", count=1)
+                )
+
+            if f"rel_indicator{i}" in self.relation_elements:
+                self.relation_elements[f"rel_indicator{i}"].tool_tip_delay = 0
+
             self.relation_elements[f"rel{i}_name_text"] = pygame_gui.elements.UITextBox(
                 shorten_text_to_fit(str(relationship.cat_to.name), 100, 13),
                 ui_scale(pygame.Rect((0 + INTERVAL, -3), (130, -1))),

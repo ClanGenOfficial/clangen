@@ -224,5 +224,131 @@
         "death": "m_c was killed by a bear rampaging through camp."
       }
     ]
-}
+},
+    {
+        "event_id": "fst_death_aconitekitten1",
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "newleaf",
+            "greenleaf"
+        ],
+        "frequency": 3,
+        "event_text": "m_c sneaks out of camp and plays with pretty violet flowers. Later, r_c finds {PRONOUN/m_c/object} lying in the poisonous aconite, motionless.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "trait": [
+                "fearless",
+                "impulsive"
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "-kitten",
+                "-adolescent"
+            ]
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c was poisoned by aconite."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_lake1",
+        "location": [
+            "forest:camp4"
+        ],
+        "season": [
+            "greenleaf",
+            "leaf-fall"
+        ],
+        "frequency": 2,
+        "event_text": "During a storm, the lake bursts its banks. Thanks to m_c, everyone makes it out of camp in time. Everyone, except for {PRONOUN/m_c/object}.",
+        "m_c": {
+            "age": [
+                "-kitten",
+                "-adolescent"
+            ],
+            "trait": [
+                "compassionate",
+                "confident",
+                "daring",
+                "loyal"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c died when the camp was flooded by the overflowing lake."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_lake2",
+        "location": [
+            "forest:camp4"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "frequency": 2,
+        "event_text": "Melting snow fills the lake to bursting. Camp floods, the Clan scatters, and m_c and r_c cannot be found in the aftermath.",
+        "m_c": {
+            "skill": [
+                "-SWIMMER,1"  
+            ],
+            "dies": true
+        },
+        "r_c": {
+            "skill": [
+                "-SWIMMER,1"  
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c",
+                    "r_c"
+                ],
+                "death": "m_c died when the camp was flooded by the overflowing lake."
+            }
+        ]
+    },
+    {
+        "event_id": "fst_death_lake3",
+        "location": [
+            "forest:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 3,
+        "event_text": "m_c toddles into the lake but finds {PRONOUN/m_c/self} unable to swim for long. {PRONOUN/m_c/subject/CAP} {VERB/m_c/do/does}n't make it back to shore.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c drowned while trying to swim in the lake."
+            }
+        ]
+    }
 ]
