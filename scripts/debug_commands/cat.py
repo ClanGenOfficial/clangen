@@ -1,6 +1,8 @@
 from typing import List
 
 from scripts.cat.cats import Cat
+from scripts.cat.factories.enums import CatType
+from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.debug_commands.command import Command
 from scripts.debug_commands.utils import add_output_line_to_log
 from scripts.game_structure import game
@@ -12,7 +14,7 @@ class AddCatCommand(Command):
     aliases = ["a"]
 
     def callback(self, args: List[str]):
-        cat = Cat()
+        cat = NewCatFactory.create_cat()
         game.clan.add_cat(cat)
         add_output_line_to_log(f"Added {cat.name} with ID {cat.ID}")
 
