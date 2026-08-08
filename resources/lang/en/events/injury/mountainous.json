@@ -132,7 +132,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "m_c was exploring {PRONOUN/m_c/poss} territory when the ruins {PRONOUN/m_c/subject} {VERB/m_c/were/was} walking under collapsed.",
+        "event_text": "m_c was exploring {PRONOUN/m_c/poss} territory when the ruins {PRONOUN/m_c/subject} {VERB/m_c/were/was} walking under collapsed and broke {PRONOUN/m_c/poss} back.",
         "m_c": {
             "age": [
                 "adolescent",
