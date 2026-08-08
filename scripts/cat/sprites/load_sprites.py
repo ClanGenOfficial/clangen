@@ -86,6 +86,16 @@ class Sprites:
         "sprites/dicts/white_patches_little_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
         WHITE_LITTLE_DATA = ujson.loads(read_file.read())
+
+    try:
+        with open(
+            "sprites/dicts/white_patches_combos.json", "r", encoding="utf-8"
+        ) as read_file:
+            WHITE_PATCH_COMBOS = ujson.loads(read_file.read())
+    except FileNotFoundError:
+        # this is probably a mod that ain't adding patch combos
+        WHITE_PATCH_COMBOS = {}
+
     with open(
         "sprites/dicts/white_patches_vitiligo_sprite_data.json", "r", encoding="utf-8"
     ) as read_file:
@@ -357,6 +367,35 @@ class Sprites:
             # everything else
             else:
                 self.load_sheet(data["spritesheet"], data["sprite_list"])
+
+        # patch combos
+        for category, combos in self.WHITE_PATCH_COMBOS.items():
+            # pulls the defaults from the pose_sprite_data.json file
+            sprites_x = self.sheet_layout[0]
+            sprites_y = self.sheet_layout[1]
+
+            i = 0
+            for name, patches in combos.items():
+                for y in range(sprites_y):
+                    for x in range(sprites_x):
+                        if i in self.empty_indexes:
+                            i += 1
+                            continue
+
+                        new_patch = pygame.Surface(
+                            (sprites.size, sprites.size),
+                            pygame.HWSURFACE | pygame.SRCALPHA,
+                        )
+
+                        for patch in patches:
+                            addition = self.sprites[f"patches_white_{patch}{i}"]
+                            new_patch.blit(
+                                addition,
+                                (0, 0),
+                            )
+
+                        self.sprites[f"patches_white_{category}{name}{i}"] = new_patch
+                        i += 1
 
         self.load_symbols()
 
