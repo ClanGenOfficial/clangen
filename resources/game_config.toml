@@ -934,6 +934,7 @@ dev_tools = false
   # the same, but for healthy apprentices
   auto_apprentice_prey = [1,3]
 
+
   # the baseline of prey amount caught on patrol will be a warrior's prey_requirement plus this value
   additional_prey = 1
 
@@ -944,6 +945,23 @@ dev_tools = false
 
   # the amount that a cat's prey requirement increases if the cat is sick/injured/pregnant
   condition_increase = 1
+
+  # cats of each rank will choose a random num of prey from the given list to catch each moon
+  # ranks that are not leader, deputy, or warrior will only catch prey if no leader/deputy/warriors are available to do so
+  [prey.auto_catch]
+    leader = [2, 3, 3, 4]
+    deputy = [2, 3, 3, 4]
+    warrior = [2, 3, 3, 4]
+    apprentice = [1, 2, 2, 3]
+    "medicine cat" = [0, 1, 1, 2]
+    "medicine cat apprentice" = [0, 1]
+    mediator = [0, 1, 2, 2]
+    "mediator apprentice" = [0, 1, 1]
+    elder = [0, 1, 1]
+    kitten = [0, 0, 1]
+    newborn = [0]
+
+    not_working = [0, 0, 1]
 
   [prey.feeding]
     # the rank order in which cats will be fed
