@@ -1,6 +1,6 @@
 # Installing Application
 
-"Application" refers to the packaged version of ClanGen that most people are familiar with. It comes with a launcher (clangen.exe) and is relatively easy to install.
+"Application" refers to the packaged version of ClanGen that most people are familiar with. It comes with an executable (.exe, .app) and is relatively easy to install.
 
 Yes, this guide can also work and apply with **up-to-date** mods. You just have to take the initiative to change some details to reflect the mod you're installing. Make sure to read the instructions carefully.
 
