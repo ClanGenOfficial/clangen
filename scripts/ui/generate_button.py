@@ -13,6 +13,8 @@ from scripts.ui.scale import ui_scale_dimensions
 class ButtonStyles(Enum):
     MAINMENU = "mainmenu"
     CLAN_HEADER = "clan_header"
+    HEADER = "header"
+    HEADER_MIRRORED = "header_mirrored"
     SQUOVAL = "squoval"
     MENU_LEFT = "menu_left"
     MENU_MIDDLE = "menu_middle"
@@ -66,6 +68,54 @@ buttonstyles = {
         "disabled": pygame.image.load(
             "resources/images/generated_buttons/clan_header_hovered.png"
         ).convert_alpha(),
+        "ninetile": False,
+        "scale_only": False,
+    },
+    "header": {
+        "normal": pygame.image.load(
+            "resources/images/generated_buttons/header_normal.png"
+        ).convert_alpha(),
+        "hovered": pygame.image.load(
+            "resources/images/generated_buttons/header_hovered.png"
+        ).convert_alpha(),
+        "selected": pygame.image.load(
+            "resources/images/generated_buttons/header_disabled.png"
+        ).convert_alpha(),
+        "disabled": pygame.image.load(
+            "resources/images/generated_buttons/header_disabled.png"
+        ).convert_alpha(),
+        "ninetile": False,
+        "scale_only": False,
+    },
+    "header_mirrored": {
+        "normal": pygame.transform.flip(
+            pygame.image.load(
+                "resources/images/generated_buttons/header_normal.png"
+            ).convert_alpha(),
+            False,
+            True,
+        ),
+        "hovered": pygame.transform.flip(
+            pygame.image.load(
+                "resources/images/generated_buttons/header_hovered.png"
+            ).convert_alpha(),
+            False,
+            True,
+        ),
+        "selected": pygame.transform.flip(
+            pygame.image.load(
+                "resources/images/generated_buttons/header_disabled.png"
+            ).convert_alpha(),
+            False,
+            True,
+        ),
+        "disabled": pygame.transform.flip(
+            pygame.image.load(
+                "resources/images/generated_buttons/header_disabled.png"
+            ).convert_alpha(),
+            False,
+            True,
+        ),
         "ninetile": False,
         "scale_only": False,
     },

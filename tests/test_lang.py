@@ -1,9 +1,12 @@
 # Tests for localization
 import os
 import unittest
+from random import Random
 
 import i18n
 import ujson
+
+from scripts.cat.factories.test_cat_factory import TestCatFactory
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
@@ -15,6 +18,8 @@ from scripts.game_structure.localization import (
 from scripts.cat.pronouns import get_new_pronouns, determine_plural_pronouns
 from scripts.events_module.text_adjust import event_text_adjust
 
+cat_factory = TestCatFactory()
+
 
 class TestLocalisation(unittest.TestCase):
     @classmethod
@@ -24,16 +29,21 @@ class TestLocalisation(unittest.TestCase):
         ) as read_file:
             cls.pronouns = ujson.loads(read_file.read())["en"]
 
-        male_cat = Cat(gender="male", disable_random=True)
-        male_cat.genderalign = "male"
+        male_cat = cat_factory.create_cat(
+            gender="male", genderalign="male", disable_random=True
+        )
 
-        female_cat = Cat(gender="female", disable_random=True)
-        female_cat.genderalign = "female"
+        female_cat = cat_factory.create_cat(
+            gender="female", genderalign="female", disable_random=True
+        )
 
-        nonbinary_cat = Cat()
-        nonbinary_cat.genderalign = "nonbinary"
+        nonbinary_cat = cat_factory.create_cat(
+            genderalign="nonbinary", disable_random=True
+        )
 
-        mystery_cat = Cat(gender="potato", disable_random=True)
+        mystery_cat = cat_factory.create_cat(
+            gender="potato", genderalign="potato", disable_random=True
+        )
         cls.cat_combos_two = {
             "male-male": [[male_cat, male_cat], cls.pronouns["1"]],
             "male-female": [[male_cat, female_cat], cls.pronouns["1"]],
@@ -77,13 +87,13 @@ class TestLocalisation(unittest.TestCase):
                 )
 
     def test_insert_singular_pronouns(self):
-        male_cat = Cat(gender="male", disable_random=True)
+        male_cat = cat_factory.create_cat(gender="male", disable_random=True)
         male_cat.genderalign = "male"
 
-        female_cat = Cat(gender="female", disable_random=True)
+        female_cat = cat_factory.create_cat(gender="female", disable_random=True)
         female_cat.genderalign = "female"
 
-        nonbinary_cat = Cat()
+        nonbinary_cat = cat_factory.create_cat()
         nonbinary_cat.genderalign = "nonbinary"
 
         for cat in (male_cat, female_cat, nonbinary_cat):
