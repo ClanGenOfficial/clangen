@@ -209,7 +209,7 @@
         "any"
     ],
     "frequency": 2,
-    "event_text": "As m_c collects herbs, the fur on {PRONOUN/m_c/poss} neck rises. {PRONOUN/m_c/subject/CAP} {VERB/m_c/glance/glances} around, only to find nothing. {PRONOUN/m_c/subject/CAP} {VERB/m_c/return/returns} to camp shaken.",
+    "event_text": "As m_c collects herbs, the fur on {PRONOUN/m_c/poss} neck rises. No one else is nearby, and {PRONOUN/m_c/subject} {VERB/m_c/return/returns} to camp shaken.",
     "m_c": {
         "age": [
             "any"
