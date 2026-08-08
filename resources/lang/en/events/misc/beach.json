@@ -214,7 +214,7 @@
         "location": ["beach"],
         "season": ["any"],
         "frequency": 3,
-        "event_text": "m_c discovers a giant Coconut crab helping itself to the fresh-kill. Rushing to chase off the crab before it could deal further damage, thankfully m_c emerges unscathed.  ",
+        "event_text": "m_c discovers a giant coconut crab helping itself to the fresh-kill. m_c chased off the crab before it could deal further damage.",
         "m_c": {
             "skill": [
                 "-FIGHTER,3"
