@@ -34,8 +34,8 @@ dev_tools = false
 
   # how much an afterlife connection skill affects affinity
   [affinity.skill_favor]
-    match = 20
-    conflict = -20
+    match = 10
+    conflict = -10
 
 # settings regarding relationship events, also called "interactions"
 [relationship]

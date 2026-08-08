@@ -376,14 +376,6 @@ class CatSkills:
 
         return new_skill
 
-    @property
-    def skill_path_list(self) -> list[SkillPath]:
-        paths = [self.primary.path]
-        if self.secondary:
-            paths.append(self.secondary.path)
-
-        return paths
-
     def get_skill_dict(self):
         return {
             "primary": self.primary.get_save_string() if self.primary else None,

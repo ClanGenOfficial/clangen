@@ -335,26 +335,29 @@ class Cat:
                     is_kit=True,
                 )
             else:
+                cat_skills = self.skills.get_skill_dict()
                 if cat_default_afterlife_id == CatGroup.STARCLAN_ID:
                     affinity = self.starclan_affinity
-                    if SkillPath.STAR in self.skills.skill_path_list:
-                        affinity += get_config("affinity.skill_favor.match")
-                    elif SkillPath.DARK in self.skills.skill_path_list:
-                        affinity += get_config("affinity.skill_favor.conflict")
+                    skill_match = SkillPath.STAR
+                    skill_conflict = SkillPath.DARK
 
                     afterlife_group = CatGroup.STARCLAN
                     rejected_ID = CatGroup.DARK_FOREST_ID
                 else:
                     affinity = self.dark_forest_affinity
-                    if SkillPath.DARK in self.skills.skill_path_list:
-                        affinity += affinity * get_config("affinity.skill_favor.match")
-                    elif SkillPath.STAR in self.skills.skill_path_list:
-                        affinity += affinity * get_config(
-                            "affinity.skill_favor.conflict"
-                        )
+                    skill_match = SkillPath.DARK
+                    skill_conflict = SkillPath.STAR
 
                     afterlife_group = CatGroup.DARK_FOREST
                     rejected_ID = CatGroup.STARCLAN_ID
+
+                # scales with skill tier
+                affinity += get_config("affinity.skill_favor.match") * cat_skills.get(
+                    skill_match, 0
+                )
+                affinity += get_config(
+                    "affinity.skill_favor.conflict"
+                ) * cat_skills.get(skill_conflict, 0)
 
                 # afterlife does not like this cat
                 if affinity < 0:
