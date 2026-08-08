@@ -13659,13 +13659,10 @@
         "frequency": 1,
         "event_text": "A wild-eyed o_c_n apprentice intrudes on the camp one day. They warn c_n that o_c_n is under new management... and all existing alliances are void.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
+            "status": [
+                "leader"
             ]
+        
         },
         "other_clan": {
             "current_rep": [
