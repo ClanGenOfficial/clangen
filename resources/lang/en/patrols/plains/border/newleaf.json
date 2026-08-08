@@ -472,7 +472,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "That yip was close. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the small patrol, and leads a risky attack — but an adult coyote is too much for so few warriors, and she escapes having given as good as she got.",
+                "text": "That yip was close. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the small patrol, and leads a risky attack — but an adult coyote is too much for so few warriors. She escapes, leaving a trail of blood, and p_l and the others also limp back to camp with injuries.",
                 "exp": 0,
                 "art": "gen_coyote_danger1",
                 "injury": [
@@ -499,17 +499,17 @@
                 },
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["p_l"],
                         "cats_from": [
-                            "clan"
+                            "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "trust"
                         ],
-                        "amount": 15,
+                        "amount": -8,
                         "log": {
-                            "cats_from": "cat_to laid down {PRONOUN/cat_to/poss} life to protect c_n from coyotes."
+                            "cats_from": "cat_to's recklessness in a battle against a coyote led to injuries when cat_from patrolled with {PRONOUN/cat_to/object}."
                         }
                     }
                 ],
