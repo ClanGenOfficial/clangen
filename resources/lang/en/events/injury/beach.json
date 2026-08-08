@@ -1059,10 +1059,6 @@
     "m_c": {
         "status": ["-kitten"],
         "trait": [
-            "ambitious",
-            "bold",
-            "strange",
-            "arrogant",
             "-shy",
             "-nervous",
             "-insecure"
@@ -1074,7 +1070,7 @@
     "injury": [
         {
             "cats": ["m_c"],
-            "injuries": ["broken jaw", "broken bone", "head damage"]
+            "injuries": ["blunt_force_injury"]
         }
     ],
     "history": [
@@ -1103,10 +1099,6 @@
     "m_c": {
         "status": ["-kitten"],
         "trait": [
-            "ambitious",
-            "bold",
-            "strange",
-            "arrogant",
             "-shy",
             "-nervous",
             "-insecure"
