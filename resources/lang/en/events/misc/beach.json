@@ -168,7 +168,7 @@
         ],
         "season": ["any"],
         "frequency": 2,
-        "event_text": "A wave splashes into camp, soaking an unlucky few. Wiping away the freshkill that c_n wasn't quick enough to save.",
+        "event_text": "A wave splashed into camp, soaking an unlucky few and wiping away the fresh-kill that c_n wasn't quick enough to save.",
            "supplies": [
             {
                 "type": "freshkill",
