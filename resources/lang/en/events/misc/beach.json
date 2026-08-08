@@ -200,7 +200,7 @@
         ],
         "season": ["any"],
         "frequency": 3,
-        "event_text": "A cast of crabs invades the fresh-kill pile. c_n manages to fend them off but not before damaging the pile. ",
+        "event_text": "A cast of crabs invades the fresh-kill pile. c_n fends them off but not before they damage the pile.",
         "supplies": [
             {
             "type": "freshkill",
