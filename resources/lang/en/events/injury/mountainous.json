@@ -157,7 +157,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "scar": "m_c was scarred when the ruins collapsed onto {PRONOUN/m_c/subject}.",
+                "scar": "m_c was scarred when the ruins collapsed onto {PRONOUN/m_c/object}.",
                 "death": "m_c died from {PRONOUN/m_c/poss} wounds after the ruins collapsed onto {PRONOUN/m_c/object}."
             }
         ]
