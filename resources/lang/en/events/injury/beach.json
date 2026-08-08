@@ -1021,7 +1021,7 @@
     "location": ["beach"],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "m_c rushes to chase away a giant Coconut crab helping itself to the fresh-kill. The crab punches back with a force that sends m_c straight to the Medicine den.",
+    "event_text": "m_c chases away a giant coconut crab helping itself to the fresh-kill. The crab punches back with a force that sends m_c straight to the medicine den.",
     "m_c": {
         "status": ["-kitten"],
         "trait": [
