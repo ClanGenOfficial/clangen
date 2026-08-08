@@ -13778,7 +13778,7 @@
                             "m_c"
                         ],
                         "frequency": 1,
-                        "event_text": "During the Gathering at {POI/category/gathering}, m_c spots a beautiful cat from o_c_n. {PRONOUN/m_c/subject/CAP} can't stop staring at them until a clanmate shoves {PRONOUN/m_c/object}, snapping {PRONOUN/m_c/object} out of it.",
+                        "event_text": "During the Gathering at {POI/category/gathering}, m_c spots a beautiful cat from o_c_n. {PRONOUN/m_c/subject/CAP} can't stop staring at them until a Clanmate shoves {PRONOUN/m_c/object}, snapping {PRONOUN/m_c/object} out of it.",
                         "m_c": {
                             "age": [
                                 "adolescent",
