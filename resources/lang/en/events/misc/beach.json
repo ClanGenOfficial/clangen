@@ -268,7 +268,7 @@
     "location": ["beach:camp1_camp3_camp4"],
     "season": ["any"],
     "frequency": 2,
-    "event_text": "A pelican lands in camp keen on raiding the abundant fresh-kill. m_c and r_c had other ideas and they chase the bird off together. No bird would be stealing from c_n on their watch!",
+    "event_text": "A pelican lands in camp, keen on raiding the fresh-kill. m_c and r_c had other ideas and they chase the bird off together. No bird will steal from c_n on their watch!",
     "m_c": {
         "status": ["apprentice"],
         "trait": [
