@@ -55,7 +55,7 @@ jobs:
       - name: Set up kubernetex context
         uses: azure/setup-kubectl@v5
       - name: Set Kubernetes context
-        uses: Azure/k8s-set-context@v4
+        uses: Azure/k8s-set-context@v5
         with:
           method: kubeconfig
           kubeconfig: ${{ secrets.DOCS_RESTART_KUBECONFIG }}
