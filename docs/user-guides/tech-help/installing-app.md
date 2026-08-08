@@ -117,6 +117,9 @@ After you check on your Linux files, open or go back to your terminal. Type in t
 
 If you renamed the folder, the first Clangen as shown in the example should reflect the folder you renamed. If you renamed it to ClangenDev, for example, `./ClangenDev/Clangen`. Capitalization is important for this command.
 
+!!!tip
+      chromeOS also provides autocomplete for commands. You can use your Tab key to complete or correct the file path for you.
+
 ---
 
 ## Windows
