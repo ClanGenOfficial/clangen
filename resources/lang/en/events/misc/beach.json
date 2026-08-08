@@ -184,7 +184,7 @@
         ],
         "season": ["any"],
         "frequency": 2,
-        "event_text":"After a particularly rough storm, c_n discovers the fresh-kill pile didn't pull through undamaged",
+        "event_text": "After a particularly rough storm, c_n discovers the fresh-kill pile didn't make it through undamaged.",
            "supplies": [
             {
                 "type": "freshkill",
