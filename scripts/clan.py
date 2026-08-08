@@ -1732,7 +1732,7 @@ class Afterlife:
 
     def get_compatibility(self, cat: Cat) -> CatCompatibility:
         """
-        Returns the afterlive's personality compatibility with the given cat.
+        Returns the afterlife's personality compatibility with the given cat.
         """
         differences = [
             abs(self.lawfulness - cat.personality.lawfulness),
