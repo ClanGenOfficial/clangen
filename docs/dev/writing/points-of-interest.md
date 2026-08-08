@@ -70,6 +70,7 @@ Points of Interests can use many different tags that denote circumstances around
 |      covered      |                                       any location that offers shelter from the elements.                                       |
 |     fall_risk     |                                                 risk of heights-related injury.                                                 |
 |       hole        |                                                     a cavity in the earth.                                                      |
+|       nests       |                                                      where birds lay eggs.                                                      |
 |       prey        |                     anything the Clan hunts. Has multiple more specific tags. Should not be used together.                      |
 |    prey:flying    |                                                 any prey that primarily flies.                                                  |
 |    prey:water     |                                  prey found in or around water. assume your cats will get wet.                                  |

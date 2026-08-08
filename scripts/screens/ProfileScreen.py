@@ -298,6 +298,7 @@ class ProfileScreen(Screens):
                 elif self.the_cat.genderalign in ["trans female", "trans male"]:
                     self.the_cat.genderalign = "nonbinary"
                 self.the_cat.pronouns = get_new_pronouns(self.the_cat.genderalign)
+                self.the_cat.get_new_thought()
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
@@ -562,7 +563,9 @@ class ProfileScreen(Screens):
 
         # initialize thoughts if they have none
         if not self.the_cat.thought:
-            if self.the_cat.status.is_other_clancat:
+            if self.the_cat is game.clan.instructor:
+                self.the_cat.get_new_thought(CatThought.IS_GUIDE)
+            elif self.the_cat.status.is_other_clancat:
                 # this isn't great, but it's only being run if someone checks an
                 # other clan cat when booting the game before doing a timeskip
                 other_clan_cats = [
@@ -579,10 +582,6 @@ class ProfileScreen(Screens):
         cat_name = shorten_text_to_fit(cat_name, 500, 20)
         if self.the_cat.dead:
             cat_name = i18n.t("general.dead_label", name=cat_name)
-
-        # Instructor thoughts
-        if self.the_cat.dead and game.clan.instructor is self.the_cat:
-            self.the_cat.get_new_thought(CatThought.IS_GUIDE)
 
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(
             cat_name,
@@ -1033,7 +1032,9 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # CAT SKILLS
-        output += the_cat.skills.skill_string()
+        output += the_cat.skills.skill_string(
+            is_adolescent=(the_cat.age == CatAge.ADOLESCENT)
+        )
         # NEWLINE ----------
         output += "\n"
 
