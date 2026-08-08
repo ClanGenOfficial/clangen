@@ -42,7 +42,7 @@
         "strings": [
             "m_c's patience wears thin with r_c's troublemaking.",
             "r_c pulls off a mouse-brained stunt that gets on m_c's nerves.",
-            "m_c wishes r_c would settle down and grow up, sometimes."
+            "m_c wishes r_c would settle down and grow up."
         ],
         "relationship_changes": [
             {
@@ -64,7 +64,7 @@
     {
         "id": "rom_dec_high_lonesomemate",
         "strings": [
-            "m_c wishes r_c was more social, sometimes.",
+            "m_c wishes r_c was more social.",
             "m_c tries to introduce r_c to {PRONOUN/m_c/poss} friends, but r_c isn't in the mood for socializing.",
             "r_c seems aloof and distant from m_c. m_c feels hurt, wondering if {PRONOUN/m_c/subject} did or said something."
         ],
