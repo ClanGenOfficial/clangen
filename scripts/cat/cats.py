@@ -297,6 +297,7 @@ class Cat:
         # name is assigned by FadedCatFactory
 
         self.faded = True
+        self.set_faded()
         return True
 
     def __repr__(self):
