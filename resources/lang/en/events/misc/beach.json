@@ -236,7 +236,7 @@
     "location": ["beach:camp1_camp3_camp4"],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "A pelican lands in camp attracted by the abundant fresh-kill. Luckily m_c chased away the bird before it could swallow c_n's prey.",
+    "event_text": "The fresh-kill pile attracted a pelican to the camp. m_c chased away the bird before it could swallow c_n's prey.",
     "m_c": {
         "status": [
             "-kitten"
