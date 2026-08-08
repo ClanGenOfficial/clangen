@@ -13689,7 +13689,7 @@
                 "m_c"
             ],
             "frequency": 1,
-            "event_text": "During the Gathering at {POI/category/gathering}, a new apprentice from o_c_n excitedly gossips about how their new leader might break off the alliance with c_n. m_c doesn't seem as amused as the apprentice.",
+            "event_text": "During the Gathering at {POI/category/gathering}, a new apprentice from o_c_n gossips about how their new leader might break off the alliance with c_n. m_c doesn't seem as amused as the apprentice.",
             "m_c": {
                 "age": [
                     "adolescent",
