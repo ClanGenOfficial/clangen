@@ -83,7 +83,7 @@ Make sure you have access to `Linux Files` before you proceed.
 ### Downloading
 
 !!! tip
-     If you downloaded ClanGen previously, use the command `rm -r Clangen` first to get rid of the previous install. Your ClanGen saves should transfer to the new download automatically, but if you're unsure, follow the [backups](#backups) tab.
+     If you downloaded ClanGen previously, use the command `rm -r Clangen` first to get rid of the previous install. Your ClanGen saves should transfer to the new download automatically, but if you're unsure, follow the backups tab.
 
 Open the Linux terminal/terminal app.
 

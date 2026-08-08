@@ -116,7 +116,7 @@ Now that UV is properly installed, you can switch to any other IDE of your choic
 
 Go to where your unzipped ClanGen source is located on your device, and open it until you get to its internal contents. Right-click in an empty space within the file explorer, and select Open with Terminal. It'll automatically open in the correct path.
 
-![right clicking file explorer to "open with terminal"](https://github.com/Honeycase/ClanGen/blob/docs-installing/docs-resources/assets/techhelp/WIN-rightclick_terminal.png?raw=true)
+![right clicking file explorer to "open with terminal"](https://github.com/ClanGenOfficial/clangen/blob/development/docs-resources/assets/techhelp/WIN-rightclick_terminal.png?raw=true)
 
 Follow the section "commands" below.
 
@@ -127,7 +127,7 @@ Before we can do any commands, we have to set the terminal to PATH.
 
 - If you're unsure of what this means: the terminal can only affect what you set it to affect. If you leave it to its default pathing, it CANNOT find ClanGen and apply your commands.
 
-![default powershell pathing](https://github.com/Honeycase/ClanGen/blob/docs-installing/docs-resources/assets/techhelp/WIN-powershell-default.png?raw=true)
+![default powershell pathing](https://github.com/ClanGenOfficial/clangen/blob/development/docs-resources/assets/techhelp/WIN-powershell-default.png?raw=true)
 
 Type `cd` into your terminal. Do not enter yet.
 
@@ -135,15 +135,15 @@ Go to where your unzipped ClanGen source is located on your device, and open it 
 
 - "Copy address as text" copies the entire file path to the folder you right-clicked, which is perfect for this kind of command.
 
-![copy address as text](https://github.com/Honeycase/ClanGen/blob/docs-installing/docs-resources/assets/techhelp/WIN-copy-address.png?raw=true)
+![copy address as text](https://github.com/ClanGenOfficial/clangen/blob/development/docs-resources/assets/techhelp/WIN-copy-address.png?raw=true)
 
 Paste the text you just copied after the `cd` command. It should end up looking similar to `cd C:\Users\username\Documents\ClanGen-stable/ClanGen`. Enter.
 
-![cd command](https://github.com/Honeycase/ClanGen/blob/docs-installing/docs-resources/assets/techhelp/WIN_cd_command_example.png?raw=true)
+![cd command](https://github.com/ClanGenOfficial/clangen/blob/development/docs-resources/assets/techhelp/WIN_cd_command_example.png?raw=true)
 
 Once the terminal is set to the path, use the command `dir` to make sure you're in the correct place.
 
-![dir command](https://github.com/Honeycase/ClanGen/blob/docs-installing/docs-resources/assets/techhelp/WIN-dir-command.png?raw=true)
+![dir command](https://github.com/ClanGenOfficial/clangen/blob/development/docs-resources/assets/techhelp/WIN-dir-command.png?raw=true)
 
 You should see the internal contents of the ClanGen source folder, like above.
 
@@ -221,13 +221,13 @@ Now that UV is properly installed, you can switch to any other IDE of your choic
 
 Open your device's terminal and type in `ls`. Do not enter.
 
-![searching terminal for mac](https://github.com/Honeycase/ClanGen/blob/docs-installing/docs-resources/assets/techhelp/MAC-terminal-search.png?raw=true)
+![searching terminal for mac](https://github.com/ClanGenOfficial/clangen/blob/development/docs-resources/assets/techhelp/MAC-terminal-search.png?raw=true)
 
 Find where your unzipped ClanGen source is held in Finder. Put the ClanGen location after cd. For example, `ls /Users/username/Downloads/ClanGen`
 
 This is to check that the path you're trying to apply is correct. You should get something similar to below:
 
-![ls result](https://github.com/Honeycase/ClanGen/blob/docs-installing/docs-resources/assets/techhelp/MAC-ls-result.png?raw=true)
+![ls result](https://github.com/ClanGenOfficial/clangen/blob/development/docs-resources/assets/techhelp/MAC-ls-result.png?raw=true)
 
 Once confirmed that the path is correct, change the command from the previous to have `cd`. For example, `cd /Users/username/Downloads/ClanGen`
 
@@ -235,15 +235,15 @@ Proceed to the Commands section below.
 
 ### PATH: Linux
 
-There are two ways to set your terminal path with Linux. You can either do it the [manual way](#path-mac), like detailed above (but use `/home` instead of `/Users`), or you can open the folder within the Linux terminal.
+There are two ways to set your terminal path with Linux. You can either do it the [manual way](#path-macos), like detailed above (but use `/home` instead of `/Users`), or you can open the folder within the Linux terminal.
 
 For the manual method, you should get something like this, just like on macOS:
 
-![open with terminal](https://github.com/rustykitty/ClanGen/blob/honey-guide/docs-resources/assets/techhelp/LINUX_ls.png?raw=true)
+![open with terminal](https://github.com/ClanGenOfficial/clangen/blob/development/docs-resources/assets/techhelp/LINUX_ls.png?raw=true)
 
 For the automatic method, go to where your unzipped ClanGen source is located on your device, and open it until you get to its internal contents. Right-click in an empty space within the file manager, and select Open with Terminal. It'll automatically open in the correct location; you don't need to use `cd`.
 
-![open with terminal](https://github.com/rustykitty/ClanGen/blob/honey-guide/docs-resources/assets/techhelp/LINUX_open_in_terminal.png?raw=true)
+![open with terminal](https://github.com/ClanGenOfficial/clangen/blob/development/docs-resources/assets/techhelp/LINUX_open_in_terminal.png?raw=true)
 
 ### Commands
 

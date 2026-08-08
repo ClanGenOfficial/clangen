@@ -74,6 +74,8 @@ You should now be able to run and play your old saves.
 
 I recommend keeping your compressed zip folder until you know for sure that all your saves are working appropriately. While there haven't been any bugs due to moving saves between devices, there might be user errors!
 
+---
+
 ### What is compressing/zipping? And how do I do it?
 
 "Compressing" a folder refers to zipping (.zip files) the contents into a smaller, easier-to-manage file that can be decompressed to its original size later. It's ideal to compress folders when using storage devices, as it 1: saves space and 2: guarantees that the files will not be malformed during the storage process.
