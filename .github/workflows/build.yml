@@ -194,7 +194,7 @@ jobs:
             butler push ${{ matrix.artifact_name }} sablesteel/clan-gen-fan-edit:${{ matrix.itch_channel }} --userversion "${{ env.VERSION_NUMBER }}"
           fi
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v3
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: ${{ matrix.artifact_name }}
