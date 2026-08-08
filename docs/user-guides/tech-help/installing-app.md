@@ -171,3 +171,5 @@ Navigate to your "Applications", find the "ClanGen" application, and double-clic
 
 - If you get a pop-up "Apple cannot verify the file", instead of double-clicking, right-click > run. Try this multiple times.
 - If it still doesn't work, go into your system preferences > security > clangen. Select run anyway
+
+---
