@@ -3,8 +3,9 @@ from random import randrange, choice, randint
 import pygame
 import pygame_gui
 
-from scripts.cat.cats import create_cat, create_example_cats
 from scripts.cat.enums import CatRank
+from scripts.cat.factories.create_example_cat import create_example_cats
+from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.config import get_config
 from scripts.game_structure import image_cache
@@ -30,6 +31,8 @@ class ChooseModeScreen(MakeClanScreenBase):
         self.game_mode = "classic"
 
     def screen_switches(self):
+        super().screen_switches()
+
         # Reset variables
         if not switch_get_value(Switch.possible_cats):
             switch_set_value(
@@ -44,7 +47,6 @@ class ChooseModeScreen(MakeClanScreenBase):
                 ),
             )
 
-        super().screen_switches()
         self.elements["previous_step"].disable()
         self.elements["next_step"].enable()
 
@@ -224,9 +226,9 @@ class ChooseModeScreen(MakeClanScreenBase):
         self.clan_info.symbol = symbol
 
         # MEMBERS
-        self.clan_info.leader = create_cat(CatRank.WARRIOR)
-        self.clan_info.deputy = create_cat(CatRank.WARRIOR)
-        self.clan_info.medicine_cat = create_cat(CatRank.WARRIOR)
+        self.clan_info.leader = NewCatFactory.create_cat(rank=CatRank.WARRIOR)
+        self.clan_info.deputy = NewCatFactory.create_cat(rank=CatRank.WARRIOR)
+        self.clan_info.medicine_cat = NewCatFactory.create_cat(rank=CatRank.WARRIOR)
         members = []
         for _ in range(randrange(4, 8)):
             random_rank = choice(
@@ -238,7 +240,7 @@ class ChooseModeScreen(MakeClanScreenBase):
                     CatRank.ELDER,
                 ]
             )
-            members.append(create_cat(rank=random_rank))
+            members.append(NewCatFactory.create_cat(rank=random_rank))
 
         switch_set_value(
             Switch.possible_cats,

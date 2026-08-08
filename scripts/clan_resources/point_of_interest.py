@@ -101,8 +101,9 @@ def clear_pois():
     """
     _poi_tags.clear()
     _poi_names.clear()
-
     _poi_by_tags.clear()
+    for names in _poi_by_category.values():
+        names.clear()
 
     global _undiscovered_poi_remaining
     _undiscovered_poi_remaining = 3
