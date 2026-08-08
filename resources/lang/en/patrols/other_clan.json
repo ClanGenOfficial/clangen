@@ -4650,7 +4650,9 @@
                             "clan",
                             "-low_lawful",
                             "-high_aggress",
-                            "-patrol"
+                            "-patrol",
+                            "-n_c:0",
+                            "-n_c:1"
                         ],
                         "mutual": false,
                         "values": [
@@ -4710,7 +4712,9 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "multi"
+                            "multi",
+                            "-n_c:0",
+                            "-n_c:1"
                         ],
                         "mutual": false,
                         "values": [
