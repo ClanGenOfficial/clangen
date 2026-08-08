@@ -1731,6 +1731,9 @@ class Afterlife:
         return total // num_of_influencers
 
     def get_compatibility(self, cat: Cat) -> CatCompatibility:
+        """
+        Returns the afterlive's personality compatibility with the given cat.
+        """
         differences = [
             abs(self.lawfulness - cat.personality.lawfulness),
             abs(self.sociability - cat.personality.sociability),
