@@ -316,7 +316,9 @@ class CatSkills:
         return f"<CatSkills: Primary: |{self.primary}|, Secondary: |{self.secondary}|, Hidden: |{self.hidden}|>"
 
     def get_all(self) -> dict:
-        skill_dict = {self.primary.path: self.primary.tier}
+        skill_dict = {}
+        if self.primary:
+            skill_dict[self.primary.path] = self.primary.tier
         if self.secondary:
             skill_dict[self.secondary.path] = self.secondary.tier
 
