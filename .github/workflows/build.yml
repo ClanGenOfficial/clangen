@@ -70,7 +70,7 @@ jobs:
           brew install zlib
       - name: Install Visual Studio Build Tools (Windows)
         if: startsWith(matrix.os, 'windows')
-        uses: microsoft/setup-msbuild@v1.1
+        uses: microsoft/setup-msbuild@v3
       - name: Set up cargo cache (Windows)
         if: startsWith(matrix.os, 'windows')
         uses: actions/cache@v6
