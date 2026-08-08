@@ -146,7 +146,7 @@ jobs:
           rm -r dist/Clangen
           uv sync --group mac-build
           uv run dmgbuild -s appdmg.py "Clangen" ${{ matrix.artifact_name }}
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.artifact_name }}
           path: ${{ matrix.artifact_name }}
