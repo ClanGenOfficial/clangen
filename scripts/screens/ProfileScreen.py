@@ -298,6 +298,7 @@ class ProfileScreen(Screens):
                 elif self.the_cat.genderalign in ["trans female", "trans male"]:
                     self.the_cat.genderalign = "nonbinary"
                 self.the_cat.pronouns = get_new_pronouns(self.the_cat.genderalign)
+                self.the_cat.get_new_thought()
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()

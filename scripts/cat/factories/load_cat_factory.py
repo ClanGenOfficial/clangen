@@ -127,10 +127,10 @@ class LoadCatFactory(BaseCatFactory):
 
         # Unfortunately, these two have to be handled *after* the creation of the cat
         # because of the horrible nested cat. fixme.
-
-        cat.history = cls._convert_history(
-            kwargs.get("died_by", []), kwargs.get("scar_event", []), cat=cat
-        )
+        if "died_by" in kwargs or "scar_event" in kwargs:
+            cat.history = cls._convert_history(
+                kwargs.get("died_by", []), kwargs.get("scar_event", []), cat=cat
+            )
         cat.name = Name(
             prefix=kwargs["name_prefix"],
             suffix=kwargs["name_suffix"],
