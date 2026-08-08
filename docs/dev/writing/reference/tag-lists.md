@@ -350,34 +350,42 @@ You can utilize [#exclusionary tags](#exclusionary-tags). They function the same
 === "Skills"
 
     > !!! note
-        Remember, skills are formatted as `SKILL,#`.  For example, `TEACHER,1` is `quick to help` and `SPEAKER,4` is `eloquent speaker`.
+        Remember, skills are formatted as `SKILL,#`.  For example, `TEACHER,1` is `good teacher` and `SPEAKER,3` is `eloquent speaker`.
 
-    > | **SKILL,**       | **1**                            | **2**                     | **3**                    | **4**                          |
+    > !!! note
+        Tier 0 skills are "interest" skills for kits and adolescents.
+        They will show up differently depending on if the cat is an adolescent or a kit. <br /><br />
+        The first string under
+        0 is the name that appears for kits and the second is the one that shows up for adolescents.
+        For example, a kit with `TEACHER,0` will be `good at sharing`, while
+        an adolescent with `TEACHER,0` will be `quick to help`.
+
+    > | **SKILL,**       | **0**                            | **1**                     | **2**                    | **3**                          |
     |------------------|:----------------------------------:|:---------------------------:|:--------------------------:|:--------------------------------:|
-    | **TEACHER**     | `quick to help`                 | `good teacher`           | `great teacher`         | `excellent teacher`           |
-    | **HUNTER**      | `moss-ball hunter`              | `good hunter`            | `great hunter`          | `renowned hunter`             |
-    | **FIGHTER**     | `avid play-fighter`             | `strong fighter`           | `formidable fighter`    | `indomitable fighter`     |
-    | **RUNNER**      | `never sits still`              | `fast runner`            | `incredible runner`     | `fast as the wind`            |
-    | **CLIMBER**     | `constantly climbing`           | `good climber`           | `great climber`         | `impressive climber`          |
-    | **SWIMMER**     | `splashes in puddles`           | `good swimmer`           | `talented swimmer`      | `fish-like swimmer`           |
-    | **STEALTH**     | `hide and seek champ`           | `sneaky`                 | `very stealthy`         | `one with shadows`           |
-    | **SPEAKER**     | `confident with words`          | `good speaker`           | `great speaker`         | `eloquent speaker`            |
-    | **MEDIATOR**    | `quick to make peace`           | `good mediator`          | `great mediator`        | `skilled mediator`             |
-    | **CLEVER**      | `quick witted`                  | `clever`                 | `very clever`           | `incredibly clever`            |
-    | **INSIGHTFUL**  | `careful listener`              | `helpful insight`        | `valuable insight`      | `trusted advisor`              |
-    | **SENSE**       | `stares intently`               | `perceptive`      | `sharp senses`              | `uncanny senses`             |
-    | **KIT**         | `active imagination`            | `good kitsitter`         | `great kitsitter`       | `beloved kitsitter`           |
-    | **STORY**       | `lover of stories`              | `good storyteller`       | `great storyteller`     | `masterful storyteller`        |
-    | **LORE**        | `interested in Clan history`    | `learner of lore`        | `lore keeper`           | `lore master`                  |
-    | **CAMP**        | `always tidies up`            | `nest weaver`            | `den builder`           | `camp keeper`                  |
-    | **HEALER**      | `interested in herbs`           | `good healer`            | `great healer`          | `fantastic healer`             |
-    | **STAR**        | `curious about StarClan`        | `connection to StarClan` | `deep StarClan bond`    | `unshakable StarClan link`    |
-    | **DARK**        | `interested in the Dark Forest` | `Dark Forest affinity`   | `deep Dark Forest bond` | `unshakable Dark Forest link` |
-    | **OMEN**        | `interested in oddities`        | `omen seeker`            | `omen sense`            | `omen sight`                   |
-    | **DREAM**       | `restless sleeper`              | `strange dreamer`        | `dream walker`          | `dream shaper`                 |
-    | **CLAIRVOYANT** | `oddly insightful`              | `somewhat clairvoyant`   | `fairly clairvoyant`    | `incredibly clairvoyant`       |
-    | **PROPHET**     | `fascinated by prophecies`      | `prophecy seeker`        | `prophecy interpreter`  | `prophet`                      |
-    | **GHOST**       | `morbid curiosity`              | `ghost sense`            | `ghost sight`           | `ghost speaker`                |
+    | **TEACHER**     | `good at sharing`, `quick to help`                     | `good teacher`           | `great teacher`         | `excellent teacher`           |
+    | **HUNTER**      | `moss-ball hunter`, `fledgeling hunter`                | `good hunter`            | `great hunter`          | `renowned hunter`             |
+    | **FIGHTER**     | `avid play-fighter`, `adept tussler`                   | `strong fighter`         | `formidable fighter`    | `indomitable fighter`         |
+    | **RUNNER**      | `never sits still`, `swift-pawed`                      | `fast runner`            | `incredible runner`     | `fast as the wind`            |
+    | **CLIMBER**     | `constantly climbing`, `good balance`                  | `good climber`           | `great climber`         | `impressive climber`          |
+    | **SWIMMER**     | `splashes in puddles`, `enjoys swimming`               | `good swimmer`           | `talented swimmer`      | `fish-like swimmer`           |
+    | **STEALTH**     | `hide and seek champ`, `light-pawed`                   | `sneaky`                 | `very stealthy`         | `one with shadows`            |
+    | **SPEAKER**     | `chatty`, `well-spoken`                                | `good speaker`           | `great speaker`         | `eloquent speaker`            |
+    | **MEDIATOR**    | `quick to make peace`, `solves arguments`              | `good mediator`          | `great mediator`        | `skilled mediator`            |
+    | **CLEVER**      | `opinionated`, `quick witted`                          | `clever`                 | `very clever`           | `incredibly clever`           |
+    | **INSIGHTFUL**  | `careful listener`, `gives suggestions`                | `helpful insight`        | `valuable insight`      | `trusted advisor`             |
+    | **SENSE**       | `stares intently`, `notices little details`            | `perceptive`             | `sharp senses`          | `uncanny senses`              |
+    | **KIT**         | `good playmate`, `entertains kittens`                  | `good kitsitter`         | `great kitsitter`       | `beloved kitsitter`           |
+    | **STORY**       | `likes make-believe`, `lover of stories`               | `good storyteller`       | `great storyteller`     | `masterful storyteller`       |
+    | **LORE**        | `always asking questions`, `interested in history`     | `learner of lore`        | `lore keeper`           | `lore master`                 |
+    | **CAMP**        | `always tidies up`, `well-organized`                   | `nest weaver`            | `den builder`           | `camp keeper`                 |
+    | **HEALER**      | `picks flowers`, `interested in herbs`                 | `good healer`            | `great healer`          | `fantastic healer`            |
+    | **STAR**        | `likes stargazing`, `curious about StarClan`           | `connection to StarClan` | `deep StarClan bond`    | `unshakable StarClan link`    |
+    | **DARK**        | `watches the shadows`, `curious about the Dark Forest` | `Dark Forest affinity`   | `deep Dark Forest bond` | `unshakable Dark Forest link` |
+    | **OMEN**        | `notices oddities`, `looks for signs`                  | `omen seeker`            | `omen sense`            | `omen sight`                  |
+    | **DREAM**       | `vivid dreamer`, `sleep-talker`                        | `strange dreamer`        | `dream walker`          | `dream shaper`                |
+    | **CLAIRVOYANT** | `swayed by feelings`, `oddly insightful`               | `somewhat clairvoyant`   | `fairly clairvoyant`    | `incredibly clairvoyant`      |
+    | **PROPHET**     | `likes riddles`, `studies prophecies`                  | `prophecy seeker`        | `prophecy interpreter`  | `prophet`                     |
+    | **GHOST**       | `morbid curiosity`, `notices wisps`                    | `ghost sense`            | `ghost sight`           | `ghost speaker`               |
 
 === "Traits"
 

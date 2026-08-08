@@ -89,22 +89,14 @@ def create_short_event(
     camp_cats = [
         c
         for c in Cat.all_cats_list
-        if c.status.alive_in_player_clan
-        and (
-            (c.skills.primary and c.skills.primary.path == SkillPath.CAMP)
-            or (c.skills.secondary and c.skills.secondary.path == SkillPath.CAMP)
-        )
+        if c.status.alive_in_player_clan and SkillPath.CAMP in c.skills.get_all()
     ]
 
     avoidance_chance = 1
     # each camp cat will increase the chance that significant reduction events do not occur
     for c in camp_cats:
         # tiers are added in order to make the chance num, this means the higher tiers have greater influence
-        if c.skills.primary.path == SkillPath.CAMP:
-            # +1 bc primary paths should have a little bit larger influence
-            avoidance_chance += c.skills.primary.tier + 1
-        elif c.skills.secondary and c.skills.secondary.path == SkillPath.CAMP:
-            avoidance_chance += c.skills.secondary.tier
+        avoidance_chance += c.skills.get_all()[SkillPath.CAMP]
 
     # NOW find the possible events and filter
     if event_type == "birth_death":
@@ -493,12 +485,7 @@ def filter_events(
                 c
                 for c in Cat.all_cats_list
                 if c.status.alive_in_player_clan
-                and (
-                    (c.skills.primary and c.skills.primary.path == SkillPath.CAMP)
-                    or (
-                        c.skills.secondary and c.skills.secondary.path == SkillPath.CAMP
-                    )
-                )
+                and SkillPath.CAMP in c.skills.get_all()
             ]
 
             discard = False
