@@ -1099,7 +1099,7 @@
     "location": ["beach:camp1_camp2_camp3"],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "A pelican lands in camp attracted by the abundant fresh-kill. Luckily m_c chased away the bird but not before it could hurt {PRONOUN/m_c/subject}.",
+    "event_text": "The abundant fresh-kill attracted a pelican to the camp. m_c chased away the bird but was hurt in the process.",
     "m_c": {
         "status": ["-kitten"],
         "trait": [
