@@ -569,7 +569,7 @@ dev_tools = false
   debug_override_requirements = false
 
   # forces the given frequency, frequency can be a number from 1-4
-  debug_override_frequency = 1
+  debug_override_frequency = 0
 
 [death_related]
   # the maximum lives a leader can have
