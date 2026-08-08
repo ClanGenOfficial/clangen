@@ -13719,14 +13719,20 @@
                 "frequency": 1,
                 "event_text": "m_c just about dies laughing when o_c_n's new leader is announced. Surely they could've picked a more capable cat? m_c has to be silenced by {PRONOUN/m_c/poss} own leader just to continue the Gathering.",
                 "m_c": {
+                    "trait": [
+                "bullying", 
+                "troublesome",
+                "childish",
+                "playful"]
+                },
                     "age": [
                         "adolescent",
                         "young adult",
                         "adult",
                         "senior adult",
                         "senior"
-                    ]
-                },
+                    ],
+                
                 "other_clan": {
                     "current_rep": [
                         "ally"
