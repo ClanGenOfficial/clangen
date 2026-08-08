@@ -17,7 +17,7 @@ jobs:
         with:
           enable-cache: true
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python-version }}
           architecture: 'x64'
@@ -33,7 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - name: Setup Python 3.12 x64
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.12'
           architecture: 'x64'
@@ -52,7 +52,7 @@ jobs:
       steps:
         - uses: actions/checkout@v7
         - name: Setup Python 3.12 x64
-          uses: actions/setup-python@v5
+          uses: actions/setup-python@v7
           with:
             python-version: '3.12'
             architecture: 'x64'
@@ -69,7 +69,7 @@ jobs:
       steps:
         - uses: actions/checkout@v7
         - name: Setup Python 3.12 x64
-          uses: actions/setup-python@v5
+          uses: actions/setup-python@v7
           with:
             python-version: '3.12'
             architecture: 'x64'
