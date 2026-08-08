@@ -566,7 +566,7 @@
         }
     ]
 },
-       {
+    {
     "event_id": "fst_mushroom_injury",
     "location": ["forest:camp1"],
     "season": ["newleaf", "greenleaf"],
@@ -840,5 +840,34 @@
                 "death": "m_c was poisoned by aconite."
             }
         ]
-    }
+    },
+    {
+    "event_id": "fst_injury_sprain_camp1",
+    "location": ["forest:camp1"],
+    "season": ["leaf-bare"],
+    "frequency": 2,
+    "event_text": "m_c stumbles and trips over a root in camp, creating a perfectly m_c-shaped imprint in the snow.",
+    "m_c": {
+        "age": ["-newborn"]
+    },
+    "injury": [
+        {
+            "cats": ["m_c"],
+            "injuries": ["bruises", "sprain"]
+        }
+    ],
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["some_clan"],
+            "mutual": false,
+            "values": ["like"],
+            "amount": -5,
+            "log": {
+                "cats_from": "cat_from was hurt that cat_to laughed when {PRONOUN/cat_from/subject} tripped over a root in camp.",
+                "cats_to": "cat_to thought it was funny that cat_from tripped over a snowy root in camp."
+          }
+        }
+    ]
+}
 ]
