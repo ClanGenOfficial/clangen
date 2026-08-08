@@ -11,7 +11,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "bch_hunt_turtle",
+        "patrol_art": "animals/bch_turtle",
         "min_cats": 1,
         "max_cats": 4,
         "min_max_status": {},
@@ -52,7 +52,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "bch_gen_hunt_twolegplace",
+        "patrol_art": "backgrounds/bch_twolegplace",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
@@ -101,7 +101,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "bch_gen_hunt_twolegplace",
+        "patrol_art": "backgrounds/bch_twolegplace",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
@@ -150,7 +150,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_strange",
+        "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -356,7 +356,6 @@
                     "careful",
                     "lonesome",
                     "loyal",
-                    "sneaky",
                     "strange",
                     "cunning",
                     "thoughtful",
@@ -712,7 +711,6 @@
                     "cunning",
                     "lonesome",
                     "loyal",
-                    "sneaky",
                     "strange",
                     "wise"
                 ],
@@ -854,7 +852,6 @@
                     "bold",
                     "confident",
                     "cunning",
-                    "sneaky",
                     "strange"
                 ],
                 "can_have_stat": [
@@ -937,7 +934,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "gen_hunt_twolegdencatdare",
+        "patrol_art": "cat_sprites/gen_hunt_twolegdencatdare_WrWr",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -949,7 +946,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
+                "text": "They're interrupted by Twolegs wandering through the sand dunes a couple times, but it's a successful hunt.",
                 "exp": 20,
                 "prey": [
                     "large"
@@ -1034,7 +1031,6 @@
                     "bold",
                     "daring",
                     "confident",
-                    "sneaky",
                     "strange"
                 ],
                 "can_have_stat": [
@@ -1146,7 +1142,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "bch_hunt_gonetwolegtrap",
+        "patrol_art": "cat_sprites/bch_hunt_gonetwolegtrap_Wr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -1183,7 +1179,6 @@
                     "insecure",
                     "lonesome",
                     "nervous",
-                    "sneaky",
                     "strange",
                     "wise"
                 ],
@@ -1239,7 +1234,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "bch_hunt_gonetwolegtrap",
+        "patrol_art": "cat_sprites/bch_hunt_gonetwolegtrap_Wr",
         "min_cats": 2,
         "max_cats": 6,
         "frequency": 2,
@@ -1275,7 +1270,6 @@
                     "insecure",
                     "lonesome",
                     "nervous",
-                    "sneaky",
                     "strange",
                     "wise"
                 ],
@@ -2029,7 +2023,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_eagleswim",
+        "patrol_art": "animals/gen_eagledive",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -2670,7 +2664,7 @@
             "apprentice": [-1, 2]
         },
         "frequency": 2,
-        "intro_text": "The patrol catches the scent of a fox — but is it red or gray? Tracking it, they find a stocky gray fox feeding on an unidentifiable but deliciously stinky mound of carrion the sea has washed up onto the shore.",
+        "intro_text": "The patrol catches the scent of a fox, but is it red or gray? Tracking it, they find a stocky gray fox feeding on an unidentifiable but deliciously stinky mound of carrion the sea has washed up onto the shore.",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -3031,7 +3025,7 @@
             "apprentice": [-1, 2]
         },
         "frequency": 2,
-        "intro_text": "The patrol catches the scent of a fox — but is it red or gray? And is it worth a fight if they encounter it?",
+        "intro_text": "The patrol catches the scent of a fox, but is it red or gray? And is it worth a fight if they encounter it?",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -3120,7 +3114,6 @@
                     "calm",
                     "careful",
                     "cunning",
-                    "sneaky",
                     "responsible",
                     "thoughtful",
                     "wise"
@@ -3415,7 +3408,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "frequency": 2,
-        "intro_text": "The patrol catches the scent of a fox — but is it red or gray? And is it worth a fight if they encounter it?",
+        "intro_text": "The patrol catches the scent of a fox, but is it red or gray? And is it worth a fight if they encounter it?",
         "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -3508,7 +3501,6 @@
                     "calm",
                     "careful",
                     "cunning",
-                    "sneaky",
                     "insecure",
                     "nervous",
                     "responsible",
@@ -3854,7 +3846,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "bch_bishopfish",
+        "patrol_art": "halloween/hal_bch_bishopfish",
         "min_cats": 1,
         "max_cats": 6,
         "min_max_status": {},
@@ -3904,7 +3896,7 @@
         "tags": [
             "halloween"
         ],
-        "patrol_art": "loveland_frog_INTRO",
+        "patrol_art": "halloween/hal_lovelandfrog",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
@@ -3952,7 +3944,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_fish",
+        "patrol_art": "cat_sprites/gen_hunt_fish_Wr",
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
@@ -4001,7 +3993,7 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_fish",
+        "patrol_art": "cat_sprites/gen_hunt_fish_Wr",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {},
@@ -5918,7 +5910,7 @@
     "season": ["newleaf","greenleaf"],
     "types": ["hunting"],
     "tags": [],
-    "patrol_art": "bch_train_stormwaves",
+    "patrol_art": "backgrounds/bch_stormwaves",
     "min_cats": 2,
     "max_cats": 6,
     "min_max_status": {
@@ -5992,7 +5984,7 @@
                         }
                 }
             ],
-            "art": "gen_angry_cat_warrior"
+            "art": "cat_sprites/gen_angrycat_Wr"
         },        
         {
             "text": "s_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/s_c/subject} {VERB/s_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it. s_c reacts lightning-fast, dodging its stabbing beak, then leaps onto its back and sinks {PRONOUN/s_c/poss} teeth into the back of its neck. It writhes and struggles, then lies still. That piece of fresh-kill is so big, s_c and p_l have to carry it together!",
@@ -6023,7 +6015,7 @@
                         }
                 }
             ],
-            "art": "gen_angry_cat_warrior"
+            "art": "cat_sprites/gen_angrycat_Wr"
             }
     ],
     "fail_outcomes": [
@@ -6071,7 +6063,7 @@
                 "death": "m_c died from a broken bone after being chased off a cliff by a gannet parent whose nest {PRONOUN/m_c/subject} tried to raid.",
                 "scar": "m_c was scarred after being chased off a cliff by a gannet parent whose nest {PRONOUN/m_c/subject} tried to raid."
             },
-            "art": "mtn_train_stuck"
+            "art": "cat_sprites/mtn_train_stuck_Wr"
         },
         {
             "text": "r_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c/subject} {VERB/r_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c scrambles back—right over the edge of the cliff. With a howl, {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets}. The patrol rushes down to find r_c clinging onto the rocks and coughing water.",
@@ -6088,7 +6080,7 @@
             "history_text": {
                 "death": "m_c died from the water in {PRONOUN/m_c/poss} lungs after being chased off a cliff into the ocean by a gannet parent whose nest {PRONOUN/m_c/subject} tried to raid."
                 },
-            "art": "gen_fallenwater_cat2"
+            "art": "cat_sprites/gen_fallenwater_Wr"
         },
         {
             "text": "r_c spots a lone egg in an unattended kelp nest, but as {PRONOUN/r_c/subject} {VERB/r_c/clamber/clambers} over, wingbeats buffet and a huge gannet lands right on it, thrusting its beak forward. r_c scrambles back—right over the edge of the cliff. With a howl, {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets}. The patrol rushes to climb down, and finds r_c sprawled on a rock. Motionless.",
@@ -6098,7 +6090,7 @@
             "history_text": {
                 "death": "m_c fell onto a rock and died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} caught trying to raid a gannet's nest."
             },
-            "art": "bch_train_stormwaves"
+            "art": "backgrounds/bch_stormwaves"
         },
         {
             "text": "s_c spots a lone egg in an unattended kelp nest, but it's on an even higher ledge. No issue, s_c can reach it! Until {PRONOUN/s_c/subject} {VERB/s_c/slip/slips} and {VERB/s_c/plummet/plummets} with a howl. The patrol rushes to climb down and finds s_c clinging onto the rocks and coughing water.",
@@ -6128,7 +6120,7 @@
                         }
                 }
             ],
-            "art": "gen_fallenwater_cat2"
+            "art": "cat_sprites/gen_fallenwater_Wr"
         },
         {
             "text": "s_c spots a lone egg in an unattended kelp nest, but it's on an even higher ledge. No issue, s_c can reach it! Until {PRONOUN/s_c/subject} {VERB/s_c/slip/slips}, and {VERB/s_c/plummet/plummets} with a howl. The patrol rushes to climb down and finds s_c lying on the low tide sandbank, barely able to limp back to camp.", 
@@ -6159,7 +6151,7 @@
                         }
                 }
             ],
-            "art": "mtn_train_stuck"
+            "art": "cat_sprites/mtn_train_stuck_Wr"
         },     
         {
             "text": "s_c spots a lone egg in an unattended kelp nest, but it's on an even higher ledge. No issue, s_c can reach it! Until {PRONOUN/s_c/subject} {VERB/s_c/slip/slips} and {VERB/s_c/plummet/plummets} with a howl. The patrol rushes to climb down and finds s_c sprawled on a rock. Motionless.",
@@ -6171,7 +6163,7 @@
             "history_text": {
                 "death": "m_c fell to {PRONOUN/m_c/poss} death off a cliff after overestimating {PRONOUN/m_c/self}."
             },
-            "art": "bch_train_stormwaves"
+            "art": "backgrounds/bch_stormwaves"
         }
     ]
 }

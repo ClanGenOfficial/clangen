@@ -1,0 +1,174 @@
+[
+    {
+        "id": "trust_de_high1",
+        "strings": [
+            "m_c goes to tell a secret to r_c only for r_c to tell someone else's secret to {PRONOUN/m_c/object}.",
+            "r_c doesn't believe m_c when {PRONOUN/m_c/subject} {VERB/m_c/explain/explains} that a rumor about {PRONOUN/m_c/object} is false.",
+            "m_c learns that r_c has been using {PRONOUN/m_c/object} for something.",
+            "m_c doubts whether r_c even likes {PRONOUN/m_c/object} at all...",
+            "r_c uses one of m_c's fears against {PRONOUN/m_c/object}.",
+            "r_c accidentally hurts m_c during an argument between them.",
+            "m_c thinks r_c is trying to steal one of {PRONOUN/m_c/poss} friends!",
+            "m_c swears that r_c stole something from {PRONOUN/m_c/poss} nest.",
+            "m_c lied to r_c's face.",
+            "m_c turned to r_c in a time of need, only for r_c to abandon {PRONOUN/m_c/object}."
+        ]
+    },
+    {
+        "id": "trust_de_high2",
+        "strings": [
+            "m_c tries to scare r_c.",
+            "m_c accuses r_c of being in cahoots with a cat from another Clan.",
+            "m_c publicly accuses r_c of breaking the Warrior Code.",
+            "m_c is blindsided by r_c completely betraying {PRONOUN/m_c/object}.",
+            "m_c threatens to blackmail r_c.",
+            "m_c and r_c refuse to trust one another, which nearly leads to one of them getting hurt.",
+            "r_c's prank on m_c almost turned deadly.",
+            "r_c has been pitting a Clanmate against m_c.",
+            "m_c claims to have had a prophetic dream about r_c betraying the Clan.",
+            "m_c and r_c tell everyone embarrassing secrets about each other.",
+            "r_c destroys something dear to m_c.",
+            "r_c blackmails m_c with one of {PRONOUN/m_c/poss} secrets."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "hates"
+                ]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "comfort"
+                ],
+                "amount": -15
+            }
+        ]
+    },
+    {
+        "id": "trust_for_medcat_de_high1",
+        "strings": [
+            "m_c can never seem to explain {PRONOUN/r_c/poss} health in a way that makes r_c listen...",
+            "m_c feels like r_c is downplaying the severity of m_c's health concerns.",
+            "m_c accuses r_c of not taking care of cats properly.",
+            "m_c doesn't bother to ask r_c for help with a minor injury, worried that {PRONOUN/r_c/subject} might make it worse.",
+            "m_c complains that r_c doesn't seem to understand signs from StarClan very well.",
+            "m_c feels worse after r_c gave {PRONOUN/m_c/object} the wrong treatment for something minor.",
+            "m_c thinks that r_c gave {PRONOUN/m_c/object} the wrong herbs."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "id": "trust_for_medcat_de_high2",
+        "strings": [
+            "m_c is dissatisfied that r_c can't seem to get rid of {PRONOUN/m_c/poss} chronic pain.",
+            "m_c is upset that r_c seems to ignore {PRONOUN/r_c/object} more than the other cats.",
+            "m_c thinks that r_c prioritizes other cat's issues instead of m_c's chronic ones."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "status": [
+                    "elder"
+                ]
+            },
+            "r_c": {
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        }
+    },
+    {
+        "id": "trust_for_medcat_de_high3",
+        "strings": [
+            "m_c accuses r_c of treating cats incorrectly on purpose!",
+            "m_c saw r_c bringing deathberries into the medicine den.",
+            "r_c was rough with m_c during a recent treatment.",
+            "m_c isn't sure why r_c became a medicine cat at all since {PRONOUN/r_c/subject} {VERB/r_c/seem/seems} to not like helping any cats.",
+            "m_c wouldn't be surprised if r_c faked signs from StarClan..."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "medicine cat"
+                ],
+                "stat": {
+                    "trait": [
+                        "cold",
+                        "bloodthirsty",
+                        "vengeful"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "trust_for_medcat_de_high4",
+        "strings": [
+            "m_c is shocked when r_c casually admits forgetting a basic treatment.",
+            "m_c growls frustratingly at r_c when {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} pay attention to m_c's health concerns... again.",
+            "m_c looks for r_c for treatment on a minor wound, only to find {PRONOUN/r_c/object} playing with catmint!",
+            "m_c hopes to never have a serious illness with r_c in charge of treatments...",
+            "m_c complains that r_c never takes {PRONOUN/r_c/poss} role of medicine cat seriously."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "medicine cat"
+                ],
+                "stat": {
+                    "trait": [
+                        "oblivious",
+                        "childish"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "trust_for_leader_de_high1",
+        "strings": [
+            "m_c cowers away from r_c after r_c barks an order at {PRONOUN/m_c/object}.",
+            "After hearing r_c's most recent demands, m_c is concerned about the future of the Clan.",
+            "m_c doesn't believe that r_c has the Clan's best interests in mind.",
+            "m_c doesn't understand how StarClan could grant a cat as cold and uncaring as r_c nine lives.",
+            "When it comes down to it, m_c doesn't think {PRONOUN/m_c/subject} could follow r_c's every order."
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "leader"
+                ],
+                "stat": {
+                    "trait": [
+                        "cold",
+                        "bloodthirsty",
+                        "vengeful"
+                    ]
+                }
+            }
+        }
+    }
+]

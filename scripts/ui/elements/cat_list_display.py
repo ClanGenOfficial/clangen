@@ -224,8 +224,11 @@ class UICatListDisplay(UIContainer):
             display_cats = self.cat_chunks[self.current_page - 1]
 
         [sprite.kill() for sprite in self.cat_sprites.values()]
+        self.cat_sprites.clear()
         [name.kill() for name in self.cat_names.values()]
+        self.cat_names.clear()
         [favor.kill() for favor in self.favor_indicator.values()]
+        self.favor_indicator.clear()
 
         show_fav = get_clan_setting("show fav")
 

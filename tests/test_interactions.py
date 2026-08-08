@@ -1,29 +1,33 @@
 import os
 import unittest
+from random import Random
 
+from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.cat_relations.enums import rel_type_tiers, RelType
 
 from scripts.cat.enums import CatRank
 from scripts.events_module.event_filters import filter_relationship_type
+from scripts.events_module.parameter_dicts import InvolvedCatDict, StatDict
+from scripts.events_module.relationship import generate_pair_event
+from scripts.events_module.text_pool_event import TextPoolEvent
+from scripts.cat.factories.test_cat_factory import TestCatFactory
+from scripts.cat_relations.enums import rel_type_tiers
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-from scripts.cat.cats import Cat, Relationship
+from scripts.cat.cats import Relationship
 from scripts.cat.skills import SkillPath, Skill
-from scripts.cat_relations.interaction import (
-    SingleInteraction,
-    cats_fulfill_single_interaction_constraints,
-)
+
+cat_factory = TestCatFactory()
 
 
 class RelationshipConstraints(unittest.TestCase):
     def test_siblings(self):
         # given
-        parent = Cat()
-        cat_from = Cat(parent1=parent.ID)
-        cat_to = Cat(parent1=parent.ID)
-        rel = Relationship(cat_from, cat_to, False, True)
+        parent = cat_factory.create_cat()
+        cat_from = cat_factory.create_cat(parent1=parent.ID)
+        cat_to = cat_factory.create_cat(parent1=parent.ID)
 
         # then
         self.assertTrue(filter_relationship_type([cat_from, cat_to], ["sibling"]))
@@ -31,8 +35,8 @@ class RelationshipConstraints(unittest.TestCase):
 
     def test_mates(self):
         # given
-        cat_from = Cat()
-        cat_to = Cat()
+        cat_from = cat_factory.create_cat()
+        cat_to = cat_factory.create_cat()
         cat_from.mate.append(cat_to.ID)
         cat_to.mate.append(cat_from.ID)
 
@@ -42,8 +46,8 @@ class RelationshipConstraints(unittest.TestCase):
 
     def test_parent_child_combo(self):
         # given
-        parent = Cat()
-        child = Cat(parent1=parent.ID)
+        parent = cat_factory.create_cat()
+        child = cat_factory.create_cat(parent1=parent.ID)
 
         # then
         self.assertTrue(filter_relationship_type([child, parent], ["child/parent"]))
@@ -53,8 +57,8 @@ class RelationshipConstraints(unittest.TestCase):
 
     def test_rel_values_only_constraint_pos(self):
         # given
-        cat_from1 = Cat()
-        cat_to1 = Cat()
+        cat_from1 = cat_factory.create_cat()
+        cat_to1 = cat_factory.create_cat()
         low_rel = Relationship(cat_from1, cat_to1)
         low_rel.romance = 10
         low_rel.like = 10
@@ -63,8 +67,8 @@ class RelationshipConstraints(unittest.TestCase):
         low_rel.respect = 10
         cat_from1.relationships.update({cat_to1.ID: low_rel})
 
-        cat_from2 = Cat()
-        cat_to2 = Cat()
+        cat_from2 = cat_factory.create_cat()
+        cat_to2 = cat_factory.create_cat()
         mid_rel = Relationship(cat_from2, cat_to2)
         mid_rel.romance = 50
         mid_rel.like = 50
@@ -73,8 +77,8 @@ class RelationshipConstraints(unittest.TestCase):
         mid_rel.respect = 50
         cat_from2.relationships.update({cat_to2.ID: mid_rel})
 
-        cat_from3 = Cat()
-        cat_to3 = Cat()
+        cat_from3 = cat_factory.create_cat()
+        cat_to3 = cat_factory.create_cat()
         high_rel = Relationship(cat_from3, cat_to3)
         high_rel.romance = 90
         high_rel.like = 90
@@ -149,8 +153,8 @@ class RelationshipConstraints(unittest.TestCase):
 
     def test_rel_values_only_constraint_neg(self):
         # given
-        cat_from1 = Cat()
-        cat_to1 = Cat()
+        cat_from1 = cat_factory.create_cat()
+        cat_to1 = cat_factory.create_cat()
         mid_rel = Relationship(cat_from1, cat_to1)
         mid_rel.romance = -50
         mid_rel.like = -50
@@ -159,8 +163,8 @@ class RelationshipConstraints(unittest.TestCase):
         mid_rel.respect = -50
         cat_from1.relationships.update({cat_to1.ID: mid_rel})
 
-        cat_from2 = Cat()
-        cat_to2 = Cat()
+        cat_from2 = cat_factory.create_cat()
+        cat_to2 = cat_factory.create_cat()
         low_rel = Relationship(cat_from2, cat_to2)
         low_rel.romance = -10
         low_rel.like = -10
@@ -169,8 +173,8 @@ class RelationshipConstraints(unittest.TestCase):
         low_rel.respect = -10
         cat_from2.relationships.update({cat_to2.ID: low_rel})
 
-        cat_from3 = Cat()
-        cat_to3 = Cat()
+        cat_from3 = cat_factory.create_cat()
+        cat_to3 = cat_factory.create_cat()
         high_rel = Relationship(cat_from3, cat_to3)
         high_rel.romance = -90
         high_rel.like = -90
@@ -254,8 +258,8 @@ class RelationshipConstraints(unittest.TestCase):
     def test_rel_values_ranged_constraint(self):
         # given
         # pos side
-        cat_from1 = Cat()
-        cat_to1 = Cat()
+        cat_from1 = cat_factory.create_cat()
+        cat_to1 = cat_factory.create_cat()
         high_rel = Relationship(cat_from1, cat_to1)
         high_rel.romance = 90
         high_rel.like = 90
@@ -264,8 +268,8 @@ class RelationshipConstraints(unittest.TestCase):
         high_rel.respect = 90
 
         # neg side
-        cat_from1 = Cat()
-        cat_to1 = Cat()
+        cat_from1 = cat_factory.create_cat()
+        cat_to1 = cat_factory.create_cat()
         high_rel = Relationship(cat_from1, cat_to1)
         high_rel.romance = -90
         high_rel.like = -90
@@ -334,182 +338,302 @@ class RelationshipConstraints(unittest.TestCase):
 class SingleInteractionCatConstraints(unittest.TestCase):
     def test_status(self):
         # given
-        warrior = Cat(status_dict={"rank": CatRank.WARRIOR})
-        medicine = Cat(status_dict={"rank": CatRank.MEDICINE_CAT})
+        warrior = cat_factory.create_cat(status_dict=StatusDict(rank=CatRank.WARRIOR))
+        medicine = cat_factory.create_cat(
+            status_dict=StatusDict(rank=CatRank.MEDICINE_CAT)
+        )
 
         # when
-        warrior_to_all = SingleInteraction("test")
-        warrior_to_all.main_status_constraint = ["warrior"]
-        warrior_to_all.random_status_constraint = ["warrior", "medicine cat"]
+        warrior_to_all = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(status=[CatRank.WARRIOR]),
+                "r_c": InvolvedCatDict(status=[CatRank.MEDICINE_CAT, CatRank.WARRIOR]),
+            },
+        )
 
-        warrior_to_warrior = SingleInteraction("test")
-        warrior_to_warrior.main_status_constraint = ["warrior"]
-        warrior_to_warrior.random_status_constraint = ["warrior"]
+        warrior_to_warrior = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(status=[CatRank.WARRIOR]),
+                "r_c": InvolvedCatDict(status=[CatRank.WARRIOR]),
+            },
+        )
 
-        medicine_to_warrior = SingleInteraction("test")
-        medicine_to_warrior.main_status_constraint = ["medicine cat"]
-        medicine_to_warrior.random_status_constraint = ["warrior"]
+        medicine_to_warrior = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(status=[CatRank.MEDICINE_CAT]),
+                "r_c": InvolvedCatDict(status=[CatRank.WARRIOR]),
+            },
+        )
 
         # then
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                warrior, warrior, warrior_to_all
-            )
+        chosen_event = generate_pair_event._get_event(
+            events=[warrior_to_all, medicine_to_warrior],
+            main_cat=warrior,
+            other_cat=warrior,
         )
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                warrior, warrior, warrior_to_warrior
-            )
-        )
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(
-                warrior, warrior, medicine_to_warrior
-            )
-        )
+        self.assertEqual(chosen_event, warrior_to_all)
 
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                warrior, medicine, warrior_to_all
-            )
+        chosen_event = generate_pair_event._get_event(
+            events=[warrior_to_warrior, medicine_to_warrior],
+            main_cat=warrior,
+            other_cat=warrior,
         )
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(
-                warrior, medicine, warrior_to_warrior
-            )
-        )
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(
-                warrior, medicine, medicine_to_warrior
-            )
-        )
+        self.assertEqual(chosen_event, warrior_to_warrior)
 
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(
-                medicine, warrior, warrior_to_all
-            )
+        chosen_event = generate_pair_event._get_event(
+            events=[warrior_to_warrior, medicine_to_warrior],
+            main_cat=warrior,
+            other_cat=warrior,
         )
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(
-                medicine, warrior, warrior_to_warrior
-            )
+        self.assertNotEqual(chosen_event, medicine_to_warrior)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[warrior_to_all, medicine_to_warrior],
+            main_cat=warrior,
+            other_cat=medicine,
         )
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(
-                medicine, warrior, medicine_to_warrior
-            )
+        self.assertEqual(chosen_event, warrior_to_all)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[warrior_to_warrior, warrior_to_all],
+            main_cat=warrior,
+            other_cat=medicine,
         )
+        self.assertNotEqual(chosen_event, warrior_to_warrior)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[warrior_to_all, medicine_to_warrior],
+            main_cat=warrior,
+            other_cat=medicine,
+        )
+        self.assertNotEqual(chosen_event, medicine_to_warrior)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[warrior_to_all, medicine_to_warrior],
+            main_cat=medicine,
+            other_cat=warrior,
+        )
+        self.assertNotEqual(chosen_event, warrior_to_all)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[warrior_to_warrior, medicine_to_warrior],
+            main_cat=medicine,
+            other_cat=warrior,
+        )
+        self.assertNotEqual(chosen_event, warrior_to_warrior)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[warrior_to_warrior, medicine_to_warrior],
+            main_cat=medicine,
+            other_cat=warrior,
+        )
+        self.assertEqual(chosen_event, medicine_to_warrior)
 
     def test_trait(self):
         # given
-        calm = Cat()
+        calm = cat_factory.create_cat()
         calm.personality.trait = "calm"
-        troublesome = Cat()
+        troublesome = cat_factory.create_cat()
         troublesome.personality.trait = "troublesome"
 
         # when
-        calm_to_all = SingleInteraction("test")
-        calm_to_all.main_trait_constraint = ["calm"]
-        calm_to_all.random_trait_constraint = []
+        calm_to_all = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(stat=StatDict(trait=["calm"])),
+            },
+        )
 
-        all_to_calm = SingleInteraction("test")
-        all_to_calm.main_trait_constraint = ["troublesome", "calm"]
-        all_to_calm.random_trait_constraint = ["calm"]
+        all_to_calm = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(stat=StatDict(trait=["calm", "troublesome"])),
+                "r_c": InvolvedCatDict(stat=StatDict(trait=["calm"])),
+            },
+        )
+
+        rebels = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(stat=StatDict(trait=["rebellious"])),
+                "r_c": InvolvedCatDict(stat=StatDict(trait=["rebellious"])),
+            },
+        )
 
         # then
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(calm, troublesome, calm_to_all)
+        chosen_event = generate_pair_event._get_event(
+            events=[calm_to_all, rebels],
+            main_cat=calm,
+            other_cat=troublesome,
         )
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(calm, troublesome, all_to_calm)
-        )
+        self.assertEqual(chosen_event, calm_to_all)
 
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(troublesome, calm, calm_to_all)
+        chosen_event = generate_pair_event._get_event(
+            events=[calm_to_all, all_to_calm],
+            main_cat=calm,
+            other_cat=troublesome,
         )
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(troublesome, calm, all_to_calm)
-        )
+        self.assertNotEqual(chosen_event, all_to_calm)
 
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(calm, calm, calm_to_all)
+        chosen_event = generate_pair_event._get_event(
+            events=[calm_to_all, all_to_calm],
+            main_cat=troublesome,
+            other_cat=calm,
         )
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(calm, calm, all_to_calm)
+        self.assertNotEqual(chosen_event, calm_to_all)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[all_to_calm, rebels],
+            main_cat=troublesome,
+            other_cat=calm,
         )
+        self.assertEqual(chosen_event, all_to_calm)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[calm_to_all, rebels],
+            main_cat=calm,
+            other_cat=calm,
+        )
+        self.assertEqual(chosen_event, calm_to_all)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[calm_to_all, rebels],
+            main_cat=calm,
+            other_cat=calm,
+        )
+        self.assertEqual(chosen_event, calm_to_all)
 
     def test_skill(self):
         # given
-        hunter = Cat(disable_random=True)
+        hunter = cat_factory.create_cat(disable_random=True)
         hunter.skills.primary = Skill(SkillPath.HUNTER, points=9)
-        fighter = Cat(disable_random=True)
+        hunter.skills.secondary = Skill(SkillPath.CLIMBER, points=9)
+        fighter = cat_factory.create_cat(disable_random=True)
         fighter.skills.primary = Skill(SkillPath.FIGHTER, points=9)
+        fighter.skills.secondary = Skill(SkillPath.CLIMBER, points=9)
 
         # when
-        hunter_to_all = SingleInteraction("test")
-        hunter_to_all.main_skill_constraint = ["HUNTER,1"]
-        hunter_to_all.random_skill_constraint = []
+        hunter_to_all = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(stat=StatDict(skill=["HUNTER,1"])),
+            },
+        )
 
-        all_to_hunter = SingleInteraction("test")
-        all_to_hunter.main_skill_constraint = ["FIGHTER,1", "HUNTER,1"]
-        all_to_hunter.random_skill_constraint = ["HUNTER,1"]
+        all_to_hunter = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(stat=StatDict(skill=["FIGHTER,1", "HUNTER,1"])),
+                "r_c": InvolvedCatDict(stat=StatDict(skill=["HUNTER,1"])),
+            },
+        )
+
+        storytellers = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(stat=StatDict(skill=["STORY,1"])),
+                "r_c": InvolvedCatDict(stat=StatDict(skill=["STORY,1"])),
+            },
+        )
 
         # then
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(hunter, fighter, hunter_to_all)
+        chosen_event = generate_pair_event._get_event(
+            events=[hunter_to_all, all_to_hunter],
+            main_cat=hunter,
+            other_cat=fighter,
         )
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(hunter, fighter, all_to_hunter)
-        )
+        self.assertEqual(chosen_event, hunter_to_all)
 
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(fighter, hunter, hunter_to_all)
+        chosen_event = generate_pair_event._get_event(
+            events=[all_to_hunter, storytellers],
+            main_cat=fighter,
+            other_cat=hunter,
         )
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(fighter, hunter, all_to_hunter)
-        )
+        self.assertEqual(chosen_event, all_to_hunter)
 
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(hunter, hunter, hunter_to_all)
+        chosen_event = generate_pair_event._get_event(
+            events=[hunter_to_all, storytellers],
+            main_cat=hunter,
+            other_cat=hunter,
         )
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(hunter, hunter, all_to_hunter)
+        self.assertEqual(chosen_event, hunter_to_all)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[all_to_hunter, storytellers],
+            main_cat=hunter,
+            other_cat=hunter,
         )
+        self.assertEqual(chosen_event, all_to_hunter)
 
     def test_background(self):
         # given
-        clan = Cat()
+        clan = cat_factory.create_cat()
         clan.backstory = "clanborn"
-        half = Cat()
+        half = cat_factory.create_cat()
         half.backstory = "halfclan1"
 
         # when
-        clan_to_all = SingleInteraction("test")
-        clan_to_all.backstory_constraint = {"m_c": ["clanborn"]}
+        clan_to_all = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(backstory=["clanborn"]),
+            },
+        )
 
-        all_to_clan = SingleInteraction("test")
-        all_to_clan.backstory_constraint = {
-            "m_c": ["halfclan1", "clanborn"],
-            "r_c": ["clanborn"],
-        }
-
+        all_to_clan = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(backstory=["clanborn", "halfclan1"]),
+                "r_c": InvolvedCatDict(backstory=["clanborn"]),
+            },
+        )
+        all_half2 = TextPoolEvent(
+            id="test",
+            strings=["test"],
+            involved_cats={
+                "m_c": InvolvedCatDict(backstory=["halfclan2"]),
+                "r_c": InvolvedCatDict(backstory=["halfclan2"]),
+            },
+        )
         # then
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(clan, half, clan_to_all)
+        chosen_event = generate_pair_event._get_event(
+            events=[clan_to_all, all_to_clan],
+            main_cat=clan,
+            other_cat=half,
         )
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(clan, half, all_to_clan)
-        )
+        self.assertEqual(chosen_event, clan_to_all)
 
-        self.assertFalse(
-            cats_fulfill_single_interaction_constraints(half, clan, clan_to_all)
+        chosen_event = generate_pair_event._get_event(
+            events=[clan_to_all, all_to_clan],
+            main_cat=half,
+            other_cat=clan,
         )
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(half, clan, all_to_clan)
-        )
+        self.assertEqual(chosen_event, all_to_clan)
 
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(clan, clan, clan_to_all)
+        chosen_event = generate_pair_event._get_event(
+            events=[clan_to_all, all_half2],
+            main_cat=clan,
+            other_cat=clan,
         )
-        self.assertTrue(
-            cats_fulfill_single_interaction_constraints(clan, clan, all_to_clan)
+        self.assertEqual(chosen_event, clan_to_all)
+
+        chosen_event = generate_pair_event._get_event(
+            events=[all_to_clan, all_half2],
+            main_cat=clan,
+            other_cat=clan,
         )
+        self.assertEqual(chosen_event, all_to_clan)

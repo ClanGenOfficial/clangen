@@ -27,3 +27,5 @@ class Herb(Enum):
     poppy = "poppy"
     plantain = "plantain"
     catmint = "catmint"
+    honey = "honey"
+    yew_berries = "yew_berries"

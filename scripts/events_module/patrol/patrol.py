@@ -42,6 +42,8 @@ from scripts.events_module.text_adjust import (
     adjust_list_text,
     event_text_adjust,
 )
+from scripts.special_dates import SpecialDate, is_today
+
 
 logger = logging.getLogger(__name__)
 
@@ -954,7 +956,7 @@ class Patrol:
             else "patrol_generation.difficulty_modifier"
         )
 
-        gm_modifier = get_config(game.clan, path)
+        gm_modifier = get_config(path)
 
         exp_adustment = (
             (1 + 0.10 * patrol_size) * total_exp / (patrol_size * gm_modifier * 2)
@@ -1133,41 +1135,30 @@ class Patrol:
         )
         season = game.clan.current_season
         prey_size = ["very_small", "small", "medium", "large", "huge"]
+        prey_size_random_weights = PATROL_BALANCE[biome][season]
 
-        chosen_prey_size = choices(prey_size, weights=PATROL_BALANCE[biome][season])[0]
+        chosen_prey_size = choices(prey_size, weights=prey_size_random_weights)[0]
         print(f"chosen filter prey size: {chosen_prey_size}")
 
         # filter all possible patrol depending on the needed prey size
         for patrol in possible_patrols:
-            for adaption, needed_weight in PATROL_WEIGHT_ADAPTION.items():
-                if needed_weight == patrol.frequency:
-                    # get the amount of class sizes which can be increased
-                    increment = int(adaption.split("_")[0])
-                    new_idx = prey_size.index(chosen_prey_size) + increment
-                    # check that the increment does not lead to an overflow
-                    new_idx = (
-                        new_idx if new_idx < len(prey_size) else len(prey_size) - 1
-                    )
-                    chosen_prey_size = deepcopy(prey_size[new_idx])
-                    break
-
-            # now count the outcomes + prey size
-            prey_types = {}
+            # count the outcomes + prey size
+            prey_size_to_outcome_amounts = {}
             for outcome in patrol.success_outcomes:
                 # ignore skill or trait outcomes
                 if outcome.stat_trait or outcome.stat_skill:
                     continue
                 if outcome.prey:
-                    if outcome.prey[0] in prey_types:
-                        prey_types[outcome.prey[0]] += 1
-                    else:
-                        prey_types[outcome.prey[0]] = 1
+                    outcome_prey_size = outcome.prey[0]
+                    if outcome_prey_size not in prey_size_to_outcome_amounts:
+                        prey_size_to_outcome_amounts[outcome_prey_size] = 0
+                    prey_size_to_outcome_amounts[outcome_prey_size] += 1
 
             # get the prey size with the most outcomes
             most_prey_size = ""
             max_occurrences = 0
-            for size, amount in prey_types.items():
-                if amount >= max_occurrences and most_prey_size != chosen_prey_size:
+            for size, amount in prey_size_to_outcome_amounts.items():
+                if amount >= max_occurrences:
                     most_prey_size = size
 
             if chosen_prey_size == most_prey_size:
@@ -1209,6 +1200,11 @@ class Patrol:
                 file_name = "train"
 
             file_name = f"{file_name}_general_intro"
+
+        if is_today(SpecialDate.APRIL_FOOLS):
+            april_fools_root_dir = "resources/images/patrol_art/april_fools/"
+            if path_exists(f"{april_fools_root_dir}{file_name}.png"):
+                return pygame.image.load(f"{april_fools_root_dir}{file_name}.png")
 
         return pygame.image.load(f"{root_dir}{file_name}.png")
 

@@ -71,7 +71,7 @@ def load_data():
     clan_list = read_clans()
     if clan_list:
         switch_set_value(Switch.clan_list, clan_list)
-        switch_set_value(Switch.clan_name, clan_list[0])
+        switch_set_value(Switch.clan_save_id, clan_list[0])
         try:
             game.starclan = Afterlife()
             game.dark_forest = Afterlife()
@@ -79,14 +79,15 @@ def load_data():
             version_info = clan_class.load_clan()
             version_convert(version_info)
             game.load_events()
-            scripts.screens.screens_core.screens_core.rebuild_core()
         except Exception as e:
             logging.exception("File failed to load")
-            if switch_get_value(Switch.error_message) is None:
+            if not switch_get_value(Switch.error_message):
                 switch_set_value(
                     Switch.error_message, "There was an error loading the cats file!"
                 )
                 switch_set_value(Switch.traceback, e)
+
+        scripts.screens.screens_core.screens_core.rebuild_core()
 
     finished_loading = True
 
@@ -219,6 +220,7 @@ while 1:
                     GameScreen.SWITCH_CLAN,
                     GameScreen.SETTINGS,
                     GameScreen.MAKE_CLAN_CHOOSE_MODE,
+                    GameScreen.MAKE_CLAN_CHOOSE_CARDS,
                     GameScreen.MAKE_CLAN_CHOOSE_NAME,
                     GameScreen.MAKE_CLAN_CHOOSE_CATS,
                     GameScreen.MAKE_CLAN_CHOOSE_SYMBOL,

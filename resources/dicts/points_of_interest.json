@@ -29,6 +29,11 @@
         "biome": ["any"],
         "tags": ["cave", "rocks"]
     },
+    "moon_mothermouth": {
+        "category": "moonplace",
+        "biome": ["any"],
+        "tags": ["cave", "rocks", "covered"]
+    },
     "terrain_lake": {
         "category": "terrain",
         "biome": ["any"],

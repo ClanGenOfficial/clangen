@@ -94,11 +94,15 @@
         }
     },
     {
-        "event_id": "bch_misc_herb_leafbareflooddestruction1",
+        "event_id": "bch_misc_herb_flooddestruction1",
         "location": [
-            "any"
+            "beach:camp1",
+            "beach:camp3",
+            "beach:camp4"
         ],
         "season": [
+            "newleaf",
+            "leaf-fall",
             "leaf-bare"
         ],
         "exclude_involved": [
@@ -140,6 +144,25 @@
                 "adult",
                 "senior adult",
                 "senior"
+            ]
+        }
+    },
+    {
+        "event_id": "bch_misc_ghostship",
+        "location": [
+            "beach:camp3"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "event_text": "A thick fog envelops the coast. m_c swears {PRONOUN/m_c/subject} {VERB/m_c/see/sees} a translucent Twoleg ship out on the ocean... but when {PRONOUN/m_c/subject} {VERB/m_c/blink/blinks}, it's gone.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
             ]
         }
     },

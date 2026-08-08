@@ -1,5 +1,137 @@
 [
     {
+        "event_id": "debug_newcat_injured",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 0,
+        "event_text": "DEBUG: added n_c:0 and injured them.",
+        "new_cat": [
+            [
+                "loner",
+                "exists"
+            ]
+        ],
+	      "injury": [
+            {
+                "cats": ["n_c:0"],
+                "injuries": ["blunt_force_injury"]
+            }
+        ],
+	      "history": [
+            {
+            "cats": ["n_c:0"],
+            "scar": "m_c was scarred after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
+            "death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle."
+            }
+        ]
+    },
+    {
+        "event_id": "debug_newcat_injured2cats",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 0,
+        "event_text": "DEBUG: added n_c:0 and n_c:1 and injured them both.",
+        "new_cat": [
+            [
+                "loner",
+                "exists"
+            ],
+            [
+                "loner",
+                "exists"
+            ]
+        ],
+	      "injury": [
+            {
+                "cats": ["n_c:0", "n_c:1"],
+                "injuries": ["blunt_force_injury"]
+            }
+        ],
+	      "history": [
+            {
+            "cats": ["n_c:0", "n_c:1"],
+            "scar": "m_c was scarred after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
+            "death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle."
+            }
+        ]
+    },
+    {
+        "event_id": "debug_newcat_injured1of2cats",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 0,
+        "event_text": "DEBUG: added n_c:0 and n_c:1 and injured n_c:1.",
+        "new_cat": [
+            [
+                "loner",
+                "exists"
+            ],
+            [
+                "loner",
+                "exists"
+            ]
+        ],
+	      "injury": [
+            {
+                "cats": ["n_c:1"],
+                "injuries": ["blunt_force_injury"]
+            }
+        ],
+	      "history": [
+            {
+            "cats": ["n_c:1"],
+            "scar": "m_c was scarred after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
+            "death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle."
+            }
+        ]
+    },
+    {
+        "event_id": "debug_newcat_injuredlitter",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 0,
+        "event_text": "DEBUG: added n_c:0 and a litter and injured the litter.",
+        "new_cat": [
+            [
+                "loner",
+                "exists"
+            ],
+            [
+                "litter",
+                "parent:0"
+            ]
+        ],
+	      "injury": [
+            {
+                "cats": ["n_c:1"],
+                "injuries": ["blunt_force_injury"]
+            }
+        ],
+	      "history": [
+            {
+            "cats": ["n_c:1"],
+            "scar": "m_c was scarred after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
+            "death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle."
+            }
+        ]
+    },
+    {
         "event_id": "debug_newcat_loner_oldname",
         "location": [
             "any"
