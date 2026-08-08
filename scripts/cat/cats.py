@@ -266,7 +266,7 @@ class Cat:
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
 
-        if self.ID is not None and self.ID != "0":
+        if self.ID is not None:
             Cat.insert_cat(self)
 
     @property
@@ -2766,6 +2766,7 @@ class Cat:
 
         # just preventing any attempts to load something that isn't a cat ID
         if not cat.isdigit():
+            print(f'ERROR: in loading faded cat: "{cat}" is not a valid cat ID')
             return
 
         try:
@@ -2798,8 +2799,8 @@ class Cat:
                 encoding="utf-8",
             ) as read_file:
                 cat_info = ujson.loads(read_file.read())
-        except:
-            print("ERROR: in loading faded cat")
+        except Exception as e:
+            print(f'ERROR: in loading faded cat "{cat}": {e!r}')
             return False
 
         if isinstance(cat_info["status"], str):

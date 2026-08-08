@@ -214,7 +214,7 @@ class LoadCatFactory(BaseCatFactory):
         :return: A dict of the keys needed to build the pelt
         """
         eye_colour, eye_colour2 = cls._convert_eye_color(
-            kwargs["eye_colour"], kwargs.get("eye_color2")
+            kwargs["eye_colour"], kwargs.get("eye_colour2")
         )
 
         if isinstance(kwargs.get("tint"), str) and kwargs.get("tint").lower() == "none":

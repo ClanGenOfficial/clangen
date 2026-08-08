@@ -385,18 +385,7 @@ class FreshkillPile:
             for cat in cats_to_feed.copy():
                 if not cat.skills:
                     continue
-                if (
-                    cat.skills.primary
-                    and cat.skills.primary.path == SkillPath.HUNTER
-                    and cat.skills.primary.tier == search_rank
-                ):
-                    best_hunter.insert(0, cat)
-                    cats_to_feed.remove(cat)
-                elif (
-                    cat.skills.secondary
-                    and cat.skills.secondary.path == SkillPath.HUNTER
-                    and cat.skills.secondary.tier == search_rank
-                ):
+                if SkillPath.HUNTER in cat.skills.get_all():
                     best_hunter.insert(0, cat)
                     cats_to_feed.remove(cat)
 
