@@ -236,13 +236,13 @@ class FreshkillManagementWindow(GameWindow):
             self.feed_view_elements.pop("cat_list")
 
         self.feed_view_elements["cat_list"] = UICatListDisplay(
-            ui_scale(pygame.Rect((45, 40), (455, 300))),
+            ui_scale(pygame.Rect((45, 40), (455, 270))),
             container=self,
             manager=MANAGER,
             cat_list=self.low_nutrition_cats,
             cats_displayed=12,
             x_px_between=ui_scale_value(5),
-            y_px_between=ui_scale_value(10),
+            y_px_between=ui_scale_value(5),
             columns=4,
             rows=3,
             show_names=True,
@@ -262,14 +262,20 @@ class FreshkillManagementWindow(GameWindow):
 
         current_prey_amount = int(game.clan.freshkill_pile.total_amount)
         needed_amount = math.ceil(game.clan.freshkill_pile.amount_food_needed())
+        predicted_catch = round(
+            game.clan.freshkill_pile.get_moonskip_catch_amount(disable_random=True)
+        )
+        expiring_amount = int(game.clan.freshkill_pile.pile["expires_in_1"])
 
-        scale_rect = ui_scale(pygame.Rect((0, 0), (450, -1)))
-        scale_rect.bottomleft = ui_scale_offset((0, -90))
+        scale_rect = ui_scale(pygame.Rect((0, 0), (530, -1)))
+        scale_rect.bottomleft = ui_scale_offset((0, -110))
         self.feed_view_elements["status_text"] = UITextBoxTweaked(
             i18n.t(
                 "windows.freshkill_pile_tooltip",
                 current_prey_amount=current_prey_amount,
                 needed_amount=needed_amount,
+                expiring_amount=expiring_amount,
+                expected_amount=predicted_catch,
             ),
             scale_rect,
             object_id="#text_box_30_horizcenter",

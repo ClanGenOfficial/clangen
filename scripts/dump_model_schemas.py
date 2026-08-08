@@ -9,7 +9,7 @@ from scripts.models.patrol.patrol_schema import PatrolSchema
 from scripts.models.relationship_group_event.relationship_group_schema import (
     RelationshipGroupEvent,
 )
-from scripts.models.relationship_pair_event.relationship_group_schema import (
+from scripts.models.relationship_pair_event.relationship_pair_schema import (
     RelationshipPairEvent,
 )
 from scripts.models.shortevent.short_event_schema import ShortEventSchema
