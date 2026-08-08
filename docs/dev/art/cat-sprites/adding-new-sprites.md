@@ -80,7 +80,7 @@ To add a new patch combination create a list in the dict based on the following 
 
 ```"NAME": ["sizePATCH", "sizePATCH"]```
 
-The size is always in lowercase and the patch name is in uppercase. You can add any number of patches but be conscious of how they overlap and appear in game. 
+The size is always in lowercase and the patch name is in uppercase. For example, the `TIP` patch would be added to this list as `littleTIP` You can add any number of patches to this list, but be conscious of how they overlap and appear in game. 
 
 Here is an example of what that looks as a full part of the list:
 
