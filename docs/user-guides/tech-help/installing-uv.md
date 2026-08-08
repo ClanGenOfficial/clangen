@@ -4,13 +4,13 @@ UV is a program that helps manage virtual environments (your dependencies) by in
 
 The provided README.md in your game folder is already quite helpful, but if you need detailed instructions, follow the section dedicated to your operating system.
 
-Yes, this guide can also work and apply with **up-to-date** mods. You just have to take the initiative to change some details to reflect the mod you're installing. Make sure to read the instructions carefully.
+Yes, this guide can also work and apply to **up-to-date** mods. You just have to take the initiative to change some details to reflect the mod you're installing. Make sure to read the instructions carefully.
 
 ---
 
-## QNA
+## FAQ
 
-Here's a little QNA for things you might want to know before you proceed with UV.
+Here's a little FAQ for things you might want to know before you proceed with UV.
 
 ### Does UV work with Thonny?
 
@@ -20,7 +20,7 @@ In short terms, no, we do not recommend using Thonny with ClanGen, but it can be
 
 ### What should I install before attempting to install UV?
 
-First, you need ClanGen's source version of the game. This is essentially the developer version that gives you access to the game's core coding.
+First, you need ClanGen's source version of the game. This is essentially the developer version that gives you access to the game's source code.
 
 You can download the source version through either:
 
@@ -51,7 +51,7 @@ If you are unsure of the terms I'm using and how they apply to installing the ga
 
 - If you do not know what operating system you're using, you can find it in your device's "system" settings.
 
-**Source**: A version of ClanGen that gives you access to ClanGen's core coding, rather than it being compressed into an easy-to-use launcher.
+**Source**: A version of ClanGen that gives you access to ClanGen's source code, rather than it being compressed into an easy-to-use launcher.
 
 - Source can be BOTH stable and development. Source =/= development
 
@@ -59,7 +59,7 @@ If you are unsure of the terms I'm using and how they apply to installing the ga
 
 **PATH**: Path refers to what your terminal is set to affect.
 
-**Application**: Application refers to the exe install that has all the core coding compressed into the application launcher.
+**Application**: Application refers to the executable install that has all the source code compressed into the application launcher.
 
 **Terminal**: Terminals are a text-based interface used to effectively communicate with a computer's operating system, allowing the user to input commands and execute tasks.
 
