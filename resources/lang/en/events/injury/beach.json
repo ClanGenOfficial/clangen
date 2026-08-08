@@ -971,7 +971,7 @@
     "location":["beach"], 
     "season": ["any"],
     "frequency": 3,
-    "event_text": "A flock of seagulls descended upon the fresh-kill pile. m_c tried to chase them off, but was pecked for {PRONOUN/m_c/poss} troubles.",
+    "event_text": "A flock of seagulls descended upon the fresh-kill pile. m_c tried to chase them off but was pecked for {PRONOUN/m_c/poss} troubles.",
     "m_c": {
         "status": []
     },
