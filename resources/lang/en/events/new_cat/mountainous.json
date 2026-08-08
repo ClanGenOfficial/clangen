@@ -249,7 +249,7 @@
             "any"
         ],
         "frequency": 1,
-        "event_text": "While on patrol, m_c finds a strange cat, claiming the ghosts of the ruins led {PRONOUN/n_c:0/object} here. Taking {PRONOUN/n_c:0/object} back to camp, {PRONOUN/n_c:0/subject} {VERB/n_c:0/decide/decides} to join the Clan and is renamed n_c:0.",
+        "event_text": "While on patrol, m_c finds a strange cat, claiming the ghosts of the ruins led {PRONOUN/n_c:0/object} here. m_c takes {PRONOUN/n_c:0/object} back to camp, where {PRONOUN/n_c:0/subject} {VERB/n_c:0/decide/decides} to join the Clan and is renamed n_c:0.",
         "m_c": {
             "age": [
                 "young adult",
