@@ -182,6 +182,18 @@
             "text_vert_alignment_padding": "2"
         }
     },
+        "@buttonstyles_header": {
+        "prototype": "buttonstyles_prototype",
+            "misc": {
+                "text_horiz_alignment": "center"
+            }
+    },
+        "@buttonstyles_header_mirrored": {
+        "prototype": "buttonstyles_prototype",
+            "misc": {
+                "text_horiz_alignment": "center"
+            }
+        },
     "@buttonstyles_rounded_rect": {"prototype": "buttonstyles_prototype"},
     "@buttonstyles_icon": {
         "prototype": "@buttonstyles_rounded_rect",
