@@ -13715,7 +13715,7 @@
                 "season": [
                     "any"
                 ],
-                "tags": [],
+                "tags": ["clan:leader"],
                 "exclude_involved": [
                     "m_c"
                 ],
