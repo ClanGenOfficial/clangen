@@ -27,7 +27,7 @@ jobs:
           fetch-depth: 0
       - name: Docker meta
         id: meta
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           images: |
             ${{ secrets.REGISTRY_URL }}/clangen/clangen-docs
