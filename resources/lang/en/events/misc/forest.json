@@ -492,7 +492,7 @@
     
 },
 {
-  "event_id": "fst_misc_sleddingromance",
+  "event_id": "fst_misc_sleddingromanceapp",
   "location": [
     "forest:camp2"
   ],
@@ -509,6 +509,61 @@
   "r_c": {
       "age": [
         "adolescent"
+      ]
+    },
+  "relationships": [
+      {
+          "cats_from": [
+            "m_c"
+          ],
+          "cats_to": [
+            "r_c"
+          ],
+          "mutual": false,
+          "values": [
+            "romance"
+          ],
+          "amount": 10,
+          "log": {
+            "cats_from": "cat_from got flustered when cat_to said {PRONOUN/m_c/subject} {VERB/m_c/are/is} as pretty as snowfall."
+        }
+      },
+      {
+        "cats_from": [
+          "r_c"
+        ],
+        "cats_to": [
+          "m_c"
+        ],
+        "mutual": false,
+        "values": [
+          "romance"
+        ],
+        "amount": 10,
+        "log": {
+          "cats_from": "cat_from complimented cat_to on being pretty as snowfall."
+      }
+    }
+  ]
+},
+{
+  "event_id": "fst_misc_sleddingromancewarrior",
+  "location": [
+    "forest:camp2"
+  ],
+  "season": [
+    "leaf-bare"
+  ],
+  "frequency": 2,
+  "event_text": "m_c is left flustered when r_c says {PRONOUN/m_c/subject} {VERB/m_c/are/is} as pretty as snowfall.",
+  "m_c": {
+      "age": [
+        "young adult"
+      ]
+  },
+  "r_c": {
+      "age": [
+        "young adult"
       ]
     },
   "relationships": [

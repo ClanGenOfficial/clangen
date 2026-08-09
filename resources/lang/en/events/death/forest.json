@@ -380,7 +380,6 @@
         "location": [
             "forest"
         ],
-        "season": [],
         "frequency": 1,
         "event_text": "m_c wanders out of camp alone. When c_n finds {PRONOUN/m_c/object}, even r_c can't recognize {PRONOUN/m_c/object}.",
         "m_c": {
@@ -392,18 +391,12 @@
             ],
             "dies": true
         },
-        "r_c": {
-            "relationship_status":[
-                "parent/child"
-            ]
-        },
-        
+        "r_c": {},
         "history": [
             {
                 "cats": ["m_c"],
                 "death": "m_c was torn apart by wolves."
             }
         ]
-        
     }
 ]
