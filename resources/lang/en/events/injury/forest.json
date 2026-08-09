@@ -869,5 +869,71 @@
           }
         }
     ]
+},
+{
+    "event_id": "fst_injury_brokenleg",
+    "location": [
+        "forest:camp2"
+    ],
+    "season": [
+        "leaf-bare"
+    ],
+    "frequency": 1,
+    "event_text": "m_c misjudges how deep the snow is and jumps in. {PRONOUN/m_c/subject/CAP} {VERB/m_c/land/lands} wrong, breaking {PRONOUN/m_c/poss} leg.",
+    "m_c": {
+        "age": [
+            "-newborn",
+            "-kitten"
+        ],
+        "status": []
+
+    },
+    "injury": [
+        {
+            "cats": ["m_c"],
+            "injuries": ["broken bone"],
+            "scars": []
+        }
+    ],
+    "history": [
+        {
+            "cats": ["m_c"],
+            "scar": "m_c was scarred after breaking {PRONOUN/m_c/poss} leg.",
+            "death": "m_c died from complications caused by {PRONOUN/m_c/poss} broken leg."
+        }
+    ]
+   
+},
+{
+    "event_id": "fst_injury_headdamage",
+    "location": [
+        "forest:camp2"
+    ],
+    "season": [
+        "-leaf-bare"
+    ],
+    "frequency": 1,
+    "event_text": "m_c stumbles while playing outside and falls into camp, later complaining about head pain.",
+    "m_c": {
+        "age": [
+            "-newborn",
+            "-kitten"
+        ]
+    },
+    "injury": [
+        {
+            "cats": ["m_c"],
+            "injuries": ["head damage"],
+            "scars": []
+        }
+    ],
+    "history": [
+        {
+            "cats": ["m_c"],
+            "scar": "",
+            "death": "m_c died from complications caused by falling into the gully."
+        }
+    ]
+   
 }
 ]
