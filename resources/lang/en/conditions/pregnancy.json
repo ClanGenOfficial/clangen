@@ -5,11 +5,11 @@
         "m_c is shocked to be told that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant.",
         "m_c worries when {PRONOUN/m_c/subject} {VERB/m_c/are/is} told that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant. {PRONOUN/m_c/subject/CAP} just {VERB/m_c/are/is}n't ready.",
         "m_c's eyes sparkle with determination when {PRONOUN/m_c/subject} {VERB/m_c/are/is} informed that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant.",
-		    "m_c woke up with a bellyache, so {PRONOUN/m_c/subject} went to the medicine cat den for herbs. When {PRONOUN/m_c/subject} exited the medicine cat den, m_c rushes to r_c, then announced to the Clan that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits!",
-    	  "Unsure if {PRONOUN/m_c/subject} {VERB/m_c/were/was} pregnant, m_c waited a few days to find out. Once {PRONOUN/m_c/subject} {VERB/m_c/were/was} showing signs, {PRONOUN/m_c/subject} happily {VERB/m_c/announce/announces} that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits!",
-		    "After moons of mental preparation and talks with r_c, m_c is happy to announce that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits.",
-		    "r_c took m_c to the medicine cat den after {PRONOUN/m_c/subject} {VERB/m_c/were/was} feeling nauseated. When they left the medicine cat den, m_c announces that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant!",
-		    "With {PRONOUN/m_c/poss} mate r_c beaming behind {PRONOUN/m_c/object}, m_c announces that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits!",
+		"m_c woke up with a bellyache, so {PRONOUN/m_c/subject} went to the medicine cat den for herbs. When {PRONOUN/m_c/subject} exited the medicine cat den, m_c rushed to r_c, then announced to the Clan that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits!",
+    	"Unsure if {PRONOUN/m_c/subject} {VERB/m_c/were/was} pregnant, m_c waited a few days to find out. Once {PRONOUN/m_c/subject} {VERB/m_c/were/was} showing signs, {PRONOUN/m_c/subject} happily {VERB/m_c/announce/announces} that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits!",
+		"After moons of mental preparation and talks with r_c, m_c is happy to announce that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits.",
+		"r_c took m_c to the medicine cat den after {PRONOUN/m_c/subject} {VERB/m_c/were/was} feeling nauseated. When they left the medicine cat den, m_c announces that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant!",
+		"With {PRONOUN/m_c/poss} mate r_c beaming behind {PRONOUN/m_c/object}, m_c announces that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits!",
         "Just about everyone in c_n noticed how m_c's scent has changed and how there's a glow in {PRONOUN/m_c/poss} eyes only an expecting parent would have. Everyone congratulated m_c when {PRONOUN/m_c/subject} announced that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} expecting kits."
     ],
     "announcement_affair": [
@@ -17,27 +17,27 @@
         "m_c is shocked to be told that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant. r_c seems more shocked than {PRONOUN/m_c/subject} {VERB/m_c/are/is}.",
         "m_c worries when {PRONOUN/m_c/subject} {VERB/m_c/are/is} told that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant. {PRONOUN/m_c/subject/CAP} just {VERB/m_c/are/is}n't ready.",
         "m_c's eyes sparkle with determination when {PRONOUN/m_c/subject} {VERB/m_c/are/is} informed that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant.",
-		    "r_c took m_c to the medicine cat den after {PRONOUN/m_c/subject} {VERB/m_c/were/was} feeling nauseated. When m_c and r_c left the medicine cat den, m_c announces that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant! r_c doesn't seem as enthusiastic as m_c, however.",
-		    "m_c announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits. r_c doesn't remember spending that much time with {PRONOUN/m_c/object} this moon...",
-		    "m_c and r_c had a heated discussion over something. When other cats ask, m_c admits that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant and r_c is upset.",
-		    "After m_c announced {PRONOUN/m_c/poss} pregnancy to the Clan, some cats noticed r_c looking at {PRONOUN/m_c/object} with confusion. No one can guess why, but everyone's excited for new life coming to the Clan!"
+		"r_c took m_c to the medicine cat den after {PRONOUN/m_c/subject} {VERB/m_c/were/was} feeling nauseated. When m_c and r_c left the medicine cat den, m_c announces that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant! r_c doesn't seem as enthusiastic as m_c, however.",
+		"m_c announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits. r_c doesn't remember spending that much time with {PRONOUN/m_c/object} this moon...",
+		"m_c and r_c had a heated discussion over something. When other cats ask, m_c admits that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant and r_c is upset.",
+		"After m_c announced {PRONOUN/m_c/poss} pregnancy to the Clan, some cats noticed r_c looking at {PRONOUN/m_c/object} with confusion. No one can guess why, but everyone's excited for new life coming to the Clan!"
     ],
     "announcement_surprise": [
         "The Clan is surpised when m_c announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits. m_c refuses to disclose the name of the other parent, but everyone's excited for new life in the Clan regardless!",
-		    "m_c has tried for days to hide the fact that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant, but {PRONOUN/m_c/poss} Clanmates could tell something was up with {PRONOUN/m_c/object}, so {PRONOUN/m_c/subject} had no choice but to announce {PRONOUN/m_c/poss} pregnancy to the Clan.",
-		    "m_c found out that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant! When other cats inquire about the second parent, m_c changes the subject.",
-		    "m_c doesn't care about what the other cats say — {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} expecting kits and is determined to do this on {PRONOUN/m_c/poss} own, with or without a mate.",
-		    "m_c is surprised to find out {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant. How {VERB/m_c/are/is} {PRONOUN/m_c/subject} supposed to do this without a mate?",
-		    "m_c proudly announced {PRONOUN/m_c/poss} pregnancy. {PRONOUN/m_c/subject/CAP} {VERB/m_c/refuse/refuses} to answer any cat who questions {PRONOUN/m_c/object} about the second parent." 
+		"m_c has tried for days to hide the fact that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant, but {PRONOUN/m_c/poss} Clanmates could tell something was up with {PRONOUN/m_c/object}, so {PRONOUN/m_c/subject} had no choice but to announce {PRONOUN/m_c/poss} pregnancy to the Clan.",
+		"m_c found out that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant! When other cats inquire about the second parent, m_c changes the subject.",
+		"m_c doesn't care about what the other cats say — {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} expecting kits and is determined to do this on {PRONOUN/m_c/poss} own, with or without a mate.",
+		"m_c is surprised to find out {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant. How {VERB/m_c/are/is} {PRONOUN/m_c/subject} supposed to do this without a mate?",
+		"m_c proudly announced {PRONOUN/m_c/poss} pregnancy. {PRONOUN/m_c/subject/CAP} {VERB/m_c/refuse/refuses} to answer any cat who questions {PRONOUN/m_c/object} about the second parent." 
     ],
     "announcement_affair_samesex": [
-		    "m_c tried to hide it, especially from r_c, but each day, {PRONOUN/m_c/poss} pregnancy symptoms become more noticeable to other cats. m_c has no choice but to announce that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits. r_c looks at {PRONOUN/m_c/object} with confusion.",
+		"m_c tried to hide it, especially from r_c, but each day, {PRONOUN/m_c/poss} pregnancy symptoms become more noticeable to other cats. m_c has no choice but to announce that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits. r_c looks at {PRONOUN/m_c/object} with confusion.",
         "m_c announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits. r_c can't possibly be the second parent... so then who's the other biological parent?",
         "m_c is shocked to be told that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant. r_c seemed to be more shocked than {PRONOUN/m_c/subject} {VERB/m_c/are/is}.",
-		    "m_c was nervous announcing {PRONOUN/m_c/poss} pregnancy to the Clan, wondering how r_c would react. Surprisingly, r_c is excited for {PRONOUN/m_c/object} and can't wait to raise kits together!",
-		    "With {PRONOUN/m_c/poss} mate r_c beaming behind {PRONOUN/m_c/object}, m_c announces that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits! The Clan congratulated them both, but they wonder who's the other biological parent.",
-		    "m_c and r_c had a heated discussion over something. When other cats asked what they were arguing about, m_c had no choice but to admit that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant and r_c is upset.",
-		    "m_c announced that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant and that {PRONOUN/m_c/subject} and r_c are going to be parents! Though the Clan congratulated them, they still wonder who the other biological parent is."
+		"m_c was nervous announcing {PRONOUN/m_c/poss} pregnancy to the Clan, wondering how r_c would react. Surprisingly, r_c is excited for {PRONOUN/m_c/object} and can't wait to raise kits together!",
+		"With {PRONOUN/m_c/poss} mate r_c beaming behind {PRONOUN/m_c/object}, m_c announces that {PRONOUN/m_c/subject} {VERB/m_c/are/is} expecting kits! The Clan congratulated them both, but they wonder who's the other biological parent.",
+		"m_c and r_c had a heated discussion over something. When other cats asked what they were arguing about, m_c had no choice but to admit that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant and r_c is upset.",
+		"m_c announced that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} pregnant and that {PRONOUN/m_c/subject} and r_c are going to be parents! Though the Clan congratulated them, they still wonder who the other biological parent is."
     ],
     "litter_guess": {
         "small": [
@@ -116,7 +116,7 @@
             "m_c had a {insert} with r_c.",
             "In the nursery, m_c lies suckling a {insert}, r_c watching over them and purring so hard {PRONOUN/r_c/poss} body vibrates.",
             "m_c and r_c's eyes meet over their {insert}, full of love for their growing family.",
-			      "As m_c gazes upon {PRONOUN/m_c/poss} {insert} with r_c, {PRONOUN/m_c/subject} can't help but wonder if parenthood is what {PRONOUN/m_c/subject} really {VERB/m_c/want/wants}.",
+			"As m_c gazes upon {PRONOUN/m_c/poss} {insert} with r_c, {PRONOUN/m_c/subject} can't help but wonder if parenthood is what {PRONOUN/m_c/subject} really {VERB/m_c/want/wants}.",
             "In the quiet of the nursery, in the nest they've spent so long preparing, m_c and r_c welcome a {insert}.",
             "With {PRONOUN/m_c/poss} {insert} mewling at {PRONOUN/m_c/poss} belly, m_c's long pregnancy has finally given {PRONOUN/m_c/object} and r_c the expansion to their family they've been hoping and waiting for.",
             "Even with r_c by {PRONOUN/m_c/poss} side, m_c doesn't feel ready to be a parent of this {insert}. But {PRONOUN/m_c/subject} {VERB/m_c/promise/promises} to the tiny flailing limbs by {PRONOUN/m_c/poss} side that {PRONOUN/m_c/subject}'ll do {PRONOUN/m_c/poss} best. {PRONOUN/m_c/subject/CAP} {VERB/m_c/swear/swears} it on StarClan itself.",
@@ -138,7 +138,7 @@
         ],
         "outside_mate": [
             "m_c wishes that r_c was here in the Clan to see their new {insert}. m_c hopes that {PRONOUN/r_c/subject} will return soon.",
-			      "As m_c looks over {PRONOUN/m_c/poss} new {insert}, {PRONOUN/m_c/subject} {VERB/m_c/hope/hopes} r_c won't miss out on too much of their kithood, if {PRONOUN/r_c/subject} ever {VERB/r_c/return/returns}...",
+			"As m_c looks over {PRONOUN/m_c/poss} new {insert}, {PRONOUN/m_c/subject} {VERB/m_c/hope/hopes} r_c won't miss out on too much of their kithood, if {PRONOUN/r_c/subject} ever {VERB/r_c/return/returns}...",
             "m_c hoped that r_c would return to c_n before {PRONOUN/m_c/subject} gave birth to their {insert}, but sadly that didn't happen..."
         ],
         "both_unmated_pos": [
@@ -158,28 +158,28 @@
             "The newly arrived {insert} that m_c has just given birth to looks suspiciously like r_c. ",
             "No one wants to ruin such a happy occasion, but... it doesn't take a genius to notice how m_c's {insert} looks suspiciously like r_c...",
             "Ever since the birth, rumor's gone around that m_c's {insert} belongs to r_c and, while no one wants to confirm anything, no one really has to when the evidence is mewling right there...",
-			      "r_c adamantly denies that m_c's newly born {insert} belongs to {PRONOUN/r_c/object} when questioned, but it's hard to believe {PRONOUN/r_c/object} when they're so similar...",
-			      "Everyone in the Clan can see that m_c's {insert} clearly looks like r_c... rc_mate has been glaring at {PRONOUN/r_c/object} and m_c ever since the {insert} was born.",
-			      "rc_mate has been demanding answers from r_c ever since m_c's {insert} was born. The {insert} looks far too much like r_c!"
+			"r_c adamantly denies that m_c's newly born {insert} belongs to {PRONOUN/r_c/object} when questioned, but it's hard to believe {PRONOUN/r_c/object} when they're so similar...",
+			"Everyone in the Clan can see that m_c's {insert} clearly looks like r_c... rc_mate has been glaring at {PRONOUN/r_c/object} and m_c ever since the {insert} was born.",
+			"rc_mate has been demanding answers from r_c ever since m_c's {insert} was born. The {insert} looks far too much like r_c!"
         ],
         "affair_secret": [
             "m_c secretly had a {insert} with r_c.",
             "m_c hopes that {PRONOUN/m_c/poss} {insert} doesn't look too much like r_c, otherwise questions might follow.",
-			      "rc_mate refuses to believe any of the rumors about m_c's new {insert} belonging to {PRONOUN/rc_mate/poss} mate, r_c, even if there is a strong resemblance.",
+			"rc_mate refuses to believe any of the rumors about m_c's new {insert} belonging to {PRONOUN/rc_mate/poss} mate, r_c, even if there is a strong resemblance.",
             "r_c goes to visit m_c in the nursery with {PRONOUN/m_c/poss} new {insert}, on a completely innocent mission to deliver food to the new parent."
         ],
         "affair_mated": [
-			      "mc_mate is such a wonderful cat, deserving of being a parent... so why does m_c's {insert} look more like r_c instead?",
-			      "Everyone in the Clan can see that m_c's {insert} clearly looks like r_c... mc_mate has been glaring at {PRONOUN/m_c/object} and r_c ever since the {insert} was born.",
-			      "mc_mate has been demanding answers from m_c ever since the {insert} was born. The {insert} looks way too much like r_c!",
+			"mc_mate is such a wonderful cat, deserving of being a parent... so why does m_c's {insert} look more like r_c instead?",
+			"Everyone in the Clan can see that m_c's {insert} clearly looks like r_c... mc_mate has been glaring at {PRONOUN/m_c/object} and r_c ever since the {insert} was born.",
+			"mc_mate has been demanding answers from m_c ever since the {insert} was born. The {insert} looks way too much like r_c!",
             "m_c can see it, mc_mate can see it, r_c can see it, everyone in c_n can see how the new {insert} looks a bit too much like r_c for it to be coincidence..."
         ],
         "affair_mated_secret": [
-			      "m_c secretly had a {insert} with r_c instead of mc_mate.",
-			      "mc_mate refuses believe any of the rumors about m_c's new {insert} belonging to r_c, even if there is a strong resemblance.",
-			      "m_c stresses the fact that the new {insert} looks so much like mc_mate to avoid raising suspicion of them having r_c's features.",
-			      "mc_mate happily crawls into the nursery to see m_c and the new {insert}, completely unaware that this {insert} is m_c's and r_c's.",
-			      "Watching mc_mate look over {PRONOUN/m_c/poss} new {insert}, m_c silently vows to make sure that {PRONOUN/mc_mate/subject} never {VERB/mc_mate/find/finds} out that this {insert} is actually r_c's.",
+			"m_c secretly had a {insert} with r_c instead of mc_mate.",
+			"mc_mate refuses believe any of the rumors about m_c's new {insert} belonging to r_c, even if there is a strong resemblance.",
+			"m_c stresses the fact that the new {insert} looks so much like mc_mate to avoid raising suspicion of them having r_c's features.",
+			"mc_mate happily crawls into the nursery to see m_c and the new {insert}, completely unaware that this {insert} is m_c's and r_c's.",
+			"Watching mc_mate look over {PRONOUN/m_c/poss} new {insert}, m_c silently vows to make sure that {PRONOUN/mc_mate/subject} never {VERB/mc_mate/find/finds} out that this {insert} is actually r_c's.",
             "m_c feels guilty about hiding that {PRONOUN/m_c/poss} new {insert} is r_c's, but mc_mate was looking forward to this birth as much as {PRONOUN/m_c/subject} {VERB/m_c/were/was}, so why come clean and spoil it?"
         ],
         "affair_mated_samesex": [
