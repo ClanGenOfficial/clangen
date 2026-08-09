@@ -452,7 +452,7 @@
     "r_c": {
         "age": [
           "kitten",
-          "adolecent"
+          "adolescent"
         ]
       },
     "relationships": [
@@ -503,12 +503,12 @@
   "event_text": "m_c is left flustered when r_c says {PRONOUN/m_c/subject} {VERB/m_c/are/is} as pretty as snowfall.",
   "m_c": {
       "age": [
-        "adolecent"
+        "adolescent"
       ]
   },
   "r_c": {
       "age": [
-        "adolecent"
+        "adolescent"
       ]
     },
   "relationships": [
