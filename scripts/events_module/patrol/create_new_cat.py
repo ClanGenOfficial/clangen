@@ -4,10 +4,11 @@ from random import choice, randint, getrandbits, choices, random
 from scripts.cat.cats import Cat
 from scripts.cat.constants import INJURIES, ILLNESSES, PERMANENT, BACKSTORIES
 from scripts.cat.enums import CatRank, CatAge, CatGroup, CatStanding, CatSocial
+from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.names import names
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath, Skill
-from scripts.cat.status import StatusDict
+from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan import OtherClan
@@ -97,7 +98,7 @@ def updated_create_new_cat(
     num_of_cats = randint(2, 6) if is_litter else 1
 
     for i in range(num_of_cats):
-        created_cat = Cat(
+        created_cat = NewCatFactory.create_cat(
             status_dict=status,
             moons=moons,
             gender=gender,

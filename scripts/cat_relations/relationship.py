@@ -79,7 +79,7 @@ class Relationship:
             self.cat_to.relationships[self.cat_from.ID] = relation
             self.opposite_relationship = relation
 
-    def relationship_qualifies(self, qualifying_values: dict) -> bool:
+    def relationship_qualifies(self, qualifying_values: dict[RelType, int]) -> bool:
         """
         Returns True if this relationship's rel_types are within the given value and the maximum possible values (-100 for negative values, 100 for positive values)
         :param qualifying_values: Dict of the needed values. Key should be the rel_type name and value should be the lowest required int (i.e. if you give a value of -40, the associated rel_type must be between -100 and -40. If you give a value of 40, the associated rel_type must be between 40 and 100.)
