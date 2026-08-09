@@ -14,6 +14,6 @@ jobs:
       issues: write
     steps:
       - name: Assign user or unassign inactive self-assigned issue
-        uses: takanome-dev/assign-issue-action@v2.1.1
+        uses: takanome-dev/assign-issue-action@v3
         with:
           github_token: '${{ secrets.GITHUB_TOKEN }}'
