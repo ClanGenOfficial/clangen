@@ -8,7 +8,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat import save_load
-from scripts.cat.cats import Cat, create_cat
+from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup
 from scripts.cat.names import names
 from scripts.cat.status import Status

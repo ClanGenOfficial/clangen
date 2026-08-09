@@ -1,7 +1,7 @@
 from collections import defaultdict
 from itertools import groupby
 from random import choice, choices
-from typing import TypedDict, Optional, List, Dict
+from typing import Optional
 
 from scripts.cat.enums import CatRank, CatSocial, CatStanding, CatAge, CatGroup
 from scripts.game_structure import game
@@ -754,25 +754,3 @@ class Status:
                 return True
 
         return False
-
-
-class StatusDict(TypedDict, total=False):
-    """
-    Dict containing:
-
-    "group_history": list[dict],
-    "standing_history": list[dict],
-    "social": CatSocial,
-    "group": CatGroup
-    "rank": CatRank
-    "age": CatAge
-
-    Dict does not need to contain all keys. However, if you have no group history, then you must include a rank or age
-    """
-
-    group_history: Optional[List[Dict]]
-    standing_history: Optional[List[Dict]]
-    social: Optional[CatSocial]
-    group_ID: Optional[str]
-    rank: Optional[CatRank]
-    age: Optional[CatAge]
