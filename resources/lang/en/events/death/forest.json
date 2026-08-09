@@ -382,7 +382,7 @@
         ],
         "season": [],
         "frequency": 1,
-        "event_text": "m_c wanders out of camp alone. When c_n finds {PRONOUN/m_c/object}, even r_c can't reconize {PRONOUN/m_c/object}.",
+        "event_text": "m_c wanders out of camp alone. When c_n finds {PRONOUN/m_c/object}, even r_c can't recognize {PRONOUN/m_c/object}.",
         "m_c": {
             "age": [
                 "kitten"

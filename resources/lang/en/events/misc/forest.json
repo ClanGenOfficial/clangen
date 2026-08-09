@@ -442,7 +442,7 @@
       "leaf-bare"
     ],
     "frequency": 3,
-    "event_text": "m_c is about to slide down the side of the gully when r_c snatches the bark under {PRONOUN/m_c/object}. m_c yells at r_c as {PRONOUN/r_c/subject} {VERB/r_c/slide/slides} down.",
+    "event_text": "m_c is about to slide down the side of the gully when r_c snatches the bark from under {PRONOUN/m_c/object}. m_c yells at r_c as {PRONOUN/r_c/subject} {VERB/r_c/slide/slides} down.",
     "m_c": {
         "age": [
           "kitten",
@@ -500,10 +500,10 @@
     "leaf-bare"
   ],
   "frequency": 2,
-  "event_text": "m_c is left flustered when r_c says {PRONOUN/m_c/subject} {VERB/m_c/are/is} as pretty as snow-fall.",
+  "event_text": "m_c is left flustered when r_c says {PRONOUN/m_c/subject} {VERB/m_c/are/is} as pretty as snowfall.",
   "m_c": {
       "age": [
-        "adolescent"
+        "adolecent"
       ]
   },
   "r_c": {

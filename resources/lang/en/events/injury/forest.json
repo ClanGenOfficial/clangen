@@ -898,8 +898,8 @@
     "history": [
         {
             "cats": ["m_c"],
-            "scar": "m_c was scarred after breaking {PRONOUN/m_c/subject} leg.",
-            "death": "m_c died from complications caused by {PRONOUN/m_c/subject} broken leg."
+            "scar": "m_c was scarred after breaking {PRONOUN/m_c/poss} leg.",
+            "death": "m_c died from complications caused by {PRONOUN/m_c/poss} broken leg."
         }
     ]
    
@@ -913,7 +913,7 @@
         "-leaf-bare"
     ],
     "frequency": 1,
-    "event_text": "m_c stumbles while playing outside of camp and falls in, later complaining about head pain.",
+    "event_text": "m_c stumbles while playing outside and falls into camp, later complaining about head pain.",
     "m_c": {
         "age": [
             "-newborn",
