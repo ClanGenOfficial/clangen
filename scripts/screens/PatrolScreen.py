@@ -688,9 +688,7 @@ class PatrolScreen(Screens):
             get_button_dict(ButtonStyles.ICON_TAB_TOP, (34, 34)),
             object_id="@buttonstyles_icon_tab_top",
             starting_height=2,
-            anchors={
-                "bottom": "bottom",
-                "bottom_target": self.elements["able_frame"]},
+            anchors={"bottom": "bottom", "bottom_target": self.elements["able_frame"]},
             manager=MANAGER,
         )
         self.elements["next_page"] = UISurfaceImageButton(
@@ -699,10 +697,7 @@ class PatrolScreen(Screens):
             get_button_dict(ButtonStyles.ICON_TAB_TOP, (34, 34)),
             object_id="@buttonstyles_icon_tab_top",
             starting_height=2,
-            anchors={
-                "bottom": "bottom",
-                "bottom_target": self.elements["able_frame"]
-            },
+            anchors={"bottom": "bottom", "bottom_target": self.elements["able_frame"]},
             manager=MANAGER,
         )
 

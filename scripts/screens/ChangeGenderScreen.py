@@ -474,7 +474,7 @@ class ChangeGenderScreen(Screens):
 
             # the "add" button
             self.addbuttons[dict_name_core] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((-59,0), (56, 28))),
+                ui_scale(pygame.Rect((-59, 0), (56, 28))),
                 "screens.change_gender.add_button",
                 get_button_dict(ButtonStyles.SQUOVAL, (56, 28)),
                 object_id="@buttonstyles_squoval",
