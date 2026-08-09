@@ -395,8 +395,8 @@ class Sprites:
         # pulls the defaults from the pose_sprite_data.json file
         sprites_x = self.sheet_layout[0]
         sprites_y = self.sheet_layout[1]
-        i = 0
         for name, patches in combos.items():
+            i = 0
             for y in range(sprites_y):
                 for x in range(sprites_x):
                     if i in self.empty_indexes:
