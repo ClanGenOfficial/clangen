@@ -1,47 +1,83 @@
 import os
 import unittest
+from random import Random
+
 import ujson
 
 from scripts.cat.enums import CatRank
+from scripts.cat.factories.test_cat_factory import TestCatFactory
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-from scripts.cat.cats import Cat
 from scripts.conditions import medicine_cats_can_cover_clan
+
+cat_factory = TestCatFactory()
 
 
 class TestsMedCondition(unittest.TestCase):
     def test_fulfilled(self):
-        cat1 = Cat(moons=20, status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
-        med = Cat(
-            moons=20, status_dict={"rank": CatRank.MEDICINE_CAT}, disable_random=True
+        cat1 = cat_factory.create_cat(
+            moons=20,
+            status_dict={"rank": CatRank.WARRIOR},
+            disable_random=True,
+        )
+        med = cat_factory.create_cat(
+            moons=20,
+            status_dict={"rank": CatRank.MEDICINE_CAT},
+            disable_random=True,
         )
 
         all_cats = [cat1, med]
         self.assertTrue(medicine_cats_can_cover_clan(all_cats, 15))
 
     def test_fulfilled_many_cats(self):
-        cat1 = Cat(moons=20, status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
-        cat2 = Cat(moons=20, status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
-        cat3 = Cat(moons=20, status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
-        cat4 = Cat(moons=20, status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
-
-        med1 = Cat(
-            moons=20, status_dict={"rank": CatRank.MEDICINE_CAT}, disable_random=True
+        cat1 = cat_factory.create_cat(
+            moons=20,
+            status_dict={"rank": CatRank.WARRIOR},
+            disable_random=True,
         )
-        med2 = Cat(
-            moons=20, status_dict={"rank": CatRank.MEDICINE_CAT}, disable_random=True
+        cat2 = cat_factory.create_cat(
+            moons=20,
+            status_dict={"rank": CatRank.WARRIOR},
+            disable_random=True,
+        )
+        cat3 = cat_factory.create_cat(
+            moons=20,
+            status_dict={"rank": CatRank.WARRIOR},
+            disable_random=True,
+        )
+        cat4 = cat_factory.create_cat(
+            moons=20,
+            status_dict={"rank": CatRank.WARRIOR},
+            disable_random=True,
+        )
+
+        med1 = cat_factory.create_cat(
+            moons=20,
+            status_dict={"rank": CatRank.MEDICINE_CAT},
+            disable_random=True,
+        )
+        med2 = cat_factory.create_cat(
+            moons=20,
+            status_dict={"rank": CatRank.MEDICINE_CAT},
+            disable_random=True,
         )
 
         all_cats = [cat1, cat2, cat3, cat4, med1, med2]
         self.assertTrue(medicine_cats_can_cover_clan(all_cats, 2))
 
     def test_injured_fulfilled(self):
-        cat1 = Cat(moons=20, status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
+        cat1 = cat_factory.create_cat(
+            moons=20,
+            status_dict={"rank": CatRank.WARRIOR},
+            disable_random=True,
+        )
 
-        med = Cat(
-            moons=20, status_dict={"rank": CatRank.MEDICINE_CAT}, disable_random=True
+        med = cat_factory.create_cat(
+            moons=20,
+            status_dict={"rank": CatRank.MEDICINE_CAT},
+            disable_random=True,
         )
         med.injuries["small cut"] = {"severity": "minor"}
 
@@ -49,10 +85,16 @@ class TestsMedCondition(unittest.TestCase):
         self.assertTrue(medicine_cats_can_cover_clan(all_cats, 15))
 
     def test_illness_fulfilled(self):
-        cat1 = Cat(moons=20, status_dict={"rank": CatRank.WARRIOR}, disable_random=True)
+        cat1 = cat_factory.create_cat(
+            moons=20,
+            status_dict={"rank": CatRank.WARRIOR},
+            disable_random=True,
+        )
 
-        med = Cat(
-            moons=20, status_dict={"rank": CatRank.MEDICINE_CAT}, disable_random=True
+        med = cat_factory.create_cat(
+            moons=20,
+            status_dict={"rank": CatRank.MEDICINE_CAT},
+            disable_random=True,
         )
         med.illnesses["running nose"] = {"severity": "minor"}
 

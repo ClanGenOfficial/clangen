@@ -28,3 +28,4 @@ class Herb(Enum):
     plantain = "plantain"
     catmint = "catmint"
     honey = "honey"
+    yew_berries = "yew_berries"
