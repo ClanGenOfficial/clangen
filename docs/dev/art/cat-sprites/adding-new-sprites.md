@@ -72,7 +72,8 @@ The pose `DATA` sheet is also unique.
 
 ## Adding Combination Patches
 
-You can now combine and layer patches for more unique variations. To add a new patch combination locate sprites/dicts/white_patches_combos.json. 
+### White Patches
+You can now combine and layer patches for more unique variations. To add a new patch combination locate `sprites/dicts/white_patches_combos.json`. 
 
 Each patch combination is added to a list that dictates the size of the combined patch and how it is inherited. For example, some `little` patches combined may still be categorized as `little` or, if they cover enough of the cat, they could be added as a `mid` patch instead. Use your best judgment in sorting.
 
@@ -95,4 +96,12 @@ Here is an example of what that looks as a full part of the dictionary. Since we
 }
 ```
 
-Enjoy adding new patch combinations!
+### Tortie Patches
+
+Adding tortie combinations is very similar to white patch combos, but a little bit less complex as we don't need to worry about size categories. To add a new patch combination locate `sprites/dicts/tortie_patches_combos.json`. 
+
+This file has a dictionary in it, you can add new combinations by adding dictionary entries in the following format:
+
+```"NAME": ["PATCH", "PATCH"]```
+
+The `NAME` is what the new combination patch will be known as in the save file information. You list the various patches being combined to create it.
