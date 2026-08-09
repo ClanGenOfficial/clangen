@@ -83,7 +83,9 @@ Make sure you have access to `Linux Files` before you proceed.
 ### Downloading
 
 !!! tip
-     If you downloaded ClanGen previously, use the command `rm -r Clangen` first to get rid of the previous install. Your ClanGen saves should transfer to the new download automatically, but if you're unsure, follow the backups tab.
+     Remember to utilize autocomplete by pressing your Tab key. It'll complete or correct the commands/file paths for you.
+     
+If you downloaded ClanGen previously, use the command `rm -r Clangen` first to get rid of the previous install. Your ClanGen saves should transfer to the new download automatically, but if you're unsure, follow the backups tab.
 
 Open the Linux terminal/terminal app.
 
@@ -117,8 +119,6 @@ After you check on your Linux files, open or go back to your terminal. Type in t
 
 If you renamed the folder, the first Clangen as shown in the example should reflect the folder you renamed. If you renamed it to ClangenDev, for example, `./ClangenDev/Clangen`. Capitalization is important for this command.
 
-!!!tip
-      chromeOS also provides autocomplete for commands. You can use your Tab key to complete or correct the file path for you.
 
 ---
 
