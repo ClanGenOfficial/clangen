@@ -53,7 +53,14 @@
             "LIME": "green",
             "SAND": "yellow",
             "PERIWINKLE": "blue",
-            "WILDFIRE": "yellow"
+            "WILDFIRE": "yellow",
+			"WALNUT": "yellow",
+			"SWAMP": "green",
+			"ALGAE": "green",
+			"STORM": "blue"
+		},
+	    {
+	        "PERIDOT": "green"
 	}
 
     ]
