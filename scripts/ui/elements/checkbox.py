@@ -32,13 +32,21 @@ class UICheckbox(UIImageButton):
         anchors=None,
     ):
         self.checked = check
-
         relative_rect = ui_scale(pygame.Rect(position, (34, 34)))
 
+        self.checkmark = UIImageButton(
+            ui_scale(pygame.Rect(position, (34, 34))),
+            "",
+            object_id="@checked",
+            starting_height=2,
+        )
+
         if check:
-            object_id = "@checked_checkbox"
+            self.checkmark.show()
+            object_id="@checkbox"
         else:
-            object_id = "@unchecked_checkbox"
+            self.checkmark.hide()
+            object_id = "@checkbox"
 
         super().__init__(
             relative_rect=relative_rect,
@@ -55,22 +63,22 @@ class UICheckbox(UIImageButton):
     def toggle(self):
         if self.checked:
             self.uncheck()
+            self.checkmark.hide()
         elif not self.checked:
             self.check()
+            self.checkmark.show()
 
     def check(self):
         """
         switches the checkbox into the "checked" state
         """
         self.checked = True
-        self.change_object_id("@checked_checkbox")
 
     def uncheck(self):
         """
         switches the checkbox into the "unchecked" state
         """
         self.checked = False
-        self.change_object_id("@unchecked_checkbox")
 
     def hover_point(self, hover_x: float, hover_y: float) -> bool:
         """
