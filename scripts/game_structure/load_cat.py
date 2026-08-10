@@ -81,11 +81,11 @@ def json_load():
 
         except KeyError as e:
             if "ID" in cat_dict:
-                key = f" ID #{cat_dict['ID']} "
+                text = i18n.t("screens.start.error_cat_missing_id", id=cat_dict["ID"], key=e)
             else:
-                key = f" at index {i} "
+                text = i18n.t("screens.start.error_cat_missing_no_id", i=i, key=e)
             switch_set_value(
-                Switch.error_message, f"Cat{key}in clan_cats.json is missing {e}!"
+                Switch.error_message, text
             )
             switch_set_value(Switch.traceback, e)
             raise
@@ -141,14 +141,14 @@ def csv_load(all_cats):
         ):
             switch_set_value(
                 Switch.error_message,
-                "CSV Clans are no longer supported. Please use an external tool to update your Clan to the modern format.",
+                i18n.t("screens.start.error_csv"),
             )
         elif os.path.exists(
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "cats.txt"
         ):
             switch_set_value(
                 Switch.error_message,
-                "TXT Clans are no longer supported. Please use an external tool to update your Clan to the modern format.",
+                i18n.t("screens.start.error_txt"),
             )
         raise FileNotFoundError
 
