@@ -624,7 +624,7 @@ class Clan:
             self.load_clan_txt()
         else:
             switch_set_value(
-                Switch.error_message, i18n.t("screens.start.error_clan_json_text")
+                Switch.error_message, "There was an error loading the clan.json"
             )
 
         # can't put this in post initialization bc guide isn't made before that func
@@ -659,7 +659,7 @@ class Clan:
                 self.all_other_clans.append(OtherClan())
             return
         switch_set_value(
-            Switch.error_message, i18n.t("screens.start.error_clan_txt_text")
+            Switch.error_message, "There was an error loading the clan.txt"
         )
         with open(
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.txt",
@@ -845,7 +845,7 @@ class Clan:
             return
 
         switch_set_value(
-            Switch.error_message, i18n.t("screens.start.error_clan_json_text")
+            Switch.error_message, "There was an error loading the clan.json"
         )
         filename = (
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "/clan.json"
