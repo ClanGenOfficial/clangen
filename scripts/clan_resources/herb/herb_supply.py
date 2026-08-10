@@ -820,7 +820,7 @@ class HerbSupply:
         # create and append log message
         message = i18n.t(
             "conditions.herbs.herb_used",
-            herb=i18n.t("general.article", noun=str(self.herb[herb_used].name)),
+            herb=i18n.t("general.article", noun=str(self.herb[herb_used].name), count=amount_used),
             condition=condition,
             effect=effect_message,
         )
