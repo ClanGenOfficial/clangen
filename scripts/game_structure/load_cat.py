@@ -45,7 +45,10 @@ def load_cats():
         json_load()
     except FileNotFoundError:
         csv_load(Cat.all_cats)
-
+    except Exception:
+        Cat.all_cats.clear()
+        Cat.all_cats_list.clear()
+        raise
 
 def json_load():
     Cat.all_cats.clear()
@@ -233,6 +236,9 @@ def version_convert(version_info):
             for death in c.history.died_by:
                 if death["text"] == "multi_lives":
                     # skip these as changing them will break stuff
+                    continue
+                if death["text"].startswith("m_c lost a life"):
+                    # skip these as it duplicates the existing death text
                     continue
                 death["text"] = (
                     "m_c lost a life when {PRONOUN/m_c/subject} " + death["text"]
