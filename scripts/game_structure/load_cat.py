@@ -120,7 +120,7 @@ def json_load():
             )
             switch_set_value(
                 Switch.error_message,
-                f"There was an error loading relationships for cat #{cat}.",
+                i18n.t("screens.start.error_relationships_text", cat=cat)
             )
             switch_set_value(Switch.traceback, e)
             raise
