@@ -135,7 +135,7 @@ def csv_load(all_cats):
     if switch_get_value(Switch.clan_list)[0].strip() == "":
         return
     else:
-        switch_set_value(Switch.error_message, "Can't find clan_cats.json")
+        switch_set_value(Switch.error_message, i18n.t("screens.start.error_no_clan_json"))
         if os.path.exists(
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "cats.csv"
         ):
