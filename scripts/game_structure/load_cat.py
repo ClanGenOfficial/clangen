@@ -50,6 +50,7 @@ def load_cats():
         Cat.all_cats_list.clear()
         raise
 
+
 def json_load():
     Cat.all_cats.clear()
     Cat.all_cats_list.clear()
