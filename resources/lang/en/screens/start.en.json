@@ -10,8 +10,8 @@
         "error_clan_txt_text": "There was an error loading the clan.txt",
         "error_relationships_text": "There was an error loading relationships for cat %{cat}.",
         "error_no_clan_json": "Can't find clan_cats.json",
-        "error_cat_missing_id": "Cat ID #%{id} at is missing %{key}!",
-        "error_cat_missing_no_id": "Cat at index #%{i} is missing %{key}!",
+        "error_cat_missing_id": "Cat ID #%{id} at is missing %{json_key}!",
+        "error_cat_missing_no_id": "Cat at index #%{i} is missing %{json_key}!",
         "error_csv": "CSV Clans are no longer supported. Please use an external tool to update your Clan to the modern format.",
         "error_txt": "TXT Clans are no longer supported. Please use an external tool to update your Clan to the modern format."
     }

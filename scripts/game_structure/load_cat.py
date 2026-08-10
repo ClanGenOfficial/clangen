@@ -86,10 +86,10 @@ def json_load():
         except KeyError as e:
             if "ID" in cat_dict:
                 text = i18n.t(
-                    "screens.start.error_cat_missing_id", id=cat_dict["ID"], key=e
+                    "screens.start.error_cat_missing_id", id=cat_dict["ID"], json_key=e
                 )
             else:
-                text = i18n.t("screens.start.error_cat_missing_no_id", i=i, key=e)
+                text = i18n.t("screens.start.error_cat_missing_no_id", i=i, json_key=e)
             switch_set_value(Switch.error_message, text)
             switch_set_value(Switch.traceback, e)
             raise
