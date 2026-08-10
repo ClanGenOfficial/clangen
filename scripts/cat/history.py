@@ -606,10 +606,15 @@ class History:
         elif death:
             return self.died_by
 
+
 MENTOR_FACET_INFLUENCE_TEXT = None
+
 
 def load_mentor_facet_influence_strings():
     global MENTOR_FACET_INFLUENCE_TEXT
-    MENTOR_FACET_INFLUENCE_TEXT = load_lang_resource("cat/mentor_facet_influence_strings.json")
+    MENTOR_FACET_INFLUENCE_TEXT = load_lang_resource(
+        "cat/mentor_facet_influence_strings.json"
+    )
+
 
 load_mentor_facet_influence_strings()
