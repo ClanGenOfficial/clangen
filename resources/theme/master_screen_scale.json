@@ -1379,7 +1379,7 @@
         "prototype": "@image_button",
         "images": {
             "normal_image": {
-                "path": "resources\/images\/buttons\/checkmark_on.png"
+                "path": "resources\/images\/buttons\/checkmark.png"
             },
             "hovered_image": {
                 "path": "resources\/images\/buttons\/checkmark_on_hover.png"
@@ -1412,7 +1412,7 @@
     "@checked_checkbox_smalltooltip": {
         "images": {
             "normal_image": {
-                "path": "resources\/images\/buttons\/checkmark_on.png"
+                "path": "resources\/images\/buttons\/checkmark.png"
             },
             "hovered_image": {
                 "path": "resources\/images\/buttons\/checkmark_on_hover.png"
