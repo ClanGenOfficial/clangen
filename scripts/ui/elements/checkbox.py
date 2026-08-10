@@ -37,7 +37,7 @@ class UICheckbox(UIImageButton):
         self.checked = check
         relative_rect = ui_scale(pygame.Rect(position, (34, 34)))
 
-        object_id = "@unchecked_checkbox"
+        object_id = "@checkbox"
 
         super().__init__(
             relative_rect=relative_rect,
@@ -51,18 +51,21 @@ class UICheckbox(UIImageButton):
             anchors=anchors,
         )
 
+        checkmark = pygame.transform.scale(
+            image_cache.load_image(
+                "resources/images/buttons/checkmark.png"
+            ).convert_alpha(),
+            ui_scale_dimensions((34, 34)),
+        )
         # Creates the checkmark image that gets layered on top of the checkbox when checked
         self.checkmark = UIModifiedImage(
             ui_scale(relative_rect),
-            pygame.transform.scale(
-                image_cache.load_image(f"resources/images/buttons/checkmark.png"),
-                ui_scale_dimensions((34, 34)),
-            ),
+            checkmark,
             container=container,
             manager=manager,
-            starting_height=2,
+            starting_height=3,
             visible=False,
-            anchors=anchors,
+            anchors=anchors
         )
 
     def toggle(self):
