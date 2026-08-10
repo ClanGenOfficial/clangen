@@ -126,13 +126,9 @@
         "view_cruel_cards": "View Cruel Cards",
         "randomize_prefix_tooltip": "Randomize the prefix",
         "randomize_suffix_tooltip": "Randomize the suffix",
-        "cruel_card_limit_title": "Cruel Card Limit",
-        "cruel_card_conflict_title": "Cruel Card Conflict",
+        "cruel_cards_limit_title": "Cruel Card Limit",
         "cruel_locked_action_title": "Cruel Locked Action",
         "game_over_title": "Game Over",
-        "freshkill_management_title": "Freshkill Management",
-        "no_mediators_title": "No Mediators",
-        "deck_list_conflict": "Error: Adding these cards would cause a card conflict.",
-        "deck_list_limit": "Error: This deck would put you over the %{amount} card limit."
+        "freshkill_management_title": "Freshkill Management"
     }
 }

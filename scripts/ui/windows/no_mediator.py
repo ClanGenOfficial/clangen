@@ -1,6 +1,5 @@
 import pygame
 import pygame_gui
-import i18n
 
 from scripts.game_structure import game
 from scripts.game_structure.game.switches import (
@@ -20,7 +19,7 @@ class NoMediatorsWindow(GameWindow):
     def __init__(self):
         super().__init__(
             ui_scale(pygame.Rect((250, 200), (300, 170))),
-            window_display_title="windows.no_mediators_title",
+            window_display_title="No Mediators",
             click_outside_to_close=False,
         )
 

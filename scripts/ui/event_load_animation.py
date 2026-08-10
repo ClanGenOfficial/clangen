@@ -1,7 +1,5 @@
 import threading
 import time
-
-import i18n
 import pygame
 import pygame_gui
 
@@ -18,7 +16,7 @@ class EventLoadingAnimation(GameWindow):
 
         super().__init__(
             ui_scale(pygame.Rect(pos, (100, 100))),
-            window_display_title="windows.game_over_title",
+            window_display_title="Game Over",
             object_id="#loading_window",
             back_button=False,
         )
