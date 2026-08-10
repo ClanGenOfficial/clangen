@@ -1425,7 +1425,7 @@
     "@unchecked_checkbox_smalltooltip": {
         "images": {
             "normal_image": {
-                "path": "resources\/images\/buttons\/tiny_box.png"
+                "path": "resources\/images\/buttons\/tiny_box_normal.png"
             },
             "hovered_image": {
                 "path": "resources\/images\/buttons\/tiny_box_hover.png"

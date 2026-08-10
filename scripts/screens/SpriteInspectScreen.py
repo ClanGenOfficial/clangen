@@ -99,7 +99,7 @@ class SpriteInspectScreen(Screens):
                     self.scars_shown = True
 
                 self.make_cat_image()
-                self.update_checkboxes()
+                self.checkboxes["scars_shown"].toggle()
             elif event.ui_element == self.checkboxes["acc_shown"]:
                 if self.acc_shown:
                     self.acc_shown = False
@@ -107,7 +107,7 @@ class SpriteInspectScreen(Screens):
                     self.acc_shown = True
 
                 self.make_cat_image()
-                self.update_checkboxes()
+                self.checkboxes["acc_shown"].toggle()
             elif event.ui_element == self.checkboxes["show_as_living"]:
                 if self.override_dead_lineart:
                     self.override_dead_lineart = False
@@ -115,7 +115,7 @@ class SpriteInspectScreen(Screens):
                     self.override_dead_lineart = True
 
                 self.make_cat_image()
-                self.update_checkboxes()
+                self.checkboxes["show_as_living"].toggle()
             elif event.ui_element == self.checkboxes["show_as_healthy"]:
                 if self.override_not_working:
                     self.override_not_working = False
@@ -123,7 +123,7 @@ class SpriteInspectScreen(Screens):
                     self.override_not_working = True
 
                 self.make_cat_image()
-                self.update_checkboxes()
+                self.checkboxes["show_as_healthy"].toggle()
             elif event.ui_element == self.cat_elements["favourite_button"]:
                 self.the_cat.favourite = not self.the_cat.favourite
                 self.cat_elements["favourite_button"].change_object_id(
@@ -359,7 +359,7 @@ class SpriteInspectScreen(Screens):
             manager=MANAGER,
             check=self.override_not_working,
         )
-        if not self.the_cat.not_working:
+        if not self.the_cat.not_working():
             self.checkboxes["show_as_healthy"].disable()
 
     def make_one_checkbox(
