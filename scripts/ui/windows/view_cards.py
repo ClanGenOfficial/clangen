@@ -2,6 +2,7 @@ import pygame
 import pygame_gui
 from pygame_gui.core import UIContainer
 from pygame_gui.elements import UIAutoResizingContainer, UIImage
+import i18n
 
 from scripts.game_structure import constants, game, image_cache
 from scripts.game_structure.screen_settings import MANAGER
