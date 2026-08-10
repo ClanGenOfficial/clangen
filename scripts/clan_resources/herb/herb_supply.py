@@ -822,7 +822,7 @@ class HerbSupply:
         herb = self.herb[herb_used]
         herb_display = i18n.t(
             "general.article",
-            noun=i18n.t(f"conditions.herbs. {herb.name}", count=amount_used),
+            noun=i18n.t(f"conditions.herbs.{herb.name}", count=amount_used),
         )
 
         message = i18n.t(
