@@ -8,11 +8,6 @@
         "error_gethelp": "Please join the Discord server and ask for technical support. We'll be happy to help! Please include the error message and the traceback below (if available).<br><a href=\"https://discord.gg/clangen\">Discord</a>",
         "error_clan_json_text": "There was an error loading the clan.json",
         "error_clan_txt_text": "There was an error loading the clan.txt",
-        "error_relationships_text": "There was an error loading relationships for cat %{cat}.",
-        "error_no_clan_json": "Can't find clan_cats.json",
-        "error_cat_missing_id": "Cat ID #%{id} at is missing %{json_key}!",
-        "error_cat_missing_no_id": "Cat at index #%{i} is missing %{json_key}!",
-        "error_csv": "CSV Clans are no longer supported. Please use an external tool to update your Clan to the modern format.",
-        "error_txt": "TXT Clans are no longer supported. Please use an external tool to update your Clan to the modern format."
+        "error_relationships_text": "There was an error loading relationships for cat %{cat}."
     }
 }

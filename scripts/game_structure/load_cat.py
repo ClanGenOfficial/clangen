@@ -45,10 +45,6 @@ def load_cats():
         json_load()
     except FileNotFoundError:
         csv_load(Cat.all_cats)
-    except Exception:
-        Cat.all_cats.clear()
-        Cat.all_cats_list.clear()
-        raise
 
 
 def json_load():
@@ -85,12 +81,12 @@ def json_load():
 
         except KeyError as e:
             if "ID" in cat_dict:
-                text = i18n.t(
-                    "screens.start.error_cat_missing_id", id=cat_dict["ID"], json_key=e
-                )
+                key = f" ID #{cat_dict['ID']} "
             else:
-                text = i18n.t("screens.start.error_cat_missing_no_id", i=i, json_key=e)
-            switch_set_value(Switch.error_message, text)
+                key = f" at index {i} "
+            switch_set_value(
+                Switch.error_message, f"Cat{key}in clan_cats.json is missing {e}!"
+            )
             switch_set_value(Switch.traceback, e)
             raise
 
@@ -124,7 +120,7 @@ def json_load():
             )
             switch_set_value(
                 Switch.error_message,
-                i18n.t("screens.start.error_relationships_text", cat=cat),
+                f"There was an error loading relationships for cat #{cat}.",
             )
             switch_set_value(Switch.traceback, e)
             raise
@@ -139,22 +135,20 @@ def csv_load(all_cats):
     if switch_get_value(Switch.clan_list)[0].strip() == "":
         return
     else:
-        switch_set_value(
-            Switch.error_message, i18n.t("screens.start.error_no_clan_json")
-        )
+        switch_set_value(Switch.error_message, "Can't find clan_cats.json")
         if os.path.exists(
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "cats.csv"
         ):
             switch_set_value(
                 Switch.error_message,
-                i18n.t("screens.start.error_csv"),
+                "CSV Clans are no longer supported. Please use an external tool to update your Clan to the modern format.",
             )
         elif os.path.exists(
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "cats.txt"
         ):
             switch_set_value(
                 Switch.error_message,
-                i18n.t("screens.start.error_txt"),
+                "TXT Clans are no longer supported. Please use an external tool to update your Clan to the modern format.",
             )
         raise FileNotFoundError
 
@@ -239,9 +233,6 @@ def version_convert(version_info):
             for death in c.history.died_by:
                 if death["text"] == "multi_lives":
                     # skip these as changing them will break stuff
-                    continue
-                if death["text"].startswith("m_c lost a life"):
-                    # skip these as it duplicates the existing death text
                     continue
                 death["text"] = (
                     "m_c lost a life when {PRONOUN/m_c/subject} " + death["text"]
