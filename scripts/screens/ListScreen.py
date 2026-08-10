@@ -725,7 +725,9 @@ class ListScreen(Screens):
 
         first = i18n.t(f"screens.leader_den.{first_temper}")
         second = i18n.t(f"screens.leader_den.{second_temper}")
-        temper = i18n.t("screens.leader_den.clan_temper", first_temper=first, second_temper=second)
+        temper = i18n.t(
+            "screens.leader_den.clan_temper", first_temper=first, second_temper=second
+        )
 
         return i18n.t("screens.list.temper", group=group, temper=temper)
 
