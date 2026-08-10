@@ -122,6 +122,8 @@
 
         },
         "cruel_locked_action": "This action is locked by one or more Cruel Season cards that are currently in play.",
+        "deck_list_conflict": "Error: Adding these cards would cause a card conflict.",
+        "deck_list_limit": "Error: This deck would put you over the %{amount} card limit.",
         "randomize_prefix_tooltip": "Randomize the prefix",
         "randomize_suffix_tooltip": "Randomize the suffix"
     }
