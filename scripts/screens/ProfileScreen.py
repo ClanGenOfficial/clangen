@@ -1086,7 +1086,7 @@ class ProfileScreen(Screens):
             if "recovering from birth" in the_cat.injuries:
                 output += i18n.t(
                     "utility.exclamation",
-                    text="conditions.injuries.recovering from birth"
+                    text="conditions.injuries.recovering from birth",
                 )
             elif "pregnant" in the_cat.injuries:
                 output += i18n.t(

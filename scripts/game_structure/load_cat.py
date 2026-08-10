@@ -85,12 +85,12 @@ def json_load():
 
         except KeyError as e:
             if "ID" in cat_dict:
-                text = i18n.t("screens.start.error_cat_missing_id", id=cat_dict["ID"], key=e)
+                text = i18n.t(
+                    "screens.start.error_cat_missing_id", id=cat_dict["ID"], key=e
+                )
             else:
                 text = i18n.t("screens.start.error_cat_missing_no_id", i=i, key=e)
-            switch_set_value(
-                Switch.error_message, text
-            )
+            switch_set_value(Switch.error_message, text)
             switch_set_value(Switch.traceback, e)
             raise
 
@@ -124,7 +124,7 @@ def json_load():
             )
             switch_set_value(
                 Switch.error_message,
-                i18n.t("screens.start.error_relationships_text", cat=cat)
+                i18n.t("screens.start.error_relationships_text", cat=cat),
             )
             switch_set_value(Switch.traceback, e)
             raise
@@ -139,7 +139,9 @@ def csv_load(all_cats):
     if switch_get_value(Switch.clan_list)[0].strip() == "":
         return
     else:
-        switch_set_value(Switch.error_message, i18n.t("screens.start.error_no_clan_json"))
+        switch_set_value(
+            Switch.error_message, i18n.t("screens.start.error_no_clan_json")
+        )
         if os.path.exists(
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "cats.csv"
         ):
