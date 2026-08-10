@@ -2,7 +2,10 @@ import pygame
 from pygame_gui.core import IContainerLikeInterface
 
 from scripts.ui.elements.image_button import UIImageButton
-from scripts.ui.scale import ui_scale
+from scripts.ui.elements.modified_image import UIModifiedImage
+from scripts.game_structure.screen_settings import MANAGER
+from scripts.game_structure import image_cache
+from scripts.ui.scale import ui_scale, ui_scale_dimensions
 
 
 class UICheckbox(UIImageButton):
@@ -34,19 +37,8 @@ class UICheckbox(UIImageButton):
         self.checked = check
         relative_rect = ui_scale(pygame.Rect(position, (34, 34)))
 
-        self.checkmark = UIImageButton(
-            ui_scale(pygame.Rect(position, (34, 34))),
-            "",
-            object_id="@checked",
-            starting_height=2,
-        )
+        object_id="@checkbox"
 
-        if check:
-            self.checkmark.show()
-            object_id="@checkbox"
-        else:
-            self.checkmark.hide()
-            object_id = "@checkbox"
 
         super().__init__(
             relative_rect=relative_rect,
@@ -57,6 +49,20 @@ class UICheckbox(UIImageButton):
             visible=visible,
             manager=manager,
             object_id=object_id,
+            anchors=anchors,
+        )
+
+        # Creates the checkmark image that gets layered on top of the checkbox when checked
+        self.checkmark = UIModifiedImage(
+            ui_scale(relative_rect),
+            pygame.transform.scale(
+                image_cache.load_image(f"resources/images/buttons/checkmark.png"),
+                ui_scale_dimensions((34, 34)),
+            ),
+            container=container,
+            manager=manager,
+            starting_height=2,
+            visible=False,
             anchors=anchors,
         )
 
@@ -73,12 +79,14 @@ class UICheckbox(UIImageButton):
         switches the checkbox into the "checked" state
         """
         self.checked = True
+        self.checkmark.show()
 
     def uncheck(self):
         """
         switches the checkbox into the "unchecked" state
         """
         self.checked = False
+        self.checkmark.hide()
 
     def hover_point(self, hover_x: float, hover_y: float) -> bool:
         """
