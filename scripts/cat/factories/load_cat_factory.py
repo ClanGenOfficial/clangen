@@ -127,10 +127,10 @@ class LoadCatFactory(BaseCatFactory):
 
         # Unfortunately, these two have to be handled *after* the creation of the cat
         # because of the horrible nested cat. fixme.
-
-        cat.history = cls._convert_history(
-            kwargs.get("died_by", []), kwargs.get("scar_event", []), cat=cat
-        )
+        if "died_by" in kwargs or "scar_event" in kwargs:
+            cat.history = cls._convert_history(
+                kwargs.get("died_by", []), kwargs.get("scar_event", []), cat=cat
+            )
         cat.name = Name(
             prefix=kwargs["name_prefix"],
             suffix=kwargs["name_suffix"],
@@ -214,7 +214,7 @@ class LoadCatFactory(BaseCatFactory):
         :return: A dict of the keys needed to build the pelt
         """
         eye_colour, eye_colour2 = cls._convert_eye_color(
-            kwargs["eye_colour"], kwargs.get("eye_color2")
+            kwargs["eye_colour"], kwargs.get("eye_colour2")
         )
 
         if isinstance(kwargs.get("tint"), str) and kwargs.get("tint").lower() == "none":

@@ -16,8 +16,8 @@ from typing import Literal
 import i18n
 import ujson
 
-from scripts.cat.cats import Cat, cat_class, BACKSTORIES
-from scripts.cat.enums import CatRank, CatGroup, CatSocial
+from scripts.cat.cats import Cat, BACKSTORIES
+from scripts.cat.enums import CatRank, CatGroup, CatSocial, CatCompatibility
 from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.factories.enums import CatType
 from scripts.cat.names import names
@@ -539,7 +539,7 @@ class Clan:
             "starting_season": self.starting_season,
             "temperament": self.temperament,
             "just_died": game.just_died,
-            "dead_cats_to_grieve": [x.ID for x in game.dead_cats_to_grieve],
+            "dead_cats_to_grieve": [x.ID for x in game.dead_cats_to_grieve if x],
             "grief_to_assign": game.clan.grief_strings,
             "version_name": SAVE_VERSION_NUMBER,
             "version_commit": get_version_info().version_number,
@@ -805,11 +805,23 @@ class Clan:
             for _ in range(number_other_clans):
                 self.all_other_clans.append(OtherClan())
 
+        missing_cats = []
         for cat in members:
             if cat in Cat.all_cats:
                 game.clan.add_cat(Cat.all_cats[cat])
             else:
-                print("WARNING: Cat not found:", cat)
+                missing_cats.append(cat)
+        if missing_cats:
+            error = ValueError(
+                f"clan.txt references {len(missing_cats)} cat(s) missing from "
+                f"the cat file: {', '.join(missing_cats)}"
+            )
+            switch_set_value(
+                Switch.error_message,
+                "Some cats in this save could not be loaded! Please check the cat file for missing cats.",
+            )
+            switch_set_value(Switch.traceback, error)
+            raise error
         self.load_pregnancy(game.clan)
 
         # assigning a symbol, since this save would be too old to have a chosen symbol
@@ -987,11 +999,23 @@ class Clan:
                         OtherClan(name, int(relation), temper, symbol)
                     )
 
+        missing_cats = []
         for cat in clan_data["clan_cats"].split(","):
             if cat in Cat.all_cats:
                 game.clan.add_cat(Cat.all_cats[cat])
             else:
-                print("WARNING: Cat not found:", cat)
+                missing_cats.append(cat)
+        if missing_cats:
+            error = ValueError(
+                f"clan.json references {len(missing_cats)} cat(s) missing from "
+                f"clan_cats.json: {', '.join(missing_cats)}"
+            )
+            switch_set_value(
+                Switch.error_message,
+                "Some cats in this save could not be loaded! Please check the cat file for missing cats.",
+            )
+            switch_set_value(Switch.traceback, error)
+            raise error
         if "war" in clan_data:
             game.clan.war = clan_data["war"]
 
@@ -1016,7 +1040,9 @@ class Clan:
         # Cats who need to be grieved
         if "dead_cats_to_grieve" in clan_data:
             game.dead_cats_to_grieve = [
-                Cat.fetch_cat(x) for x in clan_data["dead_cats_to_grieve"]
+                cat
+                for x in clan_data["dead_cats_to_grieve"]
+                if (cat := Cat.fetch_cat(x))
             ]
 
         # Cats who are gonna grieve
@@ -1703,6 +1729,31 @@ class Afterlife:
         if not num_of_influencers:
             return 0
         return total // num_of_influencers
+
+    def get_compatibility(self, cat: Cat) -> CatCompatibility:
+        """
+        Returns the afterlife's personality compatibility with the given cat.
+        """
+        differences = [
+            abs(self.lawfulness - cat.personality.lawfulness),
+            abs(self.sociability - cat.personality.sociability),
+            abs(self.aggression - cat.personality.aggression),
+            abs(self.stability - cat.personality.stability),
+        ]
+
+        running_total = 0
+        for x in differences:
+            if x <= 4:
+                running_total += 1
+            elif x >= 6:
+                running_total -= 1
+
+        if running_total >= 2:
+            return CatCompatibility.POSITIVE
+        elif running_total <= -2:
+            return CatCompatibility.NEGATIVE
+        else:
+            return CatCompatibility.NEUTRAL
 
 
 def get_temper_alignment(

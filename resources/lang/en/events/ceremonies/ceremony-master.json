@@ -849,14 +849,16 @@
     [
       "apprentice",
       "yes_mentor",
-      "general_parents",
+      "alive1_parents",
       "yes_leader",
       "general_backstory",
       "quiet",
       "nervous",
-      "skittish"
+      "skittish",
+      "all_traits"
     ],
-    "(old_name) wants to sob at the thought of being anything but a kit, comforted by {PRONOUN/m_c/poss} mother and littermates. Nevertheless, {PRONOUN/m_c/subject} {VERB/m_c/step/steps} up before {PRONOUN/m_c/poss} leader, {VERB/m_c/take/takes} the name m_c, and {VERB/m_c/are/is} apprenticed to (mentor)."
+    "(old_name) wants to sob at the thought of being anything but a kit, comforted by p1 and the smells of the nursery. Nevertheless, {PRONOUN/m_c/subject} {VERB/m_c/step/steps} up before {PRONOUN/m_c/poss} leader, {VERB/m_c/take/takes} the name m_c, and {VERB/m_c/are/is} apprenticed to (mentor)."
+
   ],
   "app_56":[
     [
@@ -875,7 +877,7 @@
     [
       "apprentice",
       "yes_mentor",
-      "general_parents",
+      "alive1_parents",
       "yes_leader",
       "general_backstory",
       "nervous",
@@ -883,7 +885,8 @@
       "quiet",
       "all_traits"
     ],
-    "(old_name) is so focused on the leader, when {PRONOUN/m_c/poss} mother nudges {PRONOUN/m_c/object} forward, {PRONOUN/m_c/subject} {VERB/m_c/yelp/yelps}. With much embarrassment, the newly-apprenticed m_c touches noses with (mentor)."
+
+    "(old_name) is so focused on the leader, when p1 nudges {PRONOUN/m_c/object} forward, {PRONOUN/m_c/subject} {VERB/m_c/yelp/yelps}. With much embarrassment, the newly-apprenticed m_c touches noses with (mentor)."
   ],
   "app_58":[
     [

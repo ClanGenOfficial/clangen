@@ -108,7 +108,7 @@
         "priority": "<b>Prioritize</b>",
         "freshkill_help_tooltip": "The Clan will catch some amount of prey over each timeskip, but successful hunting patrols are the most important source of freshkill. Freshkill can't be stored endlessly: after three moons, prey will rot and will be discarded. Cats under 3 moons with a parent (queen) taking care of them won't need food. Cats will only display here if their hunger status is less than stuffed!<br><br>Ranks are fed in the following order, from lowest to highest. Each rank lists how much prey they will need for a moon.",
         "nutrition_text": "nutrition: %{nutrition_text}",
-        "freshkill_pile_tooltip": "<b>Current amount:</b> %{current_prey_amount} pieces  -  <b>Needed amount:</b> %{needed_amount} pieces",
+        "freshkill_pile_tooltip": "<b>Current amount:</b> %{current_prey_amount} pieces  -  <b>Needed amount:</b> %{needed_amount} pieces<br><b>Expiring soon:</b> %{expiring_amount} pieces  -  <b>Estimated catch per moon:</b> %{expected_amount} pieces",
         "no_hungry_cats": "No cats are in need of food.",
         "herb_help_tooltip": "The medicine cats will gather herbs each timeskip and treat their patients. Older herbs may expire during timeskip and will be cleared out of the supply. <br><br>Gathered, used, and expired herbs will be reported in this log. To see more information about the Clan's herb supply and sick/injured cats, check the medicine cat den.",
         "no_mediators": "The Clan has no mediators!",
@@ -131,6 +131,8 @@
         "cruel_locked_action_title": "Cruel Locked Action",
         "game_over_title": "Game Over",
         "freshkill_management_title": "Freshkill Management",
-        "no_mediators_title": "No Mediators"
+        "no_mediators_title": "No Mediators",
+        "deck_list_conflict": "Error: Adding these cards would cause a card conflict.",
+        "deck_list_limit": "Error: This deck would put you over the %{amount} card limit."
     }
 }
