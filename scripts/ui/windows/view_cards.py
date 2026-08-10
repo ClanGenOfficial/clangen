@@ -18,7 +18,7 @@ class ViewCardsWindow(GameWindow):
     def __init__(self):
         super().__init__(
             ui_scale(pygame.Rect((160, 95), (480, 510))),
-            window_display_title=i18n.t("windows.view_cruel_cards"),
+            window.display_title="windows.view_cruel_cards"
         )
 
         self.elements = {}

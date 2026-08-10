@@ -19,7 +19,7 @@ class CruelCardConflicts(GameWindow):
     def __init__(self, new_card: str, chosen_cards: list):
         super().__init__(
             ui_scale(pygame.Rect((200, 240), (400, 200))),
-            window_display_title=i18n.t("windows.cruel_card_conflict_title"),
+            window.display_title="windows.cruel_card_conflict_title"
         )
 
         self.new_card = new_card

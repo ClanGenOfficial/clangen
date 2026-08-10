@@ -18,7 +18,7 @@ class EventLoadingAnimation(GameWindow):
 
         super().__init__(
             ui_scale(pygame.Rect(pos, (100, 100))),
-            window_display_title=i18n.t("windows.game_over_title"),
+            window.display_title="windows.game_over_title"
             object_id="#loading_window",
             back_button=False,
         )
