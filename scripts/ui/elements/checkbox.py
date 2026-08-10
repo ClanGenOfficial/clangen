@@ -37,7 +37,7 @@ class UICheckbox(UIImageButton):
         self.checked = check
         relative_rect = ui_scale(pygame.Rect(position, (34, 34)))
 
-        object_id="@checkbox"
+        object_id="@unchecked_checkbox"
 
 
         super().__init__(
