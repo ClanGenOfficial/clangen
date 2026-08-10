@@ -32,7 +32,7 @@ class FreshkillManagementWindow(GameWindow):
     def __init__(self):
         super().__init__(
             ui_scale(pygame.Rect((125, 150), (550, 420))),
-            window.display_title="window.freshkill_management_title"
+            window_display_title="window.freshkill_management_title"
         )
         # this needs to be here to prevent a crash
         # don't ask me WHY it crashes, i couldn't figure it out. i think it's a pygui issue.
