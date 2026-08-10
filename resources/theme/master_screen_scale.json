@@ -1375,7 +1375,7 @@
             "selected_image": {"path": "resources\/images\/alert_mark.png"}
         }
     },
-    "@checked": {
+    "@checked_checkbox": {
         "prototype": "@image_button",
         "images": {
             "normal_image": {
@@ -1392,7 +1392,7 @@
             }
         }
     },
-    "@checkbox": {
+    "@unchecked_checkbox": {
         "prototype": "@image_button",
         "images": {
             "normal_image": {
