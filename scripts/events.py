@@ -35,7 +35,7 @@ from scripts.conditions import (
 from scripts.event_class import Single_Event
 
 from scripts.events_module.generate_events import GenerateEvents, generate_events
-from scripts.events_module.relationship.outsider_events import OutsiderEvents
+from scripts.events_module.outsider.outsider_events import OutsiderEvents
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.events_module.relationship import relation_events
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
