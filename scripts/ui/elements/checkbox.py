@@ -120,3 +120,9 @@ class UICheckbox(UIImageButton):
         return bool(self.rect.collidepoint(hover_x, hover_y)) and bool(
             container_clip_rect.collidepoint(hover_x, hover_y)
         )
+
+    def exit_screen(self):
+        self.checkmark.kill()
+        del self.checkmark
+        super().kill()
+        super().exit_screen()
