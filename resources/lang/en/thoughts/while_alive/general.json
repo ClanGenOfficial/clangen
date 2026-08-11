@@ -312,7 +312,8 @@
             "Wonders if {PRONOUN/m_c/subject} could kill a fox all by {PRONOUN/m_c/self}",
             "Daydreams about slaughtering every cat {PRONOUN/m_c/subject} {VERB/m_c/despise/despises}",
             "Shreds {PRONOUN/m_c/poss} bedding absentmindedly",
-            "Admires {PRONOUN/m_c/poss} own claws"
+            "Admires {PRONOUN/m_c/poss} own claws",
+            "Is thinking about a bug {PRONOUN/m_c/subject} dissected"
         ],
         "involved_cats": {
             "m_c": {
@@ -1165,7 +1166,8 @@
             "Practices bird calls",
             "Befriends a pebble",
             "Rolls around in flowers",
-            "Sneezes eleven times in a row"
+            "Sneezes eleven times in a row",
+            "Is thinking about a bug {PRONOUN/m_c/subject} dissected"
         ],
         "involved_cats": {
             "m_c": {
