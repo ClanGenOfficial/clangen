@@ -1288,11 +1288,6 @@ class ProfileScreen(Screens):
             if app_history:
                 life_history.append(app_history)
 
-            # Get mentorship text if it exists
-            mentor_history = self.get_mentorship_text()
-            if mentor_history:
-                life_history.append(mentor_history)
-
             # now go get the scar history and add that if any exists
             body_history = []
             scar_history = self.get_scar_text()
@@ -1601,31 +1596,6 @@ class ProfileScreen(Screens):
         apprenticeship_history = influence_history + " " + graduation_history
         apprenticeship_history = process_text(apprenticeship_history, cat_dict)
         return apprenticeship_history
-
-    def get_mentorship_text(self):
-        """
-
-        returns full list of previously mentored apprentices.
-
-        """
-
-        text = ""
-        # Doing this is two steps
-        all_real_apprentices = [
-            str(Cat.fetch_cat(i).name)
-            for i in self.the_cat.former_apprentices
-            if isinstance(Cat.fetch_cat(i), Cat)
-        ]
-        if all_real_apprentices:
-            text = i18n.t(
-                "cat.history.mentored",
-                apprentices=adjust_list_text(all_real_apprentices),
-            )
-            cat_dict = {"m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))}
-
-            text = process_text(text, cat_dict)
-
-        return text
 
     def get_death_text(self):
         """

@@ -35,7 +35,7 @@ from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
-from scripts.cat.skills import CatSkills, scale_progress
+from scripts.cat.skills import CatSkills, SkillPath, scale_progress
 from scripts.cat.status import Status
 from scripts.config import get_config
 from scripts.events_module.thoughts.generate_thoughts import (
@@ -335,14 +335,29 @@ class Cat:
                     is_kit=True,
                 )
             else:
+                cat_skills = self.skills.get_skill_dict()
                 if cat_default_afterlife_id == CatGroup.STARCLAN_ID:
                     affinity = self.starclan_affinity
+                    skill_match = SkillPath.STAR
+                    skill_conflict = SkillPath.DARK
+
                     afterlife_group = CatGroup.STARCLAN
                     rejected_ID = CatGroup.DARK_FOREST_ID
                 else:
                     affinity = self.dark_forest_affinity
+                    skill_match = SkillPath.DARK
+                    skill_conflict = SkillPath.STAR
+
                     afterlife_group = CatGroup.DARK_FOREST
                     rejected_ID = CatGroup.STARCLAN_ID
+
+                # scales with skill tier
+                affinity += get_config("affinity.skill_favor.match") * cat_skills.get(
+                    skill_match, 0
+                )
+                affinity += get_config(
+                    "affinity.skill_favor.conflict"
+                ) * cat_skills.get(skill_conflict, 0)
 
                 # afterlife does not like this cat
                 if affinity < 0:
@@ -876,6 +891,33 @@ class Cat:
             specsuffix_hidden=self.specsuffix_hidden,
             cat=self,
         )
+
+    def change_affinity(self, starclan_change: int = 0, dark_forest_change: int = 0):
+        """
+        Changes the starclan and dark forest affinity of the cat; applying additional modifiers based on the closeness of the cat's personality facets to the facets of the respective afterlife
+        :param starclan_change: The amount to change starclan affinity by
+        :param dark_forest_change: The amount to change dark forest affinity by
+        """
+        modifier = get_config("affinity.base_compatibility_multiplier")
+
+        if starclan_change:
+            compatibility = game.starclan.get_compatibility(self)
+
+            if compatibility == CatCompatibility.POSITIVE:
+                starclan_change += round(starclan_change * modifier)
+            elif compatibility == CatCompatibility.NEGATIVE:
+                starclan_change -= round(starclan_change * modifier)
+
+        if dark_forest_change:
+            compatibility = game.dark_forest.get_compatibility(self)
+
+            if compatibility == CatCompatibility.POSITIVE:
+                dark_forest_change += round(dark_forest_change * modifier)
+            elif compatibility == CatCompatibility.NEGATIVE:
+                dark_forest_change -= round(dark_forest_change * modifier)
+
+        self.starclan_affinity += starclan_change
+        self.dark_forest_affinity += dark_forest_change
 
     def manage_outside_trait(self):
         """To be run every moon on outside cats
