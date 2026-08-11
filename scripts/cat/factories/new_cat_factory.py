@@ -1,6 +1,6 @@
 import abc
 import random
-from typing import Tuple
+from typing import Tuple, Literal
 
 from abc import ABC, abstractmethod
 from scripts.cat import save_load
@@ -45,11 +45,8 @@ class NewCatFactory(BaseCatFactory, ABC):
             moons=overrides.get("moons"), status_dict=status_dict
         )
 
-        gender_dict = cls._get_random_gender_and_genderalign(age)
-        # if specified, override the randomizer
-        gender_dict["sex"] = overrides.get("gender", gender_dict["sex"])
-        gender_dict["genderalign"] = overrides.get(
-            "genderalign", gender_dict["genderalign"]
+        gender_dict = cls._get_random_gender_and_genderalign(
+            age, sex=overrides.get("gender"), genderalign=overrides.get("genderalign")
         )
 
         if pelt := overrides.get("pelt"):
@@ -239,17 +236,22 @@ class NewCatFactory(BaseCatFactory, ABC):
 
     @classmethod
     @abstractmethod
-    def _get_random_gender_and_genderalign(cls, age) -> dict:
+    def _get_random_gender_and_genderalign(cls, age, sex, genderalign) -> dict:
         gender = {
-            "sex": cls.rng.choice(("male", "female")),
+            "sex": sex if sex else cls.rng.choice(("male", "female")),
         }
-        gender["genderalign"] = gender["sex"]
+        gender["genderalign"] = genderalign if genderalign else gender["sex"]
+
+        if genderalign and "trans" in genderalign:
+            gender["sex"] = "female" if genderalign == "trans male" else "male"
+            return gender
 
         if age.is_baby():
             return gender
 
-        trans_chance = cls.rng.randint(0, 50)
-        nb_chance = cls.rng.randint(0, 75)
+        # TODO REVERT CHANGE
+        trans_chance = 1
+        nb_chance = 0
 
         if nb_chance == 1:
             gender["genderalign"] = "nonbinary"
