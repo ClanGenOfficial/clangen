@@ -2,7 +2,7 @@
     {
         "id": "group_3_neg_comfortdecrease",
         "strings": [
-            "m_c sees r_c1 neglect a r_c2.",
+            "m_c sees r_c1 neglect r_c2.",
             "m_c can't stop thinking about the way r_c1 glared at r_c2."
         ],
         "involved_cats": {
