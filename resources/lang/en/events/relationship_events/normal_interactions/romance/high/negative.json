@@ -194,8 +194,8 @@
         "id": "rom_dec_high_childishmate",
         "strings": [
             "m_c wishes r_c would just grow up.",
-            "m_c is unpleasantly reminded how simplistic r_c's view of the world is.",
-            "r_c's obnoxious sense of humor gets on m_c's nerves sometimes."
+            "m_c is unpleasantly reminded of how simplistic r_c's view of the world is.",
+            "r_c's obnoxious sense of humor gets on m_c's nerves."
         ],
         "relationship_changes": [
             {
@@ -385,7 +385,7 @@
     {
         "id": "rom_dec_high_insecuremate",
         "strings": [
-            "r_c's insecurity makes it hard for m_c to be around {PRONOUN/r_c/object} sometimes.",
+            "r_c's insecurity makes it hard for m_c to be around {PRONOUN/r_c/object} today.",
             "r_c snarls at m_c for something that was actually {PRONOUN/r_c/poss} fault.",
             "m_c feels exhausted by having to constantly reassure r_c that {PRONOUN/m_c/subject} {VERB/m_c/love/loves} {PRONOUN/r_c/object}."
         ],
