@@ -38,7 +38,7 @@ class TestCatFactory(NewCatFactory):
         return 0
 
     @classmethod
-    def _get_random_gender_and_genderalign(cls, age) -> dict:
+    def _get_random_gender_and_genderalign(cls, age, sex) -> dict:
         return {"sex": "female", "genderalign": "female"}
 
     @classmethod
