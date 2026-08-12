@@ -355,7 +355,7 @@
     {
         "id": "group_3_pos_reconsider",
         "strings": [
-            "The way r_c1 jumps to help r_c2 makes m_c think {PRONOUN/r_c/subject} might not be all that bad.",
+            "The way r_c1 jumps to help r_c2 makes m_c think {PRONOUN/r_c1/subject} might not be all that bad.",
             "m_c sees a more sympathetic side of r_c1 in how {PRONOUN/r_c1/subject} {VERB/r_c1/treat/treats} r_c2.",
             "m_c softens toward r_c1, seeing {PRONOUN/r_c1/object} interact with r_c2.",
             "m_c wants to apologize to r_c1 and finds {PRONOUN/r_c1/object} playing with r_c2."

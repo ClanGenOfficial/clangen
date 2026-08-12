@@ -172,7 +172,7 @@
         "id": "group_3_pos_helpful",
         "strings": [
             "r_c1 sends r_c2 to help m_c with something {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} struggling with.",
-            "r_c1 includes m_c1 in a conversation with r_c2 that m_c struggled to join.",
+            "r_c1 includes m_c in a conversation with r_c2 that m_c struggled to join.",
             "r_c1 and r_c2 pitch in to help m_c with a task."
         ],
         "involved_cats": {
