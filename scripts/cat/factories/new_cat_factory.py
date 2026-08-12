@@ -249,9 +249,8 @@ class NewCatFactory(BaseCatFactory, ABC):
         if age.is_baby():
             return gender
 
-        # TODO REVERT CHANGE
-        trans_chance = 1
-        nb_chance = 0
+        trans_chance = cls.rng.randint(0, 50)
+        nb_chance = cls.rng.randint(0, 75)
 
         if nb_chance == 1:
             gender["genderalign"] = "nonbinary"
