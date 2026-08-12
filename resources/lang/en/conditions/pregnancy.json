@@ -89,17 +89,17 @@
         " So many things could happen to m_c and {PRONOUN/m_c/poss} kits if {PRONOUN/m_c/subject} kept working. Worried by the consequences of continuing {PRONOUN/m_c/poss} duties too long, {PRONOUN/m_c/subject} {VERB/m_c/settle/settles} into the nursery."
     ],
     "minor_severity": [
-      " {PRONOUN/m_c/subject/CAP} won't be moving into the nursery just yet.",
-      " {PRONOUN/m_c/subject/CAP} {VERB/m_c/choose/chooses} to continue {PRONOUN/m_c/poss} duties as usual for now.",
-      " c_n wants to congratulate m_c, but the rising celebration is interrupted by m_c snapping, completely unprovoked, that this pregnancy doesn't make {PRONOUN/m_c/object} a wilting flower and {PRONOUN/m_c/subject} will not be moving {PRONOUN/m_c/poss} nest.",
-      " {PRONOUN/m_c/subject/CAP} {VERB/m_c/aren't/isn't} keen on being confined to the nursery just yet.",
-      " Life goes on for now. {PRONOUN/m_c/subject/CAP}'ll move into the nursery, but not this moon.",
-      " {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} still full of energy and moving to the nursery would feel stifling. Maybe next moon.",
-      " Surely it's not time to move into the nursery, though.",
-      " {PRONOUN/m_c/subject/CAP} couldn't imagine being trapped in the nursery yet and {VERB/m_c/insist/insists} {PRONOUN/m_c/subject} can keep working.",
-	  " {PRONOUN/m_c/subject/CAP} {VERB/m_c/dare/dares} any cat to force {PRONOUN/m_c/object} into that stuffy old nursery and, to {PRONOUN/m_c/poss} delight, no cat tries to. Maybe next moon, but not now.",
-	  " {PRONOUN/m_c/subject/CAP} wouldn't dare settle down and let others work while {PRONOUN/m_c/subject} rested! Things will continue as usual for now.",
-	  " There's so much that needs to be done! {PRONOUN/m_c/subject/CAP} just can't settle down yet!"
+        " {PRONOUN/m_c/subject/CAP} won't be moving into the nursery just yet.",
+        " {PRONOUN/m_c/subject/CAP} {VERB/m_c/choose/chooses} to continue {PRONOUN/m_c/poss} duties as usual for now.",
+        " c_n wants to congratulate m_c, but the rising celebration is interrupted by m_c snapping, completely unprovoked, that this pregnancy doesn't make {PRONOUN/m_c/object} a wilting flower and {PRONOUN/m_c/subject} will not be moving {PRONOUN/m_c/poss} nest.",
+        " {PRONOUN/m_c/subject/CAP} {VERB/m_c/aren't/isn't} keen on being confined to the nursery just yet.",
+        " Life goes on for now. {PRONOUN/m_c/subject/CAP}'ll move into the nursery, but not this moon.",
+        " {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} still full of energy and moving to the nursery would feel stifling. Maybe next moon.",
+        " Surely it's not time to move into the nursery, though.",
+        " {PRONOUN/m_c/subject/CAP} couldn't imagine being trapped in the nursery yet and {VERB/m_c/insist/insists} {PRONOUN/m_c/subject} can keep working.",
+	    " {PRONOUN/m_c/subject/CAP} {VERB/m_c/dare/dares} any cat to force {PRONOUN/m_c/object} into that stuffy old nursery and, to {PRONOUN/m_c/poss} delight, no cat tries to. Maybe next moon, but not now.",
+	    " {PRONOUN/m_c/subject/CAP} wouldn't dare settle down and let others work while {PRONOUN/m_c/subject} rested! Things will continue as usual for now.",
+	    " There's so much that needs to be done! {PRONOUN/m_c/subject/CAP} just can't settle down yet!"
   ],
     "comment": [
         "both the minor and major severity strings will appear in conjunction with either a litter guess or an announcement. Write them accordingly!",
