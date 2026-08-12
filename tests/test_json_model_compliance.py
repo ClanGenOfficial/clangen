@@ -6,6 +6,13 @@ from pathlib import Path
 
 import pytest
 
+from scripts.models.relationship_group_event.relationship_group_schema import (
+    RelationshipGroupEvent,
+)
+from scripts.models.relationship_pair_event.relationship_pair_schema import (
+    RelationshipPairEvent,
+)
+
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
@@ -60,6 +67,31 @@ def all_shortevent_files():
     )
 
 
+def pair_relationship_files():
+    """
+    Iterator for Paths for all relationship files
+    """
+
+    INCLUSION_GLOBS = [
+        "joining_interactions/*/*/*.json",
+        "normal_interactions/*/*/*.json",
+    ]
+
+    yield from chain.from_iterable(
+        RESOURCES_DIR.glob("lang/*/events/relationship_events/" + glob)
+        for glob in INCLUSION_GLOBS
+    )
+
+
+def group_relationship_files():
+    """
+    Iterator for Paths for all relationship files
+    """
+    yield from RESOURCES_DIR.glob(
+        "lang/*/events/relationship_events/group_interactions/*/*.json"
+    )
+
+
 @pytest.mark.parametrize(
     "thought_file",
     all_thought_files(),
@@ -88,6 +120,26 @@ def test_patrols(patrol_file: Path):
 def test_shortevents(shortevent_file: Path):
     """Test that all shortevent JSONs are correct according to the Pydantic models"""
     ShortEventSchema.model_validate_json(shortevent_file.read_text())
+
+
+@pytest.mark.parametrize(
+    "group_relationship_file",
+    group_relationship_files(),
+    ids=format_file_context_string,
+)
+def test_group_relationship_events(group_relationship_file: Path):
+    """Test that all group_relationship_file JSONs are correct according to the Pydantic models"""
+    RelationshipGroupEvent.model_validate_json(group_relationship_file.read_text())
+
+
+@pytest.mark.parametrize(
+    "pair_relationship_file",
+    pair_relationship_files(),
+    ids=format_file_context_string,
+)
+def test_pair_relationship_file_events(pair_relationship_file: Path):
+    """Test that all pair_relationship_file JSONs are correct according to the Pydantic models"""
+    RelationshipPairEvent.model_validate_json(pair_relationship_file.read_text())
 
 
 def test_points_of_interest():
