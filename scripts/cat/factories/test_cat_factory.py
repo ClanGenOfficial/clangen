@@ -39,7 +39,10 @@ class TestCatFactory(NewCatFactory):
 
     @classmethod
     def _get_random_gender_and_genderalign(cls, age, sex, genderalign) -> dict:
-        return {"sex": "female", "genderalign": "female"}
+        return {
+            "sex": sex if sex else "female",
+            "genderalign": genderalign if genderalign else "female",
+        }
 
     @classmethod
     def _get_random_personality(cls, age: CatAge):
