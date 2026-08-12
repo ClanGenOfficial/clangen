@@ -110,7 +110,7 @@ class TortiePatchToolWindow(GameWindow):
         )
 
         self.elements["saving_container"] = UIContainer(
-            ui_scale(pygame.Rect((40, 420), (300, 40))),
+            ui_scale(pygame.Rect((40, 420), (500, 40))),
             container=self,
             manager=MANAGER,
         )
@@ -211,6 +211,10 @@ class TortiePatchToolWindow(GameWindow):
     def save_combo(self):
         name = self.elements["name_entry"].get_text().upper().replace(" ", "_")
         selection = self.elements["patch_choice"].selected_list
+
+        if not name or not selection:
+            self.elements["save_text"].set_text("missing information...")
+            return
 
         path = "sprites/dicts/tortie_patches_combos.json"
         try:
