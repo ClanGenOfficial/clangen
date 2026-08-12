@@ -17505,7 +17505,7 @@
         "event_text": "When m_c returned from {POI/tag/tainted} smelling absolutely vile, r_c refused to share tongues with {PRONOUN/m_c/object} unless {PRONOUN/m_c/subject} took a swim. In return, m_c pulled r_c in with {PRONOUN/m_c/object}, and there was far more splashing about together than washing up.",
         "m_c": {
             "relationship_status": ["mates"],
-            "trait": ["adventurous", "confident", "daring", "rebellious", "childish", "flamboyant", "playful", "shameless", "troublesome"]
+            "trait": ["-bloodthirsty", "-cold", "-gloomy", "-grumpy", "-strict"]
         },
         "r_c": {
             "relationship_status": ["mates"]
