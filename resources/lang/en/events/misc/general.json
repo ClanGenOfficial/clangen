@@ -1146,6 +1146,28 @@
         ]
     },
     {
+        "event_id": "gen_misc_murderreveal_leaderdream1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "murder_reveal"
+        ],
+        "frequency": 2,
+        "event_text": "While deep in a dream, m_c is surrounded by images of blood spilled between Clanmates swirling around {PRONOUN/m_c/object}. When {PRONOUN/m_c/subject} {VERB/m_c/wake/wakes}, the visions fade, leaving behind unease and the certainty that mur_c's death was no accident.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "leader"
+            ]
+        }
+    },
+    {
         "event_id": "gen_misc_hiddenmurderreveal_medcat1",
         "location": [
             "any"
@@ -4708,7 +4730,7 @@
         ]
     },
     {
-        "event_id": "gen_misc_any_accessoryrookeryPOI1",
+        "event_id": "gen_misc_any_accessoryrookeryPOI2",
         "location": ["any"],
         "season": ["any"],
         "sub_type": ["accessory"],
@@ -15446,35 +15468,364 @@
      "r_c": {}
     },
     {
-    "event_id": "gen_misc_greenleaf_splashdate",
-    "location": ["any", "-desert"],
-    "season": ["greenleaf"],
-    "sub_type": [],
-    "tags": ["romance"],
-    "poi": {
-        "tags": ["water:flowing"]
+        "event_id": "gen_misc_greenleaf_splashdate",
+        "location": ["-desert"],
+        "season": ["greenleaf"],
+        "sub_type": [],
+        "tags": ["romance"],
+        "poi": {
+            "tags": ["water:flowing"]
+        },
+        "frequency": 4,
+        "event_text": "m_c and r_c spend sunhigh frolicking and splashing each other by {POI/tag/water:flowing} to cool off in the sweltering heat.",
+        "m_c": {
+            "age": ["adolescent", "young adult"]
+        },
+        "r_c": {
+            "age": ["adolescent", "young adult"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": true,
+                "values": ["romance"],
+                "amount": 10,
+                "log": {
+                        "cats_from": "cat_to and cat_from enjoyed splashing each other to beat the heat."
+                    }
+            }
+        ]
     },
-    "frequency": 4,
-    "event_text": "m_c and r_c spend sunhigh frolicking and splashing each other by {POI/tag/water:flowing} to cool off in the sweltering heat.",
-    "m_c": {
-        "age": ["adolescent", "young adult"]
-    },
-    "r_c": {
-        "age": ["adolescent", "young adult"]
-    },
-    "relationships": [
-        {
-            "cats_from": ["m_c"],
-            "cats_to": ["r_c"],
-            "mutual": true,
-            "values": ["romance"],
-            "amount": 10,
-            "log": {
-  "cats_from": "cat_to and cat_from enjoyed splashing each other to beat the heat."
+    {
+        "event_id": "gen_misc_taintedPOI_strange",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": ["tainted"]
+        },
+        "frequency": 1,
+        "event_text": "Most c_n cats find {POI/tag/tainted} a filthy, unpleasant part of the territory, but m_c finds a strange beauty in it.",
+        "m_c": {
+            "trait": ["strange"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["some_clan", "low_social", "low_stable"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": -8,
+                "log": {
+                    "cats_from": "cat_from saw cat_to lurking around a dangerous part of the territory and felt uneasy."
                 }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_birdsPOI_younglove",
+        "location": ["any"],
+        "season": ["newleaf"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": ["prey:flying"]
+        },
+        "frequency": 1,
+        "event_text": "m_c and r_c watch birds perform courtship rituals near {POI/tag/prey:flying} and talk loudly about how ridiculous lovers can be. Their Clanmates exchange glances.",
+        "m_c": {
+            "age": ["adolescent", "young adult"],
+            "relationship_status": ["fancies", "-mates"]
+        },
+        "r_c": {
+            "age": ["adolescent", "young adult"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["some_clan", "high_social", "-m_c", "-r_c"],
+                "cats_to": ["m_c", "r_c"],
+                "mutual": false,
+                "values": ["comfort", "like"],
+                "amount": 8,
+                "log": {
+                    "cats_from": "cat_from was amused by how unsubtle m_c and r_c's crushes on each other were becoming."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_treesPOI_senior",
+        "location": ["any"],
+        "season": ["leaf-fall"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": ["trees"]
+        },
+        "frequency": 1,
+        "event_text": "m_c watches the leaves change and fall from the branches of {POI/tag/trees}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wonder/wonders} if {PRONOUN/m_c/subject}'ll be around to see it again next year.",
+        "m_c": {
+            "age": ["senior"]
         }
-    ]
-},
+    },
+    {
+        "event_id": "gen_misc_treesPOI_apprentices",
+        "location": ["any"],
+        "season": ["greenleaf"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": ["trees"]
+        },
+        "frequency": 1,
+        "event_text": "m_c is dazzled by the greenery of {POI/tag/trees}. {PRONOUN/m_c/poss/CAP} first greenleaf is living up to its name.",
+        "m_c": {
+            "age": ["adolescent"]
+        }
+    },
+    {
+        "event_id": "gen_misc_waterstillPOI_daring",
+        "location": ["any"],
+        "season": ["leaf-bare"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": ["water:still"]
+        },
+        "frequency": 1,
+        "event_text": "m_c tests the thickness of the ice on {POI/tag/water:still}'s surface, hoping to go for a slide later.",
+        "m_c": {
+            "trait": ["daring", "bold", "troublesome", "rebellious", "arrogant", "adventurous", "competitive"]
+        }
+    },
+    {
+        "event_id": "gen_misc_twolegsabandonedPOI",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": ["Twolegs:abandoned"]
+        },
+        "frequency": 1,
+        "event_text": "m_c reports seeing a Twoleg near {POI/tag/Twolegs:abandoned}. The Clan worries that Twolegs may return to reclaim their creation.",
+        "m_c": {
+            "status": ["-kitten", "-elder", "-leader"]
+        }
+    },
+    {
+        "event_id": "gen_misc_twolegspresentPOI",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": ["Twolegs:present"]
+        },
+        "frequency": 1,
+        "event_text": "m_c and r_c lie in wait near {POI/tag/Twolegs:present}, hoping to snatch some scraps of Twoleg food.",
+        "m_c": {
+            "status": ["-kitten", "-elder"],
+            "trait": ["-strict", "-righteous", "-wise", "-careful", "-faithful"],
+            "relationship_status": ["considers", "relates_to"]
+        },
+        "r_c": {
+            "status": ["-kitten", "-elder"],
+            "trait": ["-strict", "-righteous", "-wise", "-careful", "-faithful"]
+        }
+    },
+    {
+        "event_id": "gen_misc_coveredPOI",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": ["romance"],
+        "poi": {
+            "tags": ["covered"]
+        },
+        "frequency": 1,
+        "event_text": "m_c and r_c get caught in a storm and shelter by {POI/tag/covered}. When they return to camp, they seem closer.",
+        "m_c": {
+            "status": ["-kitten"],
+            "relationship_status": ["-mates"]
+        },
+        "r_c": {
+            "status": ["-kitten"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": true,
+                "values": ["romance", "comfort"],
+                "amount": 8,
+                "log": {
+                    "cats_from": "While sheltering from a storm together, cat_from and cat_to felt a spark of connection."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_fallriskPOI_apps",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": ["fall_risk"]
+        },
+        "frequency": 1,
+        "event_text": "m_c and r_c yowl down {POI/tag/fall_risk}, trying to make their meows echo.",
+        "m_c": {
+            "status": ["apprentice"]
+        },
+        "r_c": {
+            "status": ["apprentice"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": true,
+                "values": ["comfort", "like"],
+                "amount": 8,
+                "log": {
+                    "cats_from": "cat_from and cat_to had fun yowling at the top of their lungs together."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_fallriskPOI_neardeath",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": ["fall_risk"]
+        },
+        "frequency": 1,
+        "event_text": "m_c has a near-death experience by {POI/tag/fall_risk}.",
+        "m_c": {}
+    },
+    {
+        "event_id": "gen_misc_sunningrocksPOI_mates",
+        "location": ["any"],
+        "season": ["greenleaf", "newleaf"],
+        "sub_type": [],
+        "tags": ["romance"],
+        "poi": {
+            "name": ["terrain_sunningrocks"]
+        },
+        "frequency": 1,
+        "event_text": "m_c and r_c spend a lazy day soaking up the sun at {POI/name/terrain_sunningrocks}.",
+        "m_c": {
+            "relationship_status": ["mates"]
+        },
+        "r_c": {},
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": true,
+                "values": ["romance", "comfort"],
+                "amount": 8,
+                "log": {
+                    "cats_from": "cat_from and cat_to sunned themselves together."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_wateroceanPOI_mates",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": ["romance"],
+        "poi": {
+            "tags": ["water:ocean"]
+        },
+        "frequency": 1,
+        "event_text": "m_c and r_c cozy up together by {POI/tag/water:ocean} and listen to the crash of waves.",
+        "m_c": {
+            "relationship_status": ["mates"]
+        },
+        "r_c": {},
+        "relationships": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "mutual": true,
+                "values": ["romance", "comfort"],
+                "amount": 8,
+                "log": {
+                    "cats_from": "cat_from and cat_to listened to the ocean together."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_hugeboulder_story",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "name": ["terrain_hugeboulder"]
+        },
+        "frequency": 1,
+        "event_text": "m_c tells the story of how {POI/name/terrain_hugeboulder} was once an enormous bear who hibernated so long it turned to stone.",
+        "m_c": {
+            "skill": ["STORY,2"]
+        }
+    },
+    {
+        "event_id": "gen_misc_windswepttree_story",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "name": ["terrain_windswepttree"]
+        },
+        "frequency": 1,
+        "event_text": "m_c tells the story of how {POI/name/terrain_windswepttree} has helped hold up the sky for so many generations that now it bends beneath the weight.",
+        "m_c": {
+            "skill": ["STORY,2"]
+        }
+    },
+    {
+        "event_id": "gen_misc_lake_story",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "name": ["terrain_lake"]
+        },
+        "frequency": 1,
+        "event_text": "m_c tells the story of how {POI/name/terrain_lake} was created when Silverpelt lost her footing in the night sky and left a pawprint in the earth. Generations of rainwater filled it to create {POI/name/terrain_lake}.",
+        "m_c": {
+            "skill": ["STORY,2"]
+        }
+    },
+    {
+        "event_id": "gen_misc_well_story",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "name": ["terrain_well"]
+        },
+        "frequency": 1,
+        "event_text": "m_c tells the story of how dogs won the favor of Twolegs when, many generations ago, a dog rescued a Twoleg from {POI/name/terrain_well}.",
+        "m_c": {
+            "skill": ["STORY,2"]
+        }
+    },
     {
     "event_id": "gen_misc_warhalfclanquestion1",
     "location": [
@@ -16452,5 +16803,839 @@
     "m_c": {
       "status": ["medicine cat apprentice"]
     }
-}
+},
+    {
+        "event_id": "gen_gathering_appbegging",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "gathering"
+        },
+        "event_text": "m_c won't stop asking r_c when it's {PRONOUN/m_c/poss} turn to join the Gathering at {POI/category/gathering}.",
+        "m_c": {
+            "status": [
+                "apprentice"
+            ],
+            "relationship_status": ["app/mentor"]
+        },
+        "r_c": {
+            "status": [
+                "warrior",
+                "leader",
+                "deputy"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_gathering_gossipprey",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "gathering"
+        },
+        "event_text": "During the Gathering at {POI/category/gathering}, m_c overhears that o_c_n is struggling to find prey.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_gathering_gossipherbs",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "gathering"
+        },
+        "event_text": "During the Gathering at {POI/category/gathering}, m_c overhears that o_c_n is suffering from a herb blight.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_gathering_gossipillness",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "gathering"
+        },
+        "event_text": "During the Gathering at {POI/category/gathering}, m_c overhears that o_c_n is dealing with a greencough outbreak.",
+        "m_c": {
+            "status": [
+                "apprentice",
+                "warrior"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_gathering_firstgatheringstory",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "gathering"
+        },
+        "event_text": "m_c gathers the Clan to tell a story about the first time the Clans convened for a Gathering at {POI/category/gathering}.",
+        "m_c": {
+            "skill": ["STORY,1", "LORE,1"]
+        }
+    },
+        {
+        "event_id": "gen_gathering_deputygossip",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "gathering"
+        },
+        "event_text": "m_c overhears some interesting gossip from the other deputies at {POI/category/gathering}.",
+        "m_c": {
+            "status": ["deputy"]
+        }
+    },
+    {
+        "event_id": "gen_moonplace_leadermeeting",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "As soon as m_c returns from {POI/category/moonplace}, {PRONOUN/m_c/subject} {VERB/m_c/visit/visits} r_c in {PRONOUN/r_c/poss} den for a private conversation.",
+        "m_c": {
+            "status": ["medicine cat"]
+        },
+        "r_c": {
+            "status": ["leader"]
+        }
+    },
+    {
+        "event_id": "gen_moonplace_shaken",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c seems shaken after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    },
+    {
+        "event_id": "gen_moonplace_disappointed",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c seems disappointed by StarClan's wisdom after a visit to {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    },
+    {
+        "event_id": "gen_moonplace_content",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c seems content after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    },
+    {
+        "event_id": "gen_moonplace_comforted",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c seems comforted by StarClan's wisdom after a visit to {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    },
+        {
+        "event_id": "gen_moonplace_determined",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c seems determined after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    },
+    {
+        "event_id": "gen_moonplace_gossip",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "poi": {
+            "category": "moonplace"
+        },
+        "event_text": "m_c overhears some interesting gossip from the other medicine cats at {POI/category/moonplace}.",
+        "m_c": {
+            "status": ["medicine cat"]
+        }
+    },
+    {
+        "event_id": "gen_misc_leader_starclan1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "event_text": "m_c dreams of r_c surrounded by swirling mist and light. {PRONOUN/r_c/subject/CAP} {VERB/r_c/are/is} silent, but the message is clear and comforting when m_c wakes.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "skill": [
+                "STAR,3"
+            ],
+            "status": [
+                "leader"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "leader"
+            ],
+            "group": [
+                "starclan"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "comfort"
+                ],
+                "amount": 4,
+                "log": {
+                    "cats_from": "cat_from felt comforted after dreaming of cat_to watching over their leadership."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_starclanparent_comfort1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "event_text": "m_c dreams of r_c in mist and light. {PRONOUN/r_c/poss/CAP} warmth encircles the two long enough for m_c to wake with the feeling lingering on {PRONOUN/m_c/poss} pelt.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "skill": [
+                "STAR,2"
+            ],
+            "status": [
+                "any"
+            ],
+            "relationship_status": [
+                "child/parent"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ],
+            "group": [
+                "starclan"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "comfort"
+                ],
+                "amount": 4,
+                "log": {
+                    "cats_from": "cat_from felt comforted after dreaming of cat_to."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_leader_darkforest1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "event_text": "m_c dreams of darkness and cold. A shudder rolls through {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} {VERB/m_c/notice/notices} r_c staring back at {PRONOUN/m_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/are/is} silent, ready to pounce. When m_c wakes, the unease lingers on {PRONOUN/m_c/poss} pelt, a reminder of the message received.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "skill": [
+                "DARK,3"
+            ],
+            "status": [
+                "leader"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "leader"
+            ],
+            "group": [
+                "dark_forest"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_misc_darkforestparent_taunt1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "event_text": "m_c dreams of r_c lurking in the shadows. Voices emerge from the dark and circle the two in bitter coldness. m_c wakes gasping, the words still crawling under {PRONOUN/m_c/poss} skin.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "skill": [
+                "DARK,2"
+            ],
+            "status": [
+                "any"
+            ],
+            "relationship_status": [
+                "child/parent"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ],
+            "group": [
+                "dark_forest"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_acc_appfeathers",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["accessory"],
+        "frequency": 3,
+        "event_text": "m_c returns to camp from a successful hunt, a bird clutched in {PRONOUN/m_c/poss} jaws and its feathers adorning {PRONOUN/m_c/poss} tail.",
+        "new_accessory": [
+            "RED FEATHERS",
+            "BLUE FEATHERS",
+            "JAY FEATHERS",
+            "GULL FEATHERS",
+            "SPARROW FEATHERS"
+        ],
+        "m_c": {
+            "status": ["apprentice"]
+        }
+    },
+    {
+    "event_id": "gen_misc_accessoryrookeryPOI3",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "tags": [],
+    "frequency": 3,
+    "poi": {
+    "name": ["terrain_rookery"]
+        },
+    "event_text": "m_c returns from a hunt at {POI/name/terrain_rookery}, adorned with some feathers from {PRONOUN/m_c/poss} catch.",
+    "new_accessory": ["BLUE FEATHERS","JAY FEATHERS"],
+    "m_c": {
+        "status": ["-kitten","-elder"]
+        }
+    },
+    {
+    "event_id": "gen_misc_accessoryrookeryPOI4",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "tags": [],
+    "frequency": 3,
+    "poi": {
+    "name": ["terrain_rookery"]
+    },
+    "event_text": "r_c returns from a hunt at {POI/name/terrain_rookery} and gifts some beautiful feathers from {PRONOUN/r_c/poss} catch to m_c.",
+    "new_accessory": ["BLUE FEATHERS","JAY FEATHERS"],
+    "m_c": {
+        "age": ["any"],
+        "dies": false
+    },
+    "r_c": {
+        "status": ["-newborn", "-kitten","-elder"],
+        "relationship_status": ["likes"],
+        "dies": false
+    },
+    "relationships": [
+        {
+            "cats_from": ["r_c"],
+            "cats_to": ["m_c"],
+            "mutual": true,
+            "values": ["like"],
+            "amount": 8,
+            "log": {
+                 "cats_from": "r_c gifted m_c feathers from a hunt."
+                }
+        }
+    ]
+},
+{
+    "event_id": "gen_misc_accessoryeaglenestPOI3",
+    "location": [],
+    "season": [],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 3,
+    "poi": {
+    "name": ["terrain_eaglenest"]
+    },
+    "event_text": "After a visit near {POI/name/terrain_eaglenest}, m_c returns to camp adorned with feathers.",
+    "new_accessory": ["SPARROW FEATHERS"],
+    "m_c": {
+        "status": ["-kitten","-elder"],
+        "dies": false
+    }
+},
+{
+    "event_id": "gen_misc_accessorygullcliffsPOI3",
+    "location": ["beach"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "tags": [],
+    "frequency": 3,
+    "poi": {
+    "name": ["terrain_gullcliffs"]
+    },
+    "event_text": "r_c returns from a hunt at {POI/name/terrain_gullcliffs} and gifts some beautiful feathers from {PRONOUN/r_c/poss} catch to m_c.",
+    "new_accessory": ["GULL FEATHERS"],
+    "m_c": {
+        "age": ["any"],
+        "dies": false
+    },
+    "r_c": {
+        "status": ["-kitten","-elder"],
+        "relationship_status": ["likes"],
+        "dies": false
+    },
+    "relationships": [
+        {
+            "cats_from": ["r_c"],
+            "cats_to": ["m_c"],
+            "mutual": true,
+            "values": ["like"],
+            "amount": 8,
+            "log": {
+                 "cats_from": "r_c gifted m_c feathers from a hunt."
+                }
+        }
+    ]
+},
+{
+    "event_id": "gen_misc_accessorygullcliffsPOI4",
+    "location": ["beach"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "tags": [],
+    "frequency": 3,
+    "poi": {
+    "name": ["terrain_gullcliffs"]
+    },
+    "event_text": "m_c returns from a hunt at {POI/name/terrain_gullcliffs}, adorned with some feathers from {PRONOUN/m_c/poss} catch.",
+    "new_accessory": ["GULL FEATHERS"],
+    "m_c": {
+        "status": ["-kitten","-elder"],
+        "dies": false
+    }
+},
+{
+    "event_id": "gen_misc_accessory8",
+    "location": ["any"],
+    "season": ["any"],
+    "sub_type": ["accessory"],
+    "tags": [],
+    "frequency": 2,
+    "event_text": "m_c takes a moment to pick a specific bird from the fresh-kill pile and is later seen wearing its feathers.",
+    "new_accessory": ["BLUE FEATHERS","SPARROW FEATHERS","JAY FEATHERS","RED FEATHERS"],
+    "m_c": {
+        "age": ["any"],
+        "dies": false
+    }
+},
+    {
+        "event_id": "gen_misc_transition_kittentomale",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "transition"
+        ],
+        "frequency": 4,
+        "event_text": "m_c has known since {PRONOUN/m_c/subject} {VERB/m_c/were/was} born {PRONOUN/m_c/subject} felt different about {PRONOUN/m_c/poss} gender. When m_c declares {PRONOUN/m_c/subject} {VERB/m_c/are/is} a tom, who can tell {PRONOUN/m_c/object} otherwise?",
+        "m_c": {
+            "gender": [
+                "female"
+            ],
+            "age": [
+            "kitten"
+            ]
+        },
+        "new_gender": [
+            "trans male"
+        ]
+    },
+        {
+        "event_id": "gen_misc_transition_kittentofemale",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "transition"
+        ],
+        "frequency": 4,
+        "event_text": "m_c has known since {PRONOUN/m_c/subject} {VERB/m_c/were/was} born {PRONOUN/m_c/subject} felt different about {PRONOUN/m_c/poss} gender. When m_c declares {PRONOUN/m_c/subject} {VERB/m_c/are/is} a she-cat, who can tell {PRONOUN/m_c/object} otherwise?",
+        "m_c": {
+            "gender": [
+                "male"
+            ],
+            "age": [
+            "kitten"
+            ]
+        },
+        "new_gender": [
+            "trans female"
+        ]
+    },
+    {
+        "event_id": "gen_misc_transition_kittentononbinary",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "transition"
+        ],
+        "frequency": 4,
+        "event_text": "m_c has known since {PRONOUN/m_c/subject} {VERB/m_c/were/was} born {PRONOUN/m_c/subject} felt different about {PRONOUN/m_c/poss} gender. When m_c declares {PRONOUN/m_c/subject} {VERB/m_c/are/is} not a tom, not a she-cat, <i>just</i> a cat, who can tell {PRONOUN/m_c/object} otherwise?",
+        "m_c": {
+            "gender": [
+                "female",
+                "male"
+            ],
+            "age": [
+            "kitten"
+            ]
+        },
+        "new_gender": [
+            "nonbinary"
+        ]
+    },
+    {
+        "event_id": "gen_misc_transition_eldertomale",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "transition"
+        ],
+        "frequency": 4,
+        "event_text": "m_c has always felt a disconnect in {PRONOUN/m_c/poss} concept of self. Though it has taken many seasons to realize, m_c has decided that being a tom suits {PRONOUN/m_c/object} better.",
+        "m_c": {
+            "gender": [
+                "female"
+            ],
+            "age": [
+            "senior",
+            "senior adult"
+            ]
+        },
+        "new_gender": [
+            "trans male"
+        ]
+    },
+    {
+        "event_id": "gen_misc_transition_eldertofemale",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "transition"
+        ],
+        "frequency": 4,
+        "event_text": "m_c has always felt a disconnect in {PRONOUN/m_c/poss} concept of self. Though it has taken many seasons to realize, m_c has decided that being a she-cat suits {PRONOUN/m_c/object} better.",
+        "m_c": {
+            "gender": [
+                "male"
+            ],
+            "age": [
+            "senior",
+            "senior adult"
+            ]
+        },
+        "new_gender": [
+            "trans female"
+        ]
+    },
+    {
+        "event_id": "gen_misc_transition_eldertomale",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "transition"
+        ],
+        "frequency": 4,
+        "event_text": "m_c has always felt a disconnect in {PRONOUN/m_c/poss} concept of self. Though it has taken many seasons to realize, m_c has decided that being just a cat suits {PRONOUN/m_c/object} better.",
+        "m_c": {
+            "gender": [
+                "male",
+                "female"
+            ],
+            "age": [
+            "senior",
+            "senior adult"
+            ]
+        },
+        "new_gender": [
+            "nonbinary"
+        ]
+    },
+  {
+        "event_id": "gen_misc_transition_parentcomingout_from_male",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "transition"
+        ],
+        "frequency": 4,
+        "event_text": "The first cat m_c tells about {PRONOUN/m_c/poss} transition is {PRONOUN/m_c/poss} parent, r_c. Overjoyed for {PRONOUN/r_c/poss} child, r_c helps m_c spread the news to the rest of the Clan.",
+        "m_c": {
+            "gender": [
+                "male"
+            ],
+            "relationship_status": ["child/parent", "trusts"]
+        },
+        "new_gender": [
+            "trans female",
+            "nonbinary"
+        ],
+      "relationships": [
+          {
+              "cats_from": ["m_c"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["like", "comfort"],
+            "amount": 5,
+            "log": {
+                "cats_from": "cat_to helped cat_from tell the rest of the clan about {PRONOUN/cat_from/poss} transition."
+            }
+        }
+      ],
+        "r_c": {}
+    },
+    {
+        "event_id": "gen_misc_transition_parentcomingout_from_female",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "transition"
+        ],
+        "frequency": 4,
+        "event_text": "The first cat m_c tells about {PRONOUN/m_c/poss} transition is {PRONOUN/m_c/poss} parent, r_c. Overjoyed for {PRONOUN/r_c/poss} child, r_c helps m_c spread the news to the rest of the Clan.",
+        "m_c": {
+            "gender": [
+                "female"
+            ],
+            "relationship_status": ["child/parent", "trusts"]
+        },
+        "new_gender": [
+            "trans male",
+            "nonbinary"
+        ],
+      "relationships": [
+          {
+            "cats_from": ["m_c"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["like", "comfort"],
+            "amount": 5,
+            "log": {
+                "cats_from": "cat_to helped cat_from tell the rest of the clan about {PRONOUN/cat_from/poss} transition."
+            }
+        }
+      ],
+        "r_c": {}
+    },
+    {
+        "event_id": "gen_misc_transition_dysphoriareassurance_frommale",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "transition"
+        ],
+        "frequency": 4,
+        "event_text": "m_c has never felt like {PRONOUN/m_c/poss} body matches the way {PRONOUN/m_c/subject} {VERB/m_c/see/sees} {PRONOUN/m_c/self}. After some time, m_c has realized, though c_n's acceptance of {PRONOUN/m_c/poss} gender may not lessen the feeling, m_c feels accepted by the Clan's support.",
+        "m_c": {
+            "age": ["-kitten"],
+            "gender": [
+                "male"
+            ]
+        },
+        "new_gender": [
+            "trans female",
+            "nonbinary"
+        ],
+      "relationships": [
+          {
+            "cats_from": ["m_c"],
+            "cats_to": ["clan"],
+            "mutual": false,
+            "values": ["like", "comfort"],
+            "amount": 5,
+            "log": {
+                "cats_from": "cat_from is comforted by the cat_to's acceptance of {PRONOUN/cat_from/poss} gender."
+            }
+        }
+      ]
+    }
 ]

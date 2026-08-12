@@ -11,7 +11,7 @@ from scripts.clan_package.settings import get_clan_setting
 from scripts.config import get_config
 from scripts.event_class import Single_Event
 from scripts.events_module.future.prep_and_trigger import prep_future_event
-from scripts.events_module.relationship.relation_events import Relation_Events
+from scripts.events_module.relationship import relation_events
 from scripts.game_structure import localization, game
 from scripts.events_module.text_adjust import (
     event_text_adjust,
@@ -351,6 +351,13 @@ class ShortEvent:
                 else:  # if freshkill isn't being adjusted, then it must be an herb supply
                     self.handle_herb_supply(block)
 
+        # affect affinity
+        if "murder" in self.sub_type:
+            self.random_cat.change_affinity(
+                starclan_change=get_config("affinity.murder.starclan_change"),
+                dark_forest_change=get_config("affinity.murder.dark_forest_change"),
+            )
+
         # adjust text again to account for info that wasn't available when we do rel changes
         self.text = event_text_adjust(
             Cat,
@@ -457,7 +464,7 @@ class ShortEvent:
                         main_cat=first_cat,
                     )
             else:
-                Relation_Events.welcome_new_cats([first_cat])
+                relation_events.trigger_joining_relationship_events([first_cat])
             self.all_involved_cat_ids.extend([cat.ID for cat in cat_list])
 
             if extra_text:

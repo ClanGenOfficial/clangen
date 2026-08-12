@@ -8,6 +8,7 @@ from pygame_gui.core.interfaces import IUIManagerInterface
 
 from scripts.game_input import INPUT_ACTION_PRESSED, Action, INPUT_ACTION_RELEASED
 from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
+from scripts.ui.icon import Icon
 from scripts.ui.scale import ui_scale_value
 
 
@@ -129,6 +130,9 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
                 text_rect = pygame.Rect(
                     relative_rect[0], relative_rect[1], relative_rect[2], -1
                 )
+            if self.text in Icon:
+                text_rect.y -= ui_scale_value(1)
+
             self.set_text("")
             self.text_layer = UITextBoxTweaked(
                 temp_text,

@@ -524,6 +524,38 @@
       "title": "GenderEnum",
       "type": "string"
     },
+    "Group": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/GroupEnum"
+        },
+        {
+          "pattern": "^match:(.+)$",
+          "type": "string"
+        }
+      ],
+      "title": "Group"
+    },
+    "GroupEnum": {
+      "enum": [
+        "afterlife",
+        "player_clan",
+        "other_clan",
+        "dark_forest",
+        "starclan",
+        "unknown_residence",
+        "no_group",
+        "-afterlife",
+        "-player_clan",
+        "-other_clan",
+        "-dark_forest",
+        "-starclan",
+        "-unknown_residence",
+        "-no_group"
+      ],
+      "title": "GroupEnum",
+      "type": "string"
+    },
     "Herb": {
       "enum": [
         "elder_leaves",
@@ -551,7 +583,8 @@
         "poppy",
         "plantain",
         "catmint",
-        "honey"
+        "honey",
+        "yew_berries"
       ],
       "title": "Herb",
       "type": "string"
@@ -726,7 +759,7 @@
             "type": "string"
           },
           {
-            "pattern": "^[a-z]+:(camp[0-9]_)*camp[0-9]$",
+            "pattern": "^-?[a-z]+:(camp[0-9]_)*camp[0-9]$",
             "type": "string"
           }
         ]
@@ -792,6 +825,14 @@
             "$ref": "#/$defs/RelationshipStatus"
           },
           "title": "Relationship Status",
+          "type": "array"
+        },
+        "group": {
+          "description": "List of groups m_c can belong to. Defaults to \"player_clan\".",
+          "items": {
+            "$ref": "#/$defs/Group"
+          },
+          "title": "Group",
           "type": "array"
         },
         "skill": {
@@ -1131,6 +1172,14 @@
             "$ref": "#/$defs/RcRelationshipStatus"
           },
           "title": "Relationship Status",
+          "type": "array"
+        },
+        "group": {
+          "description": "List of groups r_c can belong to. Defaults to \"player_clan\".",
+          "items": {
+            "$ref": "#/$defs/Group"
+          },
+          "title": "Group",
           "type": "array"
         },
         "skill": {
@@ -1669,7 +1718,9 @@
         "rogue",
         "-rogue",
         "clancat",
-        "-clancat"
+        "-clancat",
+        "guide",
+        "-guide"
       ],
       "title": "Status",
       "type": "string"
