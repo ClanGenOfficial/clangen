@@ -10,6 +10,8 @@ from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.cat.pelts import Pelt
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.events_module.text_adjust import adjust_list_text
+from scripts.game_structure.game import Switch
+from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.ui.elements.scrolling_button_list import SELECTION_CHANGED
 from scripts.ui.elements.scrolling_dropdown import UIScrollingDropDown
@@ -275,3 +277,9 @@ class TortiePatchToolWindow(GameWindow):
             "sprites/dicts/tortie_patches_combos.json", "r", encoding="utf-8"
         ) as read_file:
             return ujson.loads(read_file.read())
+
+    def kill(self):
+        super().kill()
+        # sets the game to reload!
+        # this makes sure the sprites info is up to date if a dev decides to play after using this tool
+        switch_set_value(Switch.switch_clan, True)
