@@ -41,6 +41,7 @@ from ..housekeeping.datadir import get_cache_dir
 from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_number
 from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
+from ..ui.windows.test import SpriteTest
 
 logger = logging.getLogger(__name__)
 has_checked_for_update = False
@@ -434,3 +435,5 @@ class StartScreen(Screens):
 
         # LOAD settings
         game_settings_load()
+
+        SpriteTest()
