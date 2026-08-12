@@ -20,7 +20,7 @@ from scripts.ui.scale import ui_scale, ui_scale_dimensions
 from scripts.ui.windows.window_base_class import GameWindow
 
 
-class SpriteTest(GameWindow):
+class TortiePatchToolWindow(GameWindow):
     """This window allows the user to change the cat's name"""
 
     def __init__(self):
@@ -56,7 +56,7 @@ class SpriteTest(GameWindow):
         )
 
         self.elements["preview_cat"] = UIImage(
-            ui_scale(pygame.Rect((50, 20), (100, 100))),
+            ui_scale(pygame.Rect((40, 20), (100, 100))),
             pygame.transform.scale(
                 self.preview_cat.sprite, ui_scale_dimensions((100, 100))
             ),
@@ -69,7 +69,7 @@ class SpriteTest(GameWindow):
         )
         patches.sort()
         self.elements["patch_choice"] = UIScrollingDropDown(
-            ui_scale(pygame.Rect((20, 20), (150, 34))),
+            ui_scale(pygame.Rect((10, 20), (150, 34))),
             dropdown_dimensions=ui_scale_dimensions((150, 290)),
             parent_text="patches",
             multiple_choice=True,
@@ -91,17 +91,14 @@ class SpriteTest(GameWindow):
             container=self,
             anchors={"left_target": self.elements["preview_cat"]},
         )
-
-        patches = list(
-            itertools.chain.from_iterable(sprites.TORTIE_DATA["sprite_list"])
-        )
-        patches.sort()
+        combos = list(self.get_combos().keys())
+        combos.sort()
         self.elements["existing_combos"] = UIScrollingDropDown(
             ui_scale(pygame.Rect((50, 20), (170, 34))),
             dropdown_dimensions=ui_scale_dimensions((170, 290)),
             parent_text="existing combos",
             multiple_choice=True,
-            item_list=list(self.get_combos().keys()),
+            item_list=combos,
             manager=MANAGER,
             container=self,
             anchors={
@@ -136,7 +133,7 @@ class SpriteTest(GameWindow):
             relative_rect=ui_scale(pygame.Rect((10, 0), (200, -1))),
             html_text="",
             container=self.elements["saving_container"],
-            anchors={"left_target": self.elements["save_button"], "centery": "centery"},
+            anchors={"left_target": self.elements["save_button"]},
         )
 
     def process_event(self, event):
@@ -182,17 +179,18 @@ class SpriteTest(GameWindow):
             if event.ui_element == self.elements["save_button"]:
                 self.save_combo()
                 self.elements["patch_choice"].set_selected_list([])
-                self.elements["existing_combos"].new_item_list(
-                    list(self.get_combos().keys())
-                )
+                combos = list(self.get_combos().keys())
+                combos.sort()
+                self.elements["existing_combos"].new_item_list(combos)
+                self.elements["name_entry"].set_text("")
 
     def check_current_combos(self, selection):
-        if len(selection) <= 1:
+        if not selection:
             self.elements["warning"].set_text(f"")
             return
 
         existing_combos = []
-        for name, combo in sprites.TORTIE_PATCH_COMBOS.items():
+        for name, combo in self.get_combos().items():
             if set(selection) == set(combo):
                 self.elements["warning"].set_text(
                     f"This combo already exists as {name}"
@@ -268,7 +266,7 @@ class SpriteTest(GameWindow):
 
         return new_cat
 
-    def get_combos(self):
+    def get_combos(self) -> dict:
         with open(
             "sprites/dicts/tortie_patches_combos.json", "r", encoding="utf-8"
         ) as read_file:
