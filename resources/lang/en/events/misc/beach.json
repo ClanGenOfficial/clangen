@@ -152,7 +152,7 @@
         ],
         "season": ["any"],
         "frequency": 1,
-        "event_text": "A huge wave surged into camp, stirring up sand and washing away the fresh-kill as it recedes. In its wake, the Clan is left with a dampened mood and soaked paws.",
+        "event_text": "A huge wave surged into camp, stirring up sand and washing away the fresh-kill as it receded. In its wake, the Clan was left with a dampened mood and soaked paws.",
         "supplies": [
             {
                 "type": "freshkill",
