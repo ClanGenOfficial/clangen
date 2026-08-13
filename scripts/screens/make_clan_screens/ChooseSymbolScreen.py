@@ -143,10 +143,11 @@ class ChooseSymbolScreen(MakeClanScreenBase):
             starting_height=1,
             manager=MANAGER,
         )
-        self.elements["filters_tab"] = UIImageButton(
-            ui_scale(pygame.Rect((100, 609), (78, 30))),
-            "",
-            object_id="#filters_tab_button",
+        self.elements["filters_tab"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((100, 609), (78, 25))),
+            "screens.make_clan.filters_tab",
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB_MIRRORED, (78, 30)),
+            object_id="@buttonstyles_horizontal_tab_mirrored",
             starting_height=1,
             manager=MANAGER,
         )

@@ -1,4 +1,4 @@
-from typing import TypedDict, Optional, List, Dict
+from typing import TypedDict, Optional, List, Dict, Literal
 
 from scripts.cat.enums import CatSocial, CatRank, CatAge
 
@@ -17,7 +17,7 @@ class CatTogglesDict(TypedDict):
 
 
 class GenderDict(TypedDict, total=False):
-    sex: str
+    sex: Literal["male", "female"]
     genderalign: str
     pronouns: Optional[Dict]
 

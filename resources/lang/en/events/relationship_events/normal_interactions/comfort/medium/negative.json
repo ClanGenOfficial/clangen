@@ -110,7 +110,8 @@
             "r_c giggles beneath {PRONOUN/r_c/poss} breath every time m_c walks by.",
             "m_c is put off by r_c's big, toothy grin.",
             "m_c swears that r_c hasn't blinked today.",
-            "m_c notices that r_c looks a little too entertained by a Clanmate's unsettling story."
+            "m_c notices that r_c looks a little too entertained by a Clanmate's unsettling story.",
+            "m_c was unsettled after watching r_c dissect a bug with their sharp claws."
         ],
         "involved_cats": {
             "r_c": {
@@ -129,7 +130,8 @@
             "r_c started a fight with m_c.",
             "m_c notices that r_c hasn't groomed fresh-kill blood off {PRONOUN/r_c/poss} paw.",
             "m_c notices that r_c is playing with {PRONOUN/r_c/poss} fresh-kill.",
-            "m_c notices that r_c looks a little too entertained by a Clanmate's unsettling story."
+            "m_c notices that r_c looks a little too entertained by a Clanmate's unsettling story.",
+            "m_c was unsettled after watching r_c dissect a bug with their sharp claws."
         ],
         "involved_cats": {
             "r_c": {
