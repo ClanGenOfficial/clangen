@@ -1023,7 +1023,7 @@
     "frequency": 3,
     "event_text": "m_c chases away a giant coconut crab helping itself to the fresh-kill. The crab punches back with a force that sends m_c straight to the medicine den.",
     "m_c": {
-        "status": ["-kitten"],
+        "status": ["-kitten","-newborn"],
         "trait": [
             "ambitious",
             "bold",
@@ -1057,7 +1057,7 @@
     "frequency": 2,
     "event_text": "m_c and r_c try to chase away a giant coconut crab helping itself to the fresh-kill. They drive the crab away, but r_c has to escort m_c to the medicine den right after.",
     "m_c": {
-        "status": ["-kitten"],
+        "status": ["-kitten","-newborn"],
         "trait": [
             "-shy",
             "-nervous",
@@ -1065,7 +1065,7 @@
         ]
     },
     "r_c": {
-        "status": ["-kitten"]
+        "status": ["-kitten","-newborn"]
     },
     "injury": [
         {
@@ -1097,7 +1097,7 @@
     "frequency": 3,
     "event_text": "The abundant fresh-kill attracted a pelican to the camp. m_c chased away the bird but was hurt in the process.",
     "m_c": {
-        "status": ["-kitten"],
+        "status": ["-kitten","-newborn"],
         "trait": [
             "-shy",
             "-nervous",
