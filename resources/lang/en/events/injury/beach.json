@@ -971,7 +971,7 @@
     "location":["beach"], 
     "season": ["any"],
     "frequency": 3,
-    "event_text": "A flock of seagulls descendes upon the fresh-kill pile. m_c tried to chase them off but was pecked for {PRONOUN/m_c/poss} troubles.",
+    "event_text": "A flock of seagulls descended upon the fresh-kill pile. m_c tried to chase them off but was pecked for {PRONOUN/m_c/poss} troubles.",
     "m_c": {
         "status": []
     },
@@ -1021,7 +1021,7 @@
     "location": ["beach"],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "m_c chases away a giant coconut crab helping itself to the fresh-kill. The crab punches back with a force that sends m_c straight to the medicine den.",
+    "event_text": "m_c chased away a giant coconut crab helping itself to the fresh-kill. The crab punched back with a force that sends m_c straight to the medicine den.",
     "m_c": {
         "status": ["-kitten","-newborn"],
         "trait": [
@@ -1055,7 +1055,7 @@
     "location": ["beach"],
     "season": ["any"],
     "frequency": 2,
-    "event_text": "m_c and r_c try to chase away a giant coconut crab helping itself to the fresh-kill. They drive the crab away, but r_c has to escort m_c to the medicine den right after.",
+    "event_text": "m_c and r_c tried to chase away a giant coconut crab helping itself to the fresh-kill. They drive the crab away, but r_c has to escort m_c to the medicine den right after.",
     "m_c": {
         "status": ["-kitten","-newborn"],
         "trait": [
@@ -1095,7 +1095,7 @@
     "location": ["beach:camp1_camp2_camp3"],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "The abundant fresh-kill attractes a pelican to the camp. m_c chases away the bird but was hurt in the process.",
+    "event_text": "The abundant fresh-kill attracted a pelican to the camp. m_c chased away the bird but was hurt in the process.",
     "m_c": {
         "status": ["-kitten","-newborn"],
         "trait": [

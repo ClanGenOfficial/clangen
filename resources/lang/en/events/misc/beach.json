@@ -152,7 +152,7 @@
         ],
         "season": ["any"],
         "frequency": 1,
-        "event_text": "A huge wave surges into camp, stirring up sand and washing away the fresh-kill as it recedes. In its wake, the Clan is left with a dampened mood and soaked paws.",
+        "event_text": "A huge wave surged into camp, stirring up sand and washing away the fresh-kill as it recedes. In its wake, the Clan is left with a dampened mood and soaked paws.",
         "supplies": [
             {
                 "type": "freshkill",
@@ -184,7 +184,7 @@
         ],
         "season": ["any"],
         "frequency": 2,
-        "event_text": "After a particularly rough storm, c_n discovers the fresh-kill pile didn't make it through undamaged.",
+        "event_text": "After a particularly rough storm, c_n discovered the fresh-kill pile didn't make it through undamaged.",
            "supplies": [
             {
                 "type": "freshkill",
@@ -200,7 +200,7 @@
         ],
         "season": ["any"],
         "frequency": 3,
-        "event_text": "A cast of crabs invades the fresh-kill pile. c_n fends them off but not before they damage the pile.",
+        "event_text": "A cast of crabs invaded the fresh-kill pile. c_n fended them off but not before they damage the pile.",
         "supplies": [
             {
             "type": "freshkill",
@@ -214,7 +214,7 @@
         "location": ["beach"],
         "season": ["any"],
         "frequency": 3,
-        "event_text": "m_c discovers a giant coconut crab helping itself to the fresh-kill. m_c chased off the crab before it could deal further damage.",
+        "event_text": "m_c discovered a giant coconut crab helping itself to the fresh-kill. m_c chased off the crab before it could deal further damage.",
         "m_c": {
             "skill": [
                 "-FIGHTER,3"
@@ -236,7 +236,7 @@
     "location": ["beach:camp1_camp3_camp4"],
     "season": ["any"],
     "frequency": 3,
-    "event_text": "The fresh-kill pile attractes a pelican to the camp. m_c chased away the bird before it could swallow c_n's prey.",
+    "event_text": "The fresh-kill pile attracted a pelican to the camp. m_c chased away the bird before it could swallow c_n's prey.",
     "m_c": {
         "status": [
             "-kitten"
@@ -268,7 +268,7 @@
     "location": ["beach:camp1_camp3_camp4"],
     "season": ["any"],
     "frequency": 2,
-    "event_text": "A pelican lands in camp, keen on raiding the fresh-kill. m_c and r_c had other ideas and they chase the bird off together. No bird will steal from c_n on their watch!",
+    "event_text": "A pelican landed in camp, keen on raiding the fresh-kill. m_c and r_c had other ideas and they chase the bird off together. No bird will steal from c_n on their watch!",
     "m_c": {
         "status": ["apprentice"],
         "trait": [
