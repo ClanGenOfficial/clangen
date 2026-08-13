@@ -42,6 +42,7 @@ from ..housekeeping.update import has_update, UpdateChannel, get_latest_version_
 from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
 from ..ui.windows.tortie_patch_tool import TortiePatchToolWindow
+from ..ui.windows.white_patch_tool import WhitePatchToolWindow
 
 logger = logging.getLogger(__name__)
 has_checked_for_update = False
@@ -448,3 +449,5 @@ class StartScreen(Screens):
 
         # LOAD settings
         game_settings_load()
+
+        WhitePatchToolWindow()
