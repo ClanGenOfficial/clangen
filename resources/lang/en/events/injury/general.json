@@ -9690,9 +9690,10 @@
             ],
             "amount": -5,
             "log": {
-                "cats_from": "cat_from grew worried that cat_to viewed {PRONOUN/cat_from/object} as something to be used after being ordered to punish a Clanmate."
+                "cats_from": "cat_from grew worried that cat_to viewed {PRONOUN/cat_from/object} as something to be used after being ordered to punish a Clanmate." }
             }
-        }
+            
+        
     ]
 }
 ]
