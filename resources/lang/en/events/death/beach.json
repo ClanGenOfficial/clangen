@@ -761,5 +761,64 @@
                 "death": "m_c played too close to the water and got swept away."
             }
         ]
+    },
+    {
+        "event_id": "bch_death_jellyfishsting",
+        "location": [
+            "beach:camp1"
+        ],
+        "season": [
+            "-leaf-bare",
+            "-leaf-fall"
+        ],
+        "frequency": 1,
+        "event_text": "m_c spots a see-through animal drifting towards the shore. Approaching it, m_c gets stung. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} return to camp.",
+        "m_c": {
+            "age": [
+                "-newborn",
+                "-kitten"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": ["m_c"],
+                "death": "m_c died from a jellyfish sting."
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death_mentormurder",
+        "location": [
+            "beach:camp1"
+        ],
+        "season": [
+            "-leaf-bare"
+        ],
+        "frequency": 1,
+        "event_text": "m_c heads to the shoreline with r_c, a bounce in {PROUNOUN/m_c/poss} step. r_c leaves the border with bloody paws, and m_c never bounces again.",
+        "m_c": {
+            "age": [
+                "adolescent"
+            ],
+            "relationship_status": ["app/mentor"],
+            "trait": ["bold","childish","confident","playful"],
+            "dies": true
+        },
+        "r_c": {
+            "age": [
+                "-newborn",
+                "-kitten",
+                "-adolescent"
+            ],
+            "relationship_status": ["app/mentor"]
+        },
+        "history": [
+            {
+                "cats": ["m_c", "r_c"],
+                "scar": "",
+                "death": "m_c was murdered by r_c."
+            }
+        ]
     }
 ]

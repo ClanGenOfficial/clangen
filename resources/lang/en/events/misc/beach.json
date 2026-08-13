@@ -347,5 +347,30 @@
                 }
             }
         ]
+    },
+    {
+        "event_id": "bch_misc_snowgull",
+        "location": [
+            "beach:camp1"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "frequency": 2,
+        "event_text": "m_c trips over a snow-covered gull's nest while on patrol. {PRONOUN/m_c/subject/CAP} {VERB/m_c/decide/decides} to keep the feathers {PRONOUN/m_c/subject} {VERB/m_c/find/finds} inside.",
+        "new_accessory": [
+            "GULL FEATHERS"
+        ],
+        "m_c": {
+            "age": [
+                "-newborn",
+                "-kitten"
+            ]
+        },
+        "history": [
+            {
+                "cats": ["m_c"]
+            }
+        ]
     }
 ]
