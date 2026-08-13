@@ -257,6 +257,116 @@
       "title": "CatDict",
       "type": "object"
     },
+    "ExcludedIllness": {
+      "enum": [
+        "-seizure",
+        "-diarrhea",
+        "-fleas",
+        "-greencough",
+        "-kittencough",
+        "-an infected wound",
+        "-carrionplace disease",
+        "-redcough",
+        "-running nose",
+        "-whitecough",
+        "-yellowcough",
+        "-a festering wound",
+        "-heat stroke",
+        "-heat exhaustion",
+        "-stomachache",
+        "-constant nightmares",
+        "-grief stricken",
+        "-malnourished",
+        "-starving"
+      ],
+      "title": "ExcludedIllness",
+      "type": "string"
+    },
+    "ExcludedInjury": {
+      "enum": [
+        "-claw-wound",
+        "-bite-wound",
+        "-cat bite",
+        "-beak bite",
+        "-snake bite",
+        "-rat bite",
+        "-tick bites",
+        "-blood loss",
+        "-broken jaw",
+        "-broken bone",
+        "-mangled leg",
+        "-dislocated joint",
+        "-joint pain",
+        "-sprain",
+        "-mangled tail",
+        "-bruises",
+        "-cracked pads",
+        "-sore",
+        "-phantom pain",
+        "-scrapes",
+        "-small cut",
+        "-torn pelt",
+        "-torn ear",
+        "-frostbite",
+        "-recovering from birth",
+        "-water in their lungs",
+        "-burn",
+        "-severe burn",
+        "-shock",
+        "-lingering shock",
+        "-shivering",
+        "-dehydrated",
+        "-head damage",
+        "-damaged eyes",
+        "-quilled by a porcupine",
+        "-broken back",
+        "-poisoned",
+        "-bee sting",
+        "-headache",
+        "-severe headache",
+        "-pregnant",
+        "-battle_injury",
+        "-minor_injury",
+        "-blunt_force_injury",
+        "-hot_injury",
+        "-cold_injury",
+        "-big_bite_injury",
+        "-small_bite_injury",
+        "-beak_bite",
+        "-rat_bite",
+        "-sickness"
+      ],
+      "title": "ExcludedInjury",
+      "type": "string"
+    },
+    "ExcludedPermCondition": {
+      "enum": [
+        "-crooked jaw",
+        "-lost a leg",
+        "-born without a leg",
+        "-weak leg",
+        "-twisted leg",
+        "-lost their tail",
+        "-born without a tail",
+        "-paralyzed",
+        "-raspy lungs",
+        "-wasting disease",
+        "-blind",
+        "-one bad eye",
+        "-failing eyesight",
+        "-partial hearing loss",
+        "-deaf",
+        "-constant joint pain",
+        "-seizure prone",
+        "-allergies",
+        "-constantly dizzy",
+        "-recurring shock",
+        "-lasting grief",
+        "-persistent headaches"
+      ],
+      "title": "ExcludedPermCondition",
+      "type": "string"
+    },
     "Group": {
       "anyOf": [
         {
@@ -307,6 +417,15 @@
               },
               {
                 "$ref": "#/$defs/PermCondition"
+              },
+              {
+                "$ref": "#/$defs/ExcludedInjury"
+              },
+              {
+                "$ref": "#/$defs/ExcludedIllness"
+              },
+              {
+                "$ref": "#/$defs/ExcludedPermCondition"
               },
               {
                 "const": "any",
