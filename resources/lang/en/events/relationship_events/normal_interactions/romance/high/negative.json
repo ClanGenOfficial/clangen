@@ -36,5 +36,382 @@
                 "amount": -15
             }
         ]
+    },
+    {
+        "id": "rom_dec_high_troublesome",
+        "strings": [
+            "m_c's patience wears thin with r_c's troublemaking.",
+            "r_c pulls off a mouse-brained stunt that gets on m_c's nerves.",
+            "m_c wishes r_c would settle down and grow up."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["like"],
+                "amount": -10,
+                "mutual": false
+            }
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": ["troublesome"]
+                }
+            }
+        }
+    },
+    {
+        "id": "rom_dec_high_lonesomemate",
+        "strings": [
+            "m_c wishes r_c was more social.",
+            "m_c tries to introduce r_c to {PRONOUN/m_c/poss} friends, but r_c isn't in the mood for socializing.",
+            "r_c seems aloof and distant from m_c. m_c feels hurt, wondering if {PRONOUN/m_c/subject} did or said something."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["like"],
+                "amount": -10,
+                "mutual": false
+            }
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": ["lonesome"]
+                }
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "constraints": ["mates"],
+                "mutual": true
+            }
+        ]
+    },
+    {
+        "id": "rom_dec_high_fiercemate",
+        "strings": [
+            "r_c gets worked up about something small, and nothing m_c says will calm {PRONOUN/r_c/object} down.",
+            "m_c wishes r_c would lighten up and mellow out a bit.",
+            "m_c looks back on the time that {PRONOUN/m_c/subject} found r_c's ferocity exciting rather than troubling.",
+            "m_c is tired of dealing with r_c's temper."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["like", "comfort"],
+                "amount": -7,
+                "mutual": false
+            }
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": ["fierce"]
+                }
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "constraints": ["mates"],
+                "mutual": true
+            }
+        ]
+    },
+    {
+        "id": "rom_dec_high_bloodthirstymate",
+        "strings": [
+            "m_c begins to feel uncomfortable around r_c, though {PRONOUN/m_c/subject} can't put {PRONOUN/m_c/poss} paw on why.",
+            "m_c wonders how little it might take to drive r_c to hurt another cat.",
+            "m_c questions r_c about how {PRONOUN/r_c/subject} got scraped up, but r_c refuses to answer."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["like", "comfort"],
+                "amount": -7,
+                "mutual": false
+            }
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": ["bloodthirsty"]
+                }
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "constraints": ["mates"],
+                "mutual": true
+            }
+        ]
+    },
+    {
+        "id": "rom_dec_high_coldmate",
+        "strings": [
+            "m_c wishes r_c would display affection more openly.",
+            "r_c seems aloof and uninterested when m_c chats with {PRONOUN/r_c/object} about {PRONOUN/m_c/poss} day.",
+            "m_c remembers finding r_c's chilly air attractive when they were first courting; now, {PRONOUN/m_c/subject} just {VERB/m_c/find/finds} it alienating."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["like"],
+                "amount": -10,
+                "mutual": false
+            }
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": ["cold"]
+                }
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "constraints": ["mates"],
+                "mutual": true
+            }
+        ]
+    },
+    {
+        "id": "rom_dec_high_childishmate",
+        "strings": [
+            "m_c wishes r_c would just grow up.",
+            "m_c is unpleasantly reminded of how simplistic r_c's view of the world is.",
+            "r_c's obnoxious sense of humor gets on m_c's nerves."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["like"],
+                "amount": -10,
+                "mutual": false
+            }
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": ["childish"]
+                }
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "constraints": ["mates"],
+                "mutual": true
+            }
+        ]
+    },
+    {
+        "id": "rom_dec_high_playfulmate",
+        "strings": [
+            "m_c wishes r_c wouldn't interrupt romantic moments by cracking jokes.",
+            "m_c needs to discuss something difficult with r_c but fears {PRONOUN/r_c/subject} won't take it seriously.",
+            "m_c doesn't laugh as much at r_c's jokes anymore."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["like"],
+                "amount": -10,
+                "mutual": false
+            }
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": ["playful"]
+                }
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "constraints": ["mates"],
+                "mutual": true
+            }
+        ]
+    },
+    {
+        "id": "rom_dec_high_charismaticmate",
+        "strings": [
+            "m_c thinks r_c's ego could stand to shrink a few sizes.",
+            "m_c remembers when {PRONOUN/m_c/subject} could listen to r_c talk forever. Now m_c just wishes {PRONOUN/r_c/subject}'d be quiet for a heartbeat.",
+            "m_c thinks actually being with r_c has made some of {PRONOUN/r_c/poss} charm wear off."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["like"],
+                "amount": -10,
+                "mutual": false
+            }
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": ["charismatic"]
+                }
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "constraints": ["mates"],
+                "mutual": true
+            }
+        ]
+    },
+    {
+        "id": "rom_dec_high_bolddaringmate",
+        "strings": [
+            "m_c wishes r_c wouldn't do risky, mouse-brained things.",
+            "m_c worries r_c doesn't take {PRONOUN/r_c/poss} own safety seriously enough.",
+            "r_c does something impulsive, and m_c takes the brunt of the consequences."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["like"],
+                "amount": -10,
+                "mutual": false
+            }
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": ["bold", "daring"]
+                }
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "constraints": ["mates"],
+                "mutual": true
+            }
+        ]
+    },
+    {
+        "id": "rom_dec_high_nervousmate",
+        "strings": [
+            "m_c is tired of reassuring r_c all the time.",
+            "m_c loses patience with r_c's constant skittishness.",
+            "m_c plans something fun with r_c, but r_c feels too worried about it and cancels their plans."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["like", "respect"],
+                "amount": -7,
+                "mutual": false
+            }
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": ["nervous"]
+                }
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "constraints": ["mates"],
+                "mutual": true
+            }
+        ]
+    },
+    {
+        "id": "rom_dec_high_righteousmate",
+        "strings": [
+            "m_c is wearied by how seriously r_c takes everything.",
+            "m_c feels the need to hide every little mistake from r_c.",
+            "r_c turns an argument over something inconsequential into a list of m_c's faults."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["like", "respect"],
+                "amount": -7,
+                "mutual": false
+            }
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": ["righteous"]
+                }
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "constraints": ["mates"],
+                "mutual": true
+            }
+        ]
+    },
+    {
+        "id": "rom_dec_high_insecuremate",
+        "strings": [
+            "r_c's insecurity makes it hard for m_c to be around {PRONOUN/r_c/object} today.",
+            "r_c snarls at m_c for something that was actually {PRONOUN/r_c/poss} fault.",
+            "m_c feels exhausted by having to constantly reassure r_c that {PRONOUN/m_c/subject} {VERB/m_c/love/loves} {PRONOUN/r_c/object}."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "values": ["like", "respect"],
+                "amount": -7,
+                "mutual": false
+            }
+        ],
+        "involved_cats": {
+            "r_c": {
+                "stat": {
+                    "trait": ["insecure"]
+                }
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
+                "constraints": ["mates"],
+                "mutual": true
+            }
+        ]
     }
 ]
