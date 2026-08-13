@@ -1055,7 +1055,7 @@
     "location": ["beach"],
     "season": ["any"],
     "frequency": 2,
-    "event_text": "m_c and r_c tried to chase away a giant coconut crab helping itself to the fresh-kill. They drive the crab away, but r_c has to escort m_c to the medicine den right after.",
+    "event_text": "m_c and r_c tried to chase away a giant coconut crab helping itself to the fresh-kill. They drove it away, but r_c had to escort m_c to the medicine den right after.",
     "m_c": {
         "status": ["-kitten","-newborn"],
         "trait": [
