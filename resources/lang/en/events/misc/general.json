@@ -17507,21 +17507,18 @@
             "relationship_status": ["mates"],
             "trait": ["-bloodthirsty", "-cold", "-gloomy", "-grumpy", "-strict"]
         },
-        "r_c": {
-            "relationship_status": ["mates"]
-        },
         "relationships": [
             {
                 "cats_from": ["r_c"],
                 "cats_to": ["m_c"],
                 "mutual": true,
                 "values": ["romance", "like", "comfort"],
-                "amount": 10
+                "amount": 10,
+                "log": {
+                    "cats_from": "cats_from had a fun time splashing around together with cats_to after they enforced a bath.",
+                    "cats_to": "cats_to enjoyed pulling cats_from into the water with them and playing around like kits."
+               }
             }
-        ],
-        "log": {
-            "cats_from": "cats_from had a fun time splashing around together with cats_to after they enforced a bath.",
-            "cats_to": "cats_to enjoyed pulling cats_from into the water with them and playing around like kits."
-        }
+        ]
     }
 ]
