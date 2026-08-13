@@ -330,7 +330,7 @@
     "MOSSY": ["Fern", "Green", "Deep", "Leaf", "Tree", "Gorse", "Moss", "Bramble", "Frond", "Frog"],
     "LEAF": ["Leaf", "Fern", "Green", "Tree", "Frond", "Light", "Moss", "Weed", "Stem", "Leaf"],
     "AQUAMARINE": ["Dew", "Blue", "Pale", "Light", "Shine", "Lake", "Water", "Stream", "Brook", "Frost", "Rime"],
-    "CACTUS": ["Green", "Flame", "Blaze", "Bud", "Weed", "Gorse", "Scorch", "Fire", "Tree", "Fron", "Leaf"],
+    "CACTUS": ["Green", "Flame", "Blaze", "Bud", "Weed", "Gorse", "Scorch", "Fire", "Tree", "Frond", "Leaf"],
     "MAPLE": ["Maple", "Pale", "Light", "Honey", "Sap", "Cinnamon", "Bark", "Glow", "Shine", "Ember"],
     "LIME": ["Bright", "Light", "Green", "Lime", "Shine", "Tree", "Fern", "Frond", "Stem", "Leaf", "Bud", "Frog"],
     "SAND": ["Sand", "Dust", "Sandy", "Honey", "Pale", "Light", "Shine", "Sun", "Dawn", "Sap", "Golden", "Yellow"],
