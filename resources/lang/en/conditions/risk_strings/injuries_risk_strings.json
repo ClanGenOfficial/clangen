@@ -184,17 +184,6 @@
             "m_c hacks and sputters on {PRONOUN/m_c/poss} own blood. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} the end is soon."
         ]
     },
-     "envenomated": {
-        "an infected wound":[
-            "Despite the hardwork of r_c, an infection has found it's way into m_c's wound.",
-            "To make matters worse m_c's wound has become infected.",
-            "m_c grows weaker - an infection has set in {PRONOUN/m_c/object} wound. ",
-            "Left weak from the venom, m_c barely has the energy to notice the growing infection. "
-        ],
-        "seizure": [
-            "m_c is having seizures as a side effect of the venom."
-        ]
-    },
     "broken back": {
         "an infected wound": [
             "r_c does {PRONOUN/r_c/poss} best to further prop up m_c's body. {PRONOUN/r_c/subject/CAP} {VERB/r_c/feel/feels} growing concern at the rancid smell coming from the broken and twisted part of m_c's back.",
@@ -212,4 +201,3 @@
         ]
     }
 }
-

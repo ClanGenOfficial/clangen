@@ -129,7 +129,6 @@ EVENT_ALLOWED_CONDITIONS = [
     "damaged eyes",
     "broken back",
     "poisoned",
-    "envenomated",
     "headache",
     "severe headache",
     "fleas",
