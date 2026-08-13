@@ -796,7 +796,7 @@
             "-leaf-bare"
         ],
         "frequency": 1,
-        "event_text": "m_c heads to the shoreline with r_c, a bounce in {PROUNOUN/m_c/poss} step. r_c leaves the border with bloody paws, and m_c never bounces again.",
+        "event_text": "m_c heads to the shoreline with r_c, a bounce in {PRONOUN/m_c/poss} step. r_c leaves the border with bloody paws, and m_c never bounces again.",
         "m_c": {
             "age": [
                 "adolescent"

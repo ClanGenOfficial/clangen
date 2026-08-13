@@ -267,14 +267,14 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c finds a cat on the border, who says {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} chased from {PRONOUN/n_c:0/poss} home by round cats with webbed paws. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/ask/asks} to stay with c_n, m_c hesitantly agrees.",
+        "event_text": "m_c finds a cat on the border who says {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} chased from {PRONOUN/n_c:0/poss} home by round cats with webbed paws. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/ask/asks} to stay with c_n, m_c hesitantly agrees.",
         "m_c": {
             "age": [
                 "-newborn",
                 "-kitten"
             ]
         },
-        "r_c": {
+        "n_c:0": {
             "age": [
                 "-newborn"
             ],
@@ -306,7 +306,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c leaves camp with r_c to play along the shore. The two return with n_c:0, m_c proudly stating {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} {PRONOUN/m_c/subject} newest best friend.",
+        "event_text": "m_c leaves camp with r_c to play along the shore. The two return with n_c:0, m_c proudly stating {PRONOUN/n_c:0/subject} {VERB/n_c:0/are/is} {PRONOUN/m_c/poss} newest best friend.",
         "m_c": {
             "age": [
                 "kitten",
