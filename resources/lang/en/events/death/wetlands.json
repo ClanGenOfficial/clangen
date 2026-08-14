@@ -40,7 +40,7 @@
     "location": ["wetlands"],
     "season": ["any"],
     "frequency": 2,
-    "event_text": "m_c was out fishing, close to the waters edge. Close enough for a deathjaw to snatch {PRONOUN/m_c/subject}.",
+    "event_text": "m_c was out fishing, close to the waters edge. Close enough for a deathjaw to snatch {PRONOUN/m_c/object}.",
     "m_c": {
         "status": ["-kitten"],
         "dies": true
@@ -137,8 +137,7 @@
   {
     "event_id": "wtld_death_otter",
     "location": [
-        "wetlands",
-        "forest"
+        "wetlands"
     ],
     "season": ["any"],
     "frequency": 3,
