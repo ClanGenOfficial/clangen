@@ -270,7 +270,15 @@ dev_tools = false
         romance = -20
         comfort = -10
         respect = 10
-
+    [mates.breakup.reactions.affair_discovery_mate_reaction]
+      romance = -50
+      trust = -30
+      like = -40
+    [mates.breakup.reactions.affair_discovery_other_mate_reaction]
+      romance = -50
+      trust = -30
+      like = -40
+    
 
 [new_cat]
   # number of welcoming events to add when a new cat joins
@@ -299,6 +307,14 @@ dev_tools = false
       comfort = 70
       trust = 60
 
+    # default relationship buff for an absent parent towards their kits
+    [new_cat.parent_buff.absent_parent_to_kit]
+      romance = 0
+      like = 0
+      respect = 0
+      comfort = -10
+      trust = 0
+
   [new_cat.sib_buff]
     # default relationships buff for siblings' relationships in one direction
     [new_cat.sib_buff.cat1_to_cat2]
@@ -315,6 +331,12 @@ dev_tools = false
       respect = 10
       comfort = 40
       trust = 30
+
+    # default relationships buff for a newborn's relationship towards one of their littermates
+    [new_cat.sib_buff.littermates_to_eachother]
+      like = 20
+      comfort = 10
+      trust = 10
 
   [new_cat.rel_buff]
     # default relationships buff for new cats relationships to other cats in the clan
@@ -349,6 +371,10 @@ dev_tools = false
   # 1/chance for an unmated cat to have an affair (coparenting)
   # for this check, only other unmated cats can be the affair partner
   unmated_random_affair_chance = 10
+
+  # the base chance a cat who's been cheated on will help raise their mate's kits after an affair
+  # by default, the chance is 40% and the range is from 0-100%, any value higher or lower will be capped
+  base_kit_claim_chance = 40
 
   # The kit number is incremental. It is 1-6 as default so if you change these numbers, you should probably keep this in mind.
   # As in, your max kits number should probably be 5 more than the min kits number.
@@ -393,6 +419,16 @@ dev_tools = false
     "senior adult" = 0
     senior = 0
 
+  [pregnancy.coparenting_values_neg]
+      romance = -20
+      comfort = -30
+      trust = -25
+
+  [pregnancy.coparenting_values_pos]
+      romance = 20
+      comfort = 30
+      trust = 25
+      
 [cat_generation]
   # base 1/chance that a cat will generate with a permanent condition. gets modified further in code
   base_permanent_condition = 90
