@@ -107,7 +107,6 @@ class Pregnancy_Events:
                 return
             if moons >= 2:
                 Pregnancy_Events.handle_two_moon_pregnant(cat, clan)
-                # events.ceremony_accessory = True
                 return
 
         if not cat.status.alive_in_player_clan or cat.not_working():
@@ -119,12 +118,7 @@ class Pregnancy_Events:
             cat.birth_cooldown -= 1
 
         # Check if they can have kits.
-        can_have_kits = Pregnancy_Events.check_if_can_have_kits(
-            cat,
-            get_clan_setting("single parentage"),
-            get_clan_setting("unmated parentage"),
-            get_clan_setting("affair"),
-        )
+        can_have_kits = Pregnancy_Events.check_if_can_have_kits(cat)
         if not can_have_kits:
             return
 
@@ -616,7 +610,7 @@ class Pregnancy_Events:
     # ---------------------------------------------------------------------------- #
 
     @staticmethod
-    def check_if_can_have_kits(cat, allow_single_parent, allow_unmated, allow_affair):
+    def check_if_can_have_kits(cat):
         """Check if the given cat can have kits, see for age, birth-cooldown and so on."""
         if not cat:
             return False
@@ -637,7 +631,7 @@ class Pregnancy_Events:
             return False
 
         # check for mate
-        if len(cat.mate) > 0:
+        if cat.mate:
             for mate_id in cat.mate:
                 if mate_id not in cat.all_cats:
                     print(
@@ -647,7 +641,11 @@ class Pregnancy_Events:
         else:
             # if the cat has no mate, and we don't allow single parents, unmated parents, or affairs
             # then they can't have kits
-            if not allow_single_parent or not allow_unmated or not allow_affair:
+            if (
+                not get_clan_setting("single parentage")
+                or not get_clan_setting("unmated parentage")
+                or not get_clan_setting("affair")
+            ):
                 return False
 
         # if function reaches this point, having kits is possible
@@ -670,9 +668,7 @@ class Pregnancy_Events:
         """
 
         # Checks for second parent alone:
-        if not Pregnancy_Events.check_if_can_have_kits(
-            second_parent, single_parentage, allow_unmated, allow_affair
-        ):
+        if not Pregnancy_Events.check_if_can_have_kits(second_parent):
             return False, False
 
         # Check to see if the pair can have kits.
