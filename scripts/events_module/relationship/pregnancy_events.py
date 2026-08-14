@@ -185,23 +185,21 @@ class Pregnancy_Events:
 
     @staticmethod
     def get_affair_visibility_from_pregnancy(
-        cat: Optional[Cat] = None, pregnant_cat: Optional[Cat] = None, clan=game.clan
+        cat: Optional[Cat] = None, pregnant_cat: Optional[Cat] = None
     ) -> Optional[bool]:
         """Read whether an affair was explicitly announced from pregnancy data."""
         target_cat = cat or pregnant_cat
-        if not target_cat or not clan:
+        if not target_cat or not game.clan:
             return None
-        pregnancy = clan.pregnancy_data.get(target_cat.ID)
+        pregnancy = game.clan.pregnancy_data.get(target_cat.ID)
         if pregnancy is None:
             return None
         return pregnancy.get("affair_known")
 
     @staticmethod
-    def create_pregnancy_data(
-        pregnant_cat: Cat, second_parent: Optional[Cat], clan=game.clan
-    ):
+    def create_pregnancy_data(pregnant_cat: Cat, second_parent: Optional[Cat]):
         """Creates the pregnancy data entry for a new pregnancy."""
-        clan.pregnancy_data[pregnant_cat.ID] = {
+        game.clan.pregnancy_data[pregnant_cat.ID] = {
             "second_parent": str(second_parent.ID) if second_parent else None,
             "moons": 0,
             "amount": 0,
@@ -403,31 +401,16 @@ class Pregnancy_Events:
         allow_affair = get_clan_setting("affair")
         allow_coparenting = get_clan_setting("unmated parentage")
 
-        # male cats can get pregnant with this setting, so we don't both to check gender here
+        # male cats can get pregnant with this setting, so we don't bother to check gender here
         if get_clan_setting("same sex birth"):
             # 50/50 for single cats to get pregnant or just bring a litter back
             if not other_cat and random.randint(0, 1):
-                amount = Pregnancy_Events.get_amount_of_kits(cat)
-                kits = Pregnancy_Events.get_kits(amount, cat, None)
-                print_event = i18n.t(
-                    "conditions.pregnancy.pregnant_secret",
-                    name=cat.name,
-                    insert=i18n.t("conditions.pregnancy.kit_amount", count=amount),
-                )
-                cats_involved = [cat.ID]
-                cat_dict = {"m_c": cat}
-                for kit in kits:
-                    cats_involved.append(kit.ID)
-                game.cur_events_list.append(
-                    Single_Event(
-                        print_event, "birth_death", cats_involved, cat_dict=cat_dict
-                    )
-                )
+                Pregnancy_Events.retrieve_secret_kittens(cat)
                 return
 
             # same sex birth enables all cats to get pregnant,
             # therefore the main cat will be used, regarding of gender
-            Pregnancy_Events.create_pregnancy_data(cat, other_cat, clan)
+            Pregnancy_Events.create_pregnancy_data(cat, other_cat)
             mate = [
                 Cat.fetch_cat(mate_id) for mate_id in cat.mate if Cat.fetch_cat(mate_id)
             ]
@@ -477,21 +460,7 @@ class Pregnancy_Events:
         # but only afab cats can get pregnant here, so we treat each sex differently
         if not other_cat and cat.gender == "male":
             # cat is amab, so he just brings some kittens back from who knows where
-            amount = Pregnancy_Events.get_amount_of_kits(cat)
-            kits = Pregnancy_Events.get_kits(amount, cat, None)
-            print_event = i18n.t(
-                "conditions.pregnancy.pregnant_secret",
-                name=cat.name,
-                insert=i18n.t("conditions.pregnancy.kit_amount", count=amount),
-            )
-            cats_involved = [cat.ID]
-            for kit in kits:
-                cats_involved.append(kit.ID)
-            game.cur_events_list.append(
-                Single_Event(
-                    print_event, "birth_death", cats_involved, cat_dict={"m_c": cat}
-                )
-            )
+            Pregnancy_Events.retrieve_secret_kittens(cat)
             return
 
         # if the other cat is afab and the current cat is amab, make the afab cat pregnant
@@ -507,7 +476,7 @@ class Pregnancy_Events:
             pregnant_cat = cat
             second_parent = other_cat
 
-            Pregnancy_Events.create_pregnancy_data(pregnant_cat, second_parent, clan)
+            Pregnancy_Events.create_pregnancy_data(pregnant_cat, second_parent)
             mate = []
             afab_mate = []
             amab_mate = []
@@ -572,6 +541,24 @@ class Pregnancy_Events:
             game.cur_events_list.append(
                 Single_Event(text, "birth_death", involved_cats)
             )
+
+    @staticmethod
+    def retrieve_secret_kittens(cat):
+        amount = Pregnancy_Events.get_amount_of_kits(cat)
+        kits = Pregnancy_Events.get_kits(amount, cat, None)
+        print_event = i18n.t(
+            "conditions.pregnancy.pregnant_secret",
+            name=cat.name,
+            insert=i18n.t("conditions.pregnancy.kit_amount", count=amount),
+        )
+        cats_involved = [cat.ID]
+        for kit in kits:
+            cats_involved.append(kit.ID)
+        game.cur_events_list.append(
+            Single_Event(
+                print_event, "birth_death", cats_involved, cat_dict={"m_c": cat}
+            )
+        )
 
     @staticmethod
     def handle_one_moon_pregnant(cat: Cat):
@@ -669,9 +656,7 @@ class Pregnancy_Events:
         mate_claimed_kits = False
         secret_affair_birth = False
         other_cat_affair_known = True
-        affair_known = Pregnancy_Events.get_affair_visibility_from_pregnancy(
-            cat, clan=clan
-        )
+        affair_known = Pregnancy_Events.get_affair_visibility_from_pregnancy(cat)
         if other_cat and cat.mate and other_cat.ID not in cat.mate:
             cheated_mate = Pregnancy_Events.get_cheated_mate(cat)
             if cheated_mate:
