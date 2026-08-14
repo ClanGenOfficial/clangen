@@ -1,0 +1,40 @@
+{
+    "name": "SpeckledRecipe",
+    "layer_order": ["1", "2", "3", ["4", "5", "6"]],
+    "layers": {
+        "6":{
+            "group_name": "SPECKLEDPATTERN",
+            "blend_mode": "mask"
+        },
+        "5":{
+            "group_name": "BASICPATTERNGRAD",
+            "color": "shade_1"
+        },
+        "4":{
+            "group_name": "SPECKLEDPATTERN",
+            "color": "pattern_0"
+        },
+        "3": {
+            "group_name": "SIMPLETOPGRAD",
+            "color": "highlight_0",
+            "opacity": 100,
+            "blend_mode": "normal"
+        },
+        "2": {
+            "group_name": "SIMPLEBOTTOMGRAD",
+            "color": "shade_0",
+            "opacity": 100,
+            "blend_mode": "normal"
+        },
+        "1":
+        {
+            "group_name": "BASEMASK",
+            "color": "base_0",
+            "opacity": 100,
+            "blend_mode": "normal"
+        }
+    },
+    "exceptions":
+    {
+    }
+}

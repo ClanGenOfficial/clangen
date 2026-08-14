@@ -1,0 +1,173 @@
+{
+    "WHITE": {
+        "base_0": "#A3F9D1",
+        "base_1": "#45B2E8",
+        "shade_0": "#7C109A",
+        "shade_1": "#FF33CC",
+        "highlight_0": "#09A57B",
+        "highlight_1": "#E2893F",
+        "pattern_0": "#11BB44"
+    },
+    "PALEGREY": {
+        "base_0": "#9932CC",
+        "base_1": "#8FBC8F",
+        "shade_0": "#E9967A",
+        "shade_1": "#483D8B",
+        "highlight_0": "#2F4F4F",
+        "highlight_1": "#00CED1",
+        "pattern_0": "#9400D3"
+    },
+    "SILVER": {
+        "base_0": "#FF1493",
+        "base_1": "#00BFFF",
+        "shade_0": "#696969",
+        "shade_1": "#1E90FF",
+        "highlight_0": "#B22222",
+        "highlight_1": "#FFFAF0",
+        "pattern_0": "#228B22"
+    },
+    "GREY": {
+        "base_0": "#FF00FF",
+        "base_1": "#DCDCDC",
+        "shade_0": "#F8F8FF",
+        "shade_1": "#FFD700",
+        "highlight_0": "#DAA520",
+        "highlight_1": "#808080",
+        "pattern_0": "#008000"
+    },
+    "DARKGREY": {
+        "base_0": "#ADFF2F",
+        "base_1": "#F0FFF0",
+        "shade_0": "#FF69B4",
+        "shade_1": "#CD5C5C",
+        "highlight_0": "#4B0082",
+        "highlight_1": "#FFFFF0",
+        "pattern_0": "#F0E68C"
+    },
+    "GHOST": {
+        "base_0": "#E6E6FA",
+        "base_1": "#FFF0F5",
+        "shade_0": "#7CFC00",
+        "shade_1": "#FFFACD",
+        "highlight_0": "#ADD8E6",
+        "highlight_1": "#F08080",
+        "pattern_0": "#E0FFFF"
+    },
+    "BLACK": {
+        "base_0": "#FAFAD2",
+        "base_1": "#90EE90",
+        "shade_0": "#D3D3D3",
+        "shade_1": "#FFB6C1",
+        "highlight_0": "#FFA07A",
+        "highlight_1": "#20B2AA",
+        "pattern_0": "#87CEFA"
+    },
+    "CREAM": {
+        "base_0": "#778899",
+        "base_1": "#B0C4DE",
+        "shade_0": "#FFFFE0",
+        "shade_1": "#00FF00",
+        "highlight_0": "#32CD32",
+        "highlight_1": "#FAF0E6",
+        "pattern_0": "#2E3B4E"
+    },
+    "PALEGINGER": {
+        "base_0": "#800000",
+        "base_1": "#66CDAA",
+        "shade_0": "#0000CD",
+        "shade_1": "#BA55D3",
+        "highlight_0": "#9370DB",
+        "highlight_1": "#3CB371",
+        "pattern_0": "#7B68EE"
+    },
+    "GOLDEN": {
+        "base_0": "#00FA9A",
+        "base_1": "#48D1CC",
+        "shade_0": "#C71585",
+        "shade_1": "#191970",
+        "highlight_0": "#F5FFFA",
+        "highlight_1": "#FFE4E1",
+        "pattern_0": "#FFE4B5"
+    },
+    "GINGER": {
+        "base_0": "#FFDEAD",
+        "base_1": "#000080",
+        "shade_0": "#FDF5E6",
+        "shade_1": "#808000",
+        "highlight_0": "#6B8E23",
+        "highlight_1": "#FFA500",
+        "pattern_0": "#FF4500"
+    },
+    "DARKGINGER": {
+        "base_0": "#DA70D6",
+        "base_1": "#EEE8AA",
+        "shade_0": "#98FB98",
+        "shade_1": "#AFEEEE",
+        "highlight_0": "#DB7093",
+        "highlight_1": "#FFEFD5",
+        "pattern_0": "#FFDAB9"
+    },
+    "SIENNA": {
+        "base_0": "#CD853F",
+        "base_1": "#FFC0CB",
+        "shade_0": "#DDA0DD",
+        "shade_1": "#B0E0E6",
+        "highlight_0": "#800080",
+        "highlight_1": "#FF0000",
+        "pattern_0": "#BC8F8F"
+    },
+    "LIGHTBROWN": {
+        "base_0": "#4169E1",
+        "base_1": "#8B4513",
+        "shade_0": "#FA8072",
+        "shade_1": "#F4A460",
+        "highlight_0": "#2E8B57",
+        "highlight_1": "#FFF5EE",
+        "pattern_0": "#A0522D"
+    },
+    "LILAC": {
+        "base_0": "#C0C0C0",
+        "base_1": "#87CEEB",
+        "shade_0": "#6A5ACD",
+        "shade_1": "#708090",
+        "highlight_0": "#FFFAFA",
+        "highlight_1": "#00FF7F",
+        "pattern_0": "#4682B4"
+    },
+    "BROWN": {
+        "base_0": "#D2B48C",
+        "base_1": "#008080",
+        "shade_0": "#D8BFD8",
+        "shade_1": "#FF6347",
+        "highlight_0": "#40E0D0",
+        "highlight_1": "#EE82EE",
+        "pattern_0": "#F5DEB3"
+    },
+    "GOLDEN-BROWN": {
+        "base_0": "#C8A2C8",
+        "base_1": "#F5F5F5",
+        "shade_0": "#FFFF00",
+        "shade_1": "#9ACD32",
+        "highlight_0": "#1ABC9C",
+        "highlight_1": "#2ECC71",
+        "pattern_0": "#3498DB"
+    },
+    "DARKBROWN": {
+        "base_0": "#9B59B6",
+        "base_1": "#34495E",
+        "shade_0": "#16A085",
+        "shade_1": "#27AE60",
+        "highlight_0": "#2980B9",
+        "highlight_1": "#8E44AD",
+        "pattern_0": "#2C3E50"
+    },
+    "CHOCOLATE": {
+        "base_0": "#F1C40F",
+        "base_1": "#E67E22",
+        "shade_0": "#E74C3C",
+        "shade_1": "#ECF0F1",
+        "highlight_0": "#95A5A6",
+        "highlight_1": "#F39C12",
+        "pattern_0": "#D35400"
+    }
+}

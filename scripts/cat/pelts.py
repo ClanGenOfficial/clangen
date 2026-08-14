@@ -47,17 +47,21 @@ class Pelt:
     white_colours: list = []
     brown_colours: list = []
 
-    for sprite_list in sprites.PELT_DATA["sprite_list"]:
-        all_pelt_colours.extend(sprite_list.keys())
-        for colour in sprite_list:
-            if sprite_list[colour] == "white":
-                white_colours.append(colour)
-            elif sprite_list[colour] == "black":
-                black_colours.append(colour)
-            elif sprite_list[colour] == "ginger":
-                ginger_colours.append(colour)
-            elif sprite_list[colour] == "brown":
-                brown_colours.append(colour)
+    all_pelt_colours.extend(sprites.GENERATION_GROUP_DATA["pelts"]["colors"].keys())
+    for colour in sprites.GENERATION_GROUP_DATA["pelts"]["colors"]:
+        group = sprites.GENERATION_GROUP_DATA["pelts"]["colors"][colour]
+
+        if group == "white":
+            white_colours.append(colour)
+        elif group == "black":
+            black_colours.append(colour)
+        elif group == "ginger":
+            ginger_colours.append(colour)
+        elif group == "brown":
+            brown_colours.append(colour)
+        else:
+            # Default
+            brown_colours.append(colour)
 
     # colour categories
     colour_categories: list[list] = [
@@ -68,10 +72,15 @@ class Pelt:
     ]
 
     # PELT PATTERNS
-    pelt_patterns: list = sprites.PELT_DATA["pattern_names"]
+    pelt_patterns: list = sprites.GENERATION_GROUP_DATA["pelts"]["pattern_types"].keys()
 
     # pattern categories
-    pelt_categories: dict = sprites.PELT_DATA["pattern_categories"]
+    pelt_categories: dict = {}
+    for key, value in sprites.GENERATION_GROUP_DATA["pelts"]["pattern_types"].items():
+        if value in pelt_categories:
+            pelt_categories[value].append(key)
+        else:
+            pelt_categories[value] = [key]
 
     # individual pattern categories
     tabbies: list = pelt_categories["tabbies"]
@@ -80,6 +89,7 @@ class Pelt:
     exotic: list = pelt_categories["exotic"]
     torties: list = pelt_categories["torties"]
 
+    """
     # PELT SPRITE NAMES
     # pelt name used in save files: pelt's spritesheet
     pattern_sprite_names: dict = {}
@@ -92,6 +102,7 @@ class Pelt:
             "Calico": None,
         }
     )
+    """
 
     # TORTIE PATCHES
     tortie_patches: list = []
@@ -697,9 +708,9 @@ class Pelt:
         if torbie:
             # If it is tortie, the chosen pelt above becomes the base pelt.
             chosen_tortie_base = chosen_pelt
-            if chosen_tortie_base in ("TwoColour", "SingleColour"):
-                chosen_tortie_base = "Single"
-            chosen_tortie_base = chosen_tortie_base.lower()
+            #if chosen_tortie_base in ("TwoColour", "SingleColour"):
+            #    chosen_tortie_base = "Single"
+            chosen_tortie_base = chosen_tortie_base
             chosen_pelt = random.choice(Pelt.torties)
 
         # ------------------------------------------------------------------------------------------------------------#
@@ -818,9 +829,9 @@ class Pelt:
         if torbie:
             # If it is tortie, the chosen pelt above becomes the base pelt.
             chosen_tortie_base = chosen_pelt
-            if chosen_tortie_base in ("TwoColour", "SingleColour"):
-                chosen_tortie_base = "Single"
-            chosen_tortie_base = chosen_tortie_base.lower()
+            #if chosen_tortie_base in ("TwoColour", "SingleColour"):
+            #    chosen_tortie_base = "Single"
+            chosen_tortie_base = chosen_tortie_base
             chosen_pelt = random.choice(Pelt.torties)
 
         # ------------------------------------------------------------------------------------------------------------#
@@ -966,21 +977,21 @@ class Pelt:
 
                 else:
                     # Normal generation
-                    if self.tortie_base in ("singlestripe", "smoke", "single"):
+                    if self.tortie_base in ("SingleStripe", "Smoke"): 
                         self.tortie_pattern = choice(
                             [
-                                "tabby",
-                                "mackerel",
-                                "classic",
-                                "single",
-                                "smoke",
-                                "agouti",
-                                "ticked",
+                                "Tabby",
+                                "Mackerel",
+                                "Classic",
+                                "SingleColour",
+                                "Smoke",
+                                "Agouti",
+                                "Ticked",
                             ]
                         )
                     else:
                         self.tortie_pattern = random.choices(
-                            [self.tortie_base, "single"], weights=[97, 3], k=1
+                            [self.tortie_base, "SingleColour"], weights=[97, 3], k=1
                         )[0]
 
                     if self.colour == "WHITE":
@@ -1307,8 +1318,10 @@ class Pelt:
 
         return "".join(groups)
 
+    """
     def get_sprites_name(self):
         return Pelt.pattern_sprite_names[self.name]
+    """
 
 
 def _describe_pattern(cat, short=False):

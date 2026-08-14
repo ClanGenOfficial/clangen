@@ -1,0 +1,52 @@
+{
+    "spritesheet": "pelt_parts_masks",
+    "sprite_list": [
+        [
+            "BASEMASK",
+            "SIMPLEBOTTOMGRAD",
+            "SIMPLETOPGRAD",
+            "BASICPATTERNGRAD",
+            "TABBYPATTERN",
+            "TICKEDPATTERN",
+            "TICKEDSTRIPEFADE",
+            "TICKEDDOTS",
+            "TICKEDTOPGRAD",
+            "SINGLESTRIPEOVER"
+        ],
+        [
+            "SINGLESTRIPEUNDER",
+            "SOKOKEGRAD",
+            "SOKOKEPATTERN",
+            "SOKOKEPATTERNFILL",
+            "SMOKEPATTERNGRAD",
+            "SMOKEPATTERNDARK",
+            "SMOKEPATTERNLIGHT",
+            "SMOKETOPGRAD",
+            "SPECKLEDPATTERN",
+            "ROSETTEPATTERN"
+        ],
+        [
+            "ROSETTEPATTERNFULL",
+            "MASKEDPATTERN",
+            "MASKEDLIGHTPATTERN",
+            "MACKERELPATTERN",
+            "CLASSICPATTERN",
+            "AGOUTIPATTERN",
+            "BENGALBOTTOMGRAD",
+            "BENGALTOPGRAD",
+            "BENGALPATTERN",
+            "BENGALLIGHTPATTERN"
+        ],
+        [
+            "BENGALMUZZLE",
+            "MARBLEDPATTERN",
+            "MARBLEDPATTERNLIGHT",
+            "MARBLEDMUZZLE",
+            "MARBLEDPATTERNFILL",
+            "FRECKLEDPATTERNBODY",
+            "FRECKLEDPATTERNBACK",
+            "FRECKLEDPATTERNGRAD"
+        ]
+
+    ]
+}
