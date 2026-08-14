@@ -117,12 +117,12 @@
     ]
   },
   {
-    "event_id": "wtld_death_bullfrog",
+    "event_id": "wtld_death_poisonous frog",
     "location": ["wetlands"],
     "season": ["-leaf-bare"],
     "tags": ["no_body"],
     "frequency": 2,
-    "event_text": "m_c was swallowed by a huge bullfrog after straying from camp.",
+    "event_text": "m_c curiously licked a colourful frog. However, {PRONOUN/m_c/subject} would collaspe shortly after.",
     "m_c": {
         "status": ["kitten"],
         "dies": true
@@ -130,7 +130,7 @@
     "history": [
         {
         "cats":["m_c"],
-        "death": "m_c was eaten by a bullfrog"
+        "death": "m_c died after licking a poisonious frog."
         }
     ]
   },
