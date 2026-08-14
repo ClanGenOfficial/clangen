@@ -41,6 +41,15 @@ class TestPregnancySettings(unittest.TestCase):
         # single parentage setting shouldn't prevent these cats from having kits
         self.assertTrue(Pregnancy_Events.check_if_can_have_kits(parent1))
 
+    def test_ignore_biology(self):
+        parent1 = cat_factory.create_cat(moons=50, gender="male")
+        parent2 = cat_factory.create_cat(moons=50, gender="male")
+        set_clan_setting("same sex birth", False)
+
+        self.assertEqual(
+            Pregnancy_Events.check_second_parent(parent1, parent2), (False, False)
+        )
+
     def test_unmated(self):
         parent1 = cat_factory.create_cat(moons=50, gender="male")
         parent2 = cat_factory.create_cat(moons=50, gender="female")
