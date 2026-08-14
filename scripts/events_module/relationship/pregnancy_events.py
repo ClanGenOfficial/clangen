@@ -1180,29 +1180,28 @@ class Pregnancy_Events:
     @staticmethod
     def get_amount_of_kits(cat):
         """Get the amount of kits which will be born."""
-        min_kits = constants.CONFIG["pregnancy"]["min_kits"]
-        min_kit = [min_kits] * constants.CONFIG["pregnancy"]["one_kit_possibility"][
-            cat.age.value
-        ]
-        two_kits = [min_kits + 1] * constants.CONFIG["pregnancy"][
-            "two_kit_possibility"
-        ][cat.age.value]
-        three_kits = [min_kits + 2] * constants.CONFIG["pregnancy"][
-            "three_kit_possibility"
-        ][cat.age.value]
-        four_kits = [min_kits + 3] * constants.CONFIG["pregnancy"][
-            "four_kit_possibility"
-        ][cat.age.value]
-        five_kits = [min_kits + 4] * constants.CONFIG["pregnancy"][
-            "five_kit_possibility"
-        ][cat.age.value]
-        max_kits = [constants.CONFIG["pregnancy"]["max_kits"]] * constants.CONFIG[
-            "pregnancy"
-        ]["max_kit_possibility"][cat.age.value]
+        min_kits = get_config("pregnancy.min_kits")
+        min_kit = [min_kits] * get_config(
+            f"pregnancy.one_kit_possibility.{cat.age.value}"
+        )
+        two_kits = [min_kits + 1] * get_config(
+            f"pregnancy.two_kit_possibility.{cat.age.value}"
+        )
+        three_kits = [min_kits + 2] * get_config(
+            f"pregnancy.three_kit_possibility.{cat.age.value}"
+        )
+        four_kits = [min_kits + 3] * get_config(
+            f"pregnancy.four_kit_possibility.{cat.age.value}"
+        )
+        five_kits = [min_kits + 4] * get_config(
+            f"pregnancy.five_kit_possibility.{cat.age.value}"
+        )
+        max_kits = [get_config("pregnancy.max_kits")] * get_config(
+            f"pregnancy.max_kit_possibility.{cat.age.value}"
+        )
         amount = choice(
             min_kit + two_kits + three_kits + four_kits + five_kits + max_kits
         )
-
         return amount
 
     # ---------------------------------------------------------------------------- #
