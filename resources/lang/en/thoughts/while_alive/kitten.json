@@ -1092,7 +1092,7 @@
             "Was sent out of the nursery for being too rowdy around the new litter"
         ],
         "involved_cats": {
-            "m_c": {
+              "m_c": {
                 "status": [
                     "kitten"
                 ]
@@ -1104,7 +1104,119 @@
                 "group": [
                     "-afterlife"
                 ]
+        }
+        }
+    },
+    {
+        "id": "Stolen_kit",
+        "strings": [
+            "Fears what might happen to {PRONOUN/m_c/object}",
+            "Is thinking of {PRONOUN/m_c/poss} family",
+            "Wonders if sneaking out is an option",
+            "Is trying to be brave ",
+            "Just wants to be in {PRONOUN/m_c/poss} old nest",
+            "Is missing former Clanmates",
+            "Wonders if {PRONOUN/m_c/poss} Clan will come to the rescue",
+            "Thinks c_n is the worst",
+            "Is unsure what to think about c_n",
+            "c_n isn't as bad as {PRONOUN/m_c/object} thought"
+        ],
+        "involved_cats": {
+            "m_c": {
+
+             "backstory": [
+                    "stolenkit3"
+                ]
             }
+        }
+    },
+    {
+        "id": "Stolen_kit_to_other_kit",
+        "strings": [
+            "Is hesitant to play with r_c",
+            "Watches r_c carefully",
+            "Is slowly warming up to r_c",
+            "Isn't sure what to think about r_c",
+            "Is invited by r_c to play mossball",
+            "Dislikes how r_c talks about {PRONOUN/m_c/poss} former Clan"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "stolenkit3"
+                ]
+            },
+            "r_c": {
+                "age": [
+                    "kitten"
+                ],
+                "backstory": [
+                    "-former_clancat_backstories"
+                ],
+                "group": ["-afterlife"]
+            }
+        }
+    },
+    {
+        "id": "Stolen_kit_bold",
+        "strings": [
+            "Is caught trying to escape",
+            "Nips r_c to demostrate {PRONOUN/m_c/poss} strength",
+            "Started a fight with r_c",
+            "Says that c_n kits are mouse brained",
+            "Tests how much {PRONOUN/m_c/object} can get away with"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "bossy",
+                        "bullying",
+                        "noisy",
+                        "fearless",
+                        "impulsive",
+                        "unruly",
+                        "troublesome",
+                        "daring"
+
+                    ]
+                },
+                "backstory": [
+                    "stolenkit3"
+                ]
+            },
+            "r_c": {
+                "age": ["kitten"],
+                "backstory": ["-former_clancat_backstories"],
+                "group": ["-afterlife"]
+            }
+        }
+    },
+    {
+        "id": "Stolen_kit_nervous",
+        "strings": [
+            "Is avoiding everyone",
+            "Tries to stay quiet",
+            "Hopes that no one notices {PRONOUN/m_c/object}",
+            "Cries in {PRONOUN/m_c/poss} sleep for {PRONOUN/m_c/poss} parent",
+            "Feels lonely without {PRONOUN/m_c/poss} littermates",
+            "Has given up on returning home",
+            "Hopes that c_n doesn't hurt {PRONOUN/m_c/subject}",
+            "Fears all the new cats around {PRONOUN/m_c/poss}"
+        ],
+        "involved_cats":{
+            "m_c":{
+                "stat": {
+                    "trait": [
+                        "skittish",
+                        "quiet",
+                        "self-conscious",
+                        "sweet",
+                        "daydreamer"
+                    ]
+                },
+            "backstory": ["stolenkit3"]
+        }
         }
     }
 ]

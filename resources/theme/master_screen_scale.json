@@ -753,22 +753,6 @@
             }
         }
     },
-    "#mediation_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/mediation.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/mediation_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/mediation_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/mediation_unavailable.png"
-            }
-        }
-    },
     "#toggle_fullscreen_button": {
         "images": {
             "normal_image": {
@@ -1085,38 +1069,6 @@
             }
         }
     },
-    "#switch_focus_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/switch_focus.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/switch_focus_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/switch_focus_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/switch_focus_unavailable.png"
-            }
-        }
-    },
-    "#view_profile_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/view_profile.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/view_profile_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/view_profile_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/view_profile_unavailable.png"
-            }
-        }
-    },
     "#fav_star": {
         "prototype": "@image_button",
         "images": {
@@ -1229,54 +1181,6 @@
             }
         }
     },
-    "#in_den_tab": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/med_den_in_den.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/med_den_in_den_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/med_den_in_den_select.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/med_den_in_den_select.png"
-            }
-        }
-    },
-    "#out_den_tab": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/med_den_out_den.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/med_den_out_den_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/med_den_out_den_select.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/med_den_out_den_select.png"
-            }
-        }
-    },
-    "#minor_tab": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/med_den_minor.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/med_den_minor_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/med_den_minor_select.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/med_den_minor_select.png"
-            }
-        }
-    },
     "#med_cat_den_hover": {
         "images": {
             "normal_image": {
@@ -1306,102 +1210,6 @@
             },
             "disabled_image": {
                 "path": "resources\/images\/med_cat_den\/base.png"
-            }
-        }
-    },
-    "#med_den_log_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/med_den_log.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/med_den_log_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/med_den_log.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/med_den_log_select.png"
-            }
-        }
-    },
-    "#hurt_sick_cats_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/hurt_sick_cats.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/hurt_sick_cats_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/hurt_sick_cats.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/hurt_sick_cats_select.png"
-            }
-        }
-    },
-    "#patrol_next_page": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/patrol_arrow_r.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/patrol_arrow_r_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/patrol_arrow_r_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/patrol_arrow_r_unavailable.png"
-            }
-        }
-    },
-    "#patrol_last_page": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/patrol_arrow_l.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/patrol_arrow_l_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/patrol_arrow_l_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/patrol_arrow_l_unavailable.png"
-            }
-        }
-    },
-    "#patrol_select_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/patrol_select.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/patrol_select_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/patrol_select_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/patrol_select_unavailable.png"
-            }
-        }
-    },
-    "#not_proceed_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/do_not_proceed.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/do_not_proceed_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/do_not_proceed_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/do_not_proceed_unavailable.png"
             }
         }
     },
@@ -1489,35 +1297,10 @@
             }
         }
     },
-    "#exile_cat_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/exile_cat.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/exile_cat_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/exile_cat_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/exile_cat_unavailable.png"
-            }
-        }
-    },
     "#exile_df_button": {
         "images": {
             "normal_image": {
                 "path": "resources\/images\/buttons\/exile_df.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/exile_df_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/exile_df_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/exile_df_unavailable.png"
             }
         }
     },
@@ -1822,22 +1605,6 @@
             }
         }
     },
-    "#add_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/add_button.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/add_button_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/add_button.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/add_button_unavailable.png"
-            }
-        }
-    },
     "#vertical_slider_down_arrow_button": {
         "images": {
             "normal_image": {
@@ -1887,74 +1654,6 @@
             }
         }
     },
-    "#outsider_hunt": {
-        "prototype": "@image_button",
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/outsider_hunt.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/outsider_hunt_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/outsider_hunt_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/outsider_hunt_unavailable.png"
-            }
-        }
-    },
-    "#outsider_drive": {
-        "prototype": "@image_button",
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/outsider_drive.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/outsider_drive_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/outsider_drive_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/outsider_drive_unavailable.png"
-            }
-        }
-    },
-    "#outsider_search": {
-        "prototype": "@image_button",
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/outsider_search.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/outsider_search_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/outsider_search_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/outsider_search_unavailable.png"
-            }
-        }
-    },
-    "#outsider_invite": {
-        "prototype": "@image_button",
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/outsider_invite.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/outsider_invite_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/outsider_invite_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/outsider_invite_unavailable.png"
-            }
-        }
-    },
     "#symbol_select_button": {
         "images": {
             "normal_image": {
@@ -1968,22 +1667,6 @@
             },
             "disabled_image": {
                 "path": "resources\/images\/buttons\/symbol_selection_hover.png"
-            }
-        }
-    },
-    "#filters_tab_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/filters_tab.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/filters_tab_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/filters_tab_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/filters_tab_hover.png"
             }
         }
     },

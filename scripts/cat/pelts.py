@@ -159,6 +159,7 @@ class Pelt:
     tail_accessories = []
     body_accessories = []
     head_accessories = []
+    paw_accessories = []
 
     # here we create the master lists of each accessory type
     plant_accessories = []
@@ -171,6 +172,8 @@ class Pelt:
                 body_accessories.append(sprite)
             elif sprite_list[sprite] == "head":
                 body_accessories.append(sprite)
+            elif sprite_list[sprite] == "paw":
+                paw_accessories.append(sprite)
 
     wild_accessories = []
     for sprite_list in sprites.WILD_DATA["sprite_list"]:
@@ -182,6 +185,8 @@ class Pelt:
                 body_accessories.append(sprite)
             elif sprite_list[sprite] == "head":
                 body_accessories.append(sprite)
+            elif sprite_list[sprite] == "paw":
+                paw_accessories.append(sprite)
 
     collar_accessories = []
     collar_styles = []
