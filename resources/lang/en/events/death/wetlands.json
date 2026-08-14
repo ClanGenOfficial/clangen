@@ -57,7 +57,7 @@
    "location": ["wetlands"],
    "season": ["-leaf-bare"],
    "frequency": 2,
-   "event_text": "m_c pushed r_c out of reach of a deathjaw's maw, {PRONOUN/m_c/object} would not be as lucky.",
+   "event_text": "m_c pushed r_c out of reach of a deathjaw's maw, {PRONOUN/m_c/subject} would not be as lucky.",
    "m_c": {
         "trait": [
             "-nervous"
@@ -83,7 +83,7 @@
     "season": ["greenleaf"],
     "tags": ["no_body"],
     "frequency": 3,
-    "event_text": "m_c adventured too far and found {PRONOUN/m_c/self} stuck in a bog. m_c can only struggle ",
+    "event_text": "m_c adventured too far and found {PRONOUN/m_c/self} stuck in a bog. m_c could only struggle ",
     "m_c": {
         "status": [
             "-kitten"
