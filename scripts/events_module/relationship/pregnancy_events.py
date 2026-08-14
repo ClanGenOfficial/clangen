@@ -21,6 +21,7 @@ from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.cat_relations.relationship import Relationship, RelType
 from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.clan_package.settings import get_clan_setting
+from scripts.config import get_config
 from scripts.event_class import Single_Event
 from scripts.events_module.short.condition_events import Condition_Events
 from scripts.game_structure import constants
@@ -118,8 +119,7 @@ class Pregnancy_Events:
             cat.birth_cooldown -= 1
 
         # Check if they can have kits.
-        can_have_kits = Pregnancy_Events.check_if_can_have_kits(cat)
-        if not can_have_kits:
+        if not Pregnancy_Events.check_if_can_have_kits(cat):
             return
 
         # DETERMINE THE SECOND PARENT
@@ -692,53 +692,54 @@ class Pregnancy_Events:
         Return the second parent of a cat, which will have kits.
         Also returns a bool that is true if an affair was triggered.
         """
-        samesex = get_clan_setting("same sex birth")
-        allow_affair = get_clan_setting("affair")
-        mate = None
-        coparenting = False
-
         # randomly select a mate of given cat
-        if len(cat.mate) > 0:
-            mate = choice(cat.mate)
-            mate = cat.fetch_cat(mate)
-
+        chosen_mate = None
         # if the sex does matter, choose the best solution to allow kits
-        if not samesex and mate and mate.gender == cat.gender:
-            opposite_mate = [
-                cat.fetch_cat(mate_id)
-                for mate_id in cat.mate
-                if cat.fetch_cat(mate_id).gender != cat.gender
-            ]
-            if len(opposite_mate) > 0:
-                mate = choice(opposite_mate)
+        same_sex_birth_allowed = get_clan_setting("same sex birth")
+        if cat.mate:
+            if same_sex_birth_allowed:
+                # choose any mate
+                chosen_mate = cat.fetch_cat(choice(cat.mate))
+            else:
+                # choose mate that is opposite sex
+                possible_mates = [
+                    cat.fetch_cat(mate_id)
+                    for mate_id in cat.mate
+                    if cat.fetch_cat(mate_id).gender != cat.gender
+                ]
+                if possible_mates:
+                    chosen_mate = choice(possible_mates)
 
-        if not allow_affair and mate:
-            # if affairs setting is OFF, second parent (mate) will be returned
-            return mate, False
+        affair_allowed = get_clan_setting("affair")
+        if chosen_mate and not affair_allowed:
+            # if affairs setting is OFF, mate will always be the second parent
+            return chosen_mate, False
 
         # get relationships to influence the affair chance
-        mate_relation = None
-        if mate and mate.ID in cat.relationships:
-            mate_relation = cat.relationships[mate.ID]
-        elif mate:
-            mate_relation = cat.create_one_relationship(mate)
+        relationship_toward_mate = None
+        if chosen_mate and chosen_mate.ID in cat.relationships:
+            relationship_toward_mate = cat.relationships[chosen_mate.ID]
+        elif chosen_mate:
+            relationship_toward_mate = cat.create_one_relationship(chosen_mate)
 
-        if len(cat.mate) <= 0:
+        coparenting = False
+        if not cat.mate:
+            # is there's no mate to cheat on then this isn't an affair, rather it's coparenting
             coparenting = True
 
-        # LOVE AFFAIR & COPARENTING
+        # NONRANDOM AFFAIR & COPARENTING
         # Handle love affair chance.
-        affair_partner = Pregnancy_Events.determine_highest_romantic_relation(
-            cat, mate, mate_relation, samesex
+        new_partner = Pregnancy_Events.determine_highest_romantic_relation(
+            cat, chosen_mate, relationship_toward_mate, same_sex_birth_allowed
         )
-        if affair_partner:
-            return affair_partner, True
+        if new_partner:
+            return new_partner, True
 
         # RANDOM AFFAIR & COPARENTING
         if coparenting:
-            chance = constants.CONFIG["pregnancy"]["unmated_random_affair_chance"]
+            chance = get_config("pregnancy.unmated_random_affair_chance")
         else:
-            chance = constants.CONFIG["pregnancy"]["random_affair_chance"]
+            chance = get_config("pregnancy.random_affair_chance")
 
         # 'buff' affairs & coparenting if the current biggest family is big + this cat doesn't belong there
         if not Pregnancy_Events.biggest_family:
@@ -750,24 +751,20 @@ class Pregnancy_Events:
         ):
             chance = int(chance * 0.8)
 
-        # "regular" random affair
+        # "regular" random fling
         if not int(random.random() * chance):
-            possible_affair_partners = [
+            possible_partners = [
                 i
                 for i in Cat.all_cats_list
                 if i.is_potential_mate(cat, for_love_interest=True)
-                and (samesex or i.gender != cat.gender)
+                and (same_sex_birth_allowed or i.gender != cat.gender)
                 and i.ID not in cat.mate
             ]
-            if coparenting:
-                possible_affair_partners = [
-                    c for c in possible_affair_partners if len(c.mate) < 1
-                ]
 
             # even it is a random affair, the cats should not hate each other or something like that
             p_affairs = []
-            if len(possible_affair_partners) > 0:
-                for p_affair in possible_affair_partners:
+            if len(possible_partners) > 0:
+                for p_affair in possible_partners:
                     if p_affair.ID in cat.relationships:
                         p_rel = cat.relationships[p_affair.ID]
                         if not p_rel.opposite_relationship:
@@ -775,40 +772,51 @@ class Pregnancy_Events:
                         p_rel_opp = p_rel.opposite_relationship
                         if p_rel_opp.like > -20 and p_rel.like > -20:
                             p_affairs.append(p_affair)
-            possible_affair_partners = p_affairs
+            possible_partners = p_affairs
 
-            if len(possible_affair_partners) > 0:
-                chosen_affair = choice(possible_affair_partners)
+            if len(possible_partners) > 0:
+                chosen_affair = choice(possible_partners)
                 return chosen_affair, True
 
-        return mate, False
+        # no cat was found
+        return None, False
 
     @staticmethod
-    def determine_highest_romantic_relation(cat, mate, mate_relation, samesex):
+    def determine_highest_romantic_relation(
+        cat, mate, relationship_with_mate, same_sex_birth_allowed
+    ) -> Optional[Cat]:
         """
-        Function to handle everything around love affairs.
-        Will return a second parent if a love affair is triggerd, and none otherwise.
+        Function to handle everything around unmated affairs.
+        Will return a second parent if triggerd, and none otherwise.
         """
 
         highest_romantic_relation = get_highest_romantic_relation(
             cat.relationships.values(), exclude_mate=True, potential_mate=True
         )
 
+        # AFFAIR
         if mate and highest_romantic_relation:
             # Love affair calculation when the cat has a mate
-            chance_love_affair = Pregnancy_Events.get_love_affair_chance(
-                mate_relation, highest_romantic_relation
+            love_affair_chance = Pregnancy_Events.get_love_affair_chance(
+                relationship_with_mate, highest_romantic_relation
             )
-            if not chance_love_affair or not int(random.random() * chance_love_affair):
-                if samesex or cat.gender != highest_romantic_relation.cat_to.gender:
+            if not love_affair_chance or not int(random.random() * love_affair_chance):
+                if (
+                    same_sex_birth_allowed
+                    or cat.gender != highest_romantic_relation.cat_to.gender
+                ):
                     return highest_romantic_relation.cat_to
+        # COPARENTING
         elif highest_romantic_relation:
             # Love affair chance if the cat doesn't have a mate:
-            chance_love_affair = Pregnancy_Events.get_unmated_coparenting_chance(
+            coparenting_chance = Pregnancy_Events.get_unmated_coparenting_chance(
                 highest_romantic_relation
             )
-            if not chance_love_affair or not int(random.random() * chance_love_affair):
-                if samesex or cat.gender != highest_romantic_relation.cat_to.gender:
+            if not coparenting_chance or not int(random.random() * coparenting_chance):
+                if (
+                    same_sex_birth_allowed
+                    or cat.gender != highest_romantic_relation.cat_to.gender
+                ):
                     return highest_romantic_relation.cat_to
 
         return None
