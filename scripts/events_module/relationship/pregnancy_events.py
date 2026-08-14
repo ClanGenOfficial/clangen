@@ -108,7 +108,7 @@ class Pregnancy_Events:
                 Pregnancy_Events.handle_one_moon_pregnant(cat)
                 return
             if moons >= 2:
-                Pregnancy_Events.handle_two_moon_pregnant(cat, clan)
+                Pregnancy_Events.handle_two_moon_pregnant(cat)
                 return
 
         if not cat.status.alive_in_player_clan or cat.not_working():
@@ -383,25 +383,25 @@ class Pregnancy_Events:
         )
 
     @staticmethod
-    def handle_two_moon_pregnant(cat: Cat, clan=game.clan):
+    def handle_two_moon_pregnant(cat: Cat):
         """Handles if the cat is two moons pregnant."""
-        if cat.ID not in clan.pregnancy_data.keys():
+        if cat.ID not in game.clan.pregnancy_data.keys():
             return
 
         # if the pregnant cat is killed meanwhile, delete it from the dictionary
         if cat.dead:
-            del clan.pregnancy_data[cat.ID]
+            del game.clan.pregnancy_data[cat.ID]
             return
 
         involved_cats = [cat.ID]
         cat_dict = {"m_c": cat}
 
-        kits_amount = clan.pregnancy_data[cat.ID]["amount"]
+        kits_amount = game.clan.pregnancy_data[cat.ID]["amount"]
         if (
             kits_amount == 0
         ):  # safety check, sometimes pregnancies were ending up with 0 due to save rollbacks
             kits_amount = 1
-        other_cat_id = clan.pregnancy_data[cat.ID]["second_parent"]
+        other_cat_id = game.clan.pregnancy_data[cat.ID]["second_parent"]
         other_cat = Cat.all_cats.get(other_cat_id)
 
         kits = Pregnancy_Events.get_kits(kits_amount, cat, other_cat)
@@ -410,7 +410,7 @@ class Pregnancy_Events:
         extra_naming_text = None
 
         # delete the cat out of the pregnancy dictionary
-        del clan.pregnancy_data[cat.ID]
+        del game.clan.pregnancy_data[cat.ID]
 
         if cat.status.is_outsider:
             keep_clan_tradition = choice([True, False])
@@ -453,11 +453,11 @@ class Pregnancy_Events:
         insert = i18n.t("conditions.pregnancy.kit_amount", count=kits_amount)
 
         # Since cat has given birth, apply the birth cooldown.
-        cat.birth_cooldown = constants.CONFIG["pregnancy"]["birth_cooldown"]
+        cat.birth_cooldown = get_config("pregnancy.birth_cooldown")
 
         # choose event string
         # TODO: currently they don't choose which 'mate' is the 'blood' parent or not
-        # change or leaf as it is?
+        # change or leave as it is?
         Pregnancy_Events.rebuild_strings()
         events = Pregnancy_Events.PREGNANT_STRINGS
         event_list = []
@@ -506,10 +506,10 @@ class Pregnancy_Events:
 
         involved_cats += [k.ID for k in kits]
 
-        if clan.game_mode != "classic":
+        if game.clan.game_mode != "classic":
             try:
                 death_chance = cat.injuries["pregnant"]["mortality"]
-            except:
+            except KeyError:
                 death_chance = 40
         else:
             death_chance = 40
@@ -534,7 +534,7 @@ class Pregnancy_Events:
             event_list.append(choice(possible_events))
 
             if cat.status.is_leader:
-                clan.leader_lives -= 1
+                game.clan.leader_lives -= 1
                 cat.die()
                 death_event = i18n.t("conditions.pregnancy.leader_kitting_death")
                 if extra_result := check_stolen_vitality(cat, 1):
