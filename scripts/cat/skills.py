@@ -159,7 +159,11 @@ class Skill:
 
     @staticmethod
     def get_random_skill(
-        points: int = None, point_tier: int = None, exclude=(), interest_only=False
+        points: int = None,
+        point_tier: int = None,
+        exclude=(),
+        interest_only=False,
+        rng=random.Random(),
     ):
         """Generates a random skill. If wanted, you can specify a tier for the points
         value to be randomized within."""
@@ -167,12 +171,12 @@ class Skill:
         if isinstance(points, int):
             points = points
         elif isinstance(point_tier, int) and 1 <= point_tier <= 3:
-            points = random.randint(
+            points = rng.randint(
                 Skill.tier_ranges[point_tier - 1][0],
                 Skill.tier_ranges[point_tier - 1][1],
             )
         else:
-            points = random.randint(Skill.point_range[0], Skill.point_range[1])
+            points = rng.randint(Skill.point_range[0], Skill.point_range[1])
 
         if isinstance(exclude, SkillPath):
             exclude = [exclude]
@@ -311,9 +315,21 @@ class CatSkills:
     def __repr__(self) -> str:
         return f"<CatSkills: Primary: |{self.primary}|, Secondary: |{self.secondary}|, Hidden: |{self.hidden}|>"
 
+    def get_all(self) -> dict:
+        skill_dict = {}
+        if self.primary:
+            skill_dict[self.primary.path] = self.primary.tier
+        if self.secondary:
+            skill_dict[self.secondary.path] = self.secondary.tier
+
+        return skill_dict
+
     @staticmethod
     def generate_new_catskills(
-        rank: CatRank, age: CatAge, hidden_skill: HiddenSkillEnum = None
+        rank: CatRank,
+        age: CatAge,
+        hidden_skill: HiddenSkillEnum = None,
+        rng=random.Random(),
     ):
         """Generates a new skill"""
         new_skill = CatSkills()
@@ -323,32 +339,39 @@ class CatSkills:
         if rank == CatRank.NEWBORN or age == CatAge.NEWBORN:
             pass
         elif rank == CatRank.KITTEN or age == CatAge.KITTEN:
-            new_skill.primary = Skill.get_random_skill(points=0, interest_only=True)
+            new_skill.primary = Skill.get_random_skill(
+                points=0, interest_only=True, rng=rng
+            )
         elif rank.is_any_apprentice_rank() or age == CatAge.ADOLESCENT:
-            new_skill.primary = Skill.get_random_skill(point_tier=1, interest_only=True)
-            if random.randint(1, 3) == 1:
+            new_skill.primary = Skill.get_random_skill(
+                point_tier=1, interest_only=True, rng=rng
+            )
+            if rng.randint(1, 3) == 1:
                 new_skill.secondary = Skill.get_random_skill(
-                    point_tier=1, interest_only=True, exclude=new_skill.primary.path
+                    point_tier=1,
+                    interest_only=True,
+                    exclude=new_skill.primary.path,
+                    rng=rng,
                 )
         else:
             primary_tier = 1
             secondary_tier = 1
             if age == CatAge.YOUNG_ADULT:
-                primary_tier += random.randint(0, 1)
-                secondary_tier += random.randint(0, 1)
+                primary_tier += rng.randint(0, 1)
+                secondary_tier += rng.randint(0, 1)
             elif age == CatAge.ADULT:
-                primary_tier += random.randint(0, 2)
-                secondary_tier += random.randint(0, 1)
+                primary_tier += rng.randint(0, 2)
+                secondary_tier += rng.randint(0, 1)
             elif age == CatAge.SENIOR_ADULT:
-                primary_tier += random.randint(1, 2)
-                secondary_tier += random.randint(0, 1)
+                primary_tier += rng.randint(1, 2)
+                secondary_tier += rng.randint(0, 1)
             elif age == CatAge.SENIOR:
-                primary_tier -= random.randint(0, 1)
+                primary_tier -= rng.randint(0, 1)
 
-            new_skill.primary = Skill.get_random_skill(point_tier=primary_tier)
-            if random.randint(1, 2) == 1:
+            new_skill.primary = Skill.get_random_skill(point_tier=primary_tier, rng=rng)
+            if rng.randint(1, 2) == 1:
                 new_skill.secondary = Skill.get_random_skill(
-                    point_tier=secondary_tier, exclude=new_skill.primary.path
+                    point_tier=secondary_tier, exclude=new_skill.primary.path, rng=rng
                 )
 
         return new_skill

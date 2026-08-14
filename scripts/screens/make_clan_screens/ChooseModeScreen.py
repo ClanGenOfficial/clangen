@@ -3,8 +3,9 @@ from random import randrange, choice, randint, choices
 import pygame
 import pygame_gui
 
-from scripts.cat.cats import create_cat, create_example_cats
 from scripts.cat.enums import CatRank, CatAge
+from scripts.cat.factories.create_example_cat import create_example_cats
+from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.config import get_config
 from scripts.game_structure import image_cache

@@ -426,7 +426,7 @@ class StartScreen(Screens):
 
         self.reload_errors()
 
-        if game.clan is not None:
+        if game.clan is not None and not switch_get_value(Switch.error_message):
             key_copy = tuple(Cat.all_cats.keys())
             for x in key_copy:
                 if x not in game.clan.clan_cats:

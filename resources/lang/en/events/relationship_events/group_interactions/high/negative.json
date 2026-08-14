@@ -630,6 +630,7 @@
             {
                 "cats_from": ["r_c1"],
                 "cats_to": ["r_c2"],
+                "mutual": false,
                 "constraints": ["uninterested_only", "likes", "-parent/child", "-littermates", "-siblings"]
             }
         ],

@@ -58,7 +58,7 @@ Points of Interest are distributed into three categories. Each Territory has ran
 | Category  |                                                                                            Description                                                                                           |
 |:---------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | gathering | This is the Clan's Gathering place, where they interface with other Clans. One exists per territory.                                                                                             |
-| moonplace | This is the Clan's moon place, where medicine cats meet once a moon. One exists per territory. It typically features some connection to the moon, stars, or night sky. One exists per territory. |
+| moonplace | This is the Clan's moon place, where medicine cats meet once a moon. It typically features some connection to the moon, stars, or night sky. One exists per territory. |
 |  terrain  | This is a feature within the Clan's territory that is notable due to either its appearance or opportunities around it. Three can be discovered per territory.                                    |
 
 ### Tags 

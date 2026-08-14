@@ -22,7 +22,6 @@ from scripts.cat.enums import (
     CatGroup,
     CatStanding,
     CatSocial,
-    CatThought,
 )
 from scripts.cat.names import Name
 from scripts.cat.save_load import save_cats, add_cat_to_fade_id
@@ -36,10 +35,10 @@ from scripts.conditions import (
 from scripts.event_class import Single_Event
 
 from scripts.events_module.generate_events import GenerateEvents, generate_events
-from scripts.events_module.outsider_events import OutsiderEvents
+from scripts.events_module.outsider.outsider_events import OutsiderEvents
 from scripts.events_module.patrol.patrol import Patrol
+from scripts.events_module.relationship import relation_events
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
-from scripts.events_module.relationship.relation_events import Relation_Events
 from scripts.events_module.short.condition_events import Condition_Events
 from scripts.events_module.short.short_event_generation import create_short_event
 from scripts.game_structure import constants
@@ -95,7 +94,7 @@ def one_moon():
     game.mediated = []
     switch_set_value(Switch.saved_clan, False)
     new_cat_invited = False
-    Relation_Events.clear_trigger_dict()
+    relation_events.clear_trigger_dict()
     Patrol.used_patrols.clear()
     game.patrolled.clear()
     game.just_died.clear()
@@ -606,25 +605,8 @@ def mediator_events(cat):
 
 def get_moon_freshkill():
     """Adding auto freshkill for the current moon."""
-    healthy_hunter = list(
-        filter(
-            lambda c: c.status.rank
-            in (CatRank.WARRIOR, CatRank.APPRENTICE, CatRank.LEADER, CatRank.DEPUTY)
-            and c.status.alive_in_player_clan
-            and not c.not_working(),
-            Cat.all_cats.values(),
-        )
-    )
 
-    prey_amount = 0
-    for cat in healthy_hunter:
-        lower_value = constants.CONFIG["prey"]["auto_warrior_prey"][0]
-        upper_value = constants.CONFIG["prey"]["auto_warrior_prey"][1]
-        if cat.status.rank == CatRank.APPRENTICE:
-            lower_value = constants.CONFIG["prey"]["auto_apprentice_prey"][0]
-            upper_value = constants.CONFIG["prey"]["auto_apprentice_prey"][1]
-
-        prey_amount += random.randint(lower_value, upper_value)
+    prey_amount = game.clan.freshkill_pile.get_moonskip_catch_amount()
     game.freshkill_event_list.append(
         i18n.t("hardcoded.prey_catch_count", count=prey_amount)
     )
@@ -1085,7 +1067,7 @@ def one_moon_cat(cat):
 
     # relationships have to be handled separately, because of the ceremony name change
     if cat.status.alive_in_player_clan:
-        Relation_Events.handle_relationships(cat)
+        relation_events.handle_relationships(cat)
 
     # now we make sure ill and injured cats don't get interactions they shouldn't
     if cat.is_ill() or cat.is_injured():
@@ -1785,7 +1767,6 @@ def ceremony(cat, promoted_to, preparedness="prepared"):
         involved_living_parent,
         involved_dead_parent,
     ) = ceremony_text_adjust(
-        Cat,
         ceremony_text,
         cat,
         dead_mentor=dead_mentor,

@@ -99,16 +99,16 @@ class Pelt:
         tortie_patches.extend(sprite_list)
 
     # WHITE MARKINGS
-    little_white: list = []
+    little_white: list = list(sprites.WHITE_PATCH_COMBOS.get("little", {}).keys())
     for sprite_list in sprites.WHITE_LITTLE_DATA["sprite_list"]:
         little_white.extend(sprite_list)
-    mid_white: list = []
+    mid_white: list = list(sprites.WHITE_PATCH_COMBOS.get("mid", {}).keys())
     for sprite_list in sprites.WHITE_MID_DATA["sprite_list"]:
         mid_white.extend(sprite_list)
-    high_white: list = []
+    high_white: list = list(sprites.WHITE_PATCH_COMBOS.get("high", {}).keys())
     for sprite_list in sprites.WHITE_HIGH_DATA["sprite_list"]:
         high_white.extend(sprite_list)
-    mostly_white: list = []
+    mostly_white: list = list(sprites.WHITE_PATCH_COMBOS.get("mostly", {}).keys())
     for sprite_list in sprites.WHITE_MOSTLY_DATA["sprite_list"]:
         # have to remove FULLWHITE as it's handled special
         mostly_white.extend([x for x in sprite_list if x != "FULLWHITE"])
@@ -159,6 +159,7 @@ class Pelt:
     tail_accessories = []
     body_accessories = []
     head_accessories = []
+    paw_accessories = []
 
     # here we create the master lists of each accessory type
     plant_accessories = []
@@ -171,6 +172,8 @@ class Pelt:
                 body_accessories.append(sprite)
             elif sprite_list[sprite] == "head":
                 body_accessories.append(sprite)
+            elif sprite_list[sprite] == "paw":
+                paw_accessories.append(sprite)
 
     wild_accessories = []
     for sprite_list in sprites.WILD_DATA["sprite_list"]:
@@ -182,6 +185,8 @@ class Pelt:
                 body_accessories.append(sprite)
             elif sprite_list[sprite] == "head":
                 body_accessories.append(sprite)
+            elif sprite_list[sprite] == "paw":
+                paw_accessories.append(sprite)
 
     collar_accessories = []
     collar_styles = []

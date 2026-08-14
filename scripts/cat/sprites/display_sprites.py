@@ -338,6 +338,7 @@ def generate_sprite(
                 "tail_accessories",
                 "body_accessories",
                 "head_accessories",
+                "paw_accessories",
             ]
             for category in categories:
                 for accessory in cat_accessories:

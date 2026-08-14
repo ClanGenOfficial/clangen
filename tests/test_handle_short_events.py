@@ -1,20 +1,23 @@
 import os
 import unittest
+from random import Random
 
+from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.events_module.short.short_event import ShortEvent
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-from scripts.cat.cats import Cat
 from scripts.cat.pelts import Pelt
+
+cat_factory = TestCatFactory()
 
 
 class TestHandleEvent(unittest.TestCase):
     def setUp(self):
         self.chosen_event = ShortEvent(event_id="test")
-        self.chosen_event.main_cat = Cat()
-        self.chosen_event.random_cat = Cat()
+        self.chosen_event.main_cat = cat_factory.create_cat()
+        self.chosen_event.random_cat = cat_factory.create_cat()
 
     def test_mc_presence(self):
         # event should always use m_c by default
@@ -62,7 +65,7 @@ class TestHandleNewCats(unittest.TestCase):
 class TestHandleAccessories(unittest.TestCase):
     def setUp(self):
         self.chosen_event = ShortEvent(event_id="test", new_accessory=["TEST"])
-        self.chosen_event.main_cat = Cat(disable_random=True)
+        self.chosen_event.main_cat = cat_factory.create_cat(disable_random=True)
         self.pelts = Pelt
 
     def assert_intersection(self, a, b):
@@ -118,6 +121,13 @@ class TestHandleAccessories(unittest.TestCase):
         self.chosen_event.execute_event()
         self.assertFalse(self.chosen_event.main_cat.pelt.accessory)
 
+    def test_nopaw_cats_do_not_get_paw_accessories(self):
+        self.chosen_event.new_accessory = self.pelts.paw_accessories
+        self.chosen_event.main_cat.pelt.scars = ("NOPAW",)
+
+        self.chosen_event.execute_event()
+        self.assertFalse(self.chosen_event.main_cat.pelt.accessory)
+
 
 class TestHandleTransition(unittest.TestCase):
     def setUp(self):
@@ -126,7 +136,9 @@ class TestHandleTransition(unittest.TestCase):
             sub_type=["transition"],
             new_gender=["trans male", "nonbinary"],
         )
-        self.chosen_event.main_cat = Cat(gender="female", disable_random=True)
+        self.chosen_event.main_cat = cat_factory.create_cat(
+            gender="female", disable_random=True
+        )
 
     def test_cat_transitions(self):
         self.chosen_event.execute_event()
@@ -155,8 +167,8 @@ class TestHandleInjury(unittest.TestCase):
             r_c={"age": "any"},
             injury=[{"cats": ["m_c"], "injuries": ["scrapes"]}],
         )
-        self.chosen_event.main_cat = Cat()
-        self.chosen_event.random_cat = Cat()
+        self.chosen_event.main_cat = cat_factory.create_cat()
+        self.chosen_event.random_cat = cat_factory.create_cat()
 
     def test_types(self):
         self.chosen_event.execute_event()
