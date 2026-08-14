@@ -126,20 +126,17 @@ class Pregnancy_Events:
         # check if there is a cat in the clan for the second parent
         second_parent, is_affair = Pregnancy_Events.get_second_parent(cat)
 
+        if not second_parent and not get_clan_setting("single parentage"):
+            return
+
         # check if the second_parent is not none and if they also can have kits
         can_have_kits, kits_are_adopted = Pregnancy_Events.check_second_parent(
             cat, second_parent
         )
-        if second_parent:
-            if not can_have_kits:
-                return
-        else:
-            if not get_clan_setting("single parentage"):
-                return
+        if second_parent and not can_have_kits:
+            return
 
-        chance = Pregnancy_Events.get_balanced_kit_chance(
-            cat, second_parent, is_affair, clan
-        )
+        chance = Pregnancy_Events.get_balanced_kit_chance(cat, second_parent, is_affair)
 
         if not int(random.random() * chance):
             # If you've reached here - congrats, kits!
@@ -1301,14 +1298,15 @@ class Pregnancy_Events:
 
     @staticmethod
     def get_balanced_kit_chance(
-        first_parent: Cat, second_parent: Cat, affair, clan
+        first_parent: Cat, second_parent: Cat, is_affair
     ) -> int:
         """Returns a chance based on different values."""
         # Now that the second parent is determined, we can calculate the balanced chance for kits
         # get the chance for pregnancy
-        inverse_chance = constants.CONFIG["pregnancy"]["primary_chance_unmated"]
-        if len(first_parent.mate) > 0 and not affair:
-            inverse_chance = constants.CONFIG["pregnancy"]["primary_chance_mated"]
+        if first_parent.mate and not is_affair:
+            inverse_chance = get_config("pregnancy.primary_chance_mated")
+        else:
+            inverse_chance = get_config("pregnancy.primary_chance_unmated")
 
         # SETTINGS
         # - decrease inverse chance if only mated pairs can have kits
@@ -1323,13 +1321,13 @@ class Pregnancy_Events:
 
         # CURRENT CAT AMOUNT
         # - increase the inverse chance if the clan is bigger
-        living_cats = len(
+        clan_size = len(
             [i for i in Cat.all_cats.values() if i.status.alive_in_player_clan]
         )
-        if living_cats < 10:
+        if clan_size < 10:
             inverse_chance = int(inverse_chance * 0.5)
-        elif living_cats > 30:
-            inverse_chance = int(inverse_chance * (living_cats / 30))
+        elif clan_size > 30:
+            inverse_chance = int(inverse_chance * (clan_size / 30))
 
         # COMPATIBILITY
         # - decrease / increase depending on the compatibility
@@ -1342,30 +1340,36 @@ class Pregnancy_Events:
                 inverse_chance = int(inverse_chance * buff)
 
         # RELATIONSHIP
-        # - decrease the inverse chance if the cats are going along well
+        # - decrease the inverse chance if the cats are getting along well
         if second_parent:
             # get the needed relationships
             if second_parent.ID in first_parent.relationships:
-                second_parent_relation = first_parent.relationships[second_parent.ID]
-                if not second_parent_relation.opposite_relationship:
-                    second_parent_relation.link_relationship()
+                first_to_second_relationship = first_parent.relationships[
+                    second_parent.ID
+                ]
             else:
-                second_parent_relation = first_parent.create_one_relationship(
+                first_to_second_relationship = first_parent.create_one_relationship(
                     second_parent
                 )
-                if not second_parent_relation.opposite_relationship:
-                    second_parent_relation.link_relationship()
+            if first_parent.ID in second_parent.relationships:
+                second_to_first_relationship = second_parent.relationships[
+                    first_parent.ID
+                ]
+            else:
+                second_to_first_relationship = second_parent.create_one_relationship(
+                    first_parent
+                )
+
             average_romantic_love = (
-                second_parent_relation.romance
-                + second_parent_relation.opposite_relationship.romance
+                first_to_second_relationship.romance
+                + second_to_first_relationship.romance
             ) / 2
             average_comfort = (
-                second_parent_relation.comfort
-                + second_parent_relation.opposite_relationship.comfort
+                first_to_second_relationship.comfort
+                + second_to_first_relationship.comfort
             ) / 2
             average_trust = (
-                second_parent_relation.trust
-                + second_parent_relation.opposite_relationship.trust
+                first_to_second_relationship.trust + second_to_first_relationship.trust
             ) / 2
 
             if average_romantic_love >= 85:
@@ -1391,7 +1395,7 @@ class Pregnancy_Events:
 
         # AGE
         # - decrease the inverse chance if the whole clan is really old
-        avg_age = int(sum((cat.moons for cat in Cat.all_cats.values())) / living_cats)
+        avg_age = int(sum((cat.moons for cat in Cat.all_cats.values())) / clan_size)
         if avg_age > 80:
             inverse_chance = int(inverse_chance * 0.8)
 
@@ -1413,11 +1417,11 @@ class Pregnancy_Events:
 
         # - decrease inverse chance if the current family is small
         if len(first_parent.get_relatives(get_clan_setting("first cousin mates"))) < (
-            living_cats / 15
+            clan_size / 15
         ):
             inverse_chance = int(inverse_chance * 0.7)
 
-        # - decrease inverse chance single parents if settings allow an biggest family is huge
+        # - decrease inverse chance for single parents if settings allow and biggest family is huge
         settings_allow = not second_parent and not get_clan_setting("single parentage")
         if settings_allow and Pregnancy_Events.biggest_family_is_big():
             inverse_chance = int(inverse_chance * 0.9)
