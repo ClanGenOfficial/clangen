@@ -30,14 +30,15 @@ class TestPregnancySettings(unittest.TestCase):
 
         # our parents are unmated, thus this would be single parenthood
         # allowed
+        set_clan_setting("single parentage", True)
         self.assertTrue(Pregnancy_Events.check_if_can_have_kits(parent1))
         # not allowed
+        set_clan_setting("single parentage", False)
         self.assertFalse(Pregnancy_Events.check_if_can_have_kits(parent1))
 
         # set mate
         parent1.mate = [parent2.ID]
         # single parentage setting shouldn't prevent these cats from having kits
-        self.assertTrue(Pregnancy_Events.check_if_can_have_kits(parent1))
         self.assertTrue(Pregnancy_Events.check_if_can_have_kits(parent1))
 
     def test_unmated(self):
@@ -46,6 +47,7 @@ class TestPregnancySettings(unittest.TestCase):
 
         # parent1 is unmated
         # allow
+        set_clan_setting("unmated parentage", True)
         self.assertTrue(Pregnancy_Events.check_if_can_have_kits(parent1))
         # don't allow
         set_clan_setting("unmated parentage", False)
