@@ -92,7 +92,7 @@ class CanHaveKits(unittest.TestCase):
         game.used_group_IDs["5"] = CatGroup.OTHER_CLAN
         cat.status.add_to_group("5")
 
-        self.assertFalse(Pregnancy_Events.handle_having_kits(cat, test_clan))
+        self.assertFalse(Pregnancy_Events.handle_having_kits(cat))
 
     def test_cat_not_working_pregnancy(self):
         test_clan = Clan(save_id="clan")
@@ -100,7 +100,7 @@ class CanHaveKits(unittest.TestCase):
         cat = cat_factory.create_cat(gender="female", moons=50)
         cat.get_injured("broken bone")
 
-        self.assertFalse(Pregnancy_Events.handle_having_kits(cat, test_clan))
+        self.assertFalse(Pregnancy_Events.handle_having_kits(cat))
 
     def test_prevent_kits(self):
         # given
@@ -130,7 +130,7 @@ class CanHaveKits(unittest.TestCase):
 
         # when
         check_if_can_have_kits.return_value = True
-        Pregnancy_Events.handle_having_kits(cat=cat1, clan=test_clan)
+        Pregnancy_Events.handle_having_kits(cat=cat1)
 
         # then
         self.assertNotIn(cat1.ID, test_clan.pregnancy_data.keys())
@@ -177,7 +177,7 @@ class Pregnancy(unittest.TestCase):
 
         # when
         check_if_can_have_kits.return_value = True
-        Pregnancy_Events.handle_zero_moon_pregnant(cat, None, clan)
+        Pregnancy_Events.handle_zero_moon_pregnant(cat, None)
 
         # then
         self.assertIn(cat.ID, clan.pregnancy_data.keys())
@@ -199,7 +199,7 @@ class Pregnancy(unittest.TestCase):
 
         # when
         check_if_can_have_kits.return_value = True
-        Pregnancy_Events.handle_zero_moon_pregnant(cat1, cat2, clan)
+        Pregnancy_Events.handle_zero_moon_pregnant(cat1, cat2)
 
         # then
         self.assertIn(cat1.ID, clan.pregnancy_data.keys())
