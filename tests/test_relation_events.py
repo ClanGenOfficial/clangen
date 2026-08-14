@@ -1,6 +1,5 @@
 import os
 import unittest
-from random import Random
 from unittest.mock import patch
 
 from scripts.cat.enums import CatGroup
@@ -17,7 +16,6 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan import Clan
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
-from scripts.events_module.relationship import romantic_events
 
 cat_factory = TestCatFactory()
 

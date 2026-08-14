@@ -114,7 +114,7 @@ class Pregnancy_Events:
 
         # Handle birth cooldown outside the check_if_can_have_kits function, so it only happens once
         # for each cat.
-        if cat.birth_cooldown > 0:
+        if cat.birth_cooldown:
             cat.birth_cooldown -= 1
 
         # Check if they can have kits.
@@ -601,7 +601,7 @@ class Pregnancy_Events:
         if not cat:
             return False
 
-        if cat.birth_cooldown > 0:
+        if cat.birth_cooldown:
             return False
 
         if "recovering from birth" in cat.injuries:
@@ -629,8 +629,8 @@ class Pregnancy_Events:
             # then they can't have kits
             if (
                 not get_clan_setting("single parentage")
-                or not get_clan_setting("unmated parentage")
-                or not get_clan_setting("affair")
+                and not get_clan_setting("unmated parentage")
+                and not get_clan_setting("affair")
             ):
                 return False
 
@@ -673,6 +673,7 @@ class Pregnancy_Events:
         chosen_mate = None
         # if the sex does matter, choose the best solution to allow kits
         same_sex_birth_allowed = get_clan_setting("same sex birth")
+        coparenting_allowed = get_clan_setting("unmated parentage")
         if cat.mate:
             if same_sex_birth_allowed:
                 # choose any mate
@@ -686,6 +687,9 @@ class Pregnancy_Events:
                 ]
                 if possible_mates:
                     chosen_mate = choice(possible_mates)
+        elif not coparenting_allowed:
+            # if coparenting is OFF, then an unmated cat can't have a kitten
+            return None, False
 
         affair_allowed = get_clan_setting("affair")
         if chosen_mate and not affair_allowed:
@@ -699,11 +703,6 @@ class Pregnancy_Events:
         elif chosen_mate:
             relationship_toward_mate = cat.create_one_relationship(chosen_mate)
 
-        coparenting = False
-        if not cat.mate:
-            # is there's no mate to cheat on then this isn't an affair, rather it's coparenting
-            coparenting = True
-
         # NONRANDOM AFFAIR & COPARENTING
         # Handle love affair chance.
         new_partner = Pregnancy_Events.determine_highest_romantic_relation(
@@ -713,6 +712,12 @@ class Pregnancy_Events:
             return new_partner, True
 
         # RANDOM AFFAIR & COPARENTING
+        if not cat.mate:
+            # is there's no mate to cheat on then this isn't an affair, rather it's coparenting
+            coparenting = True
+        else:
+            coparenting = False
+
         if coparenting:
             chance = get_config("pregnancy.unmated_random_affair_chance")
         else:
@@ -755,12 +760,15 @@ class Pregnancy_Events:
                 chosen_affair = choice(possible_partners)
                 return chosen_affair, True
 
-        # no cat was found
-        return None, False
+        # no affair/coparent was found
+        return chosen_mate, False
 
     @staticmethod
     def determine_highest_romantic_relation(
-        cat: Cat, mate: Optional[Cat], relationship_with_mate: Optional[Relationship], same_sex_birth_allowed: bool
+        cat: Cat,
+        mate: Optional[Cat],
+        relationship_with_mate: Optional[Relationship],
+        same_sex_birth_allowed: bool,
     ) -> Optional[Cat]:
         """
         Function to handle everything around unmated affairs.
