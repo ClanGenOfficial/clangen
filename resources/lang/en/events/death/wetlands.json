@@ -34,5 +34,127 @@
             "death": "m_c was killed by a cottonmouth snake."
             }
         ]
+  },
+  {
+    "event_id": "wtlnd_death_crocodile",
+    "location": ["wetlands"],
+    "season": ["any"],
+    "frequency": 2,
+    "event_text": "m_c was out fishing, close to the waters edge. Close enough for a deathjaw to snatch {PRONOUN/m_c/subject}.",
+    "m_c": {
+        "status": ["-kitten"],
+        "dies": true
+    },
+    "history": [
+        {
+        "cats": ["m_c"],
+        "death": "m_c was snatched by a deathjaw."
+        }
+    ]
+  },
+  {
+   "event_id": "wtld_death_crocodild2",
+   "location": ["wetlands"],
+   "season": ["-leaf-bare"],
+   "frequency": 2,
+   "event_text": "m_c pushed r_c out of reach of a deathjaw's maw, {PRONOUN/m_c/object} would not be as lucky.",
+   "m_c": {
+        "trait": [
+            "-nervous"
+          ],
+          "status": [
+            "-kitten"
+          ],
+        "dies": true
+        },
+    "r_c": {
+        "status": ["any"]
+    },
+    "history": [
+        {
+            "cats": ["m_c"],
+            "death": "m_c was snatched by a deathjaw while saving a clanmate."
+        }
+    ]
+  },
+  {
+    "event_id": "wtld_death_bog",
+    "location": ["any"],
+    "season": ["greenleaf"],
+    "tags": ["no_body"],
+    "frequency": 3,
+    "event_text": "m_c adventured too far and found {PRONOUN/m_c/self} stuck in a bog. m_c can only struggle ",
+    "m_c": {
+        "status": [
+            "-kitten"
+        ]
+    },
+    "history":[
+        {
+            "cats": ["m_c"],
+            "death": "m_c drowned in a bog."
+        }
+    ]
+  },
+  {
+    "event_id": "wtld_death_weeds",
+    "location": ["wetlands"],
+    "season": ["-leaf-bare"],
+    "frequency": 3,
+    "event_text": "m_c drowned after {PRONOUN/m_c/subject} found {PRONOUN/m_c/self} ensared in weeds.",
+    "m_c": {
+        "trait": [
+            "-careful",
+            "-calm",
+            "-cunning"
+        ]
+    },
+    "history": [
+        {
+            "cats": ["m_c"],
+            "death": "m_c drowned after being trapped in weeds."
+        }
+    ]
+  },
+  {
+    "event_id": "wtld_death_bullfrog",
+    "location": ["wetlands"],
+    "season": ["-leaf-bare"],
+    "tags": ["no_body"],
+    "frequency": 2,
+    "event_text": "m_c was swallowed by a huge bullfrog after straying from camp.",
+    "m_c": {
+        "status": ["kitten"],
+        "dies": true
+    },
+    "history": [
+        {
+        "cats":["m_c"],
+        "death": "m_c was eaten by a bullfrog"
+        }
+    ]
+  },
+  {
+    "event_id": "wtld_death_otter",
+    "location": [
+        "wetlands",
+        "forest"
+    ],
+    "season": ["any"],
+    "frequency": 3,
+    "event_text": "m_c was dragged off by an otter that had snuck into camp.",
+    "m_c": {
+        "age": [
+            "kitten",
+            "adolescent"
+        ],
+        "dies": true
+    },
+    "history": [
+        {
+        "cats": ["m_c"],
+        "death": "m_c was eaten by an otter."
+        }
+    ] 
   }
 ]
