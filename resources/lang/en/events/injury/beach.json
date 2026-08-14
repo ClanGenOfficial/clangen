@@ -966,6 +966,167 @@
     }
   ]
 },
+{
+    "event_id": "bch_injury_gull_prey",
+    "location":["beach"], 
+    "season": ["any"],
+    "frequency": 3,
+    "event_text": "A flock of seagulls descended upon the fresh-kill pile. m_c tried to chase them off but was pecked for {PRONOUN/m_c/poss} troubles.",
+    "m_c": {
+        "status": []
+    },
+    "injury": [
+        {
+            "cats": [
+                "m_c"
+            ],
+            "injuries": [
+                "beak_bite"
+            ]
+        }
+    ],
+    "history": [
+        {
+            "cats": [
+                "m_c"
+            ],
+            "death": "m_c died from {PRONOUN/m_c/poss} injuries from defending the fresh-kill from seagulls.",
+            "scar": "m_c was scarred after defending the fresh-kill from seagulls."
+        }
+    ],
+    "supplies": [
+        {
+            "type": "freshkill",
+            "trigger": ["adequate","full","excess"],
+            "adjust": "reduce_quarter"
+        }
+    ],
+    "relationships": [
+        {
+            "cats_from": [
+                "clan", 
+                "high_social"],
+            "cats_to": ["m_c"],
+            "values": ["trust"],
+            "amount": 10,
+            "mutual": false,
+            "log": {
+                 "cats_from": "cat_from appreciated that cat_to tried to chase off prey-thieving seagulls."
+             }
+        }
+    ]
+},
+{
+    "event_id": "bch_injury_crab_prey",
+    "location": ["beach"],
+    "season": ["any"],
+    "frequency": 3,
+    "event_text": "m_c chased away a giant coconut crab helping itself to the fresh-kill. The crab punched back with a force that sends m_c straight to the medicine den.",
+    "m_c": {
+        "status": ["-kitten","-newborn"],
+        "trait": [
+            "ambitious",
+            "bold",
+            "strange",
+            "arrogant",
+            "-shy",
+            "-nervous",
+            "-insecure"
+        ]
+    },
+    "injury": [
+        {
+            "cats": ["m_c"],
+            "injuries": ["blunt_force_injury"]
+        }
+    ],
+    "history": [
+        {
+            "cats": [
+                "m_c"
+            ],
+            "death": "m_c died from {PRONOUN/m_c/poss} wounds defending prey from a coconut crab.",
+            "scar": "m_c was scarred after chasing away a Coconut crab."
+        }
+    ]
+},
+{
+    "event_id": "bch_injury_crab_prey_duo",
+    "location": ["beach"],
+    "season": ["any"],
+    "frequency": 2,
+    "event_text": "m_c and r_c tried to chase away a giant coconut crab helping itself to the fresh-kill. They drove it away, but r_c had to escort m_c to the medicine den right after.",
+    "m_c": {
+        "status": ["-kitten","-newborn"],
+        "trait": [
+            "-shy",
+            "-nervous",
+            "-insecure"
+        ]
+    },
+    "r_c": {
+        "status": ["-kitten","-newborn"]
+    },
+    "injury": [
+        {
+            "cats": ["m_c"],
+            "injuries": ["blunt_force_injury"]
+        }
+    ],
+    "history": [
+        {
+            "cats": [
+                "m_c"
+            ],
+            "death": "m_c died from {PRONOUN/m_c/poss} wounds defending prey from a coconut crab.",
+            "scar": "m_c was scarred attempting to chase away a coconut crab."
+        }
+    ],
+    "supplies": [
+        {
+            "type": "freshkill",
+            "trigger": ["adequate","full","excess"],
+            "adjust": "reduce_eighth"
+        }
+    ]
+},
+{
+    "event_id": "bch_injury_pelican_prey",
+    "location": ["beach:camp1_camp2_camp3"],
+    "season": ["any"],
+    "frequency": 3,
+    "event_text": "The abundant fresh-kill attracted a pelican to the camp. m_c chased away the bird but was hurt in the process.",
+    "m_c": {
+        "status": ["-kitten","-newborn"],
+        "trait": [
+            "-shy",
+            "-nervous",
+            "-insecure"
+        ]
+    },
+    "injury": [
+        {
+            "cats": ["m_c"],
+            "injuries": ["beak_bite"]
+        }
+    ],
+    "history": [
+        {
+            "cats": [
+                "m_c"
+            ],
+            "death": "m_c died from {PRONOUN/m_c/poss} wounds defending prey from a pelican.",
+            "scar": "m_c was scarred after a pelican tried to steal to prey."
+        }
+    ],
+    "supplies": [
+        {
+            "type": "freshkill",
+            "trigger": ["excess","full"],
+            "adjust": "reduce_eighth"
+        }
+    ]
+},
     {
         "event_id": "bch_injury_urchin1",
         "location": [

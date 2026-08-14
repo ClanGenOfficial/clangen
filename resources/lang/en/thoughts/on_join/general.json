@@ -169,11 +169,23 @@
         ],
         "involved_cats": {
             "m_c": {
-                "status": [
-                    "kitten",
-                    "newborn"
+                "age": ["kitten", "newborn"]
+            }
+        }
+    
+    },
+    {
+        "id": "stolen_kit",
+        "strings":[
+            "Is looking around nervously"
+        ],
+        "involved_cats":{
+            "m_c":{
+                "backstory":[
+                    "stolenkit3"
                 ]
             }
         }
     }
 ]
+
