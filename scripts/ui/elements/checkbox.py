@@ -62,7 +62,7 @@ class UICheckbox(UIImageButton):
             manager=manager,
             starting_height=3,
             visible=self.checked,
-            anchors=anchors
+            anchors=anchors,
         )
         self.checkmark.disable()
 

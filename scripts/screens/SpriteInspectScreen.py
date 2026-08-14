@@ -323,7 +323,7 @@ class SpriteInspectScreen(Screens):
         self.checkboxes["platform_shown"] = UICheckbox(
             position=(100, 575),
             manager=MANAGER,
-            check= self.platform_shown,
+            check=self.platform_shown,
         )
 
         # "Show Scars"
