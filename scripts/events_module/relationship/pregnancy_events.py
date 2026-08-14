@@ -14,14 +14,12 @@ from scripts.cat.enums import (
     CatCompatibility,
     CatThought,
 )
-from scripts.cat.factories.enums import CatType
 from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.names import names, Name
 from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.cat_relations.relationship import Relationship, RelType
 from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.clan_package.settings import get_clan_setting
-from scripts.conditions import get_amount_cat_for_one_medic
 from scripts.config import get_config
 from scripts.event_class import Single_Event
 from scripts.events_module.short.condition_events import Condition_Events
@@ -87,13 +85,13 @@ class Pregnancy_Events:
         return len(Pregnancy_Events.biggest_family) > (living_cats / 10)
 
     @staticmethod
-    def handle_pregnancy_age(clan):
+    def handle_pregnancy_age():
         """Increase the moon for each pregnancy in the pregnancy dictionary"""
-        for pregnancy_key in clan.pregnancy_data.keys():
-            clan.pregnancy_data[pregnancy_key]["moons"] += 1
+        for pregnancy_key in game.clan.pregnancy_data.keys():
+            game.clan.pregnancy_data[pregnancy_key]["moons"] += 1
 
     @staticmethod
-    def handle_having_kits(cat):
+    def handle_having_kits(cat: Cat):
         """Handles pregnancy of a cat."""
         if not game.clan:
             return
@@ -666,7 +664,7 @@ class Pregnancy_Events:
     # ---------------------------------------------------------------------------- #
 
     @staticmethod
-    def get_second_parent(cat) -> tuple[Cat, bool]:
+    def get_second_parent(cat: Cat) -> tuple[Optional[Cat], bool]:
         """
         Return the second parent of a cat, which will have kits.
         Also returns a bool that is true if an affair was triggered.
@@ -762,7 +760,7 @@ class Pregnancy_Events:
 
     @staticmethod
     def determine_highest_romantic_relation(
-        cat, mate, relationship_with_mate, same_sex_birth_allowed
+        cat: Cat, mate: Optional[Cat], relationship_with_mate: Optional[Relationship], same_sex_birth_allowed: bool
     ) -> Optional[Cat]:
         """
         Function to handle everything around unmated affairs.
@@ -1163,7 +1161,7 @@ class Pregnancy_Events:
         return all_kitten
 
     @staticmethod
-    def get_amount_of_kits(cat):
+    def get_amount_of_kits(cat: Cat):
         """Get the amount of kits which will be born."""
         min_kits = get_config("pregnancy.min_kits")
         min_kit = [min_kits] * get_config(

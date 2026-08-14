@@ -110,7 +110,7 @@ def one_moon():
     game.clan.age += 1
 
     update_afterlife_temper()
-    Pregnancy_Events.handle_pregnancy_age(game.clan)
+    Pregnancy_Events.handle_pregnancy_age()
     check_war()
 
     if game.clan.game_mode in ("expanded", "cruel_season") and game.clan.freshkill_pile:
