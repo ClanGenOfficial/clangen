@@ -20,10 +20,8 @@ from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.cat_relations.relationship import Relationship, RelType
 from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.clan_package.settings import get_clan_setting
-from scripts.config import get_config
 from scripts.event_class import Single_Event
 from scripts.events_module.short.condition_events import Condition_Events
-from scripts.game_structure import constants
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 from scripts.events_module.text_adjust import (
@@ -148,7 +146,7 @@ class Pregnancy_Events:
 
         breakup_chance = get_config("mates.mates_breakup.affair_breakup_chance")
         if random.random() <= breakup_chance:
-            mate_cat.unset_mate(cheating_cat, breakup=True, fight=True)
+            mate_cat.unset_mate(cheating_cat, user_initiated_breakup=True, fight=True)
             breakup_text = choice(
                 Pregnancy_Events.BREAKUP_STRINGS["affair_discovery_breakup"]
             )
@@ -805,7 +803,7 @@ class Pregnancy_Events:
             # If they are dead in childbirth above, all condition are cleared anyway.
             try:
                 cat.injuries.pop("pregnant")
-            except:
+            except KeyError:
                 print(
                     "Is this an old save? Your cat didn't have the pregnant condition!"
                 )
@@ -1590,6 +1588,7 @@ class Pregnancy_Events:
         for kitten in all_kitten:
             # update/buff the relationship towards the siblings
             for second_kitten in all_kitten:
+                y = random.randrange(0, 15)
                 if second_kitten.ID == kitten.ID:
                     continue
                 relationship_value = get_config(
