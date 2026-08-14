@@ -105,7 +105,7 @@ class Pregnancy_Events:
         if cat.ID in game.clan.pregnancy_data:
             moons = game.clan.pregnancy_data[cat.ID]["moons"]
             if moons == 1:
-                Pregnancy_Events.handle_one_moon_pregnant(cat, clan)
+                Pregnancy_Events.handle_one_moon_pregnant(cat)
                 return
             if moons >= 2:
                 Pregnancy_Events.handle_two_moon_pregnant(cat, clan)
@@ -320,23 +320,22 @@ class Pregnancy_Events:
         )
 
     @staticmethod
-    def handle_one_moon_pregnant(cat: Cat, clan=game.clan):
+    def handle_one_moon_pregnant(cat: Cat):
         """Handles if the cat is one moon pregnant."""
-        if cat.ID not in clan.pregnancy_data.keys():
+        if cat.ID not in game.clan.pregnancy_data.keys():
             return
 
         # if the pregnant cat killed meanwhile, delete it from the dictionary
         if cat.dead:
-            del clan.pregnancy_data[cat.ID]
+            del game.clan.pregnancy_data[cat.ID]
             return
 
         amount = Pregnancy_Events.get_amount_of_kits(cat)
-        text = "This should not appear (pregnancy_events.py)"
 
         # add the amount to the pregnancy dict
-        clan.pregnancy_data[cat.ID]["amount"] = amount
+        game.clan.pregnancy_data[cat.ID]["amount"] = amount
 
-        # if the cat is outside of the clan, they won't guess how many kits they will have
+        # if the cat is outside the clan, they won't guess how many kits they will have
         if cat.status.is_outsider:
             return
 
@@ -375,7 +374,7 @@ class Pregnancy_Events:
             if cat.injuries["pregnant"]["severity"] == "minor":
                 cat.injuries["pregnant"]["severity"] = "major"
                 text += choice(Pregnancy_Events.PREGNANT_STRINGS["major_severity"])
-        except:
+        except KeyError:
             print("Is this an old save? Cat does not have the pregnant condition")
 
         text = event_text_adjust(Cat, text, main_cat=cat, clan=game.clan)
