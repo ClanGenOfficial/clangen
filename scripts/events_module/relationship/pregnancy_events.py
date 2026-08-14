@@ -141,7 +141,7 @@ class Pregnancy_Events:
         if not int(random.random() * chance):
             # If you've reached here - congrats, kits!
             if kits_are_adopted:
-                Pregnancy_Events.handle_adoption(cat, second_parent, clan)
+                Pregnancy_Events.handle_adoption(cat, second_parent)
             else:
                 Pregnancy_Events.handle_zero_moon_pregnant(cat, second_parent, clan)
 
@@ -150,17 +150,17 @@ class Pregnancy_Events:
     # ---------------------------------------------------------------------------- #
 
     @staticmethod
-    def handle_adoption(cat: Cat, other_cat=None, clan=game.clan):
+    def handle_adoption(cat: Cat, other_cat: Optional[Cat] = None):
         """Handle if the there is no pregnancy but the pair triggered kits chance."""
         if other_cat and (
-            not other_cat.status.alive_in_player_clan or other_cat.birth_cooldown > 0
+            not other_cat.status.alive_in_player_clan or other_cat.birth_cooldown
         ):
             return
 
-        if cat.ID in clan.pregnancy_data:
-            return
-
-        if other_cat and other_cat.ID in clan.pregnancy_data:
+        # if the parents are already expecting, then they don't need to adop
+        if (cat.ID in game.clan.pregnancy_data) or (
+            other_cat and other_cat.ID in game.clan.pregnancy_data
+        ):
             return
 
         # Gather adoptive parents, to feed into the
@@ -205,13 +205,11 @@ class Pregnancy_Events:
         for kit in kits:
             kit.get_new_thought()
 
-        # Normally, birth cooldown is only applied to cat who gave birth
-        # However, if we don't apply birth cooldown to adoption, we get
-        # too much adoption, since adoptive couples are using the increased two-parent
-        # kits chance. We will only apply it to "cat" in this case
-        # which is enough to stop the couple from adopting about within
+        # Normally, birth cooldown is only applied to cat who gave birth. However, if we don't apply birth cooldown to
+        # adoption, we get too much adoption, since adoptive couples are using the increased two-parent kits chance.
+        # We will only apply it to "cat" in this case, which is enough to stop the couple from adopting about within
         # the window.
-        cat.birth_cooldown = constants.CONFIG["pregnancy"]["birth_cooldown"]
+        cat.birth_cooldown = get_config("pregnancy.birth_cooldown")
 
         game.cur_events_list.append(
             Single_Event(print_event, "birth_death", cat_dict=cats_involved)
