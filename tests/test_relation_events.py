@@ -148,11 +148,8 @@ class SameSexAdoptions(unittest.TestCase):
         )
         cat1.mate.append(cat2.ID)
         cat2.mate.append(cat1.ID)
-
+        set_clan_setting("same sex adoption", True)
         # when
-        single_parentage = False
-        unmated_parentage = False
-        allow_affair = False
         self.assertTrue(Pregnancy_Events.check_if_can_have_kits(cat1))
         self.assertTrue(Pregnancy_Events.check_if_can_have_kits(cat2))
 
