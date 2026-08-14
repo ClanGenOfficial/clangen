@@ -35,7 +35,7 @@ from scripts.conditions import (
 from scripts.event_class import Single_Event
 
 from scripts.events_module.generate_events import GenerateEvents, generate_events
-from scripts.events_module.outsider.outsider_events import OutsiderEvents
+from scripts.events_module.outsider import outsider_events
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.events_module.relationship import relation_events
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
@@ -967,7 +967,7 @@ def one_moon_outside_cat(cat, other_clan_cats: list = None):
     Pregnancy_Events.handle_having_kits(cat, clan=game.clan)
 
     if not cat.dead:
-        OutsiderEvents.killing_outsiders(cat)
+        outsider_events.killing_outsiders(cat)
 
 
 def one_moon_cat(cat):
