@@ -329,16 +329,16 @@ class RoleScreen(Screens):
                 image_cache.load_image(icon_path),
                 ui_scale_dimensions((78, 78)),
             ),
-            starting_height=2
+            starting_height=2,
         )
 
         self.selected_cat_elements["role_icon_frame"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((82, 231), (78, 78))),
             pygame.transform.scale(
                 image_cache.load_image("resources/images/buttonrank.png"),
-                ui_scale_dimensions((78,78)),
+                ui_scale_dimensions((78, 78)),
             ),
-            starting_height=1
+            starting_height=1,
         )
 
         (
