@@ -157,13 +157,7 @@ class SameSexAdoptions(unittest.TestCase):
         self.assertTrue(Pregnancy_Events.check_if_can_have_kits(cat2))
 
         can_have_kits, kits_are_adopted = Pregnancy_Events.check_second_parent(
-            cat=cat1,
-            second_parent=cat2,
-            single_parentage=single_parentage,
-            allow_unmated=unmated_parentage,
-            allow_affair=allow_affair,
-            same_sex_birth=False,
-            same_sex_adoption=True,
+            cat=cat1, second_parent=cat2
         )
         self.assertTrue(can_have_kits)
         self.assertTrue(kits_are_adopted)

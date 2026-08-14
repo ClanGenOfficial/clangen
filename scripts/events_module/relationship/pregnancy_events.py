@@ -128,13 +128,7 @@ class Pregnancy_Events:
 
         # check if the second_parent is not none and if they also can have kits
         can_have_kits, kits_are_adopted = Pregnancy_Events.check_second_parent(
-            cat,
-            second_parent,
-            get_clan_setting("single parentage"),
-            get_clan_setting("unmated parentage"),
-            get_clan_setting("affair"),
-            get_clan_setting("same sex birth"),
-            get_clan_setting("same sex adoption"),
+            cat, second_parent
         )
         if second_parent:
             if not can_have_kits:
@@ -652,33 +646,24 @@ class Pregnancy_Events:
         return True
 
     @staticmethod
-    def check_second_parent(
-        cat: Cat,
-        second_parent: Cat,
-        single_parentage: bool,
-        allow_unmated: bool,
-        allow_affair: bool,
-        same_sex_birth: bool,
-        same_sex_adoption: bool,
-    ):
+    def check_second_parent(cat: Cat, second_parent: Cat) -> tuple[bool, bool]:
         """
-        This checks to see if the chosen second parent and CAT can have kits. It assumes CAT can have kits.
+        This checks to see if the chosen second parent can have kits. It assumes CAT can have kits.
         returns:
         parent can have kits, kits are adopted
         """
-
         # Checks for second parent alone:
         if not Pregnancy_Events.check_if_can_have_kits(second_parent):
             return False, False
 
         # Check to see if the pair can have kits.
         if cat.gender == second_parent.gender:
-            if same_sex_birth:
+            if get_clan_setting("same sex birth"):
                 return True, False
-            elif not same_sex_adoption:
-                return False, False
-            else:
+            elif get_clan_setting("same sex adoption"):
                 return True, True
+            else:
+                return False, False
 
         return True, False
 
