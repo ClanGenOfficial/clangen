@@ -2123,10 +2123,11 @@ class ProfileScreen(Screens):
             pass
         else:
             self.open_tab = "dangerous"
-            self.exile_cat_button = UIImageButton(
+            self.exile_cat_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((578, 450), (172, 36))),
                 "screens.profile.exile",
-                object_id="#exile_cat_button",
+                get_button_dict(ButtonStyles.LADDER_TOP, (172, 36)),
+                object_id="@buttonstyles_ladder_top",
                 tool_tip_text="screens.profile.exile_tooltip",
                 starting_height=2,
                 manager=MANAGER,
@@ -2251,7 +2252,7 @@ class ProfileScreen(Screens):
 
             self.exile_cat_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((578, 450), (172, 36))),
-                "",
+                "screens.profile.exile",
                 get_button_dict(ButtonStyles.LADDER_TOP, (172, 36)),
                 object_id="@buttonstyles_ladder_top",
                 tool_tip_text=(
