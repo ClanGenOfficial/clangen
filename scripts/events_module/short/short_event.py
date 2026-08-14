@@ -265,6 +265,10 @@ class ShortEvent:
             if self.handle_accessories() is False:
                 return
 
+        # update gender before relationships
+        if self.new_gender:
+            self.handle_transition()
+
         # change relationships before killing anyone
         if self.relationships:
             # we're doing this here to make sure rel logs get adjusted text
@@ -306,10 +310,6 @@ class ShortEvent:
                 comfort=-30,
                 trust=-30,
             )
-
-        # update gender
-        if self.new_gender:
-            self.handle_transition()
 
         # kill cats
         self.handle_death()
