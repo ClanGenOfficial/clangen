@@ -290,7 +290,7 @@ def rebuild_moon_n_season_indicator(change_moon: bool = False, visible: bool = F
 
         menu_buttons["moon_indicator"] = UITextBox(
             moon_icon,
-            ui_scale(pygame.Rect((-19, -23), (22, 26))),
+            ui_scale(pygame.Rect((-23, -26), (30, 30))),
             visible=visible,
             manager=MANAGER,
             starting_height=5,
@@ -305,7 +305,9 @@ def rebuild_moon_n_season_indicator(change_moon: bool = False, visible: bool = F
         menu_buttons["moon_indicator_frame"] = pygame_gui.elements.UIImage(
             scale_rect,
             pygame.transform.scale(
-                image_cache.load_image("resources/images/moon_container.png").convert_alpha(),
+                image_cache.load_image(
+                    "resources/images/moon_container.png"
+                ).convert_alpha(),
                 (22, 26),
             ),
             visible=visible,
@@ -385,7 +387,7 @@ def run_moon_animation():
 
     for frame in frames:
         menu_buttons["moon_indicator"].set_text(
-                moon_phases[frame],
+            moon_phases[frame],
         )
         time.sleep(0.125)
 
