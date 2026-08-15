@@ -1,5 +1,96 @@
 {
-    "little": {},
+    "little": {
+        "BELLY": [
+            "littleBELLY_SMALL",
+            "littleUNDER_SMALL"
+        ],
+        "BROKENBLAZE": [
+            "littleCHEST_MIN",
+            "littleBLAZE_MIN",
+            "littleHEAD_MIN",
+            "littleLEG_BACK_LEFT_SMALL",
+            "littleLEG_BACK_RIGHT_SMALL",
+            "littleLEG_FRONT_LEFT_SMALL",
+            "littleLEG_FRONT_RIGHT_SMALL"
+        ],
+        "BUZZARDFANG": [
+            "littleLOCKET",
+            "littleTAILTIP",
+            "littleTAIL_SMALL_LOW",
+            "littleLEG_BACK_LEFT_MID"
+        ],
+        "BLAZEMASK": [
+            "littleBLAZE",
+            "littleEYELINER_MIN_R",
+            "littleEYELINER_MIN_L"
+        ],
+        "TEARS": [
+            "littleTEARS_R",
+            "littleTEARS_L"
+        ],
+        "LILTWO": [
+            "littleBLAZE_SMALL",
+            "littleCHEST_SMALL",
+            "littleLEG_BACK_LEFT_SMALL",
+            "littleLEG_BACK_RIGHT_SMALL",
+            "littleLEG_FRONT_LEFT_SMALL",
+            "littleLEG_FRONT_RIGHT_SMALL",
+            "littleTAIL_MIN"
+        ],
+        "PAWS": [
+            "littleLEG_FRONT_RIGHT_SMALL",
+            "littleLEG_FRONT_LEFT_SMALL",
+            "littleLEG_BACK_RIGHT_SMALL",
+            "littleLEG_BACK_LEFT_SMALL"
+        ],
+        "RAVENPAW": [
+            "littleTAILTIP",
+            "littleCHEST_SMALL"
+        ],
+        "REVERSEEYE": [
+            "littleEYESPOT_L",
+            "littleLEG_BACK_LEFT_SMALL"
+        ],
+        "EYEBAGS": [
+            "littleTAILTIP",
+            "littleUNDEREYE_MIN_L",
+            "littleUNDEREYE_MIN_R"
+        ],
+        "LIGHTTUXEDO": [
+            "littleLOCKET",
+            "littleMASK_MIN",
+            "littleMUZZLE",
+            "littleBLAZE_MID",
+            "littleLEG_BACK_LEFT_MID_LOW",
+            "littleLEG_BACK_LEFT_MID",
+            "littleLEG_BACK_RIGHT_MID_LOW",
+            "littleLEG_BACK_RIGHT_MID",
+            "littleLEG_FRONT_LEFT_SMALL",
+            "littleLEG_FRONT_RIGHT_SMALL"
+        ],
+        "TIP": [
+            "littleTAIL_MIN",
+            "littleLEG_FRONT_RIGHT_SMALL",
+            "littleLEG_BACK_LEFT_SMALL",
+            "littleCHEST_SMALL",
+            "littleCHEST_MIN",
+            "littleRIGHTEAR_TIP",
+            "littleLEFTEAR_TIP"
+        ],
+        "TOES": [
+            "littleLEG_BACK_LEFT_MIN_LOW",
+            "littleLEG_BACK_RIGHT_MIN_LOW",
+            "littleLEG_FRONT_LEFT_MIN_LOW",
+            "littleLEG_FRONT_RIGHT_MIN_LOW"
+        ],
+        "TOESTAIL": [
+            "littleLEG_FRONT_RIGHT_SMALL",
+            "littleLEG_FRONT_LEFT_SMALL",
+            "littleLEG_BACK_RIGHT_SMALL",
+            "littleLEG_BACK_LEFT_SMALL",
+            "littleTAILTIP"
+        ]
+    },
     "mid": {},
     "high": {},
     "mostly": {}
