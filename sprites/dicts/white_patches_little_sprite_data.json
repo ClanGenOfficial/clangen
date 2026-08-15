@@ -147,7 +147,11 @@
             "VEE_MID",
             "VEE_FULL",
             "UNDER_HEART",
-            "TEARDROP"
+            "TEARDROP",
+            "TWO_SPOT",
+            "CHEST_BROKEN",
+            "ROSINA_REDUCED",
+            "DAMIEN_REDUCED"
         ]
     ]
 }
