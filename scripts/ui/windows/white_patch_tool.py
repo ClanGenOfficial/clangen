@@ -47,7 +47,7 @@ class WhitePatchToolWindow(GameWindow):
         )
 
         self.elements["chosen_patches"] = UITextBoxTweaked(
-            relative_rect=ui_scale(pygame.Rect((10, 0), (200, -1))),
+            relative_rect=ui_scale(pygame.Rect((10, 0), (200, 100))),
             html_text="",
             container=self,
             anchors={"top_target": self.elements["example_cat"]},
@@ -117,6 +117,7 @@ class WhitePatchToolWindow(GameWindow):
             },
             child_trigger_close=True,
             starting_height=3,
+            multiple_choice=False,
         )
 
         self.elements["combo_coverage"] = UIScrollingDropDown(
@@ -173,6 +174,7 @@ class WhitePatchToolWindow(GameWindow):
                     self.elements["combo_coverage"].parent_button.set_text(
                         "combo coverage"
                     )
+                return
 
             elif event.ui_element in (
                 self.elements["little_patch_choice"].child_button_container,
@@ -181,19 +183,18 @@ class WhitePatchToolWindow(GameWindow):
                 self.elements["mostly_patch_choice"].child_button_container,
             ):
                 selection = self.get_selection_list()
-                sprites.create_patch_combo(
-                    combos={"TEST": selection},
-                    sheet_name="patches_white_",
-                    white_category="little",
-                )
-                self.example_cat = self.create_cat("TEST")
-                self.elements["example_cat"].set_image(
-                    pygame.transform.scale(
-                        self.example_cat.sprite, ui_scale_dimensions((200, 200))
-                    )
-                )
-                self.elements["chosen_patches"].set_text(str(selection))
-                self.check_current_combos(selection)
+                self.set_combo_selection(selection)
+                return
+
+            if (
+                self.elements["existing_combos"].child_button_container
+                == event.ui_element
+            ):
+                selection = self.elements["existing_combos"].selected_list
+                if not selection:
+                    return
+                self.set_combo_selection(self.get_combos()[selection[0]])
+                return
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
             for name, button in self.elements[
                 "little_patch_choice"
@@ -241,6 +242,21 @@ class WhitePatchToolWindow(GameWindow):
                     combos.sort()
                     self.elements["existing_combos"].new_item_list(combos)
                     self.elements["name_entry"].set_text("")
+
+    def set_combo_selection(self, selection):
+        sprites.create_patch_combo(
+            combos={"TEST": selection},
+            sheet_name="patches_white_",
+            white_category="little",
+        )
+        self.example_cat = self.create_cat("TEST")
+        self.elements["example_cat"].set_image(
+            pygame.transform.scale(
+                self.example_cat.sprite, ui_scale_dimensions((200, 200))
+            )
+        )
+        self.elements["chosen_patches"].set_text(str(selection))
+        self.check_current_combos(selection)
 
     def get_selection_list(self):
         selection = [
