@@ -324,7 +324,7 @@ class Pregnancy_Events:
         ):
             return
 
-        # if the parents are already expecting, then they don't need to adop
+        # if the parents are already expecting, then they don't need to adopt
         if (cat.ID in game.clan.pregnancy_data) or (
             other_cat and other_cat.ID in game.clan.pregnancy_data
         ):
