@@ -199,14 +199,12 @@ def _draw_sprite(
         dead:bool,
         acc_hidden:bool):
 
-    new_sprite = pygame.Surface(
-            (sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA
-        )
+    #new_sprite = pygame.Surface(
+    #        (sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA
+    #    )
 
     pelt_recipe =  _get_pelt_recipe(cat.pelt.name)
-    pelt_recipe = _apply_recipe_exceptions(pelt_recipe, cat.pelt.colour)
-
-    _build_pelt(new_sprite, cat, pelt_recipe, cat.pelt.colour, cat_sprite)
+    new_sprite = _build_pelt(cat, pelt_recipe, cat.pelt.colour, cat_sprite)
         
     # TINTS
     if (
@@ -536,18 +534,16 @@ def _draw_sprite(
     
     return new_sprite
 
-def _build_pelt(surface, cat, pelt_recipe:dict, colour:str, sprite:int) -> pygame.Surface:
+def _build_pelt(cat, pelt_recipe:dict, colour:str, sprite:int) -> pygame.Surface:
     """Builds a image out of a pelt_recipe and colour"""
 
-    for layer in pelt_recipe.get("layer_order"):
-        layer_dict = pelt_recipe.get("layers")
-        layer_surface, blendmode, opacity = _build_layer(cat, layer, layer_dict, colour, sprite)
-        blit_with_opacity(surface, layer_surface, opacity=opacity, special_flags=_get_blend_flags(blendmode))
+    pelt_recipe = _apply_recipe_exceptions(pelt_recipe, colour)
+    surface, blendmode, opacity = _build_layers(cat, pelt_recipe.get("layer_order"), pelt_recipe.get("layers"), colour, sprite)
 
     return surface
 
-def _build_layer(cat, current_layer, layer_dict:dict, colour:str, sprite:int) -> tuple[pygame.Surface, str, int]:
-    """Build a single player of a recipe. Handles compound layers. """
+def _build_layers(cat, current_layer, layer_dict:dict, colour:str, sprite:int) -> tuple[pygame.Surface, str, int]:
+    """Builds layers for a pelt. """
 
     if type(current_layer) == list:
         # Defining the surface here is not ideal, but due to recursion, I can't just re-use the same 
@@ -580,8 +576,10 @@ def _build_layer(cat, current_layer, layer_dict:dict, colour:str, sprite:int) ->
 
         # Build the compound layer. 
         for subLayer in current_layer:
-            temp, blend_mode, opacity = _build_layer(cat, subLayer, layer_dict, colour, sprite) 
+            temp, blend_mode, opacity = _build_layers(cat, subLayer, layer_dict, colour, sprite) 
+            pygame.image.save(temp, "step.png")
             blit_with_opacity(layer_surface, temp, opacity, special_flags=_get_blend_flags(blend_mode))
+            pygame.image.save(layer_surface, "current.png")
 
         return (layer_surface, group_blendmode, group_opacity)
 
@@ -595,21 +593,14 @@ def _build_single_layer(cat, layer_info, colour:str, sprite:int) -> tuple[pygame
     # A single layer can be a whole new pelt recipe. If so, return back up to 
     # _build_pelt(). 
     if "pelt_name" in layer_info:
-        # Defining the surface here is not ideal, but due to recursion, I can't just re-use the same 
-        # surface over and over. 
-        layer_surface = pygame.Surface(
-                                (sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA
-                        )
-
         pelt_recipe = _get_pelt_recipe(
             _find_cat_pelt_value(layer_info["pelt_name"], cat)
             )
         palette = _find_cat_pelt_value(layer_info.get("palette"), cat)
 
-        return _build_pelt(layer_surface, cat, pelt_recipe, palette, sprite), layer_info.get("blendmode"), layer_info.get("opacity", 100)
+        return _build_pelt(cat, pelt_recipe, palette, sprite), layer_info.get("blendmode"), layer_info.get("opacity", 100)
 
-    # If not calling for a whole pelt, find the single asset needed, recolor it, and
-    # return it. 
+    # If not calling for a whole pelt, find the single asset needed,
     groupName = _find_cat_pelt_value(layer_info.get("group_name"), cat)
     recolour = _find_cat_pelt_value(layer_info.get("color"), cat)
     spritesheet = layer_info.get("spritesheet", "pelt_parts_masks")
