@@ -22019,6 +22019,9 @@
     "season": ["newleaf"],
     "types": ["training"],
     "tags": [],
+    "poi": {
+        "tags": ["water:flowing"]
+    },
     "patrol_art": "train_general_intro",
     "min_cats": 2,
     "max_cats": 6,
