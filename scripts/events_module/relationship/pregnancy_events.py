@@ -1954,6 +1954,3 @@ def get_balanced_kit_chance(
         inverse_chance = int(inverse_chance * 0.9)
 
     return inverse_chance
-
-# temporary shim
-Pregnancy_Events = __import__(__name__)
