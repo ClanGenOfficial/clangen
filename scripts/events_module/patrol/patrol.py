@@ -2,6 +2,7 @@
 # -*- coding: ascii -*-
 import logging
 import random
+import statistics
 from os.path import exists as path_exists
 from random import choice, randint, choices
 from typing import List, Tuple, Optional, Union, Literal, TypedDict
@@ -11,6 +12,7 @@ import pygame
 from scripts.cat.cats import Cat
 from scripts.cat_relations.enums import RelType
 from scripts.cat.enums import CatAge, CatRank, CatCompatibility
+from scripts.clan import get_temper_alignment
 from scripts.clan_package.get_clan_cats import get_living_clan_cat_count
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_TRIGGER_FACTOR
 from scripts.config import get_config
@@ -32,6 +34,7 @@ from scripts.events_module.event_filters import (
     event_for_freshkill_supply,
     event_for_herb_supply,
     cat_for_event,
+    event_for_temperament,
 )
 from scripts.events_module.patrol.create_new_cat import updated_create_new_cat
 from scripts.events_module.patrol.generate_patrol_list import (
@@ -53,6 +56,39 @@ from scripts.special_dates import SpecialDate, is_today
 logger = logging.getLogger(__name__)
 
 
+def get_patrol_temperament(patrol_cats: list, patrol_leader=None) -> tuple[str, str]:
+    """
+    Determines the temperament of a patrol based on clan rank and patrol_leader
+    """
+    sociability, aggression, lawfulness, stability = [], [], [], []
+
+    for cat in patrol_cats:
+        rank = cat.status.rank
+        if rank == CatRank.LEADER:
+            weight = 3
+        elif rank == CatRank.DEPUTY:
+            weight = 2
+        else:  # medicine cat and all others
+            weight = 1
+        if patrol_leader is not None and cat == patrol_leader:
+            weight += 1
+
+        sociability += [cat.personality.sociability] * weight
+        aggression += [cat.personality.aggression] * weight
+        lawfulness += [cat.personality.lawfulness] * weight
+        stability += [cat.personality.stability] * weight
+
+    if not sociability:  # empty patrol guard
+        return "stoic", "observant"
+
+    return get_temper_alignment(
+        round(statistics.mean(sociability)),
+        round(statistics.mean(aggression)),
+        round(statistics.mean(lawfulness)),
+        round(statistics.mean(stability)),
+    )
+
+
 class Patrol:
     used_patrols = []
 
@@ -60,6 +96,7 @@ class Patrol:
         self.patrol_event: Optional[PatrolEvent] = None
         self.debug_patrol_id: str = ""
         self.other_clan = None
+        self._temperament: Optional[tuple] = None
 
         self.patrol_cats: list[Cat] = []
         """Holds all the cats that are on the patrol"""
@@ -69,6 +106,14 @@ class Patrol:
             "outcome_cats", {"success": dict[str, Cat], "failure": dict[str, Cat]}
         ) = {"success": {}, "failure": {}}
         self.new_cats: list[Cat] = []
+
+    @property
+    def temperament(self) -> tuple:
+        if self._temperament is None:
+            self._temperament = get_patrol_temperament(
+                self.patrol_cats, self.involved_cats.get("p_l")
+            )
+        return self._temperament
 
     def begin_patrol(self, patrol_cats: List[Cat], patrol_type: str) -> str:
         """
@@ -495,6 +540,22 @@ class Patrol:
                 print("DEBUG: requested patrol does not meet constraints (PoI)")
             return False
 
+        # CHECK TEMPERAMENT
+        if not event_for_temperament(patrol.temperament, self.temperament):
+            if is_debug_patrol:
+                print("DEBUG: requested patrol does not meet constraints (temperament)")
+            return False
+
+        if patrol.other_clan_temperament:
+            if self.other_clan is None or not event_for_temperament(
+                patrol.other_clan_temperament, self.other_clan.temperament
+            ):
+                if is_debug_patrol:
+                    print(
+                        "DEBUG: requested patrol does not meet constraints (other_clan_temperament)"
+                    )
+                return False
+
         # CHECK NEEDED HERBS
         if patrol_type == "herb_gathering":
             # skip this if it's a debug patrol
@@ -665,6 +726,15 @@ class Patrol:
 
         if not event_for_tags(outcome.tags, self.involved_cats["p_l"]):
             return False
+
+        if not event_for_temperament(outcome.temperament, self.temperament):
+            return False
+
+        if outcome.other_clan_temperament:
+            if self.other_clan is None or not event_for_temperament(
+                outcome.other_clan_temperament, self.other_clan.temperament
+            ):
+                return False
 
         if outcome.required_reputation:
             if not event_for_reputation(outcome.required_reputation.get("outsider")):

@@ -192,6 +192,8 @@ class ShortEvent:
                 self.other_clan["current_rep"] = []
             if "changed" not in self.other_clan:
                 self.other_clan["changed"] = 0
+            if "temperament" not in self.other_clan:
+                self.other_clan["temperament"] = []
         self.supplies = supplies if supplies else []
         self.new_gender = new_gender
         self.future_event = future_event if future_event else {}

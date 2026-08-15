@@ -888,6 +888,7 @@ class PatrolScreen(Screens):
                 "patrol_cats": members,
                 "skills": self.get_list_text(skills),
                 "traits": self.get_list_text(traits),
+                "temperament": self.get_list_text(self.patrol_obj.temperament),
             },
         )
 
