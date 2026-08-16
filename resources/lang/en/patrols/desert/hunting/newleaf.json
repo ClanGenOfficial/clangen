@@ -1,6 +1,6 @@
 [
     {
-        "id": "dst_hunt_heat3",
+        "event_id": "dst_hunt_heat3",
         "types": [
             "hunting"
         ],
@@ -124,7 +124,7 @@
         ]
     },
     {
-        "id": "dst_hunt_heat4",
+        "event_id": "dst_hunt_heat4",
         "types": [
             "hunting"
         ],

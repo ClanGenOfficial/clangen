@@ -1,6 +1,6 @@
 [
     {
-        "id": "fst_bord_rogue1",
+        "event_id": "fst_bord_rogue1",
         "types": [
             "border"
         ],
@@ -198,7 +198,7 @@
         ]
     },
     {
-        "id": "fst_bord_rogue2",
+        "event_id": "fst_bord_rogue2",
         "types": [
             "border"
         ],
@@ -360,7 +360,7 @@
         ]
     },
     {
-        "id": "fst_bord_rogue3",
+        "event_id": "fst_bord_rogue3",
         "types": [
             "border"
         ],
@@ -610,7 +610,7 @@
         ]
     },
     {
-        "id": "fst_bord_sett1",
+        "event_id": "fst_bord_sett1",
         "types": [
             "border"
         ],
@@ -845,7 +845,7 @@
         ]
     },
     {
-        "id": "fst_bord_sett2",
+        "event_id": "fst_bord_sett2",
         "types": [
             "border"
         ],
@@ -1125,7 +1125,7 @@
         ]
     },
     {
-        "id": "fst_bord_trackrogue1",
+        "event_id": "fst_bord_trackrogue1",
         "types": [
             "border"
         ],
@@ -1391,7 +1391,7 @@
         ]
     },
     {
-        "id": "fst_bord_trackrogue2",
+        "event_id": "fst_bord_trackrogue2",
         "types": [
             "border"
         ],
@@ -1538,7 +1538,7 @@
         ]
     },
     {
-        "id": "fst_bord_trackrogue3",
+        "event_id": "fst_bord_trackrogue3",
         "types": [
             "border"
         ],
@@ -2001,7 +2001,7 @@
         ]
     },
     {
-        "id": "fst_bord_trackrogue4",
+        "event_id": "fst_bord_trackrogue4",
         "types": [
             "border"
         ],
@@ -2250,7 +2250,7 @@
         ]
     },
     {
-        "id": "fst_bord_trackrogue5",
+        "event_id": "fst_bord_trackrogue5",
         "types": [
             "border"
         ],
@@ -2541,7 +2541,7 @@
         ]
     },
     {
-        "id": "fst_bord_trackrogue6",
+        "event_id": "fst_bord_trackrogue6",
         "types": [
             "border"
         ],
@@ -2700,7 +2700,7 @@
         ]
     },
     {
-        "id": "fst_bord_story1",
+        "event_id": "fst_bord_story1",
         "types": [
             "border"
         ],
@@ -2922,7 +2922,7 @@
         ]
     },
     {
-        "id": "fst_bord_dog1",
+        "event_id": "fst_bord_dog1",
         "types": [
             "border"
         ],
@@ -3126,7 +3126,7 @@
         ]
     },
     {
-        "id": "fst_bord_dog2",
+        "event_id": "fst_bord_dog2",
         "types": [
             "border"
         ],
@@ -3918,7 +3918,7 @@
         ]
     },
     {
-        "id": "fst_bord_smalldog1",
+        "event_id": "fst_bord_smalldog1",
         "types": [
             "border"
         ],
@@ -4073,7 +4073,7 @@
         ]
     },
     {
-        "id": "fst_bord_smalldog2",
+        "event_id": "fst_bord_smalldog2",
         "types": [
             "border"
         ],
@@ -4248,7 +4248,7 @@
         ]
     },
     {
-        "id": "fst_bord_redvixen1",
+        "event_id": "fst_bord_redvixen1",
         "types": [
             "border"
         ],
@@ -4808,7 +4808,7 @@
         ]
     },
     {
-        "id": "fst_bord_grayvixen1",
+        "event_id": "fst_bord_grayvixen1",
         "types": [
             "border"
         ],
@@ -5295,7 +5295,7 @@
         ]
     },
     {
-        "id": "fst_bord_flatwoods1",
+        "event_id": "fst_bord_flatwoods1",
         "types": [
             "border"
         ],
@@ -5367,7 +5367,7 @@
         ]
     },
     {
-        "id": "fst_bord_bigfoot",
+        "event_id": "fst_bord_bigfoot",
         "types": [
             "border"
         ],
@@ -5411,7 +5411,7 @@
         ]
     },
     {
-        "id": "fst_bord_doverdemon",
+        "event_id": "fst_bord_doverdemon",
         "types": [
             "border"
         ],
@@ -5463,7 +5463,7 @@
         ]
     },
     {
-        "id": "fst_bord_notleafbare_bear",
+        "event_id": "fst_bord_notleafbare_bear",
         "types": [
             "border"
         ],

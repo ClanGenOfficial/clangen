@@ -1,6 +1,6 @@
 [
     {
-        "id": "bch_hunt_greenleaf_solosquirrel1",
+        "event_id": "bch_hunt_greenleaf_solosquirrel1",
         "types": [
             "hunting"
         ],
@@ -113,7 +113,7 @@
         ]
     },
     {
-        "id": "bch_hunt_greenleaf_soloappsquirrel1",
+        "event_id": "bch_hunt_greenleaf_soloappsquirrel1",
         "types": [
             "hunting"
         ],
@@ -226,7 +226,7 @@
         ]
     },
     {
-        "id": "bch_hunt_greenleaf_mentorsquirrel1",
+        "event_id": "bch_hunt_greenleaf_mentorsquirrel1",
         "types": [
             "hunting"
         ],
@@ -415,7 +415,7 @@
         ]
     },
     {
-        "id": "bch_hunt_greenleaf_squirrel_rattlesnakerumble1",
+        "event_id": "bch_hunt_greenleaf_squirrel_rattlesnakerumble1",
         "types": [
             "hunting"
         ],
@@ -619,7 +619,7 @@
         ]
     },
     {
-        "id": "bch_hunt_greenleaf_groupsquirrel1",
+        "event_id": "bch_hunt_greenleaf_groupsquirrel1",
         "types": [
             "hunting"
         ],
@@ -788,7 +788,7 @@
         ]
     },
     {
-        "id": "bch_hunt_twolegsobject1",
+        "event_id": "bch_hunt_twolegsobject1",
         "types": [
             "hunting"
         ],
@@ -868,7 +868,7 @@
         ]
     },
     {
-        "id": "bch_hunt_greenleaf_picnicheist",
+        "event_id": "bch_hunt_greenleaf_picnicheist",
         "types": [
             "hunting"
         ],

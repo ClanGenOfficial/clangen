@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_bord_flashflood1",
+        "event_id": "gen_bord_flashflood1",
         "types": [
             "border"
         ],
@@ -194,7 +194,7 @@
         ]
     },
     {
-        "id": "multi_bord_flashflood2",
+        "event_id": "multi_bord_flashflood2",
         "types": [
             "border"
         ],
@@ -297,7 +297,7 @@
         ]
     },
     {
-        "id": "pln_bord_abandontwolegdis1",
+        "event_id": "pln_bord_abandontwolegdis1",
         "types": [
             "border"
         ],
@@ -457,7 +457,7 @@
         ]
     },
     {
-        "id": "pln_bord_abandontwolegdis2",
+        "event_id": "pln_bord_abandontwolegdis2",
         "types": [
             "border"
         ],
@@ -611,7 +611,7 @@
         ]
     },
     {
-        "id": "bch_bord_abandontwolegdis1",
+        "event_id": "bch_bord_abandontwolegdis1",
         "types": [
             "border"
         ],
@@ -759,7 +759,7 @@
         ]
     },
     {
-        "id": "bch_bord_abandontwolegdis2",
+        "event_id": "bch_bord_abandontwolegdis2",
         "types": [
             "border"
         ],
@@ -913,7 +913,7 @@
         ]
     },
     {
-        "id": "multi_bord_roguedis1",
+        "event_id": "multi_bord_roguedis1",
         "types": [
             "border"
         ],
@@ -1234,7 +1234,7 @@
         ]
     },
     {
-        "id": "mtn_bord_roguedis1",
+        "event_id": "mtn_bord_roguedis1",
         "types": [
             "border"
         ],

@@ -1,6 +1,6 @@
 [
     {
-        "id": "dst_med_dwindleherbsgathering_leafbare1",
+        "event_id": "dst_med_dwindleherbsgathering_leafbare1",
         "types": [
             "herb_gathering"
         ],

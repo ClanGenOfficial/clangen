@@ -1,6 +1,6 @@
 [
     {
-        "id": "plains_bord_candy",
+        "event_id": "plains_bord_candy",
         "types": [
             "border"
         ],
@@ -66,7 +66,7 @@
         ]
     },
     {
-        "id": "pln_bord_leaffall_longdistancemarking_group1",
+        "event_id": "pln_bord_leaffall_longdistancemarking_group1",
         "types": [
             "border"
         ],
@@ -291,7 +291,7 @@
         ]
     },
     {
-        "id": "pln_bord_leaffall_coyote_small_patrol1",
+        "event_id": "pln_bord_leaffall_coyote_small_patrol1",
         "types": [
             "border"
         ],
@@ -940,7 +940,7 @@
         ]
     },
     {
-        "id": "pln_bord_leaffall_coyote_big_patrol1",
+        "event_id": "pln_bord_leaffall_coyote_big_patrol1",
         "types": [
             "border"
         ],

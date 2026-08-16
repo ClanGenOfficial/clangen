@@ -1,6 +1,6 @@
 [
     {
-        "id": "bch_bord_flashflood_tide3",
+        "event_id": "bch_bord_flashflood_tide3",
         "types": [
             "border"
         ],

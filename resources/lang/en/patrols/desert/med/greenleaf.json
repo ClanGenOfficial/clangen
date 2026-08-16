@@ -1,6 +1,6 @@
 [
     {
-        "id": "dst_med_dwindleherbsgathering_greenleaf1",
+        "event_id": "dst_med_dwindleherbsgathering_greenleaf1",
         "types": [
             "herb_gathering"
         ],

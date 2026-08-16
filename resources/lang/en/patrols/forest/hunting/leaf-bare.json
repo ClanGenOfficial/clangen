@@ -1,6 +1,6 @@
 [
     {
-        "id": "fst_hunt_leafbare_snowstorm1",
+        "event_id": "fst_hunt_leafbare_snowstorm1",
         "types": [
             "hunting"
         ],
@@ -265,7 +265,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leafbare_snowstorm2",
+        "event_id": "fst_hunt_leafbare_snowstorm2",
         "types": [
             "hunting"
         ],
@@ -385,7 +385,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leafbare_snowstorm3",
+        "event_id": "fst_hunt_leafbare_snowstorm3",
         "types": [
             "hunting"
         ],
@@ -647,7 +647,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leaf-bare_solomouse1",
+        "event_id": "fst_hunt_leaf-bare_solomouse1",
         "types": [
             "hunting"
         ],
@@ -799,7 +799,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leaf-bare_soloappmouse1",
+        "event_id": "fst_hunt_leaf-bare_soloappmouse1",
         "types": [
             "hunting"
         ],
@@ -914,7 +914,7 @@
         ]
     },
     {
-        "id": "gen_hunt_leaf-bare_mentormouse1",
+        "event_id": "gen_hunt_leaf-bare_mentormouse1",
         "types": [
             "hunting"
         ],
@@ -1106,7 +1106,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leafbare_mice_ohnotheyrehot1",
+        "event_id": "fst_hunt_leafbare_mice_ohnotheyrehot1",
         "types": [
             "hunting"
         ],
@@ -1362,7 +1362,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leaf-bare_groupmice1",
+        "event_id": "fst_hunt_leaf-bare_groupmice1",
         "types": [
             "hunting"
         ],
@@ -1530,7 +1530,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leaf-bare_solosquirrel1",
+        "event_id": "fst_hunt_leaf-bare_solosquirrel1",
         "types": [
             "hunting"
         ],
@@ -1687,7 +1687,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leaf-bare_soloappsquirrel1",
+        "event_id": "fst_hunt_leaf-bare_soloappsquirrel1",
         "types": [
             "hunting"
         ],
@@ -1800,7 +1800,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leaf-bare_mentorsquirrel1",
+        "event_id": "fst_hunt_leaf-bare_mentorsquirrel1",
         "types": [
             "hunting"
         ],
@@ -1992,7 +1992,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leaf-bare_squirrel_treetoptumble1",
+        "event_id": "fst_hunt_leaf-bare_squirrel_treetoptumble1",
         "types": [
             "hunting"
         ],
@@ -2243,7 +2243,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leaf-bare_groupsquirrel1",
+        "event_id": "fst_hunt_leaf-bare_groupsquirrel1",
         "types": [
             "hunting"
         ],
@@ -2455,7 +2455,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leaf-bare_vanish1",
+        "event_id": "fst_hunt_leaf-bare_vanish1",
         "types": [
             "hunting"
         ],
@@ -2679,7 +2679,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leaf-bare_solorat1",
+        "event_id": "fst_hunt_leaf-bare_solorat1",
         "types": [
             "hunting"
         ],
@@ -2754,7 +2754,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leaf-bare_soloapprat1",
+        "event_id": "fst_hunt_leaf-bare_soloapprat1",
         "types": [
             "hunting"
         ],
@@ -2854,7 +2854,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leaf-bare_mentorrat1",
+        "event_id": "fst_hunt_leaf-bare_mentorrat1",
         "types": [
             "hunting"
         ],
@@ -2973,7 +2973,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leaf-bare_ratswarm1",
+        "event_id": "fst_hunt_leaf-bare_ratswarm1",
         "types": [
             "hunting"
         ],
@@ -3235,7 +3235,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leaf-bare_solobird1",
+        "event_id": "fst_hunt_leaf-bare_solobird1",
         "types": [
             "hunting"
         ],
@@ -3337,7 +3337,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leaf-bare_solobird2",
+        "event_id": "fst_hunt_leaf-bare_solobird2",
         "types": [
             "hunting"
         ],
@@ -3450,7 +3450,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leaf-bare_warapp",
+        "event_id": "fst_hunt_leaf-bare_warapp",
         "types": [
             "hunting"
         ],
@@ -3659,7 +3659,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leaf-bare_oddbird",
+        "event_id": "fst_hunt_leaf-bare_oddbird",
         "types": [
             "hunting"
         ],
@@ -3786,7 +3786,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leaf-bare_groupbird",
+        "event_id": "fst_hunt_leaf-bare_groupbird",
         "types": [
             "hunting"
         ],
@@ -3981,7 +3981,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leaf-bare_lillizard1",
+        "event_id": "fst_hunt_leaf-bare_lillizard1",
         "types": [
             "hunting"
         ],
@@ -4125,7 +4125,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_leafbaresolowarrior1",
+        "event_id": "fst_hunt_random_leafbaresolowarrior1",
         "types": [
             "hunting"
         ],
@@ -4369,7 +4369,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_leafbaresolor_c1",
+        "event_id": "fst_hunt_random_leafbaresolor_c1",
         "types": [
             "hunting"
         ],
@@ -4572,7 +4572,7 @@
         ]
     },
     {
-        "id": "fst_hunt_mouse4",
+        "event_id": "fst_hunt_mouse4",
         "types": [
             "hunting"
         ],
@@ -4667,7 +4667,7 @@
         ]
     },
     {
-        "id": "fst_hunt_genappmouse4",
+        "event_id": "fst_hunt_genappmouse4",
         "types": [
             "hunting"
         ],
@@ -4737,7 +4737,7 @@
         ]
     },
     {
-        "id": "gen_hunt_genmentormouse4",
+        "event_id": "gen_hunt_genmentormouse4",
         "types": [
             "hunting"
         ],
@@ -4899,7 +4899,7 @@
         ]
     },
     {
-        "id": "fst_hunt_kiwi_leafbare_parentchildapprentice1",
+        "event_id": "fst_hunt_kiwi_leafbare_parentchildapprentice1",
         "types": [
             "hunting"
         ],
@@ -5129,7 +5129,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leafbare_dewclangift_storylorelocked1",
+        "event_id": "fst_hunt_leafbare_dewclangift_storylorelocked1",
         "types": [
             "hunting"
         ],
@@ -5250,7 +5250,7 @@
         ]
     },
     {
-        "id": "fst_hunt_leafbare_kingfisher_storylorehunterclimberteacherlocked1",
+        "event_id": "fst_hunt_leafbare_kingfisher_storylorehunterclimberteacherlocked1",
         "types": [
             "hunting"
         ],

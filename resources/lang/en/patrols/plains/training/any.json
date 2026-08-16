@@ -1,6 +1,6 @@
 [
     {
-        "id": "pln_train_session1",
+        "event_id": "pln_train_session1",
         "types": [
             "training"
         ],
@@ -273,7 +273,7 @@
         ]
     },
     {
-        "id": "pln_train_sett1",
+        "event_id": "pln_train_sett1",
         "types": [
             "training"
         ],
@@ -528,7 +528,7 @@
         ]
     },
     {
-        "id": "pln_train_sett2",
+        "event_id": "pln_train_sett2",
         "types": [
             "training"
         ],
@@ -797,7 +797,7 @@
         ]
     },
     {
-        "id": "pln_train_stuck1",
+        "event_id": "pln_train_stuck1",
         "types": [
             "training"
         ],
@@ -1158,7 +1158,7 @@
         ]
     },
     {
-        "id": "pln_train_stuck2",
+        "event_id": "pln_train_stuck2",
         "types": [
             "training"
         ],
@@ -1459,7 +1459,7 @@
         ]
     },
     {
-        "id": "pln_train_stuck3",
+        "event_id": "pln_train_stuck3",
         "types": [
             "training"
         ],
@@ -1550,7 +1550,7 @@
         ]
     },
     {
-        "id": "pln_train_soloapp1",
+        "event_id": "pln_train_soloapp1",
         "types": [
             "training"
         ],
@@ -1676,7 +1676,7 @@
         ]
     },
     {
-        "id": "pln_train_solo2",
+        "event_id": "pln_train_solo2",
         "types": [
             "training"
         ],
@@ -1888,7 +1888,7 @@
         ]
     },
     {
-        "id": "pln_train_bison2",
+        "event_id": "pln_train_bison2",
         "types": [
             "training"
         ],
@@ -2248,7 +2248,7 @@
         ]
     },
     {
-        "id": "pln_train_bison4",
+        "event_id": "pln_train_bison4",
         "types": [
             "training"
         ],
@@ -2713,7 +2713,7 @@
         ]
     },
     {
-        "id": "pln_train_tunnels2",
+        "event_id": "pln_train_tunnels2",
         "types": [
             "training"
         ],
@@ -3075,7 +3075,7 @@
         ]
     },
     {
-        "id": "pln_train_tunnels4",
+        "event_id": "pln_train_tunnels4",
         "types": [
             "training"
         ],
@@ -3514,7 +3514,7 @@
         ]
     },
     {
-        "id": "pln_train_stargazing1",
+        "event_id": "pln_train_stargazing1",
         "types": [
             "training"
         ],
@@ -3810,7 +3810,7 @@
         ]
     },
     {
-        "id": "pln_train_sunset1",
+        "event_id": "pln_train_sunset1",
         "types": [
             "training"
         ],
@@ -4055,7 +4055,7 @@
         ]
     },
     {
-        "id": "pln_train_arguingromance1",
+        "event_id": "pln_train_arguingromance1",
         "types": [
             "training"
         ],
@@ -4194,7 +4194,7 @@
         ]
     },
     {
-        "id": "pln_train_roarbark1",
+        "event_id": "pln_train_roarbark1",
         "types": [
             "training"
         ],
@@ -4426,7 +4426,7 @@
         ]
     },
     {
-        "id": "pln_train_tunnel1",
+        "event_id": "pln_train_tunnel1",
         "types": [
             "training"
         ],
@@ -5165,7 +5165,7 @@
         ]
     },
     {
-        "id": "pln_train_thelongjourneyhome_storylorelocked1",
+        "event_id": "pln_train_thelongjourneyhome_storylorelocked1",
         "types": [
             "training"
         ],
@@ -5295,7 +5295,7 @@
         ]
     },
     {
-        "id": "pln_train_thesunandmoonsiblings_storylocked1",
+        "event_id": "pln_train_thesunandmoonsiblings_storylocked1",
         "types": [
             "training"
         ],
@@ -5417,7 +5417,7 @@
         ]
     },
     {
-        "id": "pln_train_training_loreteacherinsightfullocked1",
+        "event_id": "pln_train_training_loreteacherinsightfullocked1",
         "types": [
             "training"
         ],
@@ -5753,7 +5753,7 @@
         ]
     },
     {
-        "id": "pln_train_frnight1",
+        "event_id": "pln_train_frnight1",
         "types": [
             "training"
         ],
@@ -5814,7 +5814,7 @@
         ]
     },
     {
-        "id": "pln_train_ufo1",
+        "event_id": "pln_train_ufo1",
         "types": [
             "training"
         ],

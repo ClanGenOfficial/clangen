@@ -1,6 +1,6 @@
 [
     {
-        "id": "mtn_train_eagles1",
+        "event_id": "mtn_train_eagles1",
         "types": [
             "training"
         ],
@@ -322,7 +322,7 @@
         ]
     },
     {
-        "id": "mtn_train_eagles3",
+        "event_id": "mtn_train_eagles3",
         "types": [
             "training"
         ],
@@ -675,7 +675,7 @@
         ]
     },
     {
-        "id": "mtn_train_newleaf_hibernation_storylorelocked1",
+        "event_id": "mtn_train_newleaf_hibernation_storylorelocked1",
         "types": [
             "training"
         ],

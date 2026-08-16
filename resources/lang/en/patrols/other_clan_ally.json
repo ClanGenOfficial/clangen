@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_bord_otherclan_allies1",
+        "event_id": "gen_bord_otherclan_allies1",
         "types": [
             "border"
         ],
@@ -292,7 +292,7 @@
         ]
     },
     {
-        "id": "gen_bord_otherclan_allies2",
+        "event_id": "gen_bord_otherclan_allies2",
         "types": [
             "hunting",
             "border"
@@ -584,7 +584,7 @@
         ]
     },
     {
-        "id": "gen_med_borderherb1",
+        "event_id": "gen_med_borderherb1",
         "types": [
             "herb_gathering"
         ],
@@ -670,7 +670,7 @@
         ]
     },
     {
-        "id": "gen_bord_scent_allies1",
+        "event_id": "gen_bord_scent_allies1",
         "types": [
             "border"
         ],
@@ -940,7 +940,7 @@
         ]
     },
     {
-        "id": "gen_bord_scent_allies2",
+        "event_id": "gen_bord_scent_allies2",
         "types": [
             "border"
         ],
@@ -1129,7 +1129,7 @@
         ]
     },
     {
-        "id": "gen_bord_solo_allies1",
+        "event_id": "gen_bord_solo_allies1",
         "types": [
             "border"
         ],
@@ -1528,7 +1528,7 @@
         ]
     },
     {
-        "id": "fst_bord_risingclanref_allies_lorelocked1",
+        "event_id": "fst_bord_risingclanref_allies_lorelocked1",
         "types": [
             "border"
         ],
@@ -1630,7 +1630,7 @@
         ]
     },
     {
-        "id": "gen_bord_allies_otherclankits1",
+        "event_id": "gen_bord_allies_otherclankits1",
         "types": [
             "border"
         ],

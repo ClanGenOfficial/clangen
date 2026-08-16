@@ -1,6 +1,6 @@
 [
     {
-        "id": "dst_train_session1",
+        "event_id": "dst_train_session1",
         "types": [
             "training"
         ],
@@ -228,7 +228,7 @@
         ]
     },
     {
-        "id": "dst_train_sett1",
+        "event_id": "dst_train_sett1",
         "types": [
             "training"
         ],
@@ -445,7 +445,7 @@
         ]
     },
     {
-        "id": "dst_train_sett2",
+        "event_id": "dst_train_sett2",
         "types": [
             "training"
         ],
@@ -674,7 +674,7 @@
         ]
     },
     {
-        "id": "dst_train_stuck1",
+        "event_id": "dst_train_stuck1",
         "types": [
             "training"
         ],
@@ -950,7 +950,7 @@
         ]
     },
     {
-        "id": "dst_train_stuck2",
+        "event_id": "dst_train_stuck2",
         "types": [
             "training"
         ],
@@ -1010,7 +1010,7 @@
         ]
     },
     {
-        "id": "dst_train_soloapp1",
+        "event_id": "dst_train_soloapp1",
         "types": [
             "training"
         ],
@@ -1107,7 +1107,7 @@
         ]
     },
     {
-        "id": "dst_train_solo2",
+        "event_id": "dst_train_solo2",
         "types": [
             "training"
         ],
@@ -1253,7 +1253,7 @@
         ]
     },
     {
-        "id": "dst_train_oasisswim1",
+        "event_id": "dst_train_oasisswim1",
         "types": [
             "training"
         ],
@@ -1514,7 +1514,7 @@
         ]
     },
     {
-        "id": "dst_train_glowingscorpions1",
+        "event_id": "dst_train_glowingscorpions1",
         "types": [
             "training"
         ],
@@ -1752,7 +1752,7 @@
         ]
     },
     {
-        "id": "dst_train_arguingromance1",
+        "event_id": "dst_train_arguingromance1",
         "types": [
             "training"
         ],
@@ -1888,7 +1888,7 @@
         ]
     },
     {
-        "id": "dst_train_sunset1",
+        "event_id": "dst_train_sunset1",
         "types": [
             "training"
         ],
@@ -2127,7 +2127,7 @@
         ]
     },
     {
-        "id": "dst_train_thewaterwars_lorelocked1",
+        "event_id": "dst_train_thewaterwars_lorelocked1",
         "types": [
             "training"
         ],
@@ -2280,7 +2280,7 @@
         ]
     },
     {
-        "id": "dst_train_wilecoyote_storylocked1",
+        "event_id": "dst_train_wilecoyote_storylocked1",
         "types": [
             "training"
         ],
@@ -2437,7 +2437,7 @@
         ]
     },
     {
-        "id": "dst_train_chupacabra_storylocked1",
+        "event_id": "dst_train_chupacabra_storylocked1",
         "types": [
             "training"
         ],
@@ -2582,7 +2582,7 @@
         ]
     },
     {
-        "id": "dst_train_lizardsunworship_storylorelocked1",
+        "event_id": "dst_train_lizardsunworship_storylorelocked1",
         "types": [
             "training"
         ],
@@ -2729,7 +2729,7 @@
         ]
     },
     {
-        "id": "dst_train_kheprithescarab_storylorelocked1",
+        "event_id": "dst_train_kheprithescarab_storylorelocked1",
         "types": [
             "training"
         ],
@@ -2900,7 +2900,7 @@
         ]
     },
     {
-        "id": "dst_train_fossilsincanyons_storylorelocked1",
+        "event_id": "dst_train_fossilsincanyons_storylorelocked1",
         "types": [
             "training"
         ],
@@ -3024,7 +3024,7 @@
         ]
     },
     {
-        "id": "dst_train_lblfnl_beetlesoloapp",
+        "event_id": "dst_train_lblfnl_beetlesoloapp",
         "types": [
             "training"
         ],

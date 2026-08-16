@@ -1,6 +1,6 @@
 [
     {
-        "id": "fst_train_greenleafromanticstroll_20locked1",
+        "event_id": "fst_train_greenleafromanticstroll_20locked1",
         "types": [
             "training"
         ],
@@ -188,7 +188,7 @@
         ]
     },
     {
-        "id": "fst_train_greenleaf_thrushlessons_hunterlocked1",
+        "event_id": "fst_train_greenleaf_thrushlessons_hunterlocked1",
         "types": [
             "training"
         ],

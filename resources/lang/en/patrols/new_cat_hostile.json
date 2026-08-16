@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_bord_newcat_hostile1",
+        "event_id": "gen_bord_newcat_hostile1",
         "types": [
             "border"
         ],
@@ -256,7 +256,7 @@
         ]
     },
     {
-        "id": "gen_bord_newcat_hostile2",
+        "event_id": "gen_bord_newcat_hostile2",
         "types": [
             "border"
         ],
@@ -494,7 +494,7 @@
         ]
     },
     {
-        "id": "gen_bord_newcatkittypet3",
+        "event_id": "gen_bord_newcatkittypet3",
         "types": [
             "border"
         ],
@@ -680,7 +680,7 @@
         ]
     },
     {
-        "id": "gen_bord_newcatkittypet4",
+        "event_id": "gen_bord_newcatkittypet4",
         "types": [
             "border"
         ],
@@ -871,7 +871,7 @@
         ]
     },
     {
-        "id": "gen_bord_newcatthunderpath2",
+        "event_id": "gen_bord_newcatthunderpath2",
         "types": [
             "border"
         ],
@@ -1019,7 +1019,7 @@
         ]
     },
     {
-        "id": "gen_bord_newcatthunderpath6",
+        "event_id": "gen_bord_newcatthunderpath6",
         "types": [
             "border"
         ],
@@ -1164,7 +1164,7 @@
         ]
     },
     {
-        "id": "gen_bord_hostilesparrowgift1",
+        "event_id": "gen_bord_hostilesparrowgift1",
         "types": [
             "border"
         ],
@@ -1514,7 +1514,7 @@
         ]
     },
     {
-        "id": "gen_bord_hostilebinglegift1",
+        "event_id": "gen_bord_hostilebinglegift1",
         "types": [
             "border"
         ],
@@ -2069,7 +2069,7 @@
         ]
     },
     {
-        "id": "gen_bord_newkit3",
+        "event_id": "gen_bord_newkit3",
         "types": [
             "border"
         ],
@@ -2182,7 +2182,7 @@
         ]
     },
     {
-        "id": "gen_bord_newkit4",
+        "event_id": "gen_bord_newkit4",
         "types": [
             "border"
         ],
@@ -2292,7 +2292,7 @@
         ]
     },
     {
-        "id": "gen_bord_healer_hostile1",
+        "event_id": "gen_bord_healer_hostile1",
         "types": [
             "border"
         ],
@@ -2537,7 +2537,7 @@
         ]
     },
     {
-        "id": "gen_bord_healer_hostile2",
+        "event_id": "gen_bord_healer_hostile2",
         "types": [
             "border"
         ],
@@ -2783,7 +2783,7 @@
         ]
     },
     {
-        "id": "gen_bord_lonerchase2",
+        "event_id": "gen_bord_lonerchase2",
         "types": [
             "border"
         ],
@@ -3023,7 +3023,7 @@
         ]
     },
     {
-        "id": "fst_bord_noise3",
+        "event_id": "fst_bord_noise3",
         "types": [
             "border"
         ],
@@ -3303,7 +3303,7 @@
         ]
     },
     {
-        "id": "fst_hunt_twolegplacekittens_hostile1",
+        "event_id": "fst_hunt_twolegplacekittens_hostile1",
         "types": [
             "hunting"
         ],
@@ -3632,7 +3632,7 @@
         ]
     },
     {
-        "id": "gen_med_rescue5",
+        "event_id": "gen_med_rescue5",
         "types": [
             "herb_gathering"
         ],
@@ -3837,7 +3837,7 @@
         ]
     },
     {
-        "id": "gen_med_rescue6",
+        "event_id": "gen_med_rescue6",
         "types": [
             "herb_gathering"
         ],
@@ -4049,7 +4049,7 @@
         ]
     },
     {
-        "id": "gen_med_rescue7",
+        "event_id": "gen_med_rescue7",
         "types": [
             "herb_gathering"
         ],
@@ -4258,7 +4258,7 @@
         ]
     },
     {
-        "id": "gen_med_rescue8",
+        "event_id": "gen_med_rescue8",
         "types": [
             "herb_gathering"
         ],
@@ -4477,7 +4477,7 @@
         ]
     },
     {
-        "id": "gen_med_rescuesoloapp_hostile1",
+        "event_id": "gen_med_rescuesoloapp_hostile1",
         "types": [
             "herb_gathering"
         ],
@@ -4682,7 +4682,7 @@
         ]
     },
     {
-        "id": "gen_med_rescuesoloapp_hostile2",
+        "event_id": "gen_med_rescuesoloapp_hostile2",
         "types": [
             "herb_gathering"
         ],
@@ -4897,7 +4897,7 @@
         ]
     },
     {
-        "id": "mnt_hunt_newcat_leaf-barecatcryhostile1",
+        "event_id": "mnt_hunt_newcat_leaf-barecatcryhostile1",
         "types": [
             "hunting"
         ],

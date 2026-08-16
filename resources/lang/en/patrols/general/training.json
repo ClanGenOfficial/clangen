@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_train_instarsandtime1",
+        "event_id": "gen_train_instarsandtime1",
         "types": [
             "training"
         ],
@@ -558,7 +558,7 @@
         ]
     },
     {
-        "id": "gen_train_soloreflect1",
+        "event_id": "gen_train_soloreflect1",
         "types": [
             "training"
         ],
@@ -659,7 +659,7 @@
         ]
     },
     {
-        "id": "gen_train_solonerv1",
+        "event_id": "gen_train_solonerv1",
         "types": [
             "training"
         ],
@@ -825,7 +825,7 @@
         ]
     },
     {
-        "id": "gen_train_deputydoubt1",
+        "event_id": "gen_train_deputydoubt1",
         "types": [
             "training"
         ],
@@ -1261,7 +1261,7 @@
         ]
     },
     {
-        "id": "gen_train_sunny1",
+        "event_id": "gen_train_sunny1",
         "types": [
             "training"
         ],
@@ -1595,7 +1595,7 @@
         ]
     },
     {
-        "id": "gen_train_sunny2",
+        "event_id": "gen_train_sunny2",
         "types": [
             "training"
         ],
@@ -1653,7 +1653,7 @@
         ]
     },
     {
-        "id": "gen_train_sunny3",
+        "event_id": "gen_train_sunny3",
         "types": [
             "training"
         ],
@@ -1899,7 +1899,7 @@
         ]
     },
     {
-        "id": "gen_train_sunny4",
+        "event_id": "gen_train_sunny4",
         "types": [
             "training"
         ],
@@ -2228,7 +2228,7 @@
         ]
     },
     {
-        "id": "gen_train_sunny5",
+        "event_id": "gen_train_sunny5",
         "types": [
             "training"
         ],
@@ -2703,7 +2703,7 @@
         ]
     },
     {
-        "id": "gen_train_adultsonly_notlikethatyoumoron1",
+        "event_id": "gen_train_adultsonly_notlikethatyoumoron1",
         "types": [
             "training"
         ],
@@ -3132,7 +3132,7 @@
         ]
     },
     {
-        "id": "gen_train_adultsonly_notlikethatyoumoron2",
+        "event_id": "gen_train_adultsonly_notlikethatyoumoron2",
         "types": [
             "training"
         ],
@@ -3844,7 +3844,7 @@
         ]
     },
     {
-        "id": "gen_train_groupwithleader1",
+        "event_id": "gen_train_groupwithleader1",
         "types": [
             "training"
         ],
@@ -4516,7 +4516,7 @@
         ]
     },
     {
-        "id": "gen_train_argue1",
+        "event_id": "gen_train_argue1",
         "types": [
             "training"
         ],
@@ -5130,7 +5130,7 @@
         ]
     },
     {
-        "id": "gen_train_argue2",
+        "event_id": "gen_train_argue2",
         "types": [
             "training"
         ],
@@ -5634,7 +5634,7 @@
         ]
     },
     {
-        "id": "gen_train_vision1",
+        "event_id": "gen_train_vision1",
         "types": [
             "training"
         ],
@@ -5855,7 +5855,7 @@
         ]
     },
     {
-        "id": "gen_train_vision2",
+        "event_id": "gen_train_vision2",
         "types": [
             "training"
         ],
@@ -5920,7 +5920,7 @@
         ]
     },
     {
-        "id": "gen_train_vision3",
+        "event_id": "gen_train_vision3",
         "types": [
             "training"
         ],
@@ -6076,7 +6076,7 @@
         ]
     },
     {
-        "id": "gen_train_vision4",
+        "event_id": "gen_train_vision4",
         "types": [
             "training"
         ],
@@ -6404,7 +6404,7 @@
         ]
     },
     {
-        "id": "gen_train_ghost1",
+        "event_id": "gen_train_ghost1",
         "types": [
             "training"
         ],
@@ -6551,7 +6551,7 @@
         ]
     },
     {
-        "id": "gen_train_ghost2",
+        "event_id": "gen_train_ghost2",
         "types": [
             "training"
         ],
@@ -6847,7 +6847,7 @@
         ]
     },
     {
-        "id": "gen_train_sneakprey1",
+        "event_id": "gen_train_sneakprey1",
         "types": [
             "training"
         ],
@@ -7205,7 +7205,7 @@
         ]
     },
     {
-        "id": "gen_train_teamwork1",
+        "event_id": "gen_train_teamwork1",
         "types": [
             "training"
         ],
@@ -8193,7 +8193,7 @@
         ]
     },
     {
-        "id": "gen_train_teamwork2",
+        "event_id": "gen_train_teamwork2",
         "types": [
             "training"
         ],
@@ -9056,7 +9056,7 @@
         ]
     },
     {
-        "id": "gen_train_teamwork3",
+        "event_id": "gen_train_teamwork3",
         "types": [
             "training"
         ],
@@ -9729,7 +9729,7 @@
         ]
     },
     {
-        "id": "gen_train_teamwork4",
+        "event_id": "gen_train_teamwork4",
         "types": [
             "training"
         ],
@@ -10277,7 +10277,7 @@
         ]
     },
     {
-        "id": "gen_train_teamwork5",
+        "event_id": "gen_train_teamwork5",
         "types": [
             "training"
         ],
@@ -10523,7 +10523,7 @@
         ]
     },
     {
-        "id": "gen_train_teamwork6",
+        "event_id": "gen_train_teamwork6",
         "types": [
             "training"
         ],
@@ -11021,7 +11021,7 @@
         ]
     },
     {
-        "id": "gen_train_teamwork7",
+        "event_id": "gen_train_teamwork7",
         "types": [
             "training"
         ],
@@ -11489,7 +11489,7 @@
         ]
     },
     {
-        "id": "gen_train_teamwork8",
+        "event_id": "gen_train_teamwork8",
         "types": [
             "training"
         ],
@@ -11850,7 +11850,7 @@
         ]
     },
     {
-        "id": "gen_train_teamwork9",
+        "event_id": "gen_train_teamwork9",
         "types": [
             "training"
         ],
@@ -12256,7 +12256,7 @@
         ]
     },
     {
-        "id": "gen_train_huntingskill1",
+        "event_id": "gen_train_huntingskill1",
         "types": [
             "training"
         ],
@@ -12678,7 +12678,7 @@
         ]
     },
     {
-        "id": "gen_train_huntingskill2",
+        "event_id": "gen_train_huntingskill2",
         "types": [
             "training"
         ],
@@ -13270,7 +13270,7 @@
         ]
     },
     {
-        "id": "gen_train_huntingskill3",
+        "event_id": "gen_train_huntingskill3",
         "types": [
             "training"
         ],
@@ -13878,7 +13878,7 @@
         ]
     },
     {
-        "id": "gen_train_huntingskill4",
+        "event_id": "gen_train_huntingskill4",
         "types": [
             "training"
         ],
@@ -14209,7 +14209,7 @@
         ]
     },
     {
-        "id": "gen_train_huntingskill5",
+        "event_id": "gen_train_huntingskill5",
         "types": [
             "training"
         ],
@@ -14517,7 +14517,7 @@
         ]
     },
     {
-        "id": "gen_train_fightingskill1",
+        "event_id": "gen_train_fightingskill1",
         "types": [
             "training"
         ],
@@ -14921,7 +14921,7 @@
         ]
     },
     {
-        "id": "gen_train_fightingskill2",
+        "event_id": "gen_train_fightingskill2",
         "types": [
             "training"
         ],
@@ -15344,7 +15344,7 @@
         ]
     },
     {
-        "id": "gen_train_fightingskill3",
+        "event_id": "gen_train_fightingskill3",
         "types": [
             "training"
         ],
@@ -15777,7 +15777,7 @@
         ]
     },
     {
-        "id": "gen_train_fightingskill4",
+        "event_id": "gen_train_fightingskill4",
         "types": [
             "training"
         ],
@@ -16098,7 +16098,7 @@
         ]
     },
     {
-        "id": "gen_train_fightingskill5",
+        "event_id": "gen_train_fightingskill5",
         "types": [
             "training"
         ],
@@ -16416,7 +16416,7 @@
         ]
     },
     {
-        "id": "gen_train_huntingromance1",
+        "event_id": "gen_train_huntingromance1",
         "types": [
             "training"
         ],
@@ -16717,7 +16717,7 @@
         ]
     },
     {
-        "id": "gen_train_fightingromance1",
+        "event_id": "gen_train_fightingromance1",
         "types": [
             "training"
         ],
@@ -17010,7 +17010,7 @@
         ]
     },
     {
-        "id": "gen_train_smartromance1",
+        "event_id": "gen_train_smartromance1",
         "types": [
             "training"
         ],
@@ -17301,7 +17301,7 @@
         ]
     },
     {
-        "id": "gen_train_speakingromance1",
+        "event_id": "gen_train_speakingromance1",
         "types": [
             "training"
         ],
@@ -17493,7 +17493,7 @@
         ]
     },
     {
-        "id": "gen_train_teachingromance1",
+        "event_id": "gen_train_teachingromance1",
         "types": [
             "training"
         ],
@@ -17669,7 +17669,7 @@
         ]
     },
     {
-        "id": "gen_train_starclanromance1",
+        "event_id": "gen_train_starclanromance1",
         "types": [
             "training"
         ],
@@ -17832,7 +17832,7 @@
         ]
     },
     {
-        "id": "gen_training_twoapps_forbiddentunnels1",
+        "event_id": "gen_training_twoapps_forbiddentunnels1",
         "types": [
             "training"
         ],
@@ -18058,7 +18058,7 @@
         ]
     },
     {
-        "id": "gen_train_confidinginwarrior1",
+        "event_id": "gen_train_confidinginwarrior1",
         "types": [
             "training"
         ],
@@ -18234,7 +18234,7 @@
         ]
     },
     {
-        "id": "gen_train_mosstraining1",
+        "event_id": "gen_train_mosstraining1",
         "types": [
             "training"
         ],
@@ -18386,7 +18386,7 @@
         ]
     },
     {
-        "id": "gen_train_enemiestolovers_10locked1",
+        "event_id": "gen_train_enemiestolovers_10locked1",
         "types": [
             "training"
         ],
@@ -18503,7 +18503,7 @@
         ]
     },
     {
-        "id": "gen_train_enemiestolovers_10locked2",
+        "event_id": "gen_train_enemiestolovers_10locked2",
         "types": [
             "training"
         ],
@@ -18630,7 +18630,7 @@
         ]
     },
     {
-        "id": "gen_train_enemiestolovers_10locked3",
+        "event_id": "gen_train_enemiestolovers_10locked3",
         "types": [
             "training"
         ],
@@ -18722,7 +18722,7 @@
         ]
     },
     {
-        "id": "gen_train_enemiestolovers_20locked1",
+        "event_id": "gen_train_enemiestolovers_20locked1",
         "types": [
             "training"
         ],
@@ -18838,7 +18838,7 @@
         ]
     },
     {
-        "id": "gen_train_enemiestolovers_20locked2",
+        "event_id": "gen_train_enemiestolovers_20locked2",
         "types": [
             "training"
         ],
@@ -18963,7 +18963,7 @@
         ]
     },
     {
-        "id": "gen_train_enemiestolovers_30locked1",
+        "event_id": "gen_train_enemiestolovers_30locked1",
         "types": [
             "training"
         ],
@@ -19078,7 +19078,7 @@
         ]
     },
     {
-        "id": "gen_train_enemiestolovers_30locked2",
+        "event_id": "gen_train_enemiestolovers_30locked2",
         "types": [
             "training"
         ],
@@ -19190,7 +19190,7 @@
         ]
     },
     {
-        "id": "gen_train_enemiestolovers_30locked3",
+        "event_id": "gen_train_enemiestolovers_30locked3",
         "types": [
             "training"
         ],
@@ -19303,7 +19303,7 @@
         ]
     },
     {
-        "id": "gen_train_enemiestolovers_40locked1",
+        "event_id": "gen_train_enemiestolovers_40locked1",
         "types": [
             "training"
         ],
@@ -19470,7 +19470,7 @@
         ]
     },
     {
-        "id": "gen_train_enemiestolovers_40locked3",
+        "event_id": "gen_train_enemiestolovers_40locked3",
         "types": [
             "training"
         ],
@@ -19561,7 +19561,7 @@
         ]
     },
     {
-        "id": "gen_train_clearingtheair_dislikelocked",
+        "event_id": "gen_train_clearingtheair_dislikelocked",
         "types": [
             "training"
         ],
@@ -19942,7 +19942,7 @@
         ]
     },
     {
-        "id": "gen_train_provingyourself_10locked1",
+        "event_id": "gen_train_provingyourself_10locked1",
         "types": [
             "training"
         ],
@@ -20075,7 +20075,7 @@
         ]
     },
     {
-        "id": "gen_train_pullingpigtails1",
+        "event_id": "gen_train_pullingpigtails1",
         "types": [
             "training"
         ],
@@ -20276,7 +20276,7 @@
         ]
     },
     {
-        "id": "gen_train_betting",
+        "event_id": "gen_train_betting",
         "types": [
             "training"
         ],
@@ -20768,7 +20768,7 @@
         ]
     },
     {
-        "id": "gen_train_BFFs_platonic502locked1",
+        "event_id": "gen_train_BFFs_platonic502locked1",
         "types": [
             "training"
         ],
@@ -20973,7 +20973,7 @@
         ]
     },
     {
-        "id": "gen_train_leaderparentchildlocked1",
+        "event_id": "gen_train_leaderparentchildlocked1",
         "types": [
             "training"
         ],
@@ -21244,7 +21244,7 @@
         ]
     },
     {
-        "id": "gen_train_kitcamplocked1",
+        "event_id": "gen_train_kitcamplocked1",
         "types": [
             "training"
         ],
@@ -21391,7 +21391,7 @@
         ]
     },
     {
-        "id": "gen_train_teacherinsightfullocked1",
+        "event_id": "gen_train_teacherinsightfullocked1",
         "types": [
             "training"
         ],
@@ -21531,7 +21531,7 @@
         ]
     },
     {
-        "id": "gen_train_storylocked1",
+        "event_id": "gen_train_storylocked1",
         "types": [
             "training"
         ],
@@ -21649,7 +21649,7 @@
         ]
     },
     {
-        "id": "gen_train_silverpeltfable_storylorelocked1",
+        "event_id": "gen_train_silverpeltfable_storylorelocked1",
         "types": [
             "training"
         ],
@@ -22195,7 +22195,7 @@
         ]
     },
     {
-        "id": "gen_train_whiskergrove_storylorelocked1",
+        "event_id": "gen_train_whiskergrove_storylorelocked1",
         "types": [
             "training"
         ],
@@ -22397,7 +22397,7 @@
         ]
     },
     {
-        "id": "gen_train_solreference_lorelocked1",
+        "event_id": "gen_train_solreference_lorelocked1",
         "types": [
             "training"
         ],
@@ -22492,7 +22492,7 @@
         ]
     },
     {
-        "id": "gen_train_lorelocked1",
+        "event_id": "gen_train_lorelocked1",
         "types": [
             "training"
         ],
@@ -22624,7 +22624,7 @@
         ]
     },
     {
-        "id": "gen_train_fightingcleverlocked1",
+        "event_id": "gen_train_fightingcleverlocked1",
         "types": [
             "training"
         ],
@@ -22775,7 +22775,7 @@
         ]
     },
     {
-        "id": "gen_train_huntersenselocked1",
+        "event_id": "gen_train_huntersenselocked1",
         "types": [
             "training"
         ],
@@ -22899,7 +22899,7 @@
         ]
     },
     {
-        "id": "gen_train_runnerclimberswimmerlocked1",
+        "event_id": "gen_train_runnerclimberswimmerlocked1",
         "types": [
             "training"
         ],
@@ -23056,7 +23056,7 @@
         ]
     },
     {
-        "id": "gen_train_speakermediatorlocked1",
+        "event_id": "gen_train_speakermediatorlocked1",
         "types": [
             "training"
         ],
@@ -23199,7 +23199,7 @@
         ]
     },
     {
-        "id": "gen_train_stardarkghostlocked1",
+        "event_id": "gen_train_stardarkghostlocked1",
         "types": [
             "training"
         ],
@@ -23318,7 +23318,7 @@
         ]
     },
     {
-        "id": "gen_train_healerlocked1",
+        "event_id": "gen_train_healerlocked1",
         "types": [
             "training"
         ],
@@ -23478,7 +23478,7 @@
         ]
     },
     {
-        "id": "gen_train_omenlocked1",
+        "event_id": "gen_train_omenlocked1",
         "types": [
             "training"
         ],
@@ -23608,7 +23608,7 @@
         ]
     },
     {
-        "id": "gen_train_dreamlocked1",
+        "event_id": "gen_train_dreamlocked1",
         "types": [
             "training"
         ],
@@ -23702,7 +23702,7 @@
         ]
     },
     {
-        "id": "gen_train_clairvoyantlocked1",
+        "event_id": "gen_train_clairvoyantlocked1",
         "types": [
             "training"
         ],
@@ -23821,7 +23821,7 @@
         ]
     },
     {
-        "id": "gen_train_prophetlocked1",
+        "event_id": "gen_train_prophetlocked1",
         "types": [
             "training"
         ],
@@ -23952,7 +23952,7 @@
         ]
     },
     {
-        "id": "gen_train_kittypetlocked1",
+        "event_id": "gen_train_kittypetlocked1",
         "types": [
             "training"
         ],
@@ -24077,7 +24077,7 @@
         ]
     },
     {
-        "id": "gen_train_roguelonerlocked1",
+        "event_id": "gen_train_roguelonerlocked1",
         "types": [
             "training"
         ],
@@ -24201,7 +24201,7 @@
         ]
     },
     {
-        "id": "gen_train_firestarfable_storylorelocked1",
+        "event_id": "gen_train_firestarfable_storylorelocked1",
         "types": [
             "training"
         ],
@@ -24305,7 +24305,7 @@
         ]
     },
     {
-        "id": "gen_train_powerofthreefable_storylorelocked1",
+        "event_id": "gen_train_powerofthreefable_storylorelocked1",
         "types": [
             "training"
         ],
@@ -24417,7 +24417,7 @@
         ]
     },
     {
-        "id": "gen_train_constellations_storylorelocked1",
+        "event_id": "gen_train_constellations_storylorelocked1",
         "types": [
             "training"
         ],
@@ -24531,7 +24531,7 @@
         ]
     },
     {
-        "id": "gen_train_leaffall_eclipsemyth_storylocked1",
+        "event_id": "gen_train_leaffall_eclipsemyth_storylocked1",
         "frequency": 3,
         "types": [
             "training"
@@ -24667,7 +24667,7 @@
         ]
     },
     {
-        "id": "gen_train_leafbare_thecurseofleafbare_lorelocked1",
+        "event_id": "gen_train_leafbare_thecurseofleafbare_lorelocked1",
         "types": [
             "training"
         ],
@@ -24820,7 +24820,7 @@
         ]
     },
     {
-        "id": "gen_train_pumpkineyes",
+        "event_id": "gen_train_pumpkineyes",
         "types": [
             "training"
         ],
@@ -25031,7 +25031,7 @@
         ]
     },
     {
-        "id": "gen_train_deathsheadmoth1",
+        "event_id": "gen_train_deathsheadmoth1",
         "types": [
             "training"
         ],
@@ -25135,7 +25135,7 @@
         ]
     },
     {
-        "id": "gen_train_huntassess1",
+        "event_id": "gen_train_huntassess1",
         "types": [
             "training"
         ],
@@ -25476,7 +25476,7 @@
         ]
     },
     {
-        "id": "gen_train_trackassess1",
+        "event_id": "gen_train_trackassess1",
         "types": [
             "training"
         ],
@@ -25776,7 +25776,7 @@
         ]
     },
     {
-        "id": "gen_train_amentorswisdom",
+        "event_id": "gen_train_amentorswisdom",
         "types": [
             "training"
         ],
@@ -26201,7 +26201,7 @@
         ]
     },
     {
-        "id": "gen_train_showoff_app",
+        "event_id": "gen_train_showoff_app",
         "types": [
             "training"
         ],
@@ -26831,7 +26831,7 @@
         ]
     },
     {
-        "id": "gen_train_kittypets_lesson",
+        "event_id": "gen_train_kittypets_lesson",
         "types": [
             "training"
         ],
@@ -27127,7 +27127,7 @@
         ]
     },
     {
-        "id": "gen_train_advanced_moves",
+        "event_id": "gen_train_advanced_moves",
         "types": [
             "training"
         ],
@@ -28112,7 +28112,7 @@
         ]
     },
     {
-        "id": "gen_train_notmentor",
+        "event_id": "gen_train_notmentor",
         "types": [
             "training"
         ],
@@ -28739,7 +28739,7 @@
         ]
     },
     {
-        "id": "gen_train_two_on_one",
+        "event_id": "gen_train_two_on_one",
         "types": [
             "training"
         ],
@@ -29963,7 +29963,7 @@
         ]
     },
     {
-        "id": "gen_train_ihatethisfluffingfamily1",
+        "event_id": "gen_train_ihatethisfluffingfamily1",
         "types": [
             "training"
         ],
@@ -30169,7 +30169,7 @@
         ]
     },
     {
-        "id": "gen_train_adultapps_swarmedbykids",
+        "event_id": "gen_train_adultapps_swarmedbykids",
         "types": [
             "training"
         ],
@@ -31177,7 +31177,7 @@
         ]
     },
     {
-        "id": "gen_train_gllf_berrybush1",
+        "event_id": "gen_train_gllf_berrybush1",
         "types": [
             "training"
         ],
@@ -31348,7 +31348,7 @@
         ]
     },
     {
-        "id": "gen_train_gllf_berrybush2",
+        "event_id": "gen_train_gllf_berrybush2",
         "types": [
             "training"
         ],
@@ -31506,7 +31506,7 @@
         ]
     },
     {
-        "id": "gen_train_adults_c0ompatibility",
+        "event_id": "gen_train_adults_c0ompatibility",
         "types": [
             "training"
         ],
@@ -32176,7 +32176,7 @@
         ]
     },
     {
-        "id": "gen_train_newleaf_tadpole",
+        "event_id": "gen_train_newleaf_tadpole",
         "types": [
             "training"
         ],
@@ -32469,7 +32469,7 @@
         ]
     },
     {
-        "id": "gen_train_deathberries_gllf_app",
+        "event_id": "gen_train_deathberries_gllf_app",
         "types": [
             "training"
         ],

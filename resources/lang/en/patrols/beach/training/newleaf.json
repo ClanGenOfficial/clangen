@@ -1,6 +1,6 @@
 [
     {
-        "id": "bch_train_elephantseal1",
+        "event_id": "bch_train_elephantseal1",
         "types": [
             "training"
         ],
@@ -321,7 +321,7 @@
         ]
     },
     {
-        "id": "bch_train_newleaf_keepyourfooting_loreteacherswimmerrunnerlocked1",
+        "event_id": "bch_train_newleaf_keepyourfooting_loreteacherswimmerrunnerlocked1",
         "types": [
             "training"
         ],

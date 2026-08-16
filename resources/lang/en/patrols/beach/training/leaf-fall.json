@@ -1,6 +1,6 @@
 [
     {
-        "id": "bch_train_lore1",
+        "event_id": "bch_train_lore1",
         "types": [
             "training"
         ],
@@ -232,7 +232,7 @@
         ]
     },
     {
-        "id": "bch_train_lore2",
+        "event_id": "bch_train_lore2",
         "types": [
             "training"
         ],
@@ -365,7 +365,7 @@
         ]
     },
     {
-        "id": "bch_train_leaffall_lifeguarding_storyloreswimmerlocked1",
+        "event_id": "bch_train_leaffall_lifeguarding_storyloreswimmerlocked1",
         "types": [
             "training"
         ],

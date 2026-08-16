@@ -1,6 +1,6 @@
 [
     {
-        "id": "dst_med_app_herblocation1",
+        "event_id": "dst_med_app_herblocation1",
         "types": [
             "herb_gathering"
         ],
@@ -156,7 +156,7 @@
         ]
     },
     {
-        "id": "dst_med_app_herblocation2",
+        "event_id": "dst_med_app_herblocation2",
         "types": [
             "herb_gathering"
         ],
@@ -217,7 +217,7 @@
         ]
     },
     {
-        "id": "dst_medcat_emergency1",
+        "event_id": "dst_medcat_emergency1",
         "types": [
             "herb_gathering"
         ],
@@ -367,7 +367,7 @@
         ]
     },
     {
-        "id": "dst_med_lungwort1",
+        "event_id": "dst_med_lungwort1",
         "types": [
             "herb_gathering"
         ],
@@ -612,7 +612,7 @@
         ]
     },
     {
-        "id": "dst_med_lungwort2",
+        "event_id": "dst_med_lungwort2",
         "types": [
             "herb_gathering"
         ],
@@ -756,7 +756,7 @@
         ]
     },
     {
-        "id": "dst_med_lungwort3",
+        "event_id": "dst_med_lungwort3",
         "types": [
             "herb_gathering"
         ],
@@ -1055,7 +1055,7 @@
         ]
     },
     {
-        "id": "dst_med_romance1",
+        "event_id": "dst_med_romance1",
         "types": [
             "herb_gathering"
         ],
@@ -1246,7 +1246,7 @@
         ]
     },
     {
-        "id": "dst_med_romance2",
+        "event_id": "dst_med_romance2",
         "types": [
             "herb_gathering"
         ],
@@ -1436,7 +1436,7 @@
         ]
     },
     {
-        "id": "dst_nllf_med_dwindleherbsgathering1",
+        "event_id": "dst_nllf_med_dwindleherbsgathering1",
         "types": [
             "herb_gathering"
         ],

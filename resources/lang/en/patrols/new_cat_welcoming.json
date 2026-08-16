@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_bord_newcat2",
+        "event_id": "gen_bord_newcat2",
         "types": [
             "border"
         ],
@@ -219,7 +219,7 @@
         ]
     },
     {
-        "id": "gen_bord_welcomingnewcatpair1",
+        "event_id": "gen_bord_welcomingnewcatpair1",
         "types": [
             "border"
         ],
@@ -1391,7 +1391,7 @@
         ]
     },
     {
-        "id": "gen_bord_asyoulikeit2",
+        "event_id": "gen_bord_asyoulikeit2",
         "types": [
             "border"
         ],
@@ -2663,7 +2663,7 @@
         ]
     },
     {
-        "id": "gen_bord_newcat4",
+        "event_id": "gen_bord_newcat4",
         "types": [
             "border"
         ],
@@ -2881,7 +2881,7 @@
         ]
     },
     {
-        "id": "gen_bord_newcatkittypet1",
+        "event_id": "gen_bord_newcatkittypet1",
         "types": [
             "border"
         ],
@@ -3056,7 +3056,7 @@
         ]
     },
     {
-        "id": "gen_bord_newcatkittypet5",
+        "event_id": "gen_bord_newcatkittypet5",
         "types": [
             "border"
         ],
@@ -3231,7 +3231,7 @@
         ]
     },
     {
-        "id": "gen_bord_newcatthunderpath1",
+        "event_id": "gen_bord_newcatthunderpath1",
         "types": [
             "border"
         ],
@@ -3402,7 +3402,7 @@
         ]
     },
     {
-        "id": "gen_bord_newcatthunderpath5",
+        "event_id": "gen_bord_newcatthunderpath5",
         "types": [
             "border"
         ],
@@ -3570,7 +3570,7 @@
         ]
     },
     {
-        "id": "gen_bord_welcomingsparrowgift1",
+        "event_id": "gen_bord_welcomingsparrowgift1",
         "types": [
             "border"
         ],
@@ -3928,7 +3928,7 @@
         ]
     },
     {
-        "id": "gen_bord_welcomingbinglegift1",
+        "event_id": "gen_bord_welcomingbinglegift1",
         "types": [
             "border"
         ],
@@ -4469,7 +4469,7 @@
         ]
     },
     {
-        "id": "gen_bord_newkit1",
+        "event_id": "gen_bord_newkit1",
         "types": [
             "border"
         ],
@@ -4582,7 +4582,7 @@
         ]
     },
     {
-        "id": "gen_bord_newkit5",
+        "event_id": "gen_bord_newkit5",
         "types": [
             "border"
         ],
@@ -4692,7 +4692,7 @@
         ]
     },
     {
-        "id": "gen_bord_healer2",
+        "event_id": "gen_bord_healer2",
         "types": [
             "border"
         ],
@@ -4929,7 +4929,7 @@
         ]
     },
     {
-        "id": "gen_bord_healer3",
+        "event_id": "gen_bord_healer3",
         "types": [
             "border"
         ],
@@ -5153,7 +5153,7 @@
         ]
     },
     {
-        "id": "gen_bord_lonerchase1welcome",
+        "event_id": "gen_bord_lonerchase1welcome",
         "types": [
             "border"
         ],
@@ -5376,7 +5376,7 @@
         ]
     },
     {
-        "id": "fst_bord_noise1",
+        "event_id": "fst_bord_noise1",
         "types": [
             "border"
         ],
@@ -5802,7 +5802,7 @@
         ]
     },
     {
-        "id": "gen_med_rescue9",
+        "event_id": "gen_med_rescue9",
         "types": [
             "herb_gathering"
         ],
@@ -6007,7 +6007,7 @@
         ]
     },
     {
-        "id": "gen_med_rescue10",
+        "event_id": "gen_med_rescue10",
         "types": [
             "herb_gathering"
         ],
@@ -6222,7 +6222,7 @@
         ]
     },
     {
-        "id": "gen_med_rescue11",
+        "event_id": "gen_med_rescue11",
         "types": [
             "herb_gathering"
         ],
@@ -6431,7 +6431,7 @@
         ]
     },
     {
-        "id": "gen_med_rescue12",
+        "event_id": "gen_med_rescue12",
         "types": [
             "herb_gathering"
         ],
@@ -6650,7 +6650,7 @@
         ]
     },
     {
-        "id": "gen_med_rescuesoloapp3",
+        "event_id": "gen_med_rescuesoloapp3",
         "types": [
             "herb_gathering"
         ],
@@ -6853,7 +6853,7 @@
         ]
     },
     {
-        "id": "gen_med_rescuesoloapp4",
+        "event_id": "gen_med_rescuesoloapp4",
         "types": [
             "herb_gathering"
         ],
@@ -7078,7 +7078,7 @@
         ]
     },
     {
-        "id": "fst_hunt_twolegplacekittenswelcome1",
+        "event_id": "fst_hunt_twolegplacekittenswelcome1",
         "types": [
             "hunting"
         ],
@@ -7407,7 +7407,7 @@
         ]
     },
     {
-        "id": "gen_bord_curiouskittypet1",
+        "event_id": "gen_bord_curiouskittypet1",
         "types": [
             "border"
         ],
@@ -7673,7 +7673,7 @@
         ]
     },
     {
-        "id": "gen_bord_injuredcat1",
+        "event_id": "gen_bord_injuredcat1",
         "types": [
             "border"
         ],
@@ -7953,7 +7953,7 @@
         ]
     },
     {
-        "id": "gen_bord_injuredcatsolo1",
+        "event_id": "gen_bord_injuredcatsolo1",
         "types": [
             "border"
         ],
@@ -8224,7 +8224,7 @@
         ]
     },
     {
-        "id": "mnt_hunt_newcat_leaf-barecatcrywelcoming1",
+        "event_id": "mnt_hunt_newcat_leaf-barecatcrywelcoming1",
         "types": [
             "hunting"
         ],
@@ -8486,7 +8486,7 @@
         ]
     },
     {
-        "id": "gen_bord_elder_rescuewelcoming1",
+        "event_id": "gen_bord_elder_rescuewelcoming1",
         "types": [
             "border"
         ],
@@ -8730,7 +8730,7 @@
         ]
     },
     {
-        "id": "gen_bord_app_otherclanapp1",
+        "event_id": "gen_bord_app_otherclanapp1",
         "types": [
             "border"
         ],
@@ -9007,7 +9007,7 @@
         ]
     },
     {
-        "id": "gen_train_app_newfriend2",
+        "event_id": "gen_train_app_newfriend2",
         "types": [
             "training"
         ],
@@ -9807,7 +9807,7 @@
         ]
     },
     {
-        "id": "pln_bord_greenleaf_hitherecutie_solo1",
+        "event_id": "pln_bord_greenleaf_hitherecutie_solo1",
         "types": [
             "border"
         ],

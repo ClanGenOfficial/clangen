@@ -1,6 +1,6 @@
 [
     {
-        "id": "pln_hunt_leafbare_snowstorm1",
+        "event_id": "pln_hunt_leafbare_snowstorm1",
         "types": [
             "hunting"
         ],
@@ -265,7 +265,7 @@
         ]
     },
     {
-        "id": "pln_hunt_leafbare_snowstorm2",
+        "event_id": "pln_hunt_leafbare_snowstorm2",
         "types": [
             "hunting"
         ],
@@ -390,7 +390,7 @@
         ]
     },
     {
-        "id": "pln_hunt_leafbare_snowstorm3",
+        "event_id": "pln_hunt_leafbare_snowstorm3",
         "types": [
             "hunting"
         ],
@@ -634,7 +634,7 @@
         ]
     },
     {
-        "id": "pln_hunt_leaf-bare_squirrel_burrowbusiness1",
+        "event_id": "pln_hunt_leaf-bare_squirrel_burrowbusiness1",
         "types": [
             "hunting"
         ],
@@ -831,7 +831,7 @@
         ]
     },
     {
-        "id": "pln_hunt_leaf-bare_groupsquirrel1",
+        "event_id": "pln_hunt_leaf-bare_groupsquirrel1",
         "types": [
             "hunting"
         ],
@@ -1062,7 +1062,7 @@
         ]
     },
     {
-        "id": "pln_hunt_leaf-bare_solomouse1",
+        "event_id": "pln_hunt_leaf-bare_solomouse1",
         "types": [
             "hunting"
         ],
@@ -1214,7 +1214,7 @@
         ]
     },
     {
-        "id": "pln_hunt_leaf-bare_soloappmouse1",
+        "event_id": "pln_hunt_leaf-bare_soloappmouse1",
         "types": [
             "hunting"
         ],
@@ -1320,7 +1320,7 @@
         ]
     },
     {
-        "id": "pln_hunt_leaf-bare_mentormouse1",
+        "event_id": "pln_hunt_leaf-bare_mentormouse1",
         "types": [
             "hunting"
         ],
@@ -1527,7 +1527,7 @@
         ]
     },
     {
-        "id": "pln_hunt_leaf-bare_mice_appshowoff1",
+        "event_id": "pln_hunt_leaf-bare_mice_appshowoff1",
         "types": [
             "hunting"
         ],
@@ -1878,7 +1878,7 @@
         ]
     },
     {
-        "id": "pln_hunt_leaf-bare_groupmice1",
+        "event_id": "pln_hunt_leaf-bare_groupmice1",
         "types": [
             "hunting"
         ],
@@ -2046,7 +2046,7 @@
         ]
     },
     {
-        "id": "pln_hunt_leafbarewatchandlearnfox1",
+        "event_id": "pln_hunt_leafbarewatchandlearnfox1",
         "types": [
             "hunting"
         ],

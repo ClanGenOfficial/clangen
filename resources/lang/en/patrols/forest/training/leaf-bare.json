@@ -1,6 +1,6 @@
 [
     {
-        "id": "fst_train_leafbareromanticstroll_20locked1",
+        "event_id": "fst_train_leafbareromanticstroll_20locked1",
         "types": [
             "training"
         ],
@@ -188,7 +188,7 @@
         ]
     },
     {
-        "id": "fst_train_leafbare_snowmyth_storylocked1",
+        "event_id": "fst_train_leafbare_snowmyth_storylocked1",
         "types": [
             "training"
         ],
@@ -373,7 +373,7 @@
         ]
     },
     {
-        "id": "fst_train_leafbare_underwaterpanthermyth_storylocked1",
+        "event_id": "fst_train_leafbare_underwaterpanthermyth_storylocked1",
         "types": [
             "training"
         ],

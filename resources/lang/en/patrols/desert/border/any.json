@@ -1,6 +1,6 @@
 [
     {
-        "id": "dst_bord_dog1",
+        "event_id": "dst_bord_dog1",
         "types": [
             "border"
         ],
@@ -203,7 +203,7 @@
         ]
     },
     {
-        "id": "dst_bord_dog2",
+        "event_id": "dst_bord_dog2",
         "types": [
             "border"
         ],
@@ -982,7 +982,7 @@
         ]
     },
     {
-        "id": "dst_bord_smalldog1",
+        "event_id": "dst_bord_smalldog1",
         "types": [
             "border"
         ],
@@ -1152,7 +1152,7 @@
         ]
     },
     {
-        "id": "dst_bord_smalldog2",
+        "event_id": "dst_bord_smalldog2",
         "types": [
             "border"
         ],
@@ -1315,7 +1315,7 @@
         ]
     },
     {
-        "id": "dst_bord_smalldog3",
+        "event_id": "dst_bord_smalldog3",
         "types": [
             "border"
         ],
@@ -1478,7 +1478,7 @@
         ]
     },
     {
-        "id": "dst_bord_awdencounter",
+        "event_id": "dst_bord_awdencounter",
         "types": [
             "border"
         ],

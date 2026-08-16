@@ -1,6 +1,6 @@
 [
     {
-        "id": "pln_hunt_greenleaf_heat1",
+        "event_id": "pln_hunt_greenleaf_heat1",
         "types": [
             "hunting"
         ],
@@ -174,7 +174,7 @@
         ]
     },
     {
-        "id": "pln_hunt_greenleaf_twolegsobject1",
+        "event_id": "pln_hunt_greenleaf_twolegsobject1",
         "types": [
             "hunting"
         ],
@@ -253,7 +253,7 @@
         ]
     },
     {
-        "id": "pln_hunt_swiftfox_greenleafvixen1",
+        "event_id": "pln_hunt_swiftfox_greenleafvixen1",
         "types": [
             "hunting"
         ],
@@ -463,7 +463,7 @@
         ]
     },
     {
-        "id": "pln_hunt_greenleaf_solosquirrel1",
+        "event_id": "pln_hunt_greenleaf_solosquirrel1",
         "types": [
             "hunting"
         ],
@@ -594,7 +594,7 @@
         ]
     },
     {
-        "id": "pln_hunt_greenleaf_soloappsquirrel1",
+        "event_id": "pln_hunt_greenleaf_soloappsquirrel1",
         "types": [
             "hunting"
         ],
@@ -701,7 +701,7 @@
         ]
     },
     {
-        "id": "pln_hunt_greenleaf_mentorsquirrel1",
+        "event_id": "pln_hunt_greenleaf_mentorsquirrel1",
         "types": [
             "hunting"
         ],
@@ -890,7 +890,7 @@
         ]
     },
     {
-        "id": "pln_hunt_greenleaf_groupsquirrel1",
+        "event_id": "pln_hunt_greenleaf_groupsquirrel1",
         "types": [
             "hunting"
         ],
@@ -1074,7 +1074,7 @@
         ]
     },
     {
-        "id": "pln_hunt_greenleaf_solomouse1",
+        "event_id": "pln_hunt_greenleaf_solomouse1",
         "types": [
             "hunting"
         ],
@@ -1169,7 +1169,7 @@
         ]
     },
     {
-        "id": "pln_hunt_greenleaf_soloappmouse1",
+        "event_id": "pln_hunt_greenleaf_soloappmouse1",
         "types": [
             "hunting"
         ],
@@ -1282,7 +1282,7 @@
         ]
     },
     {
-        "id": "pln_hunt_greenleaf_mentormouse1",
+        "event_id": "pln_hunt_greenleaf_mentormouse1",
         "types": [
             "hunting"
         ],
@@ -1471,7 +1471,7 @@
         ]
     },
     {
-        "id": "pln_hunt_catvsrattler1",
+        "event_id": "pln_hunt_catvsrattler1",
         "types": [
             "hunting"
         ],

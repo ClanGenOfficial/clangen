@@ -1,6 +1,6 @@
 [
     {
-        "id": "fst_train_newleafromanticstroll_20locked1",
+        "event_id": "fst_train_newleafromanticstroll_20locked1",
         "types": [
             "training"
         ],
@@ -188,7 +188,7 @@
         ]
     },
     {
-        "id": "fst_train_newleafmatesonadates_70locked1",
+        "event_id": "fst_train_newleafmatesonadates_70locked1",
         "types": [
             "training"
         ],
@@ -320,7 +320,7 @@
         ]
     },
     {
-        "id": "fst_train_newleaf_mapleshadereference_storylorelocked1",
+        "event_id": "fst_train_newleaf_mapleshadereference_storylorelocked1",
         "types": [
             "training"
         ],
@@ -450,7 +450,7 @@
         ]
     },
     {
-        "id": "fst_train_newleaf_crowrock_storylorelocked1",
+        "event_id": "fst_train_newleaf_crowrock_storylorelocked1",
         "types": [
             "training"
         ],

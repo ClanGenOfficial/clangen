@@ -1,6 +1,6 @@
 [
     {
-        "id": "fst_med_herblocation1",
+        "event_id": "fst_med_herblocation1",
         "types": [
             "herb_gathering"
         ],
@@ -170,7 +170,7 @@
         ]
     },
     {
-        "id": "fst_med_herblocation2",
+        "event_id": "fst_med_herblocation2",
         "types": [
             "herb_gathering"
         ],
@@ -232,7 +232,7 @@
         ]
     },
     {
-        "id": "fst_med_stumble1",
+        "event_id": "fst_med_stumble1",
         "types": [
             "herb_gathering"
         ],
@@ -612,7 +612,7 @@
         ]
     },
     {
-        "id": "fst_med_stumble2",
+        "event_id": "fst_med_stumble2",
         "types": [
             "herb_gathering"
         ],
@@ -988,7 +988,7 @@
         ]
     },
     {
-        "id": "fst_med_stumble3",
+        "event_id": "fst_med_stumble3",
         "types": [
             "herb_gathering"
         ],

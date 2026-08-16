@@ -1,6 +1,6 @@
 [
     {
-        "id": "pln_hunt_leaf-fall_solosquirrel1",
+        "event_id": "pln_hunt_leaf-fall_solosquirrel1",
         "types": [
             "hunting"
         ],
@@ -131,7 +131,7 @@
         ]
     },
     {
-        "id": "pln_hunt_leaf-fall_soloappsquirrel1",
+        "event_id": "pln_hunt_leaf-fall_soloappsquirrel1",
         "types": [
             "hunting"
         ],
@@ -238,7 +238,7 @@
         ]
     },
     {
-        "id": "pln_hunt_leaf-fall_mentorsquirrel1",
+        "event_id": "pln_hunt_leaf-fall_mentorsquirrel1",
         "types": [
             "hunting"
         ],
@@ -427,7 +427,7 @@
         ]
     },
     {
-        "id": "pln_hunt_leaf-fall_squirrel_burrowbusiness1",
+        "event_id": "pln_hunt_leaf-fall_squirrel_burrowbusiness1",
         "types": [
             "hunting"
         ],
@@ -620,7 +620,7 @@
         ]
     },
     {
-        "id": "pln_hunt_leaf-fall_groupsquirrel1",
+        "event_id": "pln_hunt_leaf-fall_groupsquirrel1",
         "types": [
             "hunting"
         ],
@@ -804,7 +804,7 @@
         ]
     },
     {
-        "id": "pln_hunt_leaffall_solomouse1",
+        "event_id": "pln_hunt_leaffall_solomouse1",
         "types": [
             "hunting"
         ],
@@ -899,7 +899,7 @@
         ]
     },
     {
-        "id": "pln_hunt_leaffall_soloappmouse1",
+        "event_id": "pln_hunt_leaffall_soloappmouse1",
         "types": [
             "hunting"
         ],
@@ -1012,7 +1012,7 @@
         ]
     },
     {
-        "id": "pln_hunt_leaffall_mentormouse1",
+        "event_id": "pln_hunt_leaffall_mentormouse1",
         "types": [
             "hunting"
         ],
@@ -1201,7 +1201,7 @@
         ]
     },
     {
-        "id": "pln_hunt_leaf-fall_groupmice1",
+        "event_id": "pln_hunt_leaf-fall_groupmice1",
         "types": [
             "hunting"
         ],
@@ -1369,7 +1369,7 @@
         ]
     },
     {
-        "id": "pln_hunt_pipistrellebats1",
+        "event_id": "pln_hunt_pipistrellebats1",
         "types": [
             "hunting"
         ],

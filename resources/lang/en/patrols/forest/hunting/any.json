@@ -1,6 +1,6 @@
 [
     {
-        "id": "fst_hunt_porcupine1",
+        "event_id": "fst_hunt_porcupine1",
         "types": [
             "hunting"
         ],
@@ -229,7 +229,7 @@
         ]
     },
     {
-        "id": "fst_hunt_porcupine2",
+        "event_id": "fst_hunt_porcupine2",
         "types": [
             "hunting"
         ],
@@ -414,7 +414,7 @@
         ]
     },
     {
-        "id": "fst_hunt_rabbitburrow1",
+        "event_id": "fst_hunt_rabbitburrow1",
         "types": [
             "hunting"
         ],
@@ -458,7 +458,7 @@
         ]
     },
     {
-        "id": "fst_hunt_twolegplace1",
+        "event_id": "fst_hunt_twolegplace1",
         "types": [
             "hunting"
         ],
@@ -576,7 +576,7 @@
         ]
     },
     {
-        "id": "fst_hunt_twolegplace2",
+        "event_id": "fst_hunt_twolegplace2",
         "types": [
             "hunting"
         ],
@@ -713,7 +713,7 @@
         ]
     },
     {
-        "id": "fst_hunt_squirrelchase1",
+        "event_id": "fst_hunt_squirrelchase1",
         "types": [
             "hunting"
         ],
@@ -927,7 +927,7 @@
         ]
     },
     {
-        "id": "fst_hunt_howl1",
+        "event_id": "fst_hunt_howl1",
         "types": [
             "hunting"
         ],
@@ -1197,7 +1197,7 @@
         ]
     },
     {
-        "id": "fst_hunt_howl2",
+        "event_id": "fst_hunt_howl2",
         "types": [
             "hunting"
         ],
@@ -1423,7 +1423,7 @@
         ]
     },
     {
-        "id": "fst_hunt_howl3",
+        "event_id": "fst_hunt_howl3",
         "types": [
             "hunting"
         ],
@@ -1567,7 +1567,7 @@
         ]
     },
     {
-        "id": "fst_hunt_howl4",
+        "event_id": "fst_hunt_howl4",
         "types": [
             "hunting"
         ],
@@ -1793,7 +1793,7 @@
         ]
     },
     {
-        "id": "fst_hunt_howl5",
+        "event_id": "fst_hunt_howl5",
         "types": [
             "hunting"
         ],
@@ -1997,7 +1997,7 @@
         ]
     },
     {
-        "id": "fst_hunt_howl6",
+        "event_id": "fst_hunt_howl6",
         "types": [
             "hunting"
         ],
@@ -2141,7 +2141,7 @@
         ]
     },
     {
-        "id": "fst_hunt_strange1",
+        "event_id": "fst_hunt_strange1",
         "types": [
             "hunting"
         ],
@@ -2307,7 +2307,7 @@
         ]
     },
     {
-        "id": "fst_hunt_strange2",
+        "event_id": "fst_hunt_strange2",
         "types": [
             "hunting"
         ],
@@ -2462,7 +2462,7 @@
         ]
     },
     {
-        "id": "fst_hunt_solo2",
+        "event_id": "fst_hunt_solo2",
         "types": [
             "hunting"
         ],
@@ -2600,7 +2600,7 @@
         ]
     },
     {
-        "id": "fst_hunt_solo_deputy",
+        "event_id": "fst_hunt_solo_deputy",
         "types": [
             "hunting"
         ],
@@ -2742,7 +2742,7 @@
         ]
     },
     {
-        "id": "fst_hunt_solo_leader",
+        "event_id": "fst_hunt_solo_leader",
         "types": [
             "hunting"
         ],
@@ -2884,7 +2884,7 @@
         ]
     },
     {
-        "id": "fst_hunt_noise1",
+        "event_id": "fst_hunt_noise1",
         "types": [
             "hunting"
         ],
@@ -3056,7 +3056,7 @@
         ]
     },
     {
-        "id": "fst_hunt_gonetwolegden_solo",
+        "event_id": "fst_hunt_gonetwolegden_solo",
         "types": [
             "hunting"
         ],
@@ -3297,7 +3297,7 @@
         ]
     },
     {
-        "id": "fst_hunt_gonetwolegden_solo_app",
+        "event_id": "fst_hunt_gonetwolegden_solo_app",
         "types": [
             "hunting"
         ],
@@ -3447,7 +3447,7 @@
         ]
     },
     {
-        "id": "fst_hunt_twolegdencatdare1",
+        "event_id": "fst_hunt_twolegdencatdare1",
         "types": [
             "hunting"
         ],
@@ -3766,7 +3766,7 @@
         ]
     },
     {
-        "id": "fst_hunt_gonetwolegtrap1",
+        "event_id": "fst_hunt_gonetwolegtrap1",
         "types": [
             "hunting"
         ],
@@ -3915,7 +3915,7 @@
         ]
     },
     {
-        "id": "fst_hunt_gonetwolegtrap2",
+        "event_id": "fst_hunt_gonetwolegtrap2",
         "types": [
             "hunting"
         ],
@@ -4083,7 +4083,7 @@
         ]
     },
     {
-        "id": "fst_hunt_fun1",
+        "event_id": "fst_hunt_fun1",
         "types": [
             "hunting"
         ],
@@ -4159,7 +4159,7 @@
         ]
     },
     {
-        "id": "fst_hunt_fun_app1",
+        "event_id": "fst_hunt_fun_app1",
         "types": [
             "hunting"
         ],
@@ -4226,7 +4226,7 @@
         ]
     },
     {
-        "id": "fst_hunt_fun3",
+        "event_id": "fst_hunt_fun3",
         "types": [
             "hunting"
         ],
@@ -4420,7 +4420,7 @@
         ]
     },
     {
-        "id": "fst_hunt_fun4",
+        "event_id": "fst_hunt_fun4",
         "types": [
             "hunting"
         ],
@@ -4577,7 +4577,7 @@
         ]
     },
     {
-        "id": "fst_hunt_lillizard1",
+        "event_id": "fst_hunt_lillizard1",
         "types": [
             "hunting"
         ],
@@ -4781,7 +4781,7 @@
         ]
     },
     {
-        "id": "fst_hunt_lillizard2",
+        "event_id": "fst_hunt_lillizard2",
         "types": [
             "hunting"
         ],
@@ -4926,7 +4926,7 @@
         ]
     },
     {
-        "id": "fst_hunt_vole1",
+        "event_id": "fst_hunt_vole1",
         "types": [
             "hunting"
         ],
@@ -5032,7 +5032,7 @@
         ]
     },
     {
-        "id": "fst_hunt_mouse2",
+        "event_id": "fst_hunt_mouse2",
         "types": [
             "hunting"
         ],
@@ -5099,7 +5099,7 @@
         ]
     },
     {
-        "id": "fst_hunt_mouse_warriorapp1",
+        "event_id": "fst_hunt_mouse_warriorapp1",
         "types": [
             "hunting"
         ],
@@ -5202,7 +5202,7 @@
         ]
     },
     {
-        "id": "fst_hunt_rat1",
+        "event_id": "fst_hunt_rat1",
         "types": [
             "hunting"
         ],
@@ -5339,7 +5339,7 @@
         ]
     },
     {
-        "id": "fst_hunt_bird1",
+        "event_id": "fst_hunt_bird1",
         "types": [
             "hunting"
         ],
@@ -5402,7 +5402,7 @@
         ]
     },
     {
-        "id": "fst_hunt_squirrel1",
+        "event_id": "fst_hunt_squirrel1",
         "types": [
             "hunting"
         ],
@@ -5465,7 +5465,7 @@
         ]
     },
     {
-        "id": "fst_hunt_twolegdogsdeer1",
+        "event_id": "fst_hunt_twolegdogsdeer1",
         "types": [
             "hunting"
         ],
@@ -5583,7 +5583,7 @@
         ]
     },
     {
-        "id": "fst_hunt_risingclangift_storylorelocked1",
+        "event_id": "fst_hunt_risingclangift_storylorelocked1",
         "types": [
             "hunting"
         ],
@@ -5706,7 +5706,7 @@
         ]
     },
     {
-        "id": "fst_hunt_redfox_scavenge1",
+        "event_id": "fst_hunt_redfox_scavenge1",
         "types": [
             "hunting"
         ],
@@ -6284,7 +6284,7 @@
         ]
     },
     {
-        "id": "fst_hunt_foxgray_scavenge1",
+        "event_id": "fst_hunt_foxgray_scavenge1",
         "types": [
             "hunting"
         ],
@@ -6851,7 +6851,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_siblings2applocked1",
+        "event_id": "fst_hunt_random_siblings2applocked1",
         "types": [
             "hunting"
         ],
@@ -7148,7 +7148,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_siblings2applocked3",
+        "event_id": "fst_hunt_random_siblings2applocked3",
         "types": [
             "hunting"
         ],
@@ -7337,7 +7337,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_siblings3applocked1",
+        "event_id": "fst_hunt_random_siblings3applocked1",
         "types": [
             "hunting"
         ],
@@ -7594,7 +7594,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_siblings3applocked3",
+        "event_id": "fst_hunt_random_siblings3applocked3",
         "types": [
             "hunting"
         ],
@@ -7792,7 +7792,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_siblings1warrior1applocked1",
+        "event_id": "fst_hunt_random_siblings1warrior1applocked1",
         "types": [
             "hunting"
         ],
@@ -8008,7 +8008,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_siblings1warrior1applocked2",
+        "event_id": "fst_hunt_random_siblings1warrior1applocked2",
         "types": [
             "hunting"
         ],
@@ -8195,7 +8195,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_siblings1warrior1applocked3",
+        "event_id": "fst_hunt_random_siblings1warrior1applocked3",
         "types": [
             "hunting"
         ],
@@ -8397,7 +8397,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_siblings2to5warrior1applocked1",
+        "event_id": "fst_hunt_random_siblings2to5warrior1applocked1",
         "types": [
             "hunting"
         ],
@@ -8613,7 +8613,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_siblings2to5warrior1applocked2",
+        "event_id": "fst_hunt_random_siblings2to5warrior1applocked2",
         "types": [
             "hunting"
         ],
@@ -8816,7 +8816,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_siblings2warriorslocked1",
+        "event_id": "fst_hunt_random_siblings2warriorslocked1",
         "types": [
             "hunting"
         ],
@@ -9104,7 +9104,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_siblings2warriorslocked3",
+        "event_id": "fst_hunt_random_siblings2warriorslocked3",
         "types": [
             "hunting"
         ],
@@ -9309,7 +9309,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_siblings2warriorslocked4",
+        "event_id": "fst_hunt_random_siblings2warriorslocked4",
         "types": [
             "hunting"
         ],
@@ -9476,7 +9476,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_siblings2warriorslocked5",
+        "event_id": "fst_hunt_random_siblings2warriorslocked5",
         "types": [
             "hunting"
         ],
@@ -9627,7 +9627,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_siblings3to6warriorslocked1",
+        "event_id": "fst_hunt_random_siblings3to6warriorslocked1",
         "types": [
             "hunting"
         ],
@@ -9915,7 +9915,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_siblings3to6warriorslocked3",
+        "event_id": "fst_hunt_random_siblings3to6warriorslocked3",
         "types": [
             "hunting"
         ],
@@ -10120,7 +10120,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_siblings3to6warriorslocked5",
+        "event_id": "fst_hunt_random_siblings3to6warriorslocked5",
         "types": [
             "hunting"
         ],
@@ -10271,7 +10271,7 @@
         ]
     },
     {
-        "id": "fst_hunt_flatwoods1",
+        "event_id": "fst_hunt_flatwoods1",
         "types": [
             "hunting"
         ],
@@ -10343,7 +10343,7 @@
         ]
     },
     {
-        "id": "fst_hunt_doverdemon",
+        "event_id": "fst_hunt_doverdemon",
         "types": [
             "hunting"
         ],
@@ -10395,7 +10395,7 @@
         ]
     },
     {
-        "id": "fst_hunt_herb_warrior1",
+        "event_id": "fst_hunt_herb_warrior1",
         "types": [
             "hunting"
         ],

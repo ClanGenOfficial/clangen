@@ -1,6 +1,6 @@
 [
     {
-        "id": "fst_med_lb_frozenpaws",
+        "event_id": "fst_med_lb_frozenpaws",
         "types": [
             "herb_gathering"
         ],

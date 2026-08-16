@@ -1,6 +1,6 @@
 [
     {
-        "id": "bch_bord_rogue1",
+        "event_id": "bch_bord_rogue1",
         "types": [
             "border"
         ],
@@ -198,7 +198,7 @@
         ]
     },
     {
-        "id": "bch_bord_rogue2",
+        "event_id": "bch_bord_rogue2",
         "types": [
             "border"
         ],
@@ -360,7 +360,7 @@
         ]
     },
     {
-        "id": "bch_bord_rogue3",
+        "event_id": "bch_bord_rogue3",
         "types": [
             "border"
         ],
@@ -607,7 +607,7 @@
         ]
     },
     {
-        "id": "bch_bord_flashflood1",
+        "event_id": "bch_bord_flashflood1",
         "types": [
             "border"
         ],
@@ -756,7 +756,7 @@
         ]
     },
     {
-        "id": "bch_bord_flashflood2",
+        "event_id": "bch_bord_flashflood2",
         "types": [
             "border"
         ],
@@ -889,7 +889,7 @@
         ]
     },
     {
-        "id": "bch_bord_trackrogue1",
+        "event_id": "bch_bord_trackrogue1",
         "types": [
             "border"
         ],
@@ -1188,7 +1188,7 @@
         ]
     },
     {
-        "id": "bch_bord_trackrogue2",
+        "event_id": "bch_bord_trackrogue2",
         "types": [
             "border"
         ],
@@ -1329,7 +1329,7 @@
         ]
     },
     {
-        "id": "bch_bord_trackrogue3",
+        "event_id": "bch_bord_trackrogue3",
         "types": [
             "border"
         ],
@@ -1623,7 +1623,7 @@
         ]
     },
     {
-        "id": "bch_bord_trackrogue4",
+        "event_id": "bch_bord_trackrogue4",
         "types": [
             "border"
         ],
@@ -1794,7 +1794,7 @@
         ]
     },
     {
-        "id": "bch_bord_trackrogue5",
+        "event_id": "bch_bord_trackrogue5",
         "types": [
             "border"
         ],
@@ -2052,7 +2052,7 @@
         ]
     },
     {
-        "id": "bch_bord_trackrogue6",
+        "event_id": "bch_bord_trackrogue6",
         "types": [
             "border"
         ],
@@ -2212,7 +2212,7 @@
         ]
     },
     {
-        "id": "bch_bord_redvixen1",
+        "event_id": "bch_bord_redvixen1",
         "types": [
             "border"
         ],
@@ -2728,7 +2728,7 @@
         ]
     },
     {
-        "id": "bch_bord_grayvixen1",
+        "event_id": "bch_bord_grayvixen1",
         "types": [
             "border"
         ],
@@ -3178,7 +3178,7 @@
         ]
     },
     {
-        "id": "bch_bord_nessie1",
+        "event_id": "bch_bord_nessie1",
         "types": [
             "border"
         ],
@@ -3228,7 +3228,7 @@
         ]
     },
     {
-        "id": "bch_bord_frogman1",
+        "event_id": "bch_bord_frogman1",
         "types": [
             "border"
         ],

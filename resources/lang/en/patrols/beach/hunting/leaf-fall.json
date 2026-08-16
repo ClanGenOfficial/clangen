@@ -1,6 +1,6 @@
 [
     {
-        "id": "bch_hunt_leaf-fall_solosquirrel1",
+        "event_id": "bch_hunt_leaf-fall_solosquirrel1",
         "types": [
             "hunting"
         ],
@@ -113,7 +113,7 @@
         ]
     },
     {
-        "id": "bch_hunt_leaf-fall_soloappsquirrel1",
+        "event_id": "bch_hunt_leaf-fall_soloappsquirrel1",
         "types": [
             "hunting"
         ],
@@ -226,7 +226,7 @@
         ]
     },
     {
-        "id": "bch_hunt_leaf-fall_mentorsquirrel1",
+        "event_id": "bch_hunt_leaf-fall_mentorsquirrel1",
         "types": [
             "hunting"
         ],
@@ -415,7 +415,7 @@
         ]
     },
     {
-        "id": "bch_hunt_leaf-fall_squirrel_rattlesnakerumble1",
+        "event_id": "bch_hunt_leaf-fall_squirrel_rattlesnakerumble1",
         "types": [
             "hunting"
         ],
@@ -619,7 +619,7 @@
         ]
     },
     {
-        "id": "bch_hunt_leaf-fall_groupsquirrel1",
+        "event_id": "bch_hunt_leaf-fall_groupsquirrel1",
         "types": [
             "hunting"
         ],
@@ -792,7 +792,7 @@
         ]
     },
     {
-        "id": "bch_hunt_leaf-fall_poisonrain1",
+        "event_id": "bch_hunt_leaf-fall_poisonrain1",
         "types": [
             "hunting"
         ],

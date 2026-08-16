@@ -1,6 +1,6 @@
 [
     {
-        "id": "bch_train_greenleaf_twolegmigration_lorelocked1",
+        "event_id": "bch_train_greenleaf_twolegmigration_lorelocked1",
         "types": [
             "training"
         ],
@@ -94,7 +94,7 @@
         ]
     },
     {
-        "id": "bch_train_greenleaf_dryhot1",
+        "event_id": "bch_train_greenleaf_dryhot1",
         "types": [
             "training"
         ],
@@ -221,7 +221,7 @@
         ]
     },
     {
-        "id": "bch_train_greenleafmudflats",
+        "event_id": "bch_train_greenleafmudflats",
         "types": [
             "training"
         ],

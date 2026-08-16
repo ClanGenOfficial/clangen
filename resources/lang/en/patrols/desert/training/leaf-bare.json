@@ -1,6 +1,6 @@
 [
     {
-        "id": "dst_train_leafbare_flippedseasons_storylorelocked1",
+        "event_id": "dst_train_leafbare_flippedseasons_storylorelocked1",
         "types": [
             "training"
         ],
@@ -133,7 +133,7 @@
         ]
     },
     {
-        "id": "dst_train_leafbare_dreamtime_storylocked1",
+        "event_id": "dst_train_leafbare_dreamtime_storylocked1",
         "types": [
             "training"
         ],

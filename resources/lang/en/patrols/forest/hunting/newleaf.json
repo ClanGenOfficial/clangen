@@ -1,6 +1,6 @@
 [
     {
-        "id": "fst_hunt_newleaf_solosquirrel1",
+        "event_id": "fst_hunt_newleaf_solosquirrel1",
         "types": [
             "hunting"
         ],
@@ -95,7 +95,7 @@
         ]
     },
     {
-        "id": "fst_hunt_newleaf_soloappsquirrel1",
+        "event_id": "fst_hunt_newleaf_soloappsquirrel1",
         "types": [
             "hunting"
         ],
@@ -208,7 +208,7 @@
         ]
     },
     {
-        "id": "fst_hunt_newleaf_mentorsquirrel1",
+        "event_id": "fst_hunt_newleaf_mentorsquirrel1",
         "types": [
             "hunting"
         ],
@@ -400,7 +400,7 @@
         ]
     },
     {
-        "id": "fst_hunt_newleaf_squirrel_treetoptumble1",
+        "event_id": "fst_hunt_newleaf_squirrel_treetoptumble1",
         "types": [
             "hunting"
         ],
@@ -667,7 +667,7 @@
         ]
     },
     {
-        "id": "fst_hunt_newleaf_groupsquirrel1",
+        "event_id": "fst_hunt_newleaf_groupsquirrel1",
         "types": [
             "hunting"
         ],
@@ -868,7 +868,7 @@
         ]
     },
     {
-        "id": "fst_hunt_newleaf_formergensquirrel1",
+        "event_id": "fst_hunt_newleaf_formergensquirrel1",
         "types": [
             "hunting"
         ],
@@ -934,7 +934,7 @@
         ]
     },
     {
-        "id": "fst_hunt_newleaf_vanish1",
+        "event_id": "fst_hunt_newleaf_vanish1",
         "types": [
             "hunting"
         ],
@@ -1151,7 +1151,7 @@
         ]
     },
     {
-        "id": "fst_hunt_newleaf_solorat1",
+        "event_id": "fst_hunt_newleaf_solorat1",
         "types": [
             "hunting"
         ],
@@ -1246,7 +1246,7 @@
         ]
     },
     {
-        "id": "fst_hunt_newleaf_soloapprat1",
+        "event_id": "fst_hunt_newleaf_soloapprat1",
         "types": [
             "hunting"
         ],
@@ -1372,7 +1372,7 @@
         ]
     },
     {
-        "id": "fst_hunt_newleaf_mentorrat1",
+        "event_id": "fst_hunt_newleaf_mentorrat1",
         "types": [
             "hunting"
         ],
@@ -1530,7 +1530,7 @@
         ]
     },
     {
-        "id": "fst_hunt_newleaf_ratswarm1",
+        "event_id": "fst_hunt_newleaf_ratswarm1",
         "types": [
             "hunting"
         ],
@@ -1774,7 +1774,7 @@
         ]
     },
     {
-        "id": "fst_hunt_newleaf_lillizard1",
+        "event_id": "fst_hunt_newleaf_lillizard1",
         "types": [
             "hunting"
         ],
@@ -1981,7 +1981,7 @@
         ]
     },
     {
-        "id": "fst_hunt_newleaf_lillizard2",
+        "event_id": "fst_hunt_newleaf_lillizard2",
         "types": [
             "hunting"
         ],
@@ -2109,7 +2109,7 @@
         ]
     },
     {
-        "id": "fst_hunt_mouse1",
+        "event_id": "fst_hunt_mouse1",
         "types": [
             "hunting"
         ],
@@ -2204,7 +2204,7 @@
         ]
     },
     {
-        "id": "fst_hunt_genappmouse1",
+        "event_id": "fst_hunt_genappmouse1",
         "types": [
             "hunting"
         ],
@@ -2319,7 +2319,7 @@
         ]
     },
     {
-        "id": "gen_hunt_genmentormouse1",
+        "event_id": "gen_hunt_genmentormouse1",
         "types": [
             "hunting"
         ],
@@ -2511,7 +2511,7 @@
         ]
     },
     {
-        "id": "fst_hunt_mice_ohnotheyrehot1",
+        "event_id": "fst_hunt_mice_ohnotheyrehot1",
         "types": [
             "hunting"
         ],
@@ -2766,7 +2766,7 @@
         ]
     },
     {
-        "id": "fst_hunt_mice1",
+        "event_id": "fst_hunt_mice1",
         "types": [
             "hunting"
         ],
@@ -2934,7 +2934,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_newleafsolowarrior1",
+        "event_id": "fst_hunt_random_newleafsolowarrior1",
         "types": [
             "hunting"
         ],
@@ -3098,7 +3098,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_newleafsoloapp1",
+        "event_id": "fst_hunt_random_newleafsoloapp1",
         "types": [
             "hunting"
         ],
@@ -3248,7 +3248,7 @@
         ]
     },
     {
-        "id": "fst_hunt_eggs_newleaf1",
+        "event_id": "fst_hunt_eggs_newleaf1",
         "types": [
             "hunting"
         ],
@@ -3529,7 +3529,7 @@
         ]
     },
     {
-        "id": "fst_hunt_eggs_newleaf2",
+        "event_id": "fst_hunt_eggs_newleaf2",
         "types": [
             "hunting"
         ],
@@ -3795,7 +3795,7 @@
         ]
     },
     {
-        "id": "fst_hunt_eggs_newleaf3",
+        "event_id": "fst_hunt_eggs_newleaf3",
         "types": [
             "hunting"
         ],
@@ -3940,7 +3940,7 @@
         ]
     },
     {
-        "id": "fst_hunt_eggs_newleaf4",
+        "event_id": "fst_hunt_eggs_newleaf4",
         "types": [
             "hunting"
         ],
@@ -4163,7 +4163,7 @@
         ]
     },
     {
-        "id": "fst_hunt_eggs_newleaf5",
+        "event_id": "fst_hunt_eggs_newleaf5",
         "types": [
             "hunting"
         ],
@@ -4405,7 +4405,7 @@
         ]
     },
     {
-        "id": "fst_hunt_eggs_newleaf7",
+        "event_id": "fst_hunt_eggs_newleaf7",
         "types": [
             "hunting"
         ],

@@ -1,6 +1,6 @@
 [
     {
-        "id": "mtn_med_herblocation1",
+        "event_id": "mtn_med_herblocation1",
         "types": [
             "herb_gathering"
         ],
@@ -170,7 +170,7 @@
         ]
     },
     {
-        "id": "mtn_med_herblocation2",
+        "event_id": "mtn_med_herblocation2",
         "types": [
             "herb_gathering"
         ],
@@ -231,7 +231,7 @@
         ]
     },
     {
-        "id": "mtn_med_dwindleherbsgathering1",
+        "event_id": "mtn_med_dwindleherbsgathering1",
         "types": [
             "herb_gathering"
         ],

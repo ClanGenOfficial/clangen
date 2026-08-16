@@ -1,6 +1,6 @@
 [
     {
-        "id": "mtn_bord_rogue1",
+        "event_id": "mtn_bord_rogue1",
         "types": [
             "border"
         ],
@@ -300,7 +300,7 @@
         ]
     },
     {
-        "id": "mtn_bord_rogue2",
+        "event_id": "mtn_bord_rogue2",
         "types": [
             "border"
         ],
@@ -386,7 +386,7 @@
         ]
     },
     {
-        "id": "mtn_bord_rogue3",
+        "event_id": "mtn_bord_rogue3",
         "types": [
             "border"
         ],
@@ -618,7 +618,7 @@
         ]
     },
     {
-        "id": "mtn_bord_rogue3",
+        "event_id": "mtn_bord_rogue3",
         "types": [
             "border"
         ],
@@ -727,7 +727,7 @@
         ]
     },
     {
-        "id": "mtn_bord_story1",
+        "event_id": "mtn_bord_story1",
         "types": [
             "border"
         ],
@@ -915,7 +915,7 @@
         ]
     },
     {
-        "id": "mnt_bord_waterfall",
+        "event_id": "mnt_bord_waterfall",
         "types": [
             "border"
         ],
@@ -1258,7 +1258,7 @@
         ]
     },
     {
-        "id": "mtn_bord_mothman1",
+        "event_id": "mtn_bord_mothman1",
         "types": [
             "border"
         ],
@@ -1393,7 +1393,7 @@
         ]
     },
     {
-        "id": "mtn_bord_jerseydevil1",
+        "event_id": "mtn_bord_jerseydevil1",
         "types": [
             "border"
         ],
@@ -1459,7 +1459,7 @@
         ]
     },
     {
-        "id": "mtn_bord_wolf1",
+        "event_id": "mtn_bord_wolf1",
         "types": [
             "border"
         ],

@@ -1,6 +1,6 @@
 [
     {
-        "id": "mtn_train_session1",
+        "event_id": "mtn_train_session1",
         "types": [
             "training"
         ],
@@ -263,7 +263,7 @@
         ]
     },
     {
-        "id": "mtn_train_sett1",
+        "event_id": "mtn_train_sett1",
         "types": [
             "training"
         ],
@@ -499,7 +499,7 @@
         ]
     },
     {
-        "id": "mtn_train_sett2",
+        "event_id": "mtn_train_sett2",
         "types": [
             "training"
         ],
@@ -768,7 +768,7 @@
         ]
     },
     {
-        "id": "mtn_train_stuck1",
+        "event_id": "mtn_train_stuck1",
         "types": [
             "training"
         ],
@@ -1129,7 +1129,7 @@
         ]
     },
     {
-        "id": "mtn_train_stuck2",
+        "event_id": "mtn_train_stuck2",
         "types": [
             "training"
         ],
@@ -1430,7 +1430,7 @@
         ]
     },
     {
-        "id": "mtn_train_stuck3",
+        "event_id": "mtn_train_stuck3",
         "types": [
             "training"
         ],
@@ -1521,7 +1521,7 @@
         ]
     },
     {
-        "id": "mtn_train_soloapp1",
+        "event_id": "mtn_train_soloapp1",
         "types": [
             "training"
         ],
@@ -1635,7 +1635,7 @@
         ]
     },
     {
-        "id": "mtn_train_solo2",
+        "event_id": "mtn_train_solo2",
         "types": [
             "training"
         ],
@@ -1841,7 +1841,7 @@
         ]
     },
     {
-        "id": "mtn_train_stargazing1",
+        "event_id": "mtn_train_stargazing1",
         "types": [
             "training"
         ],
@@ -2132,7 +2132,7 @@
         ]
     },
     {
-        "id": "mtn_train_songsgift_storylocked1",
+        "event_id": "mtn_train_songsgift_storylocked1",
         "types": [
             "training"
         ],
@@ -2346,7 +2346,7 @@
         ]
     },
     {
-        "id": "mtn_train_sunset1",
+        "event_id": "mtn_train_sunset1",
         "types": [
             "training"
         ],
@@ -2585,7 +2585,7 @@
         ]
     },
     {
-        "id": "mtn_train_thrush1",
+        "event_id": "mtn_train_thrush1",
         "types": [
             "training"
         ],
@@ -2838,7 +2838,7 @@
         ]
     },
     {
-        "id": "mtn_train_thrush2",
+        "event_id": "mtn_train_thrush2",
         "types": [
             "training"
         ],
@@ -3154,7 +3154,7 @@
         ]
     },
     {
-        "id": "mtn_train_arguingromance1",
+        "event_id": "mtn_train_arguingromance1",
         "types": [
             "training"
         ],
@@ -3290,7 +3290,7 @@
         ]
     },
     {
-        "id": "mtn_train_kea1",
+        "event_id": "mtn_train_kea1",
         "types": [
             "training"
         ],
@@ -3453,7 +3453,7 @@
         ]
     },
     {
-        "id": "gen_train_gllf_eagle_dappledfeather1",
+        "event_id": "gen_train_gllf_eagle_dappledfeather1",
         "types": [
             "training"
         ],
@@ -3669,7 +3669,7 @@
         ]
     },
     {
-        "id": "mtn_train_lblf_darkforestfable_storylorelocked1",
+        "event_id": "mtn_train_lblf_darkforestfable_storylorelocked1",
         "types": [
             "training"
         ],
@@ -4047,7 +4047,7 @@
         ]
     },
     {
-        "id": "mtn_train_lblfnl_snowcrunching2",
+        "event_id": "mtn_train_lblfnl_snowcrunching2",
         "types": [
             "training"
         ],
@@ -4309,7 +4309,7 @@
         ]
     },
     {
-        "id": "mtn_train_crows1",
+        "event_id": "mtn_train_crows1",
         "types": [
             "training"
         ],
@@ -4354,7 +4354,7 @@
         ]
     },
     {
-        "id": "mtn_train_mountainlion_storylocked1",
+        "event_id": "mtn_train_mountainlion_storylocked1",
         "types": [
             "training"
         ],

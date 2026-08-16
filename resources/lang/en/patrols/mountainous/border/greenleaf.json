@@ -1,6 +1,6 @@
 [
     {
-        "id": "mtn_bord_trackrogue1",
+        "event_id": "mtn_bord_trackrogue1",
         "types": [
             "border"
         ],
@@ -189,7 +189,7 @@
         ]
     },
     {
-        "id": "mtn_bord_trackrogue2",
+        "event_id": "mtn_bord_trackrogue2",
         "types": [
             "border"
         ],
@@ -315,7 +315,7 @@
         ]
     },
     {
-        "id": "mtn_bord_trackrogue3",
+        "event_id": "mtn_bord_trackrogue3",
         "types": [
             "border"
         ],
@@ -630,7 +630,7 @@
         ]
     },
     {
-        "id": "mtn_bord_trackrogue4",
+        "event_id": "mtn_bord_trackrogue4",
         "types": [
             "border"
         ],
@@ -842,7 +842,7 @@
         ]
     },
     {
-        "id": "mtn_bord_trackrogue5",
+        "event_id": "mtn_bord_trackrogue5",
         "types": [
             "border"
         ],
@@ -1134,7 +1134,7 @@
         ]
     },
     {
-        "id": "mtn_bord_trackrogue6",
+        "event_id": "mtn_bord_trackrogue6",
         "types": [
             "border"
         ],
@@ -1295,7 +1295,7 @@
         ]
     },
     {
-        "id": "mtn_bord_shortswim1",
+        "event_id": "mtn_bord_shortswim1",
         "types": [
             "border"
         ],

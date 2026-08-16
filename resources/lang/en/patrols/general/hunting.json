@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_hunt_vision1",
+        "event_id": "gen_hunt_vision1",
         "types": [
             "hunting"
         ],
@@ -331,7 +331,7 @@
         ]
     },
     {
-        "id": "gen_hunt_vision2",
+        "event_id": "gen_hunt_vision2",
         "types": [
             "hunting"
         ],
@@ -475,7 +475,7 @@
         ]
     },
     {
-        "id": "gen_hunt_sneakprey1",
+        "event_id": "gen_hunt_sneakprey1",
         "types": [
             "hunting"
         ],
@@ -597,7 +597,7 @@
         ]
     },
     {
-        "id": "gen_hunt_sneakprey2",
+        "event_id": "gen_hunt_sneakprey2",
         "types": [
             "hunting"
         ],
@@ -719,7 +719,7 @@
         ]
     },
     {
-        "id": "gen_hunt_sneakprey3",
+        "event_id": "gen_hunt_sneakprey3",
         "types": [
             "hunting"
         ],
@@ -887,7 +887,7 @@
         ]
     },
     {
-        "id": "gen_hunt_sneakprey4",
+        "event_id": "gen_hunt_sneakprey4",
         "types": [
             "hunting"
         ],
@@ -1041,7 +1041,7 @@
         ]
     },
     {
-        "id": "gen_hunt_stinkyrat",
+        "event_id": "gen_hunt_stinkyrat",
         "types": [
             "hunting"
         ],
@@ -1423,7 +1423,7 @@
         ]
     },
     {
-        "id": "gen_hunt_fish1",
+        "event_id": "gen_hunt_fish1",
         "types": [
             "hunting"
         ],
@@ -1488,7 +1488,7 @@
         ]
     },
     {
-        "id": "gen_hunt_verysmallprey_balancing_solowarriorhunt1",
+        "event_id": "gen_hunt_verysmallprey_balancing_solowarriorhunt1",
         "types": [
             "hunting"
         ],
@@ -1596,7 +1596,7 @@
         ]
     },
     {
-        "id": "gen_hunt_smallprey_balancing_solowarriorhunt1",
+        "event_id": "gen_hunt_smallprey_balancing_solowarriorhunt1",
         "types": [
             "hunting"
         ],
@@ -1710,7 +1710,7 @@
         ]
     },
     {
-        "id": "gen_hunt_mediumprey_balancing_solowarriorhunt1",
+        "event_id": "gen_hunt_mediumprey_balancing_solowarriorhunt1",
         "types": [
             "hunting"
         ],
@@ -1877,7 +1877,7 @@
         ]
     },
     {
-        "id": "gen_hunt_largeprey_balancing_solowarriorhunt1",
+        "event_id": "gen_hunt_largeprey_balancing_solowarriorhunt1",
         "types": [
             "hunting"
         ],
@@ -1992,7 +1992,7 @@
         ]
     },
     {
-        "id": "gen_hunt_hugeprey_balancing_solowarriorhunt1",
+        "event_id": "gen_hunt_hugeprey_balancing_solowarriorhunt1",
         "types": [
             "hunting"
         ],
@@ -2107,7 +2107,7 @@
         ]
     },
     {
-        "id": "gen_hunt_verysmallprey_balancing_soloapphunt1",
+        "event_id": "gen_hunt_verysmallprey_balancing_soloapphunt1",
         "types": [
             "hunting"
         ],
@@ -2212,7 +2212,7 @@
         ]
     },
     {
-        "id": "gen_hunt_smallprey_balancing_soloapphunt1",
+        "event_id": "gen_hunt_smallprey_balancing_soloapphunt1",
         "types": [
             "hunting"
         ],
@@ -2317,7 +2317,7 @@
         ]
     },
     {
-        "id": "gen_hunt_mediumprey_balancing_soloapphunt1",
+        "event_id": "gen_hunt_mediumprey_balancing_soloapphunt1",
         "types": [
             "hunting"
         ],
@@ -2422,7 +2422,7 @@
         ]
     },
     {
-        "id": "gen_hunt_largeprey_balancing_soloapphunt1",
+        "event_id": "gen_hunt_largeprey_balancing_soloapphunt1",
         "types": [
             "hunting"
         ],
@@ -2530,7 +2530,7 @@
         ]
     },
     {
-        "id": "gen_hunt_hugeprey_balancing_soloapphunt1",
+        "event_id": "gen_hunt_hugeprey_balancing_soloapphunt1",
         "types": [
             "hunting"
         ],
@@ -2635,7 +2635,7 @@
         ]
     },
     {
-        "id": "gen_hunt_verysmallprey_balancing_smallwarriorhunt1",
+        "event_id": "gen_hunt_verysmallprey_balancing_smallwarriorhunt1",
         "types": [
             "hunting"
         ],
@@ -2804,7 +2804,7 @@
         ]
     },
     {
-        "id": "gen_hunt_smallprey_balancing_smallwarriorhunt1",
+        "event_id": "gen_hunt_smallprey_balancing_smallwarriorhunt1",
         "types": [
             "hunting"
         ],
@@ -3023,7 +3023,7 @@
         ]
     },
     {
-        "id": "gen_hunt_mediumprey_balancing_smallwarriorhunt1",
+        "event_id": "gen_hunt_mediumprey_balancing_smallwarriorhunt1",
         "types": [
             "hunting"
         ],
@@ -3262,7 +3262,7 @@
         ]
     },
     {
-        "id": "gen_hunt_largeprey_balancing_smallwarriorhunt1",
+        "event_id": "gen_hunt_largeprey_balancing_smallwarriorhunt1",
         "types": [
             "hunting"
         ],
@@ -3519,7 +3519,7 @@
         ]
     },
     {
-        "id": "gen_hunt_hugeprey_balancing_smallwarriorhunt1",
+        "event_id": "gen_hunt_hugeprey_balancing_smallwarriorhunt1",
         "types": [
             "hunting"
         ],
@@ -3776,7 +3776,7 @@
         ]
     },
     {
-        "id": "gen_hunt_verysmallprey_balancing_largewarriorhunt1",
+        "event_id": "gen_hunt_verysmallprey_balancing_largewarriorhunt1",
         "types": [
             "hunting"
         ],
@@ -3892,7 +3892,7 @@
         ]
     },
     {
-        "id": "gen_hunt_smallprey_balancing_largewarriorhunt1",
+        "event_id": "gen_hunt_smallprey_balancing_largewarriorhunt1",
         "types": [
             "hunting"
         ],
@@ -4026,7 +4026,7 @@
         ]
     },
     {
-        "id": "gen_hunt_mediumprey_balancing_largewarriorhunt1",
+        "event_id": "gen_hunt_mediumprey_balancing_largewarriorhunt1",
         "types": [
             "hunting"
         ],
@@ -4178,7 +4178,7 @@
         ]
     },
     {
-        "id": "gen_hunt_largeprey_balancing_largewarriorhunt1",
+        "event_id": "gen_hunt_largeprey_balancing_largewarriorhunt1",
         "types": [
             "hunting"
         ],
@@ -4348,7 +4348,7 @@
         ]
     },
     {
-        "id": "gen_hunt_hugeprey_balancing_largewarriorhunt1",
+        "event_id": "gen_hunt_hugeprey_balancing_largewarriorhunt1",
         "types": [
             "hunting"
         ],
@@ -4519,7 +4519,7 @@
         ]
     },
     {
-        "id": "gen_hunt_verysmallprey_balancing_appgrouphunt1",
+        "event_id": "gen_hunt_verysmallprey_balancing_appgrouphunt1",
         "types": [
             "hunting"
         ],
@@ -4727,7 +4727,7 @@
         ]
     },
     {
-        "id": "gen_hunt_smallprey_balancing_appgrouphunt1",
+        "event_id": "gen_hunt_smallprey_balancing_appgrouphunt1",
         "types": [
             "hunting"
         ],
@@ -4953,7 +4953,7 @@
         ]
     },
     {
-        "id": "gen_hunt_mediumprey_balancing_appgrouphunt1",
+        "event_id": "gen_hunt_mediumprey_balancing_appgrouphunt1",
         "types": [
             "hunting"
         ],
@@ -5178,7 +5178,7 @@
         ]
     },
     {
-        "id": "gen_hunt_largeprey_balancing_appgrouphunt1",
+        "event_id": "gen_hunt_largeprey_balancing_appgrouphunt1",
         "types": [
             "hunting"
         ],
@@ -5378,7 +5378,7 @@
         ]
     },
     {
-        "id": "gen_hunt_hugeprey_balancing_appgrouphunt1",
+        "event_id": "gen_hunt_hugeprey_balancing_appgrouphunt1",
         "types": [
             "hunting"
         ],
@@ -5578,7 +5578,7 @@
         ]
     },
     {
-        "id": "gen_hunt_kittylion",
+        "event_id": "gen_hunt_kittylion",
         "types": [
             "hunting"
         ],
@@ -5652,7 +5652,7 @@
         ]
     },
     {
-        "id": "gen_hunt_jumpscare",
+        "event_id": "gen_hunt_jumpscare",
         "types": [
             "hunting"
         ],
@@ -5769,7 +5769,7 @@
         ]
     },
     {
-        "id": "gen_hunt_scary_ghost1",
+        "event_id": "gen_hunt_scary_ghost1",
         "types": [
             "hunting"
         ],
@@ -5833,7 +5833,7 @@
         ]
     },
     {
-        "id": "gen_hunt_duo_dislike",
+        "event_id": "gen_hunt_duo_dislike",
         "types": [
             "hunting"
         ],
@@ -6154,7 +6154,7 @@
         ]
     },
     {
-        "id": "gen_hunt_group_competition",
+        "event_id": "gen_hunt_group_competition",
         "types": [
             "hunting"
         ],
@@ -6599,7 +6599,7 @@
         ]
     },
     {
-        "id": "gen_hunt_romanticduo",
+        "event_id": "gen_hunt_romanticduo",
         "types": [
             "hunting"
         ],
@@ -7033,7 +7033,7 @@
         ]
     },
     {
-        "id": "gen_hunt_mates",
+        "event_id": "gen_hunt_mates",
         "types": [
             "hunting"
         ],
@@ -7931,7 +7931,7 @@
         ]
     },
     {
-        "id": "gen_hunt_strangerabbit1",
+        "event_id": "gen_hunt_strangerabbit1",
         "types": [
             "hunting"
         ],
@@ -8079,7 +8079,7 @@
         ]
     },
     {
-        "id": "gen_hunt_burrow1",
+        "event_id": "gen_hunt_burrow1",
         "types": [
             "hunting"
         ],
@@ -8235,7 +8235,7 @@
         ]
     },
     {
-        "id": "gen_hunt_burrow2",
+        "event_id": "gen_hunt_burrow2",
         "types": [
             "hunting"
         ],
@@ -8348,7 +8348,7 @@
         ]
     },
     {
-        "id": "gen_hunt_huntassessment1",
+        "event_id": "gen_hunt_huntassessment1",
         "types": [
             "hunting"
         ],
@@ -8556,7 +8556,7 @@
         ]
     },
     {
-        "id": "gen_hunt_gonetnr1",
+        "event_id": "gen_hunt_gonetnr1",
         "types": [
             "hunting"
         ],
@@ -8747,7 +8747,7 @@
         ]
     },
     {
-        "id": "gen_hunt_gonetnr2",
+        "event_id": "gen_hunt_gonetnr2",
         "types": [
             "hunting"
         ],
@@ -8888,7 +8888,7 @@
         ]
     },
     {
-        "id": "gen_hunt_twolegdenappdare1",
+        "event_id": "gen_hunt_twolegdenappdare1",
         "types": [
             "hunting"
         ],
@@ -9158,7 +9158,7 @@
         ]
     },
     {
-        "id": "gen_hunt_thunderpath1",
+        "event_id": "gen_hunt_thunderpath1",
         "types": [
             "hunting"
         ],
@@ -9352,7 +9352,7 @@
         ]
     },
     {
-        "id": "gen_hunt_rabbit2",
+        "event_id": "gen_hunt_rabbit2",
         "types": [
             "hunting"
         ],
@@ -9614,7 +9614,7 @@
         ]
     },
     {
-        "id": "gen_hunt_rabbit3",
+        "event_id": "gen_hunt_rabbit3",
         "types": [
             "hunting"
         ],
@@ -9789,7 +9789,7 @@
         ]
     },
     {
-        "id": "gen_hunt_harshleafbare",
+        "event_id": "gen_hunt_harshleafbare",
         "types": [
             "hunting"
         ],
@@ -10316,7 +10316,7 @@
         ]
     },
     {
-        "id": "gen_hunt_ratking",
+        "event_id": "gen_hunt_ratking",
         "types": [
             "hunting"
         ],

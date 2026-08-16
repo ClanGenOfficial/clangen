@@ -1,6 +1,6 @@
 [
     {
-        "id": "fst_train_leaffallromanticstroll_20locked1",
+        "event_id": "fst_train_leaffallromanticstroll_20locked1",
         "types": [
             "training"
         ],
@@ -200,7 +200,7 @@
         ]
     },
     {
-        "id": "fst_train_playinginleaves1",
+        "event_id": "fst_train_playinginleaves1",
         "types": [
             "training"
         ],
@@ -295,7 +295,7 @@
         ]
     },
     {
-        "id": "fst_train_playinginleaves2",
+        "event_id": "fst_train_playinginleaves2",
         "types": [
             "training"
         ],
@@ -423,7 +423,7 @@
         ]
     },
     {
-        "id": "fst_train_playinginleaves3",
+        "event_id": "fst_train_playinginleaves3",
         "types": [
             "training"
         ],

@@ -1,6 +1,6 @@
 [
     {
-        "id": "bch_bord_nl_flashflood_tide2",
+        "event_id": "bch_bord_nl_flashflood_tide2",
         "types": [
             "border"
         ],
@@ -107,7 +107,7 @@
         ]
     },
     {
-        "id": "bch_border_skua1",
+        "event_id": "bch_border_skua1",
         "types": [
             "border"
         ],

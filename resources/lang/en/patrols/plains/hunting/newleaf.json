@@ -1,6 +1,6 @@
 [
     {
-        "id": "pln_hunt_swiftfox_newleafvixen1",
+        "event_id": "pln_hunt_swiftfox_newleafvixen1",
         "types": [
             "hunting"
         ],
@@ -170,7 +170,7 @@
         ]
     },
     {
-        "id": "pln_hunt_newleaf_solosquirrel1",
+        "event_id": "pln_hunt_newleaf_solosquirrel1",
         "types": [
             "hunting"
         ],
@@ -301,7 +301,7 @@
         ]
     },
     {
-        "id": "pln_hunt_newleaf_soloappsquirrel1",
+        "event_id": "pln_hunt_newleaf_soloappsquirrel1",
         "types": [
             "hunting"
         ],
@@ -408,7 +408,7 @@
         ]
     },
     {
-        "id": "pln_hunt_newleaf_mentorsquirrel1",
+        "event_id": "pln_hunt_newleaf_mentorsquirrel1",
         "types": [
             "hunting"
         ],
@@ -597,7 +597,7 @@
         ]
     },
     {
-        "id": "pln_hunt_newleaf_groupsquirrel1",
+        "event_id": "pln_hunt_newleaf_groupsquirrel1",
         "types": [
             "hunting"
         ],
@@ -781,7 +781,7 @@
         ]
     },
     {
-        "id": "pln_hunt_newleaf_solomouse1",
+        "event_id": "pln_hunt_newleaf_solomouse1",
         "types": [
             "hunting"
         ],
@@ -876,7 +876,7 @@
         ]
     },
     {
-        "id": "pln_hunt_newleaf_soloappmouse1",
+        "event_id": "pln_hunt_newleaf_soloappmouse1",
         "types": [
             "hunting"
         ],
@@ -989,7 +989,7 @@
         ]
     },
     {
-        "id": "pln_hunt_newleaf_mentormouse1",
+        "event_id": "pln_hunt_newleaf_mentormouse1",
         "types": [
             "hunting"
         ],
@@ -1178,7 +1178,7 @@
         ]
     },
     {
-        "id": "pln_hunt_newleaf_groupmice1",
+        "event_id": "pln_hunt_newleaf_groupmice1",
         "types": [
             "hunting"
         ],
@@ -1346,7 +1346,7 @@
         ]
     },
     {
-        "id": "pln_hunt_newleaf_bambi",
+        "event_id": "pln_hunt_newleaf_bambi",
         "types": [
             "hunting"
         ],

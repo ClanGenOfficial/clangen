@@ -1,6 +1,6 @@
 [
     {
-        "id": "forest_bord_candy",
+        "event_id": "forest_bord_candy",
         "types": [
             "border"
         ],

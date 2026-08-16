@@ -1,6 +1,6 @@
 [
     {
-        "id": "pln_bord_shortswim1",
+        "event_id": "pln_bord_shortswim1",
         "types": [
             "border"
         ],
@@ -85,7 +85,7 @@
         ]
     },
     {
-        "id": "pln_bord_greenleaf_longdistancemarking_group1",
+        "event_id": "pln_bord_greenleaf_longdistancemarking_group1",
         "types": [
             "border"
         ],
@@ -565,7 +565,7 @@
         ]
     },
     {
-        "id": "pln_bord_greenleaf_coyote_small_patrol1",
+        "event_id": "pln_bord_greenleaf_coyote_small_patrol1",
         "types": [
             "border"
         ],
@@ -1221,7 +1221,7 @@
         ]
     },
     {
-        "id": "pln_bord_greenleaf_coyote_big_patrol1",
+        "event_id": "pln_bord_greenleaf_coyote_big_patrol1",
         "types": [
             "border"
         ],
@@ -2195,7 +2195,7 @@
         ]
     },
     {
-        "id": "pln_bord_greenleaf_apprenticegrouppatrol1",
+        "event_id": "pln_bord_greenleaf_apprenticegrouppatrol1",
         "types": [
             "border"
         ],

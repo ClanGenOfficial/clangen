@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_bord_newcat1",
+        "event_id": "gen_bord_newcat1",
         "types": [
             "border"
         ],
@@ -214,7 +214,7 @@
         ]
     },
     {
-        "id": "gen_bord_neutralnewcatpair1",
+        "event_id": "gen_bord_neutralnewcatpair1",
         "types": [
             "border"
         ],
@@ -1374,7 +1374,7 @@
         ]
     },
     {
-        "id": "gen_bord_newcat3",
+        "event_id": "gen_bord_newcat3",
         "types": [
             "border"
         ],
@@ -1588,7 +1588,7 @@
         ]
     },
     {
-        "id": "gen_bord_newcatkittypet2",
+        "event_id": "gen_bord_newcatkittypet2",
         "types": [
             "border"
         ],
@@ -1782,7 +1782,7 @@
         ]
     },
     {
-        "id": "gen_bord_newcatkittypet6",
+        "event_id": "gen_bord_newcatkittypet6",
         "types": [
             "border"
         ],
@@ -1976,7 +1976,7 @@
         ]
     },
     {
-        "id": "gen_bord_newcatthunderpath3",
+        "event_id": "gen_bord_newcatthunderpath3",
         "types": [
             "border"
         ],
@@ -2144,7 +2144,7 @@
         ]
     },
     {
-        "id": "gen_bord_newcatthunderpath4",
+        "event_id": "gen_bord_newcatthunderpath4",
         "types": [
             "border"
         ],
@@ -2295,7 +2295,7 @@
         ]
     },
     {
-        "id": "gen_bord_sparrowgift1",
+        "event_id": "gen_bord_sparrowgift1",
         "types": [
             "border"
         ],
@@ -2645,7 +2645,7 @@
         ]
     },
     {
-        "id": "gen_bord_binglegift1",
+        "event_id": "gen_bord_binglegift1",
         "types": [
             "border"
         ],
@@ -3187,7 +3187,7 @@
         ]
     },
     {
-        "id": "gen_bord_newkit2",
+        "event_id": "gen_bord_newkit2",
         "types": [
             "border"
         ],
@@ -3300,7 +3300,7 @@
         ]
     },
     {
-        "id": "gen_bord_newkit6",
+        "event_id": "gen_bord_newkit6",
         "types": [
             "border"
         ],
@@ -3410,7 +3410,7 @@
         ]
     },
     {
-        "id": "gen_bord_healer1",
+        "event_id": "gen_bord_healer1",
         "types": [
             "border"
         ],
@@ -3629,7 +3629,7 @@
         ]
     },
     {
-        "id": "gen_bord_healer4",
+        "event_id": "gen_bord_healer4",
         "types": [
             "border"
         ],
@@ -3845,7 +3845,7 @@
         ]
     },
     {
-        "id": "gen_bord_lonerchase1",
+        "event_id": "gen_bord_lonerchase1",
         "types": [
             "border"
         ],
@@ -4074,7 +4074,7 @@
         ]
     },
     {
-        "id": "gen_med_rescue1",
+        "event_id": "gen_med_rescue1",
         "types": [
             "herb_gathering"
         ],
@@ -4279,7 +4279,7 @@
         ]
     },
     {
-        "id": "gen_med_rescue2",
+        "event_id": "gen_med_rescue2",
         "types": [
             "herb_gathering"
         ],
@@ -4497,7 +4497,7 @@
         ]
     },
     {
-        "id": "gen_med_rescue3",
+        "event_id": "gen_med_rescue3",
         "types": [
             "herb_gathering"
         ],
@@ -4706,7 +4706,7 @@
         ]
     },
     {
-        "id": "gen_med_rescue4",
+        "event_id": "gen_med_rescue4",
         "types": [
             "herb_gathering"
         ],
@@ -4925,7 +4925,7 @@
         ]
     },
     {
-        "id": "gen_med_rescuesolor_c1",
+        "event_id": "gen_med_rescuesolor_c1",
         "types": [
             "herb_gathering"
         ],
@@ -5140,7 +5140,7 @@
         ]
     },
     {
-        "id": "gen_med_rescuesoloapp2",
+        "event_id": "gen_med_rescuesoloapp2",
         "types": [
             "herb_gathering"
         ],
@@ -5365,7 +5365,7 @@
         ]
     },
     {
-        "id": "bch_bord_newcat_abandontwoleg1",
+        "event_id": "bch_bord_newcat_abandontwoleg1",
         "types": [
             "border"
         ],
@@ -5681,7 +5681,7 @@
         ]
     },
     {
-        "id": "bch_bord_newcat_abandontwoleg2",
+        "event_id": "bch_bord_newcat_abandontwoleg2",
         "types": [
             "border"
         ],
@@ -6050,7 +6050,7 @@
         ]
     },
     {
-        "id": "fst_bord_noise2",
+        "event_id": "fst_bord_noise2",
         "types": [
             "border"
         ],
@@ -6402,7 +6402,7 @@
         ]
     },
     {
-        "id": "pln_bord_abandontwoleg1",
+        "event_id": "pln_bord_abandontwoleg1",
         "types": [
             "border"
         ],
@@ -6726,7 +6726,7 @@
         ]
     },
     {
-        "id": "pln_bord_abandontwoleg2",
+        "event_id": "pln_bord_abandontwoleg2",
         "types": [
             "border"
         ],
@@ -7040,7 +7040,7 @@
         ]
     },
     {
-        "id": "fst_hunt_twolegplacekittens1",
+        "event_id": "fst_hunt_twolegplacekittens1",
         "types": [
             "hunting"
         ],
@@ -7368,7 +7368,7 @@
         ]
     },
     {
-        "id": "gen_bord_kittypet_friends_with_dog",
+        "event_id": "gen_bord_kittypet_friends_with_dog",
         "types": [
             "border"
         ],
@@ -7769,7 +7769,7 @@
         ]
     },
     {
-        "id": "gen_bord_twocats_leafbare",
+        "event_id": "gen_bord_twocats_leafbare",
         "types": [
             "border"
         ],
@@ -8127,7 +8127,7 @@
         ]
     },
     {
-        "id": "gen_bord_asyoulikeit1",
+        "event_id": "gen_bord_asyoulikeit1",
         "types": [
             "border"
         ],
@@ -9351,7 +9351,7 @@
         ]
     },
     {
-        "id": "gen_bord_curiouskittypet2",
+        "event_id": "gen_bord_curiouskittypet2",
         "types": [
             "border"
         ],
@@ -9617,7 +9617,7 @@
         ]
     },
     {
-        "id": "gen_bord_injuredcat2",
+        "event_id": "gen_bord_injuredcat2",
         "types": [
             "border"
         ],
@@ -9888,7 +9888,7 @@
         ]
     },
     {
-        "id": "gen_bord_injuredcatsolo2",
+        "event_id": "gen_bord_injuredcatsolo2",
         "types": [
             "border"
         ],
@@ -10159,7 +10159,7 @@
         ]
     },
     {
-        "id": "mnt_hunt_newcat_leaf-barecatcryneutral1",
+        "event_id": "mnt_hunt_newcat_leaf-barecatcryneutral1",
         "types": [
             "hunting"
         ],
@@ -10421,7 +10421,7 @@
         ]
     },
     {
-        "id": "gen_bord_elder_rescue1",
+        "event_id": "gen_bord_elder_rescue1",
         "types": [
             "border"
         ],
@@ -10665,7 +10665,7 @@
         ]
     },
     {
-        "id": "bch_bord_ocean_newcatkits1",
+        "event_id": "bch_bord_ocean_newcatkits1",
         "types": [
             "border"
         ],
@@ -10924,7 +10924,7 @@
         ]
     },
     {
-        "id": "gen_bord_abandonedkittypet1_kittypet4",
+        "event_id": "gen_bord_abandonedkittypet1_kittypet4",
         "types": [
             "border"
         ],
@@ -11055,7 +11055,7 @@
         ]
     },
     {
-        "id": "gen_train_app_newfriend1",
+        "event_id": "gen_train_app_newfriend1",
         "types": [
             "training"
         ],
@@ -11870,7 +11870,7 @@
         ]
     },
     {
-        "id": "gen_bord_macbeth1",
+        "event_id": "gen_bord_macbeth1",
         "types": [
             "border"
         ],
@@ -12408,7 +12408,7 @@
         ]
     },
     {
-        "id": "bch_bord_greenleaf_chiefmouser",
+        "event_id": "bch_bord_greenleaf_chiefmouser",
         "types": [
             "border"
         ],

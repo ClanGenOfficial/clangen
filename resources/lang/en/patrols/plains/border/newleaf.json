@@ -1,6 +1,6 @@
 [
     {
-        "id": "pln_bord_newleaf_longdistancemarking_group1",
+        "event_id": "pln_bord_newleaf_longdistancemarking_group1",
         "types": [
             "border"
         ],
@@ -225,7 +225,7 @@
         ]
     },
     {
-        "id": "pln_bord_newleaf_coyote_small_patrol1",
+        "event_id": "pln_bord_newleaf_coyote_small_patrol1",
         "types": [
             "border"
         ],
@@ -872,7 +872,7 @@
         ]
     },
     {
-        "id": "pln_bord_newleaf_coyote_big_patrol1",
+        "event_id": "pln_bord_newleaf_coyote_big_patrol1",
         "types": [
             "border"
         ],

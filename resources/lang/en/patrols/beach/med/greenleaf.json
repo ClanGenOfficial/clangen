@@ -1,6 +1,6 @@
 [
     {
-        "id": "bch_med_greenleaflungwort1",
+        "event_id": "bch_med_greenleaflungwort1",
         "types": [
             "herb_gathering"
         ],
@@ -104,7 +104,7 @@
         ]
     },
     {
-        "id": "bch_med_greenleaflungwort2",
+        "event_id": "bch_med_greenleaflungwort2",
         "types": [
             "herb_gathering"
         ],

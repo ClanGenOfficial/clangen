@@ -1,6 +1,6 @@
 [
     {
-        "id": "wtlnd_bord_abandontwoleg1",
+        "event_id": "wtlnd_bord_abandontwoleg1",
         "types": [
             "border"
         ],
@@ -305,7 +305,7 @@
         ]
     },
     {
-        "id": "wtlnd_bord_abandontwoleg2",
+        "event_id": "wtlnd_bord_abandontwoleg2",
         "types": [
             "border"
         ],
@@ -571,7 +571,7 @@
         ]
     },
     {
-        "id": "wtlnd_bord_flashflood1",
+        "event_id": "wtlnd_bord_flashflood1",
         "types": [
             "border"
         ],
@@ -795,7 +795,7 @@
         ]
     },
     {
-        "id": "wtlnd_bord_flashflood2",
+        "event_id": "wtlnd_bord_flashflood2",
         "types": [
             "border"
         ],
@@ -888,7 +888,7 @@
         ]
     },
     {
-        "id": "wtlnd_bord_flashflood5",
+        "event_id": "wtlnd_bord_flashflood5",
         "types": [
             "border"
         ],
@@ -1013,7 +1013,7 @@
         ]
     },
     {
-        "id": "wtlnd_bord_trackrogue1",
+        "event_id": "wtlnd_bord_trackrogue1",
         "types": [
             "border"
         ],
@@ -1411,7 +1411,7 @@
         ]
     },
     {
-        "id": "wtlnd_bord_trackrogue2",
+        "event_id": "wtlnd_bord_trackrogue2",
         "types": [
             "border"
         ],
@@ -1610,7 +1610,7 @@
         ]
     },
     {
-        "id": "wtlnd_bord_trackrogue3",
+        "event_id": "wtlnd_bord_trackrogue3",
         "types": [
             "border"
         ],
@@ -2191,7 +2191,7 @@
         ]
     },
     {
-        "id": "wtlnd_bord_trackrogue4",
+        "event_id": "wtlnd_bord_trackrogue4",
         "types": [
             "border"
         ],
@@ -2622,7 +2622,7 @@
         ]
     },
     {
-        "id": "wtlnd_bord_story1",
+        "event_id": "wtlnd_bord_story1",
         "types": [
             "border"
         ],
@@ -2807,7 +2807,7 @@
         ]
     },
     {
-        "id": "wtlnd_bord_redvixen1",
+        "event_id": "wtlnd_bord_redvixen1",
         "types": [
             "border"
         ],
@@ -3343,7 +3343,7 @@
         ]
     },
     {
-        "id": "wtlnd_bord_grayvixen1",
+        "event_id": "wtlnd_bord_grayvixen1",
         "types": [
             "border"
         ],

@@ -1,6 +1,6 @@
 [
     {
-        "id": "Gen_bord_balancing_boringborder",
+        "event_id": "Gen_bord_balancing_boringborder",
         "types": [
             "border"
         ],
@@ -126,7 +126,7 @@
         ]
     },
     {
-        "id": "gen_bord_balancing_scent",
+        "event_id": "gen_bord_balancing_scent",
         "types": [
             "border"
         ],
@@ -216,7 +216,7 @@
         ]
     },
     {
-        "id": "gen_bord_balancing_tracks",
+        "event_id": "gen_bord_balancing_tracks",
         "types": [
             "border"
         ],
@@ -312,7 +312,7 @@
         ]
     },
     {
-        "id": "gen_bord_balancing_markings",
+        "event_id": "gen_bord_balancing_markings",
         "types": [
             "border"
         ],
@@ -368,7 +368,7 @@
         ]
     },
     {
-        "id": "gen_bord_kittybat",
+        "event_id": "gen_bord_kittybat",
         "types": [
             "border"
         ],
@@ -484,7 +484,7 @@
         ]
     },
     {
-        "id": "gen_border_pumpkineyes",
+        "event_id": "gen_border_pumpkineyes",
         "types": [
             "border"
         ],
@@ -716,7 +716,7 @@
         ]
     },
     {
-        "id": "gen_bord_trickortreat",
+        "event_id": "gen_bord_trickortreat",
         "types": [
             "border"
         ],
@@ -832,7 +832,7 @@
         ]
     },
     {
-        "id": "gen_bord_scarecrow",
+        "event_id": "gen_bord_scarecrow",
         "types": [
             "border"
         ],
@@ -988,7 +988,7 @@
         ]
     },
     {
-        "id": "gen_bord_dislike",
+        "event_id": "gen_bord_dislike",
         "types": [
             "border"
         ],
@@ -1390,7 +1390,7 @@
         ]
     },
     {
-        "id": "gen_bord_greenleaf_puddles",
+        "event_id": "gen_bord_greenleaf_puddles",
         "types": [
             "border"
         ],
@@ -1950,7 +1950,7 @@
         ]
     },
     {
-        "id": "gen_bord_smoothboards",
+        "event_id": "gen_bord_smoothboards",
         "types": [
             "border"
         ],

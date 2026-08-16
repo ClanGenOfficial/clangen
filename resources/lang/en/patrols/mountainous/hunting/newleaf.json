@@ -1,6 +1,6 @@
 [
     {
-        "id": "mtn_hunt_newleaf_snowstorm1",
+        "event_id": "mtn_hunt_newleaf_snowstorm1",
         "types": [
             "hunting"
         ],
@@ -265,7 +265,7 @@
         ]
     },
     {
-        "id": "mtn_hunt_newleaf_snowstorm2",
+        "event_id": "mtn_hunt_newleaf_snowstorm2",
         "types": [
             "hunting"
         ],
@@ -392,7 +392,7 @@
         ]
     },
     {
-        "id": "mtn_hunt_newleaf_snowstorm3",
+        "event_id": "mtn_hunt_newleaf_snowstorm3",
         "types": [
             "hunting"
         ],
@@ -600,7 +600,7 @@
         ]
     },
     {
-        "id": "mtn_hunt_newleaf_solosquirrel1",
+        "event_id": "mtn_hunt_newleaf_solosquirrel1",
         "types": [
             "hunting"
         ],
@@ -731,7 +731,7 @@
         ]
     },
     {
-        "id": "mtn_hunt_newleaf_soloappsquirrel1",
+        "event_id": "mtn_hunt_newleaf_soloappsquirrel1",
         "types": [
             "hunting"
         ],
@@ -826,7 +826,7 @@
         ]
     },
     {
-        "id": "mtn_hunt_newleaf_mentorsquirrel1",
+        "event_id": "mtn_hunt_newleaf_mentorsquirrel1",
         "types": [
             "hunting"
         ],
@@ -1015,7 +1015,7 @@
         ]
     },
     {
-        "id": "mtn_hunt_newleaf_squirrel_treetoptumble1",
+        "event_id": "mtn_hunt_newleaf_squirrel_treetoptumble1",
         "types": [
             "hunting"
         ],
@@ -1282,7 +1282,7 @@
         ]
     },
     {
-        "id": "mtn_hunt_newleaf_groupsquirrel1",
+        "event_id": "mtn_hunt_newleaf_groupsquirrel1",
         "types": [
             "hunting"
         ],

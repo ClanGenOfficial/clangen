@@ -1,6 +1,6 @@
 [
     {
-        "id": "bch_hunt_turtle1",
+        "event_id": "bch_hunt_turtle1",
         "types": [
             "hunting"
         ],
@@ -50,7 +50,7 @@
         ]
     },
     {
-        "id": "bch_gen_hunt_twolegplace1",
+        "event_id": "bch_gen_hunt_twolegplace1",
         "types": [
             "hunting"
         ],
@@ -113,7 +113,7 @@
         ]
     },
     {
-        "id": "bch_gen_hunt_twolegplace2",
+        "event_id": "bch_gen_hunt_twolegplace2",
         "types": [
             "hunting"
         ],
@@ -176,7 +176,7 @@
         ]
     },
     {
-        "id": "bch_hunt_strange1",
+        "event_id": "bch_hunt_strange1",
         "types": [
             "hunting"
         ],
@@ -380,7 +380,7 @@
         ]
     },
     {
-        "id": "bch_hunt_solo2",
+        "event_id": "bch_hunt_solo2",
         "types": [
             "hunting"
         ],
@@ -578,7 +578,7 @@
         ]
     },
     {
-        "id": "bch_hunt_noise1",
+        "event_id": "bch_hunt_noise1",
         "types": [
             "hunting"
         ],
@@ -774,7 +774,7 @@
         ]
     },
     {
-        "id": "bch_hunt_noise2",
+        "event_id": "bch_hunt_noise2",
         "types": [
             "hunting"
         ],
@@ -902,7 +902,7 @@
         ]
     },
     {
-        "id": "bch_hunt_gonetwolegden_solo",
+        "event_id": "bch_hunt_gonetwolegden_solo",
         "types": [
             "hunting"
         ],
@@ -1149,7 +1149,7 @@
         ]
     },
     {
-        "id": "bch_hunt_gonetwolegden_solo_app",
+        "event_id": "bch_hunt_gonetwolegden_solo_app",
         "types": [
             "hunting"
         ],
@@ -1327,7 +1327,7 @@
         ]
     },
     {
-        "id": "bch_hunt_twolegdencatdare1",
+        "event_id": "bch_hunt_twolegdencatdare1",
         "types": [
             "hunting"
         ],
@@ -1624,7 +1624,7 @@
         ]
     },
     {
-        "id": "bch_hunt_gonetwolegtrap1",
+        "event_id": "bch_hunt_gonetwolegtrap1",
         "types": [
             "hunting"
         ],
@@ -1770,7 +1770,7 @@
         ]
     },
     {
-        "id": "bch_hunt_gonetwolegtrap2",
+        "event_id": "bch_hunt_gonetwolegtrap2",
         "types": [
             "hunting"
         ],
@@ -1900,7 +1900,7 @@
         ]
     },
     {
-        "id": "bch_hunt_octopus1",
+        "event_id": "bch_hunt_octopus1",
         "types": [
             "hunting"
         ],
@@ -2162,7 +2162,7 @@
         ]
     },
     {
-        "id": "bch_hunt_octopus2",
+        "event_id": "bch_hunt_octopus2",
         "types": [
             "hunting"
         ],
@@ -2326,7 +2326,7 @@
         ]
     },
     {
-        "id": "bch_hunt_octopus3",
+        "event_id": "bch_hunt_octopus3",
         "types": [
             "hunting"
         ],
@@ -2450,7 +2450,7 @@
         ]
     },
     {
-        "id": "bch_hunt_octopus4",
+        "event_id": "bch_hunt_octopus4",
         "types": [
             "hunting"
         ],
@@ -2842,7 +2842,7 @@
         ]
     },
     {
-        "id": "bch_hunt_eagleswim1",
+        "event_id": "bch_hunt_eagleswim1",
         "types": [
             "hunting"
         ],
@@ -3145,7 +3145,7 @@
         ]
     },
     {
-        "id": "bch_hunt_redfox_scavenge1",
+        "event_id": "bch_hunt_redfox_scavenge1",
         "types": [
             "hunting"
         ],
@@ -3722,7 +3722,7 @@
         ]
     },
     {
-        "id": "bch_hunt_foxgray_scavenge1",
+        "event_id": "bch_hunt_foxgray_scavenge1",
         "types": [
             "hunting"
         ],
@@ -4276,7 +4276,7 @@
         ]
     },
     {
-        "id": "bch_hunt_redfox_steal1",
+        "event_id": "bch_hunt_redfox_steal1",
         "types": [
             "hunting"
         ],
@@ -4831,7 +4831,7 @@
         ]
     },
     {
-        "id": "bch_hunt_foxgray_steal1",
+        "event_id": "bch_hunt_foxgray_steal1",
         "types": [
             "hunting"
         ],
@@ -5228,7 +5228,7 @@
         ]
     },
     {
-        "id": "bch_hunting_patrol_dolphinofferings1",
+        "event_id": "bch_hunting_patrol_dolphinofferings1",
         "types": [
             "hunting"
         ],
@@ -5349,7 +5349,7 @@
         ]
     },
     {
-        "id": "bch_hunt_nessie1",
+        "event_id": "bch_hunt_nessie1",
         "types": [
             "hunting"
         ],
@@ -5399,7 +5399,7 @@
         ]
     },
     {
-        "id": "bch_hunt_bishopfish1",
+        "event_id": "bch_hunt_bishopfish1",
         "types": [
             "hunting"
         ],
@@ -5451,7 +5451,7 @@
         ]
     },
     {
-        "id": "bch_hunt_frogman1",
+        "event_id": "bch_hunt_frogman1",
         "types": [
             "hunting"
         ],
@@ -5506,7 +5506,7 @@
         ]
     },
     {
-        "id": "bch_hunt_fish1",
+        "event_id": "bch_hunt_fish1",
         "types": [
             "hunting"
         ],
@@ -5569,7 +5569,7 @@
         ]
     },
     {
-        "id": "bch_hunt_fish2",
+        "event_id": "bch_hunt_fish2",
         "types": [
             "hunting"
         ],
@@ -5644,7 +5644,7 @@
         ]
     },
     {
-        "id": "bch_hunt_wareprey_lorelocked1",
+        "event_id": "bch_hunt_wareprey_lorelocked1",
         "types": [
             "hunting"
         ],
@@ -5801,7 +5801,7 @@
         ]
     },
     {
-        "id": "bch_hunt_random_siblings2applocked1",
+        "event_id": "bch_hunt_random_siblings2applocked1",
         "types": [
             "hunting"
         ],
@@ -6094,7 +6094,7 @@
         ]
     },
     {
-        "id": "bch_hunt_random_siblings2applocked3",
+        "event_id": "bch_hunt_random_siblings2applocked3",
         "types": [
             "hunting"
         ],
@@ -6283,7 +6283,7 @@
         ]
     },
     {
-        "id": "bch_hunt_random_siblings3applocked1",
+        "event_id": "bch_hunt_random_siblings3applocked1",
         "types": [
             "hunting"
         ],
@@ -6540,7 +6540,7 @@
         ]
     },
     {
-        "id": "bch_hunt_random_siblings3applocked3",
+        "event_id": "bch_hunt_random_siblings3applocked3",
         "types": [
             "hunting"
         ],
@@ -6738,7 +6738,7 @@
         ]
     },
     {
-        "id": "bch_hunt_random_siblings1warrior1applocked1",
+        "event_id": "bch_hunt_random_siblings1warrior1applocked1",
         "types": [
             "hunting"
         ],
@@ -6954,7 +6954,7 @@
         ]
     },
     {
-        "id": "bch_hunt_random_siblings1warrior1applocked2",
+        "event_id": "bch_hunt_random_siblings1warrior1applocked2",
         "types": [
             "hunting"
         ],
@@ -7141,7 +7141,7 @@
         ]
     },
     {
-        "id": "bch_hunt_random_siblings1warrior1applocked3",
+        "event_id": "bch_hunt_random_siblings1warrior1applocked3",
         "types": [
             "hunting"
         ],
@@ -7343,7 +7343,7 @@
         ]
     },
     {
-        "id": "bch_hunt_random_siblings2to5warrior1applocked1",
+        "event_id": "bch_hunt_random_siblings2to5warrior1applocked1",
         "types": [
             "hunting"
         ],
@@ -7559,7 +7559,7 @@
         ]
     },
     {
-        "id": "bch_hunt_random_siblings2to5warrior1applocked2",
+        "event_id": "bch_hunt_random_siblings2to5warrior1applocked2",
         "types": [
             "hunting"
         ],
@@ -7762,7 +7762,7 @@
         ]
     },
     {
-        "id": "bch_hunt_random_siblings2warriorslocked1",
+        "event_id": "bch_hunt_random_siblings2warriorslocked1",
         "types": [
             "hunting"
         ],
@@ -8049,7 +8049,7 @@
         ]
     },
     {
-        "id": "bch_hunt_random_siblings2warriorslocked3",
+        "event_id": "bch_hunt_random_siblings2warriorslocked3",
         "types": [
             "hunting"
         ],
@@ -8255,7 +8255,7 @@
         ]
     },
     {
-        "id": "bch_hunt_random_siblings2warriorslocked4",
+        "event_id": "bch_hunt_random_siblings2warriorslocked4",
         "types": [
             "hunting"
         ],
@@ -8422,7 +8422,7 @@
         ]
     },
     {
-        "id": "bch_hunt_random_siblings2warriorslocked5",
+        "event_id": "bch_hunt_random_siblings2warriorslocked5",
         "types": [
             "hunting"
         ],
@@ -8573,7 +8573,7 @@
         ]
     },
     {
-        "id": "bch_hunt_random_siblings3to6warriorslocked1",
+        "event_id": "bch_hunt_random_siblings3to6warriorslocked1",
         "types": [
             "hunting"
         ],
@@ -8861,7 +8861,7 @@
         ]
     },
     {
-        "id": "bch_hunt_random_siblings3to6warriorslocked3",
+        "event_id": "bch_hunt_random_siblings3to6warriorslocked3",
         "types": [
             "hunting"
         ],
@@ -9067,7 +9067,7 @@
         ]
     },
     {
-        "id": "bch_hunt_random_siblings3to6warriorslocked5",
+        "event_id": "bch_hunt_random_siblings3to6warriorslocked5",
         "types": [
             "hunting"
         ],
@@ -9218,7 +9218,7 @@
         ]
     },
     {
-        "id": "bch_hunt_herb_warrior1",
+        "event_id": "bch_hunt_herb_warrior1",
         "types": [
             "hunting"
         ],
@@ -9351,7 +9351,7 @@
         ]
     },
     {
-        "id": "bch_hunt_nlgl_ganneteggtheft",
+        "event_id": "bch_hunt_nlgl_ganneteggtheft",
         "types": [
             "hunting"
         ],

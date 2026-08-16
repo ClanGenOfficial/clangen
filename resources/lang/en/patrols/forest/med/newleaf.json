@@ -1,6 +1,6 @@
 [
     {
-        "id": "fst_med_newleaf_allergies",
+        "event_id": "fst_med_newleaf_allergies",
         "types": [
             "herb_gathering"
         ],

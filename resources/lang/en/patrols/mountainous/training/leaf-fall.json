@@ -1,6 +1,6 @@
 [
     {
-        "id": "mtn_train_towhee1",
+        "event_id": "mtn_train_towhee1",
         "types": [
             "training"
         ],
@@ -296,7 +296,7 @@
         ]
     },
     {
-        "id": "mtn_train_towhee2",
+        "event_id": "mtn_train_towhee2",
         "types": [
             "training"
         ],

@@ -1,6 +1,6 @@
 [
     {
-        "id": "mtn_train_snowcrunching2",
+        "event_id": "mtn_train_snowcrunching2",
         "types": [
             "training"
         ],
@@ -254,7 +254,7 @@
         ]
     },
     {
-        "id": "mtn_train_wolfravens1",
+        "event_id": "mtn_train_wolfravens1",
         "types": [
             "training"
         ],
@@ -524,7 +524,7 @@
         ]
     },
     {
-        "id": "mtn_train_wolfravens2",
+        "event_id": "mtn_train_wolfravens2",
         "types": [
             "training"
         ],
@@ -798,7 +798,7 @@
         ]
     },
     {
-        "id": "mtn_train_leafbare_darkforestfable_storylorelocked1",
+        "event_id": "mtn_train_leafbare_darkforestfable_storylorelocked1",
         "types": [
             "training"
         ],
@@ -1175,7 +1175,7 @@
         ]
     },
     {
-        "id": "mtn_train_leafbare_warmthoftheclan_storylorelocked1",
+        "event_id": "mtn_train_leafbare_warmthoftheclan_storylorelocked1",
         "types": [
             "training"
         ],
@@ -1272,7 +1272,7 @@
         ]
     },
     {
-        "id": "mtn_train_leafbare_thecurseofleafbare_lorelocked1",
+        "event_id": "mtn_train_leafbare_thecurseofleafbare_lorelocked1",
         "types": [
             "training"
         ],
@@ -1409,7 +1409,7 @@
         ]
     },
     {
-        "id": "mtn_train_leafbare_avalanche_storylorecleverinsightteacherlocked1",
+        "event_id": "mtn_train_leafbare_avalanche_storylorecleverinsightteacherlocked1",
         "types": [
             "training"
         ],

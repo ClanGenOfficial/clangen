@@ -1,6 +1,6 @@
 [
     {
-        "id": "fst_hunt_greenleaf_solosquirrel1",
+        "event_id": "fst_hunt_greenleaf_solosquirrel1",
         "types": [
             "hunting"
         ],
@@ -131,7 +131,7 @@
         ]
     },
     {
-        "id": "fst_hunt_greenleaf_soloappsquirrel1",
+        "event_id": "fst_hunt_greenleaf_soloappsquirrel1",
         "types": [
             "hunting"
         ],
@@ -226,7 +226,7 @@
         ]
     },
     {
-        "id": "fst_hunt_greenleaf_mentorsquirrel1",
+        "event_id": "fst_hunt_greenleaf_mentorsquirrel1",
         "types": [
             "hunting"
         ],
@@ -415,7 +415,7 @@
         ]
     },
     {
-        "id": "fst_hunt_greenleaf_squirrel_treetoptumble1",
+        "event_id": "fst_hunt_greenleaf_squirrel_treetoptumble1",
         "types": [
             "hunting"
         ],
@@ -687,7 +687,7 @@
         ]
     },
     {
-        "id": "fst_hunt_greenleaf_groupsquirrel1",
+        "event_id": "fst_hunt_greenleaf_groupsquirrel1",
         "types": [
             "hunting"
         ],
@@ -888,7 +888,7 @@
         ]
     },
     {
-        "id": "fst_hunt_greenleaf_solobirdl",
+        "event_id": "fst_hunt_greenleaf_solobirdl",
         "types": [
             "hunting"
         ],
@@ -959,7 +959,7 @@
         ]
     },
     {
-        "id": "fst_hunt_greenleaf_soloappbirdl",
+        "event_id": "fst_hunt_greenleaf_soloappbirdl",
         "types": [
             "hunting"
         ],
@@ -1030,7 +1030,7 @@
         ]
     },
     {
-        "id": "fst_hunt_greenleaf_mentorbirdl",
+        "event_id": "fst_hunt_greenleaf_mentorbirdl",
         "types": [
             "hunting"
         ],
@@ -1229,7 +1229,7 @@
         ]
     },
     {
-        "id": "fst_hunt_greenleaf_groupbirdl",
+        "event_id": "fst_hunt_greenleaf_groupbirdl",
         "types": [
             "hunting"
         ],
@@ -1517,7 +1517,7 @@
         ]
     },
     {
-        "id": "fst_hunt_greenleaf_bird_odd1",
+        "event_id": "fst_hunt_greenleaf_bird_odd1",
         "types": [
             "hunting"
         ],
@@ -1632,7 +1632,7 @@
         ]
     },
     {
-        "id": "fst_hunt_greenleaf_formergensquirrel1",
+        "event_id": "fst_hunt_greenleaf_formergensquirrel1",
         "types": [
             "hunting"
         ],
@@ -1698,7 +1698,7 @@
         ]
     },
     {
-        "id": "fst_hunt_greenleaf_vanish1",
+        "event_id": "fst_hunt_greenleaf_vanish1",
         "types": [
             "hunting"
         ],
@@ -1919,7 +1919,7 @@
         ]
     },
     {
-        "id": "fst_hunt_greenleaf_solorat1",
+        "event_id": "fst_hunt_greenleaf_solorat1",
         "types": [
             "hunting"
         ],
@@ -1976,7 +1976,7 @@
         ]
     },
     {
-        "id": "fst_hunt_greenleaf_soloapprat1",
+        "event_id": "fst_hunt_greenleaf_soloapprat1",
         "types": [
             "hunting"
         ],
@@ -2078,7 +2078,7 @@
         ]
     },
     {
-        "id": "fst_hunt_greenleaf_mentorrat1",
+        "event_id": "fst_hunt_greenleaf_mentorrat1",
         "types": [
             "hunting"
         ],
@@ -2231,7 +2231,7 @@
         ]
     },
     {
-        "id": "fst_hunt_greenleaf_ratswarm1",
+        "event_id": "fst_hunt_greenleaf_ratswarm1",
         "types": [
             "hunting"
         ],
@@ -2475,7 +2475,7 @@
         ]
     },
     {
-        "id": "fst_hunt_greenleaf_lillizard1",
+        "event_id": "fst_hunt_greenleaf_lillizard1",
         "types": [
             "hunting"
         ],
@@ -2682,7 +2682,7 @@
         ]
     },
     {
-        "id": "fst_hunt_greenleaf_lillizard2",
+        "event_id": "fst_hunt_greenleaf_lillizard2",
         "types": [
             "hunting"
         ],
@@ -2810,7 +2810,7 @@
         ]
     },
     {
-        "id": "fst_hunt_greenleaf_vole_formerany1",
+        "event_id": "fst_hunt_greenleaf_vole_formerany1",
         "types": [
             "hunting"
         ],
@@ -2937,7 +2937,7 @@
         ]
     },
     {
-        "id": "fst_hunt_greenleaf_squirrel_formerany1",
+        "event_id": "fst_hunt_greenleaf_squirrel_formerany1",
         "types": [
             "hunting"
         ],
@@ -3137,7 +3137,7 @@
         ]
     },
     {
-        "id": "fst_hunt_heat1",
+        "event_id": "fst_hunt_heat1",
         "types": [
             "hunting"
         ],
@@ -3303,7 +3303,7 @@
         ]
     },
     {
-        "id": "fst_hunt_twolegsobject1",
+        "event_id": "fst_hunt_twolegsobject1",
         "types": [
             "hunting"
         ],
@@ -3391,7 +3391,7 @@
         ]
     },
     {
-        "id": "fst_hunt_fox_greenleafscavenge1",
+        "event_id": "fst_hunt_fox_greenleafscavenge1",
         "types": [
             "hunting"
         ],
@@ -3699,7 +3699,7 @@
         ]
     },
     {
-        "id": "fst_hunt_fox_greenleafscavenge2",
+        "event_id": "fst_hunt_fox_greenleafscavenge2",
         "types": [
             "hunting"
         ],
@@ -4021,7 +4021,7 @@
         ]
     },
     {
-        "id": "fst_hunt_fox_greenleafscavenge3",
+        "event_id": "fst_hunt_fox_greenleafscavenge3",
         "types": [
             "hunting"
         ],
@@ -4288,7 +4288,7 @@
         ]
     },
     {
-        "id": "fst_hunt_mouse_greenleaf1",
+        "event_id": "fst_hunt_mouse_greenleaf1",
         "types": [
             "hunting"
         ],
@@ -4383,7 +4383,7 @@
         ]
     },
     {
-        "id": "fst_hunt_genappmouse2",
+        "event_id": "fst_hunt_genappmouse2",
         "types": [
             "hunting"
         ],
@@ -4471,7 +4471,7 @@
         ]
     },
     {
-        "id": "gen_hunt_genmentormouse2",
+        "event_id": "gen_hunt_genmentormouse2",
         "types": [
             "hunting"
         ],
@@ -4611,7 +4611,7 @@
         ]
     },
     {
-        "id": "fst_hunt_mice_ohnotheyrehot2",
+        "event_id": "fst_hunt_mice_ohnotheyrehot2",
         "types": [
             "hunting"
         ],
@@ -4867,7 +4867,7 @@
         ]
     },
     {
-        "id": "fst_hunt_mice2",
+        "event_id": "fst_hunt_mice2",
         "types": [
             "hunting"
         ],
@@ -5035,7 +5035,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_greenleafsolowarrior1",
+        "event_id": "fst_hunt_random_greenleafsolowarrior1",
         "types": [
             "hunting"
         ],
@@ -5242,7 +5242,7 @@
         ]
     },
     {
-        "id": "fst_hunt_random_greenleafsoloapp1",
+        "event_id": "fst_hunt_random_greenleafsoloapp1",
         "types": [
             "hunting"
         ],
@@ -5427,7 +5427,7 @@
         ]
     },
     {
-        "id": "fst_hunt_climbtree1",
+        "event_id": "fst_hunt_climbtree1",
         "types": [
             "hunting"
         ],

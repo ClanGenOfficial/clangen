@@ -1,6 +1,6 @@
 [
     {
-        "id": "dst_hunt_herb_warriorleafbare1",
+        "event_id": "dst_hunt_herb_warriorleafbare1",
         "types": [
             "hunting"
         ],
@@ -131,7 +131,7 @@
         ]
     },
     {
-        "id": "dst_hunt_leafbarerainstorm1",
+        "event_id": "dst_hunt_leafbarerainstorm1",
         "types": [
             "hunting"
         ],
@@ -312,7 +312,7 @@
         ]
     },
     {
-        "id": "dst_hunt_leafbarerainstorm2",
+        "event_id": "dst_hunt_leafbarerainstorm2",
         "types": [
             "hunting"
         ],
@@ -390,7 +390,7 @@
         ]
     },
     {
-        "id": "dst_hunt_leafbarerainstorm3",
+        "event_id": "dst_hunt_leafbarerainstorm3",
         "types": [
             "hunting"
         ],
@@ -604,7 +604,7 @@
         ]
     },
     {
-        "id": "dst_hunt_swiftfox_leaf-barevixen1",
+        "event_id": "dst_hunt_swiftfox_leaf-barevixen1",
         "types": [
             "hunting"
         ],

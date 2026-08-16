@@ -1,6 +1,6 @@
 [
     {
-        "id": "bch_med_leaffallragwort1",
+        "event_id": "bch_med_leaffallragwort1",
         "types": [
             "herb_gathering"
         ],
@@ -65,7 +65,7 @@
         ]
     },
     {
-        "id": "bch_med_leaffallragwort2",
+        "event_id": "bch_med_leaffallragwort2",
         "types": [
             "herb_gathering"
         ],
@@ -173,7 +173,7 @@
         ]
     },
     {
-        "id": "bch_med_leaffallragwort3",
+        "event_id": "bch_med_leaffallragwort3",
         "types": [
             "herb_gathering"
         ],

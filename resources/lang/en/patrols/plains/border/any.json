@@ -1,6 +1,6 @@
 [
     {
-        "id": "pln_bord_rogue1",
+        "event_id": "pln_bord_rogue1",
         "types": [
             "border"
         ],
@@ -198,7 +198,7 @@
         ]
     },
     {
-        "id": "pln_bord_rogue2",
+        "event_id": "pln_bord_rogue2",
         "types": [
             "border"
         ],
@@ -360,7 +360,7 @@
         ]
     },
     {
-        "id": "pln_bord_rogue3",
+        "event_id": "pln_bord_rogue3",
         "types": [
             "border"
         ],
@@ -607,7 +607,7 @@
         ]
     },
     {
-        "id": "pln_bord_trackrogue1",
+        "event_id": "pln_bord_trackrogue1",
         "types": [
             "border"
         ],
@@ -1005,7 +1005,7 @@
         ]
     },
     {
-        "id": "pln_bord_trackrogue2",
+        "event_id": "pln_bord_trackrogue2",
         "types": [
             "border"
         ],
@@ -1207,7 +1207,7 @@
         ]
     },
     {
-        "id": "pln_bord_trackrogue3",
+        "event_id": "pln_bord_trackrogue3",
         "types": [
             "border"
         ],
@@ -1788,7 +1788,7 @@
         ]
     },
     {
-        "id": "pln_bord_trackrogue4",
+        "event_id": "pln_bord_trackrogue4",
         "types": [
             "border"
         ],
@@ -2219,7 +2219,7 @@
         ]
     },
     {
-        "id": "plains_bord_story1",
+        "event_id": "plains_bord_story1",
         "types": [
             "border"
         ],
@@ -2443,7 +2443,7 @@
         ]
     },
     {
-        "id": "pln_bord_frnight1",
+        "event_id": "pln_bord_frnight1",
         "types": [
             "border"
         ],
@@ -2508,7 +2508,7 @@
         ]
     },
     {
-        "id": "pln_bord_ufo1",
+        "event_id": "pln_bord_ufo1",
         "types": [
             "border"
         ],
@@ -2578,7 +2578,7 @@
         ]
     },
     {
-        "id": "pln_train_beautyandthebeast_storylocked1",
+        "event_id": "pln_train_beautyandthebeast_storylocked1",
         "types": [
             "border"
         ],
@@ -2779,7 +2779,7 @@
         ]
     },
     {
-        "id": "pln_bord_redvixen1",
+        "event_id": "pln_bord_redvixen1",
         "types": [
             "border"
         ],
@@ -3283,7 +3283,7 @@
         ]
     },
     {
-        "id": "pln_bord_glnllf_apprenticegrouptunnel1",
+        "event_id": "pln_bord_glnllf_apprenticegrouptunnel1",
         "types": [
             "border"
         ],
@@ -3923,7 +3923,7 @@
         ]
     },
     {
-        "id": "pln_bord_glnllf_apprenticesolotunnel1",
+        "event_id": "pln_bord_glnllf_apprenticesolotunnel1",
         "types": [
             "border"
         ],
@@ -4310,7 +4310,7 @@
         ]
     },
     {
-        "id": "pln_bord_glnllf_warriorsolotunnel1",
+        "event_id": "pln_bord_glnllf_warriorsolotunnel1",
         "types": [
             "border"
         ],
@@ -4630,7 +4630,7 @@
         ]
     },
     {
-        "id": "pln_bord_glnllf_warriorappenticepairtunnel1",
+        "event_id": "pln_bord_glnllf_warriorappenticepairtunnel1",
         "types": [
             "border"
         ],
@@ -5591,7 +5591,7 @@
         ]
     },
     {
-        "id": "pln_bord_glnllf_warriorpairtunnel1",
+        "event_id": "pln_bord_glnllf_warriorpairtunnel1",
         "types": [
             "border"
         ],
@@ -6131,7 +6131,7 @@
         ]
     },
     {
-        "id": "pln_bord_glnllf_apprenticetunnel1",
+        "event_id": "pln_bord_glnllf_apprenticetunnel1",
         "types": [
             "border"
         ],
@@ -6748,7 +6748,7 @@
         ]
     },
     {
-        "id": "pln_bord_glnllf_warriortunnel1",
+        "event_id": "pln_bord_glnllf_warriortunnel1",
         "types": [
             "border"
         ],
@@ -7403,7 +7403,7 @@
         ]
     },
     {
-        "id": "pln_bord_any_coyote1",
+        "event_id": "pln_bord_any_coyote1",
         "types": [
             "border"
         ],

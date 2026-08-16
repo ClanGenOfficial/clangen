@@ -1,6 +1,6 @@
 [
     {
-        "id": "bch_med_herblocation1",
+        "event_id": "bch_med_herblocation1",
         "types": [
             "herb_gathering"
         ],
@@ -156,7 +156,7 @@
         ]
     },
     {
-        "id": "bch_med_herblocation2",
+        "event_id": "bch_med_herblocation2",
         "types": [
             "herb_gathering"
         ],
@@ -223,7 +223,7 @@
         ]
     },
     {
-        "id": "bch_med_dwindleherbsgathering1",
+        "event_id": "bch_med_dwindleherbsgathering1",
         "types": [
             "herb_gathering"
         ],

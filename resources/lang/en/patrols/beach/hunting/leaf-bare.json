@@ -1,6 +1,6 @@
 [
     {
-        "id": "bch_hunt_leaf-bare_solosquirrel1",
+        "event_id": "bch_hunt_leaf-bare_solosquirrel1",
         "types": [
             "hunting"
         ],
@@ -149,7 +149,7 @@
         ]
     },
     {
-        "id": "bch_hunt_leaf-bare_soloappsquirrel1",
+        "event_id": "bch_hunt_leaf-bare_soloappsquirrel1",
         "types": [
             "hunting"
         ],
@@ -262,7 +262,7 @@
         ]
     },
     {
-        "id": "bch_hunt_leaf-bare_mentorsquirrel1",
+        "event_id": "bch_hunt_leaf-bare_mentorsquirrel1",
         "types": [
             "hunting"
         ],
@@ -451,7 +451,7 @@
         ]
     },
     {
-        "id": "bch_hunt_leaf-bare_squirrel_rattlesnakerumble1",
+        "event_id": "bch_hunt_leaf-bare_squirrel_rattlesnakerumble1",
         "types": [
             "hunting"
         ],
@@ -655,7 +655,7 @@
         ]
     },
     {
-        "id": "bch_hunt_leaf-bare_groupsquirrel1",
+        "event_id": "bch_hunt_leaf-bare_groupsquirrel1",
         "types": [
             "hunting"
         ],
@@ -876,7 +876,7 @@
         ]
     },
     {
-        "id": "bch_hunt_leafbaresnowstorm1",
+        "event_id": "bch_hunt_leafbaresnowstorm1",
         "types": [
             "hunting"
         ],
@@ -1141,7 +1141,7 @@
         ]
     },
     {
-        "id": "bch_hunt_leafbaresnowstorm2",
+        "event_id": "bch_hunt_leafbaresnowstorm2",
         "types": [
             "hunting"
         ],
@@ -1261,7 +1261,7 @@
         ]
     },
     {
-        "id": "bch_hunt_leafbaresnowstorm3",
+        "event_id": "bch_hunt_leafbaresnowstorm3",
         "types": [
             "hunting"
         ],

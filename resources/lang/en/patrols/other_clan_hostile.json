@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_bord_otherclan_hostile1",
+        "event_id": "gen_bord_otherclan_hostile1",
         "types": [
             "border"
         ],
@@ -285,7 +285,7 @@
         ]
     },
     {
-        "id": "gen_bord_hostile_otherclanexile1",
+        "event_id": "gen_bord_hostile_otherclanexile1",
         "types": [
             "border"
         ],
@@ -1049,7 +1049,7 @@
         ]
     },
     {
-        "id": "gen_border_romeo_and_juliet",
+        "event_id": "gen_border_romeo_and_juliet",
         "types": [
             "border"
         ],
@@ -2116,7 +2116,7 @@
         ]
     },
     {
-        "id": "gen_bord_dislike2",
+        "event_id": "gen_bord_dislike2",
         "types": [
             "border"
         ],
@@ -2749,7 +2749,7 @@
         ]
     },
     {
-        "id": "gen_bord_otherclan_hostile2",
+        "event_id": "gen_bord_otherclan_hostile2",
         "types": [
             "border"
         ],
@@ -3098,7 +3098,7 @@
         ]
     },
     {
-        "id": "gen_bord_otherclan_hostile3",
+        "event_id": "gen_bord_otherclan_hostile3",
         "types": [
             "hunting",
             "border"
@@ -3585,7 +3585,7 @@
         ]
     },
     {
-        "id": "gen_med_borderherb3",
+        "event_id": "gen_med_borderherb3",
         "types": [
             "herb_gathering"
         ],
@@ -3691,7 +3691,7 @@
         ]
     },
     {
-        "id": "gen_bord_scent_hostile1",
+        "event_id": "gen_bord_scent_hostile1",
         "types": [
             "border"
         ],
@@ -3880,7 +3880,7 @@
         ]
     },
     {
-        "id": "gen_bord_scent_hostile2",
+        "event_id": "gen_bord_scent_hostile2",
         "types": [
             "border"
         ],
@@ -4063,7 +4063,7 @@
         ]
     },
     {
-        "id": "fst_bord_solohostile1",
+        "event_id": "fst_bord_solohostile1",
         "types": [
             "border"
         ],
@@ -4810,7 +4810,7 @@
         ]
     },
     {
-        "id": "pln_bord_solohostile1",
+        "event_id": "pln_bord_solohostile1",
         "types": [
             "border"
         ],
@@ -5557,7 +5557,7 @@
         ]
     },
     {
-        "id": "mtn_bord_solohostile1",
+        "event_id": "mtn_bord_solohostile1",
         "types": [
             "border"
         ],
@@ -6304,7 +6304,7 @@
         ]
     },
     {
-        "id": "bch_bord_solohostile1",
+        "event_id": "bch_bord_solohostile1",
         "types": [
             "border"
         ],
@@ -7051,7 +7051,7 @@
         ]
     },
     {
-        "id": "wtlnd_bord_solohostile1",
+        "event_id": "wtlnd_bord_solohostile1",
         "types": [
             "border"
         ],
@@ -7649,7 +7649,7 @@
         ]
     },
     {
-        "id": "gen_bord_scent_hostile_dislikelocked1",
+        "event_id": "gen_bord_scent_hostile_dislikelocked1",
         "types": [
             "border"
         ],
@@ -7931,7 +7931,7 @@
         ]
     },
     {
-        "id": "gen_bord_ambush_hostile_disaster1",
+        "event_id": "gen_bord_ambush_hostile_disaster1",
         "types": [
             "border"
         ],
@@ -8098,7 +8098,7 @@
         ]
     },
     {
-        "id": "gen_bord_ambush_hostile_disaster2",
+        "event_id": "gen_bord_ambush_hostile_disaster2",
         "types": [
             "border"
         ],
@@ -8325,7 +8325,7 @@
         ]
     },
     {
-        "id": "gen_bord_hostile_otherclankits1",
+        "event_id": "gen_bord_hostile_otherclankits1",
         "types": [
             "border"
         ],

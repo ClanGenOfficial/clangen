@@ -1,6 +1,6 @@
 [
     {
-        "id": "fst_train_session1",
+        "event_id": "fst_train_session1",
         "types": [
             "training"
         ],
@@ -313,7 +313,7 @@
         ]
     },
     {
-        "id": "fst_train_sett1",
+        "event_id": "fst_train_sett1",
         "types": [
             "training"
         ],
@@ -570,7 +570,7 @@
         ]
     },
     {
-        "id": "fst_train_sett2",
+        "event_id": "fst_train_sett2",
         "types": [
             "training"
         ],
@@ -841,7 +841,7 @@
         ]
     },
     {
-        "id": "fst_train_stuck1",
+        "event_id": "fst_train_stuck1",
         "types": [
             "training"
         ],
@@ -1219,7 +1219,7 @@
         ]
     },
     {
-        "id": "fst_train_stuck2",
+        "event_id": "fst_train_stuck2",
         "types": [
             "training"
         ],
@@ -1529,7 +1529,7 @@
         ]
     },
     {
-        "id": "fst_train_stuck3",
+        "event_id": "fst_train_stuck3",
         "types": [
             "training"
         ],
@@ -1625,7 +1625,7 @@
         ]
     },
     {
-        "id": "fst_train_soloapp1",
+        "event_id": "fst_train_soloapp1",
         "types": [
             "training"
         ],
@@ -1739,7 +1739,7 @@
         ]
     },
     {
-        "id": "fst_train_solo2",
+        "event_id": "fst_train_solo2",
         "types": [
             "training"
         ],
@@ -1945,7 +1945,7 @@
         ]
     },
     {
-        "id": "fst_train_porcupine1",
+        "event_id": "fst_train_porcupine1",
         "types": [
             "training"
         ],
@@ -2259,7 +2259,7 @@
         ]
     },
     {
-        "id": "fst_train_porcupine2",
+        "event_id": "fst_train_porcupine2",
         "types": [
             "training"
         ],
@@ -2655,7 +2655,7 @@
         ]
     },
     {
-        "id": "fst_train_willow1",
+        "event_id": "fst_train_willow1",
         "types": [
             "training"
         ],
@@ -2893,7 +2893,7 @@
         ]
     },
     {
-        "id": "fst_train_sunset1",
+        "event_id": "fst_train_sunset1",
         "types": [
             "training"
         ],
@@ -3144,7 +3144,7 @@
         ]
     },
     {
-        "id": "fst_train_arguingromance1",
+        "event_id": "fst_train_arguingromance1",
         "types": [
             "training"
         ],
@@ -3280,7 +3280,7 @@
         ]
     },
     {
-        "id": "fst_train_wareprey_lorelocked1",
+        "event_id": "fst_train_wareprey_lorelocked1",
         "types": [
             "training"
         ],
@@ -3391,7 +3391,7 @@
         ]
     },
     {
-        "id": "fst_train_gllfnl_beetlesoloapp1",
+        "event_id": "fst_train_gllfnl_beetlesoloapp1",
         "types": [
             "training"
         ],
@@ -3507,7 +3507,7 @@
         ]
     },
     {
-        "id": "fst_train_flatwoods1",
+        "event_id": "fst_train_flatwoods1",
         "types": [
             "training"
         ],
@@ -3575,7 +3575,7 @@
         ]
     },
     {
-        "id": "fst_train_doverdemon",
+        "event_id": "fst_train_doverdemon",
         "types": [
             "training"
         ],
@@ -3627,7 +3627,7 @@
         ]
     },
     {
-        "id": "fst_train_crows1",
+        "event_id": "fst_train_crows1",
         "types": [
             "training"
         ],

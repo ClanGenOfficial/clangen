@@ -1,6 +1,6 @@
 [
     {
-        "id": "bch_train_session1",
+        "event_id": "bch_train_session1",
         "types": [
             "training"
         ],
@@ -242,7 +242,7 @@
         ]
     },
     {
-        "id": "bch_train_stuck1",
+        "event_id": "bch_train_stuck1",
         "types": [
             "training"
         ],
@@ -603,7 +603,7 @@
         ]
     },
     {
-        "id": "bch_train_stuck2",
+        "event_id": "bch_train_stuck2",
         "types": [
             "training"
         ],
@@ -904,7 +904,7 @@
         ]
     },
     {
-        "id": "bch_train_stuck3",
+        "event_id": "bch_train_stuck3",
         "types": [
             "training"
         ],
@@ -995,7 +995,7 @@
         ]
     },
     {
-        "id": "bch_train_soloapp1",
+        "event_id": "bch_train_soloapp1",
         "types": [
             "training"
         ],
@@ -1109,7 +1109,7 @@
         ]
     },
     {
-        "id": "bch_train_solo2",
+        "event_id": "bch_train_solo2",
         "types": [
             "training"
         ],
@@ -1315,7 +1315,7 @@
         ]
     },
     {
-        "id": "bch_train_octopus1",
+        "event_id": "bch_train_octopus1",
         "types": [
             "training"
         ],
@@ -1638,7 +1638,7 @@
         ]
     },
     {
-        "id": "bch_train_octopus2",
+        "event_id": "bch_train_octopus2",
         "types": [
             "training"
         ],
@@ -2035,7 +2035,7 @@
         ]
     },
     {
-        "id": "bch_train_stormwaves1",
+        "event_id": "bch_train_stormwaves1",
         "types": [
             "training"
         ],
@@ -2310,7 +2310,7 @@
         ]
     },
     {
-        "id": "bch_train_shellhunt1",
+        "event_id": "bch_train_shellhunt1",
         "types": [
             "training"
         ],
@@ -2470,7 +2470,7 @@
         ]
     },
     {
-        "id": "bch_train_sunset1",
+        "event_id": "bch_train_sunset1",
         "types": [
             "training"
         ],
@@ -2709,7 +2709,7 @@
         ]
     },
     {
-        "id": "bch_train_biolumin1",
+        "event_id": "bch_train_biolumin1",
         "types": [
             "training"
         ],
@@ -2862,7 +2862,7 @@
         ]
     },
     {
-        "id": "bch_train_arguingromance1",
+        "event_id": "bch_train_arguingromance1",
         "types": [
             "training"
         ],
@@ -2998,7 +2998,7 @@
         ]
     },
     {
-        "id": "bch_training_dolphinlore1",
+        "event_id": "bch_training_dolphinlore1",
         "types": [
             "training"
         ],
@@ -3089,7 +3089,7 @@
         ]
     },
     {
-        "id": "bch_train_nessie1",
+        "event_id": "bch_train_nessie1",
         "types": [
             "training"
         ],
@@ -3139,7 +3139,7 @@
         ]
     },
     {
-        "id": "bch_train_frogman1",
+        "event_id": "bch_train_frogman1",
         "types": [
             "training"
         ],
@@ -3194,7 +3194,7 @@
         ]
     },
     {
-        "id": "bch_train_ottercreationmyth_storylocked1",
+        "event_id": "bch_train_ottercreationmyth_storylocked1",
         "types": [
             "training"
         ],
@@ -3298,7 +3298,7 @@
         ]
     },
     {
-        "id": "bch_train_foxdawn_lorelocked1",
+        "event_id": "bch_train_foxdawn_lorelocked1",
         "types": [
             "training"
         ],
@@ -3405,7 +3405,7 @@
         ]
     },
     {
-        "id": "bch_train_mauifishing_storylocked1",
+        "event_id": "bch_train_mauifishing_storylocked1",
         "types": [
             "training"
         ],
@@ -3520,7 +3520,7 @@
         ]
     },
     {
-        "id": "bch_train_mauislowingthesun_storylocked1",
+        "event_id": "bch_train_mauislowingthesun_storylocked1",
         "types": [
             "training"
         ],
@@ -3609,7 +3609,7 @@
         ]
     },
     {
-        "id": "bch_train_themoonandthetides_storylorelocked1",
+        "event_id": "bch_train_themoonandthetides_storylorelocked1",
         "types": [
             "training"
         ],
@@ -3719,7 +3719,7 @@
         ]
     },
     {
-        "id": "bch_train_glnl_romantic_oceanswim1",
+        "event_id": "bch_train_glnl_romantic_oceanswim1",
         "types": [
             "training"
         ],

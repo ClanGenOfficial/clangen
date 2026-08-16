@@ -1,6 +1,6 @@
 [
     {
-        "id": "wtlnd_train_greenleaf_humidhot1",
+        "event_id": "wtlnd_train_greenleaf_humidhot1",
         "types": [
             "training"
         ],

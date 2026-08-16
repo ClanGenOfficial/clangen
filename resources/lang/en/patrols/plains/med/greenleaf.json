@@ -1,6 +1,6 @@
 [
     {
-        "id": "pln_med_greenleaf_allergies",
+        "event_id": "pln_med_greenleaf_allergies",
         "types": [
             "herb_gathering"
         ],

@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_bord_otherclan1",
+        "event_id": "gen_bord_otherclan1",
         "types": [
             "border"
         ],
@@ -405,7 +405,7 @@
         ]
     },
     {
-        "id": "gen_bord_otherclan_rabbit1",
+        "event_id": "gen_bord_otherclan_rabbit1",
         "types": [
             "hunting",
             "border"
@@ -748,7 +748,7 @@
         ]
     },
     {
-        "id": "cat_sprites/gen_med_borderherb_Mc2",
+        "event_id": "cat_sprites/gen_med_borderherb_Mc2",
         "types": [
             "herb_gathering"
         ],
@@ -856,7 +856,7 @@
         ]
     },
     {
-        "id": "gen_bord_scent1",
+        "event_id": "gen_bord_scent1",
         "types": [
             "border"
         ],
@@ -1152,7 +1152,7 @@
         ]
     },
     {
-        "id": "gen_bord_scent2",
+        "event_id": "gen_bord_scent2",
         "types": [
             "border"
         ],
@@ -1348,7 +1348,7 @@
         ]
     },
     {
-        "id": "bch_bord_soloneutral1",
+        "event_id": "bch_bord_soloneutral1",
         "types": [
             "border"
         ],
@@ -2104,7 +2104,7 @@
         ]
     },
     {
-        "id": "dst_bord_soloneutral1",
+        "event_id": "dst_bord_soloneutral1",
         "types": [
             "border"
         ],
@@ -2860,7 +2860,7 @@
         ]
     },
     {
-        "id": "fst_bord_soloneutral1",
+        "event_id": "fst_bord_soloneutral1",
         "types": [
             "border"
         ],
@@ -3616,7 +3616,7 @@
         ]
     },
     {
-        "id": "mtn_bord_soloneutral1",
+        "event_id": "mtn_bord_soloneutral1",
         "types": [
             "border"
         ],
@@ -4372,7 +4372,7 @@
         ]
     },
     {
-        "id": "pln_bord_soloneutral1",
+        "event_id": "pln_bord_soloneutral1",
         "types": [
             "border"
         ],
@@ -5110,7 +5110,7 @@
         ]
     },
     {
-        "id": "wtlnd_bord_soloneutral1",
+        "event_id": "wtlnd_bord_soloneutral1",
         "types": [
             "border"
         ],
@@ -5590,7 +5590,7 @@
         ]
     },
     {
-        "id": "gen_bord_appmission",
+        "event_id": "gen_bord_appmission",
         "types": [
             "border"
         ],
@@ -5955,7 +5955,7 @@
         ]
     },
     {
-        "id": "gen_bord_otherclanapp",
+        "event_id": "gen_bord_otherclanapp",
         "types": [
             "border"
         ],
@@ -6625,7 +6625,7 @@
         ]
     },
     {
-        "id": "gen_bord_neutral_otherclankits1",
+        "event_id": "gen_bord_neutral_otherclankits1",
         "types": [
             "border"
         ],
@@ -6933,7 +6933,7 @@
         ]
     },
     {
-        "id": "gen_border_otherclan_badger1",
+        "event_id": "gen_border_otherclan_badger1",
         "types": [
             "border"
         ],
@@ -7122,7 +7122,7 @@
         ]
     },
     {
-        "id": "fst_bord_risingclanref_neutral_lorelocked1",
+        "event_id": "fst_bord_risingclanref_neutral_lorelocked1",
         "types": [
             "border"
         ],

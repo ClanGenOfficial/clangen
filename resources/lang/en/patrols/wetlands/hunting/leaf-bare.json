@@ -1,6 +1,6 @@
 [
     {
-        "id": "wtlnd_hunt_leafbaresnowstorm1",
+        "event_id": "wtlnd_hunt_leafbaresnowstorm1",
         "types": [
             "hunting"
         ],
@@ -265,7 +265,7 @@
         ]
     },
     {
-        "id": "wtlnd_hunt_leafbaresnowstorm2",
+        "event_id": "wtlnd_hunt_leafbaresnowstorm2",
         "types": [
             "hunting"
         ],
@@ -385,7 +385,7 @@
         ]
     },
     {
-        "id": "wtlnd_hunt_leafbaresnowstorm3",
+        "event_id": "wtlnd_hunt_leafbaresnowstorm3",
         "types": [
             "hunting"
         ],
@@ -629,7 +629,7 @@
         ]
     },
     {
-        "id": "wtlnd_hunt_kitfox_scavenge1",
+        "event_id": "wtlnd_hunt_kitfox_scavenge1",
         "types": [
             "hunting"
         ],
@@ -856,7 +856,7 @@
         ]
     },
     {
-        "id": "wtlnd_hunt_kitfox_scavenge2",
+        "event_id": "wtlnd_hunt_kitfox_scavenge2",
         "types": [
             "hunting"
         ],
@@ -1000,7 +1000,7 @@
         ]
     },
     {
-        "id": "wtlnd_hunt_leafbare_kingfisher_storylorehunterclimberteacherlocked1",
+        "event_id": "wtlnd_hunt_leafbare_kingfisher_storylorehunterclimberteacherlocked1",
         "types": [
             "hunting"
         ],

@@ -1,6 +1,6 @@
 [
     {
-        "id": "mtn_hunt_leaf-fall_eagleswim1",
+        "event_id": "mtn_hunt_leaf-fall_eagleswim1",
         "types": [
             "hunting"
         ],
@@ -197,7 +197,7 @@
         ]
     },
     {
-        "id": "mtn_hunt_leaf-fall_eagleswim2",
+        "event_id": "mtn_hunt_leaf-fall_eagleswim2",
         "types": [
             "hunting"
         ],
@@ -426,7 +426,7 @@
         ]
     },
     {
-        "id": "mtn_hunt_leaf-fall_snowstorm1",
+        "event_id": "mtn_hunt_leaf-fall_snowstorm1",
         "types": [
             "hunting"
         ],
@@ -691,7 +691,7 @@
         ]
     },
     {
-        "id": "mtn_hunt_leaf-fall_snowstorm2",
+        "event_id": "mtn_hunt_leaf-fall_snowstorm2",
         "types": [
             "hunting"
         ],
@@ -824,7 +824,7 @@
         ]
     },
     {
-        "id": "mtn_hunt_leaf-fall_snowstorm3",
+        "event_id": "mtn_hunt_leaf-fall_snowstorm3",
         "types": [
             "hunting"
         ],
@@ -1032,7 +1032,7 @@
         ]
     },
     {
-        "id": "mtn_hunt_leaf-fall_solosquirrel1",
+        "event_id": "mtn_hunt_leaf-fall_solosquirrel1",
         "types": [
             "hunting"
         ],
@@ -1163,7 +1163,7 @@
         ]
     },
     {
-        "id": "mtn_hunt_leaf-fall_soloappsquirrel1",
+        "event_id": "mtn_hunt_leaf-fall_soloappsquirrel1",
         "types": [
             "hunting"
         ],
@@ -1258,7 +1258,7 @@
         ]
     },
     {
-        "id": "mtn_hunt_leaf-fall_mentorsquirrel1",
+        "event_id": "mtn_hunt_leaf-fall_mentorsquirrel1",
         "types": [
             "hunting"
         ],
@@ -1447,7 +1447,7 @@
         ]
     },
     {
-        "id": "mtn_hunt_leaf-fall_squirrel_treetoptumble1",
+        "event_id": "mtn_hunt_leaf-fall_squirrel_treetoptumble1",
         "types": [
             "hunting"
         ],
@@ -1714,7 +1714,7 @@
         ]
     },
     {
-        "id": "mtn_hunt_leaf-fall_groupsquirrel1",
+        "event_id": "mtn_hunt_leaf-fall_groupsquirrel1",
         "types": [
             "hunting"
         ],
@@ -1958,7 +1958,7 @@
         ]
     },
     {
-        "id": "mtn_hunt_salmonrun",
+        "event_id": "mtn_hunt_salmonrun",
         "types": [
             "hunting"
         ],
@@ -2439,7 +2439,7 @@
         ]
     },
     {
-        "id": "mtn_hunt_pipistrellebats1",
+        "event_id": "mtn_hunt_pipistrellebats1",
         "types": [
             "hunting"
         ],

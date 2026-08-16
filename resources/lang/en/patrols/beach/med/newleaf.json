@@ -1,6 +1,6 @@
 [
     {
-        "id": "bch_med_newleafplantain1",
+        "event_id": "bch_med_newleafplantain1",
         "types": [
             "herb_gathering"
         ],
@@ -91,7 +91,7 @@
         ]
     },
     {
-        "id": "bch_med_newleafplantain2",
+        "event_id": "bch_med_newleafplantain2",
         "types": [
             "herb_gathering"
         ],

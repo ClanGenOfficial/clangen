@@ -1,6 +1,6 @@
 [
     {
-        "id": "dst_train_greenleaf_flippedseasons_storylorelocked1",
+        "event_id": "dst_train_greenleaf_flippedseasons_storylorelocked1",
         "types": [
             "training"
         ],

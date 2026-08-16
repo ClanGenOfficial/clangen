@@ -1,6 +1,6 @@
 [
     {
-        "id": "fst_med_herbsrandom_greenleafbutterfly_tigerswallowtail1",
+        "event_id": "fst_med_herbsrandom_greenleafbutterfly_tigerswallowtail1",
         "types": [
             "herb_gathering"
         ],
@@ -157,7 +157,7 @@
         ]
     },
     {
-        "id": "fst_med_herbsmeadow_greenleaf1",
+        "event_id": "fst_med_herbsmeadow_greenleaf1",
         "types": [
             "herb_gathering"
         ],
@@ -221,7 +221,7 @@
         ]
     },
     {
-        "id": "fst_med_corpselily1",
+        "event_id": "fst_med_corpselily1",
         "types": [
             "herb_gathering"
         ],

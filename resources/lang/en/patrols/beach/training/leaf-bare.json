@@ -1,6 +1,6 @@
 [
     {
-        "id": "bch_train_leafbare_icebergmyth_storylocked1",
+        "event_id": "bch_train_leafbare_icebergmyth_storylocked1",
         "types": [
             "training"
         ],
@@ -135,7 +135,7 @@
         ]
     },
     {
-        "id": "bch_train_leafbare_stormfables_storylorelocked1",
+        "event_id": "bch_train_leafbare_stormfables_storylorelocked1",
         "types": [
             "training"
         ],

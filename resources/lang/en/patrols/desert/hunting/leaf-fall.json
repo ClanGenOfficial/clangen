@@ -1,6 +1,6 @@
 [
     {
-        "id": "dst_hunt_heat5",
+        "event_id": "dst_hunt_heat5",
         "types": [
             "hunting"
         ],
@@ -111,7 +111,7 @@
         ]
     },
     {
-        "id": "dst_hunt_heat6",
+        "event_id": "dst_hunt_heat6",
         "types": [
             "hunting"
         ],
@@ -233,7 +233,7 @@
         ]
     },
     {
-        "id": "dst_hunt_swiftfox_leaf-fallvixen1",
+        "event_id": "dst_hunt_swiftfox_leaf-fallvixen1",
         "types": [
             "hunting"
         ],

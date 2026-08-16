@@ -1,6 +1,6 @@
 [
     {
-        "id": "pln_bord_leafbare_longdistancemarking_group1",
+        "event_id": "pln_bord_leafbare_longdistancemarking_group1",
         "types": [
             "border"
         ],
@@ -425,7 +425,7 @@
         ]
     },
     {
-        "id": "pln_bord_leafbare_coyote_small_patrol1",
+        "event_id": "pln_bord_leafbare_coyote_small_patrol1",
         "types": [
             "border"
         ],
@@ -1092,7 +1092,7 @@
         ]
     },
     {
-        "id": "pln_bord_leafbare_coyote_big_patrol1",
+        "event_id": "pln_bord_leafbare_coyote_big_patrol1",
         "types": [
             "border"
         ],
@@ -2137,7 +2137,7 @@
         ]
     },
     {
-        "id": "pln_bord_leafbare_tunnel1",
+        "event_id": "pln_bord_leafbare_tunnel1",
         "types": [
             "border"
         ],
@@ -2831,7 +2831,7 @@
         ]
     },
     {
-        "id": "pln_bord_leafbare_warriorpairtunnel1",
+        "event_id": "pln_bord_leafbare_warriorpairtunnel1",
         "types": [
             "border"
         ],
@@ -3157,7 +3157,7 @@
         ]
     },
     {
-        "id": "pln_bord_leafbare_warriorappenticepairtunnel1",
+        "event_id": "pln_bord_leafbare_warriorappenticepairtunnel1",
         "types": [
             "border"
         ],
@@ -4229,7 +4229,7 @@
         ]
     },
     {
-        "id": "pln_bord_leafbare_warriorsolotunnel1",
+        "event_id": "pln_bord_leafbare_warriorsolotunnel1",
         "types": [
             "border"
         ],
@@ -4514,7 +4514,7 @@
         ]
     },
     {
-        "id": "pln_bord_leafbare_apprenticesolotunnel1",
+        "event_id": "pln_bord_leafbare_apprenticesolotunnel1",
         "types": [
             "border"
         ],
@@ -4905,7 +4905,7 @@
         ]
     },
     {
-        "id": "pln_bord_leafbare_apprenticegrouptunnel1",
+        "event_id": "pln_bord_leafbare_apprenticegrouptunnel1",
         "types": [
             "border"
         ],

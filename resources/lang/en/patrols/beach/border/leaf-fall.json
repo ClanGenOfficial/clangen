@@ -1,6 +1,6 @@
 [
     {
-        "id": "bch_bord_flashflood_tide1",
+        "event_id": "bch_bord_flashflood_tide1",
         "types": [
             "border"
         ],
@@ -107,7 +107,7 @@
         ]
     },
     {
-        "id": "bch_bord_coconutcrab1",
+        "event_id": "bch_bord_coconutcrab1",
         "types": [
             "border"
         ],
