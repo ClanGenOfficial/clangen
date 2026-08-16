@@ -67,41 +67,10 @@ class Name:
                 name_fixpref = False
 
         if self.suffix and not load_existing_name:
-            # Prevent triple letter names from joining prefix and suffix from occurring (ex. Beeeye)
-            possible_three_letter = (
-                self.prefix[-2:] + self.suffix[0],
-                self.prefix[-1] + self.suffix[:2],
-            )
-            triple_letter = all(
-                i == possible_three_letter[0][0] for i in possible_three_letter[0]
-            ) or all(
-                i == possible_three_letter[1][0]
-                for i in possible_three_letter[1]
-                # Prevent double animal names (ex. Spiderfalcon)
-            )
-            double_animal = (
-                self.prefix in self.names_dict["animal_prefixes"]
-                and self.suffix in self.names_dict["animal_suffixes"]
-            )
-            # Prevent the inappropriate names
-            nono_name = self.prefix + self.suffix
-            # Prevent double names (ex. Iceice)
-            # Prevent suffixes containing the prefix (ex. Butterflyfly)
-
 
             i = 0
             while (
-                nono_name.lower() in self.names_dict["inappropriate_names"]
-                or triple_letter
-                or double_animal
-                or (
-                    self.prefix.lower() in self.suffix.lower()
-                    and str(self.prefix) != ""
-                )
-                or (
-                    self.suffix.lower() in self.prefix.lower()
-                    and str(self.suffix) != ""
-                )
+                not self._usable_name(self.prefix, self.suffix)
             ):
                 # check if random die was for prefix
                 if name_fixpref:
@@ -109,44 +78,31 @@ class Name:
                 else:
                     self.give_suffix(pelt, biome, tortie_pattern)
 
-                nono_name = self.prefix + self.suffix
-                possible_three_letter = (
-                    self.prefix[-2:] + self.suffix[0],
-                    self.prefix[-1] + self.suffix[:2],
-                )
-                if any(
-                    i != possible_three_letter[0][0] for i in possible_three_letter[0]
-                ) and any(
-                    i != possible_three_letter[1][0] for i in possible_three_letter[1]
-                ):
-                    triple_letter = False
-                if (
-                    self.prefix not in self.names_dict["animal_prefixes"]
-                    or self.suffix not in self.names_dict["animal_suffixes"]
-                ):
-                    double_animal = False
                 i += 1
 
     @classmethod
     def _usable_name(cls, prefix, suffix):
         name = prefix + suffix
 
+        # Prevent triple letter names from joining prefix and suffix from occurring (ex. Beeeye)
         possible_three_letter = (
             prefix[-2:] + suffix[0],
             prefix[-1] + suffix[:2],
         )
-
         triple_letter = all(
             i == possible_three_letter[0][0] for i in possible_three_letter[0]
         ) or all(
             i == possible_three_letter[1][0] for i in possible_three_letter[1]
         )
 
+        # Prevent double animal names (ex. Spiderfalcon)
         double_animal = (
             prefix in cls.names_dict["animal_prefixes"]
             and suffix in cls.names_dict["animal_suffixes"]
         )
 
+        # Prevent double names (ex. Iceice)
+        # Prevent suffixes containing the prefix (ex. Butterflyfly)
         double_name = (
             prefix.lower() in suffix.lower()
             and str(prefix) != ""
@@ -156,6 +112,7 @@ class Name:
         )
 
         return not (
+            # Prevent the inappropriate names
             name.lower() in cls.names_dict["inappropriate_names"] or
             triple_letter or
             double_animal or
