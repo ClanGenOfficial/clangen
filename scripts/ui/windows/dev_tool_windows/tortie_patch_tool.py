@@ -7,7 +7,6 @@ import ujson
 from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.cat.pelts import Pelt
 from scripts.cat.sprites.load_sprites import sprites
-from scripts.events_module.text_adjust import adjust_list_text
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.ui.elements.scrolling_button_list import SELECTION_CHANGED
 from scripts.ui.elements.scrolling_dropdown import UIScrollingDropDown
@@ -102,30 +101,6 @@ class TortiePatchToolWindow(ComboToolWindow):
         )
         self.elements["chosen_patches"].set_text(str(selection))
         self.check_current_combos(selection)
-
-    def check_current_combos(self, selection):
-        if not selection:
-            self.elements["warning"].set_text(f"")
-            return
-
-        existing_combos = []
-        for name, combo in self.get_combos().items():
-            if set(selection) == set(combo):
-                self.elements["warning"].set_text(
-                    f"This combo already exists as {name}"
-                )
-                existing_combos.clear()
-                break
-
-            elif set(selection).issubset(set(combo)):
-                existing_combos.append(name)
-
-        if existing_combos:
-            self.elements["warning"].set_text(
-                f"This combo is part of {adjust_list_text(existing_combos)}"
-            )
-
-        self.elements["warning"].update_containing_rect_position()
 
     def save_combo(self):
         name = self.elements["name_entry"].get_text().upper().replace(" ", "_")

@@ -6,6 +6,7 @@ from pygame_gui.elements import UIImage, UITextEntryLine
 from scripts.cat.cats import Cat
 from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.cat.sprites.load_sprites import sprites
+from scripts.events_module.text_adjust import adjust_list_text
 from scripts.game_structure.game import Switch
 from scripts.game_structure.game.switches import switch_set_value
 from scripts.game_structure.screen_settings import MANAGER
@@ -184,3 +185,27 @@ class ComboToolWindow(GameWindow):
         # sets the game to reload!
         # this makes sure the sprites info is up to date if a dev decides to play after using this tool
         switch_set_value(Switch.switch_clan, True)
+
+    def check_current_combos(self, selection):
+        if not selection:
+            self.elements["warning"].set_text(f"")
+            return
+
+        existing_combos = []
+        for name, combo in self.get_combos().items():
+            if set(selection) == set(combo):
+                self.elements["warning"].set_text(
+                    f"This combo already exists as {name}"
+                )
+                existing_combos.clear()
+                break
+
+            elif set(selection).issubset(set(combo)):
+                existing_combos.append(name)
+
+        if existing_combos:
+            self.elements["warning"].set_text(
+                f"This combo is part of {adjust_list_text(existing_combos)}"
+            )
+
+        self.elements["warning"].update_containing_rect_position()

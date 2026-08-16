@@ -7,7 +7,6 @@ import ujson
 from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.cat.pelts import Pelt
 from scripts.cat.sprites.load_sprites import sprites
-from scripts.events_module.text_adjust import adjust_list_text
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.ui.elements.scrolling_button_list import SELECTION_CHANGED
 from scripts.ui.elements.scrolling_dropdown import UIScrollingDropDown
@@ -124,30 +123,18 @@ class WhitePatchToolWindow(ComboToolWindow):
                 return
 
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
-            for name, button in self.elements[
-                "little_patch_choice"
-            ].child_button_dicts.items():
-                if button == event.ui_element:
-                    self.set_preview_cat(name)
-                    return
-            for name, button in self.elements[
-                "mid_patch_choice"
-            ].child_button_dicts.items():
-                if button == event.ui_element:
-                    self.set_preview_cat(name)
-                    return
-            for name, button in self.elements[
-                "high_patch_choice"
-            ].child_button_dicts.items():
-                if button == event.ui_element:
-                    self.set_preview_cat(name)
-                    return
-            for name, button in self.elements[
-                "mostly_patch_choice"
-            ].child_button_dicts.items():
-                if button == event.ui_element:
-                    self.set_preview_cat(name)
-                    return
+            for patch_dropdown in (
+                "little_patch_choice",
+                "mid_patch_choice",
+                "high_patch_choice",
+                "mostly_patch_choice",
+            ):
+                for name, button in self.elements[
+                    patch_dropdown
+                ].child_button_dicts.items():
+                    if button == event.ui_element:
+                        self.set_preview_cat(name)
+                        return
 
         elif event.type == pygame_gui.UI_BUTTON_PRESSED:
             if event.ui_element == self.elements["save_button"]:
@@ -184,19 +171,11 @@ class WhitePatchToolWindow(ComboToolWindow):
         self.check_current_combos(selection)
 
     def get_selection_list(self):
-        selection = [
-            f"little{p}" for p in self.elements["little_patch_choice"].selected_list
+        return [
+            f"{amount}{p}"
+            for amount in ["little", "mid", "high", "mostly"]
+            for p in self.elements[f"{amount}_patch_choice"].selected_list
         ]
-        selection.extend(
-            [f"mid{p}" for p in self.elements["mid_patch_choice"].selected_list]
-        )
-        selection.extend(
-            [f"high{p}" for p in self.elements["high_patch_choice"].selected_list]
-        )
-        selection.extend(
-            [f"mostly{p}" for p in self.elements["mostly_patch_choice"].selected_list]
-        )
-        return selection
 
     def set_preview_cat(self, name):
         self.preview_cat = self.create_cat(name)
@@ -205,30 +184,6 @@ class WhitePatchToolWindow(ComboToolWindow):
                 self.preview_cat.sprite, ui_scale_dimensions((100, 100))
             )
         )
-
-    def check_current_combos(self, selection):
-        if not selection:
-            self.elements["warning"].set_text(f"")
-            return
-
-        existing_combos = []
-        for name, combo in self.get_combos().items():
-            if set(selection) == set(combo):
-                self.elements["warning"].set_text(
-                    f"This combo already exists as {name}"
-                )
-                existing_combos.clear()
-                break
-
-            elif set(selection).issubset(set(combo)):
-                existing_combos.append(name)
-
-        if existing_combos:
-            self.elements["warning"].set_text(
-                f"This combo is part of {adjust_list_text(existing_combos)}"
-            )
-
-        self.elements["warning"].update_containing_rect_position()
 
     def save_combo(self) -> bool:
         coverage = (
