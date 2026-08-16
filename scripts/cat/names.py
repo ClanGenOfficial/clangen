@@ -244,7 +244,7 @@ class Name:
                 self.prefix = random.choice(self.names_dict["normal_prefixes"])
 
             # prevent prefix duplications from happening
-            if self.prefix in self.prefix_history:
+            if self.prefix in self.prefix_history or not self._usable_name(self.prefix, self.suffix):
                 continue
             else:
                 self.prefix_history.append(self.prefix)
