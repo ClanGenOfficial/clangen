@@ -1,6 +1,6 @@
 {
     "name": "MackerelRecipe",
-    "layer_order": ["1", "2", "3", ["4", "5", "6", "+blend_mode:normal,opacity:100"]],
+    "layer_order": ["1", "2", "3", "4", ["5", "6"]],
     "layers": {
         "6":{
             "group_name": "MACKERELPATTERN",
@@ -8,34 +8,24 @@
         },
         "5":{
             "group_name": "BASICPATTERNGRAD",
-            "color": "shade_1",
-            "opacity": 50
+            "color": "pattern_gradient_top"
         },
         "4":{
             "group_name": "MACKERELPATTERN",
-            "color": "pattern_0"
+            "color": "pattern"
         },
         "3": {
             "group_name": "SIMPLETOPGRAD",
-            "color": "highlight_0",
-            "opacity": 100,
-            "blend_mode": "normal"
+            "color": "base_gradient_top"
         },
         "2": {
             "group_name": "SIMPLEBOTTOMGRAD",
-            "color": "shade_0",
-            "opacity": 100,
-            "blend_mode": "normal"
+            "color": "base_gradient_bottom"
         },
-        "1":
-        {
+        "1":{
             "group_name": "BASEMASK",
-            "color": "base_0",
-            "opacity": 100,
-            "blend_mode": "normal"
+            "color": "base"
         }
     },
-    "exceptions":
-    {
-    }
+    "exceptions": {}
 }

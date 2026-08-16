@@ -15,7 +15,7 @@
         ],
         [
             "SINGLESTRIPEUNDER",
-            "SOKOKEGRAD",
+            "SOKOKEPATTERNGRAD",
             "SOKOKEPATTERN",
             "SOKOKEPATTERNFILL",
             "SMOKEPATTERNGRAD",
@@ -26,7 +26,7 @@
             "ROSETTEPATTERN"
         ],
         [
-            "ROSETTEPATTERNFULL",
+            "ROSETTEPATTERNFILL",
             "MASKEDPATTERN",
             "MASKEDLIGHTPATTERN",
             "MACKERELPATTERN",

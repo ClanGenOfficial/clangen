@@ -1,32 +1,27 @@
 {
     "name": "SmokeRecipe",
-    "layer_order": ["1", "2", "3", "4"],
+    "layer_order": ["1", "2", "3", ["4", "5"]],
     "layers": {
+        "5":{
+            "group_name": "SMOKEPATTERNDARK",
+            "blend_mode": "mask"
+        },
         "4":{
-            "group_name": "SMOKETOPGRAD",
-            "color": "pattern_0"
+            "group_name": "SMOKEPATTERNGRAD",
+            "color": "pattern"
         },
         "3": {
             "group_name": "SMOKEPATTERNDARK",
-            "color": "highlight_0",
-            "opacity": 100,
-            "blend_mode": "normal"
+            "color": "base_gradient_top"
         },
         "2": {
             "group_name": "SMOKEPATTERNLIGHT",
-            "color": "shade_0",
-            "opacity": 100,
-            "blend_mode": "normal"
+            "color": "base_gradient_bottom"
         },
-        "1":
-        {
+        "1": {
             "group_name": "BASEMASK",
-            "color": "base_0",
-            "opacity": 100,
-            "blend_mode": "normal"
+            "color": "base"
         }
     },
-    "exceptions":
-    {
-    }
+    "exceptions": {}
 }

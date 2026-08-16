@@ -113,85 +113,6 @@ def generate_sprite(
 #  generate_sprites() Helper Functions
 # ------------------------------------------------------------------------------------------------------
 
-def blit_with_opacity(target:pygame.Surface, source:pygame.Surface, opacity:int=100, special_flags:int=0):
-    """Blit source onto target with global opacity. """
-
-    # No need to create a copy if opacity is 100. Blit directly. 
-    if opacity == 100:
-        target.blit(source, special_flags=special_flags)
-        return
-
-    temp = source.copy()
-    alpha = (opacity / 100) * 255
-    temp.set_alpha(alpha)
-
-    target.blit(temp, special_flags=special_flags)
-
-def _get_blend_flags(mode:str):
-    """Translate the blend_mode string, as used in the pelt recipes, to the pygame blend flag."""
-
-    blend_modes = {
-            "mask": pygame.BLEND_RGBA_MULT,
-            "multiply": pygame.BLEND_RGB_MULT,
-            "normal": 0
-        }
-
-    return blend_modes.get(mode, 0)
-
-def _find_cat_pelt_value(value:str, cat):
-    """Looks up a value in a cat's Pelt, if needed. Otherwise, return value.
-        Pelt recipes can refer to some value stored in the cat's Pelt, via curly brackets. 
-        This checks for that, and looks up the value."""
-
-    if type(value) is str and value.startswith("{") and value.endswith("}"):
-        value = value[1:-1] # Strip the curly brackets. 
-        return getattr(cat.pelt, value)
-
-    return value
-
-def _get_pelt_recipe(pelt_name:str):
-    """Get the pelt recipe dictionary."""
-
-    # Pelt Names are always captialized. 
-    # However, for some older tortie recipes (generated before 
-    # sprites changed to a layer and mask based system), the tortie_base and 
-    # tortie_pattern values are lowercase. This handles that by capitalizing the first 
-    # letter. Again, this should only be required for torties generated before the 
-    # layer-and-mask based sprite system rewrite. 
-    if type(pelt_name) is str:
-        pelt_name = pelt_name[:1].upper() + pelt_name[1:]
-
-    pelt_recipe_name = sprites.PELT_TO_RECIPE.get(pelt_name)
-    if pelt_recipe_name == None:
-        raise ValueError(f"No Pelt Reciple Mapping for {pelt_name}")
-    
-
-    pelt_recipe = sprites.PELT_RECIPES.get(pelt_recipe_name)
-    if pelt_recipe == None:
-        raise ValueError(f"No Pelt Recipe Found for {pelt_recipe_name}")
-
-    return pelt_recipe
-
-def _apply_recipe_exceptions(pelt_recipe:dict, colour:str) -> dict:
-    """Some pelts have special rules for certain colors. This checks to see if that's the case, and applies the rule."""
-
-    exception = pelt_recipe.get("exceptions",{}).get(colour)
-    if exception is None:
-        return pelt_recipe
-
-    except_recipe = pelt_recipe.copy()
-    # Remove the exceptions, just so there we don't apply an exception again. 
-    except_recipe.pop("exceptions") 
-
-    if "layer_order" in exception:
-        except_recipe["layer_order"] = exception["layer_order"]
-
-    if "layers" in exception:
-        for key, value in exception["layers"].items():
-            except_recipe["layers"][key] = exception["layers"][key] | value
-
-    return except_recipe
-
 def _draw_sprite(
         cat, 
         cat_sprite:int,
@@ -577,9 +498,7 @@ def _build_layers(cat, current_layer, layer_dict:dict, colour:str, sprite:int) -
         # Build the compound layer. 
         for subLayer in current_layer:
             temp, blend_mode, opacity = _build_layers(cat, subLayer, layer_dict, colour, sprite) 
-            pygame.image.save(temp, "step.png")
             blit_with_opacity(layer_surface, temp, opacity, special_flags=_get_blend_flags(blend_mode))
-            pygame.image.save(layer_surface, "current.png")
 
         return (layer_surface, group_blendmode, group_opacity)
 
@@ -607,7 +526,7 @@ def _build_single_layer(cat, layer_info, colour:str, sprite:int) -> tuple[pygame
 
     temp = sprites.sprites[f"{spritesheet}{groupName}{sprite}"]
 
-    palette_dict = sprites.PELT_COLOR_PALLETTES[colour]
+    palette_dict = sprites.PELT_COLOR_PALETTES[colour]
     if recolour:
         new_colour = palette_dict[recolour]
         recolour_surface = layer_surface = pygame.Surface(
@@ -618,6 +537,86 @@ def _build_single_layer(cat, layer_info, colour:str, sprite:int) -> tuple[pygame
         temp = recolour_surface
         
     return temp, layer_info.get("blend_mode"), layer_info.get("opacity",100)
+
+def blit_with_opacity(target:pygame.Surface, source:pygame.Surface, opacity:int=100, special_flags:int=0):
+    """Blit source onto target with global opacity. """
+
+    # No need to create a copy if opacity is 100. Blit directly. 
+    if opacity == 100:
+        target.blit(source, special_flags=special_flags)
+        return
+
+    temp = source.copy()
+    alpha = (opacity / 100) * 255
+    temp.set_alpha(alpha)
+
+    target.blit(temp, special_flags=special_flags)
+
+def _get_blend_flags(mode:str):
+    """Translate the blend_mode string, as used in the pelt recipes, to the pygame blend flag."""
+
+    blend_modes = {
+            "mask": pygame.BLEND_RGBA_MULT,
+            "multiply": pygame.BLEND_RGB_MULT,
+            "normal": 0
+        }
+
+    return blend_modes.get(mode, 0)
+
+def _find_cat_pelt_value(value:str, cat):
+    """Looks up a value in a cat's Pelt, if needed. Otherwise, return value.
+        Pelt recipes can refer to some value stored in the cat's Pelt, via curly brackets. 
+        This checks for that, and looks up the value."""
+
+    if type(value) is str and value.startswith("{") and value.endswith("}"):
+        value = value[1:-1] # Strip the curly brackets. 
+        return getattr(cat.pelt, value)
+
+    return value
+
+def _get_pelt_recipe(pelt_name:str):
+    """Get the pelt recipe dictionary."""
+
+    # Pelt Names are always captialized. 
+    # However, for some older tortie recipes (generated before 
+    # sprites changed to a layer and mask based system), the tortie_base and 
+    # tortie_pattern values are lowercase. This handles that by capitalizing the first 
+    # letter. Again, this should only be required for torties generated before the 
+    # layer-and-mask based sprite system rewrite. 
+    if type(pelt_name) is str:
+        pelt_name = pelt_name[:1].upper() + pelt_name[1:]
+
+    pelt_recipe_name = sprites.PELT_TO_RECIPE.get(pelt_name)
+    if pelt_recipe_name == None:
+        raise ValueError(f"No Pelt Reciple Mapping for {pelt_name}")
+    
+
+    pelt_recipe = sprites.PELT_RECIPES.get(pelt_recipe_name)
+    if pelt_recipe == None:
+        raise ValueError(f"No Pelt Recipe Found for {pelt_recipe_name}")
+
+    return pelt_recipe
+
+def _apply_recipe_exceptions(pelt_recipe:dict, colour:str) -> dict:
+    """Some pelts have special rules for certain colors. This checks to see if that's the case, and applies the rule."""
+
+    exception = pelt_recipe.get("exceptions",{}).get(colour)
+    if exception is None:
+        return pelt_recipe
+
+    except_recipe = pelt_recipe.copy()
+    # Remove the exceptions, just so there we don't apply an exception again. 
+    except_recipe.pop("exceptions") 
+
+    if "layer_order" in exception:
+        except_recipe["layer_order"] = exception["layer_order"]
+
+    if "layers" in exception:
+        for key, value in exception["layers"].items():
+            except_recipe["layers"][key] = exception["layers"][key] | value
+
+    return except_recipe
+
 
 # ------------------------------------------------------------------------------------------------------
 #  Other Sprite Functions

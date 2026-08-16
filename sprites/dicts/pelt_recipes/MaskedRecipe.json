@@ -1,40 +1,35 @@
 {
     "name": "MaskedRecipe",
-    "layer_order": ["1", "2", "3", ["4", "5", "6"]],
+    "layer_order": ["1", "2", "3", "4", ["5", "7"], "6"],
     "layers": {
-        "6":{
+        "7":{
             "group_name": "MASKEDPATTERN",
-            "blend_mode": "mask"
+            "blend_mode":"mask"
+        },
+        "6":{
+            "group_name": "MASKEDLIGHTPATTERN",
+            "color": "base_gradient_top"
         },
         "5":{
             "group_name": "BASICPATTERNGRAD",
-            "color": "shade_1"
+            "color": "pattern"
         },
         "4":{
             "group_name": "MASKEDPATTERN",
-            "color": "pattern_0"
+            "color": "pattern"
         },
         "3": {
             "group_name": "SIMPLETOPGRAD",
-            "color": "highlight_0",
-            "opacity": 100,
-            "blend_mode": "normal"
+            "color": "base_gradient_top"
         },
         "2": {
             "group_name": "SIMPLEBOTTOMGRAD",
-            "color": "shade_0",
-            "opacity": 100,
-            "blend_mode": "normal"
+            "color": "base_gradient_bottom"
         },
-        "1":
-        {
+        "1":{
             "group_name": "BASEMASK",
-            "color": "base_0",
-            "opacity": 100,
-            "blend_mode": "normal"
+            "color": "base"
         }
     },
-    "exceptions":
-    {
-    }
+    "exceptions": {}
 }

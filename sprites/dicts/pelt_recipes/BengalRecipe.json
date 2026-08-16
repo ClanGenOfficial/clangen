@@ -1,41 +1,47 @@
 {
     "name": "BengalRecipe",
-    "layer_order": ["1", "2", "3", ["4", "5", "6", "+blend_mode:normal,opacity:100"]],
+    "layer_order": ["1", "2", "3", "4", "5", ["10", ["8", "9", "+blend_mode:mask"]], "6", "7"],
     "layers": {
-        "6":{
-            "group_name": "BENGALPATTERN",
-            "blend_mode": "mask"
-        },
-        "5":{
+        "10":{
             "group_name": "BASICPATTERNGRAD",
-            "color": "shade_1",
+            "color": "pattern_gradient_top"
+        },
+        "9": {
+            "group_name": "MARBLEDPATTERNFILL",
             "opacity": 50
         },
+        "8":{
+            "group_name": "MARBLEDPATTERN"
+        },
+        "7": {
+            "group_name": "MARBLEDPATTERNLIGHT",
+            "color": "base_gradient_top"
+        },
+        "6":{
+            "group_name": "MARBLEDMUZZLE",
+            "color": "base_gradient_top"
+        },
+        "5":{
+            "group_name": "MARBLEDPATTERN",
+            "color": "pattern"
+        },
         "4":{
-            "group_name": "BENGALPATTERN",
-            "color": "pattern_0"
+            "group_name": "MARBLEDPATTERNFILL",
+            "color": "pattern",
+            "opacity": 50
         },
         "3": {
             "group_name": "BENGALTOPGRAD",
-            "color": "highlight_0",
-            "opacity": 100,
-            "blend_mode": "normal"
+            "color": "base_gradient_top"
         },
         "2": {
             "group_name": "BENGALBOTTOMGRAD",
-            "color": "shade_0",
-            "opacity": 100,
-            "blend_mode": "normal"
+            "color": "base_gradient_bottom"
         },
-        "1":
-        {
+        "1":{
             "group_name": "BASEMASK",
-            "color": "base_0",
-            "opacity": 100,
-            "blend_mode": "normal"
+            "color": "base"
         }
     },
-    "exceptions":
-    {
-    }
+    "exceptions": {}
 }

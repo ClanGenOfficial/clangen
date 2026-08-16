@@ -96,9 +96,9 @@ class Sprites:
         PELT_TO_RECIPE = ujson.loads(read_file.read())
 
     with open(
-            "sprites/dicts/pelt_color_pallettes.json", "r", encoding="utf-8"
+            "sprites/dicts/pelt_color_palettes.json", "r", encoding="utf-8"
     ) as read_file:
-        PELT_COLOR_PALLETTES = ujson.loads(read_file.read())
+        PELT_COLOR_PALETTES = ujson.loads(read_file.read())
 
     with open("sprites/dicts/eye_sprite_data.json", "r", encoding="utf-8") as read_file:
         EYE_DATA = ujson.loads(read_file.read())

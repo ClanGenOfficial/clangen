@@ -4,51 +4,17 @@
     "layers": {
         "3": {
             "group_name": "SIMPLETOPGRAD",
-            "color": "highlight_0",
-            "opacity": 100,
-            "blend_mode": "normal"
+            "color": "base_gradient_top"
         },
         "2": {
             "group_name": "SIMPLEBOTTOMGRAD",
-            "color": "shade_0",
-            "opacity": 100,
-            "blend_mode": "normal"
+            "color": "base_gradient_bottom"
         },
         "1":
         {
             "group_name": "BASEMASK",
-            "color": "base_0",
-            "opacity": 100,
-            "blend_mode": "normal"
+            "color": "base"
         }
     },
-    "exceptions":
-    {
-        "CHOCOLATE": {
-            "layer_order":["1", "2", "3", "4"],
-            "layers":
-            {
-                "4":
-                    {
-                        "groupname": "SimpleBottomGrad",
-                        "color": "shade_1",
-                        "opacity": 50,
-                        "blend_mode": "normal"
-                    }
-            }
-        },
-        "WHITE": {
-            "layer_order":["1", "3"]
-        },
-        "GRAY": {
-            "layers":
-            {
-                "1":
-                    {
-                        "groupname": "BaseMask",
-                        "color": "base_1"
-                    }
-            }
-        }
-    }
+    "exceptions": {}
 }
