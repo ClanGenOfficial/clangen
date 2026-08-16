@@ -7,7 +7,6 @@ from scripts.cat.cats import Cat
 from scripts.clan_package.settings import get_clan_setting
 from scripts.event_class import Single_Event
 from scripts.events_module.pregnancy.build_strings import (
-    rebuild_strings,
     get_pregnancy_strings,
 )
 from scripts.events_module.pregnancy.create_kits import get_amount_of_kits, get_kits
@@ -47,8 +46,6 @@ def handle_zero_moon_pregnant(cat: Cat, other_cat: Optional[Cat] = None):
         # cat is amab, so he just brings some kittens back from who knows where
         _retrieve_secret_kittens(cat)
         return
-
-    rebuild_strings()
 
     # if the other cat is afab and the current cat is amab, make the afab cat pregnant
     if cat.gender == "male" and other_cat is not None and other_cat.gender == "female":

@@ -10,7 +10,7 @@ BREAKUP_STRINGS: Dict = {}
 currently_loaded_lang: str = None
 
 
-def rebuild_strings():
+def _rebuild_strings():
     global PREGNANT_STRINGS, NEWBORN_REL_REACTIONS, BREAKUP_STRINGS, currently_loaded_lang
 
     if currently_loaded_lang == i18n.config.get("locale"):
@@ -29,15 +29,15 @@ def rebuild_strings():
 
 
 def get_pregnancy_strings():
-    rebuild_strings()
+    _rebuild_strings()
     return PREGNANT_STRINGS
 
 
 def get_newborn_strings():
-    rebuild_strings()
+    _rebuild_strings()
     return NEWBORN_REL_REACTIONS
 
 
 def get_breakup_strings():
-    rebuild_strings()
+    _rebuild_strings()
     return BREAKUP_STRINGS
