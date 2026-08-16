@@ -125,7 +125,6 @@ class UIScrollingButtonList(UIModifiedScrollingContainer):
             self.vert_scroll_bar.hide()
 
     def set_selected_list(self, new_list):
-        self.selected_list.clear()
         self.selected_list = new_list
         if self.disable_selection:
             for item in self.selected_list:

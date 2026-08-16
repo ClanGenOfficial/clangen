@@ -29,6 +29,9 @@ class WhitePatchToolWindow(GameWindow):
         super().__init__(
             ui_scale(pygame.Rect((100, 100), (600, 500))),
         )
+        self.current_pose = "adult_short2"
+        self.selected_combo = []
+
         self.elements = {}
 
         sprites.create_patch_combo(
@@ -120,6 +123,22 @@ class WhitePatchToolWindow(GameWindow):
             multiple_choice=False,
         )
 
+        self.elements["pose_choice"] = UIScrollingDropDown(
+            ui_scale(pygame.Rect((50, 30), (170, 34))),
+            dropdown_dimensions=ui_scale_dimensions((170, 250)),
+            parent_text="pose choice",
+            item_list=[p for p in sprites.POSE_DATA["poses"] if p],
+            manager=MANAGER,
+            container=self,
+            anchors={
+                "top_target": self.elements["existing_combos"].parent_button,
+                "left_target": self.elements["preview_cat"],
+            },
+            child_trigger_close=True,
+            starting_height=3,
+            multiple_choice=False,
+        )
+
         self.elements["combo_coverage"] = UIScrollingDropDown(
             ui_scale(pygame.Rect((40, 360), (150, 34))),
             dropdown_dimensions=ui_scale_dimensions((150, 100)),
@@ -186,15 +205,51 @@ class WhitePatchToolWindow(GameWindow):
                 self.set_combo_selection(selection)
                 return
 
-            if (
+            elif (
                 self.elements["existing_combos"].child_button_container
                 == event.ui_element
             ):
                 selection = self.elements["existing_combos"].selected_list
                 if not selection:
                     return
-                self.set_combo_selection(self.get_combos()[selection[0]])
+                new_selection = [
+                    s.replace("little", "")
+                    .replace("mid", "")
+                    .replace("high", "")
+                    .replace("mostly", "")
+                    for s in self.get_combos()[selection[0]]
+                ]
+                for dropdown in (
+                    self.elements["little_patch_choice"],
+                    self.elements["mid_patch_choice"],
+                    self.elements["high_patch_choice"],
+                    self.elements["mostly_patch_choice"],
+                ):
+                    current_selection = dropdown.selected_list
+                    updated = []
+
+                    for i in dropdown.item_list:
+                        if i in new_selection and i not in current_selection:
+                            updated.append(i)
+                    dropdown.set_selected_list(updated)
+
+                self.set_combo_selection(self.get_selection_list())
                 return
+
+            elif (
+                event.ui_element == self.elements["pose_choice"].child_button_container
+            ):
+                selection = self.elements["pose_choice"].selected_list
+                if not selection:
+                    return
+                self.current_pose = selection[0]
+
+                self.example_cat = self.create_cat("TEST")
+                self.elements["example_cat"].set_image(
+                    pygame.transform.scale(
+                        self.example_cat.sprite, ui_scale_dimensions((200, 200))
+                    )
+                )
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
             for name, button in self.elements[
                 "little_patch_choice"
@@ -369,7 +424,7 @@ class WhitePatchToolWindow(GameWindow):
                 tortie_colour=None,
                 tint="pink",
                 skin="DARK",
-                adult_sprite="adult_short2",
+                adult_sprite=self.current_pose,
             ),
         )
 
