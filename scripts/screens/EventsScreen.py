@@ -61,9 +61,6 @@ class EventsScreen(Screens):
     health_events = ""
     other_clans_events = ""
     misc_events = ""
-    display_text = (
-        "<center>See which events are currently happening in the Clan.</center>"
-    )
     display_events = []
     tabs = [
         "all events",

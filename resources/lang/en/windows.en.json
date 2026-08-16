@@ -62,6 +62,7 @@
         "default_death_pronounless": "This cat was killed by a higher power.",
         "all_lives_leader": "Take all the leader's lives",
         "all_lives_leader_tooltip": "If this is checked, the leader will lose all {PRONOUN/m_c/poss} lives",
+        "begin_update_title": "New Update Available!",
         "update_message": "Update in progress.",
         "downloading_update": "Downloading update...",
         "restart_announce": "The game will automatically restart in %{count}...",
@@ -115,13 +116,15 @@
         "pos_clan_rel_log": "The Clan gained %{value_list} towards %{name_list}.",
         "neg_clan_rel_log": "The Clan lost %{value_list} towards %{name_list}.",
         "cruel_card_limit": "You can only choose %{amount} cards. Remove a card to choose a new one.",
-        "cruel_cards_conflict": {
+        "cruel_card_conflict": {
             "one": "%{new_card} conflicts with %{conflicting_cards_list}. You can either <b>keep</b> %{conflicting_cards_list} or you can <b>replace</b> it with %{new_card}.",
             "many": "%{new_card} conflicts with %{conflicting_cards_list}. You can either <b>keep</b> the already chosen cards or you can <b>replace</b> them with %{new_card}."
 
         },
         "cruel_locked_action": "This action is locked by one or more Cruel Season cards that are currently in play.",
         "deck_list_conflict": "Error: Adding these cards would cause a card conflict.",
-        "deck_list_limit": "Error: This deck would put you over the %{amount} card limit."
+        "deck_list_limit": "Error: This deck would put you over the %{amount} card limit.",
+        "randomize_prefix_tooltip": "Randomize the prefix",
+        "randomize_suffix_tooltip": "Randomize the suffix"
     }
 }

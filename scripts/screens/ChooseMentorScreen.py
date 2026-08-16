@@ -122,10 +122,11 @@ class ChooseMentorScreen(Screens):
         self.mentor = Cat.fetch_cat(self.the_cat.mentor)
 
         self.heading = pygame_gui.elements.UITextBox(
-            "Choose a new mentor for " + str(self.the_cat.name),
+            "screens.choose_mentor.heading",
             ui_scale(pygame.Rect((150, 25), (500, 40))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             manager=MANAGER,
+            text_kwargs={"m_c": self.the_cat},
         )
         self.info = pygame_gui.elements.UITextBox(
             "screens.choose_mentor.info",
