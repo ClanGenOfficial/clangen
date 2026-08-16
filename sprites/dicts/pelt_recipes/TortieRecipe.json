@@ -15,5 +15,6 @@
             "pelt_name": "{tortie_base}",
             "palette": "{colour}"
         }
-    }
+    },
+    "exceptions": []
 }

@@ -26,22 +26,22 @@
             "color": "pattern"
         },
         "4":{
-            "group_name": "MARBLEDPATTERNFILL",
+            "group_name": "BENGALPATTERNFILL",
             "color": "pattern",
             "opacity": 50
         },
         "3": {
             "group_name": "BENGALTOPGRAD",
-            "color": "base_gradient_top"
+            "color": "exotic_base_gradient_top"
         },
         "2": {
             "group_name": "BENGALBOTTOMGRAD",
-            "color": "base_gradient_bottom"
+            "color": "exotic_base_gradient_bottom"
         },
         "1":{
             "group_name": "BASEMASK",
-            "color": "base"
+            "color": "exotic_base"
         }
     },
-    "exceptions": {}
+    "exceptions": []
 }

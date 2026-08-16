@@ -458,7 +458,7 @@ def _draw_sprite(
 def _build_pelt(cat, pelt_recipe:dict, colour:str, sprite:int) -> pygame.Surface:
     """Builds a image out of a pelt_recipe and colour"""
 
-    pelt_recipe = _apply_recipe_exceptions(pelt_recipe, colour)
+    pelt_recipe = _apply_recipe_exceptions(pelt_recipe, colour, sprite)
     surface, blendmode, opacity = _build_layers(cat, pelt_recipe.get("layer_order"), pelt_recipe.get("layers"), colour, sprite)
 
     return surface
@@ -597,25 +597,53 @@ def _get_pelt_recipe(pelt_name:str):
 
     return pelt_recipe
 
-def _apply_recipe_exceptions(pelt_recipe:dict, colour:str) -> dict:
-    """Some pelts have special rules for certain colors. This checks to see if that's the case, and applies the rule."""
+def _apply_recipe_exceptions(pelt_recipe:dict, colour:str, sprite:int) -> dict:
+    """Some pelts have special rules for certain colors and/or poses. This checks to see if that's the case, and applies the rule."""
+    MAX_MATCHES = 2
 
-    exception = pelt_recipe.get("exceptions",{}).get(colour)
-    if exception is None:
-        return pelt_recipe
+    exceptions = pelt_recipe.get("exceptions", None)
 
-    except_recipe = pelt_recipe.copy()
-    # Remove the exceptions, just so there we don't apply an exception again. 
-    except_recipe.pop("exceptions") 
+    # We want to find the best match - that exception were we meet the most conditions. 
+    match = None
+    match_num = 0
+    for one_ex in exceptions:
+        match_num = 0
 
-    if "layer_order" in exception:
-        except_recipe["layer_order"] = exception["layer_order"]
+        # Check to see if it matches at least one color condition. 
+        color_conditions = one_ex.get("colors", "")
+        if (type(color_conditions) is list and colour in color_conditions) \
+            or color_conditions == colour:
+            match_num += 1 
 
-    if "layers" in exception:
-        for key, value in exception["layers"].items():
-            except_recipe["layers"][key] = exception["layers"][key] | value
+        pose = sprites.POSE_DATA[int(sprite)]
+        pose_conditions = one_ex.get("poses", "")
+        if (type(pose_conditions) is list and pose in color_conditions) \
+            or pose_conditions == pose:
+            match_num += 1 
 
-    return except_recipe
+        if match > 0:
+            match = one_ex
+
+        if match == MAX_MATCHES:
+            break
+
+
+    if match:
+        # If we reached here, the exception applies
+        except_recipe = pelt_recipe.copy()
+        # Remove the exceptions, just so there we don't apply an exception again. 
+        except_recipe.pop("exceptions") 
+
+        if "layer_order" in one_ex:
+            except_recipe["layer_order"] = one_ex["layer_order"]
+
+        if "layers" in one_ex:
+            for key, value in one_ex["layers"].items():
+                except_recipe["layers"][key] = one_ex["layers"][key] | value
+
+        return except_recipe
+
+    return pelt_recipe
 
 
 # ------------------------------------------------------------------------------------------------------
