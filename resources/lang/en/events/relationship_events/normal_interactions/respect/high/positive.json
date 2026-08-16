@@ -93,12 +93,14 @@
     {
         "id": "respect_inc_high3",
         "strings": [
-            "m_c defends r_c from a Clanmate's rude remarks.",
             "r_c's name comes up in a heated conversation, and m_c is the first to stand up for {PRONOUN/r_c/object}.",
             "In the middle of an argument, m_c tells r_c that they'll still always be friends.",
-            "m_c calls out a Clanmate for spreading a rumor about r_c.",
             "m_c and r_c agree with each other when no one else does."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
@@ -176,6 +178,10 @@
             "m_c can hear the truth in r_c's words when {PRONOUN/r_c/subject} {VERB/r_c/talk/talks} about protecting others.",
             "m_c reconsiders {PRONOUN/m_c/poss} jealousy of r_c."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
@@ -198,6 +204,10 @@
             "m_c and r_c realize their jealousy of each other is unfounded.",
             "m_c and r_c have a tough conversation about their envy of each other."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [
@@ -235,6 +245,10 @@
             "m_c flinches less in r_c's presence than usual.",
             "Though m_c isn't sure {PRONOUN/m_c/subject}'ll ever respect r_c, {PRONOUN/m_c/subject} {VERB/m_c/decide/decides} to try to lay some of {PRONOUN/m_c/poss} resentment to rest."
         ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c": {}
+        },
         "relationship_constraint": [
             {
                 "cats_from": [

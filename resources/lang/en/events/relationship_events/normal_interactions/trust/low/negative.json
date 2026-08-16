@@ -5,7 +5,6 @@
             "m_c doesn't think that r_c has been completely honest lately.",
             "m_c thinks r_c has been acting strangely.",
             "r_c won't tell m_c what's got {PRONOUN/r_c/object} acting weird.",
-            "m_c sees r_c whispering suspiciously to a Clanmate.",
             "m_c smells something strange on r_c.",
             "m_c feels like r_c has been quieter than usual.",
             "m_c suspects r_c lied about something trivial.",
@@ -13,7 +12,6 @@
             "Though m_c asks around, {PRONOUN/m_c/subject} can't find r_c anywhere.",
             "m_c asks r_c a simple question, but r_c reacts strangely to it.",
             "r_c forgot something that m_c asked {PRONOUN/r_c/object} to remember.",
-            "r_c won't stop looking at a specific Clanmate while talking to m_c.",
             "m_c has a weird feeling about something r_c said the other day."
         ]
     },
@@ -21,8 +19,6 @@
         "id": "trust_de_low2",
         "strings": [
             "m_c shared a embarrassing story about r_c {PRONOUN/m_c/subject} {VERB/m_c/were/was} asked not to share...",
-            "m_c's friend doesn't trust r_c.",
-            "r_c learns that m_c told a Clanmate one of {PRONOUN/r_c/poss} secrets.",
             "r_c snitches on m_c for something minor.",
             "m_c saw r_c hide something before talking to {PRONOUN/m_c/object}.",
             "r_c won't tell m_c what {PRONOUN/r_c/subject} ate this morning.",

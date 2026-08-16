@@ -4,7 +4,6 @@
         "strings": [
             "m_c bristles after being scolded by r_c.",
             "r_c laughs at something m_c said that shouldn't have been laughed at.",
-            "m_c sees r_c neglect a Clanmate.",
             "m_c doesn't think that r_c's smile is genuine.",
             "Every muscle in m_c's body tenses when r_c walks by.",
             "m_c keeps having bad dreams about r_c.",
@@ -13,8 +12,7 @@
             "r_c keeps pacing around the clearing late at night and m_c is the only one who notices.",
             "r_c told m_c something awful, and m_c may never look at {PRONOUN/r_c/object} quite the same.",
             "m_c is discomforted by r_c's muttering.",
-            "m_c feels extremely unsettled when r_c looks at {PRONOUN/m_c/object}.",
-            "m_c can't stop thinking about the way r_c glared at {PRONOUN/m_c/poss} Clanmate."
+            "m_c feels extremely unsettled when r_c looks at {PRONOUN/m_c/object}."
         ]
     },
     {

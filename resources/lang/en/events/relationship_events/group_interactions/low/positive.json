@@ -1,5 +1,173 @@
 [
     {
+        "id": "group_3_pos_comfortincrease",
+        "strings": [
+            "r_c1 shows m_c a side of r_c2 that {PRONOUN/m_c/subject} never noticed.",
+            "m_c learns something new about r_c2 from r_c1."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["r_c1"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["understands"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["comfort"],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "id": "group_3_pos_wonover",
+        "strings": [
+            "m_c talks to r_c2 and begins to understand why others like r_c1.",
+            "m_c notices that r_c2 speaks very highly of r_c1.",
+            "r_c2 convinces m_c to give r_c1 another chance."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {},
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "constraints": ["dislikes"]
+            },
+            {
+                "cats_from": ["r_c2"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "constraints": ["enjoys", "understands"]
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": false,
+                "constraints": ["listens_to"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": 10
+            }
+        ]
+    },
+    {
+        "id": "group_3_pos_helpfrommediator",
+        "strings": [
+            "m_c asks r_c1 to help {PRONOUN/m_c/object} find the right words to say to r_c2 after a dispute.",
+            "m_c asks r_c1 for help resolving an argument with r_c2.",
+            "m_c and r_c2 seek r_c1's help mediating a tense discussion they're having."
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {
+                "status": ["mediator", "mediator apprentice", "elder"]
+            },
+            "r_c2": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "constraints": ["listens_to"]
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": true,
+                "constraints": ["likes"]
+            }
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["m_c", "r_c2"],
+                "cats_to": ["r_c1"],
+                "mutual": false,
+                "values": ["respect"],
+                "amount": 5
+            },
+            {
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c2"],
+                "mutual": true,
+                "values": ["like"],
+                "amount": 5
+            }
+        ]
+    },
+    {
+        "id": "group_3_pos_pranksters",
+        "strings": [
+            "m_c convinces r_c1 to help {PRONOUN/m_c/object} pull a prank on r_c2.",
+            "m_c and r_c1's antics disturb r_c2's nap."
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "troublesome",
+                        "childish"
+                    ]
+                }
+            },
+            "r_c1": {
+                "stat": {
+                    "trait": [
+                        "-strict", "-wise", "-careful"
+                    ]
+                }
+            }
+        },
+        "relationship_changes": [
+            {
+                "cats_from": [
+                    "r_c1"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "like"
+                ],
+                "amount": 10
+            },
+            {
+                "cats_from": [
+                    "r_c2"
+                ],
+                "cats_to": [
+                    "m_c", "r_c1"
+                ],
+                "mutual": false,
+                "values": [
+                    "like"
+                ],
+                "amount": -5
+            }
+        ]
+    },
+    {
         "id": "group_3_neutral_talk",
         "strings": [
 			"m_c confesses to r_c1 that {PRONOUN/m_c/subject} {VERB/m_c/have/has} feelings for r_c2.",
