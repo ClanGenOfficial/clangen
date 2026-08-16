@@ -28,7 +28,7 @@
         [
             "ROSETTEPATTERNFILL",
             "MASKEDPATTERN",
-            "MASKEDLIGHTPATTERN",
+            "MASKEDPATTERNLIGHT",
             "MACKERELPATTERN",
             "CLASSICPATTERN",
             "AGOUTIPATTERN",
@@ -41,11 +41,11 @@
             "BENGALMUZZLE",
             "MARBLEDPATTERN",
             "MARBLEDPATTERNLIGHT",
-            "MARBLEDMUZZLE",
             "MARBLEDPATTERNFILL",
             "FRECKLEDPATTERNBODY",
             "FRECKLEDPATTERNBACK",
-            "FRECKLEDPATTERNGRAD"
+            "FRECKLEDPATTERNGRAD",
+            "BENGALPATTERNFILL"
         ]
 
     ]

@@ -7,7 +7,7 @@
             "blend_mode":"mask"
         },
         "6":{
-            "group_name": "MASKEDLIGHTPATTERN",
+            "group_name": "MASKEDPATTERNLIGHT",
             "color": "base_gradient_top"
         },
         "5":{
