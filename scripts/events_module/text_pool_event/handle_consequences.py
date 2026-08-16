@@ -641,10 +641,8 @@ def _get_herb_increase_amount(
             amount_gathered += randint(*random_variance)
 
         # give skill buffs
-        if c.skills.primary.path == SkillPath.CLEVER:
-            amount_gathered += get_config("clan_resources.herbs.primary_clever")
-        elif c.skills.secondary and c.skills.secondary.path == SkillPath.CLEVER:
-            amount_gathered += get_config("clan_resources.herbs.secondary_clever")
+        cat_skills = c.skills.get_all()
+        amount_gathered += cat_skills.get(SkillPath.SENSE, 0)
 
         # now add it to the total increase
         total_increase += amount_gathered
