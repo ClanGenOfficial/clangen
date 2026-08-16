@@ -1,22 +1,6 @@
 {
-    "little": {
-        "EXAMPLE": [
-            "littleTIP",
-            "midBEARD"
-        ]
-    },
-    "mid": {
-        "TESTEST": [
-            "midDAMIEN",
-            "midDIGIT",
-            "midMISS"
-        ]
-    },
-    "high": {
-        "CURVE": [
-            "midDIGIT",
-            "midMISS"
-        ]
-    },
+    "little": {},
+    "mid": {},
+    "high": {},
     "mostly": {}
 }
