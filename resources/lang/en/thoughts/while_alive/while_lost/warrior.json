@@ -1,6 +1,6 @@
 [
     {
-        "id": "lost_warrior_thoughts",
+        "event_id": "lost_warrior_thoughts",
         "strings": [
             "Hopes that the Clan's kits are doing well",
             "Misses the warmth of the warriors' den",
@@ -9,7 +9,7 @@
         ]
     },
     {
-        "id": "lost_warrior_to_apprentices",
+        "event_id": "lost_warrior_to_apprentices",
         "strings": [
             "Wonders if the apprentices of the Clan are now warriors"
         ],

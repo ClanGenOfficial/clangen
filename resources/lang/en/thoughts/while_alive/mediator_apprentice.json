@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_mediator_apprentice",
+        "event_id": "gen_mediator_apprentice",
         "strings": [
             "Is enjoying learning about mediating",
             "Is learning how to deal with argumentative Clanmates",
@@ -16,7 +16,7 @@
         ]
     },
     {
-        "id": "mediator_app_alive_mediator_app",
+        "event_id": "mediator_app_alive_mediator_app",
         "strings": [
             "Had an argument with another mediator apprentice",
             "Doesn't agree with r_c's style of mediation",
@@ -34,7 +34,7 @@
         }
     },
     {
-        "id": "mediator_app_alive_mediator",
+        "event_id": "mediator_app_alive_mediator",
         "strings": [
             "Is amazed at how well r_c mediated a fight between Clanmates",
             "Is amazed at how well r_c mediated a territory dispute",
@@ -55,7 +55,7 @@
         }
     },
     {
-        "id": "mediator_app_alive_apprentice",
+        "event_id": "mediator_app_alive_apprentice",
         "strings": [
             "Successfully solved an argument between {PRONOUN/m_c/poss} denmates",
             "Tried to solve an argument between {PRONOUN/m_c/poss} denmates but only made it worse",
@@ -77,7 +77,7 @@
         }
     },
     {
-        "id": "righteous_mediator_apprentice",
+        "event_id": "righteous_mediator_apprentice",
         "strings": [
             "Was scolded for taking sides while mediating arguments recently",
             "Is being reminded to be neutral in mediation",
@@ -96,7 +96,7 @@
         }
     },
     {
-        "id": "vengeful_mediator_apprentice",
+        "event_id": "vengeful_mediator_apprentice",
         "strings": [
             "Takes the opposite side of a cat that was rude to {PRONOUN/m_c/object}",
             "Considers letting an argument continue after being so rudely blown off"
@@ -112,7 +112,7 @@
         }
     },
     {
-        "id": "mediator_apprentice_alive_romantic_crush",
+        "event_id": "mediator_apprentice_alive_romantic_crush",
         "strings": [
             "Wonders if {PRONOUN/m_c/subject} can use {PRONOUN/m_c/poss} new skills to impress r_c",
             "Hopes r_c will be swayed by {PRONOUN/m_c/poss} gallantry",

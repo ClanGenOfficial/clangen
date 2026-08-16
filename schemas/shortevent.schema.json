@@ -462,6 +462,10 @@
         {
           "pattern": "^-?n_c:[0-9]+$",
           "type": "string"
+        },
+        {
+          "pattern": "^-?(n_c|r_c|s_c)[0-9]+$",
+          "type": "string"
         }
       ],
       "title": "GatherCat"
@@ -476,18 +480,6 @@
         "-p_l",
         "s_c",
         "-s_c",
-        "app1",
-        "-app1",
-        "app2",
-        "-app2",
-        "app3",
-        "-app3",
-        "app4",
-        "-app4",
-        "app5",
-        "-app5",
-        "app6",
-        "-app6",
         "clan",
         "-clan",
         "some_clan",
@@ -511,7 +503,21 @@
         "high_aggress",
         "-high_aggress",
         "low_aggress",
-        "-low_aggress"
+        "-low_aggress",
+        "patrol_cats",
+        "-patrol_cats",
+        "apprentice",
+        "-apprentice",
+        "medicine cat apprentice",
+        "-medicine cat apprentice",
+        "warrior",
+        "-warrior",
+        "medicine cat",
+        "-medicine cat",
+        "deputy",
+        "-deputy",
+        "leader",
+        "-leader"
       ],
       "title": "GatherCatEnum",
       "type": "string"
@@ -1370,6 +1376,8 @@
     },
     "RelationshipStatus": {
       "enum": [
+        "can_romance",
+        "-can_romance",
         "strangers",
         "siblings",
         "-siblings",

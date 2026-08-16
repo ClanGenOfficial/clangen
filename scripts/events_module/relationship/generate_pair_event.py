@@ -19,7 +19,7 @@ from scripts.events_module.event_filters import (
     event_for_tags,
 )
 from scripts.events_module.text_adjust import process_text
-from scripts.events_module.text_pool_event import TextPoolEvent
+from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 
@@ -247,7 +247,7 @@ def _get_event(
     possible_events = [
         e
         for e in possible_events
-        if event_for_cat(e.involved_cats.get("m_c", {}), main_cat, event_id=e.id)
+        if event_for_cat(e.involved_cats.get("m_c", {}), main_cat, event_id=e.event_id)
     ]
 
     possible_events = [
@@ -257,7 +257,7 @@ def _get_event(
             e.involved_cats.get("r_c", {}),
             other_cat,
             involved_cat_dict={"m_c": main_cat},
-            event_id=e.id,
+            event_id=e.event_id,
         )
     ]
 
@@ -435,7 +435,7 @@ def _load_file(path) -> list[TextPoolEvent]:
         for t in load_lang_resource(path):
             loaded_events[path].append(
                 TextPoolEvent(
-                    id=t.get("id"),
+                    event_id=t.get("id"),
                     location=t.get("location", []),
                     season=t.get("season", []),
                     tags=t.get("tags", []),

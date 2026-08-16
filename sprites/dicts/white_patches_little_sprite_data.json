@@ -125,12 +125,14 @@
             "TAIL_REVERSE_MIN",
             "TAIL_MIN_LOW",
             "TAIL_SMALL_LOW",
-            "TAIL_MID_LOW"
+            "TAIL_MID_LOW",
+            "TAIL_REVERSE_HALF_LOW",
+            "TAIL_REVERSE_MIN_LOW"
         ],
         [
-            "TAIL_REVERSE_HALF_LOW",
-            "TAIL_REVERSE_MIN_LOW",
             "TAIL_UNDER",
+            "TAIL_HIGH_RING",
+            "TAIL_MID_RING",
             "TAIL_LOW_RING",
             "LOCKET",
             "CHEST_MIN",
