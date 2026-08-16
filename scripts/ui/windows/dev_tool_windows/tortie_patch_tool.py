@@ -49,19 +49,22 @@ class TortiePatchToolWindow(ComboToolWindow):
     def process_event(self, event):
         super().process_event(event)
         if event.type == SELECTION_CHANGED:
-            selection = self.elements["patch_choice"].selected_list
-            sprites.create_patch_combo(
-                combos={"TEST": selection},
-                sheet_name="patches_tortie",
-            )
-            self.example_cat = self.create_cat("TEST")
-            self.elements["example_cat"].set_image(
-                pygame.transform.scale(
-                    self.example_cat.sprite, ui_scale_dimensions((200, 200))
-                )
-            )
-            self.elements["chosen_patches"].set_text(str(selection))
-            self.check_current_combos(selection)
+            if event.ui_element == self.elements["patch_choice"].child_button_container:
+                selection = self.elements["patch_choice"].selected_list
+                self.set_combo_selection(selection)
+                return
+            elif (
+                self.elements["existing_combos"].child_button_container
+                == event.ui_element
+            ):
+                selection = self.elements["existing_combos"].selected_list
+                if not selection:
+                    return
+                new_selection = self.get_combos()[selection[0]]
+                self.elements["patch_choice"].set_selected_list(new_selection)
+                self.set_combo_selection(new_selection)
+                return
+
         elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
             for name, button in self.elements[
                 "patch_choice"
@@ -85,6 +88,20 @@ class TortiePatchToolWindow(ComboToolWindow):
             elif event.ui_element == self.elements["clear_button"]:
                 self.elements["patch_choice"].set_selected_list([])
                 self.elements["existing_combos"].set_selected_list([])
+
+    def set_combo_selection(self, selection):
+        sprites.create_patch_combo(
+            combos={"TEST": selection},
+            sheet_name="patches_tortie",
+        )
+        self.example_cat = self.create_cat("TEST")
+        self.elements["example_cat"].set_image(
+            pygame.transform.scale(
+                self.example_cat.sprite, ui_scale_dimensions((200, 200))
+            )
+        )
+        self.elements["chosen_patches"].set_text(str(selection))
+        self.check_current_combos(selection)
 
     def check_current_combos(self, selection):
         if not selection:
