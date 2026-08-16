@@ -6071,7 +6071,66 @@
                         "backstory:stolenkit3"
                     ]
                 ],
-                "frequency": 4
+                "frequency": 4,
+                "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                            ],
+                        "cats_from": [
+                            "n_c:0",
+                            "n_c:1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like", 
+                            "comfort"                       
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_to kidnapped cat_from."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": [
+                            "clan",
+                            "high_aggress",
+                            "low_lawful",
+                            "-patrol",
+                            "-n_c:0",
+                            "-n_c:1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to abducted kits from a rival clan."
+                        }
+                    },
+                    {    
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "cats_from": [
+                            "n_c:1"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "comfort",
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 20,
+                        "log": {
+                            "cats_to": "cat_to was glad that cat_from was with {PRONOUN/cat_to/object} when they were brought to a hostile place.",
+                            "cats_from": "cat_from was glad that cat_to was with {PRONOUN/cat_to/object} when they were brought to a hostile place."
+                            
+                        }
+                    }
+                ]
             }
         ]
     }

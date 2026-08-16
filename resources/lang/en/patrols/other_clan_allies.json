@@ -1354,7 +1354,66 @@
                         "backstory:stolenkit3"
                     ]
                 ],
-                "frequency": 3
+                "frequency": 3,
+                "relationships": [
+                    {  
+                        "cats_to": [
+                            "patrol"
+                            ],
+                        "cats_from": [
+                            "n_c:0",
+                            "n_c:1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like", 
+                            "comfort"                       
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_to kidnapped cat_from."
+                            }
+                        },
+                        {
+                        "cats_to": [
+                            "n_c:0"
+                        ],
+                        "cats_from": [
+                            "n_c:1"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "comfort",
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 20,
+                        "log": {
+                            "cats_to": "cat_to was glad that cat_from was with {PRONOUN/cat_to/object} when they were brought to a strange place.",
+                            "cats_from": "cat_from was glad that cat_to was with {PRONOUN/cat_to/object} when they were brought to a strange place."
+                        }
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": [
+                            "clan",
+                            "high_social",
+                            "high_lawful",
+                            "-patrol",
+                            "-n_c:0",
+                            "-n_c:1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "like"
+                        ],
+                        "amount": -20,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to abducted kits from their ally."
+                        }
+                    }
+                ]
             },
             {
                 "text": "p_l gasps at seeing the two kits. How did they get so far from camp? Ordering the patrol to bring the kits back to camp, p_l doesn't notice the patrol exchange glances before keeping silent as they steal the kits from o_c_n.",
@@ -1383,7 +1442,9 @@
                             "s_c"
                         ],
                         "cats_from": [
-                            "multi"
+                            "multi",
+                            "-n_c:0",
+                            "-n_c:1"
                         ],
                         "mutual": false,
                         "values": [
