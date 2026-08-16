@@ -20,7 +20,7 @@ from scripts.models.text_pool_event.relationship_constraint_dict import (
 
 class PatrolSchemaItem(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    id: str = Field(..., description="Unique string used to identify the patrol.")
+    event_id: str = Field(..., description="Unique string used to identify the patrol.")
     location: Union[Location, MISSING] = Field(
         MISSING,
         description="Constrains the event to only occur if a player chooses a specific biome.",

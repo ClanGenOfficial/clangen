@@ -1430,9 +1430,9 @@
     "PatrolSchemaItem": {
       "additionalProperties": false,
       "properties": {
-        "id": {
+        "event_id": {
           "description": "Unique string used to identify the patrol.",
-          "title": "Id",
+          "title": "Event Id",
           "type": "string"
         },
         "location": {
@@ -1578,7 +1578,7 @@
         }
       },
       "required": [
-        "id",
+        "event_id",
         "types",
         "patrol_art",
         "frequency",
