@@ -7,7 +7,7 @@ from scripts.debug_commands.utils import (
     add_multiple_lines_to_log,
 )
 from scripts.game_structure import game
-from scripts.events_module.relationship import pregnancy_events
+from scripts.events_module.pregnancy import pregnancy_events
 
 
 def get_cat_from_name_or_id(nameid: str) -> Cat:

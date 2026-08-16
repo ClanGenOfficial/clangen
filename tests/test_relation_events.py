@@ -15,7 +15,7 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan import Clan
-from scripts.events_module.relationship import pregnancy_events
+from scripts.events_module.pregnancy import pregnancy_events
 
 cat_factory = TestCatFactory()
 
@@ -119,7 +119,7 @@ class CanHaveKits(unittest.TestCase):
         # then
         self.assertFalse(pregnancy_events.check_if_can_have_kits(cat))
 
-    @patch("scripts.events_module.relationship.pregnancy_events.check_if_can_have_kits")
+    @patch("scripts.events_module.pregnancy.check_parents.check_if_can_have_kits")
     def test_no_kit_setting(self, check_if_can_have_kits):
         # given
         test_clan = Clan(save_id="clan")
@@ -168,7 +168,7 @@ class SameSexAdoptions(unittest.TestCase):
 
 
 class Pregnancy(unittest.TestCase):
-    @patch("scripts.events_module.relationship.pregnancy_events.check_if_can_have_kits")
+    @patch("scripts.events_module.pregnancy.check_parents.check_if_can_have_kits")
     def test_single_cat_female(self, check_if_can_have_kits):
         # given
         clan = Clan(save_id="clan")
@@ -184,7 +184,7 @@ class Pregnancy(unittest.TestCase):
         # then
         self.assertIn(cat.ID, clan.pregnancy_data.keys())
 
-    @patch("scripts.events_module.relationship.pregnancy_events.check_if_can_have_kits")
+    @patch("scripts.events_module.pregnancy.check_parents.check_if_can_have_kits")
     def test_pair(self, check_if_can_have_kits):
         # given
         clan = Clan(save_id="clan")
