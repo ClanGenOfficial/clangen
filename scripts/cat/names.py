@@ -213,7 +213,7 @@ class Name:
                 2
             )  # Chance for True is '1/4'
 
-        named_after_biome_ = not random.getrandbits(3)  # chance for True is 1/8
+        named_after_biome = not random.getrandbits(3)  # chance for True is 1/8
 
         # Add possible prefix categories to list.
         possible_prefix_categories = []
@@ -233,8 +233,8 @@ class Name:
         if (
             named_after_appearance
             and possible_prefix_categories
-            and not named_after_biome_
-            or named_after_biome_
+            and not named_after_biome
+            or named_after_biome
             and possible_prefix_categories
         ):
             prefix_category = random.choice(possible_prefix_categories)
