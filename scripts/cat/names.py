@@ -296,10 +296,6 @@ class Name:
             if self._usable_name(self.prefix, self.suffix):
                 return
 
-    def change_name(self, prefix, suffix):
-        self.prefix = prefix
-        self.suffix = suffix
-
     def get_specsuffix_name(self, rank: CatRank = CatRank.LEADER):
         """
         Return the cat's name with the appropriate special suffix. If no specsuffix is given for that rank, returns
