@@ -33,7 +33,6 @@ class Name:
         specsuffix_hidden=False,
         load_existing_name=False,
         cat=None,
-        pelt=None,
     ):
         self.load_localized_names()
         self.prefix = prefix
@@ -42,22 +41,16 @@ class Name:
 
         self.cat = cat
 
-        if pelt is not None:
-            color = pelt.colour
-            eyes = pelt.eye_colour
-            pelt = pelt.name
-            tortie_pattern = pelt.tortie_pattern
-        else:
-            try:
-                color = cat.pelt.colour
-                eyes = cat.pelt.eye_colour
-                pelt = cat.pelt.name
-                tortie_pattern = cat.pelt.tortie_pattern
-            except AttributeError:
-                color = None
-                eyes = None
-                pelt = None
-                tortie_pattern = None
+        try:
+            color = cat.pelt.colour
+            eyes = cat.pelt.eye_colour
+            pelt = cat.pelt.name
+            tortie_pattern = cat.pelt.tortie_pattern
+        except AttributeError:
+            color = None
+            eyes = None
+            pelt = None
+            tortie_pattern = None
 
         name_fixpref = False
         # Set prefix
