@@ -7,6 +7,7 @@
         "quit": "quit",
         "event_edit": "event edit",
         "tortie_patch": "add tortie patch",
+        "white_patch": "add white patch",
         "bug_report": "report a bug!",
         "edit_deaths": "edit deaths",
         "edit_injuries": "edit injuries",
