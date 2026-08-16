@@ -350,3 +350,5 @@ class Name:
         if constants.CONFIG["fun"]["april_fools"]:
             return f"{self.prefix}egg"
         return self.prefix + self.suffix
+
+Name.load_localized_names()
