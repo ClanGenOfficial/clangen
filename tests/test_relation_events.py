@@ -15,7 +15,7 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan import Clan
-from scripts.events_module.relationship import pregnancy_events
+from scripts.events_module.pregnancy import pregnancy_events
 
 cat_factory = TestCatFactory()
 
