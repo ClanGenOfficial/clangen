@@ -210,7 +210,7 @@ class Name:
         weights = constants.CONFIG["cat_name_controls"][str(social)]
 
         selected_category = random.choices(name_categories, weights, k=1)[0]
-        name = random.choice(names.names_dict[selected_category])
+        name = random.choice(self.names_dict[selected_category])
         self.cat.change_name(new_prefix=name, new_suffix="")
 
     # Generate possible prefix
