@@ -119,7 +119,7 @@ class CanHaveKits(unittest.TestCase):
         # then
         self.assertFalse(pregnancy_events.check_if_can_have_kits(cat))
 
-    @patch("scripts.events_module.relationship.pregnancy_events.check_if_can_have_kits")
+    @patch("scripts.events_module.pregnancy.check_parents.check_if_can_have_kits")
     def test_no_kit_setting(self, check_if_can_have_kits):
         # given
         test_clan = Clan(save_id="clan")
