@@ -729,6 +729,6 @@ def _handle_future_event(
 
     prep_future_event(
         event=event,
-        event_id=event.id,
+        event_id=event.event_id,
         possible_cats=event_involved_cats,
     )

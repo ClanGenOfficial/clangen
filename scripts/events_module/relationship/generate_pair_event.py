@@ -435,7 +435,7 @@ def _load_file(path) -> list[TextPoolEvent]:
         for t in load_lang_resource(path):
             loaded_events[path].append(
                 TextPoolEvent(
-                    id=t.get("id"),
+                    event_id=t.get("id"),
                     location=t.get("location", []),
                     season=t.get("season", []),
                     tags=t.get("tags", []),

@@ -1,6 +1,6 @@
 [
     {
-        "id": "comfort_de_med1",
+        "event_id": "comfort_de_med1",
         "strings": [
             "m_c finds the way r_c acts increasingly uncomfortable.",
             "m_c swears that r_c's fangs are longer than usual.",
@@ -18,7 +18,7 @@
         ]
     },
     {
-        "id": "comfort_kit_de_med1",
+        "event_id": "comfort_kit_de_med1",
         "strings": [
             "m_c feels like r_c was too rough while playing.",
             "m_c doesn't think r_c was playing fair.",
@@ -39,7 +39,7 @@
         }
     },
     {
-        "id": "comfort_de_kit_parent_inc_med_respect_inc",
+        "event_id": "comfort_de_kit_parent_inc_med_respect_inc",
         "strings": [
             "r_c scolds m_c for doing something dangerous.",
             "r_c scolds m_c for being rude to a Clanmate.",
@@ -71,7 +71,7 @@
         ]
     },
     {
-        "id": "comfort_de_med2",
+        "event_id": "comfort_de_med2",
         "strings": [
             "m_c called r_c the wrong name.",
             "r_c squashes a bug that m_c was watching.",
@@ -102,7 +102,7 @@
         ]
     },
     {
-        "id": "comfort_de_med3",
+        "event_id": "comfort_de_med3",
         "strings": [
             "r_c is following m_c around.",
             "r_c tells m_c that {PRONOUN/m_c/poss} pelt looks like a different color today.",
@@ -124,7 +124,7 @@
         }
     },
     {
-        "id": "comfort_de_med4",
+        "event_id": "comfort_de_med4",
         "strings": [
             "r_c talks to m_c a bit too enthusiastically about how best to kill prey.",
             "r_c started a fight with m_c.",
@@ -147,7 +147,7 @@
         }
     },
     {
-        "id": "comfort_de_med5",
+        "event_id": "comfort_de_med5",
         "strings": [
             "r_c hissed at m_c.",
             "r_c tells m_c to leave {PRONOUN/r_c/object} alone.",
@@ -168,7 +168,7 @@
         }
     },
     {
-        "id": "comfort_de_med6",
+        "event_id": "comfort_de_med6",
         "strings": [
             "r_c crashes into m_c while eager for the new day.",
             "r_c rejects m_c's advice without letting {PRONOUN/m_c/object} finish.",

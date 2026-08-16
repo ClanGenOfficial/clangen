@@ -28,7 +28,7 @@ When considering patrols, keep in mind challenge vs reward. That isn't to say ce
 
 ```json
 {
-    "id": "test",
+    "event_id": "test",
     "types": [],
     "frequency": 4,
     "required_cat_types": {
@@ -51,7 +51,7 @@ When considering patrols, keep in mind challenge vs reward. That isn't to say ce
 
 ```json
 {
-    "id": "test",
+    "event_id": "test",
     "types": [],
     "frequency": 4,
     "location": [],

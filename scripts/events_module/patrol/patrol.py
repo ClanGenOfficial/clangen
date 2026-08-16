@@ -596,7 +596,8 @@ class Patrol:
                 possible_outcomes = [
                     x
                     for x in success_outcomes
-                    if x.frequency == chosen_frequency and x.id not in tested_outcomes
+                    if x.frequency == chosen_frequency
+                    and x.event_id not in tested_outcomes
                 ]
                 if not possible_outcomes:
                     if len(used_success_frequencies) == 4:
@@ -615,14 +616,15 @@ class Patrol:
                 if self._check_outcome_constraints(test_outcome, "success"):
                     chosen_success = test_outcome
                 else:
-                    tested_outcomes.add(test_outcome.id)
+                    tested_outcomes.add(test_outcome.event_id)
                     continue
 
             if not chosen_failure:
                 possible_outcomes = [
                     x
                     for x in fail_outcomes
-                    if x.frequency == chosen_frequency and x.id not in tested_outcomes
+                    if x.frequency == chosen_frequency
+                    and x.event_id not in tested_outcomes
                 ]
                 if not possible_outcomes:
                     if len(used_fail_frequencies) == 4:
@@ -640,7 +642,7 @@ class Patrol:
                 if self._check_outcome_constraints(test_outcome, "failure"):
                     chosen_failure = test_outcome
                 else:
-                    tested_outcomes.add(test_outcome.id)
+                    tested_outcomes.add(test_outcome.event_id)
                     continue
 
         return chosen_success, chosen_failure

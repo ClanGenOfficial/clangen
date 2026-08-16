@@ -344,7 +344,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
         # when
         warrior_to_all = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(status=[CatRank.WARRIOR]),
@@ -353,7 +353,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         warrior_to_warrior = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(status=[CatRank.WARRIOR]),
@@ -362,7 +362,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         medicine_to_warrior = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(status=[CatRank.MEDICINE_CAT]),
@@ -443,7 +443,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
         # when
         calm_to_all = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(trait=["calm"])),
@@ -451,7 +451,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         all_to_calm = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(trait=["calm", "troublesome"])),
@@ -460,7 +460,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         rebels = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(trait=["rebellious"])),
@@ -522,7 +522,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
         # when
         hunter_to_all = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(skill=["HUNTER,1"])),
@@ -530,7 +530,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         all_to_hunter = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(skill=["FIGHTER,1", "HUNTER,1"])),
@@ -539,7 +539,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         storytellers = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(skill=["STORY,1"])),
@@ -585,7 +585,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
         # when
         clan_to_all = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(backstory=["clanborn"]),
@@ -593,7 +593,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         all_to_clan = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(backstory=["clanborn", "halfclan1"]),
@@ -601,7 +601,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
             },
         )
         all_half2 = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(backstory=["halfclan2"]),

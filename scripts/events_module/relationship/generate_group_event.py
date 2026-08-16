@@ -219,7 +219,7 @@ def _find_events_for_main_cat(cat: Cat, possible_events: List[TextPoolEvent]) ->
         if event_for_cat(
             event.involved_cats["m_c"],
             cat,
-            event_id=event.id,
+            event_id=event.event_id,
         ):
             allowed.append(event)
 
@@ -355,7 +355,7 @@ def _load_file(path) -> list[TextPoolEvent]:
         for t in load_lang_resource(path):
             loaded_events[path].append(
                 TextPoolEvent(
-                    id=t.get("id"),
+                    event_id=t.get("id"),
                     location=t.get("location", []),
                     season=t.get("season", []),
                     tags=t.get("tags", []),

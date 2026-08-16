@@ -24,7 +24,7 @@ from scripts.game_structure import constants
 # slots increases performance and can be used since we won't be adding new attrs at runtime
 @dataclass(slots=True)
 class TextPoolEvent:
-    id: Optional[str] = None
+    event_id: Optional[str] = None
 
     # display
     strings: list[str] = field(default_factory=list)
@@ -152,4 +152,4 @@ class TextPoolEvent:
         return weight
 
     def __repr__(self):
-        return self.id if self.id else f"string event: {self.strings[0]}"
+        return self.event_id if self.event_id else f"string event: {self.strings[0]}"
