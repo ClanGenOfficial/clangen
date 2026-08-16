@@ -1,6 +1,6 @@
 [
     {
-        "id": "rom_inc_medium1",
+        "event_id": "rom_inc_medium1",
         "strings": [
             "m_c laughs at bad jokes from r_c.",
             "m_c made r_c laugh again and again.",
@@ -25,7 +25,7 @@
         ]
     },
     {
-        "id": "rom_inc_medium2",
+        "event_id": "rom_inc_medium2",
         "strings": [
             "m_c ensnares r_c with a charming smile.",
             "m_c knows exactly what to say to make r_c blush.",
@@ -60,7 +60,7 @@
         ]
     },
     {
-        "id": "rom_inc_medium4",
+        "event_id": "rom_inc_medium4",
         "strings": [
             "m_c is hoping that r_c notices {PRONOUN/m_c/object}.",
             "m_c wonders what r_c thinks about mates.",
@@ -105,7 +105,7 @@
         ]
     },
     {
-        "id": "rom_inc_medium4",
+        "event_id": "rom_inc_medium4",
         "strings": [
             "m_c brushes against r_c while correcting {PRONOUN/r_c/poss} stance and looks away with a purr.",
             "m_c left a gift in r_c's nest for {PRONOUN/r_c/object} to find.",
@@ -130,7 +130,7 @@
         ]
     },
     {
-        "id": "rom_inc_medium5",
+        "event_id": "rom_inc_medium5",
         "strings": [
             "m_c wants, more than anything, to confess {PRONOUN/m_c/poss} love to r_c.",
             "m_c is wondering what it would be like to grow old with r_c.",
@@ -160,7 +160,7 @@
         ]
     },
     {
-        "id": "rom_inc_medium6",
+        "event_id": "rom_inc_medium6",
         "strings": [
             "m_c thinks r_c is the most beautiful cat in the Clan.",
             "m_c can't stop thinking about r_c.",
@@ -185,7 +185,7 @@
         ]
     },
     {
-        "id": "rom_inc_medium7",
+        "event_id": "rom_inc_medium7",
         "strings": [
             "m_c wonders why r_c keeps spending time with {PRONOUN/m_c/object} when others usually don't like {PRONOUN/m_c/poss} attitude, but {PRONOUN/m_c/subject} certainly won't object.",
             "r_c offered to groom m_c and, despite {PRONOUN/m_c/poss} grumbling, {PRONOUN/m_c/subject} awkwardly accepted."
@@ -243,7 +243,7 @@
         ]
     },
     {
-        "id": "rom_inc_med_patrols9",
+        "event_id": "rom_inc_med_patrols9",
         "strings": [
             "m_c and r_c played around during patrol and got in a bit of trouble, but still returned to camp smiling.",
             "m_c just barely missed a mouse, but r_c caught it right after, handing it off to {PRONOUN/m_c/object}.",

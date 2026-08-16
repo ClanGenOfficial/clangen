@@ -1,6 +1,6 @@
 [
     {
-        "id": "dead_med_cat_to_alive_med_app",
+        "event_id": "dead_med_cat_to_alive_med_app",
         "strings": [
             "Walks in the dreams of r_c, sharing information to help the Clan",
             "Hopes r_c knows how proud {PRONOUN/m_c/subject} {VERB/m_c/are/is} of {PRONOUN/r_c/object}",

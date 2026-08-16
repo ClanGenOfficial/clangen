@@ -1,6 +1,6 @@
 [
     {
-        "id": "respect_inc_high0",
+        "event_id": "respect_inc_high0",
         "strings": [
             "m_c thinks the Clan's ancestors smile upon r_c.",
             "m_c is proud to be in the same Clan as r_c.",
@@ -11,7 +11,7 @@
         ]
     },
     {
-        "id": "respect_inc_high1",
+        "event_id": "respect_inc_high1",
         "strings": [
             "m_c saw r_c show off a skill {PRONOUN/m_c/subject} never knew {PRONOUN/r_c/subject} had.",
             "m_c is impressed by r_c's competence in any situation.",
@@ -30,7 +30,7 @@
         }
     },
     {
-        "id": "respect_inc_high2",
+        "event_id": "respect_inc_high2",
         "strings": [
             "m_c is wowed by how bravely r_c fought the other day."
         ],
@@ -46,7 +46,7 @@
         }
     },
     {
-        "id": "respect_inc_high2",
+        "event_id": "respect_inc_high2",
         "strings": [
             "m_c had a difficult conversation with r_c and they now have a deeper understanding of each other.",
             "m_c and r_c have a long discussion about goals and aspirations, and find that they both have a lot in common.",
@@ -91,7 +91,7 @@
         ]
     },
     {
-        "id": "respect_inc_high3",
+        "event_id": "respect_inc_high3",
         "strings": [
             "m_c defends r_c from a Clanmate's rude remarks.",
             "r_c's name comes up in a heated conversation, and m_c is the first to stand up for {PRONOUN/r_c/object}.",
@@ -131,7 +131,7 @@
         ]
     },
     {
-        "id": "respect_kit_inc_high1",
+        "event_id": "respect_kit_inc_high1",
         "strings": [
             "m_c asks r_c if {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} really going to be the leader someday."
         ],
@@ -164,7 +164,7 @@
         ]
     },
     {
-        "id": "respect_incfromneg_high1",
+        "event_id": "respect_incfromneg_high1",
         "strings": [
             "m_c is really surprised that r_c's life isn't as easy as {PRONOUN/m_c/subject} thought it was.",
             "m_c realizes that {PRONOUN/m_c/subject} and r_c have had a lot of the same hardships.",
@@ -192,7 +192,7 @@
         ]
     },
     {
-        "id": "respect_incfromneg_high2",
+        "event_id": "respect_incfromneg_high2",
         "strings": [
             "m_c and r_c learn a skill from each other that they've been envious about.",
             "m_c and r_c realize their jealousy of each other is unfounded.",
@@ -229,7 +229,7 @@
         ]
     },
     {
-        "id": "respect_incfromneg_high3",
+        "event_id": "respect_incfromneg_high3",
         "strings": [
             "The intensity of m_c's resentment toward r_c has waned.",
             "m_c flinches less in r_c's presence than usual.",

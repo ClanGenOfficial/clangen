@@ -1,40 +1,47 @@
 [
     {
-        "patrol_id": "dst_med_dwindleherbsgathering_greenleaf1",
-        "biome": [
+        "event_id": "dst_med_dwindleherbsgathering_greenleaf1",
+        "types": [
+            "herb_gathering"
+        ],
+        "frequency": 4,
+        "location": [
             "desert"
         ],
         "season": [
             "greenleaf"
         ],
-        "types": [
-            "herb_gathering"
-        ],
-        "tags": [],
-        "patrol_art": "med_general_intro",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
-            "medicine cat": [2, 2]
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ],
+            "medicine cat": [
+                2,
+                2
+            ]
         },
-        "frequency": 4,
-        "intro_text": "p_l and r_c take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
-        "decline_text": "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh.",
+        "involved_cats": {
+            "r_c0": {}
+        },
         "chance_of_success": 20,
+        "patrol_art": "med_general_intro",
+        "intro_text": "p_l and r_c0 take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
+        "decline_text": "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh.",
         "success_outcomes": [
             {
-                "text": "p_l and r_c decide to search in the slot canyons, where the deep clefts may yet harbor water and plant life. It's a mark of both of their skill and experience that they return home with herbs for c_n, scavenged from the impossible heat.",
-                "exp": 10,
-                "herbs": [
-                    "random_herbs"
+                "frequency": 4,
+                "strings": [
+                    "p_l and r_c0 decide to search in the slot canyons, where the deep clefts may yet harbor water and plant life. It's a mark of both of their skill and experience that they return home with herbs for c_n, scavenged from the impossible heat."
                 ],
-                "relationships": [
+                "exp_gained": 10,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -47,21 +54,26 @@
                         }
                     }
                 ],
-                "frequency": 4
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ]
             },
             {
-                "text": "p_l and r_c decide on a little friendly competition — one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs.",
-                "exp": 10,
-                "herbs": [
-                    "random_herbs"
+                "frequency": 1,
+                "strings": [
+                    "p_l and r_c0 decide on a little friendly competition — one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
                 ],
-                "relationships": [
+                "exp_gained": 10,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -74,20 +86,28 @@
                         }
                     }
                 ],
-                "frequency": 1
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "Both p_l and r_c are tense and it shows. Even though it should not be this hard to find any herbs they fail to find even a single one. They return to camp frustrated and irritated with each other.",
-                "exp": 0,
-                "relationships": [
+                "frequency": 4,
+                "strings": [
+                    "Both p_l and r_c0 are tense and it shows. Even though it should not be this hard to find any herbs they fail to find even a single one. They return to camp frustrated and irritated with each other."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -99,19 +119,21 @@
                             "cats_from": "cat_from and cat_to were short with each other after failing to gathering any herbs."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "Even though there should be many herbs, they fail to find anything. p_l blames r_c for distracting {PRONOUN/p_l/object}, and they get into a huge argument.",
-                "exp": 0,
-                "relationships": [
+                "frequency": 4,
+                "strings": [
+                    "Even though there should be many herbs, they fail to find anything. p_l blames r_c0 for distracting {PRONOUN/p_l/object}, and they get into a huge argument."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -120,11 +142,10 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "p_l blamed r_c for a failed herb-gathering patrol and the two got into a huge argument."
+                            "cats_from": "p_l blamed r_c0 for a failed herb-gathering patrol and the two got into a huge argument."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ]
     }

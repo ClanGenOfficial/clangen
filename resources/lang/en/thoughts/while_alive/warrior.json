@@ -1,6 +1,6 @@
 [
     {
-        "id": "warrior_gen_alive_kits",
+        "event_id": "warrior_gen_alive_kits",
         "strings": [
             "Is watching over the kits",
             "Begrudgingly allows kits to play with {PRONOUN/m_c/poss} tail",
@@ -24,7 +24,7 @@
         }
     },
     {
-        "id": "warrior_gen_alive_apprentice",
+        "event_id": "warrior_gen_alive_apprentice",
         "strings": [
             "Has the apprentices very engaged in a very, very tall tale"
         ],
@@ -40,7 +40,7 @@
         }
     },
     {
-        "id": "warrior_gen_deputy",
+        "event_id": "warrior_gen_deputy",
         "strings": [
             "Wants to be chosen as the new deputy"
         ],
@@ -53,7 +53,7 @@
         }
     },
     {
-        "id": "gen_older_warrior",
+        "event_id": "gen_older_warrior",
         "strings": [
             "Tries to set a good example for younger cats"
         ],
@@ -73,7 +73,7 @@
         }
     },
     {
-        "id": "warrior_gen_medicine_cat",
+        "event_id": "warrior_gen_medicine_cat",
         "strings": [
             "Plans to visit the medicine cat",
             "Is helping to escort the medicine cat to gather herbs"
@@ -90,7 +90,7 @@
         }
     },
     {
-        "id": "warrior_gen_warrior",
+        "event_id": "warrior_gen_warrior",
         "strings": [
             "Is sparring with some Clanmates",
             "Wants to critique r_c's fighting techniques",
@@ -108,7 +108,7 @@
         }
     },
     {
-        "id": "ambitious_forest_warrior",
+        "event_id": "ambitious_forest_warrior",
         "location": [
             "forest"
         ],
@@ -126,7 +126,7 @@
         }
     },
     {
-        "id": "ambitious_warrior",
+        "event_id": "ambitious_warrior",
         "strings": [
             "Is boasting loudly about having defeated an enemy warrior on patrol the other day",
             "Made sure to wake up early to volunteer for the dawn patrol",
@@ -150,7 +150,7 @@
         }
     },
     {
-        "id": "careful_warrior",
+        "event_id": "careful_warrior",
         "strings": [
             "Is dutifully standing guard outside of camp",
             "Is going back to check on an old fox burrow {PRONOUN/m_c/subject} discovered yesterday, just to be safe",
@@ -167,7 +167,7 @@
         }
     },
     {
-        "id": "careful_warrior_to_deputy",
+        "event_id": "careful_warrior_to_deputy",
         "strings": [
             "Asks the deputy about sending out some more hunting patrols \u00e2\u20ac\u201d just to be sure"
         ],
@@ -190,7 +190,7 @@
         }
     },
     {
-        "id": "childish_warrior",
+        "event_id": "childish_warrior",
         "strings": [
             "Is whining about Clan duties",
             "Splashes in a puddle of water during a patrol",
@@ -208,7 +208,7 @@
         }
     },
     {
-        "id": "compassionate_warrior",
+        "event_id": "compassionate_warrior",
         "strings": [
             "Patiently waits for a rabbit to come out of its burrow, eventually catching it",
             "Offered to walk at the front of the patrol",
@@ -231,7 +231,7 @@
         }
     },
     {
-        "id": "compassionate_warrior_to_living_apprentices",
+        "event_id": "compassionate_warrior_to_living_apprentices",
         "strings": [
             "Takes r_c's place in the dawn patrol so {PRONOUN/r_c/subject} can sleep in a little"
         ],
@@ -254,7 +254,7 @@
         }
     },
     {
-        "id": "daring_warrior",
+        "event_id": "daring_warrior",
         "strings": [
             "Is challenging any Clanmate {PRONOUN/m_c/subject} can to a sparring match... with minimal recruiting success",
             "Is challenging some Clanmates to a sparring match, two-on-one!",
@@ -274,7 +274,7 @@
         }
     },
     {
-        "id": "fierce_warrior",
+        "event_id": "fierce_warrior",
         "strings": [
             "Is showing off {PRONOUN/m_c/poss} battle moves",
             "Offered to lead a border patrol today",
@@ -292,7 +292,7 @@
         }
     },
     {
-        "id": "fierce_warrior_to_living_deputy",
+        "event_id": "fierce_warrior_to_living_deputy",
         "strings": [
             "Was recently chastised by the deputy for reckless behavior out on patrol"
         ],
@@ -315,7 +315,7 @@
         }
     },
     {
-        "id": "fierce_warrior_to_living_medcat",
+        "event_id": "fierce_warrior_to_living_medcat",
         "strings": [
             "Is asking the medicine cat for herbs that may help {PRONOUN/m_c/object} in battle"
         ],
@@ -339,7 +339,7 @@
         }
     },
     {
-        "id": "fierce_warrior_to_living_apprentices",
+        "event_id": "fierce_warrior_to_living_apprentices",
         "strings": [
             "Is arguing for more battle training for the apprentices"
         ],
@@ -362,7 +362,7 @@
         }
     },
     {
-        "id": "loyal_warrior_to_leader",
+        "event_id": "loyal_warrior_to_leader",
         "strings": [
             "Is listening to the leader intently",
             "Is telling the leader details about {PRONOUN/m_c/poss} recent patrol",
@@ -389,7 +389,7 @@
         }
     },
     {
-        "id": "loyal_warrior_to_deputy",
+        "event_id": "loyal_warrior_to_deputy",
         "strings": [
             "Is listening to the deputy intently",
             "Is telling the deputy details about {PRONOUN/m_c/poss} recent patrol",
@@ -414,7 +414,7 @@
         }
     },
     {
-        "id": "responsible_warrior",
+        "event_id": "responsible_warrior",
         "strings": [
             "Is making sure {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} done all of {PRONOUN/m_c/poss} daily duties",
             "Is offering to lead the next patrol out",
@@ -431,7 +431,7 @@
         }
     },
     {
-        "id": "righteous_warrior",
+        "event_id": "righteous_warrior",
         "strings": [
             "Is refusing to follow the deputy's recent orders due to {PRONOUN/m_c/poss} own morals"
         ],
@@ -454,7 +454,7 @@
         }
     },
     {
-        "id": "strict_warrior",
+        "event_id": "strict_warrior",
         "strings": [
             "Is conducting a rather rigorous training session for the younger warriors",
             "Takes pride in how well-run {PRONOUN/m_c/poss} patrols always are"
@@ -470,7 +470,7 @@
         }
     },
     {
-        "id": "troublesome_warrior",
+        "event_id": "troublesome_warrior",
         "strings": [
             "Ate a mouse while out on patrol"
         ],
@@ -485,7 +485,7 @@
         }
     },
     {
-        "id": "troublesome_warrior_to_deputy",
+        "event_id": "troublesome_warrior_to_deputy",
         "strings": [
             "Is being lectured yet again by the deputy"
         ],
@@ -508,7 +508,7 @@
         }
     },
     {
-        "id": "warrior_parent_alive_kits",
+        "event_id": "warrior_parent_alive_kits",
         "strings": [
             "Excitedly plays games with r_c, letting {PRONOUN/r_c/object} win every time",
             "Is woken up by r_c jumping on {PRONOUN/m_c/object}, begging for something",
@@ -544,7 +544,7 @@
         ]
     },
     {
-        "id": "warrior_formerly_a_loner_alive_kits",
+        "event_id": "warrior_formerly_a_loner_alive_kits",
         "strings": [
             "Is telling the kits about {PRONOUN/m_c/poss} days as a loner",
             "Is being begged by r_c to tell {PRONOUN/r_c/object} about what being a loner was like"
@@ -571,7 +571,7 @@
         }
     },
     {
-        "id": "warrior_formerly_a_rogue_alive_kits",
+        "event_id": "warrior_formerly_a_rogue_alive_kits",
         "strings": [
             "Is telling the kits about {PRONOUN/m_c/poss} days as a rogue",
             "Is being begged by r_c to tell {PRONOUN/r_c/object} more what being a rogue was like"

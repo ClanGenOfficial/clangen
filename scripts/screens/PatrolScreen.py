@@ -504,7 +504,7 @@ class PatrolScreen(Screens):
                 self.elements["patrol_tab"].enable()
                 self.elements["skills"].disable()
 
-            if self.selected_cat != None:
+            if self.selected_cat is not None:
                 if (
                     "cycle_app_mentor_right_button" in self.elements
                     and "cycle_app_mentor_left_button" in self.elements
@@ -522,7 +522,7 @@ class PatrolScreen(Screens):
                     else:
                         self.elements["cycle_app_mentor_left_button"].enable()
 
-                    if self.selected_cat.mentor != None:
+                    if self.selected_cat.mentor is not None:
                         self.elements["cycle_app_mentor_left_button"].hide()
                         self.elements["cycle_app_mentor_right_button"].hide()
 
@@ -791,7 +791,7 @@ class PatrolScreen(Screens):
     def run_patrol_start(self):
         """Runs patrol start. To be run in a separate thread."""
         try:
-            self.display_text = self.patrol_obj.setup_patrol(
+            self.display_text = self.patrol_obj.begin_patrol(
                 self.current_patrol, self.patrol_type
             )
         except RuntimeError:
@@ -858,7 +858,7 @@ class PatrolScreen(Screens):
         skills = []
         traits = []
         for x in self.patrol_obj.patrol_cats:
-            if x != self.patrol_obj.patrol_leader:
+            if x != self.patrol_obj.involved_cats["p_l"]:
                 members.append(str(x.name))
         for x in self.patrol_obj.patrol_cats:
             if (t := i18n.t(f"cat.personality.{x.personality.trait}")) not in traits:
@@ -882,8 +882,8 @@ class PatrolScreen(Screens):
             object_id="#text_box_22_horizleft",
             manager=MANAGER,
             text_kwargs={
-                "leader": str(self.patrol_obj.patrol_leader.name),
-                "p_l": self.patrol_obj.patrol_leader,
+                "leader": str(self.patrol_obj.involved_cats["p_l"].name),
+                "p_l": self.patrol_obj.involved_cats["p_l"],
                 "members": self.get_list_text(members),
                 "patrol_cats": members,
                 "skills": self.get_list_text(skills),
@@ -1405,7 +1405,7 @@ class PatrolScreen(Screens):
                         self.elements["app_mentor_button"].disable()
 
                     # Buttons to cycle between apprentices
-                    if self.selected_cat.mentor == None:
+                    if self.selected_cat.mentor is None:
                         self.elements[
                             "cycle_app_mentor_left_button"
                         ] = UISurfaceImageButton(

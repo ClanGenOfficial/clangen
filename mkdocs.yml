@@ -38,7 +38,9 @@ nav:
           - dev/writing/reference/animals.md
           - dev/writing/reference/herbs.md
           - dev/writing/reference/common-errors.md
-        - dev/writing/patrols.md
+        - Patrols:
+          - dev/writing/patrols/patrols.md
+          - dev/writing/patrols/patrol_outcome.md
         - dev/writing/shortevents.md
         - dev/writing/future.md
         - dev/writing/leaders-den-events.md

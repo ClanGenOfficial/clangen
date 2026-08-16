@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_romance_med_pos1",
+        "event_id": "gen_romance_med_pos1",
         "strings": [
 			"m_c and r_c kept stealing looks at each other."
         ],

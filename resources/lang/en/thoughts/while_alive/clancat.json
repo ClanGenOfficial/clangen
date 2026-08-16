@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_clan",
+        "event_id": "gen_clan",
         "strings": [
             "Is relaxing in camp",
             "Is curious about the other Clans",
@@ -23,7 +23,7 @@
         ]
     },
     {
-        "id": "gen_to_other_clancat",
+        "event_id": "gen_to_other_clancat",
         "strings": [
             "Is asking r_c an important question",
             "Can't find r_c anywhere",
@@ -76,7 +76,7 @@
         }
     },
     {
-        "id": "gen_clan_not_kit",
+        "event_id": "gen_clan_not_kit",
         "strings": [
             "Found a wonderful napping spot outside camp",
             "Had a nightmare involving a Twoleg trap",
@@ -111,7 +111,7 @@
         }
     },
     {
-        "id": "gen_to_kit",
+        "event_id": "gen_to_kit",
         "strings": [
             "Knows r_c will make a great Clanmate someday",
             "Is playing moss ball with r_c",
@@ -138,7 +138,7 @@
         }
     },
     {
-        "id": "gen_to_newborn",
+        "event_id": "gen_to_newborn",
         "strings": [
             "Wants to meet r_c",
             "Hears about the new birth",
@@ -180,7 +180,7 @@
         ]
     },
     {
-        "id": "gen_apprentice_to_newborn",
+        "event_id": "gen_apprentice_to_newborn",
         "strings": [
             "Wants to train r_c one day",
             "Shudders at the thought of taking care of kits",
@@ -207,7 +207,7 @@
         }
     },
     {
-        "id": "gen_to_deputy",
+        "event_id": "gen_to_deputy",
         "strings": [
             "Thinks r_c is doing a great job as deputy",
             "Respects r_c's effort as deputy",
@@ -233,7 +233,7 @@
         }
     },
     {
-        "id": "gen_to_alive_med_cat_app",
+        "event_id": "gen_to_alive_med_cat_app",
         "strings": [
             "Is grateful for the treatment r_c gave {PRONOUN/m_c/object}",
             "Is in awe of r_c's growth as a medicine cat apprentice",
@@ -253,7 +253,7 @@
         }
     },
     {
-        "id": "gen_to_alive_med_cat",
+        "event_id": "gen_to_alive_med_cat",
         "strings": [
             "Is grateful to r_c for {PRONOUN/m_c/poss} treatment",
             "Wonders if StarClan has given r_c any prophecies lately",
@@ -278,7 +278,7 @@
         }
     },
     {
-        "id": "gen_to_alive_leader",
+        "event_id": "gen_to_alive_leader",
         "strings": [
             "Is wondering what r_c is thinking",
             "Is hoping r_c notices {PRONOUN/m_c/poss} improvement",
@@ -304,7 +304,7 @@
         }
     },
     {
-        "id": "gen_to_alive_elder",
+        "event_id": "gen_to_alive_elder",
         "strings": [
             "Wants to visit the elders to hear a story"
         ],
@@ -326,7 +326,7 @@
         }
     },
     {
-        "id": "gen_to_alive_elder",
+        "event_id": "gen_to_alive_elder",
         "strings": [
             "Wonders if r_c misses {PRONOUN/r_c/poss} warrior days"
         ],
@@ -351,7 +351,7 @@
         }
     },
     {
-        "id": "gen_to_alive_mediator",
+        "event_id": "gen_to_alive_mediator",
         "strings": [
             "Wants to speak to r_c about something",
             "Is relieved r_c sided with {PRONOUN/m_c/object} during an argument",
@@ -377,7 +377,7 @@
         }
     },
     {
-        "id": "gen_to_alive_mediator_app",
+        "event_id": "gen_to_alive_mediator_app",
         "strings": [
             "Wants to speak to r_c about something",
             "Thinks r_c will make a good mediator",
@@ -402,7 +402,7 @@
         }
     },
     {
-        "id": "gen_newleaf_clan",
+        "event_id": "gen_newleaf_clan",
         "season": [
             "newleaf"
         ],
@@ -413,7 +413,7 @@
         ]
     },
     {
-        "id": "gen_greenleaf_clan",
+        "event_id": "gen_greenleaf_clan",
         "season": [
             "greenleaf"
         ],
@@ -422,7 +422,7 @@
         ]
     },
     {
-        "id": "gen_leafbare_clan",
+        "event_id": "gen_leafbare_clan",
         "season": [
             "leaf-bare"
         ],
@@ -433,7 +433,7 @@
         ]
     },
     {
-        "id": "adventurous_clan_gen",
+        "event_id": "adventurous_clan_gen",
         "strings": [
             "Wants to explore far beyond the borders of {PRONOUN/m_c/poss} territory...",
             "Wants to climb the tallest tree in the territory!",
@@ -457,7 +457,7 @@
         }
     },
     {
-        "id": "adventurous_gen_to_alive_kits",
+        "event_id": "adventurous_gen_to_alive_kits",
         "strings": [
             "Involves the kits in a game of make-believe about traveling through a strange land",
             "Encourages the kits to explore as much as possible",
@@ -483,7 +483,7 @@
         }
     },
     {
-        "id": "adventurous_gen_to_alive_leader",
+        "event_id": "adventurous_gen_to_alive_leader",
         "strings": [
             "Wishes {PRONOUN/m_c/poss} leader would choose {PRONOUN/m_c/object} to go on a quest"
         ],
@@ -506,7 +506,7 @@
         }
     },
     {
-        "id": "ambitious_clan_gen",
+        "event_id": "ambitious_clan_gen",
         "strings": [
             "Is being admired by many Clanmates for {PRONOUN/m_c/poss} recent feats",
             "Seems to be ordering {PRONOUN/m_c/poss} fellow Clanmates around",
@@ -527,7 +527,7 @@
         }
     },
     {
-        "id": "ambitious_to_deputy",
+        "event_id": "ambitious_to_deputy",
         "strings": [
             "Envies the deputy's position"
         ],
@@ -547,7 +547,7 @@
         }
     },
     {
-        "id": "ambitious_to_leader",
+        "event_id": "ambitious_to_leader",
         "strings": [
             "Is asking the Clan leader what {PRONOUN/m_c/subject} can do to help out around camp",
             "Has been imitating the Clan leader's behavior recently",
@@ -576,7 +576,7 @@
         }
     },
     {
-        "id": "arrogant_clan_gen",
+        "event_id": "arrogant_clan_gen",
         "strings": [
             "Is lecturing about something someone said wrong offpawedly",
             "Is certain {PRONOUN/m_c/subject} {VERB/m_c/look/looks} better than any other cat in the Clan",
@@ -595,7 +595,7 @@
         }
     },
     {
-        "id": "bloodthirsty_clan_gen",
+        "event_id": "bloodthirsty_clan_gen",
         "strings": [
             "Has been disappearing often recently",
             "Is practicing forbidden battle moves",
@@ -618,7 +618,7 @@
         }
     },
     {
-        "id": "bloodthirsty_working_cat",
+        "event_id": "bloodthirsty_working_cat",
         "strings": [
             "Draws blood during battle training and coldly says it was an accident"
         ],
@@ -639,7 +639,7 @@
         }
     },
     {
-        "id": "bloodthirsty_to_leader",
+        "event_id": "bloodthirsty_to_leader",
         "strings": [
             "Wonders how easy it'd be to attack the leader from where {PRONOUN/r_c/subject} {VERB/r_c/lay/lies}",
             "Is watching the leader closely while imagining the Clan under {PRONOUN/m_c/poss} rule",
@@ -665,7 +665,7 @@
         }
     },
     {
-        "id": "bold_clan_gen",
+        "event_id": "bold_clan_gen",
         "strings": [
             "Is getting some looks after speaking out of turn during a Clan meeting",
             "Spoke out of turn at the last Clan meeting",
@@ -687,7 +687,7 @@
         }
     },
     {
-        "id": "bold_working_cat",
+        "event_id": "bold_working_cat",
         "strings": [
             "Charges forward during a border patrol, eager and unafraid"
         ],
@@ -708,7 +708,7 @@
         }
     },
     {
-        "id": "bold_to_medcat",
+        "event_id": "bold_to_medcat",
         "strings": [
             "Bravely offers to help r_c pick herbs from a dangerous spot"
         ],
@@ -732,7 +732,7 @@
         }
     },
     {
-        "id": "calm_clan_gen",
+        "event_id": "calm_clan_gen",
         "strings": [
             "Shakes {PRONOUN/m_c/poss} head as a Clanmate talks about something they are absolutely wrong about",
             "Looks on as the camp buzzes around {PRONOUN/m_c/object}",
@@ -763,7 +763,7 @@
         }
     },
     {
-        "id": "careful_clan_gen",
+        "event_id": "careful_clan_gen",
         "strings": [
             "Double-checks {PRONOUN/m_c/poss} nest for burrs",
             "Pads back and forth across the camp",
@@ -793,7 +793,7 @@
         }
     },
     {
-        "id": "careful_to_med",
+        "event_id": "careful_to_med",
         "strings": [
             "Is getting a small scratch checked out by the medicine cat",
             "Is urging a Clanmate to get a scratch checked out",
@@ -824,7 +824,7 @@
         }
     },
     {
-        "id": "charismatic_clan_gen",
+        "event_id": "charismatic_clan_gen",
         "strings": [
             "Is smiling warmly at {PRONOUN/m_c/poss} Clanmates",
             "Is making everyone laugh with a very funny quip",
@@ -852,7 +852,7 @@
         }
     },
     {
-        "id": "childish_clan_gen",
+        "event_id": "childish_clan_gen",
         "strings": [
             "Is chasing a butterfly around the camp",
             "Is giggling about Clan drama with friends",
@@ -881,7 +881,7 @@
         }
     },
     {
-        "id": "silly_working_cat",
+        "event_id": "silly_working_cat",
         "strings": [
             "Sticks {PRONOUN/m_c/poss} tongue out at a mouse that escaped {PRONOUN/m_c/poss} pounce",
             "Is playing with some fresh-kill {PRONOUN/m_c/subject} just caught",
@@ -908,7 +908,7 @@
         }
     },
     {
-        "id": "silly_to_living_clan_kit",
+        "event_id": "silly_to_living_clan_kit",
         "strings": [
             "Plays moss ball with r_c"
         ],
@@ -932,7 +932,7 @@
         }
     },
     {
-        "id": "cold_clan_gen",
+        "event_id": "cold_clan_gen",
         "strings": [
             "Responds to a stupid comment with a sharp hiss",
             "Walks away from a conversation that bored {PRONOUN/m_c/object}",
@@ -955,7 +955,7 @@
         }
     },
     {
-        "id": "cold_gen_to_leader",
+        "event_id": "cold_gen_to_leader",
         "strings": [
             "Thinks the leader should be harsher on codebreakers"
         ],
@@ -978,7 +978,7 @@
         }
     },
     {
-        "id": "cold_grown_up_to_alive_apprentice",
+        "event_id": "cold_grown_up_to_alive_apprentice",
         "strings": [
             "Is scolding the apprentices over something slight",
             "Is pushing the apprentices around",
@@ -1012,7 +1012,7 @@
         }
     },
     {
-        "id": "compassionate_clan_gen",
+        "event_id": "compassionate_clan_gen",
         "strings": [
             "Spends time with a grieving Clanmate today",
             "Listens patiently to r_c's confidently wrong opinions",
@@ -1056,7 +1056,7 @@
         }
     },
     {
-        "id": "compassionate_to_elder",
+        "event_id": "compassionate_to_elder",
         "strings": [
             "Is listening to older cats gripe about their day",
             "Visits the elders' den with a piece of fresh-kill",
@@ -1087,7 +1087,7 @@
         }
     },
     {
-        "id": "compassionate_to_apprentices",
+        "event_id": "compassionate_to_apprentices",
         "strings": [
             "Notices an apprentice struggling with a task and offers {PRONOUN/m_c/poss} help",
             "Listens patiently to all the woes of an apprentice"
@@ -1118,7 +1118,7 @@
         }
     },
     {
-        "id": "compassionate_to_living_med_cat",
+        "event_id": "compassionate_to_living_med_cat",
         "strings": [
             "Is helping the medicine cat organize herb stores",
             "Is told by the medicine cat that {PRONOUN/m_c/subject} {VERB/m_c/have/has} a great nest-side manner"
@@ -1145,7 +1145,7 @@
         }
     },
     {
-        "id": "competitive_clan_gen",
+        "event_id": "competitive_clan_gen",
         "strings": [
             "Pesters other cats to join {PRONOUN/m_c/poss} made-up challenges around camp",
             "Challenges r_c to a staring contest",
@@ -1179,7 +1179,7 @@
         }
     },
     {
-        "id": "confident_clan_gen",
+        "event_id": "confident_clan_gen",
         "strings": [
             "Is building up a fellow Clanmate's confidence",
             "Thinks that {PRONOUN/m_c/subject} {VERB/m_c/are/is} the smartest cat in the Clan",
@@ -1199,7 +1199,7 @@
         }
     },
     {
-        "id": "confident_working_cat",
+        "event_id": "confident_working_cat",
         "strings": [
             "Is building up a fellow Clanmate's confidence in battle",
             "Boasts about how much fresh-kill {PRONOUN/m_c/subject} {VERB/m_c/intend/intends} to bring back to camp",
@@ -1227,7 +1227,7 @@
         }
     },
     {
-        "id": "cunning_clan_gen",
+        "event_id": "cunning_clan_gen",
         "strings": [
             "Convinces a Clanmate to do something {PRONOUN/m_c/subject} could easily have done {PRONOUN/m_c/self}",
             "Is always five steps ahead of {PRONOUN/m_c/poss} Clanmates",
@@ -1252,7 +1252,7 @@
         }
     },
     {
-        "id": "daring_clan_gen",
+        "event_id": "daring_clan_gen",
         "strings": [
             "Is racing through camp, accidentally knocking into Clanmates",
             "Defends Clanmate in an argument",
@@ -1269,7 +1269,7 @@
         }
     },
     {
-        "id": "faithful_clan_gen",
+        "event_id": "faithful_clan_gen",
         "strings": [
             "Would follow {PRONOUN/m_c/poss} Clanmates to the ends of the earth",
             "Feels safe within the walls of the camp",
@@ -1289,7 +1289,7 @@
         }
     },
     {
-        "id": "fierce_clan_gen",
+        "event_id": "fierce_clan_gen",
         "strings": [
             "Pounces on r_c and says {PRONOUN/r_c/subject} should always be vigilant",
             "Tears up {PRONOUN/m_c/poss} fresh-kill far too violently for others' liking",
@@ -1312,7 +1312,7 @@
         }
     },
     {
-        "id": "flamboyant_clan_gen",
+        "event_id": "flamboyant_clan_gen",
         "strings": [
             "Carefully curates {PRONOUN/m_c/poss} appearance to be the most dazzling in the Clan",
             "Is playfully teasing {PRONOUN/m_c/poss} Clanmates",
@@ -1334,7 +1334,7 @@
         }
     },
     {
-        "id": "gloomy_clan_gen",
+        "event_id": "gloomy_clan_gen",
         "strings": [
             "Feels bad for staying in {PRONOUN/m_c/poss} nest a few minutes longer than usual",
             "Is keeping to {PRONOUN/m_c/self}, not wanting to ruin {PRONOUN/m_c/poss} Clanmates' moods with {PRONOUN/m_c/poss} gloominess",
@@ -1355,7 +1355,7 @@
         }
     },
     {
-        "id": "grumpy_clan_gen",
+        "event_id": "grumpy_clan_gen",
         "strings": [
             "Glares back at every cat {PRONOUN/m_c/subject} {VERB/m_c/catch/catches} looking at {PRONOUN/m_c/object}",
             "Bluntly corrects something someone said wrong offpawedly",
@@ -1375,7 +1375,7 @@
         }
     },
     {
-        "id": "insecure_clan_gen",
+        "event_id": "insecure_clan_gen",
         "strings": [
             "Listens to r_c's lecture, unsure whether {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} right",
             "Had a nightmare about the entire Clan looking to {PRONOUN/m_c/object} for what to do",
@@ -1401,7 +1401,7 @@
         }
     },
     {
-        "id": "insecure_working_cat",
+        "event_id": "insecure_working_cat",
         "strings": [
             "Almost died of embarrassment after a recent fumble on a patrol",
             "Is busy sharpening {PRONOUN/m_c/poss} claws to look stronger"
@@ -1423,7 +1423,7 @@
         }
     },
     {
-        "id": "scared_storm_gen",
+        "event_id": "scared_storm_gen",
         "season": [
             "newleaf",
             "greenleaf",
@@ -1447,7 +1447,7 @@
         }
     },
     {
-        "id": "lonesome_clan_gen",
+        "event_id": "lonesome_clan_gen",
         "strings": [
             "Looks on as others share tongues around the camp clearing",
             "Is eating a piece of fresh-kill in a corner of camp",
@@ -1470,7 +1470,7 @@
         }
     },
     {
-        "id": "lonesome_working_cat",
+        "event_id": "lonesome_working_cat",
         "strings": [
             "Went out to hunt by {PRONOUN/m_c/self}",
             "Is feeling a bit anxious after having been around so many cats at the last Gathering"
@@ -1489,7 +1489,7 @@
         }
     },
     {
-        "id": "loving_clan_gen",
+        "event_id": "loving_clan_gen",
         "strings": [
             "Purrs all night, so full of love for {PRONOUN/m_c/poss} fellow Clanmates",
             "Is listening to a Clanmate's struggles with love",
@@ -1518,7 +1518,7 @@
         }
     },
     {
-        "id": "loving_to_living_apprentices",
+        "event_id": "loving_to_living_apprentices",
         "strings": [
             "Spends some time with the apprentices",
             "Comforts r_c after {PRONOUN/r_c/subject} had a bad day",
@@ -1552,7 +1552,7 @@
         }
     },
     {
-        "id": "loving_to_living_apprentices",
+        "event_id": "loving_to_living_apprentices",
         "strings": [
             "Is offering any help {PRONOUN/m_c/subject} can to the medicine cat"
         ],
@@ -1579,7 +1579,7 @@
         }
     },
     {
-        "id": "loving_to_mate",
+        "event_id": "loving_to_mate",
         "strings": [
             "Is so glad {PRONOUN/m_c/subject} met r_c",
             "Can't think of anything but r_c",
@@ -1622,7 +1622,7 @@
         ]
     },
     {
-        "id": "loyal_clan_gen",
+        "event_id": "loyal_clan_gen",
         "strings": [
             "Is making sure everyone has eaten well",
             "Is boasting about {PRONOUN/m_c/poss} loyalty to the Clan",
@@ -1657,7 +1657,7 @@
         }
     },
     {
-        "id": "loyal_to_elder",
+        "event_id": "loyal_to_elder",
         "strings": [
             "Feels a deep respect for the Clan's elders"
         ],
@@ -1680,7 +1680,7 @@
         }
     },
     {
-        "id": "nervous_clan_gen",
+        "event_id": "nervous_clan_gen",
         "strings": [
             "Debates fleeing a conversation with a Clanmate who is talking about something they clearly know nothing about",
             "Is nervously pacing around camp",
@@ -1702,7 +1702,7 @@
         }
     },
     {
-        "id": "nervous_working_cat",
+        "event_id": "nervous_working_cat",
         "strings": [
             "Was startled by a shrew while out on patrol",
             "Was startled by a fluttering bird while out on patrol",
@@ -1726,7 +1726,7 @@
         }
     },
     {
-        "id": "playful_clan_gen",
+        "event_id": "playful_clan_gen",
         "strings": [
             "Is playing tag with cats around camp",
             "Is tossing moss balls around",
@@ -1753,7 +1753,7 @@
         }
     },
     {
-        "id": "playful_working_cat",
+        "event_id": "playful_working_cat",
         "strings": [
             "Pretends the mouse {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} chasing is a bird, and {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a hawk",
             "Doesn't get any work done all morning, too busy climbing trees"
@@ -1775,7 +1775,7 @@
         }
     },
     {
-        "id": "rebellious_clan_gen",
+        "event_id": "rebellious_clan_gen",
         "strings": [
             "Rebels against the instructions {PRONOUN/m_c/subject} {verb/m_c/were/was} given",
             "Taunted a dog stuck behind a Twoleg fence",
@@ -1802,7 +1802,7 @@
         }
     },
     {
-        "id": "rebellious_to_leader",
+        "event_id": "rebellious_to_leader",
         "strings": [
             "Started an argument with the leader during a Clan meeting",
             "Demands to know whether a Clanmate agrees more with the leader or with {PRONOUN/m_c/object}",
@@ -1827,7 +1827,7 @@
         }
     },
     {
-        "id": "rebellious_to_leadership",
+        "event_id": "rebellious_to_leadership",
         "strings": [
             "Had a lengthy debate with r_c",
             "Rolled {PRONOUN/m_c/poss} eyes at a job r_c assigned {PRONOUN/m_c/object} to",
@@ -1857,7 +1857,7 @@
         }
     },
     {
-        "id": "responsible_clan_gen",
+        "event_id": "responsible_clan_gen",
         "strings": [
             "Gently reminds a Clanmate of something they forgot about",
             "Roused the other cats awake at dawn",
@@ -1878,7 +1878,7 @@
         }
     },
     {
-        "id": "responsible_to_app",
+        "event_id": "responsible_to_app",
         "strings": [
             "Is reminding an apprentice to follow the code",
             "Asks r_c if {PRONOUN/r_c/subject} {VERB/r_c/need/needs} a break from training"
@@ -1908,7 +1908,7 @@
         }
     },
     {
-        "id": "responsible_to_kits",
+        "event_id": "responsible_to_kits",
         "strings": [
             "Is watching the kits to make sure none of them accidentally hurt each other",
             "Is teaching r_c the importance of following the code"
@@ -1932,7 +1932,7 @@
         }
     },
     {
-        "id": "righteous_clan_gen",
+        "event_id": "righteous_clan_gen",
         "strings": [
             "Wants nothing more than to live by the Warrior Code",
             "Hopes to help guide {PRONOUN/m_c/poss} Clanmates down the right path",
@@ -1957,7 +1957,7 @@
         }
     },
     {
-        "id": "righteous_to_kits",
+        "event_id": "righteous_to_kits",
         "strings": [
             "Teaches the kits about morals until they all fall asleep"
         ],
@@ -1980,7 +1980,7 @@
         }
     },
     {
-        "id": "shameless_clan_gen",
+        "event_id": "shameless_clan_gen",
         "strings": [
             "Took an extra piece of fresh-kill from the pile",
             "Is grooming intensely in clear view of everyone in camp",
@@ -2005,7 +2005,7 @@
         }
     },
     {
-        "id": "shameless_working_cat",
+        "event_id": "shameless_working_cat",
         "strings": [
             "Brags about how great a hunter {PRONOUN/m_c/subject} {VERB/m_c/are/is}",
             "Brags about {PRONOUN/m_c/poss} latest exploits to any cat that will listen"
@@ -2027,7 +2027,7 @@
         }
     },
     {
-        "id": "sincere_clan_gen",
+        "event_id": "sincere_clan_gen",
         "strings": [
             "Makes the rounds around camp, checking in on every cat",
             "Wonders if {PRONOUN/m_c/poss} blunt correction of a Clanmate was too harsh",
@@ -2045,7 +2045,7 @@
         }
     },
     {
-        "id": "strange_clan_gen",
+        "event_id": "strange_clan_gen",
         "strings": [
             "Is telling everyone about {PRONOUN/m_c/poss} weird dreams",
             "Stands uncomfortably close to other cats without a word",
@@ -2073,7 +2073,7 @@
         }
     },
     {
-        "id": "strict_clan_gen",
+        "event_id": "strict_clan_gen",
         "strings": [
             "Is surveying the camp scornfully from a higher vantage point",
             "Is grooming {PRONOUN/m_c/self}, making sure every whisker is in place",
@@ -2105,7 +2105,7 @@
         }
     },
     {
-        "id": "strict_grown_up_to_living_apprentices",
+        "event_id": "strict_grown_up_to_living_apprentices",
         "strings": [
             "Snaps at some apprentices after they pull a harmless prank",
             "Is criticizing everything r_c is doing wrong",
@@ -2138,7 +2138,7 @@
         }
     },
     {
-        "id": "strict_grown_up_to_deputy",
+        "event_id": "strict_grown_up_to_deputy",
         "strings": [
             "Is encouraging the deputy to be more harsh",
             "Confers with r_c about troublesome Clanmates"
@@ -2162,7 +2162,7 @@
         }
     },
     {
-        "id": "thoughtful_clan_gen",
+        "event_id": "thoughtful_clan_gen",
         "strings": [
             "Is offering helpful advice to a sad Clanmate",
             "Noticed a Clanmate was tired and offered to take on their chores",
@@ -2191,7 +2191,7 @@
         }
     },
     {
-        "id": "thoughtful_to_warrior_apprentice",
+        "event_id": "thoughtful_to_warrior_apprentice",
         "strings": [
             "Reassures an apprentice who's nervous to go on patrol",
             "Notices r_c seems more tired from training than usual"
@@ -2219,7 +2219,7 @@
         }
     },
     {
-        "id": "thoughtful_to_med",
+        "event_id": "thoughtful_to_med",
         "strings": [
             "Offers to fetch herbs for the medicine cat",
             "Brought back a much-needed herb after a hunting patrol",
@@ -2251,7 +2251,7 @@
         }
     },
     {
-        "id": "troublesome_clan_gen",
+        "event_id": "troublesome_clan_gen",
         "strings": [
             "Recently put a dead snake at the camp entrance to scare Clanmates",
             "Is embarrassed after getting a taste of {PRONOUN/m_c/poss} own bitter herbs... Serves {PRONOUN/m_c/object} right!",
@@ -2279,7 +2279,7 @@
         }
     },
     {
-        "id": "troublesome_to_living_medcat",
+        "event_id": "troublesome_to_living_medcat",
         "strings": [
             "Is grumbling as {PRONOUN/m_c/subject} {VERB/m_c/carry/carries} out a task for the medicine cat",
             "Snacks on catmint when r_c isn't looking"
@@ -2307,7 +2307,7 @@
         }
     },
     {
-        "id": "troublesome_to_living_apprentices",
+        "event_id": "troublesome_to_living_apprentices",
         "strings": [
             "Pulls pranks and blames it on the apprentices"
         ],
@@ -2337,7 +2337,7 @@
         }
     },
     {
-        "id": "vengeful_clan_gen",
+        "event_id": "vengeful_clan_gen",
         "strings": [
             "Is glaring daggers across the camp clearing",
             "Daydreams all day about an elaborate plot to make a Clanmate disappear",
@@ -2356,7 +2356,7 @@
         }
     },
     {
-        "id": "wise_clan_gen",
+        "event_id": "wise_clan_gen",
         "strings": [
             "Is explaining the truth to a Clanmate that said something incorrect",
             "Sits quietly, observing the Clan dynamics with a knowing gaze",
@@ -2374,7 +2374,7 @@
         }
     },
     {
-        "id": "wise_to_leader",
+        "event_id": "wise_to_leader",
         "strings": [
             "Has a suggestion for r_c",
             "Offers r_c sage advice about leadership"
@@ -2398,7 +2398,7 @@
         }
     },
     {
-        "id": "wise_to_living_kits",
+        "event_id": "wise_to_living_kits",
         "strings": [
             "Tells some kits a thing or two about growing older"
         ],
@@ -2421,7 +2421,7 @@
         }
     },
     {
-        "id": "wise_to_living_apprentices",
+        "event_id": "wise_to_living_apprentices",
         "strings": [
             "Is telling stories to a very interested bunch of apprentices",
             "Instills {PRONOUN/m_c/poss} wisdom into some rowdy apprentices",
@@ -2448,7 +2448,7 @@
         }
     },
     {
-        "id": "wise_to_living_elder",
+        "event_id": "wise_to_living_elder",
         "strings": [
             "Asks r_c for some advice"
         ],
@@ -2471,7 +2471,7 @@
         }
     },
     {
-        "id": "teacher_skill_gen",
+        "event_id": "teacher_skill_gen",
         "strings": [
             "Breaks something complicated down into easy steps",
             "Shares {PRONOUN/m_c/poss} secret tips with r_c",
@@ -2495,7 +2495,7 @@
         }
     },
     {
-        "id": "teacher_skill_normaladult_gen",
+        "event_id": "teacher_skill_normaladult_gen",
         "strings": [
             "Takes the lead in a training patrol"
         ],
@@ -2515,7 +2515,7 @@
         }
     },
     {
-        "id": "hunter_skill_gen",
+        "event_id": "hunter_skill_gen",
         "strings": [
             "Keeps {PRONOUN/m_c/poss} reflexes sharp with some exercises",
             "Practices pouncing",
@@ -2543,7 +2543,7 @@
         }
     },
     {
-        "id": "fighter_skill_gen",
+        "event_id": "fighter_skill_gen",
         "strings": [
             "Keeps {PRONOUN/m_c/poss} claws sharp",
             "Enjoys sparring with any Clanmate",
@@ -2574,7 +2574,7 @@
         }
     },
     {
-        "id": "runner_skill_gen",
+        "event_id": "runner_skill_gen",
         "strings": [
             "Stretches before and after a run",
             "Runs sprints, counting heartbeats in {PRONOUN/m_c/poss} head",
@@ -2594,7 +2594,7 @@
         }
     },
     {
-        "id": "climber_skill_gen",
+        "event_id": "climber_skill_gen",
         "strings": [
             "Finds a perch high up in camp",
             "Leaps from log to log",
@@ -2615,7 +2615,7 @@
         }
     },
     {
-        "id": "swimmer_skill_gen",
+        "event_id": "swimmer_skill_gen",
         "strings": [
             "Eats fish to keep {PRONOUN/m_c/poss} pelt sleek",
             "Stretches on land before a swim",
@@ -2641,7 +2641,7 @@
         }
     },
     {
-        "id": "stealth0_skill_gen",
+        "event_id": "stealth0_skill_gen",
         "strings": [
             "Was scolded for sneaking away",
             "Was caught lying to r_c",
@@ -2667,7 +2667,7 @@
         }
     },
     {
-        "id": "stealth_skill_gen",
+        "event_id": "stealth_skill_gen",
         "strings": [
             "Took an extra piece of fresh-kill from the pile without anyone noticing",
             "Sits quietly on the far side of camp",
@@ -2700,7 +2700,7 @@
         }
     },
     {
-        "id": "stealth3_skill_gen",
+        "event_id": "stealth3_skill_gen",
         "strings": [
             "Knows that even the most paranoid rabbit would be no match for {PRONOUN/m_c/object}"
         ],
@@ -2715,7 +2715,7 @@
         }
     },
     {
-        "id": "speaker_skill_gen",
+        "event_id": "speaker_skill_gen",
         "strings": [
             "Uses a word that r_c has never heard of",
             "Practices giving a speech in a puddle",
@@ -2740,7 +2740,7 @@
         }
     },
     {
-        "id": "mediator_skill_gen",
+        "event_id": "mediator_skill_gen",
         "strings": [
             "Reminds r_c to think before acting",
             "Considers r_c's perspective",
@@ -2769,7 +2769,7 @@
         }
     },
     {
-        "id": "mediator_skillnotrole_gen",
+        "event_id": "mediator_skillnotrole_gen",
         "strings": [
             "Wonders if it's too late to become a mediator",
             "Wonders if {PRONOUN/m_c/subject} would be better as a mediator instead",
@@ -2791,7 +2791,7 @@
         }
     },
     {
-        "id": "clever_skill_gen",
+        "event_id": "clever_skill_gen",
         "strings": [
             "Studies r_c intently",
             "Listens much more than {PRONOUN/m_c/subject} {VERB/m_c/talk/talks}",
@@ -2819,7 +2819,7 @@
         }
     },
     {
-        "id": "insight_skill_gen",
+        "event_id": "insight_skill_gen",
         "strings": [
             "Notes the underlying causes behind r_c's behavior",
             "Considers the future of the Clan",
@@ -2846,7 +2846,7 @@
         }
     },
     {
-        "id": "sense_skill_gen",
+        "event_id": "sense_skill_gen",
         "strings": [
             "Turns {PRONOUN/m_c/poss} head sharply at a flit of movement",
             "Practices navigating the camp without one of {PRONOUN/m_c/poss} senses",
@@ -2865,7 +2865,7 @@
         }
     },
     {
-        "id": "sense3_skill_gen",
+        "event_id": "sense3_skill_gen",
         "strings": [
             "Leaves camp, overwhelmed by the sounds and smells of other cats"
         ],
@@ -2880,7 +2880,7 @@
         }
     },
     {
-        "id": "kitsitter_skill_gen",
+        "event_id": "kitsitter_skill_gen",
         "strings": [
             "Brings fresh moss to the nursery in anticipation of new kits",
             "Converses easily with younger cats",
@@ -2897,7 +2897,7 @@
         }
     },
     {
-        "id": "kitsitter_to_kit",
+        "event_id": "kitsitter_to_kit",
         "strings": [
             "Rolls up moss-balls for kits to play with",
             "Brings r_c a cool feather to play with",
@@ -2935,7 +2935,7 @@
         }
     },
     {
-        "id": "story_skill_gen",
+        "event_id": "story_skill_gen",
         "strings": [
             "Thinks of the perfect ending to a story",
             "Revises old elements of a myth",
@@ -2960,7 +2960,7 @@
         }
     },
     {
-        "id": "lore_skill_gen",
+        "event_id": "lore_skill_gen",
         "strings": [
             "Lists the constellations to r_c",
             "Remembers old names for prey that no cat uses anymore",
@@ -2986,7 +2986,7 @@
         }
     },
     {
-        "id": "camp_skill_gen",
+        "event_id": "camp_skill_gen",
         "strings": [
             "Is padding back and forth across the camp",
             "Is helping to reinforce the nursery walls",
@@ -3013,7 +3013,7 @@
         }
     },
     {
-        "id": "healer_skill_gen",
+        "event_id": "healer_skill_gen",
         "strings": [
             "Pulls a thorn out of r_c's paw",
             "Keeps an eye out for cobwebs",
@@ -3038,7 +3038,7 @@
         }
     },
     {
-        "id": "star_skill_gen",
+        "event_id": "star_skill_gen",
         "strings": [
             "Gives thanks to StarClan",
             "Thinks {PRONOUN/m_c/subject} saw a glimmer of stardust out of the corner of {PRONOUN/m_c/poss} eye",
@@ -3065,7 +3065,7 @@
         }
     },
     {
-        "id": "starclan_skill_to_medcat",
+        "event_id": "starclan_skill_to_medcat",
         "strings": [
             "Goes to the medicine cat to ask for spiritual advice"
         ],
@@ -3093,7 +3093,7 @@
         }
     },
     {
-        "id": "starclan_df_ghost_skill_to_kit",
+        "event_id": "starclan_df_ghost_skill_to_kit",
         "strings": [
             "Rolls {PRONOUN/m_c/poss} eyes at the kits laughing about spirits not being real"
         ],
@@ -3118,7 +3118,7 @@
         }
     },
     {
-        "id": "dark_skill_gen",
+        "event_id": "dark_skill_gen",
         "strings": [
             "Feels an ominous presence behind {PRONOUN/m_c/object}",
             "Notices r_c casts more than one shadow",
@@ -3148,7 +3148,7 @@
         }
     },
     {
-        "id": "rc_dark_skill_gen",
+        "event_id": "rc_dark_skill_gen",
         "strings": [
             "Notices r_c casts more than one shadow",
             "Feels uneasy around r_c",
@@ -3168,7 +3168,7 @@
         }
     },
     {
-        "id": "omen_skill_gen",
+        "event_id": "omen_skill_gen",
         "strings": [
             "Finds a strange piece of prey",
             "Finds a fasciated flower and wonders what it might mean",
@@ -3192,7 +3192,7 @@
         }
     },
     {
-        "id": "dream_skill_gen",
+        "event_id": "dream_skill_gen",
         "strings": [
             "Feels a strange chill in {PRONOUN/m_c/poss} dream",
             "Feels a comforting warmth in {PRONOUN/m_c/poss} dream",
@@ -3218,7 +3218,7 @@
         }
     },
     {
-        "id": "dream2_skill_gen",
+        "event_id": "dream2_skill_gen",
         "strings": [
             "Sleeps outside of camp to avoid {PRONOUN/m_c/poss} Clanmates' dreams",
             "Keeps stumbling into r_c's recurring dream and is bored of it",
@@ -3243,7 +3243,7 @@
         }
     },
     {
-        "id": "clairvoyant_gen",
+        "event_id": "clairvoyant_gen",
         "strings": [
             "Feels a tingle of premonition",
             "Gets a wave of deja vu",
@@ -3271,7 +3271,7 @@
         }
     },
     {
-        "id": "clairvoyant_skill_working_gen",
+        "event_id": "clairvoyant_skill_working_gen",
         "strings": [
             "Already knows which patrol {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} on today",
             "Anticipates the best hunting ground for today's patrol"
@@ -3292,7 +3292,7 @@
         }
     },
     {
-        "id": "prophet_skill_gen",
+        "event_id": "prophet_skill_gen",
         "strings": [
             "Hears a strange string of words echo in {PRONOUN/m_c/poss} ears",
             "Keeps having the same dream and is starting to worry",
@@ -3317,7 +3317,7 @@
         }
     },
     {
-        "id": "ghost_skill_gen",
+        "event_id": "ghost_skill_gen",
         "strings": [
             "Notes a cold spot in camp",
             "Hears an unearthly humming",
@@ -3335,7 +3335,7 @@
         }
     },
     {
-        "id": "ghost2_skill_gen",
+        "event_id": "ghost2_skill_gen",
         "strings": [
             "Notices a white blur at the edge of camp... but it's just cotton fluff",
             "Spots a silhouette in the distance",
@@ -3356,7 +3356,7 @@
         }
     },
     {
-        "id": "ghost3_skill_gen",
+        "event_id": "ghost3_skill_gen",
         "strings": [
             "Hears a cat crying for help, but finds no cat there",
             "Exchanges pleasantries with a long-dead cat",
@@ -3378,7 +3378,7 @@
         }
     },
     {
-        "id": "gen_mate",
+        "event_id": "gen_mate",
         "strings": [
             "Is sharing prey with r_c",
             "Is on a walk with r_c",
@@ -3433,7 +3433,7 @@
         ]
     },
     {
-        "id": "gen_medicine_cat_mate",
+        "event_id": "gen_medicine_cat_mate",
         "strings": [
             "Is urging r_c to rest",
             "Brings r_c some prey",
@@ -3466,7 +3466,7 @@
         ]
     },
     {
-        "id": "gen_sibling",
+        "event_id": "gen_sibling",
         "strings": [
             "Is sharing prey with r_c",
             "Is taking a nap with r_c",
@@ -3500,7 +3500,7 @@
         ]
     },
     {
-        "id": "gen_sibling_not_kit",
+        "event_id": "gen_sibling_not_kit",
         "strings": [
             "Play fights with r_c, just like old times",
             "Reminisces with r_c about being kits",
@@ -3543,7 +3543,7 @@
         ]
     },
     {
-        "id": "parent_to_kit",
+        "event_id": "parent_to_kit",
         "strings": [
             "Pulls r_c aside and starts grooming {PRONOUN/r_c/object} despite {PRONOUN/r_c/poss} protests",
             "Purrs as {PRONOUN/m_c/subject} {VERB/m_c/listen/listens} to r_c talk about nothing in particular",
@@ -3574,7 +3574,7 @@
         ]
     },
     {
-        "id": "gen_not_kittypet",
+        "event_id": "gen_not_kittypet",
         "strings": [
             "Is thinking about how awful kittypet food must taste",
             "Is wondering what living with Twolegs must be like",
@@ -3594,7 +3594,7 @@
         }
     },
     {
-        "id": "gen_otherclan",
+        "event_id": "gen_otherclan",
         "strings": [
             "Is wondering how {PRONOUN/m_c/poss} old Clan is doing",
             "Is thinking about {PRONOUN/m_c/poss} old Clanmates",
@@ -3622,7 +3622,7 @@
         }
     },
     {
-        "id": "gen_wandering_healer",
+        "event_id": "gen_wandering_healer",
         "strings": [
             "Is wondering how the cats {PRONOUN/m_c/subject} helped in the past are doing",
             "Is helping out in the medicine cat den",
@@ -3643,7 +3643,7 @@
         }
     },
     {
-        "id": "gen_refugee_to_alive_leader",
+        "event_id": "gen_refugee_to_alive_leader",
         "strings": [
             "Is observing r_c's actions closely",
             "Appreciates r_c for taking {PRONOUN/m_c/object} in",
@@ -3672,7 +3672,7 @@
         }
     },
     {
-        "id": "gen_tragedy_survivor",
+        "event_id": "gen_tragedy_survivor",
         "strings": [
             "Spent last night stressing over possible disasters",
             "Is thankful for the safety of the camp",
@@ -3699,7 +3699,7 @@
         }
     },
     {
-        "id": "gen_tragedy_survivor_to_alive_gen",
+        "event_id": "gen_tragedy_survivor_to_alive_gen",
         "strings": [
             "Left a conversation that reminded {PRONOUN/m_c/object} of things {PRONOUN/m_c/subject}'d rather forget",
             "Heard someone say something that reminded {PRONOUN/m_c/object} of {PRONOUN/m_c/poss} lost home",
@@ -3736,7 +3736,7 @@
         }
     },
     {
-        "id": "gen_tragedy_survivor_to_alive_leader",
+        "event_id": "gen_tragedy_survivor_to_alive_leader",
         "strings": [
             "Is wondering how well the Clan would fare in a disaster under r_c's leadership",
             "Warns r_c about something m_c barely survived the first time"
@@ -3765,7 +3765,7 @@
         }
     },
     {
-        "id": "gen_former_kittypet",
+        "event_id": "gen_former_kittypet",
         "strings": [
             "Is reflecting on how different {PRONOUN/m_c/poss} life is now",
             "Misses how {PRONOUN/m_c/poss} Twolegs kept their den at a comfy temperature at all times",
@@ -3807,7 +3807,7 @@
         }
     },
     {
-        "id": "gen_former_kittypet_apprentice",
+        "event_id": "gen_former_kittypet_apprentice",
         "strings": [
             "Is worried {PRONOUN/m_c/subject} will never fit in",
             "Refuses to let {PRONOUN/m_c/poss} kittypet roots hold {PRONOUN/m_c/object} back",
@@ -3834,7 +3834,7 @@
         }
     },
     {
-        "id": "gen_former_kittypet_apprentice_to_apprentice",
+        "event_id": "gen_former_kittypet_apprentice_to_apprentice",
         "strings": [
             "Wishes r_c would stop teasing {PRONOUN/m_c/object} about having been a kittypet",
             "Tells r_c about Twoleg behavior",
@@ -3874,7 +3874,7 @@
         }
     },
     {
-        "id": "med_cats_to_alive_kit",
+        "event_id": "med_cats_to_alive_kit",
         "strings": [
             "Is teaching kits about which plants to stay away from",
             "Chases kits out of {PRONOUN/m_c/poss} den",
@@ -3904,7 +3904,7 @@
         }
     },
     {
-        "id": "med_cats_to_alive_warrior",
+        "event_id": "med_cats_to_alive_warrior",
         "strings": [
             "Is checking up on the warriors",
             "Reminds the warriors to stretch after training",
@@ -3929,7 +3929,7 @@
         }
     },
     {
-        "id": "working_cat",
+        "event_id": "working_cat",
         "strings": [
             "Guards camp",
             "Sharpens {PRONOUN/m_c/poss} claws",
@@ -3970,7 +3970,7 @@
         }
     },
     {
-        "id": "working_cat_to_leadership",
+        "event_id": "working_cat_to_leadership",
         "strings": [
             "Wonders if {PRONOUN/m_c/subject} could handle r_c's position",
             "Complains about being sent on dawn patrol",
@@ -4001,7 +4001,7 @@
         }
     },
     {
-        "id": "working_warrior_to_leadership",
+        "event_id": "working_warrior_to_leadership",
         "strings": [
             "Volunteers to lead a hunt, licking {PRONOUN/m_c/poss} chops",
             "Offers to lead a patrol in r_c's stead",
@@ -4025,7 +4025,7 @@
         }
     },
     {
-        "id": "working_cat_to_deputy",
+        "event_id": "working_cat_to_deputy",
         "strings": [
             "Hopes the deputy won't assign {PRONOUN/m_c/object} to the dawn patrol tomorrow",
             "Hopes the deputy assigns {PRONOUN/m_c/object} to the next patrol",
@@ -4049,7 +4049,7 @@
         }
     },
     {
-        "id": "working_to_alive_med_cat",
+        "event_id": "working_to_alive_med_cat",
         "strings": [
             "Recounts the Gathering for r_c and {PRONOUN/r_c/poss} patients",
             "Brought r_c a berry to identify",
@@ -4076,7 +4076,7 @@
         }
     },
     {
-        "id": "working_adult_to_alive_apprentice",
+        "event_id": "working_adult_to_alive_apprentice",
         "strings": [
             "Lectures r_c on the Warrior Code",
             "Is on a walk in the territory with r_c",
@@ -4110,7 +4110,7 @@
         }
     },
     {
-        "id": "working_cat_newleaf",
+        "event_id": "working_cat_newleaf",
         "season": [
             "newleaf"
         ],
@@ -4134,7 +4134,7 @@
         }
     },
     {
-        "id": "working_cat_leaffall",
+        "event_id": "working_cat_leaffall",
         "season": [
             "leaf-fall"
         ],
@@ -4158,7 +4158,7 @@
         }
     },
     {
-        "id": "apprentices_thoughts",
+        "event_id": "apprentices_thoughts",
         "strings": [
             "Is gossiping",
             "Acts angsty",
@@ -4259,7 +4259,7 @@
         }
     },
     {
-        "id": "apprentices_to_alive_gen",
+        "event_id": "apprentices_to_alive_gen",
         "strings": [
             "Plays a prank on r_c",
             "Tries to do too much at once and defeatedly asks r_c for help",
@@ -4281,7 +4281,7 @@
         }
     },
     {
-        "id": "apprentices_to_mentor",
+        "event_id": "apprentices_to_mentor",
         "strings": [
             "Makes {PRONOUN/m_c/poss} mentor laugh",
             "Is really bonding with {PRONOUN/m_c/poss} mentor",
@@ -4325,7 +4325,7 @@
         ]
     },
     {
-        "id": "apprentices_to_alive_mediator",
+        "event_id": "apprentices_to_alive_mediator",
         "strings": [
             "Is in awe of r_c's conflict resolution skills",
             "Asks for r_c's help solving a problem in the apprentices' den",
@@ -4350,7 +4350,7 @@
         }
     },
     {
-        "id": "apprentices_to_alive_leader",
+        "event_id": "apprentices_to_alive_leader",
         "strings": [
             "Wants to make r_c proud",
             "Wants r_c to notice {PRONOUN/m_c/object}",
@@ -4401,7 +4401,7 @@
         }
     },
     {
-        "id": "apprentices_to_alive_med_cat",
+        "event_id": "apprentices_to_alive_med_cat",
         "strings": [
             "Is in the medicine cat den after getting a small injury",
             "Is scolded by r_c for letting an injury go untreated",
@@ -4426,7 +4426,7 @@
         }
     },
     {
-        "id": "apprentices_to_alive_med_cat_app",
+        "event_id": "apprentices_to_alive_med_cat_app",
         "strings": [
             "Wants to visit r_c at the medicine cat den",
             "Talks to r_c about what being a medicine cat apprentice is like"
@@ -4449,7 +4449,7 @@
         }
     },
     {
-        "id": "apprentices_to_alive_kits",
+        "event_id": "apprentices_to_alive_kits",
         "strings": [
             "Is awkwardly deflecting kits' questions about where kits come from",
             "Was put on kit-sitting duty",
@@ -4483,7 +4483,7 @@
         }
     },
     {
-        "id": "adventurous_apprentices",
+        "event_id": "adventurous_apprentices",
         "strings": [
             "Tries to recruit other apprentices for a quick adventure",
             "Sneaks off to the Twolegplace to explore",
@@ -4507,7 +4507,7 @@
         }
     },
     {
-        "id": "ambitious_apprentices",
+        "event_id": "ambitious_apprentices",
         "strings": [
             "Is feeling proud of {PRONOUN/m_c/self}",
             "Makes sure to wake up early to train",
@@ -4534,7 +4534,7 @@
         }
     },
     {
-        "id": "ambitious_apprentices_to_mentor",
+        "event_id": "ambitious_apprentices_to_mentor",
         "strings": [
             "Has been asking {PRONOUN/m_c/poss} mentor for more training"
         ],
@@ -4568,7 +4568,7 @@
         ]
     },
     {
-        "id": "bloodthirsty_apprentices",
+        "event_id": "bloodthirsty_apprentices",
         "strings": [
             "Starts a fight with another apprentice",
             "Can't convince the other apprentices to spar with {PRONOUN/m_c/object}"
@@ -4589,7 +4589,7 @@
         }
     },
     {
-        "id": "bloodthirsty_apprentices_to_mentor",
+        "event_id": "bloodthirsty_apprentices_to_mentor",
         "strings": [
             "Unnerves {PRONOUN/m_c/poss} mentor with {PRONOUN/m_c/poss} intensity during battle training",
             "Tries to sneak out of camp to fight a badger but is caught by {PRONOUN/m_c/poss} mentor",
@@ -4625,7 +4625,7 @@
         ]
     },
     {
-        "id": "bold_apprentices",
+        "event_id": "bold_apprentices",
         "strings": [
             "Winked cheekily at another apprentice",
             "Demands to lead a patrol",
@@ -4648,7 +4648,7 @@
         }
     },
     {
-        "id": "bold_apprentices_to_mentor",
+        "event_id": "bold_apprentices_to_mentor",
         "strings": [
             "Criticizes {PRONOUN/m_c/poss} mentor",
             "Tells {PRONOUN/m_c/poss} mentor to challenge {PRONOUN/m_c/object}"
@@ -4683,7 +4683,7 @@
         ]
     },
     {
-        "id": "bold_apprentices_to_leader",
+        "event_id": "bold_apprentices_to_leader",
         "strings": [
             "Tells the leader {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing something wrong",
             "Informs r_c of {PRONOUN/m_c/poss} preferred full name",
@@ -4714,7 +4714,7 @@
         }
     },
     {
-        "id": "calm_apprentices_to_apprentices",
+        "event_id": "calm_apprentices_to_apprentices",
         "strings": [
             "Helps r_c work through a personal issue",
             "Smooths over an argument between denmates",
@@ -4747,7 +4747,7 @@
         }
     },
     {
-        "id": "careful_apprentices",
+        "event_id": "careful_apprentices",
         "strings": [
             "Is asking if {PRONOUN/m_c/subject} {VERB/m_c/need/needs} more training",
             "Never forgets to remind {PRONOUN/m_c/poss} Clanmates of things they might have forgotten about",
@@ -4769,7 +4769,7 @@
         }
     },
     {
-        "id": "careful_apprentices_to_mentor",
+        "event_id": "careful_apprentices_to_mentor",
         "strings": [
             "Double-checks with {PRONOUN/m_c/poss} mentor about training"
         ],
@@ -4803,7 +4803,7 @@
         ]
     },
     {
-        "id": "charismatic_apprentices_to_apprentices",
+        "event_id": "charismatic_apprentices_to_apprentices",
         "strings": [
             "Winked playfully at another apprentice from across the clearing!",
             "Is this moon's heartthrob to the other apprentices",
@@ -4838,7 +4838,7 @@
         }
     },
     {
-        "id": "childish_apprentices_to_apprentices",
+        "event_id": "childish_apprentices_to_apprentices",
         "strings": [
             "Convinces another apprentice to play moss ball instead of finishing their duties",
             "Won't stop making r_c laugh during training",
@@ -4872,7 +4872,7 @@
         }
     },
     {
-        "id": "cold_apprentices",
+        "event_id": "cold_apprentices",
         "strings": [
             "Hopes {PRONOUN/m_c/poss} name will end in -claw",
             "Hopes {PRONOUN/m_c/poss} name will end in -fang",
@@ -4905,7 +4905,7 @@
         }
     },
     {
-        "id": "compassionate_apprentices",
+        "event_id": "compassionate_apprentices",
         "strings": [
             "Is doing extra apprentice tasks around camp, to help lighten the load",
             "Hopes the skills {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} learning will help others"
@@ -4926,7 +4926,7 @@
         }
     },
     {
-        "id": "compassionate_apprentices_to_mentor",
+        "event_id": "compassionate_apprentices_to_mentor",
         "strings": [
             "Is thinking of giving {PRONOUN/m_c/poss} mentor a gift for {PRONOUN/m_c/poss} hard work",
             "Made a suggestion to {PRONOUN/m_c/poss} mentor"
@@ -4961,7 +4961,7 @@
         ]
     },
     {
-        "id": "compassionate_apprentices_to_apprentices",
+        "event_id": "compassionate_apprentices_to_apprentices",
         "strings": [
             "Is convincing r_c to take a moments rest, lest {PRONOUN/r_c/subject} {VERB/r_c/become/becomes} burnt out",
             "Volunteered for the tasks the other apprentices hate doing",
@@ -4995,7 +4995,7 @@
         }
     },
     {
-        "id": "daring_apprentices",
+        "event_id": "daring_apprentices",
         "strings": [
             "Is itching to go and train",
             "Explores beyond Clan territory alone",
@@ -5020,7 +5020,7 @@
         }
     },
     {
-        "id": "daring_apprentices_to_mentor",
+        "event_id": "daring_apprentices_to_mentor",
         "strings": [
             "Is being scolded by {PRONOUN/m_c/poss} mentor for reckless behavior while training"
         ],
@@ -5054,7 +5054,7 @@
         ]
     },
     {
-        "id": "insecure_apprentices",
+        "event_id": "insecure_apprentices",
         "strings": [
             "Thinks that today is going to be a better day than the last",
             "Is making {PRONOUN/m_c/poss} friends laugh at {PRONOUN/m_c/poss} own expense",
@@ -5085,7 +5085,7 @@
         }
     },
     {
-        "id": "insecure_apprentices_to_mentor",
+        "event_id": "insecure_apprentices_to_mentor",
         "strings": [
             "Doesn't think that {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been performing up to {PRONOUN/m_c/poss} mentor's standards lately",
             "Finds that {PRONOUN/m_c/subject} {VERB/m_c/are/is} really good at making {PRONOUN/m_c/poss} mentor laugh",
@@ -5121,7 +5121,7 @@
         ]
     },
     {
-        "id": "insecure_mediator_medicine_apprentices",
+        "event_id": "insecure_mediator_medicine_apprentices",
         "strings": [
             "Wonders if the warrior life would have better suited {PRONOUN/m_c/object}",
             "Questions if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} cut out for this responsibility",
@@ -5142,7 +5142,7 @@
         }
     },
     {
-        "id": "lonesome_apprentices",
+        "event_id": "lonesome_apprentices",
         "strings": [
             "Is feeling cramped in the apprentices' den",
             "Managed to perform a difficult task on {PRONOUN/m_c/poss} own",
@@ -5168,7 +5168,7 @@
         }
     },
     {
-        "id": "lonesome_apprentices_to_mentor",
+        "event_id": "lonesome_apprentices_to_mentor",
         "strings": [
             "Doesn't think that {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been performing up to {PRONOUN/m_c/poss} mentor's standards lately"
         ],
@@ -5202,7 +5202,7 @@
         ]
     },
     {
-        "id": "loving_apprentices_to_apprentices",
+        "event_id": "loving_apprentices_to_apprentices",
         "strings": [
             "Is listening to r_c's troubles sympathetically",
             "Offers to help r_c with {PRONOUN/r_c/poss} tasks",
@@ -5238,7 +5238,7 @@
         }
     },
     {
-        "id": "loyal_apprentices",
+        "event_id": "loyal_apprentices",
         "strings": [
             "Takes pride in learning to serve c_n",
             "Backs up r_c in a scary situation",
@@ -5265,7 +5265,7 @@
         }
     },
     {
-        "id": "loyal_apprentices_to_mentor",
+        "event_id": "loyal_apprentices_to_mentor",
         "strings": [
             "Is listening to {PRONOUN/m_c/poss} mentor intently",
             "Proclaimed {PRONOUN/m_c/poss} unwavering loyalty to {PRONOUN/m_c/poss} mentor",
@@ -5301,7 +5301,7 @@
         ]
     },
     {
-        "id": "nervous_apprentices",
+        "event_id": "nervous_apprentices",
         "strings": [
             "Is hoping to not train today...",
             "Wants to ask for help with something, but is too ashamed",
@@ -5332,7 +5332,7 @@
         }
     },
     {
-        "id": "nervous_apprentices_to_mentor",
+        "event_id": "nervous_apprentices_to_mentor",
         "strings": [
             "Agrees to {PRONOUN/m_c/poss} mentor's orders, despite {PRONOUN/m_c/poss} own doubts"
         ],
@@ -5366,7 +5366,7 @@
         ]
     },
     {
-        "id": "playful_apprentices",
+        "event_id": "playful_apprentices",
         "strings": [
             "Successfully lightened a dreary mood while training",
             "Entertains r_c with {PRONOUN/m_c/poss} antics in training",
@@ -5395,7 +5395,7 @@
         }
     },
     {
-        "id": "playful_apprentices_to_mentor",
+        "event_id": "playful_apprentices_to_mentor",
         "strings": [
             "Won't stop making funny faces when {PRONOUN/m_c/poss} mentor's back is turned",
             "Annoyed {PRONOUN/m_c/poss} mentor by accident the other day"
@@ -5430,7 +5430,7 @@
         ]
     },
     {
-        "id": "responsible_apprentices",
+        "event_id": "responsible_apprentices",
         "strings": [
             "Gently reminds a Clanmate of something they forgot to do",
             "Never forgets to thank StarClan for the fresh-kill",
@@ -5456,7 +5456,7 @@
         }
     },
     {
-        "id": "responsible_apprentices_to_mentor",
+        "event_id": "responsible_apprentices_to_mentor",
         "strings": [
             "Is licking {PRONOUN/m_c/poss} chest in embarrassment after being praised by {PRONOUN/m_c/poss} mentor",
             "Is asking {PRONOUN/m_c/poss} mentor what {PRONOUN/m_c/subject} can do to be helpful around camp today",
@@ -5492,7 +5492,7 @@
         ]
     },
     {
-        "id": "righteous_apprentices",
+        "event_id": "righteous_apprentices",
         "strings": [
             "Dutifully follows the Warrior Code",
             "Recites the Warrior Code to {PRONOUN/m_c/self} before bed"
@@ -5513,7 +5513,7 @@
         }
     },
     {
-        "id": "righteous_apprentices_to_mentor",
+        "event_id": "righteous_apprentices_to_mentor",
         "strings": [
             "Refused to follow {PRONOUN/m_c/poss} mentor's recent orders due to {PRONOUN/m_c/poss} own morals"
         ],
@@ -5547,7 +5547,7 @@
         ]
     },
     {
-        "id": "shameless_apprentices",
+        "event_id": "shameless_apprentices",
         "strings": [
             "Was found napping in the warriors' den!",
             "Sleeps in 'til sun-high"
@@ -5568,7 +5568,7 @@
         }
     },
     {
-        "id": "shameless_apprentices_to_mentor",
+        "event_id": "shameless_apprentices_to_mentor",
         "strings": [
             "Ignores {PRONOUN/m_c/poss} mentor",
             "Contradicts {PRONOUN/m_c/poss} mentor",
@@ -5606,7 +5606,7 @@
         ]
     },
     {
-        "id": "stealth_apprentices",
+        "event_id": "stealth_apprentices",
         "strings": [
             "Practices stepping across the camp without making a sound",
             "Sneaks out of camp",
@@ -5632,7 +5632,7 @@
         }
     },
     {
-        "id": "stealth_apprentices_to_mentor",
+        "event_id": "stealth_apprentices_to_mentor",
         "strings": [
             "Comes back to camp without {PRONOUN/m_c/poss} mentor"
         ],
@@ -5666,7 +5666,7 @@
         ]
     },
     {
-        "id": "strange_apprentices",
+        "event_id": "strange_apprentices",
         "strings": [
             "Has found an unorthodox way out of camp",
             "Wonders how foxes train apprentices",
@@ -5690,7 +5690,7 @@
         }
     },
     {
-        "id": "strange_apprentices_to_mentor",
+        "event_id": "strange_apprentices_to_mentor",
         "strings": [
             "Decides to stare at {PRONOUN/m_c/poss} mentor without blinking",
             "Is asking {PRONOUN/m_c/poss} mentor why things are the way they are",
@@ -5727,7 +5727,7 @@
         ]
     },
     {
-        "id": "strict_apprentices",
+        "event_id": "strict_apprentices",
         "strings": [
             "Is busy chastising fellow apprentices... but no one is sure what for",
             "Is participating in a rather rigorous training session",
@@ -5749,7 +5749,7 @@
         }
     },
     {
-        "id": "troublesome_apprentices",
+        "event_id": "troublesome_apprentices",
         "strings": [
             "Got in trouble for shirking {PRONOUN/m_c/poss} training the other day"
         ],
@@ -5783,7 +5783,7 @@
         ]
     },
     {
-        "id": "troublesome_apprentices_to_mentor",
+        "event_id": "troublesome_apprentices_to_mentor",
         "strings": [
             "Is ignoring {PRONOUN/m_c/poss} mentor's orders",
             "Is talking back to {PRONOUN/m_c/poss} mentor",
@@ -5821,7 +5821,7 @@
         ]
     },
     {
-        "id": "troublesome_apprentices_to_apprentices",
+        "event_id": "troublesome_apprentices_to_apprentices",
         "strings": [
             "Is making other apprentices laugh",
             "Is mocking another apprentice",
@@ -5853,7 +5853,7 @@
         }
     },
     {
-        "id": "vengeful_apprentices_to_apprentices",
+        "event_id": "vengeful_apprentices_to_apprentices",
         "strings": [
             "Snaps at another apprentice",
             "Is still glaring at r_c after {PRONOUN/r_c/subject} teased {PRONOUN/m_c/object} yesterday",
@@ -5887,7 +5887,7 @@
         }
     },
     {
-        "id": "wise_apprentices_to_apprentices",
+        "event_id": "wise_apprentices_to_apprentices",
         "strings": [
             "Is giving somber advice to a fellow apprentice",
             "Is giving another apprentice very useful advice",
@@ -5921,7 +5921,7 @@
         }
     },
     {
-        "id": "starclan_skill_apprentices",
+        "event_id": "starclan_skill_apprentices",
         "strings": [
             "Is sending thanks to the stars for a good training session",
             "Prays to StarClan that the training session goes well",
@@ -5944,7 +5944,7 @@
         }
     },
     {
-        "id": "apprentices_to_dead_elder",
+        "event_id": "apprentices_to_dead_elder",
         "strings": [
             "Is wishing r_c was still here to tell {PRONOUN/m_c/object} stories",
             "Went to change r_c's bedding and hear a story only to remember {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} gone...",
@@ -5970,7 +5970,7 @@
         }
     },
     {
-        "id": "apprentices_to_dead_leadership",
+        "event_id": "apprentices_to_dead_leadership",
         "strings": [
             "Is wondering if r_c approves of {PRONOUN/m_c/object} from StarClan",
             "Is wishing r_c were still here to guide {PRONOUN/m_c/object}",
@@ -5996,7 +5996,7 @@
         }
     },
     {
-        "id": "apprentices_to_dead_med_cats",
+        "event_id": "apprentices_to_dead_med_cats",
         "strings": [
             "Remembers how r_c healed {PRONOUN/m_c/object}",
             "Hopes r_c is enjoying looking through StarClan's herb storage",
@@ -6023,7 +6023,7 @@
         }
     },
     {
-        "id": "apprentices_to_dead_apprentices",
+        "event_id": "apprentices_to_dead_apprentices",
         "strings": [
             "Is wondering if r_c would have been {PRONOUN/m_c/poss} friend",
             "Purrs at stories of r_c's apprenticeship antics",
@@ -6050,7 +6050,7 @@
         }
     },
     {
-        "id": "apprentice_to_dead_sc_kit",
+        "event_id": "apprentice_to_dead_sc_kit",
         "strings": [
             "Wonders if one of the stars in the sky is r_c",
             "Remembers fondly when r_c would beg to be taught a new fighting move",
@@ -6084,7 +6084,7 @@
         }
     },
     {
-        "id": "gen_former_rogue_apprentices",
+        "event_id": "gen_former_rogue_apprentices",
         "strings": [
             "Discovers that {PRONOUN/m_c/poss} self-taught method is less effective",
             "Wonders what {PRONOUN/m_c/subject} even {VERB/m_c/need/needs} this training method for",
@@ -6107,7 +6107,7 @@
         }
     },
     {
-        "id": "gen_former_rogue_apprentices_to_mentor",
+        "event_id": "gen_former_rogue_apprentices_to_mentor",
         "strings": [
             "Ditched {PRONOUN/m_c/poss} mentor to do to {PRONOUN/m_c/poss} own thing",
             "Sneaks off to train on {PRONOUN/m_c/poss} own",
@@ -6149,7 +6149,7 @@
         ]
     },
     {
-        "id": "gen_former_rogue_apprentices_to_apprentices",
+        "event_id": "gen_former_rogue_apprentices_to_apprentices",
         "strings": [
             "Boasts to the other apprentices about how {PRONOUN/m_c/subject} didn't need anyone before",
             "Offers to show r_c the ways of a rogue",
@@ -6185,7 +6185,7 @@
         }
     },
     {
-        "id": "gen_to_dead_gen",
+        "event_id": "gen_to_dead_gen",
         "strings": [
             "Is listening to stories about r_c",
             "Is learning more about r_c",
@@ -6209,7 +6209,7 @@
         }
     },
     {
-        "id": "gen_to_dead_sc_kit",
+        "event_id": "gen_to_dead_sc_kit",
         "strings": [
             "Is hoping r_c is well in StarClan",
             "Is wishing r_c could've lived to see today",
@@ -6233,7 +6233,7 @@
         }
     },
     {
-        "id": "adult_to_dead_sc_kit",
+        "event_id": "adult_to_dead_sc_kit",
         "strings": [
             "Wonders if r_c would have been {PRONOUN/m_c/poss} apprentice once {PRONOUN/r_c/subject} {VERB/r_c/were/was} old enough",
             "Wonders what type of apprentice r_c would've been",
@@ -6263,7 +6263,7 @@
         }
     },
     {
-        "id": "gen_to_dead_df_kit",
+        "event_id": "gen_to_dead_df_kit",
         "strings": [
             "Wonders how r_c deals with being in the Dark Forest",
             "Wishes that r_c could walk among the stars",
@@ -6284,7 +6284,7 @@
         }
     },
     {
-        "id": "gen_to_dead_parent",
+        "event_id": "gen_to_dead_parent",
         "strings": [
             "Heard a tune in {PRONOUN/m_c/poss} dream that {PRONOUN/m_c/subject} remembered r_c humming in the nursery",
             "Had a tearful visit from r_c in {PRONOUN/m_c/poss} dream last night",
@@ -6320,7 +6320,7 @@
         ]
     },
     {
-        "id": "gen_to_dead_apprentices",
+        "event_id": "gen_to_dead_apprentices",
         "strings": [
             "Is mourning the lost potential of r_c",
             "Is listening to stories about r_c",
@@ -6344,7 +6344,7 @@
         }
     },
     {
-        "id": "gen_to_dead_warrior",
+        "event_id": "gen_to_dead_warrior",
         "strings": [
             "Is thinking about r_c",
             "Is wishing to be more like r_c",
@@ -6365,7 +6365,7 @@
         }
     },
     {
-        "id": "gen_to_dead_medicine_cat",
+        "event_id": "gen_to_dead_medicine_cat",
         "strings": [
             "Is listening to stories about r_c",
             "Is hoping r_c will guide {PRONOUN/m_c/object}",
@@ -6384,7 +6384,7 @@
         }
     },
     {
-        "id": "gen_to_dead_leader",
+        "event_id": "gen_to_dead_leader",
         "strings": [
             "Is missing {PRONOUN/m_c/poss} late leader r_c",
             "Is wondering if r_c is proud of {PRONOUN/m_c/object}",
@@ -6406,7 +6406,7 @@
         }
     },
     {
-        "id": "gen_to_dead_deputy",
+        "event_id": "gen_to_dead_deputy",
         "strings": [
             "Is thinking about r_c",
             "Is trying to learn from r_c's legacy",
@@ -6427,7 +6427,7 @@
         }
     },
     {
-        "id": "gen_to_dead_elder",
+        "event_id": "gen_to_dead_elder",
         "strings": [
             "Is grateful for time spent with r_c",
             "Is reminiscing about r_c",
@@ -6451,7 +6451,7 @@
         }
     },
     {
-        "id": "gen_to_dead_mediator",
+        "event_id": "gen_to_dead_mediator",
         "strings": [
             "Is wondering what r_c would think of current conflicts in the Clan",
             "Wishes r_c was alive to solve {PRONOUN/m_c/poss} problems",
@@ -6469,7 +6469,7 @@
         }
     },
     {
-        "id": "dead_littermate",
+        "event_id": "dead_littermate",
         "strings": [
             "Never had to imagine life without {PRONOUN/m_c/poss} sibling...",
             "Is remembering growing up with r_c",
@@ -6501,7 +6501,7 @@
         ]
     },
     {
-        "id": "paralyzed_gen_to_alive_gen",
+        "event_id": "paralyzed_gen_to_alive_gen",
         "strings": [
             "Goes for a swim",
             "Zooms around camp",
@@ -6529,7 +6529,7 @@
         }
     },
     {
-        "id": "paralyzed_gen_to_alive_kit",
+        "event_id": "paralyzed_gen_to_alive_kit",
         "strings": [
             "Is spinning an epic tale to the kits about how {PRONOUN/m_c/subject} became paralyzed",
             "Couldn't escape in time before kits piled on {PRONOUN/m_c/object}!",
@@ -6556,7 +6556,7 @@
         }
     },
     {
-        "id": "paralyzed_gen_to_alive_young",
+        "event_id": "paralyzed_gen_to_alive_young",
         "strings": [
             "Is playing moss ball with the younger cats"
         ],
@@ -6577,7 +6577,7 @@
         }
     },
     {
-        "id": "paralyzed_adolescent_to_alive_gen",
+        "event_id": "paralyzed_adolescent_to_alive_gen",
         "strings": [
             "Is laughing after r_c lost a race with {PRONOUN/m_c/object}"
         ],
@@ -6600,7 +6600,7 @@
         }
     },
     {
-        "id": "paralyzed_adolescent_to_alive_kit",
+        "event_id": "paralyzed_adolescent_to_alive_kit",
         "strings": [
             "Is letting r_c climb on {PRONOUN/m_c/poss} back"
         ],
@@ -6627,7 +6627,7 @@
         }
     },
     {
-        "id": "paralyzed_adolescent_to_alive_apprentices",
+        "event_id": "paralyzed_adolescent_to_alive_apprentices",
         "strings": [
             "Boasts to r_c about how strong {PRONOUN/m_c/poss} front legs are"
         ],
@@ -6655,7 +6655,7 @@
         }
     },
     {
-        "id": "blind_gen_to_alive_gen",
+        "event_id": "blind_gen_to_alive_gen",
         "strings": [
             "Wonders what {PRONOUN/m_c/poss} Clanmates look like",
             "Smiles as r_c tries to describe different colors to {PRONOUN/m_c/object}",
@@ -6688,7 +6688,7 @@
         }
     },
     {
-        "id": "blind_adolescent_to_alive_gen",
+        "event_id": "blind_adolescent_to_alive_gen",
         "strings": [
             "Makes a sculpture out of mud",
             "Is memorizing the scents of {PRONOUN/m_c/poss} friends and family",
@@ -6716,7 +6716,7 @@
         }
     },
     {
-        "id": "blind_adolescent_to_alive_apprentices",
+        "event_id": "blind_adolescent_to_alive_apprentices",
         "strings": [
             "Brags to the apprentices that {PRONOUN/m_c/subject} {VERB/m_c/have/has} the sharpest hearing",
             "Dares r_c to try to sneak up on {PRONOUN/m_c/object}"
@@ -6745,7 +6745,7 @@
         }
     },
     {
-        "id": "one_bad_eye_gen_to_alive_gen",
+        "event_id": "one_bad_eye_gen_to_alive_gen",
         "strings": [
             "Was startled by r_c suddenly appearing on {PRONOUN/m_c/poss} bad side",
             "Makes an eye-patch for {PRONOUN/m_c/self} from grass and leaves",
@@ -6770,7 +6770,7 @@
         }
     },
     {
-        "id": "one_bad_eye_gen_to_alive_kit",
+        "event_id": "one_bad_eye_gen_to_alive_kit",
         "strings": [
             "Tells the kits tall tales about how {PRONOUN/m_c/subject} became half-blind",
             "Trips over r_c!",
@@ -6796,7 +6796,7 @@
         }
     },
     {
-        "id": "one_bad_eye_adolescent_to_alive_gen",
+        "event_id": "one_bad_eye_adolescent_to_alive_gen",
         "strings": [
             "Boasts that {PRONOUN/m_c/subject} could take on a fox with {PRONOUN/m_c/poss} good eye closed",
             "Wonders if {PRONOUN/m_c/poss} pelt looks messy on {PRONOUN/m_c/poss} bad side",
@@ -6823,7 +6823,7 @@
         }
     },
     {
-        "id": "one_bad_eye_apprentice_to_alive_gen",
+        "event_id": "one_bad_eye_apprentice_to_alive_gen",
         "strings": [
             "Is frustrated having to train with such a big blind spot",
             "Hones {PRONOUN/m_c/poss} sense of smell to compensate for {PRONOUN/m_c/poss} bad eye"
@@ -6849,7 +6849,7 @@
         }
     },
     {
-        "id": "one_bad_eye_adolescent_to_alive_apprentices",
+        "event_id": "one_bad_eye_adolescent_to_alive_apprentices",
         "strings": [
             "Leaps up in shock when r_c sneaks up on {PRONOUN/m_c/poss} bad side"
         ],
@@ -6877,7 +6877,7 @@
         }
     },
     {
-        "id": "one_bad_eye_adolescent_to_alive_kit",
+        "event_id": "one_bad_eye_adolescent_to_alive_kit",
         "strings": [
             "Hisses at a kit for sneaking up on {PRONOUN/m_c/poss} bad side"
         ],
@@ -6900,7 +6900,7 @@
         }
     },
     {
-        "id": "partial_hearing_loss_gen",
+        "event_id": "partial_hearing_loss_gen",
         "strings": [
             "Secretly worries that {PRONOUN/m_c/poss} hearing is getting worse...",
             "Insists that {PRONOUN/m_c/poss} hearing is fine, everyone's just whispering"
@@ -6916,7 +6916,7 @@
         }
     },
     {
-        "id": "partial_hearing_loss_gen_to_alive_gen",
+        "event_id": "partial_hearing_loss_gen_to_alive_gen",
         "strings": [
             "Happily teaches r_c how to read whisker twitches",
             "Is grateful r_c always makes sure to involve {PRONOUN/m_c/object} in conversation",
@@ -6938,7 +6938,7 @@
         }
     },
     {
-        "id": "partial_hearing_loss_gen_congenital_to_alive_gen",
+        "event_id": "partial_hearing_loss_gen_congenital_to_alive_gen",
         "strings": [
             "Is curious about the sounds {PRONOUN/m_c/poss} Clanmates describe",
             "Imagines birdsong",
@@ -6961,7 +6961,7 @@
         }
     },
     {
-        "id": "partial_hearing_loss_acquired_gen",
+        "event_id": "partial_hearing_loss_acquired_gen",
         "strings": [
             "Misses hearing the birdsong at dawn",
             "Remembers a sound differently to how {PRONOUN/m_c/subject} {VERB/m_c/hear/hears} it now",
@@ -6979,7 +6979,7 @@
         }
     },
     {
-        "id": "partial_hearing_loss_gen_to_alive_medcat_any",
+        "event_id": "partial_hearing_loss_gen_to_alive_medcat_any",
         "strings": [
             "Visits r_c for {PRONOUN/m_c/poss} regular hearing checkup",
             "Reassures r_c that {PRONOUN/m_c/poss} hearing is the same as always",
@@ -7006,7 +7006,7 @@
         }
     },
     {
-        "id": "partial_hearing_loss_gen_wet_biomes",
+        "event_id": "partial_hearing_loss_gen_wet_biomes",
         "location": [
             "beach",
             "wetlands"
@@ -7030,7 +7030,7 @@
         }
     },
     {
-        "id": "partial_hearing_loss_gen_mountainous",
+        "event_id": "partial_hearing_loss_gen_mountainous",
         "location": [
             "mountainous"
         ],
@@ -7053,7 +7053,7 @@
         }
     },
     {
-        "id": "any_hearing_congenital_adolescent-adult_to_alive_medcat_any",
+        "event_id": "any_hearing_congenital_adolescent-adult_to_alive_medcat_any",
         "strings": [
             "Shyly asks r_c whether {PRONOUN/m_c/poss} kits might struggle to hear too"
         ],
@@ -7084,7 +7084,7 @@
         }
     },
     {
-        "id": "deaf_gen_to_alive_gen",
+        "event_id": "deaf_gen_to_alive_gen",
         "strings": [
             "Wishes {PRONOUN/m_c/subject} could hear the sounds of camp",
             "Nearly hits the den ceiling when r_c suddenly enters {PRONOUN/m_c/poss} line of sight",
@@ -7110,7 +7110,7 @@
         }
     },
     {
-        "id": "deaf_congenital_gen_to_alive_gen",
+        "event_id": "deaf_congenital_gen_to_alive_gen",
         "strings": [
             "Teaches a Clanmate how to do tail signals",
             "{VERB/m_c/Are/Is} delighted when r_c asks to learn tail signals",
@@ -7136,7 +7136,7 @@
         }
     },
     {
-        "id": "deaf_adolescent_congenital_to_alive_gen",
+        "event_id": "deaf_adolescent_congenital_to_alive_gen",
         "strings": [
             "Wonders if the clouds make noise",
             "Wonders if the sun makes noise",
@@ -7164,7 +7164,7 @@
         }
     },
     {
-        "id": "deaf_adolescent_to_alive_gen",
+        "event_id": "deaf_adolescent_to_alive_gen",
         "strings": [
             "Tries to ask r_c for something, but {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} understand",
             "Feels thunder boom and watches the others flinch",
@@ -7190,7 +7190,7 @@
         }
     },
     {
-        "id": "deaf_adolescent_to_alive_kit",
+        "event_id": "deaf_adolescent_to_alive_kit",
         "strings": [
             "Is patient with squealing kits",
             "Sleeps soundly when {PRONOUN/m_c/poss} denmates are woken by the crying kits"
@@ -7214,7 +7214,7 @@
         }
     },
     {
-        "id": "deaf_congenital_adolescent_to_alive_kit",
+        "event_id": "deaf_congenital_adolescent_to_alive_kit",
         "strings": [
             "Teaches tail signals to the kits"
         ],
@@ -7238,7 +7238,7 @@
         }
     },
     {
-        "id": "deaf_congenital_kitten_to_alive_med",
+        "event_id": "deaf_congenital_kitten_to_alive_med",
         "strings": [
             "Is learning tail signals from r_c",
             "Giggles when r_c pokes around in {PRONOUN/m_c/poss} ears. Ticklish!",
@@ -7267,7 +7267,7 @@
         }
     },
     {
-        "id": "deaf_adolescent_to_alive_med",
+        "event_id": "deaf_adolescent_to_alive_med",
         "strings": [
             "Is practicing tail signals with r_c",
             "Giggles when r_c pokes around in {PRONOUN/m_c/poss} ears. Ticklish!"
@@ -7295,7 +7295,7 @@
         }
     },
     {
-        "id": "deaf_adolescent_to_alive_deaf_adult",
+        "event_id": "deaf_adolescent_to_alive_deaf_adult",
         "strings": [
             "Is talking with r_c with tail signals",
             "Rubs cheeks with r_c to let the older cat feel {PRONOUN/m_c/poss} purr",
@@ -7333,7 +7333,7 @@
         }
     },
     {
-        "id": "wasting_disease_gen_to_alive_gen",
+        "event_id": "wasting_disease_gen_to_alive_gen",
         "strings": [
             "Is taken over by a coughing fit",
             "Is frustrated by {PRONOUN/m_c/poss} health",
@@ -7377,7 +7377,7 @@
         }
     },
     {
-        "id": "wasting_disease_greenleaf_gen_to_alive_gen",
+        "event_id": "wasting_disease_greenleaf_gen_to_alive_gen",
         "season": [
             "greenleaf"
         ],
@@ -7397,7 +7397,7 @@
         }
     },
     {
-        "id": "wasting_disease_leaf-fall_gen_to_alive_gen",
+        "event_id": "wasting_disease_leaf-fall_gen_to_alive_gen",
         "season": [
             "leaf-fall"
         ],
@@ -7418,7 +7418,7 @@
         }
     },
     {
-        "id": "wasting_disease_adolescent_to_alive_gen",
+        "event_id": "wasting_disease_adolescent_to_alive_gen",
         "strings": [
             "Is frustrated by everyone's concern for {PRONOUN/m_c/poss} health",
             "Hopes to live to see {PRONOUN/m_c/poss} naming ceremony",
@@ -7442,7 +7442,7 @@
         }
     },
     {
-        "id": "missing_leg_gen_to_alive_gen",
+        "event_id": "missing_leg_gen_to_alive_gen",
         "strings": [
             "Shows {PRONOUN/m_c/subject} can still run and jump around like any other cat!",
             "Groans when someone says how sad {PRONOUN/m_c/subject} must be to have three legs",
@@ -7465,7 +7465,7 @@
         }
     },
     {
-        "id": "lost_leg_gen_to_alive_kit",
+        "event_id": "lost_leg_gen_to_alive_kit",
         "strings": [
             "Is exaggerating the tale of how {PRONOUN/m_c/subject} lost {PRONOUN/m_c/poss} leg to the kits"
         ],
@@ -7493,7 +7493,7 @@
         }
     },
     {
-        "id": "half_no_tail_gen_to_alive_gen",
+        "event_id": "half_no_tail_gen_to_alive_gen",
         "strings": [
             "Points to something with a forepaw",
             "Flicks {PRONOUN/m_c/poss} tail stub in annoyance",
@@ -7517,7 +7517,7 @@
         }
     },
     {
-        "id": "half_no_tail_lost_gen_to_alive_gen",
+        "event_id": "half_no_tail_lost_gen_to_alive_gen",
         "strings": [
             "Misses being able to do tail signals",
             "Finds balancing harder now, though {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} improving",
@@ -7539,7 +7539,7 @@
         }
     },
     {
-        "id": "half_no_tail_gen_to_alive_kit",
+        "event_id": "half_no_tail_gen_to_alive_kit",
         "strings": [
             "Laughs when a kit asks if their tail could fall off as well one day",
             "Is letting the kits play with {PRONOUN/m_c/poss} tail stub",
@@ -7567,7 +7567,7 @@
         }
     },
     {
-        "id": "constantly_dizzy_gen_to_alive_gen",
+        "event_id": "constantly_dizzy_gen_to_alive_gen",
         "strings": [
             "Stood up too fast again",
             "Assures r_c {PRONOUN/m_c/poss} dizzy spell will end in a moment",
@@ -7592,7 +7592,7 @@
         }
     },
     {
-        "id": "allergies_gen",
+        "event_id": "allergies_gen",
         "strings": [
             "Is having a sneezing fit",
             "Is having an extra sniffily day",
@@ -7615,7 +7615,7 @@
         }
     },
     {
-        "id": "allergies_gen_to_alive_gen",
+        "event_id": "allergies_gen_to_alive_gen",
         "strings": [
             "Apologizes after sneezing on r_c",
             "Accidentally woke up r_c with {PRONOUN/m_c/poss} coughing",
@@ -7651,7 +7651,7 @@
         }
     },
     {
-        "id": "allergies_gen_to_kit",
+        "event_id": "allergies_gen_to_kit",
         "strings": [
             "Purrs when r_c takes care to bring {PRONOUN/m_c/object} flowers that don't trigger {PRONOUN/m_c/poss} allergies",
             "Answers all the questions r_c has about {PRONOUN/m_c/poss} allergies",
@@ -7676,7 +7676,7 @@
         }
     },
     {
-        "id": "allergies_gen_to_running_nose",
+        "event_id": "allergies_gen_to_running_nose",
         "strings": [
             "Is chuckling when r_c complains to {PRONOUN/m_c/object} about {PRONOUN/r_c/poss} running nose",
             "Sadly laughs when r_c asks if having a running nose constantly is what {PRONOUN/m_c/poss} allergies are like",
@@ -7701,7 +7701,7 @@
         }
     },
     {
-        "id": "allergies_gen_to_anycough",
+        "event_id": "allergies_gen_to_anycough",
         "strings": [
             "Is nervous to be around r_c in case {PRONOUN/m_c/subject} {VERB/m_c/get/gets} sick too",
             "Is comforting r_c about the annoyances of {PRONOUN/r_c/poss} symptoms",
@@ -7727,7 +7727,7 @@
         }
     },
     {
-        "id": "allergies_gen_to_whitecough",
+        "event_id": "allergies_gen_to_whitecough",
         "strings": [
             "Is giving r_c advice for handling some of the symptoms of whitecough"
         ],
@@ -7749,7 +7749,7 @@
         }
     },
     {
-        "id": "allergies_gen_to_greencough",
+        "event_id": "allergies_gen_to_greencough",
         "strings": [
             "Is giving r_c advice for handling some of the symptoms of greencough",
             "Watches r_c with sorrow, knowing what it's like to be coughing and sneezing constantly"
@@ -7772,7 +7772,7 @@
         }
     },
     {
-        "id": "allergies_gen_to_yellowcough",
+        "event_id": "allergies_gen_to_yellowcough",
         "strings": [
             "Is giving to give r_c advice for managing some of the symptoms of yellowcough",
             "Watches r_c with worry, wondering if {PRONOUN/m_c/subject} {VERB/m_c/sound/sounds} like that"
@@ -7795,7 +7795,7 @@
         }
     },
     {
-        "id": "allergies_gen_to_redcough",
+        "event_id": "allergies_gen_to_redcough",
         "strings": [
             "Winces at hearing r_c cough, wondering if {PRONOUN/m_c/subject} {VERB/m_c/sound/sounds} like that during bad days",
             "Is attempting to comfort r_c, but knows {PRONOUN/m_c/poss} experiences can't compare to redcough"
@@ -7818,7 +7818,7 @@
         }
     },
     {
-        "id": "allergies_gen_to_med",
+        "event_id": "allergies_gen_to_med",
         "strings": [
             "Is asking r_c if there are herbs to help {PRONOUN/m_c/poss} allergies",
             "Asks r_c to check if {PRONOUN/m_c/subject} {VERB/m_c/are/is} sick or if it's just {PRONOUN/m_c/poss} allergies",
@@ -7850,7 +7850,7 @@
         }
     },
     {
-        "id": "allergies_warm_seasons",
+        "event_id": "allergies_warm_seasons",
         "season": [
             "greenleaf",
             "newleaf"
@@ -7874,7 +7874,7 @@
         }
     },
     {
-        "id": "allergies_cold_seasons",
+        "event_id": "allergies_cold_seasons",
         "season": [
             "leaf-bare",
             "leaf-fall"
@@ -7895,7 +7895,7 @@
         }
     },
     {
-        "id": "allergies_cold_season_to_alive_gen",
+        "event_id": "allergies_cold_season_to_alive_gen",
         "season": [
             "leaf-bare",
             "leaf-fall"
@@ -7919,7 +7919,7 @@
         }
     },
     {
-        "id": "lasting_grief_gen",
+        "event_id": "lasting_grief_gen",
         "strings": [
             "Cannot find the energy to get out of {PRONOUN/m_c/poss} nest today",
             "Is the first cat awake at dawn",
@@ -7948,7 +7948,7 @@
         }
     },
     {
-        "id": "lasting_grief_gen_to_alive_gen",
+        "event_id": "lasting_grief_gen_to_alive_gen",
         "strings": [
             "Worries about losing r_c too",
             "Puts on a smile for r_c"
@@ -7969,7 +7969,7 @@
         }
     },
     {
-        "id": "recurring_shock_gen",
+        "event_id": "recurring_shock_gen",
         "strings": [
             "Visits the medicine cat den for thyme",
             "Wakes up screaming after a nightmare",
@@ -7997,7 +7997,7 @@
         }
     },
     {
-        "id": "all_shock",
+        "event_id": "all_shock",
         "strings": [
             "Keeps reliving what happened",
             "Sleeps only in fits and starts",
@@ -8035,7 +8035,7 @@
         }
     },
     {
-        "id": "blood_loss_gen",
+        "event_id": "blood_loss_gen",
         "strings": [
             "Is feeling lightheaded",
             "Is feeling so cold {PRONOUN/m_c/subject} {VERB/m_c/are/is} shivering",
@@ -8057,7 +8057,7 @@
         }
     },
     {
-        "id": "broken_bone_jaw_gen",
+        "event_id": "broken_bone_jaw_gen",
         "strings": [
             "Is feeling dizzy from pain",
             "Is avoiding moving {PRONOUN/m_c/poss} wound",
@@ -8078,7 +8078,7 @@
         }
     },
     {
-        "id": "mangled_leg_tail_gen",
+        "event_id": "mangled_leg_tail_gen",
         "strings": [
             "Is keeping {PRONOUN/m_c/poss} mangled limb as still as possible",
             "Is avoiding looking at {PRONOUN/m_c/poss} wounds",
@@ -8097,7 +8097,7 @@
         }
     },
     {
-        "id": "phantom_pain_gen",
+        "event_id": "phantom_pain_gen",
         "strings": [
             "Doesn't understand how something that isn't there can hurt so much",
             "Wishes {PRONOUN/m_c/poss} missing limb was back so {PRONOUN/m_c/subject} could soothe its pain",
@@ -8114,7 +8114,7 @@
         }
     },
     {
-        "id": "shivering_frostbite_gen",
+        "event_id": "shivering_frostbite_gen",
         "strings": [
             "Is absolutely freezing",
             "Is shaking uncontrollably",
@@ -8134,7 +8134,7 @@
         }
     },
     {
-        "id": "recovering_from_birth_gen",
+        "event_id": "recovering_from_birth_gen",
         "strings": [
             "Is resting whenever {PRONOUN/m_c/subject} can",
             "Is feeling a bit sore today",
@@ -8153,7 +8153,7 @@
         }
     },
     {
-        "id": "water_in_lungs_gen",
+        "event_id": "water_in_lungs_gen",
         "strings": [
             "Is wheezing loudly",
             "Is having sharp chest pains",
@@ -8172,7 +8172,7 @@
         }
     },
     {
-        "id": "burn_gen",
+        "event_id": "burn_gen",
         "strings": [
             "Can't believe a burn could hurt so much",
             "Feels like {PRONOUN/m_c/subject} {VERB/m_c/are/is} touching flames",
@@ -8191,7 +8191,7 @@
         }
     },
     {
-        "id": "dehydrated_gen",
+        "event_id": "dehydrated_gen",
         "strings": [
             "Feels like {PRONOUN/m_c/poss} head is pounding",
             "Would do anything for a lick of water",
@@ -8211,7 +8211,7 @@
         }
     },
     {
-        "id": "head_damage_gen",
+        "event_id": "head_damage_gen",
         "strings": [
             "Is feeling extremely dizzy",
             "Is having trouble focusing on anything",
@@ -8232,7 +8232,7 @@
         }
     },
     {
-        "id": "damaged_eyes_gen",
+        "event_id": "damaged_eyes_gen",
         "strings": [
             "Is having trouble seeing anything",
             "Is avoiding sunlight",
@@ -8251,7 +8251,7 @@
         }
     },
     {
-        "id": "broken_back_gen",
+        "event_id": "broken_back_gen",
         "strings": [
             "Is barely awake",
             "Is taking shallow breaths",
@@ -8271,7 +8271,7 @@
         }
     },
     {
-        "id": "poisoned_gen",
+        "event_id": "poisoned_gen",
         "strings": [
             "Can't stop shaking",
             "Is curled up in pain",
@@ -8294,7 +8294,7 @@
         }
     },
     {
-        "id": "bee_sting_gen",
+        "event_id": "bee_sting_gen",
         "strings": [
             "Is itching {PRONOUN/m_c/poss} bee sting relentlessly",
             "Never wants to see another bee again",
@@ -8312,7 +8312,7 @@
         }
     },
     {
-        "id": "severe_headache_gen",
+        "event_id": "severe_headache_gen",
         "strings": [
             "Is shivering in pain",
             "Feels sick to {PRONOUN/m_c/poss} stomach",
@@ -8333,7 +8333,7 @@
         }
     },
     {
-        "id": "headache_gen",
+        "event_id": "headache_gen",
         "strings": [
             "Just wants to lay down for a bit to deal with the pain",
             "Wonders if {PRONOUN/m_c/subject} didn't have enough water today",
@@ -8351,7 +8351,7 @@
         }
     },
     {
-        "id": "pregnant_gen",
+        "event_id": "pregnant_gen",
         "strings": [
             "Is a little short of breath",
             "Is extra hungry today",
@@ -8377,7 +8377,7 @@
         }
     },
     {
-        "id": "shock_gen",
+        "event_id": "shock_gen",
         "strings": [
             "Is feeling unnaturally cold",
             "Is breathing rapidly",
@@ -8405,7 +8405,7 @@
         }
     },
     {
-        "id": "seizure_gen",
+        "event_id": "seizure_gen",
         "strings": [
             "Is staring into the distance",
             "Didn't notice a nearby noise",
@@ -8424,7 +8424,7 @@
         }
     },
     {
-        "id": "diarrhea_gen",
+        "event_id": "diarrhea_gen",
         "strings": [
             "Is running to the dirtplace... again",
             "Is groaning with stomach pain",
@@ -8443,7 +8443,7 @@
         }
     },
     {
-        "id": "fleas_gen",
+        "event_id": "fleas_gen",
         "strings": [
             "Is so itchy {PRONOUN/m_c/subject} can't stand it",
             "Is scratching furiously",
@@ -8464,7 +8464,7 @@
         }
     },
     {
-        "id": "infected_wound_gen",
+        "event_id": "infected_wound_gen",
         "strings": [
             "Is worrying about how hot {PRONOUN/m_c/poss} wound feels",
             "Is feeling really sore",
@@ -8483,7 +8483,7 @@
         }
     },
     {
-        "id": "carrionplace_disease_gen",
+        "event_id": "carrionplace_disease_gen",
         "strings": [
             "Is having another coughing fit",
             "Can barely catch a breath",
@@ -8503,7 +8503,7 @@
         }
     },
     {
-        "id": "festering_wound_gen",
+        "event_id": "festering_wound_gen",
         "strings": [
             "Is shivering uncontrollably",
             "Is constantly feeling either very hot or very cold",
@@ -8525,7 +8525,7 @@
         }
     },
     {
-        "id": "heat_stroke_gen",
+        "event_id": "heat_stroke_gen",
         "strings": [
             "Is having trouble staying awake",
             "Drifts in and out of consciousness",
@@ -8543,7 +8543,7 @@
         }
     },
     {
-        "id": "heat_exhaustion_gen",
+        "event_id": "heat_exhaustion_gen",
         "strings": [
             "Is extremely thirsty",
             "Is feeling weak",
@@ -8561,7 +8561,7 @@
         }
     },
     {
-        "id": "stomachache_gen",
+        "event_id": "stomachache_gen",
         "strings": [
             "Is growling in pain",
             "Is curled up in {PRONOUN/m_c/poss} nest with pain",
@@ -8581,7 +8581,7 @@
         }
     },
     {
-        "id": "constant_nightmares_gen",
+        "event_id": "constant_nightmares_gen",
         "strings": [
             "Is dreading going to sleep",
             "Is tired but doesn't want to sleep again",
@@ -8608,7 +8608,7 @@
         }
     },
     {
-        "id": "grief_stricken_gen",
+        "event_id": "grief_stricken_gen",
         "strings": [
             "Doesn't know how to get through the day",
             "Is avoiding other cats",
@@ -8631,7 +8631,7 @@
         }
     },
     {
-        "id": "malnourished_gen",
+        "event_id": "malnourished_gen",
         "strings": [
             "Is trying to ignore {PRONOUN/m_c/poss} rumbling stomach",
             "Tries to focus on something other than food",
@@ -8649,7 +8649,7 @@
         }
     },
     {
-        "id": "starving_gen",
+        "event_id": "starving_gen",
         "strings": [
             "Is weak with hunger",
             "Can barely stand up",
@@ -8670,7 +8670,7 @@
         }
     },
     {
-        "id": "running_nose_gen",
+        "event_id": "running_nose_gen",
         "strings": [
             "Is constantly sniffling",
             "Tries to be careful about sneezing around other cats",
@@ -8689,7 +8689,7 @@
         }
     },
     {
-        "id": "whitecough_gen",
+        "event_id": "whitecough_gen",
         "strings": [
             "Is having a coughing fit",
             "Can't stop sneezing",
@@ -8710,7 +8710,7 @@
         }
     },
     {
-        "id": "greencough_gen",
+        "event_id": "greencough_gen",
         "strings": [
             "Can barely breath between coughs",
             "Is rattling with every breath",
@@ -8729,7 +8729,7 @@
         }
     },
     {
-        "id": "yellowcough_gen",
+        "event_id": "yellowcough_gen",
         "strings": [
             "Can barely swallow due to {PRONOUN/m_c/poss} sore throat",
             "Is burning with fever",
@@ -8750,7 +8750,7 @@
         }
     },
     {
-        "id": "redcough_gen",
+        "event_id": "redcough_gen",
         "strings": [
             "Feels {PRONOUN/m_c/poss} heart beating too fast",
             "Is shivering so hard {PRONOUN/m_c/subject} can't sit up",
@@ -8779,7 +8779,7 @@
         }
     },
     {
-        "id": "mild_injury_gen",
+        "event_id": "mild_injury_gen",
         "strings": [
             "Is stopping in the medicine den just in case",
             "Is feeling a little sore",
@@ -8805,7 +8805,7 @@
         }
     },
     {
-        "id": "mid_injury_gen",
+        "event_id": "mid_injury_gen",
         "strings": [
             "Is grimacing in pain",
             "Is doing {PRONOUN/m_c/poss} best to heal",
@@ -8833,7 +8833,7 @@
         }
     },
     {
-        "id": "major_injury_gen",
+        "event_id": "major_injury_gen",
         "strings": [
             "Would do anything to get the pain to stop",
             "Can't think of anything besides the pain",
@@ -8873,7 +8873,7 @@
         }
     },
     {
-        "id": "seizure_prone_gen",
+        "event_id": "seizure_prone_gen",
         "strings": [
             "Is bothered by the sunlight flickering through the trees",
             "Makes sure to drink water before a training session",
@@ -8897,7 +8897,7 @@
         }
     },
     {
-        "id": "seizure_prone_gen_to_alive_gen",
+        "event_id": "seizure_prone_gen_to_alive_gen",
         "strings": [
             "Tries to explain what a seizure feels like to r_c, but only confuses {PRONOUN/r_c/object} more",
             "Stood up too quickly and nearly passed out, spooking r_c",
@@ -8919,7 +8919,7 @@
         }
     },
     {
-        "id": "nervous_to_alive",
+        "event_id": "nervous_to_alive",
         "strings": [
             "Is stuttering while speaking to r_c",
             "Overthinks something {PRONOUN/m_c/subject} said to r_c",
@@ -8945,7 +8945,7 @@
         }
     },
     {
-        "id": "gen_to_nervous",
+        "event_id": "gen_to_nervous",
         "strings": [
             "Asks r_c to speak up",
             "Reassures r_c after {PRONOUN/r_c/subject} {VERB/r_c/do/does} something embarrassing"
@@ -8964,7 +8964,7 @@
         }
     },
     {
-        "id": "confident_bold_attention-seeker_to_alive",
+        "event_id": "confident_bold_attention-seeker_to_alive",
         "strings": [
             "Stands tall when r_c walks by",
             "Tells r_c something that probably could've been kept private",
@@ -8990,7 +8990,7 @@
         }
     },
     {
-        "id": "gen_to_confident_bold",
+        "event_id": "gen_to_confident_bold",
         "strings": [
             "Watches r_c try and fail at something after claiming to be an expert",
             "Listens to r_c wax about how brave {PRONOUN/r_c/subject} {VERB/r_c/are/is}",
@@ -9013,7 +9013,7 @@
         }
     },
     {
-        "id": "bold_to_alive",
+        "event_id": "bold_to_alive",
         "strings": [
             "Challenges r_c to spar with {PRONOUN/m_c/object}",
             "Asks r_c a bold question"
@@ -9034,7 +9034,7 @@
         }
     },
     {
-        "id": "bloodthirsty_vengeful_to_alive",
+        "event_id": "bloodthirsty_vengeful_to_alive",
         "strings": [
             "Sharpens {PRONOUN/m_c/poss} claws near r_c",
             "Asks r_c to compare the size and sharpness of their claws together"
@@ -9056,7 +9056,7 @@
         }
     },
     {
-        "id": "gen_to_bloodthirsty_vengeful",
+        "event_id": "gen_to_bloodthirsty_vengeful",
         "strings": [
             "Seems oblivious to r_c glaring from across camp",
             "Wonders when r_c learned so much about cat anatomy",
@@ -9078,7 +9078,7 @@
         }
     },
     {
-        "id": "oblivious_to_alive",
+        "event_id": "oblivious_to_alive",
         "strings": [
             "Doesn't notice r_c leaving camp",
             "Accidentally brings r_c fresh-kill twice",
@@ -9104,7 +9104,7 @@
         }
     },
     {
-        "id": "gen_to_oblivious",
+        "event_id": "gen_to_oblivious",
         "strings": [
             "Told a really funny joke, but r_c just looked confused",
             "Has to tell r_c to stop staring at the sun"
@@ -9123,7 +9123,7 @@
         }
     },
     {
-        "id": "gen_to_gloomy_lonesome",
+        "event_id": "gen_to_gloomy_lonesome",
         "strings": [
             "Notices r_c sulking around camp again",
             "Doesn't bother to ask why r_c is crying again",
@@ -9147,7 +9147,7 @@
         }
     },
     {
-        "id": "grumpy_cold_to_alive",
+        "event_id": "grumpy_cold_to_alive",
         "strings": [
             "Always seems to avoid r_c's attempts at small talk",
             "Avoids running into any cat... until r_c shows up",
@@ -9173,7 +9173,7 @@
         }
     },
     {
-        "id": "gen_to_grumpy_cold",
+        "event_id": "gen_to_grumpy_cold",
         "strings": [
             "Is amused with how r_c manages to look so grumpy all the time",
             "Learns the hard way that r_c isn't the best Clanmate to go to for advice",
@@ -9194,7 +9194,7 @@
         }
     },
     {
-        "id": "med_leadership_to_gen",
+        "event_id": "med_leadership_to_gen",
         "strings": [
             "Gives r_c a task",
             "Asks r_c to remind {PRONOUN/m_c/object} of who's already gone on patrol today",
@@ -9225,7 +9225,7 @@
         }
     },
     {
-        "id": "gen_to_med_leadership",
+        "event_id": "gen_to_med_leadership",
         "strings": [
             "Asks r_c about {PRONOUN/r_c/poss} duties",
             "Reports to r_c after completing a chore"
@@ -9254,7 +9254,7 @@
         }
     },
     {
-        "id": "gen_to_living_fancies_only",
+        "event_id": "gen_to_living_fancies_only",
         "strings": [
             "Offers r_c the choicest piece of fresh-kill",
             "Keeps grooming {PRONOUN/m_c/poss} pelt to look good for {PRONOUN/m_c/poss} crush",
@@ -9290,7 +9290,7 @@
         ]
     },
     {
-        "id": "low_social_to_living_fancies_only",
+        "event_id": "low_social_to_living_fancies_only",
         "strings": [
             "Gives r_c a compliment, ears twitching self-consciously",
             "Blurts an invitation for a walk outside camp with r_c",
@@ -9333,7 +9333,7 @@
         ]
     },
     {
-        "id": "high_social_to_living_fancies_only",
+        "event_id": "high_social_to_living_fancies_only",
         "strings": [
             "Makes r_c purr throatily with a well-placed compliment",
             "Boldly caresses {PRONOUN/m_c/poss} tail over r_c as {PRONOUN/m_c/subject} {VERB/m_c/pass/passes} by",
@@ -9381,7 +9381,7 @@
         ]
     },
     {
-        "id": "med_cats_to_alive_crush",
+        "event_id": "med_cats_to_alive_crush",
         "strings": [
             "Hums as {PRONOUN/m_c/subject} {VERB/m_c/sort/sorts} herbs, thinking of r_c",
             "Imagines dramatically saving r_c's life and earning {PRONOUN/r_c/poss} gratitude"
@@ -9415,7 +9415,7 @@
         ]
     },
     {
-        "id": "med_cats_to_alive_non-medcat_patrollable_romance",
+        "event_id": "med_cats_to_alive_non-medcat_patrollable_romance",
         "strings": [
             "Hopes r_c might get assigned to a herb patrol with {PRONOUN/m_c/object}"
         ],
