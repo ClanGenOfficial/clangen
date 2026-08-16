@@ -50,6 +50,7 @@
             "TAIL_REVERSE_FULL_LOW"
         ],
         [
+            "TAIL_REVERSE_HIGH_LOW",
             "TAIL_OVER",
             "CHEST_HIGH",
             "CHEST_FULL",

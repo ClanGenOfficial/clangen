@@ -7,34 +7,40 @@
             "BROKEN_REDUCED",
             "PIEBALD",
             "CURVED",
+            "SHIBAINU_REDUCED",
+            "OWL",
             "FRECKLES",
-            "RINGTAIL_REDUCED",
+            "RINGTAIL",
             "HALFFACE",
-            "PANTSTWO_REDUCED",
-            "GOATEE_REDUCED",
-            "PRINCE_REDUCED",
-            "FAROFA_REDUCED",
-            "MISTER",
-            "PANTS"
+            "PANTSTWO",
+            "GOATEE",
+            "PRINCE",
+            "FAROFA"
         ],
         [
+            "MISTER",
+            "MASKMANTLE",
+            "PANTS",
             "REVERSEPANTS",
-            "APPALOOSA_REDUCED",
+            "HALFWHITE",
+            "APPALOOSA",
             "GLASS",
-            "PAINTED_REDUCED",
+            "MAO",
+            "PAINTED",
             "BUB",
             "SPARROW",
             "TRIXIE",
             "SAMMY",
-            "FRONT",
-            "BULLSEYE",
-            "FINN",
-            "SCAR_REDUCED",
-            "BUSTER_REDUCED",
-            "HAWKBLAZE_REDUCED"
+            "FRONT"
         ],
         [
-            "CAKE_REDUCED"
+            "BLOSSOMSTEP",
+            "BULLSEYE",
+            "FINN",
+            "SCAR",
+            "BUSTER",
+            "HAWKBLAZE",
+            "CAKE"
         ]
     ]
 }
