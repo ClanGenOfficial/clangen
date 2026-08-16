@@ -265,6 +265,10 @@ class ShortEvent:
             if self.handle_accessories() is False:
                 return
 
+        # update gender before relationships
+        if self.new_gender:
+            self.handle_transition()
+
         # change relationships before killing anyone
         if self.relationships:
             # we're doing this here to make sure rel logs get adjusted text
@@ -306,10 +310,6 @@ class ShortEvent:
                 comfort=-30,
                 trust=-30,
             )
-
-        # update gender
-        if self.new_gender:
-            self.handle_transition()
 
         # kill cats
         self.handle_death()
@@ -521,12 +521,17 @@ class ShortEvent:
                 for acc in Pelt.tail_accessories:
                     if acc in acc_list:
                         acc_list.remove(acc)
+            if "NOPAW" in self.main_cat.pelt.scars:
+                for acc in Pelt.paw_accessories:
+                    if acc in acc_list:
+                        acc_list.remove(acc)
 
         accessory_groups = [
             Pelt.collar_accessories,
             Pelt.head_accessories,
             Pelt.tail_accessories,
             Pelt.body_accessories,
+            Pelt.paw_accessories,
         ]
         if self.main_cat.pelt.accessory:
             for acc in self.main_cat.pelt.accessory:

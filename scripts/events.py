@@ -35,10 +35,10 @@ from scripts.conditions import (
 from scripts.event_class import Single_Event
 
 from scripts.events_module.generate_events import GenerateEvents, generate_events
-from scripts.events_module.outsider_events import OutsiderEvents
+from scripts.events_module.outsider import outsider_events
 from scripts.events_module.patrol.patrol import Patrol
 from scripts.events_module.relationship import relation_events
-from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
+from scripts.events_module.relationship import pregnancy_events
 from scripts.events_module.short.condition_events import Condition_Events
 from scripts.events_module.short.short_event_generation import create_short_event
 from scripts.game_structure import constants
@@ -110,7 +110,7 @@ def one_moon():
     game.clan.age += 1
 
     update_afterlife_temper()
-    Pregnancy_Events.handle_pregnancy_age(game.clan)
+    pregnancy_events.handle_pregnancy_age()
     check_war()
 
     if game.clan.game_mode in ("expanded", "cruel_season") and game.clan.freshkill_pile:
@@ -964,10 +964,10 @@ def one_moon_outside_cat(cat, other_clan_cats: list = None):
 
     # skill progression needs to be after rank progression
     cat.skills.progress_skill(cat)
-    Pregnancy_Events.handle_having_kits(cat, clan=game.clan)
+    pregnancy_events.handle_having_kits(cat)
 
     if not cat.dead:
-        OutsiderEvents.killing_outsiders(cat)
+        outsider_events.killing_outsiders(cat)
 
 
 def one_moon_cat(cat):
@@ -1060,7 +1060,7 @@ def one_moon_cat(cat):
             return
 
     coming_out(cat)
-    Pregnancy_Events.handle_having_kits(cat, clan=game.clan)
+    pregnancy_events.handle_having_kits(cat)
     # Stop the timeskip if the cat died in childbirth
     if cat.dead:
         return

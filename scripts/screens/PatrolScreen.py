@@ -682,18 +682,22 @@ class PatrolScreen(Screens):
         self.elements["herb"].disable()
 
         # Able cat page buttons
-        self.elements["last_page"] = UIImageButton(
-            ui_scale(pygame.Rect((75, 462), (34, 34))),
-            "",
-            object_id="#patrol_last_page",
+        self.elements["last_page"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((75, -32), (34, 34))),
+            Icon.ARROW_LEFT,
+            get_button_dict(ButtonStyles.ICON_TAB_TOP, (34, 34)),
+            object_id="@buttonstyles_icon_tab_top",
             starting_height=2,
+            anchors={"bottom": "bottom", "bottom_target": self.elements["able_frame"]},
             manager=MANAGER,
         )
-        self.elements["next_page"] = UIImageButton(
-            ui_scale(pygame.Rect((241, 462), (34, 34))),
-            "",
-            object_id="#patrol_next_page",
+        self.elements["next_page"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((241, -32), (34, 34))),
+            Icon.ARROW_RIGHT,
+            get_button_dict(ButtonStyles.ICON_TAB_TOP, (34, 34)),
+            object_id="@buttonstyles_icon_tab_top",
             starting_height=2,
+            anchors={"bottom": "bottom", "bottom_target": self.elements["able_frame"]},
             manager=MANAGER,
         )
 
@@ -1287,13 +1291,13 @@ class PatrolScreen(Screens):
                     text_kwargs={"count": 1},
                 )
                 self.elements["mate_button"] = UISurfaceImageButton(
-                    ui_scale(pygame.Rect((148, -4), (102, 26))),
+                    ui_scale(pygame.Rect((148, -4), (104, 26))),
                     (
                         "screens.patrol.select"
                         if self.mate in self.able_cats
                         else "screens.patrol.unavailable"
                     ),
-                    get_button_dict(ButtonStyles.HEADER_MIRRORED, (102, 26)),
+                    get_button_dict(ButtonStyles.HEADER_MIRRORED, (104, 26)),
                     object_id="@buttonstyles_header_mirrored",
                     manager=MANAGER,
                     anchors={"top_target": self.elements["mate_frame"]},
@@ -1385,7 +1389,7 @@ class PatrolScreen(Screens):
 
                     # Button to switch to that cat
                     self.elements["app_mentor_button"] = UISurfaceImageButton(
-                        ui_scale(pygame.Rect((548, -4), (104, 26))),
+                        ui_scale(pygame.Rect((549, -4), (104, 26))),
                         (
                             "screens.patrol.select"
                             if self.app_mentor in self.able_cats
