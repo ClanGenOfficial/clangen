@@ -38,8 +38,8 @@ As mentioned, some DATA sheets contain more information than others. At it's mos
 |--------------------------------------|----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
 | `eye_sprite_data`                    | List containing both eye spritesheets. | List containing dicts, each dict contains key:value pairs for `"NAME": "color category"`. Allowed colors are `yellow`, `green`, or `blue`.  |
 | `skin_sprite_data`                   | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
-| `plant_sprite_data`                  | Name of the spritesheet.               | List of dicts, each dict contains key:value pairs for `"NAME": "sprite position"`. Allowed sprite positions are `head`, `body`, and `tail`. |
-| `wild_sprite_data`                   | Name of the spritesheet.               | List of dicts, each dict contains key:value pairs for `"NAME": "sprite position"`. Allowed sprite positions are `head`, `body`, and `tail`. |
+| `plant_sprite_data`                  | Name of the spritesheet.               | List of dicts, each dict contains key:value pairs for `"NAME": "sprite position"`. Allowed sprite positions are `head`, `body`, `tail`, and `paw`. |
+| `wild_sprite_data`                   | Name of the spritesheet.               | List of dicts, each dict contains key:value pairs for `"NAME": "sprite position"`. Allowed sprite positions are `head`, `body`, `tail`, and `paw`. |
 | `scar_sprite_data`                   | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
 | `scar_missing_sprite_data`           | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
 | `white_patches_mostly_sprite_data`   | Name of the spritesheet.               | List of lists containing name information.                                                                                                  |
@@ -70,3 +70,38 @@ The pose `DATA` sheet is also unique.
 !!! tip "Adding New Pose Names"
     Pose save names should not be changed unless you are prepared to handle the conversion of old saves. New poses should be added following the name convention (i.e. if you are adding a new kitten pose, call it `"kitten3"`.)  Poses are automatically compiled into lists based off the portion of their name preceding the number. So if `"kitten3"` was added, it would automatically be made a pose option for all kittens being generated without any extra coding work being required. This does not extend to sick and para sprites, if you plan to add those then you'll also need to do some code work.
 
+## Adding Combination Patches
+
+### White Patches
+You can now combine and layer patches for more unique variations. To add a new patch combination locate `sprites/dicts/white_patches_combos.json`. 
+
+Each patch combination is added to a list that dictates the size of the combined patch and how it is inherited. For example, some `little` patches combined may still be categorized as `little` or, if they cover enough of the cat, they could be added as a `mid` patch instead. Use your best judgment in sorting.
+
+To add a new patch combination create a list in the dict based on the following format:
+
+```"NAME": ["sizePATCH", "sizePATCH"]```
+
+The size is always in lowercase and the patch name is in uppercase. For example, the `TIP` patch would be added to this list as `littleTIP` You can add any number of patches to this list, but be conscious of how they overlap and appear in game. 
+
+Here is an example of what that looks as a full part of the dictionary. Since we have added it to the `little` dictionary, the game will consider it as part of the `little` coverage category:
+
+```
+{
+    "little": {
+        "NAME": ["sizePATCH", "sizePATCH"]
+    },
+    "mid": {},
+    "high": {},
+    "mostly": {}
+}
+```
+
+### Tortie Patches
+
+Adding tortie combinations is very similar to white patch combos, but a little bit less complex as we don't need to worry about size categories. To add a new patch combination locate `sprites/dicts/tortie_patches_combos.json`. 
+
+This file has a dictionary in it, you can add new combinations by adding dictionary entries in the following format:
+
+```"NAME": ["PATCH", "PATCH"]```
+
+The `NAME` is what the new combination patch will be known as in the save file information. You list the various patches being combined to create it.

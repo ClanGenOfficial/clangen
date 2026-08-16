@@ -75,6 +75,7 @@ class ChangeGenderScreen(Screens):
                 if self.are_boxes_full():
                     gender_identity = self.get_new_identity()
                     self.the_cat.genderalign = gender_identity
+                    self.the_cat.get_new_thought()
                     self.selected_cat_elements["identity_changed"].show()
                     self.selected_cat_elements["cat_gender"].kill()
                     self.selected_cat_elements[
@@ -95,12 +96,14 @@ class ChangeGenderScreen(Screens):
                 if event.ui_element.cat_id == "add":
                     if event.ui_element.cat_object not in self.the_cat.pronouns:
                         self.the_cat.pronouns.append(event.ui_element.cat_object)
+                        self.the_cat.get_new_thought()
                 elif event.ui_element.cat_id == "remove":
                     if (
                         event.ui_element.cat_object in self.the_cat.pronouns
                         and len(self.the_cat.pronouns) > 1
                     ):
                         self.the_cat.pronouns.remove(event.ui_element.cat_object)
+                        self.the_cat.get_new_thought()
                 elif event.ui_element.cat_id == "delete":
                     if event.ui_element.cat_object in pronouns.get_custom_pronouns():
                         game.clan.custom_pronouns[i18n.config.get("locale")].remove(
@@ -470,17 +473,12 @@ class ChangeGenderScreen(Screens):
                 self.deletebuttons[dict_name_core].disable()
 
             # the "add" button
-            button_rect = ui_scale(pygame.Rect((0, 0), (56, 28)))
-            button_rect.topright = ui_scale_dimensions((-5, 0))
-            # TODO: update this to use UISurfaceImageButton
-            self.addbuttons[dict_name_core] = CatButton(
-                button_rect,
-                "",
-                cat_object=pronounset,
-                cat_id="add",
+            self.addbuttons[dict_name_core] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((-59, 0), (56, 28))),
+                "screens.change_gender.add_button",
+                get_button_dict(ButtonStyles.SQUOVAL, (56, 28)),
+                object_id="@buttonstyles_squoval",
                 container=self.elements[f"{n}"],
-                object_id="#add_button",
-                starting_height=2,
                 manager=MANAGER,
                 anchors={
                     "centery": "centery",

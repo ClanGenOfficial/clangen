@@ -22,6 +22,21 @@ dev_tools = false
     # set to true to also kill a random cat when the leader dies
     stolen_vitality = false
 
+# settings regarding afterlife affinity
+[affinity]
+  # controls how much an affinity change is affected by the cat's compatibility with the afterlife
+  base_compatibility_multiplier = 0.5
+
+  # how affinities are affected by a cat murdering another
+  [affinity.murder]
+    starclan_change = -40
+    dark_forest_change = 20
+
+  # how much an afterlife connection skill affects affinity
+  [affinity.skill_favor]
+    match = 10
+    conflict = -10
+
 # settings regarding relationship events, also called "interactions"
 [relationship]
   # sets the max amount of interactions a cat can have each moon
@@ -255,7 +270,15 @@ dev_tools = false
         romance = -20
         comfort = -10
         respect = 10
-
+    [mates.breakup.reactions.affair_discovery_mate_reaction]
+      romance = -50
+      trust = -30
+      like = -40
+    [mates.breakup.reactions.affair_discovery_other_mate_reaction]
+      romance = -50
+      trust = -30
+      like = -40
+    
 
 [new_cat]
   # number of welcoming events to add when a new cat joins
@@ -284,6 +307,14 @@ dev_tools = false
       comfort = 70
       trust = 60
 
+    # default relationship buff for an absent parent towards their kits
+    [new_cat.parent_buff.absent_parent_to_kit]
+      romance = 0
+      like = 0
+      respect = 0
+      comfort = -10
+      trust = 0
+
   [new_cat.sib_buff]
     # default relationships buff for siblings' relationships in one direction
     [new_cat.sib_buff.cat1_to_cat2]
@@ -300,6 +331,12 @@ dev_tools = false
       respect = 10
       comfort = 40
       trust = 30
+
+    # default relationships buff for a newborn's relationship towards one of their littermates
+    [new_cat.sib_buff.littermates_to_eachother]
+      like = 20
+      comfort = 10
+      trust = 10
 
   [new_cat.rel_buff]
     # default relationships buff for new cats relationships to other cats in the clan
@@ -334,6 +371,10 @@ dev_tools = false
   # 1/chance for an unmated cat to have an affair (coparenting)
   # for this check, only other unmated cats can be the affair partner
   unmated_random_affair_chance = 10
+
+  # the base chance a cat who's been cheated on will help raise their mate's kits after an affair
+  # by default, the chance is 40% and the range is from 0-100%, any value higher or lower will be capped
+  base_kit_claim_chance = 40
 
   # The kit number is incremental. It is 1-6 as default so if you change these numbers, you should probably keep this in mind.
   # As in, your max kits number should probably be 5 more than the min kits number.
@@ -378,6 +419,16 @@ dev_tools = false
     "senior adult" = 0
     senior = 0
 
+  [pregnancy.coparenting_values_neg]
+      romance = -20
+      comfort = -30
+      trust = -25
+
+  [pregnancy.coparenting_values_pos]
+      romance = 20
+      comfort = 30
+      trust = 25
+      
 [cat_generation]
   # base 1/chance that a cat will generate with a permanent condition. gets modified further in code
   base_permanent_condition = 90
@@ -867,14 +918,6 @@ dev_tools = false
     adequate = 3
     excess = 2
 
-    # amount of herbs types found modifier for medcats with skill SENSE
-    primary_sense = 3
-    secondary_sense = 2
-
-    # quantity of herbs modifier for medcats with skill CLEVER
-    primary_clever = 3
-    secondary_clever = 2
-
     # base effects for herbs that have specified effects
     base_mortality_effect = 3
     base_duration_effect = 1
@@ -947,6 +990,7 @@ dev_tools = false
   # the same, but for healthy apprentices
   auto_apprentice_prey = [1,3]
 
+
   # the baseline of prey amount caught on patrol will be a warrior's prey_requirement plus this value
   additional_prey = 1
 
@@ -957,6 +1001,23 @@ dev_tools = false
 
   # the amount that a cat's prey requirement increases if the cat is sick/injured/pregnant
   condition_increase = 1
+
+  # cats of each rank will choose a random num of prey from the given list to catch each moon
+  # ranks that are not leader, deputy, or warrior will only catch prey if no leader/deputy/warriors are available to do so
+  [prey.auto_catch]
+    leader = [2, 3, 3, 4]
+    deputy = [2, 3, 3, 4]
+    warrior = [2, 3, 3, 4]
+    apprentice = [1, 2, 2, 3]
+    "medicine cat" = [0, 1, 1, 2]
+    "medicine cat apprentice" = [0, 1]
+    mediator = [0, 1, 2, 2]
+    "mediator apprentice" = [0, 1, 1]
+    elder = [0, 1, 1]
+    kitten = [0, 0, 1]
+    newborn = [0]
+
+    not_working = [0, 0, 1]
 
   [prey.feeding]
     # the rank order in which cats will be fed

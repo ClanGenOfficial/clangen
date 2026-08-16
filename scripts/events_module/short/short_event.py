@@ -265,6 +265,10 @@ class ShortEvent:
             if self.handle_accessories() is False:
                 return
 
+        # update gender before relationships
+        if self.new_gender:
+            self.handle_transition()
+
         # change relationships before killing anyone
         if self.relationships:
             # we're doing this here to make sure rel logs get adjusted text
@@ -307,10 +311,6 @@ class ShortEvent:
                 trust=-30,
             )
 
-        # update gender
-        if self.new_gender:
-            self.handle_transition()
-
         # kill cats
         self.handle_death()
 
@@ -350,6 +350,13 @@ class ShortEvent:
                     self.handle_freshkill_supply(block)
                 else:  # if freshkill isn't being adjusted, then it must be an herb supply
                     self.handle_herb_supply(block)
+
+        # affect affinity
+        if "murder" in self.sub_type:
+            self.random_cat.change_affinity(
+                starclan_change=get_config("affinity.murder.starclan_change"),
+                dark_forest_change=get_config("affinity.murder.dark_forest_change"),
+            )
 
         # adjust text again to account for info that wasn't available when we do rel changes
         self.text = event_text_adjust(
@@ -514,12 +521,17 @@ class ShortEvent:
                 for acc in Pelt.tail_accessories:
                     if acc in acc_list:
                         acc_list.remove(acc)
+            if "NOPAW" in self.main_cat.pelt.scars:
+                for acc in Pelt.paw_accessories:
+                    if acc in acc_list:
+                        acc_list.remove(acc)
 
         accessory_groups = [
             Pelt.collar_accessories,
             Pelt.head_accessories,
             Pelt.tail_accessories,
             Pelt.body_accessories,
+            Pelt.paw_accessories,
         ]
         if self.main_cat.pelt.accessory:
             for acc in self.main_cat.pelt.accessory:

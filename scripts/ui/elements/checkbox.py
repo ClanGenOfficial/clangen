@@ -2,7 +2,10 @@ import pygame
 from pygame_gui.core import IContainerLikeInterface
 
 from scripts.ui.elements.image_button import UIImageButton
-from scripts.ui.scale import ui_scale
+from scripts.ui.elements.modified_image import UIModifiedImage
+from scripts.game_structure.screen_settings import MANAGER
+from scripts.game_structure import image_cache
+from scripts.ui.scale import ui_scale, ui_scale_dimensions
 
 
 class UICheckbox(UIImageButton):
@@ -32,13 +35,9 @@ class UICheckbox(UIImageButton):
         anchors=None,
     ):
         self.checked = check
-
         relative_rect = ui_scale(pygame.Rect(position, (34, 34)))
 
-        if check:
-            object_id = "@checked_checkbox"
-        else:
-            object_id = "@unchecked_checkbox"
+        object_id = "@checkbox"
 
         super().__init__(
             relative_rect=relative_rect,
@@ -52,25 +51,42 @@ class UICheckbox(UIImageButton):
             anchors=anchors,
         )
 
+        # Creates the checkmark image that gets layered on top of the checkbox when checked
+        self.checkmark = UIModifiedImage(
+            ui_scale(relative_rect),
+            pygame.transform.scale(
+                image_cache.load_image(f"resources/images/buttons/checkmark.png"),
+                ui_scale_dimensions((34, 34)),
+            ),
+            container=container,
+            manager=manager,
+            starting_height=3,
+            visible=self.checked,
+            anchors=anchors,
+        )
+        self.checkmark.disable()
+
     def toggle(self):
         if self.checked:
             self.uncheck()
+            self.checkmark.hide()
         elif not self.checked:
             self.check()
+            self.checkmark.show()
 
     def check(self):
         """
         switches the checkbox into the "checked" state
         """
         self.checked = True
-        self.change_object_id("@checked_checkbox")
+        self.checkmark.show()
 
     def uncheck(self):
         """
         switches the checkbox into the "unchecked" state
         """
         self.checked = False
-        self.change_object_id("@unchecked_checkbox")
+        self.checkmark.hide()
 
     def hover_point(self, hover_x: float, hover_y: float) -> bool:
         """
@@ -104,3 +120,7 @@ class UICheckbox(UIImageButton):
         return bool(self.rect.collidepoint(hover_x, hover_y)) and bool(
             container_clip_rect.collidepoint(hover_x, hover_y)
         )
+
+    def kill(self):
+        super().kill()
+        self.checkmark.kill()

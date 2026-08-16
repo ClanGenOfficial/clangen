@@ -203,68 +203,10 @@
       "title": "Biome",
       "type": "string"
     },
-    "CanCreateNewCat": {
-      "additionalProperties": false,
-      "properties": {
-        "become_litter": {
-          "description": "True will generate a 2-5 litter of kittens rather than a single cat. This means the abbreviation for this litter should not be used within the text of the event, since they have no singular name or pronoun",
-          "title": "Become Litter",
-          "type": "boolean"
-        },
-        "assign_blood_parent": {
-          "description": "List of designations for cats who will become this cat's blood parents. These cats must have already been specified prior in involved_cats",
-          "items": {
-            "type": "string"
-          },
-          "title": "Assign Blood Parent",
-          "type": "array"
-        },
-        "assign_adoptive_parent": {
-          "description": "List of designations for cats who will become this cat's adoptive parents. These cats must have already been specified prior in involved_cats",
-          "items": {
-            "type": "string"
-          },
-          "title": "Assign Adoptive Parent",
-          "type": "array"
-        },
-        "assign_mate": {
-          "description": "List of designations for cats who will become this cat's mates. These cats must have already been specified prior in involved_cats",
-          "items": {
-            "type": "string"
-          },
-          "title": "Assign Mate",
-          "type": "array"
-        }
-      },
-      "title": "CanCreateNewCat",
-      "type": "object"
-    },
     "CatDict": {
       "additionalProperties": false,
       "properties": {
-        "prior_abbreviation": {
-          "description": "Specifies s_c choices. Read the docs. It's too long for this.",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "#/$defs/GatherCat"
-              },
-              {
-                "const": "any",
-                "type": "string"
-              }
-            ]
-          },
-          "title": "Prior Abbreviation",
-          "type": "array"
-        },
-        "can_create_new_cat": {
-          "$ref": "#/$defs/CanCreateNewCat",
-          "description": "Add if the outsider/other_clan cat can be newly generated rather than having to utilize an existing cat. Can even be added as an empty dict to simply mark it as a new cat creation without any additional specifications",
-          "title": "Can Create New Cat"
-        },
         "status": {
-          "description": "Constrains the event to only happen if the cat holds a certain role. You can utilize exclusionary tags. You can also remove the parameter to allow the event to occur for all roles except \"newborns\", who are only allowed if specifically tagged as such.",
           "items": {
             "$ref": "#/$defs/StatusAny"
           },
@@ -272,7 +214,6 @@
           "type": "array"
         },
         "past_status": {
-          "description": "Constrains the event to only happen if the cat held a certain role in the past",
           "items": {
             "$ref": "#/$defs/StatusAny"
           },
@@ -280,25 +221,13 @@
           "type": "array"
         },
         "age": {
-          "description": "Constrains the event to only occur if the cat is within a certain age group. You can also remove the parameter to allow the event to occur for all ages except \"newborns\", who are only allowed if specifically tagged as such",
           "items": {
             "$ref": "#/$defs/Age"
           },
           "title": "Age",
           "type": "array"
         },
-        "gender": {
-          "description": "Constrains the event to only occur if the cat has a certain birth gender. can_birth will allow either female or male cats dependant upon the player's settings",
-          "enum": [
-            "male",
-            "female",
-            "can_birth"
-          ],
-          "title": "Gender",
-          "type": "string"
-        },
         "group": {
-          "description": "Constraints the thought to only happen if the cat is a member of a listed group or a member of no group. This should only be used to dictate what group a new cat is originally part of",
           "items": {
             "$ref": "#/$defs/Group"
           },
@@ -307,102 +236,135 @@
         },
         "standing": {
           "$ref": "#/$defs/StandingDict",
-          "description": "Constrains the event to only happen if the cat matches with the dictated group standings. A group standing is the relationship between a cat and a group, for example: if they are an exile or lost",
           "title": "Standing"
         },
         "stat": {
           "$ref": "#/$defs/StatDict",
-          "description": "Constrains the event to only occur if the cat holds specific skills or traits. You can utilize exclusionary tags",
           "title": "Stat"
         },
         "health": {
           "$ref": "#/$defs/HealthDict",
-          "description": "Constrains the event to only occur if the cat's health matches the constraints",
           "title": "Health"
         },
         "backstory": {
-          "description": "Constrains the event to only occur if the cat has a listed backstory. To find what each backstory describes, you can find more by going to resources/lang/en/cat/backstories.en.json. You can utilize exclusionary tags",
           "items": {
             "$ref": "#/$defs/Backstory"
           },
           "title": "Backstory",
           "type": "array"
-        },
-        "has_mentor": {
-          "description": "Set True if the cat must be mentored. This does not require the mentor to be present on the patrol",
-          "title": "Has Mentor",
-          "type": "boolean"
         }
       },
       "title": "CatDict",
       "type": "object"
     },
-    "GatherCat": {
-      "anyOf": [
-        {
-          "$ref": "#/$defs/GatherCatEnum"
-        },
-        {
-          "pattern": "^-?n_c:[0-9]+$",
-          "type": "string"
-        },
-        {
-          "pattern": "^-?(n_c|r_c|s_c)[0-9]+$",
-          "type": "string"
-        }
-      ],
-      "title": "GatherCat"
-    },
-    "GatherCatEnum": {
+    "ExcludedIllness": {
       "enum": [
-        "m_c",
-        "-m_c",
-        "r_c",
-        "-r_c",
-        "p_l",
-        "-p_l",
-        "s_c",
-        "-s_c",
-        "clan",
-        "-clan",
-        "some_clan",
-        "-some_clan",
-        "patrol",
-        "-patrol",
-        "multi",
-        "-multi",
-        "high_lawful",
-        "-high_lawful",
-        "low_lawful",
-        "-low_lawful",
-        "high_social",
-        "-high_social",
-        "low_social",
-        "-low_social",
-        "high_stable",
-        "-high_stable",
-        "low_stable",
-        "-low_stable",
-        "high_aggress",
-        "-high_aggress",
-        "low_aggress",
-        "-low_aggress",
-        "patrol_cats",
-        "-patrol_cats",
-        "apprentice",
-        "-apprentice",
-        "medicine cat apprentice",
-        "-medicine cat apprentice",
-        "warrior",
-        "-warrior",
-        "medicine cat",
-        "-medicine cat",
-        "deputy",
-        "-deputy",
-        "leader",
-        "-leader"
+        "-seizure",
+        "-diarrhea",
+        "-fleas",
+        "-greencough",
+        "-kittencough",
+        "-an infected wound",
+        "-carrionplace disease",
+        "-redcough",
+        "-running nose",
+        "-whitecough",
+        "-yellowcough",
+        "-a festering wound",
+        "-heat stroke",
+        "-heat exhaustion",
+        "-stomachache",
+        "-constant nightmares",
+        "-grief stricken",
+        "-malnourished",
+        "-starving"
       ],
-      "title": "GatherCatEnum",
+      "title": "ExcludedIllness",
+      "type": "string"
+    },
+    "ExcludedInjury": {
+      "enum": [
+        "-claw-wound",
+        "-bite-wound",
+        "-cat bite",
+        "-beak bite",
+        "-snake bite",
+        "-rat bite",
+        "-tick bites",
+        "-blood loss",
+        "-broken jaw",
+        "-broken bone",
+        "-mangled leg",
+        "-dislocated joint",
+        "-joint pain",
+        "-sprain",
+        "-mangled tail",
+        "-bruises",
+        "-cracked pads",
+        "-sore",
+        "-phantom pain",
+        "-scrapes",
+        "-small cut",
+        "-torn pelt",
+        "-torn ear",
+        "-frostbite",
+        "-recovering from birth",
+        "-water in their lungs",
+        "-burn",
+        "-severe burn",
+        "-shock",
+        "-lingering shock",
+        "-shivering",
+        "-dehydrated",
+        "-head damage",
+        "-damaged eyes",
+        "-quilled by a porcupine",
+        "-broken back",
+        "-poisoned",
+        "-bee sting",
+        "-headache",
+        "-severe headache",
+        "-pregnant",
+        "-battle_injury",
+        "-minor_injury",
+        "-blunt_force_injury",
+        "-hot_injury",
+        "-cold_injury",
+        "-big_bite_injury",
+        "-small_bite_injury",
+        "-beak_bite",
+        "-rat_bite",
+        "-sickness"
+      ],
+      "title": "ExcludedInjury",
+      "type": "string"
+    },
+    "ExcludedPermCondition": {
+      "enum": [
+        "-crooked jaw",
+        "-lost a leg",
+        "-born without a leg",
+        "-weak leg",
+        "-twisted leg",
+        "-lost their tail",
+        "-born without a tail",
+        "-paralyzed",
+        "-raspy lungs",
+        "-wasting disease",
+        "-blind",
+        "-one bad eye",
+        "-failing eyesight",
+        "-partial hearing loss",
+        "-deaf",
+        "-constant joint pain",
+        "-seizure prone",
+        "-allergies",
+        "-constantly dizzy",
+        "-recurring shock",
+        "-lasting grief",
+        "-persistent headaches"
+      ],
+      "title": "ExcludedPermCondition",
       "type": "string"
     },
     "Group": {
@@ -441,12 +403,10 @@
       "additionalProperties": false,
       "properties": {
         "working": {
-          "description": "By default, this is always set to true. if set to false, the cat can't be a working cat (aka, they are currently disabled by a condition of some kind)",
           "title": "Working",
           "type": "boolean"
         },
         "condition": {
-          "description": "A list of conditions that the cat must have at least one of. if any condition is allowed, use \"any\"",
           "items": {
             "anyOf": [
               {
@@ -459,6 +419,15 @@
                 "$ref": "#/$defs/PermCondition"
               },
               {
+                "$ref": "#/$defs/ExcludedInjury"
+              },
+              {
+                "$ref": "#/$defs/ExcludedIllness"
+              },
+              {
+                "$ref": "#/$defs/ExcludedPermCondition"
+              },
+              {
                 "const": "any",
                 "type": "string"
               }
@@ -468,12 +437,10 @@
           "type": "array"
         },
         "must_be_congenital": {
-          "description": "By default, this is always set to false. if set to true, the cat must have been born with a permanent condition listed in the condition",
           "title": "Must Be Congenital",
           "type": "boolean"
         },
         "must_be_acquired": {
-          "description": "By default, this is always set to false. if set to true, the cat must have acquired a permanent condition listed in condition later in life",
           "title": "Must Be Acquired",
           "type": "boolean"
         }
@@ -573,34 +540,6 @@
         "r_c": {
           "$ref": "#/$defs/CatDict",
           "title": "R C"
-        },
-        "r_c1": {
-          "$ref": "#/$defs/CatDict",
-          "title": "R C1"
-        },
-        "r_c2": {
-          "$ref": "#/$defs/CatDict",
-          "title": "R C2"
-        },
-        "r_c3": {
-          "$ref": "#/$defs/CatDict",
-          "title": "R C3"
-        },
-        "r_c4": {
-          "$ref": "#/$defs/CatDict",
-          "title": "R C4"
-        },
-        "r_c5": {
-          "$ref": "#/$defs/CatDict",
-          "title": "R C5"
-        },
-        "r_c6": {
-          "$ref": "#/$defs/CatDict",
-          "title": "R C6"
-        },
-        "multi_cat": {
-          "$ref": "#/$defs/CatDict",
-          "title": "Multi Cat"
         }
       },
       "title": "InvolvedCatsPairEvent",
@@ -715,19 +654,6 @@
           "description": "Exact amount the relationship value will be affected. Can be positive or negative.",
           "title": "Amount",
           "type": "integer"
-        },
-        "log": {
-          "additionalProperties": {
-            "type": "string"
-          },
-          "propertyNames": {
-            "enum": [
-              "cats_from",
-              "cats_to"
-            ]
-          },
-          "title": "Log",
-          "type": "object"
         }
       },
       "required": [
@@ -876,8 +802,6 @@
     },
     "RelationshipStatus": {
       "enum": [
-        "can_romance",
-        "-can_romance",
         "strangers",
         "siblings",
         "-siblings",
@@ -998,7 +922,6 @@
       "additionalProperties": false,
       "properties": {
         "group": {
-          "description": "the group we are checking the cat's standing with. you can utilize exclusionary tags. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to qualify against one of the groups. You should not try to tag no_group",
           "items": {
             "$ref": "#/$defs/Group"
           },
@@ -1006,7 +929,6 @@
           "type": "array"
         },
         "currently": {
-          "description": "the standing the cat should currently possess with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have one of the standings",
           "items": {
             "$ref": "#/$defs/Standing"
           },
@@ -1014,7 +936,6 @@
           "type": "array"
         },
         "past": {
-          "description": "standings the cat used to have with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have had one of the standings",
           "items": {
             "$ref": "#/$defs/Standing"
           },
@@ -1032,7 +953,6 @@
       "additionalProperties": false,
       "properties": {
         "skill": {
-          "description": "List of allowed skills",
           "items": {
             "$ref": "#/$defs/Skill"
           },
@@ -1040,7 +960,6 @@
           "type": "array"
         },
         "trait": {
-          "description": "List of allowed traits",
           "items": {
             "$ref": "#/$defs/AllTrait"
           },
@@ -1048,7 +967,6 @@
           "type": "array"
         },
         "must_have_both": {
-          "description": " if set to true, the cat's trait AND skills must BOTH qualify. Otherwise, the cat must have either/or a listed trait or a listed skill",
           "title": "Must Have Both",
           "type": "boolean"
         }
@@ -1088,7 +1006,9 @@
         "rogue",
         "-rogue",
         "clancat",
-        "-clancat"
+        "-clancat",
+        "guide",
+        "-guide"
       ],
       "title": "Status",
       "type": "string"
@@ -1123,14 +1043,8 @@
         "high_lives",
         "mid_lives",
         "low_lives",
-        "some_lives",
-        "all_lives",
         "clan:apps",
-        "romance",
-        "halloween",
-        "april_fools",
-        "new_years",
-        "disaster"
+        "romance"
       ],
       "title": "TagEnum",
       "type": "string"

@@ -305,6 +305,7 @@ You can utilize [#exclusionary tags](#exclusionary-tags).
     * `leader`
     * `elder`
     * `any`
+    * `guide`
 
     > You can utilize [#exclusionary tags](#exclusionary-tags).
 

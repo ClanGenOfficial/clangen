@@ -588,10 +588,9 @@ def leader_ceremony_text_adjust(
     }
 
     if life_giver:
-        replace_dict["r_c"] = (
-            str(Cat.fetch_cat(life_giver).name),
-            choice(Cat.fetch_cat(life_giver).pronouns),
-        )
+        giver_cat = Cat.fetch_cat(life_giver)
+        if giver_cat:
+            replace_dict["r_c"] = (str(giver_cat.name), choice(giver_cat.pronouns))
 
     text = process_text(text, replace_dict)
 

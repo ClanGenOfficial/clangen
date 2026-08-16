@@ -10,7 +10,7 @@ from scripts import events
 from scripts.cat import save_load
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
-from scripts.cat.factories.new_cat_factory import NewCatFactory
+from scripts.cat.factories.new_cat_factory import NewCatFactory as cat_factory
 from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan import Clan, Afterlife
 from scripts.clan_package.get_clan_cats import (

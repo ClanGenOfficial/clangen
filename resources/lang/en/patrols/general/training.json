@@ -32187,6 +32187,9 @@
         "season": [
             "newleaf"
         ],
+        "poi": {
+            "tags": ["water:flowing"]
+        },
         "required_cat_types": {
             "patrol_cats": [
                 2,

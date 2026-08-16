@@ -315,6 +315,15 @@ class CatSkills:
     def __repr__(self) -> str:
         return f"<CatSkills: Primary: |{self.primary}|, Secondary: |{self.secondary}|, Hidden: |{self.hidden}|>"
 
+    def get_all(self) -> dict:
+        skill_dict = {}
+        if self.primary:
+            skill_dict[self.primary.path] = self.primary.tier
+        if self.secondary:
+            skill_dict[self.secondary.path] = self.secondary.tier
+
+        return skill_dict
+
     @staticmethod
     def generate_new_catskills(
         rank: CatRank,
