@@ -88,6 +88,7 @@ class Name:
             # Prevent double names (ex. Iceice)
             # Prevent suffixes containing the prefix (ex. Butterflyfly)
 
+
             i = 0
             while (
                 nono_name.lower() in self.names_dict["inappropriate_names"]
@@ -125,6 +126,41 @@ class Name:
                 ):
                     double_animal = False
                 i += 1
+
+    @classmethod
+    def _usable_name(cls, prefix, suffix):
+        name = prefix + suffix
+
+        possible_three_letter = (
+            prefix[-2:] + suffix[0],
+            prefix[-1] + suffix[:2],
+        )
+
+        triple_letter = all(
+            i == possible_three_letter[0][0] for i in possible_three_letter[0]
+        ) or all(
+            i == possible_three_letter[1][0] for i in possible_three_letter[1]
+        )
+
+        double_animal = (
+            prefix in cls.names_dict["animal_prefixes"]
+            and suffix in cls.names_dict["animal_suffixes"]
+        )
+
+        double_name = (
+            prefix.lower() in suffix.lower()
+            and str(prefix) != ""
+        ) or (
+            suffix.lower() in prefix.lower()
+            and str(suffix) != ""
+        )
+
+        return not (
+            name.lower() in cls.names_dict["inappropriate_names"] or
+            triple_letter or
+            double_animal or
+            double_name
+        )
 
     @classmethod
     def load_localized_names(cls):
