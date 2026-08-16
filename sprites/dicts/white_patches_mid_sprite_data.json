@@ -2,35 +2,60 @@
     "spritesheet": "patches_white_mid",
     "sprite_list": [
         [
-            "TUXEDO",
             "SAVANNAH",
             "FADESPOTS",
-            "FANCY",
             "MITAINE",
             "DIVA",
-            "BEARD",
             "UNDERS",
-            "DAMIEN",
-            "TOPCOVER",
-            "SQUEAKS",
-            "STAR",
-            "SKUNK",
-            "DAPPLEPAW"
-        ],
-        [
-            "WINGS",
+            "STAR_REDUCED",
+            "WINGS_REDUCED",
             "WOODPECKER",
             "MISS",
-            "BOWTIE",
             "VEST",
-            "DIGIT",
-            "FCTWO",
-            "FCONE",
-            "MIA",
+            "DIGIT_REDUCED",
+            "FCTWO_REDUCED",
+            "FCONE_REDUCED",
+            "MIA_REDUCED"
+        ],
+        [
             "FADEBELLY",
-            "ROSINA",
-            "PRINCESS",
-            "DOUGIE"
+            "STRIPE_MID",
+            "BELLY_FULL",
+            "FLANK_FULL",
+            "FLANK_MID",
+            "SADDLE_MID_REVERSE",
+            "TWO_SPOT_REVERSE",
+            "SADDLE_MIN_REVERSE",
+            "SADDLE_MID",
+            "TWO_SPOT_SMALL",
+            "TWO_SPOT_MID",
+            "SADDLE_HIGH",
+            "SADDLE_FULL",
+            "LEG_FRONT_LEFT_FULL"
+        ],
+        [
+            "LEG_FRONT_RIGHT_FULL",
+            "LEG_BACK_LEFT_FULL",
+            "LEG_BACK_RIGHT_FULL",
+            "LEG_FRONT_LEFT_REVERSE",
+            "LEG_FRONT_RIGHT_REVERSE",
+            "LEG_BACK_LEFT_REVERSE",
+            "LEG_BACK_RIGHT_REVERSE",
+            "TAIL_HIGH",
+            "TAIL_FULL",
+            "TAIL_REVERSE_FULL",
+            "TAIL_REVERSE_HIGH",
+            "TAIL_HIGH_LOW",
+            "TAIL_FULL_LOW",
+            "TAIL_REVERSE_FULL_LOW"
+        ],
+        [
+            "TAIL_OVER",
+            "CHEST_HIGH",
+            "CHEST_FULL",
+            "BIB_HIGH",
+            "BIB_FULL",
+            "UNDER_FULL"
         ]
     ]
 }

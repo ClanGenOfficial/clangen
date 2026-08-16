@@ -7,7 +7,7 @@ from scripts.debug_commands.utils import (
     add_multiple_lines_to_log,
 )
 from scripts.game_structure import game
-from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
+from scripts.events_module.pregnancy import pregnancy_events
 
 
 def get_cat_from_name_or_id(nameid: str) -> Cat:
@@ -42,14 +42,12 @@ class AddPregnancyCommand(Command):
         cat = get_cat_from_name_or_id(args[0])
         second_parent = get_cat_from_name_or_id(args[1]) if len(args) > 1 else None
         if second_parent:
-            Pregnancy_Events.handle_zero_moon_pregnant(
-                cat, other_cat=second_parent, clan=game.clan
-            )
+            pregnancy_events.handle_zero_moon_pregnant(cat, other_cat=second_parent)
         elif len(args) > 1:
             add_output_line_to_log("Invalid name or id for second parent.")
             return
         elif cat:
-            Pregnancy_Events.handle_zero_moon_pregnant(cat, clan=game.clan)
+            pregnancy_events.handle_zero_moon_pregnant(cat)
         else:
             add_output_line_to_log("Invalid name or id.")
             return
