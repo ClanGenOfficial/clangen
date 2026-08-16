@@ -92,7 +92,7 @@ class Patrol:
         # Find valid patrol
         self.patrol_event = self._get_possible_patrol(patrol_type)
 
-        Patrol.used_patrols.append(self.patrol_event.id)
+        Patrol.used_patrols.append(self.patrol_event.event_id)
 
         # Return text adjusted patrol intro
         return event_text_adjust(
@@ -112,7 +112,7 @@ class Patrol:
         if path == "decline":
             if self.patrol_event:
                 print(
-                    f"PATROL ID: {self.patrol_event.id} | SUCCESS: N/A (did not proceed)"
+                    f"PATROL ID: {self.patrol_event.event_id} | SUCCESS: N/A (did not proceed)"
                 )
                 return (
                     event_text_adjust(
@@ -189,7 +189,10 @@ class Patrol:
         elif CatRank.DEPUTY in self.involved_cats.keys():
             possible_leads = self.involved_cats[CatRank.DEPUTY]
 
-        # if no deputy, set oldest or most experienced as patrol leader
+        # if not deputy, try warriors
+        elif CatRank.WARRIOR in self.involved_cats.keys():
+            possible_leads = self.involved_cats[CatRank.WARRIOR]
+        # if no warriors, set oldest or most experienced of any cats as patrol lead
         else:
             possible_leads = self.patrol_cats
 
@@ -231,13 +234,14 @@ class Patrol:
         patrol_list = get_patrol_list(
             patrol_type,
             outsider_rep=will_allow_outsider_patrols(
-                small_clan=int(len(game.clan.clan_cats)) < 20
+                small_clan=int(len(game.clan.clan_cats))
+                < get_config("patrol_generation.small_clan_threshold")
             ),
             other_clan_rep=self.other_clan.get_standing(),
         )
 
         # INFORM -NOT PRESENT-
-        patrol_ids = [patrol.id for patrol in patrol_list]
+        patrol_ids = [patrol.event_id for patrol in patrol_list]
         if self.debug_patrol_id and self.debug_patrol_id not in patrol_ids:
             print(
                 "DEBUG: requested patrol not present (check spelling/mismatched season, biome, patrol type, new cat flag, other clan relations, disaster setting)"
@@ -250,7 +254,7 @@ class Patrol:
         ]:
             if self.debug_patrol_id:
                 chosen_patrol = [
-                    p for p in patrol_list if p.id == self.debug_patrol_id
+                    p for p in patrol_list if p.event_id == self.debug_patrol_id
                 ][0]
             else:
                 chosen_patrol = choice(patrol_list)
@@ -330,7 +334,7 @@ class Patrol:
             p
             for p in possible_patrols
             if self._patrol_pass_basic_constraints(
-                p, patrol_type, is_debug_patrol=p.id == self.debug_patrol_id
+                p, patrol_type, is_debug_patrol=p.event_id == self.debug_patrol_id
             )
         ]
         # make sure the hunting patrols are balanced
@@ -356,7 +360,7 @@ class Patrol:
         # always try to do the debugged ID first
         if self.debug_patrol_id:
             patrol_override = [
-                p for p in possible_patrols if p.id == self.debug_patrol_id
+                p for p in possible_patrols if p.event_id == self.debug_patrol_id
             ]
             if patrol_override:
                 patrol_override = patrol_override[0]
@@ -433,8 +437,8 @@ class Patrol:
 
             # CHECK REPEAT
             if (
-                test_patrol.id in self.used_patrols
-                and not self.debug_patrol_id == test_patrol.id
+                test_patrol.event_id in self.used_patrols
+                and not self.debug_patrol_id == test_patrol.event_id
             ):
                 if test_patrol in patrols_to_test:
                     patrols_to_test.remove(test_patrol)
@@ -446,7 +450,7 @@ class Patrol:
             else:
                 if test_patrol in patrols_to_test:
                     patrols_to_test.remove(test_patrol)
-                checked_patrols.add(test_patrol.id)
+                checked_patrols.add(test_patrol.event_id)
 
         return chosen_patrol
 
@@ -454,19 +458,7 @@ class Patrol:
         self, patrol: PatrolEvent, patrol_type: str, is_debug_patrol: bool
     ) -> bool:
         # CHECK PATROL TYPE
-        if "hunting" not in patrol.types and patrol_type == "hunting":
-            if is_debug_patrol:
-                print("DEBUG: requested patrol does not meet constraints (patrol type)")
-            return False
-        elif "border" not in patrol.types and patrol_type == "border":
-            if is_debug_patrol:
-                print("DEBUG: requested patrol does not meet constraints (patrol type)")
-            return False
-        elif "training" not in patrol.types and patrol_type == "training":
-            if is_debug_patrol:
-                print("DEBUG: requested patrol does not meet constraints (patrol type)")
-            return False
-        elif "herb_gathering" not in patrol.types and patrol_type == "herb_gathering":
+        if patrol_type not in patrol.types:
             if is_debug_patrol:
                 print("DEBUG: requested patrol does not meet constraints (patrol type)")
             return False
@@ -552,14 +544,15 @@ class Patrol:
                 return_list=True,
                 return_id=False,
             )
-
-            if not self._find_involved_cats(
+            cats_found, temp_involved_cats = self._find_involved_cats(
                 abbr,
                 possible_cats,
                 patrol.relationship_constraint,
                 cat_constraints=constraints,
                 temp_involved_cats=temp_involved_cats,
-            ):
+            )
+
+            if not cats_found:
                 return False
 
         # if we're here, then we must have filled all the needed cats!
@@ -608,7 +601,7 @@ class Patrol:
                 if not possible_outcomes:
                     if len(used_success_frequencies) == 4:
                         raise Exception(
-                            f"Valid success outcome could not be found for {self.patrol_event.id}"
+                            f"Valid success outcome could not be found for {self.patrol_event.event_id}"
                         )
                     used_success_frequencies.add(chosen_frequency)
                     chosen_frequency = find_new_frequency(used_success_frequencies)
@@ -634,7 +627,7 @@ class Patrol:
                 if not possible_outcomes:
                     if len(used_fail_frequencies) == 4:
                         raise Exception(
-                            f"Valid fail outcome could not be found for {self.patrol_event.id}"
+                            f"Valid fail outcome could not be found for {self.patrol_event.event_id}"
                         )
                     used_fail_frequencies.add(chosen_frequency)
                     chosen_frequency = find_new_frequency(used_fail_frequencies)
@@ -729,7 +722,7 @@ class Patrol:
                     test_cat,
                     involved_cat_dict=temp_involved_cats,
                     injuries=possible_injuries,
-                    event_id=self.patrol_event.id,
+                    event_id=self.patrol_event.event_id,
                 ):
                     return False
 
@@ -777,7 +770,7 @@ class Patrol:
                         c,
                         involved_cat_dict=temp_involved_cats,
                         injuries=possible_injuries,
-                        event_id=self.patrol_event.id,
+                        event_id=self.patrol_event.event_id,
                     ):
                         continue
 
@@ -815,14 +808,14 @@ class Patrol:
                     return_list=True,
                     return_id=False,
                 )
-
-                if not self._find_involved_cats(
+                cats_found, temp_involved_cats = self._find_involved_cats(
                     abbr,
                     possible_cats,
                     outcome.relationship_constraint,
                     cat_constraints=constraints,
                     temp_involved_cats=temp_involved_cats,
-                ):
+                )
+                if not cats_found:
                     return False
 
         # if we're here, then we must have found all our cats!
@@ -837,12 +830,12 @@ class Patrol:
         relationship_constraint,
         cat_constraints,
         temp_involved_cats: dict,
-    ) -> bool:
+    ) -> tuple[bool, dict]:
         # if relationships aren't required, just grab some cats and go!
         if possible_cats and not relationship_constraint:
             # take first cat
             temp_involved_cats[abbr] = possible_cats[0]
-            return True
+            return True, temp_involved_cats
 
         # otherwise, let's make sure we fulfill the rel constraints with this cat
         elif possible_cats:
@@ -857,7 +850,7 @@ class Patrol:
                         possible_cats.remove(_temp_cats[abbr])
                         if not possible_cats:
                             # oops! no more cats available! this patrol isn't possible
-                            return False
+                            return False, temp_involved_cats
                         else:
                             # still some possibilities, let's try the next!
                             continue
@@ -877,9 +870,9 @@ class Patrol:
                 self.new_cats.extend(temp_involved_cats[abbr])
             else:
                 # if we aren't allowed to make a new one, then we can't do this patrol
-                return False
+                return False, temp_involved_cats
 
-        return True
+        return True, temp_involved_cats
 
     def determine_outcome(
         self, antagonize=False
@@ -891,7 +884,7 @@ class Patrol:
 
         chosen_outcome, success = self.calculate_success(success_outcome, fail_outcome)
 
-        print(f"PATROL ID: {self.patrol_event.id} | SUCCESS: {success}")
+        print(f"PATROL ID: {self.patrol_event.event_id} | SUCCESS: {success}")
         print(
             f"Patrol Frequency: {self.patrol_event.frequency} | Patrol Weight: {self.patrol_event.weight}"
         )
@@ -964,7 +957,9 @@ class Patrol:
                 "debug_ensure_patrol_outcome"
             ]
             # Logging
-            print(f"The outcome of {self.patrol_event.id} was altered to {success}")
+            print(
+                f"The outcome of {self.patrol_event.event_id} was altered to {success}"
+            )
 
         return success_outcome if success else fail_outcome, success
 
@@ -1020,7 +1015,7 @@ class Patrol:
 
             if chosen_prey_size == most_prey_size:
                 filtered_patrols.append(patrol)
-            elif self.debug_patrol_id and self.debug_patrol_id == patrol.id:
+            elif self.debug_patrol_id and self.debug_patrol_id == patrol.event_id:
                 print(
                     "DEBUG: requested patrol does not meet constraints (failed prey balancing)"
                 )
@@ -1032,7 +1027,7 @@ class Patrol:
             filtered_patrols = possible_patrols
         return filtered_patrols
 
-    def get_patrol_art(self, outcome: TextPoolEvent = None) -> Optional[pygame.Surface]:
+    def get_patrol_art(self, outcome: TextPoolEvent = None) -> pygame.Surface:
         """Return's patrol art surface"""
         if not self.patrol_event or not isinstance(self.patrol_event.patrol_art, str):
             return pygame.Surface((600, 600), flags=pygame.SRCALPHA)
@@ -1054,9 +1049,6 @@ class Patrol:
         if not isinstance(file_name, str) or not path_exists(
             f"{root_dir}{file_name}.png"
         ):
-            if outcome:
-                return None
-
             if "herb_gathering" in self.patrol_event.types:
                 file_name = "med"
             elif "hunting" in self.patrol_event.types:

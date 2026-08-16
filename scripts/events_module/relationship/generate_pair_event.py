@@ -247,7 +247,7 @@ def _get_event(
     possible_events = [
         e
         for e in possible_events
-        if event_for_cat(e.involved_cats.get("m_c", {}), main_cat, event_id=e.id)
+        if event_for_cat(e.involved_cats.get("m_c", {}), main_cat, event_id=e.event_id)
     ]
 
     possible_events = [
@@ -257,7 +257,7 @@ def _get_event(
             e.involved_cats.get("r_c", {}),
             other_cat,
             involved_cat_dict={"m_c": main_cat},
-            event_id=e.id,
+            event_id=e.event_id,
         )
     ]
 

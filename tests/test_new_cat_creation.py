@@ -64,6 +64,40 @@ class TestNewCatCreation(unittest.TestCase):
                         msg=f"{rank_list[i - 1]} was not assigned correctly as a past rank.",
                     )
 
+        with self.subTest("Testing clancat rank assignments"):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat={},
+                status=["clancat"],
+            )
+
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={}, other_clan=self.other_clan
+            )
+            test_cat = cat_list[0]
+
+            self.assertIn(
+                test_cat.status.rank,
+                [r for r in [*CatRank] if r.is_any_clancat_rank()],
+                msg=f"Cat was not assigned correctly as a clancat rank.",
+            )
+
+            option_dict = InvolvedCatDict(
+                can_create_new_cat={},
+                status=["loner"],
+                past_status=["clancat"],
+            )
+
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={}, other_clan=self.other_clan
+            )
+            test_cat = cat_list[0]
+
+            self.assertIn(
+                list(test_cat.status.all_ranks.keys())[-2],
+                [r for r in [*CatRank] if r.is_any_clancat_rank()],
+                msg=f"Cat was not assigned correctly as a clancat rank.",
+            )
+
         # test that group IDs are being given correctly
         group_list = [
             CatGroup.PLAYER_CLAN,

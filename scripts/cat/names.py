@@ -232,14 +232,7 @@ class Name:
         # defaults in case of error
         weights = [1, 1, 1, 1]
         # give kittypets a kittypet name
-        if social == CatSocial.KITTYPET:
-            weights = constants.CONFIG["cat_name_controls"]["kittypet"]
-
-        if social == CatSocial.LONER:
-            weights = constants.CONFIG["cat_name_controls"]["loner"]
-
-        if social == CatSocial.ROGUE:
-            weights = constants.CONFIG["cat_name_controls"]["rogue"]
+        weights = constants.CONFIG["cat_name_controls"][str(social)]
 
         selected_category = random.choices(name_categories, weights, k=1)[0]
         name = random.choice(names.names_dict[selected_category])

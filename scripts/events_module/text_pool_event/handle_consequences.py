@@ -27,6 +27,7 @@ from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game, constants
 
 disable_random: bool = False
+logger = logging.getLogger(__name__)
 
 
 def execute_outcome(
@@ -247,8 +248,6 @@ def __handle_death_history(cat: Cat, death_text: str, other_clan: OtherClan) -> 
 
     if not death_text:
         print("WARNING: Death occurred, but some death history is missing.")
-
-    if not death_text:
         death_text = i18n.t("defaults.patrol_regular_death")
 
     final_death_history = death_text.replace("o_c_n", other_clan.name)
@@ -359,7 +358,7 @@ def _handle_conditions(
 
             no_results = block.get("no_results", False)
 
-            __handle_condition_history(
+            _handle_condition_history(
                 event=event,
                 cat=c,
                 condition=chosen_condition,
@@ -387,7 +386,7 @@ def _handle_conditions(
     return " ".join(results)
 
 
-def __handle_condition_history(
+def _handle_condition_history(
     event: TextPoolEvent,
     cat: Cat,
     condition: str,
@@ -400,7 +399,7 @@ def __handle_condition_history(
     Handles adding potential history to a cat. default_override will use the default text for the condition.
     """
     if not scar_string and not death_string:
-        logging.warning(
+        logger.warning(
             f"WARNING: Condition was added by outcome: {event} but no scar or death history string was given. This is okay if {condition} shouldn't kill or scar."
         )
 
@@ -487,12 +486,12 @@ def _handle_supply_changes(
         else:
             herb_blocks.append(block)
 
-    results.append(__handle_herbs(herb_blocks, event_involved_cats))
-    results.append(__handle_prey(prey_blocks, event_involved_cats))
+    results.append(_handle_herbs(herb_blocks, event_involved_cats))
+    results.append(_handle_prey(prey_blocks, event_involved_cats))
     return " ".join(results)
 
 
-def __handle_prey(
+def _handle_prey(
     prey_info: list[SupplyDict], event_involved_cats: dict[str, Union[Cat, list[Cat]]]
 ) -> str:
     """Handle giving prey"""
@@ -505,11 +504,9 @@ def __handle_prey(
     )
 
     prey_types = {
-        "increase_tiny": basic_amount / 2,
-        "increase_small": basic_amount,
-        "increase_medium": basic_amount * 1.8,
-        "increase_large": basic_amount * 2.4,
-        "increase_huge": basic_amount * 3.2,
+        f"increase_{size}": basic_amount
+        * get_config(f"prey.event_increase_modifiers.increase_{size}")
+        for size in ("tiny", "small", "medium", "large", "huge")
     }
 
     results = []
@@ -558,16 +555,14 @@ def __handle_prey(
             results.append(i18n.t(f"screens.patrol.prey_{adjust_type}"))
 
     # TODO: localize
-    game.freshkill_event_list.append(
-        f"{final_amount} pieces of prey were caught on a patrol."
-    )
+    game.freshkill_event_list.append(i18n.t("screens.prey_log", count=final_amount))
 
     game.clan.freshkill_pile.add_freshkill(final_amount)
 
     return " ".join(results)
 
 
-def __handle_herbs(
+def _handle_herbs(
     herb_info: list[SupplyDict], event_involved_cats: dict[str, Union[Cat, list[Cat]]]
 ) -> str:
     """Handle giving herbs"""
@@ -584,7 +579,7 @@ def __handle_herbs(
         herb_tag = herb["type"]
         change_type = herb["adjust"]
 
-        quantity_allowed = __get_herb_increase_amount(event_involved_cats, change_type)
+        quantity_allowed = _get_herb_increase_amount(event_involved_cats, change_type)
 
         if herb_tag == "random_herbs":
             # we want better control over how many herbs they'll gather in total here
@@ -618,7 +613,7 @@ def __handle_herbs(
     )
 
 
-def __get_herb_increase_amount(
+def _get_herb_increase_amount(
     event_involved_cats: dict[str, Union[Cat, list[Cat]]],
     increase_tag: Literal[
         "increase_tiny",
@@ -643,7 +638,7 @@ def __get_herb_increase_amount(
         amount_gathered = amount_per_cat
         if not disable_random:
             # add that random variation
-            amount_gathered += randint(random_variance[0], random_variance[1])
+            amount_gathered += randint(*random_variance)
 
         # give skill buffs
         if c.skills.primary.path == SkillPath.CLEVER:

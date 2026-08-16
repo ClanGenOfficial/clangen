@@ -38,8 +38,12 @@ def updated_create_new_cat(
         # check for "clancat" first since it's not really a rank
         if "clancat" in option_dict["status"]:
             status["social"] = CatSocial.CLANCAT
-            option_dict["status"].remove("clancat")
-        status["rank"] = CatRank(choice(option_dict["status"]))
+            possible_ranks = [r for r in option_dict["status"] if r != "clancat"]
+            possible_ranks.extend([r for r in [*CatRank] if r.is_any_clancat_rank()])
+        else:
+            possible_ranks = option_dict["status"]
+
+        status["rank"] = CatRank(choice(possible_ranks))
         # if no group given and the rank/social is a clancat, then assign to other clan
         if not option_dict.get("group") and (
             status["rank"].is_any_clancat_rank()
@@ -447,9 +451,12 @@ def _assign_past_status_and_standing(
         # check for "clancat" first since it's not really a rank
         if "clancat" in option_dict["past_status"]:
             status["social"] = CatSocial.CLANCAT
-            option_dict["past_status"].remove("clancat")
+            possible_ranks = [r for r in option_dict["past_status"] if r != "clancat"]
+            possible_ranks.extend([r for r in [*CatRank] if r.is_any_clancat_rank()])
+        else:
+            possible_ranks = option_dict["past_status"]
 
-        status["rank"] = CatRank(choice(option_dict["past_status"]))
+        status["rank"] = CatRank(choice(possible_ranks))
         # if no group given and the rank/social is a clancat, then assign to other clan
         if not option_dict.get("group") and (
             status["rank"].is_any_clancat_rank()

@@ -22,7 +22,7 @@ NUM_OF_SKILLS = len(SkillPath)
 # slots increases performance and can be used since we won't be adding new attrs at runtime
 @dataclass(slots=True)
 class PatrolEvent:
-    id: str
+    event_id: str
 
     intro_text: str
     decline_text: str
@@ -158,23 +158,26 @@ class PatrolEvent:
         for outcome in success:
             self.success_outcomes.append(
                 TextPoolEvent(
-                    id=f"{self.id}_success{success.index(outcome)}", **outcome
+                    id=f"{self.event_id}_success{success.index(outcome)}", **outcome
                 )
             )
         for outcome in fail:
             self.fail_outcomes.append(
-                TextPoolEvent(id=f"{self.id}_fail{fail.index(outcome)}", **outcome)
+                TextPoolEvent(
+                    id=f"{self.event_id}_fail{fail.index(outcome)}", **outcome
+                )
             )
         for outcome in antag_success:
             self.antag_success_outcomes.append(
                 TextPoolEvent(
-                    id=f"{self.id}_antag_success{antag_success.index(outcome)}",
+                    id=f"{self.event_id}_antag_success{antag_success.index(outcome)}",
                     **outcome,
                 )
             )
         for outcome in antag_fail:
             self.antag_fail_outcomes.append(
                 TextPoolEvent(
-                    id=f"{self.id}_antag_fail{antag_fail.index(outcome)}", **outcome
+                    id=f"{self.event_id}_antag_fail{antag_fail.index(outcome)}",
+                    **outcome,
                 )
             )

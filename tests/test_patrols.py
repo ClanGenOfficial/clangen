@@ -90,10 +90,13 @@ class TestPatrolCats(unittest.TestCase):
 
 
 class TestInvolvedCats(unittest.TestCase):
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
         # load in the spritesheets
         # we have to do this to prevent a crash, even though we won't be displaying anything
         sprites.load_all()
+
+    def setUp(self):
         Cat.all_cats.clear()
         Cat.all_cats_list.clear()
 
@@ -117,7 +120,7 @@ class TestInvolvedCats(unittest.TestCase):
         )
 
         patrol = PatrolEvent(
-            id="test",
+            event_id="test",
             types=["hunting"],
             intro_text="test",
             decline_text="test",
@@ -149,7 +152,7 @@ class TestInvolvedCats(unittest.TestCase):
         outsider1 = TestCatFactory.create_cat(rank=CatRank.LONER)
 
         patrol = PatrolEvent(
-            id="test",
+            event_id="test",
             types=["hunting"],
             intro_text="test",
             decline_text="test",
@@ -186,7 +189,7 @@ class TestInvolvedCats(unittest.TestCase):
         )
 
         patrol = PatrolEvent(
-            id="test",
+            event_id="test",
             types=["hunting"],
             intro_text="test",
             decline_text="test",
@@ -218,7 +221,7 @@ class TestInvolvedCats(unittest.TestCase):
         app2 = TestCatFactory.create_cat(rank=CatRank.APPRENTICE)
 
         patrol = PatrolEvent(
-            id="test",
+            event_id="test",
             types=["hunting"],
             intro_text="test",
             decline_text="test",
@@ -250,7 +253,7 @@ class TestInvolvedCats(unittest.TestCase):
         app2 = TestCatFactory.create_cat(rank=CatRank.APPRENTICE)
 
         patrol = PatrolEvent(
-            id="test",
+            event_id="test",
             types=["hunting"],
             intro_text="test",
             decline_text="test",
@@ -302,7 +305,7 @@ class TestOutcomeExecution(unittest.TestCase):
         outsider1 = TestCatFactory.create_cat(rank=CatRank.LONER)
 
         patrol = PatrolEvent(
-            id="test",
+            event_id="test",
             types=["hunting"],
             intro_text="test",
             decline_text="test",
@@ -336,7 +339,7 @@ class TestOutcomeExecution(unittest.TestCase):
         )
 
         patrol = PatrolEvent(
-            id="test",
+            event_id="test",
             types=["hunting"],
             intro_text="test",
             decline_text="test",
@@ -378,7 +381,7 @@ class TestOutcomeExecution(unittest.TestCase):
         )
 
         patrol = PatrolEvent(
-            id="test",
+            event_id="test",
             types=["hunting"],
             intro_text="test",
             decline_text="test",
@@ -413,7 +416,7 @@ class TestOutcomeExecution(unittest.TestCase):
         app1 = TestCatFactory.create_cat(rank=CatRank.APPRENTICE)
 
         patrol = PatrolEvent(
-            id="test",
+            event_id="test",
             types=["hunting"],
             intro_text="test",
             decline_text="test",
@@ -450,7 +453,7 @@ class TestOutcomeExecution(unittest.TestCase):
         app1 = TestCatFactory.create_cat(rank=CatRank.APPRENTICE)
 
         patrol = PatrolEvent(
-            id="test",
+            event_id="test",
             types=["hunting"],
             intro_text="test",
             decline_text="test",
@@ -492,7 +495,7 @@ class TestOutcomeExecution(unittest.TestCase):
         war1.skills.secondary = None
 
         patrol = PatrolEvent(
-            id="test",
+            event_id="test",
             types=["hunting"],
             intro_text="test",
             decline_text="test",

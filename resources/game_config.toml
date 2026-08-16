@@ -541,6 +541,8 @@ dev_tools = false
   skill_cat_modifier = 5
   trait_cat_modifier = 10
 
+  small_clan_threshold = 20
+
   # base 1/chance for a romance patrol. gets modified further in code
   chance_of_romance_patrol = 16
 
@@ -1066,11 +1068,18 @@ dev_tools = false
   # used in conjunction with patrol_balance to modify the chosen prey size by the patrol frequency
   # the less frequent the patrol, the larger the prey it can find
   [prey.patrol_weight_adaption]
-      # prey size increase = associated frequency
-      1_prey_class_increase = 4
-      2_prey_class_increase = 3
-      3_prey_class_increase = 2
-      4_prey_class_increase = 1
+    # prey size increase = associated frequency
+    1_prey_class_increase = 4
+    2_prey_class_increase = 3
+    3_prey_class_increase = 2
+    4_prey_class_increase = 1
+
+  [prey.event_increase_modifiers]
+    increase_tiny = 0.5
+    increase_small = 1
+    increase_medium = 1.8
+    increase_large = 2.4
+    increase_huge = 3.2
 
 [settings]
   # force a game setting to be true, stopping players from changing it
