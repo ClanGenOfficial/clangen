@@ -3,7 +3,7 @@
         "Delete this when the palette is done",
         "Completed: base coats, tabby, classic, mackerel, agouti, ticked",
         "Normal colors: tabby, mackerel, classic, masked (also uses light pattern) ",
-        "               agouti, ticked, rosette",
+        "               agouti, ticked, rosette, bengal, marbled (mostly)",
         "ghost masked has a different color for the eye dots ONLY. Need pelt mask?",
         "Bengal and marbled (exotic pelts) have slightly different pattern fill colors",
         "               only marbled added here. They are close enough, maybe keep only one?"
@@ -16,6 +16,7 @@
         "base_gradient_top": "#F7FBF9",
         "pattern": "#C8D9DE",
         "light_pattern": "#CCC6C6",
+        "rosette_light_pattern": "#D0DEE1",
         "pattern_gradient_top": "#95A9AF",
         "newborn_pattern": "#BBC9CD",
         "newborn_pattern_gradient_top": "#BAC8CC",
@@ -23,9 +24,13 @@
         "exotic_base": "#F6F6F6",
         "exotic_base_gradient_bottom": "#FFFFFF",
         "exotic_base_gradient_top": "#E7E6EB",
+        "exotic_pattern": "#D4D3D3",
+        "exotic_pattern_fill": "#D4D3D4",
         "exotic_muzzle": "#ECE8E7",
         "exotic_light_pattern": "#FFFFFF",
-        "exotic_pattern_gradient": "#BEBDBE"
+        "exotic_pattern_gradient": "#BEBDBE",
+        "exotic_pattern_fill_gradient": "#D1D0D2",
+        "exotic_pattern_newborns": ""
     },
     "PALEGREY": {
         "base": "#C2D5D3",
@@ -33,6 +38,7 @@
         "base_gradient_top": "#D9E1D4",
         "pattern": "#8EA7A7",
         "light_pattern": "#E5EFE3",
+        "rosette_light_pattern": "#A2B1B0",
         "pattern_gradient_top": "#677E7E",
         "newborn_pattern":"##8EA4A4",
         "newborn_pattern_gradient_top": "#728383",
@@ -40,9 +46,13 @@
         "exotic_base": "#BDC3CE",
         "exotic_base_gradient_bottom": "#F8F8F5",
         "exotic_base_gradient_top": "#7D828A",
+        "exotic_pattern": "#5F6472",
+        "exotic_pattern_fill": "#5D6269",
         "exotic_muzzle": "#898782",
         "exotic_light_pattern": "#F8F8F5",
-        "exotic_pattern_gradient": "#44474E"
+        "exotic_pattern_gradient": "#44474E",
+        "exotic_pattern_fill_gradient": "#595C64",
+        "exotic_pattern_newborns": ""
     },
     "SILVER": {
         "base": "#B1C4C7",
@@ -50,6 +60,7 @@
         "base_gradient_top": "#9FB8BD",
         "pattern": "#526B7A",
         "light_pattern": "#E5EFE3",
+        "rosette_light_pattern": "#859A9D",
         "pattern_gradient_top": "#28353B",
         "newborn_pattern":"#8EA4A4",
         "newborn_pattern_gradient_top": "#738484",
@@ -57,9 +68,13 @@
         "exotic_base": "#CACFD4",
         "exotic_base_gradient_bottom": "#F8F8F5",
         "exotic_base_gradient_top": "#969BA1",
+        "exotic_pattern": "#403F4B",
+        "exotic_pattern_fill": "#4F5258",
         "exotic_muzzle": "#898782",
         "exotic_light_pattern": "#F8F8F5",
-        "exotic_pattern_gradient": "#1B1B21"
+        "exotic_pattern_gradient": "#1B1B21",
+        "exotic_pattern_fill_gradient": "#494B51",
+        "exotic_pattern_newborns": ""
     },
     "GREY": {
         "base": "#92A1A1",
@@ -67,6 +82,7 @@
         "base_gradient_top": "#AFB8B0",
         "pattern": "#687C7A",
         "light_pattern": "#CED3CD",
+        "rosette_light_pattern": "#B1AEB0",
         "pattern_gradient_top": "#495D5B",
         "newborn_pattern": "#8EA4A4",
         "newborn_pattern_gradient_top": "#728383",
@@ -74,9 +90,13 @@
         "exotic_base": "#8D939E",
         "exotic_base_gradient_bottom": "#F8F9DD",
         "exotic_base_gradient_top": "#6B7078",
+        "exotic_pattern": "#666B76",
+        "exotic_pattern_fill": "#60646E",
         "exotic_muzzle": "#898886",
         "exotic_light_pattern": "#F8F9DD",
-        "exotic_pattern_gradient": "#43464D"
+        "exotic_pattern_gradient": "#43464D",
+        "exotic_pattern_fill_gradient": "#51555C",
+        "exotic_pattern_newborns": ""
     },
     "DARKGREY": {
         "base": "#5B6C6F",
@@ -84,6 +104,7 @@
         "base_gradient_top": "#8C948D",
         "pattern": "#25403C",
         "light_pattern": "#AAB1AB",
+        "rosette_light_pattern": "#39484B",
         "pattern_gradient_top": "#0F1A18",
         "newborn_pattern": "#53555E",
         "newborn_pattern_gradient_top": "#40464C",
@@ -91,9 +112,13 @@
         "exotic_base": "#90939D",
         "exotic_base_gradient_bottom": "#F8F8F5",
         "exotic_base_gradient_top": "#383A3D",
+        "exotic_pattern": "#2F2E3A",
+        "exotic_pattern_fill": "#5C6069",
         "exotic_muzzle": "#403F4B",
         "exotic_light_pattern": "#F8F8F5",
-        "exotic_pattern_gradient": "#1C1C22"
+        "exotic_pattern_gradient": "#1C1C22",
+        "exotic_pattern_fill_gradient": "#1C1C22",
+        "exotic_pattern_newborns": ""
     },
     "GHOST": {
         "base": "#3A3F4B",
@@ -101,6 +126,7 @@
         "base_gradient_top": "#5A5B62",
         "pattern": "#515F63",
         "light_pattern": "#777A84",
+        "rosette_light_pattern": "#4D4E59",
         "pattern_gradient_top": "#627276",
         "newborn_pattern": "#656F74",
         "newborn_pattern_gradient_top": "#717F82",
@@ -108,9 +134,13 @@
         "exotic_base": "#3B4045",
         "exotic_base_gradient_bottom": "#98ABC0",
         "exotic_base_gradient_top": "#2F353A",
+        "exotic_pattern": "#1A1D2C",
+        "exotic_pattern_fill": "#2F2E3A",
         "exotic_muzzle": "#1A1D2C",
         "exotic_light_pattern": "#98ABC0",
-        "exotic_pattern_gradient": "#0F0F12"
+        "exotic_pattern_gradient": "#0F0F12",
+        "exotic_pattern_fill_gradient": "#202427",
+        "exotic_pattern_newborns": ""
     },
     "BLACK": {
         "base": "#2F353A",
@@ -118,6 +148,7 @@
         "base_gradient_top": "#4E5156",
         "pattern": "#171B24",
         "light_pattern": "#60676D",
+        "rosette_light_pattern": "#4D4E59",
         "pattern_gradient_top": "#0C0F17",
         "newborn_pattern": "#52545D",
         "newborn_pattern_gradient_top": "#40464C",
@@ -125,9 +156,13 @@
         "exotic_base": "#F4D8B2",
         "exotic_base_gradient_bottom": "#C2BEB4",
         "exotic_base_gradient_top": "#35353A",
+        "exotic_pattern": "#0F0F12",
+        "exotic_pattern_fill": "#0F0F12",
         "exotic_muzzle": "#0F0F12",
         "exotic_light_pattern": "#C2BEB4",
-        "exotic_pattern_gradient": "#0F0F12"
+        "exotic_pattern_gradient": "#0F0F12",
+        "exotic_pattern_fill_gradient": "#202427",
+        "exotic_pattern_newborns": ""
     },
 
 
@@ -138,6 +173,7 @@
         "base_gradient_top": "#F4E0BB",
         "pattern": "#F1BE8C",
         "light_pattern": "#FFF4DB",
+        "rosette_light_pattern": "#F5CE9A",
         "pattern_gradient_top": "#CB9266",
         "newborn_pattern": "#EEBB8D",
         "newborn_pattern_gradient_top": "#E3B086",
@@ -145,9 +181,13 @@
         "exotic_base": "#E8C192",
         "exotic_base_gradient_bottom": "#F8F6F2",
         "exotic_base_gradient_top": "#F1BE8C",
+        "exotic_pattern": "#EEBA89",
+        "exotic_pattern_fill": "#F4CCA0",
         "exotic_muzzle": "#F1C08E",
         "exotic_light_pattern": "#F8F6F2",
-        "exotic_pattern_gradient": "#D9A77A"
+        "exotic_pattern_gradient": "#D9A77A",
+        "exotic_pattern_fill_gradient": "#E1B082",
+        "exotic_pattern_newborns": ""
     },
     "PALEGINGER": {
         "base": "#E5BD91",
@@ -155,6 +195,7 @@
         "base_gradient_top": "#E7C89B",
         "pattern": "#E5A46A",
         "light_pattern": "#F2D6B0",
+        "rosette_light_pattern": "#E8B479",
         "pattern_gradient_top": "#B97F51",
         "newborn_pattern": "#EEBB8D",
         "newborn_pattern_gradient_top": "#E2AF85",
@@ -162,9 +203,13 @@
         "exotic_base": "#EFCE80",
         "exotic_base_gradient_bottom": "#ECDDD2",
         "exotic_base_gradient_top": "#E5A56B",
+        "exotic_pattern": "#DD9E65",
+        "exotic_pattern_fill": "#E5AF78",
         "exotic_muzzle": "#E5A76D",
         "exotic_light_pattern": "#ECDDD2",
-        "exotic_pattern_gradient": "#C88956"
+        "exotic_pattern_gradient": "#C88956",
+        "exotic_pattern_fill_gradient": "#D2935E",
+        "exotic_pattern_newborns": ""
     },
     "GOLDEN": {
         "base": "#EDC981",
@@ -172,6 +217,7 @@
         "base_gradient_top": "#E1A86E",
         "pattern": "#D0936E",
         "light_pattern": "#F2DBA8",
+        "rosette_light_pattern": "#D9A859",
         "pattern_gradient_top": "#885F46",
         "newborn_pattern": "#EEBB8D",
         "newborn_pattern_gradient_top": "#E3B086",
@@ -179,9 +225,13 @@
         "exotic_base": "#F5AC67",
         "exotic_base_gradient_bottom": "#ECDDD2",
         "exotic_base_gradient_top": "#E7B56F",
+        "exotic_pattern": "#D0936E",
+        "exotic_pattern_fill": "#DCAC7F",
         "exotic_muzzle": "#D0936E",
         "exotic_light_pattern": "#F3EDD9",
-        "exotic_pattern_gradient": "#78533E"
+        "exotic_pattern_gradient": "#78533E",
+        "exotic_pattern_fill_gradient": "#9B734C",
+        "exotic_pattern_newborns": ""
     },
     "GINGER": {
         "base": "#F2A96B",
@@ -189,6 +239,7 @@
         "base_gradient_top": "#F4C695",
         "pattern": "#E47833",
         "light_pattern": "#FFD5A9",
+        "rosette_light_pattern": "#DB9355",
         "pattern_gradient_top": "#B15F2A",
         "newborn_pattern": "#E3AF83",
         "newborn_pattern_gradient_top": "#D29463",
@@ -196,9 +247,13 @@
         "exotic_base": "#D67539",
         "exotic_base_gradient_bottom": "#FFF2B2",
         "exotic_base_gradient_top": "#DE8B4B",
+        "exotic_pattern": "#E07732",
+        "exotic_pattern_fill": "#E58945",
         "exotic_muzzle": "#F38B46",
         "exotic_light_pattern": "#FFF2B2",
-        "exotic_pattern_gradient": "#A15524"
+        "exotic_pattern_gradient": "#A15524",
+        "exotic_pattern_fill_gradient": "#BE6C34",
+        "exotic_pattern_newborns": ""
     },
     "DARKGINGER": {
         "base": "#D1703C",
@@ -206,6 +261,7 @@
         "base_gradient_top": "#DA8F5D",
         "pattern": "#B14A22",
         "light_pattern": "#FFD5A9",
+        "rosette_light_pattern": "#BC5D2A",
         "pattern_gradient_top": "#703119",
         "newborn_pattern": "#A64523",
         "newborn_pattern_gradient_top": "#89391D",
@@ -213,9 +269,13 @@
         "exotic_base": "#D67539",
         "exotic_base_gradient_bottom": "#FFF1B2",
         "exotic_base_gradient_top": "#C15824",
+        "exotic_pattern": "#AF4A22",
+        "exotic_pattern_fill": "#BC5829",
         "exotic_muzzle": "#AF4A22",
         "exotic_light_pattern": "#FFF1B2",
-        "exotic_pattern_gradient": "#702E15"
+        "exotic_pattern_gradient": "#702E15",
+        "exotic_pattern_fill_gradient": "#8D3E1B",
+        "exotic_pattern_newborns": ""
     },
     "SIENNA": {
         "base": "#A9563D",
@@ -223,6 +283,7 @@
         "base_gradient_top": "#B26E4F",
         "pattern": "#FFD5A9",
         "light_pattern": "#F2DBA8",
+        "rosette_light_pattern": "#BA6D4C",
         "pattern_gradient_top": "#4F2B2E",
         "newborn_pattern": "#A64523",
         "newborn_pattern_gradient_top": "#89391D",
@@ -230,9 +291,13 @@
         "exotic_base": "#AE5F42",
         "exotic_base_gradient_bottom": "#D6C898",
         "exotic_base_gradient_top": "#AD583B",
+        "exotic_pattern": "#6E3838",
+        "exotic_pattern_fill": "#8D453C",
         "exotic_muzzle": "#C9724E",
         "exotic_light_pattern": "#D6C898",
-        "exotic_pattern_gradient": "#6F3838"
+        "exotic_pattern_gradient": "#6F3838",
+        "exotic_pattern_fill_gradient": "#8C443B",
+        "exotic_pattern_newborns": ""
     },
 
 
@@ -243,6 +308,7 @@
         "base_gradient_top": "#CDC8BF",
         "pattern": "#BDA178",
         "light_pattern": "#FFF5D9",
+        "rosette_light_pattern": "#C2AF8C",
         "pattern_gradient_top": "#8A7153",
         "newborn_pattern": "#B79B78",
         "newborn_pattern_gradient_top": "#816F55",
@@ -250,9 +316,13 @@
         "exotic_base": "#D2C2A2",
         "exotic_base_gradient_bottom": "#F8F8F4",
         "exotic_base_gradient_top": "#B8A580",
+        "exotic_pattern": "#B09670",
+        "exotic_pattern_fill": "#C4AF8C",
         "exotic_muzzle": "#BE9464",
         "exotic_light_pattern": "#F8F8F4",
-        "exotic_pattern_gradient": "#887456"
+        "exotic_pattern_gradient": "#887456",
+        "exotic_pattern_fill_gradient": "#998565",
+        "exotic_pattern_newborns": ""
     },
     "LILAC": {
         "base": "#B3968F",
@@ -260,6 +330,7 @@
         "base_gradient_top": "#A8A1A1",
         "pattern": "#8F6B6D",
         "light_pattern": "#FFF5D9",
+        "rosette_light_pattern": "#AD898A",
         "pattern_gradient_top": "#6F5859",
         "newborn_pattern": "#B69A77",
         "newborn_pattern_gradient_top": "#816F55",
@@ -267,9 +338,13 @@
         "exotic_base": "#B3968F",
         "exotic_base_gradient_bottom": "#DFC4A4",
         "exotic_base_gradient_top": "#A8A3A4",
+        "exotic_pattern": "#8B6566",
+        "exotic_pattern_fill": "#8D7475",
         "exotic_muzzle": "#C08E7C",
         "exotic_light_pattern": "#DFC4A4",
-        "exotic_pattern_gradient": "#5E4042"
+        "exotic_pattern_gradient": "#5E4042",
+        "exotic_pattern_fill_gradient": "#8D7475",
+        "exotic_pattern_newborns": ""
     },
     "BROWN": {
         "base": "#A38268",
@@ -277,6 +352,7 @@
         "base_gradient_top": "#938679",
         "pattern": "#685042",
         "light_pattern": "#FFF5D9",
+        "rosette_light_pattern": "#957961",
         "pattern_gradient_top": "#4A372C",
         "newborn_pattern": "#674F43",
         "newborn_pattern_gradient_top": "#422E2E",
@@ -284,9 +360,13 @@
         "exotic_base": "#A38268",
         "exotic_base_gradient_bottom": "#F3EDD9",
         "exotic_base_gradient_top": "#937051",
+        "exotic_pattern": "#664E40",
+        "exotic_pattern_fill": "#745B49",
         "exotic_muzzle": "#D0936E",
         "exotic_light_pattern": "#F3EDD9",
-        "exotic_pattern_gradient": "#45342D"
+        "exotic_pattern_gradient": "#45342D",
+        "exotic_pattern_fill_gradient": "#5F4837",
+        "exotic_pattern_newborns": ""
     },
     "GOLDEN-BROWN": {
         "base": "#A26856",
@@ -294,6 +374,7 @@
         "base_gradient_top": "#846B5C",
         "pattern": "#7A5044",
         "light_pattern": "#FFF5D9",
+        "rosette_light_pattern": "#A86F59",
         "pattern_gradient_top": "#4F3633",
         "newborn_pattern": "#80564B",
         "newborn_pattern_gradient_top": "#422E2E",
@@ -301,9 +382,13 @@
         "exotic_base": "#A66C56",
         "exotic_base_gradient_bottom": "#DFCCA2",
         "exotic_base_gradient_top": "#876D5D",
+        "exotic_pattern": "#744D40",
+        "exotic_pattern_fill": "#68463B",
         "exotic_muzzle": "#C27259",
         "exotic_light_pattern": "#DFCCA2",
-        "exotic_pattern_gradient": "#2C1D18"
+        "exotic_pattern_gradient": "#2C1D18",
+        "exotic_pattern_fill_gradient": "#67453A",
+        "exotic_pattern_newborns": ""
     },
     "DARKBROWN": {
         "base": "#754E3C",
@@ -311,6 +396,7 @@
         "base_gradient_top": "#6C615A",
         "pattern": "#3C2420",
         "light_pattern": "#B79D89",
+        "rosette_light_pattern": "#5F483C",
         "pattern_gradient_top": "#170E0C",
         "newborn_pattern": "#564B44",
         "newborn_pattern_gradient_top": "#422E2E",
@@ -318,9 +404,13 @@
         "exotic_base": "#685D57",
         "exotic_base_gradient_bottom": "#E8E0C5",
         "exotic_base_gradient_top": "#342E2B",
+        "exotic_pattern": "#140D0C",
+        "exotic_pattern_fill": "#19100F",
         "exotic_muzzle": "#3C2723",
         "exotic_light_pattern": "#E8E0C5",
-        "exotic_pattern_gradient": "#110B0A"
+        "exotic_pattern_gradient": "#110B0A",
+        "exotic_pattern_fill_gradient": "#67453A",
+        "exotic_pattern_newborns": ""
     },
     "CHOCOLATE": {
         "base": "#704642",
@@ -328,6 +418,7 @@
         "base_gradient_top": "#51444D",
         "pattern": "#64393A",
         "light_pattern": "#B79D89",
+        "rosette_light_pattern": "#705153",
         "pattern_gradient_top": "#211A1C",
         "newborn_pattern": "#7F554A",
         "newborn_pattern_gradient_top": "#422E2E",
@@ -335,8 +426,12 @@
         "exotic_base": "#724742",
         "exotic_base_gradient_bottom": "#C2A89C",
         "exotic_base_gradient_top": "#483F46",
+        "exotic_pattern": "#291B1D",
+        "exotic_pattern_fill": "#553234",
         "exotic_muzzle": "#A1575B",
         "exotic_light_pattern": "#C2A89C",
-        "exotic_pattern_gradient": "#261A1C"
+        "exotic_pattern_gradient": "#261A1C",
+        "exotic_pattern_fill_gradient": "#67453A",
+        "exotic_pattern_newborns": ""
     }
 }
