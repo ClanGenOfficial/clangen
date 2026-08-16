@@ -56,18 +56,15 @@ class SelectFocusClansWindow(GameWindow):
         self.checkboxes = {}
 
         n = 0
-        for clan in game.clan.all_other_clans:
-            box_type = "@unchecked_checkbox"
-            if clan.name in game.clan.clans_in_focus:
-                box_type = "@checked_checkbox"
 
-            self.checkboxes[clan.name] = UICheckbox(
-                position=(75, n * 27 + 35),
-                container=self,
-                manager=MANAGER,
-                check=clan.name in game.clan.clans_in_focus,
-            )
-            n += 1
+
+        self.checkboxes[clan.name] = UICheckbox(
+            position=(75, n * 27 + 35),
+            container=self,
+            manager=MANAGER,
+            check=clan.name in game.clan.clans_in_focus,
+        )
+        n += 1
 
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -83,10 +80,12 @@ class SelectFocusClansWindow(GameWindow):
             if event.ui_element in self.checkboxes.values():
                 for clan_name, value in self.checkboxes.items():
                     if value == event.ui_element:
-                        if value.object_ids[1] == "@unchecked_checkbox":
-                            game.clan.clans_in_focus.append(clan_name)
-                        if value.object_ids[1] == "@checked_checkbox":
+                        if value.checked:
                             game.clan.clans_in_focus.remove(clan_name)
+                            value.uncheck()
+                        else:
+                            game.clan.clans_in_focus.append(clan_name)
+                            value.check()
                         self.refresh_checkboxes()
                 if len(game.clan.clans_in_focus) < 1 and self.save_button.is_enabled:
                     self.save_button.disable()

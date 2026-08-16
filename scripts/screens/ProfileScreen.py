@@ -20,6 +20,7 @@ from scripts.ui.windows.cruel_locked_action import CruelLockedAction
 from ..ui.elements.modified_image import UIModifiedImage
 from ..ui.elements.text_box_tweaked import UITextBoxTweaked
 from ..ui.elements.image_button import UIImageButton
+from ..ui.elements.checkbox import UICheckbox
 from ..ui.elements.surface_image_button import UISurfaceImageButton
 from ..ui.theme import get_text_box_theme
 from ..events_module.text_adjust import (
@@ -105,12 +106,10 @@ class ProfileScreen(Screens):
         super().__init__(name)
         self.condition_data = {}
         self.show_moons = None
-        self.no_moons = None
         self.help_button = None
         self.open_sub_tab = None
         self.editing_notes = False
         self.user_notes = None
-        self.save_text = None
         self.not_fav_tab = None
         self.fav_tab = None
         self.edit_text = None
@@ -371,8 +370,6 @@ class ProfileScreen(Screens):
                     self.display_notes.kill()
                     if self.edit_text:
                         self.edit_text.kill()
-                    if self.save_text:
-                        self.save_text.kill()
                     self.help_button.kill()
                 self.open_sub_tab = "life events"
                 self.toggle_history_sub_tab()
@@ -389,23 +386,29 @@ class ProfileScreen(Screens):
                 switch_set_value(Switch.favorite_sub_tab, self.open_sub_tab)
                 self.fav_tab.show()
                 self.not_fav_tab.hide()
-            elif event.ui_element == self.save_text:
-                self.user_notes = sub(
-                    r"[^A-Za-z0-9<->/.()*'&#!?,| _+=@~:;[]{}%$^`]+",
-                    "",
-                    self.notes_entry.get_text(),
-                )
-                self.save_user_notes()
-                self.editing_notes = False
-                self.update_disabled_buttons_and_text()
             elif event.ui_element == self.edit_text:
-                self.editing_notes = True
-                self.update_disabled_buttons_and_text()
-            elif event.ui_element == self.no_moons:
-                switch_set_value(Switch.show_history_moons, True)
+                if self.edit_text.checked:
+                    self.editing_notes = True
+                    self.edit_text.uncheck()
+                else:
+                    self.user_notes = sub(
+                        r"[^A-Za-z0-9<->/.()*'&#!?,| _+=@~:;[]{}%$^`]+",
+                        "",
+                        self.notes_entry.get_text(),
+                    )
+                    self.save_user_notes()
+                    self.editing_notes = False
+                    self.edit_text.check()
+                    self.edit_text.set_tooltip("screens.profile.text_entry_edit_tooltip")
                 self.update_disabled_buttons_and_text()
             elif event.ui_element == self.show_moons:
-                switch_set_value(Switch.show_history_moons, False)
+                if self.show_moons.checked:
+                    switch_set_value(Switch.show_history_moons, False)
+                    self.show_moons.uncheck()
+
+                else:
+                    switch_set_value(Switch.show_history_moons, True)
+                    self.show_moons.check()
                 self.update_disabled_buttons_and_text()
 
         # Conditions Tab
@@ -1182,17 +1185,8 @@ class ProfileScreen(Screens):
                 self.history_text_box = pygame_gui.elements.UITextBox(
                     "", ui_scale(pygame.Rect((40, 240), (307, 71))), manager=MANAGER
                 )
-                self.no_moons = UIImageButton(
-                    ui_scale(pygame.Rect((52, 514), (34, 34))),
-                    "",
-                    object_id="@unchecked_checkbox",
-                    tool_tip_text="screens.profile.no_moons_tooltip",
-                    manager=MANAGER,
-                )
-                self.show_moons = UIImageButton(
-                    ui_scale(pygame.Rect((52, 514), (34, 34))),
-                    "",
-                    object_id="@checked_checkbox",
+                self.show_moons = UICheckbox(
+                    position=(52, 514),
                     tool_tip_text="screens.profile.show_moons_tooltip",
                     manager=MANAGER,
                 )
@@ -1204,6 +1198,13 @@ class ProfileScreen(Screens):
         self.load_user_notes()
         if self.user_notes is None:
             self.user_notes = i18n.t("screens.profile.user_notes")
+
+        self.edit_text = UICheckbox(
+            position=(52, 514),
+            check=self.editing_notes,
+            tool_tip_text="screens.profile.text_entry_help_tooltip",
+            manager=MANAGER,
+        )
 
         self.notes_entry = pygame_gui.elements.UITextEntryBox(
             ui_scale(pygame.Rect((100, 473), (600, 149))),
@@ -2361,35 +2362,12 @@ class ProfileScreen(Screens):
                     manager=MANAGER,
                 )
 
-                self.no_moons.kill()
-                self.show_moons.kill()
-                self.no_moons = UIImageButton(
-                    ui_scale(pygame.Rect((52, 514), (34, 34))),
-                    "",
-                    object_id="@unchecked_checkbox",
-                    tool_tip_text="screens.profile.show_moons_tooltip",
-                    manager=MANAGER,
-                )
-                self.show_moons = UIImageButton(
-                    ui_scale(pygame.Rect((52, 514), (34, 34))),
-                    "",
-                    object_id="@checked_checkbox",
-                    tool_tip_text="screens.profile.no_moons_tooltip",
-                    manager=MANAGER,
-                )
-                if switch_get_value(Switch.show_history_moons):
-                    self.no_moons.kill()
-                else:
-                    self.show_moons.kill()
             elif self.open_sub_tab == "user notes":
                 self.sub_tab_1.enable()
                 self.sub_tab_2.disable()
                 if self.history_text_box:
                     self.history_text_box.kill()
-                    self.no_moons.kill()
                     self.show_moons.kill()
-                if self.save_text:
-                    self.save_text.kill()
                 if self.notes_entry:
                     self.notes_entry.kill()
                 if self.edit_text:
@@ -2406,15 +2384,8 @@ class ProfileScreen(Screens):
                     manager=MANAGER,
                     tool_tip_text="screens.profile.text_entry_help_tooltip",
                 )
-                if self.editing_notes is True:
-                    self.save_text = UIImageButton(
-                        ui_scale(pygame.Rect((52, 514), (34, 34))),
-                        "",
-                        object_id="@unchecked_checkbox",
-                        tool_tip_text="screens.profile.text_entry_help_tooltip",
-                        manager=MANAGER,
-                    )
 
+                if self.editing_notes:
                     self.notes_entry = pygame_gui.elements.UITextEntryBox(
                         ui_scale(pygame.Rect((100, 473), (600, 149))),
                         initial_text=self.user_notes,
@@ -2422,14 +2393,6 @@ class ProfileScreen(Screens):
                         manager=MANAGER,
                     )
                 else:
-                    self.edit_text = UIImageButton(
-                        ui_scale(pygame.Rect((52, 514), (34, 34))),
-                        "",
-                        object_id="@checked_checkbox_smalltooltip",
-                        tool_tip_text="screens.profile.text_entry_edit_tooltip",
-                        manager=MANAGER,
-                    )
-
                     self.display_notes = UITextBoxTweaked(
                         self.user_notes,
                         ui_scale(pygame.Rect((100, 473), (600, 149))),
@@ -2478,8 +2441,6 @@ class ProfileScreen(Screens):
             if self.open_sub_tab == "user notes":
                 if self.edit_text:
                     self.edit_text.kill()
-                if self.save_text:
-                    self.save_text.kill()
                 if self.notes_entry:
                     self.notes_entry.kill()
                 if self.display_notes:
@@ -2489,7 +2450,6 @@ class ProfileScreen(Screens):
                 if self.history_text_box:
                     self.history_text_box.kill()
                 self.show_moons.kill()
-                self.no_moons.kill()
 
         elif self.open_tab == "conditions":
             self.left_conditions_arrow.kill()
