@@ -1027,7 +1027,7 @@ class Patrol:
             filtered_patrols = possible_patrols
         return filtered_patrols
 
-    def get_patrol_art(self, outcome: TextPoolEvent = None) -> pygame.Surface:
+    def get_patrol_art(self, outcome: TextPoolEvent = None) -> Optional[pygame.Surface]:
         """Return's patrol art surface"""
         if not self.patrol_event or not isinstance(self.patrol_event.patrol_art, str):
             return pygame.Surface((600, 600), flags=pygame.SRCALPHA)
@@ -1049,6 +1049,11 @@ class Patrol:
         if not isinstance(file_name, str) or not path_exists(
             f"{root_dir}{file_name}.png"
         ):
+            if outcome:
+                # we return None so that we don't overwrite the patrol's general art.
+                # if we got here on an outcome, then the outcome had no attached art and we should just be using
+                # the patrol's general art
+                return None
             if "herb_gathering" in self.patrol_event.types:
                 file_name = "med"
             elif "hunting" in self.patrol_event.types:
