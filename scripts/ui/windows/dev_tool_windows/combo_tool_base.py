@@ -1,4 +1,3 @@
-
 import pygame
 import pygame_gui
 from pygame_gui.core import UIContainer
