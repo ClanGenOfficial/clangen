@@ -105,7 +105,7 @@ class ProfileScreen(Screens):
     def __init__(self, name=None):
         super().__init__(name)
         self.condition_data = {}
-        self.show_moons = None
+        self.history_tab_checkbox = None
         self.help_button = None
         self.open_sub_tab = None
         self.editing_notes = False
@@ -376,6 +376,14 @@ class ProfileScreen(Screens):
             elif event.ui_element == self.sub_tab_2:
                 if self.open_sub_tab == "life events":
                     self.history_text_box.kill()
+                    if self.history_tab_checkbox.checked:
+                        self.history_tab_checkbox.set_tooltip(
+                            "screens.profile.text_entry_edit_tooltip"
+                        )
+                    else:
+                        self.history_tab_checkbox.set_tooltip(
+                        "screens.profile.text_entry_save_tooltip"
+                        )
                 self.open_sub_tab = "user notes"
                 self.toggle_history_sub_tab()
             elif event.ui_element == self.fav_tab:
@@ -386,29 +394,34 @@ class ProfileScreen(Screens):
                 switch_set_value(Switch.favorite_sub_tab, self.open_sub_tab)
                 self.fav_tab.show()
                 self.not_fav_tab.hide()
-            elif event.ui_element == self.edit_text:
-                if self.edit_text.checked:
-                    self.editing_notes = True
-                    self.edit_text.uncheck()
-                else:
-                    self.user_notes = sub(
-                        r"[^A-Za-z0-9<->/.()*'&#!?,| _+=@~:;[]{}%$^`]+",
-                        "",
-                        self.notes_entry.get_text(),
-                    )
-                    self.save_user_notes()
-                    self.editing_notes = False
-                    self.edit_text.check()
-                    self.edit_text.set_tooltip("screens.profile.text_entry_edit_tooltip")
-                self.update_disabled_buttons_and_text()
-            elif event.ui_element == self.show_moons:
-                if self.show_moons.checked:
-                    switch_set_value(Switch.show_history_moons, False)
-                    self.show_moons.uncheck()
-
-                else:
-                    switch_set_value(Switch.show_history_moons, True)
-                    self.show_moons.check()
+            elif event.ui_element == self.history_tab_checkbox:
+                if self.open_sub_tab == "life events":
+                    if self.history_tab_checkbox.checked:
+                        switch_set_value(Switch.show_history_moons, False)
+                        self.history_tab_checkbox.uncheck()
+                    else:
+                        switch_set_value(Switch.show_history_moons, True)
+                        self.history_tab_checkbox.check()
+                        self.history_tab_checkbox.set_tooltip("screens.profile.show_moons_tooltip")
+                if self.open_sub_tab == "user notes":
+                    if self.history_tab_checkbox.checked:
+                        self.editing_notes = True
+                        self.history_tab_checkbox.uncheck()
+                        self.history_tab_checkbox.set_tooltip(
+                            "screens.profile.text_entry_save_tooltip"
+                        )
+                    else:
+                        self.user_notes = sub(
+                            r"[^A-Za-z0-9<->/.()*'&#!?,| _+=@~:;[]{}%$^`]+",
+                            "",
+                            self.notes_entry.get_text(),
+                        )
+                        self.save_user_notes()
+                        self.editing_notes = False
+                        self.history_tab_checkbox.check()
+                        self.history_tab_checkbox.set_tooltip(
+                            "screens.profile.text_entry_edit_tooltip"
+                        )
                 self.update_disabled_buttons_and_text()
 
         # Conditions Tab
@@ -1185,8 +1198,9 @@ class ProfileScreen(Screens):
                 self.history_text_box = pygame_gui.elements.UITextBox(
                     "", ui_scale(pygame.Rect((40, 240), (307, 71))), manager=MANAGER
                 )
-                self.show_moons = UICheckbox(
+                self.history_tab_checkbox = UICheckbox(
                     position=(52, 514),
+                    check=Switch.show_history_moons,
                     tool_tip_text="screens.profile.show_moons_tooltip",
                     manager=MANAGER,
                 )
@@ -1198,13 +1212,6 @@ class ProfileScreen(Screens):
         self.load_user_notes()
         if self.user_notes is None:
             self.user_notes = i18n.t("screens.profile.user_notes")
-
-        self.edit_text = UICheckbox(
-            position=(52, 514),
-            check=self.editing_notes,
-            tool_tip_text="screens.profile.text_entry_help_tooltip",
-            manager=MANAGER,
-        )
 
         self.notes_entry = pygame_gui.elements.UITextEntryBox(
             ui_scale(pygame.Rect((100, 473), (600, 149))),
@@ -2367,7 +2374,6 @@ class ProfileScreen(Screens):
                 self.sub_tab_2.disable()
                 if self.history_text_box:
                     self.history_text_box.kill()
-                    self.show_moons.kill()
                 if self.notes_entry:
                     self.notes_entry.kill()
                 if self.edit_text:
@@ -2438,6 +2444,7 @@ class ProfileScreen(Screens):
             self.sub_tab_4.kill()
             self.fav_tab.kill()
             self.not_fav_tab.kill()
+            self.history_tab_checkbox.kill()
             if self.open_sub_tab == "user notes":
                 if self.edit_text:
                     self.edit_text.kill()
@@ -2449,7 +2456,6 @@ class ProfileScreen(Screens):
             elif self.open_sub_tab == "life events":
                 if self.history_text_box:
                     self.history_text_box.kill()
-                self.show_moons.kill()
 
         elif self.open_tab == "conditions":
             self.left_conditions_arrow.kill()

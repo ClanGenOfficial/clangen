@@ -40,17 +40,41 @@ class CatToggleWindow(GameWindow):
             self.checkboxes[ele].kill()
         self.checkboxes = {}
 
-        prev_element = None
-        for toggle in self.cat_toggles:
-            self.checkboxes[toggle] = UICheckbox(
-                (22, 0 if prev_element else 25),
-                container=self,
-                anchors={
-                    "top_target": prev_element,
-                } if prev_element else None,
-                tool_tip_text=f"windows.{toggle}_tooltip",
-            )
-            prev_element = self.checkboxes[f"{toggle}"]
+        self.checkboxes["prevent_fading"] = UICheckbox(
+            (22, 25),
+            container=self,
+            tool_tip_text=f"windows.prevent_fading_tooltip",
+            check=self.the_cat.prevent_fading,
+        )
+        self.checkboxes["prevent_kits"] = UICheckbox(
+            (22, 0),
+            container=self,
+            anchors={
+                "top_target": self.checkboxes["prevent_fading"],
+            },
+            tool_tip_text=f"windows.prevent_kits_tooltip",
+            check=self.the_cat.no_kits,
+        )
+
+        self.checkboxes["prevent_retirement"] = UICheckbox(
+            (22, 0),
+            container=self,
+            anchors={
+                "top_target": self.checkboxes["prevent_kits"],
+            },
+            tool_tip_text=f"windows.prevent_retirement_tooltip",
+            check=self.the_cat.no_retire,
+        )
+
+        self.checkboxes["prevent_romance"] = UICheckbox(
+            (22, 0),
+            container=self,
+            anchors={
+                "top_target": self.checkboxes["prevent_retirement"],
+            },
+            tool_tip_text=f"windows.prevent_romance_tooltip",
+            check=self.the_cat.no_mates,
+        )
 
         if self.the_cat == game.clan.instructor:
             self.checkboxes["prevent_fading"].set_tooltip("windows.prevent_fading_tooltip_guide")
@@ -71,23 +95,23 @@ class CatToggleWindow(GameWindow):
             elif event.ui_element == self.checkboxes["prevent_kits"]:
                 if self.checkboxes["prevent_kits"].checked:
                     self.checkboxes["prevent_kits"].uncheck()
-                    self.the_cat.prevent_kits = False
+                    self.the_cat.no_kits = False
                 else:
                     self.checkboxes["prevent_kits"].check()
-                    self.the_cat.prevent_kits = True
+                    self.the_cat.no_kits = True
             elif event.ui_element == self.checkboxes["prevent_retirement"]:
                 if self.checkboxes["prevent_retirement"].checked:
                     self.checkboxes["prevent_retirement"].uncheck()
-                    self.the_cat.prevent_retire = False
+                    self.the_cat.no_retire = False
                 else:
                     self.checkboxes["prevent_retirement"].check()
-                    self.the_cat.prevent_retire = True
+                    self.the_cat.no_retire = True
             elif event.ui_element == self.checkboxes["prevent_romance"]:
                 if self.checkboxes["prevent_romance"].checked:
                     self.checkboxes["prevent_romance"].uncheck()
-                    self.the_cat.prevent_mates = False
+                    self.the_cat.no_mates = False
                 else:
                     self.checkboxes["prevent_romance"].check()
-                    self.the_cat.prevent_mates = True
+                    self.the_cat.no_mates = True
 
         return super().process_event(event)
