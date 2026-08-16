@@ -132,7 +132,8 @@ class Name:
                     double_animal = False
                 i += 1
 
-    def load_localized_names(self):
+    @classmethod
+    def load_localized_names(cls):
         """
         Loads the correct names for the given language. Includes override for always using English names, in case localization wants to be ignored
         :return: None
@@ -147,8 +148,8 @@ class Name:
             lang = i18n.config.get("locale")
 
         if (
-            self.current_save_dir == get_save_dir()
-            and self.currently_loaded_lang == lang
+            cls.current_save_dir == get_save_dir()
+            and cls.currently_loaded_lang == lang
         ):
             # nothing to do here, all good
             return
@@ -211,9 +212,9 @@ class Name:
                             _tmp = new_name.split(":")
                             names_dict["special_suffixes"][_tmp[0]] = _tmp[1]
 
-        self.names_dict = names_dict
-        self.current_save_dir = save_dir
-        self.currently_loaded_lang = lang
+        cls.names_dict = names_dict
+        cls.current_save_dir = save_dir
+        cls.currently_loaded_lang = lang
 
     def __str__(self):
         return self.__repr__()
