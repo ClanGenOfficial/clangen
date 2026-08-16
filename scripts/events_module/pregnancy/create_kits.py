@@ -20,9 +20,7 @@ from scripts.events_module.consequences import (
     change_relationship_values,
 )
 from scripts.events_module.event_filters import get_personality_compatibility
-from scripts.events_module.pregnancy.build_strings import (
-    NEWBORN_REL_REACTIONS,
-)
+from scripts.events_module.pregnancy.build_strings import get_newborn_strings
 from scripts.events_module.pregnancy.check_family_size import (
     biggest_family,
     set_biggest_family,
@@ -403,7 +401,7 @@ def get_kits(
                 f"relationships.{rel_type}_postscript",
                 text=event_text_adjust(
                     Cat,
-                    choice(NEWBORN_REL_REACTIONS[f"{rel_type}_log"]),
+                    choice(get_newborn_strings()[f"{rel_type}_log"]),
                     main_cat=c,
                     random_cat=kit,
                     clan=game.clan,

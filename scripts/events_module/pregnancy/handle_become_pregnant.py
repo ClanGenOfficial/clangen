@@ -6,7 +6,10 @@ import i18n
 from scripts.cat.cats import Cat
 from scripts.clan_package.settings import get_clan_setting
 from scripts.event_class import Single_Event
-from scripts.events_module.pregnancy.build_strings import PREGNANT_STRINGS
+from scripts.events_module.pregnancy.build_strings import (
+    rebuild_strings,
+    get_pregnancy_strings,
+)
 from scripts.events_module.pregnancy.create_kits import get_amount_of_kits, get_kits
 from scripts.events_module.text_adjust import event_text_adjust
 from scripts.game_structure import game
@@ -44,6 +47,8 @@ def handle_zero_moon_pregnant(cat: Cat, other_cat: Optional[Cat] = None):
         # cat is amab, so he just brings some kittens back from who knows where
         _retrieve_secret_kittens(cat)
         return
+
+    rebuild_strings()
 
     # if the other cat is afab and the current cat is amab, make the afab cat pregnant
     if cat.gender == "male" and other_cat is not None and other_cat.gender == "female":
@@ -166,11 +171,11 @@ def _create_pregnancy_announcement(
     mentioned_cat: Optional[Cat] = None,
 ):
     """Creates announcement text, applies pregnancy injury, and returns involved cats."""
-    text = choice(PREGNANT_STRINGS[announcement_key])
+    text = choice(get_pregnancy_strings()[announcement_key])
     event_text = text
     severity = choices(["minor", "major"], [3, 1], k=1)[0]
     pregnant_cat.get_injured("pregnant", severity=severity)
-    text += choice(PREGNANT_STRINGS[f"{severity}_severity"])
+    text += choice(get_pregnancy_strings()[f"{severity}_severity"])
     text = event_text_adjust(
         Cat,
         text,

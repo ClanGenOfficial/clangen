@@ -26,3 +26,18 @@ def rebuild_strings():
     )
 
     currently_loaded_lang = i18n.config.get("locale")
+
+
+def get_pregnancy_strings():
+    rebuild_strings()
+    return PREGNANT_STRINGS
+
+
+def get_newborn_strings():
+    rebuild_strings()
+    return NEWBORN_REL_REACTIONS
+
+
+def get_breakup_strings():
+    rebuild_strings()
+    return BREAKUP_STRINGS

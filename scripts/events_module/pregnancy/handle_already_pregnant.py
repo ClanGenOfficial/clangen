@@ -16,8 +16,8 @@ from scripts.events_module.consequences import (
     change_relationship_values,
 )
 from scripts.events_module.pregnancy.build_strings import (
-    PREGNANT_STRINGS,
-    BREAKUP_STRINGS,
+    get_pregnancy_strings,
+    get_breakup_strings,
 )
 from scripts.events_module.pregnancy.check_family_size import set_biggest_family
 from scripts.events_module.pregnancy.create_kits import get_kits, get_amount_of_kits
@@ -50,23 +50,25 @@ def handle_one_moon_pregnant(cat: Cat):
     else:
         correct_guess = "large"
 
+    pregnancy_strings = get_pregnancy_strings()
+
     if thinking_amount[0] == "correct":
         if correct_guess == "small":
-            text = choice(PREGNANT_STRINGS["litter_guess"]["small"])
+            text = choice(pregnancy_strings["litter_guess"]["small"])
         else:
-            text = choice(PREGNANT_STRINGS["litter_guess"]["large"])
+            text = choice(pregnancy_strings["litter_guess"]["large"])
     elif thinking_amount[0] == "incorrect":
         if correct_guess == "small":
-            text = choice(PREGNANT_STRINGS["litter_guess"]["large"])
+            text = choice(pregnancy_strings["litter_guess"]["large"])
         else:
-            text = choice(PREGNANT_STRINGS["litter_guess"]["small"])
+            text = choice(pregnancy_strings["litter_guess"]["small"])
     else:
-        text = choice(PREGNANT_STRINGS["litter_guess"]["unsure"])
+        text = choice(pregnancy_strings["litter_guess"]["unsure"])
 
     try:
         if cat.injuries["pregnant"]["severity"] == "minor":
             cat.injuries["pregnant"]["severity"] = "major"
-            text += choice(PREGNANT_STRINGS["major_severity"])
+            text += choice(pregnancy_strings["major_severity"])
     except KeyError:
         print("Is this an old save? Cat does not have the pregnant condition")
 
@@ -131,7 +133,7 @@ def handle_two_moon_pregnant(cat: Cat):
     # choose event string
     # TODO: currently they don't choose which 'mate' is the 'blood' parent or not
     # change or leave as it is?
-    events = PREGNANT_STRINGS
+    events = get_pregnancy_strings()
 
     # GET MAIN EVENT
     (
@@ -564,7 +566,7 @@ def _handle_on_birth_relationship_changes(
                 continue
 
             breakup_reaction = get_config(
-                "mates.mates.breakup.reactions.affair_discovery_other_mate_reaction"
+                "mates.breakup.reactions.affair_discovery_other_mate_reaction"
             )
             log_text = process_text(
                 i18n.t("conditions.pregnancy.affair_rel_log"),
@@ -655,7 +657,7 @@ def _handle_affair_discovery_breakup(cheating_cat: Cat, mate_cat: Cat):
     breakup_chance = get_config("mates.mates_breakup.affair_breakup_chance")
     if random() <= breakup_chance:
         mate_cat.unset_mate(cheating_cat, user_initiated_breakup=True, fight=True)
-        breakup_text = choice(BREAKUP_STRINGS["affair_discovery_breakup"])
+        breakup_text = choice(get_breakup_strings()["affair_discovery_breakup"])
         breakup_text = event_text_adjust(
             Cat,
             breakup_text,
