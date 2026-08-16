@@ -382,7 +382,7 @@ class ProfileScreen(Screens):
                         )
                     else:
                         self.history_tab_checkbox.set_tooltip(
-                        "screens.profile.text_entry_save_tooltip"
+                            "screens.profile.text_entry_save_tooltip"
                         )
                 self.open_sub_tab = "user notes"
                 self.toggle_history_sub_tab()
@@ -402,7 +402,9 @@ class ProfileScreen(Screens):
                     else:
                         switch_set_value(Switch.show_history_moons, True)
                         self.history_tab_checkbox.check()
-                        self.history_tab_checkbox.set_tooltip("screens.profile.show_moons_tooltip")
+                        self.history_tab_checkbox.set_tooltip(
+                            "screens.profile.show_moons_tooltip"
+                        )
                 if self.open_sub_tab == "user notes":
                     if self.history_tab_checkbox.checked:
                         self.editing_notes = True

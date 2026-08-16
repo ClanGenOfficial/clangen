@@ -12,7 +12,12 @@ from scripts.ui.scale import ui_scale
 class CatToggleWindow(GameWindow):
     """This window allows the user to edit various cat behavior toggles"""
 
-    cat_toggles = ["prevent_fading", "prevent_kits", "prevent_retirement", "prevent_romance"]
+    cat_toggles = [
+        "prevent_fading",
+        "prevent_kits",
+        "prevent_retirement",
+        "prevent_romance",
+    ]
 
     def __init__(self, cat):
         super().__init__(
@@ -31,7 +36,7 @@ class CatToggleWindow(GameWindow):
                 ui_scale(pygame.Rect(55, 0 if prev_element else 26, -1, 34)),
                 object_id="#text_box_30_horizleft_pad_0_8",
                 container=self,
-                anchors={"top_target": prev_element} if prev_element else None
+                anchors={"top_target": prev_element} if prev_element else None,
             )
             prev_element = self.textbox[text]
 
@@ -77,7 +82,9 @@ class CatToggleWindow(GameWindow):
         )
 
         if self.the_cat == game.clan.instructor:
-            self.checkboxes["prevent_fading"].set_tooltip("windows.prevent_fading_tooltip_guide")
+            self.checkboxes["prevent_fading"].set_tooltip(
+                "windows.prevent_fading_tooltip_guide"
+            )
             self.checkboxes["prevent_fading"].disable()
 
     def process_event(self, event):

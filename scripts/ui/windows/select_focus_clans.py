@@ -48,7 +48,7 @@ class SelectFocusClansWindow(GameWindow):
                 ui_scale(pygame.Rect(107, 0 if prev_element else 35, -1, 35)),
                 object_id="#text_box_30_horizleft_pad_0_8",
                 container=self,
-                anchors={"top_target": prev_element} if prev_element else None
+                anchors={"top_target": prev_element} if prev_element else None,
             )
             prev_element = self.texts[clan.name]
 

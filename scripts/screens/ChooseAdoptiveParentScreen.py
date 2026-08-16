@@ -503,13 +503,11 @@ class ChooseAdoptiveParentScreen(Screens):
         if "mates_current_parents" in self.checkboxes:
             self.checkboxes["mates_current_parents"].kill()
 
-
         self.checkboxes["mates_current_parents"] = UICheckbox(
             position=(553, 56),
             check=self.mates_current_parents,
             container=self.potential_container,
         )
-
 
         self.all_potential_parents = self.get_list_chunks(
             self.get_valid_adoptive_parents(), 24
