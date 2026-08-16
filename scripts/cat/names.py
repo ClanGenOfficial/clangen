@@ -263,35 +263,34 @@ class Name:
         """Generate possible suffix."""
         self.load_localized_names()
 
-        pool = self.suffix = (self.names_dict["normal_suffixes"])
-
-        if pelt is not None or pelt != "SingleColour":
-            named_after_pelt = not random.getrandbits(2)  # Chance for True is '1/8'.
-            named_after_biome = not random.getrandbits(3)  # 1/8
-            # Pelt name only gets used if there's an associated suffix.
-            if named_after_pelt:
-                if (
-                    pelt in ("Tortie", "Calico")
-                    and tortie_pattern in self.names_dict["tortie_pelt_suffixes"]
-                ):
-                    pool = (
-                        self.names_dict["tortie_pelt_suffixes"][tortie_pattern]
-                    )
-                elif pelt in self.names_dict["pelt_suffixes"]:
-                    pool = (self.names_dict["pelt_suffixes"][pelt])
-                else:
-                    pool = (self.names_dict["normal_suffixes"])
-            elif named_after_biome:
-                if biome in self.names_dict["biome_suffixes"]:
-                    pool = (
-                        self.names_dict["biome_suffixes"][biome]
-                    )
-                else:
-                    pool = (self.names_dict["normal_suffixes"])
-            else:
-                pool = (self.names_dict["normal_suffixes"])
-
         while True:
+            pool = (self.names_dict["normal_suffixes"])
+
+            if pelt is not None or pelt != "SingleColour":
+                named_after_pelt = not random.getrandbits(2)  # Chance for True is '1/8'.
+                named_after_biome = not random.getrandbits(3)  # 1/8
+                # Pelt name only gets used if there's an associated suffix.
+                if named_after_pelt:
+                    if (
+                            pelt in ("Tortie", "Calico")
+                            and tortie_pattern in self.names_dict["tortie_pelt_suffixes"]
+                    ):
+                        pool = (
+                            self.names_dict["tortie_pelt_suffixes"][tortie_pattern]
+                        )
+                    elif pelt in self.names_dict["pelt_suffixes"]:
+                        pool = (self.names_dict["pelt_suffixes"][pelt])
+                    else:
+                        pool = (self.names_dict["normal_suffixes"])
+                elif named_after_biome:
+                    if biome in self.names_dict["biome_suffixes"]:
+                        pool = (
+                            self.names_dict["biome_suffixes"][biome]
+                        )
+                    else:
+                        pool = (self.names_dict["normal_suffixes"])
+                else:
+                    pool = (self.names_dict["normal_suffixes"])
             self.suffix = random.choice(pool)
             if self._usable_name(self.prefix, self.suffix):
                 return
