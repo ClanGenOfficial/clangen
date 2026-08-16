@@ -35,12 +35,11 @@
             "BENGALBOTTOMGRAD",
             "BENGALTOPGRAD",
             "BENGALPATTERN",
-            "BENGALLIGHTPATTERN"
+            "BENGALPATTERNLIGHT"
         ],
         [
             "BENGALMUZZLE",
             "MARBLEDPATTERN",
-            "MARBLEDPATTERNLIGHT",
             "MARBLEDPATTERNFILL",
             "FRECKLEDPATTERNBODY",
             "FRECKLEDPATTERNBACK",
