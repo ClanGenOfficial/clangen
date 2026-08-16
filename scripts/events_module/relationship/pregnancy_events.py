@@ -16,7 +16,7 @@ from scripts.cat.enums import (
 )
 from scripts.cat.factories.enums import CatType
 from scripts.cat.factories.new_cat_factory import NewCatFactory
-from scripts.cat.names import names, Name
+from scripts.cat.names import Name
 from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.cat_relations.relationship import Relationship, RelType
 from scripts.cat_relations.inheritance2 import inheritance_db
@@ -728,7 +728,7 @@ class Pregnancy_Events:
                 kit.backstory = "outsider1"
 
                 if cat.status.is_exiled(CatGroup.PLAYER_CLAN_ID):
-                    name = choice(names.names_dict["normal_prefixes"])
+                    name = choice(Name.names_dict["normal_prefixes"])
                     kit.name = Name(prefix=name, suffix="", cat=kit)
                     extra_naming_text = i18n.t(
                         "conditions.pregnancy.reject_clan_tradition",
@@ -741,7 +741,7 @@ class Pregnancy_Events:
                 if cat.status.is_lost(CatGroup.PLAYER_CLAN_ID):
                     kit.backstory = "outsider3"
                     if not keep_clan_tradition:
-                        name = choice(names.names_dict["normal_prefixes"])
+                        name = choice(Name.names_dict["normal_prefixes"])
                         kit.name = Name(prefix=name, suffix="", cat=kit)
                         extra_naming_text = i18n.t(
                             "conditions.pregnancy.reject_clan_tradition",

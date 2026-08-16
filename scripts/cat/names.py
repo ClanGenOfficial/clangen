@@ -23,6 +23,7 @@ class Name:
     current_save_dir = None
     currently_loaded_lang = None
     names_dict = {}
+    prefix_history = []
 
     def __init__(
         self,
@@ -264,18 +265,18 @@ class Name:
         # This thing prevents any prefix duplications from happening.
         # Try statement stops this form running when initializing.
         with contextlib.suppress(NameError):
-            if self.prefix in names.prefix_history:
+            if self.prefix in Name.prefix_history:
                 # do this recursively until a name that isn't on the history list.
                 self.give_prefix(eyes, colour, biome)
                 # prevent infinite recursion
-                if len(names.prefix_history) > 0:
-                    names.prefix_history.pop(0)
+                if len(Name.prefix_history) > 0:
+                    Name.prefix_history.pop(0)
             else:
-                names.prefix_history.append(self.prefix)
+                Name.prefix_history.append(self.prefix)
             # Set the maximin length to 8 just to be sure
-            if len(names.prefix_history) > 8:
+            if len(Name.prefix_history) > 8:
                 # removing at zero so the oldest gets removed
-                names.prefix_history.pop(0)
+                Name.prefix_history.pop(0)
 
     # Generate possible suffix
     def give_suffix(self, pelt, biome, tortie_pattern):
@@ -370,7 +371,3 @@ class Name:
         if constants.CONFIG["fun"]["april_fools"]:
             return f"{self.prefix}egg"
         return self.prefix + self.suffix
-
-
-names = Name()
-names.prefix_history = []
