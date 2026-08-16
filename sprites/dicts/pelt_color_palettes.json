@@ -23,10 +23,9 @@
         "exotic_base": "#F6F6F6",
         "exotic_base_gradient_bottom": "#FFFFFF",
         "exotic_base_gradient_top": "#E7E6EB",
-        "exotic_pattern": "#BEBDBE",
-        "exotic_pattern_fill": "",
-        "exotic_pattern_gradient_top": "#ECE8E7",
-        "exotic_pattern_gradient_bottom": "#FFFFFF"
+        "exotic_muzzle": "#ECE8E7",
+        "exotic_light_pattern": "#FFFFFF",
+        "exotic_pattern_gradient": "#BEBDBE"
     },
     "PALEGREY": {
         "base": "#C2D5D3",
@@ -41,9 +40,9 @@
         "exotic_base": "#BDC3CE",
         "exotic_base_gradient_bottom": "#F8F8F5",
         "exotic_base_gradient_top": "#7D828A",
-        "exotic_pattern": "#44474E",
-        "exotic_pattern_gradient_top": "#898782",
-        "exotic_pattern_gradient_bottom": "#F8F8F5"
+        "exotic_muzzle": "#898782",
+        "exotic_light_pattern": "#F8F8F5",
+        "exotic_pattern_gradient": "#44474E"
     },
     "SILVER": {
         "base": "#B1C4C7",
@@ -58,9 +57,9 @@
         "exotic_base": "#CACFD4",
         "exotic_base_gradient_bottom": "#F8F8F5",
         "exotic_base_gradient_top": "#969BA1",
-        "exotic_pattern": "#1B1B21",
-        "exotic_pattern_gradient_top": "#898782",
-        "exotic_pattern_gradient_bottom": "#F8F8F5"
+        "exotic_muzzle": "#898782",
+        "exotic_light_pattern": "#F8F8F5",
+        "exotic_pattern_gradient": "#1B1B21"
     },
     "GREY": {
         "base": "#92A1A1",
@@ -75,9 +74,9 @@
         "exotic_base": "#8D939E",
         "exotic_base_gradient_bottom": "#F8F9DD",
         "exotic_base_gradient_top": "#6B7078",
-        "exotic_pattern": "#43464D",
-        "exotic_pattern_gradient_top": "#898886",
-        "exotic_pattern_gradient_bottom": "#F8F9DD"
+        "exotic_muzzle": "#898886",
+        "exotic_light_pattern": "#F8F9DD",
+        "exotic_pattern_gradient": "#43464D"
     },
     "DARKGREY": {
         "base": "#5B6C6F",
@@ -92,9 +91,9 @@
         "exotic_base": "#90939D",
         "exotic_base_gradient_bottom": "#F8F8F5",
         "exotic_base_gradient_top": "#383A3D",
-        "exotic_pattern": "#1C1C22",
-        "exotic_pattern_gradient_top": "#403F4B",
-        "exotic_pattern_gradient_bottom": "#F8F8F5"
+        "exotic_muzzle": "#403F4B",
+        "exotic_light_pattern": "#F8F8F5",
+        "exotic_pattern_gradient": "#1C1C22"
     },
     "GHOST": {
         "base": "#3A3F4B",
@@ -109,9 +108,9 @@
         "exotic_base": "#3B4045",
         "exotic_base_gradient_bottom": "#98ABC0",
         "exotic_base_gradient_top": "#2F353A",
-        "exotic_pattern": "#0F0F12",
-        "exotic_pattern_gradient_top": "#1A1D2C",
-        "exotic_pattern_gradient_bottom": "#98ABC0"
+        "exotic_muzzle": "#1A1D2C",
+        "exotic_light_pattern": "#98ABC0",
+        "exotic_pattern_gradient": "#0F0F12"
     },
     "BLACK": {
         "base": "#2F353A",
@@ -126,9 +125,9 @@
         "exotic_base": "#F4D8B2",
         "exotic_base_gradient_bottom": "#C2BEB4",
         "exotic_base_gradient_top": "#35353A",
-        "exotic_pattern": "#0F0F12",
-        "exotic_pattern_gradient_top": "#0F0F12",
-        "exotic_pattern_gradient_bottom": "#C2BEB4"
+        "exotic_muzzle": "#0F0F12",
+        "exotic_light_pattern": "#C2BEB4",
+        "exotic_pattern_gradient": "#0F0F12"
     },
 
 
@@ -146,9 +145,9 @@
         "exotic_base": "#E8C192",
         "exotic_base_gradient_bottom": "#F8F6F2",
         "exotic_base_gradient_top": "#F1BE8C",
-        "exotic_pattern": "#D9A77A",
-        "exotic_pattern_gradient_top": "#F1C08E",
-        "exotic_pattern_gradient_bottom": "#F8F6F2"
+        "exotic_muzzle": "#F1C08E",
+        "exotic_light_pattern": "#F8F6F2",
+        "exotic_pattern_gradient": "#D9A77A"
     },
     "PALEGINGER": {
         "base": "#E5BD91",
@@ -163,9 +162,9 @@
         "exotic_base": "#EFCE80",
         "exotic_base_gradient_bottom": "#ECDDD2",
         "exotic_base_gradient_top": "#E5A56B",
-        "exotic_pattern": "#C88956",
-        "exotic_pattern_gradient_top": "#E5A76D",
-        "exotic_pattern_gradient_bottom": "#ECDDD2"
+        "exotic_muzzle": "#E5A76D",
+        "exotic_light_pattern": "#ECDDD2",
+        "exotic_pattern_gradient": "#C88956"
     },
     "GOLDEN": {
         "base": "#EDC981",
@@ -180,9 +179,9 @@
         "exotic_base": "#F5AC67",
         "exotic_base_gradient_bottom": "#ECDDD2",
         "exotic_base_gradient_top": "#E7B56F",
-        "exotic_pattern": "#78533E",
-        "exotic_pattern_gradient_top": "#D0936E",
-        "exotic_pattern_gradient_bottom": "#F3EDD9"
+        "exotic_muzzle": "#D0936E",
+        "exotic_light_pattern": "#F3EDD9",
+        "exotic_pattern_gradient": "#78533E"
     },
     "GINGER": {
         "base": "#F2A96B",
@@ -197,9 +196,9 @@
         "exotic_base": "#D67539",
         "exotic_base_gradient_bottom": "#FFF2B2",
         "exotic_base_gradient_top": "#DE8B4B",
-        "exotic_pattern": "#A15524",
-        "exotic_pattern_gradient_top": "#F38B46",
-        "exotic_pattern_gradient_bottom": "#FFF2B2"
+        "exotic_muzzle": "#F38B46",
+        "exotic_light_pattern": "#FFF2B2",
+        "exotic_pattern_gradient": "#A15524"
     },
     "DARKGINGER": {
         "base": "#D1703C",
@@ -214,9 +213,9 @@
         "exotic_base": "#D67539",
         "exotic_base_gradient_bottom": "#FFF1B2",
         "exotic_base_gradient_top": "#C15824",
-        "exotic_pattern": "#702E15",
-        "exotic_pattern_gradient_top": "#AF4A22",
-        "exotic_pattern_gradient_bottom": "#FFF1B2"
+        "exotic_muzzle": "#AF4A22",
+        "exotic_light_pattern": "#FFF1B2",
+        "exotic_pattern_gradient": "#702E15"
     },
     "SIENNA": {
         "base": "#A9563D",
@@ -231,9 +230,9 @@
         "exotic_base": "#AE5F42",
         "exotic_base_gradient_bottom": "#D6C898",
         "exotic_base_gradient_top": "#AD583B",
-        "exotic_pattern": "#6F3838",
-        "exotic_pattern_gradient_top": "#C9724E",
-        "exotic_pattern_gradient_bottom": "#D6C898"
+        "exotic_muzzle": "#C9724E",
+        "exotic_light_pattern": "#D6C898",
+        "exotic_pattern_gradient": "#6F3838"
     },
 
 
@@ -251,9 +250,9 @@
         "exotic_base": "#D2C2A2",
         "exotic_base_gradient_bottom": "#F8F8F4",
         "exotic_base_gradient_top": "#B8A580",
-        "exotic_pattern": "#887456",
-        "exotic_pattern_gradient_top": "#BE9464",
-        "exotic_pattern_gradient_bottom": "#F8F8F4"
+        "exotic_muzzle": "#BE9464",
+        "exotic_light_pattern": "#F8F8F4",
+        "exotic_pattern_gradient": "#887456"
     },
     "LILAC": {
         "base": "#B3968F",
@@ -268,9 +267,9 @@
         "exotic_base": "#B3968F",
         "exotic_base_gradient_bottom": "#DFC4A4",
         "exotic_base_gradient_top": "#A8A3A4",
-        "exotic_pattern": "#5E4042",
-        "exotic_pattern_gradient_top": "#C08E7C",
-        "exotic_pattern_gradient_bottom": "#DFC4A4"
+        "exotic_muzzle": "#C08E7C",
+        "exotic_light_pattern": "#DFC4A4",
+        "exotic_pattern_gradient": "#5E4042"
     },
     "BROWN": {
         "base": "#A38268",
@@ -285,9 +284,9 @@
         "exotic_base": "#A38268",
         "exotic_base_gradient_bottom": "#F3EDD9",
         "exotic_base_gradient_top": "#937051",
-        "exotic_pattern": "#45342D",
-        "exotic_pattern_gradient_top": "#D0936E",
-        "exotic_pattern_gradient_bottom": "#F3EDD9"
+        "exotic_muzzle": "#D0936E",
+        "exotic_light_pattern": "#F3EDD9",
+        "exotic_pattern_gradient": "#45342D"
     },
     "GOLDEN-BROWN": {
         "base": "#A26856",
@@ -302,9 +301,9 @@
         "exotic_base": "#A66C56",
         "exotic_base_gradient_bottom": "#DFCCA2",
         "exotic_base_gradient_top": "#876D5D",
-        "exotic_pattern": "#2C1D18",
-        "exotic_pattern_gradient_top": "#C27259",
-        "exotic_pattern_gradient_bottom": "#DFCCA2"
+        "exotic_muzzle": "#C27259",
+        "exotic_light_pattern": "#DFCCA2",
+        "exotic_pattern_gradient": "#2C1D18"
     },
     "DARKBROWN": {
         "base": "#754E3C",
@@ -319,9 +318,9 @@
         "exotic_base": "#685D57",
         "exotic_base_gradient_bottom": "#E8E0C5",
         "exotic_base_gradient_top": "#342E2B",
-        "exotic_pattern": "#110B0A",
-        "exotic_pattern_gradient_top": "#3C2723",
-        "exotic_pattern_gradient_bottom": "#E8E0C5"
+        "exotic_muzzle": "#3C2723",
+        "exotic_light_pattern": "#E8E0C5",
+        "exotic_pattern_gradient": "#110B0A"
     },
     "CHOCOLATE": {
         "base": "#704642",
@@ -336,8 +335,8 @@
         "exotic_base": "#724742",
         "exotic_base_gradient_bottom": "#C2A89C",
         "exotic_base_gradient_top": "#483F46",
-        "exotic_pattern": "#261A1C",
-        "exotic_pattern_gradient_top": "#A1575B",
-        "exotic_pattern_gradient_bottom": "#C2A89C"
+        "exotic_muzzle": "#A1575B",
+        "exotic_light_pattern": "#C2A89C",
+        "exotic_pattern_gradient": "#261A1C"
     }
 }
