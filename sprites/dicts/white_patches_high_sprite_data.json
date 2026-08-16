@@ -2,12 +2,12 @@
     "spritesheet": "patches_white_high",
     "sprite_list": [
         [
-            "ANY_REDUCED",
+            "ANY",
             "ANYTWO",
-            "BROKEN_REDUCED",
+            "BROKEN",
             "PIEBALD",
             "CURVED",
-            "SHIBAINU_REDUCED",
+            "SHIBAINU",
             "OWL",
             "FRECKLES",
             "RINGTAIL",
