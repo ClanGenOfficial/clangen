@@ -293,13 +293,14 @@
         "VAN": [
             "littleBELLY_MID",
             "littleLEG_BACK_LEFT_MID",
-            "littleLEG_BACK_RIGHT_MID",
             "littleMASK_PARTIAL",
             "littleUNDER_SMALL",
+            "littleLEG_BACK_RIGHT_HIGH",
             "midBIB_FULL",
             "midFLANK_MID",
             "midLEG_FRONT_LEFT_FULL",
-            "midLEG_FRONT_RIGHT_FULL"
+            "midLEG_FRONT_RIGHT_FULL",
+            "midCHEST_FULL"
         ],
         "APRON": [
             "littleBEARD_FULL",
@@ -314,7 +315,8 @@
             "midBIB_FULL",
             "midLEG_FRONT_LEFT_FULL",
             "midLEG_FRONT_RIGHT_FULL",
-            "midSADDLE_MIN_REVERSE"
+            "midSADDLE_MIN_REVERSE",
+            "midCHEST_FULL"
         ],
         "BLACKSTAR": [
             "littleBELLY_MID",
@@ -324,7 +326,8 @@
             "midFLANK_FULL",
             "midLEG_FRONT_LEFT_REVERSE",
             "midLEG_FRONT_RIGHT_REVERSE",
-            "midTAIL_FULL"
+            "midTAIL_FULL",
+            "midCHEST_FULL"
         ],
         "CAPSADDLE": [
             "littleBELLY_MID",
@@ -335,21 +338,23 @@
             "midBIB_FULL",
             "midLEG_FRONT_LEFT_FULL",
             "midLEG_FRONT_RIGHT_FULL",
-            "midSADDLE_MID_REVERSE"
+            "midSADDLE_MID_REVERSE",
+            "midCHEST_FULL"
         ],
         "EYESPOT": [
             "littleBELLY_MID",
+            "littleEYESPOT_REVERSE_L",
             "littleLEFTEAR",
             "littleLEG_BACK_LEFT_MID",
             "littleLEG_BACK_RIGHT_MID",
-            "littleEYESPOT_REVERSE_L",
             "littleRIGHTEAR",
             "littleUNDER_MID",
             "midBIB_FULL",
             "midFLANK_FULL",
             "midLEG_FRONT_LEFT_FULL",
             "midLEG_FRONT_RIGHT_FULL",
-            "midTAIL_FULL"
+            "midTAIL_FULL",
+            "midCHEST_FULL"
         ],
         "LIGHTSONG": [
             "littleBELLY_MID",
@@ -361,7 +366,8 @@
             "midLEG_FRONT_LEFT_FULL",
             "midLEG_FRONT_RIGHT_FULL",
             "midTAIL_FULL",
-            "midTWO_SPOT_REVERSE"
+            "midTWO_SPOT_REVERSE",
+            "midCHEST_FULL"
         ],
         "ONEEAR": [
             "littleLEFTEAR",
@@ -374,7 +380,8 @@
             "midFLANK_FULL",
             "midLEG_FRONT_LEFT_FULL",
             "midLEG_FRONT_RIGHT_FULL",
-            "midTAIL_FULL"
+            "midTAIL_FULL",
+            "midCHEST_FULL"
         ],
         "PETAL": [
             "littleBELLY_MID",
@@ -388,21 +395,24 @@
             "midLEG_FRONT_LEFT_FULL",
             "midLEG_FRONT_RIGHT_FULL",
             "midTAIL_FULL",
-            "midTWO_SPOT_REVERSE"
+            "midTWO_SPOT_REVERSE",
+            "midCHEST_FULL"
         ],
         "FULLWHITE": [
             "littleLEFTEAR",
             "littleMASK_FACE",
             "littleRIGHTEAR",
-            "littleUNDER_SMALL",
-            "midBELLY_FULL",
-            "midBIB_FULL",
+            "littleUNDER_HEART",
+            "littleSTRIPE_SMALL",
             "midFLANK_FULL",
             "midLEG_BACK_LEFT_FULL",
             "midLEG_BACK_RIGHT_FULL",
             "midLEG_FRONT_LEFT_FULL",
             "midLEG_FRONT_RIGHT_FULL",
-            "midTAIL_FULL"
+            "midTAIL_FULL",
+            "midBELLY_FULL",
+            "midBIB_FULL",
+            "midUNDERS"
         ]
     }
 }
