@@ -76,6 +76,9 @@ class Name:
 
     @classmethod
     def _usable_name(cls, prefix, suffix):
+        if prefix is None or suffix is None:
+            return True
+
         name = prefix + suffix
 
         # Prevent triple letter names from joining prefix and suffix from occurring (ex. Beeeye)
