@@ -15,6 +15,11 @@ def set_biggest_family():
             biggest_family = ancestors
             biggest_family.append(cat.ID)
 
+def get_biggest_family() -> dict:
+    if not biggest_family:
+        set_biggest_family()
+
+    return biggest_family
 
 def biggest_family_is_big():
     """Returns if the current biggest family is big enough to 'activates' additional inbreeding counters."""

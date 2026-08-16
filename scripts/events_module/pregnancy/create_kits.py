@@ -22,9 +22,8 @@ from scripts.events_module.consequences import (
 from scripts.events_module.event_filters import get_personality_compatibility
 from scripts.events_module.pregnancy.build_strings import get_newborn_strings
 from scripts.events_module.pregnancy.check_family_size import (
-    biggest_family,
-    set_biggest_family,
     biggest_family_is_big,
+    get_biggest_family,
 )
 from scripts.events_module.short.condition_events import Condition_Events
 from scripts.events_module.text_adjust import event_text_adjust, adjust_list_text
@@ -598,8 +597,7 @@ def get_balanced_kit_chance(first_parent: Cat, second_parent: Cat, is_affair) ->
 
     # 'INBREED' counter
     # - increase inverse chance if one of the current cats belongs in the biggest family
-    if not biggest_family:  # set the family if not already
-        set_biggest_family()
+    biggest_family = get_biggest_family()
 
     if (
         first_parent.ID in biggest_family

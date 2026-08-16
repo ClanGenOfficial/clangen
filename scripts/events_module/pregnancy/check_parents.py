@@ -8,9 +8,8 @@ from scripts.cat.enums import (
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_package.settings import get_clan_setting
 from scripts.events_module.pregnancy.check_family_size import (
-    biggest_family,
-    set_biggest_family,
     biggest_family_is_big,
+    get_biggest_family,
 )
 from scripts.events_module.event_filters import (
     get_highest_romantic_relation,
@@ -141,8 +140,7 @@ def get_second_parent(cat: Cat) -> tuple[Optional[Cat], bool]:
         chance = get_config("pregnancy.random_affair_chance")
 
     # 'buff' affairs & coparenting if the current biggest family is big + this cat doesn't belong there
-    if not biggest_family:
-        set_biggest_family()
+    biggest_family = get_biggest_family()
 
     if biggest_family_is_big() and cat.ID not in biggest_family:
         chance = int(chance * 0.8)

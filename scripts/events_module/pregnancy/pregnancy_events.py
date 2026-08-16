@@ -2,10 +2,6 @@ from random import random
 
 from scripts.cat.cats import Cat
 from scripts.clan_package.settings import get_clan_setting
-from scripts.events_module.pregnancy.check_family_size import (
-    biggest_family,
-    set_biggest_family,
-)
 from scripts.events_module.pregnancy.check_parents import (
     check_if_can_have_kits,
     get_second_parent,
@@ -38,9 +34,6 @@ def handle_having_kits(cat: Cat):
     """
     if not game.clan:
         return
-
-    if not biggest_family:
-        set_biggest_family()
 
     # Handles if a cat is already pregnant
     if cat.ID in game.clan.pregnancy_data:
