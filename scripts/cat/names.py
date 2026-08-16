@@ -205,16 +205,6 @@ class Name:
         """Generate possible prefix."""
         self.load_localized_names()
 
-        # decided in constants.CONFIG: cat_name_controls
-        if constants.CONFIG["cat_name_controls"]["always_name_after_appearance"]:
-            named_after_appearance = True
-        else:
-            named_after_appearance = not random.getrandbits(
-                2
-            )  # Chance for True is '1/4'
-
-        named_after_biome = not random.getrandbits(3)  # chance for True is 1/8
-
         # Add possible prefix categories to list.
         possible_prefix_categories = []
         if (
@@ -229,34 +219,40 @@ class Name:
         if biome is not None and biome in self.names_dict["biome_prefixes"]:
             possible_prefix_categories.append(self.names_dict["biome_prefixes"][biome])
 
-        # Choose appearance-based prefix if possible and named_after_appearance because True.
-        if (
-            named_after_appearance
-            and possible_prefix_categories
-            and not named_after_biome
-            or named_after_biome
-            and possible_prefix_categories
-        ):
-            prefix_category = random.choice(possible_prefix_categories)
-            self.prefix = random.choice(prefix_category)
-        else:
-            self.prefix = random.choice(self.names_dict["normal_prefixes"])
+        while True:
 
-        # This thing prevents any prefix duplications from happening.
-        # Try statement stops this form running when initializing.
-        with contextlib.suppress(NameError):
-            if self.prefix in Name.prefix_history:
-                # do this recursively until a name that isn't on the history list.
-                self.give_prefix(eyes, colour, biome)
-                # prevent infinite recursion
-                if len(Name.prefix_history) > 0:
-                    Name.prefix_history.pop(0)
+            # decided in constants.CONFIG: cat_name_controls
+            if constants.CONFIG["cat_name_controls"]["always_name_after_appearance"]:
+                named_after_appearance = True
             else:
-                Name.prefix_history.append(self.prefix)
-            # Set the maximin length to 8 just to be sure
-            if len(Name.prefix_history) > 8:
-                # removing at zero so the oldest gets removed
-                Name.prefix_history.pop(0)
+                named_after_appearance = not random.getrandbits(
+                    2
+                )  # Chance for True is '1/4'
+
+            named_after_biome = not random.getrandbits(3)  # chance for True is 1/8
+            # Choose appearance-based prefix if possible and named_after_appearance because True.
+            if (
+                named_after_appearance
+                and possible_prefix_categories
+                and not named_after_biome
+                or named_after_biome
+                and possible_prefix_categories
+            ):
+                prefix_category = random.choice(possible_prefix_categories)
+                self.prefix = random.choice(prefix_category)
+            else:
+                self.prefix = random.choice(self.names_dict["normal_prefixes"])
+
+            # prevent prefix duplications from happening
+            if self.prefix in self.prefix_history:
+                continue
+            else:
+                self.prefix_history.append(self.prefix)
+                # Set the maximin length to 8 just to be sure
+                if len(Name.prefix_history) > 8:
+                    # removing at zero so the oldest gets removed
+                    self.prefix_history.pop(0)
+                return
 
     # Generate possible suffix
     def give_suffix(self, pelt, biome, tortie_pattern):
