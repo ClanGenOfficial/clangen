@@ -43,15 +43,15 @@ class TestEvents(unittest.TestCase):
         game.clan = Clan(
             save_id=cls.test_clan_name,
             display_name="Test",
-            leader=NewCatFactory.create_cat(rank=CatRank.LEADER),
-            deputy=NewCatFactory.create_cat(rank=CatRank.DEPUTY),
-            medicine_cat=NewCatFactory.create_cat(rank=CatRank.MEDICINE_CAT),
+            leader=cat_factory.create_cat(rank=CatRank.LEADER),
+            deputy=cat_factory.create_cat(rank=CatRank.DEPUTY),
+            medicine_cat=cat_factory.create_cat(rank=CatRank.MEDICINE_CAT),
             biome="Forest",
             camp_bg="camp1",
             symbol="symbolADDER0",
             game_mode="expanded",
             starting_members=[
-                NewCatFactory.create_cat(rank=rank)
+                cat_factory.create_cat(rank=rank)
                 for rank in [
                     CatRank.KITTEN,
                     CatRank.APPRENTICE,
@@ -129,7 +129,7 @@ class TestEvents(unittest.TestCase):
                     # to give a good chance for event variety without bloat
                     while get_living_clan_cat_count(Cat) < 8:
                         game.clan.add_cat(
-                            NewCatFactory.create_cat(
+                            cat_factory.create_cat(
                                 rank=choice(
                                     [
                                         CatRank.KITTEN,
