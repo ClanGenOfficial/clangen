@@ -129,7 +129,7 @@ def _find_event_and_cats(
         involved_cats = {"m_c": main_cat}
         event_to_test = choices(possible_events, [e.weight for e in possible_events])[0]
 
-        cats_found, temp_involved_cats = find_cats(
+        temp_involved_cats = find_cats(
             interactable_cats=interactable_cats,
             involved_cats=involved_cats,
             outside_cats=outside_cats,
@@ -138,7 +138,7 @@ def _find_event_and_cats(
             if game.clan.all_other_clans
             else None,
         )
-        if not cats_found:
+        if not temp_involved_cats:
             possible_events.remove(event_to_test)
             continue
 

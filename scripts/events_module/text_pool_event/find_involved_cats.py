@@ -20,7 +20,16 @@ def find_cats(
     outside_cats: list,
     event: Union[PatrolEvent, TextPoolEvent],
     other_clan: OtherClan,
-) -> tuple[bool, dict]:
+) -> dict:
+    """
+    Finds and returns cats for a PatrolEvent or TextPoolEvent.
+    :param interactable_cats: A list of cats within the Clan eligible to appear in the event.
+    :param involved_cats: Dict of cats already involved. Key is abbreviation, value is cat object
+    :param outside_cats: A list of cats outside the Clan eligible to appear in the event.
+    :param event: The PatrolEvent or TextPoolEvent that needs involved cats
+    :param other_clan: The OtherClan object involved in the event
+    :return: Updated involved_cats dict with valid cats. If dict is empty, then valid cats were not found.
+    """
     temp_involved_cats = involved_cats.copy()
     # make sure none of the interactable cats are already assigned to an abbr
     interactable_cats = [
@@ -29,7 +38,7 @@ def find_cats(
 
     cats_to_create = []
 
-    can_give_condition = isinstance(event, TextPoolEvent)
+    can_give_condition = hasattr(event, "condition")
 
     for abbr, constraints in event.involved_cats.items():
         possible_injuries = []
@@ -74,6 +83,7 @@ def find_cats(
             potential_cats = [
                 c for c in outside_cats if c not in temp_involved_cats.values()
             ]
+
         elif abbr == "multi_cat":
             temp_involved_cats["multi_cat"] = _get_multi_cats(
                 involved_cats,
@@ -84,7 +94,7 @@ def find_cats(
             )
             # if we found no one, then this event isn't possible, and we should try a different one
             if not temp_involved_cats["multi_cat"]:
-                return False, {}
+                return {}
             else:
                 # remove cats from the pool so they don't get repeated in the event
                 for c in temp_involved_cats["multi_cat"]:
@@ -106,7 +116,7 @@ def find_cats(
             return_id=False,
         )
         if not possible_cats:
-            return False, {}
+            return {}
 
         cats_found, temp_involved_cats = _find_involved_cats(
             abbr,
@@ -117,7 +127,7 @@ def find_cats(
             other_clan=other_clan,
         )
         if not cats_found:
-            return False, {}
+            return {}
 
         if temp_involved_cats[abbr] in interactable_cats:
             interactable_cats.remove(temp_involved_cats[abbr])
@@ -136,7 +146,7 @@ def find_cats(
         if cats_found:
             temp_involved_cats.update(new_cats)
 
-    return True, temp_involved_cats
+    return temp_involved_cats
 
 
 def _find_involved_cats(
@@ -210,7 +220,7 @@ def _get_multi_cats(
         interactable_cats,
         event.tags,
         involved_cat_dict=involved_cats,
-        possible_injuries=possible_injuries,
+        injuries=possible_injuries,
         return_list=True,
         return_id=False,
     )

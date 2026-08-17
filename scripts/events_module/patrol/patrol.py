@@ -452,14 +452,14 @@ class Patrol:
 
             # CHECK IF CATS FIT
 
-            cats_found, involved_cats = find_cats(
+            involved_cats = find_cats(
                 interactable_cats=self.involved_cats["patrol_cats"],
                 involved_cats=self.involved_cats,
                 outside_cats=outside_cats,
                 event=test_patrol,
                 other_clan=self.other_clan,
             )
-            if cats_found:
+            if involved_cats:
                 chosen_patrol = test_patrol
                 self.involved_cats = involved_cats
             else:
@@ -726,14 +726,14 @@ class Patrol:
         ]
         temp_involved_cats = self.involved_cats.copy()
 
-        cats_found, temp_involved_cats = find_cats(
+        temp_involved_cats = find_cats(
             interactable_cats=temp_involved_cats["patrol_cats"],
             involved_cats=temp_involved_cats,
             outside_cats=outside_cats,
             event=outcome,
             other_clan=self.other_clan,
         )
-        if not cats_found:
+        if not temp_involved_cats:
             return False
 
         # if we're here, then we must have found all our cats!
