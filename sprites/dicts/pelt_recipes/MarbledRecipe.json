@@ -9,7 +9,7 @@
         
         
         "10": {
-            "group_name": "MARBLEDPATTERNLIGHT",
+            "group_name": "BENGALPATTERNLIGHT",
             "color": "exotic_light_pattern"
         },
 
@@ -20,7 +20,7 @@
         },
         "8": {
             "group_name": "BASICPATTERNGRAD",
-            "color": "exotic_pattern_gradient"
+            "color": "exotic_pattern_gradient_top"
         },
         "7": {
             "group_name": "MARBLEDPATTERN",
@@ -34,7 +34,7 @@
         },
         "5": {
             "group_name": "BASICPATTERNGRAD",
-            "color": "exotic_pattern_fill_gradient"
+            "color": "exotic_pattern_fill_gradient_top"
         },
         "4":{
             "group_name": "MARBLEDPATTERNFILL",

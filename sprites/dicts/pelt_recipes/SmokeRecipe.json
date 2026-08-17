@@ -9,11 +9,11 @@
         },
         "4":{
             "group_name": "SMOKEPATTERNGRAD",
-            "color": "pattern_gradient_top"
+            "color": "pattern"
         },
         "3": {
             "group_name": "SMOKEPATTERNDARK",
-            "color": "base_gradient_top"
+            "color": "pattern_gradient_top"
         },
         "2": {
             "group_name": "SMOKEPATTERNLIGHT",

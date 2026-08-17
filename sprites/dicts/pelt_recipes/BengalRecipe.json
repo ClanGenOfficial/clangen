@@ -20,7 +20,7 @@
         },
         "8": {
             "group_name": "BASICPATTERNGRAD",
-            "color": "exotic_pattern_gradient"
+            "color": "exotic_pattern_gradient_top"
         },
         "7": {
             "group_name": "BENGALPATTERN",
@@ -34,7 +34,7 @@
         },
         "5": {
             "group_name": "BASICPATTERNGRAD",
-            "color": "exotic_pattern_fill_gradient"
+            "color": "exotic_pattern_fill_gradient_top"
         },
         "4":{
             "group_name": "BENGALPATTERNFILL",
