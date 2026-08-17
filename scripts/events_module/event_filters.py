@@ -13,6 +13,7 @@ from scripts.clan_resources.point_of_interest import (
     get_poi_categories_set,
 )
 from scripts.cat_relations.relationship import Relationship
+from scripts.config import get_config
 from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
     RelationshipConstraintDict,
@@ -255,7 +256,7 @@ def event_for_reputation(required_rep: list) -> bool:
     """
     checks if the clan has reputation matching required_rep
     """
-    if "any" in required_rep:
+    if not required_rep or "any" in required_rep:
         return True
 
     clan_rep = game.clan.reputation
@@ -283,10 +284,7 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
 
 
 def event_for_freshkill_supply(
-    pile,
-    trigger: Literal["always", "low", "adequate", "full", "excess"],
-    factor,
-    clan_size,
+    pile, trigger: Literal["always", "low", "adequate", "full", "excess"], clan_size
 ) -> bool:
     """
     checks if clan has the correct amount of freshkill for event
@@ -308,6 +306,7 @@ def event_for_freshkill_supply(
     # find how much is too much freshkill
     # it would probably be good to move this section of finding trigger_value to the freshkill class
     divider = 35 if game.clan.game_mode == "expanded" else 20
+    factor = get_config("prey.base_event_trigger_factor")
     factor = factor - round(pow((clan_size / divider), 2))
     if factor < 2 and game.clan.game_mode == "expanded":
         factor = 2
@@ -323,7 +322,7 @@ def event_for_freshkill_supply(
     return False
 
 
-def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
+def event_for_herb_supply(trigger, supply_type) -> bool:
     """
     checks if clan's herb supply qualifies for event
     """
@@ -966,6 +965,7 @@ def cat_for_event(
     comparison_cat=None,
     comparison_cat_rel_status: list = None,
     injuries: list = None,
+    other_involved_clan_id: str = None,
     return_id: bool = True,
     return_list: bool = False,
 ):
@@ -979,6 +979,7 @@ def cat_for_event(
      cat. Keep in mind that this will search for a possible cat with the given relationship toward comparison cat.
     :param comparison_cat_rel_status: The relationship_status dict for the comparison cat
     :param injuries: List of injuries a cat may get from the event
+    :param other_involved_clan_id: if another Clan is involved, include their ID
     :param return_id: If true, return cat ID instead of object
     :param return_list: if true, return a list of all valid cats instead of a single valid cat
     :param tags: List of event tags
@@ -987,6 +988,7 @@ def cat_for_event(
     func_dict = {
         "age": _get_cats_with_age,
         "status": _get_cats_with_status,
+        "past_status": _get_cats_with_status_history,
         "stat": _get_cats_with_stat,
         "skill": _get_cats_with_skill,
         "trait": _get_cats_with_trait,
@@ -1013,6 +1015,13 @@ def cat_for_event(
         # if the list is emptied, return
         if not allowed_cats:
             return None
+    if constraint_dict.get("standing"):
+        allowed_cats = _get_cats_with_standing(
+            allowed_cats,
+            constraint_dict["standing"],
+            involved_cat_dict,
+            other_involved_clan_id,
+        )
 
     # find cats that can get the injuries that will be given
     if injuries:
@@ -1159,6 +1168,13 @@ def _get_cats_with_status(cat_list: list, statuses: list[str]) -> list:
         ]
 
 
+def _get_cats_with_status_history(cat_list: list, statuses: list) -> list:
+    if not statuses or "any" in statuses:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_status_history(c, statuses)]
+
+
 def _get_cats_with_stat(cat_list: list, stat: dict) -> list:
     """
     Returns list of cats with the required stats
@@ -1287,6 +1303,22 @@ def _get_cats_from_group(
     return cat_list
 
 
+def _get_cats_with_standing(
+    cat_list: list,
+    standing: Dict[str, list],
+    already_involved_cats: dict,
+    other_clan_id: str = None,
+):
+    if not standing:
+        return cat_list
+
+    return [
+        c
+        for c in cat_list
+        if _check_cat_standing(c, standing, already_involved_cats, other_clan_id)
+    ]
+
+
 def _get_cats_with_backstory(cat_list: list, backstories: list[str]) -> list:
     """
     Checks cat_list against required backstories and returns qualifying cats.
@@ -1397,21 +1429,31 @@ def _filter_relationship_type_updated(
     # if the cat meets the check AND it's an exclusionary tag: return False
     # if the cat doesn't meet the check AND it's an inclusionary tag: return False
     # otherwise, continue onwards
+    cats_to = [c for c in cats_to if c not in cats_from]
 
     if "can_romance" in filter_types:
         for cat in cats_from:
             # if the cats CAN romance
-            if all([cat.is_potential_mate(inter_cat) for inter_cat in cats_to]):
+            if all(
+                [
+                    cat.is_potential_mate(inter_cat) or cat.ID in inter_cat.mate
+                    for inter_cat in cats_to
+                ]
+            ):
                 if "can_romance" in exclusionary_values:
                     return False
             # if some but not ALL can romance
             elif "can_romance" in inclusionary_values and any(
-                [cat.is_potential_mate(inter_cat) for inter_cat in cats_to]
+                [
+                    cat.is_potential_mate(inter_cat) or cat.ID in inter_cat.mate
+                    for inter_cat in cats_to
+                ]
             ):
                 return False
             # if the cats CAN'T romance
             elif "can_romance" in inclusionary_values:
                 return False
+        filter_types.remove("can_romance")
 
     if "strangers" in filter_types:
         for cat in cats_from:
@@ -1720,26 +1762,6 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
                     return False
 
         filter_types.remove("mates")
-
-    # check if all cats are mates with p_l (they do not have to be mates with each other)
-    if "mates_with_pl" in filter_types:
-        # First test if there is more than one cat
-        if len(group) == 1:
-            return False
-
-        # Check each cat to see if it is mates with the patrol leader
-        qualifies = False
-        for cat in group:
-            if cat.ID == patrol_leader.ID:
-                continue
-            if cat.ID not in patrol_leader.mate:
-                if "mates_with_pl" in exclusionary_values:
-                    qualifies = True
-                else:
-                    return False
-            if "mates_with_pl" in exclusionary_values and not qualifies:
-                return False
-        filter_types.remove("mates_with_pl")
 
     # Check if the cats are in a parent/child relationship
     if "parent/child" in filter_types:
