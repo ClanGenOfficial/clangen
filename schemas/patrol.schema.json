@@ -1335,12 +1335,12 @@
           "title": "Relationship Constraint",
           "type": "array"
         },
-        "temperament": {
+        "patrol_temperament": {
           "description": "Constrains the outcome to only occur if the patrol has one of these temperaments.",
           "items": {
             "$ref": "#/$defs/Temperament"
           },
-          "title": "Temperament",
+          "title": "Patrol Temperament",
           "type": "array"
         },
         "other_clan_temperament": {
@@ -1554,12 +1554,12 @@
           "title": "Relationship Constraint",
           "type": "array"
         },
-        "temperament": {
+        "patrol_temperament": {
           "description": "Constrains the event to only occur if the patrol has one of these temperaments.",
           "items": {
             "$ref": "#/$defs/Temperament"
           },
-          "title": "Temperament",
+          "title": "Patrol Temperament",
           "type": "array"
         },
         "other_clan_temperament": {

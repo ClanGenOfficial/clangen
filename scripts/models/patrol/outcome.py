@@ -78,7 +78,7 @@ class Outcome(BaseModel):
         MISSING,
         description="Used to require specific relationships between the cats",
     )
-    temperament: Union[List[Temperament], MISSING] = Field(
+    patrol_temperament: Union[List[Temperament], MISSING] = Field(
         MISSING,
         description="Constrains the outcome to only occur if the patrol has one of these temperaments.",
     )

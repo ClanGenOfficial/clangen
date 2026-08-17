@@ -71,7 +71,7 @@ class PatrolSchemaItem(BaseModel):
         MISSING,
         description="Dictates what relationships cats can have towards each other.",
     )
-    temperament: Union[List[Temperament], MISSING] = Field(
+    patrol_temperament: Union[List[Temperament], MISSING] = Field(
         MISSING,
         description="Constrains the event to only occur if the patrol has one of these temperaments.",
     )

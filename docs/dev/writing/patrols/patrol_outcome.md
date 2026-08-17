@@ -64,7 +64,7 @@ Outcomes utilize the `TextPoolEvent` format.
             "constraints": []
         }
     ],
-    "temperament": [],
+    "patrol_temperament": [],
     "other_clan_temperament": [],
     "exp_gained": 0,
     "reputation_changes": {
@@ -279,7 +279,7 @@ Constrains the event to only occur if the specified relationships exist. Multipl
 
 ***
 
-### temperament: list[str]
+### patrol_temperament: list[str]
 List of allowed patrol temperaments. The patrol's temperament is calculated from the personalities of the cats on it, weighted by rank. [Possible Tempers](../reference/tag-lists.md/#clan-temperaments). You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
 
 !!! tip

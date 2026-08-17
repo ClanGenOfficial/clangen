@@ -93,7 +93,7 @@ When considering patrols, keep in mind challenge vs reward. That isn't to say ce
                 "constraints": []
             }
         ],
-    "temperament": [],
+    "patrol_temperament": [],
     "other_clan_temperament": [],
     "chance_of_success": 100,
     "patrol_art": "art.png",
@@ -450,7 +450,7 @@ Constrains the event to only occur is the specified relationships exist. Multipl
   
 ***
 
-#### temperament: list[str]
+#### patrol_temperament: list[str]
 >List of allowed patrol temperaments. A patrol's temperament isn't set by you, it's calculated from the personalities of the cats on it, weighted so that a leader counts for more than a deputy, who counts for more than everyone else. The patrol leader gets a little extra weight on top of their rank. [Possible Tempers](../reference/tag-lists.md/#clan-temperaments). You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
 
 !!! tip

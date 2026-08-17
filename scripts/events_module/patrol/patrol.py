@@ -96,7 +96,8 @@ class Patrol:
         self.patrol_event: Optional[PatrolEvent] = None
         self.debug_patrol_id: str = ""
         self.other_clan = None
-        self._temperament: Optional[tuple] = None
+        self.temperament: tuple[str, str] = ()
+        """Set once the patrol cats are known, in begin_patrol"""
 
         self.patrol_cats: list[Cat] = []
         """Holds all the cats that are on the patrol"""
@@ -106,14 +107,6 @@ class Patrol:
             "outcome_cats", {"success": dict[str, Cat], "failure": dict[str, Cat]}
         ) = {"success": {}, "failure": {}}
         self.new_cats: list[Cat] = []
-
-    @property
-    def temperament(self) -> tuple:
-        if self._temperament is None:
-            self._temperament = get_patrol_temperament(
-                self.patrol_cats, self.involved_cats.get("p_l")
-            )
-        return self._temperament
 
     def begin_patrol(self, patrol_cats: List[Cat], patrol_type: str) -> str:
         """
@@ -127,6 +120,11 @@ class Patrol:
 
         # Add cats
         self._add_patrol_cats(patrol_cats)
+
+        # The patrol group can't change once it's set out, so this is fixed for the rest of the patrol
+        self.temperament = get_patrol_temperament(
+            self.patrol_cats, self.involved_cats.get("p_l")
+        )
 
         # Choose other clan
         if game.clan.all_other_clans and len(game.clan.all_other_clans) > 0:
@@ -541,9 +539,11 @@ class Patrol:
             return False
 
         # CHECK TEMPERAMENT
-        if not event_for_temperament(patrol.temperament, self.temperament):
+        if not event_for_temperament(patrol.patrol_temperament, self.temperament):
             if is_debug_patrol:
-                print("DEBUG: requested patrol does not meet constraints (temperament)")
+                print(
+                    "DEBUG: requested patrol does not meet constraints (patrol_temperament)"
+                )
             return False
 
         if patrol.other_clan_temperament:
@@ -727,7 +727,7 @@ class Patrol:
         if not event_for_tags(outcome.tags, self.involved_cats["p_l"]):
             return False
 
-        if not event_for_temperament(outcome.temperament, self.temperament):
+        if not event_for_temperament(outcome.patrol_temperament, self.temperament):
             return False
 
         if outcome.other_clan_temperament:

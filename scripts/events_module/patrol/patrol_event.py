@@ -46,7 +46,7 @@ class PatrolEvent:
     relationship_constraint: list[RelationshipConstraintDict] = field(
         default_factory=list[RelationshipConstraintDict]
     )
-    temperament: list[str] = field(default_factory=list)
+    patrol_temperament: list[str] = field(default_factory=list)
     other_clan_temperament: list[str] = field(default_factory=list)
 
     herbs_given: list = field(default_factory=list)
