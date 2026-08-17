@@ -29,7 +29,7 @@ from scripts.events_module.patrol.generate_patrol_list import (
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.text_pool_event import handle_consequences
 from scripts.events_module.text_pool_event.check_general_constraints import (
-    pass_general_constraints,
+    passes_general_constraints,
 )
 from scripts.events_module.text_pool_event.find_involved_cats import find_cats
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
@@ -474,7 +474,7 @@ class Patrol:
             return False
 
         # CHECK GENERAL
-        if not pass_general_constraints(
+        if not passes_general_constraints(
             patrol,
             self.involved_cats["p_l"],
             self.involved_cats,
@@ -605,7 +605,7 @@ class Patrol:
         :param outcome_type: the outcome_cats dict that the valid cats should be added to
         """
         # BASICS
-        if not pass_general_constraints(
+        if not passes_general_constraints(
             outcome, self.involved_cats["p_l"], self.involved_cats
         ):
             return False

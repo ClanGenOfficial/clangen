@@ -20,7 +20,7 @@ if TYPE_CHECKING:
     from scripts.clan import OtherClan
 
 
-def pass_general_constraints(
+def passes_general_constraints(
     event: Union[PatrolEvent, TextPoolEvent],
     primary_cat: "Cat",
     involved_cats: dict,

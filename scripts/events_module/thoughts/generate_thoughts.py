@@ -10,7 +10,7 @@ from scripts.events_module.event_filters import (
     check_rel_constraint_groups,
 )
 from scripts.events_module.text_pool_event.check_general_constraints import (
-    pass_general_constraints,
+    passes_general_constraints,
 )
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game, constants
@@ -101,7 +101,7 @@ def _constraints_fulfilled(
     else:
         other_clan = None
 
-    if not pass_general_constraints(
+    if not passes_general_constraints(
         thought,
         primary_cat=main_cat,
         involved_cats=involved_cats,

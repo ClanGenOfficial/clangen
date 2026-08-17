@@ -9,7 +9,7 @@ from scripts.event_class import Single_Event
 from scripts.events_module.consequences import change_relationship_values
 from scripts.events_module.text_adjust import process_text, adjust_list_text
 from scripts.events_module.text_pool_event.check_general_constraints import (
-    pass_general_constraints,
+    passes_general_constraints,
 )
 from scripts.events_module.text_pool_event.find_involved_cats import find_cats
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
@@ -126,7 +126,7 @@ def _find_event_and_cats(
     while not chosen_event and possible_events:
         involved_cats = {"m_c": main_cat}
         event_to_test = choices(possible_events, [e.weight for e in possible_events])[0]
-        if not pass_general_constraints(
+        if not passes_general_constraints(
             event_to_test, involved_cats["m_c"], involved_cats, other_clan
         ):
             possible_events.remove(event_to_test)

@@ -17,7 +17,7 @@ from scripts.events_module.event_filters import (
 )
 from scripts.events_module.text_adjust import process_text
 from scripts.events_module.text_pool_event.check_general_constraints import (
-    pass_general_constraints,
+    passes_general_constraints,
 )
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
@@ -235,7 +235,7 @@ def _get_event(
     final_events = []
 
     for e in events:
-        if not pass_general_constraints(e, main_cat, {"m_c": main_cat}):
+        if not passes_general_constraints(e, main_cat, {"m_c": main_cat}):
             continue
         if not event_for_cat(
             e.involved_cats.get("m_c", {}), main_cat, event_id=e.event_id
