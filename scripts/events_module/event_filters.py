@@ -966,6 +966,7 @@ def cat_for_event(
     comparison_cat=None,
     comparison_cat_rel_status: list = None,
     injuries: list = None,
+    other_involved_clan_id: str = None,
     return_id: bool = True,
     return_list: bool = False,
 ):
@@ -979,6 +980,7 @@ def cat_for_event(
      cat. Keep in mind that this will search for a possible cat with the given relationship toward comparison cat.
     :param comparison_cat_rel_status: The relationship_status dict for the comparison cat
     :param injuries: List of injuries a cat may get from the event
+    :param other_involved_clan_id: if another Clan is involved, include their ID
     :param return_id: If true, return cat ID instead of object
     :param return_list: if true, return a list of all valid cats instead of a single valid cat
     :param tags: List of event tags
@@ -987,6 +989,7 @@ def cat_for_event(
     func_dict = {
         "age": _get_cats_with_age,
         "status": _get_cats_with_status,
+        "past_status": _get_cats_with_status_history,
         "stat": _get_cats_with_stat,
         "skill": _get_cats_with_skill,
         "trait": _get_cats_with_trait,
@@ -1013,6 +1016,13 @@ def cat_for_event(
         # if the list is emptied, return
         if not allowed_cats:
             return None
+    if constraint_dict.get("standing"):
+        allowed_cats = _get_cats_with_standing(
+            allowed_cats,
+            constraint_dict["standing"],
+            involved_cat_dict,
+            other_involved_clan_id,
+        )
 
     # find cats that can get the injuries that will be given
     if injuries:
@@ -1159,6 +1169,13 @@ def _get_cats_with_status(cat_list: list, statuses: list[str]) -> list:
         ]
 
 
+def _get_cats_with_status_history(cat_list: list, statuses: list) -> list:
+    if not statuses or "any" in statuses:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_status_history(c, statuses)]
+
+
 def _get_cats_with_stat(cat_list: list, stat: dict) -> list:
     """
     Returns list of cats with the required stats
@@ -1285,6 +1302,22 @@ def _get_cats_from_group(
             return [c for c in cat_list if c.status.group in remaining_tags]
 
     return cat_list
+
+
+def _get_cats_with_standing(
+    cat_list: list,
+    standing: Dict[str, list],
+    already_involved_cats: dict,
+    other_clan_id: str = None,
+):
+    if not standing:
+        return cat_list
+
+    return [
+        c
+        for c in cat_list
+        if _check_cat_standing(c, standing, already_involved_cats, other_clan_id)
+    ]
 
 
 def _get_cats_with_backstory(cat_list: list, backstories: list[str]) -> list:
