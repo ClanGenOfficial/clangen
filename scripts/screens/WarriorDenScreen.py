@@ -357,13 +357,22 @@ class WarriorDenScreen(Screens):
             manager=MANAGER,
         )
         del focus
-        self.focus_text = pygame_gui.elements.UITextBox(
-            "screens.warrior_den.what_to_focus",
-            ui_scale(pygame.Rect((92, 214), (272, 15))),
-            wrap_to_height=True,
-            object_id="#text_box_30_horizcenter_vertcenter_spacing_95",
-            manager=MANAGER,
-        )
+        if not self.has_deputy:
+            self.focus_text = pygame_gui.elements.UITextBox(
+                            "screens.warrior_den.no_deputy",
+                            ui_scale(pygame.Rect((92, 200), (272, 15))),
+                            wrap_to_height=True,
+                            object_id="#text_box_30_horizcenter_vertcenter_spacing_95",
+                            manager=MANAGER,
+                        )
+        else:
+            self.focus_text = pygame_gui.elements.UITextBox(
+                "screens.warrior_den.what_to_focus",
+                ui_scale(pygame.Rect((92, 214), (272, 15))),
+                wrap_to_height=True,
+                object_id="#text_box_30_horizcenter_vertcenter_spacing_95",
+                manager=MANAGER,
+            )
 
     def create_side_info(self):
         """
