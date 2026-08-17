@@ -1335,6 +1335,22 @@
           "title": "Relationship Constraint",
           "type": "array"
         },
+        "temperament": {
+          "description": "Constrains the outcome to only occur if the patrol has one of these temperaments.",
+          "items": {
+            "$ref": "#/$defs/Temperament"
+          },
+          "title": "Temperament",
+          "type": "array"
+        },
+        "other_clan_temperament": {
+          "description": "Constrains the outcome to only occur if the involved other Clan has one of these temperaments.",
+          "items": {
+            "$ref": "#/$defs/Temperament"
+          },
+          "title": "Other Clan Temperament",
+          "type": "array"
+        },
         "exp_gained": {
           "description": "The amount of exp cats receive (sorta). The exact amount also depends on the number of cats and current EXP levels, but in general, a higher number here means more exp. If exp is 0, no exp will be given",
           "title": "Exp Gained",
@@ -1536,6 +1552,22 @@
             "$ref": "#/$defs/RelationshipConstraint"
           },
           "title": "Relationship Constraint",
+          "type": "array"
+        },
+        "temperament": {
+          "description": "Constrains the event to only occur if the patrol has one of these temperaments.",
+          "items": {
+            "$ref": "#/$defs/Temperament"
+          },
+          "title": "Temperament",
+          "type": "array"
+        },
+        "other_clan_temperament": {
+          "description": "Constrains the event to only occur if the involved other Clan has one of these temperaments.",
+          "items": {
+            "$ref": "#/$defs/Temperament"
+          },
+          "title": "Other Clan Temperament",
           "type": "array"
         },
         "intro_text": {
@@ -2259,6 +2291,50 @@
         "disaster"
       ],
       "title": "TagEnum",
+      "type": "string"
+    },
+    "Temperament": {
+      "description": "Temperaments a Clan or patrol can hold. A \"-\" prefix excludes it.",
+      "enum": [
+        "cunning",
+        "-cunning",
+        "proud",
+        "-proud",
+        "bloodthirsty",
+        "-bloodthirsty",
+        "amiable",
+        "-amiable",
+        "stoic",
+        "-stoic",
+        "wary",
+        "-wary",
+        "gracious",
+        "-gracious",
+        "mellow",
+        "-mellow",
+        "logical",
+        "-logical",
+        "chaotic",
+        "-chaotic",
+        "mercurial",
+        "-mercurial",
+        "calculating",
+        "-calculating",
+        "eager",
+        "-eager",
+        "observant",
+        "-observant",
+        "adaptable",
+        "-adaptable",
+        "decisive",
+        "-decisive",
+        "methodical",
+        "-methodical",
+        "steadfast",
+        "-steadfast",
+        "any"
+      ],
+      "title": "Temperament",
       "type": "string"
     },
     "Trait": {

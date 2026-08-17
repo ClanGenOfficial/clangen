@@ -284,8 +284,8 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
 
 def event_for_temperament(required_temp: list, temperament) -> bool:
     """
-    checks if temperament matches required_temp. 
-    can use inclusive/exclusive tags (+/-) for temperaments
+    checks if temperament matches required_temp.
+    a "-" prefix excludes it
     """
     if not required_temp or "any" in required_temp:
         return True
@@ -296,11 +296,7 @@ def event_for_temperament(required_temp: list, temperament) -> bool:
     if not temperament.isdisjoint(excluded):
         return False
 
-    included = {
-        temp[1:] if temp.startswith("+") else temp
-        for temp in required_temp
-        if not temp.startswith("-")
-    }
+    included = {temp for temp in required_temp if not temp.startswith("-")}
     if included and temperament.isdisjoint(included):
         return False
 
