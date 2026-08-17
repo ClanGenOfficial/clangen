@@ -133,7 +133,9 @@ class TestInvolvedCats(unittest.TestCase):
         )
 
         self.patrol_class._add_patrol_cats([war1, app1, app2])
-        self.patrol_class._patrol_pass_cat_constraints(patrol)
+        self.patrol_class._get_valid_patrol(
+            [], chosen_frequency=patrol.frequency, patrol_override=patrol
+        )
 
         self.assertEqual(
             war1,
@@ -157,26 +159,28 @@ class TestInvolvedCats(unittest.TestCase):
             intro_text="test",
             decline_text="test",
             involved_cats={
-                "n_c:0": InvolvedCatDict(),
-                "n_c:1": InvolvedCatDict(can_create_new_cat={}),
+                "n_c0": InvolvedCatDict(),
+                "n_c1": InvolvedCatDict(can_create_new_cat={}),
             },
             success_outcomes=[{"strings": ["test"]}],
             fail_outcomes=[{"strings": ["test"]}],
         )
 
         self.patrol_class._add_patrol_cats([war1])
-        self.patrol_class._patrol_pass_cat_constraints(patrol)
+        self.patrol_class._get_valid_patrol(
+            [], chosen_frequency=patrol.frequency, patrol_override=patrol
+        )
 
         self.assertEqual(
             outsider1,
-            self.patrol_class.involved_cats["n_c:0"],
-            msg=f"{outsider1} should be n_c:0",
+            self.patrol_class.involved_cats["n_c0"],
+            msg=f"{outsider1} should be n_c0",
         )
 
         self.assertNotEqual(
             outsider1,
-            self.patrol_class.involved_cats["n_c:1"],
-            msg=f"n_c:1 should not be {outsider1}",
+            self.patrol_class.involved_cats["n_c1"],
+            msg=f"n_c1 should not be {outsider1}",
         )
 
     def test_pl_persistence(self):
@@ -204,7 +208,9 @@ class TestInvolvedCats(unittest.TestCase):
         )
         self.patrol_class.patrol_event = patrol
         self.patrol_class._add_patrol_cats([war1, app1, app2])
-        self.patrol_class._patrol_pass_cat_constraints(patrol)
+        self.patrol_class._get_valid_patrol(
+            [], chosen_frequency=patrol.frequency, patrol_override=patrol
+        )
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )
@@ -236,7 +242,9 @@ class TestInvolvedCats(unittest.TestCase):
         )
         self.patrol_class.patrol_event = patrol
         self.patrol_class._add_patrol_cats([war1, app1, app2])
-        self.patrol_class._patrol_pass_cat_constraints(patrol)
+        self.patrol_class._get_valid_patrol(
+            [], chosen_frequency=patrol.frequency, patrol_override=patrol
+        )
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )
@@ -268,7 +276,9 @@ class TestInvolvedCats(unittest.TestCase):
         )
         self.patrol_class.patrol_event = patrol
         self.patrol_class._add_patrol_cats([war1, app1, app2])
-        self.patrol_class._patrol_pass_cat_constraints(patrol)
+        self.patrol_class._get_valid_patrol(
+            [], chosen_frequency=patrol.frequency, patrol_override=patrol
+        )
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )
@@ -317,7 +327,9 @@ class TestOutcomeExecution(unittest.TestCase):
         )
 
         self.patrol_class._add_patrol_cats([war1])
-        self.patrol_class._patrol_pass_cat_constraints(patrol)
+        self.patrol_class._get_valid_patrol(
+            [], chosen_frequency=patrol.frequency, patrol_override=patrol
+        )
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )
@@ -354,7 +366,9 @@ class TestOutcomeExecution(unittest.TestCase):
         )
 
         self.patrol_class._add_patrol_cats([war1, app1])
-        self.patrol_class._patrol_pass_cat_constraints(patrol)
+        self.patrol_class._get_valid_patrol(
+            [], chosen_frequency=patrol.frequency, patrol_override=patrol
+        )
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )
@@ -396,7 +410,9 @@ class TestOutcomeExecution(unittest.TestCase):
         )
 
         self.patrol_class._add_patrol_cats([war1, app1])
-        self.patrol_class._patrol_pass_cat_constraints(patrol)
+        self.patrol_class._get_valid_patrol(
+            [], chosen_frequency=patrol.frequency, patrol_override=patrol
+        )
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )
@@ -433,7 +449,9 @@ class TestOutcomeExecution(unittest.TestCase):
         )
 
         self.patrol_class._add_patrol_cats([war1, app1])
-        self.patrol_class._patrol_pass_cat_constraints(patrol)
+        self.patrol_class._get_valid_patrol(
+            [], chosen_frequency=patrol.frequency, patrol_override=patrol
+        )
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )
@@ -473,7 +491,9 @@ class TestOutcomeExecution(unittest.TestCase):
         starting_outsider_rep = game.clan.reputation
 
         self.patrol_class._add_patrol_cats([war1, app1])
-        self.patrol_class._patrol_pass_cat_constraints(patrol)
+        self.patrol_class._get_valid_patrol(
+            [], chosen_frequency=patrol.frequency, patrol_override=patrol
+        )
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )
@@ -515,7 +535,9 @@ class TestOutcomeExecution(unittest.TestCase):
         total_herb_count = game.clan.herb_supply.total
 
         self.patrol_class._add_patrol_cats([war1])
-        self.patrol_class._patrol_pass_cat_constraints(patrol)
+        self.patrol_class._get_valid_patrol(
+            [], chosen_frequency=patrol.frequency, patrol_override=patrol
+        )
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )

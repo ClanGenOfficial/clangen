@@ -128,7 +128,10 @@ def _find_event_and_cats(
     while not chosen_event and possible_events:
         involved_cats = {"m_c": main_cat}
         event_to_test = choices(possible_events, [e.weight for e in possible_events])[0]
-
+        # make sure none of the interactable cats are already assigned to an abbr
+        interactable_cats = [
+            c for c in interactable_cats if c not in involved_cats.values()
+        ]
         temp_involved_cats = find_cats(
             interactable_cats=interactable_cats,
             involved_cats=involved_cats,
