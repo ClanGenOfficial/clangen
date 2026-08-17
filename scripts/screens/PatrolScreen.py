@@ -1160,6 +1160,7 @@ class PatrolScreen(Screens):
             text_kwargs={
                 "skills": ", ".join(patrol_skills),
                 "traits": ", ".join(patrol_traits),
+                "temperament": ", ".join(self.patrol_obj.temperament),
             },
         )
 

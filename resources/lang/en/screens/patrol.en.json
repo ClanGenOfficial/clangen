@@ -16,7 +16,7 @@
         "current_prey": "current prey: %{prey}",
         "needed_prey": "needed prey: %{prey}",
         "label_patrol_info": "patrol leader: %{leader}\npatrol members: %{members}\npatrol skills: %{skills}\npatrol traits: %{traits}\npatrol temperament: %{temperament}",
-        "current_patrol_info": "current patrol skills: %{skills}\ncurrent patrol traits: %{traits}",
+        "current_patrol_info": "current patrol skills: %{skills}\ncurrent patrol traits: %{traits}\ncurrent patrol temperament: %{temperament}",
         "proceed": "proceed",
         "dont_proceed": "do not proceed",
         "antagonize": "antagonize",
