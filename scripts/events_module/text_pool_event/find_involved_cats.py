@@ -37,6 +37,17 @@ def find_cats(
 
     can_give_condition = hasattr(event, "condition")
 
+    # just an initial relationship check to catch things like patrol_cats
+    if involved_cats and event.relationship_constraint:
+        if not all(
+            check_rel_constraint_groups(block, temp_involved_cats)
+            for block in event.relationship_constraint
+            if set(involved_cats.keys()).intersection(
+                set(block["cats_from"] + block["cats_to"])
+            )
+        ):
+            return {}
+
     for abbr, constraints in event.involved_cats.items():
         possible_injuries = []
         # grab any injuries they might get
