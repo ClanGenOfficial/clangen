@@ -81,13 +81,17 @@ class Name:
         name = prefix + suffix
 
         # Prevent triple letter names from joining prefix and suffix from occurring (ex. Beeeye)
-        possible_three_letter = (
-            prefix[-2:] + suffix[0],
-            prefix[-1] + suffix[:2],
-        )
-        triple_letter = all(
-            i == possible_three_letter[0][0] for i in possible_three_letter[0]
-        ) or all(i == possible_three_letter[1][0] for i in possible_three_letter[1])
+        # Prevent crash on empty prefix or suffix (e.g. empty-suffix loner names)
+        if not prefix or not suffix:
+            triple_letter = False
+        else:
+            possible_three_letter = (
+                prefix[-2:] + suffix[0],
+                prefix[-1] + suffix[:2],
+            )
+            triple_letter = all(
+                i == possible_three_letter[0][0] for i in possible_three_letter[0]
+            ) or all(i == possible_three_letter[1][0] for i in possible_three_letter[1])
 
         # Prevent double animal names (ex. Spiderfalcon)
         double_animal = (
