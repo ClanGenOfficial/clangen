@@ -335,14 +335,14 @@
         ],
         "HALFWHITE": [
             "littleBEARD_FULL",
-            "littleBELLY_MID",
             "littleBLAZE_FULL",
+            "littleTAILTIP",
+            "littleTAIL_UNDER",
             "littleLEG_BACK_LEFT_HIGH",
             "littleLEG_BACK_RIGHT_HIGH",
-            "littleLEG_FRONT_LEFT_HIGH",
-            "littleLEG_FRONT_RIGHT_HIGH",
-            "littleTAIL_UNDER",
-            "littleTAILTIP",
+            "littleBELLY_MID",
+            "midSHIRT",
+            "midUNDERS",
             "midBIB_FULL"
         ]
     },

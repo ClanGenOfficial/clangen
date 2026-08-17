@@ -55,7 +55,8 @@
             "CHEST_FULL",
             "BIB_HIGH",
             "BIB_FULL",
-            "UNDER_FULL"
+            "UNDER_FULL",
+            "SHIRT"
         ]
     ]
 }
