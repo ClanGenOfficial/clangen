@@ -248,9 +248,7 @@ class WarriorDenScreen(Screens):
                 self.focus_buttons[name].disable()
                 self.focus_buttons[name].set_text(f"settings.requires_medicine_cat")
             # check if theres a deputy
-            elif (
-                not self.has_deputy
-            ):
+            elif not self.has_deputy:
                 self.focus_buttons[name].disable()
             # check chosen button
             elif self.active_code == name:
@@ -359,12 +357,12 @@ class WarriorDenScreen(Screens):
         del focus
         if not self.has_deputy:
             self.focus_text = pygame_gui.elements.UITextBox(
-                            "screens.warrior_den.no_deputy",
-                            ui_scale(pygame.Rect((92, 200), (272, 15))),
-                            wrap_to_height=True,
-                            object_id="#text_box_30_horizcenter_vertcenter_spacing_95",
-                            manager=MANAGER,
-                        )
+                "screens.warrior_den.no_deputy",
+                ui_scale(pygame.Rect((92, 200), (272, 15))),
+                wrap_to_height=True,
+                object_id="#text_box_30_horizcenter_vertcenter_spacing_95",
+                manager=MANAGER,
+            )
         else:
             self.focus_text = pygame_gui.elements.UITextBox(
                 "screens.warrior_den.what_to_focus",
