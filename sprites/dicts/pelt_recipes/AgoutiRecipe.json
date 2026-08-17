@@ -3,7 +3,7 @@
     "layer_order": ["1", "2", "3", "4", ["5", "6"]],
     "layers": {
         "6":{
-            "group_name": "AGOUTPATTERN",
+            "group_name": "AGOUTIPATTERN",
             "blend_mode": "mask"
         },
         "5":{
@@ -11,7 +11,7 @@
             "color": "pattern_gradient_top"
         },
         "4":{
-            "group_name": "AGOUTPATTERN",
+            "group_name": "AGOUTIPATTERN",
             "color": "pattern"
         },
         "3": {
