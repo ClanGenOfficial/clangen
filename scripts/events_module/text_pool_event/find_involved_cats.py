@@ -45,47 +45,32 @@ def find_cats(
                 if abbr in block["cats"]:
                     possible_injuries.extend(block["condition"])
 
+        # CHECK ALREADY ASSIGNED CAT
         if abbr in involved_cats:
             possible_cats = (
                 involved_cats[abbr] if isinstance(abbr, list) else [involved_cats[abbr]]
             )
 
+        # CHECK PRIOR ABBREVIATIONS
         elif constraints.get("prior_abbreviation"):
-            # check for exclusionary status
-            is_exclusionary = any(
-                value.find("-") == 0 for value in constraints["prior_abbreviation"]
+            possible_cats = _check_prior_abbreviation(
+                abbr, constraints, event, interactable_cats, involved_cats
             )
-            # now grab the "clean" abbreviations
-            prior_abbreviations = [
-                a.replace("-", "") for a in constraints["prior_abbreviation"]
-            ]
-            # find all the cats that were listed in the abbreviations
-            abbr_cats = [involved_cats.get(_a) for _a in prior_abbreviations]
-            # if it's "any" then that's easy-peasy, just allow any of the cats
-            if "any" in prior_abbreviations:
-                possible_cats = interactable_cats
-            # if it's meant to be exclusionary, then possible_cats will be all cats not in abbr_cats
-            elif is_exclusionary:
-                possible_cats = [c for c in interactable_cats if c not in abbr_cats]
-            # otherwise it's just abbr_cats
-            else:
-                if abbr_cats == [None]:
-                    print(
-                        f"WARNING: issue with {abbr} prior_abbreviation setting on {event}"
-                    )
-                    return {}
-                possible_cats = abbr_cats
 
+        # CHECK NEW CATS
         elif "n_c" in abbr:
+            # CATS THAT CAN BE MADE
             if "can_create_new_cat" in constraints:
                 # these cats can be created if need be, so we'll do them after we've found all the cats that must exist
                 cats_to_create.append(abbr)
                 continue
 
+            # CATS THAT MUST EXIST
             possible_cats = [
                 c for c in outside_cats if c not in temp_involved_cats.values()
             ]
 
+        # CHECK MULTI_CAT
         elif abbr == "multi_cat":
             temp_involved_cats["multi_cat"] = _get_multi_cats(
                 involved_cats,
@@ -103,6 +88,7 @@ def find_cats(
                     interactable_cats.remove(c)
                 continue
 
+        # CHECK ALL UN-USED CATS
         else:
             possible_cats = interactable_cats
 
@@ -142,6 +128,7 @@ def find_cats(
 
     # create new cats if we need to!
     for abbr in cats_to_create:
+        # this will first try to find an existing cat, but if it can't then it'll make a new one
         constraints = event.involved_cats[abbr]
 
         new_cats = _find_involved_cat(
@@ -157,6 +144,39 @@ def find_cats(
     return temp_involved_cats
 
 
+def _check_prior_abbreviation(
+    abbr, constraints, event, interactable_cats, involved_cats
+):
+    """
+    Checks which cats are allowed per prior_abbreviation constraints
+    """
+    # check for exclusionary status
+    is_exclusionary = any(
+        value.find("-") == 0 for value in constraints["prior_abbreviation"]
+    )
+    # now grab the "clean" abbreviations
+    prior_abbreviations = [
+        a.replace("-", "") for a in constraints["prior_abbreviation"]
+    ]
+    # find all the cats that were listed in the abbreviations
+    abbr_cats = [involved_cats.get(_a) for _a in prior_abbreviations]
+    # if it's "any" then that's easy-peasy, just allow any of the cats
+    if "any" in prior_abbreviations:
+        possible_cats = interactable_cats
+    # if it's meant to be exclusionary, then possible_cats will be all cats not in abbr_cats
+    elif is_exclusionary:
+        possible_cats = [c for c in interactable_cats if c not in abbr_cats]
+    # otherwise it's just abbr_cats
+    else:
+        if abbr_cats == [None]:
+            print(f"WARNING: issue with {abbr} prior_abbreviation setting on {event}")
+            return []
+
+        possible_cats = abbr_cats
+
+    return possible_cats
+
+
 def _find_involved_cat(
     abbr: str,
     possible_cats: list[Cat],
@@ -165,6 +185,10 @@ def _find_involved_cat(
     temp_involved_cats: dict,
     other_clan: OtherClan,
 ) -> dict:
+    """
+    Finds a cat from the available cats that can fill the abbreviation slot. This will check against relationship
+    constraints and will create a new cat if necessary and allowed.
+    """
     possible_cats = possible_cats.copy()
 
     # if relationships aren't required, just grab some cats and go!
@@ -218,6 +242,9 @@ def _get_multi_cats(
     cat_constraints: InvolvedCatDict,
     possible_injuries: list,
 ) -> list[Cat]:
+    """
+    Finds and returns multiple available cats for use as a group in the event.
+    """
     # find out how many cats we'll allow
     max_cats = random.choice(get_config("relationship.group_events.multi_cat_amounts"))
     chosen_cats = []
