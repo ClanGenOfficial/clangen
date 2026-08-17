@@ -113,7 +113,7 @@ def find_cats(
             possible_cats=possible_cats,
             tags=event.tags,
             injuries=possible_injuries,
-            other_involved_clan_id=other_clan.group_ID,
+            other_involved_clan_id=other_clan.group_ID if other_clan else None,
             return_list=True,
             return_id=False,
         )

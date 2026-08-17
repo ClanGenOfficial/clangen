@@ -255,7 +255,7 @@ def event_for_reputation(required_rep: list) -> bool:
     """
     checks if the clan has reputation matching required_rep
     """
-    if "any" in required_rep:
+    if not required_rep or "any" in required_rep:
         return True
 
     clan_rep = game.clan.reputation
