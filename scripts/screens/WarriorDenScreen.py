@@ -58,6 +58,7 @@ class WarriorDenScreen(Screens):
 
         self.has_mediators = True
         self.has_meddies = True
+        self.has_deputy = True
 
     def handle_event(self, event):
         """
@@ -121,6 +122,9 @@ class WarriorDenScreen(Screens):
                 )
             )
             > 0
+        )
+        self.has_deputy = (
+            len(find_alive_cats_with_rank(Cat, [CatRank.DEPUTY], working=True)) > 0
         )
 
         self.hide_menu_buttons()
@@ -243,6 +247,11 @@ class WarriorDenScreen(Screens):
             ):
                 self.focus_buttons[name].disable()
                 self.focus_buttons[name].set_text(f"settings.requires_medicine_cat")
+            # check if theres a deputy
+            elif (
+                not self.has_deputy
+            ):
+                self.focus_buttons[name].disable()
             # check chosen button
             elif self.active_code == name:
                 self.focus_buttons[name].disable()
