@@ -52,7 +52,26 @@
             [
                 "SHILOH",
                 "FRECKLED",
-                "HEARTBEAT"
+                "HEARTBEAT",
+                "CHERRYTAIL",
+                "TURTLECRAWL",
+                "LARKPETAL",
+                "TTAILTIP",
+                "TSHIRT",
+                "TFLANK",
+                "TBIBFULL"
+            ],
+            [
+                "TTAILTIPREVERSE",
+                "TUNDERTAIL",
+                "TFRPAW",
+                "TFLPAW",
+                "TBRPAW",
+                "TBLPAW",
+                "TUNDERPAWS",
+                "TBELLY",
+                "TBOTHEARS",
+                "TEYELINER"
             ]
         ]
 }
