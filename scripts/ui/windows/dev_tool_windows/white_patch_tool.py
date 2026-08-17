@@ -30,6 +30,7 @@ class WhitePatchToolWindow(ComboToolWindow):
         super().create_elements()
 
         prev_element = self.elements["preview_cat"]
+        i = 2
         for name, data in {
             "little": sprites.WHITE_LITTLE_DATA,
             "mid": sprites.WHITE_MID_DATA,
@@ -39,8 +40,8 @@ class WhitePatchToolWindow(ComboToolWindow):
             patches = list(itertools.chain.from_iterable(data["sprite_list"]))
             patches.sort()
             self.elements[f"{name}_patch_choice"] = UIScrollingDropDown(
-                ui_scale(pygame.Rect((10, 10), (150, 34))),
-                dropdown_dimensions=ui_scale_dimensions((150, 194)),
+                ui_scale(pygame.Rect((0, 2), (180, 34))),
+                dropdown_dimensions=ui_scale_dimensions((180, 225 + (150 / i))),
                 parent_text=f"{name} patches",
                 multiple_choice=True,
                 item_list=patches,
@@ -50,9 +51,10 @@ class WhitePatchToolWindow(ComboToolWindow):
                     "top_target": prev_element,
                     "left_target": self.elements["example_cat"],
                 },
-                starting_height=3,
+                starting_height=5,
             )
             prev_element = self.elements[f"{name}_patch_choice"].parent_button
+            i += i * 2
 
         self.elements["combo_coverage"] = UIScrollingDropDown(
             ui_scale(pygame.Rect((40, 360), (150, 34))),
