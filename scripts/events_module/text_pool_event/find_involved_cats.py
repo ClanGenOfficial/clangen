@@ -41,6 +41,10 @@ def find_cats(
     can_give_condition = hasattr(event, "condition")
 
     for abbr, constraints in event.involved_cats.items():
+        if not interactable_cats:
+            # uh oh, we're out of options!
+            return {}
+        
         possible_injuries = []
         # grab any injuries they might get
         if can_give_condition and event.condition:
