@@ -10,7 +10,7 @@ import i18n
 import ujson
 
 from scripts.game_structure import constants
-from scripts.cat.enums import CatRank, CatGroup, CatAge
+from scripts.cat.enums import CatRank, CatGroup, CatAge, CatSocial
 from scripts.game_structure.localization import load_lang_resource
 from scripts.housekeeping.datadir import get_save_dir
 
@@ -217,6 +217,26 @@ class Name:
 
     def __str__(self):
         return self.__repr__()
+
+    def find_outsider_name(self, social: CatSocial):
+        if social == CatSocial.CLANCAT:
+            return
+
+        # if it ain't a clancat, give it a non-clancat name
+        name_categories = [
+            "silly_names",
+            "human_names",
+            "loner_names",
+            "normal_prefixes",
+        ]
+        # defaults in case of error
+        weights = [1, 1, 1, 1]
+        # give kittypets a kittypet name
+        weights = constants.CONFIG["cat_name_controls"][str(social)]
+
+        selected_category = random.choices(name_categories, weights, k=1)[0]
+        name = random.choice(names.names_dict[selected_category])
+        self.cat.change_name(new_prefix=name, new_suffix="")
 
     # Generate possible prefix
     def give_prefix(self, eyes, colour, biome):

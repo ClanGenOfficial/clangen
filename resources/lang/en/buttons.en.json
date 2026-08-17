@@ -6,6 +6,8 @@
         "settings_info": "settings + info",
         "quit": "quit",
         "event_edit": "event edit",
+        "tortie_patch": "add tortie patch",
+        "white_patch": "add white patch",
         "bug_report": "report a bug!",
         "edit_deaths": "edit deaths",
         "edit_injuries": "edit injuries",
@@ -48,6 +50,7 @@
         "saving": "saving...",
         "clan_saved": "saved!",
         "keep_cards": "keep",
-        "replace_cards": "replace"
+        "replace_cards": "replace",
+        "confirm": "confirm"
     }
 }

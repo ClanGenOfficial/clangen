@@ -1,6 +1,6 @@
 [
     {
-        "id": "warrior_apprentice_gen",
+        "event_id": "warrior_apprentice_gen",
         "strings": [
             "Feels worn out from training",
             "Wonders if {PRONOUN/m_c/subject}'ll be allowed to go night-hunting soon",
@@ -72,7 +72,7 @@
         ]
     },
     {
-        "id": "warrior_apprentice_to_alive_leader_or_deputy",
+        "event_id": "warrior_apprentice_to_alive_leader_or_deputy",
         "strings": [
             "Is panicking as r_c approaches the disheveled apprentices' den",
             "Is attempting to be composed whenever r_c says {PRONOUN/r_c/subject} will oversee training today",
@@ -106,7 +106,7 @@
         }
     },
     {
-        "id": "warrior_apprentice_to_alive_leader",
+        "event_id": "warrior_apprentice_to_alive_leader",
         "strings": [
             "Believes {PRONOUN/m_c/subject} could become a leader like r_c",
             "Insists that, one day, {PRONOUN/m_c/subject} will stand in r_c's position",
@@ -126,7 +126,7 @@
         }
     },
     {
-        "id": "warrior_apprentice_to_alive_deputy",
+        "event_id": "warrior_apprentice_to_alive_deputy",
         "strings": [
             "Wants r_c to assign {PRONOUN/m_c/object} to the next patrol",
             "Is watching and learning from r_c",
@@ -157,7 +157,7 @@
         }
     },
     {
-        "id": "warrior_apprentice_to_alive_warrior",
+        "event_id": "warrior_apprentice_to_alive_warrior",
         "strings": [
             "Is watching and learning from r_c",
             "Is asking r_c questions about warrior life",
@@ -180,7 +180,7 @@
         }
     },
     {
-        "id": "warrior_apprentice_to_clanborn_warrior",
+        "event_id": "warrior_apprentice_to_clanborn_warrior",
         "strings": [
             "Wonders if r_c was a good apprentice"
         ],
@@ -202,7 +202,7 @@
         }
     },
     {
-        "id": "warrior_apprentice_to_medcat",
+        "event_id": "warrior_apprentice_to_medcat",
         "strings": [
             "Can't get the taste of herbs out of {PRONOUN/m_c/poss} mouth after helping r_c",
             "Is gagging after helping r_c",
@@ -236,7 +236,7 @@
         }
     },
     {
-        "id": "warrior_apprentice_to_clanborn_warrior",
+        "event_id": "warrior_apprentice_to_clanborn_warrior",
         "strings": [
             "Wonders if r_c was a good apprentice",
             "Asks r_c what the Clan was like when {PRONOUN/r_c/subject} {VERB/r_c/were/was} {PRONOUN/m_c/poss} age",
@@ -263,7 +263,7 @@
         }
     },
     {
-        "id": "warrior_apprentice_to_alive_apprentice",
+        "event_id": "warrior_apprentice_to_alive_apprentice",
         "strings": [
             "Is learning how to hunt with r_c",
             "Teases r_c for missing an easy catch",
@@ -297,7 +297,7 @@
         }
     },
     {
-        "id": "warrior_apprentice_to_alive_nonwar_app",
+        "event_id": "warrior_apprentice_to_alive_nonwar_app",
         "strings": [
             "Can't understand why r_c doesn't want to learn to fight",
             "Shows r_c some defensive moves",
@@ -321,7 +321,7 @@
         }
     },
     {
-        "id": "warrior_apprentice_to_alive_elder",
+        "event_id": "warrior_apprentice_to_alive_elder",
         "strings": [
             "Is dreading having to clean the elders' den later",
             "Is picking ticks off of r_c",
@@ -352,7 +352,7 @@
         }
     },
     {
-        "id": "warrior_apprentice_to_alive_kits",
+        "event_id": "warrior_apprentice_to_alive_kits",
         "strings": [
             "Leaves fresh-kill outside the nursery for the kits",
             "Is showing r_c the proper way to do a hunter's crouch",
@@ -381,7 +381,7 @@
         }
     },
     {
-        "id": "ambitious_warrior_apprentice",
+        "event_id": "ambitious_warrior_apprentice",
         "strings": [
             "Begs to be made a warrior early",
             "Wants to go on both a border and hunting patrol",
@@ -407,7 +407,7 @@
         }
     },
     {
-        "id": "ambitious_warrior_apprentice_to_other_apps",
+        "event_id": "ambitious_warrior_apprentice_to_other_apps",
         "strings": [
             "Has been catching the most prey out of all the apprentices",
             "Is confident that {PRONOUN/m_c/subject} could beat the other apprentices",
@@ -434,7 +434,7 @@
         }
     },
     {
-        "id": "bold_warrior_apprentice",
+        "event_id": "bold_warrior_apprentice",
         "strings": [
             "Taunted a rival Clan's apprentice at the border",
             "Took the biggest piece of prey from the pile",
@@ -464,7 +464,7 @@
         }
     },
     {
-        "id": "bold_warrior_apprentice_to_warrior",
+        "event_id": "bold_warrior_apprentice_to_warrior",
         "strings": [
             "Is looking to challenge a warrior to a sparring match",
             "Is pretty sure r_c would lose in a fight with {PRONOUN/m_c/object}",
@@ -492,7 +492,7 @@
         }
     },
     {
-        "id": "bloodthirsty_warrior_apprentice",
+        "event_id": "bloodthirsty_warrior_apprentice",
         "strings": [
             "Pesters {PRONOUN/m_c/poss} mentor for more battle training",
             "Is practicing forbidden battle moves",
@@ -524,7 +524,7 @@
         }
     },
     {
-        "id": "calm_warrior_apprentice",
+        "event_id": "calm_warrior_apprentice",
         "strings": [
             "Likes to catch prey",
             "Is taking extra time to finish {PRONOUN/m_c/poss} task for today",
@@ -541,7 +541,7 @@
         }
     },
     {
-        "id": "competitive_warrior_apprentice",
+        "event_id": "competitive_warrior_apprentice",
         "strings": [
             "Is busy mastering a fighting technique"
         ],
@@ -556,7 +556,7 @@
         }
     },
     {
-        "id": "childish_warrior_apprentice",
+        "event_id": "childish_warrior_apprentice",
         "strings": [
             "Wonders if {PRONOUN/m_c/subject} could still fit in the nursery",
             "Turns {PRONOUN/m_c/poss} sparring practice into a tickle fight",
@@ -577,7 +577,7 @@
         }
     },
     {
-        "id": "childish_apprentice_to_elder",
+        "event_id": "childish_apprentice_to_elder",
         "strings": [
             "Pouts about being asked to check the elders for ticks",
             "Is hiding instead of taking care of the elders",
@@ -602,7 +602,7 @@
         }
     },
     {
-        "id": "cold_warrior_apprentice",
+        "event_id": "cold_warrior_apprentice",
         "strings": [
             "Doesn't react when {PRONOUN/m_c/poss} mentor praises {PRONOUN/m_c/object} for a good catch"
         ],
@@ -617,7 +617,7 @@
         }
     },
     {
-        "id": "confident_warrior_apprentice",
+        "event_id": "confident_warrior_apprentice",
         "strings": [
             "Is sure that {PRONOUN/m_c/subject}'ll be made into a warrior soon",
             "Thinks that {PRONOUN/m_c/subject} will be the strongest warrior to ever live",
@@ -646,7 +646,7 @@
         }
     },
     {
-        "id": "fierce_warrior_apprentice",
+        "event_id": "fierce_warrior_apprentice",
         "strings": [
             "Is showing off {PRONOUN/m_c/poss} new battle moves",
             "Is pushing hard for more battle training",
@@ -678,7 +678,7 @@
         }
     },
     {
-        "id": "insecure_warrior_apprentice",
+        "event_id": "insecure_warrior_apprentice",
         "strings": [
             "Doesn't think {PRONOUN/m_c/poss} hauls on hunting patrols have been substantial enough",
             "Is sure {PRONOUN/m_c/subject} will fail {PRONOUN/m_c/poss} assessment",
@@ -700,7 +700,7 @@
         }
     },
     {
-        "id": "insecure_nervous_warrior_apprentice",
+        "event_id": "insecure_nervous_warrior_apprentice",
         "strings": [
             "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} good enough to be a warrior...",
             "Is reluctant to spar with {PRONOUN/m_c/poss} mentor today",
@@ -725,7 +725,7 @@
         }
     },
     {
-        "id": "nervous_warrior_apprentice",
+        "event_id": "nervous_warrior_apprentice",
         "strings": [
             "Is scared to go on border patrol",
             "Fled upon hearing the distant barking of a dog",
@@ -754,7 +754,7 @@
         }
     },
     {
-        "id": "responsible_warrior_apprentice",
+        "event_id": "responsible_warrior_apprentice",
         "strings": [
             "Spent all morning practicing and mastering the hunting crouch",
             "Makes sure that everyone else is fed before taking prey from the fresh-kill pile",
@@ -771,7 +771,7 @@
         }
     },
     {
-        "id": "thoughtful_warrior_apprentice",
+        "event_id": "thoughtful_warrior_apprentice",
         "strings": [
             "Offered to go on the dawn patrol with {PRONOUN/m_c/poss} mentor",
             "Wants to gather moss for the elders' den",
@@ -798,7 +798,7 @@
         }
     },
     {
-        "id": "warrior_apprentice_to_alive_mentor",
+        "event_id": "warrior_apprentice_to_alive_mentor",
         "strings": [
             "Is trying to perfect the latest move that r_c taught {PRONOUN/m_c/object}",
             "Is asking r_c questions",
@@ -843,7 +843,7 @@
         ]
     },
     {
-        "id": "warrior_apprentice_to_comforting_mentor",
+        "event_id": "warrior_apprentice_to_comforting_mentor",
         "strings": [
             "Feels comfortable talking with r_c",
             "Knows {PRONOUN/m_c/subject} can always come to r_c if {PRONOUN/m_c/subject} {VERB/m_c/have/has} any issues",
@@ -892,7 +892,7 @@
         ]
     },
     {
-        "id": "warrior_apprentice_to_harsher_mentor",
+        "event_id": "warrior_apprentice_to_harsher_mentor",
         "strings": [
             "Has difficulty following r_c's lessons",
             "Knows that r_c's training will make {PRONOUN/m_c/object} a stronger warrior",
@@ -934,7 +934,7 @@
         ]
     },
     {
-        "id": "warrior_apprentice_to_outgoing_mentor",
+        "event_id": "warrior_apprentice_to_outgoing_mentor",
         "strings": [
             "Gets dragged out of {PRONOUN/m_c/poss} nest for an all-day, out-of-camp training session",
             "Is wide-eyed at how r_c seems to know <i>everyone</i>",
@@ -980,7 +980,7 @@
         ]
     },
     {
-        "id": "warrior_apprentice_to_withdrawn_mentor",
+        "event_id": "warrior_apprentice_to_withdrawn_mentor",
         "strings": [
             "Has to seek r_c out for training",
             "Tries to start a conversation with r_c... it falls flat quickly",
@@ -1021,7 +1021,7 @@
         ]
     },
     {
-        "id": "insecure_nervous_warrior_apprentice_to_mentor",
+        "event_id": "insecure_nervous_warrior_apprentice_to_mentor",
         "strings": [
             "Feels worried about going on patrol today",
             "Asks {PRONOUN/m_c/poss} mentor if {PRONOUN/m_c/subject} {VERB/m_c/are/is} meant to be a warrior",
@@ -1059,7 +1059,7 @@
         ]
     },
     {
-        "id": "insecure_nervous_warrior_apprentice_to_comforting_mentor",
+        "event_id": "insecure_nervous_warrior_apprentice_to_comforting_mentor",
         "strings": [
             "Seeks out r_c's comfort after a hard day",
             "Is glad to have r_c as {PRONOUN/m_c/poss} mentor",
@@ -1118,7 +1118,7 @@
         ]
     },
     {
-        "id": "insecure_nervous_warrior_apprentice_to_harsher_mentor",
+        "event_id": "insecure_nervous_warrior_apprentice_to_harsher_mentor",
         "strings": [
             "Seeks comfort from r_c, but doesn't get it",
             "Feels like {PRONOUN/m_c/subject} will never live up to r_c's expectations",
@@ -1180,7 +1180,7 @@
         ]
     },
     {
-        "id": "insecure_nervous_warrior_apprentice_to_outgoing_mentor",
+        "event_id": "insecure_nervous_warrior_apprentice_to_outgoing_mentor",
         "strings": [
             "Wishes {PRONOUN/m_c/poss} mentor didn't try to encourage {PRONOUN/m_c/object} to speak with others so much",
             "Hides behind r_c during the Gathering",
@@ -1234,7 +1234,7 @@
         ]
     },
     {
-        "id": "insecure_nervous_warrior_apprentice_to_withdrawn_mentor",
+        "event_id": "insecure_nervous_warrior_apprentice_to_withdrawn_mentor",
         "strings": [
             "Fidgets anxiously as an awkward silence settles between {PRONOUN/m_c/object} and r_c",
             "Feels understood by r_c",
@@ -1283,7 +1283,7 @@
         ]
     },
     {
-        "id": "formerly_rogue_warrior_apprentice",
+        "event_id": "formerly_rogue_warrior_apprentice",
         "strings": [
             "Got scolded for eating what {PRONOUN/m_c/subject} caught",
             "Is having some trouble adjusting",
@@ -1307,7 +1307,7 @@
         }
     },
     {
-        "id": "formerly_kittypet_warrior_apprentice",
+        "event_id": "formerly_kittypet_warrior_apprentice",
         "strings": [
             "Hopes to become a warrior soon so others will stop teasing {PRONOUN/m_c/object} about being a kittypet",
             "Hopes to earn some fierce scars to hide {PRONOUN/m_c/poss} past",
@@ -1336,7 +1336,7 @@
         }
     },
     {
-        "id": "formerly_kittypet_warrior_apprentice_to_apprentice",
+        "event_id": "formerly_kittypet_warrior_apprentice_to_apprentice",
         "strings": [
             "Tries to prove former kittypets are just as good as Clanborn apprentices by one-upping r_c",
             "Tries to convince r_c to slice {PRONOUN/m_c/poss} ear in hopes it'll scar"
@@ -1371,7 +1371,7 @@
         }
     },
     {
-        "id": "warrior_apprentice_to_dead_warrior",
+        "event_id": "warrior_apprentice_to_dead_warrior",
         "strings": [
             "Wishes {PRONOUN/m_c/subject} could learn from r_c",
             "Wants to be a great warrior, just like r_c"
@@ -1388,7 +1388,7 @@
         }
     },
     {
-        "id": "warrior_apprentice_to_alive_crush",
+        "event_id": "warrior_apprentice_to_alive_crush",
         "strings": [
             "Shows off to r_c with an amazing pounce",
             "Gives r_c a piece of freshkill {PRONOUN/m_c/subject} hunted {PRONOUN/m_c/self}"

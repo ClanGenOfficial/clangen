@@ -1,6 +1,6 @@
 [
     {
-        "id": "general_formerclancat_dead_thoughts",
+        "event_id": "general_formerclancat_dead_thoughts",
         "strings": [
             "Feels happy to be among StarClan",
             "Wonders if any of {PRONOUN/m_c/poss} old Clan is here",

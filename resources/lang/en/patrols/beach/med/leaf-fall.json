@@ -1,179 +1,262 @@
 [
-{
-    "patrol_id": "bch_med_leaffallragwort1",
-    "biome": ["beach"],
-    "season": ["leaf-fall"],
-    "types": ["herb_gathering"],
-    "tags": [],
-    "patrol_art": "cat_sprites/gen_med_catlookingup_Mc",
-    "min_cats": 1,
-    "max_cats": 1,
-    "min_max_status": {
-        "apprentice": [
-            -1,
-            -1
+    {
+        "event_id": "bch_med_leaffallragwort1",
+        "types": [
+            "herb_gathering"
         ],
-        "medicine cat apprentice": [
-            -1,
-            -1
+        "frequency": 3,
+        "location": [
+            "beach"
         ],
-        "medicine cat": [
-            1,
-            1
+        "season": [
+            "leaf-fall"
         ],
-        "normal adult": [
-            -1,
-            -1
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ],
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                1
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "cat_sprites/gen_med_catlookingup_Mc",
+        "intro_text": "Dark clouds gather on the seaward horizon. p_l walks through the sand, weaving from dune to dune, eager to be back before the storm hits. But not without ragwort.",
+        "decline_text": "Actually, ragwort can wait, because the storm won't. p_l heads directly back to camp.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_med_running2_Mc",
+                "strings": [
+                    "It still flowers late into the season, when most trees have already shed their leaves. Tall and bright yellow, it's also easy to identify by an unpleasant scent. Ragwort is a vital herb for joint pain and general strength, p_l reminds {PRONOUN/p_l/self}, but that doesn't quite lessen the foul taste of the leaf-covered stems in {PRONOUN/p_l/poss} mouth. By the time the thunder growls overhead, p_l has it safely stored away."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "ragwort",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_med_rainygathering_Mc",
+                "strings": [
+                    "It should be here, its bright yellow flowers like little suns brightening the gloom. But p_l can't seem to find any ragwort, and the gusts of wind whip away any scent {PRONOUN/p_l/subject} could follow. Lightning flashes behind {PRONOUN/p_l/object} as {PRONOUN/p_l/subject} {VERB/p_l/sprint/sprints} for camp, returning half-drenched and ragwortless."
+                ],
+                "exp_gained": 0
+            }
         ]
     },
-    "frequency": 3,
-    "chance_of_success": 50,
-    "relationship_constraint": [],
-    "pl_skill_constraint": [],
-    "intro_text": "Dark clouds gather on the seaward horizon. p_l walks through the sand, weaving from dune to dune, eager to be back before the storm hits. But not without ragwort.",
-    "decline_text": "Actually, ragwort can wait, because the storm won't. p_l heads directly back to camp.",
-    "success_outcomes": [
     {
-    "text": "It still flowers late into the season, when most trees have already shed their leaves. Tall and bright yellow, it's also easy to identify by an unpleasant scent. Ragwort is a vital herb for joint pain and general strength, p_l reminds {PRONOUN/p_l/self}, but that doesn't quite lessen the foul taste of the leaf-covered stems in {PRONOUN/p_l/poss} mouth. By the time the thunder growls overhead, p_l has it safely stored away.",
-    "exp": 20,
-    "frequency": 4,
-    "herbs": ["ragwort"],
-    "art": "cat_sprites/gen_med_running2_Mc"
-    }
-    ],
-    "fail_outcomes": [
-    {
-    "text": "It should be here, its bright yellow flowers like little suns brightening the gloom. But p_l can't seem to find any ragwort, and the gusts of wind whip away any scent {PRONOUN/p_l/subject} could follow. Lightning flashes behind {PRONOUN/p_l/object} as {PRONOUN/p_l/subject} {VERB/p_l/sprint/sprints} for camp, returning half-drenched and ragwortless.",
-    "exp": 0,
-    "frequency": 4,
-    "art": "cat_sprites/gen_med_rainygathering_Mc"
-    }
-    ]
-},
-
-{
-    "patrol_id": "bch_med_leaffallragwort2",
-    "biome": ["beach"],
-    "season": ["leaf-fall"],
-    "types": ["herb_gathering"],
-    "tags": [],
-    "patrol_art": "cat_sprites/gen_med_talking_ApMc",
-    "min_cats": 2,
-    "max_cats": 2,
-    "min_max_status": {
-        "apprentice": [
-            -1,
-            -1
+        "event_id": "bch_med_leaffallragwort2",
+        "types": [
+            "herb_gathering"
         ],
-        "medicine cat apprentice": [
-            1,
-            1
+        "frequency": 3,
+        "location": [
+            "beach"
         ],
-        "medicine cat": [
-            1,
-            1
+        "season": [
+            "leaf-fall"
         ],
-        "normal adult": [
-            -1,
-            -1
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ],
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat apprentice": [
+                1,
+                1
+            ],
+            "medicine cat": [
+                1,
+                1
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ]
+        },
+        "involved_cats": {
+            "r_c1": {
+                "status": [
+                    "apprentice",
+                    "medicine cat apprentice"
+                ]
+            }
+        },
+        "chance_of_success": 50,
+        "patrol_art": "cat_sprites/gen_med_talking_ApMc",
+        "intro_text": "Dark clouds gather on the seaward horizon. p_l walks through the sand, weaving from dune to dune, eager to be back before the storm hits. r_c1 tails {PRONOUN/p_l/object} attentively, and p_l quizzes {PRONOUN/r_c1/object} on the identification and notable properties of ragwort.",
+        "decline_text": "Actually, ragwort can wait, because the storm won't. p_l leads r_c1 back to camp.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_med_running_McApmed_app",
+                "strings": [
+                    "It still flowers late into the season, when most trees have already shed their leaves. Tall and bright yellow, it's also easy to identify by its unpleasant scent. Ragwort is a vital herb for joint pain and general strength, r_c1 concludes. p_l purrs and directs {PRONOUN/r_c1/object} on its harvest. Ignoring the noxious taste, they have it safely stored away by the time the thunder growls overhead."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice",
+                            "medicine cat apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 25,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 6,
+                        "log": {
+                            "cats_from": "Sharing the burden of ragwort's foul taste brought cat_from and cat_to closer together, and cat_from noted {PRONOUN/cat_from/poss} apprentice's dutifulness."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "ragwort",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_med_rainygathering_Mc",
+                "strings": [
+                    "It should be here, its bright yellow flowers like little suns brightening the gloom. But p_l can't seem to find any ragwort, and the gusts of wind whip away any scent {PRONOUN/p_l/subject} could follow. Thunder growls, and the first scattering of raindrops hits r_c1's coat. p_l's eyes widen. Lightning flashes behind the two cats as they sprint for camp, returning half-drenched and ragwortless."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice",
+                            "medicine cat apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0
+            }
         ]
     },
-    "frequency": 3,
-    "chance_of_success": 50,
-    "relationship_constraint": [],
-    "pl_skill_constraint": [],
-    "intro_text": "Dark clouds gather on the seaward horizon. p_l walks through the sand, weaving from dune to dune, eager to be back before the storm hits. app1 tails {PRONOUN/p_l/object} attentively, and p_l quizzes {PRONOUN/app1/object} on the identification and notable properties of ragwort.",
-    "decline_text": "Actually, ragwort can wait, because the storm won't. p_l leads app1 back to camp.",
-    "success_outcomes": [
     {
-    "text": "It still flowers late into the season, when most trees have already shed their leaves. Tall and bright yellow, it's also easy to identify by its unpleasant scent. Ragwort is a vital herb for joint pain and general strength, app1 concludes. p_l purrs and directs {PRONOUN/app1/object} on its harvest. Ignoring the noxious taste, they have it safely stored away by the time the thunder growls overhead.",
-    "exp": 25,
-    "frequency": 4,
-    "herbs": ["ragwort"],
-    "relationships": [
-    { 
-    "cats_from": ["p_l"],
-    "cats_to": ["app1"],
-    "mutual": true,
-    "values": ["trust","respect"],
-    "amount": 6,
-    "log": {
-    "cats_from": "Sharing the burden of ragwort's foul taste brought cat_from and cat_to closer together, and cat_from noted {PRONOUN/cat_from/poss} apprentice's dutifulness."
-    }
-    }
-    ],
-    "art": "cat_sprites/gen_med_running_McApmed_app"
-    }
-    ],
-    "fail_outcomes": [
-    {
-    "text": "It should be here, its bright yellow flowers like little suns brightening the gloom. But p_l can't seem to find any ragwort, and the gusts of wind whip away any scent {PRONOUN/p_l/subject} could follow. Thunder growls, and the first scattering of raindrops hits app1's coat. p_l's eyes widen. Lightning flashes behind the two cats as they sprint for camp, returning half-drenched and ragwortless.",
-    "exp": 0,
-    "frequency": 4,
-    "art": "cat_sprites/gen_med_rainygathering_Mc"
-    }
-    ]
-},
-
-{
-    "patrol_id": "bch_med_leaffallragwort3",
-    "biome": ["beach"],
-    "season": ["leaf-fall"],
-    "types": ["herb_gathering"],
-    "tags": [],
-    "patrol_art": "cat_sprites/gen_bord_flashflood_Wr",
-    "min_cats": 2,
-    "max_cats": 2,
-    "min_max_status": {
-        "apprentice": [
-            -1,
-            -1
+        "event_id": "bch_med_leaffallragwort3",
+        "types": [
+            "herb_gathering"
         ],
-        "medicine cat apprentice": [
-            -1,
-            -1
+        "frequency": 3,
+        "location": [
+            "beach"
         ],
-        "medicine cat": [
-            1,
-            1
+        "season": [
+            "leaf-fall"
         ],
-        "warrior": [
-            1,
-            1
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ],
+            "apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat apprentice": [
+                -1,
+                -1
+            ],
+            "medicine cat": [
+                1,
+                1
+            ],
+            "warrior": [
+                1,
+                1
+            ]
+        },
+        "involved_cats": {
+            "r_c0": {}
+        },
+        "chance_of_success": 50,
+        "patrol_art": "cat_sprites/gen_bord_flashflood_Wr",
+        "intro_text": "Dark clouds gather on the seaward horizon. p_l walks through the sand, weaving from dune to dune, eager to be back before the storm hits. But not without ragwort. {PRONOUN/p_l/poss/CAP} warrior companion pads along behind, warily glancing at the sky and p_l in turns.",
+        "decline_text": "Actually, ragwort can wait, because the storm won't. p_l and r_c0 turn back to camp.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_med_running_McWr",
+                "strings": [
+                    "Thankfully, ragwort still flowers late into the season. It's a vital herb for joint pain and general strength, p_l reminds r_c0 (and {PRONOUN/p_l/self}), but that doesn't quite lessen the foul taste of the leaf-covered stems as they hurry back to camp. By the time the thunder growls overhead, p_l has it safely stored away."
+                ],
+                "exp_gained": 25,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "comfort",
+                            "respect"
+                        ],
+                        "amount": 6,
+                        "log": {
+                            "cats_from": "Sharing the burden of ragwort's foul taste brought cat_from and cat_to closer together and gave them a new appreciation for each other's roles in c_n."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "ragwort",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_med_rainygathering_Mc",
+                "strings": [
+                    "It should be here, its bright yellow flowers like little suns brightening the gloom. But p_l can't seem to find any ragwort, and the gusts of wind whip away any scent {PRONOUN/p_l/subject} could follow. Lightning flashes behind the two of them as they sprint for camp, returning half-drenched and ragwortless."
+                ],
+                "exp_gained": 0
+            }
         ]
-    },
-    "frequency": 3,
-    "chance_of_success": 50,
-    "intro_text": "Dark clouds gather on the seaward horizon. p_l walks through the sand, weaving from dune to dune, eager to be back before the storm hits. But not without ragwort. {PRONOUN/p_l/poss/CAP} warrior companion pads along behind, warily glancing at the sky and p_l in turns.",
-    "decline_text": "Actually, ragwort can wait, because the storm won't. p_l and r_c turn back to camp.",
-    "success_outcomes": [
-    {
-    "text": "Thankfully, ragwort still flowers late into the season. It's a vital herb for joint pain and general strength, p_l reminds r_c (and {PRONOUN/p_l/self}), but that doesn't quite lessen the foul taste of the leaf-covered stems as they hurry back to camp. By the time the thunder growls overhead, p_l has it safely stored away.",
-    "exp": 25,
-    "frequency": 4,
-    "herbs": ["ragwort"],
-    "relationships": [
-    { 
-    "cats_from": ["p_l"],
-    "cats_to": ["r_c"],
-    "mutual": true,
-    "values": ["comfort","respect"],
-    "amount": 6,
-    "log": {
-    "cats_from": "Sharing the burden of ragwort's foul taste brought cat_from and cat_to closer together and gave them a new appreciation for each other's roles in c_n."
     }
-    }
-    ],
-    "art": "cat_sprites/gen_med_running_McWr"
-    }
-    ],
-    "fail_outcomes": [
-    {
-    "text": "It should be here, its bright yellow flowers like little suns brightening the gloom. But p_l can't seem to find any ragwort, and the gusts of wind whip away any scent {PRONOUN/p_l/subject} could follow. Lightning flashes behind the two of them as they sprint for camp, returning half-drenched and ragwortless.",
-    "exp": 0,
-    "frequency": 4,
-    "art": "cat_sprites/gen_med_rainygathering_Mc"
-    }
-    ]
-}
 ]

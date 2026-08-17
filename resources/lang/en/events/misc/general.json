@@ -1146,6 +1146,28 @@
         ]
     },
     {
+        "event_id": "gen_misc_murderreveal_leaderdream1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "murder_reveal"
+        ],
+        "frequency": 2,
+        "event_text": "While deep in a dream, m_c is surrounded by images of blood spilled between Clanmates swirling around {PRONOUN/m_c/object}. When {PRONOUN/m_c/subject} {VERB/m_c/wake/wakes}, the visions fade, leaving behind unease and the certainty that mur_c's death was no accident.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "leader"
+            ]
+        }
+    },
+    {
         "event_id": "gen_misc_hiddenmurderreveal_medcat1",
         "location": [
             "any"
@@ -17026,23 +17048,199 @@
         }
     },
     {
-    "event_id": "gen_acc_appfeathers",
-    "location": ["any"],
-    "season": ["any"],
-    "sub_type": ["accessory"],
-    "frequency": 3,
-    "event_text": "m_c returns to camp from a successful hunt, a bird clutched in {PRONOUN/m_c/poss} jaws and its feathers adorning {PRONOUN/m_c/poss} tail.",
-    "new_accessory": [
-        "RED FEATHERS",
-        "BLUE FEATHERS",
-        "JAY FEATHERS",
-        "GULL FEATHERS",
-        "SPARROW FEATHERS"
-    ],
-    "m_c": {
-        "status": ["apprentice"]
-    }
-},
+        "event_id": "gen_misc_leader_starclan1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "event_text": "m_c dreams of r_c surrounded by swirling mist and light. {PRONOUN/r_c/subject/CAP} {VERB/r_c/are/is} silent, but the message is clear and comforting when m_c wakes.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "skill": [
+                "STAR,3"
+            ],
+            "status": [
+                "leader"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "leader"
+            ],
+            "group": [
+                "starclan"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "comfort"
+                ],
+                "amount": 4,
+                "log": {
+                    "cats_from": "cat_from felt comforted after dreaming of cat_to watching over their leadership."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_starclanparent_comfort1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "event_text": "m_c dreams of r_c in mist and light. {PRONOUN/r_c/poss/CAP} warmth encircles the two long enough for m_c to wake with the feeling lingering on {PRONOUN/m_c/poss} pelt.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "skill": [
+                "STAR,2"
+            ],
+            "status": [
+                "any"
+            ],
+            "relationship_status": [
+                "child/parent"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ],
+            "group": [
+                "starclan"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "comfort"
+                ],
+                "amount": 4,
+                "log": {
+                    "cats_from": "cat_from felt comforted after dreaming of cat_to."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_leader_darkforest1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "event_text": "m_c dreams of darkness and cold. A shudder rolls through {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} {VERB/m_c/notice/notices} r_c staring back at {PRONOUN/m_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/are/is} silent, ready to pounce. When m_c wakes, the unease lingers on {PRONOUN/m_c/poss} pelt, a reminder of the message received.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "skill": [
+                "DARK,3"
+            ],
+            "status": [
+                "leader"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "leader"
+            ],
+            "group": [
+                "dark_forest"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_misc_darkforestparent_taunt1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "event_text": "m_c dreams of r_c lurking in the shadows. Voices emerge from the dark and circle the two in bitter coldness. m_c wakes gasping, the words still crawling under {PRONOUN/m_c/poss} skin.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "skill": [
+                "DARK,2"
+            ],
+            "status": [
+                "any"
+            ],
+            "relationship_status": [
+                "child/parent"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ],
+            "group": [
+                "dark_forest"
+            ]
+        }
+    },
+    {
+        "event_id": "gen_acc_appfeathers",
+        "location": ["any"],
+        "season": ["any"],
+        "sub_type": ["accessory"],
+        "frequency": 3,
+        "event_text": "m_c returns to camp from a successful hunt, a bird clutched in {PRONOUN/m_c/poss} jaws and its feathers adorning {PRONOUN/m_c/poss} tail.",
+        "new_accessory": [
+            "RED FEATHERS",
+            "BLUE FEATHERS",
+            "JAY FEATHERS",
+            "GULL FEATHERS",
+            "SPARROW FEATHERS"
+        ],
+        "m_c": {
+            "status": ["apprentice"]
+        }
+    },
     {
     "event_id": "gen_misc_accessoryrookeryPOI3",
     "location": ["any"],
@@ -17439,5 +17637,86 @@
             }
         }
       ]
+    },
+    {
+        "event_id": "gen_misc_taintedPOI_stinky1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": [
+                "tainted"
+            ]
+        },
+        "frequency": 2,
+        "event_text": "Everyone can smell when m_c pads back into camp from {POI/tag/tainted}. It's going to take some serious grooming to get rid of the stench!",
+        "m_c": {
+            "age": [
+                "-newborn",
+                "-kitten"
+            ],
+            "trait": [
+                "childish",
+                "gloomy",
+                "lonesome",
+                "oblivious",
+                "shameless",
+                "strange",
+                "troublesome"
+            ],
+            "dies": false
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "some_clan",
+                    "low_social"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": -5,
+                "log": {
+                    "cats_from": "cats_from wishes cats_to had taken time to groom the stink from {POI/tag/tainted} before returning."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_taintedPOI_stinkymate",
+        "location": ["-desert"],
+        "season": ["any"],
+        "tags":["romance"],
+        "poi": {
+            "tags": ["tainted"]
+        },
+        "frequency": 1,
+        "event_text": "When m_c returned from {POI/tag/tainted} smelling absolutely vile, r_c refused to share tongues with {PRONOUN/m_c/object} unless {PRONOUN/m_c/subject} took a swim. In return, m_c pulled r_c in with {PRONOUN/m_c/object}, and there was far more splashing about together than washing up.",
+        "m_c": {
+            "relationship_status": ["mates"],
+            "trait": ["-bloodthirsty", "-cold", "-gloomy", "-grumpy", "-strict"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": true,
+                "values": ["romance", "like", "comfort"],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cats_from had a fun time splashing around together with cats_to after they enforced a bath.",
+                    "cats_to": "cats_to enjoyed pulling cats_from into the water with them and playing around like kits."
+               }
+            }
+        ]
     }
 ]

@@ -315,6 +315,15 @@ class CatSkills:
     def __repr__(self) -> str:
         return f"<CatSkills: Primary: |{self.primary}|, Secondary: |{self.secondary}|, Hidden: |{self.hidden}|>"
 
+    def get_all(self) -> dict:
+        skill_dict = {}
+        if self.primary:
+            skill_dict[self.primary.path] = self.primary.tier
+        if self.secondary:
+            skill_dict[self.secondary.path] = self.secondary.tier
+
+        return skill_dict
+
     @staticmethod
     def generate_new_catskills(
         rank: CatRank,
@@ -594,19 +603,12 @@ class CatSkills:
         """
 
         if isinstance(path, str):
-            # Try to conter to Skillpath or HiddenSkillEnum
             try:
                 path = SkillPath[path]
             except KeyError:
-                try:
-                    path = HiddenSkillEnum[path]
-                except KeyError:
-                    raise KeyError(f"{path} is not a real skill path")
+                raise KeyError(f"{path} is not a real skill path")
 
-        if isinstance(path, HiddenSkillEnum):
-            if path == self.hidden:
-                return True
-        elif isinstance(path, SkillPath):
+        if isinstance(path, SkillPath):
             if self.primary:
                 if path == self.primary.path and self.primary.tier >= min_tier:
                     return True
@@ -624,21 +626,34 @@ class CatSkills:
         restrictions. Returns an integer value of how many skills requirements are met.
         """
         skills_meet = 0
-        min_tier = 0
         for _skill in skill_list:
-            spl = _skill.split(",")
+            info = _skill.split(",")
 
-            if len(spl) != 2:
+            if "-" in info[0]:
+                is_exclusionary = True
+                info[0] = info[0].replace("-", "")
+            else:
+                is_exclusionary = False
+
+            if len(info) != 2:
                 print("Incorrectly formatted skill restriction", _skill)
                 continue
             try:
-                min_tier = int(spl[1])
+                min_tier = int(info[1])
             except ValueError:
                 print("Min Skill Tier cannot be converted to int", _skill)
                 continue
 
-            if self.meets_skill_requirement(spl[0], min_tier):
-                skills_meet += 1
+            if self.meets_skill_requirement(info[0], min_tier):
+                if info[0] == self.primary.path:
+                    skills_meet += self.primary.tier
+                elif self.secondary:
+                    skills_meet += self.secondary.tier
+                break
+
+            elif is_exclusionary:
+                skills_meet += self.primary.tier
+                break
 
         return skills_meet
 

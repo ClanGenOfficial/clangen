@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_leader",
+        "event_id": "gen_leader",
         "strings": [
             "Is hoping for a sign from StarClan",
             "Is hoping that {PRONOUN/m_c/subject} {VERB/m_c/are/is} leading {PRONOUN/m_c/poss} Clan well",
@@ -27,7 +27,7 @@
         ]
     },
     {
-        "id": "leader_DF",
+        "event_id": "leader_DF",
         "strings": [
             "Thinks {PRONOUN/m_c/subject} {VERB/m_c/have/has} been hearing the voices of Dark Forest cats...",
             "Is pondering recent dreams {PRONOUN/m_c/subject} {VERB/m_c/have/has} had... perhaps from the Dark Forest?"
@@ -41,7 +41,7 @@
         }
     },
     {
-        "id": "leader_alive_kits",
+        "event_id": "leader_alive_kits",
         "strings": [
             "Has recently picked up the scent of mischievous kits in {PRONOUN/m_c/poss} den...",
             "Is pondering the next mentors for the kits of the Clan",
@@ -62,7 +62,7 @@
         }
     },
     {
-        "id": "leader_alive_apprentices",
+        "event_id": "leader_alive_apprentices",
         "strings": [
             "Is assessing some apprentices",
             "Is satisfied that r_c is doing well in {PRONOUN/r_c/poss} training",
@@ -83,7 +83,7 @@
         }
     },
     {
-        "id": "leader_alive_deputy",
+        "event_id": "leader_alive_deputy",
         "strings": [
             "Tries to set a good example for the deputy",
             "Has been letting {PRONOUN/m_c/poss} deputy call the shots recently and is proud of {PRONOUN/r_c/poss} initiative",
@@ -106,7 +106,7 @@
         }
     },
     {
-        "id": "ambitious_leader",
+        "event_id": "ambitious_leader",
         "strings": [
             "Considers expanding the borders",
             "Makes sure all cats are battle ready"
@@ -122,7 +122,7 @@
         }
     },
     {
-        "id": "bold_leader",
+        "event_id": "bold_leader",
         "strings": [
             "Considers expanding the borders",
             "Feels confident that the Clan admires {PRONOUN/m_c/object}"
@@ -138,7 +138,7 @@
         }
     },
     {
-        "id": "bloodthirsty_leader",
+        "event_id": "bloodthirsty_leader",
         "strings": [
             "Encourages warriors to start fights on border patrols",
             "Is debating if {PRONOUN/m_c/subject} should declare a war with another Clan",
@@ -166,7 +166,7 @@
         }
     },
     {
-        "id": "calm_leader",
+        "event_id": "calm_leader",
         "strings": [
             "Stays composed when a cat comes to {PRONOUN/m_c/object} in a panic",
             "Watches over all the cats"
@@ -182,7 +182,7 @@
         }
     },
     {
-        "id": "careful_leader",
+        "event_id": "careful_leader",
         "strings": [
             "Reminds a patrol not to stray over the border"
         ],
@@ -197,7 +197,7 @@
         }
     },
     {
-        "id": "charismatic_leader",
+        "event_id": "charismatic_leader",
         "strings": [
             "Gives a particularly rousing speech at a Clan meeting",
             "Feels confident that the Clan admires {PRONOUN/m_c/object}"
@@ -213,7 +213,7 @@
         }
     },
     {
-        "id": "childish_leader",
+        "event_id": "childish_leader",
         "strings": [
             "Pranks r_c by switching {PRONOUN/r_c/poss} fresh-kill with crow-food"
         ],
@@ -233,7 +233,7 @@
         }
     },
     {
-        "id": "cold_leader",
+        "event_id": "cold_leader",
         "strings": [
             "Rolls {PRONOUN/m_c/poss} eyes when r_c suggests sharing their fresh-kill with other Clans"
         ],
@@ -253,7 +253,7 @@
         }
     },
     {
-        "id": "insecure_leader",
+        "event_id": "insecure_leader",
         "strings": [
             "Thinks {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} deserve StarClan's blessing of 9 lives",
             "Wonders if cats like {PRONOUN/m_c/object} as a leader"
@@ -269,7 +269,7 @@
         }
     },
     {
-        "id": "strange_leader",
+        "event_id": "strange_leader",
         "strings": [
             "No thoughts, head empty",
             "Insists that {PRONOUN/m_c/subject} received ten lives instead of nine",
@@ -287,7 +287,7 @@
         }
     },
     {
-        "id": "leader_meanie_deputy_meanie",
+        "event_id": "leader_meanie_deputy_meanie",
         "strings": [
             "Is pleased with r_c's ruthless treatment of the warriors",
             "Is sparring violently with r_c, both drawing blood",
@@ -328,7 +328,7 @@
         }
     },
     {
-        "id": "leader_meanie_med_meanie",
+        "event_id": "leader_meanie_med_meanie",
         "strings": [
             "Is pleased that r_c is withholding herbs from the weaker cats",
             "Instructs r_c to let a sick cat die",
@@ -367,7 +367,7 @@
         }
     },
     {
-        "id": "leader_nice_deputy_meanie",
+        "event_id": "leader_nice_deputy_meanie",
         "strings": [
             "Is wondering if {PRONOUN/m_c/subject} made a mistake by appointing r_c",
             "Is trying to teach r_c to lead with kindness",
@@ -408,7 +408,7 @@
         }
     },
     {
-        "id": "gen_former_kittypet_leader",
+        "event_id": "gen_former_kittypet_leader",
         "strings": [
             "Is proud of how far {PRONOUN/m_c/subject} {verb/m_c/have/has} come from {PRONOUN/m_c/poss} kittypet life",
             "Would never wish to return to {PRONOUN/m_c/poss} old kittypet life",
@@ -437,7 +437,7 @@
         }
     },
     {
-        "id": "leader_to_newborn",
+        "event_id": "leader_to_newborn",
         "strings": [
             "Believes c_n is thriving with the birth of the new litter",
             "Feels more pressure to protect c_n after meeting the new litter",

@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_comfort_low_neg1",
+        "event_id": "gen_comfort_low_neg1",
         "strings": [
 			"r_c stared at m_c for an uncomfortably long time when m_c first entered camp."
         ]

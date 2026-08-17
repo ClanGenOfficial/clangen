@@ -1,89 +1,126 @@
 [
     {
-        "patrol_id": "wtlnd_hunt_heat1",
-        "biome": [
+        "event_id": "wtlnd_hunt_heat1",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 2,
+        "location": [
             "wetlands"
         ],
         "season": [
             "greenleaf"
         ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ]
+        },
+        "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
         "intro_text": "It's extremely hot out today, and the hunting patrol lingers in the cool beds of reeds, letting the water lap between their toes.",
         "decline_text": "The patrol decides to head back to camp. They can hunt a different day.",
-        "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "The prey gets sluggish in the heat, as the cats stay cool and ready. When the patrol spots a couple of nests in the reeds they get to work, fishing the eggs out carefully and lying in wait until they catch the songbird parents too. r_c even manages to add a cuckoo to their catches.",
-                "exp": 15,
-                "prey": [
-                    "large"
+                "frequency": 4,
+                "strings": [
+                    "The prey gets sluggish in the heat, as the cats stay cool and ready. When the patrol spots a couple of nests in the reeds they get to work, fishing the eggs out carefully and lying in wait until they catch the songbird parents too. r_c0 even manages to add a cuckoo to their catches."
                 ],
-            "relationships": [
-                {
-                    "cats_from": ["patrol"],
-                    "cats_to": ["patrol"],
-                    "values": ["trust", "like"],
-                    "mutual": false,
-                    "amount": 3,
-                    "log":
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 15,
+                "relationship_changes": [
                     {
-                        "cats_from": "cat_from and cat_to had a fun hunt on a hot greenleaf day."
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "trust",
+                            "like"
+                        ],
+                        "mutual": false,
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had a fun hunt on a hot greenleaf day."
+                        }
                     }
-                }
-            ],
-                "frequency": 4
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
             },
             {
-                "text": "The cats go wading in one of the vast muddy stretches, only for their paws to hit dry ground instead, as the sun has burned the mud dry. They take the chance to go mud-fishing, digging up stranded fish and frogs from the mud trap until they nearly have too much to carry back to camp.",
-                "exp": 15,
-                "prey": [
-                    "large"
+                "frequency": 1,
+                "strings": [
+                    "The cats go wading in one of the vast muddy stretches, only for their paws to hit dry ground instead, as the sun has burned the mud dry. They take the chance to go mud-fishing, digging up stranded fish and frogs from the mud trap until they nearly have too much to carry back to camp."
                 ],
-            "relationships": [
-                {
-                    "cats_from": ["patrol"],
-                    "cats_to": ["patrol"],
-                    "values": ["trust", "like"],
-                    "mutual": false,
-                    "amount": 3,
-                    "log":
+                "exp_gained": 15,
+                "relationship_changes": [
                     {
-                        "cats_from": "cat_from and cat_to had a fun hunt on a hot greenleaf day."
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "trust",
+                            "like"
+                        ],
+                        "mutual": false,
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had a fun hunt on a hot greenleaf day."
+                        }
                     }
-                }
-            ],
-                "frequency": 1
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "No way, it's too hot for this. They can try to hunt again later.",
-                "exp": 0,
-            "relationships": [
-                {
-                    "cats_from": ["patrol"],
-                    "cats_to": ["patrol"],
-                    "values": ["respect"],
-                    "mutual": false,
-                    "amount": -3,
-                    "log":
-                    {
-                        "cats_from": "cat_from and cat_to gave up on a hunt because of the weather."
-                    }
-                }
-            ],
-                "prey": [
-                    "very_small"
+                "frequency": 4,
+                "strings": [
+                    "No way, it's too hot for this. They can try to hunt again later."
                 ],
-                "frequency": 4
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "cat_from and cat_to gave up on a hunt because of the weather."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
             }
         ]
     }
