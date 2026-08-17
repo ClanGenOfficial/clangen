@@ -1,6 +1,6 @@
 [
     {
-        "id": "general_rogue_dead_thoughts",
+        "event_id": "general_rogue_dead_thoughts",
         "strings": [
             "Growls viciously at anything that moves",
             "Ignores the pain in {PRONOUN/m_c/poss} belly",

@@ -1,6 +1,6 @@
 [
     {
-        "id": "med_cat_app_gen",
+        "event_id": "med_cat_app_gen",
         "strings": [
             "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} good enough to become a medicine cat",
             "Helps apply a poultice to a small wound",
@@ -22,7 +22,7 @@
         ]
     },
     {
-        "id": "med_cat_alive_apprentice",
+        "event_id": "med_cat_alive_apprentice",
         "strings": [
             "Wonders if r_c would have been a better healer",
             "Wishes the other apprentices could understand how {PRONOUN/m_c/subject} {VERB/m_c/feel/feels}",
@@ -47,7 +47,7 @@
         }
     },
     {
-        "id": "medicine_cat_apprentice_alive_elder",
+        "event_id": "medicine_cat_apprentice_alive_elder",
         "strings": [
             "Was asked to gather fresh moss for the elders' bedding",
             "Plans to visit the elders soon",
@@ -71,7 +71,7 @@
         }
     },
     {
-        "id": "medicine_cat_apprentice_to_medicine_cat",
+        "event_id": "medicine_cat_apprentice_to_medicine_cat",
         "strings": [
             "Wants to help r_c gather fresh herbs",
             "Is watching r_c work",
@@ -93,7 +93,7 @@
         }
     },
     {
-        "id": "insecure_medicine_cat_apprentice",
+        "event_id": "insecure_medicine_cat_apprentice",
         "strings": [
             "Is wondering if {PRONOUN/m_c/subject} {VERB/m_c/are/is} a good enough medicine cat apprentice",
             "Is always worrying about {PRONOUN/m_c/poss} patients",
@@ -115,7 +115,7 @@
         }
     },
     {
-        "id": "meanie_medicine_cat_apprentice",
+        "event_id": "meanie_medicine_cat_apprentice",
         "strings": [
             "Is hoping {PRONOUN/m_c/poss} medicine cat name will end in -claw",
             "Wants to learn some battle moves... just in case",
@@ -139,7 +139,7 @@
         }
     },
     {
-        "id": "nice_medicine_cat_apprentice",
+        "event_id": "nice_medicine_cat_apprentice",
         "strings": [
             "Is vowing to help any cat in need",
             "Is looking to StarClan for guidance in a difficult decision",
@@ -162,7 +162,7 @@
         }
     },
     {
-        "id": "nice_medicine_cat_apprentice_to_meanie_med",
+        "event_id": "nice_medicine_cat_apprentice_to_meanie_med",
         "strings": [
             "Is unsure of r_c's treatment methods",
             "Wonders why r_c decided to be a medicine cat",
@@ -201,7 +201,7 @@
         }
     },
     {
-        "id": "medicine_cat_apprentice_meanie_to_meanie_med",
+        "event_id": "medicine_cat_apprentice_meanie_to_meanie_med",
         "strings": [
             "Is plotting the downfall of c_n with r_c",
             "Is meeting secretly with r_c to discuss a new 'treatment' method",
@@ -242,7 +242,7 @@
         }
     },
     {
-        "id": "meanie_medicine_cat_apprentice_to_nice_med",
+        "event_id": "meanie_medicine_cat_apprentice_to_nice_med",
         "strings": [
             "Thinks r_c is far too soft with {PRONOUN/r_c/poss} patients",
             "Wishes r_c wasn't so soft",
@@ -279,7 +279,7 @@
         }
     },
     {
-        "id": "med_cat_app_to_dead_SC_kit",
+        "event_id": "med_cat_app_to_dead_SC_kit",
         "strings": [
             "Is wondering if r_c would have bothered {PRONOUN/m_c/object} while {PRONOUN/m_c/subject} {VERB/m_c/were/was} sorting herbs",
             "Wonders if {PRONOUN/m_c/subject} would have had to treat r_c for kittencough",
@@ -297,7 +297,7 @@
         }
     },
     {
-        "id": "general_med_cat_app_to_dead_starclan_newborn1",
+        "event_id": "general_med_cat_app_to_dead_starclan_newborn1",
         "strings": [
             "Wonders if {PRONOUN/m_c/subject} would have gotten the chance to do r_c's first check-up",
             "Can still smell the bitter herbs that {PRONOUN/m_c/subject} desperately fetched to try and save r_c's life",
@@ -332,7 +332,7 @@
         }
     },
     {
-        "id": "plain_med_cat_app_to_dead_starclan_newborn",
+        "event_id": "plain_med_cat_app_to_dead_starclan_newborn",
         "location": [
             "plains"
         ],
@@ -359,7 +359,7 @@
         }
     },
     {
-        "id": "med_cat_app_dead_app",
+        "event_id": "med_cat_app_dead_app",
         "strings": [
             "Is wondering if r_c would have been {PRONOUN/m_c/poss} friend",
             "Wonders if {PRONOUN/m_c/subject} would have swapped secrets with r_c"
@@ -378,7 +378,7 @@
         }
     },
     {
-        "id": "med_cat_app_to_alive_non-medcat_crush",
+        "event_id": "med_cat_app_to_alive_non-medcat_crush",
         "strings": [
             "Brags to r_c about the important work {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} doing",
             "Gives r_c a tour of the medicine cat den to impress {PRONOUN/r_c/object}",

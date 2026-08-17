@@ -48,7 +48,7 @@ Altogether this might look like `normal_interations/comfort/medium/negative.json
 
 ```json
 {
-    "id": "test",
+    "event_id": "test",
     "strings": [
         "m_c spent time chatting with r_c."
     ]
@@ -58,7 +58,7 @@ Altogether this might look like `normal_interations/comfort/medium/negative.json
 ### Full Format
 ```json
     {
-        "id": "test",
+        "event_id": "test",
         "location": [],
         "season": [],
         "tags": [],

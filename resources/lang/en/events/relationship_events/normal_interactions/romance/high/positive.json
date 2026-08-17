@@ -1,6 +1,6 @@
 [
     {
-        "id": "rom_inc_high1",
+        "event_id": "rom_inc_high1",
         "strings": [
             "m_c is spending a lot of time with r_c.",
             "m_c enjoys the time with r_c and feels secure.",
@@ -34,7 +34,7 @@
         ]
     },
     {
-        "id": "rom_inc_high2",
+        "event_id": "rom_inc_high2",
         "strings": [
             "m_c gave a pretty flower {PRONOUN/m_c/subject} found to r_c.",
             "m_c picks some fragrant flowers for r_c.",
@@ -60,7 +60,7 @@
         ]
     },
     {
-        "id": "rom_inc_high3",
+        "event_id": "rom_inc_high3",
         "strings": [
             "m_c is rolling around a little too playfully with r_c...",
             "m_c could spend hours listening to r_c's voice.",
@@ -99,7 +99,7 @@
         ]
     },
     {
-        "id": "rom_inc_high4",
+        "event_id": "rom_inc_high4",
         "strings": [
             "m_c was caught enjoying a moonlit stroll with r_c last night...",
             "m_c sneaks out at night to sleep in r_c's nest.",
@@ -142,7 +142,7 @@
         ]
     },
     {
-        "id": "rom_inc_high5",
+        "event_id": "rom_inc_high5",
         "strings": [
             "m_c purrs for a long time at one of r_c's lame jokes.",
             "m_c can't stop gushing over r_c."
@@ -180,7 +180,7 @@
         ]
     },
     {
-        "id": "rom_inc_high6",
+        "event_id": "rom_inc_high6",
         "strings": [
             "m_c takes r_c out to look at the stars, explaining the constellations to {PRONOUN/r_c/object}.",
             "m_c tells r_c romantic stories of old."
@@ -213,7 +213,7 @@
         ]
     },
     {
-        "id": "rom_inc_high_warrior7",
+        "event_id": "rom_inc_high_warrior7",
         "strings": [
             "m_c came back to camp sulking after failing to catch r_c's favorite prey for {PRONOUN/r_c/object} but {PRONOUN/r_c/subject} {VERB/r_c/doesn't/didn't} seem to care, nuzzling into m_c's neck.",
             "m_c goes out of {PRONOUN/m_c/poss} way to catch r_c's favorite prey.",
@@ -270,7 +270,7 @@
         ]
     },
     {
-        "id": "rom_inc_high_matetraittroublesome",
+        "event_id": "rom_inc_high_matetraittroublesome",
         "strings": [
             "m_c finds r_c's attitude exciting.",
             "m_c wonders what kinds of trouble {PRONOUN/m_c/subject} and r_c could get into together.",
@@ -286,7 +286,7 @@
         }
     },
     {
-        "id": "rom_inc_high_matetraitlonesome",
+        "event_id": "rom_inc_high_matetraitlonesome",
         "strings": [
             "m_c thinks r_c's still waters must run deep.",
             "m_c wants to know what's going on in r_c's head.",
@@ -302,7 +302,7 @@
         }
     },
     {
-        "id": "rom_inc_high_matetraitfierce",
+        "event_id": "rom_inc_high_matetraitfierce",
         "strings": [
             "r_c's passion for everything excites m_c.",
             "m_c thinks r_c would defend {PRONOUN/m_c/object} with {PRONOUN/r_c/poss} life.",
@@ -318,7 +318,7 @@
         }
     },
     {
-        "id": "rom_inc_high_matetraitbloodthirsty",
+        "event_id": "rom_inc_high_matetraitbloodthirsty",
         "strings": [
             "m_c thinks nothing bad would ever happen to {PRONOUN/m_c/object} with a cat like r_c in {PRONOUN/m_c/poss} corner.",
             "m_c finds r_c's intimidating aura thrilling.",
@@ -334,7 +334,7 @@
         }
     },
     {
-        "id": "rom_inc_high_matetraitcold",
+        "event_id": "rom_inc_high_matetraitcold",
         "strings": [
             "m_c is flustered by r_c's cool and unflappable attitude.",
             "m_c admires how nothing seems to faze r_c.",
@@ -350,7 +350,7 @@
         }
     },
     {
-        "id": "rom_inc_high_matetraitplayful",
+        "event_id": "rom_inc_high_matetraitplayful",
         "strings": [
             "r_c helps m_c lighten up and enjoy life more.",
             "m_c always purrs with laughter around r_c.",
@@ -366,7 +366,7 @@
         }
     },
     {
-        "id": "rom_inc_high_matetraitcharismatic",
+        "event_id": "rom_inc_high_matetraitcharismatic",
         "strings": [
             "m_c falls prey to r_c's charming personality.",
             "r_c is easy to like, almost infuriatingly so. m_c is peeved to realize {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not immune.",
@@ -382,7 +382,7 @@
         }
     },
     {
-        "id": "rom_inc_high_matetraitbolddaring",
+        "event_id": "rom_inc_high_matetraitbolddaring",
         "strings": [
             "r_c's reckless courage leaves m_c breathless.",
             "m_c is tired of cats who are all talk and no action, which is why r_c is so thrilling.",
@@ -398,7 +398,7 @@
         }
     },
     {
-        "id": "rom_inc_high_matetraitnervous",
+        "event_id": "rom_inc_high_matetraitnervous",
         "strings": [
             "m_c wants to reassure r_c that {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing a great job.",
             "m_c finds r_c's anxious behavior endearing.",
@@ -414,7 +414,7 @@
         }
     },
     {
-        "id": "rom_inc_high_matetraitinsecure",
+        "event_id": "rom_inc_high_matetraitinsecure",
         "strings": [
             "The way r_c worries over other cats' feelings charms m_c.",
             "m_c wants to see r_c blossom and grow as a cat.",
@@ -430,7 +430,7 @@
         }
     },
     {
-        "id": "rom_inc_high_matetraitrighteous",
+        "event_id": "rom_inc_high_matetraitrighteous",
         "strings": [
             "m_c finds r_c's strength of belief inspiring and attractive.",
             "m_c appreciates that r_c can lay down the law.",

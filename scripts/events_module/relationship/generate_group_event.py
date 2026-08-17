@@ -16,7 +16,7 @@ from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
 )
 from scripts.events_module.text_adjust import process_text, adjust_list_text
-from scripts.events_module.text_pool_event import TextPoolEvent
+from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 
@@ -219,7 +219,7 @@ def _find_events_for_main_cat(cat: Cat, possible_events: List[TextPoolEvent]) ->
         if event_for_cat(
             event.involved_cats["m_c"],
             cat,
-            event_id=event.id,
+            event_id=event.event_id,
         ):
             allowed.append(event)
 
@@ -331,7 +331,7 @@ def _get_multi_cats(
         # no matter what, cat is no longer allowed in the possible_cats list
         possible_cats.remove(cat)
 
-        # bad cat :( remove from possibilities and try and new one
+        # bad cat :( remove from possibilities and try a new one
         if failed:
             _temp_involved_cats["multi_cat"].remove(cat)
         else:
@@ -355,7 +355,7 @@ def _load_file(path) -> list[TextPoolEvent]:
         for t in load_lang_resource(path):
             loaded_events[path].append(
                 TextPoolEvent(
-                    id=t.get("id"),
+                    event_id=t.get("id"),
                     location=t.get("location", []),
                     season=t.get("season", []),
                     tags=t.get("tags", []),

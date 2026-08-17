@@ -96,6 +96,9 @@ class UIScrollingButtonList(UIModifiedScrollingContainer):
                     if name in self.selected_list
                     else self.selected_list.append(name)
                 )
+                pygame.event.post(
+                    pygame.event.Event(SELECTION_CHANGED, {"ui_element": self})
+                )
                 break
 
             # single choice
@@ -109,6 +112,9 @@ class UIScrollingButtonList(UIModifiedScrollingContainer):
                     for other_button in self.buttons.values():
                         other_button.enable()
                     button.disable()
+                pygame.event.post(
+                    pygame.event.Event(SELECTION_CHANGED, {"ui_element": self})
+                )
                 break
 
         super().update(time_delta)
@@ -119,11 +125,11 @@ class UIScrollingButtonList(UIModifiedScrollingContainer):
             self.vert_scroll_bar.hide()
 
     def set_selected_list(self, new_list):
-        self.selected_list.clear()
         self.selected_list = new_list
         if self.disable_selection:
             for item in self.selected_list:
                 self.buttons[item].disable()
+        pygame.event.post(pygame.event.Event(SELECTION_CHANGED, {"ui_element": self}))
 
     def new_item_list(self, item_list):
         """
@@ -149,3 +155,6 @@ class UIScrollingButtonList(UIModifiedScrollingContainer):
                 anchors={"top_target": prev_element} if prev_element else None,
             )
             prev_element = self.buttons[child]
+
+
+SELECTION_CHANGED: int = pygame.event.custom_type()

@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_newly_lost",
+        "event_id": "gen_newly_lost",
         "strings": [
             "Looks around in confusion"
         ]

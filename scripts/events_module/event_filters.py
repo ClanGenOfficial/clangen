@@ -1,7 +1,7 @@
 import re
 from itertools import combinations
 from random import choice, randint
-from typing import List, Optional, Dict, Union
+from typing import List, Optional, Dict, Union, Literal
 
 from scripts.cat.constants import BACKSTORIES
 from scripts.cat.personality import Personality
@@ -127,15 +127,12 @@ def event_for_season(seasons: list) -> bool:
     return is_exclusionary
 
 
-def event_for_tags(
-    tags: list, cat, other_cat=None, mentor_tags_fulfilled: dict = None
-) -> bool:
+def event_for_tags(tags: list, cat, other_cat=None) -> bool:
     """
     Checks if current tags disqualify the event.
     :param tags: Tags to check validity for.
     :param cat: Main cat to compare against tags.
     :param other_cat: Secondary cat to compare against tags.
-    :param mentor_tags_fulfilled: Dict of mentor values used to validate mentor tags. Only utilized by patrols.
     """
     if not tags:
         return True
@@ -223,14 +220,6 @@ def event_for_tags(
         if not special_date or special_date.patrol_tag not in tags:
             return False
 
-    if "all_mentored" in tags:
-        return mentor_tags_fulfilled.get("general", False)
-    for _tag in tags:
-        if re.match(r"app[1-6]_mentored", _tag) and not mentor_tags_fulfilled.get(
-            _tag, False
-        ):
-            return False
-
     return True
 
 
@@ -293,7 +282,12 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
     return current_standing in required_rel
 
 
-def event_for_freshkill_supply(pile, trigger, factor, clan_size) -> bool:
+def event_for_freshkill_supply(
+    pile,
+    trigger: Literal["always", "low", "adequate", "full", "excess"],
+    factor,
+    clan_size,
+) -> bool:
     """
     checks if clan has the correct amount of freshkill for event
     """
@@ -363,6 +357,24 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
         return False
 
 
+def event_for_required_cat_types(
+    required_types: dict[str, list[int]], current_cat_types: dict[str, list]
+) -> bool:
+    """
+    Checks if the required_types dict is being fulfilled
+    """
+
+    for c_type, amount_range in required_types.items():
+        type_list = current_cat_types.get(c_type, [])
+        if amount_range[1] == -1 and not type_list:
+            continue
+
+        if amount_range[0] > len(type_list) or len(type_list) > amount_range[1]:
+            return False
+
+    return True
+
+
 def event_for_cat(
     cat_info: Union[dict, InvolvedCatDict],
     cat,
@@ -415,6 +427,10 @@ def event_for_cat(
             raise TypeError(
                 f"Input contains invalid data, check traceback!\ncat_info: {cat_info}\nevent_id: {event_id}"
             ) from e
+
+    # checking mentor
+    if cat_info.get("has_mentor") and not cat.mentor:
+        return False
 
     # checking groups
     if cat_info.get("group"):
@@ -1013,7 +1029,7 @@ def cat_for_event(
             return None
 
     # rel status check
-    if "romance" in tags:
+    if "romance" in tags and comparison_cat:
         allowed_cats = list(
             set(allowed_cats).intersection(set(get_possible_mates(comparison_cat)[0]))
         )
@@ -1314,21 +1330,23 @@ def check_rel_constraint_groups(
         # if we don't have any cats to compare, then just send back
         return True
 
-    cats_from = [
-        involved_cats[c]
-        for c in constraints_dict["cats_from"]
-        if c in involved_cats and c != "multi_cat"
-    ]
-    if "multi_cat" in constraints_dict["cats_from"]:
-        cats_from.extend(involved_cats.get("multi_cat", []))
+    cats_from = []
+    for abbr in constraints_dict["cats_from"]:
+        if abbr not in involved_cats:
+            continue
+        if isinstance(involved_cats[abbr], list):
+            cats_from.extend(involved_cats[abbr])
+        else:
+            cats_from.append(involved_cats[abbr])
 
-    cats_to = [
-        involved_cats[c]
-        for c in constraints_dict["cats_to"]
-        if c in involved_cats and c != "multi_cat"
-    ]
-    if "multi_cat" in constraints_dict["cats_to"]:
-        cats_to.extend(involved_cats.get("multi_cat", []))
+    cats_to = []
+    for abbr in constraints_dict["cats_to"]:
+        if abbr not in involved_cats:
+            continue
+        if isinstance(involved_cats[abbr], list):
+            cats_to.extend(involved_cats[abbr])
+        else:
+            cats_to.append(involved_cats[abbr])
 
     if not _filter_relationship_type_updated(
         cats_from=cats_from,
@@ -1379,6 +1397,21 @@ def _filter_relationship_type_updated(
     # if the cat meets the check AND it's an exclusionary tag: return False
     # if the cat doesn't meet the check AND it's an inclusionary tag: return False
     # otherwise, continue onwards
+
+    if "can_romance" in filter_types:
+        for cat in cats_from:
+            # if the cats CAN romance
+            if all([cat.is_potential_mate(inter_cat) for inter_cat in cats_to]):
+                if "can_romance" in exclusionary_values:
+                    return False
+            # if some but not ALL can romance
+            elif "can_romance" in inclusionary_values and any(
+                [cat.is_potential_mate(inter_cat) for inter_cat in cats_to]
+            ):
+                return False
+            # if the cats CAN'T romance
+            elif "can_romance" in inclusionary_values:
+                return False
 
     if "strangers" in filter_types:
         for cat in cats_from:

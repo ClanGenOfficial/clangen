@@ -50,7 +50,10 @@ class NewCatFactory(BaseCatFactory, ABC):
         )
 
         if pelt := overrides.get("pelt"):
-            pelt = Pelt(pelt)
+            if not isinstance(pelt, Pelt):
+                pelt = Pelt(pelt)
+            else:
+                pelt = pelt
         else:
             pelt = cls._get_random_pelt(
                 gender_dict["sex"],
