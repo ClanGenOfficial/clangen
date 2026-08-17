@@ -182,22 +182,6 @@ def _influence_relationships(involved_cats, event: TextPoolEvent, chosen_string:
         )
 
 
-def _find_events_for_main_cat(cat: Cat, possible_events: List[TextPoolEvent]) -> list:
-    """
-    Returns possible events for the given cat.
-    """
-    allowed = []
-    for event in possible_events:
-        if event_for_cat(
-            event.involved_cats["m_c"],
-            cat,
-            event_id=event.event_id,
-        ):
-            allowed.append(event)
-
-    return allowed
-
-
 def _load_file(path) -> list[TextPoolEvent]:
     """
     Loads and returns the events file
