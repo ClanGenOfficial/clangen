@@ -2,13 +2,14 @@
     "name": "SmokeRecipe",
     "layer_order": ["1", "2", "3", ["4", "5"]],
     "layers": {
+        
         "5":{
             "group_name": "SMOKEPATTERNDARK",
             "blend_mode": "mask"
         },
         "4":{
             "group_name": "SMOKEPATTERNGRAD",
-            "color": "pattern"
+            "color": "pattern_gradient_top"
         },
         "3": {
             "group_name": "SMOKEPATTERNDARK",

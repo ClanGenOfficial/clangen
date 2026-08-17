@@ -1,27 +1,34 @@
 {
     "name": "SokokeRecipe",
-    "layer_order": ["1", "2", "3", "4", ["6", ["7", "8", "+blend_mode:mask"]]],
+    "layer_order": ["1", "2", "3", "4", ["5", "6"], "7", ["8", "9"]],
     "layers": {
+        "9":{
+            "group_name": "SOKOKEPATTERN",
+            "blend_mode": "mask"
+        },
         "8":{
-            "group_name": "SOKOKEPATTERN"
-        },
-        "7":{
-            "group_name": "SOKOKEPATTERNFILL",
-            "opacity": 60
-        },
-        "6":{
             "group_name": "SOKOKEPATTERNGRAD",
             "color": "pattern_gradient_top"
         },
-        "5":{
+        "7":{
             "group_name": "SOKOKEPATTERN",
             "color": "pattern"
+        }, 
+
+        "6":{
+            "group_name": "SOKOKEPATTERNFILL",
+            "blend_mode": "mask"
+        },
+        "5": {
+            "group_name": "BASICPATTERNGRAD",
+            "color": "pattern_gradient_top"
         },
         "4":{
             "group_name": "SOKOKEPATTERNFILL",
-            "color": "pattern",
+            "color": "pattern_gradient_top",
             "opacity": 60
         },
+        
         "3": {
             "group_name": "SIMPLETOPGRAD",
             "color": "base_gradient_top"

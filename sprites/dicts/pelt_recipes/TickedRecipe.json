@@ -29,6 +29,7 @@
             "color": "pattern",
             "opacity": 50
         },
+        
         "5":{
             "group_name": "TICKEDDOTS",
             "color": "pattern",
@@ -39,6 +40,7 @@
             "color": "pattern",
             "blend_mode": "multiply"
         },
+        
         "3": {
             "group_name": "SIMPLETOPGRAD",
             "color": "base_gradient_top"

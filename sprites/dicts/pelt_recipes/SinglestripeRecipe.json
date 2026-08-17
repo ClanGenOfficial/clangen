@@ -13,6 +13,7 @@
             "group_name": "BASICPATTERNGRAD",
             "color": "pattern_gradient_top"
         },
+        
         "5":{
             "group_name": "SINGLESTRIPEOVER",
             "color": "pattern"
@@ -22,6 +23,7 @@
             "opacity": 40,
             "color": "pattern"
         },
+        
         "3": {
             "group_name": "SIMPLETOPGRAD",
             "color": "base_gradient_top"
