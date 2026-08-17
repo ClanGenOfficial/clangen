@@ -11695,7 +11695,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c is checking in on every cat in the camp to make sure everyone is staying healthy in the midst of war.",
+        "event_text": "m_c has been checking in on every cat in the camp to make sure everyone is staying healthy in the midst of war.",
         "m_c": {
             "age": [
                 "any"
@@ -11753,7 +11753,7 @@
             "war"
         ],
         "frequency": 3,
-        "event_text": "m_c goes to o_c_n in an attempt to ease the tension of war between the Clans. It doesn't go well, and o_c_n further advances in c_n's territory.",
+        "event_text": "m_c went to o_c_n in an attempt to ease the tension of war between the Clans. It didn't go well, and o_c_n further advanced in c_n's territory.",
         "m_c": {
             "age": [
                 "any"
@@ -11791,7 +11791,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c is giving r_c advice on the war, though it's unclear how helpful it really is.",
+        "event_text": "m_c gave r_c advice on the war, though it's unclear how helpful it really was.",
         "m_c": {
             "status": [
                 "mediator",
@@ -11856,7 +11856,7 @@
             "war"
         ],
         "frequency": 2,
-        "event_text": "m_c is conversing with r_c about ways to potentially end this war without bloodshed.",
+        "event_text": "m_c conversed with r_c about ways to potentially end this war without bloodshed.",
         "m_c": {
             "status": [
                 "mediator",
@@ -11915,7 +11915,7 @@
             "war"
         ],
         "frequency": 2,
-        "event_text": "m_c is conversing with r_c about ways to potentially end this war — though not without bloodshed.",
+        "event_text": "m_c conversed with r_c about ways to potentially end this war — though not without bloodshed.",
         "m_c": {
             "status": [
                 "mediator",
@@ -11976,7 +11976,7 @@
             "war"
         ],
         "frequency": 2,
-        "event_text": "m_c's knowledge of herbs and healing is put to the test by the severe injuries sustained in the war.",
+        "event_text": "m_c's knowledge of herbs and healing was put to the test by the severe injuries sustained in the war.",
         "m_c": {
             "status": [
                 "medicine cat",
@@ -11996,7 +11996,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c watches every little thing around {PRONOUN/m_c/object} for any omen that indicates what the Clan should do in the war. The losses weigh heavy on the hearts of every cat.",
+        "event_text": "m_c has been watching every little thing around {PRONOUN/m_c/object} for any omen that indicates what the Clan should do in the war. The losses weigh heavy on the hearts of every cat.",
         "m_c": {
             "status": [
                 "medicine cat apprentice",
@@ -12019,7 +12019,7 @@
             "war"
         ],
         "frequency": 2,
-        "event_text": "m_c preps battle herbs into small bundles to rush to the battlefield in case of severe injuries.",
+        "event_text": "m_c prepped battle herbs into small bundles to rush to the battlefield in case of severe injuries.",
         "m_c": {
             "age": [
                 "any"
@@ -12054,7 +12054,7 @@
             "war"
         ],
         "frequency": 2,
-        "event_text": "c_n is in a badly need of herbs, and m_c knows it, but {PRONOUN/m_c/subject} can't bring {PRONOUN/m_c/self} to leave {PRONOUN/m_c/poss} patients' side.",
+        "event_text": "c_n is badly in need of herbs and m_c knows it, but {PRONOUN/m_c/subject} hasn't been able to bring {PRONOUN/m_c/self} to leave {PRONOUN/m_c/poss} patients' side.",
         "m_c": {
             "status": [
                 "medicine cat",
@@ -12078,7 +12078,7 @@
             "war"
         ],
         "frequency": 2,
-        "event_text": "m_c hopes to find the herbs that c_n needs in the war and goes to look for them even in this leaf-bare's harsh weather.",
+        "event_text": "m_c hoped to find the herbs that c_n needs in the war and went to look for them even in this leaf-bare's harsh weather.",
         "m_c": {
             "age": [
                 "any"
@@ -12110,7 +12110,7 @@
             "war"
         ],
         "frequency": 2,
-        "event_text": "As the deputy, m_c is doing {PRONOUN/m_c/poss} best to prepare for leadership in the case the worst happens.",
+        "event_text": "As the deputy, m_c has been doing {PRONOUN/m_c/poss} best to prepare for leadership in the case the worst happens.",
         "m_c": {
             "status": [
                 "deputy"
@@ -12132,7 +12132,7 @@
             "low_lives"
         ],
         "frequency": 1,
-        "event_text": "m_c is struggling to accept the fact that {PRONOUN/m_c/subject} may have to step up as leader if r_c loses {PRONOUN/r_c/poss} last life.",
+        "event_text": "m_c has been struggling to accept the fact that {PRONOUN/m_c/subject} may have to step up as leader if r_c loses {PRONOUN/r_c/poss} last life.",
         "m_c": {
             "age": [
                 "any"
@@ -12170,7 +12170,7 @@
             "low_lives"
         ],
         "frequency": 2,
-        "event_text": "m_c is struggling to accept the fact that {PRONOUN/m_c/subject} may have to step up as leader if r_c loses {PRONOUN/r_c/poss} last life. How could {PRONOUN/m_c/subject} {VERB/m_c/go/goes} on without {PRONOUN/m_c/poss} beloved leader? How difficult will it to be to lead in {PRONOUN/r_c/poss} stead?",
+        "event_text": "m_c has been struggling to accept the fact that {PRONOUN/m_c/subject} may have to step up as leader if r_c loses {PRONOUN/r_c/poss} last life. How could {PRONOUN/m_c/subject} {VERB/m_c/go/goes} on without {PRONOUN/m_c/poss} beloved leader? How difficult will it to be to lead in {PRONOUN/r_c/poss} stead?",
         "m_c": {
             "status": [
                 "deputy"
@@ -12221,7 +12221,7 @@
             "clan:elder"
         ],
         "frequency": 2,
-        "event_text": "m_c is heavily relying on the tactical advice and experience of the elders, namely r_c.",
+        "event_text": "m_c has been heavily relying on the tactical advice and experience of the elders, namely r_c.",
         "m_c": {
             "status": [
                 "deputy",
@@ -12280,7 +12280,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c feels burdened with the weight of {PRONOUN/m_c/poss} decisions, knowing that every choice {PRONOUN/m_c/subject} {VERB/m_c/make/makes} could mean the difference between victory and defeat.",
+        "event_text": "m_c has been feeling burdened with the weight of {PRONOUN/m_c/poss} decisions, knowing that every choice {PRONOUN/m_c/subject} {VERB/m_c/make/makes} could mean the difference between victory and defeat.",
         "m_c": {
             "status": [
                 "leader"
@@ -12299,7 +12299,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c's relationships with {PRONOUN/m_c/poss} Clanmates are strained, with some questioning {PRONOUN/m_c/poss} decisions and others relying on {PRONOUN/m_c/object} more heavily than ever.",
+        "event_text": "m_c's relationships with {PRONOUN/m_c/poss} Clanmates have been strained, with some questioning {PRONOUN/m_c/poss} decisions and others relying on {PRONOUN/m_c/object} more heavily than ever.",
         "m_c": {
             "status": [
                 "leader"
@@ -12338,7 +12338,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c is forced to be a symbol of strength and unity for {PRONOUN/m_c/poss} Clan, even in the face of {PRONOUN/m_c/poss} own doubts and fears.",
+        "event_text": "m_c has been forced to be a symbol of strength and unity for {PRONOUN/m_c/poss} Clan, even in the face of {PRONOUN/m_c/poss} own doubts and fears.",
         "m_c": {
             "status": [
                 "leader"
@@ -12373,7 +12373,7 @@
             "r_c"
         ],
         "frequency": 1,
-        "event_text": "o_c_n breaks into the camp and ravages the herb stores, taking some for themselves and destroying the rest.",
+        "event_text": "o_c_n broke into the camp and ravaged the herb stores, taking some for themselves and destroying the rest.",
         "supplies": [
             {
                 "type": "all_herb",
@@ -12408,7 +12408,7 @@
             "r_c"
         ],
         "frequency": 1,
-        "event_text": "c_n breaks into the o_c_n camp and steals precious herbs from their medicine cat den.",
+        "event_text": "c_n broke into the o_c_n camp and stole precious herbs from their medicine cat den.",
         "m_c": {
             "status": [
                 "leader"
@@ -12470,7 +12470,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c and r_c spend the night by the o_c_n border, on watch for an attack that never comes.",
+        "event_text": "m_c and r_c spent a night by the o_c_n border, on watch for an attack that never came.",
         "m_c": {
             "status": [
                 "warrior",
@@ -12515,7 +12515,7 @@
             "war"
         ],
         "frequency": 2,
-        "event_text": "m_c and r_c spend the night by the o_c_n border. They confront a passing o_c_n patrol, but they're more keen on a conversation than a fight.",
+        "event_text": "m_c and r_c spent a night by the o_c_n border. They confronted a passing o_c_n patrol, but they were more keen on a conversation than a fight.",
         "m_c": {
             "status": [
                 "warrior",
@@ -12549,7 +12549,7 @@
             "war"
         ],
         "frequency": 1,
-        "event_text": "m_c and r_c spend the night by the o_c_n border. They confront a passing o_c_n patrol, but they're more keen on a conversation than a fight and offer to keep them company instead.",
+        "event_text": "m_c and r_c spent the night by the o_c_n border. They confronted a passing o_c_n patrol, but they were more keen on a conversation than a fight and offered to keep them company instead.",
         "m_c": {
             "status": [
                 "warrior",
@@ -12583,7 +12583,7 @@
             "war"
         ],
         "frequency": 3,
-        "event_text": "m_c and r_c spend the night by the o_c_n border. They confront a passing o_c_n patrol, but they're more keen to trade insults than blows.",
+        "event_text": "m_c and r_c spent the night by the o_c_n border. They confronted a passing o_c_n patrol, but they were more keen to trade insults than blows.",
         "m_c": {
             "status": [
                 "warrior",
@@ -12612,7 +12612,7 @@
         "sub_type": [ "war" ],
         "tags": [ ],
         "frequency": 2,
-        "event_text": "m_c is eager to sink {PRONOUN/m_c/poss} claws into o_c_n during the next skirmish.",
+        "event_text": "m_c has been eager to sink {PRONOUN/m_c/poss} claws into o_c_n during the next skirmish.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -12648,7 +12648,7 @@
             "r_c"
         ],
         "frequency": 1,
-        "event_text": "o_c_n breaks into the camp and ravages the herb stores, taking some for themselves and attempting to destroy the rest. The Clan manages to recover some of the herbs, but the store was still badly damaged.",
+        "event_text": "o_c_n broke into the camp and ravages the herb stored, taking some for themselves and attempting to destroy the rest. The Clan managed to recover some of the herbs, but the store was still badly damaged.",
         "supplies": [
             {
                 "type": "all_herb",
@@ -12680,7 +12680,7 @@
         ],
         "exclude_involved": ["r_c"],
         "frequency": 1,
-        "event_text": "Resentment builds as the Clan notices that m_c is almost never assigned to battle patrols.",
+        "event_text": "Resentment has been building as the Clan notices that m_c is almost never assigned to battle patrols.",
         "m_c": {
             "status": ["warrior", "deputy"],
             "relationship_status": ["mates"]
@@ -12722,7 +12722,7 @@
             "war"
         ],
         "frequency": 3,
-        "event_text": "m_c and r_c fear for each other and their shared future as the war with o_c_n rages on.",
+        "event_text": "m_c and r_c fears for each other and their shared future as the war with o_c_n rages on.",
         "m_c": {
             "status": ["any"],
             "relationship_status": ["mates"]
@@ -12755,7 +12755,7 @@
             "war"
         ],
         "frequency": 3,
-        "event_text": "m_c promises r_c that {PRONOUN/m_c/subject} will protect {PRONOUN/r_c/object} from o_c_n.",
+        "event_text": "m_c promised r_c that {PRONOUN/m_c/subject} will protect {PRONOUN/r_c/object} from o_c_n.",
         "m_c": {
             "status": ["any"],
             "relationship_status": ["parent/child"]
@@ -12788,7 +12788,7 @@
             "war"
         ],
         "frequency": 1,
-        "event_text": "m_c returns from a raid on o_c_n's camp with kit-blood on {PRONOUN/m_c/poss} claws.",
+        "event_text": "m_c returned from a raid on o_c_n's camp with kit-blood on {PRONOUN/m_c/poss} claws.",
         "m_c": {
             "status": ["warrior", "deputy", "leader"],
             "trait": ["bloodthirsty"]
@@ -12832,7 +12832,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "At a Gathering, m_c overhears cats from another Clan gossiping about the war between c_n and o_c_n.",
+        "event_text": "At the Gathering, m_c overheard cats from another Clan gossiping about the war between c_n and o_c_n.",
         "m_c" : {
 			"age": ["-newborn","-kitten"]
 		},
@@ -12853,7 +12853,7 @@
             "war"
         ],
         "frequency": 2,
-        "event_text": "While on a border patrol, m_c meets a loner who demands to know why c_n is at war with o_c_n.",
+        "event_text": "While on a border patrol, m_c met a loner who demanded to know why c_n is at war with o_c_n.",
         "m_c" : {
             "status": ["leader","deputy","warrior","apprentice"]
         },
@@ -12883,7 +12883,7 @@
         "season": ["any"],
         "sub_type":["war"],
         "frequency": 2,
-        "event_text": "While on a patrol, m_c encounters a kittypet who complains about c_n's war with o_c_n being annoying. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/demand/demands} to know why c_n is involved in it in the first place.",
+        "event_text": "While on a patrol, m_c encountered a kittypet who complained about c_n's war with o_c_n being annoying. {PRONOUN/n_c:0/subject/CAP} demanded to know why c_n is involved in it in the first place.",
         "m_c": {
             "status": ["leader", "deputy", "warrior", "apprentice"]
         },
@@ -12913,7 +12913,7 @@
         "season": ["any"],
         "sub_type":["war"],
         "frequency": 1,
-        "event_text": "While on a patrol, m_c encounters a kittypet. {PRONOUN/n_c:0/subject/CAP} immediately {VERB/n_c:0/demand/demands} c_n ends the war. All the noise is interrupting {PRONOUN/n_c:0/poss} beauty sleep!",
+        "event_text": "While on a patrol, m_c encountered a kittypet. {PRONOUN/n_c:0/subject/CAP} immediately demanded c_n ends the war. All the noise is interrupting {PRONOUN/n_c:0/poss} beauty sleep!",
         "m_c": {
             "status": ["leader", "deputy", "warrior", "apprentice"]
         },
@@ -12943,7 +12943,7 @@
         "season": ["any"],
         "sub_type":["war"],
         "frequency": 1,
-        "event_text": "While on a patrol, m_c encounters a loner. {PRONOUN/n_c:0/subject/CAP} immediately {VERB/n_c:0/demand/demands} c_n ends the war. All the noise is making it difficult for n_c:0 to hunt.",
+        "event_text": "While on a patrol, m_c encountered a loner. {PRONOUN/n_c:0/subject/CAP} immediately demanded c_n ends the war. All the noise is making it difficult for n_c:0 to hunt.",
         "m_c": {
             "status": ["leader", "deputy", "warrior", "apprentice"]
         },
@@ -12973,7 +12973,7 @@
         "season": ["any"],
         "sub_type": ["war"],
         "frequency": 3,
-        "event_text": "While on a patrol, m_c encounters a kittypet. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/bounce/bounces} up to {PRONOUN/m_c/object} and {VERB/n_c:0/ask/asks} if {PRONOUN/n_c:0/subject} can join the war. It sounds like a fun game!",
+        "event_text": "While on a patrol, m_c encountered a kittypet. {PRONOUN/n_c:0/subject/CAP} bounced up to {PRONOUN/m_c/object} and asked if {PRONOUN/n_c:0/subject} can join the war. It sounds like a fun game!",
         "m_c": { "status": ["leader","deputy","warrior","apprentice"]
             },
         "new_cat": [
@@ -13064,7 +13064,7 @@
             "failed_murder"
         ],
         "frequency": 4,
-        "event_text": "r_c feels as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} being followed.",
+        "event_text": "r_c has felt as though {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} being followed this moon.",
         "m_c": {},
         "r_c": {},
         "exclude_involved": ["m_c"]
@@ -13424,7 +13424,7 @@
             "failed_murder"
         ],
         "frequency": 4,
-        "event_text": "m_c practices skirmishes with r_c, learning {PRONOUN/r_c/poss} style of fighting.",
+        "event_text": "m_c practiced skirmishes with r_c, learning {PRONOUN/r_c/poss} style of fighting.",
         "m_c": {
             "status": [
                 "leader",
@@ -13455,7 +13455,7 @@
             "failed_murder"
         ],
         "frequency": 4,
-        "event_text": "m_c watches r_c fight, noticing several weak points in {PRONOUN/r_c/poss} form.",
+        "event_text": "m_c watched r_c fight, noticing several weak points in {PRONOUN/r_c/poss} form.",
         "m_c": {
             "status": [
                 "leader",
@@ -13699,7 +13699,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c seems distracted during a fight at the border, {PRONOUN/m_c/poss} eyes constantly on r_c with a strangely calculating gleam.",
+        "event_text": "m_c seemed distracted during a fight at the border, {PRONOUN/m_c/poss} eyes constantly on r_c with a strangely calculating gleam.",
         "m_c": {
             "status": [
                 "leader",
@@ -13730,7 +13730,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c is heard muttering strategies under {PRONOUN/m_c/poss} breath for an upcoming skirmish in which r_c features heavily.",
+        "event_text": "m_c was heard muttering strategies under {PRONOUN/m_c/poss} breath for an upcoming skirmish in which r_c features heavily.",
         "m_c": {
             "status": [
                 "leader",
@@ -13762,7 +13762,7 @@
             "war"
         ],
         "frequency": 4,
-        "event_text": "m_c teaches r_c an overly-complicated strategy for an upcoming skirmish.",
+        "event_text": "m_c taught r_c an overly-complicated strategy for an upcoming skirmish.",
         "m_c": {
             "status": [
                 "leader",
@@ -13793,7 +13793,7 @@
             "failed_murder"
         ],
         "frequency": 3,
-        "event_text": "r_c bursts into camp, frantic and covered in wounds. {PRONOUN/r_c/subject/CAP} {VERB/r_c/insist/insists} m_c attacked {PRONOUN/r_c/object} while they were on patrol together.",
+        "event_text": "r_c burst into camp, frantic and covered in wounds. {PRONOUN/r_c/subject/CAP} {VERB/r_c/insist/insists} m_c attacked {PRONOUN/r_c/object} while they were on patrol together.",
         "m_c": {
             "status": [
                 "-kitten",
@@ -13860,7 +13860,7 @@
             "failed_murder"
         ],
         "frequency": 3,
-        "event_text": "m_c bursts into camp, frantic and covered in wounds. {PRONOUN/m_c/subject/CAP} {VERB/m_c/insist/insists} r_c attacked {PRONOUN/m_c/object} while they were on patrol together.",
+        "event_text": "m_c burst into camp, frantic and covered in wounds. {PRONOUN/m_c/subject/CAP} {VERB/m_c/insist/insists} r_c attacked {PRONOUN/m_c/object} while they were on patrol together.",
         "m_c": {
             "status": [
                 "-kitten",
@@ -13941,7 +13941,7 @@
         "sub_type": ["failed_murder"],
         "tags": [],
         "frequency": 3,
-        "event_text": "m_c poisons r_c after giving {PRONOUN/r_c/object} the wrong herb dosage. m_c claims it was an accident, but r_c isn't so sure...",
+        "event_text": "m_c poisoned r_c after giving {PRONOUN/r_c/object} the wrong herb dosage. m_c claims it was an accident, but r_c isn't so sure...",
         "m_c": {
             "status": [
                 "medicine cat",
@@ -13996,7 +13996,7 @@
         "sub_type": ["failed_murder"],
         "tags": [],
         "frequency": 3,
-        "event_text": "r_c is badly poisoned after eating deathberries. When rushed to the medicine den, {PRONOUN/r_c/subject} {VERB/r_c/mumble/mumbles} that they don't taste like how m_c said they would...",
+        "event_text": "r_c was badly poisoned after eating deathberries. When rushed to the medicine den, {PRONOUN/r_c/subject} mumbled that they don't taste like how m_c said they would...",
         "m_c":
         {
             "status": [
@@ -14045,7 +14045,7 @@
         "sub_type": ["failed_murder"],
         "tags": [],
         "frequency": 3,
-        "event_text": "m_c offers r_c a piece of prey from the pile. Later, r_c is rushed to the medicine den, having been poisoned by crowfood.",
+        "event_text": "m_c offered r_c a piece of prey from the pile. Later, r_c was rushed to the medicine den, having been poisoned by crowfood.",
         "m_c":
         {
             "status": [
@@ -14092,7 +14092,7 @@
         "sub_type": ["failed_murder"],
         "tags": [],
         "frequency": 3,
-        "event_text": "r_c falls into the river. m_c helps rescue {PRONOUN/r_c/object}, but r_c swears {PRONOUN/r_c/subject} {VERB/r_c/were/was} pushed in.",
+        "event_text": "r_c fell into the river. m_c helped rescue {PRONOUN/r_c/object}, but r_c swears {PRONOUN/r_c/subject} {VERB/r_c/were/was} pushed in.",
         "m_c":
         {
             "status": [
@@ -14135,7 +14135,7 @@
         "sub_type": ["failed_murder"],
         "tags": [],
         "frequency": 2,
-        "event_text": "m_c meets with lead_name and claims {PRONOUN/m_c/subject} overheard r_c making plans to overthrow lead_name and take over the Clan.",
+        "event_text": "m_c met with lead_name and claimed {PRONOUN/m_c/subject} overheard r_c making plans to overthrow lead_name and take over the Clan.",
         "m_c":
         {
             "status": [
@@ -14179,7 +14179,7 @@
         "sub_type": ["failed_murder"],
         "tags": [],
         "frequency": 3,
-        "event_text": "m_c is almost in tears as {PRONOUN/m_c/subject} {VERB/m_c/emphasize/emphasizes} to lead_name how cruel r_c has been lately. r_c looks confused and denies everything m_c says.",
+        "event_text": "m_c was almost in tears as {PRONOUN/m_c/subject} emphasized to lead_name how cruel r_c has been lately. r_c looked confused and denied everything m_c says.",
         "m_c":
         {
             "status": [
@@ -14285,7 +14285,7 @@
     "sub_type": ["failed_murder"],
     "tags": [],
     "frequency": 2,
-    "event_text": "m_c was seen speaking to n_c:0 on the border. n_c:0 later attacks r_c's patrol, but {PRONOUN/n_c:0/subject} underestimated r_c's strength, and r_c, fighting for {PRONOUN/r_c/poss} life, kills {PRONOUN/n_c:0/object}.",
+    "event_text": "m_c was seen speaking to n_c:0 on the border. n_c:0 later attacked r_c's patrol, but {PRONOUN/n_c:0/subject} underestimated r_c's strength, and r_c, fighting for {PRONOUN/r_c/poss} life, killed {PRONOUN/n_c:0/object}.",
     "m_c": {
         "age": ["young adult", "adult", "senior adult"]
     },
@@ -14353,7 +14353,7 @@
     "location": ["any"],
     "season": ["any"],
     "frequency": 4,
-    "event_text": "m_c holds {PRONOUN/m_c/self} apart from the Clan, {PRONOUN/m_c/poss} mood strange and irritable.",
+    "event_text": "m_c held {PRONOUN/m_c/self} apart from the Clan this moon, {PRONOUN/m_c/poss} mood strange and irritable.",
     "m_c": {
       "age": ["any"],
       "status": ["any"],
@@ -14379,7 +14379,7 @@
         "season": ["leaf-fall", "newleaf", "greenleaf"],
       "tags": ["clan:warrior"],
         "frequency": 4,
-        "event_text": "m_c doesn't care what the warriors say; thunder is definitely dangerous and horrible. r_c agrees, the kittens finding comfort in each other.",
+        "event_text": "m_c doesn't care what the warriors say; thunder is definitely dangerous and horrible. r_c agrees, the kittens finding comfort in each other during a storm this moon.",
         "m_c": {
             "status": ["kitten"]
         },
@@ -14404,7 +14404,7 @@
     "location": ["any"],
     "season": ["any"],
     "frequency": 4,
-    "event_text": "m_c and r_c bond over how much they both hate mouse bile.",
+    "event_text": "m_c and r_c bonded over how much they both hate mouse bile.",
     "m_c": {
       "age": ["adolescent"],
       "status": ["apprentice"]
@@ -14432,7 +14432,7 @@
         "season": ["any"],
         "sub_type": ["war"],
         "frequency": 1,
-        "event_text": "c_n catches o_c_n digging a pit trap.",
+        "event_text": "c_n caught o_c_n digging a pit trap.",
         "other_clan": {
             "current_rep": [
                 "any"
@@ -14460,7 +14460,7 @@
     "season": ["any"],
     "sub_type": ["war"],
     "frequency": 3,
-    "event_text": "c_n uses the dense foliage to their favor by ambushing o_c_n from the undergrowth and forcing their scouting patrol to scatter.",
+    "event_text": "c_n used the dense foliage to their favor by ambushing o_c_n from the undergrowth and forcing their scouting patrol to scatter.",
     "other_clan": {
         "current_rep": ["any"],
         "changed": -1
@@ -14566,7 +14566,7 @@
 	],
     "tags": [],
     "frequency": 1,
-    "event_text": "m_c wakes up from a nightmare, sobbing about a mysterious evil cat.",
+    "event_text": "m_c woke up from a nightmare, sobbing about a mysterious evil cat.",
     "new_accessory": [],
     "m_c": {
         "age": [
@@ -14587,7 +14587,7 @@
 	],
     "tags": [],
     "frequency": 4,
-    "event_text": "m_c begs {PRONOUN/m_c/poss} mentor for more battle training, claiming {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to be stronger to fight o_c_n.",
+    "event_text": "m_c begged {PRONOUN/m_c/poss} mentor for more battle training, claiming {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to be stronger to fight o_c_n.",
     "new_accessory": [],
     "m_c": {
         "status": [
@@ -14640,7 +14640,7 @@
 	],
     "tags": [],
     "frequency": 3,
-    "event_text": "m_c studies herbs all night, wanting to help c_n as much as {PRONOUN/m_c/subject} can.",
+    "event_text": "m_c studied herbs all night, wanting to help c_n as much as {PRONOUN/m_c/subject} can.",
     "m_c": {
         "status": [
 			"medicine cat apprentice"
@@ -14661,7 +14661,7 @@
 	],
     "tags": [],
     "frequency": 4,
-    "event_text": "m_c spends all night sorting the herb stores, wanting to help as much as {PRONOUN/m_c/subject} can.",
+    "event_text": "m_c spent all night sorting the herb stores, wanting to help as much as {PRONOUN/m_c/subject} can.",
     "m_c": {
         "status": [
 			"medicine cat apprentice",
@@ -14683,7 +14683,7 @@
 	],
     "tags": [],
     "frequency": 3,
-    "event_text": "m_c is caught holding back in a fight against a o_c_n apprentice. ",
+    "event_text": "m_c was caught holding back in a fight against a o_c_n apprentice. ",
     "m_c": {
         "status": [
                 "apprentice"
@@ -14710,7 +14710,7 @@
             "m_c"
         ],
         "frequency": 1,
-        "event_text": "At the Gathering, o_c_n's deputy announces they are its new leader. Declaring complete loyalty to o_c_n, they renounce all alliances.",
+        "event_text": "At the Gathering, o_c_n's deputy announced they are its new leader. Declaring complete loyalty to o_c_n, they renounced all alliances.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -14740,7 +14740,7 @@
             "m_c"
         ],
         "frequency": 1,
-        "event_text": "At the Gathering, o_c_n's deputy announces the sudden passing of their former leader. With a steely glint in their gaze, they renounce all prior alliances o_c_n held.",
+        "event_text": "At the Gathering, o_c_n's deputy announced the sudden passing of their former leader. With a steely glint in their gaze, they renounced all prior alliances o_c_n held.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -14770,7 +14770,7 @@
             "m_c"
         ],
         "frequency": 1,
-        "event_text": "A o_c_n patrol brings news to c_n that their old leader is dead... and that the new one does not consider c_n a friend.",
+        "event_text": "A o_c_n patrol brought news to c_n that their old leader is dead... and that the new one does not consider c_n a friend.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -14800,7 +14800,7 @@
             "m_c"
         ],
         "frequency": 1,
-        "event_text": "A strong Clan stands on their own four paws, needing no support from others. o_c_n's new leader decides that the other Clans need reminding of this fact and withdraws their alliances at once.",
+        "event_text": "A strong Clan stands on their own four paws, needing no support from others. o_c_n's new leader decided that the other Clans need reminding of this fact and withdrew their alliances at once.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -14830,7 +14830,7 @@
             "m_c"
         ],
         "frequency": 1,
-        "event_text": "A wild-eyed o_c_n apprentice intrudes on the camp one day. They warn c_n that o_c_n is under new management... and all existing alliances are void.",
+        "event_text": "A wild-eyed o_c_n apprentice intruded on the camp one day. They warned c_n that o_c_n is under new management... and all existing alliances are void.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -14860,7 +14860,7 @@
             "m_c"
         ],
         "frequency": 2,
-        "event_text": "o_c_n's deputy secretly meets with m_c and a patrol of c_n cats and talks their way out of a battle that would've caused pointless bloodshed.",
+        "event_text": "o_c_n's deputy secretly met with m_c and a patrol of c_n cats and talked their way out of a battle that would've caused pointless bloodshed.",
         "m_c": {
             "status": [
                 "warrior",
@@ -14886,7 +14886,7 @@
         ],
         "tags": [],
         "frequency": 2,
-        "event_text": "m_c convenes with o_c_n's mediator to discuss peace. The meeting goes well, and m_c is optimistic o_c_n might end the conflict soon.",
+        "event_text": "m_c convened with o_c_n's mediator to discuss peace. The meeting went well, and m_c is optimistic o_c_n might end the conflict soon.",
         "m_c": {
             "status": [
                 "mediator"
@@ -14909,7 +14909,7 @@
         ],
         "tags": [],
         "frequency": 1,
-        "event_text": "o_c_n's medicine cat meets with m_c and shares an omen they received that foretells peace.",
+        "event_text": "o_c_n's medicine cat met with m_c and shared an omen they received that foretells peace.",
         "m_c": {
             "status": [
                 "medicine cat"
@@ -14935,7 +14935,7 @@
             "m_c"
         ],
         "frequency": 1,
-        "event_text": "o_c_n's leader is killed in a battle with c_n. Their deputy takes over and promises to not follow in the pawsteps of their violent leader.",
+        "event_text": "o_c_n's leader was killed in a battle with c_n. Their deputy took over and promised to not follow in the pawsteps of their violent leader.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -14965,7 +14965,7 @@
             "m_c"
         ],
         "frequency": 1,
-        "event_text": "A group of cats from o_c_n arrive in c_n's camp and announce they've overthrown their leader to end hostilities between the Clans.",
+        "event_text": "A group of cats from o_c_n arrived in c_n's camp and announced they've overthrown their leader to end hostilities between the Clans.",
         "m_c": {
             "age": [
                 "adolescent",
@@ -15275,7 +15275,7 @@
             "tags": ["water:flowing"]
         },
         "frequency": 4,
-        "event_text": "m_c and r_c spend sunhigh frolicking and splashing each other by {POI/tag/water:flowing} to cool off in the sweltering heat.",
+        "event_text": "m_c and r_c spent one sunhigh frolicking and splashing each other by {POI/tag/water:flowing} to cool off in the sweltering heat.",
         "m_c": {
             "age": ["adolescent", "young adult"]
         },
@@ -15332,7 +15332,7 @@
             "tags": ["prey:flying"]
         },
         "frequency": 1,
-        "event_text": "m_c and r_c watch birds perform courtship rituals near {POI/tag/prey:flying} and talk loudly about how ridiculous lovers can be. Their Clanmates exchange glances.",
+        "event_text": "m_c and r_c watched birds perform courtship rituals near {POI/tag/prey:flying} and talked loudly about how ridiculous lovers can be. Their Clanmates exchanged glances.",
         "m_c": {
             "age": ["adolescent", "young adult"],
             "relationship_status": ["fancies", "-mates"]
@@ -15363,7 +15363,7 @@
             "tags": ["trees"]
         },
         "frequency": 1,
-        "event_text": "m_c watches the leaves change and fall from the branches of {POI/tag/trees}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wonder/wonders} if {PRONOUN/m_c/subject}'ll be around to see it again next year.",
+        "event_text": "m_c watched the leaves change and fall from the branches of {POI/tag/trees}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wonder/wonders} if {PRONOUN/m_c/subject}'ll be around to see it again next year.",
         "m_c": {
             "age": ["senior"]
         }
@@ -15378,7 +15378,7 @@
             "tags": ["trees"]
         },
         "frequency": 1,
-        "event_text": "m_c is dazzled by the greenery of {POI/tag/trees}. {PRONOUN/m_c/poss/CAP} first greenleaf is living up to its name.",
+        "event_text": "m_c was dazzled by the greenery of {POI/tag/trees}. {PRONOUN/m_c/poss/CAP} first greenleaf is living up to its name.",
         "m_c": {
             "age": ["adolescent"]
         }
@@ -15393,7 +15393,7 @@
             "tags": ["water:still"]
         },
         "frequency": 1,
-        "event_text": "m_c tests the thickness of the ice on {POI/tag/water:still}'s surface, hoping to go for a slide later.",
+        "event_text": "m_c tested the thickness of the ice on {POI/tag/water:still}'s surface, hoping to go for a slide later.",
         "m_c": {
             "trait": ["daring", "bold", "troublesome", "rebellious", "arrogant", "adventurous", "competitive"]
         }
@@ -15408,7 +15408,7 @@
             "tags": ["Twolegs:abandoned"]
         },
         "frequency": 1,
-        "event_text": "m_c reports seeing a Twoleg near {POI/tag/Twolegs:abandoned}. The Clan worries that Twolegs may return to reclaim their creation.",
+        "event_text": "m_c reported seeing a Twoleg near {POI/tag/Twolegs:abandoned}. The Clan worries that Twolegs may return to reclaim their creation.",
         "m_c": {
             "status": ["-kitten", "-elder", "-leader"]
         }
@@ -15423,7 +15423,7 @@
             "tags": ["Twolegs:present"]
         },
         "frequency": 1,
-        "event_text": "m_c and r_c lie in wait near {POI/tag/Twolegs:present}, hoping to snatch some scraps of Twoleg food.",
+        "event_text": "m_c and r_c laid in wait near {POI/tag/Twolegs:present}, hoping to snatch some scraps of Twoleg food.",
         "m_c": {
             "status": ["-kitten", "-elder"],
             "trait": ["-strict", "-righteous", "-wise", "-careful", "-faithful"],
@@ -15444,7 +15444,7 @@
             "tags": ["covered"]
         },
         "frequency": 1,
-        "event_text": "m_c and r_c get caught in a storm and shelter by {POI/tag/covered}. When they return to camp, they seem closer.",
+        "event_text": "m_c and r_c got caught in a storm and sheltered by {POI/tag/covered}. When they returned to camp, they seemed closer.",
         "m_c": {
             "status": ["-kitten"],
             "relationship_status": ["-mates"]
@@ -15475,7 +15475,7 @@
             "tags": ["fall_risk"]
         },
         "frequency": 1,
-        "event_text": "m_c and r_c yowl down {POI/tag/fall_risk}, trying to make their meows echo.",
+        "event_text": "m_c and r_c yowled down {POI/tag/fall_risk}, trying to make their meows echo.",
         "m_c": {
             "status": ["apprentice"]
         },
@@ -15505,7 +15505,7 @@
             "tags": ["fall_risk"]
         },
         "frequency": 1,
-        "event_text": "m_c has a near-death experience by {POI/tag/fall_risk}.",
+        "event_text": "m_c had a near-death experience by {POI/tag/fall_risk}.",
         "m_c": {}
     },
     {
@@ -15518,7 +15518,7 @@
             "name": ["terrain_sunningrocks"]
         },
         "frequency": 1,
-        "event_text": "m_c and r_c spend a lazy day soaking up the sun at {POI/name/terrain_sunningrocks}.",
+        "event_text": "m_c and r_c spent a lazy day soaking up the sun at {POI/name/terrain_sunningrocks}.",
         "m_c": {
             "relationship_status": ["mates"]
         },
@@ -15546,7 +15546,7 @@
             "tags": ["water:ocean"]
         },
         "frequency": 1,
-        "event_text": "m_c and r_c cozy up together by {POI/tag/water:ocean} and listen to the crash of waves.",
+        "event_text": "m_c and r_c cozied up together by {POI/tag/water:ocean} and listened to the crash of waves.",
         "m_c": {
             "relationship_status": ["mates"]
         },
@@ -15574,7 +15574,7 @@
             "name": ["terrain_hugeboulder"]
         },
         "frequency": 1,
-        "event_text": "m_c tells the story of how {POI/name/terrain_hugeboulder} was once an enormous bear who hibernated so long it turned to stone.",
+        "event_text": "m_c told the story of how {POI/name/terrain_hugeboulder} was once an enormous bear who hibernated so long it turned to stone.",
         "m_c": {
             "skill": ["STORY,2"]
         }
@@ -15589,7 +15589,7 @@
             "name": ["terrain_windswepttree"]
         },
         "frequency": 1,
-        "event_text": "m_c tells the story of how {POI/name/terrain_windswepttree} has helped hold up the sky for so many generations that now it bends beneath the weight.",
+        "event_text": "m_c told the story of how {POI/name/terrain_windswepttree} has helped hold up the sky for so many generations that now it bends beneath the weight.",
         "m_c": {
             "skill": ["STORY,2"]
         }
@@ -15604,7 +15604,7 @@
             "name": ["terrain_lake"]
         },
         "frequency": 1,
-        "event_text": "m_c tells the story of how {POI/name/terrain_lake} was created when Silverpelt lost her footing in the night sky and left a pawprint in the earth. Generations of rainwater filled it to create {POI/name/terrain_lake}.",
+        "event_text": "m_c told the story of how {POI/name/terrain_lake} was created when Silverpelt lost her footing in the night sky and left a pawprint in the earth. Generations of rainwater filled it to create {POI/name/terrain_lake}.",
         "m_c": {
             "skill": ["STORY,2"]
         }
@@ -15619,7 +15619,7 @@
             "name": ["terrain_well"]
         },
         "frequency": 1,
-        "event_text": "m_c tells the story of how dogs won the favor of Twolegs when, many generations ago, a dog rescued a Twoleg from {POI/name/terrain_well}.",
+        "event_text": "m_c told the story of how dogs won the favor of Twolegs when, many generations ago, a dog rescued a Twoleg from {POI/name/terrain_well}.",
         "m_c": {
             "skill": ["STORY,2"]
         }
@@ -15637,7 +15637,7 @@
     ],
     "tags": [],
     "frequency": 2,
-    "event_text": "The war with o_c_n demands full loyalty from every cat in c_n. m_c's half-Clan heritage makes some cats question where {PRONOUN/m_c/poss} loyalties truly lie.",
+    "event_text": "The war with o_c_n demands full loyalty from every cat in c_n. m_c's half-Clan heritage has made some cats question where {PRONOUN/m_c/poss} loyalties truly lie.",
     "m_c": {
         "status": [
             "-kitten",
@@ -15687,7 +15687,7 @@
         ],
         "tags": [],
         "frequency": 2,
-        "event_text": "Rumors about m_c's half-Clan parentage begin to spread around camp. r_c comes to m_c's defense, claiming that a war won't swivel {PRONOUN/m_c/poss} loyalty to c_n.",
+        "event_text": "Rumors about m_c's half-Clan parentage began to spread around camp. r_c came to m_c's defense, claiming that a war won't swivel {PRONOUN/m_c/poss} loyalty to c_n.",
         "m_c": {
             "status": [
                 "-kitten",
@@ -15797,7 +15797,7 @@
         ],
         "tags": [],
         "frequency": 2,
-        "event_text": "r_c spreads rumors about m_c's origins, claiming {PRONOUN/m_c/subject} could be a spy sent from another Clan to gain intel on the war with o_c_n.",
+        "event_text": "r_c spread rumors about m_c's origins, claiming {PRONOUN/m_c/subject} could be a spy sent from another Clan to gain intel on the war with o_c_n.",
         "m_c": {
             "status": [
                 "-kitten",
@@ -15914,7 +15914,7 @@
         ],
         "tags": [],
         "frequency": 2,
-        "event_text": "Realizing they are outmatched, a o_c_n warrior pleads for mercy from m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/pay/pays} no mind to their begging and quickly {VERB/m_c/end/ends} their life.",
+        "event_text": "Realizing they are outmatched, a o_c_n warrior pled for mercy from m_c. {PRONOUN/m_c/subject/CAP} paid no mind to their begging and quickly ended their life.",
         "m_c": {
             "status": [
                 "warrior",
@@ -15985,7 +15985,7 @@
         ],
         "tags": [],
         "frequency": 3,
-        "event_text": "Having been defeated in battle, a o_c_n warrior begs for m_c to spare their life. m_c stares at them with sorrow and lets them get away.",
+        "event_text": "Having been defeated in battle, a o_c_n warrior begged for m_c to spare their life. m_c stared at them with sorrow and let them get away.",
         "m_c": {
             "status": [
                 "warrior",
@@ -16558,7 +16558,7 @@
     "poi": {
         "name": ["moon_mothermouth"]
     },
-    "event_text": "m_c returns from {POI/name/moon_mothermouth} and swears {PRONOUN/m_c/poss} whiskers are bent from brushing against the sides of labyrinthine tunnels for so long!",
+    "event_text": "m_c returned from {POI/name/moon_mothermouth} and swears {PRONOUN/m_c/poss} whiskers are bent from brushing against the sides of labyrinthine tunnels for so long!",
     "m_c": {
       "status": ["medicine cat apprentice"]
     }
@@ -16571,7 +16571,7 @@
     "poi": {
         "name": ["moon_pool"]
     },
-    "event_text": "m_c returns from {POI/name/moon_pool}, drenched and dismayed. It seems {PRONOUN/m_c/subject} took a tumble into the sacred waters.",
+    "event_text": "m_c returned from {POI/name/moon_pool}, drenched and dismayed. It seems {PRONOUN/m_c/subject} took a tumble into the sacred waters.",
     "m_c": {
       "status": ["medicine cat apprentice"]
     }
@@ -16584,7 +16584,7 @@
     "poi": {
         "name": ["moon_meteor"]
     },
-    "event_text": "m_c returns from {POI/name/moon_meteor} sneezing sporadically. Perhaps {PRONOUN/m_c/subject} {VERB/m_c/are/is} allergic to moon dust.",
+    "event_text": "m_c returned from {POI/name/moon_meteor} sneezing sporadically. Perhaps {PRONOUN/m_c/subject} {VERB/m_c/are/is} allergic to moon dust.",
     "m_c": {
       "status": ["medicine cat apprentice"]
     }
@@ -16597,7 +16597,7 @@
     "poi": {
         "name": ["moon_cave"]
     },
-    "event_text": "m_c returns from {POI/name/moon_cave}, looking more like a puff of fluff than a cat after hearing StarClan's voices echo around {PRONOUN/m_c/object}.",
+    "event_text": "m_c returned from {POI/name/moon_cave}, looking more like a puff of fluff than a cat after hearing StarClan's voices echo around {PRONOUN/m_c/object}.",
     "m_c": {
       "status": ["medicine cat apprentice"]
     }
@@ -16614,7 +16614,7 @@
         "poi": {
             "category": "gathering"
         },
-        "event_text": "m_c won't stop asking r_c when it's {PRONOUN/m_c/poss} turn to join the Gathering at {POI/category/gathering}.",
+        "event_text": "m_c wouldn't stop asking r_c when it's {PRONOUN/m_c/poss} turn to join the Gathering at {POI/category/gathering}.",
         "m_c": {
             "status": [
                 "apprentice"
@@ -16641,7 +16641,7 @@
         "poi": {
             "category": "gathering"
         },
-        "event_text": "During the Gathering at {POI/category/gathering}, m_c overhears that o_c_n is struggling to find prey.",
+        "event_text": "During the Gathering at {POI/category/gathering}, m_c overheard that o_c_n is struggling to find prey.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -16661,7 +16661,7 @@
         "poi": {
             "category": "gathering"
         },
-        "event_text": "During the Gathering at {POI/category/gathering}, m_c overhears that o_c_n is suffering from a herb blight.",
+        "event_text": "During the Gathering at {POI/category/gathering}, m_c overheard that o_c_n is suffering from a herb blight.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -16681,7 +16681,7 @@
         "poi": {
             "category": "gathering"
         },
-        "event_text": "During the Gathering at {POI/category/gathering}, m_c overhears that o_c_n is dealing with a greencough outbreak.",
+        "event_text": "During the Gathering at {POI/category/gathering}, m_c overheard that o_c_n is dealing with a greencough outbreak.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -16701,7 +16701,7 @@
         "poi": {
             "category": "gathering"
         },
-        "event_text": "m_c gathers the Clan to tell a story about the first time the Clans convened for a Gathering at {POI/category/gathering}.",
+        "event_text": "m_c gathered the Clan to tell a story about the first time the Clans convened for a Gathering at {POI/category/gathering}.",
         "m_c": {
             "skill": ["STORY,1", "LORE,1"]
         }
@@ -16718,7 +16718,7 @@
         "poi": {
             "category": "gathering"
         },
-        "event_text": "m_c overhears some interesting gossip from the other deputies at {POI/category/gathering}.",
+        "event_text": "m_c overheard some interesting gossip from the other deputies at {POI/category/gathering}.",
         "m_c": {
             "status": ["deputy"]
         }
@@ -16735,7 +16735,7 @@
         "poi": {
             "category": "moonplace"
         },
-        "event_text": "As soon as m_c returns from {POI/category/moonplace}, {PRONOUN/m_c/subject} {VERB/m_c/visit/visits} r_c in {PRONOUN/r_c/poss} den for a private conversation.",
+        "event_text": "As soon as m_c returned from {POI/category/moonplace}, {PRONOUN/m_c/subject} visited r_c in {PRONOUN/r_c/poss} den for a private conversation.",
         "m_c": {
             "status": ["medicine cat"]
         },
@@ -16755,7 +16755,7 @@
         "poi": {
             "category": "moonplace"
         },
-        "event_text": "m_c seems shaken after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
+        "event_text": "m_c seemed shaken after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
         "m_c": {
             "status": ["medicine cat"]
         }
@@ -16772,7 +16772,7 @@
         "poi": {
             "category": "moonplace"
         },
-        "event_text": "m_c seems disappointed by StarClan's wisdom after a visit to {POI/category/moonplace}.",
+        "event_text": "m_c seemed disappointed by StarClan's wisdom after a visit to {POI/category/moonplace}.",
         "m_c": {
             "status": ["medicine cat"]
         }
@@ -16789,7 +16789,7 @@
         "poi": {
             "category": "moonplace"
         },
-        "event_text": "m_c seems content after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
+        "event_text": "m_c seemed content after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
         "m_c": {
             "status": ["medicine cat"]
         }
@@ -16806,7 +16806,7 @@
         "poi": {
             "category": "moonplace"
         },
-        "event_text": "m_c seems comforted by StarClan's wisdom after a visit to {POI/category/moonplace}.",
+        "event_text": "m_c seemed comforted by StarClan's wisdom after a visit to {POI/category/moonplace}.",
         "m_c": {
             "status": ["medicine cat"]
         }
@@ -16823,7 +16823,7 @@
         "poi": {
             "category": "moonplace"
         },
-        "event_text": "m_c seems determined after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
+        "event_text": "m_c seemed determined after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
         "m_c": {
             "status": ["medicine cat"]
         }
@@ -16840,7 +16840,7 @@
         "poi": {
             "category": "moonplace"
         },
-        "event_text": "m_c overhears some interesting gossip from the other medicine cats at {POI/category/moonplace}.",
+        "event_text": "m_c overheard some interesting gossip from the other medicine cats at {POI/category/moonplace}.",
         "m_c": {
             "status": ["medicine cat"]
         }
@@ -16854,7 +16854,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c dreams of r_c surrounded by swirling mist and light. {PRONOUN/r_c/subject/CAP} {VERB/r_c/are/is} silent, but the message is clear and comforting when m_c wakes.",
+        "event_text": "m_c dreamed of r_c surrounded by swirling mist and light. {PRONOUN/r_c/subject/CAP} were silent, but the message was clear and comforting when m_c woke.",
         "m_c": {
             "age": [
                 "any"
@@ -16906,7 +16906,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c dreams of r_c in mist and light. {PRONOUN/r_c/poss/CAP} warmth encircles the two long enough for m_c to wake with the feeling lingering on {PRONOUN/m_c/poss} pelt.",
+        "event_text": "m_c dreamed of r_c in mist and light. {PRONOUN/r_c/poss/CAP} warmth encircled the two long enough for m_c to wake with the feeling lingering on {PRONOUN/m_c/poss} pelt.",
         "m_c": {
             "age": [
                 "any"
@@ -16961,7 +16961,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c dreams of darkness and cold. A shudder rolls through {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} {VERB/m_c/notice/notices} r_c staring back at {PRONOUN/m_c/object}. {PRONOUN/r_c/subject/CAP} {VERB/r_c/are/is} silent, ready to pounce. When m_c wakes, the unease lingers on {PRONOUN/m_c/poss} pelt, a reminder of the message received.",
+        "event_text": "m_c dreamed of darkness and cold. A shudder rolled through {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} noticed r_c staring back at {PRONOUN/m_c/object}. {PRONOUN/r_c/subject/CAP} were silent, ready to pounce. When m_c woke, the unease lingered on {PRONOUN/m_c/poss} pelt, a reminder of the message received.",
         "m_c": {
             "age": [
                 "any"
@@ -16994,7 +16994,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "m_c dreams of r_c lurking in the shadows. Voices emerge from the dark and circle the two in bitter coldness. m_c wakes gasping, the words still crawling under {PRONOUN/m_c/poss} skin.",
+        "event_text": "m_c dreamed of r_c lurking in the shadows. Voices emerged from the dark and circled the two in bitter coldness. m_c woke gasping, the words still crawling under {PRONOUN/m_c/poss} skin.",
         "m_c": {
             "age": [
                 "any"
@@ -17027,7 +17027,7 @@
         "season": ["any"],
         "sub_type": ["accessory"],
         "frequency": 3,
-        "event_text": "m_c returns to camp from a successful hunt, a bird clutched in {PRONOUN/m_c/poss} jaws and its feathers adorning {PRONOUN/m_c/poss} tail.",
+        "event_text": "m_c returned to camp from a successful hunt, a bird clutched in {PRONOUN/m_c/poss} jaws and its feathers adorning {PRONOUN/m_c/poss} tail.",
         "new_accessory": [
             "RED FEATHERS",
             "BLUE FEATHERS",
@@ -17049,7 +17049,7 @@
     "poi": {
     "name": ["terrain_rookery"]
         },
-    "event_text": "m_c returns from a hunt at {POI/name/terrain_rookery}, adorned with some feathers from {PRONOUN/m_c/poss} catch.",
+    "event_text": "m_c returned from a hunt at {POI/name/terrain_rookery}, adorned with some feathers from {PRONOUN/m_c/poss} catch.",
     "new_accessory": ["BLUE FEATHERS","JAY FEATHERS"],
     "m_c": {
         "status": ["-kitten","-elder"]
@@ -17065,7 +17065,7 @@
     "poi": {
     "name": ["terrain_rookery"]
     },
-    "event_text": "r_c returns from a hunt at {POI/name/terrain_rookery} and gifts some beautiful feathers from {PRONOUN/r_c/poss} catch to m_c.",
+    "event_text": "r_c returned from a hunt at {POI/name/terrain_rookery} and gifted some beautiful feathers from {PRONOUN/r_c/poss} catch to m_c.",
     "new_accessory": ["BLUE FEATHERS","JAY FEATHERS"],
     "m_c": {
         "age": ["any"],
@@ -17099,7 +17099,7 @@
     "poi": {
     "name": ["terrain_eaglenest"]
     },
-    "event_text": "After a visit near {POI/name/terrain_eaglenest}, m_c returns to camp adorned with feathers.",
+    "event_text": "After a visit near {POI/name/terrain_eaglenest}, m_c returned to camp adorned with feathers.",
     "new_accessory": ["SPARROW FEATHERS"],
     "m_c": {
         "status": ["-kitten","-elder"],
@@ -17116,7 +17116,7 @@
     "poi": {
     "name": ["terrain_gullcliffs"]
     },
-    "event_text": "r_c returns from a hunt at {POI/name/terrain_gullcliffs} and gifts some beautiful feathers from {PRONOUN/r_c/poss} catch to m_c.",
+    "event_text": "r_c returned from a hunt at {POI/name/terrain_gullcliffs} and gifted some beautiful feathers from {PRONOUN/r_c/poss} catch to m_c.",
     "new_accessory": ["GULL FEATHERS"],
     "m_c": {
         "age": ["any"],
@@ -17150,7 +17150,7 @@
     "poi": {
     "name": ["terrain_gullcliffs"]
     },
-    "event_text": "m_c returns from a hunt at {POI/name/terrain_gullcliffs}, adorned with some feathers from {PRONOUN/m_c/poss} catch.",
+    "event_text": "m_c returned from a hunt at {POI/name/terrain_gullcliffs}, adorned with some feathers from {PRONOUN/m_c/poss} catch.",
     "new_accessory": ["GULL FEATHERS"],
     "m_c": {
         "status": ["-kitten","-elder"],
@@ -17164,7 +17164,7 @@
     "sub_type": ["accessory"],
     "tags": [],
     "frequency": 2,
-    "event_text": "m_c takes a moment to pick a specific bird from the fresh-kill pile and is later seen wearing its feathers.",
+    "event_text": "m_c took a moment to pick a specific bird from the fresh-kill pile and was later seen wearing its feathers.",
     "new_accessory": ["BLUE FEATHERS","SPARROW FEATHERS","JAY FEATHERS","RED FEATHERS"],
     "m_c": {
         "age": ["any"],
@@ -17183,7 +17183,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c has known since {PRONOUN/m_c/subject} {VERB/m_c/were/was} born {PRONOUN/m_c/subject} felt different about {PRONOUN/m_c/poss} gender. When m_c declares {PRONOUN/m_c/subject} {VERB/m_c/are/is} a tom, who can tell {PRONOUN/m_c/object} otherwise?",
+        "event_text": "m_c has known since {PRONOUN/m_c/subject} {VERB/m_c/were/was} born {PRONOUN/m_c/subject} felt different about {PRONOUN/m_c/poss} gender. When m_c declared {PRONOUN/m_c/subject} {VERB/m_c/are/is} a tom, who could tell {PRONOUN/m_c/object} otherwise?",
         "m_c": {
             "gender": [
                 "female"
@@ -17208,7 +17208,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c has known since {PRONOUN/m_c/subject} {VERB/m_c/were/was} born {PRONOUN/m_c/subject} felt different about {PRONOUN/m_c/poss} gender. When m_c declares {PRONOUN/m_c/subject} {VERB/m_c/are/is} a she-cat, who can tell {PRONOUN/m_c/object} otherwise?",
+        "event_text": "m_c has known since {PRONOUN/m_c/subject} {VERB/m_c/were/was} born {PRONOUN/m_c/subject} felt different about {PRONOUN/m_c/poss} gender. When m_c declared {PRONOUN/m_c/subject} {VERB/m_c/are/is} a she-cat, who could tell {PRONOUN/m_c/object} otherwise?",
         "m_c": {
             "gender": [
                 "male"
@@ -17233,7 +17233,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c has known since {PRONOUN/m_c/subject} {VERB/m_c/were/was} born {PRONOUN/m_c/subject} felt different about {PRONOUN/m_c/poss} gender. When m_c declares {PRONOUN/m_c/subject} {VERB/m_c/are/is} not a tom, not a she-cat, <i>just</i> a cat, who can tell {PRONOUN/m_c/object} otherwise?",
+        "event_text": "m_c has known since {PRONOUN/m_c/subject} {VERB/m_c/were/was} born {PRONOUN/m_c/subject} felt different about {PRONOUN/m_c/poss} gender. When m_c declared {PRONOUN/m_c/subject} {VERB/m_c/are/is} not a tom, not a she-cat, <i>just</i> a cat, who could tell {PRONOUN/m_c/object} otherwise?",
         "m_c": {
             "gender": [
                 "female",
@@ -17338,7 +17338,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "The first cat m_c tells about {PRONOUN/m_c/poss} transition is {PRONOUN/m_c/poss} parent, r_c. Overjoyed for {PRONOUN/r_c/poss} child, r_c helps m_c spread the news to the rest of the Clan.",
+        "event_text": "The first cat m_c told about {PRONOUN/m_c/poss} transition was {PRONOUN/m_c/poss} parent, r_c. Overjoyed for {PRONOUN/r_c/poss} child, r_c helped m_c spread the news to the rest of the Clan.",
         "m_c": {
             "gender": [
                 "male"
@@ -17375,7 +17375,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "The first cat m_c tells about {PRONOUN/m_c/poss} transition is {PRONOUN/m_c/poss} parent, r_c. Overjoyed for {PRONOUN/r_c/poss} child, r_c helps m_c spread the news to the rest of the Clan.",
+        "event_text": "The first cat m_c told about {PRONOUN/m_c/poss} transition was {PRONOUN/m_c/poss} parent, r_c. Overjoyed for {PRONOUN/r_c/poss} child, r_c helped m_c spread the news to the rest of the Clan.",
         "m_c": {
             "gender": [
                 "female"
@@ -17452,7 +17452,7 @@
             ]
         },
         "frequency": 2,
-        "event_text": "Everyone can smell when m_c pads back into camp from {POI/tag/tainted}. It's going to take some serious grooming to get rid of the stench!",
+        "event_text": "Everyone could smell when m_c padded back into camp from {POI/tag/tainted}. It took some serious grooming to get rid of the stench!",
         "m_c": {
             "age": [
                 "-newborn",
