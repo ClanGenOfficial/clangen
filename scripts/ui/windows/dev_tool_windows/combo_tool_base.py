@@ -129,6 +129,7 @@ class ComboToolWindow(GameWindow):
             container=self.elements["saving_container"],
             anchors={"left_target": self.elements["save_button"]},
         )
+        self.elements["save_text"].disable()
 
     def process_event(self, event):
         super().process_event(event)
