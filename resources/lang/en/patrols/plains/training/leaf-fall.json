@@ -1,104 +1,137 @@
 [
     {
-        "patrol_id": "pln_train_leaffall_locustswarm_storylorelocked1",
-        "biome": [
+        "event_id": "pln_train_leaffall_locustswarm_storylorelocked1",
+        "types": [
+            "training"
+        ],
+        "frequency": 3,
+        "location": [
             "plains"
         ],
         "season": [
             "leaf-fall"
         ],
-        "tags": [],
-        "types": [
-            "training"
-        ],
-        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "normal adult": [1, 6]
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
-        "frequency": 3,
+        "involved_cats": {
+            "p_l": {
+                "stat": {
+                    "skill": [
+                        "LORE,1",
+                        "STORY,1"
+                    ],
+                    "trait": []
+                }
+            },
+            "r_c0": {}
+        },
         "chance_of_success": 60,
-        "pl_skill_constraint": [
-            "LORE,1",
-            "STORY,1"
-        ],
-        "intro_text": "r_c bats an insect aside as the patrol ambles along. p_l hums — does r_c know there's an insect who can blot out the sun?",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
+        "intro_text": "r_c0 bats an insect aside as the patrol ambles along. p_l hums — does r_c0 know there's an insect who can blot out the sun?",
         "decline_text": "The cats decide training is more important than a story today.",
         "success_outcomes": [
             {
-                "text": "It was generations ago, far before s_c's time. But there was once a great flock of insects that swarmed across c_n's land, so thick in the air they shaded out the sun. They ate damn near every grass seed on the plains, and the prairie was left battered for seasons afterward.",
-                "exp": 30,
-                "art": "cat_sprites/gen_train_ghost_WrWrWr",
-                "stat_skill": [
-                    "LORE,1"
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_train_ghost_WrWrWr",
+                "strings": [
+                    "It was generations ago, far before s_c0's time. But there was once a great flock of insects that swarmed across c_n's land, so thick in the air they shaded out the sun. They ate damn near every grass seed on the plains, and the prairie was left battered for seasons afterward."
                 ],
-                "can_have_stat": [
-                    "p_l"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "LORE,1"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "p_l"
+                        ]
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect", "like"
+                            "respect",
+                            "like"
                         ],
                         "amount": 8,
                         "log": {
                             "cats_from": "cat_from enjoyed cat_to's story about the locust swarm that blotted out the sun."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "Khepri the scarab rolls the sun into hiding for leaf-bare, s_c tells the patrol. Each winter, the moon journeys to rescue her sibling from below the horizon, fighting to take the sun from Khepri's grasp and bring warmth back to the land and renew the grass.",
-                "exp": 30,
-                "art": "cat_sprites/gen_train_ghost_WrWrWr",
-                "stat_skill": [
-                    "STORY,1"
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_train_ghost_WrWrWr",
+                "strings": [
+                    "Khepri the scarab rolls the sun into hiding for leaf-bare, s_c0 tells the patrol. Each winter, the moon journeys to rescue her sibling from below the horizon, fighting to take the sun from Khepri's grasp and bring warmth back to the land and renew the grass."
                 ],
-                "can_have_stat": [
-                    "p_l"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "STORY,1"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "p_l"
+                        ]
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect", "like"
+                            "respect",
+                            "like"
                         ],
                         "amount": 8,
                         "log": {
                             "cats_from": "cat_from enjoyed cat_to's story about the scarab who rolls the sun into hiding for leaf-bare."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "The bug r_c batted flies up to {PRONOUN/r_c/poss} face and buzzes, and p_l completely loses track of the story {PRONOUN/p_l/subject} {VERB/p_l/were/was} about to tell as {PRONOUN/p_l/subject} {VERB/p_l/help/helps} r_c out with the irritated insect.",
-                "exp": 0,
-                "art": "cat_sprites/gen_crouchingperplexed_Wr",
-                "relationships": [
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_crouchingperplexed_Wr",
+                "strings": [
+                    "The bug r_c0 batted flies up to {PRONOUN/r_c0/poss} face and buzzes, and p_l completely loses track of the story {PRONOUN/p_l/subject} {VERB/p_l/were/was} about to tell as {PRONOUN/p_l/subject} {VERB/p_l/help/helps} r_c0 out with the irritated insect."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -109,8 +142,7 @@
                             "cats_from": "cat_to flicked a bug away from cat_from."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ]
     }

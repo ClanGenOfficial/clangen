@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_elder",
+        "event_id": "gen_elder",
         "strings": [
             "Is snoring in {PRONOUN/m_c/poss} sleep",
             "Is feeling rather chipper today",
@@ -12,7 +12,7 @@
         ]
     },
     {
-        "id": "gen_senior_elder",
+        "event_id": "gen_senior_elder",
         "strings": [
             "Is complaining about {PRONOUN/m_c/poss} nest being too rough",
             "Is complaining about {PRONOUN/m_c/poss} aching joints",
@@ -46,7 +46,7 @@
         }
     },
     {
-        "id": "adventurous_elder",
+        "event_id": "adventurous_elder",
         "strings": [
             "Wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} young enough to spend the whole day exploring",
             "Thinks wistfully of all the adventures {PRONOUN/m_c/subject} used to go on",
@@ -67,7 +67,7 @@
         }
     },
     {
-        "id": "adventurous_elder_to_apprentices",
+        "event_id": "adventurous_elder_to_apprentices",
         "strings": [
             "Tells a group of awe-struck apprentices all the exciting adventures {PRONOUN/m_c/subject} had outside Clan territory",
             "Reminds an apprentice that there is so, so much more than life within the borders",
@@ -93,7 +93,7 @@
         }
     },
     {
-        "id": "ambitious_elder",
+        "event_id": "ambitious_elder",
         "strings": [
             "Wonders if elders can still become leader",
             "Thinks elders should be allowed to patrol",
@@ -114,7 +114,7 @@
         }
     },
     {
-        "id": "ambitious_elder_to_leader",
+        "event_id": "ambitious_elder_to_leader",
         "strings": [
             "Is eager to give advice to the leader"
         ],
@@ -138,7 +138,7 @@
         }
     },
     {
-        "id": "arrogant_elder",
+        "event_id": "arrogant_elder",
         "strings": [
             "Yells at anycat within earshot to bring {PRONOUN/m_c/object} fresh moss",
             "Is telling stories \u00e2\u20ac\u201d only about {PRONOUN/m_c/self}, of course"
@@ -158,7 +158,7 @@
         }
     },
     {
-        "id": "arrogant_elder_to_younger_cats",
+        "event_id": "arrogant_elder_to_younger_cats",
         "strings": [
             "Is bossing the younger cats around"
         ],
@@ -184,7 +184,7 @@
         }
     },
     {
-        "id": "arrogant_elder_to_leader",
+        "event_id": "arrogant_elder_to_leader",
         "strings": [
             "Gives unsolicited advice to the leader"
         ],
@@ -208,7 +208,7 @@
         }
     },
     {
-        "id": "bloodthirsty_elder",
+        "event_id": "bloodthirsty_elder",
         "strings": [
             "Hates how powerless {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} as an elder",
             "Misses going on border patrol",
@@ -229,7 +229,7 @@
         }
     },
     {
-        "id": "bloodthirsty_elder_to_apprentice",
+        "event_id": "bloodthirsty_elder_to_apprentice",
         "strings": [
             "Snarls at an apprentice when they bring thorns into the den",
             "Snaps at an apprentice to hurry up with cleaning the elder's den",
@@ -255,7 +255,7 @@
         }
     },
     {
-        "id": "bold_elder",
+        "event_id": "bold_elder",
         "strings": [
             "Boldly gives {PRONOUN/m_c/poss} advice at a Clan meeting",
             "Insists on going to the next Gathering",
@@ -276,7 +276,7 @@
         }
     },
     {
-        "id": "calm_elder",
+        "event_id": "calm_elder",
         "strings": [
             "Is enjoying the peaceful life of an elder",
             "Is a soothing presence in the Clan"
@@ -296,7 +296,7 @@
         }
     },
     {
-        "id": "careful_elder",
+        "event_id": "careful_elder",
         "strings": [
             "Reminds a patrol not to be reckless",
             "Checks the elder's den is secure for the fifth time today"
@@ -316,7 +316,7 @@
         }
     },
     {
-        "id": "careful_elder_to_apprentice",
+        "event_id": "careful_elder_to_apprentice",
         "strings": [
             "Asks an apprentice to triple-check there's no thorns in {PRONOUN/m_c/poss} bedding",
             "Is telling cautionary tales to apprentices"
@@ -341,7 +341,7 @@
         }
     },
     {
-        "id": "charismatic_elder",
+        "event_id": "charismatic_elder",
         "strings": [
             "Has everycat engaged in an extravagant story",
             "Hasn't lost any of {PRONOUN/m_c/poss} charm"
@@ -361,7 +361,7 @@
         }
     },
     {
-        "id": "childish_elder",
+        "event_id": "childish_elder",
         "strings": [
             "Whines about {PRONOUN/m_c/poss} nest being too rough",
             "Is happy {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have to patrol anymore",
@@ -382,7 +382,7 @@
         }
     },
     {
-        "id": "cold_elder",
+        "event_id": "cold_elder",
         "strings": [
             "Hates how much {PRONOUN/m_c/subject} {VERB/m_c/have/has} to rely on others",
             "Flatly refuses to tell a story when a Clanmate asks"
@@ -402,7 +402,7 @@
         }
     },
     {
-        "id": "compassionate_elder",
+        "event_id": "compassionate_elder",
         "strings": [
             "Insists the warriors eat before {PRONOUN/m_c/object}",
             "Offers advice to cats who need it"
@@ -422,7 +422,7 @@
         }
     },
     {
-        "id": "compassionate_elder_to_apprentice",
+        "event_id": "compassionate_elder_to_apprentice",
         "strings": [
             "Helps an apprentice to clean out the elder's den"
         ],
@@ -446,7 +446,7 @@
         }
     },
     {
-        "id": "competitive_elder",
+        "event_id": "competitive_elder",
         "strings": [
             "Challenges a Clanmate to a game of moss ball",
             "Misses the 'friendly' hunting competitions {PRONOUN/m_c/subject} used to compete in",
@@ -467,7 +467,7 @@
         }
     },
     {
-        "id": "confident_elder",
+        "event_id": "confident_elder",
         "strings": [
             "Is proud of all {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} achieved",
             "Offers advice to {PRONOUN/m_c/poss} Clanmates",
@@ -489,7 +489,7 @@
         }
     },
     {
-        "id": "cunning_elder",
+        "event_id": "cunning_elder",
         "strings": [
             "Persuades a Clanmate to bring {PRONOUN/m_c/object} fresh-kill, though {PRONOUN/m_c/subject} could have got it {PRONOUN/m_c/self}",
             "Always ends up with the nicest piece of prey, without anycat realizing"
@@ -509,7 +509,7 @@
         }
     },
     {
-        "id": "cunning_elder_to_apprentices",
+        "event_id": "cunning_elder_to_apprentices",
         "strings": [
             "Convinces an apprentice that they get given an easier warrior assessment if they help the elders",
             "Persuades an apprentice to clean out the elder's den"
@@ -534,7 +534,7 @@
         }
     },
     {
-        "id": "daring_elder",
+        "event_id": "daring_elder",
         "strings": [
             "Is stubbornly refusing the medicine cat's herbs, claiming {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} need them",
             "Is telling exciting tales from {PRONOUN/m_c/poss} youth",
@@ -555,7 +555,7 @@
         }
     },
     {
-        "id": "faithful_elder",
+        "event_id": "faithful_elder",
         "strings": [
             "Is glad {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} served c_n for so long",
             "Is proud to have stuck by {PRONOUN/m_c/poss} own beliefs all {PRONOUN/m_c/poss} life",
@@ -576,7 +576,7 @@
         }
     },
     {
-        "id": "fierce_elder",
+        "event_id": "fierce_elder",
         "strings": [
             "Thinks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} still young enough to take a fox",
             "Thinks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} still young enough to take a dog",
@@ -599,7 +599,7 @@
         }
     },
     {
-        "id": "flamboyant_elder",
+        "event_id": "flamboyant_elder",
         "strings": [
             "Is telling extravagant tales of {PRONOUN/m_c/poss} adventures",
             "Decorates the elder's den with the most colorful flowers"
@@ -619,7 +619,7 @@
         }
     },
     {
-        "id": "rebellious_elder",
+        "event_id": "rebellious_elder",
         "strings": [
             "Thinks that the Clan used to be run better, and isn't afraid to say it!",
             "Is telling stories that portray leadership in a... less than flattering light",
@@ -640,7 +640,7 @@
         }
     },
     {
-        "id": "rebellious_elder_to_apprentice",
+        "event_id": "rebellious_elder_to_apprentice",
         "strings": [
             "Reminds r_c that leaders aren't always right",
             "Advises r_c to always do what <i>{PRONOUN/r_c/subject}</i> {VERB/r_c/think/thinks} is right"
@@ -665,7 +665,7 @@
         }
     },
     {
-        "id": "rebellious_elder_to_leader",
+        "event_id": "rebellious_elder_to_leader",
         "strings": [
             "Is giving even more unsolicited advice to the leader",
             "Is <i>always</i> around to offer some advice to r_c"
@@ -690,7 +690,7 @@
         }
     },
     {
-        "id": "gloomy_elder",
+        "event_id": "gloomy_elder",
         "strings": [
             "Wonders if {PRONOUN/m_c/subject} could have achieved more...",
             "Finds it harder and harder to get out of {PRONOUN/m_c/poss} nest",
@@ -711,7 +711,7 @@
         }
     },
     {
-        "id": "grumpy_elder",
+        "event_id": "grumpy_elder",
         "strings": [
             "Snarls when a cat suggests {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} too old to do something",
             "Hisses that {PRONOUN/m_c/poss} nest has thorns in it",
@@ -733,7 +733,7 @@
         }
     },
     {
-        "id": "insecure_elder",
+        "event_id": "insecure_elder",
         "strings": [
             "Doesn't think {PRONOUN/m_c/subject} achieved all {PRONOUN/m_c/subject} should have...",
             "Wonders if c_n thinks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a waste of space now"
@@ -753,7 +753,7 @@
         }
     },
     {
-        "id": "insecure_elder_to_apprentices",
+        "event_id": "insecure_elder_to_apprentices",
         "strings": [
             "Hopes the apprentices don't find {PRONOUN/m_c/object} too boring",
             "Feels guilty watching an apprentice clean {PRONOUN/m_c/poss} bedding"
@@ -778,7 +778,7 @@
         }
     },
     {
-        "id": "lonesome_elder",
+        "event_id": "lonesome_elder",
         "strings": [
             "Goes on yet another walk, alone, just outside camp",
             "Sits alone in the elder's den",
@@ -800,7 +800,7 @@
         }
     },
     {
-        "id": "loving_elder",
+        "event_id": "loving_elder",
         "strings": [
             "Insists other cats eat before {PRONOUN/m_c/object}",
             "Smiles as {PRONOUN/m_c/subject} {VERB/m_c/reminisce/reminisces} about the past"
@@ -820,7 +820,7 @@
         }
     },
     {
-        "id": "loving_elder_to_apprentice",
+        "event_id": "loving_elder_to_apprentice",
         "strings": [
             "Purrs reassuringly as an apprentice whines about their day"
         ],
@@ -844,7 +844,7 @@
         }
     },
     {
-        "id": "loyal_elder",
+        "event_id": "loyal_elder",
         "strings": [
             "Is proud to be a c_n elder",
             "Knows {PRONOUN/m_c/subject} {VERB/m_c/have/has} served c_n well",
@@ -865,7 +865,7 @@
         }
     },
     {
-        "id": "loyal_elder_to_younger_cats",
+        "event_id": "loyal_elder_to_younger_cats",
         "strings": [
             "Is lecturing younger cats on the warrior code",
             "Is lecturing younger cats on the importance of loyalty to the Clan"
@@ -892,7 +892,7 @@
         }
     },
     {
-        "id": "nervous_elder",
+        "event_id": "nervous_elder",
         "strings": [
             "Worries that {PRONOUN/m_c/subject} would be defenseless in battle",
             "Frets that a fox might break into the elder's den"
@@ -912,7 +912,7 @@
         }
     },
     {
-        "id": "oblivious_elder",
+        "event_id": "oblivious_elder",
         "strings": [
             "Tells a long, <i>long</i> story that no cat is interested in",
             "Doesn't seem to notice another cat roll their eyes as {PRONOUN/m_c/subject} {VERB/m_c/complain/complains} about {PRONOUN/m_c/poss} aching joints. Again."
@@ -932,7 +932,7 @@
         }
     },
     {
-        "id": "playful_elder",
+        "event_id": "playful_elder",
         "strings": [
             "Cheers everycat up with a funny story",
             "Is always a cheerful presence around camp"
@@ -952,7 +952,7 @@
         }
     },
     {
-        "id": "playful_elder_to_kits",
+        "event_id": "playful_elder_to_kits",
         "strings": [
             "Bats a moss ball around for kits to chase",
             "Entertains kits with funny stories"
@@ -977,7 +977,7 @@
         }
     },
     {
-        "id": "responsible_elder",
+        "event_id": "responsible_elder",
         "strings": [
             "Makes sure to give good advice to cats who need it",
             "Volunteers to guard camp, even though {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} an elder"
@@ -997,7 +997,7 @@
         }
     },
     {
-        "id": "responsible_elder_to_younger_cats",
+        "event_id": "responsible_elder_to_younger_cats",
         "strings": [
             "Lectures younger cats on the importance of responsibility",
             "Reminds younger cats to take responsibility for their actions"
@@ -1024,7 +1024,7 @@
         }
     },
     {
-        "id": "righteous_elder",
+        "event_id": "righteous_elder",
         "strings": [
             "Gives unsolicited advice due to {PRONOUN/m_c/poss} own morals",
             "Advises {PRONOUN/m_c/poss} Clanmates to stick to what they believe is right"
@@ -1044,7 +1044,7 @@
         }
     },
     {
-        "id": "shameless_elder",
+        "event_id": "shameless_elder",
         "strings": [
             "Takes the best piece of prey from the fresh-kill pile",
             "Is taking full advantage of {PRONOUN/m_c/poss} status as an elder",
@@ -1065,7 +1065,7 @@
         }
     },
     {
-        "id": "sincere_elder",
+        "event_id": "sincere_elder",
         "strings": [
             "Thinks hard about how best to advise every cat",
             "Gives r_c {PRONOUN/m_c/poss} honest advice",
@@ -1086,7 +1086,7 @@
         }
     },
     {
-        "id": "sincere_elder_to_medicine_cat",
+        "event_id": "sincere_elder_to_medicine_cat",
         "strings": [
             "Is grateful of all the medicine cat does to help {PRONOUN/m_c/object}, and makes sure they know it"
         ],
@@ -1110,7 +1110,7 @@
         }
     },
     {
-        "id": "stealth_elder",
+        "event_id": "stealth_elder",
         "strings": [
             "Always seems to find out every cat's secret",
             "Finds <i>another</i> secret exit near the elder's den",
@@ -1131,7 +1131,7 @@
         }
     },
     {
-        "id": "strange_elder",
+        "event_id": "strange_elder",
         "strings": [
             "Tells stories... but no cat can quite tell if they're true",
             "Insists on only having moss from a certain tree"
@@ -1151,7 +1151,7 @@
         }
     },
     {
-        "id": "strict_elder",
+        "event_id": "strict_elder",
         "strings": [
             "Gives the sternest lectures of any c_n cat!",
             "Isn't afraid to berate rule-breakers",
@@ -1172,7 +1172,7 @@
         }
     },
     {
-        "id": "thoughtful_elder",
+        "event_id": "thoughtful_elder",
         "strings": [
             "Thinks for a long time about how best to offer advice",
             "Spends the evening planning out a story",
@@ -1193,7 +1193,7 @@
         }
     },
     {
-        "id": "thoughtful_elder_to_leader",
+        "event_id": "thoughtful_elder_to_leader",
         "strings": [
             "Is planning how best to present an issue to the leader"
         ],
@@ -1217,7 +1217,7 @@
         }
     },
     {
-        "id": "troublesome_elder",
+        "event_id": "troublesome_elder",
         "strings": [
             "Keeps moving the nests in the warriors den while they're out patrolling... just to annoy everyone",
             "Is finding elder life <i>sooooo</i> boring"
@@ -1237,7 +1237,7 @@
         }
     },
     {
-        "id": "vengeful_elder",
+        "event_id": "vengeful_elder",
         "strings": [
             "Wonders if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} the only cat who remembers a past wrongdoing",
             "Is still glaring at a certain cat after they brought {PRONOUN/m_c/object} bedding with thorns in it"
@@ -1257,7 +1257,7 @@
         }
     },
     {
-        "id": "wise_elder",
+        "event_id": "wise_elder",
         "strings": [
             "Is being asked for advice for the fifth time today",
             "Is more than happy to grant advice to cats who ask for it",
@@ -1278,7 +1278,7 @@
         }
     },
     {
-        "id": "teacher_elder",
+        "event_id": "teacher_elder",
         "strings": [
             "Is happy {PRONOUN/m_c/subject} can pass on {PRONOUN/m_c/poss} knowledge in a new way"
         ],
@@ -1297,7 +1297,7 @@
         }
     },
     {
-        "id": "story_elder",
+        "event_id": "story_elder",
         "strings": [
             "Tells the best stories",
             "Has plenty of free time to craft new tales",
@@ -1318,7 +1318,7 @@
         }
     },
     {
-        "id": "lore_elder",
+        "event_id": "lore_elder",
         "strings": [
             "Is passing on stories of old to the next generation",
             "Seems to know everything about c_n's history!"
@@ -1338,7 +1338,7 @@
         }
     },
     {
-        "id": "camp_elder",
+        "event_id": "camp_elder",
         "strings": [
             "Still enjoys helping out around camp",
             "Is teaching {PRONOUN/m_c/poss} Clanmates the art of building a waterproof den!",
@@ -1359,7 +1359,7 @@
         }
     },
     {
-        "id": "camp_elder_to_apprentice",
+        "event_id": "camp_elder_to_apprentice",
         "strings": [
             "Teaches an apprentice how to build the comfiest nests",
             "Watches an apprentice try and construct {PRONOUN/m_c/poss} nest, knowing {PRONOUN/m_c/subject} could do a far better job"
@@ -1384,7 +1384,7 @@
         }
     },
     {
-        "id": "kitsitter_elder",
+        "event_id": "kitsitter_elder",
         "strings": [
             "Spends the day collecting trinkets around camp for kits to play with",
             "Helps to reinforce the nursery"
@@ -1404,7 +1404,7 @@
         }
     },
     {
-        "id": "kitsitter_elder_to_kits",
+        "event_id": "kitsitter_elder_to_kits",
         "strings": [
             "Offers to watch over the kits for the day",
             "Comes up with new games for the kits to play",
@@ -1430,7 +1430,7 @@
         }
     },
     {
-        "id": "scared_elder_mean_leader",
+        "event_id": "scared_elder_mean_leader",
         "strings": [
             "Is scared that r_c might exile all the elders",
             "Panics after hearing r_c suggest exiling all the elders"
@@ -1462,7 +1462,7 @@
         }
     },
     {
-        "id": "brave_elder_mean_leader",
+        "event_id": "brave_elder_mean_leader",
         "strings": [
             "Confronts r_c after {PRONOUN/r_c/subject} {VERB/r_c/suggest/suggests} exiling all the elders",
             "Is furious after hearing r_c suggest exiling all the elders"
@@ -1497,7 +1497,7 @@
         }
     },
     {
-        "id": "elder_to_alive_younger_cats",
+        "event_id": "elder_to_alive_younger_cats",
         "strings": [
             "Is giving advice to the younger cats",
             "Is telling scary stories to the younger cats",
@@ -1522,7 +1522,7 @@
         }
     },
     {
-        "id": "elder_to_alive_apprentice",
+        "event_id": "elder_to_alive_apprentice",
         "strings": [
             "Is requesting an apprentice's help with {PRONOUN/m_c/poss} ticks",
             "Is asking apprentices to help check {PRONOUN/m_c/object} for ticks"
@@ -1541,7 +1541,7 @@
         }
     },
     {
-        "id": "elder_alive_leader",
+        "event_id": "elder_alive_leader",
         "strings": [
             "Is giving the Clan leader attitude"
         ],
@@ -1559,7 +1559,7 @@
         }
     },
     {
-        "id": "elder_gen_to_dead_gen",
+        "event_id": "elder_gen_to_dead_gen",
         "strings": [
             "Is telling stories about r_c",
             "Wishes that r_c were still alive",
@@ -1577,7 +1577,7 @@
         }
     },
     {
-        "id": "elder_alive_to_dead_mate",
+        "event_id": "elder_alive_to_dead_mate",
         "strings": [
             "Wonders when {PRONOUN/m_c/subject}'ll join r_c in StarClan",
             "Almost can't believe that r_c was the first to go",
@@ -1613,7 +1613,7 @@
         ]
     },
     {
-        "id": "elder_to_newborn",
+        "event_id": "elder_to_newborn",
         "strings": [
             "Thinks of all the stories {PRONOUN/m_c/subject} will share with r_c",
             "Hopes to live to see r_c made a warrior",
@@ -1634,7 +1634,7 @@
         }
     },
     {
-        "id": "gen_retired_disabled_thoughts",
+        "event_id": "gen_retired_disabled_thoughts",
         "strings": [
             "Wants everyone to stop pitying {PRONOUN/m_c/object}, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} fine!",
             "Is glad {PRONOUN/m_c/subject} retired",
@@ -1658,7 +1658,7 @@
         }
     },
     {
-        "id": "gen_retired_disabled_to_med_thoughts",
+        "event_id": "gen_retired_disabled_to_med_thoughts",
         "strings": [
             "Wonders if the medicine cat needs any help today",
             "Offers to help r_c sort herbs",
@@ -1687,7 +1687,7 @@
         }
     },
     {
-        "id": "gen_retired_disabled_to_kit_thoughts",
+        "event_id": "gen_retired_disabled_to_kit_thoughts",
         "strings": [
             "Plays with the kits as a form of exercise",
             "Offers to watch the kits",
@@ -1716,7 +1716,7 @@
         }
     },
     {
-        "id": "paralyzed_gen_retired_to_alive_med",
+        "event_id": "paralyzed_gen_retired_to_alive_med",
         "strings": [
             "Is doing exercises with the instructions of r_c",
             "Chats with r_c while doing {PRONOUN/m_c/poss} exercises"
@@ -1744,7 +1744,7 @@
         }
     },
     {
-        "id": "paralyzed_gen_retired_shameless",
+        "event_id": "paralyzed_gen_retired_shameless",
         "strings": [
             "Makes up an excuse so {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have to exercise today"
         ],
@@ -1767,7 +1767,7 @@
         }
     },
     {
-        "id": "paralyzed_gen_retired_insecure",
+        "event_id": "paralyzed_gen_retired_insecure",
         "strings": [
             "Practices {PRONOUN/m_c/poss} exercises in secret due to embarrassment"
         ],
@@ -1790,7 +1790,7 @@
         }
     },
     {
-        "id": "paralyzed_adolescent_retired_to_alive_gen",
+        "event_id": "paralyzed_adolescent_retired_to_alive_gen",
         "strings": [
             "Wonders if elders feel the same way about aching joints",
             "Sneaks out of camp for some alone time",
@@ -1820,7 +1820,7 @@
         }
     },
     {
-        "id": "paralyzed_adolescent_retired_to_alive_adult",
+        "event_id": "paralyzed_adolescent_retired_to_alive_adult",
         "strings": [
             "Helps the adults around camp with a big smile on {PRONOUN/m_c/poss} face"
         ],
@@ -1849,7 +1849,7 @@
         }
     },
     {
-        "id": "paralyzed_adolescent_retired_to_alive_med",
+        "event_id": "paralyzed_adolescent_retired_to_alive_med",
         "strings": [
             "Is bored by r_c's concerns about {PRONOUN/m_c/poss} lungs"
         ],
@@ -1879,7 +1879,7 @@
         }
     },
     {
-        "id": "blind_gen_retired_to_alive_notkit",
+        "event_id": "blind_gen_retired_to_alive_notkit",
         "strings": [
             "Explored the territory with r_c today"
         ],
@@ -1909,7 +1909,7 @@
         }
     },
     {
-        "id": "blind_adolescent_retired_to_alive_apprentice",
+        "event_id": "blind_adolescent_retired_to_alive_apprentice",
         "strings": [
             "Sadly listens as the apprentices share stories of their feats",
             "Joins in as the apprentices share stories of their feats",
@@ -1942,7 +1942,7 @@
         }
     },
     {
-        "id": "blind_adolescent_retired_to_alive_med",
+        "event_id": "blind_adolescent_retired_to_alive_med",
         "strings": [
             "Listens as r_c tells {PRONOUN/m_c/object} what herbs to smell for"
         ],
@@ -1972,7 +1972,7 @@
         }
     },
     {
-        "id": "one_bad_eye_adolescent_retired_to_alive_gen",
+        "event_id": "one_bad_eye_adolescent_retired_to_alive_gen",
         "strings": [
             "Brags to the Clan that {PRONOUN/m_c/subject} would've been the best leader"
         ],
@@ -1993,7 +1993,7 @@
         }
     },
     {
-        "id": "wasting_disease_gen_retired_to_alive_med",
+        "event_id": "wasting_disease_gen_retired_to_alive_med",
         "strings": [
             "Thanks r_c for {PRONOUN/r_c/poss} patience",
             "Feels confined to the medicine cat den"
@@ -2021,7 +2021,7 @@
         }
     },
     {
-        "id": "wasting_disease_adolescent_retired_to_alive_adult",
+        "event_id": "wasting_disease_adolescent_retired_to_alive_adult",
         "strings": [
             "Wishes the older cats would stop trying to get {PRONOUN/m_c/object} to eat more"
         ],
@@ -2050,7 +2050,7 @@
         }
     },
     {
-        "id": "wasting_disease_adolescent_retired_to_alive_apprentice",
+        "event_id": "wasting_disease_adolescent_retired_to_alive_apprentice",
         "strings": [
             "Enviously watches the apprentices talk about training"
         ],
@@ -2078,7 +2078,7 @@
         }
     },
     {
-        "id": "deaf_gen_retired_to_alive_gen",
+        "event_id": "deaf_gen_retired_to_alive_gen",
         "strings": [
             "Idly feels the thumps of {PRONOUN/m_c/poss} Clanmates' pawsteps on the ground",
             "Has learned to feel vibrations through the ground",
@@ -2109,7 +2109,7 @@
         }
     },
     {
-        "id": "deaf_adolescent_retired_to_alive_apprentice",
+        "event_id": "deaf_adolescent_retired_to_alive_apprentice",
         "strings": [
             "Enviously watches the apprentices talk about training"
         ],
@@ -2137,7 +2137,7 @@
         }
     },
     {
-        "id": "missing_leg/tail_gen_retired_to_alive_gen",
+        "event_id": "missing_leg/tail_gen_retired_to_alive_gen",
         "strings": [
             "Is training {PRONOUN/m_c/poss} balance with r_c",
             "Is heading to the medicine cat den because {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} starting to feel phantom pain"
@@ -2167,7 +2167,7 @@
         }
     },
     {
-        "id": "lost_leg/tail_gen_retired_to_alive_kit",
+        "event_id": "lost_leg/tail_gen_retired_to_alive_kit",
         "strings": [
             "Tells the story of how {PRONOUN/m_c/subject} lost {PRONOUN/m_c/poss} limb to an interested group of kits",
             "Is playing along as r_c tells the legend of how {PRONOUN/m_c/subject} lost {PRONOUN/m_c/poss} limb"
@@ -2197,7 +2197,7 @@
         }
     },
     {
-        "id": "lost_leg/tail_gen_retired_to_alive_app",
+        "event_id": "lost_leg/tail_gen_retired_to_alive_app",
         "strings": [
             "Explains what 'phantom pain' is to a curious apprentice"
         ],
@@ -2221,7 +2221,7 @@
         }
     },
     {
-        "id": "missing_leg_gen_retired_to_alive_gen",
+        "event_id": "missing_leg_gen_retired_to_alive_gen",
         "strings": [
             "Ironically giggles after hearing r_c's dramatic response to stubbing {PRONOUN/r_c/poss} paw",
             "Is excited to no longer have to step on sharp stones",
@@ -2251,7 +2251,7 @@
         }
     },
     {
-        "id": "born_without_leg_gen_retired_to_alive_born_without_leg_kit",
+        "event_id": "born_without_leg_gen_retired_to_alive_born_without_leg_kit",
         "strings": [
             "Is helping r_c take {PRONOUN/r_c/poss} first steps without a leg"
         ],
@@ -2282,7 +2282,7 @@
         }
     },
     {
-        "id": "missing_leg_gen_retired_to_alive_born_without_leg_newborn",
+        "event_id": "missing_leg_gen_retired_to_alive_born_without_leg_newborn",
         "strings": [
             "Notices that r_c is missing a leg, just like {PRONOUN/m_c/object}"
         ],
@@ -2314,7 +2314,7 @@
         }
     },
     {
-        "id": "missing_tail_gen_retired_to_alive_gen",
+        "event_id": "missing_tail_gen_retired_to_alive_gen",
         "strings": [
             "Is training {PRONOUN/m_c/poss} balance with r_c"
         ],
@@ -2341,7 +2341,7 @@
         }
     },
     {
-        "id": "missing_tail_gen_retired_to_alive_kit",
+        "event_id": "missing_tail_gen_retired_to_alive_kit",
         "strings": [
             "Is being grumped at by a kit because {PRONOUN/m_c/subject} {VERB/m_c/have/has} no tail to chomp on",
             "Is being asked how {PRONOUN/m_c/subject} can balance by a kit"
@@ -2366,7 +2366,7 @@
         }
     },
     {
-        "id": "missing_tail_gen_retired_to_alive_missing_tail_kit",
+        "event_id": "missing_tail_gen_retired_to_alive_missing_tail_kit",
         "strings": [
             "Bonds with r_c about them both missing a tail",
             "Is comforting r_c after a cruel joke was made about {PRONOUN/r_c/poss} tail"
@@ -2400,7 +2400,7 @@
         }
     },
     {
-        "id": "missing_tail_gen_retired_to_alive_missing_tail_app",
+        "event_id": "missing_tail_gen_retired_to_alive_missing_tail_app",
         "strings": [
             "Eagerly shows r_c the best techniques to keep upright",
             "Is pawing r_c on the head after a cruel joke about {PRONOUN/m_c/poss} tail"
@@ -2434,7 +2434,7 @@
         }
     },
     {
-        "id": "lost_tail_gen_retired_to_alive_kit",
+        "event_id": "lost_tail_gen_retired_to_alive_kit",
         "strings": [
             "Gently explains {PRONOUN/m_c/poss} scars to r_c",
             "Overdramatizes how {PRONOUN/m_c/subject} lost {PRONOUN/m_c/poss} tail to r_c",
@@ -2462,7 +2462,7 @@
         }
     },
     {
-        "id": "missing_tail_gen_retired_to_alive_app",
+        "event_id": "missing_tail_gen_retired_to_alive_app",
         "strings": [
             "Happily trains the apprentices on new balancing techniques",
             "Is showing the apprentices how to get into the hunting crouch without a tail"
@@ -2487,7 +2487,7 @@
         }
     },
     {
-        "id": "persistent_headaches_gen_retired_to_alive_gen",
+        "event_id": "persistent_headaches_gen_retired_to_alive_gen",
         "strings": [
             "Is glad {PRONOUN/m_c/poss} head hurts less today",
             "Tries not to worsen {PRONOUN/m_c/poss} headache"
@@ -2511,7 +2511,7 @@
         }
     },
     {
-        "id": "persistent_headaches_gen_retired_to_alive_med",
+        "event_id": "persistent_headaches_gen_retired_to_alive_med",
         "strings": [
             "Is bored of r_c's nagging about taking {PRONOUN/m_c/poss} herbs"
         ],

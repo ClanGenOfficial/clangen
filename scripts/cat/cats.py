@@ -1888,6 +1888,11 @@ class Cat:
                 acc for acc in self.pelt.accessory if acc not in Pelt.tail_accessories
             )
 
+        if "NOPAW" in self.pelt.scars:
+            self.pelt.accessory = tuple(
+                acc for acc in self.pelt.accessory if acc not in Pelt.paw_accessories
+            )
+
         condition = PERMANENT[name]
         new_condition = False
         mortality = condition["mortality"][self.age.value]

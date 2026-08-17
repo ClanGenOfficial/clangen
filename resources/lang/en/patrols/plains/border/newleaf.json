@@ -1,33 +1,42 @@
 [
     {
-        "patrol_id": "pln_bord_newleaf_longdistancemarking_group1",
-        "biome": [
+        "event_id": "pln_bord_newleaf_longdistancemarking_group1",
+        "types": [
+            "border"
+        ],
+        "frequency": 2,
+        "location": [
             "plains"
         ],
         "season": [
             "newleaf"
         ],
-        "types": [
-            "border"
-        ],
-        "tags": [],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ]
+        },
+        "chance_of_success": 40,
         "patrol_art": "cat_sprites/pln_train_session1_ApWr",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
         "intro_text": "Here on the plains, the reaches of c_n's territory are vast, particularly in the direction p_l and {PRONOUN/p_l/poss} patrol are heading, where there is endless grass but no permanent water sources. Still, with the grass at it's newleaf minimum, they can see where they're going.",
         "decline_text": "The patrol is interrupted by a hunting patrol that needs help carrying prey back to camp — border marking will wait til later.",
-        "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "There's a good crop of new grass along this border. It's worth noting, and p_l will report the potential hunting spot when they return to camp.",
-                "exp": 30,
-                "art": "cat_sprites/gen_meadow_WrWr",
-                "relationships": [
+                "frequency": 1,
+                "outcome_art": "cat_sprites/gen_meadow_WrWr",
+                "strings": [
+                    "There's a good crop of new grass along this border. It's worth noting, and p_l will report the potential hunting spot when they return to camp."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "trust"
@@ -37,23 +46,35 @@
                             "cats_from": "cat_from and cat_to scouted good hunting grounds on patrol together."
                         }
                     }
-                ],
-                "frequency": 1
+                ]
             },
             {
-                "text": "s_c isn't just talented at running fast — {PRONOUN/s_c/subject} {VERB/s_c/have/has} some very good advice and {PRONOUN/s_c/subject} {VERB/s_c/share/shares} {PRONOUN/s_c/poss} tips for endurance. The other cats purr gratitude at the end of the day. Everyone's exhausted, but they make it the entire length of that far off border thanks to s_c.",
-                "exp": 40,
-                "art": "cat_sprites/gen_hunt_funrun_WrWr",
-                "can_have_stat": [
-                    "any"
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_hunt_funrun_WrWr",
+                "strings": [
+                    "s_c0 isn't just talented at running fast — {PRONOUN/s_c0/subject} {VERB/s_c0/have/has} some very good advice and {PRONOUN/s_c0/subject} {VERB/s_c0/share/shares} {PRONOUN/s_c0/poss} tips for endurance. The other cats purr gratitude at the end of the day. Everyone's exhausted, but they make it the entire length of that far off border thanks to s_c0."
                 ],
-                "stat_skill": [
-                    "RUNNER,2"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "RUNNER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 40,
+                "relationship_changes": [
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -64,8 +85,12 @@
                         }
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "trust"
@@ -75,20 +100,22 @@
                             "cats_from": "cat_from and cat_to made the long trek to the outer plains while on patrol together."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "p_l really pushes them to be able to patrol all the far border in a single patrol. They make it, and are congratulated on the achievement when they come back into camp after dark, panting.",
-                "exp": 50,
-                "art": "cat_sprites/gen_running_WrWr",
-                "relationships": [
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_running_WrWr",
+                "strings": [
+                    "p_l really pushes them to be able to patrol all the far border in a single patrol. They make it, and are congratulated on the achievement when they come back into camp after dark, panting."
+                ],
+                "exp_gained": 50,
+                "relationship_changes": [
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -105,7 +132,8 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "clan", "high_aggress"
+                            "clan",
+                            "high_aggress"
                         ],
                         "mutual": false,
                         "values": [
@@ -116,30 +144,28 @@
                             "cats_from": "cat_from approved of how cat_to pushed {PRONOUN/cat_to/poss} patrol to reach the far border."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "They trek, and they wander, and they amble, and they pad. But as the sun creeps over the sky, before they reach the far border itself, p_l spots r_c limping. It's nothing, {PRONOUN/r_c/subject} {VERB/r_c/say/says}, just slept on the leg wrong. But far from camp isn't the right place to be limping, and p_l calls the patrol off.",
-                "exp": 0,
-                "art": "cat_sprites/gen_chatting_WrWr",
-                "injury": [
-                    {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "sprain",
-                            "sore"
-                        ]
-                    }
+                "frequency": 3,
+                "outcome_art": "cat_sprites/gen_chatting_WrWr",
+                "strings": [
+                    "They trek, and they wander, and they amble, and they pad. But as the sun creeps over the sky, before they reach the far border itself, p_l spots r_c0 limping. It's nothing, {PRONOUN/r_c0/subject} {VERB/r_c0/say/says}, just slept on the leg wrong. But far from camp isn't the right place to be limping, and p_l calls the patrol off."
                 ],
-                "relationships": [
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
                         "mutual": true,
                         "values": [
                             "trust",
@@ -151,63 +177,91 @@
                         }
                     }
                 ],
-                "frequency": 3
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "sprain",
+                            "sore"
+                        ]
+                    }
+                ]
             },
             {
-                "text": "Before they reach the far border itself, p_l spots s_c limping. It's nothing, {PRONOUN/s_c/subject} {VERB/s_c/say/says}, and refuses to stop. But in these far reaches, in territory not commonly checked, other predators intrude. When a young, inexperienced cougar charges the patrol, s_c <i>should</i> have been able to run fast enough to escape. <i>Should.</i>",
-                "exp": 0,
-                "art": "cat_sprites/gen_running_WrWr",
-                "can_have_stat": [
-                    "not_pl"
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_running_WrWr",
+                "strings": [
+                    "Before they reach the far border itself, p_l spots s_c0 limping. It's nothing, {PRONOUN/s_c0/subject} {VERB/s_c0/say/says}, and refuses to stop. But in these far reaches, in territory not commonly checked, other predators intrude. When a young, inexperienced cougar charges the patrol, s_c0 <i>should</i> have been able to run fast enough to escape. <i>Should.</i>"
                 ],
-                "stat_trait": [
-                    "troublesome",
-                    "fierce",
-                    "confident",
-                    "arrogant",
-                    "competitive",
-                    "rebellious"
-                ],
-                "dead_cats": [
-                    "s_c"
-                ],
-                "history_text": {
-                    "death": "This cat was killed after continuing to patrol the far border while injured by a young, inexperienced cougar."
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "troublesome",
+                                "fierce",
+                                "confident",
+                                "arrogant",
+                                "competitive",
+                                "rebellious"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-p_l"
+                        ]
+                    }
                 },
-                "frequency": 4
+                "exp_gained": 0,
+                "death": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "history": "This cat was killed after continuing to patrol the far border while injured by a young, inexperienced cougar."
+                    }
+                ]
             }
         ]
     },
     {
-        "patrol_id": "pln_bord_newleaf_coyote_small_patrol1",
-        "biome": [
+        "event_id": "pln_bord_newleaf_coyote_small_patrol1",
+        "types": [
+            "border"
+        ],
+        "frequency": 2,
+        "location": [
             "plains"
         ],
         "season": [
             "newleaf"
         ],
-        "types": [
-            "border"
-        ],
-        "tags": [],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                4
+            ]
+        },
+        "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_bord_dogscent_Wr",
-        "min_cats": 2,
-        "max_cats": 4,
-        "min_max_status": {},
-        "frequency": 2,
         "intro_text": "Padding along the border, the cats find fresh coyote scat being washed away by the rain. There's a yip in the distance.",
         "decline_text": "The patrol decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
-        "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "That yip was close. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the small patrol, and leads a risky attack — but it's all worth it, because this nursing mother's pup will die with her.",
-                "exp": 60,
-                "art": "animals/animals/gen_coyoterun",
-                "relationships": [
+                "frequency": 4,
+                "outcome_art": "animals/animals/gen_coyoterun",
+                "strings": [
+                    "That yip was close. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the small patrol, and leads a risky attack — but it's all worth it, because this nursing mother's pup will die with her."
+                ],
+                "exp_gained": 60,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
-                            "clan", "high_aggress"
+                            "clan",
+                            "high_aggress"
                         ],
                         "mutual": false,
                         "values": [
@@ -220,8 +274,12 @@
                         }
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "trust"
@@ -231,18 +289,23 @@
                             "cats_from": "cat_from and cat_to worked together to kill a nursing coyote on patrol."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "The patrol shadows the coyote, sending a message back to warn camp. It's an exhausting and stressful day, but by the time night falls they've confirmed that the coyote is leaving the local area, and the patrol has assured c_n's safety.",
-                "exp": 30,
-                "art": "animals/animals/gen_coyote",
-                "relationships": [
+                "frequency": 2,
+                "outcome_art": "animals/animals/gen_coyote",
+                "strings": [
+                    "The patrol shadows the coyote, sending a message back to warn camp. It's an exhausting and stressful day, but by the time night falls they've confirmed that the coyote is leaving the local area, and the patrol has assured c_n's safety."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
-                            "clan", "high_lawful"
+                            "clan",
+                            "high_lawful"
                         ],
                         "mutual": false,
                         "values": [
@@ -254,18 +317,23 @@
                             "cats_from": "cat_from appreciated how cat_to's patrol shadowed a coyote to track its movements and keep c_n safe."
                         }
                     }
-                ],
-                "frequency": 2
+                ]
             },
             {
-                "text": "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up. Not a moment too soon — from their perch in the oak, the patrol hears the scrabbling of paws and a yip of frustration. That confirms the coyote exists and is interested in cat meat. They wait for the predator to give up, so they can go warn c_n.",
-                "exp": 40,
-                "art": "animals/animals/gen_coyotedanger",
-                "relationships": [
+                "frequency": 4,
+                "outcome_art": "animals/animals/gen_coyotedanger",
+                "strings": [
+                    "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up. Not a moment too soon — from their perch in the oak, the patrol hears the scrabbling of paws and a yip of frustration. That confirms the coyote exists and is interested in cat meat. They wait for the predator to give up, so they can go warn c_n."
+                ],
+                "exp_gained": 40,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
-                            "clan", "high_lawful"
+                            "clan",
+                            "high_lawful"
                         ],
                         "mutual": false,
                         "values": [
@@ -274,11 +342,15 @@
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from appreciated cat_to warning the Clan about a coyote."
-                        } 
+                        }
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -289,16 +361,20 @@
                             "cats_from": "cat_from gained respect for cat_to when {PRONOUN/cat_to/subject} thought fast and led the patrol up a tree to escape a coyote."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "The patrol gathers their courage and valiantly tries to lead away the coyote. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
-                "exp": 30,
-                "art": "cat_sprites/gen_running_WrWr",
-                "relationships": [
+                "frequency": 2,
+                "outcome_art": "cat_sprites/gen_running_WrWr",
+                "strings": [
+                    "The patrol gathers their courage and valiantly tries to lead away the coyote. With such a small group of cats, they can only lead it a short distance, but it's better than nothing."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
                             "some_clan"
                         ],
@@ -311,22 +387,32 @@
                             "cats_from": "cat_from heard about how cat_to's small patrol led a coyote away from the camp."
                         }
                     }
-                ],
-                "frequency": 2
+                ]
             },
             {
-                "text": "s_c sets up a careful ambush ahead of the coyote, and the surprising, darting attack bloodies the coyote's flank, dissuading it from heading further into c_n territory.",
-                "exp": 30,
-                "art": "cat_sprites/gen_coyote_Wr",
-                "can_have_stat": [
-                    "any"
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_coyote_Wr",
+                "strings": [
+                    "s_c0 sets up a careful ambush ahead of the coyote, and the surprising, darting attack bloodies the coyote's flank, dissuading it from heading further into c_n territory."
                 ],
-                "stat_skill": [
-                    "FIGHTER,3"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "FIGHTER,3"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
                             "some_clan"
                         ],
@@ -340,8 +426,12 @@
                         }
                     },
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -352,23 +442,35 @@
                             "cats_from": "cat_to ambushed a coyote on patrol and led cat_from in an effort to drive it off the territory."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "With the border here so flat, there's no trees to climb to escape. But s_c thinks of everything; they go to a well-known burrow that the apprentices play in all the time. It's not a moment too soon, the coyote wanders straight past the entrance as it hunts for field mice, the cats within crouched and silent.",
-                "exp": 50,
-                "art": "animals/animals/gen_coyotedanger",
-                "can_have_stat": [
-                    "any"
+                "frequency": 4,
+                "outcome_art": "animals/animals/gen_coyotedanger",
+                "strings": [
+                    "With the border here so flat, there's no trees to climb to escape. But s_c0 thinks of everything; they go to a well-known burrow that the apprentices play in all the time. It's not a moment too soon, the coyote wanders straight past the entrance as it hunts for field mice, the cats within crouched and silent."
                 ],
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 50,
+                "relationship_changes": [
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -379,24 +481,35 @@
                             "cats_from": "cat_to saved cat_from from a coyote by finding a burrow for the patrol to hide in."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "The scat smells like the coyote has recently given birth, s_c hisses. It's as good a chance as they can ask for — killing her will save c_n from her new pups in seasons to come.",
-                "exp": 50,
-                "art": "animals/animals/gen_coyoterun",
-                "can_have_stat": [
-                    "any"
+                "frequency": 4,
+                "outcome_art": "animals/animals/gen_coyoterun",
+                "strings": [
+                    "The scat smells like the coyote has recently given birth, s_c0 hisses. It's as good a chance as they can ask for — killing her will save c_n from her new pups in seasons to come."
                 ],
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 50,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
-                            "clan", "high_lawful"
+                            "clan",
+                            "high_lawful"
                         ],
                         "mutual": false,
                         "values": [
@@ -408,8 +521,12 @@
                         }
                     },
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "trust"
@@ -419,26 +536,39 @@
                             "cats_from": "cat_to identified the traces of a nursing coyote and went back to camp to get enough warriors to kill it for good."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "s_c selflessly takes the lion's share of the run as the patrol leads the coyote on, exhausting {PRONOUN/s_c/self} almost to the point of danger, but leading the coyote far away from c_n borders. {PRONOUN/s_c/poss/CAP} Clanmates support {PRONOUN/s_c/object} on the long walk home once it's all over, their purrs mixing with s_c's exhausted pants.",
-                "exp": 30,
-                "art": "cat_sprites/gen_hunt_funrun_Wr",
-                "stat_trait": [
-                    "compassionate",
-                    "confident",
-                    "faithful",
-                    "fierce",
-                    "loving",
-                    "loyal",
-                    "responsible",
-                    "righteous"
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_hunt_funrun_Wr",
+                "strings": [
+                    "s_c0 selflessly takes the lion's share of the run as the patrol leads the coyote on, exhausting {PRONOUN/s_c0/self} almost to the point of danger, but leading the coyote far away from c_n borders. {PRONOUN/s_c0/poss/CAP} Clanmates support {PRONOUN/s_c0/object} on the long walk home once it's all over, their purrs mixing with s_c0's exhausted pants."
                 ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "compassionate",
+                                "confident",
+                                "faithful",
+                                "fierce",
+                                "loving",
+                                "loyal",
+                                "responsible",
+                                "righteous"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
                             "clan"
                         ],
@@ -452,9 +582,11 @@
                         }
                     },
                     {
-                        "cats_to": ["s_c"],
+                        "cats_to": [
+                            "s_c0"
+                        ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -466,40 +598,22 @@
                             "cats_from": "cat_from was grateful that cat_to took on the brunt of the danger in leading a coyote away from c_n territory."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "That yip was close. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the small patrol, and leads a risky attack — but an adult coyote is too much for so few warriors, and she escapes having given as good as she got.",
-                "exp": 0,
-                "art": "animals/animals/gen_coyotedanger",
-                "injury": [
-                    {
-                        "cats": [
-                            "multi"
-                        ],
-                        "injuries": [
-                            "minor_injury"
-                        ]
-                    },
-                    {
-                        "cats": [
-                            "multi"
-                        ],
-                        "injuries": [
-                            "big_bite_injury"
-                        ]
-                    }
+                "frequency": 4,
+                "outcome_art": "animals/animals/gen_coyotedanger",
+                "strings": [
+                    "That yip was close. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the small patrol, and leads a risky attack — but an adult coyote is too much for so few warriors, and she escapes having given as good as she got."
                 ],
-                "history_text": {
-                    "scar": "A nursing coyote scarred m_c's pelt.",
-                    "death": "m_c died of injuries inflicted by a nursing coyote."
-                },
-                "relationships": [
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
                             "clan"
                         ],
@@ -513,36 +627,54 @@
                         }
                     }
                 ],
-                "frequency": 4
-            },
-            {
-                "text": "That yip was close. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the small patrol, and leads a risky attack — but an adult coyote is too much for so few warriors. s_c has to fight like an entire patrol just to keep anyone from taking major injury.",
-                "exp": 0,
-                "art": "cat_sprites/gen_coyote_Wr",
-                "can_have_stat": [
-                    "not_pl_rc"
-                ],
-                "stat_skill": [
-                    "FIGHTER,3"
-                ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "multi"
                         ],
-                        "injuries": [
-                            "minor_injury",
-                            "torn ear"
+                        "condition": [
+                            "minor_injury"
+                        ],
+                        "scar_history": "A nursing coyote scarred m_c's pelt.",
+                        "death_history": "m_c died of injuries inflicted by a nursing coyote."
+                    },
+                    {
+                        "cats": [
+                            "multi"
+                        ],
+                        "condition": [
+                            "big_bite_injury"
+                        ],
+                        "scar_history": "A nursing coyote scarred m_c's pelt.",
+                        "death_history": "m_c died of injuries inflicted by a nursing coyote."
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_coyote_Wr",
+                "strings": [
+                    "That yip was close. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the small patrol, and leads a risky attack — but an adult coyote is too much for so few warriors. s_c0 has to fight like an entire patrol just to keep anyone from taking major injury."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "FIGHTER,3"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-p_l",
+                            "-r_c0"
                         ]
                     }
-                ],
-                "history_text": {
-                    "scar": "Driving off coyotes left its scars on r_c.",
-                    "death": "r_c died from injuries sustained in keeping coyotes away from c_n's borders."
                 },
-                "relationships": [
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_to": ["s_c"],
+                        "cats_to": [
+                            "s_c0"
+                        ],
                         "cats_from": [
                             "clan"
                         ],
@@ -556,13 +688,16 @@
                         }
                     },
                     {
-                        "cats_to": ["s_c"],
+                        "cats_to": [
+                            "s_c0"
+                        ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect", "trust"
+                            "respect",
+                            "trust"
                         ],
                         "amount": 30,
                         "log": {
@@ -570,17 +705,35 @@
                         }
                     }
                 ],
-                "frequency": 4
+                "condition": [
+                    {
+                        "cats": [
+                            "multi"
+                        ],
+                        "condition": [
+                            "minor_injury",
+                            "torn ear"
+                        ],
+                        "scar_history": "Driving off coyotes left its scars on r_c0.",
+                        "death_history": "r_c0 died from injuries sustained in keeping coyotes away from c_n's borders."
+                    }
+                ]
             },
             {
-                "text": "The patrol tries to keep watch on the coyote from a distance, but it spots the cats and they have to scatter. Everyone escapes just fine, but they lose track of the coyote. It could be anywhere still out there, lurking, waiting to attack.",
-                "exp": 0,
-                "art": "animals/animals/gen_coyotedanger",
-                "relationships": [
+                "frequency": 2,
+                "outcome_art": "animals/animals/gen_coyotedanger",
+                "strings": [
+                    "The patrol tries to keep watch on the coyote from a distance, but it spots the cats and they have to scatter. Everyone escapes just fine, but they lose track of the coyote. It could be anywhere still out there, lurking, waiting to attack."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
-                            "clan", "high_aggress"
+                            "clan",
+                            "high_aggress"
                         ],
                         "mutual": false,
                         "values": [
@@ -592,22 +745,35 @@
                             "cats_from": "cat_from heard that cat_to failed to track a coyote on patrol, leaving c_n in danger."
                         }
                     }
-                ],
-                "frequency": 2
+                ]
             },
             {
-                "text": "s_c tries to take the lion's share of the effort to lead the coyote away, but {PRONOUN/s_c/poss} strength fails {PRONOUN/s_c/object} and the rest of the patrol needs to rescue {PRONOUN/s_c/object}, cutting short the results of the patrol. Instead, everyone knows the coyote could still be lurking on their borders.",
-                "exp": 0,
-                "art": "animals/animals/gen_coyotedanger",
-                "stat_trait": [
-                    "ambitious",
-                    "bloodthirsty",
-                    "troublesome",
-                    "vengeful"
+                "frequency": 2,
+                "outcome_art": "animals/animals/gen_coyotedanger",
+                "strings": [
+                    "s_c0 tries to take the lion's share of the effort to lead the coyote away, but {PRONOUN/s_c0/poss} strength fails {PRONOUN/s_c0/object} and the rest of the patrol needs to rescue {PRONOUN/s_c0/object}, cutting short the results of the patrol. Instead, everyone knows the coyote could still be lurking on their borders."
                 ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "ambitious",
+                                "bloodthirsty",
+                                "troublesome",
+                                "vengeful"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
                             "clan"
                         ],
@@ -621,22 +787,23 @@
                             "cats_from": "cat_from heard that cat_to failed to track a coyote on patrol, leaving c_n in danger."
                         }
                     }
-                ],
-                "frequency": 2
+                ]
             },
             {
-                "text": "The patrol tries to lead the coyote away from the Clan's borders, but with so few cats it's impossible to cover each other's backs. r_c falls to the coyote as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their Clanmate.",
-                "exp": 0,
-                "art": "animals/animals/gen_coyotedanger",
-                "dead_cats": [
-                    "r_c"
+                "frequency": 4,
+                "outcome_art": "animals/animals/gen_coyotedanger",
+                "strings": [
+                    "The patrol tries to lead the coyote away from the Clan's borders, but with so few cats it's impossible to cover each other's backs. r_c0 falls to the coyote as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their Clanmate."
                 ],
-                "history_text": {
-                    "death": "This cat died to keep the Clan safe from a large coyote."
+                "involved_cats": {
+                    "r_c0": {}
                 },
-                "relationships": [
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
                             "clan"
                         ],
@@ -647,33 +814,34 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from heard that cat_to's patrol wasn't able to lead a coyote away and r_c was killed as a result."
+                            "cats_from": "cat_from heard that cat_to's patrol wasn't able to lead a coyote away and r_c0 was killed as a result."
                         }
                     }
                 ],
-                "frequency": 4
-            },
-            {
-                "text": "The patrol tries bravely to lead the coyote away from c_n borders, but with so few cats it's impossible to cover each other's backs. r_c gets caught while running, and it's all the rest of the patrol can do to distract the coyote long enough to get {PRONOUN/r_c/object} to safety.",
-                "exp": 0,
-                "art": "cat_sprites/gen_coyote_Wr",
-                "injury": [
+                "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
-                        "injuries": [
-                            "big_bite_injury"
-                        ]
+                        "history": "This cat died to keep the Clan safe from a large coyote."
                     }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_coyote_Wr",
+                "strings": [
+                    "The patrol tries bravely to lead the coyote away from c_n borders, but with so few cats it's impossible to cover each other's backs. r_c0 gets caught while running, and it's all the rest of the patrol can do to distract the coyote long enough to get {PRONOUN/r_c0/object} to safety."
                 ],
-                "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a coyote.",
-                    "death": "m_c died of injuries inflicted by a coyote."
+                "involved_cats": {
+                    "r_c0": {}
                 },
-                "relationships": [
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
                             "clan"
                         ],
@@ -684,42 +852,63 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from heard that cat_to's patrol wasn't able to lead a coyote away and r_c was injured as a result."
+                            "cats_from": "cat_from heard that cat_to's patrol wasn't able to lead a coyote away and r_c0 was injured as a result."
                         }
                     }
                 ],
-                "frequency": 4
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "big_bite_injury"
+                        ],
+                        "scar_history": "This cat is scarred from bravely defending the Clan against a coyote.",
+                        "death_history": "m_c died of injuries inflicted by a coyote."
+                    }
+                ]
             }
         ]
     },
     {
-        "patrol_id": "pln_bord_newleaf_coyote_big_patrol1",
-        "biome": [
+        "event_id": "pln_bord_newleaf_coyote_big_patrol1",
+        "types": [
+            "border"
+        ],
+        "frequency": 2,
+        "location": [
             "plains"
         ],
         "season": [
             "newleaf"
         ],
-        "types": [
-            "border"
-        ],
-        "tags": [],
+        "required_cat_types": {
+            "patrol_cats": [
+                5,
+                6
+            ]
+        },
+        "chance_of_success": 10,
         "patrol_art": "cat_sprites/gen_bord_dogscent_Wr",
-        "min_cats": 5,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
         "intro_text": "Approaching the border, the patrol stops in their tracks. A coyote has marked over c_n's border markings — so recently that it stinks from several fox-lengths away, so recently that the canine might be still here, hiding in the misty morning haze.",
         "decline_text": "The patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp.",
-        "chance_of_success": 10,
         "success_outcomes": [
             {
-                "text": "The warriors share a glance and a nod. They have enough cats to try and tackle this problem. Spreading out, they use a search pattern they've all been trained in to isolate the adult coyote's location, and the cover of the mist to approach stealthily. r_c starts the battle strong, sinking {PRONOUN/r_c/poss} teeth into the coyote's hamstring, and the rest of the patrol break cover with screeches, driving the coyote away from c_n.",
-                "exp": 60,
-                "art": "animals/animals/gen_coyoterun",
-                "relationships": [
+                "frequency": 4,
+                "outcome_art": "animals/animals/gen_coyoterun",
+                "strings": [
+                    "The warriors share a glance and a nod. They have enough cats to try and tackle this problem. Spreading out, they use a search pattern they've all been trained in to isolate the adult coyote's location, and the cover of the mist to approach stealthily. r_c0 starts the battle strong, sinking {PRONOUN/r_c0/poss} teeth into the coyote's hamstring, and the rest of the patrol break cover with screeches, driving the coyote away from c_n."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 60,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
                             "clan"
                         ],
@@ -733,9 +922,11 @@
                         }
                     },
                     {
-                        "cats_to": ["r_c"],
+                        "cats_to": [
+                            "r_c0"
+                        ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -747,8 +938,12 @@
                         }
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "trust"
@@ -758,27 +953,35 @@
                             "cats_from": "cat_from and cat_to worked together to drive off a coyote."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "s_c uses {PRONOUN/s_c/poss} tracking talents to lead the patrol to their enemy. They bump into the coyote in the mist with prey stolen from c_n lying at its feet. Not only does the patrol manage to maul the canine, they also recapture the food.",
-                "exp": 70,
-                "art": "animals/animals/gen_coyoterun",
-                "prey": [
-                    "small"
+                "frequency": 4,
+                "outcome_art": "animals/animals/gen_coyoterun",
+                "strings": [
+                    "s_c0 uses {PRONOUN/s_c0/poss} tracking talents to lead the patrol to their enemy. They bump into the coyote in the mist with prey stolen from c_n lying at its feet. Not only does the patrol manage to maul the canine, they also recapture the food."
                 ],
-                "can_have_stat": [
-                    "not_pl_rc"
-                ],
-                "stat_skill": [
-                    "CLEVER,2",
-                    "INSIGHTFUL,2",
-                    "HUNTER,2"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2",
+                                "INSIGHTFUL,2",
+                                "HUNTER,2"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-p_l",
+                            "-r_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 70,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
                             "clan"
                         ],
@@ -792,9 +995,11 @@
                         }
                     },
                     {
-                        "cats_to": ["s_c"],
+                        "cats_to": [
+                            "s_c0"
+                        ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -806,8 +1011,12 @@
                         }
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "trust"
@@ -818,15 +1027,25 @@
                         }
                     }
                 ],
-                "frequency": 4
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ]
             },
             {
-                "text": "That smells like a nursing female. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the patrol, but she's already smelt the cats on the breeze, and she escapes into the distance. At least it's away from c_n.",
-                "exp": 50,
-                "art": "animals/animals/gen_coyoterun",
-                "relationships": [
+                "frequency": 1,
+                "outcome_art": "animals/animals/gen_coyoterun",
+                "strings": [
+                    "That smells like a nursing female. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the patrol, but she's already smelt the cats on the breeze, and she escapes into the distance. At least it's away from c_n."
+                ],
+                "exp_gained": 50,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
                             "clan"
                         ],
@@ -840,8 +1059,12 @@
                         }
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "trust"
@@ -851,16 +1074,20 @@
                             "cats_from": "cat_from and cat_to worked together to drive off a nursing coyote."
                         }
                     }
-                ],
-                "frequency": 1
+                ]
             },
             {
-                "text": "That smells like a nursing female. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. The patrol attacks as one, covering each other's weak points, a wall of teeth, claws, and fury. Her death seals her pups' fate as well: a decisive win for feline over canine.",
-                "exp": 50,
-                "art": "animals/animals/gen_coyoterun",
-                "relationships": [
+                "frequency": 1,
+                "outcome_art": "animals/animals/gen_coyoterun",
+                "strings": [
+                    "That smells like a nursing female. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. The patrol attacks as one, covering each other's weak points, a wall of teeth, claws, and fury. Her death seals her pups' fate as well: a decisive win for feline over canine."
+                ],
+                "exp_gained": 50,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
                             "clan"
                         ],
@@ -874,8 +1101,12 @@
                         }
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "trust"
@@ -885,23 +1116,33 @@
                             "cats_from": "cat_from and cat_to worked together to kill a nursing coyote."
                         }
                     }
-                ],
-                "frequency": 1
+                ]
             },
             {
-                "text": "That smells like a nursing female. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. s_c heads the attack, dancing like the fury of a thunderstorm over the plains, using the backup of {PRONOUN/s_c/poss} Clanmates to full effect to bring the coyote down.",
-                "exp": 50,
-                "art": "cat_sprites/gen_coyote_Wr",
-                "can_have_stat": [
-                    "any"
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_coyote_Wr",
+                "strings": [
+                    "That smells like a nursing female. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. s_c0 heads the attack, dancing like the fury of a thunderstorm over the plains, using the backup of {PRONOUN/s_c0/poss} Clanmates to full effect to bring the coyote down."
                 ],
-                "stat_skill": [
-                    "FIGHTER,2",
-                    "RUNNER,3"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "FIGHTER,2",
+                                "RUNNER,3"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 50,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
                             "clan"
                         ],
@@ -915,8 +1156,12 @@
                         }
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "trust"
@@ -927,8 +1172,12 @@
                         }
                     },
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -938,22 +1187,32 @@
                             "cats_from": "cat_from gained a deeper respect for cat_to's speed in battle after seeing {PRONOUN/cat_to/object} take on a coyote."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "That's the scent of a nursing female, s_c hisses. At {PRONOUN/s_c/poss} direction, the patrol heads out to ambush her, striking to injure the coyote and send her limping and yelping into the distance — hopefully wounded badly enough to prevent her raising those pups.",
-                "exp": 50,
-                "art": "animals/animals/gen_coyoterun",
-                "can_have_stat": [
-                    "any"
+                "frequency": 4,
+                "outcome_art": "animals/animals/gen_coyoterun",
+                "strings": [
+                    "That's the scent of a nursing female, s_c0 hisses. At {PRONOUN/s_c0/poss} direction, the patrol heads out to ambush her, striking to injure the coyote and send her limping and yelping into the distance — hopefully wounded badly enough to prevent her raising those pups."
                 ],
-                "stat_skill": [
-                    "CLEVER,2"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 50,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
                             "clan"
                         ],
@@ -967,8 +1226,12 @@
                         }
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "trust"
@@ -979,8 +1242,12 @@
                         }
                     },
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -990,44 +1257,34 @@
                             "cats_from": "cat_from was impressed cat_to could identify a nursing coyote just by scent."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "That smells like a nursing female. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. The patrol attacks as one, managing to inflict heavy damage, but r_c takes a solid blow that has s_c scurrying to {PRONOUN/r_c/poss} side to administer first aid, and the coyote is allowed to escape.",
-                "exp": 60,
-                "art": "animals/animals/gen_coyoterun",
-                "can_have_stat": [
-                    "not_pl_rc"
+                "frequency": 1,
+                "outcome_art": "animals/animals/gen_coyoterun",
+                "strings": [
+                    "That smells like a nursing female. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. The patrol attacks as one, managing to inflict heavy damage, but r_c0 takes a solid blow that has s_c0 scurrying to {PRONOUN/r_c0/poss} side to administer first aid, and the coyote is allowed to escape."
                 ],
-                "stat_skill": [
-                    "HEALER,0"
-                ],
-                "injury": [
-                    {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "bite-wound"
-                        ]
-                    },
-                    {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "blood loss"
+                "involved_cats": {
+                    "r_c0": {},
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "HEALER,0"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-p_l",
+                            "-r_c0"
                         ]
                     }
-                ],
-                "history_text": {
-                    "scar": "A nursing coyote scarred r_c's pelt.",
-                    "death": "r_c died from injuries sustained keeping coyotes away from c_n's borders."
                 },
-                "relationships": [
+                "exp_gained": 60,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
                             "clan"
                         ],
@@ -1041,8 +1298,12 @@
                         }
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "trust"
@@ -1053,11 +1314,16 @@
                         }
                     },
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["r_c"],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
                         "mutual": false,
                         "values": [
-                            "respect", "like"
+                            "respect",
+                            "like"
                         ],
                         "amount": 30,
                         "log": {
@@ -1065,15 +1331,41 @@
                         }
                     }
                 ],
-                "frequency": 1
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "bite-wound"
+                        ],
+                        "scar_history": "A nursing coyote scarred r_c's pelt.",
+                        "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
+                    },
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "blood loss"
+                        ],
+                        "scar_history": "A nursing coyote scarred r_c's pelt.",
+                        "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
+                    }
+                ]
             },
             {
-                "text": "They decide that no cat is going to be surprised by this predator again, and the patrol shadows the coyote, sending a message to warn camp. With enough cats to keep watch, rest, track, and send messages forward and back from camp, c_n is kept safe from the wandering coyote.",
-                "exp": 40,
-                "art": "animals/animals/gen_coyote",
-                "relationships": [
+                "frequency": 1,
+                "outcome_art": "animals/animals/gen_coyote",
+                "strings": [
+                    "They decide that no cat is going to be surprised by this predator again, and the patrol shadows the coyote, sending a message to warn camp. With enough cats to keep watch, rest, track, and send messages forward and back from camp, c_n is kept safe from the wandering coyote."
+                ],
+                "exp_gained": 40,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
                             "some_clan"
                         ],
@@ -1087,8 +1379,12 @@
                         }
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "trust"
@@ -1098,16 +1394,20 @@
                             "cats_from": "cat_from and cat_to worked together to track a coyote."
                         }
                     }
-                ],
-                "frequency": 1
+                ]
             },
             {
-                "text": "The patrol gathers their courage and valiantly drives away the coyote. Together, working as one, and with all the strength of StarClan behind them, the patrol presses the coyote. By keeping up a series of small skirmishes through the entire day, they drive it far off c_n territory.",
-                "exp": 40,
-                "art": "animals/animals/gen_coyoterun",
-                "relationships": [
+                "frequency": 1,
+                "outcome_art": "animals/animals/gen_coyoterun",
+                "strings": [
+                    "The patrol gathers their courage and valiantly drives away the coyote. Together, working as one, and with all the strength of StarClan behind them, the patrol presses the coyote. By keeping up a series of small skirmishes through the entire day, they drive it far off c_n territory."
+                ],
+                "exp_gained": 40,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
                             "clan"
                         ],
@@ -1121,8 +1421,12 @@
                         }
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "trust"
@@ -1132,21 +1436,34 @@
                             "cats_from": "cat_from and cat_to worked together to drive off a coyote."
                         }
                     }
-                ],
-                "frequency": 1
+                ]
             },
             {
-                "text": "A yip sounds from close by. s_c has just enough time to yell out a plan, leading the whole large patrol in a skillful battle plan against the coyote that protects the cats from the chance of injury. The coyote tucks tail, and runs for more friendly lands.",
-                "exp": 60,
-                "art": "animals/animals/gen_coyoterun",
-                "stat_skill": [
-                    "FIGHTER,3",
-                    "INSIGHTFUL,2",
-                    "CLEVER,3"
+                "frequency": 1,
+                "outcome_art": "animals/animals/gen_coyoterun",
+                "strings": [
+                    "A yip sounds from close by. s_c0 has just enough time to yell out a plan, leading the whole large patrol in a skillful battle plan against the coyote that protects the cats from the chance of injury. The coyote tucks tail, and runs for more friendly lands."
                 ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "FIGHTER,3",
+                                "INSIGHTFUL,2",
+                                "CLEVER,3"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 60,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
                             "clan"
                         ],
@@ -1160,9 +1477,11 @@
                         }
                     },
                     {
-                        "cats_to": ["s_c"],
+                        "cats_to": [
+                            "s_c0"
+                        ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -1174,8 +1493,12 @@
                         }
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "trust"
@@ -1185,26 +1508,39 @@
                             "cats_from": "cat_from and cat_to worked together to drive off a coyote."
                         }
                     }
-                ],
-                "frequency": 1
+                ]
             },
             {
-                "text": "s_c selflessly throws {PRONOUN/s_c/self} into the fight, and every time the coyote tries to grab at {PRONOUN/s_c/poss} Clanmates, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} there with claws, fur puffed out to twice {PRONOUN/s_c/poss} normal size. With s_c defending them, the patrol drives the coyote off, yowling triumphantly.",
-                "exp": 50,
-                "art": "cat_sprites/gen_angrycat_Wr",
-                "stat_trait": [
-                    "compassionate",
-                    "confident",
-                    "faithful",
-                    "fierce",
-                    "loving",
-                    "loyal",
-                    "responsible",
-                    "righteous"
+                "frequency": 1,
+                "outcome_art": "cat_sprites/gen_angrycat_Wr",
+                "strings": [
+                    "s_c0 selflessly throws {PRONOUN/s_c0/self} into the fight, and every time the coyote tries to grab at {PRONOUN/s_c0/poss} Clanmates, {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} there with claws, fur puffed out to twice {PRONOUN/s_c0/poss} normal size. With s_c0 defending them, the patrol drives the coyote off, yowling triumphantly."
                 ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "compassionate",
+                                "confident",
+                                "faithful",
+                                "fierce",
+                                "loving",
+                                "loyal",
+                                "responsible",
+                                "righteous"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 50,
+                "relationship_changes": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
                         "cats_from": [
                             "clan"
                         ],
@@ -1218,9 +1554,11 @@
                         }
                     },
                     {
-                        "cats_to": ["s_c"],
+                        "cats_to": [
+                            "s_c0"
+                        ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -1232,8 +1570,12 @@
                         }
                     },
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "trust"
@@ -1243,78 +1585,78 @@
                             "cats_from": "cat_from and cat_to worked together to drive off a coyote."
                         }
                     }
-                ],
-                "frequency": 1
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "That smells like a nursing female. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the patrol and charges. An adult coyote is no joke, however, and she gives as good as she gets.",
-                "exp": 0,
-                "art": "animals/animals/gen_coyotedanger",
-                "injury": [
+                "frequency": 4,
+                "outcome_art": "animals/animals/gen_coyotedanger",
+                "strings": [
+                    "That smells like a nursing female. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the patrol and charges. An adult coyote is no joke, however, and she gives as good as she gets."
+                ],
+                "exp_gained": 0,
+                "condition": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
-                        "injuries": [
+                        "condition": [
                             "minor_injury"
-                        ]
+                        ],
+                        "scar_history": "A nursing coyote scarred r_c0.",
+                        "death_history": "m_c died of injuries inflicted by a nursing coyote."
                     },
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
-                        "injuries": [
+                        "condition": [
                             "big_bite_injury"
-                        ]
+                        ],
+                        "scar_history": "A nursing coyote scarred r_c0.",
+                        "death_history": "m_c died of injuries inflicted by a nursing coyote."
                     },
                     {
                         "cats": [
                             "multi"
                         ],
-                        "injuries": [
+                        "condition": [
                             "scrapes",
                             "torn ear"
-                        ]
+                        ],
+                        "scar_history": "A nursing coyote scarred r_c0.",
+                        "death_history": "m_c died of injuries inflicted by a nursing coyote."
                     }
-                ],
-                "history_text": {
-                    "scar": "A nursing coyote scarred r_c.",
-                    "death": "m_c died of injuries inflicted by a nursing coyote."
-                },
-                "frequency": 4
+                ]
             },
             {
-                "text": "That smells like a nursing female. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the patrol, but the ambush goes badly. s_c has to fight like a tiger just to keep anyone from taking major injury.",
-                "exp": 0,
-                "art": "animals/animals/gen_coyotedanger",
-                "can_have_stat": [
-                    "not_pl_rc"
+                "frequency": 4,
+                "outcome_art": "animals/animals/gen_coyotedanger",
+                "strings": [
+                    "That smells like a nursing female. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the patrol, but the ambush goes badly. s_c0 has to fight like a tiger just to keep anyone from taking major injury."
                 ],
-                "stat_skill": [
-                    "FIGHTER,3"
-                ],
-                "injury": [
-                    {
-                        "cats": [
-                            "multi"
-                        ],
-                        "injuries": [
-                            "minor_injury",
-                            "torn ear"
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "FIGHTER,3"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-p_l",
+                            "-r_c0"
                         ]
                     }
-                ],
-                "history_text": {
-                    "scar": "Driving off coyotes left its scars on r_c.",
-                    "death": "r_c died from injuries sustained in keeping coyotes away from c_n's borders."
                 },
-                "relationships": [
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_to": ["s_c"],
+                        "cats_to": [
+                            "s_c0"
+                        ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -1326,40 +1668,47 @@
                         }
                     }
                 ],
-                "frequency": 4
-            },
-            {
-                "text": "That smells like a nursing female. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the patrol, but the ambush goes badly. Once they retreat, s_c spends the rest of the day patching the patrol up before they limp back to camp.",
-                "exp": 0,
-                "art": "animals/animals/gen_coyotedanger",
-                "can_have_stat": [
-                    "not_pl_rc"
-                ],
-                "stat_skill": [
-                    "HEALER,2"
-                ],
-                "injury": [
+                "condition": [
                     {
                         "cats": [
                             "multi"
                         ],
-                        "injuries": [
+                        "condition": [
                             "minor_injury",
                             "torn ear"
+                        ],
+                        "scar_history": "Driving off coyotes left its scars on r_c0.",
+                        "death_history": "r_c0 died from injuries sustained in keeping coyotes away from c_n's borders."
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "animals/animals/gen_coyotedanger",
+                "strings": [
+                    "That smells like a nursing female. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the patrol, but the ambush goes badly. Once they retreat, s_c0 spends the rest of the day patching the patrol up before they limp back to camp."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "HEALER,2"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-p_l",
+                            "-r_c0"
                         ]
                     }
-                ],
-                "history_text": {
-                    "scar": "Driving off coyotes left its scars on r_c.",
-                    "death": "r_c died from injuries sustained in keeping coyotes away from c_n's borders."
                 },
-                "relationships": [
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -1372,64 +1721,105 @@
                         }
                     }
                 ],
-                "frequency": 4
-            },
-            {
-                "text": "The warriors share a glance and a nod. They have enough cats to try and tackle this problem. Spreading out, they use a search pattern they've all been trained in to isolate the adult coyote's location, and the cover of the mist to approach stealthily. But r_c misjudges the first attack, and instead the patrol has to focus on defence and getting out of there mostly unscathed.",
-                "exp": 0,
-                "art": "cat_sprites/gen_coyote_Wr",
-                "injury": [
+                "condition": [
                     {
                         "cats": [
-                            "r_c"
+                            "multi"
                         ],
-                        "injuries": [
+                        "condition": [
+                            "minor_injury",
                             "torn ear"
-                        ]
+                        ],
+                        "scar_history": "Driving off coyotes left its scars on r_c0.",
+                        "death_history": "r_c0 died from injuries sustained in keeping coyotes away from c_n's borders."
                     }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_coyote_Wr",
+                "strings": [
+                    "The warriors share a glance and a nod. They have enough cats to try and tackle this problem. Spreading out, they use a search pattern they've all been trained in to isolate the adult coyote's location, and the cover of the mist to approach stealthily. But r_c0 misjudges the first attack, and instead the patrol has to focus on defence and getting out of there mostly unscathed."
                 ],
-                "history_text": {
-                    "scar": "A coyote encounter left its scars on r_c.",
-                    "death": "r_c died from injuries sustained keeping coyotes away from c_n's borders."
+                "involved_cats": {
+                    "r_c0": {}
                 },
-                "relationships": [
-                {
-                    "cats_from": ["patrol", "high_aggress"],
-                    "cats_to": ["r_c"],
-                    "values": ["respect"],
-                    "mutual": false,
-                    "amount": -8,
-                    "log":
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_from": "cat_from blamed cat_to for the patrol's failure to drive off a coyote."
-                    }
-                }
-            ],
-                "frequency": 4
-            },
-            {
-                "text": "The patrol tries to keep watch on the coyote from a distance, but it spots the cats and they have to scatter. It's not as bad as it could've been though; r_c manages to keep track of the coyote's position, and it doesn't come any further into c_n territory.",
-                "exp": 0,
-                "art": "animals/animals/gen_coyotedanger",
-                "frequency": 1
-            },
-            {
-                "text": "s_c tries to show off {PRONOUN/s_c/poss} strength as the patrol bounds toward battle, but it gets in the way of the attack. Without everyone committed to driving the coyote off, the patrol has to fall back, but they do so in good order.",
-                "exp": 0,
-                "art": "animals/animals/gen_coyotedanger",
-                "stat_trait": [
-                    "ambitious",
-                    "bloodthirsty",
-                    "troublesome",
-                    "vengeful",
-                    "insecure",
-                    "rebellious"
-                ],
-                "relationships": [
-                    {
-                        "cats_to": ["s_c"],
                         "cats_from": [
-                            "patrol", "high_aggress"
+                            "patrol_cats",
+                            "high_aggress"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from blamed cat_to for the patrol's failure to drive off a coyote."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "torn ear"
+                        ],
+                        "scar_history": "A coyote encounter left its scars on r_c0.",
+                        "death_history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "outcome_art": "animals/animals/gen_coyotedanger",
+                "strings": [
+                    "The patrol tries to keep watch on the coyote from a distance, but it spots the cats and they have to scatter. It's not as bad as it could've been though; r_c0 manages to keep track of the coyote's position, and it doesn't come any further into c_n territory."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 0
+            },
+            {
+                "frequency": 1,
+                "outcome_art": "animals/animals/gen_coyotedanger",
+                "strings": [
+                    "s_c0 tries to show off {PRONOUN/s_c0/poss} strength as the patrol bounds toward battle, but it gets in the way of the attack. Without everyone committed to driving the coyote off, the patrol has to fall back, but they do so in good order."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "ambitious",
+                                "bloodthirsty",
+                                "troublesome",
+                                "vengeful",
+                                "insecure",
+                                "rebellious"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats",
+                            "high_aggress"
                         ],
                         "mutual": false,
                         "values": [
@@ -1440,24 +1830,24 @@
                             "cats_from": "cat_from blamed cat_to for the patrol's failure to drive off a coyote."
                         }
                     }
-                ],
-                "frequency": 1
+                ]
             },
             {
-                "text": "With so many cats all working as one, the coyote started to get beaten back. But just as the tide of the fight seems about to turn, one lucky strike hits r_c, and those vicious jaws take {PRONOUN/r_c/object} to StarClan.",
-                "exp": 0,
-                "art": "cat_sprites/gen_dead_Wr_EXPLICIT",
-                "art_clean": "cat_sprites/gen_coyote_Wr",
-                "dead_cats": [
-                    "r_c"
+                "frequency": 1,
+                "outcome_art": "cat_sprites/gen_dead_Wr_EXPLICIT",
+                "outcome_art_clean": "cat_sprites/gen_coyote_Wr",
+                "strings": [
+                    "With so many cats all working as one, the coyote started to get beaten back. But just as the tide of the fight seems about to turn, one lucky strike hits r_c0, and those vicious jaws take {PRONOUN/r_c0/object} to StarClan."
                 ],
-                "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a coyote.",
-                    "death": "This cat died to keep the Clan safe from a large coyote."
+                "involved_cats": {
+                    "r_c0": {}
                 },
-                "relationships": [
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_to": ["r_c"],
+                        "cats_to": [
+                            "r_c0"
+                        ],
                         "cats_from": [
                             "clan"
                         ],
@@ -1471,31 +1861,33 @@
                         }
                     }
                 ],
-                "frequency": 1
-            },
-            {
-                "text": "The patrol fights bravely, but you only need to be unlucky once. r_c gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend {PRONOUN/r_c/object}, and r_c is safely helped back to camp, where the medicine den awaits.",
-                "exp": 0,
-                "art": "cat_sprites/gen_coyote_Wr",
-                "injury": [
+                "death": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
-                        "injuries": [
-                            "big_bite_injury"
-                        ]
+                        "history": "This cat died to keep the Clan safe from a large coyote."
                     }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_coyote_Wr",
+                "strings": [
+                    "The patrol fights bravely, but you only need to be unlucky once. r_c0 gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend {PRONOUN/r_c0/object}, and r_c0 is safely helped back to camp, where the medicine den awaits."
                 ],
-                "history_text": {
-                    "scar": "This cat is scarred from bravely defending the Clan against a coyote.",
-                    "death": "m_c died of injuries inflicted by coyote."
+                "involved_cats": {
+                    "r_c0": {}
                 },
-                "relationships": [
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_to": ["r_c"],
+                        "cats_to": [
+                            "r_c0"
+                        ],
                         "cats_from": [
-                            "clan", "high_aggress"
+                            "clan",
+                            "high_aggress"
                         ],
                         "mutual": false,
                         "values": [
@@ -1507,7 +1899,18 @@
                         }
                     }
                 ],
-                "frequency": 4
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "big_bite_injury"
+                        ],
+                        "scar_history": "This cat is scarred from bravely defending the Clan against a coyote.",
+                        "death_history": "m_c died of injuries inflicted by coyote."
+                    }
+                ]
             }
         ]
     }

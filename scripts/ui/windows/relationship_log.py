@@ -30,9 +30,14 @@ class RelationshipLogWindow(GameWindow):
         self.cat_to: Cat = relationship.cat_to
 
         self.relationship: Relationship = relationship
-        self.opposite_relationship: Relationship = self.cat_to.relationships[
+        self.opposite_relationship: Relationship = self.cat_to.relationships.get(
             self.cat_from.ID
-        ]
+        )
+        if self.opposite_relationship is None:
+            self.opposite_relationship = Relationship(self.cat_to, self.cat_from)
+            self.cat_to.relationships[self.cat_from.ID] = self.opposite_relationship
+        self.relationship.opposite_relationship = self.opposite_relationship
+        self.opposite_relationship.opposite_relationship = self.relationship
 
         self.elements: dict = {}
         self.selected_cat_elements: dict = {}
@@ -84,7 +89,7 @@ class RelationshipLogWindow(GameWindow):
             text_kwargs={"cat": short_name},
             manager=MANAGER,
         )
-        if self.relationship.log:
+        if self.opposite_relationship.log:
             logs = self.opposite_relationship.log.copy()
             logs.reverse()
             log_string = "<br><br>".join(logs)

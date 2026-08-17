@@ -1,0 +1,26 @@
+from enum import Enum
+
+
+class ExcludedPermCondition(Enum):
+    not_crooked_jaw = "-crooked jaw"
+    not_lost_a_leg = "-lost a leg"
+    not_born_without_a_leg = "-born without a leg"
+    not_weak_leg = "-weak leg"
+    not_twisted_leg = "-twisted leg"
+    not_lost_their_tail = "-lost their tail"
+    not_born_without_a_tail = "-born without a tail"
+    not_paralyzed = "-paralyzed"
+    not_raspy_lungs = "-raspy lungs"
+    not_wasting_disease = "-wasting disease"
+    not_blind = "-blind"
+    not_one_bad_eye = "-one bad eye"
+    not_failing_eyesight = "-failing eyesight"
+    not_partial_hearing_loss = "-partial hearing loss"
+    not_deaf = "-deaf"
+    not_constant_joint_pain = "-constant joint pain"
+    not_seizure_prone = "-seizure prone"
+    not_allergies = "-allergies"
+    not_constantly_dizzy = "-constantly dizzy"
+    not_recurring_shock = "-recurring shock"
+    not_lasting_grief = "-lasting grief"
+    not_persistent_headaches = "-persistent headaches"

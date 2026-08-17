@@ -1,35 +1,59 @@
 [
     {
-        "patrol_id": "mtn_train_towhee1",
-        "biome": [
+        "event_id": "mtn_train_towhee1",
+        "types": [
+            "training"
+        ],
+        "frequency": 3,
+        "location": [
             "mountainous"
         ],
         "season": [
             "leaf-fall"
         ],
-        "types": [
-            "training"
-        ],
-        "tags": [],
-        "patrol_art": "backgrounds/mtn_valleystream",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
-            "apprentice": [1, 1],
-            "normal adult": [1, 1]
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ],
+            "apprentice": [
+                1,
+                1
+            ],
+            "normal adult": [
+                1,
+                1
+            ]
         },
-        "frequency": 3,
-        "intro_text": "p_l brings app1 down the mountain, to where a little stream turns into a tiny cold bog.",
-        "decline_text": "Thinking better of it, the cats try to hunt instead.",
+        "involved_cats": {
+            "r_c1": {
+                "status": [
+                    "apprentice"
+                ]
+            }
+        },
         "chance_of_success": 60,
+        "patrol_art": "backgrounds/mtn_valleystream",
+        "intro_text": "p_l brings r_c1 down the mountain, to where a little stream turns into a tiny cold bog.",
+        "decline_text": "Thinking better of it, the cats try to hunt instead.",
         "success_outcomes": [
             {
-                "text": "app1 startles, hearing a cat cry out! {PRONOUN/app1/subject/CAP} {VERB/app1/race/races} over the ridge, looking for the caller, as behind {PRONOUN/app1/object} p_l nearly falls over laughing. It's a bird, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}. The spotted towhee has fooled many a young cat, app1 doesn't need to feel bad, it's just something to learn from.",
-                "exp": 15,
-                "relationships": [
+                "frequency": 4,
+                "strings": [
+                    "r_c1 startles, hearing a cat cry out! {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/race/races} over the ridge, looking for the caller, as behind {PRONOUN/r_c1/object} p_l nearly falls over laughing. It's a bird, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}. The spotted towhee has fooled many a young cat, r_c1 doesn't need to feel bad, it's just something to learn from."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 15,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "cats_from": [
                             "p_l"
@@ -49,7 +73,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -61,16 +85,25 @@
                             "cats_from": "cat_to taught cat_from about spotted towhees."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "As they approach the bog, app1 hears the yowl of a cat. An intruder! {PRONOUN/app1/subject/CAP} {VERB/app1/go/goes} haring off, as p_l sighs and settles down to wait. When {PRONOUN/app1/subject} eventually {VERB/app1/return/returns}, p_l teaches {PRONOUN/app1/object} about towhee birds, who can call like a cat.",
-                "exp": 15,
-                "relationships": [
+                "frequency": 1,
+                "strings": [
+                    "As they approach the bog, r_c1 hears the yowl of a cat. An intruder! {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/go/goes} haring off, as p_l sighs and settles down to wait. When {PRONOUN/r_c1/subject} eventually {VERB/r_c1/return/returns}, p_l teaches {PRONOUN/r_c1/object} about towhee birds, who can call like a cat."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 15,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "cats_from": [
                             "p_l"
@@ -90,7 +123,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -102,24 +135,37 @@
                             "cats_from": "cat_to taught cat_from about spotted towhees."
                         }
                     }
-                ],
-                "frequency": 1
+                ]
             },
             {
-                "text": "On a scrub by the bog, a small towhee opens its beak and calls like a cat. app1 pokes s_c for an explanation. An ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted, she got away, but she never managed to catch that bird and get her voice back.",
-                "exp": 15,
-                "stat_skill": [
-                    "SPEAKER,2",
-                    "LORE,1",
-                    "STORY,1"
+                "frequency": 4,
+                "strings": [
+                    "On a scrub by the bog, a small towhee opens its beak and calls like a cat. r_c1 pokes s_c0 for an explanation. An ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted, she got away, but she never managed to catch that bird and get her voice back."
                 ],
-                "can_have_stat": [
-                    "adult"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "SPEAKER,2",
+                                "LORE,1",
+                                "STORY,1"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
+                    }
+                },
+                "exp_gained": 15,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "cats_from": [
                             "p_l"
@@ -139,7 +185,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -151,22 +197,35 @@
                             "cats_from": "cat_to told cat_from the story of how a towhee stole a StarClan cat's voice."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "s_c points out the towhee sitting on a rock overlooking the bog, and it's only that warning that keeps app1 from startling when the bird opens its beak and calls like a cat. It can be difficult to track intruders around c_n's territory, s_c explains, and this is one of the reasons why. But it can also work in c_n's favor too.",
-                "exp": 15,
-                "stat_skill": [
-                    "TEACHER,1"
+                "frequency": 4,
+                "strings": [
+                    "s_c0 points out the towhee sitting on a rock overlooking the bog, and it's only that warning that keeps r_c1 from startling when the bird opens its beak and calls like a cat. It can be difficult to track intruders around c_n's territory, s_c0 explains, and this is one of the reasons why. But it can also work in c_n's favor too."
                 ],
-                "can_have_stat": [
-                    "adult"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "TEACHER,1"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
+                    }
+                },
+                "exp_gained": 15,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "cats_from": [
                             "p_l"
@@ -186,7 +245,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -198,24 +257,38 @@
                             "cats_from": "cat_to taught cat_from about how spotted towhees imitate cats' meows."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe that the cat cry {PRONOUN/app1/subject} {VERB/app1/hear/hears} from the bog comes from a little towhee bird and argues with p_l all the way back to camp.",
-                "exp": 0,
                 "frequency": 4,
-                "relationships": [
+                "strings": [
+                    "r_c1 refuses to believe that the cat cry {PRONOUN/r_c1/subject} {VERB/r_c1/hear/hears} from the bog comes from a little towhee bird and argues with p_l all the way back to camp."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_from": ["p_l"],
-                        "cats_to": ["app1"],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c1"
+                        ],
                         "mutual": true,
-                        "values": ["like"],
+                        "values": [
+                            "like"
+                        ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "app1 argued with p_l about whether towhee birds can imitate cats' cries."
+                            "cats_from": "r_c1 argued with p_l about whether towhee birds can imitate cats' cries."
                         }
                     }
                 ]
@@ -223,36 +296,58 @@
         ]
     },
     {
-        "patrol_id": "mtn_train_towhee2",
-        "biome": [
+        "event_id": "mtn_train_towhee2",
+        "types": [
+            "training"
+        ],
+        "frequency": 3,
+        "location": [
             "mountainous"
         ],
         "season": [
             "leaf-fall"
         ],
-        "types": [
-            "training"
-        ],
-        "tags": [],
-        "patrol_art": "backgrounds/mtn_valleystream",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "apprentice": [2, 2],
-            "normal adult": [1, 4]
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ],
+            "apprentice": [
+                2,
+                2
+            ],
+            "normal adult": [
+                1,
+                4
+            ]
         },
-        "frequency": 3,
+        "chance_of_success": 40,
+        "patrol_art": "backgrounds/mtn_valleystream",
         "intro_text": "p_l brings them down the mountain, to where a little stream turns into a tiny cold bog.",
         "decline_text": "Thinking better of it, the cats try to hunt instead.",
-        "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "app1 startles, hearing a cat cry out! app2 races over the ridge, looking for the caller, as behind them p_l nearly falls over laughing. It's a bird, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}. The spotted towhee has fooled many a young cat. They don't need to feel bad, it's just something to learn from.",
-                "exp": 20,
-                "relationships": [
+                "frequency": 4,
+                "strings": [
+                    "r_c1 startles, hearing a cat cry out! r_c2 races over the ridge, looking for the caller, as behind them p_l nearly falls over laughing. It's a bird, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}. The spotted towhee has fooled many a young cat. They don't need to feel bad, it's just something to learn from."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "cats_from": [
                             "p_l"
@@ -272,7 +367,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -284,16 +379,30 @@
                             "cats_from": "cat_to taught cat_from about spotted towhees."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "As they approach the bog, app1 hears the yowl of a cat. An intruder! {PRONOUN/app1/subject/CAP} {VERB/app1/go/goes} haring off with app2, shrieking with fury, as p_l sighs and settles down to wait. When they eventually return, p_l teaches them about towhee birds, who can call like a cat.",
-                "exp": 20,
-                "relationships": [
+                "frequency": 1,
+                "strings": [
+                    "As they approach the bog, r_c1 hears the yowl of a cat. An intruder! {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/go/goes} haring off with r_c2, shrieking with fury, as p_l sighs and settles down to wait. When they eventually return, p_l teaches them about towhee birds, who can call like a cat."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "cats_from": [
                             "p_l"
@@ -313,7 +422,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -325,24 +434,32 @@
                             "cats_from": "cat_to taught cat_from about spotted towhees."
                         }
                     }
-                ],
-                "frequency": 1
+                ]
             },
             {
-                "text": "On a scrub by the bog, a small towhee opens its beak and calls like a cat. The apprentices poke s_c for an explanation. You see, an ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted, she got away, but she never managed to catch that bird and get her voice back.",
-                "exp": 20,
-                "stat_skill": [
-                    "SPEAKER,2",
-                    "LORE,1",
-                    "STORY,1"
+                "frequency": 4,
+                "strings": [
+                    "On a scrub by the bog, a small towhee opens its beak and calls like a cat. The apprentices poke s_c0 for an explanation. You see, an ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted, she got away, but she never managed to catch that bird and get her voice back."
                 ],
-                "can_have_stat": [
-                    "adult"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "SPEAKER,2",
+                                "LORE,1",
+                                "STORY,1"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "cats_from": [
                             "p_l"
@@ -362,7 +479,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -374,22 +491,30 @@
                             "cats_from": "cat_to told cat_from the story of how a towhee stole a StarClan cat's voice."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "s_c points out the towhee sitting on a rock overlooking the bog, and it's only that warning that keeps the apprentices from startling when the bird opens its beak and calls like a cat. It can be difficult to track intruders around c_n's territory, s_c explains, and this is one of the reasons why. But it can also work in c_n's favor too.",
-                "exp": 15,
-                "stat_skill": [
-                    "TEACHER,1"
+                "frequency": 4,
+                "strings": [
+                    "s_c0 points out the towhee sitting on a rock overlooking the bog, and it's only that warning that keeps the apprentices from startling when the bird opens its beak and calls like a cat. It can be difficult to track intruders around c_n's territory, s_c0 explains, and this is one of the reasons why. But it can also work in c_n's favor too."
                 ],
-                "can_have_stat": [
-                    "adult"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "TEACHER,1"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
+                    }
+                },
+                "exp_gained": 15,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "cats_from": [
                             "p_l"
@@ -409,7 +534,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -421,24 +546,44 @@
                             "cats_from": "cat_to taught cat_from about how spotted towhees imitate cats' meows."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "app1 refuses to believe that the cat cry {PRONOUN/app1/subject} {VERB/app1/hear/hears} from the bog comes from a little towhee bird and argues with p_l and app2 all the way back to camp.",
-                "exp": 0,
                 "frequency": 4,
-                "relationships": [
+                "strings": [
+                    "r_c1 refuses to believe that the cat cry {PRONOUN/r_c1/subject} {VERB/r_c1/hear/hears} from the bog comes from a little towhee bird and argues with p_l and r_c2 all the way back to camp."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_from": ["p_l", "app2"],
-                        "cats_to": ["app1"],
+                        "cats_from": [
+                            "p_l",
+                            "r_c2"
+                        ],
+                        "cats_to": [
+                            "r_c1"
+                        ],
                         "mutual": true,
-                        "values": ["like"],
+                        "values": [
+                            "like"
+                        ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "app1 argued with p_l and app2 about whether towhee birds can imitate cats' cries."
+                            "cats_from": "r_c1 argued with p_l and r_c2 about whether towhee birds can imitate cats' cries."
                         }
                     }
                 ]
