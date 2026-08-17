@@ -13,6 +13,7 @@ from scripts.clan_resources.point_of_interest import (
     get_poi_categories_set,
 )
 from scripts.cat_relations.relationship import Relationship
+from scripts.config import get_config
 from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
     RelationshipConstraintDict,
@@ -255,7 +256,7 @@ def event_for_reputation(required_rep: list) -> bool:
     """
     checks if the clan has reputation matching required_rep
     """
-    if "any" in required_rep:
+    if not required_rep or "any" in required_rep:
         return True
 
     clan_rep = game.clan.reputation
@@ -283,10 +284,7 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
 
 
 def event_for_freshkill_supply(
-    pile,
-    trigger: Literal["always", "low", "adequate", "full", "excess"],
-    factor,
-    clan_size,
+    pile, trigger: Literal["always", "low", "adequate", "full", "excess"], clan_size
 ) -> bool:
     """
     checks if clan has the correct amount of freshkill for event
@@ -308,6 +306,7 @@ def event_for_freshkill_supply(
     # find how much is too much freshkill
     # it would probably be good to move this section of finding trigger_value to the freshkill class
     divider = 35 if game.clan.game_mode == "expanded" else 20
+    factor = get_config("prey.base_event_trigger_factor")
     factor = factor - round(pow((clan_size / divider), 2))
     if factor < 2 and game.clan.game_mode == "expanded":
         factor = 2
@@ -323,7 +322,7 @@ def event_for_freshkill_supply(
     return False
 
 
-def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
+def event_for_herb_supply(trigger, supply_type) -> bool:
     """
     checks if clan's herb supply qualifies for event
     """
@@ -1763,26 +1762,6 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
                     return False
 
         filter_types.remove("mates")
-
-    # check if all cats are mates with p_l (they do not have to be mates with each other)
-    if "mates_with_pl" in filter_types:
-        # First test if there is more than one cat
-        if len(group) == 1:
-            return False
-
-        # Check each cat to see if it is mates with the patrol leader
-        qualifies = False
-        for cat in group:
-            if cat.ID == patrol_leader.ID:
-                continue
-            if cat.ID not in patrol_leader.mate:
-                if "mates_with_pl" in exclusionary_values:
-                    qualifies = True
-                else:
-                    return False
-            if "mates_with_pl" in exclusionary_values and not qualifies:
-                return False
-        filter_types.remove("mates_with_pl")
 
     # Check if the cats are in a parent/child relationship
     if "parent/child" in filter_types:
