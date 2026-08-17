@@ -19,15 +19,16 @@ def find_cats(
     involved_cats: dict,
     outside_cats: list,
     event: Union[PatrolEvent, TextPoolEvent],
-        other_clan: OtherClan
+    other_clan: OtherClan,
 ) -> tuple[bool, dict]:
+    interactable_cats = interactable_cats.copy()
     temp_involved_cats = involved_cats.copy()
 
     cats_to_create = []
     for abbr, constraints in event.involved_cats.items():
         if abbr in involved_cats:
             potential_cats = (
-                involved_cats[abbr] if isinstance(abbr, str) else [involved_cats[abbr]]
+                involved_cats[abbr] if isinstance(abbr, list) else [involved_cats[abbr]]
             )
         elif "n_c" in abbr:
             if "can_create_new_cat" in constraints:
@@ -43,12 +44,13 @@ def find_cats(
                 involved_cats, interactable_cats.copy(), event, constraints
             )
             # if we found no one, then this event isn't possible, and we should try a different one
-            if not involved_cats["multi_cat"]:
+            if not temp_involved_cats["multi_cat"]:
                 return False, {}
             else:
                 # remove cats from the pool so they don't get repeated in the event
-                for c in involved_cats["multi_cat"]:
+                for c in temp_involved_cats["multi_cat"]:
                     interactable_cats.remove(c)
+                continue
 
         else:
             potential_cats = interactable_cats
@@ -63,6 +65,9 @@ def find_cats(
             return_list=True,
             return_id=False,
         )
+        if not possible_cats:
+            return False, {}
+
         cats_found, temp_involved_cats = _find_involved_cats(
             abbr,
             possible_cats,
@@ -73,6 +78,9 @@ def find_cats(
         )
         if not cats_found:
             return False, {}
+
+        if temp_involved_cats[abbr] in interactable_cats:
+            interactable_cats.remove(temp_involved_cats[abbr])
 
     for abbr in cats_to_create:
         constraints = event.involved_cats[abbr]
@@ -97,8 +105,10 @@ def _find_involved_cats(
     relationship_constraint,
     cat_constraints,
     temp_involved_cats: dict,
-        other_clan: OtherClan
+    other_clan: OtherClan,
 ) -> tuple[bool, dict]:
+    possible_cats = possible_cats.copy()
+
     # if relationships aren't required, just grab some cats and go!
     if possible_cats and not relationship_constraint:
         # take first cat
@@ -112,19 +122,20 @@ def _find_involved_cats(
             _temp_cats = temp_involved_cats.copy()
             _temp_cats[abbr] = possible_cats[0]
             # now we check each rel constraint to make sure our new cat is valid
-            for block in relationship_constraint:
-                if not check_rel_constraint_groups(block, _temp_cats):
-                    # they aren't! so we remove them from the possibilities
-                    possible_cats.remove(_temp_cats[abbr])
-                    if not possible_cats:
-                        # oops! no more cats available! this patrol isn't possible
-                        return False, temp_involved_cats
-                    else:
-                        # still some possibilities, let's try the next!
-                        continue
-
-                # if we got here, then this cat works!
-                temp_involved_cats[abbr] = _temp_cats[abbr]
+            if not all(
+                check_rel_constraint_groups(block, _temp_cats)
+                for block in relationship_constraint
+            ):
+                # they aren't! so we remove them from the possibilities
+                possible_cats.remove(_temp_cats[abbr])
+                if not possible_cats:
+                    # oops! no more cats available! this event isn't possible
+                    return False, temp_involved_cats
+                else:
+                    # still some possibilities, let's try the next!
+                    continue
+            # if we got here, then this cat works!
+            temp_involved_cats[abbr] = _temp_cats[abbr]
 
     # there weren't any possible cats, so we'll create a new one if we're allowed
     else:
@@ -140,6 +151,7 @@ def _find_involved_cats(
             return False, temp_involved_cats
 
     return True, temp_involved_cats
+
 
 def _get_multi_cats(
     involved_cats: dict,
@@ -179,24 +191,21 @@ def _get_multi_cats(
         # copy up so that it's easier to pass this and test it, but we can still go back to the OG dict if it fails
         _temp_involved_cats = involved_cats.copy()
         _temp_involved_cats["multi_cat"].append(cat)
-        # find out if this cat will match the rel constraints
-        for block in event.relationship_constraint:
-            # if this block doesn't include multi_cat then we skip it
-            if "multi_cat" not in block["cats_from"] + block["cats_to"]:
-                continue
-            if not check_rel_constraint_groups(block, _temp_involved_cats):
-                failed = True
-                break
 
         # no matter what, cat is no longer allowed in the possible_cats list
         possible_cats.remove(cat)
 
-        # bad cat :( remove from possibilities and try a new one
-        if failed:
+        # find out if this cat will match the rel constraints
+        if not all(
+            check_rel_constraint_groups(block, _temp_involved_cats)
+            for block in event.relationship_constraint
+            if "multi_cat" in block["cats_from"] + block["cats_to"]
+        ):
             _temp_involved_cats["multi_cat"].remove(cat)
-        else:
-            # if we're here, then this is a valid cat! we move on
-            chosen_cats.append(cat)
+            continue
+
+        # if we're here, then this is a valid cat! we move on
+        chosen_cats.append(cat)
 
     # if we didn't find enough cats, then return empty list
     if not chosen_cats or len(chosen_cats) <= 1:
