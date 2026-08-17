@@ -9,7 +9,6 @@ from scripts.cat.enums import CatRank
 from scripts.cat.skills import SkillPath
 from scripts.clan_resources.freshkill import (
     FRESHKILL_EVENT_ACTIVE,
-    FRESHKILL_EVENT_TRIGGER_FACTOR,
 )
 from scripts.events_module.event_filters import (
     event_for_location,
@@ -506,10 +505,7 @@ def filter_events(
                         continue
 
                     if not event_for_freshkill_supply(
-                        game.clan.freshkill_pile,
-                        trigger,
-                        FRESHKILL_EVENT_TRIGGER_FACTOR,
-                        clan_size,
+                        game.clan.freshkill_pile, trigger, clan_size
                     ):
                         discard = True
                         break

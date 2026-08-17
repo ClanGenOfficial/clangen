@@ -11,27 +11,15 @@ import pygame
 from scripts.cat.cats import Cat
 from scripts.cat_relations.enums import RelType
 from scripts.cat.enums import CatAge, CatRank, CatCompatibility
-from scripts.clan_package.get_clan_cats import get_living_clan_cat_count
-from scripts.clan_resources.freshkill import FRESHKILL_EVENT_TRIGGER_FACTOR
 from scripts.config import get_config
 from scripts.events_module.consequences import gather_cat_objects
 from scripts.events_module.event_filters import (
-    event_for_tags,
     get_frequency,
     find_new_frequency,
     check_relationship_value,
     get_personality_compatibility,
-    event_for_location,
-    event_for_season,
     event_for_poi,
-    event_for_required_cat_types,
-    event_for_cat,
     check_rel_constraint_groups,
-    event_for_reputation,
-    event_for_clan_relations,
-    event_for_freshkill_supply,
-    event_for_herb_supply,
-    cat_for_event,
 )
 from scripts.events_module.patrol.create_new_cat import updated_create_new_cat
 from scripts.events_module.patrol.generate_patrol_list import (

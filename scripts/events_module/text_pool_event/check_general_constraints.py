@@ -1,9 +1,6 @@
-from typing import Union, Optional
+from typing import Union, Optional, TYPE_CHECKING
 
-from scripts.cat.cats import Cat
-from scripts.clan import OtherClan
 from scripts.clan_package.get_clan_cats import get_living_clan_cat_count
-from scripts.clan_resources.freshkill import FRESHKILL_EVENT_TRIGGER_FACTOR
 from scripts.events_module.event_filters import (
     event_for_tags,
     event_for_location,
@@ -18,12 +15,16 @@ from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
 
+if TYPE_CHECKING:
+    from scripts.cat.cats import Cat
+    from scripts.clan import OtherClan
+
 
 def pass_general_constraints(
     event: Union[PatrolEvent, TextPoolEvent],
-    primary_cat: Cat,
+    primary_cat: "Cat",
     involved_cats: dict,
-    other_clan: Optional[OtherClan] = None,
+    other_clan: Optional["OtherClan"] = None,
     is_debug_event: bool = False,
 ) -> bool:
     # CHECK LOCATION
@@ -68,7 +69,7 @@ def pass_general_constraints(
                 return False
 
     if hasattr(event, "supply"):
-        clan_size = get_living_clan_cat_count(Cat)
+        clan_size = get_living_clan_cat_count(primary_cat)
         for block in event.supply:
             if not block.get("trigger"):
                 continue
@@ -76,7 +77,6 @@ def pass_general_constraints(
                 if not event_for_freshkill_supply(
                     game.clan.freshkill_pile,
                     trigger=block["trigger"],
-                    factor=FRESHKILL_EVENT_TRIGGER_FACTOR,
                     clan_size=clan_size,
                 ):
                     if is_debug_event:

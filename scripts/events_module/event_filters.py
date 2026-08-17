@@ -13,6 +13,7 @@ from scripts.clan_resources.point_of_interest import (
     get_poi_categories_set,
 )
 from scripts.cat_relations.relationship import Relationship
+from scripts.config import get_config
 from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
     RelationshipConstraintDict,
@@ -283,10 +284,7 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
 
 
 def event_for_freshkill_supply(
-    pile,
-    trigger: Literal["always", "low", "adequate", "full", "excess"],
-    factor,
-    clan_size,
+    pile, trigger: Literal["always", "low", "adequate", "full", "excess"], clan_size
 ) -> bool:
     """
     checks if clan has the correct amount of freshkill for event
@@ -308,6 +306,7 @@ def event_for_freshkill_supply(
     # find how much is too much freshkill
     # it would probably be good to move this section of finding trigger_value to the freshkill class
     divider = 35 if game.clan.game_mode == "expanded" else 20
+    factor = get_config("prey.base_event_trigger_factor")
     factor = factor - round(pow((clan_size / divider), 2))
     if factor < 2 and game.clan.game_mode == "expanded":
         factor = 2
