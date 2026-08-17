@@ -708,7 +708,7 @@ class Pelt:
         if torbie:
             # If it is tortie, the chosen pelt above becomes the base pelt.
             chosen_tortie_base = chosen_pelt
-            #if chosen_tortie_base in ("TwoColour", "SingleColour"):
+            # if chosen_tortie_base in ("TwoColour", "SingleColour"):
             #    chosen_tortie_base = "Single"
             chosen_tortie_base = chosen_tortie_base
             chosen_pelt = random.choice(Pelt.torties)
@@ -829,7 +829,7 @@ class Pelt:
         if torbie:
             # If it is tortie, the chosen pelt above becomes the base pelt.
             chosen_tortie_base = chosen_pelt
-            #if chosen_tortie_base in ("TwoColour", "SingleColour"):
+            # if chosen_tortie_base in ("TwoColour", "SingleColour"):
             #    chosen_tortie_base = "Single"
             chosen_tortie_base = chosen_tortie_base
             chosen_pelt = random.choice(Pelt.torties)
@@ -977,7 +977,7 @@ class Pelt:
 
                 else:
                     # Normal generation
-                    if self.tortie_base in ("SingleStripe", "Smoke"): 
+                    if self.tortie_base in ("SingleStripe", "Smoke"):
                         self.tortie_pattern = choice(
                             [
                                 "Tabby",
