@@ -11878,7 +11878,7 @@
                 ],
                 "mutual": false,
                 "constraints": [
-                    "mates_with_pl"
+                    "mates"
                 ]
             },
             {
