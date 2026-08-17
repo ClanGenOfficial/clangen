@@ -491,8 +491,6 @@ class TestOutcomeExecution(unittest.TestCase):
 
     def test_supply_change(self):
         war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
-        war1.skills.primary.path = SkillPath.CLIMBER
-        war1.skills.secondary = None
 
         patrol = PatrolEvent(
             event_id="test",

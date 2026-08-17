@@ -21,15 +21,50 @@ def find_cats(
     event: Union[PatrolEvent, TextPoolEvent],
     other_clan: OtherClan,
 ) -> tuple[bool, dict]:
-    interactable_cats = interactable_cats.copy()
     temp_involved_cats = involved_cats.copy()
+    # make sure none of the interactable cats are already assigned to an abbr
+    interactable_cats = [
+        c for c in interactable_cats if c not in temp_involved_cats.values()
+    ]
 
     cats_to_create = []
+
+    can_give_condition = isinstance(event, TextPoolEvent)
+
     for abbr, constraints in event.involved_cats.items():
+        possible_injuries = []
+        # grab any injuries they might get
+        if can_give_condition and event.condition:
+            for block in event.condition:
+                if abbr in block["cats"]:
+                    possible_injuries.extend(block["condition"])
+
         if abbr in involved_cats:
             potential_cats = (
                 involved_cats[abbr] if isinstance(abbr, list) else [involved_cats[abbr]]
             )
+
+        elif constraints.get("prior_abbreviation"):
+            # check for exclusionary status
+            is_exclusionary = any(
+                value.find("-") == 0 for value in constraints["prior_abbreviation"]
+            )
+            # now grab the "clean" abbreviations
+            prior_abbreviations = [
+                a.replace("-", "") for a in constraints["prior_abbreviation"]
+            ]
+            # find all the cats that were listed in the abbreviations
+            abbr_cats = [involved_cats.get(_a) for _a in prior_abbreviations]
+            # if it's "any" then that's easy-peasy, just allow any of the cats
+            if "any" in prior_abbreviations:
+                potential_cats = interactable_cats
+            # if it's meant to be exclusionary, then possible_cats will be all cats not in abbr_cats
+            elif is_exclusionary:
+                potential_cats = [c for c in interactable_cats if c not in abbr_cats]
+            # otherwise it's just abbr_cats
+            else:
+                potential_cats = abbr_cats
+
         elif "n_c" in abbr:
             if "can_create_new_cat" in constraints:
                 # these cats can be created if need be, so we'll do them after we've found all the cats that must exist
@@ -41,7 +76,11 @@ def find_cats(
             ]
         elif abbr == "multi_cat":
             temp_involved_cats["multi_cat"] = _get_multi_cats(
-                involved_cats, interactable_cats.copy(), event, constraints
+                involved_cats,
+                interactable_cats.copy(),
+                event,
+                constraints,
+                possible_injuries,
             )
             # if we found no one, then this event isn't possible, and we should try a different one
             if not temp_involved_cats["multi_cat"]:
@@ -62,6 +101,7 @@ def find_cats(
             constraint_dict=constraints,
             possible_cats=potential_cats,
             tags=event.tags,
+            injuries=possible_injuries,
             return_list=True,
             return_id=False,
         )
@@ -158,6 +198,7 @@ def _get_multi_cats(
     interactable_cats: list[Cat],
     event: TextPoolEvent,
     cat_constraints: InvolvedCatDict,
+    possible_injuries: list,
 ) -> list[Cat]:
     # find out how many cats we'll allow
     max_cats = random.choice(get_config("relationship.group_events.multi_cat_amounts"))
@@ -169,6 +210,7 @@ def _get_multi_cats(
         interactable_cats,
         event.tags,
         involved_cat_dict=involved_cats,
+        possible_injuries=possible_injuries,
         return_list=True,
         return_id=False,
     )
