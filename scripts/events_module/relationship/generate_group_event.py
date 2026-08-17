@@ -16,6 +16,7 @@ from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
 )
 from scripts.events_module.text_adjust import process_text, adjust_list_text
+from scripts.events_module.text_pool_event.find_involved_cats import find_cats
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
@@ -58,15 +59,12 @@ def trigger_interaction(main_cat: Cat, interactable_cats: list) -> list[str]:
 def _get_event(
     events: list[TextPoolEvent], interactable_cats: list[Cat], main_cat: Cat
 ) -> tuple[TextPoolEvent, dict[str, Union[Cat, list[Cat]]]]:
-    # find events that m_c can have
-    possible_events = _find_events_for_main_cat(main_cat, events)
-
     # set up the basic cat dict
     involved_cats: dict[str, Union[Cat, list[Cat]]] = {"m_c": main_cat}
 
     # attempt to find a valid event where we can fill the other roles
     chosen_event, involved_cats = _find_event_and_cats(
-        interactable_cats, involved_cats, main_cat, possible_events
+        interactable_cats, involved_cats, main_cat, events
     )
     return chosen_event, involved_cats
 
@@ -116,65 +114,39 @@ def _resolve_event(
 
 
 def _find_event_and_cats(
-    interactable_cats, involved_cats, main_cat, possible_events
+    interactable_cats, involved_cats, main_cat, possible_events: list[TextPoolEvent]
 ) -> tuple[TextPoolEvent, dict]:
     """
     Filters through the possible events to find the ones that we have valid cats for. Returns both the event and the valid cats.
     """
     chosen_event: Optional[TextPoolEvent] = None
-
+    outside_cats = [
+        c
+        for c in Cat.all_cats_list
+        if (c.status.is_other_clancat or c.status.is_outsider) and not c.dead
+    ]
     while not chosen_event and possible_events:
         involved_cats = {"m_c": main_cat}
-        failed = False
-        event_to_test = choice(possible_events)
-        possible_cats = interactable_cats.copy()
-
-        # we go through each required kitty to see if we can find a match within our interactable cats
-        for other_cat, constraints in event_to_test.involved_cats.items():
-            # early break if we're out of cat options
-            if not possible_cats:
-                failed = True
-                break
-
-            # MAIN CAT
-            if other_cat == "m_c":
-                continue  # we skip this cus we already have our m_c
-
-            # MULTI CAT
-            if other_cat == "multi_cat":
-                involved_cats["multi_cat"] = _get_multi_cats(
-                    involved_cats, possible_cats.copy(), event_to_test, constraints
-                )
-                # if we found no one, then this event isn't possible, and we should try a different one
-                if not involved_cats["multi_cat"]:
-                    failed = True
-                else:
-                    # remove cats from the pool so they don't get repeated in the event
-                    for c in involved_cats["multi_cat"]:
-                        possible_cats.remove(c)
-
-            # OTHER SINGLE CATS
-            else:
-                involved_cats[other_cat] = _get_single_cat(
-                    involved_cats,
-                    possible_cats.copy(),
-                    event_to_test,
-                    other_cat,
-                    constraints,
-                )
-
-                if not involved_cats[other_cat]:
-                    failed = True
-                    break
-                else:
-                    possible_cats.remove(involved_cats[other_cat])
-
-        if failed:
+        event_to_test = choices(possible_events, [e.weight for e in possible_events])[0]
+        # make sure none of the interactable cats are already assigned to an abbr
+        interactable_cats = [
+            c for c in interactable_cats if c not in involved_cats.values()
+        ]
+        temp_involved_cats = find_cats(
+            interactable_cats=interactable_cats,
+            involved_cats=involved_cats,
+            outside_cats=outside_cats,
+            event=event_to_test,
+            other_clan=choice(game.clan.all_other_clans)
+            if game.clan.all_other_clans
+            else None,
+        )
+        if not temp_involved_cats:
             possible_events.remove(event_to_test)
-            chosen_event = None
             continue
-        else:
-            chosen_event = event_to_test
+
+        chosen_event = event_to_test
+        involved_cats = temp_involved_cats
 
     return chosen_event, involved_cats
 
@@ -224,125 +196,6 @@ def _find_events_for_main_cat(cat: Cat, possible_events: List[TextPoolEvent]) ->
             allowed.append(event)
 
     return allowed
-
-
-def _get_single_cat(
-    involved_cats: dict,
-    interactable_cats: list,
-    event: TextPoolEvent,
-    cat_abbr: str,
-    cat_constraints: InvolvedCatDict,
-) -> Optional[Cat]:
-    chosen_cat = None
-
-    # get the cats who qualify
-    possible_cats = cat_for_event(
-        cat_constraints,
-        interactable_cats,
-        event.tags,
-        involved_cat_dict=involved_cats,
-        return_list=True,
-        return_id=False,
-    )
-    # early return if no cats
-    if not possible_cats:
-        return None
-
-    # early return if we don't need to check anything else
-    if not event.relationship_constraint:
-        return choice(possible_cats)
-
-    # now we check who will qualify for the relationship_constraint
-    while not chosen_cat and possible_cats:
-        failed = False
-        cat = choice(possible_cats)
-
-        # tempt dict to preserve the original while we test
-        temp_involved_cats = involved_cats.copy()
-        temp_involved_cats[cat_abbr] = cat
-        # test if the cat matches the rel constraints
-        for block in event.relationship_constraint:
-            # if the cat isn't part of this constraint block, then we skip it
-            if cat_abbr not in block["cats_from"] + block["cats_to"]:
-                continue
-
-            if not check_rel_constraint_groups(block, temp_involved_cats):
-                failed = True
-                break
-        # they didn't! we take them out of the running and try again
-        if failed:
-            possible_cats.remove(cat)
-            chosen_cat = None
-            continue
-
-        # if we're here, then this is a valid cat! we move on
-        chosen_cat = cat
-
-    return chosen_cat
-
-
-def _get_multi_cats(
-    involved_cats: dict,
-    interactable_cats: list[Cat],
-    event: TextPoolEvent,
-    cat_constraints: InvolvedCatDict,
-) -> list[Cat]:
-    # find out how many cats we'll allow
-    max_cats = choice(get_config("relationship.group_events.multi_cat_amounts"))
-    chosen_cats = []
-
-    # get the cats who qualify
-    possible_cats = cat_for_event(
-        cat_constraints,
-        interactable_cats,
-        event.tags,
-        involved_cat_dict=involved_cats,
-        return_list=True,
-        return_id=False,
-    )
-    # if not enough possible cats, return empty list
-    if not possible_cats or len(possible_cats) <= 1:
-        return []
-
-    involved_cats["multi_cat"] = []  # set this up ahead of time
-
-    # if relationships aren't required, then we just pick some cats and go!
-    if not event.relationship_constraint:
-        chosen_cats = sample(possible_cats, min(len(possible_cats), max_cats))
-        return chosen_cats
-
-    # now we need to find who qualifies for the relationship constraints
-    while len(chosen_cats) < max_cats and possible_cats:
-        failed = False
-        cat = choice(possible_cats)
-
-        # copy up so that it's easier to pass this and test it, but we can still go back to the OG dict if it fails
-        _temp_involved_cats = involved_cats.copy()
-        _temp_involved_cats["multi_cat"].append(cat)
-        # find out if this cat will match the rel constraints
-        for block in event.relationship_constraint:
-            # if this block doesn't include multi_cat then we skip it
-            if "multi_cat" not in block["cats_from"] + block["cats_to"]:
-                continue
-            if not check_rel_constraint_groups(block, _temp_involved_cats):
-                failed = True
-                break
-
-        # no matter what, cat is no longer allowed in the possible_cats list
-        possible_cats.remove(cat)
-
-        # bad cat :( remove from possibilities and try a new one
-        if failed:
-            _temp_involved_cats["multi_cat"].remove(cat)
-        else:
-            # if we're here, then this is a valid cat! we move on
-            chosen_cats.append(cat)
-
-    # if we didn't find enough cats, then return empty list
-    if not chosen_cats or len(chosen_cats) <= 1:
-        return []
-    # otherwise, return all the cats we found!
-    return chosen_cats
 
 
 def _load_file(path) -> list[TextPoolEvent]:

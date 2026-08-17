@@ -40,6 +40,7 @@ from scripts.events_module.patrol.generate_patrol_list import (
 )
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.text_pool_event import handle_consequences
+from scripts.events_module.text_pool_event.find_involved_cats import find_cats
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import constants
 from scripts.game_structure.game.settings import game_setting_get
@@ -403,9 +404,14 @@ class Patrol:
 
         patrols_to_test = possible_patrols.copy()
         checked_patrols = set()
+        outside_cats = [
+            c
+            for c in Cat.all_cats_list
+            if (c.status.is_other_clancat or c.status.is_outsider) and not c.dead
+        ]
         while not chosen_patrol:
             # make sure we still have possible patrols
-            if not patrols_to_test:
+            if not patrols_to_test and not patrol_override:
                 if len(checked_patrols) >= len(possible_patrols):
                     # we have checked all possible patrols and found none possible
                     # hopefully this is because we were checking romance patrols, not normal patrols
@@ -445,8 +451,21 @@ class Patrol:
                 continue
 
             # CHECK IF CATS FIT
-            if self._patrol_pass_cat_constraints(test_patrol):
+
+            involved_cats = find_cats(
+                interactable_cats=[
+                    c
+                    for c in self.involved_cats["patrol_cats"]
+                    if c != self.involved_cats["p_l"]
+                ],
+                involved_cats=self.involved_cats,
+                outside_cats=outside_cats,
+                event=test_patrol,
+                other_clan=self.other_clan,
+            )
+            if involved_cats:
                 chosen_patrol = test_patrol
+                self.involved_cats = involved_cats
             else:
                 if test_patrol in patrols_to_test:
                     patrols_to_test.remove(test_patrol)
@@ -511,52 +530,6 @@ class Patrol:
             if not set(patrol.herbs_given).intersection(set(target_herbs)):
                 return False
 
-        return True
-
-    def _patrol_pass_cat_constraints(self, patrol: PatrolEvent) -> bool:
-        temp_involved_cats = self.involved_cats.copy()
-
-        outside_cats = [
-            c
-            for c in Cat.all_cats_list
-            if (c.status.is_other_clancat or c.status.is_outsider) and not c.dead
-        ]
-        for abbr, constraints in patrol.involved_cats.items():
-            # if we need n_c then we pull outside cats
-            if "n_c" in abbr:
-                potential_cats = [
-                    c
-                    for c in outside_cats
-                    if c not in self.new_cats and c not in temp_involved_cats.values()
-                ]
-                random.shuffle(potential_cats)
-            elif "p_l" == abbr:
-                potential_cats = [self.involved_cats["p_l"]]
-            else:
-                potential_cats = [
-                    c for c in self.patrol_cats if c not in temp_involved_cats.values()
-                ]
-
-            possible_cats = cat_for_event(
-                constraint_dict=constraints,
-                possible_cats=potential_cats,
-                tags=patrol.tags,
-                return_list=True,
-                return_id=False,
-            )
-            cats_found, temp_involved_cats = self._find_involved_cats(
-                abbr,
-                possible_cats,
-                patrol.relationship_constraint,
-                cat_constraints=constraints,
-                temp_involved_cats=temp_involved_cats,
-            )
-
-            if not cats_found:
-                return False
-
-        # if we're here, then we must have filled all the needed cats!
-        self.involved_cats.update(temp_involved_cats)
         return True
 
     def _find_allowed_outcomes(
@@ -709,116 +682,16 @@ class Patrol:
             if (c.status.is_other_clancat or c.status.is_outsider) and not c.dead
         ]
         temp_involved_cats = self.involved_cats.copy()
-        for abbr, constraints in outcome.involved_cats.items():
-            possible_injuries = []
-            # grab any injuries they might get
-            if outcome.condition:
-                for block in outcome.condition:
-                    if abbr in block["cats"]:
-                        possible_injuries.extend(block["condition"])
 
-            # if the abbr is one we've already assigned, then we just test that cat!
-            if test_cat := self.involved_cats.get(abbr):
-                if not event_for_cat(
-                    constraints,
-                    test_cat,
-                    involved_cat_dict=temp_involved_cats,
-                    injuries=possible_injuries,
-                    event_id=self.patrol_event.event_id,
-                ):
-                    return False
-
-                # check rel constraints
-                if outcome.relationship_constraint:
-                    for block in outcome.relationship_constraint:
-                        if not check_rel_constraint_groups(
-                            constraints_dict=block, involved_cats=temp_involved_cats
-                        ):
-                            return False
-
-            # otherwise, check if this abbr wants to replace an existing one!
-            elif constraints.get("prior_abbreviation"):
-                # check for exclusionary status
-                is_exclusionary = any(
-                    value.find("-") == 0 for value in constraints["prior_abbreviation"]
-                )
-                # now grab the "clean" abbreviations
-                prior_abbreviations = [
-                    a.replace("-", "") for a in constraints["prior_abbreviation"]
-                ]
-                # find all the cats that were listed in the abbreviations
-                abbr_cats = [self.involved_cats.get(_a) for _a in prior_abbreviations]
-                # if it's "any" then that's easy-peasy, just allow any of the cats
-                if "any" in prior_abbreviations:
-                    possible_cats = self.involved_cats["patrol_cats"]
-                # if it's meant to be exclusionary, then possible_cats will be all cats not in abbr_cats
-                elif is_exclusionary:
-                    possible_cats = [
-                        c
-                        for c in self.involved_cats["patrol_cats"]
-                        if c not in abbr_cats
-                    ]
-                # otherwise it's just abbr_cats
-                else:
-                    possible_cats = abbr_cats
-
-                # now we find out if any of these possible cats will work for the patrol
-                for c in possible_cats:
-                    if not c:
-                        continue
-
-                    if not event_for_cat(
-                        constraints,
-                        c,
-                        involved_cat_dict=temp_involved_cats,
-                        injuries=possible_injuries,
-                        event_id=self.patrol_event.event_id,
-                    ):
-                        continue
-
-                    # check rel constraints
-                    if outcome.relationship_constraint:
-                        for block in outcome.relationship_constraint:
-                            if not check_rel_constraint_groups(
-                                constraints_dict=block, involved_cats=temp_involved_cats
-                            ):
-                                continue
-
-                    # if we made it here, this cat works! use them
-                    temp_involved_cats[abbr] = c
-                    break
-
-                if abbr not in temp_involved_cats:
-                    return False
-
-            # if neither of those is happening, then we check if any of our uninvolved cats can take this spot!
-            else:
-                if "n_c" in abbr:
-                    potential_cats = [c for c in outside_cats if c not in self.new_cats]
-                    random.shuffle(potential_cats)
-                else:
-                    potential_cats = [
-                        c
-                        for c in self.patrol_cats
-                        if c not in self.involved_cats.values()
-                    ]
-
-                possible_cats = cat_for_event(
-                    constraint_dict=constraints,
-                    possible_cats=potential_cats,
-                    tags=outcome.tags,
-                    return_list=True,
-                    return_id=False,
-                )
-                cats_found, temp_involved_cats = self._find_involved_cats(
-                    abbr,
-                    possible_cats,
-                    outcome.relationship_constraint,
-                    cat_constraints=constraints,
-                    temp_involved_cats=temp_involved_cats,
-                )
-                if not cats_found:
-                    return False
+        temp_involved_cats = find_cats(
+            interactable_cats=temp_involved_cats["patrol_cats"],
+            involved_cats=temp_involved_cats,
+            outside_cats=outside_cats,
+            event=outcome,
+            other_clan=self.other_clan,
+        )
+        if not temp_involved_cats:
+            return False
 
         # if we're here, then we must have found all our cats!
         self.outcome_cats[outcome_type] = temp_involved_cats
