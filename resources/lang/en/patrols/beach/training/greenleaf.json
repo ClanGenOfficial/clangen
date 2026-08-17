@@ -1,41 +1,55 @@
 [
     {
-        "patrol_id": "bch_train_greenleaf_twolegmigration_lorelocked1",
-        "biome": [
+        "event_id": "bch_train_greenleaf_twolegmigration_lorelocked1",
+        "types": [
+            "training"
+        ],
+        "frequency": 3,
+        "location": [
             "beach"
         ],
         "season": [
             "greenleaf"
         ],
-        "tags": [],
-        "types": [
-            "training"
-        ],
-        "patrol_art": "gen_bord_story",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "normal adult": [1, 6]
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
-        "frequency": 3,
+        "involved_cats": {
+            "p_l": {
+                "stat": {
+                    "skill": [
+                        "LORE,1"
+                    ],
+                    "trait": []
+                }
+            }
+        },
         "chance_of_success": 60,
-        "pl_skill_constraint": [
-            "LORE,1"
-        ],
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "intro_text": "p_l leads the patrol out to a promontory of rock, pointing out the Twoleg monsters crowding the sandy shoreline below as they twinkle in the sunlight.",
         "decline_text": "Clearly there'll be no using this part of their territory today then. The patrol goes to report this back to camp.",
         "success_outcomes": [
             {
-                "text": "This is the history p_l is here to teach — every greenleaf, the Twolegs come to this beach, a great migration in their monsters. They swim in this bay, and occasionally the bays to either side, but no more than that, a constrained invasion. Leave them to their rituals. c_n will return to this beach when the seasons change.",
-                "exp": 30,
-                "art": "bch_hunt_twolegsobject",
-                "relationships": [
+                "frequency": 4,
+                "outcome_art": "animals/bch_twolegbeach",
+                "strings": [
+                    "This is the history p_l is here to teach — every greenleaf, the Twolegs come to this beach, a great migration in their monsters. They swim in this bay, and occasionally the bays to either side, but no more than that, a constrained invasion. Leave them to their rituals. c_n will return to this beach when the seasons change."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": true,
                         "values": [
@@ -47,75 +61,99 @@
                             "cats_from": "cat_from learned from cat_to about how the Twolegs occupy a particular beach throughout greenleaf."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "The monsters unnerve the patrol, who don't want to stick around to hear p_l's lesson. p_l disapproves but lets the patrol end early.",
-                "exp": 0,
-                "relationships": [
+                "frequency": 4,
+                "strings": [
+                    "The monsters unnerve the patrol, who don't want to stick around to hear p_l's lesson. p_l disapproves but lets the patrol end early."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "cats_from": [
                             "p_l"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect", "like"
+                            "respect",
+                            "like"
                         ],
                         "amount": -5,
                         "log": {
                             "cats_from": "cat_from was disappointed that cat_from and the patrol were too nervous at the sight of monsters to listen to {PRONOUN/cat_from/object}."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ]
     },
     {
-        "patrol_id": "bch_train_greenleaf_dryhot1",
-        "biome": [
+        "event_id": "bch_train_greenleaf_dryhot1",
+        "types": [
+            "training"
+        ],
+        "frequency": 3,
+        "location": [
             "beach"
         ],
         "season": [
             "greenleaf"
         ],
-        "types": [
-            "training"
-        ],
         "tags": [
             "romance"
         ],
-        "patrol_art": "fst_hunt_heat",
-        "min_cats": 4,
-        "max_cats": 6,
-        "min_max_status": {
-            "normal adult": [4, 6]
+        "required_cat_types": {
+            "patrol_cats": [
+                4,
+                6
+            ],
+            "normal adult": [
+                4,
+                6
+            ]
         },
-        "frequency": 3,
-        "chance_of_success": 60,
         "relationship_constraint": [
-            "-mates"
+            {
+                "cats_from": [
+                    "p_l"
+                ],
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "-mates"
+                ]
+            }
         ],
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites/gen_hunt_heat_WrWr",
         "intro_text": "This is just oppressive. The sand burns the patrol's paws as they dart from one refuge of dune-bush to another, the distant training grounds they were supposed to go to looking more and more out of reach.",
         "decline_text": "Time to go back home and wait it out.",
         "success_outcomes": [
             {
-                "text": "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favor. There's nothing like swimming in greenleaf, and the patrol devolves into a waterfight.",
-                "exp": 20,
-                "art": "gen_train_soggykitty_happy_warrior",
-                "relationships": [
-                    {   
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_train_soggykittyhappy_Wr",
+                "strings": [
+                    "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c0 swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favor. There's nothing like swimming in greenleaf, and the patrol devolves into a waterfight."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
                         "cats_to": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -127,20 +165,25 @@
                             "cats_from": "cat_from and cat_to enjoyed cooling off in a rockpool on a hot greenleaf day."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/purr/purrs}, welcoming it and returning the favor, batting back in mock splash-fight as the rest of the patrol fades away, just the two of them in their own little world.",
-                "exp": 20,
-                "art": "fst_train_newleafmatesonadates_70locked1",
-                "relationships": [
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_talkingmates_WrWr",
+                "strings": [
+                    "They all stagger towards the nearest rockpool and flop into it, not hunting, purely there for the water and damp coats. r_c0 swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/purr/purrs}, welcoming it and returning the favor, batting back in mock splash-fight as the rest of the patrol fades away, just the two of them in their own little world."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -153,167 +196,285 @@
                             "cats_from": "cat_from and cat_to were so involved in splashing each other while cooling down on patrol that they forgot any other cat was there."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "It's a long walk home, and not a pleasant one. They probably should have drunk more water before going out to train. Or not gone out at all.",
-                "exp": 0,
-                "injury": [
+                "frequency": 4,
+                "strings": [
+                    "It's a long walk home, and not a pleasant one. They probably should have drunk more water before going out to train. Or not gone out at all."
+                ],
+                "exp_gained": 0,
+                "condition": [
                     {
                         "cats": [
                             "multi"
                         ],
-                        "injuries": [
+                        "condition": [
                             "dehydrated"
-                        ]
+                        ],
+                        "death_history": "m_c got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/poss} life from {PRONOUN/m_c/object}."
                     }
-                ],
-                "history_text": {
-                    "death": "m_c got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/poss} life from {PRONOUN/m_c/object}."
-                },
-                "frequency": 4
+                ]
             }
         ]
     },
     {
-    "patrol_id": "bch_train_greenleafmudflats",
-    "biome": ["beach"],
-    "season": ["greenleaf"],
-    "types": ["training"],
-    "tags": [],
-    "patrol_art": "bch_bord_trackrogue",
-    "min_cats": 2,
-    "max_cats": 2,
-    "min_max_status": {
-        "apprentice": [
-            1,
-            1
+        "event_id": "bch_train_greenleafmudflats",
+        "types": [
+            "training"
         ],
-        "normal adult": [
-            1,
-            1
+        "frequency": 4,
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ],
+            "apprentice": [
+                1,
+                1
+            ],
+            "normal adult": [
+                1,
+                1
+            ]
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "p_l"
+                ],
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "mentor/app"
+                ]
+            }
+        ],
+        "involved_cats": {
+            "r_c1": {
+                "status": [
+                    "apprentice"
+                ]
+            }
+        },
+        "chance_of_success": 65,
+        "patrol_art": "backgrounds/bch_pawprints",
+        "intro_text": "While wading through the damp mud behind {PRONOUN/r_c1/poss} mentor, r_c1 wonders where the ocean went. p_l explains that the tide flows out far here, twice a day, leaving behind this landscape of soft, algae-rich silt stretching to the far horizon. Seabirds, probing the mud for cockles and clams, startle into flight at the cats' approach.",
+        "decline_text": "A sudden downpour leaves p_l and r_c1 drenched. They cancel training and return to camp to shelter.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "backgrounds/bch_pawprints",
+                "strings": [
+                    "c_n never goes out onto the mudflats in fog. It's far too easy to lose your way, wander toward the ocean, and be swept away when the tide returns. But under the greenleaf sun, it's safe to frolic and train here. p_l instructs r_c1 to keep an ear out for the approaching waves and an eye on the sun's movement."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 14,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 6,
+                        "log": {
+                            "cats_from": "cat_from felt more secure after learning about mudflat safety from cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "outcome_art": "cat_sprites/bch_train_lore1_Wr",
+                "strings": [
+                    "If r_c1 wants to catch the birds, {PRONOUN/r_c1/subject} mustn't stick out so much. Following p_l's lead, they both roll in the mud, let themselves dry in the sun, and crouch in wait. A seabird wades closer, but r_c1 pounces too early, {PRONOUN/r_c1/poss} paws swishing through the air as the bird flaps away in a flurry of feathers. It's a process, p_l purrs - r_c1 got the principle."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 18,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "like"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from felt encouraged by cat_to's supportive response to a missed catch."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "outcome_art": "backgrounds/bch_pawprints",
+                "strings": [
+                    "r_c1 watches the sea slowly return, rivulets turning into puddles and lapping waves as the water reclaims the land. With it, p_l explains, are traveling countless tiny mud snails — as small as a single kitten-claw, they cling to the underside of the water's surface. They move with the tide itself and are the fastest sealife in the mudflats."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's intricate knowledge of the mudflats' inhabitants."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "outcome_art": "backgrounds/bch_pawprints",
+                "strings": [
+                    "r_c1 inquires about the little spirally piles of sand on the ground. p_l describes how sand worms live everywhere here, feeding on the algae and depositing leftover sand at the end of their tunnels. The worms are food for the birds, and the birds are food for c_n. If r_c1 can catch them! They'll work on pouncing techniques next."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's intricate knowledge of the mudflats' inhabitants."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_running_WrAp",
+                "strings": [
+                    "The water slowly returns, and in the distance, damp fur flashes at the surface. p_l decides they really should return to camp, quickly. As r_c1 runs for shore, honking calls fill the air behind them. Out of breath and back on dry land, p_l explains: seals. Big teeth. Faster than they look."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from was scared by seals appearing in the mudflats and wished cat_to had warned {PRONOUN/cat_from/object}."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "backgrounds/bch_pawprints",
+                "strings": [
+                    "p_l reminds r_c1 not to get distracted. {PRONOUN/r_c1/subject/CAP} suddenly {VERB/r_c1/realize/realizes} there is water staining {PRONOUN/r_c1/poss} paws. The sea can return faster than {PRONOUN/r_c1/subject} think{VERB/r_c1//s}, p_l chides, and getting caught out by the rising water is dangerous. Cats have been lost that way. Staring at the ground, r_c1 quickly trudges after {PRONOUN/r_c1/poss} mentor."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -6,
+                        "log": {
+                            "cats_from": "cat_to got distracted while training on the mudflats. cat_from was disappointed {PRONOUN/cat_from/subject} had to remind {PRONOUN/cat_to/object} to stay vigilant."
+                        }
+                    }
+                ]
+            }
         ]
-    },
-    "frequency": 4,
-    "chance_of_success": 65,
-    "relationship_constraint": ["mentor/app"],
-    "intro_text": "While wading through the damp mud behind {PRONOUN/app1/poss} mentor, app1 wonders where the ocean went. p_l explains that the tide flows out far here, twice a day, leaving behind this landscape of soft, algae-rich silt stretching to the far horizon. Seabirds, probing the mud for cockles and clams, startle into flight at the cats' approach.",
-    "decline_text": "A sudden downpour leaves p_l and app1 drenched. They cancel training and return to camp to shelter.",
-    "success_outcomes": [
-{
-    "text": "c_n never goes out onto the mudflats in fog. It's far too easy to lose your way, wander toward the ocean, and be swept away when the tide returns. But under the greenleaf sun, it's safe to frolic and train here. p_l instructs app1 to keep an ear out for the approaching waves and an eye on the sun's movement.",
-    "exp": 14,
-    "frequency": 4,
-    "relationships": [
-{
-    "cats_from": ["app1"],
-    "cats_to": ["p_l"],
-    "mutual": false,
-    "values": ["trust","respect"],
-    "amount": 6,
-    "log": {
-    "cats_from": "cat_from felt more secure after learning about mudflat safety from cat_to."
-}
-}
-],
-    "art": "bch_bord_trackrogue"
-},
-{
-    "text": "If app1 wants to catch the birds, {PRONOUN/app1/subject} mustn't stick out so much. Following p_l's lead, they both roll in the mud, let themselves dry in the sun, and crouch in wait. A seabird wades closer, but app1 pounces too early, {PRONOUN/app1/poss} paws swishing through the air as the bird flaps away in a flurry of feathers. It's a process, p_l purrs - app1 got the principle.",
-    "exp": 18,
-    "frequency": 3,
-    "relationships": [
-{
-    "cats_from": ["app1"],
-    "cats_to": ["p_l"],
-    "mutual": false,
-    "values": ["comfort","like"],
-    "amount": 8,
-    "log": {
-    "cats_from": "cat_from felt encouraged by cat_to's supportive response to a missed catch."
-}
-}
-],
-    "art": "bch_train_lore1"
-},
-{
-    "text": "app1 watches the sea slowly return, rivulets turning into puddles and lapping waves as the water reclaims the land. With it, p_l explains, are traveling countless tiny mud snails — as small as a single kitten-claw, they cling to the underside of the water's surface. They move with the tide itself and are the fastest sealife in the mudflats.",
-    "exp": 20,
-    "frequency": 2,
-    "relationships": [
-{
-    "cats_from": ["app1"],
-    "cats_to": ["p_l"],
-    "mutual": false,
-    "values": ["respect"],
-    "amount": 10,
-    "log": {
-    "cats_from": "cat_from was impressed by cat_to's intricate knowledge of the mudflats' inhabitants."
- 
-}
-}
-],
-    "art": "bch_bord_trackrogue"
-},
-{
-    "text": "app1 inquires about the little spirally piles of sand on the ground. p_l describes how sand worms live everywhere here, feeding on the algae and depositing leftover sand at the end of their tunnels. The worms are food for the birds, and the birds are food for c_n. If app1 can catch them! They'll work on pouncing techniques next.",
-    "exp": 20,
-    "frequency": 2,
-    "relationships": [
-{
-    "cats_from": ["app1"],
-    "cats_to": ["p_l"],
-    "mutual": false,
-    "values": ["respect"],
-    "amount": 10,
-    "log": {
-    "cats_from": "cat_from was impressed by cat_to's intricate knowledge of the mudflats' inhabitants."
-}
-}
-],
-    "art": "bch_bord_trackrogue"
-}
-],
-    "fail_outcomes": [
-{
-    "text": "The water slowly returns, and in the distance, damp fur flashes at the surface. p_l decides they really should return to camp, quickly. As app1 runs for shore, honking calls fill the air behind them. Out of breath and back on dry land, p_l explains: seals. Big teeth. Faster than they look.",
-    "exp": 0,
-    "frequency": 4,
-    "relationships": [
-{
-    "cats_from": ["app1"],
-    "cats_to": ["p_l"],
-    "mutual": false,
-    "values": ["trust"],
-    "amount": -8,
-    "log": {
-    "cats_from": "cat_from was scared by seals appearing in the mudflats and wished cat_to had warned {PRONOUN/cat_from/object}."
-}
-}
-],
-    "art": "running_warrior_app"
-},
-{
-    "text": "p_l reminds app1 not to get distracted. {PRONOUN/app1/subject/CAP} suddenly {VERB/app1/realize/realizes} there is water staining {PRONOUN/app1/poss} paws. The sea can return faster than {PRONOUN/app1/subject} think{VERB/app1//s}, p_l chides, and getting caught out by the rising water is dangerous. Cats have been lost that way. Staring at the ground, app1 quickly trudges after {PRONOUN/app1/poss} mentor.",
-    "exp": 0,
-    "frequency": 4,
-    "relationships": [
-{
-    "cats_from": ["p_l"],
-    "cats_to": ["app1"],
-    "mutual": false,
-    "values": ["respect","trust"],
-    "amount": -6,
-    "log": {
-    "cats_from": "cat_to got distracted while training on the mudflats. cat_from was disappointed {PRONOUN/cat_from/subject} had to remind {PRONOUN/cat_to/object} to stay vigilant."
-}
-}
-],
-    "art": "bch_bord_trackrogue"
-}
-]
-}
+    }
 ]

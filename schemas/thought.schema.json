@@ -203,48 +203,401 @@
       "title": "Biome",
       "type": "string"
     },
-    "BornWith": {
+    "CanCreateNewCat": {
+      "additionalProperties": false,
       "properties": {
-        "m_c": {
-          "title": "M C",
+        "become_litter": {
+          "description": "True will generate a 2-5 litter of kittens rather than a single cat. This means the abbreviation for this litter should not be used within the text of the event, since they have no singular name or pronoun",
+          "title": "Become Litter",
           "type": "boolean"
         },
-        "r_c": {
-          "title": "R C",
-          "type": "boolean"
+        "assign_blood_parent": {
+          "description": "List of designations for cats who will become this cat's blood parents. These cats must have already been specified prior in involved_cats",
+          "items": {
+            "type": "string"
+          },
+          "title": "Assign Blood Parent",
+          "type": "array"
+        },
+        "assign_adoptive_parent": {
+          "description": "List of designations for cats who will become this cat's adoptive parents. These cats must have already been specified prior in involved_cats",
+          "items": {
+            "type": "string"
+          },
+          "title": "Assign Adoptive Parent",
+          "type": "array"
+        },
+        "assign_mate": {
+          "description": "List of designations for cats who will become this cat's mates. These cats must have already been specified prior in involved_cats",
+          "items": {
+            "type": "string"
+          },
+          "title": "Assign Mate",
+          "type": "array"
         }
       },
-      "title": "BornWith",
+      "title": "CanCreateNewCat",
       "type": "object"
     },
-    "Camp": {
-      "enum": [
-        "camp1",
-        "camp2",
-        "camp3",
-        "camp4"
-      ],
-      "title": "Camp",
-      "type": "string"
-    },
-    "HasInjuries": {
+    "CatDict": {
+      "additionalProperties": false,
       "properties": {
-        "m_c": {
+        "prior_abbreviation": {
+          "description": "Specifies s_c choices. Read the docs. It's too long for this.",
           "items": {
-            "$ref": "#/$defs/IllnessInjuryAny"
+            "anyOf": [
+              {
+                "$ref": "#/$defs/GatherCat"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
           },
-          "title": "M C",
+          "title": "Prior Abbreviation",
           "type": "array"
         },
-        "r_c": {
+        "can_create_new_cat": {
+          "$ref": "#/$defs/CanCreateNewCat",
+          "description": "Add if the outsider/other_clan cat can be newly generated rather than having to utilize an existing cat. Can even be added as an empty dict to simply mark it as a new cat creation without any additional specifications",
+          "title": "Can Create New Cat"
+        },
+        "status": {
+          "description": "Constrains the event to only happen if the cat holds a certain role. You can utilize exclusionary tags. You can also remove the parameter to allow the event to occur for all roles except \"newborns\", who are only allowed if specifically tagged as such.",
           "items": {
-            "$ref": "#/$defs/IllnessInjuryAny"
+            "$ref": "#/$defs/StatusAny"
           },
-          "title": "R C",
+          "title": "Status",
           "type": "array"
+        },
+        "past_status": {
+          "description": "Constrains the event to only happen if the cat held a certain role in the past",
+          "items": {
+            "$ref": "#/$defs/StatusAny"
+          },
+          "title": "Past Status",
+          "type": "array"
+        },
+        "age": {
+          "description": "Constrains the event to only occur if the cat is within a certain age group. You can also remove the parameter to allow the event to occur for all ages except \"newborns\", who are only allowed if specifically tagged as such",
+          "items": {
+            "$ref": "#/$defs/Age"
+          },
+          "title": "Age",
+          "type": "array"
+        },
+        "gender": {
+          "description": "Constrains the event to only occur if the cat has a certain birth gender. can_birth will allow either female or male cats dependant upon the player's settings",
+          "enum": [
+            "male",
+            "female",
+            "can_birth"
+          ],
+          "title": "Gender",
+          "type": "string"
+        },
+        "group": {
+          "description": "Constraints the thought to only happen if the cat is a member of a listed group or a member of no group. This should only be used to dictate what group a new cat is originally part of",
+          "items": {
+            "$ref": "#/$defs/Group"
+          },
+          "title": "Group",
+          "type": "array"
+        },
+        "standing": {
+          "$ref": "#/$defs/StandingDict",
+          "description": "Constrains the event to only happen if the cat matches with the dictated group standings. A group standing is the relationship between a cat and a group, for example: if they are an exile or lost",
+          "title": "Standing"
+        },
+        "stat": {
+          "$ref": "#/$defs/StatDict",
+          "description": "Constrains the event to only occur if the cat holds specific skills or traits. You can utilize exclusionary tags",
+          "title": "Stat"
+        },
+        "health": {
+          "$ref": "#/$defs/HealthDict",
+          "description": "Constrains the event to only occur if the cat's health matches the constraints",
+          "title": "Health"
+        },
+        "backstory": {
+          "description": "Constrains the event to only occur if the cat has a listed backstory. To find what each backstory describes, you can find more by going to resources/lang/en/cat/backstories.en.json. You can utilize exclusionary tags",
+          "items": {
+            "$ref": "#/$defs/Backstory"
+          },
+          "title": "Backstory",
+          "type": "array"
+        },
+        "has_mentor": {
+          "description": "Set True if the cat must be mentored. This does not require the mentor to be present on the patrol",
+          "title": "Has Mentor",
+          "type": "boolean"
         }
       },
-      "title": "HasInjuries",
+      "title": "CatDict",
+      "type": "object"
+    },
+    "ExcludedIllness": {
+      "enum": [
+        "-seizure",
+        "-diarrhea",
+        "-fleas",
+        "-greencough",
+        "-kittencough",
+        "-an infected wound",
+        "-carrionplace disease",
+        "-redcough",
+        "-running nose",
+        "-whitecough",
+        "-yellowcough",
+        "-a festering wound",
+        "-heat stroke",
+        "-heat exhaustion",
+        "-stomachache",
+        "-constant nightmares",
+        "-grief stricken",
+        "-malnourished",
+        "-starving"
+      ],
+      "title": "ExcludedIllness",
+      "type": "string"
+    },
+    "ExcludedInjury": {
+      "enum": [
+        "-claw-wound",
+        "-bite-wound",
+        "-cat bite",
+        "-beak bite",
+        "-snake bite",
+        "-rat bite",
+        "-tick bites",
+        "-blood loss",
+        "-broken jaw",
+        "-broken bone",
+        "-mangled leg",
+        "-dislocated joint",
+        "-joint pain",
+        "-sprain",
+        "-mangled tail",
+        "-bruises",
+        "-cracked pads",
+        "-sore",
+        "-phantom pain",
+        "-scrapes",
+        "-small cut",
+        "-torn pelt",
+        "-torn ear",
+        "-frostbite",
+        "-recovering from birth",
+        "-water in their lungs",
+        "-burn",
+        "-severe burn",
+        "-shock",
+        "-lingering shock",
+        "-shivering",
+        "-dehydrated",
+        "-head damage",
+        "-damaged eyes",
+        "-quilled by a porcupine",
+        "-broken back",
+        "-poisoned",
+        "-bee sting",
+        "-headache",
+        "-severe headache",
+        "-pregnant",
+        "-battle_injury",
+        "-minor_injury",
+        "-blunt_force_injury",
+        "-hot_injury",
+        "-cold_injury",
+        "-big_bite_injury",
+        "-small_bite_injury",
+        "-beak_bite",
+        "-rat_bite",
+        "-sickness"
+      ],
+      "title": "ExcludedInjury",
+      "type": "string"
+    },
+    "ExcludedPermCondition": {
+      "enum": [
+        "-crooked jaw",
+        "-lost a leg",
+        "-born without a leg",
+        "-weak leg",
+        "-twisted leg",
+        "-lost their tail",
+        "-born without a tail",
+        "-paralyzed",
+        "-raspy lungs",
+        "-wasting disease",
+        "-blind",
+        "-one bad eye",
+        "-failing eyesight",
+        "-partial hearing loss",
+        "-deaf",
+        "-constant joint pain",
+        "-seizure prone",
+        "-allergies",
+        "-constantly dizzy",
+        "-recurring shock",
+        "-lasting grief",
+        "-persistent headaches"
+      ],
+      "title": "ExcludedPermCondition",
+      "type": "string"
+    },
+    "GatherCat": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/GatherCatEnum"
+        },
+        {
+          "pattern": "^-?n_c:[0-9]+$",
+          "type": "string"
+        },
+        {
+          "pattern": "^-?(n_c|r_c|s_c)[0-9]+$",
+          "type": "string"
+        }
+      ],
+      "title": "GatherCat"
+    },
+    "GatherCatEnum": {
+      "enum": [
+        "m_c",
+        "-m_c",
+        "r_c",
+        "-r_c",
+        "p_l",
+        "-p_l",
+        "s_c",
+        "-s_c",
+        "clan",
+        "-clan",
+        "some_clan",
+        "-some_clan",
+        "patrol",
+        "-patrol",
+        "multi",
+        "-multi",
+        "high_lawful",
+        "-high_lawful",
+        "low_lawful",
+        "-low_lawful",
+        "high_social",
+        "-high_social",
+        "low_social",
+        "-low_social",
+        "high_stable",
+        "-high_stable",
+        "low_stable",
+        "-low_stable",
+        "high_aggress",
+        "-high_aggress",
+        "low_aggress",
+        "-low_aggress",
+        "patrol_cats",
+        "-patrol_cats",
+        "apprentice",
+        "-apprentice",
+        "medicine cat apprentice",
+        "-medicine cat apprentice",
+        "warrior",
+        "-warrior",
+        "medicine cat",
+        "-medicine cat",
+        "deputy",
+        "-deputy",
+        "leader",
+        "-leader"
+      ],
+      "title": "GatherCatEnum",
+      "type": "string"
+    },
+    "Group": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/GroupEnum"
+        },
+        {
+          "pattern": "^match:(.+)$",
+          "type": "string"
+        }
+      ],
+      "title": "Group"
+    },
+    "GroupEnum": {
+      "enum": [
+        "afterlife",
+        "player_clan",
+        "other_clan",
+        "dark_forest",
+        "starclan",
+        "unknown_residence",
+        "no_group",
+        "-afterlife",
+        "-player_clan",
+        "-other_clan",
+        "-dark_forest",
+        "-starclan",
+        "-unknown_residence",
+        "-no_group"
+      ],
+      "title": "GroupEnum",
+      "type": "string"
+    },
+    "HealthDict": {
+      "additionalProperties": false,
+      "properties": {
+        "working": {
+          "description": "By default, this is always set to true. if set to false, the cat can't be a working cat (aka, they are currently disabled by a condition of some kind)",
+          "title": "Working",
+          "type": "boolean"
+        },
+        "condition": {
+          "description": "A list of conditions that the cat must have at least one of. if any condition is allowed, use \"any\"",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/Injury"
+              },
+              {
+                "$ref": "#/$defs/Illness"
+              },
+              {
+                "$ref": "#/$defs/PermCondition"
+              },
+              {
+                "$ref": "#/$defs/ExcludedInjury"
+              },
+              {
+                "$ref": "#/$defs/ExcludedIllness"
+              },
+              {
+                "$ref": "#/$defs/ExcludedPermCondition"
+              },
+              {
+                "const": "any",
+                "type": "string"
+              }
+            ]
+          },
+          "title": "Condition",
+          "type": "array"
+        },
+        "must_be_congenital": {
+          "description": "By default, this is always set to false. if set to true, the cat must have been born with a permanent condition listed in the condition",
+          "title": "Must Be Congenital",
+          "type": "boolean"
+        },
+        "must_be_acquired": {
+          "description": "By default, this is always set to false. if set to true, the cat must have acquired a permanent condition listed in condition later in life",
+          "title": "Must Be Acquired",
+          "type": "boolean"
+        }
+      },
+      "title": "HealthDict",
       "type": "object"
     },
     "Illness": {
@@ -271,21 +624,6 @@
       ],
       "title": "Illness",
       "type": "string"
-    },
-    "IllnessInjuryAny": {
-      "anyOf": [
-        {
-          "$ref": "#/$defs/Illness"
-        },
-        {
-          "$ref": "#/$defs/Injury"
-        },
-        {
-          "const": "any",
-          "type": "string"
-        }
-      ],
-      "title": "IllnessInjuryAny"
     },
     "Injury": {
       "enum": [
@@ -344,6 +682,21 @@
       "title": "Injury",
       "type": "string"
     },
+    "InvolvedCats": {
+      "additionalProperties": false,
+      "properties": {
+        "m_c": {
+          "$ref": "#/$defs/CatDict",
+          "title": "M C"
+        },
+        "r_c": {
+          "$ref": "#/$defs/CatDict",
+          "title": "R C"
+        }
+      },
+      "title": "InvolvedCats",
+      "type": "object"
+    },
     "KitTrait": {
       "enum": [
         "unruly",
@@ -382,6 +735,25 @@
       "title": "KitTrait",
       "type": "string"
     },
+    "Location": {
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/Biome"
+          },
+          {
+            "const": "any",
+            "type": "string"
+          },
+          {
+            "pattern": "^-?[a-z]+:(camp[0-9]_)*camp[0-9]$",
+            "type": "string"
+          }
+        ]
+      },
+      "title": "Location",
+      "type": "array"
+    },
     "PermCondition": {
       "enum": [
         "crooked jaw",
@@ -410,65 +782,10 @@
       "title": "PermCondition",
       "type": "string"
     },
-    "PermConditionAny": {
-      "anyOf": [
-        {
-          "$ref": "#/$defs/PermCondition"
-        },
-        {
-          "const": "any",
-          "type": "string"
-        }
-      ],
-      "title": "PermConditionAny"
-    },
-    "PermConditions": {
-      "additionalProperties": false,
-      "properties": {
-        "m_c": {
-          "items": {
-            "$ref": "#/$defs/PermConditionAny"
-          },
-          "title": "M C",
-          "type": "array"
-        },
-        "r_c": {
-          "items": {
-            "$ref": "#/$defs/PermConditionAny"
-          },
-          "title": "R C",
-          "type": "array"
-        },
-        "born_with": {
-          "$ref": "#/$defs/BornWith",
-          "description": "Used to determine whether or not the given cat has this condition from birth. Only use if the cat must have it from birth, or must not have it from birth (omit value if either is suitable).",
-          "title": "Born With"
-        }
-      },
-      "title": "PermConditions",
-      "type": "object"
-    },
-    "RandomLivingStatus": {
-      "enum": [
-        "living",
-        "darkforest",
-        "starclan",
-        "unknownresidence"
-      ],
-      "title": "RandomLivingStatus",
-      "type": "string"
-    },
-    "RandomOutsideStatus": {
-      "enum": [
-        "lost",
-        "outside",
-        "clancat"
-      ],
-      "title": "RandomOutsideStatus",
-      "type": "string"
-    },
     "RelationshipStatus": {
       "enum": [
+        "can_romance",
+        "-can_romance",
         "strangers",
         "siblings",
         "-siblings",
@@ -527,6 +844,7 @@
         "knows_of_only",
         "likes_only",
         "enjoys_only",
+        "cherishes_only",
         "resents_only",
         "envies_only",
         "begrudges_only",
@@ -554,10 +872,15 @@
     },
     "Season": {
       "enum": [
-        "Greenleaf",
-        "Leaf-fall",
-        "Leaf-bare",
-        "Newleaf"
+        "greenleaf",
+        "-greenleaf",
+        "leaf-fall",
+        "-leaf-fall",
+        "leaf-bare",
+        "-leaf-bare",
+        "newleaf",
+        "-newleaf",
+        "any"
       ],
       "title": "Season",
       "type": "string"
@@ -566,6 +889,80 @@
       "pattern": "^-?[A-Z]+,\\s*[0-4]$",
       "title": "Skill",
       "type": "string"
+    },
+    "Standing": {
+      "enum": [
+        "left",
+        "lost",
+        "exiled",
+        "-left",
+        "-lost",
+        "-exiled"
+      ],
+      "title": "Standing",
+      "type": "string"
+    },
+    "StandingDict": {
+      "additionalProperties": false,
+      "properties": {
+        "group": {
+          "description": "the group we are checking the cat's standing with. you can utilize exclusionary tags. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to qualify against one of the groups. You should not try to tag no_group",
+          "items": {
+            "$ref": "#/$defs/Group"
+          },
+          "title": "Group",
+          "type": "array"
+        },
+        "currently": {
+          "description": "the standing the cat should currently possess with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have one of the standings",
+          "items": {
+            "$ref": "#/$defs/Standing"
+          },
+          "title": "Currently",
+          "type": "array"
+        },
+        "past": {
+          "description": "standings the cat used to have with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have had one of the standings",
+          "items": {
+            "$ref": "#/$defs/Standing"
+          },
+          "title": "Past",
+          "type": "array"
+        }
+      },
+      "required": [
+        "group"
+      ],
+      "title": "StandingDict",
+      "type": "object"
+    },
+    "StatDict": {
+      "additionalProperties": false,
+      "properties": {
+        "skill": {
+          "description": "List of allowed skills",
+          "items": {
+            "$ref": "#/$defs/Skill"
+          },
+          "title": "Skill",
+          "type": "array"
+        },
+        "trait": {
+          "description": "List of allowed traits",
+          "items": {
+            "$ref": "#/$defs/AllTrait"
+          },
+          "title": "Trait",
+          "type": "array"
+        },
+        "must_have_both": {
+          "description": " if set to true, the cat's trait AND skills must BOTH qualify. Otherwise, the cat must have either/or a listed trait or a listed skill",
+          "title": "Must Have Both",
+          "type": "boolean"
+        }
+      },
+      "title": "StatDict",
+      "type": "object"
     },
     "Status": {
       "enum": [
@@ -592,22 +989,16 @@
         "elder",
         "-elder",
         "any",
-        "living",
-        "starclan",
-        "darkforest",
-        "unknownresidence",
         "kittypet",
         "-kittypet",
         "loner",
         "-loner",
         "rogue",
         "-rogue",
-        "former Clancat",
-        "exiled",
-        "lost",
-        "-lost",
-        "outside cat",
-        "clancat"
+        "clancat",
+        "-clancat",
+        "guide",
+        "-guide"
       ],
       "title": "Status",
       "type": "string"
@@ -624,21 +1015,97 @@
       ],
       "title": "StatusAny"
     },
+    "Tag": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/TagEnum"
+        },
+        {
+          "pattern": "^clan:(.+)$",
+          "type": "string"
+        }
+      ],
+      "title": "Tag"
+    },
+    "TagEnum": {
+      "enum": [
+        "classic",
+        "high_lives",
+        "mid_lives",
+        "low_lives",
+        "some_lives",
+        "all_lives",
+        "clan:apps",
+        "romance",
+        "halloween",
+        "april_fools",
+        "new_years",
+        "disaster"
+      ],
+      "title": "TagEnum",
+      "type": "string"
+    },
+    "ThoughtCatEnum": {
+      "enum": [
+        "m_c",
+        "r_c"
+      ],
+      "title": "ThoughtCatEnum",
+      "type": "string"
+    },
+    "ThoughtRelationshipConstraint": {
+      "additionalProperties": false,
+      "properties": {
+        "cats_from": {
+          "description": "The cat from whom the relationship originates.",
+          "items": {
+            "$ref": "#/$defs/ThoughtCatEnum"
+          },
+          "title": "Cats From",
+          "type": "array"
+        },
+        "cats_to": {
+          "description": "The target of the relationship.",
+          "items": {
+            "$ref": "#/$defs/ThoughtCatEnum"
+          },
+          "title": "Cats To",
+          "type": "array"
+        },
+        "mutual": {
+          "description": "Controls if the relationship is required in both directions",
+          "title": "Mutual",
+          "type": "boolean"
+        },
+        "constraints": {
+          "description": "Controls which relationship constraints are required",
+          "items": {
+            "$ref": "#/$defs/RelationshipStatus"
+          },
+          "title": "Constraints",
+          "type": "array"
+        }
+      },
+      "required": [
+        "cats_from",
+        "cats_to",
+        "mutual",
+        "constraints"
+      ],
+      "title": "ThoughtRelationshipConstraint",
+      "type": "object"
+    },
     "ThoughtSchemaItem": {
       "additionalProperties": false,
       "properties": {
-        "id": {
+        "event_id": {
           "description": "Separates the thoughts into their blocks. Generally, the ID includes the condition, personality, age, and status of the main_cat, as well as the condition, personality, age, and status of any other cat mentioned.",
-          "title": "Id",
+          "title": "Event Id",
           "type": "string"
         },
-        "biome": {
-          "description": "Constrains the thought to only occur if a player chooses a specific biome.",
-          "items": {
-            "$ref": "#/$defs/Biome"
-          },
-          "title": "Biome",
-          "type": "array"
+        "location": {
+          "$ref": "#/$defs/Location",
+          "description": "Constrains the thought to only occur if a player chooses a specific biome."
         },
         "season": {
           "description": "Constrains the thought to only occur once the Clan is in a specific season.",
@@ -648,156 +1115,39 @@
           "title": "Season",
           "type": "array"
         },
-        "camp": {
-          "description": "Constrains the thought to only occur if a specific camp type is chosen.",
+        "tags": {
+          "description": "Used for some filtering purposes",
           "items": {
-            "$ref": "#/$defs/Camp"
+            "$ref": "#/$defs/Tag"
           },
-          "title": "Camp",
+          "title": "Tags",
           "type": "array"
         },
-        "thoughts": {
+        "strings": {
           "description": "List of the text that will be displayed in-game as thoughts.",
           "items": {
             "type": "string"
           },
-          "title": "Thoughts",
+          "title": "Strings",
           "type": "array"
         },
-        "has_injuries": {
-          "$ref": "#/$defs/HasInjuries",
-          "description": "Constrains the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain condition (either illness or injury). Can also use \"any\" to allow the thought to occur if the cat has any illness or injury.",
-          "title": "Has Injuries"
-        },
-        "perm_conditions": {
-          "$ref": "#/$defs/PermConditions",
-          "description": "Constrains the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain permanent condition. Can also use \"any\" to allow the thought to occur if the cat has any permanent condition.",
-          "title": "Perm Conditions"
+        "involved_cats": {
+          "$ref": "#/$defs/InvolvedCats",
+          "description": "Used to add constraints for the various involved cats.",
+          "title": "Involved Cats"
         },
         "relationship_constraint": {
-          "description": "Constrains the thought to only occur if m_c and r_c fulfill the tag requirements.",
+          "description": "Used to require specific relationships between the cats",
           "items": {
-            "$ref": "#/$defs/RelationshipStatus"
+            "$ref": "#/$defs/ThoughtRelationshipConstraint"
           },
           "title": "Relationship Constraint",
-          "type": "array"
-        },
-        "main_backstory_constraint": {
-          "description": "Constrains the thought to only occur if m_c has a certain backstory.",
-          "items": {
-            "$ref": "#/$defs/Backstory"
-          },
-          "title": "Main Backstory Constraint",
-          "type": "array"
-        },
-        "random_backstory_constraint": {
-          "description": "Constrains the thought to only occur if r_c has a certain backstory.",
-          "items": {
-            "$ref": "#/$defs/Backstory"
-          },
-          "title": "Random Backstory Constraint",
-          "type": "array"
-        },
-        "main_status_constraint": {
-          "description": "Constrains the thought to only happen if m_c is in a certain role.",
-          "items": {
-            "$ref": "#/$defs/StatusAny"
-          },
-          "title": "Main Status Constraint",
-          "type": "array"
-        },
-        "random_status_constraint": {
-          "description": "Constrains the thought to only happen if r_c is in a certain role.",
-          "items": {
-            "$ref": "#/$defs/StatusAny"
-          },
-          "title": "Random Status Constraint",
-          "type": "array"
-        },
-        "main_status_history": {
-          "description": "Constrains the thought to only happen if m_c had a certain role, but no longer does.",
-          "items": {
-            "$ref": "#/$defs/StatusAny"
-          },
-          "title": "Main Status History",
-          "type": "array"
-        },
-        "random_status_history": {
-          "description": "Constrains the thought to only happen if r_c had a certain role, but no longer does.",
-          "items": {
-            "$ref": "#/$defs/StatusAny"
-          },
-          "title": "Random Status History",
-          "type": "array"
-        },
-        "main_age_constraint": {
-          "description": "Constrains the thought to only happen if m_c is within a certain age group.",
-          "items": {
-            "$ref": "#/$defs/Age"
-          },
-          "title": "Main Age Constraint",
-          "type": "array"
-        },
-        "random_age_constraint": {
-          "description": "Constrains the thought to only happen if r_c is within a certain age group.",
-          "items": {
-            "$ref": "#/$defs/Age"
-          },
-          "title": "Random Age Constraint",
-          "type": "array"
-        },
-        "main_trait_constraint": {
-          "description": "Constrains the thought to only happen if m_c has a specific trait.",
-          "items": {
-            "$ref": "#/$defs/AllTrait"
-          },
-          "title": "Main Trait Constraint",
-          "type": "array"
-        },
-        "random_trait_constraint": {
-          "description": "Constrains the thought to only happen if r_c has a specific trait.",
-          "items": {
-            "$ref": "#/$defs/AllTrait"
-          },
-          "title": "Random Trait Constraint",
-          "type": "array"
-        },
-        "main_skill_constraint": {
-          "description": "Constrains the thought to only happen if m_c has a specific skill.",
-          "items": {
-            "$ref": "#/$defs/Skill"
-          },
-          "title": "Main Skill Constraint",
-          "type": "array"
-        },
-        "random_skill_constraint": {
-          "description": "Constrains the thought to only happen if r_c has a specific skill.",
-          "items": {
-            "$ref": "#/$defs/Skill"
-          },
-          "title": "Random Skill Constraint",
-          "type": "array"
-        },
-        "random_living_status": {
-          "description": "Constrains the thought if r_c has a specific place of death.",
-          "items": {
-            "$ref": "#/$defs/RandomLivingStatus"
-          },
-          "title": "Random Living Status",
-          "type": "array"
-        },
-        "random_outside_status": {
-          "description": "Constrains the thought if r_c has a specific outside role.",
-          "items": {
-            "$ref": "#/$defs/RandomOutsideStatus"
-          },
-          "title": "Random Outside Status",
           "type": "array"
         }
       },
       "required": [
-        "id",
-        "thoughts"
+        "event_id",
+        "strings"
       ],
       "title": "ThoughtSchemaItem",
       "type": "object"
@@ -830,7 +1180,6 @@
         "loyal",
         "responsible",
         "shameless",
-        "sneaky",
         "strange",
         "vengeful",
         "wise",
@@ -869,7 +1218,6 @@
         "-loyal",
         "-responsible",
         "-shameless",
-        "-sneaky",
         "-strange",
         "-vengeful",
         "-wise",

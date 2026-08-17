@@ -462,6 +462,10 @@
         {
           "pattern": "^-?n_c:[0-9]+$",
           "type": "string"
+        },
+        {
+          "pattern": "^-?(n_c|r_c|s_c)[0-9]+$",
+          "type": "string"
         }
       ],
       "title": "GatherCat"
@@ -476,18 +480,6 @@
         "-p_l",
         "s_c",
         "-s_c",
-        "app1",
-        "-app1",
-        "app2",
-        "-app2",
-        "app3",
-        "-app3",
-        "app4",
-        "-app4",
-        "app5",
-        "-app5",
-        "app6",
-        "-app6",
         "clan",
         "-clan",
         "some_clan",
@@ -511,7 +503,21 @@
         "high_aggress",
         "-high_aggress",
         "low_aggress",
-        "-low_aggress"
+        "-low_aggress",
+        "patrol_cats",
+        "-patrol_cats",
+        "apprentice",
+        "-apprentice",
+        "medicine cat apprentice",
+        "-medicine cat apprentice",
+        "warrior",
+        "-warrior",
+        "medicine cat",
+        "-medicine cat",
+        "deputy",
+        "-deputy",
+        "leader",
+        "-leader"
       ],
       "title": "GatherCatEnum",
       "type": "string"
@@ -522,6 +528,38 @@
         "female"
       ],
       "title": "GenderEnum",
+      "type": "string"
+    },
+    "Group": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/GroupEnum"
+        },
+        {
+          "pattern": "^match:(.+)$",
+          "type": "string"
+        }
+      ],
+      "title": "Group"
+    },
+    "GroupEnum": {
+      "enum": [
+        "afterlife",
+        "player_clan",
+        "other_clan",
+        "dark_forest",
+        "starclan",
+        "unknown_residence",
+        "no_group",
+        "-afterlife",
+        "-player_clan",
+        "-other_clan",
+        "-dark_forest",
+        "-starclan",
+        "-unknown_residence",
+        "-no_group"
+      ],
+      "title": "GroupEnum",
       "type": "string"
     },
     "Herb": {
@@ -550,7 +588,9 @@
         "goldenrod",
         "poppy",
         "plantain",
-        "catmint"
+        "catmint",
+        "honey",
+        "yew_berries"
       ],
       "title": "Herb",
       "type": "string"
@@ -725,7 +765,7 @@
             "type": "string"
           },
           {
-            "pattern": "^[a-z]+:(camp[0-9]_)*camp[0-9]$",
+            "pattern": "^-?[a-z]+:(camp[0-9]_)*camp[0-9]$",
             "type": "string"
           }
         ]
@@ -791,6 +831,14 @@
             "$ref": "#/$defs/RelationshipStatus"
           },
           "title": "Relationship Status",
+          "type": "array"
+        },
+        "group": {
+          "description": "List of groups m_c can belong to. Defaults to \"player_clan\".",
+          "items": {
+            "$ref": "#/$defs/Group"
+          },
+          "title": "Group",
           "type": "array"
         },
         "skill": {
@@ -975,6 +1023,15 @@
       "title": "OutsiderRep",
       "type": "string"
     },
+    "PointsOfInterestCategoryEnum": {
+      "enum": [
+        "gathering",
+        "moonplace",
+        "terrain"
+      ],
+      "title": "PointsOfInterestCategoryEnum",
+      "type": "string"
+    },
     "PointsOfInterestGroup": {
       "anyOf": [
         {
@@ -982,10 +1039,28 @@
         },
         {
           "$ref": "#/$defs/PointsOfInterestGroupByTags"
+        },
+        {
+          "$ref": "#/$defs/PointsOfInterestGroupByCategory"
         }
       ],
-      "description": "Specifies Points of Interest constraints. Must use EITHER names or tags.",
+      "description": "Specifies Points of Interest constraints. Must use names OR tags OR category (not multiple at once).",
       "title": "PointsOfInterestGroup"
+    },
+    "PointsOfInterestGroupByCategory": {
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "$ref": "#/$defs/PointsOfInterestCategoryEnum",
+          "description": "The category this POI belongs to.",
+          "title": "Category"
+        }
+      },
+      "required": [
+        "category"
+      ],
+      "title": "PointsOfInterestGroupByCategory",
+      "type": "object"
     },
     "PointsOfInterestGroupByName": {
       "additionalProperties": false,
@@ -1103,6 +1178,14 @@
             "$ref": "#/$defs/RcRelationshipStatus"
           },
           "title": "Relationship Status",
+          "type": "array"
+        },
+        "group": {
+          "description": "List of groups r_c can belong to. Defaults to \"player_clan\".",
+          "items": {
+            "$ref": "#/$defs/Group"
+          },
+          "title": "Group",
           "type": "array"
         },
         "skill": {
@@ -1293,6 +1376,8 @@
     },
     "RelationshipStatus": {
       "enum": [
+        "can_romance",
+        "-can_romance",
         "strangers",
         "siblings",
         "-siblings",
@@ -1351,6 +1436,7 @@
         "knows_of_only",
         "likes_only",
         "enjoys_only",
+        "cherishes_only",
         "resents_only",
         "envies_only",
         "begrudges_only",
@@ -1633,22 +1719,16 @@
         "elder",
         "-elder",
         "any",
-        "living",
-        "starclan",
-        "darkforest",
-        "unknownresidence",
         "kittypet",
         "-kittypet",
         "loner",
         "-loner",
         "rogue",
         "-rogue",
-        "former Clancat",
-        "exiled",
-        "lost",
-        "-lost",
-        "outside cat",
-        "clancat"
+        "clancat",
+        "-clancat",
+        "guide",
+        "-guide"
       ],
       "title": "Status",
       "type": "string"
@@ -1779,7 +1859,6 @@
         "loyal",
         "responsible",
         "shameless",
-        "sneaky",
         "strange",
         "vengeful",
         "wise",
@@ -1818,7 +1897,6 @@
         "-loyal",
         "-responsible",
         "-shameless",
-        "-sneaky",
         "-strange",
         "-vengeful",
         "-wise",

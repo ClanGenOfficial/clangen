@@ -1,0 +1,18 @@
+name: Schema_Diff
+on: [pull_request]
+jobs:
+  schema-diff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9
+        with:
+          enable-cache: true
+          prune-cache: true
+      - name: install dependencies
+        run: uv sync
+      - name: Generate schema
+        run: uv run dump_model_schemas
+      - name: Check diff
+        run: git diff --exit-code -- schemas/

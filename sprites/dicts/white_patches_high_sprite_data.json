@@ -2,45 +2,40 @@
     "spritesheet": "patches_white_high",
     "sprite_list": [
         [
-            "ANY",
+            "ANY_REDUCED",
             "ANYTWO",
-            "BROKEN",
+            "BROKEN_REDUCED",
             "PIEBALD",
             "CURVED",
-            "SHIBAINU",
-            "OWL",
             "FRECKLES",
-            "RINGTAIL",
+            "RINGTAIL_REDUCED",
             "HALFFACE",
-            "PANTSTWO",
-            "GOATEE",
-            "PRINCE",
-            "FAROFA"
+            "PANTSTWO_REDUCED",
+            "GOATEE_REDUCED",
+            "PRINCE_REDUCED",
+            "FAROFA_REDUCED",
+            "MISTER",
+            "PANTS"
         ],
         [
-            "MISTER",
-            "MASKMANTLE",
-            "PANTS",
             "REVERSEPANTS",
-            "HALFWHITE",
-            "APPALOOSA",
+            "APPALOOSA_REDUCED",
             "GLASS",
-            "MAO",
-            "PAINTED",
+            "PAINTED_REDUCED",
             "BUB",
             "SPARROW",
             "TRIXIE",
             "SAMMY",
-            "FRONT"
-        ],
-        [
-            "BLOSSOMSTEP",
+            "FRONT",
             "BULLSEYE",
             "FINN",
-            "SCAR",
-            "BUSTER",
-            "HAWKBLAZE",
-            "CAKE"
+            "SCAR_REDUCED",
+            "BUSTER_REDUCED",
+            "HAWKBLAZE_REDUCED"
+        ],
+        [
+            "CAKE_REDUCED",
+            "SHIBAINU"
         ]
     ]
 }

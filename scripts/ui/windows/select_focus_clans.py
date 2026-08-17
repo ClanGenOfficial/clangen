@@ -9,6 +9,9 @@ from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.windows.window_base_class import GameWindow
 from scripts.ui.scale import ui_scale
 
+from scripts.ui.elements.checkbox import UICheckbox
+from scripts.game_structure.screen_settings import MANAGER
+
 
 class SelectFocusClansWindow(GameWindow):
     """This window allows the user to select the clans to be sabotaged, aided or raided in the focus setting."""
@@ -40,7 +43,7 @@ class SelectFocusClansWindow(GameWindow):
         n = 0
         for clan in game.clan.all_other_clans:
             self.texts[clan.name] = pygame_gui.elements.UITextBox(
-                clan.name + "clan",
+                clan.name,
                 ui_scale(pygame.Rect(107, n * 27 + 38, -1, 25)),
                 object_id="#text_box_30_horizleft_pad_0_8",
                 container=self,
@@ -58,11 +61,11 @@ class SelectFocusClansWindow(GameWindow):
             if clan.name in game.clan.clans_in_focus:
                 box_type = "@checked_checkbox"
 
-            self.checkboxes[clan.name] = UIImageButton(
-                ui_scale(pygame.Rect((75, n * 27 + 35), (34, 34))),
-                "",
+            self.checkboxes[clan.name] = UICheckbox(
+                position=(75, n * 27 + 35),
                 container=self,
-                object_id=box_type,
+                manager=MANAGER,
+                check=clan.name in game.clan.clans_in_focus,
             )
             n += 1
 

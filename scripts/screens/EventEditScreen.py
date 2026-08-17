@@ -7,7 +7,8 @@ import pygame
 import pygame_gui
 import ujson
 
-from scripts.cat.cats import Cat, BACKSTORIES, create_option_preview_cat
+from scripts.cat.cats import Cat, BACKSTORIES
+from scripts.cat.factories.create_example_cat import create_option_preview_cat
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath
@@ -1169,7 +1170,7 @@ class EventEditScreen(Screens):
 
     def screen_switches(self):
         super().screen_switches()
-        Screens.show_mute_buttons()
+        self.show_mute_buttons()
 
         self.main_menu_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (152, 30))),

@@ -1,29 +1,56 @@
 [
     {
-        "patrol_id": "mtn_train_hummingbird1",
-        "biome": [ "mountainous" ],
-        "season": [ "greenleaf" ],
-        "types": [ "training" ],
-        "tags": [],
-        "patrol_art": "train_general_intro",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
-            "apprentice": [1, 1],
-            "normal adult": [1, 1]
-        },
+        "event_id": "mtn_train_hummingbird1",
+        "types": [
+            "training"
+        ],
         "frequency": 3,
+        "location": [
+            "mountainous"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ],
+            "apprentice": [
+                1,
+                1
+            ],
+            "normal adult": [
+                1,
+                1
+            ]
+        },
+        "chance_of_success": 60,
+        "patrol_art": "train_general_intro",
         "intro_text": "The cats head out into the forested slopes, hiding from the heat of greenleaf. p_l leads them towards a massive messy eagle nest.",
         "decline_text": "When they get there, p_l can't find the hummingbird {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting. Disappointing.",
-        "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "app1 screws up {PRONOUN/app1/poss} face in confusion — weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}.",
-                "exp": 15,
-                "relationships": [
+                "frequency": 4,
+                "strings": [
+                    "r_c1 screws up {PRONOUN/r_c1/poss} face in confusion — weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 15,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "p_l" ],
-                        "cats_from": [ "app1" ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -35,27 +62,45 @@
                         }
                     },
                     {
-                        "cats_to": [ "app1" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
-                            "comfort", "like"
+                            "comfort",
+                            "like"
                         ],
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from taught cat_to about how hummingbirds nest in the shadows of eagles' nests."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "p_l tells app1 to watch carefully — not the rowdy eagle nest, but the tiny home in its shadow. A female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
-                "exp": 15,
-                "relationships": [
+                "frequency": 1,
+                "strings": [
+                    "p_l tells r_c1 to watch carefully — not the rowdy eagle nest, but the tiny home in its shadow. A female hummingbird climbs out and takes to the wing, headed for the mountain meadows. r_c1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way r_c1 swore was impossible for birds."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 15,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "p_l" ],
-                        "cats_from": [ "app1" ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -67,33 +112,55 @@
                         }
                     },
                     {
-                        "cats_to": [ "app1" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
-                            "comfort", "like"
+                            "comfort",
+                            "like"
                         ],
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from taught cat_to about how hummingbirds nest in the shadows of eagles' nests."
                         }
                     }
-                ],
-                "frequency": 1
+                ]
             },
             {
-                "text": "As they watch the hummingbird nest in the shadow of the eagle nest, s_c tells app1 how the hummingbird arrival signals the start of greenleaf and how the Clan will know it's leaf-fall when the birds leave their territory. The more hummingbirds there are that year, the better a greenleaf it'll be.",
-                "exp": 15,
-                "stat_skill": [
-                    "TEACHER,1"
+                "frequency": 4,
+                "strings": [
+                    "As they watch the hummingbird nest in the shadow of the eagle nest, s_c0 tells r_c1 how the hummingbird arrival signals the start of greenleaf and how the Clan will know it's leaf-fall when the birds leave their territory. The more hummingbirds there are that year, the better a greenleaf it'll be."
                 ],
-                "can_have_stat": [
-                    "adult"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "TEACHER,1"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
+                    }
+                },
+                "exp_gained": 15,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "p_l" ],
-                        "cats_from": [ "app1" ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -105,35 +172,57 @@
                         }
                     },
                     {
-                        "cats_to": [ "app1" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
-                            "comfort", "like"
+                            "comfort",
+                            "like"
                         ],
                         "amount": 15,
                         "log": {
                             "cats_from": "cat_from taught cat_to how to tell seasons by the hummingbirds' arrival."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "As they watch the hummingbird nest in the shadow of the eagle nest, s_c tells app1 how c_n's founders followed the hummingbird's wisdom, setting up the Clan in the shadow of the dangers of the mountain to protect c_n cats from the attention of Twolegs and endless wars with other cat Clans.",
-                "exp": 15,
-                "stat_skill": [
-                    "SPEAKER,2",
-                    "LORE,1",
-                    "STORY,1"
+                "frequency": 4,
+                "strings": [
+                    "As they watch the hummingbird nest in the shadow of the eagle nest, s_c0 tells r_c1 how c_n's founders followed the hummingbird's wisdom, setting up the Clan in the shadow of the dangers of the mountain to protect c_n cats from the attention of Twolegs and endless wars with other cat Clans."
                 ],
-                "can_have_stat": [
-                    "adult"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "SPEAKER,2",
+                                "LORE,1",
+                                "STORY,1"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
+                    }
+                },
+                "exp_gained": 15,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "p_l" ],
-                        "cats_from": [ "app1" ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -145,29 +234,47 @@
                         }
                     },
                     {
-                        "cats_to": [ "app1" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
-                            "comfort", "like"
+                            "comfort",
+                            "like"
                         ],
                         "amount": 15,
                         "log": {
                             "cats_from": "cat_from taught cat_to how c_n's founders followed the wisdom of the hummingbirds when choosing a home."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "app1 cannot believe that going near an eagle nest could ever possibly be safe and flatly refuses to go.",
-                "exp": 0,
-                "relationships": [
+                "frequency": 4,
+                "strings": [
+                    "r_c1 cannot believe that going near an eagle nest could ever possibly be safe and flatly refuses to go."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "app1" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -177,16 +284,29 @@
                             "cats_from": "cat_from lost respect for cat_to when {PRONOUN/cat_to/subject} refused to go near an eagle nest."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "p_l can't get app1 to take the training session seriously and gives up before the apprentice can attract the eagles' attention.",
-                "exp": 0,
-                "relationships": [
+                "frequency": 4,
+                "strings": [
+                    "p_l can't get r_c1 to take the training session seriously and gives up before the apprentice can attract the eagles' attention."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "app1" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -196,36 +316,68 @@
                             "cats_from": "cat_from lost respect for cat_to when {PRONOUN/cat_to/subject} wouldn't take a training session seriously."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ]
     },
     {
-        "patrol_id": "mtn_train_hummingbird2",
-        "biome": [ "mountainous" ],
-        "season": [ "greenleaf" ],
-        "types": [ "training" ],
-        "tags": [],
-        "patrol_art": "train_general_intro",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "apprentice": [2, 2],
-            "normal adult": [1, 4]
-        },
+        "event_id": "mtn_train_hummingbird2",
+        "types": [
+            "training"
+        ],
         "frequency": 3,
+        "location": [
+            "mountainous"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ],
+            "apprentice": [
+                2,
+                2
+            ],
+            "normal adult": [
+                1,
+                4
+            ]
+        },
+        "chance_of_success": 40,
+        "patrol_art": "train_general_intro",
         "intro_text": "The cats head out into the forested slopes, hiding from the heat of greenleaf. p_l leads them towards a massive messy eagle nest.",
         "decline_text": "When they get there, p_l can't find the hummingbird {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting. Disappointing.",
-        "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "app1 screws up {PRONOUN/app1/poss} face in confusion — weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, astonishing app2.",
-                "exp": 20,
-                "relationships": [
+                "frequency": 4,
+                "strings": [
+                    "r_c1 screws up {PRONOUN/r_c1/poss} face in confusion — weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, astonishing r_c2."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "p_l" ],
-                        "cats_from": [ "app1", "app2" ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1",
+                            "r_c2"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -237,27 +389,47 @@
                         }
                     },
                     {
-                        "cats_to": [ "app1", "app2" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1",
+                            "r_c2"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
-                            "comfort", "like"
+                            "comfort",
+                            "like"
                         ],
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from taught cat_to about how hummingbirds nest in the shadows of eagles' nests."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "p_l tells the apprentices to watch carefully — not the rowdy eagle nest, but the tiny home in its shadow. A female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
-                "exp": 20,
-                "relationships": [
+                "frequency": 1,
+                "strings": [
+                    "p_l tells the apprentices to watch carefully — not the rowdy eagle nest, but the tiny home in its shadow. A female hummingbird climbs out and takes to the wing, headed for the mountain meadows. r_c1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way r_c1 swore was impossible for birds."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "p_l" ],
-                        "cats_from": [ "app1", "app2" ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1",
+                            "r_c2"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -269,33 +441,52 @@
                         }
                     },
                     {
-                        "cats_to": [ "app1", "app2" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1",
+                            "r_c2"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
-                            "comfort", "like"
+                            "comfort",
+                            "like"
                         ],
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from taught cat_to about how hummingbirds nest in the shadows of eagles' nests."
                         }
                     }
-                ],
-                "frequency": 1
+                ]
             },
             {
-                "text": "As they watch the hummingbird nest in the shadow of the eagle nest, s_c tells the apprentices how the hummingbird arrival signals the start of greenleaf and how the Clan will know it's leaf-fall when the birds leave their territory. The more hummingbirds there are that year, the better a greenleaf it'll be.",
-                "exp": 15,
-                "stat_skill": [
-                    "TEACHER,1"
+                "frequency": 4,
+                "strings": [
+                    "As they watch the hummingbird nest in the shadow of the eagle nest, s_c0 tells the apprentices how the hummingbird arrival signals the start of greenleaf and how the Clan will know it's leaf-fall when the birds leave their territory. The more hummingbirds there are that year, the better a greenleaf it'll be."
                 ],
-                "can_have_stat": [
-                    "adult"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "TEACHER,1"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
+                    }
+                },
+                "exp_gained": 15,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "p_l" ],
-                        "cats_from": [ "app1", "app2" ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1",
+                            "r_c2"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -307,35 +498,54 @@
                         }
                     },
                     {
-                        "cats_to": [ "app1", "app2" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1",
+                            "r_c2"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
-                            "comfort", "like"
+                            "comfort",
+                            "like"
                         ],
                         "amount": 15,
                         "log": {
                             "cats_from": "cat_from taught cat_to how to tell seasons by the hummingbirds' arrival."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "As they watch the hummingbird nest in the shadow of the eagle nest, s_c tells the apprentices how c_n's founders followed the hummingbird's wisdom, setting up the Clan in the shadow of the dangers of the mountain to protect c_n cats from the attention of Twolegs and endless wars with other cat Clans.",
-                "exp": 20,
-                "stat_skill": [
-                    "SPEAKER,2",
-                    "LORE,1",
-                    "STORY,1"
+                "frequency": 4,
+                "strings": [
+                    "As they watch the hummingbird nest in the shadow of the eagle nest, s_c0 tells the apprentices how c_n's founders followed the hummingbird's wisdom, setting up the Clan in the shadow of the dangers of the mountain to protect c_n cats from the attention of Twolegs and endless wars with other cat Clans."
                 ],
-                "can_have_stat": [
-                    "adult"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "SPEAKER,2",
+                                "LORE,1",
+                                "STORY,1"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "p_l" ],
-                        "cats_from": [ "app1", "app2" ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1",
+                            "r_c2"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -347,29 +557,53 @@
                         }
                     },
                     {
-                        "cats_to": [ "app1", "app2" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1",
+                            "r_c2"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
-                            "comfort", "like"
+                            "comfort",
+                            "like"
                         ],
                         "amount": 15,
                         "log": {
                             "cats_from": "cat_from taught cat_to how c_n's founders followed the wisdom of the hummingbirds when choosing a home."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "app1 cannot believe that going near an eagle nest could ever possibly be safe and flatly refuses to go. app2 tries to comfort {PRONOUN/app1/object}, but the patrol is called off.",
-                "exp": 0,
-                "relationships": [
+                "frequency": 4,
+                "strings": [
+                    "r_c1 cannot believe that going near an eagle nest could ever possibly be safe and flatly refuses to go. r_c2 tries to comfort {PRONOUN/r_c1/object}, but the patrol is called off."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "app1" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -380,27 +614,50 @@
                         }
                     },
                     {
-                        "cats_to": [ "app1" ],
-                        "cats_from": [ "app2" ],
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "r_c2"
+                        ],
                         "mutual": true,
                         "values": [
                             "comfort"
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "app2 tried to comfort app1 when {PRONOUN/app1/subject} thought it was unsafe to go near an eagle nest."
+                            "cats_from": "r_c2 tried to comfort r_c1 when {PRONOUN/r_c1/subject} thought it was unsafe to go near an eagle nest."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "p_l can't get app1 or app2 to take the training session seriously and gives up before the apprentices can attract the eagles' attention.",
-                "exp": 0,
-                "relationships": [
+                "frequency": 4,
+                "strings": [
+                    "p_l can't get r_c1 or r_c2 to take the training session seriously and gives up before the apprentices can attract the eagles' attention."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "app1", "app2" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1",
+                            "r_c2"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -410,36 +667,62 @@
                             "cats_from": "cat_from lost respect for cat_to when {PRONOUN/cat_to/subject} wouldn't take a training session seriously."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ]
     },
     {
-        "patrol_id": "mtn_train_hummingbirdmeadow3",
-        "biome": [ "mountainous" ],
-        "season": [ "greenleaf" ],
-        "types": [ "training" ],
-        "tags": [],
-        "patrol_art": "train_general_intro",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
-            "apprentice": [1, 1],
-            "normal adult": [1, 1]
-        },
+        "event_id": "mtn_train_hummingbirdmeadow3",
+        "types": [
+            "training"
+        ],
         "frequency": 4,
+        "location": [
+            "mountainous"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ],
+            "apprentice": [
+                1,
+                1
+            ],
+            "normal adult": [
+                1,
+                1
+            ]
+        },
+        "chance_of_success": 60,
+        "patrol_art": "train_general_intro",
         "intro_text": "With p_l in the lead, the cats round a corner in the mountain path and come across a flat mountain meadow, transformed by greenleaf into a carpet of sunny bright flowers.",
         "decline_text": "When they get there, p_l can't find the hummingbirds {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting. Disappointing.",
-        "chance_of_success": 60,
         "success_outcomes": [
             {
-                "text": "app1 sticks {PRONOUN/app1/poss} nose down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under {PRONOUN/app1/poss} chin, prompting {PRONOUN/app1/poss} head up. {PRONOUN/app1/subject/CAP} {VERB/app1/gasp/gasps}. Above {PRONOUN/app1/object}, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun.",
-                "exp": 15,
-                "relationships": [
+                "frequency": 4,
+                "strings": [
+                    "r_c1 sticks {PRONOUN/r_c1/poss} nose down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under {PRONOUN/r_c1/poss} chin, prompting {PRONOUN/r_c1/poss} head up. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/gasp/gasps}. Above {PRONOUN/r_c1/object}, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 15,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "p_l" ],
-                        "cats_from": [ "app1" ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -451,27 +734,45 @@
                         }
                     },
                     {
-                        "cats_to": [ "app1" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
-                            "comfort", "like"
+                            "comfort",
+                            "like"
                         ],
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from showed cat_to the greenleaf hummingbirds."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "They're here to follow the hummingbirds, p_l explains with a laugh and dives into the thick meadowgrass sea. app1 spends the afternoon bounding through the flowers, following the birds as the males fight, learning about how hummingbirds signal good hunting areas.",
-                "exp": 15,
-                "relationships": [
+                "frequency": 1,
+                "strings": [
+                    "They're here to follow the hummingbirds, p_l explains with a laugh and dives into the thick meadowgrass sea. r_c1 spends the afternoon bounding through the flowers, following the birds as the males fight, learning about how hummingbirds signal good hunting areas."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 15,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "p_l" ],
-                        "cats_from": [ "app1" ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -483,33 +784,55 @@
                         }
                     },
                     {
-                        "cats_to": [ "app1" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
-                            "comfort", "like"
+                            "comfort",
+                            "like"
                         ],
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from taught cat_to how hummingbirds can lead cats to good hunting grounds."
                         }
                     }
-                ],
-                "frequency": 1
+                ]
             },
             {
-                "text": "app1 leaps into the meadows, bouncing around as hummingbirds flit away before {PRONOUN/app1/object}. s_c watches {PRONOUN/app1/object} indulgently, and when {PRONOUN/app1/subject} {VERB/app1/slow/slows} down s_c explains about how c_n uses hunting the agile birds as the ultimate test — it's considered the mark of a truly fantastic hunter to catch one without using claws and pluck a single shining feather.",
-                "exp": 15,
-                "stat_skill": [
-                    "TEACHER,1"
+                "frequency": 4,
+                "strings": [
+                    "r_c1 leaps into the meadows, bouncing around as hummingbirds flit away before {PRONOUN/r_c1/object}. s_c0 watches {PRONOUN/r_c1/object} indulgently, and when {PRONOUN/r_c1/subject} {VERB/r_c1/slow/slows} down s_c0 explains about how c_n uses hunting the agile birds as the ultimate test — it's considered the mark of a truly fantastic hunter to catch one without using claws and pluck a single shining feather."
                 ],
-                "can_have_stat": [
-                    "adult"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "TEACHER,1"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
+                    }
+                },
+                "exp_gained": 15,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "p_l" ],
-                        "cats_from": [ "app1" ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -521,35 +844,57 @@
                         }
                     },
                     {
-                        "cats_to": [ "app1" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
-                            "comfort", "like"
+                            "comfort",
+                            "like"
                         ],
                         "amount": 15,
                         "log": {
                             "cats_from": "cat_from told cat_to about how the mark of a great c_n hunter is to catch a hummingbird without unsheathed claws."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "s_c pulls app1's attention towards the flashing hummingbirds darting about. Once upon a time, a fire threatened to consume everything but the bare rock of the mountains, but StarClan caught its embers, stopping it from spreading. They released those embers in greenleaf, to fly above the flowering meadows they'd saved from destruction.",
-                "exp": 15,
-                "stat_skill": [
-                    "SPEAKER,2",
-                    "LORE,1",
-                    "STORY,1"
+                "frequency": 4,
+                "strings": [
+                    "s_c0 pulls r_c1's attention towards the flashing hummingbirds darting about. Once upon a time, a fire threatened to consume everything but the bare rock of the mountains, but StarClan caught its embers, stopping it from spreading. They released those embers in greenleaf, to fly above the flowering meadows they'd saved from destruction."
                 ],
-                "can_have_stat": [
-                    "adult"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "SPEAKER,2",
+                                "LORE,1",
+                                "STORY,1"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
+                    }
+                },
+                "exp_gained": 15,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "p_l" ],
-                        "cats_from": [ "app1" ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -561,29 +906,47 @@
                         }
                     },
                     {
-                        "cats_to": [ "app1" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
-                            "comfort", "like"
+                            "comfort",
+                            "like"
                         ],
                         "amount": 15,
                         "log": {
                             "cats_from": "cat_to told cat_from the story of how StarClan preserved the embers of an all-consuming fire and allowed them to fly above the greenleaf meadows as hummingbirds."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "app1 won't stop {PRONOUN/app1/poss} hunting attempts for long enough for p_l to teach, and eventually everyone goes home frustrated.",
-                "exp": 0,
-                "relationships": [
+                "frequency": 4,
+                "strings": [
+                    "r_c1 won't stop {PRONOUN/r_c1/poss} hunting attempts for long enough for p_l to teach, and eventually everyone goes home frustrated."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "app1" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
                             "like",
@@ -594,36 +957,63 @@
                             "cats_from": "cat_to was too busy chasing after hummingbirds to listen to cat_from's lesson."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ]
     },
     {
-        "patrol_id": "mtn_train_hummingbirdmeadow4",
-        "biome": [ "mountainous" ],
-        "season": [ "greenleaf" ],
-        "types": [ "training" ],
-        "tags": [],
-        "patrol_art": "train_general_intro",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "apprentice": [2, 2],
-            "normal adult": [1, 4]
-        },
+        "event_id": "mtn_train_hummingbirdmeadow4",
+        "types": [
+            "training"
+        ],
         "frequency": 4,
+        "location": [
+            "mountainous"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ],
+            "apprentice": [
+                2,
+                2
+            ],
+            "normal adult": [
+                1,
+                4
+            ]
+        },
+        "chance_of_success": 40,
+        "patrol_art": "train_general_intro",
         "intro_text": "With p_l in the lead, the cats round a corner in the mountain path and come across a flat mountain meadow, transformed by greenleaf into a carpet of sunny bright flowers.",
         "decline_text": "When they get there, p_l can't find the hummingbirds {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting. Disappointing.",
-        "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The apprentices stick their noses down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under app1's chin, prompting {PRONOUN/app1/poss} head up. {PRONOUN/app1/subject/CAP} {VERB/app1/gasp/gasps}. Above {PRONOUN/app1/object}, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun.",
-                "exp": 20,
-                "relationships": [
+                "frequency": 4,
+                "strings": [
+                    "The apprentices stick their noses down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under r_c1's chin, prompting {PRONOUN/r_c1/poss} head up. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/gasp/gasps}. Above {PRONOUN/r_c1/object}, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "p_l" ],
-                        "cats_from": [ "app1", "app2" ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1",
+                            "r_c2"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -635,27 +1025,40 @@
                         }
                     },
                     {
-                        "cats_to": [ "app1", "app2" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1",
+                            "r_c2"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
-                            "comfort", "like"
+                            "comfort",
+                            "like"
                         ],
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from showed cat_to the greenleaf hummingbirds."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "They're here to follow the hummingbirds, p_l explains with a laugh and dives into the thick meadowgrass sea. The apprentices spend the afternoon bounding through the flowers, following the birds as the males fight, learning about how hummingbirds signal good hunting areas.",
-                "exp": 20,
-                "relationships": [
+                "frequency": 1,
+                "strings": [
+                    "They're here to follow the hummingbirds, p_l explains with a laugh and dives into the thick meadowgrass sea. The apprentices spend the afternoon bounding through the flowers, following the birds as the males fight, learning about how hummingbirds signal good hunting areas."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "p_l" ],
-                        "cats_from": [ "app1", "app2" ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1",
+                            "r_c2"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -667,33 +1070,52 @@
                         }
                     },
                     {
-                        "cats_to": [ "app1", "app2" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1",
+                            "r_c2"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
-                            "comfort", "like"
+                            "comfort",
+                            "like"
                         ],
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from taught cat_to how hummingbirds can lead cats to good hunting grounds."
                         }
                     }
-                ],
-                "frequency": 1
+                ]
             },
             {
-                "text": "The apprentices leap into the meadows, bouncing around as hummingbirds flit away before them. p_l watches them indulgently, and when they slow down s_c explains about how c_n uses hunting the agile birds as the ultimate test — it's considered the mark of a truly fantastic hunter to catch one without using claws and pluck a single shining feather.",
-                "exp": 15,
-                "stat_skill": [
-                    "TEACHER,1"
+                "frequency": 4,
+                "strings": [
+                    "The apprentices leap into the meadows, bouncing around as hummingbirds flit away before them. p_l watches them indulgently, and when they slow down s_c0 explains about how c_n uses hunting the agile birds as the ultimate test — it's considered the mark of a truly fantastic hunter to catch one without using claws and pluck a single shining feather."
                 ],
-                "can_have_stat": [
-                    "adult"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "TEACHER,1"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
+                    }
+                },
+                "exp_gained": 15,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "p_l" ],
-                        "cats_from": [ "app1", "app2" ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1",
+                            "r_c2"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -705,35 +1127,54 @@
                         }
                     },
                     {
-                        "cats_to": [ "app1", "app2" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1",
+                            "r_c2"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
-                            "comfort", "like"
+                            "comfort",
+                            "like"
                         ],
                         "amount": 15,
                         "log": {
                             "cats_from": "cat_from told cat_to about how the mark of a great c_n hunter is to catch a hummingbird with sheathed claws."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "s_c pulls the apprentices' attention towards the flashing hummingbirds darting about. Once upon a time, a fire threatened to consume everything but the bare rock of the mountains, but StarClan caught its embers, stopping it from spreading. They released those embers in greenleaf, to fly above the flowering meadows they'd saved from destruction.",
-                "exp": 20,
-                "stat_skill": [
-                    "SPEAKER,2",
-                    "LORE,1",
-                    "STORY,1"
+                "frequency": 4,
+                "strings": [
+                    "s_c0 pulls the apprentices' attention towards the flashing hummingbirds darting about. Once upon a time, a fire threatened to consume everything but the bare rock of the mountains, but StarClan caught its embers, stopping it from spreading. They released those embers in greenleaf, to fly above the flowering meadows they'd saved from destruction."
                 ],
-                "can_have_stat": [
-                    "adult"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "SPEAKER,2",
+                                "LORE,1",
+                                "STORY,1"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "p_l" ],
-                        "cats_from": [ "app1", "app2" ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1",
+                            "r_c2"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect",
@@ -745,29 +1186,49 @@
                         }
                     },
                     {
-                        "cats_to": [ "app1", "app2" ],
-                        "cats_from": [ "p_l" ],
+                        "cats_to": [
+                            "r_c1",
+                            "r_c2"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
-                            "comfort", "like"
+                            "comfort",
+                            "like"
                         ],
                         "amount": 15,
                         "log": {
                             "cats_from": "cat_to told cat_from the story of how StarClan preserved the embers of an all-consuming fire and allowed them to fly above the greenleaf meadows as hummingbirds."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "app1 won't stop {PRONOUN/app1/poss} hunting attempts for long enough for p_l to teach, and eventually everyone goes home frustrated.",
-                "exp": 0,
-                "relationships": [
+                "frequency": 4,
+                "strings": [
+                    "r_c1 won't stop {PRONOUN/r_c1/poss} hunting attempts for long enough for p_l to teach, and eventually everyone goes home frustrated."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_to": [ "app1" ],
-                        "cats_from": [ "p_l", "app1" ],
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "p_l",
+                            "r_c1"
+                        ],
                         "mutual": false,
                         "values": [
                             "like",
@@ -778,71 +1239,104 @@
                             "cats_from": "cat_to was too busy chasing after hummingbirds to listen to p_l's lesson and spoiled the training session."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ]
     },
     {
-        "patrol_id": "mtn_train_greenleaf_beetlesoloapp1",
-        "biome": [ "mountainous" ],
-        "season": [ "greenleaf" ],
-        "types": [ "training" ],
-        "tags": [],
-        "patrol_art": "train_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {
-            "apprentice": [1, 1]
-        },
+        "event_id": "mtn_train_greenleaf_beetlesolor_c1",
+        "types": [
+            "training"
+        ],
         "frequency": 4,
-        "intro_text": "app1 crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/app1/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock.",
-        "decline_text": "A beetle is beneath {PRONOUN/app1/poss} attention.",
+        "location": [
+            "mountainous"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ],
+            "apprentice": [
+                1,
+                1
+            ]
+        },
+        "involved_cats": {
+            "p_l": {
+                "status": [
+                    "apprentice"
+                ]
+            }
+        },
         "chance_of_success": 60,
+        "patrol_art": "train_general_intro",
+        "intro_text": "p_l crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/p_l/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock.",
+        "decline_text": "A beetle is beneath {PRONOUN/p_l/poss} attention.",
         "success_outcomes": [
             {
-                "text": "Ha! app1 pounces, the pathetic bug crunching underneath {PRONOUN/app1/poss} mighty blow, splattering and — ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/app1/poss} paws, between {PRONOUN/app1/poss} toes, EWWWWW!",
-                "exp": 20,
-                "frequency": 4
-            },
-            {
-                "text": "Ha! app1 leaps, tail lashing furiously as the beetle buzzes under {PRONOUN/app1/poss} forepaws, claws sheathed. {PRONOUN/app1/subject/CAP} {VERB/app1/bat/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN/app1/poss} colorful prey flits around {PRONOUN/app1/poss} head in confused, concussed beetle-behavior, unused to being an apprentice's new favorite toy.",
-                "exp": 20,
-                "frequency": 1
-            },
-            {
-                "text": "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/app1/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} notice {PRONOUN/app1/poss} own skill catching and keeping the bug.",
-                "exp": 20,
-                "stat_skill": [
-                    "HUNTER,0"
+                "frequency": 4,
+                "strings": [
+                    "Ha! p_l pounces, the pathetic bug crunching underneath {PRONOUN/p_l/poss} mighty blow, splattering and — ewwwww. Ew, ew ew ew, there's bug juice all over {PRONOUN/p_l/poss} paws, between {PRONOUN/p_l/poss} toes, EWWWWW!"
                 ],
-                "frequency": 4
+                "exp_gained": 20
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "Ha! p_l leaps, tail lashing furiously as the beetle buzzes under {PRONOUN/p_l/poss} forepaws, claws sheathed. {PRONOUN/p_l/subject/CAP} {VERB/p_l/bat/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN/p_l/poss} colorful prey flits around {PRONOUN/p_l/poss} head in confused, concussed beetle-behavior, unused to being an apprentice's new favorite toy."
+                ],
+                "exp_gained": 20
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/p_l/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} notice {PRONOUN/p_l/poss} own skill catching and keeping the bug."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "HUNTER,0"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20
             }
         ],
         "fail_outcomes": [
             {
-                "text": "While app1 is wiggling {PRONOUN/app1/poss} butt into the perfect pouncing position, the beetle flies off. Awwwww.",
-                "exp": 0,
-                "frequency": 4
+                "frequency": 4,
+                "strings": [
+                    "While p_l is wiggling {PRONOUN/p_l/poss} butt into the perfect pouncing position, the beetle flies off. Awwwww."
+                ],
+                "exp_gained": 0
             },
             {
-                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off — but has to report to the medicine cat den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
-                "exp": 0,
-                "injury": [
-                    {
-                        "cats": [
-                            "app1"
-                        ],
-                        "injuries": [
-                            "stomachache"
-                        ]
-                    }
+                "frequency": 3,
+                "strings": [
+                    "Slimy, yet satisfying! Curiosity completed, p_l wanders off — but has to report to the medicine cat den later, when {PRONOUN/p_l/poss} stomach reminds {PRONOUN/p_l/object} why cats don't eat random bugs."
                 ],
-                "relationships": [
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_from": ["high_social"],
-                        "cats_to": ["app1"],
-                        "values": ["like"],
+                        "cats_from": [
+                            "clan",
+                            "high_social"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "like"
+                        ],
                         "amount": 5,
                         "mutual": false,
                         "log": {
@@ -850,37 +1344,73 @@
                         }
                     }
                 ],
-                "frequency": 3
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "stomachache"
+                        ]
+                    }
+                ]
             }
         ]
     },
     {
-        "patrol_id": "mtn_train_greenleaf_sunsetmyth_storylocked1",
-        "patrol_art": "gen_bord_story",
-        "biome": [ "mountainous" ],
-        "season": [ "greenleaf" ],
-        "types": [ "training" ],
-        "tags": [],
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "normal adult": [1, 6]
-        },
-        "frequency": 3,
-        "chance_of_success": 60,
-        "pl_skill_constraint": [
-            "STORY,1"
+        "event_id": "mtn_train_greenleaf_sunsetmyth_storylocked1",
+        "types": [
+            "training"
         ],
+        "frequency": 3,
+        "location": [
+            "mountainous"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "tags": [
+            "clan:leader"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
+        },
+        "involved_cats": {
+            "p_l": {
+                "stat": {
+                    "skill": [
+                        "STORY,1"
+                    ],
+                    "trait": []
+                }
+            }
+        },
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
         "intro_text": "As the cats practice hunting in the dim light of the golden setting sun, p_l is reminded of the tale of How The Sunset Came To Be.",
         "decline_text": "The light is too weird to focus on both training <i>and</i> a story. It'll have to wait for another day.",
         "success_outcomes": [
             {
-                "text": "Long ago, the prettiest queen of the mountains ruled a harsh Clan, attacking those deemed unworthy and ugly. Her granddaughter was beautiful not just in pelt but in heart and was killed by her treacherous kin for her kindness. She could not stop her grandmother in life, but in death she marked the skies with her pelt, bringing forth the first sunset.",
-                "exp": 30,
-                "relationships": [
+                "frequency": 4,
+                "strings": [
+                    "Long ago, the prettiest queen of the mountains ruled a harsh Clan, attacking those deemed unworthy and ugly. Her granddaughter was beautiful not just in pelt but in heart and was killed by her treacherous kin for her kindness. She could not stop her grandmother in life, but in death she marked the skies with her pelt, bringing forth the first sunset."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "like",
@@ -891,22 +1421,41 @@
                             "cats_from": "cat_from enjoyed cat_to's story about the origin of the sunset."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "s_c listens attentively as p_l tells the patrol about the pretty queen who gave them sunset. s_c can't help but send a silent thanks up to StarClan, since the evening grants c_n some of the best conditions to gather prey in the mountains.",
-                "exp": 30,
-                "can_have_stat": [
-                    "not_pl_rc"
+                "frequency": 4,
+                "strings": [
+                    "s_c0 listens attentively as p_l tells the patrol about the pretty queen who gave them sunset. s_c0 can't help but send a silent thanks up to StarClan, since the evening grants c_n some of the best conditions to gather prey in the mountains."
                 ],
-                "stat_trait": [
-                    "thoughtful", "sincere", "responsible", "calm", "wise", "insecure", "righteous"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "thoughtful",
+                                "sincere",
+                                "responsible",
+                                "calm",
+                                "wise",
+                                "insecure",
+                                "righteous"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-p_l",
+                            "-r_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "like",
@@ -917,29 +1466,42 @@
                             "cats_from": "cat_from enjoyed cat_to's story about the origin of the sunset."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "s_c is sympathetic to the poor she-cat in the story. To have been killed by an evil leader, her last act was the gift of the sunset... s_c doesn't know what {PRONOUN/s_c/subject} would do if {PRONOUN/s_c/subject} {VERB/s_c/were/was} in the same situation.",
-                "exp": 30,
-                "can_have_stat": [
-                    "not_pl_rc"
+                "frequency": 4,
+                "strings": [
+                    "s_c0 is sympathetic to the poor she-cat in the story. To have been killed by an evil leader, her last act was the gift of the sunset... s_c0 doesn't know what {PRONOUN/s_c0/subject} would do if {PRONOUN/s_c0/subject} {VERB/s_c0/were/was} in the same situation."
                 ],
-                "stat_trait": [
-                    "compassionate",
-                    "loving",
-                    "sincere",
-                    "thoughtful",
-                    "careful",
-                    "wise",
-                    "righteous",
-                    "strict"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "compassionate",
+                                "loving",
+                                "sincere",
+                                "thoughtful",
+                                "careful",
+                                "wise",
+                                "righteous",
+                                "strict"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-p_l",
+                            "-r_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "like",
@@ -951,40 +1513,58 @@
                         }
                     },
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["p_l"],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
-                            "comfort", "like"
+                            "comfort",
+                            "like"
                         ],
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from was touched by cat_to's sympathy for a character in {PRONOUN/cat_from/poss} story."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "s_c scoffs. Couldn't the she-cat have killed her evil leader, rather than being killed? {PRONOUN/s_c/subject/CAP} might respect {PRONOUN/s_c/poss} leader, but if lead_name ever was so cruel, then s_c would have no issue rebelling.",
-                "exp": 30,
-                "can_have_stat": [
-                    "not_pl_rc"
+                "frequency": 4,
+                "strings": [
+                    "s_c0 scoffs. Couldn't the she-cat have killed her evil leader, rather than being killed? {PRONOUN/s_c0/subject/CAP} might respect {PRONOUN/s_c0/poss} leader, but if lead_name ever was so cruel, then s_c0 would have no issue rebelling."
                 ],
-                "stat_trait": [
-                    "bloodthirsty",
-                    "arrogant",
-                    "rebellious",
-                    "vengeful",
-                    "fierce",
-                    "shameless",
-                    "bold",
-                    "daring"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "bloodthirsty",
+                                "arrogant",
+                                "rebellious",
+                                "vengeful",
+                                "fierce",
+                                "shameless",
+                                "bold",
+                                "daring"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-p_l",
+                            "-r_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "like",
@@ -996,35 +1576,56 @@
                         }
                     },
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": [ "patrol", "low_lawful"],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats",
+                            "low_lawful"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 15,
                         "log": {
                             "cats_from": "cat_from gained a lot of respect for cat_to after hearing {PRONOUN/cat_to/subject} wouldn't hesitate to rebel against an unjust leader."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "Despite s_c's protests about wasting time on a nursery tale, {PRONOUN/s_c/subject} {VERB/s_c/find/finds} {PRONOUN/s_c/self} enjoying listening to p_l telling the story. Perhaps it isn't so bad to listen to a fable once in a while.",
-                "exp": 30,
-                "can_have_stat": [
-                    "not_pl_rc"
+                "frequency": 4,
+                "strings": [
+                    "Despite s_c0's protests about wasting time on a nursery tale, {PRONOUN/s_c0/subject} {VERB/s_c0/find/finds} {PRONOUN/s_c0/self} enjoying listening to p_l telling the story. Perhaps it isn't so bad to listen to a fable once in a while."
                 ],
-                "stat_trait": [
-                    "grumpy",
-                    "gloomy",
-                    "strict",
-                    "responsible",
-                    "troublesome"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "grumpy",
+                                "gloomy",
+                                "strict",
+                                "responsible",
+                                "troublesome"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-p_l",
+                            "-r_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "like",
@@ -1040,7 +1641,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1052,8 +1653,12 @@
                         }
                     },
                     {
-                        "cats_from": ["p_l"],
-                        "cats_to": ["s_c"],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
                         "mutual": false,
                         "values": [
                             "respect"
@@ -1063,28 +1668,41 @@
                             "cats_from": "cat_from appreciated that cat_to lightened up and was willing to listen to {PRONOUN/cat_from/poss} story on patrol."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "s_c promises that if c_n ever has a terrible leader while <i>{PRONOUN/s_c/subject}{VERB/s_c/'re/'s}</i> alive, {PRONOUN/s_c/subject}'ll make sure to save the Clan. Yes, that she-cat gave them the sunset with her death — but her Clan's evil leader lived on.",
-                "exp": 30,
-                "can_have_stat": [
-                    "not_pl_rc"
+                "frequency": 4,
+                "strings": [
+                    "s_c0 promises that if c_n ever has a terrible leader while <i>{PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s}</i> alive, {PRONOUN/s_c0/subject}'ll make sure to save the Clan. Yes, that she-cat gave them the sunset with her death — but her Clan's evil leader lived on."
                 ],
-                "stat_trait": [
-                    "fierce",
-                    "daring",
-                    "righteous",
-                    "rebellious",
-                    "bloodthirsty",
-                    "ambitious",
-                    "vengeful"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "fierce",
+                                "daring",
+                                "righteous",
+                                "rebellious",
+                                "bloodthirsty",
+                                "ambitious",
+                                "vengeful"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-p_l",
+                            "-r_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "like",
@@ -1096,35 +1714,56 @@
                         }
                     },
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": [ "patrol", "low_lawful"],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats",
+                            "low_lawful"
+                        ],
                         "mutual": false,
-                        "values": ["respect", "trust"],
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
                         "amount": 15,
                         "log": {
                             "cats_from": "cat_from gained a lot of respect for cat_to after hearing {PRONOUN/cat_to/subject} wouldn't hesitate to rebel against an unjust leader."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "s_c wonders, if that was how they got sunset... then how did they get sunrise...? Perhaps {PRONOUN/s_c/subject}'ll ask p_l later back at camp.",
-                "exp": 30,
-                "can_have_stat": [
-                    "not_pl_rc"
+                "frequency": 4,
+                "strings": [
+                    "s_c0 wonders, if that was how they got sunset... then how did they get sunrise...? Perhaps {PRONOUN/s_c0/subject}'ll ask p_l later back at camp."
                 ],
-                "stat_trait": [
-                    "thoughtful",
-                    "strange",
-                    "calm",
-                    "wise",
-                    "sincere"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "thoughtful",
+                                "strange",
+                                "calm",
+                                "wise",
+                                "sincere"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-p_l",
+                            "-r_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
                         "values": [
                             "like",
@@ -1136,53 +1775,74 @@
                         }
                     },
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["p_l"],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
-                        "values": ["like", "comfort"],
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from was flattered that cat_to took such an interest in {PRONOUN/cat_from/poss} stories."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "As p_l starts the story, r_c continues practicing {PRONOUN/r_c/poss} moves and then pounces straight into a tree trunk. Whoops. Nothing quite like a visit to the medicine cat den to disrupt the flow of a story.",
-                "exp": 0,
-                "injury": [
+                "frequency": 4,
+                "strings": [
+                    "As p_l starts the story, r_c0 continues practicing {PRONOUN/r_c0/poss} moves and then pounces straight into a tree trunk. Whoops. Nothing quite like a visit to the medicine cat den to disrupt the flow of a story."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 0,
+                "condition": [
                     {
                         "cats": [
-                            "r_c"
+                            "r_c0"
                         ],
-                        "injuries": [
+                        "condition": [
                             "scrapes",
                             "bruises"
                         ]
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "Right as p_l gets to the good part, s_c interrupts by yawning and walking off. p_l feels disheartened and doesn't continue.",
-                "exp": 0,
-                "can_have_stat": [
-                    "not_pl_rc"
+                "frequency": 4,
+                "strings": [
+                    "Right as p_l gets to the good part, s_c0 interrupts by yawning and walking off. p_l feels disheartened and doesn't continue."
                 ],
-                "stat_trait": [
-                    "troublesome",
-                    "oblivious",
-                    "shameless",
-                    "childish",
-                    "bold"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "troublesome",
+                                "oblivious",
+                                "shameless",
+                                "childish",
+                                "bold"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-p_l",
+                            "-r_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1197,28 +1857,37 @@
                             "cats_from": "cat_from was disappointed that cat_to ruined {PRONOUN/cat_from/poss} story by yawning and walking off in the middle of it."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "s_c says that {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} not interested in nursery tales and would rather sink {PRONOUN/s_c/poss} teeth into some good prey. p_l twitches {PRONOUN/p_l/poss} whiskers skeptically but lets {PRONOUN/s_c/object} go without comment.",
-                "exp": 0,
-                "can_have_stat": [
-                    "not_pl_rc"
+                "frequency": 4,
+                "strings": [
+                    "s_c0 says that {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} not interested in nursery tales and would rather sink {PRONOUN/s_c0/poss} teeth into some good prey. p_l twitches {PRONOUN/p_l/poss} whiskers skeptically but lets {PRONOUN/s_c0/object} go without comment."
                 ],
-                "stat_trait": [
-                    "cold",
-                    "bloodthirsty",
-                    "arrogant",
-                    "shameless",
-                    "bold",
-                    "competitive",
-                    "arrogant"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "cold",
+                                "bloodthirsty",
+                                "arrogant",
+                                "shameless",
+                                "bold",
+                                "competitive",
+                                "arrogant"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-p_l",
+                            "-r_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1233,29 +1902,38 @@
                             "cats_from": "cat_from was disappointed that cat_to didn't want to hear {PRONOUN/cat_from/poss} story."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "s_c cringes, unable to bear hearing such a sad tale. p_l wraps a tail around {PRONOUN/s_c/object} and smoothly turns the conversation to happier things.",
-                "exp": 0,
-                "can_have_stat": [
-                    "not_pl_rc"
+                "frequency": 4,
+                "strings": [
+                    "s_c0 cringes, unable to bear hearing such a sad tale. p_l wraps a tail around {PRONOUN/s_c0/object} and smoothly turns the conversation to happier things."
                 ],
-                "stat_trait": [
-                    "compassionate",
-                    "faithful",
-                    "sincere",
-                    "nervous",
-                    "insecure"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "compassionate",
+                                "faithful",
+                                "sincere",
+                                "nervous",
+                                "insecure"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-p_l",
+                            "-r_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1266,23 +1944,32 @@
                             "cats_from": "cat_from was grateful that cat_to changed the subject after starting to tell an unhappy story."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "s_c finds this particular tale depressing and pads away to train by {PRONOUN/s_c/self}.",
-                "exp": 0,
-                "can_have_stat": [
-                    "not_pl_rc"
+                "frequency": 4,
+                "strings": [
+                    "s_c0 finds this particular tale depressing and pads away to train by {PRONOUN/s_c0/self}."
                 ],
-                "stat_trait": [
-                    "gloomy",
-                    "lonesome"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "gloomy",
+                                "lonesome"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-p_l",
+                            "-r_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1297,25 +1984,34 @@
                             "cats_from": "cat_from was disappointed that cat_to left while {PRONOUN/cat_from/subject} {VERB/cat_from/were/was} telling a story."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "Right as p_l gets to the good part, s_c interrupts, excitedly describing the ending {PRONOUN/s_c/self}. p_l feels quite put out.",
-                "exp": 0,
-                "can_have_stat": [
-                    "not_pl_rc"
+                "frequency": 4,
+                "strings": [
+                    "Right as p_l gets to the good part, s_c0 interrupts, excitedly describing the ending {PRONOUN/s_c0/self}. p_l feels quite put out."
                 ],
-                "stat_trait": [
-                    "flamboyant",
-                    "oblivious",
-                    "shameless",
-                    "bold"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "flamboyant",
+                                "oblivious",
+                                "shameless",
+                                "bold"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-p_l",
+                            "-r_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -1335,7 +2031,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1346,8 +2042,7 @@
                             "cats_from": "cat_from loved cat_to's story so much that {PRONOUN/cat_from/subject} couldn't help filling in the ending."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ]
     }

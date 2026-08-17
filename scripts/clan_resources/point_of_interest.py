@@ -1,6 +1,6 @@
 from enum import StrEnum
 from random import choice
-from typing import Dict, Union, List
+from typing import Dict, Union, List, Literal
 
 import ujson
 
@@ -8,6 +8,11 @@ _poi_names = set()
 _poi_tags = set()
 
 _poi_by_tags = {}
+_poi_by_category = {
+    "gathering": set(),
+    "moonplace": set(),
+    "terrain": set(),
+}
 
 _undiscovered_poi_remaining = 3
 
@@ -19,6 +24,10 @@ class PoiType(StrEnum):
     GATHERING = "gathering"
     MOONPLACE = "moonplace"
     TERRAIN = "terrain"
+
+
+def get_pois_by_category(category: Literal["gathering", "moonplace", "terrain"]):
+    return list(_poi_by_category[category])
 
 
 def get_poi_names_set():
@@ -33,6 +42,10 @@ def get_poi_tags_set():
     return _poi_tags
 
 
+def get_poi_categories_set():
+    return set(_poi_by_category.keys())
+
+
 def get_random_poi_by_tag(tag):
     """
     Return a random POI name that fits the requested tag/s.
@@ -40,6 +53,14 @@ def get_random_poi_by_tag(tag):
     :return: string name of POI that fits.
     """
     return choice(_poi_by_tags.get(tag, ["MISSING_POI"]))
+
+
+def get_random_poi_by_category(category: Literal["gathering", "moonplace", "terrain"]):
+    try:
+        return choice(get_pois_by_category(category))
+    except (KeyError, IndexError):
+        # sometimes there are no possible pois during tests
+        return f"MISSING_POI (requested category: {category})"
 
 
 def add_poi(name, elements):
@@ -60,13 +81,11 @@ def add_poi(name, elements):
         else:
             _poi_by_tags[tag] = [name]
 
+    _poi_by_category[elements["category"]].add(name)
+
 
 def get_poi_save_dict():
-    return {
-        "gathering": [name for name in _poi_names if name.startswith("gather_")],
-        "moonplace": [name for name in _poi_names if name.startswith("moon_")],
-        "terrain": [name for name in _poi_names if name.startswith("terrain_")],
-    }
+    return {k: get_pois_by_category(k) for k in ["gathering", "moonplace", "terrain"]}
 
 
 def load_pois(save_data: Dict[str, List[str]]):
@@ -82,8 +101,9 @@ def clear_pois():
     """
     _poi_tags.clear()
     _poi_names.clear()
-
     _poi_by_tags.clear()
+    for names in _poi_by_category.values():
+        names.clear()
 
     global _undiscovered_poi_remaining
     _undiscovered_poi_remaining = 3

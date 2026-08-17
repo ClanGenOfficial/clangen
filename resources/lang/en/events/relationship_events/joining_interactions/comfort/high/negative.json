@@ -1,0 +1,18 @@
+[
+    {
+        "event_id": "gen_comfort_high_neg1",
+        "strings": [
+			"r_c hissed when m_c tried to introduce {PRONOUN/m_c/self}.",
+            "r_c made it clear that {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} agree with m_c joining the Clan."
+        ],
+        "relationship_changes": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": false,
+                "values": ["like"],
+                "amount": -10
+            }
+        ]
+    }
+]

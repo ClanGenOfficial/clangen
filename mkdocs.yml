@@ -17,7 +17,10 @@ nav:
             - dev/senior/index.md
     - Code:
         - dev/code/index.md
+        - User Interface:
+            - dev/code/keybind-matrix-handling.md
         - dev/code/cat-status.md
+        - dev/code/cruel-season-cards.md
         - dev/art/cat-sprites/adding-new-sprites.md
         - dev/code/content-adding.md
         - dev/code/localization.md
@@ -35,11 +38,14 @@ nav:
           - dev/writing/reference/animals.md
           - dev/writing/reference/herbs.md
           - dev/writing/reference/common-errors.md
-        - dev/writing/patrols.md
+        - Patrols:
+          - dev/writing/patrols/patrols.md
+          - dev/writing/patrols/patrol_outcome.md
         - dev/writing/shortevents.md
         - dev/writing/future.md
         - dev/writing/leaders-den-events.md
         - dev/writing/thoughts.md
+        - dev/writing/relationship-events.md
         - dev/writing/leader-ceremonies.md
         - dev/writing/points-of-interest.md
         - dev/writing/localization.md
@@ -50,6 +56,7 @@ nav:
             - dev/art/cat-sprites/adding-new-sprites.md
             - dev/art/cat-sprites/palette-maps.md
         - dev/art/index.md
+        - dev/art/cruel-season-cards.md
         - dev/art/patrol-sprites.md
         - dev/art/clan-symbols.md
         - dev/art/camp-backgrounds.md
@@ -59,6 +66,17 @@ nav:
   - User Guides:
     - user-guides/index.md
     - user-guides/removing-palette-maps.md
+    - Save File Editing:
+      - user-guides/save-file-editing/sfe.md
+      - user-guides/save-file-editing/clan_cats.md
+      - user-guides/save-file-editing/clan_json.md
+      - user-guides/save-file-editing/history.md
+      - user-guides/save-file-editing/conditions.md
+      - user-guides/save-file-editing/relations.md
+      - user-guides/save-file-editing/future-events.md
+    - Tech Help:
+      - user-guides/tech-help/installing-uv.md
+      - user-guides/tech-help/backups.md
   - Contributing to the Wiki:
       - contributing/index.md
       - contributing/documentation-resources.md
@@ -137,7 +155,6 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.inlinehilite
-  - attr_list
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg

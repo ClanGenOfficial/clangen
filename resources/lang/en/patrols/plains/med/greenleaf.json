@@ -1,110 +1,126 @@
 [
-  {
-        "patrol_id": "pln_med_greenleaf_allergies",
-        "biome": [
+    {
+        "event_id": "pln_med_greenleaf_allergies",
+        "types": [
+            "herb_gathering"
+        ],
+        "frequency": 2,
+        "location": [
             "plains"
         ],
         "season": [
             "greenleaf"
         ],
-        "types": [
-            "herb_gathering"
-        ],
-        "tags": [],
-        "patrol_art": "gen_herbs",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {
-"normal adult": [1, 5],
-"medicine cat": [1, 5]
-},
-        "frequency": 2,
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ],
+            "normal adult": [
+                1,
+                5
+            ],
+            "medicine cat": [
+                1,
+                5
+            ]
+        },
+        "involved_cats": {
+            "r_c0": {}
+        },
         "chance_of_success": 60,
-        "intro_text": "p_l didn't plan to have other cats with {PRONOUN/p_l/object}, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} grateful for the help anyway, especially with the amount of blooming flowers. That is, until r_c started sneezing. Clearly, the pollen from the flowers and grasses is affecting {PRONOUN/r_c/object} somewhat.",
-        "decline_text": "Since r_c clearly isn't up for a patrol involving plants and pollen, the patrol returns to camp with no new herbs. At least r_c seems to have stopped sneezing for now.",
+        "patrol_art": "cat_sprites/gen_med_herbs_McWrWr",
+        "intro_text": "p_l didn't plan to have other cats with {PRONOUN/p_l/object}, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} grateful for the help anyway, especially with the amount of blooming flowers. That is, until r_c0 started sneezing. Clearly, the pollen from the flowers and grasses is affecting {PRONOUN/r_c0/object} somewhat.",
+        "decline_text": "Since r_c0 clearly isn't up for a patrol involving plants and pollen, the patrol returns to camp with no new herbs. At least r_c0 seems to have stopped sneezing for now.",
         "success_outcomes": [
             {
-        "text": "p_l continues the patrol without acknowledging r_c sneezing, opting to continue the patrol. Despite the circumstances, greenleaf is merciful to the group, and the patrol returns with an average collection of herbs.",
-        "exp": 10,
-        "frequency": 4,
-        "herbs": [
-            "random_herbs"
-        ],
-        "injury": [
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_med_herbs_McWrWr",
+                "strings": [
+                    "p_l continues the patrol without acknowledging r_c0 sneezing, opting to continue the patrol. Despite the circumstances, greenleaf is merciful to the group, and the patrol returns with an average collection of herbs."
+                ],
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "running nose"
+                        ],
+                        "no_results": true
+                    }
+                ]
+            },
             {
-                "cats": [
-                    "r_c"
+                "frequency": 2,
+                "outcome_art": "cat_sprites/gen_embarrassed_WrWr",
+                "strings": [
+                    "p_l doesn't see r_c's running nose as a burden. To p_l, it's an opportunity. While it prevents r_c0 from finding herbs, it makes r_c0 the perfect collector of herbs with less pleasant smells. When the patrol comes across a patch of some particularly pungent-scented herbs hidden amongst some wildflowers, r_c0 is sent to collect them."
                 ],
-                "injuries": [
-                    "running nose"
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
                 ],
-                "scars": [],
-                "no_results": true
-            }
-        ],
-        "new_cat": [],
-        "art": "gen_herbs"
-        },
-            {
-        "text": "p_l doesn't see r_c's running nose as a burden. To p_l, it's an opportunity. While it prevents r_c from finding herbs, it makes r_c the perfect collector of herbs with less pleasant smells. When the patrol comes across a patch of some particularly pungent-scented herbs hidden amongst some wildflowers, r_c is sent to collect them.",
-        "exp": 15,
-        "frequency": 2,
-        "herbs": [
-            "random_herbs"
-        ],
-        "injury": [
-            {
-                "cats": [
-                    "r_c"
-                ],
-                "injuries": [
-                    "running nose"
-                ],
-                "scars": [],
-                "no_results": true
-            }
-        ],
-        "new_cat": [],
-        "art": "gen_embarrassed1"
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "running nose"
+                        ],
+                        "no_results": true
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
             {
-        "text": "The patrol continues their search for herbs, despite r_c's plight. Unfortunately, the group doesn't get very far. r_c stumbles mid-sneeze, tripping over a rabbit hole hidden amongst tall grass and tumbling forward, knocking over other cats in {PRONOUN/r_c/poss} wake.",
-        "exp": 0,
-        "frequency": 4,
-        "injury": [
-            {
-                "cats": [
-                    "r_c"
+                "frequency": 4,
+                "outcome_art": "cat_sprites/fst_med_stumble_McWr",
+                "strings": [
+                    "The patrol continues their search for herbs, despite r_c's plight. Unfortunately, the group doesn't get very far. r_c0 stumbles mid-sneeze, tripping over a rabbit hole hidden amongst tall grass and tumbling forward, knocking over other cats in {PRONOUN/r_c0/poss} wake."
                 ],
-                "injuries": [
-                    "running nose"
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from lost respect for cat_to after a sidetracked patrol."
+                        }
+                    }
                 ],
-                "scars": [],
-                "no_results": true
-            }
-        ],
-        "relationships": [
-    {
-    "cats_from": [
-      "p_l"
-    ],
-    "cats_to": [
-      "r_c"
-    ],
-    "mutual": false,
-    "values": [
-      "respect"
-    ],
-    "amount": -5,
-    "log": {
-        "cats_from": "cat_from lost respect for cat_to after a sidetracked patrol."
-    }
-        }
-        ],
-        "new_cat": [],
-        "art": "fst_med_stumble1"
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "running nose"
+                        ],
+                        "no_results": true
+                    }
+                ]
             }
         ]
     }

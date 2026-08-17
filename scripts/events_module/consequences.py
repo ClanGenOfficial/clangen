@@ -13,10 +13,15 @@ from scripts.cat.enums import (
     CatStanding,
     CatThought,
 )
+from scripts.cat.factories.new_cat_factory import NewCatFactory
+from scripts.cat.factories.enums import CatType
 from scripts.cat.names import names
 from scripts.cat_relations.enums import RelType
 from scripts.cat_relations.inheritance2 import inheritance_db
+from scripts.clan_package.get_clan_cats import get_random_player_clan_cat
 from scripts.clan_package.settings import get_clan_setting
+from scripts.config import get_config
+from scripts.events_module.parameter_dicts import RelationshipChangeDict
 from scripts.game_structure import game, constants
 from scripts.cat.constants import BACKSTORIES, PERMANENT
 from scripts.events_module.text_adjust import process_text, adjust_list_text
@@ -414,7 +419,7 @@ def create_new_cat_block(
                     continue
 
                 y = randrange(0, 20)
-                start_relation = Relationship(n_c, inter_cat, False, True)
+                start_relation = Relationship(n_c, inter_cat, True)
                 start_relation.like += 40 + y
                 start_relation.comfort = 40 + y
                 start_relation.respect = 10 + y
@@ -427,7 +432,7 @@ def create_new_cat_block(
                     continue
 
                 y = randrange(0, 20)
-                start_relation = Relationship(par, n_c, False, True)
+                start_relation = Relationship(par, n_c, True)
                 start_relation.like += 60 + y
                 start_relation.comfort = 40 + y
                 start_relation.respect = 30 + y
@@ -435,7 +440,7 @@ def create_new_cat_block(
                 par.relationships[n_c.ID] = start_relation
 
                 y = randrange(0, 20)
-                start_relation = Relationship(n_c, par, False, True)
+                start_relation = Relationship(n_c, par, True)
                 start_relation.like += 40 + y
                 start_relation.comfort = 70 + y
                 start_relation.respect = 30 + y
@@ -450,7 +455,7 @@ def create_new_cat_block(
                 par = Cat.fetch_cat(par)
 
                 y = randrange(0, 20)
-                start_relation = Relationship(par, n_c, False, True)
+                start_relation = Relationship(par, n_c, True)
                 start_relation.like += 60 + y
                 start_relation.comfort = 40 + y
                 start_relation.respect = 30 + y
@@ -458,7 +463,7 @@ def create_new_cat_block(
                 par.relationships[n_c.ID] = start_relation
 
                 y = randrange(0, 20)
-                start_relation = Relationship(n_c, par, False, True)
+                start_relation = Relationship(n_c, par, True)
                 start_relation.like += 40 + y
                 start_relation.comfort = 70 + y
                 start_relation.respect = 30 + y
@@ -591,7 +596,7 @@ def create_new_cat(
             _gender = gender
 
         # first we generate the cat as though they are not part of the clan yet
-        new_cat = Cat(
+        new_cat = NewCatFactory.create_cat(
             moons=moons,
             status_dict={
                 "social": original_social,
@@ -764,17 +769,21 @@ def create_new_cat(
 
 
 def gather_cat_objects(
-    Cat, abbr_list: List[str], event, stat_cat=None, extra_cat=None
+    Cat,
+    abbr_list: List[str],
+    event,
+    extra_cat=None,
+    involved_cats: Optional[dict] = None,
 ) -> list:
     """
     gathers cat objects from list of abbreviations used within an event format block
     :param Cat Cat: Cat class
     :param list[str] abbr_list: The list of abbreviations
     :param event: the controlling class of the event (e.g. Patrol, HandleShortEvents), default None
-    :param Cat stat_cat: if passing the Patrol class, must include stat_cat separately
     :param Cat extra_cat: if not passing an event class, include the single affected cat object here. If you are not
     passing a full event class, then be aware that you can only include "m_c" as a cat abbreviation in your rel block.
     The other cat abbreviations will not work.
+    :param involved_cats: dict of cats involved in the event. Key is their abbreviation string and value is the cat object.
     :return: list of cat objects
     """
 
@@ -787,35 +796,32 @@ def gather_cat_objects(
             is_exclusionary = True
             abbr = abbr.replace("-", "")
 
+        if involved_cats and abbr in involved_cats:
+            found_cat = involved_cats[abbr]
+            if is_exclusionary:
+                if isinstance(found_cat, list):
+                    out_set -= found_cat
+                else:
+                    out_set.discard(found_cat)
+            else:
+                if isinstance(found_cat, list):
+                    out_set.update(set(found_cat))
+                else:
+                    out_set.add(found_cat)
+            continue
+
         found_cat = None
         if abbr == "m_c":
             found_cat = extra_cat if extra_cat else event.main_cat
         elif abbr == "r_c":
             found_cat = event.random_cat
-        # PATROL SPECIFIC
-        elif abbr == "p_l":
-            found_cat = event.patrol_leader
-        elif abbr == "s_c":
-            found_cat = stat_cat
-        elif abbr == "app1" and len(event.patrol_apprentices) >= 1:
-            found_cat = event.patrol_apprentices[0]
-        elif abbr == "app2" and len(event.patrol_apprentices) >= 2:
-            found_cat = event.patrol_apprentices[1]
-        elif abbr == "app3" and len(event.patrol_apprentices) >= 3:
-            found_cat = event.patrol_apprentices[2]
-        elif abbr == "app4" and len(event.patrol_apprentices) >= 4:
-            found_cat = event.patrol_apprentices[3]
-        elif abbr == "app5" and len(event.patrol_apprentices) >= 5:
-            found_cat = event.patrol_apprentices[4]
-        elif abbr == "app6" and len(event.patrol_apprentices) >= 6:
-            found_cat = event.patrol_apprentices[5]
 
         # add/remove cat if found and then continue for loop
         if is_exclusionary and found_cat:
             if found_cat not in out_set:
                 # continue to avoid KeyError
                 continue
-            out_set.remove(found_cat)
+            out_set.discard(found_cat)
             continue
         if not is_exclusionary and found_cat:
             out_set.add(found_cat)
@@ -823,24 +829,22 @@ def gather_cat_objects(
 
         # SMALL CAT GROUPS
         found_cat_list = set()
-        if abbr == "patrol":
-            found_cat_list.update(event.patrol_cats)
-        elif re.match(r"n_c:[0-9]+", abbr):  # new_cats
+        if re.match(r"n_c:[0-9]+", abbr):  # new_cats
             index = re.match(r"n_c:([0-9]+)", abbr).group(1)
             index = int(index)
             if index < len(event.new_cats):
                 found_cat_list.update(event.new_cats[index])
-        elif abbr == "multi":
-            cat_num = randint(1, max(1, len(event.patrol_cats) - 1))
-            found_cat_list.update(sample(event.patrol_cats, cat_num))
+        elif abbr == "multi" and involved_cats:
+            cat_num = randint(1, max(1, len(involved_cats["patrol_cats"]) - 1))
+            found_cat_list.update(sample(involved_cats["patrol_cats"], cat_num))
         # OVERALL CLAN CATS
         elif abbr == "clan":
             found_cat_list.update(clan_cats)
             # exclude cats involved in the event
             found_cat_list.discard(getattr(event, "main_cat", None))
             found_cat_list.discard(getattr(event, "random_cat", None))
-            if getattr(event, "patrol_cats", None):
-                found_cat_list.difference_update(set(event.patrol_cats))
+            if involved_cats and involved_cats.get("patrol_cats"):
+                found_cat_list.difference_update(set(involved_cats.get("patrol_cats")))
         elif abbr == "some_clan":  # 1 / 8 of clan cats are affected
             if len(
                 clan_cats
@@ -851,8 +855,10 @@ def gather_cat_objects(
                 # exclude cats involved in the event
                 found_cat_list.discard(getattr(event, "main_cat", None))
                 found_cat_list.discard(getattr(event, "random_cat", None))
-                if getattr(event, "patrol_cats", None):
-                    found_cat_list.difference_update(set(event.patrol_cats))
+                if involved_cats and involved_cats.get("patrol_cats"):
+                    found_cat_list.difference_update(
+                        set(involved_cats.get("patrol_cats"))
+                    )
 
         # add/remove cats if found and then continue for loop
         if is_exclusionary and found_cat_list:
@@ -899,7 +905,11 @@ def gather_cat_objects(
 
 
 def unpack_rel_block(
-    Cat, relationship_effects: List[dict], event=None, stat_cat=None, extra_cat=None
+    Cat,
+    relationship_effects: List[Union[dict, RelationshipChangeDict]],
+    event=None,
+    extra_cat=None,
+    involved_cats: dict = None,
 ) -> dict:
     """
     Unpacks the info from the relationship effect block used in patrol and moon events, then adjusts rel values
@@ -908,8 +918,8 @@ def unpack_rel_block(
     :param Cat Cat: Cat class
     :param list[dict] relationship_effects: the relationship effect block
     :param event: the controlling class of the event (e.g. Patrol, HandleShortEvents), default None
-    :param Cat stat_cat: if passing the Patrol class, must include stat_cat separately
     :param Cat extra_cat: if not passing an event class, include the single affected cat object here. If you are not passing a full event class, then be aware that you can only include "m_c" as a cat abbreviation in your rel block.  The other cat abbreviations will not work.
+    :param involved_cats: Dict of involved cats with abbreviation as key and cat object as value
     :returns: List of all created rel logs for this rel block.
     """
     possible_values = [*RelType]
@@ -931,8 +941,10 @@ def unpack_rel_block(
             is_clan_reaction = True
 
         # Gather actual cat objects:
-        cats_from_ob = gather_cat_objects(Cat, cats_from, event, stat_cat, extra_cat)
-        cats_to_ob = gather_cat_objects(Cat, cats_to, event, stat_cat, extra_cat)
+        cats_from_ob = gather_cat_objects(
+            Cat, cats_from, event, extra_cat, involved_cats
+        )
+        cats_to_ob = gather_cat_objects(Cat, cats_to, event, extra_cat, involved_cats)
 
         # Remove any "None" that might have snuck in
         if None in cats_from_ob:
@@ -1032,16 +1044,16 @@ def change_relationship_values(
     """
     changes relationship values according to the parameters.
 
-    :param list[Cat] cats_from: list of cat objects whose rel values will be affected
+    :param cats_from: list of cat objects whose rel values will be affected
     (e.g. cat_from loses trust in cat_to)
-    :param list[Cat] cats_to: list of cats objects who are the target of that rel value
+    :param cats_to: list of cats objects who are the target of that rel value
     (e.g. cat_from loses trust in cat_to)
-    :param int romance: amount to change romantic, default 0
-    :param int like: amount to change platonic, default 0
-    :param int respect: amount to change admiration (respect), default 0
-    :param int comfort: amount to change comfort, default 0
-    :param int trust: amount to change trust, default 0
-    :param str log: the string to append to the relationship log of cats involved
+    :param romance: amount to change romantic, default 0
+    :param like: amount to change platonic, default 0
+    :param respect: amount to change admiration (respect), default 0
+    :param comfort: amount to change comfort, default 0
+    :param trust: amount to change trust, default 0
+    :param log: the string to append to the relationship log of cats involved
     :param bool flip_log: If True, this will "flip" the cats used for cat_to and cat_from abbreviation replacements. This should really only be used for mutual relationship changes from events.
     """
 
@@ -1127,3 +1139,55 @@ def change_relationship_values(
                     rel.log.append(log_text)
 
     return created_rel_logs
+
+
+def check_stolen_vitality(cat, lives_lost: int) -> Optional[str]:
+    if game.clan.leader_lives == 0:
+        # remove one, cus stolen vitality won't kill a cat for the life that kills the leader
+        lives_lost -= 1
+
+    if not get_config("cruel_season.event.stolen_vitality") or not lives_lost:
+        return None
+
+    cats_to_kill = []
+    failed = False
+    for i in range(lives_lost):
+        c = get_random_player_clan_cat(cat, not_allowed=[cat] + cats_to_kill)
+        if c:
+            cats_to_kill.append(c)
+        else:
+            failed = True
+            break
+
+    if len(cats_to_kill) > 0:
+        cat_names = adjust_list_text([str(c.name) for c in cats_to_kill])
+    else:
+        cat_names = None
+
+    for c in cats_to_kill:
+        c.die()
+        c.history.add_death(
+            i18n.t("cruel_season.special_text.stolen_vitality_sacrifice_history"),
+            other_cat=cat,
+        )
+    text = ""
+    if cats_to_kill:
+        text += i18n.t(
+            "cruel_season.special_text.stolen_vitality_base",
+            lead_name=str(cat.name),
+            dead_name=str(cat_names),
+            count=len(cats_to_kill),
+        )
+    if failed:
+        text += " "
+        text += i18n.t(
+            "cruel_season.special_text.stolen_vitality_failed",
+            lead_name=str(cat.name),
+        )
+        for i in range(game.clan.leader_lives):
+            cat.history.add_death(
+                i18n.t("cruel_season.special_text.stolen_vitality_lead_history")
+            )
+        game.clan.leader_lives = 0
+
+    return text

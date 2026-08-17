@@ -58,6 +58,7 @@ class SaveCheckWindow(GameWindow):
             "windows.save_check_message",
             ui_scale(pygame.Rect((20, 20), (260, -1))),
             line_spacing=1,
+            starting_height=top_stack_menu_layer_height,
             object_id="#text_box_30_horizcenter",
             container=self,
         )
@@ -121,7 +122,7 @@ class SaveCheckWindow(GameWindow):
                 if game.clan is not None:
                     self.save_button_saving_state.show()
                     self.save_button.disable()
-                    save_cats(switch_get_value(Switch.clan_name), Cat, game)
+                    save_cats(switch_get_value(Switch.clan_save_id), Cat, game)
                     game.clan.save_clan()
                     game.clan.save_pregnancy(game.clan)
                     game.save_events()

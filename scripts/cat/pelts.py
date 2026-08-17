@@ -16,14 +16,26 @@ class Pelt:
     # POSES
     all_poses = sprites.POSE_DATA["poses"]
     newborn_poses = [x for x in all_poses if "newborn" in x]
-    kitten_poses = [x for x in all_poses if "kitten" in x]
-    adolescent_long_poses = [x for x in all_poses if "adolescent_long" in x]
-    adolescent_short_poses = [
-        x for x in all_poses if "adolescent" in x and "long" not in x
+    kitten_poses = [x for x in all_poses if "kitten" in x and "sick" not in x]
+    adolescent_long_poses = [
+        x for x in all_poses if "adolescent_long" in x and "sick" not in x
     ]
-    adult_short_poses = [x for x in all_poses if "adult_short" in x and "para" not in x]
-    adult_long_poses = [x for x in all_poses if "adult_long" in x and "para" not in x]
-    senior_poses = [x for x in all_poses if "senior" in x]
+    adolescent_short_poses = [
+        x
+        for x in all_poses
+        if "adolescent" in x and "long" not in x and "sick" not in x
+    ]
+    adult_short_poses = [
+        x
+        for x in all_poses
+        if "adult_short" in x and "para" not in x and "sick" not in x
+    ]
+    adult_long_poses = [
+        x
+        for x in all_poses
+        if "adult_long" in x and "para" not in x and "sick" not in x
+    ]
+    senior_poses = [x for x in all_poses if "senior" in x and "sick" not in x]
 
     # PELT LENGTH
     pelt_length = ["short", "medium", "long"]
@@ -82,21 +94,21 @@ class Pelt:
     )
 
     # TORTIE PATCHES
-    tortie_patches: list = []
+    tortie_patches: list = list(sprites.TORTIE_PATCH_COMBOS.keys())
     for sprite_list in sprites.TORTIE_DATA["sprite_list"]:
         tortie_patches.extend(sprite_list)
 
     # WHITE MARKINGS
-    little_white: list = []
+    little_white: list = list(sprites.WHITE_PATCH_COMBOS.get("little", {}).keys())
     for sprite_list in sprites.WHITE_LITTLE_DATA["sprite_list"]:
         little_white.extend(sprite_list)
-    mid_white: list = []
+    mid_white: list = list(sprites.WHITE_PATCH_COMBOS.get("mid", {}).keys())
     for sprite_list in sprites.WHITE_MID_DATA["sprite_list"]:
         mid_white.extend(sprite_list)
-    high_white: list = []
+    high_white: list = list(sprites.WHITE_PATCH_COMBOS.get("high", {}).keys())
     for sprite_list in sprites.WHITE_HIGH_DATA["sprite_list"]:
         high_white.extend(sprite_list)
-    mostly_white: list = []
+    mostly_white: list = list(sprites.WHITE_PATCH_COMBOS.get("mostly", {}).keys())
     for sprite_list in sprites.WHITE_MOSTLY_DATA["sprite_list"]:
         # have to remove FULLWHITE as it's handled special
         mostly_white.extend([x for x in sprite_list if x != "FULLWHITE"])
@@ -147,6 +159,7 @@ class Pelt:
     tail_accessories = []
     body_accessories = []
     head_accessories = []
+    paw_accessories = []
 
     # here we create the master lists of each accessory type
     plant_accessories = []
@@ -159,6 +172,8 @@ class Pelt:
                 body_accessories.append(sprite)
             elif sprite_list[sprite] == "head":
                 body_accessories.append(sprite)
+            elif sprite_list[sprite] == "paw":
+                paw_accessories.append(sprite)
 
     wild_accessories = []
     for sprite_list in sprites.WILD_DATA["sprite_list"]:
@@ -170,6 +185,8 @@ class Pelt:
                 body_accessories.append(sprite)
             elif sprite_list[sprite] == "head":
                 body_accessories.append(sprite)
+            elif sprite_list[sprite] == "paw":
+                paw_accessories.append(sprite)
 
     collar_accessories = []
     collar_styles = []
@@ -657,9 +674,7 @@ class Pelt:
         possible_pelts = [
             Pelt.pelt_categories[x] for x in Pelt.pelt_categories if x != "torties"
         ]
-        chosen_pelt = choice(
-            random.choices(possible_pelts, weights=(35, 20, 30, 15), k=1)[0]
-        )
+        chosen_pelt = choice(random.choices(possible_pelts, weights=weights, k=1)[0])
 
         # Tortie chance
         tortie_chance_f = constants.CONFIG["cat_generation"][

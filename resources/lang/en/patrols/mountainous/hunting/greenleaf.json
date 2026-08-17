@@ -1,389 +1,577 @@
 [
     {
-        "patrol_id": "mtn_hunt_greenleaf_heat1",
-        "biome": [
+        "event_id": "mtn_hunt_greenleaf_heat1",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 2,
+        "location": [
             "mountainous"
         ],
         "season": [
             "greenleaf"
         ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
-        "patrol_art": "gen_hunt_heat",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 2,
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "cat_sprites/gen_jolly_Wr",
         "intro_text": "It's hot out today, and the hunting patrol bounces around, infused with energy as they seek out prey.",
         "decline_text": "The patrol decides to head back to camp. They can hunt a different day.",
-        "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "It feels like every creature on the mountains is out enjoying the weather and fattening up, and the cats have what feels like the perfect day, sun and heat and prey filling every moment.",
-                "exp": 15,
-                "prey": [
-                    "large"
+                "frequency": 4,
+                "strings": [
+                    "It feels like every creature on the mountains is out enjoying the weather and fattening up, and the cats have what feels like the perfect day, sun and heat and prey filling every moment."
                 ],
-            "relationships": [
-                {
-                    "cats_from": ["patrol"],
-                    "cats_to": ["patrol"],
-                    "values": ["trust", "like"],
-                    "mutual": false,
-                    "amount": 3,
-                    "log":
+                "exp_gained": 15,
+                "relationship_changes": [
                     {
-                        "cats_from": "cat_from and cat_to had a fun hunt on a hot greenleaf day."
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "trust",
+                            "like"
+                        ],
+                        "mutual": false,
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had a fun hunt on a hot greenleaf day."
+                        }
                     }
-                }
-            ],
-                "frequency": 4
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
             },
             {
-                "text": "In the heat of midday, yawning with the sleepy pleasure of the heat, r_c hears a croaking bleat. The patrol trots off to investigate, and finds an upside-down mountain sheep stuck in a crevice. Not only do they bring back as much meat as they can carry, but they make sure to bring back wool, too. It's never too early to be thinking about next leaf-bare.",
-                "exp": 15,
-                "prey": [
-                    "large"
+                "frequency": 1,
+                "strings": [
+                    "In the heat of midday, yawning with the sleepy pleasure of the heat, r_c0 hears a croaking bleat. The patrol trots off to investigate, and finds an upside-down mountain sheep stuck in a crevice. Not only do they bring back as much meat as they can carry, but they make sure to bring back wool, too. It's never too early to be thinking about next leaf-bare."
                 ],
-            "relationships": [
-                {
-                    "cats_from": ["patrol"],
-                    "cats_to": ["patrol"],
-                    "values": ["trust", "like"],
-                    "mutual": false,
-                    "amount": 3,
-                    "log":
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 15,
+                "relationship_changes": [
                     {
-                        "cats_from": "cat_from and cat_to scavenged sheep meat together on a hot greenleaf day."
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "trust",
+                            "like"
+                        ],
+                        "mutual": false,
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "cat_from and cat_to scavenged sheep meat together on a hot greenleaf day."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "cat_from ate {PRONOUN/cat_from/poss} fill of sheep meat after cat_to's patrol found a trapped mountain sheep."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "No way, it's too hot for this. They can try to hunt again later."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "cat_from and cat_to gave up on a hunt because of the weather."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "mtn_hunt_greenleaf_solosquirrel1",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 4,
+        "location": [
+            "mountainous"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ],
+            "all apprentices": [
+                -1,
+                -1
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "hunt_general_intro",
+        "intro_text": "p_l tastes the air and perks up — there's a squirrel nearby, nibbling the lush plant growth near the base of a tree!",
+        "decline_text": "After a moment's deliberation, p_l decides to move on.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The wind suddenly shifts, and the squirrel jerks its head up in alarm. p_l thinks fast, bolting to cut off its escape before delivering the killing blow."
+                ],
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "Though it tries to escape, p_l is faster and smarter — {PRONOUN/p_l/subject} {VERB/p_l/slam/slams} a paw down on the squirrel's tail before it can go very far and {VERB/p_l/kill/kills} it with ease."
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "cat_from saw cat_to return to camp with a juicy squirrel."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 slinks through the underbrush, undetected until {PRONOUN/s_c0/subject} {VERB/s_c0/have/has} pounced — and by then it's far too late for the squirrel to do anything about it."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "HUNTER,1"
+                            ]
+                        }
                     }
                 },
-                {
-                    "cats_from": ["some_clan"],
-                    "cats_to": ["patrol"],
-                    "values": ["respect"],
-                    "mutual": false,
-                    "amount": 3,
-                    "log":
+                "exp_gained": 10,
+                "relationship_changes": [
                     {
-                        "cats_from": "cat_from ate {PRONOUN/cat_from/poss} fill of sheep meat after cat_to's patrol found a trapped mountain sheep."
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "cat_from saw cat_to return to camp with a juicy squirrel."
+                        }
                     }
-                }
-            ],
-                "frequency": 1
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "No way, it's too hot for this. They can try to hunt again later.",
-                "exp": 0,
-            "relationships": [
-                {
-                    "cats_from": ["patrol"],
-                    "cats_to": ["patrol"],
-                    "values": ["respect"],
-                    "mutual": false,
-                    "amount": -3,
-                    "log":
-                    {
-                        "cats_from": "cat_from and cat_to gave up on a hunt because of the weather."
-                    }
-                }
-            ],
-                "prey": [
-                    "very_small"
+                "frequency": 4,
+                "strings": [
+                    "p_l shifts on some pebbles as {PRONOUN/p_l/subject} {VERB/p_l/ready/readies} {PRONOUN/p_l/self} to pounce, and the resulting clatter alerts the squirrel. It doesn't even spare {PRONOUN/p_l/object} a glance as it scurries up the tree and out of sight."
                 ],
-                "frequency": 4
+                "exp_gained": 0,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
             }
         ]
     },
     {
-        "patrol_id": "mtn_hunt_greenleaf_solosquirrel1",
-        "biome": [
-            "mountainous"
-        ],
-        "season": [
-            "greenleaf"
-        ],
+        "event_id": "mtn_hunt_greenleaf_soloappsquirrel1",
         "types": [
             "hunting"
         ],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {
-            "all apprentices": [ -1, -1 ]
-        },
         "frequency": 4,
-        "intro_text": "p_l tastes the air and perks up — there's a squirrel nearby, nibbling the lush plant growth near the base of a tree!",
-        "decline_text": "After a moment's deliberation, r_c decides to move on.",
-        "chance_of_success": 50,
-        "success_outcomes": [
-            {
-                "text": "The wind suddenly shifts, and the squirrel jerks its head up in alarm. p_l thinks fast, bolting to cut off its escape before delivering the killing blow.",
-                "exp": 10,
-                "prey": [
-                    "medium"
-                ],
-                "frequency": 4
-            },
-            {
-                "text": "Though it tries to escape, p_l is faster and smarter — {PRONOUN/p_l/subject} {VERB/p_l/slam/slams} a paw down on the squirrel's tail before it can go very far and {VERB/p_l/kill/kills} it with ease.",
-                "exp": 10,
-                "prey": [
-                    "medium"
-                ],
-                "relationships": [
-                {
-                    "cats_from": [ "some_clan"
-                    ],
-                    "cats_to": ["r_c"],
-                    "values": [ "respect" ],
-                    "mutual": false,
-                    "amount": 3,
-                    "log":
-                    {
-                        "cats_from": "cat_from saw cat_to return to camp with a juicy squirrel."
-                    }
-                }
-            ],
-                "frequency": 1
-            },
-            {
-                "text": "s_c slinks through the underbrush, undetected until {PRONOUN/s_c/subject} {VERB/s_c/have/has} pounced — and by then it's far too late for the squirrel to do anything about it.",
-                "exp": 10,
-                "stat_skill": [
-                    "HUNTER,1"
-                ],
-                "prey": [
-                    "medium"
-                ],
-                "relationships": [
-                {
-                    "cats_from": [ "some_clan"
-                    ],
-                    "cats_to": ["r_c"],
-                    "values": [ "respect" ],
-                    "mutual": false,
-                    "amount": 3,
-                    "log":
-                    {
-                        "cats_from": "cat_from saw cat_to return to camp with a juicy squirrel."
-                    }
-                }
-            ],
-                "frequency": 4
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "p_l shifts on some pebbles as {PRONOUN/p_l/subject} {VERB/p_l/ready/readies} {PRONOUN/p_l/self} to pounce, and the resulting clatter alerts the squirrel. It doesn't even spare {PRONOUN/p_l/object} a glance as it scurries up the tree and out of sight.",
-                "exp": 0,
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_hunt_greenleaf_soloappsquirrel1",
-        "biome": [
+        "location": [
             "mountainous"
         ],
         "season": [
             "greenleaf"
         ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ],
             "apprentice": [
                 1,
                 1
             ]
         },
-        "frequency": 4,
-        "intro_text": "app1 scents a squirrel on the air! Greenleaf has made prey fat and unaware, so surely this will be an easy catch?",
-        "decline_text": "{PRONOUN/app1/subject/CAP} {VERB/app1/decide/decides} to move on and ignore the squirrel for now.",
+        "involved_cats": {
+            "p_l": {
+                "status": [
+                    "apprentice"
+                ]
+            }
+        },
         "chance_of_success": 50,
+        "patrol_art": "hunt_general_intro",
+        "intro_text": "p_l scents a squirrel on the air! Greenleaf has made prey fat and unaware, so surely this will be an easy catch?",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to move on and ignore the squirrel for now.",
         "success_outcomes": [
             {
-                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to — {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/return/returns} home with {PRONOUN/app1/poss} chest puffed out in pride.",
-                "exp": 20,
-                "prey": [
-                    "medium"
+                "frequency": 4,
+                "strings": [
+                    "p_l slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} right not to — {PRONOUN/p_l/poss} catch is flawless, and {PRONOUN/p_l/subject} {VERB/p_l/return/returns} home with {PRONOUN/p_l/poss} chest puffed out in pride."
                 ],
-                "relationships": [
-                {
-                    "cats_from": [ "some_clan"
-                    ],
-                    "cats_to": ["app1"],
-                    "values": [ "respect" ],
-                    "mutual": false,
-                    "amount": 8,
-                    "log":
+                "exp_gained": 20,
+                "relationship_changes": [
                     {
-                        "cats_from": "cat_from saw cat_to return to camp with a juicy squirrel."
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from saw cat_to return to camp with a juicy squirrel."
+                        }
                     }
-                }
-            ],
-                "frequency": 4
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
             },
             {
-                "text": "Though {PRONOUN/app1/subject} {VERB/app1/are/is} a little sloppy, and the squirrel quickly spots {PRONOUN/app1/object}, app1 manages to secure the catch in the end!",
-                "exp": 20,
-                "prey": [
-                    "medium"
+                "frequency": 1,
+                "strings": [
+                    "Though {PRONOUN/p_l/subject} {VERB/p_l/are/is} a little sloppy, and the squirrel quickly spots {PRONOUN/p_l/object}, p_l manages to secure the catch in the end!"
                 ],
-                "frequency": 1
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "Poor app1 focuses too hard on making sure {PRONOUN/app1/poss} hunting crouch is correct — by the time {PRONOUN/app1/subject} {VERB/app1/feel/feels} ready, the squirrel is long gone.",
-                "exp": 0,
-                "prey": [
-                    "very_small"
+                "frequency": 4,
+                "strings": [
+                    "Poor p_l focuses too hard on making sure {PRONOUN/p_l/poss} hunting crouch is correct — by the time {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} ready, the squirrel is long gone."
                 ],
-                "frequency": 4
+                "exp_gained": 0,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
             }
         ]
     },
     {
-        "patrol_id": "mtn_hunt_greenleaf_mentorsquirrel1",
-        "biome": [
+        "event_id": "mtn_hunt_greenleaf_mentorsquirrel1",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 4,
+        "location": [
             "mountainous"
         ],
         "season": [
             "greenleaf"
         ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 2,
-        "max_cats": 2,
-        "min_max_status": {
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ],
             "apprentice": [
-                1, 1
+                1,
+                1
             ],
             "normal adult": [
-                1, 1
+                1,
+                1
             ]
         },
-        "frequency": 4,
-        "intro_text": "p_l instructs app1 to scent the air and nods in approval when app1 says {PRONOUN/app1/subject} {VERB/app1/smell/smells} squirrel. With greenleaf comes fatter prey that tends to stick to shady spots — p_l points out a few likely destinations the squirrel may be heading to, then softly asks app1 how {PRONOUN/app1/subject} would like to proceed.",
-        "decline_text": "app1 looks apprehensive, then quietly says {PRONOUN/app1/subject} {VERB/app1/want/wants} to look for something easier.",
+        "involved_cats": {
+            "r_c1": {
+                "status": [
+                    "apprentice"
+                ]
+            }
+        },
         "chance_of_success": 50,
+        "patrol_art": "hunt_general_intro",
+        "intro_text": "p_l instructs r_c1 to scent the air and nods in approval when r_c1 says {PRONOUN/r_c1/subject} {VERB/r_c1/smell/smells} squirrel. With greenleaf comes fatter prey that tends to stick to shady spots — p_l points out a few likely destinations the squirrel may be heading to, then softly asks r_c1 how {PRONOUN/r_c1/subject} would like to proceed.",
+        "decline_text": "r_c1 looks apprehensive, then quietly says {PRONOUN/r_c1/subject} {VERB/r_c1/want/wants} to look for something easier.",
         "success_outcomes": [
             {
-                "text": "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} right not to — {PRONOUN/app1/poss} catch is flawless, and {PRONOUN/app1/subject} {VERB/app1/puff/puffs} {PRONOUN/app1/poss} chest out in pride as p_l praises {PRONOUN/app1/object}.",
-                "exp": 20,
-                "prey": [
-                    "medium"
+                "frequency": 4,
+                "strings": [
+                    "r_c1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/r_c1/subject/CAP}{VERB/r_c1/'re/'s} right not to — {PRONOUN/r_c1/poss} catch is flawless, and {PRONOUN/r_c1/subject} {VERB/r_c1/puff/puffs} {PRONOUN/r_c1/poss} chest out in pride as p_l praises {PRONOUN/r_c1/object}."
                 ],
-                "relationships": [
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["p_l"],
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 5,
                         "log": {
                             "cats_from": "cat_from witnessed first-paw how cat_to's hunting training has paid off."
                         }
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["app1"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
                         "mutual": false,
-                        "values": ["comfort", "like"],
+                        "values": [
+                            "comfort",
+                            "like"
+                        ],
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from felt great when cat_to praised {PRONOUN/cat_from/poss} hunting."
                         }
                     }
                 ],
-                "frequency": 4
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
             },
             {
-                "text": "Though {PRONOUN/app1/subject} {VERB/app1/are/is} a little sloppy, and the squirrel quickly spots {PRONOUN/app1/object}, app1 manages to secure the catch in the end! p_l looks pleased and gives {PRONOUN/app1/object} tips to improve {PRONOUN/app1/poss} technique next time.",
-                "exp": 20,
-                "prey": [
-                    "medium"
+                "frequency": 1,
+                "strings": [
+                    "Though {PRONOUN/r_c1/subject} {VERB/r_c1/are/is} a little sloppy, and the squirrel quickly spots {PRONOUN/r_c1/object}, r_c1 manages to secure the catch in the end! p_l looks pleased and gives {PRONOUN/r_c1/object} tips to improve {PRONOUN/r_c1/poss} technique next time."
                 ],
-                "relationships": [
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
                     {
-                        "cats_to": ["app1"],
-                        "cats_from": ["p_l"],
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
                         "mutual": false,
-                        "values": ["like"],
+                        "values": [
+                            "like"
+                        ],
                         "amount": 5,
                         "log": {
                             "cats_from": "cat_from watched cat_to's hunting improve under {PRONOUN/cat_from/poss} tutelage."
                         }
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["app1"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from got great hunting advice from cat_to."
                         }
                     }
                 ],
-                "frequency": 1
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "One misplaced step onto loose gravel scares the squirrel away, and app1 watches in disappointment as it scampers off.",
-                "exp": 0,
-                "relationships": [
+                "frequency": 4,
+                "strings": [
+                    "One misplaced step onto loose gravel scares the squirrel away, and r_c1 watches in disappointment as it scampers off."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["app1"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
                         "mutual": false,
-                        "values": ["comfort"],
+                        "values": [
+                            "comfort"
+                        ],
                         "amount": -5,
                         "log": {
                             "cats_from": "cat_from avoided cat_to for a bit after messing up in a hunt in front of {PRONOUN/cat_to/object}."
                         }
                     }
                 ],
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
             }
         ]
     },
     {
-        "patrol_id": "mtn_hunt_greenleaf_squirrel_treetoptumble1",
-        "biome": [
+        "event_id": "mtn_hunt_greenleaf_squirrel_treetoptumble1",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 4,
+        "location": [
             "mountainous"
         ],
         "season": [
             "greenleaf"
         ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
-        "patrol_art": "fst_hunt_gen_squirrel_treetoptumble",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ],
             "deputy": [
                 1,
                 1
@@ -393,277 +581,366 @@
                 -1
             ]
         },
-        "frequency": 4,
-        "intro_text": "As the patrol walks through the wooded slopes, a loud chittering from above interrupts them. r_c looks up just in time to get a shower of twigs and leaves to the face, while p_l exclaims aloud when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above.",
-        "decline_text": "Though they snort in amusement, the patrol decides to move on to easier prey, rather than waste their energy amongst the trees.",
+        "involved_cats": {
+            "r_c0": {}
+        },
         "chance_of_success": 60,
+        "patrol_art": "cat_sprites/fst_hunt_gen_squirreltreetoptumble_WrWr",
+        "intro_text": "As the patrol walks through the wooded slopes, a loud chittering from above interrupts them. r_c0 looks up just in time to get a shower of twigs and leaves to the face, while p_l exclaims aloud when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above.",
+        "decline_text": "Though they snort in amusement, the patrol decides to move on to easier prey, rather than waste their energy amongst the trees.",
         "success_outcomes": [
             {
-                "text": "Before anyone can even speak, there's a loud crack from above. The cats scatter as a branch crashes down, bringing both squirrels and a shower of oak leaves with it! The patrol thinks fast and pounces on the squirrels before they can escape. They head home with their bounty, each cat feeling quite pleased with themself.",
-                "exp": 40,
-                "herbs": [
-                    "oak_leaves"
+                "frequency": 4,
+                "strings": [
+                    "Before anyone can even speak, there's a loud crack from above. The cats scatter as a branch crashes down, bringing both squirrels and a shower of oak leaves with it! The patrol thinks fast and pounces on the squirrels before they can escape. They head home with their bounty, each cat feeling quite pleased with themself."
                 ],
-                "prey": [
-                    "medium"
-                ],
-                "relationships": [
+                "exp_gained": 40,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
-                        "values": ["like", "trust"],
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
                         "amount": 5,
                         "log": {
                             "cats_from": "cat_from and cat_to enjoyed a successful hunt together."
                         }
                     }
                 ],
-                "frequency": 4
+                "supply": [
+                    {
+                        "type": "oak_leaves",
+                        "adjust": "increase_medium"
+                    }
+                ]
             },
             {
-                "text": "A mischievous look in {PRONOUN/p_l/poss} eye, p_l challenges {PRONOUN/p_l/poss} Clanmates — whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c calls out in triumph. Not only {VERB/r_c/do/does} {PRONOUN/r_c/subject} have the squirrel, but {PRONOUN/r_c/subject} now also {VERB/r_c/have/has} a pawful of oak leaves for the medicine cat!",
-                "exp": 40,
-                "herbs": [
-                    "oak_leaves"
+                "frequency": 1,
+                "strings": [
+                    "A mischievous look in {PRONOUN/p_l/poss} eye, p_l challenges {PRONOUN/p_l/poss} Clanmates — whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c0 calls out in triumph. Not only {VERB/r_c0/do/does} {PRONOUN/r_c0/subject} have the squirrel, but {PRONOUN/r_c0/subject} now also {VERB/r_c0/have/has} a pawful of oak leaves for the medicine cat!"
                 ],
-                "prey": [
-                    "medium"
-                ],
-                "relationships": [
+                "exp_gained": 40,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
-                        "values": ["comfort"],
+                        "values": [
+                            "comfort"
+                        ],
                         "amount": 5,
                         "log": {
                             "cats_from": "cat_from and cat_to engaged in a friendly hunting competition together."
                         }
                     },
                     {
-                        "cats_to": ["r_c"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
-                        "values": ["trust"],
+                        "values": [
+                            "trust"
+                        ],
                         "amount": 3,
                         "log": {
                             "cats_from": "cat_from felt more confident in cat_to's loyalty after seeing {PRONOUN/cat_to/object} gather oak leaves for the medicine cat."
                         }
                     },
                     {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
-                        "values": ["like"],
+                        "values": [
+                            "like"
+                        ],
                         "amount": 5,
                         "log": {
                             "cats_from": "cat_from enjoyed the little challenge that cat_to set to the patrol when they were hunting together."
                         }
                     }
                 ],
-                "frequency": 1
+                "supply": [
+                    {
+                        "type": "oak_leaves",
+                        "adjust": "increase_medium"
+                    }
+                ]
             },
             {
-                "text": "With a glint in {PRONOUN/s_c/poss} eye, s_c is up in the trees before anyone can say anything. There's rustling, a short pause, then squirrel carcasses begin falling to the ground, one by one. s_c descends when {PRONOUN/s_c/subject} {VERB/s_c/finish/finishes} with a mouthful of oak leaves, curling {PRONOUN/s_c/poss} tail in pride at the looks on {PRONOUN/s_c/poss} Clanmates faces.",
-                "exp": 40,
-                "stat_skill": [
-                    "HUNTER,1",
-                    "CLIMBER,1"
+                "frequency": 4,
+                "strings": [
+                    "With a glint in {PRONOUN/s_c0/poss} eye, s_c0 is up in the trees before anyone can say anything. There's rustling, a short pause, then squirrel carcasses begin falling to the ground, one by one. s_c0 descends when {PRONOUN/s_c0/subject} {VERB/s_c0/finish/finishes} with a mouthful of oak leaves, curling {PRONOUN/s_c0/poss} tail in pride at the looks on {PRONOUN/s_c0/poss} Clanmates faces."
                 ],
-                "herbs": [
-                    "oak_leaves"
-                ],
-                "prey": [
-                    "medium"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "HUNTER,1",
+                                "CLIMBER,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 40,
+                "relationship_changes": [
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
-                        "values": ["like"],
+                        "values": [
+                            "like"
+                        ],
                         "amount": -5,
                         "log": {
                             "cats_from": "...and thought {PRONOUN/cat_to/subject} {VERB/cat_to/were/was} bragging about it a little more than necessary."
                         }
                     },
                     {
-                        "cats_to": ["s_c"],
-                        "cats_from": ["patrol"],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from watched cat_to catch squirrel after squirrel on a hunting patrol..."
                         }
                     }
                 ],
-                "frequency": 4
+                "supply": [
+                    {
+                        "type": "oak_leaves",
+                        "adjust": "increase_medium"
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "Though the cats try to climb the trees in pursuit, the squirrels are much more suited to running along the branches, and they easily leave the patrol floundering as they disappear into the distance.",
-                "exp": 0,
-                "relationships": [
+                "frequency": 4,
+                "strings": [
+                    "Though the cats try to climb the trees in pursuit, the squirrels are much more suited to running along the branches, and they easily leave the patrol floundering as they disappear into the distance."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
-                        "values": ["trust"],
+                        "values": [
+                            "trust"
+                        ],
                         "amount": -5,
                         "log": {
                             "cats_from": "cat_from doubted cat_to's hunting skill after a disappointing hunting patrol."
                         }
                     }
                 ],
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
             },
             {
-                "text": "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets} from the branches and lands heavily on the ground. {PRONOUN/r_c/poss/CAP} Clanmates help {PRONOUN/r_c/object} home and settle {PRONOUN/r_c/object} into the medicine cat den, guilt and regret prickling at them for pursuing such a foolhardy hunt.",
-                "exp": 0,
-                "injury": [
-                    {
-                        "cats": [
-                            "r_c"
-                        ],
-                        "injuries": [
-                            "broken bone"
-                        ]
-                    }
+                "frequency": 3,
+                "strings": [
+                    "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c0 yowls in fear as {PRONOUN/r_c0/subject} {VERB/r_c0/plummet/plummets} from the branches and lands heavily on the ground. {PRONOUN/r_c0/poss/CAP} Clanmates help {PRONOUN/r_c0/object} home and settle {PRONOUN/r_c0/object} into the medicine cat den, guilt and regret prickling at them for pursuing such a foolhardy hunt."
                 ],
-                "history_text": {
-                    "scar": "m_c was scarred by a fox.",
-                    "death": "m_c died of injuries inflicted by a fox."
-                },
-                "relationships": [
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
-                        "values": ["comfort"],
+                        "values": [
+                            "comfort"
+                        ],
                         "amount": -5,
-                        "log": {"cats_from": "cat_from and cat_to avoided each other after a disastrous squirrel hunting patrol."}
+                        "log": {
+                            "cats_from": "cat_from and cat_to avoided each other after a disastrous squirrel hunting patrol."
+                        }
                     }
                 ],
-                "prey": [
-                    "very_small"
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
                 ],
-                "frequency": 3
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "broken bone"
+                        ],
+                        "scar_history": "m_c was scarred by a fox.",
+                        "death_history": "m_c died of injuries inflicted by a fox."
+                    }
+                ]
             }
         ]
     },
     {
-        "patrol_id": "mtn_hunt_greenleaf_groupsquirrel1",
-        "biome": [
+        "event_id": "mtn_hunt_greenleaf_groupsquirrel1",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 4,
+        "location": [
             "mountainous"
         ],
         "season": [
             "greenleaf"
         ],
-        "types": [
-            "hunting"
-        ],
-        "tags": [],
-        "patrol_art": "hunt_general_intro",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {},
-        "frequency": 4,
-        "intro_text": "As the patrol walks through the wooded slopes, r_c explains an idea {PRONOUN/r_c/subject} had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
-        "decline_text": "The patrol decides they'd rather not spend time on something that might not work when they could be doing something they know <i>does</i>.",
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ]
+        },
+        "involved_cats": {
+            "r_c0": {}
+        },
         "chance_of_success": 60,
+        "patrol_art": "hunt_general_intro",
+        "intro_text": "As the patrol walks through the wooded slopes, r_c0 explains an idea {PRONOUN/r_c0/subject} had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
+        "decline_text": "The patrol decides they'd rather not spend time on something that might not work when they could be doing something they know <i>does</i>.",
         "success_outcomes": [
             {
-                "text": "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. It's pretty tedious, and they end up having to move a few times, but it does work, and the patrol heads home with a decent amount of prey.",
-                "exp": 20,
-                "prey": [
-                    "medium"
+                "frequency": 4,
+                "strings": [
+                    "r_c0 suggests baiting the squirrels with food and picking them off when they come out to eat. It's pretty tedious, and they end up having to move a few times, but it does work, and the patrol heads home with a decent amount of prey."
                 ],
-                "relationships": [
+                "exp_gained": 20,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 5,
-                        "log":
-                        {
+                        "log": {
                             "cats_from": "cat_from was impressed by cat_to's idea for baiting squirrels."
                         }
                     }
                 ],
-                "frequency": 4
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
             },
             {
-                "text": "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. Waiting is the most difficult part; the squirrels don't seem to expect the trap, and they come home laden with prey.",
-                "exp": 20,
-                "prey": [
-                    "large"
+                "frequency": 1,
+                "strings": [
+                    "r_c0 suggests baiting the squirrels with food and picking them off when they come out to eat. Waiting is the most difficult part; the squirrels don't seem to expect the trap, and they come home laden with prey."
                 ],
-                "relationships": [
+                "exp_gained": 20,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 8,
-                        "log":
-                        {
+                        "log": {
                             "cats_from": "cat_from was impressed by cat_to's clever idea for baiting squirrels."
                         }
                     }
                 ],
-                "frequency": 1
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
             },
             {
-                "text": "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap — with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home.",
-                "exp": 20,
-                "stat_skill": [
-                    "HUNTER,1",
-                    "CLEVER,1"
+                "frequency": 4,
+                "strings": [
+                    "r_c0 suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap — with s_c0 on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home."
                 ],
-                "prey": [
-                    "large"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "HUNTER,1",
+                                "CLEVER,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from was highly impressed by cat_to's genius idea for baiting squirrels."
@@ -671,13 +948,16 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
-                            "patrol", "high_stable"
+                            "patrol_cats",
+                            "high_stable"
                         ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": 10,
                         "log": {
                             "cats_from": "cat_from was amazed by cat_to's hunting skill on patrol."
@@ -685,46 +965,61 @@
                     },
                     {
                         "cats_to": [
-                            "s_c"
+                            "s_c0"
                         ],
                         "cats_from": [
-                            "patrol", "low_stable"
+                            "patrol_cats",
+                            "low_stable"
                         ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": -10,
                         "log": {
                             "cats_from": "cat_from envied cat_to's hunting skill on patrol."
                         }
                     }
                 ],
-                "frequency": 4
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "r_c suggests finding squirrels sheltered in trees, climbing above them, and shaking the branches to scare them down. Unfortunately for them, the idea is a little too far out there, and while they do manage a few small catches, the day is mostly wasted with little to show for it.",
-                "exp": 0,
-                "relationships": [
+                "frequency": 4,
+                "strings": [
+                    "r_c0 suggests finding squirrels sheltered in trees, climbing above them, and shaking the branches to scare them down. Unfortunately for them, the idea is a little too far out there, and while they do manage a few small catches, the day is mostly wasted with little to show for it."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "r_c0"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
-                        "values": ["respect"],
+                        "values": [
+                            "respect"
+                        ],
                         "amount": -5,
                         "log": {
                             "cats_from": "cat_from felt that cat_to wasted a perfectly good hunting patrol with a hare-brained squirrel-baiting scheme."
                         }
                     }
                 ],
-                "prey": [
-                    "very_small"
-                ],
-                "frequency": 4
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
             }
         ]
     }
