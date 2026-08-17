@@ -322,7 +322,7 @@ def event_for_freshkill_supply(
     return False
 
 
-def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
+def event_for_herb_supply(trigger, supply_type) -> bool:
     """
     checks if clan's herb supply qualifies for event
     """
@@ -1762,26 +1762,6 @@ def filter_relationship_type(group: list, filter_types: List[str], patrol_leader
                     return False
 
         filter_types.remove("mates")
-
-    # check if all cats are mates with p_l (they do not have to be mates with each other)
-    if "mates_with_pl" in filter_types:
-        # First test if there is more than one cat
-        if len(group) == 1:
-            return False
-
-        # Check each cat to see if it is mates with the patrol leader
-        qualifies = False
-        for cat in group:
-            if cat.ID == patrol_leader.ID:
-                continue
-            if cat.ID not in patrol_leader.mate:
-                if "mates_with_pl" in exclusionary_values:
-                    qualifies = True
-                else:
-                    return False
-            if "mates_with_pl" in exclusionary_values and not qualifies:
-                return False
-        filter_types.remove("mates_with_pl")
 
     # Check if the cats are in a parent/child relationship
     if "parent/child" in filter_types:

@@ -1,5 +1,5 @@
-from random import choice, choices, sample
-from typing import Union, List, Optional
+from random import choice, choices
+from typing import Union, Optional
 
 import i18n
 
