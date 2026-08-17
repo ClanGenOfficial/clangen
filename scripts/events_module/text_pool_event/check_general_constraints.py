@@ -85,7 +85,9 @@ def pass_general_constraints(
                         )
                     return False
             else:
-                if not event_for_herb_supply(trigger=block["trigger"], supply_type=block["type"]):
+                if not event_for_herb_supply(
+                    trigger=block["trigger"], supply_type=block["type"]
+                ):
                     if is_debug_event:
                         print(
                             "DEBUG: requested event does not meet constraints (herb trigger)"
