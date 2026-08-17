@@ -17496,7 +17496,7 @@
     {
         "event_id": "gen_misc_taintedPOI_stinkymate",
         "location": ["-desert"],
-        "season": ["any"],
+        "season": ["-leaf-bare"],
         "tags":["romance"],
         "poi": {
             "tags": ["tainted"]
@@ -17507,6 +17507,9 @@
             "relationship_status": ["mates"],
             "trait": ["-bloodthirsty", "-cold", "-gloomy", "-grumpy", "-strict"]
         },
+        "r_c": {
+            "group": ["player_clan"]
+        },
         "relationships": [
             {
                 "cats_from": ["r_c"],
@@ -17515,8 +17518,8 @@
                 "values": ["romance", "like", "comfort"],
                 "amount": 10,
                 "log": {
-                    "cats_from": "cats_from had a fun time splashing around together with cats_to after they enforced a bath.",
-                    "cats_to": "cats_to enjoyed pulling cats_from into the water with them and playing around like kits."
+                    "cats_from": "r_c had a fun time splashing around together with m_c after {PRONOUN/r_c/subject} enforced a bath.",
+                    "cats_to": "m_c enjoyed pulling r_c into the water with {PRONOUN/m_c/object} and playing around like kits."
                }
             }
         ]
