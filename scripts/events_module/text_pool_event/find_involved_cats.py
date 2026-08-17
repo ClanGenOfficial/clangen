@@ -42,9 +42,6 @@ def find_cats(
         if not all(
             check_rel_constraint_groups(block, temp_involved_cats)
             for block in event.relationship_constraint
-            if set(involved_cats.keys()).intersection(
-                set(block["cats_from"] + block["cats_to"])
-            )
         ):
             return {}
 
