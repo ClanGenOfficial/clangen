@@ -19,6 +19,9 @@ from scripts.events_module.event_filters import (
     event_for_tags,
 )
 from scripts.events_module.text_adjust import process_text
+from scripts.events_module.text_pool_event.check_general_constraints import (
+    pass_general_constraints,
+)
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
@@ -234,39 +237,28 @@ def _get_event(
     """
     final_events = []
 
-    possible_events = []
     for e in events:
-        if not event_for_location(e.location):
+        if not pass_general_constraints(e, main_cat, {"m_c": main_cat}):
             continue
-        if not event_for_season(e.season):
+        if not event_for_cat(
+            e.involved_cats.get("m_c", {}), main_cat, event_id=e.event_id
+        ):
             continue
-        if not event_for_tags(e.tags, main_cat, other_cat):
-            continue
-        possible_events.append(e)
-
-    possible_events = [
-        e
-        for e in possible_events
-        if event_for_cat(e.involved_cats.get("m_c", {}), main_cat, event_id=e.event_id)
-    ]
-
-    possible_events = [
-        e
-        for e in possible_events
-        if event_for_cat(
+        if not event_for_cat(
             e.involved_cats.get("r_c", {}),
             other_cat,
             involved_cat_dict={"m_c": main_cat},
             event_id=e.event_id,
-        )
-    ]
+        ):
+            continue
 
-    for e in possible_events:
-        if all(
+        if not all(
             check_rel_constraint_groups(constraint, {"m_c": main_cat, "r_c": other_cat})
             for constraint in e.relationship_constraint
         ):
-            final_events.append(e)
+            continue
+
+        final_events.append(e)
 
     return choice(final_events)
 

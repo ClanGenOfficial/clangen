@@ -7,15 +7,10 @@ from scripts.cat.cats import Cat
 from scripts.config import get_config
 from scripts.event_class import Single_Event
 from scripts.events_module.consequences import change_relationship_values
-from scripts.events_module.event_filters import (
-    event_for_cat,
-    cat_for_event,
-    check_rel_constraint_groups,
-)
-from scripts.events_module.parameter_dicts import (
-    InvolvedCatDict,
-)
 from scripts.events_module.text_adjust import process_text, adjust_list_text
+from scripts.events_module.text_pool_event.check_general_constraints import (
+    pass_general_constraints,
+)
 from scripts.events_module.text_pool_event.find_involved_cats import find_cats
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
@@ -125,9 +120,18 @@ def _find_event_and_cats(
         for c in Cat.all_cats_list
         if (c.status.is_other_clancat or c.status.is_outsider) and not c.dead
     ]
+    other_clan = (
+        choice(game.clan.all_other_clans) if game.clan.all_other_clans else None
+    )
     while not chosen_event and possible_events:
         involved_cats = {"m_c": main_cat}
         event_to_test = choices(possible_events, [e.weight for e in possible_events])[0]
+        if not pass_general_constraints(
+            event_to_test, involved_cats["m_c"], involved_cats, other_clan
+        ):
+            possible_events.remove(event_to_test)
+            continue
+
         # make sure none of the interactable cats are already assigned to an abbr
         interactable_cats = [
             c for c in interactable_cats if c not in involved_cats.values()
@@ -137,9 +141,7 @@ def _find_event_and_cats(
             involved_cats=involved_cats,
             outside_cats=outside_cats,
             event=event_to_test,
-            other_clan=choice(game.clan.all_other_clans)
-            if game.clan.all_other_clans
-            else None,
+            other_clan=other_clan,
         )
         if not temp_involved_cats:
             possible_events.remove(event_to_test)

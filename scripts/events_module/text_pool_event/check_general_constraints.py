@@ -1,4 +1,4 @@
-from typing import Union
+from typing import Union, Optional
 
 from scripts.cat.cats import Cat
 from scripts.clan import OtherClan
@@ -23,9 +23,9 @@ def pass_general_constraints(
     event: Union[PatrolEvent, TextPoolEvent],
     primary_cat: Cat,
     involved_cats: dict,
-    other_clan: OtherClan = None,
+    other_clan: Optional[OtherClan] = None,
     is_debug_event: bool = False,
-):
+) -> bool:
     # CHECK LOCATION
     if not event_for_location(event.location):
         if is_debug_event:
