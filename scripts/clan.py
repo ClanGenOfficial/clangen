@@ -210,7 +210,8 @@ class Clan:
                     get_config("death_related.min_leader_lives"),
                     get_config("death_related.max_leader_lives"),
                 ),
-            )  
+            )
+            return self._leader_lives
 
     # The clan couldn't save itself in time due to issues arising, for example, from this function: "if deputy is not
     # None: self.deputy.status_change('deputy') -> game.clan.remove_med_cat(self)"
