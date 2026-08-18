@@ -3,7 +3,7 @@ from typing import Union, Optional
 
 from scripts.cat.cats import Cat
 from scripts.clan import OtherClan
-from scripts.events_module.event_filters import find_new_frequency
+from scripts.events_module.event_filters import find_new_frequency, get_frequency
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.text_pool_event.check_general_constraints import (
     passes_general_constraints,
@@ -17,7 +17,6 @@ def get_valid_event(
     involved_cats: dict,
     interactable_cats: list[Cat],
     possible_events: list[Union[PatrolEvent, TextPoolEvent]],
-    chosen_frequency: int = 4,
     other_clan: Optional[OtherClan] = None,
     ensured_id: Optional[str] = None,
     test_general_constraints: bool = True,
@@ -25,8 +24,17 @@ def get_valid_event(
 ) -> tuple[Optional[Union[PatrolEvent, TextPoolEvent]], dict]:
     """
     Check given possible_events against current game state and involved cats. Returns a valid event and involved cats.
+    :param primary_cat: The "main" cat of the event. For patrols this is the patrol leader.
+    :param involved_cats: The dict of involved cats. Key is cat abbreviation, value is cat object.
+    :param interactable_cats: List of cat objects who can participate in this event
+    :param possible_events: List of event objects that we should find an event from
+    :param other_clan: The other clan involved in this event
+    :param ensured_id: ID of the ensured event, if any
+    :param test_general_constraints: If true, filters by general constraints
+    :param test_cat_constraints: If true, filters by cat constraints
     """
     used_frequencies = set()
+    chosen_frequency = get_frequency()
 
     chosen_event: Optional[Union[PatrolEvent, TextPoolEvent]] = None
     temp_involved_cats = {}

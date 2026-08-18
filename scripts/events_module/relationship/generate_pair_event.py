@@ -12,14 +12,8 @@ from scripts.event_class import Single_Event
 from scripts.events_module.consequences import change_relationship_values
 from scripts.events_module.event_filters import (
     get_personality_compatibility,
-    event_for_cat,
-    check_rel_constraint_groups,
-    get_frequency,
 )
 from scripts.events_module.text_adjust import process_text
-from scripts.events_module.text_pool_event.check_general_constraints import (
-    passes_general_constraints,
-)
 from scripts.events_module.text_pool_event.event_retrieval import get_valid_event
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
@@ -247,7 +241,6 @@ def _get_event(
         involved_cats={"m_c": main_cat, "r_c": other_cat},
         interactable_cats=[other_cat],
         possible_events=events,
-        chosen_frequency=get_frequency(),
         other_clan=other_clan,
     )
 

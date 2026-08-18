@@ -14,8 +14,6 @@ from scripts.cat.enums import CatAge, CatRank, CatCompatibility
 from scripts.config import get_config
 from scripts.events_module.consequences import gather_cat_objects
 from scripts.events_module.event_filters import (
-    get_frequency,
-    find_new_frequency,
     check_relationship_value,
     get_personality_compatibility,
     event_for_poi,
@@ -347,26 +345,19 @@ class Patrol:
             f"Total Number of Possible Patrols | normal: {len(normal_patrols)}, romantic: {len(romantic_patrols)} "
         )
 
-        # GET FREQUENCY
-        chosen_frequency = get_frequency()
-
         # GET PATROL
         chosen_patrol: Optional[PatrolEvent] = None
 
         # first we see if we can get a romantic patrol
         if romantic_patrols and not self.debug_patrol_id:
-            chosen_patrol = self._get_valid_patrol(
-                romantic_patrols.copy(), chosen_frequency
-            )
+            chosen_patrol = self._get_valid_patrol(romantic_patrols.copy())
 
         if chosen_patrol and not self._decide_if_romantic(chosen_patrol):
             chosen_patrol = None
 
         # if no romantic patrol possible, we get a normal one!
         if not chosen_patrol:
-            chosen_patrol = self._get_valid_patrol(
-                normal_patrols.copy(), chosen_frequency
-            )
+            chosen_patrol = self._get_valid_patrol(normal_patrols.copy())
             if not chosen_patrol:
                 raise Exception(
                     "ERROR: No patrols could be found, even after resetting the used patrol list."
@@ -375,7 +366,7 @@ class Patrol:
         return chosen_patrol
 
     def _get_valid_patrol(
-        self, possible_patrols: List[PatrolEvent], chosen_frequency: int
+        self, possible_patrols: List[PatrolEvent]
     ) -> Optional[PatrolEvent]:
         chosen_patrol = None
         while not chosen_patrol:
@@ -388,10 +379,9 @@ class Patrol:
                     if c != self.involved_cats["p_l"]
                 ],
                 possible_events=possible_patrols,
-                chosen_frequency=chosen_frequency,
                 other_clan=self.other_clan,
                 ensured_id=self.debug_patrol_id,
-                test_general_constraints=False,  # these were already tested earlier cus patrols have extra bullshit
+                test_general_constraints=False,
             )
             if not chosen_patrol:
                 if not self.used_patrols:
@@ -467,8 +457,6 @@ class Patrol:
             success_outcomes = self.patrol_event.success_outcomes
             fail_outcomes = self.patrol_event.fail_outcomes
 
-        chosen_frequency = get_frequency()
-
         # we'll get an outcome for both success and failure
         # FIND SUCCESS
         chosen_success, self.outcome_cats["success"] = get_valid_event(
@@ -480,7 +468,6 @@ class Patrol:
                 if c != self.involved_cats["p_l"]
             ],
             possible_events=success_outcomes,
-            chosen_frequency=chosen_frequency,
             other_clan=self.other_clan,
         )
 
@@ -499,7 +486,6 @@ class Patrol:
                 if c != self.involved_cats["p_l"]
             ],
             possible_events=fail_outcomes,
-            chosen_frequency=chosen_frequency,
             other_clan=self.other_clan,
         )
         if not chosen_failure:
