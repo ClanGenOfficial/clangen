@@ -7,7 +7,7 @@ import i18n
 
 from scripts.cat.cats import Cat
 from scripts.cat.constants import PERMANENT, ILLNESSES, INJURIES
-from scripts.cat.enums import CatRank, CatThought
+from scripts.cat.enums import CatRank, CatThought, CatStanding, CatGroup
 from scripts.cat.skills import SkillPath
 from scripts.clan import OtherClan
 from scripts.clan_package.cotc import change_clan_reputation, change_clan_relations
@@ -149,7 +149,7 @@ def _handle_meeting(
     if not event.meet:
         return ""
 
-    met = []
+    met: list[Cat] = []
     for block in event.meet:
         # gather up the kitties
         for abbr, cat in event_involved_cats.items():
@@ -159,8 +159,13 @@ def _handle_meeting(
                 else:
                     met.append(event_involved_cats[abbr])
 
+    for c in met:
+        c.status.change_standing(CatStanding.KNOWN, CatGroup.PLAYER_CLAN_ID)
+        c.get_new_thought(CatThought.ON_MEETING)
+
     return i18n.t(
-        "screens.patrol.met_outsider", cats=adjust_list_text([str(c.name) for c in met])
+        "screens.patrol.met_outsider",
+        cats=adjust_list_text([_profile_link(c) for c in met]),
     )
 
 
