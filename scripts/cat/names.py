@@ -267,7 +267,7 @@ class Name:
             else:
                 self.prefix_history.append(self.prefix)
                 # Set the maximin length to 8 just to be sure
-                if len(Name.prefix_history) > 8:
+                if len(self.prefix_history) > 8:
                     # removing at zero so the oldest gets removed
                     self.prefix_history.pop(0)
                 return
