@@ -32,7 +32,7 @@ class TextPoolEvent:
     outcome_art_clean: Optional[str] = None
 
     # weighting
-    frequency: Optional[int] = None
+    frequency: int = 4
     weight: int = 1  # will be increased via code in post init
 
     # constraints
