@@ -14,11 +14,13 @@ from scripts.events_module.event_filters import (
     get_personality_compatibility,
     event_for_cat,
     check_rel_constraint_groups,
+    get_frequency,
 )
 from scripts.events_module.text_adjust import process_text
 from scripts.events_module.text_pool_event.check_general_constraints import (
     passes_general_constraints,
 )
+from scripts.events_module.text_pool_event.event_retrieval import get_valid_event
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
@@ -232,32 +234,24 @@ def _get_event(
     :param other_cat: The other cat involved in the event
     :return: A TextPoolEvent valid for both cats and current game state
     """
-    final_events = []
 
-    for e in events:
-        if not passes_general_constraints(e, main_cat, {"m_c": main_cat}):
-            continue
-        if not event_for_cat(
-            e.involved_cats.get("m_c", {}), main_cat, event_id=e.event_id
-        ):
-            continue
-        if not event_for_cat(
-            e.involved_cats.get("r_c", {}),
-            other_cat,
-            involved_cat_dict={"m_c": main_cat},
-            event_id=e.event_id,
-        ):
-            continue
+    # this is its own function so that we can test
+    # attempt to find a valid event where we can fill the other roles
+    other_clan = (
+        (choice(game.clan.all_other_clans) if game.clan.all_other_clans else None)
+        if game.clan
+        else None
+    )
+    chosen_event, involved_cats = get_valid_event(
+        primary_cat=main_cat,
+        involved_cats={"m_c": main_cat, "r_c": other_cat},
+        interactable_cats=[other_cat],
+        possible_events=events,
+        chosen_frequency=get_frequency(),
+        other_clan=other_clan,
+    )
 
-        if not all(
-            check_rel_constraint_groups(constraint, {"m_c": main_cat, "r_c": other_cat})
-            for constraint in e.relationship_constraint
-        ):
-            continue
-
-        final_events.append(e)
-
-    return choice(final_events)
+    return chosen_event
 
 
 def _get_change_amount(
