@@ -17935,7 +17935,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c realized {PRONOUN/m_c/subject} would much rather not be known as either a tom nor a she-cat, and decided to announce this with a pretty new accessory. After all, the discovery deserved a celebration!",
+        "event_text": "m_c realized {PRONOUN/m_c/subject} would much rather be known as a tom, and decided to announce this with a pretty new accessory. After all, the discovery deserved a celebration!",
        "new_accessory": ["WILD"],
         "m_c": {
             "trait": ["playful", "bold", "daring", "confident", "shameless", "flamboyant"],
@@ -17971,7 +17971,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c realized {PRONOUN/m_c/subject} would much rather not be known as either a tom nor a she-cat, and decided to announce this with a pretty new accessory. After all, the discovery deserved a celebration!",
+        "event_text": "m_c realized {PRONOUN/m_c/subject} would much rather be known as a she-cat, and decided to announce this with a pretty new accessory. After all, the discovery deserved a celebration!",
        "new_accessory": ["WILD"],
         "m_c": {
             "trait": ["playful", "bold", "daring", "confident", "shameless", "flamboyant"],
@@ -18007,7 +18007,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "It's surprisingly obvious on hindsight, m_c explains. {PRONOUN/m_c/subject/CAP} just <i>know</i> {PRONOUN/m_c/subject} {VERB/m_c/are/is} not a tom or a she-cat, there's no other logical explanation for this feeling. c_n is happy to celebrate their discovery.",
+        "event_text": "It's surprisingly obvious on hindsight, m_c explains. {PRONOUN/m_c/subject/CAP} just <i>{VERB/m_c/know/knows}</i> {PRONOUN/m_c/subject} {VERB/m_c/are/is} not a tom or a she-cat, there's no other logical explanation for this feeling. c_n is happy to celebrate the discovery.",
         "m_c": {
             "trait": ["strict", "thoughtful", "calm", "sincere", "responsible", "wise"],
             "gender": [
@@ -18043,7 +18043,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "It's surprisingly obvious on hindsight, m_c explains. {PRONOUN/m_c/subject/CAP} just <i>know</i> {PRONOUN/m_c/subject} {VERB/m_c/are/is} a she-cat, there's no other logical explanation for this feeling. c_n is happy to celebrate their discovery.",
+        "event_text": "It's surprisingly obvious on hindsight, m_c explains. {PRONOUN/m_c/subject/CAP} just <i>{VERB/m_c/know/knows}</i> {PRONOUN/m_c/subject} {VERB/m_c/are/is} a she-cat, there's no other logical explanation for this feeling. c_n is happy to celebrate the discovery.",
         "m_c": {
             "trait": ["strict", "thoughtful", "calm", "sincere", "responsible", "wise"],
             "gender": [
@@ -18078,7 +18078,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "It's surprisingly obvious on hindsight, m_c explains. {PRONOUN/m_c/subject/CAP} just <i>know</i> {PRONOUN/m_c/subject} {VERB/m_c/are/is} a tom, there's no other logical explanation for this feeling. c_n is happy to celebrate their discovery.",
+        "event_text": "It's surprisingly obvious on hindsight, m_c explains. {PRONOUN/m_c/subject/CAP} just <i>{VERB/m_c/know/knows}</i> {PRONOUN/m_c/subject} {VERB/m_c/are/is} a tom, there's no other logical explanation for this feeling. c_n is happy to celebrate the discovery.",
         "m_c": {
             "trait": ["strict", "thoughtful", "calm", "sincere", "responsible", "wise"],
             "gender": [
@@ -18219,7 +18219,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c was glad for c_n's support when {PRONOUN/m_c/subject} announced {PRONOUN/m_c/subject} {{VERB/m_c/are/is} neither a she-cat nor a tom. The moment still felt bittersweet when {PRONOUN/m_c/subject} later looked at the night sky, knowing a particularly bright star meant r_c is proud of the cat {PRONOUN/r_c/poss} child has become.",
+        "event_text": "m_c was glad for c_n's support when {PRONOUN/m_c/subject} announced {PRONOUN/m_c/subject} {VERB/m_c/are/is} neither a she-cat nor a tom. The moment still felt bittersweet when {PRONOUN/m_c/subject} later looked at the night sky, knowing a particularly bright star meant r_c is proud of the cat {PRONOUN/r_c/poss} child has become.",
         "m_c": {
             "age": ["-kitten"],
             "relationship_status": ["child/parent"],
@@ -18260,7 +18260,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c was glad for c_n's support when {PRONOUN/m_c/subject} announced {PRONOUN/m_c/subject} {{VERB/m_c/are/is} a she-cat. The moment still felt bittersweet when {PRONOUN/m_c/subject} later looked at the night sky, knowing a particularly bright star meant r_c is proud of the cat {PRONOUN/r_c/poss} daughter has become.",
+        "event_text": "m_c was glad for c_n's support when {PRONOUN/m_c/subject} announced {PRONOUN/m_c/subject} {VERB/m_c/are/is} a she-cat. The moment still felt bittersweet when {PRONOUN/m_c/subject} later looked at the night sky, knowing a particularly bright star meant r_c is proud of the cat {PRONOUN/r_c/poss} daughter has become.",
         "m_c": {
             "age": ["-kitten"],
             "relationship_status": ["child/parent"],
@@ -18300,7 +18300,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c was glad for c_n's support when {PRONOUN/m_c/subject} announced {PRONOUN/m_c/subject} {{VERB/m_c/are/is} a tom. The moment still felt bittersweet when {PRONOUN/m_c/subject} later looked at the night sky, knowing a particularly bright star meant r_c is proud of the cat {PRONOUN/r_c/poss} son has become.",
+        "event_text": "m_c was glad for c_n's support when {PRONOUN/m_c/subject} announced {PRONOUN/m_c/subject} {VERB/m_c/are/is} a tom. The moment still felt bittersweet when {PRONOUN/m_c/subject} later looked at the night sky, knowing a particularly bright star meant r_c is proud of the cat {PRONOUN/r_c/poss} son has become.",
         "m_c": {
             "age": ["-kitten"],
             "relationship_status": ["child/parent"],
@@ -18420,7 +18420,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c quietly talked to {PRONOUN/m_c/poss} mentor, r_c, and confessed {PRONOUN/m_c/subject} don't feel like a she-cat. r_c reassured {PRONOUN/m_c/subject}, and offered to help tell c_n, if that was what m_c wanted. After all, it's r_c's job to help.",
+        "event_text": "m_c quietly talked to {PRONOUN/m_c/poss} mentor, r_c, and confessed {PRONOUN/m_c/subject} don't feel like a she-cat. r_c reassured {PRONOUN/m_c/object}, and offered to help tell c_n, if that was what m_c wanted. After all, it's r_c's job to help.",
         "m_c": {
             "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
             "relationship_status": ["trusts", "app/mentor"],
@@ -18480,7 +18480,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c quietly talked to {PRONOUN/m_c/poss} mentor, r_c, and confessed {PRONOUN/m_c/subject} don't feel like a tom. r_c reassured {PRONOUN/m_c/subject}, and offered to help tell c_n, if that was what m_c wanted. After all, it's r_c's job to help.",
+        "event_text": "m_c quietly talked to {PRONOUN/m_c/poss} mentor, r_c, and confessed {PRONOUN/m_c/subject} don't feel like a tom. r_c reassured {PRONOUN/m_c/object}, and offered to help tell c_n, if that was what m_c wanted. After all, it's r_c's job to help.",
         "m_c": {
             "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
             "relationship_status": ["trusts", "app/mentor"],
@@ -19191,7 +19191,7 @@
       ]
     },
     {
-        "event_id": "gen_misc_transition_whatisgender_male_to_nonbinary",
+        "event_id": "gen_misc_transition_whatisgender_to_nonbinary",
         "location": [
             "any"
         ],
@@ -19206,41 +19206,7 @@
             "m_c": {
             "age": ["-kitten"],
             "gender": [
-                "male"
-            ]
-        },
-        "new_gender": [
-            "nonbinary"
-        ],
-      "relationships": [
-          {
-            "cats_from": ["m_c"],
-            "cats_to": ["clan"],
-            "mutual": false,
-            "values": ["like", "comfort"],
-            "amount": 5,
-            "log": {
-                "cats_from": "cat_from is comforted by the cat_to's acceptance of {PRONOUN/cat_from/poss} gender."
-            }
-        }
-      ]
-    },
-    {
-        "event_id": "gen_misc_transition_whatisgender_female_to_nonbinary",
-        "location": [
-            "any"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "transition"
-        ],
-        "frequency": 4,
-        "event_text": "m_c was baffled when {PRONOUN/m_c/subject} realized some cats <i>do</i> care about being called a tom, a she-cat, or anything else. {PRONOUN/m_c/subject/CAP} don't particularly care what {PRONOUN/m_c/subject} {VERB/m_c/are/is} called, but {PRONOUN/m_c/subject} suppose {PRONOUN/m_c/subject} {VERB/m_c/are/is}n't a she-cat in that case.",
-            "m_c": {
-            "age": ["-kitten"],
-            "gender": [
+                "male",
                 "female"
             ]
         },
