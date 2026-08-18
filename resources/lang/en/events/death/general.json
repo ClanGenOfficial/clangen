@@ -2332,12 +2332,11 @@
             "war"
         ],
         "tags": [],
-        "frequency": 4,
+        "frequency": 2,
         "event_text": "m_c suffered a heart attack due to the stress of the ongoing war.",
         "m_c": {
             "age": [
                 "senior",
-                "adult",
                 "senior adult"
             ],
             "dies": true
