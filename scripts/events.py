@@ -67,7 +67,6 @@ from scripts.clan_package.get_clan_cats import (
     find_alive_cats_with_rank,
     get_living_clan_cat_count,
 )
-from scripts.clan import (reset_leader_lives)
 
 logger = logging.getLogger(__name__)
 
@@ -1240,7 +1239,7 @@ def perform_ceremonies(cat):
     if cat == game.clan.deputy:
         # leader gone, time to promote
         if not game.clan.leader or not game.clan.leader.status.alive_in_player_clan:
-            game.clan.leader_lives
+            game.clan.leader_lives = 9
             ceremony(cat, CatRank.LEADER)
             cat.generate_lead_ceremony()
             game.clan.deputy = None
