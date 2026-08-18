@@ -120,6 +120,11 @@ Outcomes utilize the `TextPoolEvent` format.
             "new_status": []
         }
     ],
+    "meet": [
+        {
+            "cats": []
+        }
+    ],
     "future_event": [
         {
             "event_type": "",
@@ -432,6 +437,20 @@ Join block:
 
 **new_status**
 > A list of possible ranks for the cat to take within the Clan. If left blank, the cat will take on a rank appropriate for their age.
+> 
+***
+
+## meet: list[dict]
+> Indicate which cats will meet the player Clan. You can add multiple meet blocks.
+
+meet block:
+```json
+        {
+            "cats": []
+        }
+```
+**cats**
+> List of cats who will meet the Clan.
 
 ***
 
