@@ -124,7 +124,7 @@ class WarriorDenScreen(Screens):
             > 0
         )
         self.has_deputy = (
-            len(find_alive_cats_with_rank(Cat, [CatRank.DEPUTY], working=True)) > 0
+            find_alive_cats_with_rank(Cat, [CatRank.DEPUTY], working=True)
         )
 
         self.hide_menu_buttons()
