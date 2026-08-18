@@ -167,6 +167,7 @@ def updated_create_new_cat(
         _assign_name(created_cat)
 
         created_cat.create_relationships_new_cat()
+        game.clan.add_cat(created_cat)
         new_cats.append(created_cat)
 
     # ESTABLISH FAMILY RELATIONSHIPS
