@@ -6943,7 +6943,7 @@
         "tags": [
             "low_lives"
         ],
-        "frequency": 3,
+        "frequency": 2,
         "event_text": "m_c was pushed under a monster by r_c.",
         "m_c": {
             "status": [
