@@ -39,7 +39,14 @@ def updated_create_new_cat(
         if "clancat" in option_dict["status"]:
             status["social"] = CatSocial.CLANCAT
             possible_ranks = [r for r in option_dict["status"] if r != "clancat"]
-            possible_ranks.extend([r for r in [*CatRank] if r.is_any_clancat_rank()])
+            possible_ranks.extend(
+                [
+                    r
+                    for r in [*CatRank]
+                    if r.is_any_clancat_rank()
+                    and r not in (CatRank.LEADER, CatRank.DEPUTY)
+                ]
+            )
         else:
             possible_ranks = option_dict["status"]
 
