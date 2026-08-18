@@ -203,6 +203,12 @@ class Clan:
     def leader_lives(self, value):
         self._leader_lives = min(value, get_config("death_related.max_leader_lives"))
 
+    def reset_leader_lives(self):
+        self.leader_lives = randint(
+            get_config("death_related.min_leader_lives"),
+            get_config("death_related.max_leader_lives"),
+        )
+
     # The clan couldn't save itself in time due to issues arising, for example, from this function: "if deputy is not
     # None: self.deputy.status_change('deputy') -> game.clan.remove_med_cat(self)"
     def post_initialization_functions(self):
@@ -459,7 +465,12 @@ class Clan:
             self.leader = leader
             Cat.all_cats[leader.ID].rank_change(CatRank.LEADER)
             self.leader_predecessors += 1
-            self.leader_lives = 9
+            # for some reason calling self.reset_leader_lives() doedsn't work so using randint here
+            # unless another dev is willing to bonk me
+            self.leader_lives = randint(
+                get_config("death_related.min_leader_lives"),
+                get_config("death_related.max_leader_lives"),
+            )
 
         # todo: this leads nowhere, can it be deleted?
         switch_set_value(Switch.new_leader, None)
@@ -1279,7 +1290,6 @@ class Clan:
     @temperament.setter
     def temperament(self, val):
         return
-
 
 
 class OtherClan:
