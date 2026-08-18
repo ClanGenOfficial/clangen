@@ -78,7 +78,7 @@ def passes_general_constraints(
                 )
                 return False
 
-    if hasattr(event, "supply"):
+    if hasattr(event, "supply") and event.supply:
         clan_size = get_living_clan_cat_count(primary_cat)
         for block in event.supply:
             if not block.get("trigger"):

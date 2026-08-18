@@ -382,6 +382,8 @@ def event_for_required_cat_types(
     """
     Checks if the required_types dict is being fulfilled
     """
+    if not required_types:
+        return True
 
     for c_type, amount_range in required_types.items():
         type_list = current_cat_types.get(c_type, [])
