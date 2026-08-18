@@ -1161,7 +1161,7 @@ class PatrolScreen(Screens):
                 "skills": ", ".join(patrol_skills),
                 "traits": ", ".join(patrol_traits),
                 "patrol_temperament": ", ".join(
-                    get_patrol_temperament(self.current_patrol)
+                    filter(None, get_patrol_temperament(self.current_patrol))
                 ),
             },
         )
