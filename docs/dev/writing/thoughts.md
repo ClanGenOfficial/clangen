@@ -52,7 +52,7 @@ Within the game, all cats take a new thought each timeskip. However, there are a
 
 ```json
 {
-    "id": "test",
+    "event_id": "test",
     "strings": [
         "Is thinking"
     ]
@@ -62,7 +62,7 @@ Within the game, all cats take a new thought each timeskip. However, there are a
 ### Full Format
 ```json
     {
-        "id": "test",
+        "event_id": "test",
         "location": [],
         "season": [],
         "tags": [],

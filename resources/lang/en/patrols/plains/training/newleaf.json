@@ -1,104 +1,124 @@
 [
     {
-        "patrol_id": "pln_train_newleaf_circleoflife_storylorelocked1",
-        "biome": [
+        "event_id": "pln_train_newleaf_circleoflife_storylorelocked1",
+        "types": [
+            "training"
+        ],
+        "frequency": 3,
+        "location": [
             "plains"
         ],
         "season": [
             "newleaf"
         ],
-        "types": [
-            "training"
-        ],
-        "tags": [],
-        "patrol_art": "cat_sprites/gen_meadow_WrWr",
-        "min_cats": 3,
-        "max_cats": 6,
-        "min_max_status": {
-            "normal adult": [1, 6]
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
         },
-        "frequency": 3,
+        "involved_cats": {
+            "p_l": {
+                "stat": {
+                    "skill": [
+                        "LORE,1",
+                        "STORY,1"
+                    ],
+                    "trait": []
+                }
+            }
+        },
         "chance_of_success": 60,
-        "pl_skill_constraint": [
-            "LORE,1",
-            "STORY,1"
-        ],
+        "patrol_art": "cat_sprites/gen_meadow_WrWr",
         "intro_text": "As the training patrol pads out, p_l gives in to the impulse to dig {PRONOUN/p_l/poss} claws into the soil, feeling the sprouting grass tearing under {PRONOUN/p_l/poss} pads. There's something special about this time of year.",
         "decline_text": "Still, that's no excuse to goof off. Time to focus on {PRONOUN/p_l/poss} work.",
         "success_outcomes": [
             {
-                "text": "This is the cycle, p_l reminds the patrol, the fundamental truth underlying c_n. The grass sprouts in newleaf as the snows retreat, grows heavy and flush with life in greenleaf, droops with seeds in leaf-fall, and is buried and withered in leaf-bare. The very foundation of their lives relies on it.",
-                "exp": 30,
-                "art": "cat_sprites/gen_bord_story_WrWr",
-                "stat_skill": [
-                    "LORE,1"
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_bord_story_WrWr",
+                "strings": [
+                    "This is the cycle, p_l reminds the patrol, the fundamental truth underlying c_n. The grass sprouts in newleaf as the snows retreat, grows heavy and flush with life in greenleaf, droops with seeds in leaf-fall, and is buried and withered in leaf-bare. The very foundation of their lives relies on it."
                 ],
-                "can_have_stat": [
-                    "p_l"
-                ],
-                "relationships": [
+                "exp_gained": 30,
+                "relationship_changes": [
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect", "like"
+                            "respect",
+                            "like"
                         ],
                         "amount": 8,
                         "log": {
                             "cats_from": "cat_from appreciated cat_to's reminder of the importance of the seasons."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             },
             {
-                "text": "Everything the patrol sees exists together in a delicate balance, s_c explains. A warrior must respect all life, from the crawling ant to the leaping rabbit. Yes, even though warriors hunt and eat them. One day, as each member of c_n dies, their bodies will become the dirt, and the dirt will feed the grass, and the rabbits eat the grass. Every creature is connected in the great cycle.",
-                "exp": 30,
-                "art": "cat_sprites/gen_bord_story_WrWr",
-                "stat_skill": [
-                    "STORY,1"
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_bord_story_WrWr",
+                "strings": [
+                    "Everything the patrol sees exists together in a delicate balance, s_c0 explains. A warrior must respect all life, from the crawling ant to the leaping rabbit. Yes, even though warriors hunt and eat them. One day, as each member of c_n dies, their bodies will become the dirt, and the dirt will feed the grass, and the rabbits eat the grass. Every creature is connected in the great cycle."
                 ],
-                "can_have_stat": [
-                    "p_l"
-                ],
-                "relationships": [
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "STORY,1"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "p_l"
+                        ]
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect", "like"
+                            "respect",
+                            "like"
                         ],
                         "amount": 8,
                         "log": {
                             "cats_from": "cat_from appreciated cat_to's reminder of the importance of the life-and-death balance."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "p_l spends too long admiring the scenery and gets left behind by the rest of the patrol. {PRONOUN/p_l/subject/CAP} {VERB/p_l/catch/catches} up, huffing and puffing, and no cat is too pleased with {PRONOUN/p_l/poss} lack of attention.",
-                "exp": 0,
-                "art": "cat_sprites/gen_runningr_Wr",
-                "relationships": [
+                "frequency": 4,
+                "outcome_art": "cat_sprites/gen_runningr_Wr",
+                "strings": [
+                    "p_l spends too long admiring the scenery and gets left behind by the rest of the patrol. {PRONOUN/p_l/subject/CAP} {VERB/p_l/catch/catches} up, huffing and puffing, and no cat is too pleased with {PRONOUN/p_l/poss} lack of attention."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
                     {
                         "cats_to": [
                             "p_l"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -109,8 +129,7 @@
                             "cats_from": "cat_from saw cat_to get distracted on patrol."
                         }
                     }
-                ],
-                "frequency": 4
+                ]
             }
         ]
     }

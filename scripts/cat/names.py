@@ -10,7 +10,7 @@ import i18n
 import ujson
 
 from scripts.game_structure import constants
-from scripts.cat.enums import CatRank, CatGroup, CatAge
+from scripts.cat.enums import CatRank, CatGroup, CatAge, CatSocial
 from scripts.game_structure.localization import load_lang_resource
 from scripts.housekeeping.datadir import get_save_dir
 
@@ -32,6 +32,7 @@ class Name:
         specsuffix_hidden=False,
         load_existing_name=False,
         cat=None,
+        pelt=None,
     ):
         self.load_localized_names()
         self.prefix = prefix
@@ -40,16 +41,22 @@ class Name:
 
         self.cat = cat
 
-        try:
-            color = cat.pelt.colour
-            eyes = cat.pelt.eye_colour
-            pelt = cat.pelt.name
-            tortie_pattern = cat.pelt.tortie_pattern
-        except AttributeError:
-            color = None
-            eyes = None
-            pelt = None
-            tortie_pattern = None
+        if pelt is not None:
+            color = pelt.colour
+            eyes = pelt.eye_colour
+            pelt = pelt.name
+            tortie_pattern = pelt.tortie_pattern
+        else:
+            try:
+                color = cat.pelt.colour
+                eyes = cat.pelt.eye_colour
+                pelt = cat.pelt.name
+                tortie_pattern = cat.pelt.tortie_pattern
+            except AttributeError:
+                color = None
+                eyes = None
+                pelt = None
+                tortie_pattern = None
 
         name_fixpref = False
         # Set prefix
@@ -211,6 +218,26 @@ class Name:
     def __str__(self):
         return self.__repr__()
 
+    def find_outsider_name(self, social: CatSocial):
+        if social == CatSocial.CLANCAT:
+            return
+
+        # if it ain't a clancat, give it a non-clancat name
+        name_categories = [
+            "silly_names",
+            "human_names",
+            "loner_names",
+            "normal_prefixes",
+        ]
+        # defaults in case of error
+        weights = [1, 1, 1, 1]
+        # give kittypets a kittypet name
+        weights = constants.CONFIG["cat_name_controls"][str(social)]
+
+        selected_category = random.choices(name_categories, weights, k=1)[0]
+        name = random.choice(names.names_dict[selected_category])
+        self.cat.change_name(new_prefix=name, new_suffix="")
+
     # Generate possible prefix
     def give_prefix(self, eyes, colour, biome):
         """Generate possible prefix."""
@@ -301,6 +328,10 @@ class Name:
                     self.suffix = random.choice(self.names_dict["normal_suffixes"])
             else:
                 self.suffix = random.choice(self.names_dict["normal_suffixes"])
+
+    def change_name(self, prefix, suffix):
+        self.prefix = prefix
+        self.suffix = suffix
 
     def get_specsuffix_name(self, rank: CatRank = CatRank.LEADER):
         """

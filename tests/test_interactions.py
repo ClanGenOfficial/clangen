@@ -1,28 +1,32 @@
 import os
 import unittest
 
-from scripts.cat.status import StatusDict
-from scripts.cat_relations.enums import rel_type_tiers, RelType
+from scripts.cat.factories.typed_dicts import StatusDict
+from scripts.cat_relations.enums import RelType
 
 from scripts.cat.enums import CatRank
 from scripts.events_module.event_filters import filter_relationship_type
 from scripts.events_module.parameter_dicts import InvolvedCatDict, StatDict
 from scripts.events_module.relationship import generate_pair_event
-from scripts.events_module.text_pool_event import TextPoolEvent
+from scripts.cat.factories.test_cat_factory import TestCatFactory
+from scripts.cat_relations.enums import rel_type_tiers
+from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-from scripts.cat.cats import Cat, Relationship
+from scripts.cat.cats import Relationship
 from scripts.cat.skills import SkillPath, Skill
+
+cat_factory = TestCatFactory()
 
 
 class RelationshipConstraints(unittest.TestCase):
     def test_siblings(self):
         # given
-        parent = Cat()
-        cat_from = Cat(parent1=parent.ID)
-        cat_to = Cat(parent1=parent.ID)
+        parent = cat_factory.create_cat()
+        cat_from = cat_factory.create_cat(parent1=parent.ID)
+        cat_to = cat_factory.create_cat(parent1=parent.ID)
 
         # then
         self.assertTrue(filter_relationship_type([cat_from, cat_to], ["sibling"]))
@@ -30,8 +34,8 @@ class RelationshipConstraints(unittest.TestCase):
 
     def test_mates(self):
         # given
-        cat_from = Cat()
-        cat_to = Cat()
+        cat_from = cat_factory.create_cat()
+        cat_to = cat_factory.create_cat()
         cat_from.mate.append(cat_to.ID)
         cat_to.mate.append(cat_from.ID)
 
@@ -41,8 +45,8 @@ class RelationshipConstraints(unittest.TestCase):
 
     def test_parent_child_combo(self):
         # given
-        parent = Cat()
-        child = Cat(parent1=parent.ID)
+        parent = cat_factory.create_cat()
+        child = cat_factory.create_cat(parent1=parent.ID)
 
         # then
         self.assertTrue(filter_relationship_type([child, parent], ["child/parent"]))
@@ -52,8 +56,8 @@ class RelationshipConstraints(unittest.TestCase):
 
     def test_rel_values_only_constraint_pos(self):
         # given
-        cat_from1 = Cat()
-        cat_to1 = Cat()
+        cat_from1 = cat_factory.create_cat()
+        cat_to1 = cat_factory.create_cat()
         low_rel = Relationship(cat_from1, cat_to1)
         low_rel.romance = 10
         low_rel.like = 10
@@ -62,8 +66,8 @@ class RelationshipConstraints(unittest.TestCase):
         low_rel.respect = 10
         cat_from1.relationships.update({cat_to1.ID: low_rel})
 
-        cat_from2 = Cat()
-        cat_to2 = Cat()
+        cat_from2 = cat_factory.create_cat()
+        cat_to2 = cat_factory.create_cat()
         mid_rel = Relationship(cat_from2, cat_to2)
         mid_rel.romance = 50
         mid_rel.like = 50
@@ -72,8 +76,8 @@ class RelationshipConstraints(unittest.TestCase):
         mid_rel.respect = 50
         cat_from2.relationships.update({cat_to2.ID: mid_rel})
 
-        cat_from3 = Cat()
-        cat_to3 = Cat()
+        cat_from3 = cat_factory.create_cat()
+        cat_to3 = cat_factory.create_cat()
         high_rel = Relationship(cat_from3, cat_to3)
         high_rel.romance = 90
         high_rel.like = 90
@@ -148,8 +152,8 @@ class RelationshipConstraints(unittest.TestCase):
 
     def test_rel_values_only_constraint_neg(self):
         # given
-        cat_from1 = Cat()
-        cat_to1 = Cat()
+        cat_from1 = cat_factory.create_cat()
+        cat_to1 = cat_factory.create_cat()
         mid_rel = Relationship(cat_from1, cat_to1)
         mid_rel.romance = -50
         mid_rel.like = -50
@@ -158,8 +162,8 @@ class RelationshipConstraints(unittest.TestCase):
         mid_rel.respect = -50
         cat_from1.relationships.update({cat_to1.ID: mid_rel})
 
-        cat_from2 = Cat()
-        cat_to2 = Cat()
+        cat_from2 = cat_factory.create_cat()
+        cat_to2 = cat_factory.create_cat()
         low_rel = Relationship(cat_from2, cat_to2)
         low_rel.romance = -10
         low_rel.like = -10
@@ -168,8 +172,8 @@ class RelationshipConstraints(unittest.TestCase):
         low_rel.respect = -10
         cat_from2.relationships.update({cat_to2.ID: low_rel})
 
-        cat_from3 = Cat()
-        cat_to3 = Cat()
+        cat_from3 = cat_factory.create_cat()
+        cat_to3 = cat_factory.create_cat()
         high_rel = Relationship(cat_from3, cat_to3)
         high_rel.romance = -90
         high_rel.like = -90
@@ -253,8 +257,8 @@ class RelationshipConstraints(unittest.TestCase):
     def test_rel_values_ranged_constraint(self):
         # given
         # pos side
-        cat_from1 = Cat()
-        cat_to1 = Cat()
+        cat_from1 = cat_factory.create_cat()
+        cat_to1 = cat_factory.create_cat()
         high_rel = Relationship(cat_from1, cat_to1)
         high_rel.romance = 90
         high_rel.like = 90
@@ -263,8 +267,8 @@ class RelationshipConstraints(unittest.TestCase):
         high_rel.respect = 90
 
         # neg side
-        cat_from1 = Cat()
-        cat_to1 = Cat()
+        cat_from1 = cat_factory.create_cat()
+        cat_to1 = cat_factory.create_cat()
         high_rel = Relationship(cat_from1, cat_to1)
         high_rel.romance = -90
         high_rel.like = -90
@@ -333,12 +337,14 @@ class RelationshipConstraints(unittest.TestCase):
 class SingleInteractionCatConstraints(unittest.TestCase):
     def test_status(self):
         # given
-        warrior = Cat(status_dict=StatusDict(rank=CatRank.WARRIOR))
-        medicine = Cat(status_dict=StatusDict(rank=CatRank.MEDICINE_CAT))
+        warrior = cat_factory.create_cat(status_dict=StatusDict(rank=CatRank.WARRIOR))
+        medicine = cat_factory.create_cat(
+            status_dict=StatusDict(rank=CatRank.MEDICINE_CAT)
+        )
 
         # when
         warrior_to_all = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(status=[CatRank.WARRIOR]),
@@ -347,7 +353,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         warrior_to_warrior = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(status=[CatRank.WARRIOR]),
@@ -356,7 +362,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         medicine_to_warrior = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(status=[CatRank.MEDICINE_CAT]),
@@ -430,14 +436,14 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
     def test_trait(self):
         # given
-        calm = Cat()
+        calm = cat_factory.create_cat()
         calm.personality.trait = "calm"
-        troublesome = Cat()
+        troublesome = cat_factory.create_cat()
         troublesome.personality.trait = "troublesome"
 
         # when
         calm_to_all = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(trait=["calm"])),
@@ -445,7 +451,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         all_to_calm = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(trait=["calm", "troublesome"])),
@@ -454,7 +460,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         rebels = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(trait=["rebellious"])),
@@ -507,16 +513,16 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
     def test_skill(self):
         # given
-        hunter = Cat(disable_random=True)
+        hunter = cat_factory.create_cat(disable_random=True)
         hunter.skills.primary = Skill(SkillPath.HUNTER, points=9)
         hunter.skills.secondary = Skill(SkillPath.CLIMBER, points=9)
-        fighter = Cat(disable_random=True)
+        fighter = cat_factory.create_cat(disable_random=True)
         fighter.skills.primary = Skill(SkillPath.FIGHTER, points=9)
         fighter.skills.secondary = Skill(SkillPath.CLIMBER, points=9)
 
         # when
         hunter_to_all = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(skill=["HUNTER,1"])),
@@ -524,7 +530,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         all_to_hunter = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(skill=["FIGHTER,1", "HUNTER,1"])),
@@ -533,7 +539,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         storytellers = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(skill=["STORY,1"])),
@@ -572,14 +578,14 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
     def test_background(self):
         # given
-        clan = Cat()
+        clan = cat_factory.create_cat()
         clan.backstory = "clanborn"
-        half = Cat()
+        half = cat_factory.create_cat()
         half.backstory = "halfclan1"
 
         # when
         clan_to_all = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(backstory=["clanborn"]),
@@ -587,7 +593,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         all_to_clan = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(backstory=["clanborn", "halfclan1"]),
@@ -595,7 +601,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
             },
         )
         all_half2 = TextPoolEvent(
-            id="test",
+            event_id="test",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(backstory=["halfclan2"]),

@@ -11,13 +11,15 @@ TODO: Docs
 import os
 import statistics
 from random import choice, choices, randint, getrandbits
-from typing import Literal
+from typing import Literal, Optional
 
 import i18n
 import ujson
 
-from scripts.cat.cats import Cat, cat_class, BACKSTORIES
-from scripts.cat.enums import CatRank, CatGroup, CatSocial
+from scripts.cat.cats import Cat, BACKSTORIES
+from scripts.cat.enums import CatRank, CatGroup, CatSocial, CatCompatibility
+from scripts.cat.factories.new_cat_factory import NewCatFactory
+from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.cat.names import names
 from scripts.cat.save_load import (
     save_cats,
@@ -36,7 +38,6 @@ from scripts.clan_resources.point_of_interest import (
     get_poi_save_dict,
     generate_and_add_new_poi,
     PoiType,
-    get_poi_names_set,
     clear_pois,
 )
 from scripts.config import get_config
@@ -125,7 +126,7 @@ class Clan:
         # This is the first cat in starclan, to "guide" the other dead cats there.
         self.clan_cats = []
         self.biome = biome
-        self.override_biome = None
+        self.override_biome: Optional[str] = None
         self.camp_bg = camp_bg
         self.chosen_symbol = symbol
         self.game_mode = game_mode
@@ -172,7 +173,7 @@ class Clan:
         rebuild_top_menu_buttons()
 
     @property
-    def current_season(self):
+    def current_season(self) -> str:
         season_length = get_config("seasons.length")
         modifiers = {
             season: i * season_length
@@ -271,8 +272,8 @@ class Clan:
             )
         )
 
-        self.instructor = Cat(
-            status_dict={"rank": instructor_rank, "group_ID": CatGroup.STARCLAN_ID},
+        self.instructor = NewCatFactory.create_cat(
+            status_dict=StatusDict(rank=instructor_rank, group_ID=CatGroup.STARCLAN_ID),
             backstory=choice(
                 BACKSTORIES["backstory_categories"]["clan_guide_backstories"]
             ),
@@ -308,7 +309,7 @@ class Clan:
             if the_cat != self.instructor:
                 the_cat.backstory = "clan_founder"
             if the_cat.status.rank == CatRank.APPRENTICE:
-                the_cat.rank_change(CatRank.APPRENTICE)
+                the_cat.rank_change(CatRank.APPRENTICE, new_thought=False)
 
         # find non-selected cats from the 12 generated starters
         for c in switch_get_value(Switch.possible_cats):
@@ -323,7 +324,9 @@ class Clan:
                 )
                 c.status.generate_new_status(self, social=random_social)
                 # re-assign backstory once cat has new status
-                c.assign_backstory()
+                c.backstory = NewCatFactory._get_random_backstory_from_status(
+                    c.status, c.age
+                )
                 # random chance for cat to generate as dead
                 if randint(1, 3) == 1:
                     c.die()
@@ -545,7 +548,7 @@ class Clan:
             "starting_season": self.starting_season,
             "temperament": self.temperament,
             "just_died": game.just_died,
-            "dead_cats_to_grieve": [x.ID for x in game.dead_cats_to_grieve],
+            "dead_cats_to_grieve": [x.ID for x in game.dead_cats_to_grieve if x],
             "grief_to_assign": game.clan.grief_strings,
             "version_name": SAVE_VERSION_NUMBER,
             "version_commit": get_version_info().version_number,
@@ -606,10 +609,6 @@ class Clan:
 
         if os.path.exists(f"{get_save_dir()}/{self.save_id}clan.json"):
             os.remove(f"{get_save_dir()}/{self.save_id}clan.json")
-        elif os.path.exists(get_save_dir() + f"/{self.save_id}clan.txt") & (
-            self.save_id != "current"
-        ):
-            os.remove(get_save_dir() + f"/{self.save_id}clan.txt")
 
     def load_clan(self):
         """
@@ -627,7 +626,10 @@ class Clan:
         elif os.path.exists(
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.txt"
         ):
-            self.load_clan_txt()
+            switch_set_value(
+                Switch.error_message,
+                "TXT Clans are no longer supported. Please use an external tool to update your Clan to the modern format.",
+            )
         else:
             switch_set_value(
                 Switch.error_message, "There was an error loading the clan.json"
@@ -648,180 +650,6 @@ class Clan:
             game.starclan.adjust_facets_by_cat(game.clan.instructor)
         elif game.clan.instructor.status.group == CatGroup.DARK_FOREST:
             game.dark_forest.adjust_facets_by_cat(game.clan.instructor)
-
-    def load_clan_txt(self):
-        """
-        TODO: DOCS
-        """
-
-        if not switch_get_value(Switch.clan_list):
-            number_other_clans = randint(3, 5)
-            for _ in range(number_other_clans):
-                self.all_other_clans.append(OtherClan())
-            return
-        if switch_get_value(Switch.clan_list)[0].strip() == "":
-            number_other_clans = randint(3, 5)
-            for _ in range(number_other_clans):
-                self.all_other_clans.append(OtherClan())
-            return
-        switch_set_value(
-            Switch.error_message, "There was an error loading the clan.txt"
-        )
-        with open(
-            get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.txt",
-            "r",
-            encoding="utf-8",
-        ) as read_file:  # pylint: disable=redefined-outer-name
-            clan_data = read_file.read()
-        clan_data = clan_data.replace("\t", ",")
-        sections = clan_data.split("\n")
-        if len(sections) == 7:
-            general = sections[0].split(",")
-            leader_info = sections[1].split(",")
-            deputy_info = sections[2].split(",")
-            med_cat_info = sections[3].split(",")
-            instructor_info = sections[4]
-            members = sections[5].split(",")
-            other_clans = sections[6].split(",")
-        elif len(sections) == 6:
-            general = sections[0].split(",")
-            leader_info = sections[1].split(",")
-            deputy_info = sections[2].split(",")
-            med_cat_info = sections[3].split(",")
-            instructor_info = sections[4]
-            members = sections[5].split(",")
-            other_clans = []
-        else:
-            general = sections[0].split(",")
-            leader_info = sections[1].split(",")
-            deputy_info = 0, 0
-            med_cat_info = sections[2].split(",")
-            instructor_info = sections[3]
-            members = sections[4].split(",")
-            other_clans = []
-        if len(general) == 9:
-            if general[3] == "None":
-                general[3] = "camp1"
-            elif general[4] == "None":
-                general[4] = 0
-            elif general[7] == "None":
-                general[7] = "classic"
-            elif general[8] == "None":
-                general[8] = 50
-            game.clan = Clan(
-                save_id=general[0],
-                leader=Cat.all_cats[leader_info[0]],
-                deputy=Cat.all_cats.get(deputy_info[0], None),
-                medicine_cat=Cat.all_cats.get(med_cat_info[0], None),
-                biome=general[2],
-                camp_bg=general[3],
-                game_mode=general[7],
-                self_run_init_functions=False,
-            )
-            game.clan.post_initialization_functions()
-            game.clan.reputation = general[8]
-        elif len(general) == 8:
-            if general[3] == "None":
-                general[3] = "camp1"
-            elif general[4] == "None":
-                general[4] = 0
-            elif general[7] == "None":
-                general[7] = "classic"
-            game.clan = Clan(
-                save_id=general[0],
-                leader=Cat.all_cats[leader_info[0]],
-                deputy=Cat.all_cats.get(deputy_info[0], None),
-                medicine_cat=Cat.all_cats.get(med_cat_info[0], None),
-                biome=general[2],
-                camp_bg=general[3],
-                game_mode=general[7],
-                self_run_init_functions=False,
-            )
-            game.clan.post_initialization_functions()
-        elif len(general) == 7:
-            if general[4] == "None":
-                general[4] = 0
-            elif general[3] == "None":
-                general[3] = "camp1"
-            game.clan = Clan(
-                save_id=general[0],
-                leader=Cat.all_cats[leader_info[0]],
-                deputy=Cat.all_cats.get(deputy_info[0], None),
-                medicine_cat=Cat.all_cats.get(med_cat_info[0], None),
-                biome=general[2],
-                camp_bg=general[3],
-                self_run_init_functions=False,
-            )
-            game.clan.post_initialization_functions()
-        elif len(general) == 3:
-            game.clan = Clan(
-                save_id=general[0],
-                leader=Cat.all_cats[leader_info[0]],
-                deputy=Cat.all_cats.get(deputy_info[0], None),
-                medicine_cat=Cat.all_cats.get(med_cat_info[0], None),
-                biome=general[2],
-                self_run_init_functions=False,
-            )
-            game.clan.post_initialization_functions()
-        else:
-            game.clan = Clan(
-                general[0],
-                Cat.all_cats[leader_info[0]],
-                Cat.all_cats.get(deputy_info[0], None),
-                Cat.all_cats.get(med_cat_info[0], None),
-                self_run_init_functions=False,
-            )
-            game.clan.post_initialization_functions()
-        game.clan.age = int(general[1])
-        game.clan.leader_lives, game.clan.leader_predecessors = int(
-            leader_info[1]
-        ), int(leader_info[2])
-
-        if len(deputy_info) > 1:
-            game.clan.deputy_predecessors = int(deputy_info[1])
-        if len(med_cat_info) > 1:
-            game.clan.med_cat_predecessors = int(med_cat_info[1])
-        if len(med_cat_info) > 2:
-            game.clan.med_cat_number = int(med_cat_info[2])
-        if len(sections) > 4:
-            if instructor_info in Cat.all_cats:
-                game.clan.instructor = Cat.all_cats[instructor_info]
-                game.clan.add_cat(game.clan.instructor)
-        else:
-            game.clan.instructor = Cat(
-                status_dict={
-                    "rank": choice((CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER)),
-                    "group": CatGroup.STARCLAN,
-                }
-            )
-            # update_sprite(game.clan.instructor)
-            game.clan.instructor.dead = True
-            game.clan.add_cat(game.clan.instructor)
-        if other_clans != [""]:
-            for other_clan in other_clans:
-                other_clan_info = other_clan.split(";")
-                self.all_other_clans.append(
-                    OtherClan(
-                        other_clan_info[0], int(other_clan_info[1]), other_clan_info[2]
-                    )
-                )
-
-        else:
-            number_other_clans = randint(3, 5)
-            for _ in range(number_other_clans):
-                self.all_other_clans.append(OtherClan())
-
-        for cat in members:
-            if cat in Cat.all_cats:
-                game.clan.add_cat(Cat.all_cats[cat])
-            else:
-                print("WARNING: Cat not found:", cat)
-        self.load_pregnancy(game.clan)
-
-        # assigning a symbol, since this save would be too old to have a chosen symbol
-        game.clan.chosen_symbol = clan_symbol_sprite(game.clan, return_string=True)
-
-        switch_set_value(Switch.error_message, "")
 
     def load_clan_json(self):
         """
@@ -941,11 +769,11 @@ class Clan:
             game.clan.instructor = Cat.all_cats[clan_data["instructor"]]
             game.clan.add_cat(game.clan.instructor)
         else:
-            game.clan.instructor = Cat(
-                status_dict={
-                    "rank": choice((CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER)),
-                    "group": CatGroup.STARCLAN,
-                }
+            game.clan.instructor = NewCatFactory.create_cat(
+                status_dict=StatusDict(
+                    rank=choice([CatRank.WARRIOR, CatRank.WARRIOR, CatRank.ELDER]),
+                    group_ID=CatGroup.STARCLAN_ID,
+                )
             )
             # update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
@@ -993,11 +821,23 @@ class Clan:
                         OtherClan(name, int(relation), temper, symbol)
                     )
 
+        missing_cats = []
         for cat in clan_data["clan_cats"].split(","):
             if cat in Cat.all_cats:
                 game.clan.add_cat(Cat.all_cats[cat])
             else:
-                print("WARNING: Cat not found:", cat)
+                missing_cats.append(cat)
+        if missing_cats:
+            error = ValueError(
+                f"clan.json references {len(missing_cats)} cat(s) missing from "
+                f"clan_cats.json: {', '.join(missing_cats)}"
+            )
+            switch_set_value(
+                Switch.error_message,
+                "Some cats in this save could not be loaded! Please check the cat file for missing cats.",
+            )
+            switch_set_value(Switch.traceback, error)
+            raise error
         if "war" in clan_data:
             game.clan.war = clan_data["war"]
 
@@ -1022,7 +862,9 @@ class Clan:
         # Cats who need to be grieved
         if "dead_cats_to_grieve" in clan_data:
             game.dead_cats_to_grieve = [
-                Cat.fetch_cat(x) for x in clan_data["dead_cats_to_grieve"]
+                cat
+                for x in clan_data["dead_cats_to_grieve"]
+                if (cat := Cat.fetch_cat(x))
             ]
 
         # Cats who are gonna grieve
@@ -1430,15 +1272,15 @@ class Clan:
                 statistics.median([i.personality.stability for i in all_other_cats])
             )
 
+        if not leader and not deputy and not medicine_cats and not all_other_cats:
+            print("returned default temper: stoic, observant")
+            return "stoic", "observant"
+
         # mean of [leader, leader, leader, deputy, deputy, medicine_cats, all_other_cats]
         clan_sociability = round(statistics.mean(sociability_list))
         clan_aggression = round(statistics.mean(aggression_list))
         clan_lawfulness = round(statistics.mean(lawfulness_list))
         clan_stability = round(statistics.mean(stability_list))
-
-        if not leader and not deputy and not all_other_cats:
-            print("returned default temper: stoic, observant")
-            return "stoic", "observant"
 
         return get_temper_alignment(
             clan_sociability, clan_aggression, clan_lawfulness, clan_stability
@@ -1711,6 +1553,31 @@ class Afterlife:
             return 0
         return total // num_of_influencers
 
+    def get_compatibility(self, cat: Cat) -> CatCompatibility:
+        """
+        Returns the afterlife's personality compatibility with the given cat.
+        """
+        differences = [
+            abs(self.lawfulness - cat.personality.lawfulness),
+            abs(self.sociability - cat.personality.sociability),
+            abs(self.aggression - cat.personality.aggression),
+            abs(self.stability - cat.personality.stability),
+        ]
+
+        running_total = 0
+        for x in differences:
+            if x <= 4:
+                running_total += 1
+            elif x >= 6:
+                running_total -= 1
+
+        if running_total >= 2:
+            return CatCompatibility.POSITIVE
+        elif running_total <= -2:
+            return CatCompatibility.NEGATIVE
+        else:
+            return CatCompatibility.NEUTRAL
+
 
 def get_temper_alignment(
     sociability: int, aggression: int, lawfulness: int, stability: int
@@ -1753,4 +1620,4 @@ def _find_alignment(temper_dict: dict, first_value: int, second_value: int) -> s
 
 
 clan_class = Clan()
-clan_class.remove_cat(cat_class.ID)
+# clan_class.remove_cat(cat_class.ID)

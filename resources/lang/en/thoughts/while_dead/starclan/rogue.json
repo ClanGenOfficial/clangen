@@ -1,6 +1,6 @@
 [
     {
-        "id": "general_rogue_dead_thoughts",
+        "event_id": "general_rogue_dead_thoughts",
         "strings": [
             "Is a bit standoffish to the other StarClan residents",
             "Admires {PRONOUN/m_c/poss} starry fur",

@@ -1,6 +1,6 @@
 [
     {
-        "id": "apprentice_dark_forest_thoughts",
+        "event_id": "apprentice_dark_forest_thoughts",
         "strings": [
             "Wishes {PRONOUN/m_c/subject}'d finished {PRONOUN/m_c/poss} battle training",
             "Tries to imitate the battle moves of other Dark Forest cats",
@@ -13,7 +13,8 @@
             "Stands by the StarClan border, hoping a cat will take pity on {PRONOUN/m_c/object}",
             "Furiously grabs onto a branch so hard one of {PRONOUN/m_c/poss} claws snaps off",
             "Wonders what {PRONOUN/m_c/subject} did wrong",
-            "Tries to groom {PRONOUN/m_c/poss} matted fur, only to realize it's too caked with mud to clean"
+            "Tries to groom {PRONOUN/m_c/poss} matted fur, only to realize it's too caked with mud to clean",
+            "Tries to complete {PRONOUN/m_c/poss} training alone but gives up"
         ]
     }
 ]

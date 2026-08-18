@@ -462,6 +462,10 @@
         {
           "pattern": "^-?n_c:[0-9]+$",
           "type": "string"
+        },
+        {
+          "pattern": "^-?(n_c|r_c|s_c)[0-9]+$",
+          "type": "string"
         }
       ],
       "title": "GatherCat"
@@ -476,18 +480,6 @@
         "-p_l",
         "s_c",
         "-s_c",
-        "app1",
-        "-app1",
-        "app2",
-        "-app2",
-        "app3",
-        "-app3",
-        "app4",
-        "-app4",
-        "app5",
-        "-app5",
-        "app6",
-        "-app6",
         "clan",
         "-clan",
         "some_clan",
@@ -511,7 +503,21 @@
         "high_aggress",
         "-high_aggress",
         "low_aggress",
-        "-low_aggress"
+        "-low_aggress",
+        "patrol_cats",
+        "-patrol_cats",
+        "apprentice",
+        "-apprentice",
+        "medicine cat apprentice",
+        "-medicine cat apprentice",
+        "warrior",
+        "-warrior",
+        "medicine cat",
+        "-medicine cat",
+        "deputy",
+        "-deputy",
+        "leader",
+        "-leader"
       ],
       "title": "GatherCatEnum",
       "type": "string"
@@ -522,6 +528,38 @@
         "female"
       ],
       "title": "GenderEnum",
+      "type": "string"
+    },
+    "Group": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/GroupEnum"
+        },
+        {
+          "pattern": "^match:(.+)$",
+          "type": "string"
+        }
+      ],
+      "title": "Group"
+    },
+    "GroupEnum": {
+      "enum": [
+        "afterlife",
+        "player_clan",
+        "other_clan",
+        "dark_forest",
+        "starclan",
+        "unknown_residence",
+        "no_group",
+        "-afterlife",
+        "-player_clan",
+        "-other_clan",
+        "-dark_forest",
+        "-starclan",
+        "-unknown_residence",
+        "-no_group"
+      ],
+      "title": "GroupEnum",
       "type": "string"
     },
     "Herb": {
@@ -727,7 +765,7 @@
             "type": "string"
           },
           {
-            "pattern": "^[a-z]+:(camp[0-9]_)*camp[0-9]$",
+            "pattern": "^-?[a-z]+:(camp[0-9]_)*camp[0-9]$",
             "type": "string"
           }
         ]
@@ -793,6 +831,14 @@
             "$ref": "#/$defs/RelationshipStatus"
           },
           "title": "Relationship Status",
+          "type": "array"
+        },
+        "group": {
+          "description": "List of groups m_c can belong to. Defaults to \"player_clan\".",
+          "items": {
+            "$ref": "#/$defs/Group"
+          },
+          "title": "Group",
           "type": "array"
         },
         "skill": {
@@ -1134,6 +1180,14 @@
           "title": "Relationship Status",
           "type": "array"
         },
+        "group": {
+          "description": "List of groups r_c can belong to. Defaults to \"player_clan\".",
+          "items": {
+            "$ref": "#/$defs/Group"
+          },
+          "title": "Group",
+          "type": "array"
+        },
         "skill": {
           "description": "r_c must possess at least one skill from this list. If they can be anything, use \"any\".",
           "items": {
@@ -1322,6 +1376,8 @@
     },
     "RelationshipStatus": {
       "enum": [
+        "can_romance",
+        "-can_romance",
         "strangers",
         "siblings",
         "-siblings",
@@ -1670,7 +1726,9 @@
         "rogue",
         "-rogue",
         "clancat",
-        "-clancat"
+        "-clancat",
+        "guide",
+        "-guide"
       ],
       "title": "Status",
       "type": "string"

@@ -51,7 +51,7 @@
             "one": "%{count} piece of prey was caught on a patrol.",
             "many": "%{count} pieces of prey were caught on a patrol."
         },
-        "prey_very_small": "A very small amount of prey is brought to camp.",
+        "prey_tiny": "A tiny amount of prey is brought to camp.",
         "prey_small": "A small amount of prey is brought to camp.",
         "prey_medium": "A medium amount of prey is brought to camp.",
         "prey_large": "A large amount of prey is brought to camp.",

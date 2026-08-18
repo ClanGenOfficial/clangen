@@ -3,21 +3,22 @@ from typing import List, Optional
 from pydantic import BaseModel, ConfigDict, Field
 
 from scripts.models.common.cat import Cat
+from scripts.models.common.gather_cat import GatherCat
 from scripts.models.common.relationship_status import RelationshipStatus
 
 
 class RelationshipConstraint(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    cats_from: List[Cat] = Field(
+    cats_from: List[GatherCat] = Field(
         ...,
         description="The cat from whom the relationship originates.",
     )
-    cats_to: List[Cat] = Field(
+    cats_to: List[GatherCat] = Field(
         ...,
         description="The target of the relationship.",
     )
-    mutual: Optional[bool] = Field(
-        None,
+    mutual: bool = Field(
+        ...,
         description="Controls if the relationship is required in both directions",
     )
     constraints: List[RelationshipStatus] = Field(

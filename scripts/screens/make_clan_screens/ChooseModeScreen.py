@@ -1,12 +1,11 @@
-from random import randrange, choice, randint
+from random import randrange, choice, randint, choices
 
 import pygame
 import pygame_gui
 
-from scripts.cat.cats import create_cat, create_example_cats
-from scripts.cat.enums import CatRank
+from scripts.cat.enums import CatAge
+from scripts.cat.factories.create_example_cat import create_example_cats
 from scripts.cat.sprites.load_sprites import sprites
-from scripts.config import get_config
 from scripts.game_structure import image_cache
 from scripts.game_structure.game import Switch, switch_get_value
 from scripts.game_structure.game.settings import game_setting_set
@@ -211,6 +210,19 @@ class ChooseModeScreen(MakeClanScreenBase):
                 if random_card:
                     self.clan_info.cruel_cards.append(random_card)
 
+        # create new cats because the cats might no longer fit the card constraints
+        switch_set_value(
+            Switch.possible_cats,
+            create_example_cats(
+                majority_rank=self.get_config_during_creation(
+                    "clan_creation.majority_rank"
+                ),
+                rank_weights=self.get_config_during_creation(
+                    "clan_creation.rank_weights"
+                ),
+            ),
+        )
+
         self.clan_info.display_name = self.random_clan_name()
         self.clan_info.biome = self.random_biome_selection()
         self.clan_info.camp_bg = f"camp{randrange(1, 5)}"
@@ -225,25 +237,44 @@ class ChooseModeScreen(MakeClanScreenBase):
         self.clan_info.symbol = symbol
 
         # MEMBERS
-        self.clan_info.leader = create_cat(CatRank.WARRIOR)
-        self.clan_info.deputy = create_cat(CatRank.WARRIOR)
-        self.clan_info.medicine_cat = create_cat(CatRank.WARRIOR)
-        members = []
-        for _ in range(randrange(4, 8)):
-            random_rank = choice(
-                [
-                    CatRank.KITTEN,
-                    CatRank.APPRENTICE,
-                    CatRank.WARRIOR,
-                    CatRank.WARRIOR,
-                    CatRank.ELDER,
-                ]
-            )
-            members.append(create_cat(rank=random_rank))
+        possible_cats = switch_get_value(Switch.possible_cats)
+        grown_cats = [
+            c
+            for c in possible_cats
+            if c.age not in (CatAge.NEWBORN, CatAge.KITTEN, CatAge.ADOLESCENT)
+        ]
 
-        switch_set_value(
-            Switch.possible_cats,
-            switch_get_value(Switch.possible_cats)[: randint(2, 4)],
+        if grown_cats and self.get_config_during_creation(
+            "clan_creation.ranks_needed.leader"
+        ):
+            self.clan_info.leader = choice(grown_cats)
+            grown_cats.remove(self.clan_info.leader)
+        if grown_cats and self.get_config_during_creation(
+            "clan_creation.ranks_needed.deputy"
+        ):
+            self.clan_info.deputy = choice(grown_cats)
+            grown_cats.remove(self.clan_info.deputy)
+        if grown_cats and self.get_config_during_creation(
+            "clan_creation.ranks_needed.medicine_cat"
+        ):
+            self.clan_info.medicine_cat = choice(grown_cats)
+            grown_cats.remove(self.clan_info.medicine_cat)
+
+        member_amount = randint(
+            self.get_config_during_creation("clan_creation.minimum_membership"),
+            self.get_config_during_creation("clan_creation.maximum_membership"),
         )
 
-        self.clan_info.starting_members = members
+        self.clan_info.starting_members = choices(
+            [
+                c
+                for c in possible_cats
+                if c
+                not in (
+                    self.clan_info.leader,
+                    self.clan_info.deputy,
+                    self.clan_info.medicine_cat,
+                )
+            ],
+            k=member_amount,
+        )

@@ -159,7 +159,11 @@ class Skill:
 
     @staticmethod
     def get_random_skill(
-        points: int = None, point_tier: int = None, exclude=(), interest_only=False
+        points: int = None,
+        point_tier: int = None,
+        exclude=(),
+        interest_only=False,
+        rng=random.Random(),
     ):
         """Generates a random skill. If wanted, you can specify a tier for the points
         value to be randomized within."""
@@ -167,12 +171,12 @@ class Skill:
         if isinstance(points, int):
             points = points
         elif isinstance(point_tier, int) and 1 <= point_tier <= 3:
-            points = random.randint(
+            points = rng.randint(
                 Skill.tier_ranges[point_tier - 1][0],
                 Skill.tier_ranges[point_tier - 1][1],
             )
         else:
-            points = random.randint(Skill.point_range[0], Skill.point_range[1])
+            points = rng.randint(Skill.point_range[0], Skill.point_range[1])
 
         if isinstance(exclude, SkillPath):
             exclude = [exclude]
@@ -311,9 +315,21 @@ class CatSkills:
     def __repr__(self) -> str:
         return f"<CatSkills: Primary: |{self.primary}|, Secondary: |{self.secondary}|, Hidden: |{self.hidden}|>"
 
+    def get_all(self) -> dict:
+        skill_dict = {}
+        if self.primary:
+            skill_dict[self.primary.path] = self.primary.tier
+        if self.secondary:
+            skill_dict[self.secondary.path] = self.secondary.tier
+
+        return skill_dict
+
     @staticmethod
     def generate_new_catskills(
-        rank: CatRank, age: CatAge, hidden_skill: HiddenSkillEnum = None
+        rank: CatRank,
+        age: CatAge,
+        hidden_skill: HiddenSkillEnum = None,
+        rng=random.Random(),
     ):
         """Generates a new skill"""
         new_skill = CatSkills()
@@ -323,32 +339,39 @@ class CatSkills:
         if rank == CatRank.NEWBORN or age == CatAge.NEWBORN:
             pass
         elif rank == CatRank.KITTEN or age == CatAge.KITTEN:
-            new_skill.primary = Skill.get_random_skill(points=0, interest_only=True)
+            new_skill.primary = Skill.get_random_skill(
+                points=0, interest_only=True, rng=rng
+            )
         elif rank.is_any_apprentice_rank() or age == CatAge.ADOLESCENT:
-            new_skill.primary = Skill.get_random_skill(point_tier=1, interest_only=True)
-            if random.randint(1, 3) == 1:
+            new_skill.primary = Skill.get_random_skill(
+                point_tier=1, interest_only=True, rng=rng
+            )
+            if rng.randint(1, 3) == 1:
                 new_skill.secondary = Skill.get_random_skill(
-                    point_tier=1, interest_only=True, exclude=new_skill.primary.path
+                    point_tier=1,
+                    interest_only=True,
+                    exclude=new_skill.primary.path,
+                    rng=rng,
                 )
         else:
             primary_tier = 1
             secondary_tier = 1
             if age == CatAge.YOUNG_ADULT:
-                primary_tier += random.randint(0, 1)
-                secondary_tier += random.randint(0, 1)
+                primary_tier += rng.randint(0, 1)
+                secondary_tier += rng.randint(0, 1)
             elif age == CatAge.ADULT:
-                primary_tier += random.randint(0, 2)
-                secondary_tier += random.randint(0, 1)
+                primary_tier += rng.randint(0, 2)
+                secondary_tier += rng.randint(0, 1)
             elif age == CatAge.SENIOR_ADULT:
-                primary_tier += random.randint(1, 2)
-                secondary_tier += random.randint(0, 1)
+                primary_tier += rng.randint(1, 2)
+                secondary_tier += rng.randint(0, 1)
             elif age == CatAge.SENIOR:
-                primary_tier -= random.randint(0, 1)
+                primary_tier -= rng.randint(0, 1)
 
-            new_skill.primary = Skill.get_random_skill(point_tier=primary_tier)
-            if random.randint(1, 2) == 1:
+            new_skill.primary = Skill.get_random_skill(point_tier=primary_tier, rng=rng)
+            if rng.randint(1, 2) == 1:
                 new_skill.secondary = Skill.get_random_skill(
-                    point_tier=secondary_tier, exclude=new_skill.primary.path
+                    point_tier=secondary_tier, exclude=new_skill.primary.path, rng=rng
                 )
 
         return new_skill
@@ -580,19 +603,12 @@ class CatSkills:
         """
 
         if isinstance(path, str):
-            # Try to conter to Skillpath or HiddenSkillEnum
             try:
                 path = SkillPath[path]
             except KeyError:
-                try:
-                    path = HiddenSkillEnum[path]
-                except KeyError:
-                    raise KeyError(f"{path} is not a real skill path")
+                raise KeyError(f"{path} is not a real skill path")
 
-        if isinstance(path, HiddenSkillEnum):
-            if path == self.hidden:
-                return True
-        elif isinstance(path, SkillPath):
+        if isinstance(path, SkillPath):
             if self.primary:
                 if path == self.primary.path and self.primary.tier >= min_tier:
                     return True
@@ -610,21 +626,34 @@ class CatSkills:
         restrictions. Returns an integer value of how many skills requirements are met.
         """
         skills_meet = 0
-        min_tier = 0
         for _skill in skill_list:
-            spl = _skill.split(",")
+            info = _skill.split(",")
 
-            if len(spl) != 2:
+            if "-" in info[0]:
+                is_exclusionary = True
+                info[0] = info[0].replace("-", "")
+            else:
+                is_exclusionary = False
+
+            if len(info) != 2:
                 print("Incorrectly formatted skill restriction", _skill)
                 continue
             try:
-                min_tier = int(spl[1])
+                min_tier = int(info[1])
             except ValueError:
                 print("Min Skill Tier cannot be converted to int", _skill)
                 continue
 
-            if self.meets_skill_requirement(spl[0], min_tier):
-                skills_meet += 1
+            if self.meets_skill_requirement(info[0], min_tier):
+                if info[0] == self.primary.path:
+                    skills_meet += self.primary.tier
+                elif self.secondary:
+                    skills_meet += self.secondary.tier
+                break
+
+            elif is_exclusionary:
+                skills_meet += self.primary.tier
+                break
 
         return skills_meet
 

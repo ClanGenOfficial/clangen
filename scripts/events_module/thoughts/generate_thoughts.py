@@ -7,12 +7,12 @@ import i18n
 from scripts.cat.enums import CatGroup, CatThought, CatAge
 from scripts.events_module.event_filters import (
     event_for_cat,
-    event_for_location,
-    event_for_season,
-    event_for_tags,
     check_rel_constraint_groups,
 )
-from scripts.events_module.text_pool_event import TextPoolEvent
+from scripts.events_module.text_pool_event.check_general_constraints import (
+    passes_general_constraints,
+)
+from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game, constants
 from scripts.game_structure.localization import load_lang_resource
 
@@ -52,7 +52,7 @@ def new_thought(
                     thought=thought,
                     other_clan_id=other_clan_id,
                 ):
-                    if ensured_id and ensured_id != thought.id:
+                    if ensured_id and ensured_id != thought.event_id:
                         continue
 
                     thought_options.append(thought)
@@ -91,20 +91,23 @@ def _constraints_fulfilled(
     """Check if thought constraints are fulfilled"""
     involved_cats = {
         "m_c": main_cat,
-        "r_c": random_cat,
     }
+    if random_cat:
+        involved_cats.update({"r_c": random_cat})
+    if other_clan_id and game.clan.all_other_clans:
+        other_clan = [
+            c for c in game.clan.all_other_clans if c.group_ID == other_clan_id
+        ][0]
+    else:
+        other_clan = None
 
-    if thought.location:
-        if not event_for_location(thought.location):
-            return False
-
-    if thought.season:
-        if not event_for_season(thought.season):
-            return False
-
-    if thought.tags:
-        if not event_for_tags(thought.tags, main_cat, random_cat):
-            return False
+    if not passes_general_constraints(
+        thought,
+        primary_cat=main_cat,
+        involved_cats=involved_cats,
+        other_clan=other_clan,
+    ):
+        return False
 
     # check that we have a random cat if the thought requires one
     if not random_cat:
@@ -121,7 +124,7 @@ def _constraints_fulfilled(
             thought.involved_cats.get("m_c", {}),
             cat=main_cat,
             involved_cat_dict=involved_cats,
-            event_id=thought.id,
+            event_id=thought.event_id,
             other_involved_clan_id=other_clan_id,
         ):
             return False
@@ -130,7 +133,7 @@ def _constraints_fulfilled(
             thought.involved_cats.get("r_c", {}),
             cat=random_cat,
             involved_cat_dict=involved_cats,
-            event_id=thought.id,
+            event_id=thought.event_id,
             other_involved_clan_id=other_clan_id,
         ):
             return False
@@ -340,7 +343,7 @@ def _load_file(path) -> list[TextPoolEvent]:
         for t in load_lang_resource(path):
             loaded_thoughts[path].append(
                 TextPoolEvent(
-                    id=t.get("id"),
+                    event_id=t.get("id"),
                     location=t.get("location", []),
                     season=t.get("season", []),
                     tags=t.get("tags", []),

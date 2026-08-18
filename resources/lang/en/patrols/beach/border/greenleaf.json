@@ -1,109 +1,156 @@
 [
     {
-        "patrol_id": "bch_bord_flashflood_tide2",
-        "biome": [
+        "event_id": "bch_bord_flashflood_tide2",
+        "types": [
+            "border"
+        ],
+        "frequency": 3,
+        "location": [
             "beach"
         ],
         "season": [
             "greenleaf"
         ],
-        "types": [
-            "border"
-        ],
-        "tags": [],
-        "patrol_art": "bord_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "frequency": 3,
-        "intro_text": "As r_c crosses a beach, shivering with the cold, {PRONOUN/r_c/subject} {VERB/r_c/hear/hears} a creaking, rushing sound, like a wave — but out of sync with the ocean.",
-        "decline_text": "r_c decides to head back early.",
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ]
+        },
         "chance_of_success": 30,
+        "patrol_art": "bord_general_intro",
+        "intro_text": "As p_l crosses a beach, shivering with the cold, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound, like a wave — but out of sync with the ocean.",
+        "decline_text": "p_l decides to head back early.",
         "success_outcomes": [
             {
-                "text": "r_c leaps forward, dashing to the other side of the beach and up onto the rocks. {PRONOUN/r_c/subject/CAP} {VERB/r_c/make/makes} it in time to watch the beach get lost under a tide of water from inland.",
-                "exp": 20,
-                "prey": [
-                    "large"
+                "frequency": 4,
+                "strings": [
+                    "p_l leaps forward, dashing to the other side of the beach and up onto the rocks. {PRONOUN/p_l/subject/CAP} {VERB/p_l/make/makes} it in time to watch the beach get lost under a tide of water from inland."
                 ],
-                "frequency": 4
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
             },
             {
-                "text": "s_c scrambles back the way {PRONOUN/s_c/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris — and a large dead sheep. s_c pounces on the opportunity to scavenge.",
-                "exp": 20,
-                "stat_skill": [
-                    "CLEVER,3"
+                "frequency": 4,
+                "strings": [
+                    "s_c0 scrambles back the way {PRONOUN/s_c0/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris — and a large dead sheep. s_c0 pounces on the opportunity to scavenge."
                 ],
-                "prey": [
-                    "large"
-                ],
-                "frequency": 4
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,3"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
             },
             {
-                "text": "s_c shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c/subject} {VERB/s_c/turn/turns} and {VERB/s_c/run/runs} for home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c/poss/CAP} caution saved {PRONOUN/s_c/poss} life.",
-                "exp": 20,
-                "stat_trait": [
-                    "careful",
-                    "insecure",
-                    "nervous"
+                "frequency": 4,
+                "strings": [
+                    "s_c0 shrieks at the strange sound, paws digging into the sand as {PRONOUN/s_c0/subject} {VERB/s_c0/turn/turns} and {VERB/s_c0/run/runs} for home. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/are/is} proven right when the beach disappears under a flood of water from inland. {PRONOUN/s_c0/poss/CAP} caution saved {PRONOUN/s_c0/poss} life."
                 ],
-                "prey": [
-                    "large"
-                ],
-                "frequency": 4
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "careful",
+                                "insecure",
+                                "nervous"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
             {
-                "text": "r_c is in the middle of the beach when the flood hits {PRONOUN/r_c/object}. Freezing water rushes from inland, sweeping {PRONOUN/r_c/object} straight out to sea to die in the cold ocean.",
-                "exp": 0,
-                "dead_cats": [
-                    "r_c"
+                "frequency": 4,
+                "strings": [
+                    "p_l is in the middle of the beach when the flood hits {PRONOUN/p_l/object}. Freezing water rushes from inland, sweeping {PRONOUN/p_l/object} straight out to sea to die in the cold ocean."
                 ],
-                "history_text": {
-                    "death": "m_c was swept out to sea by a flood."
-                },
-                "frequency": 4
+                "exp_gained": 0,
+                "death": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "history": "m_c was swept out to sea by a flood."
+                    }
+                ]
             }
         ]
     },
     {
-        "patrol_id": "bch_bord_greenleaf_ship1",
-        "biome": [
+        "event_id": "bch_bord_greenleaf_ship1",
+        "types": [
+            "border"
+        ],
+        "frequency": 2,
+        "location": [
             "beach"
         ],
         "season": [
             "greenleaf"
         ],
-        "types": [
-            "border"
-        ],
-        "tags": [],
-        "patrol_art": "bord_general_intro",
-        "min_cats": 2,
-        "max_cats": 6,
-        "min_max_status": {
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ],
             "normal adult": [
                 1,
                 6
             ]
         },
-        "frequency": 2,
         "chance_of_success": 60,
+        "patrol_art": "bord_general_intro",
         "intro_text": "p_l's patrol pads along the shore towards the border. A recent storm washed away some of the markers near the waterline and they need to be refreshed. There in the surf, however, they find a great wooden thing—a piece of a floating nest. Towering over the cats, its jagged edges jut out at broken angles. Beneath the salt, Twoleg scent lingers in the air.",
         "decline_text": "p_l decides to turn back to camp and report the encounter, rather than risk investigating something potentially dangerous.",
         "success_outcomes": [
             {
-                "text": "p_l investigates the interior of the washed-up floating nest. It appears to be lying on its side, with Twoleg stuff tumbled over and fallen in heaps. Giant, tough cobwebs lie next to a coil of thick, flexible vine. There is even a bright, shiny white-and-red striped ring, sized almost perfectly to nap within. But they have a task to do, and after noting the discovery, refresh the border markings without incident.",
-                "exp": 10,
                 "frequency": 4,
-                "relationships": [
+                "strings": [
+                    "p_l investigates the interior of the washed-up floating nest. It appears to be lying on its side, with Twoleg stuff tumbled over and fallen in heaps. Giant, tough cobwebs lie next to a coil of thick, flexible vine. There is even a bright, shiny white-and-red striped ring, sized almost perfectly to nap within. But they have a task to do, and after noting the discovery, refresh the border markings without incident."
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
                     {
-                        "cats_from": ["patrol"],
-                        "cats_to": ["p_l"],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
                         "mutual": false,
                         "values": [
-                            "trust", "respect"
+                            "trust",
+                            "respect"
                         ],
                         "amount": 4,
                         "log": {
@@ -113,71 +160,123 @@
                 ]
             },
             {
-                "text": "With a deep, probing breath, s_c perks up. There's something else in there, beside the salt and Twoleg stench. Following {PRONOUN/s_c/poss} nose through the shaded debris, {PRONOUN/s_c/subject} eventually {VERB/s_c/sink/sinks} {PRONOUN/s_c/poss} teeth into one of the several still-fresh fishes, tangled in giant cobwebs inside. c_n will feast tonight!",
-                "exp": 10,
-                "stat_skill": [
-                    "SENSE,1"
-                ],
                 "frequency": 4,
-                "relationships": [
+                "strings": [
+                    "With a deep, probing breath, s_c0 perks up. There's something else in there, beside the salt and Twoleg stench. Following {PRONOUN/s_c0/poss} nose through the shaded debris, {PRONOUN/s_c0/subject} eventually {VERB/s_c0/sink/sinks} {PRONOUN/s_c0/poss} teeth into one of the several still-fresh fishes, tangled in giant cobwebs inside. c_n will feast tonight!"
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "SENSE,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
                     {
-                        "cats_from": ["patrol"],
-                        "cats_to": ["s_c"],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
                         "mutual": false,
                         "values": [
-                            "like", "respect"
+                            "like",
+                            "respect"
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "cat_from was impressed by s_c's keen senses and enjoyed sharing in the scavenged fishes from a wrecked floating Twoleg nest."
+                            "cats_from": "cat_from was impressed by s_c0's keen senses and enjoyed sharing in the scavenged fishes from a wrecked floating Twoleg nest."
                         }
                     }
                 ],
-                "prey": [
-                    "small"
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
                 ]
             },
             {
-                "text": "s_c ambles inside, sticking {PRONOUN/s_c/poss} nose into the tangled debris. Searching for anything useful, {PRONOUN/s_c/subject} eventually {VERB/s_c/present/presents} p_l with a long, straight stick, colourful wrapping and caps adorning it. It's taller than a cat! This, stuck into the sand—as s_c soon demonstrates—will be an excellent border marker that no one can pretend to overlook.",
-                "exp": 10,
-                "stat_skill": [
-                    "CLEVER,1",
-                    "CAMP,1"
-                ],
                 "frequency": 3,
-                "relationships": [
+                "strings": [
+                    "s_c0 ambles inside, sticking {PRONOUN/s_c0/poss} nose into the tangled debris. Searching for anything useful, {PRONOUN/s_c0/subject} eventually {VERB/s_c0/present/presents} p_l with a long, straight stick, colourful wrapping and caps adorning it. It's taller than a cat! This, stuck into the sand—as s_c0 soon demonstrates—will be an excellent border marker that no one can pretend to overlook."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,1",
+                                "CAMP,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
                     {
-                        "cats_from": ["patrol"],
-                        "cats_to": ["s_c"],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
                         "mutual": false,
                         "values": [
-                            "trust", "respect"
+                            "trust",
+                            "respect"
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "cat_from was impressed by s_c's ingenious border marker, scavenged from a wrecked floating Twoleg nest, and knows {PRONOUN/cat_from/subject} can rely on {PRONOUN/s_c/poss} resourcefulness."
+                            "cats_from": "cat_from was impressed by s_c0's ingenious border marker, scavenged from a wrecked floating Twoleg nest, and knows {PRONOUN/cat_from/subject} can rely on {PRONOUN/s_c0/poss} resourcefulness."
                         }
                     }
                 ]
             },
             {
-                "text": "s_c stalks closer, then freezes, eyes trained on a twisted carcass half-pinned under the wreckage. A great serpentine fish lies with eyes glazed and empty, flies starting to crawl over its smooth scales. s_c trembles, watching the oarfish's characteristic long, draped antennae fan out and ride on the lapping waves. This is an omen, {PRONOUN/s_c/subject} {VERB/s_c/explain/explains} to p_l. Grave danger is coming, but if c_n prepares now, they can weather the storm.",
-                "exp": 10,
-                "stat_skill": [
-                    "OMEN,1"
-                ],
                 "frequency": 1,
-                "relationships": [
+                "strings": [
+                    "s_c0 stalks closer, then freezes, eyes trained on a twisted carcass half-pinned under the wreckage. A great serpentine fish lies with eyes glazed and empty, flies starting to crawl over its smooth scales. s_c0 trembles, watching the oarfish's characteristic long, draped antennae fan out and ride on the lapping waves. This is an omen, {PRONOUN/s_c0/subject} {VERB/s_c0/explain/explains} to p_l. Grave danger is coming, but if c_n prepares now, they can weather the storm."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "OMEN,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
                     {
-                        "cats_from": ["patrol", "-s_c"],
-                        "cats_to": ["s_c"],
+                        "cats_from": [
+                            "patrol_cats",
+                            "-s_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
                         "mutual": false,
                         "values": [
-                            "trust", "respect"
+                            "trust",
+                            "respect"
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "cat_from witnessed s_c interpret the dire omen of a washed-up oarfish and felt glad to have {PRONOUN/s_c/object} in the Clan."
+                            "cats_from": "cat_from witnessed s_c0 interpret the dire omen of a washed-up oarfish and felt glad to have {PRONOUN/s_c0/object} in the Clan."
                         }
                     }
                 ]
@@ -185,43 +284,63 @@
         ],
         "fail_outcomes": [
             {
-                "text": "There's something in there, tangled in with the debris and brightly-coloured Twoleg furs. As p_l takes a step towards it, the wind turns, and the scent of carrion intensifies. Avoiding the crowfood, the patrol quickly walks on... but wonders what it once was.",
-                "exp": 0,
-                "frequency": 4
+                "frequency": 4,
+                "strings": [
+                    "There's something in there, tangled in with the debris and brightly-coloured Twoleg furs. As p_l takes a step towards it, the wind turns, and the scent of carrion intensifies. Avoiding the crowfood, the patrol quickly walks on... but wonders what it once was."
+                ],
+                "exp_gained": 0
             },
             {
-                "text": "s_c confidently strolls inside, only to trip on a loose board and tumble into a pile of giant, Twoleg-made cobwebs! The sun has moved significantly by the time the patrol frees s_c, whose time spent wrapped up with rotting fishes has left its mark. The o_c_n patrol they encounter at the border a short while later is not amused and quickly departs upwind.",
-                "exp": 0,
-                "stat_trait": [
-                    "troublesome",
-                    "childish",
-                    "arrogant",
-                    "shameless",
-                    "flamboyant",
-                    "daring",
-                    "bold",
-                    "competitive",
-                    "oblivious",
-                    "adventurous",
-                    "confident",
-                    "fierce"
-                ],
                 "frequency": 3,
-                "relationships": [
+                "strings": [
+                    "s_c0 confidently strolls inside, only to trip on a loose board and tumble into a pile of giant, Twoleg-made cobwebs! The sun has moved significantly by the time the patrol frees s_c0, whose time spent wrapped up with rotting fishes has left its mark. The o_c_n patrol they encounter at the border a short while later is not amused and quickly departs upwind."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "troublesome",
+                                "childish",
+                                "arrogant",
+                                "shameless",
+                                "flamboyant",
+                                "daring",
+                                "bold",
+                                "competitive",
+                                "oblivious",
+                                "adventurous",
+                                "confident",
+                                "fierce"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                },
+                "relationship_changes": [
                     {
-                        "cats_from": ["patrol"],
-                        "cats_to": ["s_c"],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
                         "mutual": false,
                         "values": [
-                            "like", "trust"
+                            "like",
+                            "trust"
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from didn't enjoy patrolling beside a s_c stinking of rotting fish due to {PRONOUN/s_c/poss} own carelessness. Or the looks {PRONOUN/cat_from/subject} got from a o_c_n patrol because of it."
+                            "cats_from": "cat_from didn't enjoy patrolling beside a s_c0 stinking of rotting fish due to {PRONOUN/s_c0/poss} own carelessness. Or the looks {PRONOUN/cat_from/subject} got from a o_c_n patrol because of it."
                         }
                     }
-                ],
-                "other_clan_rep": -1
+                ]
             }
         ]
     }
