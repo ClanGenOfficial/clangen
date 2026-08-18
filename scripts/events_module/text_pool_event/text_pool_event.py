@@ -75,6 +75,8 @@ class TextPoolEvent:
         if self.required_cat_types:
             self.weight += len(self.required_cat_types.keys()) * 5
 
+        self.weight = max(1, self.weight)
+
     @staticmethod
     def involved_cat_weight(involved_cats: dict) -> int:
         weight = 0
