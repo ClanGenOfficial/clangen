@@ -18899,7 +18899,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "r_c and m_c were on a walk together when m_c mentioned that {PRONOUN/m_c/subject} might not be a tom. While a bit surprised, r_c assured {PRONOUN/m_c/subject} that doesn't matter. {PRONOUN/r_c/subject} would be proud to have m_c as {PRONOUN/r_c/poss} partner no matter what.",
+        "event_text": "r_c and m_c were on a walk together when m_c mentioned that {PRONOUN/m_c/subject} might not be a tom. While a bit surprised, r_c assured {PRONOUN/m_c/subject} that doesn't matter. {PRONOUN/r_c/subject/CAP} would be proud to have m_c as {PRONOUN/r_c/poss} partner no matter what.",
         "m_c": {
             "age": ["-kitten"],
             "relationship_status": ["mates"],
@@ -18959,7 +18959,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "r_c and m_c were on a walk together when m_c mentioned that {PRONOUN/m_c/subject} might not be a she-cat. While a bit surprised, r_c assured {PRONOUN/m_c/subject} that doesn't matter. {PRONOUN/r_c/subject} would be proud to have m_c as {PRONOUN/r_c/poss} partner no matter what.",
+        "event_text": "r_c and m_c were on a walk together when m_c mentioned that {PRONOUN/m_c/subject} might not be a she-cat. While a bit surprised, r_c assured {PRONOUN/m_c/subject} that doesn't matter. {PRONOUN/r_c/subject/CAP} would be proud to have m_c as {PRONOUN/r_c/poss} partner no matter what.",
         "m_c": {
             "age": ["-kitten"],
             "relationship_status": ["mates"],
