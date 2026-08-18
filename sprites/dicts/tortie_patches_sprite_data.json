@@ -56,22 +56,22 @@
                 "CHERRYTAIL",
                 "TURTLECRAWL",
                 "LARKPETAL",
-                "TTAILTIP",
-                "TSHIRT",
-                "TFLANK",
-                "TBIBFULL"
+                "TAILTIP_T",
+                "MILQUE",
+                "POWDERSNOW",
+                "BIBFULL_T"
             ],
             [
-                "TTAILTIPREVERSE",
-                "TUNDERTAIL",
-                "TFRPAW",
-                "TFLPAW",
-                "TBRPAW",
-                "TBLPAW",
-                "TUNDERPAWS",
-                "TBELLY",
-                "TBOTHEARS",
-                "TEYELINER"
+                "TAILTIPREVERSE_T",
+                "UNDERTAIL_T",
+                "PAW_FR_T",
+                "PAW_FL_CLOVERTAIL",
+                "PAW_BR_WING",
+                "PAW_BL_SPLOTCH",
+                "UNDERPAWS_T",
+                "BELLY_T",
+                "BOTHEARS_T",
+                "EYELINER_T"
             ]
         ]
 }
