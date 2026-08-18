@@ -559,7 +559,10 @@
                 ],
                 "involved_cats": {
                     "s_c0": {
-                        "past_status": ["kittypet", "loner"],
+                        "past_status": [
+                            "kittypet",
+                            "loner"
+                        ],
                         "prior_abbreviation": [
                             "r_c0"
                         ]
@@ -930,7 +933,10 @@
                         "prior_abbreviation": [
                             "any"
                         ],
-                        "past_status": ["rogue", "loner"]
+                        "past_status": [
+                            "rogue",
+                            "loner"
+                        ]
                     }
                 },
                 "exp_gained": 10,
