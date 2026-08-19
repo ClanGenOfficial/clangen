@@ -42,12 +42,13 @@ class PointsOfInterestTag(RootModel):
 
 class PointsOfInterestGroup(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    name: List[str] = Field(
-        ..., description="Points of Interest with these specific IDs will be allowed."
+    name: Union[MISSING, List[str]] = Field(
+        MISSING,
+        description="Points of Interest with these specific IDs will be allowed.",
     )
-    tags: List[PointsOfInterestTag] = Field(
-        ..., description="Points of Interest with these tags will be allowed."
+    tags: Union[MISSING, List[PointsOfInterestTag]] = Field(
+        MISSING, description="Points of Interest with these tags will be allowed."
     )
     category: Union[PointsOfInterestCategoryEnum, MISSING] = Field(
-        ..., description="The category this POI belongs to."
+        MISSING, description="The category this POI belongs to."
     )

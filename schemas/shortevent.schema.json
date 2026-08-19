@@ -1057,11 +1057,6 @@
           "title": "Category"
         }
       },
-      "required": [
-        "name",
-        "tags",
-        "category"
-      ],
       "title": "PointsOfInterestGroup",
       "type": "object"
     },
