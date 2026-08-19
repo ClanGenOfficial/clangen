@@ -17686,7 +17686,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c is growing up, and with that comes figuring out who {PRONOUN/m_c/subject} {VERB/m_c/are/is}, which turned out to be neither a tom nor a she-cat.",
+        "event_text": "m_c is growing up, and with that comes figuring out who {PRONOUN/m_c/subject} {VERB/m_c/are/is}. As it turned out, who {PRONOUN/m_c/subject} {VERB/m_c/are/is} happened to be neither a tom nor a she-cat.",
         "m_c": {
             "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
             "gender": [
@@ -17722,7 +17722,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c is growing up, and with that comes figuring out who {PRONOUN/m_c/subject} {VERB/m_c/are/is}, which turned out to be a she-cat.",
+        "event_text": "m_c is growing up, and with that comes figuring out who {PRONOUN/m_c/subject} {VERB/m_c/are/is}. As it turned out, who {PRONOUN/m_c/subject} {VERB/m_c/are/is} happened to be a she-cat.",
         "m_c": {
             "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
             "gender": [
@@ -17757,7 +17757,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c is growing up, and with that comes figuring out who {PRONOUN/m_c/subject} {VERB/m_c/are/is}, which turned out to be a tom.",
+        "event_text": "m_c is growing up, and with that comes figuring out who {PRONOUN/m_c/subject} {VERB/m_c/are/is}. As it turned out, who {PRONOUN/m_c/subject} {VERB/m_c/are/is} happened to be a tom.",
         "m_c": {
             "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
             "gender": [
@@ -18007,7 +18007,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "It's surprisingly obvious on hindsight, m_c explains. {PRONOUN/m_c/subject/CAP} just <i>{VERB/m_c/know/knows}</i> {PRONOUN/m_c/subject} {VERB/m_c/are/is} not a tom or a she-cat, there's no other logical explanation for this feeling. c_n is happy to celebrate the discovery.",
+        "event_text": "It's surprisingly obvious on hindsight, m_c explained. {PRONOUN/m_c/subject/CAP} just <i>knew</i> {PRONOUN/m_c/subject} {VERB/m_c/were/was}n't a tom or a she-cat, there's no other logical explanation for this feeling. c_n was happy to celebrate the discovery.",
         "m_c": {
             "trait": ["strict", "thoughtful", "calm", "sincere", "responsible", "wise"],
             "gender": [
@@ -18043,7 +18043,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "It's surprisingly obvious on hindsight, m_c explains. {PRONOUN/m_c/subject/CAP} just <i>{VERB/m_c/know/knows}</i> {PRONOUN/m_c/subject} {VERB/m_c/are/is} a she-cat, there's no other logical explanation for this feeling. c_n is happy to celebrate the discovery.",
+        "event_text": "It's surprisingly obvious on hindsight, m_c explained. {PRONOUN/m_c/subject/CAP} just <i>knew</i> {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a she-cat, there's no other logical explanation for this feeling. c_n was happy to celebrate the discovery.",
         "m_c": {
             "trait": ["strict", "thoughtful", "calm", "sincere", "responsible", "wise"],
             "gender": [
@@ -18078,7 +18078,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "It's surprisingly obvious on hindsight, m_c explains. {PRONOUN/m_c/subject/CAP} just <i>{VERB/m_c/know/knows}</i> {PRONOUN/m_c/subject} {VERB/m_c/are/is} a tom, there's no other logical explanation for this feeling. c_n is happy to celebrate the discovery.",
+        "event_text": "It's surprisingly obvious on hindsight, m_c explained. {PRONOUN/m_c/subject/CAP} just <i>knew</i> {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a tom, there's no other logical explanation for this feeling. c_n was happy to celebrate the discovery.",
         "m_c": {
             "trait": ["strict", "thoughtful", "calm", "sincere", "responsible", "wise"],
             "gender": [
@@ -18340,7 +18340,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c explained to r_c that {PRONOUN/m_c/subject} don't feel like a tom. r_c nodded impatiently, happy for m_c, but could they get back to playing now?",
+        "event_text": "m_c explained to r_c that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} feel like a tom. r_c nodded impatiently, happy for m_c, but could they get back to playing now?",
         "m_c": {
             "age": ["kitten"],
             "relationship_status": ["likes", "listens_to", "relates_to"],
@@ -18380,7 +18380,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c explained to r_c that {PRONOUN/m_c/subject} don't feel like a she-cat. r_c nodded impatiently, happy for m_c, but could they get back to playing now?",
+        "event_text": "m_c explained to r_c that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} feel like a she-cat. r_c nodded impatiently, happy for m_c, but could they get back to playing now?",
         "m_c": {
             "age": ["kitten"],
             "relationship_status": ["likes", "listens_to", "relates_to"],
@@ -18420,7 +18420,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c quietly talked to {PRONOUN/m_c/poss} mentor, r_c, and confessed {PRONOUN/m_c/subject} don't feel like a she-cat. r_c reassured {PRONOUN/m_c/object}, and offered to help tell c_n, if that was what m_c wanted. After all, it's r_c's job to help.",
+        "event_text": "m_c quietly talked to {PRONOUN/m_c/poss} mentor, r_c, and confessed that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} feel like a she-cat. r_c reassured {PRONOUN/m_c/object} and offered to help tell c_n, if that was what m_c wanted. After all, it's r_c's job to help.",
         "m_c": {
             "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
             "relationship_status": ["trusts", "app/mentor"],
@@ -18480,7 +18480,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c quietly talked to {PRONOUN/m_c/poss} mentor, r_c, and confessed {PRONOUN/m_c/subject} don't feel like a tom. r_c reassured {PRONOUN/m_c/object}, and offered to help tell c_n, if that was what m_c wanted. After all, it's r_c's job to help.",
+        "event_text": "m_c quietly talked to {PRONOUN/m_c/poss} mentor, r_c, and confessed that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} feel like a tom. r_c reassured {PRONOUN/m_c/object} and offered to help tell c_n, if that was what m_c wanted. After all, it's r_c's job to help.",
         "m_c": {
             "status": ["apprentice", "mediator apprentice", "medicine cat apprentice"],
             "relationship_status": ["trusts", "app/mentor"],
@@ -18618,7 +18618,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c sighed over the very relatable experience of not wanting to be a tom or she-cat. r_c noted that that probably wasn't a universal experience. The next day, m_c had an announcement to make.",
+        "event_text": "m_c sighed over the very relatable experience of wanting to be neither a tom or she-cat. r_c noted that that probably wasn't a universal experience. The next day, m_c had an announcement to make.",
         "m_c": {
             "age": ["-kitten"],
             "relationship_status": ["trusts", "likes"],
@@ -18899,7 +18899,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "r_c and m_c were on a walk together when m_c mentioned that {PRONOUN/m_c/subject} might not be a tom. While a bit surprised, r_c assured {PRONOUN/m_c/subject} that doesn't matter. {PRONOUN/r_c/subject/CAP} would be proud to have m_c as {PRONOUN/r_c/poss} partner no matter what.",
+        "event_text": "r_c and m_c were on a walk together when m_c mentioned that {PRONOUN/m_c/subject} might not be a tom. While a bit surprised, r_c assured {PRONOUN/m_c/object} that {PRONOUN/m_c/poss} gender doesn't matter. {PRONOUN/r_c/subject/CAP} would be proud to have m_c as {PRONOUN/r_c/poss} partner no matter what.",
         "m_c": {
             "age": ["-kitten"],
             "relationship_status": ["mates"],
@@ -18959,7 +18959,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "r_c and m_c were on a walk together when m_c mentioned that {PRONOUN/m_c/subject} might not be a she-cat. While a bit surprised, r_c assured {PRONOUN/m_c/subject} that doesn't matter. {PRONOUN/r_c/subject/CAP} would be proud to have m_c as {PRONOUN/r_c/poss} partner no matter what.",
+        "event_text": "r_c and m_c were on a walk together when m_c mentioned that {PRONOUN/m_c/subject} might not be a she-cat. While a bit surprised, r_c assured {PRONOUN/m_c/object} that {PRONOUN/m_c/poss} gender doesn't matter. {PRONOUN/r_c/subject/CAP} would be proud to have m_c as {PRONOUN/r_c/poss} partner no matter what.",
         "m_c": {
             "age": ["-kitten"],
             "relationship_status": ["mates"],
@@ -19019,7 +19019,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c had found a acc_singular to wear. Taking it as a sign, {PRONOUN/m_c/subject} announced that tom doesn't describe {PRONOUN/m_c/object} anymore. Going through life as {PRONOUN/m_c/poss} true self might be a scary change, but a positive one, like the butterfly going trough metamorphosis.",
+        "event_text": "m_c found a acc_singular to wear. Taking it as a sign, {PRONOUN/m_c/subject} announced that tom doesn't describe {PRONOUN/m_c/object} anymore. Going through life as {PRONOUN/m_c/poss} true self might be a scary change, but a positive one, like the butterfly going through metamorphosis.",
         "new_accessory": ["ROSY MOTH WINGS", "MORPHO BUTTERFLY", "MONARCH BUTTERFLY"],
         "m_c": {
             "age": ["-kitten"],
@@ -19056,7 +19056,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c had found a acc_singular to wear. Taking it as a sign, {PRONOUN/m_c/subject} announced that she-cat doesn't describe {PRONOUN/m_c/object} anymore. Going through life as {PRONOUN/m_c/poss} true self might be a scary change, but a positive one, like the butterfly going trough metamorphosis.",
+        "event_text": "m_c found a acc_singular to wear. Taking it as a sign, {PRONOUN/m_c/subject} announced that she-cat doesn't describe {PRONOUN/m_c/object} anymore. Going through life as {PRONOUN/m_c/poss} true self might be a scary change, but a positive one, like the butterfly going through metamorphosis.",
         "new_accessory": ["ROSY MOTH WINGS", "MORPHO BUTTERFLY", "MONARCH BUTTERFLY"],
         "m_c": {
             "age": ["-kitten"],
@@ -19093,7 +19093,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "Flowers bloom and change into beautiful versions of themselves. m_c took a acc_singular to wear, before telling c_n {PRONOUN/m_c/subject} {VERB/m_c/are/is} a tom.",
+        "event_text": "Flowers bloom and change into beautiful versions of themselves. m_c took a acc_singular to wear before telling c_n {PRONOUN/m_c/subject} {VERB/m_c/are/is} a tom.",
         "new_accessory": ["POPPY", "FORGET ME NOTS", "ORANGE POPPY", "CYAN POPPY", "WHITE POPPY", "PINK POPPY", "BLUEBELLS", "LILY OF THE VALLEY", "SNAPDRAGON", "HEATHER", "GORSE", "LAVENDER", "BULB WHITE", "BULB YELLOW", "BULB ORANGE", "BULB PINK", "BULB BLUE", "ROSE MALLOW", "PICKLEWEED", "DESERT WILLOW", "CACTUS FLOWER", "PRAIRIE FIRE", "VERBENA EAR", "VERBENA PELT", "WISTERIA", "GOLDEN CREEPING JENNY", "DAISY"],
         "m_c": {
             "age": ["-kitten"],
@@ -19129,7 +19129,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "Flowers bloom and change into beautiful versions of themselves. m_c took a acc_singular to wear, before telling c_n {PRONOUN/m_c/subject} {VERB/m_c/are/is} a she-cat.",
+        "event_text": "Flowers bloom and change into beautiful versions of themselves. m_c took a acc_singular to wear before telling c_n {PRONOUN/m_c/subject} {VERB/m_c/are/is} a she-cat.",
         "new_accessory": ["POPPY", "FORGET ME NOTS", "ORANGE POPPY", "CYAN POPPY", "WHITE POPPY", "PINK POPPY", "BLUEBELLS", "LILY OF THE VALLEY", "SNAPDRAGON", "HEATHER", "GORSE", "LAVENDER", "BULB WHITE", "BULB YELLOW", "BULB ORANGE", "BULB PINK", "BULB BLUE", "ROSE MALLOW", "PICKLEWEED", "DESERT WILLOW", "CACTUS FLOWER", "PRAIRIE FIRE", "VERBENA EAR", "VERBENA PELT", "WISTERIA", "GOLDEN CREEPING JENNY", "DAISY"],
         "m_c": {
             "age": ["-kitten"],
@@ -19165,7 +19165,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "Flowers bloom and change into beautiful versions of themselves. m_c took a acc_singular to wear, before telling c_n {PRONOUN/m_c/subject} {VERB/m_c/are/is} not a she-cat nor a tom.",
+        "event_text": "Flowers bloom and change into beautiful versions of themselves. m_c took a acc_singular to wear before telling c_n {PRONOUN/m_c/subject} {VERB/m_c/are/is} neither a she-cat nor a tom.",
         "new_accessory": ["POPPY", "FORGET ME NOTS", "ORANGE POPPY", "CYAN POPPY", "WHITE POPPY", "PINK POPPY", "BLUEBELLS", "LILY OF THE VALLEY", "SNAPDRAGON", "HEATHER", "GORSE", "LAVENDER", "BULB WHITE", "BULB YELLOW", "BULB ORANGE", "BULB PINK", "BULB BLUE", "ROSE MALLOW", "PICKLEWEED", "DESERT WILLOW", "CACTUS FLOWER", "PRAIRIE FIRE", "VERBENA EAR", "VERBENA PELT", "WISTERIA", "GOLDEN CREEPING JENNY", "DAISY"],
         "m_c": {
             "age": ["-kitten"],
@@ -19202,7 +19202,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c was baffled when {PRONOUN/m_c/subject} realized some cats <i>do</i> care about being called a tom, a she-cat, or anything else. {PRONOUN/m_c/subject/CAP} don't particularly care what {PRONOUN/m_c/subject} {VERB/m_c/are/is} called, but {PRONOUN/m_c/subject} suppose {PRONOUN/m_c/subject} {VERB/m_c/are/is}n't a tom in that case.",
+        "event_text": "m_c was baffled when {PRONOUN/m_c/subject} realized some cats <i>do</i> care about being called a tom, a she-cat, or anything else. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} particularly care what {PRONOUN/m_c/subject} {VERB/m_c/are/is} called, but {PRONOUN/m_c/subject} {VERB/m_c/suppose/supposes} {PRONOUN/m_c/subject} {VERB/m_c/are/is}n't a tom in that case.",
             "m_c": {
             "age": ["-kitten"],
             "gender": [
