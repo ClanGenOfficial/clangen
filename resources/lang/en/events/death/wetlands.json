@@ -83,7 +83,7 @@
     "season": ["greenleaf"],
     "tags": ["no_body"],
     "frequency": 3,
-    "event_text": "m_c adventured too far and found {PRONOUN/m_c/self} stuck in a bog. m_c could only struggle ",
+    "event_text": "m_c adventured too far and found {PRONOUN/m_c/self} stuck in a bog. m_c could only struggle in the muck until exhaustion claimed {PRONOUN/m_c/object}.",
     "m_c": {
         "status": [
             "-kitten"
