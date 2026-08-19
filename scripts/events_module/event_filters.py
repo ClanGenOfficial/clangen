@@ -995,6 +995,7 @@ def cat_for_event(
         "skill": _get_cats_with_skill,
         "trait": _get_cats_with_trait,
         "backstory": _get_cats_with_backstory,
+        "health": _get_cats_with_health,
     }
 
     # run funcs
@@ -1126,6 +1127,16 @@ def _get_cats_with_rel_status(
         rel_status_list = [f"-{x}" for x in rel_status_list]
 
     return cat_list, rel_status_list
+
+
+def _get_cats_with_health(cat_list: list, health_constraints: dict) -> list:
+    """
+    Checks cat_list against required health constraints
+    """
+    if not health_constraints:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_health(c, health_constraints)]
 
 
 def _get_cats_with_age(cat_list: list, ages: list[str]) -> list:
