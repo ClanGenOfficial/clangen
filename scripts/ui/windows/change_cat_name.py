@@ -118,6 +118,7 @@ class ChangeCatNameWindow(GameWindow):
                 manager=MANAGER,
                 container=self,
             )
+            self.toggle_specsuffix.hide()
         self.set_blocking(True)
 
     def process_event(self, event):
