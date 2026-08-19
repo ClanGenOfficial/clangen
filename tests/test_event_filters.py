@@ -13,7 +13,7 @@ from scripts.clan_resources.point_of_interest import (
     generate_and_add_new_poi,
     get_pois_by_category,
 )
-from scripts.conditions import get_ill
+from scripts.conditions import get_ill, get_injured
 
 try:
     import tomllib
@@ -2789,7 +2789,7 @@ class TestCatConstraint(unittest.TestCase):
         working_cat = cat_factory.create_cat()
         broken_cat = cat_factory.create_cat()
 
-        broken_cat.get_injured(name="broken bone")
+        get_injured(broken_cat, name="broken bone")
         ill_cat = cat_factory.create_cat()
         get_ill(cat=ill_cat, illness_name="greencough")
         born_para_cat = cat_factory.create_cat()

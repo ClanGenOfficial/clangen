@@ -32,6 +32,7 @@ from scripts.conditions import (
     medicine_cats_can_cover_clan,
     get_amount_cat_for_one_medic,
     get_ill,
+    get_injured,
 )
 from scripts.event_class import Single_Event
 
@@ -220,7 +221,8 @@ def one_moon():
                 shaken_cat_names = []
                 for cat in shaken_cats:
                     shaken_cat_names.append(str(cat.name))
-                    cat.get_injured(
+                    get_injured(
+                        cat,
                         "shock",
                         event_triggered=False,
                         lethal=False,
@@ -766,7 +768,7 @@ def handle_focus():
                     for injury, amount in injury_dict.items():
                         possible_injuries.extend([injury] * amount)
                     chosen_injury = random.choice(possible_injuries)
-                    cat.get_injured(chosen_injury)
+                    get_injured(cat, chosen_injury)
                     involved_cats["injured"].append(cat.ID)
                 else:
                     chance = constants.CONFIG["focus"]["hoarding"]["illness_chance"]

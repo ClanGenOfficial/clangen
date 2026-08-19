@@ -5,6 +5,7 @@ import i18n
 
 from scripts.cat.cats import Cat
 from scripts.clan_package.settings import get_clan_setting
+from scripts.conditions import get_injured
 from scripts.event_class import Single_Event
 from scripts.events_module.pregnancy.build_strings import (
     get_pregnancy_strings,
@@ -171,7 +172,7 @@ def _create_pregnancy_announcement(
     text = choice(get_pregnancy_strings()[announcement_key])
     event_text = text
     severity = choices(["minor", "major"], [3, 1], k=1)[0]
-    pregnant_cat.get_injured("pregnant", severity=severity)
+    get_injured(pregnant_cat, "pregnant", severity=severity)
     text += choice(get_pregnancy_strings()[f"{severity}_severity"])
     text = event_text_adjust(
         Cat,

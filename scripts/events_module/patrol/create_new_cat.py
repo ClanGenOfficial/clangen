@@ -13,7 +13,7 @@ from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan import OtherClan
 from scripts.clan_package.settings import get_clan_setting
-from scripts.conditions import get_ill
+from scripts.conditions import get_ill, get_injured
 from scripts.config import get_config
 from scripts.events_module.consequences import change_relationship_values
 from scripts.events_module.parameter_dicts import InvolvedCatDict
@@ -349,7 +349,7 @@ def _assign_health(created_cat, option_dict):
     if option_dict.get("health", {}).get("condition"):
         condition = choice(option_dict["health"]["condition"])
         if condition in INJURIES:
-            created_cat.get_injured(name=condition)
+            get_injured(created_cat, name=condition)
         elif condition in ILLNESSES:
             get_ill(created_cat, illness_name=condition)
         elif condition in PERMANENT:

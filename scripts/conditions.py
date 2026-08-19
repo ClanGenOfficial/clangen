@@ -5,15 +5,18 @@ TODO: Docs
 
 
 """
-from random import randrange
+from random import randrange, choice, random
+
+import i18n
 
 from scripts.cat.cats import Cat
-from scripts.cat.constants import ILLNESSES
+from scripts.cat.constants import ILLNESSES, INJURIES
 from scripts.cat.enums import CatRank
 
 # pylint: enable=line-too-long
 
 from scripts.cat.skills import SkillPath
+from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.game_structure import game
 
 
@@ -354,3 +357,121 @@ def get_ill(cat, illness_name, event_triggered=False, lethal=True, severity="def
             "risks": new_illness.risks,
             "event_triggered": new_illness.new,
         }
+
+
+def get_injured(
+    self,
+    name,
+    event_triggered=False,
+    lethal=True,
+    potential_scars=None,
+    severity="default",
+):
+    """Add an injury to this cat.
+
+    :param name: The injury to add
+    :type name: str
+    :param event_triggered: Whether to process healing immediately, defaults to False
+    :type event_triggered: bool, optional
+    :param lethal: _description_, defaults to True
+    :type lethal: bool, optional
+    :param potential_scars: List of possible scars to get upon healing, defaults to None
+    :type potential_scars: array, optional
+    :param severity: _description_, defaults to 'default'
+    :type severity: str, optional
+    """
+    if self.dead:
+        return
+
+    if name not in INJURIES:
+        print(f"WARNING: {name} is not in the injuries collection.")
+        return
+
+    if name == "mangled tail" and "NOTAIL" in self.pelt.scars:
+        return
+    if name == "torn ear" and "NOEAR" in self.pelt.scars:
+        return
+
+    injury = INJURIES[name]
+    mortality = injury["mortality"][self.age.value]
+    duration = injury["duration"]
+    med_duration = injury["medicine_duration"]
+
+    injury_severity = injury["severity"] if severity == "default" else severity
+    if medicine_cats_can_cover_clan(
+        Cat.all_cats.values(), get_amount_cat_for_one_medic(game.clan)
+    ):
+        duration = med_duration
+    if severity != "minor":
+        duration += randrange(-1, 1)
+    if duration == 0:
+        duration = 1
+    if lethal is False:
+        mortality = 0
+
+    new_injury = Injury(
+        name=name,
+        severity=injury_severity,
+        duration=injury["duration"],
+        medicine_duration=duration,
+        mortality=mortality,
+        risks=injury["risks"],
+        illness_infectiousness=injury["illness_infectiousness"],
+        also_got=injury["also_got"],
+        cause_permanent=injury["cause_permanent"],
+        event_triggered=event_triggered,
+        potential_scars=potential_scars,
+    )
+
+    if new_injury.name not in self.injuries:
+        self.injuries[new_injury.name] = {
+            "severity": new_injury.severity,
+            "mortality": new_injury.current_mortality,
+            "duration": new_injury.duration,
+            "moon_start": game.clan.age if game.clan else 0,
+            "illness_infectiousness": new_injury.illness_infectiousness,
+            "risks": new_injury.risks,
+            "complication": None,
+            "cause_permanent": new_injury.cause_permanent,
+            "event_triggered": new_injury.new,
+            "potential_scars": new_injury.potential_scars,
+        }
+
+    if (
+        not Cat.disable_random
+        and len(new_injury.also_got) > 0
+        and not int(random() * 5)
+    ):
+        avoided = False
+        if (
+            "blood loss" in new_injury.also_got
+            and len(
+                find_alive_cats_with_rank(Cat, [CatRank.MEDICINE_CAT], working=True)
+            )
+            != 0
+        ):
+            clan_herbs = {
+                herb
+                for herb, clan_has_herb in game.clan.herb_supply.entire_supply.items()
+                if clan_has_herb
+            }
+            needed_herbs = {"horsetail", "raspberry", "marigold", "cobwebs"}
+            usable_herbs = list(needed_herbs.intersection(clan_herbs))
+
+            if usable_herbs:
+                # deplete the herb
+                herb_used = choice(usable_herbs)
+                game.clan.herb_supply.remove_herb(herb_used, -1)
+                avoided = True
+                text = i18n.t("screens.med_den.blood_loss", name=self.name)
+                game.herb_events_list.append(text)
+
+        if not avoided:
+            self.also_got = True
+            additional_injury = choice(new_injury.also_got)
+            if additional_injury in INJURIES:
+                get_injured(self, additional_injury, event_triggered=True)
+            else:
+                get_ill(self, additional_injury, event_triggered=True)
+    else:
+        self.also_got = False

@@ -19,6 +19,7 @@ from scripts.conditions import (
     medicine_cats_can_cover_clan,
     get_amount_cat_for_one_medic,
     get_ill,
+    get_injured,
 )
 from scripts.config import get_config
 from scripts.event_class import Single_Event
@@ -1244,7 +1245,9 @@ class Condition_Events:
                 switch_append_list_value(Switch.skip_conditions, new_condition_name)
                 # here we give the new condition
                 if new_condition_name in Condition_Events.INJURIES:
-                    cat.get_injured(new_condition_name, event_triggered=event_triggered)
+                    get_injured(
+                        cat, new_condition_name, event_triggered=event_triggered
+                    )
                     break
                 elif new_condition_name in Condition_Events.ILLNESSES:
                     get_ill(cat, new_condition_name, event_triggered=event_triggered)
