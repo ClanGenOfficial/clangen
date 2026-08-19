@@ -49,6 +49,7 @@ from scripts.conditions import (
     PermanentCondition,
     get_amount_cat_for_one_medic,
     medicine_cats_can_cover_clan,
+    get_ill,
 )
 from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
@@ -1487,64 +1488,6 @@ class Cat:
     #                                  conditions                                  #
     # ---------------------------------------------------------------------------- #
 
-    def get_ill(self, name, event_triggered=False, lethal=True, severity="default"):
-        """Add an illness to this cat.
-
-        :param name: name of the illness (str)
-        :param event_triggered: Whether to have this illness skip `moon_skip_illness` for 1 moon, default `False` (bool)
-        :param lethal: Allow lethality, default `True` (bool)
-        :param severity: Override severity, default `'default'` (str, accepted values `'minor'`, `'major'`, `'severe'`)
-        """
-        if self.dead:
-            return
-        if name not in ILLNESSES:
-            print(f"WARNING: {name} is not in the illnesses collection.")
-            return
-        if name == "kittencough" and self.status.rank != CatRank.KITTEN:
-            return
-
-        illness = ILLNESSES[name]
-        mortality = illness["mortality"][self.age.value]
-        med_mortality = illness["medicine_mortality"][self.age.value]
-        illness_severity = illness["severity"] if severity == "default" else severity
-        duration = illness["duration"]
-        med_duration = illness["medicine_duration"]
-
-        amount_per_med = get_amount_cat_for_one_medic(game.clan)
-
-        if medicine_cats_can_cover_clan(Cat.all_cats.values(), amount_per_med):
-            duration = med_duration
-        if severity != "minor":
-            duration += randrange(-1, 1)
-        if duration == 0:
-            duration = 1
-
-        if lethal is False:
-            mortality = 0
-
-        new_illness = Illness(
-            name=name,
-            severity=illness_severity,
-            mortality=mortality,
-            infectiousness=illness["infectiousness"],
-            duration=duration,
-            medicine_duration=illness["medicine_duration"],
-            medicine_mortality=med_mortality,
-            risks=illness["risks"],
-            event_triggered=event_triggered,
-        )
-
-        if new_illness.name not in self.illnesses:
-            self.illnesses[new_illness.name] = {
-                "severity": new_illness.severity,
-                "mortality": new_illness.current_mortality,
-                "infectiousness": new_illness.infectiousness,
-                "duration": new_illness.duration,
-                "moon_start": game.clan.age if game.clan else 0,
-                "risks": new_illness.risks,
-                "event_triggered": new_illness.new,
-            }
-
     def get_injured(
         self,
         name,
@@ -1658,7 +1601,7 @@ class Cat:
                 if additional_injury in INJURIES:
                     self.additional_injury(additional_injury)
                 else:
-                    self.get_ill(additional_injury, event_triggered=True)
+                    get_ill(self, additional_injury, event_triggered=True)
         else:
             self.also_got = False
 
@@ -3115,8 +3058,6 @@ game.cat_class = Cat
 # ---------------------------------------------------------------------------- #
 
 resource_directory = "resources/dicts/conditions/"
-with open(f"{resource_directory}illnesses.json", "r", encoding="utf-8") as read_file:
-    ILLNESSES = ujson.loads(read_file.read())
 
 with open(f"{resource_directory}injuries.json", "r", encoding="utf-8") as read_file:
     INJURIES = ujson.loads(read_file.read())

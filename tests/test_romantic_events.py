@@ -60,7 +60,7 @@ class MovingOn(unittest.TestCase):
         Check if the cat will move on while grieving
         """
         self.cat2.die()
-        self.cat1.get_ill("grief stricken")
+        get_ill(cat=self.cat1, name="grief stricken")
         romantic_events._handle_moving_on(self.cat1)
 
         self.assertIn(

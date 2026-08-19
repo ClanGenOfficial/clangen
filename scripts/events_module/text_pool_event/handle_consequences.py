@@ -353,7 +353,7 @@ def _handle_conditions(
             if chosen_condition in INJURIES:
                 c.get_injured(chosen_condition, lethal=lethal, potential_scars=scars)
             elif chosen_condition in ILLNESSES:
-                c.get_ill(chosen_condition, lethal=lethal)
+                get_ill(c, chosen_condition, lethal=lethal)
             else:
                 c.get_permanent_condition(chosen_condition)
 

@@ -4,6 +4,7 @@ from typing import TYPE_CHECKING
 from scripts.cat.enums import CatThought
 from scripts.cat_relations.enums import RelTier, rel_type_tiers
 from scripts.cat_relations.relationship import Relationship
+from scripts.conditions import get_ill
 from scripts.events_module.text_adjust import event_text_adjust
 from scripts.game_structure import game
 
@@ -100,7 +101,7 @@ def grief(dead_cat: "Cat", body: bool):
             text = choice(possible_strings)
             text = event_text_adjust(Cat, text=text, main_cat=dead_cat, random_cat=cat)
 
-            cat.get_ill("grief stricken", event_triggered=True, severity="major")
+            get_ill(cat, "grief stricken", event_triggered=True, severity="major")
 
         # If major grief fails, but there are still very_high or high values,
         # it can fail to minor grief. If they have a family relation, bypass the roll and guarantee it

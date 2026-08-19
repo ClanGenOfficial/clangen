@@ -31,6 +31,7 @@ from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import (
     medicine_cats_can_cover_clan,
     get_amount_cat_for_one_medic,
+    get_ill,
 )
 from scripts.event_class import Single_Event
 
@@ -775,7 +776,7 @@ def handle_focus():
                         for illness, amount in injury_dict.items():
                             possible_illnesses.extend([illness] * amount)
                         chosen_illness = random.choice(possible_illnesses)
-                        cat.get_ill(chosen_illness)
+                        get_ill(cat, chosen_illness)
                         involved_cats["sick"].append(cat.ID)
 
         # if it is raiding, lower the relation to other clans
@@ -2398,8 +2399,8 @@ def handle_outbreaks(cat):
             for sick_meowmeow in infected_cats:
                 infected_names.append(str(sick_meowmeow.name))
                 involved_cats.append(sick_meowmeow.ID)
-                sick_meowmeow.get_ill(
-                    illness, event_triggered=True
+                get_ill(
+                    sick_meowmeow, illness, event_triggered=True
                 )  # SPREAD THE GERMS >:)
 
             # TODO: hardcoded text events, not good, need to consider how to convert
