@@ -40,33 +40,14 @@ class PointsOfInterestTag(RootModel):
     root: Union[str, PointsOfInterestTagEnum]
 
 
-class PointsOfInterestGroupByName(BaseModel):
+class PointsOfInterestGroup(BaseModel):
     model_config = ConfigDict(extra="forbid")
     name: List[str] = Field(
         ..., description="Points of Interest with these specific IDs will be allowed."
     )
-
-
-class PointsOfInterestGroupByTags(BaseModel):
-    model_config = ConfigDict(extra="forbid")
     tags: List[PointsOfInterestTag] = Field(
         ..., description="Points of Interest with these tags will be allowed."
     )
-
-
-class PointsOfInterestGroupByCategory(BaseModel):
-    model_config = ConfigDict(extra="forbid")
     category: Union[PointsOfInterestCategoryEnum, MISSING] = Field(
         ..., description="The category this POI belongs to."
-    )
-
-
-class PointsOfInterestGroup(RootModel):
-    root: Union[
-        PointsOfInterestGroupByName,
-        PointsOfInterestGroupByTags,
-        PointsOfInterestGroupByCategory,
-    ] = Field(
-        ...,
-        description="Specifies Points of Interest constraints. Must use names OR tags OR category (not multiple at once).",
     )
