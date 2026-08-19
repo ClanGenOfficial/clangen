@@ -372,6 +372,7 @@ class TestPointsOfInterest(unittest.TestCase):
             "empty name": {"name": [], "tags": ["water"]},
             "empty tags": {"name": ["test_name"], "tags": []},
             "None category": {"name": ["test_name"], "category": None},
+            "category and tag": {"tags": ["prey"], "category": "gathering"},
         }
 
         for title, event_poi in combinations.items():
@@ -384,6 +385,14 @@ class TestPointsOfInterest(unittest.TestCase):
             "no tag": {"tags": ["Twolegs", "cave"]},
             "match generic tag but not exact": {"tags": ["prey:bird"]},
             "invalid category": {"category": "not found"},
+            "invalid category with valid tag": {
+                "tags": ["prey"],
+                "category": "not found",
+            },
+            "invalid tag with valid category": {
+                "tags": ["prey:bird"],
+                "category": "gathering",
+            },
         }
 
         for title, event_poi in bad_combinations.items():

@@ -1,6 +1,6 @@
 from enum import StrEnum
 from random import choice
-from typing import Dict, Union, List, Literal
+from typing import Dict, Union, List, Literal, Optional
 
 import ujson
 
@@ -30,7 +30,10 @@ def get_poi_from_constraints(
     name: list[str] = None,
     tags: list[str] = None,
     category: Literal["gathering", "moonplace", "terrain"] = None,
-) -> str:
+) -> Optional[str]:
+    """
+    Returns the name of a poi that the Clan has access too and that matches the given constraints.
+    """
     possible_poi = set()
 
     if name:
@@ -38,7 +41,10 @@ def get_poi_from_constraints(
     if tags:
         tagged_poi = []
         for tag in tags:
-            tagged_poi.extend(_poi_by_tags.get(tag, "MISSING_POI"))
+            tagged_poi.extend(_poi_by_tags.get(tag, []))
+
+        if not tagged_poi:
+            return None
 
         if possible_poi:
             possible_poi.intersection(set(tagged_poi))
@@ -46,6 +52,9 @@ def get_poi_from_constraints(
             possible_poi.update(set(tagged_poi))
     if category:
         possible_by_category = get_pois_by_category(category)
+
+        if not possible_by_category:
+            return None
 
         if possible_poi:
             possible_poi.intersection(possible_by_category)
@@ -56,7 +65,7 @@ def get_poi_from_constraints(
 
 
 def get_pois_by_category(category: Literal["gathering", "moonplace", "terrain"]):
-    return list(_poi_by_category[category])
+    return list(_poi_by_category.get(category, []))
 
 
 def get_poi_names_set():
@@ -105,6 +114,13 @@ def add_poi(name, elements):
 
     global _poi_by_tags
     for tag in elements["tags"]:
+        if ":" in tag:
+            split_tag = tag.split(":", 1)[0]
+            if split_tag in _poi_by_tags:
+                _poi_by_tags[split_tag].append(name)
+            else:
+                _poi_by_tags[split_tag] = [name]
+
         if tag in _poi_by_tags:
             _poi_by_tags[tag].append(name)
         else:
