@@ -186,9 +186,9 @@
     },
      "envenomated": {
         "an infected wound":[
-            "Despite the hardwork of r_c, an infection has found it's way into m_c's wound.",
-            "To make matters worse m_c's wound has become infected.",
-            "m_c grows weaker - an infection has set in {PRONOUN/m_c/object} wound. ",
+            "Despite the hard work of r_c, an infection has found its way into m_c's body through the venom.",
+            "To make matters worse, m_c's wound has become infected from the venom.",
+            "m_c grows weaker - an infection has set in {PRONOUN/m_c/object} wound.",
             "Left weak from the venom, m_c barely has the energy to notice the growing infection."
         ],
         "seizure": [
