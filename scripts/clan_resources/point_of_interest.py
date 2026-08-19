@@ -26,6 +26,35 @@ class PoiType(StrEnum):
     TERRAIN = "terrain"
 
 
+def get_poi_from_constraints(
+    name: list[str] = None,
+    tags: list[str] = None,
+    category: Literal["gathering", "moonplace", "terrain"] = None,
+) -> str:
+    possible_poi = set()
+
+    if name:
+        possible_poi = set(name).intersection(get_poi_names_set())
+    if tags:
+        tagged_poi = []
+        for tag in tags:
+            tagged_poi.extend(_poi_by_tags.get(tag, "MISSING_POI"))
+
+        if possible_poi:
+            possible_poi.intersection(set(tagged_poi))
+        else:
+            possible_poi.update(set(tagged_poi))
+    if category:
+        possible_by_category = get_pois_by_category(category)
+
+        if possible_poi:
+            possible_poi.intersection(possible_by_category)
+        else:
+            possible_poi.update(possible_by_category)
+
+    return choice(list(possible_poi))
+
+
 def get_pois_by_category(category: Literal["gathering", "moonplace", "terrain"]):
     return list(_poi_by_category[category])
 
