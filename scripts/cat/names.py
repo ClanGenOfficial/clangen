@@ -23,6 +23,7 @@ class Name:
     current_save_dir = None
     currently_loaded_lang = None
     names_dict = {}
+    prefix_history = []
 
     def __init__(
         self,
@@ -32,7 +33,6 @@ class Name:
         specsuffix_hidden=False,
         load_existing_name=False,
         cat=None,
-        pelt=None,
     ):
         self.load_localized_names()
         self.prefix = prefix
@@ -41,22 +41,16 @@ class Name:
 
         self.cat = cat
 
-        if pelt is not None:
-            color = pelt.colour
-            eyes = pelt.eye_colour
-            pelt = pelt.name
-            tortie_pattern = pelt.tortie_pattern
-        else:
-            try:
-                color = cat.pelt.colour
-                eyes = cat.pelt.eye_colour
-                pelt = cat.pelt.name
-                tortie_pattern = cat.pelt.tortie_pattern
-            except AttributeError:
-                color = None
-                eyes = None
-                pelt = None
-                tortie_pattern = None
+        try:
+            color = cat.pelt.colour
+            eyes = cat.pelt.eye_colour
+            pelt = cat.pelt.name
+            tortie_pattern = cat.pelt.tortie_pattern
+        except AttributeError:
+            color = None
+            eyes = None
+            pelt = None
+            tortie_pattern = None
 
         name_fixpref = False
         # Set prefix
@@ -73,66 +67,54 @@ class Name:
                 name_fixpref = False
 
         if self.suffix and not load_existing_name:
-            # Prevent triple letter names from joining prefix and suffix from occurring (ex. Beeeye)
+            # check if random die was for prefix
+            if name_fixpref:
+                self.give_prefix(eyes, color, biome)
+            else:
+                self.give_suffix(pelt, biome, tortie_pattern)
+
+    @classmethod
+    def _usable_name(cls, prefix, suffix):
+        if prefix is None or suffix is None:
+            return True
+
+        name = prefix + suffix
+
+        # Prevent triple letter names from joining prefix and suffix from occurring (ex. Beeeye)
+        # Prevent crash on empty prefix or suffix (e.g. empty-suffix loner names)
+        if not prefix or not suffix:
+            triple_letter = False
+        else:
             possible_three_letter = (
-                self.prefix[-2:] + self.suffix[0],
-                self.prefix[-1] + self.suffix[:2],
+                prefix[-2:] + suffix[0],
+                prefix[-1] + suffix[:2],
             )
             triple_letter = all(
                 i == possible_three_letter[0][0] for i in possible_three_letter[0]
-            ) or all(
-                i == possible_three_letter[1][0]
-                for i in possible_three_letter[1]
-                # Prevent double animal names (ex. Spiderfalcon)
-            )
-            double_animal = (
-                self.prefix in self.names_dict["animal_prefixes"]
-                and self.suffix in self.names_dict["animal_suffixes"]
-            )
+            ) or all(i == possible_three_letter[1][0] for i in possible_three_letter[1])
+
+        # Prevent double animal names (ex. Spiderfalcon)
+        double_animal = (
+            prefix in cls.names_dict["animal_prefixes"]
+            and suffix in cls.names_dict["animal_suffixes"]
+        )
+
+        # Prevent double names (ex. Iceice)
+        # Prevent suffixes containing the prefix (ex. Butterflyfly)
+        double_name = (prefix.lower() in suffix.lower() and str(prefix) != "") or (
+            suffix.lower() in prefix.lower() and str(suffix) != ""
+        )
+
+        return not (
             # Prevent the inappropriate names
-            nono_name = self.prefix + self.suffix
-            # Prevent double names (ex. Iceice)
-            # Prevent suffixes containing the prefix (ex. Butterflyfly)
+            name.lower() in cls.names_dict["inappropriate_names"]
+            or triple_letter
+            or double_animal
+            or double_name
+        )
 
-            i = 0
-            while (
-                nono_name.lower() in self.names_dict["inappropriate_names"]
-                or triple_letter
-                or double_animal
-                or (
-                    self.prefix.lower() in self.suffix.lower()
-                    and str(self.prefix) != ""
-                )
-                or (
-                    self.suffix.lower() in self.prefix.lower()
-                    and str(self.suffix) != ""
-                )
-            ):
-                # check if random die was for prefix
-                if name_fixpref:
-                    self.give_prefix(eyes, color, biome)
-                else:
-                    self.give_suffix(pelt, biome, tortie_pattern)
-
-                nono_name = self.prefix + self.suffix
-                possible_three_letter = (
-                    self.prefix[-2:] + self.suffix[0],
-                    self.prefix[-1] + self.suffix[:2],
-                )
-                if any(
-                    i != possible_three_letter[0][0] for i in possible_three_letter[0]
-                ) and any(
-                    i != possible_three_letter[1][0] for i in possible_three_letter[1]
-                ):
-                    triple_letter = False
-                if (
-                    self.prefix not in self.names_dict["animal_prefixes"]
-                    or self.suffix not in self.names_dict["animal_suffixes"]
-                ):
-                    double_animal = False
-                i += 1
-
-    def load_localized_names(self):
+    @classmethod
+    def load_localized_names(cls):
         """
         Loads the correct names for the given language. Includes override for always using English names, in case localization wants to be ignored
         :return: None
@@ -146,10 +128,7 @@ class Name:
         else:
             lang = i18n.config.get("locale")
 
-        if (
-            self.current_save_dir == get_save_dir()
-            and self.currently_loaded_lang == lang
-        ):
+        if cls.current_save_dir == get_save_dir() and cls.currently_loaded_lang == lang:
             # nothing to do here, all good
             return
 
@@ -211,9 +190,9 @@ class Name:
                             _tmp = new_name.split(":")
                             names_dict["special_suffixes"][_tmp[0]] = _tmp[1]
 
-        self.names_dict = names_dict
-        self.current_save_dir = save_dir
-        self.currently_loaded_lang = lang
+        cls.names_dict = names_dict
+        cls.current_save_dir = save_dir
+        cls.currently_loaded_lang = lang
 
     def __str__(self):
         return self.__repr__()
@@ -235,23 +214,13 @@ class Name:
         weights = constants.CONFIG["cat_name_controls"][str(social)]
 
         selected_category = random.choices(name_categories, weights, k=1)[0]
-        name = random.choice(names.names_dict[selected_category])
+        name = random.choice(self.names_dict[selected_category])
         self.cat.change_name(new_prefix=name, new_suffix="")
 
     # Generate possible prefix
     def give_prefix(self, eyes, colour, biome):
         """Generate possible prefix."""
         self.load_localized_names()
-
-        # decided in constants.CONFIG: cat_name_controls
-        if constants.CONFIG["cat_name_controls"]["always_name_after_appearance"]:
-            named_after_appearance = True
-        else:
-            named_after_appearance = not random.getrandbits(
-                2
-            )  # Chance for True is '1/4'
-
-        named_after_biome_ = not random.getrandbits(3)  # chance for True is 1/8
 
         # Add possible prefix categories to list.
         possible_prefix_categories = []
@@ -267,71 +236,76 @@ class Name:
         if biome is not None and biome in self.names_dict["biome_prefixes"]:
             possible_prefix_categories.append(self.names_dict["biome_prefixes"][biome])
 
-        # Choose appearance-based prefix if possible and named_after_appearance because True.
-        if (
-            named_after_appearance
-            and possible_prefix_categories
-            and not named_after_biome_
-            or named_after_biome_
-            and possible_prefix_categories
-        ):
-            prefix_category = random.choice(possible_prefix_categories)
-            self.prefix = random.choice(prefix_category)
-        else:
-            self.prefix = random.choice(self.names_dict["normal_prefixes"])
-
-        # This thing prevents any prefix duplications from happening.
-        # Try statement stops this form running when initializing.
-        with contextlib.suppress(NameError):
-            if self.prefix in names.prefix_history:
-                # do this recursively until a name that isn't on the history list.
-                self.give_prefix(eyes, colour, biome)
-                # prevent infinite recursion
-                if len(names.prefix_history) > 0:
-                    names.prefix_history.pop(0)
+        while True:
+            # decided in constants.CONFIG: cat_name_controls
+            if constants.CONFIG["cat_name_controls"]["always_name_after_appearance"]:
+                named_after_appearance = True
             else:
-                names.prefix_history.append(self.prefix)
-            # Set the maximin length to 8 just to be sure
-            if len(names.prefix_history) > 8:
-                # removing at zero so the oldest gets removed
-                names.prefix_history.pop(0)
+                named_after_appearance = not random.getrandbits(
+                    2
+                )  # Chance for True is '1/4'
+
+            named_after_biome = not random.getrandbits(3)  # chance for True is 1/8
+            # Choose appearance-based prefix if possible and named_after_appearance because True.
+            if (
+                named_after_appearance
+                and possible_prefix_categories
+                and not named_after_biome
+                or named_after_biome
+                and possible_prefix_categories
+            ):
+                prefix_category = random.choice(possible_prefix_categories)
+                self.prefix = random.choice(prefix_category)
+            else:
+                self.prefix = random.choice(self.names_dict["normal_prefixes"])
+
+            # prevent prefix duplications from happening
+            if self.prefix in self.prefix_history or not self._usable_name(
+                self.prefix, self.suffix
+            ):
+                continue
+            else:
+                self.prefix_history.append(self.prefix)
+                # Set the maximin length to 8 just to be sure
+                if len(self.prefix_history) > 8:
+                    # removing at zero so the oldest gets removed
+                    self.prefix_history.pop(0)
+                return
 
     # Generate possible suffix
     def give_suffix(self, pelt, biome, tortie_pattern):
         """Generate possible suffix."""
         self.load_localized_names()
 
-        if pelt is None or pelt == "SingleColour":
-            self.suffix = random.choice(self.names_dict["normal_suffixes"])
-        else:
-            named_after_pelt = not random.getrandbits(2)  # Chance for True is '1/8'.
-            named_after_biome = not random.getrandbits(3)  # 1/8
-            # Pelt name only gets used if there's an associated suffix.
-            if named_after_pelt:
-                if (
-                    pelt in ("Tortie", "Calico")
-                    and tortie_pattern in self.names_dict["tortie_pelt_suffixes"]
-                ):
-                    self.suffix = random.choice(
-                        self.names_dict["tortie_pelt_suffixes"][tortie_pattern]
-                    )
-                elif pelt in self.names_dict["pelt_suffixes"]:
-                    self.suffix = random.choice(self.names_dict["pelt_suffixes"][pelt])
-                else:
-                    self.suffix = random.choice(self.names_dict["normal_suffixes"])
-            elif named_after_biome:
-                if biome in self.names_dict["biome_suffixes"]:
-                    self.suffix = random.choice(
-                        self.names_dict["biome_suffixes"][biome]
-                    )
-                else:
-                    self.suffix = random.choice(self.names_dict["normal_suffixes"])
-            else:
-                self.suffix = random.choice(self.names_dict["normal_suffixes"])
+        while True:
+            pool = self.names_dict["normal_suffixes"]
 
-    def change_name(self, prefix, suffix):
-        self.prefix = prefix
-        self.suffix = suffix
+            if pelt is not None or pelt != "SingleColour":
+                named_after_pelt = not random.getrandbits(
+                    2
+                )  # Chance for True is '1/8'.
+                named_after_biome = not random.getrandbits(3)  # 1/8
+                # Pelt name only gets used if there's an associated suffix.
+                if named_after_pelt:
+                    if (
+                        pelt in ("Tortie", "Calico")
+                        and tortie_pattern in self.names_dict["tortie_pelt_suffixes"]
+                    ):
+                        pool = self.names_dict["tortie_pelt_suffixes"][tortie_pattern]
+                    elif pelt in self.names_dict["pelt_suffixes"]:
+                        pool = self.names_dict["pelt_suffixes"][pelt]
+                    else:
+                        pool = self.names_dict["normal_suffixes"]
+                elif named_after_biome:
+                    if biome in self.names_dict["biome_suffixes"]:
+                        pool = self.names_dict["biome_suffixes"][biome]
+                    else:
+                        pool = self.names_dict["normal_suffixes"]
+                else:
+                    pool = self.names_dict["normal_suffixes"]
+            self.suffix = random.choice(pool)
+            if self._usable_name(self.prefix, self.suffix):
+                return
 
     def get_specsuffix_name(self, rank: CatRank = CatRank.LEADER):
         """
@@ -391,5 +365,4 @@ class Name:
         return self.prefix + self.suffix
 
 
-names = Name()
-names.prefix_history = []
+Name.load_localized_names()

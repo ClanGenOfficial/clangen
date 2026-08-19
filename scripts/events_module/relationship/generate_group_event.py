@@ -1,5 +1,5 @@
-from random import choice, choices, sample
-from typing import Union, List, Optional
+from random import choice, choices
+from typing import Union, Optional
 
 import i18n
 
@@ -7,15 +7,10 @@ from scripts.cat.cats import Cat
 from scripts.config import get_config
 from scripts.event_class import Single_Event
 from scripts.events_module.consequences import change_relationship_values
-from scripts.events_module.event_filters import (
-    event_for_cat,
-    cat_for_event,
-    check_rel_constraint_groups,
-)
-from scripts.events_module.parameter_dicts import (
-    InvolvedCatDict,
-)
 from scripts.events_module.text_adjust import process_text, adjust_list_text
+from scripts.events_module.text_pool_event.check_general_constraints import (
+    passes_general_constraints,
+)
 from scripts.events_module.text_pool_event.find_involved_cats import find_cats
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
@@ -125,9 +120,18 @@ def _find_event_and_cats(
         for c in Cat.all_cats_list
         if (c.status.is_other_clancat or c.status.is_outsider) and not c.dead
     ]
+    other_clan = (
+        choice(game.clan.all_other_clans) if game.clan.all_other_clans else None
+    )
     while not chosen_event and possible_events:
         involved_cats = {"m_c": main_cat}
         event_to_test = choices(possible_events, [e.weight for e in possible_events])[0]
+        if not passes_general_constraints(
+            event_to_test, involved_cats["m_c"], involved_cats, other_clan
+        ):
+            possible_events.remove(event_to_test)
+            continue
+
         # make sure none of the interactable cats are already assigned to an abbr
         interactable_cats = [
             c for c in interactable_cats if c not in involved_cats.values()
@@ -137,9 +141,7 @@ def _find_event_and_cats(
             involved_cats=involved_cats,
             outside_cats=outside_cats,
             event=event_to_test,
-            other_clan=choice(game.clan.all_other_clans)
-            if game.clan.all_other_clans
-            else None,
+            other_clan=other_clan,
         )
         if not temp_involved_cats:
             possible_events.remove(event_to_test)
@@ -180,22 +182,6 @@ def _influence_relationships(involved_cats, event: TextPoolEvent, chosen_string:
         change_relationship_values(
             cats_from=cats_from, cats_to=cats_to, **value_changes, log=chosen_string
         )
-
-
-def _find_events_for_main_cat(cat: Cat, possible_events: List[TextPoolEvent]) -> list:
-    """
-    Returns possible events for the given cat.
-    """
-    allowed = []
-    for event in possible_events:
-        if event_for_cat(
-            event.involved_cats["m_c"],
-            cat,
-            event_id=event.event_id,
-        ):
-            allowed.append(event)
-
-    return allowed
 
 
 def _load_file(path) -> list[TextPoolEvent]:
