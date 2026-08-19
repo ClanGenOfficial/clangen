@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 from scripts.cat.enums import CatThought
 from scripts.cat_relations.enums import RelTier, rel_type_tiers
 from scripts.cat_relations.relationship import Relationship
-from scripts.conditions import get_ill
+from scripts.cat.microservices.conditions import get_ill
 from scripts.events_module.text_adjust import event_text_adjust
 from scripts.game_structure import game
 
@@ -26,7 +26,7 @@ def grief(dead_cat: "Cat", body: bool):
     text = None
 
     # apply grief to cats with high positive relationships to dead cat
-    for cat in Cat.all_cats.values():
+    for cat in dead_cat.all_cats.values():
         if cat.dead or cat.status.is_outsider or cat.moons < 1:
             continue
 
@@ -99,7 +99,7 @@ def grief(dead_cat: "Cat", body: bool):
                 continue
 
             text = choice(possible_strings)
-            text = event_text_adjust(Cat, text=text, main_cat=dead_cat, random_cat=cat)
+            text = event_text_adjust(cat, text=text, main_cat=dead_cat, random_cat=cat)
 
             get_ill(cat, "grief stricken", event_triggered=True, severity="major")
 
@@ -138,7 +138,7 @@ def grief(dead_cat: "Cat", body: bool):
                 )
 
             text = event_text_adjust(
-                Cat, choice(possible_strings), main_cat=dead_cat, random_cat=cat
+                cat, choice(possible_strings), main_cat=dead_cat, random_cat=cat
             )
             if cat.ID not in game.clan.grief_strings:
                 game.clan.grief_strings[cat.ID] = []

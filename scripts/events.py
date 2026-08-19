@@ -34,9 +34,8 @@ from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import (
     medicine_cats_can_cover_clan,
     get_amount_cat_for_one_medic,
-    get_ill,
-    get_injured,
 )
+from scripts.cat.microservices.conditions import get_ill, get_injured
 from scripts.event_class import Single_Event
 
 from scripts.events_module.generate_events import GenerateEvents, generate_events

@@ -18,6 +18,8 @@ from scripts.clan_resources.freshkill import (
 from scripts.conditions import (
     medicine_cats_can_cover_clan,
     get_amount_cat_for_one_medic,
+)
+from scripts.cat.microservices.conditions import (
     get_ill,
     get_injured,
     get_permanent_condition,

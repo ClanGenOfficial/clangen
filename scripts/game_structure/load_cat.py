@@ -38,7 +38,7 @@ from ..clan_resources.point_of_interest import (
     generate_and_add_new_poi,
     PoiType,
 )
-from ..conditions import get_permanent_condition
+from ..cat.microservices.conditions import get_permanent_condition
 from ..housekeeping.datadir import get_save_dir
 
 logger = logging.getLogger(__name__)

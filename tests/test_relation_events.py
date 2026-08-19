@@ -8,7 +8,7 @@ from scripts.clan_package.settings import (
     load_clan_settings,
     set_clan_setting,
 )
-from scripts.conditions import get_injured
+from scripts.cat.microservices.conditions import get_injured
 from scripts.game_structure import game
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"

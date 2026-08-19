@@ -25,6 +25,7 @@ from scripts.cat.save_load import (
     save_cats,
     get_faded_ids,
 )
+from scripts.cat_relations.cat_handle_funcs import init_all_relationships
 from scripts.clan_package.clan_names import get_possible_clan_names
 from scripts.clan_package.settings import save_clan_settings, load_clan_settings
 from scripts.clan_package.settings.clan_settings import (

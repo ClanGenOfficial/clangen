@@ -14,7 +14,11 @@ from scripts.clan_resources.point_of_interest import (
     generate_and_add_new_poi,
     get_pois_by_category,
 )
-from scripts.conditions import get_ill, get_injured
+from scripts.cat.microservices.conditions import (
+    get_ill,
+    get_injured,
+    get_permanent_condition,
+)
 
 try:
     import tomllib
@@ -2795,9 +2799,9 @@ class TestCatConstraint(unittest.TestCase):
         ill_cat = cat_factory.create_cat()
         get_ill(cat=ill_cat, illness_name="greencough")
         born_para_cat = cat_factory.create_cat()
-        born_para_cat.get_permanent_condition(name="paralyzed", born_with=True)
+        get_permanent_condition(born_para_cat, name="paralyzed", born_with=True)
         acquired_para_cat = cat_factory.create_cat()
-        acquired_para_cat.get_permanent_condition(name="paralyzed", born_with=False)
+        get_permanent_condition(acquired_para_cat, name="paralyzed", born_with=False)
 
         # cat must be working and is
         with self.subTest("must work and is working"):

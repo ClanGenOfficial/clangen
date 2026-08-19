@@ -5,7 +5,7 @@ import i18n
 
 from scripts.cat.cats import Cat
 from scripts.clan_package.settings import get_clan_setting
-from scripts.conditions import get_injured
+from scripts.cat.microservices.conditions import get_injured
 from scripts.event_class import Single_Event
 from scripts.events_module.pregnancy.build_strings import (
     get_pregnancy_strings,

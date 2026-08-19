@@ -9,7 +9,7 @@ from scripts.cat.names import Name
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.clan_package.settings import get_clan_setting
-from scripts.conditions import get_injured
+from scripts.cat.microservices.conditions import get_injured
 from scripts.config import get_config
 from scripts.event_class import Single_Event
 from scripts.events_module.consequences import (

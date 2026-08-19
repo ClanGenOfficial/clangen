@@ -32,6 +32,7 @@ from scripts.cat.factories.typed_dicts import (
     GenderDict,
 )
 from scripts.cat.history import History
+from scripts.cat.microservices.grief import grief
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
@@ -536,7 +537,7 @@ class Cat:
             and self.status.get_last_living_group() == CatGroup.PLAYER_CLAN_ID
             and not self.status.is_exiled(CatGroup.PLAYER_CLAN_ID)
         ):
-            microservices.grief.grief(self, body)
+            grief(self, body)
             game.dead_cats_to_grieve.append(self)
 
         # mark the sprite as outdated
@@ -1837,7 +1838,7 @@ class Cat:
 
         if not other_cat.dead:
             if self.ID not in other_cat.relationships:
-                create_one_relationship(self, other_cat)
+                create_one_relationship(other_cat, self)
                 other_cat.relationships[self.ID].mates = True
             other_relationship = other_cat.relationships[self.ID]
             other_relationship.romance += 20
