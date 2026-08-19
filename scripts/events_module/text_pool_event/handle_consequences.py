@@ -132,7 +132,7 @@ def _handle_joining(
         joined.extend(cat_list)
         for c in joined:
             cat_names.append(_profile_link(c))
-            c.get_new_thought(CatThought.ON_JOIN)
+            c.assign_thought(CatThought.ON_JOIN)
 
         relation_events.trigger_joining_relationship_events(joined)
 

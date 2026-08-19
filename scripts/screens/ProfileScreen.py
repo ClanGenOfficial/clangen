@@ -17,6 +17,7 @@ from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 from scripts.game_structure import image_cache, game
 from scripts.ui.windows.cruel_locked_action import CruelLockedAction
+from ..events_module.thoughts.generate_thoughts import get_new_thought
 from ..ui.elements.modified_image import UIModifiedImage
 from ..ui.elements.text_box_tweaked import UITextBoxTweaked
 from ..ui.elements.image_button import UIImageButton
@@ -298,7 +299,7 @@ class ProfileScreen(Screens):
                 elif self.the_cat.genderalign in ["trans female", "trans male"]:
                     self.the_cat.genderalign = "nonbinary"
                 self.the_cat.pronouns = get_new_pronouns(self.the_cat.genderalign)
-                self.the_cat.get_new_thought()
+                self.the_cat.assign_thought()
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
@@ -331,7 +332,7 @@ class ProfileScreen(Screens):
                                 new_group_ID=CatGroup.DARK_FOREST_ID
                             )
 
-                        self.the_cat.get_new_thought(CatThought.IS_GUIDE)
+                        self.the_cat.assign_thought(CatThought.IS_GUIDE)
                         self.the_cat.pelt.rebuild_sprite = True
                     else:
                         # DF -> UR
@@ -349,7 +350,7 @@ class ProfileScreen(Screens):
                             self.the_cat.status.add_to_group(
                                 new_group_ID=CatGroup.DARK_FOREST_ID
                             )
-                        self.the_cat.get_new_thought(CatThought.ON_AFTERLIFE_CHANGE)
+                        self.the_cat.assign_thought(CatThought.ON_AFTERLIFE_CHANGE)
                         self.the_cat.pelt.rebuild_sprite = True
 
                     update_afterlife_temper()
@@ -563,19 +564,10 @@ class ProfileScreen(Screens):
 
         # initialize thoughts if they have none
         if not self.the_cat.thought:
-            if self.the_cat is game.clan.instructor:
-                self.the_cat.get_new_thought(CatThought.IS_GUIDE)
-            elif self.the_cat.status.is_other_clancat:
-                # this isn't great, but it's only being run if someone checks an
-                # other clan cat when booting the game before doing a timeskip
-                other_clan_cats = [
-                    c for c in Cat.all_cats_list if c.status.is_other_clancat
-                ]
-                self.the_cat.get_new_thought(other_clan_cats=other_clan_cats)
-            elif self.the_cat.dead:
-                self.the_cat.get_new_thought(CatThought.WHILE_DEAD)
-            else:
-                self.the_cat.get_new_thought(CatThought.WHILE_ALIVE)
+            if not self.the_cat.next_thought_type:
+                self.the_cat.assign_thought()
+
+            get_new_thought(self.the_cat, self.the_cat.next_thought_type)
 
         # Info in string
         cat_name = str(self.the_cat.name)

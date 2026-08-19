@@ -1,24 +1,21 @@
 {
     "name": "TickedRecipe",
-    "layer_order": ["1", "2", "3", "4", "5", "6", ["8", ["9", "10", "11", "12", "+blend_mode:mask"]]],
+    "layer_order": ["1", "2", "3", "4", "5", "6", "7", ["8", ["9", "10", "11", "+blend_mode:mask"]]],
     "layers": {
-        "12":{
+        "11":{
             "group_name": "TICKEDPATTERN"
         },
-        "11":{
+        "10":{
             "group_name": "TICKEDSTRIPEFADE",
             "opacity": 50
         },
-        "10":{
+        "9":{
             "group_name": "TICKEDDOTS",
             "opacity": 50
         },
-        "9":{
-            "group_name": "TICKEDTOPGRAD"
-        },
         "8": {
             "group_name": "BASICPATTERNGRAD",
-            "color": "pattern"
+            "color": "pattern_gradient_top"
         },
         "7":{
             "group_name": "TICKEDPATTERN",
@@ -37,8 +34,7 @@
         },
         "4":{
             "group_name": "TICKEDTOPGRAD",
-            "color": "pattern",
-            "blend_mode": "multiply"
+            "color": "pattern"
         },
         
         "3": {
