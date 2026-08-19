@@ -123,9 +123,7 @@ class WarriorDenScreen(Screens):
             )
             > 0
         )
-        self.has_deputy = (
-            find_alive_cats_with_rank(Cat, [CatRank.DEPUTY], working=True)
-        )
+        self.has_deputy = find_alive_cats_with_rank(Cat, [CatRank.DEPUTY], working=True)
 
         self.hide_menu_buttons()
         self.back_button = UISurfaceImageButton(
