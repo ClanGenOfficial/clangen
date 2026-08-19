@@ -30,7 +30,7 @@
         
         "6": {
             "group_name": "MARBLEDPATTERNFILL",
-            "blendmode": "mask"
+            "blend_mode": "mask"
         },
         "5": {
             "group_name": "BASICPATTERNGRAD",

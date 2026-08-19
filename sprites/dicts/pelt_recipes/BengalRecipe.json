@@ -30,7 +30,8 @@
         
         "6": {
             "group_name": "BENGALPATTERNFILL",
-            "blendmode": "mask"
+            "blend_mode": "mask",
+            "opacity": 90
         },
         "5": {
             "group_name": "BASICPATTERNGRAD",
