@@ -182,7 +182,7 @@ def get_kits(
                 status_dict=kitten_status,
             )
 
-        kit.get_new_thought()
+        kit.assign_thought()
 
         # make lost status match parent
         if cat and cat.status.is_lost():
@@ -280,13 +280,13 @@ def get_kits(
     # add them as adoptive parents if not
     final_adoptive_parents = []
     for adoptive_p in all_adoptive_parents:
-        Cat.fetch_cat(adoptive_p).get_new_thought(CatThought.ON_BIRTH)
+        Cat.fetch_cat(adoptive_p).assign_thought(CatThought.ON_BIRTH)
         if adoptive_p not in inheritance_db.get_relatives(all_kitten[0].ID, True):
             final_adoptive_parents.append(adoptive_p)
     if not adoptive_parents:
-        cat.get_new_thought(CatThought.ON_BIRTH)
+        cat.assign_thought(CatThought.ON_BIRTH)
         if other_cat:
-            cat.get_new_thought(CatThought.ON_BIRTH)
+            cat.assign_thought(CatThought.ON_BIRTH)
 
     # Add the adoptive parents.
     if final_adoptive_parents:
@@ -457,13 +457,13 @@ def handle_adoption(cat: Cat, other_cat: Optional[Cat] = None):
     )
 
     cats_involved = {"m_c": cat}
-    cat.get_new_thought(CatThought.ON_BIRTH)
+    cat.assign_thought(CatThought.ON_BIRTH)
     if other_cat:
         cats_involved["r_c"] = other_cat
-        other_cat.get_new_thought(CatThought.ON_BIRTH)
+        other_cat.assign_thought(CatThought.ON_BIRTH)
 
     for kit in kits:
-        kit.get_new_thought()
+        kit.assign_thought()
 
     # Normally, birth cooldown is only applied to cat who gave birth. However, if we don't apply birth cooldown to
     # adoption, we get too much adoption, since adoptive couples are using the increased two-parent kits chance.
