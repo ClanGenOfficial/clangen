@@ -53509,7 +53509,7 @@
       },
       "frequency": 2,
       "strings": [
-        "p_l arrives at {PRONOUN/p_l/poss} favorite moss gathering patch. The moss is tender and fluffy beneath {PRONOUN/p_l/poss} paws. With all the nagging responsibilities weighing on {PRONOUN/p_l/object} as Medicine Cat, p_l supposes it might be alright to take a moment away from {PRONOUN/p_l/poss} duties to relax. p_l nestles into the soft moss for a quick respite. {PRONOUN/p_l/subject/CAP} {VERB/p_l/awaken/awakens} refreshed and {VERB/m_c/are/is} still able to gather a few pieces of moss before sunset."
+        "p_l arrives at {PRONOUN/p_l/poss} favorite moss gathering patch. The moss is tender and fluffy beneath {PRONOUN/p_l/poss} paws. With all the nagging responsibilities weighing on {PRONOUN/p_l/object} as a medicine cat, p_l supposes it might be alright to take a moment away from {PRONOUN/p_l/poss} duties to relax. p_l nestles into the soft moss for a quick respite. {PRONOUN/p_l/subject/CAP} {VERB/p_l/awaken/awakens} refreshed and {VERB/m_c/are/is} still able to gather a few pieces of moss before sunset."
       ],
       "exp_gained": 5,
       "supply": [
@@ -53688,7 +53688,7 @@
         ]
       },
       "strings": [
-        "p_l arrives at {PRONOUN/p_l/poss} favorite moss gathering patch. The moss is tender and fluffy beneath {PRONOUN/p_l/poss} paws. With all the nagging responsibilities weighing on {PRONOUN/p_l/object} as Medicine Cat, p_l supposes it might be alright to take a moment away from {PRONOUN/p_l/poss} duties to relax. p_l nestles into the soft moss for a quick respite... only to wake after dusk and return to camp empty-pawed.."
+        "p_l arrives at {PRONOUN/p_l/poss} favorite moss gathering patch. The moss is tender and fluffy beneath {PRONOUN/p_l/poss} paws. With all the nagging responsibilities weighing on {PRONOUN/p_l/object} as a medicine cat, p_l supposes it might be alright to take a moment away from {PRONOUN/p_l/poss} duties to relax. p_l nestles into the soft moss for a quick respite... only to wake after dusk and return to camp empty-pawed.."
       ],
       "relationship_changes": [
         {
