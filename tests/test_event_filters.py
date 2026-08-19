@@ -3,7 +3,7 @@ import os
 from copy import deepcopy
 from itertools import permutations
 
-from scripts.cat.microservices.add_to_clan import add_dependents_to_clan
+from scripts.cat.microservices.add_to_clan import add_to_clan, add_dependents_to_clan
 from scripts.cat.personality import Personality
 from scripts.cat.skills import Skill, SkillPath
 from scripts.clan_resources.point_of_interest import (

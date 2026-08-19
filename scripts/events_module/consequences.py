@@ -16,6 +16,7 @@ from scripts.cat.enums import (
 from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.factories.enums import CatType
 from scripts.cat.microservices.add_to_clan import add_to_clan, add_dependents_to_clan
+from scripts.cat.microservices.conditions import get_permanent_condition
 from scripts.cat.names import Name
 from scripts.cat_relations.cat_handle_funcs import create_relationships_new_cat
 from scripts.cat_relations.enums import RelType
@@ -739,7 +740,7 @@ def create_new_cat(
                     "always",
                     "sometimes",
                 ]:
-                    new_cat.get_permanent_condition(chosen_condition, True)
+                    get_permanent_condition(new_cat, chosen_condition, True)
                     if (
                         new_cat.permanent_condition[chosen_condition]["moons_until"]
                         == 0
