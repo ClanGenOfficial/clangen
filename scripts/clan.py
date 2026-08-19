@@ -17,7 +17,7 @@ import i18n
 import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
-from scripts.cat.enums import CatRank, CatGroup, CatSocial, CatCompatibility
+from scripts.cat.enums import CatRank, CatGroup, CatSocial, CatCompatibility, CatThought
 from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.cat.names import Name
@@ -768,6 +768,8 @@ class Clan:
             # update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
+
+        game.clan.instructor.assign_thought(CatThought.IS_GUIDE)
 
         # check for symbol
         if "clan_symbol" in clan_data:

@@ -38,10 +38,6 @@ from scripts.cat.personality import Personality
 from scripts.cat.skills import CatSkills, SkillPath, scale_progress
 from scripts.cat.status import Status
 from scripts.config import get_config
-from scripts.events_module.thoughts.generate_thoughts import (
-    new_thought,
-    get_other_cat_for_thought,
-)
 from scripts.cat_relations.inheritance import Inheritance
 from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.cat_relations.relationship import Relationship
@@ -246,6 +242,8 @@ class Cat:
         self.placement = None
         self.example = example
         self.thought = ""
+        self.next_thought_type: CatThought = CatThought.WHILE_ALIVE
+        self.assign_thought()
 
         # conditions setup
         self.illnesses = {}
@@ -514,7 +512,7 @@ class Cat:
         # Deal with leader death
         if self.status.is_leader:
             if game.clan.leader_lives > 0:
-                self.get_new_thought(CatThought.ON_DEATH)
+                self.assign_thought(CatThought.ON_DEATH)
                 return
 
             if game.clan.leader_lives <= 0:
@@ -526,7 +524,7 @@ class Cat:
             self.dead = True
             game.just_died.append(self.ID)
 
-        self.get_new_thought(CatThought.ON_DEATH)
+        self.assign_thought(CatThought.ON_DEATH)
 
         for app in self.apprentice.copy():
             fetched_cat = Cat.fetch_cat(app)
@@ -552,7 +550,7 @@ class Cat:
         """This is used to send a cat into exile."""
 
         self.status.exile_from_group()
-        self.get_new_thought(CatThought.ON_EXILE)
+        self.assign_thought(CatThought.ON_EXILE)
 
         for app in self.apprentice:
             fetched_cat = Cat.fetch_cat(app)
@@ -567,7 +565,7 @@ class Cat:
                 (CatSocial.KITTYPET, CatSocial.LONER, CatSocial.ROGUE)
             )
         self.status.leave_group(new_social_status=new_social_status)
-        self.get_new_thought()
+        self.assign_thought()
 
         for app in self.apprentice.copy():
             app_ob = Cat.fetch_cat(app)
@@ -593,7 +591,7 @@ class Cat:
 
         self.update_mentor()
 
-        self.get_new_thought(CatThought.ON_LOST)
+        self.assign_thought(CatThought.ON_LOST)
 
         for x in self.apprentice:
             Cat.fetch_cat(x).update_mentor()
@@ -686,11 +684,11 @@ class Cat:
             CatRank.NEWBORN,
             CatRank.KITTEN,
         ):  # newborn and kitten aren't really "ranks" to be promoted to
-            self.get_new_thought(CatThought.ON_RANK_CHANGE)
+            self.assign_thought(CatThought.ON_RANK_CHANGE)
         # however we don't want kittens to somehow have a newborn thought, so we'll have them reset to a normal kitten thought
         # just in case
         if new_thought and new_rank == CatRank.KITTEN:
-            self.get_new_thought()
+            self.assign_thought()
 
         # update class dictionary
         self.all_cats[self.ID] = self
@@ -1269,6 +1267,9 @@ class Cat:
             self.personality.facet_wobble(facet_max=2)
             self.pelt.rebuild_sprite = True
 
+        # reset next thought type
+        self.assign_thought()
+
         if not self.status.alive_in_player_clan:
             # this is handled in events.py
             self.personality.set_kit(self.age.is_baby())
@@ -1281,58 +1282,23 @@ class Cat:
         if self.status.rank.is_any_apprentice_rank():
             self.update_mentor()
 
-    def get_new_thought(
-        self,
-        thought_type: CatThought = None,
-        other_clan_cats: list = None,
-        other_cat: Cat = None,
-    ):
+    def assign_thought(self, thought_type: CatThought = None):
         """
-        Generates a thought for the cat, which displays on their profile.
+        Assigns next thought type to be displayed on cat's profile.
         :param thought_type: Indicate what type of thought should be generated
-        :param other_clan_cats: If cat is in a different clan, pass the list of their clanmates
-        :param other_cat: If a specific other cat should be included, include their object here.
         """
+        # reset current thought
+        self.thought = None
         # default thought type
         if not thought_type:
-            thought_type = (
-                CatThought.WHILE_DEAD if self.dead else CatThought.WHILE_ALIVE
-            )
+            if game.clan and self is game.clan.instructor:
+                thought_type = CatThought.IS_GUIDE
+            elif self.dead:
+                thought_type = CatThought.WHILE_DEAD
+            else:
+                thought_type = CatThought.WHILE_ALIVE
 
-        if self.status.is_other_clancat and not self.dead:
-            cat_list = other_clan_cats.copy() if other_clan_cats else []
-            other_clan_id = self.status.group_ID
-        else:
-            cat_list = self.all_cats_list.copy()
-            other_clan_id = (
-                choice(game.clan.other_clan_IDs)
-                if game.clan
-                and hasattr(game.clan, "other_clan_ids")
-                and game.clan.other_clan_IDs
-                else None
-            )  # this is so stupid convoluted because of tests and game.clan initialization
-
-        if not other_cat:
-            other_cat = get_other_cat_for_thought(
-                cat_list=cat_list,
-                main_cat=self,
-            )
-
-        # get chosen thought
-        chosen_thought = new_thought(
-            thought_type, self, other_cat, other_clan_id=other_clan_id
-        )
-
-        chosen_thought = event_text_adjust(
-            self.__class__,
-            chosen_thought,
-            main_cat=self,
-            random_cat=other_cat,
-            clan=game.clan,
-        )
-
-        # insert thought
-        self.thought = str(chosen_thought)
+        self.next_thought_type = thought_type
 
     def moon_skip_illness(self, illness):
         """handles the moon skip for illness"""
