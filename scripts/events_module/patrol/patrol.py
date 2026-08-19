@@ -11,6 +11,7 @@ import pygame
 from scripts.cat.cats import Cat
 from scripts.cat_relations.enums import RelType
 from scripts.cat.enums import CatAge, CatRank, CatCompatibility
+from scripts.clan_resources.point_of_interest import get_poi_from_constraints
 from scripts.config import get_config
 from scripts.events_module.consequences import gather_cat_objects
 from scripts.events_module.event_filters import (
@@ -61,6 +62,7 @@ class Patrol:
             "outcome_cats", {"success": dict[str, Cat], "failure": dict[str, Cat]}
         ) = {"success": {}, "failure": {}}
         self.new_cats: list[Cat] = []
+        self.chosen_poi = None
 
     def begin_patrol(self, patrol_cats: List[Cat], patrol_type: str) -> str:
         """
@@ -84,6 +86,12 @@ class Patrol:
         # Find valid patrol
         self.patrol_event = self._get_possible_patrol(patrol_type)
 
+        if self.patrol_event.poi:
+            self.chosen_poi = get_poi_from_constraints(
+                self.patrol_event.poi.get("name"),
+                self.patrol_event.poi.get("tags"),
+                self.patrol_event.poi.get("category"),
+            )
         Patrol.used_patrols.append(self.patrol_event.event_id)
 
         # Return text adjusted patrol intro
@@ -93,6 +101,7 @@ class Patrol:
             involved_cat_dict=self.involved_cats,
             clan=game.clan,
             other_clan=self.other_clan,
+            chosen_poi=self.chosen_poi,
         )
 
     def proceed_patrol(
@@ -113,6 +122,7 @@ class Patrol:
                         involved_cat_dict=self.involved_cats,
                         clan=game.clan,
                         other_clan=self.other_clan,
+                        chosen_poi=self.chosen_poi,
                     ),
                     "",
                     [],
@@ -707,6 +717,7 @@ class Patrol:
             chosen_outcome,
             self.outcome_cats["success" if success else "failure"],
             self.other_clan,
+            self.chosen_poi,
         ) + (self.get_patrol_art(chosen_outcome),)
 
     def calculate_success(

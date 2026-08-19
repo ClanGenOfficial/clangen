@@ -6398,7 +6398,7 @@
             "name": ["POI/name/terrain_lake"]
         },
         "frequency": 1,
-        "event_text": "m_c fought with a duck in the water, trying to kill it for the fresh-kill pile, but was knocked below the surface of {POI/name/terrain_lake} and inhaled a lot of water.",
+        "event_text": "m_c fought with a duck in the water, trying to kill it for the fresh-kill pile, but was knocked below the surface of POI and inhaled a lot of water.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -6614,7 +6614,7 @@
             "name": ["gather_fourtrees"]
         },
         "frequency": 1,
-        "event_text": "When r_c takes m_c to {POI/name/gather_fourtrees}, m_c declares {PRONOUN/m_c/poss} intention to be the first cat to climb all four trees. m_c is leaping from the first tree to the second when {PRONOUN/m_c/subject} {VERB/m_c/fall/falls}. {PRONOUN/m_c/poss/CAP} leg snaps under {PRONOUN/m_c/object}.",
+        "event_text": "When r_c takes m_c to POI, m_c declares {PRONOUN/m_c/poss} intention to be the first cat to climb all four trees. m_c is leaping from the first tree to the second when {PRONOUN/m_c/subject} {VERB/m_c/fall/falls}. {PRONOUN/m_c/poss/CAP} leg snaps under {PRONOUN/m_c/object}.",
         "m_c": {
             "age": ["adolescent"],
             "trait": ["arrogant", "ambitious", "confident", "rebellious"],
@@ -6647,7 +6647,7 @@
             "name": ["terrain_carrionplace", "terrain_carrionbeach"]
         },
         "frequency": 2,
-        "event_text": "m_c and r_c become poisoned after hunting near {POI/name/terrain_carrionplace,terrain_carrionbeach}.",
+        "event_text": "m_c and r_c become poisoned after hunting near POI.",
         "new_accessory": [],
         "m_c": {
             "status": ["leader", "deputy", "warrior", "apprentice"],
@@ -6751,7 +6751,7 @@
             "name": ["terrain_horseplace"]
         },
         "frequency": 2,
-        "event_text": "m_c is caught under a horse's hooves while hunting in {POI/name/terrain_horseplace}. r_c helps {PRONOUN/m_c/object} back to camp.",
+        "event_text": "m_c is caught under a horse's hooves while hunting in POI. r_c helps {PRONOUN/m_c/object} back to camp.",
         "new_accessory": [],
         "m_c": {
             "status": ["leader", "deputy", "warrior", "apprentice"],
@@ -6796,7 +6796,7 @@
             "tags": ["trees"]
         },
         "frequency": 2,
-        "event_text": "m_c is hunting near {POI/tag/trees} when a branch falls on {PRONOUN/m_c/object}, injuring {PRONOUN/m_c/object}.",
+        "event_text": "m_c is hunting near POI when a branch falls on {PRONOUN/m_c/object}, injuring {PRONOUN/m_c/object}.",
         "new_accessory": [],
         "m_c": {
             "status": ["leader", "deputy", "warrior", "apprentice"]

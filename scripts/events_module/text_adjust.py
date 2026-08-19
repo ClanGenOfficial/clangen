@@ -380,6 +380,7 @@ def event_text_adjust(
     clan=None,
     other_clan=None,
     chosen_herb: str = None,
+    chosen_poi: str = None,
 ):
     """
     handles finding abbreviations in the text and replacing them appropriately, returns the adjusted text
@@ -473,12 +474,12 @@ def event_text_adjust(
         )
         replace_dict["med_name"] = (str(med.name), choice(med.pronouns))
 
-    if "POI" in text:
-        replace_dict["point_of_interest"] = "unused, purely to trigger pronoun_repl"
-
     # assign all names and pronouns
     if replace_dict:
         text = process_text(text, replace_dict)
+
+    if "POI" in text:
+        text = text.replace("POI", i18n.t(f"points_of_interest.{chosen_poi}"))
 
     # multi_cat
     if "multi_cat" in text:
