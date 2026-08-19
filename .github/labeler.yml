@@ -3,9 +3,11 @@
     - any-glob-to-any-file: "**/*.py"
 "PR:writing":
   - changed-files:
-    - any-glob-to-any-file: "**/*.json"
+    - any-glob-to-any-file: "resources/lang/**/*.json"
 "PR:art":
   - changed-files:
-    - any-glob-to-any-file: "**/*.png"
+    - any-glob-to-any-file: 
+      - "**/*.png"
+      - "sprites/**/*.json"
 "target:stable":
   - base-branch: "^release"

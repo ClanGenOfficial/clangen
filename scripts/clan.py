@@ -20,7 +20,7 @@ from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.cat.enums import CatRank, CatGroup, CatSocial, CatCompatibility
 from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.factories.typed_dicts import StatusDict
-from scripts.cat.names import names
+from scripts.cat.names import Name
 from scripts.cat.save_load import (
     save_cats,
     get_faded_ids,
@@ -347,7 +347,7 @@ class Clan:
                     weights = constants.CONFIG["cat_name_controls"]["rogue"]
 
                 selected_category = choices(name_categories, weights, k=1)[0]
-                name = choice(names.names_dict[selected_category])
+                name = choice(Name.names_dict[selected_category])
                 c.change_name(new_prefix=name, new_suffix="")
 
                 # add back to all_cats, cus they get removed during `create_clan()`

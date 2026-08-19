@@ -5,7 +5,7 @@ from scripts.cat.cats import Cat
 from scripts.cat.constants import INJURIES, ILLNESSES, PERMANENT, BACKSTORIES
 from scripts.cat.enums import CatRank, CatAge, CatGroup, CatStanding, CatSocial
 from scripts.cat.factories.new_cat_factory import NewCatFactory
-from scripts.cat.names import names
+from scripts.cat.names import Name
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath, Skill
 from scripts.cat.factories.typed_dicts import StatusDict
@@ -39,7 +39,14 @@ def updated_create_new_cat(
         if "clancat" in option_dict["status"]:
             status["social"] = CatSocial.CLANCAT
             possible_ranks = [r for r in option_dict["status"] if r != "clancat"]
-            possible_ranks.extend([r for r in [*CatRank] if r.is_any_clancat_rank()])
+            possible_ranks.extend(
+                [
+                    r
+                    for r in [*CatRank]
+                    if r.is_any_clancat_rank()
+                    and r not in (CatRank.LEADER, CatRank.DEPUTY)
+                ]
+            )
         else:
             possible_ranks = option_dict["status"]
 
@@ -167,6 +174,7 @@ def updated_create_new_cat(
         _assign_name(created_cat)
 
         created_cat.create_relationships_new_cat()
+        game.clan.add_cat(created_cat)
         new_cats.append(created_cat)
 
     # ESTABLISH FAMILY RELATIONSHIPS
@@ -263,7 +271,7 @@ def _assign_name(created_cat: Cat):
             weights = constants.CONFIG["cat_name_controls"]["rogue"]
 
         selected_category = choices(name_categories, weights, k=1)[0]
-        name = choice(names.names_dict[selected_category])
+        name = choice(Name.names_dict[selected_category])
         created_cat.change_name(new_prefix=name, new_suffix="")
 
 

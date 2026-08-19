@@ -15,7 +15,7 @@ from scripts.cat.enums import (
 )
 from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.factories.enums import CatType
-from scripts.cat.names import names
+from scripts.cat.names import Name
 from scripts.cat_relations.enums import RelType
 from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.clan_package.get_clan_cats import get_random_player_clan_cat
@@ -663,7 +663,7 @@ def create_new_cat(
                 weights = constants.CONFIG["cat_name_controls"]["rogue"]
 
             selected_category = choices(name_categories, weights, k=1)[0]
-            name = choice(names.names_dict[selected_category])
+            name = choice(Name.names_dict[selected_category])
 
             # now, if this cat should take a new clan name, we give them such
             if new_name:
