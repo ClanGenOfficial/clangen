@@ -17650,7 +17650,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "m_c could never put a paw on what exactly they were feeling, but they realized they don't need to know the details. For now, simply <i>not</i> being a tom or she-cat is more than enough.",
+        "event_text": "m_c could never put a paw on what exactly {PRONOUN/m_c/subject} {VERB/m_c/were/was} feeling, but {PRONOUN/m_c/subject} realized {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} need to know the details. For now, simply <i>not</i> being a tom or she-cat is more than enough.",
         "m_c": {
             "age": ["-kitten"],
             "gender": [
@@ -18658,7 +18658,7 @@
             "transition"
         ],
         "frequency": 4,
-        "event_text": "Looking at {PRONOUN/m_c/poss} adorable litter, m_c realized {PRONOUN/m_c/subject} would rather just be a parent than what {PRONOUN/m_c/subject} had assumed {PRONOUN/m_c/subject} were.",
+        "event_text": "Looking at {PRONOUN/m_c/poss} adorable litter, m_c realized {PRONOUN/m_c/subject} would rather just be a parent instead of a mother or father.",
         "m_c": {
             "age": ["-kitten"],
             "relationship_status": ["parent/child"],
