@@ -53467,7 +53467,7 @@
   "chance_of_success": 70,
   "patrol_art": "cat_sprites/gen_med_gatheringmoss_Mc",
   "intro_text": "p_l notices that the moss in the medicine cat den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
-  "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as {PRONOUN/p_l/subject} is ready to leave. Unfortunately, the moss will have to wait.",
+  "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as {PRONOUN/p_l/subject} {VERB/p_l/are/is} ready to leave. Unfortunately, the moss will have to wait.",
   "success_outcomes": [
     {
       "required_cat_types": {
@@ -53475,7 +53475,7 @@
       },
      "frequency": 4,
       "strings": [
-        "p_l makes {PRONOUN/p_l/poss} way to {PRONOUN/p_l/poss} favorite moss patch. {PRONOUN/p_l/subject/CAP} slices patches with {PRONOUN/p_l/poss} claws, careful to exclude any roots or dirt. Once {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} satisfied with {PRONOUN/p_l/poss} pile, {PRONOUN/p_l/subject} gently {VERB/p_l/wrap/wraps} {PRONOUN/p_l/poss} jaws around the heap and {VERB/p_l/make/makes} {PRONOUN/p_l/poss} way back to camp."
+        "p_l makes {PRONOUN/p_l/poss} way to {PRONOUN/p_l/poss} favorite moss patch. {PRONOUN/p_l/subject/CAP} {VERB/p_l/slice/slices} patches with {PRONOUN/p_l/poss} claws, careful to exclude any roots or dirt. Once {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} satisfied with {PRONOUN/p_l/poss} pile, {PRONOUN/p_l/subject} gently {VERB/p_l/wrap/wraps} {PRONOUN/p_l/poss} jaws around the heap and {VERB/p_l/make/makes} {PRONOUN/p_l/poss} way back to camp."
       ],
       "exp_gained": 10,
       "supply": [
@@ -53498,7 +53498,7 @@
           ],
           "amount": 6,
           "log": {
-            "cats_from": "cat_from is grateful for cat_to's diligence gathering moss."
+            "cats_from": "cat_from is grateful for cat_to's diligence in gathering moss."
           }
         }
       ]
@@ -53509,7 +53509,7 @@
       },
       "frequency": 2,
       "strings": [
-        "p_l arrives at {PRONOUN/p_l/poss} favorite moss gathering patch. The moss is tender and fluffy beneath {PRONOUN/p_l/poss} paws. With all the nagging responsibilities weighing on {PRONOUN/p_l/object} as medicine cat, p_l supposes it might be alright to take a moment away from {PRONOUN/p_l/poss} duties to relax. p_l nestles into the soft moss for a quick respite. {PRONOUN/p_l/subject/CAP} awaken refreshed and are still able to gather a few pieces of moss before sunset."
+        "p_l arrives at {PRONOUN/p_l/poss} favorite moss gathering patch. The moss is tender and fluffy beneath {PRONOUN/p_l/poss} paws. With all the nagging responsibilities weighing on {PRONOUN/p_l/object} as Medicine Cat, p_l supposes it might be alright to take a moment away from {PRONOUN/p_l/poss} duties to relax. p_l nestles into the soft moss for a quick respite. {PRONOUN/p_l/subject/CAP} {VERB/p_l/awaken/awakens} refreshed and {VERB/m_c/are/is} still able to gather a few pieces of moss before sunset."
       ],
       "exp_gained": 5,
       "supply": [
@@ -53653,7 +53653,7 @@
           ],
           "amount": 4,
           "log": {
-            "cats_from": "While initially reluctant, cat_from admitted they enjoyed their time socializing and gathering moss with cat_to."
+            "cats_from": "While initially reluctant, cat_from admitted {PRONOUN/cat_from/subject} enjoyed {PRONOUN/cat_from/poss} time socializing and gathering moss with cat_to."
           }
         }
       ],
@@ -53675,7 +53675,7 @@
         ]
       },
       "strings": [
-        "Mouse-dung! When p_l gets to the best moss-gathering spot, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} that some animal has dug up most of the moss. {PRONOUN/p_l/subject/CAP}'ll have to leave the rest to repopulate before gathering from this spot again."
+        "Mouse-dung! When p_l gets to the best moss gathering spot, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} that some animal has dug up most of the moss. {PRONOUN/p_l/subject/CAP}'ll have to leave the rest to repopulate before gathering from this spot again."
       ],
       "exp_gained": 0,
       "frequency": 4
@@ -53688,7 +53688,7 @@
         ]
       },
       "strings": [
-        "p_l arrives at {PRONOUN/p_l/poss} favorite moss gathering patch. The moss is tender and fluffy beneath {PRONOUN/p_l/poss} paws. With all the nagging responsibilities weighing on {PRONOUN/p_l/object} as medicine cat, p_l supposes it might be alright to take a moment away from {PRONOUN/p_l/poss} duties to relax. p_l nestles into the soft moss for a quick respite... only to wake hours later after dusk and hurry back to camp with empty paws."
+        "p_l arrives at {PRONOUN/p_l/poss} favorite moss gathering patch. The moss is tender and fluffy beneath {PRONOUN/p_l/poss} paws. With all the nagging responsibilities weighing on {PRONOUN/p_l/object} as Medicine Cat, p_l supposes it might be alright to take a moment away from {PRONOUN/p_l/poss} duties to relax. p_l nestles into the soft moss for a quick respite... only to wake after dusk and return to camp empty-pawed.."
       ],
       "relationship_changes": [
         {
@@ -53764,7 +53764,7 @@
           ],
           "amount": -8,
           "log": {
-            "cats_from": "cat_from had to call off a moss gathering patrol when cat_to insisted it was beneath them.."
+            "cats_from": "cat_from had to call off a moss gathering patrol when cat_to insisted it was beneath {PRONOUN/cat_to/object}."
           }
         }
       ]
