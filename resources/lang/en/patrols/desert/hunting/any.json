@@ -2450,7 +2450,7 @@
                         ],
                         "condition": [
                             "bite-wound",
-                            "poisoned"
+                            "envenomated"
                         ],
                         "scar_history": "m_c was permanently marked by the bite of a gila monster as an apprentice — but {PRONOUN/m_c/subject} survived.",
                         "death_history": "m_c died from the bite of a gila monster encountered on a hunt as a foolish apprentice."

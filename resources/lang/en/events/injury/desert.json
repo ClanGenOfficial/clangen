@@ -1020,7 +1020,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "poisoned"
+                    "envenomated"
                 ]
             }
         ],
@@ -3250,7 +3250,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "poisoned"
+                    "envenomated"
                 ]
             }
         ],
@@ -4339,7 +4339,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "poisoned"
+                    "envenomated"
                 ]
             }
         ],
@@ -4385,7 +4385,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "poisoned"
+                    "envenomated"
                 ]
             }
         ],
