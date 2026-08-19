@@ -6167,10 +6167,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "s_c0"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "r_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -6184,10 +6184,10 @@
                     },
                     {
                         "cats_to": [
-                            "s_c0"
+                            "r_c1"
                         ],
                         "cats_from": [
-                            "r_c1"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
