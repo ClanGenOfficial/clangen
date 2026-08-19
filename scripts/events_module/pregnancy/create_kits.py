@@ -13,6 +13,7 @@ from scripts.cat_relations.enums import RelType
 from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_package.settings import get_clan_setting
+from scripts.conditions import add_congenital_condition
 from scripts.config import get_config
 from scripts.event_class import Single_Event
 from scripts.events_module.consequences import (
@@ -206,7 +207,7 @@ def get_kits(
         if game.clan and not int(
             random() * get_config("cat_generation.base_permanent_condition")
         ):
-            kit.congenital_condition(kit)
+            add_congenital_condition(kit)
             for condition in kit.permanent_condition:
                 if kit.permanent_condition[condition] == "born without a leg":
                     cat.pelt.scars = (*cat.pelt.scars, "NOPAW")

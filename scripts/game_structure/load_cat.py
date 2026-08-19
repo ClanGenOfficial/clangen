@@ -34,6 +34,7 @@ from ..clan_resources.point_of_interest import (
     generate_and_add_new_poi,
     PoiType,
 )
+from ..conditions import get_permanent_condition
 from ..housekeeping.datadir import get_save_dir
 
 logger = logging.getLogger(__name__)
@@ -106,7 +107,7 @@ def json_load():
 
         # this is here to handle paralyzed cats in old saves
         if cat.pelt.paralyzed and "paralyzed" not in cat.permanent_condition:
-            cat.get_permanent_condition("paralyzed")
+            get_permanent_condition(cat, "paralyzed")
         elif "paralyzed" in cat.permanent_condition and not cat.pelt.paralyzed:
             cat.pelt.paralyzed = True
 

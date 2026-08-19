@@ -3,6 +3,7 @@ from random import choice
 from typing import Optional
 
 from scripts.cat_relations.enums import RelType
+from scripts.conditions import contact_with_ill_cat
 from scripts.config import get_config
 from scripts.game_structure import constants
 from scripts.events_module.relationship import (
@@ -206,9 +207,9 @@ def _trigger_pair_event(
 
     # handle contact with ill cat if
     if cat.is_ill():
-        other_cat.contact_with_ill_cat(cat)
+        contact_with_ill_cat(other_cat, cat)
     if other_cat.is_ill():
-        cat.contact_with_ill_cat(other_cat)
+        contact_with_ill_cat(cat, other_cat)
     update_events_triggered_count(cat)
     update_events_triggered_count(other_cat)
 

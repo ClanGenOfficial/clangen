@@ -18,7 +18,7 @@ from scripts.clan_resources.freshkill import (
     HUNTER_BONUS,
     HUNTER_EXP_BONUS,
 )
-from scripts.conditions import get_ill, get_injured
+from scripts.conditions import get_ill, get_injured, get_permanent_condition
 from scripts.config import get_config
 from scripts.events_module.consequences import unpack_rel_block, check_stolen_vitality
 from scripts.events_module.future.prep_and_trigger import prep_future_event
@@ -358,7 +358,7 @@ def _handle_conditions(
             elif chosen_condition in ILLNESSES:
                 get_ill(c, chosen_condition, lethal=lethal)
             else:
-                c.get_permanent_condition(chosen_condition)
+                get_permanent_condition(c, chosen_condition)
 
             no_results = block.get("no_results", False)
 

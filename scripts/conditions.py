@@ -5,18 +5,20 @@ TODO: Docs
 
 
 """
-from random import randrange, choice, random
+from random import randrange, choice, random, randint
 
 import i18n
 
 from scripts.cat.cats import Cat
-from scripts.cat.constants import ILLNESSES, INJURIES
+from scripts.cat.constants import ILLNESSES, INJURIES, PERMANENT
 from scripts.cat.enums import CatRank
+from scripts.cat.pelts import Pelt
 
 # pylint: enable=line-too-long
 
 from scripts.cat.skills import SkillPath
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
+from scripts.event_class import Single_Event
 from scripts.game_structure import game
 
 
@@ -475,3 +477,140 @@ def get_injured(
                 get_ill(self, additional_injury, event_triggered=True)
     else:
         self.also_got = False
+
+
+def contact_with_ill_cat(cat, other_cat: Cat):
+    """handles if one cat had contact with an ill cat"""
+
+    infectious_illnesses = []
+    if cat.is_ill() or other_cat is None or not other_cat.is_ill():
+        return
+    elif other_cat.is_ill():
+        for illness in other_cat.illnesses:
+            if other_cat.illnesses[illness]["infectiousness"] != 0:
+                infectious_illnesses.append(illness)
+        if len(infectious_illnesses) == 0:
+            return
+
+    for illness in infectious_illnesses:
+        illness_name = illness
+        rate = other_cat.illnesses[illness]["infectiousness"]
+        if cat.is_injured():
+            for y in cat.injuries:
+                illness_infect = list(
+                    filter(
+                        lambda ill: ill["name"] == illness_name,
+                        cat.injuries[y]["illness_infectiousness"],
+                    )
+                )
+                if illness_infect is not None and len(illness_infect) > 0:
+                    illness_infect = illness_infect[0]
+                    rate -= illness_infect["lower_by"]
+
+                # prevent rate lower 0 and print warning message
+                if rate < 0:
+                    print(
+                        f"WARNING: injury {cat.injuries[y]['name']} has lowered \
+                        chance of {illness_name} infection to {rate}"
+                    )
+                    rate = 1
+
+        if not random() * rate:
+            text = f"{cat.name} had contact with {other_cat.name} and now has {illness_name}."
+            # game.health_events_list.append(text)
+            game.cur_events_list.append(
+                Single_Event(text, "health", cat_dict={"m_c": cat})
+            )
+            get_ill(cat, illness_name)
+
+
+def add_congenital_condition(cat):
+    possible_conditions = []
+
+    for condition in PERMANENT:
+        possible = PERMANENT[condition]
+        if possible["congenital"] in ("always", "sometimes"):
+            possible_conditions.append(condition)
+
+    new_condition = choice(possible_conditions)
+
+    if new_condition == "born without a leg":
+        cat.pelt.scars = (*cat.pelt.scars, "NOPAW")
+    elif new_condition == "born without a tail":
+        cat.pelt.scars = (*cat.pelt.scars, "NOTAIL")
+
+    get_permanent_condition(cat, new_condition, born_with=True)
+
+
+def get_permanent_condition(cat, name, born_with=False, event_triggered=False):
+    if cat.dead:
+        return False
+    if name not in PERMANENT:
+        print(
+            cat.name,
+            f"WARNING: {name} is not in the permanent conditions collection.",
+        )
+        return False
+
+    if "blind" in cat.permanent_condition and name == "failing eyesight":
+        return False
+    if "deaf" in cat.permanent_condition and name == "partial hearing loss":
+        return False
+
+    # remove accessories if need be
+    if "NOTAIL" in cat.pelt.scars or "HALFTAIL" in cat.pelt.scars:
+        cat.pelt.accessory = tuple(
+            acc for acc in cat.pelt.accessory if acc not in Pelt.tail_accessories
+        )
+
+    if "NOPAW" in cat.pelt.scars:
+        cat.pelt.accessory = tuple(
+            acc for acc in cat.pelt.accessory if acc not in Pelt.paw_accessories
+        )
+
+    condition = PERMANENT[name]
+    new_condition = False
+    mortality = condition["mortality"][cat.age.value]
+
+    if condition["congenital"] == "always":
+        born_with = True
+    moons_until = condition["moons_until"]
+    if born_with and moons_until != 0:
+        moons_until = randint(
+            moons_until - 1, moons_until + 1
+        )  # creating a range in which a condition can present
+        moons_until = max(moons_until, 0)
+
+    if born_with and not cat.status.rank.is_baby():
+        moons_until = -2
+    elif born_with is False:
+        moons_until = 0
+
+    if name == "paralyzed":
+        cat.pelt.paralyzed = True
+
+    new_perm_condition = PermanentCondition(
+        name=name,
+        severity=condition["severity"],
+        congenital=condition["congenital"],
+        moons_until=moons_until,
+        mortality=mortality,
+        risks=condition["risks"],
+        illness_infectiousness=condition["illness_infectiousness"],
+        event_triggered=event_triggered,
+    )
+
+    if new_perm_condition.name not in cat.permanent_condition:
+        cat.permanent_condition[new_perm_condition.name] = {
+            "severity": new_perm_condition.severity,
+            "born_with": born_with,
+            "moons_until": new_perm_condition.moons_until,
+            "moon_start": game.clan.age if game.clan else 0,
+            "mortality": new_perm_condition.current_mortality,
+            "illness_infectiousness": new_perm_condition.illness_infectiousness,
+            "risks": new_perm_condition.risks,
+            "complication": None,
+            "event_triggered": new_perm_condition.new,
+        }
+        new_condition = True
+    return new_condition

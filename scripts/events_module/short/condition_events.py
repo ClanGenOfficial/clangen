@@ -20,6 +20,7 @@ from scripts.conditions import (
     get_amount_cat_for_one_medic,
     get_ill,
     get_injured,
+    get_permanent_condition,
 )
 from scripts.config import get_config
 from scripts.event_class import Single_Event
@@ -546,9 +547,9 @@ class Condition_Events:
             perm_condition = condition
 
         if perm_condition is not None:
-            got_condition = cat.get_permanent_condition(perm_condition, born_with)
+            got_condition = get_permanent_condition(cat, perm_condition, born_with)
 
-        if got_condition is True:
+        if got_condition:
             return perm_condition
 
     # ---------------------------------------------------------------------------- #
@@ -1266,8 +1267,8 @@ class Condition_Events:
                             dictionary[condition].update({"complication": complication})
                     break
                 elif new_condition_name in Condition_Events.PERMANENT:
-                    cat.get_permanent_condition(
-                        new_condition_name, event_triggered=event_triggered
+                    get_permanent_condition(
+                        cat, new_condition_name, event_triggered=event_triggered
                     )
                     break
 

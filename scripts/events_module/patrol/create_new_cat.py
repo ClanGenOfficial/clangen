@@ -13,7 +13,7 @@ from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan import OtherClan
 from scripts.clan_package.settings import get_clan_setting
-from scripts.conditions import get_ill, get_injured
+from scripts.conditions import get_ill, get_injured, get_permanent_condition
 from scripts.config import get_config
 from scripts.events_module.consequences import change_relationship_values
 from scripts.events_module.parameter_dicts import InvolvedCatDict
@@ -353,7 +353,8 @@ def _assign_health(created_cat, option_dict):
         elif condition in ILLNESSES:
             get_ill(created_cat, illness_name=condition)
         elif condition in PERMANENT:
-            created_cat.get_permanent_condition(
+            get_permanent_condition(
+                created_cat,
                 name=condition,
                 born_with=option_dict["health"].get("must_be_congenital", False),
             )
@@ -391,7 +392,7 @@ def _assign_health(created_cat, option_dict):
                 "always",
                 "sometimes",
             ]:
-                created_cat.get_permanent_condition(chosen_condition, True)
+                get_permanent_condition(created_cat, chosen_condition, True)
                 if (
                     created_cat.permanent_condition[chosen_condition]["moons_until"]
                     == 0
