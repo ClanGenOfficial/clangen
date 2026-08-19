@@ -13683,7 +13683,6 @@
             ],
             "tags": [],
             "exclude_involved": [
-                "m_c"
             ],
             "frequency": 1,
             "event_text": "During the Gathering, a new apprentice from o_c_n gossips about how their leader might break off the alliance with c_n. m_c doesn't seem as amused as the apprentice.",
