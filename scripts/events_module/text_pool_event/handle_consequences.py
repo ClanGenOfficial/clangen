@@ -130,9 +130,10 @@ def _handle_joining(
                     cat.skills.secondary.interest_only = True
 
         joined.extend(cat_list)
-        for c in joined:
-            cat_names.append(_profile_link(c))
-            c.assign_thought(CatThought.ON_JOIN)
+        
+    for c in joined:
+        cat_names.append(_profile_link(c))
+        c.assign_thought(CatThought.ON_JOIN)
 
     relation_events.trigger_joining_relationship_events(joined)
 
