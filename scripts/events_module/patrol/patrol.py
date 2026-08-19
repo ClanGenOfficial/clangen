@@ -61,7 +61,6 @@ class Patrol:
         self.outcome_cats: TypedDict(
             "outcome_cats", {"success": dict[str, Cat], "failure": dict[str, Cat]}
         ) = {"success": {}, "failure": {}}
-        self.new_cats: list[Cat] = []
         self.chosen_poi = None
 
     def begin_patrol(self, patrol_cats: List[Cat], patrol_type: str) -> str:
@@ -642,57 +641,6 @@ class Patrol:
         self.outcome_cats[outcome_type] = temp_involved_cats
 
         return True
-
-    def _find_involved_cats(
-        self,
-        abbr: str,
-        possible_cats: list[Cat],
-        relationship_constraint,
-        cat_constraints,
-        temp_involved_cats: dict,
-    ) -> tuple[bool, dict]:
-        # if relationships aren't required, just grab some cats and go!
-        if possible_cats and not relationship_constraint:
-            # take first cat
-            temp_involved_cats[abbr] = possible_cats[0]
-            return True, temp_involved_cats
-
-        # otherwise, let's make sure we fulfill the rel constraints with this cat
-        elif possible_cats:
-            while not temp_involved_cats.get(abbr):
-                # need a temp cat dict that includes our possible kitty
-                _temp_cats = temp_involved_cats.copy()
-                _temp_cats[abbr] = possible_cats[0]
-                # now we check each rel constraint to make sure our new cat is valid
-                for block in relationship_constraint:
-                    if not check_rel_constraint_groups(block, _temp_cats):
-                        # they aren't! so we remove them from the possibilities
-                        possible_cats.remove(_temp_cats[abbr])
-                        if not possible_cats:
-                            # oops! no more cats available! this patrol isn't possible
-                            return False, temp_involved_cats
-                        else:
-                            # still some possibilities, let's try the next!
-                            continue
-
-                    # if we got here, then this cat works!
-                    temp_involved_cats[abbr] = _temp_cats[abbr]
-
-        # there weren't any possible cats, so we'll create a new one if we're allowed
-        else:
-            # we don't need to check relationship constraints if we're making a new cat
-            if "n_c" in abbr and "can_create_new_cat" in cat_constraints:
-                temp_involved_cats[abbr] = updated_create_new_cat(
-                    option_dict=cat_constraints,
-                    involved_cats=temp_involved_cats,
-                    other_clan=self.other_clan,
-                )
-                self.new_cats.extend(temp_involved_cats[abbr])
-            else:
-                # if we aren't allowed to make a new one, then we can't do this patrol
-                return False, temp_involved_cats
-
-        return True, temp_involved_cats
 
     def determine_outcome(
         self, antagonize=False

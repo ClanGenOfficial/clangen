@@ -46,12 +46,7 @@ def find_cats(
             return {}
 
     for abbr, constraints in event.involved_cats.items():
-        possible_injuries = []
-        # grab any injuries they might get
-        if can_give_condition and event.condition:
-            for block in event.condition:
-                if abbr in block["cats"]:
-                    possible_injuries.extend(block["condition"])
+        possible_injuries = get_potential_conditions(abbr, can_give_condition, event)
 
         # CHECK ALREADY ASSIGNED CAT
         if abbr in involved_cats:
@@ -139,10 +134,23 @@ def find_cats(
     for abbr in cats_to_create:
         # this will first try to find an existing cat, but if it can't then it'll make a new one
         constraints = event.involved_cats[abbr]
+        cat_list = [c for c in outside_cats if c not in temp_involved_cats.values()]
+        possible_injuries = get_potential_conditions(abbr, can_give_condition, event)
+
+        # initial filter of the entire list of cats for the more general constraints
+        possible_cats = cat_for_event(
+            constraint_dict=constraints,
+            possible_cats=cat_list,
+            tags=event.tags,
+            injuries=possible_injuries,
+            other_involved_clan_id=other_clan.group_ID if other_clan else None,
+            return_list=True,
+            return_id=False,
+        )
 
         new_cats = _find_involved_cat(
             abbr,
-            [c for c in outside_cats if c not in temp_involved_cats.values()],
+            possible_cats,
             relationship_constraint=event.relationship_constraint,
             cat_constraints=constraints,
             temp_involved_cats=temp_involved_cats,
@@ -151,6 +159,16 @@ def find_cats(
         temp_involved_cats.update(new_cats)
 
     return temp_involved_cats
+
+
+def get_potential_conditions(abbr, can_give_condition, event):
+    possible_injuries = []
+    # grab any injuries they might get
+    if can_give_condition and event.condition:
+        for block in event.condition:
+            if abbr in block["cats"]:
+                possible_injuries.extend(block["condition"])
+    return possible_injuries
 
 
 def _check_prior_abbreviation(
@@ -198,7 +216,8 @@ def _find_involved_cat(
     Finds a cat from the available cats that can fill the abbreviation slot. This will check against relationship
     constraints and will create a new cat if necessary and allowed.
     """
-    possible_cats = possible_cats.copy()
+    if possible_cats:
+        possible_cats = possible_cats.copy()
 
     # if relationships aren't required, just grab some cats and go!
     if possible_cats and not relationship_constraint:
@@ -237,6 +256,9 @@ def _find_involved_cat(
                 involved_cats=temp_involved_cats,
                 other_clan=other_clan,
             )
+            if len(temp_involved_cats[abbr]) == 1:
+                # if this is a list of a single cat, then we take them out of the list
+                temp_involved_cats[abbr] = temp_involved_cats[abbr][0]
         else:
             # if we aren't allowed to make a new one, then we can't do this event
             return {}
