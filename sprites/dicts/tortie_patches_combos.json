@@ -205,33 +205,5 @@
         "HALF",
         "HEARTBEAT",
         "GRUMPYFACE"
-    ],
-    "OMEGALOLHEFELL": [
-        "PAW_BR_WING",
-        "PAW_BL_SPLOTCH",
-        "POWDERSNOW",
-        "UNDERPAWS_T",
-        "ROSETAIL"
-    ],
-    "WADERS": [
-        "BELLY_T",
-        "UNDERTAIL_T",
-        "PAW_FR_T",
-        "PAW_FL_CLOVERTAIL",
-        "PAW_BR_WING",
-        "PAW_BL_SPLOTCH"
-    ],
-    "ROBINHEART": [
-        "UNDERPAWS_T",
-        "UNDERTAIL_T",
-        "BIBFULL_T"
-    ],
-    "GIGGLER": [
-        "TURTLECRAWL",
-        "STREAMSTRIKE",
-        "PAW_FR_T",
-        "PAW_FL_CLOVERTAIL",
-        "BIBFULL_T",
-        "BELLY_T"
     ]
 }
