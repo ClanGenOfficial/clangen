@@ -29,6 +29,10 @@ from scripts.game_structure import constants
 from scripts.game_structure import game
 from ..cat.personality import Personality
 from ..cat.skills import CatSkills
+from ..cat_relations.cat_handle_funcs import (
+    init_all_relationships,
+    load_relationship_of_cat,
+)
 from ..clan_resources.point_of_interest import (
     clear_pois,
     generate_and_add_new_poi,
@@ -114,9 +118,9 @@ def json_load():
         # load the relationships
         try:
             if not cat.dead:
-                cat.load_relationship_of_cat()
+                load_relationship_of_cat(cat)
                 if cat.relationships is not None and len(cat.relationships) < 1:
-                    cat.init_all_relationships()
+                    init_all_relationships(cat)
             else:
                 cat.relationships = {}
         except Exception as e:

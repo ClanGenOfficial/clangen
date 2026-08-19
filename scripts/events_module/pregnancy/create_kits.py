@@ -11,7 +11,7 @@ from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.cat.names import Name
 from scripts.cat_relations.enums import RelType
 from scripts.cat_relations.inheritance2 import inheritance_db
-from scripts.cat_relations.relationship import Relationship
+from scripts.cat_relations.relationship import Relationship, create_one_relationship
 from scripts.clan_package.settings import get_clan_setting
 from scripts.conditions import add_congenital_condition
 from scripts.config import get_config
@@ -545,14 +545,14 @@ def get_balanced_kit_chance(first_parent: Cat, second_parent: Cat, is_affair) ->
         if second_parent.ID in first_parent.relationships:
             first_to_second_relationship = first_parent.relationships[second_parent.ID]
         else:
-            first_to_second_relationship = first_parent.create_one_relationship(
-                second_parent
+            first_to_second_relationship = create_one_relationship(
+                first_parent, second_parent
             )
         if first_parent.ID in second_parent.relationships:
             second_to_first_relationship = second_parent.relationships[first_parent.ID]
         else:
-            second_to_first_relationship = second_parent.create_one_relationship(
-                first_parent
+            second_to_first_relationship = create_one_relationship(
+                second_parent, first_parent
             )
 
         average_romantic_love = (

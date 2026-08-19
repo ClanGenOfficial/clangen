@@ -295,7 +295,7 @@ class Clan:
         # give actions and relationships to cats
         for cat_id in Cat.all_cats:
             the_cat = Cat.all_cats.get(cat_id)
-            the_cat.init_all_relationships()
+            init_all_relationships(the_cat)
             if the_cat != self.instructor:
                 the_cat.backstory = "clan_founder"
             if the_cat.status.rank == CatRank.APPRENTICE:

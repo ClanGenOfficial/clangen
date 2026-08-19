@@ -17,8 +17,10 @@ from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.factories.enums import CatType
 from scripts.cat.microservices.add_to_clan import add_to_clan, add_dependents_to_clan
 from scripts.cat.names import Name
+from scripts.cat_relations.cat_handle_funcs import create_relationships_new_cat
 from scripts.cat_relations.enums import RelType
 from scripts.cat_relations.inheritance2 import inheritance_db
+from scripts.cat_relations.relationship import create_one_relationship
 from scripts.clan_package.get_clan_cats import get_random_player_clan_cat
 from scripts.clan_package.settings import get_clan_setting
 from scripts.config import get_config
@@ -766,7 +768,7 @@ def create_new_cat(
         new_cat.history.add_beginning()
 
         # create relationships
-        new_cat.create_relationships_new_cat()
+        create_relationships_new_cat(new_cat)
         # Note - we always update inheritance after the cats are generated, to
         # allow us to add parents.
         # new_cat.create_inheritance_new_cat()
@@ -1081,7 +1083,7 @@ def change_relationship_values(
 
             # if the cats don't know each other, start a new relationship
             if single_cat_to.ID not in single_cat_from.relationships:
-                single_cat_from.create_one_relationship(single_cat_to)
+                create_one_relationship(single_cat_from, single_cat_to)
 
             rel = single_cat_from.relationships[single_cat_to.ID]
 

@@ -9,6 +9,7 @@ from scripts.cat.names import Name
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath, Skill
 from scripts.cat.factories.typed_dicts import StatusDict
+from scripts.cat_relations.cat_handle_funcs import create_relationships_new_cat
 from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan import OtherClan
@@ -174,7 +175,7 @@ def updated_create_new_cat(
         # NAME
         _assign_name(created_cat)
 
-        created_cat.create_relationships_new_cat()
+        create_relationships_new_cat(created_cat)
         game.clan.add_cat(created_cat)
         new_cats.append(created_cat)
 

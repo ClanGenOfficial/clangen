@@ -9,6 +9,7 @@ import logging
 import random
 
 from scripts.cat.microservices.add_to_clan import add_dependents_to_clan, add_to_clan
+from scripts.cat_relations.cat_handle_funcs import create_relationships_new_cat
 from scripts.config import get_config
 
 # pylint: enable=line-too-long
@@ -549,7 +550,7 @@ def handle_lead_den_event():
                         ):
                             invited_cat.status._change_rank(CatRank.WARRIOR)
 
-                    invited_cat.create_relationships_new_cat()
+                    create_relationships_new_cat(invited_cat)
 
             # this handles ceremonies for cats coming into the clan
             if invited_cats:
