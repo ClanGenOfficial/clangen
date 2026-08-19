@@ -6172,7 +6172,7 @@
                         "cats_from": [
                             "r_c1"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "respect",
                             "trust"
@@ -6189,7 +6189,7 @@
                         "cats_from": [
                             "s_c0"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "trust",
                             "comfort",
