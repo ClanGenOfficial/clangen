@@ -208,7 +208,7 @@ class TestPointsOfInterest(unittest.TestCase):
         prior_clan = game.clan
         self.addCleanup(setattr, game, "clan", prior_clan)
 
-        game.clan = Clan()
+        game.clan = Clan(save_id="test")
         game.clan.biome = "Forest"
         game.clan.override_biome = False
         game.clan.camp_bg = "camp1"

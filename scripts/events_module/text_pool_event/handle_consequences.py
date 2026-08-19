@@ -130,11 +130,12 @@ def _handle_joining(
                     cat.skills.secondary.interest_only = True
 
         joined.extend(cat_list)
-        for c in joined:
-            cat_names.append(_profile_link(c))
-            c.get_new_thought(CatThought.ON_JOIN)
 
-        relation_events.trigger_joining_relationship_events(joined)
+    for c in joined:
+        cat_names.append(_profile_link(c))
+        c.assign_thought(CatThought.ON_JOIN)
+
+    relation_events.trigger_joining_relationship_events(joined)
 
     return i18n.t("screens.patrol.new_outsider", cats=adjust_list_text(cat_names))
 

@@ -5,7 +5,7 @@ import i18n
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatGroup, CatRank
-from scripts.cat.names import names, Name
+from scripts.cat.names import Name
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.clan_package.settings import get_clan_setting
@@ -185,7 +185,7 @@ def handle_two_moon_pregnant(cat: Cat):
             kit.backstory = "outsider1"
 
             if cat.status.is_exiled(CatGroup.PLAYER_CLAN_ID):
-                name = choice(names.names_dict["normal_prefixes"])
+                name = choice(Name.names_dict["normal_prefixes"])
                 kit.name = Name(prefix=name, suffix="", cat=kit)
                 extra_naming_text = "conditions.pregnancy.reject_clan_tradition"
 
@@ -195,7 +195,7 @@ def handle_two_moon_pregnant(cat: Cat):
             if cat.status.is_lost(CatGroup.PLAYER_CLAN_ID):
                 kit.backstory = "outsider3"
                 if not keep_clan_tradition:
-                    name = choice(names.names_dict["normal_prefixes"])
+                    name = choice(Name.names_dict["normal_prefixes"])
                     kit.name = Name(prefix=name, suffix="", cat=kit)
                     extra_naming_text = "conditions.pregnancy.reject_clan_tradition"
                 else:

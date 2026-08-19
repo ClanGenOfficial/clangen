@@ -11,28 +11,28 @@
         },
         "6": {
             "group_name": "FRECKLEDPATTERNGRAD",
-            "color": "pattern_gradient_top"
+            "color": "exotic_pattern_gradient_top"
         },
         "5": {
             "group_name": "FRECKLEDPATTERNBACK",
-            "color": "pattern",
+            "color": "exotic_pattern",
             "opacity": 50
         },
         "4":{
             "group_name": "FRECKLEDPATTERNBODY",
-            "color": "pattern"
+            "color": "exotic_pattern"
         },
         "3": {
             "group_name": "SIMPLETOPGRAD",
-            "color": "base_gradient_top"
+            "color": "exotic_base_gradient_top"
         },
         "2": {
             "group_name": "SIMPLEBOTTOMGRAD",
-            "color": "base_gradient_bottom"
+            "color": "exotic_base_gradient_bottom"
         },
         "1":{
             "group_name": "BASEMASK",
-            "color": "base"
+            "color": "exotic_base"
         }
     },
     "exceptions": []

@@ -1,14 +1,16 @@
 import traceback
-from random import choice, getrandbits
-from typing import TYPE_CHECKING, Optional
+from random import choice, getrandbits, choices
+from typing import Optional
 
 import i18n
 
+from scripts.cat.cats import Cat
 from scripts.cat.enums import CatGroup, CatThought, CatAge
 from scripts.events_module.event_filters import (
     event_for_cat,
     check_rel_constraint_groups,
 )
+from scripts.events_module.text_adjust import event_text_adjust
 from scripts.events_module.text_pool_event.check_general_constraints import (
     passes_general_constraints,
 )
@@ -16,14 +18,62 @@ from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game, constants
 from scripts.game_structure.localization import load_lang_resource
 
-if TYPE_CHECKING:
-    from scripts.cat.cats import Cat
-
 loaded_thoughts = {}
 
 
-def new_thought(
-    thought_type: CatThought, main_cat: "Cat", other_cat: "Cat", other_clan_id: str
+def get_new_thought(
+    main_cat: Cat, thought_type: CatThought = None, other_cat: Cat = None
+):
+    """
+    Generates a thought for the cat, which displays on their profile.
+    :param main_cat: The cat object receiving the thought.
+    :param thought_type: Indicate what type of thought should be generated
+    :param other_cat: If a specific other cat should be included, include their object here.
+    """
+    # default thought type
+    if not thought_type:
+        thought_type = (
+            CatThought.WHILE_DEAD if main_cat.dead else CatThought.WHILE_ALIVE
+        )
+
+    if main_cat.status.is_other_clancat and not main_cat.dead:
+        cat_list = [c for c in Cat.all_cats_list if c.status.is_other_clancat]
+        other_clan_id = main_cat.status.group_ID
+    else:
+        cat_list = main_cat.all_cats_list.copy()
+        other_clan_id = (
+            choice(game.clan.other_clan_IDs)
+            if game.clan
+            and hasattr(game.clan, "other_clan_ids")
+            and game.clan.other_clan_IDs
+            else None
+        )  # this is so stupid convoluted because of tests and game.clan initialization
+
+    if not other_cat:
+        other_cat = _get_other_cat_for_thought(
+            cat_list=cat_list,
+            main_cat=main_cat,
+        )
+
+    # get chosen thought
+    chosen_thought = _new_thought(
+        thought_type, main_cat, other_cat, other_clan_id=other_clan_id
+    )
+
+    chosen_thought = event_text_adjust(
+        Cat,
+        chosen_thought,
+        main_cat=main_cat,
+        random_cat=other_cat,
+        clan=game.clan,
+    )
+
+    # insert thought
+    main_cat.thought = str(chosen_thought)
+
+
+def _new_thought(
+    thought_type: CatThought, main_cat: Cat, other_cat: Cat, other_clan_id: str
 ):
     """
     Finds a thought appropriate for the given args.
@@ -44,30 +94,21 @@ def new_thought(
                 "debug_ensure_thought_id"
             ]
 
-            thought_options = []
-            for thought in _load_allowed_thoughts(thought_type, main_cat):
-                if _constraints_fulfilled(
-                    main_cat=main_cat,
-                    random_cat=other_cat,
-                    thought=thought,
-                    other_clan_id=other_clan_id,
-                ):
-                    if ensured_id and ensured_id != thought.event_id:
-                        continue
-
-                    thought_options.append(thought)
-
-            if not thought_options and ensured_id:
+            chosen_thought_group = _get_valid_event(
+                main_cat=main_cat,
+                random_cat=other_cat,
+                possible_thoughts=_load_allowed_thoughts(thought_type, main_cat),
+                other_clan_id=other_clan_id,
+            )
+            if ensured_id and ensured_id != chosen_thought_group.event_id:
                 print(
                     "Thought ID ensured, but the ensured thoughts could not be found. This cat likely doesn't meet the constraints."
                 )
 
-            chosen_thought_group = choice(thought_options)
-
             # only use ensured index if a thought as been ensured
             ensured_index: int = (
                 constants.CONFIG["thought_generation"]["debug_ensure_thought_index"]
-                if constants.CONFIG["thought_generation"]["debug_ensure_thought_id"]
+                if ensured_id
                 else None
             )
 
@@ -78,16 +119,19 @@ def new_thought(
                 else choice(chosen_thought_group.strings)
             )
 
-    except IndexError:
+    except ValueError:
         traceback.print_exc()
         chosen_thought = i18n.t("defaults.thought")
 
     return chosen_thought
 
 
-def _constraints_fulfilled(
-    main_cat: "Cat", random_cat: "Cat", thought: TextPoolEvent, other_clan_id: str
-) -> bool:
+def _get_valid_event(
+    main_cat: Cat,
+    random_cat: Cat,
+    possible_thoughts: list[TextPoolEvent],
+    other_clan_id: str,
+) -> Optional[TextPoolEvent]:
     """Check if thought constraints are fulfilled"""
     involved_cats = {
         "m_c": main_cat,
@@ -101,54 +145,80 @@ def _constraints_fulfilled(
     else:
         other_clan = None
 
-    if not passes_general_constraints(
-        thought,
-        primary_cat=main_cat,
-        involved_cats=involved_cats,
-        other_clan=other_clan,
-    ):
-        return False
+    ensured_id = constants.CONFIG["thought_generation"]["debug_ensure_thought_id"]
+    ensured_event: Optional[TextPoolEvent] = None
+    if ensured_id:
+        ensured = [e for e in possible_thoughts if e.event_id == ensured_id]
+        ensured_event = ensured[0] if ensured else None
 
-    # check that we have a random cat if the thought requires one
-    if not random_cat:
-        r_c_in_text = [
-            thought_str for thought_str in thought.strings if "r_c" in thought_str
-        ]
-        r_c_constraint = thought.involved_cats.get("r_c")
-        # r_c mentioned in text or required with constraints, so we dump this thought
-        if r_c_in_text or r_c_constraint or thought.relationship_constraint:
-            return False
+    chosen_event: Optional[TextPoolEvent] = None
+    possible_thoughts = possible_thoughts.copy()
+    while not chosen_event and possible_thoughts:
+        event_to_test = (
+            ensured_event
+            if ensured_event
+            else choices(possible_thoughts, [e.weight for e in possible_thoughts])[0]
+        )
+        # clear this value so that if we can't use the event, we just move on to unensured ones
+        ensured_event = None
 
-    if thought.involved_cats:
-        if not event_for_cat(
-            thought.involved_cats.get("m_c", {}),
-            cat=main_cat,
-            involved_cat_dict=involved_cats,
-            event_id=thought.event_id,
-            other_involved_clan_id=other_clan_id,
+        if not passes_general_constraints(
+            event_to_test,
+            primary_cat=main_cat,
+            involved_cats=involved_cats,
+            other_clan=other_clan,
         ):
-            return False
+            possible_thoughts.remove(event_to_test)
+            continue
 
-        if not event_for_cat(
-            thought.involved_cats.get("r_c", {}),
+        # check that we have a random cat if the thought requires one
+        if not random_cat:
+            r_c_in_text = [
+                thought_str
+                for thought_str in event_to_test.strings
+                if "r_c" in thought_str
+            ]
+            r_c_constraint = event_to_test.involved_cats.get("r_c")
+            # r_c mentioned in text or required with constraints, so we dump this thought
+            if r_c_in_text or r_c_constraint or event_to_test.relationship_constraint:
+                possible_thoughts.remove(event_to_test)
+                continue
+
+        if event_to_test.involved_cats:
+            if not event_for_cat(
+                event_to_test.involved_cats.get("m_c", {}),
+                cat=main_cat,
+                involved_cat_dict=involved_cats,
+                event_id=event_to_test.event_id,
+                other_involved_clan_id=other_clan_id,
+            ):
+                possible_thoughts.remove(event_to_test)
+                continue
+
+        if random_cat and not event_for_cat(
+            event_to_test.involved_cats.get("r_c", {}),
             cat=random_cat,
             involved_cat_dict=involved_cats,
-            event_id=thought.event_id,
+            event_id=event_to_test.event_id,
             other_involved_clan_id=other_clan_id,
         ):
-            return False
+            possible_thoughts.remove(event_to_test)
+            continue
 
-    if thought.relationship_constraint:
-        for constraints in thought.relationship_constraint:
-            if not check_rel_constraint_groups(constraints, involved_cats):
-                return False
+        if event_to_test.relationship_constraint:
+            if not all(
+                check_rel_constraint_groups(constraints, involved_cats)
+                for constraints in event_to_test.relationship_constraint
+            ):
+                possible_thoughts.remove(event_to_test)
+                continue
 
-    return True
+        chosen_event = event_to_test
+
+    return chosen_event
 
 
-def get_other_cat_for_thought(
-    cat_list: list["Cat"], main_cat: "Cat"
-) -> Optional["Cat"]:
+def _get_other_cat_for_thought(cat_list: list[Cat], main_cat: Cat) -> Optional[Cat]:
     """
     Returns a cat object selected from the given cat_list. This will be a cat acceptable as the subject of main_cat's thought.
     """
@@ -197,7 +267,7 @@ def get_other_cat_for_thought(
     return other_cat
 
 
-def _load_allowed_thoughts(thought_type: CatThought, main_cat: "Cat"):
+def _load_allowed_thoughts(thought_type: CatThought, main_cat: Cat):
     """
     Loads and returns thoughts appropriate for the given cat.
     """
@@ -295,7 +365,7 @@ def _load_allowed_thoughts(thought_type: CatThought, main_cat: "Cat"):
     return thoughts
 
 
-def _get_exiled_and_former(main_cat: "Cat", path) -> list:
+def _get_exiled_and_former(main_cat: Cat, path) -> list:
     """
     Checks if cat needs exiled or former clancat thoughts and returns loaded resources
     """
@@ -311,7 +381,7 @@ def _get_exiled_and_former(main_cat: "Cat", path) -> list:
     return thoughts
 
 
-def _get_general(main_cat: "Cat", path) -> list:
+def _get_general(main_cat: Cat, path) -> list:
     """
     Returns general thoughts if the cat is not a newborn
     """
@@ -322,7 +392,7 @@ def _get_general(main_cat: "Cat", path) -> list:
     return []
 
 
-def _get_clancat(main_cat: "Cat", path) -> list:
+def _get_clancat(main_cat: Cat, path) -> list:
     """
     Returns clancat thoughts if the cat is a clancat
     """
