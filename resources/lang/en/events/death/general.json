@@ -1292,7 +1292,7 @@
             "any"
         ],
         "tags": [],
-        "frequency": 3,
+        "frequency": 2,
         "event_text": "m_c fell into the river. r_c drowned alongside m_c while trying to rescue {PRONOUN/m_c/object}.",
         "m_c": {
             "age": [
@@ -2332,12 +2332,11 @@
             "war"
         ],
         "tags": [],
-        "frequency": 4,
+        "frequency": 2,
         "event_text": "m_c suffered a heart attack due to the stress of the ongoing war.",
         "m_c": {
             "age": [
                 "senior",
-                "adult",
                 "senior adult"
             ],
             "dies": true
@@ -6943,7 +6942,7 @@
         "tags": [
             "low_lives"
         ],
-        "frequency": 3,
+        "frequency": 2,
         "event_text": "m_c was pushed under a monster by r_c.",
         "m_c": {
             "status": [

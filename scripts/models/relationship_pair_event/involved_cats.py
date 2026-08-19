@@ -10,3 +10,10 @@ class InvolvedCatsPairEvent(BaseModel):
     model_config = ConfigDict(extra="forbid")
     m_c: Union[CatDict, MISSING] = MISSING
     r_c: Union[CatDict, MISSING] = MISSING
+    r_c1: Union[CatDict, MISSING] = MISSING
+    r_c2: Union[CatDict, MISSING] = MISSING
+    r_c3: Union[CatDict, MISSING] = MISSING
+    r_c4: Union[CatDict, MISSING] = MISSING
+    r_c5: Union[CatDict, MISSING] = MISSING
+    r_c6: Union[CatDict, MISSING] = MISSING
+    multi_cat: Union[CatDict, MISSING] = MISSING

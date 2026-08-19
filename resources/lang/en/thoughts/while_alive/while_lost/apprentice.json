@@ -1,6 +1,6 @@
 [
     {
-        "id": "lost_apprentice_thoughts",
+        "event_id": "lost_apprentice_thoughts",
         "strings": [
             "Is missing {PRONOUN/m_c/poss} mentor's guidance",
             "Misses the elders stories",

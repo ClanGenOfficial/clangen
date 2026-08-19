@@ -1,13 +1,13 @@
 [
     {
-        "id": "newly_joined",
+        "event_id": "newly_joined",
         "strings": [
             "Is looking around the camp with wonder",
             "Is settling into {PRONOUN/m_c/poss} new home"
         ]
     },
     {
-        "id": "newly_joined_notkitten",
+        "event_id": "newly_joined_notkitten",
         "strings": [
             "Is eager for a tour of the territory",
             "Isn't sure where {PRONOUN/m_c/subject} {VERB/m_c/are/is} supposed to den quite yet"
@@ -22,7 +22,7 @@
         }
     },
     {
-        "id": "newly_joined_hesitant_traits",
+        "event_id": "newly_joined_hesitant_traits",
         "strings": [
             "Hopes that c_n will accept {PRONOUN/m_c/object} with open-paws",
             "Is wondering if {PRONOUN/m_c/subject} made the right choice in joining c_n"
@@ -42,7 +42,7 @@
         }
     },
     {
-        "id": "newly_joined_confident_traits",
+        "event_id": "newly_joined_confident_traits",
         "strings": [
             "Knows there is so much {PRONOUN/m_c/subject} can offer the Clan",
             "Is already planning how to improve {PRONOUN/m_c/poss} status in the Clan"
@@ -62,7 +62,7 @@
         }
     },
     {
-        "id": "newly_joined_kittypet",
+        "event_id": "newly_joined_kittypet",
         "strings": [
             "Is glad {PRONOUN/m_c/subject} {VERB/m_c/are/is} out of that stuffy Twoleg den",
             "Wonders if fresh-kill is better than Twoleg mush",
@@ -81,7 +81,7 @@
         }
     },
         {
-        "id": "newly_joined_loner",
+        "event_id": "newly_joined_loner",
         "strings": [
           "Is getting used to the idea of being around so many other cats",
           "Wonders if {PRONOUN/m_c/subject} will miss the quiet",
@@ -101,7 +101,7 @@
         }
     },
   {
-        "id": "newly_joined_rogue",
+        "event_id": "newly_joined_rogue",
         "strings": [
           "Hopes no cat holds a grudge against {PRONOUN/m_c/object}",
           "Is skeptical of living by a 'code'",
@@ -120,7 +120,7 @@
         }
     },
   {
-    "id": "newly_joined_clancat",
+    "event_id": "newly_joined_clancat",
     "strings": [
       "Hopes {PRONOUN/m_c/subject} can gain the trust of {PRONOUN/m_c/poss} new Clan",
       "Never imagined c_n's camp looked like this"
@@ -146,7 +146,7 @@
     }
   },
       {
-        "id": "newly_joined_elder",
+        "event_id": "newly_joined_elder",
         "strings": [
           "Hopes that c_n will help look after {PRONOUN/m_c/object} in their golden years",
           "Knows they can rest safely now",
@@ -161,7 +161,7 @@
         }
     },
     {
-        "id": "newly_joined_kit",
+        "event_id": "newly_joined_kit",
         "strings": [
             "Is snuggled safe in the nursery",
             "Is overwhelmed by the new scents around {PRONOUN/m_c/object}",
@@ -175,7 +175,7 @@
     
     },
     {
-        "id": "stolen_kit",
+        "event_id": "stolen_kit",
         "strings":[
             "Is looking around nervously"
         ],

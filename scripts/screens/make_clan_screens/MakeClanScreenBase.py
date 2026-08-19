@@ -10,7 +10,7 @@ import pygame_gui
 from scripts.cat import save_load
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAge, CatRank, CatSocial, CatGroup
-from scripts.cat.names import names
+from scripts.cat.names import Name
 from scripts.cat.status import Status
 from scripts.clan import Clan
 from scripts.clan_package.clan_names import get_possible_clan_names

@@ -1,6 +1,6 @@
 [
     {
-        "id": "gen_dead_kit",
+        "event_id": "gen_dead_kit",
         "strings": [
             "Wants to find StarClan cats to play with",
             "Is imagining what it would be like to be a warrior",
@@ -11,7 +11,7 @@
         ]
     },
     {
-        "id": "dead_kit_to_dead_other_older",
+        "event_id": "dead_kit_to_dead_other_older",
         "strings": [
             "Is nagging r_c to play with {PRONOUN/m_c/object}",
             "Is begging r_c to tell {PRONOUN/m_c/object} stories",
@@ -32,7 +32,7 @@
         }
     },
     {
-        "id": "dead_kit_to_dead_other_kit",
+        "event_id": "dead_kit_to_dead_other_kit",
         "strings": [
             "Is happy to have r_c to play with",
             "Is playing hide and seek with r_c"
@@ -49,7 +49,7 @@
         }
     },
     {
-        "id": "dead_kit_to_dead_other_newborn",
+        "event_id": "dead_kit_to_dead_other_newborn",
         "strings": [
             "Can't wait for r_c to grow up, so they can play together"
         ],
@@ -65,7 +65,7 @@
         }
     },
     {
-        "id": "dead_kit_to_alive_other_kit",
+        "event_id": "dead_kit_to_alive_other_kit",
         "strings": [
             "Is sad because {PRONOUN/m_c/subject} can't play with r_c"
         ],
@@ -81,7 +81,7 @@
         }
     },
     {
-        "id": "dead_kit_to_alive_parent",
+        "event_id": "dead_kit_to_alive_parent",
         "strings": [
             "Is missing r_c",
             "Wonders if r_c is missing {PRONOUN/m_c/object} too",
@@ -110,7 +110,7 @@
         ]
     },
     {
-        "id": "dead_kit_to_alive_kit_sibling",
+        "event_id": "dead_kit_to_alive_kit_sibling",
         "strings": [
             "Wishes {PRONOUN/m_c/subject} could become apprentices with r_c",
             "Misses playing with r_c",
@@ -142,7 +142,7 @@
         ]
     },
     {
-        "id": "dead_kit_to_dead_kit_sibling",
+        "event_id": "dead_kit_to_dead_kit_sibling",
         "strings": [
             "Is glad that at least {PRONOUN/m_c/subject} {VERB/m_c/have/has} r_c"
         ],

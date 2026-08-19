@@ -1,6 +1,6 @@
 [
     {
-        "id": "comfort_de_high1",
+        "event_id": "comfort_de_high1",
         "strings": [
             "m_c bristles after being scolded by r_c.",
             "r_c laughs at something m_c said that shouldn't have been laughed at.",
@@ -18,7 +18,7 @@
         ]
     },
     {
-        "id": "comfort_de_high2",
+        "event_id": "comfort_de_high2",
         "strings": [
             "m_c is telling jokes about r_c.",
             "r_c won't tell m_c what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing.",
@@ -61,7 +61,7 @@
         ]
     },
     {
-        "id": "comfort_de_high3",
+        "event_id": "comfort_de_high3",
         "strings": [
             "m_c shivers after noticing r_c following {PRONOUN/m_c/object} around like a shadow.",
             "m_c feels a chill after noticing r_c is nearby.",
@@ -91,7 +91,7 @@
         }
     },
     {
-        "id": "comfort_de_high4",
+        "event_id": "comfort_de_high4",
         "strings": [
             "m_c doesn't like the way that r_c seems to enjoy {PRONOUN/r_c/poss} influence over the Clan.",
             "Much to m_c's dismay, r_c has asked {PRONOUN/m_c/object} to do another difficult task.",
@@ -122,7 +122,7 @@
         }
     },
     {
-        "id": "comfort_de_high5",
+        "event_id": "comfort_de_high5",
         "strings": [
             "m_c notices that r_c doesn't seem to care if {PRONOUN/r_c/poss} treatments hurt.",
             "m_c overhears r_c complaining about giving herbs to cats that don't 'deserve' them.",

@@ -1,0 +1,20 @@
+{
+    "name": "SingleColourRecipe",
+    "layer_order": ["1", "2", "3"],
+    "layers": {
+        "3": {
+            "group_name": "SIMPLETOPGRAD",
+            "color": "base_gradient_top"
+        },
+        "2": {
+            "group_name": "SIMPLEBOTTOMGRAD",
+            "color": "base_gradient_bottom"
+        },
+        "1":
+        {
+            "group_name": "BASEMASK",
+            "color": "base"
+        }
+    },
+    "exceptions": []
+}
