@@ -23826,6 +23826,9 @@
             "training"
         ],
         "frequency": 4,
+        "tags": [
+            "clan:medicine cat"
+        ],
         "required_cat_types": {
             "patrol_cats": [
                 3,
