@@ -52,7 +52,7 @@ def get_poi_from_constraints(
         else:
             possible_poi.update(possible_by_category)
 
-    return choice(list(possible_poi))
+    return choice(list(possible_poi)) if possible_poi else None
 
 
 def get_pois_by_category(category: Literal["gathering", "moonplace", "terrain"]):
