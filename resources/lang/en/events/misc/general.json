@@ -17637,5 +17637,86 @@
             }
         }
       ]
+    },
+    {
+        "event_id": "gen_misc_taintedPOI_stinky1",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [],
+        "tags": [],
+        "poi": {
+            "tags": [
+                "tainted"
+            ]
+        },
+        "frequency": 2,
+        "event_text": "Everyone can smell when m_c pads back into camp from {POI/tag/tainted}. It's going to take some serious grooming to get rid of the stench!",
+        "m_c": {
+            "age": [
+                "-newborn",
+                "-kitten"
+            ],
+            "trait": [
+                "childish",
+                "gloomy",
+                "lonesome",
+                "oblivious",
+                "shameless",
+                "strange",
+                "troublesome"
+            ],
+            "dies": false
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "some_clan",
+                    "low_social"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort"
+                ],
+                "amount": -5,
+                "log": {
+                    "cats_from": "cats_from wishes cats_to had taken time to groom the stink from {POI/tag/tainted} before returning."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_misc_taintedPOI_stinkymate",
+        "location": ["-desert"],
+        "season": ["any"],
+        "tags":["romance"],
+        "poi": {
+            "tags": ["tainted"]
+        },
+        "frequency": 1,
+        "event_text": "When m_c returned from {POI/tag/tainted} smelling absolutely vile, r_c refused to share tongues with {PRONOUN/m_c/object} unless {PRONOUN/m_c/subject} took a swim. In return, m_c pulled r_c in with {PRONOUN/m_c/object}, and there was far more splashing about together than washing up.",
+        "m_c": {
+            "relationship_status": ["mates"],
+            "trait": ["-bloodthirsty", "-cold", "-gloomy", "-grumpy", "-strict"]
+        },
+        "relationships": [
+            {
+                "cats_from": ["r_c"],
+                "cats_to": ["m_c"],
+                "mutual": true,
+                "values": ["romance", "like", "comfort"],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cats_from had a fun time splashing around together with cats_to after they enforced a bath.",
+                    "cats_to": "cats_to enjoyed pulling cats_from into the water with them and playing around like kits."
+               }
+            }
+        ]
     }
 ]

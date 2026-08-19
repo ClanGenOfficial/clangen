@@ -1,0 +1,39 @@
+{
+    "name": "FreckledRecipe",
+    "layer_order": ["1", "2", "3", "4", "5", ["6", ["7", "8", "+blend_mode:mask"]]],
+    "layers": {
+        "8": {
+            "group_name": "FRECKLEDPATTERNBACK",
+            "opacity": 50
+        },
+        "7":{
+            "group_name": "FRECKLEDPATTERNBODY"
+        },
+        "6": {
+            "group_name": "FRECKLEDPATTERNGRAD",
+            "color": "exotic_pattern_gradient_top"
+        },
+        "5": {
+            "group_name": "FRECKLEDPATTERNBACK",
+            "color": "exotic_pattern",
+            "opacity": 50
+        },
+        "4":{
+            "group_name": "FRECKLEDPATTERNBODY",
+            "color": "exotic_pattern"
+        },
+        "3": {
+            "group_name": "SIMPLETOPGRAD",
+            "color": "exotic_base_gradient_top"
+        },
+        "2": {
+            "group_name": "SIMPLEBOTTOMGRAD",
+            "color": "exotic_base_gradient_bottom"
+        },
+        "1":{
+            "group_name": "BASEMASK",
+            "color": "exotic_base"
+        }
+    },
+    "exceptions": []
+}

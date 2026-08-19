@@ -1,6 +1,6 @@
 [
     {
-        "id": "general_outside_thoughts",
+        "event_id": "general_outside_thoughts",
         "strings": [
             "Ran into another cat while sheltering from the rain",
             "Caught a massive mouse!",
@@ -33,7 +33,7 @@
         ]
     },
     {
-        "id": "general_lost_thoughts",
+        "event_id": "general_lost_thoughts",
         "strings": [
             "Desperately tries to find {PRONOUN/m_c/poss} way back",
             "Misses {PRONOUN/m_c/poss} nest",
@@ -98,7 +98,7 @@
         }
     },
     {
-        "id": "lost_thoughts_to_random_cat",
+        "event_id": "lost_thoughts_to_random_cat",
         "strings": [
             "Is missing r_c",
             "Thought {PRONOUN/m_c/subject} spotted r_c while wandering around earlier"
@@ -128,7 +128,7 @@
         }
     },
     {
-        "id": "lost_cats_with_family",
+        "event_id": "lost_cats_with_family",
         "strings": [
             "Wonders how {PRONOUN/m_c/poss} family is doing",
             "Misses {PRONOUN/m_c/poss} family",
@@ -167,7 +167,7 @@
         ]
     },
     {
-        "id": "lost_cats_with_siblings",
+        "event_id": "lost_cats_with_siblings",
         "strings": [
             "Hopes {PRONOUN/m_c/poss} siblings are doing okay"
         ],
@@ -202,7 +202,7 @@
         ]
     },
     {
-        "id": "lost_cats_with_kits",
+        "event_id": "lost_cats_with_kits",
         "strings": [
             "Sends a prayer to the stars for the safety of {PRONOUN/m_c/poss} kits"
         ],

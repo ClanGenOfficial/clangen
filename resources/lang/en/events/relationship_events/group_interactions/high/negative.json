@@ -1,6 +1,6 @@
 [
     {
-        "id": "group_3_leader_neg1",
+        "event_id": "group_3_leader_neg1",
         "strings": [
             "m_c and r_c1 discuss where they should be marking the border. r_c2 overhears, and disagrees with their decision, causing m_c and r_c1 to sneer at {PRONOUN/r_c2/object} in distaste."
         ],
@@ -44,7 +44,7 @@
     },
 
     {
-        "id": "group_3_negative_romanticrivalshigh_jealousofmate",
+        "event_id": "group_3_negative_romanticrivalshigh_jealousofmate",
         "strings": [
             "m_c sees r_c2 flirt with r_c1 right in front of {PRONOUN/m_c/object}.",
             "r_c1 brings a gift from r_c2 to {PRONOUN/r_c1/poss} shared nest with m_c, and m_c glowers.",
@@ -89,7 +89,7 @@
         ]
     },
     {
-        "id": "group_3_negative_romanticrivalshigh_jealousofrival",
+        "event_id": "group_3_negative_romanticrivalshigh_jealousofrival",
         "strings": [
             "m_c knows r_c1 better than anyone — and can tell {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} interested in r_c2.",
             "m_c keeps a mental count of how often r_c1 brings up r_c2's name.",
@@ -141,7 +141,7 @@
         ]
     },
     {
-        "id": "group_3_negative_romanticrivalshigh_extremejealousofrival",
+        "event_id": "group_3_negative_romanticrivalshigh_extremejealousofrival",
         "strings": [
             "The way r_c1 talks about r_c2, anyone would think r_c1 would prefer to be {PRONOUN/r_c2/poss} mate instead of m_c's.",
             "r_c1 seems to spend more time with r_c2 than {PRONOUN/r_c1/poss} mate, m_c.",
@@ -196,7 +196,7 @@
         ]
     },
     {
-        "id": "group_multicat_neg_siblingappandkits_1",
+        "event_id": "group_multicat_neg_siblingappandkits_1",
         "strings": [
             "r_c1 tells m_c to watch multi_cat. It was a disaster waiting to happen, and m_c adamantly refuses to kitsit again.",
             "r_c1 suggests that m_c tries to bond with multi_cat. Everything that can go wrong does, making m_c avoidant of {PRONOUN/m_c/poss} siblings.",
@@ -249,7 +249,7 @@
             }
         ]
     },    {
-        "id": "group_5_neg_medicinecatdebates",
+        "event_id": "group_5_neg_medicinecatdebates",
         "strings": [
             "m_c, multi_cat discuss medicine amongst themselves, and it soon sours into a nasty argument.",
             "m_c is in disbelief about the techniques multi_cat suggest during a discussion about medicine.",
@@ -282,7 +282,7 @@
         ]
     },
     {
-        "id": "group_multicat_neg_leadershiptroubles_1",
+        "event_id": "group_multicat_neg_leadershiptroubles_1",
         "strings": [
             "m_c is being spoken over by r_c1, but won't curb r_c1's habit even after multi_cat bring it up.",
             "multi_cat bring up m_c's tendency to let r_c1 take over Clan affairs, but {PRONOUN/m_c/subject} {VERB/m_c/dismiss/dismisses} the warriors' concern.",
@@ -339,7 +339,7 @@
         ]
     },
     {
-        "id": "group_multicat_neg_polymateshigh",
+        "event_id": "group_multicat_neg_polymateshigh",
         "strings": [
             "m_c, multi_cat got into a huge fight.",
             "multi_cat heard m_c speaking poorly about them.",
@@ -380,7 +380,7 @@
         ]
     },
     {
-        "id": "group_3_neg_hatetheinlaws1",
+        "event_id": "group_3_neg_hatetheinlaws1",
         "strings": [
             "m_c's overt disdain for r_c1's parent, r_c2, is starting to put a strain on their relationship.",
             "r_c1 wishes m_c would get along better with r_c2.",
@@ -422,7 +422,7 @@
         ]
     },
     {
-        "id": "group_3_neg_hatetheinlaws2",
+        "event_id": "group_3_neg_hatetheinlaws2",
         "strings": [
             "m_c's overt disdain for r_c1's littermate, r_c2, is starting to put a strain on their relationship.",
             "r_c1 wishes m_c would get along better with r_c2.",
@@ -465,7 +465,7 @@
         ]
     },
     {
-        "id": "group_3_neg_hatethebestie",
+        "event_id": "group_3_neg_hatethebestie",
         "strings": [
             "m_c's overt disdain for r_c1's best friend, r_c2, is starting to put a strain on their relationship.",
             "r_c1 wishes m_c would get along better with r_c2.",
@@ -508,7 +508,7 @@
         ]
     },
     {
-        "id": "group_3_neg_badkitsitter",
+        "event_id": "group_3_neg_badkitsitter",
         "strings": [
             "m_c chews r_c1 out after {PRONOUN/r_c1/subject} wandered off while {PRONOUN/r_c1/subject} {VERB/r_c1/were/was} supposed to be watching r_c2.",
             "m_c isn't happy to find r_c1 letting r_c2 run wild.",
@@ -554,7 +554,7 @@
         ]
     },
     {
-        "id": "group_3_neg_bystanderseesscolding",
+        "event_id": "group_3_neg_bystanderseesscolding",
         "strings": [
             "m_c feels uncomfortable hearing how sharply r_c1 scolds r_c2.",
             "r_c1 shouts at r_c2 so loudly that m_c hears it from across the camp.",
@@ -601,7 +601,7 @@
         ]
     },
     {
-        "id": "group_3_neg_irrationaljealousy",
+        "event_id": "group_3_neg_irrationaljealousy",
         "strings": [
             "m_c insists that r_c1 has eyes for r_c2, even though r_c1 denies it.",
             "Where other cats see a casual friendship between r_c1 and r_c2, m_c is convinced there's something more.",

@@ -1,6 +1,6 @@
 [
     {
-        "id": "platonic_de_low1",
+        "event_id": "platonic_de_low1",
         "strings": [
             "m_c thinks r_c isn't very considerate of others.",
             "m_c gets a little irritated seeing r_c ignore a mess in camp.",
@@ -24,7 +24,7 @@
         ]
     },
     {
-        "id": "platonic_de_low2",
+        "event_id": "platonic_de_low2",
         "strings": [
             "m_c and r_c have an argument about who should get a pretty feather, and end up destroying it in their fight.",
             "m_c has drawn the ire of r_c by deliberately taking the last of {PRONOUN/r_c/poss} favorite nesting materials for {PRONOUN/m_c/self}.",
@@ -54,7 +54,7 @@
         ]
     },
     {
-        "id": "dislike_inc_low1",
+        "event_id": "dislike_inc_low1",
         "strings": [
             "r_c bumped into m_c and didn't even apologize!",
             "r_c stepped on m_c's paw and pretended not to notice.",
@@ -69,7 +69,7 @@
         ]
     },
     {
-        "id": "dislike_inc_low2",
+        "event_id": "dislike_inc_low2",
         "strings": [
             "m_c had a disagreement with r_c about something or other.",
             "m_c and r_c argued about something trivial and neither of them apologized.",
@@ -100,7 +100,7 @@
         ]
     },
     {
-        "id": "platonic_de_low_opposites",
+        "event_id": "platonic_de_low_opposites",
         "strings": [
             "m_c and r_c disagree on something that should have an obvious answer.",
             "r_c tells m_c to be happier. m_c explains it's not that simple."
@@ -142,7 +142,7 @@
         ]
     },
     {
-        "id": "daydreamerseasonal_de_low1",
+        "event_id": "daydreamerseasonal_de_low1",
         "strings": [
             "m_c is trying to get r_c to play with {PRONOUN/m_c/object}, but r_c is too enamored with watching the falling leaves."
         ],
@@ -165,7 +165,7 @@
         }
     },
     {
-        "id": "daydreamerseasonal_de_low2",
+        "event_id": "daydreamerseasonal_de_low2",
         "strings": [
             "m_c is trying to get r_c to play with {PRONOUN/m_c/object}, but r_c is too enamored with watching the falling snow."
         ],
@@ -188,7 +188,7 @@
         }
     },
     {
-        "id": "daydreamerseasonal_de_low3",
+        "event_id": "daydreamerseasonal_de_low3",
         "strings": [
             "m_c is trying to get r_c to play with {PRONOUN/m_c/object}, but r_c is too enamored with watching the drifting pollen."
         ],
@@ -211,7 +211,7 @@
         }
     },
     {
-        "id": "daydreamerseasonal_de_low4",
+        "event_id": "daydreamerseasonal_de_low4",
         "strings": [
             "m_c is trying to get r_c to play with {PRONOUN/m_c/object}, but r_c is too enamored with watching a beam of sunlight."
         ],

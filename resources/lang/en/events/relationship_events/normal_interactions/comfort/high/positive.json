@@ -1,6 +1,6 @@
 [
     {
-        "id": "comfortable_kit_parent_inc_high",
+        "event_id": "comfortable_kit_parent_inc_high",
         "strings": [
             "m_c stays snuggled up with r_c all morning.",
             "m_c never wants to leave r_c's side.",
@@ -31,7 +31,7 @@
         ]
     },
     {
-        "id": "comfort_inc_high1",
+        "event_id": "comfort_inc_high1",
         "strings": [
             "m_c appreciates how r_c always seems to ask how {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} doing.",
             "r_c's words of comfort mean more to m_c than {PRONOUN/r_c/subject} {VERB/r_c/know/knows}.",
@@ -48,7 +48,7 @@
         ]
     },
     {
-        "id": "comfort_inc_high2",
+        "event_id": "comfort_inc_high2",
         "strings": [
             "m_c is sharing tongues with r_c.",
             "m_c offers to groom a hard-to-reach place for r_c, who thanks {PRONOUN/m_c/object} earnestly.",
@@ -76,7 +76,7 @@
         ]
     },
     {
-        "id": "comfort_inc_high3",
+        "event_id": "comfort_inc_high3",
         "strings": [
             "m_c feels most like {PRONOUN/m_c/self} when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} around r_c.",
             "m_c could recognize r_c just by the sound of {PRONOUN/r_c/poss} paw steps.",
@@ -103,7 +103,7 @@
         ]
     },
     {
-        "id": "comfort_inc_high4",
+        "event_id": "comfort_inc_high4",
         "strings": [
             "m_c helps r_c work through something difficult that happened to {PRONOUN/r_c/object}.",
             "m_c comforts r_c after a terrible nightmare.",

@@ -270,7 +270,15 @@ dev_tools = false
         romance = -20
         comfort = -10
         respect = 10
-
+    [mates.breakup.reactions.affair_discovery_mate_reaction]
+      romance = -50
+      trust = -30
+      like = -40
+    [mates.breakup.reactions.affair_discovery_other_mate_reaction]
+      romance = -50
+      trust = -30
+      like = -40
+    
 
 [new_cat]
   # number of welcoming events to add when a new cat joins
@@ -299,6 +307,14 @@ dev_tools = false
       comfort = 70
       trust = 60
 
+    # default relationship buff for an absent parent towards their kits
+    [new_cat.parent_buff.absent_parent_to_kit]
+      romance = 0
+      like = 0
+      respect = 0
+      comfort = -10
+      trust = 0
+
   [new_cat.sib_buff]
     # default relationships buff for siblings' relationships in one direction
     [new_cat.sib_buff.cat1_to_cat2]
@@ -315,6 +331,12 @@ dev_tools = false
       respect = 10
       comfort = 40
       trust = 30
+
+    # default relationships buff for a newborn's relationship towards one of their littermates
+    [new_cat.sib_buff.littermates_to_eachother]
+      like = 20
+      comfort = 10
+      trust = 10
 
   [new_cat.rel_buff]
     # default relationships buff for new cats relationships to other cats in the clan
@@ -349,6 +371,10 @@ dev_tools = false
   # 1/chance for an unmated cat to have an affair (coparenting)
   # for this check, only other unmated cats can be the affair partner
   unmated_random_affair_chance = 10
+
+  # the base chance a cat who's been cheated on will help raise their mate's kits after an affair
+  # by default, the chance is 40% and the range is from 0-100%, any value higher or lower will be capped
+  base_claim_kit_chance = 40
 
   # The kit number is incremental. It is 1-6 as default so if you change these numbers, you should probably keep this in mind.
   # As in, your max kits number should probably be 5 more than the min kits number.
@@ -393,6 +419,16 @@ dev_tools = false
     "senior adult" = 0
     senior = 0
 
+  [pregnancy.coparenting_values_neg]
+      romance = -20
+      comfort = -30
+      trust = -25
+
+  [pregnancy.coparenting_values_pos]
+      romance = 20
+      comfort = 30
+      trust = 25
+      
 [cat_generation]
   # base 1/chance that a cat will generate with a permanent condition. gets modified further in code
   base_permanent_condition = 90
@@ -552,11 +588,11 @@ dev_tools = false
   classic_difficulty_modifier = 1
 
   # amount to modify patrol success based on patrol stats
-  # increasing this value increases the NUMERATOR for success (denominator is fixed at 120)
-  win_stat_cat_modifier = 10
-  better_stat_modifier = 5
-  best_stat_modifier = 10
-  fail_stat_cat_modifier = -15
+  # for each level in the required skill, success chance is boosted or nerfed accordingly
+  skill_cat_modifier = 5
+  trait_cat_modifier = 10
+
+  small_clan_threshold = 20
 
   # base 1/chance for a romance patrol. gets modified further in code
   chance_of_romance_patrol = 16
@@ -564,7 +600,7 @@ dev_tools = false
   # forces patrol with this id to occur, assuming it's possible by constraints
   debug_ensure_patrol_id = ""
 
-  # set to true to remove all constraints for patrols regarding location, session, biomes, etc.
+  # set to true to remove all constraints for patrols regarding location, season, biomes, etc.
   debug_override_patrol_stat_requirements = false
 
   # set to true (NO QUOTES) to ensure the debug patrol succeeds
@@ -582,7 +618,7 @@ dev_tools = false
   # forces specified event to occur regardless of if requirements are met
   debug_override_requirements = false
 
-  # forces the given frequency, frequency can be a number from 1-4
+  # forces the code to find events with the given frequency, frequency can be a number from 1-4
   debug_override_frequency = 0
 
 [death_related]
@@ -890,8 +926,13 @@ dev_tools = false
     # herb bonus applied when cats should gather a boosted number of herbs
     general_amount_bonus = 2
 
-    # the amount of herbs a single cat can carry in a patrol - CLEVER quantity mod will apply
-    general_patrol_quantity_per_cat = 6
+    gathering_variance = [-1, 1]
+    [clan_resources.herbs.increase_amounts]
+      increase_tiny = 2
+      increase_small = 3
+      increase_medium = 4
+      increase_large = 6
+      increase_huge = 8
 
     # adjust weights for finding [1 herb type, 2 herb types, 3 herb types] for each season
     [clan_resources.herbs.forest]
@@ -1088,11 +1129,18 @@ dev_tools = false
   # used in conjunction with patrol_balance to modify the chosen prey size by the patrol frequency
   # the less frequent the patrol, the larger the prey it can find
   [prey.patrol_weight_adaption]
-      # prey size increase = associated frequency
-      1_prey_class_increase = 4
-      2_prey_class_increase = 3
-      3_prey_class_increase = 2
-      4_prey_class_increase = 1
+    # prey size increase = associated frequency
+    1_prey_class_increase = 4
+    2_prey_class_increase = 3
+    3_prey_class_increase = 2
+    4_prey_class_increase = 1
+
+  [prey.event_increase_modifiers]
+    increase_tiny = 0.5
+    increase_small = 1
+    increase_medium = 1.8
+    increase_large = 2.4
+    increase_huge = 3.2
 
 [settings]
   # force a game setting to be true, stopping players from changing it
