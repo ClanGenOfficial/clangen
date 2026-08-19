@@ -7,6 +7,8 @@ TODO: Docs
 """
 import logging
 import random
+
+from scripts.cat.microservices.add_to_clan import add_dependents_to_clan, add_to_clan
 from scripts.config import get_config
 
 # pylint: enable=line-too-long
@@ -487,7 +489,8 @@ def handle_lead_den_event():
 
             elif info_dict["interaction_type"] in ("invite", "search"):
                 # ADD TO CLAN AND CHECK FOR KITS
-                additional_kits = outsider_cat.add_to_clan()
+                add_to_clan(outsider_cat)
+                additional_kits = add_dependents_to_clan(outsider_cat)
 
                 if additional_kits:
                     event_text += i18n.t(
@@ -845,7 +848,8 @@ def handle_lost_cats_return(predetermined_cat_IDs: list = None):
                 parent_name=Cat.fetch_cat(lost_cat.parent1).name,
             )
 
-        additional_cats = lost_cat.add_to_clan()
+        add_to_clan(lost_cat)
+        additional_cats = add_dependents_to_clan(lost_cat)
         cat_IDs.extend(additional_cats)
 
         if additional_cats:

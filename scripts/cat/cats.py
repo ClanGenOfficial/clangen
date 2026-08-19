@@ -597,39 +597,6 @@ class Cat:
         for x in self.apprentice:
             Cat.fetch_cat(x).update_mentor()
 
-    def add_to_clan(self) -> List[str]:
-        """Makes an "outside cat" a Clan cat. Returns a list of IDs for any additional cats that
-        are coming with them."""
-
-        if not self.status.is_exiled(CatGroup.PLAYER_CLAN_ID):
-            self.history.add_beginning()
-
-        self.status.add_to_group(new_group_ID=CatGroup.PLAYER_CLAN_ID, age=self.age)
-
-        if game.clan:
-            game.clan.add_cat(self)
-
-        # check if there are kits under 12 moons with this cat and also add them to the clan
-        children = self.get_children()
-        ids = []
-        for child_id in children:
-            child = Cat.all_cats[child_id]
-            if (
-                not child.dead
-                and not child.status.is_exiled(CatGroup.PLAYER_CLAN_ID)
-                and child.moons < 12
-                and not child.status.alive_in_player_clan
-            ):
-                child.history.add_beginning()
-                child.status.add_to_group(
-                    new_group_ID=CatGroup.PLAYER_CLAN_ID, age=child.age
-                )
-                if game.clan:
-                    game.clan.add_cat(child)
-                ids.append(child_id)
-
-        return ids
-
     def rank_change(self, new_rank: CatRank, resort=False, new_thought=True):
         """Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
         :param new_rank: CatRank that the cat is becoming

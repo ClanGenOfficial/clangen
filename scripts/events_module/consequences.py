@@ -15,6 +15,7 @@ from scripts.cat.enums import (
 )
 from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.factories.enums import CatType
+from scripts.cat.microservices.add_to_clan import add_to_clan, add_dependents_to_clan
 from scripts.cat.names import Name
 from scripts.cat_relations.enums import RelType
 from scripts.cat_relations.inheritance2 import inheritance_db
@@ -329,7 +330,9 @@ def create_new_cat_block(
             elif not outside:
                 if not rank:
                     rank = chosen_cat.status.get_rank_from_age(chosen_cat.age)
-                chosen_cat.add_to_clan()
+                add_to_clan(chosen_cat)
+                add_dependents_to_clan(chosen_cat)
+                # todo why doesn't this do anything with the returned kits
                 if chosen_cat.status.rank != rank:
                     chosen_cat.rank_change(
                         new_rank=CatRank(rank), resort=True, new_thought=False
@@ -618,7 +621,10 @@ def create_new_cat(
             )
         # now we actually add them to the clan, if they should be joining
         if not outside and alive:
-            new_cat.add_to_clan()
+            add_to_clan(new_cat)
+            add_dependents_to_clan(new_cat)
+            # todo why doesn't use the return value
+
             # check if cat is the correct rank
             if new_cat.status.rank != rank:
                 new_cat.status._change_rank(CatRank(rank))

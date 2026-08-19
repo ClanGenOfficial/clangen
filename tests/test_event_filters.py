@@ -3,6 +3,7 @@ import os
 from copy import deepcopy
 from itertools import permutations
 
+from scripts.cat.microservices.add_to_clan import add_dependents_to_clan
 from scripts.cat.personality import Personality
 from scripts.cat.skills import Skill, SkillPath
 from scripts.clan_resources.point_of_interest import (
@@ -2367,7 +2368,8 @@ class TestCatConstraint(unittest.TestCase):
             elif old_rank.is_any_clancat_rank():
                 cat.leave_clan(new_social_status=CatSocial(new_rank.value))
             elif new_rank.is_any_clancat_rank():
-                cat.add_to_clan()
+                add_to_clan(cat)
+                add_dependents_to_clan(cat)
                 cat.rank_change(new_rank=new_rank)
             else:
                 raise Exception(

@@ -8,6 +8,7 @@ import i18n
 from scripts.cat.cats import Cat
 from scripts.cat.constants import PERMANENT, ILLNESSES, INJURIES
 from scripts.cat.enums import CatRank, CatThought
+from scripts.cat.microservices.add_to_clan import add_to_clan, add_dependents_to_clan
 from scripts.cat.skills import SkillPath
 from scripts.clan import OtherClan
 from scripts.clan_package.cotc import change_clan_reputation, change_clan_relations
@@ -116,7 +117,8 @@ def _handle_joining(
                     cat_list.append(event_involved_cats[abbr])
 
         for cat in cat_list:
-            cat.add_to_clan()
+            add_to_clan(cat)
+            add_dependents_to_clan(cat)
             if block.get("change_name"):
                 cat.change_name()
 
