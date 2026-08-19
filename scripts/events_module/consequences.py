@@ -752,7 +752,7 @@ def create_new_cat(
             new_cat.die()
 
         # newbie thought
-        new_cat.get_new_thought(thought)
+        new_cat.assign_thought(thought)
 
         # and they exist now
         created_cats.append(new_cat)
