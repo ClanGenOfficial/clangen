@@ -180,28 +180,6 @@
         }
     },
     {
-        "event_id": "warrior_apprentice_to_clanborn_warrior",
-        "strings": [
-            "Wonders if r_c was a good apprentice"
-        ],
-        "involved_cats": {
-            "r_c": {
-                "status": [
-                    "warrior"
-                ],
-                "group": [
-                    "-afterlife"
-                ],
-                "backstory": [
-                    "clan_founder_backstories",
-                    "clanborn_backstories",
-                    "outsider_roots_backstories",
-                    "half_clan_backstories"
-                ]
-            }
-        }
-    },
-    {
         "event_id": "warrior_apprentice_to_medcat",
         "strings": [
             "Can't get the taste of herbs out of {PRONOUN/m_c/poss} mouth after helping r_c",
@@ -249,6 +227,9 @@
             "r_c": {
                 "status": [
                     "warrior"
+                ],
+                "past_status": [
+                    "apprentice"
                 ],
                 "group": [
                     "-afterlife"
