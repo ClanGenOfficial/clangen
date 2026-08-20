@@ -39,7 +39,9 @@ def get_ill(cat, illness_name, event_triggered=False, lethal=True, severity="def
     med_mortality = illness["medicine_mortality"][cat.age.value]
     illness_severity = illness["severity"] if severity == "default" else severity
     duration = illness["duration"] * get_config("condition_related.duration_modifier")
-    med_duration = illness["medicine_duration"] * get_config("condition_related.duration_modifier")
+    med_duration = illness["medicine_duration"] * get_config(
+        "condition_related.duration_modifier"
+    )
 
     amount_per_med = get_amount_cat_for_one_medic(game.clan)
 
@@ -113,7 +115,9 @@ def get_injured(
     injury = INJURIES[name]
     mortality = injury["mortality"][cat.age.value]
     duration = injury["duration"] * get_config("condition_related.duration_modifier")
-    med_duration = injury["medicine_duration"] * get_config("condition_related.duration_modifier")
+    med_duration = injury["medicine_duration"] * get_config(
+        "condition_related.duration_modifier"
+    )
     injury_severity = injury["severity"] if severity == "default" else severity
     if medicine_cats_can_cover_clan(
         cat.all_cats.values(), get_amount_cat_for_one_medic(game.clan)
