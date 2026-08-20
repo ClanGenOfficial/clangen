@@ -13792,7 +13792,6 @@
                     ],
                     "tags": [],
                     "exclude_involved": [
-                        "m_c"
                     ],
                     "frequency": 1,
                     "event_text": "m_c purrs when o_c_n announces they have more apprentices.",
