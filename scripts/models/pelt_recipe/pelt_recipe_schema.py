@@ -45,8 +45,21 @@ class Layer(RootModel):
 
 
 class RecipeException(BaseModel):
-    poses: list[str] | str | MISSING
-    colors: list[str] | str | MISSING
+    model_config = ConfigDict(extra="forbid")
+
+    poses: list[str] | str | MISSING = Field(
+        MISSING, description="Poses that this exception applies to."
+    )
+    colors: list[str] | str | MISSING = Field(
+        MISSING, description="Colours that this exception applies to."
+    )
+
+    layer_order: list[LayerOrder] | MISSING = Field(
+        MISSING, description="Layer order of this exception."
+    )
+    layers: dict[str, Layer] | MISSING = Field(
+        MISSING, description="Layer data of this exception."
+    )
 
 
 class PeltRecipe(BaseModel):
