@@ -1,6 +1,8 @@
 from random import choice
 from typing import Union, Type, TYPE_CHECKING, Tuple, List, Optional
 
+from scripts.cat_relations.relationship import create_one_relationship
+
 if TYPE_CHECKING:
     from scripts.cat.cats import Cat
 
@@ -103,9 +105,9 @@ def get_cats_same_age(Cat, cat_to_match, age_range=10):
             continue
 
         if inter_cat.ID not in cat_to_match.relationships:
-            cat_to_match.create_one_relationship(inter_cat)
+            create_one_relationship(cat_to_match, inter_cat)
             if cat_to_match.ID not in inter_cat.relationships:
-                inter_cat.create_one_relationship(cat_to_match)
+                create_one_relationship(inter_cat, cat_to_match)
             continue
 
         if (
@@ -134,9 +136,9 @@ def get_possible_mates(cat) -> Tuple[List["Cat"], List["Cat"]]:
             continue
 
         if inter_cat.ID not in cat.relationships:
-            cat.create_one_relationship(inter_cat)
+            create_one_relationship(cat, inter_cat)
             if cat.ID not in inter_cat.relationships:
-                inter_cat.create_one_relationship(cat)
+                create_one_relationship(inter_cat, cat)
             continue
 
         if inter_cat.is_potential_mate(cat, for_love_interest=True):
