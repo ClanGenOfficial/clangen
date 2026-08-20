@@ -45,5 +45,11 @@
       "seasons.lock_season": true,
       "seasons.force_starting_season": "Leaf-bare"
     }
+  },
+  "longer_illnesses": {
+    "card_art": "environment/tainted.png",
+    "modifiers": {
+      "cruel_season.event.tainted_territory": true
+    }
   }
 }

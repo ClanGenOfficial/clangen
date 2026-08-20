@@ -21,6 +21,9 @@ dev_tools = false
   [cruel_season.event]
     # set to true to also kill a random cat when the leader dies
     stolen_vitality = false
+    
+    # set to true to double condition lengths
+    tainted_territory = false
 
 # settings regarding afterlife affinity
 [affinity]
