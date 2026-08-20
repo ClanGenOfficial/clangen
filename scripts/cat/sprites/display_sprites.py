@@ -626,25 +626,31 @@ def _apply_recipe_exceptions(pelt_recipe: dict, colour: str, sprite: int) -> dic
 
     # We want to find the best match - that exception were we meet the most conditions.
     match = None
-    match_num = 0
     for one_ex in exceptions:
+        
         match_num = 0
+        # How many matches are needed to meet requriments. 
+        needed_matches = 0 
 
         # Check to see if it matches at least one color condition.
-        color_conditions = one_ex.get("colors", "")
-        if (
-            type(color_conditions) is list and colour in color_conditions
-        ) or color_conditions == colour:
-            match_num += 1
+        color_conditions = one_ex.get("colors")
+        if color_conditions:
+            needed_matches += 1
+            if (
+                type(color_conditions) is list and colour in color_conditions
+            ) or color_conditions == colour:
+                match_num += 1
 
-        pose = sprites.POSE_DATA[int(sprite)]
-        pose_conditions = one_ex.get("poses", "")
-        if (
-            type(pose_conditions) is list and pose in color_conditions
-        ) or pose_conditions == pose:
-            match_num += 1
+        pose = sprites.POSE_DATA["poses"][int(sprite)]
+        pose_conditions = one_ex.get("poses")
+        if pose_conditions:
+            needed_matches += 1
+            if (
+                type(pose_conditions) is list and pose in pose_conditions
+            ) or pose_conditions == pose:
+                match_num += 1
 
-        if match > 0:
+        if match_num == needed_matches:
             match = one_ex
 
         if match == MAX_MATCHES:
