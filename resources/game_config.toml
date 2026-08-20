@@ -227,7 +227,10 @@ dev_tools = false
       trust = 20
 
   [mates.breakup]
-
+    # the chance for a break up to happen after an affair has been discovered
+    # any number lower than this increases the likelyhood of a break up
+    affair_breakup_chance = 0.8
+    
     # intial chance of breakup
     [mates.breakup.initial_chance]
       threshold = 120
@@ -278,10 +281,6 @@ dev_tools = false
         romance = -50
         trust = -30
         like = -40
-
-    # the chance for a break up to happen after an affair has been discovered
-    # any number lower than this increases the likelyhood of a break up
-    affair_breakup_chance = 0.8
 
 [new_cat]
   # number of welcoming events to add when a new cat joins
