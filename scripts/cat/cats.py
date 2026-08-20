@@ -1673,6 +1673,12 @@ class Cat:
         if lethal is False:
             mortality = 0
 
+        if get_config("cruel_season.event.tainted_territory"):
+            if medicine_cats_can_cover_clan(Cat.all_cats.values(), amount_per_med):
+                duration = med_duration * 2
+            else:   
+                duration = illness["duration"] * 2
+
         new_illness = Illness(
             name=name,
             severity=illness_severity,
@@ -1745,6 +1751,12 @@ class Cat:
             duration = 1
         if lethal is False:
             mortality = 0
+
+        if get_config("cruel_season.event.tainted_territory"):
+            if medicine_cats_can_cover_clan(Cat.all_cats.values(), get_amount_cat_for_one_medic(game.clan)):
+                duration = med_duration * 2
+            else:   
+                duration = injury["duration"] * 2
 
         new_injury = Injury(
             name=name,
