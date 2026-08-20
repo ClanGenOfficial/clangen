@@ -374,7 +374,7 @@ dev_tools = false
 
   # the base chance a cat who's been cheated on will help raise their mate's kits after an affair
   # by default, the chance is 40% and the range is from 0-100%, any value higher or lower will be capped
-  base_kit_claim_chance = 40
+  base_claim_kit_chance = 40
 
   # The kit number is incremental. It is 1-6 as default so if you change these numbers, you should probably keep this in mind.
   # As in, your max kits number should probably be 5 more than the min kits number.
@@ -912,6 +912,9 @@ dev_tools = false
   [clan_resources.herbs]
     # set to True if the Clan should begin with no herbs
     empty_starting_storage = false
+
+    # set to True if the Clan should begin with less herbs
+    half_starting_storage = false
 
     # Clan size * required_herbs_per_cat / adequate number will determine adequate supply qualifier.
     # Clan size * required_herbs_per_cat * excess number will determine excess supply qualifier

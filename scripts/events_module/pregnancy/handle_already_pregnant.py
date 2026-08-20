@@ -5,10 +5,11 @@ import i18n
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatGroup, CatRank
-from scripts.cat.names import names, Name
+from scripts.cat.names import Name
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.clan_package.settings import get_clan_setting
+from scripts.cat.microservices.conditions import get_injured
 from scripts.config import get_config
 from scripts.event_class import Single_Event
 from scripts.events_module.consequences import (
@@ -185,7 +186,7 @@ def handle_two_moon_pregnant(cat: Cat):
             kit.backstory = "outsider1"
 
             if cat.status.is_exiled(CatGroup.PLAYER_CLAN_ID):
-                name = choice(names.names_dict["normal_prefixes"])
+                name = choice(Name.names_dict["normal_prefixes"])
                 kit.name = Name(prefix=name, suffix="", cat=kit)
                 extra_naming_text = "conditions.pregnancy.reject_clan_tradition"
 
@@ -195,7 +196,7 @@ def handle_two_moon_pregnant(cat: Cat):
             if cat.status.is_lost(CatGroup.PLAYER_CLAN_ID):
                 kit.backstory = "outsider3"
                 if not keep_clan_tradition:
-                    name = choice(names.names_dict["normal_prefixes"])
+                    name = choice(Name.names_dict["normal_prefixes"])
                     kit.name = Name(prefix=name, suffix="", cat=kit)
                     extra_naming_text = "conditions.pregnancy.reject_clan_tradition"
                 else:
@@ -247,7 +248,7 @@ def handle_two_moon_pregnant(cat: Cat):
             death_event = i18n.t("conditions.pregnancy.kitting_death", name=cat.name)
         cat.history.add_death(death_text=death_event)
     elif not cat.status.is_outsider:  # if cat doesn't die, give recovering from birth
-        cat.get_injured("recovering from birth", event_triggered=True)
+        get_injured(cat, "recovering from birth", event_triggered=True)
         if "blood loss" in cat.injuries:
             if cat.status.is_leader:
                 death_event = i18n.t("conditions.pregnancy.leader_kitting_death_severe")

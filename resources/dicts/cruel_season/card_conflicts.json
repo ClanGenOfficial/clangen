@@ -4,5 +4,6 @@
     "starting_numbers": ["one_cat", "young_old"],
     "seasons": ["always_newleaf", "always_greenleaf", "always_leaf-fall", "always_leaf-bare"],
     "litters": ["underpopulated", "mouths_to_feed"],
-    "leader_life_count": ["weak_stars", "forsaken"]
+    "leader_life_count": ["weak_stars", "forsaken"],
+    "starting_herbs": ["barren_stocks", "meagre_stocks"]
 }

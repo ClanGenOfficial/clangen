@@ -17,14 +17,15 @@ import i18n
 import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
-from scripts.cat.enums import CatRank, CatGroup, CatSocial, CatCompatibility
+from scripts.cat.enums import CatRank, CatGroup, CatSocial, CatCompatibility, CatThought
 from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.factories.typed_dicts import StatusDict
-from scripts.cat.names import names
+from scripts.cat.names import Name
 from scripts.cat.save_load import (
     save_cats,
     get_faded_ids,
 )
+from scripts.cat_relations.cat_handle_funcs import init_all_relationships
 from scripts.clan_package.clan_names import get_possible_clan_names
 from scripts.clan_package.settings import save_clan_settings, load_clan_settings
 from scripts.clan_package.settings.clan_settings import (
@@ -301,7 +302,7 @@ class Clan:
         # give actions and relationships to cats
         for cat_id in Cat.all_cats:
             the_cat = Cat.all_cats.get(cat_id)
-            the_cat.init_all_relationships()
+            init_all_relationships(the_cat)
             if the_cat != self.instructor:
                 the_cat.backstory = "clan_founder"
             if the_cat.status.rank == CatRank.APPRENTICE:
@@ -353,7 +354,7 @@ class Clan:
                     weights = constants.CONFIG["cat_name_controls"]["rogue"]
 
                 selected_category = choices(name_categories, weights, k=1)[0]
-                name = choice(names.names_dict[selected_category])
+                name = choice(Name.names_dict[selected_category])
                 c.change_name(new_prefix=name, new_suffix="")
 
                 # add back to all_cats, cus they get removed during `create_clan()`
@@ -779,6 +780,8 @@ class Clan:
             # update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
+
+        game.clan.instructor.assign_thought(CatThought.IS_GUIDE)
 
         # check for symbol
         if "clan_symbol" in clan_data:

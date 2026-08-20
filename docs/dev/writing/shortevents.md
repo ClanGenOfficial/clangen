@@ -18,6 +18,11 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
     "season": [],
     "sub_type": [],
     "tags": [],
+    "poi": {
+      "name": [],
+      "tags": [],
+      "category": ""
+    },
     "frequency": 4,
     "event_text": "event text here",
     "new_accessory": [],

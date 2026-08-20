@@ -6,7 +6,7 @@ import i18n
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatCompatibility
-from scripts.cat_relations.relationship import Relationship
+from scripts.cat_relations.relationship import Relationship, create_one_relationship
 from scripts.config import get_config
 from scripts.event_class import Single_Event
 from scripts.game_structure import game
@@ -49,9 +49,9 @@ def handle_mates_and_breakup(cat: Cat):
     for m in cat.mate:
         mate = Cat.fetch_cat(m)
         if mate.ID not in cat.relationships:
-            cat.create_one_relationship(mate)
+            create_one_relationship(cat, mate)
         if cat.ID not in mate.relationships:
-            mate.create_one_relationship(cat)
+            create_one_relationship(mate, cat)
 
     _handle_moving_on(cat)
     _handle_breakup_events(cat)
@@ -431,12 +431,12 @@ def _attempt_mutual_interest_mates(
     if cat_to.ID in cat_from.relationships:
         relationship_from = cat_from.relationships[cat_to.ID]
     else:
-        relationship_from = cat_from.create_one_relationship(cat_to)
+        relationship_from = create_one_relationship(cat_from, cat_to)
 
     if cat_from.ID in cat_to.relationships:
         relationship_to = cat_to.relationships[cat_from.ID]
     else:
-        relationship_to = cat_to.create_one_relationship(cat_from)
+        relationship_to = create_one_relationship(cat_to, cat_from)
 
     mate_string = None
     mate_chance = get_config("mates.chance_fulfilled_condition")

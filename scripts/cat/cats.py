@@ -8,7 +8,7 @@ import bisect
 import itertools
 import os.path
 import sys
-from random import choice, randint, sample, random, randrange, choices
+from random import choice, randint, sample, random
 from typing import Dict, List, Any, Union, Callable, Optional, TYPE_CHECKING, Literal
 
 import i18n
@@ -32,29 +32,20 @@ from scripts.cat.factories.typed_dicts import (
     GenderDict,
 )
 from scripts.cat.history import History
+from scripts.cat.microservices.grief import grief
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
 from scripts.cat.skills import CatSkills, SkillPath, scale_progress
 from scripts.cat.status import Status
+from scripts.cat_relations.cat_handle_funcs import init_all_relationships
 from scripts.config import get_config
-from scripts.events_module.thoughts.generate_thoughts import (
-    new_thought,
-    get_other_cat_for_thought,
-)
 from scripts.cat_relations.inheritance import Inheritance
 from scripts.cat_relations.inheritance2 import inheritance_db
-from scripts.cat_relations.relationship import Relationship
+from scripts.cat_relations.relationship import Relationship, create_one_relationship
 from scripts.cat_relations.enums import RelType, RelTier, rel_type_tiers
 from scripts.clan_package.settings import get_clan_setting
-from scripts.conditions import (
-    Illness,
-    Injury,
-    PermanentCondition,
-    get_amount_cat_for_one_medic,
-    medicine_cats_can_cover_clan,
-)
-from scripts.event_class import Single_Event
+
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.game_structure import image_cache, constants, game
 from scripts.game_structure.game.save_load import safe_save
@@ -63,6 +54,7 @@ from scripts.game_structure.game.switches import switch_get_value, Switch
 from scripts.game_structure.localization import load_lang_resource
 from scripts.game_structure.screen_settings import screen
 from scripts.housekeeping.datadir import get_save_dir
+from scripts.cat import microservices
 from scripts.cat.sprites.display_sprites import update_sprite, update_mask
 from scripts.events_module.text_adjust import (
     event_text_adjust,
@@ -75,6 +67,8 @@ import scripts.game_structure.screen_settings
 
 if TYPE_CHECKING:
     import pygame
+
+import scripts.game_structure.screen_settings
 
 
 class Cat:
@@ -245,6 +239,8 @@ class Cat:
         self.placement = None
         self.example = example
         self.thought = ""
+        self.next_thought_type: CatThought = CatThought.WHILE_ALIVE
+        self.assign_thought()
 
         # conditions setup
         self.illnesses = {}
@@ -513,7 +509,7 @@ class Cat:
         # Deal with leader death
         if self.status.is_leader:
             if game.clan.leader_lives > 0:
-                self.get_new_thought(CatThought.ON_DEATH)
+                self.assign_thought(CatThought.ON_DEATH)
                 return
 
             if game.clan.leader_lives <= 0:
@@ -525,7 +521,7 @@ class Cat:
             self.dead = True
             game.just_died.append(self.ID)
 
-        self.get_new_thought(CatThought.ON_DEATH)
+        self.assign_thought(CatThought.ON_DEATH)
 
         for app in self.apprentice.copy():
             fetched_cat = Cat.fetch_cat(app)
@@ -541,7 +537,7 @@ class Cat:
             and self.status.get_last_living_group() == CatGroup.PLAYER_CLAN_ID
             and not self.status.is_exiled(CatGroup.PLAYER_CLAN_ID)
         ):
-            self.grief(body)
+            grief(self, body)
             game.dead_cats_to_grieve.append(self)
 
         # mark the sprite as outdated
@@ -551,165 +547,13 @@ class Cat:
         """This is used to send a cat into exile."""
 
         self.status.exile_from_group()
-        self.get_new_thought(CatThought.ON_EXILE)
+        self.assign_thought(CatThought.ON_EXILE)
 
         for app in self.apprentice:
             fetched_cat = Cat.fetch_cat(app)
             if fetched_cat:
                 fetched_cat.update_mentor()
         self.update_mentor()
-
-    def grief(self, body: bool):
-        """
-        compiles grief moon event text
-        """
-        if body:
-            body_status = "body"
-        else:
-            body_status = "no_body"
-
-        # Keep track is the body was treated with rosemary.
-        body_treated = False
-        text = None
-
-        # apply grief to cats with high positive relationships to dead cat
-        for cat in Cat.all_cats.values():
-            if cat.dead or cat.status.is_outsider or cat.moons < 1:
-                continue
-
-            rel_with_dead = cat.relationships.get(self.ID)
-            if not isinstance(rel_with_dead, Relationship):
-                continue
-
-            family_relation = self.familial_grief(living_cat=cat)
-            very_high_types = []
-            high_types = []
-            very_low_types = []
-
-            # find what tier of rel they had for each type
-            tiers: list[RelTier] = rel_with_dead.get_reltype_tiers()
-            for tier in tiers:
-                rel_type = [k for k in rel_type_tiers if tier in rel_type_tiers[k]]
-                if tier.is_extreme_pos:
-                    very_high_types.extend(rel_type)
-                elif tier.is_mid_pos:
-                    high_types.extend(rel_type)
-                elif tier.is_extreme_neg:
-                    very_low_types.extend(rel_type)
-                elif tier.is_mid_neg and randint(1, 6) == 1:
-                    very_low_types.extend(rel_type)
-                continue
-
-            major_chance = 0
-            if very_high_types:
-                # major grief eligible cats.
-
-                major_chance = 3
-                # the less stable the cat, the more likely to grieve
-                if cat.personality.stability < 5:
-                    major_chance -= 1
-
-                # if considered family, grief more likely
-                if family_relation != "general":
-                    major_chance -= 1
-
-                # decrease major grief chance if grave herbs are used
-                if (
-                    body
-                    and not body_treated
-                    and game.clan.herb_supply.entire_supply["rosemary"]
-                ):
-                    body_treated = True
-                    game.clan.herb_supply.remove_herb("rosemary", -1)
-                    game.herb_events_list.append(
-                        f"Rosemary was used for {self.name}'s body."
-                    )
-
-                if body_treated:
-                    major_chance += 1
-
-            # If major_chance is not 0, there is a chance for major grief
-            grief_type = None
-            if major_chance and not int(random() * major_chance):
-                grief_type = "major"
-
-                possible_strings = []
-                for x in very_high_types:
-                    possible_strings.extend(
-                        self.generate_events.possible_death_reactions(
-                            family_relation, x, cat.personality.trait, body_status
-                        )
-                    )
-
-                if not possible_strings:
-                    print("No grief strings")
-                    continue
-
-                text = choice(possible_strings)
-                text = event_text_adjust(Cat, text=text, main_cat=self, random_cat=cat)
-
-                cat.get_ill("grief stricken", event_triggered=True, severity="major")
-
-            # If major grief fails, but there are still very_high or high values,
-            # it can fail to minor grief. If they have a family relation, bypass the roll and guarantee it
-            elif (very_high_types or high_types) and (
-                family_relation != "general" or not int(random() * 5)
-            ):
-                grief_type = "minor"
-
-                text = CatThought.ON_GRIEF_NO_BODY
-
-                if body:
-                    text = CatThought.ON_GRIEF_TOWARD_BODY
-
-            if grief_type:
-                # Generate the event:
-                if cat.ID not in game.clan.grief_strings:
-                    game.clan.grief_strings[cat.ID] = []
-
-                game.clan.grief_strings[cat.ID].append(
-                    (text, (self.ID, cat.ID), grief_type)
-                )
-                continue
-
-            # Negative "grief" messages are just for flavor.
-            if very_low_types:
-                # Generate the event:
-                possible_strings = []
-                for x in very_low_types:
-                    value = f"neg_{x}"
-                    possible_strings.extend(
-                        self.generate_events.possible_death_reactions(
-                            family_relation, value, cat.personality.trait, body_status
-                        )
-                    )
-
-                text = event_text_adjust(
-                    Cat, choice(possible_strings), main_cat=self, random_cat=cat
-                )
-                if cat.ID not in game.clan.grief_strings:
-                    game.clan.grief_strings[cat.ID] = []
-
-                game.clan.grief_strings[cat.ID].append(
-                    (text, (self.ID, cat.ID), "negative")
-                )
-
-    def familial_grief(self, living_cat: Cat):
-        """
-        returns relevant grief strings for family members, if no relevant strings then returns None
-        """
-        dead_cat = self
-
-        if dead_cat.is_parent(living_cat):
-            return "child"
-        elif living_cat.is_parent(dead_cat):
-            return "parent"
-        elif dead_cat.is_sibling(living_cat):
-            return "sibling"
-        elif dead_cat.ID in living_cat.mate:
-            return "mate"
-        else:
-            return "general"
 
     def leave_clan(self, new_social_status: CatSocial):
         """Removes cat from the Clan willingly. Makes status changes and removes apprentices."""
@@ -718,7 +562,7 @@ class Cat:
                 (CatSocial.KITTYPET, CatSocial.LONER, CatSocial.ROGUE)
             )
         self.status.leave_group(new_social_status=new_social_status)
-        self.get_new_thought()
+        self.assign_thought()
 
         for app in self.apprentice.copy():
             app_ob = Cat.fetch_cat(app)
@@ -744,43 +588,10 @@ class Cat:
 
         self.update_mentor()
 
-        self.get_new_thought(CatThought.ON_LOST)
+        self.assign_thought(CatThought.ON_LOST)
 
         for x in self.apprentice:
             Cat.fetch_cat(x).update_mentor()
-
-    def add_to_clan(self) -> List[str]:
-        """Makes an "outside cat" a Clan cat. Returns a list of IDs for any additional cats that
-        are coming with them."""
-
-        if not self.status.is_exiled(CatGroup.PLAYER_CLAN_ID):
-            self.history.add_beginning()
-
-        self.status.add_to_group(new_group_ID=CatGroup.PLAYER_CLAN_ID, age=self.age)
-
-        if game.clan:
-            game.clan.add_cat(self)
-
-        # check if there are kits under 12 moons with this cat and also add them to the clan
-        children = self.get_children()
-        ids = []
-        for child_id in children:
-            child = Cat.all_cats[child_id]
-            if (
-                not child.dead
-                and not child.status.is_exiled(CatGroup.PLAYER_CLAN_ID)
-                and child.moons < 12
-                and not child.status.alive_in_player_clan
-            ):
-                child.history.add_beginning()
-                child.status.add_to_group(
-                    new_group_ID=CatGroup.PLAYER_CLAN_ID, age=child.age
-                )
-                if game.clan:
-                    game.clan.add_cat(child)
-                ids.append(child_id)
-
-        return ids
 
     def rank_change(self, new_rank: CatRank, resort=False, new_thought=True):
         """Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
@@ -837,11 +648,11 @@ class Cat:
             CatRank.NEWBORN,
             CatRank.KITTEN,
         ):  # newborn and kitten aren't really "ranks" to be promoted to
-            self.get_new_thought(CatThought.ON_RANK_CHANGE)
+            self.assign_thought(CatThought.ON_RANK_CHANGE)
         # however we don't want kittens to somehow have a newborn thought, so we'll have them reset to a normal kitten thought
         # just in case
         if new_thought and new_rank == CatRank.KITTEN:
-            self.get_new_thought()
+            self.assign_thought()
 
         # update class dictionary
         self.all_cats[self.ID] = self
@@ -1420,6 +1231,9 @@ class Cat:
             self.personality.facet_wobble(facet_max=2)
             self.pelt.rebuild_sprite = True
 
+        # reset next thought type
+        self.assign_thought()
+
         if not self.status.alive_in_player_clan:
             # this is handled in events.py
             self.personality.set_kit(self.age.is_baby())
@@ -1432,58 +1246,23 @@ class Cat:
         if self.status.rank.is_any_apprentice_rank():
             self.update_mentor()
 
-    def get_new_thought(
-        self,
-        thought_type: CatThought = None,
-        other_clan_cats: list = None,
-        other_cat: Cat = None,
-    ):
+    def assign_thought(self, thought_type: CatThought = None):
         """
-        Generates a thought for the cat, which displays on their profile.
+        Assigns next thought type to be displayed on cat's profile.
         :param thought_type: Indicate what type of thought should be generated
-        :param other_clan_cats: If cat is in a different clan, pass the list of their clanmates
-        :param other_cat: If a specific other cat should be included, include their object here.
         """
+        # reset current thought
+        self.thought = None
         # default thought type
         if not thought_type:
-            thought_type = (
-                CatThought.WHILE_DEAD if self.dead else CatThought.WHILE_ALIVE
-            )
+            if game.clan and self is game.clan.instructor:
+                thought_type = CatThought.IS_GUIDE
+            elif self.dead:
+                thought_type = CatThought.WHILE_DEAD
+            else:
+                thought_type = CatThought.WHILE_ALIVE
 
-        if self.status.is_other_clancat and not self.dead:
-            cat_list = other_clan_cats.copy() if other_clan_cats else []
-            other_clan_id = self.status.group_ID
-        else:
-            cat_list = self.all_cats_list.copy()
-            other_clan_id = (
-                choice(game.clan.other_clan_IDs)
-                if game.clan
-                and hasattr(game.clan, "other_clan_ids")
-                and game.clan.other_clan_IDs
-                else None
-            )  # this is so stupid convoluted because of tests and game.clan initialization
-
-        if not other_cat:
-            other_cat = get_other_cat_for_thought(
-                cat_list=cat_list,
-                main_cat=self,
-            )
-
-        # get chosen thought
-        chosen_thought = new_thought(
-            thought_type, self, other_cat, other_clan_id=other_clan_id
-        )
-
-        chosen_thought = event_text_adjust(
-            self.__class__,
-            chosen_thought,
-            main_cat=self,
-            random_cat=other_cat,
-            clan=game.clan,
-        )
-
-        # insert thought
-        self.thought = str(chosen_thought)
+        self.next_thought_type = thought_type
 
     def moon_skip_illness(self, illness):
         """handles the moon skip for illness"""
@@ -1672,274 +1451,6 @@ class Cat:
     #                                  conditions                                  #
     # ---------------------------------------------------------------------------- #
 
-    def get_ill(self, name, event_triggered=False, lethal=True, severity="default"):
-        """Add an illness to this cat.
-
-        :param name: name of the illness (str)
-        :param event_triggered: Whether to have this illness skip `moon_skip_illness` for 1 moon, default `False` (bool)
-        :param lethal: Allow lethality, default `True` (bool)
-        :param severity: Override severity, default `'default'` (str, accepted values `'minor'`, `'major'`, `'severe'`)
-        """
-        if self.dead:
-            return
-        if name not in ILLNESSES:
-            print(f"WARNING: {name} is not in the illnesses collection.")
-            return
-        if name == "kittencough" and self.status.rank != CatRank.KITTEN:
-            return
-
-        illness = ILLNESSES[name]
-        mortality = illness["mortality"][self.age.value]
-        med_mortality = illness["medicine_mortality"][self.age.value]
-        illness_severity = illness["severity"] if severity == "default" else severity
-        duration = illness["duration"]
-        med_duration = illness["medicine_duration"]
-
-        amount_per_med = get_amount_cat_for_one_medic(game.clan)
-
-        if medicine_cats_can_cover_clan(Cat.all_cats.values(), amount_per_med):
-            duration = med_duration
-        if severity != "minor":
-            duration += randrange(-1, 1)
-        if duration == 0:
-            duration = 1
-
-        if lethal is False:
-            mortality = 0
-
-        new_illness = Illness(
-            name=name,
-            severity=illness_severity,
-            mortality=mortality,
-            infectiousness=illness["infectiousness"],
-            duration=duration,
-            medicine_duration=illness["medicine_duration"],
-            medicine_mortality=med_mortality,
-            risks=illness["risks"],
-            event_triggered=event_triggered,
-        )
-
-        if new_illness.name not in self.illnesses:
-            self.illnesses[new_illness.name] = {
-                "severity": new_illness.severity,
-                "mortality": new_illness.current_mortality,
-                "infectiousness": new_illness.infectiousness,
-                "duration": new_illness.duration,
-                "moon_start": game.clan.age if game.clan else 0,
-                "risks": new_illness.risks,
-                "event_triggered": new_illness.new,
-            }
-
-    def get_injured(
-        self,
-        name,
-        event_triggered=False,
-        lethal=True,
-        potential_scars=None,
-        severity="default",
-    ):
-        """Add an injury to this cat.
-
-        :param name: The injury to add
-        :type name: str
-        :param event_triggered: Whether to process healing immediately, defaults to False
-        :type event_triggered: bool, optional
-        :param lethal: _description_, defaults to True
-        :type lethal: bool, optional
-        :param potential_scars: List of possible scars to get upon healing, defaults to None
-        :type potential_scars: array, optional
-        :param severity: _description_, defaults to 'default'
-        :type severity: str, optional
-        """
-        if self.dead:
-            return
-
-        if name not in INJURIES:
-            print(f"WARNING: {name} is not in the injuries collection.")
-            return
-
-        if name == "mangled tail" and "NOTAIL" in self.pelt.scars:
-            return
-        if name == "torn ear" and "NOEAR" in self.pelt.scars:
-            return
-
-        injury = INJURIES[name]
-        mortality = injury["mortality"][self.age.value]
-        duration = injury["duration"]
-        med_duration = injury["medicine_duration"]
-
-        injury_severity = injury["severity"] if severity == "default" else severity
-        if medicine_cats_can_cover_clan(
-            Cat.all_cats.values(), get_amount_cat_for_one_medic(game.clan)
-        ):
-            duration = med_duration
-        if severity != "minor":
-            duration += randrange(-1, 1)
-        if duration == 0:
-            duration = 1
-        if lethal is False:
-            mortality = 0
-
-        new_injury = Injury(
-            name=name,
-            severity=injury_severity,
-            duration=injury["duration"],
-            medicine_duration=duration,
-            mortality=mortality,
-            risks=injury["risks"],
-            illness_infectiousness=injury["illness_infectiousness"],
-            also_got=injury["also_got"],
-            cause_permanent=injury["cause_permanent"],
-            event_triggered=event_triggered,
-            potential_scars=potential_scars,
-        )
-
-        if new_injury.name not in self.injuries:
-            self.injuries[new_injury.name] = {
-                "severity": new_injury.severity,
-                "mortality": new_injury.current_mortality,
-                "duration": new_injury.duration,
-                "moon_start": game.clan.age if game.clan else 0,
-                "illness_infectiousness": new_injury.illness_infectiousness,
-                "risks": new_injury.risks,
-                "complication": None,
-                "cause_permanent": new_injury.cause_permanent,
-                "event_triggered": new_injury.new,
-                "potential_scars": new_injury.potential_scars,
-            }
-
-        if (
-            not Cat.disable_random
-            and len(new_injury.also_got) > 0
-            and not int(random() * 5)
-        ):
-            avoided = False
-            if (
-                "blood loss" in new_injury.also_got
-                and len(
-                    find_alive_cats_with_rank(Cat, [CatRank.MEDICINE_CAT], working=True)
-                )
-                != 0
-            ):
-                clan_herbs = {
-                    herb
-                    for herb, clan_has_herb in game.clan.herb_supply.entire_supply.items()
-                    if clan_has_herb
-                }
-                needed_herbs = {"horsetail", "raspberry", "marigold", "cobwebs"}
-                usable_herbs = list(needed_herbs.intersection(clan_herbs))
-
-                if usable_herbs:
-                    # deplete the herb
-                    herb_used = choice(usable_herbs)
-                    game.clan.herb_supply.remove_herb(herb_used, -1)
-                    avoided = True
-                    text = i18n.t("screens.med_den.blood_loss", name=self.name)
-                    game.herb_events_list.append(text)
-
-            if not avoided:
-                self.also_got = True
-                additional_injury = choice(new_injury.also_got)
-                if additional_injury in INJURIES:
-                    self.additional_injury(additional_injury)
-                else:
-                    self.get_ill(additional_injury, event_triggered=True)
-        else:
-            self.also_got = False
-
-    def additional_injury(self, injury):
-        self.get_injured(injury, event_triggered=True)
-
-    def congenital_condition(self, cat):
-        possible_conditions = []
-
-        for condition in PERMANENT:
-            possible = PERMANENT[condition]
-            if possible["congenital"] in ("always", "sometimes"):
-                possible_conditions.append(condition)
-
-        new_condition = choice(possible_conditions)
-
-        if new_condition == "born without a leg":
-            cat.pelt.scars = (*cat.pelt.scars, "NOPAW")
-        elif new_condition == "born without a tail":
-            cat.pelt.scars = (*cat.pelt.scars, "NOTAIL")
-
-        self.get_permanent_condition(new_condition, born_with=True)
-
-    def get_permanent_condition(self, name, born_with=False, event_triggered=False):
-        if self.dead:
-            return
-        if name not in PERMANENT:
-            print(
-                self.name,
-                f"WARNING: {name} is not in the permanent conditions collection.",
-            )
-            return
-
-        if "blind" in self.permanent_condition and name == "failing eyesight":
-            return
-        if "deaf" in self.permanent_condition and name == "partial hearing loss":
-            return
-
-        # remove accessories if need be
-        if "NOTAIL" in self.pelt.scars or "HALFTAIL" in self.pelt.scars:
-            self.pelt.accessory = tuple(
-                acc for acc in self.pelt.accessory if acc not in Pelt.tail_accessories
-            )
-
-        if "NOPAW" in self.pelt.scars:
-            self.pelt.accessory = tuple(
-                acc for acc in self.pelt.accessory if acc not in Pelt.paw_accessories
-            )
-
-        condition = PERMANENT[name]
-        new_condition = False
-        mortality = condition["mortality"][self.age.value]
-
-        if condition["congenital"] == "always":
-            born_with = True
-        moons_until = condition["moons_until"]
-        if born_with and moons_until != 0:
-            moons_until = randint(
-                moons_until - 1, moons_until + 1
-            )  # creating a range in which a condition can present
-            moons_until = max(moons_until, 0)
-
-        if born_with and not self.status.rank.is_baby():
-            moons_until = -2
-        elif born_with is False:
-            moons_until = 0
-
-        if name == "paralyzed":
-            self.pelt.paralyzed = True
-
-        new_perm_condition = PermanentCondition(
-            name=name,
-            severity=condition["severity"],
-            congenital=condition["congenital"],
-            moons_until=moons_until,
-            mortality=mortality,
-            risks=condition["risks"],
-            illness_infectiousness=condition["illness_infectiousness"],
-            event_triggered=event_triggered,
-        )
-
-        if new_perm_condition.name not in self.permanent_condition:
-            self.permanent_condition[new_perm_condition.name] = {
-                "severity": new_perm_condition.severity,
-                "born_with": born_with,
-                "moons_until": new_perm_condition.moons_until,
-                "moon_start": game.clan.age if game.clan else 0,
-                "mortality": new_perm_condition.current_mortality,
-                "illness_infectiousness": new_perm_condition.illness_infectiousness,
-                "risks": new_perm_condition.risks,
-                "complication": None,
-                "event_triggered": new_perm_condition.new,
-            }
-            new_condition = True
-        return new_condition
-
     def not_working(self):
         """returns True if the cat cannot work, False if the cat can work"""
         for illness in self.illnesses:
@@ -1994,50 +1505,6 @@ class Cat:
 
     def available_to_work(self):
         return self.status.alive_in_player_clan and not self.not_working()
-
-    def contact_with_ill_cat(self, cat: Cat):
-        """handles if one cat had contact with an ill cat"""
-
-        infectious_illnesses = []
-        if self.is_ill() or cat is None or not cat.is_ill():
-            return
-        elif cat.is_ill():
-            for illness in cat.illnesses:
-                if cat.illnesses[illness]["infectiousness"] != 0:
-                    infectious_illnesses.append(illness)
-            if len(infectious_illnesses) == 0:
-                return
-
-        for illness in infectious_illnesses:
-            illness_name = illness
-            rate = cat.illnesses[illness]["infectiousness"]
-            if self.is_injured():
-                for y in self.injuries:
-                    illness_infect = list(
-                        filter(
-                            lambda ill: ill["name"] == illness_name,
-                            self.injuries[y]["illness_infectiousness"],
-                        )
-                    )
-                    if illness_infect is not None and len(illness_infect) > 0:
-                        illness_infect = illness_infect[0]
-                        rate -= illness_infect["lower_by"]
-
-                    # prevent rate lower 0 and print warning message
-                    if rate < 0:
-                        print(
-                            f"WARNING: injury {self.injuries[y]['name']} has lowered \
-                            chance of {illness_name} infection to {rate}"
-                        )
-                        rate = 1
-
-            if not random() * rate:
-                text = f"{self.name} had contact with {cat.name} and now has {illness_name}."
-                # game.health_events_list.append(text)
-                game.cur_events_list.append(
-                    Single_Event(text, "health", cat_dict={"m_c": self})
-                )
-                self.get_ill(illness_name)
 
     def save_condition(self):
         # save conditions for each cat
@@ -2307,7 +1774,7 @@ class Cat:
             self_relationship = None
             if not self.dead:
                 if other_cat.ID not in self.relationships:
-                    self.create_one_relationship(other_cat)
+                    create_one_relationship(self, other_cat)
                 self_relationship = self.relationships[other_cat.ID]
                 self_relationship.romance -= randint(20, 60)
                 self_relationship.comfort -= randint(10, 30)
@@ -2318,7 +1785,7 @@ class Cat:
 
             if not other_cat.dead:
                 if self.ID not in other_cat.relationships:
-                    other_cat.create_one_relationship(self)
+                    create_one_relationship(other_cat, self)
                 other_relationship = other_cat.relationships[self.ID]
                 other_relationship.romance -= 40
                 other_relationship.comfort -= 20
@@ -2361,7 +1828,7 @@ class Cat:
         # Set starting relationship values
         if not self.dead:
             if other_cat.ID not in self.relationships:
-                self.create_one_relationship(other_cat)
+                create_one_relationship(self, other_cat)
                 self.relationships[other_cat.ID].mates = True
             self_relationship = self.relationships[other_cat.ID]
             self_relationship.romance += 20
@@ -2371,7 +1838,7 @@ class Cat:
 
         if not other_cat.dead:
             if self.ID not in other_cat.relationships:
-                other_cat.create_one_relationship(self)
+                create_one_relationship(other_cat, self)
                 other_cat.relationships[self.ID].mates = True
             other_relationship = other_cat.relationships[self.ID]
             other_relationship.romance += 20
@@ -2385,7 +1852,7 @@ class Cat:
         inheritance_db.load_inheritances(Cat)
         if not self.dead:
             if other_cat.ID not in self.relationships:
-                self.create_one_relationship(other_cat)
+                create_one_relationship(self, other_cat)
             self_relationship = self.relationships[other_cat.ID]
             self_relationship.like -= randint(10, 30)
             self_relationship.comfort -= randint(10, 30)
@@ -2393,7 +1860,7 @@ class Cat:
 
         if not other_cat.dead:
             if self.ID not in other_cat.relationships:
-                other_cat.create_one_relationship(self)
+                create_one_relationship(other_cat, self)
             other_relationship = other_cat.relationships[self.ID]
             other_relationship.like -= 20
             other_relationship.comfort -= 20
@@ -2407,7 +1874,7 @@ class Cat:
         # Set starting relationship values
         if not self.dead:
             if other_cat.ID not in self.relationships:
-                self.create_one_relationship(other_cat)
+                create_one_relationship(self, other_cat)
             self_relationship = self.relationships[other_cat.ID]
             self_relationship.like += 20
             self_relationship.comfort += 20
@@ -2415,7 +1882,7 @@ class Cat:
 
         if not other_cat.dead:
             if self.ID not in other_cat.relationships:
-                other_cat.create_one_relationship(self)
+                create_one_relationship(other_cat, self)
             other_relationship = other_cat.relationships[self.ID]
             other_relationship.like += 20
             other_relationship.comfort += 20
@@ -2426,115 +1893,6 @@ class Cat:
         # set the born status to true, just for safety
         self.inheritance = Inheritance(self, True)
 
-    def create_one_relationship(self, other_cat: Cat):
-        """Create a new relationship between current cat and other cat. Returns: Relationship"""
-        if other_cat.ID in self.relationships:
-            return self.relationships[other_cat.ID]
-
-        if other_cat.ID == self.ID:
-            print(
-                f"Attempted to create a relationship with self: {self.name}. Please report as a bug!"
-            )
-            return None
-
-        self.relationships[other_cat.ID] = Relationship(self, other_cat)
-        return self.relationships[other_cat.ID]
-
-    def create_relationships_new_cat(self):
-        """Create relationships for a new generated cat."""
-        for inter_cat in Cat.all_cats.values():
-            # the inter_cat is the same as the current cat
-            if inter_cat.ID == self.ID:
-                continue
-            # if the cat already has (somehow) a relationship with the inter cat
-            if inter_cat.ID in self.relationships:
-                continue
-            # if they dead (dead cats have no relationships)
-            if self.dead or inter_cat.dead:
-                continue
-            # if they are not within the same group
-            if self.status.group_ID != inter_cat.status.group_ID:
-                continue
-            inter_cat.relationships[self.ID] = Relationship(inter_cat, self)
-            self.relationships[inter_cat.ID] = Relationship(self, inter_cat)
-
-    def init_all_relationships(self):
-        """Create Relationships to all current Clancats."""
-        for ID in self.all_cats:
-            the_cat = self.all_cats.get(ID)
-            if the_cat.ID is not self.ID:
-                are_parents = False
-                parents = False
-                siblings = False
-
-                if (
-                    self.parent1 is not None
-                    and self.parent2 is not None
-                    and the_cat.parent1 is not None
-                    and the_cat.parent2 is not None
-                ):
-                    are_parents = the_cat.ID in (self.parent1, self.parent2)
-                    parents = are_parents or self.ID in (
-                        the_cat.parent1,
-                        the_cat.parent2,
-                    )
-                    siblings = self.parent1 in (
-                        the_cat.parent1,
-                        the_cat.parent2,
-                    ) or self.parent2 in (the_cat.parent1, the_cat.parent2)
-
-                related = parents or siblings
-
-                # set the different stats
-                romance = 0
-                like = 0
-                respect = 0
-                comfort = 0
-                trust = 0
-                if game_setting_get("random relation"):
-                    if (
-                        game.clan
-                        and the_cat == game.clan.instructor
-                        and game.clan.instructor.dead_for >= self.moons
-                    ):
-                        pass
-                    elif randint(1, 20) == 1 and romance < 1:
-                        like += randint(-25, 5)
-                        respect += randint(-10, 15)
-                        trust += randint(-15, 5)
-                        comfort += randint(-15, 10)
-                    else:
-                        like += randint(-10, 35)
-                        respect += randint(-10, 25)
-                        trust += randint(-5, 15)
-                        comfort += randint(-5, 15)
-                        if (
-                            randint(1, 100 - like) == 1
-                            and self.moons > 11
-                            and the_cat.moons > 11
-                            and self.age == the_cat.age
-                        ):
-                            romance += randint(15, 30)
-                            comfort = int(comfort * 1.3)
-                            trust = int(trust * 1.2)
-
-                if are_parents and like < 60:
-                    like = 60
-                if siblings and like < 30:
-                    like = 30
-
-                rel = Relationship(
-                    cat_from=self,
-                    cat_to=the_cat,
-                    family=related,
-                    romance=romance,
-                    like=like,
-                    respect=respect,
-                    comfort=comfort,
-                    trust=trust,
-                )
-                self.relationships[the_cat.ID] = rel
-
     def save_relationship_of_cat(self, relationship_dir):
         # save relationships for each cat
 
@@ -2544,96 +1902,6 @@ class Cat:
 
         safe_save(f"{relationship_dir}/{self.ID}_relations.json", rel)
 
-    def load_relationship_of_cat(self):
-        if switch_get_value(Switch.clan_save_id) != "":
-            clanname = switch_get_value(Switch.clan_save_id)
-        else:
-            clanname = switch_get_value(Switch.clan_list)[0]
-
-        relation_directory = get_save_dir() + "/" + clanname + "/relationships/"
-        relation_cat_directory = relation_directory + self.ID + "_relations.json"
-
-        self.relationships = {}
-        if os.path.exists(relation_directory):
-            if not os.path.exists(relation_cat_directory):
-                self.init_all_relationships()
-                for cat in Cat.all_cats.values():
-                    if cat == self:
-                        continue
-                    cat.create_one_relationship(self)
-                return
-            try:
-                with open(relation_cat_directory, "r", encoding="utf-8") as read_file:
-                    rel_data = ujson.loads(read_file.read())
-
-                    for rel in rel_data:
-                        # checking validity
-                        cat_to = self.all_cats.get(rel["cat_to_id"])
-                        if cat_to is None or rel["cat_to_id"] == self.ID:
-                            continue
-
-                        # converting old saves
-                        if "platonic_like" in rel:
-                            old_rel = rel.copy()
-                            rel = {}
-                            rel["log"] = old_rel["log"]
-                            rel["family"] = old_rel["family"]
-                            rel["cat_to_id"] = old_rel["cat_to_id"]
-
-                            # romance
-                            rel["romance"] = old_rel["romantic_love"]
-
-                            # attempts to convert "complex" relationships by
-                            #   using the "negative" value for the lower of
-                            #   platonic_like/comfort and trust/admiration.
-                            # if the relationship isn't complex
-                            #   (<= 5 for negative values; this is an arbitrary value),
-                            #   then it just takes the value without considering the negative.
-                            if old_rel["platonic_like"] > old_rel["comfortable"]:
-                                rel["like"] = old_rel["platonic_like"]
-                                if old_rel["dislike"] <= 5:
-                                    rel["comfort"] = old_rel["comfortable"]
-                                else:
-                                    rel["comfort"] = -old_rel["dislike"]
-                            else:  # old_rel["platonic_like"] < old_rel["comfort"]
-                                rel["comfort"] = old_rel["comfortable"]
-                                if old_rel["dislike"] <= 5:
-                                    rel["like"] = old_rel["platonic_like"]
-                                else:
-                                    rel["like"] = -old_rel["dislike"]
-
-                            if old_rel["trust"] > old_rel["admiration"]:
-                                rel["trust"] = old_rel["trust"]
-                                if old_rel["jealousy"] <= 5:
-                                    rel["respect"] = old_rel["admiration"]
-                                else:
-                                    rel["respect"] = -old_rel["jealousy"]
-                            else:  # old_rel["trust"] < old_rel["admiration"]
-                                rel["respect"] = old_rel["admiration"]
-                                if old_rel["jealousy"] <= 5:
-                                    rel["trust"] = old_rel["trust"]
-                                else:
-                                    rel["trust"] = -old_rel["jealousy"]
-
-                        # create relationship
-                        new_rel = Relationship(
-                            cat_from=self,
-                            cat_to=cat_to,
-                            family=rel["family"] or False,
-                            romance=(rel["romance"] or 0),
-                            like=(rel["like"] or 0),
-                            respect=rel["respect"] or 0,
-                            comfort=rel["comfort"] or 0,
-                            trust=rel["trust"] or 0,
-                            log=rel["log"],
-                        )
-                        self.relationships[rel["cat_to_id"]] = new_rel
-
-            except KeyError:
-                print(
-                    f"WARNING: There was an error reading the relationship file of cat #{self}."
-                )
-
     @staticmethod
     def mediate_relationship(mediator, cat1, cat2, allow_romantic, sabotage=False):
         # Gather some important info
@@ -2642,12 +1910,12 @@ class Cat:
         if cat1.ID in cat2.relationships:
             rel1 = cat1.relationships[cat2.ID]
         else:
-            rel1 = cat1.create_one_relationship(cat2)
+            rel1 = create_one_relationship(cat1, cat2)
 
         if cat2.ID in cat1.relationships:
             rel2 = cat2.relationships[cat1.ID]
         else:
-            rel2 = cat2.create_one_relationship(cat1)
+            rel2 = create_one_relationship(cat2, cat1)
 
         # Output string.
         output = ""
@@ -3300,8 +2568,6 @@ game.cat_class = Cat
 # ---------------------------------------------------------------------------- #
 
 resource_directory = "resources/dicts/conditions/"
-with open(f"{resource_directory}illnesses.json", "r", encoding="utf-8") as read_file:
-    ILLNESSES = ujson.loads(read_file.read())
 
 with open(f"{resource_directory}injuries.json", "r", encoding="utf-8") as read_file:
     INJURIES = ujson.loads(read_file.read())
