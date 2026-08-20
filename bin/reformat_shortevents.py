@@ -70,9 +70,9 @@ def reformat():
                 reformatted_event["poi"] = e["poi"]
 
             required_reputation = RequiredReputationDict()
-            if e.get("outsider"):
+            if e.get("outsider", {}).get("current_rep"):
                 required_reputation["outsider"] = e["outsider"]["current_rep"]
-            if e.get("other_clan"):
+            if e.get("other_clan", {}).get("current_rep"):
                 required_reputation["other_clan"] = e["other_clan"]["current_rep"]
 
             reformatted_event["strings"] = [e.get("event_text")]
@@ -242,9 +242,11 @@ def reformat():
                             cat_dict["backstory"] = tag_list
 
                     involved_cats[cat_abbr] = cat_dict
-                    reformatted_event["involved_cats"].update(involved_cats)
 
                     new_cats_joining.append(join_dict)
+
+            if involved_cats:
+                reformatted_event["involved_cats"] = involved_cats
 
             if e.get("exclude_involved"):
                 reformatted_event["hide_involved"] = e["exclude_involved"]
@@ -265,7 +267,6 @@ def reformat():
 
             if e.get("new_gender"):
                 reformatted_event["new_gender"] = e["new_gender"]
-            # TODO: handle accs
             if e.get("new_accessory"):
                 reformatted_event["gain_accessory"] = {
                     "cats": ["m_c"],
@@ -280,7 +281,12 @@ def reformat():
                         new_block = DeathDict(
                             cats=block["cats"], history=block["death"]
                         )
+                        if "no_body" in reformatted_event["tags"]:
+                            new_block["body"] = False
+                            reformatted_event["tags"].remove("no_body")
+
                         death_list.append(new_block)
+
                     if block.get("scar"):
                         scar_history.update({c: block["scar"] for c in block["cats"]})
 
@@ -302,7 +308,7 @@ def reformat():
                             block["cats"][0], ""
                         )
 
-                    reformatted_event["other_clan"].append(new_block)
+                    reformatted_event["condition"].append(new_block)
 
             if e.get("supplies"):
                 reformatted_event["supply"] = e["supplies"]
@@ -325,25 +331,25 @@ def get_involved_cat_info(e) -> tuple[InvolvedCatDict, list]:
     old_dict = e
     new_dict = InvolvedCatDict()
     relationship_change = []
-    if old_dict.get("age"):
-        new_dict.age = old_dict["age"]
-    if old_dict.get("status"):
-        new_dict.status = old_dict["status"]
+    if old_dict.get("age") and "any" not in old_dict["age"]:
+        new_dict["age"] = old_dict["age"]
+    if old_dict.get("status") and "any" not in old_dict["status"]:
+        new_dict["status"] = old_dict["status"]
     if old_dict.get("group"):
-        new_dict.group = old_dict["group"]
+        new_dict["group"] = old_dict["group"]
     stat_dict = StatDict()
     if old_dict.get("skill"):
-        stat_dict.skill = old_dict["skill"]
+        stat_dict["skill"] = old_dict["skill"]
     if old_dict.get("trait"):
-        stat_dict.trait = old_dict["trait"]
-    if stat_dict.trait and stat_dict.skill:
-        stat_dict.must_have_both = True
+        stat_dict["trait"] = old_dict["trait"]
+    if stat_dict.get("trait") and stat_dict.get("skill"):
+        stat_dict["must_have_both"] = True
     if stat_dict:
-        new_dict.stat = stat_dict
+        new_dict["stat"] = stat_dict
     if old_dict.get("backstory"):
-        new_dict.backstory = old_dict["backstory"]
+        new_dict["backstory"] = old_dict["backstory"]
     if old_dict.get("gender"):
-        new_dict.gender = old_dict["gender"]
+        new_dict["gender"] = old_dict["gender"]
     if old_dict.get("relationship_status"):
         relationship_change = old_dict["relationship_status"]
 
