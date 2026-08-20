@@ -45,7 +45,8 @@ class Layer(RootModel):
 
 
 class RecipeException(BaseModel):
-    poses: list[str] | MISSING
+    poses: list[str] | str | MISSING
+    colors: list[str] | str | MISSING
 
 
 class PeltRecipe(BaseModel):
