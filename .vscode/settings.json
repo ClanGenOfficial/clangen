@@ -89,5 +89,6 @@
         "Twolegs",
         "ujson",
         "verdana"
-    ]
+    ],
+    "editor.defaultColorDecorators": "always"
 }
