@@ -11,6 +11,7 @@ from scripts.cat.enums import CatRank
 
 from scripts.cat.skills import SkillPath
 from scripts.game_structure import game
+from scripts.config import get_config
 
 
 def amount_clanmembers_covered(all_cats, amount_per_med) -> int:
@@ -218,7 +219,7 @@ class Injury:
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
         if medicine_cats_can_cover_clan(
             game.cat_class.all_cats.values(), amount_per_med
-        ):
+        ) and not get_config("cruel_season.event.tainted_territory"):
             if value > self.medicine_duration:
                 value = self.medicine_duration
 
