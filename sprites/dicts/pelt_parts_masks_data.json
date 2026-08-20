@@ -44,7 +44,9 @@
             "FRECKLEDPATTERNBODY",
             "FRECKLEDPATTERNBACK",
             "FRECKLEDPATTERNGRAD",
-            "BENGALPATTERNFILL"
+            "BENGALPATTERNFILL",
+            "MASKEDCHIN",
+            "SOKOKEPATTERNFILLGRAD"
         ]
 
     ]
