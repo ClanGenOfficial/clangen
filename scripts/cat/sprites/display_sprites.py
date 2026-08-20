@@ -667,7 +667,7 @@ def _apply_recipe_exceptions(pelt_recipe: dict, colour: str, sprite: int) -> dic
 
         if "layers" in one_ex:
             for key, value in one_ex["layers"].items():
-                except_recipe["layers"][key] = except_recipe["layers"].get({}) | value
+                except_recipe["layers"][key] = except_recipe["layers"].get(key, {}) | value
 
         return except_recipe
 
