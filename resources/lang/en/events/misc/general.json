@@ -13756,7 +13756,7 @@
                         "values": ["respect"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from was silenced by r_c at a Gathering."
+                            "cats_from": "cat_from was silenced by cat_to at a Gathering."
                         }
                       },
                       {
