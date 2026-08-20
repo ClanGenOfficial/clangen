@@ -627,10 +627,9 @@ def _apply_recipe_exceptions(pelt_recipe: dict, colour: str, sprite: int) -> dic
     # We want to find the best match - that exception were we meet the most conditions.
     match = None
     for one_ex in exceptions:
-        
         match_num = 0
-        # How many matches are needed to meet requriments. 
-        needed_matches = 0 
+        # How many matches are needed to meet requriments.
+        needed_matches = 0
 
         # Check to see if it matches at least one color condition.
         color_conditions = one_ex.get("colors")
@@ -668,6 +667,8 @@ def _apply_recipe_exceptions(pelt_recipe: dict, colour: str, sprite: int) -> dic
         if "layers" in one_ex:
             for key, value in one_ex["layers"].items():
                 except_recipe["layers"][key] = one_ex["layers"][key] | value
+
+        print(except_recipe)
 
         return except_recipe
 

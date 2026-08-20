@@ -47,7 +47,9 @@ class Pelt:
     white_colours: list = []
     brown_colours: list = []
 
-    all_pelt_colours.extend(list(sprites.GENERATION_GROUP_DATA["pelts"]["colors"].keys()))
+    all_pelt_colours.extend(
+        list(sprites.GENERATION_GROUP_DATA["pelts"]["colors"].keys())
+    )
     for colour in sprites.GENERATION_GROUP_DATA["pelts"]["colors"]:
         group = sprites.GENERATION_GROUP_DATA["pelts"]["colors"][colour]
 
@@ -72,7 +74,9 @@ class Pelt:
     ]
 
     # PELT PATTERNS
-    pelt_patterns: list = list(sprites.GENERATION_GROUP_DATA["pelts"]["pattern_types"].keys())
+    pelt_patterns: list = list(
+        sprites.GENERATION_GROUP_DATA["pelts"]["pattern_types"].keys()
+    )
 
     # pattern categories
     pelt_categories: dict = {}
