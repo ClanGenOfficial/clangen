@@ -16,5 +16,27 @@
             "color": "base"
         }
     },
-    "exceptions": []
+    "exceptions": [
+        {
+            "colors": "BLACK",
+            "layers":
+            {
+                "1":
+                {
+                    "group_name": "BASEMASK",
+                    "color": "base_singlecolour_black"
+                },
+                "2":
+                {
+                    "group_name": "SIMPLEBOTTOMGRAD",
+                    "color": "base_gradient_bottom_singlecolour_black"
+                },
+                "3":
+                {
+                    "group_name": "SIMPLETOPGRAD",
+                    "color": "base_gradient_top_singlecolour_black"
+                }
+            }
+        }
+    ]
 }

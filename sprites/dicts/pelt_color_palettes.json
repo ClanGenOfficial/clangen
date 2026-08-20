@@ -280,6 +280,11 @@
         "newborn_pattern_gradient_top": "#40464C",
         "newborn_pattern_fill": "#52545D",
 
+        "base_singlecolour_black": "#21243D",
+        "base_gradient_bottom_singlecolour_black": "#2A2D47",
+        "base_gradient_top_singlecolour_black": "#1C1E33",
+        "newborn_base_singlecolour_black": "#3C3F5E",
+
         "smoke_base": "#2E3439",
         "smoke_base_gradient_top": "#2E3439",
         "smoke_base_gradient_bottom": "#4D5055",
