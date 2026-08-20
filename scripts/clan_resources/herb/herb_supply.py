@@ -175,7 +175,7 @@ class HerbSupply:
                 if randint(1, 4) == 1:
                     self.add_herb(
                         herb,
-                        num_collected=(
+                        num_collected=round(
                             randint(self.adequate_qualifier, self.full_qualifier) / 2
                         ),
                     )
