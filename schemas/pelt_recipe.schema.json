@@ -66,18 +66,55 @@
       "type": "object"
     },
     "RecipeException": {
+      "additionalProperties": false,
       "properties": {
         "poses": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "description": "Poses that this exception applies to.",
+          "title": "Poses"
+        },
+        "colors": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "description": "Colours that this exception applies to.",
+          "title": "Colors"
+        },
+        "layer_order": {
+          "description": "Layer order of this exception.",
           "items": {
-            "type": "string"
+            "$ref": "#/$defs/LayerOrder"
           },
-          "title": "Poses",
+          "title": "Layer Order",
           "type": "array"
+        },
+        "layers": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Layer"
+          },
+          "description": "Layer data of this exception.",
+          "title": "Layers",
+          "type": "object"
         }
       },
-      "required": [
-        "poses"
-      ],
       "title": "RecipeException",
       "type": "object"
     },
