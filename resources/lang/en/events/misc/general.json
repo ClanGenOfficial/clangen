@@ -13770,7 +13770,7 @@
                         "values": ["like"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from was embarrassed by m_c at a Gathering."
+                            "cats_from": "cat_from was embarrassed by cat_to at a Gathering."
                         }
                     }
                 ],
