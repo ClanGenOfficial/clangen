@@ -1680,7 +1680,7 @@
             ]
         }
     },    
- "envenomated":{
+ "venom-sickness":{
         "duration": 3,
         "severity": "major",
         "medicine_duration": 2,

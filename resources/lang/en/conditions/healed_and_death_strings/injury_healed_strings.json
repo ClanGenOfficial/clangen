@@ -203,8 +203,8 @@
         "m_c has recovered from the poison.",
         "m_c is no longer poisoned."
     ],
-    "envenomated": [
-        "m_c is no longer envenomated.",
+    "venom-sickness": [
+        "m_c is no longer venom-sick.",
         "Luckily, m_c managed to recover from the venom coursing through {PRONOUN/m_c/poss} body.",
         "Despite the odds, m_c pulled through the venom."
     ],
