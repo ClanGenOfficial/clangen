@@ -13685,7 +13685,7 @@
             "exclude_involved": [
             ],
             "frequency": 1,
-            "event_text": "During the Gathering, a new apprentice from o_c_n gossips about how their leader might break off the alliance with c_n. m_c doesn't seem as amused as the apprentice.",
+            "event_text": "During the Gathering, m_c overhears a new o_c_n apprentice gossiping about how their leader might break off the alliance with c_n.",
             "m_c": {
                 "age": [
                     "adolescent",
