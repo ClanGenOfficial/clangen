@@ -21,9 +21,6 @@ dev_tools = false
   [cruel_season.event]
     # set to true to also kill a random cat when the leader dies
     stolen_vitality = false
-    
-    # set to true to double condition lengths
-    tainted_territory = false
 
 # settings regarding afterlife affinity
 [affinity]
@@ -670,6 +667,8 @@ dev_tools = false
   # 10/chance an illness will occur
   illness_chance = 250
   classic_illness_chance = 500
+
+  duration_modifier = 1
 
   # how much each medicine cat reduces the chance of infection, higher number is better
   med_infection_reduction = 10

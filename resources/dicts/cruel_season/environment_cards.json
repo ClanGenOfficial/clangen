@@ -49,7 +49,7 @@
   "longer_illnesses": {
     "card_art": "environment/tainted.png",
     "modifiers": {
-      "cruel_season.event.tainted_territory": true
+      "condition_related.duration_modifier": 2
     }
   }
 }
