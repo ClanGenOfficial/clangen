@@ -228,7 +228,7 @@ dev_tools = false
 
   [mates.breakup]
     # the chance for a break up to happen after an affair has been discovered
-    # any number lower than this increases the likelyhood of a break up
+    # any number lower than this decreases the likelyhood of a break up
     affair_breakup_chance = 0.8
     
     # intial chance of breakup
