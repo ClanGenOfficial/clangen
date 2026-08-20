@@ -111,7 +111,7 @@
         }
     },
     {
-        "event_id": "gen_to_kit",
+        "event_id": "gen_to_clan_kit",
         "strings": [
             "Knows r_c will make a great Clanmate someday",
             "Is playing moss ball with r_c",
@@ -326,7 +326,7 @@
         }
     },
     {
-        "event_id": "gen_to_alive_elder",
+        "event_id": "gen_to_alive_elder_past_warrior",
         "strings": [
             "Wonders if r_c misses {PRONOUN/r_c/poss} warrior days"
         ],
@@ -1552,7 +1552,7 @@
         }
     },
     {
-        "event_id": "loving_to_living_apprentices",
+        "event_id": "loving_to_living_healers",
         "strings": [
             "Is offering any help {PRONOUN/m_c/subject} can to the medicine cat"
         ],

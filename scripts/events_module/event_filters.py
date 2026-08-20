@@ -12,7 +12,7 @@ from scripts.clan_resources.point_of_interest import (
     get_poi_tags_set,
     get_poi_categories_set,
 )
-from scripts.cat_relations.relationship import Relationship
+from scripts.cat_relations.relationship import Relationship, create_one_relationship
 from scripts.config import get_config
 from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
@@ -1960,7 +1960,7 @@ def check_relationship_value(cat_from, cat_to, rel_value=None):
     if cat_to.ID in cat_from.relationships:
         relationship = cat_from.relationships[cat_to.ID]
     else:
-        relationship = cat_from.create_one_relationship(cat_to)
+        relationship = create_one_relationship(cat_from, cat_to)
 
     if rel_value == RelType.ROMANCE:
         return relationship.romance

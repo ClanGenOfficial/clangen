@@ -13,7 +13,7 @@
         ]
     },
     {
-        "event_id": "dead_app_to_dead_other",
+        "event_id": "sc_dead_app_to_dead_other",
         "strings": [
             "Laughs with r_c",
             "Stalks through StarClan's forests with r_c",
