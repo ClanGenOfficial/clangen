@@ -154,6 +154,75 @@ def one_moon():
     # disaster_events.handle_disasters()
 
     # Handle grief events.
+    one_moon_handle_grief()
+
+    if game.clan.game_mode in ("expanded", "cruel_season") and game.clan.freshkill_pile:
+        # make a notification if the Clan does not have enough prey
+        if (
+            FRESHKILL_EVENT_ACTIVE
+            and not game.clan.freshkill_pile.clan_has_enough_food()
+        ):
+            event_string = i18n.t("defaults.warn_low_freshkill")
+            game.cur_events_list.insert(0, Single_Event(event_string))
+            game.freshkill_event_list.append(event_string)
+
+    handle_focus()
+
+    # handle the herb supply for the moon
+    game.clan.herb_supply.handle_moon(
+        clan_size=get_living_clan_cat_count(Cat),
+        clan_cats=[c for c in Cat.all_cats_list if c.status.alive_in_player_clan],
+        med_cats=find_alive_cats_with_rank(
+            Cat,
+            ranks=[CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE],
+            working=True,
+        ),
+    )
+
+    if game.clan.game_mode in ("expanded", "cruel_season"):
+        amount_per_med = get_amount_cat_for_one_medic(game.clan)
+        med_fulfilled = medicine_cats_can_cover_clan(
+            Cat.all_cats.values(), amount_per_med
+        )
+
+        if not med_fulfilled:
+            string = i18n.t("defaults.warn_low_medcats")
+            game.cur_events_list.insert(0, Single_Event(string, "health"))
+    else:
+        has_med = any(
+            cat.status.rank.is_any_medicine_rank() and cat.status.alive_in_player_clan
+            for cat in Cat.all_cats.values()
+        )
+        if not has_med:
+            string = i18n.t("defaults.warn_no_medcats")
+            game.cur_events_list.insert(0, Single_Event(string, "health"))
+
+    # Clear the list of cats that died this moon.
+    game.just_died.clear()
+
+    # Promote leader and deputy, if needed.
+    check_leader()
+    check_and_promote_deputy()
+
+    # Resort
+    if switch_get_value(Switch.sort_type) != "id":
+        Cat.sort_cats()
+
+    # Clear all the loaded event dicts.
+    GenerateEvents.clear_loaded_events()
+
+    # autosave
+    if get_clan_setting("autosave") and game.clan.age % 5 == 0:
+        try:
+            save_cats(switch_get_value(Switch.clan_save_id), Cat, game)
+            game.clan.save_clan()
+            game.clan.save_pregnancy(game.clan)
+            game.save_events()
+        except:
+            SaveErrorWindow(traceback.format_exc())
+
+
+def one_moon_handle_grief():
     if game.clan.grief_strings:
         # Grab all the dead or outside cats, who should not have grief text
         for ID in game.clan.grief_strings.copy():
@@ -259,71 +328,6 @@ def one_moon():
                 Single_Event(extra_event, ["birth_death"], [i.ID for i in shaken_cats])
             )
         game.dead_cats_to_grieve.clear()
-
-    if game.clan.game_mode in ("expanded", "cruel_season") and game.clan.freshkill_pile:
-        # make a notification if the Clan does not have enough prey
-        if (
-            FRESHKILL_EVENT_ACTIVE
-            and not game.clan.freshkill_pile.clan_has_enough_food()
-        ):
-            event_string = i18n.t("defaults.warn_low_freshkill")
-            game.cur_events_list.insert(0, Single_Event(event_string))
-            game.freshkill_event_list.append(event_string)
-
-    handle_focus()
-
-    # handle the herb supply for the moon
-    game.clan.herb_supply.handle_moon(
-        clan_size=get_living_clan_cat_count(Cat),
-        clan_cats=[c for c in Cat.all_cats_list if c.status.alive_in_player_clan],
-        med_cats=find_alive_cats_with_rank(
-            Cat,
-            ranks=[CatRank.MEDICINE_CAT, CatRank.MEDICINE_APPRENTICE],
-            working=True,
-        ),
-    )
-
-    if game.clan.game_mode in ("expanded", "cruel_season"):
-        amount_per_med = get_amount_cat_for_one_medic(game.clan)
-        med_fulfilled = medicine_cats_can_cover_clan(
-            Cat.all_cats.values(), amount_per_med
-        )
-
-        if not med_fulfilled:
-            string = i18n.t("defaults.warn_low_medcats")
-            game.cur_events_list.insert(0, Single_Event(string, "health"))
-    else:
-        has_med = any(
-            cat.status.rank.is_any_medicine_rank() and cat.status.alive_in_player_clan
-            for cat in Cat.all_cats.values()
-        )
-        if not has_med:
-            string = i18n.t("defaults.warn_no_medcats")
-            game.cur_events_list.insert(0, Single_Event(string, "health"))
-
-    # Clear the list of cats that died this moon.
-    game.just_died.clear()
-
-    # Promote leader and deputy, if needed.
-    check_leader()
-    check_and_promote_deputy()
-
-    # Resort
-    if switch_get_value(Switch.sort_type) != "id":
-        Cat.sort_cats()
-
-    # Clear all the loaded event dicts.
-    GenerateEvents.clear_loaded_events()
-
-    # autosave
-    if get_clan_setting("autosave") and game.clan.age % 5 == 0:
-        try:
-            save_cats(switch_get_value(Switch.clan_save_id), Cat, game)
-            game.clan.save_clan()
-            game.clan.save_pregnancy(game.clan)
-            game.save_events()
-        except:
-            SaveErrorWindow(traceback.format_exc())
 
 
 def update_afterlife_temper():

@@ -14,6 +14,9 @@
         "health": "health",
         "other clans": "other clans",
         "miscellaneous": "miscellaneous",
-        "no_events": "Nothing interesting happened this moon."
+        "no_events": {
+            "zero": "Timeskip to begin this Clan's story.",
+            "many": "Nothing interesting happened this moon."
+        }
     }
 }
