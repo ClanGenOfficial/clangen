@@ -1,6 +1,7 @@
 from random import choices
 from typing import Union, Optional
 
+
 from scripts.cat.cats import Cat
 from scripts.clan import OtherClan
 from scripts.events_module.event_filters import find_new_frequency, get_frequency
@@ -21,6 +22,7 @@ def get_valid_event(
     ensured_id: Optional[str] = None,
     test_general_constraints: bool = True,
     test_cat_constraints: bool = True,
+    test_frequency: bool = True,
 ) -> tuple[Optional[Union[PatrolEvent, TextPoolEvent]], dict]:
     """
     Check given possible_events against current game state and involved cats. Returns a valid event and involved cats.
@@ -32,18 +34,19 @@ def get_valid_event(
     :param ensured_id: ID of the ensured event, if any
     :param test_general_constraints: If true, filters by general constraints
     :param test_cat_constraints: If true, filters by cat constraints
+    :param test_frequency: If true, filters by frequency.
     """
     used_frequencies = set()
-    chosen_frequency = get_frequency()
+    chosen_frequency = get_frequency() if test_frequency else 4
 
     chosen_event: Optional[Union[PatrolEvent, TextPoolEvent]] = None
     temp_involved_cats = {}
-    events_to_test = possible_events.copy()
+    tested_events = set()
 
     # retrieve the ensured event from the list
     ensured_event = None
     if ensured_id:
-        ensured = [e for e in events_to_test if e.event_id == ensured_id]
+        ensured = [e for e in possible_events if e.event_id == ensured_id]
         if ensured:
             ensured_event = ensured[0] if ensured else None
             chosen_frequency = ensured_event.frequency
@@ -61,8 +64,8 @@ def get_valid_event(
         ]
     while not chosen_event:
         temp_involved_cats = involved_cats.copy()
-        if not events_to_test:  # try a new frequency if we can
-            if 4 in used_frequencies and chosen_frequency == 4:
+        if len(possible_events) == len(tested_events):  # try a new frequency if we can
+            if (4 in used_frequencies and chosen_frequency == 4) or not test_frequency:
                 return (
                     None,
                     {},
@@ -70,7 +73,7 @@ def get_valid_event(
             else:
                 used_frequencies.add(chosen_frequency)
                 chosen_frequency = find_new_frequency(used_frequencies)
-                events_to_test = possible_events.copy()
+                tested_events.clear()
             continue
 
         if ensured_event and ensured_event in possible_events:
@@ -79,11 +82,25 @@ def get_valid_event(
             # reset it to none so that any filtering failures let us move on to a different event
             ensured_event = None
         else:
-            test_event = choices(events_to_test, [x.weight for x in events_to_test])[0]
+            events = list(
+                filter(lambda e: e.event_id not in tested_events, possible_events)
+            )
+            if not events:
+                if test_frequency:
+                    # no events of this frequency
+                    used_frequencies.add(chosen_frequency)
+                    chosen_frequency = find_new_frequency(used_frequencies)
+                    tested_events.clear()
+                    continue
+
+                # otherwise we've failed to find anything so we send back and origin handles it
+                return None, {}
+
+            test_event = choices(events, [x.weight for x in events])[0]
 
         # CHECK FREQUENCY
-        if test_event.frequency != chosen_frequency:
-            events_to_test.remove(test_event)
+        if test_frequency and test_event.frequency != chosen_frequency:
+            tested_events.add(test_event.event_id)
             continue
 
         # CHECK GENERAL CONSTRAINTS
@@ -95,7 +112,7 @@ def get_valid_event(
                 other_clan=other_clan,
                 is_debug_event=bool(ensured_event),
             ):
-                events_to_test.remove(test_event)
+                tested_events.add(test_event.event_id)
                 continue
 
         # CHECK CAT CONSTRAINTS
@@ -108,7 +125,7 @@ def get_valid_event(
                 other_clan=other_clan,
             )
             if not temp_involved_cats:
-                events_to_test.remove(test_event)
+                tested_events.add(test_event.event_id)
                 continue
 
         chosen_event = test_event

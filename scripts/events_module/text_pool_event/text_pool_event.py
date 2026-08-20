@@ -142,11 +142,11 @@ class TextPoolEvent:
 
             if constraints.get("backstory"):
                 if "-" in constraints["backstory"][0]:
+                    weight += len(constraints["backstory"])
+                else:
                     # i'm not gonna try and count up all the backstory possibilities, so we'll just do 40
                     weight += max(40 - len(constraints["backstory"]), 1)
                     # I do not expect someone to actually tag 50 backstories, but just in case
-                else:
-                    weight += len(constraints["backstory"])
 
             if constraints.get("has_mentor"):
                 weight += 10

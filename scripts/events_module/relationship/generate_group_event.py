@@ -62,6 +62,7 @@ def _get_event(
         other_clan=(
             choice(game.clan.all_other_clans) if game.clan.all_other_clans else None
         ),
+        test_frequency=False,
     )
     return chosen_event, involved_cats
 
@@ -149,17 +150,6 @@ def _load_file(path) -> list[TextPoolEvent]:
     if path not in loaded_events.keys():
         loaded_events[path] = []
         for t in load_lang_resource(path):
-            loaded_events[path].append(
-                TextPoolEvent(
-                    event_id=t.get("id"),
-                    location=t.get("location", []),
-                    season=t.get("season", []),
-                    tags=t.get("tags", []),
-                    strings=t.get("strings", []),
-                    involved_cats=t.get("involved_cats", {}),
-                    relationship_constraint=t.get("relationship_constraint", []),
-                    relationship_changes=t.get("relationship_changes", []),
-                )
-            )
+            loaded_events[path].append(TextPoolEvent(**t))
 
-    return loaded_events[path]
+    return loaded_events[path].copy()
