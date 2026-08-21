@@ -626,7 +626,8 @@ def _apply_recipe_exceptions(pelt_recipe: dict, colour: str, sprite: int) -> dic
     exceptions = pelt_recipe.get("exceptions", None)
 
     # We want to find the best match - that exception were we meet the most conditions.
-    match = None
+    curr_match = None
+    curr_match_num = 0
     for one_ex in exceptions:
         match_num = 0
         # How many matches are needed to meet requriments.
@@ -650,19 +651,20 @@ def _apply_recipe_exceptions(pelt_recipe: dict, colour: str, sprite: int) -> dic
             ) or pose_conditions == pose:
                 match_num += 1
 
-        if match_num == needed_matches:
-            match = one_ex
+        if match_num == needed_matches and match_num >= curr_match_num:
+            curr_match = one_ex
+            curr_match_num = match_num
 
-        if match == MAX_MATCHES:
+        if curr_match_num == MAX_MATCHES:
             break
 
-    if match:
+    if curr_match:
         # If we reached here, the exception applies
         except_recipe = deepcopy(pelt_recipe)
         # Remove the exceptions, just so there we don't apply an exception again.
         except_recipe.pop("exceptions")
 
-        if "layer_order" in one_ex:
+        if "layer_order" in curr_match:
             except_recipe["layer_order"] = one_ex["layer_order"]
 
         if "layers" in one_ex:
