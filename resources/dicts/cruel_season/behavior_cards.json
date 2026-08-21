@@ -125,5 +125,14 @@
       "outsiders.max_reputation": 29,
       "outsiders.starting_reputation": 15
     }
+  },
+  "mate_breakup": {
+    "card_art": "behavior/sorrow.png",
+    "modifiers": {
+      "mates.breakup.inital_chance.threshold": 250,
+      "mates.breakup.inital_chance.default_chance": 10,
+      "mates.breakup.inital_chance.positive_compatibility": 5,
+      "mates.breakup.inital_chance.negative_compatibility": -5
+    }
   }
 }
