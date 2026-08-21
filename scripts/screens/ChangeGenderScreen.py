@@ -527,7 +527,6 @@ class ChangeGenderScreen(Screens):
 
     def pronoun_get_cases(self, pronounset) -> str:
         # Gets all pronoun cases in pronounset for display
-        print(pronounset)
         return "/".join(
             value
             for pronoun, value in pronounset.items()
