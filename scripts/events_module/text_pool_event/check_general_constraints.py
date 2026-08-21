@@ -61,7 +61,7 @@ def passes_general_constraints(
                 )
             return False
 
-    if hasattr(event, "required_reputation"):
+    if hasattr(event, "required_reputation") and event.required_reputation:
         if not event_for_reputation(event.required_reputation.get("outsider")):
             if is_debug_event:
                 print(
