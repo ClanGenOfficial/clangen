@@ -7,12 +7,12 @@ import i18n
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatGroup, CatThought, CatAge
 from scripts.events_module.text_adjust import event_text_adjust
-from scripts.events_module.text_pool_event.event_retrieval import get_valid_event
-from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
+from scripts.events_module.text_pool_event.event_retrieval import (
+    get_valid_event,
+    load_text_pool_events,
+)
 from scripts.game_structure import game, constants
-from scripts.game_structure.localization import load_lang_resource
 
-loaded_thoughts = {}
 used_thoughts = set()
 
 
@@ -216,21 +216,21 @@ def _load_allowed_thoughts(thought_type: CatThought, main_cat: Cat):
 
     # GUIDES
     if thought_type == CatThought.IS_GUIDE:
-        thoughts = _load_file(f"{start_path}/{main_cat.status.group}.json")
+        thoughts = load_text_pool_events(f"{start_path}/{main_cat.status.group}.json")
 
     # DEAD CATS
     elif thought_type == CatThought.WHILE_DEAD:
         new_path = f"{start_path}/{main_cat.status.group}"
-        thoughts = _load_file(f"{new_path}/{rank}.json")
+        thoughts = load_text_pool_events(f"{new_path}/{rank}.json")
         thoughts.extend(_get_exiled_and_former(main_cat, new_path))
         thoughts.extend(_get_general(main_cat, new_path))
 
     # LIVING CATS
     elif thought_type == CatThought.WHILE_ALIVE:
         if main_cat.age == CatAge.NEWBORN:  # accounting for non-clan newborns
-            thoughts = _load_file(f"{new_path}/newborn.json")
+            thoughts = load_text_pool_events(f"{new_path}/newborn.json")
         else:
-            thoughts = _load_file(f"{new_path}/{rank}.json")
+            thoughts = load_text_pool_events(f"{new_path}/{rank}.json")
 
         # make sure lost thoughts are included
         if main_cat.status.is_lost(CatGroup.PLAYER_CLAN_ID):
@@ -238,7 +238,7 @@ def _load_allowed_thoughts(thought_type: CatThought, main_cat: Cat):
             if prior_rank:
                 prior_rank = prior_rank.replace(" ", "_")
                 thoughts.extend(
-                    _load_file(f"{start_path}/while_lost/{prior_rank}.json")
+                    load_text_pool_events(f"{start_path}/while_lost/{prior_rank}.json")
                 )
 
         else:
@@ -248,7 +248,7 @@ def _load_allowed_thoughts(thought_type: CatThought, main_cat: Cat):
 
     # CATS WHO JUST CHANGED RANK
     elif thought_type == CatThought.ON_RANK_CHANGE:
-        thoughts = _load_file(f"{new_path}/{rank}.json")
+        thoughts = load_text_pool_events(f"{new_path}/{rank}.json")
         thoughts.extend(_get_general(main_cat, new_path))
 
     # CATS WHO JUST DIED
@@ -262,25 +262,25 @@ def _load_allowed_thoughts(thought_type: CatThought, main_cat: Cat):
             new_path = f"{start_path}/{main_cat.status.group}"
 
         if not is_leader:
-            thoughts = _load_file(f"{new_path}/general.json")
+            thoughts = load_text_pool_events(f"{new_path}/general.json")
         else:
             # leader dies fully
             if leader_death:
-                thoughts = _load_file(f"{new_path}/leader_death.json")
+                thoughts = load_text_pool_events(f"{new_path}/leader_death.json")
             # leader only loses a life
             else:
-                thoughts = _load_file(f"{new_path}/leader_life.json")
+                thoughts = load_text_pool_events(f"{new_path}/leader_life.json")
 
     # PARENTAL REACTION TO BIRTH
     elif thought_type == CatThought.ON_BIRTH:
-        thoughts = _load_file(f"{new_path}/parent.json")
+        thoughts = load_text_pool_events(f"{new_path}/parent.json")
 
     # ON NEW CAT ENCOUNTER
     elif thought_type == CatThought.ON_MEETING:
         if main_cat.status.is_clancat:
-            thoughts = _load_file(f"{new_path}/clancat.json")
+            thoughts = load_text_pool_events(f"{new_path}/clancat.json")
         else:
-            thoughts = _load_file(f"{new_path}/outsider.json")
+            thoughts = load_text_pool_events(f"{new_path}/outsider.json")
 
     # thought types with just a general path
     elif thought_type in (
@@ -290,11 +290,11 @@ def _load_allowed_thoughts(thought_type: CatThought, main_cat: Cat):
         CatThought.ON_GRIEF_TOWARD_BODY,
         CatThought.ON_GRIEF_NO_BODY,
     ):
-        thoughts = _load_file(f"{new_path}/general.json")
+        thoughts = load_text_pool_events(f"{new_path}/general.json")
 
     # ON CHANGING AFTERLIFE
     elif thought_type == CatThought.ON_AFTERLIFE_CHANGE:
-        thoughts = _load_file(f"{new_path}/{main_cat.status.group}.json")
+        thoughts = load_text_pool_events(f"{new_path}/{main_cat.status.group}.json")
         pass
 
     return thoughts
@@ -307,11 +307,11 @@ def _get_exiled_and_former(main_cat: Cat, path) -> list:
     thoughts = []
     # make sure exiled thoughts are included
     if main_cat.status.is_exiled(CatGroup.PLAYER_CLAN):
-        thoughts.extend(_load_file(f"{path}/exiled.json"))
+        thoughts.extend(load_text_pool_events(f"{path}/exiled.json"))
 
     # former clancat thoughts
     if main_cat.status.is_former_clancat:
-        thoughts.extend(_load_file(f"{path}/former_clancat.json"))
+        thoughts.extend(load_text_pool_events(f"{path}/former_clancat.json"))
 
     return thoughts
 
@@ -322,7 +322,7 @@ def _get_general(main_cat: Cat, path) -> list:
     """
     # newborns don't receive general thoughts
     if main_cat.age != CatAge.NEWBORN:
-        return _load_file(f"{path}/general.json")
+        return load_text_pool_events(f"{path}/general.json")
 
     return []
 
@@ -333,19 +333,6 @@ def _get_clancat(main_cat: Cat, path) -> list:
     """
     # newborns don't receive general thoughts
     if main_cat.status.is_clancat and main_cat.age != CatAge.NEWBORN:
-        return _load_file(f"{path}/clancat.json")
+        return load_text_pool_events(f"{path}/clancat.json")
 
     return []
-
-
-def _load_file(path) -> list[TextPoolEvent]:
-    """
-    Loads and returns the thoughts file
-    """
-    # check if we've already loaded these thoughts and then load them if need be
-    if path not in loaded_thoughts.keys():
-        loaded_thoughts[path] = []
-        for t in load_lang_resource(path):
-            loaded_thoughts[path].append(TextPoolEvent(**t))
-
-    return loaded_thoughts[path].copy()

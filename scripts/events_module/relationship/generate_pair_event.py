@@ -14,12 +14,12 @@ from scripts.events_module.event_filters import (
     get_personality_compatibility,
 )
 from scripts.events_module.text_adjust import process_text
-from scripts.events_module.text_pool_event.event_retrieval import get_valid_event
+from scripts.events_module.text_pool_event.event_retrieval import (
+    get_valid_event,
+    load_text_pool_events,
+)
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
-from scripts.game_structure.localization import load_lang_resource
-
-loaded_events = {}
 
 
 # TRIGGER
@@ -69,7 +69,7 @@ def trigger_interaction(
     )[0]
 
     path = f"events/relationship_events/{'joining_interactions' if is_joining else 'normal_interactions'}/{type_of_interaction}/{chosen_intensity}/{type_of_change}.json"
-    events = _load_file(path)
+    events = load_text_pool_events(path)
 
     # find valid event
     chosen_event = _get_event(events, main_cat, other_cat)
@@ -399,17 +399,3 @@ def _apply_base_influence(
             count=relationship.cat_from.moons,
         )
     )
-
-
-# LOAD
-def _load_file(path) -> list[TextPoolEvent]:
-    """
-    Loads and returns the events file
-    """
-    # check if we've already loaded these events and then load them if need be
-    if path not in loaded_events.keys():
-        loaded_events[path] = []
-        for t in load_lang_resource(path):
-            loaded_events[path].append(TextPoolEvent(**t))
-
-    return loaded_events[path].copy()

@@ -8,12 +8,12 @@ from scripts.config import get_config
 from scripts.event_class import Single_Event
 from scripts.events_module.consequences import change_relationship_values
 from scripts.events_module.text_adjust import process_text, adjust_list_text
-from scripts.events_module.text_pool_event.event_retrieval import get_valid_event
+from scripts.events_module.text_pool_event.event_retrieval import (
+    get_valid_event,
+    load_text_pool_events,
+)
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
-from scripts.game_structure.localization import load_lang_resource
-
-loaded_events = {}
 
 
 def trigger_interaction(main_cat: Cat, interactable_cats: list) -> list[str]:
@@ -34,7 +34,7 @@ def trigger_interaction(main_cat: Cat, interactable_cats: list) -> list[str]:
         list(intensity_chances.keys()), list(intensity_chances.values())
     )[0]
     path = f"events/relationship_events/group_interactions/{chosen_intensity}/{type_of_change}.json"
-    events = _load_file(path)
+    events = load_text_pool_events(path)
 
     # FIND VALID EVENT
     chosen_event, involved_cats = _get_event(events, interactable_cats, main_cat)
@@ -140,16 +140,3 @@ def _influence_relationships(involved_cats, event: TextPoolEvent, chosen_string:
         change_relationship_values(
             cats_from=cats_from, cats_to=cats_to, **value_changes, log=chosen_string
         )
-
-
-def _load_file(path) -> list[TextPoolEvent]:
-    """
-    Loads and returns the events file
-    """
-    # check if we've already loaded these events and then load them if need be
-    if path not in loaded_events.keys():
-        loaded_events[path] = []
-        for t in load_lang_resource(path):
-            loaded_events[path].append(TextPoolEvent(**t))
-
-    return loaded_events[path].copy()

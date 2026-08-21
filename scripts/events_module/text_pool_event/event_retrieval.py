@@ -11,6 +11,9 @@ from scripts.events_module.text_pool_event.check_general_constraints import (
 )
 from scripts.events_module.text_pool_event.find_involved_cats import find_cats
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
+from scripts.game_structure.localization import load_lang_resource
+
+loaded_events = {}
 
 
 def get_valid_event(
@@ -132,3 +135,16 @@ def get_valid_event(
         involved_cats = temp_involved_cats
 
     return chosen_event, temp_involved_cats
+
+
+def load_text_pool_events(path: str) -> list[TextPoolEvent]:
+    """
+    Loads file at given path and returns the contents as a list of TextPoolEvent objects. If file has already been loaded before, then the cached contents are returned.
+    """
+    # check if we've already loaded these events and then load them if need be
+    if path not in loaded_events.keys():
+        loaded_events[path] = []
+        for t in load_lang_resource(path):
+            loaded_events[path].append(TextPoolEvent(**t))
+
+    return loaded_events[path].copy()
