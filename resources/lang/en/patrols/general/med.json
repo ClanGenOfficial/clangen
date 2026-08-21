@@ -5642,7 +5642,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l was pleased to share {PRONOUN/s_c0/poss} knowledge of StarClan with r_c0."
+                            "cats_from": "p_l was pleased to share {PRONOUN/p_l/poss} knowledge of StarClan with r_c0."
                         }
                     },
                     {
@@ -7416,7 +7416,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l reassures r_c1 with a smile that {PRONOUN/p_l/subject} didn't feel ready to be a medicine cat, either, when {PRONOUN/p_l/subject} {VERB/s_c0/were/was} an apprentice. p_l tells r_c1 a story from {PRONOUN/p_l/poss} own apprenticeship, when {PRONOUN/p_l/subject} accidentally swapped all the thyme for yarrow. Great StarClan was {PRONOUN/p_l/poss} mentor unhappy when all their patients started throwing up! Before long, r_c1 is purring at p_l's own mishaps, {PRONOUN/r_c1/poss} own troubles forgotten."
+                    "p_l reassures r_c1 with a smile that {PRONOUN/p_l/subject} didn't feel ready to be a medicine cat, either, when {PRONOUN/p_l/subject} {VERB/p_l/were/was} an apprentice. p_l tells r_c1 a story from {PRONOUN/p_l/poss} own apprenticeship, when {PRONOUN/p_l/subject} accidentally swapped all the thyme for yarrow. Great StarClan was {PRONOUN/p_l/poss} mentor unhappy when all their patients started throwing up! Before long, r_c1 is purring at p_l's own mishaps, {PRONOUN/r_c1/poss} own troubles forgotten."
                 ],
                 "involved_cats": {
                     "p_l": {
