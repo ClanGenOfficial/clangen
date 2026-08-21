@@ -14537,18 +14537,8 @@
                     "medicine cat apprentice"
                 ]
             },
-            "r_c1": {
-                "status": [
-                    "apprentice",
-                    "medicine cat apprentice"
-                ]
-            },
-            "r_c2": {
-                "status": [
-                    "apprentice",
-                    "medicine cat apprentice"
-                ]
-            }
+            "r_c1": {},
+            "r_c2": {}
         },
         "relationship_constraint": [
             {
@@ -14972,14 +14962,7 @@
         "involved_cats": {
             "r_c1": {
                 "status": [
-                    "apprentice",
-                    "medicine cat apprentice"
-                ]
-            },
-            "r_c2": {
-                "status": [
-                    "apprentice",
-                    "medicine cat apprentice"
+                    "apprentice"
                 ]
             }
         },
@@ -14999,36 +14982,22 @@
         ],
         "chance_of_success": 70,
         "patrol_art": "cat_sprites/gen_med_gatheringmoss_ApAp",
-        "intro_text": "r_c1 comes up to meet r_c2, quietly apologizing about r_c2 being sent to help r_c1 collect moss.",
+        "intro_text": "p_l comes up to meet r_c1, quietly apologizing about r_c1 being sent to help p_l collect moss.",
         "decline_text": "They're called back to camp, needed for other chores.",
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "There's nothing to apologize for! r_c2 bumps r_c1's shoulder affectionately, brushing past {PRONOUN/r_c1/object} with a smile as they leave camp. It's a fine way to spend the afternoon and a cool cat to spend it with!"
+                    "There's nothing to apologize for! r_c1 bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as they leave camp. It's a fine way to spend the afternoon and a cool cat to spend it with!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "r_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -15052,22 +15021,8 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c2 seems somewhat irritated at first, but as r_c1 keeps chatting to {PRONOUN/r_c2/object}, {PRONOUN/r_c2/subject} {VERB/r_c2/start/starts} to warm up. Both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp."
+                    "r_c1 seems somewhat irritated at first, but as p_l keeps chatting to {PRONOUN/r_c1/object}, {PRONOUN/r_c1/subject} {VERB/r_c1/start/starts} to warm up. Both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -15075,7 +15030,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "r_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -15085,7 +15040,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from and cat_to warmed up to one another during a moss-gathering patrol after r_c2's irritation faded away."
+                            "cats_from": "cat_from and cat_to warmed up to one another during a moss-gathering patrol after r_c1's irritation faded away."
                         }
                     }
                 ],
@@ -15101,25 +15056,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 shrugs, tail tip twitching with irritation. It's fine, it's totally not like {PRONOUN/r_c2/subject}'d prefer to be hunting, doing something actually useful... That attitude is present through the entire patrol, and each apprentice is too snappy and standoffish to gather anything other than negative thoughts."
+                    "p_l shrugs, tail tip twitching with irritation. It's fine, it's totally not like {PRONOUN/r_c1/subject}'d prefer to be hunting, doing something actually useful... That attitude is present through the entire patrol, and each apprentice is too snappy and standoffish to gather anything other than negative thoughts."
                 ],
-                "involved_cats": {
-                    "r_c0": {},
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "r_c1"
                         ],
                         "mutual": true,
                         "values": [
