@@ -80,7 +80,7 @@ def get_kits(
                 continue
 
             mate = Cat.fetch_cat(mate_id)
-            if not mate:
+            if not mate or not mate.status.alive_in_player_clan:
                 continue
 
             add_poly_mate = poly_parenting and mate.ID != other_cat.ID
@@ -101,7 +101,7 @@ def get_kits(
                 continue
 
             mate = Cat.fetch_cat(mate_id)
-            if not mate:
+            if not mate or not mate.status.alive_in_player_clan:
                 continue
 
             add_poly_mate = poly_parenting and mate.ID != cat.ID
