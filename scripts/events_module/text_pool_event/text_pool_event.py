@@ -45,6 +45,8 @@ class TextPoolEvent:
     relationship_constraint: list[RelationshipConstraintDict] = field(
         default_factory=list[RelationshipConstraintDict]
     )
+    patrol_temperament: list[str] = field(default_factory=list)
+    other_clan_temperament: list[str] = field(default_factory=list)
 
     # consequences
     relationship_changes: list[RelationshipChangeDict] = field(

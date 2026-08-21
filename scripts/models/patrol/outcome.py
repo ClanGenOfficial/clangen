@@ -10,6 +10,7 @@ from scripts.models.common.min_max_status import MinMaxStatusDictKey
 from scripts.models.common.future_event import FutureEvent
 from scripts.models.common.season import Season
 from scripts.models.common.tag import Tag
+from scripts.models.common.temperament import Temperament
 from scripts.models.patrol.condition import Condition
 from scripts.models.patrol.death import Death
 from scripts.models.patrol.involved_cats import InvolvedCatsPatrolEvent
@@ -76,6 +77,14 @@ class Outcome(BaseModel):
     relationship_constraint: Union[List[RelationshipConstraint], MISSING] = Field(
         MISSING,
         description="Used to require specific relationships between the cats",
+    )
+    patrol_temperament: Union[List[Temperament], MISSING] = Field(
+        MISSING,
+        description="Constrains the outcome to only occur if the patrol has one of these temperaments.",
+    )
+    other_clan_temperament: Union[List[Temperament], MISSING] = Field(
+        MISSING,
+        description="Constrains the outcome to only occur if the involved other Clan has one of these temperaments.",
     )
     exp_gained: int = Field(
         ...,

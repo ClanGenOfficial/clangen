@@ -6,7 +6,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.events_module.patrol.patrol import Patrol
+from scripts.events_module.patrol.patrol import Patrol, get_patrol_temperament
 from scripts.game_structure import game
 from ..ui.elements.sprite_button import UISpriteButton
 from ..ui.elements.image_button import UIImageButton
@@ -888,6 +888,7 @@ class PatrolScreen(Screens):
                 "patrol_cats": members,
                 "skills": self.get_list_text(skills),
                 "traits": self.get_list_text(traits),
+                "patrol_temperament": self.get_list_text(self.patrol_obj.temperament),
             },
         )
 
@@ -1159,6 +1160,9 @@ class PatrolScreen(Screens):
             text_kwargs={
                 "skills": ", ".join(patrol_skills),
                 "traits": ", ".join(patrol_traits),
+                "patrol_temperament": ", ".join(
+                    filter(None, get_patrol_temperament(self.current_patrol))
+                ),
             },
         )
 
