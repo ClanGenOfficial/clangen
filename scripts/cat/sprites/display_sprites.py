@@ -665,10 +665,10 @@ def _apply_recipe_exceptions(pelt_recipe: dict, colour: str, sprite: int) -> dic
         except_recipe.pop("exceptions")
 
         if "layer_order" in curr_match:
-            except_recipe["layer_order"] = one_ex["layer_order"]
+            except_recipe["layer_order"] = curr_match["layer_order"]
 
-        if "layers" in one_ex:
-            for key, value in one_ex["layers"].items():
+        if "layers" in curr_match:
+            for key, value in curr_match["layers"].items():
                 except_recipe["layers"][key] = (
                     except_recipe["layers"].get(key, {}) | value
                 )
