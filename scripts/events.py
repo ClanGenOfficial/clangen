@@ -540,7 +540,7 @@ def handle_lead_den_event():
                                 )
                                 invited_cat.specsuffix_hidden = False
                         # if cat is an apprentice, make sure they get a mentor!
-                        if invited_cat.status.rank == CatRank.APPRENTICE:
+                        if invited_cat.status.rank and not get_config("roles.app_never_mentor") == CatRank.APPRENTICE:
                             invited_cat.update_mentor()
                         # if the cat chose to become a mediator but the settings don't allow it, make them a warrior instead
                         if (
@@ -1608,7 +1608,9 @@ def ceremony(cat, promoted_to, preparedness="prepared"):
         tags = []
 
         # CURRENT MENTOR TAG CHECK
-        if cat.mentor:
+        if get_config("roles.app_never_mentor"):
+            tags.append("never_mentor")
+        elif cat.mentor:
             if Cat.fetch_cat(cat.mentor).status.is_leader:
                 tags.append("yes_leader_mentor")
             else:

@@ -914,6 +914,64 @@
     ],
     "(old_name) shoves (mentor) aside, yowling about how {PRONOUN/(mentor)/subject} {VERB/(mentor)/were/was} in the way. Chest puffed out, m_c is made an apprentice. {PRONOUN/m_c/subject/CAP} {VERB/m_c/turn/turns} around sheepishly, looking at {PRONOUN/m_c/poss} new mentor, (mentor)."
   ],
+  "app_60": [
+    [
+      "apprentice",
+      "never_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "ambitious",
+      "arrogant",
+      "strict",
+      "responsible",
+      "wise"
+    ],
+    "<i>Immediately</i> upon being made an apprentice, m_c turns to {PRONOUN/m_c/poss} Clanmates, explaining <i>exactly</i> how {PRONOUN/m_c/poss} {VERB/m_c/had/has} planned their apprenticehood to play out."
+  ],
+  "app_61": [
+    [
+      "apprentice",
+      "never_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "ambitious",
+      "arrogant",
+      "adventurous",
+      "bold",
+      "competitive",
+      "confident",
+      "daring",
+      "rebellious"
+    ],
+    "Much to the distress of {PRONOUN/m_c/poss} Clanmates, m_c leaves camp the <i>moment</i> {PRONOUN/m_c/subject} {VERB/m_c/are/is} made an apprentice, determined to prove {PRONOUN/m_c/poss} worth to the Clan."
+  ],
+  "app_62": [
+    [
+      "apprentice",
+      "never_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "cold",
+      "gloomy",
+      "grumpy",
+      "lonesome"
+    ],
+    "(old_name) doesn't celebrate being made an apprentice. What is there to be happy about? The only difference between being an apprentice and a kit is whether or not {PRONOUN/m_c/subject} can leave camp! Despite {PRONOUN/m_c/poss} initial reaction, m_c still leaves to try {PRONOUN/m_c/poss} paw at hunting that night."
+  ],
+  "app_63": [
+    [
+      "apprentice",
+      "never_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "bloodthirsty"
+    ],
+    "m_c just can't wait to leave camp on {PRONOUN/m_c/poss} own, and silently begs StarClan for a border skirmish or trespassing rogue to fight on {PRONOUN/m_c/poss} first night as an apprentice."
+  ],
   "med_app_0": [
     [
       "medicine cat apprentice",
