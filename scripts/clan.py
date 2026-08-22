@@ -608,6 +608,7 @@ class Clan:
 
         version_info = None
         game.reset_used_group_IDs()
+
         if os.path.exists(
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.json"
         ) or os.path.exists(
@@ -623,12 +624,17 @@ class Clan:
             )
         else:
             switch_set_value(
-                Switch.error_message, "There was an error loading the clan.json"
+                Switch.error_message,
+                f"{switch_get_value(Switch.clan_list)[0]}/clan.json (or {switch_get_value(Switch.clan_list)[0]}clan.json) doesn't exist or can't be found.",
             )
 
         # can't put this in post initialization bc guide isn't made before that func
-        self.add_guide_influence()
-        load_clan_settings()
+        if version_info:
+            self.add_guide_influence()
+            load_clan_settings()
+        else:
+            # raise an exception so the StartScreen's error window catches it before loading
+            raise
 
         return version_info
 
@@ -657,26 +663,51 @@ class Clan:
                 self.all_other_clans.append(OtherClan())
             return
 
-        switch_set_value(
-            Switch.error_message, "There was an error loading the clan.json"
-        )
+        clan_path = f"clan.json for {switch_get_value(Switch.clan_list)[0]}"
         filename = (
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "/clan.json"
         )
+
         if not os.path.exists(filename):
             # legacy
+            clan_path = f"{switch_get_value(Switch.clan_list)[0]}clan.json"
             filename = (
                 get_save_dir()
                 + "/"
                 + switch_get_value(Switch.clan_list)[0]
                 + "clan.json"
             )
-        with open(
-            filename,
-            "r",
-            encoding="utf-8",
-        ) as read_file:  # pylint: disable=redefined-outer-name
-            clan_data = ujson.loads(read_file.read())
+
+        switch_set_value(
+            Switch.error_message,
+            f"{clan_path} is missing a required key (possibly multiple). See traceback below for more details.",
+        )
+
+        try:
+            with open(
+                filename,
+                "r",
+                encoding="utf-8",
+            ) as read_file:  # pylint: disable=redefined-outer-name
+                clan_data = ujson.loads(read_file.read())
+        except FileNotFoundError as e:
+            switch_set_value(
+                Switch.error_message,
+                f"{clan_path} doesn't exist. See traceback below for more details.",
+            )
+            raise
+        except PermissionError as e:
+            switch_set_value(
+                Switch.error_message,
+                f"{clan_path} can't be accessed. See traceback below for more details.",
+            )
+            raise
+        except ujson.JSONDecodeError as e:
+            switch_set_value(
+                Switch.error_message,
+                f"{clan_path} is malformed. See traceback below for more details.",
+            )
+            raise
 
         if clan_data["leader"]:
             leader = Cat.all_cats[clan_data["leader"]]
