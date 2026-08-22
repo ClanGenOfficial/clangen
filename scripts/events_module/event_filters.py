@@ -184,7 +184,7 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
 
     # check for required ranks within the clan
     for _tag in tags:
-        rank_match = re.match(r"clan:(.+)", _tag)
+        rank_match = re.match(r"-?clan:(.+)", _tag)
         if not rank_match:
             continue
         is_exclusionary = _check_for_exclusionary_value([_tag])
@@ -203,8 +203,6 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
                     ],
                 ):
                     rank_matched = False
-                else:
-                    rank_matched = True
 
             elif rank in [
                 CatRank.LEADER,
@@ -1414,9 +1412,9 @@ def _get_cats_from_group(
 
         elif tag == "afterlife":  # checks if group is an afterlife
             if is_exclusionary:
-                cat_list = [c for c in cat_list if c.status.group.is_afterlife()]
-            else:
                 cat_list = [c for c in cat_list if not c.status.group.is_afterlife()]
+            else:
+                cat_list = [c for c in cat_list if c.status.group.is_afterlife()]
             remaining_tags.remove(tag)
 
         elif tag == "no_group":  # checks if the cat has no group
@@ -1765,13 +1763,13 @@ def _filter_relationship_type_updated(
     if "past_mentor/app" in filter_types:
         # if the cats ARE mentor/app
         if all(
-            [inter_cat.ID in cats_from[0].former_apprentice for inter_cat in cats_to]
+            [inter_cat.ID in cats_from[0].former_apprentices for inter_cat in cats_to]
         ):
             if "past_mentor/app" in exclusionary_values:
                 return False
         # if SOME but not ALL cats are mentor/app
         elif "past_mentor/app" in inclusionary_values and any(
-            [inter_cat.ID in cats_from[0].former_apprentice for inter_cat in cats_to]
+            [inter_cat.ID in cats_from[0].former_apprentices for inter_cat in cats_to]
         ):
             return False
         # if the cats AREN'T mentor/app
@@ -1782,13 +1780,13 @@ def _filter_relationship_type_updated(
     if "past_app/mentor" in filter_types:
         # if the cats ARE app/mentor
         if all(
-            [inter_cat.ID in cats_to[0].former_apprentice for inter_cat in cats_from]
+            [inter_cat.ID in cats_to[0].former_apprentices for inter_cat in cats_from]
         ):
             if "past_app/mentor" in exclusionary_values:
                 return False
         # if some, but not all cats are app/mentor
         elif "past_app/mentor" in inclusionary_values and any(
-            [inter_cat.ID in cats_to[0].former_apprentice for inter_cat in cats_from]
+            [inter_cat.ID in cats_to[0].former_apprentices for inter_cat in cats_from]
         ):
             return False
         # if the cats AREN'T app/mentor

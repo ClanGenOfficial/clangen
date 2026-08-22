@@ -25,8 +25,8 @@ def create_ceremony(
         involved_cats = {}
     involved_cats.update({"m_c": main_cat})
 
-    new_rank = main_cat.status.rank
-    possible_events = load_text_pool_events(f"resources/lang/en/events/ceremonies/{new_rank}.json")
+    new_rank = main_cat.status.rank.replace(" ", "_")
+    possible_events = load_text_pool_events(f"events/ceremonies/{new_rank}.json")
 
     chosen_ceremony, involved_cats = get_valid_event(
         primary_cat=main_cat,
@@ -36,7 +36,7 @@ def create_ceremony(
         other_clan=(
             choice(game.clan.all_other_clans) if game.clan.all_other_clans else None
         ),
-        frequency_active=False
+        frequency_active=False,
     )
 
     # we won't actually use results or rel results for ceremonies
