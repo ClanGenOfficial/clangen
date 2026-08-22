@@ -634,7 +634,7 @@ class Clan:
             load_clan_settings()
         else:
             # raise an exception so the StartScreen's error window catches it before loading
-            raise
+            raise Exception("Missing clan.json")
 
         return version_info
 
