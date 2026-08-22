@@ -788,7 +788,7 @@ def ceremony_text_adjust(main_cat_trait: str, old_name: str, text: str):
         try:
             honors = load_lang_resource("events/ceremonies/ceremony_traits.json")
             random_honor = choice(honors[main_cat_trait])
-        except FileNotFoundError or IndexError:
+        except FileNotFoundError or KeyError:
             random_honor = i18n.t("defaults.ceremony_honor")
 
         text = text.replace("r_h", random_honor)
