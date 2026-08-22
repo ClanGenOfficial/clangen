@@ -68,7 +68,9 @@ def get_valid_event(
     while not chosen_event:
         temp_involved_cats = involved_cats.copy()
         if len(possible_events) == len(tested_events):  # try a new frequency if we can
-            if (4 in used_frequencies and chosen_frequency == 4) or not frequency_active:
+            if (
+                4 in used_frequencies and chosen_frequency == 4
+            ) or not frequency_active:
                 return (
                     None,
                     {},
