@@ -3,6 +3,10 @@ from random import choice
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
 from scripts.events_module.text_adjust import ceremony_text_adjust
+from scripts.events_module.text_pool_event.event_retrieval import (
+    load_text_pool_events,
+    get_valid_event,
+)
 from scripts.events_module.text_pool_event.handle_consequences import execute_outcome
 from scripts.game_structure import game
 
@@ -22,20 +26,25 @@ def create_ceremony(
     involved_cats.update({"m_c": main_cat})
 
     new_rank = main_cat.status.rank
-    # TODO: load ceremony file for new_rank
-    path = f"resources/lang/en/events/ceremonies/{new_rank}.json"
-    possible_events = []
+    possible_events = load_text_pool_events(f"resources/lang/en/events/ceremonies/{new_rank}.json")
 
-    # TODO: send through get_valid_event
-    possible_events, involved_cats = get_valid_event()
-
-    chosen_ceremony = choice(possible_events)
+    chosen_ceremony, involved_cats = get_valid_event(
+        primary_cat=main_cat,
+        involved_cats=involved_cats,
+        interactable_cats=Cat.all_cats_list,
+        possible_events=possible_events,
+        other_clan=(
+            choice(game.clan.all_other_clans) if game.clan.all_other_clans else None
+        ),
+        frequency_active=False
+    )
 
     # we won't actually use results or rel results for ceremonies
     processed_string, results, rel_results = execute_outcome(
         chosen_ceremony, involved_cats
     )
 
+    # cats to be displayed as buttons under the event
     button_cats = [c for c in involved_cats.values() if c is not None]
 
     # do the extra processing for specifically ceremony text
