@@ -10,24 +10,25 @@ from typing import List, Tuple, Optional, Union, Literal, TypedDict
 import pygame
 
 from scripts.cat.cats import Cat
-from scripts.cat_relations.enums import RelType
 from scripts.cat.enums import CatAge, CatRank, CatCompatibility
-from scripts.clan_resources.point_of_interest import get_poi_from_constraints
+from scripts.cat_relations.enums import RelType
 from scripts.clan import get_temper_alignment
+from scripts.clan_resources.point_of_interest import get_poi_from_constraints
 from scripts.config import get_config
 from scripts.events_module.consequences import gather_cat_objects
 from scripts.events_module.event_filters import (
     check_relationship_value,
     get_personality_compatibility,
     event_for_poi,
-    check_rel_constraint_groups,
 )
-from scripts.events_module.patrol.create_new_cat import updated_create_new_cat
 from scripts.events_module.patrol.generate_patrol_list import (
     get_patrol_list,
     will_allow_outsider_patrols,
 )
 from scripts.events_module.patrol.patrol_event import PatrolEvent
+from scripts.events_module.text_adjust import (
+    event_text_adjust,
+)
 from scripts.events_module.text_pool_event import handle_consequences
 from scripts.events_module.text_pool_event.check_general_constraints import (
     passes_general_constraints,
@@ -36,13 +37,9 @@ from scripts.events_module.text_pool_event.event_retrieval import get_valid_even
 from scripts.events_module.text_pool_event.find_involved_cats import find_cats
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import constants
-from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure import game
-from scripts.events_module.text_adjust import (
-    event_text_adjust,
-)
+from scripts.game_structure.game.settings import game_setting_get
 from scripts.special_dates import SpecialDate, is_today
-
 
 logger = logging.getLogger(__name__)
 

@@ -5,35 +5,34 @@ import i18n
 
 from scripts.cat import pronouns
 from scripts.cat.cats import Cat
+from scripts.cat.enums import CatAge, CatRank
+from scripts.cat.microservices.conditions import get_injured
 from scripts.cat.pelts import Pelt
+from scripts.cat.personality import Personality
+from scripts.cat.skills import SkillPath
 from scripts.cat_relations.relationship import Relationship
+from scripts.clan_package.cotc import change_clan_reputation, change_clan_relations
+from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.clan_package.settings import get_clan_setting
 from scripts.clan_resources.point_of_interest import get_poi_from_constraints
-from scripts.cat.microservices.conditions import get_injured
 from scripts.config import get_config
 from scripts.event_class import Single_Event
-from scripts.events_module.future.prep_and_trigger import prep_future_event
-from scripts.events_module.relationship import relation_events
-from scripts.game_structure import localization, game
-from scripts.events_module.text_adjust import (
-    event_text_adjust,
-    get_leader_life_notice,
-    adjust_list_text,
-    history_text_adjust,
-)
 from scripts.events_module.consequences import (
     create_new_cat_block,
     unpack_rel_block,
     change_relationship_values,
     check_stolen_vitality,
 )
-from scripts.clan_package.cotc import change_clan_reputation, change_clan_relations
-from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
-
-from scripts.cat.enums import CatAge, CatRank
-from scripts.cat.personality import Personality
-from scripts.cat.skills import SkillPath
+from scripts.events_module.future.prep_and_trigger import prep_future_event
+from scripts.events_module.relationship import relation_events
+from scripts.events_module.text_adjust import (
+    event_text_adjust,
+    get_leader_life_notice,
+    adjust_list_text,
+    history_text_adjust,
+)
 from scripts.game_structure import constants
+from scripts.game_structure import game
 
 
 class ShortEvent:
