@@ -430,6 +430,8 @@ def event_for_cat(
         "backstory": _check_cat_backstory,
         "gender": _check_cat_gender,
         "health": _check_cat_health,
+        "has_mentor": _check_cat_mentor,
+        "has_apprentice": _check_cat_apprentice,
     }
 
     for param, func in func_lookup.items():
@@ -448,10 +450,6 @@ def event_for_cat(
             raise TypeError(
                 f"Input contains invalid data, check traceback!\ncat_info: {cat_info}\nevent_id: {event_id}"
             ) from e
-
-    # checking mentor
-    if cat_info.get("has_mentor") and not cat.mentor:
-        return False
 
     # checking groups
     if cat_info.get("group"):
@@ -496,6 +494,54 @@ def event_for_cat(
             filter_types=cat_info["relationship_status"],
             patrol_leader=p_l,
         ):
+            return False
+
+    return True
+
+
+def _check_cat_mentor(cat, has_mentor: dict) -> bool:
+    """
+    Checks if a cat's mentor status matches with constraints
+    """
+    if not has_mentor:
+        return True
+
+    # check for None value instead of False-y!
+    if has_mentor.get("current") is not None:
+        if has_mentor["current"] and not cat.mentor:
+            return False
+        elif not has_mentor["current"] and cat.mentor:
+            return False
+
+    # check for None value instead of False-y!
+    if has_mentor.get("former") is not None:
+        if has_mentor["former"] and not cat.former_mentor:
+            return False
+        if not has_mentor["former"] and cat.former_mentor:
+            return False
+
+    return True
+
+
+def _check_cat_apprentice(cat, has_app: dict) -> bool:
+    """
+    Checks if a cat's apprentice status matches with constraints
+    """
+    if not has_app:
+        return True
+
+    # check for None value instead of False-y!
+    if has_app.get("current") is not None:
+        if has_app["current"] and not cat.apprentice:
+            return False
+        elif not has_app["current"] and cat.apprentice:
+            return False
+
+    # check for None value instead of False-y!
+    if has_app.get("former") is not None:
+        if has_app["former"] and not cat.former_apprentice:
+            return False
+        if not has_app["former"] and cat.former_apprentice:
             return False
 
     return True
@@ -1015,6 +1061,8 @@ def cat_for_event(
         "skill": _get_cats_with_skill,
         "trait": _get_cats_with_trait,
         "backstory": _get_cats_with_backstory,
+        "has_mentor": _get_cats_with_mentor,
+        "has_apprentice": _get_cats_with_apprentice,
     }
 
     # run funcs
@@ -1146,6 +1194,20 @@ def _get_cats_with_rel_status(
         rel_status_list = [f"-{x}" for x in rel_status_list]
 
     return cat_list, rel_status_list
+
+
+def _get_cats_with_mentor(cat_list: list, has_mentor: dict) -> list:
+    if not has_mentor:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_mentor(c, has_mentor)]
+
+
+def _get_cats_with_apprentice(cat_list: list, has_apprentice: dict) -> list:
+    if not has_apprentice:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_apprentice(c, has_apprentice)]
 
 
 def _get_cats_with_age(cat_list: list, ages: list[str]) -> list:

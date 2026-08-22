@@ -1415,7 +1415,7 @@
                 "status": [
                     "apprentice"
                 ],
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 30,
@@ -2025,7 +2025,7 @@
                 "status": [
                     "apprentice"
                 ],
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 40,
@@ -2565,7 +2565,7 @@
                 "status": [
                     "apprentice"
                 ],
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 40,

@@ -27,6 +27,11 @@ class CanCreateNewCatDict(TypedDict, total=False):
     assign_mate: list[str]
 
 
+class MentorApprenticeDict(TypedDict):
+    current: bool
+    former: bool
+
+
 class InvolvedCatDict(TypedDict, total=False):
     prior_abbreviation: list[str]
     can_create_new_cat: CanCreateNewCatDict
@@ -41,7 +46,8 @@ class InvolvedCatDict(TypedDict, total=False):
     current_exp: list[str]
     health: HealthDict
     backstory: list[str]
-    has_mentor: bool
+    has_mentor: MentorApprenticeDict
+    has_apprentice: MentorApprenticeDict
     # TODO: implement no_suffix check
     no_suffix: bool
 

@@ -4241,7 +4241,7 @@
                     "apprentice",
                     "medicine cat apprentice"
                 ],
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 40,
@@ -11960,7 +11960,7 @@
         },
         "involved_cats": {
             "p_l": {
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 50,
@@ -12761,7 +12761,7 @@
                     "apprentice",
                     "medicine cat apprentice"
                 ],
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 30,
@@ -13728,7 +13728,7 @@
                     "apprentice",
                     "medicine cat apprentice"
                 ],
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 60,
@@ -19874,7 +19874,7 @@
                     "apprentice",
                     "medicine cat apprentice"
                 ],
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 60,
@@ -25739,7 +25739,7 @@
         },
         "involved_cats": {
             "p_l": {
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 50,
@@ -27867,7 +27867,7 @@
                     "apprentice",
                     "medicine cat apprentice"
                 ],
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 40,
@@ -39297,7 +39297,7 @@
                     "apprentice",
                     "medicine cat apprentice"
                 ],
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 70,
@@ -41614,7 +41614,7 @@
                     "apprentice",
                     "medicine cat apprentice"
                 ],
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 70,
@@ -51268,7 +51268,7 @@
         },
         "involved_cats": {
             "p_l": {
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 50,
