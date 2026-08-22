@@ -1,4 +1,4 @@
-# Ceremony Events
+# Normal Ceremonies
 
 Ceremonies utilize the `TextPoolEvent` format.
 
@@ -38,7 +38,7 @@ Within this folder are multiple files:
 {
     "event_id": "",
     "strings": [
-        "m_c spent time chatting with r_c."
+        "m_c was promoted to deputy."
     ],
 }
 ```
@@ -76,7 +76,7 @@ Within this folder are multiple files:
         }
     },
     "strings": [
-        "m_c spent time chatting with r_c."
+        "m_c was promoted to deputy."
     ],
     "required_reputation": {
         "outsider": [],
@@ -197,7 +197,7 @@ For example:
 ### involved_cats: dict[str: dict]
 This dictionary holds all constraints for the cats whom we wish to reference in the ceremony.
 
-[Full Involved Cat Dictionary Information](../reference/involved_cat_dict.md)
+[Full Involved Cat Dictionary Information](../reference/involved-cat-dict.md)
 
 ***
 
@@ -335,7 +335,7 @@ Death block:
 
 ***
 
-## condition: list[dict]
+### condition: list[dict]
 Indicate which cats should receive conditions and what conditions they receive. You can add multiple condition blocks.
 
 Condition block:
@@ -387,7 +387,7 @@ Lost block:
 
 ***
 
-## join: list[dict]
+### join: list[dict]
 > Indicate which cats will join the player Clan. You can add multiple join blocks.
 
 Join block:

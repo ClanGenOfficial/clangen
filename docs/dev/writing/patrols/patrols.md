@@ -246,7 +246,7 @@ This dictionary holds all constraints for the cats whom we wish to reference in 
 
 `p_l` is the only cat designation you can *assume* has a cat attached at all times. With this in mind, you do not need to add a `p_l` entry to `involved_cats` unless you would like to add constraints regarding the sort of cat `p_l` is. **Important**: This will not override the game's selection process for patrol leaders. (e.g. You cannot use these constraints to make `p_l` a warrior leading their deputy on patrol, because the deputy will automatically be `p_l`.)
 
-[Full Involved Cat Dictionary Information](../reference/involved_cat_dict.md)
+[Full Involved Cat Dictionary Information](../reference/involved-cat-dict.md)
 
 #### relationship_constraint: list[dict]
 Constrains the event to only occur is the specified relationships exist. Multiple dictionary blocks can be added to specify multiple required configurations of relationships.

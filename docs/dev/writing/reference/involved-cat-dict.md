@@ -1,10 +1,9 @@
 # Involved Cat Dictionaries
 General information on the formatting and constraints within an involved cat dictionary. Event format documentation will link to this page if these dictionaries can be used within them.
 
-## involved_cats: Dict[str, var]
 This dictionary holds all constraints for the cats whom we wish to reference in the event.
 
-Each entry is an individual cat, with the key being their [event designation](#usable-cat-references) (`r_c0`, `p_l`, etc.) and the value being their personal constraints.
+Each entry is an individual cat, with the key being their event designation (`r_c0`, `p_l`, etc.) and the value being their personal constraints. Event documentation will include a list of valid designations for that event type.
 
 ```json
     "designation": {
@@ -47,7 +46,7 @@ Each entry is an individual cat, with the key being their [event designation](#u
 }
 ```
 
-### When To Use
+## When To Use
 
 If you want to be able to reference the cat designation within the text or within other constraint/consequence lists (cats who die, cats who must abide by relationship constraints, etc.), then you *must* declare them within an `involved_cats` dict for that event (there are some exceptions to this which may be specified by the format documentation for specific event types.) This can be an empty dict if no constraints are needed:
 ```json
@@ -57,7 +56,7 @@ If you want to be able to reference the cat designation within the text or withi
 !!! tip
     You do not need to "repeat" constraints! If a patrol can only have apprentices on it via the `required_cat_types` then you don't need to specify that `r_c0` is an apprentice.
 
-### Specifying an outsider or other Clan cat
+## Specifying an outsider or other Clan cat
 
 If you would like to include an outsider or other Clan cat, you can specify them using the `n_c#` designation and some additional parameters.
 
@@ -80,7 +79,7 @@ This can even be added as an empty dict: `can_create_new_cat: {}` to simply mark
 > 
 > **`assign_mate`** - List of designations for cats who will become this cat's mates. These cats must have already been specified prior in `involved_cats`.
 
-### Prior Abbreviation
+## Prior Abbreviation
 For **patrols**, it's possible to "reuse" a cat under a new designation for an outcome, but with tighter constraints. You can utilize the `s_c` designations for this use. You will need to add the `prior_abbreviation` parameter to the dictionary for the `s_c` cat:
 
 For example:
@@ -99,9 +98,9 @@ These can also be exclusionary tags such as: `-p_l` to allow any cat *except* `p
 !!! tip
     `s_c` used to be used only for trait and skill constrained cats. Now it's for *any* sort of constraint. This could be a health constraint, group constraint, literally any constraint.
 
-### General Constraints
+## General Constraints
 
-**status: list[str]**
+### **status: list[str]**
 >Constrains the event to only happen if the cat holds a certain role. You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
 
 > [Status Tag List](../reference/tag-lists.md#__tabbed_2_2)
@@ -110,14 +109,14 @@ These can also be exclusionary tags such as: `-p_l` to allow any cat *except* `p
 
 ***
 
-**past_status: list[str]**
+### **past_status: list[str]**
 >Constrains the event to only happen if the cat held a certain role in the past. You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
 
 > [Status Tag List](../reference/tag-lists.md#__tabbed_2_2)
 
 ***
 
-**age: list[str]**
+### **age: list[str]**
 >Constrains the event to only occur if the cat is within a certain age group. You can utilize [exclusionary tags](../reference/tag-lists.md/#exclusionary-tags).
 
 > [Age Tag List](../reference/tag-lists.md#__tabbed_2_1)
@@ -126,7 +125,7 @@ These can also be exclusionary tags such as: `-p_l` to allow any cat *except* `p
 
 ***
 
-**name: dict[str, bool]**
+### **name: dict[str, bool]**
 >Constrains the event to only occur if the cat matches the name constraints.
 ```json
 "name": {
@@ -137,17 +136,17 @@ These can also be exclusionary tags such as: `-p_l` to allow any cat *except* `p
 
 ***
 
-**gender: str**
+### **gender: str**
 >Constrains the event to only occur if the cat has a certain birth gender. Valid entries are: `male`, `female`, `can_birth`. `can_birth` will allow either female or male cats dependant upon the player's settings. 
 
 ***
 
-**group:list[str]**
+### **group:list[str]**
 >Constraints the thought to only happen if the cat is a member of a listed group or a member of no group. This should only be used to dictate what group a new cat is originally part of. you can use tags in: [possible group tags](../reference/tag-lists.md#groups) and you can utilize [exclusionary tags](../reference/tag-lists.md/#exclusionary-tags).
 > 
 ***
 
-**standing: dict[str: var]**
+### **standing: dict[str: var]**
 >Constrains the event to only happen if the cat matches with the dictated group standings. A group standing is the relationship between a cat and a group, for example: if they are an exile or lost.
 
 ```json
@@ -169,7 +168,7 @@ These can also be exclusionary tags such as: `-p_l` to allow any cat *except* `p
 ***
 
 
-**stat: dict[str: list]**
+### **stat: dict[str: list]**
 > Constrains the event to only occur if the cat holds specific skills or traits. You can utilize [exclusionary tags](../reference/tag-lists.md/#exclusionary-tags).
 
 ```json
@@ -187,7 +186,7 @@ These can also be exclusionary tags such as: `-p_l` to allow any cat *except* `p
 
 ***
 
-**health: dict[str: var]**
+### **health: dict[str: var]**
 > Constrains the event to only occur if the cat's health matches the constraints.
  
 ```json
@@ -214,14 +213,14 @@ These can also be exclusionary tags such as: `-p_l` to allow any cat *except* `p
 
 ***
 
-**backstory:list**
+### **backstory:list**
 >Constrains the event to only occur if the cat has a listed backstory. To find what each backstory describes, you can find more by going to `resources/lang/en/cat/backstories.en.json`.  You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
 
 > [Backstory Tag List](../reference/tag-lists.md#backstories)
 
 ***
 
-**has_mentor:dict[str, bool]**
+### **has_mentor:dict[str, bool]**
 > Set specific mentorship circumstances.
 ```json
 "has_mentor": {
@@ -235,7 +234,7 @@ These can also be exclusionary tags such as: `-p_l` to allow any cat *except* `p
 
 ***
 
-**has_apprentice:dict[str, bool]**
+### **has_apprentice:dict[str, bool]**
 > Set specific apprentice circumstances.
 ```json
 "has_apprentice": {

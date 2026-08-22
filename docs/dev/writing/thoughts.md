@@ -155,7 +155,7 @@ This dictionary holds all constraints for the cats whom we wish to reference in 
 
 Each entry is an individual cat, with the key being their event designation (`r_c`, `m_c`, etc.) and the value being their personal constraints. In thoughts, you are allowed to reference `m_c`, who is the "owner" of the thoughts, and `r_c`, who is a cat being referenced by the thought. Allowed constraints are as follows:
 
-[Full Involved Cat Dictionary Information](reference/involved_cat_dict.md)
+[Full Involved Cat Dictionary Information](reference/involved-cat-dict.md)
 
 
 ### relationship_constraint: list[dict]
