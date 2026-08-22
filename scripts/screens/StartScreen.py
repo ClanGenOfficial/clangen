@@ -201,16 +201,16 @@ class StartScreen(Screens):
 
         # Create Title
         self.elements["title"] = UILabel(
-            ui_scale(pygame.Rect((55, 170), (380, 85))),
+            ui_scale(pygame.Rect((60, 170), (300, 105))),
             "general.title",
-            object_id="#title",
+            object_id="#text_title",
             manager=MANAGER,
         )
 
         self.elements["subtitle"] = UILabel(
-            ui_scale(pygame.Rect((65, 250), (400, 50))),
+            ui_scale(pygame.Rect((70, 250), (400, 50))),
             "general.subtitle",
-            object_id="#subtitle",
+            object_id="#text_subtitle",
             manager=MANAGER,
         )
 
