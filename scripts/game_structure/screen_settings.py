@@ -330,10 +330,6 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
         font_name="clangen", regular_path="resources/fonts/clangen.ttf"
     )
 
-    manager.add_font_paths(
-        font_name="didot", regular_path="resources/fonts/GFSDidot-Regular.ttf"
-    )
-
     generate_screen_scale(
         "resources/theme/master_screen_scale.json",
         "resources/theme/generated/screen_scale.json",
