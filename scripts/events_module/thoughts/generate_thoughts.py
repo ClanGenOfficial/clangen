@@ -96,7 +96,8 @@ def _new_thought(
                 involved_cats.update({"r_c": other_cat})
             if other_clan_id and game.clan.all_other_clans:
                 other_clan = next(
-                    c for c in game.clan.all_other_clans if c.group_ID == other_clan_id)
+                    c for c in game.clan.all_other_clans if c.group_ID == other_clan_id
+                )
             else:
                 other_clan = None
 
