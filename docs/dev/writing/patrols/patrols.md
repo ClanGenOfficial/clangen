@@ -93,6 +93,8 @@ When considering patrols, keep in mind challenge vs reward. That isn't to say ce
                 "constraints": []
             }
         ],
+    "patrol_temperament": [],
+    "other_clan_temperament": [],
     "chance_of_success": 100,
     "patrol_art": "art.png",
     "patrol_art_clean": "pleasant_art.png",
@@ -446,6 +448,22 @@ Constrains the event to only occur is the specified relationships exist. Multipl
 !!! tip
     Specify `"can_romance"` as a constraint to allow the cats to have romantic interactions 
   
+***
+
+#### patrol_temperament: list[str]
+>List of allowed patrol temperaments. A patrol's temperament isn't set by you, it's calculated from the personalities of the cats on it, weighted so that a leader counts for more than a deputy, who counts for more than everyone else. The patrol leader gets a little extra weight on top of their rank. [Possible Tempers](../reference/tag-lists.md/#clan-temperaments). You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
+
+!!! tip
+    Because temperament comes out of the cats you've already constrained, it's easy to write a patrol that can never appear. If you've required a bloodthirsty patrol, you've implicitly required a patrol full of low social, high aggression cats. Reach for this when the patrol's *mood* is the point, and prefer excluding a temperament that would read as wildly out of character over requiring a specific one.
+
+***
+
+#### other_clan_temperament: list[str]
+>List of allowed temperaments for the other Clan involved in the patrol. [Possible Tempers](../reference/tag-lists.md/#clan-temperaments). You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
+
+!!! caution
+    This only filters the temperament, it doesn't cause an other Clan to be involved. The patrol still needs to be an other Clan patrol for this to mean anything.
+
 ***
 
 #### chance of success: int

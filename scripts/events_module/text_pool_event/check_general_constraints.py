@@ -10,6 +10,7 @@ from scripts.events_module.event_filters import (
     event_for_clan_relations,
     event_for_freshkill_supply,
     event_for_herb_supply,
+    event_for_temperament,
 )
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
@@ -50,6 +51,15 @@ def passes_general_constraints(
         if is_debug_event:
             print("DEBUG: requested event does not meet constraints (tags)")
         return False
+
+    # CHECK TEMPERAMENT
+    if hasattr(event, "required_temperament"):
+        if not event_for_temperament(event.required_temperament, primary_cat):
+            if is_debug_event:
+                print(
+                    "DEBUG: requested event does not meet constraints (patrol_temperament)"
+                )
+            return False
 
     if hasattr(event, "required_reputation") and event.required_reputation:
         if not event_for_reputation(event.required_reputation.get("outsider")):

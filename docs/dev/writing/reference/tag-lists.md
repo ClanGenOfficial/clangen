@@ -541,7 +541,11 @@ You can utilize [#exclusionary tags](#exclusionary-tags).
 ***
 
 ## Clan Temperaments
-> These tags are used to indicate what type of Clan can receive an event.
+> These tags are used to indicate what type of Clan can receive an event. Patrols also use them to indicate what sort of patrol can receive an event, which uses the personalities of the cats on the patrol rather than from a Clan.
+
+> Every temperament is a pairing of one tag from each table below, so a Clan or patrol always holds two of them at once. Tagging a single temperament constrains only that half of the pairing.
+
+> Use `"any"` if any temperament is allowed. Not every parameter that links here accepts [exclusionary tags](#exclusionary-tags), so check the parameter itself.
 
 |                 | low aggression | mid aggression | high aggression  |
 |-----------------|----------------|----------------|------------------|

@@ -13,7 +13,7 @@
         ]
     },
     {
-        "event_id": "dead_kit_to_dead_other_kit",
+        "event_id": "dead_kit_to_dead_other_kit_df",
         "strings": [
             "Huddled up close to r_c",
             "Is comforting r_c despite {PRONOUN/m_c/poss} own fear",

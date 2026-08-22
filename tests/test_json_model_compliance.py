@@ -22,6 +22,7 @@ from scripts.models.thought.thought_schema import ThoughtSchema
 from scripts.models.points_of_interest.points_of_interest_schema import (
     PointsOfInterestSchema,
 )
+from scripts.models.pelt_recipe.pelt_recipe_schema import PeltRecipe
 
 
 ROOT_DIR = Path(__file__).parent.parent
@@ -30,6 +31,13 @@ RESOURCES_DIR = ROOT_DIR / "resources"
 
 def format_file_context_string(path: Path) -> str:
     return f'"{path.relative_to(Path.cwd())}"'
+
+
+def all_pelt_recipe_files():
+    """
+    Iterator for Paths for all pelt recipe files
+    """
+    yield from ROOT_DIR.glob("sprites/dicts/pelt_recipes/*.json")
 
 
 def all_thought_files():
@@ -146,3 +154,13 @@ def test_points_of_interest():
     """Test that the Points of Interest JSON is correct according to the Pydantic models"""
     poi_file = RESOURCES_DIR / "dicts/points_of_interest.json"
     PointsOfInterestSchema.model_validate_json(poi_file.read_text())
+
+
+@pytest.mark.parametrize(
+    "pelt_recipe_file",
+    all_pelt_recipe_files(),
+    ids=format_file_context_string,
+)
+def test_pelt_recipes(pelt_recipe_file: Path):
+    """Test that all shortevent JSONs are correct according to the Pydantic models"""
+    PeltRecipe.model_validate_json(pelt_recipe_file.read_text())

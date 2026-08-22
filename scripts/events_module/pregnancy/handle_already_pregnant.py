@@ -9,6 +9,7 @@ from scripts.cat.names import Name
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 from scripts.clan_package.settings import get_clan_setting
+from scripts.cat.microservices.conditions import get_injured
 from scripts.config import get_config
 from scripts.event_class import Single_Event
 from scripts.events_module.consequences import (
@@ -247,7 +248,7 @@ def handle_two_moon_pregnant(cat: Cat):
             death_event = i18n.t("conditions.pregnancy.kitting_death", name=cat.name)
         cat.history.add_death(death_text=death_event)
     elif not cat.status.is_outsider:  # if cat doesn't die, give recovering from birth
-        cat.get_injured("recovering from birth", event_triggered=True)
+        get_injured(cat, "recovering from birth", event_triggered=True)
         if "blood loss" in cat.injuries:
             if cat.status.is_leader:
                 death_event = i18n.t("conditions.pregnancy.leader_kitting_death_severe")
@@ -654,7 +655,7 @@ def _handle_affair_discovery_breakup(cheating_cat: Cat, mate_cat: Cat):
     if cheating_cat.ID not in mate_cat.mate:
         return
 
-    breakup_chance = get_config("mates.mates_breakup.affair_breakup_chance")
+    breakup_chance = get_config("mates.breakup.affair_breakup_chance")
     if random() <= breakup_chance:
         mate_cat.unset_mate(cheating_cat, user_initiated_breakup=True, fight=True)
         breakup_text = choice(get_breakup_strings()["affair_discovery_breakup"])
