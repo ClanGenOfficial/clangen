@@ -19,6 +19,29 @@ from scripts.game_structure.game import Switch
 from scripts.game_structure.game.switches import switch_set_value
 
 logger = logging.getLogger(__name__)
+disable_random = False
+
+
+def trigger_ceremony(
+    main_cat: Cat, new_rank: CatRank, involved_cats: dict[str, Cat] = None
+):
+    """
+    Triggers the ceremony to occur and initiates the cat's rank change.
+    :param main_cat: The cat object receiving the ceremony
+    :param new_rank: The CatRank that main_cat is becoming
+    :param involved_cats: Dict of cats who are already involved, main_cat does not need to be included here. This is
+    just for any specific extra cats. Key is abbreviation and value is cat object.
+    """
+    # allows cat to receive a congratulatory accessory
+    switch_set_value(Switch.ceremony_accessory, True)
+    old_name = str(main_cat.name)
+
+    current_mentor = Cat.fetch_cat(main_cat.mentor) if main_cat.mentor else None
+
+    main_cat.rank_change(new_rank)
+    main_cat.rank_change_traits_skill(current_mentor)
+
+    create_ceremony(main_cat=main_cat, old_name=old_name, involved_cats=involved_cats)
 
 
 def check_for_ceremony(main_cat: Cat):
@@ -48,7 +71,7 @@ def check_for_ceremony(main_cat: Cat):
             return
 
     # CHECK IF A CAT WANTS TO CHANGE INTO A MEDIATOR
-    if _adult_becomes_mediator(main_cat):
+    if not disable_random and _adult_becomes_mediator(main_cat):
         return
 
     # OLD CAT RETIRE
@@ -140,7 +163,10 @@ def check_and_promote_deputy():
         )
     )
 
-    if not possible_deputies:
+    if possible_deputies:
+        # from here we must have appropriate deputy choices
+        main_cat = random.choice(possible_deputies)
+    else:
         # If there are no possible deputies, choose someone else, with special text.
         all_warriors = list(
             filter(
@@ -151,9 +177,6 @@ def check_and_promote_deputy():
         )
         if all_warriors:
             main_cat = random.choice(all_warriors)
-            involved_cats = [main_cat.ID]
-            text = i18n.t("hardcoded.ceremony_deputy_unsuitable")
-            # TODO: set up an override so we can pick the specific event?
 
         else:
             # If there are no warriors at all, no one is named deputy.
@@ -162,13 +185,7 @@ def check_and_promote_deputy():
             )
             return
 
-    # from here we must have appropriate deputy choices
-    main_cat = random.choice(possible_deputies)
-    involved_cats = {"past_deputy": game.clan.deputy}
-    # TODO: set up a thing in the filters for if an involved_cat is passed in as None
-    #  (if they are, then events with that involved cat abbr should be tossed)
-
-    trigger_ceremony(main_cat, CatRank.DEPUTY, involved_cats)
+    trigger_ceremony(main_cat, CatRank.DEPUTY, {"past_deputy": game.clan.deputy})
     game.clan.deputy = main_cat
 
 
@@ -198,28 +215,6 @@ def _handle_leader_ceremony(main_cat):
     main_cat.generate_lead_ceremony()
     game.clan.deputy = None
     game.clan.leader = main_cat
-
-
-def trigger_ceremony(
-    main_cat: Cat, new_rank: CatRank, involved_cats: dict[str, Cat] = None
-):
-    """
-    Actually triggers the ceremony to occur and initiates the cat's rank change.
-    :param main_cat: The cat object receiving the ceremony
-    :param new_rank: The CatRank that main_cat is becoming
-    :param involved_cats: Dict of cats who are already involved, main_cat does not need to be included here. This is
-    just for any specific extra cats. Key is abbreviation and value is cat object.
-    """
-    # allows cat to receive a congratulatory accessory
-    switch_set_value(Switch.ceremony_accessory, True)
-    old_name = str(main_cat.name)
-
-    current_mentor = Cat.fetch_cat(main_cat.mentor) if main_cat.mentor else None
-
-    main_cat.rank_change(new_rank)
-    main_cat.rank_change_traits_skill(current_mentor)
-
-    create_ceremony(main_cat=main_cat, old_name=old_name, involved_cats=involved_cats)
 
 
 def _is_suitable_mediator_app(main_cat: Cat) -> bool:

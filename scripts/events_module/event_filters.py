@@ -433,7 +433,7 @@ def event_for_cat(
         "has_mentor": _check_cat_mentor,
         "has_apprentice": _check_cat_apprentice,
         "current_exp": _check_cat_exp,
-        "name_check": _check_cat_name
+        "name_check": _check_cat_name,
     }
 
     for param, func in func_lookup.items():
@@ -512,6 +512,7 @@ def _check_cat_name(cat, name_check: dict) -> bool:
         return False
 
     return True
+
 
 def _check_cat_exp(cat, current_exp: list[str]) -> bool:
     if not current_exp:
@@ -1088,7 +1089,7 @@ def cat_for_event(
         "has_mentor": _get_cats_with_mentor,
         "has_apprentice": _get_cats_with_apprentice,
         "current_exp": _get_cats_with_exp,
-        "name_check": _get_cats_matching_name_check
+        "name_check": _get_cats_matching_name_check,
     }
 
     # run funcs
@@ -1221,11 +1222,13 @@ def _get_cats_with_rel_status(
 
     return cat_list, rel_status_list
 
+
 def _get_cats_matching_name_check(cat_list: list, name_check: dict) -> list:
     if not name_check:
         return cat_list
 
     return [c for c in cat_list if _check_cat_name(c, name_check)]
+
 
 def _get_cats_with_exp(cat_list: list, current_exp: list[str]) -> list:
     if not current_exp:

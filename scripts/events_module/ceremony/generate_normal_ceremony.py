@@ -1,12 +1,10 @@
 from random import choice
 
-import i18n
-
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
+from scripts.events_module.text_adjust import ceremony_text_adjust
 from scripts.events_module.text_pool_event.handle_consequences import execute_outcome
 from scripts.game_structure import game
-from scripts.game_structure.localization import load_lang_resource
 
 
 def create_ceremony(
@@ -25,6 +23,7 @@ def create_ceremony(
 
     new_rank = main_cat.status.rank
     # TODO: load ceremony file for new_rank
+    path = f"resources/lang/en/events/ceremonies/{new_rank}.json"
     possible_events = []
 
     # TODO: send through get_valid_event
@@ -37,22 +36,12 @@ def create_ceremony(
         chosen_ceremony, involved_cats
     )
 
-    button_cats = involved_cats.values()
-    if "clan:leader" in chosen_ceremony.tags:
-        button_cats.append(game.clan.leader)
+    button_cats = [c for c in involved_cats.values() if c is not None]
 
-    # get random honor!
-    if "r_h" in processed_string:
-        try:
-            honors = load_lang_resource("events/ceremonies/ceremony_traits.json")
-            random_honor = choice(honors[main_cat.personality.trait])
-        except FileNotFoundError or IndexError:
-            random_honor = i18n.t("defaults.ceremony_honor")
-
-        processed_string = processed_string.replace("r_h", random_honor)
-
-    # add in the old name
-    processed_string = processed_string.replace("(old_name)", old_name)
+    # do the extra processing for specifically ceremony text
+    processed_string = ceremony_text_adjust(
+        main_cat.personality.trait, old_name, processed_string
+    )
 
     game.cur_events_list.append(
         Single_Event(processed_string, "ceremony", [c.ID for c in button_cats])

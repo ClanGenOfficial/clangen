@@ -777,3 +777,23 @@ def relationship_text_adjust(mate_string: str, cat_from, cat_to) -> str:
         cat_from, mate_string, main_cat=cat_from, random_cat=cat_to
     )
     return mate_string
+
+
+def ceremony_text_adjust(main_cat_trait: str, old_name: str, text: str):
+    """
+    Handles the small ceremony-specific text adjustments. This being the random honors and the old name.
+    """
+    # get random honor!
+    if "r_h" in text:
+        try:
+            honors = load_lang_resource("events/ceremonies/ceremony_traits.json")
+            random_honor = choice(honors[main_cat_trait])
+        except FileNotFoundError or IndexError:
+            random_honor = i18n.t("defaults.ceremony_honor")
+
+        text = text.replace("r_h", random_honor)
+
+    # add in the old name
+    text = text.replace("(old_name)", old_name)
+
+    return text

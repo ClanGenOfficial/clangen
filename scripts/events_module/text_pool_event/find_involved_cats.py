@@ -50,6 +50,10 @@ def find_cats(
 
         # CHECK ALREADY ASSIGNED CAT
         if abbr in involved_cats:
+            if involved_cats[abbr] is None and abbr in event.involved_cats:
+                # sometimes a specific abbr may be "preset" as None
+                # which indicates that events requiring that abbr should be avoided
+                return {}
             possible_cats = (
                 involved_cats[abbr] if isinstance(abbr, list) else [involved_cats[abbr]]
             )
