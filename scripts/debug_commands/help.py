@@ -19,13 +19,19 @@ class ClearCommand(Command):
 class HelpCommand(Command):
     name = "help"
     description = "Shows help for commands"
-    usage = "[command]"
+    usage = "<command: str>"
     aliases = ["h"]
 
     commandList: List[Command] = []
 
     def __init__(self, command_list: List[Command]):
         self.commandList = command_list + [self, ClearCommand()]
+
+    def _get_command_help_text(self, command: Command):
+        add_output_line_to_log(f"Help for {command.name}:")
+        add_output_line_to_log(f"  {command.description}")
+        add_output_line_to_log(f"  Usage: {command.name} {command.usage}")
+        add_output_line_to_log(f"  Aliases: {command._aliases}")
 
     def callback(self, args: List[str]):
         if len(args) == 0:
@@ -51,10 +57,11 @@ class HelpCommand(Command):
                                 add_output_line_to_log(
                                     f"  Usage: {command.name} {sub_command.name} {sub_command.usage}"
                                 )
+                                add_output_line_to_log(
+                                    f"  Aliases: {sub_command._aliases}"
+                                )
                                 return
-                    add_output_line_to_log(f"Help for {command.name}:")
-                    add_output_line_to_log(f"  {command.description}")
-                    add_output_line_to_log(f"  Usage: {command.name} {command.usage}")
+                    self._get_command_help_text(command)
                     for subcommand in command.sub_commands:
                         add_output_line_to_log(
                             f"    {subcommand.name}: {subcommand.description}"

@@ -1,7 +1,7 @@
 """
 Stores the DebugMenu class and the DebugMode class
 """
-
+import math
 import pygame
 import pygame_gui
 import html
@@ -45,7 +45,7 @@ class DebugMenu(UIWindow):
                 )
             ),
             container=self,
-            object_id="#log",
+            object_id="#debug_log",
             manager=MANAGER,
         )
 
@@ -67,7 +67,8 @@ class DebugMenu(UIWindow):
             anchors={"top": "bottom", "left": "right"},
         )
 
-        self.previous_command = ""
+        self.prev_command_index = -1
+        self.previous_commands = []
 
         self.change_layer(1000)
 
@@ -124,7 +125,9 @@ class DebugMenu(UIWindow):
                     raise e
                 break
         if command in ["self", "clear"]:
-            self.log.set_text("")
+            self.log.clear()
+        elif command in ["selfline", "clearline"]:
+            self.pop_line()
         elif not commandFound:
             self.push_line(f"Command {command} not found")
 
@@ -136,19 +139,36 @@ class DebugMenu(UIWindow):
             event.type == pygame_gui.UI_BUTTON_PRESSED
             and event.ui_element == self.submit_command
         ):
-            add_output_line_to_log(f"> {self.command_line.get_text()}")
+            command_text = self.command_line.get_text()
+            add_output_line_to_log(f"> {command_text}")
             pygame.event.post(
                 pygame.Event(
                     pygame_gui.UI_CONSOLE_COMMAND_ENTERED,
-                    {"command": self.command_line.get_text()},
+                    {"command": command_text},
                 )
             )
-            self.previous_command = self.command_line.get_text()
+            self.prev_command_index = -1
+            if command_text in self.previous_commands:
+                self.previous_commands.remove(command_text)
+            self.previous_commands.insert(0, command_text)
             self.command_line.clear()
 
-        if event.type == pygame.KEYDOWN:
+        if event.type == pygame.KEYDOWN and len(self.previous_commands) > 0:
             if event.key == pygame.K_UP:
-                self.command_line.set_text(self.previous_command)
+                self.prev_command_index = min(
+                    len(self.previous_commands) - 1, self.prev_command_index + 1
+                )
+                self.command_line.set_text(
+                    self.previous_commands[self.prev_command_index]
+                )
+            elif event.key == pygame.K_DOWN:
+                self.prev_command_index = max(-1, self.prev_command_index - 1)
+                if self.prev_command_index < 0:
+                    self.command_line.set_text("")
+                else:
+                    self.command_line.set_text(
+                        self.previous_commands[self.prev_command_index]
+                    )
 
         if event.type == pygame_gui.UI_CONSOLE_COMMAND_ENTERED:
             self.process_command(event.command)
