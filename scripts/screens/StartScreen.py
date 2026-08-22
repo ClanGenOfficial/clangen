@@ -21,7 +21,7 @@ from html import escape
 import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID
-from pygame_gui.elements import UITextBox, UIButton
+from pygame_gui.elements import UIButton, UILabel
 from requests.exceptions import RequestException, Timeout
 
 from scripts.cat.cats import Cat
@@ -200,14 +200,14 @@ class StartScreen(Screens):
         self.show_mute_buttons()
 
         # Create Title
-        self.elements["title"] = UIButton(
+        self.elements["title"] = UILabel(
             ui_scale(pygame.Rect((55, 170), (380, 85))),
             "general.title",
             object_id="#title",
             manager=MANAGER,
         )
 
-        self.elements["subtitle"] = UIButton(
+        self.elements["subtitle"] = UILabel(
             ui_scale(pygame.Rect((65, 250), (400, 50))),
             "general.subtitle",
             object_id="#subtitle",

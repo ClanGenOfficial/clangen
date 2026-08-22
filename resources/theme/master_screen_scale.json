@@ -532,7 +532,7 @@
             "hovered_text": "#EFE5CE",
             "selected_text": "#EFE5CE",
             "disabled_text": "#EFE5CE",
-            "text_shadow": "#1E1809",
+            "text_shadow": "#503825",
             "normal_border": "#00000000",
             "hovered_border": "#00000000",
             "disabled_border": "#00000000",
@@ -540,7 +540,7 @@
             "selected_border": "#00000000"
         },
         "misc": { 
-            "text_shadow_size": "5", 
+            "text_shadow_size": "2", 
             "text_horiz_alignment": "left", 
             "line_spacing": "6", 
             "text_vert_alignment": "top", 
