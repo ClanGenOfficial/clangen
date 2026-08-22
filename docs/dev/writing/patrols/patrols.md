@@ -117,7 +117,7 @@ When considering patrols, keep in mind challenge vs reward. That isn't to say ce
 
 ***
 
-#### id:str
+#### event_id:str
 > The id is a unique string used to identify the patrol. It does not affect patrol behavior, but it allows us to easily find patrols.
 
 > An id is formatted as following: `biome_type_enemy_seasondescription#`, enemy and season are optional (some patrols do not have a specific enemy or season), # is a number at the end of the descriptive section starting at 1 and incrementing up as you create new versions of that patrol. 

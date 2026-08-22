@@ -131,7 +131,7 @@ Altogether this might look like `normal_interations/comfort/medium/negative.json
     }
 ```
 
-### id: str
+### event_id: str
 A unique string used to identify the event block. Generally, the ID tries to specify the main relationship value being affected, the intensity of the affect, and the type of effect; along with any other identifiers that might indicate a unique aspect of the events contained within.
 
 * `like_inc_med1`
