@@ -12,6 +12,7 @@ from scripts.conditions import (
     medicine_cats_can_cover_clan,
     get_amount_cat_for_one_medic,
 )
+from scripts.config import get_config
 from scripts.event_class import Single_Event
 from scripts.events_module.ceremony.generate_normal_ceremony import create_ceremony
 from scripts.game_structure import game, constants
@@ -116,10 +117,8 @@ def check_for_ceremony(main_cat: Cat):
             _ready = (
                 main_cat.experience_level not in ["untrained", "learning"]
                 and main_cat.moons
-                >= constants.CONFIG["graduation"]["min_graduating_age"]
-            ) or main_cat.moons >= constants.CONFIG["graduation"]["max_apprentice_age"][
-                main_cat.status.rank
-            ]
+                >= get_config("graduation.min_graduating_age")
+            ) or main_cat.moons >= get_config(f"graduation.max_apprentice_age.{main_cat.status.rank}")
 
         if _ready:
             if main_cat.status.rank == CatRank.APPRENTICE:
@@ -193,7 +192,7 @@ def _adult_becomes_mediator(cat) -> bool:
     if get_clan_setting("become_mediator"):
         # Note: These chances are large since it triggers every moon.
         # Checking every moon has the effect giving older cats more chances to become a mediator
-        change_chance_per_role = constants.CONFIG["roles"]["become_mediator_chances"]
+        change_chance_per_role = get_config("roles.become_mediator_chances")
         if cat.status.rank in change_chance_per_role and not int(
             random.random() * change_chance_per_role[cat.status.rank]
         ):
