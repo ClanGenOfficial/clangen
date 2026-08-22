@@ -8,6 +8,7 @@ import pygame_gui
 from scripts.cat.cats import Cat
 from scripts.events_module.patrol.patrol import Patrol, get_patrol_temperament
 from scripts.game_structure import game
+from ..events_module.patrol.enums import PatrolChoice
 from ..ui.elements.sprite_button import UISpriteButton
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
@@ -278,11 +279,11 @@ class PatrolScreen(Screens):
     def handle_patrol_events_event(self, event):
         inp = None
         if event.ui_element == self.elements["proceed"]:
-            inp = "proceed"
+            inp = PatrolChoice.PROCEED
         elif event.ui_element == self.elements["not_proceed"]:
-            inp = "notproceed"
+            inp = PatrolChoice.DECLINE
         elif event.ui_element == self.elements["antagonize"]:
-            inp = "antagonize"
+            inp = PatrolChoice.ANTAGONIZE
 
         if inp:
             if (
@@ -940,27 +941,27 @@ class PatrolScreen(Screens):
 
     def run_patrol_proceed(self, user_input):
         """Proceeds the patrol - to be run in the separate thread."""
-        if user_input in ["nopro", "notproceed"]:
+        if user_input == PatrolChoice.DECLINE:
             (
                 self.display_text,
                 self.results_text,
                 self.rel_results,
                 self.outcome_art,
-            ) = self.patrol_obj.proceed_patrol("decline")
-        elif user_input in ["antag", "antagonize"]:
+            ) = self.patrol_obj.proceed_patrol(PatrolChoice.DECLINE)
+        elif user_input == PatrolChoice.ANTAGONIZE:
             (
                 self.display_text,
                 self.results_text,
                 self.rel_results,
                 self.outcome_art,
-            ) = self.patrol_obj.proceed_patrol("antag")
+            ) = self.patrol_obj.proceed_patrol(PatrolChoice.ANTAGONIZE)
         else:
             (
                 self.display_text,
                 self.results_text,
                 self.rel_results,
                 self.outcome_art,
-            ) = self.patrol_obj.proceed_patrol("proceed")
+            ) = self.patrol_obj.proceed_patrol(PatrolChoice.PROCEED)
 
     def open_patrol_complete_screen(self):
         """Deals with the next stage of the patrol, including antagonize, proceed, and do not proceed.
