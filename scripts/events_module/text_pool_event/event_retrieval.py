@@ -49,9 +49,9 @@ def get_valid_event(
     # retrieve the ensured event from the list
     ensured_event = None
     if ensured_id:
-        ensured = [e for e in possible_events if e.event_id == ensured_id]
+        ensured = next((e for e in possible_events if e.event_id == ensured_id), None)
         if ensured:
-            ensured_event = ensured[0] if ensured else None
+            ensured_event = ensured if ensured else None
             chosen_frequency = ensured_event.frequency
         else:
             print(
