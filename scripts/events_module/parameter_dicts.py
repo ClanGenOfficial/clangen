@@ -27,7 +27,7 @@ class CanCreateNewCatDict(TypedDict, total=False):
     assign_mate: list[str]
 
 
-class MentorApprenticeDict(TypedDict):
+class MentorApprenticeDict(TypedDict, total=False):
     current: bool
     former: bool
 
@@ -56,7 +56,6 @@ class RelationshipConstraintDict(TypedDict):
     cats_from: list[str]
     cats_to: list[str]
     mutual: bool
-    # TODO: implement "past_app/mentor"?
     constraints: list[str]
 
 

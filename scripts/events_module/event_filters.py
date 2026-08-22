@@ -1713,6 +1713,40 @@ def _filter_relationship_type_updated(
             return False
         filter_types.remove("app/mentor")
 
+    if "past_mentor/app" in filter_types:
+        # if the cats ARE mentor/app
+        if all(
+            [inter_cat.ID in cats_from[0].former_apprentice for inter_cat in cats_to]
+        ):
+            if "past_mentor/app" in exclusionary_values:
+                return False
+        # if SOME but not ALL cats are mentor/app
+        elif "past_mentor/app" in inclusionary_values and any(
+            [inter_cat.ID in cats_from[0].former_apprentice for inter_cat in cats_to]
+        ):
+            return False
+        # if the cats AREN'T mentor/app
+        elif "past_mentor/app" in inclusionary_values:
+            return False
+        filter_types.remove("past_mentor/app")
+
+    if "past_app/mentor" in filter_types:
+        # if the cats ARE app/mentor
+        if all(
+            [inter_cat.ID in cats_to[0].former_apprentice for inter_cat in cats_from]
+        ):
+            if "past_app/mentor" in exclusionary_values:
+                return False
+        # if some, but not all cats are app/mentor
+        elif "past_app/mentor" in inclusionary_values and any(
+            [inter_cat.ID in cats_to[0].former_apprentice for inter_cat in cats_from]
+        ):
+            return False
+        # if the cats AREN'T app/mentor
+        elif "past_app/mentor" in inclusionary_values:
+            return False
+        filter_types.remove("past_app/mentor")
+
     # return early if there's nothing left to check
     if not filter_types:
         return True
