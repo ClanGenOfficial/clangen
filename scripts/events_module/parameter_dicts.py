@@ -32,6 +32,10 @@ class MentorApprenticeDict(TypedDict, total=False):
     former: bool
 
 
+class NameCheckDict(TypedDict):
+    has_suffix: bool
+
+
 class InvolvedCatDict(TypedDict, total=False):
     prior_abbreviation: list[str]
     can_create_new_cat: CanCreateNewCatDict
@@ -47,8 +51,7 @@ class InvolvedCatDict(TypedDict, total=False):
     backstory: list[str]
     has_mentor: MentorApprenticeDict
     has_apprentice: MentorApprenticeDict
-    # TODO: implement no_suffix check
-    no_suffix: bool
+    name: NameCheckDict
 
 
 class RelationshipConstraintDict(TypedDict):
