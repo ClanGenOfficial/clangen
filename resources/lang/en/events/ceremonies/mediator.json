@@ -3,6 +3,7 @@
         "event_id": "mediator_prepared0",
         "involved_cats": {
             "m_c": {
+                "past_status": ["mediator apprentice"],
                 "current_exp": ["prepared"]
             }
         },
@@ -17,6 +18,7 @@
         "event_id": "mediator_early_grad0",
         "involved_cats": {
             "m_c": {
+                "past_status": ["mediator apprentice"],
                 "current_exp": ["prepared"],
                 "age": ["adolescent"]
             }
@@ -29,6 +31,7 @@
         "event_id": "mediator_unprepared0",
         "involved_cats": {
             "m_c": {
+                "past_status": ["mediator apprentice"],
                 "current_exp": ["untrained", "learning"]
             }
         },
@@ -38,9 +41,22 @@
         ]
     },
     {
+        "event_id": "mediator_adult_role_switch0",
+        "involved_cats": {
+            "m_c": {
+                "past_status": ["-mediator apprentice"]
+            }
+        },
+        "strings": [
+            "m_c has chosen to use {PRONOUN/m_c/poss} skills and experience to help solve the Clan's disagreements. A meeting is called, and {PRONOUN/m_c/subject} {VERB/m_c/become/becomes} the Clan's newest mediator."
+        ]
+    },
+    {
         "event_id": "mediator_mentor_approval0",
         "involved_cats": {
-            "m_c": {},
+            "m_c": {
+                "past_status": ["mediator apprentice"]
+            },
             "r_c0": {
                 "group": [
                     "player_clan"

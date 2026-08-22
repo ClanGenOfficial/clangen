@@ -36,7 +36,7 @@ from scripts.conditions import (
 from scripts.cat.microservices.conditions import get_ill, get_injured
 from scripts.event_class import Single_Event
 from scripts.events_module.ceremony.perform_ceremony import (
-    perform_ceremonies,
+    check_for_ceremony,
     trigger_ceremony,
 )
 
@@ -596,18 +596,11 @@ def mediator_events(cat):
     if get_clan_setting("become_mediator"):
         # Note: These chances are large since it triggers every moon.
         # Checking every moon has the effect giving older cats more chances to become a mediator
-        _ = constants.CONFIG["roles"]["become_mediator_chances"]
-        if cat.status.rank in _ and not int(random.random() * _[cat.status.rank]):
-            game.cur_events_list.append(
-                Single_Event(
-                    event_text_adjust(
-                        Cat, i18n.t("hardcoded.event_mediator_app"), main_cat=cat
-                    ),
-                    "ceremony",
-                    cat.ID,
-                )
-            )
-            cat.rank_change(CatRank.MEDIATOR)
+        change_chance_per_role = constants.CONFIG["roles"]["become_mediator_chances"]
+        if cat.status.rank in change_chance_per_role and not int(
+            random.random() * change_chance_per_role[cat.status.rank]
+        ):
+            trigger_ceremony(cat, CatRank.MEDIATOR)
 
 
 def get_moon_freshkill():
@@ -1058,7 +1051,7 @@ def one_moon_cat(cat):
 
     handle_apprentice_EX(cat)  # This must be before perform_ceremonies!
     # this HAS TO be before the cat.is_disabled() so that disabled kits can choose a med cat or mediator position
-    perform_ceremonies(cat)
+    check_for_ceremony(cat)
     cat.skills.progress_skill(cat)  # This must be done after ceremonies.
 
     # check for death/reveal/risks/retire caused by permanent conditions
