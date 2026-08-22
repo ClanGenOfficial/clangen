@@ -316,7 +316,9 @@
         "event_id": "app_no_mentor0",
         "involved_cats": {
             "m_c": {
-                "has_mentor": false
+                "has_mentor": {
+                    "current": false
+                }
             }
         },
         "strings": [

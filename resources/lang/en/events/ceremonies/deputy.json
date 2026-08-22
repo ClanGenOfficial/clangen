@@ -3,7 +3,11 @@
         "event_id": "deputy_default0",
         "tags": ["clan:leader", "clan:warrior"],
         "involved_cats": {
-            "m_c": {}
+            "m_c": {
+                "has_apprentice": {
+                    "former": true
+                }
+            }
         },
         "strings": [
             "m_c has been chosen as the new deputy. The Clan yowls {PRONOUN/m_c/poss} name in approval.",
@@ -17,7 +21,11 @@
         "event_id": "deputy_past_deputy0",
         "tags": ["clan:leader"],
         "involved_cats": {
-            "m_c": {},
+            "m_c": {
+                "has_apprentice": {
+                    "former": true
+                }
+            },
             "r_c0": {
                 "status": ["leader"]
             },
@@ -33,7 +41,11 @@
         "event_id": "deputy_trusted0",
         "tags": ["clan:leader"],
         "involved_cats": {
-            "m_c": {},
+            "m_c": {
+                "has_apprentice": {
+                    "former": true
+                }
+            },
             "r_c0": {
                 "status": ["leader"]
             }
@@ -58,6 +70,9 @@
         "tags": ["clan:leader"],
         "involved_cats": {
             "m_c": {
+                "has_apprentice": {
+                    "former": true
+                },
                 "stat": {
                     "trait": [
                         "bloodthirsty",
@@ -74,10 +89,27 @@
     {
         "event_id": "deputy_clan_chosen0",
         "involved_cats": {
-            "m_c": {}
+            "m_c": {
+                "has_apprentice": {
+                    "former": true
+                }
+            }
         },
         "strings": [
-            "Without a leader or deputy, the Clan has been directionless. They all turn to m_c with hope for the future.",
+            "Without a leader or deputy, the Clan has been directionless. They all turn to m_c with hope for the future."
+        ]
+    },
+    {
+        "event_id": "deputy_clan_unsure0",
+        "involved_cats": {
+            "m_c": {
+                "has_apprentice": {
+                    "current": false,
+                    "former": false
+                }
+            }
+        },
+        "strings": [
             "No cat is truly fit to be deputy, but the position can't remain vacant. m_c is appointed as the new deputy."
         ]
     },
@@ -85,7 +117,11 @@
         "event_id": "deputy_clan_chosen1",
         "tags": ["clan:leader"],
         "involved_cats": {
-            "m_c": {},
+            "m_c": {
+                "has_apprentice": {
+                    "former": true
+                }
+            },
             "r_c0": {
                 "group": ["player_clan"],
                 "past_status": ["deputy"]
