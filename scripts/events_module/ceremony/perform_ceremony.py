@@ -44,6 +44,10 @@ def check_for_ceremony(main_cat: Cat):
             _handle_leader_ceremony(main_cat)
             return
 
+    # CHECK IF A CAT WANTS TO CHANGE INTO A MEDIATOR
+    if _adult_becomes_mediator(main_cat):
+        return
+
     # OLD CAT RETIRE
     if (
         not main_cat.no_retire
@@ -106,6 +110,21 @@ def check_for_ceremony(main_cat: Cat):
                 ceremony_accessory = True
 
 
+def _adult_becomes_mediator(cat) -> bool:
+    """Check for mediator events"""
+    if get_clan_setting("become_mediator"):
+        # Note: These chances are large since it triggers every moon.
+        # Checking every moon has the effect giving older cats more chances to become a mediator
+        change_chance_per_role = constants.CONFIG["roles"]["become_mediator_chances"]
+        if cat.status.rank in change_chance_per_role and not int(
+            random.random() * change_chance_per_role[cat.status.rank]
+        ):
+            trigger_ceremony(cat, CatRank.MEDIATOR)
+            return True
+
+    return False
+
+
 def check_and_promote_deputy():
     """
     Checks if a new deputy needs to be appointed, and appoints them if necessary.
@@ -157,9 +176,7 @@ def check_and_promote_deputy():
 
     # from here we must have appropriate deputy choices
     main_cat = random.choice(possible_deputies)
-    involved_cats = {
-        "past_deputy": game.clan.deputy
-    }
+    involved_cats = {"past_deputy": game.clan.deputy}
     # TODO: set up a thing in the filters for if an involved_cat is passed in as None
     #  (if they are, then events with that involved cat abbr should be tossed)
 
@@ -178,7 +195,9 @@ def _handle_leader_ceremony(main_cat):
     game.clan.leader = main_cat
 
 
-def trigger_ceremony(main_cat: Cat, new_rank: CatRank, involved_cats: dict[str, Cat] = None):
+def trigger_ceremony(
+    main_cat: Cat, new_rank: CatRank, involved_cats: dict[str, Cat] = None
+):
     """
     Actually triggers the ceremony to occur and initiates the cat's rank change.
     :param main_cat: The cat object receiving the ceremony

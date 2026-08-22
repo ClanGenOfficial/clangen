@@ -9,7 +9,9 @@ from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 
 
-def create_ceremony(main_cat: Cat, old_name: str = None, involved_cats: dict[str, Cat] = None):
+def create_ceremony(
+    main_cat: Cat, old_name: str = None, involved_cats: dict[str, Cat] = None
+):
     """
     Finds appropriate ceremony for main_cat and adds it to the cur_events_list
     :param main_cat: Cat object for the cat receiving the ceremony

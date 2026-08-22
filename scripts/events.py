@@ -39,6 +39,7 @@ from scripts.events_module.ceremony.perform_ceremony import (
     check_for_ceremony,
     trigger_ceremony,
     check_and_promote_deputy,
+    _adult_becomes_mediator,
 )
 
 from scripts.events_module.generate_events import GenerateEvents, generate_events
@@ -592,18 +593,6 @@ def handle_lead_den_event():
     set_clan_setting("lead_den_interaction", False)
 
 
-def mediator_events(cat):
-    """Check for mediator events"""
-    if get_clan_setting("become_mediator"):
-        # Note: These chances are large since it triggers every moon.
-        # Checking every moon has the effect giving older cats more chances to become a mediator
-        change_chance_per_role = constants.CONFIG["roles"]["become_mediator_chances"]
-        if cat.status.rank in change_chance_per_role and not int(
-            random.random() * change_chance_per_role[cat.status.rank]
-        ):
-            trigger_ceremony(cat, CatRank.MEDIATOR)
-
-
 def get_moon_freshkill():
     """Adding auto freshkill for the current moon."""
 
@@ -1014,9 +1003,6 @@ def one_moon_cat(cat):
             other_interactions(cat)
         elif debug_type_override == "new_cat":
             invite_new_cats(cat)
-
-    # Handle Mediator Events
-    mediator_events(cat)
 
     # handle nutrition amount
     # (CARE: the cats have to be fed before this happens - should be handled in "one_moon" function)
