@@ -655,7 +655,7 @@ def _handle_affair_discovery_breakup(cheating_cat: Cat, mate_cat: Cat):
     if cheating_cat.ID not in mate_cat.mate:
         return
 
-    breakup_chance = get_config("mates.mates_breakup.affair_breakup_chance")
+    breakup_chance = get_config("mates.breakup.affair_breakup_chance")
     if random() <= breakup_chance:
         mate_cat.unset_mate(cheating_cat, user_initiated_breakup=True, fight=True)
         breakup_text = choice(get_breakup_strings()["affair_discovery_breakup"])

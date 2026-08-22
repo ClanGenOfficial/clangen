@@ -1098,6 +1098,7 @@ def cat_for_event(
         "has_apprentice": _get_cats_with_apprentice,
         "current_exp": _get_cats_with_exp,
         "name": _get_cats_matching_name_check,
+        "health": _get_cats_with_health,
     }
 
     # run funcs
@@ -1231,6 +1232,16 @@ def _get_cats_with_rel_status(
     return cat_list, rel_status_list
 
 
+def _get_cats_with_health(cat_list: list, health_constraints: dict) -> list:
+    """
+    Checks cat_list against required health constraints
+    """
+    if not health_constraints:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_health(c, health_constraints)]
+
+
 def _get_cats_matching_name_check(cat_list: list, name_check: dict) -> list:
     if not name_check:
         return cat_list
@@ -1315,18 +1326,7 @@ def _get_cats_with_stat(cat_list: list, stat: dict) -> list:
     if not stat:
         return cat_list
 
-    skill_cats = []
-    trait_cats = []
-
-    if stat.get("skill"):
-        skill_cats = _get_cats_with_age(cat_list, stat["skill"])
-    if stat.get("trait"):
-        trait_cats = _get_cats_with_trait(cat_list, stat["trait"])
-
-    if stat.get("must_have_both"):
-        return list(set(skill_cats).intersection(set(trait_cats)))
-    else:
-        return skill_cats + trait_cats
+    return [c for c in cat_list if _check_cat_stat(c, stat)]
 
 
 def _get_cats_with_skill(cat_list: list, skills: list[str]) -> list:

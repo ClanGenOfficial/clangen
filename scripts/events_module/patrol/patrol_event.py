@@ -88,6 +88,8 @@ class PatrolEvent:
         # LOTS of weight on rel constraints
         self.weight += len(self.relationship_constraint) * 20
 
+        self.weight = max(1, self.weight)
+
         self._generate_outcomes()
 
         self.new_cat = self._get_new_cat()
