@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "general_rogue_dead_thoughts",
+        "event_id": "general_rogue_dead_thoughts_ur",
         "strings": [
             "Refuses to leave {PRONOUN/m_c/poss} territory",
             "Thinks about how {PRONOUN/m_c/subject} defended {PRONOUN/m_c/poss} territory in life and laments that {PRONOUN/m_c/subject} cannot in death",

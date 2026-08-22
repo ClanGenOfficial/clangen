@@ -9,6 +9,7 @@ from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_package.settings import get_clan_setting
 from scripts.clan_resources.point_of_interest import get_poi_from_constraints
+from scripts.cat.microservices.conditions import get_injured
 from scripts.config import get_config
 from scripts.event_class import Single_Event
 from scripts.events_module.future.prep_and_trigger import prep_future_event
@@ -193,6 +194,8 @@ class ShortEvent:
                 self.other_clan["current_rep"] = []
             if "changed" not in self.other_clan:
                 self.other_clan["changed"] = 0
+            if "temperament" not in self.other_clan:
+                self.other_clan["temperament"] = []
         self.supplies = supplies if supplies else []
         self.new_gender = new_gender
         self.future_event = future_event if future_event else {}
@@ -501,7 +504,7 @@ class ShortEvent:
                         and not first_cat.dead
                         and not "recovering from birth" in first_cat.injuries
                     ):
-                        first_cat.get_injured("recovering from birth")
+                        get_injured(first_cat, "recovering from birth")
                         # only one parent gives birth, so we break
                         break
 
@@ -822,13 +825,15 @@ class ShortEvent:
                 # MAIN CAT
                 if abbr == "m_c":
                     injury = choice(possible_injuries)
-                    self.main_cat.get_injured(injury, potential_scars=potential_scars)
+                    get_injured(self.main_cat, injury, potential_scars=potential_scars)
                     self.handle_injury_history(self.main_cat, "m_c", injury)
 
                 # RANDOM CAT
                 elif abbr == "r_c":
                     injury = choice(possible_injuries)
-                    self.random_cat.get_injured(injury, potential_scars=potential_scars)
+                    get_injured(
+                        self.random_cat, injury, potential_scars=potential_scars
+                    )
                     self.handle_injury_history(self.random_cat, "r_c", injury)
 
                 # NEW CATS
@@ -836,7 +841,7 @@ class ShortEvent:
                     index = int(abbr.replace("n_c:", ""))
                     for new_cat in self.new_cats[index]:
                         injury = choice(possible_injuries)
-                        new_cat.get_injured(injury, potential_scars=potential_scars)
+                        get_injured(new_cat, injury, potential_scars=potential_scars)
                         self.handle_injury_history(new_cat, abbr, injury)
 
     def handle_injury_history(self, cat, cat_abbr, injury=None):
