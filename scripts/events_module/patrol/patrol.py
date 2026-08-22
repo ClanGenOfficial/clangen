@@ -21,6 +21,7 @@ from scripts.events_module.event_filters import (
     get_personality_compatibility,
     event_for_poi,
 )
+from scripts.events_module.patrol.enums import PatrolChoice
 from scripts.events_module.patrol.generate_patrol_list import (
     get_patrol_list,
     will_allow_outsider_patrols,
@@ -84,7 +85,7 @@ class Patrol:
         self.patrol_event: Optional[PatrolEvent] = None
         self.debug_patrol_id: str = ""
         self.other_clan = None
-        self.temperament: tuple[str, str] = ()
+        self.temperament: tuple[str, str] = ("", "")
         """Set once the patrol cats are known, in begin_patrol"""
 
         self.patrol_cats: list[Cat] = []
@@ -142,12 +143,11 @@ class Patrol:
         )
 
     def proceed_patrol(
-        self, path: Literal["proceed", "antag", "decline"] = "proceed"
-    ) -> Tuple[str, str, list, Optional[str]]:
-        """Proceed the patrol to the next step.
-        path can be: "proceed", "antag", or "decline" """
+        self, path: PatrolChoice = PatrolChoice.PROCEED
+    ) -> Tuple[str, str, list, pygame.Surface | None]:
+        """Proceed the patrol to the next step."""
 
-        if path == "decline":
+        if path == PatrolChoice.DECLINE:
             if self.patrol_event:
                 print(
                     f"PATROL ID: {self.patrol_event.event_id} | SUCCESS: N/A (did not proceed)"
@@ -168,7 +168,7 @@ class Patrol:
             else:
                 return "Error - no event chosen", "", [], None
 
-        return self.determine_outcome(antagonize=(path == "antag"))
+        return self.determine_outcome(antagonize=(path == PatrolChoice.ANTAGONIZE))
 
     def _add_patrol_cats(self, patrol_cats: List[Cat]) -> None:
         """
@@ -590,7 +590,7 @@ class Patrol:
 
     def determine_outcome(
         self, antagonize=False
-    ) -> Tuple[str, str, list, pygame.Surface]:
+    ) -> Tuple[str, str, list, pygame.Surface | None]:
         if self.patrol_event is None:
             raise Exception("No patrol event supplied")
 
