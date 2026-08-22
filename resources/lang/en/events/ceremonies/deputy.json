@@ -104,7 +104,6 @@
         "involved_cats": {
             "m_c": {
                 "has_apprentice": {
-                    "current": false,
                     "former": false
                 }
             }
