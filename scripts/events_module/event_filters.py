@@ -187,9 +187,12 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
         rank_match = re.match(r"clan:(.+)", _tag)
         if not rank_match:
             continue
+        is_exclusionary = _check_for_exclusionary_value([_tag])
+
         ranks = [x for x in rank_match.group(1).split(",")]
 
         for rank in ranks:
+            rank_matched = True
             if rank == "apps":
                 if not find_alive_cats_with_rank(
                     cat,
@@ -199,20 +202,25 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
                         CatRank.MEDICINE_APPRENTICE,
                     ],
                 ):
-                    return False
+                    rank_matched = False
                 else:
-                    continue
+                    rank_matched = True
 
-            if rank in [
+            elif rank in [
                 CatRank.LEADER,
                 CatRank.DEPUTY,
             ] and not find_alive_cats_with_rank(cat, [rank]):
-                return False
+                rank_matched = False
 
-            if (
+            elif (
                 rank not in [CatRank.LEADER, CatRank.DEPUTY]
                 and not len(find_alive_cats_with_rank(cat, [rank])) >= 2
             ):
+                rank_matched = False
+
+            if is_exclusionary and rank_matched:
+                return False
+            elif not is_exclusionary and not rank_matched:
                 return False
 
     special_date = get_special_date()

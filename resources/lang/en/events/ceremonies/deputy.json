@@ -1,7 +1,7 @@
 [
     {
         "event_id": "deputy_default0",
-        "tags": ["clan:leader", "clan:warrior"],
+        "tags": ["clan:leader,warrior"],
         "involved_cats": {
             "m_c": {
                 "has_apprentice": {
