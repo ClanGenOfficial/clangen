@@ -16,7 +16,7 @@ from scripts.game_structure import game, constants
 logger = logging.getLogger(__name__)
 
 
-def perform_ceremonies(main_cat: Cat):
+def check_for_ceremony(main_cat: Cat):
     """
     Checks if a cat needs to undergo a ceremony, then handles everything pertaining to that ceremony.
     :param main_cat: The cat object that must be checked for a potential ceremony
