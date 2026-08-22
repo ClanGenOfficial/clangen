@@ -195,8 +195,9 @@ For example:
 ```
 
 ### involved_cats: dict[str: dict]
+This dictionary holds all constraints for the cats whom we wish to reference in the ceremony.
 
-// TODO
+[Full Involved Cat Dictionary Information](../reference/involved_cat_dict.md)
 
 ***
 
