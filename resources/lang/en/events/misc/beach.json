@@ -351,7 +351,7 @@
     {
         "event_id": "bch_misc_snowgull",
         "location": [
-            "beach:camp1"
+            "any"
         ],
         "season": [
             "leaf-bare"

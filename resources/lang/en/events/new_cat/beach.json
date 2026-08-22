@@ -261,7 +261,7 @@
     {
         "event_id": "bch_new_cat_otters",
         "location": [
-            "beach:camp1"
+            "any"
         ],
         "season": [
             "any"
@@ -300,7 +300,7 @@
     {
         "event_id": "bch_new_cat_kitfound",
         "location": [
-            "beach:camp1"
+            "any"
         ],
         "season": [
             "any"
