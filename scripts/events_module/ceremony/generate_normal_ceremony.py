@@ -1,6 +1,7 @@
 from random import choice
 
 from scripts.cat.cats import Cat
+from scripts.config import get_config
 from scripts.event_class import Single_Event
 from scripts.events_module.text_adjust import ceremony_text_adjust
 from scripts.events_module.text_pool_event.event_retrieval import (
@@ -37,6 +38,7 @@ def create_ceremony(
             choice(game.clan.all_other_clans) if game.clan.all_other_clans else None
         ),
         frequency_active=False,
+        ensured_id=get_config("event_generation.debug_ensure_ceremony_id"),
     )
 
     # we won't actually use results or rel results for ceremonies
