@@ -939,36 +939,19 @@ class PatrolScreen(Screens):
         if not self.patrol_obj.patrol_event.antag_success_outcomes:
             self.elements["antagonize"].hide()
 
-    def run_patrol_proceed(self, user_input):
+    def run_patrol_proceed(self, user_input: PatrolChoice):
         """Proceeds the patrol - to be run in the separate thread."""
-        if user_input == PatrolChoice.DECLINE:
-            (
-                self.display_text,
-                self.results_text,
-                self.rel_results,
-                self.outcome_art,
-            ) = self.patrol_obj.proceed_patrol(PatrolChoice.DECLINE)
-        elif user_input == PatrolChoice.ANTAGONIZE:
-            (
-                self.display_text,
-                self.results_text,
-                self.rel_results,
-                self.outcome_art,
-            ) = self.patrol_obj.proceed_patrol(PatrolChoice.ANTAGONIZE)
-        else:
-            (
-                self.display_text,
-                self.results_text,
-                self.rel_results,
-                self.outcome_art,
-            ) = self.patrol_obj.proceed_patrol(PatrolChoice.PROCEED)
+        (
+            self.display_text,
+            self.results_text,
+            self.rel_results,
+            self.outcome_art,
+        ) = self.patrol_obj.proceed_patrol(user_input)
 
     def open_patrol_complete_screen(self):
-        """Deals with the next stage of the patrol, including antagonize, proceed, and do not proceed.
-        You must put the type of next step (user input) into the user_input parameter.
-        For antagonize: user_input = "antag" or "antagonize"
-        For Proceed: user_input = "pro" or "proceed"
-        For do not Proceed: user_input = "nopro" or "notproceed" """
+        """
+        Deals with the next stage of the patrol, including antagonize, proceed, and do not proceed.
+        """
         self.patrol_stage = "patrol_complete"
 
         self.elements["clan_return"] = UIImageButton(
