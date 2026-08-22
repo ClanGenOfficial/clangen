@@ -432,6 +432,7 @@ def event_for_cat(
         "health": _check_cat_health,
         "has_mentor": _check_cat_mentor,
         "has_apprentice": _check_cat_apprentice,
+        "current_exp": _check_cat_exp,
     }
 
     for param, func in func_lookup.items():
@@ -495,6 +496,16 @@ def event_for_cat(
             patrol_leader=p_l,
         ):
             return False
+
+    return True
+
+
+def _check_cat_exp(cat, current_exp: list[str]) -> bool:
+    if not current_exp:
+        return True
+
+    if cat.experience_level not in current_exp:
+        return False
 
     return True
 
@@ -1063,6 +1074,7 @@ def cat_for_event(
         "backstory": _get_cats_with_backstory,
         "has_mentor": _get_cats_with_mentor,
         "has_apprentice": _get_cats_with_apprentice,
+        "current_exp": _get_cats_with_exp,
     }
 
     # run funcs
@@ -1194,6 +1206,13 @@ def _get_cats_with_rel_status(
         rel_status_list = [f"-{x}" for x in rel_status_list]
 
     return cat_list, rel_status_list
+
+
+def _get_cats_with_exp(cat_list: list, current_exp: list[str]) -> list:
+    if not current_exp:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_exp(c, current_exp)]
 
 
 def _get_cats_with_mentor(cat_list: list, has_mentor: dict) -> list:

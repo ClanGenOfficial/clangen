@@ -42,7 +42,6 @@ class InvolvedCatDict(TypedDict, total=False):
     group: list[str]
     standing: StandingDict
     stat: StatDict
-    # TODO: implement exp check
     current_exp: list[str]
     health: HealthDict
     backstory: list[str]
