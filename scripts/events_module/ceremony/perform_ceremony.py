@@ -110,21 +110,6 @@ def check_for_ceremony(main_cat: Cat):
                 ceremony_accessory = True
 
 
-def _adult_becomes_mediator(cat) -> bool:
-    """Check for mediator events"""
-    if get_clan_setting("become_mediator"):
-        # Note: These chances are large since it triggers every moon.
-        # Checking every moon has the effect giving older cats more chances to become a mediator
-        change_chance_per_role = constants.CONFIG["roles"]["become_mediator_chances"]
-        if cat.status.rank in change_chance_per_role and not int(
-            random.random() * change_chance_per_role[cat.status.rank]
-        ):
-            trigger_ceremony(cat, CatRank.MEDIATOR)
-            return True
-
-    return False
-
-
 def check_and_promote_deputy():
     """
     Checks if a new deputy needs to be appointed, and appoints them if necessary.
@@ -182,6 +167,21 @@ def check_and_promote_deputy():
 
     trigger_ceremony(main_cat, CatRank.DEPUTY, involved_cats)
     game.clan.deputy = main_cat
+
+
+def _adult_becomes_mediator(cat) -> bool:
+    """Check for mediator events"""
+    if get_clan_setting("become_mediator"):
+        # Note: These chances are large since it triggers every moon.
+        # Checking every moon has the effect giving older cats more chances to become a mediator
+        change_chance_per_role = constants.CONFIG["roles"]["become_mediator_chances"]
+        if cat.status.rank in change_chance_per_role and not int(
+            random.random() * change_chance_per_role[cat.status.rank]
+        ):
+            trigger_ceremony(cat, CatRank.MEDIATOR)
+            return True
+
+    return False
 
 
 def _handle_leader_ceremony(main_cat):
