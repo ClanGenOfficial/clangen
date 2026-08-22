@@ -21,7 +21,7 @@ from html import escape
 import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID
-from pygame_gui.elements import UIButton, UILabel
+from pygame_gui.elements import UILabel
 from requests.exceptions import RequestException, Timeout
 
 from scripts.cat.cats import Cat
