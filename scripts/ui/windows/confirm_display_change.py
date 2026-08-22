@@ -76,15 +76,15 @@ class ConfirmDisplayChangesWindow(GameWindow):
                 "right": "right",
                 "bottom": "bottom",
             },
-            text_kwargs={
-                "count": "10"
-            },
+            text_kwargs={"count": "10"},
         )
         self.text_block.disable()
         self.text_block.rebuild_from_changed_theme_data()
 
         self.elapsed_duration = 0
-        self.revert_duration = 15 # Duration (in seconds) before the game reverts the change
+        self.revert_duration = (
+            15  # Duration (in seconds) before the game reverts the change
+        )
 
         self.source_screen_name = source_screen.name.replace(" ", "_")
 
@@ -112,8 +112,11 @@ class ConfirmDisplayChangesWindow(GameWindow):
         super().update(time_delta)
 
         self.elapsed_duration += time_delta
-        self.text_block.set_text("windows.display_change_confirm", text_kwargs={
-            "count": str(self.revert_duration - math.floor(self.elapsed_duration))
-        })
+        self.text_block.set_text(
+            "windows.display_change_confirm",
+            text_kwargs={
+                "count": str(self.revert_duration - math.floor(self.elapsed_duration))
+            },
+        )
         if self.elapsed_duration >= self.revert_duration:
             self.revert_changes()
