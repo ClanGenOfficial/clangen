@@ -23,9 +23,9 @@ def get_valid_event(
     possible_events: list[Union[PatrolEvent, TextPoolEvent]],
     other_clan: Optional[OtherClan] = None,
     ensured_id: Optional[str] = None,
-    test_general_constraints: bool = True,
-    test_cat_constraints: bool = True,
-    test_frequency: bool = True,
+    general_constraints_active: bool = True,
+    cat_constraints_active: bool = True,
+    frequency_active: bool = True,
 ) -> tuple[Optional[Union[PatrolEvent, TextPoolEvent]], dict]:
     """
     Check given possible_events against current game state and involved cats. Returns a valid event and involved cats.
@@ -35,12 +35,12 @@ def get_valid_event(
     :param possible_events: List of event objects that we should find an event from
     :param other_clan: The other clan involved in this event
     :param ensured_id: ID of the ensured event, if any
-    :param test_general_constraints: If true, filters by general constraints
-    :param test_cat_constraints: If true, filters by cat constraints
-    :param test_frequency: If true, filters by frequency.
+    :param general_constraints_active: If true, filters by general constraints
+    :param cat_constraints_active: If true, filters by cat constraints
+    :param frequency_active: If true, filters by frequency.
     """
     used_frequencies = set()
-    chosen_frequency = get_frequency() if test_frequency else 4
+    chosen_frequency = get_frequency() if frequency_active else 4
 
     chosen_event: Optional[Union[PatrolEvent, TextPoolEvent]] = None
     temp_involved_cats = {}
@@ -59,7 +59,7 @@ def get_valid_event(
             )
 
     outside_cats = []
-    if test_cat_constraints:
+    if cat_constraints_active:
         outside_cats = [
             c
             for c in Cat.all_cats_list
@@ -68,7 +68,7 @@ def get_valid_event(
     while not chosen_event:
         temp_involved_cats = involved_cats.copy()
         if len(possible_events) == len(tested_events):  # try a new frequency if we can
-            if (4 in used_frequencies and chosen_frequency == 4) or not test_frequency:
+            if (4 in used_frequencies and chosen_frequency == 4) or not frequency_active:
                 return (
                     None,
                     {},
@@ -89,7 +89,7 @@ def get_valid_event(
                 filter(lambda e: e.event_id not in tested_events, possible_events)
             )
             if not events:
-                if test_frequency:
+                if frequency_active:
                     # no events of this frequency
                     used_frequencies.add(chosen_frequency)
                     chosen_frequency = find_new_frequency(used_frequencies)
@@ -102,12 +102,12 @@ def get_valid_event(
             test_event = choices(events, [x.weight for x in events])[0]
 
         # CHECK FREQUENCY
-        if test_frequency and test_event.frequency != chosen_frequency:
+        if frequency_active and test_event.frequency != chosen_frequency:
             tested_events.add(test_event.event_id)
             continue
 
         # CHECK GENERAL CONSTRAINTS
-        if test_general_constraints:
+        if general_constraints_active:
             if not passes_general_constraints(
                 test_event,
                 primary_cat=primary_cat,
@@ -119,7 +119,7 @@ def get_valid_event(
                 continue
 
         # CHECK CAT CONSTRAINTS
-        if test_cat_constraints:
+        if cat_constraints_active:
             temp_involved_cats = find_cats(
                 interactable_cats=interactable_cats,
                 involved_cats=temp_involved_cats,

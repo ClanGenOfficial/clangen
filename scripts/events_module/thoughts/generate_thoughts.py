@@ -118,7 +118,7 @@ def _new_thought(
                     possible_events=unused,
                     other_clan=other_clan,
                     ensured_id=ensured_id,
-                    test_frequency=False,
+                    frequency_active=False,
                 )
 
                 if not chosen_thought_group:

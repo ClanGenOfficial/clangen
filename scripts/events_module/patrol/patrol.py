@@ -380,7 +380,7 @@ class Patrol:
                 possible_events=possible_patrols,
                 other_clan=self.other_clan,
                 ensured_id=self.debug_patrol_id,
-                test_general_constraints=False,
+                general_constraints_active=False,
             )
             if not chosen_patrol:
                 if not self.used_patrols:

@@ -62,7 +62,7 @@ def _get_event(
         other_clan=(
             choice(game.clan.all_other_clans) if game.clan.all_other_clans else None
         ),
-        test_frequency=False,
+        frequency_active=False,
     )
     return chosen_event, involved_cats
 

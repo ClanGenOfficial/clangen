@@ -242,7 +242,7 @@ def _get_event(
         interactable_cats=[other_cat],
         possible_events=events,
         other_clan=other_clan,
-        test_frequency=False,
+        frequency_active=False,
     )
 
     return chosen_event
