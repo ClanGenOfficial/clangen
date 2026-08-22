@@ -2,6 +2,7 @@ import logging
 import traceback
 
 import pygame
+from copy import deepcopy
 
 from scripts.cat.enums import CatAge, CatGroup
 from scripts.cat.sprites.load_sprites import sprites
@@ -657,7 +658,7 @@ def _apply_recipe_exceptions(pelt_recipe: dict, colour: str, sprite: int) -> dic
 
     if match:
         # If we reached here, the exception applies
-        except_recipe = pelt_recipe.copy()
+        except_recipe = deepcopy(pelt_recipe)
         # Remove the exceptions, just so there we don't apply an exception again.
         except_recipe.pop("exceptions")
 
@@ -666,9 +667,9 @@ def _apply_recipe_exceptions(pelt_recipe: dict, colour: str, sprite: int) -> dic
 
         if "layers" in one_ex:
             for key, value in one_ex["layers"].items():
-                except_recipe["layers"][key] = one_ex["layers"][key] | value
-
-        print(except_recipe)
+                except_recipe["layers"][key] = (
+                    except_recipe["layers"].get(key, {}) | value
+                )
 
         return except_recipe
 

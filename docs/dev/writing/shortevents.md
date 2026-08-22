@@ -79,7 +79,8 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
     },
     "other_clan": {
         "current_rep": [],
-        "changed": 0
+        "changed": 0,
+        "temperament": []
     },
     "supplies": [
         {
@@ -372,6 +373,8 @@ lowercase season names + "any"
 >**current_rep:[list[str]]:**  The reputation the Clan must have in order for this event to be possible.  "hostile", "neutral", "ally".  Use "any" if any rep is allowed.
 >
 >**changed:int:**  How the reputation of the Clan changes as a result of this event.
+>
+>**temperament:list[str]:**  The temperament the other Clan must have in order for this event to be possible. [Possible Tempers](reference/tag-lists.md/#clan-temperaments). You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags). Leave it out to allow any temperament.
 
 ***
 

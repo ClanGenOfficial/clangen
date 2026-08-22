@@ -283,6 +283,26 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
     return current_standing in required_rel
 
 
+def event_for_temperament(required_temp: list, temperament) -> bool:
+    """
+    checks if temperament matches required_temp
+    """
+    if not required_temp or "any" in required_temp:
+        return True
+
+    temperament = set(temperament)
+
+    excluded = {temp[1:] for temp in required_temp if temp.startswith("-")}
+    if not temperament.isdisjoint(excluded):
+        return False
+
+    included = {temp for temp in required_temp if not temp.startswith("-")}
+    if included and temperament.isdisjoint(included):
+        return False
+
+    return True
+
+
 def event_for_freshkill_supply(
     pile, trigger: Literal["always", "low", "adequate", "full", "excess"], clan_size
 ) -> bool:
@@ -995,6 +1015,7 @@ def cat_for_event(
         "skill": _get_cats_with_skill,
         "trait": _get_cats_with_trait,
         "backstory": _get_cats_with_backstory,
+        "health": _get_cats_with_health,
     }
 
     # run funcs
@@ -1128,6 +1149,16 @@ def _get_cats_with_rel_status(
     return cat_list, rel_status_list
 
 
+def _get_cats_with_health(cat_list: list, health_constraints: dict) -> list:
+    """
+    Checks cat_list against required health constraints
+    """
+    if not health_constraints:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_health(c, health_constraints)]
+
+
 def _get_cats_with_age(cat_list: list, ages: list[str]) -> list:
     """
     Checks cat_list against required ages and returns qualifying cats.
@@ -1184,18 +1215,7 @@ def _get_cats_with_stat(cat_list: list, stat: dict) -> list:
     if not stat:
         return cat_list
 
-    skill_cats = []
-    trait_cats = []
-
-    if stat.get("skill"):
-        skill_cats = _get_cats_with_age(cat_list, stat["skill"])
-    if stat.get("trait"):
-        trait_cats = _get_cats_with_trait(cat_list, stat["trait"])
-
-    if stat.get("must_have_both"):
-        return list(set(skill_cats).intersection(set(trait_cats)))
-    else:
-        return skill_cats + trait_cats
+    return [c for c in cat_list if _check_cat_stat(c, stat)]
 
 
 def _get_cats_with_skill(cat_list: list, skills: list[str]) -> list:
