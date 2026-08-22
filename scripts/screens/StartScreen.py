@@ -204,14 +204,14 @@ class StartScreen(Screens):
             ui_scale(pygame.Rect((55, 170), (380, 85))),
             "general.title",
             object_id="#title",
-            manager=MANAGER
+            manager=MANAGER,
         )
 
         self.elements["subtitle"] = UIButton(
             ui_scale(pygame.Rect((65, 250), (400, 50))),
             "general.subtitle",
             object_id="#subtitle",
-            manager=MANAGER
+            manager=MANAGER,
         )
 
         # Create buttons
