@@ -81,7 +81,6 @@ logger = logging.getLogger(__name__)
 
 all_events = {}
 new_cat_invited = False
-ceremony_accessory = False
 WAR_TXT = None
 war_lang = None
 
@@ -1209,7 +1208,7 @@ def gain_accessories(cat):
     accessories
     """
 
-    global ceremony_accessory
+    ceremony_accessory = switch_get_value(Switch.ceremony_accessory)
 
     if not cat:
         return
@@ -1219,7 +1218,7 @@ def gain_accessories(cat):
 
     # check if cat already has max acc
     if cat.pelt.accessory and len(cat.pelt.accessory) == 3:
-        ceremony_accessory = False
+        switch_set_value(Switch.ceremony_accessory, False)
         return
 
     # chance to gain acc
@@ -1274,7 +1273,7 @@ def gain_accessories(cat):
             sub_type=sub_type,
         )
 
-    ceremony_accessory = False
+    switch_set_value(Switch.ceremony_accessory, False)
 
     return
 

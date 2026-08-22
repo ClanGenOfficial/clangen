@@ -15,6 +15,8 @@ from scripts.conditions import (
 from scripts.event_class import Single_Event
 from scripts.events_module.ceremony.generate_normal_ceremony import create_ceremony
 from scripts.game_structure import game, constants
+from scripts.game_structure.game import Switch
+from scripts.game_structure.game.switches import switch_set_value
 
 logger = logging.getLogger(__name__)
 
@@ -29,7 +31,8 @@ def check_for_ceremony(main_cat: Cat):
     if not main_cat or main_cat.dead:
         return
 
-    # TODO: set ceremony_accessory somehow? perhaps as switch or a cat attr?
+    # reset this value so that a cat doesn't get a congratulatory acc event if they don't receive a ceremony
+    switch_set_value(Switch.ceremony_accessory, False)
 
     # game.clan.rank check
     if main_cat.status.rank == CatRank.DEPUTY and game.clan.deputy is None:
@@ -170,7 +173,9 @@ def check_and_promote_deputy():
 
 
 def _adult_becomes_mediator(cat) -> bool:
-    """Check for mediator events"""
+    """
+    Check if a cat wants to switch from their current role into the role of a mediator
+    """
     if get_clan_setting("become_mediator"):
         # Note: These chances are large since it triggers every moon.
         # Checking every moon has the effect giving older cats more chances to become a mediator
@@ -205,6 +210,8 @@ def trigger_ceremony(
     :param involved_cats: Dict of cats who are already involved, main_cat does not need to be included here. This is
     just for any specific extra cats. Key is abbreviation and value is cat object.
     """
+    # allows cat to receive a congratulatory accessory
+    switch_set_value(Switch.ceremony_accessory, True)
     old_name = str(main_cat.name)
 
     current_mentor = Cat.fetch_cat(main_cat.mentor) if main_cat.mentor else None
