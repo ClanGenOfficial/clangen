@@ -75,7 +75,7 @@ class CatDict(BaseModel):
         MISSING,
         description="Set current apprentice status",
     )
-    name_check: Union[NameCheckDict, MISSING] = Field(
+    name: Union[NameCheckDict, MISSING] = Field(
         MISSING,
         description="Constrain per specific name states",
     )

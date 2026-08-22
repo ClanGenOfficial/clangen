@@ -441,7 +441,7 @@ def event_for_cat(
         "has_mentor": _check_cat_mentor,
         "has_apprentice": _check_cat_apprentice,
         "current_exp": _check_cat_exp,
-        "name_check": _check_cat_name,
+        "name": _check_cat_name,
     }
 
     for param, func in func_lookup.items():
@@ -1097,7 +1097,7 @@ def cat_for_event(
         "has_mentor": _get_cats_with_mentor,
         "has_apprentice": _get_cats_with_apprentice,
         "current_exp": _get_cats_with_exp,
-        "name_check": _get_cats_matching_name_check,
+        "name": _get_cats_matching_name_check,
     }
 
     # run funcs

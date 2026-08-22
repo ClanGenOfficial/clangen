@@ -28,7 +28,7 @@
             "(old_name) had taken to following r_c0 around while {PRONOUN/r_c0/subject} did {PRONOUN/r_c0/poss} tasks, asking questions and listening. It wasn't a surprise {PRONOUN/m_c/subject} chose to become a mediator apprentice under r_c0 after earning {PRONOUN/m_c/poss} apprentice name: m_c.",
             "(old_name) always dreamed of becoming a mediator: Now that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} m_c, an apprentice being mentored by r_c0, it feels like a wish come true."
         ],
-        "relationship_constraints": [
+        "relationship_constraint": [
             {
                 "cats_from": [
                     "m_c"
@@ -73,7 +73,7 @@
             "Impressed by {PRONOUN/m_c/poss} eagerness, r_c0 chooses m_c as the Clan's new mediator apprentice.",
             "m_c has taken to following r_c0 around during {PRONOUN/r_c0/poss} daily duties, fascinated by the life of a mediator. r_c0 is happy to train {PRONOUN/m_c/object}. "
         ],
-        "relationship_constraints": [
+        "relationship_constraint": [
             {
                 "cats_from": [
                     "m_c"

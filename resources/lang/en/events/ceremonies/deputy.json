@@ -1,7 +1,7 @@
 [
     {
         "event_id": "deputy_default0",
-        "tags": ["clan:leader,warrior"],
+        "tags": ["clan:leader", "clan:warrior"],
         "involved_cats": {
             "m_c": {
                 "has_apprentice": {
@@ -51,7 +51,7 @@
         "strings": [
             "r_c0 has been thinking deeply all day about who {PRONOUN/r_c0/subject} would trust and respect enough to stand at {PRONOUN/r_c0/poss} side. At sunhigh, {PRONOUN/r_c0/subject} {VERB/r_c0/make/makes} the announcement that m_c will be the Clan's new deputy."
         ],
-        "relationship_constraints": [
+        "relationship_constraint": [
             {
                 "cats_from": ["r_c0"],
                 "cats_to": ["m_c"],

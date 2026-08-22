@@ -22,7 +22,7 @@
             "r_c0 stands before the Clan and announces that {PRONOUN/r_c0/subject} won't be there forever and that it is time {PRONOUN/r_c0/subject} took on an apprentice. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/tell/tells} the Clan that {PRONOUN/r_c0/subject} {VERB/r_c0/have/has} specifically chosen (old_name), now m_c, to be {PRONOUN/r_c0/poss} new apprentice.",
             "r_c0 has no doubt in {PRONOUN/r_c0/poss} mind of who {PRONOUN/r_c0/poss} new apprentice should be. (old_name) has always been looking for an excuse to be in {PRONOUN/r_c0/poss} den, asking endless questions about what each herb is and what it's used for. As r_c0 announces that the newly named m_c will be {PRONOUN/r_c0/poss} apprentice, {PRONOUN/r_c0/subject} {VERB/r_c0/see/sees} m_c's eyes shining in delight and excitement. r_c0 knows {PRONOUN/r_c0/subject} {VERB/r_c0/were/was} right in choosing {PRONOUN/m_c/object}."
         ],
-        "relationship_constraints": [
+        "relationship_constraint": [
             {
                 "cats_from": [
                     "m_c"
@@ -61,7 +61,7 @@
         "involved_cats": {
             "m_c": {
                 "backstory": [
-                    "-orphaned"
+                    "-orphaned_backstories"
                 ]
             },
             "r_c1": {
@@ -74,7 +74,7 @@
             "m_c decides to become a medicine cat apprentice in hopes that {PRONOUN/m_c/subject} will be able to see r_c1 in StarClan.",
             "As the new medicine cat apprentice, m_c dreams of StarClan for the first time. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} greeted by many StarClan cats, one of whom {PRONOUN/m_c/subject} {VERB/m_c/recognize/recognizes} as r_c1, who is watching with pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
         ],
-        "relationship_constraints": [
+        "relationship_constraint": [
             {
                 "cats_to": [
                     "r_c1"
@@ -94,7 +94,7 @@
         "involved_cats": {
             "m_c": {
                 "backstory": [
-                    "-orphaned"
+                    "-orphaned_backstories"
                 ]
             },
             "r_c1": {
@@ -112,7 +112,7 @@
             "m_c decides to become a medicine cat apprentice in hopes that {PRONOUN/m_c/subject} will be able to see r_c1 and r_c2 in StarClan.",
             "As the new medicine cat apprentice, m_c dreams of StarClan for the first time. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} greeted by many StarClan cats, two of whom {PRONOUN/m_c/subject} {VERB/m_c/recognize/recognizes} as r_c1 and r_c2, who are watching with pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
         ],
-        "relationship_constraints": [
+        "relationship_constraint": [
             {
                 "cats_to": [
                     "r_c2",
@@ -144,7 +144,7 @@
         "strings": [
             "Wanting to stand out among {PRONOUN/m_c/poss} Clanmates more, m_c decides to become a medicine cat and is apprenticed to r_c0."
         ],
-        "relationship_constraints": [
+        "relationship_constraint": [
             {
                 "cats_from": [
                     "m_c"
@@ -167,7 +167,7 @@
                     "trait": [
                         "bloodthirsty",
                         "vengeful",
-                        "sneaky"
+                        "cunning"
                     ]
                 }
             },
@@ -176,7 +176,7 @@
         "strings": [
             "To gain access to both life-saving herbs and life-threatening poisons, m_c decides to become a medicine cat and is apprenticed to r_c0."
         ],
-        "relationship_constraints": [
+        "relationship_constraint": [
             {
                 "cats_from": [
                     "m_c"
@@ -208,7 +208,7 @@
         "strings": [
             "Worried {PRONOUN/m_c/subject} may not be a good hunter or fighter but still wanting to make {PRONOUN/m_c/poss} Clan proud somehow, m_c decides to become a medicine cat apprentice under r_c0."
         ],
-        "relationship_constraints": [
+        "relationship_constraint": [
             {
                 "cats_from": [
                     "m_c"

@@ -72,7 +72,7 @@
         "tags": [
             "clan:leader"
         ],
-        "relationship_constraints": [
+        "relationship_constraint": [
             {
                 "cats_from": [
                     "m_c"
