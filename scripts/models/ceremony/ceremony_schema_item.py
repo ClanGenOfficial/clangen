@@ -1,0 +1,17 @@
+from __future__ import annotations
+
+from typing import Union
+
+from pydantic import Field, ConfigDict
+from pydantic_core import MISSING
+
+from scripts.models.ceremony.involved_cats import InvolvedCatsCeremonyEvent
+from scripts.models.text_pool_event.base_text_pool_event import BaseTextPoolEvent
+
+
+class CeremonySchemaItem(BaseTextPoolEvent):
+    model_config = ConfigDict(extra="forbid")
+    involved_cats: Union[InvolvedCatsCeremonyEvent, MISSING] = Field(
+        MISSING,
+        description="Used to add constraints for the various involved cats.",
+    )

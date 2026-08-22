@@ -5,8 +5,10 @@ from pydantic_core import MISSING
 
 from scripts.models.common.age import Age
 from scripts.models.common.backstory import Backstory
+from scripts.models.common.experience_levels import ExperienceLevels
 from scripts.models.common.gather_cat import GatherCat
 from scripts.models.common.group import Group
+from scripts.models.text_pool_event.MentorApprenticeDict import MentorApprenticeDict
 from scripts.models.text_pool_event.can_create_new_cat import CanCreateNewCat
 from scripts.models.text_pool_event.health_dict import HealthDict
 from scripts.models.text_pool_event.standing_dict import StandingDict
@@ -52,6 +54,10 @@ class CatDict(BaseModel):
         MISSING,
         description="Constrains the event to only occur if the cat holds specific skills or traits. You can utilize exclusionary tags",
     )
+    current_exp: Union[list[ExperienceLevels], MISSING] = Field(
+        MISSING,
+        description="Constrains the event to only occur if the cat has a listed experience level",
+    )
     health: Union[HealthDict, MISSING] = Field(
         MISSING,
         description="Constrains the event to only occur if the cat's health matches the constraints",
@@ -60,7 +66,11 @@ class CatDict(BaseModel):
         MISSING,
         description="Constrains the event to only occur if the cat has a listed backstory. To find what each backstory describes, you can find more by going to resources/lang/en/cat/backstories.en.json. You can utilize exclusionary tags",
     )
-    has_mentor: Union[bool, MISSING] = Field(
+    has_mentor: Union[MentorApprenticeDict, MISSING] = Field(
         MISSING,
-        description="Set True if the cat must be mentored. This does not require the mentor to be present on the patrol",
+        description="Set current mentor status",
+    )
+    has_apprentice: Union[MentorApprenticeDict, MISSING] = Field(
+        MISSING,
+        description="Set current apprentice status",
     )
