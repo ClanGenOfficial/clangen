@@ -37,15 +37,20 @@ class InvolvedCatDict(TypedDict, total=False):
     group: list[str]
     standing: StandingDict
     stat: StatDict
+    # TODO: implement exp check
+    current_exp: list[str]
     health: HealthDict
     backstory: list[str]
     has_mentor: bool
+    # TODO: implement no_suffix check
+    no_suffix: bool
 
 
 class RelationshipConstraintDict(TypedDict):
     cats_from: list[str]
     cats_to: list[str]
     mutual: bool
+    # TODO: implement "past_app/mentor"?
     constraints: list[str]
 
 
