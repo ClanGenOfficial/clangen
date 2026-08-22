@@ -187,6 +187,6 @@ def test_pelt_recipes(pelt_recipe_file: Path):
     ceremony_files(),
     ids=format_file_context_string,
 )
-def test_pair_relationship_file_events(ceremony_file: Path):
+def test_ceremony_file_events(ceremony_file: Path):
     """Test that all ceremony JSONs are correct according to the Pydantic models"""
     CeremonySchema.model_validate_json(ceremony_file.read_text())
