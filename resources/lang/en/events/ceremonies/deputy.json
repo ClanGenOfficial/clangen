@@ -19,7 +19,6 @@
     },
     {
         "event_id": "deputy_past_deputy0",
-        "tags": ["clan:leader"],
         "involved_cats": {
             "m_c": {
                 "has_apprentice": {
@@ -39,7 +38,6 @@
     },
     {
         "event_id": "deputy_trusted0",
-        "tags": ["clan:leader"],
         "involved_cats": {
             "m_c": {
                 "has_apprentice": {
@@ -88,6 +86,7 @@
     },
     {
         "event_id": "deputy_clan_chosen0",
+        "tags": ["-clan:leader"],
         "involved_cats": {
             "m_c": {
                 "has_apprentice": {
@@ -114,7 +113,7 @@
     },
     {
         "event_id": "deputy_clan_chosen1",
-        "tags": ["clan:leader"],
+        "tags": ["-clan:leader"],
         "involved_cats": {
             "m_c": {
                 "has_apprentice": {
