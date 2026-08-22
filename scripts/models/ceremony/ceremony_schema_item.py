@@ -11,6 +11,10 @@ from scripts.models.text_pool_event.base_text_pool_event import BaseTextPoolEven
 
 class CeremonySchemaItem(BaseTextPoolEvent):
     model_config = ConfigDict(extra="forbid")
+    event_id: str = Field(
+        ...,
+        description="Separates the events into their blocks. Generally, the ID is descriptive of the cats included in the event or the general themes of the event.",
+    )
     involved_cats: Union[InvolvedCatsCeremonyEvent, MISSING] = Field(
         MISSING,
         description="Used to add constraints for the various involved cats.",

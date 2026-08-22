@@ -3,12 +3,13 @@ from typing import Union, List, Literal
 from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
+from scripts.events_module.parameter_dicts import NameCheckDict
 from scripts.models.common.age import Age
 from scripts.models.common.backstory import Backstory
 from scripts.models.common.experience_levels import ExperienceLevels
 from scripts.models.common.gather_cat import GatherCat
 from scripts.models.common.group import Group
-from scripts.models.text_pool_event.MentorApprenticeDict import MentorApprenticeDict
+from scripts.models.text_pool_event.mentor_apprentice_dict import MentorApprenticeDict
 from scripts.models.text_pool_event.can_create_new_cat import CanCreateNewCat
 from scripts.models.text_pool_event.health_dict import HealthDict
 from scripts.models.text_pool_event.standing_dict import StandingDict
@@ -73,4 +74,8 @@ class CatDict(BaseModel):
     has_apprentice: Union[MentorApprenticeDict, MISSING] = Field(
         MISSING,
         description="Set current apprentice status",
+    )
+    name_check: Union[NameCheckDict, MISSING] = Field(
+        MISSING,
+        description="Constrain per specific name states",
     )
