@@ -9,13 +9,17 @@ from scripts.game_structure import game
 from scripts.game_structure.localization import load_lang_resource
 
 
-def create_ceremony(main_cat: Cat, old_name: str = None):
+def create_ceremony(main_cat: Cat, old_name: str = None, involved_cats: dict[str, Cat] = None):
     """
     Finds appropriate ceremony for main_cat and adds it to the cur_events_list
     :param main_cat: Cat object for the cat receiving the ceremony
     :param old_name: The old name of the cat, if their name is changing per the ceremony
+    :param involved_cats: Dict of cats who are already involved, main_cat does not need to be included here. This is
+    just for any specific extra cats. Key is abbreviation and value is cat object.
     """
-    involved_cats = {"m_c": main_cat}
+    if not involved_cats:
+        involved_cats = {}
+    involved_cats.update({"m_c": main_cat})
 
     new_rank = main_cat.status.rank
     # TODO: load ceremony file for new_rank

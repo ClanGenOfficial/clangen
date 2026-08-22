@@ -2,6 +2,8 @@ import logging
 import random
 from math import floor
 
+import i18n
+
 from scripts.cat.cats import cat_class, Cat
 from scripts.cat.enums import CatRank, CatAge
 from scripts.cat.skills import SkillPath
@@ -10,6 +12,7 @@ from scripts.conditions import (
     medicine_cats_can_cover_clan,
     get_amount_cat_for_one_medic,
 )
+from scripts.event_class import Single_Event
 from scripts.events_module.ceremony.generate_normal_ceremony import create_ceremony
 from scripts.game_structure import game, constants
 
@@ -103,6 +106,67 @@ def check_for_ceremony(main_cat: Cat):
                 ceremony_accessory = True
 
 
+def check_and_promote_deputy():
+    """
+    Checks if a new deputy needs to be appointed, and appoints them if necessary.
+    """
+    if (
+        game.clan.deputy
+        and game.clan.deputy.status.alive_in_player_clan
+        and game.clan.deputy.status.rank != CatRank.ELDER
+    ):
+        # don't need a new deputy
+        return
+
+    if not get_clan_setting("deputy"):
+        # player doesn't want us to pick a dep for them
+        game.cur_events_list.insert(0, Single_Event("defaults.warn_no_deputy"))
+        return
+
+    # This determines all the cats who are eligible to be deputy.
+    possible_deputies = list(
+        filter(
+            lambda x: x.status.alive_in_player_clan
+            and x.status.rank == CatRank.WARRIOR
+            and (x.apprentice or x.former_apprentices),
+            Cat.all_cats_list,
+        )
+    )
+
+    if not possible_deputies:
+        # If there are no possible deputies, choose someone else, with special text.
+        all_warriors = list(
+            filter(
+                lambda x: x.status.alive_in_player_clan
+                and x.status.rank == CatRank.WARRIOR,
+                Cat.all_cats_list,
+            )
+        )
+        if all_warriors:
+            main_cat = random.choice(all_warriors)
+            involved_cats = [main_cat.ID]
+            text = i18n.t("hardcoded.ceremony_deputy_unsuitable")
+            # TODO: set up an override so we can pick the specific event?
+
+        else:
+            # If there are no warriors at all, no one is named deputy.
+            game.cur_events_list.append(
+                Single_Event(i18n.t("hardcoded.ceremony_deputy_none"), "ceremony")
+            )
+            return
+
+    # from here we must have appropriate deputy choices
+    main_cat = random.choice(possible_deputies)
+    involved_cats = {
+        "past_deputy": game.clan.deputy
+    }
+    # TODO: set up a thing in the filters for if an involved_cat is passed in as None
+    #  (if they are, then events with that involved cat abbr should be tossed)
+
+    trigger_ceremony(main_cat, CatRank.DEPUTY, involved_cats)
+    game.clan.deputy = main_cat
+
+
 def _handle_leader_ceremony(main_cat):
     """
     Handles everything pertaining to a leader ceremony.
@@ -114,11 +178,13 @@ def _handle_leader_ceremony(main_cat):
     game.clan.leader = main_cat
 
 
-def trigger_ceremony(main_cat: Cat, new_rank: CatRank):
+def trigger_ceremony(main_cat: Cat, new_rank: CatRank, involved_cats: dict[str, Cat] = None):
     """
     Actually triggers the ceremony to occur and initiates the cat's rank change.
     :param main_cat: The cat object receiving the ceremony
     :param new_rank: The CatRank that main_cat is becoming
+    :param involved_cats: Dict of cats who are already involved, main_cat does not need to be included here. This is
+    just for any specific extra cats. Key is abbreviation and value is cat object.
     """
     old_name = str(main_cat.name)
 
@@ -127,7 +193,7 @@ def trigger_ceremony(main_cat: Cat, new_rank: CatRank):
     main_cat.rank_change(new_rank)
     main_cat.rank_change_traits_skill(current_mentor)
 
-    create_ceremony(main_cat=main_cat, old_name=old_name)
+    create_ceremony(main_cat=main_cat, old_name=old_name, involved_cats=involved_cats)
 
 
 def _is_suitable_mediator_app(main_cat: Cat) -> bool:

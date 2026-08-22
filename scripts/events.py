@@ -38,6 +38,7 @@ from scripts.event_class import Single_Event
 from scripts.events_module.ceremony.perform_ceremony import (
     check_for_ceremony,
     trigger_ceremony,
+    check_and_promote_deputy,
 )
 
 from scripts.events_module.generate_events import GenerateEvents, generate_events
@@ -1878,110 +1879,6 @@ def check_leader():
                 )
             ),
         )
-
-
-def check_and_promote_deputy():
-    # TODO: can these events be handled as ceremony events?
-
-    """Checks if a new deputy needs to be appointed, and appointed them if needed."""
-    if (
-        not game.clan.deputy
-        or not game.clan.deputy.status.alive_in_player_clan
-        or game.clan.deputy.status.rank == CatRank.ELDER
-    ):
-        if not get_clan_setting("deputy"):
-            game.cur_events_list.insert(0, Single_Event("defaults.warn_no_deputy"))
-            return
-        # This determines all the cats who are eligible to be deputy.
-        possible_deputies = list(
-            filter(
-                lambda x: x.status.alive_in_player_clan
-                and x.status.rank == CatRank.WARRIOR
-                and (x.apprentice or x.former_apprentices),
-                Cat.all_cats_list,
-            )
-        )
-
-        # If there are possible deputies, choose from that list.
-        if possible_deputies:
-            random_cat = random.choice(possible_deputies)
-            involved_cats = [random_cat.ID]
-
-            # Gather deputy and leader status, for determination of the text.
-            if game.clan.leader:
-                if not game.clan.leader.status.alive_in_player_clan:
-                    leader_status = "not_here"
-                else:
-                    leader_status = "here"
-            else:
-                leader_status = "not_here"
-
-            if game.clan.deputy:
-                if not game.clan.deputy.status.alive_in_player_clan:
-                    deputy_status = "not_here"
-                else:
-                    deputy_status = "here"
-            else:
-                deputy_status = "not_here"
-
-            if leader_status == "here" and deputy_status == "not_here":
-                if random_cat.personality.trait == "bloodthirsty":
-                    text = i18n.t("hardcoded.ceremony_deputy_bloodthirsty")
-                    # No additional involved cats
-                else:
-                    if game.clan.deputy:
-                        previous_deputy_mention = i18n.t(
-                            f"hardcoded.ceremony_deputy_prev{random.choice(range(0, 3))}"
-                        )
-                        involved_cats.append(game.clan.deputy.ID)
-
-                    else:
-                        previous_deputy_mention = ""
-
-                    text = i18n.t(
-                        "hardcoded.ceremony_deputy",
-                        previous=previous_deputy_mention,
-                    )
-
-                    involved_cats.append(game.clan.leader.ID)
-            elif leader_status == "not_here" and deputy_status == "here":
-                text = i18n.t("hardcoded.ceremony_deputy_nolead_retireddep")
-            elif leader_status == "not_here" and deputy_status == "not_here":
-                text = i18n.t("hardcoded.ceremony_deputy_nolead_nodep")
-            elif leader_status == "here" and deputy_status == "here":
-                # No additional involved cats
-                text = i18n.t(
-                    f"hardcoded.ceremony_deputy_lead_retireddep{random.choice(range(0, 5))}"
-                )
-            else:
-                # This should never happen. Failsafe.
-                text = i18n.t("defaults.deputy_event")
-        else:
-            # If there are no possible deputies, choose someone else, with special text.
-            all_warriors = list(
-                filter(
-                    lambda x: x.status.alive_in_player_clan
-                    and x.status.rank == CatRank.WARRIOR,
-                    Cat.all_cats_list,
-                )
-            )
-            if all_warriors:
-                random_cat = random.choice(all_warriors)
-                involved_cats = [random_cat.ID]
-                text = i18n.t("hardcoded.ceremony_deputy_unsuitable")
-
-            else:
-                # If there are no warriors at all, no one is named deputy.
-                game.cur_events_list.append(
-                    Single_Event(i18n.t("hardcoded.ceremony_deputy_none"), "ceremony")
-                )
-                return
-
-        text = event_text_adjust(Cat, text, main_cat=random_cat, clan=game.clan)
-        random_cat.rank_change(CatRank.DEPUTY)
-        game.clan.deputy = random_cat
-
-        game.cur_events_list.append(Single_Event(text, "ceremony", involved_cats))
 
 
 load_war_resources()
