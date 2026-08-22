@@ -81,7 +81,7 @@ def get_valid_event(
                 tested_events.clear()
             continue
 
-        if ensured_event and ensured_event in possible_events:
+        if ensured_event:
             test_event = ensured_event
             chosen_frequency = ensured_event.frequency
             # reset it to none so that any filtering failures let us move on to a different event

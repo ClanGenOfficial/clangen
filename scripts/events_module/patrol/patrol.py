@@ -350,9 +350,8 @@ class Patrol:
         # first we see if we can get a romantic patrol
         if romantic_patrols and not self.debug_patrol_id:
             chosen_patrol = self._get_valid_patrol(romantic_patrols.copy())
-
-        if chosen_patrol and not self._decide_if_romantic(chosen_patrol):
-            chosen_patrol = None
+            if not self._decide_if_romantic(chosen_patrol):
+                chosen_patrol = None
 
         # if no romantic patrol possible, we get a normal one!
         if not chosen_patrol:
@@ -363,6 +362,14 @@ class Patrol:
                 )
 
         return chosen_patrol
+
+    def _clear_used_and_retry(self, possible_patrols: List[PatrolEvent]):
+        """
+        Clears used patrols and attempts to get a new valid patrol
+        """
+        self.used_patrols.clear()
+
+        return self._get_valid_patrol(possible_patrols)
 
     def _get_valid_patrol(
         self, possible_patrols: List[PatrolEvent]
@@ -389,7 +396,7 @@ class Patrol:
                     return None
 
                 # if we couldn't find a patrol, then we need to clear the used_patrols and try again
-                self.used_patrols.clear()
+                chosen_patrol = self._clear_used_and_retry(possible_patrols)
             else:
                 # otherwise, let's set our involved cats and move on with this patrol!
                 self.involved_cats = involved_cats
