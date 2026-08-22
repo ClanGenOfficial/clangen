@@ -116,9 +116,10 @@ def check_for_ceremony(main_cat: Cat):
         else:
             _ready = (
                 main_cat.experience_level not in ["untrained", "learning"]
-                and main_cat.moons
-                >= get_config("graduation.min_graduating_age")
-            ) or main_cat.moons >= get_config(f"graduation.max_apprentice_age.{main_cat.status.rank}")
+                and main_cat.moons >= get_config("graduation.min_graduating_age")
+            ) or main_cat.moons >= get_config(
+                f"graduation.max_apprentice_age.{main_cat.status.rank}"
+            )
 
         if _ready:
             if main_cat.status.rank == CatRank.APPRENTICE:
