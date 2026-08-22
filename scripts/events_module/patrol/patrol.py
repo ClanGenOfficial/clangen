@@ -139,8 +139,7 @@ class Patrol:
     def proceed_patrol(
         self, path: PatrolChoice = PatrolChoice.PROCEED
     ) -> Tuple[str, str, list, pygame.Surface | None]:
-        """Proceed the patrol to the next step.
-        path can be: "proceed", "antagonize", or "decline" """
+        """Proceed the patrol to the next step."""
 
         if path == PatrolChoice.DECLINE:
             if self.patrol_event:
