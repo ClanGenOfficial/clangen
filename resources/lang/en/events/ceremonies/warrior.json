@@ -99,7 +99,7 @@
         "event_id": "warrior_unprepared0",
         "involved_cats": {
             "m_c": {
-                "current_exp": ["unprepared"]
+                "current_exp": ["untrained", "learning"]
             }
         },
         "strings": [
