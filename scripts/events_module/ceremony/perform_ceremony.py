@@ -34,13 +34,16 @@ def trigger_ceremony(
     """
     # allows cat to receive a congratulatory accessory
     switch_set_value(Switch.ceremony_accessory, True)
+
+    # need the cats name from before they change rank!
     old_name = str(main_cat.name)
 
+    # applies actual rank change
     current_mentor = Cat.fetch_cat(main_cat.mentor) if main_cat.mentor else None
-
     main_cat.rank_change(new_rank)
     main_cat.rank_change_traits_skill(current_mentor)
 
+    # now we create the ceremony event for the player to view
     create_ceremony(main_cat=main_cat, old_name=old_name, involved_cats=involved_cats)
 
 
@@ -97,18 +100,15 @@ def check_for_ceremony(main_cat: Cat):
             # BECOME MEDICINE APPRENTICE
             if _is_suitable_medcat_app(main_cat):
                 trigger_ceremony(main_cat, CatRank.MEDICINE_APPRENTICE)
-                ceremony_accessory = True
                 return
             elif _is_suitable_mediator_app(main_cat):
                 trigger_ceremony(main_cat, CatRank.MEDIATOR_APPRENTICE)
-                ceremony_accessory = True
                 return
             else:
                 trigger_ceremony(main_cat, CatRank.APPRENTICE)
-                ceremony_accessory = True
                 return
 
-    # graduate
+    # APPRENTICE GRADUATE
     if main_cat.status.rank.is_any_apprentice_rank():
         if get_clan_setting("12_moon_graduation"):
             _ready = main_cat.moons >= 12
@@ -124,16 +124,13 @@ def check_for_ceremony(main_cat: Cat):
         if _ready:
             if main_cat.status.rank == CatRank.APPRENTICE:
                 trigger_ceremony(main_cat, CatRank.WARRIOR)
-                ceremony_accessory = True
 
             # promote to med cat
             elif main_cat.status.rank == CatRank.MEDICINE_APPRENTICE:
                 trigger_ceremony(main_cat, CatRank.MEDICINE_CAT)
-                ceremony_accessory = True
 
             elif main_cat.status.rank == CatRank.MEDIATOR_APPRENTICE:
                 trigger_ceremony(main_cat, CatRank.MEDIATOR)
-                ceremony_accessory = True
 
 
 def check_and_promote_deputy():
