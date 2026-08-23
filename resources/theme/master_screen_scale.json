@@ -610,13 +610,13 @@
         },
         "colours": {"normal_border": "#2F2918", "dark_bg": "#AC9D72"}
     },
-    "#debug_log": {
+    "window.#log": {
         "prototype": "text_box",
         "colours": {
-            "dark_bg": "#000000",
-            "normal_text": "#FFFFFF",
-            "selected_bg": "#FFFFFF",
-            "selected_text": "#000000"
+            "dark_bg": "#AC9D72",
+            "normal_text": "#000000",
+            "selected_bg": "#655934",
+            "selected_text": "#EFE5CE"
         }
     },
     "window.#title_bar": {

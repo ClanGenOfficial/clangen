@@ -1,7 +1,6 @@
 """
 Stores the DebugMenu class and the DebugMode class
 """
-import math
 import pygame
 import pygame_gui
 import html
@@ -45,7 +44,7 @@ class DebugMenu(UIWindow):
                 )
             ),
             container=self,
-            object_id="#debug_log",
+            object_id="#log",
             manager=MANAGER,
         )
 
@@ -72,10 +71,9 @@ class DebugMenu(UIWindow):
 
         self.change_layer(1000)
 
-        ev = pygame.event.Event(
-            pygame_gui.UI_CONSOLE_COMMAND_ENTERED, {"command": "help"}
+        self.push_line(
+            'Run "help" for a list of commands, or "help console" for a quick usage guide.'
         )
-        self.process_event(ev)
 
     def process_command(self, raw_command: str):
         """
@@ -126,8 +124,6 @@ class DebugMenu(UIWindow):
                 break
         if command in ["self", "clear"]:
             self.log.clear()
-        elif command in ["selfline", "clearline"]:
-            self.pop_line()
         elif not commandFound:
             self.push_line(f"Command {command} not found")
 
@@ -153,6 +149,7 @@ class DebugMenu(UIWindow):
             self.previous_commands.insert(0, command_text)
             self.command_line.clear()
 
+        consume_event = False
         if event.type == pygame.KEYDOWN and len(self.previous_commands) > 0:
             if event.key == pygame.K_UP:
                 self.prev_command_index = min(
@@ -169,10 +166,12 @@ class DebugMenu(UIWindow):
                     self.command_line.set_text(
                         self.previous_commands[self.prev_command_index]
                     )
+            # Prevent keybinds from being processed if the command line is currently accepting input
+            consume_event = self.command_line.is_focused
 
         if event.type == pygame_gui.UI_CONSOLE_COMMAND_ENTERED:
             self.process_command(event.command)
-        return super().process_event(event)
+        return super().process_event(event) or consume_event
 
     def push_line(self, line: str):
         """
@@ -208,7 +207,7 @@ class DebugMode:
         """
         Toggles the debug menu.
         """
-        if self.debug_menu.visible == 0:
+        if not self.debug_menu.visible:
             self.debug_menu.show()
             self.debug_menu.command_line.focus()
         else:
@@ -234,6 +233,8 @@ class DebugMode:
             pygame.Rect((0, 0), (-1, -1)), "0 fps", object_id=get_text_box_theme()
         )
 
+        if self.debug_menu:
+            self.debug_menu.kill()
         self.debug_menu = DebugMenu(
             pygame.Rect(
                 (0, 0),

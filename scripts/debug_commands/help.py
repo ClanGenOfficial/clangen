@@ -29,18 +29,17 @@ class HelpCommand(Command):
 
     def _get_command_help_text(self, command: Command):
         add_output_line_to_log(f"Help for {command.name}:")
-        add_output_line_to_log(f"  {command.description}")
-        add_output_line_to_log(f"  Usage: {command.name} {command.usage}")
-        add_output_line_to_log(f"  Aliases: {command._aliases}")
+        add_output_line_to_log(f"   {command.description}")
+        add_output_line_to_log(f"   Usage: {command.name} {command.usage}")
+        add_output_line_to_log(f"   Aliases: {command._aliases}")
 
     def callback(self, args: List[str]):
         if len(args) == 0:
-            add_output_line_to_log("Commands:")
             for command in self.commandList:
-                add_output_line_to_log(f"  {command.name}: {command.description}")
+                add_output_line_to_log(f"{command.name}: {command.description}")
                 for subcommand in command.sub_commands:
                     add_output_line_to_log(
-                        f"    {subcommand.name}: {subcommand.description}"
+                        f"  {subcommand.name}: {subcommand.description}"
                     )
         else:
             for command in self.commandList:
@@ -53,7 +52,7 @@ class HelpCommand(Command):
                                 add_output_line_to_log(
                                     f"Help for {command.name} {sub_command.name}:"
                                 )
-                                add_output_line_to_log(f"  {sub_command.description}")
+                                add_output_line_to_log(f"   {sub_command.description}")
                                 add_output_line_to_log(
                                     f"  Usage: {command.name} {sub_command.name} {sub_command.usage}"
                                 )
@@ -62,9 +61,10 @@ class HelpCommand(Command):
                                 )
                                 return
                     self._get_command_help_text(command)
+                    add_output_line_to_log(f"  Subcommands:")
                     for subcommand in command.sub_commands:
                         add_output_line_to_log(
-                            f"    {subcommand.name}: {subcommand.description}"
+                            f"      {subcommand.name}: {subcommand.description}"
                         )
                     break
             else:

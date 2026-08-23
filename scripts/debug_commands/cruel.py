@@ -16,40 +16,91 @@ from scripts.game_structure import constants, game
 class CardCommand(Command):
     name = "card"
     description = "Manage cruel season cards"
-    usage = "[add|remove] <card_name: str>"
-    aliases = ["c"]
+    usage = "[list] [all|behavior|danger|environment|origin] [possible]? | ([add|remove] <card_name: str>)"
+    aliases = ["c", "cards"]
+
+    def get_cards_list(self, card_scope: dict | None, limit_possible: bool = False):
+        if not card_scope:
+            card_scope = constants.CRUEL_CARDS_ALL
+
+        i = 0
+        current_line = []
+        for card_key in card_scope.keys():
+            if limit_possible and (
+                self.check_card_conflict(card_key) or card_key in game.clan.cruel_cards
+            ):
+                continue
+            current_line.append(card_key)
+            i += 1
+
+            if i % 4 == 0 and i != 0:
+                add_output_line_to_log(", ".join(current_line))
+                current_line.clear()
+
+    def check_card_conflict(self, card_name: str) -> bool:
+        for card_list in constants.CRUEL_CARDS_CONFLICTS.values():
+            if (
+                card_name in card_list
+                and len(set(game.clan.cruel_cards).intersection(set(card_list))) > 0
+            ):
+                return True
+        return False
 
     def callback(self, args: List[str]):
-        if len(args) < 2:
-            add_output_line_to_log("Missing one or more required arguments")
-            return
         if switch_get_value(Switch.game_mode) != "cruel_season":
             add_output_line_to_log("Current clan's game mode isn't Cruel Season")
             return
 
+        if len(args) < 2:
+            add_output_line_to_log("Missing one or more required arguments")
+            return
+
+        # List Cards
+        if args[0] == "list":
+            card_scope = None
+            if args[1] == "all":
+                card_scope = constants.CRUEL_CARDS_ALL
+            elif args[1] == "behavior":
+                card_scope = constants.CRUEL_CARDS_BEHAVIOR
+            elif args[1] == "danger":
+                card_scope = constants.CRUEL_CARDS_DANGER
+            elif args[1] == "environment":
+                card_scope = constants.CRUEL_CARDS_ENVIRONMENT
+            elif args[1] == "origin":
+                card_scope = constants.CRUEL_CARDS_ORIGIN
+            limit_possible = len(args) >= 3
+            self.get_cards_list(card_scope, limit_possible)
+            return
+
+        # Add/Remove Card
         card_name: str = args[1]
         if not constants.CRUEL_CARDS_ALL.get(card_name):
             add_output_line_to_log(
-                f"Invalid card name, possible options: {constants.CRUEL_CARDS_ALL.keys()}"
+                f"Invalid card name, possible (non-conflicting) options:"
             )
+            self.get_cards_list(None, True)
             return
         if constants.CRUEL_CARDS_ORIGIN.get(card_name):
             add_output_line_to_log(
-                "Whilst a valid card name, adding an Origin card after clan creation does nothing"
+                "Whilst a valid card name, adding/removing an Origin card after clan creation does nothing"
             )
             return
 
         if args[0] == "add":
             if card_name in game.clan.cruel_cards:
                 add_output_line_to_log(
-                    f"Current clan already has {card_name} as a card"
+                    f'Current clan already has "{card_name}" as a card'
                 )
                 return
+            if self.check_card_conflict(card_name):
+                add_output_line_to_log(
+                    f"WARNING: Added card ({card_name}) conflicts with another existing card"
+                )
             game.clan.cruel_cards.append(card_name)
-        elif args[1] == "remove":
+        elif args[0] == "remove":
             if card_name not in game.clan.cruel_cards:
                 add_output_line_to_log(
-                    f"Current clan doesn't have {card_name} as a card"
+                    f'Current clan doesn\'t have "{card_name}" as a card'
                 )
                 return
             game.clan.cruel_cards.remove(card_name)
