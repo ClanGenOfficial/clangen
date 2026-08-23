@@ -61,6 +61,9 @@ class TextPoolEvent:
     join: list[JoinDict] = field(default_factory=list[dict])
     future_event: list[FutureEventDict] = field(default_factory=list[dict])
 
+    # only for use in transition events
+    new_gender: list[str] = field(default_factory=list)
+
     def __post_init__(self):
         self.weight = 1
         if self.location:
