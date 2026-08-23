@@ -694,9 +694,9 @@ class Patrol:
         chosen_prey_size = choices(prey_sizes, weights=prey_size_random_weights)[0]
         print(f"chosen filter prey size: {chosen_prey_size}")
 
-        # filter all possible patrol depending on the needed prey size
+        # filter all possible patrols depending on the needed prey size
         for patrol in possible_patrols:
-            # count the outcomes + prey size
+            # count how many outcomes award each prey size
             prey_size_to_outcome_amounts = {}
             for outcome in patrol.success_outcomes:
                 if outcome.supply:
@@ -716,6 +716,7 @@ class Patrol:
                     most_prey_size = size
                     max_occurrences = amount
 
+            # if the most often awarded prey size matches the one we want, then we allow this patrol through
             if chosen_prey_size == most_prey_size:
                 filtered_patrols.append(patrol)
             elif self.debug_patrol_id and self.debug_patrol_id == patrol.event_id:
