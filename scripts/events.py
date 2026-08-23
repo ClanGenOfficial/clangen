@@ -100,7 +100,8 @@ def one_moon():
     switch_set_value(Switch.saved_clan, False)
     new_cat_invited = False
     relation_events.clear_trigger_dict()
-    Patrol.used_patrols.clear()
+    Patrol.used_patrols["normal"].clear()
+    Patrol.used_patrols["romance"].clear()
     game.patrolled.clear()
     game.just_died.clear()
 
