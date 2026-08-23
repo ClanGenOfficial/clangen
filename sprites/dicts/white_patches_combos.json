@@ -455,12 +455,6 @@
             "highHAWKBLAZE_REDUCED",
             "highPAINTED_REDUCED"
         ],
-        "PANTS_AND_A_SHOE": [
-            "littleLEG_BACK_RIGHT_SMALL",
-            "midFADEBELLY",
-            "highREVERSEPANTS",
-            "highMISTER"
-        ],
         "PAINTED_ROSINA": [
             "littleROSINA_REDUCED",
             "highPAINTED_REDUCED"
@@ -646,6 +640,12 @@
             "midSTRIPE_MID",
             "highFRECKLES",
             "highSPARROW"
+        ],
+        "PANTS_AND_A_SHOE": [
+            "littleLEG_BACK_RIGHT_SMALL",
+            "midFADEBELLY",
+            "highREVERSEPANTS",
+            "highMISTER"
         ]
     }
 }
