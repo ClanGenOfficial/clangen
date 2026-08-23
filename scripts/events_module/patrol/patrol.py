@@ -670,19 +670,13 @@ class Patrol:
 
         return success_outcome if success else fail_outcome, success
 
-    def balance_hunting(self, possible_patrols: list[PatrolEvent]):
-        """Filter the incoming hunting patrol list to balance the different kinds of hunting patrols.
-        With this filtering, there should be more prey possible patrols.
-
-            Parameters
-            ----------
-            possible_patrols : list
-                list of patrols which should be filtered
-
-            Returns
-            ----------
-            filtered_patrols : list
-                list of patrols which is filtered
+    def balance_hunting(self, possible_patrols: list[PatrolEvent]) -> list[PatrolEvent]:
+        """
+        Check which prey amount we want to allow this clan to get and filter the possible_patrols accordingly to ensure
+        they only have patrols where that amount is possible.
+        :param possible_patrols: The list of possible patrols
+        :returns: The list of possible patrols but filtered to only include those patrols which have the chosen prey
+        amount. If there were no patrols with the chosen prey amount, then the original list is returned
         """
         filtered_patrols = []
 
@@ -692,11 +686,12 @@ class Patrol:
             if not game.clan.override_biome
             else game.clan.override_biome
         )
-        season = game.clan.current_season
-        prey_size = ["tiny", "small", "medium", "large", "huge"]
-        prey_size_random_weights = PATROL_BALANCE[biome][season]
+        prey_sizes = ["tiny", "small", "medium", "large", "huge"]
+        prey_size_random_weights = get_config(
+            f"prey.patrol_balance.{biome}.{game.clan.current_season}"
+        )
 
-        chosen_prey_size = choices(prey_size, weights=prey_size_random_weights)[0]
+        chosen_prey_size = choices(prey_sizes, weights=prey_size_random_weights)[0]
         print(f"chosen filter prey size: {chosen_prey_size}")
 
         # filter all possible patrol depending on the needed prey size
@@ -719,19 +714,21 @@ class Patrol:
             for size, amount in prey_size_to_outcome_amounts.items():
                 if amount >= max_occurrences:
                     most_prey_size = size
+                    max_occurrences = amount
 
             if chosen_prey_size == most_prey_size:
                 filtered_patrols.append(patrol)
             elif self.debug_patrol_id and self.debug_patrol_id == patrol.event_id:
                 print(
-                    "DEBUG: requested patrol does not meet constraints (failed prey balancing)"
+                    f"DEBUG: requested patrol does not meet constraints (did not have the prey amount required for prey balancing)"
                 )
         # if the filtering results in an empty list, don't filter and return whole possible patrols
         if len(filtered_patrols) <= 0:
             print(
-                "---- WARNING ---- filtering to balance out the hunting, didn't work."
+                "---- WARNING ---- attempted prey balancing filtering, but there were no patrols with the required prey amount."
             )
-            filtered_patrols = possible_patrols
+            return possible_patrols
+
         return filtered_patrols
 
     def get_patrol_art(self, outcome: TextPoolEvent = None) -> Optional[pygame.Surface]:
@@ -778,11 +775,3 @@ class Patrol:
                 return pygame.image.load(f"{april_fools_root_dir}{file_name}.png")
 
         return pygame.image.load(f"{root_dir}{file_name}.png")
-
-
-# ---------------------------------------------------------------------------- #
-#                               PATROL CLASS END                               #
-# ---------------------------------------------------------------------------- #
-
-PATROL_WEIGHT_ADAPTION = constants.CONFIG["prey"]["patrol_weight_adaption"]
-PATROL_BALANCE = constants.CONFIG["prey"]["patrol_balance"]
