@@ -430,6 +430,13 @@ dev_tools = false
       romance = 20
       comfort = 30
       trust = 25
+    
+  [pregnancy.can_have_kits]
+    leader = true
+    deputy = true
+    medicine_cat = true
+    warrior = true
+    mediator = true
       
 [cat_generation]
   # base 1/chance that a cat will generate with a permanent condition. gets modified further in code
