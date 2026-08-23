@@ -71,9 +71,7 @@ class DebugMenu(UIWindow):
 
         self.change_layer(1000)
 
-        self.push_line(
-            'Enter "help" for a list of commands'
-        )
+        self.push_line('Enter "help" for a list of commands')
 
     def process_command(self, raw_command: str):
         """
