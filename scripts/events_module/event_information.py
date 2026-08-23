@@ -20,7 +20,7 @@ class EventInformation:
     ):
         """
         :param text: The event text.
-        :param types: Which types of event, in a list or tuple. Current options are:
+        :param types: Which types of event, in a list. Current options are:
                 "relation", "ceremony", "birth_death", "health", "other_clans", "misc"
         :param cats_involved: list or tuples of the IDs of cats involved in the event
         :param cat_dict: dict suitable for event_text_adjust containing the cat's text abbreviation as the key and the
