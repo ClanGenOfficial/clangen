@@ -72,7 +72,7 @@ class DebugMenu(UIWindow):
         self.change_layer(1000)
 
         self.push_line(
-            'Run "help" for a list of commands, or "help console" for a quick usage guide.'
+            'Enter "help" for a list of commands'
         )
 
     def process_command(self, raw_command: str):
