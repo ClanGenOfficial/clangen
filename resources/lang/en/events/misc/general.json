@@ -141,7 +141,7 @@
             "murder_reveal"
         ],
         "frequency": 3,
-        "event_text": "When r_c questions {PRONOUN/m_c/object} about mur_c's strange death, m_c was truthful. m_c claimed that mur_c deserved to die after what {PRONOUN/mur_c/subject} did to m_c.",
+        "event_text": "When r_c questioned {PRONOUN/m_c/object} about mur_c's strange death, m_c was truthful. m_c claimed that mur_c deserved to die after what {PRONOUN/mur_c/subject} did to m_c.",
         "m_c": {
             "age": [
                 "any"
@@ -881,7 +881,7 @@
             "murder_reveal"
         ],
         "frequency": 2,
-        "event_text": "r_c takes m_c aside and tells {PRONOUN/m_c/object} {PRONOUN/r_c/subject} knew what {PRONOUN/m_c/subject} did to mur_c. Before m_c can defend {PRONOUN/m_c/self}, r_c smiled eerily and assured {PRONOUN/m_c/object} {PRONOUN/r_c/subject} won't tell anyone, because {PRONOUN/r_c/subject} {VERB/r_c/agree/agrees} with what m_c did. m_c wasn't sure whether {PRONOUN/m_c/subject} should trust r_c's words.",
+        "event_text": "r_c took m_c aside and told {PRONOUN/m_c/object} {PRONOUN/r_c/subject} knew what {PRONOUN/m_c/subject} did to mur_c. Before m_c could defend {PRONOUN/m_c/self}, r_c smiled eerily and assured {PRONOUN/m_c/object} {PRONOUN/r_c/subject} wouldn't tell anyone, because {PRONOUN/r_c/subject} {VERB/r_c/agree/agrees} with what m_c did. m_c wasn't sure whether {PRONOUN/m_c/subject} should trust r_c's words.",
         "m_c": {
             "age": [
                 "any"
@@ -3423,7 +3423,7 @@
             "clan:warrior"
         ],
         "frequency": 3,
-        "event_text": "m_c chased fireflies around the camp while the warriors sleep.",
+        "event_text": "m_c chased fireflies around the camp while the warriors slept.",
         "m_c": {
             "status": [
                 "kitten"
@@ -5484,7 +5484,7 @@
         "location": ["any"],
         "season": ["any"],
         "frequency": 2,
-        "event_text": "m_c watched a scuttling beetle and imagined it's on a great adventure.",
+        "event_text": "m_c watched a scuttling beetle and imagined it was on a great adventure.",
         "m_c": {
             "age": ["kitten"],
             "trait": ["daydreamer"]
@@ -8111,7 +8111,7 @@
             "tags": ["cave"]
         },
         "frequency": 1,
-        "event_text": "While picking herbs near {POI/tag/cave}, m_c had a strange vision in which the stone becomes transparent and m_c was able to see the entire network of tunnels without obstruction.",
+        "event_text": "While picking herbs near {POI/tag/cave}, m_c had a strange vision in which the stone became transparent and m_c was able to see the entire network of tunnels without obstruction.",
         "m_c": {
             "status": ["medicine cat", "medicine cat"]
         }
@@ -12648,7 +12648,7 @@
             "r_c"
         ],
         "frequency": 1,
-        "event_text": "o_c_n broke into the camp and ravages the herb stored, taking some for themselves and attempting to destroy the rest. The Clan managed to recover some of the herbs, but the store was still badly damaged.",
+        "event_text": "o_c_n broke into the camp and ravaged the herb stores, taking some for themselves and attempting to destroy the rest. The Clan managed to recover some of the herbs, but the store was still badly damaged.",
         "supplies": [
             {
                 "type": "all_herb",
@@ -12973,7 +12973,7 @@
         "season": ["any"],
         "sub_type": ["war"],
         "frequency": 3,
-        "event_text": "While on a patrol, m_c encountered a kittypet. {PRONOUN/n_c:0/subject/CAP} bounced up to {PRONOUN/m_c/object} and asked if {PRONOUN/n_c:0/subject} can join the war. It sounds like a fun game!",
+        "event_text": "While on a patrol, m_c encountered a kittypet. {PRONOUN/n_c:0/subject/CAP} bounced up to {PRONOUN/m_c/object} and asked if {PRONOUN/n_c:0/subject} could join the war. It sounds like a fun game!",
         "m_c": { "status": ["leader","deputy","warrior","apprentice"]
             },
         "new_cat": [
@@ -15363,7 +15363,7 @@
             "tags": ["trees"]
         },
         "frequency": 1,
-        "event_text": "m_c watched the leaves change and fall from the branches of {POI/tag/trees}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wonder/wonders} if {PRONOUN/m_c/subject}'ll be around to see it again next year.",
+        "event_text": "m_c watched the leaves change and fall from the branches of {POI/tag/trees}. {PRONOUN/m_c/subject/CAP} wondered if {PRONOUN/m_c/subject}'ll be around to see it again next year.",
         "m_c": {
             "age": ["senior"]
         }
