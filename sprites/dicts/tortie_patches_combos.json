@@ -205,5 +205,42 @@
         "HALF",
         "HEARTBEAT",
         "GRUMPYFACE"
+    ],
+    "CHERISHED": [
+        "MINIMALONE",
+        "BELOVED"
+    ],
+    "FOUR_SIDE": [
+        "SIDEMASK",
+        "FOUR"
+    ],
+    "FLICKERING_BANDANA": [
+        "BANDANA",
+        "EMBER",
+        "SAFI"
+    ],
+    "ROBINSPILL": [
+        "MINIMALONE",
+        "ROBIN"
+    ],
+    "FANCY_CHIMERA": [
+        "BRIE",
+        "CHIMERA",
+        "MINIMALTHREE",
+        "ROSETAIL"
+    ],
+    "JUDY": [
+        "SHILOH",
+        "EYEDOT",
+        "CHEST"
+    ],
+    "SMOKY_FOURFACE": [
+        "SMOKE",
+        "GRUMPYFACE",
+        "FOUR"
+    ],
+    "EYEDOT_STREAM": [
+        "STREAMSTRIKE",
+        "EYEDOT"
     ]
 }
