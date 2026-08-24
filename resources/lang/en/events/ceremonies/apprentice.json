@@ -1,0 +1,1093 @@
+[
+    {
+        "event_id": "app_default0",
+        "involved_cats": {
+            "m_c": {}
+        },
+        "strings": [
+            "m_c has reached the age of six moons and has been made an apprentice."
+        ]
+    },
+    {
+        "event_id": "app_default1",
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c has reached the age of six moons and has been made an apprentice, with r_c0 as {PRONOUN/m_c/poss} mentor.",
+            "Newly-made apprentice m_c touches noses with {PRONOUN/m_c/poss} new mentor, r_c0."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_no_mentor0",
+        "involved_cats": {
+            "m_c": {
+                "has_mentor": {
+                    "current": false
+                }
+            }
+        },
+        "strings": [
+            "Newly-made apprentice m_c wishes {PRONOUN/m_c/subject} had someone to mentor {PRONOUN/m_c/object}.",
+            "m_c isn't confident in {PRONOUN/m_c/poss} ability to train {PRONOUN/m_c/self}, but will try anyway.",
+            "m_c is frustrated that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} have a mentor.",
+            "m_c isn't sure what to do without the guidance of a mentor.",
+            "m_c wonders if {PRONOUN/m_c/subject} can get by without the guidance of a mentor."
+        ]
+    },
+    {
+        "event_id": "app_no_leader0",
+        "tags": [
+            "-clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {}
+        },
+        "strings": [
+            "The Clan gathers around and urges (old_name) to go to the front of the crowd. Not having a leader isn't an excuse to force a cat to stay in the nursery when they're six moons old. (old_name) is renamed m_c, and the Clan votes to make r_c0 {PRONOUN/m_c/poss} mentor.",
+            "The Clan cheers for the new apprentice, m_c. They allow {PRONOUN/m_c/object} to choose {PRONOUN/m_c/poss} own mentor: m_c chooses r_c0.",
+            "With m_c's apprentice ceremony completed, there's still the problem of figuring out who will mentor {PRONOUN/m_c/object}. r_c0 steps forward first, so m_c touches noses with {PRONOUN/r_c0/object}."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_living_parent0",
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {},
+            "r_c1": {
+                "group": [
+                    "player_clan"
+                ]
+            }
+        },
+        "strings": [
+            "Watching with pride as m_c is named and given to r_c0 to apprentice under, r_c1 {VERB/r_c1/know/knows} that {PRONOUN/r_c0/subject} {VERB/r_c0/were/was} a good choice.",            "(old_name) loudly complains as r_c1 pulls {PRONOUN/m_c/object} over to quickly groom {PRONOUN/m_c/poss} pelt. {PRONOUN/m_c/subject/CAP} {VERB/m_c/manage/manages} to wriggle away and scurry off to the front of the crowd for {PRONOUN/m_c/poss} ceremony, where {PRONOUN/m_c/subject} {VERB/m_c/are/is} renamed to m_c and apprenticed to r_c0. ",
+            "Even though {PRONOUN/m_c/subject} {VERB/m_c/are/is} excited to finally be made an apprentice, it takes a bit of coaxing by r_c1 for (old_name) to step forward for {PRONOUN/m_c/poss} ceremony. r_c1 watches in pride as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} named m_c and touches noses with r_c0."
+
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            },
+            {
+                "cats_to": [
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_dead_parent0",
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "-orphaned_backstories"
+                ]
+            },
+            "r_c0": {},
+            "r_c1": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "m_c hopes that r_c1 is watching from StarClan with pride as {PRONOUN/m_c/subject} {VERB/m_c/are/is} apprenticed to r_c0.",
+            "m_c sits beside {PRONOUN/m_c/poss} new mentor r_c0 as the meeting comes to a close. {PRONOUN/m_c/poss/CAP} claws dig into the ground as {PRONOUN/m_c/subject} {VERB/m_c/glare/glares} up at the sky, wondering why r_c1 couldn't be there with {PRONOUN/m_c/object} at such an important moment.",
+            "m_c smiles up at the stars as {PRONOUN/m_c/subject} {VERB/m_c/sit/sits} beside r_c0. The stars seem to shine brighter in response: m_c knows it's a sign that r_c1 is still watching over {PRONOUN/m_c/object}."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            },
+            {
+                "cats_to": [
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_dead_parent1",
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "clanborn"
+                ]
+            },
+            "r_c0": {},
+            "r_c1": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "m_c wishes that {PRONOUN/m_c/subject} could be happier about being made an apprentice as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with r_c0, but all {PRONOUN/m_c/subject} can think about is how much {PRONOUN/m_c/subject} {VERB/m_c/wish/wishes} that r_c1 was still there to chant {PRONOUN/m_c/poss} name with the rest of the Clan.",
+            "m_c tries to keep up a brave face as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} apprenticed to r_c0, but {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} stealing glances at the crowd, as if trying to find r_c1 despite knowing {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} no longer with {PRONOUN/m_c/object}."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            },
+            {
+                "cats_to": [
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_dead_both_parents0",
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "-orphaned_backstories"
+                ]
+            },
+            "r_c0": {},
+            "r_c1": {
+                "group": [
+                    "afterlife"
+                ]
+            },
+            "r_c2": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "As m_c touches noses with {PRONOUN/m_c/poss} new mentor r_c0, {PRONOUN/m_c/subject} {VERB/m_c/make/makes} a silent promise to r_c1 to make {PRONOUN/r_c1/object} proud and to take care of the Clan in {PRONOUN/r_c1/poss} absence."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            },
+            {
+                "cats_to": [
+                    "r_c2",
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_living_both_parents0",
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {
+                "group": [
+                    "player_clan"
+                ]
+            },
+            "r_c2": {
+                "group": [
+                    "player_clan"
+                ]
+            }
+        },
+        "strings": [
+            "(old_name) runs up to the front of the crowd, eager to get {PRONOUN/m_c/poss} new name. When {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} called m_c for the first time, r_c1 and r_c2's voices can be heard the loudest as the Clan welcomes the new apprentice."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c2",
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_dead_both_parents0",
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "-orphaned_backstories"
+                ]
+            },
+            "r_c0": {},
+            "r_c1": {
+                "group": [
+                    "afterlife"
+                ]
+            },
+            "r_c2": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "m_c hopes that r_c1 and r_c2 are watching from StarClan with pride as {PRONOUN/m_c/subject} {VERB/m_c/are/is} apprenticed to r_c0.",
+            "m_c sits beside {PRONOUN/m_c/poss} new mentor r_c0 as the meeting comes to a close. {PRONOUN/m_c/poss/CAP} claws dig into the ground as {PRONOUN/m_c/subject} {VERB/m_c/glare/glares} up at the sky, wondering why r_c1 and r_c2 couldn't be there with {PRONOUN/m_c/object} at such an important moment.",
+            "m_c smiles up at the stars as {PRONOUN/m_c/subject} {VERB/m_c/sit/sits} beside r_c0. The stars seem to shine brighter in response: m_c knows it's a sign that r_c1 and r_c2 are still watching over {PRONOUN/m_c/object}.",
+            "As m_c touches noses with {PRONOUN/m_c/poss} new mentor r_c0, {PRONOUN/m_c/subject} {VERB/m_c/make/makes} a silent promise to r_c1 and r_c2 to make them proud, and to take care of the Clan in {PRONOUN/m_c/poss} parents' absence."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            },
+            {
+                "cats_to": [
+                    "r_c2",
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_dead_both_parents1",
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "clanborn"
+                ]
+            },
+            "r_c0": {},
+            "r_c1": {
+                "group": [
+                    "afterlife"
+                ]
+            },
+            "r_c2": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "m_c wishes that {PRONOUN/m_c/subject} could be happier about being made an apprentice as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with r_c0, but all {PRONOUN/m_c/subject} can think about is how much {PRONOUN/m_c/subject} {VERB/m_c/wish/wishes} that r_c1 and r_c2 were still there to chant {PRONOUN/m_c/poss} name with the rest of the Clan.",
+            "m_c tries to keep up a brave face as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} apprenticed to r_c0, but {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} stealing glances at the crowd, as if trying to find r_c1 and r_c2 despite knowing they're no longer with {PRONOUN/m_c/object}."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            },
+            {
+                "cats_to": [
+                    "r_c2",
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_leader_mentor",
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "status": ["leader"]
+            }
+        },
+        "strings": [
+            "r_c0 calls a meeting. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/have/has} been watching (old_name) for a while now and {VERB/r_c0/have/has} decided to mentor {PRONOUN/m_c/object} personally. m_c's eyes shine with pride. "
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_unsure0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "nervous",
+                        "gloomy",
+                        "insecure",
+                        "careful",
+                        "thoughtful"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c carefully touches noses with {PRONOUN/m_c/poss} new mentor r_c0, looking quite intimidated and nervous.",
+            "r_c0 sees how nervous m_c is and whispers a quiet encouragement to {PRONOUN/m_c/object} as they touch noses, promising to be a good mentor to {PRONOUN/m_c/object}."
+
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_unsure1",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "compassionate",
+                        "strange",
+                        "cold",
+                        "thoughtful",
+                        "gloomy",
+                        "nervous",
+                        "lonesome",
+                        "insecure"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c touches noses with r_c0, wondering whether this is truly the right path for {PRONOUN/m_c/object}."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_eager0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "arrogant",
+                        "fierce",
+                        "flamboyant",
+                        "adventurous",
+                        "ambitious",
+                        "sincere",
+                        "cunning",
+                        "competitive",
+                        "daring",
+                        "bold",
+                        "confident"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c excitedly touches noses with {PRONOUN/m_c/poss} new mentor r_c0, looking quite eager to start training.",
+            "m_c strides up to {PRONOUN/m_c/poss} new mentor, looking very proud and excited to be apprenticed to r_c0."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_eager1",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "playful",
+                        "troublesome",
+                        "oblivious",
+                        "fierce",
+                        "flamboyant",
+                        "strange",
+                        "daring",
+                        "bold",
+                        "childish",
+                        "adventurous",
+                        "shameless"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "In {PRONOUN/m_c/poss} eagerness, m_c accidentally shoves {PRONOUN/m_c/poss} nose into r_c0's so hard that r_c0 flinches back in surprise. m_c sheepishly apologizes and the two have a good laugh about it.",
+            "m_c can't believe {PRONOUN/m_c/poss} apprenticeship is finally here! Nearly tripping over {PRONOUN/m_c/poss} own paws, {PRONOUN/m_c/subject} {VERB/m_c/scurry/scurries} up to r_c0, excitedly touching noses with {PRONOUN/r_c0/object}.",
+            "m_c fidgets impatiently beside r_c0 as {PRONOUN/m_c/subject} {VERB/m_c/wait/waits} for the meeting to end. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} finally an apprentice! {PRONOUN/m_c/subject/CAP} {VERB/m_c/want/wants} to hurry up, get out there and go, go, go!",
+            "(old_name) sits in front of the Clan with pride, {PRONOUN/m_c/poss} tiny heart beating so fast {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} it might explode! {PRONOUN/m_c/subject/CAP} very excitedly {VERB/m_c/touch/touches} noses with r_c0, happy to start {PRONOUN/m_c/poss} apprenticeship."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_playing_cool0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "calm",
+                        "cold",
+                        "cunning",
+                        "strict",
+                        "wise",
+                        "ambitious",
+                        "careful",
+                        "lonesome"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c remains calm as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with r_c0, but {PRONOUN/m_c/poss} twitching tail gives away how excited {PRONOUN/m_c/subject} truly {VERB/m_c/are/is}.",
+            "m_c sits up straighter as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} called forward to be made an apprentice. While {PRONOUN/m_c/subject} {VERB/m_c/try/tries} to look calm and collected, {PRONOUN/m_c/subject} still {VERB/m_c/tremble/trembles} a bit as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with r_c0.",
+            "m_c touches noses with {PRONOUN/m_c/poss} mentor, r_c0, looking bored and unimpressed. But on the inside, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} bouncing around with euphoria as if {PRONOUN/m_c/subject} {VERB/m_c/were/was} still a kit!"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_high_hopes0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "arrogant",
+                        "flamboyant",
+                        "adventurous",
+                        "sincere",
+                        "loyal",
+                        "competitive",
+                        "daring",
+                        "righteous",
+                        "bold",
+                        "confident",
+                        "childish"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c can't seem to sit still as {PRONOUN/m_c/subject} {VERB/m_c/bounce/bounces} up to touch noses with r_c0, swearing {PRONOUN/m_c/subject}'ll be the best warrior the Clan has ever seen."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_eager2",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "troublesome",
+                        "arrogant",
+                        "oblivious",
+                        "flamboyant",
+                        "adventurous",
+                        "ambitious",
+                        "rebellious",
+                        "competitive",
+                        "grumpy",
+                        "shameless",
+                        "bold",
+                        "shameless",
+                        "childish"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "Almost immediately after m_c touches noses with r_c0, {PRONOUN/m_c/subject} {VERB/m_c/start/starts} asking about when they're going to go out and explore the territory.",
+            "As m_c touches noses with r_c0, {PRONOUN/m_c/subject} {VERB/m_c/hope/hopes} that {PRONOUN/r_c0/subject}'ll be a cool mentor that won't assign boring tasks. Anything but gathering moss or tick duty!"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_abandoned0",
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "abandoned_backstories"
+                ]
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c is so, so very excited to finally have a mentor, solidifying {PRONOUN/m_c/object} as part of the Clan. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} grateful to be here, really... but r_c0 can't replace the parent who left {PRONOUN/m_c/object}, the one who should have been there to cheer for {PRONOUN/m_c/object} and guide {PRONOUN/m_c/object}."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_serious0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "responsible",
+                        "compassionate",
+                        "loyal",
+                        "righteous",
+                        "wise",
+                        "strict",
+                        "thoughtful",
+                        "faithful",
+                        "loving",
+                        "nervous",
+                        "charismatic"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "Surprising r_c0, the first thing that m_c does after {PRONOUN/m_c/poss} apprentice ceremony is gather moss, just to make sure everyone has fresh bedding.",
+            "m_c touches noses with r_c0 and hopes that {PRONOUN/m_c/subject}'ll get to hunt first, so {PRONOUN/m_c/subject} can make sure the Clan is fed.",
+            "Eager to learn the best ways to help {PRONOUN/m_c/poss} Clan thrive, m_c excitedly touches noses with r_c0."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_joyful0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "playful",
+                        "compassionate",
+                        "sincere",
+                        "thoughtful",
+                        "faithful",
+                        "loving",
+                        "charismatic",
+                        "childish"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c purrs so hard that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} shaking as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with r_c0."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_serious1",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "compassionate",
+                        "fierce",
+                        "sincere",
+                        "loyal",
+                        "righteous",
+                        "daring",
+                        "wise",
+                        "faithful",
+                        "loving",
+                        "gloomy",
+                        "bold",
+                        "confident"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c silently swears to StarClan to do {PRONOUN/m_c/poss} best for the Clan as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with r_c0."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_impress0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "troublesome",
+                        "arrogant",
+                        "oblivious",
+                        "fierce",
+                        "flamboyant",
+                        "ambitious",
+                        "bloodthirsty",
+                        "loyal",
+                        "competitive",
+                        "daring",
+                        "thoughtful",
+                        "righteous",
+                        "bold",
+                        "confident",
+                        "vengeful"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "As m_c touches noses with r_c0, {PRONOUN/m_c/subject} {VERB/m_c/hope/hopes} {PRONOUN/m_c/subject}'ll get to do something that will really impress the Clan on {PRONOUN/m_c/poss} first day. Maybe {PRONOUN/m_c/subject} could catch a big, fat rabbit? Or chase off a fox! That'll show the Clan {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} the best apprentice anyone's ever seen!",
+            "(old_name) has always wished to be the hero of {PRONOUN/m_c/poss} Clan, a warrior admired by all. Touching noses with m_c, r_c0 hopes that {PRONOUN/m_c/subject} {VERB/m_c/are/is} going to stay wary of the dangers of their territory and not endanger {PRONOUN/m_c/self}."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_battle_eager0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "troublesome",
+                        "arrogant",
+                        "fierce",
+                        "ambitious",
+                        "bloodthirsty",
+                        "competitive",
+                        "daring",
+                        "grumpy",
+                        "bold",
+                        "vengeful"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c sits excitedly beside r_c0 as the meeting ends and hopes {PRONOUN/m_c/subject}'ll be doing something exciting like battle training first. {PRONOUN/m_c/poss/CAP} claws are itching to tear at something."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_pester0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "troublesome",
+                        "arrogant",
+                        "ambitious",
+                        "rebellious",
+                        "competitive",
+                        "grumpy",
+                        "shameless"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "m_c has been pestering everyone for moons on when {PRONOUN/m_c/subject} finally {VERB/m_c/get/gets} to be an apprentice, and everyone is relieved that they're finally free of the young cat's nagging... Until {PRONOUN/m_c/subject} {VERB/m_c/start/starts} asking about when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to be a warrior as soon as the meeting ends."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_taking_charge0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "arrogant",
+                        "strange",
+                        "rebellious",
+                        "daring",
+                        "bold",
+                        "confident"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "As {PRONOUN/m_c/poss} mentor is about to be chosen, m_c interrupts and announces {PRONOUN/m_c/subject} {VERB/m_c/want/wants} {PRONOUN/m_c/poss} mentor to be r_c0. {PRONOUN/m_c/subject/CAP} {VERB/m_c/stride/strides} forward with confidence to touch noses with r_c0 when it's allowed.",
+            "(old_name) strides up to {PRONOUN/m_c/poss} Clan leader, tail flicking. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} named m_c as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with r_c0.",
+            "(old_name) shoves r_c0 aside, yowling about how {PRONOUN/r_c0/subject} {VERB/r_c0/were/was} in the way. Chest puffed out, m_c is made an apprentice. {PRONOUN/m_c/subject/CAP} {VERB/m_c/turn/turns} around sheepishly, looking at {PRONOUN/m_c/poss} new mentor, r_c0."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_skittish0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "nervous",
+                        "insecure"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "Newly apprenticed m_c can't help but squeak when {PRONOUN/m_c/poss} mentor's name is announced. {PRONOUN/m_c/subject/CAP} {VERB/m_c/run/runs} with {PRONOUN/m_c/poss} ears lowered in embarrassment to touch noses with r_c0.",
+            "(old_name) is so focused on the leader, when r_c1 nudges {PRONOUN/m_c/object} forward, {PRONOUN/m_c/subject} {VERB/m_c/yelp/yelps}. With much embarrassment, the newly-apprenticed m_c touches noses with r_c0.",
+            "(old_name) wants to sob at the thought of being anything but a kit, comforted by r_c1 and the smells of the nursery. Nevertheless, {PRONOUN/m_c/subject} {VERB/m_c/step/steps} up before {PRONOUN/m_c/poss} leader, {VERB/m_c/take/takes} the name m_c, and {VERB/m_c/are/is} apprenticed to r_c0."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "app_pawful0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "daring",
+                        "flamboyant",
+                        "strange"
+                    ]
+                }
+            },
+            "r_c0": {}
+        },
+        "strings": [
+            "On (old_name)'s way to the leader, {PRONOUN/m_c/subject} {VERB/m_c/make/makes} a big scene in front of {PRONOUN/m_c/poss} assembled Clanmates. The leader assigns {PRONOUN/m_c/object} to r_c0, who looks wary of mentoring a pawful like m_c."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    }
+]

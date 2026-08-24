@@ -27,6 +27,15 @@ class CanCreateNewCatDict(TypedDict, total=False):
     assign_mate: list[str]
 
 
+class MentorApprenticeDict(TypedDict, total=False):
+    current: bool
+    former: bool
+
+
+class NameCheckDict(TypedDict):
+    has_suffix: bool
+
+
 class InvolvedCatDict(TypedDict, total=False):
     prior_abbreviation: list[str]
     can_create_new_cat: CanCreateNewCatDict
@@ -37,9 +46,12 @@ class InvolvedCatDict(TypedDict, total=False):
     group: list[str]
     standing: StandingDict
     stat: StatDict
+    current_exp: list[str]
     health: HealthDict
     backstory: list[str]
-    has_mentor: bool
+    has_mentor: MentorApprenticeDict
+    has_apprentice: MentorApprenticeDict
+    name: NameCheckDict
 
 
 class RelationshipConstraintDict(TypedDict):
