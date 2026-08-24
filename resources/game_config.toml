@@ -1134,15 +1134,6 @@ dev_tools = false
           Leaf-fall = [2,5,5,2,1]
           Leaf-bare = [1,3,6,4,2]
 
-  # used in conjunction with patrol_balance to modify the chosen prey size by the patrol frequency
-  # the less frequent the patrol, the larger the prey it can find
-  [prey.patrol_weight_adaption]
-    # prey size increase = associated frequency
-    1_prey_class_increase = 4
-    2_prey_class_increase = 3
-    3_prey_class_increase = 2
-    4_prey_class_increase = 1
-
   [prey.event_increase_modifiers]
     increase_tiny = 0.5
     increase_small = 1
