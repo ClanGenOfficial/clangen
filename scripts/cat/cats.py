@@ -1655,7 +1655,7 @@ class Cat:
             if mentor_cat and not self.is_valid_mentor(mentor_cat):
                 self.__remove_mentor()
 
-        if get_clan_setting("reassign_mentor"):
+        if get_clan_setting("assign_mentors"):
             self.assign_random_mentor()
 
     def assign_random_mentor(self):
