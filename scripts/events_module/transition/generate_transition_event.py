@@ -4,7 +4,7 @@ from scripts.cat import pronouns
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatAge
 from scripts.config import get_config
-from scripts.event_class import Single_Event
+from scripts.events_module.event_information import EventInformation
 from scripts.events_module.text_pool_event.event_retrieval import (
     load_text_pool_events,
     get_valid_event,
@@ -56,7 +56,7 @@ def _generate_transition_event(main_cat: Cat):
     processed_text = _handle_event(chosen_event, involved_cats, main_cat, other_clan)
 
     game.cur_events_list.append(
-        Single_Event(
+        EventInformation(
             processed_text,
             ["misc"],
             [c.ID for c in involved_cats.values()],
