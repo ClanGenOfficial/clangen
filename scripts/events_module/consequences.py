@@ -85,7 +85,12 @@ def create_new_cat_block(
                 index = f"n_c:{index}"
             if in_event_cats[index].ID not in adoptive_parents:
                 adoptive_parents.append(in_event_cats[index].ID)
-                adoptive_parents.extend(in_event_cats[index].mate)
+                for mate_id in in_event_cats[index].mate:
+                    mate = Cat.fetch_cat(mate_id)
+                    if not mate or not mate.status.alive_in_player_clan:
+                        continue
+                    if mate.ID not in adoptive_parents:
+                        adoptive_parents.append(mate.ID)
 
     # gather mates
     give_mates = []

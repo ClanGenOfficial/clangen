@@ -2,6 +2,7 @@ import os
 import unittest
 
 from scripts.cat.factories.typed_dicts import StatusDict
+from scripts.cat.sprites.load_sprites import sprites
 from scripts.cat_relations.enums import RelType
 
 from scripts.cat.enums import CatRank
@@ -522,7 +523,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
 
         # when
         hunter_to_all = TextPoolEvent(
-            event_id="test",
+            event_id="hunter_to_all",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(skill=["HUNTER,1"])),
@@ -530,7 +531,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         all_to_hunter = TextPoolEvent(
-            event_id="test",
+            event_id="all_to_hunter",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(skill=["FIGHTER,1", "HUNTER,1"])),
@@ -539,7 +540,7 @@ class SingleInteractionCatConstraints(unittest.TestCase):
         )
 
         storytellers = TextPoolEvent(
-            event_id="test",
+            event_id="storytellers",
             strings=["test"],
             involved_cats={
                 "m_c": InvolvedCatDict(stat=StatDict(skill=["STORY,1"])),

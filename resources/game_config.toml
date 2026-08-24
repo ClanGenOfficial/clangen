@@ -227,7 +227,10 @@ dev_tools = false
       trust = 20
 
   [mates.breakup]
-
+    # the chance for a break up to happen after an affair has been discovered
+    # any number lower than this decreases the likelyhood of a break up
+    affair_breakup_chance = 0.8
+    
     # intial chance of breakup
     [mates.breakup.initial_chance]
       threshold = 120
@@ -270,15 +273,14 @@ dev_tools = false
         romance = -20
         comfort = -10
         respect = 10
-    [mates.breakup.reactions.affair_discovery_mate_reaction]
-      romance = -50
-      trust = -30
-      like = -40
-    [mates.breakup.reactions.affair_discovery_other_mate_reaction]
-      romance = -50
-      trust = -30
-      like = -40
-    
+      [mates.breakup.reactions.affair_discovery_mate_reaction]
+        romance = -50
+        trust = -30
+        like = -40
+      [mates.breakup.reactions.affair_discovery_other_mate_reaction]
+        romance = -50
+        trust = -30
+        like = -40
 
 [new_cat]
   # number of welcoming events to add when a new cat joins
@@ -620,6 +622,9 @@ dev_tools = false
 
   # forces the code to find events with the given frequency, frequency can be a number from 1-4
   debug_override_frequency = 0
+
+  # forces ceremony with this id to occur
+  debug_ensure_ceremony_id = "warrior_default0"
 
 [death_related]
   # the maximum lives a leader can have
@@ -1130,15 +1135,6 @@ dev_tools = false
           Greenleaf = [3,6,4,2,0]
           Leaf-fall = [2,5,5,2,1]
           Leaf-bare = [1,3,6,4,2]
-
-  # used in conjunction with patrol_balance to modify the chosen prey size by the patrol frequency
-  # the less frequent the patrol, the larger the prey it can find
-  [prey.patrol_weight_adaption]
-    # prey size increase = associated frequency
-    1_prey_class_increase = 4
-    2_prey_class_increase = 3
-    3_prey_class_increase = 2
-    4_prey_class_increase = 1
 
   [prey.event_increase_modifiers]
     increase_tiny = 0.5

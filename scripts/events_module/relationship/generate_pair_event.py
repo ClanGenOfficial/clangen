@@ -8,22 +8,18 @@ from scripts.cat.enums import CatCompatibility, CatRank
 from scripts.cat_relations.enums import RelType
 from scripts.cat_relations.relationship import Relationship
 from scripts.config import get_config
-from scripts.event_class import Single_Event
+from scripts.events_module.event_information import EventInformation
 from scripts.events_module.consequences import change_relationship_values
 from scripts.events_module.event_filters import (
     get_personality_compatibility,
-    event_for_cat,
-    check_rel_constraint_groups,
 )
 from scripts.events_module.text_adjust import process_text
-from scripts.events_module.text_pool_event.check_general_constraints import (
-    passes_general_constraints,
+from scripts.events_module.text_pool_event.event_retrieval import (
+    get_valid_event,
+    load_text_pool_events,
 )
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
-from scripts.game_structure.localization import load_lang_resource
-
-loaded_events = {}
 
 
 # TRIGGER
@@ -73,7 +69,7 @@ def trigger_interaction(
     )[0]
 
     path = f"events/relationship_events/{'joining_interactions' if is_joining else 'normal_interactions'}/{type_of_interaction}/{chosen_intensity}/{type_of_change}.json"
-    events = _load_file(path)
+    events = load_text_pool_events(path)
 
     # find valid event
     chosen_event = _get_event(events, main_cat, other_cat)
@@ -232,32 +228,24 @@ def _get_event(
     :param other_cat: The other cat involved in the event
     :return: A TextPoolEvent valid for both cats and current game state
     """
-    final_events = []
 
-    for e in events:
-        if not passes_general_constraints(e, main_cat, {"m_c": main_cat}):
-            continue
-        if not event_for_cat(
-            e.involved_cats.get("m_c", {}), main_cat, event_id=e.event_id
-        ):
-            continue
-        if not event_for_cat(
-            e.involved_cats.get("r_c", {}),
-            other_cat,
-            involved_cat_dict={"m_c": main_cat},
-            event_id=e.event_id,
-        ):
-            continue
+    # this is its own function so that we can test
+    # attempt to find a valid event where we can fill the other roles
+    other_clan = (
+        (choice(game.clan.all_other_clans) if game.clan.all_other_clans else None)
+        if game.clan
+        else None
+    )
+    chosen_event, involved_cats = get_valid_event(
+        primary_cat=main_cat,
+        involved_cats={"m_c": main_cat, "r_c": other_cat},
+        interactable_cats=[other_cat],
+        possible_events=events,
+        other_clan=other_clan,
+        frequency_active=False,
+    )
 
-        if not all(
-            check_rel_constraint_groups(constraint, {"m_c": main_cat, "r_c": other_cat})
-            for constraint in e.relationship_constraint
-        ):
-            continue
-
-        final_events.append(e)
-
-    return choice(final_events)
+    return chosen_event
 
 
 def _get_change_amount(
@@ -330,7 +318,7 @@ def _resolve_event(
     cat_ids = [c.ID for c in involved_cats.values()]
     # append the event to the events list!
     game.cur_events_list.append(
-        Single_Event(event_string, ["relation", "interaction"], cat_ids)
+        EventInformation(event_string, ["relation", "interaction"], cat_ids)
     )
 
     # APPLY INFLUENCE ON RELATIONSHIPS
@@ -411,28 +399,3 @@ def _apply_base_influence(
             count=relationship.cat_from.moons,
         )
     )
-
-
-# LOAD
-def _load_file(path) -> list[TextPoolEvent]:
-    """
-    Loads and returns the events file
-    """
-    # check if we've already loaded these events and then load them if need be
-    if path not in loaded_events.keys():
-        loaded_events[path] = []
-        for t in load_lang_resource(path):
-            loaded_events[path].append(
-                TextPoolEvent(
-                    event_id=t.get("id"),
-                    location=t.get("location", []),
-                    season=t.get("season", []),
-                    tags=t.get("tags", []),
-                    strings=t.get("strings", []),
-                    involved_cats=t.get("involved_cats", {}),
-                    relationship_constraint=t.get("relationship_constraint", []),
-                    relationship_changes=t.get("relationship_changes", []),
-                )
-            )
-
-    return loaded_events[path]

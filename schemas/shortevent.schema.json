@@ -517,7 +517,9 @@
         "deputy",
         "-deputy",
         "leader",
-        "-leader"
+        "-leader",
+        "past_deputy",
+        "-past_deputy"
       ],
       "title": "GatherCatEnum",
       "type": "string"
@@ -978,6 +980,14 @@
           "description": "How the reputation of the Clan changes as a result of this event",
           "title": "Changed",
           "type": "integer"
+        },
+        "temperament": {
+          "description": "The temperament the Clan must have in order for this event to be possible.",
+          "items": {
+            "$ref": "#/$defs/Temperament"
+          },
+          "title": "Temperament",
+          "type": "array"
         }
       },
       "title": "OtherClan",
@@ -1394,6 +1404,10 @@
         "-mentor/app",
         "app/mentor",
         "-app/mentor",
+        "past_mentor/app",
+        "-past_mentor/app",
+        "past_app/mentor",
+        "-past_app/mentor",
         "uninterested",
         "fancies",
         "adores",
@@ -1829,6 +1843,50 @@
         "adoption"
       ],
       "title": "TagEnum",
+      "type": "string"
+    },
+    "Temperament": {
+      "description": "Temperaments a Clan or patrol can hold. A \"-\" prefix excludes it.",
+      "enum": [
+        "cunning",
+        "-cunning",
+        "proud",
+        "-proud",
+        "bloodthirsty",
+        "-bloodthirsty",
+        "amiable",
+        "-amiable",
+        "stoic",
+        "-stoic",
+        "wary",
+        "-wary",
+        "gracious",
+        "-gracious",
+        "mellow",
+        "-mellow",
+        "logical",
+        "-logical",
+        "chaotic",
+        "-chaotic",
+        "mercurial",
+        "-mercurial",
+        "calculating",
+        "-calculating",
+        "eager",
+        "-eager",
+        "observant",
+        "-observant",
+        "adaptable",
+        "-adaptable",
+        "decisive",
+        "-decisive",
+        "methodical",
+        "-methodical",
+        "steadfast",
+        "-steadfast",
+        "any"
+      ],
+      "title": "Temperament",
       "type": "string"
     },
     "Trait": {
