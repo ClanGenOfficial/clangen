@@ -12,7 +12,7 @@ from scripts.clan_resources.point_of_interest import (
     get_poi_tags_set,
     get_poi_categories_set,
 )
-from scripts.cat_relations.relationship import Relationship
+from scripts.cat_relations.relationship import Relationship, create_one_relationship
 from scripts.config import get_config
 from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
@@ -283,6 +283,26 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
     return current_standing in required_rel
 
 
+def event_for_temperament(required_temp: list, temperament) -> bool:
+    """
+    checks if temperament matches required_temp
+    """
+    if not required_temp or "any" in required_temp:
+        return True
+
+    temperament = set(temperament)
+
+    excluded = {temp[1:] for temp in required_temp if temp.startswith("-")}
+    if not temperament.isdisjoint(excluded):
+        return False
+
+    included = {temp for temp in required_temp if not temp.startswith("-")}
+    if included and temperament.isdisjoint(included):
+        return False
+
+    return True
+
+
 def event_for_freshkill_supply(
     pile, trigger: Literal["always", "low", "adequate", "full", "excess"], clan_size
 ) -> bool:
@@ -362,6 +382,8 @@ def event_for_required_cat_types(
     """
     Checks if the required_types dict is being fulfilled
     """
+    if not required_types:
+        return True
 
     for c_type, amount_range in required_types.items():
         type_list = current_cat_types.get(c_type, [])
@@ -993,6 +1015,7 @@ def cat_for_event(
         "skill": _get_cats_with_skill,
         "trait": _get_cats_with_trait,
         "backstory": _get_cats_with_backstory,
+        "health": _get_cats_with_health,
     }
 
     # run funcs
@@ -1126,6 +1149,16 @@ def _get_cats_with_rel_status(
     return cat_list, rel_status_list
 
 
+def _get_cats_with_health(cat_list: list, health_constraints: dict) -> list:
+    """
+    Checks cat_list against required health constraints
+    """
+    if not health_constraints:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_health(c, health_constraints)]
+
+
 def _get_cats_with_age(cat_list: list, ages: list[str]) -> list:
     """
     Checks cat_list against required ages and returns qualifying cats.
@@ -1182,18 +1215,7 @@ def _get_cats_with_stat(cat_list: list, stat: dict) -> list:
     if not stat:
         return cat_list
 
-    skill_cats = []
-    trait_cats = []
-
-    if stat.get("skill"):
-        skill_cats = _get_cats_with_age(cat_list, stat["skill"])
-    if stat.get("trait"):
-        trait_cats = _get_cats_with_trait(cat_list, stat["trait"])
-
-    if stat.get("must_have_both"):
-        return list(set(skill_cats).intersection(set(trait_cats)))
-    else:
-        return skill_cats + trait_cats
+    return [c for c in cat_list if _check_cat_stat(c, stat)]
 
 
 def _get_cats_with_skill(cat_list: list, skills: list[str]) -> list:
@@ -1429,7 +1451,6 @@ def _filter_relationship_type_updated(
     # if the cat meets the check AND it's an exclusionary tag: return False
     # if the cat doesn't meet the check AND it's an inclusionary tag: return False
     # otherwise, continue onwards
-    cats_to = [c for c in cats_to if c not in cats_from]
 
     if "can_romance" in filter_types:
         for cat in cats_from:
@@ -1438,6 +1459,7 @@ def _filter_relationship_type_updated(
                 [
                     cat.is_potential_mate(inter_cat) or cat.ID in inter_cat.mate
                     for inter_cat in cats_to
+                    if cat != inter_cat
                 ]
             ):
                 if "can_romance" in exclusionary_values:
@@ -1447,6 +1469,7 @@ def _filter_relationship_type_updated(
                 [
                     cat.is_potential_mate(inter_cat) or cat.ID in inter_cat.mate
                     for inter_cat in cats_to
+                    if cat != inter_cat
                 ]
             ):
                 return False
@@ -1458,12 +1481,22 @@ def _filter_relationship_type_updated(
     if "strangers" in filter_types:
         for cat in cats_from:
             # if the cats ARE strangers
-            if all([inter_cat.ID not in cat.relationships for inter_cat in cats_to]):
+            if all(
+                [
+                    inter_cat.ID not in cat.relationships
+                    for inter_cat in cats_to
+                    if cat != inter_cat
+                ]
+            ):
                 if "strangers" in exclusionary_values:
                     return False
             # if SOME but not ALL cats are strangers
             elif "strangers" in inclusionary_values and any(
-                [inter_cat.ID in cat.relationships for inter_cat in cats_to]
+                [
+                    inter_cat.ID in cat.relationships
+                    for inter_cat in cats_to
+                    if cat != inter_cat
+                ]
             ):
                 return False
             # if the cats AREN'T strangers
@@ -1474,12 +1507,14 @@ def _filter_relationship_type_updated(
     if "siblings" in filter_types:
         for cat in cats_from:
             # if the cats ARE siblings
-            if all([cat.is_sibling(inter_cat) for inter_cat in cats_to]):
+            if all(
+                [cat.is_sibling(inter_cat) for inter_cat in cats_to if cat != inter_cat]
+            ):
                 if "siblings" in exclusionary_values:
                     return False
             # if SOME but not ALL cats are siblings
             elif "siblings" in inclusionary_values and any(
-                [cat.is_sibling(inter_cat) for inter_cat in cats_to]
+                [cat.is_sibling(inter_cat) for inter_cat in cats_to if cat != inter_cat]
             ):
                 return False
             # if the cats AREN'T siblings
@@ -1490,12 +1525,22 @@ def _filter_relationship_type_updated(
     if "littermates" in filter_types:
         for cat in cats_from:
             # if the cats ARE littermates
-            if all([cat.is_littermate(inter_cat) for inter_cat in cats_to]):
+            if all(
+                [
+                    cat.is_littermate(inter_cat)
+                    for inter_cat in cats_to
+                    if cat != inter_cat
+                ]
+            ):
                 if "littermates" in exclusionary_values:
                     return False
             # if SOME but not ALL cats are littermates
             elif "littermates" in inclusionary_values and any(
-                [cat.is_littermate(inter_cat) for inter_cat in cats_to]
+                [
+                    cat.is_littermate(inter_cat)
+                    for inter_cat in cats_to
+                    if cat != inter_cat
+                ]
             ):
                 return False
             # if the cats AREN'T littermates
@@ -1515,12 +1560,14 @@ def _filter_relationship_type_updated(
         # Hopefully the cheaper tests mean this is only needed on events with a small number of cats
         for cat in cats_from:
             # if the cats ARE mates
-            if all([inter_cat.ID in cat.mate for inter_cat in cats_to]):
+            if all(
+                [inter_cat.ID in cat.mate for inter_cat in cats_to if cat != inter_cat]
+            ):
                 if "mates" in exclusionary_values:
                     return False
             # if SOME but not ALL cats are mates
             elif "mates" in inclusionary_values and any(
-                [inter_cat.ID in cat.mate for inter_cat in cats_to]
+                [inter_cat.ID in cat.mate for inter_cat in cats_to if cat != inter_cat]
             ):
                 return False
             # if the cats AREN'T mates
@@ -1533,12 +1580,14 @@ def _filter_relationship_type_updated(
     if "parent/child" in filter_types:
         for cat in cats_from:
             # if the cats ARE parent/child
-            if all([cat.is_parent(inter_cat) for inter_cat in cats_to]):
+            if all(
+                [cat.is_parent(inter_cat) for inter_cat in cats_to if cat != inter_cat]
+            ):
                 if "parent/child" in exclusionary_values:
                     return False
             # if SOME but not ALL cats are parent/child
             elif "parent/child" in inclusionary_values and any(
-                [cat.is_parent(inter_cat) for inter_cat in cats_to]
+                [cat.is_parent(inter_cat) for inter_cat in cats_to if cat != inter_cat]
             ):
                 return False
             # if the cats AREN'T parent/child
@@ -1549,12 +1598,14 @@ def _filter_relationship_type_updated(
     if "child/parent" in filter_types:
         for cat in cats_from:
             # if the cats ARE child/parent
-            if all([inter_cat.is_parent(cat) for inter_cat in cats_to]):
+            if all(
+                [inter_cat.is_parent(cat) for inter_cat in cats_to if cat != inter_cat]
+            ):
                 if "child/parent" in exclusionary_values:
                     return False
             # if SOME but not ALL cats are child/parent
             elif "child/parent" in inclusionary_values and any(
-                [inter_cat.is_parent(cat) for inter_cat in cats_to]
+                [inter_cat.is_parent(cat) for inter_cat in cats_to if cat != inter_cat]
             ):
                 return False
             # if the cats AREN'T child/parent
@@ -1929,7 +1980,7 @@ def check_relationship_value(cat_from, cat_to, rel_value=None):
     if cat_to.ID in cat_from.relationships:
         relationship = cat_from.relationships[cat_to.ID]
     else:
-        relationship = cat_from.create_one_relationship(cat_to)
+        relationship = create_one_relationship(cat_from, cat_to)
 
     if rel_value == RelType.ROMANCE:
         return relationship.romance

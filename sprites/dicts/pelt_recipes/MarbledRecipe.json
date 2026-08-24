@@ -3,7 +3,7 @@
     "layer_order": ["1", "2", "3", "4", ["5", "6"], "7", ["8", "9"], "10", "11"],
     "layers": {
         "11": {
-            "group_name": "BENGALMUZZLE",
+            "group_name": "EXOTICMUZZLE",
             "color": "exotic_muzzle"
         },
         
@@ -43,11 +43,11 @@
         },
 
         "3": {
-            "group_name": "BENGALTOPGRAD",
+            "group_name": "EXOTICTOPGRAD",
             "color": "exotic_base_gradient_top"
         },
         "2": {
-            "group_name": "BENGALBOTTOMGRAD",
+            "group_name": "EXOTICBOTTOMGRAD",
             "color": "exotic_base_gradient_bottom"
         },
         "1":{

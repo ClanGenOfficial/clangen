@@ -75,7 +75,7 @@ class ChangeGenderScreen(Screens):
                 if self.are_boxes_full():
                     gender_identity = self.get_new_identity()
                     self.the_cat.genderalign = gender_identity
-                    self.the_cat.get_new_thought()
+                    self.the_cat.assign_thought()
                     self.selected_cat_elements["identity_changed"].show()
                     self.selected_cat_elements["cat_gender"].kill()
                     self.selected_cat_elements[
@@ -96,14 +96,14 @@ class ChangeGenderScreen(Screens):
                 if event.ui_element.cat_id == "add":
                     if event.ui_element.cat_object not in self.the_cat.pronouns:
                         self.the_cat.pronouns.append(event.ui_element.cat_object)
-                        self.the_cat.get_new_thought()
+                        self.the_cat.assign_thought()
                 elif event.ui_element.cat_id == "remove":
                     if (
                         event.ui_element.cat_object in self.the_cat.pronouns
                         and len(self.the_cat.pronouns) > 1
                     ):
                         self.the_cat.pronouns.remove(event.ui_element.cat_object)
-                        self.the_cat.get_new_thought()
+                        self.the_cat.assign_thought()
                 elif event.ui_element.cat_id == "delete":
                     if event.ui_element.cat_object in pronouns.get_custom_pronouns():
                         game.clan.custom_pronouns[i18n.config.get("locale")].remove(
@@ -527,10 +527,11 @@ class ChangeGenderScreen(Screens):
 
     def pronoun_get_cases(self, pronounset) -> str:
         # Gets all pronoun cases in pronounset for display
-        pronounset_values = list(pronounset.values())
-        displayname = (x for x in pronounset_values if not isinstance(x, int))
-        displayname = "/".join(displayname)
-        return displayname
+        return "/".join(
+            value
+            for pronoun, value in pronounset.items()
+            if pronoun not in ("conju", "gender", "ID")
+        )
 
     def reset_buttons_and_boxes(self):
         # kills everything when switching cats

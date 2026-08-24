@@ -1,22 +1,19 @@
 from random import choice, choices
-from typing import Union, Optional
+from typing import Union
 
 import i18n
 
 from scripts.cat.cats import Cat
 from scripts.config import get_config
-from scripts.event_class import Single_Event
+from scripts.events_module.event_information import EventInformation
 from scripts.events_module.consequences import change_relationship_values
 from scripts.events_module.text_adjust import process_text, adjust_list_text
-from scripts.events_module.text_pool_event.check_general_constraints import (
-    passes_general_constraints,
+from scripts.events_module.text_pool_event.event_retrieval import (
+    get_valid_event,
+    load_text_pool_events,
 )
-from scripts.events_module.text_pool_event.find_involved_cats import find_cats
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
-from scripts.game_structure.localization import load_lang_resource
-
-loaded_events = {}
 
 
 def trigger_interaction(main_cat: Cat, interactable_cats: list) -> list[str]:
@@ -37,7 +34,7 @@ def trigger_interaction(main_cat: Cat, interactable_cats: list) -> list[str]:
         list(intensity_chances.keys()), list(intensity_chances.values())
     )[0]
     path = f"events/relationship_events/group_interactions/{chosen_intensity}/{type_of_change}.json"
-    events = _load_file(path)
+    events = load_text_pool_events(path)
 
     # FIND VALID EVENT
     chosen_event, involved_cats = _get_event(events, interactable_cats, main_cat)
@@ -54,12 +51,18 @@ def trigger_interaction(main_cat: Cat, interactable_cats: list) -> list[str]:
 def _get_event(
     events: list[TextPoolEvent], interactable_cats: list[Cat], main_cat: Cat
 ) -> tuple[TextPoolEvent, dict[str, Union[Cat, list[Cat]]]]:
-    # set up the basic cat dict
-    involved_cats: dict[str, Union[Cat, list[Cat]]] = {"m_c": main_cat}
+    # this is its own function so that we can test
 
     # attempt to find a valid event where we can fill the other roles
-    chosen_event, involved_cats = _find_event_and_cats(
-        interactable_cats, involved_cats, main_cat, events
+    chosen_event, involved_cats = get_valid_event(
+        primary_cat=main_cat,
+        involved_cats={"m_c": main_cat},
+        interactable_cats=interactable_cats,
+        possible_events=events,
+        other_clan=(
+            choice(game.clan.all_other_clans) if game.clan.all_other_clans else None
+        ),
+        frequency_active=False,
     )
     return chosen_event, involved_cats
 
@@ -99,58 +102,13 @@ def _resolve_event(
 
     # append the event to the events list!
     game.cur_events_list.append(
-        Single_Event(event_string, ["relation", "interaction"], cat_ids)
+        EventInformation(event_string, ["relation", "interaction"], cat_ids)
     )
 
     # influence relationships
     _influence_relationships(involved_cats, chosen_event, event_string)
 
     return cat_ids
-
-
-def _find_event_and_cats(
-    interactable_cats, involved_cats, main_cat, possible_events: list[TextPoolEvent]
-) -> tuple[TextPoolEvent, dict]:
-    """
-    Filters through the possible events to find the ones that we have valid cats for. Returns both the event and the valid cats.
-    """
-    chosen_event: Optional[TextPoolEvent] = None
-    outside_cats = [
-        c
-        for c in Cat.all_cats_list
-        if (c.status.is_other_clancat or c.status.is_outsider) and not c.dead
-    ]
-    other_clan = (
-        choice(game.clan.all_other_clans) if game.clan.all_other_clans else None
-    )
-    while not chosen_event and possible_events:
-        involved_cats = {"m_c": main_cat}
-        event_to_test = choices(possible_events, [e.weight for e in possible_events])[0]
-        if not passes_general_constraints(
-            event_to_test, involved_cats["m_c"], involved_cats, other_clan
-        ):
-            possible_events.remove(event_to_test)
-            continue
-
-        # make sure none of the interactable cats are already assigned to an abbr
-        interactable_cats = [
-            c for c in interactable_cats if c not in involved_cats.values()
-        ]
-        temp_involved_cats = find_cats(
-            interactable_cats=interactable_cats,
-            involved_cats=involved_cats,
-            outside_cats=outside_cats,
-            event=event_to_test,
-            other_clan=other_clan,
-        )
-        if not temp_involved_cats:
-            possible_events.remove(event_to_test)
-            continue
-
-        chosen_event = event_to_test
-        involved_cats = temp_involved_cats
-
-    return chosen_event, involved_cats
 
 
 def _influence_relationships(involved_cats, event: TextPoolEvent, chosen_string: str):
@@ -182,27 +140,3 @@ def _influence_relationships(involved_cats, event: TextPoolEvent, chosen_string:
         change_relationship_values(
             cats_from=cats_from, cats_to=cats_to, **value_changes, log=chosen_string
         )
-
-
-def _load_file(path) -> list[TextPoolEvent]:
-    """
-    Loads and returns the events file
-    """
-    # check if we've already loaded these events and then load them if need be
-    if path not in loaded_events.keys():
-        loaded_events[path] = []
-        for t in load_lang_resource(path):
-            loaded_events[path].append(
-                TextPoolEvent(
-                    event_id=t.get("id"),
-                    location=t.get("location", []),
-                    season=t.get("season", []),
-                    tags=t.get("tags", []),
-                    strings=t.get("strings", []),
-                    involved_cats=t.get("involved_cats", {}),
-                    relationship_constraint=t.get("relationship_constraint", []),
-                    relationship_changes=t.get("relationship_changes", []),
-                )
-            )
-
-    return loaded_events[path]

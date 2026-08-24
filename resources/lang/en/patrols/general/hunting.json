@@ -1228,27 +1228,23 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c0 kills the distracted rat easily, but p_l points out the putrid scent. c_n could use the prey, but it isn't safe to risk sickness. s_c0 cocks {PRONOUN/s_c0/poss} head. If they aren't going to eat it, can they at least name it? Before p_l can figure out how to reply to that, s_c0 touches {PRONOUN/s_c0/poss} nose to the body of the rat. Henceforth, this rat will be known as Stinkyrat, honored for its stinkiness. Stinkyrat! Stinkyrat!"
+                    "r_c0 kills the distracted rat easily, but p_l points out the putrid scent. c_n could use the prey, but it isn't safe to risk sickness. r_c0 cocks {PRONOUN/r_c0/poss} head. If they aren't going to eat it, can they at least name it? Before p_l can figure out how to reply to that, r_c0 touches {PRONOUN/r_c0/poss} nose to the body of the rat. Henceforth, this rat will be known as Stinkyrat, honored for its stinkiness. Stinkyrat! Stinkyrat!"
                 ],
                 "involved_cats": {
-                    "r_c0": {},
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "trait": [
                                 "childish",
                                 "playful"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1540,18 +1536,15 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Even s_c0, for all {PRONOUN/s_c0/poss} talents, can't bring back prey for the fresh-kill pile if there's only scraps to catch."
+                    "Even p_l, for all {PRONOUN/p_l/poss} talents, can't bring back prey for the fresh-kill pile if there's only scraps to catch."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "HUNTER,0"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -1648,18 +1641,15 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The prey just does <i>not</i> want to cooperate today, and it takes all of s_c0's talents to bring what feels like not nearly enough fresh-kill back to camp."
+                    "The prey just does <i>not</i> want to cooperate today, and it takes all of p_l's talents to bring what feels like not nearly enough fresh-kill back to camp."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "HUNTER,0"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -5993,10 +5983,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The pair manage to keep the hunting patrol relatively on track, until s_c0 bursts into laughter after p_l slips and falls during a catch. Furious and <i>very</i> close to clawing s_c0's obnoxious face off, p_l storms off back to camp."
+                    "The pair manage to keep the hunting patrol relatively on track, until r_c0 bursts into laughter after p_l slips and falls during a catch. Furious and <i>very</i> close to clawing r_c0's obnoxious face off, p_l storms off back to camp."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "trait": [
                                 "childish",
@@ -6004,10 +5994,7 @@
                                 "strange",
                                 "troublesome"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 0,
@@ -6017,7 +6004,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -6685,20 +6672,17 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_flowerdate_WrWr",
                 "strings": [
-                    "p_l is amazed by how intuitively s_c0 can anticipate {PRONOUN/p_l/poss} movements and how natural it feels to work as a team with {PRONOUN/s_c0/object}. After a very successful hunt, p_l and s_c0 exchange admiring looks, a pleasant tension hanging in the air."
+                    "p_l is amazed by how intuitively r_c0 can anticipate {PRONOUN/p_l/poss} movements and how natural it feels to work as a team with {PRONOUN/r_c0/object}. After a very successful hunt, p_l and r_c0 exchange admiring looks, a pleasant tension hanging in the air."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "skill": [
                                 "SENSE,1",
                                 "CLAIRVOYANT,1",
                                 "CLEVER,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -6734,26 +6718,23 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_happycat_Wr",
                 "strings": [
-                    "p_l and s_c0 corner a large prey animal, but the wind changes and their prey perks up at the last moment. Without hesitation, s_c0 bolts forward and slams a paw down on it. p_l is amazed by {PRONOUN/s_c0/poss} lightning-fast reflexes and returns to camp a little hot around the ears."
+                    "p_l and r_c0 corner a large prey animal, but the wind changes and their prey perks up at the last moment. Without hesitation, r_c0 bolts forward and slams a paw down on it. p_l is amazed by {PRONOUN/r_c0/poss} lightning-fast reflexes and returns to camp a little hot around the ears."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "skill": [
                                 "HUNTER,1",
                                 "RUNNER,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -6800,20 +6781,17 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_romanticstroll_WrWr",
                 "strings": [
-                    "p_l and s_c0 work hard and soon have a sizeable haul. s_c0 winks at p_l, commenting that the two of them have a lot of chemistry — when it comes to hunting, of course. p_l feels a little hot under {PRONOUN/p_l/poss} fur."
+                    "p_l and r_c0 work hard and soon have a sizeable haul. r_c0 winks at p_l, commenting that the two of them have a lot of chemistry — when it comes to hunting, of course. p_l feels a little hot under {PRONOUN/p_l/poss} fur."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "trait": [
                                 "charismatic",
                                 "loving",
                                 "confident"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -6848,26 +6826,23 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_speakingromance_WrWr",
                 "strings": [
-                    "After a successful hunt together, p_l comments that the two of them make a great team, {PRONOUN/p_l/poss} whiskers twitching flirtatiously. s_c0 shrugs and attributes their success to the favorable direction of the wind."
+                    "After a successful hunt together, p_l comments that the two of them make a great team, {PRONOUN/p_l/poss} whiskers twitching flirtatiously. r_c0 shrugs and attributes their success to the favorable direction of the wind."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "trait": [
                                 "oblivious",
                                 "gloomy"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -7112,18 +7087,15 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bumpheads_WrWr",
                 "strings": [
-                    "p_l always enjoys hunting with {PRONOUN/p_l/poss} mate and seeing {PRONOUN/s_c0/poss} skill in action. Unsurprisingly, they have to make two trips to account for all of s_c0's kills."
+                    "p_l always enjoys hunting with {PRONOUN/p_l/poss} mate and seeing {PRONOUN/r_c0/poss} skill in action. Unsurprisingly, they have to make two trips to account for all of r_c0's kills."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "skill": [
                                 "HUNTER,2"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -7133,7 +7105,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -7159,10 +7131,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bumpheads_WrWr",
                 "strings": [
-                    "Some of their Clanmates might not understand why p_l loves s_c0 so much, but when they're alone like this, s_c0's dry wit always gets p_l purring. It doesn't hurt that their hunt is successful, too."
+                    "Some of their Clanmates might not understand why p_l loves r_c0 so much, but when they're alone like this, r_c0's dry wit always gets p_l purring. It doesn't hurt that their hunt is successful, too."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "trait": [
                                 "cold",
@@ -7170,10 +7142,7 @@
                                 "lonesome",
                                 "strange"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -7209,20 +7178,17 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bumpheads_WrWr",
                 "strings": [
-                    "As {PRONOUN/s_c0/subject} always {VERB/s_c0/do/does}, s_c0 turns the hunt into a game. p_l is happy to play along, and they return to camp with a hefty piece of prey each."
+                    "As {PRONOUN/r_c0/subject} always {VERB/r_c0/do/does}, r_c0 turns the hunt into a game. p_l is happy to play along, and they return to camp with a hefty piece of prey each."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "trait": [
                                 "competitive",
                                 "playful",
                                 "childish"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -7258,18 +7224,15 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_bumpheads_WrWr",
                 "strings": [
-                    "p_l always feels safe alone with s_c0, knowing {PRONOUN/p_l/poss} mate's fighting abilities. It doesn't hurt that {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} rather muscular from all that practice... s_c0 spots p_l admiring {PRONOUN/s_c0/object} instead of hunting and teases {PRONOUN/p_l/object}."
+                    "p_l always feels safe alone with r_c0, knowing {PRONOUN/p_l/poss} mate's fighting abilities. It doesn't hurt that {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} rather muscular from all that practice... r_c0 spots p_l admiring {PRONOUN/r_c0/object} instead of hunting and teases {PRONOUN/p_l/object}."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "skill": [
                                 "FIGHTER,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -7305,18 +7268,15 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittyhappy_Wr",
                 "strings": [
-                    "s_c0 suggests a bit of fishing, and p_l playfully groans. Why does going out with s_c0 mean {PRONOUN/p_l/subject} always {VERB/p_l/get/gets} {PRONOUN/p_l/poss} paws wet? Still, s_c0 is undeniably effective at hunting in the water."
+                    "r_c0 suggests a bit of fishing, and p_l playfully groans. Why does going out with r_c0 mean {PRONOUN/p_l/subject} always {VERB/p_l/get/gets} {PRONOUN/p_l/poss} paws wet? Still, r_c0 is undeniably effective at hunting in the water."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "skill": [
                                 "SWIMMER,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -7352,18 +7312,15 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_speakingromance_WrWr",
                 "strings": [
-                    "s_c0 suggests hunting birds, and p_l playfully groans. Why does going out with s_c0 mean {PRONOUN/p_l/subject} always {VERB/p_l/end/ends} up stuck in a tree? Still, s_c0 is undeniably effective at hunting among the treetops."
+                    "r_c0 suggests hunting birds, and p_l playfully groans. Why does going out with r_c0 mean {PRONOUN/p_l/subject} always {VERB/p_l/end/ends} up stuck in a tree? Still, r_c0 is undeniably effective at hunting among the treetops."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "skill": [
                                 "CLIMBER,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -7399,10 +7356,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_romanticstroll_WrWr",
                 "strings": [
-                    "During the hunt, p_l brings {PRONOUN/p_l/poss} mate a small morsel {PRONOUN/p_l/subject} just caught. s_c0 is pleased to have a little mid-hunting snack, and p_l teases {PRONOUN/s_c0/object} about {PRONOUN/s_c0/poss} growling stomach."
+                    "During the hunt, p_l brings {PRONOUN/p_l/poss} mate a small morsel {PRONOUN/p_l/subject} just caught. r_c0 is pleased to have a little mid-hunting snack, and p_l teases {PRONOUN/r_c0/object} about {PRONOUN/r_c0/poss} growling stomach."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "trait": [
                                 "troublesome",
@@ -7435,10 +7392,7 @@
                                 "vengeful",
                                 "wise"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -7474,7 +7428,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_chatting_WrWr",
                 "strings": [
-                    "While they hunt, s_c0 subtly brings up the subject of kits — <i>their</i> kits. p_l purrs and indulges s_c0 in a conversation about their future."
+                    "While they hunt, r_c0 subtly brings up the subject of kits — <i>their</i> kits. p_l purrs and indulges r_c0 in a conversation about their future."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -7482,10 +7436,7 @@
                             "skill": [
                                 "KIT,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -7581,18 +7532,15 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_argue_WrWr",
                 "strings": [
-                    "s_c0 suggests fishing, but p_l shoots down the idea, sick of getting {PRONOUN/p_l/poss} paws wet for {PRONOUN/s_c0/poss} sake. s_c0 feels a little hurt."
+                    "r_c0 suggests fishing, but p_l shoots down the idea, sick of getting {PRONOUN/p_l/poss} paws wet for {PRONOUN/r_c0/poss} sake. r_c0 feels a little hurt."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "skill": [
                                 "SWIMMER,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 0,
@@ -7602,7 +7550,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -7627,18 +7575,15 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_argue_WrWr",
                 "strings": [
-                    "s_c0 suggests hunting birds, but p_l shoots down the idea, sick of balancing on precarious branches for {PRONOUN/s_c0/poss} sake. s_c0 feels a little hurt."
+                    "r_c0 suggests hunting birds, but p_l shoots down the idea, sick of balancing on precarious branches for {PRONOUN/r_c0/poss} sake. r_c0 feels a little hurt."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "skill": [
                                 "CLIMBER,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 0,
@@ -7648,7 +7593,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -7673,26 +7618,23 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_argue_WrWr",
                 "strings": [
-                    "As they hunt, s_c0 gently corrects p_l's hunting crouch, and p_l takes offense. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} s_c0's mate, not a wet-eared apprentice, and {VERB/p_l/need/needs} no advice on how to hunt!"
+                    "As they hunt, r_c0 gently corrects p_l's hunting crouch, and p_l takes offense. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} r_c0's mate, not a wet-eared apprentice, and {VERB/p_l/need/needs} no advice on how to hunt!"
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "skill": [
                                 "TEACHER,1",
                                 "HUNTER,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -7721,27 +7663,24 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/fst_train_NL_matesonadates_WrWr",
                 "strings": [
-                    "p_l and s_c0 stalk a distracted bird gathering up detritus in its beak. Just before {PRONOUN/s_c0/subject} {VERB/s_c0/pounce/pounces}, s_c0 pauses and flicks {PRONOUN/s_c0/poss} tail to a branch overhead where another bird nests. The first bird flies up to join its mate and add to their nest, and p_l and s_c0 watch, their hunt forgotten. p_l purrs at s_c0's sappy nature and twines {PRONOUN/p_l/poss} tail with {PRONOUN/s_c0/inposs}."
+                    "p_l and r_c0 stalk a distracted bird gathering up detritus in its beak. Just before {PRONOUN/r_c0/subject} {VERB/r_c0/pounce/pounces}, r_c0 pauses and flicks {PRONOUN/r_c0/poss} tail to a branch overhead where another bird nests. The first bird flies up to join its mate and add to their nest, and p_l and r_c0 watch, their hunt forgotten. p_l purrs at r_c0's sappy nature and twines {PRONOUN/p_l/poss} tail with {PRONOUN/r_c0/inposs}."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "trait": [
                                 "loving",
                                 "compassionate",
                                 "childish"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -7764,10 +7703,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_catlookingup_Wr",
                 "strings": [
-                    "During the hunt, p_l brings {PRONOUN/p_l/poss} mate a small morsel {PRONOUN/p_l/subject} just caught. s_c0 isn't happy to see p_l break the Warrior Code so casually and refuses the offer coldly. The rest of the hunt is tense."
+                    "During the hunt, p_l brings {PRONOUN/p_l/poss} mate a small morsel {PRONOUN/p_l/subject} just caught. r_c0 isn't happy to see p_l break the Warrior Code so casually and refuses the offer coldly. The rest of the hunt is tense."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "trait": [
                                 "strict",
@@ -7779,17 +7718,14 @@
                                 "insecure",
                                 "grumpy"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -7810,7 +7746,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -7835,10 +7771,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_catlookingup_Wr",
                 "strings": [
-                    "During the hunt, p_l brings {PRONOUN/p_l/poss} mate a small morsel {PRONOUN/p_l/subject} just caught. s_c0 takes offense at {PRONOUN/s_c0/poss} mate's implication that {PRONOUN/s_c0/subject} can't hunt for {PRONOUN/s_c0/self} and rejects the offer. The rest of the hunt is tense."
+                    "During the hunt, p_l brings {PRONOUN/p_l/poss} mate a small morsel {PRONOUN/p_l/subject} just caught. r_c0 takes offense at {PRONOUN/r_c0/poss} mate's implication that {PRONOUN/r_c0/subject} can't hunt for {PRONOUN/r_c0/self} and rejects the offer. The rest of the hunt is tense."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "trait": [
                                 "strict",
@@ -7850,10 +7786,7 @@
                                 "insecure",
                                 "grumpy"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 0,
@@ -7863,7 +7796,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -7889,18 +7822,15 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_sunny2_ApAp",
                 "strings": [
-                    "p_l expects hunting with s_c0 to be easy — after all, {PRONOUN/p_l/poss} mate has one of the sharpest noses in the Clan. However, it seems s_c0 is too captivated by p_l's scent to catch many prey scents..."
+                    "p_l expects hunting with r_c0 to be easy — after all, {PRONOUN/p_l/poss} mate has one of the sharpest noses in the Clan. However, it seems r_c0 is too captivated by p_l's scent to catch many prey scents..."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "skill": [
                                 "SENSE,1"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 0,
@@ -7910,7 +7840,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
