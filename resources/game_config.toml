@@ -623,6 +623,9 @@ dev_tools = false
   # forces the code to find events with the given frequency, frequency can be a number from 1-4
   debug_override_frequency = 0
 
+  # forces ceremony with this id to occur
+  debug_ensure_ceremony_id = "warrior_default0"
+
 [death_related]
   # the maximum lives a leader can have
   max_leader_lives = 9
