@@ -32,19 +32,21 @@
             "MACKERELPATTERN",
             "CLASSICPATTERN",
             "AGOUTIPATTERN",
-            "BENGALBOTTOMGRAD",
-            "BENGALTOPGRAD",
+            "EXOTICBOTTOMGRAD",
+            "EXOTICTOPGRAD",
             "BENGALPATTERN",
             "BENGALPATTERNLIGHT"
         ],
         [
-            "BENGALMUZZLE",
+            "EXOTICMUZZLE",
             "MARBLEDPATTERN",
             "MARBLEDPATTERNFILL",
             "FRECKLEDPATTERNBODY",
             "FRECKLEDPATTERNBACK",
             "FRECKLEDPATTERNGRAD",
-            "BENGALPATTERNFILL"
+            "BENGALPATTERNFILL",
+            "MASKEDCHIN",
+            "SOKOKEPATTERNFILLGRAD"
         ]
 
     ]

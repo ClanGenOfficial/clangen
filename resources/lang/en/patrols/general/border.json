@@ -555,14 +555,11 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol nervously heads towards the unblinking eyes, unsure of what lies ahead. As the strange object comes into view, s_c0 lets out a mrrow of laughter! {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/explain/explains} that this is a Twoleg ritual performed around the start of leaf-bare. p_l is glad to have a cat with s_c0's understanding of Twolegs on this patrol. With this knowledge, unneeded panic was surely avoided!"
+                    "The patrol nervously heads towards the unblinking eyes, unsure of what lies ahead. As the strange object comes into view, r_c0 lets out a mrrow of laughter! {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/explain/explains} that this is a Twoleg ritual performed around the start of leaf-bare. p_l is glad to have a cat with r_c0's understanding of Twolegs on this patrol. With this knowledge, unneeded panic was surely avoided!"
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "past_status": ["kittypet", "loner"],
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                    "r_c0": {
+                        "past_status": ["kittypet", "loner"]
                     }
                 },
                 "exp_gained": 15,
@@ -572,7 +569,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -1103,7 +1100,7 @@
                     "s_c0 can't resist the temptation to make pointed remarks {PRONOUN/s_c0/subject} {VERB/s_c0/know/knows} are hurtful to r_c0. But when r_c0 starts crying, {PRONOUN/s_c0/poss} pelt prickles with shame and {PRONOUN/s_c0/subject} awkwardly {VERB/s_c0/apologize/apologizes}."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "troublesome",
@@ -1120,17 +1117,14 @@
                                 "oblivious",
                                 "rebellious"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -1146,7 +1140,7 @@
                     },
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -1166,10 +1160,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_hunt_funrun_WrWr",
                 "strings": [
-                    "As s_c0 pounces on a bug, r_c0 can't help but snap that this is exactly what {PRONOUN/r_c0/subject} {VERB/r_c0/dislike/dislikes} about s_c0. s_c0 retorts that r_c0 needs to learn to lighten up and enjoy life. r_c0 says that {PRONOUN/r_c0/subject} {VERB/r_c0/do/does} know how to have fun, and s_c0 says to prove it, resulting in an impromptu contest to see who can catch the most bugs."
+                    "As p_l pounces on a bug, r_c0 can't help but snap that this is exactly what {PRONOUN/r_c0/subject} {VERB/r_c0/dislike/dislikes} about p_l. p_l retorts that r_c0 needs to learn to lighten up and enjoy life. r_c0 says that {PRONOUN/r_c0/subject} {VERB/r_c0/do/does} know how to have fun, and p_l says to prove it, resulting in an impromptu contest to see who can catch the most bugs."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "flamboyant",
@@ -1177,17 +1171,14 @@
                                 "playful",
                                 "childish"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -1284,10 +1275,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 can't resist the temptation to make pointed remarks {PRONOUN/s_c0/subject} {VERB/s_c0/know/knows} are hurtful to r_c0. But when a verbal barb sinks too deep and r_c0 starts crying, s_c0 lashes {PRONOUN/s_c0/poss} tail, snapping at r_c0 to focus on patrolling. r_c0 runs off, leaving s_c0 to finish the patrol alone."
+                    "p_l can't resist the temptation to make pointed remarks {PRONOUN/p_l/subject} {VERB/p_l/know/knows} are hurtful to r_c0. But when a verbal barb sinks too deep and r_c0 starts crying, p_l lashes {PRONOUN/p_l/poss} tail, snapping at r_c0 to focus on patrolling. r_c0 runs off, leaving p_l to finish the patrol alone."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "troublesome",
@@ -1303,17 +1294,14 @@
                                 "oblivious",
                                 "rebellious"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -1333,7 +1321,7 @@
                             "r_c0"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -1350,10 +1338,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As s_c0 pounces on a bug, r_c0 can't help but snap that this is exactly what {PRONOUN/r_c0/subject} dislikes about s_c0. s_c0 retorts that r_c0 needs to learn to lighten up and enjoy life. r_c0 says that {PRONOUN/r_c0/subject} {VERB/r_c0/do/does} know how to have fun, and s_c0 says to prove it, but r_c0 says that {PRONOUN/r_c0/subject} {VERB/r_c0/don't/doesn't} have to prove anything to s_c0."
+                    "As p_l pounces on a bug, r_c0 can't help but snap that this is exactly what {PRONOUN/r_c0/subject} dislikes about p_l. p_l retorts that r_c0 needs to learn to lighten up and enjoy life. r_c0 says that {PRONOUN/r_c0/subject} {VERB/r_c0/do/does} know how to have fun, and p_l says to prove it, but r_c0 says that {PRONOUN/r_c0/subject} {VERB/r_c0/don't/doesn't} have to prove anything to p_l."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "flamboyant",
@@ -1361,17 +1349,14 @@
                                 "playful",
                                 "childish"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c0"
@@ -1532,16 +1517,11 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittyhappy_Ap",
                 "strings": [
-                    "r_c2 has dared to challenge the splash-master, and s_c0 will not allow such a transgression to go by unpunished. Fortunately, p_l and r_c0 are in a good mood and allow the apprentices to get out all their energy on the way to the border."
+                    "r_c2 has dared to challenge the splash-master, and r_c1 will not allow such a transgression to go by unpunished. Fortunately, p_l and r_c0 are in a good mood and allow the apprentices to get out all their energy on the way to the border."
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "s_c0": {
+                    "r_c1": {
                         "stat": {
                             "trait": [
                                 "competitive",
@@ -1549,9 +1529,11 @@
                                 "playful",
                                 "childish"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c1"
+                        }
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
                         ]
                     }
                 },
@@ -1580,7 +1562,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittyhappy_Ap",
                 "strings": [
-                    "r_c1 sends a shower of droplets onto s_c0's pelt, but {PRONOUN/r_c1/subject} didn't realize how comfortable s_c0 is in the water. s_c0 trots along, water dripping off {PRONOUN/s_c0/poss} pelt, perfectly content on the way to the o_c_n border."
+                    "r_c1 sends a shower of droplets onto r_c2's pelt, but {PRONOUN/r_c1/subject} didn't realize how comfortable r_c2 is in the water. r_c2 trots along, water dripping off {PRONOUN/r_c2/poss} pelt, perfectly content on the way to the o_c_n border."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1588,15 +1570,12 @@
                             "apprentice"
                         ]
                     },
-                    "s_c0": {
+                    "r_c2": {
                         "stat": {
                             "skill": [
                                 "SWIMMER,0"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c2"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 30,
@@ -1624,20 +1603,10 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittymad_Wr",
                 "strings": [
-                    "Watching r_c1 and r_c2 splash each other, s_c0 shoots a mischievous look at p_l. p_l frowns back, shaking {PRONOUN/p_l/poss} head, but it's too late. <i>Splash!</i> It's a very wet border patrol."
+                    "Watching r_c1 and r_c2 splash each other, r_c0 shoots a mischievous look at p_l. p_l frowns back, shaking {PRONOUN/p_l/poss} head, but it's too late. <i>Splash!</i> It's a very wet border patrol."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "trait": [
                                 "playful",
@@ -1648,9 +1617,16 @@
                                 "shameless",
                                 "troublesome"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
+                        }
+                    },
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
                         ]
                     }
                 },
@@ -1675,7 +1651,7 @@
                     },
                     {
                         "cats_from": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "cats_to": [
                             "p_l"
@@ -1694,7 +1670,7 @@
                             "p_l"
                         ],
                         "cats_to": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "values": [
                             "respect"
@@ -1807,16 +1783,11 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_catlookingup_Wr",
                 "strings": [
-                    "r_c2 has dared to challenge the splash-master, and s_c0 will not allow such a transgression to go by unpunished. Unfortunately, p_l and r_c0 aren't in a good mood and scold the apprentices to take this patrol seriously."
+                    "r_c2 has dared to challenge the splash-master, and r_c1 will not allow such a transgression to go by unpunished. Unfortunately, p_l and r_c0 aren't in a good mood and scold the apprentices to take this patrol seriously."
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "s_c0": {
+                    "r_c1": {
                         "stat": {
                             "trait": [
                                 "competitive",
@@ -1824,9 +1795,11 @@
                                 "playful",
                                 "childish"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c1"
+                        }
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
                         ]
                     }
                 },
@@ -1889,16 +1862,11 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_waterdive_Ap",
                 "strings": [
-                    "s_c0 isn't going to lose, even in a playful fight, and pounces on r_c2. Before p_l and r_c0 can intervene, s_c0 thrusts r_c2's head into a rather deep puddle. When r_c2 resurfaces, {PRONOUN/r_c2/subject}{VERB/r_c2/'re/'s} choking and spluttering. s_c0 is rebuked for taking the game too far."
+                    "r_c1 isn't going to lose, even in a playful fight, and pounces on r_c2. Before p_l and r_c0 can intervene, r_c1 thrusts r_c2's head into a rather deep puddle. When r_c2 resurfaces, {PRONOUN/r_c2/subject}{VERB/r_c2/'re/'s} choking and spluttering. r_c1 is rebuked for taking the game too far."
                 ],
                 "involved_cats": {
                     "r_c0": {},
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "s_c0": {
+                    "r_c1": {
                         "stat": {
                             "trait": [
                                 "bold",
@@ -1909,9 +1877,11 @@
                                 "troublesome",
                                 "shameless"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c1"
+                        }
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
                         ]
                     }
                 },
@@ -1922,7 +1892,7 @@
                             "r_c2"
                         ],
                         "cats_to": [
-                            "s_c0"
+                            "r_c1"
                         ],
                         "values": [
                             "like",

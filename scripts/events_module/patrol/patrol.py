@@ -79,7 +79,7 @@ def get_patrol_temperament(patrol_cats: list, patrol_leader=None) -> tuple[str, 
 
 
 class Patrol:
-    used_patrols = []
+    used_patrols = {"romance": [], "normal": []}
 
     def __init__(self):
         self.patrol_event: Optional[PatrolEvent] = None
@@ -130,7 +130,6 @@ class Patrol:
                 self.patrol_event.poi.get("tags"),
                 self.patrol_event.poi.get("category"),
             )
-        Patrol.used_patrols.append(self.patrol_event.event_id)
 
         # Return text adjusted patrol intro
         return event_text_adjust(
@@ -377,7 +376,7 @@ class Patrol:
             )
         ]
         # make sure the hunting patrols are balanced
-        if patrol_type == "hunting":
+        if patrol_type == "hunting" and not self.debug_patrol_id:
             possible_patrols = self.balance_hunting(possible_patrols)
 
         # separate into the two lists
@@ -398,13 +397,15 @@ class Patrol:
 
         # first we see if we can get a romantic patrol
         if romantic_patrols and not self.debug_patrol_id:
-            chosen_patrol = self._get_valid_patrol(romantic_patrols.copy())
-            if not self._decide_if_romantic(chosen_patrol):
-                chosen_patrol = None
+            chosen_patrol = self._get_valid_patrol(
+                romantic_patrols.copy(), find_romance=True
+            )
 
         # if no romantic patrol possible, we get a normal one!
         if not chosen_patrol:
-            chosen_patrol = self._get_valid_patrol(normal_patrols.copy())
+            chosen_patrol = self._get_valid_patrol(
+                normal_patrols.copy(), find_romance=False
+            )
             if not chosen_patrol:
                 raise Exception(
                     "ERROR: No patrols could be found, even after resetting the used patrol list."
@@ -412,18 +413,26 @@ class Patrol:
 
         return chosen_patrol
 
-    def _clear_used_and_retry(self, possible_patrols: List[PatrolEvent]):
+    def _clear_used_and_retry(
+        self, possible_patrols: List[PatrolEvent], find_romance: bool = False
+    ):
         """
         Clears used patrols and attempts to get a new valid patrol
         """
-        self.used_patrols.clear()
+        Patrol.used_patrols["romance" if find_romance else "normal"].clear()
 
-        return self._get_valid_patrol(possible_patrols)
+        return self._get_valid_patrol(possible_patrols, find_romance)
 
     def _get_valid_patrol(
-        self, possible_patrols: List[PatrolEvent]
+        self, possible_patrols: List[PatrolEvent], find_romance: bool = False
     ) -> Optional[PatrolEvent]:
         chosen_patrol = None
+        patrols_to_test = [
+            p
+            for p in possible_patrols
+            if p.event_id
+            not in Patrol.used_patrols["romance" if find_romance else "normal"]
+        ]
         while not chosen_patrol:
             chosen_patrol, involved_cats = get_valid_event(
                 primary_cat=self.involved_cats["p_l"],
@@ -433,22 +442,31 @@ class Patrol:
                     for c in self.involved_cats["patrol_cats"]
                     if c != self.involved_cats["p_l"]
                 ],
-                possible_events=possible_patrols,
+                possible_events=patrols_to_test,
                 other_clan=self.other_clan,
                 ensured_id=self.debug_patrol_id,
                 general_constraints_active=False,
             )
             if not chosen_patrol:
-                if not self.used_patrols:
+                if not Patrol.used_patrols["romance" if find_romance else "normal"]:
                     # No patrols found even after resetting used patrols.
                     # This should only be possible when filtering for romance patrols.
                     return None
 
                 # if we couldn't find a patrol, then we need to clear the used_patrols and try again
-                chosen_patrol = self._clear_used_and_retry(possible_patrols)
+                chosen_patrol = self._clear_used_and_retry(
+                    possible_patrols, find_romance=find_romance
+                )
             else:
                 # otherwise, let's set our involved cats and move on with this patrol!
                 self.involved_cats = involved_cats
+
+        if find_romance:
+            if not self._decide_if_romantic(chosen_patrol):
+                return None
+            Patrol.used_patrols["romance"].append(chosen_patrol.event_id)
+        else:
+            Patrol.used_patrols["normal"].append(chosen_patrol.event_id)
 
         return chosen_patrol
 
@@ -678,19 +696,13 @@ class Patrol:
 
         return success_outcome if success else fail_outcome, success
 
-    def balance_hunting(self, possible_patrols: list[PatrolEvent]):
-        """Filter the incoming hunting patrol list to balance the different kinds of hunting patrols.
-        With this filtering, there should be more prey possible patrols.
-
-            Parameters
-            ----------
-            possible_patrols : list
-                list of patrols which should be filtered
-
-            Returns
-            ----------
-            filtered_patrols : list
-                list of patrols which is filtered
+    def balance_hunting(self, possible_patrols: list[PatrolEvent]) -> list[PatrolEvent]:
+        """
+        Check which prey amount we want to allow this clan to get and filter the possible_patrols accordingly to ensure
+        they only have patrols where that amount is possible.
+        :param possible_patrols: The list of possible patrols
+        :returns: The list of possible patrols but filtered to only include those patrols which have the chosen prey
+        amount. If there were no patrols with the chosen prey amount, then the original list is returned
         """
         filtered_patrols = []
 
@@ -700,16 +712,17 @@ class Patrol:
             if not game.clan.override_biome
             else game.clan.override_biome
         )
-        season = game.clan.current_season
-        prey_size = ["tiny", "small", "medium", "large", "huge"]
-        prey_size_random_weights = PATROL_BALANCE[biome][season]
+        prey_sizes = ["tiny", "small", "medium", "large", "huge"]
+        prey_size_random_weights = get_config(
+            f"prey.patrol_balance.{biome}.{game.clan.current_season}"
+        )
 
-        chosen_prey_size = choices(prey_size, weights=prey_size_random_weights)[0]
+        chosen_prey_size = choices(prey_sizes, weights=prey_size_random_weights)[0]
         print(f"chosen filter prey size: {chosen_prey_size}")
 
-        # filter all possible patrol depending on the needed prey size
+        # filter all possible patrols depending on the needed prey size
         for patrol in possible_patrols:
-            # count the outcomes + prey size
+            # count how many outcomes award each prey size
             prey_size_to_outcome_amounts = {}
             for outcome in patrol.success_outcomes:
                 if outcome.supply:
@@ -727,19 +740,22 @@ class Patrol:
             for size, amount in prey_size_to_outcome_amounts.items():
                 if amount >= max_occurrences:
                     most_prey_size = size
+                    max_occurrences = amount
 
+            # if the most often awarded prey size matches the one we want, then we allow this patrol through
             if chosen_prey_size == most_prey_size:
                 filtered_patrols.append(patrol)
             elif self.debug_patrol_id and self.debug_patrol_id == patrol.event_id:
                 print(
-                    "DEBUG: requested patrol does not meet constraints (failed prey balancing)"
+                    f"DEBUG: requested patrol does not meet constraints (did not have the prey amount required for prey balancing)"
                 )
         # if the filtering results in an empty list, don't filter and return whole possible patrols
         if len(filtered_patrols) <= 0:
             print(
-                "---- WARNING ---- filtering to balance out the hunting, didn't work."
+                "---- WARNING ---- attempted prey balancing filtering, but there were no patrols with the required prey amount."
             )
-            filtered_patrols = possible_patrols
+            return possible_patrols
+
         return filtered_patrols
 
     def get_patrol_art(self, outcome: TextPoolEvent = None) -> Optional[pygame.Surface]:
@@ -786,11 +802,3 @@ class Patrol:
                 return pygame.image.load(f"{april_fools_root_dir}{file_name}.png")
 
         return pygame.image.load(f"{root_dir}{file_name}.png")
-
-
-# ---------------------------------------------------------------------------- #
-#                               PATROL CLASS END                               #
-# ---------------------------------------------------------------------------- #
-
-PATROL_WEIGHT_ADAPTION = constants.CONFIG["prey"]["patrol_weight_adaption"]
-PATROL_BALANCE = constants.CONFIG["prey"]["patrol_balance"]
