@@ -44,7 +44,7 @@ logger = logging.getLogger(__name__)
 def execute_outcome(
     event: TextPoolEvent,
     event_involved_cats: dict[str, Union[Cat, list[Cat]]],
-    other_clan: OtherClan,
+    other_clan: OtherClan = None,
 ):
     """
     Executes the outcome, applying any specified consequences.
@@ -331,7 +331,10 @@ def __handle_death_history(cat: Cat, death_text: str, other_clan: OtherClan) -> 
         print("WARNING: Death occurred, but some death history is missing.")
         death_text = i18n.t("defaults.patrol_regular_death")
 
-    final_death_history = death_text.replace("o_c_n", other_clan.name)
+    if other_clan:
+        final_death_history = death_text.replace("o_c_n", other_clan.name)
+    else:
+        final_death_history = death_text
 
     cat.history.add_death(death_text=final_death_history)
 
@@ -493,13 +496,13 @@ def _handle_condition_history(
     if scar_string:
         scar_string = (
             scar_string
-            if "o_c_n" not in scar_string
+            if "o_c_n" not in scar_string or not other_clan
             else scar_string.replace("o_c_n", other_clan.name)
         )
     if death_string:
         death_string = (
             death_string
-            if "o_c_n" not in death_string
+            if "o_c_n" not in death_string or not other_clan
             else death_string.replace("o_c_n", other_clan.name)
         )
 
@@ -531,7 +534,7 @@ def _handle_reputation_changes(event: TextPoolEvent, other_clan: OtherClan) -> s
         else:
             results.append(i18n.t("screens.patrol.outsider_rep_worsened"))
 
-    if other_clan_change:
+    if other_clan_change and other_clan:
         change_clan_relations(other_clan, other_clan_change)
         if other_clan_change > 0:
             results.append(
@@ -747,7 +750,9 @@ def _handle_exp(
         mode_modifier = 3
 
     base_exp = 0
-    if "masterful" in (x.experience_level for x in event_involved_cats["patrol_cats"]):
+    if "masterful" in (
+        x.experience_level for x in event_involved_cats.get("patrol_cats")
+    ):
         max_boost = 10
     else:
         max_boost = 0
@@ -756,7 +761,7 @@ def _handle_exp(
     gained_exp = patrol_exp + base_exp + max_boost
     gained_exp = max(
         gained_exp
-        * (1 - 0.1 * len(event_involved_cats["patrol_cats"]))
+        * (1 - 0.1 * len(event_involved_cats.get("patrol_cats")))
         / mode_modifier,
         1,
     )
@@ -766,11 +771,11 @@ def _handle_exp(
         app_exp = 0
     else:
         app_exp = max(
-            randint(1, 7) * (1 - 0.1 * len(event_involved_cats["patrol_cats"])), 1
+            randint(1, 7) * (1 - 0.1 * len(event_involved_cats.get("patrol_cats"))), 1
         )
 
     if gained_exp or app_exp:
-        for cat in event_involved_cats["patrol_cats"]:
+        for cat in event_involved_cats.get("patrol_cats"):
             if cat.status.rank.is_any_apprentice_rank():
                 cat.add_experience(app_exp)
             else:

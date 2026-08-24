@@ -1,4 +1,4 @@
-# Leader ceremonies
+# Leader Ceremonies
 
 ## Guidelines
 - If using dialogue quotes, put a `\` before the `"` to allow it to work within a json.

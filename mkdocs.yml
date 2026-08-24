@@ -32,6 +32,7 @@ nav:
           - dev/writing/reference/terminology.md
           - dev/writing/reference/tag-lists.md
           - dev/writing/reference/common-formats.md
+          - dev/writing/reference/involved-cat-dict.md
           - dev/writing/reference/pronoun-tags.md
           - dev/writing/reference/trait-dictionary.md
           - dev/writing/reference/biomes.md
@@ -41,12 +42,14 @@ nav:
         - Patrols:
           - dev/writing/patrols/patrols.md
           - dev/writing/patrols/patrol_outcome.md
+        - Ceremonies:
+            - dev/writing/ceremonies/leader-ceremonies.md
+            - dev/writing/ceremonies/normal-ceremonies.md
         - dev/writing/shortevents.md
         - dev/writing/future.md
         - dev/writing/leaders-den-events.md
         - dev/writing/thoughts.md
         - dev/writing/relationship-events.md
-        - dev/writing/leader-ceremonies.md
         - dev/writing/points-of-interest.md
         - dev/writing/localization.md
         - dev/writing/advanced-documentation.md
