@@ -253,7 +253,7 @@ class TestNewCatCreation(unittest.TestCase):
 
             self.assertEqual(
                 test_cat.gender,
-                ["male"],
+                "male",
                 msg=f"male was not assigned correctly as the current gender.",
             )
             # test female works
