@@ -31,7 +31,7 @@ def validate_clan_rank(value: str) -> str:
 
 def validate_clan_ranks_with_min(value: str) -> str:
     ranks = [r.value for r in Rank]
-    found_ranks = findall(r"clan:(?:[^,(]+\(min:\d+\),)+")
+    found_ranks = findall(r"clan:(?:[^,(]+\(min:\d+\),)+", value)
     for one_m in found_ranks:
         if one_m not in ranks:
             raise ValueError(f"Rank {one_m} in {value} is not a valid rank!")
