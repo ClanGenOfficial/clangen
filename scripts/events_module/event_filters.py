@@ -570,9 +570,9 @@ def _check_cat_apprentice(cat, has_app: dict) -> bool:
 
     # check for None value instead of False-y!
     if has_app.get("former") is not None:
-        if has_app["former"] and not cat.former_apprentice:
+        if has_app["former"] and not cat.former_apprentices:
             return False
-        if not has_app["former"] and cat.former_apprentice:
+        if not has_app["former"] and cat.former_apprentices:
             return False
 
     return True
