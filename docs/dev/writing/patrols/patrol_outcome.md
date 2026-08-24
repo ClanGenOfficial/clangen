@@ -64,6 +64,8 @@ Outcomes utilize the `TextPoolEvent` format.
             "constraints": []
         }
     ],
+    "patrol_temperament": [],
+    "other_clan_temperament": [],
     "exp_gained": 0,
     "reputation_changes": {
         "other_clan": 0,
@@ -274,6 +276,22 @@ Constrains the event to only occur if the specified relationships exist. Multipl
 
 !!! caution "For example"
     To work off of our earlier example: we would list `trusts` in our `constraints`
+
+***
+
+### patrol_temperament: list[str]
+List of allowed patrol temperaments. The patrol's temperament is calculated from the personalities of the cats on it, weighted by rank. [Possible Tempers](../reference/tag-lists.md/#clan-temperaments). You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
+
+!!! tip
+    Constraining temperament on an outcome rather than on the patrol keeps the patrol available for everyone. A wary patrol and a mellow one can walk into the same border skirmish and come away with different stories.
+
+***
+
+### other_clan_temperament: list[str]
+List of allowed temperaments for the other Clan involved in the patrol. [Possible Tempers](../reference/tag-lists.md/#clan-temperaments). You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
+
+!!! caution
+    An outcome using this will never be chosen if no other Clan is involved in the patrol, so make sure every outcome list has at least one option without it.
 
 ***
 

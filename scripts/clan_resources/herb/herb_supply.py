@@ -170,6 +170,17 @@ class HerbSupply:
             # return before we can add any herbs
             return
 
+        if get_config("clan_resources.herbs.half_starting_storage"):
+            for herb in self.base_herb_list:
+                if randint(1, 4) == 1:
+                    self.add_herb(
+                        herb,
+                        num_collected=round(
+                            randint(self.adequate_qualifier, self.full_qualifier) / 2
+                        ),
+                    )
+            return
+
         for herb in self.base_herb_list:
             if randint(1, 4) == 1:
                 self.add_herb(

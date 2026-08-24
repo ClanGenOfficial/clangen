@@ -5,6 +5,7 @@ from typing import List, Union
 from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
+from scripts.models.common.temperament import Temperament
 from scripts.models.shortevent.other_clan_rep import OtherClanRep
 
 
@@ -17,4 +18,8 @@ class OtherClan(BaseModel):
     changed: Union[int, MISSING] = Field(
         MISSING,
         description="How the reputation of the Clan changes as a result of this event",
+    )
+    temperament: Union[List[Temperament], MISSING] = Field(
+        MISSING,
+        description="The temperament the Clan must have in order for this event to be possible.",
     )

@@ -47,6 +47,7 @@ These tags are used for more general filtering purposes.
 | "new_years"   | Used to mark events that should only occur on new years.                                                                 |
 
 > **Tags To Indicate Present Statuses** - Sometimes you may want to indicate in event text that other cats of a certain status as present in addition to m_c and r_c (perhaps m_c and r_c are watching kits play, or discussing the progress of apprentices, or complaining about tending to elders.) These tags can be used to ensure that there are cats of the mentioned status currently living within the Clan, this helps prevent situation where cats are watching nonexistent kits or other such impossibilities. Keep in mind that all of these tags check for the presence of *at least* 2 cats of the indicated status.
+> These can utilize [exclusionary tags](tag-lists.md#exclusionary-tags).
 
 | string        | use                                                                                                                                                            |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -520,15 +521,18 @@ You can utilize [#exclusionary tags](#exclusionary-tags). They function the same
 ## Interpersonal Relationships
 > These tags are used to indicate a type of Interpersonal relationship involved cats should have. These are meant for use as m_c's relationship with r_c's, or, in the case of patrols, p_l's relationship toward the other cat. 
 
-| string            |                                    | Patrol Use Specifics                   |
-|-------------------|------------------------------------|----------------------------------------|
-| `siblings`        | cat1 and cat2 are siblings         | all cats are siblings                  |
-| `littermates`     | cat1 and cat2 are littermates      | all cats are littermates               |
-| `mates`           | cat1 and cat2 are mates            | all cats are mates                     |
-| `parent/child`    | cat1 is the parent of cat2         | only for use in 2-cat patrols          |
-| `child/parent`    | cat1 is the child of cat2          | only for use in 2-cat patrols          |
-| `app/mentor`      | cat1 is the apprentice of cat2     | only for use in 2-cat patrols          |
-| `mentor/app`      | cat1 is the mentor of cat2         | only for use in 2-cat patrols          |
+| string            |                                       | Patrol Use Specifics                   |
+|-------------------|---------------------------------------|----------------------------------------|
+| `siblings`        | cat1 and cat2 are siblings            | all cats are siblings                  |
+| `littermates`     | cat1 and cat2 are littermates         | all cats are littermates               |
+| `mates`           | cat1 and cat2 are mates               | all cats are mates                     |
+| `parent/child`    | cat1 is the parent of cat2            | only for use in 2-cat patrols          |
+| `child/parent`    | cat1 is the child of cat2             | only for use in 2-cat patrols          |
+| `app/mentor`      | cat1 is the apprentice of cat2        | only for use in 2-cat patrols          |
+| `mentor/app`      | cat1 is the mentor of cat2            | only for use in 2-cat patrols          |
+| `past_app/mentor` | cat1 is the former apprentice of cat2 | only for use in 2-cat patrols          |
+| `past_mentor/app` | cat1 is the former mentor of cat2     | only for use in 2-cat patrols          |
+
 
 You can utilize [#exclusionary tags](#exclusionary-tags).
 
@@ -541,7 +545,11 @@ You can utilize [#exclusionary tags](#exclusionary-tags).
 ***
 
 ## Clan Temperaments
-> These tags are used to indicate what type of Clan can receive an event.
+> These tags are used to indicate what type of Clan can receive an event. Patrols also use them to indicate what sort of patrol can receive an event, which uses the personalities of the cats on the patrol rather than from a Clan.
+
+> Every temperament is a pairing of one tag from each table below, so a Clan or patrol always holds two of them at once. Tagging a single temperament constrains only that half of the pairing.
+
+> Use `"any"` if any temperament is allowed. Not every parameter that links here accepts [exclusionary tags](#exclusionary-tags), so check the parameter itself.
 
 |                 | low aggression | mid aggression | high aggression  |
 |-----------------|----------------|----------------|------------------|

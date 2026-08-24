@@ -18,6 +18,11 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
     "season": [],
     "sub_type": [],
     "tags": [],
+    "poi": {
+      "name": [],
+      "tags": [],
+      "category": ""
+    },
     "frequency": 4,
     "event_text": "event text here",
     "new_accessory": [],
@@ -74,7 +79,8 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
     },
     "other_clan": {
         "current_rep": [],
-        "changed": 0
+        "changed": 0,
+        "temperament": []
     },
     "supplies": [
         {
@@ -208,7 +214,7 @@ lowercase season names + "any"
 
     However, remember the wide range of ages and statuses we have and how they can overlap with each other.  It's possible to have warriors who graduate early and are still adolescent age.  It's also possible for apps to train longer than usual and become young adults without becoming warriors.  Elders, likewise, can be both young and old cats as it's possible for cats to retire to the elder den at any age.
 
->**group:[list]** : a list of groups in [Groups List](reference/tag-lists.md#groups) m_c can belong to. Defaults to "player_clan" if omitted. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tag).
+>**group:[list]** : a list of groups in [Groups List](reference/tag-lists.md#groups) m_c can belong to. Defaults to "player_clan" if omitted. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 
 >**relationship_status:[list]** : dictates what relationships m_c must have towards r_c.  Do not use this section if there is no r_c in the event. [Relationship Tiers](reference/tag-lists.md#relationship-tiers) and [Interpersonal Relationships](reference/tag-lists.md#interpersonal-relationships).
 
@@ -229,7 +235,7 @@ lowercase season names + "any"
 >
 >**status:[list]** : a list of statuses r_c can be. If they can be anything, use "any". You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 >
->**group:[list]** : a list of groups in [Groups List](reference/tag-lists.md#groups) r_c can belong to. Defaults to "player_clan" if omitted. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tag).
+>**group:[list]** : a list of groups in [Groups List](reference/tag-lists.md#groups) r_c can belong to. Defaults to "player_clan" if omitted. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
 >
 >**relationship_status:[list]** : dictates what relationships the r_c must have towards m_c. You can include any tags in [Relationship Levels](reference/tag-lists.md#relationship-tiers). This is not a pool. m_c and r_c must meet every relationship constraint chosen, not just one of the constraints.  
 > 
@@ -367,6 +373,8 @@ lowercase season names + "any"
 >**current_rep:[list[str]]:**  The reputation the Clan must have in order for this event to be possible.  "hostile", "neutral", "ally".  Use "any" if any rep is allowed.
 >
 >**changed:int:**  How the reputation of the Clan changes as a result of this event.
+>
+>**temperament:list[str]:**  The temperament the other Clan must have in order for this event to be possible. [Possible Tempers](reference/tag-lists.md/#clan-temperaments). You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags). Leave it out to allow any temperament.
 
 ***
 

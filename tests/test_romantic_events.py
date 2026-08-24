@@ -6,6 +6,7 @@ from scripts.cat.factories.test_cat_factory import TestCatFactory
 
 from scripts.cat.enums import CatRank, CatSocial, CatGroup
 from scripts.cat.factories.typed_dicts import StatusDict
+from scripts.cat.microservices.conditions import get_ill
 from scripts.clan import Clan
 from scripts.game_structure import game
 from scripts.game_structure.game import Switch
@@ -60,7 +61,7 @@ class MovingOn(unittest.TestCase):
         Check if the cat will move on while grieving
         """
         self.cat2.die()
-        self.cat1.get_ill("grief stricken")
+        get_ill(cat=self.cat1, illness_name="grief stricken")
         romantic_events._handle_moving_on(self.cat1)
 
         self.assertIn(
