@@ -2,7 +2,7 @@ from random import choice
 
 from scripts.cat.cats import Cat
 from scripts.config import get_config
-from scripts.event_class import Single_Event
+from scripts.events_module.event_information import EventInformation
 from scripts.events_module.text_adjust import ceremony_text_adjust
 from scripts.events_module.text_pool_event.event_retrieval import (
     load_text_pool_events,
@@ -55,5 +55,5 @@ def create_ceremony(
     )
 
     game.cur_events_list.append(
-        Single_Event(processed_string, "ceremony", [c.ID for c in button_cats])
+        EventInformation(processed_string, "ceremony", [c.ID for c in button_cats])
     )

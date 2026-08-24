@@ -13,8 +13,8 @@ from scripts.conditions import (
     get_amount_cat_for_one_medic,
 )
 from scripts.config import get_config
-from scripts.event_class import Single_Event
 from scripts.events_module.ceremony.generate_normal_ceremony import create_ceremony
+from scripts.events_module.event_information import EventInformation
 from scripts.game_structure import game, constants
 from scripts.game_structure.game import Switch
 from scripts.game_structure.game.switches import switch_set_value
@@ -147,7 +147,7 @@ def check_and_promote_deputy():
 
     if not get_clan_setting("deputy"):
         # player doesn't want us to pick a dep for them
-        game.cur_events_list.insert(0, Single_Event("defaults.warn_no_deputy"))
+        game.cur_events_list.insert(0, EventInformation("defaults.warn_no_deputy"))
         return
 
     # This determines all the cats who are eligible to be deputy.
@@ -178,7 +178,7 @@ def check_and_promote_deputy():
         else:
             # If there are no warriors at all, no one is named deputy.
             game.cur_events_list.append(
-                Single_Event(i18n.t("hardcoded.ceremony_deputy_none"), "ceremony")
+                EventInformation(i18n.t("hardcoded.ceremony_deputy_none"), "ceremony")
             )
             return
 
