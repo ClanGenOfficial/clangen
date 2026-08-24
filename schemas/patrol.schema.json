@@ -1634,13 +1634,19 @@
         },
         "intro_text": {
           "description": "The text that displays when the patrol first starts.",
+          "items": {
+            "type": "string"
+          },
           "title": "Intro Text",
-          "type": "string"
+          "type": "array"
         },
         "decline_text": {
           "description": "The text that displays if the patrol is declined (do not proceed)",
+          "items": {
+            "type": "string"
+          },
           "title": "Decline Text",
-          "type": "string"
+          "type": "array"
         },
         "success_outcomes": {
           "items": {
