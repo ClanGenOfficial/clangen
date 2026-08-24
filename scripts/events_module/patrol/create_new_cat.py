@@ -127,7 +127,7 @@ def updated_create_new_cat(
                 adoptive_parents.append(involved_cats[p])
 
     # GENDER
-    gender = choice(option_dict.get("gender", []))
+    gender = choice(option_dict.get("gender")) if option_dict.get("gender") else None
     if "can_birth" in gender:
         if not get_clan_setting("same sex birth"):
             gender = "female"
