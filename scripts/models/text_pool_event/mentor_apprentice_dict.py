@@ -1,5 +1,3 @@
-from typing import Union
-
 from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 

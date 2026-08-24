@@ -38,7 +38,7 @@
             ]
         },
         {
-            "url": "./schemas/ceremony_event.schema.json",
+            "url": "./schemas/ceremony.schema.json",
             "fileMatch": [
                 "events/ceremonies/*.json",
                 "!events/ceremonies/ceremony_traits.json"

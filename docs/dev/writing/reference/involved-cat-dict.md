@@ -186,6 +186,22 @@ These can also be exclusionary tags such as: `-p_l` to allow any cat *except* `p
 
 ***
 
+### **current_exp: list[str]**
+> Constrains the event to only occur if the cat's exp level is part of the constraints
+
+Possible levels:
+
+- `untrained`
+- `learning`
+- `prepared`
+- `capable`
+- `proficient`
+- `adept`
+- `masterful`
+
+!!! tip
+    Cats are generally `untrained` until they become adolescents. Cats will graduate when they are `prepared` or when they reach a "maximum" age (typically a few moons into adulthood.)
+
 ### **health: dict[str: var]**
 > Constrains the event to only occur if the cat's health matches the constraints.
  

@@ -3,7 +3,6 @@ from typing import Union, List, Literal
 from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
-from scripts.events_module.parameter_dicts import NameCheckDict
 from scripts.models.common.age import Age
 from scripts.models.common.backstory import Backstory
 from scripts.models.common.experience_levels import ExperienceLevels
@@ -12,6 +11,7 @@ from scripts.models.common.group import Group
 from scripts.models.text_pool_event.mentor_apprentice_dict import MentorApprenticeDict
 from scripts.models.text_pool_event.can_create_new_cat import CanCreateNewCat
 from scripts.models.text_pool_event.health_dict import HealthDict
+from scripts.models.text_pool_event.name_check_dict import NameCheckDict
 from scripts.models.text_pool_event.standing_dict import StandingDict
 from scripts.models.text_pool_event.stat_dict import StatDict
 from scripts.models.text_pool_event.status_any import StatusAny

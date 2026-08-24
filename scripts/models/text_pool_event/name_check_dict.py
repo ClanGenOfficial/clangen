@@ -1,10 +1,8 @@
-from typing import Union
-
 from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
 
-class MentorApprenticeDict(BaseModel):
+class NameCheckDict(BaseModel):
     model_config = ConfigDict(extra="forbid")
     has_suffix: bool | MISSING = Field(
         MISSING,

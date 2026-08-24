@@ -1415,13 +1415,11 @@
       "additionalProperties": false,
       "properties": {
         "has_suffix": {
+          "description": "If True, cat must have a suffix. If False, cat must have no suffix",
           "title": "Has Suffix",
           "type": "boolean"
         }
       },
-      "required": [
-        "has_suffix"
-      ],
       "title": "NameCheckDict",
       "type": "object"
     },

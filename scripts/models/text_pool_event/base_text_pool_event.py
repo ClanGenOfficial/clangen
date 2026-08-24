@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Dict, List, Union, Literal
+from typing import Dict, List, Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
