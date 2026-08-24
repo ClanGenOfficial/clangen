@@ -533,11 +533,22 @@ def event_text_adjust(
                     if style == potential_collar:
                         accessory_name = potential_collar
                         break
+            text = text.replace(
+                "acc_singular",
+                i18n.t(f"cat.accessories.{accessory_name}", count=1),
+            )
+
+        if "given_herb" in text:
+            text = text.replace(
+                "given_herb", i18n.t(f"conditions.herbs.{chosen_herb}", count=2)
+            )
+
+    return text
 
 
-def accessory_text_adjust(text: str, acc_dict: dict[str, str]):
+def accessory_text_adjust(text: str, acc_dict: dict[str, str]) -> str:
     """
-    Handles just the accessory text adjust
+    Handles just the accessory text adjust. Used for TextPoolEvents.
     """
     for text_abbr, acc_name in acc_dict.items():
         if f"{text_abbr}_plural" in text:
