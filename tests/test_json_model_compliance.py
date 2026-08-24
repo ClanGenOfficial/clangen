@@ -205,6 +205,6 @@ def test_ceremony_file_events(ceremony_file: Path):
     transition_files(),
     ids=format_file_context_string,
 )
-def test_group_relationship_events(transition_file: Path):
+def test_transition_events(transition_file: Path):
     """Test that all transition_file JSONs are correct according to the Pydantic models"""
     TransitionSchema.model_validate_json(transition_file.read_text())
