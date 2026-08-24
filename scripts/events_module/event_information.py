@@ -1,30 +1,35 @@
-# pylint: disable=line-too-long
-"""
+from typing import Literal, TYPE_CHECKING
 
-TODO: Docs
-
-
-"""
+if TYPE_CHECKING:
+    from scripts.cat.cats import Cat
 
 
-# pylint: enable=line-too-long
-class Single_Event:
+class EventInformation:
     """A class to hold info regarding a single event"""
 
-    def __init__(self, text, types=None, cats_involved=None, cat_dict=None):
-        """text: The event text.
-        types: Which types of event, in a list or tuple. Current options are:
+    def __init__(
+        self,
+        text: str,
+        types: list[
+            Literal[
                 "relation", "ceremony", "birth_death", "health", "other_clans", "misc"
-        cat_involved: list or tuples of the IDs of cats involved in the event
-        cat_dict: dict suitable for event_text_adjust containing the
+            ]
+        ] = None,
+        cats_involved: list | tuple = None,
+        cat_dict: dict = None,
+    ):
+        """
+        :param text: The event text.
+        :param types: Which types of event, in a list. Current options are:
+                "relation", "ceremony", "birth_death", "health", "other_clans", "misc"
+        :param cats_involved: list or tuples of the IDs of cats involved in the event
+        :param cat_dict: dict suitable for event_text_adjust containing the cat's text abbreviation as the key and the
+        cat object as the value
         """
 
         self.text = text
 
-        if isinstance(types, str):
-            self.types = []
-            self.types.append(types)
-        elif isinstance(types, list) or isinstance(types, tuple):
+        if types:
             self.types = list(types)
         else:
             self.types = []
@@ -45,7 +50,7 @@ class Single_Event:
 
     def to_dict(self):
         """
-        Convert Single_Event to dictionary.
+        Convert EventInformation to dictionary.
         """
         cat_dict = self.cat_dict.copy() if self.cat_dict else {}
         if self.cat_dict:
@@ -60,24 +65,22 @@ class Single_Event:
         }
 
     @staticmethod
-    def from_dict(dict, Cat):
+    def from_dict(info_dict: dict, cat_class: "Cat"):
         """
-        Return new Single_Event based on dict.
-
-        dict: The dictionary to convert to Single_Event.
+        Return new EventInformation object based on dict.
         """
 
-        if "text" not in dict:
+        if "text" not in info_dict:
             return None
 
-        cat_dict = dict.get("cat_dict", None)
+        cat_dict = info_dict.get("cat_dict", {})
         if cat_dict:
             for abbr, kitty in cat_dict.copy().items():
-                cat_dict[abbr] = Cat.fetch_cat(kitty)
+                cat_dict[abbr] = cat_class.fetch_cat(kitty)
 
-        return Single_Event(
-            text=dict["text"],
-            types=dict.get("types", None),
-            cats_involved=dict.get("cats_involved", None),
+        return EventInformation(
+            text=info_dict["text"],
+            types=info_dict.get("types", None),
+            cats_involved=info_dict.get("cats_involved", None),
             cat_dict=cat_dict,
         )

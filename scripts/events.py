@@ -36,7 +36,7 @@ from scripts.conditions import (
     get_amount_cat_for_one_medic,
 )
 from scripts.cat.microservices.conditions import get_ill, get_injured
-from scripts.event_class import Single_Event
+from scripts.events_module.event_information import EventInformation
 
 from scripts.events_module.generate_events import GenerateEvents, generate_events
 from scripts.events_module.outsider import outsider_events
@@ -181,7 +181,7 @@ def one_moon():
 
                 else:
                     game.cur_events_list.append(
-                        Single_Event(text, ["birth_death", "relation"], cats)
+                        EventInformation(text, ["birth_death", "relation"], cats)
                     )
 
         game.clan.grief_strings.clear()
@@ -244,7 +244,7 @@ def one_moon():
             event = i18n.t("hardcoded.event_deaths", count=1)
 
         game.cur_events_list.append(
-            Single_Event(
+            EventInformation(
                 event,
                 ["birth_death"],
                 [i.ID for i in game.dead_cats_to_grieve],
@@ -257,7 +257,9 @@ def one_moon():
         )
         if extra_event:
             game.cur_events_list.append(
-                Single_Event(extra_event, ["birth_death"], [i.ID for i in shaken_cats])
+                EventInformation(
+                    extra_event, ["birth_death"], [i.ID for i in shaken_cats]
+                )
             )
         game.dead_cats_to_grieve.clear()
 
@@ -268,7 +270,7 @@ def one_moon():
             and not game.clan.freshkill_pile.clan_has_enough_food()
         ):
             event_string = i18n.t("defaults.warn_low_freshkill")
-            game.cur_events_list.insert(0, Single_Event(event_string))
+            game.cur_events_list.insert(0, EventInformation(event_string))
             game.freshkill_event_list.append(event_string)
 
     handle_focus()
@@ -292,7 +294,7 @@ def one_moon():
 
         if not med_fulfilled:
             string = i18n.t("defaults.warn_low_medcats")
-            game.cur_events_list.insert(0, Single_Event(string, "health"))
+            game.cur_events_list.insert(0, EventInformation(string, ["health"]))
     else:
         has_med = any(
             cat.status.rank.is_any_medicine_rank() and cat.status.alive_in_player_clan
@@ -300,7 +302,7 @@ def one_moon():
         )
         if not has_med:
             string = i18n.t("defaults.warn_no_medcats")
-            game.cur_events_list.insert(0, Single_Event(string, "health"))
+            game.cur_events_list.insert(0, EventInformation(string, ["health"]))
 
     # Clear the list of cats that died this moon.
     game.just_died.clear()
@@ -446,7 +448,7 @@ def handle_lead_den_event():
             clan=game.clan,
         )
         game.cur_events_list.insert(
-            4, Single_Event(event_text, "other_clans", [gathering_cat.ID])
+            4, EventInformation(event_text, ["other_clans"], [gathering_cat.ID])
         )
 
         set_clan_setting("lead_den_clan_event", {})
@@ -588,7 +590,9 @@ def handle_lead_den_event():
             Cat, text=event_text, main_cat=outsider_cat, clan=game.clan
         )
 
-        game.cur_events_list.insert(4, Single_Event(event_text, "misc", involved_cats))
+        game.cur_events_list.insert(
+            4, EventInformation(event_text, ["misc"], involved_cats)
+        )
         set_clan_setting("lead_den_outsider_event", {})
 
     set_clan_setting("lead_den_interaction", False)
@@ -602,11 +606,11 @@ def mediator_events(cat):
         _ = constants.CONFIG["roles"]["become_mediator_chances"]
         if cat.status.rank in _ and not int(random.random() * _[cat.status.rank]):
             game.cur_events_list.append(
-                Single_Event(
+                EventInformation(
                     event_text_adjust(
                         Cat, i18n.t("hardcoded.event_mediator_app"), main_cat=cat
                     ),
-                    "ceremony",
+                    ["ceremony"],
                     cat.ID,
                 )
             )
@@ -800,9 +804,9 @@ def handle_focus():
             text_snippet = "hardcoded.focus_injury_raiding"
         for condition_type, value in involved_cats.items():
             game.cur_events_list.append(
-                Single_Event(
+                EventInformation(
                     i18n.t(text_snippet, condition=condition_type, count=len(value)),
-                    "health",
+                    ["health"],
                     value,
                 )
             )
@@ -813,7 +817,7 @@ def handle_focus():
             focus_text += f" {herb_focus_text}"
 
     if focus_text:
-        game.cur_events_list.insert(0, Single_Event(focus_text, "misc"))
+        game.cur_events_list.insert(0, EventInformation(focus_text, ["misc"]))
 
 
 def handle_lost_cats_return(predetermined_cat_IDs: list = None):
@@ -858,7 +862,7 @@ def handle_lost_cats_return(predetermined_cat_IDs: list = None):
 
         text = event_text_adjust(Cat, text, main_cat=lost_cat, clan=game.clan)
 
-        game.cur_events_list.append(Single_Event(text, "misc", cat_IDs))
+        game.cur_events_list.append(EventInformation(text, ["misc"], cat_IDs))
 
     # Perform a ceremony if needed
     for cat_ID in cat_IDs:
@@ -1224,7 +1228,7 @@ def check_war():
         other_clan_name=enemy_clan.name,
         clan=game.clan,
     )
-    game.cur_events_list.append(Single_Event(event, "other_clans"))
+    game.cur_events_list.append(EventInformation(event, ["other_clans"]))
 
 
 def perform_ceremonies(cat):
@@ -1813,7 +1817,9 @@ def ceremony(cat, promoted_to, preparedness="prepared"):
     # remove duplicates
     involved_cats = list(set(involved_cats))
 
-    game.cur_events_list.append(Single_Event(ceremony_text, "ceremony", involved_cats))
+    game.cur_events_list.append(
+        EventInformation(ceremony_text, ["ceremony"], involved_cats)
+    )
     # game.ceremony_events_list.append(f'{cat.name}{ceremony_text}')
 
 
@@ -2432,7 +2438,9 @@ def handle_outbreaks(cat):
                     count=len(infected_names),
                 )
 
-            game.cur_events_list.append(Single_Event(event, "health", involved_cats))
+            game.cur_events_list.append(
+                EventInformation(event, ["health"], involved_cats)
+            )
             # game.health_events_list.append(event)
             break
 
@@ -2472,7 +2480,7 @@ def check_leader():
     if leader_invalid:
         game.cur_events_list.insert(
             0,
-            Single_Event(
+            EventInformation(
                 event_text_adjust(
                     Cat, i18n.t("defaults.warn_no_leader"), clan=game.clan
                 )
@@ -2490,7 +2498,7 @@ def check_and_promote_deputy():
         or game.clan.deputy.status.rank == CatRank.ELDER
     ):
         if not get_clan_setting("deputy"):
-            game.cur_events_list.insert(0, Single_Event("defaults.warn_no_deputy"))
+            game.cur_events_list.insert(0, EventInformation("defaults.warn_no_deputy"))
             return
         # This determines all the cats who are eligible to be deputy.
         possible_deputies = list(
@@ -2573,7 +2581,9 @@ def check_and_promote_deputy():
             else:
                 # If there are no warriors at all, no one is named deputy.
                 game.cur_events_list.append(
-                    Single_Event(i18n.t("hardcoded.ceremony_deputy_none"), "ceremony")
+                    EventInformation(
+                        i18n.t("hardcoded.ceremony_deputy_none"), ["ceremony"]
+                    )
                 )
                 return
 
@@ -2581,7 +2591,7 @@ def check_and_promote_deputy():
         random_cat.rank_change(CatRank.DEPUTY)
         game.clan.deputy = random_cat
 
-        game.cur_events_list.append(Single_Event(text, "ceremony", involved_cats))
+        game.cur_events_list.append(EventInformation(text, ["ceremony"], involved_cats))
 
 
 load_ceremonies()
