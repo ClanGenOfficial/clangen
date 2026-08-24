@@ -7190,7 +7190,7 @@
                 "status": [
                     "apprentice"
                 ],
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 40,
@@ -7609,10 +7609,6 @@
                 6
             ],
             "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
                 3,
                 6
             ],
@@ -7640,7 +7636,7 @@
                 "status": [
                     "apprentice"
                 ],
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 40,

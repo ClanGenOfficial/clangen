@@ -243,7 +243,8 @@ class MakeClanScreenBase(Screens):
         game.just_died.clear()
         game.dead_cats_to_grieve.clear()
         save_load.faded_ids.clear()
-        Patrol.used_patrols.clear()
+        Patrol.used_patrols["normal"].clear()
+        Patrol.used_patrols["romance"].clear()
 
         # extra sanitization for filenames
         save_id = sub(r"[/\\?%*:|\"<>\x7F\x00-\x1F]", "-", self.clan_info.display_name)

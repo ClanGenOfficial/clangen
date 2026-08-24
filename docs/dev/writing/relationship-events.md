@@ -131,7 +131,7 @@ Altogether this might look like `normal_interations/comfort/medium/negative.json
     }
 ```
 
-### id: str
+### event_id: str
 A unique string used to identify the event block. Generally, the ID tries to specify the main relationship value being affected, the intensity of the affect, and the type of effect; along with any other identifiers that might indicate a unique aspect of the events contained within.
 
 * `like_inc_med1`
@@ -179,105 +179,8 @@ For example:
 ### involved_cats: dict[str: dict]
 This dictionary holds all constraints for the cats whom we wish to reference in the event, including the main cat!
 
-Each entry is an individual cat, with the key being their event designation (`r_c`, `m_c`, etc.) and the value being their personal constraints. Allowed constraints are as follows:
+[Full Involved Cat Dictionary Information](reference/involved-cat-dict.md)
 
-***
-
-**status: list[str]**
->Constrains the event to only happen if the cat holds a certain role. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
-
-> [Status Tag List](reference/tag-lists.md#__tabbed_2_2)
-> 
-> You can also remove the parameter to allow the event to occur for all roles except "newborns", who are only allowed if specifically tagged as such.
-
-***
-
-**past_status: list[str]**
->Constrains the event to only happen if the cat held a certain role in the past. You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
-
-> [Status Tag List](reference/tag-lists.md#__tabbed_2_2)
-
-***
-**age: list[str]**
->Constrains the event to only occur if the cat is within a certain age group. You can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
-
-> [Age Tag List](reference/tag-lists.md#__tabbed_2_1)
-> 
-> You can also remove the parameter to allow the event to occur for all ages except "newborns", who are only allowed if specifically tagged as such.
-
-***
-
-**standing: dict[str: var]**
->Constrains the event to only happen if the cat matches with the dictated group standings. A group standing is the relationship between a cat and a group, for example: if they are an exile or lost.
-
-```json
-    "standing": {
-        "group": [],
-        "currently": [],
-        "past": []
-      },
-```
->**`"group"`** - the group we are checking the cat's standing with. you can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags). tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to qualify against *one* of the groups. [possible group tags.](reference/tag-lists.md#groups). You should not try to tag `no_group`.
-
->**`"currently"`** - the standing the cat should currently possess with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have *one* of the standings. [possible standing tags.](reference/tag-lists.md#standings)
-
->**`"past"`** - standings the cat used to have with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have had *one* of the standings. [possible standing tags.](reference/tag-lists.md#standings)
-
-!!! warning
-    Keep in mind that currently the only cats who receive and are included in relationship events are player Clan cats. Cats currently outside the Clan cannot be part of an event. `standing` can still be constrained for in the context of a cat who *used* to be lost, exiled, etc.
-
-***
-
-
-**stat: dict[str: list]**
-> Constrains the event to only occur if the cat holds specific skills or traits. You can utilize [exclusionary tags](reference/tag-lists.md/#exclusionary-tags).
-
-```json
-    "stat": {
-        "skill": [],
-        "trait": [],
-        "must_have_both": false
-    },
-```
->**`"skill"`** - list of allowed skills from [Skill Tag List](reference/tag-lists.md#__tabbed_3_1)
-> 
-> **`"trait"`** - list of allowed traits from [Trait Tag List](reference/tag-lists.md#__tabbed_3_2)
-> 
-> **`"must_have_both"`** - defaults to `false`. if set to `true`, the cat's trait *and* skills must qualify. if `false`, the cat must have *either* a listed trait or a listed skill.
-
-***
-
-**health: dict[str: var]**
-> Constrains the event to only occur if the cat's health matches the constraints.
- 
-```json
-    "health": {
-        "working": true,
-        "condition": [],
-        "must_be_congenital": false,
-        "must_be_acquired": false
-    }
-```
-> **`"working"`** - by default, this is always set to `true`. if set to `false`, the cat can't be a working cat (aka, they are currently disabled by a condition of some kind)
-
-> **`"condition`** - a list of conditions that the cat must have *at least* one of. if any condition is allowed, use `"any"`. supports [exclusionary tags](reference/tag-lists.md#exclusionary-tags). check [illness](reference/tag-lists.md/#__tabbed_1_3), [injury](reference/tag-lists.md#__tabbed_1_2), and [permanent condition](reference/tag-lists.md#__tabbed_1_4) references for lists of current condition possibilities.
-
-> **`"must_be_congenital"`** - by default, this is always set to `false`. if set to `true`, the cat must have been born with a permanent condition listed in the `condition`.
-
-> **`"must_be_acquired"`** - by default, this is always set to `false`. if set to `true`, the cat must have acquired a permanent condition listed in `condition` later in life.
-
-!!! warning
-    `must_be_congenital` and `must_be_acquired` naturally conflict with each other. Be careful not to set both of them to `true`, else they won't behave correctly.
-
-!!! note
-    Be careful when specifying `must_be_congenital`. If you force a condition to be congenital when it can never generate as such, the event will never trigger! The same also applies for forcing a condition to be non-congenital when it is always generated as such.
-
-***
-
-**backstory:list**
->Constrains the event to only occur if the cat has a listed backstory. To find what each backstory describes, you can find more by going to `resources/lang/en/cat/backstories.en.json`.  You can utilize [exclusionary tags](reference/tag-lists.md#exclusionary-tags).
-
-> [Backstory Tag List](reference/tag-lists.md#backstories)
 
 
 ### relationship_constraint: list[dict]

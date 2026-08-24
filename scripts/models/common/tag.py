@@ -27,7 +27,7 @@ class Tag(RootModel):
         TagEnum,
         Annotated[
             str,
-            StringConstraints(pattern=r"^clan:(.+)$"),
+            StringConstraints(pattern=r"^-?clan:(.+)$"),
             AfterValidator(validate_clan_rank),
         ],
     ]
