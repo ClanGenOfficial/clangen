@@ -6,6 +6,7 @@ from pathlib import Path
 
 import pytest
 
+from scripts.models.ceremony.ceremony_schema import CeremonySchema
 from scripts.models.relationship_group_event.relationship_group_schema import (
     RelationshipGroupEvent,
 )
@@ -100,6 +101,21 @@ def group_relationship_files():
     )
 
 
+def ceremony_files():
+    """
+    Iterator for Paths for all ceremony files
+    """
+    EXCLUSIONS = [
+        "ceremony_traits.json",
+    ]
+
+    yield from (
+        file
+        for file in RESOURCES_DIR.glob("lang/*/events/ceremonies/*.json")
+        if file.name not in EXCLUSIONS
+    )
+
+
 @pytest.mark.parametrize(
     "thought_file",
     all_thought_files(),
@@ -162,5 +178,15 @@ def test_points_of_interest():
     ids=format_file_context_string,
 )
 def test_pelt_recipes(pelt_recipe_file: Path):
-    """Test that all shortevent JSONs are correct according to the Pydantic models"""
+    """Test that all pelt recipe JSONs are correct according to the Pydantic models"""
     PeltRecipe.model_validate_json(pelt_recipe_file.read_text())
+
+
+@pytest.mark.parametrize(
+    "ceremony_file",
+    ceremony_files(),
+    ids=format_file_context_string,
+)
+def test_ceremony_file_events(ceremony_file: Path):
+    """Test that all ceremony JSONs are correct according to the Pydantic models"""
+    CeremonySchema.model_validate_json(ceremony_file.read_text())

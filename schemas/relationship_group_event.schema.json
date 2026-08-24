@@ -315,6 +315,14 @@
           "description": "Constrains the event to only occur if the cat holds specific skills or traits. You can utilize exclusionary tags",
           "title": "Stat"
         },
+        "current_exp": {
+          "description": "Constrains the event to only occur if the cat has a listed experience level",
+          "items": {
+            "$ref": "#/$defs/ExperienceLevels"
+          },
+          "title": "Current Exp",
+          "type": "array"
+        },
         "health": {
           "$ref": "#/$defs/HealthDict",
           "description": "Constrains the event to only occur if the cat's health matches the constraints",
@@ -329,9 +337,19 @@
           "type": "array"
         },
         "has_mentor": {
-          "description": "Set True if the cat must be mentored. This does not require the mentor to be present on the patrol",
-          "title": "Has Mentor",
-          "type": "boolean"
+          "$ref": "#/$defs/MentorApprenticeDict",
+          "description": "Set current mentor status",
+          "title": "Has Mentor"
+        },
+        "has_apprentice": {
+          "$ref": "#/$defs/MentorApprenticeDict",
+          "description": "Set current apprentice status",
+          "title": "Has Apprentice"
+        },
+        "name": {
+          "$ref": "#/$defs/NameCheckDict",
+          "description": "Constrain per specific name states",
+          "title": "Name"
         }
       },
       "title": "CatDict",
@@ -447,6 +465,19 @@
       "title": "ExcludedPermCondition",
       "type": "string"
     },
+    "ExperienceLevels": {
+      "enum": [
+        "untrained",
+        "learning",
+        "prepared",
+        "capable",
+        "proficient",
+        "adept",
+        "masterful"
+      ],
+      "title": "ExperienceLevels",
+      "type": "string"
+    },
     "GatherCat": {
       "anyOf": [
         {
@@ -510,7 +541,9 @@
         "deputy",
         "-deputy",
         "leader",
-        "-leader"
+        "-leader",
+        "past_deputy",
+        "-past_deputy"
       ],
       "title": "GatherCatEnum",
       "type": "string"
@@ -906,6 +939,35 @@
       "title": "Location",
       "type": "array"
     },
+    "MentorApprenticeDict": {
+      "additionalProperties": false,
+      "properties": {
+        "current": {
+          "description": "If True, cat must currently have mentor/apprentice. If False, cat must not have a current mentor/apprentice",
+          "title": "Current",
+          "type": "boolean"
+        },
+        "former": {
+          "description": "If True, cat must have a former mentor/apprentice. If False, cat must have a former mentor/apprentice",
+          "title": "Former",
+          "type": "boolean"
+        }
+      },
+      "title": "MentorApprenticeDict",
+      "type": "object"
+    },
+    "NameCheckDict": {
+      "additionalProperties": false,
+      "properties": {
+        "has_suffix": {
+          "description": "If True, cat must have a suffix. If False, cat must have no suffix",
+          "title": "Has Suffix",
+          "type": "boolean"
+        }
+      },
+      "title": "NameCheckDict",
+      "type": "object"
+    },
     "PermCondition": {
       "enum": [
         "crooked jaw",
@@ -1019,6 +1081,10 @@
         "-mentor/app",
         "app/mentor",
         "-app/mentor",
+        "past_mentor/app",
+        "-past_mentor/app",
+        "past_app/mentor",
+        "-past_app/mentor",
         "uninterested",
         "fancies",
         "adores",
@@ -1238,7 +1304,7 @@
           "$ref": "#/$defs/TagEnum"
         },
         {
-          "pattern": "^clan:(.+)$",
+          "pattern": "^-?clan:(.+)$",
           "type": "string"
         }
       ],

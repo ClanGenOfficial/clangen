@@ -1,0 +1,1867 @@
+[
+    {
+        "event_id": "warrior_default0",
+        "involved_cats": {
+            "m_c": {}
+        },
+        "strings": [
+            "c_n welcomes m_c as a new warrior, honoring {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_default1",
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "group": [
+                    "player_clan"
+                ],
+                "status": [
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ]
+            }
+        },
+        "strings": [
+            "r_c0 sits in the crowd, chest puffed out in pride as {PRONOUN/r_c0/subject} {VERB/r_c0/watch/watches} (old_name) be named m_c, and honored for {PRONOUN/m_c/poss} r_h. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/consider/considers} {PRONOUN/r_c0/self} lucky to have been able to train such an amazing young cat, and looks forward to seeing the warrior {PRONOUN/m_c/subject} {VERB/m_c/become/becomes}."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "past_app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_default2",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {}
+        },
+        "strings": [
+            "lead_name calls the Clan to a meeting and declares (old_name) to be a warrior. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} now called m_c and {VERB/m_c/are/is} celebrated for {PRONOUN/m_c/poss} r_h.",
+            "lead_name stands above the Clan and proclaims that (old_name) shall now be known as m_c, honoring {PRONOUN/m_c/poss} r_h.",
+            "lead_name rests {PRONOUN/lead_name/poss} muzzle on m_c's head and declares {PRONOUN/m_c/object} to be a full warrior of c_n, honoring {PRONOUN/m_c/poss} r_h.",
+            "lead_name has been following the progress of (old_name) for moons and feels that it is finally time for {PRONOUN/m_c/object} to get {PRONOUN/m_c/poss} warrior name. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} granted the name m_c in honor of {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_default3",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "group": [
+                    "player_clan"
+                ],
+                "status": [
+                    "warrior",
+                    "deputy",
+                    "leader",
+                    "elder"
+                ]
+            }
+        },
+        "strings": [
+            "r_c0 gives (old_name) a friendly nudge when the leader calls the young cat's name. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/watch/watches} with pride as (old_name) steps forward to receive {PRONOUN/m_c/poss} new name, m_c, and {VERB/m_c/are/is} honored for {PRONOUN/m_c/poss} r_h.",
+            "r_c0 gathers the Clan for a meeting. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/have/has} spent many moons training (old_name), and it's time for {PRONOUN/m_c/object} to be granted {PRONOUN/m_c/poss} warrior name. r_c0 gives {PRONOUN/m_c/object} the name m_c and honors {PRONOUN/m_c/poss} r_h."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_unprepared0",
+        "involved_cats": {
+            "m_c": {
+                "current_exp": ["untrained", "learning"]
+            }
+        },
+        "strings": [
+            "Although {PRONOUN/m_c/poss} training has been long, (old_name) has failed to master the skills needed of a warrior. However, {PRONOUN/m_c/subject} {VERB/m_c/are/is} getting too old to stay in the apprentices' den. The mood is tense and awkward as {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c and honored for {PRONOUN/m_c/poss} r_h. "
+        ]
+    },
+    {
+        "event_id": "warrior_early_grad0",
+        "involved_cats": {
+            "m_c": {
+                "current_exp": ["prepared"],
+                "age": ["adolescent"]
+            }
+        },
+        "strings": [
+            "(old_name) has excelled at every task placed before {PRONOUN/m_c/object}. Despite {PRONOUN/m_c/poss} young age, {PRONOUN/m_c/subject} {VERB/m_c/are/is} more than ready to be a warrior. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} given the name m_c, honoring {PRONOUN/m_c/poss} r_h. "
+        ]
+    },
+    {
+        "event_id": "warrior_dead_mentor",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "(old_name) stands before the leader. {PRONOUN/m_c/subject/CAP} should be happier, but as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} given {PRONOUN/m_c/poss} warrior name, m_c in honor of {PRONOUN/m_c/poss} r_h, {PRONOUN/m_c/subject} {VERB/m_c/cast/casts} a look to the crowd. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wish/wishes} that r_c0 could be there to see {PRONOUN/m_c/object} now."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "past_app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_no_leader0",
+        "tags": [
+            "-clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {}
+        },
+        "strings": [
+            "c_n rallies around (old_name) in celebration. Even without a leader, life must go on, and (old_name) has proven {PRONOUN/m_c/subject} {VERB/m_c/are/is} ready for {PRONOUN/m_c/poss} warrior name. (old_name) is allowed to choose {PRONOUN/m_c/poss} own suffix, and {PRONOUN/m_c/subject} {VERB/m_c/name/names} {PRONOUN/m_c/self} m_c. The Clan cheers for the new warrior, honoring {PRONOUN/m_c/poss} r_h.",
+            "(old_name) sits with {PRONOUN/m_c/poss} Clan, purring as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} congratulated on finishing {PRONOUN/m_c/poss} training. When given the option to choose {PRONOUN/m_c/poss} name, however, (old_name) can't really think of a suffix, and asks {PRONOUN/m_c/poss} Clanmates for some suggestions. After hearing a few ideas, (old_name) decides to be named m_c. The Clan cheers {PRONOUN/m_c/poss} new name, and honors {PRONOUN/m_c/object} for {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_no_leader_dead_mentor0",
+        "tags": [
+            "-clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "Leader or no leader, c_n needs more warriors, and (old_name) has been working incredibly hard lately. The Clan agrees that {PRONOUN/m_c/subject} should be made a warrior. As {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c, honoring {PRONOUN/m_c/poss} r_h, m_c wishes that r_c0 could be there to cheer for {PRONOUN/m_c/object}.",
+            "They don't care if there's no leader; the Clan knows that (old_name) is deserving of {PRONOUN/m_c/poss} full name. They gather to hold a ceremony for (old_name), and name {PRONOUN/m_c/object} m_c, honoring {PRONOUN/m_c/poss} r_h. m_c is proud of {PRONOUN/m_c/self}, though a part of {PRONOUN/m_c/object} still wishes that r_c0 was still there to see {PRONOUN/m_c/object}."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "past_app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_no_leader_mentored0",
+        "tags": [
+            "-clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "group": [
+                    "player_clan"
+                ],
+                "status": [
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ]
+            }
+        },
+        "strings": [
+            "Leader or no leader, c_n needs more warriors, and (old_name) has been working incredibly hard lately. The Clan agrees that {PRONOUN/m_c/subject} should be made a warrior. They gather around the apprentice, and r_c0 is nudged forward to do the honor of giving {PRONOUN/m_c/object} {PRONOUN/m_c/poss} name. Purring in pride for {PRONOUN/r_c0/poss} apprentice, r_c0 rests {PRONOUN/r_c0/poss} muzzle on (old_name)'s head, and names {PRONOUN/m_c/object} m_c, honoring {PRONOUN/m_c/poss} r_h.",
+            "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/don't/doesn't} care if there's no leader; r_c0 knows that (old_name) is deserving of {PRONOUN/m_c/poss} full name. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/gather/gathers} the Clan to hold a ceremony for (old_name), naming {PRONOUN/m_c/object} m_c and honoring {PRONOUN/m_c/poss} r_h."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "past_app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_parent0",
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {
+                "group": [
+                    "player_clan"
+                ]
+            }
+        },
+        "strings": [
+            "r_c1 can hardly believe how quickly time has passed since (old_name) was a kit. It still feels like just yesterday that {PRONOUN/m_c/subject} {VERB/m_c/were/was} tumbling around the nursery, chasing after a moss ball or some other cat's tail. Misty-eyed with pride and joy, r_c1 throws {PRONOUN/r_c1/poss} head back and tries to cheer the loudest as (old_name) is named m_c and honored for {PRONOUN/m_c/poss} r_h.",
+            "As the Clan cheers for the new warrior, m_c, r_c1 purrs loudly. {PRONOUN/r_c1/poss/CAP} kit is finally a warrior! A new journey has begun for m_c, and r_c1 knows that m_c's r_h will lead {PRONOUN/m_c/object} through anything."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_parent1",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "group": [
+                    "player_clan"
+                ],
+                "status": [
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ]
+            },
+            "r_c1": {
+                "group": [
+                    "player_clan"
+                ]
+            }
+        },
+        "strings": [
+            "r_c0 backs up, giving r_c1 room to tuck (old_name) underneath {PRONOUN/r_c1/poss} chin one last time, as r_c1 murmurs how proud {PRONOUN/r_c1/subject} {VERB/r_c1/are/is}. lead_name calls (old_name) forward with words honoring {PRONOUN/m_c/poss} r_h, as {PRONOUN/m_c/subject} {VERB/m_c/take/takes} up the name m_c and {VERB/m_c/step/steps} into full warrior duties."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            },
+            {
+                "cats_to": [
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_both_parents0",
+        "involved_cats": {
+            "m_c": {},
+            "r_c1": {
+                "group": [
+                    "player_clan"
+                ]
+            },
+            "r_c2": {
+                "group": [
+                    "player_clan"
+                ]
+            }
+        },
+        "strings": [
+            "r_c1 and r_c2's eyes meet and they purr with pride as (old_name) steps forward to receive {PRONOUN/m_c/poss} new name, m_c, and {VERB/m_c/are/is} honored for {PRONOUN/m_c/poss} r_h.",
+            "(old_name) meets r_c1 and r_c2's eyes as {PRONOUN/m_c/subject} {VERB/m_c/swell/swells} with pride, taking {PRONOUN/m_c/poss} hard-earned place in the spotlight in front of all of c_n. Given the name m_c in honor of {PRONOUN/m_c/poss} r_h, {PRONOUN/m_c/subject} {VERB/m_c/bask/basks} in the celebration of {PRONOUN/m_c/poss} warrior name, {PRONOUN/m_c/poss} family by {PRONOUN/m_c/poss} side.",
+            "Hearing lead_name speak about {PRONOUN/m_c/poss} r_h in front of all the Clan, seeing r_c0's approving nod, r_c1's eyes shining with pride, r_c2 purring loud enough to choke on the sound, it all comes together into a moment of brilliant recognition and celebration as m_c takes on {PRONOUN/m_c/poss} warrior name."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c2",
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_dead_both_parents0",
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "-orphaned_backstories"
+                ]
+            },
+            "r_c1": {
+                "group": [
+                    "afterlife"
+                ]
+            },
+            "r_c2": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "Are r_c1 and r_c2 watching from StarClan? (old_name) wonders this as {PRONOUN/m_c/subject} {VERB/m_c/step/steps} in front of the Clan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/hope/hopes} so. {PRONOUN/m_c/subject/CAP} truly {VERB/m_c/do/does}. As {PRONOUN/m_c/subject} {VERB/m_c/are/is} given the name m_c in honor of {PRONOUN/m_c/poss} r_h, m_c hopes that {PRONOUN/m_c/poss} parents are there, cheering with their Clanmates in the stars for their kit.",
+            "As c_n yowls m_c's new name, lead_name murmurs that r_c1 and r_c2 would be proud of {PRONOUN/m_c/poss} r_h."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c2",
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_dead_both_parents1",
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "clanborn"
+                ]
+            },
+            "r_c1": {
+                "group": [
+                    "afterlife"
+                ]
+            },
+            "r_c2": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "(old_name) tries to keep {PRONOUN/m_c/poss} head high as {PRONOUN/m_c/subject} {VERB/m_c/step/steps} forward, and {VERB/m_c/are/is} given the name m_c in honor of {PRONOUN/m_c/poss} r_h. It doesn't seem fair. r_c1 and r_c2 should be here with {PRONOUN/m_c/object}! They promised they would! m_c looks to the stars, {PRONOUN/m_c/poss} anger and frustration vanishing. It feels as though the stars are brighter, and {PRONOUN/m_c/subject} {VERB/m_c/know/knows} that, even if they cannot be there in body, {PRONOUN/m_c/poss} parents are there in spirit."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c2",
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_name_refusal0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "loner_backstories",
+                    "kittypet_backstories"
+                ],
+                "name": {
+                    "has_suffix": false
+                }
+            },
+            "r_c0": {
+                "group": [
+                    "player_clan"
+                ],
+                "status": [
+                    "warrior",
+                    "deputy",
+                    "leader",
+                    "elder"
+                ]
+            }
+        },
+        "strings": [
+            "m_c is proud to be a part of c_n, but {PRONOUN/m_c/poss} history remains important to {PRONOUN/m_c/object} as well. {PRONOUN/m_c/subject/CAP} politely requests that lead_name lets {PRONOUN/m_c/object} keep {PRONOUN/m_c/poss} name after {PRONOUN/m_c/poss} warrior ceremony. m_c is honored for {PRONOUN/m_c/poss} r_h.",
+            "Honored for {PRONOUN/m_c/poss} r_h, m_c opts to keep {PRONOUN/m_c/poss} former name after becoming a warrior.",
+            "When m_c is declared a warrior and honored for {PRONOUN/m_c/poss} r_h, m_c asks to keep the name {PRONOUN/m_c/poss} parents gave {PRONOUN/m_c/object} long ago.",
+            "When m_c is declared a warrior and honored for {PRONOUN/m_c/poss} r_h, m_c asks to keep the name {PRONOUN/m_c/poss} Twolegs gave {PRONOUN/m_c/object} long ago."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_name_refusal1",
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "loner_backstories"
+                ],
+                "name": {
+                    "has_suffix": false
+                },
+                "stat": {
+                    "trait": [
+                        "fierce",
+                        "shameless",
+                        "rebellious",
+                        "faithful"
+                    ]
+                }
+            },
+            "r_c0": {
+                "group": [
+                    "player_clan"
+                ],
+                "status": [
+                    "warrior",
+                    "deputy",
+                    "leader",
+                    "elder"
+                ]
+            }
+        },
+        "strings": [
+            "Upon becoming a warrior, m_c boldly asserts that while c_n is {PRONOUN/m_c/poss} home, {PRONOUN/m_c/poss} name was, and always will be, m_c. lead_name accepts this, and honors m_c for {PRONOUN/m_c/poss} r_h."
+        ],
+        "tags": [
+            "clan:leader"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_alone0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "grumpy",
+                        "gloomy",
+                        "cold",
+                        "lonesome"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) remains completely quiet as lead_name names {PRONOUN/m_c/object} m_c after {PRONOUN/m_c/poss} r_h. Before anyone can congratulate {PRONOUN/m_c/object}, however, {PRONOUN/m_c/subject} {VERB/m_c/turn/turns} and {VERB/m_c/walk/walks} away without a word to do {PRONOUN/m_c/poss} silent vigil.",
+            "(old_name), now named m_c for {PRONOUN/m_c/poss} r_h, can only awkwardly thank {PRONOUN/m_c/poss} Clanmates as {PRONOUN/m_c/subject} {VERB/m_c/weave/weaves} through the crowd of purring cats. Once the meeting comes to a close, {PRONOUN/m_c/subject} {VERB/m_c/slink/slinks} out of camp to be alone for a while."
+        ]
+    },
+    {
+        "event_id": "warrior_ambitious0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "ambitious"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name)'s eyes gleam as {PRONOUN/m_c/subject} {VERB/m_c/stare/stares} up at lead_name, vowing silently to {PRONOUN/m_c/self} to one day be up there. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} named m_c after {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_approval0",
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "-orphaned_backstories"
+                ],
+                "stat": {
+                    "trait": [
+                        "strange",
+                        "ambitious",
+                        "sincere",
+                        "thoughtful",
+                        "wise",
+                        "faithful",
+                        "loving",
+                        "lonesome"
+                    ]
+                }
+            },
+            "r_c1": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "As (old_name) steps forward to take up the mantle of m_c, {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} the wind ruffle through {PRONOUN/m_c/poss} fur, like a touch of approval. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wonder/wonders} if r_c1 would approve of the r_h m_c is honored for."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_avoidant0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "grumpy",
+                        "gloomy",
+                        "cold",
+                        "strange"
+                    ]
+                }
+            },
+            "r_c0": {
+                "group": [
+                    "player_clan"
+                ],
+                "status": [
+                    "warrior",
+                    "deputy",
+                    "leader",
+                    "elder"
+                ]
+            },
+            "r_c1": {
+                "group": [
+                    "player_clan"
+                ]
+            },
+            "r_c2": {
+                "group": [
+                    "player_clan"
+                ]
+            }
+        },
+        "strings": [
+            "Even at {PRONOUN/m_c/poss} own naming ceremony, m_c doesn't love being the center of attention, the tip of {PRONOUN/m_c/poss} tail twitching with unease. But {PRONOUN/m_c/subject} still {VERB/m_c/accept/accepts} r_c0's congratulations and {PRONOUN/m_c/poss} parents' proud purrs, smiling slightly when lead_name praises {PRONOUN/m_c/poss} r_h."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            },
+            {
+                "cats_to": [
+                    "r_c2",
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_balanced0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "wise",
+                        "calm",
+                        "oblivious"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "As the Clan yowls m_c's new warrior name {PRONOUN/m_c/subject} {VERB/m_c/smile/smiles} and {VERB/m_c/nod/nods}, pleased but not overcome. lead_name jumps down to congratulate {PRONOUN/m_c/object}. As their heads press together, lead_name whispers that a balanced sense of self and r_h will serve m_c well."
+        ]
+    },
+    {
+        "event_id": "warrior_beginning0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "arrogant",
+                        "flamboyant",
+                        "adventurous",
+                        "ambitious",
+                        "competitive",
+                        "daring",
+                        "righteous",
+                        "bold",
+                        "shameless",
+                        "confident"
+                    ]
+                }
+            },
+            "r_c1": {
+                "group": [
+                    "player_clan"
+                ]
+            },
+            "r_c2": {
+                "group": [
+                    "player_clan"
+                ]
+            }
+        },
+        "strings": [
+            "Named m_c for {PRONOUN/m_c/poss} r_h, the new warrior squares {PRONOUN/m_c/poss} shoulders before c_n, heart full of the hard-won joy of {PRONOUN/m_c/poss} Clanmates yowling {PRONOUN/m_c/poss} name, of r_c1's happy slitted eyes of pride and r_c2's voice leading the call. All {PRONOUN/m_c/poss} efforts to get here have been worth it. This is just the beginning."
+        ],
+        "tags": [
+            "clan:leader"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c2",
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_bloodthirsty0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "bloodthirsty"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "Although (old_name)'s eagerness to fight has left lead_name a little worried before, {PRONOUN/lead_name/subject} {VERB/lead_name/know/knows} that the Clan can count on (old_name)'s bravery and sharp claws when they need them the most. In honor of {PRONOUN/m_c/poss} r_h, (old_name) is given the name m_c."
+        ]
+    },
+    {
+        "event_id": "warrior_careful0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "careful"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) sits neatly in front of lead_name as {PRONOUN/lead_name/subject} {VERB/lead_name/talk/talks} about how well (old_name) did in {PRONOUN/m_c/poss} assessment. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} named m_c after {PRONOUN/m_c/poss} r_h."
+        ],
+        "tags": [
+            "clan:leader"
+        ]
+    },
+    {
+        "event_id": "warrior_childish",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "childish"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "While lead_name is not quite sure that (old_name) has outgrown {PRONOUN/m_c/poss} childish quirks or {PRONOUN/m_c/poss} love of pranks, {PRONOUN/lead_name/subject} {VERB/lead_name/welcome/welcomes} {PRONOUN/m_c/object} as a full warrior to the Clan, naming {PRONOUN/m_c/object} m_c after {PRONOUN/m_c/poss} lightheartedness and r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_clear_eyed0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "cunning",
+                        "calm"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) sits before the Clan, ears pricked forward and gaze calm as lead_name addresses the Clan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/bow/bows} {PRONOUN/m_c/poss} head as {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c after {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_compassionate0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "compassionate"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "lead_name gazes down proudly upon (old_name). {PRONOUN/m_c/subject/CAP} {VERB/m_c/had/has} spent {PRONOUN/m_c/poss} whole apprenticeship helping the Clan, and so {PRONOUN/m_c/subject} {VERB/m_c/are/is} named m_c after {PRONOUN/m_c/poss} r_h.",
+            "(old_name) was so busy helping another cat {PRONOUN/m_c/subject} {VERB/m_c/were/was} nearly late for {PRONOUN/m_c/poss} own warrior ceremony. {PRONOUN/m_c/subject/CAP} {VERB/m_c/rush/rushes} to sit down, making it just in time. lead_name gazes proudly down at {PRONOUN/m_c/object} as {PRONOUN/lead_name/subject} {VERB/lead_name/name/names} {PRONOUN/m_c/object} m_c after {PRONOUN/m_c/poss} r_h.",
+            "(old_name) purrs as {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} the joy and pride of {PRONOUN/m_c/poss} Clanmates wash over {PRONOUN/m_c/object}. lead_name looks down upon {PRONOUN/m_c/object}, eyes glowing with pride as {PRONOUN/lead_name/subject} {VERB/lead_name/name/names} {PRONOUN/m_c/object} m_c after {PRONOUN/m_c/poss} r_h.",
+            "(old_name) sits unbothered as lead_name rattles on through the long, formal words of the warrior ceremony. {PRONOUN/lead_name/subject/CAP} {VERB/lead_name/give/gives} (old_name) the name m_c, honoring {PRONOUN/m_c/poss} r_h. m_c has no complaints about the long vigil {PRONOUN/m_c/subject} must sit that night."
+        ]
+    },
+    {
+        "event_id": "warrior_daring0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "daring"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) sits before the Clan with a determined look on {PRONOUN/m_c/poss} face. lead_name is worried that {PRONOUN/m_c/poss} refusal to back down and tendency to jump headfirst into danger will end poorly for {PRONOUN/m_c/object}, and hopes that sitting vigil overnight will change that. (old_name) is named m_c after {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_decorum0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "responsible",
+                        "charismatic",
+                        "careful"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "The poise, decorum, and r_h (old_name) acts with are a credit to c_n, lead_name meows. (old_name) tries to live up to such pretty words, but all {PRONOUN/m_c/subject} can focus on are the ringing yowls of m_c as {PRONOUN/m_c/poss} new warrior name echos around camp."
+        ]
+    },
+    {
+        "event_id": "warrior_dedication0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "responsible",
+                        "strict"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "With c_n gathered for celebration, lead_name highlights (old_name)'s r_h, {PRONOUN/m_c/poss} dedication to truth, and the Warrior Code. It is for this that lead_name names {PRONOUN/m_c/object} m_c, welcoming {PRONOUN/m_c/object} as a full warrior of c_n."
+        ]
+    },
+    {
+        "event_id": "warrior_faithful0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "faithful"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "As lead_name gives (old_name) the name m_c, {PRONOUN/lead_name/subject} {VERB/lead_name/swear/swears} that {PRONOUN/lead_name/subject} {VERB/lead_name/see/sees} some starry cats yowling their support amongst {PRONOUN/lead_name/poss} other Clanmates.",
+            "(old_name)'s eyes glimmer while lead_name talks about {PRONOUN/m_c/poss} accomplishments. {PRONOUN/m_c/poss/CAP} gaze isn't focused on the leader, however, but the stars shining behind {PRONOUN/lead_name/object}. As {PRONOUN/m_c/subject} {VERB/m_c/are/is} given the name m_c, {PRONOUN/m_c/subject} {VERB/m_c/wonder/wonders} if StarClan honors {PRONOUN/m_c/poss} r_h, too."
+        ]
+    },
+    {
+        "event_id": "warrior_fearsome0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "fierce",
+                        "loyal",
+                        "bloodthirsty",
+                        "vengeful"
+                    ]
+                }
+            },
+            "r_c0": {
+                "group": [
+                    "player_clan"
+                ],
+                "status": [
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ]
+            }
+        },
+        "strings": [
+            "Together (old_name) and r_c0 have torn claws and taken names, and as (old_name) is honored for {PRONOUN/m_c/poss} r_h and named m_c, they're not planning on stopping any time soon!"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_freedom0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "troublesome",
+                        "daring",
+                        "rebellious",
+                        "adventurous"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) can't help the way {PRONOUN/m_c/poss} tail lashes, excitement bubbling over into bouncy energy as the Clan gathers. lead_name mentions {PRONOUN/m_c/poss} r_h, but what (old_name) cares about is the <i>name</i>. m_c means liberty, means control over {PRONOUN/m_c/poss} own life, means the freedom to wander and hunt on {PRONOUN/m_c/poss} own, nothing holding {PRONOUN/m_c/object} back. {PRONOUN/m_c/subject/CAP} can't wait!"
+        ]
+    },
+    {
+        "event_id": "warrior_grateful0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "calm",
+                        "compassionate",
+                        "sincere",
+                        "careful",
+                        "thoughtful",
+                        "loving"
+                    ]
+                }
+            },
+            "r_c1": {
+                "group": [
+                    "player_clan"
+                ]
+            },
+            "r_c2": {
+                "group": [
+                    "player_clan"
+                ]
+            }
+        },
+        "strings": [
+            "As r_c1 and r_c2 fuss, erasing each others' efforts at licking (old_name)'s fur flat, (old_name) purrs. Surrounded by {PRONOUN/m_c/poss} parents, lead_name names {PRONOUN/m_c/object} m_c for the r_h {PRONOUN/m_c/subject} {VERB/m_c/have/has} shown in {PRONOUN/m_c/poss} training, welcoming {PRONOUN/m_c/object} to take {PRONOUN/m_c/poss} place as a full warrior of c_n."
+        ],
+        "tags": [
+            "clan:leader"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c2",
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_hard_work0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "responsible",
+                        "sincere",
+                        "loyal"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "All {PRONOUN/m_c/poss} hard work has come to this. m_c stands straight and proud, adorned with {PRONOUN/m_c/poss} new name and the congratulations of {PRONOUN/m_c/poss} Clan. Tomorrow, tomorrow {PRONOUN/m_c/subject} will return to responsibility and service and r_h. Tonight is {PRONOUN/m_c/poss} night to celebrate."
+        ]
+    },
+    {
+        "event_id": "warrior_hard_work1",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "arrogant",
+                        "flamboyant",
+                        "ambitious",
+                        "competitive",
+                        "righteous",
+                        "charismatic",
+                        "confident",
+                        "childish"
+                    ]
+                }
+            },
+            "r_c1": {
+                "group": [
+                    "player_clan"
+                ]
+            },
+            "r_c2": {
+                "group": [
+                    "player_clan"
+                ]
+            }
+        },
+        "strings": [
+            "(old_name) has thrown {PRONOUN/m_c/self} at every challenge in {PRONOUN/m_c/poss} path, and lead_name notes {PRONOUN/m_c/subject} {VERB/m_c/have/has} the r_h of a tiger, may it serve {PRONOUN/m_c/object} well. It's time for (old_name) to take both {PRONOUN/m_c/poss} place as an adult of c_n, and {PRONOUN/m_c/poss} full name of m_c."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c2",
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_insecure0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "insecure"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "{PRONOUN/m_c/poss/CAP} training is done already? (old_name) isn't entirely sure if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} quite as ready to be a warrior as the leader claims {PRONOUN/m_c/object} to be. {PRONOUN/m_c/poss/CAP} voice trembles when {PRONOUN/m_c/subject} {VERB/m_c/take/takes} {PRONOUN/m_c/poss} vow. As {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} renamed to m_c, in honor of {PRONOUN/m_c/poss} r_h, {PRONOUN/m_c/subject} can't help but wonder if that is truly something that describes {PRONOUN/m_c/object}."
+        ]
+    },
+    {
+        "event_id": "warrior_kindhearted0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "loving",
+                        "compassionate",
+                        "sincere"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "lead_name has always thought (old_name) had a kind heart, knowing that {PRONOUN/m_c/subject} {VERB/m_c/are/is} ready for times of peace, but doesn't know how that heart will serve in war. Nevertheless, {PRONOUN/lead_name/subject} {VERB/lead_name/name/names} {PRONOUN/m_c/object} m_c after {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_kindhearted1",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "loving",
+                        "compassionate",
+                        "sincere"
+                    ]
+                }
+            },
+            "r_c0": {
+                "group": [
+                    "player_clan"
+                ],
+                "status": [
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ]
+            }
+        },
+        "strings": [
+            "(old_name) is overjoyed to finally be a warrior. After lead_name renames {PRONOUN/m_c/object} and honors {PRONOUN/m_c/poss} r_h, m_c nuzzles r_c0, thanking {PRONOUN/r_c0/object} for {PRONOUN/r_c0/poss} guidance."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_knowledgeable0",
+        "involved_cats": {
+            "m_c": {
+                "current_exp": ["prepared"],
+                "stat": {
+                    "trait": [
+                        "cunning",
+                        "thoughtful",
+                        "wise"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "lead_name almost feels intimidated by the knowledge (old_name) has gathered in {PRONOUN/m_c/poss} moons of training and feels confident when {PRONOUN/lead_name/subject} {VERB/lead_name/name/names} {PRONOUN/m_c/object} m_c in honor of {PRONOUN/m_c/poss} r_h.",
+            "(old_name)'s advice has helped many cats throughout {PRONOUN/m_c/poss} days as an apprentice. Even lead_name has sought {PRONOUN/m_c/object} out at times. lead_name has no doubts in {PRONOUN/lead_name/poss} mind that (old_name) is ready to be a warrior, and names {PRONOUN/m_c/object} m_c, honoring {PRONOUN/m_c/poss} r_h."
+        ],
+        "tags": [
+            "clan:leader"
+        ]
+    },
+    {
+        "event_id": "warrior_legacy0",
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "-orphaned_backstories"
+                ],
+                "stat": {
+                    "trait": [
+                        "responsible",
+                        "strange",
+                        "sincere",
+                        "righteous",
+                        "thoughtful",
+                        "wise",
+                        "faithful",
+                        "loving",
+                        "lonesome"
+                    ]
+                }
+            },
+            "r_c1": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "r_c1 watches over (old_name) still. As {PRONOUN/m_c/subject} {VERB/m_c/step/steps} forward, the name m_c settling upon {PRONOUN/m_c/object} like sunlight on {PRONOUN/m_c/poss} pelt, {PRONOUN/m_c/subject} {VERB/m_c/carry/carries} {PRONOUN/m_c/poss} parent's legacy with {PRONOUN/m_c/poss} r_h."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_legacy1",
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "-orphaned_backstories"
+                ],
+                "stat": {
+                    "trait": [
+                        "responsible",
+                        "strange",
+                        "sincere",
+                        "righteous",
+                        "thoughtful",
+                        "wise",
+                        "faithful",
+                        "loving",
+                        "lonesome"
+                    ]
+                }
+            },
+            "r_c1": {
+                "group": [
+                    "afterlife"
+                ]
+            },
+            "r_c2": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "r_c1 and r_c2 watch over (old_name) still. As {PRONOUN/m_c/subject} {VERB/m_c/step/steps} forward, the name m_c settling upon {PRONOUN/m_c/object} like sunlight on {PRONOUN/m_c/poss} pelt, {PRONOUN/m_c/subject} {VERB/m_c/carry/carries} {PRONOUN/m_c/poss} parents' legacy with {PRONOUN/m_c/poss} r_h."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c2",
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_loyal0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "loyal"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) looks around at {PRONOUN/m_c/poss} Clanmates with adoration while lead_name announces that {PRONOUN/m_c/poss} new name will be m_c, after {PRONOUN/m_c/poss} r_h. m_c is happy to be a warrior now, but mostly {PRONOUN/m_c/subject} just {VERB/m_c/want/wants} to celebrate with {PRONOUN/m_c/poss} Clan, whether it's for {PRONOUN/m_c/object} or not."
+        ]
+    },
+    {
+        "event_id": "warrior_nervous0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "nervous"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) fidgets nervously as {PRONOUN/m_c/subject} {VERB/m_c/step/steps} forward in front of the Clan. This is an important moment, so {PRONOUN/m_c/subject} {VERB/m_c/try/tries} not to hide {PRONOUN/m_c/poss} face from the crowd as lead_name gives {PRONOUN/m_c/object} the name m_c in honor of {PRONOUN/m_c/poss} r_h. {PRONOUN/m_c/subject/CAP} quickly {VERB/m_c/scurry/scurries} back into the crowd once the ceremony is done, silently hoping that this will be the last ceremony {PRONOUN/m_c/subject} ever {VERB/m_c/have/has}.",
+            "As (old_name) nervously approaches {PRONOUN/m_c/poss} leader, lead_name can't help but feel {PRONOUN/m_c/poss} hesitance might cost {PRONOUN/m_c/object} {PRONOUN/m_c/poss} life in battle. Steeling {PRONOUN/lead_name/self} against {PRONOUN/lead_name/poss} doubts, lead_name gives (old_name) the name m_c to honor {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_no_regard0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "sincere",
+                        "shameless",
+                        "oblivious",
+                        "strange"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) is still messy after tussling with someone else and doesn't even bother to groom {PRONOUN/m_c/self} before trotting up to the front of the crowd. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} named m_c, and honored for {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_self_assured0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "cunning",
+                        "bold",
+                        "arrogant",
+                        "confident",
+                        "rebellious",
+                        "flamboyant",
+                        "charismatic"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) stands tall and puffs out {PRONOUN/m_c/poss} chest as lead_name announces {PRONOUN/m_c/subject} {VERB/m_c/are/is} ready for {PRONOUN/m_c/poss} warrior name. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} given the name m_c after {PRONOUN/m_c/poss} r_h.",
+            "(old_name) holds {PRONOUN/m_c/poss} head high as lead_name announces it is time for {PRONOUN/m_c/object} to be given {PRONOUN/m_c/poss} warrior name. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} named m_c in honor of {PRONOUN/m_c/poss} r_h, and the Clan explodes into loud cheers.",
+            "(old_name) soaks up all of the attention as {PRONOUN/m_c/subject} {VERB/m_c/stand/stands} before {PRONOUN/m_c/poss} Clan, eager for {PRONOUN/m_c/poss} new name. lead_name gives {PRONOUN/m_c/object} the name m_c after {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_playful0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "playful"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) bounces up to the front of the Clan, full of excitement. {PRONOUN/m_c/subject/CAP} {VERB/m_c/try/tries} to take this somewhat seriously, but {PRONOUN/m_c/subject} still {VERB/m_c/crack/cracks} a joke over something the leader says. lead_name gently scolds {PRONOUN/m_c/object} for it, but can't help purring along as {PRONOUN/lead_name/subject} {VERB/lead_name/name/names} {PRONOUN/m_c/object} m_c after {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_protective0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "fierce",
+                        "grumpy",
+                        "bloodthirsty",
+                        "righteous"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) sits in front of the leader, tail twitching back and forth as {PRONOUN/m_c/subject} {VERB/m_c/await/awaits} {PRONOUN/m_c/poss} warrior name. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} eager for this ceremony to be done so {PRONOUN/m_c/subject} can go back to work and make sure the Clan is safe. Finally, lead_name looks down upon {PRONOUN/m_c/object} and names {PRONOUN/m_c/object} m_c after {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_protective1",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "sincere",
+                        "righteous"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) stands tall before the Clan, gaze determined as lead_name says {PRONOUN/m_c/subject} {VERB/m_c/are/is} ready for {PRONOUN/m_c/poss} warrior name. (old_name) takes the vow seriously, and promises to always do what is best for everyone. Gaze proud, lead_name names {PRONOUN/m_c/object} m_c after {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_protective2",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "troublesome",
+                        "arrogant",
+                        "lonesome",
+                        "cold",
+                        "rebellious",
+                        "strict",
+                        "grumpy",
+                        "gloomy"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "Maybe there's those among c_n who get on (old_name)'s nerves, but {PRONOUN/m_c/subject}'d give {PRONOUN/m_c/poss} blood, sweat, and tears to keep those fuzzballs safe, and lead_name knows it. (old_name) is named m_c for {PRONOUN/m_c/poss} r_h, and steps forward to take the mantle of a warrior."
+        ]
+    },
+    {
+        "event_id": "warrior_proud0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "arrogant",
+                        "flamboyant",
+                        "ambitious",
+                        "competitive",
+                        "righteous",
+                        "charismatic",
+                        "confident",
+                        "childish"
+                    ]
+                }
+            },
+            "r_c1": {
+                "group": [
+                    "player_clan"
+                ]
+            },
+            "r_c2": {
+                "group": [
+                    "player_clan"
+                ]
+            }
+        },
+        "strings": [
+            "(old_name) practically glows with delight, basking in the glory of {PRONOUN/m_c/poss} naming ceremony, in the attention and praise of {PRONOUN/m_c/poss} parents. lead_name names {PRONOUN/m_c/object} m_c for {PRONOUN/m_c/poss} r_h as the new warrior preens with accomplishment."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c2",
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_quiet0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "cunning",
+                        "gloomy",
+                        "cold"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) stares at lead_name as {PRONOUN/lead_name/subject} {VERB/lead_name/speak/speaks}. lead_name is sure it doesn't mean anything, but (old_name)'s lack of enthusiasm worries {PRONOUN/lead_name/object}. Brushing past it, lead_name gives {PRONOUN/m_c/object} the name m_c after {PRONOUN/m_c/poss} r_h.",
+            "(old_name) pads forward silently before sitting in front of {PRONOUN/m_c/poss} leader. {PRONOUN/m_c/subject/CAP} {VERB/m_c/remain/remains} just as quiet as {PRONOUN/m_c/poss} steps forward for lead_name to name {PRONOUN/m_c/object} m_c and honor {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_respectful0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "loving",
+                        "sincere",
+                        "faithful",
+                        "loyal"
+                    ]
+                }
+            },
+            "r_c0": {
+                "group": [
+                    "player_clan"
+                ],
+                "status": [
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ]
+            }
+        },
+        "strings": [
+            "As lead_name exults (old_name)'s r_h, (old_name) quietly tucks {PRONOUN/m_c/poss} head against r_c0's shoulder, deeply respectful. It feels unreal to receive {PRONOUN/m_c/poss} full name, and m_c will still be coming to r_c0 for advice for many moons in the future."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_responsible0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "responsible"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) has shown more maturity than most cats {PRONOUN/m_c/poss} age, always offering to take on the worst apprentice jobs first and counting the prey in the pile to know just how much to catch on patrol. lead_name was tempted to make {PRONOUN/m_c/object} a warrior sooner, but now will have to do. {PRONOUN/lead_name/subject/CAP} {VERB/lead_name/name/names} {PRONOUN/m_c/object} m_c after {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_strange0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "strange"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) is nearly late for {PRONOUN/m_c/poss} ceremony, having been double checking something for reasons no one knows. lead_name remains patient as (old_name) sits down in front of {PRONOUN/lead_name/object}. lead_name names {PRONOUN/m_c/object} m_c, honoring {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_strict0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "strict"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) grumbles to {PRONOUN/m_c/self} as lead_name changes just a single word in the ceremony. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} better than to correct {PRONOUN/lead_name/object} during such an important ceremony though, and {PRONOUN/m_c/subject} can speak to lead_name about it later. For now, {PRONOUN/m_c/subject} {VERB/m_c/listen/listens} as {PRONOUN/m_c/subject} {VERB/m_c/are/is} given the name m_c, and {VERB/m_c/are/is} honored for {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_surprised0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "insecure",
+                        "childish",
+                        "oblivious"
+                    ]
+                }
+            },
+            "r_c0": {
+                "group": [
+                    "player_clan"
+                ],
+                "status": [
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ]
+            }
+        },
+        "strings": [
+            "lead_name calls c_n to attention. They are gathered here to celebrate the hard work, persistence, and r_h of c_n's newest warrior. (old_name)'s jaw drops as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} summoned forward, and {PRONOUN/m_c/subject} {VERB/m_c/sit/sits}, disbelieving but thrilled, as lead_name grants {PRONOUN/m_c/object} the name m_c and cheers break out."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_thoughtful0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "thoughtful"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "lead_name hops up onto the meeting spot to find that (old_name) has set moss along it in preparation for the meeting so that lead_name can be more comfortable through the long ceremony. Purring, lead_name gives {PRONOUN/m_c/object} the name m_c for {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_troublemaker0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "troublesome",
+                        "rebellious"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name)'s penchant for getting into, and even starting, trouble has almost made lead_name hold back on making {PRONOUN/m_c/object} a warrior. However, lead_name can tell that (old_name) has been trying really hard lately to make up for it, and it would feel cruel to make {PRONOUN/m_c/object} wait any longer. So, lead_name names {PRONOUN/m_c/object} m_c in honor of {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_turmoil0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "grumpy",
+                        "daring",
+                        "cold",
+                        "ambitious",
+                        "troublesome",
+                        "daring",
+                        "competitive"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) looks up at the leader with pride. {PRONOUN/m_c/subject/CAP} knew all that hard work to prove {PRONOUN/m_c/subject} {VERB/m_c/were/was} the best apprentice in the Clan was worth it, even if it caused trouble. {PRONOUN/m_c/subject/CAP} {VERB/m_c/hold/holds} {PRONOUN/m_c/poss} head high as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} named m_c after {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_unfocused0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "adventurous",
+                        "oblivious",
+                        "strange"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) sits in front of the Clan, eager to receive {PRONOUN/m_c/poss} name, but {PRONOUN/m_c/poss} focus seems somewhere else, somewhere beyond the horizon. {PRONOUN/m_c/subject/CAP} barely {VERB/m_c/seem/seems} to be paying attention as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} named m_c after {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_unfocused1",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "childish",
+                        "oblivious",
+                        "strange"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) barely seems to be paying attention, focused instead on a fluttering leaf. lead_name has to repeat {PRONOUN/m_c/poss} name a few times before {PRONOUN/m_c/subject} finally {VERB/m_c/pay/pays} attention long enough to give {PRONOUN/m_c/poss} vow. Sighing, the leader names {PRONOUN/m_c/object} m_c after {PRONOUN/m_c/poss} r_h."
+        ]
+    },
+    {
+        "event_id": "warrior_unsure0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "calm",
+                        "careful",
+                        "nervous",
+                        "gloomy",
+                        "insecure"
+                    ]
+                }
+            },
+            "r_c1": {
+                "group": [
+                    "player_clan"
+                ]
+            },
+            "r_c2": {
+                "group": [
+                    "player_clan"
+                ]
+            }
+        },
+        "strings": [
+            "As lead_name calls c_n together, (old_name) desperately suppresses {PRONOUN/m_c/poss} shivers. What if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not ready? What if this is a mistake? But hearing r_c1 yowl frantically to r_c2 to hurry up helps (old_name) find reserves of calm. {PRONOUN/m_c/subject/CAP} {VERB/m_c/belong/belongs} here, and stepping up to be honored for {PRONOUN/m_c/poss} r_h with the name m_c fills {PRONOUN/m_c/object} with confidence."
+        ],
+        "tags": [
+            "clan:leader"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c2",
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "warrior_vengeful0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "vengeful"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "As (old_name) takes {PRONOUN/m_c/poss} vow and is named m_c after {PRONOUN/m_c/poss} r_h, {PRONOUN/m_c/poss} thoughts are less on protecting the Clan, and more so on ensuring that anyone who harms it will pay in kind."
+        ]
+    },
+    {
+        "event_id": "warrior_future_leader0",
+        "tags": [
+            "clan:leader"
+        ],
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "ambitious",
+                        "confident"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "lead_name calls (old_name) forward, honoring {PRONOUN/m_c/poss} r_h with the name m_c. One day, it'll be m_c's power to grant names to the warriors of c_n. This marks the first completed goal on that quest."
+        ]
+    }
+]
