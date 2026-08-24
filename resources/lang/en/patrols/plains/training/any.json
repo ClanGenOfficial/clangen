@@ -4225,7 +4225,7 @@
                 "status": [
                     "apprentice"
                 ],
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "relationship_constraint": [

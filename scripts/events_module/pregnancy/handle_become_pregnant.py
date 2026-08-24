@@ -6,7 +6,7 @@ import i18n
 from scripts.cat.cats import Cat
 from scripts.clan_package.settings import get_clan_setting
 from scripts.cat.microservices.conditions import get_injured
-from scripts.event_class import Single_Event
+from scripts.events_module.event_information import EventInformation
 from scripts.events_module.pregnancy.build_strings import (
     get_pregnancy_strings,
 )
@@ -125,7 +125,7 @@ def _handle_pregnancy_notice(pregnant_cat, second_parent):
         text, involved_cats = _create_pregnancy_announcement(
             pregnant_cat, "announcement", random_cat=second_parent
         )
-    game.cur_events_list.append(Single_Event(text, "birth_death", involved_cats))
+    game.cur_events_list.append(EventInformation(text, ["birth_death"], involved_cats))
 
 
 def _create_pregnancy_data(pregnant_cat: Cat, second_parent: Optional[Cat]):
@@ -149,7 +149,9 @@ def _retrieve_secret_kittens(cat):
     for kit in kits:
         cats_involved.append(kit.ID)
     game.cur_events_list.append(
-        Single_Event(print_event, "birth_death", cats_involved, cat_dict={"m_c": cat})
+        EventInformation(
+            print_event, ["birth_death"], cats_involved, cat_dict={"m_c": cat}
+        )
     )
 
 
