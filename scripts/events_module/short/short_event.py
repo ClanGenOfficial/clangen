@@ -10,10 +10,10 @@ from scripts.cat_relations.relationship import Relationship
 from scripts.clan_package.settings import get_clan_setting
 from scripts.cat.microservices.conditions import get_injured
 from scripts.config import get_config
-from scripts.event_class import Single_Event
+from scripts.events_module.event_information import EventInformation
 from scripts.events_module.future.prep_and_trigger import prep_future_event
 from scripts.events_module.relationship import relation_events
-from scripts.game_structure import localization, game
+from scripts.game_structure import game
 from scripts.events_module.text_adjust import (
     event_text_adjust,
     get_leader_life_notice,
@@ -381,7 +381,7 @@ class ShortEvent:
         self.gather_future_event()
 
         game.cur_events_list.append(
-            Single_Event(
+            EventInformation(
                 self.text + " " + self.additional_event_text,
                 self.types,
                 self.all_involved_cat_ids,
