@@ -4,7 +4,7 @@ from enum import Enum
 from typing import Union, Annotated
 
 from pydantic import AfterValidator, RootModel, StringConstraints
-from scripts.models.common.rank import validate_clan_rank
+from scripts.models.common.rank import validate_clan_ranks_with_min
 
 
 class TagEnum(Enum):
@@ -29,6 +29,6 @@ class Tag(RootModel):
         Annotated[
             str,
             StringConstraints(pattern=r"^-?clan:(.+)$"),
-            AfterValidator(validate_clan_rank),
+            AfterValidator(validate_clan_ranks_with_min),
         ],
     ]

@@ -199,12 +199,12 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
             if sub_tag_check.group(2):
                 minimums.append(int(sub_tag_check.group(2)))
             else:
-                if sub_tag_check.group(1) in CatRank and not sub_tag_check.group(1) in [
+                if sub_tag_check.group(1) in CatRank and sub_tag_check.group(1) not in [
                     CatRank.LEADER,
                     CatRank.DEPUTY,
                 ]:
-                    # Default Minimum is 2 for non deputy, non leader ranks.
                     minimums.append(2)
+                    # Default Minimum is 2 for non deputy, non leader ranks.
                 else:
                     # Default minimun is 1 for anything else.
                     minimums.append(1)
@@ -243,7 +243,7 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
                 ):
                     rank_matched = False
 
-            elif len(find_alive_cats_with_rank(cat, [rank])) >= mi:
+            elif not len(find_alive_cats_with_rank(cat, [rank])) >= mi:
                 rank_matched = False
 
             if is_exclusionary and rank_matched:
