@@ -58,6 +58,7 @@
     [clan.role]
         deputy = false
         12_moon_graduation = false
+        reassign_mentors = true
         retirement = false
         become_mediator = false
     

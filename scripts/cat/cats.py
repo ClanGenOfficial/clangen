@@ -1655,7 +1655,12 @@ class Cat:
             if mentor_cat and not self.is_valid_mentor(mentor_cat):
                 self.__remove_mentor()
 
+        if get_clan_setting("reassign_mentor"):
+            self.assign_random_mentor()
+
+    def assign_random_mentor(self):
         # Need to pick a random mentor if not specified
+        
         if not self.mentor:
             potential_mentors = []
             priority_mentors = []
