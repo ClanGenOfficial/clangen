@@ -67,22 +67,16 @@ def _handle_pregnancy_notice(pregnant_cat, second_parent):
     mate = []
     afab_mate = []
     amab_mate = []
-    # afab/amab only matters if same sex setting is off
-    if get_clan_setting("same sex birth"):
-        mate = [
-            Cat.fetch_cat(mate_id)
-            for mate_id in pregnant_cat.mate
-            if Cat.fetch_cat(mate_id)
-        ]
-    else:
-        for mate_id in pregnant_cat.mate:
-            mate_cat = Cat.fetch_cat(mate_id)
-            mate.append(mate_cat)
+    for mate_id in pregnant_cat.mate:
+        mate_cat = Cat.fetch_cat(mate_id)
+        if not mate_cat:
+            continue
+        mate.append(mate_cat)
 
-            if mate_cat.gender == "female":
-                afab_mate.append(mate_cat)
-            else:
-                amab_mate.append(mate_cat)
+        if mate_cat.gender == "female":
+            afab_mate.append(mate_cat)
+        else:
+            amab_mate.append(mate_cat)
 
     # if both cats are faithful to each other and aren't cheaters,
     # the pregnancy will be announced as normal
@@ -97,21 +91,7 @@ def _handle_pregnancy_notice(pregnant_cat, second_parent):
         text, involved_cats = _create_pregnancy_announcement(
             pregnant_cat, "announcement_surprise"
         )
-    # if the pregnant cat is in a same-sex relationship (and we aren't allowing samesex pregnancy)
-    # and they get knocked-up by another cat, let there be some drama for that!
-    elif get_clan_setting("same sex birth") and (
-        allow_affair is True
-        and second_parent
-        and second_parent.ID not in pregnant_cat.mate
-        and afab_mate
-    ):
-        random_cat = afab_mate[0] if afab_mate else None
-        text, involved_cats = _create_pregnancy_announcement(
-            pregnant_cat,
-            "announcement_affair_samesex",
-            random_cat=random_cat,
-        )
-    # and lastly, if the pregnant cat got knocked up by another cat who ISN'T their mate,
+    # if the pregnant cat got knocked up by another cat who ISN'T their mate,
     # let the player guess whether it's an affair or not, sometimes the events will tell you,
     # sometimes they won't...
     elif (
@@ -122,12 +102,23 @@ def _handle_pregnancy_notice(pregnant_cat, second_parent):
     ):
         announcement_key = choice(["announcement_affair", "announcement"])
         _set_affair_visibility(pregnant_cat, announcement_key == "announcement_affair")
-        if get_clan_setting("same sex birth"):
-            random_cat = mate[0]
-        else:
-            random_cat = amab_mate[0] if amab_mate else None
+        random_cat = amab_mate[0]
         text, involved_cats = _create_pregnancy_announcement(
             pregnant_cat, announcement_key, random_cat=random_cat
+        )
+    # and lastly, if the pregnant cat only has female mates and they get knocked-up
+    # by another cat, let there be some drama for that!
+    elif (
+        allow_affair is True
+        and second_parent
+        and second_parent.ID not in pregnant_cat.mate
+        and afab_mate
+    ):
+        random_cat = afab_mate[0]
+        text, involved_cats = _create_pregnancy_announcement(
+            pregnant_cat,
+            "announcement_affair_samesex",
+            random_cat=random_cat,
         )
     # if all else fails, just a regular announcement happens
     else:
