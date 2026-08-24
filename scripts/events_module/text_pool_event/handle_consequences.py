@@ -9,6 +9,7 @@ from scripts.cat.cats import Cat
 from scripts.cat.constants import PERMANENT, ILLNESSES, INJURIES
 from scripts.cat.enums import CatRank, CatThought
 from scripts.cat.microservices.add_to_clan import add_to_clan, add_dependents_to_clan
+from scripts.cat.pelts import Pelt
 from scripts.cat.skills import SkillPath
 from scripts.clan import OtherClan
 from scripts.clan_package.cotc import change_clan_reputation, change_clan_relations
@@ -28,7 +29,11 @@ from scripts.events_module.consequences import unpack_rel_block, check_stolen_vi
 from scripts.events_module.future.prep_and_trigger import prep_future_event
 from scripts.events_module.parameter_dicts import SupplyDict
 from scripts.events_module.relationship import relation_events
-from scripts.events_module.text_adjust import event_text_adjust, adjust_list_text
+from scripts.events_module.text_adjust import (
+    event_text_adjust,
+    adjust_list_text,
+    accessory_text_adjust,
+)
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game, constants
 
@@ -66,6 +71,11 @@ def execute_outcome(
         _handle_supply_changes(event, event_involved_cats),
     ]
 
+    acc_results, processed_text = _handle_accessories(
+        event, event_involved_cats, processed_text
+    )
+    results.append(acc_results)
+
     _handle_exp(event, event_involved_cats)
     _handle_mentor_app(event_involved_cats)
     _handle_future_event(event, event_involved_cats)
@@ -97,6 +107,68 @@ def execute_outcome(
 
     # return all the bullshit
     return processed_text, "\n".join(final_results), rel_results
+
+
+def _handle_accessories(
+    event: TextPoolEvent,
+    event_involved_cats: dict[str, Union[Cat, list[Cat]]],
+    processed_text: str,
+) -> tuple[str, str]:
+    """
+    Handles giving accessories and text processing regarding accessories
+    """
+    if not event.gain_accessory:
+        return "", processed_text
+
+    cats_gaining_acc = []
+
+    gained_accessories: dict[str, str] = {}
+
+    for i, block in enumerate(event.gain_accessory):
+        cat_list = []
+        for abbr, cat in event_involved_cats.items():
+            if abbr in block["cats"]:
+                if isinstance(event_involved_cats[abbr], list):
+                    cat_list.extend(event_involved_cats[abbr])
+                else:
+                    cat_list.append(event_involved_cats[abbr])
+
+        acc_list = []
+        possible_accs = block["accessory"]
+        if "WILD" in possible_accs:
+            acc_list.extend(Pelt.wild_accessories)
+        if "PLANT" in possible_accs:
+            acc_list.extend(Pelt.plant_accessories)
+        if "COLLAR" in possible_accs:
+            acc_list.extend(Pelt.collar_accessories)
+
+        for acc in possible_accs:
+            if acc not in ("WILD", "PLANT", "COLLAR"):
+                acc_list.append(acc)
+
+        new_acc = choice(acc_list)
+        gained_accessories[f"acc{i}"] = new_acc
+        for c in cat_list:
+            if c.pelt.accessory:
+                c.pelt.accessory = (
+                    *c.pelt.accessory,
+                    new_acc,
+                )
+                cats_gaining_acc.append(c)
+            else:
+                c.pelt.accessory = (new_acc,)
+                cats_gaining_acc.append(c)
+
+    cat_names = []
+    for c in cats_gaining_acc:
+        cat_names.append(_profile_link(c))
+
+    processed_text = accessory_text_adjust(processed_text, gained_accessories)
+
+    return (
+        i18n.t("screens.patrol.accessory_gained", cats=adjust_list_text(cat_names)),
+        processed_text,
+    )
 
 
 def _handle_joining(
@@ -523,7 +595,7 @@ def _handle_prey(
     hunter_bonus = 0
     highest_hunter_tier = 0
 
-    for cat in event_involved_cats["patrol_cats"]:
+    for cat in event_involved_cats.get("patrol_cats", []):
         if cat.skills.primary.path == SkillPath.HUNTER and cat.skills.primary.tier > 0:
             level = cat.experience_level
             tier = cat.skills.primary.tier
@@ -547,7 +619,7 @@ def _handle_prey(
 
     for prey in prey_info:
         amount_gained = (
-            prey_types.get(prey["adjust"]) * len(event_involved_cats["patrol_cats"])
+            prey_types.get(prey["adjust"]) * len(event_involved_cats.get("patrol_cats"))
             + hunter_bonus
         )
 
@@ -642,7 +714,7 @@ def _get_herb_increase_amount(
     random_variance = get_config("clan_resources.herbs.gathering_variance")
 
     total_increase = 0
-    for c in event_involved_cats["patrol_cats"]:
+    for c in event_involved_cats.get("patrol_cats", []):
         # now we find how much this specific cat found
         amount_gathered = amount_per_cat
         if not disable_random:
@@ -708,7 +780,7 @@ def _handle_exp(
 def _handle_mentor_app(event_involved_cats: dict[str, Union[Cat, list[Cat]]]):
     """Handles mentors influencing apprentices"""
 
-    for cat in event_involved_cats["patrol_cats"]:
+    for cat in event_involved_cats.get("patrol_cats", []):
         mentor = Cat.fetch_cat(cat.mentor)
         if mentor in event_involved_cats["patrol_cats"]:
             affect_personality = cat.personality.mentor_influence(mentor.personality)

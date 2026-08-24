@@ -302,27 +302,30 @@
             "transition"
         ],
         "strings": [
-            "The first cat m_c told about {PRONOUN/m_c/poss} transition was {PRONOUN/m_c/poss} parent, r_c. Overjoyed for {PRONOUN/r_c/poss} child, r_c helped m_c spread the news to the rest of the Clan."
+            "The first cat m_c told about {PRONOUN/m_c/poss} transition was {PRONOUN/m_c/poss} parent, r_c0. Overjoyed for {PRONOUN/r_c0/poss} child, r_c0 helped m_c spread the news to the rest of the Clan."
         ],
-        "relationship_constraints": {
-            "cats_from": [
-                "m_c"
-            ],
-            "cats_to": [
-                "r_c"
-            ],
-            "mutual": false,
-            "constraints": [
-                "child/parent",
-                "trusts"
-            ]
-        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent",
+                    "trusts"
+                ]
+            }
+        ],
         "involved_cats": {
             "m_c": {
                 "gender": [
                     "male"
                 ]
-            }
+            },
+            "r_c0": {}
         },
         "relationship_changes": [
             {
@@ -330,7 +333,7 @@
                     "m_c"
                 ],
                 "cats_to": [
-                    "r_c"
+                    "r_c0"
                 ],
                 "mutual": false,
                 "values": [
@@ -361,27 +364,30 @@
             "transition"
         ],
         "strings": [
-            "The first cat m_c told about {PRONOUN/m_c/poss} transition was {PRONOUN/m_c/poss} parent, r_c. Overjoyed for {PRONOUN/r_c/poss} child, r_c helped m_c spread the news to the rest of the Clan."
+            "The first cat m_c told about {PRONOUN/m_c/poss} transition was {PRONOUN/m_c/poss} parent, r_c0. Overjoyed for {PRONOUN/r_c0/poss} child, r_c0 helped m_c spread the news to the rest of the Clan."
         ],
-        "relationship_constraints": {
-            "cats_from": [
-                "m_c"
-            ],
-            "cats_to": [
-                "r_c"
-            ],
-            "mutual": false,
-            "constraints": [
-                "child/parent",
-                "trusts"
-            ]
-        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent",
+                    "trusts"
+                ]
+            }
+        ],
         "involved_cats": {
             "m_c": {
                 "gender": [
                     "female"
                 ]
-            }
+            },
+            "r_c0": {}
         },
         "relationship_changes": [
             {
@@ -389,7 +395,7 @@
                     "m_c"
                 ],
                 "cats_to": [
-                    "r_c"
+                    "r_c0"
                 ],
                 "mutual": false,
                 "values": [
@@ -883,14 +889,16 @@
         "new_gender": [
             "nonbinary"
         ],
-        "gain_accessory": {
-            "cats": [
-                "m_c"
-            ],
-            "accessory": [
-                "WILD"
-            ]
-        }
+        "gain_accessory": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "accessory": [
+                    "WILD"
+                ]
+            }
+        ]
     },
     {
         "event_id": "gen_misc_transition_flamboyant_accessory_to_male",
@@ -946,14 +954,16 @@
         "new_gender": [
             "trans male"
         ],
-        "gain_accessory": {
-            "cats": [
-                "m_c"
-            ],
-            "accessory": [
-                "WILD"
-            ]
-        }
+        "gain_accessory": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "accessory": [
+                    "WILD"
+                ]
+            }
+        ]
     },
     {
         "event_id": "gen_misc_transition_flamboyant_accessory_to_female",
@@ -1009,14 +1019,16 @@
         "new_gender": [
             "trans female"
         ],
-        "gain_accessory": {
-            "cats": [
-                "m_c"
-            ],
-            "accessory": [
-                "WILD"
-            ]
-        }
+        "gain_accessory": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "accessory": [
+                    "WILD"
+                ]
+            }
+        ]
     },
     {
         "event_id": "gen_misc_transition_calm_to_nonbinary",
@@ -1342,20 +1354,22 @@
             "transition"
         ],
         "strings": [
-            "m_c was glad for c_n's support when {PRONOUN/m_c/subject} announced {PRONOUN/m_c/subject} {VERB/m_c/are/is} neither a she-cat nor a tom. The moment still felt bittersweet when {PRONOUN/m_c/subject} later looked at the night sky, knowing a particularly bright star meant r_c is proud of the cat {PRONOUN/r_c/poss} child has become."
+            "m_c was glad for c_n's support when {PRONOUN/m_c/subject} announced {PRONOUN/m_c/subject} {VERB/m_c/are/is} neither a she-cat nor a tom. The moment still felt bittersweet when {PRONOUN/m_c/subject} later looked at the night sky, knowing a particularly bright star meant r_c0 is proud of the cat {PRONOUN/r_c0/poss} child has become."
         ],
-        "relationship_constraints": {
-            "cats_from": [
-                "m_c"
-            ],
-            "cats_to": [
-                "r_c"
-            ],
-            "mutual": false,
-            "constraints": [
-                "child/parent"
-            ]
-        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ],
         "involved_cats": {
             "m_c": {
                 "age": [
@@ -1370,7 +1384,7 @@
                     "female"
                 ]
             },
-            "r_c": {
+            "r_c0": {
                 "group": [
                     "starclan"
                 ]
@@ -1412,20 +1426,22 @@
             "transition"
         ],
         "strings": [
-            "m_c was glad for c_n's support when {PRONOUN/m_c/subject} announced {PRONOUN/m_c/subject} {VERB/m_c/are/is} a she-cat. The moment still felt bittersweet when {PRONOUN/m_c/subject} later looked at the night sky, knowing a particularly bright star meant r_c is proud of the cat {PRONOUN/r_c/poss} daughter has become."
+            "m_c was glad for c_n's support when {PRONOUN/m_c/subject} announced {PRONOUN/m_c/subject} {VERB/m_c/are/is} a she-cat. The moment still felt bittersweet when {PRONOUN/m_c/subject} later looked at the night sky, knowing a particularly bright star meant r_c0 is proud of the cat {PRONOUN/r_c0/poss} daughter has become."
         ],
-        "relationship_constraints": {
-            "cats_from": [
-                "m_c"
-            ],
-            "cats_to": [
-                "r_c"
-            ],
-            "mutual": false,
-            "constraints": [
-                "child/parent"
-            ]
-        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ],
         "involved_cats": {
             "m_c": {
                 "age": [
@@ -1439,7 +1455,7 @@
                     "male"
                 ]
             },
-            "r_c": {
+            "r_c0": {
                 "group": [
                     "starclan"
                 ]
@@ -1481,20 +1497,22 @@
             "transition"
         ],
         "strings": [
-            "m_c was glad for c_n's support when {PRONOUN/m_c/subject} announced {PRONOUN/m_c/subject} {VERB/m_c/are/is} a tom. The moment still felt bittersweet when {PRONOUN/m_c/subject} later looked at the night sky, knowing a particularly bright star meant r_c is proud of the cat {PRONOUN/r_c/poss} son has become."
+            "m_c was glad for c_n's support when {PRONOUN/m_c/subject} announced {PRONOUN/m_c/subject} {VERB/m_c/are/is} a tom. The moment still felt bittersweet when {PRONOUN/m_c/subject} later looked at the night sky, knowing a particularly bright star meant r_c0 is proud of the cat {PRONOUN/r_c0/poss} son has become."
         ],
-        "relationship_constraints": {
-            "cats_from": [
-                "m_c"
-            ],
-            "cats_to": [
-                "r_c"
-            ],
-            "mutual": false,
-            "constraints": [
-                "child/parent"
-            ]
-        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ],
         "involved_cats": {
             "m_c": {
                 "age": [
@@ -1508,7 +1526,7 @@
                     "female"
                 ]
             },
-            "r_c": {
+            "r_c0": {
                 "group": [
                     "starclan"
                 ]
@@ -1550,22 +1568,24 @@
             "transition"
         ],
         "strings": [
-            "m_c explained to r_c that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} feel like a tom. r_c nodded impatiently, happy for m_c, but could they get back to playing now?"
+            "m_c explained to r_c0 that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} feel like a tom. r_c0 nodded impatiently, happy for m_c, but could they get back to playing now?"
         ],
-        "relationship_constraints": {
-            "cats_from": [
-                "m_c"
-            ],
-            "cats_to": [
-                "r_c"
-            ],
-            "mutual": false,
-            "constraints": [
-                "likes",
-                "listens_to",
-                "relates_to"
-            ]
-        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "likes",
+                    "listens_to",
+                    "relates_to"
+                ]
+            }
+        ],
         "involved_cats": {
             "m_c": {
                 "age": [
@@ -1575,7 +1595,7 @@
                     "male"
                 ]
             },
-            "r_c": {
+            "r_c0": {
                 "age": [
                     "kitten"
                 ]
@@ -1618,22 +1638,24 @@
             "transition"
         ],
         "strings": [
-            "m_c explained to r_c that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} feel like a she-cat. r_c nodded impatiently, happy for m_c, but could they get back to playing now?"
+            "m_c explained to r_c0 that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} feel like a she-cat. r_c0 nodded impatiently, happy for m_c, but could they get back to playing now?"
         ],
-        "relationship_constraints": {
-            "cats_from": [
-                "m_c"
-            ],
-            "cats_to": [
-                "r_c"
-            ],
-            "mutual": false,
-            "constraints": [
-                "likes",
-                "listens_to",
-                "relates_to"
-            ]
-        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "likes",
+                    "listens_to",
+                    "relates_to"
+                ]
+            }
+        ],
         "involved_cats": {
             "m_c": {
                 "age": [
@@ -1643,7 +1665,7 @@
                     "female"
                 ]
             },
-            "r_c": {
+            "r_c0": {
                 "age": [
                     "kitten"
                 ]
@@ -1686,21 +1708,23 @@
             "transition"
         ],
         "strings": [
-            "m_c quietly talked to {PRONOUN/m_c/poss} mentor, r_c, and confessed that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} feel like a she-cat. r_c reassured {PRONOUN/m_c/object} and offered to help tell c_n, if that was what m_c wanted. After all, it's r_c's job to help."
+            "m_c quietly talked to {PRONOUN/m_c/poss} mentor, r_c0, and confessed that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} feel like a she-cat. r_c0 reassured {PRONOUN/m_c/object} and offered to help tell c_n, if that was what m_c wanted. After all, it's r_c0's job to help."
         ],
-        "relationship_constraints": {
-            "cats_from": [
-                "m_c"
-            ],
-            "cats_to": [
-                "r_c"
-            ],
-            "mutual": false,
-            "constraints": [
-                "trusts",
-                "app/mentor"
-            ]
-        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "trusts",
+                    "app/mentor"
+                ]
+            }
+        ],
         "involved_cats": {
             "m_c": {
                 "status": [
@@ -1712,7 +1736,7 @@
                     "female"
                 ]
             },
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "warrior",
                     "medicine cat",
@@ -1743,7 +1767,7 @@
                     "m_c"
                 ],
                 "cats_to": [
-                    "r_c"
+                    "r_c0"
                 ],
                 "mutual": false,
                 "values": [
@@ -1758,7 +1782,7 @@
             },
             {
                 "cats_from": [
-                    "r_c"
+                    "r_c0"
                 ],
                 "cats_to": [
                     "m_c"
@@ -1793,21 +1817,23 @@
             "transition"
         ],
         "strings": [
-            "m_c quietly talked to {PRONOUN/m_c/poss} mentor, r_c, and confessed that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} feel like a tom. r_c reassured {PRONOUN/m_c/object} and offered to help tell c_n, if that was what m_c wanted. After all, it's r_c's job to help."
+            "m_c quietly talked to {PRONOUN/m_c/poss} mentor, r_c0, and confessed that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} feel like a tom. r_c0 reassured {PRONOUN/m_c/object} and offered to help tell c_n, if that was what m_c wanted. After all, it's r_c0's job to help."
         ],
-        "relationship_constraints": {
-            "cats_from": [
-                "m_c"
-            ],
-            "cats_to": [
-                "r_c"
-            ],
-            "mutual": false,
-            "constraints": [
-                "trusts",
-                "app/mentor"
-            ]
-        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "trusts",
+                    "app/mentor"
+                ]
+            }
+        ],
         "involved_cats": {
             "m_c": {
                 "status": [
@@ -1819,7 +1845,7 @@
                     "male"
                 ]
             },
-            "r_c": {
+            "r_c0": {
                 "status": [
                     "warrior",
                     "medicine cat",
@@ -1850,7 +1876,7 @@
                     "m_c"
                 ],
                 "cats_to": [
-                    "r_c"
+                    "r_c0"
                 ],
                 "mutual": false,
                 "values": [
@@ -1865,7 +1891,7 @@
             },
             {
                 "cats_from": [
-                    "r_c"
+                    "r_c0"
                 ],
                 "cats_to": [
                     "m_c"
@@ -1900,21 +1926,23 @@
             "transition"
         ],
         "strings": [
-            "m_c sighed over the very relatable experience of wishing to be a she-cat. r_c noted that that probably wasn't a universal experience. The next day, m_c had an announcement to make."
+            "m_c sighed over the very relatable experience of wishing to be a she-cat. r_c0 noted that that probably wasn't a universal experience. The next day, m_c had an announcement to make."
         ],
-        "relationship_constraints": {
-            "cats_from": [
-                "m_c"
-            ],
-            "cats_to": [
-                "r_c"
-            ],
-            "mutual": false,
-            "constraints": [
-                "trusts",
-                "likes"
-            ]
-        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "trusts",
+                    "likes"
+                ]
+            }
+        ],
         "involved_cats": {
             "m_c": {
                 "age": [
@@ -1924,7 +1952,7 @@
                     "male"
                 ]
             },
-            "r_c": {
+            "r_c0": {
                 "age": [
                     "-kitten"
                 ]
@@ -1966,21 +1994,23 @@
             "transition"
         ],
         "strings": [
-            "m_c sighed over the very relatable experience of wishing to be a tom. r_c noted that that probably wasn't a universal experience. The next day, m_c had an announcement to make."
+            "m_c sighed over the very relatable experience of wishing to be a tom. r_c0 noted that that probably wasn't a universal experience. The next day, m_c had an announcement to make."
         ],
-        "relationship_constraints": {
-            "cats_from": [
-                "m_c"
-            ],
-            "cats_to": [
-                "r_c"
-            ],
-            "mutual": false,
-            "constraints": [
-                "trusts",
-                "likes"
-            ]
-        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "trusts",
+                    "likes"
+                ]
+            }
+        ],
         "involved_cats": {
             "m_c": {
                 "age": [
@@ -1990,7 +2020,7 @@
                     "female"
                 ]
             },
-            "r_c": {
+            "r_c0": {
                 "age": [
                     "-kitten"
                 ]
@@ -2032,21 +2062,23 @@
             "transition"
         ],
         "strings": [
-            "m_c sighed over the very relatable experience of wanting to be neither a tom or she-cat. r_c noted that that probably wasn't a universal experience. The next day, m_c had an announcement to make."
+            "m_c sighed over the very relatable experience of wanting to be neither a tom or she-cat. r_c0 noted that that probably wasn't a universal experience. The next day, m_c had an announcement to make."
         ],
-        "relationship_constraints": {
-            "cats_from": [
-                "m_c"
-            ],
-            "cats_to": [
-                "r_c"
-            ],
-            "mutual": false,
-            "constraints": [
-                "trusts",
-                "likes"
-            ]
-        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "trusts",
+                    "likes"
+                ]
+            }
+        ],
         "involved_cats": {
             "m_c": {
                 "age": [
@@ -2057,7 +2089,7 @@
                     "male"
                 ]
             },
-            "r_c": {
+            "r_c0": {
                 "age": [
                     "-kitten"
                 ]
@@ -2101,18 +2133,20 @@
         "strings": [
             "Looking at {PRONOUN/m_c/poss} adorable litter, m_c realized {PRONOUN/m_c/subject} would rather just be a parent instead of a mother or father."
         ],
-        "relationship_constraints": {
-            "cats_from": [
-                "m_c"
-            ],
-            "cats_to": [
-                "r_c"
-            ],
-            "mutual": false,
-            "constraints": [
-                "parent/child"
-            ]
-        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "parent/child"
+                ]
+            }
+        ],
         "involved_cats": {
             "m_c": {
                 "age": [
@@ -2123,7 +2157,7 @@
                     "male"
                 ]
             },
-            "r_c": {
+            "r_c0": {
                 "age": [
                     "kitten",
                     "newborn"
@@ -2168,18 +2202,20 @@
         "strings": [
             "Looking at {PRONOUN/m_c/poss} adorable litter, m_c realized {PRONOUN/m_c/subject} would rather be a father than a mother."
         ],
-        "relationship_constraints": {
-            "cats_from": [
-                "m_c"
-            ],
-            "cats_to": [
-                "r_c"
-            ],
-            "mutual": false,
-            "constraints": [
-                "parent/child"
-            ]
-        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "parent/child"
+                ]
+            }
+        ],
         "involved_cats": {
             "m_c": {
                 "age": [
@@ -2189,7 +2225,7 @@
                     "female"
                 ]
             },
-            "r_c": {
+            "r_c0": {
                 "age": [
                     "kitten",
                     "newborn"
@@ -2234,18 +2270,20 @@
         "strings": [
             "Looking at {PRONOUN/m_c/poss} adorable litter, m_c realized {PRONOUN/m_c/subject} would rather be a mother than a father."
         ],
-        "relationship_constraints": {
-            "cats_from": [
-                "m_c"
-            ],
-            "cats_to": [
-                "r_c"
-            ],
-            "mutual": false,
-            "constraints": [
-                "parent/child"
-            ]
-        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "parent/child"
+                ]
+            }
+        ],
         "involved_cats": {
             "m_c": {
                 "age": [
@@ -2255,7 +2293,7 @@
                     "male"
                 ]
             },
-            "r_c": {
+            "r_c0": {
                 "age": [
                     "kitten",
                     "newborn"
@@ -2298,20 +2336,22 @@
             "transition"
         ],
         "strings": [
-            "It took m_c a while to muster up the courage to talk to their parent, r_c, but finally quietly mentioned {PRONOUN/m_c/subject} would rather not be seen as a she-cat. r_c later gave m_c a gift as congratulations on figuring this out, saying {PRONOUN/r_c/subject} would always be proud of m_c."
+            "It took m_c a while to muster up the courage to talk to their parent, r_c0, but finally quietly mentioned {PRONOUN/m_c/subject} would rather not be seen as a she-cat. r_c0 later gave m_c a gift as congratulations on figuring this out, saying {PRONOUN/r_c0/subject} would always be proud of m_c."
         ],
-        "relationship_constraints": {
-            "cats_from": [
-                "m_c"
-            ],
-            "cats_to": [
-                "r_c"
-            ],
-            "mutual": false,
-            "constraints": [
-                "child/parent"
-            ]
-        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ],
         "involved_cats": {
             "m_c": {
                 "age": [
@@ -2321,7 +2361,7 @@
                     "female"
                 ]
             },
-            "r_c": {}
+            "r_c0": {}
         },
         "relationship_changes": [
             {
@@ -2346,7 +2386,7 @@
                     "m_c"
                 ],
                 "cats_to": [
-                    "r_c"
+                    "r_c0"
                 ],
                 "mutual": false,
                 "values": [
@@ -2361,7 +2401,7 @@
             },
             {
                 "cats_from": [
-                    "r_c"
+                    "r_c0"
                 ],
                 "cats_to": [
                     "m_c"
@@ -2382,14 +2422,16 @@
             "trans male",
             "nonbinary"
         ],
-        "gain_accessory": {
-            "cats": [
-                "m_c"
-            ],
-            "accessory": [
-                "WILD"
-            ]
-        }
+        "gain_accessory": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "accessory": [
+                    "WILD"
+                ]
+            }
+        ]
     },
     {
         "event_id": "gen_misc_transition_nervoustoparent_from_male",
@@ -2404,20 +2446,22 @@
             "transition"
         ],
         "strings": [
-            "It took m_c a while to muster up the courage to talk to their parent, r_c, but finally quietly mentioned {PRONOUN/m_c/subject} would rather not be seen as a tom. r_c later gave m_c a gift as congratulations on figuring this out, saying {PRONOUN/r_c/subject} would always be proud of m_c."
+            "It took m_c a while to muster up the courage to talk to their parent, r_c0, but finally quietly mentioned {PRONOUN/m_c/subject} would rather not be seen as a tom. r_c0 later gave m_c a gift as congratulations on figuring this out, saying {PRONOUN/r_c0/subject} would always be proud of m_c."
         ],
-        "relationship_constraints": {
-            "cats_from": [
-                "m_c"
-            ],
-            "cats_to": [
-                "r_c"
-            ],
-            "mutual": false,
-            "constraints": [
-                "child/parent"
-            ]
-        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ],
         "involved_cats": {
             "m_c": {
                 "age": [
@@ -2434,7 +2478,7 @@
                     "male"
                 ]
             },
-            "r_c": {}
+            "r_c0": {}
         },
         "relationship_changes": [
             {
@@ -2459,7 +2503,7 @@
                     "m_c"
                 ],
                 "cats_to": [
-                    "r_c"
+                    "r_c0"
                 ],
                 "mutual": false,
                 "values": [
@@ -2474,7 +2518,7 @@
             },
             {
                 "cats_from": [
-                    "r_c"
+                    "r_c0"
                 ],
                 "cats_to": [
                     "m_c"
@@ -2495,14 +2539,16 @@
             "trans female",
             "nonbinary"
         ],
-        "gain_accessory": {
-            "cats": [
-                "m_c"
-            ],
-            "accessory": [
-                "WILD"
-            ]
-        }
+        "gain_accessory": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "accessory": [
+                    "WILD"
+                ]
+            }
+        ]
     },
     {
         "event_id": "gen_misc_transition_mates_from_male",
@@ -2517,20 +2563,22 @@
             "transition"
         ],
         "strings": [
-            "r_c and m_c were on a walk together when m_c mentioned that {PRONOUN/m_c/subject} might not be a tom. While a bit surprised, r_c assured {PRONOUN/m_c/object} that {PRONOUN/m_c/poss} gender doesn't matter. {PRONOUN/r_c/subject/CAP} would be proud to have m_c as {PRONOUN/r_c/poss} partner no matter what."
+            "r_c0 and m_c were on a walk together when m_c mentioned that {PRONOUN/m_c/subject} might not be a tom. While a bit surprised, r_c0 assured {PRONOUN/m_c/object} that {PRONOUN/m_c/poss} gender doesn't matter. {PRONOUN/r_c0/subject/CAP} would be proud to have m_c as {PRONOUN/r_c0/poss} partner no matter what."
         ],
-        "relationship_constraints": {
-            "cats_from": [
-                "m_c"
-            ],
-            "cats_to": [
-                "r_c"
-            ],
-            "mutual": false,
-            "constraints": [
-                "mates"
-            ]
-        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "mates"
+                ]
+            }
+        ],
         "involved_cats": {
             "m_c": {
                 "age": [
@@ -2540,7 +2588,7 @@
                     "male"
                 ]
             },
-            "r_c": {}
+            "r_c0": {}
         },
         "relationship_changes": [
             {
@@ -2565,7 +2613,7 @@
                     "m_c"
                 ],
                 "cats_to": [
-                    "r_c"
+                    "r_c0"
                 ],
                 "mutual": false,
                 "values": [
@@ -2580,7 +2628,7 @@
             },
             {
                 "cats_from": [
-                    "r_c"
+                    "r_c0"
                 ],
                 "cats_to": [
                     "m_c"
@@ -2615,20 +2663,22 @@
             "transition"
         ],
         "strings": [
-            "r_c and m_c were on a walk together when m_c mentioned that {PRONOUN/m_c/subject} might not be a she-cat. While a bit surprised, r_c assured {PRONOUN/m_c/object} that {PRONOUN/m_c/poss} gender doesn't matter. {PRONOUN/r_c/subject/CAP} would be proud to have m_c as {PRONOUN/r_c/poss} partner no matter what."
+            "r_c0 and m_c were on a walk together when m_c mentioned that {PRONOUN/m_c/subject} might not be a she-cat. While a bit surprised, r_c0 assured {PRONOUN/m_c/object} that {PRONOUN/m_c/poss} gender doesn't matter. {PRONOUN/r_c0/subject/CAP} would be proud to have m_c as {PRONOUN/r_c0/poss} partner no matter what."
         ],
-        "relationship_constraints": {
-            "cats_from": [
-                "m_c"
-            ],
-            "cats_to": [
-                "r_c"
-            ],
-            "mutual": false,
-            "constraints": [
-                "mates"
-            ]
-        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "mates"
+                ]
+            }
+        ],
         "involved_cats": {
             "m_c": {
                 "age": [
@@ -2638,7 +2688,7 @@
                     "female"
                 ]
             },
-            "r_c": {}
+            "r_c0": {}
         },
         "relationship_changes": [
             {
@@ -2663,7 +2713,7 @@
                     "m_c"
                 ],
                 "cats_to": [
-                    "r_c"
+                    "r_c0"
                 ],
                 "mutual": false,
                 "values": [
@@ -2678,7 +2728,7 @@
             },
             {
                 "cats_from": [
-                    "r_c"
+                    "r_c0"
                 ],
                 "cats_to": [
                     "m_c"
@@ -2713,7 +2763,7 @@
             "transition"
         ],
         "strings": [
-            "m_c found a acc_singular to wear. Taking it as a sign, {PRONOUN/m_c/subject} announced that tom doesn't describe {PRONOUN/m_c/object} anymore. Going through life as {PRONOUN/m_c/poss} true self might be a scary change, but a positive one, like the butterfly going through metamorphosis."
+            "m_c found a acc0_singular to wear. Taking it as a sign, {PRONOUN/m_c/subject} announced that tom doesn't describe {PRONOUN/m_c/object} anymore. Going through life as {PRONOUN/m_c/poss} true self might be a scary change, but a positive one, like the butterfly going through metamorphosis."
         ],
         "involved_cats": {
             "m_c": {
@@ -2748,16 +2798,18 @@
             "trans female",
             "nonbinary"
         ],
-        "gain_accessory": {
-            "cats": [
-                "m_c"
-            ],
-            "accessory": [
-                "ROSY MOTH WINGS",
-                "MORPHO BUTTERFLY",
-                "MONARCH BUTTERFLY"
-            ]
-        }
+        "gain_accessory": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "accessory": [
+                    "ROSY MOTH WINGS",
+                    "MORPHO BUTTERFLY",
+                    "MONARCH BUTTERFLY"
+                ]
+            }
+        ]
     },
     {
         "event_id": "gen_misc_transition_butterfly_from_female",
@@ -2772,7 +2824,7 @@
             "transition"
         ],
         "strings": [
-            "m_c found a acc_singular to wear. Taking it as a sign, {PRONOUN/m_c/subject} announced that she-cat doesn't describe {PRONOUN/m_c/object} anymore. Going through life as {PRONOUN/m_c/poss} true self might be a scary change, but a positive one, like the butterfly going through metamorphosis."
+            "m_c found a acc0_singular to wear. Taking it as a sign, {PRONOUN/m_c/subject} announced that she-cat doesn't describe {PRONOUN/m_c/object} anymore. Going through life as {PRONOUN/m_c/poss} true self might be a scary change, but a positive one, like the butterfly going through metamorphosis."
         ],
         "involved_cats": {
             "m_c": {
@@ -2807,16 +2859,18 @@
             "trans male",
             "nonbinary"
         ],
-        "gain_accessory": {
-            "cats": [
-                "m_c"
-            ],
-            "accessory": [
-                "ROSY MOTH WINGS",
-                "MORPHO BUTTERFLY",
-                "MONARCH BUTTERFLY"
-            ]
-        }
+        "gain_accessory": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "accessory": [
+                    "ROSY MOTH WINGS",
+                    "MORPHO BUTTERFLY",
+                    "MONARCH BUTTERFLY"
+                ]
+            }
+        ]
     },
     {
         "event_id": "gen_misc_transition_flower_to_male",
@@ -2831,7 +2885,7 @@
             "transition"
         ],
         "strings": [
-            "Flowers bloom and change into beautiful versions of themselves. m_c took a acc_singular to wear before telling c_n {PRONOUN/m_c/subject} {VERB/m_c/are/is} a tom."
+            "Flowers bloom and change into beautiful versions of themselves. m_c took a acc0_singular to wear before telling c_n {PRONOUN/m_c/subject} {VERB/m_c/are/is} a tom."
         ],
         "involved_cats": {
             "m_c": {
@@ -2865,40 +2919,42 @@
         "new_gender": [
             "trans male"
         ],
-        "gain_accessory": {
-            "cats": [
-                "m_c"
-            ],
-            "accessory": [
-                "POPPY",
-                "FORGET ME NOTS",
-                "ORANGE POPPY",
-                "CYAN POPPY",
-                "WHITE POPPY",
-                "PINK POPPY",
-                "BLUEBELLS",
-                "LILY OF THE VALLEY",
-                "SNAPDRAGON",
-                "HEATHER",
-                "GORSE",
-                "LAVENDER",
-                "BULB WHITE",
-                "BULB YELLOW",
-                "BULB ORANGE",
-                "BULB PINK",
-                "BULB BLUE",
-                "ROSE MALLOW",
-                "PICKLEWEED",
-                "DESERT WILLOW",
-                "CACTUS FLOWER",
-                "PRAIRIE FIRE",
-                "VERBENA EAR",
-                "VERBENA PELT",
-                "WISTERIA",
-                "GOLDEN CREEPING JENNY",
-                "DAISY"
-            ]
-        }
+        "gain_accessory": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "accessory": [
+                    "POPPY",
+                    "FORGET ME NOTS",
+                    "ORANGE POPPY",
+                    "CYAN POPPY",
+                    "WHITE POPPY",
+                    "PINK POPPY",
+                    "BLUEBELLS",
+                    "LILY OF THE VALLEY",
+                    "SNAPDRAGON",
+                    "HEATHER",
+                    "GORSE",
+                    "LAVENDER",
+                    "BULB WHITE",
+                    "BULB YELLOW",
+                    "BULB ORANGE",
+                    "BULB PINK",
+                    "BULB BLUE",
+                    "ROSE MALLOW",
+                    "PICKLEWEED",
+                    "DESERT WILLOW",
+                    "CACTUS FLOWER",
+                    "PRAIRIE FIRE",
+                    "VERBENA EAR",
+                    "VERBENA PELT",
+                    "WISTERIA",
+                    "GOLDEN CREEPING JENNY",
+                    "DAISY"
+                ]
+            }
+        ]
     },
     {
         "event_id": "gen_misc_transition_flower_to_female",
@@ -2913,7 +2969,7 @@
             "transition"
         ],
         "strings": [
-            "Flowers bloom and change into beautiful versions of themselves. m_c took a acc_singular to wear before telling c_n {PRONOUN/m_c/subject} {VERB/m_c/are/is} a she-cat."
+            "Flowers bloom and change into beautiful versions of themselves. m_c took a acc0_singular to wear before telling c_n {PRONOUN/m_c/subject} {VERB/m_c/are/is} a she-cat."
         ],
         "involved_cats": {
             "m_c": {
@@ -2947,40 +3003,42 @@
         "new_gender": [
             "trans female"
         ],
-        "gain_accessory": {
-            "cats": [
-                "m_c"
-            ],
-            "accessory": [
-                "POPPY",
-                "FORGET ME NOTS",
-                "ORANGE POPPY",
-                "CYAN POPPY",
-                "WHITE POPPY",
-                "PINK POPPY",
-                "BLUEBELLS",
-                "LILY OF THE VALLEY",
-                "SNAPDRAGON",
-                "HEATHER",
-                "GORSE",
-                "LAVENDER",
-                "BULB WHITE",
-                "BULB YELLOW",
-                "BULB ORANGE",
-                "BULB PINK",
-                "BULB BLUE",
-                "ROSE MALLOW",
-                "PICKLEWEED",
-                "DESERT WILLOW",
-                "CACTUS FLOWER",
-                "PRAIRIE FIRE",
-                "VERBENA EAR",
-                "VERBENA PELT",
-                "WISTERIA",
-                "GOLDEN CREEPING JENNY",
-                "DAISY"
-            ]
-        }
+        "gain_accessory": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "accessory": [
+                    "POPPY",
+                    "FORGET ME NOTS",
+                    "ORANGE POPPY",
+                    "CYAN POPPY",
+                    "WHITE POPPY",
+                    "PINK POPPY",
+                    "BLUEBELLS",
+                    "LILY OF THE VALLEY",
+                    "SNAPDRAGON",
+                    "HEATHER",
+                    "GORSE",
+                    "LAVENDER",
+                    "BULB WHITE",
+                    "BULB YELLOW",
+                    "BULB ORANGE",
+                    "BULB PINK",
+                    "BULB BLUE",
+                    "ROSE MALLOW",
+                    "PICKLEWEED",
+                    "DESERT WILLOW",
+                    "CACTUS FLOWER",
+                    "PRAIRIE FIRE",
+                    "VERBENA EAR",
+                    "VERBENA PELT",
+                    "WISTERIA",
+                    "GOLDEN CREEPING JENNY",
+                    "DAISY"
+                ]
+            }
+        ]
     },
     {
         "event_id": "gen_misc_transition_flower_to_nonbinary",
@@ -2995,7 +3053,7 @@
             "transition"
         ],
         "strings": [
-            "Flowers bloom and change into beautiful versions of themselves. m_c took a acc_singular to wear before telling c_n {PRONOUN/m_c/subject} {VERB/m_c/are/is} neither a she-cat nor a tom."
+            "Flowers bloom and change into beautiful versions of themselves. m_c took a acc0_singular to wear before telling c_n {PRONOUN/m_c/subject} {VERB/m_c/are/is} neither a she-cat nor a tom."
         ],
         "involved_cats": {
             "m_c": {
@@ -3030,40 +3088,42 @@
         "new_gender": [
             "nonbinary"
         ],
-        "gain_accessory": {
-            "cats": [
-                "m_c"
-            ],
-            "accessory": [
-                "POPPY",
-                "FORGET ME NOTS",
-                "ORANGE POPPY",
-                "CYAN POPPY",
-                "WHITE POPPY",
-                "PINK POPPY",
-                "BLUEBELLS",
-                "LILY OF THE VALLEY",
-                "SNAPDRAGON",
-                "HEATHER",
-                "GORSE",
-                "LAVENDER",
-                "BULB WHITE",
-                "BULB YELLOW",
-                "BULB ORANGE",
-                "BULB PINK",
-                "BULB BLUE",
-                "ROSE MALLOW",
-                "PICKLEWEED",
-                "DESERT WILLOW",
-                "CACTUS FLOWER",
-                "PRAIRIE FIRE",
-                "VERBENA EAR",
-                "VERBENA PELT",
-                "WISTERIA",
-                "GOLDEN CREEPING JENNY",
-                "DAISY"
-            ]
-        }
+        "gain_accessory": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "accessory": [
+                    "POPPY",
+                    "FORGET ME NOTS",
+                    "ORANGE POPPY",
+                    "CYAN POPPY",
+                    "WHITE POPPY",
+                    "PINK POPPY",
+                    "BLUEBELLS",
+                    "LILY OF THE VALLEY",
+                    "SNAPDRAGON",
+                    "HEATHER",
+                    "GORSE",
+                    "LAVENDER",
+                    "BULB WHITE",
+                    "BULB YELLOW",
+                    "BULB ORANGE",
+                    "BULB PINK",
+                    "BULB BLUE",
+                    "ROSE MALLOW",
+                    "PICKLEWEED",
+                    "DESERT WILLOW",
+                    "CACTUS FLOWER",
+                    "PRAIRIE FIRE",
+                    "VERBENA EAR",
+                    "VERBENA PELT",
+                    "WISTERIA",
+                    "GOLDEN CREEPING JENNY",
+                    "DAISY"
+                ]
+            }
+        ]
     },
     {
         "event_id": "gen_misc_transition_whatisgender_to_nonbinary",

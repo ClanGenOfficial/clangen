@@ -109,6 +109,11 @@ class SupplyDict(TypedDict):
     ]
 
 
+class AccessoryDict(TypedDict):
+    cats: list
+    accessory: list
+
+
 class FutureEventDict(TypedDict):
     event_type: str
     pool: dict

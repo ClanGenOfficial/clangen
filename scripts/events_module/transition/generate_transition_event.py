@@ -21,9 +21,9 @@ def attempt_coming_out(main_cat: Cat):
 
     transing_chance = get_config("transition_related")
     chance = transing_chance["base_trans_chance"]
-    if main_cat.age in [CatAge.ADOLESCENT, CatAge.KITTEN]:
+    if main_cat.age in (CatAge.ADOLESCENT, CatAge.KITTEN):
         chance += transing_chance["adolescent_modifier"]
-    elif main_cat.age in [CatAge.ADULT, CatAge.SENIOR_ADULT, CatAge.SENIOR]:
+    elif main_cat.age in (CatAge.ADULT, CatAge.SENIOR_ADULT, CatAge.SENIOR):
         chance += transing_chance["older_modifier"]
 
     if not int(random.random() * chance):
@@ -36,7 +36,7 @@ def _generate_transition_event(main_cat: Cat):
     """
     Actually generate and execute transition event
     """
-    possible_events = load_text_pool_events("events/transition")
+    possible_events = load_text_pool_events("events/transition.json")
     involved_cats = {"m_c": main_cat}
 
     other_clan = (
@@ -52,6 +52,7 @@ def _generate_transition_event(main_cat: Cat):
         frequency_active=False,
     )
 
+    # DO the transing before we execute_outcome, this ensures that we don't misgender
     main_cat.genderalign = random.choice(chosen_event.new_gender)
     main_cat.pronouns = pronouns.get_new_pronouns(main_cat.genderalign)
 
@@ -66,6 +67,6 @@ def _generate_transition_event(main_cat: Cat):
         Single_Event(
             processed_text,
             ["misc"],
-            [c.ID for c in involved_cats],
+            [c.ID for c in involved_cats.values()],
         )
     )
