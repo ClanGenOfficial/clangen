@@ -129,6 +129,7 @@
   "prideful": {
     "card_art": "behavior/underpopulated.png",
     "modifiers": {
+       "pregnancy.can_have_kits": ["leader"]
     }
   }
 }

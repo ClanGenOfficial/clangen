@@ -359,7 +359,7 @@ dev_tools = false
 
 [pregnancy]
   # decides which roles can have kits
-  can_have_kits = [leader, deputy, medicine_cat, warrior, mediator]
+  can_have_kits = ["leader", "deputy", "medicine cat", "warrior", "mediator", "elder"]
 
   # cooldown for cats getting pregnant that applies after giving birth
   birth_cooldown = 6
