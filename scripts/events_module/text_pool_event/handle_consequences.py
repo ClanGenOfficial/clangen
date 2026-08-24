@@ -30,6 +30,7 @@ from scripts.events_module.parameter_dicts import SupplyDict
 from scripts.events_module.relationship import relation_events
 from scripts.events_module.text_adjust import event_text_adjust, adjust_list_text
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
+from scripts.events_module.thoughts.generate_thoughts import get_new_thought
 from scripts.game_structure import game, constants
 
 disable_random: bool = False
@@ -169,7 +170,7 @@ def _handle_meeting(
 
     for c in met:
         c.status.change_standing(CatStanding.KNOWN, CatGroup.PLAYER_CLAN_ID)
-        c.get_new_thought(CatThought.ON_MEETING)
+        get_new_thought(c, CatThought.ON_MEETING)
 
     return i18n.t(
         "screens.patrol.met_outsider",
