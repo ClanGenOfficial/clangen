@@ -159,19 +159,14 @@
             {
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_fightingskill_WrWr",
-                "required_cat_types": {
-                    "apprentice": [
-                        1,
-                        1
-                    ],
-                    "normal adult": [
-                        1,
-                        1
-                    ]
-                },
                 "strings": [
                     "p_l may not be r_c0's mentor, but that doesn't mean {PRONOUN/p_l/subject} can't help every now and then. r_c0 accepts, and the two decide to work on some battle training. r_c0 feels a lot more secure in {PRONOUN/r_c0/poss} abilities by the end of it."
                 ],
+                "involved_cats": {
+                    "r_c0": {
+                        "status": ["apprentice"]
+                    }
+                },
                 "exp_gained": 15,
                 "relationship_changes": [
                     {
@@ -1532,14 +1527,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_solo_Wr",
                 "strings": [
-                    "The sunlight energizes p_l for a solo training session. {PRONOUN/p_l/subject/CAP} {VERB/p_l/know/knows} just what to work on!"
-                ],
-                "exp_gained": 15
-            },
-            {
-                "frequency": 4,
-                "outcome_art": "cat_sprites/gen_train_solo_Wr",
-                "strings": [
+                    "The sunlight energizes p_l for a solo training session. {PRONOUN/p_l/subject/CAP} {VERB/p_l/know/knows} just what to work on!",
                     "p_l ignores the dangerously tempting napping opportunity, trotting off to sharpen {PRONOUN/p_l/poss} claws."
                 ],
                 "exp_gained": 15
@@ -1556,13 +1544,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l doesn't get much done, soaking up the heat. {PRONOUN/p_l/subject/CAP} did mean to do some training, but... it's so nice to stop for a bit."
-                ],
-                "exp_gained": 0
-            },
-            {
-                "frequency": 4,
-                "strings": [
+                    "p_l doesn't get much done, soaking up the heat. {PRONOUN/p_l/subject/CAP} did mean to do some training, but... it's so nice to stop for a bit.",
                     "Wait... {VERB/p_l/were/was}n't {PRONOUN/p_l/subject} supposed to be training?"
                 ],
                 "exp_gained": 0
