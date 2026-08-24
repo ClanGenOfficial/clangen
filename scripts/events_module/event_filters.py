@@ -199,35 +199,48 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
             if sub_tag_check.group(2):
                 minimums.append(int(sub_tag_check.group(2)))
             else:
-                if sub_tag_check.group(1) in CatRank and not sub_tag_check.group(1) in [CatRank.LEADER, CatRank.DEPUTY]:
-                    # Default Minimum is 2 for non deputy, non leader ranks.  
-                    minimums.append(2) 
+                if sub_tag_check.group(1) in CatRank and not sub_tag_check.group(1) in [
+                    CatRank.LEADER,
+                    CatRank.DEPUTY,
+                ]:
+                    # Default Minimum is 2 for non deputy, non leader ranks.
+                    minimums.append(2)
                 else:
-                    # Default minimun is 1 for anything else. 
+                    # Default minimun is 1 for anything else.
                     minimums.append(1)
 
         for rank, mi in zip(ranks, minimums):
             rank_matched = True
             if rank == "apps":
-                if not len(find_alive_cats_with_rank(
-                    cat,
-                    [
-                        CatRank.APPRENTICE,
-                        CatRank.MEDIATOR_APPRENTICE,
-                        CatRank.MEDICINE_APPRENTICE,
-                    ],
-                ))  >= mi:
+                if (
+                    not len(
+                        find_alive_cats_with_rank(
+                            cat,
+                            [
+                                CatRank.APPRENTICE,
+                                CatRank.MEDIATOR_APPRENTICE,
+                                CatRank.MEDICINE_APPRENTICE,
+                            ],
+                        )
+                    )
+                    >= mi
+                ):
                     rank_matched = False
 
             elif rank == "warrior-like":
-                if not len( find_alive_cats_with_rank(
-                    cat,
-                    [
-                        CatRank.LEADER,
-                        CatRank.DEPUTY,
-                        CatRank.WARRIOR,
-                    ] 
-                )) >= mi:
+                if (
+                    not len(
+                        find_alive_cats_with_rank(
+                            cat,
+                            [
+                                CatRank.LEADER,
+                                CatRank.DEPUTY,
+                                CatRank.WARRIOR,
+                            ],
+                        )
+                    )
+                    >= mi
+                ):
                     rank_matched = False
 
             elif len(find_alive_cats_with_rank(cat, [rank])) >= mi:
