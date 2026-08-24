@@ -8,9 +8,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "Under the full heat of the sun, m_c declares {PRONOUN/m_c/subject} {VERB/m_c/are/is} no she-cat."
         ],
@@ -38,9 +35,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "The nature of things is ever changing, like sand blown on the wind. \"Tom\" is no longer accurate for m_c."
         ],
@@ -64,9 +58,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "m_c has realized that she-cat doesn't describe how {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} anymore."
@@ -92,9 +83,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "m_c has realized that tom doesn't describe how {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} anymore."
         ],
@@ -118,9 +106,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "m_c has known since {PRONOUN/m_c/subject} {VERB/m_c/were/was} born {PRONOUN/m_c/subject} felt different about {PRONOUN/m_c/poss} gender. When m_c declared {PRONOUN/m_c/subject} {VERB/m_c/are/is} a tom, who could tell {PRONOUN/m_c/object} otherwise?"
@@ -148,9 +133,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "m_c has known since {PRONOUN/m_c/subject} {VERB/m_c/were/was} born {PRONOUN/m_c/subject} felt different about {PRONOUN/m_c/poss} gender. When m_c declared {PRONOUN/m_c/subject} {VERB/m_c/are/is} a she-cat, who could tell {PRONOUN/m_c/object} otherwise?"
         ],
@@ -176,9 +158,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "m_c has known since {PRONOUN/m_c/subject} {VERB/m_c/were/was} born {PRONOUN/m_c/subject} felt different about {PRONOUN/m_c/poss} gender. When m_c declared {PRONOUN/m_c/subject} {VERB/m_c/are/is} not a tom, not a she-cat, <i>just</i> a cat, who could tell {PRONOUN/m_c/object} otherwise?"
@@ -207,9 +186,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "m_c has always felt a disconnect in {PRONOUN/m_c/poss} concept of self. Though it has taken many seasons to realize, m_c has decided that being a tom suits {PRONOUN/m_c/object} better."
         ],
@@ -236,9 +212,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "m_c has always felt a disconnect in {PRONOUN/m_c/poss} concept of self. Though it has taken many seasons to realize, m_c has decided that being a she-cat suits {PRONOUN/m_c/object} better."
@@ -267,9 +240,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "m_c has always felt a disconnect in {PRONOUN/m_c/poss} concept of self. Though it has taken many seasons to realize, m_c has decided that being just a cat suits {PRONOUN/m_c/object} better."
         ],
@@ -297,9 +267,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "The first cat m_c told about {PRONOUN/m_c/poss} transition was {PRONOUN/m_c/poss} parent, r_c0. Overjoyed for {PRONOUN/r_c0/poss} child, r_c0 helped m_c spread the news to the rest of the Clan."
@@ -360,9 +327,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "The first cat m_c told about {PRONOUN/m_c/poss} transition was {PRONOUN/m_c/poss} parent, r_c0. Overjoyed for {PRONOUN/r_c0/poss} child, r_c0 helped m_c spread the news to the rest of the Clan."
         ],
@@ -422,9 +386,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "m_c has never felt like {PRONOUN/m_c/poss} body matches the way {PRONOUN/m_c/subject} {VERB/m_c/see/sees} {PRONOUN/m_c/self}. After some time, m_c has realized, though c_n's acceptance of {PRONOUN/m_c/poss} gender may not lessen the feeling, m_c feels accepted by the Clan's support."
         ],
@@ -471,9 +432,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "m_c could never put a paw on what exactly {PRONOUN/m_c/subject} {VERB/m_c/were/was} feeling, but {PRONOUN/m_c/subject} realized {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} need to know the details. For now, simply <i>not</i> being a tom or she-cat is more than enough."
         ],
@@ -519,9 +477,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "m_c is growing up, and with that comes figuring out who {PRONOUN/m_c/subject} {VERB/m_c/are/is}. As it turned out, who {PRONOUN/m_c/subject} {VERB/m_c/are/is} happened to be neither a tom nor a she-cat."
@@ -571,9 +526,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "m_c is growing up, and with that comes figuring out who {PRONOUN/m_c/subject} {VERB/m_c/are/is}. As it turned out, who {PRONOUN/m_c/subject} {VERB/m_c/are/is} happened to be a she-cat."
         ],
@@ -621,9 +573,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "m_c is growing up, and with that comes figuring out who {PRONOUN/m_c/subject} {VERB/m_c/are/is}. As it turned out, who {PRONOUN/m_c/subject} {VERB/m_c/are/is} happened to be a tom."
         ],
@@ -670,9 +619,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "While {PRONOUN/m_c/subject} didn't want to make a big deal out of it, m_c didn't mind c_n quietly celebrating when {PRONOUN/m_c/subject} mentioned {PRONOUN/m_c/subject} would go through life as a tom from now on."
@@ -728,9 +674,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "While {PRONOUN/m_c/subject} didn't want to make a big deal out of it, m_c didn't mind c_n quietly celebrating when {PRONOUN/m_c/subject} mentioned {PRONOUN/m_c/subject} would go through life as a she-cat from now on."
         ],
@@ -784,9 +727,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "While {PRONOUN/m_c/subject} didn't want to make a big deal out of it, m_c didn't mind c_n quietly celebrating when {PRONOUN/m_c/subject} mentioned {PRONOUN/m_c/subject} would go through life as neither a tom nor a she-cat from now on."
@@ -842,9 +782,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "m_c realized {PRONOUN/m_c/subject} would much rather not be known as either a tom nor a she-cat, and decided to announce this with a pretty new accessory. After all, the discovery deserved a celebration!"
@@ -909,9 +846,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "m_c realized {PRONOUN/m_c/subject} would much rather be known as a tom, and decided to announce this with a pretty new accessory. After all, the discovery deserved a celebration!"
         ],
@@ -973,9 +907,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "m_c realized {PRONOUN/m_c/subject} would much rather be known as a she-cat, and decided to announce this with a pretty new accessory. After all, the discovery deserved a celebration!"
@@ -1039,9 +970,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "It's surprisingly obvious on hindsight, m_c explained. {PRONOUN/m_c/subject/CAP} just <i>knew</i> {PRONOUN/m_c/subject} {VERB/m_c/were/was}n't a tom or a she-cat, there's no other logical explanation for this feeling. c_n was happy to celebrate the discovery."
         ],
@@ -1095,9 +1023,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "It's surprisingly obvious on hindsight, m_c explained. {PRONOUN/m_c/subject/CAP} just <i>knew</i> {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a she-cat, there's no other logical explanation for this feeling. c_n was happy to celebrate the discovery."
         ],
@@ -1149,9 +1074,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "It's surprisingly obvious on hindsight, m_c explained. {PRONOUN/m_c/subject/CAP} just <i>knew</i> {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a tom, there's no other logical explanation for this feeling. c_n was happy to celebrate the discovery."
@@ -1205,9 +1127,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "Life is about changing and growing, and m_c has done just that. With c_n's support, {PRONOUN/m_c/subject} announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} a tom."
         ],
@@ -1252,9 +1171,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "Life is about changing and growing, and m_c has done just that. With c_n's support, {PRONOUN/m_c/subject} announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} a she-cat."
@@ -1301,9 +1217,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "Life is about changing and growing, and m_c has done just that. With c_n's support, {PRONOUN/m_c/subject} announced that {PRONOUN/m_c/subject} {VERB/m_c/are/is} neither a she-cat nor a tom."
         ],
@@ -1349,9 +1262,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "m_c was glad for c_n's support when {PRONOUN/m_c/subject} announced {PRONOUN/m_c/subject} {VERB/m_c/are/is} neither a she-cat nor a tom. The moment still felt bittersweet when {PRONOUN/m_c/subject} later looked at the night sky, knowing a particularly bright star meant r_c0 is proud of the cat {PRONOUN/r_c0/poss} child has become."
@@ -1422,9 +1332,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "m_c was glad for c_n's support when {PRONOUN/m_c/subject} announced {PRONOUN/m_c/subject} {VERB/m_c/are/is} a she-cat. The moment still felt bittersweet when {PRONOUN/m_c/subject} later looked at the night sky, knowing a particularly bright star meant r_c0 is proud of the cat {PRONOUN/r_c0/poss} daughter has become."
         ],
@@ -1492,9 +1399,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "m_c was glad for c_n's support when {PRONOUN/m_c/subject} announced {PRONOUN/m_c/subject} {VERB/m_c/are/is} a tom. The moment still felt bittersweet when {PRONOUN/m_c/subject} later looked at the night sky, knowing a particularly bright star meant r_c0 is proud of the cat {PRONOUN/r_c0/poss} son has become."
@@ -1564,9 +1468,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "m_c explained to r_c0 that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} feel like a tom. r_c0 nodded impatiently, happy for m_c, but could they get back to playing now?"
         ],
@@ -1634,9 +1535,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "m_c explained to r_c0 that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} feel like a she-cat. r_c0 nodded impatiently, happy for m_c, but could they get back to playing now?"
         ],
@@ -1703,9 +1601,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "m_c quietly talked to {PRONOUN/m_c/poss} mentor, r_c0, and confessed that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} feel like a she-cat. r_c0 reassured {PRONOUN/m_c/object} and offered to help tell c_n, if that was what m_c wanted. After all, it's r_c0's job to help."
@@ -1813,9 +1708,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "m_c quietly talked to {PRONOUN/m_c/poss} mentor, r_c0, and confessed that {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} feel like a tom. r_c0 reassured {PRONOUN/m_c/object} and offered to help tell c_n, if that was what m_c wanted. After all, it's r_c0's job to help."
         ],
@@ -1922,9 +1814,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "m_c sighed over the very relatable experience of wishing to be a she-cat. r_c0 noted that that probably wasn't a universal experience. The next day, m_c had an announcement to make."
         ],
@@ -1990,9 +1879,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "m_c sighed over the very relatable experience of wishing to be a tom. r_c0 noted that that probably wasn't a universal experience. The next day, m_c had an announcement to make."
         ],
@@ -2057,9 +1943,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "m_c sighed over the very relatable experience of wanting to be neither a tom or she-cat. r_c0 noted that that probably wasn't a universal experience. The next day, m_c had an announcement to make."
@@ -2127,9 +2010,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "Looking at {PRONOUN/m_c/poss} adorable litter, m_c realized {PRONOUN/m_c/subject} would rather just be a parent instead of a mother or father."
         ],
@@ -2196,9 +2076,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "Looking at {PRONOUN/m_c/poss} adorable litter, m_c realized {PRONOUN/m_c/subject} would rather be a father than a mother."
         ],
@@ -2264,9 +2141,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "Looking at {PRONOUN/m_c/poss} adorable litter, m_c realized {PRONOUN/m_c/subject} would rather be a mother than a father."
         ],
@@ -2331,9 +2205,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "It took m_c a while to muster up the courage to talk to their parent, r_c0, but finally quietly mentioned {PRONOUN/m_c/subject} would rather not be seen as a she-cat. r_c0 later gave m_c a gift as congratulations on figuring this out, saying {PRONOUN/r_c0/subject} would always be proud of m_c."
@@ -2441,9 +2312,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "It took m_c a while to muster up the courage to talk to their parent, r_c0, but finally quietly mentioned {PRONOUN/m_c/subject} would rather not be seen as a tom. r_c0 later gave m_c a gift as congratulations on figuring this out, saying {PRONOUN/r_c0/subject} would always be proud of m_c."
@@ -2559,9 +2427,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "r_c0 and m_c were on a walk together when m_c mentioned that {PRONOUN/m_c/subject} might not be a tom. While a bit surprised, r_c0 assured {PRONOUN/m_c/object} that {PRONOUN/m_c/poss} gender doesn't matter. {PRONOUN/r_c0/subject/CAP} would be proud to have m_c as {PRONOUN/r_c0/poss} partner no matter what."
         ],
@@ -2658,9 +2523,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "r_c0 and m_c were on a walk together when m_c mentioned that {PRONOUN/m_c/subject} might not be a she-cat. While a bit surprised, r_c0 assured {PRONOUN/m_c/object} that {PRONOUN/m_c/poss} gender doesn't matter. {PRONOUN/r_c0/subject/CAP} would be proud to have m_c as {PRONOUN/r_c0/poss} partner no matter what."
@@ -2759,9 +2621,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "m_c found a acc0_singular to wear. Taking it as a sign, {PRONOUN/m_c/subject} announced that tom doesn't describe {PRONOUN/m_c/object} anymore. Going through life as {PRONOUN/m_c/poss} true self might be a scary change, but a positive one, like the butterfly going through metamorphosis."
         ],
@@ -2820,9 +2679,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "m_c found a acc0_singular to wear. Taking it as a sign, {PRONOUN/m_c/subject} announced that she-cat doesn't describe {PRONOUN/m_c/object} anymore. Going through life as {PRONOUN/m_c/poss} true self might be a scary change, but a positive one, like the butterfly going through metamorphosis."
         ],
@@ -2880,9 +2736,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "Flowers bloom and change into beautiful versions of themselves. m_c took a acc0_singular to wear before telling c_n {PRONOUN/m_c/subject} {VERB/m_c/are/is} a tom."
@@ -2965,9 +2818,6 @@
         "season": [
             "any"
         ],
-        "tags": [
-            "transition"
-        ],
         "strings": [
             "Flowers bloom and change into beautiful versions of themselves. m_c took a acc0_singular to wear before telling c_n {PRONOUN/m_c/subject} {VERB/m_c/are/is} a she-cat."
         ],
@@ -3048,9 +2898,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "Flowers bloom and change into beautiful versions of themselves. m_c took a acc0_singular to wear before telling c_n {PRONOUN/m_c/subject} {VERB/m_c/are/is} neither a she-cat nor a tom."
@@ -3133,9 +2980,6 @@
         ],
         "season": [
             "any"
-        ],
-        "tags": [
-            "transition"
         ],
         "strings": [
             "m_c was baffled when {PRONOUN/m_c/subject} realized some cats <i>do</i> care about being called a tom, a she-cat, or anything else. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} particularly care what {PRONOUN/m_c/subject} {VERB/m_c/are/is} called, but {PRONOUN/m_c/subject} {VERB/m_c/suppose/supposes} {PRONOUN/m_c/subject} {VERB/m_c/are/is}n't a tom in that case."

@@ -10,6 +10,7 @@ from scripts.events_module.text_pool_event.event_retrieval import (
     get_valid_event,
 )
 from scripts.events_module.text_pool_event.handle_consequences import execute_outcome
+from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import game
 
 
@@ -52,16 +53,7 @@ def _generate_transition_event(main_cat: Cat):
         frequency_active=False,
     )
 
-    # DO the transing before we execute_outcome, this ensures that we don't misgender
-    main_cat.genderalign = random.choice(chosen_event.new_gender)
-    main_cat.pronouns = pronouns.get_new_pronouns(main_cat.genderalign)
-
-    # we won't use results and rel_results here
-    processed_text, results, rel_results = execute_outcome(
-        event=chosen_event,
-        event_involved_cats=involved_cats,
-        other_clan=other_clan,
-    )
+    processed_text = _handle_event(chosen_event, involved_cats, main_cat, other_clan)
 
     game.cur_events_list.append(
         Single_Event(
@@ -70,3 +62,21 @@ def _generate_transition_event(main_cat: Cat):
             [c.ID for c in involved_cats.values()],
         )
     )
+
+
+def _handle_event(
+    chosen_event: TextPoolEvent, involved_cats: dict, main_cat: Cat, other_clan
+):
+    """
+    Changes the cat's genderalign and handles any other changes made by the event. Needs to be its own function for testing purposes.
+    """
+    # DO the transing before we execute_outcome, this ensures that we don't misgender
+    main_cat.genderalign = random.choice(chosen_event.new_gender)
+    main_cat.pronouns = pronouns.get_new_pronouns(main_cat.genderalign)
+    # we won't use results and rel_results here
+    processed_text, results, rel_results = execute_outcome(
+        event=chosen_event,
+        event_involved_cats=involved_cats,
+        other_clan=other_clan,
+    )
+    return processed_text
