@@ -5946,7 +5946,7 @@
                 "status": [
                     "apprentice"
                 ],
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 70,
@@ -6865,7 +6865,7 @@
         },
         "involved_cats": {
             "p_l": {
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 60,
@@ -24099,7 +24099,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "train_general_intro",
-        "intro_text": "While the cats are out training, the discussion turns to rogues. p_l perks {PRONOUN/p_l/poss} ears up — {PRONOUN/p_l/object} {VERB/p_l/know/knows} all about it.",
+        "intro_text": "While the cats are out training, the discussion turns to rogues. p_l perks {PRONOUN/p_l/poss} ears up — {PRONOUN/p_l/subject} {VERB/p_l/know/knows} all about it.",
         "decline_text": "But {PRONOUN/p_l/object} {VERB/p_l/decide/decides} to listen instead of joining in the conversation.",
         "success_outcomes": [
             {
@@ -25160,13 +25160,13 @@
                 "status": [
                     "apprentice"
                 ],
-                "has_mentor": true
+                "has_mentor": {"current": true}
             },
             "r_c2": {
                 "status": [
                     "apprentice"
                 ],
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 60,
@@ -28152,7 +28152,7 @@
                 "status": [
                     "apprentice"
                 ],
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 60,

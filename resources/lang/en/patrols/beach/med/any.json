@@ -177,7 +177,7 @@
         },
         "involved_cats": {
             "p_l": {
-                "has_mentor": true
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 65,

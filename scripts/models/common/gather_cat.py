@@ -51,6 +51,8 @@ class GatherCatEnum(Enum):
     not_deputy = "-deputy"
     leader = "leader"
     not_leader = "-leader"
+    past_deputy = "past_deputy"
+    not_past_deputy = "-past_deputy"
 
 
 class GatherCat(RootModel):
