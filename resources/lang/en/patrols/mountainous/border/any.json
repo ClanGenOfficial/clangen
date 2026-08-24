@@ -16,8 +16,12 @@
         },
         "chance_of_success": 20,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!",
-        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
+        "intro_text": [
+            "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!"
+        ],
+        "decline_text": [
+            "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -316,8 +320,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!",
-        "decline_text": "p_l turns tail and races away! The rogues have {PRONOUN/p_l/object} far outnumbered, and warning the Clan is more important than dying needlessly.",
+        "intro_text": [
+            "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!"
+        ],
+        "decline_text": [
+            "p_l turns tail and races away! The rogues have {PRONOUN/p_l/object} far outnumbered, and warning the Clan is more important than dying needlessly."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -402,8 +410,12 @@
         },
         "chance_of_success": 20,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues strides confidently out from behind a tumble of rocks, yowling as they confront the Clan cats!",
-        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
+        "intro_text": [
+            "As the patrol is marking the border lines, a gang of rogues strides confidently out from behind a tumble of rocks, yowling as they confront the Clan cats!"
+        ],
+        "decline_text": [
+            "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -634,8 +646,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!",
-        "decline_text": "p_l turns tail and races away! The rogues have {PRONOUN/p_l/object} far outnumbered, warning the Clan is more important than dying needlessly.",
+        "intro_text": [
+            "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!"
+        ],
+        "decline_text": [
+            "p_l turns tail and races away! The rogues have {PRONOUN/p_l/object} far outnumbered, warning the Clan is more important than dying needlessly."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -746,8 +762,12 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": "On their way to mark the far corners of their mountain, r_c0 starts telling a story of {PRONOUN/r_c0/poss} ancestors to keep every cat entertained.",
-        "decline_text": "A shadow flies over them, and r_c's storytelling is forgotten as the patrol makes sure it wasn't an eagle.",
+        "intro_text": [
+            "On their way to mark the far corners of their mountain, r_c0 starts telling a story of {PRONOUN/r_c0/poss} ancestors to keep every cat entertained."
+        ],
+        "decline_text": [
+            "A shadow flies over them, and r_c's storytelling is forgotten as the patrol makes sure it wasn't an eagle."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -931,8 +951,12 @@
         },
         "chance_of_success": 20,
         "patrol_art": "backgrounds/mnt_waterfall",
-        "intro_text": "The patrol reaches a river that must be crossed to ensure the borders are thoroughly checked.",
-        "decline_text": "p_l makes the decision to lead the patrol home instead; it's too risky today.",
+        "intro_text": [
+            "The patrol reaches a river that must be crossed to ensure the borders are thoroughly checked."
+        ],
+        "decline_text": [
+            "p_l makes the decision to lead the patrol home instead; it's too risky today."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1281,8 +1305,12 @@
         },
         "chance_of_success": 25,
         "patrol_art": "halloween/hal_mothman",
-        "intro_text": "As p_l pads through the shadowy trees, the sun already hidden by the mountain slopes, {PRONOUN/p_l/subject} {VERB/p_l/freeze/freezes}. Up ahead, a Twoleg peers down from above, its black wings a huge backdrop to hypnotic, glowing red eyes...",
-        "decline_text": "This is no creature for mortal eyes. p_l screws {PRONOUN/p_l/poss} eyelids shut, muttering prayer after prayer after prayer to StarClan itself — and when {PRONOUN/p_l/subject} {VERB/p_l/open/opens} them again, the moth-Twoleg is gone.",
+        "intro_text": [
+            "As p_l pads through the shadowy trees, the sun already hidden by the mountain slopes, {PRONOUN/p_l/subject} {VERB/p_l/freeze/freezes}. Up ahead, a Twoleg peers down from above, its black wings a huge backdrop to hypnotic, glowing red eyes..."
+        ],
+        "decline_text": [
+            "This is no creature for mortal eyes. p_l screws {PRONOUN/p_l/poss} eyelids shut, muttering prayer after prayer after prayer to StarClan itself \u00e2\u20ac\u201d and when {PRONOUN/p_l/subject} {VERB/p_l/open/opens} them again, the moth-Twoleg is gone."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1378,7 +1406,7 @@
                 "frequency": 4,
                 "outcome_art": "halloween/hal_mothmanoutcome",
                 "strings": [
-                    "The vast moth-Twoleg flies off, and p_l tries to shake off the encounter — but the mountain itself seems to be against {PRONOUN/p_l/object} tonight, collapsing beneath {PRONOUN/p_l/poss} feet."
+                    "The vast moth-Twoleg flies off, and p_l tries to shake off the encounter \u00e2\u20ac\u201d but the mountain itself seems to be against {PRONOUN/p_l/object} tonight, collapsing beneath {PRONOUN/p_l/poss} feet."
                 ],
                 "exp_gained": 0,
                 "death": [
@@ -1412,13 +1440,17 @@
         },
         "chance_of_success": 30,
         "patrol_art": "halloween/hal_jerseydevil",
-        "intro_text": "As p_l ducks through the overhanging branches of an evergreen, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} two deer, lying intertwined. Are they sleeping? Curious, p_l creeps closer.",
-        "decline_text": "Two deer are incomprehensibly huge targets for cats. p_l moves on.",
+        "intro_text": [
+            "As p_l ducks through the overhanging branches of an evergreen, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} two deer, lying intertwined. Are they sleeping? Curious, p_l creeps closer."
+        ],
+        "decline_text": [
+            "Two deer are incomprehensibly huge targets for cats. p_l moves on."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "The bigger deer raises its head, blood dripping from its lips, head lifting higher and higher and higher as it rears backwards, jaws dropping open in a blood-curdling scream — one mirrored by p_l as p_l shrieks and runs."
+                    "The bigger deer raises its head, blood dripping from its lips, head lifting higher and higher and higher as it rears backwards, jaws dropping open in a blood-curdling scream \u00e2\u20ac\u201d one mirrored by p_l as p_l shrieks and runs."
                 ],
                 "exp_gained": 0,
                 "condition": [
@@ -1475,8 +1507,12 @@
         },
         "chance_of_success": 20,
         "patrol_art": "bord_general_intro",
-        "intro_text": "p_l sniffs the border carefully. It could be dog scent, but more likely, without any Twoleg intrusions, this scent is wolf instead. That wouldn't be good news for c_n.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} puzzle out the scent, but p_l isn't willing to risk any danger trying to isolate it further.",
+        "intro_text": [
+            "p_l sniffs the border carefully. It could be dog scent, but more likely, without any Twoleg intrusions, this scent is wolf instead. That wouldn't be good news for c_n."
+        ],
+        "decline_text": [
+            "{PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} puzzle out the scent, but p_l isn't willing to risk any danger trying to isolate it further."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1533,7 +1569,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The potential wolf scent makes p_l nervous enough to dance in place — and that's what saves {PRONOUN/p_l/object}, being already moving when the trap is sprung. The dogish beast isn't built to pounce. p_l races away, streaking home through a rock maze that leave the frustrated wolf howling in {PRONOUN/p_l/poss} wake."
+                    "The potential wolf scent makes p_l nervous enough to dance in place \u00e2\u20ac\u201d and that's what saves {PRONOUN/p_l/object}, being already moving when the trap is sprung. The dogish beast isn't built to pounce. p_l races away, streaking home through a rock maze that leave the frustrated wolf howling in {PRONOUN/p_l/poss} wake."
                 ],
                 "exp_gained": 40,
                 "relationship_changes": [
@@ -1763,7 +1799,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "p_l would give their life to protect c_n, and as {PRONOUN/p_l/subject} {VERB/p_l/charge/charges} past the huge wolf to lead it far, far from c_n, {PRONOUN/p_l/subject} {VERB/p_l/accept/accepts} it. Fear gives {PRONOUN/p_l/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/p_l/subject} {VERB/p_l/fly/flies} out of the dog's jaws while it shakes {PRONOUN/p_l/object}, landing in a refuge. p_l is injured, desperate, and terrified — but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alive."
+                    "p_l would give their life to protect c_n, and as {PRONOUN/p_l/subject} {VERB/p_l/charge/charges} past the huge wolf to lead it far, far from c_n, {PRONOUN/p_l/subject} {VERB/p_l/accept/accepts} it. Fear gives {PRONOUN/p_l/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/p_l/subject} {VERB/p_l/fly/flies} out of the dog's jaws while it shakes {PRONOUN/p_l/object}, landing in a refuge. p_l is injured, desperate, and terrified \u00e2\u20ac\u201d but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alive."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [

@@ -30,8 +30,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_herbs_McWrWr",
-        "intro_text": "p_l didn't plan to have other cats with {PRONOUN/p_l/object}, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} grateful for the help anyway, especially with the amount of blooming plants. That is, until r_c0 starts sneezing. Clearly, the pollen from the trees is affecting {PRONOUN/r_c0/object} somewhat.",
-        "decline_text": "Since r_c0 isn't up for a patrol in a pollen-filled forest, the patrol returns to camp with no new herbs. At least r_c0 seems to have stopped sneezing for now.",
+        "intro_text": [
+            "p_l didn't plan to have other cats with {PRONOUN/p_l/object}, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} grateful for the help anyway, especially with the amount of blooming plants. That is, until r_c0 starts sneezing. Clearly, the pollen from the trees is affecting {PRONOUN/r_c0/object} somewhat."
+        ],
+        "decline_text": [
+            "Since r_c0 isn't up for a patrol in a pollen-filled forest, the patrol returns to camp with no new herbs. At least r_c0 seems to have stopped sneezing for now."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

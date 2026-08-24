@@ -19,8 +19,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As p_l crosses a beach, shivering with the cold, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound, like a wave — but out of sync with the ocean.",
-        "decline_text": "p_l decides to head back early.",
+        "intro_text": [
+            "As p_l crosses a beach, shivering with the cold, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound, like a wave \u00e2\u20ac\u201d but out of sync with the ocean."
+        ],
+        "decline_text": [
+            "p_l decides to head back early."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -38,7 +42,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 scrambles back the way {PRONOUN/s_c0/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris — and a large dead sheep. s_c0 pounces on the opportunity to scavenge."
+                    "s_c0 scrambles back the way {PRONOUN/s_c0/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris \u00e2\u20ac\u201d and a large dead sheep. s_c0 pounces on the opportunity to scavenge."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -130,8 +134,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "bord_general_intro",
-        "intro_text": "p_l's patrol pads along the shore towards the border. A recent storm washed away some of the markers near the waterline and they need to be refreshed. There in the surf, however, they find a great wooden thing—a piece of a floating nest. Towering over the cats, its jagged edges jut out at broken angles. Beneath the salt, Twoleg scent lingers in the air.",
-        "decline_text": "p_l decides to turn back to camp and report the encounter, rather than risk investigating something potentially dangerous.",
+        "intro_text": [
+            "p_l's patrol pads along the shore towards the border. A recent storm washed away some of the markers near the waterline and they need to be refreshed. There in the surf, however, they find a great wooden thing\u00e2\u20ac\u201da piece of a floating nest. Towering over the cats, its jagged edges jut out at broken angles. Beneath the salt, Twoleg scent lingers in the air."
+        ],
+        "decline_text": [
+            "p_l decides to turn back to camp and report the encounter, rather than risk investigating something potentially dangerous."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -206,7 +214,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "s_c0 ambles inside, sticking {PRONOUN/s_c0/poss} nose into the tangled debris. Searching for anything useful, {PRONOUN/s_c0/subject} eventually {VERB/s_c0/present/presents} p_l with a long, straight stick, colourful wrapping and caps adorning it. It's taller than a cat! This, stuck into the sand—as s_c0 soon demonstrates—will be an excellent border marker that no one can pretend to overlook."
+                    "s_c0 ambles inside, sticking {PRONOUN/s_c0/poss} nose into the tangled debris. Searching for anything useful, {PRONOUN/s_c0/subject} eventually {VERB/s_c0/present/presents} p_l with a long, straight stick, colourful wrapping and caps adorning it. It's taller than a cat! This, stuck into the sand\u00e2\u20ac\u201das s_c0 soon demonstrates\u00e2\u20ac\u201dwill be an excellent border marker that no one can pretend to overlook."
                 ],
                 "involved_cats": {
                     "s_c0": {
