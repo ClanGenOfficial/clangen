@@ -45,7 +45,7 @@ Thank you for your interest in contributing to the written content within ClanGe
 
     Guidelines on adding new relationship events.
 
-- __[Leader Ceremonies](leader-ceremonies.md)__
+- __[Leader Ceremonies](ceremonies/leader-ceremonies.md)__
 
     ---
 

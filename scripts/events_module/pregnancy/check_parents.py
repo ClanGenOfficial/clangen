@@ -5,7 +5,7 @@ from scripts.cat.cats import Cat
 from scripts.cat.enums import (
     CatAge,
 )
-from scripts.cat_relations.relationship import Relationship
+from scripts.cat_relations.relationship import Relationship, create_one_relationship
 from scripts.clan_package.settings import get_clan_setting
 from scripts.events_module.pregnancy.check_family_size import (
     biggest_family_is_big,
@@ -117,7 +117,7 @@ def get_second_parent(cat: Cat) -> tuple[Optional[Cat], bool]:
     if chosen_mate and chosen_mate.ID in cat.relationships:
         relationship_toward_mate = cat.relationships[chosen_mate.ID]
     elif chosen_mate:
-        relationship_toward_mate = cat.create_one_relationship(chosen_mate)
+        relationship_toward_mate = create_one_relationship(cat, chosen_mate)
 
     # NONRANDOM AFFAIR & COPARENTING
     # Handle love affair chance.
