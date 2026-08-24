@@ -5674,7 +5674,7 @@
                 ],
                 "involved_cats": {
                     "r_c2": {
-                        "has_mentor": true
+                        "has_mentor": {"current": true}
                     }
                 },
                 "exp_gained": 20,
@@ -5708,7 +5708,7 @@
                 ],
                 "involved_cats": {
                     "r_c2": {
-                        "has_mentor": true
+                        "has_mentor": {"current": true}
                     }
                 },
                 "exp_gained": 0,
@@ -6600,7 +6600,7 @@
                                 "wise"
                             ]
                         },
-                        "has_mentor": true
+                        "has_mentor": {"current": true}
                     }
                 },
                 "exp_gained": 20,
@@ -6751,7 +6751,7 @@
                                 "wise"
                             ]
                         },
-                        "has_mentor": true
+                        "has_mentor": {"current": true}
                     }
                 },
                 "exp_gained": 0
