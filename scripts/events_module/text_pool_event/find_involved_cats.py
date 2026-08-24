@@ -20,6 +20,8 @@ def find_cats(
     outside_cats: list,
     event: Union[PatrolEvent, TextPoolEvent],
     other_clan: OtherClan,
+    allow_new_cat_creation: bool = True,
+    check_already_assigned_cats: bool = True,
 ) -> dict:
     """
     Finds and returns cats for a PatrolEvent or TextPoolEvent.
@@ -28,6 +30,8 @@ def find_cats(
     :param outside_cats: A list of cats outside the Clan eligible to appear in the event.
     :param event: The PatrolEvent or TextPoolEvent that needs involved cats
     :param other_clan: The OtherClan object involved in the event
+    :param allow_new_cat_creation: If true, new cats will be created when allowed and necessary
+    :param check_already_assigned_cats: if true, cats who are already involved in the event will still be checked against any given constraints
     :return: Updated involved_cats dict with valid cats. If dict is empty, then valid cats were not found.
     """
     temp_involved_cats = involved_cats.copy()
@@ -49,7 +53,7 @@ def find_cats(
         possible_injuries = get_potential_conditions(abbr, can_give_condition, event)
 
         # CHECK ALREADY ASSIGNED CAT
-        if abbr in involved_cats:
+        if check_already_assigned_cats and abbr in involved_cats:
             if involved_cats[abbr] is None and abbr in event.involved_cats:
                 # sometimes a specific abbr may be "preset" as None
                 # which indicates that events requiring that abbr should be avoided
@@ -136,6 +140,9 @@ def find_cats(
 
     # create new cats if we need to!
     for abbr in cats_to_create:
+        if not allow_new_cat_creation:
+            break
+
         # this will first try to find an existing cat, but if it can't then it'll make a new one
         constraints = event.involved_cats[abbr]
         cat_list = [c for c in outside_cats if c not in temp_involved_cats.values()]

@@ -25,6 +25,7 @@ def get_valid_event(
     ensured_id: Optional[str] = None,
     general_constraints_active: bool = True,
     cat_constraints_active: bool = True,
+    allow_new_cat_creation: bool = True,
     frequency_active: bool = True,
 ) -> tuple[Optional[Union[PatrolEvent, TextPoolEvent]], dict]:
     """
@@ -37,6 +38,7 @@ def get_valid_event(
     :param ensured_id: ID of the ensured event, if any
     :param general_constraints_active: If true, filters by general constraints
     :param cat_constraints_active: If true, filters by cat constraints
+    :param allow_new_cat_creation: If true, new cats will be created when allowed and necessary
     :param frequency_active: If true, filters by frequency.
     """
     used_frequencies = set()
@@ -128,6 +130,7 @@ def get_valid_event(
                 outside_cats=outside_cats,
                 event=test_event,
                 other_clan=other_clan,
+                allow_new_cat_creation=allow_new_cat_creation,
             )
             if not temp_involved_cats:
                 tested_events.add(test_event.event_id)
