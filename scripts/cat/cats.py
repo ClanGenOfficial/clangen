@@ -1661,6 +1661,7 @@ class Cat:
     def assign_random_mentor(self):
         # Need to pick a random mentor if not specified
 
+        new_mentor = None
         if not self.mentor:
             potential_mentors = []
             priority_mentors = []
