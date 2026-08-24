@@ -122,7 +122,7 @@
     "season": ["-leaf-bare"],
     "tags": ["no_body"],
     "frequency": 2,
-    "event_text": "m_c curiously licked a colourful frog. However, {PRONOUN/m_c/subject} would collaspe shortly after.",
+    "event_text": "m_c curiously licked a colorful frog. However, {PRONOUN/m_c/subject} collapsed shortly after.",
     "m_c": {
         "status": ["kitten"],
         "dies": true
