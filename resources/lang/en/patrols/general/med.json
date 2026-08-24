@@ -12249,7 +12249,7 @@
                 ],
                 "involved_cats": {
                     "r_c1": {
-                        "has_mentor": true
+                        "has_mentor": {"current": true}
                     }
                 },
                 "exp_gained": 0,
