@@ -50,7 +50,7 @@ class EventInformation:
 
     def to_dict(self):
         """
-        Convert Single_Event to dictionary.
+        Convert EventInformation to dictionary.
         """
         cat_dict = self.cat_dict.copy() if self.cat_dict else {}
         if self.cat_dict:
