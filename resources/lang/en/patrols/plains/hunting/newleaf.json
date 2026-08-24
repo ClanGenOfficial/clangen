@@ -20,7 +20,7 @@
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
         "intro_text": [
-            "The patrol catches the scent of a fox \u00e2\u20ac\u201d but is it red or swift?"
+            "The patrol catches the scent of a fox — but is it red or swift?"
         ],
         "decline_text": [
             "The patrol decides not to pursue the fox."
@@ -931,7 +931,7 @@
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
         "intro_text": [
-            "p_l catches scent of a mouse nearby. All the grass that the newleaf sun has brought to the world probably seems like a banquet to mice \u00e2\u20ac\u201d p_l has meatier tastes."
+            "p_l catches scent of a mouse nearby. All the grass that the newleaf sun has brought to the world probably seems like a banquet to mice — p_l has meatier tastes."
         ],
         "decline_text": [
             "p_l ignores the mouse."
@@ -1052,7 +1052,7 @@
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
         "intro_text": [
-            "r_c1 catches scent of a mouse nearby. p_l points out the little path developing between the growing strands of grass \u00e2\u20ac\u201d the mouse comes this way often."
+            "r_c1 catches scent of a mouse nearby. p_l points out the little path developing between the growing strands of grass — the mouse comes this way often."
         ],
         "decline_text": [
             "The patrol ignores the mouse."
@@ -1236,7 +1236,7 @@
             "r_c0 suggests that the patrol might consider going out to a distant spot on the plains. With slightly higher ground, it should be drier, proving better footing for hunting, and {PRONOUN/r_c0/subject} {VERB/r_c0/think/thinks} the grass there will be lush enough to attract mice."
         ],
         "decline_text": [
-            "The cats are called back to camp \u00e2\u20ac\u201d there's something the deputy needs to discuss with them."
+            "The cats are called back to camp — there's something the deputy needs to discuss with them."
         ],
         "success_outcomes": [
             {
@@ -1306,7 +1306,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "These are the times that it really pays to have a hunter of s_c0's caliber on the patrol \u00e2\u20ac\u201d {PRONOUN/s_c0/subject} really {VERB/s_c0/go/goes} above and beyond, impressing everyone and leaving a trail of terror among the local mice."
+                    "These are the times that it really pays to have a hunter of s_c0's caliber on the patrol — {PRONOUN/s_c0/subject} really {VERB/s_c0/go/goes} above and beyond, impressing everyone and leaving a trail of terror among the local mice."
                 ],
                 "involved_cats": {
                     "s_c0": {

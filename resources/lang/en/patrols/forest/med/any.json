@@ -218,7 +218,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l goes to a known herb patch \u00e2\u20ac\u201d but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} give up, hunting around in the area until {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a smaller overlooked bush that still has leaves on it."
+                    "p_l goes to a known herb patch — but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} give up, hunting around in the area until {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a smaller overlooked bush that still has leaves on it."
                 ],
                 "exp_gained": 10,
                 "supply": [
@@ -233,7 +233,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l goes to a known herb patch \u00e2\u20ac\u201d but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} up and {VERB/p_l/return/returns} to camp, {PRONOUN/p_l/poss} tail dragging miserably along the ground."
+                    "p_l goes to a known herb patch — but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} up and {VERB/p_l/return/returns} to camp, {PRONOUN/p_l/poss} tail dragging miserably along the ground."
                 ],
                 "exp_gained": 0
             }

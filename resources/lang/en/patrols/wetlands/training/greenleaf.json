@@ -51,7 +51,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_soggykittyhappy_Wr",
                 "strings": [
-                    "The patrol staggers towards the nearest pond and flops into it \u00e2\u20ac\u201d not to hunt, solely for the cool water. r_c0 swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favour. There's nothing like swimming in greenleaf, and the patrol devolves into a splash-fight."
+                    "The patrol staggers towards the nearest pond and flops into it — not to hunt, solely for the cool water. r_c0 swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favour. There's nothing like swimming in greenleaf, and the patrol devolves into a splash-fight."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -97,7 +97,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/fst_train_NL_matesonadates_WrWr",
                 "strings": [
-                    "The patrol staggers towards the nearest pond and flops into it \u00e2\u20ac\u201d not to hunt, solely for the cool water. r_c0 swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favour, batting back in splash-fight. The rest of the patrol fades away. The two of them are in their own little world."
+                    "The patrol staggers towards the nearest pond and flops into it — not to hunt, solely for the cool water. r_c0 swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favour, batting back in splash-fight. The rest of the patrol fades away. The two of them are in their own little world."
                 ],
                 "involved_cats": {
                     "r_c0": {}

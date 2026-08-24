@@ -24,7 +24,7 @@
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
         "intro_text": [
-            "p_l tastes the air and perks up \u00e2\u20ac\u201d there's a squirrel nearby, nibbling the lush plant growth near the base of a tree!"
+            "p_l tastes the air and perks up — there's a squirrel nearby, nibbling the lush plant growth near the base of a tree!"
         ],
         "decline_text": [
             "After a moment's deliberation, p_l decides to move on."
@@ -46,7 +46,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "Though it tries to escape, p_l is faster and smarter \u00e2\u20ac\u201d {PRONOUN/p_l/subject} {VERB/p_l/slam/slams} a paw down on the squirrel's tail before it can go very far and {VERB/p_l/kill/kills} it with ease."
+                    "Though it tries to escape, p_l is faster and smarter — {PRONOUN/p_l/subject} {VERB/p_l/slam/slams} a paw down on the squirrel's tail before it can go very far and {VERB/p_l/kill/kills} it with ease."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
@@ -77,7 +77,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 slinks through the underbrush, undetected until {PRONOUN/s_c0/subject}{VERB/p_l/'ve/'s} pounced \u00e2\u20ac\u201d and by then it's far too late for the squirrel to do anything about it."
+                    "s_c0 slinks through the underbrush, undetected until {PRONOUN/s_c0/subject}{VERB/p_l/'ve/'s} pounced — and by then it's far too late for the squirrel to do anything about it."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -175,7 +175,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} right not to \u00e2\u20ac\u201d {PRONOUN/p_l/poss} catch is flawless, and {PRONOUN/p_l/subject} {VERB/p_l/return/returns} home with {PRONOUN/p_l/poss} chest puffed out in pride."
+                    "p_l slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} right not to — {PRONOUN/p_l/poss} catch is flawless, and {PRONOUN/p_l/subject} {VERB/p_l/return/returns} home with {PRONOUN/p_l/poss} chest puffed out in pride."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -221,7 +221,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Poor p_l focuses too hard on making sure {PRONOUN/p_l/poss} hunting crouch is correct \u00e2\u20ac\u201d by the time {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} ready, the squirrel is long gone."
+                    "Poor p_l focuses too hard on making sure {PRONOUN/p_l/poss} hunting crouch is correct — by the time {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} ready, the squirrel is long gone."
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -269,7 +269,7 @@
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
         "intro_text": [
-            "p_l instructs r_c1 to scent the air and nods in approval when r_c1 says {PRONOUN/r_c1/subject} {VERB/r_c1/smell/smells} squirrel. With greenleaf comes fatter prey that tends to stick to shady spots \u00e2\u20ac\u201d p_l points out a few likely destinations the squirrel may be heading to, then softly asks r_c1 how {PRONOUN/r_c1/subject}'d like to proceed."
+            "p_l instructs r_c1 to scent the air and nods in approval when r_c1 says {PRONOUN/r_c1/subject} {VERB/r_c1/smell/smells} squirrel. With greenleaf comes fatter prey that tends to stick to shady spots — p_l points out a few likely destinations the squirrel may be heading to, then softly asks r_c1 how {PRONOUN/r_c1/subject}'d like to proceed."
         ],
         "decline_text": [
             "r_c1 looks apprehensive, then quietly says {PRONOUN/r_c1/subject} {VERB/r_c1/want/wants} to look for something easier."
@@ -278,7 +278,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/r_c1/subject/CAP}{VERB/r_c1/'re/'s} right not to \u00e2\u20ac\u201d {PRONOUN/r_c1/poss} catch is flawless, and {PRONOUN/r_c1/subject} {VERB/r_c1/puff/puffs} {PRONOUN/r_c1/poss} chest out in pride as p_l praises {PRONOUN/r_c1/object}."
+                    "r_c1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/r_c1/subject/CAP}{VERB/r_c1/'re/'s} right not to — {PRONOUN/r_c1/poss} catch is flawless, and {PRONOUN/r_c1/subject} {VERB/r_c1/puff/puffs} {PRONOUN/r_c1/poss} chest out in pride as p_l praises {PRONOUN/r_c1/object}."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -499,7 +499,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "A mischievous look in {PRONOUN/p_l/poss} eye, p_l challenges {PRONOUN/p_l/poss} Clanmates \u00e2\u20ac\u201d whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c0 calls out in triumph. Not only {VERB/r_c0/do/does} {PRONOUN/r_c0/subject} have the squirrel, but {PRONOUN/r_c0/subject} now also {VERB/r_c0/have/has} a pawful of oak leaves for the medicine cat!"
+                    "A mischievous look in {PRONOUN/p_l/poss} eye, p_l challenges {PRONOUN/p_l/poss} Clanmates — whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c0 calls out in triumph. Not only {VERB/r_c0/do/does} {PRONOUN/r_c0/subject} have the squirrel, but {PRONOUN/r_c0/subject} now also {VERB/r_c0/have/has} a pawful of oak leaves for the medicine cat!"
                 ],
                 "exp_gained": 40,
                 "relationship_changes": [
@@ -797,7 +797,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap \u00e2\u20ac\u201d with s_c0 on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home."
+                    "r_c0 suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap — with s_c0 on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1515,7 +1515,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c0 tries to distract the hawk so that p_l can lead the rest of the patrol in a flanking maneuver, but the hawk lashes out and slashes {PRONOUN/r_c0/object} ferociously. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/retreat/retreats} back into the undergrowth, and p_l calls off the attempt, not wanting to risk more injury \u00e2\u20ac\u201d or death \u00e2\u20ac\u201d just for some extra meat."
+                    "r_c0 tries to distract the hawk so that p_l can lead the rest of the patrol in a flanking maneuver, but the hawk lashes out and slashes {PRONOUN/r_c0/object} ferociously. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/retreat/retreats} back into the undergrowth, and p_l calls off the attempt, not wanting to risk more injury — or death — just for some extra meat."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -1809,7 +1809,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The patrol backtracks and finds r_c0 at the bottom of a precarious looking embankment. r_c0 shouts up an encouragement to join {PRONOUN/r_c0/object} \u00e2\u20ac\u201d {PRONOUN/r_c0/subject} {VERB/r_c0/have/has} found a fallen bird's nest and {VERB/r_c0/need/needs} help carrying the delicious nestlings back to camp."
+                    "The patrol backtracks and finds r_c0 at the bottom of a precarious looking embankment. r_c0 shouts up an encouragement to join {PRONOUN/r_c0/object} — {PRONOUN/r_c0/subject} {VERB/r_c0/have/has} found a fallen bird's nest and {VERB/r_c0/need/needs} help carrying the delicious nestlings back to camp."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -1840,7 +1840,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It's not ideal. s_c0 apologizes \u00e2\u20ac\u201d {PRONOUN/s_c0/subject} {VERB/s_c0/were/was} too caught up in assessing the prey levels in the clearing, and hadn't realized the patrol couldn't see {PRONOUN/r_c0/object}. Still, everything is smoothed over nicely, and the cats bring home a successful prize of seed-fattened birds."
+                    "It's not ideal. s_c0 apologizes — {PRONOUN/s_c0/subject} {VERB/s_c0/were/was} too caught up in assessing the prey levels in the clearing, and hadn't realized the patrol couldn't see {PRONOUN/r_c0/object}. Still, everything is smoothed over nicely, and the cats bring home a successful prize of seed-fattened birds."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -3115,7 +3115,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The squirrels are far too excited and quick \u00e2\u20ac\u201d they slip right out from between the patrol's claws."
+                    "The squirrels are far too excited and quick — they slip right out from between the patrol's claws."
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -3502,7 +3502,7 @@
         "patrol_art": "fst_hunt_fox_greenleafscavenge1",
         "patrol_art_clean": "hunt_general_intro",
         "intro_text": [
-            "The patrol catches the scent of a fox \u00e2\u20ac\u201d but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it."
+            "The patrol catches the scent of a fox — but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it."
         ],
         "decline_text": [
             "The patrol decides not to quarrel with the fox and to find prey elsewhere."
@@ -3814,7 +3814,7 @@
         "patrol_art": "hunt_general_intro",
         "patrol_art_clean": "hunt_general_intro",
         "intro_text": [
-            "The patrol catches the scent of a fox \u00e2\u20ac\u201d but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it."
+            "The patrol catches the scent of a fox — but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it."
         ],
         "decline_text": [
             "The patrol decides not to quarrel with the fox and to find prey elsewhere."
@@ -4140,7 +4140,7 @@
         "patrol_art": "hunt_general_intro",
         "patrol_art_clean": "hunt_general_intro",
         "intro_text": [
-            "p_l catches the scent of a fox \u00e2\u20ac\u201d but is it red, or gray? Tracking it, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} {PRONOUN/p_l/poss} red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it."
+            "p_l catches the scent of a fox — but is it red, or gray? Tracking it, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} {PRONOUN/p_l/poss} red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it."
         ],
         "decline_text": [
             "p_l decides not to quarrel with the fox and to find prey elsewhere."
@@ -4768,7 +4768,7 @@
             "As the patrol heads out into the forest to hunt, r_c0 seems to be absolutely unconcerned with {PRONOUN/r_c0/poss} duties, instead ambling along as through the prey is going to waltz into {PRONOUN/r_c0/poss} paws."
         ],
         "decline_text": [
-            "The cats are called back to camp \u00e2\u20ac\u201d there's something the deputy needs to discuss with them."
+            "The cats are called back to camp — there's something the deputy needs to discuss with them."
         ],
         "success_outcomes": [
             {
@@ -5011,7 +5011,7 @@
             "As the patrol heads out into the forest to hunt, r_c0 suggests a sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice."
         ],
         "decline_text": [
-            "The cats are called back to camp \u00e2\u20ac\u201d there's something the deputy needs to discuss with them."
+            "The cats are called back to camp — there's something the deputy needs to discuss with them."
         ],
         "success_outcomes": [
             {
@@ -5081,7 +5081,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "These are the times that it really pays to have a hunter of s_c0's caliber on the patrol \u00e2\u20ac\u201d {PRONOUN/s_c0/subject} really {VERB/s_c0/go/goes} above and beyond, impressing everyone and leaving a trail of terror among the local mice."
+                    "These are the times that it really pays to have a hunter of s_c0's caliber on the patrol — {PRONOUN/s_c0/subject} really {VERB/s_c0/go/goes} above and beyond, impressing everyone and leaving a trail of terror among the local mice."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -5190,7 +5190,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} not the only creature taking advantage of the light rain to find food \u00e2\u20ac\u201d though for the f_tp_p and the single f_tp_s {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} bringing back to camp, that decision was a mistake."
+                    "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} not the only creature taking advantage of the light rain to find food — though for the f_tp_p and the single f_tp_s {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} bringing back to camp, that decision was a mistake."
                 ],
                 "exp_gained": 15,
                 "supply": [
@@ -5216,7 +5216,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The thick undergrowth of the forest is perfect for stalking \u00e2\u20ac\u201d s_c0 doesn't know why cats would ever live elsewhere. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/bring/brings} back a f_mp_s and a couple f_tp_p for good measure, pleased with the satisfying hunt."
+                    "The thick undergrowth of the forest is perfect for stalking — s_c0 doesn't know why cats would ever live elsewhere. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/bring/brings} back a f_mp_s and a couple f_tp_p for good measure, pleased with the satisfying hunt."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -5488,7 +5488,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It turns out running headlong at prey isn't an effective hunting technique \u00e2\u20ac\u201d though it's a fantastic technique for crashing into things. A little wiser, a little disheveled, and a little less hyper, p_l heads back to camp."
+                    "It turns out running headlong at prey isn't an effective hunting technique — though it's a fantastic technique for crashing into things. A little wiser, a little disheveled, and a little less hyper, p_l heads back to camp."
                 ],
                 "exp_gained": 0,
                 "condition": [

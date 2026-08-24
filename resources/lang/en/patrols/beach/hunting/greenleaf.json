@@ -447,7 +447,7 @@
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
         "intro_text": [
-            "As the patrol crosses the sandy beaches of their territory, a low sound kicks up just at the edges of their hearing. p_l comes to an abrupt stop and scrambles backwards, hissing at the others to stop as well, once {PRONOUN/p_l/subject} {VERB/p_l/realize/realizes} what's making it \u00e2\u20ac\u201d there's a rattlesnake, staring down a ground squirrel!"
+            "As the patrol crosses the sandy beaches of their territory, a low sound kicks up just at the edges of their hearing. p_l comes to an abrupt stop and scrambles backwards, hissing at the others to stop as well, once {PRONOUN/p_l/subject} {VERB/p_l/realize/realizes} what's making it — there's a rattlesnake, staring down a ground squirrel!"
         ],
         "decline_text": [
             "The patrol wastes no time in turning tail and going home, not wanting to risk being on the receiving end of a rattlesnake, even if there's a squirrel to be caught."
@@ -926,7 +926,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_hunt_funrun_WrWr",
                 "strings": [
-                    "When the Twolegs leave their white-and-red pelt to run down to the water's edge, shrieking and laughing to each other, the patrol strikes. Moving as one, they sprint over the tussock toward the woven nest. p_l batters the nest onto its side, spilling its contents, and r_c0 snatches up the prize \u00e2\u20ac\u201d a slippery clear sac full of mouthwatering chicken. The cats vanish back into the grass before the Twolegs ever learn they were there."
+                    "When the Twolegs leave their white-and-red pelt to run down to the water's edge, shrieking and laughing to each other, the patrol strikes. Moving as one, they sprint over the tussock toward the woven nest. p_l batters the nest onto its side, spilling its contents, and r_c0 snatches up the prize — a slippery clear sac full of mouthwatering chicken. The cats vanish back into the grass before the Twolegs ever learn they were there."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -1186,7 +1186,7 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_jolly_Wr",
                 "strings": [
-                    "r_c0 strolls down the beach, meowing sweetly. The Twolegs screech and run over, and the patrol snatches as much Twoleg food as they can. Once r_c0 extricates {PRONOUN/r_c0/self} from the Twoleg kits' clutches and the patrol returns to camp, they share all sorts of mysteries with their Clanmates \u00e2\u20ac\u201d creamy goop-covered tubers, strange cylindrical meat in a wheaty casing, and large shell-less chicken eggs made soft and opaque."
+                    "r_c0 strolls down the beach, meowing sweetly. The Twolegs screech and run over, and the patrol snatches as much Twoleg food as they can. Once r_c0 extricates {PRONOUN/r_c0/self} from the Twoleg kits' clutches and the patrol returns to camp, they share all sorts of mysteries with their Clanmates — creamy goop-covered tubers, strange cylindrical meat in a wheaty casing, and large shell-less chicken eggs made soft and opaque."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -1374,7 +1374,7 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_catlookingup_Wr",
                 "strings": [
-                    "As the patrol strategizes, they slowly turn to s_c0. s_c0 growls \u00e2\u20ac\u201d no, no chance. But it's decided. The patrol waits as s_c0 bushes {PRONOUN/s_c0/poss} fur out and forces a purr, stalking up to the white-and-red pelt. The Twolegs don't seem to notice {PRONOUN/s_c0/poss} discomfort as they run their smooth paws over {PRONOUN/s_c0/poss} bristling fur \u00e2\u20ac\u201d and they certainly don't notice the rest of the patrol making off with their feast."
+                    "As the patrol strategizes, they slowly turn to s_c0. s_c0 growls — no, no chance. But it's decided. The patrol waits as s_c0 bushes {PRONOUN/s_c0/poss} fur out and forces a purr, stalking up to the white-and-red pelt. The Twolegs don't seem to notice {PRONOUN/s_c0/poss} discomfort as they run their smooth paws over {PRONOUN/s_c0/poss} bristling fur — and they certainly don't notice the rest of the patrol making off with their feast."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -1490,7 +1490,7 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_confused_Wr",
                 "strings": [
-                    "Biding their time, the patrol watches as the Twolegs leave their white-and-red pelt to go splash in the water. Then, they strike. p_l knocks over the woven nest so r_c0 can steal the Twoleg food \u00e2\u20ac\u201d but the cats are disappointed to discover fruit, fruit, and more fruit. Why would such powerful animals as Twolegs eat like rodents and birds? The patrol trade confused, irritated looks as they go home empty-pawed."
+                    "Biding their time, the patrol watches as the Twolegs leave their white-and-red pelt to go splash in the water. Then, they strike. p_l knocks over the woven nest so r_c0 can steal the Twoleg food — but the cats are disappointed to discover fruit, fruit, and more fruit. Why would such powerful animals as Twolegs eat like rodents and birds? The patrol trade confused, irritated looks as they go home empty-pawed."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -1664,7 +1664,7 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_bord_rescue_Wr",
                 "strings": [
-                    "The patrol has arrived too late \u00e2\u20ac\u201d the Twolegs pack their food back into the woven nest and gather up their pelt. s_c0 follows the Twolegs back to their monster, ignoring p_l's order to return to camp. When its belly opens so the Twolegs can place the woven nest in it, s_c0 leaps into the monster after it! The belly snaps shut, and the patrol watches in horror as the monster takes off with their trapped Clanmate."
+                    "The patrol has arrived too late — the Twolegs pack their food back into the woven nest and gather up their pelt. s_c0 follows the Twolegs back to their monster, ignoring p_l's order to return to camp. When its belly opens so the Twolegs can place the woven nest in it, s_c0 leaps into the monster after it! The belly snaps shut, and the patrol watches in horror as the monster takes off with their trapped Clanmate."
                 ],
                 "involved_cats": {
                     "s_c0": {

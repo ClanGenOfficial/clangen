@@ -20,7 +20,7 @@
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
         "intro_text": [
-            "As p_l crosses a beach, shivering with the cold, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound, like a wave \u00e2\u20ac\u201d but out of sync with the ocean."
+            "As p_l crosses a beach, shivering with the cold, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound, like a wave — but out of sync with the ocean."
         ],
         "decline_text": [
             "p_l decides to head back early."
@@ -42,7 +42,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 scrambles back the way {PRONOUN/s_c0/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris \u00e2\u20ac\u201d and a large dead sheep. s_c0 pounces on the opportunity to scavenge."
+                    "s_c0 scrambles back the way {PRONOUN/s_c0/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris — and a large dead sheep. s_c0 pounces on the opportunity to scavenge."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -375,7 +375,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_anxiouslookup_Wr",
                 "strings": [
-                    "The skua isn't only after the petrel \u00e2\u20ac\u201d it seems to have claimed the whole stretch of shoreline, patrolling its territory with a furious fervor. Every attempt to approach the border is met with diving wings and a peck to the back of the head, sending the cats scattering. Eventually, the patrol has no choice but to give up, and a section of the border goes unmarked."
+                    "The skua isn't only after the petrel — it seems to have claimed the whole stretch of shoreline, patrolling its territory with a furious fervor. Every attempt to approach the border is met with diving wings and a peck to the back of the head, sending the cats scattering. Eventually, the patrol has no choice but to give up, and a section of the border goes unmarked."
                 ],
                 "exp_gained": 0,
                 "condition": [

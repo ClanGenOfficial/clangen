@@ -169,7 +169,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l would give {PRONOUN/p_l/poss} life to protect c_n, and as {PRONOUN/p_l/subject} {VERB/p_l/charge/charges} past the huge dog to lead it far, far from c_n, {PRONOUN/p_l/subject} {VERB/p_l/accept/accepts} it. Fear gives {PRONOUN/p_l/object} speed, but it only takes one successful hit. Miraculously, {PRONOUN/p_l/subject} {VERB/p_l/fly/flies} out of the dog's jaws while it shakes {PRONOUN/p_l/object}, landing safely. p_l is injured, desperate, and terrified \u00e2\u20ac\u201d but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alive."
+                    "p_l would give {PRONOUN/p_l/poss} life to protect c_n, and as {PRONOUN/p_l/subject} {VERB/p_l/charge/charges} past the huge dog to lead it far, far from c_n, {PRONOUN/p_l/subject} {VERB/p_l/accept/accepts} it. Fear gives {PRONOUN/p_l/object} speed, but it only takes one successful hit. Miraculously, {PRONOUN/p_l/subject} {VERB/p_l/fly/flies} out of the dog's jaws while it shakes {PRONOUN/p_l/object}, landing safely. p_l is injured, desperate, and terrified — but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alive."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -618,7 +618,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol tries to keep watch over the dog from a distance, but it spots the cats and forces them to scatter. Everyone escapes just fine, but they lose track of the dog. It could be anywhere \u00e2\u20ac\u201d still out there, lurking, waiting to attack."
+                    "The patrol tries to keep watch over the dog from a distance, but it spots the cats and forces them to scatter. Everyone escapes just fine, but they lose track of the dog. It could be anywhere — still out there, lurking, waiting to attack."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -650,7 +650,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 tries to take the lion's share of the effort to lead the dog away, but {PRONOUN/s_c0/poss} strength fails {PRONOUN/s_c0/object} \u00e2\u20ac\u201d the rest of the patrol needs to rescue {PRONOUN/s_c0/object}, cutting the patrol short. Everyone knows the dog could still be lurking on their borders."
+                    "s_c0 tries to take the lion's share of the effort to lead the dog away, but {PRONOUN/s_c0/poss} strength fails {PRONOUN/s_c0/object} — the rest of the patrol needs to rescue {PRONOUN/s_c0/object}, cutting the patrol short. Everyone knows the dog could still be lurking on their borders."
                 ],
                 "required_cat_types": {
                     "normal adult": [
@@ -1554,7 +1554,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The three cats stalk forward, fur bristling and hackles raised, ready for a possible fight \u00e2\u20ac\u201d but p_l's tail flicks up in sudden amusement. Across the clearing, the alpha mother of the wild dog pack scolds her offspring in swirling squeaks and chirps, her youngling apologetically licking its lips and tucking tail. From their posture, this pup has just failed a hunt, and the cat's hearts prick with the sympathy of fellow carnivores."
+                    "The three cats stalk forward, fur bristling and hackles raised, ready for a possible fight — but p_l's tail flicks up in sudden amusement. Across the clearing, the alpha mother of the wild dog pack scolds her offspring in swirling squeaks and chirps, her youngling apologetically licking its lips and tucking tail. From their posture, this pup has just failed a hunt, and the cat's hearts prick with the sympathy of fellow carnivores."
                 ],
                 "exp_gained": 10
             }

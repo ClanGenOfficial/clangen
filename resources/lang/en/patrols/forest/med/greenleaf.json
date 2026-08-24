@@ -51,7 +51,7 @@
             "The sun is hot on r_c's pelt as {PRONOUN/r_c0/subject} {VERB/r_c0/follow/follows} p_l to what's apparently a 'really good spot' for herbs. r_c0 doesn't know what makes one spot better than any other, but {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} just happy to have the chance to help p_l. As p_l dives into the greenery, as enthusiastic as any proud hunter, a brilliant yellow and black butterfly lands right on {PRONOUN/p_l/poss} raised butt."
         ],
         "decline_text": [
-            "It's not meant to be \u00e2\u20ac\u201d a yowl interrupts their herbal hunt. The Clan needs p_l back at camp."
+            "It's not meant to be — a yowl interrupts their herbal hunt. The Clan needs p_l back at camp."
         ],
         "success_outcomes": [
             {
@@ -88,7 +88,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "Err... A little help? p_l asks, and r_c0 pads closer, helplessly aware that there's absolutely no dignified way to remove an insect from another cat's hindquarters. If p_l could just \u00e2\u20ac\u201d no, maybe if r_c0 moves around \u00e2\u20ac\u201d whoops, no, and they both fall instead, butterfly fluttering smugly off as r_c0 tries not to die of embarrassment on {PRONOUN/r_c0/poss} back in the flowers with p_l smiling so prettily."
+                    "Err... A little help? p_l asks, and r_c0 pads closer, helplessly aware that there's absolutely no dignified way to remove an insect from another cat's hindquarters. If p_l could just — no, maybe if r_c0 moves around — whoops, no, and they both fall instead, butterfly fluttering smugly off as r_c0 tries not to die of embarrassment on {PRONOUN/r_c0/poss} back in the flowers with p_l smiling so prettily."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -207,7 +207,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "Not only is the mullein intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l purrs in satisfaction \u00e2\u20ac\u201d seems like {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} caught two prey in one blow on this trip. {PRONOUN/p_l/subject/CAP}'ll remember that plantain for later."
+                    "Not only is the mullein intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l purrs in satisfaction — seems like {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} caught two prey in one blow on this trip. {PRONOUN/p_l/subject/CAP}'ll remember that plantain for later."
                 ],
                 "exp_gained": 10,
                 "supply": [
@@ -389,7 +389,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "p_l moves at the wrong time, pollen whipped up by the warm wind. Still, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} {PRONOUN/p_l/self} trudging on \u00e2\u20ac\u201d only to collapse a few heartbeats later."
+                    "p_l moves at the wrong time, pollen whipped up by the warm wind. Still, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} {PRONOUN/p_l/self} trudging on — only to collapse a few heartbeats later."
                 ],
                 "exp_gained": 0,
                 "death": [

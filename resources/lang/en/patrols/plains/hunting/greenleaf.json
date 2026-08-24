@@ -281,7 +281,7 @@
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
         "intro_text": [
-            "The patrol catches the scent of a fox \u00e2\u20ac\u201d but is it red or swift?"
+            "The patrol catches the scent of a fox — but is it red or swift?"
         ],
         "decline_text": [
             "The patrol decides not to pursue the fox."
@@ -331,7 +331,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The patrol sneaks closer, until p_l realizes that the vixen is approaching her den \u00e2\u20ac\u201d a den where cubs must surely hide. A competitor denning within c_n's borders is an outrage, and the patrol leaps to attack, pinning the vixen in a cluster of boulders."
+                    "The patrol sneaks closer, until p_l realizes that the vixen is approaching her den — a den where cubs must surely hide. A competitor denning within c_n's borders is an outrage, and the patrol leaps to attack, pinning the vixen in a cluster of boulders."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -1353,7 +1353,7 @@
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
         "intro_text": [
-            "r_c1 catches scent of a mouse nearby. p_l points out the little path the mouse has trod in the dirt at the base of the grass stalks \u00e2\u20ac\u201d that's what it'll try to use as an escape path."
+            "r_c1 catches scent of a mouse nearby. p_l points out the little path the mouse has trod in the dirt at the base of the grass stalks — that's what it'll try to use as an escape path."
         ],
         "decline_text": [
             "The patrol ignores the mouse."
@@ -1593,7 +1593,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 finds {PRONOUN/r_c0/self} face to fang with a rattling snake. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/flinch/flinches} away just as the snake snaps its dripping fangs shut a whisker-length from {PRONOUN/r_c0/poss} nose. r_c0 bolts back to the patrol. They'll need to alter their hunting path \u00e2\u20ac\u201d that was too close!"
+                    "r_c0 finds {PRONOUN/r_c0/self} face to fang with a rattling snake. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/flinch/flinches} away just as the snake snaps its dripping fangs shut a whisker-length from {PRONOUN/r_c0/poss} nose. r_c0 bolts back to the patrol. They'll need to alter their hunting path — that was too close!"
                 ],
                 "involved_cats": {
                     "r_c0": {}

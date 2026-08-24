@@ -37,7 +37,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "This close to the nest, the eagles take remarkably little notice of other animals. r_c1 can even see sparrows nipping in and out of their own nests, tiny things woven into the eagle one. It's an opportunity to observe a side of the birds birds that r_c1 never expected to see \u00e2\u20ac\u201d to learn their body language and watch them with their chicks."
+                    "This close to the nest, the eagles take remarkably little notice of other animals. r_c1 can even see sparrows nipping in and out of their own nests, tiny things woven into the eagle one. It's an opportunity to observe a side of the birds birds that r_c1 never expected to see — to learn their body language and watch them with their chicks."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -87,7 +87,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l tells r_c1 to watch carefully as the parents arrive at and leave the nest \u00e2\u20ac\u201d this is one of the only times a cat can study how an eagle flies without danger. The adults are far too focused on their brood, and their brood far too focused on squabbling, for either to notice the c_n cats."
+                    "p_l tells r_c1 to watch carefully as the parents arrive at and leave the nest — this is one of the only times a cat can study how an eagle flies without danger. The adults are far too focused on their brood, and their brood far too focused on squabbling, for either to notice the c_n cats."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -198,7 +198,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 shows r_c1 the way the eagle rips apart its prey to feed to its nestlings, explaining how that beak lethally rips and twists, pointing out how the eagle holds its claws to grip its prey. It's a comprehensive \u00e2\u20ac\u201d if scary \u00e2\u20ac\u201d lesson, and r_c1 learns a lot."
+                    "s_c0 shows r_c1 the way the eagle rips apart its prey to feed to its nestlings, explaining how that beak lethally rips and twists, pointing out how the eagle holds its claws to grip its prey. It's a comprehensive — if scary — lesson, and r_c1 learns a lot."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -413,7 +413,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l tells the apprentices to watch carefully as the parents arrive at and leave the nest \u00e2\u20ac\u201d this is one of the only times a cat can study how an eagle flies without danger. The adults are far too focused on their brood, and their brood far too focused on squabbling, for either to notice the c_n cats."
+                    "p_l tells the apprentices to watch carefully as the parents arrive at and leave the nest — this is one of the only times a cat can study how an eagle flies without danger. The adults are far too focused on their brood, and their brood far too focused on squabbling, for either to notice the c_n cats."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -512,7 +512,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 shows r_c1 the way the eagle rips apart its prey to feed to its nestlings, explaining how that beak lethally rips and twists, pointing out how the eagle holds its claws to grip its prey. It's a comprehensive \u00e2\u20ac\u201d if scary \u00e2\u20ac\u201d lesson, and r_c1 learns a lot."
+                    "s_c0 shows r_c1 the way the eagle rips apart its prey to feed to its nestlings, explaining how that beak lethally rips and twists, pointing out how the eagle holds its claws to grip its prey. It's a comprehensive — if scary — lesson, and r_c1 learns a lot."
                 ],
                 "involved_cats": {
                     "r_c1": {

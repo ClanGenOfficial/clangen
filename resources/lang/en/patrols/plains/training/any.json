@@ -303,7 +303,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Feeling ever so alone on {PRONOUN/p_l/poss} solo patrol, p_l carefully sniffs around the mouth of the burrow, but the scent change is unmistakable \u00e2\u20ac\u201d a new badger occupant has moved in. Creeping forward, belly flat in the dirt, {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} just enough of a glimpse to confirm the badger's presence. Heart pounding, p_l sprints back to camp to warn everyone."
+                    "Feeling ever so alone on {PRONOUN/p_l/poss} solo patrol, p_l carefully sniffs around the mouth of the burrow, but the scent change is unmistakable — a new badger occupant has moved in. Creeping forward, belly flat in the dirt, {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} just enough of a glimpse to confirm the badger's presence. Heart pounding, p_l sprints back to camp to warn everyone."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -353,7 +353,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 decides there has to be a smarter way of figuring out if a badger has moved in \u00e2\u20ac\u201d one that doesn't involve sticking {PRONOUN/s_c0/poss} head in front of a predator. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/search/searches} the grass around the sett thoroughly until {PRONOUN/s_c0/subject} {VERB/s_c0/come/comes} upon some fresh badger scat \u00e2\u20ac\u201d stinky, horrible, and perfect proof of the new occupant of the sett."
+                    "s_c0 decides there has to be a smarter way of figuring out if a badger has moved in — one that doesn't involve sticking {PRONOUN/s_c0/poss} head in front of a predator. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/search/searches} the grass around the sett thoroughly until {PRONOUN/s_c0/subject} {VERB/s_c0/come/comes} upon some fresh badger scat — stinky, horrible, and perfect proof of the new occupant of the sett."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -502,7 +502,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "p_l carefully approaches the burrow to figure out if there's anything new inside. It's so dark, and it all smells the same... {PRONOUN/p_l/subject/CAP} {VERB/p_l/try/tries} to creep just a little closer \u00e2\u20ac\u201d but the ground drops away steeply beneath {PRONOUN/p_l/poss} paws and {PRONOUN/p_l/subject} {VERB/p_l/lose/loses} {PRONOUN/p_l/poss} footing, skidding right into the disturbed badger's lethal jaws."
+                    "p_l carefully approaches the burrow to figure out if there's anything new inside. It's so dark, and it all smells the same... {PRONOUN/p_l/subject/CAP} {VERB/p_l/try/tries} to creep just a little closer — but the ground drops away steeply beneath {PRONOUN/p_l/poss} paws and {PRONOUN/p_l/subject} {VERB/p_l/lose/loses} {PRONOUN/p_l/poss} footing, skidding right into the disturbed badger's lethal jaws."
                 ],
                 "exp_gained": 0,
                 "death": [
@@ -517,7 +517,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "While p_l is carefully sniffing at the burrow entrance, there's a rustle in the grass behind {PRONOUN/p_l/object}. It's difficult to say who's more surprised \u00e2\u20ac\u201d p_l or the badger. It charges for the sett and p_l leaps out of the way, but its claws catch {PRONOUN/p_l/poss} pelt, and a bloodied p_l limps back into camp to report the whole sorry adventure."
+                    "While p_l is carefully sniffing at the burrow entrance, there's a rustle in the grass behind {PRONOUN/p_l/object}. It's difficult to say who's more surprised — p_l or the badger. It charges for the sett and p_l leaps out of the way, but its claws catch {PRONOUN/p_l/poss} pelt, and a bloodied p_l limps back into camp to report the whole sorry adventure."
                 ],
                 "exp_gained": 0,
                 "condition": [
@@ -562,7 +562,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Calling the rest of the patrol over, the cats discuss their next move. If a badger has moved in, they need to confirm it, but how? p_l comes up with a plan \u00e2\u20ac\u201d stuffing grasses and shrubs into the mouth of the sett. The cats will be able to come back tomorrow to see if anything has shoved them out of the way."
+                    "Calling the rest of the patrol over, the cats discuss their next move. If a badger has moved in, they need to confirm it, but how? p_l comes up with a plan — stuffing grasses and shrubs into the mouth of the sett. The cats will be able to come back tomorrow to see if anything has shoved them out of the way."
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
@@ -612,7 +612,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 decides there has to be a smarter way of figuring out if a badger has moved in \u00e2\u20ac\u201d one that doesn't involve sticking {PRONOUN/s_c0/poss} head in front of a predator. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/lead/leads} the patrol on a search of the grass around the sett until they come upon some fresh badger scat \u00e2\u20ac\u201d stinky, horrible, and perfect proof of the new occupant of the sett."
+                    "s_c0 decides there has to be a smarter way of figuring out if a badger has moved in — one that doesn't involve sticking {PRONOUN/s_c0/poss} head in front of a predator. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/lead/leads} the patrol on a search of the grass around the sett until they come upon some fresh badger scat — stinky, horrible, and perfect proof of the new occupant of the sett."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -769,7 +769,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "As the patrol is sniffing around the burrow entrance, they hear a rustle from the grass. It's difficult to say who's more surprised \u00e2\u20ac\u201d the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c0 is battered in the process but everyone gets home in one piece... including the badger."
+                    "As the patrol is sniffing around the burrow entrance, they hear a rustle from the grass. It's difficult to say who's more surprised — the cats or the badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c0 is battered in the process but everyone gets home in one piece... including the badger."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -829,7 +829,7 @@
         "chance_of_success": 20,
         "patrol_art": "train_general_intro",
         "intro_text": [
-            "As {PRONOUN/r_c0/subject} {VERB/r_c0/lag/lags} behind on patrol, the ground trembles beneath r_c's paws. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly for safe footing \u00e2\u20ac\u201d just as the earth caves in beneath {PRONOUN/r_c0/object} and the world goes dark."
+            "As {PRONOUN/r_c0/subject} {VERB/r_c0/lag/lags} behind on patrol, the ground trembles beneath r_c's paws. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly for safe footing — just as the earth caves in beneath {PRONOUN/r_c0/object} and the world goes dark."
         ],
         "decline_text": [
             "Thankfully, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} on the edge of the obstruction and {VERB/r_c0/wriggle/wriggles} {PRONOUN/r_c0/poss} way clear."
@@ -1211,7 +1211,7 @@
         "chance_of_success": 50,
         "patrol_art": "train_general_intro",
         "intro_text": [
-            "As r_c0 trails behind p_l, the ground trembles beneath {PRONOUN/r_c0/poss}'s paws. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly for safe footing \u00e2\u20ac\u201d just as the earth caves in beneath {PRONOUN/r_c0/object} and the world goes dark."
+            "As r_c0 trails behind p_l, the ground trembles beneath {PRONOUN/r_c0/poss}'s paws. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly for safe footing — just as the earth caves in beneath {PRONOUN/r_c0/object} and the world goes dark."
         ],
         "decline_text": [
             "Thankfully, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} on the edge of the obstruction and {VERB/r_c0/wriggle/wriggles} {PRONOUN/r_c0/poss} way clear."
@@ -1496,7 +1496,7 @@
         "chance_of_success": 40,
         "patrol_art": "train_general_intro",
         "intro_text": [
-            "p_l is training alone out on the plains when suddenly, the ground trembles beneath {PRONOUN/p_l/poss} paws. {PRONOUN/p_l/subject/CAP} {VERB/p_l/look/looks} around wildly for safe footing \u00e2\u20ac\u201d just as the earth caves in beneath {PRONOUN/p_l/object} and the world goes dark."
+            "p_l is training alone out on the plains when suddenly, the ground trembles beneath {PRONOUN/p_l/poss} paws. {PRONOUN/p_l/subject/CAP} {VERB/p_l/look/looks} around wildly for safe footing — just as the earth caves in beneath {PRONOUN/p_l/object} and the world goes dark."
         ],
         "decline_text": [
             "Thankfully, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} on the edge of the obstruction and {VERB/p_l/wriggle/wriggles} {PRONOUN/p_l/poss} way clear."
@@ -1735,7 +1735,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_hunt_funrun_Wr",
                 "strings": [
-                    "p_l heads off to map out a thick field of tall grass {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} always found confusing. Hunting, fighting, driving off predators \u00e2\u20ac\u201d it all requires knowledge of {PRONOUN/p_l/poss} home turf. It's always worth making sure {PRONOUN/p_l/poss} mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break {PRONOUN/p_l/subject} hoped for."
+                    "p_l heads off to map out a thick field of tall grass {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} always found confusing. Hunting, fighting, driving off predators — it all requires knowledge of {PRONOUN/p_l/poss} home turf. It's always worth making sure {PRONOUN/p_l/poss} mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break {PRONOUN/p_l/subject} hoped for."
                 ],
                 "exp_gained": 20
             },
@@ -1962,7 +1962,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_scared_Ap",
                 "strings": [
-                    "r_c1 has {PRONOUN/r_c1/poss} view blocked by the long grass and flat ground. But the rumble {PRONOUN/r_c1/subject} {VERB/r_c1/feel/feels} through {PRONOUN/r_c1/poss} pawpads, the footsteps, the bellows so loud they can be felt through the ground \u00e2\u20ac\u201d it all stresses just how huge the thunderbeasts are."
+                    "r_c1 has {PRONOUN/r_c1/poss} view blocked by the long grass and flat ground. But the rumble {PRONOUN/r_c1/subject} {VERB/r_c1/feel/feels} through {PRONOUN/r_c1/poss} pawpads, the footsteps, the bellows so loud they can be felt through the ground — it all stresses just how huge the thunderbeasts are."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2898,7 +2898,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/pln_bord_tunnel_Wr",
                 "strings": [
-                    "s_c0 brings r_c1 over, pointing out all the aspects that makes this sett safe to practice in, the compacted earth, the strong walls, the dry soil \u00e2\u20ac\u201d but not too dry. If r_c1 can master these signs on the safe sett, unknown tunnels out on the plains will be far safer for {PRONOUN/r_c1/object} to approach."
+                    "s_c0 brings r_c1 over, pointing out all the aspects that makes this sett safe to practice in, the compacted earth, the strong walls, the dry soil — but not too dry. If r_c1 can master these signs on the safe sett, unknown tunnels out on the plains will be far safer for {PRONOUN/r_c1/object} to approach."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -2959,7 +2959,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/pln_bord_tunnel_Wr",
                 "strings": [
-                    "r_c1 asks s_c0 why they learn all this. Once, s_c0 explains, their Clan starved through a leaf-bare. All the grass had died, and cats chewed on snow just to have something in their bellies. The only cat able to hunt was an overlooked warrior \u00e2\u20ac\u201d lithe, small, and blind. For her, the tunnels opened like a flower full of prey. She was their savior, and they must never forget."
+                    "r_c1 asks s_c0 why they learn all this. Once, s_c0 explains, their Clan starved through a leaf-bare. All the grass had died, and cats chewed on snow just to have something in their bellies. The only cat able to hunt was an overlooked warrior — lithe, small, and blind. For her, the tunnels opened like a flower full of prey. She was their savior, and they must never forget."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -3319,7 +3319,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/pln_bord_tunnel_Wr",
                 "strings": [
-                    "s_c0 brings the apprentices over, pointing out all the aspects that makes this sett safe to practice in, the compacted earth, the strong walls, the dry soil \u00e2\u20ac\u201d but not too dry. If the apprentices can master these signs on the safe sett, unknown tunnels out on the plains will be far safer for them to approach."
+                    "s_c0 brings the apprentices over, pointing out all the aspects that makes this sett safe to practice in, the compacted earth, the strong walls, the dry soil — but not too dry. If the apprentices can master these signs on the safe sett, unknown tunnels out on the plains will be far safer for them to approach."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -3742,7 +3742,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "r_c1 met with r_c2 to spend time together \u00e2\u20ac\u201d just the two of them."
+                            "cats_from": "r_c1 met with r_c2 to spend time together — just the two of them."
                         }
                     }
                 ]
@@ -4201,7 +4201,7 @@
                 "frequency": 3,
                 "outcome_art": "cat_sprites/gen_train_huntingromance_WrWr",
                 "strings": [
-                    "r_c0 shows off how far {PRONOUN/r_c0/subject} can pounce, so p_l shows off how fast {PRONOUN/p_l/subject} can run, so r_c0 shows off how sharp {PRONOUN/r_c0/poss} claws are, so p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, so r_c0 shows off how long {PRONOUN/r_c0/poss} legs are, so p_l shows off how cool {PRONOUN/p_l/poss} scars are \u00e2\u20ac\u201d this goes on all afternoon."
+                    "r_c0 shows off how far {PRONOUN/r_c0/subject} can pounce, so p_l shows off how fast {PRONOUN/p_l/subject} can run, so r_c0 shows off how sharp {PRONOUN/r_c0/poss} claws are, so p_l shows off how shiny {PRONOUN/p_l/poss} pelt is, so r_c0 shows off how long {PRONOUN/r_c0/poss} legs are, so p_l shows off how cool {PRONOUN/p_l/poss} scars are — this goes on all afternoon."
                 ],
                 "exp_gained": 15,
                 "relationship_changes": [
@@ -4974,7 +4974,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "As the patrol learns the importance of knowing where the tunnel refuges are placed in c_n's territory, s_c0 tells of how, without any shelter or tunnels to find safety in, some cats became stronger, bigger, and their prides began to move constantly. They became lions, mighty and great \u00e2\u20ac\u201d but not warriors anymore, not Clan cats."
+                    "As the patrol learns the importance of knowing where the tunnel refuges are placed in c_n's territory, s_c0 tells of how, without any shelter or tunnels to find safety in, some cats became stronger, bigger, and their prides began to move constantly. They became lions, mighty and great — but not warriors anymore, not Clan cats."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -5058,7 +5058,7 @@
                 "frequency": 4,
                 "outcome_art": "backgrounds/gen_dirttunnel",
                 "strings": [
-                    "s_c0 rushes into the tunnels with a gleeful meow! A new place to explore and discover! {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} brought up short by an irritated p_l. This isn't a game \u00e2\u20ac\u201d these are important safe retreats in case of danger!"
+                    "s_c0 rushes into the tunnels with a gleeful meow! A new place to explore and discover! {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} brought up short by an irritated p_l. This isn't a game — these are important safe retreats in case of danger!"
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -5286,7 +5286,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/pln_med_herblocation_Ap",
                 "strings": [
-                    "It's not a concern, p_l says. That's happened to some of their ancestors \u00e2\u20ac\u201d in particular a young she-cat who died so far beyond c_n's borders the grasslands themselves had ended. But she found her way to StarClan, step by persistent step, and if it ever came to it, so would r_c1."
+                    "It's not a concern, p_l says. That's happened to some of their ancestors — in particular a young she-cat who died so far beyond c_n's borders the grasslands themselves had ended. But she found her way to StarClan, step by persistent step, and if it ever came to it, so would r_c1."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -5580,7 +5580,7 @@
                 "frequency": 4,
                 "outcome_art": "backgrounds/pln_twolegsobject",
                 "strings": [
-                    "See how fast the monsters go? No, r_c1, that's too close \u00e2\u20ac\u201d s_c0 yanks {PRONOUN/r_c1/object} back unceremoniously, though r_c1 is fox-lengths away from the Thunderpath. Still, r_c1 and r_c2 shiver with fear as the monster passes, hurling its great metal body down its set path incomprehensibly fast."
+                    "See how fast the monsters go? No, r_c1, that's too close — s_c0 yanks {PRONOUN/r_c1/object} back unceremoniously, though r_c1 is fox-lengths away from the Thunderpath. Still, r_c1 and r_c2 shiver with fear as the monster passes, hurling its great metal body down its set path incomprehensibly fast."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -5863,7 +5863,7 @@
         "chance_of_success": 50,
         "patrol_art": "halloween/hal_fresno",
         "intro_text": [
-            "This is just weird \u00e2\u20ac\u201d what's made the grass here grow to such a uniform low height? Why is it so green? Why has it grown in such a neat circle?"
+            "This is just weird — what's made the grass here grow to such a uniform low height? Why is it so green? Why has it grown in such a neat circle?"
         ],
         "decline_text": [
             "Look, p_l knows grass, and this is too weird to want to spend time in. {PRONOUN/p_l/subject/CAP} {VERB/p_l/head/heads} home without ever seeing the Fresno Nightcrawler."

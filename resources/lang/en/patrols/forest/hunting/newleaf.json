@@ -24,7 +24,7 @@
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
         "intro_text": [
-            "p_l tastes the air and perks up \u00e2\u20ac\u201d there's a squirrel nearby, nibbling the delicate new plant growth near the base of a tree!"
+            "p_l tastes the air and perks up — there's a squirrel nearby, nibbling the delicate new plant growth near the base of a tree!"
         ],
         "decline_text": [
             "After a moment's deliberation, p_l decides to move on."
@@ -46,7 +46,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "Though it tries to escape, p_l is faster and smarter \u00e2\u20ac\u201d {PRONOUN/p_l/subject} {VERB/p_l/slam/slams} a paw down on the squirrel's tail before it can go very far and {VERB/p_l/kill/kills}s it with ease."
+                    "Though it tries to escape, p_l is faster and smarter — {PRONOUN/p_l/subject} {VERB/p_l/slam/slams} a paw down on the squirrel's tail before it can go very far and {VERB/p_l/kill/kills}s it with ease."
                 ],
                 "exp_gained": 10,
                 "supply": [
@@ -59,7 +59,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 slinks through the underbrush, undetected until {PRONOUN/s_c0/subject}{VERB/s_c0/'ve/'s} pounced \u00e2\u20ac\u201d and by then it's far too late for the squirrel to do anything about it."
+                    "s_c0 slinks through the underbrush, undetected until {PRONOUN/s_c0/subject}{VERB/s_c0/'ve/'s} pounced — and by then it's far too late for the squirrel to do anything about it."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -139,7 +139,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} right not to \u00e2\u20ac\u201d {PRONOUN/p_l/poss} catch is flawless, and {PRONOUN/p_l/subject} {VERB/p_l/return/returns} home with {PRONOUN/p_l/poss} chest puffed out in pride."
+                    "p_l slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} right not to — {PRONOUN/p_l/poss} catch is flawless, and {PRONOUN/p_l/subject} {VERB/p_l/return/returns} home with {PRONOUN/p_l/poss} chest puffed out in pride."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -203,7 +203,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Poor p_l focuses too hard on making sure {PRONOUN/p_l/poss} hunting crouch is correct \u00e2\u20ac\u201d by the time {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} ready, the squirrel is long gone."
+                    "Poor p_l focuses too hard on making sure {PRONOUN/p_l/poss} hunting crouch is correct — by the time {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} ready, the squirrel is long gone."
                 ],
                 "exp_gained": 0,
                 "supply": [
@@ -251,7 +251,7 @@
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
         "intro_text": [
-            "p_l instructs r_c1 to scent the air and nods in approval when r_c1 says {PRONOUN/r_c1/subject} {VERB/r_c1/smell/smells} squirrel. Early newleaf squirrels are always a good target \u00e2\u20ac\u201d p_l softly murmurs tips to r_c1 and asks what {PRONOUN/r_c1/subject} {VERB/r_c1/want/wants} to do."
+            "p_l instructs r_c1 to scent the air and nods in approval when r_c1 says {PRONOUN/r_c1/subject} {VERB/r_c1/smell/smells} squirrel. Early newleaf squirrels are always a good target — p_l softly murmurs tips to r_c1 and asks what {PRONOUN/r_c1/subject} {VERB/r_c1/want/wants} to do."
         ],
         "decline_text": [
             "r_c1 looks apprehensive, then quietly says {PRONOUN/r_c1/subject} {VERB/r_c1/want/wants} to look for something easier."
@@ -260,7 +260,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/r_c1/subject/CAP}{VERB/r_c1/'re/'s} right not to \u00e2\u20ac\u201d {PRONOUN/r_c1/poss} catch is flawless, and {PRONOUN/r_c1/subject} {VERB/r_c1/puff/puffs} {PRONOUN/r_c1/poss} chest out in pride as p_l praises {PRONOUN/r_c1/object}."
+                    "r_c1 slides into a hunting pose, trying not to focus too hard on making it perfect. {PRONOUN/r_c1/subject/CAP}{VERB/r_c1/'re/'s} right not to — {PRONOUN/r_c1/poss} catch is flawless, and {PRONOUN/r_c1/subject} {VERB/r_c1/puff/puffs} {PRONOUN/r_c1/poss} chest out in pride as p_l praises {PRONOUN/r_c1/object}."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -484,7 +484,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "A mischievous look in {PRONOUN/p_l/poss} eye, p_l challenges {PRONOUN/p_l/poss} Clanmates \u00e2\u20ac\u201d whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c0 calls out in triumph. Not only do they have the squirrel, but they also now have a pawful of oak leaves for the medicine cat as well!"
+                    "A mischievous look in {PRONOUN/p_l/poss} eye, p_l challenges {PRONOUN/p_l/poss} Clanmates — whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long r_c0 calls out in triumph. Not only do they have the squirrel, but they also now have a pawful of oak leaves for the medicine cat as well!"
                 ],
                 "exp_gained": 40,
                 "relationship_changes": [
@@ -777,7 +777,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap \u00e2\u20ac\u201d with s_c0 on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home."
+                    "r_c0 suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap — with s_c0 on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1025,7 +1025,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The patrol finds r_c0 at the bottom of a precarious looking embankment, and r_c0 encourages them to join {PRONOUN/r_c0/object} \u00e2\u20ac\u201d r_c0 has found a fallen bird's nest and needs help carrying the delicious nestlings back to camp."
+                    "The patrol finds r_c0 at the bottom of a precarious looking embankment, and r_c0 encourages them to join {PRONOUN/r_c0/object} — r_c0 has found a fallen bird's nest and needs help carrying the delicious nestlings back to camp."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -1056,7 +1056,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It's not ideal. s_c0 apologizes \u00e2\u20ac\u201d {PRONOUN/s_c0/subject} {VERB/s_c0/were/was} too caught up in assessing the prey levels in the sheltered group of aspens and hadn't realized the patrol moved on. But all is forgiven easily with the discovery of such a great hunting spot."
+                    "It's not ideal. s_c0 apologizes — {PRONOUN/s_c0/subject} {VERB/s_c0/were/was} too caught up in assessing the prey levels in the sheltered group of aspens and hadn't realized the patrol moved on. But all is forgiven easily with the discovery of such a great hunting spot."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -2618,7 +2618,7 @@
             "As the patrol heads out into the forest to hunt, r_c0 seems to be absolutely unconcerned with {PRONOUN/r_c0/poss} duties, instead ambling along as through the prey is going to waltz into {PRONOUN/r_c0/poss} paws."
         ],
         "decline_text": [
-            "The cats are called back to camp \u00e2\u20ac\u201d there's something the deputy needs to discuss with them."
+            "The cats are called back to camp — there's something the deputy needs to discuss with them."
         ],
         "success_outcomes": [
             {
@@ -2860,7 +2860,7 @@
             "As the patrol heads out into the forest to hunt, r_c0 suggests a sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice."
         ],
         "decline_text": [
-            "The cats are called back to camp \u00e2\u20ac\u201d there's something the deputy needs to discuss with them."
+            "The cats are called back to camp — there's something the deputy needs to discuss with them."
         ],
         "success_outcomes": [
             {
@@ -2930,7 +2930,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "These are the times that it really pays to have a hunter of s_c0's caliber on the patrol \u00e2\u20ac\u201d {PRONOUN/s_c0/subject} really {VERB/s_c0/go/goes} above and beyond, impressing everyone and leaving a trail of terror among the local mice."
+                    "These are the times that it really pays to have a hunter of s_c0's caliber on the patrol — {PRONOUN/s_c0/subject} really {VERB/s_c0/go/goes} above and beyond, impressing everyone and leaving a trail of terror among the local mice."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -3120,7 +3120,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Maybe it was a bad idea hunting on an empty stomach \u00e2\u20ac\u201d there's little cover from the forest right now, and p_l gets spotted every time they start a stalk."
+                    "Maybe it was a bad idea hunting on an empty stomach — there's little cover from the forest right now, and p_l gets spotted every time they start a stalk."
                 ],
                 "exp_gained": 0
             },
@@ -3218,7 +3218,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "There's no snow. That's so obvious that p_l feels embarrassed for thinking it, but \u00e2\u20ac\u201d there's no snow. And it's so warm, p_l doesn't even mind all the mud the rest of the Clan is so upset about \u00e2\u20ac\u201d at least it's not cold anymore. Stalking through a tangle of evergreen trees, p_l finds a good f_mp_s."
+                    "There's no snow. That's so obvious that p_l feels embarrassed for thinking it, but — there's no snow. And it's so warm, p_l doesn't even mind all the mud the rest of the Clan is so upset about — at least it's not cold anymore. Stalking through a tangle of evergreen trees, p_l finds a good f_mp_s."
                 ],
                 "exp_gained": 25,
                 "supply": [
@@ -3231,7 +3231,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "Perhaps {PRONOUN/p_l/subject} {VERB/p_l/need/needs} to ask {PRONOUN/p_l/poss} mentor about working on {PRONOUN/p_l/poss} killing technique next \u00e2\u20ac\u201d the f_tp_s {PRONOUN/p_l/subject} found by a rotting log sort of had half its head caved in, and if {PRONOUN/p_l/subject} hadn't snagged the leg of the f_tp_s {PRONOUN/p_l/subject} found by a big oak tree, it would've gotten away. Still, p_l is proud to bring these back to the fresh-kill pile all by {PRONOUN/p_l/self}."
+                    "Perhaps {PRONOUN/p_l/subject} {VERB/p_l/need/needs} to ask {PRONOUN/p_l/poss} mentor about working on {PRONOUN/p_l/poss} killing technique next — the f_tp_s {PRONOUN/p_l/subject} found by a rotting log sort of had half its head caved in, and if {PRONOUN/p_l/subject} hadn't snagged the leg of the f_tp_s {PRONOUN/p_l/subject} found by a big oak tree, it would've gotten away. Still, p_l is proud to bring these back to the fresh-kill pile all by {PRONOUN/p_l/self}."
                 ],
                 "exp_gained": 25,
                 "supply": [
@@ -3354,10 +3354,10 @@
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_hunt_NL_eggs_ApAp",
         "intro_text": [
-            "Leading the way into the forest, p_l calls back to the two apprentices, telling them there's a treat in store for them \u00e2\u20ac\u201d finally it's newleaf, which means it's time for the young cats to pick up on one of the quintessential c_n skills \u00e2\u20ac\u201d nest raiding!"
+            "Leading the way into the forest, p_l calls back to the two apprentices, telling them there's a treat in store for them — finally it's newleaf, which means it's time for the young cats to pick up on one of the quintessential c_n skills — nest raiding!"
         ],
         "decline_text": [
-            "The cats are called back to camp \u00e2\u20ac\u201d there's something the deputy needs to discuss with them."
+            "The cats are called back to camp — there's something the deputy needs to discuss with them."
         ],
         "success_outcomes": [
             {
@@ -3408,7 +3408,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 spots a great hole in the trunk of an oak, and together the hunting patrol shimmer up into the branches, teasing r_c1 for accidentally breaking one of the eight big eggs inside. p_l tells the apprentices that with this many big eggs, the nest they're raiding is probably that of a bird of prey \u00e2\u20ac\u201d always good to have fewer of those in c_n's territory. They even bring back some oak leaves with them, though it's a real struggle holding them with the eggs!"
+                    "r_c0 spots a great hole in the trunk of an oak, and together the hunting patrol shimmer up into the branches, teasing r_c1 for accidentally breaking one of the eight big eggs inside. p_l tells the apprentices that with this many big eggs, the nest they're raiding is probably that of a bird of prey — always good to have fewer of those in c_n's territory. They even bring back some oak leaves with them, though it's a real struggle holding them with the eggs!"
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -3590,7 +3590,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The wind starts to pick up, and, alarmed, p_l stops the nest raiding plans in their tracks. There's no reason to risk themselves on thin branches in bad weather \u00e2\u20ac\u201d the nests will be stocked full of eggs or nestlings to make off with all newleaf, and p_l well remembers the tales the elders tell of foolish risks taken for stupidly small rewards."
+                    "The wind starts to pick up, and, alarmed, p_l stops the nest raiding plans in their tracks. There's no reason to risk themselves on thin branches in bad weather — the nests will be stocked full of eggs or nestlings to make off with all newleaf, and p_l well remembers the tales the elders tell of foolish risks taken for stupidly small rewards."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -3639,10 +3639,10 @@
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_hunt_NL_eggs_ApAp",
         "intro_text": [
-            "Leading the way into the forest, p_l calls back to the three apprentices, telling them there's a treat in store for them \u00e2\u20ac\u201d finally it's newleaf, which means it's time for the young cats to pick up on one of the quintessential c_n skills \u00e2\u20ac\u201d nest raiding!"
+            "Leading the way into the forest, p_l calls back to the three apprentices, telling them there's a treat in store for them — finally it's newleaf, which means it's time for the young cats to pick up on one of the quintessential c_n skills — nest raiding!"
         ],
         "decline_text": [
-            "The cats are called back to camp \u00e2\u20ac\u201d there's something the deputy needs to discuss with them."
+            "The cats are called back to camp — there's something the deputy needs to discuss with them."
         ],
         "success_outcomes": [
             {
@@ -3688,7 +3688,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 spots a great hole in the trunk of an oak, and together the hunting patrol shimmer up into the branches, teasing r_c1 for accidentally breaking one of the eight big eggs inside. p_l tells the apprentices that with this many big eggs, the nest they're raiding is probably that of a bird of prey \u00e2\u20ac\u201d always good to have fewer of those in c_n's territory. They even bring back some oak leaves with them, though it's a real struggle holding them with the eggs!"
+                    "r_c0 spots a great hole in the trunk of an oak, and together the hunting patrol shimmer up into the branches, teasing r_c1 for accidentally breaking one of the eight big eggs inside. p_l tells the apprentices that with this many big eggs, the nest they're raiding is probably that of a bird of prey — always good to have fewer of those in c_n's territory. They even bring back some oak leaves with them, though it's a real struggle holding them with the eggs!"
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -3860,7 +3860,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The wind starts to pick up, and alarmed, p_l stops the nest raiding plans in their tracks. There's no reason to risk themselves on thin branches in bad weather \u00e2\u20ac\u201d the nests will be stocked full of eggs or nestlings to make off with all newleaf, and p_l well remembers the tales the elders tell of foolish risks taken for stupidly small rewards."
+                    "The wind starts to pick up, and alarmed, p_l stops the nest raiding plans in their tracks. There's no reason to risk themselves on thin branches in bad weather — the nests will be stocked full of eggs or nestlings to make off with all newleaf, and p_l well remembers the tales the elders tell of foolish risks taken for stupidly small rewards."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -3909,7 +3909,7 @@
         "chance_of_success": 50,
         "patrol_art": "backgrounds/fst_canopy",
         "intro_text": [
-            "As p_l sharpens {PRONOUN/p_l/poss} claws on a tree root, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a pair of birds furiously chattering to each other above {PRONOUN/p_l/object}, puffing up their feathers and singing in territorial fury. {PRONOUN/p_l/subject/CAP} could go after the birds, of course \u00e2\u20ac\u201d but if the fluffy mouthfuls are being protective, then there's something to protect, and it's the season for nest raiding."
+            "As p_l sharpens {PRONOUN/p_l/poss} claws on a tree root, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a pair of birds furiously chattering to each other above {PRONOUN/p_l/object}, puffing up their feathers and singing in territorial fury. {PRONOUN/p_l/subject/CAP} could go after the birds, of course — but if the fluffy mouthfuls are being protective, then there's something to protect, and it's the season for nest raiding."
         ],
         "decline_text": [
             "But p_l can't be bothered today, not with the newleaf sun so bright and warm. Another time, perhaps."
@@ -3931,7 +3931,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The beech tree these sparrows have chosen to nest in is a popular choice, and as birds continue to fight with their neighbors, p_l slips into the tree to take advantage, emptying nest after nest through the ineffectual outraged squawking protests of their owners. These birds will lay again before the season is out \u00e2\u20ac\u201d p_l will have to remember this tree."
+                    "The beech tree these sparrows have chosen to nest in is a popular choice, and as birds continue to fight with their neighbors, p_l slips into the tree to take advantage, emptying nest after nest through the ineffectual outraged squawking protests of their owners. These birds will lay again before the season is out — p_l will have to remember this tree."
                 ],
                 "exp_gained": 15,
                 "supply": [
@@ -4154,7 +4154,7 @@
                 ],
                 "frequency": 3,
                 "strings": [
-                    "The branch p_l pads out on is more than strong enough to bear {PRONOUN/p_l/poss} weight \u00e2\u20ac\u201d but in the wind and rain, trembling and slippery, {PRONOUN/p_l/subject} {VERB/p_l/lose/loses} {PRONOUN/p_l/poss} grip. The last thing {PRONOUN/p_l/subject} {VERB/p_l/see/sees} is the ground approaching."
+                    "The branch p_l pads out on is more than strong enough to bear {PRONOUN/p_l/poss} weight — but in the wind and rain, trembling and slippery, {PRONOUN/p_l/subject} {VERB/p_l/lose/loses} {PRONOUN/p_l/poss} grip. The last thing {PRONOUN/p_l/subject} {VERB/p_l/see/sees} is the ground approaching."
                 ],
                 "exp_gained": 0,
                 "death": [
@@ -4169,7 +4169,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The branch p_l pads out on is more than strong enough to bear {PRONOUN/p_l/poss} weight \u00e2\u20ac\u201d but in the wind and rain, trembling and slippery, {PRONOUN/p_l/subject} {VERB/p_l/lose/loses} {PRONOUN/p_l/poss} grip. {PRONOUN/p_l/poss/CAP} next thought is foggy confusion, gazing up at the inside of the medicine cat den."
+                    "The branch p_l pads out on is more than strong enough to bear {PRONOUN/p_l/poss} weight — but in the wind and rain, trembling and slippery, {PRONOUN/p_l/subject} {VERB/p_l/lose/loses} {PRONOUN/p_l/poss} grip. {PRONOUN/p_l/poss/CAP} next thought is foggy confusion, gazing up at the inside of the medicine cat den."
                 ],
                 "exp_gained": 0,
                 "condition": [
@@ -4292,10 +4292,10 @@
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_hunt_NL_eggs_ApAp",
         "intro_text": [
-            "Leading the way into the forest, p_l calls back to r_c1. There's a treat in store for {PRONOUN/r_c1/object} \u00e2\u20ac\u201d finally it's newleaf, which means it's time for the young cat to pick up on one of the quintessential c_n skills \u00e2\u20ac\u201d nest raiding!"
+            "Leading the way into the forest, p_l calls back to r_c1. There's a treat in store for {PRONOUN/r_c1/object} — finally it's newleaf, which means it's time for the young cat to pick up on one of the quintessential c_n skills — nest raiding!"
         ],
         "decline_text": [
-            "The cats are called back to camp \u00e2\u20ac\u201d there's something the deputy needs to discuss with them."
+            "The cats are called back to camp — there's something the deputy needs to discuss with them."
         ],
         "success_outcomes": [
             {
@@ -4482,7 +4482,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The wind starts to pick up and, alarmed, p_l stops the nest raiding plans in their tracks. There's no reason to risk themselves on thin branches in bad weather \u00e2\u20ac\u201d the nests will be stocked full of eggs or nestlings to make off with all newleaf, and p_l well remembers the tales the elders tell of foolish risks taken for stupidly small rewards."
+                    "The wind starts to pick up and, alarmed, p_l stops the nest raiding plans in their tracks. There's no reason to risk themselves on thin branches in bad weather — the nests will be stocked full of eggs or nestlings to make off with all newleaf, and p_l well remembers the tales the elders tell of foolish risks taken for stupidly small rewards."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -4560,7 +4560,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "Going out by {PRONOUN/p_l/self} makes everything much harder, and instead of fishing eggs out, p_l accidentally knocks {PRONOUN/p_l/poss} target nest out of the tree. But at least a couple of the eggs are unbroken, and that's better than nothing. {PRONOUN/p_l/subject/CAP} {VERB/p_l/lap/laps} up the yolk from the broken eggs \u00e2\u20ac\u201d better than letting them go to waste!"
+                    "Going out by {PRONOUN/p_l/self} makes everything much harder, and instead of fishing eggs out, p_l accidentally knocks {PRONOUN/p_l/poss} target nest out of the tree. But at least a couple of the eggs are unbroken, and that's better than nothing. {PRONOUN/p_l/subject/CAP} {VERB/p_l/lap/laps} up the yolk from the broken eggs — better than letting them go to waste!"
                 ],
                 "exp_gained": 25,
                 "supply": [
@@ -4588,7 +4588,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Step one: find nests... has conclusively failed. At least {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alone though \u00e2\u20ac\u201d p_l trips over a branch on the forest floor as {PRONOUN/p_l/subject} {VERB/p_l/walk/walks} with {PRONOUN/p_l/poss} eyes pinned skyward, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} grateful no one was there to see it."
+                    "Step one: find nests... has conclusively failed. At least {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alone though — p_l trips over a branch on the forest floor as {PRONOUN/p_l/subject} {VERB/p_l/walk/walks} with {PRONOUN/p_l/poss} eyes pinned skyward, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} grateful no one was there to see it."
                 ],
                 "exp_gained": 0
             },
