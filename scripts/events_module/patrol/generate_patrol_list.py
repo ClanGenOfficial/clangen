@@ -110,7 +110,7 @@ def _load_file(path: str) -> list[PatrolEvent]:
         except FileNotFoundError:
             raise Exception(f"Patrol file {path} not found!")
 
-    return loaded_events[path]
+    return loaded_events[path].copy()
 
 
 def will_allow_outsider_patrols(small_clan: bool) -> Optional[str]:

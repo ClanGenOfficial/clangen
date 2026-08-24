@@ -184,12 +184,15 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
 
     # check for required ranks within the clan
     for _tag in tags:
-        rank_match = re.match(r"clan:(.+)", _tag)
+        rank_match = re.match(r"-?clan:(.+)", _tag)
         if not rank_match:
             continue
+        is_exclusionary = _check_for_exclusionary_value([_tag])
+
         ranks = [x for x in rank_match.group(1).split(",")]
 
         for rank in ranks:
+            rank_matched = True
             if rank == "apps":
                 if not find_alive_cats_with_rank(
                     cat,
@@ -199,20 +202,23 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
                         CatRank.MEDICINE_APPRENTICE,
                     ],
                 ):
-                    return False
-                else:
-                    continue
+                    rank_matched = False
 
-            if rank in [
+            elif rank in [
                 CatRank.LEADER,
                 CatRank.DEPUTY,
             ] and not find_alive_cats_with_rank(cat, [rank]):
-                return False
+                rank_matched = False
 
-            if (
+            elif (
                 rank not in [CatRank.LEADER, CatRank.DEPUTY]
                 and not len(find_alive_cats_with_rank(cat, [rank])) >= 2
             ):
+                rank_matched = False
+
+            if is_exclusionary and rank_matched:
+                return False
+            elif not is_exclusionary and not rank_matched:
                 return False
 
     special_date = get_special_date()
@@ -430,6 +436,10 @@ def event_for_cat(
         "backstory": _check_cat_backstory,
         "gender": _check_cat_gender,
         "health": _check_cat_health,
+        "has_mentor": _check_cat_mentor,
+        "has_apprentice": _check_cat_apprentice,
+        "current_exp": _check_cat_exp,
+        "name": _check_cat_name,
     }
 
     for param, func in func_lookup.items():
@@ -448,10 +458,6 @@ def event_for_cat(
             raise TypeError(
                 f"Input contains invalid data, check traceback!\ncat_info: {cat_info}\nevent_id: {event_id}"
             ) from e
-
-    # checking mentor
-    if cat_info.get("has_mentor") and not cat.mentor:
-        return False
 
     # checking groups
     if cat_info.get("group"):
@@ -496,6 +502,77 @@ def event_for_cat(
             filter_types=cat_info["relationship_status"],
             patrol_leader=p_l,
         ):
+            return False
+
+    return True
+
+
+def _check_cat_name(cat, name_check: dict) -> bool:
+    if not name_check:
+        return True
+
+    has_suffix = name_check["has_suffix"]
+    if has_suffix and not cat.name.suffix:
+        return False
+    elif not has_suffix and cat.name.suffix:
+        return False
+
+    return True
+
+
+def _check_cat_exp(cat, current_exp: list[str]) -> bool:
+    if not current_exp:
+        return True
+
+    if cat.experience_level not in current_exp:
+        return False
+
+    return True
+
+
+def _check_cat_mentor(cat, has_mentor: dict) -> bool:
+    """
+    Checks if a cat's mentor status matches with constraints
+    """
+    if not has_mentor:
+        return True
+
+    # check for None value instead of False-y!
+    if has_mentor.get("current") is not None:
+        if has_mentor["current"] and not cat.mentor:
+            return False
+        elif not has_mentor["current"] and cat.mentor:
+            return False
+
+    # check for None value instead of False-y!
+    if has_mentor.get("former") is not None:
+        if has_mentor["former"] and not cat.former_mentor:
+            return False
+        if not has_mentor["former"] and cat.former_mentor:
+            return False
+
+    return True
+
+
+def _check_cat_apprentice(cat, has_app: dict) -> bool:
+    """
+    Checks if a cat's apprentice status matches with constraints
+    """
+    if not has_app:
+        return True
+
+    # check for None value instead of False-y!
+    if has_app.get("current") is not None:
+        if has_app["current"] and not cat.apprentice:
+            return False
+        elif not has_app["current"] and cat.apprentice:
+            return False
+
+    # check for None value instead of False-y!
+    if has_app.get("former") is not None:
+        if has_app["former"] and not cat.former_apprentice:
+            return False
+        if not has_app["former"] and cat.former_apprentice:
             return False
 
     return True
@@ -1015,6 +1092,11 @@ def cat_for_event(
         "skill": _get_cats_with_skill,
         "trait": _get_cats_with_trait,
         "backstory": _get_cats_with_backstory,
+        "has_mentor": _get_cats_with_mentor,
+        "has_apprentice": _get_cats_with_apprentice,
+        "current_exp": _get_cats_with_exp,
+        "name": _get_cats_matching_name_check,
+        "health": _get_cats_with_health,
     }
 
     # run funcs
@@ -1148,6 +1230,44 @@ def _get_cats_with_rel_status(
     return cat_list, rel_status_list
 
 
+def _get_cats_with_health(cat_list: list, health_constraints: dict) -> list:
+    """
+    Checks cat_list against required health constraints
+    """
+    if not health_constraints:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_health(c, health_constraints)]
+
+
+def _get_cats_matching_name_check(cat_list: list, name_check: dict) -> list:
+    if not name_check:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_name(c, name_check)]
+
+
+def _get_cats_with_exp(cat_list: list, current_exp: list[str]) -> list:
+    if not current_exp:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_exp(c, current_exp)]
+
+
+def _get_cats_with_mentor(cat_list: list, has_mentor: dict) -> list:
+    if not has_mentor:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_mentor(c, has_mentor)]
+
+
+def _get_cats_with_apprentice(cat_list: list, has_apprentice: dict) -> list:
+    if not has_apprentice:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_apprentice(c, has_apprentice)]
+
+
 def _get_cats_with_age(cat_list: list, ages: list[str]) -> list:
     """
     Checks cat_list against required ages and returns qualifying cats.
@@ -1204,18 +1324,7 @@ def _get_cats_with_stat(cat_list: list, stat: dict) -> list:
     if not stat:
         return cat_list
 
-    skill_cats = []
-    trait_cats = []
-
-    if stat.get("skill"):
-        skill_cats = _get_cats_with_age(cat_list, stat["skill"])
-    if stat.get("trait"):
-        trait_cats = _get_cats_with_trait(cat_list, stat["trait"])
-
-    if stat.get("must_have_both"):
-        return list(set(skill_cats).intersection(set(trait_cats)))
-    else:
-        return skill_cats + trait_cats
+    return [c for c in cat_list if _check_cat_stat(c, stat)]
 
 
 def _get_cats_with_skill(cat_list: list, skills: list[str]) -> list:
@@ -1303,9 +1412,9 @@ def _get_cats_from_group(
 
         elif tag == "afterlife":  # checks if group is an afterlife
             if is_exclusionary:
-                cat_list = [c for c in cat_list if c.status.group.is_afterlife()]
-            else:
                 cat_list = [c for c in cat_list if not c.status.group.is_afterlife()]
+            else:
+                cat_list = [c for c in cat_list if c.status.group.is_afterlife()]
             remaining_tags.remove(tag)
 
         elif tag == "no_group":  # checks if the cat has no group
@@ -1650,6 +1759,40 @@ def _filter_relationship_type_updated(
         elif "app/mentor" in inclusionary_values:
             return False
         filter_types.remove("app/mentor")
+
+    if "past_mentor/app" in filter_types:
+        # if the cats ARE mentor/app
+        if all(
+            [inter_cat.ID in cats_from[0].former_apprentices for inter_cat in cats_to]
+        ):
+            if "past_mentor/app" in exclusionary_values:
+                return False
+        # if SOME but not ALL cats are mentor/app
+        elif "past_mentor/app" in inclusionary_values and any(
+            [inter_cat.ID in cats_from[0].former_apprentices for inter_cat in cats_to]
+        ):
+            return False
+        # if the cats AREN'T mentor/app
+        elif "past_mentor/app" in inclusionary_values:
+            return False
+        filter_types.remove("past_mentor/app")
+
+    if "past_app/mentor" in filter_types:
+        # if the cats ARE app/mentor
+        if all(
+            [inter_cat.ID in cats_to[0].former_apprentices for inter_cat in cats_from]
+        ):
+            if "past_app/mentor" in exclusionary_values:
+                return False
+        # if some, but not all cats are app/mentor
+        elif "past_app/mentor" in inclusionary_values and any(
+            [inter_cat.ID in cats_to[0].former_apprentices for inter_cat in cats_from]
+        ):
+            return False
+        # if the cats AREN'T app/mentor
+        elif "past_app/mentor" in inclusionary_values:
+            return False
+        filter_types.remove("past_app/mentor")
 
     # return early if there's nothing left to check
     if not filter_types:

@@ -18,20 +18,6 @@
         "condition_retire_no_leader": "m_c has decided to retire from normal Clan duty.",
         "condition_retire_normal": "Seeing m_c struggling the last few moons, lead_name approaches {PRONOUN\/m_c\/object} and promises that no one would think less of {PRONOUN\/m_c\/object} for retiring early, and that {PRONOUN\/m_c\/subject} would still be a valuable member of the Clan as an elder. m_c agrees; later that day, {PRONOUN\/m_c\/poss} elder ceremony is held.",
         "ceremony_closer": "Visit lead_name's profile to see {PRONOUN\/lead_name\/poss} full leader ceremony.",
-        "ceremony_deputy_bloodthirsty": "m_c has been chosen as the new deputy. {PRONOUN/m_c/subject/CAP} {VERB/m_c/look/looks} at the Clan leader with an odd glint in {PRONOUN/m_c/poss} eyes.",
-        "ceremony_deputy": "lead_name chooses m_c to take over as deputy. %{previous}",
-        "ceremony_deputy_prev0": "{PRONOUN/lead_name/subject/CAP} {VERB/lead_name/know/knows} dep_name would approve.",
-        "ceremony_deputy_prev1": "{PRONOUN/lead_name/subject/CAP} {VERB/lead_name/hope/hopes} dep_name would approve.",
-        "ceremony_deputy_prev2": "{PRONOUN/lead_name/subject/CAP} {VERB/lead_name/don't/doesn't} know if dep_name would approve, but life must go on.",
-        "ceremony_deputy_nolead_nodep": "Without a leader or deputy, the Clan has been directionless. They all turn to m_c with hope for the future.",
-        "ceremony_deputy_nolead_retireddep": "The Clan is without a leader, but a new deputy must still be named. m_c is chosen as the new deputy. The retired deputy nods {PRONOUN/dep_name/poss} approval.",
-        "ceremony_deputy_lead_retireddep0": "m_c has been chosen as the new deputy. The Clan yowls {PRONOUN/m_c/poss} name in approval.",
-        "ceremony_deputy_lead_retireddep1": "m_c has been chosen as the new deputy. Some of the older Clan members question the wisdom of this choice.",
-        "ceremony_deputy_lead_retireddep2": "m_c has been chosen as the new deputy. {PRONOUN/m_c/subject/CAP} {VERB/m_c/hold/holds} {PRONOUN/m_c/poss} head up high and {VERB/m_c/promise/promises} to do {PRONOUN/m_c/poss} best for the Clan.",
-        "ceremony_deputy_lead_retireddep3": "lead_name has been thinking deeply all day about who {PRONOUN/lead_name/subject} would trust and respect enough to stand at {PRONOUN/lead_name/poss} side. At sunhigh, {PRONOUN/lead_name/subject} {VERB/lead_name/make/makes} the announcement that m_c will be the Clan's new deputy.",
-        "ceremony_deputy_lead_retireddep4": "m_c has been chosen as the new deputy. {PRONOUN/m_c/subject/CAP} {VERB/m_c/pray/prays} to StarClan that {PRONOUN/m_c/subject} {VERB/m_c/are/is} the right choice for the Clan.",
-        "ceremony_deputy_lead_retireddep5": "m_c has been chosen as the new deputy. Although {PRONOUN/m_c/subject} {VERB/m_c/are/is} nervous, {PRONOUN/m_c/subject} {VERB/m_c/put/puts} on a brave face and {VERB/m_c/look/looks} forward to serving the Clan.",
-        "ceremony_deputy_unsuitable": "No cat is truly fit to be deputy, but the position can't remain vacant. m_c is appointed as the new deputy.",
         "ceremony_deputy_none": "There are no cats fit to become deputy.",
         "adoption_kittens_single": {
             "one": "%{names} found a %{insert} and decides to adopt it.",
@@ -41,7 +27,6 @@
             "one": "%{names} found a %{insert} and decide to adopt it.",
             "many": "%{names} found a %{insert} and decide to adopt them."
         },
-        "event_mediator_app": "m_c has chosen to use {PRONOUN/m_c/poss} skills and experience to help solve the Clan's disagreements. A meeting is called, and {PRONOUN/m_c/subject} {VERB/m_c/become/becomes} the Clan's newest mediator.",
         "herbs_found": {
             "zero": "med_name could not find any herbs this moon.",
             "many": "med_name gathered %{insert} this moon."
