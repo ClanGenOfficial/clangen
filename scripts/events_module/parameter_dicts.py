@@ -42,7 +42,7 @@ class InvolvedCatDict(TypedDict, total=False):
     status: list[str]
     past_status: list[str]
     age: list[str]
-    gender: Literal["male", "female", "can_birth"]
+    gender: list[Literal["male", "female", "can_birth"]]
     group: list[str]
     standing: StandingDict
     stat: StatDict

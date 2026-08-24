@@ -13,6 +13,7 @@ from scripts.models.relationship_group_event.relationship_group_schema import (
 from scripts.models.relationship_pair_event.relationship_pair_schema import (
     RelationshipPairEvent,
 )
+from scripts.models.transition.transition_schema import TransitionSchema
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
@@ -116,6 +117,13 @@ def ceremony_files():
     )
 
 
+def transition_files():
+    """
+    Iterator for Paths for all transition files
+    """
+    yield from RESOURCES_DIR.glob("lang/*/events/transition.json")
+
+
 @pytest.mark.parametrize(
     "thought_file",
     all_thought_files(),
@@ -190,3 +198,13 @@ def test_pelt_recipes(pelt_recipe_file: Path):
 def test_ceremony_file_events(ceremony_file: Path):
     """Test that all ceremony JSONs are correct according to the Pydantic models"""
     CeremonySchema.model_validate_json(ceremony_file.read_text())
+
+
+@pytest.mark.parametrize(
+    "transition_file",
+    transition_files(),
+    ids=format_file_context_string,
+)
+def test_group_relationship_events(transition_file: Path):
+    """Test that all transition_file JSONs are correct according to the Pydantic models"""
+    TransitionSchema.model_validate_json(transition_file.read_text())

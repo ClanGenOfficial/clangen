@@ -23,7 +23,6 @@ from scripts.events_module.consequences import (
 )
 from scripts.events_module.future.prep_and_trigger import prep_future_event
 from scripts.events_module.relationship import relation_events
-from scripts.game_structure import game
 from scripts.events_module.text_adjust import (
     event_text_adjust,
     get_leader_life_notice,
