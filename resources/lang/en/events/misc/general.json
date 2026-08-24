@@ -4613,7 +4613,7 @@
             "name": ["terrain_gullcliffs"]
         },
         "frequency": 4,
-        "event_text": "m_c collected feathers while wandering along {POI/name/terrain_gullcliffs}. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wear/wears} a few in {PRONOUN/m_c/poss} pelt.",
+        "event_text": "m_c collected feathers while wandering along POI. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wear/wears} a few in {PRONOUN/m_c/poss} pelt.",
         "new_accessory": ["GULL FEATHERS"],
         "m_c": {
             "age": ["-kitten"]
@@ -4629,7 +4629,7 @@
             "name": ["terrain_gullcliffs"]
         },
         "frequency": 4,
-        "event_text": "r_c collected feathers while wandering along {POI/name/terrain_gullcliffs}. {PRONOUN/r_c/subject/CAP} offered some to m_c as a gift.",
+        "event_text": "r_c collected feathers while wandering along POI. {PRONOUN/r_c/subject/CAP} offered some to m_c as a gift.",
         "new_accessory": ["GULL FEATHERS"],
         "m_c": {
             "relationship_status": ["likes"]
@@ -4660,7 +4660,7 @@
             "name": ["terrain_sunningrocks"]
         },
         "frequency": 4,
-        "event_text": "m_c gathered some pretty leaves and laid them out to dry on {POI/name/terrain_sunningrocks}. A few days later, {PRONOUN/m_c/subject/CAP} returned to camp with a new accessory",
+        "event_text": "m_c gathered some pretty leaves and laid them out to dry on POI. A few days later, {PRONOUN/m_c/subject/CAP} returned to camp with a new accessory",
         "new_accessory": ["DRY HERBS", "DRY CATMINT", "DRY NETTLES", "DRY LAURELS"],
         "m_c": {
             "status": ["-kitten"]
@@ -4676,7 +4676,7 @@
             "name": ["terrain_sunningrocks"]
         },
         "frequency": 4,
-        "event_text": "r_c gathered some pretty leaves and laid them out to dry on {POI/name/terrain_sunningrocks}. When {PRONOUN/r_c/subject} returned days later to gather {PRONOUN/r_c/poss} new accessory, {PRONOUN/r_c/subject} discovered some cat has stolen them!",
+        "event_text": "r_c gathered some pretty leaves and laid them out to dry on POI. When {PRONOUN/r_c/subject} returned days later to gather {PRONOUN/r_c/poss} new accessory, {PRONOUN/r_c/subject} discovered some cat has stolen them!",
         "new_accessory": ["DRY HERBS", "DRY CATMINT", "DRY NETTLES", "DRY LAURELS"],
         "exclude_involved": ["m_c"],
         "m_c": {
@@ -4709,7 +4709,7 @@
             "name": ["terrain_rookery"]
         },
         "frequency": 4,
-        "event_text": "m_c climbed up into {POI/name/terrain_rookery} to steal some feathers. {PRONOUN/m_c/subject/CAP} returned with a new pelt decoration and a few missing chunks of fur.",
+        "event_text": "m_c climbed up into POI to steal some feathers. {PRONOUN/m_c/subject/CAP} returned with a new pelt decoration and a few missing chunks of fur.",
         "new_accessory": ["JAY FEATHERS", "BLUE FEATHERS"],
         "m_c": {
             "status": ["-kitten"],
@@ -4739,7 +4739,7 @@
             "name": ["terrain_rookery"]
         },
         "frequency": 4,
-        "event_text": "r_c climbed up into {POI/name/terrain_rookery} to steal some feathers. {PRONOUN/r_c/subject/CAP} returned with a few missing chunks of fur and triumphantly presented a flustered m_c with {PRONOUN/r_c/poss} prize.",
+        "event_text": "r_c climbed up into POIto steal some feathers. {PRONOUN/r_c/subject/CAP} returned with a few missing chunks of fur and triumphantly presented a flustered m_c with {PRONOUN/r_c/poss} prize.",
         "new_accessory": ["JAY FEATHERS", "BLUE FEATHERS"],
         "m_c": {
             "relationship_status": ["fancies"]
@@ -4785,7 +4785,7 @@
             "name": ["terrain_eaglenest"]
         },
         "frequency": 4,
-        "event_text": "m_c insisted {PRONOUN/m_c/poss} new pelt decoration was stolen from {POI/name/terrain_eaglenest}, but almost nobody believes {PRONOUN/m_c/object}.",
+        "event_text": "m_c insisted {PRONOUN/m_c/poss} new pelt decoration was stolen from POI, but almost nobody believes {PRONOUN/m_c/object}.",
         "new_accessory": ["SPARROW FEATHERS"],
         "m_c": {
             "status": ["-kitten"],
@@ -4819,7 +4819,7 @@
             "name": ["terrain_eaglenest"]
         },
         "frequency": 4,
-        "event_text": "r_c offered m_c a gift of feathers that {PRONOUN/r_c/subject} totally stole from {POI/name/terrain_eaglenest}. r_c fought off a whole flock of eagles for those feathers, so m_c had better appreciate them!",
+        "event_text": "r_c offered m_c a gift of feathers that {PRONOUN/r_c/subject} totally stole from POI. r_c fought off a whole flock of eagles for those feathers, so m_c had better appreciate them!",
         "new_accessory": ["SPARROW FEATHERS"],
         "r_c": {
             "status": ["apprentice"],
@@ -4851,7 +4851,7 @@
             "name": ["terrain_twolegplace"]
         },
         "frequency": 4,
-        "event_text": "m_c went missing in {POI/name/terrain_twolegplace} for a few days and came back wearing a acc_singular.",
+        "event_text": "m_c went missing in POI for a few days and came back wearing a acc_singular.",
         "new_accessory": ["COLLAR"],
         "m_c": {
             "status": ["-kitten"]
@@ -4879,7 +4879,7 @@
             "tags": ["water:flowing"]
         },
         "frequency": 4,
-        "event_text": "m_c picked cattails near {POI/tag/water:flowing} and decided to wear them.",
+        "event_text": "m_c picked cattails near POI and decided to wear them.",
         "new_accessory": ["CATTAIL"],
         "m_c": {
             "status": ["-kitten"]
@@ -4895,7 +4895,7 @@
             "tags": ["prey:flying"]
         },
         "frequency": 4,
-        "event_text": "m_c was on a walk by {POI/tag/prey:flying} when {PRONOUN/m_c/subject} found some lovely feathers. {PRONOUN/m_c/subject/CAP} decided to wear them.",
+        "event_text": "m_c was on a walk by POI when {PRONOUN/m_c/subject} found some lovely feathers. {PRONOUN/m_c/subject/CAP} decided to wear them.",
         "new_accessory": ["BLUE FEATHERS", "RED FEATHERS", "JAY FEATHERS", "GULL FEATHERS", "SPARROW FEATHERS"],
         "m_c": {
             "status": ["-kitten"]
@@ -7865,7 +7865,7 @@
             "tags": ["trees"]
         },
         "frequency": 1,
-        "event_text": "m_c consulted the patterns in the roots of {POI/tag/trees}, seeking wisdom.",
+        "event_text": "m_c consulted the patterns in the roots of POI, seeking wisdom.",
         "m_c": {
             "status": ["medicine cat apprentice", "medicine cat"],
             "skill": ["OMEN,0"]
@@ -7881,7 +7881,7 @@
             "tags": ["trees"]
         },
         "frequency": 1,
-        "event_text": "m_c had a frightening vision of {POI/tag/trees} being struck by lightning and lit ablaze.",
+        "event_text": "m_c had a frightening vision of POI being struck by lightning and lit ablaze.",
         "m_c": {
             "status": ["medicine cat", "medicine cat"]
         }
@@ -7896,7 +7896,7 @@
             "tags": ["trees"]
         },
         "frequency": 1,
-        "event_text": "While walking beneath the bare branches of {POI/tag/trees}, m_c had a vision of new buds and fresh leaves despite the snowy weather.",
+        "event_text": "While walking beneath the bare branches of POI, m_c had a vision of new buds and fresh leaves despite the snowy weather.",
         "m_c": {
             "status": ["medicine cat", "medicine cat"]
         }
@@ -7911,7 +7911,7 @@
             "tags": ["trees"]
         },
         "frequency": 1,
-        "event_text": "While walking beneath the lush branches of {POI/tag/trees}, m_c had a sudden vision of brittle twigs and decaying leaves despite the sunny weather.",
+        "event_text": "While walking beneath the lush branches of POI, m_c had a sudden vision of brittle twigs and decaying leaves despite the sunny weather.",
         "m_c": {
             "status": ["medicine cat", "medicine cat apprentice"]
         }
@@ -7926,7 +7926,7 @@
             "tags": ["trees"]
         },
         "frequency": 1,
-        "event_text": "m_c examined the new buds of {POI/tag/trees}, reading the fates of c_n's kittens in each one.",
+        "event_text": "m_c examined the new buds of POI, reading the fates of c_n's kittens in each one.",
         "m_c": {
             "status": ["medicine cat", "medicine cat apprentice"],
             "skill": ["CLAIRVOYANT,0"]
@@ -7942,7 +7942,7 @@
             "tags": ["rocks"]
         },
         "frequency": 1,
-        "event_text": "m_c consulted the patterns in the stones of {POI/tag/rocks}, seeking wisdom.",
+        "event_text": "m_c consulted the patterns in the stones of POI, seeking wisdom.",
         "m_c": {
             "status": ["medicine cat apprentice", "medicine cat"],
             "skill": ["OMEN,0"]
@@ -7958,7 +7958,7 @@
             "tags": ["rocks"]
         },
         "frequency": 1,
-        "event_text": "m_c had a frightening vision of a battle erupting at {POI/tag/rocks}, the stones stained red with blood.",
+        "event_text": "m_c had a frightening vision of a battle erupting at POI, the stones stained red with blood.",
         "m_c": {
             "status": ["medicine cat", "medicine cat"]
         }
@@ -7973,7 +7973,7 @@
             "tags": ["Twolegs:present"]
         },
         "frequency": 1,
-        "event_text": "m_c had a dream of Twolegs abandoning {POI/tag/Twolegs:present} and leaving it to be claimed by nature.",
+        "event_text": "m_c had a dream of Twolegs abandoning POI and leaving it to be claimed by nature.",
         "m_c": {
             "status": ["medicine cat", "medicine cat"]
         }
@@ -7988,7 +7988,7 @@
             "tags": ["water"]
         },
         "frequency": 1,
-        "event_text": "m_c had a vision of the waters of {POI/tag/water} drying up.",
+        "event_text": "m_c had a vision of the waters of POI drying up.",
         "m_c": {
             "status": ["medicine cat", "medicine cat"]
         }
@@ -8003,7 +8003,7 @@
             "tags": ["water"]
         },
         "frequency": 1,
-        "event_text": "m_c had a vision of the waters of {POI/tag/water} overflowing and flooding the territories.",
+        "event_text": "m_c had a vision of the waters of POI overflowing and flooding the territories.",
         "m_c": {
             "status": ["medicine cat", "medicine cat"]
         }
@@ -8018,7 +8018,7 @@
             "tags": ["fall_risk"]
         },
         "frequency": 1,
-        "event_text": "Whenever m_c is near {POI/tag/fall_risk}, {PRONOUN/m_c/subject} {VERB/m_c/hear/hears} the wails of a cat in distress, but no cat is there. m_c wonders if it's a sign.",
+        "event_text": "Whenever m_c is near POI, {PRONOUN/m_c/subject} {VERB/m_c/hear/hears} the wails of a cat in distress, but no cat is there. m_c wonders if it's a sign.",
         "m_c": {
             "status": ["medicine cat", "medicine cat"]
         }
@@ -8033,7 +8033,7 @@
             "tags": ["fall_risk"]
         },
         "frequency": 1,
-        "event_text": "m_c had a dream of {POI/tag/fall_risk}. The feeling of plummeting to {PRONOUN/m_c/poss} death jerked {PRONOUN/m_c/object} awake.",
+        "event_text": "m_c had a dream of POI. The feeling of plummeting to {PRONOUN/m_c/poss} death jerked {PRONOUN/m_c/object} awake.",
         "m_c": {
             "status": ["medicine cat", "medicine cat"]
         }
@@ -8048,7 +8048,7 @@
             "tags": ["nests"]
         },
         "frequency": 1,
-        "event_text": "m_c keeps having a recurring dream of an enormous egg among the nests of {POI/tag/nests}. It begins to crack, but m_c always wakes up before the chick hatches.",
+        "event_text": "m_c keeps having a recurring dream of an enormous egg among the nests of POI. It begins to crack, but m_c always wakes up before the chick hatches.",
         "m_c": {
             "status": ["medicine cat", "medicine cat"]
         }
@@ -8063,7 +8063,7 @@
             "tags": ["nests"]
         },
         "frequency": 1,
-        "event_text": "m_c had a strange dream of an enormous egg among the nests of {POI/tag/nests}. When it hatched, r_c was revealed inside it, squawking like a chick.",
+        "event_text": "m_c had a strange dream of an enormous egg among the nests of POI. When it hatched, r_c was revealed inside it, squawking like a chick.",
         "m_c": {
             "status": ["medicine cat", "medicine cat"]
         },
@@ -8081,7 +8081,7 @@
             "tags": ["cave"]
         },
         "frequency": 1,
-        "event_text": "Whenever m_c is near {POI/tag/cave}, {PRONOUN/m_c/subject} can't shake the feeling that something is watching {PRONOUN/m_c/object} from the darkness.",
+        "event_text": "Whenever m_c is near POI, {PRONOUN/m_c/subject} can't shake the feeling that something is watching {PRONOUN/m_c/object} from the darkness.",
         "m_c": {
             "status": ["medicine cat", "medicine cat"]
         }
@@ -8096,7 +8096,7 @@
             "tags": ["cave"]
         },
         "frequency": 1,
-        "event_text": "m_c keeps having a recurring dream of being trapped in {POI/tag/cave}. Footsteps thunder in {PRONOUN/m_c/poss} ears, louder and louder. m_c always snaps awake before {PRONOUN/m_c/poss} pursuer catches {PRONOUN/m_c/object}.",
+        "event_text": "m_c keeps having a recurring dream of being trapped in POI. Footsteps thunder in {PRONOUN/m_c/poss} ears, louder and louder. m_c always snaps awake before {PRONOUN/m_c/poss} pursuer catches {PRONOUN/m_c/object}.",
         "m_c": {
             "status": ["medicine cat", "medicine cat"]
         }
@@ -8111,7 +8111,7 @@
             "tags": ["cave"]
         },
         "frequency": 1,
-        "event_text": "While picking herbs near {POI/tag/cave}, m_c had a strange vision in which the stone became transparent and m_c was able to see the entire network of tunnels without obstruction.",
+        "event_text": "While picking herbs near POI, m_c had a strange vision in which the stone became transparent and m_c was able to see the entire network of tunnels without obstruction.",
         "m_c": {
             "status": ["medicine cat", "medicine cat"]
         }
@@ -8126,7 +8126,7 @@
             "tags": ["covered"]
         },
         "frequency": 1,
-        "event_text": "m_c had a vision of a raging storm forcing the entire Clan to shelter in {POI/tag/covered}.",
+        "event_text": "m_c had a vision of a raging storm forcing the entire Clan to shelter in POI.",
         "m_c": {
             "status": ["medicine cat", "medicine cat"]
         }
@@ -8141,7 +8141,7 @@
             "tags": ["water:flowing"]
         },
         "frequency": 1,
-        "event_text": "No matter where m_c goes on the territory, {PRONOUN/m_c/subject} can't seem to escape the sound of running water from {POI/tag/water:flowing}. m_c wonders if it's a sign.",
+        "event_text": "No matter where m_c goes on the territory, {PRONOUN/m_c/subject} can't seem to escape the sound of running water from POI. m_c wonders if it's a sign.",
         "m_c": {
             "status": ["medicine cat", "medicine cat"]
         }
@@ -8156,7 +8156,7 @@
             "tags": ["water:still"]
         },
         "frequency": 1,
-        "event_text": "m_c peered into {POI/tag/water:still}, struck with horror when it was not {PRONOUN/m_c/poss} own reflection looking back.",
+        "event_text": "m_c peered into POI, struck with horror when it was not {PRONOUN/m_c/poss} own reflection looking back.",
         "m_c": {
             "status": ["medicine cat", "medicine cat"]
         }
@@ -10784,7 +10784,7 @@
             "tags": ["fall_risk"]
         },
         "frequency": 1,
-        "event_text": "m_c took r_c out to teach {PRONOUN/r_c/object} how to keep {PRONOUN/r_c/poss} footing around {POI/tag/fall_risk}.",
+        "event_text": "m_c took r_c out to teach {PRONOUN/r_c/object} how to keep {PRONOUN/r_c/poss} footing around POI.",
         "m_c": {
             "relationship_status": ["mentor/app"]
         },
@@ -10811,7 +10811,7 @@
             "tags": ["tainted"]
         },
         "frequency": 1,
-        "event_text": "m_c took r_c out to teach {PRONOUN/r_c/object} how to hunt safely near {POI/tag/tainted}.",
+        "event_text": "m_c took r_c out to teach {PRONOUN/r_c/object} how to hunt safely near POI.",
         "m_c": {
             "relationship_status": ["mentor/app"]
         },
@@ -10838,7 +10838,7 @@
             "tags": ["unstable"]
         },
         "frequency": 1,
-        "event_text": "m_c took r_c out to teach {PRONOUN/r_c/object} what might collapse and what can be safely walked over around {POI/tag/unstable}.",
+        "event_text": "m_c took r_c out to teach {PRONOUN/r_c/object} what might collapse and what can be safely walked over around POI.",
         "m_c": {
             "relationship_status": ["mentor/app"]
         },
@@ -15275,7 +15275,7 @@
             "tags": ["water:flowing"]
         },
         "frequency": 4,
-        "event_text": "m_c and r_c spent one sunhigh frolicking and splashing each other by {POI/tag/water:flowing} to cool off in the sweltering heat.",
+        "event_text": "m_c and r_c spent one sunhigh frolicking and splashing each other by POI to cool off in the sweltering heat.",
         "m_c": {
             "age": ["adolescent", "young adult"]
         },
@@ -15305,7 +15305,7 @@
             "tags": ["tainted"]
         },
         "frequency": 1,
-        "event_text": "Most c_n cats find {POI/tag/tainted} a filthy, unpleasant part of the territory, but m_c finds a strange beauty in it.",
+        "event_text": "Most c_n cats find POI a filthy, unpleasant part of the territory, but m_c finds a strange beauty in it.",
         "m_c": {
             "trait": ["strange"]
         },
@@ -15332,7 +15332,7 @@
             "tags": ["prey:flying"]
         },
         "frequency": 1,
-        "event_text": "m_c and r_c watched birds perform courtship rituals near {POI/tag/prey:flying} and talked loudly about how ridiculous lovers can be. Their Clanmates exchanged glances.",
+        "event_text": "m_c and r_c watched birds perform courtship rituals near POI and talked loudly about how ridiculous lovers can be. Their Clanmates exchanged glances.",
         "m_c": {
             "age": ["adolescent", "young adult"],
             "relationship_status": ["fancies", "-mates"]
@@ -15363,7 +15363,7 @@
             "tags": ["trees"]
         },
         "frequency": 1,
-        "event_text": "m_c watched the leaves change and fall from the branches of {POI/tag/trees}. {PRONOUN/m_c/subject/CAP} wondered if {PRONOUN/m_c/subject}'ll be around to see it again next year.",
+        "event_text": "m_c watched the leaves change and fall from the branches of POI. {PRONOUN/m_c/subject/CAP} wondered if {PRONOUN/m_c/subject}'ll be around to see it again next year.",
         "m_c": {
             "age": ["senior"]
         }
@@ -15378,7 +15378,7 @@
             "tags": ["trees"]
         },
         "frequency": 1,
-        "event_text": "m_c was dazzled by the greenery of {POI/tag/trees}. {PRONOUN/m_c/poss/CAP} first greenleaf is living up to its name.",
+        "event_text": "m_c was dazzled by the greenery of POI. {PRONOUN/m_c/poss/CAP} first greenleaf is living up to its name.",
         "m_c": {
             "age": ["adolescent"]
         }
@@ -15393,7 +15393,7 @@
             "tags": ["water:still"]
         },
         "frequency": 1,
-        "event_text": "m_c tested the thickness of the ice on {POI/tag/water:still}'s surface, hoping to go for a slide later.",
+        "event_text": "m_c tested the thickness of the ice on POI's surface, hoping to go for a slide later.",
         "m_c": {
             "trait": ["daring", "bold", "troublesome", "rebellious", "arrogant", "adventurous", "competitive"]
         }
@@ -15408,7 +15408,7 @@
             "tags": ["Twolegs:abandoned"]
         },
         "frequency": 1,
-        "event_text": "m_c reported seeing a Twoleg near {POI/tag/Twolegs:abandoned}. The Clan worries that Twolegs may return to reclaim their creation.",
+        "event_text": "m_c reported seeing a Twoleg near POI. The Clan worries that Twolegs may return to reclaim their creation.",
         "m_c": {
             "status": ["-kitten", "-elder", "-leader"]
         }
@@ -15423,7 +15423,7 @@
             "tags": ["Twolegs:present"]
         },
         "frequency": 1,
-        "event_text": "m_c and r_c laid in wait near {POI/tag/Twolegs:present}, hoping to snatch some scraps of Twoleg food.",
+        "event_text": "m_c and r_c laid in wait near POI, hoping to snatch some scraps of Twoleg food.",
         "m_c": {
             "status": ["-kitten", "-elder"],
             "trait": ["-strict", "-righteous", "-wise", "-careful", "-faithful"],
@@ -15444,7 +15444,7 @@
             "tags": ["covered"]
         },
         "frequency": 1,
-        "event_text": "m_c and r_c got caught in a storm and sheltered by {POI/tag/covered}. When they returned to camp, they seemed closer.",
+        "event_text": "m_c and r_c got caught in a storm and sheltered by POI. When they returned to camp, they seemed closer.",
         "m_c": {
             "status": ["-kitten"],
             "relationship_status": ["-mates"]
@@ -15475,7 +15475,7 @@
             "tags": ["fall_risk"]
         },
         "frequency": 1,
-        "event_text": "m_c and r_c yowled down {POI/tag/fall_risk}, trying to make their meows echo.",
+        "event_text": "m_c and r_c yowled down POI, trying to make their meows echo.",
         "m_c": {
             "status": ["apprentice"]
         },
@@ -15505,7 +15505,7 @@
             "tags": ["fall_risk"]
         },
         "frequency": 1,
-        "event_text": "m_c had a near-death experience by {POI/tag/fall_risk}.",
+        "event_text": "m_c had a near-death experience by POI.",
         "m_c": {}
     },
     {
@@ -15518,7 +15518,7 @@
             "name": ["terrain_sunningrocks"]
         },
         "frequency": 1,
-        "event_text": "m_c and r_c spent a lazy day soaking up the sun at {POI/name/terrain_sunningrocks}.",
+        "event_text": "m_c and r_c spent a lazy day soaking up the sun at POI.",
         "m_c": {
             "relationship_status": ["mates"]
         },
@@ -15546,7 +15546,7 @@
             "tags": ["water:ocean"]
         },
         "frequency": 1,
-        "event_text": "m_c and r_c cozied up together by {POI/tag/water:ocean} and listened to the crash of waves.",
+        "event_text": "m_c and r_c cozied up together by POI and listened to the crash of waves.",
         "m_c": {
             "relationship_status": ["mates"]
         },
@@ -15574,7 +15574,7 @@
             "name": ["terrain_hugeboulder"]
         },
         "frequency": 1,
-        "event_text": "m_c told the story of how {POI/name/terrain_hugeboulder} was once an enormous bear who hibernated so long it turned to stone.",
+        "event_text": "m_c told the story of how POI was once an enormous bear who hibernated so long it turned to stone.",
         "m_c": {
             "skill": ["STORY,2"]
         }
@@ -15589,7 +15589,7 @@
             "name": ["terrain_windswepttree"]
         },
         "frequency": 1,
-        "event_text": "m_c told the story of how {POI/name/terrain_windswepttree} has helped hold up the sky for so many generations that now it bends beneath the weight.",
+        "event_text": "m_c told the story of how POI has helped hold up the sky for so many generations that now it bends beneath the weight.",
         "m_c": {
             "skill": ["STORY,2"]
         }
@@ -15604,7 +15604,7 @@
             "name": ["terrain_lake"]
         },
         "frequency": 1,
-        "event_text": "m_c told the story of how {POI/name/terrain_lake} was created when Silverpelt lost her footing in the night sky and left a pawprint in the earth. Generations of rainwater filled it to create {POI/name/terrain_lake}.",
+        "event_text": "m_c told the story of how POI was created when Silverpelt lost her footing in the night sky and left a pawprint in the earth. Generations of rainwater filled it to create POI.",
         "m_c": {
             "skill": ["STORY,2"]
         }
@@ -15619,7 +15619,7 @@
             "name": ["terrain_well"]
         },
         "frequency": 1,
-        "event_text": "m_c told the story of how dogs won the favor of Twolegs when, many generations ago, a dog rescued a Twoleg from {POI/name/terrain_well}.",
+        "event_text": "m_c told the story of how dogs won the favor of Twolegs when, many generations ago, a dog rescued a Twoleg from POI.",
         "m_c": {
             "skill": ["STORY,2"]
         }
@@ -16558,7 +16558,7 @@
     "poi": {
         "name": ["moon_mothermouth"]
     },
-    "event_text": "m_c returned from {POI/name/moon_mothermouth} and swears {PRONOUN/m_c/poss} whiskers are bent from brushing against the sides of labyrinthine tunnels for so long!",
+    "event_text": "m_c returned from POI and swears {PRONOUN/m_c/poss} whiskers are bent from brushing against the sides of labyrinthine tunnels for so long!",
     "m_c": {
       "status": ["medicine cat apprentice"]
     }
@@ -16571,7 +16571,7 @@
     "poi": {
         "name": ["moon_pool"]
     },
-    "event_text": "m_c returned from {POI/name/moon_pool}, drenched and dismayed. It seems {PRONOUN/m_c/subject} took a tumble into the sacred waters.",
+    "event_text": "m_c returned from POI, drenched and dismayed. It seems {PRONOUN/m_c/subject} took a tumble into the sacred waters.",
     "m_c": {
       "status": ["medicine cat apprentice"]
     }
@@ -16584,7 +16584,7 @@
     "poi": {
         "name": ["moon_meteor"]
     },
-    "event_text": "m_c returned from {POI/name/moon_meteor} sneezing sporadically. Perhaps {PRONOUN/m_c/subject} {VERB/m_c/are/is} allergic to moon dust.",
+    "event_text": "m_c returned from POI sneezing sporadically. Perhaps {PRONOUN/m_c/subject} {VERB/m_c/are/is} allergic to moon dust.",
     "m_c": {
       "status": ["medicine cat apprentice"]
     }
@@ -16597,7 +16597,7 @@
     "poi": {
         "name": ["moon_cave"]
     },
-    "event_text": "m_c returned from {POI/name/moon_cave}, looking more like a puff of fluff than a cat after hearing StarClan's voices echo around {PRONOUN/m_c/object}.",
+    "event_text": "m_c returned from POI, looking more like a puff of fluff than a cat after hearing StarClan's voices echo around {PRONOUN/m_c/object}.",
     "m_c": {
       "status": ["medicine cat apprentice"]
     }
@@ -16614,7 +16614,7 @@
         "poi": {
             "category": "gathering"
         },
-        "event_text": "m_c wouldn't stop asking r_c when it's {PRONOUN/m_c/poss} turn to join the Gathering at {POI/category/gathering}.",
+        "event_text": "m_c wouldn't stop asking r_c when it's {PRONOUN/m_c/poss} turn to join the Gathering at POI.",
         "m_c": {
             "status": [
                 "apprentice"
@@ -16641,7 +16641,7 @@
         "poi": {
             "category": "gathering"
         },
-        "event_text": "During the Gathering at {POI/category/gathering}, m_c overheard that o_c_n is struggling to find prey.",
+        "event_text": "During the Gathering at POI, m_c overheard that o_c_n is struggling to find prey.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -16661,7 +16661,7 @@
         "poi": {
             "category": "gathering"
         },
-        "event_text": "During the Gathering at {POI/category/gathering}, m_c overheard that o_c_n is suffering from a herb blight.",
+        "event_text": "During the Gathering at POI, m_c overheard that o_c_n is suffering from a herb blight.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -16681,7 +16681,7 @@
         "poi": {
             "category": "gathering"
         },
-        "event_text": "During the Gathering at {POI/category/gathering}, m_c overheard that o_c_n is dealing with a greencough outbreak.",
+        "event_text": "During the Gathering at POI, m_c overheard that o_c_n is dealing with a greencough outbreak.",
         "m_c": {
             "status": [
                 "apprentice",
@@ -16701,7 +16701,7 @@
         "poi": {
             "category": "gathering"
         },
-        "event_text": "m_c gathered the Clan to tell a story about the first time the Clans convened for a Gathering at {POI/category/gathering}.",
+        "event_text": "m_c gathered the Clan to tell a story about the first time the Clans convened for a Gathering at POI.",
         "m_c": {
             "skill": ["STORY,1", "LORE,1"]
         }
@@ -16718,7 +16718,7 @@
         "poi": {
             "category": "gathering"
         },
-        "event_text": "m_c overheard some interesting gossip from the other deputies at {POI/category/gathering}.",
+        "event_text": "m_c overheard some interesting gossip from the other deputies at POI.",
         "m_c": {
             "status": ["deputy"]
         }
@@ -16735,7 +16735,7 @@
         "poi": {
             "category": "moonplace"
         },
-        "event_text": "As soon as m_c returned from {POI/category/moonplace}, {PRONOUN/m_c/subject} visited r_c in {PRONOUN/r_c/poss} den for a private conversation.",
+        "event_text": "As soon as m_c returned from POI, {PRONOUN/m_c/subject} visited r_c in {PRONOUN/r_c/poss} den for a private conversation.",
         "m_c": {
             "status": ["medicine cat"]
         },
@@ -16755,7 +16755,7 @@
         "poi": {
             "category": "moonplace"
         },
-        "event_text": "m_c seemed shaken after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
+        "event_text": "m_c seemed shaken after {PRONOUN/m_c/poss} half-moon visit to POI.",
         "m_c": {
             "status": ["medicine cat"]
         }
@@ -16772,7 +16772,7 @@
         "poi": {
             "category": "moonplace"
         },
-        "event_text": "m_c seemed disappointed by StarClan's wisdom after a visit to {POI/category/moonplace}.",
+        "event_text": "m_c seemed disappointed by StarClan's wisdom after a visit to POI.",
         "m_c": {
             "status": ["medicine cat"]
         }
@@ -16789,7 +16789,7 @@
         "poi": {
             "category": "moonplace"
         },
-        "event_text": "m_c seemed content after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
+        "event_text": "m_c seemed content after {PRONOUN/m_c/poss} half-moon visit to POI.",
         "m_c": {
             "status": ["medicine cat"]
         }
@@ -16806,7 +16806,7 @@
         "poi": {
             "category": "moonplace"
         },
-        "event_text": "m_c seemed comforted by StarClan's wisdom after a visit to {POI/category/moonplace}.",
+        "event_text": "m_c seemed comforted by StarClan's wisdom after a visit to POI.",
         "m_c": {
             "status": ["medicine cat"]
         }
@@ -16823,7 +16823,7 @@
         "poi": {
             "category": "moonplace"
         },
-        "event_text": "m_c seemed determined after {PRONOUN/m_c/poss} half-moon visit to {POI/category/moonplace}.",
+        "event_text": "m_c seemed determined after {PRONOUN/m_c/poss} half-moon visit to POI.",
         "m_c": {
             "status": ["medicine cat"]
         }
@@ -16840,7 +16840,7 @@
         "poi": {
             "category": "moonplace"
         },
-        "event_text": "m_c overheard some interesting gossip from the other medicine cats at {POI/category/moonplace}.",
+        "event_text": "m_c overheard some interesting gossip from the other medicine cats at POI.",
         "m_c": {
             "status": ["medicine cat"]
         }
@@ -17049,7 +17049,7 @@
     "poi": {
     "name": ["terrain_rookery"]
         },
-    "event_text": "m_c returned from a hunt at {POI/name/terrain_rookery}, adorned with some feathers from {PRONOUN/m_c/poss} catch.",
+    "event_text": "m_c returned from a hunt at POI, adorned with some feathers from {PRONOUN/m_c/poss} catch.",
     "new_accessory": ["BLUE FEATHERS","JAY FEATHERS"],
     "m_c": {
         "status": ["-kitten","-elder"]
@@ -17065,7 +17065,7 @@
     "poi": {
     "name": ["terrain_rookery"]
     },
-    "event_text": "r_c returned from a hunt at {POI/name/terrain_rookery} and gifted some beautiful feathers from {PRONOUN/r_c/poss} catch to m_c.",
+    "event_text": "r_c returned from a hunt at POI and gifted some beautiful feathers from {PRONOUN/r_c/poss} catch to m_c.",
     "new_accessory": ["BLUE FEATHERS","JAY FEATHERS"],
     "m_c": {
         "age": ["any"],
@@ -17099,7 +17099,7 @@
     "poi": {
     "name": ["terrain_eaglenest"]
     },
-    "event_text": "After a visit near {POI/name/terrain_eaglenest}, m_c returned to camp adorned with feathers.",
+    "event_text": "After a visit near POI, m_c returned to camp adorned with feathers.",
     "new_accessory": ["SPARROW FEATHERS"],
     "m_c": {
         "status": ["-kitten","-elder"],
@@ -17116,7 +17116,7 @@
     "poi": {
     "name": ["terrain_gullcliffs"]
     },
-    "event_text": "r_c returned from a hunt at {POI/name/terrain_gullcliffs} and gifted some beautiful feathers from {PRONOUN/r_c/poss} catch to m_c.",
+    "event_text": "r_c returned from a hunt at POI and gifted some beautiful feathers from {PRONOUN/r_c/poss} catch to m_c.",
     "new_accessory": ["GULL FEATHERS"],
     "m_c": {
         "age": ["any"],
@@ -17150,7 +17150,7 @@
     "poi": {
     "name": ["terrain_gullcliffs"]
     },
-    "event_text": "m_c returned from a hunt at {POI/name/terrain_gullcliffs}, adorned with some feathers from {PRONOUN/m_c/poss} catch.",
+    "event_text": "m_c returned from a hunt at POI, adorned with some feathers from {PRONOUN/m_c/poss} catch.",
     "new_accessory": ["GULL FEATHERS"],
     "m_c": {
         "status": ["-kitten","-elder"],
@@ -19040,7 +19040,7 @@
             ]
         },
         "frequency": 2,
-        "event_text": "Everyone could smell when m_c padded back into camp from {POI/tag/tainted}. It took some serious grooming to get rid of the stench!",
+        "event_text": "Everyone could smell when m_c padded back into camp from POI. It took some serious grooming to get rid of the stench!",
         "m_c": {
             "age": [
                 "-newborn",
@@ -19072,7 +19072,7 @@
                 ],
                 "amount": -5,
                 "log": {
-                    "cats_from": "cats_from wishes cats_to had taken time to groom the stink from {POI/tag/tainted} before returning."
+                    "cats_from": "cats_from wishes cats_to had taken time to groom the stink from POI before returning."
                 }
             }
         ]
@@ -19086,7 +19086,7 @@
             "tags": ["tainted"]
         },
         "frequency": 1,
-        "event_text": "When m_c returned from {POI/tag/tainted} smelling absolutely vile, r_c refused to share tongues with {PRONOUN/m_c/object} unless {PRONOUN/m_c/subject} took a swim. In return, m_c pulled r_c in with {PRONOUN/m_c/object}, and there was far more splashing about together than washing up.",
+        "event_text": "When m_c returned from POI smelling absolutely vile, r_c refused to share tongues with {PRONOUN/m_c/object} unless {PRONOUN/m_c/subject} took a swim. In return, m_c pulled r_c in with {PRONOUN/m_c/object}, and there was far more splashing about together than washing up.",
         "m_c": {
             "relationship_status": ["mates"],
             "trait": ["-bloodthirsty", "-cold", "-gloomy", "-grumpy", "-strict"]
