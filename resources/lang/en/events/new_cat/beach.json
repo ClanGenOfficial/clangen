@@ -287,11 +287,6 @@
                "backstory:loner1", "age:adult"
             ]
         ],
-        "history": [
-            {
-                "cats": ["m_c", "n_c:0"]
-            }
-        ],
         "outsider": {
             "current_rep": ["any"],
             "changed": 5
@@ -332,11 +327,6 @@
             [
                 "loner", "status:kitten"
             ]
-        ],
-        "history": [
-            {
-                "cats": ["m_c", "r_c", "n_c:0"]
-            }
         ],
         "relationships": [
             {

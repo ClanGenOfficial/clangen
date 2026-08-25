@@ -366,11 +366,6 @@
                 "-newborn",
                 "-kitten"
             ]
-        },
-        "history": [
-            {
-                "cats": ["m_c"]
-            }
-        ]
+        }
     }
 ]
