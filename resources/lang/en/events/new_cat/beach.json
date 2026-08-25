@@ -317,10 +317,6 @@
                 "-newborn",
                 "-kitten",
                 "adolescent"
-            ],
-            "relationship_status": [
-                "child/parent",
-                "app/mentor"
             ]
         },
         "new_cat": [
