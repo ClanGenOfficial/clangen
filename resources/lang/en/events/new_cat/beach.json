@@ -316,7 +316,7 @@
             "age": [
                 "-newborn",
                 "-kitten",
-                "adolescent"
+                "-adolescent"
             ]
         },
         "new_cat": [
