@@ -291,8 +291,12 @@ class TestNewCatCreation(unittest.TestCase):
             )
 
     def test_mate_assignment(self):
-        mate1 = TestCatFactory.create_cat(status_dict=StatusDict(rank=CatRank.LONER))
-        mate2 = TestCatFactory.create_cat(status_dict=StatusDict(rank=CatRank.LONER))
+        mate1 = TestCatFactory.create_cat(
+            status_dict=StatusDict(rank=CatRank.LONER), moons=50
+        )
+        mate2 = TestCatFactory.create_cat(
+            status_dict=StatusDict(rank=CatRank.LONER), moons=50
+        )
 
         with self.subTest("Testing mate assignments"):
             # test that a single mate can be assigned
@@ -341,6 +345,43 @@ class TestNewCatCreation(unittest.TestCase):
                     0,
                     msg="Mate was added, but wasn't given a relationship!",
                 )
+
+        with self.subTest(
+            "Test that newly created mate is appropriate age (blank constraints)"
+        ):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat=CanCreateNewCatDict(assign_mate=["m_c"]),
+            )
+
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={"m_c": mate1}, other_clan=self.other_clan
+            )
+            test_cat = cat_list[0]
+
+            self.assertEqual(
+                mate1.age,
+                test_cat.age,
+                msg=f"Mate was generated without a matching age.",
+            )
+
+        with self.subTest(
+            "Test that newly created mate is appropriate age (clancat constraints)"
+        ):
+            option_dict = InvolvedCatDict(
+                can_create_new_cat=CanCreateNewCatDict(assign_mate=["m_c"]),
+                status=["clancat"],
+            )
+
+            cat_list = updated_create_new_cat(
+                option_dict, involved_cats={"m_c": mate1}, other_clan=self.other_clan
+            )
+            test_cat = cat_list[0]
+
+            self.assertEqual(
+                mate1.age,
+                test_cat.age,
+                msg=f"Mate was generated without a matching age.",
+            )
 
     def test_stat_assignment(self):
         # test that a trait can be chosen
