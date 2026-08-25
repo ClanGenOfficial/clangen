@@ -88,7 +88,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -135,7 +135,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -176,7 +176,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -220,7 +220,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -277,7 +277,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -322,7 +322,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -356,7 +356,7 @@
                             "r_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -389,7 +389,7 @@
                             "r_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -925,7 +925,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -966,7 +966,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -1023,7 +1023,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -6009,7 +6009,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -6119,7 +6119,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "multi",
+                            "some_patrol",
                             "p_l"
                         ],
                         "mutual": false,
@@ -6256,7 +6256,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "values": [
                             "like"
@@ -6340,7 +6340,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "cats_to": [
                             "s_c0"
@@ -6394,7 +6394,7 @@
                 "relationship_changes": [
                     {
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "cats_to": [
                             "r_c1"
@@ -6435,7 +6435,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "values": [
                             "like"
@@ -6554,7 +6554,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "minor_injury"
@@ -6597,7 +6597,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -6612,7 +6612,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "battle_injury"
@@ -6882,7 +6882,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
