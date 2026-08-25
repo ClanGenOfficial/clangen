@@ -97,6 +97,11 @@ class TestNewCatCreation(unittest.TestCase):
                 [r for r in [*CatRank] if r.is_any_clancat_rank()],
                 msg=f"Cat was not assigned correctly as a clancat rank.",
             )
+            self.assertEqual(
+                test_cat.status.group,
+                CatGroup.OTHER_CLAN,
+                msg=f"Cat was not assigned correctly as an other clan cat.",
+            )
 
         # test that group IDs are being given correctly
         group_list = [
