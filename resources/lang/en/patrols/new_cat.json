@@ -11018,29 +11018,31 @@
             }
         ],
         "fail_outcomes": [
-{
-  "frequency": 4,
-  "strings": [
-    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/discover/discovers} the cooling body of a kittypet; it seems {PRONOUN/n_c0/subject} attempted to run after {PRONOUN/n_c0/poss} Twolegs, but was run over by another monster. p_l silently sends a prayer for the kittypet, and can't help but to curse the Twolegs who abandoned such a loyal cat."
-  ],
-  "exp_gained": 0,
-  "reputation_changes": {
-    "outsider": -1
-  },
-  "death": [
-    {
-      "cats": [
-        "n_c0"
-      ],
-      "body": true,
-      "history": "m_c was struck and killed by a monster.",
-      "no_results": false
-    }
-  ],
-  "involved_cats": {
-    "n_c0": {}
-  }
-}
+            {
+                "frequency": 4,
+                "strings": [
+                    "{PRONOUN/p_l/subject/CAP} {VERB/p_l/discover/discovers} the cooling body of a kittypet; it seems {PRONOUN/n_c0/subject} attempted to run after {PRONOUN/n_c0/poss} Twolegs, but was run over by another monster. p_l silently sends a prayer for the kittypet, and can't help but to curse the Twolegs who abandoned such a loyal cat."
+                ],
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "outsider": -1
+                },
+                "death": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "body": true,
+                        "history": "m_c was struck and killed by a monster.",
+                        "no_results": false
+                    }
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {}
+                    }
+                }
+            }
         ],
         "antag_success_outcomes": [
             {
