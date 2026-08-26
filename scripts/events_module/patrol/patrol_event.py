@@ -24,8 +24,8 @@ NUM_OF_SKILLS = len(SkillPath)
 class PatrolEvent:
     event_id: str
 
-    intro_text: list[str]
-    decline_text: list[str]
+    intro_strings: list[str]
+    decline_strings: list[str]
     success_outcomes: list[dict | TextPoolEvent]
     fail_outcomes: list[dict | TextPoolEvent]
     antag_success_outcomes: list[dict | TextPoolEvent] = field(default_factory=list)
