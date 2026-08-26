@@ -1,0 +1,154 @@
+[
+    {
+        "event_id": "wtlnd_hunt_highwater1",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 2,
+        "location": [
+            "wetlands"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "hunt_general_intro",
+        "intro_text": "While out on a solo hunt, p_l notices that the water level within c_n's territory is higher than usual. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/know\/knows} it's dangerous to continue on alone, but p_l can practically <i>taste<\/i> the prey already.",
+        "decline_text": "p_l considers it for a bit, but eventually decides that it's just too risky to go any further. Perhaps {PRONOUN\/p_l\/subject}'ll try again later with an actual patrol.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l slinks along the water's edge, avoiding wading in too far whenever {PRONOUN\/p_l\/subject} <i>{VERB\/p_l\/do\/does}<\/i> enter the water. And {PRONOUN\/p_l\/poss} tenacity pays off! It's not the haul to end all hauls, but it'll surely be enough to fill a hungry belly or two."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "p_l slinks along the water's edge, avoiding wading in too far whenever {PRONOUN\/p_l\/subject} <i>{VERB\/p_l\/do\/does}<\/i> enter the water. And p_l's tenacity pays off with a catch so big that {PRONOUN\/p_l\/subject} almost can't haul it back to camp!"
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from saw cat_to bring back a huge haul of prey from a solo-hunt."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "A little water has never stopped p_l before, and by StarClan, {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} not about to let it stop {PRONOUN\/p_l\/object} now! Without a second thought, p_l dives in and starts swimming, only returning to land once {PRONOUN\/p_l\/subject}{VERB\/p_l\/'ve\/'s} caught an absolute <i>feast<\/i> of prey."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_from saw cat_to bring back a huge haul of prey from a solo-hunt."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l eventually decides to continue on and... it doesn't go well. By the time p_l decides to cut {PRONOUN\/p_l\/poss} losses and head back to camp, {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} tired, cranky, and soaked to the bone with absolutely nothing to show for it."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "p_l eventually decides to continue on and... it doesn't go well. By the time {PRONOUN\/p_l\/subject} {VERB\/p_l\/decide\/decides} to cut {PRONOUN\/p_l\/poss} losses and head back to camp, p_l's tired, cranky, and soaked to the bone with absolutely nothing to show for it. Even worse, {PRONOUN\/p_l\/subject} fell in earlier and now {PRONOUN\/p_l\/subject} can't stop hacking up water."
+                ],
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "water in their lungs"
+                        ],
+                        "death_history": "m_c inhaled water during a hunt and died of the water in {PRONOUN\/m_c\/poss} lungs."
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "<i>Pfft,<\/i> what's a little extra water to a cat like p_l? Nothing, that's what! p_l swaggers on {PRONOUN\/p_l\/poss} way... only to slip on a patch of mud and fall into a (thankfully) shallow part of the water. Thank StarClan nobody saw that."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "<i>Pfft,<\/i> what's a little extra water to a cat like p_l? Nothing, that's what! p_l swaggers on {PRONOUN\/p_l\/poss} way... only to slip on a patch of mud and fall into the water. {PRONOUN\/p_l\/subject\/CAP}{VERB\/p_l\/'re\/'s} eventually able to pull {PRONOUN\/p_l\/self} out of the water, but not without inhaling quite a bit."
+                ],
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "water in their lungs"
+                        ],
+                        "death_history": "m_c died of the water in {PRONOUN\/m_c\/poss} lungs after slipping into the water during a hunt."
+                    }
+                ]
+            }
+        ]
+    }
+]

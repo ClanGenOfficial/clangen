@@ -1,0 +1,374 @@
+[
+    {
+        "event_id": "bch_med_herblocation1",
+        "types": [
+            "herb_gathering"
+        ],
+        "frequency": 3,
+        "location": [
+            "beach"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ],
+            "medicine cat": [
+                1,
+                1
+            ],
+            "medicine cat apprentice": [
+                1,
+                1
+            ]
+        },
+        "involved_cats": {
+            "r_c1": {
+                "status": [
+                    "apprentice",
+                    "medicine cat apprentice"
+                ]
+            }
+        },
+        "chance_of_success": 65,
+        "patrol_art": "med_general_intro",
+        "intro_text": "p_l looks at the calm, cloudless sky and decides it's a good opportunity to show r_c1 where some of the most commonly needed herbs are located in {PRONOUN\/p_l\/poss} territory, as well as where and when to burrow into the sand to find the more potent roots {PRONOUN\/p_l\/subject} {VERB\/p_l\/tend\/tends} to use.",
+        "decline_text": "As {PRONOUN\/p_l\/subject} {VERB\/p_l\/look\/looks} at r_c1's absent-minded gaze, {PRONOUN\/p_l\/subject} {VERB\/p_l\/hesitate\/hesitates} and {VERB\/p_l\/change\/changes} {PRONOUN\/p_l\/poss} mind. Maybe another day would be best, when r_c1 is more focused... and less liable to get sand everywhere, or damage the herbs.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c1 is focused and attentive, giving p_l confidence that next time there is an emergency, r_c1 will be able to find the herbs {PRONOUN\/r_c1\/subject} {VERB\/r_c1\/need\/needs} both in and out of the sand."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice",
+                            "medicine cat apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from listened to cat_to attentively during an herb-gathering patrol.",
+                            "cats_to": "cat_to felt a measure of confidence in cat_from's attentiveness during an herb-gathering patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "As p_l is explaining why and where the herbs are growing, r_c1 lets out a shout and bolts ahead. To p_l's surprise, {PRONOUN\/r_c1\/subject} {VERB\/r_c1\/have\/has} found a previously unknown patch of an uncommon herb! Stunned, but filled with pride that {PRONOUN\/r_c1\/subject} found and recognized the herb, p_l promises {PRONOUN\/r_c1\/object} the first pick of fresh-kill as soon as they return to camp."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice",
+                            "medicine cat apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from found a hidden herb patch during a lesson, impressing cat_to.",
+                            "cats_to": "cat_to was impressed by cat_from's keen observation by finding a hidden herb patch."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c1 is constantly distracted, running ahead at every little noise or interesting sight, much to the frustration of p_l. Evidently, no new knowledge will be gained that day."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice",
+                            "medicine cat apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "Frustrated by cat_to's inattention, cat_from ended {PRONOUN\/cat_from\/poss} gathering lesson early."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "bch_med_herblocation2",
+        "types": [
+            "herb_gathering"
+        ],
+        "frequency": 3,
+        "location": [
+            "beach"
+        ],
+        "tags": [],
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ],
+            "medicine cat apprentice": [
+                1,
+                1
+            ]
+        },
+        "involved_cats": {
+            "p_l": {
+                "has_mentor": {
+                    "current": true
+                }
+            }
+        },
+        "chance_of_success": 65,
+        "patrol_art": "cat_sprites\/bch_med_herblocation_Ap",
+        "intro_text": "p_l has been sent out onto the beaches to try to find some specific herbs alone.",
+        "decline_text": "Nervous and sneezing due to the salty air, {PRONOUN\/p_l\/subject} {VERB\/p_l\/decide\/decides} to go back to camp and try again another day. {PRONOUN\/p_l\/poss\/CAP} mentor won't be very pleased, but {PRONOUN\/p_l\/subject} {VERB\/p_l\/rationalize\/rationalizes} that it's better to go with confidence than nerves.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l is focused, determined to prove {PRONOUN\/p_l\/poss} independence. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/find\/finds} the herbs easily and bring them back to camp with {PRONOUN\/p_l\/poss} head held up high \u2014 no sweat, no stress, no fuss."
+                ],
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "p_l goes to an herb patch {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} sure {PRONOUN\/p_l\/subject} {VERB\/p_l\/know\/knows}, only to find the plants withered and dead. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/refuse\/refuses} to give up, however, tenaciously searching the area until {PRONOUN\/p_l\/subject} {VERB\/p_l\/come\/comes} across a smaller, overlooked patch that still has some leaves hanging on."
+                ],
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l goes to an herb patch {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} sure {PRONOUN\/p_l\/subject} {VERB\/p_l\/know\/knows}, only to find the plants withered and dead. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/give\/gives} up and {VERB\/p_l\/return\/returns} to camp, {PRONOUN\/p_l\/poss} tail dragging miserably along the ground."
+                ],
+                "exp_gained": 0
+            }
+        ]
+    },
+    {
+        "event_id": "bch_med_dwindleherbsgathering1",
+        "types": [
+            "herb_gathering"
+        ],
+        "frequency": 4,
+        "location": [
+            "beach"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ],
+            "medicine cat": [
+                2,
+                2
+            ]
+        },
+        "involved_cats": {
+            "r_c0": {}
+        },
+        "chance_of_success": 50,
+        "patrol_art": "med_general_intro",
+        "intro_text": "p_l and r_c0 take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
+        "decline_text": "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l and r_c0 decide to search near the Twoleg beach dens. As the sun sinks towards the horizon, they return with their mouths stuffed full of herbs taken from the weirdly bountiful Twoleg territories."
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_to and cat_from had a productive time searching Twoleg beach dens for herbs."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "p_l and r_c0 decide on a little friendly competition \u2014 one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_to and cat_from had fun during an impromptu herb-gathering competition."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Both p_l and r_c0 are tense and it shows. Even though it should not be this hard to find any herbs, they fail to find even a single one. They return to camp frustrated and irritated with each other."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_to and cat_from became irritated with each other after a fruitless herb-gathering patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "Even though there should be many herbs, they fail to find anything. p_l blames r_c0 for distracting {PRONOUN\/p_l\/object}, and they get into a huge argument."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -12,
+                        "log": {
+                            "cats_from": "cat_to and cat_from got into a huge argument over whose fault it was that an herb-gathering patrol failed."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
