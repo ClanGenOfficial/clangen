@@ -39,6 +39,7 @@
     },
     {
         "event_id": "med_app_no_mentor0",
+        "tags": ["-clan:medicine cat(min:1)"],
         "involved_cats": {
             "m_c": {
                 "has_mentor": {
