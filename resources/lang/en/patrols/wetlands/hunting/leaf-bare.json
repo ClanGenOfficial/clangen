@@ -19,7 +19,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile."
         ],
         "decline_text": [
@@ -288,7 +288,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "It starts snowing soon after p_l sets out, trying to bring back something nice for the fresh-kill pile."
         ],
         "decline_text": [
@@ -433,7 +433,7 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile."
         ],
         "decline_text": [
@@ -660,7 +660,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The patrol catches the scent of a fox. Tracking it, they find a kit fox fishing on a branch overlooking the shallows."
         ],
         "decline_text": [
@@ -891,7 +891,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l catches the scent of a fox. Tracking it, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a kit fox fishing on a branch overlooking the shallows."
         ],
         "decline_text": [
@@ -1066,7 +1066,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Amid the drab leaf-bare shaded world, a flash of brilliant color above a big stream catches r_c1's attention."
         ],
         "decline_text": [

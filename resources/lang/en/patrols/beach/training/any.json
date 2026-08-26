@@ -31,7 +31,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/bch_train_session1_ApWr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol wants to hold a training session for r_c1. They decide to focus on how best to navigate the rocky tide pools."
         ],
         "decline_text": [
@@ -265,7 +265,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/bch_train_stuck_Wr",
-        "intro_text": [
+        "intro_strings": [
             "As {PRONOUN/r_c0/subject} {VERB/r_c0/lag/lags} behind on patrol, the dune r_c's crossing shifts beneath {PRONOUN/r_c0/poss} paws. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly for safe footing — just as the sand caves in beneath {PRONOUN/r_c0/object} and the world goes dark."
         ],
         "decline_text": [
@@ -647,7 +647,7 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/bch_train_stuck_Wr",
-        "intro_text": [
+        "intro_strings": [
             "As r_c0 trails behind p_l, the dune {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} crossing shifts beneath r_c's paws. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly for safe footing — just as the sand caves in beneath {PRONOUN/r_c0/object} and the world goes dark."
         ],
         "decline_text": [
@@ -932,7 +932,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/bch_train_stuck_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l is training alone out on the coast when suddenly, the dune {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} standing on shifts beneath {PRONOUN/p_l/poss} paws. {PRONOUN/p_l/subject/CAP} {VERB/p_l/look/looks} around wildly for safe footing — just as the sand caves in beneath {PRONOUN/p_l/object} and the world goes dark."
         ],
         "decline_text": [
@@ -1031,7 +1031,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_train_solo_Ap",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out along the coast alone, but maybe an apprentice shouldn't try to do a solo patrol."
         ],
         "decline_text": [
@@ -1149,7 +1149,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_train_solo_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out along the coast alone, wanting to explore and have some time to {PRONOUN/p_l/self}."
         ],
         "decline_text": [
@@ -1370,7 +1370,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/bch_train_octopus_WrAp",
-        "intro_text": [
+        "intro_strings": [
             "p_l takes r_c1 out to see a big octopus a patrol spotted in one of c_n's rockpools."
         ],
         "decline_text": [
@@ -1690,7 +1690,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/bch_train_octopus_WrAp",
-        "intro_text": [
+        "intro_strings": [
             "p_l takes them out to see a big octopus a patrol spotted in one of c_n's rockpools."
         ],
         "decline_text": [
@@ -2116,7 +2116,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "backgrounds/bch_stormwaves",
-        "intro_text": [
+        "intro_strings": [
             "It's storming in c_n's territory today, and r_c1 waits for r_c2 up on one of the cliffs."
         ],
         "decline_text": [
@@ -2395,7 +2395,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "r_c1 and p_l wander on a sandy beach near camp."
         ],
         "decline_text": [
@@ -2550,7 +2550,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_chatting_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "p_l approaches r_c0, asking if {PRONOUN/r_c0/subject} wouldn't mind showing p_l {PRONOUN/r_c0/poss} hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?"
         ],
         "decline_text": [
@@ -2793,7 +2793,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "train_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As p_l and r_c0 wander across the beach with only the stars to light their way, they notice sparkles of light where the waves break upon the shore."
         ],
         "decline_text": [
@@ -2963,7 +2963,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "train_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As p_l pads through the dunes near camp, looking for a good place for a sand bath before {PRONOUN/p_l/subject} {VERB/p_l/begin/begins} {PRONOUN/p_l/poss} training, {PRONOUN/p_l/subject} {VERB/p_l/round/rounds} a corner and {VERB/p_l/find/finds} r_c0 doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c0/object}. While Clanmates will do better training together, r_c0 just rubs {PRONOUN/p_l/object} the wrong way."
         ],
         "decline_text": [
@@ -3074,7 +3074,7 @@
         },
         "chance_of_success": 75,
         "patrol_art": "train_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l sees a pod of dolphins swimming in the distance and considers it a good learning opportunity for the apprentices."
         ],
         "decline_text": [
@@ -3164,7 +3164,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "nessie_INTRO",
-        "intro_text": [
+        "intro_strings": [
             "As the cats move along the shoreline, they spot something massive moving beneath the water."
         ],
         "decline_text": [
@@ -3221,7 +3221,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "halloween/hal_lovelandfrog",
-        "intro_text": [
+        "intro_strings": [
             "p_l waves r_c0 over with {PRONOUN/p_l/poss} tail. What's <i>that</i>?!"
         ],
         "decline_text": [
@@ -3288,7 +3288,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "train_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol takes a break to bask, p_l begins a story. Once upon a time, many seasons ago, there was a strong, sleek-furred warrior, for whom swimming was easier than walking..."
         ],
         "decline_text": [
@@ -3405,7 +3405,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": [
+        "intro_strings": [
             "p_l notices r_c1 fall awkwardly again and calls a halt to the lesson, saying they all need to catch their breath. Instead, p_l will tell the apprentices about the Fox Warrior — have they heard this piece of Clan history?"
         ],
         "decline_text": [
@@ -3511,7 +3511,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/bch_train_session1_ApWr",
-        "intro_text": [
+        "intro_strings": [
             "After a fishing lesson, the apprentices look soggy and sorry for themselves. p_l waves {PRONOUN/p_l/poss} tail to suggest they stop for a moment and take a break. After all, even Maowi had to work hard to fish!"
         ],
         "decline_text": [
@@ -3626,7 +3626,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": [
+        "intro_strings": [
             "The sun splashes orange, yellow, and gold across the sea where it meets the horizon. The seagulls call in the distance, rising on the last thermals of the day, as p_l begins the myth of How Maowi Slowed The Sun."
         ],
         "decline_text": [
@@ -3720,7 +3720,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": [
+        "intro_strings": [
             "The heartbeat of the tides, in and out like breathing, might at first seem connected to the spirit of the land, p_l says. But that's wrong."
         ],
         "decline_text": [
@@ -3851,7 +3851,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "train_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l suggests to r_c0 that it is the perfect weather to go for a swim in the ocean together."
         ],
         "decline_text": [

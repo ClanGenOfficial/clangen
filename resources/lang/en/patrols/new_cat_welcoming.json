@@ -14,7 +14,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_newcat_Ln",
-        "intro_text": [
+        "intro_strings": [
             "The patrol finds a loner who is interested in joining the Clan. They banter with the cat a bit, making them feel more welcome."
         ],
         "decline_text": [
@@ -237,7 +237,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_newcat_Ln",
-        "intro_text": [
+        "intro_strings": [
             "The patrol finds a pair of cats interested in joining the Clan."
         ],
         "decline_text": [
@@ -1429,7 +1429,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_running_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "p_l and r_c0 head to the outer border, near some Twoleg nests. {PRONOUN/p_l/subject/CAP} {VERB/p_l/signal/signals} silently for r_c0 to stop when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} some commotion. Together, they peep from the bushes and see two kittypets locked in argument."
         ],
         "decline_text": [
@@ -2689,7 +2689,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_newcat_Ln",
-        "intro_text": [
+        "intro_strings": [
             "p_l finds a loner who is interested in joining the Clan. {PRONOUN/p_l/subject/CAP} {VERB/p_l/banter/banters} with the cat a bit, making them feel more welcome."
         ],
         "decline_text": [
@@ -2911,7 +2911,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_newcat_Kp",
-        "intro_text": [
+        "intro_strings": [
             "The patrol finds a kittypet who is interested in joining the Clan. They banter with the cat a bit, making them feel more welcome."
         ],
         "decline_text": [
@@ -3090,7 +3090,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l finds a kittypet who is interested in joining the Clan. {PRONOUN/p_l/subject/CAP} {VERB/p_l/banter/banters} with the cat a bit, making them feel more welcome."
         ],
         "decline_text": [
@@ -3272,7 +3272,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_newcatthunderpath_LnWr",
-        "intro_text": [
+        "intro_strings": [
             "r_c0 finds a wounded cat near the Thunderpath."
         ],
         "decline_text": [
@@ -3444,7 +3444,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_newcatthunderpath_LnWr",
-        "intro_text": [
+        "intro_strings": [
             "p_l finds a wounded cat near the Thunderpath."
         ],
         "decline_text": [
@@ -3620,7 +3620,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "In the middle of remarking the border, p_l finds a distinct scent trail has crossed it."
         ],
         "decline_text": [
@@ -3978,7 +3978,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Padding along the border, p_l checks once... twice... three times... and crosses over c_n's markers, venturing beyond into unclaimed land."
         ],
         "decline_text": [
@@ -4522,7 +4522,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_newkit_Kt",
-        "intro_text": [
+        "intro_strings": [
             "r_c0 finds an abandoned kit whose parents are nowhere to be found."
         ],
         "decline_text": [
@@ -4636,7 +4636,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_newkit_Kt",
-        "intro_text": [
+        "intro_strings": [
             "p_l finds an abandoned kit whose parents are nowhere to be found."
         ],
         "decline_text": [
@@ -4753,7 +4753,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_newmed2_Ln",
-        "intro_text": [
+        "intro_strings": [
             "r_c0 finds a loner offering healing skills in exchange for shelter."
         ],
         "decline_text": [
@@ -4991,7 +4991,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_newmed2_Ln",
-        "intro_text": [
+        "intro_strings": [
             "p_l finds a loner offering healing skills in exchange for shelter."
         ],
         "decline_text": [
@@ -5219,7 +5219,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_dogchase_Ln",
-        "intro_text": [
+        "intro_strings": [
             "The patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!"
         ],
         "decline_text": [
@@ -5449,7 +5449,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush."
         ],
         "decline_text": [
@@ -5888,7 +5888,7 @@
         },
         "chance_of_success": 45,
         "patrol_art": "cat_sprites/gen_med_rescue_Mc",
-        "intro_text": [
+        "intro_strings": [
             "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
         ],
         "decline_text": [
@@ -6097,7 +6097,7 @@
         },
         "chance_of_success": 45,
         "patrol_art": "cat_sprites/gen_med_rescue_Mc",
-        "intro_text": [
+        "intro_strings": [
             "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
         ],
         "decline_text": [
@@ -6324,7 +6324,7 @@
         },
         "chance_of_success": 45,
         "patrol_art": "cat_sprites/gen_med_rescue_Mc",
-        "intro_text": [
+        "intro_strings": [
             "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
         ],
         "decline_text": [
@@ -6537,7 +6537,7 @@
         },
         "chance_of_success": 45,
         "patrol_art": "cat_sprites/gen_med_rescue_Mc",
-        "intro_text": [
+        "intro_strings": [
             "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
         ],
         "decline_text": [
@@ -6744,7 +6744,7 @@
         },
         "chance_of_success": 45,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
         ],
         "decline_text": [
@@ -6963,7 +6963,7 @@
         },
         "chance_of_success": 45,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
         ],
         "decline_text": [
@@ -7193,7 +7193,7 @@
         ],
         "chance_of_success": 40,
         "patrol_art": "backgrounds/fst_twolegplace",
-        "intro_text": [
+        "intro_strings": [
             "The patrol approaches a Twoleg nest in the woods while hunting."
         ],
         "decline_text": [
@@ -7509,7 +7509,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol is checking the border lines, they hear the traipse of pawsteps through the territory."
         ],
         "decline_text": [
@@ -7779,7 +7779,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The patrol is checking along the border lines when they hear a startling sound: a hiss of pain. They quickly follow the sound to the source. It's a loner, one who appears to be injured."
         ],
         "decline_text": [
@@ -8063,7 +8063,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l is checking along the border lines when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a startling sound: a hiss of pain. {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/follow/follows} the sound to the source. It's a loner, one who appears to be injured."
         ],
         "decline_text": [
@@ -8348,7 +8348,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "It's a cold day in c_n's territory, and p_l is the only cat stepping out. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} by {PRONOUN/p_l/self} when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a cat screaming for help."
         ],
         "decline_text": [
@@ -8604,7 +8604,7 @@
         },
         "chance_of_success": 85,
         "patrol_art": "cat_sprites/gen_bord_rescue_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol hears desperate screams coming from a nearby lake."
         ],
         "decline_text": [
@@ -8852,7 +8852,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The patrol comes across a o_c_n apprentice, waiting quietly at the border. When the apprentice notices the patrol, they press themself to the ground, begging to join c_n."
         ],
         "decline_text": [
@@ -9137,7 +9137,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "train_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l is out doing some solo training when {PRONOUN/p_l/subject} suddenly {VERB/p_l/spot/spots} another cat around {PRONOUN/p_l/poss} age."
         ],
         "decline_text": [
@@ -9946,7 +9946,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_med_GL_gatheringgoldenrod_Ln",
-        "intro_text": [
+        "intro_strings": [
             "p_l hears rustling in the grass. Initially annoyed at whatever apprentice has decided to come play in the borderlands, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} shocked when the flowering grass parts to reveal an outsider, who grins flirtatiously at p_l and offers a cocksure greeting."
         ],
         "decline_text": [

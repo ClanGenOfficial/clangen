@@ -33,7 +33,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": [
+        "intro_strings": [
             "p_l leads the patrol out to a promontory of rock, pointing out the Twoleg monsters crowding the sandy shoreline below as they twinkle in the sunlight."
         ],
         "decline_text": [
@@ -138,7 +138,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_heat_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "This is just oppressive. The sand burns the patrol's paws as they dart from one refuge of dune-bush to another, the distant training grounds they were supposed to go to looking more and more out of reach."
         ],
         "decline_text": [
@@ -277,7 +277,7 @@
         },
         "chance_of_success": 65,
         "patrol_art": "backgrounds/bch_pawprints",
-        "intro_text": [
+        "intro_strings": [
             "While wading through the damp mud behind {PRONOUN/r_c1/poss} mentor, r_c1 wonders where the ocean went. p_l explains that the tide flows out far here, twice a day, leaving behind this landscape of soft, algae-rich silt stretching to the far horizon. Seabirds, probing the mud for cockles and clams, startle into flight at the cats' approach."
         ],
         "decline_text": [

@@ -47,7 +47,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The sun is hot on r_c's pelt as {PRONOUN/r_c0/subject} {VERB/r_c0/follow/follows} p_l to what's apparently a 'really good spot' for herbs. r_c0 doesn't know what makes one spot better than any other, but {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} just happy to have the chance to help p_l. As p_l dives into the greenery, as enthusiastic as any proud hunter, a brilliant yellow and black butterfly lands right on {PRONOUN/p_l/poss} raised butt."
         ],
         "decline_text": [
@@ -184,7 +184,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l is on a mission to find herbs. {PRONOUN/p_l/subject/CAP} {VERB/p_l/know/knows} a nice place where mullein grows in a grassy clearing, and it's always good to have some on paw for coughs and sore throats."
         ],
         "decline_text": [
@@ -264,7 +264,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l sets off to find the bulbs of a corpse lily, so that r_c1 can learn both risk and reward."
         ],
         "decline_text": [

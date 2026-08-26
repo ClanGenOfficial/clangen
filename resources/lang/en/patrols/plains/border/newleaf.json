@@ -19,7 +19,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/pln_train_session1_ApWr",
-        "intro_text": [
+        "intro_strings": [
             "Here on the plains, the reaches of c_n's territory are vast, particularly in the direction p_l and {PRONOUN/p_l/poss} patrol are heading, where there is endless grass but no permanent water sources. Still, with the grass at it's newleaf minimum, they can see where they're going."
         ],
         "decline_text": [
@@ -248,7 +248,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_bord_dogscent_Wr",
-        "intro_text": [
+        "intro_strings": [
             "Padding along the border, the cats find fresh coyote scat being washed away by the rain. There's a yip in the distance."
         ],
         "decline_text": [
@@ -899,7 +899,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "cat_sprites/gen_bord_dogscent_Wr",
-        "intro_text": [
+        "intro_strings": [
             "Approaching the border, the patrol stops in their tracks. A coyote has marked over c_n's border markings — so recently that it stinks from several fox-lengths away, so recently that the canine might be still here, hiding in the misty morning haze."
         ],
         "decline_text": [

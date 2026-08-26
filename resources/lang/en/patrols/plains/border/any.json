@@ -16,7 +16,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues burst from the long grass! An ambush!"
         ],
         "decline_text": [
@@ -218,7 +218,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues burst from the long grass! An ambush!"
         ],
         "decline_text": [
@@ -384,7 +384,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues stride out of the long grass to confront the Clan cats!"
         ],
         "decline_text": [
@@ -635,7 +635,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_bord_trackrogue_WrRg",
-        "intro_text": [
+        "intro_strings": [
             "While on patrol, p_l notices some suspicious pawprints in the mud by the short grass."
         ],
         "decline_text": [
@@ -1052,7 +1052,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_bord_trackrogue_WrRg",
-        "intro_text": [
+        "intro_strings": [
             "While on patrol, p_l notices some suspicious pawprints in the mud by the short grass."
         ],
         "decline_text": [
@@ -1252,7 +1252,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_bord_trackrogue_WrRg",
-        "intro_text": [
+        "intro_strings": [
             "While on patrol, r_c0 notices some suspicious pawprints in the mud by the short grass."
         ],
         "decline_text": [
@@ -1849,7 +1849,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_bord_trackrogue_WrRg",
-        "intro_text": [
+        "intro_strings": [
             "While on patrol, r_c1 notices some suspicious pawprints in the mud by the short grass."
         ],
         "decline_text": [
@@ -2270,7 +2270,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": [
+        "intro_strings": [
             "On {PRONOUN/r_c0/poss} way to mark the far corners of {PRONOUN/r_c0/poss} plains, r_c0 starts telling a story of {PRONOUN/r_c0/poss} ancestors to keep every cat entertained."
         ],
         "decline_text": [
@@ -2510,7 +2510,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "halloween/hal_fresno",
-        "intro_text": [
+        "intro_strings": [
             "This is just weird — what's made the grass here grow to such a uniform low height? Why is it so green? Why has it grown in such a neat circle?"
         ],
         "decline_text": [
@@ -2567,7 +2567,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "halloween/hal_UFO",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol moves through the grass just after sunset, two moons rise in the sky..."
         ],
         "decline_text": [
@@ -2648,7 +2648,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": [
+        "intro_strings": [
             "As the cats remark the border, p_l asks if they remember the tale of the beautiful molly and the monstrous tom. Once upon a time, the mighty tom of the plains found a beautiful molly on the border of his lands, skinny and trembling..."
         ],
         "decline_text": [
@@ -2855,7 +2855,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The patrol catches the scent of a fox — but is it red or swift?"
         ],
         "decline_text": [
@@ -3364,7 +3364,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_hunt_funrun/ApAp",
-        "intro_text": [
+        "intro_strings": [
             "The apprentices are at the border — not exactly a patrol they were sent on. Not exactly a patrol they're supposed to do without a warrior, actually. Anyway, is that a tunnel entrance over there?"
         ],
         "decline_text": [
@@ -4015,7 +4015,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_hunt_funrun_Ap",
-        "intro_text": [
+        "intro_strings": [
             "p_l's ears swivel back and forth, pressing flat against {PRONOUN/p_l/poss} head every so often as {PRONOUN/p_l/poss} emotions slip through. With fur bristled out to full puff and freezing at every rustle in the grass, {PRONOUN/p_l/subject} nevertheless {VERB/p_l/pad/pads} the border alone. A strange mismash of shadows catches {PRONOUN/p_l/poss} eye. Is that a tunnel entrance?"
         ],
         "decline_text": [
@@ -4397,7 +4397,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/pln_bord_tunnel_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l is on high alert as {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} along the border — after all, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} here alone. But out of the corner of {PRONOUN/p_l/poss} eye, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a weird splash of shadows in a dip in the grass. Is that a burrow entrance?"
         ],
         "decline_text": [
@@ -4732,7 +4732,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/pln_bord_tunnel_Wr",
-        "intro_text": [
+        "intro_strings": [
             "Trotting along the track that marks the border with r_c1, p_l spots the entrance to an unfamiliar hole in the ground."
         ],
         "decline_text": [
@@ -5689,7 +5689,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/pln_bord_tunnel_Wr",
-        "intro_text": [
+        "intro_strings": [
             "While on a dawn patrol, with the sun still hugging the distant horizon, p_l finds an opening to what seems to be a new set of tunnels."
         ],
         "decline_text": [
@@ -6241,7 +6241,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_running_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The wind rustles through the grass peacefully. As p_l checks the next border marking, that peace is broken with a squeak and a muffled thump behind {PRONOUN/p_l/object}."
         ],
         "decline_text": [
@@ -6858,7 +6858,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/pln_bord_tunnel_Wr",
-        "intro_text": [
+        "intro_strings": [
             "Patrolling the border and updating the markings, r_c0 calls out to the rest of the patrol, making p_l stand up on {PRONOUN/p_l/poss} hind legs to peek over the grass. r_c0 has found an opening to what seems to be a new set of tunnels."
         ],
         "decline_text": [
@@ -7501,7 +7501,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_bord_dogscent_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l is out on a clear night, enjoying the starlight twinkling above, when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} across the fresh scent of a coyote. Dangerous — not just to p_l, but to all of c_n."
         ],
         "decline_text": [

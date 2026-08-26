@@ -16,7 +16,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_angrycat_Rg",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues bursts from the bushes! An ambush!"
         ],
         "decline_text": [
@@ -218,7 +218,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_angrycat_Rg",
-        "intro_text": [
+        "intro_strings": [
             "As p_l is marking the border lines, a gang of rogues bursts from the bushes! An ambush!"
         ],
         "decline_text": [
@@ -384,7 +384,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_angrycat_Rg",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues strides out of the brush, challenging the Clan cats."
         ],
         "decline_text": [
@@ -638,7 +638,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "backgrounds/fst_sett",
-        "intro_text": [
+        "intro_strings": [
             "p_l has heard rumors that a badger is denning in a certain part of c_n territory."
         ],
         "decline_text": [
@@ -877,7 +877,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "backgrounds/fst_sett",
-        "intro_text": [
+        "intro_strings": [
             "The patrol discusses the rumors they've been hearing that a badger is denning in a certain part of c_n territory."
         ],
         "decline_text": [
@@ -1161,7 +1161,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "backgrounds/gen_pawprints",
-        "intro_text": [
+        "intro_strings": [
             "While on patrol, p_l notices some suspicious pawprints in the mud beneath the canopy."
         ],
         "decline_text": [
@@ -1446,7 +1446,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "backgrounds/gen_pawprints",
-        "intro_text": [
+        "intro_strings": [
             "While on patrol, p_l notices some suspicious pawprints in the mud beneath the canopy."
         ],
         "decline_text": [
@@ -1587,7 +1587,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/gen_pawprints",
-        "intro_text": [
+        "intro_strings": [
             "While on patrol, r_c0 notices some suspicious pawprints in the mud beneath the canopy."
         ],
         "decline_text": [
@@ -2066,7 +2066,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/gen_pawprints",
-        "intro_text": [
+        "intro_strings": [
             "While on patrol, r_c1 notices some suspicious pawprints in the mud beneath the canopy."
         ],
         "decline_text": [
@@ -2309,7 +2309,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/gen_pawprints",
-        "intro_text": [
+        "intro_strings": [
             "While on patrol, r_c0 notices some suspicious pawprints in the mud beneath the canopy."
         ],
         "decline_text": [
@@ -2616,7 +2616,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/gen_pawprints",
-        "intro_text": [
+        "intro_strings": [
             "While on patrol, r_c1 notices some suspicious pawprints in the mud beneath the canopy."
         ],
         "decline_text": [
@@ -2752,7 +2752,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": [
+        "intro_strings": [
             "On their way to mark the far corners of their forest territory, p_l starts telling a story of their ancestors to keep every cat entertained."
         ],
         "decline_text": [
@@ -2978,7 +2978,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_bord_dog_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l tracks the scent of a large dog, wandering along the edge of the Clan's territory."
         ],
         "decline_text": [
@@ -3194,7 +3194,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_dogscent_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol tracks the scent of a large dog, wandering along the edge of the Clan's territory."
         ],
         "decline_text": [
@@ -3982,7 +3982,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_smalldog_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "p_l comes across a small dog."
         ],
         "decline_text": [
@@ -4141,7 +4141,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_smalldog_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol comes across a small dog, right on the border of c_n territory."
         ],
         "decline_text": [
@@ -4332,7 +4332,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The patrol catches the scent of a fox, but is it red or gray?"
         ],
         "decline_text": [
@@ -4896,7 +4896,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The patrol catches the scent of a fox, but is it red or gray?"
         ],
         "decline_text": [
@@ -5390,7 +5390,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hal/flatwoods",
-        "intro_text": [
+        "intro_strings": [
             "Padding through the forest at night on a dare, the apprentices gasp as light streaks across the sky. A StarClan cat has fallen!"
         ],
         "decline_text": [
@@ -5457,7 +5457,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hal/bigfoot",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol pads along the border, r_c0 nearly topples over, falling into a footprint twice as wide and three times as long as {PRONOUN/r_c0/subject} {VERB/r_c0/are/is}."
         ],
         "decline_text": [
@@ -5502,7 +5502,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hal/doverdemon",
-        "intro_text": [
+        "intro_strings": [
             "As p_l is out alone, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} something out of the corner of {PRONOUN/p_l/poss} eye; spindly, long, and partially hidden by the undergrowth of the forest."
         ],
         "decline_text": [
@@ -5565,7 +5565,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "backgrounds/fst_canopy",
-        "intro_text": [
+        "intro_strings": [
             "Through a copse of narrow trees p_l sees a robust figure and flicks {PRONOUN/p_l/poss} tail to alert the patrol to stop. A bear is nearby, though what kind is unclear; its pelt color is distorted by the shaded canopy."
         ],
         "decline_text": [

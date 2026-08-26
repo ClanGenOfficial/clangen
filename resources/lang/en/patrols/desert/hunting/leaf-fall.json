@@ -27,7 +27,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The sun beats down on the desert, driving every creature away from its gaze with blinding heat."
         ],
         "decline_text": [
@@ -145,7 +145,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The sun beats down on the desert, driving every creature away from its gaze with blinding heat."
         ],
         "decline_text": [
@@ -260,7 +260,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The patrol spots a swift fox in the distance, behaving weirdly."
         ],
         "decline_text": [

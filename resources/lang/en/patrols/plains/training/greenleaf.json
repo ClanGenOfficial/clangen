@@ -36,7 +36,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_heat_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "Ugh. r_c0 loves the plains, but the baking hot sun isn't its best look."
         ],
         "decline_text": [

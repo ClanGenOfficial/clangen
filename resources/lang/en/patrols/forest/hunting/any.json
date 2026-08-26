@@ -19,7 +19,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "animals/animals/animals/fst_porcupinedanger1",
-        "intro_text": [
+        "intro_strings": [
             "r_c0 encounters a porcupine, bristling with quills."
         ],
         "decline_text": [
@@ -249,7 +249,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "animals/animals/animals/fst_porcupinedanger1",
-        "intro_text": [
+        "intro_strings": [
             "p_l encounters a porcupine, bristling with quills."
         ],
         "decline_text": [
@@ -438,7 +438,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "While hunting, p_l comes across a rabbit burrow."
         ],
         "decline_text": [
@@ -486,7 +486,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/fst_twolegplace",
-        "intro_text": [
+        "intro_strings": [
             "The patrol approaches a Twoleg nest in the woods while hunting."
         ],
         "decline_text": [
@@ -608,7 +608,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "backgrounds/fst_twolegplace",
-        "intro_text": [
+        "intro_strings": [
             "The patrol approaches a Twoleg nest in the woods while hunting."
         ],
         "decline_text": [
@@ -749,7 +749,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "animals/fst_squirrelchase",
-        "intro_text": [
+        "intro_strings": [
             "The patrol notices a commotion and finds two squirrels chasing each other across the forest floor."
         ],
         "decline_text": [
@@ -971,7 +971,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol hears distant howling and wonders whether to investigate the noise."
         ],
         "decline_text": [
@@ -1245,7 +1245,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol hears distant howling and wonders whether to investigate the noise."
         ],
         "decline_text": [
@@ -1475,7 +1475,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l hears distant howling and wonders whether to investigate the noise."
         ],
         "decline_text": [
@@ -1623,7 +1623,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol hears distant howling and wonders whether to investigate the noise."
         ],
         "decline_text": [
@@ -1853,7 +1853,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol hears distant howling and wonders whether to investigate the noise."
         ],
         "decline_text": [
@@ -2061,7 +2061,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "cat_sprites/fst_hunt_howl_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l hears distant howling and wonders whether to investigate the noise."
         ],
         "decline_text": [
@@ -2205,7 +2205,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol looks around for something to disguise their scent while hunting."
         ],
         "decline_text": [
@@ -2375,7 +2375,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l looks around for something to disguise their scent while hunting."
         ],
         "decline_text": [
@@ -2534,7 +2534,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/fst_canopy",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out into the forest alone, wanting to sink {PRONOUN/p_l/poss} teeth into some prey and have some time to {PRONOUN/p_l/self}."
         ],
         "decline_text": [
@@ -2680,7 +2680,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/fst_canopy",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out into the forest alone, wanting to sink {PRONOUN/p_l/poss} teeth into some prey and have some time to {PRONOUN/p_l/self}."
         ],
         "decline_text": [
@@ -2826,7 +2826,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/fst_canopy",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out into the forest alone, wanting to sink {PRONOUN/p_l/poss} teeth into some prey and have some time to {PRONOUN/p_l/self}."
         ],
         "decline_text": [
@@ -2968,7 +2968,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush."
         ],
         "decline_text": [
@@ -3144,7 +3144,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/fst_twolegplace",
-        "intro_text": [
+        "intro_strings": [
             "p_l decides to hunt out near the Twoleg dens."
         ],
         "decline_text": [
@@ -3400,7 +3400,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/fst_twolegplace",
-        "intro_text": [
+        "intro_strings": [
             "p_l decides to hunt out near the Twoleg dens."
         ],
         "decline_text": [
@@ -3567,7 +3567,7 @@
         ],
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_hunt_twolegdencatdare_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "{PRONOUN/r_c0/poss/CAP} eyes daring p_l to say no, r_c0 suggests hunting by the Twoleg dens."
         ],
         "decline_text": [
@@ -3866,7 +3866,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/fst_hunt_gonetwolegtrap_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The smell of food lures p_l into what looks like a tunnel between some bushes."
         ],
         "decline_text": [
@@ -4022,7 +4022,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/fst_hunt_gonetwolegtrap_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The smell of food lures r_c0 into what looks like a tunnel between some bushes."
         ],
         "decline_text": [
@@ -4191,7 +4191,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_funrun_Wr",
-        "intro_text": [
+        "intro_strings": [
             "As p_l tears through the forest, stretching {PRONOUN/p_l/poss} legs on a run, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} movement out of the corner of {PRONOUN/p_l/poss} eye."
         ],
         "decline_text": [
@@ -4275,7 +4275,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_funrun_Ap",
-        "intro_text": [
+        "intro_strings": [
             "As p_l tears through the forest, stretching {PRONOUN/p_l/poss} legs on a run, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} movement out of the corner of {PRONOUN/p_l/poss} eye."
         ],
         "decline_text": [
@@ -4366,7 +4366,7 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_funrun_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "As r_c0 tears through the forest with p_l, stretching {PRONOUN/r_c0/poss} legs on a run, {PRONOUN/r_c0/subject} {VERB/r_c0/spot/spots} movement out of the corner of {PRONOUN/r_c0/poss} eye."
         ],
         "decline_text": [
@@ -4573,7 +4573,7 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_funrun_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "As r_c1 tears through the forest with p_l, stretching {PRONOUN/r_c1/poss} legs on a run, {PRONOUN/r_c1/subject} {VERB/r_c1/spot/spots} movement out of the corner of {PRONOUN/r_c1/poss} eye."
         ],
         "decline_text": [
@@ -4701,7 +4701,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_lizard_Wr",
-        "intro_text": [
+        "intro_strings": [
             "Something skitters across the leaf litter, catching the patrol's eyes. A little lizard!"
         ],
         "decline_text": [
@@ -4930,7 +4930,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_lizard_Wr",
-        "intro_text": [
+        "intro_strings": [
             "Something skitters across the leaf litter, catching the patrol's eyes. A little lizard!"
         ],
         "decline_text": [
@@ -5058,7 +5058,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "animals/fst_vole",
-        "intro_text": [
+        "intro_strings": [
             "The patrol comes across a vole nibbling at a seed."
         ],
         "decline_text": [
@@ -5172,7 +5172,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol catches scent of a mouse nearby."
         ],
         "decline_text": [
@@ -5247,7 +5247,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol comes across a mouse."
         ],
         "decline_text": [
@@ -5346,7 +5346,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_rat_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol comes across a large rat."
         ],
         "decline_text": [
@@ -5487,7 +5487,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "gen_hunt_bird",
-        "intro_text": [
+        "intro_strings": [
             "The patrol comes across a bird that's occupied scratching at the ground for insects."
         ],
         "decline_text": [
@@ -5554,7 +5554,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree."
         ],
         "decline_text": [
@@ -5625,7 +5625,7 @@
         },
         "chance_of_success": 25,
         "patrol_art": "cat_sprites/gen_anxiouslookup_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol hears a lot of barking and commotion."
         ],
         "decline_text": [
@@ -5762,7 +5762,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/fst_hunt_gonetwolegtrap_Wr",
-        "intro_text": [
+        "intro_strings": [
             "As they wander, searching for prey, p_l finds something far more dangerous, and calls the rest of the patrol over for a lesson."
         ],
         "decline_text": [
@@ -5879,7 +5879,7 @@
         "chance_of_success": 40,
         "patrol_art": "animals/fst_redfoxscavenge_EXPLICIT",
         "patrol_art_clean": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The patrol catches the scent of a fox, but is it red or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it."
         ],
         "decline_text": [
@@ -6461,7 +6461,7 @@
         "chance_of_success": 70,
         "patrol_art": "animals/fst_foxgrayscavenge_EXPLICIT",
         "patrol_art_clean": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The patrol catches the scent of a fox, but is it red or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size."
         ],
         "decline_text": [
@@ -7045,7 +7045,7 @@
         ],
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_appsiblings_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "The two siblings head out together, declaring a friendly competition to stock the fresh-kill pile. They're going to prove themselves!"
         ],
         "decline_text": [
@@ -7357,7 +7357,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The clouds are out, making the world murky. And just like the clouds, r_c1 and {PRONOUN/r_c1/poss} littermate are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!"
         ],
         "decline_text": [
@@ -7546,7 +7546,7 @@
         ],
         "chance_of_success": 40,
         "patrol_art": "gen_app_siblings",
-        "intro_text": [
+        "intro_strings": [
             "The siblings head out together, declaring a friendly competition to stock the fresh-kill pile. They're going to prove themselves!"
         ],
         "decline_text": [
@@ -7813,7 +7813,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The clouds are out, making the world murky. And just like the clouds, r_c1 and {PRONOUN/r_c1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!"
         ],
         "decline_text": [
@@ -8013,7 +8013,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "r_c1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/r_c1/subject} {VERB/r_c1/do/does}. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn?"
         ],
         "decline_text": [
@@ -8233,7 +8233,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As they wander through the forest, p_l awkwardly asks r_c1 how {PRONOUN/r_c1/subject} {VERB/r_c1/think/thinks} {PRONOUN/r_c1/poss} training is going."
         ],
         "decline_text": [
@@ -8424,7 +8424,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "r_c1 bounds out of camp, determined to show off to p_l!"
         ],
         "decline_text": [
@@ -8630,7 +8630,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "r_c1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/r_c1/subject} {VERB/r_c1/do/does}. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn?"
         ],
         "decline_text": [
@@ -8850,7 +8850,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "r_c1 bounds out of camp, determined to show off to {PRONOUN/r_c1/poss} older siblings!"
         ],
         "decline_text": [
@@ -9045,7 +9045,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Sometimes, it's just nice to hang out with {PRONOUN/r_c0/poss} sibling. The weather is perfect for a great hunt together!"
         ],
         "decline_text": [
@@ -9337,7 +9337,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The sun's out, and r_c0 has been assigned a moderately tolerable hunting partner — {PRONOUN/r_c0/poss} sibling!"
         ],
         "decline_text": [
@@ -9543,7 +9543,7 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The hunting patrol heads out early, before the sun has cleared the treeline."
         ],
         "decline_text": [
@@ -9714,7 +9714,7 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "backgrounds/fst_canopy",
-        "intro_text": [
+        "intro_strings": [
             "The siblings head out to one of the further hunting grounds of the forest, in the shade of the oldest trees."
         ],
         "decline_text": [
@@ -9872,7 +9872,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Sometimes, r_c0 enjoys just hanging out with {PRONOUN/r_c0/poss} siblings. The weather is perfect for a great hunt together!"
         ],
         "decline_text": [
@@ -10164,7 +10164,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The sun's out, and r_c0 has been assigned a moderately tolerable hunting patrol — {PRONOUN/r_c0/poss} siblings!"
         ],
         "decline_text": [
@@ -10370,7 +10370,7 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "backgrounds/fst_canopy",
-        "intro_text": [
+        "intro_strings": [
             "The siblings head out to one of the further hunting grounds of the forest, in the shade of the oldest trees."
         ],
         "decline_text": [
@@ -10522,7 +10522,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "halloween/hal_flatwoods",
-        "intro_text": [
+        "intro_strings": [
             "Padding through the forest at night on a dare, the apprentices gasp as light streaks across the sky. A StarClan cat has fallen!"
         ],
         "decline_text": [
@@ -10586,7 +10586,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "halloween/hal_doverdemon",
-        "intro_text": [
+        "intro_strings": [
             "As p_l is out alone, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} something out of the corner of {PRONOUN/p_l/poss} eye: spindly, long, and partially hidden by the undergrowth of the forest."
         ],
         "decline_text": [
@@ -10644,7 +10644,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l finds a patch of herbs that {PRONOUN/p_l/subject} {VERB/p_l/believe/believes} c_n might need for their stores. {PRONOUN/p_l/subject/CAP} freely {VERB/p_l/admit/admits} to {PRONOUN/p_l/poss} patrol {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't a medicine cat, and {VERB/p_l/ask/asks} {PRONOUN/p_l/poss} companions' advice. What do they know about this herb's properties?"
         ],
         "decline_text": [

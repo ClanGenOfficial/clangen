@@ -13,7 +13,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l tracks the scent of a large dog along the edge of the Clan's territory."
         ],
         "decline_text": [
@@ -228,7 +228,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The patrol tracks the scent of a large dog along the edge of the Clan's territory."
         ],
         "decline_text": [
@@ -1003,7 +1003,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l comes across a small dog."
         ],
         "decline_text": [
@@ -1177,7 +1177,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The patrol comes across a small dog right on the border of c_n territory."
         ],
         "decline_text": [
@@ -1344,7 +1344,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The patrol comes across a small dog right on the border of c_n territory."
         ],
         "decline_text": [
@@ -1514,7 +1514,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l and {PRONOUN/p_l/poss} patrol pad through the territory, blinking against the sudden gusts of wind, when they hear a sound that makes them all freeze... a chorus of squeaks and yips that sound a bit <i>too</i> close."
         ],
         "decline_text": [

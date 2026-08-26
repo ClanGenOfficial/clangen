@@ -16,7 +16,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_vision_Wr",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol spreads out to hunt, r_c0 admits {PRONOUN/r_c0/subject} {VERB/r_c0/think/thinks} {PRONOUN/r_c0/subject} had a vision from StarClan last night."
         ],
         "decline_text": [
@@ -348,7 +348,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_vision_Wr",
-        "intro_text": [
+        "intro_strings": [
             "As {PRONOUN/p_l/subject} {VERB/p_l/head/heads} out to hunt, p_l thinks about the dream {PRONOUN/p_l/subject} had last night... was it sent by StarClan?"
         ],
         "decline_text": [
@@ -500,7 +500,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_sneakprey_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l is tempted to eat the prey {PRONOUN/p_l/subject} just caught."
         ],
         "decline_text": [
@@ -626,7 +626,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_sneakprey_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l is tempted to eat the prey {PRONOUN/p_l/subject} just caught."
         ],
         "decline_text": [
@@ -762,7 +762,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_sneakprey_Wr",
-        "intro_text": [
+        "intro_strings": [
             "r_c0 is tempted to eat the prey {PRONOUN/r_c0/subject} just caught."
         ],
         "decline_text": [
@@ -938,7 +938,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_sneakprey_Wr",
-        "intro_text": [
+        "intro_strings": [
             "r_c1 is tempted to eat the prey {PRONOUN/r_c1/subject} just caught."
         ],
         "decline_text": [
@@ -1088,7 +1088,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol comes across a large rat. It's too busy digging around in a frozen pile of foul Twoleg crowfood to notice the approaching patrol."
         ],
         "decline_text": [
@@ -1468,7 +1468,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_fish_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol glimpses the shadow of a fish as they hunt near {POI/tag/water:flowing}."
         ],
         "decline_text": [
@@ -1536,7 +1536,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l puts {PRONOUN/p_l/poss} nose to the ground, checking for prey scent as {PRONOUN/p_l/subject} {VERB/p_l/hunt/hunts}."
         ],
         "decline_text": [
@@ -1645,7 +1645,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_crouching_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l stretches, digging {PRONOUN/p_l/poss} claws into the ground as {PRONOUN/p_l/subject} {VERB/p_l/warm/warms} up. Without needing to coordinate a group, this hunting patrol can proceed entirely at their own schedule."
         ],
         "decline_text": [
@@ -1760,7 +1760,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_solo_Wr",
-        "intro_text": [
+        "intro_strings": [
             "Sometimes it's nice to go out alone — there's nothing to distract p_l from the hunt."
         ],
         "decline_text": [
@@ -1931,7 +1931,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_crouching_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l thinks {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} found a promising hunting spot to focus on for {PRONOUN/p_l/poss} solo patrol."
         ],
         "decline_text": [
@@ -2050,7 +2050,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_solo_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l's glad to go out on a solo hunting patrol — there's an ambush spot {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been itching to try out on {PRONOUN/p_l/poss} own."
         ],
         "decline_text": [
@@ -2176,7 +2176,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_train_solo_Ap",
-        "intro_text": [
+        "intro_strings": [
             "p_l has snuck out late, timed with the last flares of the sunset, to try to hunt alone."
         ],
         "decline_text": [
@@ -2285,7 +2285,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_train_solo_Ap",
-        "intro_text": [
+        "intro_strings": [
             "Look, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} so close to perfecting {PRONOUN/p_l/poss} pounce, p_l can <i>feel</i> it. {PRONOUN/p_l/subject/CAP} head out to prove so."
         ],
         "decline_text": [
@@ -2394,7 +2394,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_train_solo_Ap",
-        "intro_text": [
+        "intro_strings": [
             "p_l is tired of being treated like {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} know anything — {PRONOUN/p_l/subject} {VERB/p_l/stalk/stalks} off to hunt alone."
         ],
         "decline_text": [
@@ -2506,7 +2506,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_train_solo_Ap",
-        "intro_text": [
+        "intro_strings": [
             "p_l doesn't want to be in the apprentices' den until {PRONOUN/p_l/poss} muzzle grays — {PRONOUN/p_l/subject} {VERB/p_l/need/needs} to prove lead_name should pay attention to {PRONOUN/p_l/object}."
         ],
         "decline_text": [
@@ -2615,7 +2615,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_train_solo_Ap",
-        "intro_text": [
+        "intro_strings": [
             "p_l nervously creeps out towards c_n's dirtplace, profile low to the ground as {PRONOUN/p_l/subject} {VERB/p_l/sneak/sneaks} out of camp. Let's see what a night hunt feels like."
         ],
         "decline_text": [
@@ -2717,7 +2717,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_train_talking_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "As they head out into c_n's territory, p_l suggests a high cover hunting ground, perfect for ambushing."
         ],
         "decline_text": [
@@ -2890,7 +2890,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_train_talking_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "The small hunting patrol heads out together."
         ],
         "decline_text": [
@@ -3113,7 +3113,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "This hunting patrol might be small, but p_l thinks {PRONOUN/p_l/subject} {VERB/p_l/know/knows} the perfect spot to take advantage of that."
         ],
         "decline_text": [
@@ -3356,7 +3356,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With a smaller hunting party, the cats are going to need to coordinate together well to succeed."
         ],
         "decline_text": [
@@ -3620,7 +3620,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Eyes glowing with the last rays of the sunset, the small hunting party heads out into the gathering dusk."
         ],
         "decline_text": [
@@ -3878,7 +3878,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "A large hunting patrol is formed and sent out to see what they can find."
         ],
         "decline_text": [
@@ -3998,7 +3998,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Honestly, it looks like a scat day to try to hunt, so the cats team up into a bigger hunting patrol, hoping that will help."
         ],
         "decline_text": [
@@ -4136,7 +4136,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_train_talking_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "The cats chat as they head out to hunt."
         ],
         "decline_text": [
@@ -4292,7 +4292,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The bigger the hunting party, the bigger the expectations for what they'll bring home to the fresh-kill pile."
         ],
         "decline_text": [
@@ -4466,7 +4466,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_train_talking_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "There's a spring in their steps as the cats head out — today looks like a good day for hunting."
         ],
         "decline_text": [
@@ -4645,7 +4645,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_train_talking_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "A hunting patrol of <i>just apprentices!</i> This is going to go great!"
         ],
         "decline_text": [
@@ -4857,7 +4857,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_train_talking_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "Maybe they <i>should</i> bring along one of their mentors, but they don't <i>want</i> to. There's no reason to always need an adult around, they aren't <i>kits</i>."
         ],
         "decline_text": [
@@ -5087,7 +5087,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_train_talking_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "On a dare, the apprentices sneak out in the middle of the night. They're going to prove who's the best hunter!"
         ],
         "decline_text": [
@@ -5316,7 +5316,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_train_talking_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "Sometimes, it's a lot easier to work on their hunting techniques without a warrior around. Not that there's anything wrong with the warriors! Just... sometimes there's less pressure hunting as an apprentice-only patrol."
         ],
         "decline_text": [
@@ -5520,7 +5520,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_train_talking_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "A hunting patrol of just apprentices! This is going to go great!"
         ],
         "decline_text": [
@@ -5723,7 +5723,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "halloween/hal_kittylion",
-        "intro_text": [
+        "intro_strings": [
             "p_l huffs in frustration when all scents of prey are drowned out by kittypet scent. {PRONOUN/p_l/subject/CAP} {VERB/p_l/follow/follows} the scent to discover a... lion? But are lions this small? And why does it smell like a kittypet?"
         ],
         "decline_text": [
@@ -5800,7 +5800,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "halloween/jumpscare_INTRO",
-        "intro_text": [
+        "intro_strings": [
             "The patrol splits up to hunt, but after a while r_c0 is nowhere to be found."
         ],
         "decline_text": [
@@ -5933,7 +5933,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "halloween/hal_scaryghost_Df",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol follows a trail into a darkly-shadowed part of the territory, night shadows begin to play with their vision. Was that movement up ahead? r_c0 spots the undisguisable silhouette of a cat ahead. Malicious eyes and bristled fur meet the patrol as they walk amongst the shadows. The stranger's fur is translucent... and it moves as though made from a strange dark mist."
         ],
         "decline_text": [
@@ -6004,7 +6004,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Hunting should be an easy task, but with p_l and r_c0 persistently rubbing each other the wrong way, one of them is bound to snap and return to camp."
         ],
         "decline_text": [
@@ -6312,7 +6312,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_speakingcat_Wr",
-        "intro_text": [
+        "intro_strings": [
             "Noticing how bored the patrol seems, r_c0 brightly suggests a hunting competition to add a bit of friendly rivalry to the outing."
         ],
         "decline_text": [
@@ -6782,7 +6782,7 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_running_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "p_l and r_c0 set out to hunt together."
         ],
         "decline_text": [
@@ -7201,7 +7201,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_funrun_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "p_l and r_c0 are delighted to go out to hunt together. Nothing like a little quality time while also helping the Clan!"
         ],
         "decline_text": [
@@ -8043,7 +8043,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "animals/gen_strangerabbit",
-        "intro_text": [
+        "intro_strings": [
             "r_c0 spots a rabbit up ahead, but it seems to be acting strange. The patrol can see its tremors from a few fox-lengths away."
         ],
         "decline_text": [
@@ -8193,7 +8193,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_burrow_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol finds a small burrow in the ground with a strange scent. p_l hesitates, unsure if this is worth checking."
         ],
         "decline_text": [
@@ -8353,7 +8353,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_hunt_burrow_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l finds a small burrow in the ground with a strange scent. {PRONOUN/p_l/subject/CAP} {VERB/p_l/hesitate/hesitates}, unsure if this is worth checking."
         ],
         "decline_text": [
@@ -8471,7 +8471,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_hunt_huntassessment_Ap",
-        "intro_text": [
+        "intro_strings": [
             "p_l's mentor assesses {PRONOUN/p_l/object} by sending {PRONOUN/p_l/object} on a solo hunt."
         ],
         "decline_text": [
@@ -8678,7 +8678,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/pln_hunt_gonetwolegtrap1_Wr",
-        "intro_text": [
+        "intro_strings": [
             "When the patrol reaches their hunting grounds, they find a swarm of Twolegs milling around."
         ],
         "decline_text": [
@@ -8877,7 +8877,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/pln_hunt_gonetwolegtrap1_Wr",
-        "intro_text": [
+        "intro_strings": [
             "When the p_l reaches {PRONOUN/p_l/poss} hunting grounds, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a swarm of Twolegs milling around."
         ],
         "decline_text": [
@@ -9057,7 +9057,7 @@
         ],
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_hunt_twolegdenappdare_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "{PRONOUN/p_l/poss/CAP} eyes daring r_c1 to say no, p_l suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed."
         ],
         "decline_text": [
@@ -9292,7 +9292,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_hunt_thunderpath_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol comes across the Thunderpath at the edge of their territory."
         ],
         "decline_text": [
@@ -9497,7 +9497,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_hunt_rabbit_Wr",
-        "intro_text": [
+        "intro_strings": [
             "A rabbit bursts out from cover, startled by the patrol."
         ],
         "decline_text": [
@@ -9763,7 +9763,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_hunt_rabbit_Wr",
-        "intro_text": [
+        "intro_strings": [
             "A rabbit bursts out from cover, startled by p_l."
         ],
         "decline_text": [
@@ -9941,7 +9941,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
-        "intro_text": [
+        "intro_strings": [
             "After a recent heavy snowfall, the patrol heads out with little hope of finding prey."
         ],
         "decline_text": [
@@ -10466,7 +10466,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "A legend has been sighted. Recently, warriors have reported sighting a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seen. Will p_l's patrol look for this legendary monster?"
         ],
         "decline_text": [

@@ -32,7 +32,7 @@
         },
         "chance_of_success": 65,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l looks at the calm, cloudless sky and decides it's a good opportunity to show r_c1 where some of the most commonly needed herbs are located in their territory, both above and below ground."
         ],
         "decline_text": [
@@ -188,7 +188,7 @@
         },
         "chance_of_success": 65,
         "patrol_art": "cat_sprites/pln_med_herblocation_Ap",
-        "intro_text": [
+        "intro_strings": [
             "p_l has been sent out into the grasslands to try to find some specific herbs alone."
         ],
         "decline_text": [
@@ -256,7 +256,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l and r_c0 take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!"
         ],
         "decline_text": [

@@ -22,7 +22,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "It is extremely hot out today, and the hunting patrol is having a hard time staying on task. r_c0 debates turning back home."
         ],
         "decline_text": [
@@ -197,7 +197,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "backgrounds/pln_twolegsobject",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol wander near a Thunderpath, they watch a Twoleg throw something from a monster. Intrigued, they wander over."
         ],
         "decline_text": [
@@ -280,7 +280,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The patrol catches the scent of a fox — but is it red or swift?"
         ],
         "decline_text": [
@@ -498,7 +498,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l stalks low to the ground, paws soft and light so as not to make a sound. {PRONOUN/p_l/poss/CAP} jaws hang open to taste at the air, and a tingle of satisfaction shoots through {PRONOUN/p_l/object} as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} a nearby ground squirrel, soaking up the warm sun."
         ],
         "decline_text": [
@@ -640,7 +640,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l has snuck out of camp alone, hoping {PRONOUN/p_l/subject}'ll find a squirrel grown lazy in the heat of greenleaf. Running through everything {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been taught in {PRONOUN/p_l/poss} head, {PRONOUN/p_l/subject} carefully {VERB/p_l/scent/scents} the air and {VERB/p_l/strain/strains} {PRONOUN/p_l/poss} ears, hoping for any hint of the burrowing critters."
         ],
         "decline_text": [
@@ -755,7 +755,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l and r_c1 sit in the plains, near a network of ground squirrel burrows. This is one of a few such networks, rotated around by mentors to teach apprentices their hunting skills. r_c1 scents the air as instructed, and points out a burrow; sure enough, there's a squirrel's head poking out the entrance, blinking in the greenleaf sun!"
         ],
         "decline_text": [
@@ -936,7 +936,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l's patrol strolls leisurely through the plains, enjoying the warmth of greenleaf. r_c0 raises {PRONOUN/r_c0/poss} tail, signaling the others to be still; {PRONOUN/r_c0/subject}{VERB/r_c0/'ve/'s} scented ground squirrels nearby."
         ],
         "decline_text": [
@@ -1125,7 +1125,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l catches scent of a mouse nearby. The grass, growing thick and lush, could easily hide a hundred."
         ],
         "decline_text": [
@@ -1231,7 +1231,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l catches scent of a mouse nearby. {PRONOUN/p_l/subject/CAP} {VERB/p_l/lash/lashes} {PRONOUN/p_l/poss} tail, wondering where in the tall grass the scent's owner could be."
         ],
         "decline_text": [
@@ -1352,7 +1352,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "r_c1 catches scent of a mouse nearby. p_l points out the little path the mouse has trod in the dirt at the base of the grass stalks — that's what it'll try to use as an escape path."
         ],
         "decline_text": [
@@ -1537,7 +1537,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_hunt_burrow_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol hears a strange sound coming from the grass. What is that? It's like... a hiss and rustle at once?"
         ],
         "decline_text": [

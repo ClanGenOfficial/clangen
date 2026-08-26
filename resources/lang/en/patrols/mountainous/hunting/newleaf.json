@@ -19,7 +19,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "It starts snowing soon after the patrol sets out, trying to bring back something for the fresh-kill pile."
         ],
         "decline_text": [
@@ -288,7 +288,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "It starts snowing soon after p_l sets out, trying to bring back something for the fresh-kill pile."
         ],
         "decline_text": [
@@ -440,7 +440,7 @@
         ],
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "It starts snowing soon after the patrol sets out, trying to bring back something for the fresh-kill pile."
         ],
         "decline_text": [
@@ -635,7 +635,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l tastes the air and perks up — there's a squirrel nearby, nibbling the delicate new plant growth near the base of a tree!"
         ],
         "decline_text": [
@@ -777,7 +777,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l scents a squirrel on the air! This could be a great chance to bring one of the first big pieces of fresh-kill home..."
         ],
         "decline_text": [
@@ -880,7 +880,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l instructs r_c1 to scent the air and nods in approval when r_c1 says {PRONOUN/r_c1/subject} {VERB/r_c1/smell/smells} squirrel. Early newleaf squirrels are always a good target — p_l softly murmurs tips to r_c1 and asks what {PRONOUN/r_c1/subject} {VERB/r_c1/want/wants} to do."
         ],
         "decline_text": [
@@ -1069,7 +1069,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/fst_hunt_gen_squirreltreetoptumble_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol walks through the wooded slopes, a loud chittering from above interrupts them. r_c0 looks up just in time to get a shower of twigs and leaves to the face, while p_l exclaims aloud when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above."
         ],
         "decline_text": [
@@ -1332,7 +1332,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol walks through the wooded slopes, r_c0 explains an idea {PRONOUN/r_c0/subject} had for squirrel hunting. It sounds a little strange, but perhaps it could work?"
         ],
         "decline_text": [

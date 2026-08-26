@@ -19,7 +19,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_jolly_Wr",
-        "intro_text": [
+        "intro_strings": [
             "It's hot out today, and the hunting patrol bounces around, infused with energy as they seek out prey."
         ],
         "decline_text": [
@@ -168,7 +168,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l tastes the air and perks up — there's a squirrel nearby, nibbling the lush plant growth near the base of a tree!"
         ],
         "decline_text": [
@@ -310,7 +310,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l scents a squirrel on the air! Greenleaf has made prey fat and unaware, so surely this will be an easy catch?"
         ],
         "decline_text": [
@@ -413,7 +413,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l instructs r_c1 to scent the air and nods in approval when r_c1 says {PRONOUN/r_c1/subject} {VERB/r_c1/smell/smells} squirrel. With greenleaf comes fatter prey that tends to stick to shady spots — p_l points out a few likely destinations the squirrel may be heading to, then softly asks r_c1 how {PRONOUN/r_c1/subject} would like to proceed."
         ],
         "decline_text": [
@@ -602,7 +602,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_hunt_gen_squirreltreetoptumble_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol walks through the wooded slopes, a loud chittering from above interrupts them. r_c0 looks up just in time to get a shower of twigs and leaves to the face, while p_l exclaims aloud when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above."
         ],
         "decline_text": [
@@ -865,7 +865,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol walks through the wooded slopes, r_c0 explains an idea {PRONOUN/r_c0/subject} had for squirrel hunting. It sounds a little strange, but perhaps it could work?"
         ],
         "decline_text": [

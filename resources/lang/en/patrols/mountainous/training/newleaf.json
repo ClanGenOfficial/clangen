@@ -27,7 +27,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "backgrounds/mtn_eagles",
-        "intro_text": [
+        "intro_strings": [
             "The cats head out into the crisp clear newleaf sun, and p_l leads them towards a massive messy eagle nest."
         ],
         "decline_text": [
@@ -353,7 +353,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/mtn_eagles",
-        "intro_text": [
+        "intro_strings": [
             "The cats head out into the crisp clear newleaf sun, and p_l leads them towards a massive messy eagle nest."
         ],
         "decline_text": [
@@ -726,7 +726,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_crouchingperplexed_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "Look at this. p_l gestures with {PRONOUN/p_l/poss} tail, calling r_c1's attention to the other side of the vast valley. In the snow, something is erupting out of a massive burrow."
         ],
         "decline_text": [

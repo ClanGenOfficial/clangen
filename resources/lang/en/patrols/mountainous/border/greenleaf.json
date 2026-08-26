@@ -19,7 +19,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_trackrogue_WrRg",
-        "intro_text": [
+        "intro_strings": [
             "While on patrol, p_l notices an unfamiliar scent. Something has left scent marks on the wrong side of the border."
         ],
         "decline_text": [
@@ -224,7 +224,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_trackrogue_WrRg",
-        "intro_text": [
+        "intro_strings": [
             "While on patrol, p_l notices an unfamiliar scent. Something has left scent marks on the wrong side of the border."
         ],
         "decline_text": [
@@ -351,7 +351,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_trackrogue_WrRg",
-        "intro_text": [
+        "intro_strings": [
             "While on patrol, r_c0 notices an unfamiliar scent. Something has left scent marks on the wrong side of the border."
         ],
         "decline_text": [
@@ -678,7 +678,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_trackrogue_WrRg",
-        "intro_text": [
+        "intro_strings": [
             "While on patrol, r_c1 notices an unfamiliar scent. Something has left scent marks on the wrong side of the border."
         ],
         "decline_text": [
@@ -884,7 +884,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_bord_trackrogue_WrRg",
-        "intro_text": [
+        "intro_strings": [
             "While on patrol, r_c0 notices an unfamiliar scent. Something has left scent marks on the wrong side of the border."
         ],
         "decline_text": [
@@ -1185,7 +1185,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_bord_trackrogue_WrRg",
-        "intro_text": [
+        "intro_strings": [
             "While on patrol, r_c0 notices an unfamiliar scent. Something has left scent marks on the wrong side of the border."
         ],
         "decline_text": [
@@ -1342,7 +1342,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "backgrounds/gen_shortswim",
-        "intro_text": [
+        "intro_strings": [
             "p_l looks at the small stream {PRONOUN/p_l/subject} {VERB/p_l/have/has} to cross to continue on to mark the border and {VERB/p_l/debate/debates} if {PRONOUN/p_l/subject} should stop for a quick swim to cool off."
         ],
         "decline_text": [

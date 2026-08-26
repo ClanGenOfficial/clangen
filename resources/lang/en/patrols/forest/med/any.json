@@ -46,7 +46,7 @@
         },
         "chance_of_success": 65,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l looks at the calm, cloudless sky, and decides it's a good opportunity to show r_c1 where some of the most commonly needed herbs are located in their territory."
         ],
         "decline_text": [
@@ -195,7 +195,7 @@
         },
         "chance_of_success": 65,
         "patrol_art": "cat_sprites/fst_med_herblocation2",
-        "intro_text": [
+        "intro_strings": [
             "p_l has been sent out into the forest to try to find specific herbs alone."
         ],
         "decline_text": [
@@ -284,7 +284,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_med_stumble_McWr",
-        "intro_text": [
+        "intro_strings": [
             "r_c0 trips over a tree root while helping p_l to collect herbs."
         ],
         "decline_text": [
@@ -664,7 +664,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_med_stumble_McMc",
-        "intro_text": [
+        "intro_strings": [
             "r_c0 trips over a tree root while out collecting herbs with p_l."
         ],
         "decline_text": [
@@ -1048,7 +1048,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_med_stumble_WrMc",
-        "intro_text": [
+        "intro_strings": [
             "p_l trips over a tree root while out collecting herbs with r_c0."
         ],
         "decline_text": [

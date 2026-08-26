@@ -42,7 +42,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_vision_McWr",
-        "intro_text": [
+        "intro_strings": [
             "A winter gale howls outside camp — today's apprentice lesson will occur in the shelter of the den. p_l gathers {PRONOUN/p_l/poss} audience close. On the longest night of leaf-bare, if a cat is unlucky, they might spot great white islands appearing out of the sea-mist."
         ],
         "decline_text": [
@@ -173,7 +173,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": [
+        "intro_strings": [
             "The waves crash outside camp, an ever present noise brought into sharp focus by their unusual power and ferocity. The wind is blocked by camp walls, but p_l's Clanmates have their fur puffed out regardless. Now isn't a good time to leave shelter."
         ],
         "decline_text": [

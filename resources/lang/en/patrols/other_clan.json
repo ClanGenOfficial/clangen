@@ -16,7 +16,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "While walking along the border, the patrol notices a o_c_n patrol renewing their scent marks up ahead."
         ],
         "decline_text": [
@@ -426,7 +426,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_bord_otherclanrabbit_Wr",
-        "intro_text": [
+        "intro_strings": [
             "r_c0 spies a fat rabbit on the other side of the o_c_n border. A tempting opportunity to be sure, but it may not be wise to hunt on a different Clan's territory."
         ],
         "decline_text": [
@@ -776,7 +776,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_med_borderherb_Mc",
-        "intro_text": [
+        "intro_strings": [
             "p_l pads along, mouth open slightly as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} for any traces of herbs. {PRONOUN/p_l/subject/CAP} {VERB/p_l/scent/scents} some raspberries nearby, but it seems that they're just over the border."
         ],
         "decline_text": [
@@ -881,7 +881,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory."
         ],
         "decline_text": [
@@ -1184,7 +1184,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As p_l is checking the border lines, they notice that a o_c_n scent has strayed into their territory."
         ],
         "decline_text": [
@@ -1391,7 +1391,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_crouching_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out onto the beach alone to check on the border."
         ],
         "decline_text": [
@@ -2151,7 +2151,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_crouching_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out into the desert alone, wanting to make a quick check on the border."
         ],
         "decline_text": [
@@ -2911,7 +2911,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_crouching_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out into the forest alone, wanting to make a quick check on the border."
         ],
         "decline_text": [
@@ -3671,7 +3671,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_crouching_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out into the mountains alone, wanting to make a quick check on the border."
         ],
         "decline_text": [
@@ -4431,7 +4431,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_crouching_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out into the grasslands alone, wanting to make a quick check on the border."
         ],
         "decline_text": [
@@ -5170,7 +5170,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out into the wetlands alone, wanting to make a quick check on the border."
         ],
         "decline_text": [
@@ -5672,7 +5672,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_train_talking_ApWr",
-        "intro_text": [
+        "intro_strings": [
             "p_l can't help but think that r_c1 has been distracted on this patrol, trailing behind and admiring any aimless distraction nearby. {PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that r_c1 could do with a <i>special</i> mission to get {PRONOUN/r_c1/object} back on track."
         ],
         "decline_text": [
@@ -6031,7 +6031,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_otherclan_OwOa",
-        "intro_text": [
+        "intro_strings": [
             "The patrol reaches o_c_n's border just as a o_c_n patrol approaches from the other side. The cats of both Clans shift uneasily, waiting for someone to break the silence. r_c1 perks up when {PRONOUN/r_c1/subject} {VERB/r_c1/spot/spots} another apprentice in the o_c_n patrol."
         ],
         "decline_text": [
@@ -6694,7 +6694,7 @@
         },
         "chance_of_success": 55,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l sees two kits from o_c_n playing close to the border."
         ],
         "decline_text": [
@@ -7013,7 +7013,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The patrol spots a badger making a den on o_c_n territory."
         ],
         "decline_text": [
@@ -7216,7 +7216,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_bord_otherclan_OwOw",
-        "intro_text": [
+        "intro_strings": [
             "The border patrol, busy remarking, comes across a o_c_n patrol doing the same, and the apprentices from both sides perk up at the chance for a break in the monotony. Chuckling, p_l offers the chance for a small tale <i>if</i> they can all sit still for it!"
         ],
         "decline_text": [

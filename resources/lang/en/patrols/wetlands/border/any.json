@@ -19,7 +19,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_text": [
+        "intro_strings": [
             "The patrol hears some odd noises coming from an abandoned Twoleg nest out in the swamp."
         ],
         "decline_text": [
@@ -328,7 +328,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_text": [
+        "intro_strings": [
             "p_l hears some odd noises coming from an abandoned Twoleg nest out in the swamp."
         ],
         "decline_text": [
@@ -595,7 +595,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "There are dark clouds on the horizon, and p_l wonders if they should continue."
         ],
         "decline_text": [
@@ -823,7 +823,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "There are dark clouds on the horizon, and p_l wonders if {PRONOUN/p_l/subject} should continue."
         ],
         "decline_text": [
@@ -923,7 +923,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As a shivering p_l crosses a muddy bog, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound, like a wave — but the swamp shouldn't have any waves."
         ],
         "decline_text": [
@@ -1049,7 +1049,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "While on patrol, p_l notices some suspicious pawprints in the swamp mud."
         ],
         "decline_text": [
@@ -1463,7 +1463,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "While on patrol, p_l notices some suspicious pawprints in the swamp mud."
         ],
         "decline_text": [
@@ -1663,7 +1663,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "While on patrol, r_c0 notices some suspicious pawprints in the swamp mud."
         ],
         "decline_text": [
@@ -2260,7 +2260,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "While on patrol, r_c1 notices some suspicious pawprints in the swamp mud."
         ],
         "decline_text": [
@@ -2681,7 +2681,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "On their way to mark the far corners of their swamps, r_c0 starts telling a story of their ancestors to keep every cat entertained."
         ],
         "decline_text": [
@@ -2879,7 +2879,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The patrol catches the scent of a fox, but is it red or gray?"
         ],
         "decline_text": [
@@ -3419,7 +3419,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The patrol catches the scent of a fox, but is it red or gray?"
         ],
         "decline_text": [

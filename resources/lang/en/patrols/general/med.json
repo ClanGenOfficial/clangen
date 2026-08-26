@@ -25,7 +25,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_talking_McMc",
-        "intro_text": [
+        "intro_strings": [
             "The patrol finds a nice spot to sun themselves."
         ],
         "decline_text": [
@@ -505,7 +505,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_sunny_Mc",
-        "intro_text": [
+        "intro_strings": [
             "p_l finds a nice spot to sun {PRONOUN/p_l/self}."
         ],
         "decline_text": [
@@ -704,7 +704,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_med_vision_Mc",
-        "intro_text": [
+        "intro_strings": [
             "As the medicine cats' patrol pads out into c_n territory, r_c0 tells p_l about the dream {PRONOUN/r_c0/subject} had last night and what the StarClan vision could mean for c_n."
         ],
         "decline_text": [
@@ -1330,7 +1330,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_med_vision_Mc",
-        "intro_text": [
+        "intro_strings": [
             "As {PRONOUN/p_l/subject} {VERB/p_l/head/heads} out to gather cobwebs, p_l thinks about the dream {PRONOUN/p_l/subject} had last night. Was it sent by StarClan?"
         ],
         "decline_text": [
@@ -1575,7 +1575,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_med_vision_Mc",
-        "intro_text": [
+        "intro_strings": [
             "r_c1 looks to p_l, wondering if {PRONOUN/r_c1/subject} should speak to p_l about the dream {PRONOUN/r_c1/subject} had last night."
         ],
         "decline_text": [
@@ -2266,7 +2266,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_ghost_McSc",
-        "intro_text": [
+        "intro_strings": [
             "As p_l pads through c_n territory, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} a presence join {PRONOUN/p_l/object}."
         ],
         "decline_text": [
@@ -2503,7 +2503,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_ghost_McSc",
-        "intro_text": [
+        "intro_strings": [
             "As p_l pads through c_n territory with {PRONOUN/p_l/poss} entourage, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} a presence join {PRONOUN/p_l/object}."
         ],
         "decline_text": [
@@ -2861,7 +2861,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_ghost_McSc",
-        "intro_text": [
+        "intro_strings": [
             "As p_l pads through c_n territory, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} a presence join {PRONOUN/p_l/object}."
         ],
         "decline_text": [
@@ -3005,7 +3005,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_ghost_McSc",
-        "intro_text": [
+        "intro_strings": [
             "As r_c1 pads through c_n territory, {PRONOUN/r_c1/subject} {VERB/r_c1/feel/feels} a presence join {PRONOUN/r_c1/object}."
         ],
         "decline_text": [
@@ -3309,7 +3309,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_talking_McWr",
-        "intro_text": [
+        "intro_strings": [
             "During a patrol looking for herbs, p_l notices that r_c0 seems more quiet than usual. When prompted, r_c0 slowly asks if p_l could teach {PRONOUN/r_c0/object} more about the nature of StarClan."
         ],
         "decline_text": [
@@ -3546,7 +3546,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_talking_McWr",
-        "intro_text": [
+        "intro_strings": [
             "To p_l's concern, {PRONOUN/p_l/poss} warrior escort is unusually quiet. When prompted on {PRONOUN/r_c0/poss} troubles, r_c0 comments that {PRONOUN/r_c0/subject} could not help but think of what legacy {PRONOUN/r_c0/subject} would leave behind if StarClan called upon {PRONOUN/r_c0/object}."
         ],
         "decline_text": [
@@ -3685,7 +3685,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_med_talking_McMc",
-        "intro_text": [
+        "intro_strings": [
             "The gaggle of medicine cats strolls through c_n's territory, chatting amicably amongst themselves. It's a rare opportunity for all of them to be out like this together, and each cat plans to make the most of it."
         ],
         "decline_text": [
@@ -3851,7 +3851,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_train_talking_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "The apprentices stroll through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!"
         ],
         "decline_text": [
@@ -4016,7 +4016,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_med_bossypants_WrAp",
-        "intro_text": [
+        "intro_strings": [
             "p_l eyes the warrior chosen to escort {PRONOUN/p_l/object} to fetch herbs, feeling a little bit giddy. Apprentices getting to boss around warriors is something that almost never happens, and p_l is going to make sure {PRONOUN/p_l/subject} {VERB/p_l/make/makes} the most of it."
         ],
         "decline_text": [
@@ -4165,7 +4165,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_train_talking_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "r_c2 trots over to p_l, the two apprentices grinning at each other with raised tails. p_l needs an escort to gather herbs, and as luck would have it, the only cat free at the moment is {PRONOUN/p_l/poss} sibling, r_c2!"
         ],
         "decline_text": [
@@ -4463,7 +4463,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_med_oldersiblings_WrMc",
-        "intro_text": [
+        "intro_strings": [
             "r_c0 trots over to p_l, the two cats grinning at each other with raised tails. p_l wants an escort to gather herbs, and as luck would have it, the only cat free at the moment is {PRONOUN/p_l/poss} sibling, r_c!"
         ],
         "decline_text": [
@@ -4767,7 +4767,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_med_curiosity_McAp",
-        "intro_text": [
+        "intro_strings": [
             "p_l leads r_c1 through c_n's territory, enjoying the nice day. {PRONOUN/p_l/subject/CAP} {VERB/p_l/glance/glances} back and {VERB/p_l/realize/realizes} r_c1 looks like {PRONOUN/r_c1/subject} {VERB/r_c1/want/wants} to ask {PRONOUN/p_l/object} a question."
         ],
         "decline_text": [
@@ -5615,7 +5615,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_med_discussion_McMc",
-        "intro_text": [
+        "intro_strings": [
             "p_l and r_c0 stroll through the territory, chatting while on their way to an herb patch they haven't visited in a while."
         ],
         "decline_text": [
@@ -6165,7 +6165,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_train_talking_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "In order to spice up their patrol, p_l challenges r_c2 to an herb-gathering competition."
         ],
         "decline_text": [
@@ -6506,7 +6506,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_med_talking_McMc",
-        "intro_text": [
+        "intro_strings": [
             "p_l and r_c0 take a look at their dwindling supply of herbs and decide to combine their efforts into searching for more."
         ],
         "decline_text": [
@@ -6707,7 +6707,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_med_NL_gatheringcatmint_Mc",
-        "intro_text": [
+        "intro_strings": [
             "p_l thinks r_c0 is a bit of a feather-brain, so when {PRONOUN/r_c0/subject} {VERB/r_c0/come/comes} up to p_l while p_l is gathering herbs and {VERB/r_c0/suggest/suggests} replenishing the Clan's catmint supply with a gleam in {PRONOUN/r_c0/poss} eye, p_l hesitates."
         ],
         "decline_text": [
@@ -6844,7 +6844,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_running_WrMc",
-        "intro_text": [
+        "intro_strings": [
             "While out collecting herbs with p_l, r_c0 can't help but notice just how hard the medicine cat is pushing {PRONOUN/p_l/self}."
         ],
         "decline_text": [
@@ -7067,7 +7067,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_running_McMc",
-        "intro_text": [
+        "intro_strings": [
             "While out collecting herbs with p_l, r_c0 can't help but notice just how hard {PRONOUN/r_c0/poss} fellow medicine cat is pushing {PRONOUN/p_l/self}."
         ],
         "decline_text": [
@@ -7294,7 +7294,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_running_McWr",
-        "intro_text": [
+        "intro_strings": [
             "While out collecting herbs with r_c0, p_l can't help but notice just how hard {PRONOUN/p_l/poss} companion is pushing {PRONOUN/r_c0/self}."
         ],
         "decline_text": [
@@ -7508,7 +7508,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_mentorandapp_McAp",
-        "intro_text": [
+        "intro_strings": [
             "While out collecting herbs, p_l notices how quiet and dejected r_c1 is acting. After p_l asks {PRONOUN/r_c1/object} what's wrong, r_c1 admits {PRONOUN/r_c1/subject} {VERB/r_c1/don't/doesn't} feel cut out to be a medicine cat."
         ],
         "decline_text": [
@@ -7924,7 +7924,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "It's a rare occasion when r_c0 gets to actually patrol with {PRONOUN/r_c0/poss} kit. Their differing roles mean the pair hardly see each other, and it feels like forever since they were alone together."
         ],
         "decline_text": [
@@ -8235,7 +8235,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_running_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "p_l and r_c2 leave camp together to gather herbs and refresh c_n's stocks of some basic necessities. A short ways out of camp, r_c2 stops p_l and asks, with a glint in {PRONOUN/r_c2/poss} eye, if p_l will show {PRONOUN/r_c2/object} where deathberries grow on c_n's territory."
         ],
         "decline_text": [
@@ -8738,7 +8738,7 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_med_meadow_WrMc",
-        "intro_text": [
+        "intro_strings": [
             "r_c0 joins p_l to gather juniper berries and {VERB/r_c0/station/stations} {PRONOUN/r_c0/self} by the edge of the clearing while p_l gathers from a bush. r_c's fur bushes up when {PRONOUN/r_c0/subject} {VERB/r_c0/spot/spots} a snake slithering closer!"
         ],
         "decline_text": [
@@ -9239,7 +9239,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_meadow_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "r_c1 and p_l head out to collect herbs together."
         ],
         "decline_text": [
@@ -10408,7 +10408,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_meadow_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "A patrol of medicine cat apprentices heads out to collect herbs together."
         ],
         "decline_text": [
@@ -11587,7 +11587,7 @@
         },
         "chance_of_success": 45,
         "patrol_art": "cat_sprites/gen_med_soloripples_Mc",
-        "intro_text": [
+        "intro_strings": [
             "While gathering fresh water, p_l sees strange ripples on the water's surface."
         ],
         "decline_text": [
@@ -11685,7 +11685,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l pads out of camp to gather some herbs at the behest of {PRONOUN/p_l/poss} mentor. The wind rustles through {PRONOUN/p_l/poss} pelt as {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} along."
         ],
         "decline_text": [
@@ -11745,7 +11745,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": [
+        "intro_strings": [
             "Sniffing for daisies, p_l begins a story. Once, eons ago, during the Long Dawn after the Great Moonrise, cats staggered through the cold wide world, searching for a new home."
         ],
         "decline_text": [
@@ -11842,7 +11842,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l ponders one of life's little ironies with a small smile."
         ],
         "decline_text": [
@@ -11990,7 +11990,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol sets out, p_l remembers an old saying about searching for juniper."
         ],
         "decline_text": [
@@ -12091,7 +12091,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_gatheringlungwort_Mc",
-        "intro_text": [
+        "intro_strings": [
             "Keeping a supply of lungwort is serious business, p_l instructs."
         ],
         "decline_text": [
@@ -12195,7 +12195,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": [
+        "intro_strings": [
             "As they lift their muzzles to try and catch mallow's sweet scent on the wind, p_l asks the patrol if they know how the herb got its name."
         ],
         "decline_text": [
@@ -12306,7 +12306,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": [
+        "intro_strings": [
             "Heads crane about, looking for marigold. As they work, p_l offers a story."
         ],
         "decline_text": [
@@ -12406,7 +12406,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": [
+        "intro_strings": [
             "Looking up at a powerful old oak tree reminds p_l of an old tale."
         ],
         "decline_text": [
@@ -12519,7 +12519,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_curiosity_McAp",
-        "intro_text": [
+        "intro_strings": [
             "r_c1 is probably not <i>trying</i> to be annoying, but {PRONOUN/r_c1/poss} complaints about the taste of ragwort help no one, and it's just slowing the entire patrol down."
         ],
         "decline_text": [
@@ -12649,7 +12649,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": [
+        "intro_strings": [
             "It's said that the first queen who lost her life in kitting left a blessing to save those who came after her."
         ],
         "decline_text": [
@@ -12749,7 +12749,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "r_c1 shovels tansy into {PRONOUN/r_c1/poss} mouth without a care in the world. p_l stops {PRONOUN/r_c1/object}, and tells {PRONOUN/r_c1/object} that {PRONOUN/r_c1/subject} really <i>should</i> have a care."
         ],
         "decline_text": [
@@ -12922,7 +12922,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": [
+        "intro_strings": [
             "Listen to the wisdom of the sages, p_l meows. r_c1 doesn't just need to learn to set bones and clean wounds; being a medicine cat is so much more than blood and bodies."
         ],
         "decline_text": [
@@ -13025,7 +13025,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "halloween/hal_deathsheadmoth",
-        "intro_text": [
+        "intro_strings": [
             "p_l is out alone in c_n's territory when a shiver runs down {PRONOUN/p_l/poss} spine. {PRONOUN/p_l/subject/CAP} {VERB/p_l/stop/stops}. {PRONOUN/p_l/subject/CAP} slowly {VERB/p_l/turn/turns} {PRONOUN/p_l/poss} head. On the rosemary bush next to {PRONOUN/p_l/object}, the moth lazily stretches its wings, the Twoleg skull on its back grinning."
         ],
         "decline_text": [
@@ -13129,7 +13129,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "halloween/hal_gen_med_pumpkinpatch_McMc",
-        "intro_text": [
+        "intro_strings": [
             "p_l is hoping to find some herbs growing in defiance of the weather, which is becoming increasingly cold. r_c0 offered to come along to help search. After some back and forth, they decide to see what's growing among the fields near a Twoleg farm."
         ],
         "decline_text": [
@@ -13196,7 +13196,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "halloween/hal_friendlyghost_Ur",
-        "intro_text": [
+        "intro_strings": [
             "While out gathering herbs alone at night, p_l notices a faint glow coming from deeper within the Clan's territory. As {PRONOUN/p_l/subject} {VERB/p_l/peer/peers} into the gloom, {PRONOUN/p_l/subject} {VERB/p_l/see/sees} that it slightly resembles a cat."
         ],
         "decline_text": [
@@ -13276,7 +13276,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As p_l follows a trail into a darkly shadowed part of the territory on the hunt for herbs, night shadows begin to play with {PRONOUN/p_l/poss} vision. Was that movement up ahead? p_l spots the unmistakable silhouette of a cat ahead. Malicious eyes and bristled fur meet {PRONOUN/p_l/object} as {PRONOUN/p_l/subject} {VERB/p_l/walk/walks} amongst the shadows. The stranger's fur is translucent, and it moves as though made from a strange dark mist."
         ],
         "decline_text": [
@@ -13341,7 +13341,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_strange_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol stops by at their usual herb patch, only to be greeted by a mysterious black cat that stares them down, unblinking."
         ],
         "decline_text": [
@@ -13458,7 +13458,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_herbsdandy_ApMc",
-        "intro_text": [
+        "intro_strings": [
             "p_l and r_c1 are going out to gather dandelions. r_c1 asks {PRONOUN/r_c1/poss} mentor what they'll do if the rabbits have eaten all of it, and p_l responds that they'll cross that river when they get to it."
         ],
         "decline_text": [
@@ -13520,7 +13520,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_rainygathering_Mc",
-        "intro_text": [
+        "intro_strings": [
             "p_l leads a patrol out to explore c_n's territory and bring back any herbs {PRONOUN/p_l/subject} can spot. {PRONOUN/p_l/poss/CAP} whiskers want to twitch with every raindrop that hits {PRONOUN/p_l/object}, but the Clan doesn't have the luxury to sit inside away from the weather."
         ],
         "decline_text": [
@@ -13652,7 +13652,7 @@
         },
         "chance_of_success": 80,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out into the territory to stock up on cobwebs, something the Clan never seems to have enough of."
         ],
         "decline_text": [
@@ -13739,7 +13739,7 @@
         },
         "chance_of_success": 80,
         "patrol_art": "cat_sprites/gen_med_cobweblesson_McAp",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out into the territory with r_c1, both to stock up on cobwebs and to teach the apprentice how to gather one of the Clan's most vital medical tools."
         ],
         "decline_text": [
@@ -13862,7 +13862,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "c_n can never have enough cobwebs, p_l instructs {PRONOUN/p_l/poss} team, leading them out to search for them."
         ],
         "decline_text": [
@@ -14061,7 +14061,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out on an herb-gathering patrol, searching for the evergreen, ever-reliable horsetail to harvest for the herb stores."
         ],
         "decline_text": [
@@ -14146,7 +14146,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out on an herb-gathering patrol, searching for the evergreen, ever-reliable horsetail to harvest for the herb stores. r_c1 trots after {PRONOUN/p_l/object}, asking {PRONOUN/p_l/object} why horsetail grows so weirdly without leaves."
         ],
         "decline_text": [
@@ -14315,7 +14315,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Bringing a motley assortment of Clanmates along with {PRONOUN/p_l/object}, p_l heads out on an herb-gathering patrol, searching for the evergreen, ever-reliable horsetail to harvest for the herb stores."
         ],
         "decline_text": [
@@ -14457,7 +14457,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_gatheringrosemary_Mc",
-        "intro_text": [
+        "intro_strings": [
             "p_l has to attend to one of {PRONOUN/p_l/poss} grimmer jobs as a medicine cat — the grounds where c_n goes to mourn their dead need to be tended to. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} bringing along r_c1 as {PRONOUN/p_l/poss} assistant for this trip, and the two cats head out in relative silence."
         ],
         "decline_text": [
@@ -14542,7 +14542,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_gatheringrosemary_Mc",
-        "intro_text": [
+        "intro_strings": [
             "p_l has to attend to one of {PRONOUN/p_l/poss} grimmer jobs as a medicine cat — the grounds where c_n goes to mourn their dead need to be tended to. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} bringing along r_c0 as {PRONOUN/p_l/poss} assistant for this trip, and the two cats head out in relative silence."
         ],
         "decline_text": [
@@ -14637,7 +14637,7 @@
         ],
         "chance_of_success": 70,
         "patrol_art": "cat_sprites/gen_med_cobweb_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "As the apprentices head out to collect cobwebs, p_l screws up {PRONOUN/p_l/poss} face into a stupid expression around the stick {PRONOUN/p_l/subject} {VERB/p_l/hold/holds} in {PRONOUN/p_l/poss} mouth."
         ],
         "decline_text": [
@@ -14800,7 +14800,7 @@
         ],
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_cobweb_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "As the apprentices head out to collect cobwebs, r_c2 screws up {PRONOUN/r_c2/poss} face into a stupid expression around the stick {PRONOUN/r_c2/subject} {VERB/r_c2/hold/holds} in {PRONOUN/r_c2/poss} mouth."
         ],
         "decline_text": [
@@ -14942,7 +14942,7 @@
         ],
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_med_cobweb_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "As the apprentices head out to collect cobwebs, p_l screws up {PRONOUN/p_l/poss} face into a stupid expression around the stick {PRONOUN/p_l/subject} {VERB/p_l/hold/holds} in {PRONOUN/p_l/poss} mouth."
         ],
         "decline_text": [
@@ -15090,7 +15090,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them — plants don't run away!"
         ],
         "decline_text": [
@@ -15238,7 +15238,7 @@
         ],
         "chance_of_success": 70,
         "patrol_art": "cat_sprites/gen_med_gatheringmoss_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "p_l comes up to meet r_c1, quietly apologizing about r_c1 being sent to help p_l collect moss."
         ],
         "decline_text": [
@@ -15390,7 +15390,7 @@
         ],
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_gatheringmoss_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "As the apprentices head out to collect moss, p_l screws up {PRONOUN/p_l/poss} face into a stupid expression at the menial nature of the task."
         ],
         "decline_text": [
@@ -15569,7 +15569,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_gatheringmoss_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "The apprentices are sent off into the territory to gather moss for the medicine cat den."
         ],
         "decline_text": [
@@ -15775,7 +15775,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "It's been one of the worst storms of the season, leaving p_l in an unavoidably grumpy mood. Herbs strewn about, prey in hiding, it's going to take forever to find anything. r_c0 attempts to find a way to cheer up the healer."
         ],
         "decline_text": [
@@ -16052,7 +16052,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l goes out with a warrior escort, both for safety as {PRONOUN/p_l/subject} {VERB/p_l/look/looks} to take advantage of the greenleaf growing season, and for carrying capacity should {PRONOUN/p_l/subject} {VERB/p_l/find/finds} anything."
         ],
         "decline_text": [
@@ -16266,7 +16266,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out, leading a patrol of medicine cats to go find some of the bounty of greenleaf."
         ],
         "decline_text": [
@@ -16486,7 +16486,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l wanders off into the territory, keeping an eye out for the purple flowers that grow on betony."
         ],
         "decline_text": [
@@ -16617,7 +16617,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l wanders off into the territory, keeping an eye out for the purple flowers that grow on betony. r_c1 leads the way, {PRONOUN/r_c1/poss} tail up and waving jauntily."
         ],
         "decline_text": [
@@ -16828,7 +16828,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l wanders off into the territory while leading a gathering patrol, keeping an eye out for the purple flowers that grow on betony."
         ],
         "decline_text": [
@@ -17022,7 +17022,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The berry brambles will be at their peak leaf growth soon, if they aren't there already. p_l heads out to replenish the Clan's stocks."
         ],
         "decline_text": [
@@ -17153,7 +17153,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The berry brambles will be at their peak leaf growth soon, if they aren't there already. p_l heads out to replenish the Clan's stocks, bringing r_c1 along."
         ],
         "decline_text": [
@@ -17354,7 +17354,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The berry brambles will be at their peak leaf growth soon, if they aren't there already. p_l heads out to replenish the Clan's stocks, bringing along anyone who isn't busy with other work."
         ],
         "decline_text": [
@@ -17515,7 +17515,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With the full sun of greenleaf fueling plant growth everywhere, it's the perfect time to hunt for burdock. p_l heads out to replenish the Clan's stocks."
         ],
         "decline_text": [
@@ -17646,7 +17646,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With the full sun of greenleaf fueling plant growth everywhere, it's the perfect time to hunt for burdock. p_l heads out to replenish the Clan's stocks, bringing r_c1 along."
         ],
         "decline_text": [
@@ -17860,7 +17860,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With the full sun of greenleaf fueling plant growth everywhere, it's the perfect time to hunt for burdock. p_l heads out to replenish the Clan's stocks, bringing along anyone who isn't busy with other work."
         ],
         "decline_text": [
@@ -18085,7 +18085,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l needs to go and gather some burdock root. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} along what warriors {PRONOUN/p_l/subject} can find around camp to help gather and carry the roots back."
         ],
         "decline_text": [
@@ -18210,7 +18210,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_med_GL_gatheringcatmint_Mc",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out into the sunshine, padding away from camp in a search for one of the most elusive herbs."
         ],
         "decline_text": [
@@ -18329,7 +18329,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_med_GL_gatheringcatmint_ApMc",
-        "intro_text": [
+        "intro_strings": [
             "p_l waits until they're out of camp to reveal to r_c1 that they're off to find catmint — a 'helpful' group of 'helpers' can be a little... well, unhelpful. Catmint is just too exciting for many of their Clanmates to keep their heads around, and p_l wants to take advantage of the peak greenleaf growing season."
         ],
         "decline_text": [
@@ -18537,7 +18537,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_med_GL_gatheringcatmint_WrWrMc",
-        "intro_text": [
+        "intro_strings": [
             "As p_l looks at the twitching tails and wide eyes of the patrol set up to 'help' {PRONOUN/p_l/object} gather catmint, {PRONOUN/p_l/poss} heart sinks. These overly excited warriors don't look like they're going to be useful, and catmint is too important to be silly about collecting. Yes, it smells wonderful. <i>Please</i> get over it."
         ],
         "decline_text": [
@@ -18721,7 +18721,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The heat of greenleaf warms {PRONOUN/p_l/poss} pelt as p_l wanders, aimlessly searching for daisies to harvest their leaves."
         ],
         "decline_text": [
@@ -18852,7 +18852,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The heat of greenleaf warms {PRONOUN/p_l/poss} pelt as p_l wanders, aimlessly searching for daisies to harvest their leaves, bringing r_c1 along for a lesson."
         ],
         "decline_text": [
@@ -19068,7 +19068,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The heat of greenleaf warms {PRONOUN/p_l/poss} pelt as p_l wanders, searching for daisies to harvest their leaves. {PRONOUN/p_l/subject/CAP} {VERB/p_l/assemble/assembles} a little group of warriors to help {PRONOUN/p_l/object} carry the herbs."
         ],
         "decline_text": [
@@ -19257,7 +19257,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Greenleaf's bounty means that finding dandelions shouldn't be any trouble. If {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} lucky, {PRONOUN/p_l/subject} might also be able to find additional herbs, such as wild garlic."
         ],
         "decline_text": [
@@ -19388,7 +19388,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Greenleaf's bounty means that finding dandelions — and hopefully other plants, like wild garlic — shouldn't be any trouble.  p_l heads out to look for them, taking r_c1 to learn about one of the most useful common herbs in the medicine cat arsenal."
         ],
         "decline_text": [
@@ -19630,7 +19630,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l and r_c1 are going out to gather dandelions. r_c1 asks {PRONOUN/r_c1/poss} mentor what they'll do if the rabbits have eaten all of it, and p_l responds that they'll cross that river when they get to it."
         ],
         "decline_text": [
@@ -19714,7 +19714,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Greenleaf's bounty means that finding dandelions shouldn't be any trouble. p_l heads out to look for them, bringing a group of {PRONOUN/p_l/poss} Clanmates along for the gathering patrol. With this many warriors, they should bring back a good haul, and might even be able to grab another herb — wild garlic, perhaps? — as well."
         ],
         "decline_text": [
@@ -19920,7 +19920,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The thick growth of greenleaf will serve c_n well today, p_l decides, thinking about gathering elder leaves. There's a particular tree in a sheltered dip along a stream {PRONOUN/p_l/subject} {VERB/p_l/want/wants} to check on today."
         ],
         "decline_text": [
@@ -20054,7 +20054,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The thick growth of greenleaf will serve c_n well today, p_l decides, thinking about gathering elder leaves. There's a particular tree in a sheltered dip along a stream {PRONOUN/p_l/subject} {VERB/p_l/want/wants} to check on today, bringing r_c1 to show {PRONOUN/r_c1/object} why choosing to harvest from a sheltered plant can be helpful."
         ],
         "decline_text": [
@@ -20303,7 +20303,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The thick growth of greenleaf will serve c_n well today, p_l decides, thinking about gathering elder leaves. There's a particular tree in a sheltered dip along a stream {PRONOUN/p_l/subject} {VERB/p_l/want/wants} to check on today, bringing a group of {PRONOUN/p_l/poss} Clanmates with {PRONOUN/p_l/object}."
         ],
         "decline_text": [
@@ -20487,7 +20487,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "cat_sprites/gen_med_GL_gatheringgoldenrod_Mc",
-        "intro_text": [
+        "intro_strings": [
             "Greenleaf is truly the best time of year to be a medicine cat, with the world so full of flowers and green growth. p_l heads out to gather fresh goldenrod for the stores. If luck is on {PRONOUN/p_l/poss} side, there might be some marigold {PRONOUN/p_l/subject} can add to {PRONOUN/p_l/poss} storages as well."
         ],
         "decline_text": [
@@ -20604,7 +20604,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Greenleaf is truly the best time of year to be a medicine cat, with the world so full of flowers and green growth. p_l heads out to gather fresh goldenrod for the stores with r_c1."
         ],
         "decline_text": [
@@ -20819,7 +20819,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Greenleaf is truly the best time of year to be a medicine cat, with the world so full of flowers and green growth. p_l heads out to gather fresh goldenrod for the stores with a patrol of {PRONOUN/p_l/poss} Clanmates to assist {PRONOUN/p_l/object}."
         ],
         "decline_text": [
@@ -21007,7 +21007,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out to find a juniper tree, wanting to restock on its needles."
         ],
         "decline_text": [
@@ -21124,7 +21124,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out to find a juniper tree, wanting to restock on its needles. It's also a good opportunity for r_c1 to learn more about the plant."
         ],
         "decline_text": [
@@ -21340,7 +21340,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out to find a juniper tree, wanting to restock on its needles. Some of {PRONOUN/p_l/poss} Clanmates volunteer to come with {PRONOUN/p_l/object}, hoping to keep a few pleasantly smelling needles for scenting their own nests, though they'll have to be careful about placing them so the needles don't spike anyone."
         ],
         "decline_text": [
@@ -21501,7 +21501,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_gatheringlungwort_Mc",
-        "intro_text": [
+        "intro_strings": [
             "p_l is on a mission to find lungwort now that greenleaf is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n stock up on it."
         ],
         "decline_text": [
@@ -21680,7 +21680,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_gatheringlungwort_McAp",
-        "intro_text": [
+        "intro_strings": [
             "p_l and r_c1 head out for lungwort, and p_l starts a lesson on the value of this rare herb for treating yellowcough."
         ],
         "decline_text": [
@@ -21927,7 +21927,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_gatheringlungwort_Mc",
-        "intro_text": [
+        "intro_strings": [
             "p_l is on a mission to find lungwort now that greenleaf is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n won't run out of it. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} along a warrior escort to help."
         ],
         "decline_text": [
@@ -22194,7 +22194,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "cat_sprites/gen_med_gatheringmallow_Mc",
-        "intro_text": [
+        "intro_strings": [
             "Greenleaf is truly the best time of year to be a medicine cat, with the world so full of flowers and green growth. p_l heads out to gather fresh mallow for the stores."
         ],
         "decline_text": [
@@ -22311,7 +22311,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "cat_sprites/gen_med_gatheringmallow_ApMc",
-        "intro_text": [
+        "intro_strings": [
             "Greenleaf is truly the best time of year to be a medicine cat, with the world so full of flowers and green growth. p_l heads out to gather fresh mallow for the stores with r_c1."
         ],
         "decline_text": [
@@ -22526,7 +22526,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_gatheringmallow_WrMc",
-        "intro_text": [
+        "intro_strings": [
             "Greenleaf is truly the best time of year to be a medicine cat, with the world so full of flowers and green growth. p_l heads out to gather fresh mallow for the stores with a patrol of {PRONOUN/p_l/poss} Clanmates to assist {PRONOUN/p_l/object}."
         ],
         "decline_text": [
@@ -22714,7 +22714,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "More marigold would be useful, particularly with greenleaf in full swing. The season will bring the marigold to bloom, and the flowers are just as useful as the leaves to p_l, <i>and</i> extremely easy to spot from a distance."
         ],
         "decline_text": [
@@ -22831,7 +22831,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "More marigold would be useful, particularly with greenleaf in full swing. The season will bring the marigold to bloom, and the flowers are just as useful as the leaves to p_l, <i>and</i> extremely easy to spot from a distance with r_c1."
         ],
         "decline_text": [
@@ -23045,7 +23045,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "More marigold would be useful, particularly with greenleaf in full swing. The season will bring the marigold to bloom, and the flowers are just as useful as the leaves to p_l, <i>and</i> extremely easy to spot from a distance, especially with a patrol of {PRONOUN/p_l/poss} Clanmates to assist {PRONOUN/p_l/object}."
         ],
         "decline_text": [
@@ -23214,7 +23214,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Once mullein starts to tower over the other plants, it's a good time to harvest it."
         ],
         "decline_text": [
@@ -23331,7 +23331,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Once mullein starts to tower over the other plants, it's a good time to harvest it. p_l explains to r_c1 how mullein's height make it easy to spot from a distance."
         ],
         "decline_text": [
@@ -23538,7 +23538,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Once mullein starts to tower over the other plants, it's a good time to harvest it."
         ],
         "decline_text": [
@@ -23701,7 +23701,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "backgrounds/gen_GL_gatheringoakleaves1",
-        "intro_text": [
+        "intro_strings": [
             "Greenleaf encourages the oak to reach its full potential, wide and towering, and p_l goes to collect a harvest of its leaves."
         ],
         "decline_text": [
@@ -23818,7 +23818,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "backgrounds/gen_GL_gatheringoakleaves2",
-        "intro_text": [
+        "intro_strings": [
             "Greenleaf encourages the oak to reach its full potential, wide and towering, and p_l goes to collect a harvest of its leaves with r_c1."
         ],
         "decline_text": [
@@ -23970,7 +23970,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "backgrounds/gen_GL_gatheringoakleaves1",
-        "intro_text": [
+        "intro_strings": [
             "Greenleaf encourages the oak to reach its full potential, wide and towering, and p_l goes to collect a harvest of its leaves, taking a patrol with {PRONOUN/p_l/object} to make the task easier."
         ],
         "decline_text": [
@@ -24132,7 +24132,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "backgrounds/gen_GL_gatheringplantain",
-        "intro_text": [
+        "intro_strings": [
             "As the plantain starts to choke off the paths the Clan uses to get about, fueled by greenleaf, it's a great time to clean up the paths and bring a good harvest home."
         ],
         "decline_text": [
@@ -24237,7 +24237,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the plantain starts to choke off the paths the Clan uses to get about, fueled by greenleaf, it's a great time to clean up the paths and bring a good harvest home. r_c1 asks why the plant might choose such a strange spot to grow, and p_l gives {PRONOUN/r_c1/object} {PRONOUN/p_l/poss} best guess."
         ],
         "decline_text": [
@@ -24416,7 +24416,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the plantain starts to choke off the paths the Clan uses to get about, fueled by greenleaf, it's a great time to clean up the paths and bring a good harvest home. p_l brings along {PRONOUN/p_l/poss} Clanmates, both for carrying and because the deputy has mentioned particular paths that need to be cleared sooner rather than later."
         ],
         "decline_text": [
@@ -24573,7 +24573,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With greenleaf bringing the poppies to seed, and only so much time before the plants die off in leaf-fall, p_l is keen to go collect as much as possible."
         ],
         "decline_text": [
@@ -24678,7 +24678,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With greenleaf bringing the poppies to seed, and only so much time before the plants die off in leaf-fall, p_l is keen to go collect as much as possible. Even r_c1 knows how much the Clan depends on poppy seeds being in their herb stores."
         ],
         "decline_text": [
@@ -24861,7 +24861,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With greenleaf bringing the poppies to seed, and only so much time before the plants die off in leaf-fall, p_l is keen to go collect as much as possible. {PRONOUN/p_l/subject/CAP} {VERB/p_l/bring/brings} {PRONOUN/p_l/poss} Clanmates with {PRONOUN/p_l/object} to help, the warriors keen to make sure the Clan is well provisioned with this important herb."
         ],
         "decline_text": [
@@ -24994,7 +24994,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out to find ragwort, keeping the particular fractal shape of its furled leaves in {PRONOUN/p_l/poss} mind to distinguish it from every other low-growing patch of greenery."
         ],
         "decline_text": [
@@ -25111,7 +25111,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out to find ragwort, keeping the particular fractal shape of its furled leaves in {PRONOUN/p_l/poss} mind to distinguish it from every other low-growing patch of greenery, and does {PRONOUN/p_l/poss} best to describe the shape to r_c1."
         ],
         "decline_text": [
@@ -25331,7 +25331,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out to find ragwort, keeping the particular fractal shape of its furled leaves in {PRONOUN/p_l/poss} mind to distinguish it from every other low-growing patch of greenery. {PRONOUN/p_l/subject/CAP} {VERB/p_l/bring/brings} warriors with {PRONOUN/p_l/object} to carry it back to camp."
         ],
         "decline_text": [
@@ -25535,7 +25535,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "While gathering herbs, p_l spots a bush of red berries."
         ],
         "decline_text": [
@@ -25641,7 +25641,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_med_gatheringraspberrysolo_Ap",
-        "intro_text": [
+        "intro_strings": [
             "While gathering herbs, p_l stumbles upon a bush of red berries."
         ],
         "decline_text": [
@@ -25736,7 +25736,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out to find tansy, scenting the air for its sharp smell and eyes on the lookout for tansy's strange, orb-like yellow flowers that greenleaf has brought out in abundance."
         ],
         "decline_text": [
@@ -25853,7 +25853,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out to find tansy with r_c1. {PRONOUN/p_l/subject/CAP} {VERB/p_l/instruct/instructs} r_c1 to scent the air for its sharp smell and keep {PRONOUN/r_c1/poss} eyes on the lookout for tansy's strange, orb-like yellow flowers that greenleaf has brought out in abundance."
         ],
         "decline_text": [
@@ -26060,7 +26060,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out to find tansy, scenting the air for its sharp smell and eyes on the lookout for tansy's strange, orb-like yellow flowers that greenleaf has brought out in abundance. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} brought some of {PRONOUN/p_l/poss} Clanmates with {PRONOUN/p_l/object} to hopefully help {PRONOUN/p_l/object} carry a good harvest home."
         ],
         "decline_text": [
@@ -26239,7 +26239,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l has finally put enough time aside to go search for thyme."
         ],
         "decline_text": [
@@ -26356,7 +26356,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l has finally put enough time aside to go search for thyme with r_c1."
         ],
         "decline_text": [
@@ -26564,7 +26564,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l has finally put enough time aside to go search for thyme with a gathering patrol."
         ],
         "decline_text": [
@@ -26727,7 +26727,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out on what promises to be a fragrant patrol, searching for wild garlic."
         ],
         "decline_text": [
@@ -26844,7 +26844,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out on what promises to be a fragrant patrol, searching for wild garlic with r_c1."
         ],
         "decline_text": [
@@ -27050,7 +27050,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out on what promises to be a fragrant patrol, searching for wild garlic with a gathering patrol."
         ],
         "decline_text": [
@@ -27258,7 +27258,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l goes out with a warrior escort, both for safety as {PRONOUN/p_l/subject} {VERB/p_l/look/looks} for useful fresh supplies that have survived leaf-bare so far, and for carrying capacity should {PRONOUN/p_l/subject} find anything."
         ],
         "decline_text": [
@@ -27475,7 +27475,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out, leading a patrol of medicine cats to go find any fresh herbs that have survived leaf-bare so far."
         ],
         "decline_text": [
@@ -27664,7 +27664,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_med_LB_gatheringblackberry_Mc",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out, deciding that c_n needs more blackberry leaves in their stores."
         ],
         "decline_text": [
@@ -27823,7 +27823,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_med_LB_gatheringblackberry_Mc",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out with r_c1, deciding that c_n needs more blackberry leaves in their stores."
         ],
         "decline_text": [
@@ -28344,7 +28344,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_med_LB_gatheringblackberry_Mc",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out, deciding that c_n needs more blackberry leaves in their stores, bringing along anyone who isn't busy with other work."
         ],
         "decline_text": [
@@ -28642,7 +28642,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the snows of leaf-bare blow around camp, p_l eyes {PRONOUN/p_l/poss} herb stores. {PRONOUN/p_l/subject/CAP} should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks."
         ],
         "decline_text": [
@@ -28795,7 +28795,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the snows of leaf-bare blow around camp, p_l eyes {PRONOUN/p_l/poss} herb stores. {PRONOUN/p_l/subject/CAP} should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks, bringing r_c1 along."
         ],
         "decline_text": [
@@ -29198,7 +29198,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the snows of leaf-bare blow around camp, p_l eyes {PRONOUN/p_l/poss} herb stores. {PRONOUN/p_l/subject/CAP} should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks, bringing along anyone who isn't busy with other work."
         ],
         "decline_text": [
@@ -29470,7 +29470,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_med_LB_gatheringdaisy_Mc",
-        "intro_text": [
+        "intro_strings": [
             "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates — should {PRONOUN/p_l/subject} even try to look?"
         ],
         "decline_text": [
@@ -29613,7 +29613,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_med_LB_gatheringdaisy_Mc",
-        "intro_text": [
+        "intro_strings": [
             "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates — should {PRONOUN/p_l/subject} even try to look? And is bringing r_c1 a good idea?"
         ],
         "decline_text": [
@@ -30023,7 +30023,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_med_LB_gatheringdaisy_Mc",
-        "intro_text": [
+        "intro_strings": [
             "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates — should {PRONOUN/p_l/subject} and {PRONOUN/p_l/poss} patrol even try to look?"
         ],
         "decline_text": [
@@ -30260,7 +30260,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead. If {PRONOUN/p_l/subject} can get {PRONOUN/p_l/poss} paws on a plant, the roots will still hold fresh, milky-white sap. Maybe there's some wild garlic out there as well..."
         ],
         "decline_text": [
@@ -30415,7 +30415,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the plants like dandelions and wild garlic are only playing dead, and if {PRONOUN/p_l/subject} can get {PRONOUN/p_l/poss} paws on a plant the roots will still hold white, milky sap, or stinky bulbs. Seems it's time for r_c1 to learn about what resources are still around to gather during leaf-bare."
         ],
         "decline_text": [
@@ -30857,7 +30857,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead. If {PRONOUN/p_l/subject} can get {PRONOUN/p_l/poss} paws on a plant, the roots will still hold fresh, milky-white sap, or even stinky bulbs. {PRONOUN/p_l/subject/CAP} {VERB/p_l/bring/brings} along a patrol of shivering Clanmates — more paws will make light work of digging through the snow."
         ],
         "decline_text": [
@@ -31139,7 +31139,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_med_LB_gatheringjuniper_Mc",
-        "intro_text": [
+        "intro_strings": [
             "It's not finding fresh juniper that's the problem. As an evergreen plant, juniper is known to grow reliably even in the cold seasons. The <i>problem</i> is that juniper grows in large shrubs; shrubs sometimes large enough to be literal trees! Climbing in these slippery conditions is a disaster just waiting to happen."
         ],
         "decline_text": [
@@ -31283,7 +31283,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "It's not finding fresh juniper that's the problem. As an evergreen plant, juniper is known to grow reliably even in the cold seasons. The <i>problem</i> is that juniper grows in large shrubs; shrubs sometimes large enough to be literal trees! Climbing in these slippery conditions might be dangerous and p_l hesitates to bring r_c1 along, but tells {PRONOUN/p_l/self} it's a learning opportunity."
         ],
         "decline_text": [
@@ -31661,7 +31661,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "It's not finding fresh juniper that's the problem. As an evergreen plant, juniper is known to grow reliably even in the cold seasons. The <i>problem</i> is that juniper grows in large shrubs; shrubs sometimes large enough to be literal trees! Climbing in these slippery conditions might be dangerous. Hopefully the warriors accompanying p_l will be able to help."
         ],
         "decline_text": [
@@ -31905,7 +31905,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l goes out with a warrior escort, both for safety as {PRONOUN/p_l/subject} {VERB/p_l/look/looks} for newleaf's fresh buds, and for carrying capacity should {PRONOUN/p_l/subject} find anything."
         ],
         "decline_text": [
@@ -32119,7 +32119,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_flowerdate_McMc",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out, leading a patrol of medicine cats to go find the buds of newleaf."
         ],
         "decline_text": [
@@ -32304,7 +32304,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The betony plants stretch outwards, racing to take advantage of the newleaf sun. It's the perfect time to harvest them, and p_l is glad for the sun on their pelt after the long winter."
         ],
         "decline_text": [
@@ -32434,7 +32434,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The betony plants stretch outwards, racing to take advantage of the newleaf sun. p_l takes the time to test r_c1 on {PRONOUN/r_c1/poss} knowledge of the leaves — soon these plants will flower and the purple blooms will identify them, but it's important to know them from leaf alone."
         ],
         "decline_text": [
@@ -32619,7 +32619,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The betony plants stretch outwards, racing to take advantage of the newleaf sun. p_l points out the plants to the warriors {PRONOUN/p_l/subject} brought with {PRONOUN/p_l/object}, who just accept that this particular green shrub is different to all the other green shrubs."
         ],
         "decline_text": [
@@ -32820,7 +32820,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Newleaf should bring new leaves on the berry brambles. p_l heads out to collect some."
         ],
         "decline_text": [
@@ -32951,7 +32951,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "cat_sprites/gen_med_gatheringblackberry_McAp",
-        "intro_text": [
+        "intro_strings": [
             "Newleaf should bring new leaves on the berry brambles. p_l heads out to collect some, bringing r_c1 along."
         ],
         "decline_text": [
@@ -33148,7 +33148,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Newleaf should bring new leaves on the berry brambles. p_l heads out to collect some, bringing along anyone who isn't busy with other work."
         ],
         "decline_text": [
@@ -33308,7 +33308,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Worried about {PRONOUN/p_l/poss} stores of burdock, and anticipating the plants' newleaf growth, p_l heads out to replenish the Clan's stocks."
         ],
         "decline_text": [
@@ -33439,7 +33439,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Worried about {PRONOUN/p_l/poss} stores of burdock, and anticipating the plants' newleaf growth, p_l heads out to replenish the Clan's stocks, bringing r_c1 along."
         ],
         "decline_text": [
@@ -33649,7 +33649,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Worried about {PRONOUN/p_l/poss} stores of burdock, and anticipating the plants' newleaf growth, p_l heads out to replenish the Clan's stocks, bringing along anyone who isn't busy with other work."
         ],
         "decline_text": [
@@ -33870,7 +33870,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With the snows of leaf-bare nearly vanished, newleaf winning its place in the seasonal cycle, p_l heads out to gather daisy leaves."
         ],
         "decline_text": [
@@ -33987,7 +33987,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With the snows of leaf-bare nearly vanished, newleaf winning its place in the seasonal cycle, p_l heads out to gather daisy leaves, bringing r_c1 along for a lesson."
         ],
         "decline_text": [
@@ -34195,7 +34195,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With the snows of leaf-bare nearly vanished, newleaf winning its place in the seasonal cycle, p_l heads out to gather daisy leaves. {PRONOUN/p_l/subject/CAP} {VERB/p_l/assemble/assembles} a little group of warriors to help {PRONOUN/p_l/object} carry the herbs."
         ],
         "decline_text": [
@@ -34403,7 +34403,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_med_NL_gatheringcatmint_Mc",
-        "intro_text": [
+        "intro_strings": [
             "p_l tastes the air, trying to decide if it's warm enough to gather catmint yet. {PRONOUN/p_l/subject/CAP}'d really like to replenish the herb stocks after leaf-bare."
         ],
         "decline_text": [
@@ -34522,7 +34522,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_med_NL_gatheringcatmint_ApMc",
-        "intro_text": [
+        "intro_strings": [
             "p_l waits until they're out of camp to reveal to r_c1 that they're off to find catmint — a \"helpful\" group of \"helpers\" can be a little, well, unhelpful. Catmint is just too exciting for many of their Clanmates to keep their heads around."
         ],
         "decline_text": [
@@ -34728,7 +34728,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_med_NL_gatheringcatmint_WrWrMc",
-        "intro_text": [
+        "intro_strings": [
             "As p_l looks at the twitching tails and wide eyes of the patrol set up to 'help' {PRONOUN/p_l/object} gather catmint, {PRONOUN/p_l/poss} heart sinks. These overly excited warriors don't look like they're going to be useful, and p_l really needs to renew c_n's stocks of catmint as newleaf brings the plants back to life."
         ],
         "decline_text": [
@@ -34935,7 +34935,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The strengthening sun in the sky will bring dandelion plants out — always the first to take advantage of newleaf, those ones. Perhaps there will also be other herbs ready to be collected, such as some wild garlic. p_l heads out to look for them."
         ],
         "decline_text": [
@@ -35066,7 +35066,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The strengthening sun in the sky will bring dandelion plants out — always the first to take advantage of newleaf, those ones. p_l heads out to look for them, taking r_c1 to learn about one of the most useful common herbs in their arsenal. Maybe there will be some other herbs ready to be collected as well, such as wild garlic, if they're lucky."
         ],
         "decline_text": [
@@ -35282,7 +35282,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The strengthening sun in the sky will bring dandelion plants out — always the first to take advantage of newleaf, those ones. p_l heads out to look for them, bringing a group of {PRONOUN/p_l/poss} Clanmates along for the gathering patrol, with the instructions to also be on the lookout for wild garlic, as they don't tend to grow far from dandelions."
         ],
         "decline_text": [
@@ -35481,7 +35481,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As newleaf brings green back to the world, p_l has been eagerly anticipating the unfurling of the new leaf buds on the elder trees. There's a particular tree in a sheltered dip along a stream {PRONOUN/p_l/subject} {VERB/p_l/want/wants} to check on today. Maybe that juniper {PRONOUN/p_l/subject} saw growing nearby the other day is ready to be plucked as well..."
         ],
         "decline_text": [
@@ -35629,7 +35629,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As newleaf brings green back to the world, p_l has been eagerly anticipating the unfurling of the new leaf buds on the elder trees. There's a particular tree in a sheltered dip along a stream {PRONOUN/p_l/subject} {VERB/p_l/want/wants} to check on today, bringing r_c1 to show {PRONOUN/r_c1/object} why choosing to harvest from a sheltered plant can be helpful."
         ],
         "decline_text": [
@@ -35873,7 +35873,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As newleaf brings green back to the world, p_l has been eagerly anticipating the unfurling of the new leaf buds on the elder trees. There's a particular tree in a sheltered dip along a stream {PRONOUN/p_l/subject} {VERB/p_l/want/wants} to check on today, bringing a group of {PRONOUN/p_l/poss} Clanmates with {PRONOUN/p_l/object}."
         ],
         "decline_text": [
@@ -36057,7 +36057,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Newleaf has brought new life to c_n's territory, and p_l heads out to gather fresh goldenrod for the stores. It sure would be nice to get some marigold, too, if it's matured enough to be harvested."
         ],
         "decline_text": [
@@ -36188,7 +36188,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Newleaf has brought new life to c_n's territory, and p_l heads out to gather fresh goldenrod and marigold for the stores with r_c1."
         ],
         "decline_text": [
@@ -36403,7 +36403,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Newleaf has brought new life to c_n's territory, and p_l heads out to gather fresh goldenrod and marigold for the stores with a patrol of {PRONOUN/p_l/poss} Clanmates to assist {PRONOUN/p_l/object}."
         ],
         "decline_text": [
@@ -36584,7 +36584,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With newleaf having won against the snows of leaf-bare, it's far safer to go gather juniper needles from the trees."
         ],
         "decline_text": [
@@ -36715,7 +36715,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With newleaf having won against the snows of leaf-bare, it's far safer to go gather juniper needles from the trees. p_l heads out, promising r_c1 {PRONOUN/r_c1/subject}'ll enjoy learning about this herb."
         ],
         "decline_text": [
@@ -36931,7 +36931,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With newleaf having won against the snows of leaf-bare, it's far safer to go gather juniper needles from the trees. p_l heads out with a gathering patrol, promising the warriors that they can pick up a few needles for the dens of the camp to help freshen them up, so long as they gather enough for the herb stores first."
         ],
         "decline_text": [
@@ -37092,7 +37092,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_gatheringlungwort_Mc",
-        "intro_text": [
+        "intro_strings": [
             "p_l is on a mission to find lungwort now that newleaf is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n replenish their stocks of it."
         ],
         "decline_text": [
@@ -37271,7 +37271,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_gatheringlungwort_McAp",
-        "intro_text": [
+        "intro_strings": [
             "p_l and r_c1 head out for lungwort, and p_l starts a lesson on the value of this rare herb for treating yellowcough."
         ],
         "decline_text": [
@@ -37518,7 +37518,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_gatheringlungwort_Mc",
-        "intro_text": [
+        "intro_strings": [
             "p_l is on a mission to find lungwort now that newleaf is here. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n replenish their stocks of it. They take along a warrior escort to help."
         ],
         "decline_text": [
@@ -37809,7 +37809,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "cat_sprites/gen_med_gatheringmallow_Mc",
-        "intro_text": [
+        "intro_strings": [
             "Newleaf has brought new life to c_n's territory, and p_l heads out to gather fresh mallow for the stores."
         ],
         "decline_text": [
@@ -37940,7 +37940,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "cat_sprites/gen_med_gatheringmallow_ApMc",
-        "intro_text": [
+        "intro_strings": [
             "Newleaf has brought new life to c_n's territory, and p_l heads out to gather fresh mallow for the stores with r_c1."
         ],
         "decline_text": [
@@ -38155,7 +38155,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_gatheringmallow_WrMc",
-        "intro_text": [
+        "intro_strings": [
             "Newleaf has brought new life to c_n's territory, and p_l heads out to gather fresh mallow for the stores with a patrol of {PRONOUN/p_l/poss} Clanmates to assist {PRONOUN/p_l/object}."
         ],
         "decline_text": [
@@ -38336,7 +38336,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With newleaf comes the opportunity to scout out c_n's territory and find where marigold might be growing this year."
         ],
         "decline_text": [
@@ -38467,7 +38467,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With newleaf comes the opportunity to scout out c_n's territory and find where marigold might be growing this year with r_c1."
         ],
         "decline_text": [
@@ -38682,7 +38682,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With newleaf comes the opportunity to scout out c_n's territory and find where marigold might be growing this year. p_l goes with a patrol of {PRONOUN/p_l/poss} Clanmates to assist {PRONOUN/p_l/object}."
         ],
         "decline_text": [
@@ -38844,7 +38844,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With newleaf comes the opportunity to scout out c_n's territory and find where mullein might be growing this year."
         ],
         "decline_text": [
@@ -38961,7 +38961,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With newleaf comes the opportunity to scout out c_n's territory and find where mullein might be growing this year with r_c1."
         ],
         "decline_text": [
@@ -39176,7 +39176,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With newleaf comes the opportunity to scout out c_n's territory and find where mullein might be growing this year. p_l goes with a patrol of {PRONOUN/p_l/poss} Clanmates to assist {PRONOUN/p_l/object}."
         ],
         "decline_text": [
@@ -39358,7 +39358,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "backgrounds/gen_GL_gatheringoakleaves1",
-        "intro_text": [
+        "intro_strings": [
             "As the branches of the oak trees start to green, p_l heads out to collect its leaves."
         ],
         "decline_text": [
@@ -39479,7 +39479,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "backgrounds/gen_GL_gatheringoakleaves1",
-        "intro_text": [
+        "intro_strings": [
             "As the branches of the oak trees start to green, p_l brings r_c1 to collect its leaves."
         ],
         "decline_text": [
@@ -39656,7 +39656,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "backgrounds/gen_GL_gatheringoakleaves1",
-        "intro_text": [
+        "intro_strings": [
             "As the branches of the oak trees start to green, p_l heads out to collect its leaves with {PRONOUN/p_l/poss} Clanmates coming along. Many paws will make light work, after all."
         ],
         "decline_text": [
@@ -39818,7 +39818,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The plantain plants have reawakened, and p_l plans to go gather some of their leaves."
         ],
         "decline_text": [
@@ -39923,7 +39923,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The plantain plants have reawakened, and p_l plans to go gather some of their leaves. r_c1 asks to come along!"
         ],
         "decline_text": [
@@ -40101,7 +40101,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The plantain plants have reawakened, and p_l plans to go gather some of their leaves with a gathering patrol."
         ],
         "decline_text": [
@@ -40270,7 +40270,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the poppy starts to bloom and set seed in newleaf, p_l jumps at the opportunity."
         ],
         "decline_text": [
@@ -40389,7 +40389,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the poppy starts to bloom and set seed in newleaf, p_l jumps at the opportunity, explaining to r_c1 that they have to take advantage of its short growing season while they can."
         ],
         "decline_text": [
@@ -40572,7 +40572,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the poppy starts to bloom and set seed in newleaf, p_l jumps at the opportunity. {PRONOUN/p_l/subject/CAP} {VERB/p_l/assemble/assembles} a good-sized patrol full of Clanmates to help {PRONOUN/p_l/object} out with the gathering of this important herb."
         ],
         "decline_text": [
@@ -40705,7 +40705,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With newleaf bringing ragwort back on the medicinal menu, p_l heads out to find where the silly plants have decided to sprout this year."
         ],
         "decline_text": [
@@ -40821,7 +40821,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With newleaf bringing ragwort back on the medicinal menu, p_l heads out to find where the silly plants have decided to sprout this year. {PRONOUN/p_l/subject/CAP} {VERB/p_l/explain/explains} to r_c1 the annoyances of the type of plant that dies completely in leaf-bare, leaving them having to search for all-new spots every newleaf."
         ],
         "decline_text": [
@@ -41041,7 +41041,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With newleaf bringing ragwort back on the medicinal menu, p_l heads out to find where the silly plants have decided to sprout this year. {PRONOUN/p_l/subject/CAP} {VERB/p_l/describe/describes} ragwort to the warriors with {PRONOUN/p_l/object}, though {PRONOUN/p_l/subject}'d be surprised if anyone manages to spot it."
         ],
         "decline_text": [
@@ -41221,7 +41221,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As newleaf brings green to c_n's lands, p_l goes out in a search for tansy. It can be reassuring, in a way, to be the only cat gathering the sometimes-dangerous herb."
         ],
         "decline_text": [
@@ -41338,7 +41338,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As newleaf brings green to c_n's lands, p_l goes out in a search for tansy. {PRONOUN/p_l/subject/CAP} {VERB/p_l/bring/brings} r_c1 with {PRONOUN/p_l/object} for an important lesson on its use."
         ],
         "decline_text": [
@@ -41557,7 +41557,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As newleaf brings green to c_n's lands, p_l goes out in a search for tansy. There shouldn't be any problem collecting it with other cats — these warriors are all strong and healthy."
         ],
         "decline_text": [
@@ -41737,7 +41737,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With the newleaf sun hidden behind cloudy drizzle, it's a damp day to find thyme."
         ],
         "decline_text": [
@@ -41858,7 +41858,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With the newleaf sun hidden behind cloudy drizzle, it's a damp day to find thyme. p_l lets r_c1 take the lead, testing {PRONOUN/r_c1/poss} knowledge."
         ],
         "decline_text": [
@@ -42073,7 +42073,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With the newleaf sun hidden behind cloudy drizzle, it's a damp day to find thyme, and the gathering patrol would rather have this over with quickly."
         ],
         "decline_text": [
@@ -42255,7 +42255,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l uses the blustery newleaf morning to try catch the scent of wild garlic on the breeze."
         ],
         "decline_text": [
@@ -42372,7 +42372,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l uses the blustery newleaf morning to try catch the scent of wild garlic on the breeze, encouraging r_c1 to try the technique."
         ],
         "decline_text": [
@@ -42586,7 +42586,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l uses the blustery newleaf morning to try catch the scent of wild garlic on the breeze, a patrol of warriors assisting {PRONOUN/p_l/object}."
         ],
         "decline_text": [
@@ -42787,7 +42787,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l goes out with a warrior escort, both for safety as {PRONOUN/p_l/subject} {VERB/p_l/try/tries} to stock up under the clear leaf-fall skies, and for carrying capacity should {PRONOUN/p_l/subject} find anything."
         ],
         "decline_text": [
@@ -43001,7 +43001,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out, leading a patrol of medicine cats to go stock up on the ripening harvest available in leaf-fall."
         ],
         "decline_text": [
@@ -43186,7 +43186,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The betony plants have started to dramatically give up on life as leaf-fall progresses, so p_l takes the opportunity to go harvest from them."
         ],
         "decline_text": [
@@ -43317,7 +43317,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The betony plants have started to dramatically give up on life as leaf-fall progresses, so p_l takes the opportunity to go harvest from them, bringing along r_c1 for an herb-craft lesson."
         ],
         "decline_text": [
@@ -43528,7 +43528,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The betony plants have started to dramatically give up on life as leaf-fall progresses, so p_l takes the opportunity to go harvest from them, bringing along a patrol to help {PRONOUN/p_l/object} carry the leaves back to the herb stores."
         ],
         "decline_text": [
@@ -43722,7 +43722,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As leaf-fall arrives, berry plants burst into fruit and p_l heads out to take advantage."
         ],
         "decline_text": [
@@ -43853,7 +43853,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As leaf-fall arrives, berry plants burst into fruit and p_l heads out to take advantage, bringing r_c1 along."
         ],
         "decline_text": [
@@ -44054,7 +44054,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As leaf-fall arrives, berry plants burst into fruit and p_l heads out to take advantage, bringing along anyone who isn't busy with other work."
         ],
         "decline_text": [
@@ -44214,7 +44214,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As leaf-fall starts to hint at the cold soon to come, the burdock plants begin to wilt. p_l heads out to replenish the Clan's stocks."
         ],
         "decline_text": [
@@ -44345,7 +44345,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As leaf-fall starts to hint at the cold soon to come, the burdock plants begin to wilt. p_l heads out to replenish the Clan's stocks, bringing r_c1 along."
         ],
         "decline_text": [
@@ -44559,7 +44559,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As leaf-fall starts to hint at the cold soon to come, the burdock plants begin to wilt. p_l heads out to replenish the Clan's stocks, bringing along anyone who isn't busy with other work."
         ],
         "decline_text": [
@@ -44773,7 +44773,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_med_LF_gatheringcatmint_Mc",
-        "intro_text": [
+        "intro_strings": [
             "{PRONOUN/p_l/subject/CAP}'d better take the opportunity to harvest while they can. p_l doesn't have much time left before many herbs will leave c_n's territory with the cold of leaf-bare."
         ],
         "decline_text": [
@@ -44912,7 +44912,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_med_LF_gatheringcatmint_ApMc",
-        "intro_text": [
+        "intro_strings": [
             "p_l waits until they're out of camp to reveal to r_c1 that they're off to find catmint — a \"helpful\" group of \"helpers\" can be a little, well, unhelpful. Catmint is just too exciting for many of their Clanmates to keep their heads around, and they need to ensure c_n has stocks for the coming leaf-bare."
         ],
         "decline_text": [
@@ -45122,7 +45122,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_med_LF_gatheringcatmint_WrWrMc",
-        "intro_text": [
+        "intro_strings": [
             "As p_l looks at the twitching tails and wide eyes of the patrol set up to 'help' {PRONOUN/p_l/object} gather catmint, {PRONOUN/p_l/poss} heart sinks. These overly excited warriors don't look like they're going to be useful, and p_l only has so much time before the catmint dies off at the end of leaf-fall."
         ],
         "decline_text": [
@@ -45307,7 +45307,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "There's still time this leaf-fall to store away a good harvest of dried-but-potent daisy leaves, in case c_n's elders need it for their joints or cats need to unexpectedly travel."
         ],
         "decline_text": [
@@ -45438,7 +45438,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "There's still time this leaf-fall to store away a good harvest of dried-but-potent daisy leaves, in case c_n's elders need it for their joints or cats need to unexpectedly travel. p_l brings r_c1 along for a lesson."
         ],
         "decline_text": [
@@ -45654,7 +45654,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "There's still time this leaf-fall to store away a good harvest of dried-but-potent daisy leaves, in case c_n's elders need it for their joints or cats need to unexpectedly travel. p_l assembles a group of warriors to help {PRONOUN/p_l/object} carry the herbs."
         ],
         "decline_text": [
@@ -45836,7 +45836,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Yellow flowers poke out from the leaf litter, signaling that the dandelions haven't given up on growing for the season. If dandelions are around, could there be something else needed for the herb storage, too, like wild garlic?"
         ],
         "decline_text": [
@@ -45967,7 +45967,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Yellow flowers poke out from the leaf litter, signaling that the dandelions haven't given up on growing for the season. p_l heads out to look for them, taking r_c1 to learn about one of the most useful common herbs in their arsenal. If they were particularly lucky, p_l explains to r_c1, perhaps there might be some other plants, like wild garlic, around to collect as well."
         ],
         "decline_text": [
@@ -46187,7 +46187,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Yellow flowers poke out from the leaf litter, signaling that the dandelions haven't given up on growing for the season. p_l heads out to look for them, bringing a group of {PRONOUN/p_l/poss} Clanmates along for the gathering patrol. With this many cats, they might be able to collect some other herbs along the way, too, such as the wild garlic that p_l knows grows near the dandelion patch they're looking for."
         ],
         "decline_text": [
@@ -46386,7 +46386,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With leaf-fall washing the world in tones of red and brown, p_l feels the need to gather as many elder leaves as possible, before the season turns and the Clan must survive without new stocks during leaf-bare. There's a particular tree in a sheltered dip along a stream {PRONOUN/p_l/subject} {VERB/p_l/want/wants} to check on today."
         ],
         "decline_text": [
@@ -46534,7 +46534,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With leaf-fall washing the world in rich, warm tones, p_l feels the need to gather as many elder leaves as possible, before the season turns and the Clan must survive without new stock until newleaf. There's a tree in a dip along a stream {PRONOUN/p_l/subject} {VERB/p_l/want/wants} to check on today, and {PRONOUN/p_l/subject} {VERB/p_l/bring/brings} r_c1 to teach why harvesting from a sheltered plant can be helpful."
         ],
         "decline_text": [
@@ -46783,7 +46783,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "With leaf-fall washing the world in tones of red and brown, p_l feels the need to gather as many elder leaves as possible, before the season turns and the Clan must survive without new stocks during leaf-bare. There's a particular tree in a sheltered dip along a stream {PRONOUN/p_l/subject} {VERB/p_l/want/wants} to check on today, and {PRONOUN/p_l/subject} {VERB/p_l/bring/brings} a group of {PRONOUN/p_l/poss} Clanmates with {PRONOUN/p_l/object}."
         ],
         "decline_text": [
@@ -46966,7 +46966,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh goldenrod for the stores."
         ],
         "decline_text": [
@@ -47097,7 +47097,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh goldenrod for the stores with r_c1."
         ],
         "decline_text": [
@@ -47304,7 +47304,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh goldenrod for the stores with a patrol of {PRONOUN/p_l/poss} Clanmates to assist {PRONOUN/p_l/object}."
         ],
         "decline_text": [
@@ -47485,7 +47485,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l sniffs the clean, fresh morning air, wondering if {PRONOUN/p_l/subject} can smell juniper berries on the breeze."
         ],
         "decline_text": [
@@ -47616,7 +47616,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l sniffs the clean fresh morning air, wondering if {PRONOUN/p_l/subject} can smell juniper berries on the breeze. {PRONOUN/p_l/subject/CAP} {VERB/p_l/bring/brings} r_c1 to investigate."
         ],
         "decline_text": [
@@ -47831,7 +47831,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l sniffs the clean fresh morning air, wondering if {PRONOUN/p_l/subject} can smell juniper berries on the breeze. {PRONOUN/p_l/subject/CAP} {VERB/p_l/assemble/assembles} a patrol to investigate."
         ],
         "decline_text": [
@@ -47992,7 +47992,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_gatheringlungwort_Mc",
-        "intro_text": [
+        "intro_strings": [
             "p_l is on a mission to find lungwort now that leaf-bare is on the horizon. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n stock up on it."
         ],
         "decline_text": [
@@ -48188,7 +48188,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_gatheringlungwort_McAp",
-        "intro_text": [
+        "intro_strings": [
             "p_l and r_c1 head out for lungwort, and p_l starts a lesson on the value of this rare herb for treating yellowcough."
         ],
         "decline_text": [
@@ -48435,7 +48435,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_gatheringlungwort_Mc",
-        "intro_text": [
+        "intro_strings": [
             "p_l is on a mission to find lungwort now that leaf-bare is on the horizon. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n won't run out of it. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} along a warrior escort to help."
         ],
         "decline_text": [
@@ -48702,7 +48702,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "cat_sprites/gen_med_gatheringmallow_Mc",
-        "intro_text": [
+        "intro_strings": [
             "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh mallow for the stores."
         ],
         "decline_text": [
@@ -48833,7 +48833,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "cat_sprites/gen_med_gatheringmallow_ApMc",
-        "intro_text": [
+        "intro_strings": [
             "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh mallow for the stores with r_c1."
         ],
         "decline_text": [
@@ -49040,7 +49040,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_gatheringmallow_WrMc",
-        "intro_text": [
+        "intro_strings": [
             "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh mallow for the stores with a patrol of {PRONOUN/p_l/poss} Clanmates to assist {PRONOUN/p_l/object}."
         ],
         "decline_text": [
@@ -49221,7 +49221,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh marigold for the stores before the plants wither and die off."
         ],
         "decline_text": [
@@ -49352,7 +49352,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh marigold for the stores with r_c1 before the plants wither and die off."
         ],
         "decline_text": [
@@ -49540,7 +49540,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh marigold for the stores with a patrol of {PRONOUN/p_l/poss} Clanmates to assist {PRONOUN/p_l/object} before the plants wither and die off."
         ],
         "decline_text": [
@@ -49702,7 +49702,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the mullein towers impressively over the other plants, it's a good time to harvest it."
         ],
         "decline_text": [
@@ -49833,7 +49833,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the mullein towers impressively over the other plants, it's a good time to harvest it. p_l explains to r_c1 how mullein's height make it easy to spot from a distance."
         ],
         "decline_text": [
@@ -50040,7 +50040,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the mullein towers impressively over the other plants, it's a good time to harvest it."
         ],
         "decline_text": [
@@ -50222,7 +50222,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "backgrounds/gen_LF_gatheringoakleaves1",
-        "intro_text": [
+        "intro_strings": [
             "As the oaks are washed with brilliant color, p_l heads out to gather their last green leaves."
         ],
         "decline_text": [
@@ -50353,7 +50353,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "backgrounds/gen_LF_gatheringoakleaves2",
-        "intro_text": [
+        "intro_strings": [
             "As the oaks are washed with brilliant color, p_l heads out on a patrol to gather their last green leaves, explaining to r_c1 how the leaves lose their herbal potency with the reds of leaf-fall."
         ],
         "decline_text": [
@@ -50505,7 +50505,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "backgrounds/gen_LF_gatheringoakleaves1",
-        "intro_text": [
+        "intro_strings": [
             "As the oaks are washed with brilliant color, p_l heads out on a gathering patrol with warriors to gather their last green leaves."
         ],
         "decline_text": [
@@ -50667,7 +50667,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l is always amused by the plantain's enduring cheerfulness in the face of being trodden on, and it's nice that the plants grow with such enthusiasm right to the end of leaf-fall."
         ],
         "decline_text": [
@@ -50786,7 +50786,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l is always amused by the plantain's enduring cheerfulness in the face of being trodden on, and it's nice that the plants grow with such enthusiasm right to the end of leaf-fall. r_c1 asks if they'll really die back in leaf-bare — the plant seems too determined to give up in the cold."
         ],
         "decline_text": [
@@ -50964,7 +50964,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l is always amused by the plantain's enduring cheerfulness in the face of being trodden on, and it's nice that the plants grow with such enthusiasm right to the end of leaf-fall. The warriors {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} bringing along seem to regard their task as more path clearing and less herb gathering, but if it gets {PRONOUN/p_l/object} helpers, p_l isn't too fussed about it."
         ],
         "decline_text": [
@@ -51114,7 +51114,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The ragwort plants start to dramatically give up on life as leaf-fall progresses, and p_l takes the opportunity to go harvest from them."
         ],
         "decline_text": [
@@ -51231,7 +51231,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The ragwort plants start to dramatically give up on life as leaf-fall progresses, and p_l takes the opportunity to go harvest from them, bringing along r_c1 for an herb-craft lesson."
         ],
         "decline_text": [
@@ -51451,7 +51451,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The ragwort plants start to dramatically give up on life as leaf-fall progresses, and p_l takes the opportunity to go harvest from them, bringing along a patrol to help {PRONOUN/p_l/object} carry the leaves back to the herb stores."
         ],
         "decline_text": [
@@ -51631,7 +51631,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "While gathering herbs, p_l spots a bush of red berries."
         ],
         "decline_text": [
@@ -51738,7 +51738,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_med_gatheringraspberrysolo_Ap",
-        "intro_text": [
+        "intro_strings": [
             "While gathering herbs, p_l stumbles upon a bush of red berries."
         ],
         "decline_text": [
@@ -51833,7 +51833,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the tansy plants fight on though leaf-fall to fit in as much life as possible before leaf-bare, p_l goes out to harvest them."
         ],
         "decline_text": [
@@ -51950,7 +51950,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the tansy plants fight on though leaf-fall to fit in as much life as possible before leaf-bare, p_l goes out to harvest them with r_c1, bringing the apprentice for an important herb-craft lesson."
         ],
         "decline_text": [
@@ -52157,7 +52157,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the tansy plants fight on though leaf-fall to fit in as much life as possible before leaf-bare, p_l goes out to harvest them with a gathering patrol."
         ],
         "decline_text": [
@@ -52318,7 +52318,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The thyme plants are running out of growing time — p_l better go harvest them before leaf-fall is over."
         ],
         "decline_text": [
@@ -52435,7 +52435,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The thyme plants are running out of growing time — p_l better take r_c1 to harvest them before leaf-fall is over."
         ],
         "decline_text": [
@@ -52635,7 +52635,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The thyme plants are running out of growing time — p_l better go harvest them before leaf-fall is over. {PRONOUN/p_l/subject/CAP} {VERB/p_l/bring/brings} a patrol with {PRONOUN/p_l/object} to help."
         ],
         "decline_text": [
@@ -52817,7 +52817,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "In the crisp cool air of a leaf-fall morning, it should be easy to find wild garlic by scent."
         ],
         "decline_text": [
@@ -52934,7 +52934,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "In the crisp cool air of a leaf-fall morning, it should be easy to find wild garlic by scent. p_l brings along r_c1, to see if {PRONOUN/r_c1/subject} can do it."
         ],
         "decline_text": [
@@ -53140,7 +53140,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "In the crisp cool air of a leaf-fall morning, it should be easy to find wild garlic by scent. p_l leads a gathering patrol to do just that."
         ],
         "decline_text": [
@@ -53331,7 +53331,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_borderherb_Mc",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol pads carefully around the bramble's thorns, p_l tells them how raspberries got their color."
         ],
         "decline_text": [
@@ -53423,7 +53423,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_med_gatheringraspberrysolo_Wr",
-        "intro_text": [
+        "intro_strings": [
             "Though the patrol sets out to find betony, they instead come across a crimson-berried yew. This deathberry bush could be a learning opportunity."
         ],
         "decline_text": [
@@ -53833,7 +53833,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_crouchingperplexed_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "p_l takes the apprentices out to learn to identify common herbs. Regardless of their role, it is important to be able to recognize what grows in c_n's territory."
         ],
         "decline_text": [
@@ -53986,7 +53986,7 @@
         },
         "chance_of_success": 70,
         "patrol_art": "cat_sprites/gen_med_gatheringmoss_Mc",
-        "intro_text": [
+        "intro_strings": [
             "p_l notices that the moss in the medicine cat den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more."
         ],
         "decline_text": [

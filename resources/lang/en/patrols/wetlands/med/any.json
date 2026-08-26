@@ -46,7 +46,7 @@
         },
         "chance_of_success": 65,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l decides it's a good opportunity to show r_c1 where the most commonly needed herbs are in the territory, both on even and uneven ground."
         ],
         "decline_text": [
@@ -181,7 +181,7 @@
         },
         "chance_of_success": 65,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l has been sent out into the swamps to try to find herbs alone."
         ],
         "decline_text": [
@@ -237,7 +237,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "med_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l and r_c0 take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!"
         ],
         "decline_text": [

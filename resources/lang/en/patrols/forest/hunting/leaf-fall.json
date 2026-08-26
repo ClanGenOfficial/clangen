@@ -23,7 +23,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l tastes the air and perks up — there's a squirrel nearby, nibbling on some nuts near the base of a tree!"
         ],
         "decline_text": [
@@ -129,7 +129,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l scents a squirrel on the air! The dried leaves on the ground make {PRONOUN/p_l/object} a little nervous, and {PRONOUN/p_l/subject} {VERB/p_l/wonder/wonders} if {PRONOUN/p_l/subject} can navigate quietly enough to catch it..."
         ],
         "decline_text": [
@@ -250,7 +250,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l instructs r_c1 to scent the air and nods in approval when r_c1 says {PRONOUN/r_c1/subject} {VERB/r_c1/smell/smells} squirrel. Leaf-fall makes hunting a little trickier, and p_l gently prompts r_c1 to see if {PRONOUN/r_c1/subject} {VERB/r_c1/remember/remembers} how to navigate the leaf-litter."
         ],
         "decline_text": [
@@ -442,7 +442,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/fst_hunt_LB_squirreltreetoptumble_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol walks through the forest, a loud chittering from above interrupts them. r_c0 looks up just in time to get a shower of twigs and dead leaves to the face, while p_l exclaims aloud as {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above."
         ],
         "decline_text": [
@@ -705,7 +705,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol crunches through the dead leaves littering the woods, r_c0 explains an idea {PRONOUN/r_c0/subject} had for squirrel hunting. It sounds a little strange, but perhaps it could work?"
         ],
         "decline_text": [
@@ -914,7 +914,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_train_rainy_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The rain seems a constant, unceasing beat, punctuating the steps of the hunting patrol as they march towards their hunting ground. But there's one less set of footsteps than there should be. p_l can't see r_c0 in the watery haze."
         ],
         "decline_text": [
@@ -1139,7 +1139,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l travels through the blustery wind to hunt. In a pile of leaves, {PRONOUN/p_l/subject} {VERB/p_l/swear/swears} {PRONOUN/p_l/subject} could see a rat's tail."
         ],
         "decline_text": [
@@ -1200,7 +1200,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l traverses the windy forest, trying {PRONOUN/p_l/poss} best to focus and not get distracted by the dancing leaves when {PRONOUN/p_l/subject} {VERB/p_l/catch/catches} the scent of a rat nearby."
         ],
         "decline_text": [
@@ -1290,7 +1290,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l and r_c1 make their way towards a troop of mushrooms, eager to get more prey for the Clan. They hear rats squeaking amongst the fungi, and begin to plot their plan of attack."
         ],
         "decline_text": [
@@ -1383,7 +1383,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_text": [
+        "intro_strings": [
             "p_l leads the patrol towards the abandoned Twoleg nest, listening to r_c's plan. Rats were seen hiding inside to protect themselves from the chill of leaf-fall's winds. Perhaps it would be a perfect hunting spot?"
         ],
         "decline_text": [
@@ -1628,7 +1628,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_lizard_Wr",
-        "intro_text": [
+        "intro_strings": [
             "Something skitters across the leaf litter, catching the patrol's eyes. A little lizard!"
         ],
         "decline_text": [
@@ -1860,7 +1860,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_lizard_Wr",
-        "intro_text": [
+        "intro_strings": [
             "Something skitters across the leaf litter, catching the patrol's eyes. A little lizard!"
         ],
         "decline_text": [
@@ -1984,7 +1984,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l catches scent of a mouse nearby. It'll be fat on the nuts and acorns leaf-fall scatters through the forest, and if p_l can only avoid the leaves crunching under {PRONOUN/p_l/poss} paws it's as good as caught."
         ],
         "decline_text": [
@@ -2090,7 +2090,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l catches scent of a mouse nearby. {PRONOUN/p_l/subject/CAP} {VERB/p_l/look/looks} at the leaf litter on the ground — {VERB/p_l/are/is} {PRONOUN/p_l/subject} good enough to stalk without being heard?"
         ],
         "decline_text": [
@@ -2213,7 +2213,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "backgrounds/fst_dirttrail",
-        "intro_text": [
+        "intro_strings": [
             "r_c1 catches scent of a mouse nearby. p_l nods and asks {PRONOUN/r_c1/object} if r_c1 remembers {PRONOUN/p_l/poss} tips on stalking on leaf-fall's, well, fallen leaves."
         ],
         "decline_text": [
@@ -2414,7 +2414,7 @@
         ],
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_groupwalk_WrWrWr",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol heads out into the forest to hunt, r_c0 seems absolutely unconcerned with {PRONOUN/r_c0/poss} duties, ambling along as through the prey is going to waltz into {PRONOUN/r_c0/poss} paws."
         ],
         "decline_text": [
@@ -2656,7 +2656,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "backgrounds/fst_dirttrail",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol heads out into the forest to hunt, r_c0 suggests a sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice."
         ],
         "decline_text": [
@@ -2829,7 +2829,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_solo_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The air feels tense — p_l is sure that a storm is on its way to pull more leaves from the forest's canopy. If {PRONOUN/p_l/subject} {VERB/p_l/are/is} going to hunt, {PRONOUN/p_l/subject} should do it now."
         ],
         "decline_text": [
@@ -3044,7 +3044,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_train_solo_Ap",
-        "intro_text": [
+        "intro_strings": [
             "p_l hears the senior warriors chatting about an incoming storm. {PRONOUN/p_l/subject/CAP} could go out for a quick hunt — {PRONOUN/p_l/subject} would much rather do that, bring some prey home, and then earn a break from {PRONOUN/p_l/poss} chores to wait out the rain."
         ],
         "decline_text": [
@@ -3260,7 +3260,7 @@
         },
         "chance_of_success": 45,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l spots a dappled, feathered back and a bright orange chest nestled amongst some moss on the forest floor."
         ],
         "decline_text": [
@@ -3328,7 +3328,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol follows a squirrel-scent to a copse of oak trees, where a fat gray squirrel scrabbles at the earth between the roots. As the cats creep closer, p_l holds up {PRONOUN/p_l/poss} tail to halt their approach. It looks like the squirrel is burying... nothing?"
         ],
         "decline_text": [
@@ -3926,7 +3926,7 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "halloween/hal_pipbats",
-        "intro_text": [
+        "intro_strings": [
             "As the wind scatters the orange leaf-pelts of the trees, pipistrelle bats arrive en masse to court, males belting out their high-pitched songs of love."
         ],
         "decline_text": [

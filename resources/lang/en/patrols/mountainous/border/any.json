@@ -16,7 +16,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!"
         ],
         "decline_text": [
@@ -320,7 +320,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!"
         ],
         "decline_text": [
@@ -410,7 +410,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues strides confidently out from behind a tumble of rocks, yowling as they confront the Clan cats!"
         ],
         "decline_text": [
@@ -646,7 +646,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!"
         ],
         "decline_text": [
@@ -762,7 +762,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
-        "intro_text": [
+        "intro_strings": [
             "On their way to mark the far corners of their mountain, r_c0 starts telling a story of {PRONOUN/r_c0/poss} ancestors to keep every cat entertained."
         ],
         "decline_text": [
@@ -951,7 +951,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "backgrounds/mnt_waterfall",
-        "intro_text": [
+        "intro_strings": [
             "The patrol reaches a river that must be crossed to ensure the borders are thoroughly checked."
         ],
         "decline_text": [
@@ -1305,7 +1305,7 @@
         },
         "chance_of_success": 25,
         "patrol_art": "halloween/hal_mothman",
-        "intro_text": [
+        "intro_strings": [
             "As p_l pads through the shadowy trees, the sun already hidden by the mountain slopes, {PRONOUN/p_l/subject} {VERB/p_l/freeze/freezes}. Up ahead, a Twoleg peers down from above, its black wings a huge backdrop to hypnotic, glowing red eyes..."
         ],
         "decline_text": [
@@ -1440,7 +1440,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "halloween/hal_jerseydevil",
-        "intro_text": [
+        "intro_strings": [
             "As p_l ducks through the overhanging branches of an evergreen, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} two deer, lying intertwined. Are they sleeping? Curious, p_l creeps closer."
         ],
         "decline_text": [
@@ -1507,7 +1507,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l sniffs the border carefully. It could be dog scent, but more likely, without any Twoleg intrusions, this scent is wolf instead. That wouldn't be good news for c_n."
         ],
         "decline_text": [

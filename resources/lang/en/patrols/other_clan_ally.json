@@ -13,7 +13,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_otherclan_OwOw",
-        "intro_text": [
+        "intro_strings": [
             "The patrol meets o_c_n, a Clan they consider to be allies, at the border."
         ],
         "decline_text": [
@@ -313,7 +313,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "r_c0 spies a fat rabbit on the other side of the o_c_n border. A tempting opportunity to be sure, but it may not be wise to hunt on their ally's territory."
         ],
         "decline_text": [
@@ -612,7 +612,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_med_borderherb_Mc",
-        "intro_text": [
+        "intro_strings": [
             "p_l pads along, mouth open slightly as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} for any traces of herbs. {PRONOUN/p_l/subject/CAP} {VERB/p_l/scent/scents} some raspberries nearby, but it seems that they're just over the border."
         ],
         "decline_text": [
@@ -695,7 +695,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_scentallies_Wr",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory. o_c_n is their ally, but this is a bit suspicious."
         ],
         "decline_text": [
@@ -969,7 +969,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_scentallies_Wr",
-        "intro_text": [
+        "intro_strings": [
             "As p_l is checking the border lines, {PRONOUN/p_l/subject} {VERB/p_l/notice/notices} that a o_c_n scent has strayed into their territory. o_c_n is their ally, but this is a bit suspicious."
         ],
         "decline_text": [
@@ -1166,7 +1166,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l heads out into the territory alone, wanting to make a quick check on the border."
         ],
         "decline_text": [
@@ -1586,7 +1586,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_bord_otherclan_OwOw",
-        "intro_text": [
+        "intro_strings": [
             "The border patrol, busy re-marking, comes across a o_c_n patrol doing the same. The apprentices from both sides perk up at the chance for a break in the monotony. Chuckling, p_l offers the chance for a small tale <i>if</i> they can all sit still for it!"
         ],
         "decline_text": [
@@ -1675,7 +1675,7 @@
         },
         "chance_of_success": 55,
         "patrol_art": "bord_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "Since c_n is on good terms with o_c_n, the patrol is at ease as they patrol along the section of borders. As they do, p_l spots two kits from o_c_n playing close to the border."
         ],
         "decline_text": [

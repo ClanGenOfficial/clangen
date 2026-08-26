@@ -19,7 +19,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile."
         ],
         "decline_text": [
@@ -288,7 +288,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "It starts snowing soon after p_l sets out, trying to bring back something, anything, for the fresh-kill pile."
         ],
         "decline_text": [
@@ -438,7 +438,7 @@
         ],
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile."
         ],
         "decline_text": [
@@ -690,7 +690,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The trio gathers around an isolated burrow, discussing their plan in hushed mews. This burrow is an abandoned rabbit's warren, but currently is home to ground squirrels. The three entrances seem just big enough for the apprentices to crawl inside, bringing the hunt right to the squirrels, who should be in the midst of hibernation right now."
         ],
         "decline_text": [
@@ -869,7 +869,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l's patrol strolls through the plains, snow crunching under their paws. r_c0 raises {PRONOUN/r_c0/poss} tail, signaling the others to be still; {PRONOUN/r_c0/subject}{VERB/r_c0/'ve/'s} scented ground squirrels nearby."
         ],
         "decline_text": [
@@ -1105,7 +1105,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l catches scent of a mouse nearby. But there aren't any footprints imprinted on top of the snow to follow."
         ],
         "decline_text": [
@@ -1268,7 +1268,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l catches scent of a mouse nearby. But {PRONOUN/p_l/subject} {VERB/p_l/lash/lashes} {PRONOUN/p_l/poss} tail, confused — everything is covered in snow, where could the prey be?"
         ],
         "decline_text": [
@@ -1382,7 +1382,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "r_c1 catches scent of a mouse nearby. {PRONOUN/r_c1/subject/CAP}{VERB/r_c1/'re/'s} confused, asking where it could be, given there aren't footprints in the snow, until p_l indicates the snowdrift itself with a wave of {PRONOUN/p_l/poss} tail."
         ],
         "decline_text": [
@@ -1615,7 +1615,7 @@
         ],
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The patrol heads out at sunhigh, trying to press the weak warmth of the sun into their pelts. p_l is a little irritated to see that r_c1 is more focused on r_c2 than the challenge of hunting during leaf-bare."
         ],
         "decline_text": [
@@ -1936,7 +1936,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "r_c0 suggests the patrol hunts close to home — there's no use exhausting themselves pushing through the high snowdrifts."
         ],
         "decline_text": [
@@ -2113,7 +2113,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_hunt_LB_leafbaresnowstorm_Wr",
-        "intro_text": [
+        "intro_strings": [
             "Leaf-bare is taking its toll. The patrol is cold, frustrated, and most of all, hungry. p_l notices something odd. Is that a fox in the distance? Why is it jumping into the snow like that?"
         ],
         "decline_text": [

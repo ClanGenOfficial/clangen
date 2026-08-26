@@ -23,7 +23,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l stalks low to the ground, paws soft and light so as not to make a sound. {PRONOUN/p_l/poss/CAP} jaws hang open to taste at the air, and a tingle of satisfaction shoots through {PRONOUN/p_l/object} as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} a nearby ground squirrel, scrounging in the sand for its stashed-away food."
         ],
         "decline_text": [
@@ -183,7 +183,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l has snuck out of camp alone, hoping {PRONOUN/p_l/subject}'ll find a nice fat ground squirrel. Running through everything {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been taught in {PRONOUN/p_l/poss} head, {PRONOUN/p_l/subject} carefully {VERB/p_l/scent/scents} the air and {VERB/p_l/strain/strains} {PRONOUN/p_l/poss} ears, hoping for any hint of the burrowing critters in the stony outcrop they like to nest in."
         ],
         "decline_text": [
@@ -304,7 +304,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l and r_c1 sit on the beach, near a network of ground squirrel burrows hidden in the stones. This is one of a few such networks, rotated around by mentors to teach apprentices their hunting skills. r_c1 scents the air as instructed and points out a burrow; sure enough, there's a squirrel's head poking out the entrance!"
         ],
         "decline_text": [
@@ -482,7 +482,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol walks through the sandy beaches of their territory, a low sound kicks up just at the edges of their hearing. p_l comes to an abrupt stop and scrambles backwards, hissing at the others to stop as well, once they realize what's making it — there's a rattlesnake, staring down a ground squirrel!"
         ],
         "decline_text": [
@@ -690,7 +690,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l's patrol strolls leisurely along the coastline, careful to avoid the chilly spray of the waves. One cat raises their tail, signaling for the others to be still; they've scented ground squirrels nearby."
         ],
         "decline_text": [
@@ -915,7 +915,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
-        "intro_text": [
+        "intro_strings": [
             "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile."
         ],
         "decline_text": [
@@ -1184,7 +1184,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
-        "intro_text": [
+        "intro_strings": [
             "It starts snowing soon after p_l sets out, trying to bring back something nice for the fresh-kill pile."
         ],
         "decline_text": [
@@ -1329,7 +1329,7 @@
         ],
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
-        "intro_text": [
+        "intro_strings": [
             "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile."
         ],
         "decline_text": [

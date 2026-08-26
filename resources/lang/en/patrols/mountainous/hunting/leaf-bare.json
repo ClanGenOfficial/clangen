@@ -23,7 +23,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "The hunting patrol comes across an eagle out on the ice of a little lake, eating a big fish catch."
         ],
         "decline_text": [
@@ -303,7 +303,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "animals/mtn_eaglefish",
-        "intro_text": [
+        "intro_strings": [
             "The hunting patrol comes across an eagle out on the ice of a little lake, eating a big fish catch."
         ],
         "decline_text": [
@@ -569,7 +569,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile."
         ],
         "decline_text": [
@@ -838,7 +838,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "It starts snowing soon after p_l sets out, trying to bring back something, anything, for the fresh-kill pile."
         ],
         "decline_text": [
@@ -998,7 +998,7 @@
         ],
         "chance_of_success": 20,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile."
         ],
         "decline_text": [
@@ -1229,7 +1229,7 @@
         },
         "chance_of_success": 20,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l tastes the air and perks up — there's a squirrel nearby, scrounging for nuts near the base of a tree!"
         ],
         "decline_text": [
@@ -1389,7 +1389,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l scents a squirrel on the air! Leaf-bare will make this a difficult hunt, and apprehension prickles down {PRONOUN/p_l/poss} spine as {PRONOUN/p_l/subject} {VERB/p_l/weigh/weighs} {PRONOUN/p_l/poss} options."
         ],
         "decline_text": [
@@ -1510,7 +1510,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l instructs r_c1 to scent the air and nods in approval when r_c1 says {PRONOUN/r_c1/subject} {VERB/r_c1/smell/smells} squirrel. Though they don't want r_c1 to feel pressured, p_l makes sure {PRONOUN/r_c1/subject} {VERB/r_c1/know/knows} how valuable a leaf-bare squirrel would be to their Clanmates before asking what {PRONOUN/r_c1/subject} {VERB/r_c1/want/wants} to do."
         ],
         "decline_text": [
@@ -1702,7 +1702,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/fst_hunt_LB_squirreltreetoptumble_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol walks through the snowy wooded slopes, a loud chittering from above interrupts them. r_c0 looks up just in time to get a shower of twigs and dead leaves to the face, while p_l exclaims aloud as {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above."
         ],
         "decline_text": [
@@ -1949,7 +1949,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol walks through the snowy wooded slopes, r_c0 explains an idea {PRONOUN/r_c0/subject} had for squirrel hunting. It sounds a little strange, but perhaps it could work?"
         ],
         "decline_text": [
@@ -2163,7 +2163,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "What a rare sight! Blue jay feathers are often found around here, though never the bird itself, especially in leaf-bare! Its plumage stands out fetchingly against the snow."
         ],
         "decline_text": [
@@ -2590,7 +2590,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l finds a common buzzard eating crow-food on top of a high cliff. {PRONOUN/p_l/subject/CAP} {VERB/p_l/crouch/crouches} down to hunt but — Wait! Was it buzzards or vultures that the mountain Clans respected?"
         ],
         "decline_text": [
@@ -2970,7 +2970,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "It's a cold day in c_n's territory, and p_l is the only cat stepping out. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} by {PRONOUN/p_l/self} when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a cat screaming for help."
         ],
         "decline_text": [
@@ -3203,7 +3203,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_confused_Wr",
-        "intro_text": [
+        "intro_strings": [
             "r_c1 has been acting weird all day, full of too-quick answers and furtive glances. A parent usually knows; p_l has seen that look too often in r_c1's nursery days. So, when {PRONOUN/r_c1/subject} {VERB/r_c1/creep/creeps} out of camp and into the frosty  shadows of the mountains at night, p_l is there waiting for {PRONOUN/r_c1/object}. r_c1 freezes, staring up with wide eyes."
         ],
         "decline_text": [

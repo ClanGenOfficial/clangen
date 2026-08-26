@@ -23,7 +23,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l tastes the air and perks up — there's a squirrel nearby, nibbling the delicate new plant growth near the base of a tree!"
         ],
         "decline_text": [
@@ -129,7 +129,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l scents a squirrel on the air! This could be a great chance to bring one of the first big pieces of fresh-kill home..."
         ],
         "decline_text": [
@@ -250,7 +250,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l instructs r_c1 to scent the air and nods in approval when r_c1 says {PRONOUN/r_c1/subject} {VERB/r_c1/smell/smells} squirrel. Early newleaf squirrels are always a good target — p_l softly murmurs tips to r_c1 and asks what {PRONOUN/r_c1/subject} {VERB/r_c1/want/wants} to do."
         ],
         "decline_text": [
@@ -442,7 +442,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/fst_hunt_gen_squirreltreetoptumble_WrWr",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol walks through the forest, a loud chittering from above interrupts them. r_c0 looks up just in time to get a shower of twigs and leaves to the face, while p_l exclaims aloud when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above."
         ],
         "decline_text": [
@@ -705,7 +705,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol walks through the woods, r_c0 explains an idea {PRONOUN/r_c0/subject} had for squirrel hunting. It sounds a little strange, but perhaps it could work?"
         ],
         "decline_text": [
@@ -907,7 +907,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
-        "intro_text": [
+        "intro_strings": [
             "The patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree."
         ],
         "decline_text": [
@@ -984,7 +984,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_train_rainy_Wr",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol wanders through a damp, dripping world, their claws clogged with mud, p_l turns around to find r_c0 is missing."
         ],
         "decline_text": [
@@ -1202,7 +1202,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "backgrounds/fst_canopy",
-        "intro_text": [
+        "intro_strings": [
             "p_l makes {PRONOUN/p_l/poss} way towards a blooming grove of trees. {PRONOUN/p_l/poss/CAP} ears perk at the sound of a soft hiss on the wind."
         ],
         "decline_text": [
@@ -1302,7 +1302,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l makes {PRONOUN/p_l/poss} way towards a large mossy log, eager to make the Clan proud with this hunting assessment! A soft scratching could be heard inside."
         ],
         "decline_text": [
@@ -1442,7 +1442,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "backgrounds/fst_canopy",
-        "intro_text": [
+        "intro_strings": [
             "p_l and r_c1 make their way towards a blooming grove of trees, listening to the chittering prey in the branches. p_l spots a rat near a mossy stump and challenges r_c1 to catch it."
         ],
         "decline_text": [
@@ -1592,7 +1592,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_text": [
+        "intro_strings": [
             "r_c0 calls the patrol to {PRONOUN/r_c0/object}, explaining {PRONOUN/r_c0/poss} plan. An abandoned Twoleg nest has been spotted on the territory by the border patrols, brimming with rats! It would be the perfect place for some newleaf hunting!"
         ],
         "decline_text": [
@@ -1837,7 +1837,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_lizard_Wr",
-        "intro_text": [
+        "intro_strings": [
             "Something skitters across newly sprouted grass, catching the patrol's eyes. A little lizard!"
         ],
         "decline_text": [
@@ -2069,7 +2069,7 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_lizard_Wr",
-        "intro_text": [
+        "intro_strings": [
             "Something skitters across newly sprouted grass, catching the patrol's eyes. A little lizard!"
         ],
         "decline_text": [
@@ -2184,7 +2184,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l catches scent of a mouse nearby. A perfect opportunity to pick up one of the first bounties newleaf brings to the forest."
         ],
         "decline_text": [
@@ -2290,7 +2290,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
-        "intro_text": [
+        "intro_strings": [
             "p_l catches scent of a mouse nearby. A perfect opportunity to pick up one of the first bounties newleaf brings to the forest."
         ],
         "decline_text": [
@@ -2413,7 +2413,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "backgrounds/fst_dirttrail",
-        "intro_text": [
+        "intro_strings": [
             "r_c1 catches scent of a mouse nearby. p_l tells {PRONOUN/r_c1/object} it might be the perfect opportunity to pick up one of the first bounties newleaf brings to the forest, and whispers some stalking tips to r_c1."
         ],
         "decline_text": [
@@ -2614,7 +2614,7 @@
         ],
         "chance_of_success": 10,
         "patrol_art": "cat_sprites/gen_groupwalk_WrWrWr",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol heads out into the forest to hunt, r_c0 seems to be absolutely unconcerned with {PRONOUN/r_c0/poss} duties, instead ambling along as through the prey is going to waltz into {PRONOUN/r_c0/poss} paws."
         ],
         "decline_text": [
@@ -2856,7 +2856,7 @@
         },
         "chance_of_success": 10,
         "patrol_art": "backgrounds/fst_dirttrail",
-        "intro_text": [
+        "intro_strings": [
             "As the patrol heads out into the forest to hunt, r_c0 suggests a sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice."
         ],
         "decline_text": [
@@ -3029,7 +3029,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_train_solo_Wr",
-        "intro_text": [
+        "intro_strings": [
             "As p_l sets off to see what {PRONOUN/p_l/subject} can find for the fresh-kill pile, the newleaf sun feels weak, but the grass is sprouting and the trees of the forest are coated in mangy pelts of not-quite-unfurled leaf buds. Let's see what {PRONOUN/p_l/subject} can rustle up."
         ],
         "decline_text": [
@@ -3208,7 +3208,7 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_train_solo_Ap",
-        "intro_text": [
+        "intro_strings": [
             "p_l, hearing the rest of camp gossiping about the good hunting newleaf will bring, thinks it's worth a shot going out into the soggy forest by {PRONOUN/p_l/self}. {PRONOUN/p_l/subject/CAP} {VERB/p_l/want/wants} to prove that {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} gotten better at stalking."
         ],
         "decline_text": [
@@ -3353,7 +3353,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_hunt_NL_eggs_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "Leading the way into the forest, p_l calls back to the two apprentices, telling them there's a treat in store for them — finally it's newleaf, which means it's time for the young cats to pick up on one of the quintessential c_n skills — nest raiding!"
         ],
         "decline_text": [
@@ -3638,7 +3638,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_hunt_NL_eggs_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "Leading the way into the forest, p_l calls back to the three apprentices, telling them there's a treat in store for them — finally it's newleaf, which means it's time for the young cats to pick up on one of the quintessential c_n skills — nest raiding!"
         ],
         "decline_text": [
@@ -3908,7 +3908,7 @@
         },
         "chance_of_success": 50,
         "patrol_art": "backgrounds/fst_canopy",
-        "intro_text": [
+        "intro_strings": [
             "As p_l sharpens {PRONOUN/p_l/poss} claws on a tree root, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a pair of birds furiously chattering to each other above {PRONOUN/p_l/object}, puffing up their feathers and singing in territorial fury. {PRONOUN/p_l/subject/CAP} could go after the birds, of course — but if the fluffy mouthfuls are being protective, then there's something to protect, and it's the season for nest raiding."
         ],
         "decline_text": [
@@ -4057,7 +4057,7 @@
         },
         "chance_of_success": 25,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l wakes from a dream of rich yolk, tongue sticking out ready to lap from an eggshell. However, when {PRONOUN/p_l/subject} {VERB/p_l/poke/pokes} {PRONOUN/p_l/poss} head out of {PRONOUN/p_l/poss} den to go nest raiding, there's rain pouring down outside. But... {PRONOUN/p_l/subject/CAP} can still taste egg on {PRONOUN/p_l/poss} tongue..."
         ],
         "decline_text": [
@@ -4291,7 +4291,7 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_hunt_NL_eggs_ApAp",
-        "intro_text": [
+        "intro_strings": [
             "Leading the way into the forest, p_l calls back to r_c1. There's a treat in store for {PRONOUN/r_c1/object} — finally it's newleaf, which means it's time for the young cat to pick up on one of the quintessential c_n skills — nest raiding!"
         ],
         "decline_text": [
@@ -4537,7 +4537,7 @@
         },
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
-        "intro_text": [
+        "intro_strings": [
             "p_l has ears, of course {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} heard the rest of c_n buzzing about the nest raiding season, and {PRONOUN/p_l/subject} {VERB/p_l/see/sees} no reason {PRONOUN/p_l/subject} should be left out of it!"
         ],
         "decline_text": [
