@@ -34,7 +34,7 @@ from scripts.events_module.text_pool_event.check_general_constraints import (
     passes_general_constraints,
 )
 from scripts.events_module.text_pool_event.event_retrieval import get_valid_event
-from scripts.events_module.text_pool_event.find_involved_cats import find_cats
+from scripts.events_module.text_pool_event.find_involved_cats import find_or_create_cats
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure import constants
 from scripts.game_structure import game
@@ -579,7 +579,7 @@ class Patrol:
         involved_cats = self.outcome_cats[
             PatrolOutcome.SUCCESS if success else PatrolOutcome.FAILURE
         ]
-        involved_cats = find_cats(
+        involved_cats = find_or_create_cats(
             interactable_cats=involved_cats["patrol_cats"],
             involved_cats=involved_cats,
             outside_cats=outside_cats,

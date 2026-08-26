@@ -14,7 +14,7 @@ from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 
 
-def find_cats(
+def find_or_create_cats(
     interactable_cats: list,
     involved_cats: dict,
     outside_cats: list,
@@ -24,7 +24,7 @@ def find_cats(
     check_already_assigned_cats: bool = True,
 ) -> dict:
     """
-    Finds and returns cats for a PatrolEvent or TextPoolEvent.
+    Finds and returns cats for a PatrolEvent or TextPoolEvent. If a cat cannot be found, but is marked as `can_be_created`, then a cat will be created.
     :param interactable_cats: A list of cats within the Clan eligible to appear in the event.
     :param involved_cats: Dict of cats already involved. Key is abbreviation, value is cat object
     :param outside_cats: A list of cats outside the Clan eligible to appear in the event.

@@ -9,7 +9,7 @@ from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.text_pool_event.check_general_constraints import (
     passes_general_constraints,
 )
-from scripts.events_module.text_pool_event.find_involved_cats import find_cats
+from scripts.events_module.text_pool_event.find_involved_cats import find_or_create_cats
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.game_structure.localization import load_lang_resource
 
@@ -124,7 +124,7 @@ def get_valid_event(
 
         # CHECK CAT CONSTRAINTS
         if cat_constraints_active:
-            temp_involved_cats = find_cats(
+            temp_involved_cats = find_or_create_cats(
                 interactable_cats=interactable_cats,
                 involved_cats=temp_involved_cats,
                 outside_cats=outside_cats,
