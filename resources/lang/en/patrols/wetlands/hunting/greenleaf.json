@@ -22,7 +22,7 @@
         "intro_strings": [
             "It's extremely hot out today, and the hunting patrol lingers in the cool beds of reeds, letting the water lap between their toes."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides to head back to camp. They can hunt a different day."
         ],
         "success_outcomes": [

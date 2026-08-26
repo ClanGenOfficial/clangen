@@ -19,7 +19,7 @@
         "intro_strings": [
             "The patrol comes across a lizard."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides to look for other prey."
         ],
         "success_outcomes": [
@@ -73,7 +73,7 @@
         "intro_strings": [
             "The patrol approaches a Twoleg nest perched on the edge of a swamp, with smoke rising from its corner."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides to hunt elsewhere."
         ],
         "success_outcomes": [
@@ -158,7 +158,7 @@
         "intro_strings": [
             "The patrol approaches a Twoleg nest perched on the edge of a swamp, with smoke rising from its corner."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides to hunt elsewhere."
         ],
         "success_outcomes": [
@@ -262,7 +262,7 @@
         "intro_strings": [
             "The patrol looks around for something to disguise their scent while hunting."
         ],
-        "decline_text": [
+        "decline_strings": [
             "On second thought, maybe not."
         ],
         "success_outcomes": [
@@ -432,7 +432,7 @@
         "intro_strings": [
             "p_l looks around for something to disguise their scent while hunting."
         ],
-        "decline_text": [
+        "decline_strings": [
             "On second thought, maybe not."
         ],
         "success_outcomes": [
@@ -591,7 +591,7 @@
         "intro_strings": [
             "p_l heads out into the swamps alone, wanting to sink their teeth into some prey and have some time to themselves."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l turns back to camp, deciding that a group hunt would be more effective."
         ],
         "success_outcomes": [
@@ -737,7 +737,7 @@
         "intro_strings": [
             "p_l heads out into the swamps alone, wanting to sink their teeth into some prey and have some time to themselves."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l turns back to camp, deciding that a group hunt would be more effective."
         ],
         "success_outcomes": [
@@ -883,7 +883,7 @@
         "intro_strings": [
             "p_l heads out into the swamps alone, wanting to sink their teeth into some prey and have some time to themselves."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l turns back to camp, deciding that a group hunt would be more effective."
         ],
         "success_outcomes": [
@@ -1025,7 +1025,7 @@
         "intro_strings": [
             "p_l decides to hunt out near the Twoleg dens."
         ],
-        "decline_text": [
+        "decline_strings": [
             "On second thought, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to reline {PRONOUN/p_l/poss} nest today instead."
         ],
         "success_outcomes": [
@@ -1280,7 +1280,7 @@
         "intro_strings": [
             "p_l decides to hunt out near the Twoleg dens."
         ],
-        "decline_text": [
+        "decline_strings": [
             "On second thought, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to reline {PRONOUN/p_l/poss} nest today instead."
         ],
         "success_outcomes": [
@@ -1442,7 +1442,7 @@
         "intro_strings": [
             "{PRONOUN/r_c0/poss/CAP} eyes daring p_l to say no, r_c0 suggests hunting by the Twoleg dens."
         ],
-        "decline_text": [
+        "decline_strings": [
             "On second thought, they decide to reline their nests today instead."
         ],
         "success_outcomes": [
@@ -1741,7 +1741,7 @@
         "intro_strings": [
             "The smell of food lures p_l into what looks like a tunnel under some swampgrass."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Turning their nose up at the temptation, they continue on their way."
         ],
         "success_outcomes": [
@@ -1897,7 +1897,7 @@
         "intro_strings": [
             "The smell of food lures r_c0 into what looks like a tunnel under some swampgrass."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Turning their noses up at the temptation, the patrol continues on their way."
         ],
         "success_outcomes": [
@@ -2066,7 +2066,7 @@
         "intro_strings": [
             "Something skitters across the leaf litter, catching the patrol's eyes. A little salamander!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Startled by the salamander, the patrol watches it scurry away."
         ],
         "success_outcomes": [
@@ -2299,7 +2299,7 @@
         "intro_strings": [
             "Something skitters across the leaf litter, catching the patrol's eyes. A little salamander!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Startled by the salamander, the patrol watches it scurry away."
         ],
         "success_outcomes": [
@@ -2457,7 +2457,7 @@
         "intro_strings": [
             "The patrol catches the scent of a red fox. When they track it down, they find it feeding on a gigantic dead eel it's fished from the swamp, although whether the eel was dead before the fox found it is up for debate."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides not to quarrel with the fox and to find prey elsewhere."
         ],
         "success_outcomes": [
@@ -3038,7 +3038,7 @@
         "intro_strings": [
             "The patrol catches the scent of a fox, but is it red or gray? Tracking it, they find a stocky gray fox feeding on an unidentifiable but deliciously stinky small mound of carrion fished up from the swamp."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides not to quarrel with the fox and to find prey elsewhere."
         ],
         "success_outcomes": [
@@ -3583,7 +3583,7 @@
         "intro_strings": [
             "The patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a fish about as big as it is. The cat-sized predator definitely didn't kill this."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides not to quarrel with the fox. There are plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling."
         ],
         "success_outcomes": [
@@ -3850,7 +3850,7 @@
         "intro_strings": [
             "The patrol catches the scent of a fox, but is it red or gray? And is it worth a fight if they encounter it?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides not to quarrel with the fox and to find prey elsewhere."
         ],
         "success_outcomes": [
@@ -4401,7 +4401,7 @@
         "intro_strings": [
             "The patrol catches the scent of a fox, but is it red or gray? And is it worth a fight if they encounter it?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides not to quarrel with the fox and to find prey elsewhere."
         ],
         "success_outcomes": [
@@ -4800,7 +4800,7 @@
         "intro_strings": [
             "The patrol glimpses the shadow of a fish as they pad past a stream."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol ignores the fish."
         ],
         "success_outcomes": [
@@ -4867,7 +4867,7 @@
         "intro_strings": [
             "The patrol sees the shadow of a school of fish in the river."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol ignores the fish."
         ],
         "success_outcomes": [
@@ -5004,7 +5004,7 @@
         "intro_strings": [
             "The water vole sitting on the bank will make a lovely addition to the fresh-kill pile, and r_c1 purrs as {PRONOUN/r_c1/subject} line up to knock it into the water."
         ],
-        "decline_text": [
+        "decline_strings": [
             "r_c1 hesitates for too long, and the vole slips back into the river with nary a splash."
         ],
         "success_outcomes": [
@@ -5120,7 +5120,7 @@
         "intro_strings": [
             "The two siblings head out together, declaring a friendly competition to stock the fresh-kill pile. They're going to prove themselves!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Their mentors hold them back with a gentle word — the warriors have other plans for the apprentices today."
         ],
         "success_outcomes": [
@@ -5427,7 +5427,7 @@
         "intro_strings": [
             "The clouds are out, making the world murky. And just like the clouds, r_c1 and {PRONOUN/r_c1/poss} littermate are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Their mentors hold them back with a gentle word — the warriors have other plans for the apprentices today."
         ],
         "success_outcomes": [
@@ -5616,7 +5616,7 @@
         "intro_strings": [
             "The siblings head out together, declaring a friendly competition to stock the fresh-kill pile. They're going to prove themselves!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Their mentors hold them back with a gentle word — the warriors have other plans for the apprentices today."
         ],
         "success_outcomes": [
@@ -5887,7 +5887,7 @@
         "intro_strings": [
             "The clouds are out, making the world murky. And just like the clouds, r_c1 and {PRONOUN/r_c1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Their mentors hold them back with a gentle word — the warriors have other plans for the apprentices today."
         ],
         "success_outcomes": [
@@ -6087,7 +6087,7 @@
         "intro_strings": [
             "r_c1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/r_c1/subject} {VERB/r_c1/do/does}. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Actually, {PRONOUN/r_c1/subject}'d really rather be back in {PRONOUN/r_c1/poss} nest."
         ],
         "success_outcomes": [
@@ -6307,7 +6307,7 @@
         "intro_strings": [
             "As they wander through the wooded riverbanks, p_l awkwardly asks r_c1 how {PRONOUN/r_c1/subject} {VERB/r_c1/think/thinks} {PRONOUN/r_c1/poss} training is going."
         ],
-        "decline_text": [
+        "decline_strings": [
             "r_c1 carefully talks around the subject, telling p_l nothing of importance."
         ],
         "success_outcomes": [
@@ -6498,7 +6498,7 @@
         "intro_strings": [
             "r_c1 bounds out of camp, determined to show off to p_l!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "And both are immediately recalled — the camp needs new nesting materials, not more prey."
         ],
         "success_outcomes": [
@@ -6704,7 +6704,7 @@
         "intro_strings": [
             "r_c1 suppresses a yawn, trying not to make a weird expression in front of p_l as {PRONOUN/r_c1/subject} {VERB/r_c1/do/does}. p_l suggested this as sibling bonding time, but did they <i>really</i> have to get up at dawn?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Actually, {PRONOUN/r_c1/subject}'d really rather be back in {PRONOUN/r_c1/poss} nest."
         ],
         "success_outcomes": [
@@ -6924,7 +6924,7 @@
         "intro_strings": [
             "r_c1 bounds out of camp, determined to show off to {PRONOUN/r_c1/poss} older siblings!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "And everyone is immediately recalled — the camp needs new nesting materials, not more prey."
         ],
         "success_outcomes": [
@@ -7119,7 +7119,7 @@
         "intro_strings": [
             "Sometimes, it's just nice to hang out with {PRONOUN/r_c0/poss} sibling. The weather is perfect for a great hunt together!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Actually, p_l would rather try fishing for prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} sibling off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank."
         ],
         "success_outcomes": [
@@ -7411,7 +7411,7 @@
         "intro_strings": [
             "The sun's out, and r_c0 has been assigned a moderately tolerable hunting partner — {PRONOUN/r_c0/poss} sibling!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Cancel that — a border patrol needs backup."
         ],
         "success_outcomes": [
@@ -7618,7 +7618,7 @@
         "intro_strings": [
             "The hunting patrol heads out early, before the sun has cleared the treeline."
         ],
-        "decline_text": [
+        "decline_strings": [
             "They encounter a dawn patrol on their way back to camp and join up with them instead."
         ],
         "success_outcomes": [
@@ -7789,7 +7789,7 @@
         "intro_strings": [
             "The siblings head out to one of the further hunting grounds of the swamp, where a storm-swollen river promises easy hunting."
         ],
-        "decline_text": [
+        "decline_strings": [
             "They decide to bask for a bit instead of making the long walk."
         ],
         "success_outcomes": [
@@ -7947,7 +7947,7 @@
         "intro_strings": [
             "Sometimes, r_c0 enjoys just hanging out with {PRONOUN/r_c0/poss} siblings. The weather is perfect for a great hunt together!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Actually, p_l would rather try fishing for prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/wave/waves} {PRONOUN/p_l/poss} siblings off with a flick of {PRONOUN/p_l/poss} tail and {VERB/p_l/settle/settles} down at the riverbank."
         ],
         "success_outcomes": [
@@ -8239,7 +8239,7 @@
         "intro_strings": [
             "The sun's out, and r_c0 has been assigned a moderately tolerable hunting patrol — {PRONOUN/r_c0/poss} siblings!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Cancel that — a border patrol needs backup."
         ],
         "success_outcomes": [
@@ -8446,7 +8446,7 @@
         "intro_strings": [
             "The siblings head out to one of the further hunting grounds of the swamp, where a storm-swollen river promises easy hunting."
         ],
-        "decline_text": [
+        "decline_strings": [
             "They decide to bask for a bit instead of making the long walk."
         ],
         "success_outcomes": [

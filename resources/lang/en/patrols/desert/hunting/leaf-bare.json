@@ -22,7 +22,7 @@
         "intro_strings": [
             "p_l finds a patch of herbs that {PRONOUN/p_l/subject} {VERB/p_l/believe/believes} c_n might need for their stores. {PRONOUN/p_l/subject/CAP} freely {VERB/p_l/admit/admits} to {PRONOUN/p_l/poss} patrol {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't a medicine cat, and {VERB/p_l/ask/asks} {PRONOUN/p_l/poss} companions' advice. What do they know about this part of the desert's herbal properties, what grows in the brief bloom of leaf-bare?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "They decide to focus on hunting and leave the herb collecting to the medicine cats."
         ],
         "success_outcomes": [
@@ -157,7 +157,7 @@
         "intro_strings": [
             "It starts raining soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile."
         ],
-        "decline_text": [
+        "decline_strings": [
             "They decide to turn back and wait until the rain dies down."
         ],
         "success_outcomes": [
@@ -342,7 +342,7 @@
         "intro_strings": [
             "It starts raining soon after p_l sets out, trying to bring back something nice for the fresh-kill pile."
         ],
-        "decline_text": [
+        "decline_strings": [
             "They decide to turn back and wait until the rain dies down."
         ],
         "success_outcomes": [
@@ -445,7 +445,7 @@
         "intro_strings": [
             "It starts raining soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile."
         ],
-        "decline_text": [
+        "decline_strings": [
             "They decide to turn back and wait until the rain dies down."
         ],
         "success_outcomes": [
@@ -642,7 +642,7 @@
         "intro_strings": [
             "The patrol spots a swift fox in the distance, behaving weirdly."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Best not to risk a fight. The patrol watches it go."
         ],
         "success_outcomes": [

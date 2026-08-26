@@ -22,7 +22,7 @@
         "intro_strings": [
             "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile."
         ],
-        "decline_text": [
+        "decline_strings": [
             "They decide to turn back and wait until the snow dies down."
         ],
         "success_outcomes": [
@@ -291,7 +291,7 @@
         "intro_strings": [
             "It starts snowing soon after p_l sets out, trying to bring back something, anything, for the fresh-kill pile."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to turn back and wait until the snow dies down."
         ],
         "success_outcomes": [
@@ -436,7 +436,7 @@
         "intro_strings": [
             "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile."
         ],
-        "decline_text": [
+        "decline_strings": [
             "They decide to turn back and wait until the snow dies down."
         ],
         "success_outcomes": [
@@ -685,7 +685,7 @@
         "intro_strings": [
             "p_l catches scent of a mouse nearby, one that would be greatly appreciated for the fresh-kill pile."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l ignores the mouse."
         ],
         "success_outcomes": [
@@ -848,7 +848,7 @@
         "intro_strings": [
             "p_l catches scent of a mouse nearby. But {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} by {PRONOUN/p_l/self}, and the chill of leaf-bare has stripped the forest of its green cloak. Can {PRONOUN/p_l/subject} manage the catch?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l ignores the mouse."
         ],
         "success_outcomes": [
@@ -971,7 +971,7 @@
         "intro_strings": [
             "r_c1 catches scent of a mouse nearby. p_l congratulates {PRONOUN/r_c1/object} and tries to prepare r_c1 for the stalk as best {PRONOUN/p_l/subject} can — if r_c1 can catch this mouse, this is the season where it will be most valuable for the Clan."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol ignores the mouse."
         ],
         "success_outcomes": [
@@ -1172,7 +1172,7 @@
         "intro_strings": [
             "As the patrol heads out into the forest to hunt, r_c0 seems to be absolutely unconcerned with {PRONOUN/r_c0/poss} duties, instead ambling along as through the prey is going to waltz into {PRONOUN/r_c0/poss} paws."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The cats are called back to camp — there's something the deputy needs to discuss with them."
         ],
         "success_outcomes": [
@@ -1415,7 +1415,7 @@
         "intro_strings": [
             "As the patrol heads out into the forest to hunt, r_c0 suggests a sheltered gully. It's a little far from camp, and the walk will be chilly, but the hunting around there is good, particularly for mice."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The cats are called back to camp — there's something the deputy needs to discuss with them."
         ],
         "success_outcomes": [
@@ -1588,7 +1588,7 @@
         "intro_strings": [
             "p_l tastes the air and perks up — there's a squirrel nearby, scrounging for nuts near the base of a tree!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "After a moment's deliberation, p_l decides to move on."
         ],
         "success_outcomes": [
@@ -1756,7 +1756,7 @@
         "intro_strings": [
             "p_l scents a squirrel on the air! Leaf-bare will make this a difficult hunt, and apprehension prickles down {PRONOUN/p_l/poss} spine as {PRONOUN/p_l/subject} {VERB/p_l/weigh/weighs} {PRONOUN/p_l/poss} options."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to move on and ignore the squirrel for now."
         ],
         "success_outcomes": [
@@ -1877,7 +1877,7 @@
         "intro_strings": [
             "p_l instructs r_c1 to scent the air and nods in approval when r_c1 says {PRONOUN/r_c1/subject} {VERB/r_c1/smell/smells} squirrel. Though {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} want r_c1 to feel pressured, p_l makes sure {PRONOUN/r_c1/subject} {VERB/r_c1/know/knows} how valuable a leaf-bare squirrel would be to {PRONOUN/r_c1/poss} Clanmates before asking what {PRONOUN/r_c1/subject} {VERB/r_c1/want/wants} to do."
         ],
-        "decline_text": [
+        "decline_strings": [
             "r_c1 looks apprehensive, then quietly says {PRONOUN/r_c1/subject} {VERB/r_c1/want/wants} to look for something easier."
         ],
         "success_outcomes": [
@@ -2069,7 +2069,7 @@
         "intro_strings": [
             "As the patrol walks through the forest, a loud chittering from above interrupts them. r_c0 looks up just in time to get a shower of twigs and dead leaves to the face, while p_l exclaims aloud as {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Though they snort in amusement, the patrol decides to move on to easier prey, rather than waste their energy amongst the trees."
         ],
         "success_outcomes": [
@@ -2316,7 +2316,7 @@
         "intro_strings": [
             "As the patrol walks through the woods, r_c0 explains an idea {PRONOUN/r_c0/subject} had for squirrel hunting. It sounds a little strange, but perhaps it could work?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides they'd rather not spend time on something that might not work when they could be doing something they know <i>does</i>, especially in leaf-bare where every hunt counts."
         ],
         "success_outcomes": [
@@ -2536,7 +2536,7 @@
         "intro_strings": [
             "Snow falling around the patrol hushes the world around and between them into a white-tinted haze, and p_l grows increasingly on edge. Something's wrong. Where is r_c?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "r_c0 eventually catches up."
         ],
         "success_outcomes": [
@@ -2761,7 +2761,7 @@
         "intro_strings": [
             "p_l scouts out the frozen trees, spying a skeletal rat underneath a low branch."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l is determined <i>not</i> to become an icicle's next victim, and decides to hunt elsewhere."
         ],
         "success_outcomes": [
@@ -2847,7 +2847,7 @@
         "intro_strings": [
             "p_l leaps onto a frozen log, listening to the silence surrounding {PRONOUN/p_l/object}. {PRONOUN/p_l/subject/CAP} caught the scent of a rat near this log, but will it really be that easy?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l knows that rats are dangerous, especially with {PRONOUN/p_l/object} being on {PRONOUN/p_l/poss} own, and decides to hunt for safer prey elsewhere."
         ],
         "success_outcomes": [
@@ -2955,7 +2955,7 @@
         "intro_strings": [
             "p_l and r_c1 stand near the frozen stream, watching two rats fighting for the last bit of seed strewn along the edge."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Rats fighting over food can easily turn into rats fighting cats for a more filling meal. They wisely decide to hunt something else."
         ],
         "success_outcomes": [
@@ -3066,7 +3066,7 @@
         "intro_strings": [
             "p_l leads the patrol towards the abandoned Twoleg nest, listening to r_c's plan. Rats were seen hiding inside to protect themselves from the snow and frost. Perhaps it would be a perfect hunting spot?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "The other cats disagree with such a risk and resume their normal hunting patrol."
         ],
         "success_outcomes": [
@@ -3329,7 +3329,7 @@
         "intro_strings": [
             "While hunting through the snow-covered forest, a flash of scarlet catches p_l's eye. {PRONOUN/p_l/subject/CAP} {VERB/p_l/freeze/freezes}, tail-tip twitching, and {VERB/p_l/scent/scents} the air for prey."
         ],
-        "decline_text": [
+        "decline_strings": [
             "A cardinal would be paltry prey; the Clan needs more filling meals. p_l leaves it be, knowing {PRONOUN/p_l/subject} would expend too much precious energy trying to hunt the bird anyway."
         ],
         "success_outcomes": [
@@ -3446,7 +3446,7 @@
         "intro_strings": [
             "Snow crunches beneath p_l's paws as {PRONOUN/p_l/subject} {VERB/p_l/walk/walks} through the still, cold forest. The scent of bird catches {PRONOUN/p_l/poss} attention, and {PRONOUN/p_l/subject} {VERB/p_l/freeze/freezes} mid-step."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides not to pursue the bird. {PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} never hunted one alone before, and the loud crunching of the snow would surely make {PRONOUN/p_l/poss} hunt more difficult than necessary."
         ],
         "success_outcomes": [
@@ -3567,7 +3567,7 @@
         "intro_strings": [
             "p_l leads r_c1 through the snow-covered forest, showing {PRONOUN/r_c1/object} how to distribute {PRONOUN/r_c1/poss} weight across {PRONOUN/r_c1/poss} paws to avoid sinking and to move silently. Suddenly, p_l flicks {PRONOUN/p_l/poss} tail: {PRONOUN/p_l/subject} {VERB/p_l/have/has} spotted a bird up ahead."
         ],
-        "decline_text": [
+        "decline_strings": [
             "r_c1 shakes {PRONOUN/r_c1/poss} head when p_l asks if {PRONOUN/r_c1/subject}'d like to try {PRONOUN/r_c1/poss} paws at hunting a bird. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/'re/'s} just getting used to navigating in the snow quietly; surely catching a bird will be too difficult at the moment."
         ],
         "success_outcomes": [
@@ -3765,7 +3765,7 @@
         "intro_strings": [
             "The weather is sunny yet cold as p_l sets out on {PRONOUN/p_l/poss} hunting patrol, but as the day goes on, a snowstorm blows in. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} lost and shivering, but as {PRONOUN/p_l/subject} {VERB/p_l/strain/strains} through the sound of the wind, {PRONOUN/p_l/subject} can hear a birdcall leading {PRONOUN/p_l/object} on through the trees."
         ],
-        "decline_text": [
+        "decline_strings": [
             "It's probably a trick of the wind. p_l ignores {PRONOUN/p_l/poss} growling belly and tries to retrace {PRONOUN/p_l/poss} pawsteps through the worsening snow. By the grace of StarClan, {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} to find {PRONOUN/p_l/poss} way back to camp before nightfall."
         ],
         "success_outcomes": [
@@ -3896,7 +3896,7 @@
         "intro_strings": [
             "As p_l leads the patrol through the snow-covered forest, the sound of birdcall gives {PRONOUN/p_l/object} pause. Up ahead is an entire flock of songbirds pecking at a patch of exposed ground!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Although the temptation of so many birds in one spot is certainly strong, p_l decides against trying to coordinate the patrol to catch them all at once, opting to search for different prey today."
         ],
         "success_outcomes": [
@@ -4098,7 +4098,7 @@
         "intro_strings": [
             "As {PRONOUN/r_c0/subject} {VERB/r_c0/give/gives} up on digging out an escaped mouse from its snowy tunnels, r_c0 <i>swears</i> {PRONOUN/r_c0/subject} can smell something."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Must be the wind, blowing a stale scent back at {PRONOUN/r_c0/object}."
         ],
         "success_outcomes": [
@@ -4247,7 +4247,7 @@
         "intro_strings": [
             "The gentle speckles of snow falling from the sky don't dissuade p_l. {PRONOUN/p_l/subject/CAP} {VERB/p_l/know/knows} the canopy of the forest will shelter {PRONOUN/p_l/object} while {PRONOUN/p_l/subject} {VERB/p_l/hunt/hunts}."
         ],
-        "decline_text": [
+        "decline_strings": [
             "...But if the snow gets worse, it'd be a different story. Maybe it's better to wait until the weather clears, after all."
         ],
         "success_outcomes": [
@@ -4506,7 +4506,7 @@
         "intro_strings": [
             "Surely it's not snowing too much to go hunt — p_l wants fresh prey, not the half-frozen stuff on the fresh-kill pile."
         ],
-        "decline_text": [
+        "decline_strings": [
             "...Maybe it'd be better to wait until {PRONOUN/p_l/poss} mentor is free to take {PRONOUN/p_l/object} on a hunting patrol."
         ],
         "success_outcomes": [
@@ -4704,7 +4704,7 @@
         "intro_strings": [
             "p_l catches scent of a mouse nearby, one that would be greatly appreciated for the fresh-kill pile."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l ignores the mouse."
         ],
         "success_outcomes": [
@@ -4803,7 +4803,7 @@
         "intro_strings": [
             "p_l catches scent of a mouse nearby. But {PRONOUN/p_l/subject} {VERB/p_l/'re/'s} by {PRONOUN/p_l/self}, and the chill of leaf-bare has stripped the forest of its green cloak. Can {PRONOUN/p_l/subject} manage the catch?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l ignores the mouse."
         ],
         "success_outcomes": [
@@ -4888,7 +4888,7 @@
         "intro_strings": [
             "r_c1 catches scent of a mouse nearby. p_l congratulates {PRONOUN/r_c1/object} and tries to prepare r_c1 for the stalk as best {PRONOUN/r_c1/subject} can — if r_c1 can catch this mouse, this is the season where it will be most valuable for the Clan."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol ignores the mouse."
         ],
         "success_outcomes": [
@@ -5068,7 +5068,7 @@
         "intro_strings": [
             "r_c1 has been acting weird all day, full of too-quick answers and furtive glances. A parent usually knows; p_l has seen that look too often in r_c1's nursery days. So, when {PRONOUN/r_c1/subject} {VERB/r_c1/creep/creeps} out of camp and into the frosty shadows of the forest at night, p_l is there waiting for {PRONOUN/r_c1/object}. r_c1 freezes, staring up with wide eyes."
         ],
-        "decline_text": [
+        "decline_strings": [
             "A stern glance and wide swish of {PRONOUN/p_l/poss} tail is all that's needed to turn r_c1's nighttime wanderings around and send {PRONOUN/r_c1/object} back to the apprentices' den. p_l will have a talk with {PRONOUN/r_c1/object} in the morning — leaf-bare isn't the season to take risks like this."
         ],
         "success_outcomes": [
@@ -5289,7 +5289,7 @@
         "intro_strings": [
             "Shivering among the snow as they hunt for signs of prey, p_l overhears r_c0 worrying that c_n will wither away if things don't improve soon."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Well, in that case they should focus on the hunt then."
         ],
         "success_outcomes": [
@@ -5425,7 +5425,7 @@
         "intro_strings": [
             "Amid the drab leaf-bare shaded world, a flash of brilliant color above a big stream catches r_c1's attention."
         ],
-        "decline_text": [
+        "decline_strings": [
             "It's out of the ordinary... and might be dangerous. r_c1 ignores it."
         ],
         "success_outcomes": [

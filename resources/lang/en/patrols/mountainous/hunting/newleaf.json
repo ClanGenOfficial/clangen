@@ -22,7 +22,7 @@
         "intro_strings": [
             "It starts snowing soon after the patrol sets out, trying to bring back something for the fresh-kill pile."
         ],
-        "decline_text": [
+        "decline_strings": [
             "They decide to turn back and wait until the snow dies down."
         ],
         "success_outcomes": [
@@ -291,7 +291,7 @@
         "intro_strings": [
             "It starts snowing soon after p_l sets out, trying to bring back something for the fresh-kill pile."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to turn back and wait until the snow dies down."
         ],
         "success_outcomes": [
@@ -443,7 +443,7 @@
         "intro_strings": [
             "It starts snowing soon after the patrol sets out, trying to bring back something for the fresh-kill pile."
         ],
-        "decline_text": [
+        "decline_strings": [
             "They decide to turn back and wait until the snow dies down."
         ],
         "success_outcomes": [
@@ -638,7 +638,7 @@
         "intro_strings": [
             "p_l tastes the air and perks up — there's a squirrel nearby, nibbling the delicate new plant growth near the base of a tree!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "After a moment's deliberation, p_l decides to move on."
         ],
         "success_outcomes": [
@@ -780,7 +780,7 @@
         "intro_strings": [
             "p_l scents a squirrel on the air! This could be a great chance to bring one of the first big pieces of fresh-kill home..."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to move on and ignore the squirrel for now."
         ],
         "success_outcomes": [
@@ -883,7 +883,7 @@
         "intro_strings": [
             "p_l instructs r_c1 to scent the air and nods in approval when r_c1 says {PRONOUN/r_c1/subject} {VERB/r_c1/smell/smells} squirrel. Early newleaf squirrels are always a good target — p_l softly murmurs tips to r_c1 and asks what {PRONOUN/r_c1/subject} {VERB/r_c1/want/wants} to do."
         ],
-        "decline_text": [
+        "decline_strings": [
             "r_c1 looks apprehensive, then quietly says {PRONOUN/r_c1/subject} {VERB/r_c1/want/wants} to look for something easier."
         ],
         "success_outcomes": [
@@ -1072,7 +1072,7 @@
         "intro_strings": [
             "As the patrol walks through the wooded slopes, a loud chittering from above interrupts them. r_c0 looks up just in time to get a shower of twigs and leaves to the face, while p_l exclaims aloud when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Though they snort in amusement, the patrol decides to move on to easier prey, rather than waste their energy amongst the trees."
         ],
         "success_outcomes": [
@@ -1335,7 +1335,7 @@
         "intro_strings": [
             "As the patrol walks through the wooded slopes, r_c0 explains an idea {PRONOUN/r_c0/subject} had for squirrel hunting. It sounds a little strange, but perhaps it could work?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides they'd rather not spend time on something that might not work when they could be doing something they know <i>does</i>."
         ],
         "success_outcomes": [

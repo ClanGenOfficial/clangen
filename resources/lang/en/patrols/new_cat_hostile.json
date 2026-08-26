@@ -17,7 +17,7 @@
         "intro_strings": [
             "The patrol scents a loner on the territory. They confront the cat, who quickly surrenders and begs for shelter."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides the loner isn't worth their time."
         ],
         "success_outcomes": [
@@ -277,7 +277,7 @@
         "intro_strings": [
             "p_l scents a loner on the territory. {PRONOUN/p_l/subject/CAP} {VERB/p_l/confront/confronts} the cat, who quickly surrenders and begs for shelter."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l {VERB/p_l/decide/decides} the loner isn't worth {PRONOUN/p_l/poss} time."
         ],
         "success_outcomes": [
@@ -519,7 +519,7 @@
         "intro_strings": [
             "The patrol scents a kittypet on the territory. They confront the cat, who quickly surrenders and begs for shelter."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides the kittypet isn't worth their time."
         ],
         "success_outcomes": [
@@ -709,7 +709,7 @@
         "intro_strings": [
             "p_l scents a kittypet on the territory. {PRONOUN/p_l/subject/CAP} {VERB/p_l/confront/confronts} the cat, who quickly surrenders and begs for shelter."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l {VERB/p_l/decide/decides} the kittypet isn't worth {PRONOUN/p_l/poss} time."
         ],
         "success_outcomes": [
@@ -907,7 +907,7 @@
         "intro_strings": [
             "r_c0 finds a wounded cat near the Thunderpath."
         ],
-        "decline_text": [
+        "decline_strings": [
             "They leave the wounded cat alone."
         ],
         "success_outcomes": [
@@ -1056,7 +1056,7 @@
         "intro_strings": [
             "p_l finds a wounded cat near the Thunderpath."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l leaves the wounded cat alone."
         ],
         "success_outcomes": [
@@ -1209,7 +1209,7 @@
         "intro_strings": [
             "In the middle of remarking the border, p_l finds a distinct scent trail has crossed it."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l makes a note of it, but it'll have to wait till {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} done with this and back at camp."
         ],
         "success_outcomes": [
@@ -1563,7 +1563,7 @@
         "intro_strings": [
             "Padding along the border, p_l checks once... twice... three times... and crosses over c_n's markers, venturing beyond into unclaimed land."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l thinks better of {PRONOUN/p_l/poss} risky adventure and retreats back to known territory."
         ],
         "success_outcomes": [
@@ -2121,7 +2121,7 @@
         "intro_strings": [
             "r_c0 finds an abandoned kit whose parents are nowhere to be found."
         ],
-        "decline_text": [
+        "decline_strings": [
             "They decide to leave the kit alone."
         ],
         "success_outcomes": [
@@ -2235,7 +2235,7 @@
         "intro_strings": [
             "p_l finds an abandoned kit whose parents are nowhere to be found."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides to leave the kit alone."
         ],
         "success_outcomes": [
@@ -2352,7 +2352,7 @@
         "intro_strings": [
             "The patrol scents a loner on the territory. r_c0 finds the loner, who offers their healing skills in exchange for shelter."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol declines their offer and sends them off."
         ],
         "success_outcomes": [
@@ -2598,7 +2598,7 @@
         "intro_strings": [
             "p_l scents a loner on the territory. When {PRONOUN/p_l/subject} {VERB/p_l/find/finds} the loner, they offer their healing skills in exchange for shelter."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l declines their offer and sends them off."
         ],
         "success_outcomes": [
@@ -2848,7 +2848,7 @@
         "intro_strings": [
             "The patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides not to interfere. Surely the cat can handle itself, the dog isn't even that big."
         ],
         "success_outcomes": [
@@ -3094,7 +3094,7 @@
         "intro_strings": [
             "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush."
         ],
-        "decline_text": [
+        "decline_strings": [
             "It's probably nothing. The patrol leaves the noise alone and continues on their way."
         ],
         "success_outcomes": [
@@ -3393,7 +3393,7 @@
         "intro_strings": [
             "The patrol approaches a Twoleg nest in the woods while hunting."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides to hunt elsewhere."
         ],
         "success_outcomes": [
@@ -3721,7 +3721,7 @@
         "intro_strings": [
             "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance."
         ],
         "success_outcomes": [
@@ -3930,7 +3930,7 @@
         "intro_strings": [
             "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance."
         ],
         "success_outcomes": [
@@ -4154,7 +4154,7 @@
         "intro_strings": [
             "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance."
         ],
         "success_outcomes": [
@@ -4367,7 +4367,7 @@
         "intro_strings": [
             "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance."
         ],
         "success_outcomes": [
@@ -4586,7 +4586,7 @@
         "intro_strings": [
             "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance."
         ],
         "success_outcomes": [
@@ -4795,7 +4795,7 @@
         "intro_strings": [
             "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance."
         ],
         "success_outcomes": [
@@ -5008,7 +5008,7 @@
         "intro_strings": [
             "It's a cold day in c_n's territory, and p_l is the only cat stepping out. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} by {PRONOUN/p_l/self} when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a cat screaming for help."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Nope, not today, there's no way p_l is running after ghost cats, no thank you."
         ],
         "success_outcomes": [

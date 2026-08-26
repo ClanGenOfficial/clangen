@@ -19,7 +19,7 @@
         "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues burst from the long grass! An ambush!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
         ],
         "success_outcomes": [
@@ -221,7 +221,7 @@
         "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues burst from the long grass! An ambush!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l turns tail and races away! The rogues have {PRONOUN/p_l/object} far outnumbered; warning the Clan is more important than dying needlessly."
         ],
         "success_outcomes": [
@@ -387,7 +387,7 @@
         "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues stride out of the long grass to confront the Clan cats!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
         ],
         "success_outcomes": [
@@ -638,7 +638,7 @@
         "intro_strings": [
             "While on patrol, p_l notices some suspicious pawprints in the mud by the short grass."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} not to investigate."
         ],
         "success_outcomes": [
@@ -1055,7 +1055,7 @@
         "intro_strings": [
             "While on patrol, p_l notices some suspicious pawprints in the mud by the short grass."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} not to investigate."
         ],
         "success_outcomes": [
@@ -1255,7 +1255,7 @@
         "intro_strings": [
             "While on patrol, r_c0 notices some suspicious pawprints in the mud by the short grass."
         ],
-        "decline_text": [
+        "decline_strings": [
             "They decide not to investigate."
         ],
         "success_outcomes": [
@@ -1852,7 +1852,7 @@
         "intro_strings": [
             "While on patrol, r_c1 notices some suspicious pawprints in the mud by the short grass."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/r_c1/subject/CAP} {VERB/r_c1/decide/decides} not to investigate."
         ],
         "success_outcomes": [
@@ -2273,7 +2273,7 @@
         "intro_strings": [
             "On {PRONOUN/r_c0/poss} way to mark the far corners of {PRONOUN/r_c0/poss} plains, r_c0 starts telling a story of {PRONOUN/r_c0/poss} ancestors to keep every cat entertained."
         ],
-        "decline_text": [
+        "decline_strings": [
             "r_c0 nearly trips into a rabbit burrow and decides to watch where {PRONOUN/r_c0/poss} paws are going instead."
         ],
         "success_outcomes": [
@@ -2513,7 +2513,7 @@
         "intro_strings": [
             "This is just weird — what's made the grass here grow to such a uniform low height? Why is it so green? Why has it grown in such a neat circle?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Look, p_l knows grass, and this is too weird to want to spend time in. {PRONOUN/p_l/subject/CAP} {VERB/p_l/head/heads} home without ever seeing the Fresno Nightcrawler."
         ],
         "success_outcomes": [
@@ -2570,7 +2570,7 @@
         "intro_strings": [
             "As the patrol moves through the grass just after sunset, two moons rise in the sky..."
         ],
-        "decline_text": [
+        "decline_strings": [
             "One of those moons has the same metal as a monster, the same glowing eyes that glare from the creatures that kill on the Thunderpaths. The cats hide from its sight, trembling."
         ],
         "success_outcomes": [
@@ -2651,7 +2651,7 @@
         "intro_strings": [
             "As the cats remark the border, p_l asks if they remember the tale of the beautiful molly and the monstrous tom. Once upon a time, the mighty tom of the plains found a beautiful molly on the border of his lands, skinny and trembling..."
         ],
-        "decline_text": [
+        "decline_strings": [
             "This... really isn't the time to stop for a story."
         ],
         "success_outcomes": [
@@ -2858,7 +2858,7 @@
         "intro_strings": [
             "The patrol catches the scent of a fox — but is it red or swift?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides not to pursue the fox."
         ],
         "success_outcomes": [
@@ -3367,7 +3367,7 @@
         "intro_strings": [
             "The apprentices are at the border — not exactly a patrol they were sent on. Not exactly a patrol they're supposed to do without a warrior, actually. Anyway, is that a tunnel entrance over there?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Eventually the apprentices get tired. Whatever, they're not supposed to be out here without a warrior anyway."
         ],
         "success_outcomes": [
@@ -4018,7 +4018,7 @@
         "intro_strings": [
             "p_l's ears swivel back and forth, pressing flat against {PRONOUN/p_l/poss} head every so often as {PRONOUN/p_l/poss} emotions slip through. With fur bristled out to full puff and freezing at every rustle in the grass, {PRONOUN/p_l/subject} nevertheless {VERB/p_l/pad/pads} the border alone. A strange mismash of shadows catches {PRONOUN/p_l/poss} eye. Is that a tunnel entrance?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides not to check. After all, who knows what might be hiding inside? No, it's time to go home, before anything bad happens to {PRONOUN/p_l/object}."
         ],
         "success_outcomes": [
@@ -4400,7 +4400,7 @@
         "intro_strings": [
             "p_l is on high alert as {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} along the border — after all, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} here alone. But out of the corner of {PRONOUN/p_l/poss} eye, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a weird splash of shadows in a dip in the grass. Is that a burrow entrance?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides not to check the tunnels. After all, who knows what might be hiding inside?"
         ],
         "success_outcomes": [
@@ -4735,7 +4735,7 @@
         "intro_strings": [
             "Trotting along the track that marks the border with r_c1, p_l spots the entrance to an unfamiliar hole in the ground."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides not to check the tunnels. After all, who knows what might be hiding inside?"
         ],
         "success_outcomes": [
@@ -5692,7 +5692,7 @@
         "intro_strings": [
             "While on a dawn patrol, with the sun still hugging the distant horizon, p_l finds an opening to what seems to be a new set of tunnels."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l and r_c0 decide not to check the tunnels. After all, who knows what might be hiding inside?"
         ],
         "success_outcomes": [
@@ -6244,7 +6244,7 @@
         "intro_strings": [
             "The wind rustles through the grass peacefully. As p_l checks the next border marking, that peace is broken with a squeak and a muffled thump behind {PRONOUN/p_l/object}."
         ],
-        "decline_text": [
+        "decline_strings": [
             "r_c1 needs to stop screwing around and focus on the patrol."
         ],
         "success_outcomes": [
@@ -6861,7 +6861,7 @@
         "intro_strings": [
             "Patrolling the border and updating the markings, r_c0 calls out to the rest of the patrol, making p_l stand up on {PRONOUN/p_l/poss} hind legs to peek over the grass. r_c0 has found an opening to what seems to be a new set of tunnels."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides not to check the tunnels. After all, who knows what might be hiding inside?"
         ],
         "success_outcomes": [
@@ -7504,7 +7504,7 @@
         "intro_strings": [
             "p_l is out on a clear night, enjoying the starlight twinkling above, when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} across the fresh scent of a coyote. Dangerous — not just to p_l, but to all of c_n."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides not to pursue such a dangerous creature, especially with the knowledge that coyotes often feast on cats."
         ],
         "success_outcomes": [

@@ -26,7 +26,7 @@
         "intro_strings": [
             "In the snowy forest, p_l's patrol struggles to track down any herbs that have survived leaf-bare's frost."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l calls off the patrol before any cat can suffer the effects of the cold."
         ],
         "success_outcomes": [

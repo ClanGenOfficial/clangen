@@ -16,7 +16,7 @@
         "intro_strings": [
             "As the patrol is checking the border markings, a o_c_n patrol appears and begins jeering at p_l."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides this isn't worthwhile and backs off from the other patrol, leaving the area."
         ],
         "success_outcomes": [
@@ -309,7 +309,7 @@
         "intro_strings": [
             "A o_c_n scent is found clearly crossing the border. The patrol tracks it to its source, expecting a foolhardy young provocateur, and are instead surprised by their rival's most recent exile."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides not to confront the cat."
         ],
         "success_outcomes": [
@@ -1086,7 +1086,7 @@
         "intro_strings": [
             "p_l slinks out of camp to the o_c_n border. A pair of eyes gleam from the bushes, then {PRONOUN/p_l/poss} secret beloved appears. p_l breathes in the o_c_n scent, feeling a guilty rush of delight {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} felt so many times before. But tonight is different. Tonight, p_l's o_c_n lover has come to give {PRONOUN/p_l/object} an ultimatum."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l admits {PRONOUN/p_l/subject} can't stay and hurries back to camp."
         ],
         "success_outcomes": [
@@ -2165,7 +2165,7 @@
         "intro_strings": [
             "p_l and r_c0 have been arguing non-stop the entire time they've been patrolling."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Unable to work together, the two return to camp."
         ],
         "success_outcomes": [
@@ -2781,7 +2781,7 @@
         "intro_strings": [
             "As the patrol is checking the border markings, a o_c_n patrol appears and begins jeering at p_l."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides this isn't worthwhile and backs off from the other patrol, leaving the area."
         ],
         "success_outcomes": [
@@ -3138,7 +3138,7 @@
         "intro_strings": [
             "r_c0 spies a fat rabbit on the other side of the o_c_n border. A tempting opportunity to be sure, but it may not be wise to hunt on an enemy's territory."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides that one rabbit isn't worth the potential fight."
         ],
         "success_outcomes": [
@@ -3632,7 +3632,7 @@
         "intro_strings": [
             "p_l pads along, mouth open slightly as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} for any traces of herbs. {PRONOUN/p_l/subject/CAP} {VERB/p_l/scent/scents} some raspberries nearby, but it seems that they're just over the border."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} that trespassing isn't worth it in this case."
         ],
         "success_outcomes": [
@@ -3735,7 +3735,7 @@
         "intro_strings": [
             "As the patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory. o_c_n has been hostile recently, this can't be good."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides that it isn't important right now. They'll report it when they get back to camp."
         ],
         "success_outcomes": [
@@ -3928,7 +3928,7 @@
         "intro_strings": [
             "As p_l is checking the border lines, they notice that a o_c_n scent has strayed into their territory. o_c_n has been hostile recently, this can't be good."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides that it isn't important right now. They'll report it when they get back to camp."
         ],
         "success_outcomes": [
@@ -4122,7 +4122,7 @@
         "intro_strings": [
             "p_l heads out into the forest alone, wanting to make a quick check on the border."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l turns back to camp, deciding that {PRONOUN/p_l/poss} other duties have to come first."
         ],
         "success_outcomes": [
@@ -4873,7 +4873,7 @@
         "intro_strings": [
             "p_l heads out into the grasslands alone, wanting to make a quick check on the border."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l turns back to camp, deciding that {PRONOUN/p_l/poss} other duties have to come first."
         ],
         "success_outcomes": [
@@ -5624,7 +5624,7 @@
         "intro_strings": [
             "p_l heads out into the mountains alone, wanting to make a quick check on the border."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l turns back to camp, deciding that {PRONOUN/p_l/poss} other duties have to come first."
         ],
         "success_outcomes": [
@@ -6375,7 +6375,7 @@
         "intro_strings": [
             "p_l heads out onto the beach alone, wanting to make a quick check on the border."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l turns back to camp, deciding that {PRONOUN/p_l/poss} other duties have to come first."
         ],
         "success_outcomes": [
@@ -7126,7 +7126,7 @@
         "intro_strings": [
             "p_l heads out into the wetlands alone, wanting to make a quick check on the border."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l turns back to camp, deciding that {PRONOUN/p_l/poss} other duties have to come first."
         ],
         "success_outcomes": [
@@ -7735,7 +7735,7 @@
         "intro_strings": [
             "As the patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory. o_c_n has been hostile recently, this can't be good."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides that it isn't important right now. {PRONOUN/p_l/subject/CAP}'ll report it when the patrol gets back to camp."
         ],
         "success_outcomes": [
@@ -8010,7 +8010,7 @@
         "intro_strings": [
             "The o_c_n scent marks at the border are unusually faint, considering the hostility between the two Clans. It could be an opportunity to mark further into o_c_n land, or it could be something to be cautious about."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Either way, the decision of what to do about the border should be made back at camp, not here. p_l returns home to report it."
         ],
         "success_outcomes": [
@@ -8178,7 +8178,7 @@
         "intro_strings": [
             "The o_c_n scent marks at the border are unusually faint, considering the hostility between the two Clans. It could be an opportunity to mark further into o_c_n land, or it could be something to be cautious about."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Either way, the decision of what to do about the border should be made back at camp, not here. p_l takes {PRONOUN/p_l/poss} little patrol home to report it."
         ],
         "success_outcomes": [
@@ -8413,7 +8413,7 @@
         "intro_strings": [
             "The patrol is tense as they patrol near o_c_n. Things have been hostile lately, so it's with surprise that p_l sees two kits from o_c_n playing close to the border."
         ],
-        "decline_text": [
+        "decline_strings": [
             "It's not {PRONOUN/p_l/poss} problem that those kits are alone and vulnerable. o_c_n should keep a closer eye on their kits."
         ],
         "success_outcomes": [

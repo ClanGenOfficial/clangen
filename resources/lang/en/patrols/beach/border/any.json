@@ -19,7 +19,7 @@
         "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues burst from the beach grass! An ambush!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
         ],
         "success_outcomes": [
@@ -221,7 +221,7 @@
         "intro_strings": [
             "As p_l is marking the border lines, a gang of rogues burst from the beach grass! An ambush!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l turns tail and races away! The rogues have {PRONOUN/p_l/object} far outnumbered; warning the Clan is more important than playing the hero."
         ],
         "success_outcomes": [
@@ -387,7 +387,7 @@
         "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues stalk out of the beach grass to confront the Clan cats!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
         ],
         "success_outcomes": [
@@ -638,7 +638,7 @@
         "intro_strings": [
             "There are dark clouds on the horizon, and p_l wonders if the patrol should continue."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides to head back early."
         ],
         "success_outcomes": [
@@ -791,7 +791,7 @@
         "intro_strings": [
             "There are dark clouds on the horizon, and p_l wonders if {PRONOUN/p_l/subject} should continue."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides to head back early."
         ],
         "success_outcomes": [
@@ -928,7 +928,7 @@
         "intro_strings": [
             "While on patrol, p_l notices some suspicious pawprints in the wet sand on the beach."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} not to investigate."
         ],
         "success_outcomes": [
@@ -1242,7 +1242,7 @@
         "intro_strings": [
             "While on patrol, p_l notices some suspicious pawprints in the wet sand on the beach."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} not to investigate."
         ],
         "success_outcomes": [
@@ -1381,7 +1381,7 @@
         "intro_strings": [
             "While on patrol, r_c0 notices some suspicious pawprints in the wet sand on the beach."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/decide/decides} not to investigate."
         ],
         "success_outcomes": [
@@ -1691,7 +1691,7 @@
         "intro_strings": [
             "While on patrol, r_c1 notices some suspicious pawprints in the wet sand on the beach."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/r_c1/subject/CAP} {VERB/r_c1/decide/decides} not to investigate."
         ],
         "success_outcomes": [
@@ -1856,7 +1856,7 @@
         "intro_strings": [
             "While on patrol, r_c0 notices some suspicious pawprints in the wet sand on the beach."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/decide/decides} not to investigate."
         ],
         "success_outcomes": [
@@ -2130,7 +2130,7 @@
         "intro_strings": [
             "While on patrol, r_c1 notices some suspicious pawprints in the wet sand on the beach."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/r_c1/subject/CAP} {VERB/r_c1/decide/decides} not to investigate."
         ],
         "success_outcomes": [
@@ -2293,7 +2293,7 @@
         "intro_strings": [
             "The patrol catches the scent of a fox, but is it red or gray?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides not to pursue the fox."
         ],
         "success_outcomes": [
@@ -2813,7 +2813,7 @@
         "intro_strings": [
             "The patrol catches the scent of a fox, but is it red or gray?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides not to pursue the fox."
         ],
         "success_outcomes": [
@@ -3258,7 +3258,7 @@
         "intro_strings": [
             "As the cats move along the shoreline, they spot something massive moving beneath the water."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The cats are feeling remarkably incurious today."
         ],
         "success_outcomes": [
@@ -3315,7 +3315,7 @@
         "intro_strings": [
             "p_l waves r_c0 over with {PRONOUN/p_l/poss} tail. What's <i>that</i>?!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "r_c0 isn't interested, and the patrol continues on their way."
         ],
         "success_outcomes": [

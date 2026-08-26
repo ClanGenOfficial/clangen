@@ -37,7 +37,7 @@
         "intro_strings": [
             "p_l brings r_c1 down the mountain, to where a little stream turns into a tiny cold bog."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Thinking better of it, the cats try to hunt instead."
         ],
         "success_outcomes": [
@@ -330,7 +330,7 @@
         "intro_strings": [
             "p_l brings them down the mountain, to where a little stream turns into a tiny cold bog."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Thinking better of it, the cats try to hunt instead."
         ],
         "success_outcomes": [

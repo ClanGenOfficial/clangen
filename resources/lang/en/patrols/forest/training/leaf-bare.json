@@ -47,7 +47,7 @@
         "intro_strings": [
             "p_l thinks r_c0 is, well, really, just — uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c0 might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c0 to spend some time together, just the two of them, this afternoon!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Unfortunately, r_c0 is sent on an afternoon border patrol before p_l can say anything."
         ],
         "success_outcomes": [
@@ -232,7 +232,7 @@
         "intro_strings": [
             "Snow swirls around c_n's camp, piling up in unusually deep snowdrifts. p_l gathers some apprentices to {PRONOUN/p_l/object} for a story."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Trying to get apprentices to do anything is like — well, herding cats."
         ],
         "success_outcomes": [
@@ -426,7 +426,7 @@
         "intro_strings": [
             "The wind blows across the lake, almost sounding like the moans of a hungry cat. p_l has a gleam in {PRONOUN/p_l/poss} eye that tells r_c1 {PRONOUN/p_l/subject} {VERB/p_l/have/has} a story to tell..."
         ],
-        "decline_text": [
+        "decline_strings": [
             "r_c1 is too hungry and cold to stop for a story now! {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/pad/pads} away in search of food."
         ],
         "success_outcomes": [

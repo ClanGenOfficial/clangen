@@ -22,7 +22,7 @@
         "intro_strings": [
             "Here on the plains, the reaches of c_n's territory are vast, particularly in the direction p_l and {PRONOUN/p_l/poss} patrol are heading, where there is endless grass (under the blanket of snow) but no permanent water sources."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol is interrupted by a hunting patrol that needs help carrying prey back to camp — border marking will wait til later."
         ],
         "success_outcomes": [
@@ -451,7 +451,7 @@
         "intro_strings": [
             "Padding along the border, the cats find fresh coyote scat, steaming in the snow. There's a yip in the distance."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border."
         ],
         "success_outcomes": [
@@ -1122,7 +1122,7 @@
         "intro_strings": [
             "Approaching the border, the patrol stops in their tracks. A coyote has marked over c_n's border markings — so recently that it stinks from several fox-lengths away, sharply disgusting in the muffled frosty world, so recently that the canine might be still here."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp."
         ],
         "success_outcomes": [
@@ -2179,7 +2179,7 @@
         "intro_strings": [
             "Patrolling the border and updating the markings, p_l feels the temperature drop. Rearing up, {PRONOUN/p_l/subject} can just make out the distant sky above the valley of trampled snow the patrol pads in. A wall of gray approaches. They need to take cover!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Fortunately they haven't padded far from camp yet, and the patrol makes it back before the storm hits."
         ],
         "success_outcomes": [
@@ -2873,7 +2873,7 @@
         "intro_strings": [
             "While on a dawn border patrol, with the sun still hugging the distant horizon, p_l finds an opening to what seems to be a new set of tunnels."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides not to check the tunnels. After all, who knows what might be hiding inside?"
         ],
         "success_outcomes": [
@@ -3214,7 +3214,7 @@
         "intro_strings": [
             "Trotting along the track that marks the border with r_c1, p_l spots the entrance to an unfamiliar hole in the ground."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides not to check the tunnels. After all, who knows what might be hiding inside?"
         ],
         "success_outcomes": [
@@ -4279,7 +4279,7 @@
         "intro_strings": [
             "p_l is on high alert as {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} along the border — after all, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} here alone. But out of the corner of {PRONOUN/p_l/poss} eye, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} a weird splash of shadows in the white of the snow-dabbed fields. Is that a burrow entrance?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides not to check the tunnels. After all, who knows what might be hiding inside?"
         ],
         "success_outcomes": [
@@ -4576,7 +4576,7 @@
         "intro_strings": [
             "p_l's ears swivel back and forth, pressing flat against {PRONOUN/p_l/poss} head every so often as {PRONOUN/p_l/poss} emotions slip through. With fur bristled out to full puff against cold and danger {PRONOUN/p_l/subject} nevertheless {VERB/p_l/pad/pads} the border alone. A strange mismash of shadows catches {PRONOUN/p_l/poss} eye. Is that a tunnel entrance?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides not to check. After all, who knows what might be hiding inside? No, it's time to go home, before anything bad happens to {PRONOUN/p_l/object}."
         ],
         "success_outcomes": [
@@ -4969,7 +4969,7 @@
         "intro_strings": [
             "The apprentices are at the border — not exactly a patrol they were sent on. Not exactly a patrol they're supposed to do without a warrior, actually. Not a patrol <i>anyone</i> is supposed to do with a storm rolling in. Anyway, is that a tunnel entrance over there?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Eventually the apprentices get tired. Whatever, they're not supposed to be out here without a warrior anyway."
         ],
         "success_outcomes": [

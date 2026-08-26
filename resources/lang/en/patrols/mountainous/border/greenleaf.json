@@ -22,7 +22,7 @@
         "intro_strings": [
             "While on patrol, p_l notices an unfamiliar scent. Something has left scent marks on the wrong side of the border."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} not to investigate."
         ],
         "success_outcomes": [
@@ -227,7 +227,7 @@
         "intro_strings": [
             "While on patrol, p_l notices an unfamiliar scent. Something has left scent marks on the wrong side of the border."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} not to investigate."
         ],
         "success_outcomes": [
@@ -354,7 +354,7 @@
         "intro_strings": [
             "While on patrol, r_c0 notices an unfamiliar scent. Something has left scent marks on the wrong side of the border."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/decide/decides} not to investigate."
         ],
         "success_outcomes": [
@@ -681,7 +681,7 @@
         "intro_strings": [
             "While on patrol, r_c1 notices an unfamiliar scent. Something has left scent marks on the wrong side of the border."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/r_c1/subject/CAP} {VERB/r_c1/decide/decides} not to investigate."
         ],
         "success_outcomes": [
@@ -887,7 +887,7 @@
         "intro_strings": [
             "While on patrol, r_c0 notices an unfamiliar scent. Something has left scent marks on the wrong side of the border."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/decide/decides} decide not to investigate."
         ],
         "success_outcomes": [
@@ -1188,7 +1188,7 @@
         "intro_strings": [
             "While on patrol, r_c0 notices an unfamiliar scent. Something has left scent marks on the wrong side of the border."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/decide/decides} not to investigate."
         ],
         "success_outcomes": [
@@ -1345,7 +1345,7 @@
         "intro_strings": [
             "p_l looks at the small stream {PRONOUN/p_l/subject} {VERB/p_l/have/has} to cross to continue on to mark the border and {VERB/p_l/debate/debates} if {PRONOUN/p_l/subject} should stop for a quick swim to cool off."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides to continue with the patrol instead."
         ],
         "success_outcomes": [

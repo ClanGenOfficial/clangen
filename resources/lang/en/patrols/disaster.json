@@ -27,7 +27,7 @@
         "intro_strings": [
             "There are dark clouds on the horizon, and p_l wonders if they should continue."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides to head back early."
         ],
         "success_outcomes": [
@@ -227,7 +227,7 @@
         "intro_strings": [
             "There are dark clouds on the horizon and p_l wonders if {PRONOUN/p_l/subject} should continue."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides to head back early."
         ],
         "success_outcomes": [
@@ -327,7 +327,7 @@
         "intro_strings": [
             "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the plains."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides not to investigate."
         ],
         "success_outcomes": [
@@ -491,7 +491,7 @@
         "intro_strings": [
             "p_l hears some odd noises coming from an abandoned Twoleg nest out on the plains."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides not to investigate."
         ],
         "success_outcomes": [
@@ -649,7 +649,7 @@
         "intro_strings": [
             "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides not to investigate."
         ],
         "success_outcomes": [
@@ -801,7 +801,7 @@
         "intro_strings": [
             "p_l hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides not to investigate."
         ],
         "success_outcomes": [
@@ -961,7 +961,7 @@
         "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues burst from the bushes! An ambush!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
         ],
         "success_outcomes": [
@@ -1284,7 +1284,7 @@
         "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
         ],
         "success_outcomes": [

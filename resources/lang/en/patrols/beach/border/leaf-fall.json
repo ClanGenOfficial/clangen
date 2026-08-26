@@ -22,7 +22,7 @@
         "intro_strings": [
             "As p_l crosses a beach, shivering with the cold, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound, like a wave — but out of sync with the ocean."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides to head back early."
         ],
         "success_outcomes": [
@@ -133,7 +133,7 @@
         "intro_strings": [
             "Trekking near a copse of trees where the waves swish at their paws, the patrol notices a huge blue crab picking at a coconut."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Deciding that it looks too dangerous to approach, the patrol leaves the crab alone."
         ],
         "success_outcomes": [

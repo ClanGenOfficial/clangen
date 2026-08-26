@@ -37,7 +37,7 @@
         "intro_strings": [
             "As the training patrol pads out, p_l gives in to the impulse to dig {PRONOUN/p_l/poss} claws into the soil, feeling the sprouting grass tearing under {PRONOUN/p_l/poss} pads. There's something special about this time of year."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Still, that's no excuse to goof off. Time to focus on {PRONOUN/p_l/poss} work."
         ],
         "success_outcomes": [

@@ -30,7 +30,7 @@
         "intro_strings": [
             "The sun beats down on the desert, driving every creature away from its gaze with blinding heat."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Giving up on the hunt, p_l finds a burrow to wait out the heat of the day until they can return back to camp."
         ],
         "success_outcomes": [
@@ -169,7 +169,7 @@
         "intro_strings": [
             "The sun beats down on the desert, driving every creature away from its gaze with blinding heat."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Giving up on the hunt, p_l finds a burrow to wait out the heat of the day until they can return back to camp."
         ],
         "success_outcomes": [

@@ -36,7 +36,7 @@
         "intro_strings": [
             "Gather round, gather round. p_l sits in the center of the group and drops {PRONOUN/p_l/poss} voice down low as a hush falls. Today, {PRONOUN/p_l/subject}'ll tell the story of StarClan's Great Anger."
         ],
-        "decline_text": [
+        "decline_strings": [
             "A leaf-fall rain shower chooses that moment to break — thematic, perhaps, but wet. The cats decide to pick up the story some other time."
         ],
         "success_outcomes": [

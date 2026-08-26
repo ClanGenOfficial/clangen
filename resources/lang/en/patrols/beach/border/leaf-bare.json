@@ -22,7 +22,7 @@
         "intro_strings": [
             "As p_l crosses a beach, shivering with the cold, {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a creaking, rushing sound, like a wave — but out of sync with the ocean."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides to head back early."
         ],
         "success_outcomes": [

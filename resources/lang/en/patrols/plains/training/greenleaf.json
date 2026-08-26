@@ -39,7 +39,7 @@
         "intro_strings": [
             "Ugh. r_c0 loves the plains, but the baking hot sun isn't its best look."
         ],
-        "decline_text": [
+        "decline_strings": [
             "It's too hot for this — let's head back to camp."
         ],
         "success_outcomes": [

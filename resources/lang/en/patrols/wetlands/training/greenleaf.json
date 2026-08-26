@@ -43,7 +43,7 @@
         "intro_strings": [
             "This heat is just oppressive. The patrol gives up on battle training. The humidity blankets the wetlands, thick, suffocating, sapping their strength as surely as a viper's bite."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Time to go back home and wait it out."
         ],
         "success_outcomes": [

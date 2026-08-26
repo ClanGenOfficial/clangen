@@ -47,7 +47,7 @@
         "intro_strings": [
             "p_l thinks r_c0 is, well, really, just — uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c0 might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c0 to spend some time together, just the two of them, this afternoon!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Unfortunately, r_c0 is sent on an afternoon border patrol before p_l can say anything."
         ],
         "success_outcomes": [
@@ -239,7 +239,7 @@
         "intro_strings": [
             "p_l trots up, full of a disproportionate amount of excitement for the bland, overcast afternoon, tail tip twitching. Does r_c0 want to come out with {PRONOUN/p_l/object}? {PRONOUN/p_l/subject/CAP} {VERB/p_l/lean/leans} in close — there's a special spot {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been meaning to show {PRONOUN/r_c0/object}."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Unfortunately, r_c0 is sent on an afternoon border patrol before either cat can head out of camp."
         ],
         "success_outcomes": [
@@ -369,7 +369,7 @@
         "intro_strings": [
             "Hiding from a newleaf rain shower under a bush, p_l whispers to the other apprentices — have they heard the story of the Shaded Vengeance?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Oh, the rain let up — back to training!"
         ],
         "success_outcomes": [
@@ -495,7 +495,7 @@
         "intro_strings": [
             "There's a saying, about crows in newleaf..."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Cats say many things. Doesn't mean it's worth listening to."
         ],
         "success_outcomes": [

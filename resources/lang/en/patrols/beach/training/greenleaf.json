@@ -36,7 +36,7 @@
         "intro_strings": [
             "p_l leads the patrol out to a promontory of rock, pointing out the Twoleg monsters crowding the sandy shoreline below as they twinkle in the sunlight."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Clearly there'll be no using this part of their territory today then. The patrol goes to report this back to camp."
         ],
         "success_outcomes": [
@@ -141,7 +141,7 @@
         "intro_strings": [
             "This is just oppressive. The sand burns the patrol's paws as they dart from one refuge of dune-bush to another, the distant training grounds they were supposed to go to looking more and more out of reach."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Time to go back home and wait it out."
         ],
         "success_outcomes": [
@@ -280,7 +280,7 @@
         "intro_strings": [
             "While wading through the damp mud behind {PRONOUN/r_c1/poss} mentor, r_c1 wonders where the ocean went. p_l explains that the tide flows out far here, twice a day, leaving behind this landscape of soft, algae-rich silt stretching to the far horizon. Seabirds, probing the mud for cockles and clams, startle into flight at the cats' approach."
         ],
-        "decline_text": [
+        "decline_strings": [
             "A sudden downpour leaves p_l and r_c1 drenched. They cancel training and return to camp to shelter."
         ],
         "success_outcomes": [

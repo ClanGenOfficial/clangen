@@ -38,7 +38,7 @@
         "intro_strings": [
             "Greenleaf, bah, r_c0 scoffs. There's nothing green about the leaves right now, so why does c_n call the dry season that?!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol is too busy finding shelter from the sun to consider r_c's question."
         ],
         "success_outcomes": [

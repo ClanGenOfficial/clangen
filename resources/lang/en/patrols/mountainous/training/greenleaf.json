@@ -30,7 +30,7 @@
         "intro_strings": [
             "The cats head out into the forested slopes, hiding from the heat of greenleaf. p_l leads them towards a massive messy eagle nest."
         ],
-        "decline_text": [
+        "decline_strings": [
             "When they get there, p_l can't find the hummingbird {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting. Disappointing."
         ],
         "success_outcomes": [
@@ -355,7 +355,7 @@
         "intro_strings": [
             "The cats head out into the forested slopes, hiding from the heat of greenleaf. p_l leads them towards a massive messy eagle nest."
         ],
-        "decline_text": [
+        "decline_strings": [
             "When they get there, p_l can't find the hummingbird {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting. Disappointing."
         ],
         "success_outcomes": [
@@ -710,7 +710,7 @@
         "intro_strings": [
             "With p_l in the lead, the cats round a corner in the mountain path and come across a flat mountain meadow, transformed by greenleaf into a carpet of sunny bright flowers."
         ],
-        "decline_text": [
+        "decline_strings": [
             "When they get there, p_l can't find the hummingbirds {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting. Disappointing."
         ],
         "success_outcomes": [
@@ -1004,7 +1004,7 @@
         "intro_strings": [
             "With p_l in the lead, the cats round a corner in the mountain path and come across a flat mountain meadow, transformed by greenleaf into a carpet of sunny bright flowers."
         ],
-        "decline_text": [
+        "decline_strings": [
             "When they get there, p_l can't find the hummingbirds {PRONOUN/p_l/subject} {VERB/p_l/were/was} expecting. Disappointing."
         ],
         "success_outcomes": [
@@ -1293,7 +1293,7 @@
         "intro_strings": [
             "p_l crouches low behind some grass, searching for the ideal prey to fall to {PRONOUN/p_l/poss} deadly claws. In front of the mighty hunter, a brightly colored beetle alights on a rock."
         ],
-        "decline_text": [
+        "decline_strings": [
             "A beetle is beneath {PRONOUN/p_l/poss} attention."
         ],
         "success_outcomes": [
@@ -1417,7 +1417,7 @@
         "intro_strings": [
             "As the cats practice hunting in the dim light of the golden setting sun, p_l is reminded of the tale of How The Sunset Came To Be."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The light is too weird to focus on both training <i>and</i> a story. It'll have to wait for another day."
         ],
         "success_outcomes": [

@@ -33,7 +33,7 @@
         "intro_strings": [
             "p_l didn't plan to have other cats with {PRONOUN/p_l/object}, but {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} grateful for the help anyway, especially with the amount of blooming flowers. That is, until r_c0 started sneezing. Clearly, the pollen from the flowers and grasses is affecting {PRONOUN/r_c0/object} somewhat."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Since r_c0 clearly isn't up for a patrol involving plants and pollen, the patrol returns to camp with no new herbs. At least r_c0 seems to have stopped sneezing for now."
         ],
         "success_outcomes": [

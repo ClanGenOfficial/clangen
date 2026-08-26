@@ -19,7 +19,7 @@
         "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
         ],
         "success_outcomes": [
@@ -323,7 +323,7 @@
         "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l turns tail and races away! The rogues have {PRONOUN/p_l/object} far outnumbered, and warning the Clan is more important than dying needlessly."
         ],
         "success_outcomes": [
@@ -413,7 +413,7 @@
         "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues strides confidently out from behind a tumble of rocks, yowling as they confront the Clan cats!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
         ],
         "success_outcomes": [
@@ -649,7 +649,7 @@
         "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l turns tail and races away! The rogues have {PRONOUN/p_l/object} far outnumbered, warning the Clan is more important than dying needlessly."
         ],
         "success_outcomes": [
@@ -765,7 +765,7 @@
         "intro_strings": [
             "On their way to mark the far corners of their mountain, r_c0 starts telling a story of {PRONOUN/r_c0/poss} ancestors to keep every cat entertained."
         ],
-        "decline_text": [
+        "decline_strings": [
             "A shadow flies over them, and r_c's storytelling is forgotten as the patrol makes sure it wasn't an eagle."
         ],
         "success_outcomes": [
@@ -954,7 +954,7 @@
         "intro_strings": [
             "The patrol reaches a river that must be crossed to ensure the borders are thoroughly checked."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l makes the decision to lead the patrol home instead; it's too risky today."
         ],
         "success_outcomes": [
@@ -1308,7 +1308,7 @@
         "intro_strings": [
             "As p_l pads through the shadowy trees, the sun already hidden by the mountain slopes, {PRONOUN/p_l/subject} {VERB/p_l/freeze/freezes}. Up ahead, a Twoleg peers down from above, its black wings a huge backdrop to hypnotic, glowing red eyes..."
         ],
-        "decline_text": [
+        "decline_strings": [
             "This is no creature for mortal eyes. p_l screws {PRONOUN/p_l/poss} eyelids shut, muttering prayer after prayer after prayer to StarClan itself — and when {PRONOUN/p_l/subject} {VERB/p_l/open/opens} them again, the moth-Twoleg is gone."
         ],
         "success_outcomes": [
@@ -1443,7 +1443,7 @@
         "intro_strings": [
             "As p_l ducks through the overhanging branches of an evergreen, {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} two deer, lying intertwined. Are they sleeping? Curious, p_l creeps closer."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Two deer are incomprehensibly huge targets for cats. p_l moves on."
         ],
         "success_outcomes": [
@@ -1510,7 +1510,7 @@
         "intro_strings": [
             "p_l sniffs the border carefully. It could be dog scent, but more likely, without any Twoleg intrusions, this scent is wolf instead. That wouldn't be good news for c_n."
         ],
-        "decline_text": [
+        "decline_strings": [
             "{PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} puzzle out the scent, but p_l isn't willing to risk any danger trying to isolate it further."
         ],
         "success_outcomes": [

@@ -16,7 +16,7 @@
         "intro_strings": [
             "p_l heads out to mark c_n's borders."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides to not mark their borders."
         ],
         "success_outcomes": [
@@ -146,7 +146,7 @@
         "intro_strings": [
             "p_l heads out to patrol c_n's borders and scents something mysterious."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides to not investigate the scent."
         ],
         "success_outcomes": [
@@ -240,7 +240,7 @@
         "intro_strings": [
             "p_l heads out to patrol c_n's borders and spots some mysterious tracks."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides to not investigate the tracks."
         ],
         "success_outcomes": [
@@ -340,7 +340,7 @@
         "intro_strings": [
             "p_l heads out to patrol c_n's borders and notices that some of their markings had been disturbed."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides to not investigate the markings."
         ],
         "success_outcomes": [
@@ -403,7 +403,7 @@
         "intro_strings": [
             "On border patrol, the patrol finds a kittypet's scent. Following the (extremely) obvious sounds of distress, p_l leads the patrol down to a kittypet, haplessly wedged between a couple of rocks. Wailing pathetically, they cry that their wing is stuck!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "It's beyond c_n's border, it's not c_n's problem."
         ],
         "success_outcomes": [
@@ -529,7 +529,7 @@
         "intro_strings": [
             "The patrol is heading out to check the borders, when p_l says {PRONOUN/p_l/subject} {VERB/p_l/see/sees} strange glowing eyes in the distance."
         ],
-        "decline_text": [
+        "decline_strings": [
             "r_c0 sighs and tells p_l that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just seeing things. There's nothing out there... right?"
         ],
         "success_outcomes": [
@@ -762,7 +762,7 @@
         "intro_strings": [
             "The patrol stumbles upon a strange scene near a Twolegplace: Twoleg kits traveling from den to den in colorful pelts."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol decides it's best not to interfere with this peculiar ritual."
         ],
         "success_outcomes": [
@@ -879,7 +879,7 @@
         "intro_strings": [
             "On the outskirts of the territory, the patrol comes across a tall, motionless Twoleg rooted in the middle of a field."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The patrol doesn't want to risk going near this strange Twoleg and quickly heads back to camp to report the odd sighting."
         ],
         "success_outcomes": [
@@ -1060,7 +1060,7 @@
         "intro_strings": [
             "p_l and r_c0 have been bickering non-stop the entire time they've been patrolling."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Unable to work together, the two return to camp."
         ],
         "success_outcomes": [
@@ -1463,7 +1463,7 @@
         "intro_strings": [
             "After a night-long greenleaf thunderstorm, p_l takes a patrol out to check the o_c_n border. Along the way, r_c1 and r_c2 hop through puddles, splashing each other."
         ],
-        "decline_text": [
+        "decline_strings": [
             "If r_c1 and r_c2 aren't going to take this seriously, p_l will turn this patrol around and go straight back to camp."
         ],
         "success_outcomes": [
@@ -1995,7 +1995,7 @@
         "intro_strings": [
             "While patrolling near {POI/tag/Twolegs:present}, the patrol stumbles across an odd stack of Twoleg wood. The trunk's been cut into long pieces and it's confusingly smooth."
         ],
-        "decline_text": [
+        "decline_strings": [
             "They don't have time for this. The patrol leaves the stack behind and continues on their way."
         ],
         "success_outcomes": [

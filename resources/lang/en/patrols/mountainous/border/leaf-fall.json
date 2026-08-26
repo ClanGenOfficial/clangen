@@ -22,7 +22,7 @@
         "intro_strings": [
             "The patrol hears a strange thwacking sound from the other side of a boulder. After initial confusion, the patrol realizes that it is courting season for the goats that live on the mountain. The sound must be two buck goats engaged in a fight. It must be quite the spectacle..."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Fun as it may be to watch... it could also end in disaster. The patrol decides it's not worth the risk and continues on its way."
         ],
         "success_outcomes": [

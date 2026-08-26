@@ -37,7 +37,7 @@ When considering patrols, keep in mind challenge vs reward. That isn't to say ce
     "chance_of_success": 100,
     "patrol_art": "art.png",
     "intro_text": ["Patrol heads out to do some-such."],
-    "decline_text": ["Patrol turns around"],
+    "decline_strings": ["Patrol turns around"],
     "success_outcomes": [
         TextPoolEvent
     ],
@@ -99,7 +99,7 @@ When considering patrols, keep in mind challenge vs reward. That isn't to say ce
     "patrol_art": "art.png",
     "patrol_art_clean": "pleasant_art.png",
     "intro_text": ["Patrol heads out to do some-such."],
-    "decline_text": ["Patrol turns around"],
+    "decline_strings": ["Patrol turns around"],
     "success_outcomes": [
         TextPoolEvent
     ],

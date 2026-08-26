@@ -47,7 +47,7 @@
         "intro_strings": [
             "p_l thinks r_c0 is, well, really, just — uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c0 might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c0 to spend some time together, just the two of them, this afternoon!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "Unfortunately, r_c0 is sent on an afternoon border patrol before p_l can say anything."
         ],
         "success_outcomes": [
@@ -231,7 +231,7 @@
         "intro_strings": [
             "As the afternoon turns to evening and the patrol finally reaches the shade of one of the older trees in the territory, p_l asks the apprentices to gather 'round. High above the thrushes sing, and p_l prepares to tell the story of a unique bird of c_n's territory — one fondly recalled from kithood."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l gets too distracted by the lovely birdsong to continue."
         ],
         "success_outcomes": [

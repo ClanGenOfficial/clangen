@@ -40,7 +40,7 @@
         "intro_strings": [
             "p_l takes the apprentices out at dusk, setting the atmosphere for a fun story."
         ],
-        "decline_text": [
+        "decline_strings": [
             "They're stopped — chores around camp demand their attention. This will have to wait for another night."
         ],
         "success_outcomes": [

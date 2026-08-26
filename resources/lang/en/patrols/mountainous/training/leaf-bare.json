@@ -53,7 +53,7 @@
         "intro_strings": [
             "The apprentices emerge into a predawn world hushed and smothered in a fresh blanket of snow! r_c1 and p_l tear off into the territory near camp, looking to play."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Their mentors are already up for the day, and call them back. There'll be time to play later."
         ],
         "success_outcomes": [
@@ -297,7 +297,7 @@
         "intro_strings": [
             "As they trudge through the snow, p_l spots a wolf pack round a kill in the distant valley below and calls r_c1 over."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Thinking better of it, the cats try to hunt instead."
         ],
         "success_outcomes": [
@@ -564,7 +564,7 @@
         "intro_strings": [
             "As they trudge through the snow, p_l spots a wolf pack round a kill in the distant valley below and calls the apprentices over."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Thinking better of it, the cats try to hunt instead."
         ],
         "success_outcomes": [
@@ -849,7 +849,7 @@
         "intro_strings": [
             "Once, before myth and magic, there was only StarClan, and no Dark Forest. p_l gathers the patrol, talking in hushed meows of the birth of that place."
         ],
-        "decline_text": [
+        "decline_strings": [
             "A happier story, the cats ask, please. No one wants trouble sleeping tonight."
         ],
         "success_outcomes": [
@@ -1230,7 +1230,7 @@
         "intro_strings": [
             "p_l gathers some of {PRONOUN/p_l/poss} Clanmates, huddled together for warmth, and offers a tale to take everyone's mind off of the storm raging outside camp."
         ],
-        "decline_text": [
+        "decline_strings": [
             "The wind, howling and vast, drowns p_l out. There'll be no stories today."
         ],
         "success_outcomes": [
@@ -1331,7 +1331,7 @@
         "intro_strings": [
             "Many seasons ago, p_l begins, there was born a powerful, StarClan-gifted apprentice, one coveted by the Clans around them. Pulled in many directions, they could not keep the peace, as all demanded their time and skill."
         ],
-        "decline_text": [
+        "decline_strings": [
             "r_c0 doesn't have time to listen to p_l's story — {PRONOUN/r_c0/subject} {VERB/r_c0/apologize/apologizes}, but {PRONOUN/r_c0/subject} rather {VERB/r_c0/feel/feels} like that long dead overworked apprentice {PRONOUN/r_c0/self}, right now!"
         ],
         "success_outcomes": [
@@ -1479,7 +1479,7 @@
         "intro_strings": [
             "It's an old, important lesson. The apprentices are brought out to a valley, one side, steep, one shallow. The patrol settles on the shallow side, and the young cats are asked to study the clumped snow on the sharp wall across from them. Today, they will learn of avalanches."
         ],
-        "decline_text": [
+        "decline_strings": [
             "...Or they would, if the valley wasn't so misted over it's barely possible to see the other side."
         ],
         "success_outcomes": [

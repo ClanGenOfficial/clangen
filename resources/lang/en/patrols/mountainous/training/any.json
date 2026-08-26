@@ -34,7 +34,7 @@
         "intro_strings": [
             "The patrol wants to hold a training session for r_c1. They decide to focus on how best to leap up a rocky cliff."
         ],
-        "decline_text": [
+        "decline_strings": [
             "They decide to focus on patrolling the territory instead. Training can wait for another day."
         ],
         "success_outcomes": [
@@ -286,7 +286,7 @@
         "intro_strings": [
             "p_l wanders past an old badger sett dug into the rocky hillside, only to freeze. There's new scent here, acrid and sour."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Surely it must be nothing... Uneasily, p_l continues on."
         ],
         "success_outcomes": [
@@ -526,7 +526,7 @@
         "intro_strings": [
             "p_l wanders past an old badger sett dug into the rocky hillside, only to freeze. There's new scent here, acrid and sour."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Surely it must be nothing... Uneasily, the patrol continues on."
         ],
         "success_outcomes": [
@@ -802,7 +802,7 @@
         "intro_strings": [
             "As r_c0 lags behind on patrol, there's a mighty clatter of stones from below {PRONOUN/r_c0/object}. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly, just in time for the world to tip upside-down as the scree slope beneath {PRONOUN/r_c0/object} collapses."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Thankfully, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} on the edge of the obstruction and {VERB/r_c0/wriggle/wriggles} {PRONOUN/r_c0/poss} way clear."
         ],
         "success_outcomes": [
@@ -1184,7 +1184,7 @@
         "intro_strings": [
             "r_c0 is trailing behind p_l when there is a mighty clatter of stones from below them. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/look/looks} around wildly, just in time for the world to tip upside-down as the scree slope beneath {PRONOUN/r_c0/object} collapses."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Thankfully, {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s}on the edge of the obstruction and {VERB/r_c0/wriggle/wriggles} {PRONOUN/r_c0/poss} way clear."
         ],
         "success_outcomes": [
@@ -1469,7 +1469,7 @@
         "intro_strings": [
             "p_l is training alone out on the mountainside when suddenly, there's a mighty clatter of stones somewhere below {PRONOUN/p_l/object}. p_l looks around wildly — just in time for the world to tip upside-down as the scree slope beneath {PRONOUN/p_l/object} collapses."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Thankfully, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s}on the edge of the obstruction and {VERB/p_l/wriggle/wriggles} {PRONOUN/p_l/poss} way clear."
         ],
         "success_outcomes": [
@@ -1568,7 +1568,7 @@
         "intro_strings": [
             "p_l heads out into the mountains alone, but maybe an apprentice shouldn't try to do a solo patrol."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l turns back to camp, deciding that this is a bad idea."
         ],
         "success_outcomes": [
@@ -1686,7 +1686,7 @@
         "intro_strings": [
             "p_l heads out into the mountains alone, wanting to explore and have some time to {PRONOUN/p_l/self}."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l turns back to camp, deciding that {PRONOUN/p_l/poss} duties have to come first."
         ],
         "success_outcomes": [
@@ -1925,7 +1925,7 @@
         "intro_strings": [
             "On top of a rocky outlook, watching over the rolling surface of the foothills below, r_c1 waits for r_c2, the dark night cloaking the steep mountain. The tip of {PRONOUN/r_c1/poss} tail keeps twitching in excitement."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Oh no! They both forgot that they were on elder nest change duty this evening!"
         ],
         "success_outcomes": [
@@ -2210,7 +2210,7 @@
         "intro_strings": [
             "While scrambling down the mountain slope, r_c1 is suddenly brought to a halt by p_l's tail swung out in front of {PRONOUN/r_c1/poss} chest. Not a step further — there's a mushroom circle, right in front of {PRONOUN/r_c1/object}, and no cat should tempt the moss cats unless they truly need their help."
         ],
-        "decline_text": [
+        "decline_strings": [
             "r_c1 shrugs and does as {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} told without any curiosity."
         ],
         "success_outcomes": [
@@ -2429,7 +2429,7 @@
         "intro_strings": [
             "p_l approaches r_c0, asking if {PRONOUN/r_c0/subject} wouldn't mind showing p_l their hunting techniques and perhaps doing some training with {PRONOUN/p_l/object}?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "r_c0 declines gently, explaining that {PRONOUN/r_c0/subject} {VERB/r_c0/have/has} too much work to do."
         ],
         "success_outcomes": [
@@ -2663,7 +2663,7 @@
         "intro_strings": [
             "Touring through the territory, p_l spots a thrush, and begins to quiz r_c1 on what the best strategy is for catching it."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Thinking better of it, the cats try to hunt instead."
         ],
         "success_outcomes": [
@@ -2913,7 +2913,7 @@
         "intro_strings": [
             "Touring through the territory, p_l spots a thrush, and begins to quiz the apprentices on what the best strategy is for catching it."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Thinking better of it, the cats try to hunt instead."
         ],
         "success_outcomes": [
@@ -3262,7 +3262,7 @@
         "intro_strings": [
             "As p_l hops up on a fallen log to sharpen {PRONOUN/p_l/poss} claws for a training session, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} r_c0 doing the same thing. p_l allows {PRONOUN/p_l/self} a sigh before {PRONOUN/p_l/subject} {VERB/p_l/join/joins} {PRONOUN/r_c0/object}. While Clanmates will do better training together, r_c0 just rubs {PRONOUN/p_l/object} the wrong way."
         ],
-        "decline_text": [
+        "decline_strings": [
             "...It's fine to train somewhere else, p_l decides. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} really want to interact with r_c0."
         ],
         "success_outcomes": [
@@ -3380,7 +3380,7 @@
         "intro_strings": [
             "As r_c1 follows p_l on a training patrol to learn the territory, there's a muffled thump behind {PRONOUN/r_c1/object}. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/whirl/whirls} around, finding a beady black eye and huge beak far too close to {PRONOUN/r_c1/object}."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Thinking better of it, the cats try to hunt instead."
         ],
         "success_outcomes": [
@@ -3553,7 +3553,7 @@
         "intro_strings": [
             "r_c1 notices r_c2's absence and follows {PRONOUN/r_c2/poss} unobscured trail to the cliff's edge. What in StarClan's name is r_c2 doing out here? There's an eagle nest, r_c2 explains, {PRONOUN/r_c2/poss} tail swooping up over {PRONOUN/r_c2/poss} back to point, here, look. The chicks are trying to fly!"
         ],
-        "decline_text": [
+        "decline_strings": [
             "That's lovely, but, like, can r_c2 watch from a place that isn't a damned cliff edge?"
         ],
         "success_outcomes": [
@@ -3771,7 +3771,7 @@
         "intro_strings": [
             "Once, before myth and magic, there was only StarClan, and no Dark Forest. p_l gathers the patrol, talking in hushed meows of the birth of that place."
         ],
-        "decline_text": [
+        "decline_strings": [
             "A happier story, the cats ask, please. No one wants trouble sleeping tonight."
         ],
         "success_outcomes": [
@@ -4178,7 +4178,7 @@
         "intro_strings": [
             "The apprentices emerge into a predawn world hushed and smothered in a fresh blanket of snow! r_c1 and p_l tear off into the territory near camp, looking to play."
         ],
-        "decline_text": [
+        "decline_strings": [
             "Their mentors are already up for the day, and call them back. There'll be time to play later."
         ],
         "success_outcomes": [
@@ -4411,7 +4411,7 @@
         "intro_strings": [
             "p_l gathers {PRONOUN/p_l/poss} strength, butt wiggling with excitement, legs tense, and throws {PRONOUN/p_l/self} upward, twisting in the air in a massive pounce that surely would bring down the mightiest prey! <i>OoOooo,</i> a voice says mockingly."
         ],
-        "decline_text": [
+        "decline_strings": [
             "What was that?! StarClan?! p_l is going home, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} like this!"
         ],
         "success_outcomes": [
@@ -4471,7 +4471,7 @@
         "intro_strings": [
             "The training patrol gathers around old scat, so that the apprentices can learn a Sharptooth's ragged scent. p_l swishes {PRONOUN/p_l/poss} tail — do the apprentices know what this predator used to be?"
         ],
-        "decline_text": [
+        "decline_strings": [
             "The apprentices are too focused on trying to catch the old, nearly gone scent in their snouts to listen to stories — p_l will save this one for another time."
         ],
         "success_outcomes": [

@@ -22,7 +22,7 @@
         "intro_strings": [
             "p_l looks at the small stream {PRONOUN/p_l/subject} {VERB/p_l/have/has} to cross to continue marking the border, and {VERB/p_l/debate/debates} stopping for a quick swim to cool off."
         ],
-        "decline_text": [
+        "decline_strings": [
             "p_l decides to continue with the patrol instead."
         ],
         "success_outcomes": [
