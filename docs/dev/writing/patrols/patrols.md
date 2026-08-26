@@ -531,13 +531,13 @@ Constrains the event to only occur is the specified relationships exist. Multipl
 ***
 
 
-#### intro_text: list[str]
+#### intro_strings: list[str]
 >The text that displays when the patrol first starts. You can add multiple options to this list and a random one will be chosen to be displayed.
 
 
 ***
 
-#### decline_text: list[str]
+#### decline_strings: list[str]
 >The text that displays if the patrol is declined (do not proceed.) You can add multiple options to this list and a random one will be chosen to be displayed.
 
 

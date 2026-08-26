@@ -122,8 +122,8 @@ class TestInvolvedCats(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text=["test"],
-            decline_text=["test"],
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={
                 "p_l": InvolvedCatDict(),
                 "r_c": InvolvedCatDict(),
@@ -154,8 +154,8 @@ class TestInvolvedCats(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text=["test"],
-            decline_text=["test"],
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={
                 "n_c0": InvolvedCatDict(),
                 "n_c1": InvolvedCatDict(can_create_new_cat={}),
@@ -191,8 +191,8 @@ class TestInvolvedCats(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text=["test"],
-            decline_text=["test"],
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={
                 "p_l": InvolvedCatDict(),
                 "r_c": InvolvedCatDict(),
@@ -223,8 +223,8 @@ class TestInvolvedCats(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text=["test"],
-            decline_text=["test"],
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={
                 "p_l": InvolvedCatDict(),
                 "r_c": InvolvedCatDict(),
@@ -255,8 +255,8 @@ class TestInvolvedCats(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text=["test"],
-            decline_text=["test"],
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={
                 "p_l": InvolvedCatDict(),
                 "r_c": InvolvedCatDict(),
@@ -307,8 +307,8 @@ class TestOutcomeExecution(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text=["test"],
-            decline_text=["test"],
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={
                 "n_c:0": InvolvedCatDict(),
             },
@@ -341,8 +341,8 @@ class TestOutcomeExecution(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text=["test"],
-            decline_text=["test"],
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={},
             success_outcomes=[
                 {
@@ -383,8 +383,8 @@ class TestOutcomeExecution(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text=["test"],
-            decline_text=["test"],
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={},
             success_outcomes=[
                 {
@@ -418,8 +418,8 @@ class TestOutcomeExecution(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text=["test"],
-            decline_text=["test"],
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={"p_l": InvolvedCatDict(), "r_c": InvolvedCatDict()},
             success_outcomes=[
                 {
@@ -455,8 +455,8 @@ class TestOutcomeExecution(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text=["test"],
-            decline_text=["test"],
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={"p_l": InvolvedCatDict(), "r_c": InvolvedCatDict()},
             success_outcomes=[
                 {
@@ -495,8 +495,8 @@ class TestOutcomeExecution(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text=["test"],
-            decline_text=["test"],
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={"p_l": InvolvedCatDict()},
             success_outcomes=[
                 {
