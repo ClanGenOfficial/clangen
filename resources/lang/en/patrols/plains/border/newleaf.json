@@ -606,7 +606,7 @@
                 "frequency": 4,
                 "outcome_art": "animals/animals/gen_coyotedanger",
                 "strings": [
-                    "That yip was close. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the small patrol, and leads a risky attack — but an adult coyote is too much for so few warriors, and she escapes having given as good as she got."
+                    "That yip was close. Ears pricked, the patrol stalks closer, crossing the border. On the other side a female with swollen teats searches for fieldmice. p_l gathers the small patrol, and leads a risky attack — but an adult coyote is too much for so few warriors. She escapes, leaving a trail of blood, and p_l and the others also limp back to camp with injuries."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -615,15 +615,15 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "clan"
+                            "clan", "high_aggress"
                         ],
                         "mutual": false,
                         "values": [
                             "respect"
                         ],
-                        "amount": 15,
+                        "amount": 5,
                         "log": {
-                            "cats_from": "cat_to laid down {PRONOUN/cat_to/poss} life to protect c_n from coyotes."
+                            "cats_from": "cat_from gained respect toward cat_to after hearing that {PRONOUN/cat_to/subject} attacked a coyote."
                         }
                     }
                 ],

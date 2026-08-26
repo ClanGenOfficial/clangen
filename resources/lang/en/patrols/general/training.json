@@ -23868,6 +23868,9 @@
         "success_outcomes": [
             {
                 "frequency": 4,
+                "tags": [
+                    "clan:medicine cat"
+                ],
                 "strings": [
                     "The sun has nearly set before what was meant to be a quick little training patrol heads back to camp. The cats pad forward with confidence, p_l leading the way, {PRONOUN/p_l/poss} tail held high as {PRONOUN/p_l/subject} {VERB/p_l/seek/seeks} out med_name to pass on what {PRONOUN/p_l/subject} and {PRONOUN/p_l/poss} friends have figured out."
                 ],
