@@ -12,7 +12,7 @@ from scripts.conditions import (
     Injury,
     PermanentCondition,
 )
-from scripts.event_class import Single_Event
+from scripts.events_module.event_information import EventInformation
 from scripts.game_structure import game
 
 
@@ -234,7 +234,7 @@ def contact_with_ill_cat(cat, other_cat):
             text = f"{cat.name} had contact with {other_cat.name} and now has {illness_name}."
             # game.health_events_list.append(text)
             game.cur_events_list.append(
-                Single_Event(text, "health", cat_dict={"m_c": cat})
+                EventInformation(text, ["health"], cat_dict={"m_c": cat})
             )
             get_ill(cat, illness_name)
 

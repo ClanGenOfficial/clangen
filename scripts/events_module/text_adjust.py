@@ -609,107 +609,6 @@ def leader_ceremony_text_adjust(
     return text
 
 
-def ceremony_text_adjust(
-    text,
-    cat,
-    old_name=None,
-    dead_mentor=None,
-    mentor=None,
-    previous_alive_mentor=None,
-    random_honor=None,
-    living_parents=(),
-    dead_parents=(),
-):
-    clanname = game.clan.name
-
-    random_honor = random_honor
-    random_living_parent = None
-    random_dead_parent = None
-
-    adjust_text = text
-
-    cat_dict = {
-        "m_c": (
-            (str(cat.name), choice(cat.pronouns)) if cat else ("cat_placeholder", None)
-        ),
-        "(mentor)": (
-            (str(mentor.name), choice(mentor.pronouns))
-            if mentor
-            else ("mentor_placeholder", None)
-        ),
-        "(deadmentor)": (
-            (str(dead_mentor.name), get_pronouns(dead_mentor))
-            if dead_mentor
-            else ("dead_mentor_name", None)
-        ),
-        "(previous_mentor)": (
-            (str(previous_alive_mentor.name), choice(previous_alive_mentor.pronouns))
-            if previous_alive_mentor
-            else ("previous_mentor_name", None)
-        ),
-        "l_n": (
-            (str(game.clan.leader.name), choice(game.clan.leader.pronouns))
-            if game.clan.leader
-            else ("leader_name", None)
-        ),
-        "c_n": (clanname, None),
-    }
-
-    if old_name:
-        cat_dict["(old_name)"] = (old_name, None)
-
-    if random_honor:
-        cat_dict["r_h"] = (random_honor, None)
-
-    if "p1" in adjust_text and "p2" in adjust_text and len(living_parents) >= 2:
-        cat_dict["p1"] = (
-            str(living_parents[0].name),
-            choice(living_parents[0].pronouns),
-        )
-        cat_dict["p2"] = (
-            str(living_parents[1].name),
-            choice(living_parents[1].pronouns),
-        )
-    elif living_parents:
-        random_living_parent = choice(living_parents)
-        cat_dict["p1"] = (
-            str(random_living_parent.name),
-            choice(random_living_parent.pronouns),
-        )
-        cat_dict["p2"] = (
-            str(random_living_parent.name),
-            choice(random_living_parent.pronouns),
-        )
-
-    if (
-        "dead_par1" in adjust_text
-        and "dead_par2" in adjust_text
-        and len(dead_parents) >= 2
-    ):
-        cat_dict["dead_par1"] = (
-            str(dead_parents[0].name),
-            get_pronouns(dead_parents[0]),
-        )
-        cat_dict["dead_par2"] = (
-            str(dead_parents[1].name),
-            get_pronouns(dead_parents[1]),
-        )
-    elif dead_parents:
-        random_dead_parent = choice(dead_parents)
-        cat_dict["dead_par1"] = (
-            str(random_dead_parent.name),
-            get_pronouns(random_dead_parent),
-        )
-        cat_dict["dead_par2"] = (
-            str(random_dead_parent.name),
-            get_pronouns(random_dead_parent),
-        )
-
-    adjust_text = process_text(adjust_text, cat_dict)
-
-    return adjust_text, random_living_parent, random_dead_parent
-
-
 def get_leader_life_notice(leader_name: str) -> str:
     """
     Returns a string specifying how many lives the leader has left or notifying of the leader's full death
@@ -878,3 +777,23 @@ def relationship_text_adjust(mate_string: str, cat_from, cat_to) -> str:
         cat_from, mate_string, main_cat=cat_from, random_cat=cat_to
     )
     return mate_string
+
+
+def ceremony_text_adjust(main_cat_trait: str, old_name: str, text: str):
+    """
+    Handles the small ceremony-specific text adjustments. This being the random honors and the old name.
+    """
+    # get random honor!
+    if "r_h" in text:
+        try:
+            honors = load_lang_resource("events/ceremonies/ceremony_traits.json")
+            random_honor = choice(honors[main_cat_trait])
+        except FileNotFoundError or KeyError:
+            random_honor = i18n.t("defaults.ceremony_honor")
+
+        text = text.replace("r_h", random_honor)
+
+    # add in the old name
+    text = text.replace("(old_name)", old_name)
+
+    return text
