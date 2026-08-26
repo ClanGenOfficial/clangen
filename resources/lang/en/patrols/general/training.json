@@ -32671,6 +32671,12 @@
                     }
                 },
                 "exp_gained": 0,
+                "supply": [
+                    {
+                        "type": "yew_berries",
+                        "adjust": "increase_tiny"
+                    }
+                ],
                 "condition": [
                     {
                         "cats": [

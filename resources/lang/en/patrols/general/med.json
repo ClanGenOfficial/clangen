@@ -51698,6 +51698,12 @@
                 "strings": [
                     "p_l explains how to identify the berries and decides to harvest a few in case they are needed for deadly injuries."
                 ],
+                "supply": [
+                    {
+                        "type": "yew_berries",
+                        "adjust": "increase_small"
+                    }
+                ],
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
@@ -51818,6 +51824,12 @@
                 "frequency": 3,
                 "strings": [
                     "p_l explains the danger of deathberries but reminds the patrol that all herbs have their purpose. In this case, the flesh can be used to treat festering wounds, and the entire berry can be used to alleviate the suffering of mortally wounded warriors."
+                ],
+                "supply": [
+                    {
+                        "type": "yew_berries",
+                        "adjust": "increase_small"
+                    }
                 ],
                 "exp_gained": 30,
                 "relationship_changes": [
