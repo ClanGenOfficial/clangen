@@ -227,6 +227,10 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
         if not special_date or special_date.patrol_tag not in tags:
             return False
 
+    # check for on their own
+    if "never_mentor" in tags and not get_config("roles.app_never_mentor"):
+        return False
+
     return True
 
 
