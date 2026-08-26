@@ -11039,7 +11039,8 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
-                        "can_create_new_cat": {}
+                        "can_create_new_cat": {},
+                        "status": ["kittypet"]
                     }
                 }
             }
