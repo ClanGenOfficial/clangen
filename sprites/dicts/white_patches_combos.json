@@ -116,6 +116,14 @@
             "midCHEST_HIGH",
             "midLEG_BACK_LEFT_FULL",
             "midSADDLE_MIN_REVERSE"
+        ],
+        "DRIPPING_RIGHT_FACE": [
+            "littleRIGHTEAR_MOSTLY",
+            "littleTEARS_R"
+        ],
+        "DRIPPING_LEFT_FACE": [
+            "littleLEFTEAR_MOSTLY",
+            "littleTEARS_L"
         ]
     },
     "mid": {
@@ -270,6 +278,19 @@
             "midBIB_HIGH",
             "midSTRIPE_MID",
             "midTAIL_OVER"
+        ],
+        "DAPPLE_DIVA": [
+            "littleTWO_SPOT",
+            "midDIVA",
+            "littleRIGHTEAR",
+            "littleTAIL_REVERSE_HALF"
+        ],
+        "MAYA": [
+            "littleFOREHEAD_MID",
+            "littleTAILTIP",
+            "littleRIGHTEAR_MID",
+            "littleEYELINER_MAX_R",
+            "midMIA_REDUCED"
         ]
     },
     "high": {
@@ -400,6 +421,43 @@
             "midSHIRT",
             "midUNDERS",
             "midBIB_FULL"
+        ],
+        "PIEBALD_FINN": [
+            "highFINN",
+            "highPIEBALD"
+        ],
+        "DIGIT_PANTSTWO": [
+            "littleLEG_BACK_LEFT_MID",
+            "midDIGIT_REDUCED",
+            "highPANTSTWO_REDUCED"
+        ],
+        "TRIXIE_STRIPE": [
+            "littleBLAZE_SMALL",
+            "midTAIL_OVER",
+            "midSTRIPE_MID",
+            "highTRIXIE"
+        ],
+        "SHAVEN": [
+            "littleBEARD_MID",
+            "littleEYELINER_MAX_L",
+            "midTAIL_HIGH",
+            "highGOATEE_REDUCED"
+        ],
+        "RINGEDMANTLE": [
+            "littleTAIL_MID_RING",
+            "littleTAIL_HIGH_RING",
+            "littleTAIL_REVERSE_MIN",
+            "littleTAILTIP",
+            "highMASKMANTLE"
+        ],
+        "PAINTED_HAWK": [
+            "littleTAIL_MID",
+            "highHAWKBLAZE_REDUCED",
+            "highPAINTED_REDUCED"
+        ],
+        "PAINTED_ROSINA": [
+            "littleROSINA_REDUCED",
+            "highPAINTED_REDUCED"
         ]
     },
     "mostly": {
@@ -552,6 +610,36 @@
             "midBIB_FULL",
             "midBELLY_FULL",
             "midFLANK_MID"
+        ],
+        "WIZARD": [
+            "littleBEARD_SMALL",
+            "littleBIB_SMALL",
+            "littleLEFTEAR_RING",
+            "mostlyMOORISH"
+        ],
+        "LORD_PROTECTOR": [
+            "littleTAIL_REVERSE_MIN_LOW",
+            "midTAIL_HIGH",
+            "highCAKE_REDUCED",
+            "highMASKMANTLE"
+        ],
+        "TAIL_FADE": [
+            "littleTAIL_REVERSE_HALF_LOW",
+            "littleTAIL_REVERSE_MIN_LOW",
+            "littleTAIL_REVERSE_MIN",
+            "midFLANK_FULL",
+            "mostlyTAIL"
+        ],
+        "TAIL_FADE_FROM_TIP": [
+            "littleTAIL_SMALL_LOW",
+            "littleTAILTIP",
+            "mostlyTAIL"
+        ],
+        "PANTS_AND_A_SHOE": [
+            "littleLEG_BACK_RIGHT_SMALL",
+            "midFADEBELLY",
+            "highREVERSEPANTS",
+            "highMISTER"
         ]
     }
 }
