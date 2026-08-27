@@ -1,0 +1,320 @@
+[
+    {
+        "event_id": "bch_new_cat_saviour_drowning1",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "event_text": "m_c wandered out of camp, only to come back with a stranger. After explaining how m_c saved {PRONOUN\/n_c:0\/poss} life, the new cat introduces {PRONOUN\/n_c:0\/self} as n_c:0, and asks to join c_n.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "new_cat": [
+            [
+                "old_name",
+                "loner",
+                "backstory:refugee2, refugee5, tragedy_survivor4",
+                "status:warrior"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": true,
+                "values": [
+                    "respect",
+                    "like",
+                    "trust"
+                ],
+                "amount": 30,
+                "log": {
+                    "cats_from": "n_c:0 saved m_c from drowning, and m_c vouched for {PRONOUN\/n_c:0\/object} to join the Clan."
+                }
+            }
+        ],
+        "outsider": {
+            "current_rep": [
+                "welcoming"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "bch_new_cat_saviour_drowning2",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "event_text": "m_c comes back to camp with a sodden kit in {PRONOUN\/m_c\/poss} jaws, explaining that {PRONOUN\/m_c\/subject} spotted {PRONOUN\/n_c:0\/object} floundering in the water \u2014 no parents in sight \u2014 and couldn't just leave the little scrap to die.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "new_cat": [
+            [
+                "loner",
+                "backstory:orphaned6",
+                "status:kitten"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort",
+                    "like"
+                ],
+                "amount": 15,
+                "log": {
+                    "cats_from": "cat_from saved cat_to from drowning as a kit."
+                }
+            },
+            {
+                "cats_from": [
+                    "n_c:0"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "like",
+                    "respect"
+                ],
+                "amount": 50,
+                "log": {
+                    "cats_from": "cat_from saved cat_to from drowning as a kit."
+                }
+            }
+        ],
+        "outsider": {
+            "current_rep": [
+                "neutral",
+                "welcoming"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "bch_new_cat_abandoned_kit1",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "event_text": "After going for a walk, m_c returns to camp with a small kitten, explaining that {PRONOUN\/m_c\/subject} found {PRONOUN\/n_c:0\/object} abandoned, tucked away under a rocky ledge.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "new_cat": [
+            [
+                "backstory:abandoned1",
+                "status:kitten"
+            ]
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort",
+                    "like"
+                ],
+                "amount": 15,
+                "log": {
+                    "cats_from": "cat_from found cat_to abandoned under a rocky ledge as a kit."
+                }
+            },
+            {
+                "cats_from": [
+                    "n_c:0"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "like",
+                    "respect"
+                ],
+                "amount": 50,
+                "log": {
+                    "cats_from": "cat_from brought cat_to to the Clan after {PRONOUN\/cat_to\/subject} {VERB\/cat_to\/were\/was} abandoned as a kit."
+                }
+            }
+        ],
+        "outsider": {
+            "current_rep": [
+                "neutral",
+                "welcoming"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "bch_newcat_twolegboatcrash",
+        "location": [
+            "beach:camp3"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [],
+        "tags": [],
+        "frequency": 2,
+        "event_text": "A stranger washes up on the shore, coughing up saltwater and surrounded by the remains of what {PRONOUN\/n_c:0\/subject} {VERB\/n_c:0\/call\/calls} a \"boat.\" m_c brings {PRONOUN\/n_c:0\/object} to camp to be treated.",
+        "m_c": {
+            "age": [],
+            "status": [
+                "-kitten"
+            ]
+        },
+        "new_cat": [
+            [
+                "status:warrior",
+                "backstory:kittypet2"
+            ]
+        ],
+        "injury": [
+            {
+                "cats": [
+                    "n_c:0"
+                ],
+                "injuries": [
+                    "water in their lungs"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "n_c:0"
+                ],
+                "death": "m_c died after {PRONOUN\/m_c\/poss} boat crashed and {PRONOUN\/m_c\/subject} inhaled too much water."
+            }
+        ],
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "n_c:0"
+                ],
+                "mutual": false,
+                "values": [
+                    "comfort",
+                    "like"
+                ],
+                "amount": 5,
+                "log": {
+                    "cats_from": "m_c found n_c:0 after {PRONOUN\/n_c:0\/poss} boat crashed and rushed {PRONOUN\/n_c:0\/object} to camp to be treated."
+                }
+            },
+            {
+                "cats_from": [
+                    "n_c:0"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "trust"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "n_c:0 is grateful that m_c found {PRONOUN\/n_c:0\/object} washed up on shore and saved {PRONOUN\/n_c:0\/poss} life."
+                }
+            }
+        ],
+        "outsider": {
+            "current_rep": [
+                "any"
+            ],
+            "changed": 1
+        }
+    },
+    {
+        "event_id": "bch_new_cat_current",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "-greenleaf"
+        ],
+        "frequency": 2,
+        "event_text": "n_c:0 is found coughing and spluttering on the beach, and {PRONOUN\/n_c:0\/subject} weakly {VERB\/n_c:0\/explain\/explains} {PRONOUN\/n_c:0\/subject} got caught in a current and ended up here.",
+        "new_cat": [
+            [
+                "loner"
+            ]
+        ],
+        "injury": [
+            {
+                "cats": [
+                    "n_c:0"
+                ],
+                "injuries": [
+                    "water in their lungs"
+                ]
+            }
+        ],
+        "history": [
+            {
+                "cats": [
+                    "n_c:0"
+                ],
+                "death": "n_c:0 died from water inhalation after getting caught in an ocean current."
+            }
+        ]
+    }
+]
