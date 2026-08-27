@@ -179,22 +179,42 @@ def check_and_promote_deputy():
         main_cat = random.choice(possible_deputies)
     else:
         # If there are no possible deputies, choose someone else, with special text.
-        all_warriors = list(
-            filter(
-                lambda x: x.status.alive_in_player_clan
-                and x.status.rank == CatRank.WARRIOR,
-                Cat.all_cats_list,
-            )
-        )
-        if all_warriors:
-            main_cat = random.choice(all_warriors)
+        if get_config("ranks.only_leader_kits_deputy"):
+            if game.clan.leader is not None:
+                # If none of the leader's kits meet all the requirements for deputy, choose one randomly, with special text.
+                all_warriors = list(
+                    filter(
+                        lambda x: x.status.alive_in_player_clan
+                                  and x.status.rank == CatRank.WARRIOR,
+                        leaders_kits,
+                    )
+                )
+                if all_warriors:
+                    main_cat = random.choice(all_warriors)
 
+                else:
+                    # If the leader has no kits, no one is named deputy.
+                    game.cur_events_list.append(
+                        EventInformation(i18n.t("hardcoded.ceremony_deputy_none"), "ceremony")
+                    )
+                    return
         else:
-            # If there are no warriors at all, no one is named deputy.
-            game.cur_events_list.append(
-                EventInformation(i18n.t("hardcoded.ceremony_deputy_none"), "ceremony")
+            all_warriors = list(
+                filter(
+                    lambda x: x.status.alive_in_player_clan
+                    and x.status.rank == CatRank.WARRIOR,
+                    Cat.all_cats_list,
+                )
             )
-            return
+            if all_warriors:
+                main_cat = random.choice(all_warriors)
+
+            else:
+                # If there are no warriors at all, no one is named deputy.
+                game.cur_events_list.append(
+                    EventInformation(i18n.t("hardcoded.ceremony_deputy_none"), "ceremony")
+                )
+                return
 
     trigger_ceremony(main_cat, CatRank.DEPUTY, {"past_deputy": game.clan.deputy})
     game.clan.deputy = main_cat
