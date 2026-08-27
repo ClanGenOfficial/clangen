@@ -419,6 +419,11 @@ class Clan:
         for setting in ["hunter_first", "sick_injured_first"]:
             set_clan_setting(setting, True if starting_priority == setting else False)
 
+        # mentorship
+        if get_config("roles.app_never_mentor"):
+            set_clan_setting("assign_mentors", False)
+            save_clan_settings()
+
     def add_cat(self, cat):  # cat is a 'Cat' object
         """Adds cat into the list of clan cats"""
         if cat.ID in Cat.all_cats and cat.ID not in self.clan_cats:
