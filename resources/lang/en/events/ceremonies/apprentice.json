@@ -1176,5 +1176,42 @@
     "strings": [
         "m_c just can't wait to leave camp on {PRONOUN/m_c/poss} own, and silently begs StarClan for a border skirmish or trespassing rogue to fight on {PRONOUN/m_c/poss} first night as an apprentice."
     ]
+    },
+    {
+    "event_id": "app_nevermentor_nervous",
+    "tags": ["never_mentor"],
+    "involved_cats": {
+        "m_c": {
+            "stat": {
+                "trait": [
+                    "insecure",
+                    "nervous",
+                    "sincere",
+                    "careful"
+                ]
+            }
+              }
+            },
+    "strings": [
+        "(old_name) isn't sure {PRONOUN/m_c/subject} {VERB/m_c/deserve/deserves} to be known as m_c yet. How {VERB/m_c/are/is} {PRONOUN/m_c/subject} expected to be useful when {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} even know anything about hunting, let alone fighting?"
+    ]
+    },
+    {
+    "event_id": "app_nevermentor_assist",
+    "tags": ["never_mentor"],
+    "involved_cats": {
+        "m_c": {
+            "stat": {
+                "trait": [
+                    "compassionate",
+                    "loving",
+                    "thoughtful"
+                ]
+            }
+              }
+            },
+    "strings": [
+        "m_c doesn't seem to care much about the ability to leave camp or chance to fight trespassers. Instead, {PRONOUN/m_c/subject} ends {PRONOUN/m_c/poss} apprentice ceremony with asking {PRONOUN/m_c/poss} Clanmates about chores {PRONOUN/m_c/subject} can help with."
+    ]
     }
 ]
