@@ -6082,7 +6082,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 averts {PRONOUN/r_c1/poss} eyes from the other apprentice. Friendships with other Clans shouldn't be encouraged; loyalty to c_n comes first. The patrol continues marking the border in icy silence"
+                    "r_c1 averts {PRONOUN/r_c1/poss} eyes from the other apprentice. Friendships with other Clans shouldn't be encouraged; loyalty to c_n comes first. The patrol continues marking the border in icy silence."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -6172,7 +6172,7 @@
                         "cats_from": [
                             "s_c0"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "respect",
                             "trust"
@@ -6189,7 +6189,7 @@
                         "cats_from": [
                             "r_c1"
                         ],
-                        "mutual": true,
+                        "mutual": false,
                         "values": [
                             "trust",
                             "comfort",
@@ -6197,7 +6197,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_to felt humiliated when cat_from harshly reprimanded {PRONOUN/cat_to/poss} actions in front of a o_c_n patrol."
+                            "cats_from": "cat_from felt humiliated when cat_to harshly reprimanded {PRONOUN/cat_from/poss} actions in front of a o_c_n patrol."
                         }
                     }
                 ]

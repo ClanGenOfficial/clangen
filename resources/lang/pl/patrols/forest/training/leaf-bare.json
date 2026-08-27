@@ -1,0 +1,495 @@
+[
+    {
+        "event_id": "fst_train_leafbareromanticstroll_20locked1",
+        "types": [
+            "training"
+        ],
+        "frequency": 4,
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "tags": [
+            "romance"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ],
+            "all apprentices": [
+                -1,
+                -1
+            ]
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "p_l"
+                ],
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "fancies",
+                    "-mates"
+                ]
+            }
+        ],
+        "involved_cats": {
+            "r_c0": {}
+        },
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites\/gen_flowerdate_WrWr",
+        "intro_text": "p_l thinks r_c0 is, well, really, just \u2014 uh, just swell, and {PRONOUN\/p_l\/subject} {VERB\/p_l\/think\/thinks} r_c0 might like {PRONOUN\/p_l\/object} too. {PRONOUN\/p_l\/subject\/CAP}{VERB\/p_l\/'ve\/'s} been building up {PRONOUN\/p_l\/poss} confidence, and {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} going to ask r_c0 to spend some time together, just the two of them, this afternoon!",
+        "decline_text": "Unfortunately, r_c0 is sent on an afternoon border patrol before p_l can say anything.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c0 agrees to the walk, tail-tip twitching with excitement. It's a feeling p_l openly mirrors, ears forward, pelt prickling with anxiety in the best way as they pad through the forest together. The mildest of leaf-bare frosts is an excuse to huddle close for warmth."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "romance",
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to took a romantic stroll in the frosty leaf-bare forest together."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "All of p_l's bravery is rewarded when r_c0 says yes! The pair head out for their romantic stroll, paws and tails leaving sweeping tracks in the frosted forest floor, an artwork irrelevant to two cats much more absorbed in each other than the world around them."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "romance",
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to took a romantic stroll in the frosty leaf-bare forest together."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN\/s_c0\/poss} words carefully. It's all worth it to hear r_c's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "SPEAKER,1",
+                                "MEDIATOR,1",
+                                "INSIGHTFUL,1"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "p_l"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "romance",
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 13,
+                        "log": {
+                            "cats_from": "s_c0's social adeptness made {PRONOUN\/s_c0\/poss} romantic leaf-bare stroll with r_c0 all the better."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l awkwardly stutters {PRONOUN\/p_l\/poss} way through asking r_c0 out \u2014 and {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/say\/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "romance"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "p_l felt embarrassed when r_c0 rejected {PRONOUN\/p_l\/poss} offer of a romantic stroll."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "r_c0 felt awkward when p_l asked {PRONOUN\/r_c0\/object} out on a romantic stroll, and r_c0 rejected the offer."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "fst_train_leafbare_snowmyth_storylocked1",
+        "types": [
+            "training"
+        ],
+        "frequency": 3,
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                4,
+                6
+            ],
+            "apprentice": [
+                2,
+                4
+            ],
+            "normal adult": [
+                2,
+                4
+            ]
+        },
+        "involved_cats": {
+            "p_l": {
+                "stat": {
+                    "skill": [
+                        "STORY,1"
+                    ],
+                    "trait": []
+                }
+            }
+        },
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites\/gen_med_vision_McWr",
+        "intro_text": "Snow swirls around c_n's camp, piling up in unusually deep snowdrifts. p_l gathers some apprentices to {PRONOUN\/p_l\/object} for a story.",
+        "decline_text": "Trying to get apprentices to do anything is like \u2014 well, herding cats.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "See those bright, pure white drifts? That's stardust, swept down from StarClan as they clean out their nests in deep leaf-bare."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from enjoyed cat_to's story about how StarClan cats cleaning out their nests creates snowfall"
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "One of the apprentices starts a snowball fight instead, and p_l becomes a soaked, shivering casualty of the conflict."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from was a casualty in cat_to's snowball fight."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol_cats",
+                            "-p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats",
+                            "-p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had a snowball fight on patrol."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "shivering"
+                        ],
+                        "scar_history": "m_c was soaked in leaf-bare, and it progressed to scarring frostbite.",
+                        "death_history": "m_c was soaked in leaf-bare, and the chill eventually killed {PRONOUN\/m_c\/object}."
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0, wary of any more work, stalks off before p_l can assign {PRONOUN\/s_c0\/object} more chores \u2014 and misses out on p_l's excellent storytelling as a result."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "shameless",
+                                "arrogant",
+                                "bold",
+                                "cold",
+                                "troublesome",
+                                "childish",
+                                "grumpy"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from avoided cat_to to get out of more work."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from wanted to tell cat_to and some other apprentices a story, but cat_to ran off."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "fst_train_leafbare_underwaterpanthermyth_storylocked1",
+        "types": [
+            "training"
+        ],
+        "frequency": 3,
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ],
+            "apprentice": [
+                1,
+                5
+            ],
+            "normal adult": [
+                1,
+                5
+            ]
+        },
+        "involved_cats": {
+            "p_l": {
+                "stat": {
+                    "skill": [
+                        "STORY,1"
+                    ],
+                    "trait": []
+                }
+            },
+            "r_c1": {
+                "status": [
+                    "apprentice"
+                ]
+            }
+        },
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites\/gen_med_curiosity_McAp",
+        "intro_text": "The wind blows across the lake, almost sounding like the moans of a hungry cat. p_l has a gleam in {PRONOUN\/p_l\/poss} eye that tells r_c1 {PRONOUN\/p_l\/subject} {VERB\/p_l\/have\/has} a story to tell...",
+        "decline_text": "r_c1 is too hungry and cold to stop for a story now! {PRONOUN\/r_c1\/subject\/CAP} {VERB\/r_c1\/pad\/pads} away in search of food.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l tells a tale of a great cat who lives under the ice and controls the lake. Long ago, a trickster thought himself smarter than the lake cat and padded out onto the ice covering the lake to tease her. She broke the ice and drowned him in revenge, flooding the entire forest in newleaf. That's why it's always important to respect the ice in leaf-bare."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from enjoyed cat_to's story about the lake cat."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Hearing p_l describe the Underwater Panther, how she's always waiting, just out of reach, ready to pull cats down \u2014 r_c1 starts shivering, and p_l calls the whole thing off to go get {PRONOUN\/r_c1\/object} warmed up."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was chilled to the bone by cat_to's story of the Underwater Panther."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c1"
+                        ],
+                        "condition": [
+                            "shivering"
+                        ],
+                        "scar_history": "m_c was soaked in leaf-bare, and it progressed to scarring frostbite.",
+                        "death_history": "m_c was soaked in leaf-bare, and the chill eventually killed {PRONOUN\/m_c\/object}."
+                    }
+                ]
+            }
+        ]
+    }
+]

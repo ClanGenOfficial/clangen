@@ -46,7 +46,7 @@ class UIScrollingButtonList(UIModifiedScrollingContainer):
         self.vert_scroll_bar = None
 
         super().__init__(
-            relative_rect=ui_scale(relative_rect.copy()),
+            relative_rect=relative_rect.copy(),
             manager=manager,
             container=container,
             starting_height=starting_height,
@@ -64,7 +64,7 @@ class UIScrollingButtonList(UIModifiedScrollingContainer):
             y_pos = -2 if prev_element else 0
 
             self.buttons[child] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((0, y_pos), self.child_rect)),
+                pygame.Rect((0, y_pos), self.child_rect),
                 child,
                 get_button_dict(self.button_style, self.child_rect),
                 manager=manager,

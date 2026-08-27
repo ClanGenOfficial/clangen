@@ -93,6 +93,8 @@ When considering patrols, keep in mind challenge vs reward. That isn't to say ce
                 "constraints": []
             }
         ],
+    "patrol_temperament": [],
+    "other_clan_temperament": [],
     "chance_of_success": 100,
     "patrol_art": "art.png",
     "patrol_art_clean": "pleasant_art.png",
@@ -115,7 +117,7 @@ When considering patrols, keep in mind challenge vs reward. That isn't to say ce
 
 ***
 
-#### id:str
+#### event_id:str
 > The id is a unique string used to identify the patrol. It does not affect patrol behavior, but it allows us to easily find patrols.
 
 > An id is formatted as following: `biome_type_enemy_seasondescription#`, enemy and season are optional (some patrols do not have a specific enemy or season), # is a number at the end of the descriptive section starting at 1 and incrementing up as you create new versions of that patrol. 
@@ -240,180 +242,11 @@ You can tag with a mix of "newleaf", "greenleaf", "leaf-fall", "leaf-bare", or r
 #### involved_cats: Dict[str, var]
 This dictionary holds all constraints for the cats whom we wish to reference in the patrol.
 
-Each entry is an individual cat, with the key being their [event designation](#usable-cat-references) (`r_c0`, `p_l`, etc.) and the value being their personal constraints.
-
-```json
-            "abbr": {
-                "status": [],
-                "past_status": [],
-                "age": [],
-                "gender": [],
-                "group": [],
-                "standing": {
-                    "group": [],
-                    "currently": [],
-                    "past": []
-                  },
-                "stat": {
-                    "skill": [],
-                    "trait": [],
-                    "must_have_both": false
-                },
-                "health": {
-                    "working": true,
-                    "condition": [],
-                    "must_be_congenital": false,
-                    "must_be_acquired": false
-                },
-                "backstory": []
-            }
-```
-
 **When To Use**
 
 `p_l` is the only cat designation you can *assume* has a cat attached at all times. With this in mind, you do not need to add a `p_l` entry to `involved_cats` unless you would like to add constraints regarding the sort of cat `p_l` is. **Important**: This will not override the game's selection process for patrol leaders. (e.g. You cannot use these constraints to make `p_l` a warrior leading their deputy on patrol, because the deputy will automatically be `p_l`.)
 
-With all other cat designations (`r_c0`, `n_c0`, ect.) if you want to be able to reference the cat designation within the text or within other constraint/consequence lists (cats who die, cats who must abide by relationship constraints, etc.), then you *must* declare them within either the patrol-wide `involved_cats` or the relevant outcome `involved_cats`. This can be an empty dict if no constraints are needed:
-```json
-"r_c0": {}
-```
-
-!!! tip
-    You do not need to "repeat" constraints! If a patrol can only have apprentices on it via the `required_cat_types` then you don't need to specify that `r_c0` is an apprentice.
-
-**Specifying an outsider or other Clan cat**
-
-If you would like to include an outsider or other Clan cat, you can specify them using the `n_c#` designation and some additional parameters.
-
-If the outsider/other_clan cat can be newly generated rather than having to utilize an existing cat, you can add the `can_create_new_cat` parameter.
-```json
-    "can_create_new_cat": {
-        "become_litter": false,
-        "assign_blood_parent": [],
-        "assign_adoptive_parent": [],
-        "assign_mate": []
-    }
-```
-This can even be added as an empty dict: `can_create_new_cat: {}` to simply mark it as a new cat creation without any additional specifications.
-
-> **`become_litter`** - True will generate a 2-5 litter of kittens rather than a single cat. This means the abbreviation for this litter should not be used within the text of the event, since they have no singular name or pronoun.
-> 
-> **`assign_blood_parent`** - List of designations for cats who will become this cat's blood parents. These cats must have already been specified prior in `involved_cats`.
-> 
-> **`assign_adoptive_parent`** - List of designations for cats who will become this cat's adoptive parents. These cats must have already been specified prior in `involved_cats`.
-> 
-> **`assign_mate`** - List of designations for cats who will become this cat's mates. These cats must have already been specified prior in `involved_cats`.
-
-**status: list[str]**
->Constrains the event to only happen if the cat holds a certain role. You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
-
-> [Status Tag List](../reference/tag-lists.md#__tabbed_2_2)
-> 
-> You can also remove the parameter to allow the event to occur for all roles except "newborns", who are only allowed if specifically tagged as such.
-
-***
-
-**past_status: list[str]**
->Constrains the event to only happen if the cat held a certain role in the past. You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
-
-> [Status Tag List](../reference/tag-lists.md#__tabbed_2_2)
-
-***
-**age: list[str]**
->Constrains the event to only occur if the cat is within a certain age group. You can utilize [exclusionary tags](../reference/tag-lists.md/#exclusionary-tags).
-
-> [Age Tag List](../reference/tag-lists.md#__tabbed_2_1)
-> 
-> You can also remove the parameter to allow the event to occur for all ages except "newborns", who are only allowed if specifically tagged as such.
-> 
-***
-
-**gender: str**
->Constrains the event to only occur if the cat has a certain birth gender. Valid entries are: `male`, `female`, `can_birth`. `can_birth` will allow either female or male cats dependant upon the player's settings. 
-
-***
-
-**group:list[str]**
->Constraints the thought to only happen if the cat is a member of a listed group or a member of no group. This should only be used to dictate what group a new cat is originally part of. you can use tags in: [possible group tags](../reference/tag-lists.md#groups) and you can utilize [exclusionary tags](../reference/tag-lists.md/#exclusionary-tags).
-> 
-***
-
-**standing: dict[str: var]**
->Constrains the event to only happen if the cat matches with the dictated group standings. A group standing is the relationship between a cat and a group, for example: if they are an exile or lost.
-
-```json
-    "standing": {
-        "group": [],
-        "currently": [],
-        "past": []
-      },
-```
->**`"group"`** - the group we are checking the cat's standing with. you can utilize [exclusionary tags](../reference/tag-lists.md/#exclusionary-tags). tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to qualify against *one* of the groups. [possible group tags.](../reference/tag-lists.md#groups). You should not try to tag `no_group`.
-
->**`"currently"`** - the standing the cat should currently possess with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have *one* of the standings. [possible standing tags.](../reference/tag-lists.md#standings)
-
->**`"past"`** - standings the cat used to have with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have had *one* of the standings. [possible standing tags.](../reference/tag-lists.md#standings)
-
-!!! warning
-    Keep in mind that currently the only cats who receive and are included in relationship events are player Clan cats. Cats currently outside the Clan cannot be part of an event. `standing` can still be constrained for in the context of a cat who *used* to be lost, exiled, etc.
-
-***
-
-
-**stat: dict[str: list]**
-> Constrains the event to only occur if the cat holds specific skills or traits. You can utilize [exclusionary tags](../reference/tag-lists.md/#exclusionary-tags).
-
-```json
-    "stat": {
-        "skill": [],
-        "trait": [],
-        "must_have_both": false
-    },
-```
->**`"skill"`** - list of allowed skills from [Skill Tag List](../reference/tag-lists.md#__tabbed_3_1)
-> 
-> **`"trait"`** - list of allowed traits from [Trait Tag List](../reference/tag-lists.md#__tabbed_3_2)
-> 
-> **`"must_have_both"`** - defaults to `false`. if set to `true`, the cat's trait *and* skills must qualify. if `false`, the cat must have *either* a listed trait or a listed skill.
-
-***
-
-**health: dict[str: var]**
-> Constrains the event to only occur if the cat's health matches the constraints.
- 
-```json
-    "health": {
-        "working": true,
-        "condition": [],
-        "must_be_congenital": false,
-        "must_be_acquired": false
-    }
-```
-> **`"working"`** - by default, this is always set to `true`. if set to `false`, the cat can't be a working cat (aka, they are currently disabled by a condition of some kind). In the case of patrols, it is impossible for a non-working cat to be patrolling, so this will not be used.
-
-> **`"condition`** - a list of conditions that the cat must have *at least* one of. if any condition is allowed, use `"any"`. supports [exclusionary tags](../reference/tag-lists.md#exclusionary-tags). check [illness](../reference/tag-lists.md/#__tabbed_1_3), [injury](../reference/tag-lists.md#__tabbed_1_2), and [permanent condition](../reference/tag-lists.md#__tabbed_1_4) references for lists of current condition possibilities.
-
-> **`"must_be_congenital"`** - by default, this is always set to `false`. if set to `true`, the cat must have been born with a permanent condition listed in the `condition`.
-
-> **`"must_be_acquired"`** - by default, this is always set to `false`. if set to `true`, the cat must have acquired a permanent condition listed in `condition` later in life.
-
-!!! warning
-    `must_be_congenital` and `must_be_acquired` naturally conflict with each other. Be careful not to set both of them to `true`, else they won't behave correctly.
-
-!!! note
-    Be careful when specifying `must_be_congenital`. If you force a condition to be congenital when it can never generate as such, the event will never trigger! The same also applies for forcing a condition to be non-congenital when it is always generated as such.
-
-***
-
-**backstory:list**
->Constrains the event to only occur if the cat has a listed backstory. To find what each backstory describes, you can find more by going to `resources/lang/en/cat/backstories.en.json`.  You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
-
-> [Backstory Tag List](../reference/tag-lists.md#backstories)
-
-***
-
-**has_mentor:bool**
-> Set True if the cat must be mentored. This does not require the mentor to be present on the patrol.
+[Full Involved Cat Dictionary Information](../reference/involved-cat-dict.md)
 
 #### relationship_constraint: list[dict]
 Constrains the event to only occur is the specified relationships exist. Multiple dictionary blocks can be added to specify multiple required configurations of relationships.
@@ -446,6 +279,22 @@ Constrains the event to only occur is the specified relationships exist. Multipl
 !!! tip
     Specify `"can_romance"` as a constraint to allow the cats to have romantic interactions 
   
+***
+
+#### patrol_temperament: list[str]
+>List of allowed patrol temperaments. A patrol's temperament isn't set by you, it's calculated from the personalities of the cats on it, weighted so that a leader counts for more than a deputy, who counts for more than everyone else. The patrol leader gets a little extra weight on top of their rank. [Possible Tempers](../reference/tag-lists.md/#clan-temperaments). You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
+
+!!! tip
+    Because temperament comes out of the cats you've already constrained, it's easy to write a patrol that can never appear. If you've required a bloodthirsty patrol, you've implicitly required a patrol full of low social, high aggression cats. Reach for this when the patrol's *mood* is the point, and prefer excluding a temperament that would read as wildly out of character over requiring a specific one.
+
+***
+
+#### other_clan_temperament: list[str]
+>List of allowed temperaments for the other Clan involved in the patrol. [Possible Tempers](../reference/tag-lists.md/#clan-temperaments). You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
+
+!!! caution
+    This only filters the temperament, it doesn't cause an other Clan to be involved. The patrol still needs to be an other Clan patrol for this to mean anything.
+
 ***
 
 #### chance of success: int

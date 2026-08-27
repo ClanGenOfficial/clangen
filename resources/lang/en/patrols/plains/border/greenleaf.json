@@ -953,18 +953,18 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol_cats"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "clan"
+                            "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "trust"
                         ],
-                        "amount": 25,
+                        "amount": -8,
                         "log": {
-                            "cats_from": "cat_to laid down {PRONOUN/cat_to/poss} life to protect c_n from coyotes."
+                            "cats_from": "cat_from doubted cat_to's judgment after {PRONOUN/cat_to/subject} led an attack on a young coyote and its parents killed their Clanmate."
                         }
                     }
                 ],
