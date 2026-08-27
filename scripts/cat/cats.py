@@ -2569,20 +2569,6 @@ class Cat:
 cat_class = Cat
 game.cat_class = Cat
 
-# ---------------------------------------------------------------------------- #
-#                                load json files                               #
-# ---------------------------------------------------------------------------- #
-
-resource_directory = "resources/dicts/conditions/"
-
-with open(f"{resource_directory}injuries.json", "r", encoding="utf-8") as read_file:
-    INJURIES = ujson.loads(read_file.read())
-
-with open(
-    f"{resource_directory}permanent_conditions.json", "r", encoding="utf-8"
-) as read_file:
-    PERMANENT = ujson.loads(read_file.read())
-
 
 LEAD_CEREMONY_SC: Optional[Dict] = None
 LEAD_CEREMONY_DF: Optional[Dict] = None
