@@ -1090,5 +1090,91 @@
                 ]
             }
         ]
+    },
+    {
+    "event_id": "app_nevermentor_plan",
+    "tags": [
+        "never_mentor"
+    ],
+    "involved_cats": {
+        "m_c": {
+            "stat": {
+                "trait": [
+                    "ambitious",
+                    "arrogant",
+                    "strict",
+                    "responsible",
+                    "wise"
+                ]
+            }
+              }
+            },
+    "strings": [
+        "<i>Immediately</i> upon being made an apprentice, m_c turns to {PRONOUN/m_c/poss} Clanmates, explaining <i>exactly</i> how {PRONOUN/m_c/subject} {VERB/m_c/had/has} planned {PRONOUN/m_c/poss} apprenticehood to play out."
+    ]
+    },
+    {
+    "event_id": "app_nevermentor_prove",
+    "tags": [
+        "never_mentor"
+    ],
+    "involved_cats": {
+        "m_c": {
+            "stat": {
+                "trait": [
+                    "ambitious",
+                    "arrogant",
+                    "adventurous",
+                    "bold",
+                    "competitive",
+                    "confident",
+                    "daring",
+                    "rebellious"
+                ]
+            }
+              }
+            },
+    "strings": [
+        "Much to the distress of {PRONOUN/m_c/poss} Clanmates, m_c leaves camp the <i>moment</i> {PRONOUN/m_c/subject} {VERB/m_c/are/is} made an apprentice, determined to prove {PRONOUN/m_c/poss} worth to the Clan."
+    ]
+    },
+    {
+    "event_id": "app_nevermentor_buzzkill",
+    "tags": [
+        "never_mentor"
+    ],
+    "involved_cats": {
+        "m_c": {
+            "stat": {
+                "trait": [
+                    "cold",
+                    "gloomy",
+                    "grumpy",
+                    "lonesome"
+                ]
+            }
+              }
+            },
+    "strings": [
+        "(old_name) doesn't celebrate being made an apprentice. What is there to be happy about? The only difference between being an apprentice and a kit is whether or not {PRONOUN/m_c/subject} can leave camp! Despite {PRONOUN/m_c/poss} initial reaction, m_c still leaves to try {PRONOUN/m_c/poss} paw at hunting that night."
+    ]
+    },
+    {
+    "event_id": "app_nevermentor_fight",
+    "tags": ["never_mentor"],
+    "involved_cats": {
+        "m_c": {
+            "stat": {
+                "trait": [
+                    "bloodthirsty",
+                    "fierce",
+                    "vengeful"
+                ]
+            }
+              }
+            },
+    "strings": [
+        "m_c just can't wait to leave camp on {PRONOUN/m_c/poss} own, and silently begs StarClan for a border skirmish or trespassing rogue to fight on {PRONOUN/m_c/poss} first night as an apprentice."
+    ]
     }
 ]
