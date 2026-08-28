@@ -1,0 +1,558 @@
+[
+    {
+        "event_id": "fst_train_newleafromanticstroll_20locked1",
+        "types": [
+            "training"
+        ],
+        "frequency": 4,
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "tags": [
+            "romance"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ],
+            "all apprentices": [
+                -1,
+                -1
+            ]
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "p_l"
+                ],
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "fancies",
+                    "-mates"
+                ]
+            }
+        ],
+        "involved_cats": {
+            "r_c0": {}
+        },
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites\/gen_flowerdate_WrWr",
+        "intro_text": "p_l thinks r_c0 is, well, really, just \u2014 uh, just swell, and {PRONOUN\/p_l\/subject} {VERB\/p_l\/think\/thinks} r_c0 might like {PRONOUN\/p_l\/object} too. {PRONOUN\/p_l\/subject\/CAP}{VERB\/p_l\/'ve\/'s} been building up {PRONOUN\/p_l\/poss} confidence, and {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} going to ask r_c0 to spend some time together, just the two of them, this afternoon!",
+        "decline_text": "Unfortunately, r_c0 is sent on an afternoon border patrol before p_l can say anything.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c0 agrees to the walk, tail-tip twitching with excitement. It's a feeling p_l openly mirrors, ears forward, pelt prickling with anxiety in the best way as they pad through the forest together, the call of courting birds a somewhat embarrassingly apt background music to their date."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "romance",
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to took a romantic stroll and listened to bird song."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "All of p_l's bravery is rewarded when r_c0 says yes! The pair head out for their romantic stroll, the flowers of newleaf completely outshone by their purring potential partner in their eyes."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "romance",
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to took a romantic stroll among budding flowers."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN\/s_c0\/poss} words carefully. It's all worth it to hear r_c's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "SPEAKER,1",
+                                "MEDIATOR,1",
+                                "INSIGHTFUL,1"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "p_l"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "romance",
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 13,
+                        "log": {
+                            "cats_from": "s_c0's social adeptness made {PRONOUN\/s_c0\/poss} romantic newleaf stroll with r_c0 all the better."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l awkwardly stutters {PRONOUN\/p_l\/poss} way through asking r_c0 out \u2014 and {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/say\/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "romance"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "p_l felt embarrassed when r_c0 rejected {PRONOUN\/p_l\/poss} offer of a romantic stroll."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "r_c0 felt awkward when p_l asked {PRONOUN\/r_c0\/object} out on a romantic stroll, and r_c0 rejected the offer."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "fst_train_newleafmatesonadates_70locked1",
+        "types": [
+            "training"
+        ],
+        "frequency": 4,
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "tags": [
+            "romance"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ],
+            "all apprentices": [
+                -1,
+                -1
+            ]
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "p_l"
+                ],
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "adores",
+                    "mates"
+                ]
+            }
+        ],
+        "involved_cats": {
+            "r_c0": {}
+        },
+        "chance_of_success": 80,
+        "patrol_art": "cat_sprites\/gen_talkingmates_WrWr",
+        "intro_text": "p_l trots up, full of a disproportionate amount of excitement for the bland, overcast afternoon, tail tip twitching. Does r_c0 want to come out with {PRONOUN\/p_l\/object}? {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/lean\/leans} in close \u2014 there's a special spot {PRONOUN\/p_l\/subject}{VERB\/p_l\/'ve\/'s} been meaning to show {PRONOUN\/r_c0\/object}.",
+        "decline_text": "Unfortunately, r_c0 is sent on an afternoon border patrol before either cat can head out of camp.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "This is p_l's absolute favorite spot in the territory in newleaf, {PRONOUN\/p_l\/subject} {VERB\/p_l\/explain\/explains}, brushing along r_c's side as the two cats pad whisker-close. It's just the perfect place to wind down, a beautiful, bubbling, calm stream, and {PRONOUN\/p_l\/subject} thought it'd be good for r_c0 to take some time just to breathe, just to relax, just to get to be {PRONOUN\/r_c0\/self}. All the more special for being there together."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "romance"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "p_l showed r_c0 {PRONOUN\/p_l\/poss} favorite spot in the territory in newleaf, and they passed a romantic day together."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "Yes, the place is magical \u2014 a beautiful, bubbling, calm stream, and the clouds clear and the light sparkles along it, making the forest shine with reflections. But as lovely as p_l's little secret is, it's improved beyond measure with the addition of r_c0."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "romance"
+                        ],
+                        "amount": 15,
+                        "log": {
+                            "cats_from": "p_l showed r_c0 {PRONOUN\/p_l\/poss} favorite spot in the territory in newleaf, and they passed a romantic day together."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c0 shakes {PRONOUN\/r_c0\/poss} head, refusing {PRONOUN\/r_c0\/poss} mate. {PRONOUN\/r_c0\/subject\/CAP} just {VERB\/r_c0\/don't\/doesn't} have time today, there's too much to do, too much c_n needs solved, and {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/don't\/doesn't} have time to waltz off and relax!"
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "romance"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "p_l wanted to show r_c0 {PRONOUN\/p_l\/poss} favorite spot in the territory in newleaf, but r_c0 rejected the offer."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "fst_train_newleaf_mapleshadereference_storylorelocked1",
+        "types": [
+            "training"
+        ],
+        "frequency": 3,
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ],
+            "normal adult": [
+                -1,
+                -1
+            ],
+            "apprentice": [
+                1,
+                6
+            ]
+        },
+        "involved_cats": {
+            "p_l": {
+                "stat": {
+                    "skill": [
+                        "STORY,0",
+                        "LORE,0"
+                    ],
+                    "trait": []
+                }
+            }
+        },
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites\/gen_train_ghost_WrWrWr",
+        "intro_text": "Hiding from a newleaf rain shower under a bush, p_l whispers to the other apprentices \u2014 have they heard the story of the Shaded Vengeance?",
+        "decline_text": "Oh, the rain let up \u2014 back to training!",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Once upon a time lived a calico cat with entitlement and lust living in her heart. She had an affair with a cat from another Clan, and when both she and her lover's mate bore him kits, she exploded into rage, dragging her litter into the river where they drowned. She still roams the riverbank to this day, looking for young cats to kit-nap..."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "...a story so scary that cat_from still sometimes has nightmares."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_to told cat_from a really cool scary story..."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "That old nursery tale? They're apprentices, they're too old for such silly things."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from's feelings were hurt when cat_to didn't want to listen to {PRONOUN\/cat_from\/poss} story."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was bored and annoyed when cat_to tried to scare {PRONOUN\/cat_from\/object} with an old nursery tale."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "fst_train_newleaf_crowrock_storylorelocked1",
+        "types": [
+            "training"
+        ],
+        "frequency": 2,
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ]
+        },
+        "involved_cats": {
+            "p_l": {
+                "stat": {
+                    "skill": [
+                        "STORY,1",
+                        "LORE,1"
+                    ],
+                    "trait": []
+                }
+            }
+        },
+        "chance_of_success": 60,
+        "patrol_art": "animals\/gen_crow",
+        "intro_text": "There's a saying, about crows in newleaf...",
+        "decline_text": "Cats say many things. Doesn't mean it's worth listening to.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "It's said, p_l whispers, that if you leave a shiny, beautiful rock out under a crow's nest, they will leave you a beautiful thing in return..."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_to told cat_from how to befriend crows."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from enjoyed telling cat_to an old saying about crows."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "No one is interested in hearing superstitions about crows \u2014 surely it's better to hunt them instead?"
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "like"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from was embarrassed and hurt that cat_to wasn't interested in hearing {PRONOUN\/cat_from\/poss} knowledge of crows."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

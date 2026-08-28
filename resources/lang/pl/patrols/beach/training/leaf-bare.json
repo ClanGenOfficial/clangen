@@ -1,0 +1,331 @@
+[
+    {
+        "event_id": "bch_train_leafbare_icebergmyth_storylocked1",
+        "types": [
+            "training"
+        ],
+        "frequency": 3,
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                4,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ],
+            "apprentice": [
+                2,
+                6
+            ]
+        },
+        "involved_cats": {
+            "p_l": {
+                "stat": {
+                    "skill": [
+                        "STORY,1"
+                    ],
+                    "trait": []
+                }
+            },
+            "r_c1": {
+                "status": [
+                    "apprentice"
+                ]
+            }
+        },
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites\/gen_med_vision_McWr",
+        "intro_text": "A winter gale howls outside camp \u2014 today's apprentice lesson will occur in the shelter of the den. p_l gathers {PRONOUN\/p_l\/poss} audience close. On the longest night of leaf-bare, if a cat is unlucky, they might spot great white islands appearing out of the sea-mist.",
+        "decline_text": "r_c1 shivers, and goes to close a breach in the den walls before the warmth is driven out. Myths will have to wait.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Those who see it are called, like a riptide sucking them out of reach, p_l whispers. None who step foot on the white mist islands are ever seen again... The group shivers with pleasant fear in the warmth of their sheltered nests."
+                ],
+                "exp_gained": 40,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_to shared the tale of the white mist islands with cat_from.",
+                            "cats_to": "cat_to listened attentively as cat_from shared an old tale."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's knowledge of the area's myths."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "These cats enjoyed old stories together while stuck in the den during a storm."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The winds of the gale drown out p_l's voice. Instead, the cats give up on storytelling and cuddle together into a ball, watertight against the world."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "These cats spent a stormy day cozied up together in the den."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "bch_train_leafbare_stormfables_storylorelocked1",
+        "types": [
+            "training"
+        ],
+        "frequency": 3,
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                4,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
+        },
+        "involved_cats": {
+            "p_l": {
+                "stat": {
+                    "skill": [
+                        "STORY,1",
+                        "LORE,1"
+                    ],
+                    "trait": []
+                }
+            }
+        },
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites\/gen_bord_story_WrWrWr",
+        "intro_text": "The waves crash outside camp, an ever present noise brought into sharp focus by their unusual power and ferocity. The wind is blocked by camp walls, but p_l's Clanmates have their fur puffed out regardless. Now isn't a good time to leave shelter.",
+        "decline_text": "The patrol stays in their nests instead of training.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "backgrounds\/bch_stormwaves",
+                "strings": [
+                    "Let us speak of the nursery tales, s_c0 begins. Of Clans founded amid driftwood and loss, of the moon giving her blessing to warriors who swim under her gaze, of the magic of the sea, currently awful, but just as much awe inspiring. Outside it rages \u2014 but here in camp, c_n is safe."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "STORY,1"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "p_l"
+                        ]
+                    }
+                },
+                "exp_gained": 40,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_to shared stories of the sea with cat_from.",
+                            "cats_to": "cat_to listened attentively as cat_from told a story."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "These cats enjoyed old stories together while stuck in the den."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's storytelling abilities."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "backgrounds\/bch_stormwaves",
+                "strings": [
+                    "This day will be a day of heroes, s_c0 whispers, capturing {PRONOUN\/s_c0\/poss} Clanmates' attention. Heroes born, or made, or found \u2014 such things always appear in c_n's history, a stranger arriving soaked from a storm, a new life brought into the world as winds howl outside, a warrior rising to need. The storms mark it."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "LORE,1"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "p_l"
+                        ]
+                    }
+                },
+                "exp_gained": 40,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "respect",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_to shared tales of heroes and strangers with cat_from.",
+                            "cats_to": "cat_to listened attentively as cat_from spun a tale of heroes and strangers."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "These cats enjoyed fantastical stories together while stuck in the den."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's storytelling abilities."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_train_soggykittymad_Wr",
+                "strings": [
+                    "Thunder cracks and the wind shifts, throwing ocean spray from the waves on the gathered cats. Time to retreat to drier locations."
+                ],
+                "exp_gained": 0
+            }
+        ]
+    }
+]

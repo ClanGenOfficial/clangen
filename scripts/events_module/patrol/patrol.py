@@ -102,7 +102,7 @@ class Patrol:
         :param patrol_cats: All cats that have been chosen for this patrol
         :param patrol_type: Type of patrol
         """
-        self.debug_patrol_id = get_config("patrol_generation.debug_ensure_patrol_id")
+        self.debug_patrol_id = get_config("patrol_generation.debug_ensure.patrol_id")
 
         print("PATROL START ---------------------------------------------------")
 
@@ -277,9 +277,9 @@ class Patrol:
 
         # DEBUG - NO FILTER
         # This is a debug option, this allows you to remove any constraints of a patrol regarding location, session, biomes, etc.
-        if constants.CONFIG["patrol_generation"][
-            "debug_override_patrol_stat_requirements"
-        ]:
+        if get_config(
+            "patrol_generation.debug_ensure.override_patrol_stat_requirements"
+        ):
             if self.debug_patrol_id:
                 chosen_patrol = [
                     p for p in patrol_list if p.event_id == self.debug_patrol_id
@@ -520,6 +520,14 @@ class Patrol:
             success_outcomes = self.patrol_event.success_outcomes
             fail_outcomes = self.patrol_event.fail_outcomes
 
+        debug_outcome = None
+        if self.debug_patrol_id:
+            # outcomes generate an ID based off their parent
+            # it looks like {patrol_id}_{type of outcome}{index}
+            outcome_index = get_config("patrol_generation.debug_ensure.outcome_index")
+            outcome_type = get_config("patrol_generation.debug_ensure.outcome_type")
+            debug_outcome = f"{self.debug_patrol_id}{'_antag' if antagonize else ''}{'_success' if outcome_type else '_fail'}{outcome_index}"
+
         # we'll get an outcome for both success and failure
         # FIND SUCCESS
         chosen_success, self.outcome_cats[PatrolOutcome.SUCCESS] = get_valid_event(
@@ -532,6 +540,7 @@ class Patrol:
             ],
             possible_events=success_outcomes,
             other_clan=self.other_clan,
+            ensured_id=debug_outcome,
             allow_new_cat_creation=False,  # this is so we don't create cats for an outcome we end up not using
         )
 
@@ -551,6 +560,7 @@ class Patrol:
             ],
             possible_events=fail_outcomes,
             other_clan=self.other_clan,
+            ensured_id=debug_outcome,
             allow_new_cat_creation=False,  # this is so we don't create cats for an outcome we end up not using
         )
         if not chosen_failure:
@@ -654,12 +664,8 @@ class Patrol:
         success = int(random.random() * 120) < success_chance
 
         # This is a debug option, this will forcefully change the outcome of a patrol
-        if isinstance(
-            constants.CONFIG["patrol_generation"]["debug_ensure_patrol_outcome"], bool
-        ):
-            success = constants.CONFIG["patrol_generation"][
-                "debug_ensure_patrol_outcome"
-            ]
+        if isinstance(get_config("patrol_generation.debug_ensure.outcome_type"), bool):
+            success = get_config("patrol_generation.debug_ensure.outcome_type")
             # Logging
             print(
                 f"The outcome of {self.patrol_event.event_id} was altered to {success}"

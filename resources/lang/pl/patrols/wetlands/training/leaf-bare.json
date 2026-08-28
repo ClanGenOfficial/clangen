@@ -1,0 +1,116 @@
+[
+    {
+        "event_id": "wtlnd_train_leafbare_serpentmyth_storylocked1",
+        "types": [
+            "training"
+        ],
+        "frequency": 3,
+        "location": [
+            "wetlands"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                4,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ],
+            "apprentice": [
+                2,
+                6
+            ]
+        },
+        "involved_cats": {
+            "p_l": {
+                "stat": {
+                    "skill": [
+                        "STORY,1"
+                    ],
+                    "trait": []
+                }
+            }
+        },
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites\/gen_med_vision_McWr",
+        "intro_text": "p_l takes the apprentices out at dusk, setting the atmosphere for a fun story.",
+        "decline_text": "They're stopped \u2014 chores around camp demand their attention. This will have to wait for another night.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "On the brightest night of leaf-bare, under a piercing blue moon, a great serpent will rise from the center of the swamp, its fangs dripping poison and its scaled pelt thicker than a monster. The apprentices shiver as p_l builds the image. It will rear up, higher than the tallest tree \u2014 no, twice as high \u2014 and <i>bite<\/i> the moon, swallowing it whole!"
+                ],
+                "exp_gained": 40,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from enjoyed the story cat_to told {PRONOUN\/cat_from\/poss} patrol."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to listened to a story together on patrol."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The apprentices are inattentive and twitchy. p_l lets them go before {PRONOUN\/p_l\/subject} really {VERB\/p_l\/start\/starts} the story. {PRONOUN\/p_l\/subject\/CAP}{VERB\/p_l\/'re\/'s} not going to waste {PRONOUN\/p_l\/poss} story on an unappreciative audience."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from wished that cat_to paid attention to {PRONOUN\/cat_from\/poss} story."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

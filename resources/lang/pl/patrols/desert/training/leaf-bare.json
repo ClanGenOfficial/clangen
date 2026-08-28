@@ -1,0 +1,237 @@
+[
+    {
+        "event_id": "dst_train_leafbare_flippedseasons_storylorelocked1",
+        "types": [
+            "training"
+        ],
+        "frequency": 3,
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
+        },
+        "involved_cats": {
+            "p_l": {
+                "stat": {
+                    "skill": [
+                        "STORY,1",
+                        "LORE,1"
+                    ],
+                    "trait": []
+                }
+            },
+            "r_c0": {}
+        },
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites\/fst_hunt_GL_randomrain_Wr",
+        "intro_text": "The coolness of the rain sliding along r_c's pelt is something to be savored, a rare treat as the gentle rain showers c_n. And the ground \u2014 it's so green, so alive! Why in StarClan's name does c_n not call this season greenleaf, when everything around them springs to life?!",
+        "decline_text": "Not every cat on the patrol is such a fan of the damp, and while r_c0 is given time to live in the moment, they all want to move on soon.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_bord_story_WrWrWr",
+                "strings": [
+                    "It's ancient, p_l explains. Older than c_n... maybe older than this land. No one is sure what cursed the desert so dry, but in other places, the sun brings light, warmth that is a relief and not a punishment, and there the dry season when the sun reaches its peak power is also the season of green leaves."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from enjoyed cat_to's story about how, in a distant land, the sun brings relief and growth instead of searing death."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_bord_story_WrWrWr",
+                "strings": [
+                    "There are Clans beyond the desert, p_l instructs. In high places and low, wet and, well, {PRONOUN\/p_l\/subject} {VERB\/p_l\/suppose\/supposes} c_n are the cats from where it is dry. Greenleaf being the name of the dry season is older than the experience of there <i>being<\/i> a dry season. In those distant places, greenleaf is the season of plenty, not the harsh thing it is here."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from enjoyed cat_to's tales of distant Clans for whom greenleaf is the season of plenty."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "There might be novelty in the patter of rain on fur, but novelty isn't always fun. When the cats try to train, the ground has turned into a slippery, muddy mess that their claws can't grip. No one is seriously hurt, but no one's dignity escapes unscathed either."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "cat_from and cat_to felt awkward around each other after a rainy training patrol necessitated a trip to the medicine cat den."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "multi"
+                        ],
+                        "condition": [
+                            "sore",
+                            "bruises"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_train_leafbare_dreamtime_storylocked1",
+        "types": [
+            "training"
+        ],
+        "frequency": 3,
+        "location": [
+            "desert"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ],
+            "normal adult": [
+                1,
+                5
+            ],
+            "apprentice": [
+                1,
+                5
+            ]
+        },
+        "involved_cats": {
+            "p_l": {
+                "stat": {
+                    "skill": [
+                        "STORY,1"
+                    ],
+                    "trait": []
+                }
+            }
+        },
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites\/gen_bord_story_WrWrWr",
+        "intro_text": "In the beginning of dreams, the land was flat and empty, p_l whispers.",
+        "decline_text": "Storytime is interrupted by a rain shower, not that anyone minds more water in c_n's territory.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_bord_story_WrWrWr",
+                "strings": [
+                    "The Goorialla rainbow serpent cut great gouges into the land, searching for life to not be alone. He called forth frogs who spat up the rivers, and animals to populate the land, and laid down the first rules, rules not of the Warrior Code, but of ecosystems and biospheres."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from enjoyed cat_to's story about the Rainbow Serpent who created all other animals."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_train_argue_WrWrWr",
+                "strings": [
+                    "Before dreams? How can you be <i>before dreams<\/i>, r_c1 asks? {PRONOUN\/r_c1\/subject\/CAP} won't just settle down and let p_l tell the tale."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from was irritated that cat_to kept interrupting {PRONOUN\/cat_from\/poss} story to ask silly questions."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
