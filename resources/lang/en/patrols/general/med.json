@@ -2516,7 +2516,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The scent of a familiar pelt reaches r_c's nose — {PRONOUN/r_c0/subject} {VERB/r_c0/know/knows} this cat! With a friendly purr, {PRONOUN/r_c0/subject} {VERB/r_c0/turn/turns} to greet {PRONOUN/r_c0/poss} friend from beyond the grave. The rest of the patrol gives them some space."
+                    "The scent of a familiar pelt reaches s_c0's nose — {PRONOUN/s_c0/subject} {VERB/s_c0/know/knows} this cat! With a friendly purr, {PRONOUN/s_c0/subject} {VERB/s_c0/turn/turns} to greet {PRONOUN/s_c0/poss} friend from beyond the grave. The rest of the patrol gives them some space."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -2527,7 +2527,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol_cats"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -18900,8 +18900,7 @@
             "r_c1": {
                 "status": [
                     "medicine cat apprentice"
-                ],
-                "has_mentor": {"current": true}
+                ]
             }
         },
         "chance_of_success": 60,
