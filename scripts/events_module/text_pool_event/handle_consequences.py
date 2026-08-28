@@ -7,7 +7,7 @@ import i18n
 
 from scripts.cat.cats import Cat
 from scripts.cat.constants import PERMANENT, ILLNESSES, INJURIES
-from scripts.cat.enums import CatRank, CatThought
+from scripts.cat.enums import CatRank, CatThought, CatStanding, CatGroup
 from scripts.cat.microservices.add_to_clan import add_to_clan, add_dependents_to_clan
 from scripts.cat.pelts import Pelt
 from scripts.cat.skills import SkillPath
@@ -35,6 +35,7 @@ from scripts.events_module.text_adjust import (
     accessory_text_adjust,
 )
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
+from scripts.events_module.thoughts.generate_thoughts import get_new_thought
 from scripts.game_structure import game, constants
 
 disable_random: bool = False
@@ -64,6 +65,7 @@ def execute_outcome(
 
     results = [
         _handle_joining(event, event_involved_cats),
+        _handle_meeting(event, event_involved_cats),
         _handle_death(event, event_involved_cats, other_clan),
         _handle_lost(event, event_involved_cats),
         _handle_conditions(event, event_involved_cats, other_clan),
@@ -217,6 +219,35 @@ def _handle_joining(
     relation_events.trigger_joining_relationship_events(joined)
 
     return i18n.t("screens.patrol.new_outsider", cats=adjust_list_text(cat_names))
+
+
+def _handle_meeting(
+    event: TextPoolEvent, event_involved_cats: dict[str, Union[Cat, list[Cat]]]
+) -> str:
+    """
+    Handles cats meeting the Clan
+    """
+    if not event.meet:
+        return ""
+
+    met: list[Cat] = []
+    for block in event.meet:
+        # gather up the kitties
+        for abbr, cat in event_involved_cats.items():
+            if abbr in block["cats"]:
+                if isinstance(event_involved_cats[abbr], list):
+                    met.extend(event_involved_cats[abbr])
+                else:
+                    met.append(event_involved_cats[abbr])
+
+    for c in met:
+        c.status.change_standing(CatStanding.KNOWN, CatGroup.PLAYER_CLAN_ID)
+        get_new_thought(c, CatThought.ON_MEETING)
+
+    return i18n.t(
+        "screens.patrol.met_outsider",
+        cats=adjust_list_text([_profile_link(c) for c in met]),
+    )
 
 
 def _handle_death(

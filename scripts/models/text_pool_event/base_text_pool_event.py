@@ -16,6 +16,7 @@ from scripts.models.text_pool_event.death import Death
 from scripts.models.text_pool_event.join import Join
 from scripts.models.text_pool_event.supply import Supply
 from scripts.models.text_pool_event.gain_accessory import GainAccessory
+from scripts.models.text_pool_event.meet import Meet
 from scripts.models.text_pool_event.relationship_change_dict import RelationshipChange
 from scripts.models.text_pool_event.relationship_constraint_dict import (
     RelationshipConstraint,
@@ -79,6 +80,10 @@ class BaseTextPoolEvent(BaseModel):
     join: List[Join] | MISSING = Field(
         MISSING,
         description="Indicate which cats will join the player Clan. You can add multiple join blocks",
+    )
+    meet: List[Meet] | MISSING = Field(
+        MISSING,
+        description="Indicate which cats will meet the player Clan. You can add multiple meet blocks",
     )
     gain_accessory: List[GainAccessory] | MISSING = Field(
         MISSING,
