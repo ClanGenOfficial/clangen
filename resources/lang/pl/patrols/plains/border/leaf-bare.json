@@ -309,7 +309,7 @@
                     },
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "frostbite"
@@ -412,7 +412,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "shivering"
@@ -928,7 +928,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "minor_injury",
@@ -1833,7 +1833,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "minor_injury",
@@ -1908,7 +1908,7 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "history": "r_c0 died from injuries sustained keeping coyotes away from c_n's borders."
                     }
@@ -1916,7 +1916,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "big_bite_injury",
@@ -1927,7 +1927,7 @@
                     },
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "scrapes"
@@ -2554,7 +2554,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "shivering"
@@ -5476,7 +5476,7 @@
                 "lost": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ]
                     }
                 ]
@@ -5555,7 +5555,7 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "history": "m_c was killed after {PRONOUN\/m_c\/subject} went on a border patrol with {PRONOUN\/m_c\/poss} friends and got caught in a sleet storm."
                     }

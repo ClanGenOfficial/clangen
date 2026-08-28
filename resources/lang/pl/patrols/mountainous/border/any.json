@@ -269,7 +269,7 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "history": "m_c was killed when rogues ambushed {PRONOUN\/m_c\/poss} patrol."
                     }
@@ -547,7 +547,7 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "history": "m_c was killed when rogues attacked {PRONOUN\/m_c\/poss} patrol."
                     }
@@ -1121,7 +1121,7 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "history": "m_c died trying to cross a dangerous river."
                     }
@@ -1186,7 +1186,7 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "history": "m_c died trying to cross a dangerous river."
                     }
@@ -1214,7 +1214,7 @@
                 "lost": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ]
                     }
                 ]
