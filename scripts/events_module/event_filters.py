@@ -190,31 +190,61 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
             continue
         is_exclusionary = _check_for_exclusionary_value([_tag])
 
-        ranks = [x for x in rank_match.group(1).split(",")]
+        ranks = []
+        minimums = []
+        for rank_spec in rank_match.group(1).split(","):
+            # Check for extra "min" subtag
+            sub_tag_check = re.match(r"([^(]+)(?:\(min:([0-9]+)\))?", rank_spec)
+            ranks.append(sub_tag_check.group(1))
 
-        for rank in ranks:
+            if sub_tag_check.group(2):
+                minimums.append(int(sub_tag_check.group(2)))
+            else:
+                if sub_tag_check.group(1) in CatRank and sub_tag_check.group(1) not in [
+                    CatRank.LEADER,
+                    CatRank.DEPUTY,
+                ]:
+                    minimums.append(2)
+                    # Default Minimum is 2 for non deputy, non leader ranks.
+                else:
+                    # Default minimun is 1 for anything else.
+                    minimums.append(1)
+
+        for rank, mi in zip(ranks, minimums):
             rank_matched = True
             if rank == "apps":
-                if not find_alive_cats_with_rank(
-                    cat,
-                    [
-                        CatRank.APPRENTICE,
-                        CatRank.MEDIATOR_APPRENTICE,
-                        CatRank.MEDICINE_APPRENTICE,
-                    ],
+                if (
+                    not len(
+                        find_alive_cats_with_rank(
+                            cat,
+                            [
+                                CatRank.APPRENTICE,
+                                CatRank.MEDIATOR_APPRENTICE,
+                                CatRank.MEDICINE_APPRENTICE,
+                            ],
+                        )
+                    )
+                    >= mi
                 ):
                     rank_matched = False
 
-            elif rank in [
-                CatRank.LEADER,
-                CatRank.DEPUTY,
-            ] and not find_alive_cats_with_rank(cat, [rank]):
-                rank_matched = False
+            elif rank == "warrior-like":
+                if (
+                    not len(
+                        find_alive_cats_with_rank(
+                            cat,
+                            [
+                                CatRank.LEADER,
+                                CatRank.DEPUTY,
+                                CatRank.WARRIOR,
+                            ],
+                        )
+                    )
+                    >= mi
+                ):
+                    rank_matched = False
 
-            elif (
-                rank not in [CatRank.LEADER, CatRank.DEPUTY]
-                and not len(find_alive_cats_with_rank(cat, [rank])) >= 2
-            ):
+            elif not len(find_alive_cats_with_rank(cat, [rank])) >= mi:
                 rank_matched = False
 
             if is_exclusionary and rank_matched:
@@ -571,9 +601,9 @@ def _check_cat_apprentice(cat, has_app: dict) -> bool:
 
     # check for None value instead of False-y!
     if has_app.get("former") is not None:
-        if has_app["former"] and not cat.former_apprentice:
+        if has_app["former"] and not cat.former_apprentices:
             return False
-        if not has_app["former"] and cat.former_apprentice:
+        if not has_app["former"] and cat.former_apprentices:
             return False
 
     return True

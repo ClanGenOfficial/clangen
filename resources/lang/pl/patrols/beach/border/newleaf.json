@@ -1,0 +1,461 @@
+[
+    {
+        "event_id": "bch_bord_nl_flashflood_tide2",
+        "types": [
+            "border"
+        ],
+        "frequency": 4,
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ]
+        },
+        "chance_of_success": 30,
+        "patrol_art": "bord_general_intro",
+        "intro_text": "As p_l crosses a beach, shivering with the cold, {PRONOUN\/p_l\/subject} {VERB\/p_l\/hear\/hears} a creaking, rushing sound, like a wave \u2014 but out of sync with the ocean.",
+        "decline_text": "p_l decides to head back early.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l leaps forward, dashing to the other side of the beach and up onto the rocks. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/make\/makes} it in time to watch the beach get lost under a tide of water from inland."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 scrambles back the way {PRONOUN\/s_c0\/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris \u2014 and a large dead sheep. s_c0 pounces on the opportunity to scavenge."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,3"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 shrieks at the strange sound, paws digging into the sand as {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/turn\/turns} and {VERB\/s_c0\/run\/runs} for home. {PRONOUN\/s_c0\/subject\/CAP} {VERB\/s_c0\/are\/is} proven right when the beach disappears under a flood of water from inland. {PRONOUN\/s_c0\/poss\/CAP} caution saved {PRONOUN\/s_c0\/poss} life."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "careful",
+                                "insecure",
+                                "nervous"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l is in the middle of the beach when the flood hits {PRONOUN\/p_l\/object}, freezing water rushing from inland, sweeping {PRONOUN\/p_l\/object} straight out to sea to die in the cold ocean."
+                ],
+                "exp_gained": 0,
+                "death": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "history": "m_c was swept out to sea by a flood."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "bch_border_skua1",
+        "types": [
+            "border"
+        ],
+        "frequency": 3,
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ]
+        },
+        "chance_of_success": 40,
+        "patrol_art": "animals\/gen_eagledive",
+        "intro_text": "As the patrol heads out toward the rock-choked border, they notice a dark shadow flapping above them. A skua! The cats watch as the huge bird crashes into a storm petrel mid-air, sending gray feathers flying. The petrel slams into the ground while the skua screams and circles overhead, tracking its prey.",
+        "decline_text": "Watching the skua land beside its prize with a triumphant shriek, the patrol decides that tangling with a bird like that isn't worth the trouble.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_bord_scaryfoe_WrWr",
+                "strings": [
+                    "When the skua descends, r_c0 takes {PRONOUN\/r_c0\/poss} chance and launches {PRONOUN\/r_c0\/self} at the skua before it can fly away with its kill. The bird batters its wings, snaps its beak, and screams at the patrol. r_c0 holds firm and lashes {PRONOUN\/r_c0\/poss} claws across the bird's wings. The skua finally gives up and retreats. r_c0 may be bruised, but the petrel is {PRONOUN\/r_c0\/inposs}."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's battle with a skua."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "bruises"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "outcome_art": "cat_sprites\/gen_hunt_funrun_WrWr",
+                "strings": [
+                    "s_c0 darts toward the skua's fresh-kill before it can react, snatching the petrel in {PRONOUN\/s_c0\/poss} jaws. By the time the skua dives, s_c0 and the patrol are already gone. It screams at the empty rocks and flies away, reeling from the heist, while the cats swap praises over stolen prey."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "RUNNER,0"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 40,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to after {PRONOUN\/cat_to\/subject} stole a skua's prey.",
+                            "cats_to": "cat_to received praise from cat_from after stealing a skua's prey."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "outcome_art": "gen_bord_pissed_warrior",
+                "strings": [
+                    "The skua isn't just after the petrel; anyone who nears the border gets a shrieking dive for their trouble, too. After their third attempt, p_l gets an idea, signaling to the others with {PRONOUN\/p_l\/poss} tail. The rest of the cats keep the bird's attention while p_l marks the border, leading to a successful, <i>mostly<\/i> skua-free patrol."
+                ],
+                "exp_gained": 50,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_to's idea about distracting a skua led to a successful border patrol.",
+                            "cats_to": "cat_to took note of cat_from's initiative when distracting a skua."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "outcome_art": "cat_sprites\/gen_angrycat_Wr",
+                "strings": [
+                    "The skua screams and dives toward the patrol, abandoning its kill in favor of harassment. Without thinking, s_c0 plants {PRONOUN\/s_c0\/poss} paws into the sand and shrieks back, stopping the bird cold. Unnerved and slightly confused, the skua turns and flies off with the petrel, leaving the cats alone. The patrol stares at s_c0 before erupting into triumphant purrs, praising {PRONOUN\/s_c0\/object} on {PRONOUN\/s_c0\/poss} quick thinking."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "bold",
+                                "troublesome",
+                                "adventurous"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from gained a newfound respect for cat_to after watching {PRONOUN\/cat_to\/object} outscream a skua."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "outcome_art": "cat_sprites\/gen_train_ghost_WrWrWr",
+                "strings": [
+                    "Before the patrol can make a move, s_c0 steps forward. Storm petrels are an omen of bad weather, {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/explain\/explains}, and the skua is actually trying to <i>protect<\/i> them. s_c0 urges them to move along, focus on the border, and leave the birds to their conflict. The cats feel a chill that has nothing to do with the wind and continue with the patrol."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "OMEN,0",
+                                "CLAIRVOYANT,0",
+                                "PROPHET,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 15,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from heeded cat_to's warning about the skua and the petrel."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_train_argue_WrWr",
+                "strings": [
+                    "As the skua descends toward the petrel, r_c0 decides to try and rob the bird blind. Unfortunately for r_c0, the skua is unbothered, considering it's been harassing birds three times its size for its whole life. It manages to grab the kill and flies off without issue, leaving the patrol members annoyed with each other."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from was annoyed by cat_to's failed attempt to steal from a skua."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_anxiouslookup_Wr",
+                "strings": [
+                    "The skua isn't only after the petrel \u2014 it seems to have claimed the whole stretch of shoreline, patrolling its territory with a furious fervor. Every attempt to approach the border is met with diving wings and a peck to the back of the head, sending the cats scattering. Eventually, the patrol has no choice but to give up, and a section of the border goes unmarked."
+                ],
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "patrol_cats"
+                        ],
+                        "condition": [
+                            "beak_bite"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "outcome_art": "cat_sprites\/gen_embarrassed_WrWr",
+                "strings": [
+                    "r_c0 throws {PRONOUN\/r_c0\/self} over the petrel, intent on stopping the skua entirely. What r_c0 doesn't anticipate is a face full of ruffled feathers and a screeching skua to go with it, slamming itself into {PRONOUN\/r_c0\/poss} side. A few harsh pecks later, the large bird swoops back into the air with the petrel, leaving r_c0 injured and the rest of the patrol unimpressed."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from wasn't impressed by cat_to's failed attempt to drive off a skua."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "beak_bite"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "outcome_art": "cat_sprites\/gen_train_soggykittymad_Wr",
+                "strings": [
+                    "The patrol lunges at the kill, intending to steal it before the skua can even blink, but the skua is faster. It snatches up the petrel and is airborne before anyone can even reach its prey, leaving the cats skidding across wet rocks, flustered and empty-pawed."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from tried not to think about how easily a skua outsmarted their patrol with cat_to."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "outcome_art": "cat_sprites\/gen_anxiouslookdown_Wr",
+                "strings": [
+                    "The patrol confidently advances on the lone skua, but stops in their tracks as soon as two more appear over the rocks, drawn by its screaming. Three skuas versus one patrol is considerably less appealing odds, and the cats agree to back off and leave the birds alone."
+                ],
+                "exp_gained": 0
+            }
+        ]
+    }
+]
