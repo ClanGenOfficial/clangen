@@ -267,10 +267,6 @@ class ShortEvent:
             if self.handle_accessories() is False:
                 return
 
-        # update gender before relationships
-        if self.new_gender:
-            self.handle_transition()
-
         # find POI name if we need it
         chosen_poi = None
         if self.poi:
