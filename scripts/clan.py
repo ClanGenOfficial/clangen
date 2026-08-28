@@ -326,7 +326,7 @@ class Clan:
                 # renaming to fit outsider status
                 name_categories = [
                     "silly_names",
-#                    "human_names",
+                    #                    "human_names",
                     "loner_names",
                     "normal_prefixes",
                 ]

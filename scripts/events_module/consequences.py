@@ -648,7 +648,7 @@ def create_new_cat(
         elif original_group not in game.clan.other_clan_IDs:
             name_categories = [
                 "silly_names",
-                "human_names",
+                # "human_names",
                 "loner_names",
                 "normal_prefixes",
             ]
