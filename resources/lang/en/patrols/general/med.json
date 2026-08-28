@@ -2516,7 +2516,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The scent of a familiar pelt reaches s_c0's nose — {PRONOUN/s_c0/subject} {VERB/s_c0/know/knows} this cat! With a friendly purr, {PRONOUN/s_c0/subject} {VERB/s_c0/turn/turns} to greet {PRONOUN/s_c0/poss} friend from beyond the grave. The rest of the patrol gives them some space."
+                    "The scent of a familiar pelt reaches r_c's nose — {PRONOUN/r_c0/subject} {VERB/r_c0/know/knows} this cat! With a friendly purr, {PRONOUN/r_c0/subject} {VERB/r_c0/turn/turns} to greet {PRONOUN/r_c0/poss} friend from beyond the grave. The rest of the patrol gives them some space."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -2527,7 +2527,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol_cats"
+                            "p_l"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -4069,7 +4069,9 @@
                     "apprentice",
                     "medicine cat apprentice"
                 ],
-                "has_mentor": {"current": true}
+                "has_mentor": {
+                    "current": true
+                }
             }
         },
         "chance_of_success": 40,
@@ -11400,7 +11402,9 @@
         },
         "involved_cats": {
             "p_l": {
-                "has_mentor": {"current": true}
+                "has_mentor": {
+                    "current": true
+                }
             }
         },
         "chance_of_success": 50,
@@ -12200,7 +12204,9 @@
                 "status": [
                     "apprentice"
                 ],
-                "has_mentor": {"current": true}
+                "has_mentor": {
+                    "current": true
+                }
             }
         },
         "chance_of_success": 30,
@@ -13106,7 +13112,9 @@
                 "status": [
                     "medicine cat apprentice"
                 ],
-                "has_mentor": {"current": true}
+                "has_mentor": {
+                    "current": true
+                }
             }
         },
         "chance_of_success": 60,
@@ -18892,7 +18900,8 @@
             "r_c1": {
                 "status": [
                     "medicine cat apprentice"
-                ]
+                ],
+                "has_mentor": {"current": true}
             }
         },
         "chance_of_success": 60,
@@ -24489,7 +24498,9 @@
         },
         "involved_cats": {
             "p_l": {
-                "has_mentor": {"current": true}
+                "has_mentor": {
+                    "current": true
+                }
             }
         },
         "chance_of_success": 50,
@@ -26617,7 +26628,9 @@
                     "apprentice",
                     "medicine cat apprentice"
                 ],
-                "has_mentor": {"current": true}
+                "has_mentor": {
+                    "current": true
+                }
             }
         },
         "chance_of_success": 40,
@@ -38047,7 +38060,9 @@
                     "apprentice",
                     "medicine cat apprentice"
                 ],
-                "has_mentor": {"current": true}
+                "has_mentor": {
+                    "current": true
+                }
             }
         },
         "chance_of_success": 70,
@@ -40364,7 +40379,9 @@
                     "apprentice",
                     "medicine cat apprentice"
                 ],
-                "has_mentor": {"current": true}
+                "has_mentor": {
+                    "current": true
+                }
             }
         },
         "chance_of_success": 70,
@@ -50018,7 +50035,9 @@
         },
         "involved_cats": {
             "p_l": {
-                "has_mentor": {"current": true}
+                "has_mentor": {
+                    "current": true
+                }
             }
         },
         "chance_of_success": 50,
