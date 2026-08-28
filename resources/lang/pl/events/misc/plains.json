@@ -33,7 +33,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "As the wind howls on the plains outside, m_c is tucked up in the medicine cat den, {PRONOUN\/m_c\/poss} sleep anything but restful. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/keep\/keeps} seeing flashes of prophecy_list_sight\/m_c. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/wake\/wakes} with a shiver, wondering what {PRONOUN\/m_c\/poss} dreams mean for the Clan.",
+        "event_text": "As the wind howls on the plains outside, m_c is tucked up in the medicine cat den, {PRONOUN/m_c/poss} sleep anything but restful. {PRONOUN/m_c/subject/CAP} {VERB/m_c/keep/keeps} seeing flashes of prophecy_list_sight/m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} with a shiver, wondering what {PRONOUN/m_c/poss} dreams mean for the Clan.",
         "m_c": {
             "age": [
                 "any"
@@ -56,7 +56,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "The things {PRONOUN\/m_c\/subject} saw today, omen_list_sight\/m_c... m_c isolates {PRONOUN\/m_c\/self} in the shifting long grass, considering what the omens foretell.",
+        "event_text": "The things {PRONOUN/m_c/subject} saw today, omen_list_sight/m_c... m_c isolates {PRONOUN/m_c/self} in the shifting long grass, considering what the omens foretell.",
         "m_c": {
             "age": [
                 "any"
@@ -84,7 +84,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "The acc_plural are just absolutely blooming this season! m_c decides to keep some to remind {PRONOUN\/m_c\/object} of such a beautiful sight.",
+        "event_text": "The acc_plural are just absolutely blooming this season! m_c decides to keep some to remind {PRONOUN/m_c/object} of such a beautiful sight.",
         "new_accessory": [
             "HEATHER",
             "GORSE"
@@ -113,7 +113,7 @@
             "accessory"
         ],
         "frequency": 4,
-        "event_text": "m_c tripped and ended up with acc_plural all over {PRONOUN\/m_c\/object}! As it turns out, m_c quite likes the look of them.",
+        "event_text": "m_c tripped and ended up with acc_plural all over {PRONOUN/m_c/object}! As it turns out, m_c quite likes the look of them.",
         "new_accessory": [
             "CLOVER",
             "DAISY"
@@ -174,26 +174,13 @@
         "frequency": 4,
         "event_text": "m_c has been working to disguise the entrance into the camp tunnels.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
         },
         "relationships": [
             {
-                "cats_from": [
-                    "clan",
-                    "high_aggress"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "respect"
-                ],
+                "cats_from": ["clan", "high_aggress"],
+                "cats_to": ["m_c"],
+                "values": ["respect"],
                 "amount": 5,
                 "mutual": false,
                 "log": {
@@ -213,13 +200,9 @@
         "sub_type": [],
         "tags": [],
         "frequency": 2,
-        "event_text": "m_c sits under the bridge while a Thundersnake travels above. Amidst the rumbling and roaring in {PRONOUN\/m_c\/poss} ears, {PRONOUN\/m_c\/subject} {VERB\/m_c\/swear\/swears} {PRONOUN\/m_c\/subject} can hear prophecy_list_sound.",
+        "event_text": "m_c sits under the bridge while a Thundersnake travels above. Amidst the rumbling and roaring in {PRONOUN/m_c/poss} ears, {PRONOUN/m_c/subject} {VERB/m_c/swear/swears} {PRONOUN/m_c/subject} can hear prophecy_list_sound.",
         "m_c": {
-            "status": [
-                "leader",
-                "medicine cat",
-                "medicine cat apprentice"
-            ]
+            "status": ["leader", "medicine cat", "medicine cat apprentice"]
         }
     },
     {
@@ -233,18 +216,12 @@
         "sub_type": [],
         "tags": [],
         "frequency": 3,
-        "event_text": "m_c sits under the bridge while a Thundersnake travels above. Amidst the rumbling and roaring in {PRONOUN\/m_c\/poss} ears, {PRONOUN\/m_c\/subject} {VERB\/m_c\/swear\/swears} {PRONOUN\/m_c\/subject} can hear prophecy_list_sound.",
+        "event_text": "m_c sits under the bridge while a Thundersnake travels above. Amidst the rumbling and roaring in {PRONOUN/m_c/poss} ears, {PRONOUN/m_c/subject} {VERB/m_c/swear/swears} {PRONOUN/m_c/subject} can hear prophecy_list_sound.",
         "m_c": {
             "age": [],
             "status": [],
             "relationship_status": [],
-            "skill": [
-                "STAR,0",
-                "DARK,0",
-                "OMEN,0",
-                "CLAIRVOYANT,0",
-                "PROPHET,0"
-            ],
+            "skill": ["STAR,0", "DARK,0", "OMEN,0", "CLAIRVOYANT,0", "PROPHET,0"],
             "trait": [],
             "backstory": [],
             "dies": false

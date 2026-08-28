@@ -30,7 +30,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "As a storm rages across the beach and waves crash upon the shore, m_c is tucked up in the medicine cat den, {PRONOUN\/m_c\/poss} sleep anything but restful. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/keep\/keeps} seeing flashes of prophecy_list_sight\/m_c. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/wake\/wakes} with a shiver, wondering what {PRONOUN\/m_c\/poss} dreams mean for the Clan.",
+        "event_text": "As a storm rages across the beach and waves crash upon the shore, m_c is tucked up in the medicine cat den, {PRONOUN/m_c/poss} sleep anything but restful. {PRONOUN/m_c/subject/CAP} {VERB/m_c/keep/keeps} seeing flashes of prophecy_list_sight/m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} with a shiver, wondering what {PRONOUN/m_c/poss} dreams mean for the Clan.",
         "m_c": {
             "status": [
                 "medicine cat",
@@ -50,7 +50,7 @@
             "any"
         ],
         "frequency": 4,
-        "event_text": "The things {PRONOUN\/m_c\/subject} saw today: omen_list_sight\/m_c... m_c dips a paw in a rockpool, watching the tiny, crawling life inside, and considering what the omens foretell.",
+        "event_text": "The things {PRONOUN/m_c/subject} saw today: omen_list_sight/m_c... m_c dips a paw in a rockpool, watching the tiny, crawling life inside, and considering what the omens foretell.",
         "m_c": {
             "status": [
                 "medicine cat",
@@ -114,9 +114,7 @@
         "supplies": [
             {
                 "type": "all_herb",
-                "trigger": [
-                    "excess"
-                ],
+                "trigger": ["excess"],
                 "adjust": "reduce_half"
             }
         ]
@@ -133,7 +131,7 @@
             "accessory"
         ],
         "frequency": 1,
-        "event_text": "m_c finds an old seagull nest while out hunting. It seems to be long abandoned, but some pretty feathers have remained intact! m_c decides to take some with {PRONOUN\/m_c\/object}.",
+        "event_text": "m_c finds an old seagull nest while out hunting. It seems to be long abandoned, but some pretty feathers have remained intact! m_c decides to take some with {PRONOUN/m_c/object}.",
         "new_accessory": [
             "GULL FEATHERS"
         ],
@@ -152,17 +150,13 @@
         "location": [
             "beach:camp1_camp2_camp4"
         ],
-        "season": [
-            "any"
-        ],
+        "season": ["any"],
         "frequency": 1,
         "event_text": "A huge wave surged into camp, stirring up sand and washing away the fresh-kill as it receded. In its wake, the Clan was left with a dampened mood and soaked paws.",
         "supplies": [
             {
                 "type": "freshkill",
-                "trigger": [
-                    "adequate"
-                ],
+                "trigger": ["adequate"],
                 "adjust": "reduce_full"
             }
         ]
@@ -172,19 +166,13 @@
         "location": [
             "beach:camp1_camp2_camp4"
         ],
-        "season": [
-            "any"
-        ],
+        "season": ["any"],
         "frequency": 2,
         "event_text": "A wave splashed into camp, soaking an unlucky few and washing away the fresh-kill that c_n wasn't quick enough to save.",
         "supplies": [
             {
                 "type": "freshkill",
-                "trigger": [
-                    "adequate",
-                    "full",
-                    "excess"
-                ],
+                "trigger": ["adequate", "full", "excess"],
                 "adjust": "reduce_half"
             }
         ]
@@ -194,18 +182,13 @@
         "location": [
             "beach:camp1_camp3_camp4"
         ],
-        "season": [
-            "any"
-        ],
+        "season": ["any"],
         "frequency": 2,
         "event_text": "After a particularly rough storm, c_n discovered the fresh-kill pile didn't make it through undamaged.",
         "supplies": [
             {
                 "type": "freshkill",
-                "trigger": [
-                    "full",
-                    "excess"
-                ],
+                "trigger": ["full", "excess"],
                 "adjust": "reduce_half"
             }
         ]
@@ -215,29 +198,21 @@
         "location": [
             "beach"
         ],
-        "season": [
-            "any"
-        ],
+        "season": ["any"],
         "frequency": 3,
         "event_text": "A cast of crabs invaded the fresh-kill pile. c_n fended them off, but the pile is left damaged.",
         "supplies": [
             {
                 "type": "freshkill",
-                "trigger": [
-                    "adequate"
-                ],
+                "trigger": ["adequate"],
                 "adjust": "reduce_quarter"
             }
         ]
     },
     {
         "event_id": "bch_coconutcrab_freshkill_steal",
-        "location": [
-            "beach"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["beach"],
+        "season": ["any"],
         "frequency": 3,
         "event_text": "m_c discovered a giant coconut crab in camp helping itself to the fresh-kill. m_c chased it off before it could deal further damage.",
         "m_c": {
@@ -251,21 +226,15 @@
         "supplies": [
             {
                 "type": "freshkill",
-                "trigger": [
-                    "always"
-                ],
+                "trigger": ["always"],
                 "adjust": "reduce_eighth"
             }
         ]
     },
     {
         "event_id": "bch_pelican_freshkill",
-        "location": [
-            "beach:camp1_camp3_camp4"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["beach:camp1_camp3_camp4"],
+        "season": ["any"],
         "frequency": 3,
         "event_text": "The fresh-kill pile attracted a pelican to the camp. m_c managed to chase the bird away before it could swallow c_n's prey.",
         "m_c": {
@@ -296,27 +265,19 @@
     },
     {
         "event_id": "bch_pelican_freshkill_duo",
-        "location": [
-            "beach:camp1_camp3_camp4"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["beach:camp1_camp3_camp4"],
+        "season": ["any"],
         "frequency": 2,
         "event_text": "A pelican landed in camp, keen on raiding the fresh-kill pile. m_c and r_c had other ideas, and they chased the bird off together. No bird will steal from c_n on their watch!",
         "m_c": {
-            "status": [
-                "apprentice"
-            ],
+            "status": ["apprentice"],
             "trait": [
                 "-lonesome",
                 "-shy"
             ]
         },
         "r_c": {
-            "status": [
-                "apprentice"
-            ],
+            "status": ["apprentice"],
             "trait": [
                 "-lonesome",
                 "-shy"
@@ -353,7 +314,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "A thick fog envelops the coast. m_c swears {PRONOUN\/m_c\/subject} {VERB\/m_c\/see\/sees} a translucent Twoleg ship out on the ocean... but when {PRONOUN\/m_c\/subject} {VERB\/m_c\/blink\/blinks}, it's gone.",
+        "event_text": "A thick fog envelops the coast. m_c swears {PRONOUN/m_c/subject} {VERB/m_c/see/sees} a translucent Twoleg ship out on the ocean... but when {PRONOUN/m_c/subject} {VERB/m_c/blink/blinks}, it's gone.",
         "m_c": {
             "age": [
                 "any"
@@ -372,10 +333,10 @@
             "any"
         ],
         "frequency": 3,
-        "event_text": "m_c takes r_c down to the edge of the water and begins to warn {PRONOUN\/r_c\/object} of the dangerous things that can be found in the deep blue sea.",
+        "event_text": "m_c takes r_c down to the edge of the water and begins to warn {PRONOUN/r_c/object} of the dangerous things that can be found in the deep blue sea.",
         "m_c": {
             "relationship_status": [
-                "parent\/child"
+                "parent/child"
             ]
         },
         "r_c": {
@@ -412,10 +373,10 @@
             "any"
         ],
         "frequency": 3,
-        "event_text": "m_c takes r_c down to the edge of the water and begins to warn {PRONOUN\/r_c\/object} of the dangerous things that can be found in the deep blue sea.",
+        "event_text": "m_c takes r_c down to the edge of the water and begins to warn {PRONOUN/r_c/object} of the dangerous things that can be found in the deep blue sea.",
         "m_c": {
             "relationship_status": [
-                "mentor\/app"
+                "mentor/app"
             ]
         },
         "r_c": {},
@@ -464,7 +425,7 @@
             "newleaf"
         ],
         "frequency": 3,
-        "event_text": "m_c peers over the edge of the rock, past the barnacles exposed by the low tide, searching for something in {PRONOUN\/m_c\/poss} reflection in the sea below.",
+        "event_text": "m_c peers over the edge of the rock, past the barnacles exposed by the low tide, searching for something in {PRONOUN/m_c/poss} reflection in the sea below.",
         "m_c": {
             "status": [
                 "elder"
@@ -480,10 +441,10 @@
             "greenleaf"
         ],
         "frequency": 3,
-        "event_text": "m_c takes r_c to look for pretty treasures in the sand. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/smile\/smiles} at seeing {PRONOUN\/m_c\/poss} kit happy.",
+        "event_text": "m_c takes r_c to look for pretty treasures in the sand. {PRONOUN/m_c/subject/CAP} {VERB/m_c/smile/smiles} at seeing {PRONOUN/m_c/poss} kit happy.",
         "m_c": {
             "relationship_status": [
-                "parent\/child"
+                "parent/child"
             ]
         },
         "r_c": {},
@@ -518,7 +479,7 @@
             "romance"
         ],
         "frequency": 3,
-        "event_text": "m_c takes r_c to look for pretty treasures in the sand. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/blush\/blushes} at r_c's smile.",
+        "event_text": "m_c takes r_c to look for pretty treasures in the sand. {PRONOUN/m_c/subject/CAP} {VERB/m_c/blush/blushes} at r_c's smile.",
         "m_c": {
             "relationship_status": [
                 "fancies"

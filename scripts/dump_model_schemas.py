@@ -19,6 +19,7 @@ from scripts.models.points_of_interest.points_of_interest_schema import (
     PointsOfInterestSchema,
 )
 from scripts.models.pelt_recipe.pelt_recipe_schema import PeltRecipe
+from scripts.models.transition.transition_schema import TransitionSchema
 from scripts.models.util import (
     create_generate_json_schema_with_externals,
     get_defs_from_pydantic_model,
@@ -90,6 +91,7 @@ def main():
     dump_model_schema(PointsOfInterestSchema, "schemas/poi.schema.json")
     dump_model_schema(PeltRecipe, "schemas/pelt_recipe.schema.json")
     dump_model_schema(CeremonySchema, "schemas/ceremony.schema.json")
+    dump_model_schema(TransitionSchema, "schemas/transition.schema.json")
 
 
 if __name__ == "__main__":

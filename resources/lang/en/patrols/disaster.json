@@ -344,7 +344,14 @@
                         ]
                     }
                 },
-                "exp_gained": 30
+                "exp_gained": 30,
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             },
             {
                 "frequency": 4,
@@ -425,6 +432,14 @@
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c1",
+                            "n_c0"
+                        ]
                     }
                 ]
             },
@@ -508,7 +523,14 @@
                         ]
                     }
                 },
-                "exp_gained": 30
+                "exp_gained": 30,
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             },
             {
                 "frequency": 1,
@@ -523,7 +545,14 @@
                         ]
                     }
                 },
-                "exp_gained": 30
+                "exp_gained": 30,
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             },
             {
                 "frequency": 4,
@@ -580,6 +609,15 @@
                         "log": {
                             "cats_from": "cat_from tried to ambush and kill cat_to, but cat_to escaped."
                         }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c2",
+                            "n_c1",
+                            "n_c0"
+                        ]
                     }
                 ]
             },
@@ -666,7 +704,14 @@
                         ]
                     }
                 },
-                "exp_gained": 30
+                "exp_gained": 30,
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             },
             {
                 "frequency": 1,
@@ -681,7 +726,14 @@
                         ]
                     }
                 },
-                "exp_gained": 30
+                "exp_gained": 30,
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             },
             {
                 "frequency": 4,
@@ -818,7 +870,14 @@
                         ]
                     }
                 },
-                "exp_gained": 30
+                "exp_gained": 30,
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             },
             {
                 "frequency": 1,
@@ -833,7 +892,14 @@
                         ]
                     }
                 },
-                "exp_gained": 30
+                "exp_gained": 30,
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             },
             {
                 "frequency": 4,
@@ -890,6 +956,15 @@
                         "log": {
                             "cats_from": "cat_from tried to ambush and kill cat_to, but cat_to escaped."
                         }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c2",
+                            "n_c1",
+                            "n_c0"
+                        ]
                     }
                 ]
             },
@@ -1010,6 +1085,15 @@
                             "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c2",
+                            "n_c1",
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -1075,6 +1159,14 @@
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c1",
+                            "n_c0"
+                        ]
                     }
                 ]
             },
@@ -1160,6 +1252,14 @@
                         "history": "This cat died while wandering.",
                         "no_results": false
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c1",
+                            "n_c0"
+                        ]
+                    }
                 ]
             }
         ],
@@ -1196,6 +1296,15 @@
                             "patrol_cats"
                         ],
                         "history": "m_c was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c2",
+                            "n_c1",
+                            "n_c0"
+                        ]
                     }
                 ]
             },
@@ -1256,6 +1365,15 @@
                         ],
                         "scar_history": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
                         "death_history": "m_c died of wounds sustained in a rogue ambush."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c2",
+                            "n_c1",
+                            "n_c0"
+                        ]
                     }
                 ]
             }
@@ -1332,6 +1450,15 @@
                         "log": {
                             "cats_from": "cat_from and cat_to got into a vicious fight when they encountered one another along the border."
                         }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c2",
+                            "n_c1",
+                            "n_c0"
+                        ]
                     }
                 ]
             },
@@ -1415,6 +1542,14 @@
                         "history": "This cat died while wandering.",
                         "no_results": false
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c1",
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -1498,6 +1633,14 @@
                         ],
                         "history": "This cat died while wandering.",
                         "no_results": false
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c1",
+                            "n_c0"
+                        ]
                     }
                 ]
             }
@@ -1592,6 +1735,15 @@
                         ],
                         "scar_history": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
                         "death_history": "m_c died of wounds sustained in a rogue ambush."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c2",
+                            "n_c1",
+                            "n_c0"
+                        ]
                     }
                 ]
             }

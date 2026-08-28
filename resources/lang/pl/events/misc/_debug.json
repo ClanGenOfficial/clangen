@@ -8,12 +8,10 @@
             "any"
         ],
         "poi": {
-            "name": [
-                "gather_fourtrees"
-            ]
+            "name": ["gather_fourtrees"]
         },
         "frequency": 0,
-        "event_text": "DEBUG: visited POI  - {POI\/name\/gather_fourtrees}"
+        "event_text": "DEBUG: visited POI  - {POI/name/gather_fourtrees}"
     },
     {
         "event_id": "debug_misc_poi_tag_trees",
@@ -24,12 +22,10 @@
             "any"
         ],
         "poi": {
-            "tags": [
-                "trees"
-            ]
+            "tags": ["trees"]
         },
         "frequency": 0,
-        "event_text": "DEBUG: visited 'trees' POI - {POI\/tag\/trees}"
+        "event_text": "DEBUG: visited 'trees' POI - {POI/tag/trees}"
     },
     {
         "event_id": "debug_misc_poi_tag_prey",
@@ -40,9 +36,7 @@
             "any"
         ],
         "poi": {
-            "tags": [
-                "prey"
-            ]
+            "tags": ["prey"]
         },
         "frequency": 0,
         "event_text": "DEBUG: visited 'prey' POI"
@@ -56,9 +50,7 @@
             "any"
         ],
         "poi": {
-            "tags": [
-                "prey:fish"
-            ]
+            "tags": ["prey:fish"]
         },
         "frequency": 0,
         "event_text": "DEBUG: visited 'prey:fish' POI"
@@ -75,7 +67,7 @@
             "category": "moonplace"
         },
         "frequency": 0,
-        "event_text": "visited moonplace - {POI\/category\/moonplace}"
+        "event_text": "visited moonplace - {POI/category/moonplace}"
     },
     {
         "event_id": "debug_misc_poi_gathering",
@@ -89,7 +81,7 @@
             "category": "gathering"
         },
         "frequency": 0,
-        "event_text": "visited gathering place - {POI\/category\/gathering}"
+        "event_text": "visited gathering place - {POI/category/gathering}"
     },
     {
         "event_id": "debug_misc_poi_terrain",
@@ -103,6 +95,6 @@
             "category": "terrain"
         },
         "frequency": 0,
-        "event_text": "visited some random terrain - {POI\/category\/terrain}"
+        "event_text": "visited some random terrain - {POI/category/terrain}"
     }
 ]

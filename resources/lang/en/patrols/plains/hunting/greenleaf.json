@@ -1629,7 +1629,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 finds {PRONOUN/r_c0/self} face to fang with a rattling snake. {PRONOUN/r_c0/subject/CAP} panics, stumbling, and the snake strikes. Its fangs pierce r_c's paw as effortlessly as wind through grass, and every step is like walking on burning thorns as {PRONOUN/r_c0/subject} {VERB/r_c0/drag/drags} {PRONOUN/r_c0/self} into the medicine cat den."
+                    "r_c0 finds {PRONOUN/r_c0/self} face to fang with a rattling snake. {PRONOUN/r_c0/subject/CAP} panics, stumbling, and the snake strikes. Its fangs pierce r_c0's paw as effortlessly as wind through grass, and every step is like walking on burning thorns as {PRONOUN/r_c0/subject} {VERB/r_c0/drag/drags} {PRONOUN/r_c0/self} into the medicine cat den."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -1717,7 +1717,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c0 finds {PRONOUN/r_c0/self} face to fang with a rattling snake. There is no time to react. Effortlessly, the snake's teeth find r_c's veins. For a horrific moment, every drop of blood in r_c's body burns, and then {PRONOUN/r_c0/poss} Clan finds {PRONOUN/r_c0/object} cold."
+                    "r_c0 finds {PRONOUN/r_c0/self} face to fang with a rattling snake. There is no time to react. Effortlessly, the snake's teeth find r_c0's veins. For a horrific moment, every drop of blood in r_c0's body burns, and then {PRONOUN/r_c0/poss} Clan finds {PRONOUN/r_c0/object} cold."
                 ],
                 "involved_cats": {
                     "r_c0": {}
