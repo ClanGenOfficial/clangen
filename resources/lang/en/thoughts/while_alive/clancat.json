@@ -7578,7 +7578,7 @@
             "Feels like the world is moving a little too fast",
             "Tells r_c that {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to sit down for a second",
             "Finds the sun to be too bright today",
-            "Faked a dizzy spell to get out of {PRONOUN/m_cposs} least favorite task"
+            "Faked a dizzy spell to get out of {PRONOUN/m_c/poss} least favorite task"
         ],
         "involved_cats": {
             "m_c": {
