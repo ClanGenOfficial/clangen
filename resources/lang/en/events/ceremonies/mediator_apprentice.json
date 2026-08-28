@@ -45,6 +45,7 @@
     },
     {
         "event_id": "mediator_app_no_mentor0",
+        "tags": ["-clan:mediator(min:1)"],
         "involved_cats": {
             "m_c": {
                 "has_mentor": {

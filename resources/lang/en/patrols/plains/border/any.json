@@ -675,6 +675,13 @@
                             "cats_from": "r_c0 drove n_c0 off c_n's territory."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -743,6 +750,13 @@
                             "cats_from": "r_c0 drove n_c0 off c_n's territory."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -803,6 +817,13 @@
                         "log": {
                             "cats_from": "r_c0 drove n_c0 off c_n's territory."
                         }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             },
@@ -880,6 +901,13 @@
                             "cats_from": "r_c0 demanded n_c0 leave c_n's territory."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             }
         ],
@@ -914,7 +942,14 @@
                         "can_create_new_cat": {}
                     }
                 },
-                "exp_gained": 0
+                "exp_gained": 0,
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
+                ]
             },
             {
                 "frequency": 3,
@@ -955,6 +990,13 @@
                             "r_c0"
                         ],
                         "history": "m_c was killed by an invading rogue."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             },
@@ -999,6 +1041,13 @@
                         "log": {
                             "cats_from": "s_c0 found n_c0 trepassing and attacked {PRONOUN/n_c0/object}, but n_c0 managed to escape."
                         }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             }
@@ -1086,6 +1135,13 @@
                             "cats_from": "p_l drove n_c0 off c_n's territory."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -1160,6 +1216,13 @@
                             "cats_from": "s_c0 found n_c0 trespassing on c_n territory and told {PRONOUN/n_c0/object} to leave, but n_c0 ignored {PRONOUN/s_c0/object}."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -1201,6 +1264,13 @@
                             "p_l"
                         ],
                         "history": "m_c was killed by an invading rogue."
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             }
@@ -1300,6 +1370,13 @@
                             "cats_from": "cat_from and cat_to drove a rogue off the territory together."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -1370,6 +1447,13 @@
                         "log": {
                             "cats_from": "cat_to caught n_c0 trespassing and drove {PRONOUN/n_c0/object} off the territory."
                         }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             },
@@ -1448,6 +1532,13 @@
                         "log": {
                             "cats_from": "cat_from was impressed by cat_to's plan to ambush a trespassing rogue."
                         }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             },
@@ -1534,6 +1625,13 @@
                             "cats_from": "cat_to caught n_c0 trespassing and saw {PRONOUN/n_c0/object} off the territory."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -1616,6 +1714,13 @@
                         "log": {
                             "cats_from": "cat_to caught n_c0 trespassing and saw {PRONOUN/n_c0/object} off the territory."
                         }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             }
@@ -1723,6 +1828,13 @@
                             "cats_from": "cat_to caught n_c0 trespassing and tried to drive {PRONOUN/n_c0/object} off the territory, but n_c0 escaped."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -1782,6 +1894,13 @@
                         "log": {
                             "cats_from": "cat_to's attempt to ambush a rogue on patrol failed in front of cat_from."
                         }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             }
@@ -1891,6 +2010,13 @@
                             "cats_from": "cat_to caught n_c0 trespassing and drove {PRONOUN/n_c0/object} off the territory."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -1988,6 +2114,13 @@
                             "cats_from": "cat_to caught n_c0 trespassing and saw {PRONOUN/n_c0/object} off the territory."
                         }
                     }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    }
                 ]
             },
             {
@@ -2070,6 +2203,13 @@
                         "log": {
                             "cats_from": "cat_to caught n_c0 trespassing and saw {PRONOUN/n_c0/object} off the territory."
                         }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             }
@@ -2213,6 +2353,13 @@
                         "log": {
                             "cats_from": "cat_to caught n_c0 trespassing and demanded {PRONOUN/n_c0/subject} leave the territory, but n_c0 ignored {PRONOUN/cat_to/object}."
                         }
+                    }
+                ],
+                "meet": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
                     }
                 ]
             }

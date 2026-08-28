@@ -4,6 +4,7 @@ from random import choice, randint
 from typing import List, Optional, Dict, Union, Literal
 
 from scripts.cat.constants import BACKSTORIES
+from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
 from scripts.cat.enums import CatRank, CatAge, CatCompatibility, CatGroup, CatStanding
@@ -189,31 +190,61 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
             continue
         is_exclusionary = _check_for_exclusionary_value([_tag])
 
-        ranks = [x for x in rank_match.group(1).split(",")]
+        ranks = []
+        minimums = []
+        for rank_spec in rank_match.group(1).split(","):
+            # Check for extra "min" subtag
+            sub_tag_check = re.match(r"([^(]+)(?:\(min:([0-9]+)\))?", rank_spec)
+            ranks.append(sub_tag_check.group(1))
 
-        for rank in ranks:
+            if sub_tag_check.group(2):
+                minimums.append(int(sub_tag_check.group(2)))
+            else:
+                if sub_tag_check.group(1) in CatRank and sub_tag_check.group(1) not in [
+                    CatRank.LEADER,
+                    CatRank.DEPUTY,
+                ]:
+                    minimums.append(2)
+                    # Default Minimum is 2 for non deputy, non leader ranks.
+                else:
+                    # Default minimun is 1 for anything else.
+                    minimums.append(1)
+
+        for rank, mi in zip(ranks, minimums):
             rank_matched = True
             if rank == "apps":
-                if not find_alive_cats_with_rank(
-                    cat,
-                    [
-                        CatRank.APPRENTICE,
-                        CatRank.MEDIATOR_APPRENTICE,
-                        CatRank.MEDICINE_APPRENTICE,
-                    ],
+                if (
+                    not len(
+                        find_alive_cats_with_rank(
+                            cat,
+                            [
+                                CatRank.APPRENTICE,
+                                CatRank.MEDIATOR_APPRENTICE,
+                                CatRank.MEDICINE_APPRENTICE,
+                            ],
+                        )
+                    )
+                    >= mi
                 ):
                     rank_matched = False
 
-            elif rank in [
-                CatRank.LEADER,
-                CatRank.DEPUTY,
-            ] and not find_alive_cats_with_rank(cat, [rank]):
-                rank_matched = False
+            elif rank == "warrior-like":
+                if (
+                    not len(
+                        find_alive_cats_with_rank(
+                            cat,
+                            [
+                                CatRank.LEADER,
+                                CatRank.DEPUTY,
+                                CatRank.WARRIOR,
+                            ],
+                        )
+                    )
+                    >= mi
+                ):
+                    rank_matched = False
 
-            elif (
-                rank not in [CatRank.LEADER, CatRank.DEPUTY]
-                and not len(find_alive_cats_with_rank(cat, [rank])) >= 2
-            ):
+            elif not len(find_alive_cats_with_rank(cat, [rank])) >= mi:
                 rank_matched = False
 
             if is_exclusionary and rank_matched:
@@ -570,9 +601,9 @@ def _check_cat_apprentice(cat, has_app: dict) -> bool:
 
     # check for None value instead of False-y!
     if has_app.get("former") is not None:
-        if has_app["former"] and not cat.former_apprentice:
+        if has_app["former"] and not cat.former_apprentices:
             return False
-        if not has_app["former"] and cat.former_apprentice:
+        if not has_app["former"] and cat.former_apprentices:
             return False
 
     return True
@@ -1064,6 +1095,7 @@ def cat_for_event(
     comparison_cat=None,
     comparison_cat_rel_status: list = None,
     injuries: list = None,
+    new_accessories: list = None,
     other_involved_clan_id: str = None,
     return_id: bool = True,
     return_list: bool = False,
@@ -1078,6 +1110,7 @@ def cat_for_event(
      cat. Keep in mind that this will search for a possible cat with the given relationship toward comparison cat.
     :param comparison_cat_rel_status: The relationship_status dict for the comparison cat
     :param injuries: List of injuries a cat may get from the event
+    :param new_accessories: List of accessories a cat may get from the event
     :param other_involved_clan_id: if another Clan is involved, include their ID
     :param return_id: If true, return cat ID instead of object
     :param return_list: if true, return a list of all valid cats instead of a single valid cat
@@ -1140,6 +1173,45 @@ def cat_for_event(
         # if the list is emptied, return
         if not allowed_cats:
             return None
+
+    if new_accessories:
+        for cat in allowed_cats.copy():
+            if len(cat.pelt.accessory) >= 3:
+                allowed_cats.remove(cat)
+                continue
+
+            accessory_groups = [
+                Pelt.collar_accessories,
+                Pelt.head_accessories,
+                Pelt.tail_accessories,
+                Pelt.body_accessories,
+                Pelt.paw_accessories,
+            ]
+            possible_accs = new_accessories.copy()
+            if cat.pelt.accessory:
+                used_groups = [
+                    group
+                    for group in accessory_groups
+                    if set(cat.pelt.accessory).intersection(set(group))
+                ]
+                if any(
+                    [
+                        set(new_accessories).intersection(set(group))
+                        for group in used_groups
+                    ]
+                ):
+                    allowed_cats.remove(cat)
+                    continue
+
+            if cat.pelt.scars:
+                if "NOTAIL" in cat.pelt.scars or "HALFTAIL" in cat.pelt.scars:
+                    if any(acc in Pelt.tail_accessories for acc in possible_accs):
+                        allowed_cats.remove(cat)
+                        continue
+                if "NOPAW" in cat.pelt.scars:
+                    if any(acc in Pelt.paw_accessories for acc in possible_accs):
+                        allowed_cats.remove(cat)
+                        continue
 
     # rel status check
     if "romance" in tags and comparison_cat:

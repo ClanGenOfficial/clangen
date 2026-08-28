@@ -1,0 +1,109 @@
+[
+    {
+        "event_id": "bch_bord_flashflood_tide3",
+        "types": [
+            "border"
+        ],
+        "frequency": 1,
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ]
+        },
+        "chance_of_success": 30,
+        "patrol_art": "bord_general_intro",
+        "intro_text": "As p_l crosses a beach, shivering with the cold, {PRONOUN\/p_l\/subject} {VERB\/p_l\/hear\/hears} a creaking, rushing sound, like a wave \u2014 but out of sync with the ocean.",
+        "decline_text": "p_l decides to head back early.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l leaps forward, dashing to the other side of the beach and up onto the rocks. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/make\/makes} it in time to watch the beach get lost under a tide of water from inland."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 scrambles back the way {PRONOUN\/s_c0\/subject} came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris \u2014 and a large dead sheep. s_c0 pounces on the opportunity to scavenge."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,3"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 shrieks at the strange sound, paws digging into the sand as {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/turn\/turns} and {VERB\/s_c0\/run\/runs} for home. {PRONOUN\/s_c0\/subject\/CAP} {VERB\/s_c0\/are\/is} proven right when the beach disappears under a flood of water from inland. {PRONOUN\/s_c0\/poss\/CAP} caution saved {PRONOUN\/s_c0\/poss} life."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "careful",
+                                "insecure",
+                                "nervous"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l is in the middle of the beach when the flood hits {PRONOUN\/p_l\/object}. Freezing water rushes from inland, sweeping {PRONOUN\/p_l\/object} straight out to sea to die in the cold ocean."
+                ],
+                "exp_gained": 0,
+                "death": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "history": "m_c was swept out to sea by a flood."
+                    }
+                ]
+            }
+        ]
+    }
+]

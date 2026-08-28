@@ -11,10 +11,12 @@ from scripts.models.common.location import Location
 from scripts.models.common.season import Season
 from scripts.models.common.tag import Tag
 from scripts.models.common.temperament import Temperament
-from scripts.models.patrol.condition import Condition
-from scripts.models.patrol.death import Death
-from scripts.models.patrol.join import Join
-from scripts.models.patrol.supply import Supply
+from scripts.models.text_pool_event.condition import Condition
+from scripts.models.text_pool_event.death import Death
+from scripts.models.text_pool_event.join import Join
+from scripts.models.text_pool_event.supply import Supply
+from scripts.models.text_pool_event.gain_accessory import GainAccessory
+from scripts.models.text_pool_event.meet import Meet
 from scripts.models.text_pool_event.relationship_change_dict import RelationshipChange
 from scripts.models.text_pool_event.relationship_constraint_dict import (
     RelationshipConstraint,
@@ -78,6 +80,14 @@ class BaseTextPoolEvent(BaseModel):
     join: List[Join] | MISSING = Field(
         MISSING,
         description="Indicate which cats will join the player Clan. You can add multiple join blocks",
+    )
+    meet: List[Meet] | MISSING = Field(
+        MISSING,
+        description="Indicate which cats will meet the player Clan. You can add multiple meet blocks",
+    )
+    gain_accessory: List[GainAccessory] | MISSING = Field(
+        MISSING,
+        description="Indicate which cats will gain an accessory. You can add multiple gain_accessory blocks",
     )
     future_event: List[FutureEvent] | MISSING = Field(
         MISSING, description="Schedules another event to happen in the future."
