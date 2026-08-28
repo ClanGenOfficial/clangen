@@ -1138,7 +1138,8 @@
               }
             },
     "strings": [
-        "Much to the distress of {PRONOUN/m_c/poss} Clanmates, m_c leaves camp the <i>moment</i> {PRONOUN/m_c/subject} {VERB/m_c/are/is} made an apprentice, determined to prove {PRONOUN/m_c/poss} worth to the Clan."
+        "Much to the distress of {PRONOUN/m_c/poss} Clanmates, m_c leaves camp the <i>moment</i> {PRONOUN/m_c/subject} {VERB/m_c/are/is} made an apprentice, determined to prove {PRONOUN/m_c/poss} worth to the Clan.",
+        "(old_name) practically tumbles out of the nursery, disappearing into the territory as soon as {PRONOUN/m_c/poss} ceremony is over. There's a whole world out there, and m_c is determined to map every scent trail and ridge!"
     ]
     },
     {
@@ -1221,7 +1222,7 @@
     ]
     },
     {
-    "event_id": "app_nevermentor_forgot",
+    "event_id": "app_nevermentor_play",
     "tags": ["never_mentor"],
     "involved_cats": {
         "m_c": {
@@ -1235,7 +1236,15 @@
               }
             },
     "strings": [
-        "m_c seems to go missing right before {PRONOUN/m_c/poss} apprentice ceremony, and is eventually found still in the nursery, having completely forgot about the event."
+        "m_c seems to go missing right before {PRONOUN/m_c/poss} apprentice ceremony, and is eventually found still in the nursery, having completely forgot about the event.",
+        "Instead of celebrating becoming an apprentice, m_c is caught playing in the nursery."
+    ]
+    },
+    {
+    "event_id": "app_nevermentor_default",
+    "tags": ["never_mentor"],
+    "strings": [
+        "As per clan tradition, m_c now must face the world alone as an apprentice."
     ]
     }
 ]

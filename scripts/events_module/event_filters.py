@@ -261,6 +261,9 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
     if "never_mentor" in tags and not get_config("roles.app_never_mentor"):
         return False
 
+    if get_config("roles.app_never_mentor") and not "never_mentor" in tags:
+        return False
+
     return True
 
 
