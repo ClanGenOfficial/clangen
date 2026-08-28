@@ -109,6 +109,10 @@ class JoinDict(TypedDict):
     new_status: NotRequired[list[str]]
 
 
+class MeetDict(TypedDict):
+    cats: list[str]
+
+
 class SupplyDict(TypedDict):
     type: str
     trigger: NotRequired[Literal["always", "excess", "full", "adequate", "low"]]

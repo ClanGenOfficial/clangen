@@ -1267,6 +1267,24 @@
       "title": "Location",
       "type": "array"
     },
+    "Meet": {
+      "additionalProperties": false,
+      "properties": {
+        "cats": {
+          "description": "List of cats who will meet the Clan",
+          "items": {
+            "$ref": "#/$defs/GatherCat"
+          },
+          "title": "Cats",
+          "type": "array"
+        }
+      },
+      "required": [
+        "cats"
+      ],
+      "title": "Meet",
+      "type": "object"
+    },
     "MentorApprenticeDict": {
       "additionalProperties": false,
       "properties": {
@@ -1432,6 +1450,14 @@
             "$ref": "#/$defs/Join"
           },
           "title": "Join",
+          "type": "array"
+        },
+        "meet": {
+          "description": "Indicate which cats will meet the player Clan. You can add multiple meet blocks",
+          "items": {
+            "$ref": "#/$defs/Meet"
+          },
+          "title": "Meet",
           "type": "array"
         },
         "future_event": {
