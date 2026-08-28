@@ -40,7 +40,15 @@
             "Still needs r_c even though they're gone",
             "Doesn't think {PRONOUN/m_c/subject} will ever be the same without r_c",
             "Was seen crying in {PRONOUN/m_c/poss} nest after r_c's vigil",
-            "Is hiding {PRONOUN/m_c/poss} tears as {PRONOUN/m_c/subject} {VERB/m_c/comfort/comforts} the others about r_c's passing"
+            "Is hiding {PRONOUN/m_c/poss} tears as {PRONOUN/m_c/subject} {VERB/m_c/comfort/comforts} the others about r_c's passing",
+            "Wonders if others will grieve {PRONOUN/m_c/object} as much as everyone grieves for r_c",
+            "Can't stop thinking of the plans r_c made but would never be able to fufill",
+            "Wishes {PRONOUN/m_c/subject} could have spent more time with r_c if {PRONOUN/m_c/subject} knew r_c would leave them so soon",
+            "Can't stop hating {PRONOUN/m_c/object}self for not spending more time with r_c before {PRONOUN/r_c/poss} death",
+            "Would give anything just to hear r_c say just one more word...",
+            "Retired to {PRONOUN/m_c/poss} den early not wanting others to see {PRONOUN/m_c/object} this way",
+            "Is reminiscing with others about all of r_c's old quirks and habits"
+
         ]
     }
 ]
