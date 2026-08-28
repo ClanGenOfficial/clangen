@@ -702,7 +702,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l and r_c0 have an in-depth conversation about r_c's vision as they walk. r_c0 explains {PRONOUN/r_c0/subject} {VERB/r_c0/remember/remembers} clair_list/r_c0. By the time they head back to camp, they have a good idea of what they should do with the information."
+                    "p_l and r_c0 have an in-depth conversation about r_c0's vision as they walk. r_c0 explains {PRONOUN/r_c0/subject} {VERB/r_c0/remember/remembers} clair_list/r_c0. By the time they head back to camp, they have a good idea of what they should do with the information."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -719,7 +719,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from trusted cat_to to interpret r_c's vision."
+                            "cats_from": "cat_from trusted cat_to to interpret r_c0's vision."
                         }
                     },
                     {
@@ -750,7 +750,7 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "p_l takes r_c0 aside, giving {PRONOUN/r_c0/object} the full benefits of p_l's experience as they discuss r_c's vision, which contained clair_list/r_c0. As a medicine cat, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} take the responsibility lightly, and both of them work together to divine the vision's meaning."
+                    "p_l takes r_c0 aside, giving {PRONOUN/r_c0/object} the full benefits of p_l's experience as they discuss r_c0's vision, which contained clair_list/r_c0. As a medicine cat, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} take the responsibility lightly, and both of them work together to divine the vision's meaning."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -767,7 +767,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from trusted cat_to to interpret r_c's vision."
+                            "cats_from": "cat_from trusted cat_to to interpret r_c0's vision."
                         }
                     },
                     {
@@ -798,7 +798,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l and r_c0 have an in-depth conversation about r_c's vision as they walk. p_l listens to r_c's dream of clair_list/r_c0. p_l reassures r_c0 but inwardly worries about what it could mean."
+                    "p_l and r_c0 have an in-depth conversation about r_c0's vision as they walk. p_l listens to r_c0's dream of clair_list/r_c0. p_l reassures r_c0 but inwardly worries about what it could mean."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -815,7 +815,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from trusted cat_to to interpret r_c's vision."
+                            "cats_from": "cat_from trusted cat_to to interpret r_c0's vision."
                         }
                     },
                     {
@@ -891,7 +891,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from had total faith in cat_to's ability to interpret r_c's vision."
+                            "cats_from": "cat_from had total faith in cat_to's ability to interpret r_c0's vision."
                         }
                     },
                     {
@@ -970,7 +970,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from trusted cat_to to interpret r_c's vision."
+                            "cats_from": "cat_from trusted cat_to to interpret r_c0's vision."
                         }
                     },
                     {
@@ -1031,7 +1031,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from trusted cat_to to interpret r_c's dream."
+                            "cats_from": "cat_from trusted cat_to to interpret r_c0's dream."
                         }
                     },
                     {
@@ -1081,7 +1081,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from was disappointed to hear that cat_to couldn't interpret r_c's vision."
+                            "cats_from": "cat_from was disappointed to hear that cat_to couldn't interpret r_c0's vision."
                         }
                     }
                 ]
@@ -1133,7 +1133,7 @@
                         "amount": -10,
                         "log": {
                             "cats_from": "r_c0 was disturbed by p_l's drastic interpretation of {PRONOUN/r_c0/poss} dream.",
-                            "cats_to": "p_l was unsettled by r_c's vision and believed it to be a warning of death and destruction."
+                            "cats_to": "p_l was unsettled by r_c0's vision and believed it to be a warning of death and destruction."
                         }
                     }
                 ]
@@ -1270,7 +1270,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from felt uneasy to hear s_c0 interpret r_c's dream as a sign of lurking danger."
+                            "cats_from": "cat_from felt uneasy to hear s_c0 interpret r_c0's dream as a sign of lurking danger."
                         }
                     },
                     {
