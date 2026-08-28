@@ -316,6 +316,16 @@
         "event_id": "warrior_both_parents0",
         "involved_cats": {
             "m_c": {},
+             "r_c0": {
+                "group": [
+                    "player_clan"
+                ],
+                "status": [
+                    "warrior",
+                    "deputy",
+                    "leader"
+                ]
+            },
             "r_c1": {
                 "group": [
                     "player_clan"
@@ -333,6 +343,18 @@
             "Hearing lead_name speak about {PRONOUN/m_c/poss} r_h in front of all the Clan, seeing r_c0's approving nod, r_c1's eyes shining with pride, r_c2 purring loud enough to choke on the sound, it all comes together into a moment of brilliant recognition and celebration as m_c takes on {PRONOUN/m_c/poss} warrior name."
         ],
         "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c0"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "past_app/mentor"
+                ]
+            },
             {
                 "cats_to": [
                     "r_c2",
