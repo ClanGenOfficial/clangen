@@ -293,15 +293,11 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c0"
+                            "n_c0",
+                            "n_c1"
                         ],
                         "new_status": [
                             "warrior"
-                        ]
-                    },
-                    {
-                        "cats": [
-                            "n_c1"
                         ]
                     }
                 ]
@@ -419,14 +415,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c0"
-                        ],
-                        "new_status": [
-                            "apprentice"
-                        ]
-                    },
-                    {
-                        "cats": [
+                            "n_c0",
                             "n_c1"
                         ],
                         "new_status": [
@@ -507,7 +496,7 @@
                     "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
-                            "adult"
+                            "adult", "senior adult"
                         ],
                         "status": [
                             "loner"
@@ -556,7 +545,7 @@
                     "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
-                            "senior"
+                            "senior", "senior adult"
                         ],
                         "status": [
                             "loner"
@@ -583,11 +572,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c0"
-                        ]
-                    },
-                    {
-                        "cats": [
+                            "n_c0",
                             "n_c1"
                         ]
                     }
@@ -602,7 +587,7 @@
                     "n_c0": {
                         "can_create_new_cat": {},
                         "age": [
-                            "adult"
+                            "adult", "senior adult"
                         ],
                         "status": [
                             "loner"
@@ -644,7 +629,7 @@
                             "n_c1"
                         ],
                         "new_status": [
-                            "apprentice"
+                            "apprentice", "medicine cat apprentice"
                         ]
                     }
                 ]
@@ -728,16 +713,7 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c0"
-                        ]
-                    },
-                    {
-                        "cats": [
-                            "n_c1"
-                        ]
-                    },
-                    {
-                        "cats": [
+                            "n_c1",
                             "n_c2"
                         ]
                     }
@@ -782,7 +758,7 @@
                             ]
                         },
                         "age": [
-                            "adolescent"
+                            "adolescent", "kitten"
                         ],
                         "status": [
                             "loner"
@@ -826,11 +802,6 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c0"
-                        ]
-                    },
-                    {
-                        "cats": [
                             "n_c1"
                         ],
                         "new_status": [
@@ -856,10 +827,18 @@
                             "adult",
                             "young adult",
                             "senior adult"
+                        ],
+                        "status": [
+                            "loner"
                         ]
                     },
                     "n_c1": {
                         "can_create_new_cat": {},
+                        "age": [
+                            "adult",
+                            "young adult",
+                            "senior adult"
+                        ],
                         "status": [
                             "loner"
                         ]
@@ -892,15 +871,11 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c0"
+                            "n_c0",
+                            "n_c1"
                         ],
                         "new_status": [
                             "warrior"
-                        ]
-                    },
-                    {
-                        "cats": [
-                            "n_c1"
                         ]
                     }
                 ]
@@ -985,16 +960,8 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c0"
-                        ]
-                    },
-                    {
-                        "cats": [
-                            "n_c1"
-                        ]
-                    },
-                    {
-                        "cats": [
+                            "n_c0",
+                            "n_c1",
                             "n_c2"
                         ]
                     }
@@ -1078,16 +1045,8 @@
                 "join": [
                     {
                         "cats": [
-                            "n_c0"
-                        ]
-                    },
-                    {
-                        "cats": [
-                            "n_c1"
-                        ]
-                    },
-                    {
-                        "cats": [
+                            "n_c0",
+                            "n_c1",
                             "n_c2"
                         ]
                     }
@@ -1105,7 +1064,6 @@
                         "age": [
                             "senior"
                         ],
-                        "gender": "male",
                         "status": [
                             "loner"
                         ]
@@ -1196,27 +1154,14 @@
                             "n_c0"
                         ],
                         "history": "This cat died while wandering.",
-                        "no_results": false
+                        "no_results": true
                     }
                 ],
                 "join": [
                     {
                         "cats": [
-                            "n_c0"
-                        ]
-                    },
-                    {
-                        "cats": [
-                            "n_c1"
-                        ]
-                    },
-                    {
-                        "cats": [
-                            "n_c2"
-                        ]
-                    },
-                    {
-                        "cats": [
+                            "n_c1",
+                            "n_c2",
                             "n_c3"
                         ]
                     }
@@ -1281,7 +1226,8 @@
                             "loner"
                         ],
                         "age": [
-                            "adult"
+                            "adult",
+                            "adolescent"
                         ]
                     },
                     "n_c1": {
@@ -1294,6 +1240,7 @@
                             "loner"
                         ],
                         "age": [
+                            "adult",
                             "adolescent"
                         ]
                     }

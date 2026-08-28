@@ -593,9 +593,6 @@
                         "condition": [
                             "battle_injury"
                         ],
-                        "scar_pool_override": [
-                            "SNOUT"
-                        ],
                         "scar_history": "m_c was badly scarred when rogues attacked {PRONOUN/m_c/poss} patrol.",
                         "death_history": "m_c died of an injury sustained in a rogue ambush."
                     }
@@ -849,9 +846,6 @@
                         ],
                         "condition": [
                             "battle_injury"
-                        ],
-                        "scar_pool_override": [
-                            "MANLEG"
                         ],
                         "scar_history": "m_c was scarred by a badger.",
                         "death_history": "m_c died of an injury inflicted by a badger."
@@ -1134,9 +1128,6 @@
                         "condition": [
                             "big_bite_injury"
                         ],
-                        "scar_pool_override": [
-                            "SIDE"
-                        ],
                         "scar_history": "m_c was scarred by a badger.",
                         "death_history": "m_c died of an injury inflicted by a badger."
                     }
@@ -1404,9 +1395,6 @@
                         "condition": [
                             "battle_injury"
                         ],
-                        "scar_pool_override": [
-                            "BRIDGE"
-                        ],
                         "scar_history": "m_c was scarred by an invading rogue.",
                         "death_history": "m_c died of an injury inflicted by an invading rogue."
                     }
@@ -1556,9 +1544,6 @@
                         ],
                         "condition": [
                             "battle_injury"
-                        ],
-                        "scar_pool_override": [
-                            "CHEEK"
                         ],
                         "scar_history": "m_c was scarred by an invading rogue.",
                         "death_history": "m_c died of an injury inflicted by an invading rogue."
@@ -2024,9 +2009,6 @@
                         "condition": [
                             "battle_injury"
                         ],
-                        "scar_pool_override": [
-                            "BRIDGE"
-                        ],
                         "scar_history": "m_c was scarred by an invading rogue.",
                         "death_history": "m_c died of an injury inflicted by an invading rogue."
                     }
@@ -2278,9 +2260,6 @@
                         ],
                         "condition": [
                             "battle_injury"
-                        ],
-                        "scar_pool_override": [
-                            "CHEEK"
                         ],
                         "scar_history": "m_c was scarred by an invading rogue.",
                         "death_history": "m_c died of an injury inflicted by an invading rogue."
@@ -3758,9 +3737,6 @@
                         "condition": [
                             "big_bite_injury"
                         ],
-                        "scar_pool_override": [
-                            "MANLEG"
-                        ],
                         "scar_history": "m_c was scarred while defending the Clan against a dog.",
                         "death_history": "m_c died of injuries inflicted by a large dog."
                     }
@@ -3955,9 +3931,6 @@
                         "condition": [
                             "big_bite_injury"
                         ],
-                        "scar_pool_override": [
-                            "BRIGHTHEART"
-                        ],
                         "scar_history": "m_c was scarred while defending the Clan against a dog.",
                         "death_history": "m_c died of injuries inflicted by a large dog."
                     }
@@ -4113,9 +4086,6 @@
                         ],
                         "condition": [
                             "small_bite_injury"
-                        ],
-                        "scar_pool_override": [
-                            "LEGBITE"
                         ],
                         "scar_history": "m_c got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
                         "death_history": "m_c died of injuries inflicted by a small dog."
@@ -4292,9 +4262,6 @@
                         ],
                         "condition": [
                             "small_bite_injury"
-                        ],
-                        "scar_pool_override": [
-                            "LEGBITE"
                         ],
                         "scar_history": "m_c got a scar from a fight with a small dog, but {PRONOUN/m_c/subject} always {VERB/m_c/say/says} it was a huge dog.",
                         "death_history": "m_c died of injuries inflicted by a small dog."
@@ -4804,9 +4771,6 @@
                         "condition": [
                             "big_bite_injury"
                         ],
-                        "scar_pool_override": [
-                            "ONE"
-                        ],
                         "scar_history": "m_c carries a scar from a fox fight.",
                         "death_history": "m_c died of an injury inflicted by a red vixen."
                     }
@@ -4856,9 +4820,6 @@
                         ],
                         "condition": [
                             "big_bite_injury"
-                        ],
-                        "scar_pool_override": [
-                            "ONE"
                         ],
                         "scar_history": "m_c carries a scar from a fox fight.",
                         "death_history": "m_c died of an injury inflicted by a fox."

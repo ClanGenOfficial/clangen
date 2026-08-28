@@ -306,6 +306,9 @@ def one_moon():
     # Clear the list of cats that died this moon.
     game.just_died.clear()
 
+    # Check for mentorless apprentices
+    check_missing_mentors()
+
     # Promote leader and deputy, if needed.
     check_leader()
     check_and_promote_deputy()
@@ -1869,6 +1872,35 @@ def check_leader():
                 event_text_adjust(
                     Cat, i18n.t("defaults.warn_no_leader"), clan=game.clan
                 )
+            ),
+        )
+
+
+def check_missing_mentors():
+    """
+    Checks to see if any apprentices have missing mentors, reminds players of this.
+    """
+
+    # Only do the check if mentors aren't being assigned randomly.
+    if get_clan_setting("assign_mentors"):
+        return
+
+    mentorless = []
+    for app in find_alive_cats_with_rank(
+        Cat,
+        [CatRank.MEDICINE_APPRENTICE, CatRank.APPRENTICE, CatRank.MEDIATOR_APPRENTICE],
+    ):
+        if not app.mentor:
+            mentorless.append(app.ID)
+
+    if mentorless:
+        game.cur_events_list.insert(
+            0,
+            EventInformation(
+                event_text_adjust(
+                    Cat, i18n.t("defaults.warn_missing_mentor", count=len(mentorless))
+                ),
+                cats_involved=mentorless,
             ),
         )
 

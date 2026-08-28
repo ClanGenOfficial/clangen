@@ -599,15 +599,22 @@ dev_tools = false
   # base 1/chance for a romance patrol. gets modified further in code
   chance_of_romance_patrol = 16
 
-  # forces patrol with this id to occur, assuming it's possible by constraints
-  debug_ensure_patrol_id = ""
+  [patrol_generation.debug_ensure]
+    # forces patrol with this id to occur, assuming it's possible by constraints
+    patrol_id = ""
 
-  # set to true to remove all constraints for patrols regarding location, season, biomes, etc.
-  debug_override_patrol_stat_requirements = false
+    # set to true to remove all constraints for patrols regarding location, season, biomes, etc.
+    override_patrol_stat_requirements = false
 
-  # set to true (NO QUOTES) to ensure the debug patrol succeeds
-  # set to false (NO QUOTES) to ensure the debug patrol fails
-  debug_ensure_patrol_outcome = ""
+    # set to true (NO QUOTES) to ensure the debug patrol succeeds
+    # set to false (NO QUOTES) to ensure the debug patrol fails
+    outcome_type = ""
+
+    # specify an outcome to use via its index in the outcome list. by default this is 0 (the first outcome)
+    # this will not work if no patrol_id and outcome_type is set
+    outcome_index = 0
+
+
 
 [event_generation]
   # forces event with this id to occur
@@ -624,7 +631,7 @@ dev_tools = false
   debug_override_frequency = 0
 
   # forces ceremony with this id to occur
-  debug_ensure_ceremony_id = "warrior_default0"
+  debug_ensure_ceremony_id = ""
 
 [death_related]
   # the maximum lives a leader can have

@@ -7021,13 +7021,13 @@
                 2
             ],
             "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
                 2,
                 2
             ]
+        },
+        "involved_cats": {
+            "p_l": {},
+            "r_c0": {}
         },
         "relationship_constraint": [
             {
@@ -7055,28 +7055,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 misses a f_tp_s, and r_c2 startles a pair of f_tp_p. They don't let it get them down, instead capturing a plump rabbit with a beautiful team ambush! But when they bring it back to camp, r_c1 tries to take sole credit for the prey, and instead of familial talent, it's familial discord that's displayed, as the apprentices get into a massive argument in the middle of camp."
+                    "r_c0 misses a f_tp_s, and p_l startles a pair of f_tp_p. They don't let it get them down, instead capturing a plump rabbit with a beautiful team ambush! But when they bring it back to camp, r_c0 tries to take sole credit for the prey, and instead of familial talent, it's familial discord that's displayed, as the apprentices get into a massive argument in the middle of camp."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "r_c0"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -7099,10 +7087,9 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 catches a great f_mp_s, and two f_tp_p! But {PRONOUN/s_c0/poss} sibling comes up empty-pawed. s_c0 offers to let {PRONOUN/p_l/object} claim the smaller prey as {PRONOUN/p_l/poss} own, but the insulting suggestion just causes a massive argument."
+                    "s_c0 catches a great f_mp_s, and two f_tp_p! But {PRONOUN/s_c0/poss} sibling comes up empty-pawed. s_c0 offers to let {PRONOUN/s_c1/object} claim the smaller prey as {PRONOUN/s_c1/poss} own, but the insulting suggestion just causes a massive argument."
                 ],
                 "involved_cats": {
-                    "r_c0": {},
                     "s_c0": {
                         "stat": {
                             "skill": [
@@ -7110,8 +7097,11 @@
                             ]
                         },
                         "prior_abbreviation": [
-                            "p_l"
+                            "any"
                         ]
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": ["-s_c0"]
                     }
                 },
                 "exp_gained": 20,
@@ -7121,7 +7111,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -7155,7 +7145,13 @@
                             "skill": [
                                 "HUNTER,0"
                             ]
+                        },
+                        "has_mentor": {
+                            "current": true
                         }
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": ["-s_c0"]
                     }
                 },
                 "exp_gained": 20,
@@ -7196,10 +7192,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "r_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -7222,28 +7218,24 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "r_c1 takes a hard fall while chasing a f_tp_s along the forest floor, and the afternoon's hunt is called off as {PRONOUN/r_c1/poss} sibling helps {PRONOUN/r_c1/object} back to camp, chatting reassuringly about how hard {PRONOUN/r_c2/poss} hunting lessons are."
+                    "s_c0 takes a hard fall while chasing a f_tp_s along the forest floor, and the afternoon's hunt is called off as {PRONOUN/s_c0/poss} sibling helps {PRONOUN/s_c0/object} back to camp, chatting reassuringly about how hard {PRONOUN/s_c1/poss} hunting lessons are."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
                     },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
+                    "s_c1": {
+                        "prior_abbreviation": ["-s_c0"]
                     }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "s_c0"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "s_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -7266,7 +7258,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c1"
+                            "s_c0"
                         ],
                         "condition": [
                             "minor_injury"
