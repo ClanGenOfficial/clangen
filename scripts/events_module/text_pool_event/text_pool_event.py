@@ -17,6 +17,7 @@ from scripts.events_module.parameter_dicts import (
     LostDict,
     JoinDict,
     FutureEventDict,
+    MeetDict,
 )
 from scripts.game_structure import constants
 
@@ -59,6 +60,7 @@ class TextPoolEvent:
     condition: list[ConditionDict] = field(default_factory=list[dict])
     lost: list[LostDict] = field(default_factory=list[dict])
     join: list[JoinDict] = field(default_factory=list[dict])
+    meet: list[MeetDict] = field(default_factory=list[dict])
     future_event: list[FutureEventDict] = field(default_factory=list[dict])
 
     def __post_init__(self):
