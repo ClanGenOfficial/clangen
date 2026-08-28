@@ -522,6 +522,27 @@ def event_text_adjust(
     return text
 
 
+def accessory_text_adjust(text: str, acc_dict: dict[str, str]) -> str:
+    """
+    Handles just the accessory text adjust. Used for TextPoolEvents.
+    """
+    for text_abbr, acc_name in acc_dict.items():
+        if f"{text_abbr}_plural" in text:
+            text = text.replace(
+                f"{text_abbr}_plural",
+                i18n.t(f"cat.accessories.{acc_name}", count=2),
+            )
+
+        # acc_singular
+        if f"{text_abbr}_singular" in text:
+            text = text.replace(
+                f"{text_abbr}_singular",
+                i18n.t(f"cat.accessories.{acc_name}", count=1),
+            )
+
+    return text
+
+
 def _replace_clan_name(text, abbreviation, clan_name):
     vowels = ["A", "E", "I", "O", "U"]
 

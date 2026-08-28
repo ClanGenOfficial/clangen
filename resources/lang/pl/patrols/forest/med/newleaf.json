@@ -1,0 +1,127 @@
+[
+    {
+        "event_id": "fst_med_newleaf_allergies",
+        "types": [
+            "herb_gathering"
+        ],
+        "frequency": 2,
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ],
+            "normal adult": [
+                1,
+                5
+            ],
+            "medicine cat": [
+                1,
+                5
+            ]
+        },
+        "involved_cats": {
+            "r_c0": {}
+        },
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites\/gen_med_herbs_McWrWr",
+        "intro_text": "p_l didn't plan to have other cats with {PRONOUN\/p_l\/object}, but {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} grateful for the help anyway, especially with the amount of blooming plants. That is, until r_c0 starts sneezing. Clearly, the pollen from the trees is affecting {PRONOUN\/r_c0\/object} somewhat.",
+        "decline_text": "Since r_c0 isn't up for a patrol in a pollen-filled forest, the patrol returns to camp with no new herbs. At least r_c0 seems to have stopped sneezing for now.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "backgrounds\/fst_canopy",
+                "strings": [
+                    "p_l continues the patrol without acknowledging r_c0 sneezing. Despite the circumstances, the fresh newleaf plants are bountiful for the group, and the patrol returns with an average collection of herbs."
+                ],
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "running nose"
+                        ],
+                        "no_results": true
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "outcome_art": "cat_sprites\/gen_embarrassed_WrWr",
+                "strings": [
+                    "p_l doesn't see r_c's running nose as a burden. To p_l, it's an opportunity. While it prevents r_c0 from finding herbs, it makes r_c0 the perfect collector of herbs with less pleasant smells. When the patrol comes across a patch of some particularly pungent-scented herbs at the root of a tree, r_c0 is sent to collect them."
+                ],
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "running nose"
+                        ],
+                        "no_results": true
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/fst_med_stumble_McWr",
+                "strings": [
+                    "The patrol continues their search for herbs, despite r_c's plight. Unfortunately, the group doesn't get very far. r_c0 stumbles mid-sneeze, tripping over a particularly large tree root and tumbling forward, knocking over other cats in {PRONOUN\/r_c0\/poss} wake."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from lost respect for cat_to after a sidetracked patrol."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "running nose"
+                        ],
+                        "no_results": true
+                    }
+                ]
+            }
+        ]
+    }
+]
