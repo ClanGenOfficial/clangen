@@ -19,8 +19,12 @@
         },
         "chance_of_success": 70,
         "patrol_art": "bord_general_intro",
-        "intro_text": "The patrol hears a strange thwacking sound from the other side of a boulder. After initial confusion, the patrol realizes that it is courting season for the goats that live on the mountain. The sound must be two buck goats engaged in a fight. It must be quite the spectacle...",
-        "decline_text": "Fun as it may be to watch... it could also end in disaster. The patrol decides it's not worth the risk and continues on its way.",
+        "intro_strings": [
+            "The patrol hears a strange thwacking sound from the other side of a boulder. After initial confusion, the patrol realizes that it is courting season for the goats that live on the mountain. The sound must be two buck goats engaged in a fight. It must be quite the spectacle..."
+        ],
+        "decline_strings": [
+            "Fun as it may be to watch... it could also end in disaster. The patrol decides it's not worth the risk and continues on its way."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -51,7 +55,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "While the rest of the patrol is hesitant, r_c0 leaps to the top of the boulder to watch the show. {PRONOUN\/r_c0\/subject\/CAP} {VERB\/r_c0\/watch\/watches} with wonder as the two bucks fight. At the urging of r_c0, the rest of the patrol joins {PRONOUN\/r_c0\/object} in gawking at the battle."
+                    "While the rest of the patrol is hesitant, r_c0 leaps to the top of the boulder to watch the show. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/watch/watches} with wonder as the two bucks fight. At the urging of r_c0, the rest of the patrol joins {PRONOUN/r_c0/object} in gawking at the battle."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -106,7 +110,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 creeps closer, wanting to watch the show. Unfortunately, {PRONOUN\/r_c0\/subject} accidentally {VERB\/r_c0\/step\/steps} on a dead leaf, and the crunch alerts the two bucks. The patrol watches in disappointment as the two bucks bleat and run from sight. All that bravado, and they were scared off by a leaf?"
+                    "r_c0 creeps closer, wanting to watch the show. Unfortunately, {PRONOUN/r_c0/subject} accidentally {VERB/r_c0/step/steps} on a dead leaf, and the crunch alerts the two bucks. The patrol watches in disappointment as the two bucks bleat and run from sight. All that bravado, and they were scared off by a leaf?"
                 ],
                 "involved_cats": {
                     "r_c0": {}

@@ -27,8 +27,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "The sun beats down on the desert, driving every creature away from its gaze with blinding heat.",
-        "decline_text": "Giving up on the hunt, p_l finds a burrow to wait out the heat of the day until they can return back to camp.",
+        "intro_strings": [
+            "The sun beats down on the desert, driving every creature away from its gaze with blinding heat."
+        ],
+        "decline_strings": [
+            "Giving up on the hunt, p_l finds a burrow to wait out the heat of the day until they can return back to camp."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -147,8 +151,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "The sun beats down on the desert, driving every creature away from its gaze with blinding heat.",
-        "decline_text": "Giving up on the hunt, p_l finds a burrow to wait out the heat of the day until they can return back to camp.",
+        "intro_strings": [
+            "The sun beats down on the desert, driving every creature away from its gaze with blinding heat."
+        ],
+        "decline_strings": [
+            "Giving up on the hunt, p_l finds a burrow to wait out the heat of the day until they can return back to camp."
+        ],
         "success_outcomes": [
             {
                 "frequency": 1,

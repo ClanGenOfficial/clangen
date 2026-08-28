@@ -19,8 +19,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
-        "decline_text": "They decide to turn back and wait until the snow dies down.",
+        "intro_strings": [
+            "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile."
+        ],
+        "decline_strings": [
+            "They decide to turn back and wait until the snow dies down."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -284,8 +288,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "It starts snowing soon after p_l sets out, trying to bring back something nice for the fresh-kill pile.",
-        "decline_text": "They decide to turn back and wait until the snow dies down.",
+        "intro_strings": [
+            "It starts snowing soon after p_l sets out, trying to bring back something nice for the fresh-kill pile."
+        ],
+        "decline_strings": [
+            "They decide to turn back and wait until the snow dies down."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -321,7 +329,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 really shows {PRONOUN\/s_c0\/poss} talent, bringing a nice eel back to camp for the fresh-kill pile."
+                    "s_c0 really shows {PRONOUN/s_c0/poss} talent, bringing a nice eel back to camp for the fresh-kill pile."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -366,7 +374,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The prey must be hiding; p_l catches nothing. As a snowstorm descends and visibility drops, p_l hides under a bush. By the time the storm has cleared enough to return to camp, {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} shivering and numb."
+                    "The prey must be hiding; p_l catches nothing. As a snowstorm descends and visibility drops, p_l hides under a bush. By the time the storm has cleared enough to return to camp, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} shivering and numb."
                 ],
                 "exp_gained": 0,
                 "condition": [
@@ -425,8 +433,12 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
-        "decline_text": "They decide to turn back and wait until the snow dies down.",
+        "intro_strings": [
+            "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile."
+        ],
+        "decline_strings": [
+            "They decide to turn back and wait until the snow dies down."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -571,7 +583,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats huddle together, desperately trying to conserve warmth, no one notices that r_c0 has stopped responding. At some point in the storm, {PRONOUN\/r_c0\/poss} life slips away, and {PRONOUN\/r_c0\/poss} distraught Clanmates are left to carry {PRONOUN\/r_c0\/poss} body home."
+                    "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats huddle together, desperately trying to conserve warmth, no one notices that r_c0 has stopped responding. At some point in the storm, {PRONOUN/r_c0/poss} life slips away, and {PRONOUN/r_c0/poss} distraught Clanmates are left to carry {PRONOUN/r_c0/poss} body home."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -607,7 +619,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "A storm descends, sudden and violent, putting an end to any other thoughts but survival. When the snowstorm leaves, finally, the cats trudge back home, but r_c0 hasn't escaped unscathed, {PRONOUN\/r_c0\/poss} body chilled and refusing to warm up properly."
+                    "A storm descends, sudden and violent, putting an end to any other thoughts but survival. When the snowstorm leaves, finally, the cats trudge back home, but r_c0 hasn't escaped unscathed, {PRONOUN/r_c0/poss} body chilled and refusing to warm up properly."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -648,8 +660,12 @@
         },
         "chance_of_success": 70,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "The patrol catches the scent of a fox. Tracking it, they find a kit fox fishing on a branch overlooking the shallows.",
-        "decline_text": "The patrol decides not to quarrel with the fox. There are plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
+        "intro_strings": [
+            "The patrol catches the scent of a fox. Tracking it, they find a kit fox fishing on a branch overlooking the shallows."
+        ],
+        "decline_strings": [
+            "The patrol decides not to quarrel with the fox. There are plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -875,8 +891,12 @@
         },
         "chance_of_success": 70,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "p_l catches the scent of a fox. Tracking it, {PRONOUN\/p_l\/subject} {VERB\/p_l\/find\/finds} a kit fox fishing on a branch overlooking the shallows.",
-        "decline_text": "p_l decides not to quarrel with the fox. There are plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
+        "intro_strings": [
+            "p_l catches the scent of a fox. Tracking it, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a kit fox fishing on a branch overlooking the shallows."
+        ],
+        "decline_strings": [
+            "p_l decides not to quarrel with the fox. There are plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -907,7 +927,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 uses every trick in {PRONOUN\/s_c0\/poss} fighting skillset to attack the fox with no one to watch {PRONOUN\/s_c0\/poss} flank, biding {PRONOUN\/s_c0\/poss} time until the perfect opportunity opens up and {PRONOUN\/s_c0\/subject} pounce onto the fox's back, digging in {PRONOUN\/s_c0\/poss} claws. It's a wild ride through the swamp until the fox bucks {PRONOUN\/s_c0\/object} off, but it wins {PRONOUN\/s_c0\/subject} the fish carcass."
+                    "s_c0 uses every trick in {PRONOUN/s_c0/poss} fighting skillset to attack the fox with no one to watch {PRONOUN/s_c0/poss} flank, biding {PRONOUN/s_c0/poss} time until the perfect opportunity opens up and {PRONOUN/s_c0/subject} pounce onto the fox's back, digging in {PRONOUN/s_c0/poss} claws. It's a wild ride through the swamp until the fox bucks {PRONOUN/s_c0/object} off, but it wins {PRONOUN/s_c0/subject} the fish carcass."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -952,7 +972,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "In an act of daring bravery, s_c0 darts low to the ground, gets under its snout, and sinks {PRONOUN\/s_c0\/poss} teeth into the fox's throat. But then {PRONOUN\/s_c0\/subject}{VERB\/s_c0\/'re\/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN\/s_c0\/subject\/CAP}{VERB\/s_c0\/'re\/'s} dragged through the swamp, over rocks and through bushes, until the fox finally collapses and the battered s_c0 goes back to proudly claim the fish."
+                    "In an act of daring bravery, s_c0 darts low to the ground, gets under its snout, and sinks {PRONOUN/s_c0/poss} teeth into the fox's throat. But then {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} stuck, unwilling to let go and risk being bitten. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} dragged through the swamp, over rocks and through bushes, until the fox finally collapses and the battered s_c0 goes back to proudly claim the fish."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1046,14 +1066,18 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "Amid the drab leaf-bare shaded world, a flash of brilliant color above a big stream catches r_c1's attention.",
-        "decline_text": "It's out of the ordinary... and might be dangerous. r_c1 ignores it.",
+        "intro_strings": [
+            "Amid the drab leaf-bare shaded world, a flash of brilliant color above a big stream catches r_c1's attention."
+        ],
+        "decline_strings": [
+            "It's out of the ordinary... and might be dangerous. r_c1 ignores it."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_train_sneakprey_Wr",
+                "outcome_art": "cat_sprites/gen_train_sneakprey_Wr",
                 "strings": [
-                    "s_c0 explodes from the bushes, just as much of a blur as the bird as it tries to escape, but {PRONOUN\/s_c0\/poss} pounce is too high, {PRONOUN\/s_c0\/poss} claws too quick. r_c1 tries not to look too impressed (gotta keep it cool), but that's exactly the kind of warrior {PRONOUN\/r_c1\/subject} {VERB\/r_c1\/want\/wants} to be, an astonishing hunter."
+                    "s_c0 explodes from the bushes, just as much of a blur as the bird as it tries to escape, but {PRONOUN/s_c0/poss} pounce is too high, {PRONOUN/s_c0/poss} claws too quick. r_c1 tries not to look too impressed (gotta keep it cool), but that's exactly the kind of warrior {PRONOUN/r_c1/subject} {VERB/r_c1/want/wants} to be, an astonishing hunter."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1117,9 +1141,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_train_sneakprey_Wr",
+                "outcome_art": "cat_sprites/gen_train_sneakprey_Wr",
                 "strings": [
-                    "It's only because r_c1 was already looking that {PRONOUN\/r_c1\/subject} {VERB\/r_c1\/spot\/spots} s_c0, high on the tree above the bright bird, edging forward carefully and stealthily. r_c1 freezes, watching. s_c0 descends on the kingfisher from the one direction it wasn't watching, behind and above it, letting momentum do the work of killing as the apprentice watches with shining eyes."
+                    "It's only because r_c1 was already looking that {PRONOUN/r_c1/subject} {VERB/r_c1/spot/spots} s_c0, high on the tree above the bright bird, edging forward carefully and stealthily. r_c1 freezes, watching. s_c0 descends on the kingfisher from the one direction it wasn't watching, behind and above it, letting momentum do the work of killing as the apprentice watches with shining eyes."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1183,7 +1207,7 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_train_sunny_WrAp",
+                "outcome_art": "cat_sprites/gen_train_sunny_WrAp",
                 "strings": [
                     "A kingfisher, p_l whispers from r_c1's side. They'll take it down together, next time it dives for something in the stream. It's a good plan, and though they have to quickly warm up afterwards, sharing tongues to get cold water off pelts, they win a nice prize for the fresh-kill pile."
                 ],
@@ -1240,9 +1264,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_train_sneakprey_Wr",
+                "outcome_art": "cat_sprites/gen_train_sneakprey_Wr",
                 "strings": [
-                    "The patrol brings down the kingfisher in a flurry of feathers, and as r_c1 regains {PRONOUN\/r_c1\/poss} breath, s_c0 smiles, putting a paw on the bird. For a half-moon each year around the shortest day, the storms will not come, and that is when the kingfishers lay their eggs, in the halcyon days."
+                    "The patrol brings down the kingfisher in a flurry of feathers, and as r_c1 regains {PRONOUN/r_c1/poss} breath, s_c0 smiles, putting a paw on the bird. For a half-moon each year around the shortest day, the storms will not come, and that is when the kingfishers lay their eggs, in the halcyon days."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1324,9 +1348,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_train_sneakprey_Wr",
+                "outcome_art": "cat_sprites/gen_train_sneakprey_Wr",
                 "strings": [
-                    "The patrol brings down the kingfisher in a flurry of feathers. As r_c1 regains {PRONOUN\/r_c1\/poss} breath, p_l scoffs. Don't let anyone tell you foolish myths of halcyon days, r_c1. Kingfishers nest not in the dead of leaf-bare, but in newleaf, like most birds."
+                    "The patrol brings down the kingfisher in a flurry of feathers. As r_c1 regains {PRONOUN/r_c1/poss} breath, p_l scoffs. Don't let anyone tell you foolish myths of halcyon days, r_c1. Kingfishers nest not in the dead of leaf-bare, but in newleaf, like most birds."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1398,7 +1422,7 @@
             },
             {
                 "frequency": 1,
-                "outcome_art": "cat_sprites\/gen_train_sneakprey_Wr",
+                "outcome_art": "cat_sprites/gen_train_sneakprey_Wr",
                 "strings": [
                     "It's a kingfisher, p_l whispers. Go on, give it a shot. r_c1 creeps closer, easily tracking the bright bird in the foliage, but the kingfisher has its own hunt. It dips into the frosty stream, and comes up with a small frog held in its beak. A twig snaps under r_c1's paw, and the bird flees \u2014 but it leaves the frog behind for r_c1 to take!"
                 ],
@@ -1425,7 +1449,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_to encouraged cat_from to hunt a kingfisher, and while cat_from wasn't able to catch the bird, {PRONOUN\/cat_from\/subject} caught its prey."
+                            "cats_from": "cat_to encouraged cat_from to hunt a kingfisher, and while cat_from wasn't able to catch the bird, {PRONOUN/cat_from/subject} caught its prey."
                         }
                     },
                     {
@@ -1458,7 +1482,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c1 tilts {PRONOUN\/r_c1\/poss} head, confused at the sudden splash of color in a cold world. The kingfisher sees the movement, and flies off. Drat."
+                    "r_c1 tilts {PRONOUN/r_c1/poss} head, confused at the sudden splash of color in a cold world. The kingfisher sees the movement, and flies off. Drat."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1490,7 +1514,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Trying to catch the kingfisher, r_c1 misjudges {PRONOUN\/r_c1\/poss} pounce and has to be hauled out of the freezing stream by {PRONOUN\/r_c1\/poss} scruff. It's neither dignified nor comfortable."
+                    "Trying to catch the kingfisher, r_c1 misjudges {PRONOUN/r_c1/poss} pounce and has to be hauled out of the freezing stream by {PRONOUN/r_c1/poss} scruff. It's neither dignified nor comfortable."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1508,8 +1532,8 @@
                         "condition": [
                             "shivering"
                         ],
-                        "scar_history": "m_c was scarred from the bite of the cold stream {PRONOUN\/m_c\/subject} fell into as an apprentice.",
-                        "death_history": "Falling into a cold stream gave m_c problems that eventually resulted in {PRONOUN\/m_c\/poss} death."
+                        "scar_history": "m_c was scarred from the bite of the cold stream {PRONOUN/m_c/subject} fell into as an apprentice.",
+                        "death_history": "Falling into a cold stream gave m_c problems that eventually resulted in {PRONOUN/m_c/poss} death."
                     }
                 ]
             }

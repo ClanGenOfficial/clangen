@@ -26,9 +26,13 @@
             ]
         },
         "chance_of_success": 60,
-        "patrol_art": "backgrounds\/mtn_eagles",
-        "intro_text": "The cats head out into the crisp clear newleaf sun, and p_l leads them towards a massive messy eagle nest.",
-        "decline_text": "When they get there, they discover that this nest isn't being used this newleaf. Disappointing.",
+        "patrol_art": "backgrounds/mtn_eagles",
+        "intro_strings": [
+            "The cats head out into the crisp clear newleaf sun, and p_l leads them towards a massive messy eagle nest."
+        ],
+        "decline_strings": [
+            "When they get there, they discover that this nest isn't being used this newleaf. Disappointing."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -289,7 +293,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l can't get r_c1 to take the training session seriously. {PRONOUN\/r_c1\/subject\/CAP} {VERB\/r_c1\/make\/makes} too much noise, not understanding the importance and danger of the opportunity."
+                    "p_l can't get r_c1 to take the training session seriously. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/make/makes} too much noise, not understanding the importance and danger of the opportunity."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -348,9 +352,13 @@
             ]
         },
         "chance_of_success": 40,
-        "patrol_art": "backgrounds\/mtn_eagles",
-        "intro_text": "The cats head out into the crisp clear newleaf sun, and p_l leads them towards a massive messy eagle nest.",
-        "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
+        "patrol_art": "backgrounds/mtn_eagles",
+        "intro_strings": [
+            "The cats head out into the crisp clear newleaf sun, and p_l leads them towards a massive messy eagle nest."
+        ],
+        "decline_strings": [
+            "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -566,7 +574,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 cannot believe that going near an eagle camp could ever possibly be safe and flatly refuses to go. r_c2 tries to comfort {PRONOUN\/r_c1\/object}, but the patrol is called off."
+                    "r_c1 cannot believe that going near an eagle camp could ever possibly be safe and flatly refuses to go. r_c2 tries to comfort {PRONOUN/r_c1/object}, but the patrol is called off."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -613,7 +621,7 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "r_c2 tried to comfort r_c1 when {PRONOUN\/r_c1\/subject} {VERB\/r_c1\/were\/was} too nervous to go near an eagle nest for training."
+                            "cats_from": "r_c2 tried to comfort r_c1 when {PRONOUN/r_c1/subject} {VERB/r_c1/were/was} too nervous to go near an eagle nest for training."
                         }
                     }
                 ]
@@ -621,7 +629,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l can't get r_c1 to take the training session seriously. {PRONOUN\/r_c1\/subject\/CAP} {VERB\/r_c1\/make\/makes} too much noise, not understanding the importance and danger of the opportunity. {PRONOUN\/r_c1\/subject\/CAP} {VERB\/r_c1\/distract\/distracts} r_c2 as well, and eventually p_l has to give up on teaching."
+                    "p_l can't get r_c1 to take the training session seriously. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/make/makes} too much noise, not understanding the importance and danger of the opportunity. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/distract/distracts} r_c2 as well, and eventually p_l has to give up on teaching."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -717,13 +725,17 @@
             }
         },
         "chance_of_success": 60,
-        "patrol_art": "cat_sprites\/gen_crouchingperplexed_WrWr",
-        "intro_text": "Look at this. p_l gestures with {PRONOUN\/p_l\/poss} tail, calling r_c1's attention to the other side of the vast valley. In the snow, something is erupting out of a massive burrow.",
-        "decline_text": "Best not to be anywhere near a bear fresh from hibernation, the cats decide.",
+        "patrol_art": "cat_sprites/gen_crouchingperplexed_WrWr",
+        "intro_strings": [
+            "Look at this. p_l gestures with {PRONOUN/p_l/poss} tail, calling r_c1's attention to the other side of the vast valley. In the snow, something is erupting out of a massive burrow."
+        ],
+        "decline_strings": [
+            "Best not to be anywhere near a bear fresh from hibernation, the cats decide."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_train_ghost_WrWrWr",
+                "outcome_art": "cat_sprites/gen_train_ghost_WrWrWr",
                 "strings": [
                     "Have they ever starved? Felt hunger gnawing their belly, filled it with water just to get a moment's relief, felt their limbs tremble with weakness as their mind desperately yearns for prey? How long did that take, a day, a quarter of a moon? Imagine several moons in a row without food. Stay away from bears emerging from hibernation, p_l warns."
                 ],
@@ -753,7 +765,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 takes one look at the bear emerging on the opposite slope and turns to run for home. It takes p_l almost half the distance to camp to catch up with {PRONOUN\/r_c1\/object} again, and {PRONOUN\/p_l\/subject} {VERB\/p_l\/congratulate\/congratulates} r_c1 on {PRONOUN\/r_c1\/poss} speed as {PRONOUN\/p_l\/subject} {VERB\/p_l\/pant\/pants}. r_c1 didn't need to worry, though; that sow is slowed by her newborn cubs."
+                    "r_c1 takes one look at the bear emerging on the opposite slope and turns to run for home. It takes p_l almost half the distance to camp to catch up with {PRONOUN/r_c1/object} again, and {PRONOUN/p_l/subject} {VERB/p_l/congratulate/congratulates} r_c1 on {PRONOUN/r_c1/poss} speed as {PRONOUN/p_l/subject} {VERB/p_l/pant/pants}. r_c1 didn't need to worry, though; that sow is slowed by her newborn cubs."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -778,7 +790,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "p_l reassured r_c1 when {PRONOUN\/r_c1\/subject} ran off during a lesson about hibernating bears."
+                            "cats_from": "p_l reassured r_c1 when {PRONOUN/r_c1/subject} ran off during a lesson about hibernating bears."
                         }
                     }
                 ]
