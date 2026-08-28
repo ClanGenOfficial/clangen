@@ -324,8 +324,7 @@
                 "values": ["like"],
                 "amount": 10,
                 "log": {
-                    "cats_from": "m_c declared n_c:0 was {PRONOUN/m_c/poss} best friend to the whole Clan.",
-                    "cats_to": "m_c declared n_c:0 was {PRONOUN/m_c/poss} best friend to the whole Clan."
+                    "cats_from": "m_c declared n_c:0 was {PRONOUN/m_c/poss} best friend to the whole Clan."
                 }
               }
         ],
