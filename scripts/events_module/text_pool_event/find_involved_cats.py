@@ -36,6 +36,7 @@ def find_cats(
     cats_to_create = []
 
     can_give_condition = hasattr(event, "condition")
+    can_give_accessory = hasattr(event, "gain_accessory")
 
     # just an initial relationship check to catch things like patrol_cats
     if involved_cats and event.relationship_constraint:
@@ -47,6 +48,9 @@ def find_cats(
 
     for abbr, constraints in event.involved_cats.items():
         possible_injuries = get_potential_conditions(abbr, can_give_condition, event)
+        possible_accessories = get_potential_accessories(
+            abbr, can_give_accessory, event
+        )
 
         # CHECK ALREADY ASSIGNED CAT
         if abbr in involved_cats:
@@ -85,6 +89,7 @@ def find_cats(
                 event,
                 constraints,
                 possible_injuries,
+                possible_accessories,
             )
             # if we found no one, then this event isn't possible, and we should try a different one
             if not temp_involved_cats["multi_cat"]:
@@ -112,6 +117,7 @@ def find_cats(
             possible_cats=possible_cats,
             tags=event.tags,
             injuries=possible_injuries,
+            new_accessories=possible_accessories,
             other_involved_clan_id=other_clan.group_ID if other_clan else None,
             return_list=True,
             return_id=False,
@@ -140,6 +146,9 @@ def find_cats(
         constraints = event.involved_cats[abbr]
         cat_list = [c for c in outside_cats if c not in temp_involved_cats.values()]
         possible_injuries = get_potential_conditions(abbr, can_give_condition, event)
+        possible_accessories = get_potential_accessories(
+            abbr, can_give_accessory, event
+        )
 
         # initial filter of the entire list of cats for the more general constraints
         possible_cats = cat_for_event(
@@ -147,6 +156,7 @@ def find_cats(
             possible_cats=cat_list,
             tags=event.tags,
             injuries=possible_injuries,
+            new_accessories=possible_accessories,
             other_involved_clan_id=other_clan.group_ID if other_clan else None,
             return_list=True,
             return_id=False,
@@ -173,6 +183,17 @@ def get_potential_conditions(abbr, can_give_condition, event):
             if abbr in block["cats"]:
                 possible_injuries.extend(block["condition"])
     return possible_injuries
+
+
+def get_potential_accessories(abbr, can_give_accessory, event):
+    possible_accs = []
+    # grab any injuries they might get
+    if can_give_accessory and event.gain_accessory:
+        for block in event.gain_accessory:
+            if abbr in block["cats"]:
+                possible_accs.extend(block["accessory"])
+
+    return possible_accs
 
 
 def _check_prior_abbreviation(
@@ -276,6 +297,7 @@ def _get_multi_cats(
     event: TextPoolEvent,
     cat_constraints: InvolvedCatDict,
     possible_injuries: list,
+    possible_accessories: list,
 ) -> list[Cat]:
     """
     Finds and returns multiple available cats for use as a group in the event.
@@ -291,6 +313,7 @@ def _get_multi_cats(
         event.tags,
         involved_cat_dict=involved_cats,
         injuries=possible_injuries,
+        new_accessories=possible_accessories,
         return_list=True,
         return_id=False,
     )

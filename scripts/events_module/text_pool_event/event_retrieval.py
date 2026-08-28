@@ -20,13 +20,13 @@ def get_valid_event(
     primary_cat: Cat,
     involved_cats: dict,
     interactable_cats: list[Cat],
-    possible_events: list[Union[PatrolEvent, TextPoolEvent]],
+    possible_events: list[PatrolEvent | TextPoolEvent],
     other_clan: Optional[OtherClan] = None,
     ensured_id: Optional[str] = None,
     general_constraints_active: bool = True,
     cat_constraints_active: bool = True,
     frequency_active: bool = True,
-) -> tuple[Optional[Union[PatrolEvent, TextPoolEvent]], dict]:
+) -> tuple[Optional[PatrolEvent | TextPoolEvent], dict]:
     """
     Check given possible_events against current game state and involved cats. Returns a valid event and involved cats.
     :param primary_cat: The "main" cat of the event. For patrols this is the patrol leader.

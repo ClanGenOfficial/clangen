@@ -301,13 +301,16 @@
         },
         "gender": {
           "description": "Constrains the event to only occur if the cat has a certain birth gender. can_birth will allow either female or male cats dependant upon the player's settings",
-          "enum": [
-            "male",
-            "female",
-            "can_birth"
-          ],
+          "items": {
+            "enum": [
+              "male",
+              "female",
+              "can_birth"
+            ],
+            "type": "string"
+          },
           "title": "Gender",
-          "type": "string"
+          "type": "array"
         },
         "group": {
           "description": "Constraints the thought to only happen if the cat is a member of a listed group or a member of no group. This should only be used to dictate what group a new cat is originally part of",
@@ -462,7 +465,7 @@
           "type": "string"
         },
         "no_results": {
-          "description": "Set to True to prevent this condition from killing the cat. It's not necessary if the condition is already non-lethal (eg. scrapes)",
+          "description": "Not required. Set to True to prevent the result text for this death from appearing on the patrol screen. Defaults to False",
           "title": "No Results",
           "type": "boolean"
         }
@@ -817,6 +820,32 @@
       "title": "FutureEventPool",
       "type": "object"
     },
+    "GainAccessory": {
+      "additionalProperties": false,
+      "properties": {
+        "cats": {
+          "description": "List of cats who will gain an accessory",
+          "items": {
+            "$ref": "#/$defs/GatherCat"
+          },
+          "title": "Cats",
+          "type": "array"
+        },
+        "accessory": {
+          "description": "List possible new accessories here",
+          "items": {
+            "type": "string"
+          },
+          "title": "Accessory",
+          "type": "array"
+        }
+      },
+      "required": [
+        "cats"
+      ],
+      "title": "GainAccessory",
+      "type": "object"
+    },
     "GatherCat": {
       "anyOf": [
         {
@@ -1077,6 +1106,7 @@
         "quilled by a porcupine",
         "broken back",
         "poisoned",
+        "venom sickness",
         "bee sting",
         "headache",
         "severe headache",
@@ -1266,6 +1296,24 @@
       "title": "Location",
       "type": "array"
     },
+    "Meet": {
+      "additionalProperties": false,
+      "properties": {
+        "cats": {
+          "description": "List of cats who will meet the Clan",
+          "items": {
+            "$ref": "#/$defs/GatherCat"
+          },
+          "title": "Cats",
+          "type": "array"
+        }
+      },
+      "required": [
+        "cats"
+      ],
+      "title": "Meet",
+      "type": "object"
+    },
     "MentorApprenticeDict": {
       "additionalProperties": false,
       "properties": {
@@ -1431,6 +1479,22 @@
             "$ref": "#/$defs/Join"
           },
           "title": "Join",
+          "type": "array"
+        },
+        "meet": {
+          "description": "Indicate which cats will meet the player Clan. You can add multiple meet blocks",
+          "items": {
+            "$ref": "#/$defs/Meet"
+          },
+          "title": "Meet",
+          "type": "array"
+        },
+        "gain_accessory": {
+          "description": "Indicate which cats will gain an accessory. You can add multiple gain_accessory blocks",
+          "items": {
+            "$ref": "#/$defs/GainAccessory"
+          },
+          "title": "Gain Accessory",
           "type": "array"
         },
         "future_event": {

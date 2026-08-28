@@ -702,7 +702,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l and r_c0 have an in-depth conversation about r_c's vision as they walk. r_c0 explains {PRONOUN/r_c0/subject} {VERB/r_c0/remember/remembers} clair_list/r_c0. By the time they head back to camp, they have a good idea of what they should do with the information."
+                    "p_l and r_c0 have an in-depth conversation about r_c0's vision as they walk. r_c0 explains {PRONOUN/r_c0/subject} {VERB/r_c0/remember/remembers} clair_list/r_c0. By the time they head back to camp, they have a good idea of what they should do with the information."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -719,7 +719,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from trusted cat_to to interpret r_c's vision."
+                            "cats_from": "cat_from trusted cat_to to interpret r_c0's vision."
                         }
                     },
                     {
@@ -750,7 +750,7 @@
             {
                 "frequency": 2,
                 "strings": [
-                    "p_l takes r_c0 aside, giving {PRONOUN/r_c0/object} the full benefits of p_l's experience as they discuss r_c's vision, which contained clair_list/r_c0. As a medicine cat, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} take the responsibility lightly, and both of them work together to divine the vision's meaning."
+                    "p_l takes r_c0 aside, giving {PRONOUN/r_c0/object} the full benefits of p_l's experience as they discuss r_c0's vision, which contained clair_list/r_c0. As a medicine cat, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} take the responsibility lightly, and both of them work together to divine the vision's meaning."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -767,7 +767,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from trusted cat_to to interpret r_c's vision."
+                            "cats_from": "cat_from trusted cat_to to interpret r_c0's vision."
                         }
                     },
                     {
@@ -798,7 +798,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l and r_c0 have an in-depth conversation about r_c's vision as they walk. p_l listens to r_c's dream of clair_list/r_c0. p_l reassures r_c0 but inwardly worries about what it could mean."
+                    "p_l and r_c0 have an in-depth conversation about r_c0's vision as they walk. p_l listens to r_c0's dream of clair_list/r_c0. p_l reassures r_c0 but inwardly worries about what it could mean."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -815,7 +815,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from trusted cat_to to interpret r_c's vision."
+                            "cats_from": "cat_from trusted cat_to to interpret r_c0's vision."
                         }
                     },
                     {
@@ -891,7 +891,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from had total faith in cat_to's ability to interpret r_c's vision."
+                            "cats_from": "cat_from had total faith in cat_to's ability to interpret r_c0's vision."
                         }
                     },
                     {
@@ -970,7 +970,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from trusted cat_to to interpret r_c's vision."
+                            "cats_from": "cat_from trusted cat_to to interpret r_c0's vision."
                         }
                     },
                     {
@@ -1031,7 +1031,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from trusted cat_to to interpret r_c's dream."
+                            "cats_from": "cat_from trusted cat_to to interpret r_c0's dream."
                         }
                     },
                     {
@@ -1081,7 +1081,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from was disappointed to hear that cat_to couldn't interpret r_c's vision."
+                            "cats_from": "cat_from was disappointed to hear that cat_to couldn't interpret r_c0's vision."
                         }
                     }
                 ]
@@ -1133,7 +1133,7 @@
                         "amount": -10,
                         "log": {
                             "cats_from": "r_c0 was disturbed by p_l's drastic interpretation of {PRONOUN/r_c0/poss} dream.",
-                            "cats_to": "p_l was unsettled by r_c's vision and believed it to be a warning of death and destruction."
+                            "cats_to": "p_l was unsettled by r_c0's vision and believed it to be a warning of death and destruction."
                         }
                     }
                 ]
@@ -1270,7 +1270,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from felt uneasy to hear s_c0 interpret r_c's dream as a sign of lurking danger."
+                            "cats_from": "cat_from felt uneasy to hear s_c0 interpret r_c0's dream as a sign of lurking danger."
                         }
                     },
                     {
@@ -2516,16 +2516,18 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The scent of a familiar pelt reaches r_c's nose — {PRONOUN/r_c0/subject} {VERB/r_c0/know/knows} this cat! With a friendly purr, {PRONOUN/r_c0/subject} {VERB/r_c0/turn/turns} to greet {PRONOUN/r_c0/poss} friend from beyond the grave. The rest of the patrol gives them some space."
+                    "The scent of a familiar pelt reaches s_c0's nose — {PRONOUN/s_c0/subject} {VERB/s_c0/know/knows} this cat! With a friendly purr, {PRONOUN/s_c0/subject} {VERB/s_c0/turn/turns} to greet {PRONOUN/s_c0/poss} friend from beyond the grave. The rest of the patrol gives them some space."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol_cats"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -2746,7 +2748,7 @@
                             "low_stable"
                         ],
                         "cats_to": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -2966,7 +2968,6 @@
         "involved_cats": {
             "r_c1": {
                 "status": [
-                    "apprentice",
                     "medicine cat apprentice"
                 ]
             }
@@ -2981,14 +2982,6 @@
                 "strings": [
                     "With respectful nods, the patrol pauses. r_c1 takes {PRONOUN/r_c1/poss} cue from p_l and tucks {PRONOUN/r_c1/poss} paws together neatly, sitting to converse with the StarClan cat."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
@@ -3020,14 +3013,6 @@
                 "strings": [
                     "The scent of a familiar pelt reaches r_c1's nose — {PRONOUN/r_c1/subject} {VERB/r_c1/know/knows} this cat! {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/wheel/wheels} around and {VERB/r_c1/bury/buries} {PRONOUN/r_c1/poss} face in sparkling fur, purring."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
@@ -3058,32 +3043,23 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "With the familiarity brought by {PRONOUN/s_c0/poss} connection to StarClan, s_c0 turns to the ghost haunting {PRONOUN/s_c0/poss} path, meeting {PRONOUN/s_c0/poss} star-walking ancestor with a purr and quiet confidence. r_c1 watches with eyes as round and dark as the new moon."
+                    "With the familiarity brought by {PRONOUN/p_l/poss} connection to StarClan, p_l turns to the ghost haunting {PRONOUN/s_c0/poss} path, meeting {PRONOUN/p_l/poss} star-walking ancestor with a purr and quiet confidence. r_c1 watches with eyes as round and dark as the new moon."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "GHOST,1",
                                 "STAR,2"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -3140,7 +3116,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c1"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -3160,7 +3136,7 @@
                             "patrol_cats"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -3179,14 +3155,11 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_angrycat_Ap",
                 "strings": [
-                    "r_c1 feels hounded, never given a moment's peace, and {PRONOUN/r_c1/subject} {VERB/r_c1/hiss/hisses} at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return."
+                    "s_c0 feels hounded, never given a moment's peace, and {PRONOUN/s_c0/subject} {VERB/s_c0/hiss/hisses} at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
                     }
                 },
                 "exp_gained": 30
@@ -3195,14 +3168,11 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_angrycat_Ap",
                 "strings": [
-                    "r_c1 hisses at the unknown cat, fur bristling. The ghost vanishes, leaving r_c1 alone... for now."
+                    "s_c0 hisses at the unknown cat, fur bristling. The ghost vanishes, leaving s_c0 alone... for now."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
                     }
                 },
                 "exp_gained": 30
@@ -3213,14 +3183,11 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_angrycat_Ap",
                 "strings": [
-                    "r_c1 feels hounded, never given a moment's peace, and {PRONOUN/r_c1/subject} {VERB/r_c1/hiss/hisses} at the StarClan cat. But when {PRONOUN/r_c1/subject} {VERB/r_c1/turn/turns} around, there's only a rather upset-looking Clanmate, there to fetch {PRONOUN/r_c1/object} to camp to help with an emergency."
+                    "s_c0 feels hounded, never given a moment's peace, and {PRONOUN/s_c0/subject} {VERB/s_c0/hiss/hisses} at the StarClan cat. But when {PRONOUN/s_c0/subject} {VERB/s_c0/turn/turns} around, there's only a rather upset-looking Clanmate, there to fetch {PRONOUN/s_c0/object} to camp to help with an emergency."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
                     }
                 },
                 "exp_gained": 0,
@@ -3232,7 +3199,7 @@
                             "low_stable"
                         ],
                         "cats_to": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "mutual": false,
                         "values": [
@@ -3626,15 +3593,15 @@
                 3,
                 6
             ],
-            "apprentice": [
-                -1,
-                -1
-            ],
             "medicine cat": [
                 3,
                 6
             ],
             "normal adult": [
+                -1,
+                -1
+            ],
+            "all apprentices": [
                 -1,
                 -1
             ]
@@ -4709,14 +4676,6 @@
                 "strings": [
                     "p_l sits down and motions for r_c1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/r_c1/object} inquisitively. r_c1 tentatively explains that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} curious about herbs but {VERB/r_c1/are/is} worried that desire to learn is detrimental to {PRONOUN/r_c1/poss} progress as a warrior. p_l isn't sure how to comfort {PRONOUN/r_c1/object}, but {PRONOUN/p_l/subject} {VERB/p_l/do/does} {PRONOUN/p_l/poss} best. r_c1 doesn't look fully convinced, but {PRONOUN/r_c1/poss} mood seems lighter."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -4766,14 +4725,6 @@
                 "strings": [
                     "p_l sits down and motions for r_c1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/r_c1/object} inquisitively. r_c1 explains that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} curious about how visits from StarClan work. p_l feels conflicted but explains that their ancestors only visit when they need to tell a cat something important. It's not the answer {PRONOUN/r_c1/subject} wanted, but r_c1 is grateful anyways."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -4823,14 +4774,6 @@
                 "strings": [
                     "p_l sits down and motions for r_c1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/r_c1/object} inquisitively. r_c1 explains that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} curious about what it's like to get a vision from StarClan. p_l ponders how to explain it, settling for a vague description and reiterating that it's different for every cat who has one. r_c1 is confused but grateful."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -4880,14 +4823,6 @@
                 "strings": [
                     "p_l sits down and motions for r_c1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/r_c1/object} inquisitively. r_c1 studies {PRONOUN/r_c1/poss} paws and mutters that {PRONOUN/r_c1/subject} {VERB/r_c1/don't/doesn't} want to talk about it. p_l reassures {PRONOUN/r_c1/object} that it's okay to ask questions, and though r_c1 doesn't ask, {PRONOUN/r_c1/subject} {VERB/r_c1/seem/seems} more chipper... and {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} a big help gathering herbs."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -4918,19 +4853,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 sits down and motions for r_c1 to join {PRONOUN/s_c0/object}, looking at {PRONOUN/r_c1/object} inquisitively. r_c1 explains that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} curious about herbs but {VERB/r_c1/are/is} worried that desire to learn is detrimental to {PRONOUN/r_c1/poss} progress as a warrior. s_c0 reassures {PRONOUN/r_c1/object} that nobody would think less of {PRONOUN/r_c1/object} for that, and it's good to know the basics. s_c0 promises to teach {PRONOUN/r_c1/object} when they get back to camp."
+                    "p_l sits down and motions for r_c1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/r_c1/object} inquisitively. r_c1 explains that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} curious about herbs but {VERB/r_c1/are/is} worried that desire to learn is detrimental to {PRONOUN/r_c1/poss} progress as a warrior. p_l reassures {PRONOUN/r_c1/object} that nobody would think less of {PRONOUN/r_c1/object} for that, and it's good to know the basics. p_l promises to teach {PRONOUN/r_c1/object} when they get back to camp."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "compassionate",
@@ -4990,19 +4916,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 sits down and motions for r_c1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/r_c1/object} inquisitively. r_c1 tentatively explains that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} curious about how visits from StarClan work. s_c0 is probably the best cat {PRONOUN/r_c1/subject} could have asked. The older cat takes pride in the way r_c1 listens to {PRONOUN/s_c0/object} talk, wonder shining in {PRONOUN/r_c1/poss} eyes."
+                    "p_l sits down and motions for r_c1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/r_c1/object} inquisitively. r_c1 tentatively explains that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} curious about how visits from StarClan work. p_l is probably the best cat {PRONOUN/r_c1/subject} could have asked. The older cat takes pride in the way r_c1 listens to {PRONOUN/p_l/object} talk, wonder shining in {PRONOUN/r_c1/poss} eyes."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "STAR,1"
@@ -5057,19 +4974,10 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "s_c0 sits down and motions for r_c1 to join {PRONOUN/s_c0/object}, looking at {PRONOUN/r_c1/object} inquisitively. r_c1 explains that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} curious about where kits come from. s_c0 sputters but quickly gathers {PRONOUN/s_c0/self} and tells r_c1 that {PRONOUN/s_c0/subject} really {VERB/s_c0/aren't/isn't} the cat to ask. r_c1 huffs but relents."
+                    "p_l sits down and motions for r_c1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/r_c1/object} inquisitively. r_c1 explains that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} curious about where kits come from. p_l sputters but quickly gathers {PRONOUN/p_l/self} and tells r_c1 that {PRONOUN/p_l/subject} really {VERB/p_l/aren't/isn't} the cat to ask. r_c1 huffs but relents."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "insecure",
@@ -5088,7 +4996,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -5107,7 +5015,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -5129,19 +5037,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 sits down and motions for r_c1 to join {PRONOUN/s_c0/object}, looking at {PRONOUN/r_c1/object} inquisitively. r_c1 explains that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} curious about where kits come from. s_c0 is surprised but answers r_c1's questions. r_c1 thanks s_c0, curiosity satisfied."
+                    "p_l sits down and motions for r_c1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/r_c1/object} inquisitively. r_c1 explains that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} curious about where kits come from. p_l is surprised but answers r_c1's questions. r_c1 thanks p_l, curiosity satisfied."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "compassionate",
@@ -5166,7 +5065,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -5186,7 +5085,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -5208,19 +5107,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 sits down and motions for r_c1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/r_c1/object} inquisitively. r_c1 explains that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} curious about where kits come from. s_c0 falters and rambles on about the basics of life. r_c1 is baffled — what do birds and bees have to do with kits?"
+                    "p_l sits down and motions for r_c1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/r_c1/object} inquisitively. r_c1 explains that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} curious about where kits come from. p_l falters and rambles on about the basics of life. r_c1 is baffled — what do birds and bees have to do with kits?"
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "troublesome",
@@ -5245,7 +5135,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -5265,7 +5155,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": false,
                         "values": [
@@ -5289,14 +5179,6 @@
                 "strings": [
                     "p_l sits down and motions for r_c1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/r_c1/object} inquisitively. r_c1 practically bursts with questions, asking all about scars and wounds and how much blood has p_l seen and what was it like? p_l tells {PRONOUN/r_c1/object} that spilling blood isn't aspirational. r_c1 doesn't seem to really get it, but {PRONOUN/r_c1/subject} {VERB/r_c1/relent/relents} regardless."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -5342,19 +5224,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 sits down and motions for r_c1 to join {PRONOUN/s_c0/object}, looking at {PRONOUN/r_c1/object} inquisitively. r_c1 practically bursts with questions, asking about scars and wounds and how much blood has s_c0 seen and what was it like? s_c0 takes a breath and explains why that's not appropriate to ask. r_c1 has the decency to look a little ashamed, quietly getting back to work."
+                    "p_l sits down and motions for r_c1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/r_c1/object} inquisitively. r_c1 practically bursts with questions, asking about scars and wounds and how much blood has p_l seen and what was it like? p_l takes a breath and explains why that's not appropriate to ask. r_c1 has the decency to look a little ashamed, quietly getting back to work."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "calm",
@@ -5415,14 +5288,6 @@
                 "strings": [
                     "p_l sits down and motions for r_c1 to join {PRONOUN/p_l/object}, looking at {PRONOUN/r_c1/object} inquisitively. r_c1 studies {PRONOUN/r_c1/poss} paws and mutters that {PRONOUN/r_c1/subject} {VERB/r_c1/don't/doesn't} want to talk about it. The apprentice unfortunately isn't much help from then on, and the patrol returns home empty-pawed."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -5463,19 +5328,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 tries a few times to strike up conversation, but s_c0 barely acknowledges {PRONOUN/r_c1/object} at all. When {PRONOUN/s_c0/subject} finally {VERB/s_c0/do/does} answer back, it's to snap at the younger cat to stay focused and stop distracting {PRONOUN/s_c0/object}. r_c1 draws {PRONOUN/r_c1/poss} ears back and looks away. The two cats studiously refuse to interact the rest of the patrol, returning to camp with no herbs."
+                    "r_c1 tries a few times to strike up conversation, but p_l barely acknowledges {PRONOUN/r_c1/object} at all. When {PRONOUN/p_l/subject} finally {VERB/p_l/do/does} answer back, it's to snap at the younger cat to stay focused and stop distracting {PRONOUN/p_l/object}. r_c1 draws {PRONOUN/r_c1/poss} ears back and looks away. The two cats studiously refuse to interact the rest of the patrol, returning to camp with no herbs."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "cold",
@@ -6214,14 +6070,6 @@
                 "strings": [
                     "The game is afoot! p_l and r_c2 return to camp, happily spent, with plenty of herbs."
                 ],
-                "involved_cats": {
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
@@ -12399,6 +12247,11 @@
                 "strings": [
                     "p_l calls off the patrol and makes a note to talk to r_c1's mentor about {PRONOUN/r_c1/poss} behavior."
                 ],
+                "involved_cats": {
+                    "r_c1": {
+                        "has_mentor": {"current": true}
+                    }
+                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -15098,7 +14951,7 @@
                 6
             ],
             "apprentice": [
-                3,
+                2,
                 5
             ],
             "medicine cat apprentice": [
@@ -15136,21 +14989,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Despite p_l's annoyance, r_c2 insists there's nothing to apologize for. r_c2 bumps r_c1's shoulder affectionately, brushing past {PRONOUN/r_c1/object} with a smile as {PRONOUN/r_c2/subject} {VERB/r_c2/leave/leaves} camp. It's a fine way to spend the afternoon and a cool cat to spend it with!"
+                    "Despite p_l's annoyance, r_c1 insists there's nothing to apologize for. r_c1 bumps p_l's shoulder affectionately, brushing past {PRONOUN/p_l/object} with a smile as {PRONOUN/r_c1/subject} {VERB/r_c1/leave/leaves} camp. It's a fine way to spend the afternoon and a cool cat to spend it with!"
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
+                    "r_c1": {}
                 },
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -15159,7 +15001,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "r_c2"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -15174,10 +15016,10 @@
                     },
                     {
                         "cats_to": [
-                            "r_c1"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "apprentice", "-r_c1"
                         ],
                         "mutual": false,
                         "values": [
@@ -15203,18 +15045,8 @@
                     "Out of the cats in the group, r_c2 is the one that seems irritated about it at first. As r_c1 keeps chatting to {PRONOUN/r_c2/object}, however, {PRONOUN/r_c2/subject} {VERB/r_c2/start/starts} to warm up, and both apprentices feel much more comfortable with each other by the time the group bring their mossy loot back to camp."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
+                    "r_c1": {},
+                    "r_c2": {}
                 },
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -15254,11 +15086,11 @@
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
                         "cats_from": [
-                            "r_c1"
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "apprentice"
                         ],
                         "mutual": false,
                         "values": [
@@ -15358,10 +15190,10 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "s_c0 is comfortable in the leadership role and directs {PRONOUN/s_c0/poss} patrol of warrior apprentices around with ease. If there's any grumbling about being bossed around, those grumbles subside at the sight of the patrol's exceptional moss haul."
+                    "p_l is comfortable in the leadership role and directs {PRONOUN/p_l/poss} patrol of warrior apprentices around with ease. If there's any grumbling about being bossed around, those grumbles subside at the sight of the patrol's exceptional moss haul."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "confident",
@@ -15375,10 +15207,7 @@
                                 "strict",
                                 "righteous"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -15447,32 +15276,26 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 and r_c2 start to argue, ruining everyone's day."
+                    "s_c0 and s_c1 start to argue, ruining everyone's day."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
                     },
-                    "r_c2": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
+                    "s_c1": {
+                        "prior_abbreviation": ["any", "-s_c0"]
                     }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c2"
+                            "s_c1"
                         ],
                         "cats_from": [
-                            "r_c1"
+                            "s_c0"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
                             "like",
                             "respect"
@@ -16315,7 +16138,7 @@
                     "p_l"
                 ],
                 "cats_to": [
-                    "patrol_cats"
+                    "r_c1"
                 ],
                 "mutual": false,
                 "constraints": [
@@ -16326,7 +16149,6 @@
         "involved_cats": {
             "r_c1": {
                 "status": [
-                    "apprentice",
                     "medicine cat apprentice"
                 ]
             }
@@ -16341,14 +16163,7 @@
                 "strings": [
                     "The betony shrubs are in full bloom, with bees buzzing busily around them, and p_l directs r_c1 to follow their industrious example as {PRONOUN/r_c1/subject} {VERB/r_c1/gather/gathers}. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/prune/prunes} back enough betony to find a surprisingly intact goldenrod plant hidden under it, also ready for harvest."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
+                "involved_cats": {},
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -16385,14 +16200,7 @@
                 "strings": [
                     "Betony is especially useful for cats who breathe with a rasp, and p_l is always keen to help Clanmates with the condition. With the great haul of betony p_l brings back, {PRONOUN/p_l/subject}'ll be able to dose {PRONOUN/p_l/poss} Clanmates and prevent coughs and chest infections — and {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} even found a little goldenrod to go with it! r_c1, however, is more interested in how betony prevents gross, runny dirt."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
+                "involved_cats": {},
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -16427,19 +16235,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 is able to find the sought-after herb quickly, as {PRONOUN/s_c0/subject} can easily spot the purple blossoms among the other plants. {PRONOUN/s_c0/subject/CAP} point it out to r_c1 and the two cats bring back a great haul of betony for the herb stores. They're even even able to pick out a goldenrod bush on their path home."
+                    "p_l is able to find the sought-after herb quickly, as {PRONOUN/p_l/subject} can easily spot the purple blossoms among the other plants. {PRONOUN/p_l/subject/CAP} {VERB/p_l/point/points} it out to r_c1 and the two cats bring back a great haul of betony for the herb stores. They're even even able to pick out a goldenrod bush on their path home."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -16839,7 +16638,7 @@
                     "p_l"
                 ],
                 "cats_to": [
-                    "patrol_cats"
+                    "r_c1"
                 ],
                 "mutual": false,
                 "constraints": [
@@ -16850,7 +16649,6 @@
         "involved_cats": {
             "r_c1": {
                 "status": [
-                    "apprentice",
                     "medicine cat apprentice"
                 ]
             }
@@ -16865,14 +16663,6 @@
                 "strings": [
                     "At this time of year, the berry bushes have grown enough leaves to completely shade the ground under their brambles. p_l harvests without worry, picking large bunches of them to take home. r_c1 hasn't considered plant pruning as a medicine cat skill before now, and they have a good conversation about why it's important."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -16909,14 +16699,6 @@
                 "strings": [
                     "Perfect — there's a good crop of blackberry leaves just waiting for {PRONOUN/p_l/object}, and the bramble is starting a war with a temptingly harvestable raspberry bramble nearby. Seeing the leaves set out to dry, r_c1 watching over them diligently, makes p_l feel like {PRONOUN/p_l/subject} can relax."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -16951,16 +16733,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 falls into the meditative state that herb-gathering brings, and {PRONOUN/s_c0/subject} {VERB/s_c0/hum/hums} to {PRONOUN/s_c0/self} as {PRONOUN/s_c0/subject} {VERB/s_c0/work/works}, crisply plucking from the brambles {PRONOUN/s_c0/subject} {VERB/s_c0/encounter/encounters}, both blackberry and raspberry. r_c1 smiles to hear the quiet sound, comforted by the familiar work and tune."
+                    "p_l falls into the meditative state that herb-gathering brings, and {PRONOUN/p_l/subject} {VERB/p_l/hum/hums} to {PRONOUN/p_l/self} as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, crisply plucking from the brambles {PRONOUN/p_l/subject} {VERB/p_l/encounter/encounters}, both blackberry and raspberry. r_c1 smiles to hear the quiet sound, comforted by the familiar work and tune."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "s_c0": {
+                    "p_l": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -16975,7 +16751,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -16987,8 +16763,8 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "r_c1 was comforted by the sound of s_c0's humming as they gathered berries together.",
-                            "cats_to": "s_c0 taught r_c1 about gathering blackberries and raspberries."
+                            "cats_from": "r_c1 was comforted by the sound of p_l's humming as they gathered berries together.",
+                            "cats_to": "p_l taught r_c1 about gathering blackberries and raspberries."
                         }
                     }
                 ],
@@ -17010,14 +16786,6 @@
                 "strings": [
                     "With r_c1 following {PRONOUN/p_l/object}, p_l attempts to pick {PRONOUN/p_l/poss} way through the thorns to reach the leaves, but it soon becomes clear that it's a hopeless task."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             }
         ]
@@ -17139,6 +16907,7 @@
                         "prior_abbreviation": [
                             "any"
                         ],
+                        "status": ["medicine cat"],
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -17251,13 +17020,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 shows {PRONOUN/s_c0/poss} usual talent for spotting herbs, trotting straight over to a burdock plant and digging at its foot. {PRONOUN/s_c0/subject/CAP}'re pleasantly surprised when {PRONOUN/s_c0/subject} also {VERB/s_c0/spot/spots} a hidden patch of plantain on the way back. Good gathering today, it seems!"
+                    "p_l shows {PRONOUN/p_l/poss} usual talent for spotting herbs, trotting straight over to a burdock plant and digging at its foot. {PRONOUN/p_l/subject/CAP}'re pleasantly surprised when {PRONOUN/p_l/subject} also {VERB/p_l/spot/spots} a hidden patch of plantain on the way back. Good gathering today, it seems!"
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -17320,7 +17086,7 @@
                     "p_l"
                 ],
                 "cats_to": [
-                    "patrol_cats"
+                    "r_c1"
                 ],
                 "mutual": false,
                 "constraints": [
@@ -17331,7 +17097,6 @@
         "involved_cats": {
             "r_c1": {
                 "status": [
-                    "apprentice",
                     "medicine cat apprentice"
                 ]
             }
@@ -17346,14 +17111,6 @@
                 "strings": [
                     "The heat of greenleaf has made the burdock plants grow to towering size, with some leaves approaching the length of an adult cat. It's not finding them that's hard — it's trying to carry all the roots back to camp all at once that proves difficult! On the way back, r_c1 spots some plantain leaves, and p_l chuckles to {PRONOUN/p_l/self} softly as the apprentice attempts to fit the leaves and roots into {PRONOUN/p_l/poss} jaws to carry back."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -17391,14 +17148,6 @@
                 "strings": [
                     "Luck is on p_l's side today — the burdock is both plentiful and easy to find. Digging the roots out is a bit more difficult, but {PRONOUN/p_l/subject} {VERB/p_l/manage/manages} a good haul. On the walk back, r_c1 waves {PRONOUN/r_c1/poss} tail excitedly as {PRONOUN/r_c1/subject} {VERB/r_c1/spot/spots} a patch of plantain near the path. p_l praises {PRONOUN/r_c1/poss} herb-finding skills as they stop to gather some of the leaves."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -17433,13 +17182,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 shows {PRONOUN/s_c0/poss} usual talent for spotting herbs, trotting straight over to a burdock plant and digging at its foot. {PRONOUN/s_c0/subject/CAP}'re leading the way back when {PRONOUN/s_c0/subject} also {VERB/s_c0/spot/spots} some plantain growing nearby. With a purr, {PRONOUN/s_c0/subject} {VERB/s_c0/make/makes} sure to gather some of that as well, since it's good for all sorts of stings."
+                    "p_l shows {PRONOUN/p_l/poss} usual talent for spotting herbs, trotting straight over to a burdock plant and digging at its foot. {PRONOUN/p_l/subject/CAP}'re leading the way back when {PRONOUN/p_l/subject} also {VERB/p_l/spot/spots} some plantain growing nearby. With a purr, {PRONOUN/p_l/subject} {VERB/p_l/make/makes} sure to gather some of that as well, since it's good for all sorts of stings."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -17451,7 +17197,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -17485,14 +17231,6 @@
                 "strings": [
                     "Maybe {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon. {PRONOUN/p_l/subject/CAP} {VERB/p_l/avoid/avoids} snapping at r_c1, who seems unable to identify the common herb, but {PRONOUN/p_l/subject} definitely {VERB/p_l/come/comes} close."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -17633,7 +17371,7 @@
                 "involved_cats": {
                     "s_c0": {
                         "prior_abbreviation": [
-                            "any"
+                            "-p_l"
                         ],
                         "stat": {
                             "skill": [
@@ -17828,26 +17566,23 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "By the time they reach the burdock plants, p_l is about ready to claw s_c0's ears off. Great StarClan! <i>How</i> can a cat be so annoying? p_l hisses in exasperation, just as {PRONOUN/p_l/subject} {VERB/p_l/notice/notices} that the burdock is all shriveled and dead — the roots won't be any good. It's just one thing after another today."
+                    "By the time they reach the burdock plants, p_l is about ready to claw r_c0's ears off. Great StarClan! <i>How</i> can a cat be so annoying? p_l hisses in exasperation, just as {PRONOUN/p_l/subject} {VERB/p_l/notice/notices} that the burdock is all shriveled and dead — the roots won't be any good. It's just one thing after another today."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "trait": [
                                 "troublesome",
                                 "childish"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "r_c0"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -17922,13 +17657,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 has a few baby catmint sprouts {PRONOUN/s_c0/subject}{VERB/s_c0/'ve/'s} left alone through newleaf, and greenleaf means it's time to see if they're harvestable. They are, and s_c0 is able to bring huge quantities of the valuable herb home."
+                    "p_l has a few baby catmint sprouts {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} left alone through newleaf, and greenleaf means it's time to see if they're harvestable. They are, and p_l is able to bring huge quantities of the valuable herb home."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -17998,7 +17730,6 @@
         "involved_cats": {
             "r_c1": {
                 "status": [
-                    "apprentice",
                     "medicine cat apprentice"
                 ]
             }
@@ -18013,14 +17744,6 @@
                 "strings": [
                     "As they walk, p_l teaches r_c1 about how crucial catmint is for coughs, and how, although its scent can be very alluring, part of the responsibility of being a medicine cat is avoiding becoming caught in its haze. The medicine cats carefully pick out catmint from its known hiding places, carrying it back to camp where it will be stored away from excitable warriors."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
@@ -18054,14 +17777,6 @@
                 "strings": [
                     "It takes a morning of careful searching, but eventually p_l stumbles across one of the catmint plants {PRONOUN/p_l/subject} {VERB/p_l/remember/remembers} from seasons past, and to {PRONOUN/p_l/poss} delight, it's growing well. p_l avoids the flowers, giving the plant the chance to spread catmint seed for the future, and r_c1 helps the plant along by gathering some seeds and burying them nearby."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 30,
                 "relationship_changes": [
                     {
@@ -18092,22 +17807,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 has a few baby catmint sprouts {PRONOUN/s_c0/subject}{VERB/s_c0/'ve/'s} left alone through newleaf, and greenleaf means it's time to see if they're harvestable. They are, and s_c0 is able to bring huge quantities of the valuable herb home with r_c1's help."
+                    "p_l has a few baby catmint sprouts {PRONOUN/p_l/subject}{VERB/s_c0/'ve/'s} left alone through newleaf, and greenleaf means it's time to see if they're harvestable. They are, and p_l is able to bring huge quantities of the valuable herb home with r_c1's help."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
-                                "SENSE,2"
+                                "CLEVER,2", "INSIGHTFUL,2"
                             ]
                         }
                     }
@@ -18116,7 +17822,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -18128,7 +17834,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "s_c0 explained to r_c1 the importance of leaving a few young catmint shoots to grow in newleaf so they'll be ready to harvest in greenleaf."
+                            "cats_from": "p_l explained to r_c1 the importance of leaving a few young catmint shoots to grow in newleaf so they'll be ready to harvest in greenleaf."
                         }
                     }
                 ],
@@ -18146,14 +17852,6 @@
                 "strings": [
                     "r_c1 loses {PRONOUN/r_c1/poss} head over the catmint, and p_l is forced to cancel the gathering patrol to take {PRONOUN/r_c1/object} back to camp until {PRONOUN/r_c1/subject} {VERB/r_c1/regain/regains} {PRONOUN/r_c1/poss} sense."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -18203,7 +17901,7 @@
                 4
             ],
             "normal adult": [
-                2,
+                3,
                 5
             ]
         },
@@ -18299,12 +17997,11 @@
                 ],
                 "involved_cats": {
                     "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                        "prior_abbreviation": ["any"],
+                        "status": ["medicine cat"],
                         "stat": {
                             "skill": [
-                                "SENSE,2"
+                                "CLEVER,2", "INSIGHTFUL,2"
                             ]
                         }
                     }
@@ -18429,13 +18126,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Daisies aren't hard to find in the warmer seasons, popping up all over the place with dandelions next to them. s_c0 collects enough that {PRONOUN/s_c0/subject} {VERB/s_c0/have/has} trouble not dropping any on the way back to camp."
+                    "Daisies aren't hard to find in the warmer seasons, popping up all over the place with dandelions next to them. p_l collects enough that {PRONOUN/p_l/subject} {VERB/p_l/have/has} trouble not dropping any on the way back to camp."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -18498,7 +18192,7 @@
                     "p_l"
                 ],
                 "cats_to": [
-                    "patrol_cats"
+                    "r_c1"
                 ],
                 "mutual": false,
                 "constraints": [
@@ -18509,7 +18203,6 @@
         "involved_cats": {
             "r_c1": {
                 "status": [
-                    "apprentice",
                     "medicine cat apprentice"
                 ]
             }
@@ -18524,14 +18217,6 @@
                 "strings": [
                     "Daisies may seem like part of the everyday carpet of greenery, present everywhere from rocks to fields to nestled at the foot of trees, but that doesn't make their leaves any less useful. And there's some dandelion nearby — perfect. p_l goes through their common uses with r_c1."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -18568,14 +18253,6 @@
                 "strings": [
                     "Greenleaf brings a veritable explosion of daisies and dandelions raising little white and yellow flowers around every corner, and p_l barely even needs to leave camp to gather them. It gives {PRONOUN/p_l/object} time to let r_c1 run off and play with {PRONOUN/r_c1/poss} friends, and seeing {PRONOUN/p_l/poss} apprentice getting to relax makes {PRONOUN/p_l/object} smile from {PRONOUN/p_l/object} favorite basking spot."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -18610,19 +18287,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Daisies aren't hard to find in the warmer seasons, popping up all over the place with dandelions next to them. s_c0 collects enough that {PRONOUN/s_c0/subject} {VERB/s_c0/have/has} trouble not dropping any on the way back to camp. At least with r_c1 here with {PRONOUN/s_c0/object} the load is shared, and {PRONOUN/s_c0/subject} {VERB/s_c0/purr/purrs} in appreciation of the apprentice."
+                    "Daisies aren't hard to find in the warmer seasons, popping up all over the place with dandelions next to them. p_l collects enough that {PRONOUN/p_l/subject} {VERB/p_l/have/has} trouble not dropping any on the way back to camp. At least with r_c1 here with {PRONOUN/p_l/object} the load is shared, and {PRONOUN/p_l/subject} {VERB/p_l/purr/purrs} in appreciation of the apprentice."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -18634,7 +18302,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -18670,14 +18338,6 @@
                 "strings": [
                     "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed on leaves are useless to c_n. {PRONOUN/p_l/subject/CAP} {VERB/p_l/avoid/avoids} snapping at r_c1, who seems unable to identify the common herb, but {PRONOUN/p_l/subject} definitely {VERB/p_l/come/comes} close."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -18953,13 +18613,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "With warmth in the air and ground, s_c0 doesn't need to try very hard to find an excellent haul of dandelions and wild garlic to bring back to camp."
+                    "With warmth in the air and ground, p_l doesn't need to try very hard to find an excellent haul of dandelions and wild garlic to bring back to camp."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -19022,7 +18679,7 @@
                     "p_l"
                 ],
                 "cats_to": [
-                    "patrol_cats"
+                    "r_c1"
                 ],
                 "mutual": false,
                 "constraints": [
@@ -19033,7 +18690,6 @@
         "involved_cats": {
             "r_c1": {
                 "status": [
-                    "apprentice",
                     "medicine cat apprentice"
                 ]
             }
@@ -19048,14 +18704,6 @@
                 "strings": [
                     "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is a potent cure for poison, while their leaves are weaker but fast acting and can be chewed into poultices. Then p_l chuckles to {PRONOUN/p_l/self}, spotting a nearby patch of wild garlic not even a fox-length away. Time to see how r_c1 will react to this stinky herb!"
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -19091,14 +18739,6 @@
                 "strings": [
                     "It's a successful gathering mission, and p_l strides back to camp with a great haul of entire dandelion plants and additional wild garlic that had been impossible to miss on the way back. Later {PRONOUN/p_l/subject}'ll teach r_c1 to sort the leaves and roots to be stored separately. The leaves remain fresh for a far shorter time."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -19133,19 +18773,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "With warmth in the air and ground, s_c0 doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. Instead, {PRONOUN/s_c0/subject} {VERB/s_c0/let/lets} r_c1 take the lead in finding the plants and {VERB/s_c0/praise/praises} {PRONOUN/r_c1/object} for all the progress {PRONOUN/r_c1/subject}{VERB/r_c1/'ve/'s} made in herbcraft. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} especially proud when r_c1 notices the wild garlic nearby and points out that they can gather that as well."
+                    "With warmth in the air and ground, p_l doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. Instead, {PRONOUN/p_l/subject} {VERB/p_l/let/lets} r_c1 take the lead in finding the plants and {VERB/p_l/praise/praises} {PRONOUN/r_c1/object} for all the progress {PRONOUN/r_c1/subject}{VERB/r_c1/'ve/'s} made in herbcraft. {PRONOUN/p_l/subject/CAP} {VERB/p_l/are/is} especially proud when r_c1 notices the wild garlic nearby and points out that they can gather that as well."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -19160,7 +18791,7 @@
                             "r_c1"
                         ],
                         "cats_from": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "mutual": true,
                         "values": [
@@ -19193,14 +18824,6 @@
                 "strings": [
                     "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already-damaged plants. r_c1 actually starts an argument about it, insistent that they don't need to worry about protecting the dandelion patch for the future."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -19257,7 +18880,7 @@
                     "p_l"
                 ],
                 "cats_to": [
-                    "patrol_cats"
+                    "r_c1"
                 ],
                 "mutual": false,
                 "constraints": [
@@ -19268,10 +18891,8 @@
         "involved_cats": {
             "r_c1": {
                 "status": [
-                    "apprentice",
                     "medicine cat apprentice"
-                ],
-                "has_mentor": {"current": true}
+                ]
             }
         },
         "chance_of_success": 60,
@@ -19312,14 +18933,6 @@
                 "strings": [
                     "r_c1 reaches the patch first, but p_l can tell by {PRONOUN/r_c1/poss} drooping ears that there must not be enough left to collect."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0
             }
         ]
@@ -19434,18 +19047,15 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "With warmth in the air and ground, s_c0 doesn't need to try very hard to find an excellent haul of dandelions and plentiful wild garlic to bring back to camp. {PRONOUN/p_l/subject/CAP} {VERB/p_l/help/helps} the warriors pluck fluffy dandelions heads to bring back for the nursery and {VERB/p_l/do/does}n't even have the heart to get annoyed when the warriors decline to help carry the wild garlic."
+                    "With warmth in the air and ground, p_l doesn't need to try very hard to find an excellent haul of dandelions and plentiful wild garlic to bring back to camp. {PRONOUN/p_l/subject/CAP} {VERB/p_l/help/helps} the warriors pluck fluffy dandelions heads to bring back for the nursery and {VERB/p_l/do/does}n't even have the heart to get annoyed when the warriors decline to help carry the wild garlic."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 10,
@@ -19598,13 +19208,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 has discovered with time and experience that elder-leaf-picking is best handled by chewing off several low-hanging, thin branches and carrying those back to camp instead."
+                    "p_l has discovered with time and experience that elder-leaf-picking is best handled by chewing off several low-hanging, thin branches and carrying those back to camp instead."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -19642,7 +19249,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "condition": [
                             "minor_injury"
@@ -19681,7 +19288,6 @@
         "involved_cats": {
             "r_c1": {
                 "status": [
-                    "apprentice",
                     "medicine cat apprentice"
                 ]
             }
@@ -19696,14 +19302,6 @@
                 "strings": [
                     "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects. r_c1 is more occupied climbing the tree, and p_l isn't going to dissuade {PRONOUN/r_c1/poss} pride in plucking from the highest branches, even if they're no more potent than those at the bottom."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -19740,14 +19338,6 @@
                 "strings": [
                     "The tree, growing in a sheltered spot without huge amounts of wind, has branches that extend a mere whisker-length above the ground. The gathering is simple today, warmed by the greenleaf sun. They even stop for a nap before going home, and r_c1 stretches out and rips at the ground with {PRONOUN/r_c1/poss} claws indulgently."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -19782,19 +19372,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 has discovered with time and experience that elder-leaf-picking is best handled by chewing off several low-hanging, thin branches and carrying those back to camp instead. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/pass/passes} on the trick to r_c1, and once they're back at camp both medicine cats strip off the leaves and give them a quick wash."
+                    "p_l has discovered with time and experience that elder-leaf-picking is best handled by chewing off several low-hanging, thin branches and carrying those back to camp instead. {PRONOUN/p_l/subject/CAP} {VERB/p_l/pass/passes} on the trick to r_c1, and once they're back at camp both medicine cats strip off the leaves and give them a quick wash."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2",
@@ -19819,12 +19400,12 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "s_c0 taught r_c1 to gather elder leaves by bringing back whole branches instead of trying to climb trees."
+                            "cats_from": "p_l taught r_c1 to gather elder leaves by bringing back whole branches instead of trying to climb trees."
                         }
                     },
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -19864,14 +19445,6 @@
                 "strings": [
                     "r_c1, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/r_c1/poss} balance and tumbles to the ground."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -20012,16 +19585,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 has discovered with time and experience that elder-leaf-picking is best handled by chewing off several low-hanging, thin branches and carrying those back to camp instead. With so many assistants, {PRONOUN/s_c0/subject} can bring a truly massive haul home, where the rest of the patrol helps {PRONOUN/s_c0/object} strip the leaves and carefully store them."
+                    "p_l has discovered with time and experience that elder-leaf-picking is best handled by chewing off several low-hanging, thin branches and carrying those back to camp instead. With so many assistants, {PRONOUN/p_l/subject} can bring a truly massive haul home, where the rest of the patrol helps {PRONOUN/p_l/object} strip the leaves and carefully store them."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
-                                "SENSE,2",
+                                "INSIGHTFUL,2",
                                 "CLEVER,1"
                             ]
                         }
@@ -20070,16 +19640,18 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c0, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/r_c0/poss} balance and tumbles to the ground."
+                    "s_c0, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses {PRONOUN/s_c0/poss} balance and tumbles to the ground."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "condition": [
                             "minor_injury"
@@ -20153,13 +19725,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 has a good eye for these things, and snips off the best and most lush goldenrod and marigold petals to take back for the Clan's stores."
+                    "p_l has a good eye for these things, and snips off the best and most lush goldenrod and marigold petals to take back for the Clan's stores."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -20219,7 +19788,6 @@
         "involved_cats": {
             "r_c1": {
                 "status": [
-                    "apprentice",
                     "medicine cat apprentice"
                 ]
             }
@@ -20234,14 +19802,6 @@
                 "strings": [
                     "Many stems of goldenrod and marigold surround p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, snipping stems and yellow clumps of tiny flowers to bring back to c_n's herb stores. r_c1 and p_l occasionally exchange quiet meows as they work, contact calls reassuring each other that they're both still there amid the towering goldenrod."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -20278,14 +19838,6 @@
                 "strings": [
                     "The bushes have responded to the sun's call with great enthusiasm, exploding outward in chaotic growth. p_l finds it heartening, seeing the goldenrod fight its own territorial battles against the marigold next to it, bursting with health. Neither will miss the stems and flowers p_l and r_c1 take."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -20320,19 +19872,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 has a good eye for these things and snips off the best and most lush goldenrod, and the odd marigold, to take back for the Clan's stores. As {PRONOUN/s_c0/subject} {VERB/s_c0/do/does}, {PRONOUN/s_c0/subject} {VERB/s_c0/instruct/instructs} r_c1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important r_c1 has this knowledge, too."
+                    "p_l has a good eye for these things and snips off the best and most lush goldenrod, and the odd marigold, to take back for the Clan's stores. As {PRONOUN/p_l/subject} {VERB/p_l/do/does}, {PRONOUN/p_l/subject} {VERB/p_l/instruct/instructs} r_c1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important r_c1 has this knowledge, too."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -20356,7 +19899,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "s_c0 taught r_c1 to judge the quality of goldenrod stems while they gathered herbs together."
+                            "cats_from": "p_l taught r_c1 to judge the quality of goldenrod stems while they gathered herbs together."
                         }
                     }
                 ],
@@ -20378,14 +19921,6 @@
                 "strings": [
                     "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful, and r_c1 looks up at {PRONOUN/p_l/object} with disappointment."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -20522,6 +20057,7 @@
                         "prior_abbreviation": [
                             "any"
                         ],
+                        "status": ["medicine cat"],
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -20661,13 +20197,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 trots off to a good juniper tree, hopping onto a low branch to harvest its needles. From {PRONOUN/s_c0/poss} vantage point, {PRONOUN/s_c0/subject} {VERB/p_l/are/is} able to reach a low oak branch with a collection of large, deep green oak leaves. {PRONOUN/s_c0/subject/CAP} take the opportunity to gather a pawful."
+                    "p_l trots off to a good juniper tree, hopping onto a low branch to harvest its needles. From {PRONOUN/p_l/poss} vantage point, {PRONOUN/p_l/subject} {VERB/p_l/are/is} able to reach a low oak branch with a collection of large, deep green oak leaves. {PRONOUN/p_l/subject/CAP} take the opportunity to gather a pawful."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -20727,7 +20260,6 @@
         "involved_cats": {
             "r_c1": {
                 "status": [
-                    "apprentice",
                     "medicine cat apprentice"
                 ]
             }
@@ -20742,14 +20274,6 @@
                 "strings": [
                     "p_l and r_c1 find a healthy-looking juniper tree and collects a decent amount of needles from it with minimum fuss. As they pad home, p_l remembers that oak leaf stores have gotten low. {PRONOUN/p_l/subject/CAP} decide to climb a young oak in search of the valuable herb, whilst r_c1 looks on worriedly shards of bark showering down on {PRONOUN/r_c1/poss} pelt."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -20786,14 +20310,6 @@
                 "strings": [
                     "Juniper needles have so many uses. Calming minds, easing breath, soothing bellies, as a traveling herb... Really, p_l will always feel better having a good store of the stuff, and this patrol has been very successful — including an unexpected mouthful of oak leaves from a newly fallen branch after the recent greenleaf storms. {PRONOUN/p_l/subject/CAP} {VERB/p_l/make/makes} sure to send r_c1 off with both heaps of praise and a little sprig of juniper, to bring its pleasant scent to {PRONOUN/r_c1/poss} nest."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -20829,19 +20345,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 trots off to a good juniper tree, hopping onto a low branch to harvest its needles. From {PRONOUN/s_c0/poss} vantage point, {PRONOUN/s_c0/subject} {VERB/p_l/are/is} able to reach a low oak branch with a collection of large, deep green oak leaves. {PRONOUN/p_l/subject/CAP} take the opportunity to gather a pawful. As {PRONOUN/s_c0/subject} {VERB/s_c0/work/works}, {PRONOUN/s_c0/subject} {VERB/s_c0/chat/chats} with r_c1 about juniper's calming effects and the importance of oak leaves in curing deadly infections. Juniper is one of the few herbs their Clanmates compete to go on patrols to help collect, everyone likes the scent."
+                    "p_l trots off to a good juniper tree, hopping onto a low branch to harvest its needles. From {PRONOUN/p_l/poss} vantage point, {PRONOUN/p_l/subject} {VERB/p_l/are/is} able to reach a low oak branch with a collection of large, deep green oak leaves. {PRONOUN/p_l/subject/CAP} take the opportunity to gather a pawful. As {PRONOUN/p_l/subject} {VERB/p_l/work/works}, {PRONOUN/p_l/subject} {VERB/p_l/chat/chats} with r_c1 about juniper's calming effects and the importance of oak leaves in curing deadly infections. Juniper is one of the few herbs their Clanmates compete to go on patrols to help collect, everyone likes the scent."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -20887,14 +20394,6 @@
                 "strings": [
                     "p_l seems to have forgotten where to find a juniper tree, much to {PRONOUN/p_l/poss} own embarrassment and r_c1's shock."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -21005,13 +20504,14 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 trots off to a good juniper tree, hopping onto a low branch to harvest its needles. From {PRONOUN/s_c0/poss} vantage point, {PRONOUN/s_c0/subject} {VERB/p_l/are/is} able to reach a low oak branch with a collection of large, deep green oak leaves. {PRONOUN/p_l/subject/CAP} take the opportunity to gather a pawful. {PRONOUN/s_c0/poss/CAP} patrol follows {PRONOUN/s_c0/poss} lead, pulling twigs off, although a couple times s_c0 does need to remind them that the carpet of dead needles on the ground wouldn't be useful for the herb stores."
+                    "s_c0 trots off to a good juniper tree, hopping onto a low branch to harvest its needles. From {PRONOUN/s_c0/poss} vantage point, {PRONOUN/s_c0/subject} {VERB/s_c0/are/is} able to reach a low oak branch with a collection of large, deep green oak leaves. {PRONOUN/s_c0/subject/CAP} take the opportunity to gather a pawful. {PRONOUN/s_c0/poss/CAP} patrol follows {PRONOUN/s_c0/poss} lead, pulling twigs off, although a couple times s_c0 does need to remind them that the carpet of dead needles on the ground wouldn't be useful for the herb stores."
                 ],
                 "involved_cats": {
                     "s_c0": {
                         "prior_abbreviation": [
                             "any"
                         ],
+                        "status": ["medicine cat"],
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -21135,13 +20635,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It takes all of s_c0's considerable talent for such things to hunt down the lungwort within their borders. The medicine cat visits each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found."
+                    "It takes all of p_l's considerable talent for such things to hunt down the lungwort within their borders. The medicine cat visits each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2",
@@ -21161,13 +20658,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Night falls, but still s_c0 keeps going — {PRONOUN/s_c0/subject} just can't let c_n go without. Exhausted, but determined, the medicine cat persists until {PRONOUN/s_c0/subject} {VERB/s_c0/find/finds} the precious, speckled leaves."
+                    "Night falls, but still p_l keeps going — {PRONOUN/p_l/subject} just can't let c_n go without. Exhausted, but determined, the medicine cat persists until {PRONOUN/p_l/subject} {VERB/p_l/find/finds} the precious, speckled leaves."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "thoughtful",
@@ -21218,7 +20712,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "p_l"
                         ],
                         "condition": [
                             "sore"
@@ -21260,7 +20754,7 @@
                     "p_l"
                 ],
                 "cats_to": [
-                    "patrol_cats"
+                    "r_c1"
                 ],
                 "mutual": false,
                 "constraints": [
@@ -21271,7 +20765,6 @@
         "involved_cats": {
             "r_c1": {
                 "status": [
-                    "apprentice",
                     "medicine cat apprentice"
                 ]
             }
@@ -21286,14 +20779,6 @@
                 "strings": [
                     "It takes them all day, but finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a heartbeat, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, and {PRONOUN/p_l/subject} {VERB/p_l/let/lets} out a yowl and {VERB/p_l/stop/stops} to play with r_c1."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -21327,14 +20812,6 @@
                 "strings": [
                     "r_c1 listens intently as the sun drifts across the sky during their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers {PRONOUN/r_c1/object} with praise. r_c1 feels like {PRONOUN/r_c1/subject} could burst with pride over {PRONOUN/r_c1/poss} accomplishment."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -21366,26 +20843,23 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It takes all of s_c0's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found."
+                    "It takes all of p_l's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2",
                                 "CLEVER,3"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "cats_from": [
                             "r_c1"
@@ -21410,10 +20884,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Night falls, and still s_c0 insists they keep going. Lungwort is the only reliable cure for yellowcough, and {PRONOUN/s_c0/subject} just can't let c_n go without. Exhausted, but determined, the medicine cats persist patiently until they finally find the precious, speckled leaves."
+                    "Night falls, and still p_l insists they keep going. Lungwort is the only reliable cure for yellowcough, and {PRONOUN/p_l/subject} just can't let c_n go without. Exhausted, but determined, the medicine cats persist patiently until they finally find the precious, speckled leaves."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "thoughtful",
@@ -21422,10 +20896,7 @@
                                 "responsible",
                                 "arrogant"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -21461,14 +20932,6 @@
                 "strings": [
                     "Not only do {PRONOUN/p_l/subject} not find anything, but r_c1 seems to not be taking in a single thing p_l tries to teach, and by the time they're back at camp p_l wants to screech."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -21536,7 +20999,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -21565,7 +21028,7 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "patrol_cats"
                         ],
                         "cats_from": [
                             "p_l"
@@ -21591,19 +21054,16 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It takes all of s_c0's considerable talent for such things to hunt down the lungwort within their borders. The medicine cat visits each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found."
+                    "It takes all of p_l's considerable talent for such things to hunt down the lungwort within their borders. The medicine cat visits each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2",
                                 "CLEVER,3"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -21613,7 +21073,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -21636,10 +21096,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Night falls, but still s_c0 keeps going — {PRONOUN/s_c0/subject} just can't let c_n go without. Exhausted, but determined, the medicine cat persists until {PRONOUN/s_c0/subject} {VERB/s_c0/find/finds} the precious, speckled leaves."
+                    "Night falls, but still p_l keeps going — {PRONOUN/p_l/subject} just can't let c_n go without. Exhausted, but determined, the medicine cat persists until {PRONOUN/p_l/subject} {VERB/p_l/find/finds} the precious, speckled leaves."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "thoughtful",
@@ -21648,10 +21108,7 @@
                                 "responsible",
                                 "arrogant"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -21661,7 +21118,7 @@
                             "p_l"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -21686,26 +21143,23 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "By the time they give up and return to camp, p_l is approaching the explosion point with s_c0. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'ve/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today."
+                    "By the time they give up and return to camp, p_l is approaching the explosion point with r_c0. {PRONOUN/r_c0/subject/CAP}{VERB/r_c0/'ve/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "r_c0": {
                         "stat": {
                             "trait": [
                                 "troublesome",
                                 "childish"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "-p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "cats_from": [
                             "p_l"
@@ -21824,13 +21278,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 has a good eye for these things, finding an excellent patch of mallow with a tempting betony plant growing nearby."
+                    "p_l has a good eye for these things, finding an excellent patch of mallow with a tempting betony plant growing nearby."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -21890,7 +21341,6 @@
         "involved_cats": {
             "r_c1": {
                 "status": [
-                    "apprentice",
                     "medicine cat apprentice"
                 ]
             }
@@ -21905,14 +21355,6 @@
                 "strings": [
                     "The soft, rose-like scent of the mallow bushes drifts around p_l and r_c1 as they work, snipping off clumps of large fuzzy three-nubbed leaves and the occasional pink flower to be taken back to camp. Thankfully, another pink-flowered plant grows nearby and p_l had just begun to run out of betony. Bees hum through the air, not trying to bother the medicine cats, and p_l points out where {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} the hive might be to r_c1."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -21949,14 +21391,6 @@
                 "strings": [
                     "It's always nice to harvest from a bush so big it will probably never even notice the leaves and flowers p_l takes and just nearby a betony plant is patiently waiting for its stems to be collected. r_c1 carefully fixes the location in {PRONOUN/r_c1/poss} mind, to return to next greenleaf."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -21991,19 +21425,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 has a good eye for these things, finding an excellent patch of mallow with a tempting betony plant growing nearby. As {PRONOUN/s_c0/subject} {VERB/s_c0/do/does}, {PRONOUN/s_c0/subject} {VERB/s_c0/instruct/instructs} r_c1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important r_c1 has this knowledge, too."
+                    "p_l has a good eye for these things, finding an excellent patch of mallow with a tempting betony plant growing nearby. As {PRONOUN/p_l/subject} {VERB/p_l/do/does}, {PRONOUN/p_l/subject} {VERB/p_l/instruct/instructs} r_c1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important r_c1 has this knowledge, too."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -22049,14 +21474,6 @@
                 "strings": [
                     "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful, and r_c1 looks up at {PRONOUN/p_l/object} with disappointment."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -22193,6 +21610,7 @@
                         "prior_abbreviation": [
                             "any"
                         ],
+                        "status": ["medicine cat"],
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -22332,18 +21750,15 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 finds a patch of marigold, harvests its best leaves and flowers, somehow finds some tansy as well, and pads home, unaware of how much of {PRONOUN/s_c0/poss} success rests on {PRONOUN/s_c0/poss} talent for herb gathering."
+                    "p_l finds a patch of marigold, harvests its best leaves and flowers, somehow finds some tansy as well, and pads home, unaware of how much of {PRONOUN/p_l/poss} success rests on {PRONOUN/p_l/poss} talent for herb gathering."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 10,
@@ -22398,7 +21813,6 @@
         "involved_cats": {
             "r_c1": {
                 "status": [
-                    "apprentice",
                     "medicine cat apprentice"
                 ]
             }
@@ -22413,14 +21827,6 @@
                 "strings": [
                     "The low-growing marigold creeps across the ground. Its strange leaves that imitate fern fronds are distinct, but hard to spot from a distance. What's visible even from across a meadow is their explosively sunset-colored flowers. Nearby, a sharp scent indicates tansy must be growing. Sure enough, r_c1 has no trouble identifying either of them."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -22456,14 +21862,6 @@
                 "strings": [
                     "It stops infection, bleeding, <i>and</i> sore joints — why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as {PRONOUN/p_l/subject} can stuff into {PRONOUN/p_l/poss} mouth, and somehow manages to fit in a little tansy too. r_c1 actually drops some of the leaves {PRONOUN/r_c1/subject} {VERB/r_c1/carry/carries} on the way back to camp, a little over-ambitious with how much {PRONOUN/r_c1/subject} can carry."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -22498,24 +21896,15 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 finds a patch of marigold, harvests its best leaves, and picks up some nice tansy too. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/pad/pads} home after {PRONOUN/s_c0/poss} work is finished with r_c1 in tow, unaware of how much of {PRONOUN/s_c0/poss} success rests on {PRONOUN/s_c0/poss} talent for herb gathering. r_c1 watches, trying to soak up {PRONOUN/s_c0/poss} skills."
+                    "p_l finds a patch of marigold, harvests its best leaves, and picks up some nice tansy too. {PRONOUN/p_l/subject/CAP} {VERB/p_l/pad/pads} home after {PRONOUN/p_l/poss} work is finished with r_c1 in tow, unaware of how much of {PRONOUN/p_l/poss} success rests on {PRONOUN/p_l/poss} talent for herb gathering. r_c1 watches, trying to soak up {PRONOUN/p_l/poss} skills."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "s_c0": {
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 20,
@@ -22556,14 +21945,6 @@
                 "strings": [
                     "p_l is distracted today, and it affects {PRONOUN/p_l/poss} work. The patrol is unsuccessful, and r_c1 looks up at {PRONOUN/p_l/object} with disappointment."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -22679,21 +22060,22 @@
                 ],
                 "involved_cats": {
                     "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "status": ["medicine cat"],
                         "stat": {
                             "skill": [
                                 "SENSE,2"
                             ]
-                        },
-                        "prior_abbreviation": [
-                            "p_l"
-                        ]
+                        }
                     }
                 },
                 "exp_gained": 10,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -22820,13 +22202,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 spots mullein plants growing plenty of leaves on their strange central stems, and knocks them over so that the entire bundle can be carried home. As a bonus, {PRONOUN/s_c0/poss} plant pruning operation exposes a couple hidden thyme plants creeping along the soil, and they're added to the day's harvest."
+                    "p_l spots mullein plants growing plenty of leaves on their strange central stems, and knocks them over so that the entire bundle can be carried home. As a bonus, {PRONOUN/p_l/poss} plant pruning operation exposes a couple hidden thyme plants creeping along the soil, and they're added to the day's harvest."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -22886,7 +22265,6 @@
         "involved_cats": {
             "r_c1": {
                 "status": [
-                    "apprentice",
                     "medicine cat apprentice"
                 ]
             }
@@ -22901,14 +22279,6 @@
                 "strings": [
                     "p_l spots the mullein plants by scrambling up onto a low rock and looking for their sapling-like, fat, towering stems starting to poke over all the other plants. Once {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} called r_c1 up to have a look, {PRONOUN/p_l/subject} {VERB/p_l/hop/hops} down to trot over and harvest them and nearly squish a thyme plant. p_l is happy to take that too."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -22945,14 +22315,6 @@
                 "strings": [
                     "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, <i>and</i> being used to treat unhappy guts — mullein is a good herb to keep in stock, even if it doesn't have the glamour of catmint or the rarity of lungwort. r_c1 soaks up the lessons on its uses attentively, and also sniffs out a thyme bush for p_l."
                 ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    }
-                },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
@@ -22987,19 +22349,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 spots mullein plants growing plenty of leaves on their strange central stems, and, with r_c1 helping {PRONOUN/s_c0/object}, knocks them over so that the entire bundle can be carried home. As a bonus, {PRONOUN/s_c0/poss} plant pruning operation exposes a couple hidden thyme plants creeping along the soil, and they're added to the day's harvest."
+                    "p_l spots mullein plants growing plenty of leaves on their strange central stems, and, with r_c1 helping {PRONOUN/p_l/object}, knocks them over so that the entire bundle can be carried home. As a bonus, {PRONOUN/p_l/poss} plant pruning operation exposes a couple hidden thyme plants creeping along the soil, and they're added to the day's harvest."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice",
-                            "medicine cat apprentice"
-                        ]
-                    },
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "SENSE,2"
@@ -23023,7 +22376,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "r_c1 helped s_c0 knock down mullein plants to bring them back to the medicine cat den."
+                            "cats_from": "r_c1 helped p_l knock down mullein plants to bring them back to the medicine cat den."
                         }
                     }
                 ],
@@ -47426,7 +46779,7 @@
         "types": [
             "herb_gathering"
         ],
-        "frequency": 4,
+        "frequency": 2,
         "location": [
             "-desert"
         ],
@@ -52699,7 +52052,7 @@
         ],
         "required_cat_types": {
             "patrol_cats": [
-                2,
+                3,
                 6
             ],
             "normal adult": [
@@ -52735,7 +52088,7 @@
                             ]
                         },
                         "prior_abbreviation": [
-                            "any"
+                            "-p_l"
                         ]
                     }
                 },
@@ -52853,271 +52206,271 @@
         ]
     },
     {
-  "event_id": "gen_med_mossgathering",
-  "types": [
-    "herb_gathering"
-  ],
-  "frequency": 4,
-  "required_cat_types": {
-    "patrol_cats": [1, 4]
-  },
-  "chance_of_success": 70,
-  "patrol_art": "cat_sprites/gen_med_gatheringmoss_Mc",
-  "intro_text": "p_l notices that the moss in the medicine cat den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
-  "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as {PRONOUN/p_l/subject} {VERB/p_l/are/is} ready to leave. Unfortunately, the moss will have to wait.",
-  "success_outcomes": [
-    {
-      "required_cat_types": {
-        "patrol_cats": [1, 1]
-      },
-     "frequency": 4,
-      "strings": [
-        "p_l makes {PRONOUN/p_l/poss} way to {PRONOUN/p_l/poss} favorite moss patch. {PRONOUN/p_l/subject/CAP} {VERB/p_l/slice/slices} patches with {PRONOUN/p_l/poss} claws, careful to exclude any roots or dirt. Once {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} satisfied with {PRONOUN/p_l/poss} pile, {PRONOUN/p_l/subject} gently {VERB/p_l/wrap/wraps} {PRONOUN/p_l/poss} jaws around the heap and {VERB/p_l/make/makes} {PRONOUN/p_l/poss} way back to camp."
-      ],
-      "exp_gained": 10,
-      "supply": [
-        {
-          "type": "moss",
-          "adjust": "increase_medium"
-        }
-      ],
-      "relationship_changes": [
-        {
-          "cats_to": [
-            "patrol_cats"
-          ],
-          "cats_from": [
-            "some_clan"
-          ],
-          "mutual": false,
-          "values": [
-            "like"
-          ],
-          "amount": 6,
-          "log": {
-            "cats_from": "cat_from is grateful for cat_to's diligence in gathering moss."
-          }
-        }
-      ]
-    },
-    {
-      "required_cat_types": {
-        "patrol_cats": [1, 1]
-      },
-      "frequency": 2,
-      "strings": [
-        "p_l arrives at {PRONOUN/p_l/poss} favorite moss gathering patch. The moss is tender and fluffy beneath {PRONOUN/p_l/poss} paws. With all the nagging responsibilities weighing on {PRONOUN/p_l/object} as a medicine cat, p_l supposes it might be alright to take a moment away from {PRONOUN/p_l/poss} duties to relax. p_l nestles into the soft moss for a quick respite. {PRONOUN/p_l/subject/CAP} {VERB/p_l/awaken/awakens} refreshed and {VERB/m_c/are/is} still able to gather a few pieces of moss before sunset."
-      ],
-      "exp_gained": 5,
-      "supply": [
-        {
-          "type": "moss",
-          "adjust": "increase_small"
-        }
-      ]
-    },
-    {
-      "required_cat_types": {
-        "patrol_cats": [2, 2]
-      },
-      "involved_cats": {
-        "r_c0": {}
-         },
-      "frequency": 4,
-      "strings": [
-        "p_l leads the way to the best moss patch {PRONOUN/p_l/subject} {VERB/p_l/know/knows}, with r_c0 not far behind. The cats begin cutting off bits of moss and making their respective piles. Once the piles turn into mouthfuls, they pick up the bundles of fresh moss and start back towards camp."
+        "event_id": "gen_med_mossgathering",
+        "types": [
+            "herb_gathering"
         ],
-      "exp_gained": 10,
-      "relationship_changes": [
-        {
-          "cats_to": [
-            "patrol_cats"
-          ],
-          "cats_from": [
-            "patrol_cats"
-          ],
-          "mutual": false,
-          "values": [
-            "like"
-          ],
-          "amount": 6,
-          "log": {
-            "cats_from": "cat_to and cat_from enjoyed a low-stress afternoon gathering plenty of fresh moss for the medicine cat den."
-          }
-        }
-      ],
-      "supply": [
-        {
-          "type": "moss",
-          "adjust": "increase_medium"
-        }
-      ]
-    },
-    {
-      "required_cat_types": {
-        "patrol_cats": [2, 2],
-        "medicine cat": [1, 1],
-        "medicine cat apprentice": [1, 1]
-      },
-      "frequency": 3,
-      "involved_cats": {
-        "r_c0": {}
-      },
-      "strings": [
-        "p_l leads the way to {PRONOUN/p_l/poss} favorite moss patch and carefully instructs r_c0 in how to gather the moss without waste while leaving enough to regrow. If they tend the patch carefully, they will be able to find moss in almost every season."
+        "frequency": 4,
+        "required_cat_types": {
+            "patrol_cats": [1, 4]
+        },
+        "chance_of_success": 70,
+        "patrol_art": "cat_sprites/gen_med_gatheringmoss_Mc",
+        "intro_text": "p_l notices that the moss in the medicine cat den is getting old. {PRONOUN/p_l/subject/CAP} {VERB/p_l/need/needs} to go and gather some more.",
+        "decline_text": "A cat requires {PRONOUN/p_l/poss} attention just as {PRONOUN/p_l/subject} {VERB/p_l/are/is} ready to leave. Unfortunately, the moss will have to wait.",
+        "success_outcomes": [
+            {
+                "required_cat_types": {
+                    "patrol_cats": [1, 1]
+                },
+                "frequency": 4,
+                "strings": [
+                    "p_l makes {PRONOUN/p_l/poss} way to {PRONOUN/p_l/poss} favorite moss patch. {PRONOUN/p_l/subject/CAP} {VERB/p_l/slice/slices} patches with {PRONOUN/p_l/poss} claws, careful to exclude any roots or dirt. Once {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} satisfied with {PRONOUN/p_l/poss} pile, {PRONOUN/p_l/subject} gently {VERB/p_l/wrap/wraps} {PRONOUN/p_l/poss} jaws around the heap and {VERB/p_l/make/makes} {PRONOUN/p_l/poss} way back to camp."
+                ],
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "moss",
+                        "adjust": "increase_medium"
+                    }
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 6,
+                        "log": {
+                            "cats_from": "cat_from is grateful for cat_to's diligence in gathering moss."
+                        }
+                    }
+                ]
+            },
+            {
+                "required_cat_types": {
+                    "patrol_cats": [1, 1]
+                },
+                "frequency": 2,
+                "strings": [
+                    "p_l arrives at {PRONOUN/p_l/poss} favorite moss gathering patch. The moss is tender and fluffy beneath {PRONOUN/p_l/poss} paws. With all the nagging responsibilities weighing on {PRONOUN/p_l/object} as a medicine cat, p_l supposes it might be alright to take a moment away from {PRONOUN/p_l/poss} duties to relax. p_l nestles into the soft moss for a quick respite. {PRONOUN/p_l/subject/CAP} {VERB/p_l/awaken/awakens} refreshed and {VERB/m_c/are/is} still able to gather a few pieces of moss before sunset."
+                ],
+                "exp_gained": 5,
+                "supply": [
+                    {
+                        "type": "moss",
+                        "adjust": "increase_small"
+                    }
+                ]
+            },
+            {
+                "required_cat_types": {
+                    "patrol_cats": [2, 2]
+                },
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "frequency": 4,
+                "strings": [
+                    "p_l leads the way to the best moss patch {PRONOUN/p_l/subject} {VERB/p_l/know/knows}, with r_c0 not far behind. The cats begin cutting off bits of moss and making their respective piles. Once the piles turn into mouthfuls, they pick up the bundles of fresh moss and start back towards camp."
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 6,
+                        "log": {
+                            "cats_from": "cat_to and cat_from enjoyed a low-stress afternoon gathering plenty of fresh moss for the medicine cat den."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "moss",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "required_cat_types": {
+                    "patrol_cats": [2, 2],
+                    "medicine cat": [1, 1],
+                    "medicine cat apprentice": [1, 1]
+                },
+                "frequency": 3,
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "strings": [
+                    "p_l leads the way to {PRONOUN/p_l/poss} favorite moss patch and carefully instructs r_c0 in how to gather the moss without waste while leaving enough to regrow. If they tend the patch carefully, they will be able to find moss in almost every season."
+                ],
+                "exp_gained": 15,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 6,
+                        "log": {
+                            "cats_from": "cat_from appreciated cat_to's instruction while gathering moss."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "moss",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "required_cat_types": {
+                    "patrol_cats": [3, 4]
+                },
+                "frequency": 4,
+                "strings": [
+                    "p_l leads the way to the best moss patch {PRONOUN/p_l/subject} {VERB/p_l/know/knows}, with {PRONOUN/p_l/poss} helpers following close behind. The cats begin cutting off bits of moss and making their respective piles. Once the piles turn into mouthfuls, they pick up the bundles of fresh moss and start back towards camp."
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 6,
+                        "log": {
+                            "cats_from": "cat_to and cat_from enjoyed a low-stress afternoon gathering plenty of fresh moss for the medicine cat den."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "moss",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "required_cat_types": {
+                    "patrol_cats": [3, 4],
+                    "all apprentices": [-1, -1]
+                },
+                "strings": [
+                    "p_l leads the way to {PRONOUN/p_l/poss} favorite moss patch, attempting to ignore {PRONOUN/p_l/poss} reluctant helpers complaining about how the duty is beneath them. Their grouchiness, however, fades as they realize that moss gathering can be a relaxing, peaceful time to chat with their peers."
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 4,
+                        "log": {
+                            "cats_from": "While initially reluctant, cat_from admitted {PRONOUN/cat_from/subject} enjoyed {PRONOUN/cat_from/poss} time socializing and gathering moss with cat_to."
+                        }
+                    }
+                ],
+                "frequency": 4,
+                "supply": [
+                    {
+                        "type": "moss",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            }
         ],
-      "exp_gained": 15,
-      "relationship_changes": [
-        {
-          "cats_to": [
-            "p_l"
-          ],
-          "cats_from": [
-            "r_c"
-          ],
-          "mutual": false,
-          "values": [
-            "like"
-          ],
-          "amount": 6,
-          "log": {
-            "cats_from": "cat_from appreciated cat_to's instruction while gathering moss."
-          }
-        }
-      ],
-      "supply": [
-        {
-          "type": "moss",
-          "adjust": "increase_medium"
-        }
-      ]
-    },
-    {
-      "required_cat_types": {
-        "patrol_cats": [3, 4]
-      },
-      "frequency": 4,
-      "strings": [
-        "p_l leads the way to the best moss patch {PRONOUN/p_l/subject} {VERB/p_l/know/knows}, with {PRONOUN/p_l/poss} helpers following close behind. The cats begin cutting off bits of moss and making their respective piles. Once the piles turn into mouthfuls, they pick up the bundles of fresh moss and start back towards camp."
-        ],
-      "exp_gained": 10,
-      "relationship_changes": [
-        {
-          "cats_to": [
-            "patrol_cats"
-          ],
-          "cats_from": [
-            "patrol_cats"
-          ],
-          "mutual": false,
-          "values": [
-            "like"
-          ],
-          "amount": 6,
-          "log": {
-            "cats_from": "cat_to and cat_from enjoyed a low-stress afternoon gathering plenty of fresh moss for the medicine cat den."
-          }
-        }
-      ],
-      "supply": [
-        {
-          "type": "moss",
-          "adjust": "increase_medium"
-        }
-      ]
-    },
-    {
-      "required_cat_types": {
-        "patrol_cats": [3, 4],
-        "all apprentices": [-1, -1]
-      },
-      "strings": [
-        "p_l leads the way to {PRONOUN/p_l/poss} favorite moss patch, attempting to ignore {PRONOUN/p_l/poss} reluctant helpers complaining about how the duty is beneath them. Their grouchiness, however, fades as they realize that moss gathering can be a relaxing, peaceful time to chat with their peers."
-        ],
-      "exp_gained": 10,
-      "relationship_changes": [
-        {
-          "cats_to": [
-            "p_l"
-          ],
-          "cats_from": [
-            "patrol_cats"
-          ],
-          "mutual": true,
-          "values": [
-            "like",
-            "comfort"
-          ],
-          "amount": 4,
-          "log": {
-            "cats_from": "While initially reluctant, cat_from admitted {PRONOUN/cat_from/subject} enjoyed {PRONOUN/cat_from/poss} time socializing and gathering moss with cat_to."
-          }
-        }
-      ],
-      "frequency": 4,
-      "supply": [
-        {
-          "type": "moss",
-          "adjust": "increase_medium"
-        }
-      ]
-    }
-  ],
-  "fail_outcomes": [
-    {
-      "required_cat_types": {
-        "patrol_cats": [
-          1,
-          4
-        ]
-      },
-      "strings": [
-        "Mouse-dung! When p_l gets to the best moss gathering spot, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} that some animal has dug up most of the moss. {PRONOUN/p_l/subject/CAP}'ll have to leave the rest to repopulate before gathering from this spot again."
-      ],
-      "exp_gained": 0,
-      "frequency": 4
-    },
-    {
-      "required_cat_types": {
-        "patrol_cats": [
-          1,
-          1
-        ]
-      },
-      "strings": [
-        "p_l arrives at {PRONOUN/p_l/poss} favorite moss gathering patch. The moss is tender and fluffy beneath {PRONOUN/p_l/poss} paws. With all the nagging responsibilities weighing on {PRONOUN/p_l/object} as a medicine cat, p_l supposes it might be alright to take a moment away from {PRONOUN/p_l/poss} duties to relax. p_l nestles into the soft moss for a quick respite... only to wake after dusk and return to camp empty-pawed."
-      ],
-      "relationship_changes": [
-        {
-          "cats_to": [
-            "patrol_cats"
-          ],
-          "cats_from": [
-            "some_clan",
-            "high_lawful"
-          ],
-          "mutual": false,
-          "values": [
-            "like"
-          ],
-          "amount": -3,
-          "log": {
-            "cats_from": "cat_from thought it was odd that cat_to spent so long out \"gathering moss\" only to return with empty paws."
-          }
-        }
-      ],
-      "exp_gained": 0,
-      "frequency": 2
-    },
-    {
-      "required_cat_types": {
-        "patrol_cats": [3, 4]
-      },
-      "frequency": 4,
-      "strings": [
-        "p_l leads the way to {PRONOUN/p_l/poss} favorite moss patch and watches bitterly as {PRONOUN/p_l/poss} patrol make a mess of it with their clumsy paws and lackadaisical attitudes. There's barely a scrap worth taking back to camp!"
-      ],
-      "relationship_changes": [
+        "fail_outcomes": [
+            {
+                "required_cat_types": {
+                    "patrol_cats": [
+                        1,
+                        4
+                    ]
+                },
+                "strings": [
+                    "Mouse-dung! When p_l gets to the best moss gathering spot, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} that some animal has dug up most of the moss. {PRONOUN/p_l/subject/CAP}'ll have to leave the rest to repopulate before gathering from this spot again."
+                ],
+                "exp_gained": 0,
+                "frequency": 4
+            },
+            {
+                "required_cat_types": {
+                    "patrol_cats": [
+                        1,
+                        1
+                    ]
+                },
+                "strings": [
+                    "p_l arrives at {PRONOUN/p_l/poss} favorite moss gathering patch. The moss is tender and fluffy beneath {PRONOUN/p_l/poss} paws. With all the nagging responsibilities weighing on {PRONOUN/p_l/object} as a medicine cat, p_l supposes it might be alright to take a moment away from {PRONOUN/p_l/poss} duties to relax. p_l nestles into the soft moss for a quick respite... only to wake after dusk and return to camp empty-pawed."
+                ],
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "some_clan",
+                            "high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "cat_from thought it was odd that cat_to spent so long out \"gathering moss\" only to return with empty paws."
+                        }
+                    }
+                ],
+                "exp_gained": 0,
+                "frequency": 2
+            },
+            {
+                "required_cat_types": {
+                    "patrol_cats": [3, 4]
+                },
+                "frequency": 4,
+                "strings": [
+                    "p_l leads the way to {PRONOUN/p_l/poss} favorite moss patch and watches bitterly as {PRONOUN/p_l/poss} patrol make a mess of it with their clumsy paws and lackadaisical attitudes. There's barely a scrap worth taking back to camp!"
+                ],
+                "relationship_changes": [
                     {
                         "cats_to": [
                             "patrol_cats"
@@ -53135,37 +52488,37 @@
                         }
                     }
                 ],
-      "exp_gained": 0
-    },
-    {
-      "required_cat_types": {
-        "patrol_cats": [3, 4],
-        "all apprentices": [-1, -1]
-      },
-      "frequency": 4,
-      "strings": [
-        "p_l leads the way to {PRONOUN/p_l/poss} favorite moss patch, attempting to ignore {PRONOUN/p_l/poss} reluctant helpers complaining about how the duty is beneath them. Their gripes and complaints become too much to bear and p_l turns the patrol around without getting anything done."
-        ],
-      "exp_gained": 0,
-      "relationship_changes": [
-        {
-          "cats_to": [
-            "p_l"
-          ],
-          "cats_from": [
-            "patrol_cats"
-          ],
-          "mutual": true,
-          "values": [
-            "like"
-          ],
-          "amount": -8,
-          "log": {
-            "cats_from": "cat_from had to call off a moss gathering patrol when cat_to insisted it was beneath {PRONOUN/cat_to/object}."
-          }
-        }
-      ]
+                "exp_gained": 0
+            },
+            {
+                "required_cat_types": {
+                    "patrol_cats": [3, 4],
+                    "all apprentices": [-1, -1]
+                },
+                "frequency": 4,
+                "strings": [
+                    "p_l leads the way to {PRONOUN/p_l/poss} favorite moss patch, attempting to ignore {PRONOUN/p_l/poss} reluctant helpers complaining about how the duty is beneath them. Their gripes and complaints become too much to bear and p_l turns the patrol around without getting anything done."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from had to call off a moss gathering patrol when cat_to insisted it was beneath {PRONOUN/cat_to/object}."
+                        }
+                    }
+                ]
+            }
+        ]
     }
-  ]
-}
 ]

@@ -1,0 +1,1353 @@
+[
+    {
+        "event_id": "fst_med_herblocation1",
+        "types": [
+            "herb_gathering"
+        ],
+        "frequency": 4,
+        "location": [
+            "forest"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ],
+            "medicine cat": [
+                1,
+                1
+            ],
+            "medicine cat apprentice": [
+                1,
+                1
+            ]
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "p_l"
+                ],
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "mentor\/app"
+                ]
+            }
+        ],
+        "involved_cats": {
+            "r_c1": {
+                "status": [
+                    "apprentice",
+                    "medicine cat apprentice"
+                ]
+            }
+        },
+        "chance_of_success": 65,
+        "patrol_art": "med_general_intro",
+        "intro_text": "p_l looks at the calm, cloudless sky, and decides it's a good opportunity to show r_c1 where some of the most commonly needed herbs are located in their territory.",
+        "decline_text": "As {PRONOUN\/p_l\/subject} {VERB\/p_l\/look\/looks} at r_c1's absent-minded gaze, {PRONOUN\/p_l\/subject} {VERB\/p_l\/hesitate\/hesitates} and {VERB\/p_l\/change\/changes} {PRONOUN\/p_l\/poss} mind. Maybe another day would be best, when r_c1 is more focused.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c1 is focused and attentive, giving p_l confidence that next time there is an emergency, r_c1 will be able to find the herbs {PRONOUN\/r_c1\/subject} {VERB\/r_c1\/need\/needs} without {PRONOUN\/p_l\/object} if needed."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice",
+                            "medicine cat apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from listened to cat_to attentively during an herb-gathering patrol.",
+                            "cats_to": "cat_to felt a measure of confidence in cat_from's attentiveness during an herb-gathering patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "As p_l is explaining why and where the herbs are growing, r_c1 lets out a shout and bolts ahead. To p_l's surprise, {PRONOUN\/r_c1\/subject} {VERB\/r_c1\/have\/has} found a previously unknown patch of an uncommon herb! Stunned, but filled with pride that {PRONOUN\/r_c1\/subject} found and recognized the herb, p_l promises {PRONOUN\/r_c1\/object} the first pick of fresh-kill as soon as they return to camp."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice",
+                            "medicine cat apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from found a hidden herb patch during a lesson, impressing cat_to.",
+                            "cats_to": "cat_to was impressed by cat_from's keen observation by finding a hidden herb patch."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c1 is constantly distracted, running ahead at every little noise or interesting sight, much to the frustration of p_l. Evidently, no new knowledge will be gained that day."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice",
+                            "medicine cat apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "Frustrated by cat_to's inattention, cat_from ended {PRONOUN\/cat_from\/poss} gathering lesson early."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "fst_med_herblocation2",
+        "types": [
+            "herb_gathering"
+        ],
+        "frequency": 4,
+        "location": [
+            "forest"
+        ],
+        "tags": [],
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ],
+            "medicine cat apprentice": [
+                1,
+                1
+            ]
+        },
+        "chance_of_success": 65,
+        "patrol_art": "cat_sprites\/fst_med_herblocation2",
+        "intro_text": "p_l has been sent out into the forest to try to find specific herbs alone.",
+        "decline_text": "Nervous and scared of everything that even slightly moves, {PRONOUN\/p_l\/subject} {VERB\/p_l\/decide\/decides} to go back to camp and try again another day. {PRONOUN\/p_l\/poss\/CAP} mentor won't be very pleased, but {PRONOUN\/p_l\/subject} {VERB\/p_l\/rationalize\/rationalizes} that it's better to go with confidence than nerves.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l is focused and determined to prove {PRONOUN\/p_l\/poss} independence. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/find\/finds} the herbs easily, and {VERB\/p_l\/bring\/brings} them back to the camp with {PRONOUN\/p_l\/poss} head held high, no sweat, no stress, no fuss."
+                ],
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "p_l goes to a known herb patch \u2014 but the plant has died! {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/don't\/doesn't} give up, hunting around in the area until {PRONOUN\/p_l\/subject} {VERB\/p_l\/find\/finds} a smaller overlooked bush that still has leaves on it."
+                ],
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l goes to a known herb patch \u2014 but the plant has died! {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/give\/gives} up and {VERB\/p_l\/return\/returns} to camp, {PRONOUN\/p_l\/poss} tail dragging miserably along the ground."
+                ],
+                "exp_gained": 0
+            }
+        ]
+    },
+    {
+        "event_id": "fst_med_stumble1",
+        "types": [
+            "herb_gathering"
+        ],
+        "frequency": 4,
+        "location": [
+            "forest"
+        ],
+        "tags": [
+            "romance"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ],
+            "medicine cat": [
+                1,
+                1
+            ],
+            "normal adult": [
+                1,
+                1
+            ]
+        },
+        "involved_cats": {
+            "r_c0": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "cats_from": [
+                    "patrol_cats"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "can_romance"
+                ]
+            }
+        ],
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites\/fst_med_stumble_McWr",
+        "intro_text": "r_c0 trips over a tree root while helping p_l to collect herbs.",
+        "decline_text": "{PRONOUN\/r_c0\/subject\/CAP} quickly {VERB\/r_c0\/pick\/picks} {PRONOUN\/r_c0\/self} up and {VERB\/r_c0\/continue\/continues} on.",
+        "success_outcomes": [
+            {
+                "frequency": 1,
+                "strings": [
+                    "Though p_l checks {PRONOUN\/r_c0\/object} over and doesn't find any injuries, r_c0 <i>insists<\/i> that {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/need\/needs} to lean on p_l's shoulder all the way back to camp. p_l complies, and r_c0 purrs the entire way home."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "romance"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "When r_c0 tripped on patrol, {PRONOUN\/r_c0\/subject} insisted on leaning against p_l all the way back to camp."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from appreciated how cat_to checked {PRONOUN\/cat_from\/object} over when {PRONOUN\/cat_from\/subject} tripped on patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 swears {PRONOUN\/s_c0\/subject} didn't trip! {PRONOUN\/s_c0\/subject\/CAP} {VERB\/s_c0\/were\/was} just saying hello to the ground. With {PRONOUN\/s_c0\/poss} face."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "playful",
+                                "bold",
+                                "charismatic",
+                                "confident"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "r_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "romance",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "When s_c0 tripped on patrol, {PRONOUN\/s_c0\/subject} tried to play it off in front of p_l.",
+                            "cats_to": "p_l was amused by how s_c0 played it off when {PRONOUN\/s_c0\/subject} tripped over a root while on patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Thankfully, r_c0 is able to pick {PRONOUN\/r_c0\/self} up, {PRONOUN\/r_c0\/poss} only injuries being the ones to {PRONOUN\/r_c0\/poss} pride. StarClan, did that <i>really<\/i> have to happen in front of p_l?"
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -6,
+                        "log": {
+                            "cats_from": "cat_from watched cat_to embarrass {PRONOUN\/cat_to\/self} in front of {PRONOUN\/cat_from\/object} by tripping on a root."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from embarrassed {PRONOUN\/cat_from\/self} in front of cat_to by tripping on a root, and avoided {PRONOUN\/cat_to\/object} afterward."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 checks r_c0 over and, upon confirming that there are no injuries, tells {PRONOUN\/r_c0\/object} that {PRONOUN\/r_c0\/object}{VERB\/r_c0\/'re\/'s} fine and to walk it off."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "cold",
+                                "grumpy",
+                                "strict"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "p_l"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "romance",
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_to was abrasive and unfeeling when cat_from tripped over a root in front of {PRONOUN\/cat_to\/object}."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was unimpressed by how cat_to made a big deal out of tripping over a root."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l checks r_c0 over and, while the other cat is not seriously injured, {PRONOUN\/r_c0\/subject}{VERB\/r_c0\/'re\/'s} definitely a little more battered than {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/were\/was} when they set out."
+                ],
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "minor_injury"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 sees r_c0 falling and rushes to help. However, before s_c0 can reach {PRONOUN\/s_c0\/poss} Clanmate, {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/trip\/trips} over the <i>same<\/i> tree root and {VERB\/s_c0\/end\/ends} up joining r_c0 on the ground. Thankfully, neither cat is seriously injured and, after sharing a laugh over their shared misfortune, they decide to call it a day and head back to camp, leaning on each other the whole way home."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "oblivious"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "p_l"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to shared a laugh when they both tripped over the same root."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "patrol_cats"
+                        ],
+                        "condition": [
+                            "minor_injury"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 can't help the <i>mrrp<\/i>s of laughter that escape {PRONOUN\/s_c0\/object} at the sight. Sweet StarClan, if only r_c0 could see {PRONOUN\/r_c0\/poss} own face! However, karma quickly comes for s_c0, who is so busy laughing at r_c's misfortune that {PRONOUN\/s_c0\/subject} completely {VERB\/s_c0\/miss\/misses} and trips over the <i>other<\/i> tree root that just so happens to be directly in {PRONOUN\/s_c0\/poss} path. <i>Meowch!<\/i>"
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "childish",
+                                "playful"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "p_l"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "romance",
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was upset that cat_to laughed at {PRONOUN\/cat_from\/object} when cat_from tripped on a root."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "patrol_cats"
+                        ],
+                        "condition": [
+                            "minor_injury"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "r_c0 yowls out in pain, alerting p_l and causing {PRONOUN\/p_l\/object} to drop everything and rush over. The medicine cat tries to help {PRONOUN\/p_l\/poss} companion to stand, but it quickly becomes clear that that won't be happening. r_c0 will need to be carried back to camp."
+                ],
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "blunt_force_injury"
+                        ],
+                        "scar_history": "m_c was scarred after {PRONOUN\/m_c\/subject} tripped over a tree root.",
+                        "death_history": "m_c died from injuries sustained after tripping over a tree root."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "fst_med_stumble2",
+        "types": [
+            "herb_gathering"
+        ],
+        "frequency": 4,
+        "location": [
+            "forest"
+        ],
+        "tags": [
+            "romance"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ],
+            "medicine cat": [
+                2,
+                2
+            ]
+        },
+        "involved_cats": {
+            "r_c0": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "cats_from": [
+                    "patrol_cats"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "can_romance"
+                ]
+            }
+        ],
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites\/fst_med_stumble_McMc",
+        "intro_text": "r_c0 trips over a tree root while out collecting herbs with p_l.",
+        "decline_text": "{PRONOUN\/r_c0\/subject\/CAP} quickly {VERB\/r_c0\/pick\/picks} {PRONOUN\/r_c0\/self} up and {VERB\/r_c0\/continue\/continues} on.",
+        "success_outcomes": [
+            {
+                "frequency": 1,
+                "strings": [
+                    "Though p_l checks {PRONOUN\/r_c0\/object} over and doesn't find any injuries, r_c0 <i>insists<\/i> that {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/need\/needs} to lean on p_l's shoulder all the way back to camp. p_l complies, and r_c0 purrs the entire way home."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "romance"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "When r_c0 tripped on patrol, {PRONOUN\/r_c0\/subject} insisted on leaning against p_l all the way back to camp."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from appreciated how cat_to checked {PRONOUN\/cat_from\/object} over when {PRONOUN\/cat_from\/subject} tripped on patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 swears {PRONOUN\/s_c0\/subject} didn't trip! {PRONOUN\/s_c0\/subject\/CAP} {VERB\/s_c0\/were\/was} just saying hello to the ground. With {PRONOUN\/s_c0\/poss} face."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "playful",
+                                "bold",
+                                "charismatic",
+                                "confident"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "r_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "romance",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "When s_c0 tripped on patrol, {PRONOUN\/s_c0\/subject} tried to play it off in front of p_l.",
+                            "cats_to": "p_l was amused by how s_c0 played it off when {PRONOUN\/s_c0\/subject} tripped over a root while on patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Thankfully, r_c0 is able to pick {PRONOUN\/r_c0\/self} up, {PRONOUN\/r_c0\/poss} only injuries being the ones to {PRONOUN\/r_c0\/poss} pride. StarClan, did that <i>really<\/i> have to happen in front of p_l?"
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -6,
+                        "log": {
+                            "cats_from": "cat_from watched cat_to embarrass {PRONOUN\/cat_to\/self} in front of {PRONOUN\/cat_from\/object} by tripping on a root."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from embarrassed {PRONOUN\/cat_from\/self} in front of cat_to by tripping on a root, and avoided {PRONOUN\/cat_to\/object} afterward."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 checks r_c0 over and, upon confirming that there are no injuries, tells {PRONOUN\/r_c0\/object} that {PRONOUN\/r_c0\/object}{VERB\/r_c0\/'re\/'s} fine and to walk it off."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "cold",
+                                "grumpy",
+                                "strict"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "p_l"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "romance",
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_to was abrasive and unfeeling when cat_from tripped over a root in front of {PRONOUN\/cat_to\/object}."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was unimpressed by how cat_to made a big deal out of tripping over a root."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l checks r_c0 over and, while the other medicine cat is not seriously injured, {PRONOUN\/r_c0\/subject}{VERB\/r_c0\/'re\/'s} definitely a little more battered than {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/were\/was} when they set out."
+                ],
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "minor_injury"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 sees r_c0 falling and rushes to help. However, before s_c0 can reach {PRONOUN\/s_c0\/poss} Clanmate, {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/trip\/trips} over the <i>same<\/i> tree root and {VERB\/s_c0\/end\/ends} up joining r_c0 on the ground. Thankfully, neither cat is seriously injured and, after sharing a laugh over their joint misfortune, they decide to call it a day and head back to camp, leaning on each other the whole way home."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "oblivious"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "p_l"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to shared a laugh when they both tripped over the same root."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "patrol_cats"
+                        ],
+                        "condition": [
+                            "minor_injury"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 can't help the <i>mrrp<\/i>s of laughter that escape {PRONOUN\/s_c0\/object} at the sight. Sweet StarClan, if only r_c0 could see {PRONOUN\/r_c0\/poss} own face! However, karma quickly comes for s_c0, who is so busy laughing at r_c's misfortune that {PRONOUN\/s_c0\/subject} completely {VERB\/s_c0\/miss\/misses} and trips over the <i>other<\/i> tree root that just so happens to be directly in {PRONOUN\/s_c0\/poss} path. <i>Meowch!<\/i>"
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "childish",
+                                "playful"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "p_l"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "romance",
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was upset that cat_to laughed at {PRONOUN\/cat_from\/object} when cat_from tripped on a root."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "patrol_cats"
+                        ],
+                        "condition": [
+                            "minor_injury"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "r_c0 yowls out in pain, alerting p_l and causing {PRONOUN\/p_l\/object} to drop everything and rush over. p_l tries to help {PRONOUN\/p_l\/poss} fellow medicine cat to stand, but it quickly becomes clear that that won't be happening. r_c0 will need to be carried back to camp."
+                ],
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "blunt_force_injury"
+                        ],
+                        "scar_history": "m_c was scarred after {PRONOUN\/m_c\/subject} tripped over a tree root.",
+                        "death_history": "m_c died from injuries sustained after tripping over a tree root."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "fst_med_stumble3",
+        "types": [
+            "herb_gathering"
+        ],
+        "frequency": 4,
+        "location": [
+            "forest"
+        ],
+        "tags": [
+            "romance"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ],
+            "medicine cat": [
+                1,
+                1
+            ],
+            "normal adult": [
+                1,
+                1
+            ]
+        },
+        "involved_cats": {
+            "r_c0": {}
+        },
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "cats_from": [
+                    "patrol_cats"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "can_romance"
+                ]
+            }
+        ],
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites\/fst_med_stumble_WrMc",
+        "intro_text": "p_l trips over a tree root while out collecting herbs with r_c0.",
+        "decline_text": "{PRONOUN\/p_l\/subject\/CAP} quickly {VERB\/p_l\/pick\/picks} {PRONOUN\/p_l\/self} up and {VERB\/p_l\/continue\/continues} on.",
+        "success_outcomes": [
+            {
+                "frequency": 1,
+                "strings": [
+                    "Though p_l has no visible injuries, {PRONOUN\/p_l\/subject} <i>{VERB\/p_l\/insist\/insists}<\/i> that {PRONOUN\/p_l\/subject} {VERB\/p_l\/need\/needs} to lean on r_c's shoulder all the way back to camp. r_c0 complies, and p_l purrs the entire way home."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "romance"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "When p_l tripped on patrol, {PRONOUN\/p_l\/subject} insisted on leaning against r_c0 all the way back to camp."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 swears {PRONOUN\/s_c0\/subject} didn't trip! {PRONOUN\/s_c0\/subject\/CAP} {VERB\/s_c0\/were\/was} just saying hello to the ground. With {PRONOUN\/s_c0\/poss} face."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "playful",
+                                "bold",
+                                "charismatic",
+                                "confident"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "p_l"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "romance",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "When s_c0 tripped on patrol, {PRONOUN\/s_c0\/subject} tried to play it off in front of r_c0.",
+                            "cats_to": "r_c0 was amused by how s_c0 played it off when {PRONOUN\/s_c0\/subject} tripped over a root while on patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Thankfully, p_l doesn't fall far and is able to pick {PRONOUN\/p_l\/self} up, {PRONOUN\/p_l\/poss} only injuries being the ones to {PRONOUN\/p_l\/poss} pride. StarClan, did that <i>really<\/i> have to happen in front of r_c?"
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -6,
+                        "log": {
+                            "cats_from": "cat_from watched cat_to embarrass {PRONOUN\/cat_to\/self} in front of {PRONOUN\/cat_from\/object} by tripping on a root."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from embarrassed {PRONOUN\/cat_from\/self} in front of cat_to by tripping on a root, and avoided {PRONOUN\/cat_to\/object} afterward."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 may not be a medicine cat, but even <i>{PRONOUN\/s_c0\/subject}<\/i> can tell that p_l is fine. Already annoyed at having been woken up so early in the morning just to go pick herbs, s_c0 callously tells the medicine cat to get up and walk it off."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "cold",
+                                "grumpy",
+                                "strict"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "r_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "romance",
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_to was abrasive and unfeeling when cat_from tripped over a root in front of {PRONOUN\/cat_to\/object}."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was unimpressed by how cat_to made a big deal out of tripping over a root."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c0 hurries over to help p_l and, while the medicine cat is not seriously injured, {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} definitely a little more battered than {PRONOUN\/p_l\/subject} {VERB\/p_l\/were\/was} when they set out."
+                ],
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "minor_injury"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 sees p_l falling and rushes to help. However, before s_c0 can reach {PRONOUN\/s_c0\/poss} Clanmate, {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/trip\/trips} over the <i>same<\/i> tree root and {VERB\/s_c0\/end\/ends} up joining p_l on the ground. Thankfully, neither cat is seriously injured and, after sharing a laugh over their shared misfortune, they decide to call it a day and head back to camp, leaning on each other the whole way home."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "oblivious"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "r_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to shared a laugh when they both tripped over the same root."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "patrol_cats"
+                        ],
+                        "condition": [
+                            "minor_injury"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 can't help the <i>mrrp<\/i>s of laughter that escape {PRONOUN\/s_c0\/object} at the sight. Sweet StarClan, if only p_l could see {PRONOUN\/p_l\/poss} own face! However, karma quickly comes for s_c0, who is so busy laughing at p_l's misfortune that {PRONOUN\/s_c0\/subject} completely {VERB\/s_c0\/miss\/misses} and trips over the <i>other<\/i> tree root that just so happens to be directly in {PRONOUN\/s_c0\/poss} path. <i>Meowch!<\/i>"
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "childish",
+                                "playful"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "r_c0"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "romance",
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was upset that cat_to laughed at {PRONOUN\/cat_from\/object} when cat_from tripped on a root."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "patrol_cats"
+                        ],
+                        "condition": [
+                            "minor_injury"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "p_l yowls out in pain, alerting r_c0 and causing {PRONOUN\/r_c0\/object} to drop everything and rush over. r_c0 tries to help the medicine cat to stand, but it quickly becomes clear that that won't be happening. p_l will need to be carried back to camp."
+                ],
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "blunt_force_injury"
+                        ],
+                        "scar_history": "m_c was scarred after {PRONOUN\/m_c\/subject} tripped over a tree root.",
+                        "death_history": "m_c died from injuries sustained after tripping over a tree root."
+                    }
+                ]
+            }
+        ]
+    }
+]
