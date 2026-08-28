@@ -267,19 +267,11 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c finds a cat on the border who says {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} chased from {PRONOUN/n_c:0/poss} home by round cats with webbed paws. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/ask/asks} to stay with c_n, m_c hesitantly agrees.",
+        "event_text": "m_c finds a cat on the border named n_c:0, who says {PRONOUN/n_c:0/subject} {VERB/n_c:0/were/was} chased from {PRONOUN/n_c:0/poss} home by round cats with webbed paws. When {PRONOUN/n_c:0/subject} {VERB/n_c:0/ask/asks} to stay with c_n, m_c hesitantly agrees.",
         "m_c": {
             "age": [
                 "-newborn",
                 "-kitten"
-            ]
-        },
-        "n_c:0": {
-            "age": [
-                "-newborn"
-            ],
-            "backstory": [ 
-                "loner1"
             ]
         },
         "new_cat": [
@@ -330,7 +322,8 @@
                 "cats_to": ["n_c:0"],
                 "mutual": true,
                 "values": ["like"],
-                "amount": 10
+                "amount": 10,
+                "log": "cats_from declares cats_to is cat_from's best friend."
             }
         ],
         "outsider": {
