@@ -799,18 +799,18 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "patrol_cats"
+                            "patrol_cats", "-r_c"
                         ],
                         "cats_from": [
-                            "clan"
+                            "patrol"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect"
+                            "comfort"
                         ],
-                        "amount": 20,
+                        "amount": -5,
                         "log": {
-                            "cats_from": "cat_to laid down {PRONOUN/cat_to/poss} life to protect c_n from coyotes."
+                            "cats_from": "cat_from looked uneasy around cat_to after r_c was killed by a coyote while the cats patrolled together."
                         }
                     }
                 ],
