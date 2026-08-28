@@ -1,0 +1,15 @@
+{
+    "spritesheet": "scars_missing_part",
+    "sprite_list": [
+        [
+            "LEFTEAR",
+            "RIGHTEAR",
+            "NOTAIL",
+            "NOLEFTEAR",
+            "NORIGHTEAR",
+            "NOEAR",
+            "HALFTAIL",
+            "NOPAW"
+        ]
+    ]
+}

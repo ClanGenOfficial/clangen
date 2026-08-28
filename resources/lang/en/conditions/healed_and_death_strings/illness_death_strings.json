@@ -8,6 +8,10 @@
         "m_c's body could not keep up with the demands of {PRONOUN/m_c/poss} illness and {PRONOUN/m_c/subject} died.",
         "Diarrhea is no joke, and the extreme dehydration it caused has killed m_c."
     ],
+    "breathless fit": [
+        "m_c suffocated to death during a breathless fit.",
+        "m_c's breathing got worse and worse, until {PRONOUN/m_c/subject} finally suffocated."
+    ],
     "greencough": [
         "m_c died of greencough.",
         "m_c was killed by greencough.",

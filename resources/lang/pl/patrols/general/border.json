@@ -1,0 +1,2179 @@
+[
+    {
+        "event_id": "Gen_bord_balancing_boringborder",
+        "types": [
+            "border"
+        ],
+        "frequency": 1,
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                6
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "cat_sprites\/gen_bord_dog_Wr",
+        "intro_text": "p_l heads out to mark c_n's borders.",
+        "decline_text": "p_l decides to not mark their borders.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_otherclanmatesdate_WrOw",
+                "strings": [
+                    "p_l successfully marks c_n's borders."
+                ],
+                "exp_gained": 5
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l manages to mark the borders efficiently, coming home earlier than expected."
+                ],
+                "exp_gained": 5
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l scents some prey and catches it. After {PRONOUN\/p_l\/poss} snack, {PRONOUN\/p_l\/subject} {VERB\/p_l\/mark\/marks} the border."
+                ],
+                "exp_gained": 5
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "A boring task usually, and today was no different."
+                ],
+                "exp_gained": 5
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l wishes for something interesting to happen, but no, there was nothing to ease p_l's boredom as {PRONOUN\/p_l\/subject} {VERB\/p_l\/mark\/marks} the borders."
+                ],
+                "exp_gained": 5
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l is pleased to have a peaceful patrol, with no threats to face."
+                ],
+                "exp_gained": 5
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l finishes marking the borders, glad to be able to go back and rest {PRONOUN\/p_l\/poss} paws."
+                ],
+                "exp_gained": 5
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l ends the patrol early, feeling too lazy to mark the rest of the border."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l starts daydreaming and ends up marking in the wrong place. At least it wasn't in o_c_n's territory."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "A boring task, and one p_l hates."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "Getting distracted while marking, p_l ends up taking several more hours than needed to mark the border."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l marks the wrong area, making more work for others to fix {PRONOUN\/p_l\/poss} mistake."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan",
+                            "high_lawful"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from noticed cat_to's half-hearted job on a border patrol caused more work for others."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_balancing_scent",
+        "types": [
+            "border"
+        ],
+        "frequency": 1,
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                6
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "cat_sprites\/gen_hunt_strange_Wr",
+        "intro_text": "p_l heads out to patrol c_n's borders and scents something mysterious.",
+        "decline_text": "p_l decides to not investigate the scent.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l identifies the scent as prey. Nothing to be concerned over."
+                ],
+                "exp_gained": 5
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l identifies the scent as a passing predator, but it seems to have moved on."
+                ],
+                "exp_gained": 5
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "The scent leads p_l to a nearby patch of herbs. p_l hopes they'll be useful back at camp."
+                ],
+                "exp_gained": 5,
+                "supply": [
+                    {
+                        "type": "tansy",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l detects the scent of a fellow Clanmate, possibly on a solo patrol of their own."
+                ],
+                "exp_gained": 5
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l can't identify the scent and returns to camp to report it."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l struggles to identify the faint scent and decides to return to camp for assistance."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "Despite p_l's efforts, {PRONOUN\/p_l\/subject} cannot discern the source of the scent and returns to camp to report it."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "The scent seems to vanish suddenly, leaving p_l puzzled and unable to track it further."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "A sudden gust of wind disperses the scent before p_l can investigate further... leaving {PRONOUN\/p_l\/object} unsure if it was a trespasser, a threat, or something harmless."
+                ],
+                "exp_gained": 0
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_balancing_tracks",
+        "types": [
+            "border"
+        ],
+        "frequency": 1,
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                6
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "cat_sprites\/gen_bord_trackrogue_Wr",
+        "intro_text": "p_l heads out to patrol c_n's borders and spots some mysterious tracks.",
+        "decline_text": "p_l decides to not investigate the tracks.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l identifies the tracks as belonging to some prey."
+                ],
+                "exp_gained": 5
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "The tracks lead p_l to a nearby red berry bush. p_l moves on, noting it down to inform the medicine cat."
+                ],
+                "exp_gained": 5
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l identifies the tracks as belonging to a fellow Clanmate."
+                ],
+                "exp_gained": 5
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l identifies the tracks as belonging to Twolegs, and p_l decides to head back to camp to inform the others."
+                ],
+                "exp_gained": 5,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan",
+                            "high_lawful"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "cat_from appreciated that cat_to warned the Clan of Twoleg tracks."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l can't identify the tracks and is forced to return to camp to report it."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "Despite p_l's efforts, {PRONOUN\/p_l\/subject} can't identify the tracks and {VERB\/p_l\/report\/reports} it back at camp."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "The tracks are obscured by recent rainfall, making it impossible for p_l to determine their origin."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "The tracks lead p_l to an area too dangerous to navigate, forcing p_l to abandon {PRONOUN\/p_l\/poss} investigation."
+                ],
+                "exp_gained": 0
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_balancing_markings",
+        "types": [
+            "border"
+        ],
+        "frequency": 1,
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                6
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "cat_sprites\/gen_bord_scenthostile_Wr",
+        "intro_text": "p_l heads out to patrol c_n's borders and notices that some of their markings had been disturbed.",
+        "decline_text": "p_l decides to not investigate the markings.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Upon closer inspection, it's just re-marking from a Clanmate."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "The scratches don't match any cat's paws, so p_l returns to camp to report it, alert to any threats."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "Upon investigation, p_l finds that the disturbed markings were caused by a loner, though the intruder is long gone by now."
+                ],
+                "exp_gained": 0
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Despite {PRONOUN\/p_l\/poss} efforts, p_l can't identify what disturbed the border markings, leaving {PRONOUN\/p_l\/object} perplexed as {PRONOUN\/p_l\/subject} {VERB\/p_l\/return\/returns} to camp."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "The disturbance in the markings remains a mystery to p_l, and when {PRONOUN\/p_l\/subject} {VERB\/p_l\/report\/reports} the incident, extra patrols are assigned to monitor for any further disruptions."
+                ],
+                "exp_gained": 0
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_kittybat",
+        "types": [
+            "border"
+        ],
+        "frequency": 2,
+        "tags": [
+            "halloween"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "halloween\/hal_kittybat_Ln",
+        "intro_text": "On border patrol, the patrol finds a kittypet's scent. Following the (extremely) obvious sounds of distress, p_l leads the patrol down to a kittypet, haplessly wedged between a couple of rocks. Wailing pathetically, they cry that their wing is stuck!",
+        "decline_text": "It's beyond c_n's border, it's not c_n's problem.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Cats don't normally come with wings, much less bat ones, and the patrol flinches back from the foreign stranger. But unnatural or not, the stranger's still stuck, and with a deep breath, p_l orders them forward to free a fellow cat... ish... thing."
+                ],
+                "exp_gained": 15,
+                "reputation_changes": {
+                    "outsider": 1
+                }
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "Frankly, extra limbs or not (bat wings, at that \u2014 this'll make a great story back at camp), the patrol needs to get this plump crying ball of fur back to their Twolegs. The world will eat this kittypet alive if they don't help them."
+                ],
+                "exp_gained": 15,
+                "reputation_changes": {
+                    "outsider": 1
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan",
+                            "high_social"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from enjoyed cat_to's story of a kittypet with bat wings who got stuck."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Falling over, paws waving helplessly in the air and somehow making the situation <i>even worse<\/i>, the patrol passes the mouse-brained kittypet by, leaving them to their stupidity while they focus on their actual task."
+                ],
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "outsider": -1
+                }
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Hissing, p_l bowls the kittypet over, and with a ripping sound, the bat wing detaches from their back. The plump cat's crying increases in volume as they flee. p_l brings the trophy back to camp to boast."
+                ],
+                "exp_gained": 15,
+                "reputation_changes": {
+                    "outsider": -2
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan",
+                            "high_aggress"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was amused by cat_to's trophy of bat wings ripped from a strange kittypet."
+                        }
+                    }
+                ]
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Swaggering up, p_l tries to intimidate the kittypet. But while the cat is easily successfully frightened, that doesn't make them any less stuck in place, and eventually the patrol is forced to help set them free, if only so they can leave c_n's borders."
+                ],
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "outsider": -1
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_border_pumpkineyes",
+        "types": [
+            "border"
+        ],
+        "frequency": 2,
+        "season": [
+            "leaf-fall"
+        ],
+        "tags": [
+            "halloween"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ]
+        },
+        "involved_cats": {
+            "r_c0": {}
+        },
+        "chance_of_success": 50,
+        "patrol_art": "halloween\/hal_pumpkineyes_Wr",
+        "intro_text": "The patrol is heading out to check the borders, when p_l says {PRONOUN\/p_l\/subject} {VERB\/p_l\/see\/sees} strange glowing eyes in the distance.",
+        "decline_text": "r_c0 sighs and tells p_l that {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} just seeing things. There's nothing out there... right?",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol cautiously heads in the direction of the strange, motionless eyes. The cats see an eerie face with glowing eyes in the distance, baring its fangs and smelling of smoke. p_l creeps up to the face to find that it belongs to a pumpkin! Spooked, r_c0 suggests heading back to camp to report this bizarre finding to the Clan. p_l agrees, not wanting to be near this... thing... any longer."
+                ],
+                "exp_gained": 10
+            },
+            {
+                "frequency": 2,
+                "strings": [
+                    "The patrol cautiously heads in the direction of the strange, motionless eyes. When p_l gets closer {PRONOUN\/p_l\/subject} {VERB\/p_l\/are\/is} overwhelmed with the scent of Twolegs and smoke. Upon closer inspection, it seems that these foolish Twoleg kits are trying to set fire to a pumpkin with an unsettling hollow face! p_l and r_c0 charge the Twoleg kits, hissing, spitting, and doing their best to scare them off. Thankfully the kits scatter before they set the pumpkin ablaze."
+                ],
+                "exp_gained": 10
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "As the patrol heads in the direction of the sinister glare of strange, motionless eyes, the scent of smoke creeps up on the patrol. s_c0 darts forward, finding the smoke scent coming from an odd pumpkin with some sort of... face? Thinking quickly {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/scratch\/scratches} dirt into the holes on the pumpkin, extinguishing the small flames. The patrol is left wondering what in the name of StarClan they're looking at."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,1",
+                                "INSIGHTFUL,1",
+                                "SENSE,1"
+                            ],
+                            "trait": [
+                                "thoughtful",
+                                "careful",
+                                "cunning",
+                                "responsible",
+                                "wise"
+                            ],
+                            "must_have_both": true
+                        }
+                    }
+                },
+                "exp_gained": 15
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol nervously heads towards the unblinking eyes, unsure of what lies ahead. As the strange object comes into view, r_c0 lets out a mrrow of laughter! {PRONOUN\/r_c0\/subject\/CAP} {VERB\/r_c0\/explain\/explains} that this is a Twoleg ritual performed around the start of leaf-bare. p_l is glad to have a cat with r_c0's understanding of Twolegs on this patrol. With this knowledge, unneeded panic was surely avoided!"
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "past_status": [
+                            "kittypet",
+                            "loner"
+                        ]
+                    }
+                },
+                "exp_gained": 15,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust",
+                            "respect"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's knowledge of Twolegs' strange pumpkin-based rituals."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol nervously heads towards the unblinking eyes, unsure of what lies ahead. As the strange object comes into view, s_c0 begins to bristle with unease. {PRONOUN\/s_c0\/subject\/CAP} can see strange, mist-like Twolegs floating around the glowing, unblinking face of a... pumpkin? The figures approach s_c0, and run their cold, fur-less paws through {PRONOUN\/s_c0\/subject} fur. s_c0 can hardly hear r_c0 asking {PRONOUN\/s_c0\/object} why {PRONOUN\/s_c0\/subject}{VERB\/s_c0\/'re\/'s} frozen in place."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "GHOST,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol cautiously heads in the direction of the strange, motionless eyes. As they get closer to what seems to be some sort of pumpkin, a group of Twoleg kits springs out of nowhere and chases the frightened cats off! The patrol runs until the Twolegs stop following. Panting and defeated, they return to camp without much information about the strange face."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "As r_c0 slowly creeps towards the disturbing face, s_c0 huffs with frustration. Tail lashing, s_c0 calls r_c0 a mouse-heart and stomps in the direction of the unblinking eyes without a shred of fear. s_c0 rolls {PRONOUN\/s_c0\/poss} eyes and knocks over the harmless pumpkin, ignoring the strange face and the smell of smoke wafting around it."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "bloodthirsty",
+                                "cold",
+                                "strict",
+                                "grumpy",
+                                "fierce"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 5,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was embarrassed when cat_to called {PRONOUN\/cat_from\/object} a mouse-heart for being freaked out by a mysterious smoking pumpkin."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "s_c0"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from was contemptuous of cat_to's fear of a pumpkin."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "As r_c0 slowly creeps towards the disturbing face, s_c0 recklessly darts forward to get a closer look! {PRONOUN\/s_c0\/subject\/CAP} {VERB\/s_c0\/crash\/crashes} into some strange pumpkin, knocking it over and obscuring its eerie face. The patrol heads home without much left to investigate thanks to s_c0's antics."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "troublesome",
+                                "childish",
+                                "playful",
+                                "shameless"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 5,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from was irritated when cat_to knocked over the mysterious pumpkin the patrol was investigating."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_trickortreat",
+        "types": [
+            "border"
+        ],
+        "frequency": 2,
+        "season": [
+            "leaf-fall"
+        ],
+        "tags": [
+            "halloween"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "bord_general_intro",
+        "intro_text": "The patrol stumbles upon a strange scene near a Twolegplace: Twoleg kits traveling from den to den in colorful pelts.",
+        "decline_text": "The patrol decides it's best not to interfere with this peculiar ritual.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c0, being ever so curious, decides to see if {PRONOUN\/r_c0\/subject} can decipher the meaning behind this Twoleg ritual. After some time, {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/realize\/realizes} it's some kind of friendly exchange. Each time the Twoleg kits go to the den, they receive a bit of prey from the older Twolegs. The patrol takes note and continues on their way, amused by the Twolegs' strange customs."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 10
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c0 cautiously approaches the Twoleg kits, intrigued by their colorful pelts. To r_c's surprise, one of the tiny Twolegs offers {PRONOUN\/r_c0\/object} a strange, shiny object. It doesn't smell exactly like prey, but r_c0 decides to take it back to the camp for further investigation."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan",
+                            "high_social",
+                            "low_stable"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from was interested in the shiny Twoleg object cat_to brought back to camp."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c0 decides to mimic the small Twolegs. Approaching a larger Twoleg den, {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/meow\/meows} softly at the entrance. The Twoleg that opens the entrance seems amused and hands r_c0 a morsel of food. The patrol brings it back to camp for further investigation."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan",
+                            "high_social",
+                            "low_stable"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from was interested in the morsel of Twoleg food cat_to brought back to camp."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c0, being ever so curious, decides to see if {PRONOUN\/r_c0\/subject} can decipher the meaning behind this Twoleg ritual. However, after some time, {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/give\/gives} up, concluding that it's just another strange Twoleg custom that Clan cats will never understand."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol attempts to get closer to the Twoleg kits, but their presence causes panic among the little creatures. The larger Twolegs nearby seem agitated, waving their paws and stomping around. The cats quickly retreat to avoid causing further disruption."
+                ],
+                "exp_gained": 0
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_scarecrow",
+        "types": [
+            "border"
+        ],
+        "frequency": 2,
+        "tags": [
+            "halloween"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "halloween\/hal_scarecrow",
+        "intro_text": "On the outskirts of the territory, the patrol comes across a tall, motionless Twoleg rooted in the middle of a field.",
+        "decline_text": "The patrol doesn't want to risk going near this strange Twoleg and quickly heads back to camp to report the odd sighting.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c0 hesitantly approaches the Twoleg, fur bristling and on guard. It doesn't appear to notice {PRONOUN\/r_c0\/object} yet. Paw by paw, r_c0 inches forward, but realizes something seems off. Is this Twoleg... even alive? After a quick investigation, r_c0 finds hay sticking out of the Twoleg's pelt. How odd. r_c0 reports back with {PRONOUN\/r_c0\/poss} findings."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 10
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 sneaks up behind the Twoleg. With a mighty roar, s_c0 leaps onto its back and {PRONOUN\/s_c0\/poss} momentum sends the Twoleg falling to the ground with a giant thump."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "FIGHTER,0"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan",
+                            "high_aggress",
+                            "low_stable"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was very impressed to hear that cat_to took down a Twoleg."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "clan",
+                            "high_social",
+                            "high_stable"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from thought cat_to's story of taking down a Twoleg is utter fox-dung."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 stops the patrol, narrowing {PRONOUN\/s_c0\/poss} eyes. That isn't a Twoleg! {PRONOUN\/s_c0\/subject\/CAP} came across one before during {PRONOUN\/s_c0\/object} time outside the Clan. It's a \"scarecrow,\" {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/explain\/explains}, meant to protect the Twoleg fields from harm. The patrol continues on their way, giving the scarecrow a wide berth."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "past_status": [
+                            "rogue",
+                            "loner"
+                        ]
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's knowledge of how Twolegs use \"scarecrows\" to keep their fields safe."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 3,
+                "strings": [
+                    "The patrol decides to take no chances and sets up an ambush around the Twoleg. They wait... and wait... but the Twoleg makes no movements to attack. Finally, r_c0 notices that the Twoleg isn't even a Twoleg at all! They wasted all of that time for nothing."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 sneaks up behind the Twoleg. With a mighty roar, s_c0 leaps onto its back and {PRONOUN\/s_c0\/poss} momentum sends both of them to the ground. s_c0 ends up covered in hay, {PRONOUN\/s_c0\/poss} claws sunk into a harmless scarecrow."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "FIGHTER,0"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_dislike",
+        "types": [
+            "border"
+        ],
+        "frequency": 2,
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ],
+            "warrior": [
+                2,
+                2
+            ]
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "p_l"
+                ],
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "dislikes"
+                ]
+            }
+        ],
+        "involved_cats": {
+            "r_c0": {}
+        },
+        "chance_of_success": 50,
+        "patrol_art": "cat_sprites\/gen_train_argue_WrWr",
+        "intro_text": "p_l and r_c0 have been bickering non-stop the entire time they've been patrolling.",
+        "decline_text": "Unable to work together, the two return to camp.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Despite the bickering, the two manage to patrol the border without incident."
+                ],
+                "exp_gained": 10
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "gen_train_talking_WrWr",
+                "strings": [
+                    "At one point during the bickering, the two start to come to a better understanding of each other, resulting in them forging some respect for each other."
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "cat_from and cat_to gained a bit of respect for each other despite their bickering on a border patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "outcome_art": "cat_sprites\/gen_battle_RgWr",
+                "strings": [
+                    "p_l and r_c0 have been bickering the entire morning. But when p_l spots the shadow of a rogue falling on r_c0, {PRONOUN\/p_l\/subject} {VERB\/p_l\/react\/reacts} without thought, leaping forward, claws ripping into the enemy's back and flipping them off r_c0 with a ferocious snarl. r_c0 is badly injured but will live thanks to p_l dragging {PRONOUN\/r_c0\/object} back to camp."
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": 12,
+                        "log": {
+                            "cats_from": "Despite their arguing, cat_to saved cat_from from a rogue on a border patrol."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "battle_injury"
+                        ],
+                        "scar_history": "m_c was scarred in a fight with a rogue.",
+                        "death_history": "m_c died of injuries inflicted by a rogue."
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 can't resist the temptation to make pointed remarks {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/know\/knows} are hurtful to r_c0. But when r_c0 starts crying, {PRONOUN\/s_c0\/poss} pelt prickles with shame and {PRONOUN\/s_c0\/subject} awkwardly {VERB\/s_c0\/apologize\/apologizes}."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "troublesome",
+                                "fierce",
+                                "bloodthirsty",
+                                "cold",
+                                "childish",
+                                "shameless",
+                                "vengeful",
+                                "arrogant",
+                                "competitive",
+                                "grumpy",
+                                "cunning",
+                                "oblivious",
+                                "rebellious"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "...though {PRONOUN\/s_c0\/subject} did apologize."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_to hurt cat_from's feelings on patrol..."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_hunt_funrun_WrWr",
+                "strings": [
+                    "As p_l pounces on a bug, r_c0 can't help but snap that this is exactly what {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/dislike\/dislikes} about p_l. p_l retorts that r_c0 needs to learn to lighten up and enjoy life. r_c0 says that {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/do\/does} know how to have fun, and p_l says to prove it, resulting in an impromptu contest to see who can catch the most bugs."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "flamboyant",
+                                "strange",
+                                "playful",
+                                "childish"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "After a dispute on patrol, cat_from and cat_to enjoyed a bug-catching contest with each other."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The bickering gets to be too much, and r_c0 storms back to camp irritated."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got so frustrated with each other during a patrol that r_c0 stormed off, cutting it short."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "While they are bickering, r_c0 trips, and p_l snickers, earning r_c's ire."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_to snickered at cat_from when {PRONOUN\/cat_from\/subject} fell over on patrol."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "minor_injury"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "outcome_art": "cat_sprites\/gen_deadghost_WrSc",
+                "strings": [
+                    "As the duo are patrolling, they are ambushed by a rogue! r_c0 is badly injured and succumbs to the wounds when p_l flees, leaving {PRONOUN\/r_c0\/object} behind."
+                ],
+                "exp_gained": 0,
+                "death": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "history": "m_c succumbed to injury after being ambushed by a rogue and abandoned on patrol."
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l can't resist the temptation to make pointed remarks {PRONOUN\/p_l\/subject} {VERB\/p_l\/know\/knows} are hurtful to r_c0. But when a verbal barb sinks too deep and r_c0 starts crying, p_l lashes {PRONOUN\/p_l\/poss} tail, snapping at r_c0 to focus on patrolling. r_c0 runs off, leaving p_l to finish the patrol alone."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "troublesome",
+                                "fierce",
+                                "bloodthirsty",
+                                "cold",
+                                "childish",
+                                "shameless",
+                                "vengeful",
+                                "arrogant",
+                                "competitive",
+                                "grumpy",
+                                "oblivious",
+                                "rebellious"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "cat_to hurt cat_from's feelings on patrol and wouldn't apologize when cat_from began to cry."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "cat_to ran off on patrol, claiming cat_from hurt {PRONOUN\/cat_to\/poss} feelings."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "As p_l pounces on a bug, r_c0 can't help but snap that this is exactly what {PRONOUN\/r_c0\/subject} dislikes about p_l. p_l retorts that r_c0 needs to learn to lighten up and enjoy life. r_c0 says that {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/do\/does} know how to have fun, and p_l says to prove it, but r_c0 says that {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/don't\/doesn't} have to prove anything to p_l."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "flamboyant",
+                                "strange",
+                                "playful",
+                                "childish"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got into an argument on patrol about bugs and having fun."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_greenleaf_puddles",
+        "types": [
+            "border"
+        ],
+        "frequency": 4,
+        "location": [
+            "beach",
+            "forest",
+            "mountainous",
+            "plains",
+            "wetlands"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                4,
+                4
+            ],
+            "all apprentices": [
+                2,
+                2
+            ],
+            "normal adult": [
+                2,
+                2
+            ]
+        },
+        "involved_cats": {
+            "r_c1": {
+                "status": [
+                    "apprentice"
+                ]
+            },
+            "r_c2": {
+                "status": [
+                    "apprentice"
+                ]
+            }
+        },
+        "chance_of_success": 40,
+        "patrol_art": "cat_sprites\/gen_running_ApAp",
+        "intro_text": "After a night-long greenleaf thunderstorm, p_l takes a patrol out to check the o_c_n border. Along the way, r_c1 and r_c2 hop through puddles, splashing each other.",
+        "decline_text": "If r_c1 and r_c2 aren't going to take this seriously, p_l will turn this patrol around and go straight back to camp.",
+        "success_outcomes": [
+            {
+                "frequency": 2,
+                "outcome_art": "cat_sprites\/gen_train_soggykittyhappy_Ap",
+                "strings": [
+                    "r_c1 and r_c2 are thoroughly soggy by the time they reach the border. When p_l and r_c0 ask how the apprentices got so drenched on a clear day, neither apprentice tells on the other."
+                ],
+                "involved_cats": {
+                    "r_c0": {},
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "cats_to": [
+                            "r_c2"
+                        ],
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had fun splashing each other on a soggy border patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "outcome_art": "cat_sprites\/gen_train_playbite_ApAp",
+                "strings": [
+                    "The splash-fight quickly escalates into an actual tussle. r_c0 wants to break it up, but p_l holds {PRONOUN\/r_c0\/object} back, noting how r_c1 is incorporating a tricky move from {PRONOUN\/r_c1\/poss} most recent battle-training."
+                ],
+                "involved_cats": {
+                    "r_c0": {},
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "cats_to": [
+                            "r_c2"
+                        ],
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had fun splashing each other on a soggy border patrol."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from noticed cat_to practicing a tricky battle move in a play-fight with r_c2."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_train_soggykittyhappy_Ap",
+                "strings": [
+                    "r_c2 has dared to challenge the splash-master, and r_c1 will not allow such a transgression to go by unpunished. Fortunately, p_l and r_c0 are in a good mood and allow the apprentices to get out all their energy on the way to the border."
+                ],
+                "involved_cats": {
+                    "r_c0": {},
+                    "r_c1": {
+                        "stat": {
+                            "trait": [
+                                "competitive",
+                                "ambitious",
+                                "playful",
+                                "childish"
+                            ]
+                        }
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "cats_to": [
+                            "r_c2"
+                        ],
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 15,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had lots of fun splashing each other on a soggy border patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_train_soggykittyhappy_Ap",
+                "strings": [
+                    "r_c1 sends a shower of droplets onto r_c2's pelt, but {PRONOUN\/r_c1\/subject} didn't realize how comfortable r_c2 is in the water. r_c2 trots along, water dripping off {PRONOUN\/r_c2\/poss} pelt, perfectly content on the way to the o_c_n border."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "r_c2": {
+                        "stat": {
+                            "skill": [
+                                "SWIMMER,0"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "cats_to": [
+                            "r_c2"
+                        ],
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 15,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had lots of fun splashing each other on a soggy border patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_train_soggykittymad_Wr",
+                "strings": [
+                    "Watching r_c1 and r_c2 splash each other, r_c0 shoots a mischievous look at p_l. p_l frowns back, shaking {PRONOUN\/p_l\/poss} head, but it's too late. <i>Splash!<\/i> It's a very wet border patrol."
+                ],
+                "involved_cats": {
+                    "r_c0": {
+                        "stat": {
+                            "trait": [
+                                "playful",
+                                "childish",
+                                "competitive",
+                                "flamboyant",
+                                "rebellious",
+                                "shameless",
+                                "troublesome"
+                            ]
+                        }
+                    },
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "cats_to": [
+                            "r_c2"
+                        ],
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 8,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had lots of fun splashing each other on a soggy border patrol."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": 5,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from enjoyed splashing cat_to on a border patrol."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -3,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from felt mildly annoyed that cat_to derailed a border patrol by getting into a splash-fight."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_train_soggykittymad_Ap",
+                "strings": [
+                    "r_c1 waits until p_l is up ahead, checking a scent, then pounces in the water and sends a huge wave over r_c2. r_c2 yowls a battle cry and slams {PRONOUN\/r_c2\/poss} front paws down into another puddle, splashing r_c1 right back. r_c0 spots the squabbling apprentices and breaks up their argument."
+                ],
+                "involved_cats": {
+                    "r_c0": {},
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "cats_to": [
+                            "r_c2"
+                        ],
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got annoyed with each other while having a splash-fight on a border patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_catlookingup_Ap",
+                "strings": [
+                    "r_c2 whines for p_l to make r_c1 stop splashing {PRONOUN\/r_c2\/object}. r_c1 rolls {PRONOUN\/r_c1\/poss} eyes and thinks r_c2 is acting like a kit."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "cats_to": [
+                            "r_c2"
+                        ],
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -10,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got annoyed with each other while having a splash-fight on a border patrol."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "cats_to": [
+                            "r_c2"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -10,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_to wanted p_l to intervene when cat_from was splashing {PRONOUN\/cat_to\/object}, and cat_from thought {PRONOUN\/cat_to\/subject} {VERB\/cat_to\/were\/was} acting like a kit."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_catlookingup_Wr",
+                "strings": [
+                    "r_c2 has dared to challenge the splash-master, and r_c1 will not allow such a transgression to go by unpunished. Unfortunately, p_l and r_c0 aren't in a good mood and scold the apprentices to take this patrol seriously."
+                ],
+                "involved_cats": {
+                    "r_c0": {},
+                    "r_c1": {
+                        "stat": {
+                            "trait": [
+                                "competitive",
+                                "ambitious",
+                                "playful",
+                                "childish"
+                            ]
+                        }
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c1"
+                        ],
+                        "cats_to": [
+                            "r_c2"
+                        ],
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 8,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had lots of fun splashing each other despite p_l and r_c's bad moods."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "r_c2",
+                            "r_c1"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -3,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from was annoyed when r_c1 and r_c2 goofed off during a border patrol."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "cats_to": [
+                            "r_c2",
+                            "r_c1"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -3,
+                        "mutual": true,
+                        "log": {
+                            "cats_from": "cat_from was annoyed when r_c1 and r_c2 goofed off during a border patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/gen_train_waterdive_Ap",
+                "strings": [
+                    "r_c1 isn't going to lose, even in a playful fight, and pounces on r_c2. Before p_l and r_c0 can intervene, r_c1 thrusts r_c2's head into a rather deep puddle. When r_c2 resurfaces, {PRONOUN\/r_c2\/subject}{VERB\/r_c2\/'re\/'s} choking and spluttering. r_c1 is rebuked for taking the game too far."
+                ],
+                "involved_cats": {
+                    "r_c0": {},
+                    "r_c1": {
+                        "stat": {
+                            "trait": [
+                                "bold",
+                                "fierce",
+                                "daring",
+                                "competitive",
+                                "vengeful",
+                                "troublesome",
+                                "shameless"
+                            ]
+                        }
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "r_c2"
+                        ],
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": -15,
+                        "mutual": false,
+                        "log": {
+                            "cats_from": "cat_to took a game way too far and cat_from got hurt."
+                        }
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c2"
+                        ],
+                        "condition": [
+                            "water in their lungs"
+                        ],
+                        "death_history": "m_c died from water in {PRONOUN\/m_c\/poss} lungs after s_c0 took a game way too far on patrol."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_smoothboards",
+        "types": [
+            "border"
+        ],
+        "frequency": 2,
+        "poi": {
+            "tags": [
+                "Twolegs:present"
+            ]
+        },
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ],
+            "normal adult": [
+                2,
+                6
+            ],
+            "apprentice": [
+                -1,
+                -1
+            ]
+        },
+        "chance_of_success": 40,
+        "patrol_art": "backgrounds\/fst_twolegplace",
+        "intro_text": "While patrolling near {POI\/tag\/Twolegs:present}, the patrol stumbles across an odd stack of Twoleg wood. The trunk's been cut into long pieces and it's confusingly smooth.",
+        "decline_text": "They don't have time for this. The patrol leaves the stack behind and continues on their way.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "outcome_art": "backgrounds\/fst_twolegplace",
+                "strings": [
+                    "It seems like the Twolegs used some sort of strange object found nearby to make these wood pieces so smooth, but the cats still can't figure out why."
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to weren't able to figure out a Twoleg object on patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "outcome_art": "backgrounds\/fst_twolegplace",
+                "strings": [
+                    "s_c0 is able to deduce by examining the nearby Twoleg nest that the wood pieces are used to build them. Alarmed, the patrol returns to camp to report their findings."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2",
+                                "SENSE,2",
+                                "INSIGHTFUL,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was impressed that s_c0 figured out the use of strange Twoleg wood pieces."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "outcome_art": "cat_sprites\/mtn_hunt_followsstreamtocoldbog_WrWr",
+                "strings": [
+                    "p_l suggests dumping the wood pieces in the nearby pond\u2014the water will surely ruin the wood and prevent the Twolegs from building more nests. The patrol is there until sunhigh dragging the pieces to the pond."
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's idea of sabotaging the wood pieces to prevent the Twolegs from building new nests.",
+                            "cats_to": "cat_to worked with cat_from to sabotage a stack of wood pieces to prevent Twolegs from building new nests."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "outcome_art": "backgrounds\/pln_shortswim",
+                "strings": [
+                    "p_l suggests dumping the wood pieces in the nearby pond to ruin the wood and prevent the Twolegs from building more nests. Before anyone can answer {PRONOUN\/p_l\/object}, s_c0 walks over and tugs just the right piece out of place, sending the entire pile tumbling down the slope right into the pond."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "CLEVER,3"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "-p_l"
+                        ]
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "p_l was jealous and upset when s_c0 stole {PRONOUN\/p_l\/poss} moment to shine during a patrol."
+                        }
+                    },
+                    {
+                        "cats_from": [
+                            "patrol_cats",
+                            "-p_l"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was impressed when cat_to sent an entire stack of wood pieces down a slope into a pond by pulling just one out."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol is unable to determine why the Twolegs have done this to the tree, and they return to camp disappointed."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 2,
+                "outcome_art": "cat_sprites\/gen_scared_Wr",
+                "strings": [
+                    "The patrol fails to notice the scent of predator in the odd stack. A snake lunges out of it and bites p_l."
+                ],
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "snake bite"
+                        ],
+                        "scar_pool_override": [
+                            "SNAKE"
+                        ],
+                        "scar_history": "m_c was scarred by a snake bite.",
+                        "death_history": "m_c died from the bite of a venomous snake."
+                    },
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "poisoned"
+                        ],
+                        "scar_history": "m_c was scarred by a snake bite.",
+                        "death_history": "m_c died from the bite of a venomous snake."
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "p_l suggests taking the wood pieces to the nearby pond to waterlog the wood and prevent the Twolegs from building more nests, but the rest of the patrol is reluctant and {PRONOUN\/p_l\/subject} {VERB\/p_l\/give\/gives} up the idea."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from was annoyed with cat_to when {PRONOUN\/cat_to\/subject} didn't go along with {PRONOUN\/cat_from\/poss} idea."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

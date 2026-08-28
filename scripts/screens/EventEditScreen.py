@@ -7,41 +7,43 @@ import pygame
 import pygame_gui
 import ujson
 
-from scripts.cat.cats import Cat, BACKSTORIES, create_option_preview_cat
+from scripts.cat.cats import Cat, BACKSTORIES
+from scripts.cat.factories.create_example_cat import create_option_preview_cat
 from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath
+from scripts.cat_relations.enums import rel_type_tiers
 from scripts.events_module.short.condition_events import Condition_Events
-from scripts.events_module.short.handle_short_events import HandleShortEvents
+
 from scripts.events_module.short.scar_events import Scar_Events
+from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure import image_cache, constants
-from scripts.game_structure.game_essentials import game
-from scripts.game_structure.localization import get_default_pronouns
+from scripts.game_structure import game
+from scripts.cat.pronouns import get_default_pronouns
 from scripts.game_structure.screen_settings import MANAGER
-from scripts.game_structure.ui_elements import (
-    UISurfaceImageButton,
+from scripts.ui.elements.collapsible_container import UICollapsibleContainer
+from scripts.ui.elements.dropdown import UIDropDown
+from scripts.ui.elements.modified_image import UIModifiedImage
+from scripts.ui.elements.checkbox import UICheckbox
+from scripts.ui.elements.scrolling_button_list import UIScrollingButtonList
+from scripts.ui.elements.scrolling_dropdown import UIScrollingDropDown
+from scripts.ui.elements.modified_scrolling_container import (
     UIModifiedScrollingContainer,
-    UITextBoxTweaked,
-    UICheckbox,
-    UIModifiedImage,
-    UIScrollingButtonList,
-    UIDropDown,
-    UICollapsibleContainer,
-    UIScrollingDropDown,
 )
-from scripts.game_structure.windows import EditorSaveCheck, EditorMissingInfo
+from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
+from scripts.ui.elements.surface_image_button import UISurfaceImageButton
+from scripts.ui.windows.editor_save_check import EditorSaveCheck
+from scripts.ui.windows.editor_missing_info import EditorMissingInfoWindow
 from scripts.screens.RelationshipScreen import RelationshipScreen
 from scripts.screens.Screens import Screens
+from scripts.screens.enums import GameScreen
 from scripts.ui.generate_box import get_box, BoxStyles
 from scripts.ui.generate_button import get_button_dict, ButtonStyles
 from scripts.ui.icon import Icon
-from scripts.utility import (
-    ui_scale,
-    process_text,
-    ui_scale_dimensions,
-    generate_sprite,
-    get_text_box_theme,
-)
+from scripts.ui.theme import get_text_box_theme
+from scripts.cat.sprites.display_sprites import generate_sprite
+from scripts.events_module.text_adjust import process_text
+from scripts.ui.scale import ui_scale, ui_scale_dimensions
 
 
 class EventEditScreen(Screens):
@@ -95,8 +97,9 @@ class EventEditScreen(Screens):
 
     rel_tag_list: list = TAGS["relationship"]
     """List of dicts for relationship_values. Each dict holds tag name, conflicts, and setting."""
-    rel_value_types: list = RelationshipScreen.rel_value_names
-    """List of all relationship values."""
+    rel_tag_names: list = [tag["tag"] for tag in rel_tag_list]
+    rel_value_types: dict = rel_type_tiers
+    """Dict of all relationship values and associated levels."""
 
     all_ranks: list = Cat.rank_sort_order.copy()
     """List of all possible ranks from highest to lowest."""
@@ -168,7 +171,7 @@ class EventEditScreen(Screens):
                 else:
                     break
 
-    all_scars: list = Pelt.scars1 + Pelt.scars2 + Pelt.scars3
+    all_scars: list = Pelt.all_scars
     """List of all possible scars"""
 
     all_outsider_reps: list = list(constants.OUTSIDER_REPS)
@@ -794,7 +797,7 @@ class EventEditScreen(Screens):
 
             # MAIN MENU RETURN
             if event.ui_element == self.main_menu_button:
-                self.change_screen("start screen")
+                self.change_screen(GameScreen.START)
                 return
 
             # SELECT TYPE
@@ -891,7 +894,7 @@ class EventEditScreen(Screens):
                         or not self.valid_supply()
                         or not self.valid_future()
                     ):
-                        EditorMissingInfo(self.alert_text)
+                        EditorMissingInfoWindow(self.alert_text)
                     # if it's all good, SAVE!
                     else:
                         new_event = self.compile_new_event()
@@ -990,28 +993,6 @@ class EventEditScreen(Screens):
                 if event.ui_element == self.event_id_element.get("entry"):
                     self.event_id_info = self.event_id_element["entry"].text
                     self.valid_id()
-
-            # REL VALUE CONSTRAINTS
-            elif self.current_editor_tab in ["random cat", "main cat"]:
-                if event.ui_element in self.rel_value_element.values():
-                    info = self.current_cat_dict["rel_status"]
-                    for value, element in self.rel_value_element.items():
-                        value = value.replace("_entry", "")
-                        if element != event.ui_element:
-                            continue
-                        remove_tag = None
-                        for tag in info:
-                            if value in tag:
-                                remove_tag = tag
-                                break
-                        if remove_tag:
-                            info.remove(remove_tag)
-                        if element.text:
-                            self.current_cat_dict["rel_status"].append(
-                                f"{value}_{element.text}"
-                            )
-                        self.update_rel_status_info()
-                        break
 
             # REL CHANGE AMOUNT
             elif (
@@ -1189,7 +1170,7 @@ class EventEditScreen(Screens):
 
     def screen_switches(self):
         super().screen_switches()
-        Screens.show_mute_buttons()
+        self.show_mute_buttons()
 
         self.main_menu_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (152, 30))),
@@ -2713,33 +2694,16 @@ class EventEditScreen(Screens):
                     self.update_rel_status_info()
                     break
         # REL VALUE BUTTONS
-        elif event.ui_element in self.rel_value_element.values():
-            for name, button in self.rel_value_element.items():
+        elif event.ui_element in self.rel_status_element.values():
+            for name, button in self.rel_status_element.items():
                 if button != event.ui_element:
                     continue
-                amount = 0
-                value = name
-                if "low" in name:
-                    value = name.replace("_low_button", "")
-                    amount = 10
-                elif "mid" in name:
-                    value = name.replace("_mid_button", "")
-                    amount = 30
-                elif "high" in name:
-                    value = name.replace("_high_button", "")
-                    amount = 50
 
-                # removing tag if it's already present
-                remove_tag = None
-                for tag in self.current_cat_dict["rel_status"]:
-                    if value in tag:
-                        remove_tag = tag
-                        break
-                if remove_tag:
-                    self.current_cat_dict["rel_status"].remove(remove_tag)
-
-                self.current_cat_dict["rel_status"].append(f"{value}_{amount}")
-                self.rel_value_element[f"{value}_entry"].set_text(str(amount))
+                if "checkbox" in name:
+                    if button.checked:
+                        button.uncheck()
+                    else:
+                        button.check()
                 self.update_rel_status_info()
 
         # SKILL TOGGLE
@@ -4161,6 +4125,29 @@ class EventEditScreen(Screens):
             self.editor_container.on_contained_elements_changed(
                 self.age_element["display"]
             )
+        # REL STATUS
+        if self.rel_status_element.get("romance_text"):
+            chosen_values = []
+            for value in self.rel_value_types.keys():
+                picked_values = self.rel_status_element[
+                    f"{value}_dropdown"
+                ].selected_list.copy()
+                if not picked_values:
+                    continue
+                if self.rel_status_element[f"{value}_checkbox"].checked:
+                    chosen_values.extend([f"{l}_only" for l in picked_values])
+                else:
+                    chosen_values.extend([f"{l}" for l in picked_values])
+            if not set(chosen_values).issubset(
+                set(self.current_cat_dict["rel_status"])
+            ):
+                self.current_cat_dict["rel_status"] = [
+                    tag
+                    for tag in self.current_cat_dict["rel_status"]
+                    if tag in self.rel_tag_names
+                ]
+                self.current_cat_dict["rel_status"].extend(chosen_values)
+                self.update_rel_status_info()
         # SKILLS
         if self.skill_element.get("paths"):
             # chosen path has changed
@@ -4437,7 +4424,7 @@ class EventEditScreen(Screens):
             },
         )
         self.future_element["include_display"] = UITextBoxTweaked(
-            f"{block_info['pool']['event_id'] if block_info['pool'].get('event_id') else''}",
+            f"{block_info['pool']['event_id'] if block_info['pool'].get('event_id') else ''}",
             ui_scale(pygame.Rect((10, 0), (-1, -1))),
             object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
             line_spacing=1,
@@ -4742,7 +4729,7 @@ class EventEditScreen(Screens):
             pygame.Rect((20, 10), (130, 30)),
             dropdown_dimensions=(130, 200),
             parent_text="types",
-            item_list=HandleShortEvents.supply_types,
+            item_list=constants.SUPPLY_TYPES,
             multiple_choice=False,
             container=self.supply_element["constraint_container"],
             anchors={
@@ -4769,7 +4756,7 @@ class EventEditScreen(Screens):
         self.supply_element["trigger_list"] = UIDropDown(
             pygame.Rect((10, 20), (130, 30)),
             parent_text="triggers",
-            item_list=HandleShortEvents.supply_triggers,
+            item_list=constants.SUPPLY_TRIGGERS,
             multiple_choice=True,
             disable_selection=False,
             child_trigger_close=False,
@@ -4798,7 +4785,7 @@ class EventEditScreen(Screens):
         self.supply_element["adjust_list"] = UIDropDown(
             pygame.Rect((10, 10), (130, 30)),
             parent_text="adjustments",
-            item_list=HandleShortEvents.supply_adjustments,
+            item_list=constants.SUPPLY_ADJUSTMENTS,
             multiple_choice=False,
             disable_selection=False,
             container=self.supply_element["constraint_container"],
@@ -5942,7 +5929,7 @@ class EventEditScreen(Screens):
         self.relationships_element["values_list"] = UIDropDown(
             ui_scale(pygame.Rect((0, 26), (120, 30))),
             parent_text="values",
-            item_list=self.rel_value_types,
+            item_list=list(self.rel_value_types.keys()),
             multiple_choice=True,
             disable_selection=False,
             child_trigger_close=False,
@@ -6869,29 +6856,24 @@ class EventEditScreen(Screens):
         self.create_divider(self.death_element["display"], "dies")
 
     def create_rel_status_editor(self):
-        self.rel_status_element["container"] = UICollapsibleContainer(
-            ui_scale(pygame.Rect((0, 0), (440, 0))),
-            title_text="<b>relationship_status:</b>",
-            top_button_oriented_left=False,
-            bottom_button=False,
-            scrolling_container_to_reset=self.editor_container,
-            manager=MANAGER,
-            container=self.editor_container,
-            title_object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
-            anchors={"top_target": self.editor_element["age"]},
-        )
-        # container for the checkbox list, this will get tossed into the collapsible container ^
-        self.rel_status_element[
-            "checkboxes"
-        ] = pygame_gui.elements.UIAutoResizingContainer(
-            ui_scale(pygame.Rect((48, 0), (0, 0))),
-            container=self.rel_status_element["container"],
-            manager=MANAGER,
-            anchors={"top_target": self.rel_status_element["container"].top_button},
-        )
+        if self.rel_status_element:
+            for ele in self.rel_status_element.values():
+                ele.kill()
+            self.rel_status_element.clear()
 
         # only the main cat has access to these tags
         if self.current_editor_tab == "main cat":
+            self.rel_status_element["container"] = UICollapsibleContainer(
+                ui_scale(pygame.Rect((0, 0), (440, 0))),
+                title_text="<b>relationship_status:</b>",
+                top_button_oriented_left=False,
+                bottom_button=False,
+                scrolling_container_to_reset=self.editor_container,
+                manager=MANAGER,
+                container=self.editor_container,
+                title_object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
+                anchors={"top_target": self.editor_element["age"]},
+            )
             prev_element = None
             # CHECKBOXES
             # clear old elements
@@ -6910,11 +6892,13 @@ class EventEditScreen(Screens):
             for info in self.rel_tag_list:
                 self.rel_status_element[f"{info['tag']}_text"] = UITextBoxTweaked(
                     f"screens.event_edit.{info['tag']}",
-                    ui_scale(pygame.Rect((0, 10), (350, -1))),
+                    ui_scale(
+                        pygame.Rect((20, 40 if not prev_element else 10), (350, -1))
+                    ),
                     object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
                     line_spacing=1,
                     manager=MANAGER,
-                    container=self.rel_status_element["checkboxes"],
+                    container=self.rel_status_element["container"],
                     anchors={
                         "top_target": prev_element,
                     }
@@ -6923,8 +6907,8 @@ class EventEditScreen(Screens):
                 )
 
                 self.rel_status_checkbox[info["tag"]] = UICheckbox(
-                    position=(350, 10),
-                    container=self.rel_status_element["checkboxes"],
+                    position=(370, 40 if not prev_element else 10),
+                    container=self.rel_status_element["container"],
                     manager=MANAGER,
                     check=info["setting"],
                     anchors={"top_target": prev_element} if prev_element else None,
@@ -6933,96 +6917,60 @@ class EventEditScreen(Screens):
                 prev_element = self.rel_status_element[f"{info['tag']}_text"]
 
         # VALUE TAGS
-        self.rel_status_element["values"] = pygame_gui.elements.UIAutoResizingContainer(
-            ui_scale(pygame.Rect((48, 0), (0, 0))),
-            container=self.rel_status_element["container"],
-            manager=MANAGER,
-            anchors={"top_target": self.rel_status_element["checkboxes"]},
+        prev_element = (
+            self.rel_status_element["container"]
+            if self.rel_status_element.get("container")
+            else self.editor_element["age"]
         )
-        prev_element = None
-        for value in self.rel_value_types:
+        for value in self.rel_value_types.keys():
             self.rel_status_element[f"{value}_text"] = UITextBoxTweaked(
-                f"{value} toward r_c is > than:",
-                ui_scale(pygame.Rect((0, 10), (-1, -1))),
+                f"{value} levels allowed:",
+                ui_scale(pygame.Rect((40, 10), (-1, -1))),
                 object_id=get_text_box_theme("#text_box_30_horizleft_pad_10_10"),
                 line_spacing=1,
                 manager=MANAGER,
-                container=self.rel_status_element["values"],
+                container=self.editor_container,
                 anchors={
                     "top_target": prev_element,
-                }
-                if prev_element
-                else None,
+                },
             )
-            initial_text = "0"
-            for tag in self.current_cat_dict["rel_status"]:
-                if value in tag:
-                    initial_text = tag.replace(f"{value}_", "")
+            self.rel_status_element[f"{value}_dropdown"] = UIScrollingDropDown(
+                pygame.Rect((120, 10 if prev_element else 0), (140, 30)),
+                manager=MANAGER,
+                container=self.editor_container,
+                parent_text=f"{value} levels",
+                item_list=self.rel_value_types[value],
+                dropdown_dimensions=(140, 198),
+                anchors={
+                    "top_target": prev_element,
+                },
+                starting_height=1,
+                starting_selection=[
+                    l
+                    for l in self.current_cat_dict["rel_status"]
+                    if l in self.rel_value_types[value]
+                    or f"{l}_only" in self.rel_value_types[value]
+                ],
+            )
 
-            self.rel_value_element[
-                f"{value}_entry"
-            ] = pygame_gui.elements.UITextEntryLine(
-                ui_scale(pygame.Rect((250, 13), (40, 29))),
+            self.rel_status_element[f"{value}_checkbox"] = UICheckbox(
+                (-5, 10),
+                container=self.editor_container,
                 manager=MANAGER,
-                container=self.rel_status_element["values"],
-                anchors={"top_target": prev_element} if prev_element else None,
-                initial_text=initial_text,
+                tool_tip_text="Do not allow higher levels than what is selected.",
+                anchors={
+                    "top_target": prev_element,
+                    "left_target": self.rel_status_element[f"{value}_dropdown"],
+                },
             )
-            self.rel_value_element[f"{value}_low_button"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((10, 12), (30, 30))),
-                Icon.UP_LOW,
-                get_button_dict(ButtonStyles.DROPDOWN, (30, 30)),
-                manager=MANAGER,
-                object_id="@buttonstyles_dropdown",
-                container=self.rel_status_element["values"],
-                anchors=(
-                    {
-                        "left_target": self.rel_value_element[f"{value}_entry"],
-                        "top_target": prev_element,
-                    }
-                    if prev_element
-                    else {
-                        "left_target": self.rel_value_element[f"{value}_entry"],
-                    }
-                ),
-            )
-            self.rel_value_element[f"{value}_mid_button"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((-2, 12), (30, 30))),
-                Icon.UP_MID,
-                get_button_dict(ButtonStyles.DROPDOWN, (30, 30)),
-                manager=MANAGER,
-                object_id="@buttonstyles_dropdown",
-                container=self.rel_status_element["values"],
-                anchors=(
-                    {
-                        "left_target": self.rel_value_element[f"{value}_low_button"],
-                        "top_target": prev_element,
-                    }
-                    if prev_element
-                    else {
-                        "left_target": self.rel_value_element[f"{value}_low_button"],
-                    }
-                ),
-            )
-            self.rel_value_element[f"{value}_high_button"] = UISurfaceImageButton(
-                ui_scale(pygame.Rect((-2, 12), (30, 30))),
-                Icon.UP_HIGH,
-                get_button_dict(ButtonStyles.DROPDOWN, (30, 30)),
-                manager=MANAGER,
-                object_id="@buttonstyles_dropdown",
-                container=self.rel_status_element["values"],
-                anchors=(
-                    {
-                        "left_target": self.rel_value_element[f"{value}_mid_button"],
-                        "top_target": prev_element,
-                    }
-                    if prev_element
-                    else {
-                        "left_target": self.rel_value_element[f"{value}_mid_button"],
-                    }
-                ),
-            )
+
+            for level in self.rel_value_types[value]:
+                if f"{level}_only" in self.current_cat_dict["rel_status"]:
+                    self.rel_status_element[f"{value}_checkbox"].check()
+                    break
+
             prev_element = self.rel_status_element[f"{value}_text"]
+
         self.rel_status_element["display"] = UITextBoxTweaked(
             f"chosen relationship_status: {self.current_cat_dict['rel_status']}",
             ui_scale(pygame.Rect((10, 10), (380, -1))),
@@ -7030,15 +6978,16 @@ class EventEditScreen(Screens):
             line_spacing=1,
             manager=MANAGER,
             container=self.editor_container,
-            anchors={"top_target": self.rel_status_element["container"]},
+            anchors={"top_target": prev_element},
         )
         label = "main" if self.current_cat_dict == self.main_cat_info else "random"
         self.create_lock(
             name=f"{label}_rel_status",
-            top_anchor=self.rel_status_element["container"],
+            top_anchor=prev_element,
             left_anchor=self.rel_status_element["display"],
         )
-        self.rel_status_element["container"].close()
+        if self.rel_status_element.get("container"):
+            self.rel_status_element["container"].close()
         self.create_divider(self.rel_status_element["display"], "rel_status")
 
     def create_age_editor(self):

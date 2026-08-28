@@ -1,13 +1,15 @@
 {
     "Newleaf":{
         "running nose": 2,
-        "stomachache": 1
+        "stomachache": 1,
+        "tick fever": 1
     },
     "Greenleaf":{
         "fleas": 2,
         "stomachache":1,
         "heat exhaustion":3,
-        "heat stroke":1
+        "heat stroke":1,
+        "tick fever":1
     },
     "Leaf-fall":{
         "stomachache":1,

@@ -1,0 +1,241 @@
+[
+    {
+        "event_id": "dst_hunt_heat3",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 2,
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ],
+            "all apprentices": [
+                -1,
+                -1
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "hunt_general_intro",
+        "intro_text": "The sun beats down on the desert, driving every creature away from its gaze with blinding heat.",
+        "decline_text": "Giving up on the hunt, p_l finds a burrow to wait out the heat of the day until they can return back to camp.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun, but their pounce is too soon, and their prey lives to see another day."
+                ],
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "p_l considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day \u2014 except this burrow seems occupied. The tortoise inside puts up a fight, but p_l manages to flip their positions and drive it out into the heat, which slowly kills it."
+                ],
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "Anticipating the heat of the sun, s_c0 has positioned themselves in the shadowed depths around a shaded tiny pool in the rocks. As predicted, it's not long until the water draws in a Thunderpath-runner, and the bird is dispatched neatly and quietly."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but also s_c0, and they settle back down to wait until it's cooler to try and bring their catch back to c_n."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "responsible",
+                                "thoughtful",
+                                "wise",
+                                "calm",
+                                "careful",
+                                "nervous",
+                                "strange"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Making the smart choice, p_l doesn't move from the shade, taking a good long nap in the heat."
+                ],
+                "exp_gained": 0
+            }
+        ]
+    },
+    {
+        "event_id": "dst_hunt_heat4",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 2,
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ],
+            "apprentice": [
+                1,
+                6
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "hunt_general_intro",
+        "intro_text": "The sun beats down on the desert, driving every creature away from its gaze with blinding heat.",
+        "decline_text": "Giving up on the hunt, p_l finds a burrow to wait out the heat of the day until they can return back to camp.",
+        "success_outcomes": [
+            {
+                "frequency": 1,
+                "strings": [
+                    "p_l considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day \u2014 except their burrow is occupied, and p_l instead has to wait out the heat in the uncomfortable shade of a cactus."
+                ],
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but sadly not in the place s_c0 waits."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "trait": [
+                                "responsible",
+                                "thoughtful",
+                                "wise",
+                                "calm",
+                                "careful",
+                                "nervous",
+                                "strange"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "any"
+                        ]
+                    }
+                },
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Making the smart choice, p_l doesn't move from the shade, taking a good long nap in the heat."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "p_l doesn't make it back to camp. A patrol sent out for them find their body, collapsed in a shadeless part of the territory and already starting to dry out and mummify."
+                ],
+                "exp_gained": 0,
+                "death": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "history": "This cat died from heat stroke."
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "p_l collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
+                ],
+                "exp_gained": 0,
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "heat exhaustion"
+                        ],
+                        "death_history": "m_c got heat exhaustion on patrol and died."
+                    }
+                ]
+            }
+        ]
+    }
+]

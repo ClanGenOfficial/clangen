@@ -1,5 +1,60 @@
 [
     {
+        "event_id": "mtn_new_cat_crystalguided_welcoming",
+        "location": [
+            "mountainous:camp3"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 1,
+        "event_text": "m_c finds a stranger who seems to be searching for something. n_c_pre:0 tells m_c that crystals with stars in them have guided {PRONOUN/n_c:0/object} here to join the Clan. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/take/takes} on a new name.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "new_cat": [
+            [
+            	"new_name",
+		    	"backstory:guided2,guided4"
+            ]
+        ],
+        "relationships": [
+            {
+              "cats_from": ["m_c"],
+              "cats_to": ["n_c:0"],
+              "mutual": false,
+              "values": ["trust", "respect"],
+              "amount": 5,
+                "log": {
+                    "cats_from": "m_c found n_c:0 searching for the Clan, where StarClan was trying to lead {PRONOUN/n_c:0/object}."
+                }
+            },
+            {
+              "cats_from": ["n_c:0"],
+              "cats_to": ["m_c"],
+              "values": ["trust", "respect"],
+              "amount": 10,
+              "log": {
+                "cats_from": "n_c:0 was grateful m_c led {PRONOUN/n_c:0/object} to c_n when StarClan tried to guide {PRONOUN/n_c:0/object} there."
+            	}
+            }
+        ],
+        "outsider": {
+            "current_rep": [
+                "welcoming"
+            ],
+            "changed": 1
+        }
+    },
+    {
         "event_id": "mtn_new_cat_eagle",
         "location": [
             "mountainous"
@@ -8,7 +63,7 @@
             "any"
         ],
         "frequency": 2,
-        "event_text": "m_c found an injured loner while out on a walk - clearly, {PRONOUN/n_c:0/subject}'d been attacked by an eagle. {PRONOUN/m_c/subject/CAP} rushes {PRONOUN/n_c:0/object} back to camp to be treated.",
+        "event_text": "m_c found a loner who was attacked by an eagle. {PRONOUN/m_c/subject/CAP} {VERB/m_c/rush/rushes} {PRONOUN/n_c:0/object} back to camp to be treated.",
         "m_c": {
             "age": [
                 "young adult",
@@ -23,47 +78,42 @@
         "new_cat": [
             [
                 "exists",
-		"loner"
+		    "loner"
             ]
         ],
-	"injury": [
-        {
+	      "injury": [
+            {
+                "cats": ["n_c:0"],
+                "injuries": ["blunt_force_injury"]
+            }
+        ],
+	      "history": [
+            {
             "cats": ["n_c:0"],
-            "injuries": ["blunt_force_injury"],
-            "scars": ["THREE", "FACE"]
-        }
+            "scar": "m_c was scarred after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
+            "death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle."
+            }
         ],
-	"history:": [
-        {
-        "cats": ["n_c:0"],
-        "scar": "m_c was scarred after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
-        "reg_death": "m_c died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle.",
-        "lead_death": "died after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dropped by an eagle"
-        }
-        ],
-	"relationships": [
-          {
-            "cats_from": ["m_c"],
-            "cats_to": ["n_c:0"],
-            "mutual": true,
-            "values": ["comfort", "platonic"],
-            "amount": 5
-          },
-          {
-            "cats_from": ["n_c:0"],
-            "cats_to": ["m_c"],
-            "values": ["trust"],
-            "amount": 10
-          },
-	  {
-            "cats_from": ["n_c:0"],
-            "cats_to": ["m_c"],
-	    "mutual": true,
-            "values": ["dislike"],
-            "amount": -10
-          }
-
-
+        "relationships": [
+            {
+              "cats_from": ["m_c"],
+              "cats_to": ["n_c:0"],
+              "mutual": true,
+              "values": ["comfort", "like"],
+              "amount": 5,
+                "log": {
+                    "cats_from": "m_c found n_c:0 after an eagle attack and rushed {PRONOUN/n_c:0/object} back to camp for treatment."
+                }
+            },
+            {
+              "cats_from": ["n_c:0"],
+              "cats_to": ["m_c"],
+              "values": ["trust"],
+              "amount": 10,
+              "log": {
+                "cats_from": "n_c:0 will always be grateful to m_c for saving {PRONOUN/n_c:0/poss} life."
+              }
+            }
         ],
         "outsider": {
             "current_rep": [
@@ -107,8 +157,11 @@
             "cats_from": ["m_c"],
             "cats_to": ["n_c:1"],
             "mutual": true,
-            "values": ["comfort", "platonic"],
-            "amount": 5
+            "values": ["comfort", "like"],
+            "amount": 5,
+            "log": {
+              "cats_from": "m_c found n_c:1 near {PRONOUN/n_c:1/poss} dead parent and brought {PRONOUN/n_c:1/object} into the Clan."
+            }
           }
         ],
         "outsider": {
@@ -117,7 +170,130 @@
             ],
             "changed": 1
         }
+    },
+{
+  "event_id": "mtn_new_cat_cliffrescue",
+  "location": [
+    "mountainous:camp1"
+  ],
+  "season": [
+    "any"
+  ],
+  "frequency": 2,
+  "event_text": "Hearing yowls of distress, m_c rescues a loner from falling off a cliff. The grateful cat decides to join the Clan.",
+  "m_c": {
+    "age": [
+      "young adult",
+      "adult",
+      "senior adult",
+      "senior"
+    ],
+    "status": [
+      "any"
+    ]
+  },
+  "new_cat": [
+    [
+      "exists",
+      "loner"
+    ]
+  ],
+  "relationships": [
+    {
+      "cats_from": [
+        "m_c"
+      ],
+      "cats_to": [
+        "n_c:0"
+      ],
+      "mutual": true,
+		"log": {
+			"cats_to": "m_c is curious about n_c:0 now that {PRONOUN/n_c:0/subject} {VERB/n_c:0/have/has} joined the Clan.",
+"cats_from": "m_c saved n_c:0 from falling off a cliff and offered {PRONOUN/n_c:0/object} a place in the Clan."
+		},
+      "values": [
+        "comfort",
+        "like"
+      ],
+      "amount": 10
+    },
+    {
+      "cats_from": [
+        "n_c:0"
+      ],
+      "cats_to": [
+        "m_c"
+      ],
+		"log": {
+			"cats_from": "n_c:0 was thankful that m_c saved {PRONOUN/n_c:0/object} from falling off a cliff."
+		},
+      "values": [
+        "trust"
+      ],
+      "amount": 10
     }
-
-
+  ],
+  "outsider": {
+    "current_rep": [
+      "welcoming"
+    ],
+    "changed": 1
+  }
+},
+{
+"event_id": "mtn_new_cat_ruinsguided_welcoming",
+        "location": [
+            "mountainous:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 1,
+        "event_text": "While on patrol, m_c finds a strange cat, claiming the ghosts of the ruins led {PRONOUN/n_c:0/object} here. m_c takes {PRONOUN/n_c:0/object} back to camp, where {PRONOUN/n_c:0/subject} {VERB/n_c:0/decide/decides} to join the Clan and is renamed n_c:0.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ],
+            "status": [
+                "any"
+            ]
+        },
+        "new_cat": [
+            [
+            	"new_name",
+		    	"backstory:guided2,guided4"
+            ]
+        ],
+        "relationships": [
+            {
+              "cats_from": ["m_c"],
+              "cats_to": ["n_c:0"],
+              "mutual": false,
+              "values": ["trust", "respect"],
+              "amount": 5,
+                "log": {
+                    "cats_from": "m_c found n_c:0 searching for the Clan, where StarClan was trying to lead {PRONOUN/n_c:0/object}."
+                }
+            },
+            {
+              "cats_from": ["n_c:0"],
+              "cats_to": ["m_c"],
+              "values": ["trust", "respect"],
+              "amount": 10,
+              "log": {
+                "cats_from": "n_c:0 was grateful m_c led {PRONOUN/n_c:0/object} to c_n when StarClan tried to guide {PRONOUN/n_c:0/object} there."
+            	}
+            }
+        ],
+        "outsider": {
+            "current_rep": [
+                "welcoming"
+            ],
+            "changed": 1
+        }
+}
+    
 ]

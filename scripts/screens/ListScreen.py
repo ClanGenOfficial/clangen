@@ -1,6 +1,7 @@
 from math import ceil
 from typing import Union, Dict
 
+import i18n
 import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID
@@ -18,18 +19,18 @@ from scripts.game_structure.game.switches import (
     Switch,
 )
 from scripts.cat.enums import CatGroup
-from scripts.game_structure.game_essentials import game
+from scripts.game_structure import game
 from scripts.game_structure.screen_settings import game_screen_size, MANAGER
-from scripts.game_structure.ui_elements import (
-    UIImageButton,
-    UICatListDisplay,
-    UISurfaceImageButton,
-    UIDropDown,
-)
+from scripts.ui.elements.dropdown import UIDropDown
+from scripts.ui.elements.cat_list_display import UICatListDisplay
+from scripts.ui.elements.image_button import UIImageButton
+from scripts.ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.screens.Screens import Screens
+from scripts.screens.enums import GameScreen
 from scripts.ui.generate_button import ButtonStyles, get_button_dict
 from scripts.ui.icon import Icon
-from scripts.utility import ui_scale, get_text_box_theme, ui_scale_value
+from scripts.ui.theme import get_text_box_theme
+from scripts.ui.scale import ui_scale, ui_scale_value
 
 
 class ListScreen(Screens):
@@ -44,6 +45,8 @@ class ListScreen(Screens):
         "screens.list.filter_id",
         "screens.list.filter_exp",
         "screens.list.filter_death",
+        "screens.list.filter_name",
+        "screens.list.filter_reverse_name",
     )
     living_filter_names = (
         "screens.list.filter_rank",
@@ -51,6 +54,8 @@ class ListScreen(Screens):
         "screens.list.filter_reverse_age",
         "screens.list.filter_id",
         "screens.list.filter_exp",
+        "screens.list.filter_name",
+        "screens.list.filter_reverse_name",
     )
 
     living_group_names = ("general.your_clan", "general.cotc")
@@ -79,6 +84,7 @@ class ListScreen(Screens):
         self.current_group = "your_clan"
         self.full_cat_list = []
         self.current_listed_cats = []
+        self.temper_message = None
 
         self.list_screen_container = None
 
@@ -131,13 +137,6 @@ class ListScreen(Screens):
         self.clan_name = None
 
     def handle_event(self, event):
-        if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
-            if event.ui_element == self.cat_list_bar_elements["sort_by_label"]:
-                self.cat_list_bar_elements["sort_by_button"].on_hovered()
-
-        elif event.type == pygame_gui.UI_BUTTON_ON_UNHOVERED:
-            if event.ui_element == self.cat_list_bar_elements["sort_by_label"]:
-                self.cat_list_bar_elements["sort_by_button"].on_unhovered()
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
             element = event.ui_element
 
@@ -224,27 +223,27 @@ class ListScreen(Screens):
             elif element in self.cat_display.cat_sprites.values():
                 switch_set_value(Switch.cat, element.return_cat_id())
                 game.last_list_forProfile = self.current_group
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
 
             # MENU BUTTONS
             else:
                 self.menu_button_pressed(event)
                 self.mute_button_pressed(event)
 
-        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
+        elif event.type == pygame.KEYDOWN:
             if self.cat_list_bar_elements["search_bar_entry"].is_focused:
                 return
             if event.key == pygame.K_LEFT:
-                self.change_screen("camp screen")
+                self.change_screen(GameScreen.CAMP)
             elif event.key == pygame.K_RIGHT:
-                self.change_screen("patrol screen")
+                self.change_screen(GameScreen.PATROL)
 
     def screen_switches(self):
         super().screen_switches()
         self.show_mute_buttons()
-        self.clan_name = game.clan.displayname + "Clan"
+        self.clan_name = game.clan.name
 
-        self.set_disabled_menu_buttons(["catlist_screen"])
+        self.set_disabled_menu_buttons(["cats"])
         self.show_menu_buttons()
 
         # SCREEN CONTAINER - everything should come back to here
@@ -255,6 +254,15 @@ class ListScreen(Screens):
             manager=MANAGER,
             visible=True,
         )
+        self.temper_message = UISurfaceImageButton(
+            ui_scale(pygame.Rect((200, 104), (400, 35))),
+            "testtestestesttesttest",
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (400, 35)),
+            object_id="@buttonstyles_horizontal_tab",
+            manager=MANAGER,
+            container=self.list_screen_container,
+        )
+        self.temper_message.disable()
 
         # BAR CONTAINER
         self.cat_list_bar = pygame_gui.core.UIContainer(
@@ -347,41 +355,41 @@ class ListScreen(Screens):
         )
 
         # SORT BY
+        button_dict = get_button_dict(ButtonStyles.DROPDOWN, (75, 34))
+        button_dict["disabled"] = button_dict["normal"]
         self.cat_list_bar_elements["sort_by_label"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((-2, 0), (75, 34))),
             f"screens.list.filter_label",
-            {
-                "normal": get_button_dict(ButtonStyles.DROPDOWN, (77, 34))[
-                    "normal"
-                ].subsurface(
-                    (0, 0), (75, 34)
-                )  # this horrific thing gets rid of the double-thick line
-            },
+            button_dict,
             object_id="@buttonstyles_dropdown",
             container=self.cat_list_bar,
             starting_height=1,
             manager=MANAGER,
             anchors={"left_target": self.choose_group_dropdown},
         )
+        self.cat_list_bar_elements["sort_by_label"].disable()
+
+        sort_by_text = f"screens.list.filter_{switch_get_value(Switch.sort_type)}"
 
         self.cat_list_bar_elements["sort_by_button"] = UIImageButton(
             ui_scale(pygame.Rect((0, 0), (63, 34))),
-            f"screens.list.filter_{switch_get_value(Switch.sort_type)}",
+            sort_by_text,
             object_id=ObjectID("#filter_by_button", "@buttonstyles_dropdown"),
-            container=self.cat_list_bar,
             starting_height=1,
             manager=MANAGER,
             anchors={"left_target": self.cat_list_bar_elements["sort_by_label"]},
         )
 
         self.sort_by_dropdown = UIDropDown(
-            pygame.Rect((-2, 0), (63, 34)),
-            f"screens.list.filter_{switch_get_value(Switch.sort_type)}",
-            item_list=self.living_filter_names,
+            pygame.Rect((0, 0), (63, 34)),
+            sort_by_text,
+            item_list=self.living_filter_names
+            if self.death_status == "living"
+            else self.dead_filter_names,
             manager=MANAGER,
             container=self.cat_list_bar,
             parent_override=self.cat_list_bar_elements["sort_by_button"],
-            starting_selection=["screens.list.filter_rank"],
+            starting_selection=[sort_by_text],
             anchors={"left_target": self.cat_list_bar_elements["sort_by_label"]},
         )
 
@@ -676,6 +684,7 @@ class ListScreen(Screens):
         """
         sets the background and heading according to current group
         """
+        self.temper_message.set_text(self.get_group_temper_message())
         if self.current_group == "your_clan":
             self.set_bg(None)
             self.update_heading_text(self.clan_name)
@@ -691,6 +700,34 @@ class ListScreen(Screens):
         elif self.current_group == "dark_forest":
             self.set_bg("dark_forest")
             self.update_heading_text("general.dark_forest")
+
+    def get_group_temper_message(self):
+        # UR and COTC has no alignment and no message
+        if self.current_group in ("unknown_residence", "cotc"):
+            self.temper_message.hide()
+            return ""
+
+        self.temper_message.show()
+
+        if self.current_group == "your_clan":
+            group = self.clan_name
+            first_temper, second_temper = game.clan.temperament
+
+        else:
+            if self.current_group == "dark_forest":
+                group = i18n.t(f"general.the_dark_forest")
+            else:
+                group = i18n.t(f"general.{self.current_group}")
+            if self.current_group == "starclan":
+                first_temper, second_temper = game.starclan.temperament
+            else:
+                first_temper, second_temper = game.dark_forest.temperament
+
+        first = i18n.t(f"screens.leader_den.{first_temper}")
+        second = i18n.t(f"screens.leader_den.{second_temper}")
+        temper = f"{first} & {second}"
+
+        return i18n.t("screens.list.temper", group=group, temper=temper)
 
     def get_cat_list(self):
         """
@@ -731,7 +768,7 @@ class ListScreen(Screens):
             if (
                 not the_cat.dead
                 and (the_cat.status.is_outsider or the_cat.status.is_other_clancat)
-                and the_cat.status.is_near(CatGroup.PLAYER_CLAN)
+                and the_cat.status.is_near(CatGroup.PLAYER_CLAN_ID)
             ):
                 self.full_cat_list.append(the_cat)
 
@@ -778,6 +815,6 @@ class ListScreen(Screens):
                 the_cat.ID != game.clan.instructor.ID
                 and the_cat.status.group == CatGroup.UNKNOWN_RESIDENCE
                 and not the_cat.faded
-                and the_cat.status.is_near(CatGroup.PLAYER_CLAN)
+                and the_cat.status.is_near(CatGroup.PLAYER_CLAN_ID)
             ):
                 self.full_cat_list.append(the_cat)

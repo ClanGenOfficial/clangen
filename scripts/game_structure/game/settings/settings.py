@@ -6,6 +6,9 @@ import ujson
 
 from scripts.game_structure.game.save_load import safe_save
 from scripts.housekeeping.datadir import get_save_dir
+from scripts.screens.enums import GameScreen
+
+from ...constants import DISPLAY_SETTINGS
 
 settings_changed: bool = False
 settings = {"moon_and_seasons_open": False}
@@ -25,11 +28,11 @@ def game_settings_save(currentscreen=None):
     try:
         safe_save(settings_path, settings)
     except RuntimeError:
-        from scripts.game_structure.windows import SaveError
+        from scripts.ui.windows.save_error import SaveErrorWindow
 
-        SaveError(traceback.format_exc())
+        SaveErrorWindow(traceback.format_exc())
         if currentscreen is not None:
-            currentscreen.change_screen("start screen")
+            currentscreen.change_screen(GameScreen.START)
 
 
 def game_settings_load():
@@ -77,20 +80,19 @@ def game_settings_generator() -> Generator[Tuple[str, Any], None, None]:
 
 
 # Init Settings
-with open(Path("resources") / "gamesettings.json", "r", encoding="utf-8") as read_file:
-    _settings = ujson.loads(read_file.read())
+_game_settings = DISPLAY_SETTINGS["game"]
 
-for setting, values in _settings["__other"].items():
+for setting, values in _game_settings["other"].items():
     settings[setting] = values[0]
     setting_lists[setting] = values
 
-_ = [_settings["general"]]
+_ = [_game_settings["general"]]
 
 for cat in _:  # Add all the settings to the settings dictionary
-    for setting_name, inf in cat.items():
-        settings[setting_name] = inf[2]
-        setting_lists[setting_name] = [inf[2], not inf[2]]
-del _settings, setting_name, _
+    for setting_name, default in cat.items():
+        settings[setting_name] = default
+        setting_lists[setting_name] = [default, not default]
+del _game_settings, setting_name, _
 
 game_settings_load()
 # End init settings

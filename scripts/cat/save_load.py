@@ -10,7 +10,7 @@ from scripts.housekeeping.datadir import get_save_dir
 
 if TYPE_CHECKING:
     from scripts.cat.cats import Cat
-    from scripts.game_structure.game_essentials import Game
+    from scripts.game_structure import game
 
 faded_ids = []
 """List of IDs of faded cats"""

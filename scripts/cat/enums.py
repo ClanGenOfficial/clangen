@@ -1,6 +1,11 @@
 from __future__ import annotations
 
+from enum import auto
+
 from strenum import StrEnum
+from enum import Enum, auto
+
+from scripts.game_structure import constants
 
 
 class CatAge(StrEnum):
@@ -17,6 +22,29 @@ class CatAge(StrEnum):
 
     def can_have_mate(self):
         return self not in (CatAge.KITTEN, CatAge.NEWBORN, CatAge.ADOLESCENT)
+
+    @staticmethod
+    def get_from_moons(moons):
+        lookup = {
+            CatAge.NEWBORN: constants.CONFIG["cat_ages"]["newborn"],
+            CatAge.KITTEN: constants.CONFIG["cat_ages"]["kitten"],
+            CatAge.ADOLESCENT: constants.CONFIG["cat_ages"]["adolescent"],
+            CatAge.YOUNG_ADULT: constants.CONFIG["cat_ages"]["young adult"],
+            CatAge.ADULT: constants.CONFIG["cat_ages"]["adult"],
+            CatAge.SENIOR_ADULT: constants.CONFIG["cat_ages"]["senior adult"],
+            CatAge.SENIOR: constants.CONFIG["cat_ages"]["senior"],
+        }
+        if moons > lookup[CatAge.SENIOR][1]:
+            return CatAge.SENIOR
+
+        return next(
+            (
+                key
+                for key, (min_age, max_age) in lookup.items()
+                if min_age <= moons <= max_age
+            ),
+            None,
+        )
 
 
 class CatSocial(StrEnum):
@@ -99,20 +127,23 @@ class CatStanding(StrEnum):
     LOST = "lost"
     EXILED = "exiled"
     KNOWN = "known"
+    UNKNOWN = "unknown"
 
 
 class CatGroup(StrEnum):
     PLAYER_CLAN = "player_clan"
-
-    OTHER_CLAN1 = "other_clan1"
-    OTHER_CLAN2 = "other_clan2"
-    OTHER_CLAN3 = "other_clan3"
-    OTHER_CLAN4 = "other_clan4"
-    OTHER_CLAN5 = "other_clan5"
+    OTHER_CLAN = "other_clan"
 
     DARK_FOREST = "dark_forest"
     STARCLAN = "starclan"
     UNKNOWN_RESIDENCE = "unknown_residence"
+
+    NONE = ""
+
+    PLAYER_CLAN_ID = "1"
+    STARCLAN_ID = "2"
+    UNKNOWN_RESIDENCE_ID = "3"
+    DARK_FOREST_ID = "4"
 
     def is_afterlife(self) -> bool:
         return self in (self.DARK_FOREST, self.STARCLAN, self.UNKNOWN_RESIDENCE)
@@ -120,12 +151,35 @@ class CatGroup(StrEnum):
     def is_any_clan_group(self) -> bool:
         return self in (
             self.PLAYER_CLAN,
-            self.OTHER_CLAN1,
-            self.OTHER_CLAN2,
-            self.OTHER_CLAN3,
-            self.OTHER_CLAN4,
-            self.OTHER_CLAN5,
+            self.OTHER_CLAN,
         )
 
-    def is_other_clan_group(self) -> bool:
-        return self.is_any_clan_group() and self != self.PLAYER_CLAN
+    def is_ID(self) -> bool:
+        return self in (
+            self.PLAYER_CLAN_ID,
+            self.STARCLAN_ID,
+            self.UNKNOWN_RESIDENCE_ID,
+            self.DARK_FOREST_ID,
+        )
+
+
+class CatCompatibility(Enum):
+    NEGATIVE = auto()
+    POSITIVE = auto()
+    NEUTRAL = auto()
+
+
+class CatThought(StrEnum):
+    IS_GUIDE = "is_guide"
+    WHILE_DEAD = "while_dead"
+    WHILE_ALIVE = "while_alive"
+    ON_DEATH = "on_death"
+    ON_GRIEF_TOWARD_BODY = "on_grief_toward_body"
+    ON_GRIEF_NO_BODY = "on_grief_no_body"
+    ON_BIRTH = "on_birth"
+    ON_MEETING = "on_meeting"
+    ON_JOIN = "on_join"
+    ON_EXILE = "on_exile"
+    ON_LOST = "on_lost"
+    ON_AFTERLIFE_CHANGE = "on_afterlife_change"
+    ON_RANK_CHANGE = "on_rank_change"

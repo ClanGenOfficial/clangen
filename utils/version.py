@@ -4,7 +4,7 @@ Write a version.ini file
 
 import sys
 
-from util import getCommandOutput
+from utils.util import getCommandOutput
 
 
 def main(

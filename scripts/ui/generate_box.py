@@ -7,7 +7,7 @@ from typing import Tuple, Dict, Union, Optional
 import pygame
 
 import scripts.game_structure.screen_settings
-from scripts.utility import ui_scale_value, ui_scale_dimensions
+from scripts.ui.scale import ui_scale_dimensions, ui_scale_value
 
 
 @dataclass(unsafe_hash=True)
@@ -20,6 +20,11 @@ class BoxData:
 class BoxStyles(Enum):
     FRAME = "frame"
     ROUNDED_BOX = "rounded_box"
+    SELECTION_BOX = "selection_box"
+    TARGET_BOX = "target_box"
+    DARK_ROUNDED_BOX = "dark_rounded_box"
+    INNER_BOX = "inner_box"
+    NAMEPLATE = "nameplate"
 
 
 boxstyles = {
@@ -28,12 +33,47 @@ boxstyles = {
         pygame.image.load("resources/images/generated_boxes/frame.png").convert_alpha(),
         (3, 3),
     ),
+    "selection_box": BoxData(
+        "selection_box",
+        pygame.image.load(
+            "resources/images/generated_boxes/selection_box.png"
+        ).convert_alpha(),
+        (3, 3),
+    ),
+    "target_box": BoxData(
+        "target_box",
+        pygame.image.load(
+            "resources/images/generated_boxes/target_box.png"
+        ).convert_alpha(),
+        (3, 3),
+    ),
     "rounded_box": BoxData(
         "rounded_box",
         pygame.image.load(
             "resources/images/generated_boxes/rounded_box.png"
         ).convert_alpha(),
         (7, 3),
+    ),
+    "dark_rounded_box": BoxData(
+        "dark_rounded_box",
+        pygame.image.load(
+            "resources/images/generated_boxes/dark_rounded_box.png"
+        ).convert_alpha(),
+        (7, 3),
+    ),
+    "inner_box": BoxData(
+        "inner_box",
+        pygame.image.load(
+            "resources/images/generated_boxes/inner_box.png"
+        ).convert_alpha(),
+        (3, 3),
+    ),
+    "nameplate": BoxData(
+        "nameplate",
+        pygame.image.load(
+            "resources/images/generated_boxes/nameplate.png"
+        ).convert_alpha(),
+        (3, 3),
     ),
 }
 

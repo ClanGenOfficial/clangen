@@ -1,4 +1,5 @@
 {
+
     "comment": "If you add new illnesses, make sure to add their key to illnesses.en.json otherwise they will not display",
     "seizure": {
         "severity": "severe",
@@ -32,13 +33,52 @@
         ],
         "herbs": {
             "1": [
-                "juniper",
-                "poppy",
-                "thyme",
-                "ragwort"
+                "poppy"
             ],
-            "2": [],
-            "3": []
+            "2": [
+                "thyme"
+            ],
+            "3": [
+                "ragwort",
+                "juniper"
+            ]
+        }
+    },
+    "breathless fit": {
+        "severity": "severe",
+        "mortality": {
+            "newborn": 2,
+            "kitten": 5,
+            "adolescent": 10,
+            "young adult": 20,
+            "adult": 20,
+            "senior adult": 20,
+            "senior": 5
+        },
+        "medicine_mortality": {
+            "newborn": 30,
+            "kitten": 50,
+            "adolescent": 70,
+            "young adult": 100,
+            "adult": 100,
+            "senior adult": 100,
+            "senior": 70
+        },
+        "duration": 1,
+        "medicine_duration": 1,
+        "infectiousness": 0,
+        "risks": [],
+        "herbs": {
+            "1": [
+                "betony"
+            ],
+            "2": [
+                "rosemary",
+                "juniper"
+            ],
+            "3": [
+                "mullein"
+            ]
         }
     },
     "diarrhea": {
@@ -73,12 +113,14 @@
         "herbs": {
             "1": [
                 "betony",
-                "mullein",
-                "juniper",
-                "mallow"
+                "mullein"
             ],
-            "2": [],
-            "3": []
+            "2": [
+                "thyme"
+            ],
+            "3": ["juniper",
+                  "mallow"
+        ]
         }
     },
     "fleas": {
@@ -103,7 +145,7 @@
         },
         "duration": 4,
         "medicine_duration": 2,
-        "infectiousness": 15,
+        "infectiousness": 10,
         "risks": [
             {
                 "name": "torn pelt",
@@ -140,25 +182,31 @@
         },
         "duration": 3,
         "medicine_duration": 2,
-        "infectiousness": 30,
+        "infectiousness": 3,
         "risks": [
             {
                 "name": "yellowcough",
                 "chance": 60
+            },
+            {
+                "name": "sore throat",
+                "chance": 20
             }
         ],
         "herbs": {
         "1": [
-            "catmint",
-            "tansy",
-            "mullein",
             "plantain",
-            "juniper",
+            "honey",
             "poppy",
             "moss"
         ],
-        "2": [],
-        "3": []
+        "2": [
+            "tansy",
+            "mullein"
+    ],
+        "3": [
+            "catmint"
+        ]
         }
     },
     "kittencough": {
@@ -183,25 +231,32 @@
         },
         "duration": 3,
         "medicine_duration": 2,
-        "infectiousness": 15,
+        "infectiousness": 2,
         "risks": [
             {
                 "name": "whitecough",
                 "chance": 10
+            },
+            {
+                "name": "sore throat",
+                "chance": 20
             }
         ],
         "herbs": {
             "1": [
-                "catmint",
-                "tansy",
-                "mullein",
                 "plantain",
-                "juniper",
+                "honey",
                 "poppy",
                 "moss"
             ],
-            "2": [],
-            "3": []
+            "2": [
+                "catmint",
+                "ragwort"
+            ],
+            "3": [
+                "mullein",
+                "tansy"
+            ]
         }
     },
     "an infected wound": {
@@ -236,12 +291,14 @@
         "herbs": {
             "1": [
                 "marigold",
-                "burdock",
-                "wild_garlic",
                 "poppy"
             ],
-            "2": [],
-            "3": []
+            "2": [
+                "honey"
+            ],
+            "3": [
+                "burdock"
+            ]
         }
     },
     "carrionplace disease": {
@@ -271,12 +328,15 @@
         "herbs": {
             "1": [
                 "marigold",
-                "burdock",
-                "wild_garlic",
                 "poppy"
             ],
-            "2": [],
-            "3": []
+            "2": [
+                "burdock"
+            ],
+            "3": [
+                "dandelion",
+                "wild_garlic"
+            ]
         }
     },
     "redcough": {
@@ -306,15 +366,16 @@
         "herbs": {
             "1": [
                 "lungwort",
-                "mullein",
-                "tansy",
                 "plantain",
-                "juniper",
+                "honey",
                 "ragwort",
                 "poppy",
                 "moss"
             ],
-            "2": [],
+            "2": [
+                "tansy",
+                "mullein"
+            ],
             "3": []
         }
     },
@@ -345,16 +406,21 @@
             {
                 "name": "whitecough",
                 "chance": 15
+            },
+            {
+                "name": "sore throat",
+                "chance": 20
             }
         ],
         "herbs": {
             "1": [
                 "ragwort",
-                "juniper",
                 "poppy"
             ],
             "2": [],
-            "3": []
+            "3": [
+                "juniper"
+            ]
         }
     },
     "whitecough": {
@@ -379,26 +445,32 @@
         },
         "duration": 3,
         "medicine_duration": 2,
-        "infectiousness": 30,
+        "infectiousness": 10,
         "risks": [
             {
                 "name": "greencough",
                 "chance": 18
+            },
+            {
+                "name": "sore throat",
+                "chance": 20
             }
         ],
         "herbs": {
             "1": [
-                "catmint",
                 "plantain",
-                "tansy",
-                "mullein",
-                "juniper",
-                "ragwort",
+                "honey",
                 "poppy",
                 "moss"
             ],
-            "2": [],
-            "3": []
+            "2": [
+                "catmint",
+                "ragwort"
+            ],
+            "3": [
+                "mullein",
+                "tansy"
+            ]
         }
     },
     "yellowcough": {
@@ -423,19 +495,28 @@
         },
         "duration": 3,
         "medicine_duration": 3,
-        "infectiousness": 30,
+        "infectiousness": 6,
         "risks": [
             {
                 "name": "redcough",
                 "chance": 80
+            },
+            {
+                "name": "sore throat",
+                "chance": 20
             }
         ],
         "herbs": {
             "1": [
-                "lungwort"
+                "mallow",
+                "honey"
             ],
-            "2": [],
-            "3": []
+            "2": [
+                "tansy"
+            ],
+            "3": [
+                "lungwort"
+            ]
         }
     },
     "a festering wound": {
@@ -468,16 +549,19 @@
             }
         ],
         "herbs": {
-            "1": ["marigold",
-                "burdock",
-                "oak_leaves",
-                "ragwort",
-                "juniper",
+            "1": [
+                "marigold",
                 "poppy",
                 "moss"
             ],
-            "2": [],
-            "3": []
+            "2": [
+                "goldenrod",
+                "dandelion"
+            ],
+            "3": [
+                "burdock",
+                "yew_berries"
+            ]
         }
     },
     "heat stroke": {
@@ -506,12 +590,14 @@
         "risks": [],
         "herbs": {
             "1": [
-                "juniper",
-                "ragwort",
-                "moss"
+                "ragwort"
             ],
-            "2": [],
-            "3": []
+            "2": [
+                "juniper"
+            ],
+            "3": [
+                "moss"
+            ]
         }
     },
     "heat exhaustion": {
@@ -546,10 +632,12 @@
         "herbs": {
             "1": [
                 "juniper",
-                "ragwort",
-                "moss"],
+                "ragwort"
+            ],
             "2": [],
-            "3": []
+            "3": [
+                "moss"
+            ]
         }
     },
     "stomachache": {
@@ -583,13 +671,14 @@
         ],
         "herbs": {
             "1": [
-                "juniper",
-                "mallow",
-                "ragwort",
-                "poppy"
+                "ragwort"
             ],
-            "2": [],
-            "3": []
+            "2": [
+                "juniper"
+            ],
+            "3": [
+                "mallow"
+            ]
         }
     },
     "constant nightmares": {
@@ -619,13 +708,14 @@
         ],
         "herbs": {
             "1": [
-                "juniper",
-                "thyme",
-                "poppy"
+                "juniper"
 
             ],
             "2": [],
-            "3": []
+            "3": [
+                "thyme",
+                "poppy"
+            ]
         }
     },
     "grief stricken": {
@@ -659,16 +749,22 @@
             {
                 "name": "constant nightmares",
                 "chance": 15
+            },
+            {
+                "name": "selective mutism",
+                "chance": 150
             }
         ],
         "herbs": {
             "1": [
-                "juniper",
-                "thyme",
                 "poppy"
             ],
-            "2": [],
-            "3": []
+            "2": [
+                "juniper"
+            ],
+            "3": [
+                "thyme"
+            ]
         }
     },
     "malnourished": {
@@ -764,8 +860,14 @@
             "moss",
             "plantain"
             ],
-            "2": ["dandelion"],
-            "3": ["goldenrod"]
+            "2": [
+                "dandelion",
+                "plantain"
+            ],
+            "3": [
+                "goldenrod",
+                "mullein"
+            ]
         }
     }
 }

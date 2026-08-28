@@ -1,0 +1,73 @@
+{
+  "afterlife_acceptance_options": {
+    "starclan_default": [
+      "starclan_default_0",
+      "starclan_default_1",
+      "starclan_default_2",
+      "starclan_default_3",
+      "starclan_default_4",
+      "starclan_default_5",
+      "starclan_default_6",
+      "starclan_default_7",
+      "starclan_default_8"
+    ],
+    "starclan_rejected": [
+      "starclan_rejected_0",
+      "starclan_rejected_1",
+      "starclan_rejected_2",
+      "starclan_rejected_3",
+      "starclan_rejected_4"
+    ],
+    "starclan_contentious": [
+      "starclan_contentious_0",
+      "starclan_contentious_1",
+      "starclan_contentious_2",
+      "starclan_contentious_3"
+    ],
+    "starclan_kit": [
+      "starclan_kit_0",
+      "starclan_kit_1",
+      "starclan_kit_2",
+      "starclan_kit_3",
+      "starclan_kit_4",
+      "starclan_kit_5",
+      "starclan_kit_6",
+      "starclan_kit_7"
+    ],
+    "dark_forest_default": [
+      "dark_forest_default_0",
+      "dark_forest_default_1",
+      "dark_forest_default_2",
+      "dark_forest_default_3",
+      "dark_forest_default_4",
+      "dark_forest_default_5",
+      "dark_forest_default_6",
+      "dark_forest_default_7"
+    ],
+    "dark_forest_rejected": [
+      "dark_forest_rejected_0",
+      "dark_forest_rejected_1",
+      "dark_forest_rejected_2",
+      "dark_forest_rejected_3",
+      "dark_forest_rejected_4",
+      "dark_forest_rejected_5",
+      "dark_forest_rejected_6",
+      "dark_forest_rejected_7"
+    ],
+    "dark_forest_contentious": [
+      "dark_forest_contentious_0",
+      "dark_forest_contentious_1",
+      "dark_forest_contentious_2",
+      "dark_forest_contentious_3",
+      "dark_forest_contentious_4",
+      "dark_forest_contentious_5"
+    ],
+    "dark_forest_kit": [
+      "dark_forest_kit_0",
+      "dark_forest_kit_1",
+      "dark_forest_kit_2",
+      "dark_forest_kit_3",
+      "dark_forest_kit_4"
+    ]
+  }
+}

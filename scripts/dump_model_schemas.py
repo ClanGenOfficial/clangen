@@ -1,0 +1,98 @@
+import itertools
+import json
+from typing import List, Union
+
+from pydantic import BaseModel
+
+from scripts.models.ceremony.ceremony_schema import CeremonySchema
+from scripts.models.common.common_schema import CommonSchema
+from scripts.models.patrol.patrol_schema import PatrolSchema
+from scripts.models.relationship_group_event.relationship_group_schema import (
+    RelationshipGroupEvent,
+)
+from scripts.models.relationship_pair_event.relationship_pair_schema import (
+    RelationshipPairEvent,
+)
+from scripts.models.shortevent.short_event_schema import ShortEventSchema
+from scripts.models.thought.thought_schema import ThoughtSchema
+from scripts.models.points_of_interest.points_of_interest_schema import (
+    PointsOfInterestSchema,
+)
+from scripts.models.pelt_recipe.pelt_recipe_schema import PeltRecipe
+from scripts.models.transition.transition_schema import TransitionSchema
+from scripts.models.util import (
+    create_generate_json_schema_with_externals,
+    get_defs_from_pydantic_model,
+)
+
+
+def dump_model_schema(
+    model: BaseModel,
+    output_name: str,
+    only_defs: bool = False,
+    inherit_defs_from: Union[List[BaseModel], None] = None,
+):
+    """
+    Creates the JSON schemas based on the passed Pydantic model and writes it to a file
+
+    :param model: pydantic model to dump
+    :param output_name: where to dump the schema to
+    :param only_defs: whether to only include definitions (helpful for shared schemas)
+    :param inherit_defs_from: where to inherit defs from; when using shared schema
+    """
+
+    if only_defs:
+        json_object = get_defs_from_pydantic_model(model)
+    else:
+        if inherit_defs_from is not None:
+            defs_to_remove = [
+                *itertools.chain.from_iterable(
+                    item["$defs"].keys()
+                    for item in [
+                        get_defs_from_pydantic_model(item) for item in inherit_defs_from
+                    ]
+                )
+            ]
+
+            refs_to_rename = dict(
+                (f"#/$defs/{item}", f"common.schema.json#/$defs/{item}")
+                for item in defs_to_remove
+            )
+
+            generate_json_schema_with_externals = (
+                create_generate_json_schema_with_externals(
+                    defs_to_remove, refs_to_rename
+                )
+            )
+
+            json_object = model.model_json_schema(
+                schema_generator=generate_json_schema_with_externals
+            )
+        else:
+            json_object = model.model_json_schema()
+
+    with open(output_name, "w", encoding="utf-8") as json_file:
+        json_file.write(json.dumps(json_object, indent=2))
+
+
+# noinspection PyTypeChecker
+def main():
+    # temporarily removing common schema because of a bug with pycharm: https://youtrack.jetbrains.com/issue/IJPL-174586?_gl=1*j6r7uu*_gcl_au*MTQwNTQzODQ1My4xNzQ5MDA0ODE4*FPAU*MTQwNTQzODQ1My4xNzQ5MDA0ODE4*_ga*NDA4MzM4NjU4LjE3NDkwMDQ4MjA.*_ga_9J976DJZ68*czE3NTE5MjY0NjkkbzIkZzEkdDE3NTE5MjgxNzEkajU4JGwwJGgw
+    # when that bug is fixed, you can add it back
+    dump_model_schema(PatrolSchema, "schemas/patrol.schema.json")
+    dump_model_schema(ShortEventSchema, "schemas/shortevent.schema.json")
+    dump_model_schema(ThoughtSchema, "schemas/thought.schema.json")
+    dump_model_schema(
+        RelationshipGroupEvent, "schemas/relationship_group_event.schema.json"
+    )
+    dump_model_schema(
+        RelationshipPairEvent, "schemas/relationship_pair_event.schema.json"
+    )
+    dump_model_schema(PointsOfInterestSchema, "schemas/poi.schema.json")
+    dump_model_schema(PeltRecipe, "schemas/pelt_recipe.schema.json")
+    dump_model_schema(CeremonySchema, "schemas/ceremony.schema.json")
+    dump_model_schema(TransitionSchema, "schemas/transition.schema.json")
+
+
+if __name__ == "__main__":
+    main()

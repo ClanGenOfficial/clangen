@@ -1,0 +1,26 @@
+from enum import Enum
+
+
+class PermCondition(Enum):
+    crooked_jaw = "crooked jaw"
+    lost_a_leg = "lost a leg"
+    born_without_a_leg = "born without a leg"
+    weak_leg = "weak leg"
+    twisted_leg = "twisted leg"
+    lost_their_tail = "lost their tail"
+    born_without_a_tail = "born without a tail"
+    paralyzed = "paralyzed"
+    raspy_lungs = "raspy lungs"
+    wasting_disease = "wasting disease"
+    blind = "blind"
+    one_bad_eye = "one bad eye"
+    failing_eyesight = "failing eyesight"
+    partial_hearing_loss = "partial hearing loss"
+    deaf = "deaf"
+    constant_joint_pain = "constant joint pain"
+    seizure_prone = "seizure prone"
+    allergies = "allergies"
+    constantly_dizzy = "constantly dizzy"
+    recurring_shock = "recurring shock"
+    lasting_grief = "lasting grief"
+    persistent_headaches = "persistent headaches"

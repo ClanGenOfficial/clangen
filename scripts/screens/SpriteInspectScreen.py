@@ -5,23 +5,22 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import game
-from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
-from scripts.utility import (
-    generate_sprite,
-    shorten_text_to_fit,
-    ui_scale_dimensions,
-    ui_scale_offset,
-    get_text_box_theme,
-)
-from scripts.utility import ui_scale
+from scripts.game_structure import game
+from ..ui.elements.image_button import UIImageButton
+from ..ui.elements.checkbox import UICheckbox
+from ..ui.elements.surface_image_button import UISurfaceImageButton
+from ..ui.theme import get_text_box_theme
+from ..events_module.text_adjust import shorten_text_to_fit
+from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset
 from .Screens import Screens
+from .enums import GameScreen
+from ..cat.sprites.load_sprites import sprites
+from scripts.cat.sprites.display_sprites import generate_sprite
+from .enums import GameScreen
 from ..clan_package.settings import get_clan_setting
-from ..game_structure.game.settings import game_setting_get
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
-from ..cat.enums import CatGroup
 from ..game_structure.screen_settings import MANAGER
-from ..game_structure.windows import SaveAsImage
+from ..ui.windows.save_as_image import SaveAsImageWindow
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
 
@@ -60,7 +59,7 @@ class SpriteInspectScreen(Screens):
             self.mute_button_pressed(event)
 
             if event.ui_element == self.back_button:
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     switch_set_value(Switch.cat, self.next_cat)
@@ -80,7 +79,7 @@ class SpriteInspectScreen(Screens):
                 self.update_disabled_buttons()
                 self.make_cat_image()
             elif event.ui_element == self.save_image_button:
-                SaveAsImage(self.generate_image_to_save(), str(self.the_cat.name))
+                SaveAsImageWindow(self.generate_image_to_save(), str(self.the_cat.name))
             elif event.ui_element == self.previous_life_stage:
                 self.displayed_life_stage = max(self.displayed_life_stage - 1, 0)
                 self.update_disabled_buttons()
@@ -100,7 +99,7 @@ class SpriteInspectScreen(Screens):
                     self.scars_shown = True
 
                 self.make_cat_image()
-                self.update_checkboxes()
+                self.checkboxes["scars_shown"].toggle()
             elif event.ui_element == self.checkboxes["acc_shown"]:
                 if self.acc_shown:
                     self.acc_shown = False
@@ -108,23 +107,23 @@ class SpriteInspectScreen(Screens):
                     self.acc_shown = True
 
                 self.make_cat_image()
-                self.update_checkboxes()
-            elif event.ui_element == self.checkboxes["override_dead_lineart"]:
+                self.checkboxes["acc_shown"].toggle()
+            elif event.ui_element == self.checkboxes["show_as_living"]:
                 if self.override_dead_lineart:
                     self.override_dead_lineart = False
                 else:
                     self.override_dead_lineart = True
 
                 self.make_cat_image()
-                self.update_checkboxes()
-            elif event.ui_element == self.checkboxes["override_not_working"]:
+                self.checkboxes["show_as_living"].toggle()
+            elif event.ui_element == self.checkboxes["show_as_healthy"]:
                 if self.override_not_working:
                     self.override_not_working = False
                 else:
                     self.override_not_working = True
 
                 self.make_cat_image()
-                self.update_checkboxes()
+                self.checkboxes["show_as_healthy"].toggle()
             elif event.ui_element == self.cat_elements["favourite_button"]:
                 self.the_cat.favourite = not self.the_cat.favourite
                 self.cat_elements["favourite_button"].change_object_id(
@@ -232,7 +231,16 @@ class SpriteInspectScreen(Screens):
         self.cat_elements["platform"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((120, 100), (560, 490))),
             pygame.transform.scale(
-                self.get_platform(), ui_scale_dimensions((560, 350))
+                sprites.get_platform(
+                    biome=game.clan.override_biome
+                    if game.clan.override_biome
+                    else game.clan.biome,
+                    season=game.clan.current_season,
+                    show_nest=self.the_cat.age == "newborn"
+                    or self.the_cat.not_working(),
+                    group=self.the_cat.status.group,
+                ),
+                ui_scale_dimensions((560, 350)),
             ),
             manager=MANAGER,
         )
@@ -312,43 +320,47 @@ class SpriteInspectScreen(Screens):
         self.checkboxes = {}
 
         # "Show Platform"
-        self.make_one_checkbox(
-            ui_scale_offset((100, 575)), "platform_shown", self.platform_shown
+        self.checkboxes["platform_shown"] = UICheckbox(
+            position=(100, 575),
+            manager=MANAGER,
+            check=self.platform_shown,
         )
 
         # "Show Scars"
-        self.make_one_checkbox(
-            ui_scale_offset((300, 575)),
-            "scars_shown",
-            self.scars_shown,
-            self.the_cat.pelt.scars,
+        self.checkboxes["scars_shown"] = UICheckbox(
+            position=(300, 575),
+            manager=MANAGER,
+            check=self.scars_shown,
         )
+        if not self.the_cat.pelt.scars:
+            self.checkboxes["scars_shown"].disable()
 
         # "Show accessories"
-        self.make_one_checkbox(
-            ui_scale_offset((500, 575)),
-            "acc_shown",
-            self.acc_shown,
-            self.the_cat.pelt.accessory,
+        self.checkboxes["acc_shown"] = UICheckbox(
+            position=(500, 575),
+            manager=MANAGER,
+            check=self.acc_shown,
         )
+        if not self.the_cat.pelt.accessory:
+            self.checkboxes["acc_shown"].disable()
 
         # "Show as living"
-        self.make_one_checkbox(
-            ui_scale_offset((200, 625)),
-            "override_dead_lineart",
-            self.override_dead_lineart,
-            self.the_cat.dead,
-            disabled_object_id="@checked_checkbox",
+        self.checkboxes["show_as_living"] = UICheckbox(
+            position=(200, 625),
+            manager=MANAGER,
+            check=self.override_dead_lineart,
         )
+        if not self.the_cat.dead:
+            self.checkboxes["show_as_living"].disable()
 
         # "Show as healthy"
-        self.make_one_checkbox(
-            ui_scale_offset((400, 625)),
-            "override_not_working",
-            self.override_not_working,
-            self.the_cat.not_working(),
-            disabled_object_id="@checked_checkbox",
+        self.checkboxes["show_as_healthy"] = UICheckbox(
+            position=(400, 625),
+            manager=MANAGER,
+            check=self.override_not_working,
         )
+        if not self.the_cat.not_working():
+            self.checkboxes["show_as_healthy"].disable()
 
     def make_one_checkbox(
         self,
@@ -459,73 +471,17 @@ class SpriteInspectScreen(Screens):
         else:
             self.previous_life_stage.enable()
 
-    def get_platform(self):
-        the_cat = Cat.all_cats.get(switch_get_value(Switch.cat), game.clan.instructor)
-
-        light_dark = "light"
-        if game_setting_get("dark mode"):
-            light_dark = "dark"
-
-        available_biome = ["Forest", "Mountainous", "Plains", "Beach"]
-        biome = (
-            game.clan.biome
-            if not game.clan.override_biome
-            else game.clan.override_biome
-        )
-
-        if biome not in available_biome:
-            biome = available_biome[0]
-        if the_cat.age == "newborn" or the_cat.not_working():
-            biome = "nest"
-
-        biome = biome.lower()
-
-        platformsheet = pygame.image.load(
-            "resources/images/platforms.png"
-        ).convert_alpha()
-
-        order = ["beach", "forest", "mountainous", "nest", "plains", "SC/DF"]
-
-        offset = 0
-        if light_dark == "light":
-            offset = 80
-
-        if the_cat.status.group == CatGroup.DARK_FOREST:
-            biome_platforms = platformsheet.subsurface(
-                pygame.Rect(0, order.index("SC/DF") * 70, 640, 70)
-            )
-            return biome_platforms.subsurface(pygame.Rect(0 + offset, 0, 80, 70))
-        elif the_cat.dead or game.clan.instructor.ID == the_cat.ID:
-            biome_platforms = platformsheet.subsurface(
-                pygame.Rect(0, order.index("SC/DF") * 70, 640, 70)
-            )
-            return biome_platforms.subsurface(pygame.Rect(160 + offset, 0, 80, 70))
-        else:
-            biome_platforms = platformsheet.subsurface(
-                pygame.Rect(0, order.index(biome) * 70, 640, 70)
-            ).convert_alpha()
-            season_x = {
-                "greenleaf": 0 + offset,
-                "leafbare": 160 + offset,
-                "leaffall": 320 + offset,
-                "newleaf": 480 + offset,
-            }
-
-            return biome_platforms.subsurface(
-                pygame.Rect(
-                    season_x.get(
-                        game.clan.current_season.lower(), season_x["greenleaf"]
-                    ),
-                    0,
-                    80,
-                    70,
-                )
-            )
-
     def generate_image_to_save(self):
         """Generates the image to save, with platform if needed."""
         if self.platform_shown:
-            full_image = self.get_platform()
+            full_image = sprites.get_platform(
+                biome=game.clan.override_biome
+                if game.clan.override_biome
+                else game.clan.biome,
+                season=game.clan.current_season,
+                show_nest=self.the_cat.age == "newborn" or self.the_cat.not_working(),
+                group=self.the_cat.status.group,
+            )
             full_image.blit(self.cat_image, (15, 0))
             return full_image
         else:

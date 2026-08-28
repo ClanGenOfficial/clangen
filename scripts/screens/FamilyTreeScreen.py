@@ -6,19 +6,14 @@ import pygame_gui.elements
 
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
-from scripts.game_structure.ui_elements import (
-    UIImageButton,
-    UISpriteButton,
-    UISurfaceImageButton,
-)
-from scripts.utility import (
-    get_text_box_theme,
-    ui_scale,
-    shorten_text_to_fit,
-    ui_scale_dimensions,
-    adjust_list_text,
-)
+from ..ui.elements.sprite_button import UISpriteButton
+from ..ui.elements.image_button import UIImageButton
+from ..ui.elements.surface_image_button import UISurfaceImageButton
+from ..ui.theme import get_text_box_theme
+from ..events_module.text_adjust import adjust_list_text, shorten_text_to_fit
+from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
+from .enums import GameScreen
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
@@ -92,7 +87,7 @@ class FamilyTreeScreen(Screens):
             self.mute_button_pressed(event)
 
             if event.ui_element == self.back_button:
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
                 switch_set_value(Switch.root_cat, None)
             elif event.ui_element == self.previous_cat_button:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
@@ -161,7 +156,7 @@ class FamilyTreeScreen(Screens):
                 self.group_page_number += 1
                 self.handle_relation_groups()
             elif event.ui_element == self.cat_elements["center_cat_image"]:
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
                 switch_set_value(Switch.root_cat, None)
             elif (
                 event.ui_element in self.relation_elements.values()
@@ -175,7 +170,7 @@ class FamilyTreeScreen(Screens):
                 except AttributeError:
                     return
                 if pygame.key.get_mods() & pygame.KMOD_SHIFT:
-                    self.change_screen("profile screen")
+                    self.change_screen(GameScreen.PROFILE)
                     switch_set_value(Switch.root_cat, None)
                 else:
                     self.exit_screen()
@@ -343,8 +338,7 @@ class FamilyTreeScreen(Screens):
         x_dim = 80
         y_dim = 90
 
-        if not self.the_cat.inheritance:
-            self.the_cat.create_inheritance_new_cat()
+        self.the_cat.create_inheritance_new_cat()
 
         self.parents = self.the_cat.inheritance.get_parents()
         self.mates = self.the_cat.inheritance.get_mates()
@@ -549,7 +543,7 @@ class FamilyTreeScreen(Screens):
                 object_id=get_text_box_theme("#text_box_30_horizcenter"),
                 manager=MANAGER,
             )
-        _current_group = self.chunks(self.current_group, 24)
+        _current_group = self.get_list_chunks(self.current_group, 24)
 
         if self.group_page_number > len(_current_group):
             self.group_page_number = max(len(_current_group), 1)
@@ -630,9 +624,6 @@ class FamilyTreeScreen(Screens):
             )
         }
         self.tabs["label"].disable()
-
-    def chunks(self, L, n):
-        return [L[x : x + n] for x in range(0, len(L), n)]
 
     def exit_screen(self):
         for ele in self.cat_elements:

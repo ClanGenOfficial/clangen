@@ -6,6 +6,9 @@
         "settings_info": "settings + info",
         "quit": "quit",
         "event_edit": "event edit",
+        "tortie_patch": "add tortie patch",
+        "white_patch": "add white patch",
+        "bug_report": "report a bug!",
         "edit_deaths": "edit deaths",
         "edit_injuries": "edit injuries",
         "edit_misc": "edit misc",
@@ -28,6 +31,7 @@
         "toggle_fullscreen_windowed": "This will put the game into windowed mode.<br><br><b>Important:</b> This also saves all changed settings!",
         "update_available": "Update Available!",
         "back": "⬅┓ Back",
+        "cat_list": "Cat List ▪⮕",
         "next_cat": "Next Cat ┏▪⮕",
         "next_step": "Next Step ┏▪⮕",
         "previous_cat": "⬅┐ Previous Cat",
@@ -44,6 +48,9 @@
         "cancel": "cancel",
         "save_clan": "save clan",
         "saving": "saving...",
-        "clan_saved": "saved!"
+        "clan_saved": "saved!",
+        "keep_cards": "keep",
+        "replace_cards": "replace",
+        "confirm": "confirm"
     }
 }

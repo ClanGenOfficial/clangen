@@ -1,0 +1,59 @@
+{
+    "name": "MarbledRecipe",
+    "layer_order": ["1", "2", "3", "4", ["5", "6"], "7", ["8", "9"], "10", "11"],
+    "layers": {
+        "11": {
+            "group_name": "EXOTICMUZZLE",
+            "color": "exotic_muzzle"
+        },
+        
+        
+        "10": {
+            "group_name": "BENGALPATTERNLIGHT",
+            "color": "exotic_light_pattern"
+        },
+
+
+        "9": {
+            "group_name": "MARBLEDPATTERN",
+            "blend_mode": "mask"
+        },
+        "8": {
+            "group_name": "BASICPATTERNGRAD",
+            "color": "exotic_pattern_gradient_top"
+        },
+        "7": {
+            "group_name": "MARBLEDPATTERN",
+            "color": "exotic_pattern"
+        },
+
+        
+        "6": {
+            "group_name": "MARBLEDPATTERNFILL",
+            "blend_mode": "mask"
+        },
+        "5": {
+            "group_name": "BASICPATTERNGRAD",
+            "color": "exotic_pattern_fill_gradient_top"
+        },
+        "4":{
+            "group_name": "MARBLEDPATTERNFILL",
+            "color": "exotic_pattern_fill",
+            "opacity": 95
+        },
+
+        "3": {
+            "group_name": "EXOTICTOPGRAD",
+            "color": "exotic_base_gradient_top"
+        },
+        "2": {
+            "group_name": "EXOTICBOTTOMGRAD",
+            "color": "exotic_base_gradient_bottom"
+        },
+        "1":{
+            "group_name": "BASEMASK",
+            "color": "exotic_base"
+        }
+    },
+    "exceptions": []
+}
