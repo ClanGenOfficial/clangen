@@ -262,6 +262,7 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
         return False
 
     if get_config("roles.app_never_mentor") and not "never_mentor" in tags:
+        print("No never_mentor ceremonies found for", cat,"!")
         return False
 
     return True

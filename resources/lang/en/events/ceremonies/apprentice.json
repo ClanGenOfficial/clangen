@@ -1104,7 +1104,9 @@
                     "arrogant",
                     "strict",
                     "responsible",
-                    "wise"
+                    "wise",
+                    "cunning",
+                    "strange"
                 ]
             }
               }
@@ -1129,7 +1131,8 @@
                     "competitive",
                     "confident",
                     "daring",
-                    "rebellious"
+                    "rebellious",
+                    "flamboyant"
                 ]
             }
               }
@@ -1168,7 +1171,9 @@
                 "trait": [
                     "bloodthirsty",
                     "fierce",
-                    "vengeful"
+                    "vengeful",
+                    "troublesome",
+                    "shameless"
                 ]
             }
               }
@@ -1205,13 +1210,32 @@
                 "trait": [
                     "compassionate",
                     "loving",
-                    "thoughtful"
+                    "thoughtful",
+                    "loyal"
                 ]
             }
               }
             },
     "strings": [
         "m_c doesn't seem to care much about the ability to leave camp or chance to fight trespassers. Instead, {PRONOUN/m_c/subject} ends {PRONOUN/m_c/poss} apprentice ceremony with asking {PRONOUN/m_c/poss} Clanmates about chores {PRONOUN/m_c/subject} can help with."
+    ]
+    },
+    {
+    "event_id": "app_nevermentor_forgot",
+    "tags": ["never_mentor"],
+    "involved_cats": {
+        "m_c": {
+            "stat": {
+                "trait": [
+                    "childish",
+                    "oblivious",
+                    "strange"
+                ]
+            }
+              }
+            },
+    "strings": [
+        "m_c seems to go missing right before {PRONOUN/m_c/poss} apprentice ceremony, and is eventually found still in the nursery, having completely forgot about the event."
     ]
     }
 ]
