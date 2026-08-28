@@ -1,0 +1,548 @@
+[
+    {
+        "event_id": "bch_misc_war_anyclanapprentice1",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "tags": [
+            "clan:apprentice"
+        ],
+        "frequency": 3,
+        "event_text": "The apprentices are learning how to disguise their scents from enemies with kelp and seawater.",
+        "m_c": {
+            "status": [
+                "apprentice"
+            ]
+        }
+    },
+    {
+        "event_id": "bch_misc_anyprophecymedcatprophet1",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "event_text": "As a storm rages across the beach and waves crash upon the shore, m_c is tucked up in the medicine cat den, {PRONOUN\/m_c\/poss} sleep anything but restful. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/keep\/keeps} seeing flashes of prophecy_list_sight\/m_c. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/wake\/wakes} with a shiver, wondering what {PRONOUN\/m_c\/poss} dreams mean for the Clan.",
+        "m_c": {
+            "status": [
+                "medicine cat",
+                "medicine cat apprentice"
+            ],
+            "skill": [
+                "PROPHET,2"
+            ]
+        }
+    },
+    {
+        "event_id": "bch_misc_anyomenmedcatomen1",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 4,
+        "event_text": "The things {PRONOUN\/m_c\/subject} saw today: omen_list_sight\/m_c... m_c dips a paw in a rockpool, watching the tiny, crawling life inside, and considering what the omens foretell.",
+        "m_c": {
+            "status": [
+                "medicine cat",
+                "medicine cat apprentice"
+            ],
+            "skill": [
+                "OMEN,2"
+            ]
+        }
+    },
+    {
+        "event_id": "bch_misc_war_leadercontemplates",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "war"
+        ],
+        "frequency": 3,
+        "event_text": "m_c sat by the water, wondering why times are not as peaceful as the tides.",
+        "m_c": {
+            "status": [
+                "leader"
+            ],
+            "trait": [
+                "thoughtful",
+                "wise",
+                "righteous",
+                "lonesome",
+                "playful",
+                "childish",
+                "compassionate",
+                "calm",
+                "loving",
+                "gloomy",
+                "sincere"
+            ]
+        }
+    },
+    {
+        "event_id": "bch_misc_herb_flooddestruction1",
+        "location": [
+            "beach:camp1",
+            "beach:camp3",
+            "beach:camp4"
+        ],
+        "season": [
+            "newleaf",
+            "leaf-fall",
+            "leaf-bare"
+        ],
+        "exclude_involved": [
+            "m_c",
+            "r_c"
+        ],
+        "frequency": 1,
+        "event_text": "A huge wave crashes into camp, leaving everyone soaked and the herb stores quite damaged.",
+        "supplies": [
+            {
+                "type": "all_herb",
+                "trigger": [
+                    "excess"
+                ],
+                "adjust": "reduce_half"
+            }
+        ]
+    },
+    {
+        "event_id": "bch_misc_any_gull_accessory",
+        "location": [
+            "any"
+        ],
+        "season": [
+            "any"
+        ],
+        "sub_type": [
+            "accessory"
+        ],
+        "frequency": 1,
+        "event_text": "m_c finds an old seagull nest while out hunting. It seems to be long abandoned, but some pretty feathers have remained intact! m_c decides to take some with {PRONOUN\/m_c\/object}.",
+        "new_accessory": [
+            "GULL FEATHERS"
+        ],
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        }
+    },
+    {
+        "event_id": "bch_freshkill_reduce_all_wave",
+        "location": [
+            "beach:camp1_camp2_camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 1,
+        "event_text": "A huge wave surged into camp, stirring up sand and washing away the fresh-kill as it receded. In its wake, the Clan was left with a dampened mood and soaked paws.",
+        "supplies": [
+            {
+                "type": "freshkill",
+                "trigger": [
+                    "adequate"
+                ],
+                "adjust": "reduce_full"
+            }
+        ]
+    },
+    {
+        "event_id": "bch_freshkill_reduce_half_wave",
+        "location": [
+            "beach:camp1_camp2_camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "event_text": "A wave splashed into camp, soaking an unlucky few and washing away the fresh-kill that c_n wasn't quick enough to save.",
+        "supplies": [
+            {
+                "type": "freshkill",
+                "trigger": [
+                    "adequate",
+                    "full",
+                    "excess"
+                ],
+                "adjust": "reduce_half"
+            }
+        ]
+    },
+    {
+        "event_id": "bch_freshkill_storm",
+        "location": [
+            "beach:camp1_camp3_camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "event_text": "After a particularly rough storm, c_n discovered the fresh-kill pile didn't make it through undamaged.",
+        "supplies": [
+            {
+                "type": "freshkill",
+                "trigger": [
+                    "full",
+                    "excess"
+                ],
+                "adjust": "reduce_half"
+            }
+        ]
+    },
+    {
+        "event_id": "bch_crab_freshkill_steal",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 3,
+        "event_text": "A cast of crabs invaded the fresh-kill pile. c_n fended them off, but the pile is left damaged.",
+        "supplies": [
+            {
+                "type": "freshkill",
+                "trigger": [
+                    "adequate"
+                ],
+                "adjust": "reduce_quarter"
+            }
+        ]
+    },
+    {
+        "event_id": "bch_coconutcrab_freshkill_steal",
+        "location": [
+            "beach"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 3,
+        "event_text": "m_c discovered a giant coconut crab in camp helping itself to the fresh-kill. m_c chased it off before it could deal further damage.",
+        "m_c": {
+            "skill": [
+                "-FIGHTER,3"
+            ],
+            "status": [
+                "-kitten"
+            ]
+        },
+        "supplies": [
+            {
+                "type": "freshkill",
+                "trigger": [
+                    "always"
+                ],
+                "adjust": "reduce_eighth"
+            }
+        ]
+    },
+    {
+        "event_id": "bch_pelican_freshkill",
+        "location": [
+            "beach:camp1_camp3_camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 3,
+        "event_text": "The fresh-kill pile attracted a pelican to the camp. m_c managed to chase the bird away before it could swallow c_n's prey.",
+        "m_c": {
+            "status": [
+                "-kitten"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "some_clan",
+                    "high_social",
+                    "high_stable"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "values": [
+                    "trust",
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from was grateful to cat_to for defending the fresh-kill from a hungry pelican."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "bch_pelican_freshkill_duo",
+        "location": [
+            "beach:camp1_camp3_camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "event_text": "A pelican landed in camp, keen on raiding the fresh-kill pile. m_c and r_c had other ideas, and they chased the bird off together. No bird will steal from c_n on their watch!",
+        "m_c": {
+            "status": [
+                "apprentice"
+            ],
+            "trait": [
+                "-lonesome",
+                "-shy"
+            ]
+        },
+        "r_c": {
+            "status": [
+                "apprentice"
+            ],
+            "trait": [
+                "-lonesome",
+                "-shy"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "some_clan",
+                    "high_social",
+                    "high_stable"
+                ],
+                "cats_to": [
+                    "m_c",
+                    "r_c"
+                ],
+                "values": [
+                    "trust",
+                    "respect"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from was grateful to cat_to for defending the fresh-kill from a hungry pelican."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "bch_misc_ghostship",
+        "location": [
+            "beach:camp3"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 2,
+        "event_text": "A thick fog envelops the coast. m_c swears {PRONOUN\/m_c\/subject} {VERB\/m_c\/see\/sees} a translucent Twoleg ship out on the ocean... but when {PRONOUN\/m_c\/subject} {VERB\/m_c\/blink\/blinks}, it's gone.",
+        "m_c": {
+            "age": [
+                "any"
+            ],
+            "status": [
+                "any"
+            ]
+        }
+    },
+    {
+        "event_id": "bch_misc_any_oceandanger1",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 3,
+        "event_text": "m_c takes r_c down to the edge of the water and begins to warn {PRONOUN\/r_c\/object} of the dangerous things that can be found in the deep blue sea.",
+        "m_c": {
+            "relationship_status": [
+                "parent\/child"
+            ]
+        },
+        "r_c": {
+            "age": [
+                "kitten"
+            ]
+        },
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "comfort"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from took the time to teach cat_to about the dangerous things in the sea."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "bch_misc_any_oceandanger2",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 3,
+        "event_text": "m_c takes r_c down to the edge of the water and begins to warn {PRONOUN\/r_c\/object} of the dangerous things that can be found in the deep blue sea.",
+        "m_c": {
+            "relationship_status": [
+                "mentor\/app"
+            ]
+        },
+        "r_c": {},
+        "relationships": [
+            {
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "values": [
+                    "trust",
+                    "comfort"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from took the time to teach cat_to about the dangerous things in the sea."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "bch_misc_any_kitseaglass",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "any"
+        ],
+        "frequency": 3,
+        "event_text": "m_c paws at the pretty, glittering seaglass tangled in the seaweed that hangs over the nursery entrance.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ]
+        }
+    },
+    {
+        "event_id": "bch_misc_any_elderbarnacles",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "newleaf"
+        ],
+        "frequency": 3,
+        "event_text": "m_c peers over the edge of the rock, past the barnacles exposed by the low tide, searching for something in {PRONOUN\/m_c\/poss} reflection in the sea below.",
+        "m_c": {
+            "status": [
+                "elder"
+            ]
+        }
+    },
+    {
+        "event_id": "bch_misc_any_beachcombing1",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "frequency": 3,
+        "event_text": "m_c takes r_c to look for pretty treasures in the sand. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/smile\/smiles} at seeing {PRONOUN\/m_c\/poss} kit happy.",
+        "m_c": {
+            "relationship_status": [
+                "parent\/child"
+            ]
+        },
+        "r_c": {},
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "like"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from spent time looking for treasures on the beach with cat_to."
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "bch_misc_any_beachcombing2",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "greenleaf"
+        ],
+        "tags": [
+            "romance"
+        ],
+        "frequency": 3,
+        "event_text": "m_c takes r_c to look for pretty treasures in the sand. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/blush\/blushes} at r_c's smile.",
+        "m_c": {
+            "relationship_status": [
+                "fancies"
+            ]
+        },
+        "r_c": {},
+        "relationships": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c"
+                ],
+                "mutual": true,
+                "values": [
+                    "like",
+                    "romance"
+                ],
+                "amount": 10,
+                "log": {
+                    "cats_from": "cat_from spent time looking for treasures on the beach with cat_to."
+                }
+            }
+        ]
+    }
+]

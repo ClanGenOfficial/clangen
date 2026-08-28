@@ -47,11 +47,15 @@ These tags are used for more general filtering purposes.
 | "new_years"   | Used to mark events that should only occur on new years.                                                                 |
 
 > **Tags To Indicate Present Statuses** - Sometimes you may want to indicate in event text that other cats of a certain status as present in addition to m_c and r_c (perhaps m_c and r_c are watching kits play, or discussing the progress of apprentices, or complaining about tending to elders.) These tags can be used to ensure that there are cats of the mentioned status currently living within the Clan, this helps prevent situation where cats are watching nonexistent kits or other such impossibilities. Keep in mind that all of these tags check for the presence of *at least* 2 cats of the indicated status.
+> These can utilize [exclusionary tags](tag-lists.md#exclusionary-tags).
 
-| string        | use                                                                                                                                                            |
-|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| clan:{status} | event only occurs if the clan has at least 2 cats with the given status (do not include curly brackets in tag, tag should look something like: "clan:newborn") |
-| clan:apps     | event only occurs if the clan has living apps, this includes ALL types of apps (medicine, mediator, and warrior)                                               |
+| string                | use                                                                                                                                                            |
+|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| clan:{status}         | event only occurs if the clan has at least 2 cats with the given status (do not include curly brackets in tag, tag should look something like: "clan:newborn") |
+| clan:apps             | event only occurs if the clan has at least one living apprentice, this includes ALL types of apps (medicine, mediator, and warrior)                            |
+| clan:warrior-like     | event only occurs if the clan has at least one warrior-like role (leader, warrior or deputy)                                                                   |
+
+You can override the default minimums by including `(min:#)` after the status or status group. For example, `"clan:warrior(min:5)"` would require at least 5 warriors. 
 
 
 > **Leader Specific Tags** - since leaders can have 9 lives, it's helpful to have tags that indicate how an event is influenced by those lives.
@@ -520,15 +524,18 @@ You can utilize [#exclusionary tags](#exclusionary-tags). They function the same
 ## Interpersonal Relationships
 > These tags are used to indicate a type of Interpersonal relationship involved cats should have. These are meant for use as m_c's relationship with r_c's, or, in the case of patrols, p_l's relationship toward the other cat. 
 
-| string            |                                    | Patrol Use Specifics                   |
-|-------------------|------------------------------------|----------------------------------------|
-| `siblings`        | cat1 and cat2 are siblings         | all cats are siblings                  |
-| `littermates`     | cat1 and cat2 are littermates      | all cats are littermates               |
-| `mates`           | cat1 and cat2 are mates            | all cats are mates                     |
-| `parent/child`    | cat1 is the parent of cat2         | only for use in 2-cat patrols          |
-| `child/parent`    | cat1 is the child of cat2          | only for use in 2-cat patrols          |
-| `app/mentor`      | cat1 is the apprentice of cat2     | only for use in 2-cat patrols          |
-| `mentor/app`      | cat1 is the mentor of cat2         | only for use in 2-cat patrols          |
+| string            |                                       | Patrol Use Specifics                   |
+|-------------------|---------------------------------------|----------------------------------------|
+| `siblings`        | cat1 and cat2 are siblings            | all cats are siblings                  |
+| `littermates`     | cat1 and cat2 are littermates         | all cats are littermates               |
+| `mates`           | cat1 and cat2 are mates               | all cats are mates                     |
+| `parent/child`    | cat1 is the parent of cat2            | only for use in 2-cat patrols          |
+| `child/parent`    | cat1 is the child of cat2             | only for use in 2-cat patrols          |
+| `app/mentor`      | cat1 is the apprentice of cat2        | only for use in 2-cat patrols          |
+| `mentor/app`      | cat1 is the mentor of cat2            | only for use in 2-cat patrols          |
+| `past_app/mentor` | cat1 is the former apprentice of cat2 | only for use in 2-cat patrols          |
+| `past_mentor/app` | cat1 is the former mentor of cat2     | only for use in 2-cat patrols          |
+
 
 You can utilize [#exclusionary tags](#exclusionary-tags).
 

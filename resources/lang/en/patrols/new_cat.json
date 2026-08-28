@@ -11296,6 +11296,22 @@
                 "exp_gained": 0,
                 "reputation_changes": {
                     "outsider": -1
+                },
+                "death": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ],
+                        "body": true,
+                        "history": "m_c was struck and killed by a monster.",
+                        "no_results": false
+                    }
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "status": ["kittypet"]
+                    }
                 }
             }
         ],

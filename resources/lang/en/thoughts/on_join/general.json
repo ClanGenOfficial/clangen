@@ -85,7 +85,7 @@
         "strings": [
           "Is getting used to the idea of being around so many other cats",
           "Wonders if {PRONOUN/m_c/subject} will miss the quiet",
-          "Is glad they aren't alone anymore",
+          "Is glad {PRONOUN/m_c/subject} aren't alone anymore",
           "Knows there's safety in numbers"
         ],
       "involved_cats": {
@@ -148,8 +148,8 @@
       {
         "event_id": "newly_joined_elder",
         "strings": [
-          "Hopes that c_n will help look after {PRONOUN/m_c/object} in their golden years",
-          "Knows they can rest safely now",
+          "Hopes that c_n will help look after {PRONOUN/m_c/object} in {PRONOUN/m_c/poss} golden years",
+          "Knows {PRONOUN/m_c/subject} can rest safely now",
           "Has plenty of knowledge to share with c_n"
         ],
       "involved_cats": {
