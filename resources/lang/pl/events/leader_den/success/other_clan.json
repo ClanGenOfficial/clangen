@@ -3045,7 +3045,7 @@
     },
     {
         "interaction_type": "antagonize",
-        "event_text": "At the Gathering, m_c roars that StarClan themselves have ordained c_n's position as the mightiest Clan. No cat \u2014 not o_c_n's leader, nor all their warriors \u2014 can get in the way of c_n's destiny.",
+        "event_text": "At the Gathering, m_c roars that StarClan themselves have ordained c_n's position as the mightiest Clan. No cat — not o_c_n's leader, nor all their warriors — can get in the way of c_n's destiny.",
         "rel_change": -10,
         "m_c": {
             "skill": [
@@ -3873,7 +3873,7 @@
     },
     {
         "interaction_type": "antagonize",
-        "event_text": "At the Gathering, no matter how much o_c_n's leader snaps in {PRONOUN\/m_c\/poss} face, m_c doesn't react. Being unable to get a rise out of a cat as hot-tempered as m_c only seems to enrage o_c_n's leader more \u2014 and m_c knows it.",
+        "event_text": "At the Gathering, no matter how much o_c_n's leader snaps in {PRONOUN\/m_c\/poss} face, m_c doesn't react. Being unable to get a rise out of a cat as hot-tempered as m_c only seems to enrage o_c_n's leader more — and m_c knows it.",
         "rel_change": -8,
         "m_c": {
             "trait": [
@@ -4616,7 +4616,7 @@
     },
     {
         "interaction_type": "appease",
-        "event_text": "During the Gathering, o_c_n's leader goes on and on about c_n wronging them. {PRONOUN\/m_c\/poss\/CAP} temper slips through {PRONOUN\/m_c\/poss} claws, and m_c eventually snaps at o_c_n's leader to just shut their trap \u2014 every cat knows they're talking a load of fox-dung. This stuns the leader into silence.",
+        "event_text": "During the Gathering, o_c_n's leader goes on and on about c_n wronging them. {PRONOUN\/m_c\/poss\/CAP} temper slips through {PRONOUN\/m_c\/poss} claws, and m_c eventually snaps at o_c_n's leader to just shut their trap — every cat knows they're talking a load of fox-dung. This stuns the leader into silence.",
         "rel_change": 5,
         "m_c": {
             "skill": [

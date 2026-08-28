@@ -32,7 +32,7 @@
                 ],
                 "mutual": false,
                 "constraints": [
-                    "mentor\/app"
+                    "mentor/app"
                 ]
             }
         ],
@@ -47,7 +47,7 @@
         "chance_of_success": 65,
         "patrol_art": "med_general_intro",
         "intro_text": "p_l decides it's a good opportunity to show r_c1 where the most commonly needed herbs are in the territory, both on even and uneven ground.",
-        "decline_text": "As {PRONOUN\/p_l\/subject} {VERB\/p_l\/see\/sees} r_c1's absent minded gaze, {PRONOUN\/p_l\/subject} {VERB\/p_l\/change\/changes} {PRONOUN\/p_l\/poss} mind. Maybe another day when r_c1 is more focused and less liable to slip and fall off the mountain.",
+        "decline_text": "As {PRONOUN/p_l/subject} {VERB/p_l/see/sees} r_c1's absent minded gaze, {PRONOUN/p_l/subject} {VERB/p_l/change/changes} {PRONOUN/p_l/poss} mind. Maybe another day when r_c1 is more focused and less liable to slip and fall off the mountain.",
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -149,7 +149,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "Frustrated by cat_to's inattention, cat_from ended {PRONOUN\/cat_from\/poss} gathering lesson early."
+                            "cats_from": "Frustrated by cat_to's inattention, cat_from ended {PRONOUN/cat_from/poss} gathering lesson early."
                         }
                     }
                 ]
@@ -190,7 +190,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l goes to a known herb patch \u2014 but the plant has died! They don't give up, hunting around in the area until they find a smaller overlooked bush that still has leaves on it."
+                    "p_l goes to a known herb patch — but the plant has died! They don't give up, hunting around in the area until they find a smaller overlooked bush that still has leaves on it."
                 ],
                 "exp_gained": 10
             }
@@ -199,7 +199,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l goes to a known herb patch \u2014 but the plant has died! They give up and return to camp, feeling terrible."
+                    "p_l goes to a known herb patch — but the plant has died! They give up and return to camp, feeling terrible."
                 ],
                 "exp_gained": 0
             }
@@ -267,7 +267,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l and r_c0 decide on a little friendly competition \u2014 one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
+                    "p_l and r_c0 decide on a little friendly competition — one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [

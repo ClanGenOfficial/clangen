@@ -45,7 +45,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l and r_c0 decide on a little friendly competition \u2014 one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
+                    "p_l and r_c0 decide on a little friendly competition — one medicine cat to another, like all those silly bets the warriors make about hunting prey. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
@@ -105,7 +105,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Even though there should be many herbs, they fail to find anything. p_l blames r_c0 for distracting {PRONOUN\/p_l\/object}, and they get into a huge argument."
+                    "Even though there should be many herbs, they fail to find anything. p_l blames r_c0 for distracting {PRONOUN/p_l/object}, and they get into a huge argument."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
