@@ -159,7 +159,9 @@
             "greenleaf"
         ],
         "strings": [
-            "Purrs as a cool breeze hits {PRONOUN/m_c/object}"
+            "Purrs as a cool breeze hits {PRONOUN/m_c/object}",
+            "Is annoyed by how much {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been shedding",
+            "Coughed up a hairball"
         ]
     },
     {
@@ -183,7 +185,8 @@
         "strings": [
             "Leaps into a pile of fallen leaves",
             "Is crushing leaves under {PRONOUN/m_c/poss} paws",
-            "Is glad it's not so hot out anymore"
+            "Is glad it's not so hot out anymore",
+            "Is hoping {PRONOUN/m_c/poss} leaf-bare coat comes in quicker"
         ]
     },
     {
@@ -196,7 +199,8 @@
             "Can't stand this cold",
             "Pounced on some movement under the snow like a fox",
             "Slipped on some ice hidden under the snow",
-            "Is careful not to stand under branches with snow on them"
+            "Is careful not to stand under branches with snow on them",
+            "Can't stand the cold on {PRONOUN/m_c/poss} pawpads"
         ]
     },
     {
