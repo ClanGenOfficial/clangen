@@ -2,7 +2,10 @@
     {
         "event_id": "becoming_kittypet",
         "strings": [
-            "Is delighted at how comfortable a Twoleg nest is"
+            "Is delighted at how comfortable a Twoleg nest is",
+            "Feels guilty for embracing the life of a kittypet",
+            "Is amazed at how comfortable kittypet life could be",
+            "Wonders if {PRONOUN/m_c/subject} should call {PRONOUN/m_c/self} the name the Twoleg calls {PRONOUN/m_c/object}"
         ]
     }
 ]
