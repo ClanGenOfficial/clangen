@@ -500,6 +500,14 @@
           "title": "Join",
           "type": "array"
         },
+        "meet": {
+          "description": "Indicate which cats will meet the player Clan. You can add multiple meet blocks",
+          "items": {
+            "$ref": "#/$defs/Meet"
+          },
+          "title": "Meet",
+          "type": "array"
+        },
         "gain_accessory": {
           "description": "Indicate which cats will gain an accessory. You can add multiple gain_accessory blocks",
           "items": {
@@ -1431,6 +1439,24 @@
       },
       "title": "Location",
       "type": "array"
+    },
+    "Meet": {
+      "additionalProperties": false,
+      "properties": {
+        "cats": {
+          "description": "List of cats who will meet the Clan",
+          "items": {
+            "$ref": "#/$defs/GatherCat"
+          },
+          "title": "Cats",
+          "type": "array"
+        }
+      },
+      "required": [
+        "cats"
+      ],
+      "title": "Meet",
+      "type": "object"
     },
     "MentorApprenticeDict": {
       "additionalProperties": false,
