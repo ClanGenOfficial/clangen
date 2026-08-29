@@ -6198,12 +6198,44 @@
             "Thinks {PRONOUN/m_c/subject} caught a scent of r_c",
             "Is suddenly reminded of r_c",
             "Notices a Clanmate with the same mannerism as r_c",
-            "Guesses one particularly bright star is r_c"
+            "Guesses one particularly bright star is r_c",
+            "Smiled at something that reminded {PRONOUN/m_c/object} of r_c",
+            "Left a flower at r_c's grave today",
+            "Left a prey gift at r_c's grave today",
+            "Had a dream about r_c last night",
+            "Spent some time reminiscing about r_c with a Clanmate",
+            "Is listening to an old story about r_c",
+            "Wishes {PRONOUN/m_c/subject} remembered more about r_c",
+            "Swears {PRONOUN/m_c/subject} felt r_c's presence nearby just now",
+            "Took some time to remember r_c today"
         ],
         "involved_cats": {
             "r_c": {
                 "group": [
                     "starclan"
+                ]
+            }
+        }
+    },
+    {
+        "event_id": "gen_to_dead_not_kit",
+        "strings": [
+            "Wonders what r_c would do if {PRONOUN/r_c/subject} {VERB/r_c/were/was} here",
+            "Wonders what r_c would say if {PRONOUN/r_c/subject} {VERB/r_c/were/was} here",
+            "Wonders what r_c would think if {PRONOUN/r_c/subject} {VERB/r_c/were/was} here",
+            "Wonders how r_c would feel if {PRONOUN/r_c/subject} {VERB/r_c/were/was} here",
+            "Wishes r_c was here to offer some advice",
+            "Remembered r_c's advice during a critical moment",
+            "Feels proud to have shared a clan with r_c"
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "-kitten",
+                    "-newborn"
+                ],
+                "group": [
+                    "afterlife"
                 ]
             }
         }
@@ -6299,8 +6331,7 @@
         "involved_cats": {
             "r_c": {
                 "group": [
-                    "starclan",
-                    "dark_forest"
+                    "afterlife"
                 ]
             }
         },
@@ -6499,6 +6530,32 @@
                 ]
             }
         ]
+    },
+    {
+        "event_id": "gen_to_lost",
+        "strings": [
+            "Smiled at something that reminded {PRONOUN/m_c/object} of r_c",
+            "Left a flower at r_c's grave today",
+            "Left a prey gift at r_c's grave today",
+            "Had a dream about r_c last night",
+            "Spent some time reminiscing about r_c with a Clanmate",
+            "Is listening to an old story about r_c",
+            "Wishes {PRONOUN/m_c/subject} remembered more about r_c",
+            "Swears {PRONOUN/m_c/subject} felt r_c's presence nearby just now",
+            "Took some time to remember r_c today",
+            "Wonders what r_c would do if {PRONOUN/r_c/subject} {VERB/r_c/were/was} here",
+            "Wonders what r_c would say if {PRONOUN/r_c/subject} {VERB/r_c/were/was} here",
+            "Wonders what r_c would think if {PRONOUN/r_c/subject} {VERB/r_c/were/was} here",
+            "Wonders how r_c would feel if {PRONOUN/r_c/subject} {VERB/r_c/were/was} here",
+            "Wishes r_c was here to offer some advice"
+        ],
+        "involved_cats": {
+            "r_c": {
+                "standing": {
+        "currently": ["lost"]
+      }
+            }
+        }
     },
     {
         "event_id": "paralyzed_gen_to_alive_gen",
