@@ -1,4 +1,3 @@
-import os
 import unittest
 
 from scripts.cat.cats import Cat
@@ -23,9 +22,6 @@ from scripts.events_module.text_pool_event import handle_consequences
 from scripts.game_structure import game
 from scripts.game_structure.game import Switch
 from scripts.game_structure.game.switches import switch_set_value
-
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 
 class TestPatrolCats(unittest.TestCase):
