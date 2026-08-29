@@ -24,7 +24,7 @@ from scripts.game_structure.game.save_load import read_clans
 from scripts.housekeeping.datadir import get_save_dir
 
 
-class TestEvents(unittest.TestCase):
+class BulkTimeskip(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         # load in the spritesheets
