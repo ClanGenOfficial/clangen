@@ -6535,8 +6535,6 @@
         "event_id": "gen_to_lost",
         "strings": [
             "Smiled at something that reminded {PRONOUN/m_c/object} of r_c",
-            "Left a flower at r_c's grave today",
-            "Left a prey gift at r_c's grave today",
             "Had a dream about r_c last night",
             "Spent some time reminiscing about r_c with a Clanmate",
             "Is listening to an old story about r_c",
@@ -6547,7 +6545,18 @@
             "Wonders what r_c would say if {PRONOUN/r_c/subject} {VERB/r_c/were/was} here",
             "Wonders what r_c would think if {PRONOUN/r_c/subject} {VERB/r_c/were/was} here",
             "Wonders how r_c would feel if {PRONOUN/r_c/subject} {VERB/r_c/were/was} here",
-            "Wishes r_c was here to offer some advice"
+            "Wishes r_c was here to offer some advice",
+            "Prays to StarClan to return r_c to c_n",
+            "Wonders what r_c is up to out there",
+            "Hopes r_c isn't too lost out there",
+            "Watches the Clan entrance hoping to see r_c come through",
+            "Is preparing a warm welcome for r_c upon {PRONOUN/r_c/poss} return",
+            "Wonders if r_c will ever find {PRONOUN/r_c/poss} way home",
+            "Wonders if r_c's given up on returning home or not",
+            "Hopes r_c is home soon",
+            "Hopes r_c is still out there holding on hope",
+            "Hopes StarClan is watching over r_c",
+            "Hopes StarClan is protecting r_c"
         ],
         "involved_cats": {
             "r_c": {
