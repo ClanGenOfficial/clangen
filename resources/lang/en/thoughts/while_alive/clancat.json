@@ -6551,10 +6551,10 @@
         ],
         "involved_cats": {
             "r_c": {
-                "group": ["player_clan"],
                 "standing": {
+        "group": ["player_clan"],
         "currently": [
-            "MISSING"
+            "lost"
         ]
       }
             }
