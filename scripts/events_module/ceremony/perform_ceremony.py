@@ -159,8 +159,8 @@ def check_and_promote_deputy():
         possible_deputies = list(
             filter(
                 lambda x: x.status.alive_in_player_clan
-                          and x.status.rank == CatRank.WARRIOR
-                          and (x.apprentice or x.former_apprentices),
+                and x.status.rank == CatRank.WARRIOR
+                and (x.apprentice or x.former_apprentices),
                 leaders_kits,
             )
         )
@@ -168,8 +168,8 @@ def check_and_promote_deputy():
         possible_deputies = list(
             filter(
                 lambda x: x.status.alive_in_player_clan
-                          and x.status.rank == CatRank.WARRIOR
-                          and (x.apprentice or x.former_apprentices),
+                and x.status.rank == CatRank.WARRIOR
+                and (x.apprentice or x.former_apprentices),
                 Cat.all_cats_list,
             )
         )
@@ -185,7 +185,7 @@ def check_and_promote_deputy():
                 all_warriors = list(
                     filter(
                         lambda x: x.status.alive_in_player_clan
-                                  and x.status.rank == CatRank.WARRIOR,
+                        and x.status.rank == CatRank.WARRIOR,
                         leaders_kits,
                     )
                 )
@@ -195,7 +195,9 @@ def check_and_promote_deputy():
                 else:
                     # If the leader has no kits, no one is named deputy.
                     game.cur_events_list.append(
-                        EventInformation(i18n.t("hardcoded.ceremony_deputy_none_kin"), "ceremony")
+                        EventInformation(
+                            i18n.t("hardcoded.ceremony_deputy_none_kin"), "ceremony"
+                        )
                     )
                     return
         else:
@@ -212,7 +214,9 @@ def check_and_promote_deputy():
             else:
                 # If there are no warriors at all, no one is named deputy.
                 game.cur_events_list.append(
-                    EventInformation(i18n.t("hardcoded.ceremony_deputy_none"), "ceremony")
+                    EventInformation(
+                        i18n.t("hardcoded.ceremony_deputy_none"), "ceremony"
+                    )
                 )
                 return
 
