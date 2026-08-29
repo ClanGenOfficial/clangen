@@ -255,7 +255,7 @@ def _assign_name(created_cat: Cat):
         # if it ain't a clancat, give it a non-clancat name
         name_categories = [
             "silly_names",
-            # "human_names",
+            "human_names",
             "loner_names",
             "normal_prefixes",
         ]
