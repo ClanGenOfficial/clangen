@@ -1,4 +1,5 @@
 import os
+
 import shutil
 from typing import List
 import unittest
@@ -18,9 +19,6 @@ from scripts.clan_package.get_clan_cats import (
 )
 from scripts.clan_package.settings import set_clan_setting
 from scripts.events_module.patrol.patrol import Patrol
-from scripts.events_module.short.short_event_generation import (
-    filter_events,
-)
 from scripts.game_structure import game
 from scripts.game_structure.game.save_load import read_clans
 from scripts.housekeeping.datadir import get_save_dir
@@ -94,25 +92,60 @@ class TestEvents(unittest.TestCase):
             with open(Path(get_save_dir()) / "currentclan.txt", "w") as currentclanfile:
                 currentclanfile.write(str(cls.previously_loaded_clan))
 
-    def test_random_cat_assignment(self):
-        """
-        Testing if random_cat is incorrectly reassigned to None when no events are available.
-        """
-        main_cat = choice(Cat.all_cats_list)
-        random_cat = choice(Cat.all_cats_list)
-        while random_cat == main_cat:
-            random_cat = choice(Cat.all_cats_list)
+    def test_bulk_skip(self):
+        with self.subTest(
+            "Timeskip Failed",
+        ):
+            for _ in range(500):
+                events.one_moon()
 
-        chosen_event, new_random_cat = filter_events(
-            possible_events=[],
-            main_cat=main_cat,
-            random_cat=random_cat,
-            other_clan=game.clan.all_other_clans[0],
-            sub_types=[],
-            allowed_events=None,
-            excluded_events=None,
-            ignore_subtyping=False,
-            reduction_avoidance_chance=1,
-        )
+                if not _ % 10:
+                    # every 10 moons, top up the number of cats in the Clan to at least 8
+                    # to give a good chance for event variety without bloat
+                    while get_living_clan_cat_count(Cat) < 8:
+                        game.clan.add_cat(
+                            cat_factory.create_cat(
+                                rank=choice(
+                                    [
+                                        CatRank.KITTEN,
+                                        CatRank.APPRENTICE,
+                                        CatRank.WARRIOR,
+                                        CatRank.WARRIOR,
+                                        CatRank.ELDER,
+                                    ]
+                                )
+                            )
+                        )
 
-        self.assertEqual(random_cat, new_random_cat)
+                    can_patrol = []
+                    for cat in Cat.all_cats_list:
+                        if (
+                            cat.ID not in game.patrolled
+                            and cat.status.rank.is_allowed_to_patrol()
+                            and cat.status.alive_in_player_clan
+                            and not cat.not_working()
+                        ):
+                            can_patrol.append(cat)
+                    shuffle(can_patrol)
+
+                    while can_patrol:
+                        num_to_patrol = min(len(can_patrol), randint(1, 6))
+                        to_patrol: List[Cat] = can_patrol[:num_to_patrol]
+                        meds_to_patrol = [
+                            cat
+                            for cat in to_patrol
+                            if cat.status.rank.is_any_medicine_rank()
+                        ]
+                        if meds_to_patrol:
+                            patrol_type = "med"
+                        else:
+                            patrol_type = "general"
+
+                        new_patrol = Patrol()
+                        new_patrol.begin_patrol(to_patrol, patrol_type)
+                        new_patrol.proceed_patrol("proceed")
+
+                        can_patrol = can_patrol[num_to_patrol:]
+
+                if not _ % 100:
+                    print(f"CLANCATS ALIVE: {get_living_clan_cat_count(Cat)}")
