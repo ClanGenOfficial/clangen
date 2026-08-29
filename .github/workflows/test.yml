@@ -50,7 +50,7 @@ jobs:
           architecture: 'x64'
       - name: install dependencies
         run: uv sync
-      - name: Run bulk timeskip simulation
+      - name: Run bulk timeskip simulation (it's ok if this fails)
         env:
           SDL_VIDEODRIVER: "dummy"
           SDL_AUDIODRIVER: "disk"
