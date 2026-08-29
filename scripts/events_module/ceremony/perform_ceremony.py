@@ -179,27 +179,26 @@ def check_and_promote_deputy():
         main_cat = random.choice(possible_deputies)
     else:
         # If there are no possible deputies, choose someone else, with special text.
-        if get_config("ranks.only_leader_kits_deputy"):
-            if game.clan.leader is not None:
-                # If none of the leader's kits meet all the requirements for deputy, choose one randomly, with special text.
-                all_warriors = list(
-                    filter(
-                        lambda x: x.status.alive_in_player_clan
-                        and x.status.rank == CatRank.WARRIOR,
-                        leaders_kits,
+        if get_config("ranks.only_leader_kits_deputy") and game.clan.leader is not None:
+            # If none of the leader's kits meet all the requirements for deputy, choose one randomly, with special text.
+            all_warriors = list(
+                filter(
+                    lambda x: x.status.alive_in_player_clan
+                    and x.status.rank == CatRank.WARRIOR,
+                    leaders_kits,
+                )
+            )
+            if all_warriors:
+                main_cat = random.choice(all_warriors)
+
+            else:
+                # If the leader has no kits, no one is named deputy.
+                game.cur_events_list.append(
+                    EventInformation(
+                        i18n.t("hardcoded.ceremony_deputy_none_kin"), "ceremony"
                     )
                 )
-                if all_warriors:
-                    main_cat = random.choice(all_warriors)
-
-                else:
-                    # If the leader has no kits, no one is named deputy.
-                    game.cur_events_list.append(
-                        EventInformation(
-                            i18n.t("hardcoded.ceremony_deputy_none_kin"), "ceremony"
-                        )
-                    )
-                    return
+                return
         else:
             all_warriors = list(
                 filter(
