@@ -6554,7 +6554,7 @@
                 "group": ["player_clan"],
                 "standing": {
         "currently": [
-            "lost"
+            "MISSING"
         ]
       }
             }
