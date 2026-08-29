@@ -900,7 +900,7 @@
                             "adult",
                             "senior adult"
                         ],
-                        "gender": "can_birth"
+                        "gender": ["can_birth"]
                     },
                     "n_c1": {
                         "can_create_new_cat": {},
@@ -994,14 +994,14 @@
                         "age": [
                             "adult"
                         ],
-                        "gender": "can_birth"
+                        "gender": ["can_birth"]
                     },
                     "n_c1": {
                         "can_create_new_cat": {},
                         "age": [
                             "adult"
                         ],
-                        "gender": "male"
+                        "gender": ["male"]
                     },
                     "n_c2": {
                         "can_create_new_cat": {
@@ -1087,7 +1087,7 @@
                         "age": [
                             "senior"
                         ],
-                        "gender": "male",
+                        "gender": ["male"],
                         "status": [
                             "loner"
                         ]
@@ -1101,7 +1101,7 @@
                         "age": [
                             "adult"
                         ],
-                        "gender": "can_birth",
+                        "gender": ["can_birth"],
                         "status": [
                             "loner"
                         ]
@@ -2371,7 +2371,7 @@
                         "age": [
                             "senior"
                         ],
-                        "gender": "male",
+                        "gender": ["male"],
                         "backstory": [
                             "refugee6"
                         ]
@@ -2441,7 +2441,7 @@
                         "age": [
                             "senior"
                         ],
-                        "gender": "male",
+                        "gender": ["male"],
                         "backstory": [
                             "refugee6"
                         ]
@@ -2497,7 +2497,7 @@
                 "involved_cats": {
                     "n_c0": {
                         "can_create_new_cat": {},
-                        "gender": "female",
+                        "gender": ["female"],
                         "status": [
                             "loner"
                         ],
@@ -2641,7 +2641,7 @@
                         "age": [
                             "senior"
                         ],
-                        "gender": "male",
+                        "gender": ["male"],
                         "backstory": [
                             "refugee6"
                         ]
@@ -2674,7 +2674,7 @@
                         "age": [
                             "senior"
                         ],
-                        "gender": "male",
+                        "gender": ["male"],
                         "backstory": [
                             "refugee6"
                         ]
@@ -4226,7 +4226,7 @@
                 "involved_cats": {
                     "n_c0": {
                         "can_create_new_cat": {},
-                        "gender": "can_birth",
+                        "gender": ["can_birth"],
                         "age": [
                             "adult",
                             "senior adult"
@@ -4295,7 +4295,7 @@
                     "r_c0": {},
                     "n_c0": {
                         "can_create_new_cat": {},
-                        "gender": "can_birth",
+                        "gender": ["can_birth"],
                         "age": [
                             "adult",
                             "senior adult"
@@ -4432,7 +4432,7 @@
                     "r_c0": {},
                     "n_c0": {
                         "can_create_new_cat": {},
-                        "gender": "can_birth",
+                        "gender": ["can_birth"],
                         "age": [
                             "adult",
                             "senior adult"
@@ -4508,7 +4508,7 @@
                 "involved_cats": {
                     "n_c0": {
                         "can_create_new_cat": {},
-                        "gender": "can_birth",
+                        "gender": ["can_birth"],
                         "age": [
                             "adult",
                             "senior adult"
@@ -4661,7 +4661,7 @@
                             "adult",
                             "senior adult"
                         ],
-                        "gender": "can_birth"
+                        "gender": ["can_birth"]
                     },
                     "n_c1": {
                         "can_create_new_cat": {
@@ -4729,7 +4729,7 @@
                             "adult",
                             "senior adult"
                         ],
-                        "gender": "can_birth"
+                        "gender": ["can_birth"]
                     },
                     "n_c1": {
                         "can_create_new_cat": {
@@ -4870,7 +4870,7 @@
                             "adult",
                             "senior adult"
                         ],
-                        "gender": "can_birth"
+                        "gender": ["can_birth"]
                     },
                     "n_c1": {
                         "can_create_new_cat": {
@@ -4943,7 +4943,7 @@
                             "adult",
                             "senior adult"
                         ],
-                        "gender": "can_birth"
+                        "gender": ["can_birth"]
                     },
                     "n_c1": {
                         "can_create_new_cat": {
@@ -5085,7 +5085,7 @@
                             "adult",
                             "senior adult"
                         ],
-                        "gender": "can_birth"
+                        "gender": ["can_birth"]
                     },
                     "n_c1": {
                         "can_create_new_cat": {
@@ -5153,7 +5153,7 @@
                             "adult",
                             "senior adult"
                         ],
-                        "gender": "can_birth"
+                        "gender": ["can_birth"]
                     },
                     "n_c1": {
                         "can_create_new_cat": {
@@ -5300,7 +5300,7 @@
                             "adult",
                             "senior adult"
                         ],
-                        "gender": "can_birth"
+                        "gender": ["can_birth"]
                     },
                     "n_c1": {
                         "can_create_new_cat": {
@@ -5373,7 +5373,7 @@
                             "adult",
                             "senior adult"
                         ],
-                        "gender": "can_birth"
+                        "gender": ["can_birth"]
                     },
                     "n_c1": {
                         "can_create_new_cat": {
@@ -7251,7 +7251,7 @@
                         "status": [
                             "kittypet"
                         ],
-                        "gender": "can_birth",
+                        "gender": ["can_birth"],
                         "age": [
                             "adult",
                             "senior adult"
@@ -7333,7 +7333,7 @@
                         "status": [
                             "kittypet"
                         ],
-                        "gender": "can_birth",
+                        "gender": ["can_birth"],
                         "age": [
                             "adult",
                             "senior adult"
@@ -7425,7 +7425,7 @@
                         "status": [
                             "kittypet"
                         ],
-                        "gender": "can_birth",
+                        "gender": ["can_birth"],
                         "age": [
                             "adult",
                             "senior adult"
@@ -12266,7 +12266,7 @@
                         "status": [
                             "loner"
                         ],
-                        "gender": "female",
+                        "gender": ["female"],
                         "age": [
                             "senior"
                         ]
@@ -12276,7 +12276,7 @@
                         "status": [
                             "loner"
                         ],
-                        "gender": "female",
+                        "gender": ["female"],
                         "age": [
                             "senior"
                         ]
@@ -12286,7 +12286,7 @@
                         "status": [
                             "loner"
                         ],
-                        "gender": "female",
+                        "gender": ["female"],
                         "age": [
                             "senior"
                         ]
@@ -12352,7 +12352,7 @@
                         "status": [
                             "loner"
                         ],
-                        "gender": "female",
+                        "gender": ["female"],
                         "age": [
                             "senior"
                         ]
@@ -12362,7 +12362,7 @@
                         "status": [
                             "loner"
                         ],
-                        "gender": "female",
+                        "gender": ["female"],
                         "age": [
                             "senior"
                         ]
@@ -12372,7 +12372,7 @@
                         "status": [
                             "loner"
                         ],
-                        "gender": "female",
+                        "gender": ["female"],
                         "age": [
                             "senior"
                         ]
@@ -12451,7 +12451,7 @@
                         "status": [
                             "loner"
                         ],
-                        "gender": "female",
+                        "gender": ["female"],
                         "age": [
                             "senior"
                         ]
@@ -12461,7 +12461,7 @@
                         "status": [
                             "loner"
                         ],
-                        "gender": "female",
+                        "gender": ["female"],
                         "age": [
                             "senior"
                         ]
@@ -12471,7 +12471,7 @@
                         "status": [
                             "loner"
                         ],
-                        "gender": "female",
+                        "gender": ["female"],
                         "age": [
                             "senior"
                         ]
@@ -12520,7 +12520,7 @@
                         "status": [
                             "loner"
                         ],
-                        "gender": "female",
+                        "gender": ["female"],
                         "age": [
                             "senior"
                         ]
@@ -12530,7 +12530,7 @@
                         "status": [
                             "loner"
                         ],
-                        "gender": "female",
+                        "gender": ["female"],
                         "age": [
                             "senior"
                         ]
@@ -12540,7 +12540,7 @@
                         "status": [
                             "loner"
                         ],
-                        "gender": "female",
+                        "gender": ["female"],
                         "age": [
                             "senior"
                         ]
@@ -12575,7 +12575,7 @@
                         "status": [
                             "loner"
                         ],
-                        "gender": "female",
+                        "gender": ["female"],
                         "age": [
                             "senior"
                         ]
@@ -12585,7 +12585,7 @@
                         "status": [
                             "loner"
                         ],
-                        "gender": "female",
+                        "gender": ["female"],
                         "age": [
                             "senior"
                         ]
@@ -12595,7 +12595,7 @@
                         "status": [
                             "loner"
                         ],
-                        "gender": "female",
+                        "gender": ["female"],
                         "age": [
                             "senior"
                         ]
@@ -12634,7 +12634,7 @@
                         "status": [
                             "loner"
                         ],
-                        "gender": "female",
+                        "gender": ["female"],
                         "age": [
                             "senior"
                         ]
@@ -12664,7 +12664,7 @@
                         "status": [
                             "loner"
                         ],
-                        "gender": "female",
+                        "gender": ["female"],
                         "age": [
                             "senior"
                         ]

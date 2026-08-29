@@ -1,93 +1,57 @@
 [
     {
         "event_id": "dst_misc_any_misc2",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
         "frequency": 4,
-        "event_text": "m_c swept the dust out of {PRONOUN\/m_c\/poss} den using {PRONOUN\/m_c\/poss} tail.",
+        "event_text": "m_c swept the dust out of {PRONOUN/m_c/poss} den using {PRONOUN/m_c/poss} tail.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
-            "status": [
-                "any"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
         }
     },
     {
         "event_id": "dst_greenleaf_seasonalaccessory1",
-        "location": [
-            "desert"
-        ],
+        "location": ["desert"],
         "season": [
             "greenleaf"
         ],
-        "sub_type": [
-            "accessory"
-        ],
+        "sub_type": ["accessory"],
         "frequency": 4,
-        "event_text": "The way that the plantlife withers in the dry season is stark, but sometimes beautiful. m_c added a acc_singular to {PRONOUN\/m_c\/poss} pelt.",
+        "event_text": "The way that the plantlife withers in the dry season is stark, but sometimes beautiful. m_c added a acc_singular to {PRONOUN/m_c/poss} pelt.",
         "new_accessory": [
             "RYE STALK",
             "MAPLE SEED",
             "MAPLE LEAF"
         ],
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
         }
     },
     {
         "event_id": "dst_greenleaf_seasonalaccessory2",
-        "location": [
-            "desert"
-        ],
+        "location": ["desert"],
         "season": [
             "greenleaf"
         ],
-        "sub_type": [
-            "accessory"
-        ],
+        "sub_type": ["accessory"],
         "frequency": 4,
-        "event_text": "The way that the plantlife withers in the dry season is stark, but sometimes beautiful. m_c added acc_plural to {PRONOUN\/m_c\/poss} pelt.",
+        "event_text": "The way that the plantlife withers in the dry season is stark, but sometimes beautiful. m_c added acc_plural to {PRONOUN/m_c/poss} pelt.",
         "new_accessory": [
             "DRY HERBS",
             "OAK LEAVES"
         ],
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
         }
     },
     {
         "event_id": "dst_leaffall_seasonalaccessory1",
-        "location": [
-            "desert"
-        ],
+        "location": ["desert"],
         "season": [
             "leaf-fall"
         ],
-        "sub_type": [
-            "accessory"
-        ],
+        "sub_type": ["accessory"],
         "frequency": 4,
         "event_text": "m_c hunts down one of the first flowers that foretell the arrival of the coming rains, proudly wearing the acc_singular back to camp.",
         "new_accessory": [
@@ -98,28 +62,18 @@
             "POPPY"
         ],
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
         }
     },
     {
         "event_id": "dst_leafbare_seasonalaccessory1",
-        "location": [
-            "desert"
-        ],
+        "location": ["desert"],
         "season": [
             "leaf-bare"
         ],
-        "sub_type": [
-            "accessory"
-        ],
+        "sub_type": ["accessory"],
         "frequency": 4,
-        "event_text": "As the world bursts to life with the rains, m_c is unable to resist capturing a little bit of that beauty for {PRONOUN\/m_c\/self}, snagging a acc_singular to adorn {PRONOUN\/m_c\/object}.",
+        "event_text": "As the world bursts to life with the rains, m_c is unable to resist capturing a little bit of that beauty for {PRONOUN/m_c/self}, snagging a acc_singular to adorn {PRONOUN/m_c/object}.",
         "new_accessory": [
             "DAISY",
             "LAUREL",
@@ -129,53 +83,33 @@
             "LILY OF THE VALLEY"
         ],
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
         }
     },
     {
         "event_id": "dst_leafbare_seasonalaccessory2",
-        "location": [
-            "desert"
-        ],
+        "location": ["desert"],
         "season": [
             "leaf-bare"
         ],
-        "sub_type": [
-            "accessory"
-        ],
+        "sub_type": ["accessory"],
         "frequency": 4,
-        "event_text": "As the world bursts to life with the rains, m_c is unable to resist capturing a little bit of that beauty for {PRONOUN\/m_c\/self}, snagging acc_plural to adorn {PRONOUN\/m_c\/object}.",
+        "event_text": "As the world bursts to life with the rains, m_c is unable to resist capturing a little bit of that beauty for {PRONOUN/m_c/self}, snagging acc_plural to adorn {PRONOUN/m_c/object}.",
         "new_accessory": [
             "CLOVER",
             "FORGET ME NOTS"
         ],
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
         }
     },
     {
         "event_id": "dst_newleaf_seasonalaccessory1",
-        "location": [
-            "desert"
-        ],
+        "location": ["desert"],
         "season": [
             "newleaf"
         ],
-        "sub_type": [
-            "accessory"
-        ],
+        "sub_type": ["accessory"],
         "frequency": 4,
         "event_text": "m_c takes a acc_singular to remember the last blooms of the wet season.",
         "new_accessory": [
@@ -186,28 +120,18 @@
             "BULB BLUE"
         ],
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
         }
     },
     {
         "event_id": "dst_any_kitaccessory1",
-        "location": [
-            "desert"
-        ],
+        "location": ["desert"],
         "season": [
             "any"
         ],
-        "sub_type": [
-            "accessory"
-        ],
+        "sub_type": ["accessory"],
         "frequency": 4,
-        "event_text": "m_c proudly shows off {PRONOUN\/m_c\/poss} acc_singular. {PRONOUN\/m_c\/subject\/CAP} caught it all by {PRONOUN\/m_c\/self}!",
+        "event_text": "m_c proudly shows off {PRONOUN/m_c/poss} acc_singular. {PRONOUN/m_c/subject/CAP} caught it all by {PRONOUN/m_c/self}!",
         "new_accessory": [
             "MOTH WINGS",
             "CICADA WINGS",
@@ -217,16 +141,12 @@
             "BLACK CICADA"
         ],
         "m_c": {
-            "age": [
-                "kitten"
-            ]
+            "age": ["kitten"]
         }
     },
     {
         "event_id": "dst_misc_any_misc4",
-        "location": [
-            "desert"
-        ],
+        "location": ["desert"],
         "season": [
             "newleaf",
             "greenleaf",
@@ -235,31 +155,16 @@
         "frequency": 4,
         "event_text": "As nightfall leeches burning heat from the rocks, m_c tells stories of far off Clans, of cats for whom the dry season brings green leaves and bounty instead of withering heat.",
         "m_c": {
-            "age": [
-                "any"
-            ],
-            "status": [
-                "any"
-            ],
-            "skill": [
-                "LORE,2",
-                "KIT,2",
-                "STORY,2"
-            ]
+            "age": ["any"],
+            "status": ["any"],
+            "skill": ["LORE,2", "KIT,2", "STORY,2"]
         },
         "relationships": [
             {
-                "cats_from": [
-                    "some_clan"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["some_clan"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "respect",
-                    "like"
-                ],
+                "values": ["respect", "like"],
                 "amount": 3,
                 "log": {
                     "cats_from": "cat_from enjoyed cat_to's stories of far off Clans."
@@ -269,42 +174,25 @@
     },
     {
         "event_id": "dst_misc_any_story1",
-        "location": [
-            "desert"
-        ],
+        "location": ["desert"],
         "season": [
             "newleaf",
             "greenleaf",
             "leaf-fall"
         ],
         "frequency": 4,
-        "event_text": "Sunset bleeds red across the sky, as m_c tells {PRONOUN\/m_c\/poss} gathered audience the story of The Dreaming.",
+        "event_text": "Sunset bleeds red across the sky, as m_c tells {PRONOUN/m_c/poss} gathered audience the story of The Dreaming.",
         "m_c": {
-            "age": [
-                "any"
-            ],
-            "status": [
-                "any"
-            ],
-            "skill": [
-                "LORE,2",
-                "STORY,2",
-                "DREAM,2"
-            ]
+            "age": ["any"],
+            "status": ["any"],
+            "skill": ["LORE,2", "STORY,2", "DREAM,2"]
         },
         "relationships": [
             {
-                "cats_from": [
-                    "some_clan"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["some_clan"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "respect",
-                    "like"
-                ],
+                "values": ["respect", "like"],
                 "amount": 3,
                 "log": {
                     "cats_from": "cat_from enjoyed cat_to's stories of The Dreaming."
@@ -314,9 +202,7 @@
     },
     {
         "event_id": "dst_misc_any_misc5",
-        "location": [
-            "desert"
-        ],
+        "location": ["desert"],
         "season": [
             "newleaf",
             "greenleaf",
@@ -325,12 +211,8 @@
         "frequency": 2,
         "event_text": "A brief duststorm leaves the world blurred around c_n, their eyes stinging with grit, their scents wiped from existence.",
         "m_c": {
-            "age": [
-                "any"
-            ],
-            "status": [
-                "any"
-            ]
+            "age": ["any"],
+            "status": ["any"]
         }
     },
     {
@@ -338,22 +220,12 @@
         "location": [
             "desert"
         ],
-        "season": [
-            "leaf-bare"
-        ],
+        "season": ["leaf-bare"],
         "frequency": 3,
         "event_text": "m_c stands guard over camp, enduring the roaring downpour of rain.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
-            "status": [
-                "warrior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["warrior"]
         },
         "relationships": [
             {
@@ -386,16 +258,8 @@
         "frequency": 3,
         "event_text": "m_c watches carefully over camp, trying to avoid the worst of the sun's rays while on guard duty.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
-            "status": [
-                "warrior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["warrior"]
         },
         "relationships": [
             {
@@ -420,22 +284,12 @@
         "location": [
             "desert"
         ],
-        "season": [
-            "any"
-        ],
+        "season": ["any"],
         "frequency": 3,
         "event_text": "m_c spotted a monitor lizard close to camp and raised the alarm.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
-            "status": [
-                "any"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["any"]
         },
         "relationships": [
             {
@@ -460,22 +314,12 @@
         "location": [
             "desert"
         ],
-        "season": [
-            "any"
-        ],
+        "season": ["any"],
         "frequency": 3,
         "event_text": "m_c tracks the scent of a dingo until it safely crosses out of c_n territory.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
-            "status": [
-                "warrior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["warrior"]
         },
         "relationships": [
             {
@@ -500,22 +344,12 @@
         "location": [
             "desert"
         ],
-        "season": [
-            "any"
-        ],
+        "season": ["any"],
         "frequency": 3,
         "event_text": "m_c notices a red-bellied black snake while on guard duty and intimidates it away from c_n's camp.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
-            "status": [
-                "warrior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["warrior"]
         },
         "relationships": [
             {
@@ -540,22 +374,12 @@
         "location": [
             "desert"
         ],
-        "season": [
-            "any"
-        ],
+        "season": ["any"],
         "frequency": 3,
-        "event_text": "m_c watches a mob of kangaroo leap across the landscape from {PRONOUN\/m_c\/poss} guarding perch near camp.",
+        "event_text": "m_c watches a mob of kangaroo leap across the landscape from {PRONOUN/m_c/poss} guarding perch near camp.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
-            "status": [
-                "warrior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["warrior"]
         }
     },
     {
@@ -563,22 +387,12 @@
         "location": [
             "desert"
         ],
-        "season": [
-            "any"
-        ],
+        "season": ["any"],
         "frequency": 3,
-        "event_text": "m_c lets out a warning chitter from {PRONOUN\/m_c\/poss} guard post as a hawk passes overhead.",
+        "event_text": "m_c lets out a warning chitter from {PRONOUN/m_c/poss} guard post as a hawk passes overhead.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
-            "status": [
-                "warrior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["warrior"]
         },
         "relationships": [
             {
@@ -603,22 +417,12 @@
         "location": [
             "desert"
         ],
-        "season": [
-            "any"
-        ],
+        "season": ["any"],
         "frequency": 3,
         "event_text": "m_c bristles on guard duty, but the brown hyena takes no notice of c_n.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ],
-            "status": [
-                "warrior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
+            "status": ["warrior"]
         },
         "relationships": [
             {
@@ -640,39 +444,19 @@
     },
     {
         "event_id": "dst_misc_any_misc14",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
         "frequency": 4,
         "event_text": "The vivid red dust of the outback temporarily stains m_c's fur an unnatural hue.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior",
-                "senior adult"
-            ],
-            "status": [
-                "any"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior", "senior adult"],
+            "status": ["any"]
         },
         "relationships": [
             {
-                "cats_from": [
-                    "clan",
-                    "low_stable"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "trust",
-                    "comfort"
-                ],
+                "cats_from": ["clan", "low_stable"],
+                "cats_to": ["m_c"],
+                "values": ["trust", "comfort"],
                 "amount": -5,
                 "log": {
                     "cats_from": "cat_from was unsettled to see cat_to's fur stained bright red."
@@ -682,139 +466,69 @@
     },
     {
         "event_id": "dst_misc_any_traitmisc1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
         "frequency": 4,
         "event_text": "m_c watches the sun rise over the desert, wondering what unknowns it can see beyond the edge of the world.",
         "m_c": {
-            "age": [
-                "any"
-            ],
-            "status": [
-                "any"
-            ],
-            "trait": [
-                "adventurous",
-                "daring",
-                "rebellious",
-                "strange"
-            ]
+            "age": ["any"],
+            "status": ["any"],
+            "trait": ["adventurous", "daring", "rebellious", "strange"]
         }
     },
     {
         "event_id": "dst_misc_any_dreaming1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
         "frequency": 2,
-        "event_text": "m_c slips into The Dreaming, joining the spirits of land and place for one eternal brief moment. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/wake\/wakes} with memory draining irrevocably from {PRONOUN\/m_c\/poss} tight grasp, losing everything but a glimpse of clair_list\/m_c.",
+        "event_text": "m_c slips into The Dreaming, joining the spirits of land and place for one eternal brief moment. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wake/wakes} with memory draining irrevocably from {PRONOUN/m_c/poss} tight grasp, losing everything but a glimpse of clair_list/m_c.",
         "m_c": {
-            "age": [
-                "any"
-            ],
-            "status": [
-                "any"
-            ],
-            "skill": [
-                "DREAM,1",
-                "SENSE,2",
-                "OMEN,2",
-                "CLAIRVOYANT,2",
-                "PROPHET,2"
-            ]
+            "age": ["any"],
+            "status": ["any"],
+            "skill": ["DREAM,1", "SENSE,2", "OMEN,2", "CLAIRVOYANT,2", "PROPHET,2"]
         }
     },
     {
         "event_id": "dst_misc_any_dreaming2",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
         "frequency": 2,
-        "event_text": "m_c's body curls in {PRONOUN\/m_c\/poss} nest, but {PRONOUN\/m_c\/poss} spirit walks in The Dreaming, calling the chorus of 'Weowie', 'Weowie', entreating the water serpent down from the mountain.",
+        "event_text": "m_c's body curls in {PRONOUN/m_c/poss} nest, but {PRONOUN/m_c/poss} spirit walks in The Dreaming, calling the chorus of 'Weowie', 'Weowie', entreating the water serpent down from the mountain.",
         "m_c": {
-            "age": [
-                "any"
-            ],
-            "status": [
-                "any"
-            ],
-            "skill": [
-                "DREAM,1",
-                "SENSE,3",
-                "OMEN,4",
-                "CLAIRVOYANT,4",
-                "PROPHET,4"
-            ]
+            "age": ["any"],
+            "status": ["any"],
+            "skill": ["DREAM,1", "SENSE,3", "OMEN,4", "CLAIRVOYANT,4", "PROPHET,4"]
         }
     },
     {
         "event_id": "dst_misc_any_dreaming3",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
         "frequency": 2,
         "event_text": "m_c dreams of the creation song, of the before-times, of the featureless plain that ancestral spirits molded into Country and land in The Dreaming.",
         "m_c": {
-            "age": [
-                "any"
-            ],
-            "status": [
-                "any"
-            ],
-            "skill": [
-                "DREAM,2"
-            ]
+            "age": ["any"],
+            "status": ["any"],
+            "skill": ["DREAM,2"]
         }
     },
     {
         "event_id": "dst_misc_any_dreaming4",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
         "frequency": 4,
         "event_text": "In the twilight of the day, m_c tells the stories of The Dreaming, the ancestral spirits both good and bad who live again when their history is recited.",
         "m_c": {
-            "age": [
-                "any"
-            ],
-            "status": [
-                "any"
-            ],
-            "skill": [
-                "DREAM,2",
-                "LORE,3",
-                "STORY,3"
-            ]
+            "age": ["any"],
+            "status": ["any"],
+            "skill": ["DREAM,2", "LORE,3", "STORY,3"]
         },
         "relationships": [
             {
-                "cats_from": [
-                    "some_clan"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["some_clan"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "respect",
-                    "like"
-                ],
+                "values": ["respect", "like"],
                 "amount": 3,
                 "log": {
                     "cats_from": "cat_from enjoyed cat_to's stories of The Dreaming."
@@ -824,40 +538,21 @@
     },
     {
         "event_id": "dst_misc_any_dreaming5",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
         "frequency": 4,
-        "event_text": "The Dreaming is past, present, future, all. It leads and warns and predicts, it guides and shares and strengthens. m_c is the voice today, but {PRONOUN\/m_c\/subject} {VERB\/m_c\/are\/is} only one step in the unbroken connections to past generations.",
+        "event_text": "The Dreaming is past, present, future, all. It leads and warns and predicts, it guides and shares and strengthens. m_c is the voice today, but {PRONOUN/m_c/subject} {VERB/m_c/are/is} only one step in the unbroken connections to past generations.",
         "m_c": {
-            "age": [
-                "any"
-            ],
-            "status": [
-                "any"
-            ],
-            "skill": [
-                "DREAM,2",
-                "LORE,3",
-                "STORY,3"
-            ]
+            "age": ["any"],
+            "status": ["any"],
+            "skill": ["DREAM,2", "LORE,3", "STORY,3"]
         },
         "relationships": [
             {
-                "cats_from": [
-                    "some_clan"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
+                "cats_from": ["some_clan"],
+                "cats_to": ["m_c"],
                 "mutual": false,
-                "values": [
-                    "respect",
-                    "like"
-                ],
+                "values": ["respect", "like"],
                 "amount": 3,
                 "log": {
                     "cats_from": "cat_from enjoyed cat_to's stories of The Dreaming."
@@ -867,122 +562,71 @@
     },
     {
         "event_id": "dst_misc_any_ancestors1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
         "frequency": 4,
         "event_text": "m_c spotted a cat silhouetted against the setting sun with the light shining partway through their semitransparent fur. Next blink, the figure is gone.",
         "m_c": {
-            "age": [
-                "any"
-            ],
-            "status": [
-                "any"
-            ],
-            "skill": [
-                "GHOST,2",
-                "STAR,2",
-                "DARK,2"
-            ]
+            "age": ["any"],
+            "status": ["any"],
+            "skill": ["GHOST,2", "STAR,2", "DARK,2"]
         }
     },
     {
         "event_id": "dst_misc_war_any_any2",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "war"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
+        "sub_type": ["war"],
         "frequency": 4,
         "event_text": "c_n quietly prepares the cacti and thornbushes along the border with o_c_n to work to their advantage.",
         "m_c": {},
         "other_clan": {
-            "current_rep": [
-                "hostile"
-            ],
+            "current_rep": ["hostile"],
             "changed": 0
         }
     },
     {
         "event_id": "dst_misc_war_any_any2",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "war"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
+        "sub_type": ["war"],
         "frequency": 4,
         "event_text": "Though few think o_c_n will go so far as to attack c_n's water sources, the gossip in camp swirls around that possibility.",
         "m_c": {},
         "other_clan": {
-            "current_rep": [
-                "hostile"
-            ],
+            "current_rep": ["hostile"],
             "changed": 0
         }
     },
     {
         "event_id": "dst_misc_greenleaf_kit1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "greenleaf"
-        ],
-        "tags": [
-            "clan:warrior"
-        ],
+        "location": ["desert"],
+        "season": ["greenleaf"],
+        "tags": ["clan:warrior"],
         "frequency": 3,
         "event_text": "m_c emerges from the nursery, finally allowed to play now the glaring sun has set.",
         "m_c": {
-            "status": [
-                "kitten"
-            ]
+            "status": ["kitten"]
         }
     },
     {
         "event_id": "dst_misc_any_kitkit1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
         "frequency": 4,
         "event_text": "m_c and r_c play predator-and-warrior, wearing a shed snake skin.",
         "m_c": {
-            "status": [
-                "kitten"
-            ]
+            "status": ["kitten"]
         },
         "r_c": {
-            "status": [
-                "kitten"
-            ]
+            "status": ["kitten"]
         },
         "relationships": [
             {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
                 "mutual": true,
-                "values": [
-                    "like",
-                    "comfort"
-                ],
+                "values": ["like", "comfort"],
                 "amount": 20,
                 "log": {
                     "cats_from": "cat_from and cat_to had lots of fun playing predator-and-warrior."
@@ -995,35 +639,21 @@
         "location": [
             "desert"
         ],
-        "season": [
-            "any"
-        ],
+        "season": ["any"],
         "frequency": 3,
         "event_text": "m_c and r_c try to climb the rocks around camp to limited success.",
         "m_c": {
-            "status": [
-                "kitten"
-            ]
+            "status": ["kitten"]
         },
         "r_c": {
-            "status": [
-                "kitten"
-            ]
+            "status": ["kitten"]
         },
         "relationships": [
             {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
+                "cats_to": ["m_c"],
+                "cats_from": ["r_c"],
                 "mutual": true,
-                "values": [
-                    "like",
-                    "trust",
-                    "comfort"
-                ],
+                "values": ["like", "trust", "comfort"],
                 "amount": 15,
                 "log": {
                     "cats_from": "cat_from and cat_to did their best to climb the rocks around camp together."
@@ -1033,40 +663,23 @@
     },
     {
         "event_id": "dst_misc_greenleaf_kitkit1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "greenleaf"
-        ],
-        "tags": [
-            "clan:warrior"
-        ],
+        "location": ["desert"],
+        "season": ["greenleaf"],
+        "tags": ["clan:warrior"],
         "frequency": 4,
         "event_text": "m_c and r_c emerge from the nursery as the chill of night takes over, their energy contrasting the tired warriors napping on the sun-warmed rocks.",
         "m_c": {
-            "status": [
-                "kitten"
-            ]
+            "status": ["kitten"]
         },
         "r_c": {
-            "status": [
-                "kitten"
-            ]
+            "status": ["kitten"]
         },
         "relationships": [
             {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
+                "cats_from": ["m_c"],
+                "cats_to": ["r_c"],
                 "mutual": true,
-                "values": [
-                    "like",
-                    "comfort"
-                ],
+                "values": ["like", "comfort"],
                 "amount": 20,
                 "log": {
                     "cats_from": "cat_from and cat_to had lots of fun playing in the cool night air together."
@@ -1079,38 +692,22 @@
         "location": [
             "desert"
         ],
-        "season": [
-            "leaf-fall"
-        ],
-        "tags": [
-            "clan:warrior"
-        ],
+        "season": ["leaf-fall"],
+        "tags": ["clan:warrior"],
         "frequency": 4,
         "event_text": "m_c doesn't care what the warriors say, thunder is definitely dangerous and horrible. r_c agrees, the kittens finding comfort in each other.",
         "m_c": {
-            "status": [
-                "kitten"
-            ]
+            "status": ["kitten"]
         },
         "r_c": {
-            "status": [
-                "kitten"
-            ]
+            "status": ["kitten"]
         },
         "relationships": [
             {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
+                "cats_to": ["m_c"],
+                "cats_from": ["r_c"],
                 "mutual": true,
-                "values": [
-                    "like",
-                    "comfort",
-                    "trust"
-                ],
+                "values": ["like", "comfort", "trust"],
                 "amount": 15,
                 "log": {
                     "cats_from": "cat_from and cat_to agree that thunder is scary."
@@ -1123,34 +720,21 @@
         "location": [
             "desert"
         ],
-        "season": [
-            "leaf-bare"
-        ],
+        "season": ["leaf-bare"],
         "frequency": 4,
         "event_text": "The night's temperature dips cold enough to leave a layer of thick frost on everything. m_c and r_c are mystified and hesitant, but eventually the frost becomes another slippery toy in their world.",
         "m_c": {
-            "status": [
-                "kitten"
-            ]
+            "status": ["kitten"]
         },
         "r_c": {
-            "status": [
-                "kitten"
-            ]
+            "status": ["kitten"]
         },
         "relationships": [
             {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
+                "cats_to": ["m_c"],
+                "cats_from": ["r_c"],
                 "mutual": true,
-                "values": [
-                    "like",
-                    "comfort"
-                ],
+                "values": ["like", "comfort"],
                 "amount": 20,
                 "log": {
                     "cats_from": "cat_from and cat_to have lots of fun playing on the icy camp floor."
@@ -1163,38 +747,21 @@
         "location": [
             "desert"
         ],
-        "season": [
-            "any"
-        ],
+        "season": ["any"],
         "frequency": 3,
-        "event_text": "m_c faceplants right into the shaded water well in the rocks {PRONOUN\/m_c\/subject}{VERB\/m_c\/'re\/'s} drinking from and is hauled up by r_c, spluttering and embarrassed.",
+        "event_text": "m_c faceplants right into the shaded water well in the rocks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} drinking from and is hauled up by r_c, spluttering and embarrassed.",
         "m_c": {
-            "age": [
-                "kitten",
-                "adolescent"
-            ]
+            "age": ["kitten", "adolescent"]
         },
         "r_c": {
-            "age": [
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ]
+            "age": ["young adult", "adult", "senior adult", "senior"]
         },
         "relationships": [
             {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
+                "cats_to": ["m_c"],
+                "cats_from": ["r_c"],
                 "mutual": false,
-                "values": [
-                    "like",
-                    "trust"
-                ],
+                "values": ["like", "trust"],
                 "amount": 10,
                 "log": {
                     "cats_from": "cat_to pulled cat_from out of a pool of water when cat_from fell in while drinking."
@@ -1204,37 +771,22 @@
     },
     {
         "event_id": "dst_misc_any_apprentice1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
         "frequency": 4,
-        "event_text": "m_c sneaks out at night, and r_c follows. But {PRONOUN\/r_c\/subject} {VERB\/r_c\/don't\/doesn't} tattle on m_c, instead joining {PRONOUN\/m_c\/object} as {PRONOUN\/m_c\/subject} {VERB\/m_c\/run\/runs} through the cool sharp night air.",
+        "event_text": "m_c sneaks out at night, and r_c follows. But {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} tattle on m_c, instead joining {PRONOUN/m_c/object} as {PRONOUN/m_c/subject} {VERB/m_c/run/runs} through the cool sharp night air.",
         "m_c": {
-            "age": [
-                "adolescent"
-            ]
+            "age": ["adolescent"]
         },
         "r_c": {
-            "age": [
-                "adolescent"
-            ]
+            "age": ["adolescent"]
         },
         "relationships": [
             {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
+                "cats_to": ["m_c"],
+                "cats_from": ["r_c"],
                 "mutual": true,
-                "values": [
-                    "trust",
-                    "like"
-                ],
+                "values": ["trust", "like"],
                 "amount": 20,
                 "log": {
                     "cats_from": "cat_from and cat_to snuck out of camp and went for a run in the night together."
@@ -1244,37 +796,22 @@
     },
     {
         "event_id": "dst_misc_any_apprentice2",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
         "frequency": 4,
         "event_text": "The sun rises over the desert, and over m_c and r_c, who definitely aren't allowed out of camp this early and alone.",
         "m_c": {
-            "age": [
-                "adolescent"
-            ]
+            "age": ["adolescent"]
         },
         "r_c": {
-            "age": [
-                "adolescent"
-            ]
+            "age": ["adolescent"]
         },
         "relationships": [
             {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
+                "cats_to": ["m_c"],
+                "cats_from": ["r_c"],
                 "mutual": true,
-                "values": [
-                    "trust",
-                    "like"
-                ],
+                "values": ["trust", "like"],
                 "amount": 20,
                 "log": {
                     "cats_from": "cat_from and cat_to snuck out of camp to watch the sunrise together."
@@ -1284,37 +821,22 @@
     },
     {
         "event_id": "dst_misc_any_apprentice3",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
         "frequency": 4,
-        "event_text": "m_c sneaks out of camp on a dare, meeting r_c with a lashing tail, {PRONOUN\/m_c\/poss} chin raised proudly.",
+        "event_text": "m_c sneaks out of camp on a dare, meeting r_c with a lashing tail, {PRONOUN/m_c/poss} chin raised proudly.",
         "m_c": {
-            "age": [
-                "adolescent"
-            ]
+            "age": ["adolescent"]
         },
         "r_c": {
-            "age": [
-                "adolescent"
-            ]
+            "age": ["adolescent"]
         },
         "relationships": [
             {
-                "cats_to": [
-                    "m_c"
-                ],
-                "cats_from": [
-                    "r_c"
-                ],
+                "cats_to": ["m_c"],
+                "cats_from": ["r_c"],
                 "mutual": true,
-                "values": [
-                    "trust",
-                    "like"
-                ],
+                "values": ["trust", "like"],
                 "amount": 20,
                 "log": {
                     "cats_from": "cat_from and cat_to snuck out of camp together."
@@ -1327,39 +849,21 @@
         "location": [
             "desert"
         ],
-        "season": [
-            "any"
-        ],
+        "season": ["any"],
         "frequency": 3,
-        "event_text": "A loner has sprayed a shrub near the border with {PRONOUN\/n_c:0\/poss} scent.",
+        "event_text": "A loner has sprayed a shrub near the border with {PRONOUN/n_c:0/poss} scent.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
         },
         "new_cat": [
-            [
-                "meeting",
-                "loner",
-                "exists"
-            ]
+            ["meeting", "loner", "exists"]
         ],
         "relationships": [
             {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "n_c:0"
-                ],
+                "cats_from": ["m_c"],
+                "cats_to": ["n_c:0"],
                 "mutual": true,
-                "values": [
-                    "like"
-                ],
+                "values": ["like"],
                 "amount": -5,
                 "log": {
                     "cats_from": "cat_from found cat_to's scent on a shrub by the border."
@@ -1367,9 +871,7 @@
             }
         ],
         "outsider": {
-            "current_rep": [
-                "any"
-            ],
+            "current_rep": ["any"],
             "changed": -5
         }
     },
@@ -1378,25 +880,14 @@
         "location": [
             "desert"
         ],
-        "season": [
-            "any"
-        ],
+        "season": ["any"],
         "frequency": 2,
-        "event_text": "m_c hasn't seen a o_c_n cat for, stars, almost the entire moon. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/wonder\/wonders} how they're doing.",
+        "event_text": "m_c hasn't seen a o_c_n cat for, stars, almost the entire moon. {PRONOUN/m_c/subject/CAP} {VERB/m_c/wonder/wonders} how they're doing.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
         },
         "other_clan": {
-            "current_rep": [
-                "ally",
-                "neutral"
-            ],
+            "current_rep": ["ally", "neutral"],
             "changed": 0
         }
     },
@@ -1405,54 +896,32 @@
         "location": [
             "desert"
         ],
-        "season": [
-            "any"
-        ],
+        "season": ["any"],
         "frequency": 2,
         "event_text": "Wild pigs rampage along the border with o_c_n, leaving a gigantic mess that c_n dutifully cleans up.",
         "m_c": {
-            "age": [
-                "adolescent",
-                "young adult",
-                "adult",
-                "senior adult",
-                "senior"
-            ]
+            "age": ["adolescent", "young adult", "adult", "senior adult", "senior"]
         },
         "other_clan": {
-            "current_rep": [
-                "any"
-            ],
+            "current_rep": ["any"],
             "changed": 1
         }
     },
     {
         "event_id": "dst_misc_any_elder1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
         "frequency": 4,
-        "event_text": "The sudden drop in temperature at night didn't used to bother m_c, but {PRONOUN\/m_c\/subject}{VERB\/m_c\/'re\/'s} not as young as {PRONOUN\/m_c\/subject} used to be.",
+        "event_text": "The sudden drop in temperature at night didn't used to bother m_c, but {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not as young as {PRONOUN/m_c/subject} used to be.",
         "m_c": {
-            "age": [
-                "senior"
-            ],
-            "status": [
-                "elder"
-            ]
+            "age": ["senior"],
+            "status": ["elder"]
         }
     },
     {
         "event_id": "dst_misc_freshkill_anystolen1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
         "exclude_involved": [
             "m_c",
             "r_c"
@@ -1462,21 +931,15 @@
         "supplies": [
             {
                 "type": "freshkill",
-                "trigger": [
-                    "excess"
-                ],
+                "trigger": ["excess"],
                 "adjust": "reduce_half"
             }
         ]
     },
     {
         "event_id": "dst_misc_freshkill_anystolen2",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
         "exclude_involved": [
             "m_c",
             "r_c"
@@ -1486,21 +949,15 @@
         "supplies": [
             {
                 "type": "freshkill",
-                "trigger": [
-                    "excess"
-                ],
+                "trigger": ["excess"],
                 "adjust": "reduce_half"
             }
         ]
     },
     {
         "event_id": "dst_misc_herb_anydestruction1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
         "exclude_involved": [
             "m_c",
             "r_c"
@@ -1510,23 +967,15 @@
         "supplies": [
             {
                 "type": "all_herb",
-                "trigger": [
-                    "adequate",
-                    "full",
-                    "excess"
-                ],
+                "trigger": ["adequate", "full", "excess"],
                 "adjust": "reduce_half"
             }
         ]
     },
     {
         "event_id": "dst_misc_herb_anydestruction2",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
         "exclude_involved": [
             "m_c",
             "r_c"
@@ -1536,23 +985,15 @@
         "supplies": [
             {
                 "type": "all_herb",
-                "trigger": [
-                    "adequate",
-                    "full",
-                    "excess"
-                ],
+                "trigger": ["adequate", "full", "excess"],
                 "adjust": "reduce_half"
             }
         ]
     },
     {
         "event_id": "dst_misc_herb_newleafdestruction1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "newleaf"
-        ],
+        "location": ["desert"],
+        "season": ["newleaf"],
         "exclude_involved": [
             "m_c",
             "r_c"
@@ -1562,23 +1003,15 @@
         "supplies": [
             {
                 "type": "all_herb",
-                "trigger": [
-                    "adequate",
-                    "full",
-                    "excess"
-                ],
+                "trigger": ["adequate", "full", "excess"],
                 "adjust": "reduce_half"
             }
         ]
     },
     {
         "event_id": "dst_misc_herb_greenleafdestruction1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "greenleaf"
-        ],
+        "location": ["desert"],
+        "season": ["greenleaf"],
         "exclude_involved": [
             "m_c",
             "r_c"
@@ -1588,148 +1021,53 @@
         "supplies": [
             {
                 "type": "all_herb",
-                "trigger": [
-                    "adequate",
-                    "full",
-                    "excess"
-                ],
+                "trigger": ["adequate", "full", "excess"],
                 "adjust": "reduce_half"
             }
         ]
     },
     {
-        "event_id": "dst_misc_transition_from_female1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "transition"
-        ],
-        "frequency": 2,
-        "event_text": "Under the full heat of the sun, m_c declares {PRONOUN\/m_c\/subject} {VERB\/m_c\/are\/is} no she-cat.",
-        "m_c": {
-            "age": [
-                "young adult"
-            ],
-            "gender": [
-                "female"
-            ]
-        },
-        "new_gender": [
-            "trans male",
-            "nonbinary"
-        ]
-    },
-    {
-        "event_id": "dst_misc_transition_from_male1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "transition"
-        ],
-        "frequency": 2,
-        "event_text": "The nature of things is ever changing, like sand blown on the wind. \"Tom\" is no longer accurate for m_c.",
-        "m_c": {
-            "gender": [
-                "male"
-            ]
-        },
-        "new_gender": [
-            "trans female",
-            "nonbinary"
-        ]
-    },
-    {
         "event_id": "dst_misc_any_angrylizard",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "newleaf",
-            "greenleaf",
-            "leaf-fall"
-        ],
+        "location": ["desert"],
+        "season": ["newleaf", "greenleaf", "leaf-fall"],
         "frequency": 4,
-        "event_text": "m_c was nipped on the nose when {PRONOUN\/m_c\/subject} investigated an odd, lizard-shaped lump in the sand.",
+        "event_text": "m_c was nipped on the nose when {PRONOUN/m_c/subject} investigated an odd, lizard-shaped lump in the sand.",
         "m_c": {
-            "status": [
-                "warrior",
-                "apprentice",
-                "kitten",
-                "elder"
-            ]
+            "status": ["warrior", "apprentice", "kitten", "elder"]
         }
     },
     {
         "event_id": "dst_misc_war_anyapps1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "any"
-        ],
-        "sub_type": [
-            "war"
-        ],
-        "tags": [
-            "clan:apprentice"
-        ],
+        "location": ["desert"],
+        "season": ["any"],
+        "sub_type": ["war"],
+        "tags": ["clan:apprentice"],
         "frequency": 3,
         "event_text": "The apprentices of the Clan are taking special training to learn how to blind their enemies with dust from the ground.",
         "m_c": {
-            "status": [
-                "apprentice"
-            ]
+            "status": ["apprentice"]
         }
     },
     {
         "event_id": "dst_misc_multiprophecymedcatprophet1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "newleaf",
-            "greenleaf"
-        ],
+        "location": ["desert"],
+        "season": ["newleaf", "greenleaf"],
         "frequency": 4,
-        "event_text": "While out gathering valuable herbs, m_c sees a vision of prophecy_list_sight\/m_c.",
+        "event_text": "While out gathering valuable herbs, m_c sees a vision of prophecy_list_sight/m_c.",
         "m_c": {
-            "status": [
-                "medicine cat",
-                "medicine cat apprentice"
-            ],
-            "skill": [
-                "PROPHET,2"
-            ]
+            "status": ["medicine cat", "medicine cat apprentice"],
+            "skill": ["PROPHET,2"]
         }
     },
     {
         "event_id": "dst_misc_multiomenmedcatomen1",
-        "location": [
-            "desert"
-        ],
-        "season": [
-            "newleaf",
-            "greenleaf",
-            "leaf-fall"
-        ],
+        "location": ["desert"],
+        "season": ["newleaf", "greenleaf", "leaf-fall"],
         "frequency": 4,
-        "event_text": "The things {PRONOUN\/m_c\/subject} saw in the sand today, omen_list_sight\/m_c... {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/consider\/considers} what these omens may entail for c_n.",
+        "event_text": "The things {PRONOUN/m_c/subject} saw in the sand today, omen_list_sight/m_c... {PRONOUN/m_c/subject/CAP} {VERB/m_c/consider/considers} what these omens may entail for c_n.",
         "m_c": {
-            "status": [
-                "medicine cat",
-                "medicine cat apprentice"
-            ],
-            "skill": [
-                "OMEN,2"
-            ]
+            "status": ["medicine cat", "medicine cat apprentice"],
+            "skill": ["OMEN,2"]
         }
     }
 ]

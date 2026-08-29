@@ -1125,12 +1125,12 @@
       "title": "Injury",
       "type": "string"
     },
-    "InvolvedCatsPatrolEvent": {
+    "InvolvedCatsTransitionEvent": {
       "additionalProperties": false,
       "properties": {
-        "p_l": {
+        "m_c": {
           "$ref": "#/$defs/CatDict",
-          "title": "P L"
+          "title": "M C"
         },
         "r_c0": {
           "$ref": "#/$defs/CatDict",
@@ -1155,30 +1155,6 @@
         "r_c5": {
           "$ref": "#/$defs/CatDict",
           "title": "R C5"
-        },
-        "s_c0": {
-          "$ref": "#/$defs/CatDict",
-          "title": "S C0"
-        },
-        "s_c1": {
-          "$ref": "#/$defs/CatDict",
-          "title": "S C1"
-        },
-        "s_c2": {
-          "$ref": "#/$defs/CatDict",
-          "title": "S C2"
-        },
-        "s_c3": {
-          "$ref": "#/$defs/CatDict",
-          "title": "S C3"
-        },
-        "s_c4": {
-          "$ref": "#/$defs/CatDict",
-          "title": "S C4"
-        },
-        "s_c5": {
-          "$ref": "#/$defs/CatDict",
-          "title": "S C5"
         },
         "n_c0": {
           "$ref": "#/$defs/CatDict",
@@ -1205,7 +1181,7 @@
           "title": "N C5"
         }
       },
-      "title": "InvolvedCatsPatrolEvent",
+      "title": "InvolvedCatsTransitionEvent",
       "type": "object"
     },
     "Join": {
@@ -1331,22 +1307,6 @@
       "title": "MentorApprenticeDict",
       "type": "object"
     },
-    "MinMaxStatusDictKey": {
-      "enum": [
-        "medicine cat",
-        "warrior",
-        "leader",
-        "deputy",
-        "apprentice",
-        "medicine cat apprentice",
-        "healer cats",
-        "normal adult",
-        "all apprentices",
-        "patrol_cats"
-      ],
-      "title": "MinMaxStatusDictKey",
-      "type": "string"
-    },
     "NameCheckDict": {
       "additionalProperties": false,
       "properties": {
@@ -1358,406 +1318,6 @@
       },
       "title": "NameCheckDict",
       "type": "object"
-    },
-    "Outcome": {
-      "additionalProperties": false,
-      "properties": {
-        "location": {
-          "$ref": "#/$defs/Location",
-          "description": "Constrains the event to only occur if a player chooses a specific biome."
-        },
-        "season": {
-          "description": "Constrains the event to only occur once the Clan is in a specific season.",
-          "items": {
-            "$ref": "#/$defs/Season"
-          },
-          "title": "Season",
-          "type": "array"
-        },
-        "tags": {
-          "description": "Used for some filtering purposes",
-          "items": {
-            "$ref": "#/$defs/Tag"
-          },
-          "title": "Tags",
-          "type": "array"
-        },
-        "strings": {
-          "description": "List of the text that will be displayed in-game as events.",
-          "items": {
-            "type": "string"
-          },
-          "title": "Strings",
-          "type": "array"
-        },
-        "required_reputation": {
-          "$ref": "#/$defs/RequiredReputation",
-          "description": "Constrains the event to only occur if the player clan has the required reputation",
-          "title": "Required Reputation"
-        },
-        "relationship_constraint": {
-          "description": "Used to require specific relationships between the cats",
-          "items": {
-            "$ref": "#/$defs/RelationshipConstraint"
-          },
-          "title": "Relationship Constraint",
-          "type": "array"
-        },
-        "other_clan_temperament": {
-          "description": "Constrains the event to only occur if the involved other Clan has one of these temperaments.",
-          "items": {
-            "$ref": "#/$defs/Temperament"
-          },
-          "title": "Other Clan Temperament",
-          "type": "array"
-        },
-        "reputation_changes": {
-          "additionalProperties": {
-            "type": "integer"
-          },
-          "propertyNames": {
-            "enum": [
-              "outsider",
-              "other_clan"
-            ]
-          },
-          "title": "Reputation Changes",
-          "type": "object"
-        },
-        "relationship_changes": {
-          "description": "Used to change specific relationships between the cats",
-          "items": {
-            "$ref": "#/$defs/RelationshipChange"
-          },
-          "title": "Relationship Changes",
-          "type": "array"
-        },
-        "supply": {
-          "description": "Indicates changes to the supply of the Clan. Each supply change block is a new change",
-          "items": {
-            "$ref": "#/$defs/Supply"
-          },
-          "title": "Supply",
-          "type": "array"
-        },
-        "death": {
-          "description": "Indicate which cats should die as a result of this event. You can specify different \"types\" of death as separate blocks",
-          "items": {
-            "$ref": "#/$defs/Death"
-          },
-          "title": "Death",
-          "type": "array"
-        },
-        "condition": {
-          "description": "Indicate which cats should receive conditions and what conditions they receive. You can add multiple condition blocks",
-          "items": {
-            "$ref": "#/$defs/Condition"
-          },
-          "title": "Condition",
-          "type": "array"
-        },
-        "lost": {
-          "description": "Indicate which cats should be lost from their Clan. You can add multiple lost blocks",
-          "items": {
-            "additionalProperties": {
-              "items": {
-                "$ref": "#/$defs/GatherCat"
-              },
-              "type": "array"
-            },
-            "propertyNames": {
-              "const": "cats"
-            },
-            "type": "object"
-          },
-          "title": "Lost",
-          "type": "array"
-        },
-        "join": {
-          "description": "Indicate which cats will join the player Clan. You can add multiple join blocks",
-          "items": {
-            "$ref": "#/$defs/Join"
-          },
-          "title": "Join",
-          "type": "array"
-        },
-        "meet": {
-          "description": "Indicate which cats will meet the player Clan. You can add multiple meet blocks",
-          "items": {
-            "$ref": "#/$defs/Meet"
-          },
-          "title": "Meet",
-          "type": "array"
-        },
-        "gain_accessory": {
-          "description": "Indicate which cats will gain an accessory. You can add multiple gain_accessory blocks",
-          "items": {
-            "$ref": "#/$defs/GainAccessory"
-          },
-          "title": "Gain Accessory",
-          "type": "array"
-        },
-        "future_event": {
-          "description": "Schedules another event to happen in the future.",
-          "items": {
-            "$ref": "#/$defs/FutureEvent"
-          },
-          "title": "Future Event",
-          "type": "array"
-        },
-        "frequency": {
-          "default": 4,
-          "description": "Controls how common an outcome is. 4 is the most common, 1 is the least.",
-          "title": "Frequency",
-          "type": "integer"
-        },
-        "outcome_art": {
-          "description": "The name of displayed patrol art file, without any file extension (no .png).",
-          "title": "Outcome Art",
-          "type": "string"
-        },
-        "outcome_art_clean": {
-          "description": "If patrol_art contains gore, this line can hold a clean version. The existence of a non-empty string in this parameter marks the patrol art in \"patrol_art\" as explicit.",
-          "title": "Outcome Art Clean",
-          "type": "string"
-        },
-        "involved_cats": {
-          "$ref": "#/$defs/InvolvedCatsPatrolEvent",
-          "description": "Used to add constraints for the various involved cats.",
-          "title": "Involved Cats"
-        },
-        "required_cat_types": {
-          "additionalProperties": {
-            "maxItems": 2,
-            "minItems": 2,
-            "prefixItems": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "integer"
-              }
-            ],
-            "type": "array"
-          },
-          "description": "Allows specification of the minimum and maximum number of specific types of cats that are allowed on the patrol.",
-          "propertyNames": {
-            "$ref": "#/$defs/MinMaxStatusDictKey"
-          },
-          "title": "Required Cat Types",
-          "type": "object"
-        },
-        "patrol_temperament": {
-          "description": "Constrains the outcome to only occur if the patrol has one of these temperaments.",
-          "items": {
-            "$ref": "#/$defs/Temperament"
-          },
-          "title": "Patrol Temperament",
-          "type": "array"
-        },
-        "exp_gained": {
-          "description": "The amount of exp cats receive (sorta). The exact amount also depends on the number of cats and current EXP levels, but in general, a higher number here means more exp. If exp is 0, no exp will be given",
-          "title": "Exp Gained",
-          "type": "integer"
-        }
-      },
-      "required": [
-        "strings",
-        "frequency",
-        "exp_gained"
-      ],
-      "title": "Outcome",
-      "type": "object"
-    },
-    "PatrolSchemaItem": {
-      "additionalProperties": false,
-      "properties": {
-        "event_id": {
-          "description": "Unique string used to identify the patrol.",
-          "title": "Event Id",
-          "type": "string"
-        },
-        "location": {
-          "$ref": "#/$defs/Location",
-          "description": "Constrains the event to only occur if a player chooses a specific biome."
-        },
-        "season": {
-          "description": "Controls the season(s) the patrol appears in.",
-          "items": {
-            "$ref": "#/$defs/Season"
-          },
-          "title": "Season",
-          "type": "array"
-        },
-        "types": {
-          "description": "Controls the type of patrol.",
-          "items": {
-            "$ref": "#/$defs/PatrolType"
-          },
-          "title": "Types",
-          "type": "array"
-        },
-        "tags": {
-          "description": "Tags are used for some filtering purposes, and some odd-and-ends. Tags never affect outcome.",
-          "items": {
-            "$ref": "#/$defs/Tag"
-          },
-          "title": "Tags",
-          "type": "array"
-        },
-        "poi": {
-          "$ref": "#/$defs/PointsOfInterestGroup",
-          "description": "The relevant points of interest. Points of Interest never affect outcome.",
-          "title": "Poi"
-        },
-        "patrol_art": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "description": "The name of displayed patrol art file, without any file extension (no .png).",
-          "title": "Patrol Art"
-        },
-        "patrol_art_clean": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "If patrol_art contains gore, this line can hold a clean version. The existence of a non-empty string in this parameter marks the patrol art in \"patrol_art\" as explicit.",
-          "title": "Patrol Art Clean"
-        },
-        "required_cat_types": {
-          "additionalProperties": {
-            "maxItems": 2,
-            "minItems": 2,
-            "prefixItems": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "integer"
-              }
-            ],
-            "type": "array"
-          },
-          "description": "Allows specification of the minimum and maximum number of specific types of cats that are allowed on the patrol.",
-          "propertyNames": {
-            "$ref": "#/$defs/MinMaxStatusDictKey"
-          },
-          "title": "Required Cat Types",
-          "type": "object"
-        },
-        "frequency": {
-          "default": 4,
-          "description": "Controls how common a patrol is. 4 is the most common, 1 is the least.",
-          "title": "Frequency",
-          "type": "integer"
-        },
-        "chance_of_success": {
-          "description": "Controls chance to succeed. Higher number is higher chance to succeed.",
-          "title": "Chance Of Success",
-          "type": "integer"
-        },
-        "involved_cats": {
-          "$ref": "#/$defs/InvolvedCatsPatrolEvent",
-          "description": "Used to add constraints for the various involved cats.",
-          "title": "Involved Cats"
-        },
-        "relationship_constraint": {
-          "description": "Dictates what relationships cats can have towards each other.",
-          "items": {
-            "$ref": "#/$defs/RelationshipConstraint"
-          },
-          "title": "Relationship Constraint",
-          "type": "array"
-        },
-        "patrol_temperament": {
-          "description": "Constrains the event to only occur if the patrol has one of these temperaments.",
-          "items": {
-            "$ref": "#/$defs/Temperament"
-          },
-          "title": "Patrol Temperament",
-          "type": "array"
-        },
-        "other_clan_temperament": {
-          "description": "Constrains the event to only occur if the involved other Clan has one of these temperaments.",
-          "items": {
-            "$ref": "#/$defs/Temperament"
-          },
-          "title": "Other Clan Temperament",
-          "type": "array"
-        },
-        "intro_text": {
-          "description": "The text that displays when the patrol first starts.",
-          "title": "Intro Text",
-          "type": "string"
-        },
-        "decline_text": {
-          "description": "The text that displays if the patrol is declined (do not proceed)",
-          "title": "Decline Text",
-          "type": "string"
-        },
-        "success_outcomes": {
-          "items": {
-            "$ref": "#/$defs/Outcome"
-          },
-          "title": "Success Outcomes",
-          "type": "array"
-        },
-        "fail_outcomes": {
-          "items": {
-            "$ref": "#/$defs/Outcome"
-          },
-          "title": "Fail Outcomes",
-          "type": "array"
-        },
-        "antag_success_outcomes": {
-          "items": {
-            "$ref": "#/$defs/Outcome"
-          },
-          "title": "Antag Success Outcomes",
-          "type": "array"
-        },
-        "antag_fail_outcomes": {
-          "items": {
-            "$ref": "#/$defs/Outcome"
-          },
-          "title": "Antag Fail Outcomes",
-          "type": "array"
-        }
-      },
-      "required": [
-        "event_id",
-        "types",
-        "patrol_art",
-        "frequency",
-        "chance_of_success",
-        "intro_text",
-        "decline_text",
-        "success_outcomes",
-        "fail_outcomes"
-      ],
-      "title": "PatrolSchemaItem",
-      "type": "object"
-    },
-    "PatrolType": {
-      "enum": [
-        "hunting",
-        "herb_gathering",
-        "border",
-        "training"
-      ],
-      "title": "PatrolType",
-      "type": "string"
     },
     "PermCondition": {
       "enum": [
@@ -1785,120 +1345,6 @@
         "persistent headaches"
       ],
       "title": "PermCondition",
-      "type": "string"
-    },
-    "PointsOfInterestCategoryEnum": {
-      "enum": [
-        "gathering",
-        "moonplace",
-        "terrain"
-      ],
-      "title": "PointsOfInterestCategoryEnum",
-      "type": "string"
-    },
-    "PointsOfInterestGroup": {
-      "anyOf": [
-        {
-          "$ref": "#/$defs/PointsOfInterestGroupByName"
-        },
-        {
-          "$ref": "#/$defs/PointsOfInterestGroupByTags"
-        },
-        {
-          "$ref": "#/$defs/PointsOfInterestGroupByCategory"
-        }
-      ],
-      "description": "Specifies Points of Interest constraints. Must use names OR tags OR category (not multiple at once).",
-      "title": "PointsOfInterestGroup"
-    },
-    "PointsOfInterestGroupByCategory": {
-      "additionalProperties": false,
-      "properties": {
-        "category": {
-          "$ref": "#/$defs/PointsOfInterestCategoryEnum",
-          "description": "The category this POI belongs to.",
-          "title": "Category"
-        }
-      },
-      "required": [
-        "category"
-      ],
-      "title": "PointsOfInterestGroupByCategory",
-      "type": "object"
-    },
-    "PointsOfInterestGroupByName": {
-      "additionalProperties": false,
-      "properties": {
-        "name": {
-          "description": "Points of Interest with these specific IDs will be allowed.",
-          "items": {
-            "type": "string"
-          },
-          "title": "Name",
-          "type": "array"
-        }
-      },
-      "required": [
-        "name"
-      ],
-      "title": "PointsOfInterestGroupByName",
-      "type": "object"
-    },
-    "PointsOfInterestGroupByTags": {
-      "additionalProperties": false,
-      "properties": {
-        "tags": {
-          "description": "Points of Interest with these tags will be allowed.",
-          "items": {
-            "$ref": "#/$defs/PointsOfInterestTag"
-          },
-          "title": "Tags",
-          "type": "array"
-        }
-      },
-      "required": [
-        "tags"
-      ],
-      "title": "PointsOfInterestGroupByTags",
-      "type": "object"
-    },
-    "PointsOfInterestTag": {
-      "anyOf": [
-        {
-          "type": "string"
-        },
-        {
-          "$ref": "#/$defs/PointsOfInterestTagEnum"
-        }
-      ],
-      "title": "PointsOfInterestTag"
-    },
-    "PointsOfInterestTagEnum": {
-      "enum": [
-        "cave",
-        "covered",
-        "fall_risk",
-        "hole",
-        "prey",
-        "prey:flying",
-        "prey:water",
-        "prey:ground",
-        "prey:eggs",
-        "prey:fish",
-        "rocks",
-        "tainted",
-        "trees",
-        "Twolegs",
-        "Twolegs:abandoned",
-        "Twolegs:present",
-        "unstable",
-        "water",
-        "water:still",
-        "water:flowing",
-        "water:ocean",
-        "nests"
-      ],
-      "title": "PointsOfInterestTagEnum",
       "type": "string"
     },
     "RelationshipChange": {
@@ -2550,6 +1996,190 @@
       "title": "Trait",
       "type": "string"
     },
+    "TransitionSchemaItem": {
+      "additionalProperties": false,
+      "properties": {
+        "location": {
+          "$ref": "#/$defs/Location",
+          "description": "Constrains the event to only occur if a player chooses a specific biome."
+        },
+        "season": {
+          "description": "Constrains the event to only occur once the Clan is in a specific season.",
+          "items": {
+            "$ref": "#/$defs/Season"
+          },
+          "title": "Season",
+          "type": "array"
+        },
+        "tags": {
+          "description": "Used for some filtering purposes",
+          "items": {
+            "$ref": "#/$defs/Tag"
+          },
+          "title": "Tags",
+          "type": "array"
+        },
+        "strings": {
+          "description": "List of the text that will be displayed in-game as events.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Strings",
+          "type": "array"
+        },
+        "required_reputation": {
+          "$ref": "#/$defs/RequiredReputation",
+          "description": "Constrains the event to only occur if the player clan has the required reputation",
+          "title": "Required Reputation"
+        },
+        "relationship_constraint": {
+          "description": "Used to require specific relationships between the cats",
+          "items": {
+            "$ref": "#/$defs/RelationshipConstraint"
+          },
+          "title": "Relationship Constraint",
+          "type": "array"
+        },
+        "other_clan_temperament": {
+          "description": "Constrains the event to only occur if the involved other Clan has one of these temperaments.",
+          "items": {
+            "$ref": "#/$defs/Temperament"
+          },
+          "title": "Other Clan Temperament",
+          "type": "array"
+        },
+        "reputation_changes": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "propertyNames": {
+            "enum": [
+              "outsider",
+              "other_clan"
+            ]
+          },
+          "title": "Reputation Changes",
+          "type": "object"
+        },
+        "relationship_changes": {
+          "description": "Used to change specific relationships between the cats",
+          "items": {
+            "$ref": "#/$defs/RelationshipChange"
+          },
+          "title": "Relationship Changes",
+          "type": "array"
+        },
+        "supply": {
+          "description": "Indicates changes to the supply of the Clan. Each supply change block is a new change",
+          "items": {
+            "$ref": "#/$defs/Supply"
+          },
+          "title": "Supply",
+          "type": "array"
+        },
+        "death": {
+          "description": "Indicate which cats should die as a result of this event. You can specify different \"types\" of death as separate blocks",
+          "items": {
+            "$ref": "#/$defs/Death"
+          },
+          "title": "Death",
+          "type": "array"
+        },
+        "condition": {
+          "description": "Indicate which cats should receive conditions and what conditions they receive. You can add multiple condition blocks",
+          "items": {
+            "$ref": "#/$defs/Condition"
+          },
+          "title": "Condition",
+          "type": "array"
+        },
+        "lost": {
+          "description": "Indicate which cats should be lost from their Clan. You can add multiple lost blocks",
+          "items": {
+            "additionalProperties": {
+              "items": {
+                "$ref": "#/$defs/GatherCat"
+              },
+              "type": "array"
+            },
+            "propertyNames": {
+              "const": "cats"
+            },
+            "type": "object"
+          },
+          "title": "Lost",
+          "type": "array"
+        },
+        "join": {
+          "description": "Indicate which cats will join the player Clan. You can add multiple join blocks",
+          "items": {
+            "$ref": "#/$defs/Join"
+          },
+          "title": "Join",
+          "type": "array"
+        },
+        "meet": {
+          "description": "Indicate which cats will meet the player Clan. You can add multiple meet blocks",
+          "items": {
+            "$ref": "#/$defs/Meet"
+          },
+          "title": "Meet",
+          "type": "array"
+        },
+        "gain_accessory": {
+          "description": "Indicate which cats will gain an accessory. You can add multiple gain_accessory blocks",
+          "items": {
+            "$ref": "#/$defs/GainAccessory"
+          },
+          "title": "Gain Accessory",
+          "type": "array"
+        },
+        "future_event": {
+          "description": "Schedules another event to happen in the future.",
+          "items": {
+            "$ref": "#/$defs/FutureEvent"
+          },
+          "title": "Future Event",
+          "type": "array"
+        },
+        "event_id": {
+          "description": "Separates the events into their blocks. Generally, the ID includes the condition, personality, age, and status of the main_cat, as well as the condition, personality, age, and status of any other cat mentioned.",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "frequency": {
+          "default": 4,
+          "description": "Controls how common an event is. 4 is the most common, 1 is the least.",
+          "title": "Frequency",
+          "type": "integer"
+        },
+        "involved_cats": {
+          "$ref": "#/$defs/InvolvedCatsTransitionEvent",
+          "description": "Used to add constraints for the various involved cats.",
+          "title": "Involved Cats"
+        },
+        "new_gender": {
+          "description": "Determines what gender the primary cat is becoming.",
+          "items": {
+            "enum": [
+              "trans male",
+              "trans female",
+              "nonbinary"
+            ],
+            "type": "string"
+          },
+          "title": "New Gender",
+          "type": "array"
+        }
+      },
+      "required": [
+        "strings",
+        "event_id",
+        "frequency"
+      ],
+      "title": "TransitionSchemaItem",
+      "type": "object"
+    },
     "Value": {
       "enum": [
         "romance",
@@ -2562,10 +2192,10 @@
       "type": "string"
     }
   },
-  "description": "Patrols in Clan Generator.",
+  "description": "Transition in Clan Generator.",
   "items": {
-    "$ref": "#/$defs/PatrolSchemaItem"
+    "$ref": "#/$defs/TransitionSchemaItem"
   },
-  "title": "PatrolSchema",
+  "title": "TransitionSchema",
   "type": "array"
 }

@@ -243,7 +243,7 @@ class TestNewCatCreation(unittest.TestCase):
             # test male works
             option_dict = InvolvedCatDict(
                 can_create_new_cat={},
-                gender="male",
+                gender=["male"],
             )
 
             cat_list = updated_create_new_cat(
@@ -259,7 +259,7 @@ class TestNewCatCreation(unittest.TestCase):
             # test female works
             option_dict = InvolvedCatDict(
                 can_create_new_cat={},
-                gender="female",
+                gender=["female"],
             )
 
             cat_list = updated_create_new_cat(
@@ -276,7 +276,7 @@ class TestNewCatCreation(unittest.TestCase):
             set_clan_setting("same sex birth", False)
             option_dict = InvolvedCatDict(
                 can_create_new_cat={},
-                gender="can_birth",
+                gender=["can_birth"],
             )
 
             cat_list = updated_create_new_cat(
