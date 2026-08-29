@@ -118,7 +118,6 @@ def one_moon():
     pregnancy_events.increment_pregnancy_age()
     check_war()
 
-
     if game.clan.game_mode in ("expanded", "cruel_season") and game.clan.freshkill_pile:
         # feed the cats and update the nutrient status
         relevant_cats = list(
