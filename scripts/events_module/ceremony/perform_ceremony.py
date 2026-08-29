@@ -151,10 +151,10 @@ def check_and_promote_deputy():
         return
 
     # This determines all the cats who are eligible to be deputy.
-    if get_config("ranks.only_leader_kits_deputy"):
+    if get_config("ranks.only_leader_kits_deputy") and game.clan.leader is not None:
         leaders_kits = []
         for cat in Cat.all_cats_list:
-            if game.clan.leader is not None and game.clan.leader.is_parent(cat):
+            if game.clan.leader.is_parent(cat):
                 leaders_kits.append(cat)
         possible_deputies = list(
             filter(
