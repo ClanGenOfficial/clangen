@@ -6551,6 +6551,7 @@
         ],
         "involved_cats": {
             "r_c": {
+                "group": ["player_clan"],
                 "standing": {
         "currently": [
             "lost"
