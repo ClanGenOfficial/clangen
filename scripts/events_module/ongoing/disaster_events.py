@@ -2,10 +2,10 @@ import random
 
 from scripts.cat.cats import Cat
 from scripts.cat.enums import CatRank
-from scripts.event_class import Single_Event
+from scripts.events_module.event_information import EventInformation
 from scripts.events_module.generate_events import GenerateEvents
-from scripts.game_structure.game_essentials import game
-from scripts.utility import find_alive_cats_with_rank
+from scripts.game_structure import game
+from scripts.clan_package.get_clan_cats import find_alive_cats_with_rank
 
 
 # ---------------------------------------------------------------------------- #
@@ -69,8 +69,8 @@ class DisasterEvents:
 
         # display trigger event
         event = self.disaster_text(chosen_disaster.trigger_events)
-        event.replace("c_n", f"{game.clan.displayname}Clan")
-        game.cur_events_list.append(Single_Event(event, "misc"))
+        event.replace("c_n", game.clan.name)
+        game.cur_events_list.append(EventInformation(event, ["misc"]))
 
     def handle_current_primary_disaster(self):
         """
@@ -88,7 +88,7 @@ class DisasterEvents:
             >= game.clan.primary_disaster.duration
         ):
             event = self.disaster_text(game.clan.primary_disaster.conclusion_events)
-            game.cur_events_list.append(Single_Event(event, "misc"))
+            game.cur_events_list.append(EventInformation(event, ["misc"]))
             game.clan.primary_disaster = None
             return
         else:
@@ -97,7 +97,7 @@ class DisasterEvents:
                 f"moon{game.clan.primary_disaster.current_duration}"
             ]
             event = self.disaster_text(event_list)
-            game.cur_events_list.append(Single_Event(event, "misc"))
+            game.cur_events_list.append(EventInformation(event, ["misc"]))
 
             # checking if a secondary disaster is triggered
             if game.clan.primary_disaster.secondary_disasters:
@@ -132,7 +132,7 @@ class DisasterEvents:
                     secondary_disaster = random.choice(picked_disasters)
                     print("chosen secondary", secondary_disaster)
                     event = self.disaster_text(secondary_disaster["trigger_events"])
-                    game.cur_events_list.append(Single_Event(event, "misc"))
+                    game.cur_events_list.append(EventInformation(event, ["misc"]))
 
                     # now grab all the disaster's info and save it
                     secondary_disaster = GenerateEvents.possible_ongoing_events(
@@ -156,7 +156,7 @@ class DisasterEvents:
             >= game.clan.secondary_disaster.duration
         ):
             event = self.disaster_text(game.clan.secondary_disaster.conclusion_events)
-            game.cur_events_list.append(Single_Event(event, "misc"))
+            game.cur_events_list.append(EventInformation(event, ["misc"]))
             game.clan.secondary_disaster = None
             return
         else:
@@ -165,7 +165,7 @@ class DisasterEvents:
                 f"moon{game.clan.secondary_disaster.current_duration}"
             ]
             event = self.disaster_text(event_list)
-            game.cur_events_list.append(Single_Event(event, "misc"))
+            game.cur_events_list.append(EventInformation(event, ["misc"]))
 
         return
 
@@ -208,6 +208,6 @@ class DisasterEvents:
         text = text.replace("lead_name", str(leader.name))
         text = text.replace("dep_name", str(deputy.name))
         text = text.replace("med_name", str(random.choice(med_cats).name))
-        text = text.replace("c_n", f"{game.clan.displayname}Clan")
+        text = text.replace("c_n", game.clan.name)
 
         return text

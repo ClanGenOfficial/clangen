@@ -1,0 +1,13 @@
+{
+        "positive_log": [
+            "m_c visits the new litter and can't help feeling warmly toward this new addition to the family.",
+            "m_c is excited for {PRONOUN/m_c/poss} family to grow further."
+        ],
+        "negative_log": [
+            "m_c finds {PRONOUN/m_c/self} judging the new kitten by {PRONOUN/r_c/poss} parent's actions.",
+            "m_c doesn't see how {PRONOUN/m_c/subject} could be expected to celebrate the new litter."
+        ],
+        "neutral_log": [
+            "m_c finds {PRONOUN/m_c/poss} feelings conflicted towards the new family addition."
+        ]
+}

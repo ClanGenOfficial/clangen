@@ -1,5 +1,7 @@
 {
     "en": {
+        "full_settings": "Open Game Settings",
+        "full_settings_info": "Change the overall game and audio settings",
         "general": "general settings",
         "general_info": "Change the general Clan-specific settings",
         "relation": "relation settings",

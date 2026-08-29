@@ -1,0 +1,209 @@
+{
+    "MASKED_TAIL": [
+        "MASK",
+        "ROSETAIL"
+    ],
+    "MASKED_ROBIN": [
+        "MASK",
+        "ROBIN"
+    ],
+    "MASKED_ONE": [
+        "ONE",
+        "MASK"
+    ],
+    "MASKED_SHILOH": [
+        "MASK",
+        "SHILOH"
+    ],
+    "PIECEMEAL": [
+        "MASK",
+        "CHEST",
+        "ROSETAIL",
+        "MINIMALTHREE"
+    ],
+    "RED_SIDE": [
+        "SIDEMASK",
+        "REDTAIL"
+    ],
+    "RED_ROBIN": [
+        "REDTAIL",
+        "ROBIN"
+    ],
+    "ROBIN_TAIL": [
+        "ROBIN",
+        "ROSETAIL"
+    ],
+    "ROBIN_SAFI": [
+        "ROBIN",
+        "SAFI"
+    ],
+    "BIRD_TIME": [
+        "ORIOLE",
+        "ROBIN"
+    ],
+    "FRECKLED_BIRD": [
+        "FRECKLED",
+        "ORIOLE",
+        "ROBIN"
+    ],
+    "FRECKLED_OREO": [
+        "FRECKLED",
+        "OREO"
+    ],
+    "FRECKLED_BELOVED": [
+        "BELOVED",
+        "FRECKLED"
+    ],
+    "FRECKLED_SMOKE": [
+        "SMOKE",
+        "FRECKLED"
+    ],
+    "FRECKLED_SAFI": [
+        "FRECKLED",
+        "SAFI"
+    ],
+    "FRECKLED_STREAM": [
+        "FRECKLED",
+        "STREAMSTRIKE"
+    ],
+    "FRECKLED_GRUMP": [
+        "GRUMPYFACE",
+        "FRECKLED"
+    ],
+    "FRECKLED_BLANKET": [
+        "FRECKLED",
+        "BLANKET"
+    ],
+    "SMOKING_EMBER": [
+        "EMBER",
+        "SMOKE"
+    ],
+    "ARMTAIL_SMOKE": [
+        "ARMTAIL",
+        "SMOKE"
+    ],
+    "GRUMPY_SMOKE": [
+        "GRUMPYFACE",
+        "SMOKE"
+    ],
+    "SMUDGED_SMOKE": [
+        "SMUDGED",
+        "SMOKE"
+    ],
+    "SMUDGED_SAFI": [
+        "SMUDGED",
+        "SAFI"
+    ],
+    "DAUB_SAFI": [
+        "DAUB",
+        "SAFI"
+    ],
+    "MINIMAL_ONETWO": [
+        "MINIMALONE",
+        "MINIMALTWO"
+    ],
+    "MINIMAL_TWOTHREE": [
+        "MINIMALTWO",
+        "MINIMALTHREE"
+    ],
+    "MINIMAL_THREEFOUR": [
+        "MINIMALTHREE",
+        "MINIMALFOUR"
+    ],
+    "MINIMAL_ALL": [
+        "MINIMALONE",
+        "MINIMALTWO",
+        "MINIMALTHREE",
+        "MINIMALFOUR"
+    ],
+    "EYEDOT_ONE": [
+        "EYEDOT",
+        "ONE"
+    ],
+    "BRIE_ONE": [
+        "BRIE",
+        "ONE"
+    ],
+    "ARMTAIL_ONE": [
+        "ARMTAIL",
+        "ONE"
+    ],
+    "CHIMERA_THREE": [
+        "CHIMERA",
+        "THREE"
+    ],
+    "MOTTLED_THREE": [
+        "MOTTLED",
+        "THREE"
+    ],
+    "SHILOH_FOUR": [
+        "SHILOH",
+        "FOUR"
+    ],
+    "DEARHEART": [
+        "BELOVED",
+        "HEARTBEAT"
+    ],
+    "DENSE_BRINDLE": [
+        "FRECKLED",
+        "BRINDLE"
+    ],
+    "EXPANDED_CHIMERA": [
+        "CHIMERA",
+        "ONE",
+        "FRECKLED"
+    ],
+    "PATCHY_OREO": [
+        "OREO",
+        "ONE"
+    ],
+    "BRINDLED_BODY": [
+        "BODY",
+        "BRINDLE"
+    ],
+    "ONE_DELILAH": [
+        "DELILAH",
+        "ONE"
+    ],
+    "PANTS_FACE": [
+        "SIDEMASK",
+        "SWOOP"
+    ],
+    "BELOVED_BIRD": [
+        "ROBIN",
+        "HEARTBEAT",
+        "BELOVED"
+    ],
+    "MOTTLED_SHILOH": [
+        "SHILOH",
+        "MOTTLED"
+    ],
+    "CHIMERIC_EMBER": [
+        "EMBER",
+        "BANDANA",
+        "CHIMERA"
+    ],
+    "SOL": [
+        "SMUDGED",
+        "REDTAIL",
+        "ONE",
+        "MINIMALTHREE"
+    ],
+    "OREO_MAN": [
+        "PACMAN",
+        "OREO"
+    ],
+    "OC_TIME": [
+        "STREAMSTRIKE",
+        "DAPPLENIGHT"
+    ],
+    "MINIMAL_ORIOLE": [
+        "ORIOLE",
+        "MINIMALTWO"
+    ],
+    "BROKEN_HEARTED": [
+        "HALF",
+        "HEARTBEAT",
+        "GRUMPYFACE"
+    ]
+}

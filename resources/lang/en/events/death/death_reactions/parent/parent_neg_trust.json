@@ -1,0 +1,10 @@
+{
+    "general": {
+        "body": [
+            "r_c stares blankly at the body of m_c, {PRONOUN/r_c/subject} knew {PRONOUN/r_c/subject} should care, should be in pain, but the relief of no longer being deceived and lied to by {PRONOUN/r_c/poss} own kit outweighs anything else."
+        ],
+        "no_body": [
+            "r_c looks all over the territory and camp, checking every hiding spot m_c had liked as a kit, not trusting m_c to actually be dead, if {PRONOUN/m_c/subject} had never been honest to {PRONOUN/m_c/poss} own parent, why would {PRONOUN/m_c/subject} be honest if {PRONOUN/m_c/subject} {VERB/m_c/were/was} trying to escape instead?"
+        ]
+    }
+}

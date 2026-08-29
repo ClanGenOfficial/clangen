@@ -28,8 +28,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was washed out to sea.",
-                "lead_death": "{VERB/m_c/were/was} washed out to sea"
+                "death": "m_c was washed out to sea."
             }
         ]
     },
@@ -52,8 +51,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was killed by a poisonous sea creature.",
-                "lead_death": "{VERB/m_c/were/was} killed by a poisonous sea creature"
+                "death": "m_c was killed by a poisonous sea creature."
             }
         ]
     },
@@ -115,8 +113,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was lost to the sea while trying to save r_c.",
-                "lead_death": "{VERB/m_c/were/was} washed out to sea while trying to save r_c"
+                "death": "m_c was lost to the sea while trying to save r_c."
             }
         ],
         "relationships": [
@@ -128,30 +125,21 @@
                     "m_c"
                 ],
                 "values": [
-                    "platonic",
+                    "like",
                     "trust",
                     "respect"
                 ],
-                "amount": 15
-            },
-            {
-                "cats_from": [
-                    "r_c"
-                ],
-                "cats_to": [
-                    "m_c"
-                ],
-                "values": [
-                    "dislike"
-                ],
-                "amount": -15
+                "amount": 30,
+                "log": {
+                    "cats_from": "cat_to drowned trying to save r_c's life."
+                }
             }
         ]
     },
     {
         "event_id": "bch_death_abyss_any1",
         "location": [
-            "beach:camp3"
+            "beach"
         ],
         "season": [
             "any"
@@ -176,8 +164,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was taken by a sea creature.",
-                "lead_death": "{VERB/m_c/were/was} taken by a sea creature"
+                "death": "m_c was taken by a sea creature."
             }
         ]
     },
@@ -213,8 +200,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was pushed out to sea by enemy warriors.",
-                "lead_death": "{VERB/m_c/were/was} pushed out to sea by enemy warriors"
+                "death": "m_c was pushed out to sea by enemy warriors."
             }
         ],
         "other_clan": {
@@ -251,7 +237,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c succumbed to dehydration and overheating."
+                "death": "m_c succumbed to dehydration and overheating."
             }
         ]
     },
@@ -291,7 +277,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died due to dehydration and heat exhaustion."
+                "death": "m_c died due to dehydration and heat exhaustion."
             }
         ]
     },
@@ -320,7 +306,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was claimed by dehydration and heat exhaustion."
+                "death": "m_c was claimed by dehydration and heat exhaustion."
             }
         ]
     },
@@ -360,7 +346,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c was claimed by dehydration and heat exhaustion."
+                "death": "m_c was claimed by dehydration and heat exhaustion."
             }
         ]
     },
@@ -425,7 +411,6 @@
                 "insecure",
                 "nervous",
                 "responsible",
-                "sneaky",
                 "strict",
                 "vengeful",
                 "wise"
@@ -436,8 +421,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} shoved off a cliff by r_c",
-                "lead_death": "{VERB/m_c/were/was} shoved off a cliff by r_c"
+                "death": "m_c died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} shoved off a cliff by r_c"
             }
         ],
         "relationships": [
@@ -448,24 +432,15 @@
                 "cats_to": [
                     "r_c"
                 ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": 25
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
                 "mutual": false,
                 "values": [
-                    "trust"
+                    "trust",
+                    "like"
                 ],
-                "amount": -25
+                "amount": -50,
+                "log": {
+                    "cats_from": "cat_from was shoved off a cliff by cat_to."
+                }
             }
         ],
         "future_event": [
@@ -474,7 +449,7 @@
                 "pool": {
                     "sub_type": ["murder_reveal"]
                 },
-                "moon_delay": [1,24],
+                "moon_delay": [1,12],
                 "involved_cats": {
                     "m_c": "r_c",
                     "mur_c": "m_c",
@@ -545,7 +520,6 @@
                 "insecure",
                 "nervous",
                 "responsible",
-                "sneaky",
                 "strict",
                 "vengeful",
                 "wise"
@@ -556,8 +530,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "reg_death": "m_c died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} shoved off a cliff by r_c",
-                "lead_death": "{VERB/m_c/were/was} shoved off a cliff by r_c"
+                "death": "m_c died when {PRONOUN/m_c/subject} {VERB/m_c/were/was} shoved off a cliff by r_c"
             }
         ],
         "relationships": [
@@ -568,24 +541,15 @@
                 "cats_to": [
                     "r_c"
                 ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": 25
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
                 "mutual": false,
                 "values": [
-                    "trust"
+                    "trust",
+                    "like"
                 ],
-                "amount": -25
+                "amount": -50,
+                "log": {
+                    "cats_from": "cat_from was shoved off a cliff by cat_to, who made the death look like an accident."
+                }
             }
         ],
         "future_event": [
@@ -594,7 +558,7 @@
                 "pool": {
                     "sub_type": ["murder_reveal"]
                 },
-                "moon_delay": [1,24],
+                "moon_delay": [1,12],
                 "involved_cats": {
                     "m_c": "r_c",
                     "mur_c": "m_c",
@@ -653,7 +617,6 @@
                 "daring",
                 "lonesome",
                 "shameless",
-                "sneaky",
                 "strange",
                 "vengeful",
                 "wise"
@@ -664,7 +627,7 @@
                 "cats": [
                     "m_c"
                 ],
-                "lead_death": "{VERB/m_c/were/was} trapped in the tides by r_c"
+                "death": "m_c died after being trapped in the tides by r_c"
             }
         ],
         "relationships": [
@@ -675,24 +638,15 @@
                 "cats_to": [
                     "r_c"
                 ],
-                "mutual": true,
-                "values": [
-                    "dislike"
-                ],
-                "amount": 25
-            },
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
                 "mutual": false,
                 "values": [
-                    "trust"
+                    "trust",
+                    "like"
                 ],
-                "amount": -25
+                "amount": -50,
+                "log": {
+                    "cats_from": "cat_from drowned in the tides as cat_to stood by and watched."
+                }
             }
         ],
         "future_event": [
@@ -701,7 +655,7 @@
                 "pool": {
                     "sub_type": ["murder_reveal"]
                 },
-                "moon_delay": [1,24],
+                "moon_delay": [1,12],
                 "involved_cats": {
                     "m_c": "r_c",
                     "mur_c": "m_c",
@@ -709,6 +663,102 @@
                         "age": ["any"]
                     }
                 }
+            }
+        ]
+    },
+    {
+  "event_id": "bch_death_kitappshipwreckfall",
+  "location": [
+    "beach:camp3"
+  ],
+  "season": [
+    "any"
+  ],
+  "tags": [],
+  "frequency": 1,
+  "event_text": "m_c climbed aboard the broken ship in camp, playing pretend as a Twoleg. No cat noticed what {PRONOUN/m_c/subject} {VERB/m_c/were/was} doing until the floorboards beneath {PRONOUN/m_c/object} gave way and {PRONOUN/m_c/subject} fell into the nothingness below.",
+  "m_c": {
+    "age": [
+      "kitten",
+      "adolescent"
+    ],
+    "skill": [
+      "-CLIMBER,0"
+    ],
+    "trait": [
+      "unruly",
+      "impulsive",
+      "attention-seeker",
+      "skittish",
+      "daydreamer",
+      "fearless",
+      "bossy",
+      "troublesome",
+      "childish",
+      "playful",
+      "bold",
+      "daring",
+      "confident",
+      "adventurous",
+      "shameless",
+      "strange",
+      "rebellious"
+    ],
+    "dies": true
+  },
+  "history": [
+    {
+      "cats": [
+        "m_c"
+      ],
+      "death": "m_c fell through the floorboards of the broken ship."
+    }
+  ]
+},
+    {
+        "event_id": "bch_death_extinction_drown",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "-greenleaf"
+        ],
+        "sub_type": [
+            "mass_death"
+        ],
+        "frequency": 2,
+        "event_text": "The Clan fails to notice the rising tide, and aren't able to get to high enough ground in time before multi_cat are swept away.",
+        "history": [
+            {
+                "cats": [
+                    "multi_cat"
+                ],
+                "death": "m_c was swept away by the rising tide."
+            }
+        ]
+    },
+    {
+        "event_id": "bch_death_kit_drown",
+        "location": [
+            "beach:camp4"
+        ],
+        "season": [
+            "-greenleaf"
+        ],
+        "frequency": 1,
+        "event_text": "While playing close to the water, m_c is swept away. {PRONOUN/m_c/poss/CAP} wails are swallowed by the ocean as {PRONOUN/m_c/subject} {VERB/m_c/go/goes} under and does not resurface.",
+        "m_c": {
+            "age": [
+                "kitten"
+            ],
+            "dies": true
+        },
+        "history": [
+            {
+                "cats": [
+                    "m_c"
+                ],
+                "death": "m_c played too close to the water and got swept away."
             }
         ]
     }

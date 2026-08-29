@@ -1,4 +1,5 @@
 {
+
     "crooked jaw": {
         "severity": "major",
         "congenital": "sometimes",
@@ -53,14 +54,16 @@
         ],
         "herbs": {
             "1": [
-            "daisy",
-            "juniper",
             "marigold",
-            "ragwort",
-            "poppy"
+            "ragwort"
         ],
-            "2": [],
-            "3": []
+            "2": [
+                "daisy",
+                "juniper"
+            ],
+            "3": [
+                "dandelion"
+            ]
         }
     },
     "born without a leg": {
@@ -90,13 +93,15 @@
         ],
         "herbs": {
             "1": [
-            "daisy",
-            "juniper",
             "marigold",
             "ragwort"
         ],
-            "2": [],
-            "3": []
+            "2": [
+                "daisy"
+            ],
+            "3": [
+                "juniper"
+            ]
         }
     },
     "weak leg": {
@@ -126,14 +131,16 @@
         ],
         "herbs": {
             "1": [
-            "daisy",
-            "juniper",
             "marigold",
-            "ragwort",
-            "poppy"
+            "ragwort"
         ],
-            "2": [],
-            "3": []
+            "2": [
+                "daisy",
+                "juniper"
+            ],
+            "3": [
+                "thyme"
+            ]
         }
     },
     "twisted leg": {
@@ -163,14 +170,18 @@
         ],
         "herbs": {
             "1": [
-            "daisy",
-            "juniper",
             "marigold",
             "ragwort",
-            "poppy"
+            "dandelion"
         ],
-            "2": [],
-            "3": []
+            "2": [
+                "juniper",
+                "daisy"
+            ],
+            "3": [
+                "poppy",
+                "thyme"
+            ]
         }
     },
     "lost their tail": {
@@ -200,12 +211,14 @@
         ],
         "herbs": {
             "1": [
-            "juniper",
-            "ragwort",
-            "poppy"
+            "juniper"
         ],
-            "2": [],
-            "3": []
+            "2": [
+                "ragwort"
+            ],
+            "3": [
+                "poppy"
+            ]
         }
     },
     "born without a tail": {
@@ -266,14 +279,18 @@
         ],
         "herbs": {
             "1": [
-            "daisy",
             "juniper",
             "ragwort",
             "marigold",
-            "poppy"
+            "dandelion"
         ],
-            "2": [],
-            "3": []
+            "2": [
+                "daisy",
+                "poppy"
+            ],
+            "3": [
+                "elder_leaves"
+            ]
         }
     },
     "raspy lungs": {
@@ -295,15 +312,23 @@
             {
                 "name": "whitecough",
                 "chance": 20
+            },
+            {
+                "name": "breathless fit",
+                "chance": 10
             }
         ],
         "herbs": {
             "1": [
-            "betony",
-            "mullein"
+            "betony"
         ],
-            "2": [],
-            "3": []
+            "2": [
+                "rosemary",
+                "juniper"
+            ],
+            "3": [
+                "mullein"
+            ]
         }
     },
     "wasting disease": {
@@ -354,10 +379,17 @@
         "herbs": {
             "1": [
             "juniper",
-            "ragwort"
+            "ragwort",
+            "goldenrod",
+            "mullein"
         ],
-            "2": [],
-            "3": []
+            "2": [
+                "betony",
+                "tansy"
+            ],
+            "3": [
+                "poppy"
+            ]
         }
     },
     "strange lump": {
@@ -406,10 +438,16 @@
             "1": [
             "juniper",
             "ragwort",
-            "poppy"
+            "goldenrod",
+            "dandelion"
         ],
-            "2": [],
-            "3": []
+            "2": [
+                "betony",
+                "mullein"
+            ],
+            "3": [
+                "poppy"
+            ]
         }
     },
     "blind": {
@@ -457,12 +495,24 @@
             {
                 "name": "torn pelt",
                 "chance": 40
+            },
+            {
+                "name": "selective mutism",
+                "chance": 250
             }
         ],
         "herbs": {
-            "1": [],
-            "2": [],
-            "3": []
+            "1": [
+                "daisy",
+                "betony"
+            ],
+            "2": [
+                "thyme"
+            ],
+            "3": [
+                "juniper",
+                "ragwort"
+            ]
         }
     },
     "one bad eye": {
@@ -592,13 +642,16 @@
         ],
         "herbs": {
             "1": [
-            "daisy",
-            "juniper",
-            "marigold",
-            "ragwort"
+            "marigold"
         ],
-            "2": [],
-            "3": []
+            "2": [
+                "daisy",
+                "ragwort",
+                "juniper"
+            ],
+            "3": [
+                "poppy"
+            ]
         }
     },
     "seizure prone": {
@@ -624,11 +677,15 @@
         ],
         "herbs": {
             "1": [
-            "ragwort",
-            "juniper"
+            "ragwort"
         ],
-            "2": [],
-            "3": []
+            "2": [
+                "juniper"
+        ],
+            "3": [
+                "thyme",
+                "betony"
+        ]
         }
     },
     "allergies": {
@@ -653,7 +710,9 @@
             }
         ],
         "herbs": {
-            "1": [],
+            "1": [
+                "juniper"
+            ],
             "2": [],
             "3": []
         }
@@ -704,16 +763,22 @@
             {
                 "name": "constant nightmares",
                 "chance": 20
+            },
+            {
+                "name": "selective mutism",
+                "chance": 250
             }
         ],
         "herbs": {
             "1": [
-            "thyme",
-            "juniper",
             "poppy"
         ],
-            "2": [],
-            "3": []
+            "2": [
+                "juniper"
+            ],
+            "3": [
+                "thyme"
+            ]
         }
     },
     "lasting grief": {
@@ -743,11 +808,15 @@
         ],
         "herbs": {
             "1": [
-            "thyme",
-            "juniper"
+            "poppy"
         ],
-            "2": [],
-            "3": []
+            "2": [
+                "juniper",
+                "ragwort"
+            ],
+            "3": [
+                "thyme"
+            ]
         }
     },
     "persistent headaches": {
@@ -777,8 +846,67 @@
         ],
         "herbs": {
             "1": [
+            "rosemary"
+        ],
+            "2": [
+                "juniper"
+            ],
+            "3": [
+            "poppy"
+            ]
+        }
+    },
+    "selective mutism": {
+        "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 4,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ],
+        "herbs": {
+            "1": [
             "poppy",
             "juniper"
+        ],
+            "2": [],
+            "3": []
+        }
+    },
+    "damaged throat": {
+        "severity": "minor",
+        "congenital": "never",
+        "moons_until": 4,
+        "mortality": {
+            "newborn": 0,
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "senior": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "sore throat",
+                "chance": 30
+            }
+        ],
+        "herbs": {
+            "1": [
+            "poppy",
+            "honey"
         ],
             "2": [],
             "3": []

@@ -1,0 +1,858 @@
+[
+    {
+        "event_id": "dst_hunt_herb_warriorleafbare1",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 2,
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "hunt_general_intro",
+        "intro_text": "p_l finds a patch of herbs that {PRONOUN\/p_l\/subject} {VERB\/p_l\/believe\/believes} c_n might need for their stores. {PRONOUN\/p_l\/subject\/CAP} freely {VERB\/p_l\/admit\/admits} to {PRONOUN\/p_l\/poss} patrol {PRONOUN\/p_l\/subject} {VERB\/p_l\/are\/is}n't a medicine cat, and {VERB\/p_l\/ask\/asks} {PRONOUN\/p_l\/poss} companions' advice. What do they know about this part of the desert's herbal properties, what grows in the brief bloom of leaf-bare?",
+        "decline_text": "They decide to focus on hunting and leave the herb collecting to the medicine cats.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "It's not their normal task, but they're all smart enough to value supporting the Clan's medicine cat den. The patrol brings the herbs back to camp and they are put to good use."
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from appreciated cat_to's suggestion that they gather herbs for the medicine cat den even while hunting."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 carefully plucks some of the herbs and takes them back to the camp to be identified before the patrol goes to the trouble of collecting them, smartly deciding to get an informed opinion before committing the patrol."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,0",
+                                "INSIGHTFUL,0",
+                                "SENSE,0",
+                                "STORY,0",
+                                "HEALER,0",
+                                "LORE,0"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's wise decision to take some herbs back to camp to be identified on a hunting patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "random_herbs",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol brings the herbs back to camp, only to find out that while the herbs promote good gut health, they're not a rare resource. Still, c_n will be eating an extra healthy dinner tonight with the herbs sprinkled into their fresh-kill."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to brought back some herbs to camp for c_n, even though they weren't medicinal."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_hunt_leafbarerainstorm1",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 2,
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "hunt_general_intro",
+        "intro_text": "It starts raining soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
+        "decline_text": "They decide to turn back and wait until the rain dies down.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The desert cats turn their faces to the skies, reveling in the life-giving water. It feels like the very world itself joins them in celebration, insects emerging from hiding and chirping, birds flitting across the sandy scrubland, and the patrol returns to camp with a huge bounty of catches."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to reveled in a downpour during a hunting patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 leads the patrol to one of their favorite hunting spots, a bounce in everyone's steps as the water promises new life for the desert. The cats are unused to hunting the scrubland in wet, let alone in mud, but thanks to s_c0 they bring home a mighty haul, laughing at each other's damp and fluffed out fur."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "HUNTER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_to led cat_from's patrol on a bountiful hunt in rainy weather."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "The cats slip and slide in a world suddenly damp and wet in the growing rainstorm, but s_c0 commiserates with those who fall and encourages every cat on, the patrol not only having fun with each other, but also managing to catch a good haul of desert creatures as confused by the slippery ground as they are."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "compassionate",
+                                "faithful",
+                                "loving"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from appreciated cat_to's buoyant mood on a slippery hunting patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Although the cats rejoice at the rain, after the umpteenth time someone slips on the wet rock the hunting trip has to be called off. They'll go out again soon, ready to take advantage of the bounty of leaf-bare."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to struggled to hunt together on a slippery hunting patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_hunt_leafbarerainstorm2",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 2,
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ]
+        },
+        "chance_of_success": 40,
+        "patrol_art": "hunt_general_intro",
+        "intro_text": "It starts raining soon after p_l sets out, trying to bring back something nice for the fresh-kill pile.",
+        "decline_text": "They decide to turn back and wait until the rain dies down.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Despite the rain, and how unfamiliar the desert looks in the gray haze, p_l manages to hunt successfully, finding the normal birds hiding from the downpour. It amuses them that their prey hides in the same places from rain as the birds normally do from sun."
+                ],
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 really shows {PRONOUN\/s_c0\/poss} talent, hunting down a mid-sized tortoise that has overturned itself on the newly slippery ground in the rainstorm."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "HUNTER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Although p_l rejoices at the rain, after the umpteenth time they slip on the wet rock the hunting trip has to be called off. They'll go out again soon, ready to take advantage of the bounty of leaf-bare."
+                ],
+                "exp_gained": 0,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_hunt_leafbarerainstorm3",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 2,
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "tags": [
+            "romance"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ],
+            "apprentice": [
+                -1,
+                -1
+            ]
+        },
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "cats_from": [
+                    "patrol_cats"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "can_romance"
+                ]
+            }
+        ],
+        "chance_of_success": 50,
+        "patrol_art": "hunt_general_intro",
+        "intro_text": "It starts raining soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
+        "decline_text": "They decide to turn back and wait until the rain dies down.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "A storm descends, sudden and violent enough to drive the c_n cats to shelter. The life-giving water is still a relief to witness, but they aren't interested in being as pummeled like the dry ground. The cats shelter in a rocky alcove, sharing stories and laughing occasionally as everyone shares tongues, licking their pelts dry."
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "romance",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to sheltered and snuggled during a downpour on patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "A storm descends, sudden and violent enough to drive the c_n cats to shelter. s_c0 keeps everyone's spirits up as the patrol hides in an abandoned tortoise den where the wind can't get them, until everyone is talking, a little damp but keeping each other's spirits up."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "SPEAKER,2"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "romance",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to sheltered and snuggled in a tortoise den during a downpour."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from appreciated cat_to keeping every cat's spirits up while sheltering from a downpour."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "A storm descends, sudden and violent enough to drive the c_n cats to shelter. As the cats hide from the wind, s_c0 keeps an eye out for everyone. There's a lot of restless energy in the shelter as the cats watch leaf-bare bless c_n, but it's easily redirected to games and friendly debates, perhaps even a little flirting."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "compassionate",
+                                "faithful",
+                                "loving"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "romance",
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to sheltered and snuggled in a tortoise den during a downpour."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from appreciated cat_to keeping every cat's spirits up while sheltering from a downpour."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Although the cats rejoice at the rain, after the umpteenth time someone slips on the wet rock the hunting trip has to be called off. They'll go out again soon, ready to take advantage of the bounty of leaf-bare."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to struggled to hunt together on a slippery hunting patrol."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "dst_hunt_swiftfox_leaf-barevixen1",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 2,
+        "location": [
+            "desert"
+        ],
+        "season": [
+            "leaf-bare"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "hunt_general_intro",
+        "intro_text": "The patrol spots a swift fox in the distance, behaving weirdly.",
+        "decline_text": "Best not to risk a fight. The patrol watches it go.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol charges the vixen, and she runs, leaving the scent of milk in the air behind her. Though they don't know where her cubs are hidden, without their mother they won't pose a threat to the Clan."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to drove off a swift fox vixen together."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from heard about how cat_to's patrol drove off a swift fox vixen."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "The patrol sneaks closer, until p_l realizes that the vixen is approaching her den \u2014 a den where cubs must surely hide. A competitor denning within c_n's borders is an outrage, and the patrol leaps to attack, pinning the vixen in a cluster of boulders. Her body, and that of her cubs, will go to the fresh-kill pile tonight."
+                ],
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to killed a swift fox vixen and her cubs together."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from heard about how cat_to's patrol killed a swift fox vixen and her cubs."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 holds the patrol back until they spot the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unsheathed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate to the fury of c_n."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "CLEVER,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 30,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from was impressed that cat_to knew to wait and lure out a swift fox vixen's mate so the patrol could drive off both."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "clan"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from heard about how cat_to's patrol drove off both a swift fox vixen and her mate."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small carnivore gets its name."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to doubted each other's skills after a swift fox easily escaped them on patrol."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "As the patrol descends on the vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c0, both foxes using the patrol switching to r_c's defense as their signal to flee."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "trust"
+                        ],
+                        "amount": -3,
+                        "log": {
+                            "cats_from": "cat_from and cat_to were unable to drive off a pair of swift foxes together."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "big_bite_injury"
+                        ],
+                        "scar_history": "m_c was marked by a fight with a pair of swift foxes.",
+                        "death_history": "m_c died of injuries inflicted by a pair of swift foxes."
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,5 +1,11 @@
 # clangen
 
+## On AI & LLMs
+
+> [!WARNING]
+> Issues and Pull Requests created with AI based tools are going to be closed without further comment.
+> Repeat offenders will be blocked from this project until further notice.
+
 ### [Discord Server](https://discord.gg/clangen) || [Official website](https://clangen.io) || [Itch.io Page](https://sablesteel.itch.io/clan-gen-fan-edit) 
 
 ## Description

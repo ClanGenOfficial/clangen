@@ -1,0 +1,27 @@
+[
+    {
+        "event_id": "gen_dead_deputy",
+        "strings": [
+            "Watches c_n proudly",
+            "Wishes {PRONOUN\/m_c\/subject} could have served c_n for longer",
+            "Hopes {PRONOUN\/m_c\/subject} {VERB\/m_c\/were\/was} a good deputy for c_n"
+        ]
+    },
+    {
+        "event_id": "dead_deputy_to_alive_deputy",
+        "strings": [
+            "Is proud of r_c for {PRONOUN\/r_c\/poss} leadership",
+            "Thinks the leader made a great choice by picking r_c as c_n's deputy"
+        ],
+        "involved_cats": {
+            "r_c": {
+                "status": [
+                    "deputy"
+                ],
+                "group": [
+                    "-afterlife"
+                ]
+            }
+        }
+    }
+]

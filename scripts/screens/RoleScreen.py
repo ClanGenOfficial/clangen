@@ -1,36 +1,36 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
 import os
+from typing import TYPE_CHECKING
 
 import i18n
 import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import game
-from scripts.game_structure.ui_elements import (
-    UITextBoxTweaked,
-    UISurfaceImageButton,
-)
-from scripts.utility import (
-    get_text_box_theme,
-    shorten_text_to_fit,
-    ui_scale_dimensions,
-    ui_scale,
-    adjust_list_text,
-)
+from scripts.game_structure import image_cache, game
+from ..config import get_config
+from ..ui.elements.text_box_tweaked import UITextBoxTweaked
+from ..ui.elements.surface_image_button import UISurfaceImageButton
+from ..ui.theme import get_text_box_theme
+from ..events_module.text_adjust import adjust_list_text, shorten_text_to_fit
+from ..ui.scale import ui_scale, ui_scale_dimensions
 from .Screens import Screens
+from .enums import GameScreen
 from ..game_structure.game.settings import game_setting_get
 from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
 from ..cat.enums import CatRank
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_box import BoxStyles, get_box
 from ..ui.generate_button import get_button_dict, ButtonStyles
+from ..ui.windows.cruel_locked_action import CruelLockedAction
+
+if TYPE_CHECKING:
+    from scripts.cat.cats import Cat
 
 
 class RoleScreen(Screens):
-    the_cat = None
+    the_cat: "Cat" = None
     selected_cat_elements = {}
     buttons = {}
     next_cat = None
@@ -41,7 +41,7 @@ class RoleScreen(Screens):
             self.mute_button_pressed(event)
 
             if event.ui_element == self.back_button:
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             elif event.ui_element == self.next_cat_button:
                 if isinstance(Cat.fetch_cat(self.next_cat), Cat):
                     switch_set_value(Switch.cat, self.next_cat)
@@ -54,6 +54,15 @@ class RoleScreen(Screens):
                     self.update_selected_cat()
                 else:
                     print("invalid previous cat", self.previous_cat)
+            elif not get_config("ranks.allow_manual"):
+                CruelLockedAction()
+                pass
+            #
+            #
+            #   ANYTHING BELOW HERE WILL NOT TRIGGER IF CRUEL SEASON DISABLES ROLE SWITCHING
+            #                               Ye have been warned
+            #
+            #
             elif event.ui_element == self.promote_leader:
                 if self.the_cat == game.clan.deputy:
                     game.clan.deputy = None
@@ -89,9 +98,9 @@ class RoleScreen(Screens):
                 self.the_cat.rank_change(CatRank.MEDIATOR_APPRENTICE, resort=True)
                 self.update_selected_cat()
 
-        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
+        elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             elif event.key == pygame.K_RIGHT:
                 switch_set_value(Switch.cat, self.next_cat)
                 self.update_selected_cat()
@@ -251,7 +260,7 @@ class RoleScreen(Screens):
             i18n.t(f"cat.personality.{self.the_cat.personality.trait}"),
             i18n.t("general.moons_age", count=self.the_cat.moons)
             + "  |  "
-            + self.the_cat.genderalign,
+            + self.the_cat.genderalign_string,
         ]
 
         if self.the_cat.mentor:
@@ -533,7 +542,7 @@ class RoleScreen(Screens):
         else:
             output = "screens.role.blurb_unknown"
 
-        return i18n.t(output, name=self.the_cat.name, clan=game.clan.displayname)
+        return i18n.t(output, name=self.the_cat.name, clan=game.clan.name)
 
     def exit_screen(self):
         self.back_button.kill()

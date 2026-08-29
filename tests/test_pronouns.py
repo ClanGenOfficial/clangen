@@ -18,9 +18,8 @@ import ujson
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-from scripts.cat.cats import Cat
-from scripts.game_structure.localization import get_new_pronouns
-from scripts.utility import process_text
+from scripts.cat.pronouns import get_new_pronouns
+from scripts.events_module.text_adjust import process_text
 
 
 def _test():
@@ -38,17 +37,27 @@ def _test():
     replacement_dict = {
         "m_c": _r,
         "r_c": _r,
+        "r_c0": _r,
         "r_c1": _r,
         "r_c2": _r,
+        "r_c3": _r,
+        "r_c4": _r,
+        "r_c5": _r,
         "n_c": _r,
-        "app1": _r,
-        "app2": _r,
-        "app3": _r,
-        "app4": _r,
-        "app5": _r,
-        "app6": _r,
+        "n_c0": _r,
+        "n_c1": _r,
+        "n_c2": _r,
+        "n_c3": _r,
+        "n_c4": _r,
+        "n_c5": _r,
         "p_l": _r,
         "s_c": _r,
+        "s_c0": _r,
+        "s_c1": _r,
+        "s_c2": _r,
+        "s_c3": _r,
+        "s_c4": _r,
+        "s_c5": _r,
         "(mentor)": _r,
         "l_n": _r,
         "dead_par1": _r,
@@ -64,6 +73,10 @@ def _test():
         "dep_name": _r,
         "med_name": _r,
         "cat_tag": _r,
+        "cat_to": _r,
+        "cat_from": _r,
+        "mc_mate": _r,
+        "rc_mate": _r,
     }
 
     for x in range(0, 11):
@@ -110,6 +123,8 @@ def _test_replacement_failure(path: str, repl_dict: dict) -> bool:
 
     for _str in get_all_strings(contents):
         try:
+            # maybe this is gross but it works
+            _str = _str.replace("multi_cat", "Name, Name, and Name")
             processed = process_text(
                 text=_str, cat_dict=repl_dict, raise_exception=True
             )

@@ -1,213 +1,38 @@
-#!/usr/bin/env python3
-
-
-# pylint: disable=line-too-long
-"""
-
-
-
-This file is the main file for the game.
-It also contains the main pygame loop
-It first sets up logging, then loads the version hash from version.ini (if it exists), then loads the cats and clan.
-It then loads the settings, and then loads the start screen.
-
-
-
-
-"""  # pylint: enable=line-too-long
-# DO NOT ADD YOUR IMPORTS HERE.
-# Scroll down to the "Load game" comment and add them there.
-# Side effects of imports WILL BREAK crucial setup logic for logging and init
-import os
-import shutil
-import sys
-import threading
-import time
-from importlib import reload
-from importlib.util import find_spec
-
-if not getattr(sys, "frozen", False):
-    requiredModules = [
-        "ujson",
-        "pygame",
-        "pygame_gui",
-        "platformdirs",
-        "pgpy",
-        "requests",
-        "strenum",
-    ]
-
-    isMissing = False
-
-    for module in requiredModules:
-        if find_spec(module) is None:
-            isMissing = True
-            break
-
-    if isMissing:
-        print(
-            """You are missing some requirements to run clangen!
-                
-                Please look at the "README.md" file for instructions on how to install them.
-                """
-        )
-
-        print(
-            "If you are still having issues, please ask for help in the clangen discord server: https://discord.gg/clangen"
-        )
-        sys.exit(1)
-
-    del requiredModules
-    del isMissing
-del find_spec
-
-from scripts.housekeeping.log_cleanup import prune_logs
-from scripts.housekeeping.stream_duplexer import UnbufferedStreamDuplexer
-from scripts.housekeeping.datadir import get_log_dir, setup_data_dir
-from scripts.housekeeping.version import get_version_info, VERSION_NAME
-
-try:
-    directory = os.path.dirname(__file__)
-except NameError:
-    directory = os.getcwd()
-if directory:
-    os.chdir(directory)
-
-if os.path.exists("auto-updated"):
-    print("Clangen starting, deleting auto-updated file")
-    os.remove("auto-updated")
-    shutil.rmtree("Downloads", ignore_errors=True)
-    print("Update Complete!")
-    print("New version: " + get_version_info().version_number)
-
-setup_data_dir()
-timestr = time.strftime("%Y%m%d_%H%M%S")
-
-stdout_file = open(get_log_dir() + f"/stdout_{timestr}.log", "a")
-stderr_file = open(get_log_dir() + f"/stderr_{timestr}.log", "a")
-sys.stdout = UnbufferedStreamDuplexer(sys.stdout, stdout_file)
-sys.stderr = UnbufferedStreamDuplexer(sys.stderr, stderr_file)
-
-# Setup logging
-import logging
-
-formatter = logging.Formatter(
-    "%(name)s - %(levelname)s - %(filename)s / %(funcName)s / %(lineno)d - %(message)s"
-)
-
-# Logging for file
-timestr = time.strftime("%Y%m%d_%H%M%S")
-log_file_name = get_log_dir() + f"/clangen_{timestr}.log"
-file_handler = logging.FileHandler(log_file_name)
-file_handler.setFormatter(formatter)
-# Only log errors to file
-file_handler.setLevel(logging.ERROR)
-# Logging for console
-stream_handler = logging.StreamHandler()
-stream_handler.setFormatter(formatter)
-logging.root.addHandler(file_handler)
-logging.root.addHandler(stream_handler)
-
-prune_logs(logs_to_keep=10, retain_empty_logs=False)
-
-
-def log_crash(logtype, value, tb):
-    """
-    Log uncaught exceptions to file
-    """
-    logging.critical("Uncaught exception", exc_info=(logtype, value, tb))
-    sys.__excepthook__(type, value, tb)
-
-
-sys.excepthook = log_crash
-
-# if user is developing in a github codespace
-if os.environ.get("CODESPACES"):
-    print("")
-    print("Github codespace user!!! Sorry, but sound *may* not work :(")
-    print(
-        "SDL_AUDIODRIVER is dsl. This is to avoid ALSA errors, but it may disable sound."
-    )
-    print("")
-    print("Web VNC:")
-    print(
-        f"https://{os.environ.get('CODESPACE_NAME')}-6080"
-        + f".{os.environ.get('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN')}"
-        + "/?autoconnect=true&reconnect=true&password=clangen&resize=scale"
-    )
-    print("(use clangen in fullscreen mode for best results)")
-    print("")
-
-if get_version_info().is_source_build:
-    print("Running on source code")
-    if get_version_info().version_number == VERSION_NAME:
-        print("Failed to get git commit hash, using hardcoded version number instead.")
-        print(
-            "Hey testers! We recommend you use git to clone the repository, as it makes things easier for everyone."
-        )  # pylint: disable=line-too-long
-        print(
-            "There are instructions at https://discord.com/channels/1003759225522110524/1054942461178421289/1078170877117616169"
-        )  # pylint: disable=line-too-long
-else:
-    print("Running on PyInstaller build")
-
-print("Version Name: ", VERSION_NAME)
-print("Running on commit " + get_version_info().version_number)
-
-import pygame_gui
-from scripts.game_structure.monkeypatch import translate
-
-# MONKEYPATCH
-
-pygame_gui.core.utility.translate = translate
-for module_name, module in list(sys.modules.items()):
-    if module and hasattr(module, "translate"):  # Check for the attribute
-        if (
-            module.translate is pygame_gui.core.utility.translate
-        ):  # Ensure it's the original reference
-            setattr(module, "translate", translate)
-            break
-
-for module_name, module in list(sys.modules.items()):
-    if module_name.startswith(f"pygame_gui."):
-        if (
-            not module_name.endswith("utility")
-            and not module_name.endswith("container_interface")
-            and not module_name.endswith("_constants")
-            and not module_name.endswith("layered_gui_group")
-            and not module_name.endswith("object_id")
-        ):
-            # Reload the module
-            reload(module)
+# ==== DO NOT MOVE THIS IMPORT!
+# ==== DO NOT ADD ANYTHING BEFORE THIS IMPORT!
+import init  # isort: skip
 
 # Load game
-from scripts.clan import clan_class
-from scripts.game_structure.audio import sound_manager, music_manager
-from scripts.game_structure.load_cat import load_cats, version_convert
-from scripts.game_structure.windows import SaveCheck
-from scripts.game_structure.screen_settings import screen_scale, MANAGER, screen
-from scripts.game_structure.game_essentials import game
-from scripts.game_structure import constants
+import logging
+import threading
+
+import pygame
+
+import scripts.game_structure.screen_settings
+from scripts.cat.sprites.load_sprites import sprites
+from scripts.clan import Afterlife, clan_class
+
+from scripts.debug_console import debug_mode
+from scripts.game_input import INPUT_ACTION_PRESSED
+from scripts.game_structure import constants, game
+from scripts.game_structure.audio.audio_manager import AudioManager
+from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure.game.save_load import read_clans
 from scripts.game_structure.game.settings import game_setting_get
 from scripts.game_structure.game.switches import (
+    Switch,
     switch_get_value,
     switch_set_value,
-    Switch,
 )
-from scripts.game_structure.discord_rpc import _DiscordRPC
-from scripts.cat.sprites import sprites
-from scripts.utility import (
-    quit,
-)  # pylint: disable=redefined-builtin
-
-# from scripts.debug_menu import debugmode
-from scripts.debug_console import debug_mode
-import pygame
+from scripts.game_structure.load_cat import load_cats, version_convert
+from scripts.game_structure.screen_settings import MANAGER, screen, screen_scale
+from scripts.game_input import controller_manager, keyboard_manager
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
-from scripts.screens.all_screens import AllScreens
-import scripts.game_structure.screen_settings
+from scripts.screens import all_screens
+from scripts.screens.enums import GameScreen
+from scripts.ui.windows.save_check import SaveCheckWindow
+from scripts.housekeeping.quit_game import quit_game
 
 # P Y G A M E
 clock = pygame.time.Clock()
@@ -220,9 +45,25 @@ game.rpc.start_rpc.set()
 # LOAD cats & clan
 finished_loading = False
 
+controller_manager.init()
+
 
 def load_data():
     global finished_loading
+
+    # load audio
+    try:
+        if not getattr(game, "audio", None):
+            game.audio = AudioManager()
+            pygame.mixer.pre_init(buffer=44100)
+            pygame.mixer.init()
+
+            # loading sounds here bc they depend on mixer being initialized
+            game.audio.sound.load_sounds()
+    except pygame.error:
+        print("Failed to initialize audio. Audio will be disabled.")
+        game.audio.disabled = True
+        game.audio.muted = True
 
     # load in the spritesheets
     sprites.load_all()
@@ -230,20 +71,23 @@ def load_data():
     clan_list = read_clans()
     if clan_list:
         switch_set_value(Switch.clan_list, clan_list)
-        switch_set_value(Switch.clan_name, clan_list[0])
+        switch_set_value(Switch.clan_save_id, clan_list[0])
         try:
+            game.starclan = Afterlife()
+            game.dark_forest = Afterlife()
             load_cats()
             version_info = clan_class.load_clan()
             version_convert(version_info)
             game.load_events()
-            scripts.screens.screens_core.screens_core.rebuild_core()
         except Exception as e:
             logging.exception("File failed to load")
-            if switch_get_value(Switch.error_message) is None:
+            if not switch_get_value(Switch.error_message):
                 switch_set_value(
                     Switch.error_message, "There was an error loading the cats file!"
                 )
                 switch_set_value(Switch.traceback, e)
+
+        scripts.screens.screens_core.screens_core.rebuild_core()
 
     finished_loading = True
 
@@ -292,10 +136,10 @@ def loading_animation(scale: float = 1):
         i += 1
         if i >= total_frames:
             i = 0
-
         for event in pygame.event.get():
+            controller_manager.process_event(event)
             if event.type == pygame.QUIT:
-                quit(savesettings=False)
+                quit_game(savesettings=False)
 
         pygame.display.update()
 
@@ -312,7 +156,10 @@ def load_game():
     game.cur_events_list.clear()
     game.patrol_cats.clear()
     game.patrolled.clear()
+    game.updated_afterlife_cats.clear()
     game.clan = None
+    game.starclan = None
+    game.dark_forest = None
     switch_set_value(Switch.switch_clan, False)
 
     finished_loading = False
@@ -325,23 +172,13 @@ def load_game():
     del loading_thread
 
 
-# load spritesheets
-sprites.load_all()
 load_game()
 
-pygame.mixer.pre_init(buffer=44100)
-try:
-    pygame.mixer.init()
-except pygame.error:
-    print("Failed to initialize sound. Sound will be disabled.")
-    music_manager.audio_disabled = True
-    music_manager.muted = True
-AllScreens.start_screen.screen_switches()
+all_screens.get_screen(GameScreen.START).screen_switches()
 
 # dev screen info now lives in scripts/screens/screens_core
 
 fps = switch_get_value(Switch.fps)
-music_manager.check_music("start screen")
 
 if game_setting_get("custom cursor"):
     MANAGER.set_active_cursor(constants.CUSTOM_CURSOR)
@@ -353,42 +190,47 @@ while 1:
 
     if switch_get_value(Switch.switch_clan):
         load_game()
+        # have to manually reload errors because it only happens when screen is switched to
+        game.all_screens[GameScreen.START].reload_errors()
 
     # Draw screens
     # This occurs before events are handled to stop pygame_gui buttons from blinking.
     game.all_screens[game.current_screen].on_use()
     # EVENTS
     for event in pygame.event.get():
-        if (
-            event.type == pygame.KEYDOWN
-            and game_setting_get("keybinds")
-            and debug_mode.debug_menu.visible
-        ):
+        if event.type == INPUT_ACTION_PRESSED and debug_mode.debug_menu.visible:
             pass
         else:
+            consumed = MANAGER.process_events(event)
             # todo ...shouldn't this be `get_switch(Switch.cur_screen)`?
-            getattr(AllScreens, game.current_screen.replace(" ", "_")).handle_event(
-                event
-            )
+            if not consumed:
+                all_screens.get_screen(
+                    game.current_screen.replace(" ", "_")
+                ).handle_event(event)
 
-        sound_manager.handle_sound_events(event)
+        if not game.audio.disabled and not game.audio.muted:
+            game.audio.sound.handle_sound_events(event)
 
         if event.type == pygame.QUIT:
             # Don't display if on the start screen or there is no clan.
             if (
                 switch_get_value(Switch.cur_screen)
                 in (
-                    "start screen",
-                    "switch clan screen",
-                    "settings screen",
-                    "info screen",
-                    "make clan screen",
+                    GameScreen.START,
+                    GameScreen.SWITCH_CLAN,
+                    GameScreen.SETTINGS,
+                    GameScreen.MAKE_CLAN_CHOOSE_MODE,
+                    GameScreen.MAKE_CLAN_CHOOSE_CARDS,
+                    GameScreen.MAKE_CLAN_CHOOSE_NAME,
+                    GameScreen.MAKE_CLAN_CHOOSE_CATS,
+                    GameScreen.MAKE_CLAN_CHOOSE_SYMBOL,
+                    GameScreen.MAKE_CLAN_CLAN_CREATED,
                 )
                 or not game.clan
             ):
-                quit(savesettings=False)
+                quit_game(savesettings=False)
             else:
-                SaveCheck(switch_get_value(Switch.cur_screen), False, None)
+                SaveCheckWindow(switch_get_value(Switch.cur_screen), False, None)
 
         # MOUSE CLICK
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -411,29 +253,25 @@ while 1:
                 # debugmode.toggle_console()
             elif event.key == pygame.K_F11:
                 scripts.game_structure.screen_settings.toggle_fullscreen(
-                    source_screen=getattr(
-                        AllScreens,
-                        switch_get_value(Switch.cur_screen).replace(" ", "_"),
-                    ),
+                    source_screen=all_screens.screen_dict[
+                        switch_get_value(Switch.cur_screen).replace(" ", "_")
+                    ],
                     show_confirm_dialog=False,
                 )
 
-        MANAGER.process_events(event)
+        controller_manager.process_event(event)
+        keyboard_manager.process_event(event)
 
     MANAGER.update(time_delta)
 
     # update
     game.update_game()
     if game.switch_screens:
-        getattr(AllScreens, game.last_screen_forupdate.replace(" ", "_")).exit_screen()
-        getattr(AllScreens, game.current_screen.replace(" ", "_")).screen_switches()
+        all_screens.get_screen(
+            game.last_screen_forupdate.replace(" ", "_")
+        ).exit_screen()
+        all_screens.get_screen(game.current_screen.replace(" ", "_")).screen_switches()
         game.switch_screens = False
-    if (
-        not music_manager.audio_disabled
-        and not pygame.mixer.music.get_busy()
-        and not music_manager.muted
-    ):
-        music_manager.play_queued()
 
     debug_mode.pre_update(clock)
     # END FRAME
@@ -443,3 +281,6 @@ while 1:
     debug_mode.post_update(screen)
 
     pygame.display.update()
+
+    if not game.audio.disabled and not game.audio.muted:
+        game.audio.start()

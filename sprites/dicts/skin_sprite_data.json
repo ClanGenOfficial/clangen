@@ -1,0 +1,29 @@
+{
+    "spritesheet": "skin",
+    "sprite_list": [
+        [
+            "BLACK",
+            "RED",
+            "PINK",
+            "DARKBROWN",
+            "BROWN",
+            "LIGHTBROWN"
+        ],
+        [
+            "DARK",
+            "DARKGREY",
+            "GREY",
+            "DARKSALMON",
+            "SALMON",
+            "PEACH"
+        ],
+        [
+            "DARKMARBLED",
+            "MARBLED",
+            "LIGHTMARBLED",
+            "DARKBLUE",
+            "BLUE",
+            "LIGHTBLUE"
+        ]
+    ]
+}

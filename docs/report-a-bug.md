@@ -11,12 +11,10 @@ will NOT be investigated or fixed, and any issues that arise as a result of edit
 responsibility.
 
 !!! warning "Reporting bugs with edited saves"
-Do not submit bug reports for bugs encountered on an edited save. If you encounter a bug whilst playing on an edited
-save, only report it if you can replicate it in an unedited save.
+    Do not submit bug reports for bugs encountered on an edited save. If you encounter a bug whilst playing on an edited save, only report it if you can replicate it in an unedited save.
 
 Good to go? Head to
-the [new issue page on GitHub (opens in a new window)](https://github.com/ClanGenOfficial/clangen/issues/new/choose){:
-target=none}.
+the [new issue page on GitHub (opens in a new window)](https://github.com/ClanGenOfficial/clangen/issues/new/choose)
 
 ## FAQs
 
@@ -31,8 +29,10 @@ target=none}.
 
 1. If you can open the game, press the settings + info button
    ![Main menu of ClanGen, the fourth menu button is highlighted](assets/report-a-bug/find_game_version_stable_step1.png)
-   !!! tip "Can't open the game?"
-   Jump to [can't open the game](#cant-open-the-game).
+
+    !!! tip "Can't open the game?"
+        Jump to [can't open the game](#cant-open-the-game).
+
 2. Press "Open Data Directory". This will open a file explorer on your computer.
    ![Settings screen with bottom-left button highlighted](assets/report-a-bug/find_game_version_stable_step2.png)
 3. Open the "logs" folder.
@@ -40,8 +40,9 @@ target=none}.
 4. Find the most recent stdout file and open it in Notepad or a similar text editing program.
 5. Copy the version number from the third line, "Running on commit [...]"
    ![Stdout log with the correct version number highlighted](assets/report-a-bug/find_game_version_stable_step5.png)
-   !!! tip
-   If you don't see something that looks like this, ensure you selected std**OUT**, not std**ERR**.
+
+    !!! tip
+        If you don't see something that looks like this, ensure you selected std**OUT**, not std**ERR**.
 
 #### Playing development
 
@@ -86,6 +87,6 @@ one).
 
 ### How do I find the error log?
 
-See the section on [finding your game version](#how-do-i-find-my-game-version) to find the logs directory. Instead of
+See the section on [finding your game version](#how-do-i-find-my-game-version) to find the log directory. Instead of
 selecting `stdout`, find and upload the most recent `stderr`. You can either upload the file or copy its contents, but
 the entire file's contents are required.

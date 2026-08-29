@@ -98,7 +98,7 @@ saves/**
 /resources/theme/generated/screen_scale.json
 
 #anything used for testing localization
-resources/lang/po/
+resources/lang/debug/
 
 # Logs
 logs/
@@ -175,6 +175,7 @@ scripts/__pycache__/**
 
 saves/currentclan.txt
 
+tests/testSaves
 cache/
 
 # Update system

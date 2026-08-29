@@ -1,0 +1,50 @@
+{
+    "name": "MaskedRecipe",
+    "layer_order": ["1", "2", "3", "4", ["5", "6"], "7"],
+    "layers": {
+        "7": {
+            "group_name": "MASKEDPATTERNLIGHT",
+            "color": "masked_light_pattern"
+        },
+        
+        "6": {
+            "group_name": "MASKEDPATTERN",
+            "blend_mode":"mask"
+        },
+        "5":{
+            "group_name": "BASICPATTERNGRAD",
+            "color": "pattern_gradient_top"
+        },
+        "4":{
+            "group_name": "MASKEDPATTERN",
+            "color": "pattern"
+        },
+
+        "3": {
+            "group_name": "SIMPLETOPGRAD",
+            "color": "base_gradient_top"
+        },
+        "2": {
+            "group_name": "SIMPLEBOTTOMGRAD",
+            "color": "base_gradient_bottom"
+        },
+        "1":{
+            "group_name": "BASEMASK",
+            "color": "base"
+        }
+    },
+    "exceptions": [
+        {
+            "colors": "GHOST",
+            "layer_order": ["1", "2", "3", "4", ["5", "6"], "7", "8"],
+            "layers":
+            {
+                "8":
+                {
+                    "group_name": "MASKEDCHIN",
+                    "color": "masked_light_pattern_ghost_chin"
+                }
+            }
+        }
+    ]
+}

@@ -61,7 +61,7 @@
       "rank": [],
       "life_giving": [
         {
-            "text": "Suddenly, the mist at the edge of the clearing takes shape. Dozens of wispy, starry spirits emerge, quickly surrounding m_c. \"We grant you your remaining [life_num] lives.\" Individually, each voice is distant, but together, the force of their words shakes m_c to {PRONOUN/m_c/poss} core.  \"Use them well, with our blessing.\"  And in a heartbeat, they were gone.",
+            "text": "Suddenly, the mist at the edge of the clearing takes shape. Dozens of wispy, starry spirits emerge, quickly surrounding m_c. \"We grant you your remaining [life_num].\" Individually, each voice is distant, but together, the force of their words shakes m_c to {PRONOUN/m_c/poss} core.  \"Use them well, with our blessing.\"  And in a heartbeat, they were gone.",
           "virtue": []
         }
       ]
@@ -333,7 +333,7 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
-          "text": "r_c approaches m_c with narrowed eyes, slightly unsettled by {PRONOUN/m_c/poss} aloofness. m_c is startled by the radiant warmth that surges through {PRONOUN/m_c/poss} chest as {PRONOUN/m_c/object} {VERB/r_c/are/is} granted a life for [virtue]. For the first time in a long while, a smile softens {PRONOUN/m_c/poss} cold demeanor.",
+          "text": "r_c approaches m_c with narrowed eyes, slightly unsettled by {PRONOUN/m_c/poss} aloofness. m_c is startled by the radiant warmth that surges through {PRONOUN/m_c/poss} chest as {PRONOUN/m_c/subject} {VERB/m_c/are/is} granted a life for [virtue]. For the first time in a long while, a smile softens {PRONOUN/m_c/poss} cold demeanor.",
           "virtue": ["acceptance", "empathy", "kindness", "understanding", "warmth", "patience", "open-mindedness", "respect", "tolerance", "forgiveness", "friendship", "respect", "mercy", "perspective", "unity", "benevolence"]
         }
       ]
@@ -414,7 +414,7 @@
           "virtue": ["acceptance", "bravery", "certainty", "clear judgment", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         },
         {
-          "text": "As r_c gives a life for [virtue], {PRONOUN/r_c/subject} {VERB/m_c/urge/urges} m_c to keep {PRONOUN/m_c/poss} head on straight and to remember to sheathe {PRONOUN/r_c/poss} claws.",
+          "text": "As r_c gives a life for [virtue], {PRONOUN/r_c/subject} {VERB/r_c/urge/urges} m_c to keep {PRONOUN/m_c/poss} head on straight and to remember to sheathe {PRONOUN/m_c/poss} claws.",
           "virtue": ["acceptance", "bravery", "certainty", "clear judgment", "confidence", "courage", "determination", "endurance", "sympathy", "farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
         }
       ]
@@ -487,7 +487,7 @@
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
-          "text": "m_c's ears perk up as {PRONOUN/m_c/subject} {VERB/m_c/begin/begins} to hear a deep, resonant rumbling. Reciprocating the intense purr, m_c gently bumps heads with r_c, a warrior known for the endless love {PRONOUN/r_c/subject} {VERB/r_c/hold/holds} for {PRONOUN/r_c/poss} Clan. A warm, sweet feeling cascades over m_c as {PRONOUN/m_c/subject} {VERB/m_c/receive/receives} a life for [virtue].",
+          "text": "m_c's ears perk up as {PRONOUN/m_c/subject} {VERB/m_c/begin/begins} to hear a deep, resonant rumbling. Reciprocating the intense purr, m_c gently bumps heads with r_c, a warrior known for the fierce love for {PRONOUN/r_c/poss} Clanmates. A warm, sweet feeling cascades over m_c as {PRONOUN/m_c/subject} {VERB/m_c/receive/receives} a life for [virtue].",
           "virtue": ["compassion", "empathy", "devotion", "friendship", "forgiveness", "happiness", "hope", "kindness", "sympathy", "love", "offering second chances", "selflessness", "mercy", "strength", "unity"]
         },
         {
@@ -620,9 +620,9 @@
       ]
     },
   
-    "sneaky_warrior": {
+    "cunning_warrior": {
       "tags": [],
-      "lead_trait": ["sneaky"],
+      "lead_trait": ["cunning"],
       "star_trait": [],
       "rank": ["warrior", "deputy"],
       "life_giving": [
@@ -633,10 +633,10 @@
       ]
     },
   
-    "sneaky_starclanwarrior": {
+    "cunning_starclanwarrior": {
       "tags": [],
       "lead_trait": [],
-      "star_trait": ["sneaky"],
+      "star_trait": ["cunning"],
       "rank": ["warrior", "elder", "medicine cat", "mediator", "apprentice", "deputy"],
       "life_giving": [
         {
@@ -768,7 +768,7 @@
       "rank": ["warrior", "deputy"],
       "life_giving": [
         {
-          "text": "m_c holds {PRONOUN/m_c/poss} head high as r_c approaches. r_c looks mildly amused - or is that annoyance? The starry cat offers m_c a life for [virtue], saying that {PRONOUN/m_c/subject} could definitely use it. m_c scoffs internally at the implication.",
+          "text": "m_c holds {PRONOUN/m_c/poss} head high as r_c approaches. r_c looks mildly amused — or is that annoyance? The starry cat offers m_c a life for [virtue], saying that {PRONOUN/m_c/subject} could definitely use it. m_c scoffs internally at the implication.",
           "virtue": ["humility", "honesty", "honor", "integrity", "selflessness", "good sense"]
         }
       ]
@@ -862,7 +862,7 @@
     "loud_kit": {
       "tags": [],
       "lead_trait": [],
-      "star_trait": ["bouncy", "impulsive", "noisy", "troublesome", "attention-seeker", "daring"],
+      "star_trait": ["impulsive", "noisy", "troublesome", "attention-seeker", "daring"],
       "rank": ["kitten"],
       "life_giving": [
         {

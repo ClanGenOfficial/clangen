@@ -1,0 +1,41 @@
+{
+    "spritesheet": "patches_white_high",
+    "sprite_list": [
+        [
+            "ANY_REDUCED",
+            "ANYTWO",
+            "BROKEN_REDUCED",
+            "PIEBALD",
+            "CURVED",
+            "FRECKLES",
+            "RINGTAIL_REDUCED",
+            "HALFFACE",
+            "PANTSTWO_REDUCED",
+            "GOATEE_REDUCED",
+            "PRINCE_REDUCED",
+            "FAROFA_REDUCED",
+            "MISTER",
+            "PANTS"
+        ],
+        [
+            "REVERSEPANTS",
+            "APPALOOSA_REDUCED",
+            "GLASS",
+            "PAINTED_REDUCED",
+            "BUB",
+            "SPARROW",
+            "TRIXIE",
+            "SAMMY",
+            "FRONT",
+            "BULLSEYE",
+            "FINN",
+            "SCAR_REDUCED",
+            "BUSTER_REDUCED",
+            "HAWKBLAZE_REDUCED"
+        ],
+        [
+            "CAKE_REDUCED",
+            "MASKMANTLE"
+        ]
+    ]
+}

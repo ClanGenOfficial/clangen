@@ -1,0 +1,555 @@
+[
+    {
+        "event_id": "fst_train_leaffallromanticstroll_20locked1",
+        "types": [
+            "training"
+        ],
+        "frequency": 4,
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "tags": [
+            "romance"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                2
+            ],
+            "all apprentices": [
+                -1,
+                -1
+            ]
+        },
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "p_l"
+                ],
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "fancies",
+                    "-mates"
+                ]
+            },
+            {
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "cats_from": [
+                    "patrol_cats"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "can_romance"
+                ]
+            }
+        ],
+        "involved_cats": {
+            "r_c0": {}
+        },
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites\/gen_flowerdate_WrWr",
+        "intro_text": "p_l thinks r_c0 is, well, really, just \u2014 uh, just swell, and {PRONOUN\/p_l\/subject} {VERB\/p_l\/think\/thinks} r_c0 might like {PRONOUN\/p_l\/object} too. {PRONOUN\/p_l\/subject\/CAP}{VERB\/p_l\/'ve\/'s} been building up {PRONOUN\/p_l\/poss} confidence, and {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} going to ask r_c0 to spend some time together, just the two of them, this afternoon!",
+        "decline_text": "Unfortunately, r_c0 is sent on an afternoon border patrol before p_l can say anything.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c0 agrees to the walk, tail-tip twitching with excitement. It's a feeling p_l openly mirrors, ears forward, pelt prickling with anxiety in the best way as they pad through the forest together. The two stop under a great oak and curl up in the piles of bright leaves beneath it."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "romance",
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to took a romantic stroll in the colorful leaf-fall forest together."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "All of p_l's bravery is rewarded when r_c0 says yes! The pair head out for their romantic stroll, the bright crunch of leaves underfoot a pleasant backdrop as they chat, heads bent together."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "romance",
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to took a romantic stroll in the colorful leaf-fall forest together."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN\/s_c0\/poss} words carefully. It's all worth it to hear r_c's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "stat": {
+                            "skill": [
+                                "SPEAKER,1",
+                                "MEDIATOR,1",
+                                "INSIGHTFUL,1"
+                            ]
+                        },
+                        "prior_abbreviation": [
+                            "p_l"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "romance",
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 13,
+                        "log": {
+                            "cats_from": "s_c0's social adeptness made {PRONOUN\/s_c0\/poss} romantic leaf-fall stroll with r_c0 all the better."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l awkwardly stutters {PRONOUN\/p_l\/poss} way through asking r_c0 out \u2014 and {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/say\/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone."
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "romance"
+                        ],
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "p_l felt embarrassed when r_c0 rejected {PRONOUN\/p_l\/poss} offer of a romantic stroll."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "r_c0 felt awkward when p_l asked {PRONOUN\/r_c0\/object} out on a romantic stroll and r_c0 rejected the offer."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "fst_train_playinginleaves1",
+        "types": [
+            "training"
+        ],
+        "frequency": 3,
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                4,
+                6
+            ],
+            "apprentice": [
+                2,
+                4
+            ],
+            "normal adult": [
+                2,
+                4
+            ]
+        },
+        "involved_cats": {
+            "r_c1": {
+                "status": [
+                    "apprentice"
+                ]
+            }
+        },
+        "chance_of_success": 60,
+        "patrol_art": "train_general_intro",
+        "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders the familiar forest paths, r_c1 gets swallowed up.",
+        "decline_text": "r_c1 reappears soon enough, a bright red leaf plastered to {PRONOUN\/r_c1\/poss} forehead.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c1 explodes out of the leaf drift, bowling over r_c2! Laughing, p_l bats at r_c0, claws sheathed, and skids off the path into the leaves as the patrol devolves into rustling, raucous, riotous fun."
+                ],
+                "involved_cats": {
+                    "r_c0": {},
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had fun tussling in the piles of leaf-fall leaves."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c1? r_c1?! It takes a good while to recover the apprentice from the far-deeper-than-expected leaf drift. No one is hurt, but it certainly derails the training they were intending on doing."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0
+            }
+        ]
+    },
+    {
+        "event_id": "fst_train_playinginleaves2",
+        "types": [
+            "training"
+        ],
+        "frequency": 3,
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "tags": [
+            "romance"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                4,
+                6
+            ],
+            "apprentice": [
+                2,
+                4
+            ],
+            "normal adult": [
+                2,
+                4
+            ]
+        },
+        "involved_cats": {
+            "r_c1": {
+                "status": [
+                    "apprentice"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "cats_from": [
+                    "patrol_cats"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "can_romance"
+                ]
+            }
+        ],
+        "chance_of_success": 60,
+        "patrol_art": "train_general_intro",
+        "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders the familiar forest paths, r_c1 gets swallowed up.",
+        "decline_text": "r_c1 reappears soon enough, a bright red leaf plastered to {PRONOUN\/r_c1\/poss} forehead.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c1 leaps out of the leaf drift, sending p_l falling into r_c0 as {PRONOUN\/r_c1\/subject} {VERB\/r_c1\/fly\/flies} by to bowl r_c2 into yet more leaves. The two apprentices descend into furious mock combat, yowling with excitement, as r_c0 gazes up at p_l in bewilderment."
+                ],
+                "involved_cats": {
+                    "r_c0": {},
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had fun tussling in the piles of leaf-fall leaves."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "romance"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to got quite close when r_c1 knocked p_l into r_c0."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c1? r_c1?! It takes a good while to recover the apprentice from the far-deeper-than-expected leaf drift. No one is hurt, but it certainly derails the training they were intending on doing."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0
+            }
+        ]
+    },
+    {
+        "event_id": "fst_train_playinginleaves3",
+        "types": [
+            "training"
+        ],
+        "frequency": 3,
+        "location": [
+            "forest"
+        ],
+        "season": [
+            "leaf-fall"
+        ],
+        "tags": [
+            "romance"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                4,
+                6
+            ],
+            "apprentice": [
+                2,
+                4
+            ],
+            "normal adult": [
+                2,
+                4
+            ]
+        },
+        "involved_cats": {
+            "r_c1": {
+                "status": [
+                    "apprentice"
+                ]
+            }
+        },
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "patrol_cats"
+                ],
+                "cats_from": [
+                    "patrol_cats"
+                ],
+                "mutual": true,
+                "constraints": [
+                    "can_romance"
+                ]
+            }
+        ],
+        "chance_of_success": 60,
+        "patrol_art": "train_general_intro",
+        "intro_text": "The leaves drift high in sunset piles beneath the shedding trees, and as the patrol wanders the familiar forest paths, r_c1 gets swallowed up.",
+        "decline_text": "r_c1 reappears soon enough, a bright red leaf plastered to {PRONOUN\/r_c1\/poss} forehead.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c1 leaps out of the leaf drift, bowling r_c2 head over paws and batting at {PRONOUN\/r_c2\/subject} furiously. p_l and r_c0 share a long, exasperated look, rolling their eyes as the apprentices flicker between yelling insults and flirting while they spar. p_l's sure the apprentices think they're <i>very<\/i> subtle."
+                ],
+                "involved_cats": {
+                    "r_c0": {},
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    },
+                    "r_c2": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c1"
+                        ],
+                        "cats_from": [
+                            "r_c2"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust",
+                            "romance"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had fun tussling and flirting in the piles of leaf-fall leaves."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": true,
+                        "values": [
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to were amused to see r_c1 and r_c2 flirting on patrol."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c1? r_c1?! It takes a good while to recover the apprentice from the far-deeper-than-expected leaf drift. No one is hurt, but it certainly derails the training they were intending on doing."
+                ],
+                "involved_cats": {
+                    "r_c1": {
+                        "status": [
+                            "apprentice"
+                        ]
+                    }
+                },
+                "exp_gained": 0
+            }
+        ]
+    }
+]

@@ -1,16 +1,25 @@
 import random
 
 import i18n
+import os
+import ujson
 
+from scripts.cat.enums import CatGroup
 from scripts.cat.skills import SkillPath
-from scripts.game_structure.game_essentials import game
-from scripts.utility import adjust_list_text
+from scripts.game_structure import game
+from scripts.events_module.text_adjust import adjust_list_text
+from scripts.game_structure.localization import load_lang_resource
 
 
 class History:
     """
     this class handles the cat's history!
     """
+
+    history_options = {}
+    if os.path.exists("resources/dicts/history_options.json"):
+        with open("resources/dicts/history_options.json", encoding="utf-8") as f:
+            history_options = ujson.load(f)
 
     def __init__(
         self,
@@ -23,6 +32,7 @@ class History:
         scar_events=None,
         murder=None,
         cat=None,
+        afterlife_acceptance=None,
     ):
         self.beginning = beginning if beginning else {}
         self.mentor_influence = (
@@ -35,6 +45,9 @@ class History:
         self.scar_events = scar_events if scar_events else []
         self.murder = murder if murder else {}
         self.cat = cat
+        self.afterlife_acceptance = (
+            afterlife_acceptance if afterlife_acceptance else None
+        )
 
         # fix 'old' history save bugs
         if self.mentor_influence["trait"] is None:
@@ -82,7 +95,14 @@ class History:
             "graduation_age": age,
             "moon": moon
             },
-        "lead_ceremony": full ceremony text,
+        "lead_ceremony": [
+            {
+                "involved": ID or None,
+                "text": text,
+                "virtue": virtue or None,
+                "extra_lives": count or None
+            },
+            ],
         "possible_history": {
             "condition name": {
                 "involved": ID
@@ -149,6 +169,7 @@ class History:
             "mentor_influence": self.mentor_influence,
             "app_ceremony": self.app_ceremony,
             "lead_ceremony": self.lead_ceremony,
+            "afterlife_acceptance": self.afterlife_acceptance,
             "possible_history": self.possible_history,
             "died_by": self.died_by,
             "scar_events": self.scar_events,
@@ -189,60 +210,6 @@ class History:
             self.mentor_influence["trait"] = None
             return
 
-        # working under the impression that these blurbs will be preceded by "more likely to"
-        facet_influence_text = {
-            "lawfulness_raise": [
-                "follow rules",
-                "follow the status quo",
-                "heed {PRONOUN/m_c/poss} inner compass",
-                "have strong inner morals",
-            ],
-            "lawfulness_lower": [
-                "bend the rules",
-                "break away from the status quo",
-                "break rules that don't suit {PRONOUN/m_c/object}",
-                "make {PRONOUN/m_c/poss} own rules",
-            ],
-            "sociability_raise": [
-                "be friendly towards others",
-                "step out of {PRONOUN/m_c/poss} comfort zone",
-                "interact with others",
-                "put others at ease",
-            ],
-            "sociability_lower": [
-                "be cold towards others",
-                "refrain from socializing",
-                "bicker with others",
-            ],
-            "aggression_raise": [
-                "be ready for a fight",
-                "start a fight",
-                "defend {PRONOUN/m_c/poss} beliefs",
-                "use teeth and claws over words",
-                "resort to violence",
-            ],
-            "aggression_lower": [
-                "be slow to anger",
-                "avoid a fight",
-                "use words over teeth and claws",
-                "try to avoid violence",
-            ],
-            "stability_raise": [
-                "stay collected",
-                "think things through",
-                "be resilient",
-                "have a positive outlook",
-                "be consistent",
-                "adapt easily",
-            ],
-            "stability_lower": [
-                "behave erratically",
-                "make impulsive decisions",
-                "have trouble adapting",
-                "dwell on things",
-            ],
-        }
-
         for _ment in self.mentor_influence["trait"]:
             self.mentor_influence["trait"][_ment]["strings"] = []
             for _fac in self.mentor_influence["trait"][_ment]:
@@ -250,11 +217,11 @@ class History:
                 if _fac in self.cat.personality.facet_types:
                     if self.mentor_influence["trait"][_ment][_fac] > 0:
                         self.mentor_influence["trait"][_ment]["strings"].append(
-                            random.choice(facet_influence_text[_fac + "_raise"])
+                            random.choice(MENTOR_FACET_INFLUENCE_TEXT[_fac + "_raise"])
                         )
                     elif self.mentor_influence["trait"][_ment][_fac] < 0:
                         self.mentor_influence["trait"][_ment]["strings"].append(
-                            random.choice(facet_influence_text[_fac + "_lower"])
+                            random.choice(MENTOR_FACET_INFLUENCE_TEXT[_fac + "_lower"])
                         )
 
     def add_mentor_skill_influence_strings(self):
@@ -273,6 +240,7 @@ class History:
             SkillPath.RUNNER: ["running"],
             SkillPath.CLIMBER: ["climbing"],
             SkillPath.SWIMMER: ["swimming"],
+            SkillPath.STEALTH: ["stealth", "deception"],
             SkillPath.SPEAKER: ["arguing"],
             SkillPath.MEDIATOR: ["resolving arguments"],
             SkillPath.CLEVER: ["solving problems"],
@@ -410,6 +378,46 @@ class History:
             {"involved": other_cat, "text": death_text, "moon": game.clan.age}
         )
 
+    def add_afterlife_acceptance(
+        self, guide_afterlife: CatGroup, is_kit=False, contentious=False, rejected=False
+    ):
+        """
+        Adds afterlife acceptance text to the cat's history. If using an optional parameter, should set only one out of
+        `is_kit`, `contentious`, and `rejected` to `True`, since the rest will be ignored.
+
+        :param guide_afterlife: The afterlife of the guide. Do NOT set to the opposite afterlife if rejected is `True`.
+        :param is_kit: `True` if the cat is a kit. Gives kinder acceptance text referring to kits.
+        :param contentious: `True` if the acceptance is supposed to be contentious. Afterlife will seem iffy about the cat.
+        :param rejected: `True` if cat is rejected from `guide_afterlife`. They will go to the opposite one instead.
+        """
+
+        afterlife = None
+        if guide_afterlife == CatGroup.STARCLAN:
+            afterlife = "starclan"
+        elif guide_afterlife == CatGroup.DARK_FOREST:
+            afterlife = "dark_forest"
+
+        if afterlife:
+            afterlife_acceptance_options = History.history_options[
+                "afterlife_acceptance_options"
+            ]
+            if is_kit:
+                self.afterlife_acceptance = random.choice(
+                    afterlife_acceptance_options[f"{afterlife}_kit"]
+                )
+            elif contentious:
+                self.afterlife_acceptance = random.choice(
+                    afterlife_acceptance_options[f"{afterlife}_contentious"]
+                )
+            elif rejected:
+                self.afterlife_acceptance = random.choice(
+                    afterlife_acceptance_options[f"{afterlife}_rejected"]
+                )
+            else:
+                self.afterlife_acceptance = random.choice(
+                    afterlife_acceptance_options[f"{afterlife}_default"]
+                )
+
     def add_scar(self, scar_text, condition=None, other_cat=None):
         if not game.clan:
             return
@@ -515,7 +523,7 @@ class History:
         generates and adds lead ceremony to history
         """
 
-        self.lead_ceremony = self.cat.generate_lead_ceremony()
+        self.cat.generate_lead_ceremony()
 
     # ---------------------------------------------------------------------------- #
     #                                 retrieving                                   #
@@ -528,7 +536,7 @@ class History:
 
         if not self.lead_ceremony:
             self.cat.generate_lead_ceremony()
-        return str(self.lead_ceremony)
+        return self.cat.render_lead_ceremony()
 
     def get_possible_history(self, condition=None):
         """
@@ -597,3 +605,16 @@ class History:
             return self.scar_events
         elif death:
             return self.died_by
+
+
+MENTOR_FACET_INFLUENCE_TEXT = None
+
+
+def load_mentor_facet_influence_strings():
+    global MENTOR_FACET_INFLUENCE_TEXT
+    MENTOR_FACET_INFLUENCE_TEXT = load_lang_resource(
+        "cat/mentor_facet_influence_strings.json"
+    )
+
+
+load_mentor_facet_influence_strings()

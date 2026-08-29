@@ -1,0 +1,33 @@
+[
+    {
+        "event_id": "leader_default0",
+        "involved_cats": {
+            "m_c": {}
+        },
+        "strings": [
+            "(old_name) has been promoted to the new leader of the Clan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/travel/travels} to the Moonstone immediately to get {PRONOUN/m_c/poss} nine lives and {VERB/m_c/are/is} hailed by {PRONOUN/m_c/poss} new name, m_c.",
+            "(old_name) has become the new leader of the Clan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/vow/vows} to protect the Clan, even at the cost of {PRONOUN/m_c/poss} nine lives.",
+            "(old_name) has received {PRONOUN/m_c/poss} nine lives and has become the new leader of the Clan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/feel/feels} like {PRONOUN/m_c/subject} {VERB/m_c/are/is}n't ready for this new responsibility, but will try {PRONOUN/m_c/poss} best to do what is right for the Clan."
+        ]
+    },
+    {
+        "event_id": "leader_bloodthirsty0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "bloodthirsty",
+                        "ambitious",
+                        "vengeful"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) has become the new leader. {PRONOUN/m_c/subject/CAP} {VERB/m_c/stare/stares} down at {PRONOUN/m_c/poss} Clanmates with unsheathed claws, promising a new era for the Clans."
+        ],
+        "tags": [
+            "-clan:leader"
+        ]
+    }
+]

@@ -6,30 +6,24 @@ import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID
 
+
 from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache, constants
-from scripts.game_structure.game.settings import game_settings_save, game_setting_get
-from scripts.game_structure.game_essentials import (
-    game,
-)
-from scripts.game_structure.ui_elements import (
-    UISpriteButton,
-    UIImageButton,
-    UISurfaceImageButton,
-)
-from scripts.game_structure.windows import SaveError
-from scripts.utility import (
-    ui_scale,
-    ui_scale_dimensions,
-    get_current_season,
-    ui_scale_value,
-)
+from scripts.game_structure.game.settings import game_setting_get
+from scripts.game_structure import game
+
+from ..game_structure.screen_settings import MANAGER
+from ..ui.elements.sprite_button import UISpriteButton
+from ..ui.elements.surface_image_button import UISurfaceImageButton
+from ..ui.elements.checkbox import UICheckbox
+from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_value
 from .Screens import Screens
-from ..cat.save_load import save_cats
+from .enums import GameScreen
 from ..clan_package.settings import get_clan_setting
 from ..clan_package.settings.clan_settings import switch_clan_setting
-from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
+from ..game_structure.game.switches import switch_set_value, Switch
 from ..cat.enums import CatRank
+from ..ui.elements.save_button import UISaveButton
 from ..ui.generate_button import ButtonStyles, get_button_dict
 
 
@@ -43,17 +37,11 @@ class ClanScreen(Screens):
         super().__init__(name)
         self.cats_in_camp = []
         self.taken_spaces = {}
+        self.camp_labels = {}
         self.show_den_labels_text = None
         self.show_den_labels = None
         self.show_den_text = None
         self.label_toggle = None
-        self.app_den_label = None
-        self.clearing_label = None
-        self.nursery_label = None
-        self.elder_den_label = None
-        self.med_den_label = None
-        self.leader_den_label = None
-        self.warrior_den_label = None
         self.layout = None
 
     def on_use(self):
@@ -64,52 +52,36 @@ class ClanScreen(Screens):
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             self.mute_button_pressed(event)
-            if event.ui_element == self.save_button:
-                try:
-                    self.save_button_saving_state.show()
-                    self.save_button.disable()
-                    save_cats(switch_get_value(Switch.clan_name), Cat, game)
-                    game.clan.save_clan()
-                    game.clan.save_pregnancy(game.clan)
-                    game.save_events()
-                    game_settings_save(self)
-                    switch_set_value(Switch.saved_clan, True)
-                    self.update_buttons_and_text()
-                except RuntimeError:
-                    SaveError(traceback.format_exc())
-                    self.change_screen("start screen")
+            if event.ui_element == self.save_button.unsaved_state:
+                self.save_button.save_game(current_screen=self)
             if event.ui_element in self.cat_buttons:
                 switch_set_value(Switch.cat, event.ui_element.return_cat_id())
-                self.change_screen("profile screen")
+                self.change_screen(GameScreen.PROFILE)
             if event.ui_element == self.label_toggle:
                 switch_clan_setting("den labels")
+                if self.label_toggle.checked:
+                    self.label_toggle.uncheck()
+                else:
+                    self.label_toggle.check()
                 self.update_buttons_and_text()
-            if event.ui_element == self.med_den_label:
-                self.change_screen("med den screen")
-            if event.ui_element == self.clearing_label:
-                self.change_screen("clearing screen")
-            if event.ui_element == self.warrior_den_label:
-                self.change_screen("warrior den screen")
-            if event.ui_element == self.leader_den_label:
-                self.change_screen("leader den screen")
+            if event.ui_element == self.camp_labels["med_den_label"]:
+                self.change_screen(GameScreen.MED_DEN)
+            if event.ui_element == self.camp_labels["clearing_label"]:
+                self.change_screen(GameScreen.MEDIATION)
+            if event.ui_element == self.camp_labels["warrior_den_label"]:
+                self.change_screen(GameScreen.WARRIOR_DEN)
+            if event.ui_element == self.camp_labels["leader_den_label"]:
+                self.change_screen(GameScreen.LEADER_DEN)
             else:
                 self.menu_button_pressed(event)
 
-        elif event.type == pygame.KEYDOWN and game_setting_get("keybinds"):
+        elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
-                self.change_screen("list screen")
+                self.change_screen(GameScreen.LIST)
             elif event.key == pygame.K_LEFT:
-                self.change_screen("events screen")
+                self.change_screen(GameScreen.EVENTS)
             elif event.key == pygame.K_SPACE:
-                self.save_button_saving_state.show()
-                self.save_button.disable()
-                save_cats(switch_get_value(Switch.clan_name), Cat, game)
-                game.clan.save_clan()
-                game.clan.save_pregnancy(game.clan)
-                game.save_events()
-                game_settings_save(self)
-                switch_set_value(Switch.saved_clan, True)
-                self.update_buttons_and_text()
+                self.save_button.save_game(current_screen=self)
 
     def screen_switches(self):
         super().screen_switches()
@@ -127,8 +99,9 @@ class ClanScreen(Screens):
         self.choose_cat_positions()
 
         self.set_disabled_menu_buttons(["camp_screen"])
-        self.update_heading_text(f"{game.clan.displayname}Clan")
+        self.update_heading_text(game.clan.name)
         self.show_menu_buttons()
+        Screens.menu_buttons["back_to_camp"].hide()
 
         # Creates and places the cat sprites.
         self.cat_buttons = []  # To contain all the buttons.
@@ -200,114 +173,89 @@ class ClanScreen(Screens):
 
         # Den Labels
         # Redo the locations, so that it uses layout on the Clan page
-        self.warrior_den_label = UISurfaceImageButton(
+        self.camp_labels["warrior_den_label"] = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["warrior den"], (121, 28))),
             "screens.core.warriors_den",
             get_button_dict(ButtonStyles.ROUNDED_RECT, (121, 28)),
             object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
             starting_height=2,
         )
-        self.leader_den_label = UISurfaceImageButton(
+        self.camp_labels["leader_den_label"] = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["leader den"], (112, 28))),
             "screens.core.leader_den",
             get_button_dict(ButtonStyles.ROUNDED_RECT, (112, 28)),
             object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
             starting_height=2,
         )
-        self.med_den_label = UISurfaceImageButton(
+        self.camp_labels["med_den_label"] = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["medicine den"], (151, 28))),
             "screens.core.medicine_cat_den",
             get_button_dict(ButtonStyles.ROUNDED_RECT, (151, 28)),
             object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
             starting_height=2,
         )
-        self.elder_den_label = UISurfaceImageButton(
+        self.camp_labels["elder_den_label"] = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["elder den"], (103, 28))),
             "screens.core.elders_den",
             get_button_dict(ButtonStyles.ROUNDED_RECT, (103, 28)),
             object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
         )
-        self.elder_den_label.disable()
-        self.nursery_label = UISurfaceImageButton(
+        self.camp_labels["elder_den_label"].disable()
+        self.camp_labels["nursery_label"] = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["nursery"], (80, 28))),
             "screens.core.nursery",
             get_button_dict(ButtonStyles.ROUNDED_RECT, (80, 28)),
             object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
         )
-        self.nursery_label.disable()
+        self.camp_labels["nursery_label"].disable()
 
-        self.clearing_label = UISurfaceImageButton(
+        self.camp_labels["clearing_label"] = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["clearing"], (81, 28))),
             "screens.core.clearing",
             get_button_dict(ButtonStyles.ROUNDED_RECT, (81, 28)),
             object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
         )
-        if game.clan.game_mode == "classic":
-            self.clearing_label.disable()
 
-        self.app_den_label = UISurfaceImageButton(
+        self.camp_labels["app_den_label"] = UISurfaceImageButton(
             ui_scale(pygame.Rect(self.layout["apprentice den"], (147, 28))),
             "screens.core.apprentices_den",
             get_button_dict(ButtonStyles.ROUNDED_RECT, (147, 28)),
             object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
         )
-        self.app_den_label.disable()
+        self.camp_labels["app_den_label"].disable()
 
         # Draw the toggle and text
-        self.show_den_labels = pygame_gui.elements.UIImage(
+        self.show_den_labels = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 641), (167, 34))),
-            pygame.transform.scale(
-                image_cache.load_image("resources/images/show_den_labels.png"),
-                ui_scale_dimensions((167, 34)),
-            ),
+            "",
+            {"normal": get_button_dict(ButtonStyles.ROUNDED_RECT, (167, 34))["normal"]},
+            object_id="@buttonstyles_rounded_rect",
+            manager=MANAGER,
         )
+        self.label_toggle = UICheckbox(
+            position=(0, 0),
+            manager=MANAGER,
+            starting_height=3,
+            check=get_clan_setting("den labels"),
+            anchors={
+                "right": "right",
+                "right_target": self.show_den_labels,
+                "bottom": "bottom",
+                "bottom_target": self.show_den_labels,
+            },
+        )
+
         self.show_den_labels_text = pygame_gui.elements.UILabel(
             ui_scale(pygame.Rect((60, 641), (130, 34))),
             "screens.clan.show_dens",
             object_id="@buttonstyles_rounded_rect",
         )
-        self.show_den_labels.disable()
-        self.label_toggle = UIImageButton(
-            ui_scale(pygame.Rect((25, 641), (32, 32))),
-            "",
-            object_id="@checked_checkbox",
-        )
 
-        save_buttons = get_button_dict(ButtonStyles.SQUOVAL, (114, 30))
-        save_buttons["normal"] = pygame.transform.scale(
-            image_cache.load_image("resources/images/buttons/save_clan.png"),
-            ui_scale_dimensions((114, 30)),
+        self.show_den_labels.disable()
+
+        self.save_button = UISaveButton(
+            position=(343, 643),
         )
-        self.save_button = UISurfaceImageButton(
-            ui_scale(pygame.Rect(((343, 643), (114, 30)))),
-            "buttons.save_clan",
-            save_buttons,
-            object_id="@buttonstyles_squoval",
-            sound_id="save",
-        )
-        self.save_button.enable()
-        self.save_button_saved_state = UISurfaceImageButton(
-            ui_scale(pygame.Rect((0, 643), (114, 30))),
-            "buttons.clan_saved",
-            {
-                "normal": pygame.transform.scale(
-                    image_cache.load_image("resources/images/save_clan_saved.png"),
-                    ui_scale_dimensions((114, 30)),
-                )
-            },
-            object_id="@buttonstyles_squoval",
-            anchors={"centerx": "centerx"},
-        )
-        self.save_button_saved_state.hide()
-        self.save_button_saving_state = UISurfaceImageButton(
-            ui_scale(pygame.Rect((0, 643), (114, 30))),
-            "buttons.saving",
-            {"normal": get_button_dict(ButtonStyles.SQUOVAL, (114, 30))["normal"]},
-            object_id="@buttonstyles_squoval",
-            anchors={"centerx": "centerx"},
-        )
-        self.save_button_saving_state.disable()
-        self.save_button_saving_state.hide()
 
         self.update_buttons_and_text()
 
@@ -321,26 +269,12 @@ class ClanScreen(Screens):
         self.cats_in_camp.clear()
 
         # Kill all other elements, and destroy the reference so they aren't hanging around
+        for ele in self.camp_labels:
+            self.camp_labels[ele].kill()
+        self.camp_labels = {}
+
         self.save_button.kill()
         del self.save_button
-        self.save_button_saved_state.kill()
-        del self.save_button_saved_state
-        self.save_button_saving_state.kill()
-        del self.save_button_saving_state
-        self.warrior_den_label.kill()
-        del self.warrior_den_label
-        self.leader_den_label.kill()
-        del self.leader_den_label
-        self.med_den_label.kill()
-        del self.med_den_label
-        self.elder_den_label.kill()
-        del self.elder_den_label
-        self.nursery_label.kill()
-        del self.nursery_label
-        self.clearing_label.kill()
-        del self.clearing_label
-        self.app_den_label.kill()
-        del self.app_den_label
         self.label_toggle.kill()
         del self.label_toggle
         self.show_den_labels.kill()
@@ -350,6 +284,7 @@ class ClanScreen(Screens):
 
         # reset save status
         switch_set_value(Switch.saved_clan, False)
+        Screens.menu_buttons["back_to_camp"].show()
 
     def update_camp_bg(self):
         light_dark = "dark" if game_setting_get("dark mode") else "light"
@@ -403,7 +338,7 @@ class ClanScreen(Screens):
             },
         )
 
-        self.set_bg(get_current_season())
+        self.set_bg(game.clan.current_season)
 
     def choose_nonoverlapping_positions(self, first_choices, dens, weights=None):
         if not weights:
@@ -545,39 +480,11 @@ class ClanScreen(Screens):
             self.cats_in_camp.append(Cat.all_cats[x])
 
     def update_buttons_and_text(self):
-        if switch_get_value(Switch.saved_clan):
-            self.save_button_saving_state.hide()
-            self.save_button_saved_state.show()
-            self.save_button.disable()
-        else:
-            self.save_button.enable()
+        self.save_button.update_state()
 
-        self.label_toggle.kill()
         if get_clan_setting("den labels"):
-            self.label_toggle = UIImageButton(
-                ui_scale(pygame.Rect((25, 641), (34, 34))),
-                "",
-                starting_height=2,
-                object_id="@checked_checkbox",
-            )
-            self.warrior_den_label.show()
-            self.clearing_label.show()
-            self.nursery_label.show()
-            self.app_den_label.show()
-            self.leader_den_label.show()
-            self.med_den_label.show()
-            self.elder_den_label.show()
+            for ele in self.camp_labels:
+                self.camp_labels[ele].show()
         else:
-            self.label_toggle = UIImageButton(
-                ui_scale(pygame.Rect((25, 641), (34, 34))),
-                "",
-                starting_height=2,
-                object_id="@unchecked_checkbox",
-            )
-            self.warrior_den_label.hide()
-            self.clearing_label.hide()
-            self.nursery_label.hide()
-            self.app_den_label.hide()
-            self.leader_den_label.hide()
-            self.med_den_label.hide()
-            self.elder_den_label.hide()
+            for ele in self.camp_labels:
+                self.camp_labels[ele].hide()

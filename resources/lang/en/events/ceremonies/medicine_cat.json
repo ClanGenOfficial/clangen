@@ -1,0 +1,659 @@
+[
+    {
+        "event_id": "med_default0",
+        "involved_cats": {
+            "m_c": {}
+        },
+        "strings": [
+            "(old_name) is given {PRONOUN/m_c/poss} full name of m_c and welcomed as a full medicine cat.",
+            "(old_name) is taken to speak with StarClan. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} given the name m_c and {VERB/m_c/are/is} now a full medicine cat of the Clan."
+        ]
+    },
+    {
+        "event_id": "med_default1",
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "group": [
+                    "player_clan"
+                ],
+                "status": [
+                    "medicine cat"
+                ]
+            }
+        },
+        "strings": [
+            "Whisperings on the wind tickle at r_c0's ears as {PRONOUN/r_c0/subject} {VERB/r_c0/gaze/gazes} up to the stars, an echo rolling smoothly off {PRONOUN/r_c0/poss} tongue. StarClan blesses m_c and welcomes {PRONOUN/m_c/object}!",
+            "With the stars softly shining and lighting their pelts, r_c0 gives (old_name) {PRONOUN/m_c/poss} full name of m_c. They both share the rest of the night with StarClan, celebrating their good fortune in having another medicine cat.",
+            "Inspired by (old_name)'s boundless energy and courage, r_c0 names {PRONOUN/m_c/object} m_c, and welcomes {PRONOUN/m_c/object} as a full medicine cat.",
+            "r_c0 still remembers when (old_name) was just a kit batting around in the medicine cat den, asking endless questions about everything under the sun. r_c0 chuckles with fondness as m_c asks why {PRONOUN/m_c/poss} new name was chosen with shining eyes and twitching whiskers.",
+            "(old_name) has waited a long time for this day! Heart pounding, {PRONOUN/m_c/subject} {VERB/m_c/listen/listens} intently as r_c0 names {PRONOUN/m_c/object} m_c after {PRONOUN/m_c/poss} r_h.",
+            "Inspired by (old_name)'s r_h, r_c0 names {PRONOUN/m_c/object} m_c and welcomes {PRONOUN/m_c/object} as a full medicine cat."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "med_unprepared0",
+        "involved_cats": {
+            "m_c": {
+                "current_exp": ["untrained", "learning"]
+            }
+        },
+        "strings": [
+            "(old_name) has struggled to learn the skills of a medicine cat, but {PRONOUN/m_c/subject} {VERB/m_c/refuse/refuses} to train as a warrior. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} too old to remain an apprentice and, as the other medicine cats look with pity, {PRONOUN/m_c/subject} {VERB/m_c/are/is} hesitantly given the name m_c."
+        ]
+    },
+    {
+        "event_id": "med_early_grad0",
+        "involved_cats": {
+            "m_c": {
+                "current_exp": ["prepared"],
+                "age": ["adolescent"]
+            }
+        },
+        "strings": [
+            "(old_name) has shown exceptional aptitude and skill during {PRONOUN/m_c/poss} short apprenticeship. Although it's rare for a medicine cat apprentice to be given {PRONOUN/m_c/poss} name so young, m_c more than deserves the honor."
+        ]
+    },
+    {
+        "event_id": "med_dead_mentor0",
+        "involved_cats": {
+            "m_c": {},
+            "r_c0": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "As (old_name) is given {PRONOUN/m_c/poss} full name of m_c and welcomed as the new medicine cat of the Clan, {PRONOUN/m_c/subject} {VERB/m_c/look/looks} to the stars and {VERB/m_c/hope/hopes} that r_c0 will be there with the rest of StarClan in {PRONOUN/m_c/poss} dreams."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "past_app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "med_dead_mentor1",
+        "involved_cats": {
+            "m_c": {
+                "current_exp": ["prepared"]
+            },
+            "r_c0": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "(old_name) still can't believe that {PRONOUN/m_c/poss} mentor is gone. {PRONOUN/m_c/subject/CAP} {VERB/m_c/don't/doesn't} feel ready to heal the Clan, and so politely declines being given a name yet. However, as {PRONOUN/m_c/subject} {VERB/m_c/visit/visits} StarClan that half moon, r_c0 appears to {PRONOUN/m_c/object} in a dream. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/assure/assures} (old_name) that {PRONOUN/m_c/subject}'ll be alright without {PRONOUN/r_c0/object}, and that {PRONOUN/m_c/subject} {VERB/m_c/are/is} ready for {PRONOUN/m_c/poss} full name. Resting {PRONOUN/r_c0/poss} muzzle on (old_name)'s head, r_c0 names {PRONOUN/m_c/object} m_c."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "past_app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "med_prepared0",
+        "involved_cats": {
+            "m_c": {
+                "current_exp": ["prepared"]
+            },
+            "r_c0": {
+                "group": [
+                    "player_clan"
+                ],
+                "status": [
+                    "medicine cat",
+                    "elder"
+                ]
+            }
+        },
+        "strings": [
+            "Having finally reached the end of {PRONOUN/m_c/poss} apprenticeship, newly named medicine cat m_c feels there's still so much to learn and frets about whether or not {PRONOUN/m_c/subject} {VERB/m_c/are/is} ready. With twitching whiskers, r_c0 assures {PRONOUN/m_c/object} that StarClan will always be there to guide {PRONOUN/m_c/object}."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "app/mentor"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "med_no_healers0",
+        "tags": ["-clan:medicine cat"],
+        "involved_cats": {
+            "m_c": {}
+        },
+        "strings": [
+            "The time has come for (old_name) to be given {PRONOUN/m_c/poss} full medicine cat name. (old_name) requests that one of the other Clans' medicine cats name {PRONOUN/m_c/object}. The eldest of the medicine cats steps forward and gives (old_name) the name m_c.",
+            "With {PRONOUN/m_c/poss} training complete, StarClan decides to allow (old_name) to choose {PRONOUN/m_c/poss} own name. {PRONOUN/m_c/subject/CAP} {VERB/m_c/name/names} {PRONOUN/m_c/self} m_c, and {VERB/m_c/return/returns} to the Clan the next morning as a full medicine cat."
+        ]
+    },
+    {
+        "event_id": "med_eager0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "adventurous"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "As much as the warrior apprentices teased, (old_name) knew the truth. There is so much to see and do as a full medicine cat and m_c could hardly wait to get started, almost charging off before {PRONOUN/m_c/poss} ceremony ended."
+        ]
+    },
+    {
+        "event_id": "med_compassionate0",
+        "involved_cats": {
+            "m_c": {
+                "current_exp": ["prepared"],
+                "stat": {
+                    "trait": [
+                        "compassionate"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "Helping cats heal is what (old_name) does best. {PRONOUN/m_c/poss/CAP} full name of m_c proves to the Clan that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} fully qualified to do so, and that StarClan has accepted {PRONOUN/m_c/object}.",
+            "Excellent medicine cats have as much heart as they do brains, and (old_name) proves {PRONOUN/m_c/subject} {VERB/m_c/have/has} both by the time {PRONOUN/m_c/subject} {VERB/m_c/earn/earns} {PRONOUN/m_c/poss} name of m_c, proving a gentle touch does as much good as the right herbs.",
+            "There's so much pain that c_n has to endure that (old_name) has decided to heal it all, no matter the cost. StarClan has accepted {PRONOUN/m_c/poss} passion and supports {PRONOUN/m_c/object} with the name of m_c, hoping that they can help ease some of the burden m_c placed on {PRONOUN/m_c/self}.",
+            "It is (old_name)'s willingness to sit and listen that assures the other medicine cats it's time to give {PRONOUN/m_c/object} {PRONOUN/m_c/poss} name of m_c. m_c thanks them graciously and tucks {PRONOUN/m_c/self} back down to listen to the next cat speak."
+        ]
+    },
+    {
+        "event_id": "med_powerful0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "ambitious",
+                        "bloodthirsty",
+                        "vengeful",
+                        "competitive"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "As {PRONOUN/m_c/subject} {VERB/m_c/take/takes} {PRONOUN/m_c/poss} first steps into being a full medicine cat, (old_name) quietly reflects that {PRONOUN/m_c/subject} might just have the most powerful position in the Clan, now that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} m_c. StarClan itself has accepted {PRONOUN/m_c/object}, speaks through {PRONOUN/m_c/object}... and m_c will remember this."
+        ]
+    },
+    {
+        "event_id": "med_bloodthirsty0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "bloodthirsty"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "StarClan gives {PRONOUN/m_c/object} wisdom, {PRONOUN/m_c/poss} Clan gives {PRONOUN/m_c/object} strength. (old_name) will use this power to heal {PRONOUN/m_c/poss} warriors well after battle. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} now m_c, and {VERB/m_c/swear/swears} to never turn away from what needs doing."
+        ]
+    },
+    {
+        "event_id": "med_stubborn0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "bold",
+                        "arrogant",
+                        "rebellious",
+                        "strict"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) may have butted heads with nearly every Clan member there is, but being able to argue was a blessing as a medicine cat. m_c will have to continue shoving odd mixtures down everyone's throats, after all. StarClan will be watching {PRONOUN/m_c/object} with pride."
+        ]
+    },
+    {
+        "event_id": "med_calm0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "calm"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) has proven {PRONOUN/m_c/self} to have one of the most invaluable traits a medicine cat can have: a level head under pressure. The stars of Silverpelt twinkle in joy and acceptance as m_c receives {PRONOUN/m_c/poss} full name and duties as a medicine cat."
+        ]
+    },
+    {
+        "event_id": "med_careful0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "careful"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "It is (old_name)'s attention to detail that earns {PRONOUN/m_c/object} {PRONOUN/m_c/poss} medicine cat name of m_c. {PRONOUN/m_c/subject/CAP} will serve the Clan long and well, with no one doubting the skill and knowledge of herbs {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} spent so many moons learning."
+        ]
+    },
+    {
+        "event_id": "med_charming",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "flamboyant",
+                        "charismatic"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name)'s charming attitude does as much for {PRONOUN/m_c/poss} patients as {PRONOUN/m_c/poss} skill does. {PRONOUN/m_c/subject/CAP} will continue to heal with words and herbs as m_c, now that {PRONOUN/m_c/subject} {VERB/m_c/are/is} a full medicine cat of c_n."
+        ]
+    },
+    {
+        "event_id": "med_lighthearted",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "flamboyant",
+                        "childish",
+                        "strange",
+                        "playful",
+                        "oblivious"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "Though {PRONOUN/m_c/poss} actions may come off as lighthearted, (old_name) has worked hard to earn {PRONOUN/m_c/poss} name of m_c, and vows that {PRONOUN/m_c/subject}'ll protect c_n as a medicine cat. {PRONOUN/m_c/subject/CAP} {VERB/m_c/start/starts} giggling right after {PRONOUN/m_c/subject} {VERB/m_c/say/says} it, causing a few purrs of amusement from onlookers both here and in StarClan.",
+            "No one knows how (old_name) got {PRONOUN/m_c/poss} claws on it, but {PRONOUN/m_c/subject} {VERB/m_c/manage/manages} to play with a shiny piece of Twoleg stuff during {PRONOUN/m_c/poss} entire medicine cat ceremony. When asked why, m_c replied that one of {PRONOUN/m_c/poss} patients might like it, and {PRONOUN/m_c/subject} wanted to make sure it was safe.",
+            "No one knows why (old_name) brought a moss ball to {PRONOUN/m_c/poss} medicine cat naming ceremony. StarClan grants {PRONOUN/m_c/object} the name m_c all the same, welcoming {PRONOUN/m_c/object} into the full mysteries of StarClan."
+        ]
+    },
+    {
+        "event_id": "med_unfeeling0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "gloomy",
+                        "cold",
+                        "strict"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "No one knows what (old_name) is thinking as {PRONOUN/m_c/subject} {VERB/m_c/receive/receives} {PRONOUN/m_c/poss} medicine cat name of m_c, only that {PRONOUN/m_c/poss} eyes are focused, clear, and as immovable as ice. No one doubts that {PRONOUN/m_c/subject} will be well suited to the heartbreaks that await all medicine cats."
+        ]
+    },
+    {
+        "event_id": "med_self_assured0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "cunning",
+                        "arrogant",
+                        "rebellious",
+                        "confident"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) is so sure of {PRONOUN/m_c/poss} skill as medicine cat that {PRONOUN/m_c/subject} {VERB/m_c/ask/asks} to choose {PRONOUN/m_c/poss} own name. While it may not be traditional, no one can think of a better fitting name for {PRONOUN/m_c/object} than the one {PRONOUN/m_c/subject} chose {PRONOUN/m_c/self}, and welcome m_c warmly as a full medicine cat."
+        ]
+    },
+    {
+        "event_id": "med_unconventional0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "daring",
+                        "rebellious",
+                        "strange",
+                        "ambitious"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name)'s methods are a little unconventional, but it's hard to argue with results, and (old_name) gets results. {PRONOUN/m_c/subject/CAP} {VERB/m_c/gain/gains} {PRONOUN/m_c/poss} medicine cat name of m_c, whilst the oldest medicine cat in the Clans warns {PRONOUN/m_c/object} not to do anything too risky."
+        ]
+    },
+    {
+        "event_id": "med_faithful0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "faithful"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) has known that StarClan has been watching over {PRONOUN/m_c/object} since {PRONOUN/m_c/subject} started {PRONOUN/m_c/poss} apprenticeship. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} given the name m_c in honor of {PRONOUN/m_c/poss} faith. Tonight of all nights, as {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} star-speckled pelts weaving around {PRONOUN/m_c/object} and whispering {PRONOUN/m_c/poss} new name, {PRONOUN/m_c/subject} {VERB/m_c/know/knows} that StarClan will guide {PRONOUN/m_c/poss} pawsteps as a full medicine cat."
+        ]
+    },
+    {
+        "event_id": "med_teeth0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "fierce",
+                        "bloodthirsty",
+                        "vengeful"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "During {PRONOUN/m_c/poss} apprenticeship (old_name) struggled with the best way to protect c_n, with teeth or with tinctures, but now that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} m_c, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} certain {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} made the right choice to be a medicine cat. {PRONOUN/m_c/subject/CAP} will keep practicing that battle move {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} learned... just in case."
+        ]
+    },
+    {
+        "event_id": "med_unsure0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "gloomy",
+                        "insecure",
+                        "nervous"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "As the end of {PRONOUN/m_c/poss} apprenticeship nears, (old_name) is worried StarClan won't accept {PRONOUN/m_c/object} as a full medicine cat. However, the ceremony plays out without a hitch, and m_c is honored as a skilled medicine cat.",
+            "While the rest of the Clan may not understand it, (old_name) enjoys {PRONOUN/m_c/poss} time alone in the medicine cat den. In fact, now that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} m_c, {PRONOUN/m_c/subject} can't wait to get back to it, away from the center of attention.",
+            "(old_name) knows all the herbs, {PRONOUN/m_c/subject} {VERB/m_c/know/knows} how to treat rat bites, but surely {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to learn more? StarClan assures {PRONOUN/m_c/object} that {PRONOUN/m_c/subject}'ll do fine, and gives {PRONOUN/m_c/object} the name m_c as a sign of trust, even if m_c is sure it's still too soon."
+        ]
+    },
+    {
+        "event_id": "med_insecure0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "insecure"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "Healing a sprain, comforting a bruised kit, soothing a sore elder; all of these things give (old_name) meaning in {PRONOUN/m_c/poss} life as a medicine cat. StarClan honors {PRONOUN/m_c/poss} caring heart with the name m_c."
+        ]
+    },
+    {
+        "event_id": "med_loyal0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "loyal"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "c_n has raised and cared for (old_name), and (old_name) wants nothing more but to do the same, taking on the name m_c as a full medicine cat. {PRONOUN/m_c/subject/CAP} will be thinking of how to care for c_n until the day {PRONOUN/m_c/subject} {VERB/m_c/depart/departs} for StarClan, and maybe even after."
+        ]
+    },
+    {
+        "event_id": "med_responsible0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "responsible"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) always owns up to {PRONOUN/m_c/poss} mistakes and puts the work in to fix them, but {PRONOUN/m_c/subject} {VERB/m_c/are/is} still surprised when {PRONOUN/m_c/subject} {VERB/m_c/get/gets} {PRONOUN/m_c/poss} medicine cat name of m_c. {PRONOUN/m_c/subject/CAP} {VERB/m_c/promise/promises} to work twice as hard to be worthy of it."
+        ]
+    },
+    {
+        "event_id": "med_righteous0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "righteous"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) says a silent prayer to StarClan as {PRONOUN/m_c/subject} {VERB/m_c/receive/receives} {PRONOUN/m_c/poss} medicine cat name of m_c. StarClan protect {PRONOUN/m_c/object}, StarClan protect all of c_n, {PRONOUN/m_c/subject} {VERB/m_c/hope/hopes} {PRONOUN/m_c/subject}'ll receive more guidance in the moons ahead."
+        ]
+    },
+    {
+        "event_id": "med_self_named0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "grumpy",
+                        "arrogant",
+                        "shameless",
+                        "oblivious",
+                        "strange"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name) blurts out {PRONOUN/m_c/poss} new medicine cat name of m_c, cutting off the words of the ceremony mid-meow, not surprising anyone. There's no arguing with m_c, so the other medicine cats cheer for {PRONOUN/m_c/object} through purrs of amusement."
+        ]
+    },
+    {
+        "event_id": "med_cunning0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "cunning"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "(old_name)'s eyes glint as {PRONOUN/m_c/subject} {VERB/m_c/get/gets} the medicine cat name of m_c. No one seems to notice that {PRONOUN/m_c/subject} {VERB/m_c/don't/didn't} agree to all of the vows of being a medicine cat: only nodding at some and agreeing to others with a meow."
+        ]
+    },
+    {
+        "event_id": "med_strict0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "strict"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "The way (old_name) is sitting is so stiff you could use {PRONOUN/m_c/object} as reinforcement for the camp walls. Even when {PRONOUN/m_c/subject} {VERB/m_c/get/gets} {PRONOUN/m_c/poss} medicine cat name, m_c, {PRONOUN/m_c/subject} {VERB/m_c/don't/doesn't} loosen up, and only seem to sit even straighter."
+        ]
+    },
+    {
+        "event_id": "med_thoughtful0",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "thoughtful"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "Even though this is {PRONOUN/m_c/poss} medicine cat naming ceremony, (old_name) can only think about {PRONOUN/m_c/poss} Clanmates back at camp. {PRONOUN/m_c/subject/CAP} {VERB/m_c/ask/asks} if {PRONOUN/m_c/subject} can return early after {PRONOUN/m_c/subject} {VERB/m_c/get/gets} {PRONOUN/m_c/poss} name of m_c.",
+            "StarClan honors the way (old_name) always goes the extra step to do {PRONOUN/m_c/poss} best as a medicine cat, and gives {PRONOUN/m_c/object} the name m_c, knowing that m_c will continue to do {PRONOUN/m_c/poss} best."
+        ]
+    },
+    {
+        "event_id": "med_troublesome",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "troublesome"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "This is a serious time for (old_name), {PRONOUN/m_c/poss} medicine cat naming ceremony! Naturally, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} cracking jokes and being irreverent right up until the moment {PRONOUN/m_c/subject} {VERB/m_c/get/gets} {PRONOUN/m_c/poss} name of m_c, and only quiets down long enough to think of something funny to add."
+        ]
+    },
+    {
+        "event_id": "med_vengeful",
+        "involved_cats": {
+            "m_c": {
+                "stat": {
+                    "trait": [
+                        "vengeful"
+                    ]
+                }
+            }
+        },
+        "strings": [
+            "The other medicine cats mistake it as being calm, but (old_name) isn't quiet because {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} at peace, but because {PRONOUN/m_c/subject} {VERB/m_c/are/is} angry. Every snide remark, every time someone sneered at {PRONOUN/m_c/object}, every time {PRONOUN/m_c/subject} {VERB/m_c/were/was} treated less than, all of it goes through {PRONOUN/m_c/poss} mind. Now that {PRONOUN/m_c/subject} {VERB/m_c/are/is} m_c, c_n better treat {PRONOUN/m_c/object} with respect, or there will be consequences.",
+            "Medicine cat training had just felt right for (old_name), more like remembering than learning: like {PRONOUN/m_c/subject} had done this before. When it comes time for {PRONOUN/m_c/poss} naming ceremony, {PRONOUN/m_c/subject} {VERB/m_c/ask/asks} to name {PRONOUN/m_c/self}, and {VERB/m_c/choose/chooses} m_c for {PRONOUN/m_c/poss} name. It feels right for {PRONOUN/m_c/object} to be called m_c."
+        ]
+    },
+    {
+        "event_id": "med_dead_parent0",
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "-orphaned_backstories"
+                ]
+            },
+            "r_c1": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "(old_name) almost sobs as {PRONOUN/m_c/subject} {VERB/m_c/spot/spots} r_c1 stepping out of the crowd of StarClan cats towards {PRONOUN/m_c/object} to congratulate {PRONOUN/m_c/object} on completing {PRONOUN/m_c/poss} training. r_c1 rests {PRONOUN/r_c1/poss} muzzle on (old_name)'s head, naming {PRONOUN/m_c/object} m_c, and welcoming {PRONOUN/m_c/object} as a full medicine cat.",
+            "As a StarClan cat steps forward to give (old_name) {PRONOUN/m_c/poss} new name of m_c, {PRONOUN/m_c/subject} {VERB/m_c/spot/spots} r_c1 watching {PRONOUN/m_c/object} proudly from among the StarClan cats."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "med_dead_both_parents0",
+        "involved_cats": {
+            "m_c": {
+                "backstory": [
+                    "-orphaned_backstories"
+                ]
+            },
+            "r_c1": {
+                "group": [
+                    "afterlife"
+                ]
+            },
+            "r_c2": {
+                "group": [
+                    "afterlife"
+                ]
+            }
+        },
+        "strings": [
+            "(old_name) almost sobs as {PRONOUN/m_c/subject} {VERB/m_c/spot/spots} r_c1 and r_c2 step out of the crowd towards {PRONOUN/m_c/object} to congratulate {PRONOUN/m_c/object} on completing {PRONOUN/m_c/poss} training. r_c1 rests {PRONOUN/r_c1/poss} muzzle on (old_name)'s head, naming {PRONOUN/m_c/object} m_c, and welcoming {PRONOUN/m_c/object} as a full medicine cat.",
+            "(old_name) almost sobs as {PRONOUN/m_c/subject} {VERB/m_c/spot/spots} r_c1 and r_c2 step out of the starry crowd to congratulate {PRONOUN/m_c/object} on completing {PRONOUN/m_c/poss} training. r_c2 rests {PRONOUN/r_c2/poss} muzzle on (old_name)'s head, naming {PRONOUN/m_c/object} m_c, and welcoming {PRONOUN/m_c/object} as a full medicine cat.",
+            "As a StarClan cat steps forward to give (old_name) {PRONOUN/m_c/poss} new name of m_c, {PRONOUN/m_c/subject} {VERB/m_c/spot/spots} r_c1 and r_c2 watching {PRONOUN/m_c/object} proudly."
+        ],
+        "relationship_constraint": [
+            {
+                "cats_to": [
+                    "r_c2",
+                    "r_c1"
+                ],
+                "cats_from": [
+                    "m_c"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "child/parent"
+                ]
+            }
+        ]
+    }
+]

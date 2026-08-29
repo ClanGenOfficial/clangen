@@ -1,0 +1,83 @@
+import logging
+from random import randint
+from typing import Optional
+
+from scripts.cat.cats import Cat
+from scripts.events_module.event_filters import cat_for_event
+from scripts.events_module.future.future_event import FutureEvent
+from scripts.game_structure import game
+
+logger = logging.getLogger(__name__)
+
+
+def prep_future_event(event, event_id: str, possible_cats: dict):
+    """
+    Checks if the given event has a future event attached, then creates the future event
+    :param event: the class object for the event
+    :param event_id: the ID for the event
+    :param possible_cats: a dict of all cats involved in the event. This should provide the cat
+    abbreviation as the key and the cat object as the value.
+    """
+    if not event.future_event:
+        return
+    for event_info in event.future_event:
+        # create dict of all cats that need to be involved in future event
+        gathered_cat_dict = _collect_involved_cats(possible_cats, event_info)
+        if not gathered_cat_dict:
+            logger.info(
+                f"WARNING: couldn't find valid cats for the future event of event {event_id}. Future event wasn't created."
+            )
+            return
+
+        # create future event and add it to the future event list
+        game.clan.future_events.append(
+            FutureEvent(
+                parent_event=event_id,
+                event_type=event_info["event_type"],
+                pool=event_info["pool"],
+                moon_delay=randint(
+                    event_info["moon_delay"][0], event_info["moon_delay"][1]
+                ),
+                involved_cats=gathered_cat_dict,
+            )
+        )
+
+
+def _collect_involved_cats(cat_dict: dict, future_info: dict) -> Optional[dict]:
+    """
+    collects involved cats and assigns their roles for the future event, then
+    returns a dict associating their new role (key) with their cat ID (value)
+
+    :param cat_dict: a dict of cats already present with the parent event of the future event. Key should be abbr
+    string and value should be cat object.
+    :param future_info: the future_info dict from the parent event
+    """
+    gathered_cat_dict = {}
+
+    # we always need an m_c and an r_c, so if they weren't specified at all then we need to find them
+    if not future_info["involved_cats"].get("m_c"):
+        future_info["involved_cats"]["m_c"] = {}
+    if not future_info["involved_cats"].get("r_c"):
+        future_info["involved_cats"]["r_c"] = {}
+
+    # we're just keeping this to living cats within the clan for now, more complexity can come later
+    possible_cats = [
+        kitty for kitty in Cat.all_cats.values() if kitty.status.alive_in_player_clan
+    ]
+
+    for new_role, cat_involved in future_info["involved_cats"].items():
+        # grab any cats that need to be newly gathered
+        if isinstance(cat_involved, dict):
+            new_cat = cat_for_event(cat_involved, possible_cats, tags=[])
+            if not new_cat:
+                return None
+            gathered_cat_dict[new_role] = new_cat
+            possible_cats.remove(Cat.fetch_cat(gathered_cat_dict[new_role]))
+            continue
+
+        # otherwise, assign already involved cats to their new role within the future event
+        gathered_cat_dict[new_role] = cat_dict[cat_involved].ID
+        if cat_dict[cat_involved] in possible_cats:
+            possible_cats.remove(cat_dict[cat_involved])
+
+    return gathered_cat_dict
