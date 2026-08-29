@@ -6552,7 +6552,9 @@
         "involved_cats": {
             "r_c": {
                 "standing": {
-        "currently": ["MISSING"]
+        "currently": [
+            "MISSING"
+        ]
       }
             }
         }
