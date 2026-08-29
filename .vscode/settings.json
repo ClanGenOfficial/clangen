@@ -45,6 +45,12 @@
             ]
         },
         {
+            "url": "./schemas/transition.schema.json",
+            "fileMatch": [
+                "events/transition.json"
+            ]
+        },
+        {
             "url": "./schemas/poi.schema.json",
             "fileMatch": [
                 "points_of_interest.json"

@@ -24,5 +24,5 @@ class Death(BaseModel):
     )
     no_results: Union[bool, MISSING] = Field(
         MISSING,
-        description="Set to True to prevent this condition from killing the cat. It's not necessary if the condition is already non-lethal (eg. scrapes)",
+        description="Not required. Set to True to prevent the result text for this death from appearing on the patrol screen. Defaults to False",
     )

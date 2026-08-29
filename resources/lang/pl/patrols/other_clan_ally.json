@@ -1,0 +1,1991 @@
+[
+    {
+        "event_id": "gen_bord_otherclan_allies1",
+        "types": [
+            "border"
+        ],
+        "frequency": 4,
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                6
+            ]
+        },
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites\/gen_bord_otherclan_OwOw",
+        "intro_text": "The patrol meets o_c_n, a Clan they consider to be allies, at the border.",
+        "decline_text": "The patrol decides not to stop and talk with their patrol.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol has a nice conversation with them, remarking on the recent weather before parting to continue patrolling."
+                ],
+                "exp_gained": 10,
+                "reputation_changes": {
+                    "other_clan": 2
+                }
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "The patrols share recent Clan news with each other: how prey has been running lately, new apprentices or kits, and other such information. They part on good terms, comradery between the Clans continuing to grow."
+                ],
+                "exp_gained": 10,
+                "reputation_changes": {
+                    "other_clan": 2
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 approaches the other patrol first, calling out a greeting and smoothly beginning a friendly conversation. The two patrols sit and chat for a little while before once again parting to patrol their respective territories."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "SPEAKER,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "reputation_changes": {
+                    "other_clan": 2
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from enjoyed the chat cat_to started up with a o_c_n patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 excitedly trots up to the other patrol, greeting them pleasantly. They seem to be on good terms with the other cats on this patrol and strike up conversation about specific happenings in their Clan, asking if so-and-so had kits or if a certain apprentice had been made a warrior yet."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "charismatic",
+                                "thoughtful",
+                                "wise",
+                                "confident"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "reputation_changes": {
+                    "other_clan": 2
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from enjoyed the chat cat_to started up with a o_c_n patrol."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 approaches the other patrol first, calling out a greeting and then remarking on a recent battle between o_c_n and one of the other Clans. s_c0 compliments the o_c_n cats on their battle prowess."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "FIGHTER,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "reputation_changes": {
+                    "other_clan": 2
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 approaches the other patrol first, calling out a greeting and then remarking on a recent battle between o_c_n and one of the other Clans. s_c0 compliments the o_c_n cats on their battle prowess."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "confident",
+                                "fierce",
+                                "bold",
+                                "righteous",
+                                "bloodthirsty",
+                                "compassionate"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "reputation_changes": {
+                    "other_clan": 2
+                }
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Though the patrol stops to chat, the other patrol seems standoffish and cold. After a stilted attempt at conversation, the two patrols part and go on their way. It seems as though your alliance with o_c_n is weakening."
+                ],
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol stops to talk with the other cats but s_c0 is quick to begin taunting them, poking fun at the other Clan. When the two patrols part ways tails are whipping and voices border on a hiss."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "bloodthirsty",
+                                "vengeful",
+                                "troublesome",
+                                "childish"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from didn't appreciate cat_to's hostile taunting of an allied Clan."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol stops to talk with the other cats but s_c0 is nervous to talk with o_c_n cats. The other patrol notices and takes offense at the lack of friendly demeanor."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "nervous",
+                                "insecure"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from thought cat_to should have acted more confident in the presence of a o_c_n patrol."
+                        }
+                    }
+                ]
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Despite considering them allies, these cats are no friends of c_n. The patrol glares and hisses from their side of the border until the o_c_n patrol continues on their way, confused and wary."
+                ],
+                "exp_gained": 10,
+                "reputation_changes": {
+                    "other_clan": -2
+                }
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol meets the other with glares and taunts but the o_c_n patrol appears unfazed. The other patrol leader meets p_l's gaze evenly and with confidence. Eventually the patrol backs down and leaves the area first, feeling a bit embarrassed at the lack of reaction."
+                ],
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_otherclan_allies2",
+        "types": [
+            "hunting",
+            "border"
+        ],
+        "frequency": 2,
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ]
+        },
+        "involved_cats": {
+            "r_c0": {}
+        },
+        "chance_of_success": 60,
+        "patrol_art": "bord_general_intro",
+        "intro_text": "r_c0 spies a fat rabbit on the other side of the o_c_n border. A tempting opportunity to be sure, but it may not be wise to hunt on their ally's territory.",
+        "decline_text": "It's not worth ruining c_n's relationship with their ally.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c0 pounces without hesitation! {PRONOUN\/r_c0\/subject\/CAP} {VERB\/r_c0\/glance\/glances} around, rabbit hanging from their muzzle, but it seems there aren't any o_c_n cats nearby. r_c0 trots back over the border, their prize in tow and transgression unnoticed."
+                ],
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "clan",
+                            "high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across the border."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "r_c0 leaps for the rabbit.... and promptly trips over a rock. The rabbit hops away as r_c0 sheepishly picks {PRONOUN\/r_c0\/self} up. It's probably for the better that {PRONOUN\/r_c0\/subject} weren't able to catch the rabbit. Trespassing could easily have damaged relations with o_c_n."
+                ],
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 leaps for the rabbit, making a swift kill just before a o_c_n patrol comes into view. The o_c_n cats seem miffed by this trespass, but not yet hostile thanks to your alliance. Thankfully s_c0 smooths things over with the other patrol by graciously gifting them the rabbit. They part ways, fortunately without damaging the relationship between Clans."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "SPEAKER,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was grateful for s_c0's skills in preventing a fight with o_c_n."
+                        }
+                    },
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "clan",
+                            "high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across the border and nearly started a fight."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c0 is about to leap for the rabbit when s_c0 grabs {PRONOUN\/r_c0\/object} by the scruff and pulls {PRONOUN\/r_c0\/object} back!  A moment later, r_c0 sees the group of o_c_n cats that had just come into view. Good thing s_c0 stopped them before they could blatantly trespass in full view of the other Clan."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "careful",
+                                "calm",
+                                "wise",
+                                "responsible"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was grateful for cat_to's sharp eyes preventing {PRONOUN\/cat_from\/object} from blatantly trespassing during a hunt."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c0 leaps for the rabbit.... and promptly trips over a rock. The rabbit hops away as r_c0 sheepishly picks {PRONOUN\/r_c0\/self} up before noticing the o_c_n cat watching {PRONOUN\/r_c0\/object} from the other side of the border. The other cat knows exactly what r_c0 was intending to do and turns away, presumably to report the incident to their own leader."
+                ],
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                },
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 pounces with no hesitation! {PRONOUN\/s_c0\/subject\/CAP} easily {VERB\/s_c0\/kill\/kills} the rabbit before glancing up and coming face-to-face with a o_c_n cat. s_c0 is promptly chased back over the border. The other cat glares, hissing and spitting until the patrol leaves the area."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "daring",
+                                "adventurous",
+                                "ambitious",
+                                "bold",
+                                "shameless",
+                                "troublesome"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "clan",
+                            "high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across the border."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "A tempting opportunity. And also a perfect one. r_c0 pounces and swiftly kills the rabbit, intentionally leaving evidence of their deed behind. That will show those o_c_n cats just how confident c_n is in their own power."
+                ],
+                "exp_gained": 10,
+                "reputation_changes": {
+                    "other_clan": -2
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "clan",
+                            "high_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to caught a rabbit from across the border."
+                        }
+                    }
+                ]
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "r_c0 leaps for the rabbit.... and promptly trips over a rock. The rabbit hops away as r_c0 sheepishly picks {PRONOUN\/r_c0\/self} up before noticing the o_c_n cat watching {PRONOUN\/r_c0\/object} from the other side of the border. The other cat laughs at the pathetic display and turns to walk deeper into their own territory.  They seem to be unfazed and unimpressed by the sad attempt."
+                ],
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_med_borderherb1",
+        "types": [
+            "herb_gathering"
+        ],
+        "frequency": 2,
+        "season": [
+            "leaf-bare"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ],
+            "medicine cat": [
+                1,
+                1
+            ]
+        },
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites\/gen_med_borderherb_Mc",
+        "intro_text": "p_l pads along, mouth open slightly as {PRONOUN\/p_l\/subject} {VERB\/p_l\/scent\/scents} for any traces of herbs. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/scent\/scents} some raspberries nearby, but it seems that they're just over the border.",
+        "decline_text": "{PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/decide\/decides} that trespassing isn't worth it in this case.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "{PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/pad\/pads} over to the border and {VERB\/p_l\/hesitate\/hesitates} only momentarily before crossing. {PRONOUN\/p_l\/subject\/CAP} quickly {VERB\/p_l\/gather\/gathers} some of the berries, making sure to leave plenty for o_c_n's medicine cat if they need some too."
+                ],
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": 2
+                },
+                "supply": [
+                    {
+                        "type": "raspberry",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "{PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/pad\/pads} to the border and {VERB\/p_l\/pause\/pauses} for a heartbeat to scent the air. o_c_n's scent is very strong, but there's something else... o_c_n's medicine cat appears at that moment. They're walking towards the raspberries when they spot p_l and wave their tail in greeting. They invite p_l to gather some, as there's plenty. p_l gratefully accepts."
+                ],
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": 2
+                },
+                "supply": [
+                    {
+                        "type": "raspberry",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l is about to step over the border when a hiss stops {PRONOUN\/p_l\/object} in {PRONOUN\/p_l\/poss} tracks. A o_c_n warrior bounds into view, bristling. However, when the warrior realizes who the other cat is, they quickly apologize to p_l and invite {PRONOUN\/p_l\/object} to gather herbs. o_c_n is happy to share with friends."
+                ],
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": 2
+                },
+                "supply": [
+                    {
+                        "type": "raspberry",
+                        "adjust": "increase_medium"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l starts to step over the border but a hiss stops {PRONOUN\/p_l\/object} in {PRONOUN\/p_l\/poss} tracks. A o_c_n patrol is padding {PRONOUN\/p_l\/poss} way. Though the patrol seems to calm down as they recognize p_l, they look gravely at the medicine cat and explain that they can't spare any herbs. Their medicine cat sent them to collect the last of the berries. p_l nods and thanks them anyway."
+                ],
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_scent_allies1",
+        "types": [
+            "border"
+        ],
+        "frequency": 4,
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ]
+        },
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites\/gen_bord_scentallies_Wr",
+        "intro_text": "As the patrol is checking the border lines, they notice that a o_c_n scent has strayed into their territory. o_c_n is their ally, but this is a bit suspicious.",
+        "decline_text": "p_l decides that it isn't important. After all, o_c_n wouldn't do anything to jeopardize the alliance. Maybe an apprentice simply lost their way.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "After poking around a bit, the patrol discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border, but p_l only chuckles and gently guides the young cat back to their own territory."
+                ],
+                "exp_gained": 10,
+                "reputation_changes": {
+                    "other_clan": 2
+                }
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "The patrol follows the scent deeper into their own territory, eventually stumbling upon the o_c_n medicine cat! It seems there's an herb shortage and the medicine cat was hoping to borrow from c_n's own stores to treat a badly wounded warrior. p_l hastily escorts the cat to the c_n camp."
+                ],
+                "exp_gained": 10,
+                "reputation_changes": {
+                    "other_clan": 2
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning and the patrol scatters when they hear the cry. Just in time, too, as a large dog jumps at the patrol! s_c0 rallies the patrol to drive the dog away, thankfully avoiding any injuries. The o_c_n cat is grateful for the rescue."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "FIGHTER,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "reputation_changes": {
+                    "other_clan": 2
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's quick thinking during a dog attack."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol follows the scent and finds a wounded o_c_n warrior. It seems the cat had been caught by a dog and chased into c_n territory. The dog is gone now, but the warrior can't make it back across the border on their own. s_c0 insists that the patrol escort the warrior back to the o_c_n camp and the o_c_n leader is grateful for the service."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "compassionate",
+                                "calm"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "reputation_changes": {
+                    "other_clan": 2
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "respect"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from found cat_to's compassion toward a hurt o_c_n warrior admirable."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The patrol decides to follow the scent but only end up walking in circles. Either the trespasser is good at concealing their trail or the patrol just needs to work on their tracking skills. It doesn't matter now; the whole day has been wasted. p_l decides that they should just return to camp and report the strange scent."
+                ],
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 can't contain {PRONOUN\/s_c0\/poss} annoyance at the trespass when the patrol finds a lost o_c_n apprentice to be the source of the scent, reprimanding them heavily. The apprentice is nearly in tears when s_c0 finally lets them go and the patrol leads them back to the border line, tension thick in the air."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "bloodthirsty",
+                                "cold",
+                                "fierce",
+                                "strict",
+                                "vengeful"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "comfort",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from watched cat_to harshly reprimand a stray o_c_n apprentice and couldn't help feeling like it was too much."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "The patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning, but they aren't quick enough and a large dog suddenly descends upon the patrol. r_c0 is killed before they can run and the rest of the patrol scatters in fear."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                },
+                "death": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "history": "m_c followed the scent of a trespassing cat and was killed by a dog."
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "The patrol follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning and the patrol scatters when they hear the cry. Just in time, too, as a large dog jumps at the patrol, catching r_c0 but thankfully only injuring {PRONOUN\/r_c0\/object} before r_c0 tears {PRONOUN\/r_c0\/self} free and sprints away."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "bite-wound",
+                            "torn pelt"
+                        ],
+                        "scar_history": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
+                        "death_history": "m_c died from injuries inflicted by a dog."
+                    }
+                ]
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "This is a trespass that will not be tolerated and, frankly, should be reciprocated. The patrol blatantly spreads their own scent on o_c_n's territory, ruining the clearly-marked border lines."
+                ],
+                "exp_gained": 10,
+                "reputation_changes": {
+                    "other_clan": -2
+                }
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "How dare they trespass! The patrol bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside, they find the o_c_n medicine cat conversing with your own medicine cat. They tell the patrol off for so hastily jumping to conclusions.  The other medicine cat was only looking to borrow some herbs."
+                ],
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "clan",
+                            "high_social",
+                            "low_lawful"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from saw how cat_to's patrol jumped to hasty conclusions about an allied Clan's scent."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_scent_allies2",
+        "types": [
+            "border"
+        ],
+        "frequency": 3,
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ]
+        },
+        "chance_of_success": 60,
+        "patrol_art": "cat_sprites\/gen_bord_scentallies_Wr",
+        "intro_text": "As p_l is checking the border lines, {PRONOUN\/p_l\/subject} {VERB\/p_l\/notice\/notices} that a o_c_n scent has strayed into their territory. o_c_n is their ally, but this is a bit suspicious.",
+        "decline_text": "p_l decides that it isn't important. After all, o_c_n wouldn't do anything to jeopardize the alliance.  Maybe an apprentice simply lost their way.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "After poking around a bit, p_l discovers a o_c_n apprentice wandering nearby, hopelessly lost. The apprentice is distraught upon discovering they're on the wrong side of the border, but p_l only chuckles and gently guides the young cat back to their own territory."
+                ],
+                "exp_gained": 10,
+                "reputation_changes": {
+                    "other_clan": 2
+                }
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "p_l follows the scent deeper into their own territory, eventually stumbling upon the o_c_n medicine cat!  It seems there's an herb shortage and the medicine cat was hoping to borrow from c_n's own stores to treat a badly wounded warrior. p_l hastily escorts the cat to the c_n camp."
+                ],
+                "exp_gained": 10,
+                "reputation_changes": {
+                    "other_clan": 2
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan",
+                            "high_social",
+                            "low_aggress"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from approved of cat_to escorting o_c_n's medicine cat back to the camp to ask for help."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l follows the scent and finds a wounded o_c_n warrior. It seems the cat had been caught by a dog and chased into c_n territory.  The dog is gone now, but the warrior can't make it back across the border on their own. s_c0 insists on escorting the warrior back to the o_c_n camp, and the o_c_n leader is grateful for the service."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "compassionate",
+                                "calm"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 10,
+                "reputation_changes": {
+                    "other_clan": 2
+                }
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l decides to follow the scent but only ends up walking in circles. Either the trespasser is good at concealing their trail or {PRONOUN\/p_l\/subject} just needs to work on {PRONOUN\/p_l\/poss} tracking skills.  It doesn't matter now; the whole day has been wasted. p_l decides that {PRONOUN\/p_l\/subject} should just return to camp and report the strange scent."
+                ],
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 can't contain {PRONOUN\/s_c0\/poss} annoyance at the trespass when {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/find\/finds} a lost o_c_n apprentice to be the source of the scent, reprimanding them heavily. The apprentice is nearly in tears when s_c0 finally lets them go and grumpily leads them back to the border line, tension thick in the air."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "bloodthirsty",
+                                "cold",
+                                "fierce",
+                                "strict",
+                                "vengeful"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                }
+            },
+            {
+                "tags": [
+                    "some_lives"
+                ],
+                "frequency": 3,
+                "strings": [
+                    "p_l follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning, but they aren't quick enough and a large dog suddenly descends upon p_l. p_l is killed before {PRONOUN\/p_l\/subject} can run."
+                ],
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                },
+                "death": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "history": "m_c followed the scent of a trespassing cat and was killed by a dog."
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "p_l follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning and p_l sprints for the same tree when they hear the cry. Just in time, too, as a large dog jumps at them, catching p_l but thankfully only injuring {PRONOUN\/p_l\/object} before p_l tears {PRONOUN\/p_l\/self} free and scales the tree."
+                ],
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "p_l"
+                        ],
+                        "condition": [
+                            "bite-wound",
+                            "mangled tail"
+                        ],
+                        "scar_history": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
+                        "death_history": "m_c died of injuries sustained in a fight with a dog."
+                    }
+                ]
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "This is a trespass that will not be tolerated and, frankly, should be reciprocated. p_l blatantly spreads their own scent on o_c_n's territory, ruining the clearly-marked border lines."
+                ],
+                "exp_gained": 10,
+                "reputation_changes": {
+                    "other_clan": -2
+                }
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "How dare they trespass! p_l bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside, they find the o_c_n medicine cat conversing with your own medicine cat. They tell p_l off for so hastily jumping to conclusions. The other medicine cat was only looking to borrow some herbs."
+                ],
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_solo_allies1",
+        "types": [
+            "border"
+        ],
+        "frequency": 4,
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ],
+            "normal adult": [
+                1,
+                1
+            ]
+        },
+        "chance_of_success": 30,
+        "patrol_art": "bord_general_intro",
+        "intro_text": "p_l heads out into the territory alone, wanting to make a quick check on the border.",
+        "decline_text": "p_l turns back to camp, deciding that {PRONOUN\/p_l\/poss} other duties have to come first.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "There's a particular spot where the border runs across a stretch of bare stone, requiring frequent refreshing to keep the scent marks intact. p_l re-marks it and heads home, a simple but necessary mission completed."
+                ],
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": 2
+                }
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "p_l comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/see\/sees} the young cat off with a stern warning and then {VERB\/p_l\/bring\/brings} the prey back to c_n camp to report the incident to the deputy."
+                ],
+                "required_cat_types": {
+                    "warrior": [
+                        1,
+                        1
+                    ]
+                },
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": 2
+                }
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "p_l comes across a o_c_n apprentice on the wrong side of the border and holding prey. Unimpressed, p_l brings them back to their border as the apprentice tries to melt into the ground in shame, returning them to a mentor whose face goes slack with horror to see c_n's deputy."
+                ],
+                "required_cat_types": {
+                    "deputy": [
+                        1,
+                        1
+                    ]
+                },
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": 2
+                }
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "p_l comes across a o_c_n apprentice on the wrong side of the border and holding prey. Unimpressed, p_l brings them back to their border as the apprentice tries to melt into the ground in shame, returning them to a mentor who tucks their tail and apologizes profusely."
+                ],
+                "required_cat_types": {
+                    "leader": [
+                        1,
+                        1
+                    ]
+                },
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": 2
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 comes across a patrol from o_c_n, out on a similar mission to them, and turns to follow the same marking path as them, keen to catch up on what their ally has been up to."
+                ],
+                "required_cat_types": {
+                    "warrior": [
+                        1,
+                        1
+                    ]
+                },
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "SPEAKER,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": 2
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 comes across a patrol from o_c_n, out on a similar mission to {PRONOUN\/s_c0\/object}. {PRONOUN\/s_c0\/subject\/CAP} {VERB\/s_c0\/strike\/strikes} up a friendly conversation, keen to catch up on what their ally has been up to. {PRONOUN\/s_c0\/subject\/CAP} {VERB\/s_c0\/send\/sends} the patrol off with several friendly messages to pass on from different c_n cats and an update from c_n's leader."
+                ],
+                "required_cat_types": {
+                    "deputy": [
+                        1,
+                        1
+                    ]
+                },
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "SPEAKER,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": 2
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 comes across a patrol from o_c_n, out on a similar mission to {PRONOUN\/s_c0\/object}. {PRONOUN\/s_c0\/subject\/CAP} {VERB\/s_c0\/strike\/strikes} up a friendly conversation, keen to catch up on what their ally has been up to. The cats leave with several messages to pass on from both sides and a renewed sense of goodwill and trust between them."
+                ],
+                "required_cat_types": {
+                    "leader": [
+                        1,
+                        1
+                    ]
+                },
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "skill": [
+                                "SPEAKER,1"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": 2
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "As s_c0 marks the border, {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/encounter\/encounters} a o_c_n border patrol. It even includes a young apprentice, whose eyes go round and fur fluffs up at encountering a real c_n cat! s_c0 plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully."
+                ],
+                "required_cat_types": {
+                    "warrior": [
+                        1,
+                        1
+                    ]
+                },
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "compassionate",
+                                "faithful",
+                                "loving",
+                                "responsible",
+                                "thoughtful",
+                                "wise"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": 2
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "As s_c0 marks the border, {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/encounter\/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c0 plays along, acting very impressed with the hardworking apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness."
+                ],
+                "required_cat_types": {
+                    "deputy": [
+                        1,
+                        1
+                    ]
+                },
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "compassionate",
+                                "faithful",
+                                "loving",
+                                "responsible",
+                                "thoughtful",
+                                "wise"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": 2
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "As s_c0 marks the border, {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/encounter\/encounters} a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they hide behind their mentor, but s_c0 manages to coax them out, praising the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness."
+                ],
+                "required_cat_types": {
+                    "leader": [
+                        1,
+                        1
+                    ]
+                },
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "compassionate",
+                                "faithful",
+                                "loving",
+                                "responsible",
+                                "thoughtful",
+                                "wise"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": 2
+                }
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l marks a little, but {PRONOUN\/p_l\/subject} {VERB\/p_l\/reach\/reaches} a section where the border is muddled and {VERB\/p_l\/have\/has} to give up and go home."
+                ],
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN\/p_l\/object} doing it! {PRONOUN\/p_l\/subject\/CAP} immediately {VERB\/p_l\/apologize\/apologizes} to the o_c_n patrol for the diplomatic incident {PRONOUN\/p_l\/subject}{VERB\/p_l\/'ve\/'s} inadvertently caused."
+                ],
+                "required_cat_types": {
+                    "warrior": [
+                        1,
+                        1
+                    ]
+                },
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan",
+                            "high_social",
+                            "high_aggress"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to's clumsy border marking nearly caused an incident with o_c_n."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l is having trouble focusing today and puts a mark in the wrong place at the worst possible moment, because a o_c_n patrol sees {PRONOUN\/p_l\/object} doing it! The diplomatic incident spirals. Though both allies are able to keep it merely tense and not violent, there'll be consequences for this."
+                ],
+                "required_cat_types": {
+                    "warrior": [
+                        -1,
+                        -1
+                    ]
+                },
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -3
+                },
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "clan",
+                            "high_social",
+                            "high_aggress"
+                        ],
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect"
+                        ],
+                        "amount": -15,
+                        "log": {
+                            "cats_from": "cat_from heard that cat_to's clumsy border marking nearly caused an incident with o_c_n."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "p_l encounters a patrol from o_c_n on the border, and greets them politely, but there's something different here. Something dangerous. They return to camp, blood soaked through their fur and a new fear in their heart: is o_c_n still their ally?"
+                ],
+                "required_cat_types": {
+                    "warrior": [
+                        -1,
+                        -1
+                    ]
+                },
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -3
+                },
+                "condition": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "condition": [
+                            "battle_injury"
+                        ],
+                        "scar_history": "m_c got injured patrolling on the border."
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "strings": [
+                    "p_l greets the leader of o_c_n along the borders, but {PRONOUN\/p_l\/poss} fellow leader {VERB\/p_l\/seemed\/seems} angry, tail lashing. Before p_l can get a word out, {PRONOUN\/p_l\/poss} fellow leader attacks, and taken by surprise, p_l loses a life."
+                ],
+                "required_cat_types": {
+                    "leader": [
+                        1,
+                        1
+                    ]
+                },
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -5
+                },
+                "death": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "history": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "fst_bord_risingclanref_allies_lorelocked1",
+        "types": [
+            "border"
+        ],
+        "frequency": 3,
+        "location": [
+            "forest"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                2,
+                6
+            ],
+            "apprentice": [
+                1,
+                5
+            ],
+            "normal adult": [
+                1,
+                5
+            ]
+        },
+        "involved_cats": {
+            "p_l": {
+                "stat": {
+                    "skill": [
+                        "LORE,1"
+                    ],
+                    "trait": []
+                }
+            }
+        },
+        "chance_of_success": 30,
+        "patrol_art": "cat_sprites\/gen_bord_otherclan_OwOw",
+        "intro_text": "The border patrol, busy re-marking, comes across a o_c_n patrol doing the same. The apprentices from both sides perk up at the chance for a break in the monotony. Chuckling, p_l offers the chance for a small tale <i>if<\/i> they can all sit still for it!",
+        "decline_text": "The apprentices can't sit still, but it's no great loss. The patrols just continue on with their work.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Once, there was a cat called Scrap. And she was a little bit of nothing, no talents, no courage, no beauty, she thought herself worthless and stupid. Yet when her Clan was threatened by invading rogues, she rose up. Nervous, flighty, scared and small, and the savior of her Clan, marked with moth wings tucked behind her ear."
+                ],
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": 2
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "comfort"
+                        ],
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from enjoyed listening to cat_to's story on patrol."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Just as flighty as Scrap and significantly more social, the apprentices just won't sit down and shut up. p_l's storytelling skills are wasted, though the o_c_n cats seem to appreciate the attempt."
+                ],
+                "exp_gained": 0
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Once, there was a cat called Scrap. Possessed of few talents and no courage in her own eyes, she nevertheless rose to the occasion when her Clan needed her, as would <i>any<\/i> c_n warrior, p_l warns the o_c_n patrol."
+                ],
+                "exp_gained": 10,
+                "reputation_changes": {
+                    "other_clan": -2
+                }
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "Once, there was a cat called Scrap. Possessed of few talents and no courage, she \u2014 So she was a typical c_n cat then, the o_c_n apprentice laughs. p_l glares, breaking into a hiss that startles the impudent adolescent away from the border."
+                ],
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                }
+            }
+        ]
+    },
+    {
+        "event_id": "gen_bord_allies_otherclankits1",
+        "types": [
+            "border"
+        ],
+        "frequency": 1,
+        "required_cat_types": {
+            "patrol_cats": [
+                3,
+                6
+            ],
+            "normal adult": [
+                1,
+                6
+            ]
+        },
+        "chance_of_success": 55,
+        "patrol_art": "bord_general_intro",
+        "intro_text": "Since c_n is on good terms with o_c_n, the patrol is at ease as they patrol along the section of borders. As they do, p_l spots two kits from o_c_n playing close to the border.",
+        "decline_text": "It's not {PRONOUN\/p_l\/poss} problem that those kits are alone and vulnerable. o_c_n should keep a closer eye on their kits.",
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l wouldn't be able to forgive {PRONOUN\/p_l\/self} if something happened to those kits. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/order\/orders} the patrol other than r_c0 to go back to camp, and r_c0 and p_l go to bring the kits back to o_c_n. With gratitude, o_c_n thanks them."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": 2
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from saw how soft cat_to was toward lost o_c_n kits."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "p_l orders the patrol except r_c0 back to camp. p_l and r_c0 grab the kits by their scruffs despite their protests, and on their journey to o_c_n they are greeted by a concerned patrol that is very happy and grateful to see the kits safe, thanking them profusely."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": 2
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l orders the patrol to go back to camp asking that r_c0 be left behind to help {PRONOUN\/p_l\/object}. They go up to the little kits convincing them that they are gonna give them the best badger ride ever. As they approach o_c_n's camp, with the kits squealing with joy on their back, they are greeted with relief and laughter."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": 2
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from saw how gentle cat_to was toward lost o_c_n kits."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l decides to bring r_c0 with {PRONOUN\/p_l\/object} to o_c_n and orders the others back to camp. As they approach o_c_n, they are immediately greeted by the leader, who recognizes p_l \u2014 knowing {PRONOUN\/p_l\/object} to be a kind and caring cat \u2014 and thanks both of them sincerely."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": 2
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from saw how gentle cat_to was toward lost o_c_n kits."
+                        }
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "As p_l goes to step over the border with r_c0 to retrieve the kits and bring them to their Clan, they stop as they hear a o_c_n patrol shouting for the kits. p_l is relieved to know they will be safe with their own Clan and resume {PRONOUN\/p_l\/poss} patrol. The patrol doesn't realize that the o_c_n cats saw them cross the border and now look upon their departing backs with suspicious eyes."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                }
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "As p_l crosses the border with r_c0 to grab the kits by their scruff, a o_c_n patrol suddenly appears, looking furious, with their claws out and fangs bared! r_c0 gently drops the kit and attempts to explain the situation but is immediately and viciously killed. p_l races back over to their side of the border, just barely escaping the wrath of o_c_n warriors."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -3
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -25,
+                        "log": {
+                            "cats_from": "cat_from can't help but blame cat_to's hasty action for r_c's death."
+                        }
+                    }
+                ],
+                "death": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "history": "m_c was slain by o_c_n warriors."
+                    }
+                ]
+            }
+        ],
+        "antag_success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l seizes the opportunity to weaken o_c_n and orders the patrol to attack and kill the kits."
+                ],
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": -2
+                }
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "p_l seizes the opportunity to weaken o_c_n and orders the patrol to steal the two kits."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "kitten"
+                        ],
+                        "backstory": [
+                            "stolenkit3"
+                        ]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "kitten"
+                        ],
+                        "backstory": [
+                            "stolenkit3"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": -8
+                },
+                "join": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    },
+                    {
+                        "cats": [
+                            "n_c1"
+                        ]
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "p_l gasps at seeing the two kits. How did they get so far from camp? Ordering the patrol to bring the kits back to camp, p_l doesn't notice the patrol exchange glances before keeping silent as they steal the kits from o_c_n."
+                ],
+                "involved_cats": {
+                    "n_c0": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "kitten"
+                        ],
+                        "backstory": [
+                            "stolenkit3"
+                        ]
+                    },
+                    "n_c1": {
+                        "can_create_new_cat": {},
+                        "age": [
+                            "kitten"
+                        ],
+                        "backstory": [
+                            "stolenkit3"
+                        ]
+                    }
+                },
+                "exp_gained": 20,
+                "reputation_changes": {
+                    "other_clan": -8
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from was witness to how cat_to apparently can't tell the difference between o_c_n kits and c_n kits."
+                        }
+                    }
+                ],
+                "join": [
+                    {
+                        "cats": [
+                            "n_c0"
+                        ]
+                    },
+                    {
+                        "cats": [
+                            "n_c1"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "antag_fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l and the patrol cross the border to attack the two kits when they are thwarted by a o_c_n patrol that was looking for the kits. Fox-dung, a good opportunity to weaken o_c_n has failed."
+                ],
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l and the patrol cross the border to steal the two kits when they are thwarted by a o_c_n patrol that was looking for the kits. Fox-dung, a good opportunity to weaken o_c_n has failed."
+                ],
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                }
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l gasps at seeing the two kits, how did they get so far from camp? Ordering the patrol to bring the kits back to camp, p_l doesn't notice the patrol exchange glances before r_c0 informs p_l that those are o_c_n kits."
+                ],
+                "involved_cats": {
+                    "r_c0": {}
+                },
+                "exp_gained": 0,
+                "reputation_changes": {
+                    "other_clan": -1
+                },
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "multi"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "respect",
+                            "trust"
+                        ],
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from was witness to how cat_to apparently can't tell the difference between o_c_n kits and c_n kits."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
