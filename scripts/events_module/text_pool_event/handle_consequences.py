@@ -27,6 +27,7 @@ from scripts.cat.microservices.conditions import (
 from scripts.config import get_config
 from scripts.events_module.consequences import unpack_rel_block, check_stolen_vitality
 from scripts.events_module.future.prep_and_trigger import prep_future_event
+from scripts.events_module.patrol.create_new_cat import updated_create_new_cat
 from scripts.events_module.parameter_dicts import SupplyDict
 from scripts.events_module.relationship import relation_events
 from scripts.events_module.text_adjust import (
@@ -45,6 +46,7 @@ logger = logging.getLogger(__name__)
 def execute_outcome(
     event: TextPoolEvent,
     event_involved_cats: dict[str, Union[Cat, list[Cat]]],
+    event_cats_to_create: dict,
     other_clan: OtherClan = None,
 ):
     """
@@ -52,25 +54,39 @@ def execute_outcome(
     :returns: Outcome text, results text, list of created rel logs (might be empty)
     """
 
+    all_involved_cats = event_involved_cats.copy()
+
+    # Must start with cat creation. 
+    for abbr, constraints in event_cats_to_create.items():
+        all_involved_cats[abbr] = updated_create_new_cat(
+                option_dict=constraints,
+                involved_cats=all_involved_cats,
+                other_clan=other_clan,
+            )
+        if len(all_involved_cats[abbr]) == 1:
+                # if this is a list of a single cat, then we take them out of the list
+                all_involved_cats[abbr] = all_involved_cats[abbr][0]
+
+
     rel_results = {}
     chosen_string = choice(event.strings)
     # process text
     processed_text = event_text_adjust(
         Cat,
         chosen_string,
-        involved_cat_dict=event_involved_cats,
+        involved_cat_dict=all_involved_cats,
         clan=game.clan,
         other_clan=other_clan,
     )
 
     results = [
-        _handle_joining(event, event_involved_cats),
-        _handle_meeting(event, event_involved_cats),
-        _handle_death(event, event_involved_cats, other_clan),
-        _handle_lost(event, event_involved_cats),
-        _handle_conditions(event, event_involved_cats, other_clan),
+        _handle_joining(event, all_involved_cats),
+        _handle_meeting(event, all_involved_cats),
+        _handle_death(event, all_involved_cats, other_clan),
+        _handle_lost(event, all_involved_cats),
+        _handle_conditions(event, all_involved_cats, other_clan),
         _handle_reputation_changes(event, other_clan),
-        _handle_supply_changes(event, event_involved_cats),
+        _handle_supply_changes(event, all_involved_cats),
     ]
 
     acc_results, processed_text = _handle_accessories(
@@ -78,9 +94,9 @@ def execute_outcome(
     )
     results.append(acc_results)
 
-    _handle_exp(event, event_involved_cats)
-    _handle_mentor_app(event_involved_cats)
-    _handle_future_event(event, event_involved_cats)
+    _handle_exp(event, all_involved_cats)
+    _handle_mentor_app(all_involved_cats)
+    _handle_future_event(event, all_involved_cats)
 
     # just gonna make this a copy so that we don't accidentally change the base info
     rel_changes = event.relationship_changes.copy()
@@ -90,14 +106,14 @@ def execute_outcome(
                 block["log"][group] = event_text_adjust(
                     Cat,
                     block["log"][group],
-                    involved_cat_dict=event_involved_cats,
+                    involved_cat_dict=all_involved_cats,
                     clan=game.clan,
                     other_clan=other_clan,
                 )
 
     # apply rel effects (append result text)
     rel_results.update(
-        unpack_rel_block(Cat, rel_changes, involved_cats=event_involved_cats)
+        unpack_rel_block(Cat, rel_changes, involved_cats=all_involved_cats)
     )
     if rel_results:
         results.append(i18n.t(f"screens.patrol.relationship_changed"))

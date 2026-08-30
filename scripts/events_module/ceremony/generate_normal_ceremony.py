@@ -29,7 +29,7 @@ def create_ceremony(
     new_rank = main_cat.status.rank.replace(" ", "_")
     possible_events = load_text_pool_events(f"events/ceremonies/{new_rank}.json")
 
-    chosen_ceremony, involved_cats = get_valid_event(
+    chosen_ceremony, involved_cats, cats_to_create = get_valid_event(
         primary_cat=main_cat,
         involved_cats=involved_cats,
         interactable_cats=Cat.all_cats_list,
@@ -43,7 +43,7 @@ def create_ceremony(
 
     # we won't actually use results or rel results for ceremonies
     processed_string, results, rel_results = execute_outcome(
-        chosen_ceremony, involved_cats
+        chosen_ceremony, involved_cats, cats_to_create
     )
 
     # cats to be displayed as buttons under the event

@@ -9,7 +9,6 @@ from scripts.events_module.event_filters import (
     cat_for_event,
 )
 from scripts.events_module.parameter_dicts import InvolvedCatDict
-from scripts.events_module.patrol.create_new_cat import updated_create_new_cat
 from scripts.events_module.patrol.patrol_event import PatrolEvent
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 
@@ -30,10 +29,13 @@ def find_cats(
     :param other_clan: The OtherClan object involved in the event
     :return: Updated involved_cats dict with valid cats. If dict is empty, then valid cats were not found.
     """
+
+    empty = ({}, {})
+
     temp_involved_cats = involved_cats.copy()
     interactable_cats = interactable_cats.copy()
 
-    cats_to_create = []
+    cats_to_create = {}
 
     can_give_condition = hasattr(event, "condition")
     can_give_accessory = hasattr(event, "gain_accessory")
@@ -44,9 +46,11 @@ def find_cats(
             check_rel_constraint_groups(block, temp_involved_cats)
             for block in event.relationship_constraint
         ):
-            return {}
-
+            return empty
+   
     for abbr, constraints in event.involved_cats.items():
+
+        can_create_new_cat = False
         possible_injuries = get_potential_conditions(abbr, can_give_condition, event)
         possible_accessories = get_potential_accessories(
             abbr, can_give_accessory, event
@@ -57,7 +61,7 @@ def find_cats(
             if involved_cats[abbr] is None and abbr in event.involved_cats:
                 # sometimes a specific abbr may be "preset" as None
                 # which indicates that events requiring that abbr should be avoided
-                return {}
+                return empty
             possible_cats = (
                 involved_cats[abbr] if isinstance(abbr, list) else [involved_cats[abbr]]
             )
@@ -72,11 +76,11 @@ def find_cats(
         elif "n_c" in abbr:
             # CATS THAT CAN BE MADE
             if "can_create_new_cat" in constraints:
-                # these cats can be created if need be, so we'll do them after we've found all the cats that must exist
-                cats_to_create.append(abbr)
-                continue
+                # It's OK if we can't find a cat - we can create it later. 
+                print(event.involved_cats[abbr])
+                can_create_new_cat = True 
 
-            # CATS THAT MUST EXIST
+            # Find possible cats. 
             possible_cats = [
                 c for c in outside_cats if c not in temp_involved_cats.values()
             ]
@@ -93,7 +97,7 @@ def find_cats(
             )
             # if we found no one, then this event isn't possible, and we should try a different one
             if not temp_involved_cats["multi_cat"]:
-                return {}
+                return empty
             else:
                 # remove cats from the pool so they don't get repeated in the event
                 for c in temp_involved_cats["multi_cat"]:
@@ -106,7 +110,11 @@ def find_cats(
 
         if not possible_cats:
             # uh oh, we're out of options!
-            return {}
+            if can_create_new_cat:
+                cats_to_create[abbr] = constraints
+                continue
+            else:
+                return empty
 
         # random shuffle to ensure we aren't picking the same cats all the time
         random.shuffle(possible_cats)
@@ -123,10 +131,14 @@ def find_cats(
             return_id=False,
         )
         if not possible_cats:
-            return {}
+            if can_create_new_cat:
+                cats_to_create[abbr] = constraints
+                continue
+            else:
+                return empty
 
         # now choose a cat to fill the role, checking for relationship constraints
-        temp_involved_cats = _find_involved_cat(
+        new_involved_cat = _find_involved_cat(
             abbr,
             possible_cats,
             relationship_constraint=event.relationship_constraint,
@@ -134,46 +146,28 @@ def find_cats(
             temp_involved_cats=temp_involved_cats,
             other_clan=other_clan,
         )
-        if not temp_involved_cats:
-            return {}
 
-        if temp_involved_cats[abbr] in interactable_cats:
+        if not new_involved_cat:
+            if can_create_new_cat:
+                cats_to_create[abbr] = constraints
+                continue
+            else:
+                return empty
+
+        print(f"NEW INVOLDED: {new_involved_cat}")
+        temp_involved_cats.update(new_involved_cat)
+
+        if temp_involved_cats.get(abbr) in interactable_cats:
             interactable_cats.remove(temp_involved_cats[abbr])
 
-    # create new cats if we need to!
-    for abbr in cats_to_create:
-        # this will first try to find an existing cat, but if it can't then it'll make a new one
-        constraints = event.involved_cats[abbr]
-        cat_list = [c for c in outside_cats if c not in temp_involved_cats.values()]
-        possible_injuries = get_potential_conditions(abbr, can_give_condition, event)
-        possible_accessories = get_potential_accessories(
-            abbr, can_give_accessory, event
-        )
+    # Pop all abbreviations from temp_involved_cats:
+    #for key in cats_to_create:
+    #    temp_involved_cats.pop(key)
 
-        # initial filter of the entire list of cats for the more general constraints
-        possible_cats = cat_for_event(
-            constraint_dict=constraints,
-            possible_cats=cat_list,
-            tags=event.tags,
-            injuries=possible_injuries,
-            new_accessories=possible_accessories,
-            other_involved_clan_id=other_clan.group_ID if other_clan else None,
-            return_list=True,
-            return_id=False,
-        )
+    print(f"-----Temp involved Cats: {temp_involved_cats}")
+    print(f"-----CATS TO CREATE: {cats_to_create}")
 
-        new_cats = _find_involved_cat(
-            abbr,
-            possible_cats,
-            relationship_constraint=event.relationship_constraint,
-            cat_constraints=constraints,
-            temp_involved_cats=temp_involved_cats,
-            other_clan=other_clan,
-        )
-        temp_involved_cats.update(new_cats)
-
-    return temp_involved_cats
-
+    return temp_involved_cats, cats_to_create
 
 def get_potential_conditions(abbr, can_give_condition, event):
     possible_injuries = []
@@ -239,7 +233,7 @@ def _find_involved_cat(
 ) -> dict:
     """
     Finds a cat from the available cats that can fill the abbreviation slot. This will check against relationship
-    constraints and will create a new cat if necessary and allowed.
+    constraints.
     """
     if possible_cats:
         possible_cats = possible_cats.copy()
@@ -247,12 +241,18 @@ def _find_involved_cat(
     # if relationships aren't required, just grab some cats and go!
     if possible_cats and not relationship_constraint:
         # take first cat
-        temp_involved_cats[abbr] = possible_cats[0]
-        return temp_involved_cats
+        return {abbr: possible_cats[0]}
 
     # otherwise, let's make sure we fulfill the rel constraints with this cat
     elif possible_cats:
-        while not temp_involved_cats.get(abbr):
+
+        i = 0
+        while True:
+            # Protection against infinate loop. 
+            i += 1
+            if i > 2000:
+                return {}
+
             # need a temp cat dict that includes our possible kitty
             _temp_cats = temp_involved_cats.copy()
             _temp_cats[abbr] = possible_cats[0]
@@ -270,25 +270,11 @@ def _find_involved_cat(
                     # still some possibilities, let's try the next!
                     continue
             # if we got here, then this cat works!
-            temp_involved_cats[abbr] = _temp_cats[abbr]
+            return {abbr: _temp_cats[abbr]}
 
-    # there weren't any possible cats, so we'll create a new one if we're allowed
+    # there weren't any possible cats, return nothing. New cats are handled downstream.
     else:
-        # we don't need to check relationship constraints if we're making a new cat
-        if "n_c" in abbr and "can_create_new_cat" in cat_constraints:
-            temp_involved_cats[abbr] = updated_create_new_cat(
-                option_dict=cat_constraints,
-                involved_cats=temp_involved_cats,
-                other_clan=other_clan,
-            )
-            if len(temp_involved_cats[abbr]) == 1:
-                # if this is a list of a single cat, then we take them out of the list
-                temp_involved_cats[abbr] = temp_involved_cats[abbr][0]
-        else:
-            # if we aren't allowed to make a new one, then we can't do this event
-            return {}
-
-    return temp_involved_cats
+        return {}
 
 
 def _get_multi_cats(

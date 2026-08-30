@@ -236,7 +236,7 @@ def _get_event(
         if game.clan
         else None
     )
-    chosen_event, involved_cats = get_valid_event(
+    chosen_event, involved_cats, cats_to_create = get_valid_event(
         primary_cat=main_cat,
         involved_cats={"m_c": main_cat, "r_c": other_cat},
         interactable_cats=[other_cat],

@@ -93,10 +93,12 @@ class Patrol:
         self.patrol_cats: list[Cat] = []
         """Holds all the cats that are on the patrol"""
         self.involved_cats: dict[str, Union[list[Cat], Cat]] = {}
+        self.cats_to_create: dict = {}
         """Cats directly involved and referenced in the event. Keys are their text abbreviation, values are the associated cat objects"""
         self.outcome_cats: TypedDict(
             "outcome_cats", {"success": dict[str, Cat], "failure": dict[str, Cat]}
         ) = {"success": {}, "failure": {}}
+        self.outcome_cats_to_create: dict = {"success": {}, "failure": {}}
 
     def begin_patrol(self, patrol_cats: List[Cat], patrol_type: str) -> str:
         """
@@ -426,7 +428,7 @@ class Patrol:
             not in Patrol.used_patrols["romance" if find_romance else "normal"]
         ]
         while not chosen_patrol:
-            chosen_patrol, involved_cats = get_valid_event(
+            chosen_patrol, involved_cats, cats_to_create = get_valid_event(
                 primary_cat=self.involved_cats["p_l"],
                 involved_cats=self.involved_cats,
                 interactable_cats=[
@@ -452,6 +454,7 @@ class Patrol:
             else:
                 # otherwise, let's set our involved cats and move on with this patrol!
                 self.involved_cats = involved_cats
+                self.cats_to_create = cats_to_create
 
         if find_romance:
             if not self._decide_if_romantic(chosen_patrol):
@@ -532,7 +535,7 @@ class Patrol:
 
         # we'll get an outcome for both success and failure
         # FIND SUCCESS
-        chosen_success, self.outcome_cats["success"] = get_valid_event(
+        chosen_success, self.outcome_cats["success"], self.outcome_cats_to_create["success"] = get_valid_event(
             primary_cat=self.involved_cats["p_l"],
             involved_cats=self.involved_cats,
             interactable_cats=[
@@ -551,7 +554,7 @@ class Patrol:
             )
 
         # FIND FAILURE
-        chosen_failure, self.outcome_cats["failure"] = get_valid_event(
+        chosen_failure, self.outcome_cats["failure"], self.outcome_cats_to_create["failure"] = get_valid_event(
             primary_cat=self.involved_cats["p_l"],
             involved_cats=self.involved_cats,
             interactable_cats=[
@@ -593,7 +596,7 @@ class Patrol:
         ]
         temp_involved_cats = self.involved_cats.copy()
 
-        temp_involved_cats = find_cats(
+        temp_involved_cats, cats_to_create = find_cats(
             interactable_cats=temp_involved_cats["patrol_cats"],
             involved_cats=temp_involved_cats,
             outside_cats=outside_cats,
@@ -605,6 +608,7 @@ class Patrol:
 
         # if we're here, then we must have found all our cats!
         self.outcome_cats[outcome_type] = temp_involved_cats
+        self.outcome_cats_to_create[outcome_type] = cats_to_create
 
         return True
 
@@ -630,6 +634,7 @@ class Patrol:
         return handle_consequences.execute_outcome(
             chosen_outcome,
             self.outcome_cats["success" if success else "failure"],
+            self.outcome_cats_to_create["success" if success else "failure"],
             self.other_clan,
         ) + (self.get_patrol_art(chosen_outcome),)
 
