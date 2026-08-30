@@ -103,5 +103,6 @@
         "ujson",
         "verdana"
     ],
-    "editor.defaultColorDecorators": "always"
+    "editor.defaultColorDecorators": "always",
+    "editor.colorDecoratorsLimit": 2000,
 }
