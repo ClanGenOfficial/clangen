@@ -9,9 +9,8 @@ with open(
 ) as read_file:
     FACET_RANGES = ujson.loads(read_file.read())
 
-# range of 0-16, we repeat each number 4 times since there are 4 facets that can be from 0-16
-facet_range = list(range(0, 17)) * 4
-print(facet_range)
+# range of 0-16
+facet_range = range(0, 17)
 
 
 def check_validity(range_dict, combination) -> bool:
