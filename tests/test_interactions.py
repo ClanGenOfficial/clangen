@@ -24,7 +24,6 @@ cat_factory = TestCatFactory()
 
 
 class RelationshipConstraints(unittest.TestCase):
-
     def test_siblings(self):
         # given
         parent = cat_factory.create_cat()
