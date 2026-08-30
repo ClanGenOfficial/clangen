@@ -77,7 +77,7 @@ class MainCatFiltering(unittest.TestCase):
                 },
             )
 
-            chosen_event, involved_cats = generate_group_event._get_event(
+            chosen_event, involved_cats, cats_to_create = generate_group_event._get_event(
                 [event1, event2], other_cats, main_cat
             )
 
@@ -104,7 +104,7 @@ class MainCatFiltering(unittest.TestCase):
                 },
             )
 
-            chosen_event, involved_cats = generate_group_event._get_event(
+            chosen_event, involved_cats, cats_to_create = generate_group_event._get_event(
                 [event1, event2], other_cats, main_cat
             )
 
@@ -133,7 +133,7 @@ class MainCatFiltering(unittest.TestCase):
                 },
             )
 
-            chosen_event, involved_cats = generate_group_event._get_event(
+            chosen_event, involved_cats, cats_to_create = generate_group_event._get_event(
                 [event1, event2], other_cats, main_cat
             )
 
@@ -204,7 +204,7 @@ class MainCatFiltering(unittest.TestCase):
                 ],
             )
 
-            chosen_event, involved_cats = generate_group_event._get_event(
+            chosen_event, involved_cats, cats_to_create = generate_group_event._get_event(
                 [event1, event2], other_cats, main_cat
             )
 
@@ -261,7 +261,7 @@ class MainCatFiltering(unittest.TestCase):
                 ],
             )
 
-            chosen_event, involved_cats = generate_group_event._get_event(
+            chosen_event, involved_cats, cats_to_create = generate_group_event._get_event(
                 [event1, event2], other_cats, main_cat
             )
 
@@ -321,7 +321,7 @@ class MainCatFiltering(unittest.TestCase):
                 ],
             )
 
-            chosen_event, involved_cats = generate_group_event._get_event(
+            chosen_event, involved_cats, cats_to_create = generate_group_event._get_event(
                 [event1, event2], other_cats, main_cat
             )
 

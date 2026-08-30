@@ -48,13 +48,14 @@ def execute_outcome(
     event_involved_cats: dict[str, Union[Cat, list[Cat]]],
     event_cats_to_create: dict,
     other_clan: OtherClan = None,
-):
+) -> tuple[str, str, dict]:
     """
     Executes the outcome, applying any specified consequences.
+    If new cats are created, event_involved_cats *will* be modified to add the newly created cats. 
     :returns: Outcome text, results text, list of created rel logs (might be empty)
     """
 
-    all_involved_cats = event_involved_cats.copy()
+    all_involved_cats = event_involved_cats
 
     # Must start with cat creation. 
     for abbr, constraints in event_cats_to_create.items():
