@@ -581,7 +581,7 @@ dev_tools = false
   debug_ensure_thought_id = "gen_death_body_present"
   # if you want to ensure a specific string from the thought's options, include its index here.
   # by default the first string will be used (index 0)
-  debug_ensure_thought_index = 50
+  debug_ensure_thought_index = 49
 
 
 [patrol_generation]
