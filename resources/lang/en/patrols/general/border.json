@@ -2136,7 +2136,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "poisoned"
+                            "venom sickness"
                         ],
                         "scar_history": "m_c was scarred by a snake bite.",
                         "death_history": "m_c died from the bite of a venomous snake."
