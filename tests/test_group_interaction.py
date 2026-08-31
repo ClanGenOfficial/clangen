@@ -77,7 +77,9 @@ class MainCatFiltering(unittest.TestCase):
                 },
             )
 
-            chosen_event, involved_cats = generate_group_event._get_event([event1, event2], other_cats, main_cat)
+            chosen_event, involved_cats = generate_group_event._get_event(
+                [event1, event2], other_cats, main_cat
+            )
 
             self.assertEqual(event1, chosen_event)
 
@@ -102,7 +104,9 @@ class MainCatFiltering(unittest.TestCase):
                 },
             )
 
-            chosen_event, involved_cats = generate_group_event._get_event([event1, event2], other_cats, main_cat)
+            chosen_event, involved_cats = generate_group_event._get_event(
+                [event1, event2], other_cats, main_cat
+            )
 
             self.assertEqual(event1, chosen_event)
             self.assertEqual(
@@ -129,7 +133,9 @@ class MainCatFiltering(unittest.TestCase):
                 },
             )
 
-            chosen_event, involved_cats = generate_group_event._get_event([event1, event2], other_cats, main_cat)
+            chosen_event, involved_cats = generate_group_event._get_event(
+                [event1, event2], other_cats, main_cat
+            )
 
             self.assertEqual(event1, chosen_event)
             self.assertEqual(involved_cats["m_c"], main_cat)
@@ -198,7 +204,9 @@ class MainCatFiltering(unittest.TestCase):
                 ],
             )
 
-            chosen_event, involved_cats = generate_group_event._get_event([event1, event2], other_cats, main_cat)
+            chosen_event, involved_cats = generate_group_event._get_event(
+                [event1, event2], other_cats, main_cat
+            )
 
             self.assertEqual(event1, chosen_event)
             self.assertDictEqual(
@@ -253,7 +261,9 @@ class MainCatFiltering(unittest.TestCase):
                 ],
             )
 
-            chosen_event, involved_cats = generate_group_event._get_event([event1, event2], other_cats, main_cat)
+            chosen_event, involved_cats = generate_group_event._get_event(
+                [event1, event2], other_cats, main_cat
+            )
 
             self.assertEqual(event1, chosen_event)
             self.assertEqual(involved_cats["m_c"], main_cat)
@@ -311,7 +321,9 @@ class MainCatFiltering(unittest.TestCase):
                 ],
             )
 
-            chosen_event, involved_cats = generate_group_event._get_event([event1, event2], other_cats, main_cat)
+            chosen_event, involved_cats = generate_group_event._get_event(
+                [event1, event2], other_cats, main_cat
+            )
 
             self.assertEqual(event1, chosen_event)
             self.assertEqual(involved_cats["m_c"], main_cat)

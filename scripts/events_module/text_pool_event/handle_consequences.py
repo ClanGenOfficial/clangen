@@ -115,30 +115,31 @@ def execute_outcome(
     # return all the bullshit
     return processed_text, "\n".join(final_results), rel_results
 
+
 def create_needed_cats(
-        event: TextPoolEvent,
-        event_involved_cats: dict[str, Union[Cat, list[Cat]]],
-        other_clan: OtherClan = None
+    event: TextPoolEvent,
+    event_involved_cats: dict[str, Union[Cat, list[Cat]]],
+    other_clan: OtherClan = None,
 ):
     """
-    Creates needed cats for the event, who are not already in event_involved_cats. 
-    Modifies event_involved_cats with the new cats. 
+    Creates needed cats for the event, who are not already in event_involved_cats.
+    Modifies event_involved_cats with the new cats.
     """
     for abbr, constraints in event.involved_cats.items():
-            # Only create cats who haven't already been assigned in event_involved_cats.
-            if abbr in event_involved_cats:
-                continue
-    
-            print(f"Creating new cat in outcome! {abbr}")
-            event_involved_cats[abbr] = updated_create_new_cat(
-                option_dict=constraints,
-                involved_cats=event_involved_cats,
-                other_clan=other_clan,
-            )
-    
-            if len(event_involved_cats[abbr]) == 1:
-                # if this is a list of a single cat, then we take them out of the list
-                event_involved_cats[abbr] = event_involved_cats[abbr][0]
+        # Only create cats who haven't already been assigned in event_involved_cats.
+        if abbr in event_involved_cats:
+            continue
+
+        print(f"Creating new cat in outcome! {abbr}")
+        event_involved_cats[abbr] = updated_create_new_cat(
+            option_dict=constraints,
+            involved_cats=event_involved_cats,
+            other_clan=other_clan,
+        )
+
+        if len(event_involved_cats[abbr]) == 1:
+            # if this is a list of a single cat, then we take them out of the list
+            event_involved_cats[abbr] = event_involved_cats[abbr][0]
 
 
 def _handle_accessories(

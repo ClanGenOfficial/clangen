@@ -161,9 +161,11 @@ class Patrol:
 
     def _create_needed_cats(self):
         """
-        Creates needed cats for the patrol start.  In it's own function for units testing purposes. 
+        Creates needed cats for the patrol start.  In it's own function for units testing purposes.
         """
-        handle_consequences.create_needed_cats(self.patrol_event, self.involved_cats, self.other_clan)
+        handle_consequences.create_needed_cats(
+            self.patrol_event, self.involved_cats, self.other_clan
+        )
 
     def _add_patrol_cats(self, patrol_cats: List[Cat]) -> None:
         """
@@ -298,7 +300,7 @@ class Patrol:
         # FILTER PATROLS when no debug set
         else:
             chosen_patrol = self._filter_patrols(patrol_list, patrol_type)
-        
+
         return chosen_patrol
 
     def _decide_if_romantic(self, romantic_event: Optional[PatrolEvent]) -> bool:
