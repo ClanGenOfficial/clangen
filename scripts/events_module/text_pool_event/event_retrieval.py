@@ -26,7 +26,7 @@ def get_valid_event(
     general_constraints_active: bool = True,
     cat_constraints_active: bool = True,
     frequency_active: bool = True,
-) -> tuple[Optional[PatrolEvent | TextPoolEvent], dict, dict]:
+) -> tuple[Optional[PatrolEvent | TextPoolEvent], dict]:
     """
     Check given possible_events against current game state and involved cats. Returns a valid event,
         involved cats, and cats that need to be created.
@@ -75,7 +75,6 @@ def get_valid_event(
                 return (
                     None,
                     {},
-                    {},
                 )  # failed to find anything, so we send back and origin handles it
             else:
                 used_frequencies.add(chosen_frequency)
@@ -101,7 +100,7 @@ def get_valid_event(
                     continue
 
                 # otherwise we've failed to find anything so we send back and origin handles it
-                return None, {}, {}
+                return None, {}
 
             test_event = choices(events, [x.weight for x in events])[0]
 
@@ -138,7 +137,7 @@ def get_valid_event(
         chosen_event = test_event
         involved_cats = temp_involved_cats
 
-    return chosen_event, involved_cats, cats_to_create
+    return chosen_event, involved_cats
 
 
 def load_text_pool_events(path: str) -> list[TextPoolEvent]:

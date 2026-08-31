@@ -44,7 +44,7 @@ def _generate_transition_event(main_cat: Cat):
         random.choice(game.clan.all_other_clans) if game.clan.all_other_clans else None
     )
 
-    chosen_event, involved_cats, cats_to_create = get_valid_event(
+    chosen_event, involved_cats = get_valid_event(
         primary_cat=main_cat,
         involved_cats=involved_cats,
         interactable_cats=Cat.all_cats_list,
@@ -53,9 +53,7 @@ def _generate_transition_event(main_cat: Cat):
         frequency_active=False,
     )
 
-    processed_text = _handle_event(
-        chosen_event, involved_cats, cats_to_create, main_cat, other_clan
-    )
+    processed_text = _handle_event(chosen_event, involved_cats, main_cat, other_clan)
 
     game.cur_events_list.append(
         EventInformation(
@@ -69,7 +67,6 @@ def _generate_transition_event(main_cat: Cat):
 def _handle_event(
     chosen_event: TextPoolEvent,
     involved_cats: dict,
-    cats_to_create: dict,
     main_cat: Cat,
     other_clan,
 ):
@@ -83,7 +80,6 @@ def _handle_event(
     processed_text, results, rel_results = execute_outcome(
         event=chosen_event,
         event_involved_cats=involved_cats,
-        event_cats_to_create=cats_to_create,
         other_clan=other_clan,
     )
     return processed_text

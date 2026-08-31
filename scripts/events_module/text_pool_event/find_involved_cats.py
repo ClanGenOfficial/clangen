@@ -19,7 +19,7 @@ def find_cats(
     outside_cats: list,
     event: Union[PatrolEvent, TextPoolEvent],
     other_clan: OtherClan,
-) -> dict:
+) -> tuple[dict, dict]:
     """
     Finds and returns cats for a PatrolEvent or TextPoolEvent.
     :param interactable_cats: A list of cats within the Clan eligible to appear in the event.
@@ -81,10 +81,6 @@ def find_cats(
             if "can_create_new_cat" in constraints:
                 # It's OK if we can't find a cat - we can create it later.
                 can_create_new_cat = True
-
-                # Chance to *not* look for existing cats
-                if random.random() * 100 > get_config("new_cat.search_for_existing"):
-                    possible_cats = []
 
         # CHECK MULTI_CAT
         elif abbr == "multi_cat":

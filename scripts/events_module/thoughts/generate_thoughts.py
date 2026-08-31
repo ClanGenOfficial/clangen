@@ -111,11 +111,7 @@ def _new_thought(
                     used_thoughts.clear()
                     unused = allowed_thoughts
 
-                (
-                    chosen_thought_group,
-                    temp_involved_cats,
-                    cats_to_create,
-                ) = get_valid_event(
+                chosen_thought_group, temp_involved_cats = get_valid_event(
                     primary_cat=main_cat,
                     involved_cats=involved_cats,
                     interactable_cats=[],

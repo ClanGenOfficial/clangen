@@ -37,10 +37,7 @@ def trigger_interaction(main_cat: Cat, interactable_cats: list) -> list[str]:
     events = load_text_pool_events(path)
 
     # FIND VALID EVENT
-    chosen_event, involved_cats, cats_to_create = _get_event(
-        events, interactable_cats, main_cat
-    )
-    # TODO: CREATE NEW CATS
+    chosen_event, involved_cats = _get_event(events, interactable_cats, main_cat)
 
     # RESOLVE EVENT
     if not chosen_event:  # aww... nothing was possible
@@ -57,7 +54,7 @@ def _get_event(
     # this is its own function so that we can test
 
     # attempt to find a valid event where we can fill the other roles
-    chosen_event, involved_cats, cats_to_create = get_valid_event(
+    chosen_event, involved_cats = get_valid_event(
         primary_cat=main_cat,
         involved_cats={"m_c": main_cat},
         interactable_cats=interactable_cats,
@@ -67,7 +64,7 @@ def _get_event(
         ),
         frequency_active=False,
     )
-    return chosen_event, involved_cats, cats_to_create
+    return chosen_event, involved_cats
 
 
 def _resolve_event(
