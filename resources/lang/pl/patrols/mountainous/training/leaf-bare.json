@@ -1771,7 +1771,7 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "history": "The view point c_n thought was safe from avalanches... was not."
                     }

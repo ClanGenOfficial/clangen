@@ -6081,7 +6081,7 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "history": "m_c died in an ambush set by rogues."
                     }

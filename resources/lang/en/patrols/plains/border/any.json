@@ -149,7 +149,7 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "history": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol."
                     }
@@ -539,7 +539,7 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "history": "This cat was killed when rogues attacked {PRONOUN/m_c/poss} patrol."
                     }
@@ -3687,7 +3687,7 @@
                             "s_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -3920,7 +3920,7 @@
                 "lost": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ]
                     }
                 ]
@@ -4037,7 +4037,7 @@
                 "death": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "history": "m_c died of injuries inflicted by a badger after {PRONOUN/m_c/subject} {VERB/m_c/were/was} dared to leap into an unknown burrow."
                     }

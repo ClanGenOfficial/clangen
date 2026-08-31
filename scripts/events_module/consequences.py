@@ -848,9 +848,6 @@ def gather_cat_objects(
             index = int(index)
             if index < len(event.new_cats):
                 found_cat_list.update(event.new_cats[index])
-        elif abbr == "multi" and involved_cats:
-            cat_num = randint(1, max(1, len(involved_cats["patrol_cats"]) - 1))
-            found_cat_list.update(sample(involved_cats["patrol_cats"], cat_num))
         # OVERALL CLAN CATS
         elif abbr == "clan":
             found_cat_list.update(clan_cats)
