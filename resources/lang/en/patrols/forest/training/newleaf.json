@@ -108,7 +108,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN/s_c0/poss} words carefully. It's all worth it to hear r_c's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world."
+                    "s_c0 has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN/s_c0/poss} words carefully. It's all worth it to hear r_c0's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -246,7 +246,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "This is p_l's absolute favorite spot in the territory in newleaf, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, brushing along r_c's side as the two cats pad whisker-close. It's just the perfect place to wind down, a beautiful, bubbling, calm stream, and {PRONOUN/p_l/subject} thought it'd be good for r_c0 to take some time just to breathe, just to relax, just to get to be {PRONOUN/r_c0/self}. All the more special for being there together."
+                    "This is p_l's absolute favorite spot in the territory in newleaf, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, brushing along r_c0's side as the two cats pad whisker-close. It's just the perfect place to wind down, a beautiful, bubbling, calm stream, and {PRONOUN/p_l/subject} thought it'd be good for r_c0 to take some time just to breathe, just to relax, just to get to be {PRONOUN/r_c0/self}. All the more special for being there together."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [

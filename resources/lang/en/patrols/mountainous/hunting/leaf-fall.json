@@ -2114,7 +2114,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/bch_train_session1_ApWr",
                 "strings": [
-                    "p_l leads the patrol to a fast-flowing stream and instructs r_c1 to sit at {PRONOUN/p_l/poss} side and watch {PRONOUN/p_l/poss} movements. r_c1 is astonished when a salmon leaps from the waves, its silver body thrashing as it fights the current. p_l slaps it out of the air and knocks it into r_c's waiting paws on the other bank. r_c1 is crouched and ready when the next salmon comes, and the patrol returns to camp laden with mouth-watering salmon."
+                    "p_l leads the patrol to a fast-flowing stream and instructs r_c1 to sit at {PRONOUN/p_l/poss} side and watch {PRONOUN/p_l/poss} movements. r_c1 is astonished when a salmon leaps from the waves, its silver body thrashing as it fights the current. p_l slaps it out of the air and knocks it into r_c0's waiting paws on the other bank. r_c1 is crouched and ready when the next salmon comes, and the patrol returns to camp laden with mouth-watering salmon."
                 ],
                 "required_cat_types": {
                     "apprentice": [
@@ -2177,7 +2177,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/bch_train_session1_ApWr",
                 "strings": [
-                    "p_l leads the patrol to a fast-flowing stream and instructs the apprentices to sit at {PRONOUN/p_l/poss} side and watch {PRONOUN/p_l/poss} movements. When a salmon leaps from the waves, p_l slaps it out of the air, knocking it into r_c's waiting paws on the other bank. r_c1 and r_c2 catch on quickly, and r_c2 knocks the next salmon to r_c1. The patrol returns to camp laden with mouth-watering salmon."
+                    "p_l leads the patrol to a fast-flowing stream and instructs the apprentices to sit at {PRONOUN/p_l/poss} side and watch {PRONOUN/p_l/poss} movements. When a salmon leaps from the waves, p_l slaps it out of the air, knocking it into r_c0's waiting paws on the other bank. r_c1 and r_c2 catch on quickly, and r_c2 knocks the next salmon to r_c1. The patrol returns to camp laden with mouth-watering salmon."
                 ],
                 "required_cat_types": {
                     "apprentice": [
@@ -2459,7 +2459,7 @@
                 "frequency": 1,
                 "outcome_art": "cat_sprites/gen_drowning_Wr",
                 "strings": [
-                    "p_l leads the way to the stream, and the cats position themselves along the bank. When the first salmon appears, p_l bats it into r_c's paws. The hunt continues all afternoon. As daylight wanes, a salmon pops up right in front of r_c0. {PRONOUN/r_c0/poss/CAP} caution faded after such an easy hunt, r_c0 leaps, snatching the salmon out of the air... and launching {PRONOUN/r_c0/self} into the waves. r_c's yowl of fear is cut short when the relentless current flings {PRONOUN/r_c0/object} into the rocks."
+                    "p_l leads the way to the stream, and the cats position themselves along the bank. When the first salmon appears, p_l bats it into r_c0's paws. The hunt continues all afternoon. As daylight wanes, a salmon pops up right in front of r_c0. {PRONOUN/r_c0/poss/CAP} caution faded after such an easy hunt, r_c0 leaps, snatching the salmon out of the air... and launching {PRONOUN/r_c0/self} into the waves. r_c0's yowl of fear is cut short when the relentless current flings {PRONOUN/r_c0/object} into the rocks."
                 ],
                 "involved_cats": {
                     "r_c0": {}

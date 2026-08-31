@@ -555,7 +555,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 can't help the <i>mrrp</i>s of laughter that escape {PRONOUN/s_c0/object} at the sight. Sweet StarClan, if only r_c0 could see {PRONOUN/r_c0/poss} own face! However, karma quickly comes for s_c0, who is so busy laughing at r_c's misfortune that {PRONOUN/s_c0/subject} completely {VERB/s_c0/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c0/poss} path. <i>Meowch!</i>"
+                    "s_c0 can't help the <i>mrrp</i>s of laughter that escape {PRONOUN/s_c0/object} at the sight. Sweet StarClan, if only r_c0 could see {PRONOUN/r_c0/poss} own face! However, karma quickly comes for s_c0, who is so busy laughing at r_c0's misfortune that {PRONOUN/s_c0/subject} completely {VERB/s_c0/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c0/poss} path. <i>Meowch!</i>"
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -935,7 +935,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 can't help the <i>mrrp</i>s of laughter that escape {PRONOUN/s_c0/object} at the sight. Sweet StarClan, if only r_c0 could see {PRONOUN/r_c0/poss} own face! However, karma quickly comes for s_c0, who is so busy laughing at r_c's misfortune that {PRONOUN/s_c0/subject} completely {VERB/s_c0/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c0/poss} path. <i>Meowch!</i>"
+                    "s_c0 can't help the <i>mrrp</i>s of laughter that escape {PRONOUN/s_c0/object} at the sight. Sweet StarClan, if only r_c0 could see {PRONOUN/r_c0/poss} own face! However, karma quickly comes for s_c0, who is so busy laughing at r_c0's misfortune that {PRONOUN/s_c0/subject} completely {VERB/s_c0/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c0/poss} path. <i>Meowch!</i>"
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1058,7 +1058,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "Though p_l has no visible injuries, {PRONOUN/p_l/subject} <i>{VERB/p_l/insist/insists}</i> that {PRONOUN/p_l/subject} {VERB/p_l/need/needs} to lean on r_c's shoulder all the way back to camp. r_c0 complies, and p_l purrs the entire way home."
+                    "Though p_l has no visible injuries, {PRONOUN/p_l/subject} <i>{VERB/p_l/insist/insists}</i> that {PRONOUN/p_l/subject} {VERB/p_l/need/needs} to lean on r_c0's shoulder all the way back to camp. r_c0 complies, and p_l purrs the entire way home."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [

@@ -48,7 +48,7 @@
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
         "intro_strings": [
-            "The sun is hot on r_c's pelt as {PRONOUN/r_c0/subject} {VERB/r_c0/follow/follows} p_l to what's apparently a 'really good spot' for herbs. r_c0 doesn't know what makes one spot better than any other, but {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} just happy to have the chance to help p_l. As p_l dives into the greenery, as enthusiastic as any proud hunter, a brilliant yellow and black butterfly lands right on {PRONOUN/p_l/poss} raised butt."
+            "The sun is hot on r_c0's pelt as {PRONOUN/r_c0/subject} {VERB/r_c0/follow/follows} p_l to what's apparently a 'really good spot' for herbs. r_c0 doesn't know what makes one spot better than any other, but {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} just happy to have the chance to help p_l. As p_l dives into the greenery, as enthusiastic as any proud hunter, a brilliant yellow and black butterfly lands right on {PRONOUN/p_l/poss} raised butt."
         ],
         "decline_strings": [
             "It's not meant to be — a yowl interrupts their herbal hunt. The Clan needs p_l back at camp."

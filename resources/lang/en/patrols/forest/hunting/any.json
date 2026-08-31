@@ -9110,7 +9110,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The hunting patrol is perfectly successful and it matters not a whit to either of the warriors, because p_l makes a joke that {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is funny but that's always gotten on r_c's nerves and suddenly they're both acting like apprentices again, snippy, immature, and irritable."
+                    "The hunting patrol is perfectly successful and it matters not a whit to either of the warriors, because p_l makes a joke that {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is funny but that's always gotten on r_c0's nerves and suddenly they're both acting like apprentices again, snippy, immature, and irritable."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -9579,7 +9579,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c0 always feels like {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} haul back such a good catch of prey for the Clan, a contribution that more than makes up for r_c's meager offerings."
+                    "r_c0 always feels like {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} padding in p_l's footsteps, especially today, watching {PRONOUN/p_l/object} haul back such a good catch of prey for the Clan, a contribution that more than makes up for r_c0's meager offerings."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -10014,7 +10014,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The hunting patrol is perfectly successful and it matters not a whit to any of the warriors, because p_l makes a joke that {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is funny but that's always gotten on r_c's nerves and suddenly everyone's acting like apprentices again, snippy, immature, and irritable."
+                    "The hunting patrol is perfectly successful and it matters not a whit to any of the warriors, because p_l makes a joke that {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} is funny but that's always gotten on r_c0's nerves and suddenly everyone's acting like apprentices again, snippy, immature, and irritable."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
