@@ -224,7 +224,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from and cat_to attacked an eagle, but the fight ended in r_c's death."
+                            "cats_from": "cat_from and cat_to attacked an eagle, but the fight ended in r_c0's death."
                         }
                     }
                 ],
@@ -1168,7 +1168,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from's patrol failed to keep warm during a snowstorm and they ended up carrying r_c's body home."
+                            "cats_from": "cat_from's patrol failed to keep warm during a snowstorm and they ended up carrying r_c0's body home."
                         }
                     }
                 ],

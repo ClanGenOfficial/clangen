@@ -66,7 +66,7 @@
                 "frequency": 2,
                 "outcome_art": "cat_sprites/gen_embarrassed_WrWr",
                 "strings": [
-                    "p_l doesn't see r_c's running nose as a burden. To p_l, it's an opportunity. While it prevents r_c0 from finding herbs, it makes r_c0 the perfect collector of herbs with less pleasant smells. When the patrol comes across a patch of some particularly pungent-scented herbs hidden amongst some wildflowers, r_c0 is sent to collect them."
+                    "p_l doesn't see r_c0's running nose as a burden. To p_l, it's an opportunity. While it prevents r_c0 from finding herbs, it makes r_c0 the perfect collector of herbs with less pleasant smells. When the patrol comes across a patch of some particularly pungent-scented herbs hidden amongst some wildflowers, r_c0 is sent to collect them."
                 ],
                 "exp_gained": 15,
                 "supply": [
@@ -93,7 +93,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/fst_med_stumble_McWr",
                 "strings": [
-                    "The patrol continues their search for herbs, despite r_c's plight. Unfortunately, the group doesn't get very far. r_c0 stumbles mid-sneeze, tripping over a rabbit hole hidden amongst tall grass and tumbling forward, knocking over other cats in {PRONOUN/r_c0/poss} wake."
+                    "The patrol continues their search for herbs, despite r_c0's plight. Unfortunately, the group doesn't get very far. r_c0 stumbles mid-sneeze, tripping over a rabbit hole hidden amongst tall grass and tumbling forward, knocking over other cats in {PRONOUN/r_c0/poss} wake."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
