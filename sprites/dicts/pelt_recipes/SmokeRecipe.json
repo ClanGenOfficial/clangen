@@ -21,12 +21,44 @@
         },
         "2": {
             "group_name": "SMOKETOPGRAD",
-            "color": "base_gradient_top"
+            "color": "smoke_base_gradient_top"
         },
         "1": {
             "group_name": "BASEMASK",
             "color": "smoke_base"
         }
     },
-    "exceptions": []
+    "exceptions": [
+        {
+            "poses": ["newborn0", "newborn1", "newborn2"],
+            "layers":
+            {
+                "5":
+                {
+                    "group_name": "SMOKEPATTERNGRAD",
+                    "color": "newborn_pattern"
+                },
+                "4":
+                {
+                    "group_name": "SMOKEPATTERNDARK",
+                    "color": "newborn_pattern"
+                },
+                "3":
+                {
+                    "group_name": "SMOKEPATTERNLIGHT",
+                    "color": "newborn_base_gradient_bottom"
+                },
+                "2":
+                {
+                    "group_name": "SMOKETOPGRAD",
+                    "color": "base_gradient_top"
+                },
+                "1":
+                {
+                    "group_name": "BASEMASK",
+                    "color": "newborn_base"
+                }
+            }
+        }
+    ]
 }
