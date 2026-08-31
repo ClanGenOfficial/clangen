@@ -1,5 +1,3 @@
-import os
-
 from itertools import chain
 
 from pathlib import Path
@@ -14,9 +12,6 @@ from scripts.models.relationship_pair_event.relationship_pair_schema import (
     RelationshipPairEvent,
 )
 from scripts.models.transition.transition_schema import TransitionSchema
-
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.models.patrol.patrol_schema import PatrolSchema
 from scripts.models.shortevent.short_event_schema import ShortEventSchema

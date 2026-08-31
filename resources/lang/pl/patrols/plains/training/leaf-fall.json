@@ -34,13 +34,17 @@
             "r_c0": {}
         },
         "chance_of_success": 60,
-        "patrol_art": "cat_sprites\/gen_bord_story_WrWrWr",
-        "intro_text": "r_c0 bats an insect aside as the patrol ambles along. p_l hums \u2014 does r_c0 know there's an insect who can blot out the sun?",
-        "decline_text": "The cats decide training is more important than a story today.",
+        "patrol_art": "cat_sprites/gen_bord_story_WrWrWr",
+        "intro_strings": [
+            "r_c0 bats an insect aside as the patrol ambles along. p_l hums \u2014 does r_c0 know there's an insect who can blot out the sun?"
+        ],
+        "decline_strings": [
+            "The cats decide training is more important than a story today."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_train_ghost_WrWrWr",
+                "outcome_art": "cat_sprites/gen_train_ghost_WrWrWr",
                 "strings": [
                     "It was generations ago, far before s_c0's time. But there was once a great flock of insects that swarmed across c_n's land, so thick in the air they shaded out the sun. They ate damn near every grass seed on the plains, and the prairie was left battered for seasons afterward."
                 ],
@@ -79,7 +83,7 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_train_ghost_WrWrWr",
+                "outcome_art": "cat_sprites/gen_train_ghost_WrWrWr",
                 "strings": [
                     "Khepri the scarab rolls the sun into hiding for leaf-bare, s_c0 tells the patrol. Each winter, the moon journeys to rescue her sibling from below the horizon, fighting to take the sun from Khepri's grasp and bring warmth back to the land and renew the grass."
                 ],
@@ -120,9 +124,9 @@
         "fail_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_crouchingperplexed_Wr",
+                "outcome_art": "cat_sprites/gen_crouchingperplexed_Wr",
                 "strings": [
-                    "The bug r_c0 batted flies up to {PRONOUN\/r_c0\/poss} face and buzzes, and p_l completely loses track of the story {PRONOUN\/p_l\/subject} {VERB\/p_l\/were\/was} about to tell as {PRONOUN\/p_l\/subject} {VERB\/p_l\/help\/helps} r_c0 out with the irritated insect."
+                    "The bug r_c0 batted flies up to {PRONOUN/r_c0/poss} face and buzzes, and p_l completely loses track of the story {PRONOUN/p_l/subject} {VERB/p_l/were/was} about to tell as {PRONOUN/p_l/subject} {VERB/p_l/help/helps} r_c0 out with the irritated insect."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
