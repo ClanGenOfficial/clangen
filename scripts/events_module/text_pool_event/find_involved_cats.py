@@ -27,10 +27,10 @@ def find_cats(
     :param outside_cats: A list of cats outside the Clan eligible to appear in the event.
     :param event: The PatrolEvent or TextPoolEvent that needs involved cats
     :param other_clan: The OtherClan object involved in the event
-    :return: (involved_cats, number_create_cats). Involved_cats is an updated version of the input 
+    :return: (involved_cats, number_create_cats). Involved_cats is an updated version of the input
         (of the same name) with valid cats. Also returns the number of new cats that will need to be
         created.  If an involved_cats is empty AND number_create_cats is 0, then necessary valid cats
-        were not found. 
+        were not found.
     """
 
     empty = ({}, 0)
