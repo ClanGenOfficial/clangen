@@ -123,14 +123,14 @@ def get_valid_event(
 
         # CHECK CAT CONSTRAINTS
         if cat_constraints_active:
-            temp_involved_cats, cats_to_create = find_cats(
+            temp_involved_cats, number_create_cats = find_cats(
                 interactable_cats=interactable_cats,
                 involved_cats=temp_involved_cats,
                 outside_cats=outside_cats,
                 event=test_event,
                 other_clan=other_clan,
             )
-            if not (temp_involved_cats or cats_to_create):
+            if not (temp_involved_cats or number_create_cats):
                 tested_events.add(test_event.event_id)
                 continue
 

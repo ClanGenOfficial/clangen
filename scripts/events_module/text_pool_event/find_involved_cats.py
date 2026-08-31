@@ -19,7 +19,7 @@ def find_cats(
     outside_cats: list,
     event: Union[PatrolEvent, TextPoolEvent],
     other_clan: OtherClan,
-) -> tuple[dict, dict]:
+) -> tuple[dict, int]:
     """
     Finds and returns cats for a PatrolEvent or TextPoolEvent.
     :param interactable_cats: A list of cats within the Clan eligible to appear in the event.
@@ -27,15 +27,18 @@ def find_cats(
     :param outside_cats: A list of cats outside the Clan eligible to appear in the event.
     :param event: The PatrolEvent or TextPoolEvent that needs involved cats
     :param other_clan: The OtherClan object involved in the event
-    :return: Updated involved_cats dict with valid cats. If dict is empty, then valid cats were not found.
+    :return: (involved_cats, number_create_cats). Involved_cats is an updated version of the input 
+        (of the same name) with valid cats. Also returns the number of new cats that will need to be
+        created.  If an involved_cats is empty AND number_create_cats is 0, then necessary valid cats
+        were not found. 
     """
 
-    empty = ({}, {})
+    empty = ({}, 0)
 
     temp_involved_cats = involved_cats.copy()
     interactable_cats = interactable_cats.copy()
 
-    cats_to_create = {}
+    number_create_cats = 0
 
     can_give_condition = hasattr(event, "condition")
     can_give_accessory = hasattr(event, "gain_accessory")
@@ -108,7 +111,7 @@ def find_cats(
         if not possible_cats:
             # uh oh, we're out of options!
             if can_create_new_cat:
-                cats_to_create[abbr] = constraints
+                number_create_cats += 1
                 continue
             else:
                 return empty
@@ -129,7 +132,7 @@ def find_cats(
         )
         if not possible_cats:
             if can_create_new_cat:
-                cats_to_create[abbr] = constraints
+                number_create_cats += 1
                 continue
             else:
                 return empty
@@ -146,7 +149,7 @@ def find_cats(
 
         if not new_involved_cat:
             if can_create_new_cat:
-                cats_to_create[abbr] = constraints
+                number_create_cats += 1
                 continue
             else:
                 return empty
@@ -156,7 +159,7 @@ def find_cats(
         if temp_involved_cats.get(abbr) in interactable_cats:
             interactable_cats.remove(temp_involved_cats[abbr])
 
-    return temp_involved_cats, cats_to_create
+    return temp_involved_cats, number_create_cats
 
 
 def get_potential_conditions(abbr, can_give_condition, event):
@@ -237,7 +240,7 @@ def _find_involved_cat(
     elif possible_cats:
         i = 0
         while True:
-            # Protection against infinate loop.
+            # Protection against infinite loop.
             i += 1
             if i > 2000:
                 return {}

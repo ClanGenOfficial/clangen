@@ -161,7 +161,7 @@ class Patrol:
 
     def _create_needed_cats(self):
         """
-        Creates needed cats for the patrol start.  In it's own function for units testing purposes.
+        Creates needed cats for the patrol start.  In its own function for unit testing purposes.
         """
         handle_consequences.create_needed_cats(
             self.patrol_event, self.involved_cats, self.other_clan
@@ -605,14 +605,14 @@ class Patrol:
         ]
         temp_involved_cats = self.involved_cats.copy()
 
-        temp_involved_cats, cats_to_create = find_cats(
+        temp_involved_cats, number_create_cats = find_cats(
             interactable_cats=temp_involved_cats["patrol_cats"],
             involved_cats=temp_involved_cats,
             outside_cats=outside_cats,
             event=outcome,
             other_clan=self.other_clan,
         )
-        if not (temp_involved_cats or cats_to_create):
+        if not (temp_involved_cats or number_create_cats):
             return False
 
         # if we're here, then we must have found all our cats!
