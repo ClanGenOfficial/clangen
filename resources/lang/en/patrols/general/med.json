@@ -4431,7 +4431,7 @@
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_med_oldersiblings_WrMc",
         "intro_strings": [
-            "r_c0 trots over to p_l, the two cats grinning at each other with raised tails. p_l wants an escort to gather herbs, and as luck would have it, the only cat free at the moment is {PRONOUN/p_l/poss} sibling, r_c!"
+            "r_c0 trots over to p_l, the two cats grinning at each other with raised tails. p_l wants an escort to gather herbs, and as luck would have it, the only cat free at the moment is {PRONOUN/p_l/poss} sibling, r_c0!"
         ],
         "decline_strings": [
             "... Or so they thought. r_c0 is called away by the deputy, and {PRONOUN/r_c0/subject} {VERB/r_c0/rush/rushes} off with an apologetic glance back, leaving p_l by {PRONOUN/p_l/self} with {PRONOUN/p_l/poss} tail sagging to the ground."
@@ -15608,7 +15608,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 splashes water from a puddle onto p_l's fur. p_l's fur spikes up like a pinecone, and {PRONOUN/p_l/subject} {VERB/p_l/turn/turns} around to quickly send a wave of water back towards r_c! The two engage in a small water fight, and when they resume the herb patrol, r_c0 is glad to see p_l looks much happier."
+                    "r_c0 splashes water from a puddle onto p_l's fur. p_l's fur spikes up like a pinecone, and {PRONOUN/p_l/subject} {VERB/p_l/turn/turns} around to quickly send a wave of water back towards r_c0! The two engage in a small water fight, and when they resume the herb patrol, r_c0 is glad to see p_l looks much happier."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -26599,7 +26599,7 @@
         ]
     },
     {
-        "event_id": "gen_med_romance_leaf-bare2",
+        "event_id": "gen_med_romance_seasonal1",
         "types": [
             "herb_gathering"
         ],

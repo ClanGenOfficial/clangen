@@ -211,7 +211,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The porcupine whips around, digging the quills of its tail into r_c! The patrol bolts away and returns to camp, r_c0 with a nose full of quills."
+                    "The porcupine whips around, digging the quills of its tail into r_c0! The patrol bolts away and returns to camp, r_c0 with a nose full of quills."
                 ],
                 "exp_gained": 0,
                 "condition": [
@@ -400,7 +400,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The porcupine whips around, digging the quills of its tail into r_c! p_l returns to camp with a nose full of quills and a wounded pride."
+                    "The porcupine whips around, digging the quills of its tail into r_c0! p_l returns to camp with a nose full of quills and a wounded pride."
                 ],
                 "exp_gained": 0,
                 "condition": [

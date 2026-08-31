@@ -29173,7 +29173,7 @@
                 "frequency": 4,
                 "outcome_art": "cat_sprites/gen_train_playbite_WrWr",
                 "strings": [
-                    "p_l suggests that {PRONOUN/p_l/subject} and r_c0 team up against s_c0. Just as r_c0 gathers {PRONOUN/r_c0/poss} haunches to pounce on s_c0, s_c0 exclaims that a fox is right behind r_c! As p_l and r_c0 scramble out of the way, s_c0 swipes at their fleeing tails. After all, p_l didn't specify {PRONOUN/s_c0/subject} had to fight fair."
+                    "p_l suggests that {PRONOUN/p_l/subject} and r_c0 team up against s_c0. Just as r_c0 gathers {PRONOUN/r_c0/poss} haunches to pounce on s_c0, s_c0 exclaims that a fox is right behind r_c0! As p_l and r_c0 scramble out of the way, s_c0 swipes at their fleeing tails. After all, p_l didn't specify {PRONOUN/s_c0/subject} had to fight fair."
                 ],
                 "involved_cats": {
                     "s_c0": {
