@@ -27101,6 +27101,7 @@
                 "strings": [
                     "Edging out on a slippery frozen rock to get more height, p_l manages to pick away some still-living leaves from a tangled bramble of blackberry and raspberry. r_c1 holds {PRONOUN/r_c1/poss} breath, hoping {PRONOUN/r_c1/poss} mentor comes down unscathed."
                 ],
+                "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
