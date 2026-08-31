@@ -441,9 +441,10 @@
             "Watches where {PRONOUN/m_c/subject} {VERB/m_c/put/puts} {PRONOUN/m_c/poss} paws",
             "Swats at a giant spider! And realizes it was just a leaf",
             "Came up with yet another plan in the event of a highly unlikely emergency",
-            "Is practicing an emergency evacuatin just in case",
+            "Is practicing an emergency evacuation just in case",
             "Is thoroughly checking {PRONOUN/m_c/poss} bedding for thorns",
-            "Warns r_c of a hazard {PRONOUN/r_c/subject} nearly tripped over"
+            "Warns r_c of a hazard {PRONOUN/r_c/subject} nearly tripped over",
+            "Has everything under control"
         ],
         "involved_cats": {
             "m_c": {
@@ -662,7 +663,8 @@
             "Already has a plan in mind for today",
             "Knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} well-liked",
             "Needs no reassurance of {PRONOUN/m_c/poss} abilities",
-            "Is unphased when something goes wrong"
+            "Is unphased when something goes wrong",
+            "Has everything under control"
         ],
         "involved_cats": {
             "m_c": {
@@ -1082,7 +1084,8 @@
             "Goes to bed early so {PRONOUN/m_c/subject} can work more tomorrow",
             "Remembers to eat breakfast to keep {PRONOUN/m_c/poss} strength up",
             "Rests for exactly as long as {PRONOUN/m_c/subject} {VERB/m_c/need/needs} to before resuming work",
-            "Always makes a plan before launching into action"
+            "Always makes a plan before launching into action",
+            "Has everything under control"
         ],
         "involved_cats": {
             "m_c": {
@@ -1448,7 +1451,8 @@
         "Worries {PRONOUN/m_c/subject} {VERB/m_c/are/is} a bad parent",
         "Hopes StarClan watches over r_c",
         "Checks in on r_c",
-        "Fusses over a tiny cut r_c has"
+        "Fusses over a tiny cut r_c has",
+        "Is so proud of r_c"
     ],
     "involved_cats": {
         "m_c": {},
