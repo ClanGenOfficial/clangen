@@ -27,8 +27,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "train_general_intro",
-        "intro_text": "As the sun creeps over the horizon, p_l leads the patrol carefully towards a familiar beach, stopping the cats on the clifftop. Below them, the sand is hidden under a mass of boulders, as long as twenty cats and as wide as ten.",
-        "decline_text": "They return to camp to report the new beach layout.",
+        "intro_strings": [
+            "As the sun creeps over the horizon, p_l leads the patrol carefully towards a familiar beach, stopping the cats on the clifftop. Below them, the sand is hidden under a mass of boulders, as long as twenty cats and as wide as ten."
+        ],
+        "decline_strings": [
+            "They return to camp to report the new beach layout."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -366,8 +370,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/bch_train_session1_ApWr",
-        "intro_text": "r_c1 doesn't understand what \"footing\" training is supposed to mean. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/know/knows} how to <i>walk</i>. What're they <i>really</i> here to train?",
-        "decline_text": "Unable to convince r_c1 of the importance of training to keep {PRONOUN/r_c1/poss} footing, p_l gives up and takes the patrol home.",
+        "intro_strings": [
+            "r_c1 doesn't understand what \"footing\" training is supposed to mean. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/know/knows} how to <i>walk</i>. What're they <i>really</i> here to train?"
+        ],
+        "decline_strings": [
+            "Unable to convince r_c1 of the importance of training to keep {PRONOUN/r_c1/poss} footing, p_l gives up and takes the patrol home."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

@@ -14,8 +14,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_newcat_Ln",
-        "intro_text": "The patrol finds a loner who is interested in joining the Clan. They banter with the cat a bit, making them feel more welcome.",
-        "decline_text": "The patrol decides to leave the loner be.",
+        "intro_strings": [
+            "The patrol finds a loner who is interested in joining the Clan. They banter with the cat a bit, making them feel more welcome."
+        ],
+        "decline_strings": [
+            "The patrol decides to leave the loner be."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -240,8 +244,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_newcat_Ln",
-        "intro_text": "The patrol finds a pair of cats interested in joining the Clan.",
-        "decline_text": "The patrol decides to leave the cats alone.",
+        "intro_strings": [
+            "The patrol finds a pair of cats interested in joining the Clan."
+        ],
+        "decline_strings": [
+            "The patrol decides to leave the cats alone."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1391,8 +1399,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_running_WrWr",
-        "intro_text": "p_l and r_c0 head to the outer border, near some Twoleg nests. {PRONOUN/p_l/subject/CAP} {VERB/p_l/signal/signals} silently for r_c0 to stop when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} some commotion. Together, they peep from the bushes and see two kittypets locked in argument.",
-        "decline_text": "Squabbling kittypets is no business of c_n's. p_l carries on with the patrol.",
+        "intro_strings": [
+            "p_l and r_c0 head to the outer border, near some Twoleg nests. {PRONOUN/p_l/subject/CAP} {VERB/p_l/signal/signals} silently for r_c0 to stop when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} some commotion. Together, they peep from the bushes and see two kittypets locked in argument."
+        ],
+        "decline_strings": [
+            "Squabbling kittypets is no business of c_n's. p_l carries on with the patrol."
+        ],
         "success_outcomes": [
             {
                 "frequency": 1,
@@ -2703,8 +2715,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_newcat_Ln",
-        "intro_text": "p_l finds a loner who is interested in joining the Clan. {PRONOUN/p_l/subject/CAP} {VERB/p_l/banter/banters} with the cat a bit, making them feel more welcome.",
-        "decline_text": "p_l decides to leave the loner be.",
+        "intro_strings": [
+            "p_l finds a loner who is interested in joining the Clan. {PRONOUN/p_l/subject/CAP} {VERB/p_l/banter/banters} with the cat a bit, making them feel more welcome."
+        ],
+        "decline_strings": [
+            "p_l decides to leave the loner be."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2928,8 +2944,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_newcat_Kp",
-        "intro_text": "The patrol finds a kittypet who is interested in joining the Clan. They banter with the cat a bit, making them feel more welcome.",
-        "decline_text": "The patrol decides to leave the kittypet be.",
+        "intro_strings": [
+            "The patrol finds a kittypet who is interested in joining the Clan. They banter with the cat a bit, making them feel more welcome."
+        ],
+        "decline_strings": [
+            "The patrol decides to leave the kittypet be."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3110,8 +3130,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "bord_general_intro",
-        "intro_text": "p_l finds a kittypet who is interested in joining the Clan. {PRONOUN/p_l/subject/CAP} {VERB/p_l/banter/banters} with the cat a bit, making them feel more welcome.",
-        "decline_text": "p_l decides to leave the kittypet be.",
+        "intro_strings": [
+            "p_l finds a kittypet who is interested in joining the Clan. {PRONOUN/p_l/subject/CAP} {VERB/p_l/banter/banters} with the cat a bit, making them feel more welcome."
+        ],
+        "decline_strings": [
+            "p_l decides to leave the kittypet be."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3295,8 +3319,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_newcatthunderpath_LnWr",
-        "intro_text": "r_c0 finds a wounded cat near the Thunderpath.",
-        "decline_text": "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/leave/leaves} the wounded cat alone.",
+        "intro_strings": [
+            "r_c0 finds a wounded cat near the Thunderpath."
+        ],
+        "decline_strings": [
+            "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/leave/leaves} the wounded cat alone."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3463,8 +3491,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_bord_newcatthunderpath_LnWr",
-        "intro_text": "p_l finds a wounded cat near the Thunderpath.",
-        "decline_text": "p_l leaves the wounded cat alone.",
+        "intro_strings": [
+            "p_l finds a wounded cat near the Thunderpath."
+        ],
+        "decline_strings": [
+            "p_l leaves the wounded cat alone."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3635,8 +3667,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "bord_general_intro",
-        "intro_text": "In the middle of remarking the border, p_l finds a distinct scent trail has crossed it.",
-        "decline_text": "p_l makes a note of it, but it'll have to wait till {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} done with this and back at camp.",
+        "intro_strings": [
+            "In the middle of remarking the border, p_l finds a distinct scent trail has crossed it."
+        ],
+        "decline_strings": [
+            "p_l makes a note of it, but it'll have to wait till {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} done with this and back at camp."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3685,7 +3721,7 @@
                         "condition": [
                             "carrionplace disease"
                         ],
-                        "no_results": true
+                        "death_history": "m_c died of carrionplace disease."
                     }
                 ],
                 "join": [
@@ -3758,7 +3794,7 @@
                         "condition": [
                             "carrionplace disease"
                         ],
-                        "no_results": true
+                        "death_history": "m_c died of carrionplace disease."
                     }
                 ],
                 "join": [
@@ -3997,8 +4033,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "bord_general_intro",
-        "intro_text": "Padding along the border, p_l checks once... twice... three times... and crosses over c_n's markers, venturing beyond into unclaimed land.",
-        "decline_text": "p_l thinks better of {PRONOUN/p_l/poss} risky adventure and retreats back to known territory.",
+        "intro_strings": [
+            "Padding along the border, p_l checks once... twice... three times... and crosses over c_n's markers, venturing beyond into unclaimed land."
+        ],
+        "decline_strings": [
+            "p_l thinks better of {PRONOUN/p_l/poss} risky adventure and retreats back to known territory."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4572,8 +4612,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_newkit_Kt",
-        "intro_text": "r_c0 finds an abandoned kit whose parents are nowhere to be found.",
-        "decline_text": "The patrol goes to approach when the missing queen appears, sliding out their claws in defense of their baby. Nevermind!",
+        "intro_strings": [
+            "r_c0 finds an abandoned kit whose parents are nowhere to be found."
+        ],
+        "decline_strings": [
+            "The patrol goes to approach when the missing queen appears, sliding out their claws in defense of their baby. Nevermind!"
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4682,8 +4726,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_newkit_Kt",
-        "intro_text": "p_l finds an abandoned kit whose parents are nowhere to be found.",
-        "decline_text": "p_l goes to approach when the missing queen appears, sliding out their claws in defense of their baby. Nevermind!",
+        "intro_strings": [
+            "p_l finds an abandoned kit whose parents are nowhere to be found."
+        ],
+        "decline_strings": [
+            "p_l goes to approach when the missing queen appears, sliding out their claws in defense of their baby. Nevermind!"
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4795,8 +4843,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_newmed2_Ln",
-        "intro_text": "r_c0 finds a loner offering healing skills in exchange for shelter.",
-        "decline_text": "The patrol politely declines their offer.",
+        "intro_strings": [
+            "r_c0 finds a loner offering healing skills in exchange for shelter."
+        ],
+        "decline_strings": [
+            "The patrol politely declines their offer."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5036,8 +5088,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_newmed2_Ln",
-        "intro_text": "p_l finds a loner offering healing skills in exchange for shelter.",
-        "decline_text": "p_l politely declines their offer.",
+        "intro_strings": [
+            "p_l finds a loner offering healing skills in exchange for shelter."
+        ],
+        "decline_strings": [
+            "p_l politely declines their offer."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5267,8 +5323,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_dogchase_Ln",
-        "intro_text": "The patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!",
-        "decline_text": "The patrol decides not to interfere. Surely the cat can handle itself, the dog isn't even that big.",
+        "intro_strings": [
+            "The patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!"
+        ],
+        "decline_strings": [
+            "The patrol decides not to interfere. Surely the cat can handle itself, the dog isn't even that big."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5507,8 +5567,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
-        "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
+        "intro_strings": [
+            "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush."
+        ],
+        "decline_strings": [
+            "It's probably nothing. The patrol leaves the noise alone and continues on their way."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5949,8 +6013,12 @@
         },
         "chance_of_success": 45,
         "patrol_art": "cat_sprites/gen_med_rescue_Mc",
-        "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
-        "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
+        "intro_strings": [
+            "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
+        ],
+        "decline_strings": [
+            "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -6154,8 +6222,12 @@
         },
         "chance_of_success": 45,
         "patrol_art": "cat_sprites/gen_med_rescue_Mc",
-        "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
-        "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
+        "intro_strings": [
+            "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
+        ],
+        "decline_strings": [
+            "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -6377,8 +6449,12 @@
         },
         "chance_of_success": 45,
         "patrol_art": "cat_sprites/gen_med_rescue_Mc",
-        "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
-        "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
+        "intro_strings": [
+            "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
+        ],
+        "decline_strings": [
+            "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -6586,8 +6662,12 @@
         },
         "chance_of_success": 45,
         "patrol_art": "cat_sprites/gen_med_rescue_Mc",
-        "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
-        "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
+        "intro_strings": [
+            "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
+        ],
+        "decline_strings": [
+            "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -6789,8 +6869,12 @@
         },
         "chance_of_success": 45,
         "patrol_art": "med_general_intro",
-        "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
-        "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
+        "intro_strings": [
+            "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
+        ],
+        "decline_strings": [
+            "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -7004,8 +7088,12 @@
         },
         "chance_of_success": 45,
         "patrol_art": "med_general_intro",
-        "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
-        "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance.",
+        "intro_strings": [
+            "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind."
+        ],
+        "decline_strings": [
+            "Unnerved and unable to discern if it is a sign from StarClan or nothing, {PRONOUN/p_l/subject} {VERB/p_l/go/goes} back to c_n to ask for help and guidance."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -7230,8 +7318,12 @@
         ],
         "chance_of_success": 40,
         "patrol_art": "backgrounds/fst_twolegplace",
-        "intro_text": "The patrol approaches a Twoleg nest in the woods while hunting.",
-        "decline_text": "The patrol decides to hunt elsewhere.",
+        "intro_strings": [
+            "The patrol approaches a Twoleg nest in the woods while hunting."
+        ],
+        "decline_strings": [
+            "The patrol decides to hunt elsewhere."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -7542,8 +7634,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is checking the border lines, they hear the traipse of pawsteps through the territory.",
-        "decline_text": "They decide to leave it alone. It's probably just another Clanmate out in the territory.",
+        "intro_strings": [
+            "As the patrol is checking the border lines, they hear the traipse of pawsteps through the territory."
+        ],
+        "decline_strings": [
+            "They decide to leave it alone. It's probably just another Clanmate out in the territory."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -7829,8 +7925,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": "The patrol is checking along the border lines when they hear a startling sound: a hiss of pain. They quickly follow the sound to the source. It's a loner, one who appears to be injured.",
-        "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
+        "intro_strings": [
+            "The patrol is checking along the border lines when they hear a startling sound: a hiss of pain. They quickly follow the sound to the source. It's a loner, one who appears to be injured."
+        ],
+        "decline_strings": [
+            "It's probably nothing. The patrol leaves the noise alone and continues on their way."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -8109,8 +8209,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "bord_general_intro",
-        "intro_text": "p_l is checking along the border lines when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a startling sound: a hiss of pain. {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/follow/follows} the sound to the source. It's a loner, one who appears to be injured.",
-        "decline_text": "It's probably nothing. p_l leaves the noise alone and continues on {PRONOUN/p_l/poss} way.",
+        "intro_strings": [
+            "p_l is checking along the border lines when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a startling sound: a hiss of pain. {PRONOUN/p_l/subject/CAP} quickly {VERB/p_l/follow/follows} the sound to the source. It's a loner, one who appears to be injured."
+        ],
+        "decline_strings": [
+            "It's probably nothing. p_l leaves the noise alone and continues on {PRONOUN/p_l/poss} way."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -8390,8 +8494,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "It's a cold day in c_n's territory, and p_l is the only cat stepping out. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} by {PRONOUN/p_l/self} when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a cat screaming for help.",
-        "decline_text": "Nope, not today, there's no way p_l is running after ghost cats, no thank you.",
+        "intro_strings": [
+            "It's a cold day in c_n's territory, and p_l is the only cat stepping out. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} by {PRONOUN/p_l/self} when {PRONOUN/p_l/subject} {VERB/p_l/hear/hears} a cat screaming for help."
+        ],
+        "decline_strings": [
+            "Nope, not today, there's no way p_l is running after ghost cats, no thank you."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -8642,8 +8750,12 @@
         },
         "chance_of_success": 85,
         "patrol_art": "cat_sprites/gen_bord_rescue_Wr",
-        "intro_text": "The patrol hears desperate screams coming from a nearby lake.",
-        "decline_text": "It's not the scream of any cat p_l recognizes, so {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to continue the patrol without checking it out.",
+        "intro_strings": [
+            "The patrol hears desperate screams coming from a nearby lake."
+        ],
+        "decline_strings": [
+            "It's not the scream of any cat p_l recognizes, so {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to continue the patrol without checking it out."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -8886,8 +8998,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "bord_general_intro",
-        "intro_text": "The patrol comes across a o_c_n apprentice, waiting quietly at the border. When the apprentice notices the patrol, they press themself to the ground, begging to join c_n.",
-        "decline_text": "This seems like a o_c_n problem. They order the apprentice to go back home and continue the patrol.",
+        "intro_strings": [
+            "The patrol comes across a o_c_n apprentice, waiting quietly at the border. When the apprentice notices the patrol, they press themself to the ground, begging to join c_n."
+        ],
+        "decline_strings": [
+            "This seems like a o_c_n problem. They order the apprentice to go back home and continue the patrol."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -9167,8 +9283,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "train_general_intro",
-        "intro_text": "p_l is out doing some solo training when {PRONOUN/p_l/subject} suddenly {VERB/p_l/spot/spots} another cat around {PRONOUN/p_l/poss} age.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/elect/elects} to ignore the stranger and focus on {PRONOUN/p_l/poss} training.",
+        "intro_strings": [
+            "p_l is out doing some solo training when {PRONOUN/p_l/subject} suddenly {VERB/p_l/spot/spots} another cat around {PRONOUN/p_l/poss} age."
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/subject/CAP} {VERB/p_l/elect/elects} to ignore the stranger and focus on {PRONOUN/p_l/poss} training."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -10042,8 +10162,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_med_GL_gatheringgoldenrod_Ln",
-        "intro_text": "p_l hears rustling in the grass. Initially annoyed at whatever apprentice has decided to come play in the borderlands, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} shocked when the flowering grass parts to reveal an outsider, who grins flirtatiously at p_l and offers a cocksure greeting.",
-        "decline_text": "Nope, p_l is going back home. Right now.",
+        "intro_strings": [
+            "p_l hears rustling in the grass. Initially annoyed at whatever apprentice has decided to come play in the borderlands, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} shocked when the flowering grass parts to reveal an outsider, who grins flirtatiously at p_l and offers a cocksure greeting."
+        ],
+        "decline_strings": [
+            "Nope, p_l is going back home. Right now."
+        ],
         "success_outcomes": [
             {
                 "frequency": 1,

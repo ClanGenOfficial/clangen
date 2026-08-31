@@ -32,8 +32,12 @@
         },
         "chance_of_success": 65,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l looks at the calm, cloudless sky and decides it's a good opportunity to show r_c1 where some of the most commonly needed herbs are located in their territory, both above and below ground.",
-        "decline_text": "As {PRONOUN/p_l/subject} {VERB/p_l/look/looks} at r_c1's absent-minded gaze, {PRONOUN/p_l/subject} {VERB/p_l/hesitate/hesitates} and {VERB/p_l/change/changes} {PRONOUN/p_l/poss} mind. Maybe another day would be best, when r_c1 is more focused and less liable to get lost in the tunnels.",
+        "intro_strings": [
+            "p_l looks at the calm, cloudless sky and decides it's a good opportunity to show r_c1 where some of the most commonly needed herbs are located in their territory, both above and below ground."
+        ],
+        "decline_strings": [
+            "As {PRONOUN/p_l/subject} {VERB/p_l/look/looks} at r_c1's absent-minded gaze, {PRONOUN/p_l/subject} {VERB/p_l/hesitate/hesitates} and {VERB/p_l/change/changes} {PRONOUN/p_l/poss} mind. Maybe another day would be best, when r_c1 is more focused and less liable to get lost in the tunnels."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -177,13 +181,19 @@
         },
         "involved_cats": {
             "p_l": {
-                "has_mentor": {"current": true}
+                "has_mentor": {
+                    "current": true
+                }
             }
         },
         "chance_of_success": 65,
         "patrol_art": "cat_sprites/pln_med_herblocation_Ap",
-        "intro_text": "p_l has been sent out into the grasslands to try to find some specific herbs alone.",
-        "decline_text": "Nervous and with the feeling of being watched on the wide-open plains, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to go back to camp and try again another day. {PRONOUN/p_l/poss/CAP} mentor won't be very pleased, but {PRONOUN/p_l/subject} {VERB/p_l/rationalize/rationalizes} that it's better to go with confidence than nerves.",
+        "intro_strings": [
+            "p_l has been sent out into the grasslands to try to find some specific herbs alone."
+        ],
+        "decline_strings": [
+            "Nervous and with the feeling of being watched on the wide-open plains, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to go back to camp and try again another day. {PRONOUN/p_l/poss/CAP} mentor won't be very pleased, but {PRONOUN/p_l/subject} {VERB/p_l/rationalize/rationalizes} that it's better to go with confidence than nerves."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -246,8 +256,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l and r_c0 take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
-        "decline_text": "Unfortunately, they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh.",
+        "intro_strings": [
+            "p_l and r_c0 take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!"
+        ],
+        "decline_strings": [
+            "Unfortunately, they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

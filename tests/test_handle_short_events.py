@@ -1,4 +1,3 @@
-import os
 import unittest
 from random import Random
 
@@ -7,8 +6,6 @@ from scripts.events_module.short.short_event import ShortEvent
 from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 from scripts.events_module.transition.generate_transition_event import _handle_event
 
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.pelts import Pelt
 

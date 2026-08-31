@@ -36,8 +36,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_heat_WrWr",
-        "intro_text": "Ugh. r_c0 loves the plains, but the baking hot sun isn't its best look.",
-        "decline_text": "It's too hot for this — let's head back to camp.",
+        "intro_strings": [
+            "Ugh. r_c0 loves the plains, but the baking hot sun isn't its best look."
+        ],
+        "decline_strings": [
+            "It's too hot for this — let's head back to camp."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -166,13 +170,13 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c's right, and even worse, there's not a lick of shade to be had. The cats turn back for home, but by the time they return to camp, they're dehydrated and exhausted."
+                    "r_c0's right, and even worse, there's not a lick of shade to be had. The cats turn back for home, but by the time they return to camp, they're dehydrated and exhausted."
                 ],
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "dehydrated"

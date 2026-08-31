@@ -21,21 +21,25 @@
             ]
         },
         "chance_of_success": 40,
-        "patrol_art": "halloween\/hal_tryingcandy_WrWr",
-        "intro_text": "The patrol is on edge after scenting Twolegs in the area. p_l takes charge, keeping watch for any Twolegs that may be on the hunt for cats. Their scent is everywhere, even as the cats carefully remark the area. What's that smell? It's almost like pumpkin, but strange...",
-        "decline_text": "p_l knows better than to mess with anything that smells like Twolegs. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/skirt\/skirts} around the area.",
+        "patrol_art": "halloween/hal_tryingcandy_WrWr",
+        "intro_strings": [
+            "The patrol is on edge after scenting Twolegs in the area. p_l takes charge, keeping watch for any Twolegs that may be on the hunt for cats. Their scent is everywhere, even as the cats carefully remark the area. What's that smell? It's almost like pumpkin, but strange..."
+        ],
+        "decline_strings": [
+            "p_l knows better than to mess with anything that smells like Twolegs. {PRONOUN/p_l/subject/CAP} {VERB/p_l/skirt/skirts} around the area."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l follows the scent and nearly treads on the sticky thing in the grass. Definitely a weird Twoleg thing. {PRONOUN\/p_l\/subject\/CAP} carefully {VERB\/p_l\/walk\/walks} around it, unwilling to get the sticky stuff in {PRONOUN\/p_l\/poss} fur."
+                    "p_l follows the scent and nearly treads on the sticky thing in the grass. Definitely a weird Twoleg thing. {PRONOUN/p_l/subject/CAP} carefully {VERB/p_l/walk/walks} around it, unwilling to get the sticky stuff in {PRONOUN/p_l/poss} fur."
                 ],
                 "exp_gained": 5
             },
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l finds the sticky thing in the grass and examines it. s_c0 suddenly appears beside {PRONOUN\/p_l\/object} and, before p_l can tell {PRONOUN\/s_c0\/object} to be careful, s_c0 bends down and takes a lick. s_c0 wrinkles {PRONOUN\/s_c0\/poss} nose and gags, trying to spit the disgusting taste out of {PRONOUN\/s_c0\/poss} mouth."
+                    "p_l finds the sticky thing in the grass and examines it. s_c0 suddenly appears beside {PRONOUN/p_l/object} and, before p_l can tell {PRONOUN/s_c0/object} to be careful, s_c0 bends down and takes a lick. s_c0 wrinkles {PRONOUN/s_c0/poss} nose and gags, trying to spit the disgusting taste out of {PRONOUN/s_c0/poss} mouth."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -84,13 +88,17 @@
             ]
         },
         "chance_of_success": 40,
-        "patrol_art": "cat_sprites\/pln_train_session1_ApWr",
-        "intro_text": "Here on the plains, the reaches of c_n's territory are vast, particularly in the direction p_l and {PRONOUN\/p_l\/poss} patrol are heading, where there is endless grass but no permanent water sources. Still, with the grass at it's leaf-fall maximum, the sun isn't going to be able to touch p_l's pelt.",
-        "decline_text": "The patrol is interrupted by a hunting patrol that needs help carrying prey back to camp \u2014 border marking will wait til later.",
+        "patrol_art": "cat_sprites/pln_train_session1_ApWr",
+        "intro_strings": [
+            "Here on the plains, the reaches of c_n's territory are vast, particularly in the direction p_l and {PRONOUN/p_l/poss} patrol are heading, where there is endless grass but no permanent water sources. Still, with the grass at it's leaf-fall maximum, the sun isn't going to be able to touch p_l's pelt."
+        ],
+        "decline_strings": [
+            "The patrol is interrupted by a hunting patrol that needs help carrying prey back to camp \u2014 border marking will wait til later."
+        ],
         "success_outcomes": [
             {
                 "frequency": 1,
-                "outcome_art": "cat_sprites\/gen_speakingcat_Wr",
+                "outcome_art": "cat_sprites/gen_speakingcat_Wr",
                 "strings": [
                     "There's a flock of seed eaters that have apparently taken residence up near the distant border, when the patrol finally pads out that far. It's worth noting, and p_l will report the potential hunting spot when they return to camp."
                 ],
@@ -116,9 +124,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_hunt_funrun_WrWr",
+                "outcome_art": "cat_sprites/gen_hunt_funrun_WrWr",
                 "strings": [
-                    "s_c0 isn't just talented at running fast \u2014 {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/have\/has} some very good advice about finding paths in thick grass too and {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/share\/shares} {PRONOUN\/s_c0\/poss} tips for endurance. The other cats purr gratitude at the end of the day. Everyone's exhausted, but they made it the entire length of that far off border thanks to s_c0."
+                    "s_c0 isn't just talented at running fast \u2014 {PRONOUN/s_c0/subject} {VERB/s_c0/have/has} some very good advice about finding paths in thick grass too and {PRONOUN/s_c0/subject} {VERB/s_c0/share/shares} {PRONOUN/s_c0/poss} tips for endurance. The other cats purr gratitude at the end of the day. Everyone's exhausted, but they made it the entire length of that far off border thanks to s_c0."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -170,7 +178,7 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_hunt_funrun_WrWr",
+                "outcome_art": "cat_sprites/gen_hunt_funrun_WrWr",
                 "strings": [
                     "p_l really pushes them to be able to patrol all the far border in a single patrol. They make it, and are congratulated on the achievement when they come back into camp after dark, panting."
                 ],
@@ -207,7 +215,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "cat_from approved of how cat_to pushed {PRONOUN\/cat_to\/poss} patrol to reach the far border."
+                            "cats_from": "cat_from approved of how cat_to pushed {PRONOUN/cat_to/poss} patrol to reach the far border."
                         }
                     }
                 ]
@@ -216,9 +224,9 @@
         "fail_outcomes": [
             {
                 "frequency": 3,
-                "outcome_art": "cat_sprites\/gen_chatting_WrWr",
+                "outcome_art": "cat_sprites/gen_chatting_WrWr",
                 "strings": [
-                    "They trek, and they wander, and they amble, and they pad. But as the sun creeps over the sky, before they reach the far border itself, p_l spots r_c0 limping. It's nothing, {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/say\/says}, just slept on the leg wrong. But far from camp isn't the right place to be limping, and p_l calls the patrol off."
+                    "They trek, and they wander, and they amble, and they pad. But as the sun creeps over the sky, before they reach the far border itself, p_l spots r_c0 limping. It's nothing, {PRONOUN/r_c0/subject} {VERB/r_c0/say/says}, just slept on the leg wrong. But far from camp isn't the right place to be limping, and p_l calls the patrol off."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -257,9 +265,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_running_WrWr",
+                "outcome_art": "cat_sprites/gen_running_WrWr",
                 "strings": [
-                    "Before they reach the far border itself, p_l spots s_c0 limping. It's nothing, {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/say\/says}, and refuses to stop. But in these far reaches, in territory not commonly checked, other predators intrude. When a young, inexperienced cougar charges the patrol, s_c0 <i>should<\/i> have been able to run fast enough to escape. <i>Should.<\/i>"
+                    "Before they reach the far border itself, p_l spots s_c0 limping. It's nothing, {PRONOUN/s_c0/subject} {VERB/s_c0/say/says}, and refuses to stop. But in these far reaches, in territory not commonly checked, other predators intrude. When a young, inexperienced cougar charges the patrol, s_c0 <i>should</i> have been able to run fast enough to escape. <i>Should.</i>"
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -309,13 +317,17 @@
             ]
         },
         "chance_of_success": 30,
-        "patrol_art": "cat_sprites\/gen_bord_dogscent_Wr",
-        "intro_text": "Padding along the border, the cats find fresh coyote scat being washed away by the rain. There's a yip in the distance.",
-        "decline_text": "The patrol decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
+        "patrol_art": "cat_sprites/gen_bord_dogscent_Wr",
+        "intro_strings": [
+            "Padding along the border, the cats find fresh coyote scat being washed away by the rain. There's a yip in the distance."
+        ],
+        "decline_strings": [
+            "The patrol decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "animals\/animals\/gen_coyoterun",
+                "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
                     "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. The patrol catches it in an ambush, and a torn ear and ripped up pelt convinces the youngest that this area isn't one to stay in."
                 ],
@@ -336,7 +348,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from heard that cat_to and {PRONOUN\/cat_to\/poss} patrol killed an adolescent coyote on patrol."
+                            "cats_from": "cat_from heard that cat_to and {PRONOUN/cat_to/poss} patrol killed an adolescent coyote on patrol."
                         }
                     },
                     {
@@ -359,7 +371,7 @@
             },
             {
                 "frequency": 2,
-                "outcome_art": "animals\/animals\/gen_coyote",
+                "outcome_art": "animals/animals/gen_coyote",
                 "strings": [
                     "The patrol shadows the coyote, sending a message back to warn camp. It's an exhausting and stressful day, but by the time night falls they've confirmed that the coyote is leaving the local area, and the patrol has assured c_n's safety."
                 ],
@@ -387,7 +399,7 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "animals\/animals\/gen_coyotedanger",
+                "outcome_art": "animals/animals/gen_coyotedanger",
                 "strings": [
                     "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up. Not a moment too soon \u2014 from their perch in the oak, the patrol hears the scrabbling of paws and a yip of frustration. That confirms the coyote exists and is interested in cat meat. They wait for the predator to give up, so they can go warn c_n."
                 ],
@@ -424,14 +436,14 @@
                         ],
                         "amount": 8,
                         "log": {
-                            "cats_from": "cat_from gained respect for cat_to when {PRONOUN\/cat_to\/subject} thought fast and led the patrol up a tree to escape a coyote."
+                            "cats_from": "cat_from gained respect for cat_to when {PRONOUN/cat_to/subject} thought fast and led the patrol up a tree to escape a coyote."
                         }
                     }
                 ]
             },
             {
                 "frequency": 2,
-                "outcome_art": "cat_sprites\/gen_running_WrWr",
+                "outcome_art": "cat_sprites/gen_running_WrWr",
                 "strings": [
                     "The patrol gathers their courage and valiantly tries to lead away the coyote. With such a small group of cats, they can only lead it a short distance, but it's better than nothing."
                 ],
@@ -457,7 +469,7 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_coyote_Wr",
+                "outcome_art": "cat_sprites/gen_coyote_Wr",
                 "strings": [
                     "s_c0 sets up a careful ambush ahead of the coyote, and the surprising, darting attack bloodies the coyote's flank, dissuading it from heading further into c_n territory."
                 ],
@@ -512,7 +524,7 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "animals\/animals\/gen_coyote",
+                "outcome_art": "animals/animals/gen_coyote",
                 "strings": [
                     "With the border here so flat, there's no trees to climb to escape. But s_c0 thinks of everything; they go to a well-known burrow that the apprentices play in all the time. It's not a moment too soon, the coyote wanders straight past the entrance as it hunts for field mice, the cats within crouched and silent."
                 ],
@@ -551,9 +563,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "animals\/animals\/gen_coyoterun",
+                "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "That isn't just the sound of a coyote, that's the sound of an <i>adolescent<\/i>, s_c0 hisses. It's as good a chance as they can ask for \u2014 best to teach this youngster to fear cats, rather than prey on them."
+                    "That isn't just the sound of a coyote, that's the sound of an <i>adolescent</i>, s_c0 hisses. It's as good a chance as they can ask for \u2014 best to teach this youngster to fear cats, rather than prey on them."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -606,9 +618,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_running_WrWr",
+                "outcome_art": "cat_sprites/gen_running_WrWr",
                 "strings": [
-                    "s_c0 selflessly takes the lion's share of the run as the patrol leads the coyote on, exhausting {PRONOUN\/s_c0\/self} almost to the point of danger, but leading the coyote far away from c_n borders. {PRONOUN\/s_c0\/poss\/CAP} Clanmates support {PRONOUN\/s_c0\/object} on the long walk home once it's all over, their purrs mixing with s_c0's exhausted pants."
+                    "s_c0 selflessly takes the lion's share of the run as the patrol leads the coyote on, exhausting {PRONOUN/s_c0/self} almost to the point of danger, but leading the coyote far away from c_n borders. {PRONOUN/s_c0/poss/CAP} Clanmates support {PRONOUN/s_c0/object} on the long walk home once it's all over, their purrs mixing with s_c0's exhausted pants."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -670,7 +682,7 @@
         "fail_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "animals\/animals\/gen_coyoterun",
+                "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
                     "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. The patrol try to teach it that cats are to be feared, not food, but it manages to get a couple good bites in of its own."
                 ],
@@ -690,14 +702,14 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "cat_from gained respect toward cat_to after hearing that {PRONOUN\/cat_to\/subject} attacked a coyote."
+                            "cats_from": "cat_from gained respect toward cat_to after hearing that {PRONOUN/cat_to/subject} attacked a coyote."
                         }
                     }
                 ],
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "minor_injury"
@@ -707,7 +719,7 @@
                     },
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -719,9 +731,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_coyote_Wr",
+                "outcome_art": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. It decides r_c is a suitable snack.  s_c runs in to save {PRONOUN\/r_c\/object}, fighting like an entire patrol just by {PRONOUN\/s_c\/self}."
+                    "That yip seemed a little nervous. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. It decides r_c is a suitable snack.  s_c runs in to save {PRONOUN/r_c/object}, fighting like an entire patrol just by {PRONOUN/s_c/self}."
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -776,7 +788,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "minor_injury",
@@ -789,7 +801,7 @@
             },
             {
                 "frequency": 2,
-                "outcome_art": "animals\/animals\/gen_coyotedanger",
+                "outcome_art": "animals/animals/gen_coyotedanger",
                 "strings": [
                     "The patrol tries to keep watch on the coyote from a distance, but it spots the cats and they have to scatter. Everyone escapes just fine, but they lose track of the coyote. It could be anywhere still out there, lurking, waiting to attack."
                 ],
@@ -817,9 +829,9 @@
             },
             {
                 "frequency": 2,
-                "outcome_art": "animals\/animals\/gen_coyotedanger",
+                "outcome_art": "animals/animals/gen_coyotedanger",
                 "strings": [
-                    "s_c0 tries to take the lion's share of the effort to lead the coyote away, but {PRONOUN\/s_c0\/poss} strength fails {PRONOUN\/s_c0\/object} and the rest of the patrol needs to rescue {PRONOUN\/s_c0\/object}, cutting short the results of the patrol. Instead, everyone knows the coyote could still be lurking on their borders."
+                    "s_c0 tries to take the lion's share of the effort to lead the coyote away, but {PRONOUN/s_c0/poss} strength fails {PRONOUN/s_c0/object} and the rest of the patrol needs to rescue {PRONOUN/s_c0/object}, cutting short the results of the patrol. Instead, everyone knows the coyote could still be lurking on their borders."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -859,8 +871,8 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_dead_Wr_EXPLICIT",
-                "outcome_art_clean": "cat_sprites\/gen_coyote_Wr",
+                "outcome_art": "cat_sprites/gen_dead_Wr_EXPLICIT",
+                "outcome_art_clean": "cat_sprites/gen_coyote_Wr",
                 "strings": [
                     "The patrol tries to lead the coyote away from the Clan's borders, but with so few cats it's impossible to cover each other's backs. r_c0 falls to the coyote as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their Clanmate."
                 ],
@@ -898,9 +910,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "animals\/animals\/gen_coyotedanger",
+                "outcome_art": "animals/animals/gen_coyotedanger",
                 "strings": [
-                    "The patrol tries bravely to lead the coyote away from c_n borders, but with so few cats it's impossible to cover each other's backs. r_c0 gets caught while running, and it's all the rest of the patrol can do to distract the coyote long enough to get {PRONOUN\/r_c0\/object} to safety."
+                    "The patrol tries bravely to lead the coyote away from c_n borders, but with so few cats it's impossible to cover each other's backs. r_c0 gets caught while running, and it's all the rest of the patrol can do to distract the coyote long enough to get {PRONOUN/r_c0/object} to safety."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -959,15 +971,19 @@
             ]
         },
         "chance_of_success": 10,
-        "patrol_art": "cat_sprites\/gen_bord_dogscent_Wr",
-        "intro_text": "Approaching the border, the patrol stops in their tracks. A coyote has marked over c_n's border markings \u2014 so recently that it stinks from several fox-lengths away, so recently that the canine might be still here, hiding in the misty morning haze.",
-        "decline_text": "The patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp.",
+        "patrol_art": "cat_sprites/gen_bord_dogscent_Wr",
+        "intro_strings": [
+            "Approaching the border, the patrol stops in their tracks. A coyote has marked over c_n's border markings \u2014 so recently that it stinks from several fox-lengths away, so recently that the canine might be still here, hiding in the misty morning haze."
+        ],
+        "decline_strings": [
+            "The patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "animals\/animals\/gen_coyoterun",
+                "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "The warriors share a glance and a nod. They have enough cats to try and tackle this problem. Spreading out, they use a search pattern they've all been trained in to isolate the adult coyote's location, and the cover of the mist to approach stealthily. r_c0 starts the battle strong, sinking {PRONOUN\/r_c0\/poss} teeth into the coyote's hamstring, and the rest of the patrol break cover with screeches, driving the coyote away from c_n."
+                    "The warriors share a glance and a nod. They have enough cats to try and tackle this problem. Spreading out, they use a search pattern they've all been trained in to isolate the adult coyote's location, and the cover of the mist to approach stealthily. r_c0 starts the battle strong, sinking {PRONOUN/r_c0/poss} teeth into the coyote's hamstring, and the rest of the patrol break cover with screeches, driving the coyote away from c_n."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -1026,9 +1042,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "animals\/animals\/gen_coyoterun",
+                "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "s_c0 uses {PRONOUN\/s_c0\/poss} tracking talents to lead the patrol to their enemy. They bump into the coyote in the mist with prey stolen from c_n lying at its feet. Not only does the patrol manage to maul the canine, they also recapture the food."
+                    "s_c0 uses {PRONOUN/s_c0/poss} tracking talents to lead the patrol to their enemy. They bump into the coyote in the mist with prey stolen from c_n lying at its feet. Not only does the patrol manage to maul the canine, they also recapture the food."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1105,9 +1121,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "animals\/animals\/gen_coyoterun",
+                "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "That isn't just the sound of a coyote, that's the sound of an <i>adolescent<\/i>, s_c0 hisses. It's as good a chance as they can ask for \u2014 best to teach this youngster to fear cats, rather than prey on them."
+                    "That isn't just the sound of a coyote, that's the sound of an <i>adolescent</i>, s_c0 hisses. It's as good a chance as they can ask for \u2014 best to teach this youngster to fear cats, rather than prey on them."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1159,7 +1175,7 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "animals\/animals\/gen_coyoterun",
+                "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
                     "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent, rangy and thin after splitting from its natal pack, searches for field mice. The patrol catches it in an ambush, and a torn ear and ripped up pelt convinces the youngest that this area isn't one to stay in."
                 ],
@@ -1201,7 +1217,7 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "animals\/animals\/gen_coyoterun",
+                "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
                     "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. The patrol catches it in an ambush, and with so many cats, this is one coyote that won't live to threaten c_n in the future."
                 ],
@@ -1243,7 +1259,7 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "animals\/animals\/gen_coyoterun",
+                "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
                     "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. With s_c's talent for battle, this coyote won't make it to adulthood."
                 ],
@@ -1306,16 +1322,16 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "cat_from gained a deeper respect for cat_to's skill in battle after seeing {PRONOUN\/cat_to\/object} take on a coyote."
+                            "cats_from": "cat_from gained a deeper respect for cat_to's skill in battle after seeing {PRONOUN/cat_to/object} take on a coyote."
                         }
                     }
                 ]
             },
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_coyote_Wr",
+                "outcome_art": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. The patrol takes it down, but it takes a vicious bite out of r_c first. s_c's first aid while the cats carry r_c back to camp saves {PRONOUN\/r_c\/poss} life."
+                    "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. The patrol takes it down, but it takes a vicious bite out of r_c first. s_c's first aid while the cats carry r_c back to camp saves {PRONOUN/r_c/poss} life."
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -1379,7 +1395,7 @@
                         ],
                         "amount": 30,
                         "log": {
-                            "cats_from": "cat_to saved cat_from's life on patrol by staunching the blood-flow after a coyote took a bite out of {PRONOUN\/cat_from\/object}."
+                            "cats_from": "cat_to saved cat_from's life on patrol by staunching the blood-flow after a coyote took a bite out of {PRONOUN/cat_from/object}."
                         }
                     }
                 ],
@@ -1408,7 +1424,7 @@
             },
             {
                 "frequency": 1,
-                "outcome_art": "cat_sprites\/gen_hunt_funrun_WrWr",
+                "outcome_art": "cat_sprites/gen_hunt_funrun_WrWr",
                 "strings": [
                     "They decide that no cat is going to be surprised by this predator again, and the patrol shadows the coyote, sending a message to warn camp. With enough cats to keep watch, rest, track, and send messages forward and back from camp, c_n is kept safe from the wandering coyote."
                 ],
@@ -1450,7 +1466,7 @@
             },
             {
                 "frequency": 1,
-                "outcome_art": "animals\/animals\/gen_coyoterun",
+                "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
                     "The patrol gathers their courage and valiantly drives away the coyote. Together, working as one, and with all the strength of StarClan behind them, the patrol presses the coyote. By keeping up a series of small skirmishes through the entire day, they drive it far off c_n territory."
                 ],
@@ -1492,7 +1508,7 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "animals\/animals\/gen_coyoterun",
+                "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
                     "A yip sounds from close by. s_c0 has just enough time to yell out a plan, leading the whole large patrol in a skillful battle plan against the coyote that protects the cats from the chance of injury. The coyote tucks tail, and runs for more friendly lands."
                 ],
@@ -1564,9 +1580,9 @@
             },
             {
                 "frequency": 1,
-                "outcome_art": "animals\/animals\/gen_coyoterun",
+                "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
-                    "s_c0 selflessly throws {PRONOUN\/s_c0\/self} into the fight, and every time the coyote tries to grab at {PRONOUN\/s_c0\/poss} Clanmates, {PRONOUN\/s_c0\/subject}{VERB\/s_c0\/'re\/'s} there with claws, fur puffed out to twice {PRONOUN\/s_c0\/poss} normal size. With s_c0 defending them, the patrol drives the coyote off, yowling triumphantly."
+                    "s_c0 selflessly throws {PRONOUN/s_c0/self} into the fight, and every time the coyote tries to grab at {PRONOUN/s_c0/poss} Clanmates, {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} there with claws, fur puffed out to twice {PRONOUN/s_c0/poss} normal size. With s_c0 defending them, the patrol drives the coyote off, yowling triumphantly."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1643,7 +1659,7 @@
         "fail_outcomes": [
             {
                 "frequency": 4,
-                "outcome_art": "cat_sprites\/gen_coyote_Wr",
+                "outcome_art": "cat_sprites/gen_coyote_Wr",
                 "strings": [
                     "The warriors share a glance and a nod. They have enough cats to try and tackle this problem. Spreading out, they use a search pattern they've all been trained in to isolate the adult coyote's location, and the cover of the mist to approach stealthily. But r_c0 misjudges the first attack, and instead the patrol has to focus on defence and getting out of there mostly unscathed."
                 ],
@@ -1705,7 +1721,7 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "animals\/animals\/gen_coyoterun",
+                "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
                     "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. This coyote won't see the first day of leaf-bare \u2014 but it lashes out as the patrol finishes it off."
                 ],
@@ -1747,7 +1763,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -1757,7 +1773,7 @@
                     },
                     {
                         "cats": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "condition": [
                             "scrapes"
@@ -1769,7 +1785,7 @@
             },
             {
                 "frequency": 4,
-                "outcome_art": "animals\/animals\/gen_coyoterun",
+                "outcome_art": "animals/animals/gen_coyoterun",
                 "strings": [
                     "The marking doesn't smell like a grown adult. Ears pricked, the patrol stalks closer, crossing the border. On the other side, an adolescent coyote, rangy and thin after splitting from its natal pack, searches for field mice. But seeing the patrol, the coyote slips away without a trace, an opportunity to secure c_n's borders lost."
                 ],
@@ -1797,7 +1813,7 @@
             },
             {
                 "frequency": 1,
-                "outcome_art": "animals\/animals\/gen_coyote",
+                "outcome_art": "animals/animals/gen_coyote",
                 "strings": [
                     "The patrol tries to keep watch on the coyote from a distance, but it spots the cats and they have to scatter. It's not as bad as it could've been though; r_c0 manages to keep track of the coyote's position, and it doesn't come any further into c_n territory."
                 ],
@@ -1808,9 +1824,9 @@
             },
             {
                 "frequency": 1,
-                "outcome_art": "animals\/animals\/gen_coyotedanger",
+                "outcome_art": "animals/animals/gen_coyotedanger",
                 "strings": [
-                    "s_c0 tries to show off {PRONOUN\/s_c0\/poss} strength as the patrol bounds toward battle, but it gets in the way of the attack. Without everyone committed to driving the coyote off, the patrol has to fall back, but they do so in good order."
+                    "s_c0 tries to show off {PRONOUN/s_c0/poss} strength as the patrol bounds toward battle, but it gets in the way of the attack. Without everyone committed to driving the coyote off, the patrol has to fall back, but they do so in good order."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1852,10 +1868,10 @@
             },
             {
                 "frequency": 1,
-                "outcome_art": "cat_sprites\/gen_dead_Wr_EXPLICIT",
-                "outcome_art_clean": "cat_sprites\/gen_coyote_Wr",
+                "outcome_art": "cat_sprites/gen_dead_Wr_EXPLICIT",
+                "outcome_art_clean": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "With so many cats all working as one, the coyote started to get beaten back. But just as the tide of the fight seems about to turn, one lucky strike hits r_c0, and those vicious jaws take {PRONOUN\/r_c0\/object} to StarClan."
+                    "With so many cats all working as one, the coyote started to get beaten back. But just as the tide of the fight seems about to turn, one lucky strike hits r_c0, and those vicious jaws take {PRONOUN/r_c0/object} to StarClan."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -1890,9 +1906,9 @@
             },
             {
                 "frequency": 4,
-                "outcome_art_clean": "cat_sprites\/gen_coyote_Wr",
+                "outcome_art_clean": "cat_sprites/gen_coyote_Wr",
                 "strings": [
-                    "The patrol fights bravely, but you only need to be unlucky once. r_c0 gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend {PRONOUN\/r_c0\/object}, and r_c0 is safely helped back to camp, where the medicine den awaits."
+                    "The patrol fights bravely, but you only need to be unlucky once. r_c0 gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend {PRONOUN/r_c0/object}, and r_c0 is safely helped back to camp, where the medicine den awaits."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -1913,7 +1929,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from respected that cat_to put {PRONOUN\/cat_to\/self} in danger in a fight against a coyote."
+                            "cats_from": "cat_from respected that cat_to put {PRONOUN/cat_to/self} in danger in a fight against a coyote."
                         }
                     }
                 ],
