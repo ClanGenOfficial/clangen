@@ -4274,6 +4274,10 @@
                 ]
             },
             "r_c": {
+                "status": [
+                    "-kitten",
+                    "-newborn"
+                ],
                 "group": [
                     "-afterlife"
                 ]
