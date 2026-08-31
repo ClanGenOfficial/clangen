@@ -438,11 +438,7 @@ class Patrol:
             chosen_patrol, involved_cats = get_valid_event(
                 primary_cat=self.involved_cats["p_l"],
                 involved_cats=self.involved_cats,
-                interactable_cats=[
-                    c
-                    for c in self.involved_cats["patrol_cats"]
-                    if c != self.involved_cats["p_l"]
-                ],
+                interactable_cats=self.involved_cats["patrol_cats"],
                 possible_events=patrols_to_test,
                 other_clan=self.other_clan,
                 ensured_id=self.debug_patrol_id,
