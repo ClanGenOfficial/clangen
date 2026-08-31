@@ -165,14 +165,8 @@ class TestInvolvedCats(unittest.TestCase):
         )
 
         self.patrol_class._add_patrol_cats([war1])
-        self.patrol_class._get_valid_patrol([patrol])
-
-        handle_consequences.execute_outcome(
-            patrol.success_outcomes[0],
-            self.patrol_class.involved_cats,
-            self.patrol_class.cats_to_create,
-            other_clan=OtherClan(),
-        )
+        self.patrol_class.patrol_event = self.patrol_class._get_valid_patrol([patrol])
+        self.patrol_class._create_needed_cats()
 
         self.assertEqual(
             outsider1,
@@ -331,7 +325,6 @@ class TestOutcomeExecution(unittest.TestCase):
         handle_consequences.execute_outcome(
             patrol.success_outcomes[0],
             self.patrol_class.involved_cats,
-            self.patrol_class.cats_to_create,
             other_clan=OtherClan(),
         )
 
@@ -369,7 +362,6 @@ class TestOutcomeExecution(unittest.TestCase):
         handle_consequences.execute_outcome(
             patrol.success_outcomes[0],
             self.patrol_class.involved_cats,
-            self.patrol_class.cats_to_create,
             other_clan=OtherClan(),
         )
 
@@ -412,7 +404,6 @@ class TestOutcomeExecution(unittest.TestCase):
         handle_consequences.execute_outcome(
             patrol.success_outcomes[0],
             self.patrol_class.involved_cats,
-            self.patrol_class.cats_to_create,
             other_clan=OtherClan(),
         )
 
@@ -450,7 +441,6 @@ class TestOutcomeExecution(unittest.TestCase):
         handle_consequences.execute_outcome(
             patrol.success_outcomes[0],
             self.patrol_class.involved_cats,
-            self.patrol_class.cats_to_create,
             other_clan=OtherClan(),
         )
 
@@ -491,7 +481,6 @@ class TestOutcomeExecution(unittest.TestCase):
         handle_consequences.execute_outcome(
             patrol.success_outcomes[0],
             self.patrol_class.involved_cats,
-            self.patrol_class.cats_to_create,
             other_clan=other_clan,
         )
 
@@ -535,7 +524,6 @@ class TestOutcomeExecution(unittest.TestCase):
         handle_consequences.execute_outcome(
             patrol.success_outcomes[0],
             self.patrol_class.involved_cats,
-            self.patrol_class.cats_to_create,
             other_clan=OtherClan(),
         )
 

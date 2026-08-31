@@ -145,7 +145,6 @@ class TestHandleTransition(unittest.TestCase):
         _handle_event(
             self.chosen_event,
             involved_cats={"m_c": self.main_cat},
-            cats_to_create={},
             main_cat=self.main_cat,
             other_clan=None,
         )
