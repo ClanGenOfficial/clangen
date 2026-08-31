@@ -28,7 +28,7 @@ def get_valid_event(
     frequency_active: bool = True,
 ) -> tuple[Optional[PatrolEvent | TextPoolEvent], dict, dict]:
     """
-    Check given possible_events against current game state and involved cats. Returns a valid event, 
+    Check given possible_events against current game state and involved cats. Returns a valid event,
         involved cats, and cats that need to be created.
     :param primary_cat: The "main" cat of the event. For patrols this is the patrol leader.
     :param involved_cats: The dict of involved cats. Key is cat abbreviation, value is cat object.
@@ -75,7 +75,7 @@ def get_valid_event(
                 return (
                     None,
                     {},
-                    {}
+                    {},
                 )  # failed to find anything, so we send back and origin handles it
             else:
                 used_frequencies.add(chosen_frequency)

@@ -51,23 +51,26 @@ def execute_outcome(
 ) -> tuple[str, str, dict]:
     """
     Executes the outcome, applying any specified consequences.
-    If new cats are created, event_involved_cats *will* be modified to add the newly created cats. 
+    If new cats are created, event_involved_cats *will* be modified to add the newly created cats.
     :returns: Outcome text, results text, list of created rel logs (might be empty)
     """
 
     all_involved_cats = event_involved_cats
 
-    # Must start with cat creation. 
+    # Must start with cat creation.
     for abbr, constraints in event_cats_to_create.items():
         all_involved_cats[abbr] = updated_create_new_cat(
-                option_dict=constraints,
-                involved_cats=all_involved_cats,
-                other_clan=other_clan,
-            )
-        if len(all_involved_cats[abbr]) == 1:
-                # if this is a list of a single cat, then we take them out of the list
-                all_involved_cats[abbr] = all_involved_cats[abbr][0]
+            option_dict=constraints,
+            involved_cats=all_involved_cats,
+            other_clan=other_clan,
+        )
 
+        print("NEW CATS CREATED FOR EVENT")
+        print(all_involved_cats[abbr])
+
+        if len(all_involved_cats[abbr]) == 1:
+            # if this is a list of a single cat, then we take them out of the list
+            all_involved_cats[abbr] = all_involved_cats[abbr][0]
 
     rel_results = {}
     chosen_string = choice(event.strings)

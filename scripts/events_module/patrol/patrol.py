@@ -535,7 +535,11 @@ class Patrol:
 
         # we'll get an outcome for both success and failure
         # FIND SUCCESS
-        chosen_success, self.outcome_cats["success"], self.outcome_cats_to_create["success"] = get_valid_event(
+        (
+            chosen_success,
+            self.outcome_cats["success"],
+            self.outcome_cats_to_create["success"],
+        ) = get_valid_event(
             primary_cat=self.involved_cats["p_l"],
             involved_cats=self.involved_cats,
             interactable_cats=[
@@ -554,7 +558,11 @@ class Patrol:
             )
 
         # FIND FAILURE
-        chosen_failure, self.outcome_cats["failure"], self.outcome_cats_to_create["failure"] = get_valid_event(
+        (
+            chosen_failure,
+            self.outcome_cats["failure"],
+            self.outcome_cats_to_create["failure"],
+        ) = get_valid_event(
             primary_cat=self.involved_cats["p_l"],
             involved_cats=self.involved_cats,
             interactable_cats=[

@@ -37,15 +37,17 @@ def trigger_interaction(main_cat: Cat, interactable_cats: list) -> list[str]:
     events = load_text_pool_events(path)
 
     # FIND VALID EVENT
-    chosen_event, involved_cats, cats_to_create = _get_event(events, interactable_cats, main_cat)
-    # TODO: CREATE NEW CATS 
+    chosen_event, involved_cats, cats_to_create = _get_event(
+        events, interactable_cats, main_cat
+    )
+    # TODO: CREATE NEW CATS
 
     # RESOLVE EVENT
     if not chosen_event:  # aww... nothing was possible
         return []
     else:
         return _resolve_event(
-            chosen_event, chosen_intensity, involved_cats,  type_of_change
+            chosen_event, chosen_intensity, involved_cats, type_of_change
         )
 
 

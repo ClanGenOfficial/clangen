@@ -47,9 +47,8 @@ def find_cats(
             for block in event.relationship_constraint
         ):
             return empty
-   
-    for abbr, constraints in event.involved_cats.items():
 
+    for abbr, constraints in event.involved_cats.items():
         can_create_new_cat = False
         possible_injuries = get_potential_conditions(abbr, can_give_condition, event)
         possible_accessories = get_potential_accessories(
@@ -74,16 +73,18 @@ def find_cats(
 
         # CHECK NEW CATS
         elif "n_c" in abbr:
-            # CATS THAT CAN BE MADE
-            if "can_create_new_cat" in constraints:
-                # It's OK if we can't find a cat - we can create it later. 
-                print(event.involved_cats[abbr])
-                can_create_new_cat = True 
-
-            # Find possible cats. 
             possible_cats = [
                 c for c in outside_cats if c not in temp_involved_cats.values()
             ]
+
+            # CATS THAT CAN BE MADE
+            if "can_create_new_cat" in constraints:
+                # It's OK if we can't find a cat - we can create it later.
+                can_create_new_cat = True
+
+                # Chance to *not* look for
+                if random.random() * 100 > get_config("new_cat.search_for_existing"):
+                    possible_cats = []
 
         # CHECK MULTI_CAT
         elif abbr == "multi_cat":
@@ -154,20 +155,13 @@ def find_cats(
             else:
                 return empty
 
-        print(f"NEW INVOLDED: {new_involved_cat}")
         temp_involved_cats.update(new_involved_cat)
 
         if temp_involved_cats.get(abbr) in interactable_cats:
             interactable_cats.remove(temp_involved_cats[abbr])
 
-    # Pop all abbreviations from temp_involved_cats:
-    #for key in cats_to_create:
-    #    temp_involved_cats.pop(key)
-
-    print(f"-----Temp involved Cats: {temp_involved_cats}")
-    print(f"-----CATS TO CREATE: {cats_to_create}")
-
     return temp_involved_cats, cats_to_create
+
 
 def get_potential_conditions(abbr, can_give_condition, event):
     possible_injuries = []
@@ -245,10 +239,9 @@ def _find_involved_cat(
 
     # otherwise, let's make sure we fulfill the rel constraints with this cat
     elif possible_cats:
-
         i = 0
         while True:
-            # Protection against infinate loop. 
+            # Protection against infinate loop.
             i += 1
             if i > 2000:
                 return {}
