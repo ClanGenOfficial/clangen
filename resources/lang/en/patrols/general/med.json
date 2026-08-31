@@ -4118,7 +4118,7 @@
         "involved_cats": {
             "r_c2": {
                 "status": [
-                    "apprentice",
+                    "apprentice"
                 ],
                 "has_mentor": {
                     "current": true
