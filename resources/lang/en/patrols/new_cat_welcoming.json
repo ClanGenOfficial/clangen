@@ -3721,7 +3721,7 @@
                         "condition": [
                             "carrionplace disease"
                         ],
-                        "no_results": true
+                        "death_history": "m_c died of carrionplace disease."
                     }
                 ],
                 "join": [
@@ -3794,7 +3794,7 @@
                         "condition": [
                             "carrionplace disease"
                         ],
-                        "no_results": true
+                        "death_history": "m_c died of carrionplace disease."
                     }
                 ],
                 "join": [

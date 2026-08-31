@@ -1660,7 +1660,7 @@
                         ],
                         "condition": [
                             "snake bite",
-                            "poisoned"
+                            "venom sickness"
                         ],
                         "scar_history": "This cat was scarred by a rattlesnake while hunting.",
                         "death_history": "m_c died of a rattlesnake bite."
@@ -1701,7 +1701,7 @@
                         ],
                         "condition": [
                             "snake bite",
-                            "poisoned",
+                            "venom sickness",
                             "damaged eyes"
                         ],
                         "scar_pool_override": [

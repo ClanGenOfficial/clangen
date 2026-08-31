@@ -5900,7 +5900,7 @@
                         ],
                         "condition": [
                             "small cut",
-                            "poisoned"
+                            "venom sickness"
                         ],
                         "scar_pool_override": [
                             "QUILLSIDE"
