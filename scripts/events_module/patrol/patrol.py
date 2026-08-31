@@ -121,7 +121,7 @@ class Patrol:
 
         # Find valid patrol
         self.patrol_event = self._get_possible_patrol(patrol_type)
-        self._create_needed_cats(self)
+        self._create_needed_cats()
 
         # Return text adjusted patrol intro
         return event_text_adjust(
