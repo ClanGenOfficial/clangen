@@ -72,7 +72,15 @@
             "Was naughty, but {PRONOUN/m_c/poss} housefolk can't stay mad at {PRONOUN/m_c/object}",
             "Is getting yelled at for being naughty",
             "Doesn't understand why {PRONOUN/m_c/poss} housefolk are mad at {PRONOUN/m_c/object}",
-            "Got locked out for the night"
+            "Got locked out for the night",
+            "Stole some of {PRONOUN/m_c/poss} housefolks' food",
+            "Pushed {PRONOUN/m_c/poss} housefolk's stuff off a ledge",
+            "Pushed {PRONOUN/m_c/poss} housefolk's stuff off a ledge, breaking it",
+            "Is ignoring {PRONOUN/m_c/poss} housefolks calls for {PRONOUN/m_c/object}",
+            "Bit {PRONOUN/m_c/poss} housefolk",
+            "Scratched {PRONOUN/m_c/poss} housefolk",
+            "Is posing for {PRONOUN/m_c/poss} housefolk",
+            "Is kneeding on {PRONOUN/m_c/poss} housefolk"
         ]
     },
     {
