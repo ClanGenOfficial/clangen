@@ -169,7 +169,7 @@
     {
         "event_id": "careful_warrior_to_deputy",
         "strings": [
-            "Asks the deputy about sending out some more hunting patrols \u00e2\u20ac\u201d just to be sure"
+            "Asks the deputy about sending out some more hunting patrols — just to be sure"
         ],
         "involved_cats": {
             "m_c": {

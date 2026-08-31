@@ -43,9 +43,13 @@
             "r_c0": {}
         },
         "chance_of_success": 60,
-        "patrol_art": "cat_sprites\/gen_flowerdate_WrWr",
-        "intro_text": "p_l thinks r_c0 is, well, really, just \u2014 uh, just swell, and {PRONOUN\/p_l\/subject} {VERB\/p_l\/think\/thinks} r_c0 might like {PRONOUN\/p_l\/object} too. {PRONOUN\/p_l\/subject\/CAP}{VERB\/p_l\/'ve\/'s} been building up {PRONOUN\/p_l\/poss} confidence, and {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} going to ask r_c0 to spend some time together, just the two of them, this afternoon!",
-        "decline_text": "Unfortunately, r_c0 is sent on an afternoon border patrol before p_l can say anything.",
+        "patrol_art": "cat_sprites/gen_flowerdate_WrWr",
+        "intro_strings": [
+            "p_l thinks r_c0 is, well, really, just \u2014 uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c0 might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c0 to spend some time together, just the two of them, this afternoon!"
+        ],
+        "decline_strings": [
+            "Unfortunately, r_c0 is sent on an afternoon border patrol before p_l can say anything."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -104,7 +108,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN\/s_c0\/poss} words carefully. It's all worth it to hear r_c's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world."
+                    "s_c0 has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN/s_c0/poss} words carefully. It's all worth it to hear r_c's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -137,7 +141,7 @@
                         ],
                         "amount": 13,
                         "log": {
-                            "cats_from": "s_c0's social adeptness made {PRONOUN\/s_c0\/poss} romantic leaf-bare stroll with r_c0 all the better."
+                            "cats_from": "s_c0's social adeptness made {PRONOUN/s_c0/poss} romantic leaf-bare stroll with r_c0 all the better."
                         }
                     }
                 ]
@@ -147,7 +151,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l awkwardly stutters {PRONOUN\/p_l\/poss} way through asking r_c0 out \u2014 and {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/say\/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone."
+                    "p_l awkwardly stutters {PRONOUN/p_l/poss} way through asking r_c0 out \u2014 and {PRONOUN/r_c0/subject} {VERB/r_c0/say/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -164,7 +168,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "p_l felt embarrassed when r_c0 rejected {PRONOUN\/p_l\/poss} offer of a romantic stroll."
+                            "cats_from": "p_l felt embarrassed when r_c0 rejected {PRONOUN/p_l/poss} offer of a romantic stroll."
                         }
                     },
                     {
@@ -180,7 +184,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "r_c0 felt awkward when p_l asked {PRONOUN\/r_c0\/object} out on a romantic stroll, and r_c0 rejected the offer."
+                            "cats_from": "r_c0 felt awkward when p_l asked {PRONOUN/r_c0/object} out on a romantic stroll, and r_c0 rejected the offer."
                         }
                     }
                 ]
@@ -224,9 +228,13 @@
             }
         },
         "chance_of_success": 60,
-        "patrol_art": "cat_sprites\/gen_med_vision_McWr",
-        "intro_text": "Snow swirls around c_n's camp, piling up in unusually deep snowdrifts. p_l gathers some apprentices to {PRONOUN\/p_l\/object} for a story.",
-        "decline_text": "Trying to get apprentices to do anything is like \u2014 well, herding cats.",
+        "patrol_art": "cat_sprites/gen_med_vision_McWr",
+        "intro_strings": [
+            "Snow swirls around c_n's camp, piling up in unusually deep snowdrifts. p_l gathers some apprentices to {PRONOUN/p_l/object} for a story."
+        ],
+        "decline_strings": [
+            "Trying to get apprentices to do anything is like \u2014 well, herding cats."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -307,14 +315,14 @@
                             "shivering"
                         ],
                         "scar_history": "m_c was soaked in leaf-bare, and it progressed to scarring frostbite.",
-                        "death_history": "m_c was soaked in leaf-bare, and the chill eventually killed {PRONOUN\/m_c\/object}."
+                        "death_history": "m_c was soaked in leaf-bare, and the chill eventually killed {PRONOUN/m_c/object}."
                     }
                 ]
             },
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0, wary of any more work, stalks off before p_l can assign {PRONOUN\/s_c0\/object} more chores \u2014 and misses out on p_l's excellent storytelling as a result."
+                    "s_c0, wary of any more work, stalks off before p_l can assign {PRONOUN/s_c0/object} more chores \u2014 and misses out on p_l's excellent storytelling as a result."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -414,9 +422,13 @@
             }
         },
         "chance_of_success": 60,
-        "patrol_art": "cat_sprites\/gen_med_curiosity_McAp",
-        "intro_text": "The wind blows across the lake, almost sounding like the moans of a hungry cat. p_l has a gleam in {PRONOUN\/p_l\/poss} eye that tells r_c1 {PRONOUN\/p_l\/subject} {VERB\/p_l\/have\/has} a story to tell...",
-        "decline_text": "r_c1 is too hungry and cold to stop for a story now! {PRONOUN\/r_c1\/subject\/CAP} {VERB\/r_c1\/pad\/pads} away in search of food.",
+        "patrol_art": "cat_sprites/gen_med_curiosity_McAp",
+        "intro_strings": [
+            "The wind blows across the lake, almost sounding like the moans of a hungry cat. p_l has a gleam in {PRONOUN/p_l/poss} eye that tells r_c1 {PRONOUN/p_l/subject} {VERB/p_l/have/has} a story to tell..."
+        ],
+        "decline_strings": [
+            "r_c1 is too hungry and cold to stop for a story now! {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/pad/pads} away in search of food."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -449,7 +461,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Hearing p_l describe the Underwater Panther, how she's always waiting, just out of reach, ready to pull cats down \u2014 r_c1 starts shivering, and p_l calls the whole thing off to go get {PRONOUN\/r_c1\/object} warmed up."
+                    "Hearing p_l describe the Underwater Panther, how she's always waiting, just out of reach, ready to pull cats down \u2014 r_c1 starts shivering, and p_l calls the whole thing off to go get {PRONOUN/r_c1/object} warmed up."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -486,7 +498,7 @@
                             "shivering"
                         ],
                         "scar_history": "m_c was soaked in leaf-bare, and it progressed to scarring frostbite.",
-                        "death_history": "m_c was soaked in leaf-bare, and the chill eventually killed {PRONOUN\/m_c\/object}."
+                        "death_history": "m_c was soaked in leaf-bare, and the chill eventually killed {PRONOUN/m_c/object}."
                     }
                 ]
             }

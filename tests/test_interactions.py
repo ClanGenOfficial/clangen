@@ -6,6 +6,7 @@ from scripts.cat.sprites.load_sprites import sprites
 from scripts.cat_relations.enums import RelType
 
 from scripts.cat.enums import CatRank
+from scripts.cat_relations.inheritance2 import inheritance_db
 from scripts.events_module.event_filters import filter_relationship_type
 from scripts.events_module.parameter_dicts import InvolvedCatDict, StatDict
 from scripts.events_module.relationship import generate_pair_event
@@ -16,7 +17,7 @@ from scripts.events_module.text_pool_event.text_pool_event import TextPoolEvent
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-from scripts.cat.cats import Relationship
+from scripts.cat.cats import Relationship, Cat
 from scripts.cat.skills import SkillPath, Skill
 
 cat_factory = TestCatFactory()
@@ -48,6 +49,8 @@ class RelationshipConstraints(unittest.TestCase):
         # given
         parent = cat_factory.create_cat()
         child = cat_factory.create_cat(parent1=parent.ID)
+
+        inheritance_db.load_inheritances(Cat)
 
         # then
         self.assertTrue(filter_relationship_type([child, parent], ["child/parent"]))

@@ -19,8 +19,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "p_l finds a patch of herbs that {PRONOUN\/p_l\/subject} {VERB\/p_l\/believe\/believes} c_n might need for their stores. {PRONOUN\/p_l\/subject\/CAP} freely {VERB\/p_l\/admit\/admits} to {PRONOUN\/p_l\/poss} patrol {PRONOUN\/p_l\/subject} {VERB\/p_l\/are\/is}n't a medicine cat, and {VERB\/p_l\/ask\/asks} {PRONOUN\/p_l\/poss} companions' advice. What do they know about this part of the desert's herbal properties, what grows in the brief bloom of leaf-bare?",
-        "decline_text": "They decide to focus on hunting and leave the herb collecting to the medicine cats.",
+        "intro_strings": [
+            "p_l finds a patch of herbs that {PRONOUN/p_l/subject} {VERB/p_l/believe/believes} c_n might need for their stores. {PRONOUN/p_l/subject/CAP} freely {VERB/p_l/admit/admits} to {PRONOUN/p_l/poss} patrol {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't a medicine cat, and {VERB/p_l/ask/asks} {PRONOUN/p_l/poss} companions' advice. What do they know about this part of the desert's herbal properties, what grows in the brief bloom of leaf-bare?"
+        ],
+        "decline_strings": [
+            "They decide to focus on hunting and leave the herb collecting to the medicine cats."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -150,8 +154,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "It starts raining soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
-        "decline_text": "They decide to turn back and wait until the rain dies down.",
+        "intro_strings": [
+            "It starts raining soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile."
+        ],
+        "decline_strings": [
+            "They decide to turn back and wait until the rain dies down."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -331,8 +339,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "It starts raining soon after p_l sets out, trying to bring back something nice for the fresh-kill pile.",
-        "decline_text": "They decide to turn back and wait until the rain dies down.",
+        "intro_strings": [
+            "It starts raining soon after p_l sets out, trying to bring back something nice for the fresh-kill pile."
+        ],
+        "decline_strings": [
+            "They decide to turn back and wait until the rain dies down."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -350,7 +362,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 really shows {PRONOUN\/s_c0\/poss} talent, hunting down a mid-sized tortoise that has overturned itself on the newly slippery ground in the rainstorm."
+                    "s_c0 really shows {PRONOUN/s_c0/poss} talent, hunting down a mid-sized tortoise that has overturned itself on the newly slippery ground in the rainstorm."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -430,8 +442,12 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "It starts raining soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
-        "decline_text": "They decide to turn back and wait until the rain dies down.",
+        "intro_strings": [
+            "It starts raining soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile."
+        ],
+        "decline_strings": [
+            "They decide to turn back and wait until the rain dies down."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -623,8 +639,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "The patrol spots a swift fox in the distance, behaving weirdly.",
-        "decline_text": "Best not to risk a fight. The patrol watches it go.",
+        "intro_strings": [
+            "The patrol spots a swift fox in the distance, behaving weirdly."
+        ],
+        "decline_strings": [
+            "Best not to risk a fight. The patrol watches it go."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

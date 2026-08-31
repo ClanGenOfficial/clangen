@@ -33,5 +33,81 @@
             "color": "exotic_base"
         }
     },
-    "exceptions": []
+    "exceptions": [
+        {
+            "colors": ["BLACK", "CHOCOLATE", "DARKBROWN"],
+            "poses": ["newborn0", "newborn1", "newborn2"],
+            "layers":
+            {
+                "6":
+                {
+                    "group_name": "FRECKLEDPATTERNGRAD",
+                    "color": "newborn_exotic_base_gradient_top",
+                    "opacity": 65
+                },
+                "5":
+                {
+                    "group_name": "FRECKLEDPATTERNBACK",
+                    "color": "newborn_exotic_pattern_gradient_top"
+                },
+                "4":
+                {
+                    "group_name": "FRECKLEDPATTERNBODY",
+                    "color": "newborn_freckled_pattern"
+                },
+                "3":
+                {
+                    "group_name": "EXOTICTOPGRAD",
+                    "color": "newborn_exotic_base_gradient_top"
+                },
+                "2":
+                {
+                    "group_name": "EXOTICBOTTOMGRAD",
+                    "color": "newborn_exotic_base_gradient_bottom"
+                },
+                "1":
+                {
+                    "group_name": "BASEMASK",
+                    "color": "newborn_exotic_base"
+                }
+            }
+        },
+        {
+            "poses": ["newborn0", "newborn1", "newborn2"],
+            "layers":
+            {
+                "6":
+                {
+                    "group_name": "FRECKLEDPATTERNGRAD",
+                    "color": "newborn_exotic_base_gradient_top",
+                    "opacity": 65
+                },
+                "5":
+                {
+                    "group_name": "FRECKLEDPATTERNBACK",
+                    "color": "newborn_exotic_pattern_gradient_top"
+                },
+                "4":
+                {
+                    "group_name": "FRECKLEDPATTERNBODY",
+                    "color": "newborn_exotic_pattern"
+                },
+                "3":
+                {
+                    "group_name": "EXOTICTOPGRAD",
+                    "color": "newborn_exotic_base_gradient_top"
+                },
+                "2":
+                {
+                    "group_name": "EXOTICBOTTOMGRAD",
+                    "color": "newborn_exotic_base_gradient_bottom"
+                },
+                "1":
+                {
+                    "group_name": "BASEMASK",
+                    "color": "newborn_exotic_base"
+                }
+            }
+        }
+    ]
 }

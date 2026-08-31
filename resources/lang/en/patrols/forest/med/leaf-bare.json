@@ -23,8 +23,12 @@
         },
         "chance_of_success": 20,
         "patrol_art": "cat_sprites/gen_hunt_LB_snowstorm_Wr",
-        "intro_text": "In the snowy forest, p_l's patrol struggles to track down any herbs that have survived leaf-bare's frost.",
-        "decline_text": "p_l calls off the patrol before any cat can suffer the effects of the cold.",
+        "intro_strings": [
+            "In the snowy forest, p_l's patrol struggles to track down any herbs that have survived leaf-bare's frost."
+        ],
+        "decline_strings": [
+            "p_l calls off the patrol before any cat can suffer the effects of the cold."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

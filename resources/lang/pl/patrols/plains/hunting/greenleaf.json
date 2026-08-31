@@ -22,8 +22,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "It is extremely hot out today, and the hunting patrol is having a hard time staying on task. r_c0 debates turning back home.",
-        "decline_text": "The patrol decides to head back to camp. They can hunt a different day.",
+        "intro_strings": [
+            "It is extremely hot out today, and the hunting patrol is having a hard time staying on task. r_c0 debates turning back home."
+        ],
+        "decline_strings": [
+            "The patrol decides to head back to camp. They can hunt a different day."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -149,7 +153,7 @@
                         "mutual": false,
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_to carried cat_from back to camp after {PRONOUN\/cat_from\/subject} collapsed from the heat."
+                            "cats_from": "cat_to carried cat_from back to camp after {PRONOUN/cat_from/subject} collapsed from the heat."
                         }
                     }
                 ],
@@ -192,9 +196,13 @@
             ]
         },
         "chance_of_success": 50,
-        "patrol_art": "backgrounds\/pln_twolegsobject",
-        "intro_text": "As the patrol wander near a Thunderpath, they watch a Twoleg throw something from a monster. Intrigued, they wander over.",
-        "decline_text": "The patrol decides to avoid the Twoleg object.",
+        "patrol_art": "backgrounds/pln_twolegsobject",
+        "intro_strings": [
+            "As the patrol wander near a Thunderpath, they watch a Twoleg throw something from a monster. Intrigued, they wander over."
+        ],
+        "decline_strings": [
+            "The patrol decides to avoid the Twoleg object."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -234,7 +242,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "As p_l pokes {PRONOUN\/p_l\/poss} head around the strange smelling whatever-it-is, {PRONOUN\/p_l\/subject} {VERB\/p_l\/poke\/pokes} past a piece of metal that tears through {PRONOUN\/p_l\/poss} ear, sending {PRONOUN\/p_l\/object} skittering backwards with a yelp."
+                    "As p_l pokes {PRONOUN/p_l/poss} head around the strange smelling whatever-it-is, {PRONOUN/p_l/subject} {VERB/p_l/poke/pokes} past a piece of metal that tears through {PRONOUN/p_l/poss} ear, sending {PRONOUN/p_l/object} skittering backwards with a yelp."
                 ],
                 "exp_gained": 0,
                 "condition": [
@@ -272,8 +280,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "The patrol catches the scent of a fox \u2014 but is it red or swift?",
-        "decline_text": "The patrol decides not to pursue the fox.",
+        "intro_strings": [
+            "The patrol catches the scent of a fox \u2014 but is it red or swift?"
+        ],
+        "decline_strings": [
+            "The patrol decides not to pursue the fox."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -360,7 +372,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 holds the patrol back until {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/spot\/spots} the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unsheathed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate to the fury of c_n."
+                    "s_c0 holds the patrol back until {PRONOUN/s_c0/subject} {VERB/s_c0/spot/spots} the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unsheathed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate to the fury of c_n."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -486,8 +498,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "p_l stalks low to the ground, paws soft and light so as not to make a sound. {PRONOUN\/p_l\/poss\/CAP} jaws hang open to taste at the air, and a tingle of satisfaction shoots through {PRONOUN\/p_l\/object} as {PRONOUN\/p_l\/subject} {VERB\/p_l\/scent\/scents} a nearby ground squirrel, soaking up the warm sun.",
-        "decline_text": "p_l watches it for a moment, then turns away and leaves. There's easier, fatter prey elsewhere, {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} sure of it.",
+        "intro_strings": [
+            "p_l stalks low to the ground, paws soft and light so as not to make a sound. {PRONOUN/p_l/poss/CAP} jaws hang open to taste at the air, and a tingle of satisfaction shoots through {PRONOUN/p_l/object} as {PRONOUN/p_l/subject} {VERB/p_l/scent/scents} a nearby ground squirrel, soaking up the warm sun."
+        ],
+        "decline_strings": [
+            "p_l watches it for a moment, then turns away and leaves. There's easier, fatter prey elsewhere, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sure of it."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -505,7 +521,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "The squirrel, thankfully still dozy from the sun, doesn't notice p_l stalking up to them... that is, until {PRONOUN\/p_l\/subject}{VERB\/p_l\/'ve\/'s} already pounced and {VERB\/p_l\/have\/has} it between {PRONOUN\/p_l\/poss} jaws. It's a little late to do anything about it at that point, though."
+                    "The squirrel, thankfully still dozy from the sun, doesn't notice p_l stalking up to them... that is, until {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} already pounced and {VERB/p_l/have/has} it between {PRONOUN/p_l/poss} jaws. It's a little late to do anything about it at that point, though."
                 ],
                 "exp_gained": 10,
                 "relationship_changes": [
@@ -536,7 +552,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The squirrel blissfully snuffles around in the grass, completely unaware of the looming danger it's in. s_c0 stalks, as quiet as a shadow, and doesn't even need to pounce; {PRONOUN\/s_c0\/subject} just walk right up behind it and take the kill."
+                    "The squirrel blissfully snuffles around in the grass, completely unaware of the looming danger it's in. s_c0 stalks, as quiet as a shadow, and doesn't even need to pounce; {PRONOUN/s_c0/subject} just walk right up behind it and take the kill."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -624,13 +640,17 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "p_l has snuck out of camp alone, hoping {PRONOUN\/p_l\/subject}'ll find a squirrel grown lazy in the heat of greenleaf. Running through everything {PRONOUN\/p_l\/subject}{VERB\/p_l\/'ve\/'s} been taught in {PRONOUN\/p_l\/poss} head, {PRONOUN\/p_l\/subject} carefully {VERB\/p_l\/scent\/scents} the air and {VERB\/p_l\/strain\/strains} {PRONOUN\/p_l\/poss} ears, hoping for any hint of the burrowing critters.",
-        "decline_text": "{PRONOUN\/p_l\/subject\/CAP}{VERB\/p_l\/'re\/'s} focusing so hard, {PRONOUN\/p_l\/subject} {VERB\/p_l\/don't\/doesn't} notice a Clanmate is standing silently behind {PRONOUN\/p_l\/object}, waiting for {PRONOUN\/p_l\/object} to notice that {PRONOUN\/p_l\/subject}{VERB\/p_l\/'ve\/'s} been caught red-pawed. Oops!",
+        "intro_strings": [
+            "p_l has snuck out of camp alone, hoping {PRONOUN/p_l/subject}'ll find a squirrel grown lazy in the heat of greenleaf. Running through everything {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been taught in {PRONOUN/p_l/poss} head, {PRONOUN/p_l/subject} carefully {VERB/p_l/scent/scents} the air and {VERB/p_l/strain/strains} {PRONOUN/p_l/poss} ears, hoping for any hint of the burrowing critters."
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} focusing so hard, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} notice a Clanmate is standing silently behind {PRONOUN/p_l/object}, waiting for {PRONOUN/p_l/object} to notice that {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been caught red-pawed. Oops!"
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "The wind blows a scent towards {PRONOUN\/p_l\/object}, and p_l immediately drops into a crouch. It's hard to locate between the swaying stalks of grass, and {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} pretty sure at one point it's long gone, but in the end {PRONOUN\/p_l\/subject} {VERB\/p_l\/find\/finds} and {VERB\/p_l\/catch\/catches} it!"
+                    "The wind blows a scent towards {PRONOUN/p_l/object}, and p_l immediately drops into a crouch. It's hard to locate between the swaying stalks of grass, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} pretty sure at one point it's long gone, but in the end {PRONOUN/p_l/subject} {VERB/p_l/find/finds} and {VERB/p_l/catch/catches} it!"
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -661,7 +681,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l hears a quiet snuffling nearby and slides into a hunting crouch. Slinking forward, {PRONOUN\/p_l\/subject} {VERB\/p_l\/find\/finds} the source is a squirrel, foraging for food! {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/stalk\/stalks} carefully and {VERB\/p_l\/catch\/catches} it while it's distracted, heading home with {PRONOUN\/p_l\/poss} head held high."
+                    "p_l hears a quiet snuffling nearby and slides into a hunting crouch. Slinking forward, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} the source is a squirrel, foraging for food! {PRONOUN/p_l/subject/CAP} {VERB/p_l/stalk/stalks} carefully and {VERB/p_l/catch/catches} it while it's distracted, heading home with {PRONOUN/p_l/poss} head held high."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -694,7 +714,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Unfortunately, {PRONOUN\/p_l\/subject} {VERB\/p_l\/don't\/doesn't} end up finding anything, and {PRONOUN\/p_l\/subject} {VERB\/p_l\/slink\/slinks} back to camp empty-pawed."
+                    "Unfortunately, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} end up finding anything, and {PRONOUN/p_l/subject} {VERB/p_l/slink/slinks} back to camp empty-pawed."
                 ],
                 "exp_gained": 0
             }
@@ -735,13 +755,17 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "p_l and r_c1 sit in the plains, near a network of ground squirrel burrows. This is one of a few such networks, rotated around by mentors to teach apprentices their hunting skills. r_c1 scents the air as instructed, and points out a burrow; sure enough, there's a squirrel's head poking out the entrance, blinking in the greenleaf sun!",
-        "decline_text": "p_l praises {PRONOUN\/p_l\/object} and smiles, but reminds r_c1 that {PRONOUN\/p_l\/subject} {VERB\/p_l\/are\/is}n't there to hunt, just to observe and discuss. There'll be plenty of time another day!",
+        "intro_strings": [
+            "p_l and r_c1 sit in the plains, near a network of ground squirrel burrows. This is one of a few such networks, rotated around by mentors to teach apprentices their hunting skills. r_c1 scents the air as instructed, and points out a burrow; sure enough, there's a squirrel's head poking out the entrance, blinking in the greenleaf sun!"
+        ],
+        "decline_strings": [
+            "p_l praises {PRONOUN/p_l/object} and smiles, but reminds r_c1 that {PRONOUN/p_l/subject} {VERB/p_l/are/is}n't there to hunt, just to observe and discuss. There'll be plenty of time another day!"
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l praises {PRONOUN\/r_c1\/object} and smiles, and r_c1 drops into a hunting crouch as the squirrel crawls out of the burrow. Though {PRONOUN\/r_c1\/poss} paws are rather unpracticed, the basic knowledge is solid, and {PRONOUN\/r_c1\/poss} hunt is a success!"
+                    "p_l praises {PRONOUN/r_c1/object} and smiles, and r_c1 drops into a hunting crouch as the squirrel crawls out of the burrow. Though {PRONOUN/r_c1/poss} paws are rather unpracticed, the basic knowledge is solid, and {PRONOUN/r_c1/poss} hunt is a success!"
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -782,7 +806,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from felt great when cat_to praised {PRONOUN\/cat_from\/poss} hunting."
+                            "cats_from": "cat_from felt great when cat_to praised {PRONOUN/cat_from/poss} hunting."
                         }
                     }
                 ],
@@ -796,7 +820,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l praises {PRONOUN\/r_c1\/object} and smiles, and r_c1 drops into a hunting crouch as the squirrel crawls out of the burrow. {PRONOUN\/r_c1\/subject\/CAP}{VERB\/r_c1\/'re\/'s} nervous, of course, but {PRONOUN\/r_c1\/poss} technique is nearly flawless, and {PRONOUN\/r_c1\/subject} {VERB\/r_c1\/catch\/catches} the squirrel easily!"
+                    "p_l praises {PRONOUN/r_c1/object} and smiles, and r_c1 drops into a hunting crouch as the squirrel crawls out of the burrow. {PRONOUN/r_c1/subject/CAP}{VERB/r_c1/'re/'s} nervous, of course, but {PRONOUN/r_c1/poss} technique is nearly flawless, and {PRONOUN/r_c1/subject} {VERB/r_c1/catch/catches} the squirrel easily!"
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -820,7 +844,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "cat_from watched cat_to's hunting improve under {PRONOUN\/cat_from\/poss} tutelage."
+                            "cats_from": "cat_from watched cat_to's hunting improve under {PRONOUN/cat_from/poss} tutelage."
                         }
                     },
                     {
@@ -852,7 +876,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l praises {PRONOUN\/r_c1\/object} and smiles, and r_c1 drops into a hunting crouch as the squirrel crawls out of the burrow. Unfortunately, in {PRONOUN\/r_c1\/poss} excitement, r_c1 rustles the grass a little too hard; the squirrel shrieks at {PRONOUN\/r_c1\/object} and vanishes into the burrow."
+                    "p_l praises {PRONOUN/r_c1/object} and smiles, and r_c1 drops into a hunting crouch as the squirrel crawls out of the burrow. Unfortunately, in {PRONOUN/r_c1/poss} excitement, r_c1 rustles the grass a little too hard; the squirrel shrieks at {PRONOUN/r_c1/object} and vanishes into the burrow."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -876,7 +900,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from avoided cat_to for a bit after messing up in a hunt in front of {PRONOUN\/cat_to\/object}."
+                            "cats_from": "cat_from avoided cat_to for a bit after messing up in a hunt in front of {PRONOUN/cat_to/object}."
                         }
                     }
                 ],
@@ -912,8 +936,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "p_l's patrol strolls leisurely through the plains, enjoying the warmth of greenleaf. r_c0 raises {PRONOUN\/r_c0\/poss} tail, signaling the others to be still; {PRONOUN\/r_c0\/subject}{VERB\/r_c0\/'ve\/'s} scented ground squirrels nearby.",
-        "decline_text": "p_l quietly shakes {PRONOUN\/p_l\/poss} head and leads the patrol elsewhere. Better not to disturb the squirrels, who are loud and territorial.",
+        "intro_strings": [
+            "p_l's patrol strolls leisurely through the plains, enjoying the warmth of greenleaf. r_c0 raises {PRONOUN/r_c0/poss} tail, signaling the others to be still; {PRONOUN/r_c0/subject}{VERB/r_c0/'ve/'s} scented ground squirrels nearby."
+        ],
+        "decline_strings": [
+            "p_l quietly shakes {PRONOUN/p_l/poss} head and leads the patrol elsewhere. Better not to disturb the squirrels, who are loud and territorial."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -980,7 +1008,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 murmurs instructions to {PRONOUN\/s_c0\/poss} Clanmates, who nod silently and move into position. p_l feints at a squirrel, who raises the alarm and turns to run; r_c0 blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c0; and s_c0 lunges in for the kill. A flawless hunt, not a single squirrel left behind."
+                    "s_c0 murmurs instructions to {PRONOUN/s_c0/poss} Clanmates, who nod silently and move into position. p_l feints at a squirrel, who raises the alarm and turns to run; r_c0 blocks off the nearby burrow's entrance, forcing the squirrels to run towards s_c0; and s_c0 lunges in for the kill. A flawless hunt, not a single squirrel left behind."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1051,7 +1079,7 @@
                             "r_c0"
                         ],
                         "cats_from": [
-                            "multi"
+                            "some_patrol"
                         ],
                         "mutual": false,
                         "values": [
@@ -1097,13 +1125,17 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "p_l catches scent of a mouse nearby. The grass, growing thick and lush, could easily hide a hundred.",
-        "decline_text": "p_l ignores the mouse.",
+        "intro_strings": [
+            "p_l catches scent of a mouse nearby. The grass, growing thick and lush, could easily hide a hundred."
+        ],
+        "decline_strings": [
+            "p_l ignores the mouse."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. p_l waggles {PRONOUN\/p_l\/poss} haunches and leaps, pinning the mouse beneath a paw as {PRONOUN\/p_l\/subject} {VERB\/p_l\/make\/makes} the killing bite."
+                    "p_l locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. p_l waggles {PRONOUN/p_l/poss} haunches and leaps, pinning the mouse beneath a paw as {PRONOUN/p_l/subject} {VERB/p_l/make/makes} the killing bite."
                 ],
                 "exp_gained": 10,
                 "supply": [
@@ -1116,7 +1148,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l pinpoints the location of the prey and begins creeping forward. {PRONOUN\/p_l\/subject\/CAP}{VERB\/p_l\/'re\/'s} almost within pouncing distance when the mouse bolts. With a lash of {PRONOUN\/p_l\/poss} tail, p_l leaps after the mouse, snagging it just before it reaches a burrow. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/purr\/purrs} in satisfaction as prey-blood hits {PRONOUN\/p_l\/poss} tongue."
+                    "p_l pinpoints the location of the prey and begins creeping forward. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} almost within pouncing distance when the mouse bolts. With a lash of {PRONOUN/p_l/poss} tail, p_l leaps after the mouse, snagging it just before it reaches a burrow. {PRONOUN/p_l/subject/CAP} {VERB/p_l/purr/purrs} in satisfaction as prey-blood hits {PRONOUN/p_l/poss} tongue."
                 ],
                 "exp_gained": 10,
                 "supply": [
@@ -1199,13 +1231,17 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "p_l catches scent of a mouse nearby. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/lash\/lashes} {PRONOUN\/p_l\/poss} tail, wondering where in the tall grass the scent's owner could be.",
-        "decline_text": "The patrol ignores the mouse.",
+        "intro_strings": [
+            "p_l catches scent of a mouse nearby. {PRONOUN/p_l/subject/CAP} {VERB/p_l/lash/lashes} {PRONOUN/p_l/poss} tail, wondering where in the tall grass the scent's owner could be."
+        ],
+        "decline_strings": [
+            "The patrol ignores the mouse."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "While checking in the tall grass for signs of {PRONOUN\/p_l\/poss} prey, the mouse bursts from cover. It runs nearly under p_l's claws, and {PRONOUN\/p_l\/subject} {VERB\/p_l\/don't\/doesn't} pounce so much as fall on it! Still, no one else was around to see {PRONOUN\/p_l\/poss} inelegant kill, and p_l feels very mature, bringing in prey to the fresh-kill pile by {PRONOUN\/p_l\/self}."
+                    "While checking in the tall grass for signs of {PRONOUN/p_l/poss} prey, the mouse bursts from cover. It runs nearly under p_l's claws, and {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} pounce so much as fall on it! Still, no one else was around to see {PRONOUN/p_l/poss} inelegant kill, and p_l feels very mature, bringing in prey to the fresh-kill pile by {PRONOUN/p_l/self}."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -1236,7 +1272,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l leaps onto the mouse and makes the kill easily! {PRONOUN\/p_l\/subject\/CAP}{VERB\/p_l\/'re\/'s} really getting the hang of hunting!"
+                    "p_l leaps onto the mouse and makes the kill easily! {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} really getting the hang of hunting!"
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -1316,13 +1352,17 @@
         },
         "chance_of_success": 60,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "r_c1 catches scent of a mouse nearby. p_l points out the little path the mouse has trod in the dirt at the base of the grass stalks \u2014 that's what it'll try to use as an escape path.",
-        "decline_text": "The patrol ignores the mouse.",
+        "intro_strings": [
+            "r_c1 catches scent of a mouse nearby. p_l points out the little path the mouse has trod in the dirt at the base of the grass stalks \u2014 that's what it'll try to use as an escape path."
+        ],
+        "decline_strings": [
+            "The patrol ignores the mouse."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 sets them up in ambush, pouncing on the mouse with a squeak of surprise from both prey and apprentice. {PRONOUN\/r_c1\/subject\/CAP} {VERB\/r_c1\/look\/looks} up, holding {PRONOUN\/r_c1\/poss} fresh-kill, meeting p_l's eyes with a purr."
+                    "r_c1 sets them up in ambush, pouncing on the mouse with a squeak of surprise from both prey and apprentice. {PRONOUN/r_c1/subject/CAP} {VERB/r_c1/look/looks} up, holding {PRONOUN/r_c1/poss} fresh-kill, meeting p_l's eyes with a purr."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1363,7 +1403,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from felt great when cat_to praised {PRONOUN\/cat_from\/poss} hunting."
+                            "cats_from": "cat_from felt great when cat_to praised {PRONOUN/cat_from/poss} hunting."
                         }
                     }
                 ],
@@ -1377,7 +1417,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c1 stalks the mouse to an easy kill! {PRONOUN\/r_c1\/subject\/CAP}{VERB\/r_c1\/'re\/'s} really getting the hang of hunting, p_l tells {PRONOUN\/r_c1\/object}, and as the pair heads back home, there's a happy bounce in r_c1's step."
+                    "r_c1 stalks the mouse to an easy kill! {PRONOUN/r_c1/subject/CAP}{VERB/r_c1/'re/'s} really getting the hang of hunting, p_l tells {PRONOUN/r_c1/object}, and as the pair heads back home, there's a happy bounce in r_c1's step."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1401,7 +1441,7 @@
                         ],
                         "amount": 5,
                         "log": {
-                            "cats_from": "cat_from watched cat_to's hunting improve under {PRONOUN\/cat_from\/poss} tutelage."
+                            "cats_from": "cat_from watched cat_to's hunting improve under {PRONOUN/cat_from/poss} tutelage."
                         }
                     },
                     {
@@ -1433,7 +1473,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 narrowly misses the mouse, {PRONOUN\/r_c1\/poss} tail drooping sadly as it scurries off into the distance."
+                    "r_c1 narrowly misses the mouse, {PRONOUN/r_c1/poss} tail drooping sadly as it scurries off into the distance."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -1457,7 +1497,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "cat_from avoided cat_to for a bit after messing up in a hunt in front of {PRONOUN\/cat_to\/object}."
+                            "cats_from": "cat_from avoided cat_to for a bit after messing up in a hunt in front of {PRONOUN/cat_to/object}."
                         }
                     }
                 ],
@@ -1496,14 +1536,18 @@
             ]
         },
         "chance_of_success": 30,
-        "patrol_art": "cat_sprites\/gen_hunt_burrow_Wr",
-        "intro_text": "The patrol hears a strange sound coming from the grass. What is that? It's like... a hiss and rustle at once?",
-        "decline_text": "p_l knows <i>exactly<\/i> what that sound is. Get away! Now! lead_name will have to be informed of this venomous threat on their hunting path.",
+        "patrol_art": "cat_sprites/gen_hunt_burrow_Wr",
+        "intro_strings": [
+            "The patrol hears a strange sound coming from the grass. What is that? It's like... a hiss and rustle at once?"
+        ],
+        "decline_strings": [
+            "p_l knows <i>exactly</i> what that sound is. Get away! Now! lead_name will have to be informed of this venomous threat on their hunting path."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 finds {PRONOUN\/s_c0\/self} face to fang with a rattling snake. It coils and strikes fast as lightning, yet still a whisker slower than s_c0. As the snake's teeth sink into empty air, s_c0's own fangs sink into its head. That night there's one less threat on c_n territory, and even more bellies full in camp. "
+                    "s_c0 finds {PRONOUN/s_c0/self} face to fang with a rattling snake. It coils and strikes fast as lightning, yet still a whisker slower than s_c0. As the snake's teeth sink into empty air, s_c0's own fangs sink into its head. That night there's one less threat on c_n territory, and even more bellies full in camp. "
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1549,7 +1593,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 finds {PRONOUN\/r_c0\/self} face to fang with a rattling snake. {PRONOUN\/r_c0\/subject\/CAP} {VERB\/r_c0\/flinch\/flinches} away just as the snake snaps its dripping fangs shut a whisker-length from {PRONOUN\/r_c0\/poss} nose. r_c0 bolts back to the patrol. They'll need to alter their hunting path \u2014 that was too close!"
+                    "r_c0 finds {PRONOUN/r_c0/self} face to fang with a rattling snake. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/flinch/flinches} away just as the snake snaps its dripping fangs shut a whisker-length from {PRONOUN/r_c0/poss} nose. r_c0 bolts back to the patrol. They'll need to alter their hunting path \u2014 that was too close!"
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -1585,7 +1629,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 finds {PRONOUN\/r_c0\/self} face to fang with a rattling snake. {PRONOUN\/r_c0\/subject\/CAP} panics, stumbling, and the snake strikes. Its fangs pierce r_c's paw as effortlessly as wind through grass, and every step is like walking on burning thorns as {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/drag\/drags} {PRONOUN\/r_c0\/self} into the medicine cat den."
+                    "r_c0 finds {PRONOUN/r_c0/self} face to fang with a rattling snake. {PRONOUN/r_c0/subject/CAP} panics, stumbling, and the snake strikes. Its fangs pierce r_c's paw as effortlessly as wind through grass, and every step is like walking on burning thorns as {PRONOUN/r_c0/subject} {VERB/r_c0/drag/drags} {PRONOUN/r_c0/self} into the medicine cat den."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -1626,7 +1670,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c0 finds {PRONOUN\/r_c0\/self} face to fang with a rattling snake, but {PRONOUN\/r_c0\/subject} could barely see it at all. Indescribable pain pierces {PRONOUN\/r_c0\/poss} eye, filling {PRONOUN\/r_c0\/poss} head, {PRONOUN\/r_c0\/poss} ears, {PRONOUN\/r_c0\/poss} blood. r_c0 doesn't notice the rest of the patrol rush {PRONOUN\/r_c0\/poss} into the medicine cat den. Not even as {PRONOUN\/r_c0\/poss} screams echo through camp."
+                    "r_c0 finds {PRONOUN/r_c0/self} face to fang with a rattling snake, but {PRONOUN/r_c0/subject} could barely see it at all. Indescribable pain pierces {PRONOUN/r_c0/poss} eye, filling {PRONOUN/r_c0/poss} head, {PRONOUN/r_c0/poss} ears, {PRONOUN/r_c0/poss} blood. r_c0 doesn't notice the rest of the patrol rush {PRONOUN/r_c0/poss} into the medicine cat den. Not even as {PRONOUN/r_c0/poss} screams echo through camp."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -1673,7 +1717,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c0 finds {PRONOUN\/r_c0\/self} face to fang with a rattling snake. There is no time to react. Effortlessly, the snake's teeth find r_c's veins. For a horrific moment, every drop of blood in r_c's body burns, and then {PRONOUN\/r_c0\/poss} Clan finds {PRONOUN\/r_c0\/object} cold."
+                    "r_c0 finds {PRONOUN/r_c0/self} face to fang with a rattling snake. There is no time to react. Effortlessly, the snake's teeth find r_c's veins. For a horrific moment, every drop of blood in r_c's body burns, and then {PRONOUN/r_c0/poss} Clan finds {PRONOUN/r_c0/object} cold."
                 ],
                 "involved_cats": {
                     "r_c0": {}
