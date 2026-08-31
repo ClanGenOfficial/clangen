@@ -1,4 +1,3 @@
-import os
 import unittest
 from random import Random
 
@@ -11,9 +10,6 @@ from scripts.clan import Clan
 from scripts.game_structure import game
 from scripts.game_structure.game import Switch
 from scripts.game_structure.game.switches import switch_set_value
-
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Relationship
 from scripts.events_module.relationship import romantic_events

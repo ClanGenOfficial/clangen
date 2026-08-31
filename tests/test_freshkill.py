@@ -22,9 +22,6 @@ from scripts.cat.sprites.load_sprites import sprites
 from scripts.clan_package.settings import switch_clan_setting, set_clan_setting
 from scripts.game_structure import game
 
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
-
 from scripts.cat.cats import Cat
 from scripts.cat.skills import Skill, SkillPath
 from scripts.clan import Clan, Afterlife
