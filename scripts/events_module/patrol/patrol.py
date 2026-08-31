@@ -313,6 +313,9 @@ class Patrol:
             print("No romantic event")
             return False
 
+        if romantic_event == self.debug_patrol_id:
+            return True
+
         chance_of_romance_patrol = get_config(
             "patrol_generation.chance_of_romance_patrol"
         )
@@ -394,7 +397,7 @@ class Patrol:
         chosen_patrol: Optional[PatrolEvent] = None
 
         # first we see if we can get a romantic patrol
-        if romantic_patrols and not self.debug_patrol_id:
+        if romantic_patrols:
             chosen_patrol = self._get_valid_patrol(
                 romantic_patrols.copy(), find_romance=True
             )
