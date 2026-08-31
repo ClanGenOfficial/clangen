@@ -292,10 +292,6 @@ dev_tools = false
   # relationship buffs represent "default" relationship values that are then lightly randomized
   # in order to create initial relationship values for cats
 
-  # When creating a new cat for an event, the chance to search existing cats to see if one fits. 
-  # Will still create a new cat if no existing cats fit the requirements. 
-  search_for_existing = 100
-
   [new_cat.parent_buff]
     # default relationships buff for a kit's relationships to their parents
     [new_cat.parent_buff.kit_to_parent]
@@ -587,7 +583,6 @@ dev_tools = false
   # by default the first string will be used (index 0)
   debug_ensure_thought_index = 0
 
-
 [patrol_generation]
   # modifies success rate based on game mode. higher = more difficult.
   difficulty_modifier = 2.5
@@ -617,8 +612,6 @@ dev_tools = false
     # specify an outcome to use via its index in the outcome list. by default this is 0 (the first outcome)
     # this will not work if no patrol_id and outcome_type is set
     outcome_index = 0
-
-
 
 [event_generation]
   # forces event with this id to occur

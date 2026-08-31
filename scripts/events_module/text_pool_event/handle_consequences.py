@@ -46,9 +46,9 @@ logger = logging.getLogger(__name__)
 def execute_outcome(
     event: TextPoolEvent,
     event_involved_cats: dict[str, Union[Cat, list[Cat]]],
-    event_cats_to_create: dict,
+    event_cats_to_create: dict[str, dict],
     other_clan: OtherClan = None,
-) -> tuple[str, str, dict]:
+) -> tuple[str, str]:
     """
     Executes the outcome, applying any specified consequences.
     If new cats are created, event_involved_cats *will* be modified to add the newly created cats.
@@ -64,9 +64,6 @@ def execute_outcome(
             involved_cats=all_involved_cats,
             other_clan=other_clan,
         )
-
-        print("NEW CATS CREATED FOR EVENT")
-        print(all_involved_cats[abbr])
 
         if len(all_involved_cats[abbr]) == 1:
             # if this is a list of a single cat, then we take them out of the list

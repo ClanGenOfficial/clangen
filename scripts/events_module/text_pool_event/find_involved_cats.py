@@ -82,7 +82,7 @@ def find_cats(
                 # It's OK if we can't find a cat - we can create it later.
                 can_create_new_cat = True
 
-                # Chance to *not* look for
+                # Chance to *not* look for existing cats
                 if random.random() * 100 > get_config("new_cat.search_for_existing"):
                     possible_cats = []
 
