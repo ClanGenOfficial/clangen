@@ -6,12 +6,14 @@ When considering patrols, keep in mind challenge vs reward. That isn't to say ce
 
 ## Usable Cat References
 
-| abbreviation | use                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `p_l`        | The patrol leader: the cat in the patrol with the highest relevant rank and, within involved cats of that rank, is either the oldest or the most experienced.  For medicine cat patrols, this will either be a medicine cat or medicine cat apprentice. For normal patrols, this will go from the highest to lowest rank (leader > deputy > warrior > apprentice).                                                                                                                                   |                                                                                                 |
-| `r_c#`       | A random cat: this cat is chosen at complete random and will not be the patrol leader. You can specify constraints on this cat to require it to have certain attributes rather than being entirely random. The `#` is replaced with a number: 0-5. It's recommended to begin at 0 and increment as needed.                                                                                                                                                                                           | |      
-| `s_c#`       | An additional special cat, mainly used in outcomes: this cat has some constraints being required of it and could be a cat who was previously assigned an abbreviation. For example, if the patrol as a whole requires `r_c0` to be a warrior and you wish to add an outcome in which any cat with the `calm` trait, including `r_c0`, could also play a role, then you would use `s_c` for that cat. The `#` is replaced with a number: 0-5. It's recommended to begin at 0 and increment as needed. |                                                                                                                                                                                                                                                                                 |
-| `n_c#`       | A newly generated or existing outsider/other clan cat: The `#` is replaced with a number: 0-6. It's recommended to begin at 0 and increment as needed.                                                                                                                                                                                                                                                                                                                                               |
+| abbreviation  | use                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `p_l`         | The patrol leader: the cat in the patrol with the highest relevant rank and, within involved cats of that rank, is either the oldest or the most experienced.  For medicine cat patrols, this will either be a medicine cat or medicine cat apprentice. For normal patrols, this will go from the highest to lowest rank (leader > deputy > warrior > apprentice).                                                                                                                                   |                                                                                                 |
+| `r_c#`        | A random cat: this cat is chosen at complete random and will not be the patrol leader. You can specify constraints on this cat to require it to have certain attributes rather than being entirely random. The `#` is replaced with a number: 0-5. It's recommended to begin at 0 and increment as needed.                                                                                                                                                                                           | |      
+| `s_c#`        | An additional special cat, mainly used in outcomes: this cat has some constraints being required of it and could be a cat who was previously assigned an abbreviation. For example, if the patrol as a whole requires `r_c0` to be a warrior and you wish to add an outcome in which any cat with the `calm` trait, including `r_c0`, could also play a role, then you would use `s_c` for that cat. The `#` is replaced with a number: 0-5. It's recommended to begin at 0 and increment as needed. |                                                                                                                                                                                                                                                                                 |
+| `n_c#`        | A newly generated or existing outsider/other clan cat: The `#` is replaced with a number: 0-6. It's recommended to begin at 0 and increment as needed.                                                                                                                                                                                                                                                                                                                                               |
+| `patrol_cats` | Only for use within `required_cat_types` and cat lists for consequences. Refers to all the cats on the patrol.                                                                                                                                                                                                                                                                                                                                                                                       |
+| `some_patrol` | Only for use within cat lists for consequences. Refers to a subsection of the patrol. This will always be at least 2 cats, but never the entire patrol. **Should not be used in cases where a patrol could be 2 or less cats in total**                                                                                                                                                                                                                                                              |
 
 !!! tip
     While not usable within the text of the events, you *can* use keys listed in [required_cat_types](#required_cat_types-dictstr-listint) to gather cats for other parts of the event, such as the `cats_from`/`cats_to` lists. For example, if apprentices are able to come on the patrol, then you can use `"apprentice"` in the `cats_from` list of `relationship_constraint` to specify constraints that the apprentices as a whole must abide by.
@@ -36,8 +38,8 @@ When considering patrols, keep in mind challenge vs reward. That isn't to say ce
     },
     "chance_of_success": 100,
     "patrol_art": "art.png",
-    "intro_text": "Patrol heads out to do some-such.",
-    "decline_text": "Patrol turns around",
+    "intro_strings": ["Patrol heads out to do some-such."],
+    "decline_strings": ["Patrol turns around"],
     "success_outcomes": [
         TextPoolEvent
     ],
@@ -98,8 +100,8 @@ When considering patrols, keep in mind challenge vs reward. That isn't to say ce
     "chance_of_success": 100,
     "patrol_art": "art.png",
     "patrol_art_clean": "pleasant_art.png",
-    "intro_text": "Patrol heads out to do some-such.",
-    "decline_text": "Patrol turns around",
+    "intro_strings": ["Patrol heads out to do some-such."],
+    "decline_strings": ["Patrol turns around"],
     "success_outcomes": [
         TextPoolEvent
     ],
@@ -117,7 +119,7 @@ When considering patrols, keep in mind challenge vs reward. That isn't to say ce
 
 ***
 
-#### id:str
+#### event_id:str
 > The id is a unique string used to identify the patrol. It does not affect patrol behavior, but it allows us to easily find patrols.
 
 > An id is formatted as following: `biome_type_enemy_seasondescription#`, enemy and season are optional (some patrols do not have a specific enemy or season), # is a number at the end of the descriptive section starting at 1 and incrementing up as you create new versions of that patrol. 
@@ -242,180 +244,11 @@ You can tag with a mix of "newleaf", "greenleaf", "leaf-fall", "leaf-bare", or r
 #### involved_cats: Dict[str, var]
 This dictionary holds all constraints for the cats whom we wish to reference in the patrol.
 
-Each entry is an individual cat, with the key being their [event designation](#usable-cat-references) (`r_c0`, `p_l`, etc.) and the value being their personal constraints.
-
-```json
-            "abbr": {
-                "status": [],
-                "past_status": [],
-                "age": [],
-                "gender": [],
-                "group": [],
-                "standing": {
-                    "group": [],
-                    "currently": [],
-                    "past": []
-                  },
-                "stat": {
-                    "skill": [],
-                    "trait": [],
-                    "must_have_both": false
-                },
-                "health": {
-                    "working": true,
-                    "condition": [],
-                    "must_be_congenital": false,
-                    "must_be_acquired": false
-                },
-                "backstory": []
-            }
-```
-
 **When To Use**
 
 `p_l` is the only cat designation you can *assume* has a cat attached at all times. With this in mind, you do not need to add a `p_l` entry to `involved_cats` unless you would like to add constraints regarding the sort of cat `p_l` is. **Important**: This will not override the game's selection process for patrol leaders. (e.g. You cannot use these constraints to make `p_l` a warrior leading their deputy on patrol, because the deputy will automatically be `p_l`.)
 
-With all other cat designations (`r_c0`, `n_c0`, ect.) if you want to be able to reference the cat designation within the text or within other constraint/consequence lists (cats who die, cats who must abide by relationship constraints, etc.), then you *must* declare them within either the patrol-wide `involved_cats` or the relevant outcome `involved_cats`. This can be an empty dict if no constraints are needed:
-```json
-"r_c0": {}
-```
-
-!!! tip
-    You do not need to "repeat" constraints! If a patrol can only have apprentices on it via the `required_cat_types` then you don't need to specify that `r_c0` is an apprentice.
-
-**Specifying an outsider or other Clan cat**
-
-If you would like to include an outsider or other Clan cat, you can specify them using the `n_c#` designation and some additional parameters.
-
-If the outsider/other_clan cat can be newly generated rather than having to utilize an existing cat, you can add the `can_create_new_cat` parameter.
-```json
-    "can_create_new_cat": {
-        "become_litter": false,
-        "assign_blood_parent": [],
-        "assign_adoptive_parent": [],
-        "assign_mate": []
-    }
-```
-This can even be added as an empty dict: `can_create_new_cat: {}` to simply mark it as a new cat creation without any additional specifications.
-
-> **`become_litter`** - True will generate a 2-5 litter of kittens rather than a single cat. This means the abbreviation for this litter should not be used within the text of the event, since they have no singular name or pronoun.
-> 
-> **`assign_blood_parent`** - List of designations for cats who will become this cat's blood parents. These cats must have already been specified prior in `involved_cats`.
-> 
-> **`assign_adoptive_parent`** - List of designations for cats who will become this cat's adoptive parents. These cats must have already been specified prior in `involved_cats`.
-> 
-> **`assign_mate`** - List of designations for cats who will become this cat's mates. These cats must have already been specified prior in `involved_cats`.
-
-**status: list[str]**
->Constrains the event to only happen if the cat holds a certain role. You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
-
-> [Status Tag List](../reference/tag-lists.md#__tabbed_2_2)
-> 
-> You can also remove the parameter to allow the event to occur for all roles except "newborns", who are only allowed if specifically tagged as such.
-
-***
-
-**past_status: list[str]**
->Constrains the event to only happen if the cat held a certain role in the past. You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
-
-> [Status Tag List](../reference/tag-lists.md#__tabbed_2_2)
-
-***
-**age: list[str]**
->Constrains the event to only occur if the cat is within a certain age group. You can utilize [exclusionary tags](../reference/tag-lists.md/#exclusionary-tags).
-
-> [Age Tag List](../reference/tag-lists.md#__tabbed_2_1)
-> 
-> You can also remove the parameter to allow the event to occur for all ages except "newborns", who are only allowed if specifically tagged as such.
-> 
-***
-
-**gender: str**
->Constrains the event to only occur if the cat has a certain birth gender. Valid entries are: `male`, `female`, `can_birth`. `can_birth` will allow either female or male cats dependant upon the player's settings. 
-
-***
-
-**group:list[str]**
->Constraints the thought to only happen if the cat is a member of a listed group or a member of no group. This should only be used to dictate what group a new cat is originally part of. you can use tags in: [possible group tags](../reference/tag-lists.md#groups) and you can utilize [exclusionary tags](../reference/tag-lists.md/#exclusionary-tags).
-> 
-***
-
-**standing: dict[str: var]**
->Constrains the event to only happen if the cat matches with the dictated group standings. A group standing is the relationship between a cat and a group, for example: if they are an exile or lost.
-
-```json
-    "standing": {
-        "group": [],
-        "currently": [],
-        "past": []
-      },
-```
->**`"group"`** - the group we are checking the cat's standing with. you can utilize [exclusionary tags](../reference/tag-lists.md/#exclusionary-tags). tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to qualify against *one* of the groups. [possible group tags.](../reference/tag-lists.md#groups). You should not try to tag `no_group`.
-
->**`"currently"`** - the standing the cat should currently possess with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have *one* of the standings. [possible standing tags.](../reference/tag-lists.md#standings)
-
->**`"past"`** - standings the cat used to have with this group. tags can be mixed and matched as necessary. if multiple tags are used, the cat will only need to have had *one* of the standings. [possible standing tags.](../reference/tag-lists.md#standings)
-
-!!! warning
-    Keep in mind that currently the only cats who receive and are included in relationship events are player Clan cats. Cats currently outside the Clan cannot be part of an event. `standing` can still be constrained for in the context of a cat who *used* to be lost, exiled, etc.
-
-***
-
-
-**stat: dict[str: list]**
-> Constrains the event to only occur if the cat holds specific skills or traits. You can utilize [exclusionary tags](../reference/tag-lists.md/#exclusionary-tags).
-
-```json
-    "stat": {
-        "skill": [],
-        "trait": [],
-        "must_have_both": false
-    },
-```
->**`"skill"`** - list of allowed skills from [Skill Tag List](../reference/tag-lists.md#__tabbed_3_1)
-> 
-> **`"trait"`** - list of allowed traits from [Trait Tag List](../reference/tag-lists.md#__tabbed_3_2)
-> 
-> **`"must_have_both"`** - defaults to `false`. if set to `true`, the cat's trait *and* skills must qualify. if `false`, the cat must have *either* a listed trait or a listed skill.
-
-***
-
-**health: dict[str: var]**
-> Constrains the event to only occur if the cat's health matches the constraints.
- 
-```json
-    "health": {
-        "working": true,
-        "condition": [],
-        "must_be_congenital": false,
-        "must_be_acquired": false
-    }
-```
-> **`"working"`** - by default, this is always set to `true`. if set to `false`, the cat can't be a working cat (aka, they are currently disabled by a condition of some kind). In the case of patrols, it is impossible for a non-working cat to be patrolling, so this will not be used.
-
-> **`"condition`** - a list of conditions that the cat must have *at least* one of. if any condition is allowed, use `"any"`. supports [exclusionary tags](../reference/tag-lists.md#exclusionary-tags). check [illness](../reference/tag-lists.md/#__tabbed_1_3), [injury](../reference/tag-lists.md#__tabbed_1_2), and [permanent condition](../reference/tag-lists.md#__tabbed_1_4) references for lists of current condition possibilities.
-
-> **`"must_be_congenital"`** - by default, this is always set to `false`. if set to `true`, the cat must have been born with a permanent condition listed in the `condition`.
-
-> **`"must_be_acquired"`** - by default, this is always set to `false`. if set to `true`, the cat must have acquired a permanent condition listed in `condition` later in life.
-
-!!! warning
-    `must_be_congenital` and `must_be_acquired` naturally conflict with each other. Be careful not to set both of them to `true`, else they won't behave correctly.
-
-!!! note
-    Be careful when specifying `must_be_congenital`. If you force a condition to be congenital when it can never generate as such, the event will never trigger! The same also applies for forcing a condition to be non-congenital when it is always generated as such.
-
-***
-
-**backstory:list**
->Constrains the event to only occur if the cat has a listed backstory. To find what each backstory describes, you can find more by going to `resources/lang/en/cat/backstories.en.json`.  You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
-
-> [Backstory Tag List](../reference/tag-lists.md#backstories)
-
-***
-
-**has_mentor:bool**
-> Set True if the cat must be mentored. This does not require the mentor to be present on the patrol.
+[Full Involved Cat Dictionary Information](../reference/involved-cat-dict.md)
 
 #### relationship_constraint: list[dict]
 Constrains the event to only occur is the specified relationships exist. Multiple dictionary blocks can be added to specify multiple required configurations of relationships.
@@ -700,14 +533,14 @@ Constrains the event to only occur is the specified relationships exist. Multipl
 ***
 
 
-#### intro_text: str
->The text that displays when the patrol first starts.
+#### intro_strings: list[str]
+>The text that displays when the patrol first starts. You can add multiple options to this list and a random one will be chosen to be displayed.
 
 
 ***
 
-#### decline_text: str
->The text that displays if the patrol is declined (do not proceed)
+#### decline_strings: list[str]
+>The text that displays if the patrol is declined (do not proceed.) You can add multiple options to this list and a random one will be chosen to be displayed.
 
 
 ***

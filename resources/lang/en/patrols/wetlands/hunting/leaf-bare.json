@@ -19,8 +19,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
-        "decline_text": "They decide to turn back and wait until the snow dies down.",
+        "intro_strings": [
+            "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile."
+        ],
+        "decline_strings": [
+            "They decide to turn back and wait until the snow dies down."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -284,8 +288,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "It starts snowing soon after p_l sets out, trying to bring back something nice for the fresh-kill pile.",
-        "decline_text": "They decide to turn back and wait until the snow dies down.",
+        "intro_strings": [
+            "It starts snowing soon after p_l sets out, trying to bring back something nice for the fresh-kill pile."
+        ],
+        "decline_strings": [
+            "They decide to turn back and wait until the snow dies down."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -425,8 +433,12 @@
         ],
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
-        "decline_text": "They decide to turn back and wait until the snow dies down.",
+        "intro_strings": [
+            "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile."
+        ],
+        "decline_strings": [
+            "They decide to turn back and wait until the snow dies down."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -591,7 +603,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from's patrol failed to keep warm during a snowstorm and they ended up carrying r_c's body home."
+                            "cats_from": "cat_from's patrol failed to keep warm during a snowstorm and they ended up carrying r_c0's body home."
                         }
                     }
                 ],
@@ -648,8 +660,12 @@
         },
         "chance_of_success": 70,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "The patrol catches the scent of a fox. Tracking it, they find a kit fox fishing on a branch overlooking the shallows.",
-        "decline_text": "The patrol decides not to quarrel with the fox. There are plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
+        "intro_strings": [
+            "The patrol catches the scent of a fox. Tracking it, they find a kit fox fishing on a branch overlooking the shallows."
+        ],
+        "decline_strings": [
+            "The patrol decides not to quarrel with the fox. There are plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -875,8 +891,12 @@
         },
         "chance_of_success": 70,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "p_l catches the scent of a fox. Tracking it, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a kit fox fishing on a branch overlooking the shallows.",
-        "decline_text": "p_l decides not to quarrel with the fox. There are plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
+        "intro_strings": [
+            "p_l catches the scent of a fox. Tracking it, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} a kit fox fishing on a branch overlooking the shallows."
+        ],
+        "decline_strings": [
+            "p_l decides not to quarrel with the fox. There are plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1046,8 +1066,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "Amid the drab leaf-bare shaded world, a flash of brilliant color above a big stream catches r_c1's attention.",
-        "decline_text": "It's out of the ordinary... and might be dangerous. r_c1 ignores it.",
+        "intro_strings": [
+            "Amid the drab leaf-bare shaded world, a flash of brilliant color above a big stream catches r_c1's attention."
+        ],
+        "decline_strings": [
+            "It's out of the ordinary... and might be dangerous. r_c1 ignores it."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

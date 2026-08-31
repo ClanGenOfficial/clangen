@@ -301,13 +301,16 @@
         },
         "gender": {
           "description": "Constrains the event to only occur if the cat has a certain birth gender. can_birth will allow either female or male cats dependant upon the player's settings",
-          "enum": [
-            "male",
-            "female",
-            "can_birth"
-          ],
+          "items": {
+            "enum": [
+              "male",
+              "female",
+              "can_birth"
+            ],
+            "type": "string"
+          },
           "title": "Gender",
-          "type": "string"
+          "type": "array"
         },
         "group": {
           "description": "Constraints the thought to only happen if the cat is a member of a listed group or a member of no group. This should only be used to dictate what group a new cat is originally part of",
@@ -327,6 +330,14 @@
           "description": "Constrains the event to only occur if the cat holds specific skills or traits. You can utilize exclusionary tags",
           "title": "Stat"
         },
+        "current_exp": {
+          "description": "Constrains the event to only occur if the cat has a listed experience level",
+          "items": {
+            "$ref": "#/$defs/ExperienceLevels"
+          },
+          "title": "Current Exp",
+          "type": "array"
+        },
         "health": {
           "$ref": "#/$defs/HealthDict",
           "description": "Constrains the event to only occur if the cat's health matches the constraints",
@@ -341,9 +352,19 @@
           "type": "array"
         },
         "has_mentor": {
-          "description": "Set True if the cat must be mentored. This does not require the mentor to be present on the patrol",
-          "title": "Has Mentor",
-          "type": "boolean"
+          "$ref": "#/$defs/MentorApprenticeDict",
+          "description": "Set current mentor status",
+          "title": "Has Mentor"
+        },
+        "has_apprentice": {
+          "$ref": "#/$defs/MentorApprenticeDict",
+          "description": "Set current apprentice status",
+          "title": "Has Apprentice"
+        },
+        "name": {
+          "$ref": "#/$defs/NameCheckDict",
+          "description": "Constrain per specific name states",
+          "title": "Name"
         }
       },
       "title": "CatDict",
@@ -444,7 +465,7 @@
           "type": "string"
         },
         "no_results": {
-          "description": "Set to True to prevent this condition from killing the cat. It's not necessary if the condition is already non-lethal (eg. scrapes)",
+          "description": "Not required. Set to True to prevent the result text for this death from appearing on the patrol screen. Defaults to False",
           "title": "No Results",
           "type": "boolean"
         }
@@ -591,6 +612,19 @@
         "-persistent headaches"
       ],
       "title": "ExcludedPermCondition",
+      "type": "string"
+    },
+    "ExperienceLevels": {
+      "enum": [
+        "untrained",
+        "learning",
+        "prepared",
+        "capable",
+        "proficient",
+        "adept",
+        "masterful"
+      ],
+      "title": "ExperienceLevels",
       "type": "string"
     },
     "FutureCat": {
@@ -786,6 +820,32 @@
       "title": "FutureEventPool",
       "type": "object"
     },
+    "GainAccessory": {
+      "additionalProperties": false,
+      "properties": {
+        "cats": {
+          "description": "List of cats who will gain an accessory",
+          "items": {
+            "$ref": "#/$defs/GatherCat"
+          },
+          "title": "Cats",
+          "type": "array"
+        },
+        "accessory": {
+          "description": "List possible new accessories here",
+          "items": {
+            "type": "string"
+          },
+          "title": "Accessory",
+          "type": "array"
+        }
+      },
+      "required": [
+        "cats"
+      ],
+      "title": "GainAccessory",
+      "type": "object"
+    },
     "GatherCat": {
       "anyOf": [
         {
@@ -818,8 +878,8 @@
         "-some_clan",
         "patrol",
         "-patrol",
-        "multi",
-        "-multi",
+        "some_patrol",
+        "-some_patrol",
         "high_lawful",
         "-high_lawful",
         "low_lawful",
@@ -849,7 +909,9 @@
         "deputy",
         "-deputy",
         "leader",
-        "-leader"
+        "-leader",
+        "past_deputy",
+        "-past_deputy"
       ],
       "title": "GatherCatEnum",
       "type": "string"
@@ -1044,6 +1106,7 @@
         "quilled by a porcupine",
         "broken back",
         "poisoned",
+        "venom sickness",
         "bee sting",
         "headache",
         "severe headache",
@@ -1233,6 +1296,41 @@
       "title": "Location",
       "type": "array"
     },
+    "Meet": {
+      "additionalProperties": false,
+      "properties": {
+        "cats": {
+          "description": "List of cats who will meet the Clan",
+          "items": {
+            "$ref": "#/$defs/GatherCat"
+          },
+          "title": "Cats",
+          "type": "array"
+        }
+      },
+      "required": [
+        "cats"
+      ],
+      "title": "Meet",
+      "type": "object"
+    },
+    "MentorApprenticeDict": {
+      "additionalProperties": false,
+      "properties": {
+        "current": {
+          "description": "If True, cat must currently have mentor/apprentice. If False, cat must not have a current mentor/apprentice",
+          "title": "Current",
+          "type": "boolean"
+        },
+        "former": {
+          "description": "If True, cat must have a former mentor/apprentice. If False, cat must have a former mentor/apprentice",
+          "title": "Former",
+          "type": "boolean"
+        }
+      },
+      "title": "MentorApprenticeDict",
+      "type": "object"
+    },
     "MinMaxStatusDictKey": {
       "enum": [
         "medicine cat",
@@ -1249,15 +1347,21 @@
       "title": "MinMaxStatusDictKey",
       "type": "string"
     },
+    "NameCheckDict": {
+      "additionalProperties": false,
+      "properties": {
+        "has_suffix": {
+          "description": "If True, cat must have a suffix. If False, cat must have no suffix",
+          "title": "Has Suffix",
+          "type": "boolean"
+        }
+      },
+      "title": "NameCheckDict",
+      "type": "object"
+    },
     "Outcome": {
       "additionalProperties": false,
       "properties": {
-        "frequency": {
-          "default": 4,
-          "description": "Controls how common an outcome is. 4 is the most common, 1 is the least.",
-          "title": "Frequency",
-          "type": "integer"
-        },
         "location": {
           "$ref": "#/$defs/Location",
           "description": "Constrains the event to only occur if a player chooses a specific biome."
@@ -1278,16 +1382,6 @@
           "title": "Tags",
           "type": "array"
         },
-        "outcome_art": {
-          "description": "The name of displayed patrol art file, without any file extension (no .png).",
-          "title": "Outcome Art",
-          "type": "string"
-        },
-        "outcome_art_clean": {
-          "description": "If patrol_art contains gore, this line can hold a clean version. The existence of a non-empty string in this parameter marks the patrol art in \"patrol_art\" as explicit.",
-          "title": "Outcome Art Clean",
-          "type": "string"
-        },
         "strings": {
           "description": "List of the text that will be displayed in-game as events.",
           "items": {
@@ -1296,34 +1390,8 @@
           "title": "Strings",
           "type": "array"
         },
-        "required_cat_types": {
-          "additionalProperties": {
-            "maxItems": 2,
-            "minItems": 2,
-            "prefixItems": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "integer"
-              }
-            ],
-            "type": "array"
-          },
-          "description": "Allows specification of the minimum and maximum number of specific types of cats that are allowed on the patrol.",
-          "propertyNames": {
-            "$ref": "#/$defs/MinMaxStatusDictKey"
-          },
-          "title": "Required Cat Types",
-          "type": "object"
-        },
-        "involved_cats": {
-          "$ref": "#/$defs/InvolvedCatsPatrolEvent",
-          "description": "Used to add constraints for the various involved cats.",
-          "title": "Involved Cats"
-        },
         "required_reputation": {
-          "$ref": "#/$defs/RequiredRepution",
+          "$ref": "#/$defs/RequiredReputation",
           "description": "Constrains the event to only occur if the player clan has the required reputation",
           "title": "Required Reputation"
         },
@@ -1335,26 +1403,13 @@
           "title": "Relationship Constraint",
           "type": "array"
         },
-        "patrol_temperament": {
-          "description": "Constrains the outcome to only occur if the patrol has one of these temperaments.",
-          "items": {
-            "$ref": "#/$defs/Temperament"
-          },
-          "title": "Patrol Temperament",
-          "type": "array"
-        },
         "other_clan_temperament": {
-          "description": "Constrains the outcome to only occur if the involved other Clan has one of these temperaments.",
+          "description": "Constrains the event to only occur if the involved other Clan has one of these temperaments.",
           "items": {
             "$ref": "#/$defs/Temperament"
           },
           "title": "Other Clan Temperament",
           "type": "array"
-        },
-        "exp_gained": {
-          "description": "The amount of exp cats receive (sorta). The exact amount also depends on the number of cats and current EXP levels, but in general, a higher number here means more exp. If exp is 0, no exp will be given",
-          "title": "Exp Gained",
-          "type": "integer"
         },
         "reputation_changes": {
           "additionalProperties": {
@@ -1386,7 +1441,7 @@
           "type": "array"
         },
         "death": {
-          "description": "Indicate which cats should die as a result of this outcome. You can specify different \"types\" of death as separate blocks",
+          "description": "Indicate which cats should die as a result of this event. You can specify different \"types\" of death as separate blocks",
           "items": {
             "$ref": "#/$defs/Death"
           },
@@ -1426,6 +1481,22 @@
           "title": "Join",
           "type": "array"
         },
+        "meet": {
+          "description": "Indicate which cats will meet the player Clan. You can add multiple meet blocks",
+          "items": {
+            "$ref": "#/$defs/Meet"
+          },
+          "title": "Meet",
+          "type": "array"
+        },
+        "gain_accessory": {
+          "description": "Indicate which cats will gain an accessory. You can add multiple gain_accessory blocks",
+          "items": {
+            "$ref": "#/$defs/GainAccessory"
+          },
+          "title": "Gain Accessory",
+          "type": "array"
+        },
         "future_event": {
           "description": "Schedules another event to happen in the future.",
           "items": {
@@ -1433,11 +1504,66 @@
           },
           "title": "Future Event",
           "type": "array"
+        },
+        "frequency": {
+          "default": 4,
+          "description": "Controls how common an outcome is. 4 is the most common, 1 is the least.",
+          "title": "Frequency",
+          "type": "integer"
+        },
+        "outcome_art": {
+          "description": "The name of displayed patrol art file, without any file extension (no .png).",
+          "title": "Outcome Art",
+          "type": "string"
+        },
+        "outcome_art_clean": {
+          "description": "If patrol_art contains gore, this line can hold a clean version. The existence of a non-empty string in this parameter marks the patrol art in \"patrol_art\" as explicit.",
+          "title": "Outcome Art Clean",
+          "type": "string"
+        },
+        "involved_cats": {
+          "$ref": "#/$defs/InvolvedCatsPatrolEvent",
+          "description": "Used to add constraints for the various involved cats.",
+          "title": "Involved Cats"
+        },
+        "required_cat_types": {
+          "additionalProperties": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array"
+          },
+          "description": "Allows specification of the minimum and maximum number of specific types of cats that are allowed on the patrol.",
+          "propertyNames": {
+            "$ref": "#/$defs/MinMaxStatusDictKey"
+          },
+          "title": "Required Cat Types",
+          "type": "object"
+        },
+        "patrol_temperament": {
+          "description": "Constrains the outcome to only occur if the patrol has one of these temperaments.",
+          "items": {
+            "$ref": "#/$defs/Temperament"
+          },
+          "title": "Patrol Temperament",
+          "type": "array"
+        },
+        "exp_gained": {
+          "description": "The amount of exp cats receive (sorta). The exact amount also depends on the number of cats and current EXP levels, but in general, a higher number here means more exp. If exp is 0, no exp will be given",
+          "title": "Exp Gained",
+          "type": "integer"
         }
       },
       "required": [
-        "frequency",
         "strings",
+        "frequency",
         "exp_gained"
       ],
       "title": "Outcome",
@@ -1570,15 +1696,21 @@
           "title": "Other Clan Temperament",
           "type": "array"
         },
-        "intro_text": {
+        "intro_strings": {
           "description": "The text that displays when the patrol first starts.",
-          "title": "Intro Text",
-          "type": "string"
+          "items": {
+            "type": "string"
+          },
+          "title": "Intro Strings",
+          "type": "array"
         },
-        "decline_text": {
+        "decline_strings": {
           "description": "The text that displays if the patrol is declined (do not proceed)",
-          "title": "Decline Text",
-          "type": "string"
+          "items": {
+            "type": "string"
+          },
+          "title": "Decline Strings",
+          "type": "array"
         },
         "success_outcomes": {
           "items": {
@@ -1615,8 +1747,8 @@
         "patrol_art",
         "frequency",
         "chance_of_success",
-        "intro_text",
-        "decline_text",
+        "intro_strings",
+        "decline_strings",
         "success_outcomes",
         "fail_outcomes"
       ],
@@ -1907,6 +2039,10 @@
         "-mentor/app",
         "app/mentor",
         "-app/mentor",
+        "past_mentor/app",
+        "-past_mentor/app",
+        "past_app/mentor",
+        "-past_app/mentor",
         "uninterested",
         "fancies",
         "adores",
@@ -1975,7 +2111,7 @@
       "title": "RelationshipStatus",
       "type": "string"
     },
-    "RequiredRepution": {
+    "RequiredReputation": {
       "properties": {
         "outsider": {
           "items": {
@@ -2002,7 +2138,7 @@
           "type": "array"
         }
       },
-      "title": "RequiredRepution",
+      "title": "RequiredReputation",
       "type": "object"
     },
     "Scar": {
@@ -2269,7 +2405,7 @@
           "$ref": "#/$defs/TagEnum"
         },
         {
-          "pattern": "^clan:(.+)$",
+          "pattern": "^-?clan:(.+)$",
           "type": "string"
         }
       ],
@@ -2284,6 +2420,7 @@
         "some_lives",
         "all_lives",
         "clan:apps",
+        "clan:warrior-like",
         "romance",
         "halloween",
         "april_fools",

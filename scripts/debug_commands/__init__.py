@@ -16,6 +16,7 @@ from scripts.debug_commands.settings import (
 from scripts.debug_commands.clan import ClanCommand
 from scripts.debug_commands.cruel import CruelCommand
 from scripts.debug_commands.biome import BiomeCommand
+from scripts.debug_commands.spawn import SpawnCommand
 
 commandList: List[Command] = [
     ToggleCommand(),
@@ -30,6 +31,7 @@ commandList: List[Command] = [
     CruelCommand(),
     PregnanciesCommand(),
     RelationshipsCommand(),
+    SpawnCommand(),
 ]
 
 helpCommand = HelpCommand(commandList)

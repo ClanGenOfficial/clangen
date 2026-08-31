@@ -38,6 +38,19 @@
             ]
         },
         {
+            "url": "./schemas/ceremony.schema.json",
+            "fileMatch": [
+                "events/ceremonies/*.json",
+                "!events/ceremonies/ceremony_traits.json"
+            ]
+        },
+        {
+            "url": "./schemas/transition.schema.json",
+            "fileMatch": [
+                "events/transition.json"
+            ]
+        },
+        {
             "url": "./schemas/poi.schema.json",
             "fileMatch": [
                 "points_of_interest.json"
@@ -90,5 +103,6 @@
         "ujson",
         "verdana"
     ],
-    "editor.defaultColorDecorators": "always"
+    "editor.defaultColorDecorators": "always",
+    "editor.colorDecoratorsLimit": 2000,
 }

@@ -1,13 +1,9 @@
-import os
 import unittest
 from random import Random
 
 from scripts.cat.enums import CatRank, CatCompatibility
 from scripts.cat.factories.test_cat_factory import TestCatFactory
 from scripts.cat_relations.enums import RelType
-
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 from scripts.cat.cats import Cat
 from scripts.cat_relations.inheritance2 import inheritance_db

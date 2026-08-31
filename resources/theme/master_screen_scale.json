@@ -612,11 +612,12 @@
     },
     "window.#log": {
         "prototype": "text_box",
+        "font": { "name": "JetBrainsMono", "size": 14 },
         "colours": {
-            "dark_bg": "#AC9D72",
-            "normal_text": "#000000",
-            "selected_bg": "#655934",
-            "selected_text": "#EFE5CE"
+            "dark_bg": "#000000",
+            "normal_text": "#FFFFFF",
+            "selected_bg": "#FFFFFF",
+            "selected_text": "#000000"
         }
     },
     "window.#title_bar": {

@@ -1,5 +1,4 @@
 import unittest
-import os
 from copy import deepcopy
 from itertools import permutations
 
@@ -25,8 +24,6 @@ try:
 except ImportError:
     import tomli as tomllib
 
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
 from random import Random
 
 from scripts.cat.cats import Cat
