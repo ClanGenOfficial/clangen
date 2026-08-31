@@ -130,7 +130,6 @@ def create_needed_cats(
         if abbr in event_involved_cats:
             continue
 
-        print(f"Creating new cat in outcome! {abbr}")
         event_involved_cats[abbr] = updated_create_new_cat(
             option_dict=constraints,
             involved_cats=event_involved_cats,
