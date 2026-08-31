@@ -317,7 +317,9 @@ class TestInvolvedCats(unittest.TestCase):
         war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
         war2 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
 
-        with self.subTest("Test if a single s_c0 cat can be found for the patrol overall."):
+        with self.subTest(
+            "Test if a single s_c0 cat can be found for the patrol overall."
+        ):
             patrol = PatrolEvent(
                 event_id="test",
                 types=["hunting"],
@@ -326,9 +328,7 @@ class TestInvolvedCats(unittest.TestCase):
                 involved_cats={
                     "s_c0": InvolvedCatDict(prior_abbreviation=["any"]),
                 },
-                success_outcomes=[
-                    {"strings": ["test"]}
-                ],
+                success_outcomes=[{"strings": ["test"]}],
                 fail_outcomes=[{"strings": ["test"]}],
             )
             self.patrol_class.patrol_event = patrol
@@ -338,10 +338,12 @@ class TestInvolvedCats(unittest.TestCase):
             self.assertEqual(
                 self.patrol_class.involved_cats["p_l"],
                 self.patrol_class.involved_cats["p_l"],
-                msg=f"p_l: {self.patrol_class.involved_cats["p_l"]} and s_c0: {self.patrol_class.involved_cats["s_c0"]} don't match when they should.",
+                msg=f"p_l: {self.patrol_class.involved_cats['p_l']} and s_c0: {self.patrol_class.involved_cats['s_c0']} don't match when they should.",
             )
 
-        with self.subTest("Test if two different s_c cats can be found for the patrol overall."):
+        with self.subTest(
+            "Test if two different s_c cats can be found for the patrol overall."
+        ):
             patrol = PatrolEvent(
                 event_id="test",
                 types=["hunting"],
@@ -351,9 +353,7 @@ class TestInvolvedCats(unittest.TestCase):
                     "s_c0": InvolvedCatDict(prior_abbreviation=["any"]),
                     "s_c1": InvolvedCatDict(prior_abbreviation=["-s_c0"]),
                 },
-                success_outcomes=[
-                    {"strings": ["test"]}
-                ],
+                success_outcomes=[{"strings": ["test"]}],
                 fail_outcomes=[{"strings": ["test"]}],
             )
             self.patrol_class.patrol_event = patrol
@@ -363,8 +363,9 @@ class TestInvolvedCats(unittest.TestCase):
             self.assertNotEqual(
                 self.patrol_class.involved_cats["s_c0"],
                 self.patrol_class.involved_cats["s_c1"],
-                msg=f"s_c0: {self.patrol_class.involved_cats["s_c0"]} and s_c1: {self.patrol_class.involved_cats["s_c1"]} match when they shouldn't.",
+                msg=f"s_c0: {self.patrol_class.involved_cats['s_c0']} and s_c1: {self.patrol_class.involved_cats['s_c1']} match when they shouldn't.",
             )
+
 
 class TestOutcomeExecution(unittest.TestCase):
     def setUp(self):
