@@ -2,32 +2,40 @@
   "colour_groups":
   {
     "WHITE": "white",
-    "PALEGREY": "cool",
-    "SILVER": "cool",
-    "GREY": "monochrome",
-    "DARKGREY": "monochrome",
-    "GHOST": "monochrome",
-    "BLACK": "monochrome",
-    "CREAM": "warm",
-    "PALEGINGER": "warm",
-    "GOLDEN": "warm",
-    "GINGER": "warm",
-    "DARKGINGER": "warm",
-    "SIENNA": "brown",
-    "LIGHTBROWN": "brown",
-    "LILAC": "brown",
+    "PALEGREY": "lightgrey",
+    "SILVER": "lightgrey",
+    "GREY": "darkgrey",
+    "DARKGREY": "darkgrey",
+    "GHOST": "ghost",
+    "BLACK": "black",
+    "CREAM": "cream",
+    "PALEGINGER": "lightginger",
+    "GOLDEN": "lightginger",
+    "GINGER": "darkginger",
+    "DARKGINGER": "darkginger",
+    "SIENNA": "sienna",
+    "LIGHTBROWN": "lightbrown",
+    "LILAC": "lilac",
     "BROWN": "brown",
     "GOLDEN-BROWN": "brown",
-    "DARKBROWN": "brown",
-    "CHOCOLATE": "brown"
+    "DARKBROWN": "darkbrown",
+    "CHOCOLATE": "darkbrown"
   },
   "possible_tints": {
     "basic": ["pink", "gray", "red", "orange", "warmdilute"],
-    "warm": ["yellow", "purple", "dilute", "cooldilute"],
-    "cool": ["purple", "black", "dilute"],
-    "white": ["yellow"],
-    "monochrome": ["blue", "black", "dilute", "cooldilute"],
-    "brown": ["yellow", "purple", "black", "dilute", "cooldilute"]
+    "white": ["yellow", "pinkdilute"],
+    "lightgrey": ["purple", "black", "dilute", "pinkdilute"],
+    "darkgrey": ["blue", "black", "dilute", "cooldilute", "pinkdilute"],
+    "ghost": ["blue", "black", "dilute", "cooldilute"],
+    "black": ["blue", "black", "dilute", "cooldilute", "pinkdilute"],
+    "cream": ["yellow", "purple", "dilute", "cooldilute"],
+    "lightginger": ["yellow", "purple", "dilute", "cooldilute", "pinkdilute"],
+    "darkginger": ["yellow", "purple", "dilute", "cooldilute"],
+    "sienna": ["yellow", "purple", "black", "dilute", "cooldilute"],
+    "lightbrown": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute"],
+    "lilac": ["yellow", "purple", "black", "dilute", "cooldilute"],
+    "brown": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute"],
+    "darkbrown": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute"]
   },
   "tint_colours":
   {
@@ -46,6 +54,7 @@
     "dilute": [20, 20, 20],
     "warmdilute": [25, 15, 7],
     "cooldilute": [7, 15, 25],
+    "pinkdilute": [80, 50, 45],
     "none": null
   }
 }
