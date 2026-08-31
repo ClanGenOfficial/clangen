@@ -11,10 +11,11 @@ from scripts.cat.factories.typed_dicts import StatusDict
 from scripts.cat.names import Name
 from scripts.cat_relations.enums import RelType
 from scripts.cat_relations.inheritance2 import inheritance_db
-from scripts.cat_relations.relationship import Relationship
+from scripts.cat_relations.relationship import Relationship, create_one_relationship
 from scripts.clan_package.settings import get_clan_setting
+from scripts.cat.microservices.conditions import add_congenital_condition
 from scripts.config import get_config
-from scripts.event_class import Single_Event
+from scripts.events_module.event_information import EventInformation
 from scripts.events_module.consequences import (
     create_new_cat,
     change_relationship_values,
@@ -79,7 +80,7 @@ def get_kits(
                 continue
 
             mate = Cat.fetch_cat(mate_id)
-            if not mate:
+            if not mate or not mate.status.alive_in_player_clan:
                 continue
 
             add_poly_mate = poly_parenting and mate.ID != other_cat.ID
@@ -100,7 +101,7 @@ def get_kits(
                 continue
 
             mate = Cat.fetch_cat(mate_id)
-            if not mate:
+            if not mate or not mate.status.alive_in_player_clan:
                 continue
 
             add_poly_mate = poly_parenting and mate.ID != cat.ID
@@ -182,7 +183,7 @@ def get_kits(
                 status_dict=kitten_status,
             )
 
-        kit.get_new_thought()
+        kit.assign_thought()
 
         # make lost status match parent
         if cat and cat.status.is_lost():
@@ -206,7 +207,7 @@ def get_kits(
         if game.clan and not int(
             random() * get_config("cat_generation.base_permanent_condition")
         ):
-            kit.congenital_condition(kit)
+            add_congenital_condition(kit)
             for condition in kit.permanent_condition:
                 if kit.permanent_condition[condition] == "born without a leg":
                     cat.pelt.scars = (*cat.pelt.scars, "NOPAW")
@@ -280,13 +281,13 @@ def get_kits(
     # add them as adoptive parents if not
     final_adoptive_parents = []
     for adoptive_p in all_adoptive_parents:
-        Cat.fetch_cat(adoptive_p).get_new_thought(CatThought.ON_BIRTH)
+        Cat.fetch_cat(adoptive_p).assign_thought(CatThought.ON_BIRTH)
         if adoptive_p not in inheritance_db.get_relatives(all_kitten[0].ID, True):
             final_adoptive_parents.append(adoptive_p)
     if not adoptive_parents:
-        cat.get_new_thought(CatThought.ON_BIRTH)
+        cat.assign_thought(CatThought.ON_BIRTH)
         if other_cat:
-            cat.get_new_thought(CatThought.ON_BIRTH)
+            cat.assign_thought(CatThought.ON_BIRTH)
 
     # Add the adoptive parents.
     if final_adoptive_parents:
@@ -457,13 +458,13 @@ def handle_adoption(cat: Cat, other_cat: Optional[Cat] = None):
     )
 
     cats_involved = {"m_c": cat}
-    cat.get_new_thought(CatThought.ON_BIRTH)
+    cat.assign_thought(CatThought.ON_BIRTH)
     if other_cat:
         cats_involved["r_c"] = other_cat
-        other_cat.get_new_thought(CatThought.ON_BIRTH)
+        other_cat.assign_thought(CatThought.ON_BIRTH)
 
     for kit in kits:
-        kit.get_new_thought()
+        kit.assign_thought()
 
     # Normally, birth cooldown is only applied to cat who gave birth. However, if we don't apply birth cooldown to
     # adoption, we get too much adoption, since adoptive couples are using the increased two-parent kits chance.
@@ -472,7 +473,7 @@ def handle_adoption(cat: Cat, other_cat: Optional[Cat] = None):
     cat.birth_cooldown = get_config("pregnancy.birth_cooldown")
 
     game.cur_events_list.append(
-        Single_Event(print_event, "birth_death", cat_dict=cats_involved)
+        EventInformation(print_event, ["birth_death"], cat_dict=cats_involved)
     )
 
 
@@ -544,14 +545,14 @@ def get_balanced_kit_chance(first_parent: Cat, second_parent: Cat, is_affair) ->
         if second_parent.ID in first_parent.relationships:
             first_to_second_relationship = first_parent.relationships[second_parent.ID]
         else:
-            first_to_second_relationship = first_parent.create_one_relationship(
-                second_parent
+            first_to_second_relationship = create_one_relationship(
+                first_parent, second_parent
             )
         if first_parent.ID in second_parent.relationships:
             second_to_first_relationship = second_parent.relationships[first_parent.ID]
         else:
-            second_to_first_relationship = second_parent.create_one_relationship(
-                first_parent
+            second_to_first_relationship = create_one_relationship(
+                second_parent, first_parent
             )
 
         average_romantic_love = (

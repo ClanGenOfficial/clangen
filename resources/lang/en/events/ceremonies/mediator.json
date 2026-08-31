@@ -1,0 +1,90 @@
+[
+    {
+        "event_id": "mediator_prepared0",
+        "involved_cats": {
+            "m_c": {
+                "past_status": ["mediator apprentice"],
+                "current_exp": ["prepared"]
+            }
+        },
+        "strings": [
+            "(old_name) has proven {PRONOUN/m_c/self} skilled at handling the Clan's disputes. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} given the name m_c, and the Clan honors their new mediator.",
+            "(old_name) has taken to {PRONOUN/m_c/poss} mediator training like a fish to water. Although young, {PRONOUN/m_c/subject} {VERB/m_c/are/is} ready to take on the duties of a full mediator. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} given the name m_c, and the Clan celebrates.",
+            "m_c is welcomed as a fully trained mediator of the Clan.",
+            "As (old_name) has finished {PRONOUN/m_c/poss} mediator training, lead_name gives {PRONOUN/m_c/object} the name m_c after {PRONOUN/m_c/poss} r_h, welcoming {PRONOUN/m_c/object} as the Clan's new mediator."
+        ]
+    },
+    {
+        "event_id": "mediator_early_grad0",
+        "involved_cats": {
+            "m_c": {
+                "past_status": ["mediator apprentice"],
+                "current_exp": ["prepared"],
+                "age": ["adolescent"]
+            }
+        },
+        "strings": [
+            "(old_name) has taken to {PRONOUN/m_c/poss} mediator training like a fish to water. Although young, {PRONOUN/m_c/subject} {VERB/m_c/are/is} ready to take on the duties of a full mediator. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} given the name m_c, and the Clan celebrates."
+        ]
+    },
+    {
+        "event_id": "mediator_unprepared0",
+        "involved_cats": {
+            "m_c": {
+                "past_status": ["mediator apprentice"],
+                "current_exp": ["untrained", "learning"]
+            }
+        },
+        "strings": [
+            "Although (old_name) is still not ready to become a full mediator, {PRONOUN/m_c/subject} {VERB/m_c/are/is} too old to remain in the apprentices' den. A meeting is called, and {PRONOUN/m_c/subject} {VERB/m_c/are/is} given the name m_c. The mood is tense and pitying. ",
+            "Although some Clan members have doubts of (old_name)'s abilities, lead_name gives {PRONOUN/m_c/object} the name m_c and welcomes {PRONOUN/m_c/object} as the Clan's new mediator."
+        ]
+    },
+    {
+        "event_id": "mediator_adult_role_switch0",
+        "involved_cats": {
+            "m_c": {
+                "past_status": ["-mediator apprentice"]
+            }
+        },
+        "strings": [
+            "m_c has chosen to use {PRONOUN/m_c/poss} skills and experience to help solve the Clan's disagreements. A meeting is called, and {PRONOUN/m_c/subject} {VERB/m_c/become/becomes} the Clan's newest mediator."
+        ]
+    },
+    {
+        "event_id": "mediator_mentor_approval0",
+        "involved_cats": {
+            "m_c": {
+                "past_status": ["mediator apprentice"]
+            },
+            "r_c0": {
+                "group": [
+                    "player_clan"
+                ],
+                "status": [
+                    "mediator"
+                ]
+            }
+        },
+        "strings": [
+            "r_c0 tells lead_name that (old_name) has completed {PRONOUN/m_c/poss} mediator training. lead_name gives {PRONOUN/m_c/object} the name m_c after {PRONOUN/m_c/poss} r_h, welcoming {PRONOUN/m_c/object} as the Clan's new mediator."
+        ],
+        "tags": [
+            "clan:leader"
+        ],
+        "relationship_constraint": [
+            {
+                "cats_from": [
+                    "m_c"
+                ],
+                "cats_to": [
+                    "r_c0"
+                ],
+                "mutual": false,
+                "constraints": [
+                    "past_app/mentor"
+                ]
+            }
+        ]
+    }
+]

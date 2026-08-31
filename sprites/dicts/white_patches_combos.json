@@ -137,9 +137,10 @@
             "littleBEARD_SMALL"
         ],
         "PRINCESS": [
-            "littleBEARD_SMALL",
+            "littleCHIN",
+            "littleNECKBEARD",
             "littleBIB",
-            "littleTEARDROP",
+            "littleCHEST_STREAK",
             "littleBELLY_SMALL",
             "littleLEG_BACK_LEFT_MID",
             "littleLEG_BACK_RIGHT_MID",
@@ -270,6 +271,30 @@
             "midBIB_HIGH",
             "midSTRIPE_MID",
             "midTAIL_OVER"
+        ],
+        "FUZZSPOT": [
+            "littleLEG_FRONT_RIGHT_UNDER",
+            "littleTAIL_MID",
+            "littleLEFTEAR_RING",
+            "littleEYESPOT_R",
+            "littleTAIL_MID_LOW",
+            "midFCTWO_REDUCED"
+        ],
+        "SOFT_EDGE": [
+            "littleDAMIEN_REDUCED",
+            "littleCHEST_BROKEN",
+            "littleBELLY_MIN",
+            "midFADESPOTS"
+        ],
+        "SUSPICOUS": [
+            "littleLEFTEAR",
+            "littleFOREHEAD_MIN",
+            "littleEYELINER_MAX_R",
+            "littleBELLY_SMALL",
+            "littleLEG_FRONT_RIGHT_MID_LOW",
+            "midTAIL_HIGH_LOW",
+            "midTAIL_HIGH",
+            "midMITAINE"
         ]
     },
     "high": {
@@ -400,6 +425,12 @@
             "midSHIRT",
             "midUNDERS",
             "midBIB_FULL"
+        ],
+        "WOOD_WINGS": [
+            "littleLEFTEAR_TIP",
+            "littleLEG_FRONT_RIGHT_MIN",
+            "midWOODPECKER",
+            "midWINGS_REDUCED"
         ]
     },
     "mostly": {

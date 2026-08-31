@@ -13,7 +13,7 @@
         },
         "5":{
             "group_name": "BASICPATTERNGRAD",
-            "color": "pattern"
+            "color": "pattern_gradient_top"
         },
         "4":{
             "group_name": "MASKEDPATTERN",
@@ -33,5 +33,49 @@
             "color": "base"
         }
     },
-    "exceptions": []
+    "exceptions": [
+        {
+            "colors": "GHOST",
+            "layer_order": ["1", "2", "3", "4", ["5", "6"], "7", "8"],
+            "layers":
+            {
+                "8":
+                {
+                    "group_name": "MASKEDCHIN",
+                    "color": "masked_light_pattern_ghost_chin"
+                }
+            }
+        },
+        {
+            "poses": ["newborn0", "newborn1", "newborn2"],
+            "layers":
+            {
+                "5":
+                {
+                    "group_name": "BASICPATTERNGRAD",
+                    "color": "newborn_pattern_gradient_top"
+                },
+                "4":
+                {
+                    "group_name": "MASKEDPATTERN",
+                    "color": "newborn_pattern"
+                },
+                "3":
+                {
+                    "group_name": "SIMPLETOPGRAD",
+                    "color": "newborn_base_gradient_top"
+                },
+                "2":
+                {
+                    "group_name": "SIMPLEBOTTOMGRAD",
+                    "color": "newborn_base_gradient_bottom"
+                },
+                "1":
+                {
+                    "group_name": "BASEMASK",
+                    "color": "newborn_base"
+                }
+            }
+        }
+    ]
 }

@@ -64,6 +64,8 @@ Outcomes utilize the `TextPoolEvent` format.
             "constraints": []
         }
     ],
+    "patrol_temperament": [],
+    "other_clan_temperament": [],
     "exp_gained": 0,
     "reputation_changes": {
         "other_clan": 0,
@@ -118,6 +120,11 @@ Outcomes utilize the `TextPoolEvent` format.
             "cats": [],
             "change_name": false,
             "new_status": []
+        }
+    ],
+    "meet": [
+        {
+            "cats": []
         }
     ],
     "future_event": [
@@ -277,6 +284,22 @@ Constrains the event to only occur if the specified relationships exist. Multipl
 
 ***
 
+### patrol_temperament: list[str]
+List of allowed patrol temperaments. The patrol's temperament is calculated from the personalities of the cats on it, weighted by rank. [Possible Tempers](../reference/tag-lists.md/#clan-temperaments). You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
+
+!!! tip
+    Constraining temperament on an outcome rather than on the patrol keeps the patrol available for everyone. A wary patrol and a mellow one can walk into the same border skirmish and come away with different stories.
+
+***
+
+### other_clan_temperament: list[str]
+List of allowed temperaments for the other Clan involved in the patrol. [Possible Tempers](../reference/tag-lists.md/#clan-temperaments). You can utilize [exclusionary tags](../reference/tag-lists.md#exclusionary-tags).
+
+!!! caution
+    An outcome using this will never be chosen if no other Clan is involved in the patrol, so make sure every outcome list has at least one option without it.
+
+***
+
 ### exp_gained: int
 The amount of exp cats receive (sorta). The exact amount also depends on the number of cats and current EXP levels, but in general, a higher number here means more exp. If exp is 0, no exp will be given. 
 
@@ -432,6 +455,20 @@ Join block:
 
 **new_status**
 > A list of possible ranks for the cat to take within the Clan. If left blank, the cat will take on a rank appropriate for their age.
+> 
+***
+
+## meet: list[dict]
+> Indicate which cats will meet the player Clan. You can add multiple meet blocks.
+
+meet block:
+```json
+        {
+            "cats": []
+        }
+```
+**cats**
+> List of cats who will meet the Clan.
 
 ***
 

@@ -4,6 +4,7 @@ from random import choice, randint
 from typing import List, Optional, Dict, Union, Literal
 
 from scripts.cat.constants import BACKSTORIES
+from scripts.cat.pelts import Pelt
 from scripts.cat.personality import Personality
 from scripts.cat_relations.enums import RelType, rel_type_tiers, RelTier
 from scripts.cat.enums import CatRank, CatAge, CatCompatibility, CatGroup, CatStanding
@@ -12,7 +13,7 @@ from scripts.clan_resources.point_of_interest import (
     get_poi_tags_set,
     get_poi_categories_set,
 )
-from scripts.cat_relations.relationship import Relationship
+from scripts.cat_relations.relationship import Relationship, create_one_relationship
 from scripts.config import get_config
 from scripts.events_module.parameter_dicts import (
     InvolvedCatDict,
@@ -184,35 +185,71 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
 
     # check for required ranks within the clan
     for _tag in tags:
-        rank_match = re.match(r"clan:(.+)", _tag)
+        rank_match = re.match(r"-?clan:(.+)", _tag)
         if not rank_match:
             continue
-        ranks = [x for x in rank_match.group(1).split(",")]
+        is_exclusionary = _check_for_exclusionary_value([_tag])
 
-        for rank in ranks:
-            if rank == "apps":
-                if not find_alive_cats_with_rank(
-                    cat,
-                    [
-                        CatRank.APPRENTICE,
-                        CatRank.MEDIATOR_APPRENTICE,
-                        CatRank.MEDICINE_APPRENTICE,
-                    ],
-                ):
-                    return False
+        ranks = []
+        minimums = []
+        for rank_spec in rank_match.group(1).split(","):
+            # Check for extra "min" subtag
+            sub_tag_check = re.match(r"([^(]+)(?:\(min:([0-9]+)\))?", rank_spec)
+            ranks.append(sub_tag_check.group(1))
+
+            if sub_tag_check.group(2):
+                minimums.append(int(sub_tag_check.group(2)))
+            else:
+                if sub_tag_check.group(1) in CatRank and sub_tag_check.group(1) not in [
+                    CatRank.LEADER,
+                    CatRank.DEPUTY,
+                ]:
+                    minimums.append(2)
+                    # Default Minimum is 2 for non deputy, non leader ranks.
                 else:
-                    continue
+                    # Default minimun is 1 for anything else.
+                    minimums.append(1)
 
-            if rank in [
-                CatRank.LEADER,
-                CatRank.DEPUTY,
-            ] and not find_alive_cats_with_rank(cat, [rank]):
+        for rank, mi in zip(ranks, minimums):
+            rank_matched = True
+            if rank == "apps":
+                if (
+                    not len(
+                        find_alive_cats_with_rank(
+                            cat,
+                            [
+                                CatRank.APPRENTICE,
+                                CatRank.MEDIATOR_APPRENTICE,
+                                CatRank.MEDICINE_APPRENTICE,
+                            ],
+                        )
+                    )
+                    >= mi
+                ):
+                    rank_matched = False
+
+            elif rank == "warrior-like":
+                if (
+                    not len(
+                        find_alive_cats_with_rank(
+                            cat,
+                            [
+                                CatRank.LEADER,
+                                CatRank.DEPUTY,
+                                CatRank.WARRIOR,
+                            ],
+                        )
+                    )
+                    >= mi
+                ):
+                    rank_matched = False
+
+            elif not len(find_alive_cats_with_rank(cat, [rank])) >= mi:
+                rank_matched = False
+
+            if is_exclusionary and rank_matched:
                 return False
-
-            if (
-                rank not in [CatRank.LEADER, CatRank.DEPUTY]
-                and not len(find_alive_cats_with_rank(cat, [rank])) >= 2
-            ):
+            elif not is_exclusionary and not rank_matched:
                 return False
 
     special_date = get_special_date()
@@ -281,6 +318,26 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
     current_standing = other_clan.get_standing()
 
     return current_standing in required_rel
+
+
+def event_for_temperament(required_temp: list, temperament) -> bool:
+    """
+    checks if temperament matches required_temp
+    """
+    if not required_temp or "any" in required_temp:
+        return True
+
+    temperament = set(temperament)
+
+    excluded = {temp[1:] for temp in required_temp if temp.startswith("-")}
+    if not temperament.isdisjoint(excluded):
+        return False
+
+    included = {temp for temp in required_temp if not temp.startswith("-")}
+    if included and temperament.isdisjoint(included):
+        return False
+
+    return True
 
 
 def event_for_freshkill_supply(
@@ -410,6 +467,10 @@ def event_for_cat(
         "backstory": _check_cat_backstory,
         "gender": _check_cat_gender,
         "health": _check_cat_health,
+        "has_mentor": _check_cat_mentor,
+        "has_apprentice": _check_cat_apprentice,
+        "current_exp": _check_cat_exp,
+        "name": _check_cat_name,
     }
 
     for param, func in func_lookup.items():
@@ -428,10 +489,6 @@ def event_for_cat(
             raise TypeError(
                 f"Input contains invalid data, check traceback!\ncat_info: {cat_info}\nevent_id: {event_id}"
             ) from e
-
-    # checking mentor
-    if cat_info.get("has_mentor") and not cat.mentor:
-        return False
 
     # checking groups
     if cat_info.get("group"):
@@ -476,6 +533,77 @@ def event_for_cat(
             filter_types=cat_info["relationship_status"],
             patrol_leader=p_l,
         ):
+            return False
+
+    return True
+
+
+def _check_cat_name(cat, name_check: dict) -> bool:
+    if not name_check:
+        return True
+
+    has_suffix = name_check["has_suffix"]
+    if has_suffix and not cat.name.suffix:
+        return False
+    elif not has_suffix and cat.name.suffix:
+        return False
+
+    return True
+
+
+def _check_cat_exp(cat, current_exp: list[str]) -> bool:
+    if not current_exp:
+        return True
+
+    if cat.experience_level not in current_exp:
+        return False
+
+    return True
+
+
+def _check_cat_mentor(cat, has_mentor: dict) -> bool:
+    """
+    Checks if a cat's mentor status matches with constraints
+    """
+    if not has_mentor:
+        return True
+
+    # check for None value instead of False-y!
+    if has_mentor.get("current") is not None:
+        if has_mentor["current"] and not cat.mentor:
+            return False
+        elif not has_mentor["current"] and cat.mentor:
+            return False
+
+    # check for None value instead of False-y!
+    if has_mentor.get("former") is not None:
+        if has_mentor["former"] and not cat.former_mentor:
+            return False
+        if not has_mentor["former"] and cat.former_mentor:
+            return False
+
+    return True
+
+
+def _check_cat_apprentice(cat, has_app: dict) -> bool:
+    """
+    Checks if a cat's apprentice status matches with constraints
+    """
+    if not has_app:
+        return True
+
+    # check for None value instead of False-y!
+    if has_app.get("current") is not None:
+        if has_app["current"] and not cat.apprentice:
+            return False
+        elif not has_app["current"] and cat.apprentice:
+            return False
+
+    # check for None value instead of False-y!
+    if has_app.get("former") is not None:
+        if has_app["former"] and not cat.former_apprentices:
+            return False
+        if not has_app["former"] and cat.former_apprentices:
             return False
 
     return True
@@ -967,6 +1095,7 @@ def cat_for_event(
     comparison_cat=None,
     comparison_cat_rel_status: list = None,
     injuries: list = None,
+    new_accessories: list = None,
     other_involved_clan_id: str = None,
     return_id: bool = True,
     return_list: bool = False,
@@ -981,6 +1110,7 @@ def cat_for_event(
      cat. Keep in mind that this will search for a possible cat with the given relationship toward comparison cat.
     :param comparison_cat_rel_status: The relationship_status dict for the comparison cat
     :param injuries: List of injuries a cat may get from the event
+    :param new_accessories: List of accessories a cat may get from the event
     :param other_involved_clan_id: if another Clan is involved, include their ID
     :param return_id: If true, return cat ID instead of object
     :param return_list: if true, return a list of all valid cats instead of a single valid cat
@@ -995,6 +1125,11 @@ def cat_for_event(
         "skill": _get_cats_with_skill,
         "trait": _get_cats_with_trait,
         "backstory": _get_cats_with_backstory,
+        "has_mentor": _get_cats_with_mentor,
+        "has_apprentice": _get_cats_with_apprentice,
+        "current_exp": _get_cats_with_exp,
+        "name": _get_cats_matching_name_check,
+        "health": _get_cats_with_health,
     }
 
     # run funcs
@@ -1038,6 +1173,45 @@ def cat_for_event(
         # if the list is emptied, return
         if not allowed_cats:
             return None
+
+    if new_accessories:
+        for cat in allowed_cats.copy():
+            if len(cat.pelt.accessory) >= 3:
+                allowed_cats.remove(cat)
+                continue
+
+            accessory_groups = [
+                Pelt.collar_accessories,
+                Pelt.head_accessories,
+                Pelt.tail_accessories,
+                Pelt.body_accessories,
+                Pelt.paw_accessories,
+            ]
+            possible_accs = new_accessories.copy()
+            if cat.pelt.accessory:
+                used_groups = [
+                    group
+                    for group in accessory_groups
+                    if set(cat.pelt.accessory).intersection(set(group))
+                ]
+                if any(
+                    [
+                        set(new_accessories).intersection(set(group))
+                        for group in used_groups
+                    ]
+                ):
+                    allowed_cats.remove(cat)
+                    continue
+
+            if cat.pelt.scars:
+                if "NOTAIL" in cat.pelt.scars or "HALFTAIL" in cat.pelt.scars:
+                    if any(acc in Pelt.tail_accessories for acc in possible_accs):
+                        allowed_cats.remove(cat)
+                        continue
+                if "NOPAW" in cat.pelt.scars:
+                    if any(acc in Pelt.paw_accessories for acc in possible_accs):
+                        allowed_cats.remove(cat)
+                        continue
 
     # rel status check
     if "romance" in tags and comparison_cat:
@@ -1128,6 +1302,44 @@ def _get_cats_with_rel_status(
     return cat_list, rel_status_list
 
 
+def _get_cats_with_health(cat_list: list, health_constraints: dict) -> list:
+    """
+    Checks cat_list against required health constraints
+    """
+    if not health_constraints:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_health(c, health_constraints)]
+
+
+def _get_cats_matching_name_check(cat_list: list, name_check: dict) -> list:
+    if not name_check:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_name(c, name_check)]
+
+
+def _get_cats_with_exp(cat_list: list, current_exp: list[str]) -> list:
+    if not current_exp:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_exp(c, current_exp)]
+
+
+def _get_cats_with_mentor(cat_list: list, has_mentor: dict) -> list:
+    if not has_mentor:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_mentor(c, has_mentor)]
+
+
+def _get_cats_with_apprentice(cat_list: list, has_apprentice: dict) -> list:
+    if not has_apprentice:
+        return cat_list
+
+    return [c for c in cat_list if _check_cat_apprentice(c, has_apprentice)]
+
+
 def _get_cats_with_age(cat_list: list, ages: list[str]) -> list:
     """
     Checks cat_list against required ages and returns qualifying cats.
@@ -1184,18 +1396,7 @@ def _get_cats_with_stat(cat_list: list, stat: dict) -> list:
     if not stat:
         return cat_list
 
-    skill_cats = []
-    trait_cats = []
-
-    if stat.get("skill"):
-        skill_cats = _get_cats_with_age(cat_list, stat["skill"])
-    if stat.get("trait"):
-        trait_cats = _get_cats_with_trait(cat_list, stat["trait"])
-
-    if stat.get("must_have_both"):
-        return list(set(skill_cats).intersection(set(trait_cats)))
-    else:
-        return skill_cats + trait_cats
+    return [c for c in cat_list if _check_cat_stat(c, stat)]
 
 
 def _get_cats_with_skill(cat_list: list, skills: list[str]) -> list:
@@ -1283,9 +1484,9 @@ def _get_cats_from_group(
 
         elif tag == "afterlife":  # checks if group is an afterlife
             if is_exclusionary:
-                cat_list = [c for c in cat_list if c.status.group.is_afterlife()]
-            else:
                 cat_list = [c for c in cat_list if not c.status.group.is_afterlife()]
+            else:
+                cat_list = [c for c in cat_list if c.status.group.is_afterlife()]
             remaining_tags.remove(tag)
 
         elif tag == "no_group":  # checks if the cat has no group
@@ -1431,7 +1632,6 @@ def _filter_relationship_type_updated(
     # if the cat meets the check AND it's an exclusionary tag: return False
     # if the cat doesn't meet the check AND it's an inclusionary tag: return False
     # otherwise, continue onwards
-    cats_to = [c for c in cats_to if c not in cats_from]
 
     if "can_romance" in filter_types:
         for cat in cats_from:
@@ -1440,6 +1640,7 @@ def _filter_relationship_type_updated(
                 [
                     cat.is_potential_mate(inter_cat) or cat.ID in inter_cat.mate
                     for inter_cat in cats_to
+                    if cat != inter_cat
                 ]
             ):
                 if "can_romance" in exclusionary_values:
@@ -1449,6 +1650,7 @@ def _filter_relationship_type_updated(
                 [
                     cat.is_potential_mate(inter_cat) or cat.ID in inter_cat.mate
                     for inter_cat in cats_to
+                    if cat != inter_cat
                 ]
             ):
                 return False
@@ -1460,12 +1662,22 @@ def _filter_relationship_type_updated(
     if "strangers" in filter_types:
         for cat in cats_from:
             # if the cats ARE strangers
-            if all([inter_cat.ID not in cat.relationships for inter_cat in cats_to]):
+            if all(
+                [
+                    inter_cat.ID not in cat.relationships
+                    for inter_cat in cats_to
+                    if cat != inter_cat
+                ]
+            ):
                 if "strangers" in exclusionary_values:
                     return False
             # if SOME but not ALL cats are strangers
             elif "strangers" in inclusionary_values and any(
-                [inter_cat.ID in cat.relationships for inter_cat in cats_to]
+                [
+                    inter_cat.ID in cat.relationships
+                    for inter_cat in cats_to
+                    if cat != inter_cat
+                ]
             ):
                 return False
             # if the cats AREN'T strangers
@@ -1476,12 +1688,14 @@ def _filter_relationship_type_updated(
     if "siblings" in filter_types:
         for cat in cats_from:
             # if the cats ARE siblings
-            if all([cat.is_sibling(inter_cat) for inter_cat in cats_to]):
+            if all(
+                [cat.is_sibling(inter_cat) for inter_cat in cats_to if cat != inter_cat]
+            ):
                 if "siblings" in exclusionary_values:
                     return False
             # if SOME but not ALL cats are siblings
             elif "siblings" in inclusionary_values and any(
-                [cat.is_sibling(inter_cat) for inter_cat in cats_to]
+                [cat.is_sibling(inter_cat) for inter_cat in cats_to if cat != inter_cat]
             ):
                 return False
             # if the cats AREN'T siblings
@@ -1492,12 +1706,22 @@ def _filter_relationship_type_updated(
     if "littermates" in filter_types:
         for cat in cats_from:
             # if the cats ARE littermates
-            if all([cat.is_littermate(inter_cat) for inter_cat in cats_to]):
+            if all(
+                [
+                    cat.is_littermate(inter_cat)
+                    for inter_cat in cats_to
+                    if cat != inter_cat
+                ]
+            ):
                 if "littermates" in exclusionary_values:
                     return False
             # if SOME but not ALL cats are littermates
             elif "littermates" in inclusionary_values and any(
-                [cat.is_littermate(inter_cat) for inter_cat in cats_to]
+                [
+                    cat.is_littermate(inter_cat)
+                    for inter_cat in cats_to
+                    if cat != inter_cat
+                ]
             ):
                 return False
             # if the cats AREN'T littermates
@@ -1517,12 +1741,14 @@ def _filter_relationship_type_updated(
         # Hopefully the cheaper tests mean this is only needed on events with a small number of cats
         for cat in cats_from:
             # if the cats ARE mates
-            if all([inter_cat.ID in cat.mate for inter_cat in cats_to]):
+            if all(
+                [inter_cat.ID in cat.mate for inter_cat in cats_to if cat != inter_cat]
+            ):
                 if "mates" in exclusionary_values:
                     return False
             # if SOME but not ALL cats are mates
             elif "mates" in inclusionary_values and any(
-                [inter_cat.ID in cat.mate for inter_cat in cats_to]
+                [inter_cat.ID in cat.mate for inter_cat in cats_to if cat != inter_cat]
             ):
                 return False
             # if the cats AREN'T mates
@@ -1535,12 +1761,14 @@ def _filter_relationship_type_updated(
     if "parent/child" in filter_types:
         for cat in cats_from:
             # if the cats ARE parent/child
-            if all([cat.is_parent(inter_cat) for inter_cat in cats_to]):
+            if all(
+                [cat.is_parent(inter_cat) for inter_cat in cats_to if cat != inter_cat]
+            ):
                 if "parent/child" in exclusionary_values:
                     return False
             # if SOME but not ALL cats are parent/child
             elif "parent/child" in inclusionary_values and any(
-                [cat.is_parent(inter_cat) for inter_cat in cats_to]
+                [cat.is_parent(inter_cat) for inter_cat in cats_to if cat != inter_cat]
             ):
                 return False
             # if the cats AREN'T parent/child
@@ -1551,12 +1779,14 @@ def _filter_relationship_type_updated(
     if "child/parent" in filter_types:
         for cat in cats_from:
             # if the cats ARE child/parent
-            if all([inter_cat.is_parent(cat) for inter_cat in cats_to]):
+            if all(
+                [inter_cat.is_parent(cat) for inter_cat in cats_to if cat != inter_cat]
+            ):
                 if "child/parent" in exclusionary_values:
                     return False
             # if SOME but not ALL cats are child/parent
             elif "child/parent" in inclusionary_values and any(
-                [inter_cat.is_parent(cat) for inter_cat in cats_to]
+                [inter_cat.is_parent(cat) for inter_cat in cats_to if cat != inter_cat]
             ):
                 return False
             # if the cats AREN'T child/parent
@@ -1601,6 +1831,40 @@ def _filter_relationship_type_updated(
         elif "app/mentor" in inclusionary_values:
             return False
         filter_types.remove("app/mentor")
+
+    if "past_mentor/app" in filter_types:
+        # if the cats ARE mentor/app
+        if all(
+            [inter_cat.ID in cats_from[0].former_apprentices for inter_cat in cats_to]
+        ):
+            if "past_mentor/app" in exclusionary_values:
+                return False
+        # if SOME but not ALL cats are mentor/app
+        elif "past_mentor/app" in inclusionary_values and any(
+            [inter_cat.ID in cats_from[0].former_apprentices for inter_cat in cats_to]
+        ):
+            return False
+        # if the cats AREN'T mentor/app
+        elif "past_mentor/app" in inclusionary_values:
+            return False
+        filter_types.remove("past_mentor/app")
+
+    if "past_app/mentor" in filter_types:
+        # if the cats ARE app/mentor
+        if all(
+            [inter_cat.ID in cats_to[0].former_apprentices for inter_cat in cats_from]
+        ):
+            if "past_app/mentor" in exclusionary_values:
+                return False
+        # if some, but not all cats are app/mentor
+        elif "past_app/mentor" in inclusionary_values and any(
+            [inter_cat.ID in cats_to[0].former_apprentices for inter_cat in cats_from]
+        ):
+            return False
+        # if the cats AREN'T app/mentor
+        elif "past_app/mentor" in inclusionary_values:
+            return False
+        filter_types.remove("past_app/mentor")
 
     # return early if there's nothing left to check
     if not filter_types:
@@ -1931,7 +2195,7 @@ def check_relationship_value(cat_from, cat_to, rel_value=None):
     if cat_to.ID in cat_from.relationships:
         relationship = cat_from.relationships[cat_to.ID]
     else:
-        relationship = cat_from.create_one_relationship(cat_to)
+        relationship = create_one_relationship(cat_from, cat_to)
 
     if rel_value == RelType.ROMANCE:
         return relationship.romance

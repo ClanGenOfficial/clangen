@@ -88,6 +88,40 @@ class TestPatrolCats(unittest.TestCase):
             [med, med_app], self.patrol_class.involved_cats["healer cats"]
         )
 
+    def test_some_patrol(self):
+        war1 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+        war2 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+        war3 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+        war4 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+        war5 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+        war6 = TestCatFactory.create_cat(rank=CatRank.WARRIOR)
+
+        with self.subTest("Check 1-cat patrol has no some_patrol"):
+            patrol_cats = [war1]
+            self.patrol_class._add_patrol_cats(patrol_cats)
+
+            self.assertIsNone(self.patrol_class.involved_cats.get("some_patrol"))
+
+        with self.subTest("Check 2-cat patrol has no some_patrol"):
+            patrol_cats = [war1, war2]
+            self.patrol_class._add_patrol_cats(patrol_cats)
+
+            self.assertIsNone(self.patrol_class.involved_cats.get("some_patrol"))
+
+        with self.subTest("Check 3-cat patrol get some_patrol"):
+            patrol_cats = [war1, war2, war3]
+            self.patrol_class._add_patrol_cats(patrol_cats)
+
+            self.assertGreater(len(self.patrol_class.involved_cats["some_patrol"]), 1)
+            self.assertLess(len(self.patrol_class.involved_cats["some_patrol"]), 3)
+
+        with self.subTest("Check full patrol get some_patrol"):
+            patrol_cats = [war1, war2, war3, war4, war5, war6]
+            self.patrol_class._add_patrol_cats(patrol_cats)
+
+            self.assertGreater(len(self.patrol_class.involved_cats["some_patrol"]), 1)
+            self.assertLess(len(self.patrol_class.involved_cats["some_patrol"]), 6)
+
 
 class TestInvolvedCats(unittest.TestCase):
     @classmethod
@@ -122,8 +156,8 @@ class TestInvolvedCats(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text="test",
-            decline_text="test",
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={
                 "p_l": InvolvedCatDict(),
                 "r_c": InvolvedCatDict(),
@@ -133,9 +167,7 @@ class TestInvolvedCats(unittest.TestCase):
         )
 
         self.patrol_class._add_patrol_cats([war1, app1, app2])
-        self.patrol_class._get_valid_patrol(
-            [], chosen_frequency=patrol.frequency, patrol_override=patrol
-        )
+        self.patrol_class._get_valid_patrol([patrol])
 
         self.assertEqual(
             war1,
@@ -156,8 +188,8 @@ class TestInvolvedCats(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text="test",
-            decline_text="test",
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={
                 "n_c0": InvolvedCatDict(),
                 "n_c1": InvolvedCatDict(can_create_new_cat={}),
@@ -167,9 +199,7 @@ class TestInvolvedCats(unittest.TestCase):
         )
 
         self.patrol_class._add_patrol_cats([war1])
-        self.patrol_class._get_valid_patrol(
-            [], chosen_frequency=patrol.frequency, patrol_override=patrol
-        )
+        self.patrol_class._get_valid_patrol([patrol])
 
         self.assertEqual(
             outsider1,
@@ -195,8 +225,8 @@ class TestInvolvedCats(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text="test",
-            decline_text="test",
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={
                 "p_l": InvolvedCatDict(),
                 "r_c": InvolvedCatDict(),
@@ -208,9 +238,7 @@ class TestInvolvedCats(unittest.TestCase):
         )
         self.patrol_class.patrol_event = patrol
         self.patrol_class._add_patrol_cats([war1, app1, app2])
-        self.patrol_class._get_valid_patrol(
-            [], chosen_frequency=patrol.frequency, patrol_override=patrol
-        )
+        self.patrol_class._get_valid_patrol([patrol])
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )
@@ -229,8 +257,8 @@ class TestInvolvedCats(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text="test",
-            decline_text="test",
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={
                 "p_l": InvolvedCatDict(),
                 "r_c": InvolvedCatDict(),
@@ -242,9 +270,7 @@ class TestInvolvedCats(unittest.TestCase):
         )
         self.patrol_class.patrol_event = patrol
         self.patrol_class._add_patrol_cats([war1, app1, app2])
-        self.patrol_class._get_valid_patrol(
-            [], chosen_frequency=patrol.frequency, patrol_override=patrol
-        )
+        self.patrol_class._get_valid_patrol([patrol])
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )
@@ -263,8 +289,8 @@ class TestInvolvedCats(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text="test",
-            decline_text="test",
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={
                 "p_l": InvolvedCatDict(),
                 "r_c": InvolvedCatDict(),
@@ -276,9 +302,7 @@ class TestInvolvedCats(unittest.TestCase):
         )
         self.patrol_class.patrol_event = patrol
         self.patrol_class._add_patrol_cats([war1, app1, app2])
-        self.patrol_class._get_valid_patrol(
-            [], chosen_frequency=patrol.frequency, patrol_override=patrol
-        )
+        self.patrol_class._get_valid_patrol([patrol])
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )
@@ -317,8 +341,8 @@ class TestOutcomeExecution(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text="test",
-            decline_text="test",
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={
                 "n_c:0": InvolvedCatDict(),
             },
@@ -327,9 +351,7 @@ class TestOutcomeExecution(unittest.TestCase):
         )
 
         self.patrol_class._add_patrol_cats([war1])
-        self.patrol_class._get_valid_patrol(
-            [], chosen_frequency=patrol.frequency, patrol_override=patrol
-        )
+        self.patrol_class._get_valid_patrol([patrol])
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )
@@ -353,8 +375,8 @@ class TestOutcomeExecution(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text="test",
-            decline_text="test",
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={},
             success_outcomes=[
                 {
@@ -366,9 +388,7 @@ class TestOutcomeExecution(unittest.TestCase):
         )
 
         self.patrol_class._add_patrol_cats([war1, app1])
-        self.patrol_class._get_valid_patrol(
-            [], chosen_frequency=patrol.frequency, patrol_override=patrol
-        )
+        self.patrol_class._get_valid_patrol([patrol])
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )
@@ -397,8 +417,8 @@ class TestOutcomeExecution(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text="test",
-            decline_text="test",
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={},
             success_outcomes=[
                 {
@@ -410,9 +430,7 @@ class TestOutcomeExecution(unittest.TestCase):
         )
 
         self.patrol_class._add_patrol_cats([war1, app1])
-        self.patrol_class._get_valid_patrol(
-            [], chosen_frequency=patrol.frequency, patrol_override=patrol
-        )
+        self.patrol_class._get_valid_patrol([patrol])
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )
@@ -434,8 +452,8 @@ class TestOutcomeExecution(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text="test",
-            decline_text="test",
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={"p_l": InvolvedCatDict(), "r_c": InvolvedCatDict()},
             success_outcomes=[
                 {
@@ -449,9 +467,7 @@ class TestOutcomeExecution(unittest.TestCase):
         )
 
         self.patrol_class._add_patrol_cats([war1, app1])
-        self.patrol_class._get_valid_patrol(
-            [], chosen_frequency=patrol.frequency, patrol_override=patrol
-        )
+        self.patrol_class._get_valid_patrol([patrol])
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )
@@ -473,8 +489,8 @@ class TestOutcomeExecution(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text="test",
-            decline_text="test",
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={"p_l": InvolvedCatDict(), "r_c": InvolvedCatDict()},
             success_outcomes=[
                 {
@@ -491,9 +507,7 @@ class TestOutcomeExecution(unittest.TestCase):
         starting_outsider_rep = game.clan.reputation
 
         self.patrol_class._add_patrol_cats([war1, app1])
-        self.patrol_class._get_valid_patrol(
-            [], chosen_frequency=patrol.frequency, patrol_override=patrol
-        )
+        self.patrol_class._get_valid_patrol([patrol])
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )
@@ -515,8 +529,8 @@ class TestOutcomeExecution(unittest.TestCase):
         patrol = PatrolEvent(
             event_id="test",
             types=["hunting"],
-            intro_text="test",
-            decline_text="test",
+            intro_strings=["test"],
+            decline_strings=["test"],
             involved_cats={"p_l": InvolvedCatDict()},
             success_outcomes=[
                 {
@@ -535,9 +549,7 @@ class TestOutcomeExecution(unittest.TestCase):
         total_herb_count = game.clan.herb_supply.total
 
         self.patrol_class._add_patrol_cats([war1])
-        self.patrol_class._get_valid_patrol(
-            [], chosen_frequency=patrol.frequency, patrol_override=patrol
-        )
+        self.patrol_class._get_valid_patrol([])
         self.patrol_class._check_outcome_constraints(
             patrol.success_outcomes[0], "success"
         )

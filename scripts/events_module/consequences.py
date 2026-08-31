@@ -15,9 +15,13 @@ from scripts.cat.enums import (
 )
 from scripts.cat.factories.new_cat_factory import NewCatFactory
 from scripts.cat.factories.enums import CatType
+from scripts.cat.microservices.add_to_clan import add_to_clan, add_dependents_to_clan
+from scripts.cat.microservices.conditions import get_permanent_condition
 from scripts.cat.names import Name
+from scripts.cat_relations.cat_handle_funcs import create_relationships_new_cat
 from scripts.cat_relations.enums import RelType
 from scripts.cat_relations.inheritance2 import inheritance_db
+from scripts.cat_relations.relationship import create_one_relationship
 from scripts.clan_package.get_clan_cats import get_random_player_clan_cat
 from scripts.clan_package.settings import get_clan_setting
 from scripts.config import get_config
@@ -81,7 +85,12 @@ def create_new_cat_block(
                 index = f"n_c:{index}"
             if in_event_cats[index].ID not in adoptive_parents:
                 adoptive_parents.append(in_event_cats[index].ID)
-                adoptive_parents.extend(in_event_cats[index].mate)
+                for mate_id in in_event_cats[index].mate:
+                    mate = Cat.fetch_cat(mate_id)
+                    if not mate or not mate.status.alive_in_player_clan:
+                        continue
+                    if mate.ID not in adoptive_parents:
+                        adoptive_parents.append(mate.ID)
 
     # gather mates
     give_mates = []
@@ -329,7 +338,9 @@ def create_new_cat_block(
             elif not outside:
                 if not rank:
                     rank = chosen_cat.status.get_rank_from_age(chosen_cat.age)
-                chosen_cat.add_to_clan()
+                add_to_clan(chosen_cat)
+                add_dependents_to_clan(chosen_cat)
+                # todo why doesn't this do anything with the returned kits
                 if chosen_cat.status.rank != rank:
                     chosen_cat.rank_change(
                         new_rank=CatRank(rank), resort=True, new_thought=False
@@ -618,7 +629,10 @@ def create_new_cat(
             )
         # now we actually add them to the clan, if they should be joining
         if not outside and alive:
-            new_cat.add_to_clan()
+            add_to_clan(new_cat)
+            add_dependents_to_clan(new_cat)
+            # todo why doesn't use the return value
+
             # check if cat is the correct rank
             if new_cat.status.rank != rank:
                 new_cat.status._change_rank(CatRank(rank))
@@ -731,7 +745,7 @@ def create_new_cat(
                     "always",
                     "sometimes",
                 ]:
-                    new_cat.get_permanent_condition(chosen_condition, True)
+                    get_permanent_condition(new_cat, chosen_condition, True)
                     if (
                         new_cat.permanent_condition[chosen_condition]["moons_until"]
                         == 0
@@ -752,7 +766,7 @@ def create_new_cat(
             new_cat.die()
 
         # newbie thought
-        new_cat.get_new_thought(thought)
+        new_cat.assign_thought(thought)
 
         # and they exist now
         created_cats.append(new_cat)
@@ -760,7 +774,7 @@ def create_new_cat(
         new_cat.history.add_beginning()
 
         # create relationships
-        new_cat.create_relationships_new_cat()
+        create_relationships_new_cat(new_cat)
         # Note - we always update inheritance after the cats are generated, to
         # allow us to add parents.
         # new_cat.create_inheritance_new_cat()
@@ -834,9 +848,6 @@ def gather_cat_objects(
             index = int(index)
             if index < len(event.new_cats):
                 found_cat_list.update(event.new_cats[index])
-        elif abbr == "multi" and involved_cats:
-            cat_num = randint(1, max(1, len(involved_cats["patrol_cats"]) - 1))
-            found_cat_list.update(sample(involved_cats["patrol_cats"], cat_num))
         # OVERALL CLAN CATS
         elif abbr == "clan":
             found_cat_list.update(clan_cats)
@@ -1075,7 +1086,7 @@ def change_relationship_values(
 
             # if the cats don't know each other, start a new relationship
             if single_cat_to.ID not in single_cat_from.relationships:
-                single_cat_from.create_one_relationship(single_cat_to)
+                create_one_relationship(single_cat_from, single_cat_to)
 
             rel = single_cat_from.relationships[single_cat_to.ID]
 

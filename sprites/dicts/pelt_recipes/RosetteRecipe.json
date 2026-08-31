@@ -34,5 +34,42 @@
             "color": "base"
         }
     },
-    "exceptions": []
+    "exceptions": [
+        {
+            "poses": ["newborn0", "newborn1", "newborn2"],
+            "layers":
+            {
+                "6":
+                {
+                    "group_name": "BASICPATTERNGRAD",
+                    "color": "newborn_pattern_gradient_top"
+                },
+                "5":
+                {
+                    "group_name": "ROSETTEPATTERN",
+                    "color": "newborn_pattern"
+                },
+                "4":
+                {
+                    "group_name": "ROSETTEPATTERNFILL",
+                    "color": "newborn_pattern_fill"
+                },
+                "3":
+                {
+                    "group_name": "SIMPLETOPGRAD",
+                    "color": "newborn_base_gradient_top"
+                },
+                "2":
+                {
+                    "group_name": "SIMPLEBOTTOMGRAD",
+                    "color": "newborn_base_gradient_bottom"
+                },
+                "1":
+                {
+                    "group_name": "BASEMASK",
+                    "color": "newborn_base"
+                }
+            }
+        }
+    ]
 }
