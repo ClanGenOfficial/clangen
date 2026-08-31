@@ -203,7 +203,7 @@
             }
         ],
         "also_got": [
-            "envenomated"
+            "venom sickness"
         ],
         "cause_permanent": [],
         "herbs": {
@@ -1680,10 +1680,10 @@
             ]
         }
     },    
- "envenomated":{
+ "venom sickness":{
         "duration": 3,
         "severity": "major",
-        "medicine_duration": 3,
+        "medicine_duration": 2,
         "mortality": {
             "newborn": 5,
             "kitten": 5,

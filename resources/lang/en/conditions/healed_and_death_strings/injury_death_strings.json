@@ -65,7 +65,7 @@
     "poisoned": [
         "m_c died from the poison in {PRONOUN/m_c/poss} body."
     ],
-     "envenomated": [
+     "venom sickness": [
         "m_c succumbed to the deadly venom in {PRONOUN/m_c/poss} body."
     ],
     "broken back": [

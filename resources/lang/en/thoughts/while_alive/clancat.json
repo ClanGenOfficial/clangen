@@ -8288,7 +8288,7 @@
                 "health": {
                     "condition": [
                         "poisoned",
-                        "envenomated"
+                        "venom sickness"
                     ]
                 }
             }
