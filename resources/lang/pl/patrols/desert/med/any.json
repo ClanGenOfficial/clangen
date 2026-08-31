@@ -32,13 +32,17 @@
         },
         "chance_of_success": 65,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l decides it's a good opportunity to show r_c1 where the most commonly needed herbs are in the territory, both above and underground away from the hot sun.",
-        "decline_text": "As {PRONOUN\/p_l\/subject} {VERB\/p_l\/see\/sees} r_c1's absent minded gaze, {PRONOUN\/p_l\/subject} {VERB\/p_l\/change\/changes} {PRONOUN\/p_l\/poss} mind. Maybe another day, when r_c1 is more focused and less liable to get a heatstroke when they go to show {PRONOUN\/r_c1\/object} the herbs aboveground",
+        "intro_strings": [
+            "p_l decides it's a good opportunity to show r_c1 where the most commonly needed herbs are in the territory, both above and underground away from the hot sun."
+        ],
+        "decline_strings": [
+            "As {PRONOUN/p_l/subject} {VERB/p_l/see/sees} r_c1's absent minded gaze, {PRONOUN/p_l/subject} {VERB/p_l/change/changes} {PRONOUN/p_l/poss} mind. Maybe another day, when r_c1 is more focused and less liable to get a heatstroke when they go to show {PRONOUN/r_c1/object} the herbs aboveground"
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 is focused and attentive. p_l is confident that next time there is an emergency, r_c1 will be able to find those herbs both under and above ground without {PRONOUN\/p_l\/object} if needed."
+                    "r_c1 is focused and attentive. p_l is confident that next time there is an emergency, r_c1 will be able to find those herbs both under and above ground without {PRONOUN/p_l/object} if needed."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -79,7 +83,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "As p_l is explaining why and where the herbs are growing, r_c1 lets out a shout. To p_l's surprise, {PRONOUN\/r_c1\/subject} {VERB\/r_c1\/have\/has} found a previously unknown patch of an uncommon herb. Stunned and filled with pride that {PRONOUN\/r_c1\/subject} found and recognized the herb, p_l promises {PRONOUN\/r_c1\/object} the first pick of fresh-kill."
+                    "As p_l is explaining why and where the herbs are growing, r_c1 lets out a shout. To p_l's surprise, {PRONOUN/r_c1/subject} {VERB/r_c1/have/has} found a previously unknown patch of an uncommon herb. Stunned and filled with pride that {PRONOUN/r_c1/subject} found and recognized the herb, p_l promises {PRONOUN/r_c1/object} the first pick of fresh-kill."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -176,13 +180,17 @@
         },
         "chance_of_success": 40,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l has been sent out into the desert to try to find some specific herbs alone.",
-        "decline_text": "Nervous and with the hot sun pounding on {PRONOUN\/p_l\/poss} back, {PRONOUN\/p_l\/subject} {VERB\/p_l\/decide\/decides} to go back to camp and try again another day, {PRONOUN\/p_l\/poss} tail dragging behind {PRONOUN\/p_l\/object}.",
+        "intro_strings": [
+            "p_l has been sent out into the desert to try to find some specific herbs alone."
+        ],
+        "decline_strings": [
+            "Nervous and with the hot sun pounding on {PRONOUN/p_l/poss} back, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to go back to camp and try again another day, {PRONOUN/p_l/poss} tail dragging behind {PRONOUN/p_l/object}."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l is focused and determined to prove {PRONOUN\/p_l\/poss} independence. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/find\/finds} the herbs easily, and bring them back to camp with {PRONOUN\/p_l\/poss} head held up high, no sweat, no stress, no fuss."
+                    "p_l is focused and determined to prove {PRONOUN/p_l/poss} independence. {PRONOUN/p_l/subject/CAP} {VERB/p_l/find/finds} the herbs easily, and bring them back to camp with {PRONOUN/p_l/poss} head held up high, no sweat, no stress, no fuss."
                 ],
                 "exp_gained": 10,
                 "supply": [
@@ -195,7 +203,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l goes to a known herb patch \u2014 but the plant has died! {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/don't\/doesn't} give up, hunting around in the area until {PRONOUN\/p_l\/subject} find a smaller overlooked patch that still has leaves on it."
+                    "p_l goes to a known herb patch \u2014 but the plant has died! {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} give up, hunting around in the area until {PRONOUN/p_l/subject} find a smaller overlooked patch that still has leaves on it."
                 ],
                 "exp_gained": 10,
                 "supply": [
@@ -210,7 +218,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l goes to a known herb patch \u2014 but the plant has died! {PRONOUN\/p_l\/subject\/CAP} give up and return to camp, feeling terrible."
+                    "p_l goes to a known herb patch \u2014 but the plant has died! {PRONOUN/p_l/subject/CAP} give up and return to camp, feeling terrible."
                 ],
                 "exp_gained": 0
             }
@@ -240,13 +248,17 @@
         },
         "chance_of_success": 50,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l, fueled by desperation and unable to leave the Clan because of the heat of greenleaf withering c_n, ingests a piece of sacred cacti hoping to trigger a vision.",
-        "decline_text": "At that exact moment a cat walks into the medicine cat den looking for p_l. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/put\/puts} the piece of cacti back, having to wait for a better time.",
+        "intro_strings": [
+            "p_l, fueled by desperation and unable to leave the Clan because of the heat of greenleaf withering c_n, ingests a piece of sacred cacti hoping to trigger a vision."
+        ],
+        "decline_strings": [
+            "At that exact moment a cat walks into the medicine cat den looking for p_l. {PRONOUN/p_l/subject/CAP} {VERB/p_l/put/puts} the piece of cacti back, having to wait for a better time."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "Guided by the visions and dreams sent by StarClan, images of the suffering of greenleaf and the hope for new life flash before {PRONOUN\/p_l\/poss} eyes. p_l awakes relieved and determined. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/know\/knows} now what actions {PRONOUN\/p_l\/subject} should take to save c_n"
+                    "Guided by the visions and dreams sent by StarClan, images of the suffering of greenleaf and the hope for new life flash before {PRONOUN/p_l/poss} eyes. p_l awakes relieved and determined. {PRONOUN/p_l/subject/CAP} {VERB/p_l/know/knows} now what actions {PRONOUN/p_l/subject} should take to save c_n"
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -326,7 +338,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l wakes up confused and unable to remember if {PRONOUN\/p_l\/subject} have communicated with StarClan. The only thought bouncing around in {PRONOUN\/p_l\/poss} head for some reason is the word quenchy. Frustrated, p_l realizes that StarClan won't help {PRONOUN\/p_l\/object} this time."
+                    "p_l wakes up confused and unable to remember if {PRONOUN/p_l/subject} have communicated with StarClan. The only thought bouncing around in {PRONOUN/p_l/poss} head for some reason is the word quenchy. Frustrated, p_l realizes that StarClan won't help {PRONOUN/p_l/object} this time."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -352,7 +364,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "p_l has an unexpected severe reaction to the cacti, {PRONOUN\/p_l\/poss} throat swelling shut in seconds. Unable to call for help, {PRONOUN\/p_l\/subject} fade away toward StarClan. c_n will have to mourn one more cat."
+                    "p_l has an unexpected severe reaction to the cacti, {PRONOUN/p_l/poss} throat swelling shut in seconds. Unable to call for help, {PRONOUN/p_l/subject} fade away toward StarClan. c_n will have to mourn one more cat."
                 ],
                 "exp_gained": 0,
                 "death": [
@@ -360,7 +372,7 @@
                         "cats": [
                             "p_l"
                         ],
-                        "history": "m_c died trying to communicate with StarClan using a rare and dangerous ritual in an attempt to save {PRONOUN\/m_c\/poss} Clan."
+                        "history": "m_c died trying to communicate with StarClan using a rare and dangerous ritual in an attempt to save {PRONOUN/m_c/poss} Clan."
                     }
                 ]
             }
@@ -399,13 +411,17 @@
         },
         "chance_of_success": 15,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l and r_c1 head out for lungwort, and p_l starts a lesson on the value of this rare herb for treating yellowcough.",
-        "decline_text": "A cat grabs p_l's attention before {PRONOUN\/p_l\/subject} can leave. Sighing, the expedition is delayed for another time.",
+        "intro_strings": [
+            "p_l and r_c1 head out for lungwort, and p_l starts a lesson on the value of this rare herb for treating yellowcough."
+        ],
+        "decline_strings": [
+            "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave. Sighing, the expedition is delayed for another time."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "It takes them all day, but finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest before the plants die back in the withering heat of greenleaf. For just a second, p_l feels the weight of {PRONOUN\/p_l\/poss} responsibilities lift, and {PRONOUN\/p_l\/subject} {VERB\/p_l\/let\/lets} out a whoop and stop to play with r_c1."
+                    "It takes them all day, but finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest before the plants die back in the withering heat of greenleaf. For just a second, p_l feels the weight of {PRONOUN/p_l/poss} responsibilities lift, and {PRONOUN/p_l/subject} {VERB/p_l/let/lets} out a whoop and stop to play with r_c1."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -445,7 +461,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "r_c1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers {PRONOUN\/r_c1\/object} with praise, r_c1 feeling like {PRONOUN\/r_c1\/subject} could burst with accomplishment."
+                    "r_c1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers {PRONOUN/r_c1/object} with praise, r_c1 feeling like {PRONOUN/r_c1/subject} could burst with accomplishment."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -578,7 +594,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Not only do they not find anything, but r_c1 seems to take in absolutely nothing of what p_l is teaching {PRONOUN\/r_c1\/object}, and by the time they're back at camp, p_l wants to scream."
+                    "Not only do they not find anything, but r_c1 seems to take in absolutely nothing of what p_l is teaching {PRONOUN/r_c1/object}, and by the time they're back at camp, p_l wants to scream."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -632,13 +648,17 @@
         },
         "chance_of_success": 15,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l is on a mission to find lungwort. As the only reliable cure for yellowcough, {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} determined that c_n stock up.",
-        "decline_text": "A cat grabs p_l's attention before {PRONOUN\/p_l\/subject} can leave camp.",
+        "intro_strings": [
+            "p_l is on a mission to find lungwort. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n stock up."
+        ],
+        "decline_strings": [
+            "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave camp."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "It takes {PRONOUN\/p_l\/object} all day, but finally, p_l spots the speckled leaves {PRONOUN\/p_l\/subject}{VERB\/p_l\/'ve\/'s} been looking for. For just a second, {PRONOUN\/p_l\/subject} {VERB\/p_l\/feel\/feels} the weight of {PRONOUN\/p_l\/poss} responsibilities lift, the strength of that relief catching {PRONOUN\/p_l\/object} off guard."
+                    "It takes {PRONOUN/p_l/object} all day, but finally, p_l spots the speckled leaves {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been looking for. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard."
                 ],
                 "exp_gained": 20,
                 "supply": [
@@ -651,7 +671,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to carry everything back to camp, but {PRONOUN\/p_l\/subject} {VERB\/p_l\/stick\/sticks} the location in {PRONOUN\/p_l\/poss} mind as a place to return to."
+                    "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to carry everything back to camp, but {PRONOUN/p_l/subject} {VERB/p_l/stick/sticks} the location in {PRONOUN/p_l/poss} mind as a place to return to."
                 ],
                 "exp_gained": 20,
                 "supply": [
@@ -690,7 +710,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Night falls, and still s_c0 insists to {PRONOUN\/s_c0\/self} that {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/need\/needs} to keep going \u2014 {PRONOUN\/s_c0\/subject} just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/find\/finds} those precious speckled leaves."
+                    "Night falls, and still s_c0 insists to {PRONOUN/s_c0/self} that {PRONOUN/s_c0/subject} {VERB/s_c0/need/needs} to keep going \u2014 {PRONOUN/s_c0/subject} just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until {PRONOUN/s_c0/subject} {VERB/s_c0/find/finds} those precious speckled leaves."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -739,7 +759,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l searches until {PRONOUN\/p_l\/poss} pawpads are sore and {PRONOUN\/p_l\/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN\/p_l\/subject\/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
+                    "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted, but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
                 ],
                 "exp_gained": 0,
                 "condition": [
@@ -780,13 +800,17 @@
         },
         "chance_of_success": 15,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l is on a mission to find lungwort. As the only reliable cure for yellowcough, {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} determined that c_n replenish their stocks of it. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/take\/takes} along a warrior escort to help.",
-        "decline_text": "A cat grabs p_l's attention before {PRONOUN\/p_l\/subject} can leave.",
+        "intro_strings": [
+            "p_l is on a mission to find lungwort. As the only reliable cure for yellowcough, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} determined that c_n replenish their stocks of it. {PRONOUN/p_l/subject/CAP} {VERB/p_l/take/takes} along a warrior escort to help."
+        ],
+        "decline_strings": [
+            "A cat grabs p_l's attention before {PRONOUN/p_l/subject} can leave."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "It takes them all day, but finally, p_l spots the speckled leaves they've been looking for. For just a second, {PRONOUN\/p_l\/subject} {VERB\/p_l\/feel\/feels} the weight of {PRONOUN\/p_l\/poss} responsibilities lift, the strength of that relief catching {PRONOUN\/p_l\/object} off guard."
+                    "It takes them all day, but finally, p_l spots the speckled leaves they've been looking for. For just a second, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} the weight of {PRONOUN/p_l/poss} responsibilities lift, the strength of that relief catching {PRONOUN/p_l/object} off guard."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -803,7 +827,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from gained a greater respect for cat_to's role after seeing {PRONOUN\/cat_to\/object} persevere in a search for lungwort."
+                            "cats_from": "cat_from gained a greater respect for cat_to's role after seeing {PRONOUN/cat_to/object} persevere in a search for lungwort."
                         }
                     },
                     {
@@ -833,7 +857,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up {PRONOUN\/p_l\/poss} mostly-obliging escort and carries the extensive harvest home, tail waving jovially with {PRONOUN\/p_l\/poss} good mood."
+                    "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up {PRONOUN/p_l/poss} mostly-obliging escort and carries the extensive harvest home, tail waving jovially with {PRONOUN/p_l/poss} good mood."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -850,7 +874,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from gained a greater respect for cat_to's role after seeing {PRONOUN\/cat_to\/object} persevere in a search for lungwort."
+                            "cats_from": "cat_from gained a greater respect for cat_to's role after seeing {PRONOUN/cat_to/object} persevere in a search for lungwort."
                         }
                     },
                     {
@@ -914,7 +938,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "cat_from gained a greater respect for cat_to's role after seeing {PRONOUN\/cat_to\/poss} clever mind at work in a search for lungwort."
+                            "cats_from": "cat_from gained a greater respect for cat_to's role after seeing {PRONOUN/cat_to/poss} clever mind at work in a search for lungwort."
                         }
                     },
                     {
@@ -977,7 +1001,7 @@
                         ],
                         "amount": 10,
                         "log": {
-                            "cats_from": "cat_from gained a greater respect for cat_to's role after seeing {PRONOUN\/cat_to\/object} persevere into nightfall during a search for lungwort."
+                            "cats_from": "cat_from gained a greater respect for cat_to's role after seeing {PRONOUN/cat_to/object} persevere into nightfall during a search for lungwort."
                         }
                     },
                     {
@@ -1009,7 +1033,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "By the time they give up and return to camp, p_l is approaching explosion point with r_c0. {PRONOUN\/r_c0\/subject\/CAP}{VERB\/r_c0\/'ve\/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today."
+                    "By the time they give up and return to camp, p_l is approaching explosion point with r_c0. {PRONOUN/r_c0/subject/CAP}{VERB/r_c0/'ve/'s} gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -1038,7 +1062,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "p_l searches until {PRONOUN\/p_l\/poss} pawpads are sore and {PRONOUN\/p_l\/poss} muscles exhausted but can't find lungwort anywhere. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/return\/returns} to camp disappointed but determined to try again. It's simply too important to not keep a good supply of."
+                    "p_l searches until {PRONOUN/p_l/poss} pawpads are sore and {PRONOUN/p_l/poss} muscles exhausted but can't find lungwort anywhere. {PRONOUN/p_l/subject/CAP} {VERB/p_l/return/returns} to camp disappointed but determined to try again. It's simply too important to not keep a good supply of."
                 ],
                 "exp_gained": 0,
                 "condition": [
@@ -1096,13 +1120,17 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l goes out with a warrior escort, both for safety and for carrying capacity should {PRONOUN\/p_l\/subject} find anything.",
-        "decline_text": "{PRONOUN\/p_l\/poss\/CAP} escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
+        "intro_strings": [
+            "p_l goes out with a warrior escort, both for safety and for carrying capacity should {PRONOUN/p_l/subject} find anything."
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/poss/CAP} escort is called away on a different mission, and p_l decides to reorganize the herb store instead."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 starts up a conversation with {PRONOUN\/p_l\/object} about the herbs they're looking for. p_l launches into the usual spiel, and to {PRONOUN\/p_l\/poss} astonishment, r_c0 is actually interested. It makes {PRONOUN\/p_l\/poss} heart feel lighter getting to share {PRONOUN\/p_l\/poss} knowledge and skills with someone who respects {PRONOUN\/p_l\/object}."
+                    "r_c0 starts up a conversation with {PRONOUN/p_l/object} about the herbs they're looking for. p_l launches into the usual spiel, and to {PRONOUN/p_l/poss} astonishment, r_c0 is actually interested. It makes {PRONOUN/p_l/poss} heart feel lighter getting to share {PRONOUN/p_l/poss} knowledge and skills with someone who respects {PRONOUN/p_l/object}."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -1133,7 +1161,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 has always been good at talking, but chatting with r_c0 {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/feel\/feels} like {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/don't\/doesn't} have to be. It's just an herb gathering patrol, but s_c0 feels more relaxed than {PRONOUN\/s_c0\/subject}{VERB\/s_c0\/'ve\/'s} felt in moons when {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/return\/returns} to camp, smiling softly."
+                    "s_c0 has always been good at talking, but chatting with r_c0 {PRONOUN/s_c0/subject} {VERB/s_c0/feel/feels} like {PRONOUN/s_c0/subject} {VERB/s_c0/don't/doesn't} have to be. It's just an herb gathering patrol, but s_c0 feels more relaxed than {PRONOUN/s_c0/subject}{VERB/s_c0/'ve/'s} felt in moons when {PRONOUN/s_c0/subject} {VERB/s_c0/return/returns} to camp, smiling softly."
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -1206,7 +1234,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Not only do they not find anything, p_l wants to murder s_c0. {PRONOUN\/s_c0\/subject\/CAP}{VERB\/s_c0\/'re\/'s} obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+                    "Not only do they not find anything, p_l wants to murder s_c0. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1287,13 +1315,17 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l heads out, leading a patrol of medicine cats to gather herbs together.",
-        "decline_text": "...And they're called back almost immediately, as one of the elders starts hacking up something.",
+        "intro_strings": [
+            "p_l heads out, leading a patrol of medicine cats to gather herbs together."
+        ],
+        "decline_strings": [
+            "...And they're called back almost immediately, as one of the elders starts hacking up something."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "The ground is slippery and damp, and as p_l falls, r_c0 catches {PRONOUN\/p_l\/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly."
+                    "The ground is slippery and damp, and as p_l falls, r_c0 catches {PRONOUN/p_l/object}. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly."
                 ],
                 "involved_cats": {
                     "r_c0": {}
@@ -1323,7 +1355,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 has always been good at talking, but chatting with r_c0 {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/feel\/feels} like {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/don't\/doesn't} have to be. It's just an herb gathering patrol, but s_c0 feels more relaxed than {PRONOUN\/s_c0\/subject}{VERB\/s_c0\/'ve\/'s} felt in moons when {PRONOUN\/s_c0\/subject} {VERB\/s_c0\/return\/returns} to camp, smiling softly."
+                    "s_c0 has always been good at talking, but chatting with r_c0 {PRONOUN/s_c0/subject} {VERB/s_c0/feel/feels} like {PRONOUN/s_c0/subject} {VERB/s_c0/don't/doesn't} have to be. It's just an herb gathering patrol, but s_c0 feels more relaxed than {PRONOUN/s_c0/subject}{VERB/s_c0/'ve/'s} felt in moons when {PRONOUN/s_c0/subject} {VERB/s_c0/return/returns} to camp, smiling softly."
                 ],
                 "involved_cats": {
                     "r_c0": {},
@@ -1396,7 +1428,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Not only do they not find anything, p_l wants to murder s_c0. {PRONOUN\/s_c0\/subject\/CAP}{VERB\/s_c0\/'re\/'s} obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+                    "Not only do they not find anything, p_l wants to murder s_c0. {PRONOUN/s_c0/subject/CAP}{VERB/s_c0/'re/'s} obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1463,8 +1495,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l and r_c0 take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
-        "decline_text": "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh.",
+        "intro_strings": [
+            "p_l and r_c0 take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!"
+        ],
+        "decline_strings": [
+            "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1561,7 +1597,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Even though there should be many herbs, they fail to find anything. p_l blames r_c0 for distracting {PRONOUN\/p_l\/object}, and they get into a huge argument."
+                    "Even though there should be many herbs, they fail to find anything. p_l blames r_c0 for distracting {PRONOUN/p_l/object}, and they get into a huge argument."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [

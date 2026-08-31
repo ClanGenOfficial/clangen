@@ -19,8 +19,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/bch_train_lore1_Wr",
-        "intro_text": "p_l takes the patrol down to the beach to train, but the patrol pauses when they encounter something odd.",
-        "decline_text": "It's best to go back to camp and ignore the oddities on the beach.",
+        "intro_strings": [
+            "p_l takes the patrol down to the beach to train, but the patrol pauses when they encounter something odd."
+        ],
+        "decline_strings": [
+            "It's best to go back to camp and ignore the oddities on the beach."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -251,8 +255,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "cat_sprites/gen_train_solo_Wr",
-        "intro_text": "p_l decides to go down to the beach by {PRONOUN/p_l/self}. There seems to be something strange here...",
-        "decline_text": "It's best to go back to camp and ignore the oddities on the beach.",
+        "intro_strings": [
+            "p_l decides to go down to the beach by {PRONOUN/p_l/self}. There seems to be something strange here..."
+        ],
+        "decline_strings": [
+            "It's best to go back to camp and ignore the oddities on the beach."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -406,8 +414,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/bch_train_session1_ApWr",
-        "intro_text": "The large patrol practices holding another cat's head above the water, using the calm (but <i>very</i> chilly) waters of a rockpool. r_c1 shivers, despite being huddled with p_l. Why couldn't {PRONOUN/r_c1/subject} practice this on a hot sunny day?",
-        "decline_text": "Taking a break turns into ending the patrol early.",
+        "intro_strings": [
+            "The large patrol practices holding another cat's head above the water, using the calm (but <i>very</i> chilly) waters of a rockpool. r_c1 shivers, despite being huddled with p_l. Why couldn't {PRONOUN/r_c1/subject} practice this on a hot sunny day?"
+        ],
+        "decline_strings": [
+            "Taking a break turns into ending the patrol early."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

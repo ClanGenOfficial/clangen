@@ -141,7 +141,7 @@
         "event_id": "arrogant_elder",
         "strings": [
             "Yells at anycat within earshot to bring {PRONOUN/m_c/object} fresh moss",
-            "Is telling stories \u00e2\u20ac\u201d only about {PRONOUN/m_c/self}, of course"
+            "Is telling stories — only about {PRONOUN/m_c/self}, of course"
         ],
         "involved_cats": {
             "m_c": {

@@ -23,8 +23,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
-        "intro_text": "p_l tastes the air and perks up — there's a squirrel nearby, nibbling the lush plant growth near the base of a tree!",
-        "decline_text": "After a moment's deliberation, p_l decides to move on.",
+        "intro_strings": [
+            "p_l tastes the air and perks up — there's a squirrel nearby, nibbling the lush plant growth near the base of a tree!"
+        ],
+        "decline_strings": [
+            "After a moment's deliberation, p_l decides to move on."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -161,8 +165,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
-        "intro_text": "p_l scents a squirrel on the air! Greenleaf has made prey fat and unaware, so surely this will be an easy catch?",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to move on and ignore the squirrel for now.",
+        "intro_strings": [
+            "p_l scents a squirrel on the air! Greenleaf has made prey fat and unaware, so surely this will be an easy catch?"
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to move on and ignore the squirrel for now."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -260,8 +268,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
-        "intro_text": "p_l instructs r_c1 to scent the air and nods in approval when r_c1 says {PRONOUN/r_c1/subject} {VERB/r_c1/smell/smells} squirrel. With greenleaf comes fatter prey that tends to stick to shady spots — p_l points out a few likely destinations the squirrel may be heading to, then softly asks r_c1 how {PRONOUN/r_c1/subject}'d like to proceed.",
-        "decline_text": "r_c1 looks apprehensive, then quietly says {PRONOUN/r_c1/subject} {VERB/r_c1/want/wants} to look for something easier.",
+        "intro_strings": [
+            "p_l instructs r_c1 to scent the air and nods in approval when r_c1 says {PRONOUN/r_c1/subject} {VERB/r_c1/smell/smells} squirrel. With greenleaf comes fatter prey that tends to stick to shady spots — p_l points out a few likely destinations the squirrel may be heading to, then softly asks r_c1 how {PRONOUN/r_c1/subject}'d like to proceed."
+        ],
+        "decline_strings": [
+            "r_c1 looks apprehensive, then quietly says {PRONOUN/r_c1/subject} {VERB/r_c1/want/wants} to look for something easier."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -445,8 +457,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_hunt_gen_squirreltreetoptumble_WrWr",
-        "intro_text": "As the patrol walks through the forest, a loud chittering from above interrupts them. r_c0 looks up just in time to get a shower of twigs and leaves to the face, while p_l exclaims aloud when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above.",
-        "decline_text": "Though they snort in amusement, the patrol decides to move on to easier prey rather than waste their energy amongst the trees.",
+        "intro_strings": [
+            "As the patrol walks through the forest, a loud chittering from above interrupts them. r_c0 looks up just in time to get a shower of twigs and leaves to the face, while p_l exclaims aloud when {PRONOUN/p_l/subject} {VERB/p_l/spot/spots} squirrels darting through the branches above."
+        ],
+        "decline_strings": [
+            "Though they snort in amusement, the patrol decides to move on to easier prey rather than waste their energy amongst the trees."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -709,8 +725,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
-        "intro_text": "As the patrol walks through the woods, r_c0 explains an idea {PRONOUN/r_c0/subject} had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
-        "decline_text": "The patrol decides they'd rather not spend time on something that might not work when they could be doing something they know <i>does</i>.",
+        "intro_strings": [
+            "As the patrol walks through the woods, r_c0 explains an idea {PRONOUN/r_c0/subject} had for squirrel hunting. It sounds a little strange, but perhaps it could work?"
+        ],
+        "decline_strings": [
+            "The patrol decides they'd rather not spend time on something that might not work when they could be doing something they know <i>does</i>."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -907,8 +927,12 @@
         },
         "chance_of_success": 45,
         "patrol_art": "backgrounds/fst_canopy",
-        "intro_text": "As p_l walks through the bright foliage of greenleaf, some loud twittering from above catches {PRONOUN/p_l/poss} ear. A bird! Maybe if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} careful, {PRONOUN/p_l/subject} can catch it by surprise...",
-        "decline_text": "p_l shakes {PRONOUN/p_l/poss} head and decides to leave the bird alone. It would be too much work to try and catch it from that high up, anyway.",
+        "intro_strings": [
+            "As p_l walks through the bright foliage of greenleaf, some loud twittering from above catches {PRONOUN/p_l/poss} ear. A bird! Maybe if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} careful, {PRONOUN/p_l/subject} can catch it by surprise..."
+        ],
+        "decline_strings": [
+            "p_l shakes {PRONOUN/p_l/poss} head and decides to leave the bird alone. It would be too much work to try and catch it from that high up, anyway."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -989,8 +1013,12 @@
         },
         "chance_of_success": 65,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "p_l nearly thinks {PRONOUN/p_l/subject}'ll have to come home empty-pawed when a rustling in the grass alerts {PRONOUN/p_l/object} to prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/drop/drops} down into a crouch, scenting bird on the air...",
-        "decline_text": "...but p_l stands up again just as quickly. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} never hunted bird before, and {VERB/p_l/don't/doesn't} feel like walking back to camp with a mouthful of feathers. {PRONOUN/p_l/subject/CAP}'ll find easier prey if {PRONOUN/p_l/subject} just {VERB/p_l/keep/keeps} walking, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sure of it.",
+        "intro_strings": [
+            "p_l nearly thinks {PRONOUN/p_l/subject}'ll have to come home empty-pawed when a rustling in the grass alerts {PRONOUN/p_l/object} to prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/drop/drops} down into a crouch, scenting bird on the air..."
+        ],
+        "decline_strings": [
+            "...but p_l stands up again just as quickly. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} never hunted bird before, and {VERB/p_l/don't/doesn't} feel like walking back to camp with a mouthful of feathers. {PRONOUN/p_l/subject/CAP}'ll find easier prey if {PRONOUN/p_l/subject} just {VERB/p_l/keep/keeps} walking, {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sure of it."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1060,8 +1088,12 @@
         },
         "chance_of_success": 75,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "While on patrol, p_l catches the scent of a feathery fiend and flicks {PRONOUN/p_l/poss} tail to signal 'stop.' This is a perfect opportunity for r_c1 to practice hunting some harder prey.",
-        "decline_text": "r_c1 complains that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} too tired to hunt something difficult and would rather look for a mouse or squirrel instead. p_l sighs, but relents. It's getting late in the day, anyway.",
+        "intro_strings": [
+            "While on patrol, p_l catches the scent of a feathery fiend and flicks {PRONOUN/p_l/poss} tail to signal 'stop.' This is a perfect opportunity for r_c1 to practice hunting some harder prey."
+        ],
+        "decline_strings": [
+            "r_c1 complains that {PRONOUN/r_c1/subject}{VERB/r_c1/'re/'s} too tired to hunt something difficult and would rather look for a mouse or squirrel instead. p_l sighs, but relents. It's getting late in the day, anyway."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1252,8 +1284,12 @@
         },
         "chance_of_success": 35,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "The patrol is brought up short by the sound of aggressive flapping and the cries of a hawk. Approaching cautiously through the bushes, they see a red-tailed hawk, downed with a broken wing, trying in vain to get back into the sky. This could be an opportunity...",
-        "decline_text": "Even with a broken wing, a hawk is a formidable adversary, and the patrol agrees not to risk getting injured for some more fresh-kill. There is plenty of prey in the forest, after all, and it's better to be safe than sorry.",
+        "intro_strings": [
+            "The patrol is brought up short by the sound of aggressive flapping and the cries of a hawk. Approaching cautiously through the bushes, they see a red-tailed hawk, downed with a broken wing, trying in vain to get back into the sky. This could be an opportunity..."
+        ],
+        "decline_strings": [
+            "Even with a broken wing, a hawk is a formidable adversary, and the patrol agrees not to risk getting injured for some more fresh-kill. There is plenty of prey in the forest, after all, and it's better to be safe than sorry."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1536,8 +1572,12 @@
         },
         "chance_of_success": 45,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "As p_l searches for prey to hunt, {PRONOUN/p_l/subject} {VERB/p_l/come/comes} across a raven pecking in the dirt.",
-        "decline_text": "Corvid meat is tough and stringy, and the birds are too clever to make easy prey. p_l decides to hunt juicier, dumber prey today.",
+        "intro_strings": [
+            "As p_l searches for prey to hunt, {PRONOUN/p_l/subject} {VERB/p_l/come/comes} across a raven pecking in the dirt."
+        ],
+        "decline_strings": [
+            "Corvid meat is tough and stringy, and the birds are too clever to make easy prey. p_l decides to hunt juicier, dumber prey today."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1651,8 +1691,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
-        "intro_text": "The patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree.",
-        "decline_text": "The patrol ignores the squirrel.",
+        "intro_strings": [
+            "The patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree."
+        ],
+        "decline_strings": [
+            "The patrol ignores the squirrel."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1724,8 +1768,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "The patrol heads out, determined to visit a distant clearing, where the grass has set to seed and attracted birds. However, still several fox-length from the clearing, p_l looks around and realizes r_c0 isn't with the patrol.",
-        "decline_text": "r_c0 eventually catches up.",
+        "intro_strings": [
+            "The patrol heads out, determined to visit a distant clearing, where the grass has set to seed and attracted birds. However, still several fox-length from the clearing, p_l looks around and realizes r_c0 isn't with the patrol."
+        ],
+        "decline_strings": [
+            "r_c0 eventually catches up."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1942,8 +1990,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "backgrounds/gen_shortswim",
-        "intro_text": "p_l hunts near the stream, hoping for an easy hunt to get out of the heat. {PRONOUN/p_l/poss/CAP} eyes lock onto a large rat drinking from the stream.",
-        "decline_text": "One rat? p_l could do way better than just a single rat in greenleaf. {PRONOUN/p_l/subject/CAP} {VERB/p_l/continue/continues} on to find more rewarding prey.",
+        "intro_strings": [
+            "p_l hunts near the stream, hoping for an easy hunt to get out of the heat. {PRONOUN/p_l/poss/CAP} eyes lock onto a large rat drinking from the stream."
+        ],
+        "decline_strings": [
+            "One rat? p_l could do way better than just a single rat in greenleaf. {PRONOUN/p_l/subject/CAP} {VERB/p_l/continue/continues} on to find more rewarding prey."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2003,13 +2055,19 @@
                 "status": [
                     "apprentice"
                 ],
-                "has_mentor": {"current": true}
+                "has_mentor": {
+                    "current": true
+                }
             }
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_rat_Wr",
-        "intro_text": "p_l hides {PRONOUN/p_l/self} in a clump of ferns, keeping as far away from the sweltering greenleaf heat as {PRONOUN/p_l/subject} can. {PRONOUN/p_l/poss/CAP} ears perk at the soft hiss. Seems someone else had the same idea.",
-        "decline_text": "p_l decides that one rat isn't worth missing out on some fun! {PRONOUN/p_l/subject/CAP} instead {VERB/p_l/chase/chases} after leaves for the rest of the hunting patrol.",
+        "intro_strings": [
+            "p_l hides {PRONOUN/p_l/self} in a clump of ferns, keeping as far away from the sweltering greenleaf heat as {PRONOUN/p_l/subject} can. {PRONOUN/p_l/poss/CAP} ears perk at the soft hiss. Seems someone else had the same idea."
+        ],
+        "decline_strings": [
+            "p_l decides that one rat isn't worth missing out on some fun! {PRONOUN/p_l/subject/CAP} instead {VERB/p_l/chase/chases} after leaves for the rest of the hunting patrol."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2112,8 +2170,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "backgrounds/gen_shortswim",
-        "intro_text": "p_l and r_c1 walk in the patches of shade, eager to leave the greenleaf sun to the plants. p_l's nose twitches at rat scent near the stream-stones, seeing two of them attempt to cross.",
-        "decline_text": "Running water is always a threat to cats. p_l takes r_c1 somewhere else to hunt.",
+        "intro_strings": [
+            "p_l and r_c1 walk in the patches of shade, eager to leave the greenleaf sun to the plants. p_l's nose twitches at rat scent near the stream-stones, seeing two of them attempt to cross."
+        ],
+        "decline_strings": [
+            "Running water is always a threat to cats. p_l takes r_c1 somewhere else to hunt."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2253,8 +2315,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_text": "p_l leads the patrol towards the abandoned Twoleg nest, listening to r_c's plan. Rats were seen hiding inside to protect themselves from the sweltering heat. Perhaps it would be a perfect hunting spot?",
-        "decline_text": "The other cats disagree with such a risk and resume their normal hunting patrol.",
+        "intro_strings": [
+            "p_l leads the patrol towards the abandoned Twoleg nest, listening to r_c's plan. Rats were seen hiding inside to protect themselves from the sweltering heat. Perhaps it would be a perfect hunting spot?"
+        ],
+        "decline_strings": [
+            "The other cats disagree with such a risk and resume their normal hunting patrol."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2494,8 +2560,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_lizard_Wr",
-        "intro_text": "Something skitters across the grass, catching the patrol's eyes. A little lizard!",
-        "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
+        "intro_strings": [
+            "Something skitters across the grass, catching the patrol's eyes. A little lizard!"
+        ],
+        "decline_strings": [
+            "Startled by the lizard, the patrol watches it scurry away."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2722,8 +2792,12 @@
         ],
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_lizard_Wr",
-        "intro_text": "Something skitters across the grass, catching the patrol's eyes. A little lizard!",
-        "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
+        "intro_strings": [
+            "Something skitters across the grass, catching the patrol's eyes. A little lizard!"
+        ],
+        "decline_strings": [
+            "Startled by the lizard, the patrol watches it scurry away."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2829,8 +2903,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "The patrol comes across a vole nibbling at a seed.",
-        "decline_text": "The patrol decides to look for other prey.",
+        "intro_strings": [
+            "The patrol comes across a vole nibbling at a seed."
+        ],
+        "decline_strings": [
+            "The patrol decides to look for other prey."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -2956,8 +3034,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "animals/fst_squirrelchase",
-        "intro_text": "The patrol notices a commotion and finds two squirrels chasing each other across the forest floor.",
-        "decline_text": "The patrol decides there's probably easier prey to find elsewhere.",
+        "intro_strings": [
+            "The patrol notices a commotion and finds two squirrels chasing each other across the forest floor."
+        ],
+        "decline_strings": [
+            "The patrol decides there's probably easier prey to find elsewhere."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3156,8 +3238,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_hunt_heat_WrWr",
-        "intro_text": "It is extremely hot out today, and the hunting patrol is having a hard time staying on task. p_l debates turning back home.",
-        "decline_text": "The patrol decides to head back to camp. They can hunt a different day.",
+        "intro_strings": [
+            "It is extremely hot out today, and the hunting patrol is having a hard time staying on task. p_l debates turning back home."
+        ],
+        "decline_strings": [
+            "The patrol decides to head back to camp. They can hunt a different day."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3322,8 +3408,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "hunt_general_intro",
-        "intro_text": "The patrol comes across a strange Twoleg object smelling slightly of smoke and prey. Intriguing, but also sort of terrifying. Don't the Twolegs know the danger of fire?",
-        "decline_text": "The patrol decides to avoid the Twoleg object.",
+        "intro_strings": [
+            "The patrol comes across a strange Twoleg object smelling slightly of smoke and prey. Intriguing, but also sort of terrifying. Don't the Twolegs know the danger of fire?"
+        ],
+        "decline_strings": [
+            "The patrol decides to avoid the Twoleg object."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3411,8 +3501,12 @@
         "chance_of_success": 40,
         "patrol_art": "fst_hunt_fox_greenleafscavenge1",
         "patrol_art_clean": "hunt_general_intro",
-        "intro_text": "The patrol catches the scent of a fox — but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
-        "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "intro_strings": [
+            "The patrol catches the scent of a fox — but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it."
+        ],
+        "decline_strings": [
+            "The patrol decides not to quarrel with the fox and to find prey elsewhere."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -3719,8 +3813,12 @@
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
         "patrol_art_clean": "hunt_general_intro",
-        "intro_text": "The patrol catches the scent of a fox — but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
-        "decline_text": "The patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "intro_strings": [
+            "The patrol catches the scent of a fox — but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it."
+        ],
+        "decline_strings": [
+            "The patrol decides not to quarrel with the fox and to find prey elsewhere."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4041,8 +4139,12 @@
         "chance_of_success": 30,
         "patrol_art": "hunt_general_intro",
         "patrol_art_clean": "hunt_general_intro",
-        "intro_text": "p_l catches the scent of a fox — but is it red, or gray? Tracking it, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} {PRONOUN/p_l/poss} red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
-        "decline_text": "p_l decides not to quarrel with the fox and to find prey elsewhere.",
+        "intro_strings": [
+            "p_l catches the scent of a fox — but is it red, or gray? Tracking it, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} {PRONOUN/p_l/poss} red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it."
+        ],
+        "decline_strings": [
+            "p_l decides not to quarrel with the fox and to find prey elsewhere."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4311,8 +4413,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
-        "intro_text": "p_l catches scent of a mouse nearby and drools at the thought of greenleaf fresh-kill. It's a great day for hunting, too; c_n's woods overflow with greenleaf's bounty.",
-        "decline_text": "p_l ignores the mouse.",
+        "intro_strings": [
+            "p_l catches scent of a mouse nearby and drools at the thought of greenleaf fresh-kill. It's a great day for hunting, too; c_n's woods overflow with greenleaf's bounty."
+        ],
+        "decline_strings": [
+            "p_l ignores the mouse."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4406,8 +4512,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/gen_hunt_mouse_Wr",
-        "intro_text": "p_l catches scent of a mouse nearby. Surely greenleaf is the perfect time to try solo-hunting. Everyone always says this is the season when the prey wanders right into a cat's jaws.",
-        "decline_text": "p_l ignores the mouse.",
+        "intro_strings": [
+            "p_l catches scent of a mouse nearby. Surely greenleaf is the perfect time to try solo-hunting. Everyone always says this is the season when the prey wanders right into a cat's jaws."
+        ],
+        "decline_strings": [
+            "p_l ignores the mouse."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4505,8 +4615,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "backgrounds/fst_dirttrail",
-        "intro_text": "r_c1 catches scent of a mouse nearby. p_l congratulates {PRONOUN/r_c1/object} and gives {PRONOUN/r_c1/object} some tips on where the mouse might be headed. With the heat of greenleaf, {PRONOUN/r_c1/poss} prey will probably seek out the damp gully ahead.",
-        "decline_text": "They decide to stay put and keep scenting for prey nearby.",
+        "intro_strings": [
+            "r_c1 catches scent of a mouse nearby. p_l congratulates {PRONOUN/r_c1/object} and gives {PRONOUN/r_c1/object} some tips on where the mouse might be headed. With the heat of greenleaf, {PRONOUN/r_c1/poss} prey will probably seek out the damp gully ahead."
+        ],
+        "decline_strings": [
+            "They decide to stay put and keep scenting for prey nearby."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4650,8 +4764,12 @@
         ],
         "chance_of_success": 10,
         "patrol_art": "cat_sprites/gen_groupwalk_WrWrWr",
-        "intro_text": "As the patrol heads out into the forest to hunt, r_c0 seems to be absolutely unconcerned with {PRONOUN/r_c0/poss} duties, instead ambling along as through the prey is going to waltz into {PRONOUN/r_c0/poss} paws.",
-        "decline_text": "The cats are called back to camp — there's something the deputy needs to discuss with them.",
+        "intro_strings": [
+            "As the patrol heads out into the forest to hunt, r_c0 seems to be absolutely unconcerned with {PRONOUN/r_c0/poss} duties, instead ambling along as through the prey is going to waltz into {PRONOUN/r_c0/poss} paws."
+        ],
+        "decline_strings": [
+            "The cats are called back to camp — there's something the deputy needs to discuss with them."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -4889,8 +5007,12 @@
         },
         "chance_of_success": 10,
         "patrol_art": "backgrounds/fst_dirttrail",
-        "intro_text": "As the patrol heads out into the forest to hunt, r_c0 suggests a sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice.",
-        "decline_text": "The cats are called back to camp — there's something the deputy needs to discuss with them.",
+        "intro_strings": [
+            "As the patrol heads out into the forest to hunt, r_c0 suggests a sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice."
+        ],
+        "decline_strings": [
+            "The cats are called back to camp — there's something the deputy needs to discuss with them."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5058,8 +5180,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "cat_sprites/fst_hunt_GL_rain_Wr",
-        "intro_text": "The light drizzle falling on {PRONOUN/p_l/poss} whiskers is refreshing, after so many days of warmth. p_l wanders out to hunt, making the most of the drop in temperature so {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} have to stalk in the full heat of greenleaf.",
-        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/were/was}n't dead set on hunting, and p_l allows {PRONOUN/p_l/self} to be distracted by one of {PRONOUN/p_l/poss} Clanmates instead.",
+        "intro_strings": [
+            "The light drizzle falling on {PRONOUN/p_l/poss} whiskers is refreshing, after so many days of warmth. p_l wanders out to hunt, making the most of the drop in temperature so {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} have to stalk in the full heat of greenleaf."
+        ],
+        "decline_strings": [
+            "{PRONOUN/p_l/subject/CAP} {VERB/p_l/were/was}n't dead set on hunting, and p_l allows {PRONOUN/p_l/self} to be distracted by one of {PRONOUN/p_l/poss} Clanmates instead."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5269,13 +5395,19 @@
                 "status": [
                     "apprentice"
                 ],
-                "has_mentor": {"current": true}
+                "has_mentor": {
+                    "current": true
+                }
             }
         },
         "chance_of_success": 50,
         "patrol_art": "cat_sprites/gen_running2_Ap",
-        "intro_text": "It's been so hot recently, but today, with the clouds providing a slight drizzle, p_l has the zoomies. {PRONOUN/p_l/poss/CAP} mentor wearily suggests that {PRONOUN/p_l/subject} should go hunting if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} so energetic. Sure!",
-        "decline_text": "...Maybe it'd be better to wait until {PRONOUN/p_l/poss} mentor is free to take {PRONOUN/p_l/object} on a hunting patrol.",
+        "intro_strings": [
+            "It's been so hot recently, but today, with the clouds providing a slight drizzle, p_l has the zoomies. {PRONOUN/p_l/poss/CAP} mentor wearily suggests that {PRONOUN/p_l/subject} should go hunting if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} so energetic. Sure!"
+        ],
+        "decline_strings": [
+            "...Maybe it'd be better to wait until {PRONOUN/p_l/poss} mentor is free to take {PRONOUN/p_l/object} on a hunting patrol."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -5449,8 +5581,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_hunt_squirrel_Wr",
-        "intro_text": "The greenleaf air is warm on {PRONOUN/p_l/poss} whiskers as p_l leads {PRONOUN/p_l/poss} patrol out. p_l suddenly motions for a halt. The cats can see a squirrel chewing on a nut beneath a tree. Surely if they try to catch it, it'll just retreat up into the branches. But r_c0 seems to want to try.",
-        "decline_text": "They decide it's not worth the effort and look for other prey.",
+        "intro_strings": [
+            "The greenleaf air is warm on {PRONOUN/p_l/poss} whiskers as p_l leads {PRONOUN/p_l/poss} patrol out. p_l suddenly motions for a halt. The cats can see a squirrel chewing on a nut beneath a tree. Surely if they try to catch it, it'll just retreat up into the branches. But r_c0 seems to want to try."
+        ],
+        "decline_strings": [
+            "They decide it's not worth the effort and look for other prey."
+        ],
         "success_outcomes": [
             {
                 "frequency": 3,

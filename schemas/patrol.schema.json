@@ -1696,15 +1696,21 @@
           "title": "Other Clan Temperament",
           "type": "array"
         },
-        "intro_text": {
+        "intro_strings": {
           "description": "The text that displays when the patrol first starts.",
-          "title": "Intro Text",
-          "type": "string"
+          "items": {
+            "type": "string"
+          },
+          "title": "Intro Strings",
+          "type": "array"
         },
-        "decline_text": {
+        "decline_strings": {
           "description": "The text that displays if the patrol is declined (do not proceed)",
-          "title": "Decline Text",
-          "type": "string"
+          "items": {
+            "type": "string"
+          },
+          "title": "Decline Strings",
+          "type": "array"
         },
         "success_outcomes": {
           "items": {
@@ -1741,8 +1747,8 @@
         "patrol_art",
         "frequency",
         "chance_of_success",
-        "intro_text",
-        "decline_text",
+        "intro_strings",
+        "decline_strings",
         "success_outcomes",
         "fail_outcomes"
       ],
