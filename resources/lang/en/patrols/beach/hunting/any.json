@@ -7013,11 +7013,13 @@
         "patrol_art": "hunt_general_intro",
         "intro_strings": [
             "The sun's out, and p_l has been assigned a moderately tolerable hunting patrol — {PRONOUN/p_l/poss} family!",
-            "The hunting patrol heads out early, when the sun is just peeking over the horizon."
+            "The hunting patrol heads out early, when the sun is just peeking over the horizon.",
+            "The siblings head out to one of the further hunting grounds of the beach, where a long series of shallow rock pools promises good hunting."
         ],
         "decline_strings": [
             "Cancel that — a border patrol needs backup.",
-            "They encounter a dawn patrol on their way back to camp and join up with them instead."
+            "They encounter a dawn patrol on their way back to camp and join up with them instead.",
+            "They decide to bask for a bit instead of making the long walk."
         ],
         "success_outcomes": [
             {
@@ -7219,6 +7221,158 @@
                         "adjust": "increase_large"
                     }
                 ]
+            },
+            {
+                "frequency": 4,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        2,
+                        2
+                    ]
+                },
+                "strings": [
+                    "Together, they collect a b_tp_a_s, a couple b_tp_dl_p, an old b_mp_a_s and two b_tp_a_p. It should be a great patrol, returning with so much prey — but r_c0 is acting obnoxious and {PRONOUN/r_c0/poss} sibling has little time or patience for it."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_to acted obnoxious during a hunt and cat_from lost {PRONOUN/cat_from/poss} patience."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        3,
+                        6
+                    ]
+                },
+                "strings": [
+                    "Together, they collect a b_tp_a_s, a couple b_tp_dl_p, an old b_mp_a_s and two b_tp_a_p. It should be a great patrol, returning with so much prey — but r_c0 is acting obnoxious and {PRONOUN/r_c0/poss} siblings have little time or patience for it."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "respect"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_to acted obnoxious during a hunt and cat_from lost {PRONOUN/cat_from/poss} patience."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        2,
+                        2
+                    ]
+                },
+                "strings": [
+                    "r_c0 makes a dumb comment that accidentally cuts deep. {PRONOUN/r_c0/poss/CAP} sibling works with {PRONOUN/r_c0/object} long enough to bring back a great haul of prey — but no longer."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "p_l"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_to's casual comment during a hunt hurt cat_from's feelings."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        3,
+                        6
+                    ]
+                },
+                "strings": [
+                    "r_c0 makes a dumb comment that accidentally cuts deep. {PRONOUN/r_c0/poss/CAP} siblings work with {PRONOUN/r_c0/object} long enough to bring back a great haul of prey — but no longer."
+                ],
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "r_c0"
+                        ],
+                        "cats_from": [
+                            "some_patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "trust"
+                        ],
+                        "amount": -8,
+                        "log": {
+                            "cats_from": "cat_to's casual comment during a hunt hurt cat_from's feelings."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
@@ -7232,6 +7386,34 @@
                     {
                         "type": "freshkill",
                         "adjust": "increase_tiny"
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "strings": [
+                    "The patrol tries to hunt, but s_c0 keeps stopping to duck behind bushes, until it's obvious that something is actually wrong. Eww."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "exp_gained": 0,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ],
+                "condition": [
+                    {
+                        "cats": [
+                            "s_c0"
+                        ],
+                        "condition": [
+                            "diarrhea"
+                        ]
                     }
                 ]
             },
@@ -7306,316 +7488,6 @@
                         ],
                         "condition": [
                             "severe headache"
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "bch_hunt_random_siblings2warriorslocked5",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 4,
-        "location": [
-            "beach"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                2
-            ],
-            "all apprentices": [
-                -1,
-                -1
-            ]
-        },
-        "relationship_constraint": [
-            {
-                "cats_from": [
-                    "p_l"
-                ],
-                "cats_to": [
-                    "patrol_cats"
-                ],
-                "mutual": false,
-                "constraints": [
-                    "siblings"
-                ]
-            }
-        ],
-        "chance_of_success": 50,
-        "patrol_art": "hunt_general_intro",
-        "intro_strings": [
-            "The siblings head out to one of the further hunting grounds of the beach, where a long series of shallow rock pools promises good hunting."
-        ],
-        "decline_strings": [
-            "They decide to bask for a bit instead of making the long walk."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "Together, they collect a b_tp_a_s, a couple b_tp_dl_p, an old b_mp_a_s and two b_tp_a_p. It should be a great patrol, returning with so much prey — but r_c0 is acting obnoxious and {PRONOUN/r_c0/poss} sibling has little time or patience for it."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -8,
-                        "log": {
-                            "cats_from": "cat_to acted obnoxious during a hunt and cat_from lost {PRONOUN/cat_from/poss} patience."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "r_c0 makes a dumb comment that accidentally cuts deep. {PRONOUN/r_c0/poss/CAP} sibling works with {PRONOUN/r_c0/object} long enough to bring back a great haul of prey — but no longer."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "cats_from": [
-                            "p_l"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": -8,
-                        "log": {
-                            "cats_from": "cat_to's casual comment during a hunt hurt cat_from's feelings."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "Today is just not their day."
-                ],
-                "exp_gained": 0,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
-            },
-            {
-                "frequency": 2,
-                "strings": [
-                    "The patrol tries to hunt, but r_c0 keeps stopping to duck behind bushes, until it's obvious that something is actually wrong. Eww."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 0,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ],
-                "condition": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ],
-                        "condition": [
-                            "diarrhea"
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "bch_hunt_random_siblings3to6warriorslocked5",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 4,
-        "location": [
-            "beach"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                3,
-                6
-            ],
-            "all apprentices": [
-                -1,
-                -1
-            ]
-        },
-        "relationship_constraint": [
-            {
-                "cats_from": [
-                    "p_l"
-                ],
-                "cats_to": [
-                    "patrol_cats"
-                ],
-                "mutual": false,
-                "constraints": [
-                    "siblings"
-                ]
-            }
-        ],
-        "chance_of_success": 50,
-        "patrol_art": "hunt_general_intro",
-        "intro_strings": [
-            "The siblings head out to one of the further hunting grounds of the beach, where a long series of shallow rock pools promises good hunting."
-        ],
-        "decline_strings": [
-            "They decide to bask for a bit instead of making the long walk."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "Together, they collect a b_tp_a_s, a couple b_tp_dl_p, an old b_mp_a_s and two b_tp_a_p. It should be a great patrol, returning with so much prey — but r_c0 is acting obnoxious and {PRONOUN/r_c0/poss} siblings have little time or patience for it."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "respect"
-                        ],
-                        "amount": -8,
-                        "log": {
-                            "cats_from": "cat_to acted obnoxious during a hunt and cat_from lost {PRONOUN/cat_from/poss} patience."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "r_c0 makes a dumb comment that accidentally cuts deep. {PRONOUN/r_c0/poss/CAP} siblings work with {PRONOUN/r_c0/object} long enough to bring back a great haul of prey — but no longer."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "r_c0"
-                        ],
-                        "cats_from": [
-                            "some_patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "trust"
-                        ],
-                        "amount": -8,
-                        "log": {
-                            "cats_from": "cat_to's casual comment during a hunt hurt cat_from's feelings."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "Today is just not their day."
-                ],
-                "exp_gained": 0,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
-            },
-            {
-                "frequency": 2,
-                "strings": [
-                    "The patrol tries to hunt, but r_c0 keeps stopping to duck behind bushes, until it's obvious that something is actually wrong. Eww."
-                ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
-                "exp_gained": 0,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ],
-                "condition": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ],
-                        "condition": [
-                            "diarrhea"
                         ]
                     }
                 ]
