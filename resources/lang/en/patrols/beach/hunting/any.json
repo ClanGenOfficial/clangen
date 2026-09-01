@@ -1716,16 +1716,18 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 expertly flips the octopus out of its refuge and dispatches it with a quick bite. One for the fresh-kill pile!"
+                    "s_c0 expertly flips the octopus out of its refuge and dispatches it with a quick bite. One for the fresh-kill pile!"
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 15,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "cats_from": [
                             "patrol_cats"
@@ -1982,10 +1984,12 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 pounces, feeling almost sorry for the sea creature, which is too small to put up much of a fight."
+                    "s_c0 pounces, feeling almost sorry for the sea creature, which is too small to put up much of a fight."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 15,
                 "supply": [
@@ -1996,7 +2000,7 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 3,
                 "strings": [
                     "The cats watch the roiling, uncoordinated, twisting mass of limbs, completely weirded out. The small octopus is almost to the sea before someone thinks to catch the thing. It's not a slick hunt — more of a scramble."
                 ],
@@ -2038,245 +2042,9 @@
                         "adjust": "increase_small"
                     }
                 ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "The cats watch the roiling, uncoordinated, twisting mass of limbs, completely weirded out. The octopus is almost to the sea before someone thinks to catch the thing, and in the resulting scramble, the octopus gets away entirely."
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": -3,
-                        "log": {
-                            "cats_from": "cat_from and cat_to stood around uselessly while an octopus that could have gone on the fresh-kill pile made its way back into the sea."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
             },
             {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 convinces the patrol to let it go — the poor thing is clearly struggling so much already, and this feels unfair."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "compassionate",
-                                "childish",
-                                "faithful",
-                                "loving",
-                                "sincere",
-                                "strange"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "some_patrol"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "amount": 8,
-                        "log": {
-                            "cats_from": "cat_from was oddly touched that cat_to wanted to spare the life of a struggling octopus."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "bch_hunt_octopus3",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 3,
-        "location": [
-            "beach"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                1,
-                1
-            ]
-        },
-        "chance_of_success": 60,
-        "patrol_art": "hunt_general_intro",
-        "intro_strings": [
-            "As p_l passes along the sand between the waves and some rockpools, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} one of the oddest things {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} ever seen — an octopus on land. It's clearly headed for the ocean."
-        ],
-        "decline_strings": [
-            "A little impressed and a lot weirded out, p_l decided to leave the poor creature alone."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l pounces, feeling almost sorry for the sea creature, which is too small to put up much of a fight."
-                ],
-                "exp_gained": 15,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_small"
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "p_l watches the roiling, uncoordinated, twisting mass of limbs, completely weirded out. The small octopus is almost to the sea before p_l thinks to catch the thing. It's not a slick hunt — more of a scramble."
-                ],
-                "exp_gained": 15,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_small"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "Well, this octopus decided to cross at the wrong time. Ruthlessly, s_c0 dispatches it, paws squishing through the very squishy squish."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "bloodthirsty",
-                                "cold",
-                                "fierce",
-                                "grumpy",
-                                "righteous",
-                                "strict",
-                                "vengeful"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 15,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_small"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "p_l watches the roiling, uncoordinated, twisting mass of limbs, completely weirded out. The small octopus is almost to the sea before p_l thinks to catch the thing, and in the resulting scramble, the octopus gets away entirely."
-                ],
-                "exp_gained": 0,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 lets it go — the poor thing is clearly struggling so much already, and this feels unfair."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "compassionate",
-                                "childish",
-                                "faithful",
-                                "loving",
-                                "sincere",
-                                "strange"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 0,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "bch_hunt_octopus4",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 3,
-        "location": [
-            "beach"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                6
-            ]
-        },
-        "chance_of_success": 50,
-        "patrol_art": "hunt_general_intro",
-        "intro_strings": [
-            "As the patrol passes along the sand between the waves and some rockpools, they find one of the oddest things any of them have ever seen — a huge octopus on land. It's clearly headed for the ocean."
-        ],
-        "decline_strings": [
-            "A little impressed and a lot weirded out, the patrol decided to leave the poor creature alone."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
+                "frequency": 3,
                 "strings": [
                     "The patrol pounces in a coordinated strike on the massive potential prey — but this prey has more arms than there are cats, and it takes all their energy to wrestle with the titanically strong long arms. The patrol takes a couple hours to rest afterwards before they try moving it, and in the end, they almost lose the octopus' body to the tides."
                 ],
@@ -2323,7 +2091,7 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 3,
                 "strings": [
                     "s_c0 coordinates the cats, and they all work together, distracting the octopus while another member of the patrol grabs an appendage and hauls it backwards. Through repeated short jerks and avoiding its snapping beak, they manage to drag the octopus away from the ocean. Then it's just a matter of time before it dies."
                 ],
@@ -2387,7 +2155,7 @@
                 ]
             },
             {
-                "frequency": 4,
+                "frequency": 3,
                 "strings": [
                     "With a cool head under very odd circumstances, s_c0 keeps the patrol focused on the prey opportunity and not how weird the whole thing is. The octopus is a creature so large that if it were in the water, the patrol would never have a chance, but on land and working together, they take it down."
                 ],
@@ -2459,11 +2227,8 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The cats watch the roiling, uncoordinated, twisting mass of limbs, completely weirded out. r_c0 darts in to try and catch it, but one long tentacle lazily smacks {PRONOUN/r_c0/object} back. Even on land, this octopus seems too big to tackle."
+                    "The cats watch the roiling, uncoordinated, twisting mass of limbs, completely weirded out. The octopus is almost to the sea before someone thinks to catch the thing, and in the resulting scramble, the octopus gets away entirely."
                 ],
-                "involved_cats": {
-                    "r_c0": {}
-                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
@@ -2475,11 +2240,78 @@
                         ],
                         "mutual": false,
                         "values": [
-                            "trust"
+                            "respect"
                         ],
-                        "amount": -5,
+                        "amount": -3,
                         "log": {
-                            "cats_from": "cat_from and cat_to were unable to bring down a big octopus together."
+                            "cats_from": "cat_from and cat_to stood around uselessly while an octopus that could have gone on the fresh-kill pile made its way back into the sea."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "The cats watch the roiling, uncoordinated, twisting mass of limbs, completely weirded out. s_c0 darts in to try and catch it, but one long tentacle lazily smacks {PRONOUN/s_c0/object} back. Even on land, this octopus seems too big to tackle."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
+                "exp_gained": 0,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "s_c0 convinces the patrol to let it go — the poor thing is clearly struggling so much already, and this feels unfair. They can catch a few fish instead."
+                ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {
+                            "trait": [
+                                "compassionate",
+                                "childish",
+                                "faithful",
+                                "loving",
+                                "sincere",
+                                "strange"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "some_patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 8,
+                        "log": {
+                            "cats_from": "cat_from was oddly touched that cat_to wanted to spare the life of a struggling octopus."
                         }
                     }
                 ],
@@ -2540,12 +2372,14 @@
                 ]
             },
             {
-                "frequency": 3,
+                "frequency": 2,
                 "strings": [
-                    "r_c0 pounces, trying to end the weird encounter quickly, but a tentacle grabs {PRONOUN/r_c0/object} and hauls {PRONOUN/r_c0/object} closer, revealing a massive, hooked beak. With r_c0 yowling and wriggling and a complete lack of bones to hold itself up, the octopus only manages to take a small chunk out of {PRONOUN/r_c0/object}, but it's enough to make the patrol back off."
+                    "s_c0 pounces, trying to end the weird encounter quickly, but a tentacle grabs {PRONOUN/s_c0/object} and hauls {PRONOUN/s_c0/object} closer, revealing a massive, hooked beak. With s_c0 yowling and wriggling and a complete lack of bones to hold itself up, the octopus only manages to take a small chunk out of {PRONOUN/s_c0/object}, but it's enough to make the patrol back off."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -2575,7 +2409,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "condition": [
                             "beak_bite"
@@ -2586,7 +2420,7 @@
                 ]
             },
             {
-                "frequency": 3,
+                "frequency": 2,
                 "strings": [
                     "s_c0 dances around nervously, but the patrol wants to give this hunt a try. {PRONOUN/s_c0/poss/CAP} anxiety doesn't help, and the deflated octopus manages to grab and bite {PRONOUN/s_c0/object} with its hooked beak — maybe s_c0 was right to be cautious."
                 ],
@@ -2635,13 +2469,135 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "condition": [
                             "beak_bite"
                         ],
                         "scar_history": "m_c was scarred by an octopus.",
                         "death_history": "m_c died from an octopus bite."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "event_id": "bch_hunt_octopus3",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 3,
+        "location": [
+            "beach"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                1
+            ]
+        },
+        "chance_of_success": 60,
+        "patrol_art": "hunt_general_intro",
+        "intro_strings": [
+            "As p_l passes along the sand between the waves and some rockpools, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} one of the oddest things {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} ever seen — an octopus on land. It's clearly headed for the ocean."
+        ],
+        "decline_strings": [
+            "A little impressed and a lot weirded out, p_l decided to leave the poor creature alone."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l pounces, feeling almost sorry for the sea creature, which is too small to put up much of a fight."
+                ],
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "p_l watches the roiling, uncoordinated, twisting mass of limbs, completely weirded out. The small octopus is almost to the sea before p_l thinks to catch the thing. It's not a slick hunt — more of a scramble."
+                ],
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "Well, this octopus decided to cross at the wrong time. Ruthlessly, p_l dispatches it, paws squishing through the very squishy squish."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "bloodthirsty",
+                                "cold",
+                                "fierce",
+                                "grumpy",
+                                "righteous",
+                                "strict",
+                                "vengeful"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 15,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l watches the roiling, uncoordinated, twisting mass of limbs, completely weirded out. The small octopus is almost to the sea before p_l thinks to catch the thing, and in the resulting scramble, the octopus gets away entirely."
+                ],
+                "exp_gained": 0,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
+                    }
+                ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l lets it go — the poor thing is clearly struggling so much already, and this feels unfair. {PRONOUN/p_l/subject/CAP} can catch a few fish instead."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "compassionate",
+                                "childish",
+                                "faithful",
+                                "loving",
+                                "sincere",
+                                "strange"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 0,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_tiny"
                     }
                 ]
             }
