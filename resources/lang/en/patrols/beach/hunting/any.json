@@ -6352,7 +6352,7 @@
                         "cats_from": ["p_l"],
                         "cats_to": ["r_c1"],
                         "mutual": false,
-                        "constraint": ["-mentor/app"]
+                        "constraints": ["-mentor/app"]
                     }
                 ],
                 "exp_gained": 20,
