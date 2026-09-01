@@ -587,10 +587,12 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 drops down into a hunting crouch, certain that a mouse must be the source of the noise. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/find/finds} {PRONOUN/r_c0/self} to be correct when {PRONOUN/r_c0/subject} {VERB/r_c0/pounce/pounces} into the grass and {VERB/r_c0/return/returns} to the patrol with the tasty morsel dangling from {PRONOUN/r_c0/poss} jaws."
+                    "s_c0 drops down into a hunting crouch, certain that a mouse must be the source of the noise. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/find/finds} {PRONOUN/s_c0/self} to be correct when {PRONOUN/s_c0/subject} {VERB/s_c0/pounce/pounces} into the grass and {VERB/s_c0/return/returns} to the patrol with the tasty morsel dangling from {PRONOUN/s_c0/poss} jaws."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 10,
                 "supply": [
@@ -693,10 +695,12 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c0 takes the lead in checking the source of the noise and comes face-to-face with an angry fox! Though {PRONOUN/r_c0/subject} {VERB/r_c0/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c0/object} before the rest of the patrol can back {PRONOUN/r_c0/object} up."
+                    "s_c0 takes the lead in checking the source of the noise and comes face-to-face with an angry fox! Though {PRONOUN/s_c0/subject} {VERB/s_c0/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/s_c0/object} before the rest of the patrol can back {PRONOUN/s_c0/object} up."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 0,
                 "supply": [
@@ -708,7 +712,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -719,36 +723,36 @@
                 ]
             },
             {
-                "frequency": 3,
+                "frequency": 2,
                 "strings": [
-                    "r_c0 takes the lead in checking the source of the noise and comes face-to-face with a huge, snarling dog! r_c0 yowls for {PRONOUN/r_c0/poss} patrol, but the other cats aren't quick enough to stop the beast from snapping r_c0 up in its deadly jaws."
+                    "s_c0 takes the lead in checking the source of the noise and comes face-to-face with a huge, snarling dog! s_c0 yowls for {PRONOUN/s_c0/poss} patrol, but the other cats aren't quick enough to stop the beast from snapping s_c0 up in its deadly jaws."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {}
                 },
                 "exp_gained": 0,
                 "death": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "history": "m_c was killed by a dog."
                     }
                 ]
             },
             {
-                "frequency": 3,
+                "frequency": 2,
                 "strings": [
-                    "r_c0 takes the lead in checking the source of the noise and comes face-to-face with an angry fox! Though {PRONOUN/r_c0/subject} {VERB/r_c0/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/r_c0/object} before the rest of the patrol can back {PRONOUN/r_c0/object} up."
+                    "s_c0 takes the lead in checking the source of the noise and comes face-to-face with an angry fox! Though {PRONOUN/s_c0/subject} {VERB/s_c0/backpedal/backpedals} rapidly, the fox still gets its teeth into {PRONOUN/s_c0/object} before the rest of the patrol can back {PRONOUN/s_c0/object} up."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {}
                 },
                 "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -800,13 +804,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 pads towards the grass to check on the noise when a rabbit bursts out! s_c0 is quick to react and snags the rabbit before it can disappear."
+                    "p_l pads towards the grass to check on the noise when a rabbit bursts out! p_l is quick to react and snags the rabbit before it can disappear."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "HUNTER,1"
@@ -834,13 +835,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 doesn't even hesitate before going to check on the source of the noise. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/regret/regrets} {PRONOUN/s_c0/poss} impulsivity, however, when an angry weasel bursts across the rocks, chattering loudly! s_c0 gets quite the scare, but thankfully the weasel only wants to get away from {PRONOUN/s_c0/object} and escapes back behind the rocks."
+                    "p_l doesn't even hesitate before going to check on the source of the noise. {PRONOUN/p_l/subject/CAP} {VERB/p_l/regret/regrets} {PRONOUN/p_l/poss} impulsivity, however, when an angry weasel bursts across the rocks, chattering loudly! p_l gets quite the scare, but thankfully the weasel only wants to get away from {PRONOUN/p_l/object} and escapes back behind the rocks."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "daring",
@@ -905,10 +903,6 @@
             "patrol_cats": [
                 1,
                 1
-            ],
-            "normal adult": [
-                1,
-                1
             ]
         },
         "chance_of_success": 40,
@@ -922,6 +916,12 @@
         "success_outcomes": [
             {
                 "frequency": 4,
+                "required_cat_types": {
+                    "normal adult": [
+                        1,
+                        1
+                    ]
+                },
                 "strings": [
                     "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt."
                 ],
@@ -934,9 +934,29 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 4,
+                "required_cat_types": {
+                    "apprentice": [
+                        1,
+                        1
+                    ]
+                },
                 "strings": [
-                    "A friendly Twoleg makes a psspsspss noise and pours kittypet food on the ground for p_l. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} always wondered what it might taste like... Dry, is the answer. Very odd."
+                    "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} interrupted by Twolegs wandering through the woods a couple times, so {PRONOUN/p_l/subject} {VERB/p_l/miss/misses} a couple catches, but overall, it works out."
+                ],
+                "exp_gained": 20,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_small"
+                    }
+                ]
+            },
+            {
+                "frequency": 2,
+                "strings": [
+                    "A friendly Twoleg makes a psspsspss noise and pours kittypet food on the ground for p_l. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} always wondered what it might taste like... Dry, is the answer. Very odd.",
+                    "A friendly Twoleg makes a psspsspss noise and pours kittypet food on the ground for p_l. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} always wondered what it might taste like... Dry, is the answer. It's strangely appealing."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -946,7 +966,7 @@
                             "high_lawful"
                         ],
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "values": [
                             "like",
@@ -969,13 +989,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 gets distracted from hunting by strange Twoleg activity around one of their dens. They appear to be hauling all their many, many varieties of nest lining out and into a big monster. s_c0 takes the opportunity to grab a little soft thing, something almost shaped like prey. It'll be good for the nursery."
+                    "p_l gets distracted from hunting by strange Twoleg activity around one of their dens. They appear to be hauling all their many, many varieties of nest lining out and into a big monster. p_l takes the opportunity to grab a little soft thing, something almost shaped like prey. It'll be good for the nursery."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "skill": [
                                 "CLEVER,1"
@@ -991,7 +1008,7 @@
                             "high_social"
                         ],
                         "cats_to": [
-                            "s_c0"
+                            "p_l"
                         ],
                         "values": [
                             "like",
@@ -1008,13 +1025,10 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Calmly, s_c0 weaves around the Twoleg dens, picking out the mice from the tunnels and the birds off the strange metal hanging fruit. A successful, sneaky hunt."
+                    "Calmly, p_l weaves around the Twoleg dens, picking out the mice from the tunnels and the birds off the strange metal hanging fruit. A successful, sneaky hunt."
                 ],
                 "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
+                    "p_l": {
                         "stat": {
                             "trait": [
                                 "calm",
@@ -1054,16 +1068,54 @@
                         "adjust": "increase_large"
                     }
                 ]
+            },
+            {
+                "frequency": 4,
+                "strings": [
+                    "Tail lashing excitedly, p_l hunts in the strange, forbidden land, ducking around corners and crawling over gardens with {PRONOUN/p_l/poss} belly low to the ground. A successful, sneaky hunt."
+                ],
+                "involved_cats": {
+                    "p_l": {
+                        "stat": {
+                            "trait": [
+                                "bold",
+                                "confident",
+                                "cunning",
+                                "strange"
+                            ]
+                        }
+                    }
+                },
+                "exp_gained": 20,
+                "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "some_clan"
+                        ],
+                        "cats_to": [
+                            "p_l"
+                        ],
+                        "values": [
+                            "respect"
+                        ],
+                        "mutual": false,
+                        "amount": 3,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's successful solo hunt."
+                        }
+                    }
+                ]
             }
         ],
         "fail_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "The Twolegs here are friendly, and a little carelessly, s_c0 goes to hunt in their garden. But there's a new thing there: a strange, suspicious box. Wisely, s_c0 avoids it and returns to c_n territory."
+                    "The Twolegs here are friendly, and a little carelessly, p_l goes to hunt in their garden. But there's a new thing there: a strange, suspicious box. Wisely, p_l avoids it and returns to c_n territory.",
+                    "A little carelessly, p_l jumps a fence to hunt in a den's garden. But there's a new thing there: a strange, suspicious box. Wisely, p_l avoids it and returns to c_n territory."
                 ],
                 "involved_cats": {
-                    "s_c0": {
+                    "p_l": {
                         "prior_abbreviation": [
                             "any"
                         ],
@@ -1087,7 +1139,7 @@
                 ]
             },
             {
-                "frequency": 3,
+                "frequency": 2,
                 "strings": [
                     "Carelessly, p_l is seen by Twolegs and taken from c_n."
                 ],
@@ -1144,188 +1196,6 @@
         ]
     },
     {
-        "event_id": "bch_hunt_gonetwolegden_solo_app",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 2,
-        "location": [
-            "beach"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                1,
-                1
-            ],
-            "apprentice": [
-                1,
-                1
-            ]
-        },
-        "involved_cats": {
-            "p_l": {
-                "status": [
-                    "apprentice"
-                ]
-            }
-        },
-        "chance_of_success": 40,
-        "patrol_art": "hunt_general_intro",
-        "intro_strings": [
-            "p_l decides to hunt out near the Twoleg dens."
-        ],
-        "decline_strings": [
-            "On second thought, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to recline in {PRONOUN/p_l/poss} nest today instead."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} interrupted by Twolegs wandering through the woods a couple times, so {PRONOUN/p_l/subject} {VERB/p_l/miss/misses} a couple catches, but overall, it works out."
-                ],
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_small"
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "A friendly Twoleg makes a psspsspss noise and pours kittypet food on the ground for p_l. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} always wondered what it might taste like... Dry, is the answer. It's strangely appealing."
-                ],
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "clan",
-                            "high_lawful"
-                        ],
-                        "cats_to": [
-                            "p_l"
-                        ],
-                        "values": [
-                            "respect"
-                        ],
-                        "mutual": false,
-                        "amount": -3,
-                        "log": {
-                            "cats_from": "cat_from wasn't impressed to hear cat_to tasted a bit of kittypet food on a solo hunt."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "Tail lashing excitedly, s_c0 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with {PRONOUN/s_c0/poss} belly low to the ground. A successful, sneaky hunt."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "stat": {
-                            "trait": [
-                                "bold",
-                                "confident",
-                                "cunning",
-                                "strange"
-                            ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
-                    }
-                },
-                "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "some_clan"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "values": [
-                            "respect"
-                        ],
-                        "mutual": false,
-                        "amount": 3,
-                        "log": {
-                            "cats_from": "cat_from was impressed by cat_to's successful solo hunt."
-                        }
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "A little carelessly, s_c0 jumps a fence to hunt in a den's garden. But there's a new thing there: a strange, suspicious box. Wisely, s_c0 avoids it and returns to c_n territory."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "stat": {
-                            "trait": [
-                                "adventurous",
-                                "competitive",
-                                "daring",
-                                "shameless",
-                                "rebellious"
-                            ]
-                        },
-                        "prior_abbreviation": [
-                            "any"
-                        ]
-                    }
-                },
-                "exp_gained": 0
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "Carelessly, p_l is seen by Twolegs and taken from c_n."
-                ],
-                "exp_gained": 0,
-                "lost": [
-                    {
-                        "cats": [
-                            "p_l"
-                        ]
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "Carelessly, p_l is seen by Twolegs and locked, hissing and spitting, in a monster's den. Overnight, {PRONOUN/p_l/subject} {VERB/p_l/discover/discovers} that a broken window is just wide enough to push {PRONOUN/p_l/self} out to safety through, but the glass leaves {PRONOUN/p_l/object} bleeding as {PRONOUN/p_l/subject} {VERB/p_l/run/runs} back to c_n."
-                ],
-                "exp_gained": 0,
-                "condition": [
-                    {
-                        "cats": [
-                            "p_l"
-                        ],
-                        "condition": [
-                            "blood loss",
-                            "scrapes",
-                            "small cut"
-                        ],
-                        "scar_history": "m_c was scarred after being scraped by broken glass in a Twoleg den.",
-                        "death_history": "m_c bled out after escaping from a Twoleg den."
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "event_id": "bch_hunt_twolegdencatdare1",
         "types": [
             "hunting"
@@ -1342,7 +1212,7 @@
                 2,
                 2
             ],
-            "all apprentices": [
+            "apprentice": [
                 -1,
                 -1
             ]
@@ -1353,10 +1223,10 @@
         "relationship_constraint": [
             {
                 "cats_to": [
-                    "patrol_cats"
+                    "p_l"
                 ],
                 "cats_from": [
-                    "patrol_cats"
+                    "r_c0"
                 ],
                 "mutual": true,
                 "constraints": [
@@ -1407,7 +1277,7 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 2,
                 "strings": [
                     "A friendly Twoleg makes a psspsspss noise and pours kittypet food on the ground for r_c0. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/fetch/fetches} p_l, and both cats investigate the food, loudly proclaiming how much better fresh-kill is, but both are a little thrilled by the experience."
                 ],
@@ -1460,10 +1330,10 @@
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "patrol_cats"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1481,7 +1351,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "It's a strange adventure, odd and thrilling. s_c0 takes the lead. Both {PRONOUN/s_c0/subject} and r_c0 are wide-eyed and a little scared, in a fun way."
+                    "It's a strange adventure, odd and thrilling. s_c0 takes the lead. Both {PRONOUN/s_c0/subject} and s_c1 are wide-eyed and a little scared, in a fun way."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1496,18 +1366,21 @@
                             ]
                         },
                         "prior_abbreviation": [
-                            "p_l"
+                            "any"
                         ]
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": ["-s_c0"]
                     }
                 },
                 "exp_gained": 20,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c1"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "mutual": true,
                         "values": [
@@ -1553,7 +1426,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The Twolegs here are friendly, and a little carelessly, s_c0 takes r_c0 to hunt in their garden. But there's a new thing there: a strange, suspicious box. Wisely, s_c0 avoids it and warns r_c0, and the two cats return to c_n territory."
+                    "The Twolegs here are friendly, and a little carelessly, s_c0 takes s_c1 to hunt in their garden. But there's a new thing there: a strange, suspicious box. Wisely, s_c0 avoids it and warns s_c1, and the two cats return to c_n territory."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -1567,18 +1440,21 @@
                             ]
                         },
                         "prior_abbreviation": [
-                            "p_l"
+                            "any"
                         ]
+                    },
+                    "s_c1": {
+                        "prior_abbreviation": ["-s_c0"]
                     }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "p_l"
+                            "s_c0"
                         ],
                         "cats_from": [
-                            "r_c0"
+                            "s_c1"
                         ],
                         "mutual": true,
                         "values": [
@@ -1595,16 +1471,21 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "Carelessly, r_c0 is seen by Twolegs and taken from c_n."
+                    "Carelessly, s_c0 is seen by Twolegs and taken from c_n."
                 ],
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
+                },
                 "exp_gained": 0,
                 "relationship_changes": [
                     {
                         "cats_to": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "patrol_cats"
                         ],
                         "mutual": false,
                         "values": [
@@ -1619,7 +1500,7 @@
                 "lost": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ]
                     }
                 ]
@@ -1638,29 +1519,34 @@
         "required_cat_types": {
             "patrol_cats": [
                 1,
-                1
+                6
             ]
+        },
+        "involved_cats": {
+            "s_c0": {
+                "prior_abbreviations": ["any"]
+            }
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/bch_hunt_gonetwolegtrap_Wr",
         "intro_strings": [
-            "The smell of food lures p_l into what looks like a tunnel under some recently disturbed sand."
+            "The smell of food lures s_c0 into what looks like a tunnel under some recently disturbed sand."
         ],
         "decline_strings": [
-            "Turning {PRONOUN/p_l/poss} nose up at the temptation, {PRONOUN/p_l/subject} {VERB/p_l/continue/continues} on {PRONOUN/p_l/poss} way."
+            "Turning {PRONOUN/s_c0/poss} nose up at the temptation, {PRONOUN/s_c0/subject} {VERB/s_c0/continue/continues} on {PRONOUN/s_c0/poss} way."
         ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "Darting through quickly, {PRONOUN/p_l/subject} {VERB/p_l/see/sees} that the lovely smell is Twoleg mush and {VERB/p_l/keep/keeps} running."
+                    "Darting through quickly, {PRONOUN/s_c0/subject} {VERB/s_c0/see/sees} that the lovely smell is Twoleg mush and {VERB/s_c0/keep/keeps} running."
                 ],
                 "exp_gained": 20
             },
             {
                 "frequency": 1,
                 "strings": [
-                    "The lovely smell leads to Twoleg mush. Puzzled, p_l checks around {PRONOUN/p_l/self}. {PRONOUN/p_l/poss/CAP} fur stands on end as {PRONOUN/p_l/subject} {VERB/p_l/realize/realizes} {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. To {PRONOUN/p_l/poss} great fortune, this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/p_l/subject/CAP} {VERB/p_l/leave/leaves} quickly."
+                    "The lovely smell leads to Twoleg mush. Puzzled, s_c0 checks around {PRONOUN/s_c0/self}. {PRONOUN/s_c0/poss/CAP} fur stands on end as {PRONOUN/s_c0/subject} {VERB/s_c0/realize/realizes} {PRONOUN/s_c0/subject}{VERB/s_c0/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. To {PRONOUN/s_c0/poss} great fortune, this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/leave/leaves} quickly."
                 ],
                 "exp_gained": 20
             },
@@ -1671,9 +1557,6 @@
                 ],
                 "involved_cats": {
                     "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
                         "stat": {
                             "skill": [
                                 "CLEVER,1"
@@ -1692,13 +1575,14 @@
                     "deputy": [
                         -1,
                         -1
+                    ],
+                    "patrol_cats": [
+                        1,
+                        1
                     ]
                 },
                 "involved_cats": {
                     "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
                         "stat": {
                             "trait": [
                                 "careful",
@@ -1732,109 +1616,6 @@
                         }
                     }
                 ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "Easily swayed by the delicious smell, s_c0 wanders recklessly into the sheltered space, only to smack into a metal wall. Inside the trap, a young fox starts up a distressed wail, and s_c0 feels sympathy {PRONOUN/s_c0/subject} never expected to feel for a fox, as well as the heart-stopping realization that it could easily have been {PRONOUN/s_c0/object}."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "trait": [
-                                "arrogant",
-                                "adventurous",
-                                "childish",
-                                "confident",
-                                "oblivious",
-                                "playful",
-                                "troublesome"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 0
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "p_l is caught in a trap hidden in the sand and taken by Twolegs shortly after."
-                ],
-                "exp_gained": 0,
-                "lost": [
-                    {
-                        "cats": [
-                            "r_c0"
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "bch_hunt_gonetwolegtrap2",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 2,
-        "location": [
-            "beach"
-        ],
-        "required_cat_types": {
-            "patrol_cats": [
-                2,
-                6
-            ]
-        },
-        "involved_cats": {
-            "r_c0": {}
-        },
-        "chance_of_success": 40,
-        "patrol_art": "cat_sprites/bch_hunt_gonetwolegtrap_Wr",
-        "intro_strings": [
-            "The smell of food lures r_c0 into what looks like a tunnel under some recently disturbed sand."
-        ],
-        "decline_strings": [
-            "Turning their nose up at the temptation, the patrol continues on their way."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "Darting through quickly, r_c0 sees that the lovely smell is Twoleg mush and keeps running."
-                ],
-                "exp_gained": 20
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "The lovely smell leads to Twoleg mush. Puzzled, r_c0 checks around {PRONOUN/r_c0/self}. {PRONOUN/r_c0/poss/CAP} fur stands on end as {PRONOUN/r_c0/subject} {VERB/r_c0/realize/realizes} {PRONOUN/r_c0/subject}{VERB/r_c0/'re/'s} standing in a metal tunnel, cloaked in rust and camouflage. To {PRONOUN/r_c0/poss} great fortune, this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. {PRONOUN/r_c0/subject/CAP} {VERB/r_c0/leave/leaves} quickly."
-                ],
-                "exp_gained": 20
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "Something about this situation sets all of s_c0's instincts off. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/investigate/investigates}, carefully, and the patrol helps {PRONOUN/s_c0/object} strip the cover of the sand away from a Twoleg trap underneath."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "CLEVER,1"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 20
             },
             {
                 "frequency": 4,
@@ -1845,13 +1626,14 @@
                     "deputy": [
                         -1,
                         -1
+                    ],
+                    "patrol_cats": [
+                        2,
+                        6
                     ]
                 },
                 "involved_cats": {
                     "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
                         "stat": {
                             "trait": [
                                 "careful",
@@ -1876,9 +1658,6 @@
                 ],
                 "involved_cats": {
                     "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
                         "stat": {
                             "trait": [
                                 "arrogant",
@@ -1897,13 +1676,13 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "r_c0 is caught in a trap hidden in the sand! There's nothing the patrol is able to do to help {PRONOUN/r_c0/object}, and r_c0 is taken by Twolegs shortly after."
+                    "s_c0 is caught in a trap hidden in the sand and taken by Twolegs shortly after."
                 ],
                 "exp_gained": 0,
                 "lost": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ]
                     }
                 ]
