@@ -3387,10 +3387,12 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The patrol launches into battle, but r_c0 is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c0 back to the medicine cat den."
+                    "The patrol launches into battle, but s_c0 is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping s_c0 back to the medicine cat den."
                 ],
                 "involved_cats": {
-                    "r_c0": {}
+                    "s_c0": {
+                        "prior_abbreviation": ["any"]
+                    }
                 },
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -3420,7 +3422,7 @@
                 "condition": [
                     {
                         "cats": [
-                            "r_c0"
+                            "s_c0"
                         ],
                         "condition": [
                             "big_bite_injury"
@@ -3575,7 +3577,7 @@
                 ]
             },
             {
-                "frequency": 1,
+                "frequency": 3,
                 "strings": [
                     "A gray fox is bigger than them, yes... but only just, and that carcass smells divine. The cats creep up on the fox, using the dunes for cover, and wait until the fox has its head buried in the carcass to attack. The ambush sends the competing predator fleeing and leaves the cats to claim the blissfully stinky food."
                 ],
