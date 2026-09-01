@@ -5556,7 +5556,7 @@
             "The siblings head out together, declaring a friendly competition to stock the fresh-kill pile. They're going to prove themselves!"
         ],
         "decline_strings": [
-            "Their mentors hold them back with a gentle word — the warriors have other plans for the apprentices today."
+            "The warriors have other plans for the apprentices today."
         ],
         "success_outcomes": [
             {
@@ -5852,7 +5852,7 @@
         ]
     },
     {
-        "event_id": "bch_hunt_random_siblings2applocked3",
+        "event_id": "bch_hunt_random_siblingsexploring1",
         "types": [
             "hunting"
         ],
@@ -5864,21 +5864,17 @@
         "required_cat_types": {
             "patrol_cats": [
                 2,
-                2
-            ],
-            "apprentice": [
-                1,
                 6
             ],
-            "all apprentices": [
+            "apprentice": [
                 2,
-                2
+                6
             ]
         },
         "relationship_constraint": [
             {
                 "cats_from": [
-                    "p_l"
+                    "patrol_cats"
                 ],
                 "cats_to": [
                     "patrol_cats"
@@ -5889,40 +5885,25 @@
                 ]
             }
         ],
-        "involved_cats": {
-            "r_c1": {
-                "status": [
-                    "apprentice"
-                ],
-                "has_mentor": {
-                    "current": true
-                }
-            }
-        },
         "chance_of_success": 40,
         "patrol_art": "hunt_general_intro",
         "intro_strings": [
-            "The clouds are out, making the world murky. And just like the clouds, r_c1 and {PRONOUN/r_c1/poss} littermate are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!"
+            "The clouds are out, making the world murky. And just like the clouds, the siblings are romping everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!"
         ],
         "decline_strings": [
-            "Their mentors hold them back with a gentle word — the warriors have other plans for the apprentices today."
+            "The warriors have other plans for the apprentices today."
         ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 thinks r_c2's b_tp_dl_s looks infinitely more delicious than {PRONOUN/r_c1/poss} own contributions of two b_tp_dl_p, while r_c2 insists that {PRONOUN/r_c2/subject}'d much rather bring back b_tp_dl_p."
+                    "r_c1 thinks r_c2's b_tp_dl_s looks infinitely more delicious than {PRONOUN/r_c1/poss} own contributions of two b_tp_dl_p, while s_c0 insists that {PRONOUN/s_c0/subject}'d much rather bring back b_tp_dl_p than the b_mp_a_s {PRONOUN/s_c0/subject} caught."
                 ],
                 "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
+                    "r_c1": {},
+                    "r_c2": {},
+                    "s_c0": {
+                        "prior_abbreviation": ["-r_c1"]
                     }
                 },
                 "exp_gained": 20,
@@ -5954,7 +5935,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 spends half the patrol in the heavy waves of the tidal zone, both impressing and frustrating the sibling trying to keep up with {PRONOUN/s_c0/object}."
+                    "s_c0 spends half the patrol in the heavy waves of the tidal zone, both impressing and frustrating the others trying to keep up with {PRONOUN/s_c0/object}."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -5969,210 +5950,6 @@
                     }
                 },
                 "exp_gained": 20,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "like"
-                        ],
-                        "amount": -5,
-                        "log": {
-                            "cats_from": "...even if {PRONOUN/cat_to/subject} {VERB/cat_to/are/is} a total show-off."
-                        }
-                    },
-                    {
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_from has to admit that cat_to's a good swimmer..."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "Well, they have a lot of fun exploring, even if it's not that productive of a hunting patrol."
-                ],
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "like",
-                            "comfort"
-                        ],
-                        "mutual": false,
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_to and cat_from enjoyed exploring the beach together, even though they were supposed to be hunting."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "bch_hunt_random_siblings3applocked3",
-        "types": [
-            "hunting"
-        ],
-        "frequency": 4,
-        "location": [
-            "beach"
-        ],
-        "tags": [],
-        "required_cat_types": {
-            "patrol_cats": [
-                3,
-                6
-            ],
-            "apprentice": [
-                1,
-                6
-            ],
-            "all apprentices": [
-                3,
-                6
-            ],
-            "normal adult": [
-                -1,
-                -1
-            ]
-        },
-        "relationship_constraint": [
-            {
-                "cats_from": [
-                    "p_l"
-                ],
-                "cats_to": [
-                    "patrol_cats"
-                ],
-                "mutual": false,
-                "constraints": [
-                    "siblings"
-                ]
-            }
-        ],
-        "involved_cats": {
-            "r_c1": {
-                "status": [
-                    "apprentice"
-                ],
-                "has_mentor": {
-                    "current": true
-                }
-            }
-        },
-        "chance_of_success": 40,
-        "patrol_art": "hunt_general_intro",
-        "intro_strings": [
-            "The clouds are out, making the world murky. And just like the clouds, r_c1 and {PRONOUN/r_c1/poss} littermates are everywhere today, sticking their heads into every unexplored corner of the territory. All in the name of hunting, of course!"
-        ],
-        "decline_strings": [
-            "Their mentors hold them back with a gentle word — the warriors have other plans for the apprentices today."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "r_c1 thinks r_c2's b_tp_dl_s looks infinitely more delicious than {PRONOUN/r_c1/poss} own contributions of two b_tp_dl_p, while r_c3 insists that {PRONOUN/r_c3/subject}'d much rather bring back b_tp_dl_p than the b_mp_a_s {PRONOUN/r_c3/subject} caught."
-                ],
-                "involved_cats": {
-                    "r_c1": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c2": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    },
-                    "r_c3": {
-                        "status": [
-                            "apprentice"
-                        ]
-                    }
-                },
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": false,
-                        "values": [
-                            "respect"
-                        ],
-                        "amount": 5,
-                        "log": {
-                            "cats_from": "cat_to and cat_from appreciated each other's contributions to a hunting patrol."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_small"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "s_c0 spends half the patrol in the heavy waves of the tidal zone, both impressing and frustrating the siblings trying to keep up with {PRONOUN/s_c0/object}."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "SWIMMER,0"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 30,
                 "relationship_changes": [
                     {
                         "cats_to": [
