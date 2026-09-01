@@ -43,9 +43,13 @@
             "r_c0": {}
         },
         "chance_of_success": 60,
-        "patrol_art": "cat_sprites\/gen_flowerdate_WrWr",
-        "intro_text": "p_l thinks r_c0 is, well, really, just \u2014 uh, just swell, and {PRONOUN\/p_l\/subject} {VERB\/p_l\/think\/thinks} r_c0 might like {PRONOUN\/p_l\/object} too. {PRONOUN\/p_l\/subject\/CAP}{VERB\/p_l\/'ve\/'s} been building up {PRONOUN\/p_l\/poss} confidence, and {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} going to ask r_c0 to spend some time together, just the two of them, this afternoon!",
-        "decline_text": "Unfortunately, r_c0 is sent on an afternoon border patrol before p_l can say anything.",
+        "patrol_art": "cat_sprites/gen_flowerdate_WrWr",
+        "intro_strings": [
+            "p_l thinks r_c0 is, well, really, just \u2014 uh, just swell, and {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c0 might like {PRONOUN/p_l/object} too. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} been building up {PRONOUN/p_l/poss} confidence, and {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to ask r_c0 to spend some time together, just the two of them, this afternoon!"
+        ],
+        "decline_strings": [
+            "Unfortunately, r_c0 is sent on an afternoon border patrol before p_l can say anything."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -104,7 +108,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "s_c0 has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN\/s_c0\/poss} words carefully. It's all worth it to hear r_c's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world."
+                    "s_c0 has always had a skilled tongue, but it's rarely ever felt this important to choose {PRONOUN/s_c0/poss} words carefully. It's all worth it to hear r_c's 'yes.' Their stroll together is awkward with the new tension of acknowledged romance, but neither cat would change it for the world."
                 ],
                 "involved_cats": {
                     "s_c0": {
@@ -137,7 +141,7 @@
                         ],
                         "amount": 13,
                         "log": {
-                            "cats_from": "s_c0's social adeptness made {PRONOUN\/s_c0\/poss} romantic newleaf stroll with r_c0 all the better."
+                            "cats_from": "s_c0's social adeptness made {PRONOUN/s_c0/poss} romantic newleaf stroll with r_c0 all the better."
                         }
                     }
                 ]
@@ -147,7 +151,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l awkwardly stutters {PRONOUN\/p_l\/poss} way through asking r_c0 out \u2014 and {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/say\/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone."
+                    "p_l awkwardly stutters {PRONOUN/p_l/poss} way through asking r_c0 out \u2014 and {PRONOUN/r_c0/subject} {VERB/r_c0/say/says} no. It's gentle, but it's a no. Tail tucked, p_l slinks off to be alone."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -164,7 +168,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "p_l felt embarrassed when r_c0 rejected {PRONOUN\/p_l\/poss} offer of a romantic stroll."
+                            "cats_from": "p_l felt embarrassed when r_c0 rejected {PRONOUN/p_l/poss} offer of a romantic stroll."
                         }
                     },
                     {
@@ -180,7 +184,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "r_c0 felt awkward when p_l asked {PRONOUN\/r_c0\/object} out on a romantic stroll, and r_c0 rejected the offer."
+                            "cats_from": "r_c0 felt awkward when p_l asked {PRONOUN/r_c0/object} out on a romantic stroll, and r_c0 rejected the offer."
                         }
                     }
                 ]
@@ -231,14 +235,18 @@
             "r_c0": {}
         },
         "chance_of_success": 80,
-        "patrol_art": "cat_sprites\/gen_talkingmates_WrWr",
-        "intro_text": "p_l trots up, full of a disproportionate amount of excitement for the bland, overcast afternoon, tail tip twitching. Does r_c0 want to come out with {PRONOUN\/p_l\/object}? {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/lean\/leans} in close \u2014 there's a special spot {PRONOUN\/p_l\/subject}{VERB\/p_l\/'ve\/'s} been meaning to show {PRONOUN\/r_c0\/object}.",
-        "decline_text": "Unfortunately, r_c0 is sent on an afternoon border patrol before either cat can head out of camp.",
+        "patrol_art": "cat_sprites/gen_talkingmates_WrWr",
+        "intro_strings": [
+            "p_l trots up, full of a disproportionate amount of excitement for the bland, overcast afternoon, tail tip twitching. Does r_c0 want to come out with {PRONOUN/p_l/object}? {PRONOUN/p_l/subject/CAP} {VERB/p_l/lean/leans} in close \u2014 there's a special spot {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been meaning to show {PRONOUN/r_c0/object}."
+        ],
+        "decline_strings": [
+            "Unfortunately, r_c0 is sent on an afternoon border patrol before either cat can head out of camp."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "This is p_l's absolute favorite spot in the territory in newleaf, {PRONOUN\/p_l\/subject} {VERB\/p_l\/explain\/explains}, brushing along r_c's side as the two cats pad whisker-close. It's just the perfect place to wind down, a beautiful, bubbling, calm stream, and {PRONOUN\/p_l\/subject} thought it'd be good for r_c0 to take some time just to breathe, just to relax, just to get to be {PRONOUN\/r_c0\/self}. All the more special for being there together."
+                    "This is p_l's absolute favorite spot in the territory in newleaf, {PRONOUN/p_l/subject} {VERB/p_l/explain/explains}, brushing along r_c's side as the two cats pad whisker-close. It's just the perfect place to wind down, a beautiful, bubbling, calm stream, and {PRONOUN/p_l/subject} thought it'd be good for r_c0 to take some time just to breathe, just to relax, just to get to be {PRONOUN/r_c0/self}. All the more special for being there together."
                 ],
                 "exp_gained": 20,
                 "relationship_changes": [
@@ -257,7 +265,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "p_l showed r_c0 {PRONOUN\/p_l\/poss} favorite spot in the territory in newleaf, and they passed a romantic day together."
+                            "cats_from": "p_l showed r_c0 {PRONOUN/p_l/poss} favorite spot in the territory in newleaf, and they passed a romantic day together."
                         }
                     }
                 ]
@@ -284,7 +292,7 @@
                         ],
                         "amount": 15,
                         "log": {
-                            "cats_from": "p_l showed r_c0 {PRONOUN\/p_l\/poss} favorite spot in the territory in newleaf, and they passed a romantic day together."
+                            "cats_from": "p_l showed r_c0 {PRONOUN/p_l/poss} favorite spot in the territory in newleaf, and they passed a romantic day together."
                         }
                     }
                 ]
@@ -294,7 +302,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c0 shakes {PRONOUN\/r_c0\/poss} head, refusing {PRONOUN\/r_c0\/poss} mate. {PRONOUN\/r_c0\/subject\/CAP} just {VERB\/r_c0\/don't\/doesn't} have time today, there's too much to do, too much c_n needs solved, and {PRONOUN\/r_c0\/subject} {VERB\/r_c0\/don't\/doesn't} have time to waltz off and relax!"
+                    "r_c0 shakes {PRONOUN/r_c0/poss} head, refusing {PRONOUN/r_c0/poss} mate. {PRONOUN/r_c0/subject/CAP} just {VERB/r_c0/don't/doesn't} have time today, there's too much to do, too much c_n needs solved, and {PRONOUN/r_c0/subject} {VERB/r_c0/don't/doesn't} have time to waltz off and relax!"
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [
@@ -312,7 +320,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "p_l wanted to show r_c0 {PRONOUN\/p_l\/poss} favorite spot in the territory in newleaf, but r_c0 rejected the offer."
+                            "cats_from": "p_l wanted to show r_c0 {PRONOUN/p_l/poss} favorite spot in the territory in newleaf, but r_c0 rejected the offer."
                         }
                     }
                 ]
@@ -357,9 +365,13 @@
             }
         },
         "chance_of_success": 60,
-        "patrol_art": "cat_sprites\/gen_train_ghost_WrWrWr",
-        "intro_text": "Hiding from a newleaf rain shower under a bush, p_l whispers to the other apprentices \u2014 have they heard the story of the Shaded Vengeance?",
-        "decline_text": "Oh, the rain let up \u2014 back to training!",
+        "patrol_art": "cat_sprites/gen_train_ghost_WrWrWr",
+        "intro_strings": [
+            "Hiding from a newleaf rain shower under a bush, p_l whispers to the other apprentices \u2014 have they heard the story of the Shaded Vengeance?"
+        ],
+        "decline_strings": [
+            "Oh, the rain let up \u2014 back to training!"
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -426,7 +438,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from's feelings were hurt when cat_to didn't want to listen to {PRONOUN\/cat_from\/poss} story."
+                            "cats_from": "cat_from's feelings were hurt when cat_to didn't want to listen to {PRONOUN/cat_from/poss} story."
                         }
                     },
                     {
@@ -442,7 +454,7 @@
                         ],
                         "amount": -10,
                         "log": {
-                            "cats_from": "cat_from was bored and annoyed when cat_to tried to scare {PRONOUN\/cat_from\/object} with an old nursery tale."
+                            "cats_from": "cat_from was bored and annoyed when cat_to tried to scare {PRONOUN/cat_from/object} with an old nursery tale."
                         }
                     }
                 ]
@@ -479,9 +491,13 @@
             }
         },
         "chance_of_success": 60,
-        "patrol_art": "animals\/gen_crow",
-        "intro_text": "There's a saying, about crows in newleaf...",
-        "decline_text": "Cats say many things. Doesn't mean it's worth listening to.",
+        "patrol_art": "animals/gen_crow",
+        "intro_strings": [
+            "There's a saying, about crows in newleaf..."
+        ],
+        "decline_strings": [
+            "Cats say many things. Doesn't mean it's worth listening to."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -548,7 +564,7 @@
                         ],
                         "amount": -8,
                         "log": {
-                            "cats_from": "cat_from was embarrassed and hurt that cat_to wasn't interested in hearing {PRONOUN\/cat_from\/poss} knowledge of crows."
+                            "cats_from": "cat_from was embarrassed and hurt that cat_to wasn't interested in hearing {PRONOUN/cat_from/poss} knowledge of crows."
                         }
                     }
                 ]

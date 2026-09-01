@@ -32,13 +32,17 @@
         },
         "chance_of_success": 65,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l looks at the calm, cloudless sky and decides it's a good opportunity to show r_c1 where some of the most commonly needed herbs are located in {PRONOUN\/p_l\/poss} territory, as well as where and when to burrow into the sand to find the more potent roots {PRONOUN\/p_l\/subject} {VERB\/p_l\/tend\/tends} to use.",
-        "decline_text": "As {PRONOUN\/p_l\/subject} {VERB\/p_l\/look\/looks} at r_c1's absent-minded gaze, {PRONOUN\/p_l\/subject} {VERB\/p_l\/hesitate\/hesitates} and {VERB\/p_l\/change\/changes} {PRONOUN\/p_l\/poss} mind. Maybe another day would be best, when r_c1 is more focused... and less liable to get sand everywhere, or damage the herbs.",
+        "intro_strings": [
+            "p_l looks at the calm, cloudless sky and decides it's a good opportunity to show r_c1 where some of the most commonly needed herbs are located in {PRONOUN/p_l/poss} territory, as well as where and when to burrow into the sand to find the more potent roots {PRONOUN/p_l/subject} {VERB/p_l/tend/tends} to use."
+        ],
+        "decline_strings": [
+            "As {PRONOUN/p_l/subject} {VERB/p_l/look/looks} at r_c1's absent-minded gaze, {PRONOUN/p_l/subject} {VERB/p_l/hesitate/hesitates} and {VERB/p_l/change/changes} {PRONOUN/p_l/poss} mind. Maybe another day would be best, when r_c1 is more focused... and less liable to get sand everywhere, or damage the herbs."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "r_c1 is focused and attentive, giving p_l confidence that next time there is an emergency, r_c1 will be able to find the herbs {PRONOUN\/r_c1\/subject} {VERB\/r_c1\/need\/needs} both in and out of the sand."
+                    "r_c1 is focused and attentive, giving p_l confidence that next time there is an emergency, r_c1 will be able to find the herbs {PRONOUN/r_c1/subject} {VERB/r_c1/need/needs} both in and out of the sand."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -79,7 +83,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "As p_l is explaining why and where the herbs are growing, r_c1 lets out a shout and bolts ahead. To p_l's surprise, {PRONOUN\/r_c1\/subject} {VERB\/r_c1\/have\/has} found a previously unknown patch of an uncommon herb! Stunned, but filled with pride that {PRONOUN\/r_c1\/subject} found and recognized the herb, p_l promises {PRONOUN\/r_c1\/object} the first pick of fresh-kill as soon as they return to camp."
+                    "As p_l is explaining why and where the herbs are growing, r_c1 lets out a shout and bolts ahead. To p_l's surprise, {PRONOUN/r_c1/subject} {VERB/r_c1/have/has} found a previously unknown patch of an uncommon herb! Stunned, but filled with pride that {PRONOUN/r_c1/subject} found and recognized the herb, p_l promises {PRONOUN/r_c1/object} the first pick of fresh-kill as soon as they return to camp."
                 ],
                 "involved_cats": {
                     "r_c1": {
@@ -148,7 +152,7 @@
                         ],
                         "amount": -5,
                         "log": {
-                            "cats_from": "Frustrated by cat_to's inattention, cat_from ended {PRONOUN\/cat_from\/poss} gathering lesson early."
+                            "cats_from": "Frustrated by cat_to's inattention, cat_from ended {PRONOUN/cat_from/poss} gathering lesson early."
                         }
                     }
                 ]
@@ -183,14 +187,18 @@
             }
         },
         "chance_of_success": 65,
-        "patrol_art": "cat_sprites\/bch_med_herblocation_Ap",
-        "intro_text": "p_l has been sent out onto the beaches to try to find some specific herbs alone.",
-        "decline_text": "Nervous and sneezing due to the salty air, {PRONOUN\/p_l\/subject} {VERB\/p_l\/decide\/decides} to go back to camp and try again another day. {PRONOUN\/p_l\/poss\/CAP} mentor won't be very pleased, but {PRONOUN\/p_l\/subject} {VERB\/p_l\/rationalize\/rationalizes} that it's better to go with confidence than nerves.",
+        "patrol_art": "cat_sprites/bch_med_herblocation_Ap",
+        "intro_strings": [
+            "p_l has been sent out onto the beaches to try to find some specific herbs alone."
+        ],
+        "decline_strings": [
+            "Nervous and sneezing due to the salty air, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides} to go back to camp and try again another day. {PRONOUN/p_l/poss/CAP} mentor won't be very pleased, but {PRONOUN/p_l/subject} {VERB/p_l/rationalize/rationalizes} that it's better to go with confidence than nerves."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l is focused, determined to prove {PRONOUN\/p_l\/poss} independence. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/find\/finds} the herbs easily and bring them back to camp with {PRONOUN\/p_l\/poss} head held up high \u2014 no sweat, no stress, no fuss."
+                    "p_l is focused, determined to prove {PRONOUN/p_l/poss} independence. {PRONOUN/p_l/subject/CAP} {VERB/p_l/find/finds} the herbs easily and bring them back to camp with {PRONOUN/p_l/poss} head held up high \u2014 no sweat, no stress, no fuss."
                 ],
                 "exp_gained": 10,
                 "supply": [
@@ -203,7 +211,7 @@
             {
                 "frequency": 1,
                 "strings": [
-                    "p_l goes to an herb patch {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} sure {PRONOUN\/p_l\/subject} {VERB\/p_l\/know\/knows}, only to find the plants withered and dead. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/refuse\/refuses} to give up, however, tenaciously searching the area until {PRONOUN\/p_l\/subject} {VERB\/p_l\/come\/comes} across a smaller, overlooked patch that still has some leaves hanging on."
+                    "p_l goes to an herb patch {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sure {PRONOUN/p_l/subject} {VERB/p_l/know/knows}, only to find the plants withered and dead. {PRONOUN/p_l/subject/CAP} {VERB/p_l/refuse/refuses} to give up, however, tenaciously searching the area until {PRONOUN/p_l/subject} {VERB/p_l/come/comes} across a smaller, overlooked patch that still has some leaves hanging on."
                 ],
                 "exp_gained": 10,
                 "supply": [
@@ -218,7 +226,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l goes to an herb patch {PRONOUN\/p_l\/subject}{VERB\/p_l\/'re\/'s} sure {PRONOUN\/p_l\/subject} {VERB\/p_l\/know\/knows}, only to find the plants withered and dead. {PRONOUN\/p_l\/subject\/CAP} {VERB\/p_l\/give\/gives} up and {VERB\/p_l\/return\/returns} to camp, {PRONOUN\/p_l\/poss} tail dragging miserably along the ground."
+                    "p_l goes to an herb patch {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} sure {PRONOUN/p_l/subject} {VERB/p_l/know/knows}, only to find the plants withered and dead. {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} up and {VERB/p_l/return/returns} to camp, {PRONOUN/p_l/poss} tail dragging miserably along the ground."
                 ],
                 "exp_gained": 0
             }
@@ -248,8 +256,12 @@
         },
         "chance_of_success": 50,
         "patrol_art": "med_general_intro",
-        "intro_text": "p_l and r_c0 take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!",
-        "decline_text": "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh.",
+        "intro_strings": [
+            "p_l and r_c0 take a look at their supply of herbs and decide to combine their efforts into searching for more. Two sets of trained eyes are better than one!"
+        ],
+        "decline_strings": [
+            "Unfortunately they are interrupted by a cat claiming they have an emergency. Runny dirt is not an emergency. Ugh."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -346,7 +358,7 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "Even though there should be many herbs, they fail to find anything. p_l blames r_c0 for distracting {PRONOUN\/p_l\/object}, and they get into a huge argument."
+                    "Even though there should be many herbs, they fail to find anything. p_l blames r_c0 for distracting {PRONOUN/p_l/object}, and they get into a huge argument."
                 ],
                 "exp_gained": 0,
                 "relationship_changes": [

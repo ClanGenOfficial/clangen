@@ -24,8 +24,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_flashflood_Wr",
-        "intro_text": "There are dark clouds on the horizon, and p_l wonders if they should continue.",
-        "decline_text": "The patrol decides to head back early.",
+        "intro_strings": [
+            "There are dark clouds on the horizon, and p_l wonders if they should continue."
+        ],
+        "decline_strings": [
+            "The patrol decides to head back early."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -220,8 +224,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_flashflood_Wr",
-        "intro_text": "There are dark clouds on the horizon and p_l wonders if {PRONOUN/p_l/subject} should continue.",
-        "decline_text": "The patrol decides to head back early.",
+        "intro_strings": [
+            "There are dark clouds on the horizon and p_l wonders if {PRONOUN/p_l/subject} should continue."
+        ],
+        "decline_strings": [
+            "The patrol decides to head back early."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -316,8 +324,12 @@
         },
         "chance_of_success": 70,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_text": "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
-        "decline_text": "The patrol decides not to investigate.",
+        "intro_strings": [
+            "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the plains."
+        ],
+        "decline_strings": [
+            "The patrol decides not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -491,8 +503,12 @@
         },
         "chance_of_success": 30,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_text": "p_l hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
-        "decline_text": "The patrol decides not to investigate.",
+        "intro_strings": [
+            "p_l hears some odd noises coming from an abandoned Twoleg nest out on the plains."
+        ],
+        "decline_strings": [
+            "The patrol decides not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -668,8 +684,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_text": "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
-        "decline_text": "The patrol decides not to investigate.",
+        "intro_strings": [
+            "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach."
+        ],
+        "decline_strings": [
+            "The patrol decides not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -830,8 +850,12 @@
         },
         "chance_of_success": 10,
         "patrol_art": "backgrounds/gen_abandontwolegdis",
-        "intro_text": "p_l hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
-        "decline_text": "The patrol decides not to investigate.",
+        "intro_strings": [
+            "p_l hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach."
+        ],
+        "decline_strings": [
+            "The patrol decides not to investigate."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1009,8 +1033,12 @@
         },
         "chance_of_success": 40,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues burst from the bushes! An ambush!",
-        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
+        "intro_strings": [
+            "As the patrol is marking the border lines, a gang of rogues burst from the bushes! An ambush!"
+        ],
+        "decline_strings": [
+            "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,
@@ -1371,8 +1399,12 @@
         },
         "chance_of_success": 60,
         "patrol_art": "bord_general_intro",
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!",
-        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
+        "intro_strings": [
+            "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!"
+        ],
+        "decline_strings": [
+            "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
+        ],
         "success_outcomes": [
             {
                 "frequency": 4,

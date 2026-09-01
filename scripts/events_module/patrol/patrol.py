@@ -128,7 +128,7 @@ class Patrol:
         # Return text adjusted patrol intro
         return event_text_adjust(
             Cat,
-            self.patrol_event.intro_text,
+            choice(self.patrol_event.intro_strings),
             involved_cat_dict=self.involved_cats,
             clan=game.clan,
             other_clan=self.other_clan,
@@ -147,7 +147,7 @@ class Patrol:
                 return (
                     event_text_adjust(
                         Cat,
-                        self.patrol_event.decline_text,
+                        choice(self.patrol_event.decline_strings),
                         involved_cat_dict=self.involved_cats,
                         clan=game.clan,
                         other_clan=self.other_clan,
@@ -234,6 +234,12 @@ class Patrol:
 
         self.involved_cats["p_l"] = possible_leads[-1]
         self.involved_cats["patrol_cats"] = patrol_cats
+        # some_patrol will be a random assortment of the patrol cats, but not 1 nor all
+        if len(patrol_cats) >= 3:
+            self.involved_cats["some_patrol"] = choices(
+                patrol_cats,
+                k=randint(min(2, len(patrol_cats)), min(5, len(patrol_cats) - 1)),
+            )
 
         print("Patrol Leader:", str(self.involved_cats["p_l"].name))
 

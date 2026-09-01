@@ -846,7 +846,6 @@ class PatrolScreen(Screens):
 
         # Prepare Intro Text
         # adjusting text for solo patrols
-        # intro_text = adjust_patrol_text(intro_text, self.patrol_obj)
         self.elements["patrol_text"] = pygame_gui.elements.UITextBox(
             self.display_text,
             ui_scale(pygame.Rect((385, 172), (335, 250))),
