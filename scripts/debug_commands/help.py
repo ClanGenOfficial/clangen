@@ -1,19 +1,16 @@
 from typing import List
 
 from scripts.debug_commands.command import Command
-from scripts.debug_commands.utils import add_output_line_to_log
-
-
-# Command is an abstract class
+from scripts.debug_commands.utils import add_output_line_to_log, clear_log
 
 
 class ClearCommand(Command):
     name = "clear"
     description = "Clear the console"
-    aliases = ["self"]
+    aliases = ["self", "clr"]
 
     def callback(self, args: List[str]):
-        pass
+        clear_log()
 
 
 class HelpCommand(Command):
@@ -22,50 +19,46 @@ class HelpCommand(Command):
     usage = "<command: str>"
     aliases = ["h"]
 
-    commandList: List[Command] = []
+    command_list: List[Command] = []
 
-    def __init__(self, command_list: List[Command]):
-        self.commandList = command_list + [self, ClearCommand()]
+    def __init__(self, commands: List[Command]):
+        self.command_list = commands + [self]
 
     def _get_command_help_text(self, command: Command):
         add_output_line_to_log(f"Help for {command.name}:")
         add_output_line_to_log(f"   {command.description}")
         add_output_line_to_log(f"   Usage: {command.name} {command.usage}")
-        add_output_line_to_log(f"   Aliases: {command._aliases}")
+        add_output_line_to_log(f"   Aliases: {command.valid_names}")
+
+        if len(command.sub_commands) > 0:
+            add_output_line_to_log(f"  Subcommands:")
+            for sub_command in command.sub_commands:
+                add_output_line_to_log(
+                    f"      {sub_command.name}: {sub_command.description}"
+                )
 
     def callback(self, args: List[str]):
         if len(args) == 0:
-            for command in self.commandList:
+            for command in self.command_list:
                 add_output_line_to_log(f"{command.name}: {command.description}")
-                for subcommand in command.sub_commands:
+                for sub_command in command.sub_commands:
                     add_output_line_to_log(
-                        f"  {subcommand.name}: {subcommand.description}"
+                        f"  {sub_command.name}: {sub_command.description}"
                     )
         else:
-            for command in self.commandList:
-                if args[0] in command._aliases:  # pylint: disable=protected-access
-                    if len(args) > 1:
+            for command in self.command_list:
+                if args[0] not in command.valid_names:
+                    continue
+
+                if len(args) > 1:
+                    while len(args) > 1 and len(command.sub_commands) > 0:
                         for sub_command in command.sub_commands:
-                            if (
-                                args[1] in sub_command._aliases
-                            ):  # pylint: disable=protected-access
-                                add_output_line_to_log(
-                                    f"Help for {command.name} {sub_command.name}:"
-                                )
-                                add_output_line_to_log(f"   {sub_command.description}")
-                                add_output_line_to_log(
-                                    f"  Usage: {command.name} {sub_command.name} {sub_command.usage}"
-                                )
-                                add_output_line_to_log(
-                                    f"  Aliases: {sub_command._aliases}"
-                                )
-                                return
-                    self._get_command_help_text(command)
-                    add_output_line_to_log(f"  Subcommands:")
-                    for subcommand in command.sub_commands:
-                        add_output_line_to_log(
-                            f"      {subcommand.name}: {subcommand.description}"
-                        )
-                    break
-            else:
-                add_output_line_to_log(f"Command {args[0]} not found")
+                            if args[1] not in sub_command.valid_names:
+                                continue
+                            args = args[1:]
+                            command = sub_command
+
+                self._get_command_help_text(command)
+                return
+
+            add_output_line_to_log(f"Command {args[0]} not found")
