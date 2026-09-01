@@ -10697,68 +10697,68 @@
         "patrol_cats": [3, 6]
     },
     "chance_of_success": 60,
-    "patrol_art": "fst_twolegplace.png",
+    "patrol_art": "fst_twolegplace",
     "intro_strings": ["The patrol decides to hunt at an abandoned farmhouse at the edge of the border. Rumor has it, the mice are so plentiful they practically walk into your claws."],
     "decline_strings": ["Upon seeing the old barn, they're worried about how rickety it looks and decide to hunt elsewhere,"],
     "success_outcomes": [
         {
-                "frequency": 3,
-                "strings": [
-                    "Not only are they plentiful but the mice are dumb as well. The cats dont return home until the cats can't hold a single mouse more."
-                ],
-                "exp_gained": 30,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
+            "frequency": 3,
+            "strings": [
+                "Not only are they plentiful but the mice are dumb as well. The cats dont return home until the cats can't hold a single mouse more."
+            ],
+            "exp_gained": 30,
+            "supply": [
+                {
+                    "type": "freshkill",
+                    "adjust": "increase_large"
+                }
+            ]
         },
         {
-                "frequency": 3,
-                "strings": [
-                    "The cats work together to scare the mice towards each other to not only practice teamwork but to also make the already easy hunt even more fun."
-                ],
-                "exp_gained": 30,
+            "frequency": 3,
+            "strings": [
+                "The cats work together to scare the mice towards each other to not only practice teamwork but to also make the already easy hunt even more fun."
+            ],
+            "exp_gained": 30,
             "relationship_changes": [
                 {
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "mutual": true,
-                        "values": [
-                            "trust",
-                            "respect"
-                        ],
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from and cat_to's feel like they can rely on each other a little more to do their part."
-                        }
+                    "cats_to": [
+                        "patrol_cats"
+                    ],
+                    "cats_from": [
+                        "patrol_cats"
+                    ],
+                    "mutual": true,
+                    "values": [
+                        "trust",
+                        "respect"
+                    ],
+                    "amount": 10,
+                    "log": {
+                        "cats_from": "cat_from and cat_to's feel like they can rely on each other a little more to do their part."
                     }
+                }
             ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
+            "supply": [
+                {
+                    "type": "freshkill",
+                    "adjust": "increase_large"
+                }
+            ]
         },
         {
-                "frequency": 3,
-                "strings": [
-                    "The mice are hard to rat out in all the hay but the patrol returns with plenty of mice to go around."
-                ],
-                "exp_gained": 20,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            }
+            "frequency": 3,
+            "strings": [
+                "The mice are hard to rat out in all the hay but the patrol returns with plenty of mice to go around."
+            ],
+            "exp_gained": 20,
+            "supply": [
+                {
+                    "type": "freshkill",
+                    "adjust": "increase_medium"
+                }
+            ]
+        }
         ],
         "fail_outcomes": [
         {
