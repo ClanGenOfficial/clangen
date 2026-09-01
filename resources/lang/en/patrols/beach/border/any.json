@@ -16,6 +16,7 @@
         },
         "involved_cats": {
             "n_c0": {
+                "can_create_new_cat": {},
                 "status": ["rogue"],
                 "age": [
                     "young adult",
@@ -24,6 +25,7 @@
                 ]
             },
             "n_c1": {
+                "can_create_new_cat": {},
                 "status": ["rogue"],
                 "age": [
                     "young adult",
@@ -32,6 +34,7 @@
                 ]
             },
             "n_c2": {
+                "can_create_new_cat": {},
                 "status": ["rogue"],
                 "age": [
                     "young adult",
@@ -40,6 +43,7 @@
                 ]
             },
             "n_c3": {
+                "can_create_new_cat": {},
                 "status": ["rogue"],
                 "age": [
                     "young adult",
@@ -52,7 +56,8 @@
         "patrol_art": "bord_general_intro",
         "intro_strings": [
             "As the patrol is marking the border lines, a gang of rogues burst from the beach grass! An ambush!",
-            "As the patrol is marking the border lines, a gang of rogues stalk out of the beach grass to confront the Clan cats!"
+            "As the patrol is marking the border lines, a gang of rogues stalk out of the beach grass to confront the Clan cats!",
+            "The patrol is interrupted when a gang of rogues burst out of the beach grass, taking them by surprise!"
         ],
         "decline_strings": [
             "The patrol turns tail and races away! The borders are left open for the rogues to muddy."
@@ -433,6 +438,7 @@
         },
         "involved_cats": {
             "n_c0": {
+                "can_create_new_cat": {},
                 "status": ["rogue"],
                 "age": [
                     "young adult",
@@ -441,6 +447,7 @@
                 ]
             },
             "n_c1": {
+                "can_create_new_cat": {},
                 "status": ["rogue"],
                 "age": [
                     "young adult",
@@ -449,6 +456,7 @@
                 ]
             },
             "n_c2": {
+                "can_create_new_cat": {},
                 "status": ["rogue"],
                 "age": [
                     "young adult",
@@ -460,7 +468,8 @@
         "chance_of_success": 10,
         "patrol_art": "bord_general_intro",
         "intro_strings": [
-            "As p_l is marking the border lines, a gang of rogues burst from the beach grass! An ambush!"
+            "As p_l is marking the border lines, a gang of rogues burst from the beach grass! An ambush!",
+            "p_l's border marking is interrupted when a gang of rogues burst out of the beach grass, taking {PRONOUN/p_l/object} by surprise!"
         ],
         "decline_strings": [
             "p_l turns tail and races away! The rogues have {PRONOUN/p_l/object} far outnumbered; warning the Clan is more important than playing the hero."
@@ -640,7 +649,8 @@
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_flashflood_Wr",
         "intro_strings": [
-            "There are dark clouds on the horizon, and p_l wonders if the patrol should continue."
+            "There are dark clouds on the horizon, and p_l wonders if the patrol should continue.",
+            "Dark clouds hang over the patrol and p_l considers if it would be wiser to turn back."
         ],
         "decline_strings": [
             "The patrol decides to head back early."
@@ -733,6 +743,12 @@
         "fail_outcomes": [
             {
                 "frequency": 3,
+                "required_cat_types": {
+                    "patrol_cats": [
+                        3,
+                        6
+                    ]
+                },
                 "strings": [
                     "There is a downpour, and a sudden flood from the overflowing river sweeps all of the cats in the patrol away. Some manage to ride the waves, paddling for their lives, but many are lost forever."
                 ],
@@ -786,7 +802,8 @@
         "chance_of_success": 40,
         "patrol_art": "cat_sprites/gen_bord_flashflood_Wr",
         "intro_strings": [
-            "There are dark clouds on the horizon, and p_l wonders if {PRONOUN/p_l/subject} should continue."
+            "There are dark clouds on the horizon, and p_l wonders if {PRONOUN/p_l/subject} should continue.",
+            "Dark clouds hang overhead and p_l considers if it would be wiser to turn back."
         ],
         "decline_strings": [
             "p_l decides to head back early."
@@ -911,7 +928,8 @@
         "chance_of_success": 40,
         "patrol_art": "backgrounds/gen_pawprints",
         "intro_strings": [
-            "While on patrol, p_l notices some suspicious pawprints in the wet sand on the beach."
+            "While on patrol, p_l notices some suspicious pawprints in the wet sand on the beach.",
+            "Pawprints stretch out over the wet sand. p_l didn't think anyone else had come this way before {PRONOUN/p_l/object}, so whose pawprints are they?"
         ],
         "decline_strings": [
             "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} not to investigate."
@@ -927,6 +945,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
+                "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -988,6 +1007,7 @@
                         }
                     },
                     "n_c0": {
+                "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1039,6 +1059,7 @@
                         }
                     },
                     "n_c0": {
+                "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1105,6 +1126,7 @@
                         }
                     },
                     "n_c0": {
+                "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1149,6 +1171,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
+                "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1395,7 +1418,8 @@
         "chance_of_success": 40,
         "patrol_art": "backgrounds/gen_pawprints",
         "intro_strings": [
-            "While on patrol with p_l, r_c0 notices some suspicious pawprints in the wet sand on the beach."
+            "While on patrol with p_l, r_c0 notices some suspicious pawprints in the wet sand on the beach.",
+            "Pawprints stretch out over the wet sand. p_l and r_c0 can't think of any patrol that would have come this way before them, so whose pawprints are they?"
         ],
         "decline_strings": [
             "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/decide/decides} not to investigate."
@@ -1408,6 +1432,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
+                "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1483,6 +1508,7 @@
                         "prior_abbreviation": ["-s_c0"]
                     },
                     "n_c0": {
+                "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1535,6 +1561,7 @@
                         }
                     },
                     "n_c0": {
+                "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1605,6 +1632,7 @@
                         "prior_abbreviation": ["s_c0"]
                     },
                     "n_c0": {
+                "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1690,6 +1718,7 @@
                         }
                     },
                     "n_c0": {
+                "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1731,6 +1760,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
+                "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1810,6 +1840,7 @@
                         ]
                     },
                     "n_c0": {
+                "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1852,7 +1883,8 @@
         "chance_of_success": 30,
         "patrol_art": "backgrounds/gen_pawprints",
         "intro_strings": [
-            "While on patrol, r_c0 notices some suspicious pawprints in the wet sand on the beach. The patrol gathers to investigate."
+            "While on patrol, r_c0 notices some suspicious pawprints in the wet sand on the beach. The patrol gathers to investigate.",
+            "Pawprints stretch out over the wet sand and r_c0 takes notice, calling the patrol to take a look. The cats can't think of any patrol that would have come this way before them, so whose pawprints are they?"
         ],
         "decline_strings": [
             "{PRONOUN/r_c0/subject/CAP} {VERB/r_c0/decide/decides} not to investigate."
@@ -1865,6 +1897,7 @@
                 ],
                 "involved_cats": {
                     "n_c0": {
+                "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1940,6 +1973,7 @@
                         }
                     },
                     "n_c0": {
+                "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -1996,6 +2030,7 @@
                         "prior_abbreviation": ["-s_c0"]
                     },
                     "n_c0": {
+                "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -2067,6 +2102,7 @@
                         "prior_abbreviation": ["-s_c0"]
                     },
                     "n_c0": {
+                "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -2153,6 +2189,7 @@
                         }
                     },
                     "n_c0": {
+                "can_create_new_cat": {},
                         "status": ["rogue"],
                         "age": [
                             "young adult",
@@ -2261,8 +2298,12 @@
                 6
             ],
             "normal adult": [
-                4,
+                2,
                 6
+            ],
+            "apprentice": [
+                -1,
+                2
             ]
         },
         "chance_of_success": 40,
