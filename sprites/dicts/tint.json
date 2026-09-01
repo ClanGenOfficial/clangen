@@ -23,19 +23,19 @@
   },
   "possible_tints": {
     "basic": ["pink", "gray", "red", "orange", "warmdilute"],
-    "white": ["yellow", "pinkdilute"],
+    "white": ["yellow", "pinkdilute", "earthydilute"],
     "lightgrey": ["purple", "black", "dilute", "pinkdilute"],
-    "darkgrey": ["blue", "black", "dilute", "cooldilute", "pinkdilute"],
+    "darkgrey": ["blue", "black", "dilute", "cooldilute", "pinkdilute", "earthydilute"],
     "ghost": ["blue", "black", "dilute", "cooldilute"],
-    "black": ["blue", "black", "dilute", "cooldilute", "pinkdilute"],
-    "cream": ["yellow", "purple", "dilute", "cooldilute"],
-    "lightginger": ["yellow", "purple", "dilute", "cooldilute", "pinkdilute"],
+    "black": ["blue", "black", "dilute", "cooldilute", "pinkdilute", "earthydilute"],
+    "cream": ["yellow", "purple", "dilute", "cooldilute", "earthydilute"],
+    "lightginger": ["yellow", "purple", "dilute", "cooldilute", "earthydilute"],
     "darkginger": ["yellow", "purple", "dilute", "cooldilute"],
-    "sienna": ["yellow", "purple", "black", "dilute", "cooldilute"],
-    "lightbrown": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute"],
-    "lilac": ["yellow", "purple", "black", "dilute", "cooldilute"],
-    "brown": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute"],
-    "darkbrown": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute"]
+    "sienna": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute", "earthydilute"],
+    "lightbrown": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute", "earthydilute"],
+    "lilac": ["yellow", "purple", "black", "dilute", "cooldilute", "earthydilute"],
+    "brown": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute", "earthydilute"],
+    "darkbrown": ["yellow", "purple", "black", "dilute", "cooldilute", "pinkdilute", "earthydilute"]
   },
   "tint_colours":
   {
@@ -55,6 +55,7 @@
     "warmdilute": [25, 15, 7],
     "cooldilute": [7, 15, 25],
     "pinkdilute": [80, 50, 45],
+    "earthydilute": [44, 33, 11],
     "none": null
   }
 }
